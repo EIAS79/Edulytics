@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L02",
+  "date": "2026-10-24",
+  "closure": "READY_FOR_STAGE_D",
+  "sourceElements": 11,
+  "sourceSemanticAuthoringCoverage": 100,
+  "artPixelIdentityClaimed": false,
+  "originalTeacherGuideSource": "https://cms-assets.illustrativemathematics.org/g4jh0k3mui8ljz0zeuxa3cvdaxwt",
+  "related2021TeacherGuide": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+  "originalSourceCoolDownReading": {
+    "Park": 8,
+    "Home": 5,
+    "School": 4,
+    "Library": 2
+  },
+  "activity1ClassDataNeverHardcoded": true,
+  "teacherChosenSourceCategoryPairsHumanReviewed": true,
+  "sourceElementProofs": [
+    {
+      "id": "G3-U01-L02-goal",
+      "status": "MATCHED_DIGITAL",
+      "scope": "Exact L02 target and 2021 teaching body: authentic class data; 1–2-step comparisons within 20; role of teacher and alternate representations",
+      "file": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l02-2021.rich-lesson-v2.json"
+    },
+    {
+      "id": "G3-U01-L02-warmup",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "2021 6/8/10 dot groupings 2×3, 2×4 and 5×2, brief flash, 30sec silent/1min pair, 10−8=2; teacher oral strategies",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-class_pictograph",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "Genuine class sticky-note smiley poll; teacher-chosen 6 categories or adapted teacher labels; one picture per child, title and key; pupils draw paper pictograph",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-class_bargraph",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "Same teacher-confirmed responses in graph with zero baseline, labelled scale, categories; learner draws and teacher reviews; first-party visual candidate for 40 learners",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-activity2_true_false",
+      "status": "MATCHED_DIGITAL",
+      "scope": "All four source 2021 true/false comparison families use current variable class data and require separate human reasoning",
+      "file": "src/Edulytics.Web/Controllers/Grade3Lesson2ActivitiesController.cs"
+    },
+    {
+      "id": "G3-U01-L02-activity2_questions",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "Two teacher-filled source how-many-more stems (one-step and combined two-step) plus machine-graded fixed examples, preserving teacher-chosen categories",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-teacher_community",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "Teacher-student survey and partner reasoning; Math Community Doing Math revision after Cool-down, 2–3 minutes teacher-supervised",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-synthesis",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "Original 10-minute synthesis before Cool-down: student bar graph plus one-step MORE, FEWER and two-step A-or-B-than-C questions with teacher-reviewed equations",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-cooldown",
+      "status": "MATCHED_DIGITAL",
+      "scope": "Official 2021 first-edition reading graph rendered independently: Park8 Home5 School4 Library2, one-unit 0–10 scale; Park−Home 3; false that School+Library exceeds Park; explanation human-reviewed",
+      "file": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson2SourceCoolDown.cs"
+    },
+    {
+      "id": "G3-U01-L02-centers",
+      "status": "MATCHED_TEACHER_LED",
+      "scope": "Source optional Sort and Display Stage2: sort 20–30 items/three groups and answer two graph questions; Capture Squares Stage3: 6–10/wild spin + 0–10 card addition within 20, teacher-led",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    },
+    {
+      "id": "G3-U01-L02-images_rights",
+      "status": "MATCHED_DIGITAL",
+      "scope": "All original figures inventoried from first-edition teacher guide/public alt; independent first-party drawings represent exact mathematical data, NOT publisher image/layout/license identity",
+      "file": "src/Edulytics.Web/Views/Grade3Lesson2Activities/Index.cshtml"
+    }
+  ],
+  "richV2RegistryPrecedence": "LessonContentService RichLessonContentV2Registry.Find before fallback composer",
+  "stageD": "NOT_STARTED",
+  "testsWrittenNotRun": true,
+  "ciNotIntentionallyRun": true,
+  "teacherClassroomAttestation": "REQUIRED_DURING_DELIVERY_NOT_CLAIMED",
+  "publishedRuntimeVerified": false,
+  "originalPublisherArtworkCopied": false,
+  "sourceRightsAndCopyrightRespect": "Edulytics first-party independent drawings; no third-party pictures copied",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED"
+}

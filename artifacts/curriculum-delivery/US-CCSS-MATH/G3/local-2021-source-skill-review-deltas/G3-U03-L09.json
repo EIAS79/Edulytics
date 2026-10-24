@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 45,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L09",
+  "title": "Subtraction Algorithms (Part 2)",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-3/lesson-9/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U03.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U03.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L09.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Lin's source subtraction example is 428 − 156. What is its correct value?",
+      "answerType": "integer",
+      "expected": "272"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-3/lesson-9/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: True or False: Does It Commute? (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-3/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Revise Subtraction Work (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Try the Algorithm (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-3/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: How Did Andre Subtract? (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-3/lesson-9/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Subtraction. Four-hundred plus twenty plus eight, minus one-hundred plus fifty plus six, equals three-hundred plus thirty plus two.",
+      "Subtraction.",
+      "Subtraction. Three-hundred plus ninety plus one, minus two-hundred plus ten plus five."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Lin's source subtraction example is 428 − 156. What is its correct value?",
+      "answerType": "integer",
+      "expected": "272"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s learn more about our first subtraction algorithm.",
+      "sourceLearningGoals": "Analyze and use a subtraction algorithm with the numbers written in expanded form.",
+      "teachingSteps": [
+        "Identify hundreds, tens and ones in each number.",
+        "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
+        "Check the answer by the inverse operation or a reasonable estimate."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn more about our first subtraction algorithm.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Compute 283 − 159 using a place-value algorithm.",
+      "answerType": "integer",
+      "expected": "124"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Find 832 − 575 using any accurate recorded subtraction algorithm.",
+      "answerType": "integer",
+      "expected": "257"
+    },
+    "humanRubric": "Student must diagnose the source algorithm error and distinguish subtraction from commutative addition.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

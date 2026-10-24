@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 23,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L02",
+  "unitNumber": 2,
+  "lessonNumber": 2,
+  "title": "How Do We Measure Area?",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-2/lesson-2/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-2/lesson.html",
+  "stageA": {
+    "status": "2021_TEACHER_PREP_ORIGINAL_STUDENT_PDF_3_PAGES_ALL_13_MEDIA_6_PAGE_PRINT_MASTER_37_OF_37_SEMANTIC_SOURCE_ELEMENTS",
+    "goals": "Explore area by building shapes with unit squares. Use unit squares to measure area.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 11,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "publicTeacherAndStudentFacingPageDirectlyRead": true,
+    "warmupFourOriginalTiledFigures": [
+      "A single square",
+      "B 3x3 alternating shaded grid",
+      "C 2x2 half shaded grid",
+      "D blue white tiled rectangle"
+    ],
+    "sourceActivity1": "Groups of four with 80 square tiles; each makes shape and group orders four shapes by area",
+    "sourceActivity2": "Six source handout figures need physical tiling and square unit counts; actual images/unverified expected numbers",
+    "originalFigureSvgPixelsInspected": true,
+    "sourceOriginalFiguresIndividuallyVerified": 13,
+    "sourcePrintedBlacklineMasterPageCount": 6,
+    "sourceStudentPdfPageCount": 3,
+    "sourceOriginalAreas": [
+      9,
+      18,
+      13,
+      30,
+      36,
+      21
+    ],
+    "authoringOriginalElementsIdentified": 37,
+    "verifiedOriginalElementsForAuthoring": 37,
+    "sourceSemanticCoveragePercent": 100,
+    "sourceAreaComputation": "2021 source SVG polygon area / 324pt² and independent cell-center tiling model"
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_FIRST_PARTY_RICH_V2_CANONICAL_BRIDGE_GUARDED_AND_SIX_ORIGINAL_TILE_CELL_MODELS",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U02:L02",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "2ef0ee20e4479b40b243a8aabaac1b73006d8e25110019fbb0fb6b467268278b",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificNoGapsNoOverlapsLessonSemanticsAuthored": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l02-2021.rich-lesson-v2.json",
+    "sourceSpecificRichV2Version": "g3-u02-l02-2021-source-abc-firstparty-20261024-v1",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson2RichV2.cs",
+    "sourceOriginalArtEmbedded": false
+  },
+  "stageC": {
+    "status": "SIX_ORIGINAL_SOURCE_FIGURE_AREAS_INDIVIDUALLY_GRADED_PLUS_HUMAN_TILING_AND_WARMUP_TEACHER_REVIEW_REGRESSION_WRITTEN_UNRUN",
+    "family": "unit-squares-area",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Create and Compare with your teacher. Show the representation and explain how it meets the goal: Let’s use square tiles to measure area.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "originalSourceTasksIndividualHumanRows": 13,
+    "originalSixAreasNotDigitallyGradedWithoutSourceFigures": true,
+    "firstPartyKnownArrayNumbersStillMachineChecked": true,
+    "newContractsWrittenNotRun": true,
+    "sourceOriginalAreasExact": [
+      9,
+      18,
+      13,
+      30,
+      36,
+      21
+    ],
+    "digitallyGradableSourceFiguresCount": 6,
+    "teacherOnlySourceOtherTasksCount": 7,
+    "newTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson2SourceAreaTests.cs",
+    "sourceHumanTilingMustNotMachinePass": true
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U02-L02-HEADING-01",
+      "sourceSection": "Warm-up: Which One Doesn't Belong: Shapes with Squares (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L02-HEADING-02",
+      "sourceSection": "Activity 1: Create and Compare (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L02-HEADING-03",
+      "sourceSection": "Activity 2: Use Square Tiles to Measure Area (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L02-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L02-HEADING-05",
+      "sourceSection": "Cool-down: Tile and Tell (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U02-L02-IMAGE-01",
+      "observedAltText": "a small square.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-02",
+      "observedAltText": "Diagram. Rectangle partitioned into 3 rows of 3 of the same size squares, with alternating shaded and non-shaded squares.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-03",
+      "observedAltText": "Diagram. Square partitioned into 4 of the same size squares, 2 shaded and 2 unshaded.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-04",
+      "observedAltText": "A rectangle tiled with blue and white same size squares.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-05",
+      "observedAltText": "A shape made of square tiles.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-06",
+      "observedAltText": "Groups of square tiles.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-07",
+      "observedAltText": "Figure for measuring area.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-08",
+      "observedAltText": "A figure for measuring area.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-09",
+      "observedAltText": "A figure for finding area.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-10",
+      "observedAltText": "A rectangle.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L02-IMAGE-11",
+      "observedAltText": "Outline of stairs. 6 steps.",
+      "originalReference": "unit-2/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 11,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "A rectangle has 5 rows and 4 square tiles per row. Find its area in square units.",
+    "answerType": "integer",
+    "expected": "20"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-23-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 37,
+  "sourceElementsSemanticallyVerified": 37,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Source-matched math and shapes are independently recreated CSS, not original publisher pixel copies",
+    "Teacher assessment still required for original physical tiling, layouts and complete oral reasoning",
+    "Original teacher-gated Cool-down replaced by separate independent first-party equivalent",
+    "No .NET runtime tests, CI, Stage D, academic approval, merge or deploy executed"
+  ]
+}

@@ -21,4 +21,76 @@
     <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Seeding/Grade3/g3-2021-provisional-rich-v2-corrections.json"
+                      LogicalName="Edulytics.Data.Grade3.SourceTeachingCorrections2021" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson15RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson16RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l17-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson17RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l18-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson18RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l19-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson19RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l20-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson20RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l21-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit1Lesson21RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l01-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson1RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l02-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson2RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l03-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson3RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l04-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson4RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l05-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson5RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l06-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson6RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l07-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson7RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l08-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson8RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l09-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson9RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l10-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson10RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l11-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson11RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l12-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson12RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l13-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson13RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l14-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson14RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l15-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit2Lesson15RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l01-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson1RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson2RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l03-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson3RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l04-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson4RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l05-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson5RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l06-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson6RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l07-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson7RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l08-2021.rich-lesson-v2.json"
+                      LogicalName="Edulytics.Data.Grade3.Unit3Lesson8RichV2" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit3" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit4" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit5" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit6" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit7" />
+    <EmbeddedResource Include="../Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-source-intake-2021.json" LogicalName="Edulytics.Data.Grade3.SourceIntakeUnit8" />
+  </ItemGroup>
+
 </Project>
+

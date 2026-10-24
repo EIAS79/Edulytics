@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 135,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U08:L07",
+  "unitNumber": 8,
+  "lessonNumber": 7,
+  "title": "Graph and Answer",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-8/lesson-7/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-7/lesson.html",
+  "stageA": {
+    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "goals": "Draw a scaled bar graph to represent a data set with several categories. Solve one- and two-step “how many more” and “how many less” problems using information presented in scaled bar graphs.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 0,
+    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": true
+  },
+  "stageB": {
+    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U08:L07",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "580fe2a995d122a14a0dcd5024094bb515eedda75ce560c404562a4429424c39",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+  },
+  "stageC": {
+    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "family": "survey-scaled-bar-graphs",
+    "practiceAnswerType": "teacher",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Draw a Scaled Bar Graph with your teacher. Show the representation and explain how it meets the goal: Let’s represent our data on scaled bar graphs and answer questions about the data.",
+    "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data."
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U08-L07-HEADING-01",
+      "sourceSection": "Warm-up: Notice and Wonder: Graph (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-8/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L07-HEADING-02",
+      "sourceSection": "Activity 1: Draw a Scaled Bar Graph (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-8/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L07-HEADING-03",
+      "sourceSection": "Activity 2: Ask and Answer Questions (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-8/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L07-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-8/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L07-HEADING-05",
+      "sourceSection": "Cool-down: Graph Question (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-8/lesson-7/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 0,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Fictional data: 25 students chose club A and 20 club B. How many MORE chose the larger club?",
+    "answerType": "integer",
+    "expected": "5"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": false,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
+    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
+    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
+    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
+    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED"
+}

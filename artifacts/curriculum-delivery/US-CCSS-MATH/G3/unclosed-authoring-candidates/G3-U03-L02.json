@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 38,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L02",
+  "unitNumber": 3,
+  "lessonNumber": 2,
+  "title": "Addition and Subtraction Situations",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-2/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-2/lesson.html",
+  "stageA": {
+    "status": "PUBLIC_2021_TEACHER_AND_STUDENT_FACING_HTML_REVIEWED_PER_TASK_WITH_PDF_AND_ORIGINAL_MEDIA_BLOCKERS",
+    "goals": "Solve addition and subtraction problems within 1,000 in a way that makes sense to them.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 4,
+    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "publicTeacherPageReviewed": true,
+    "specificNumericAnchors": {
+      "table1Missing": 60,
+      "table2Missing": 60,
+      "iguazuFeet": 246,
+      "monumentDifferenceFeet": 456,
+      "eiffelBetweenFloorsSteps": 346
+    },
+    "sourceElementCount": 21,
+    "semanticallyMappedExcludingUnavailableOrRights": 13
+  },
+  "stageB": {
+    "status": "NEW_FIRST_PARTY_RICH_V2_GUARDED_CANONICAL_MATERIALIZATION_AUTHORED_NOT_RUN",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L02",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "9eb8fc899508b88e41f4c326cddcd8bd4762e381bbdfc0bbdddb331e59ab572d",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+    "sourceMathCorrected": true,
+    "publishedOrDeployed": false
+  },
+  "stageC": {
+    "status": "FIVE_SOURCE_NUMERIC_ANCHORS_NINE_OPEN_TEACHER_TASKS_GATED_COOLDOWN_UNVERIFIED_TESTS_WRITTEN_NOT_RUN",
+    "family": "addition-within-1000",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Monuments and Falls with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems involving addition and subtraction.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 14,
+    "digitallyGradableSourceSubtaskCount": 5,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson2SituationsSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "WU-LAUNCH",
+      "sourceSection": "Warm-up",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "WU-1-MIDDLE",
+      "sourceSection": "Warm-up table 1",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "WU-2-MIDDLE",
+      "sourceSection": "Warm-up table 2",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "WU-1-REASON",
+      "sourceSection": "Warm-up synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "WU-2-REASON",
+      "sourceSection": "Warm-up synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-IGUAZU",
+      "sourceSection": "Activity 1 task 1",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-DC",
+      "sourceSection": "Activity 1 task 2",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-EIFFEL",
+      "sourceSection": "Activity 1 task 3",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A1-STRATEGY",
+      "sourceSection": "Activity 1 synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "PHOTO-1",
+      "sourceSection": "Activity 1 artwork",
+      "coverage": "RIGHTS_RESTRICTED",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "PHOTO-2",
+      "sourceSection": "Activity 1 artwork",
+      "coverage": "RIGHTS_RESTRICTED",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "PHOTO-3",
+      "sourceSection": "Activity 1 artwork",
+      "coverage": "RIGHTS_RESTRICTED",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "PHOTO-4",
+      "sourceSection": "Activity 1 artwork",
+      "coverage": "RIGHTS_RESTRICTED",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-JOURNAL-1",
+      "sourceSection": "Activity 2 journal",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-JOURNAL-2",
+      "sourceSection": "Activity 2 journal",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "A2-JOURNAL-3",
+      "sourceSection": "Activity 2 journal",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "SYNTH",
+      "sourceSection": "Lesson synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CD",
+      "sourceSection": "Original How Much Taller? Cool-down",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CENTER-1",
+      "sourceSection": "Suggested optional center",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CENTER-2",
+      "sourceSection": "Suggested optional center",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    },
+    {
+      "id": "CENTER-3",
+      "sourceSection": "Suggested optional center",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "sourceFullyCompared": false,
+      "originalStudentTaskPdfVerified": false,
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L02-IMAGE-01",
+      "observedAltText": "Iguaz� Falls.",
+      "originalReference": "unit-3/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L02-IMAGE-02",
+      "observedAltText": "The Washington Monument.",
+      "originalReference": "unit-3/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L02-IMAGE-03",
+      "observedAltText": "The Lincoln Memorial.",
+      "originalReference": "unit-3/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L02-IMAGE-04",
+      "observedAltText": "The Eiffel Tower",
+      "originalReference": "unit-3/lesson-2/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 21,
+    "mathematicalOrTeacherSourceHtmlMapped": 13,
+    "thirdPartyPhotosNotVerified": 4,
+    "unavailableOriginalPublisherCoolDown": 1,
+    "unverifiedOptionalGameBoards": 3
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Calculate 375 + 161. Explain any regrouping.",
+    "answerType": "integer",
+    "expected": "536"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": false,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "The official 2021 three-page Student Task Statements PDF endpoint was visible from teacher preparation but could not be fetched or rendered for verification; HTML mathematical text is independently checked.",
+    "Original third-party contextual photos (Iguazu, Washington Monument, Lincoln Memorial, Eiffel Tower) not retrieved, rights-verified or pixel-compared; no publisher art copied.",
+    "Original gated How Much Taller? Cool-down is not publicly accessible to verify full source equivalence.",
+    "Original center game materials for Target Numbers stage 6, Five in a Row stage 8 and Rectangle Rumble stage 2 are not individually verified.",
+    "Open journal entries, partner strategies and use of physical base-ten blocks require actual teacher review; no such approval recorded.",
+    "New C# source, Razor view and authored xUnit contracts have not been compiled, run, deployed or academic-approved: Stage D deferred."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json"
+}

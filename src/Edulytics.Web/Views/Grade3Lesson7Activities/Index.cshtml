@@ -1,0 +1,164 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson7PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 3 · Questions About Scaled Bar Graphs";
+    var seasons=UsCcssG3Unit1Lesson6ChooseScale.SourceSeasons;
+    var bugs=UsCcssG3Unit1Lesson7GraphDifferences.Bugs;
+    var cool=UsCcssG3Unit1Lesson7GraphDifferences.IndependentCoolDown;
+    var originalCool=UsCcssG3Unit1Lesson7GraphDifferences.OriginalSourceCoolDown;
+}
+<style>
+.g3-l07{max-width:940px;margin:auto;padding:18px;color:#1e3e58}
+.g3-l07 .panel{background:white;border:1px solid #d4e1e8;border-radius:15px;padding:20px;margin:16px 0}
+.g3-l07 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.g3-l07 label{display:block;margin:11px 0 5px;font-weight:700}
+.g3-l07 textarea,.g3-l07 input{font:inherit;width:100%;max-width:680px;padding:10px;border:1px solid #8296a8;border-radius:8px}
+.g3-l07 .bar-row{display:flex;align-items:center;gap:12px;margin:12px 0}
+.g3-l07 .bar-row strong{width:102px;flex:none}
+.g3-l07 .bar{height:26px;background:#16839a}
+.g3-l07 .bug-graph-frame{overflow-x:auto}
+.g3-l07 .bug-source-chart{display:grid;grid-template-columns:38px minmax(340px,1fr);gap:8px;max-width:660px;min-width:400px}
+.g3-l07 .bug-graph-ticks{height:300px;display:flex;flex-direction:column;justify-content:space-between;font-size:.82rem}
+.g3-l07 .bug-graph-bars{height:300px;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:9px;align-items:end;border-left:2px solid #688298;border-bottom:2px solid #688298;padding:0 8px}
+.g3-l07 .bug-graph-column{height:300px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.g3-l07 .bug-graph-bar{background:#16839a;width:66%;max-width:75px;border-radius:4px 4px 0 0}
+.g3-l07 .bug-labels{grid-column:2;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:9px;padding:0 8px}
+.g3-l07 .bug-label{text-align:center;font-size:.85rem;overflow-wrap:anywhere}
+.g3-l07 .bug-x-title{grid-column:2;text-align:center;font-weight:700;margin:5px 0}
+.g3-l07 .good{border-left:4px solid #258052;padding-left:10px}
+.g3-l07 .bad{border-left:4px solid #b62f42;padding-left:10px}
+.g3-l07 .review{border-left:4px solid #a77411;padding-left:10px}
+.g3-l07 button{padding:13px 20px;background:#147889;color:#fff;border:0;border-radius:8px;font:inherit;cursor:pointer}
+</style>
+<main class="g3-l07">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <h1>Questions About Scaled Bar Graphs</h1>
+    <p>Use addition and subtraction to compare categories. The seasonal data are EXACT from the previous lesson. The original bug graph shows ticks by tens, so the publisher expects reasonable visual estimates and explanations, not only one magic answer.</p>
+    <form asp-controller="Grade3Lesson7Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.AdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. Warm-up: groups of dots</h2>
+            <p>The 2021 original warm-up dot images contain SEVEN and TWENTY-TWO dots. They may be grouped as three pairs plus one (7) and four groups of five plus two (22). These first-party dots do not duplicate the publisher's image positions. Explain your grouping to a partner.</p>
+            <p aria-label="Seven dots: three pairs and one">●● &nbsp; ●● &nbsp; ●● &nbsp; ●</p>
+            <p aria-label="Twenty-two dots: four groups of five and two">●●●●● &nbsp; ●●●●● &nbsp; ●●●●● &nbsp; ●●●●● &nbsp; ●●</p>
+            <label for="warmup">How do you see and count the groups?</label>
+            <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
+        </section>
+        <section class="panel">
+            <h2>2. Use your previous Favorite Time of the Year graph</h2>
+            <p>These are the 2021 source counts you graphed in the previous lesson. Each bar below uses the exact count, even when it lies between marks of ten.</p>
+            @foreach(var item in seasons){
+                <div class="bar-row"><strong>@item.Category</strong>
+                    <span class="bar" style="width:@(item.Count*100/40)%" aria-hidden="true"></span>
+                    <span>@item.Count students</span>
+                </div>
+            }
+            <p>Displayed maximum 40 students, with guide intervals at 0, 10, 20, 30, 40; exact counts remain visible.</p>
+            <div class="two">
+                <div><label for="season-total">How many students in all?</label><input id="season-total" name="SeasonsTotal" value="@Model.Answers.SeasonsTotal" inputmode="numeric" required /></div>
+                <div><label for="spring-fall">How many chose Spring OR Fall?</label><input id="spring-fall" name="SpringOrFall" value="@Model.Answers.SpringOrFall" inputmode="numeric" required /></div>
+                <div><label for="summer-winter">How many more chose Summer than Winter?</label><input id="summer-winter" name="SummerWinter" value="@Model.Answers.SummerWinter" inputmode="numeric" required /></div>
+                <div><label for="fall-spring">How many fewer chose Spring than Fall?</label><input id="fall-spring" name="FallSpring" value="@Model.Answers.FallSpring" inputmode="numeric" required /></div>
+            </div>
+            <label for="explain-season">Write your one-step equations; how do 'more than' and 'fewer than' relate?</label>
+            <textarea id="explain-season" name="SeasonExplanation" rows="3" maxlength="2000">@Model.Answers.SeasonExplanation</textarea>
+        </section>
+        <section class="panel">
+            <h2>3. Source-aligned Bugs in the Garden graph</h2>
+            <p>Read the picture graph using its 0–80 vertical scale in tens. Bars can fall BETWEEN labelled tens. Estimate instead of reading off an exact hidden table.</p>
+            <div class="bug-graph-frame">
+                <div class="bug-source-chart" role="img" aria-label="Types of Bugs in the Garden: vertical axis 0 to 80 in tens. Ant bar a little above 60; Ladybugs just above 10; Beetles just below 20; Spiders just below 10.">
+                    <div class="bug-graph-ticks" aria-hidden="true">
+                        @for(var tick=80;tick>=0;tick-=10){<span>@tick</span>}
+                    </div>
+                    <div class="bug-graph-bars" aria-hidden="true">
+                        @foreach(var item in bugs){
+                            <div class="bug-graph-column">
+                                <div class="bug-graph-bar" style="height:@(item.Count*300/80)px"></div>
+                            </div>
+                        }
+                    </div>
+                    <div class="bug-labels" aria-hidden="true">
+                        @foreach(var item in bugs){<strong class="bug-label">@item.Category</strong>}
+                    </div>
+                    <p class="bug-x-title">Type of bug</p>
+                </div>
+            </div>
+            <p>Guide scale: 0, 10, 20, 30, 40, 50, 60, 70, 80. The source chart does not print each exact underlying category count beside its bar.</p>
+            <p>Give REASONABLE estimates from the scaled graph. The teacher reviews the estimate, not an exact automated pass/fail.</p>
+            <div class="two">
+                <div><label for="bugs-total">About how many bugs altogether?</label><input id="bugs-total" name="BugTotalEstimate" value="@Model.Answers.BugTotalEstimate" inputmode="numeric" required /></div>
+                <div><label for="ants-spiders">About how many more Ants than Spiders?</label><input id="ants-spiders" name="AntSpiderEstimate" value="@Model.Answers.AntSpiderEstimate" inputmode="numeric" required /></div>
+                <div><label for="ants-ladybugs">About how many fewer Ladybugs than Ants?</label><input id="ants-ladybugs" name="AntLadybugEstimate" value="@Model.Answers.AntLadybugEstimate" inputmode="numeric" required /></div>
+            </div>
+            <label for="bug-questions">Write TWO different questions answerable from the bug graph, and share with a partner</label>
+            <textarea id="bug-questions" name="BugGraphQuestions" rows="3" maxlength="2000">@Model.Answers.BugGraphQuestions</textarea>
+            <label for="peer-exchange">Exchange your two questions with another group. What were their questions, and how did you answer them?</label>
+            <textarea id="peer-exchange" name="PartnerQuestionExchange" rows="3" maxlength="2000">@Model.Answers.PartnerQuestionExchange</textarea>
+            <p>Only the classroom teacher can verify whether you actually exchanged questions and discussed the solutions with another group.</p>
+            <label for="bug-reasoning">Explain how your graph estimates and equations make sense</label>
+            <textarea id="bug-reasoning" name="BugEstimateReasoning" rows="3" maxlength="2000">@Model.Answers.BugEstimateReasoning</textarea>
+        </section>
+        <section class="panel">
+            <h2>4. Lesson synthesis (10 minutes) — BEFORE source Cool-down</h2>
+            <p>Compare strategies for finding one-step more/fewer differences from scaled bars. Discuss how tens and ones and counting on help when a category is between tens.</p>
+            <label for="synthesis">Which graph-reading or subtraction strategies helped you today?</label>
+            <textarea id="synthesis" name="LessonSynthesis" rows="3" maxlength="2000">@Model.Answers.LessonSynthesis</textarea>
+            <p>Teacher-led optional centers: Sort and Display Stage 3 and Five in a Row Stage 6. Learning in groups requires the teacher's observation.</p>
+        </section>
+        <section class="panel">
+            <h2>5. ORIGINAL 2021 source Cool-down — Favorite Sports (5 minutes)</h2>
+            <p>The first-edition teacher guide's graph contains Football 28, Soccer 61, Basketball 35, Hockey 22, with scale 0 to 70 by fives. Independently authored vertical bars reproduce the mathematical values, not the publisher's art.</p>
+            <div class="bug-graph-frame">
+                <div class="bug-source-chart" role="img" aria-label="Favorite Sports; bar graph from 0 to 70 in steps of five; Football 28, Soccer 61, Basketball 35, Hockey 22">
+                    <div class="bug-graph-ticks" aria-hidden="true">@for(var tick=70;tick>=0;tick-=5){<span>@tick</span>}</div>
+                    <div class="bug-graph-bars" aria-hidden="true">
+                        @foreach(var item in originalCool){<div class="bug-graph-column"><div class="bug-graph-bar" style="height:@(item.Count*300/70)px"></div></div>}
+                    </div>
+                    <div class="bug-labels" aria-hidden="true">@foreach(var item in originalCool){<strong class="bug-label">@item.Category</strong>}</div>
+                    <p class="bug-x-title">Type of sport</p>
+                </div>
+            </div>
+            <div class="two">
+                <div><label for="sport-1">How many MORE students chose Soccer than Football?</label><input id="sport-1" name="SourceSportSoccerFootball" value="@Model.Answers.SourceSportSoccerFootball" inputmode="numeric" required /></div>
+                <div><label for="sport-2">How many FEWER students chose Hockey than Basketball?</label><input id="sport-2" name="SourceSportBasketballHockey" value="@Model.Answers.SourceSportBasketballHockey" inputmode="numeric" required /></div>
+            </div>
+            <label for="sport-work">Write expressions/equations and justify BOTH comparisons</label>
+            <textarea id="sport-work" name="SourceSportEquations" rows="3" maxlength="2000" required>@Model.Answers.SourceSportEquations</textarea>
+            <p>Numeric answers are machine-checked; expression and strategy are independently teacher-reviewed.</p>
+        </section>
+        <section class="panel">
+            <h2>6. Optional independent Edulytics sports-club practice — NOT source Cool-down</h2>
+            <p>Separate fictional graph, with Edulytics-authored values rather than the publisher's gated Cool-down. Scale by tens, and do not round raw data.</p>
+            @foreach(var item in cool){
+                <div class="bar-row"><strong>@item.Category</strong>
+                    <span class="bar" style="width:@(item.Count*100/40)%" aria-hidden="true"></span>
+                    <span>@item.Count students</span>
+                </div>
+            }
+            <div class="two">
+                <div><label for="cool-soccer">How many more in Soccer than Tennis?</label><input id="cool-soccer" name="CoolSoccerTennis" value="@Model.Answers.CoolSoccerTennis" inputmode="numeric" required /></div>
+                <div><label for="cool-sum">How many in Swimming and Basketball combined?</label><input id="cool-sum" name="CoolSwimBasket" value="@Model.Answers.CoolSwimBasket" inputmode="numeric" required /></div>
+                <div><label for="cool-total">How many responses in all?</label><input id="cool-total" name="CoolTotal" value="@Model.Answers.CoolTotal" inputmode="numeric" required /></div>
+            </div>
+            <label for="cool-explain">Draw/describe a new graph and explain the one-step differences</label>
+            <textarea id="cool-explain" name="CoolExplanation" rows="3" maxlength="2000">@Model.Answers.CoolExplanation</textarea>
+        </section>
+        <button type="submit">Check exact source and Cool-down numbers</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Feedback — not official assessment</h2>
+            @foreach(var item in Model.Feedback){
+                <div class="@(item.MachineCorrect==true?"good":item.MachineCorrect==false?"bad":"review")">
+                    <h3>@item.Label</h3>
+                    <p>@(item.MachineCorrect==true?"Correct.":item.MachineCorrect==false?"Recheck.":"Teacher review required.") @item.Message</p>
+                </div>
+            }
+        </section>
+    }
+    <p>Based on <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-7/lesson.html" rel="noopener noreferrer">IM K–5 Grade 3 Unit 1 Lesson 7, 2021</a>, locally archived. Original publisher charts and Ladybug photograph are not reproduced; numerical quantities are source-aligned and Cool-down is first-party.</p>
+</main>

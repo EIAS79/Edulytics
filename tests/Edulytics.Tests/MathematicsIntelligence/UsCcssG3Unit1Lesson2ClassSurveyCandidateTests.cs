@@ -1,0 +1,219 @@
+using Edulytics.Core.Mathematics.Curriculum;
+using Xunit;
+
+namespace Edulytics.Tests.MathematicsIntelligence;
+
+/// <summary>
+/// Stage C authored-but-NOT-RUN contracts for exact G3 U01 L02 class-dependent
+/// questions. Never equate numeric passing checks with real survey provenance.
+/// </summary>
+public sealed class UsCcssG3Unit1Lesson2ClassSurveyCandidateTests
+{
+    private static readonly UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] ExampleSchoolResponses =
+    [
+        new("Walk", 6), new("Bike", 3), new("Van", 1),
+        new("Bus", 5), new("Car", 2), new("Train", 1)
+    ];
+
+    [Fact]
+    public void RealClassDataMustBeProvidedRatherThanCopiedFromLesson1()
+    {
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            null, out _));
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            null, "Walk", "Bike", 3, out _));
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            ExampleSchoolResponses, out var classes));
+        Assert.Equal(6, classes!["Walk"]);
+        Assert.Equal(18, classes.Values.Sum());
+    }
+
+    [Theory]
+    [InlineData("Walk", "Bike", 3)]
+    [InlineData("Bus", "Car", 3)]
+    [InlineData("Walk", "Walk", -1)]
+    public void OneStepComparisonIsGradedOrRejectedByScope(
+        string first, string second, int difference)
+    {
+        var eligible = UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            ExampleSchoolResponses, first, second, difference, out var correct);
+        if (first == second)
+        {
+            Assert.False(eligible);
+            Assert.False(correct);
+        }
+        else
+        {
+            Assert.True(eligible);
+            Assert.True(correct);
+            Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+                ExampleSchoolResponses, first, second, difference + 1, out var wrong));
+            Assert.False(wrong);
+        }
+    }
+
+    [Fact]
+    public void TwoStepClassComparisonAcceptsCorrectAndRejectsIncorrect()
+    {
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            ExampleSchoolResponses, "Walk", "Bike", "Van", 8, out var correct));
+        Assert.True(correct);
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            ExampleSchoolResponses, "Walk", "Bike", "Van", 7, out var wrong));
+        Assert.False(wrong);
+    }
+
+    [Fact]
+    public void InvalidClassGraphCannotBeAutoGraded()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] duplicates =
+            [new("Walk", 3), new("walk", 5)];
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            duplicates, out _));
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] invalid =
+            [new("Walk", -1), new("Bike", 3)];
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            invalid, out _));
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            ExampleSchoolResponses, "Horse", "Bus", 5, out _));
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            ExampleSchoolResponses, "Walk", "Walk", "Bus", 7, out _));
+    }
+
+    [Theory]
+    [InlineData("collect-real-sticky-note-survey")]
+    [InlineData("construct-class-picture-graph")]
+    [InlineData("construct-class-bar-graph")]
+    [InlineData("explain-true-false-statement")]
+    [InlineData("justify-with-partner")]
+    [InlineData("revise-math-community-norms")]
+    [InlineData("cool-down-open-response")]
+    public void TeacherObservedTasksAreNotAutoGraded(string task)
+    {
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.RequiresTeacherJudgment(task));
+    }
+    [Fact]
+    public void ARealClassMayHaveThirtyLearnersButNumericProblemsRemainWithinTwenty()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] classOfThirty =
+        [
+            new("Bike", 3), new("Walk", 14), new("Van", 2),
+            new("Bus", 5), new("Car", 4), new("Train", 2)
+        ];
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            classOfThirty, out var values));
+        Assert.Equal(30, values!.Values.Sum());
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            classOfThirty, "Bus", "Car", 1, out var correct));
+        Assert.True(correct);
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            classOfThirty, "Walk", "Bus", "Bike", 16, out _));
+    }
+
+    [Fact]
+    public void FirstPartyClassSurveyGraphsKeepBarsAnchoredToZeroAndFortyLearnerPictureDataVisible()
+    {
+        // Razor source guard written for deferred Stage D, NOT executed in Stage A-B-C.
+        DirectoryInfo? directory = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (directory is not null)
+        {
+            var candidate = Path.Combine(directory.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson2Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { path = candidate; break; }
+            directory = directory.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        Assert.Contains("min-height:240px;height:auto", view);
+        Assert.Contains("class-chart-bar-col", view);
+        Assert.Contains("class-chart-labels", view);
+        Assert.Contains("Horizontal axis category labels", view);
+        Assert.Contains("Ways to get home", view);
+        Assert.DoesNotContain(
+            "<span class=\"class-graph-label\">@item.Category: @item.Students</span>", view);
+        Assert.Contains("height:@(item.Students * 240 / graphMax)px", view);
+    }
+
+    [Fact]
+    public void AnOverFortySurveyDoesNotProduceAnAutomaticNumericPass()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] impossible =
+            [new("Walk", 21), new("Bike", 21)];
+        Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(
+            impossible, out _));
+    }
+
+    [Fact]
+    public void AdaptedTeacherCategoriesCanBeUsedInsteadOfFixedSourceWords()
+    {
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] rows =
+        [
+            new("Bicycle",5), new("Walk",6), new("Scooter",2),
+            new("Bus",4), new("Car",3), new("Train",1)
+        ];
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(rows,out var counts));
+        Assert.Equal(21,counts!.Values.Sum());
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
+            rows,"Scooter","Bus",2,out var one));
+        Assert.True(one);
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            rows,"Scooter","Bus","Walk",0,out var two));
+        Assert.True(two);
+    }
+
+    [Fact]
+    public void Original2021ReadingCoolDownHasSeparateActualSourceNumbers()
+    {
+        var rows = UsCcssG3Unit1Lesson2SourceCoolDown.Values;
+        Assert.Equal(new[] { "Park", "Home", "School", "Library" },
+            rows.Select(x => x.Category));
+        Assert.Equal(new[] { 8, 5, 4, 2 }, rows.Select(x => x.Students));
+        Assert.Equal(19, UsCcssG3Unit1Lesson2SourceCoolDown.Total);
+        Assert.Equal(3, UsCcssG3Unit1Lesson2SourceCoolDown.ParkMinusHome);
+        Assert.False(UsCcssG3Unit1Lesson2SourceCoolDown.SchoolOrLibraryExceedsPark);
+        Assert.Equal(0, UsCcssG3Unit1Lesson2SourceCoolDown.AxisMin);
+        Assert.Equal(10, UsCcssG3Unit1Lesson2SourceCoolDown.AxisMax);
+        Assert.Equal(1, UsCcssG3Unit1Lesson2SourceCoolDown.AxisStep);
+    }
+
+    [Fact]
+    public void FirstEditionTeacherChoiceAndSourceCoolDownHaveDistinctAnswerFields()
+    {
+        var answers = typeof(Edulytics.Web.ViewModels.LessonContent.Grade3Lesson2Answers);
+        foreach (var property in new[] { "SourceCoolDownParkHome",
+            "SourceCoolDownSchoolLibraryVsPark", "SourceCoolDownExplanation",
+            "TeacherChosenOneStepQuestion", "TeacherChosenTwoStepQuestion",
+            "SynthesisReasoning" })
+            Assert.NotNull(answers.GetProperty(property));
+    }
+
+    [Fact]
+    public void The2021SourceChronologyAndSourceIndependentReadingGraphAreAuthored()
+    {
+        // Source-only contract authored for Stage D; NEVER run here.
+        DirectoryInfo? root = new(AppContext.BaseDirectory);
+        string? path = null;
+        while (root is not null)
+        {
+            var candidate = Path.Combine(root.FullName, "src", "Edulytics.Web",
+                "Views", "Grade3Lesson2Activities", "Index.cshtml");
+            if (File.Exists(candidate)) { path = candidate; break; }
+            root = root.Parent;
+        }
+        Assert.NotNull(path);
+        var view = File.ReadAllText(path!);
+        var synth = view.IndexOf("4. Lesson synthesis", StringComparison.Ordinal);
+        var cool = view.IndexOf("5. Source-aligned 2021 Cool-down", StringComparison.Ordinal);
+        var community = view.IndexOf("6. Math Community", StringComparison.Ordinal);
+        Assert.True(synth >= 0 && cool > synth && community > cool);
+        Assert.Contains("name=\"SourceCoolDownParkHome\"", view);
+        Assert.Contains("name=\"SourceCoolDownSchoolLibraryVsPark\"", view);
+        Assert.Contains("name=\"TeacherChosenOneStepQuestion\"", view);
+        Assert.Contains("name=\"TeacherChosenTwoStepQuestion\"", view);
+        Assert.Contains("source-reading-bars", view);
+        Assert.Contains("Park 8, Home 5, School 4 and Library 2", view);
+        Assert.Contains("30 seconds of quiet thinking", view);
+    }
+
+}

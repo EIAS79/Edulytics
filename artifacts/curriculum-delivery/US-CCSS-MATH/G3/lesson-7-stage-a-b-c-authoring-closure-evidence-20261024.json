@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L07",
+  "sourceTeacher": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-7/lesson.html",
+  "teacherGuide": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+  "sourceSportsGraphData": "https://www.coreknowledge.org/wp-content/uploads/2023/09/CKMath_G3U1_IntroducingMultiplication_TG_W2.pdf",
+  "sourceSvgs": [
+    {
+      "id": "5xpnxv4o2wue6k0ekil2a3jcatrw",
+      "contentType": "image/svg+xml",
+      "bytes": 4234,
+      "sourceVisibleDots": 7
+    },
+    {
+      "id": "sn3wjqihr1ucbvxvda7oexqlmqv3",
+      "contentType": "image/svg+xml",
+      "bytes": 12701,
+      "sourceVisibleDots": 22
+    }
+  ],
+  "sourceMath": {
+    "warmupDots": [
+      7,
+      22
+    ],
+    "seasons": [
+      24,
+      13,
+      40,
+      22
+    ],
+    "seasonAnswers": [
+      99,
+      35,
+      16,
+      9
+    ],
+    "bugsAlt": [
+      62,
+      11,
+      19,
+      7
+    ],
+    "bugEstimatedAntMinusSpiderTeacherGuideSample": 53,
+    "bugAltitudeInferredAntMinusSpider": 55,
+    "bugApproximateNumericAutoPassed": false,
+    "originalSourceCoolDownSports": {
+      "Football": 28,
+      "Soccer": 61,
+      "Basketball": 35,
+      "Hockey": 22
+    },
+    "originalCoolDownAnswers": [
+      33,
+      13
+    ]
+  },
+  "repaired": [
+    "Replaced fabricated dot-group totals 15 and20 by original seven and twenty-two",
+    "Added original Favorite Sports student Cool-down graph and two comparison questions with exact graders and separate mathematical work explanations",
+    "Original 0–80/10 bug estimates remain teacher-reviewed and can vary",
+    "Kept independently authored fictional club problem as clearly optional extra",
+    "Added dedicated source-specific Rich V2 and written-only tests"
+  ],
+  "sourceOriginalImageRights": "No publisher artwork copied; first-party source-equivalent graph semantics",
+  "sourceStudentText": "Compared public student HTML, local teacher guide and published first-edition teacher guide text",
+  "testsWritten": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7GraphDifferencesTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7OriginalSourceTests.cs",
+    "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson7RichV2SourceCoverageTests.cs"
+  ],
+  "testsRun": false,
+  "stageD": "NOT_STARTED",
+  "ciRunByAssistant": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceMaterialExactPixelParityClaimed": false,
+  "result": {
+    "sourceElementsIdentified": 13,
+    "sourceElementsSourceSemanticAuthoringVerified": 13,
+    "state": "READY_FOR_STAGE_D",
+    "unfinishedFixableAuthoringGaps": 0
+  }
+}

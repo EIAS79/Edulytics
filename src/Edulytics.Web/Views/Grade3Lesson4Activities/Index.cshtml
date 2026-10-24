@@ -1,0 +1,140 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson4PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · Create Scaled Picture Graphs";
+    var demo = UsCcssG3Unit1Lesson4ScaledTravelSurvey.OriginalCoolDown;
+}
+<style>
+.g3-l04{max-width:960px;margin:auto;padding:18px;color:#223c54}
+.g3-l04 .panel{padding:22px;margin:16px 0;border-radius:15px;background:#fff;border:1px solid #d8e4ed}
+.g3-l04 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}
+.g3-l04 label{font-weight:700;display:block;margin:12px 0 5px}
+.g3-l04 input,.g3-l04 textarea{font:inherit;padding:10px;width:100%;max-width:680px;border-radius:8px;border:1px solid #748ea2}
+.g3-l04 .rows{display:grid;grid-template-columns:120px 1fr;align-items:center;gap:10px}
+.g3-l04 .glyphs{font-size:1.3rem;letter-spacing:.23rem;overflow-wrap:anywhere}
+.g3-l04 button{background:#127589;color:#fff;font:inherit;padding:12px 22px;border:0;border-radius:8px;cursor:pointer}
+.g3-l04 .good{border-left:4px solid #168456;padding-left:10px}
+.g3-l04 .bad{border-left:4px solid #ad3544;padding-left:10px}
+.g3-l04 .review{border-left:4px solid #a17319;padding-left:10px}
+</style>
+<main class="g3-l04">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <h1>Make a scaled picture graph</h1>
+    <p>The goal is to collect actual class responses, then make a pictograph where one full mark represents TWO learners. A half mark represents ONE learner. This lesson's numeric helper cannot prove that a real class survey happened.</p>
+    <form asp-controller="Grade3Lesson4Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. Warm-up — more groups of dots</h2>
+            <p>Consider these independently drawn groups. How many do you see without counting individual dots? Explain your strategy to a partner.</p>
+            <p aria-label="three groups of five dots: source count 15">●●●●● &nbsp; ●●●●● &nbsp; ●●●●●</p>
+            <p aria-label="five groups of five dots: source count 25">●●●●● &nbsp; ●●●●● &nbsp; ●●●●● &nbsp; ●●●●● &nbsp; ●●●●●</p><p>These new drawings represent the 2021 teacher-guide examples 15 and 25, and do not copy original images.</p>
+            <label for="warmup">My way to group the dots and explain the total</label>
+            <textarea name="Warmup" id="warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
+            <p>Teacher review: these are new drawings aligned to the warm-up strategy; exact original image arrangements still need image-level verification.</p>
+        </section>
+        <section class="panel">
+            <h2>2. Ask your classmates: How would you like to travel?</h2>
+            <p>Choose one option per student: car (C), train (T), boat (B), balloon (Bal), plane (P) or helicopter (H). Collect the data as directed by your teacher. Do not submit classmates' names or personal identifiers into this activity.</p>
+            <p>Enter only the six teacher-confirmed totals. Do not invent survey results or copy the fixed counts from another lesson.</p>
+            <p class="note">Use a paper classroom response table with two columns (classmate identifier and way of travelling) during Activity 1, following your teacher's privacy instructions. The table stays in class; only six aggregate counts belong in this activity. The publisher's Student Facing task requires collecting individual classmate preferences before making the graph.</p>
+            <p class="note">Teacher-only printable collection template (do not submit names online):</p>
+            <table class="table" aria-label="Blank teacher-led classroom collection record; paper only">
+                <thead><tr><th scope="col">Pupil code on paper</th><th scope="col">Preferred travel: C / T / B / Bal / P / H</th></tr></thead>
+                <tbody>
+                    @for (var i = 1; i <= 8; i++)
+                    {
+                        <tr><td>__________</td><td>__________________________</td></tr>
+                    }
+                </tbody>
+            </table>
+            <div class="two">
+                <div><label for="car">Car</label><input id="car" type="number" min="0" max="40" name="Car" value="@Model.Answers.Car" required /></div>
+                <div><label for="train">Train</label><input id="train" type="number" min="0" max="40" name="Train" value="@Model.Answers.Train" required /></div>
+                <div><label for="boat">Boat</label><input id="boat" type="number" min="0" max="40" name="Boat" value="@Model.Answers.Boat" required /></div>
+                <div><label for="balloon">Balloon</label><input id="balloon" type="number" min="0" max="40" name="Balloon" value="@Model.Answers.Balloon" required /></div>
+                <div><label for="plane">Plane</label><input id="plane" type="number" min="0" max="40" name="Plane" value="@Model.Answers.Plane" required /></div>
+                <div><label for="helicopter">Helicopter</label><input id="helicopter" type="number" min="0" max="40" name="Helicopter" value="@Model.Answers.Helicopter" required /></div>
+            </div>
+            <label for="source-note">Describe how you collected one response per pupil and why the tally counts are reliable</label>
+            <textarea id="source-note" name="TeacherConfirmedSurvey" rows="3" maxlength="2000">@Model.Answers.TeacherConfirmedSurvey</textarea>
+        </section>
+        <section class="panel">
+            <h2>3. Build your two-to-one graph</h2>
+            <p>Draw one whole symbol for every two students. When a category has an odd number, draw a half symbol for the single student left over.</p>
+            <p><strong>Key: ● = 2 students; ◐ = 1 student.</strong></p>
+            @if (Model.EnteredSurvey is not null)
+            {
+                <h3>How Our Class Would Like to Travel — entered data</h3>
+                <div class="rows" role="group" aria-label="Reconstructed picture graph based on submitted counts">
+                @foreach(var category in Model.EnteredSurvey){
+                    <strong>@category.Category</strong>
+                    <span class="glyphs" aria-label="@category.Students students, represented as @UsCcssG3Unit1Lesson4ScaledTravelSurvey.GlyphCounts(category.Students).Whole whole marks and @UsCcssG3Unit1Lesson4ScaledTravelSurvey.GlyphCounts(category.Students).Half half marks">@UsCcssG3Unit1Lesson4ScaledTravelSurvey.RepresentWithMarks(category.Students)</span>
+                }
+                </div>
+                <p>This is generated from entered values, NOT teacher-verified class data or a graded original graph drawing.</p>
+            }
+            <div class="two">
+                <div><label for="car-icons">Number of WHOLE symbols needed for Car</label><input id="car-icons" name="CarWholeSymbols" inputmode="numeric" value="@Model.Answers.CarWholeSymbols" required /></div>
+                <div><label for="train-half">Number of HALF symbols needed for Train (0 or 1)</label><input id="train-half" name="TrainHalfSymbol" inputmode="numeric" value="@Model.Answers.TrainHalfSymbol" required /></div>
+            </div>
+            <label for="graph-explain">Explain the title, key, all six categories, and how you represented an odd number</label>
+            <textarea name="GraphExplanation" id="graph-explain" rows="4" maxlength="2000">@Model.Answers.GraphExplanation</textarea>
+            <p>Partner work: exchange graph drawings and check that both children represented the same counts. Teacher reviews title, key, half-symbol construction and source tally.</p>
+        </section>
+        <section class="panel">
+            <h2>4. Lesson synthesis and Math Community — before the Cool-down</h2>
+            <p>Revisit the actual class picture graph from Activity 2. The source asks TWO separate changes: if 2 more students chose Balloon, add one whole picture (key 2); if 1 more student chose Car, represent the extra learner with half of a picture, or complete an existing half if the old count was odd. Explain your reasoning with the graph rather than assuming either new survey result is real.</p>
+            <label for="balloon-plus-two">What would change in the Balloon row if two MORE students chose Balloon? Show or describe the symbols.</label>
+            <textarea id="balloon-plus-two" name="BalloonPlusTwoGraphChange" rows="3" maxlength="2000">@Model.Answers.BalloonPlusTwoGraphChange</textarea>
+            <label for="car-plus-one">What would change in the Car row if ONE MORE student chose Car? Explain how the existing odd or even number affects the half symbol.</label>
+            <textarea id="car-plus-one" name="CarPlusOneGraphChange" rows="3" maxlength="2000">@Model.Answers.CarPlusOneGraphChange</textarea>
+            <p class="note">These are two different student graph-construction questions. The teacher checks both against the current class values; neither is certified by numeric input.</p>
+            <p>Math Community: discuss when a class norm helped your group collect, represent or interpret data. Decide whether to add or revise a norm.</p>
+            <label for="reflection">My explanation and a helpful classroom norm</label>
+            <textarea id="reflection" name="TeacherReflection" rows="3" maxlength="2000">@Model.Answers.TeacherReflection</textarea>
+            <p>Teacher-only rubric: verify actual survey provenance, category title/key, exact counts, odd-category half marks, partner comparison, and classroom mathematical norms. Never infer that these occurred from numeric correctness.</p>
+        </section>
+        <section class="panel">
+            <h2>5. Source-aligned Cool-down (5 minutes): four more Plane students</h2>
+            <p>Original 2021 Teacher Guide source mathematics: FOUR absent students also choose Plane. Under key 2, add TWO full picture marks to Plane. This is a first-party Edulytics illustration, not the original publisher diagram.</p>
+            <div class="rows">
+                @foreach(var category in demo){
+                    <strong>@category.Category</strong>
+                    <span class="glyphs" aria-label="@category.Students fictional students; full symbol equals 2 students and half symbol equals 1">@UsCcssG3Unit1Lesson4ScaledTravelSurvey.RepresentWithMarks(category.Students)</span>
+                }
+            </div>
+            <p>Key: ● = 2 students; ◐ = 1 student.</p>
+            <div class="two">
+                
+                
+                <div><label for="plane-plus-four">If FOUR absent pupils choose Plane, how many ADDITIONAL whole marks are required?</label><input id="plane-plus-four" name="SourcePlaneExtraWhole" inputmode="numeric" value="@Model.Answers.SourcePlaneExtraWhole" required /></div><div><label for="plane-final">Fictional Edulytics Plane shows 3 pupils. After FOUR more, how many whole Plane marks are there?</label><input id="plane-final" name="SourcePlaneWholeAfterFour" inputmode="numeric" value="@Model.Answers.SourcePlaneWholeAfterFour" required /></div>
+                
+            </div>
+            <label for="source-plane-drawing">Draw the TWO additional Plane picture symbols on your own graph, and explain the key (teacher review required)</label><textarea name="SourcePlaneDrawing" id="source-plane-drawing" rows="3" maxlength="2000">@Model.Answers.SourcePlaneDrawing</textarea><label for="cool-explain">Explain your independently drawn pictograph and its odd-category halves</label>
+            <textarea id="cool-explain" name="CoolDownExplanation" rows="4" maxlength="2000">@Model.Answers.CoolDownExplanation</textarea>
+        </section>
+<section class="panel"><h2>6. Optional Edulytics extension — not the 2021 source Cool-down</h2>
+            <p>These extra independent number checks are not required for the five-minute original-source-aligned Plane task.</p>
+            <div class="two">
+                <div><label for="cd-train-full">Optional whole Train marks</label><input id="cd-train-full" name="CoolDownTrainWhole" inputmode="numeric" value="@Model.Answers.CoolDownTrainWhole" /></div>
+                <div><label for="cd-train-half">Optional half Train mark</label><input id="cd-train-half" name="CoolDownTrainHalf" inputmode="numeric" value="@Model.Answers.CoolDownTrainHalf" /></div>
+                <div><label for="cd-total">Optional total across six fictional categories</label><input id="cd-total" name="CoolDownTotal" inputmode="numeric" value="@Model.Answers.CoolDownTotal" /></div>
+            </div><label for="cd-plane">If TWO extra pupils, rather than four, chose Plane, how many whole marks would the fictional Edulytics Plane group have?</label><input name="CoolDownPlanePlusTwoWhole" id="cd-plane" inputmode="numeric" value="@Model.Answers.CoolDownPlanePlusTwoWhole" /></section>
+        <button type="submit">Check my numeric representations</button>
+    </form>
+    @if(Model.Submitted) {
+        <section class="panel" aria-live="polite">
+            <h2>Feedback, not an official grade</h2>
+            @foreach(var item in Model.Feedback) {
+                <div class="@(item.Correct == true ? "good" : item.Correct == false ? "bad" : "review")">
+                    <h3>@item.Question</h3>
+                    <p>@(item.Correct == true?"Correct for the supplied data.":item.Correct == false?"Check the key again.":"Teacher review required.") @item.Explanation</p>
+                </div>
+            }
+        </section>
+    }
+    <p>Curriculum source: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/lesson.html" rel="noopener noreferrer">IM K–5, Grade 3 U01 L04, 2021</a>. The pupil activity's goals and variable survey categories are aligned to the locally archived original. The Cool-down is independently authored by Edulytics.</p>
+</main>

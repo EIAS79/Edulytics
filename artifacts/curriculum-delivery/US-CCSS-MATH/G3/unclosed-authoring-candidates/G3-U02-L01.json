@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 22,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U02:L01",
+  "unitNumber": 2,
+  "lessonNumber": 1,
+  "title": "What is Area? PLC Activity",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-2/lesson-1/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-1/lesson.html",
+  "stageA": {
+    "status": "2021_ORIGINAL_STUDENT_TASKS_3_PAGES_ALL_10_FIGURES_BLACKLINE_2_PAGES_TILED_SHAPES_AND_TEACHER_PREPARATION_FULLY_REVIEWED",
+    "goals": "Describe the relative size of plane figures in their own language.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 10,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "directPublicKendallHuntTeacherAndStudentPageRead": true,
+    "publicWarmupScalableCounts": [
+      null,
+      12,
+      20
+    ],
+    "originalPairs": [
+      "wide vs tall triangle",
+      "two ovals",
+      "hexagon vs triangle",
+      "two rectangles",
+      "hexagon vs bent octagon tiled with pattern blocks",
+      "A pentagon/B parallelogram/C rectangle"
+    ],
+    "originalSourceGeometriesPixelVerified": true,
+    "originalWarmupSourceCounts": [
+      8,
+      12,
+      20
+    ],
+    "source2021OriginalPdfSha256": "14848aca1cab6eb2fd68895a8a8a714c23cf5a4e248e25d31e168adcabb1b8e3",
+    "sourceOriginalImageAssetsIndividuallyInspected": 10,
+    "originalBlacklinePatternMasterPagesRead": 2,
+    "originalBlacklineMasterSha256": "2dc1b8754c1d556df8afa8d6e3307145b5b8b55115cc3844b70a7c40d4b31322",
+    "originalAcademicElementsIdentified": 28,
+    "originalAcademicElementsSemanticallyVerified": 28,
+    "sourceSemanticCoveragePercent": 100
+  },
+  "stageB": {
+    "status": "INDEPENDENT_FIRST_PARTY_RICHV2_V1_CANONICAL_RESOURCE_EMBEDDED_WITH_GUARDED_BRIDGE_AND_SOURCE_COUNTING_AND_AREA_ILLUSTRATIONS",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U02:L01",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "ecf441d1960f3c978e50703629e3a9c49f2e795f70a375b3c96ec182bd813dae",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificIntroductionToAreaNotPerimeterAndShapeComparisonAuthored": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l01-2021.rich-lesson-v2.json",
+    "sourceSpecificRichV2Version": "g3-u02-l01-2021-source-abc-firstparty-20261024-v1",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson1RichV2.cs",
+    "sourceOriginalArtworkBundled": false
+  },
+  "stageC": {
+    "status": "THREE_EXACT_SOURCE_DOT_COUNTS_8_12_20_NUMERIC_WITH_HUMAN_REASONING_AND_SEVEN_ORIGINAL_SHAPE_WORK_ITEMS_TEACHER_ONLY_WRITTEN_TESTS_UNRUN",
+    "family": "area-comparison",
+    "practiceAnswerType": "teacher",
+    "coolDownAnswerType": "teacher",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Compare Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s compare the size of shapes.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceIndependentNumericWarmupChecks": 2,
+    "originalHumanSourceGeometryTasks": 7,
+    "independentPracticeAndCoolDownTeacherOnly": true,
+    "testsWrittenNotRun": true,
+    "originalSourceNumericArrayChecks": 3,
+    "newSourceContractTestsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson1SourceAreaTests.cs",
+    "originalSourceCanBeAutoPassedByNumericOnly": false
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U02-L01-HEADING-01",
+      "sourceSection": "Warm-up: How Many Do You See: Arrays (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L01-HEADING-02",
+      "sourceSection": "Activity 1: Compare Shapes (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L01-HEADING-03",
+      "sourceSection": "Activity 2: Pattern Blocks to Compare Shapes (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L01-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U02-L01-HEADING-05",
+      "sourceSection": "Cool-down: Compare Area (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U02-L01-IMAGE-01",
+      "observedAltText": "A group of dots.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-02",
+      "observedAltText": "A group of dots with 4 rows of 3.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-03",
+      "observedAltText": "4 rows of 5 dots.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-04",
+      "observedAltText": "Two triangles. Left, shorter but longer. Right, taller but shorter.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-05",
+      "observedAltText": "Two ovals. Left, smaller oval. Right, larger oval.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-06",
+      "observedAltText": "Left, hexagon. Right, triangle. Triangle less than half size of hexagon.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-07",
+      "observedAltText": "2 rectangles. If cut up, rectangle on right could fit inside rectangle on left.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-08",
+      "observedAltText": "Top, 6-sided hexagon. Bottom, 8-sided polygon, resembles upside-down heart.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-09",
+      "observedAltText": "3 shapes. Top, 5-sided polygon, labeled A. Middle, parallelogram ,labeled B. Bottom, rectangle, labeled� C.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U02-L01-IMAGE-10",
+      "observedAltText": "Picture of pattern blocks.",
+      "originalReference": "unit-2/lesson-1/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 10,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Draw two shapes with different outlines and equal areas using unit squares; explain how you know.",
+    "answerType": "teacher",
+    "expected": null
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-22-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 28,
+  "sourceElementsSemanticallyVerified": 28,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Published learner runtime and .NET tests not executed by A–B–C policy",
+    "Publisher source media reviewed for mathematical semantics but not copied pixel-for-pixel",
+    "Original pattern-block physical tiling and oral reasoning require actual human teacher assessment",
+    "Publisher gated original Cool-down replaced with separately authored skill equivalent"
+  ]
+}

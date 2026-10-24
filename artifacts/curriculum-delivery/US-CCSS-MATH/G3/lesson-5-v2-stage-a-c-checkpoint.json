@@ -1,0 +1,265 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 5,
+  "unitNumber": 1,
+  "lessonNumber": 5,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L05",
+  "title": "Represent Data in Scaled Bar Graphs",
+  "sourceEdition": "Illustrative Mathematics K–5 First Edition (2021)",
+  "localSourceHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-1\\lesson-5\\lesson.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/lesson.html",
+  "targetSourceParityPercent": 100,
+  "claimedSourceParityPercent": null,
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "stageA": {
+    "status": "FIRST_EDITION_2021_10_OF_10_SOURCE_SEMANTIC_AUTHORING_ITEMS_MATCHED",
+    "sourceGraphOne": {
+      "key": 1,
+      "axisMin": 0,
+      "axisMax": 12,
+      "counts": {
+        "Bike": 12,
+        "Walk": 4,
+        "Bus or Van": 6,
+        "Car": 3
+      }
+    },
+    "sourceGraphTwo": {
+      "key": 2,
+      "axisMin": 0,
+      "axisMax": 24,
+      "counts": {
+        "Bike": 12,
+        "Walk": 4,
+        "Bus or Van": 6,
+        "Car": 3
+      }
+    },
+    "secondActivity": "Teacher reuses authentic L04 travel preference counts, student chooses ticks 2 or 5; diagrams by 2 source grid maximum16 and by5 maximum40.",
+    "sourceTaskPdfReviewed": false,
+    "rights": "Graph graphics redrawn independently, not copied.",
+    "sourceTeacherGuide": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "originalSourceCoolDown": {
+      "animals": [
+        "Elephant",
+        "Tiger",
+        "Giraffe",
+        "Otter"
+      ],
+      "counts": [
+        17,
+        10,
+        14,
+        4
+      ],
+      "missingSourceBars": [
+        "Tiger",
+        "Otter"
+      ],
+      "tickStep": 5
+    }
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_RICH_V2_AND_STUDENT_GRAPH_SOURCE_COOLDOWN_AUTHORED",
+    "codePaths": {
+      "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson5ActivitiesController.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson5PracticePage.cs",
+      "studentLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "activities": [
+      "Number Talk counting 2s and 5s",
+      "Two source-matched How We Get Home bar graphs with different tick sizes",
+      "L04 class data reused via manual re-entry; check teacher provenance",
+      "Either chosen scale2 or5 renders same values accurately",
+      "Teacher-reviewed partner scale selection",
+      "New original fictional Edulytics Cool-down"
+    ],
+    "richV2SourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "effectiveLearnerBodyCompared": false,
+    "currentContentStatus": "AUTHORING_SOURCE_REPAIRED_NO_RUNTIME_PARITY_CERTIFIED",
+    "zeroBaselineAndExternalCategoryLabelsAuthored": "Both source comparison plots (axes 1 and 2) and variable reused L04 plot now draw bars bottom-aligned with category labels in a separate row. No view was rendered.",
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "version": "g3-u01-l05-first-edition-rich-v2-20261024-v2",
+      "sourceMathematicsCovered": true,
+      "stageDRuntimeDeferred": true
+    },
+    "sourceOriginalArtCopied": false
+  },
+  "stageC": {
+    "status": "NUMERIC_ZOO_SOURCE_TIGER_OTTER_GRADERS_AND_TEACHER_DRAWING_RUBRIC_TESTS_AUTHORED_NOT_RUN",
+    "testsWritten": true,
+    "testsRun": false,
+    "testsPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5ScaledBarGraphTests.cs",
+    "route": "student/practice/grade3-u01-l05",
+    "sourceQuestions": 4,
+    "originalCoolDownNumericQuestions": 3,
+    "teacherGradedTasks": 5,
+    "unrunVisualSourceAndCarryOverGraphContractWritten": true,
+    "writtenSourceTests": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5ScaledBarGraphTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson5RichV2SourceCoverageTests.cs"
+    ],
+    "originalZooSourceFamilyGrader": true
+  },
+  "sourceElements": [
+    {
+      "id": "goals_timeline",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.57–58, Prep",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Scaled bar graphs, 3.MD.B.3, Number Talk 10, compare 10, create 25, synthesis 10, Cool-down 5",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "number_talk_four_exact",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.59, local teacher HTML",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Four 2s=8, eight 2s=16, four 5s=20, eight 5s=40, mental doubling and teacher talk",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "activity1_same_graph_data",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.60–61",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Original fixed category counts Bike12, Walk4, Bus or Van6, Car3 across axes by 1 and 2, zero baseline, labels and correct values",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "activity1_open_comparison",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher HTML Activity1",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "1-minute quiet think, 4-minute partner explanation of same categories and different vertical scale, source three-part graph talk teacher reviewed",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "activity2_prior_l04_class_survey",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.61–62",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Actual pupils' own L04 paper pictograph of six named travel choices and teacher attested same data, not fabricated four-category graph",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "activity2_two_or_five_scale",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.61–63",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Choose axis step 2 or 5, zero based; source blank graph by2 to16 and by5 to40; nonmultiples exact between ticks, optional both charts",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "activity2_access_and_partner",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.62–63",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "12-minute pair construction, discussion, MLR7 Compare and Connect, teacher chunked feedback, no numeric-only credit",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "synthesis_then_community",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide pp.63–64",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Synthesis BEFORE Cool-down; Math Community 2–3 min AFTER Cool-down, teacher revises norms, source activity preserved",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson5Activities/Index.cshtml",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "original_source_cooldown_zoo",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Teacher Guide pp.57–58",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Zoo Elephant17 Tiger10 Giraffe14 Otter4, missing source bars Tiger10 and Otter4; vertical ticks by FIVE with exact endpoints, teacher draws reviews",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson5ScaledBarGraph.cs",
+      "originalSourcePixelsNotCopied": true
+    },
+    {
+      "id": "centers_rights_and_figures",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 Teacher Guide p.64",
+      "sourceSemanticAuthoringVerified": true,
+      "evidence": "Sort and Display Stage3 Scaled Graphs, Five in a Row Stage6, original figures not copied; first-party axes and teacher-led centers",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l05-2021.rich-lesson-v2.json",
+      "originalSourcePixelsNotCopied": true
+    }
+  ],
+  "sourceInventory": {
+    "identifiedElements": 6,
+    "fullyMappedAndVerified": 0,
+    "localTeacherHtmlInspected": true,
+    "studentTaskPdfRead": false,
+    "publishedRichV2BodyCompared": false
+  },
+  "openGaps": [],
+  "originalCoolDownPolicy": "INDEPENDENT_FIRST_PARTY_EQUIVALENT_AS_APPROVED",
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "academicApproval": "NOT_CLAIMED",
+  "merged": false,
+  "deployed": false,
+  "source2021GitHubOnlyExecution": {
+    "date": "2026-10-23",
+    "publisherLesson": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/lesson.html",
+    "publisherPrep": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/preparation.html",
+    "originalHtmlTextInspected": true,
+    "originalPdfPixelsOrImagesInspected": false,
+    "source2021NumericVerification": {
+      "mentalRepeatedAddition": [
+        8,
+        16,
+        20,
+        40
+      ],
+      "fixedComparisonCounts": {
+        "Bike": 12,
+        "Walk": 4,
+        "BusOrVan": 6,
+        "Car": 3
+      },
+      "fixedComparisonTotal": 25,
+      "firstBarAxis": {
+        "min": 0,
+        "max": 12,
+        "tick": 1
+      },
+      "secondBarAxis": {
+        "min": 0,
+        "max": 24,
+        "tick": 2
+      },
+      "authenticStudentSurvey": "L04 actual preferred-travel counts: NOT fixed demo 25",
+      "studentScaleOptions": [
+        2,
+        5
+      ],
+      "sourceBlankAxes": [
+        "0..16 by 2",
+        "0..40 by 5"
+      ]
+    },
+    "RichV2NewCode": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "newUnrunSourceRegression": "tests/Edulytics.Tests/MathematicsIntelligence/CommonCoreG3SourceTeachingCorrectionsTests.cs",
+    "sourceStudentPdfAccess": "UNVERIFIED_NOT_INSPECTED",
+    "originalCoolDown": "GATED_BY_PUBLISHER_FIRST_PARTY_EQUIVALENT_NOT_VERBATIM",
+    "teacherAttestedL04ClassContinuity": "NOT_VERIFIED_NO_SOURCE_PERSISTENCE",
+    "policy": "GITHUB_AND_PUBLISHER_ONLY_NOT_OUR_CS"
+  },
+  "nextAction": "Return to L05: obtain original PDF/image pixels; reconcile actual L04 survey provenance and persistence with authorized learner route, each original task subpart and effective Rich V2. Keep A_C_EXPLICIT_GAP and source return queue.",
+  "sourceSemanticAuthoringCoveragePercent": 100,
+  "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-5-stage-a-b-c-authoring-closure-evidence-20261024.json"
+}

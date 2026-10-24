@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 48,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L12",
+  "title": "Subtract Strategically",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-3/lesson-12/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U03.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U03.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L12.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "The original source contains 600 − 478. Find the difference.",
+      "answerType": "integer",
+      "expected": "122"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-3/lesson-12/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: Threes (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-3/lesson-12/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: How Would You Subtract? (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-12/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Greatest Difference, Smallest Difference (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-12/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-3/lesson-12/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: An Algorithm or Another Strategy? (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-3/lesson-12/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-6",
+        "heading": "Student Section Summary",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-3/lesson-12/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Spinner. 10 equal parts. Labeled 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.",
+      "Recording Sheet for Greatest Difference, Smallest Difference.",
+      "Subtraction. Five-hundred plus thirty plus eight, minus one-hundred plus fifty plus six, equals three-hundred plus eighty plus two.",
+      "Subtraction. Five-hundred thirty-eight minus one-hundred fifty-six equals two.",
+      "Subtraction. Step two. Five-hundred thirty-eight minus one-hundred fifty-six equals two.",
+      "Subtraction. Five-hundred thirty-eight minus one-hundred fifty-six equals eighty-two.",
+      "Subtraction. Step four. Five-hundred thirty-eight minus one-hundred fifty-six equals three-hundred eighty-two."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "The original source contains 600 − 478. Find the difference.",
+      "answerType": "integer",
+      "expected": "122"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s consider when to use algorithms and when to use other strategies to subtract.",
+      "sourceLearningGoals": "Subtract within 1,000 using algorithms or other strategies based on the numbers in the problem.",
+      "teachingSteps": [
+        "Identify hundreds, tens and ones in each number.",
+        "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
+        "Check the answer by the inverse operation or a reasonable estimate."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider when to use algorithms and when to use other strategies to subtract.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Solve 451 − 329 by a sensible strategy or algorithm.",
+      "answerType": "integer",
+      "expected": "122"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Compute 505 − 417, explaining how to regroup across a zero.",
+      "answerType": "integer",
+      "expected": "88"
+    },
+    "humanRubric": "The student game with spun digits and greater/smaller differences remains teacher-observed.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

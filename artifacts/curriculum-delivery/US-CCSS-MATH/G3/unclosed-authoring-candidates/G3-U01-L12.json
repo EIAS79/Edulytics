@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 12,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L12",
+  "unitNumber": 1,
+  "lessonNumber": 12,
+  "title": "Represent and Solve Multiplication Problems",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-1/lesson-12/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/lesson.html",
+  "stageA": {
+    "status": "2021_TEACHER_PREP_STUDENT_4_PAGE_PDF_AND_TWO_ORIGINAL_SVG_GEOMETRIES_VERIFIED",
+    "goals": "Represent and solve multiplication problems.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 3,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "public2021LessonContentReadDirectly": "Teacher L12 student facing, warm-up, teacher question-co-crafting and five unique story problems",
+    "publicWarmup": "4 arrays of 2x5 dots (40), second pattern visually unverified",
+    "publicTyler3BoxesWith5BaseballsEach": 15,
+    "publicFiveStoryAnswerChecks": [
+      {
+        "context": "4 soccer fields, 2 teams",
+        "answer": 8
+      },
+      {
+        "context": "7 windows, 2 panes",
+        "answer": 14
+      },
+      {
+        "context": "5 earring bags, 10 earrings",
+        "answer": 50
+      },
+      {
+        "context": "4 pencil boxes, 5 each",
+        "answer": 20
+      },
+      {
+        "context": "3 carrot bags, 10 each",
+        "answer": 30
+      }
+    ],
+    "sourceSvgFigureProof": {
+      "originalFirst40": true,
+      "originalSecond30": true,
+      "originalPhotoNotReused": true
+    }
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_EMBEDDED_RICH_V2_AND_FIRST_PARTY_DIAGRAMS_AUTHORED",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U01:L12",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "6b08f29c7abd8b9f4e19a52355707c7da0417d05ad856db570554c7c0edbcc2a",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "independentSourceSubtaskScaffoldAuthoring": "Generic 1:1 source individual numeric task inputs and accompanying teacher-reviewed diagram/explanation fields added. Live Rich V2 remains unchecked.",
+    "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+    "sourceElementMap": {
+      "schemaVersion": 1,
+      "lessonCode": "PED:US-CCSS-MATH:G3:U01:L12",
+      "edition": "2021 first edition",
+      "teacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/lesson.html",
+      "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/preparation.html",
+      "studentTaskPdf": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o",
+      "sourceElementTotal": 17,
+      "verifiedOriginalSourceElements": 17,
+      "sourceAuthoringSemanticParityPercent": 100,
+      "sourceMaterialArtworkIdentityClaimed": false,
+      "authoringStatus": "READY_FOR_STAGE_D",
+      "elementMap": [
+        {
+          "id": "G3-U01-L12-01-GOAL",
+          "sourcePart": "Goals, standards and prep",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/preparation.html",
+          "firstPartyProof": "Rich V2 explanation 0; prep source 3.OA.A.1/3.OA.A.3",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-02-WARM1",
+          "sourcePart": "First dot SVG four 2×5 arrays =40",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/7joeg3fb91042g156ctkkewns45f",
+          "firstPartyProof": "Rich V2 explanation 1, worked 0; Razor independent 4×2×5",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-03-WARM2",
+          "sourcePart": "Second dot SVG 30 dots/six rows of five",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/sqvpvucqrrlz1iihakjyzv051d7f",
+          "firstPartyProof": "Rich V2 explanation 1, worked 0; Razor independent 6×5",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-04-WARM3",
+          "sourcePart": "Warm-up 'How many and how see' oral strategy",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=1",
+          "firstPartyProof": "Bank task W-01",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-05-CRAFT",
+          "sourcePart": "Tyler initial hidden stem question co-crafting",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/lesson.html",
+          "firstPartyProof": "Bank A1-COCRAFT and Rich V2 explanation 2",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-06-TYLER",
+          "sourcePart": "Tyler 3×5=15 and draw/model",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=2",
+          "firstPartyProof": "Bank numeric A1-01 and A1-MODEL",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-07-A1SYN",
+          "sourcePart": "Activity 1 model comparison",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/lesson.html",
+          "firstPartyProof": "Rich V2 explanation 2; Bank A1-MODEL",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-08-SOCCER",
+          "sourcePart": "Soccer four fields two teams",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=3",
+          "firstPartyProof": "Bank A2-01 answer 8; human diagram",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-09-WINDOW",
+          "sourcePart": "Windows seven each two panes",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=3",
+          "firstPartyProof": "Bank A2-02 answer 14; human diagram",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-10-EARRING",
+          "sourcePart": "Five bags ten earrings",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=3",
+          "firstPartyProof": "Bank A2-03 answer 50; human diagram",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-11-PENCIL",
+          "sourcePart": "Four boxes five pencils",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=4",
+          "firstPartyProof": "Bank A2-04 answer 20; human diagram",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-12-CARROT",
+          "sourcePart": "Three bags ten carrots",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o#page=4",
+          "firstPartyProof": "Bank A2-05 answer 30; human diagram",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-13-A2SYN",
+          "sourcePart": "Activity 2 demonstration and comparing models",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/lesson.html",
+          "firstPartyProof": "Bank A2-MODELS plus individual reasoning",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-14-SYN",
+          "sourcePart": "Lesson synthesis and teacher reflection",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/preparation.html",
+          "firstPartyProof": "Bank SYNTH; Rich V2 explanation 4",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-15-COOL",
+          "sourcePart": "Source restricted Ducks in Pond / permitted Edulytics equivalent",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "teacher gated, independent equivalent",
+          "firstPartyProof": "Independent 3×8 flags=24, labelled not publisher",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-16-CENTERS",
+          "sourcePart": "Capture Squares Stage 5; Five in a Row Stage 7",
+          "parityStatus": "MATCHED_TEACHER_LED",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/preparation.html",
+          "firstPartyProof": "Teacher-led Rich V2 explanation 4",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        },
+        {
+          "id": "G3-U01-L12-17-ART",
+          "sourcePart": "Source SVG and Pixabay photo rights boundary",
+          "parityStatus": "MATCHED_DIGITAL",
+          "originalSourceInspected": true,
+          "sourceReference": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-12/lesson.html",
+          "firstPartyProof": "SVGs inspected, not copied; own CSS redrawing; baseball image not copied",
+          "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l12-2021.rich-lesson-v2.json",
+          "companionBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+          "learnerView": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+          "testsWrittenNotRun": [
+            "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+            "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson12SourceRichV2ContractsTests.cs"
+          ],
+          "sourceToFirstPartySemanticAuthoringVerified": true,
+          "runtimeAndAcademicSignoff": false
+        }
+      ],
+      "stageD": "NOT_STARTED"
+    }
+  },
+  "stageC": {
+    "status": "SIX_NUMERIC_ANCHORS_AND_FIVE_TEACHER_RUBRIC_SOURCE_TASKS_AUTHORED; TESTS_NOT_RUN",
+    "family": "multiplication-expression-equation",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": "A_B_C_SEMANTIC_AUTHORING_ONLY",
+    "teacherTask": "Work through the original lesson's activity Tyler’s Boxes with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve problems involving equal groups. Required Preparation CCSS Standards Addressing 3.OA.A.1 3.OA.A.3 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection",
+    "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
+    "numberOfSourceNumericSubtasksAuthored": 6,
+    "eachCorrectAndIncorrectSampleRegressionAuthoredUnrun": true,
+    "teacherCoCraftAndFourArrayWarmupNeverNumericApproved": true,
+    "teacherSourceTasksWritten": 5
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U01-L12-01-GOAL",
+      "sourceSection": "Goals, standards and prep",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Rich V2 explanation 0; prep source 3.OA.A.1/3.OA.A.3"
+    },
+    {
+      "id": "G3-U01-L12-02-WARM1",
+      "sourceSection": "First dot SVG four 2×5 arrays =40",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Rich V2 explanation 1, worked 0; Razor independent 4×2×5"
+    },
+    {
+      "id": "G3-U01-L12-03-WARM2",
+      "sourceSection": "Second dot SVG 30 dots/six rows of five",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Rich V2 explanation 1, worked 0; Razor independent 6×5"
+    },
+    {
+      "id": "G3-U01-L12-04-WARM3",
+      "sourceSection": "Warm-up 'How many and how see' oral strategy",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Bank task W-01"
+    },
+    {
+      "id": "G3-U01-L12-05-CRAFT",
+      "sourceSection": "Tyler initial hidden stem question co-crafting",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Bank A1-COCRAFT and Rich V2 explanation 2"
+    },
+    {
+      "id": "G3-U01-L12-06-TYLER",
+      "sourceSection": "Tyler 3×5=15 and draw/model",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Bank numeric A1-01 and A1-MODEL"
+    },
+    {
+      "id": "G3-U01-L12-07-A1SYN",
+      "sourceSection": "Activity 1 model comparison",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Rich V2 explanation 2; Bank A1-MODEL"
+    },
+    {
+      "id": "G3-U01-L12-08-SOCCER",
+      "sourceSection": "Soccer four fields two teams",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Bank A2-01 answer 8; human diagram"
+    },
+    {
+      "id": "G3-U01-L12-09-WINDOW",
+      "sourceSection": "Windows seven each two panes",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Bank A2-02 answer 14; human diagram"
+    },
+    {
+      "id": "G3-U01-L12-10-EARRING",
+      "sourceSection": "Five bags ten earrings",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Bank A2-03 answer 50; human diagram"
+    },
+    {
+      "id": "G3-U01-L12-11-PENCIL",
+      "sourceSection": "Four boxes five pencils",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Bank A2-04 answer 20; human diagram"
+    },
+    {
+      "id": "G3-U01-L12-12-CARROT",
+      "sourceSection": "Three bags ten carrots",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "Bank A2-05 answer 30; human diagram"
+    },
+    {
+      "id": "G3-U01-L12-13-A2SYN",
+      "sourceSection": "Activity 2 demonstration and comparing models",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Bank A2-MODELS plus individual reasoning"
+    },
+    {
+      "id": "G3-U01-L12-14-SYN",
+      "sourceSection": "Lesson synthesis and teacher reflection",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Bank SYNTH; Rich V2 explanation 4"
+    },
+    {
+      "id": "G3-U01-L12-15-COOL",
+      "sourceSection": "Source restricted Ducks in Pond / permitted Edulytics equivalent",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Independent 3×8 flags=24, labelled not publisher"
+    },
+    {
+      "id": "G3-U01-L12-16-CENTERS",
+      "sourceSection": "Capture Squares Stage 5; Five in a Row Stage 7",
+      "coverage": "MATCHED_TEACHER_LED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "TEACHER_REVIEW_ONLY",
+      "codeEvidence": "Teacher-led Rich V2 explanation 4"
+    },
+    {
+      "id": "G3-U01-L12-17-ART",
+      "sourceSection": "Source SVG and Pixabay photo rights boundary",
+      "coverage": "MATCHED_DIGITAL",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "grading": "INTEGER_WHERE_VALID_AND_TEACHER_REVIEW",
+      "codeEvidence": "SVGs inspected, not copied; own CSS redrawing; baseball image not copied"
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U01-L12-IMAGE-01",
+      "observedAltText": "4 sets of arrays arranged in a square pattern. Each array has 2 rows of 5 dots.",
+      "originalReference": "unit-1/lesson-12/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SVG_MATH_GEOMETRY_VERIFIED_FIRST_PARTY_REDRAW"
+    },
+    {
+      "id": "G3-U01-L12-IMAGE-02",
+      "observedAltText": "Group of dots.",
+      "originalReference": "unit-1/lesson-12/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "SVG_MATH_GEOMETRY_VERIFIED_FIRST_PARTY_REDRAW"
+    },
+    {
+      "id": "G3-U01-L12-IMAGE-03",
+      "observedAltText": "A box of baseballs.",
+      "originalReference": "unit-1/lesson-12/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": true,
+      "coverage": "THIRD_PARTY_PHOTO_NOT_COPIED_SOURCE_TEXT_SEMANTICS_VERIFIED"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 3,
+    "identifiedItems": 17,
+    "fullyVerified": 17,
+    "scope": "SEMANTIC_AUTHORING_ONLY"
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "How many objects are there in 3 equal groups with 4 objects in each group? Show your groups in a drawing.",
+    "answerType": "integer",
+    "expected": "12"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "verifiedParityScope": "SEMANTIC_AUTHORING_ONLY_NOT_SOURCE_MATERIAL_IDENTITY_OR_STAGE_D"
+}

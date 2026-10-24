@@ -1,0 +1,156 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u02-l12-2021-source-abc-firstparty-20261024-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U02:L12",
+      "CultureCode": "en",
+      "Title": "Area and Addition PLC Activity",
+      "ExplanationParagraphs": [
+        "Area and Addition: a figure can be split into parts whose areas add to the area of the whole. Choose parts with no overlaps or gaps. Use equal square units and explain how each multiplication expression represents a rectangle in the drawing.",
+        "Warm-up — So Close: mentally find 9 + 6, 29 + 6, 59 + 6 and 49 + 8, in that order. Think about the next multiple of ten, explain your strategy, and compare another student’s reasoning. For example, 29 + 6 = 30 + 6 − 1 = 35, or move one from the 6 to make 30 + 5. Keep the expressions and strategies visible. The first number in every expression is one below a multiple of ten; 9 is a one-digit number, so do not repeat the source synthesis’s mistaken claim that all four first numbers have two digits.",
+        "Rectangles in Rectangles: imagine vegetables and flowers you would like to grow, then inspect the community-garden grid. It has seven columns and six rows of one-square-foot cells. Five full columns are shaded for vegetables and two are unshaded for flowers. The vegetable area is 5 × 6 = 30 ft², the flower area is 2 × 6 = 12 ft², and the whole garden covers 30 + 12 = 42 ft². Multiplying the outside side lengths, 7 × 6, checks the same total. Counting every square is also a valid way to check.",
+        "Work with a partner on the provided garden, then independently design your own garden. Draw and label the parts, find each part’s area, and find the area of the whole. You may choose a rectangle divided into smaller rectangles or a figure composed of rectangles. Do not assume your new garden must have area 42. Compare designs and explain how the separate areas cover the entire garden exactly once. The teacher connects different strategies that reach the same answer.",
+        "Find the Rectangles: record a notice and a question about the gridded L-shaped figure. Talk with a partner about possible strategies, then independently find its area. Add shading, notes and labels so others can follow your work. The figure has a top-left block four rows high and five columns wide, above a bottom block five rows high and ten columns wide. A horizontal split gives (4 × 5) + (5 × 10) = 20 + 50 = 70 square units.",
+        "A vertical split gives a different check: the left block is nine rows by five columns and the lower-right block is five rows by five columns. Their areas are 45 and 25, so (9 × 5) + (5 × 5) = 70 square units. Both partitions count all the same squares exactly once. Including the empty upper-right corner would instead count 90 square units; overlapping two rectangles would count some squares twice.",
+        "Use a gallery walk to compare students’ decompositions. Think quietly, discuss what is the same and different, then link expressions to the actual pieces. Parentheses are grouping symbols: in (4 × 5) + (5 × 10), each parenthesized product gives one rectangle’s area. A different valid split may use more than two parts. If you split diagonally and can justify the area, keep that reasoning and also try a second method along grid lines. Do not reject a correct method merely because its partition differs from the sample.",
+        "Lesson synthesis: explain why different partitions give the same total when every original square is included exactly once. Show how the equation matches the picture. Your teacher reviews the independently designed garden, labels, written reasoning, gallery comparisons and actual partner discussion. A correct area alone cannot certify those tasks.",
+        "New Edulytics Cool-down: the independent grid has a top-left block two rows by three columns above a lower block four rows by eight columns. Decompose it, write an expression with parentheses, and find its area. One solution is (2 × 3) + (4 × 8) = 38 square units. Another is (6 × 3) + (4 × 5) = 38. Explain why the parts do not overlap. This is an independently authored equivalent, not a reproduction of the publisher-gated Where are the Rectangles? assessment.",
+        "Optional centers: Five in a Row: Multiplication, stage 2 (factors 1–9), supports the area work. Five in a Row: Addition and Subtraction, stage 8 (add within 1,000 with composing), is supporting practice. Reflect on an unexpected strategy and invite explanations from every student."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Additive area",
+          "Definition": "The area of a whole figure equals the sum of the areas of non-overlapping parts that cover it.",
+          "Rule": "Include each square exactly once.",
+          "Example": "30 ft² + 12 ft² = 42 ft²."
+        },
+        {
+          "Title": "Rectangle area",
+          "Definition": "Rows and columns count equal square units.",
+          "Rule": "Multiply side lengths, then use square units.",
+          "Example": "A four-row five-column block covers 20 square units."
+        },
+        {
+          "Title": "Parentheses group parts",
+          "Definition": "A grouped multiplication expression can name one rectangle’s area.",
+          "Rule": "Match every product to a piece in the diagram.",
+          "Example": "(4 × 5) + (5 × 10) = 70 square units."
+        },
+        {
+          "Title": "Different methods agree",
+          "Definition": "Valid partitions cover the same original figure without gaps or overlaps.",
+          "Rule": "Compare pieces and check the total using another split.",
+          "Example": "20 + 50 and 45 + 25 both give 70."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Make a ten mentally",
+          "Question": "Find 49 + 8.",
+          "Method": "Use a nearby multiple of ten.",
+          "Steps": [
+            "49 is one below 50.",
+            "50 + 8 = 58.",
+            "Subtract the extra 1: 58 − 1 = 57."
+          ],
+          "Answer": "57.",
+          "Check": "Alternatively move one from 8 to get 50 + 7 = 57."
+        },
+        {
+          "Title": "Vegetables and flowers",
+          "Question": "Find the area of the source community garden.",
+          "Method": "Add two non-overlapping rectangle areas.",
+          "Steps": [
+            "Count seven columns and six rows in the original grid.",
+            "Vegetables cover five columns: 5 × 6 = 30 ft².",
+            "Flowers cover two columns: 2 × 6 = 12 ft².",
+            "Add: 30 + 12 = 42 ft²."
+          ],
+          "Answer": "42 ft².",
+          "Check": "7 × 6 = 42 ft² checks the same whole; six rows, not five."
+        },
+        {
+          "Title": "Horizontal split",
+          "Question": "Find the L-shaped figure’s area.",
+          "Method": "Separate the upper-left and bottom rectangles.",
+          "Steps": [
+            "Upper block: 4 × 5 = 20 square units.",
+            "Bottom block: 5 × 10 = 50 square units.",
+            "Use parentheses: (4 × 5) + (5 × 10).",
+            "Add 20 + 50 = 70."
+          ],
+          "Answer": "70 square units.",
+          "Check": "The blocks meet along an edge and contain every square once."
+        },
+        {
+          "Title": "Vertical split",
+          "Question": "Check the same L-shaped figure another way.",
+          "Method": "Separate the full left block and lower-right block.",
+          "Steps": [
+            "Left block: 9 × 5 = 45 square units.",
+            "Lower-right block: 5 × 5 = 25 square units.",
+            "Add (9 × 5) + (5 × 5) = 45 + 25 = 70."
+          ],
+          "Answer": "70 square units.",
+          "Check": "This agrees with the horizontal split; neither adds the missing corner."
+        },
+        {
+          "Title": "Independent Cool-down",
+          "Question": "Find the area of the new Edulytics figure.",
+          "Method": "Use non-overlapping grid-aligned rectangles.",
+          "Steps": [
+            "Top-left block: 2 × 3 = 6 square units.",
+            "Bottom block: 4 × 8 = 32 square units.",
+            "Add (2 × 3) + (4 × 8) = 38."
+          ],
+          "Answer": "38 square units.",
+          "Check": "A vertical check gives (6 × 3) + (4 × 5) = 18 + 20 = 38."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using 35 ft² for the source garden.",
+          "WhyWrong": "The actual garden has six rows of seven cells, not five.",
+          "Correction": "Count the intervals in the original PDF or SVG; 7 × 6 = 42 ft²."
+        },
+        {
+          "Mistake": "Adding side lengths to find area.",
+          "WhyWrong": "A side length counts linear units, not covered squares.",
+          "Correction": "Multiply each rectangle’s sides, then add its area in square units."
+        },
+        {
+          "Mistake": "Counting the L-shaped figure’s missing corner.",
+          "WhyWrong": "The empty corner is outside the figure.",
+          "Correction": "Include the upper-left and bottom blocks only; their total is 70 square units."
+        },
+        {
+          "Mistake": "Adding areas of overlapping rectangles.",
+          "WhyWrong": "Squares in the overlap would be counted twice.",
+          "Correction": "Split into parts that meet at edges without overlapping."
+        },
+        {
+          "Mistake": "Insisting on only the sample split or exactly two parts.",
+          "WhyWrong": "Other valid decompositions can cover the same figure.",
+          "Correction": "Check every square exactly once, connect expressions to pieces, and compare a grid-line split."
+        },
+        {
+          "Mistake": "Giving only a number for the self-designed garden.",
+          "WhyWrong": "The task requires an original design, part areas and an explanation.",
+          "Correction": "Draw the garden, label each part, write a matching expression and have the teacher review it."
+        }
+      ],
+      "SummaryPoints": [
+        "Use near-ten reasoning for the mental additions.",
+        "The original garden covers 42 ft²: 30 ft² of vegetables and 12 ft² of flowers.",
+        "Find composite area by adding non-overlapping rectangle areas.",
+        "The source L-shaped figure covers 70 square units; horizontal and vertical splits agree.",
+        "Parentheses connect grouped products to individual rectangles.",
+        "Your own garden design, decomposition, explanation and discussion require teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

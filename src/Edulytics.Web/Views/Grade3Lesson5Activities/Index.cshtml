@@ -1,0 +1,173 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson5PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout="_StudentLayout";
+    ViewData["Title"]="Grade 3 · Represent Data in Scaled Bar Graphs";
+    var fixedData=UsCcssG3Unit1Lesson5ScaledBarGraph.SourceComparison;
+    var cool=UsCcssG3Unit1Lesson5ScaledBarGraph.IndependentCoolDown;
+    var currentMax=Model.EnteredClassSurvey is null ? 16 :
+        UsCcssG3Unit1Lesson5ScaledBarGraph.AxisCeiling(
+            Model.EnteredClassSurvey.Max(x=>x.Students),Model.SelectedScale);
+}
+<style>
+.g3-bars{max-width:940px;margin:auto;padding:20px;color:#213c53}
+.g3-bars .panel{background:#fff;border:1px solid #d7e4ea;border-radius:15px;padding:22px;margin:16px 0}
+.g3-bars .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.g3-bars label{display:block;font-weight:700;margin:12px 0 5px}
+.g3-bars input,.g3-bars select,.g3-bars textarea{width:100%;max-width:650px;padding:9px;border:1px solid #7990a3;border-radius:7px;font:inherit}
+.g3-bars .plot{display:flex;align-items:flex-end;gap:9px;min-height:200px;max-width:700px}
+.g3-bars .yaxis{height:200px;width:30px;flex:none;display:flex;flex-direction:column;justify-content:space-between;font-size:.8rem}
+.g3-bars .bars{height:200px;display:flex;align-items:flex-end;flex:1;gap:9px;border-left:2px solid #658096;border-bottom:2px solid #658096}
+.g3-bars .bar-cell{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;flex:1;min-width:0}
+.g3-bars .bar{background:#198697;max-width:72px;width:75%;border-radius:4px 4px 0 0;color:#fff;text-align:center}
+.g3-bars .xlabels{display:grid;grid-template-columns:repeat(var(--label-columns),minmax(0,1fr));gap:9px;margin-left:39px;max-width:661px}
+.g3-bars .xlabel{font-size:.8rem;text-align:center;overflow-wrap:anywhere;min-height:42px}
+.g3-bars button{background:#167b87;color:#fff;border:0;border-radius:8px;padding:12px 18px;font:inherit;cursor:pointer}
+.g3-bars .good{border-left:4px solid #158552;padding-left:10px}
+.g3-bars .bad{border-left:4px solid #b33944;padding-left:10px}
+.g3-bars .review{border-left:4px solid #a7731a;padding-left:10px}
+</style>
+<main class="g3-bars">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <h1>Represent Data in Scaled Bar Graphs</h1>
+    <p>Compare two bar graphs of the SAME source dataset: first axis by ones (0–12), second axis by twos (0–24). Then use your teacher-confirmed L04 survey to make a new bar graph with scale 2 or 5.</p>
+    <form asp-controller="Grade3Lesson5Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        <section class="panel">
+            <h2>1. Mental counting by twos and fives</h2>
+            <p>Original 2021 Number Talk (10 minutes): compute mentally 2+2+2+2 = 8; eight 2s = 16; 5+5+5+5 = 20; eight 5s = 40. Discuss how doubling four equal addends produces eight equal addends. Give 1 minute quiet think and invite partner explanations.</p>
+            <label for="warmup">My counting strategy</label>
+            <textarea id="warmup" name="Warmup" rows="3" maxlength="2000">@Model.Answers.Warmup</textarea>
+        </section>
+        <section class="panel">
+            <h2>2. The source's two bar graphs: same number of pupils</h2>
+            @foreach(var step in new[]{1,2}){
+                var max=step==1?12:24;
+                <h3>@(step==1?"Original data with axis by ones":"The same data with axis by twos")</h3>
+                <p>How We Get Home. Vertical axis: 0 to @max, increasing by @step.</p>
+                <div class="plot" role="img" aria-label="How We Get Home. Bike 12, Walk 4, Bus or Van 6, Car 3. Axis maximum @max, tick increment @step.">
+                    <div class="yaxis" aria-hidden="true">
+                    @for(var tick=max;tick>=0;tick-=step){<span>@tick</span>}
+                    </div>
+                    <div class="bars" aria-hidden="true">
+                    @foreach(var row in fixedData){
+                        <div class="bar-cell">
+                            <div class="bar" style="height:@(row.Students*200/max)px">@row.Students</div>
+                        </div>
+                    }
+                    </div>
+                </div>
+                <div class="xlabels" style="--label-columns:@fixedData.Count" aria-label="Bar graph horizontal categories">
+                    @foreach(var row in fixedData){<span class="xlabel">@row.Category</span>}
+                </div>
+            }
+            <p>Key difference: the first graph has a maximum of 12 and marks each one; the second has a maximum of 24 and marks every two. The category values remain 12, 4, 6, 3 in BOTH graphs.</p>
+            <label for="compare">How are the graphs the same, how do they differ, and why does the total stay unchanged?</label>
+            <textarea id="compare" name="OriginalGraphComparison" rows="3" maxlength="2000">@Model.Answers.OriginalGraphComparison</textarea>
+            <div class="two">
+                <div><label for="src-bike">How many chose Bike?</label><input id="src-bike" name="OriginalBikeCount" value="@Model.Answers.OriginalBikeCount" inputmode="numeric" required /></div>
+                <div><label for="src-van">How many chose Bus or Van?</label><input id="src-van" name="OriginalBusVanCount" value="@Model.Answers.OriginalBusVanCount" inputmode="numeric" required /></div>
+                <div><label for="src-total">How many in total?</label><input id="src-total" name="OriginalTotal" value="@Model.Answers.OriginalTotal" inputmode="numeric" required /></div>
+                <div><label for="src-diff">How many more chose Bike than Car?</label><input id="src-diff" name="OriginalBikeCarDifference" value="@Model.Answers.OriginalBikeCarDifference" inputmode="numeric" required /></div>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>3. Reuse the actual L04 class travel survey</h2>
+            <p>Use the numbers you collected in the previous lesson, NOT these fixed school-travel example values. Enter the six real preferred travel choices again. This page does not store or fetch your L04 submission, so your teacher must check consistency with the previous work.</p>
+            <div class="two">
+                <div><label for="car">Car</label><input id="car" name="Car" type="number" min="0" max="40" value="@Model.Answers.Car" required /></div>
+                <div><label for="train">Train</label><input id="train" name="Train" type="number" min="0" max="40" value="@Model.Answers.Train" required /></div>
+                <div><label for="boat">Boat</label><input id="boat" name="Boat" type="number" min="0" max="40" value="@Model.Answers.Boat" required /></div>
+                <div><label for="balloon">Balloon</label><input id="balloon" name="Balloon" type="number" min="0" max="40" value="@Model.Answers.Balloon" required /></div>
+                <div><label for="plane">Plane</label><input id="plane" name="Plane" type="number" min="0" max="40" value="@Model.Answers.Plane" required /></div>
+                <div><label for="helicopter">Helicopter</label><input id="helicopter" name="Helicopter" type="number" min="0" max="40" value="@Model.Answers.Helicopter" required /></div>
+            </div>
+            <label for="class-evidence">How did you check your six numbers match the L04 graph?</label>
+            <textarea id="class-evidence" name="ReusedClassDataEvidence" rows="3" maxlength="2000">@Model.Answers.ReusedClassDataEvidence</textarea>
+            <label for="scale">Choose the vertical scale</label>
+            <select id="scale" name="SelectedScale">
+                <option value="2" selected="@(Model.SelectedScale==2)">By 2</option>
+                <option value="5" selected="@(Model.SelectedScale==5)">By 5</option>
+            </select>
+            <p>In the source exercise the provided blank graph by 2 ends at 16, and by 5 ends at 40. If entered data exceeds the drawn limit, the digital illustration extends the axis rather than cutting off bars.</p>
+            @if(Model.EnteredClassSurvey is not null){
+                <h3>How Our Class Would Like to Travel (entered data)</h3>
+                <p>Vertical axis 0 to @currentMax by @Model.SelectedScale.</p>
+                <div class="plot" role="img" aria-label="Student entered six-category bar graph. Counts and axis appear in labels.">
+                    <div class="yaxis" aria-hidden="true">
+                    @for(var tick=currentMax;tick>=0;tick-=Model.SelectedScale){<span>@tick</span>}
+                    </div>
+                    <div class="bars">
+                    @foreach(var row in Model.EnteredClassSurvey){
+                        <div class="bar-cell" aria-label="@row.Category count @row.Students">
+                            <div class="bar" style="height:@(row.Students*200/currentMax)px" aria-hidden="true">@row.Students</div>
+                        </div>
+                    }
+                    </div>
+                </div>
+                <div class="xlabels" style="--label-columns:@Model.EnteredClassSurvey.Count" aria-label="Class bar graph horizontal categories">
+                    @foreach(var row in Model.EnteredClassSurvey){<span class="xlabel">@row.Category</span>}
+                </div>
+                <p>Each bar uses its exact raw class count even if the value falls between tick marks. This visual is automatically constructed; your own drawing and survey must be reviewed.</p>
+            }
+            <label for="scale-explain">Why choose 2 or 5? How do you represent a value between ticks without rounding?</label>
+            <textarea id="scale-explain" name="ScaleExplanation" rows="3" maxlength="2000">@Model.Answers.ScaleExplanation</textarea>
+        </section>
+        <section class="panel">
+            <h2>4. Lesson synthesis (10 minutes, BEFORE Cool-down)</h2>
+            <p>Help a friend choose a bar-graph scale. Explain how you can read precise counts that are not exact multiples of the scale. Math Community reflections occur after the five-minute Cool-down.</p>
+            <p>Ask a partner for advice on accurate scale 2 or 5 and how to represent counts between marked ticks; teacher checks the explanation and self-drawn graphs.</p>
+            <p>Teacher rubric: compare both source graphs faithfully, check actual L04 survey provenance, use one scale throughout, label title and categories, retain odd/nonmultiple data precisely, and assess partner conversation.</p>
+        </section>
+        <section class="panel">
+            <h2>5. Original-source-aligned Cool-down (5 minutes) — Complete a Scaled Bar Graph</h2>
+            <p>2021 first-edition Teacher Guide, Grade 3 Unit 1 Lesson 5: a fictional zoo survey lists Elephant 17, Tiger 10, Giraffe 14 and Otter 4. The original task asks pupils to complete the bar graph; the teacher guide specifically checks the missing Tiger and Otter bars.</p>
+            <p>This is a newly authored Edulytics mathematical representation, not a copy of the publisher's pre-filled graph or figures. Use the original source vertical axis scale of FIVE per labelled tick (0, 5, 10, 15, 20), with accurate intermediate bar positions: 17 between 15 and 20, 14 between 10 and 15, and 4 between 0 and 5. The teacher checks the actual drawing, especially the Tiger=10 and Otter=4 completions.</p>
+            <table class="table"><thead><tr><th>Zoo animal</th><th>Number of students</th></tr></thead><tbody><tr><td>Elephant</td><td>17</td></tr><tr><td>Tiger</td><td>10</td></tr><tr><td>Giraffe</td><td>14</td></tr><tr><td>Otter</td><td>4</td></tr></tbody></table>
+            <div class="two">
+                <div><label for="source-tiger">Height of missing Tiger bar, in students</label><input id="source-tiger" name="SourceCoolDownTiger" inputmode="numeric" value="@Model.Answers.SourceCoolDownTiger" required /></div>
+                <div><label for="source-otter">Height of missing Otter bar, in students</label><input id="source-otter" name="SourceCoolDownOtter" inputmode="numeric" value="@Model.Answers.SourceCoolDownOtter" required /></div>
+            </div>
+            <label for="source-drawing">Describe or draw your complete four-bar graph with an accurate zero-based axis. A teacher must check the independent graph drawing.</label>
+            <textarea id="source-drawing" name="SourceCoolDownDrawing" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownDrawing</textarea>
+        </section>
+        <section class="panel">
+            <h2>6. Math Community (after the Cool-down)</h2>
+            <p>In groups, reflect for 2–3 minutes on changes needed in the class mathematical norms. Teacher records revisions; this is not automatically graded.</p>
+            <label for="community">My advice and a mathematical-community norm</label>
+            <textarea id="community" name="MathCommunity" rows="3" maxlength="2000">@Model.Answers.MathCommunity</textarea>
+        </section>
+        <section class="panel">
+            <h2>7. Optional independent Edulytics practice (not the source Cool-down)</h2>
+            <p>These are fictional club preferences, not your class data and not the publisher's teacher-only Cool-down.</p>
+            <div class="two">
+                @foreach(var item in cool){
+                    <p><strong>@item.Category</strong>: @item.Students learners</p>
+                }
+            </div>
+            <p>Make your OWN scaled bar graph with a 5-unit scale. An exact value of 9 falls between 5 and 10 — do not round it.</p>
+            <div class="two">
+                <div><label for="cd-art">How many chose Art Club?</label><input id="cd-art" name="CoolDownArt" value="@Model.Answers.CoolDownArt" inputmode="numeric" /></div>
+                <div><label for="cd-diff">How many more chose Science than Music?</label><input id="cd-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" inputmode="numeric" /></div>
+                <div><label for="cd-total">Total students?</label><input id="cd-total" name="CoolDownTotal" value="@Model.Answers.CoolDownTotal" inputmode="numeric" /></div>
+            </div>
+            <label for="cd-explain">Describe/draw the bar graph with title, labels, tick marks and exact heights</label>
+            <textarea id="cd-explain" name="CoolDownDrawingExplanation" rows="3" maxlength="2000">@Model.Answers.CoolDownDrawingExplanation</textarea>
+        </section>
+        <button type="submit">Check the numbers (not an official grade)</button>
+    </form>
+    @if(Model.Submitted){
+        <section class="panel" aria-live="polite">
+            <h2>Feedback</h2>
+            @foreach(var f in Model.Feedback){
+                <div class="@(f.Correct==true?"good":f.Correct==false?"bad":"review")">
+                    <h3>@f.Label</h3>
+                    <p>@(f.Correct==true?"Correct.":f.Correct==false?"Recheck.":"Teacher review required.") @f.Note</p>
+                </div>
+            }
+        </section>
+    }
+    <p>Source: locally archived <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-5/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5 Grade 3 U01 L05 (2021)</a>. Source numbers are aligned, drawings independently constructed. Cool-down questions are independent Edulytics originals.</p>
+</main>

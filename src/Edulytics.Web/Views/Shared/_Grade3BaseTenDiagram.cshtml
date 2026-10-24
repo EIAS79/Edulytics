@@ -1,0 +1,27 @@
+@model Edulytics.Web.Curriculum.Grade3.Grade3BaseTenDiagram
+@if(Model.Hundreds is >= 0 and <= 10 && Model.Tens is >= 0 and <= 20 && Model.Ones is >= 0 and <= 20) {
+    <div role="img" aria-label="@Model.Hundreds hundreds, @Model.Tens tens, @Model.Ones ones" style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;margin:12px 0">
+        @for(var h=0;h<Model.Hundreds;h++) {
+            <svg viewBox="0 0 42 42" width="42" height="42" aria-hidden="true">
+                <rect x="1" y="1" width="40" height="40" fill="#b9dce8" stroke="#183d52" />
+                @for(var line=1;line<10;line++) {
+                    <line x1="@(1+line*4)" y1="1" x2="@(1+line*4)" y2="41" stroke="#39758a" stroke-width="0.5" />
+                    <line x1="1" y1="@(1+line*4)" x2="41" y2="@(1+line*4)" stroke="#39758a" stroke-width="0.5" />
+                }
+            </svg>
+        }
+        <div style="display:flex;gap:3px" aria-hidden="true">
+            @for(var t=0;t<Model.Tens;t++) {
+                <svg viewBox="0 0 6 42" width="6" height="42">
+                    <rect x="1" y="1" width="4" height="40" fill="#b9dce8" stroke="#183d52" />
+                    @for(var line=1;line<10;line++) { <line x1="1" y1="@(1+line*4)" x2="5" y2="@(1+line*4)" stroke="#39758a" stroke-width="0.5" /> }
+                </svg>
+            }
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,6px);gap:3px" aria-hidden="true">
+            @for(var o=0;o<Model.Ones;o++) {
+                <span style="display:block;width:5px;height:5px;border:1px solid #183d52;background:#b9dce8"></span>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 40,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L04",
+  "unitNumber": 3,
+  "lessonNumber": 4,
+  "title": "Introduction to Addition Algorithms",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-4/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-4/lesson.html",
+  "stageA": {
+    "status": "PUBLIC_2021_TEACHER_AND_STUDENT_HTML_REVIEWED_ALL_STATED_NUMERIC_STEMS_PDF_AND_FIGURE_PIXEL_GAP",
+    "goals": "Add within 1,000. Relate base-ten diagrams to written algorithms for addition.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 5,
+    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "publicTeacherPageReviewed": true,
+    "sourceNumericAnchors": [
+      247,
+      247,
+      257,
+      247,
+      716,
+      706,
+      525,
+      927
+    ],
+    "sourceTitleVerifiedOnPublisherPublic2021": true,
+    "catalogueTitleDriftCorrectedFrom": "Introduction to Addition Algorithms PLC Activity"
+  },
+  "stageB": {
+    "status": "GUARDED_FIRST_PARTY_RICH_V2_AND_SOURCE_CONTEXT_RAZOR_WRITTEN_UNRUN",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L04",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "bb79cad9214030608ea3dd58b7845479fb14f532145cb28bf4fad106ca80574e",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": true,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l04-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson4.cshtml",
+    "publishedOrDeployed": false
+  },
+  "stageC": {
+    "status": "EIGHT_SOURCE_NUMERIC_CHECKS_SIX_TEACHER_REVIEW_TASKS_ORACLES_WRITTEN_UNRUN",
+    "family": "addition-within-1000",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity What is an Algorithm? with your teacher. Show the representation and explain how it meets the goal: Let’s learn new ways to add.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 14,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson4AdditionAlgorithmsSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "GOAL",
+      "sourceSection": "Preparation",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "WU-1",
+      "sourceSection": "Warmup 247 choices",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "WU-2",
+      "sourceSection": "Warmup 247 choices",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "WU-3",
+      "sourceSection": "Warmup 247 choices",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "WU-4",
+      "sourceSection": "Warmup 247 choices",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "WU-DIALOGUE",
+      "sourceSection": "Warmup discussion",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A1-362-354",
+      "sourceSection": "Activity 1",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A1-TYLER",
+      "sourceSection": "Activity 1 three methods",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A1-LIN",
+      "sourceSection": "Activity 1 three methods",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A1-HAN",
+      "sourceSection": "Activity 1 three methods",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A1-MLR7",
+      "sourceSection": "Activity 1 discussion",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A2-0",
+      "sourceSection": "Activity 2 written algorithms",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A2-1",
+      "sourceSection": "Activity 2 written algorithms",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A2-2",
+      "sourceSection": "Activity 2 written algorithms",
+      "coverage": "MATCHED_DIGITAL",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "A2-MLR3",
+      "sourceSection": "Activity 2 critique",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "SYNTH",
+      "sourceSection": "Lesson synthesis",
+      "coverage": "MATCHED_TEACHER_LED",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "CD",
+      "sourceSection": "Original gated Cool-down",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "FIG-0",
+      "sourceSection": "Source addition artwork",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "FIG-1",
+      "sourceSection": "Source addition artwork",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "FIG-2",
+      "sourceSection": "Source addition artwork",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "FIG-3",
+      "sourceSection": "Source addition artwork",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "FIG-4",
+      "sourceSection": "Source addition artwork",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "CENTER-0",
+      "sourceSection": "Optional center",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "CENTER-1",
+      "sourceSection": "Optional center",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    },
+    {
+      "id": "CENTER-2",
+      "sourceSection": "Optional center",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "claimedParity": false,
+      "originalStudentTaskPdfVerified": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L04-IMAGE-01",
+      "observedAltText": "Tyler's drawing of base ten blocks representing 362 plus 354.",
+      "originalReference": "unit-3/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L04-IMAGE-02",
+      "observedAltText": "Addition. Three-hundred plus sixty plus two, plus three-hundred plus fifty plus four, equals six-hundred plus one-hundred ten plus six.",
+      "originalReference": "unit-3/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L04-IMAGE-03",
+      "observedAltText": "Addition. Three-hundred and sixty-two plus three-hundred and fifty four equals six plus one-hundred ten plus six-hundred equals seven-hundred sixteen.",
+      "originalReference": "unit-3/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L04-IMAGE-04",
+      "observedAltText": "Base ten blocks.",
+      "originalReference": "unit-3/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L04-IMAGE-05",
+      "observedAltText": "Addition.",
+      "originalReference": "unit-3/lesson-4/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 25,
+    "sourcePdfOriginalVerified": 0,
+    "originalFigurePixelsVerified": 0,
+    "sourceCoolDownOriginalVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Calculate 354 + 181. Explain any regrouping.",
+    "answerType": "integer",
+    "expected": "535"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": false,
+  "authoringState": "A_C_EXPLICIT_GAP",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Publisher-original Student Task Statements PDF was publicly linked but not successfully downloaded or rendered; exact source artwork fidelity remains unverified.",
+    "Tyler, Lin and Han original source images (including the MLR3 critique image) not pixel inspected or individually rights-reviewed; independent text-only first-party equivalents have been authored.",
+    "Gated Choose an Algorithm original Cool-down not opened or 1:1 assessed.",
+    "Optional original center boards/materials not individually inspected.",
+    "Classroom partner discussions, WODB choices, visual display, and MLR3 critique require actual teacher approval.",
+    "New C#, Razor, and independent xUnit contracts are written, not run/compiled; Stage D remains deferred."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-40-2021-source-to-first-party-evidence-20261024.json",
+  "catalogueBaselineTitle": "Introduction to Addition Algorithms PLC Activity"
+}
