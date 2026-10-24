@@ -88,7 +88,7 @@ public sealed class UsCcssG3Unit1Lesson15SourceEquationTests
         Assert.Equal("12",lesson.OriginalEdulyticsCoolDown.Expected);
         Assert.False(lesson.OriginalStudentTaskPdfRead);
         Assert.False(lesson.ReadyForStageD);
-        Assert.Contains("unknown",lesson.TeacherReviewNote,StringComparison.OrdinalIgnoreCase);
+        Assert.True(lesson.TeacherReviewNote.Contains("unknown",StringComparison.OrdinalIgnoreCase));
     }
 
     [Fact]
