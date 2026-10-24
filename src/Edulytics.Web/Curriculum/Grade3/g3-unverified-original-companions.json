@@ -6207,34 +6207,134 @@
         "expected": "409"
       },
       "openTeacherTask": "Work through the original lesson's activity Monuments and Falls with your teacher. Show the representation and explain how it meets the goal: You will use addition and subtraction to solve problems within 1,000.",
-      "teacherReviewNote": "Check source word problems, units, choice of addition/subtraction and journal reflection.",
+      "teacherReviewNote": "Teacher checks two addition-table structural explanations; all three source-context quantities (246 ft,456 ft,346 steps) with operation choice and units; different place-value/count-on strategies; three optional journal prompts with oral/MLR8 access; and teacher-led centers. Publisher photos and gated Cool-down are not mirrored.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s solve problems involving addition and subtraction.",
+        "sourceGoal": "Let's solve problems involving addition and subtraction.",
         "sourceLearningGoals": "Solve addition and subtraction problems within 1,000 in a way that makes sense to them.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Notice structure in the partially filled tables rather than filling all blanks.",
+          "Choose addition or subtraction from the context and preserve feet versus steps.",
+          "Use familiar base-ten, number-line, or equation methods and explain the strategy.",
+          "Compare methods, reflect in a journal, and allow oral/MLR8 communication."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving addition and subtraction.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not teach a mandatory new algorithm or automatically grade strategy comparisons and written reflection."
       },
       "sourceBasedCheck": {
         "prompt": "The source Iguazu Falls problem has drops of 115 feet and 131 feet. Find the total drop in feet.",
-        "answerType": "integer",
-        "expected": "246"
+        "answerType": "length-with-unit",
+        "expected": "246 ft"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-2/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "PUBLIC_2021_TEACHER_STUDENT_HTML_MATH_AND_RUBRIC_REVIEWED_PDF_UNAVAILABLE",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L02-WU-TABLE-1",
+          "sourceActivity": "Warm-up two addition tables",
+          "prompt": "In the first addition table, what belongs where row 30 meets column 30?",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U03-L02-WU-TABLE-2",
+          "sourceActivity": "Warm-up two addition tables",
+          "prompt": "In the second addition table, determine the value at row 30 and column 30.",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U03-L02-WU-EXPLAIN-1",
+          "sourceActivity": "Warm-up structural discussion",
+          "prompt": "Explain how the first table's middle row and column show the same set of sums despite reversed addends.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-WU-EXPLAIN-2",
+          "sourceActivity": "Warm-up structural discussion",
+          "prompt": "Explain why entries running diagonally from 50+10 toward 10+50 all give 60.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-A1-FALLS",
+          "sourceActivity": "Monuments and Falls",
+          "prompt": "Iguazu Falls has consecutive drops of 115 feet and 131 feet. Give the total drop with its unit.",
+          "answerType": "length-with-unit",
+          "expected": "246 ft"
+        },
+        {
+          "id": "G3-U03-L02-A1-MONUMENTS",
+          "sourceActivity": "Monuments and Falls",
+          "prompt": "Compare heights of 555 feet and 99 feet. How many feet taller is the first monument? Include feet.",
+          "answerType": "length-with-unit",
+          "expected": "456 ft"
+        },
+        {
+          "id": "G3-U03-L02-A1-EIFFEL",
+          "sourceActivity": "Monuments and Falls",
+          "prompt": "From ground to the second floor there are 674 steps, and to the first floor there are 328. How many steps connect the floors?",
+          "answerType": "integer",
+          "expected": "346"
+        },
+        {
+          "id": "G3-U03-L02-A1-STRATEGIES",
+          "sourceActivity": "Monuments and Falls",
+          "prompt": "Compare counting on and counting back for the 674-versus-328 step problem; draw or explain place-value exchanges.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-A2-JOURNAL-PAST",
+          "sourceActivity": "Journal About Connections",
+          "prompt": "Describe a method from an earlier school year that helped today.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-A2-JOURNAL-KNOW",
+          "sourceActivity": "Journal About Connections",
+          "prompt": "Describe a calculation or representation you now understand well.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-A2-JOURNAL-QUESTIONS",
+          "sourceActivity": "Journal About Connections",
+          "prompt": "Describe one question, confusion or challenging strategy to explore later.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-A2-PARTNER",
+          "sourceActivity": "Journal About Connections",
+          "prompt": "Share one journal response with a partner or communicate it orally or with manipulatives.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain your preferred addition/subtraction strategy and another you would like to know; compare why each works.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L02-CD-ORIGINAL",
+          "sourceActivity": "Original publisher Cool-down unavailable",
+          "prompt": "Ask your teacher for access to the original gated How Much Taller? Cool-down; no independent grade is claimed for that prompt.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ]
     },
     {
       "ordinal": 39,
