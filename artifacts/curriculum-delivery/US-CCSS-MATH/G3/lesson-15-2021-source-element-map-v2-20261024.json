@@ -11,14 +11,14 @@
   "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/preparation.html",
   "sourceMappingContract": "MATCHED_DIGITAL | MATCHED_TEACHER_LED | RIGHTS_RESTRICTED | SOURCE_UNAVAILABLE | MISMATCH_BLOCKED",
   "identifiedOriginalElements": 41,
-  "verifiedOriginalElementsForAuthoringSemantics": 38,
-  "coverageNumerator": 38,
+  "verifiedOriginalElementsForAuthoringSemantics": 40,
+  "coverageNumerator": 40,
   "coverageDenominator": 41,
-  "coveragePercent": 92.68,
+  "coveragePercent": 97.56,
   "statusCounts": {
     "MATCHED_TEACHER_LED": 19,
-    "MATCHED_DIGITAL": 19,
-    "SOURCE_UNAVAILABLE": 3
+    "MATCHED_DIGITAL": 21,
+    "SOURCE_UNAVAILABLE": 1
   },
   "semanticCoverageDoesNotProveRuntimeOrLearnerMastery": true,
   "sourceArtworkOrPublisherCoolDownParityClaimed": false,
@@ -33,7 +33,7 @@
   "CIExecuted": false,
   "StageD": "NOT_STARTED",
   "academicApproval": "NOT_CLAIMED",
-  "newFirstPartyVisual": "Eight compartments each 2, total 16; explicit accessible independent model, not publisher image.",
+  "newFirstPartyVisual": "Two independent Grade 3 Razor figures: eight separate groups of two countable circles in two rows of four, and eight equal tape partitions each 2 with total 16; not copied SVG artwork.",
   "elements": [
     {
       "id": "L15-PREP-GOAL",
@@ -519,31 +519,37 @@
       "id": "L15-SUM-DRAW",
       "sourceLocation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html | Student Section Summary",
       "sourceElement": "Diego eight groups each containing two socks; original publisher drawing image.",
-      "state": "SOURCE_UNAVAILABLE",
+      "state": "MATCHED_DIGITAL",
       "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
       "companionQuestionId": null,
       "gradingMode": "FIRST_PARTY_SOCK_GROUP_MATH_EQUIVALENT_ONLY",
-      "verified2021MathSemantics": false,
-      "figureBytesInspected": false,
-      "sourceUnavailable": true,
+      "verified2021MathSemantics": true,
+      "figureBytesInspected": true,
+      "sourceUnavailable": false,
       "nonDigitalTeacherEvidence": false,
       "stageCTest": null,
-      "note": "Mathematical total 16 independently represented, but original image pixels and source-material geometry not inspected"
+      "note": "Source SVG was downloaded and inspected as reference only (no publisher asset copied); Two rows of four separated ovals; each oval encloses two circles, eight groups and sixteen total. Independent Razor diagrams represent the same group counts, arrangement and equation. Teacher reasoning remains human assessed; actual runtime rendering not tested.",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/ndswoo638zcr0d46en8j7p0ofyqe",
+      "sourceAssetSha256": "e61fc479eb48af36eee6613dc40df66de75661198ac9e805bf3a2103be08612c",
+      "sourceAssetInspectedOn": "2026-10-24"
     },
     {
       "id": "L15-SUM-TAPE",
       "sourceLocation": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html | Student Section Summary",
       "sourceElement": "Original source eight equal tape parts labeled 2 with total 16.",
-      "state": "SOURCE_UNAVAILABLE",
+      "state": "MATCHED_DIGITAL",
       "firstPartyFile": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
       "companionQuestionId": null,
       "gradingMode": "FIRST_PARTY_ACCESSIBLE_EIGHT_COMPARTMENT_TAPE",
-      "verified2021MathSemantics": false,
-      "figureBytesInspected": false,
-      "sourceUnavailable": true,
+      "verified2021MathSemantics": true,
+      "figureBytesInspected": true,
+      "sourceUnavailable": false,
       "nonDigitalTeacherEvidence": false,
       "stageCTest": null,
-      "note": "Original image alt verified publicly; original vector/pixels not inspected"
+      "note": "Source SVG was downloaded and inspected as reference only (no publisher asset copied); One equal-length horizontal bar with eight compartments, each labeled 2, and a brace indicating total 16. Independent Razor diagrams represent the same group counts, arrangement and equation. Teacher reasoning remains human assessed; actual runtime rendering not tested.",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/r182hgew7m3r7qjf3sm8vs8x2yxn",
+      "sourceAssetSha256": "5771aa437041062d4f124a373ab7760d501105a282e836fad9054ef76dde88b5",
+      "sourceAssetInspectedOn": "2026-10-24"
     },
     {
       "id": "L15-SUM-EXPR",
@@ -652,9 +658,9 @@
     }
   ],
   "blockingOriginalSourceEvidence": [
-    "Original 2021 Student Section Summary two publisher figures (sock groups and eight-part tape) were not visually inspected as actual source pixel/SVG geometry. First-party eight-part model preserves known source math but does not prove original artwork parity.",
-    "Official first-edition Student Task Statements PDF file could not be retrieved/viewed for figure/layout fidelity; original 2021 public HTML tasks and 2021 first-edition teacher guide printed text were individually read.",
-    "Actual source original image licensing must be checked separately before any reuse (no publisher images stored)."
+    "Official first-edition 2021 Student Task Statements PDF returned HTTP 404 from the publisher Active Storage URL on 2026-10-24; visually comparing that exact PDF remains unverified, although public original student-facing HTML and both source SVGs were reviewed.",
+    "The two actual 2021 Section Summary SVG geometries were inspected from the first-edition local lesson HTML's cms-assets links, but source figure assets were NOT embedded in Edulytics. Independent educational diagrams were authored.",
+    "Actual effective database Rich V2 and Razor runtime rendering remain outside this authoring-only review. Tests and Stage D must not be treated as executed."
   ],
   "separateStageDOnlyDeferrals": [
     "Tests authored including two original K5_v1 Cool-down questions; NOT_RUN.",
@@ -687,5 +693,11 @@
     "sourceTextExtractedFromPublishedCopy": true
   },
   "firstPartyCoolDownDistinctFrom2021Original": true,
-  "firstPartyRichV2Version": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3"
+  "firstPartyRichV2Version": "g3-u01-l15-2021-source-specific-rich-v2-authoring-20261024-v3",
+  "sourceFigureGeometryInspected": true,
+  "figureInspection": {
+    "date": "2026-10-24",
+    "method": "downloaded two original SVG files to user-authorized Our-CS for read-only academic comparison; SHA256 computed on source bytes",
+    "publisherAssetsCopiedToRepository": false
+  }
 }
