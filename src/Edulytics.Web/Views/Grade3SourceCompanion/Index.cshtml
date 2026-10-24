@@ -885,7 +885,16 @@
                 <h2>Source Activity 1: draw what your partner describes WITHOUT seeing it</h2>
                 <p>Use the original blank 12-by-12 grid and a folder between partners. Partner A draws a rectangle and describes HOW MANY ROWS and HOW MANY COLUMNS without revealing the total number of tiles or showing the drawing. Partner B draws the rectangle from the description. Compare, switch roles and repeat. The total must not be disclosed first, or the key source challenge is spoiled.</p>
                 <h2>Source Activity 2: find FOUR rectangular areas</h2>
-                <p>The source first rectangle has 2 × 9 = 18 square units, the second 6 × 5 = 30, and the fourth 5 × 9 = 45. The third image has no independently verified row and column dimensions in the text description: inspect it with the teacher before computing. Every answer should include the unit “square units” and a strategy.</p>
+                <p>All FOUR original diagrams were independently checked against the 2021 source: 2 rows × 9 columns = 18 square units; 6 × 5 = 30; 6 × 10 = 60 for the originally unresolved THIRD drawing; and 5 × 9 = 45. State area in SQUARE UNITS and explain how equal-size tiles fully cover the region, rather than answering with a bare integer.</p>
+                <div class="two" aria-label="Independent rectangle unit-square models, not publisher graphics">
+                    @foreach(var rc in new[]{(r:2,c:9),(r:6,c:5),(r:6,c:10),(r:5,c:9)}){
+                        <div><strong>@rc.r × @rc.c = @(rc.r*rc.c) square units</strong>
+                            <div role="img" aria-label="@($"{rc.r} rows and {rc.c} columns of square tiles, area {rc.r*rc.c} square units")" style="display:grid;grid-template-columns:repeat(@rc.c,13px);gap:1px;margin:8px 0">
+                                @for(var sq=0;sq<rc.r*rc.c;sq++){<span aria-hidden="true" style="width:13px;height:13px;display:inline-block;background:#dbeaf5;border:1px solid #6f8295;box-sizing:border-box"></span>}
+                            </div>
+                        </div>
+                    }
+                </div>
                 <p>At synthesis, compare a 3×2 arrangement of distinct dots to a 3×2 unit-square region: arrays count objects, whereas area measures the space actually covered. Source graphics and the gated original Cool-down are not reproduced here.</p>
             </section>
         }
