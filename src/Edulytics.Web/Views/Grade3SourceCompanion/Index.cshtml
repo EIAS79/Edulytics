@@ -899,18 +899,41 @@
             </section>
         }
         @if(l.UnitNumber == 2 && l.LessonNumber == 5) {
-            <section class="panel" aria-label="Source rectangular regions as multiplication expressions">
-                <h2>Warm-up: one more equal group</h2>
-                <p>Compare five groups of three to six groups of three: 15 + 3 = 18. The third source dot picture requires teacher image inspection; use it to reason about another extra group rather than treating text alt as a complete visual description.</p>
-                <h2>Activity 1: MATCH seven multiplication expressions to the actual gridded area pictures</h2>
-                <p>Use the ORIGINAL teacher-posted rectangle diagrams and match 9 × 5, 8 × 2, 7 × 10, 3 × 3, 2 × 6, 8 × 4 and 5 × 7. For each, show whether you see one factor as rows or columns and the other as square units PER group. Entering only a product cannot certify matching the physical image.</p>
-                <h2>Activity 2: CREATE five separately labelled rectangular areas</h2>
-                <p>The five public tasks require 3 × 4, 4 × 6, 6 × 3, 7 × 4 and 3 × 2 rectangular unit-square areas. Draw each on the original provided blank grid, identify both side lengths, count all equal squares, and record area in SQUARE UNITS. The source allows at least three of these five for pupils requiring less work, but all five appear below.</p>
-                <p>This is an independent example of a 3-by-4 unit-square region, not the publisher grid:</p>
-                <div class="first-party-array" style="grid-template-columns:repeat(4,17px)" role="img" aria-label="Three complete rows of four square units, area twelve square units">
-                    @for(var i=0;i<12;i++){<span class="first-party-dot" style="border-radius:1px" aria-hidden="true"></span>}
+            <section class="panel" aria-label="2021 source-equivalent rectangles, first-party drawings">
+                <h2>Warm-up — one more equal group</h2>
+                <p>The three original 2021 figures were inspected: first FIVE groups of three = 15, next SIX groups of three = 18, final SIX groups of FOUR = 24. In the original final drawing each group is a two-by-two mini-array. Explain how you see the equal groups.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:15px;margin:10px 0" aria-label="Independently drawn equal-group warm-up representations">
+                    @foreach(var model in new[]{(groups:5,each:3),(groups:6,each:3),(groups:6,each:4)}){
+                        <div><strong>@model.groups groups × @model.each = @(model.groups*model.each)</strong>
+                            <div style="display:flex;flex-wrap:wrap;max-width:245px;gap:5px">
+                                @for(var group=0;group<model.groups;group++){
+                                    <div style="@($"display:grid;grid-template-columns:repeat({(model.each==4?2:3)},12px);gap:2px;border:1px dashed #6f8295;padding:4px;margin-top:5px")" aria-hidden="true">
+                                        @for(var dot=0;dot<model.each;dot++){<span class="first-party-dot" style="width:10px;height:10px" aria-hidden="true"></span>}
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
-                <p>Source synthesis: compare a 2×7 region with its 7×2 orientation. Unlike a dot array, the rectangular area is covered SPACE, not merely a collection of objects. Teacher reviews actual matching, drawings and explanations; independent numerical exercises do not prove original publisher parity.</p>
+                <h2>Activity 1 — match source expressions to first-party rectangle cards A–G</h2>
+                <p>Seven original source cards have been inspected individually. These Edulytics rectangles are newly constructed from unit-square cells and preserve row/column counts; original publisher artwork is not used. Choose the card LETTER for each expression and explain the side-length structure. The letter feedback does not certify the explanation.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:18px;margin:12px 0" aria-label="Seven original first-party rectangle cards">
+                    @foreach(var card in new[]{(letter:"A",rows:2,cols:6),(letter:"B",rows:5,cols:7),(letter:"C",rows:8,cols:2),(letter:"D",rows:3,cols:3),(letter:"E",rows:7,cols:10),(letter:"F",rows:9,cols:5),(letter:"G",rows:8,cols:4)}){
+                        <div style="padding:9px;max-width:max-content">
+                            <strong>Card @card.letter</strong>
+                            <div role="img" aria-label="@($"First-party card {card.letter}, {card.rows} rows by {card.cols} columns of square units, area {card.rows*card.cols}")"
+                                 style="@($"display:grid;grid-template-columns:repeat({card.cols},12px);gap:1px;margin-top:5px")">
+                                @for(var sq=0;sq<card.rows*card.cols;sq++){
+                                    <span aria-hidden="true" style="display:block;width:12px;height:12px;box-sizing:border-box;border:1px solid #557b94;background:#daeff7"></span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <p>The seven original 2021 expressions: 9 × 5, 8 × 2, 7 × 10, 3 × 3, 2 × 6, 8 × 4 and 5 × 7. Match each individually. Both card letter and geometric explanation matter.</p>
+                <h2>Activity 2 — create five rectangles on your own unit-square grid</h2>
+                <p>Individually DRAW, label side lengths and find areas for 3 × 4, 4 × 6, 6 × 3, 7 × 4 and 3 × 2. Teachers may use the publisher's reduced-task support of at least three of five for suitable learners. The five mathematical areas are 12, 24, 18, 28 and 6 square units; numeric feedback alone never certifies tiled drawings.</p>
+                <p>Source synthesis compares the same 2 × 7 = 14 square-unit rectangle viewed as two rows of seven or seven columns of two. Rectangular area measures space fully covered by congruent tiles, unlike dot arrays that count objects. The publisher Cool-down is educator gated; Edulytics offers a separate first-party skill-equivalent task.</p>
             </section>
         }
         @if(l.UnitNumber == 2 && l.LessonNumber == 6) {
