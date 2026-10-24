@@ -5949,81 +5949,192 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Which One Doesn't Belong: Numbers within 1,000 (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Card Sort: Numbers in Their Different Forms (15 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: Numbers in Different Forms Round Table (20 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "SEMANTICALLY_MAPPED_TO_FIRST_PARTY_TEACHING_AND_TASKS"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: Let Me Count the Ways (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_ASSESSMENT_COPY"
         }
       ],
       "sourceVisualAltDescriptions": [
         "Base ten diagram. 3 hundreds, 7 tens."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "place-value",
       "independentPractice": {
-        "prompt": "Write 600 + 20 + 5 as a number.",
+        "prompt": "Write 600+20+5 as a numeral,then give its word name and a different decomposition. Enter the numeral; your teacher reviews the additional representations.",
         "answerType": "integer",
         "expected": "625"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Express 478 as a three-digit number after decomposing it into hundreds, tens and ones.",
-        "answerType": "integer",
-        "expected": "478"
+        "prompt": "New Edulytics task: represent 572 as counts of hundreds,tens and ones. Enter ONE grouping as three non-negative whole numbers in hundreds,tens,ones order,separated by commas. Then show two different decompositions and explain an exchange that keeps the whole unchanged. Counts of tens or ones may exceed 9; your teacher reviews distinctness and the extra forms.",
+        "answerType": "place-value-parts",
+        "expected": "572"
       },
-      "openTeacherTask": "Work through the original lesson's activity Card Sort: Numbers in Their Different Forms with your teacher. Show the representation and explain how it meets the goal: You will represent numbers using base-ten blocks, base-ten diagrams, expanded form, numerals, and word form.",
-      "teacherReviewNote": "Source cards require matching and multiple decompositions of the same whole, not a single arithmetic result.",
+      "openTeacherTask": "Justify a Which One Doesn’t Belong choice,match the full twelve-card deck by place value,and use the four-box recording sheet to exchange three distinct decompositions of each student’s original number. Explain connections across group sheets.",
+      "teacherReviewNote": "Original source deckA–L has five groups:A–G–L=175,B–H=813,C–F=371,D–I–J=299,E–K=329. CardC diagram 3 hundreds 7 tens 1 one;J 2 hundreds 9 tens 9 ones. Standard expanded form is distinct from other correct sums. For round table,check one original three-digit whole,three different decompositions,each pass right and final return,connections and actual discussion. The numeric hundreds,tens,ones checker accepts equivalent non-standard exchanges and checks one grouping only; teacher reviews word form,diagrams,other decompositions,distinctness and authorship. Publisher card/round-table PDFs were inspected; artwork is not copied.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s represent numbers in different ways.",
         "sourceLearningGoals": "Represent numbers to 1,000 in different ways using place value understanding.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Compare the four warm-up representations and justify a choice.",
+          "Distinguish standard expanded form from other correct decompositions.",
+          "Match all twelve cards by place-value value and explain with a partner.",
+          "Pass the four-box sheet right,keeping the same original number and recording different decompositions.",
+          "Explain exchanges and patterns,then use the new Cool-down to represent a different whole."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent numbers in different ways.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not force one WODB choice,one decomposition or equal-sized match groups. Preserve the whole during exchanges; standard expanded form has a specific digit-value meaning.",
+        "targetRichV2Field": "guarded canonical English teaching replacement CommonCoreG3Unit3Lesson1RichV2"
       },
       "sourceBasedCheck": {
-        "prompt": "In the source number representations, 300 + 60 + 10 equals what three-digit number?",
+        "prompt": "In the original warm-up,what three-digit number equals 300+60+10? Explain how the two tens terms combine,and distinguish this sum from standard expanded form.",
         "answerType": "integer",
         "expected": "370"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-1/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "THREE_ORIGINAL_2021_STUDENT_PDF_PAGES_FIVE_ORIGINAL_BLACKLINE_MASTER_PDFS_PUBLIC_TEACHER_PREPARATION_CARD_GEOMETRIES_AND_COUNTS_REVIEWED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
-      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK"
+      "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
+      "sourceSubtasks": [
+        {
+          "id": "G3-U03-L01-WU-WODB",
+          "sourceActivity": "Which One Doesn’t Belong?",
+          "prompt": "Choose a warm-up representation that does not belong and justify why. Different letters can be supported by different sound mathematical reasons.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-WU-A",
+          "sourceActivity": "Which One Doesn’t Belong?",
+          "prompt": "What number does the warm-up base-ten diagram A represent? Explain the hundreds and tens.",
+          "answerType": "integer",
+          "expected": "370"
+        },
+        {
+          "id": "G3-U03-L01-WU-B",
+          "sourceActivity": "Which One Doesn’t Belong?",
+          "prompt": "What number does warm-up expression B,300+70+1,represent?",
+          "answerType": "integer",
+          "expected": "371"
+        },
+        {
+          "id": "G3-U03-L01-WU-D",
+          "sourceActivity": "Which One Doesn’t Belong?",
+          "prompt": "What number does warm-up expression D,400−30,represent?",
+          "answerType": "integer",
+          "expected": "370"
+        },
+        {
+          "id": "G3-U03-L01-WU-EXPANDED",
+          "sourceActivity": "Warm-up synthesis",
+          "prompt": "Write 482 in standard expanded form and explain the hundreds,tens and ones. Compare a correct non-standard decomposition with standard expanded form.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-A1-MATCH",
+          "sourceActivity": "Card Sort",
+          "prompt": "Match all twelve source-equivalent cardsA–L by value. Record every group, including both pairs and triples. Take turns explaining the numeral,name,sum or diagram and challenge a mismatch with reasons.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-A1-C",
+          "sourceActivity": "Card Sort",
+          "prompt": "Read cardC’s base-ten diagram. What number does it represent? Explain each place-value unit.",
+          "answerType": "integer",
+          "expected": "371"
+        },
+        {
+          "id": "G3-U03-L01-A1-J",
+          "sourceActivity": "Card Sort",
+          "prompt": "Read cardJ’s base-ten diagram. What number does it represent? Explain each place-value unit.",
+          "answerType": "integer",
+          "expected": "299"
+        },
+        {
+          "id": "G3-U03-L01-A1-L",
+          "sourceActivity": "Card Sort",
+          "prompt": "What number does cardL,100+60+15,represent? Explain why it is a correct decomposition even though it is not standard expanded form.",
+          "answerType": "integer",
+          "expected": "175"
+        },
+        {
+          "id": "G3-U03-L01-A2-365-PARTS",
+          "sourceActivity": "Round Table launch",
+          "prompt": "Give one way to group 365 as counts of hundreds,tens and ones. Enter three non-negative whole-number counts in that order,separated by commas. Different groupings can work; explain an exchange.",
+          "answerType": "place-value-parts",
+          "expected": "365"
+        },
+        {
+          "id": "G3-U03-L01-A2-BOX1",
+          "sourceActivity": "Round Table Part1",
+          "prompt": "In a group of four,each writer chooses a three-digit number and writes it in Box 1. Pause for teacher instructions.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-A2-BOXES",
+          "sourceActivity": "Round Table Part1",
+          "prompt": "Pass right and receive from left. Complete Boxes 2,3,4 over successive passes with three DIFFERENT decompositions of the original Box 1 number,pause between boxes,then pass once more to return the sheet. Do not change the original whole.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-A2-HARDEST",
+          "sourceActivity": "Round Table Part1 discussion",
+          "prompt": "Discuss which box was most difficult and what helped you find a different representation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-A2-CONNECTIONS",
+          "sourceActivity": "Round Table Part2",
+          "prompt": "Independently record connections among decompositions of your original number. Then compare all group sheets and discuss patterns in the exchanges.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L01-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Give different decompositions of 253. For 253+134,choose a helpful decomposition and explain why it helps you combine place-value units.",
+          "answerType": "teacher",
+          "expected": null
+        }
+      ],
+      "originalTeacherBlacklineMasterPdfRead": true,
+      "sourceCardCount": 12
     },
     {
       "ordinal": 38,

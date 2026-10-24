@@ -83,6 +83,31 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "place-value-parts")
+        {
+            if (!int.TryParse(q.Expected, NumberStyles.None, CultureInfo.InvariantCulture,
+                out var whole) || whole is < 1 or > 1000)
+                return new(null, true, "The target whole needs teacher review.");
+            var parts = submitted.Trim().Split(',');
+            if (parts.Length != 3)
+                return new(false, true, "Enter three whole-number counts in hundreds,tens,ones order.");
+            var counts = new int[3];
+            for (var i = 0; i < 3; i++)
+            {
+                var literal = parts[i].Trim();
+                if (!Regex.IsMatch(literal, @"^[0-9]{1,4}$", RegexOptions.CultureInvariant) ||
+                    !int.TryParse(literal, NumberStyles.None, CultureInfo.InvariantCulture, out counts[i]) ||
+                    counts[i] > 1000)
+                    return new(false, true, "Use non-negative whole-number counts up to 1,000.");
+            }
+            // Non-canonical exchanges are intentional: 5,7,2 and 4,17,2
+            // can name the same whole. Do not force one preferred grouping.
+            var correct = 100 * counts[0] + 10 * counts[1] + counts[2] == whole;
+            return new(correct, true, correct
+                ? "These hundreds, tens and ones represent the target whole. Explain an exchange and compare another representation with your teacher."
+                : "Check the values of hundreds, tens and ones and whether their total equals the target whole.");
+        }
+
         if (q.AnswerType == "length-with-unit")
         {
             if (!TryReadLengthWithUnit(q.Expected, out var expectedLength, out var expectedDenominator, out var expectedUnit))

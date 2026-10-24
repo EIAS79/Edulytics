@@ -563,7 +563,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit", "place-value-parts" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -574,6 +574,11 @@ public sealed class Grade3SourceCompanionGradingTests
                 }
 
                 var validAnswer = question.Expected;
+                if (question.AnswerType == "place-value-parts")
+                {
+                    var whole = int.Parse(question.Expected!);
+                    validAnswer = $"{whole / 100},{whole % 100 / 10},{whole % 10}";
+                }
                 if (question.AnswerType == "rectangle-dimensions")
                 {
                     Assert.NotNull(question.DimensionConstraint);
@@ -620,6 +625,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "constrained-side-length" => "0 ft",
                     "rectangle-dimensions" => "0,0",
                     "length-with-unit" => "0 m",
+                    "place-value-parts" => "0,0,0",
                     _ => throw new InvalidOperationException("Unexpected type")
                 };
                 var rejected=Grade3SourceCompanionCatalogue.Grade(question,wrong);

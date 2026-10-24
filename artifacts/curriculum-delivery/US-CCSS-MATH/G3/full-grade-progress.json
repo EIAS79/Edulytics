@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 36,
+    "lessonsFullyReadyForStageD": 37,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 107,
+    "lessonsWithACExplicitGap": 106,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,25 +32,25 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 36,
+    "lessonsIndividuallyComparedToAllOriginalElements": 37,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 36,
+    "lessonsWithActualRichV2SourcePerfect": 37,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 876,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 914,
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 36,
-    "firstUnclosedOrdinal": 37,
+    "lastConsecutiveReadyForStageDOrdinal": 37,
+    "firstUnclosedOrdinal": 38,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -225,17 +225,6 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L09",
       "status": "A_C_EXPLICIT_GAP",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L09.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
-    },
-    {
-      "ordinal": 37,
-      "lessonCode": "PED:US-CCSS-MATH:G3:U03:L01",
-      "status": "A_C_EXPLICIT_GAP",
-      "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L01.json",
       "reasons": [
         "Full local original source tasks/diagrams and Rich V2 not individually compared",
         "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
@@ -2506,13 +2495,13 @@
       "unitNumber": 3,
       "lessonNumber": 1,
       "title": "Represent Numbers in Different Ways",
-      "stageA": "SOURCE_STUDENT_FACING_TEXT_REVIEWED_SOURCE_IMAGE_PIXEL_OPEN",
-      "stageB": "SOURCE_SKILL_AND_AUTHORIGINAL_FIRST_PARTY_COMPANION_RICHV2_OPEN",
-      "stageC": "NUMERIC_OR_TEACHER_REVIEW_GRADE_CONTRACT_DRAFT_UNRUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 6,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "stageA": "THREE_2021_STUDENT_PDF_PAGES_FIVE_BLM_PDFS_TWELVE_CARD_COUNTS_PUBLIC_TEACHER_PREPARATION_REVIEWED",
+      "stageB": "GUARDED_NUMBER_FORMS_RICH_V2_FIRST_PARTY_CARDS_BASE_TEN_DIAGRAMS_FOUR_BOX_SHEET",
+      "stageC": "EXACT_MULTIPLE_PLACE_VALUE_GROUPINGS_ORIGINAL_NUMERIC_ANCHORS_TEACHER_MATCHING_DISTINCTNESS_RUBRIC_UNRUN_TESTS",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 38,
+      "fullyVerifiedSourceElements": 38,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L01.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -2524,7 +2513,10 @@
       "original2021FigureUrlCount": 2,
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 0,
-      "original2021FigurePixelParityApproved": false
+      "original2021FigurePixelParityApproved": false,
+      "readyForStageD": true,
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-37-2021-source-to-first-party-evidence-20261024.json",
+      "sourceMatchingMeasurementScope": "STATIC_SOURCE_SEMANTIC_AUTHORING_NOT_PUBLISHER_ART_OR_RUNTIME_PARITY"
     },
     {
       "gradeOrdinal": 38,
@@ -5303,7 +5295,8 @@
     "2026-10-24 sequential ordinal33 U02:L12 A–C authored: original7×6garden42ft² retained, composite70squareunits, own garden/alternative partitions/parentheses teacher rubrics, first-party Cool-down38squareunits; tests written not run. Cursor34.",
     "2026-10-24 sequential ordinal34 U02:L13 A–C: partial44, T32 and Noah42pavers/42ft² individually reviewed;4 original SVG geometries and3 PDF pages; first-party models and35-square-unit ungridded Cool-down. New contracts written not run. Cursor35; no Stage D/CI dispatch/merge/deploy.",
     "2026-10-24 sequential ordinal35 U02:L14 A–C:4 original PDF pages,4 SVG references(3distinct), opposite-side spans and Tyler critique, A72m²/B22ft², exact unit-labelled lengths, teacher same/different-method restatement, independent33cm² Cool-down. Tests written not run. Cursor36; no Stage D/CI dispatch/merge/deploy.",
-    "2026-10-24 sequential ordinal36 U02:L15 A–C:3 original PDF pages and3 image contexts; outerroom110ft²,bed18ft²,desk6ft²; original open layout/uncovered-floor task retains teacher review and explicit unknown-closet assumptions. Source-authorized own grid-paper alternative; publisher cut-out BLM not claimed inspected. New64ft² first-party exit task; original optional lesson has no listed publisher Cool-down. Tests written not run. Cursor37; no Stage D/CI dispatch/merge/deploy."
+    "2026-10-24 sequential ordinal36 U02:L15 A–C:3 original PDF pages and3 image contexts; outerroom110ft²,bed18ft²,desk6ft²; original open layout/uncovered-floor task retains teacher review and explicit unknown-closet assumptions. Source-authorized own grid-paper alternative; publisher cut-out BLM not claimed inspected. New64ft² first-party exit task; original optional lesson has no listed publisher Cool-down. Tests written not run. Cursor37; no Stage D/CI dispatch/merge/deploy.",
+    "2026-10-24 sequential ordinal37 U03:L01 A–C:3 original studentPDFpages and5originalBLMPDFpages,full12-carddeck and4-boxroundtable;multiplevalidWODBchoices,standard/nonstandardexpandedform,exact100h+10t+o grader acceptingexchanges,new572-groupingCool-down replacing478echo. Source device read-only; tests written not run. Cursor38; no Stage D/CI dispatch/merge/deploy."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -5867,21 +5860,21 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "lessonCode": "PED:US-CCSS-MATH:G3:U02:L15",
-    "gradeOrdinal": 36,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L01",
+    "gradeOrdinal": 37,
     "authoringOnly": true,
-    "sourceElements": 25,
+    "sourceElements": 38,
     "originalStudentPdfPages": 3,
-    "sourceEvidenceMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-36-2021-source-to-first-party-evidence-20261024.json",
+    "sourceEvidenceMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-37-2021-source-to-first-party-evidence-20261024.json",
     "testsRun": false,
-    "headBeforeCommit": "ffe13f241cee648d50ef86ce1e0083f0be0c5f12"
+    "headBeforeCommit": "bea3ef8a29f2ae5e21ce94f17f210202bf72c505"
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 36,
-    "firstUnclosedGradeOrdinal": 37,
-    "sourceElementsVerified": 25,
-    "sourceElementsIdentified": 25,
+    "lastClosedGradeOrdinal": 37,
+    "firstUnclosedGradeOrdinal": 38,
+    "sourceElementsVerified": 38,
+    "sourceElementsIdentified": 38,
     "sourceAcademicSemanticPercentageAuthoringOnly": 100,
     "testsRun": false,
     "ciRun": false,
