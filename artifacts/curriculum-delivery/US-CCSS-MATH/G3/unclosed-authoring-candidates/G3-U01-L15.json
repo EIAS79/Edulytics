@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-1/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-15/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_FIRST_EDITION_FULL_PUBLIC_TEACHER_STUDENT_TEXT_AND_18_GRANULAR_ELEMENTS_MAPPED_PDF_FIGURES_OPEN",
     "goals": "Solve multiplication problems.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 1,
@@ -70,7 +70,7 @@
     ]
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "2021_SOURCE_SPECIFIC_RICH_V2_AUTHORED_NOT_RUNTIME_VERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -80,10 +80,11 @@
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
-    "sourceSpecificMissingGroupsVsGroupSizeVsProductTeachingAuthored": true
+    "sourceSpecificMissingGroupsVsGroupSizeVsProductTeachingAuthored": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l15-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "ALL_THREE_ACTIVITY_ONE_UNKNOWN_SYMBOL_AND_NUMERIC_ANSWERS_AUTHORED_TESTS_NOT_RUN",
     "family": "multiplication-expression-equation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -96,7 +97,11 @@
     "teacherReviewNote": "Teacher checks which factor denotes number of groups, multiplication expression/equation and diagram.",
     "all12SourceNumericPromptsIndividuallyMapped": true,
     "unknownRoleNotAutomaticallyCertified": true,
-    "newTestsWrittenNotRun": true
+    "newTestsWrittenNotRun": true,
+    "sourceUnknownSymbolQuestionCount": 3,
+    "sourceNumericQuestionCount": 12,
+    "sourceSymbolContract": "multiplication-unknown-equation",
+    "sourceSymbolTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson15SourceEquationTests.cs"
   },
   "sourceElements": [
     {
@@ -192,17 +197,18 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
-    "12 source numeric tasks indexed and authored with individual human review, but full equation syntax and missing-value reasoning not machine-assessed. Original 2021 figures/task PDF and deployed Rich V2 still unverified."
+    "Original 2021 public student-task PDF not visually retrieved or inspected; the HTML source is reviewed.",
+    "Original Student Section Summary publisher figure pixels/rights not independently reviewed.",
+    "Teacher-only source Cool-down not inspected; an Edulytics first-party equivalent is separate.",
+    "Published learner Rich V2 effective database/runtime, route and renderer unverified.",
+    "Written Grade 3 source symbolic equation tests deliberately NOT_RUN pending Stage D.",
+    "Partner interpretation, drawing and model explanations require teacher academic review."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "lesson15EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-15-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementGranularCount": 18
 }
