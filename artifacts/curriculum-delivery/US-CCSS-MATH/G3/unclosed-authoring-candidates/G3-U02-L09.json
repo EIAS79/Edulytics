@@ -11,16 +11,20 @@
   "originalTeacherHtml": "unit-2/lesson-9/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-2/lesson-9/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_PDF_3_PAGES_EIGHT_MEDIA_GEOMETRIES_26_OF_26_SOURCE_SEMANTICS_MAPPED",
     "goals": "Find the area of rectangles by measuring and multiplying the side lengths.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 6,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSHA256": "57661390bd7b0b4e2ad5a1c8ee44463903d8689d60d9cf4d3a35bd1924239f16",
+    "originalSourceImagesInspected": 8,
+    "originalSourceElementsIdentified": 26,
+    "originalSourceElementsMapped": 26
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_V2_CANONICAL_GUARDED_NOMINAL_18_20_30_SQUARE_CENTIMETERS_AND_PHYSICAL_TAPE_SUPPORT",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +32,13 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "f996776931feedfacfda4b8aca8fcfcfe9523e7bed041a4d6de06268cc3f2d6a",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u02-l09-2021.rich-lesson-v2.json",
+    "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit2Lesson9RichV2.cs"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "THREE_SEPARATE_SOURCE_CM2_AREA_CHECKS_PHYSICAL_SIX_ASSIGNMENT_TEACHER_ONLY_TESTS_WRITTEN_NOT_RUN",
     "family": "rectangle-area",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,9 +46,11 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Measure to Find Area with your teacher. Show the representation and explain how it meets the goal: Let’s measure the sides of rectangles and find the area.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSourceTasksCount": 15,
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit2Lesson9MeasuredRectangleSourceTests.cs"
   },
   "sourceElements": [
     {
@@ -168,20 +176,22 @@
     "expected": "18"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-30-2021-source-to-first-party-evidence-20261024.json",
+  "sourceElementsIdentified": 26,
+  "sourceElementsSemanticallyMapped": 26,
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "releaseDeferrals": [
+    "Real learner print/ruler, physical tape design, and teacher collaboration only teacher-assessable",
+    "Tests/CI/Stage D not run",
+    "Gated original publisher cooldown never copied"
+  ]
 }
