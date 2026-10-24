@@ -2897,11 +2897,11 @@
         "A rectangle.",
         "Outline of stairs. 6 steps."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "unit-squares-area",
       "independentPractice": {
         "prompt": "A region can be covered by three rows of four equal square tiles without gaps or overlaps. What is its area in square units?",
@@ -2914,10 +2914,10 @@
         "expected": "20"
       },
       "openTeacherTask": "Work through the original lesson's activity Create and Compare with your teacher. Show the representation and explain how it meets the goal: You will use square tiles to build shapes and measure area.",
-      "teacherReviewNote": "Student must tile or draw correctly. Original six shapes need their actual illustrations to verify their areas.",
+      "teacherReviewNote": "Student must tile or draw correctly. Original six shapes need their actual illustrations to verify their areas. All 13 source 2021 lesson figures, three-page Student Task PDF, and six-page original source blackline master reviewed. Original figures 1–6 have exact square-unit counts 9, 18, 13, 30, 36, 21 measured from source geometric paths. Edulytics independent tile diagrams preserve tile topology. Numeric score checks area counts, but teacher still evaluates physical tiles, absence of gaps and overlaps, square-unit labels and mathematical explanation.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s use square tiles to measure area.",
@@ -2926,10 +2926,10 @@
           "Compare original warm-up figures A (one square), B (3×3 alternately shaded), C (2×2 shaded), and D (blue-and-white tiled rectangle), each with more than one plausible comparison rationale.",
           "Give each group of four 80 uniform inch tiles; each pupil builds one shape, then group members order them by covered space/square-unit count.",
           "Introduce square unit as the area of one unit tile; separate area from perimeter and arrangement.",
-          "Provide six ORIGINAL source handout figures. Pupils cover each fully without gaps or overlap and count equal squares for each of the six areas.",
+          "Six original first-edition handout contours individually inspected and decomposed into 18-point square-grid cells; source figure areas 1–6: 9, 18, 13, 30, 36 and 21 square units. The teacher verifies source geometry and physically correct no-gap/no-overlap tiling.",
           "Teacher reviews figure-specific area and each learner's tiling, explanations, and collaboration. The readable source text alone cannot verify exact printed figure geometry."
         ],
-        "caution": "The six source handout figures and their dimensions are not independently visually inspected; DO NOT fabricate expected numerical areas for them. First-party independently written 3×4 and 5×4 examples may be machine-graded but do not replace the original six student tasks.",
+        "caution": "Exact source figure areas are now VERIFIED from six official 2021 first-edition SVGs and the six-page original blackline master; numbers alone still do NOT certify student tiling or explanations. Edulytics first-party CSS graphics replicate the mathematical tile-cell topology, not copyrighted publisher pixels.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -2939,8 +2939,8 @@
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-2/lesson-2/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_AND_PUBLISHED_ALT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "2021_TEACHER_PREPARATION_PUBLIC_STUDENT_3_PAGE_PDF_13_ORIGINAL_FIGURES_6_PAGE_BLACKLINE_TILE_GEOMETRY",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -2990,44 +2990,44 @@
         {
           "id": "G3-U02-L02-A2-01",
           "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
-          "prompt": "With teacher-provided FIGURE 1 from the source handout, tile it completely using equal-sized squares. Record square-unit count and explain. Source figure measurements not visually verified.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original first-edition 2021 printed handout FIGURE 1, now visually inspected: cover the entire provided contour using equal square tiles WITHOUT gaps/overlaps, explain placement and record its area in square units. Independent Edulytics tile graphic is provided for mathematical parity. A correct number does not certify the tiling demonstration.",
+          "answerType": "integer",
+          "expected": "9"
         },
         {
           "id": "G3-U02-L02-A2-02",
           "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
-          "prompt": "Repeat for original handout FIGURE 2 using no gaps and overlaps; verify tiles are consistent size before giving area.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original first-edition 2021 printed handout FIGURE 2, now visually inspected: cover the entire provided contour using equal square tiles WITHOUT gaps/overlaps, explain placement and record its area in square units. Independent Edulytics tile graphic is provided for mathematical parity. A correct number does not certify the tiling demonstration.",
+          "answerType": "integer",
+          "expected": "18"
         },
         {
           "id": "G3-U02-L02-A2-03",
           "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
-          "prompt": "Repeat for original handout FIGURE 3, describing the completed tiled region and square-unit count.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original first-edition 2021 printed handout FIGURE 3, now visually inspected: cover the entire provided contour using equal square tiles WITHOUT gaps/overlaps, explain placement and record its area in square units. Independent Edulytics tile graphic is provided for mathematical parity. A correct number does not certify the tiling demonstration.",
+          "answerType": "integer",
+          "expected": "13"
         },
         {
           "id": "G3-U02-L02-A2-04",
           "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
-          "prompt": "Repeat for original handout FIGURE 4 (a rectangle according to the source image description) and explain how rows and columns aid tile counting.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original first-edition 2021 printed handout FIGURE 4, now visually inspected: cover the entire provided contour using equal square tiles WITHOUT gaps/overlaps, explain placement and record its area in square units. Independent Edulytics tile graphic is provided for mathematical parity. A correct number does not certify the tiling demonstration.",
+          "answerType": "integer",
+          "expected": "30"
         },
         {
           "id": "G3-U02-L02-A2-05",
           "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
-          "prompt": "Repeat for original handout FIGURE 5. Do not infer shape geometry or exact area from a text-only image description.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original first-edition 2021 printed handout FIGURE 5, now visually inspected: cover the entire provided contour using equal square tiles WITHOUT gaps/overlaps, explain placement and record its area in square units. Independent Edulytics tile graphic is provided for mathematical parity. A correct number does not certify the tiling demonstration.",
+          "answerType": "integer",
+          "expected": "36"
         },
         {
           "id": "G3-U02-L02-A2-06",
           "sourceActivity": "Activity 2: Use Square Tiles to Measure Area",
-          "prompt": "Repeat for original handout FIGURE 6 (six-step outline by source alt text) and show how you filled all interior square units.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Original first-edition 2021 printed handout FIGURE 6, now visually inspected: cover the entire provided contour using equal square tiles WITHOUT gaps/overlaps, explain placement and record its area in square units. Independent Edulytics tile graphic is provided for mathematical parity. A correct number does not certify the tiling demonstration.",
+          "answerType": "integer",
+          "expected": "21"
         },
         {
           "id": "G3-U02-L02-SYNTH",
@@ -3036,7 +3036,25 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "source2021Original": {
+        "studentPdfSHA256": "81f8cd627c6a44975b8c34e8da25e1f28297448d76f4da1902b967b5d77db152",
+        "studentPdfPageCount": 3,
+        "sourceFigureImagesInspected": 13,
+        "blacklineZipSHA256": "78be45b1030fce7e0ffb63f2d1ce6107c2face8bd04f7881b11f688246a35eee",
+        "sixFigureMasterPdfSHA256": "632d77cce5619819bb2662b3062c720f76b7e24ea4e0da4a36619f153362e147",
+        "sixFigureMasterPagesRead": 6,
+        "figures1Through6SquareUnitCounts": [
+          9,
+          18,
+          13,
+          30,
+          36,
+          21
+        ],
+        "areaMethod": "polygon-coordinate shoelace / 18pt by 18pt tile area; count cell centers in source polygon",
+        "originalArtworkPixelsReused": false
+      }
     },
     {
       "ordinal": 24,
