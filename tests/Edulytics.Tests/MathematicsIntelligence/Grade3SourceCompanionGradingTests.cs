@@ -136,7 +136,9 @@ public sealed class Grade3SourceCompanionGradingTests
         // Authoring-only Stage C tests, not run.
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(
             "PED:US-CCSS-MATH:G3:U01:L12",out var lesson));
-        Assert.Equal(6,lesson!.SourceSubtasks.Count);
+        Assert.Equal(11,lesson!.SourceSubtasks.Count);
+        Assert.Equal(5,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.True(lesson.OriginalStudentTaskPdfRead);
         var expected=new[]{15,8,14,50,20,30};
         for(var i=0;i<expected.Length;i++){
             var q=lesson.SourceSubtasks[i];
@@ -148,7 +150,7 @@ public sealed class Grade3SourceCompanionGradingTests
             Assert.False(wrong.NumericCorrect);
             Assert.True(good.TeacherReview);
         }
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD);
     }
 
     [Theory]

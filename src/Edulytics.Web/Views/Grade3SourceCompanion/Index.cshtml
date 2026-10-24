@@ -175,14 +175,33 @@
             </section>
         }
         @if(l.UnitNumber == 1 && l.LessonNumber == 12) {
-            <section class="panel" aria-label="Source lesson twelve teacher-led visual and problem posing tasks">
-                <h2>Source warm-up: groups of dots</h2>
-                <p>The first published description has four groups, each formed by two rows of five dots (40 dots altogether). The second picture's precise dot arrangement is not independently verified here. With your teacher, explain different grouping methods without replacing the unread figure by a guessed one.</p>
-                <h2>Source Activity 1: co-craft a question before solving</h2>
-                <p>The teacher first displays ONLY the statement that Tyler has three boxes. Partners invent plausible mathematical questions before the teacher reveals the full five-baseballs-per-box problem. A machine-graded answer to 3 × 5 does not demonstrate question posing.</p>
-                <h2>Source Activity 2: five original story settings</h2>
-                <p>In each of the six numeric tasks above, write an equation and create a matching diagram or model; compare one strategy with a partner. The five contexts involve teams, panes of glass, earrings, pencils and carrots. The teacher checks group count, group size, correct units and reasoning individually.</p>
-                <p>Only a teacher can verify the original problem-posing dialogue, drawing validity, dot-image interpretation and which method you found useful. The publisher's Cool-down is teacher-access controlled; the other Cool-down here is independently written by Edulytics.</p>
+            <section class="panel" aria-label="Independently drawn first-edition 2021 equal-group source lesson">
+                <h2>Warm-up (10 minutes): two source-counted dot arrangements</h2>
+                <p>The official 2021 publisher SVGs were checked. Picture A has FOUR arrays of two rows of FIVE dots (40 altogether). Picture B has THIRTY dots (six rows of five). The following dots are independently drawn Edulytics models, not publisher artwork. Explain how you grouped them with your partner.</p>
+                <h3>Model A — four groups of ten (40)</h3>
+                <div role="img" aria-label="Four bordered groups each containing a two-row-by-five-dot array, total forty dots" style="display:grid;grid-template-columns:repeat(2,max-content);gap:10px;max-width:100%">
+                @for (var group=0;group<4;group++) {
+                    <div style="display:grid;grid-template-columns:repeat(5,17px);gap:8px;padding:10px;border:2px solid #54798b">
+                        @for (var i=0;i<10;i++) { <span class="first-party-dot" aria-hidden="true"></span> }
+                    </div>
+                }
+                </div>
+                <h3>Model B — six rows of five (30)</h3>
+                <div role="img" aria-label="Thirty dots organised as six rows of five" style="display:grid;grid-template-columns:repeat(5,17px);gap:8px;padding:10px;border:2px solid #54798b;width:max-content;max-width:100%">
+                    @for (var i=0;i<30;i++) { <span class="first-party-dot" aria-hidden="true"></span> }
+                </div>
+                <h2>Activity 1 (15 minutes): Co-Craft Questions BEFORE the full Tyler problem</h2>
+                <p><strong>FIRST:</strong> Tyler has three boxes. Generate mathematical questions from this partial information: 2 minutes alone, then 2–3 minutes with a partner. Do NOT guess how many baseballs there are before the next reveal.</p>
+                <p><strong>THEN:</strong> Each box contains exactly FIVE baseballs. Draw three groups of five and explain how a three-part tape represents <strong>3 × 5 = 15 baseballs</strong>.</p>
+                <div role="img" aria-label="Three equal tape parts labelled five baseballs each, fifteen in total" style="display:flex;border:2px solid #54798b;max-width:450px">
+                    @for (var part=0;part<3;part++) { <span style="flex:1;padding:16px;text-align:center;border-right:1px solid #54798b">5</span> }
+                </div>
+                <h2>Activity 2 (20 minutes): five source story contexts</h2>
+                <ol><li>4 fields × 2 teams = 8 teams</li><li>7 windows × 2 glass panes = 14 panes</li><li>5 bags × 10 earrings = 50 earrings</li><li>4 boxes × 5 pencils = 20 pencils</li><li>3 bags × 10 carrots = 30 carrots</li></ol>
+                <p>Enter each numeric total in its source-specific field below and provide a DIFFERENT labelled diagram or tape explanation in EACH corresponding reasoning field. Teacher checks the five representations; numeric correctness never substitutes for human review.</p>
+                <h2>Lesson synthesis (10 minutes), then independent Cool-down (5 minutes)</h2>
+                <p>Explain which representation helped you most: a drawing of groups, tape diagram or multiplication equation, and why. Teacher checks the response. Separate Edulytics original Cool-down: three groups of eight flags = 24. This does not copy the original educator-only Ducks in a Pond Cool-down. Teacher-led centers: Capture Squares Stage 5 and Five in a Row Stage 7.</p>
+                <p>Original sources: <a href="https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o" target="_blank" rel="noopener noreferrer">Student Task Statements (four-page publisher PDF)</a>, <a href="https://cms-assets.illustrativemathematics.org/7joeg3fb91042g156ctkkewns45f" target="_blank" rel="noopener noreferrer">warm-up SVG A</a>, <a href="https://cms-assets.illustrativemathematics.org/sqvpvucqrrlz1iihakjyzv051d7f" target="_blank" rel="noopener noreferrer">warm-up SVG B</a>. No original publisher images or third-party photographs are embedded in Edulytics.</p>
             </section>
         }
         @if(l.UnitNumber == 1 && l.LessonNumber == 13) {
