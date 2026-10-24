@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L21",
+  "firstEdition": "IM K–5 First Edition 2021",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-21/lesson.html",
+  "date": "2026-10-24",
+  "elementsIdentified": 7,
+  "oneToOneRuntimeVerified": 0,
+  "sourceElements": [
+    {
+      "sourceElementId": "G3-U01-L21-WU",
+      "sourceActivity": "Warm-up: Notice and Wonder",
+      "sourceMath": "Examine the original seating arrangement figure with six square tables and four spots shown around each. What do you notice or wonder? Which unknowns need decisions? Teacher reviews spoken observations.",
+      "expected": null,
+      "firstPartyTaskLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "assessment": "MATCHED_TEACHER_LED_AUTHORING_ONLY",
+      "fullyVerifiedOneToOne": false,
+      "testsRun": false
+    },
+    {
+      "sourceElementId": "G3-U01-L21-A1-ASSUMPTIONS",
+      "sourceActivity": "Activity 1: Game Night",
+      "sourceMath": "Using 16 identical square tables and games requiring 2, 4, 5 or 10 people, state your assumptions (which games, how many simultaneous groups, occupied seats, joins and unused chairs). Teachers judge feasibility.",
+      "expected": null,
+      "firstPartyTaskLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "assessment": "MATCHED_TEACHER_LED_AUTHORING_ONLY",
+      "fullyVerifiedOneToOne": false,
+      "testsRun": false
+    },
+    {
+      "sourceElementId": "G3-U01-L21-A1-POSTER",
+      "sourceActivity": "Activity 1: Game Night",
+      "sourceMath": "Design and explain an original seating plan or poster. Label all 16 available tables, their orientation, which adjacent sides are blocked by joins, and how many guests can participate in each selected game.",
+      "expected": null,
+      "firstPartyTaskLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "assessment": "MATCHED_TEACHER_LED_AUTHORING_ONLY",
+      "fullyVerifiedOneToOne": false,
+      "testsRun": false
+    },
+    {
+      "sourceElementId": "G3-U01-L21-A2-01",
+      "sourceActivity": "Activity 2: Game Night on a Graph",
+      "sourceMath": "Make your own scaled bar graph showing guests playing games A, B, C and D under your plan. Add a title, four labels and an interval step GREATER than 1. Justify the scale and verify agreement with the seating poster.",
+      "expected": null,
+      "firstPartyTaskLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "assessment": "MATCHED_TEACHER_LED_AUTHORING_ONLY",
+      "fullyVerifiedOneToOne": false,
+      "testsRun": false
+    },
+    {
+      "sourceElementId": "G3-U01-L21-SYNTH",
+      "sourceActivity": "Lesson Synthesis",
+      "sourceMath": "Compare which design assumptions changed seating capacity and explain why differently scaled graphs can communicate the same numbers.",
+      "expected": null,
+      "firstPartyTaskLocation": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "assessment": "MATCHED_TEACHER_LED_AUTHORING_ONLY",
+      "fullyVerifiedOneToOne": false,
+      "testsRun": false
+    },
+    {
+      "sourceElementId": "G3-U01-L21-CD",
+      "sourceActivity": "Publisher original access-restricted Cool-down",
+      "sourceMath": null,
+      "expected": null,
+      "firstPartyTaskLocation": "Edulytics separate first-party equivalent",
+      "assessment": "RIGHTS_RESTRICTED",
+      "fullyVerifiedOneToOne": false,
+      "testsRun": false
+    },
+    {
+      "sourceElementId": "G3-U01-L21-PREP",
+      "sourceActivity": "Source requires cubes, inch tiles, centimeter graph paper and poster equipment",
+      "assessment": "TEACHER_MATERIAL_NOT_OBSERVED",
+      "fullyVerifiedOneToOne": false
+    }
+  ],
+  "firstPartyRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l21-2021.rich-lesson-v2.json",
+  "firstPartyGradingBank": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+  "authoredNotRunTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson21SeatingPlanningTests.cs",
+  "status": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "verifiedParityPercent": null,
+  "testsRun": false,
+  "ci": false,
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "The original six-table warm-up illustration and any publisher-owned grid/media have not been fully visually and rights inspected.",
+    "Student original graph paper/drawing and source materials not individually matched against original printed task PDF.",
+    "Original 16-table seating feasibility cannot be reduced to a single auto-grade integer; classroom teacher needs to validate joins, assumptions, four game types and capacity.",
+    "Each student's A–D scaled bar chart requires manual comparison against that student's poster, title, labels and scale step greater than one.",
+    "No runtime inspection, Stage D, CI, academic sign-off or .NET test execution."
+  ]
+}
