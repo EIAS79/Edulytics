@@ -11,12 +11,12 @@
   "originalTeacherHtml": "unit-1/lesson-16/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/lesson.html",
   "stageA": {
-    "status": "2021_ORIGINAL_PUBLIC_STUDENT_TEACHER_TEXT_19_OF_23_SOURCE_ELEMENTS_AUTHORING_MAPPED_FOUR_IMAGE_PDF_GAPS",
+    "status": "SOURCE_2021_TEACHER_PREP_3PAGE_STUDENT_PDF_THREE_IMAGES_23_OF_23_SEMANTICALLY_MAPPED",
     "goals": "Build arrays with physical objects and describe them in terms of multiplication. Describe an array as an arrangement of objects into rows with an equal number of objects in each row and into columns with an equal number in each column.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
     "originalAllSubquestionsIndividuallyVerified": true,
-    "originalStudentTaskPdfCompared": false,
+    "originalStudentTaskPdfCompared": true,
     "teacherFacingSourceExtractedNotFullyRead": false,
     "originalArraySourceTaskInventory": [
       "carton twelve eggs teacher discussion",
@@ -27,17 +27,21 @@
       "24-cube multiple arrays",
       "array synthesis"
     ],
-    "publishedOriginalArtworkInspected": false,
-    "original2021SourceImageBytesInspected": false,
-    "originalStudentTaskPdfUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-16/preparation.html",
+    "publishedOriginalArtworkInspected": true,
+    "original2021SourceImageBytesInspected": true,
+    "originalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/em9wi1n3z74vgkyzs2anen7kqho1",
     "originalSourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-16-2021-physical-array-source-evidence-20261024.json",
     "originalSourceElementsIdentified": 23,
-    "elementsSemanticallyVerifiedForAuthoring": 19,
-    "originalElementsUnverified": 4,
-    "sourceElementSemanticCoveragePercent": 82.61
+    "elementsSemanticallyVerifiedForAuthoring": 23,
+    "originalElementsUnverified": 0,
+    "sourceElementSemanticCoveragePercent": 100,
+    "originalStudentTaskPdfPagesReviewed": 3,
+    "originalStudentTaskPdfSHA256": "bc6876ee4678fae7ecf3a2d72afcdb51936e572dfc024307ff3a68f52b5e9e15",
+    "mediaProvenance": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-16-2021-physical-array-source-evidence-20261024.json",
+    "originalIllustrationReused": false
   },
   "stageB": {
-    "status": "FIRST_PARTY_2021_RICHV2_V2_CANONICAL_EMBEDDED_RESOURCE_AND_SHA_EDITION_GUARDED_MATERIALIZER_HOOK_AUTHORED_NOT_EXECUTED",
+    "status": "FIRST_PARTY_ARRAY_RICHV2_V3_CANONICAL_GUARDED_AND_INDEPENDENT_THREE_DRAWING_MODELS_AUTHORED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -50,13 +54,14 @@
     "firstPartyDotsSixRowsByFiveColumnsAuthored": true,
     "sourceOriginalVisualNotDuplicated": true,
     "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l16-2021.rich-lesson-v2.json",
-    "sourceSpecificRichV2Version": "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v2",
+    "sourceSpecificRichV2Version": "g3-u01-l16-2021-first-party-source-abc-authoring-20261024-v3",
     "canonicalBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit1Lesson16RichV2.cs",
     "canonicalHook": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
-    "source20DotImagesCompared": false
+    "source20DotImagesCompared": true,
+    "visualRepresentationImplementations": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml"
   },
   "stageC": {
-    "status": "ALL_SEVEN_AUTHENTIC_2021_SOURCE_HUMAN_ARRAY_TASKS_TEACHER_ONLY_OPTIONAL_NUMERIC_CHECK_REGRESSION_TESTS_WRITTEN_NOT_RUN",
+    "status": "SEVEN_SOURCE_HUMAN_ARRAY_TASKS_AND_FIRST_PARTY_TEACHER_SCORING_ALL_MAPPED_UNRUN_TESTS",
     "family": "arrays-commutative",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -165,15 +170,10 @@
     "expected": "12"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 publisher egg photo, 4 circles of 5 dots, and 20-dot array image source files/geometry have not been inspected; their actual link fetch returned cache miss via public retrieval. First-party examples cannot be certified as publisher visual matches.",
-    "Original Student Task Statements 2021 PDF has not been visually inspected. Public source student-facing HTML math text was checked.",
-    "Original publisher Cool-down remains educator-gated. A teacher-reviewed Edulytics-created equivalent exists and is explicitly independent.",
-    "No source learner/canonical runtime, .NET tests, CI or Stage D run (authoring-only gate); original physical array construction is teacher-evaluated, not a numeric pass."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
@@ -181,11 +181,7 @@
   "academicApproval": "NOT_CLAIMED",
   "elementLevelEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-16-2021-physical-array-source-evidence-20261024.json",
   "originalSourceTaskElementCountGranular": 23,
-  "sourceMatchingPercentageAuthoringOnly": 82.61,
-  "blockingElementIds": [
-    "IMG-EGGS",
-    "IMG-GROUP-CIRCLES",
-    "IMG-ARRAY",
-    "STUDENT-PDF"
-  ]
+  "sourceMatchingPercentageAuthoringOnly": 100,
+  "blockingElementIds": [],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U01:L17"
 }
