@@ -102,6 +102,32 @@ public static class Grade3SourceCompanionCatalogue
                 : "Compare the quantities using the same whole.");
         }
 
+        if (q.AnswerType == "multiplication-expression-either-order")
+        {
+            // 2021 G3 U01 L18 explicitly permits either factor orientation
+            // when the array/model explanation supports the choice.
+            // Keep this separate from order-sensitive Grade 3 families.
+            const string expression =
+                @"^([0-9]{1,3})\s*[xX×*]\s*([0-9]{1,3})(?:\s*=\s*([0-9]{1,5}))?$";
+            var actual = Regex.Match(submitted.Trim(), expression,
+                RegexOptions.CultureInvariant);
+            var expected = Regex.Match(q.Expected ?? "", expression,
+                RegexOptions.CultureInvariant);
+            if (!actual.Success || !expected.Success)
+                return new(false, true,
+                    "Write a multiplication expression with the two source factors. A numeric total alone is not enough.");
+            var a = int.Parse(actual.Groups[1].Value, CultureInfo.InvariantCulture);
+            var b = int.Parse(actual.Groups[2].Value, CultureInfo.InvariantCulture);
+            var e = int.Parse(expected.Groups[1].Value, CultureInfo.InvariantCulture);
+            var f = int.Parse(expected.Groups[2].Value, CultureInfo.InvariantCulture);
+            var validProduct = !actual.Groups[3].Success ||
+                int.Parse(actual.Groups[3].Value, CultureInfo.InvariantCulture) == a * b;
+            var correct = validProduct && ((a == e && b == f) || (a == f && b == e));
+            return new(correct, true, correct
+                ? "The factor pair matches either accepted orientation. Teacher reviews how rows/columns represent each factor."
+                : "Use the same array factor pair and check any written product. Explain your row/column interpretation.");
+        }
+
         if (q.AnswerType == "multiplication-expression")
         {
             // In Grade 3 this family assesses a written expression, NOT only
