@@ -12,7 +12,7 @@ namespace Edulytics.Data.Seeding;
 internal static class CommonCoreG3Unit8Lesson1RichV2
 {
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U08:L01";
-    private const string ResourceName = "Edulytics.Data.Grade3.Unit7Lesson13RichV2";
+    private const string ResourceName = "Edulytics.Data.Grade3.Unit8Lesson1RichV2";
     private const string ExpectedContentVersion =
         "g3-u08-l01-2021-three-representations-estimates-optional-exact-v1";
 

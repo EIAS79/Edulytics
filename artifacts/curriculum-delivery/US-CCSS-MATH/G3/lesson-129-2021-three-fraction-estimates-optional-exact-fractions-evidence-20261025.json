@@ -81,6 +81,13 @@
   "sourcePublisherFullParityPercent": null,
   "codePathRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l01-2021.rich-lesson-v2.json",
   "codePathTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson1SourceAuditTests.cs",
+  "seedBindingAudit": {
+    "finding": "Unit8Lesson1 materializer previously pointed to Unit7Lesson13 embedded resource; corrected to Unit8Lesson1.",
+    "resourcePointer": "Edulytics.Data.Grade3.Unit8Lesson1RichV2",
+    "regressionTestAdded": true,
+    "build": "NOT_VERIFIED_MISSING_NUGET_RESTORE_ASSETS_NETSDK1004",
+    "testExecution": "NOT_VERIFIED"
+  },
   "stageABC": "READY_FOR_STAGE_D_AUTHORING_ONLY",
   "stageD": "NOT_STARTED",
   "ci": "NOT_RUN",

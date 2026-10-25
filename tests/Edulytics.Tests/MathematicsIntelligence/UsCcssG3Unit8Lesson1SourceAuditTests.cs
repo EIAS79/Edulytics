@@ -38,4 +38,17 @@ public sealed class UsCcssG3Unit8Lesson1SourceAuditTests
         Assert.Equal("g3-u08-l01-2021-three-representations-estimates-optional-exact-v1", doc.RootElement.GetProperty("ContentVersion").GetString());
         Assert.Equal(Code, doc.RootElement.GetProperty("Lessons")[0].GetProperty("LessonCode").GetString());
     }
+
+    [Fact]
+    public void SeedMaterializerReferencesTheSameUnit8EmbeddedResource()
+    {
+        var assembly = System.Reflection.Assembly.Load("Edulytics.Data");
+        var materializer = assembly.GetType("Edulytics.Data.Seeding.CommonCoreG3Unit8Lesson1RichV2");
+        Assert.NotNull(materializer);
+        var resourceField = materializer!.GetField("ResourceName",
+            System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+        Assert.NotNull(resourceField);
+        Assert.Equal("Edulytics.Data.Grade3.Unit8Lesson1RichV2",
+            resourceField!.GetRawConstantValue());
+    }
 }
