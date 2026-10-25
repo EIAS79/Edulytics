@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-11/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-11/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_LOCAL_HTML_SECTION_SUMMARY_HAN_55_ELENA_32_AND_FOUR_MATH_LIB_NUMERICS_VERIFIED",
     "goals": "Solve problems involving addition and subtraction of time intervals in minutes.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICHV2_HAN55_ELENA_DRAW32_AND_MATH_LIBS_25_518_33_415",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "d1efde366e59e1f8b447e8a98e5bba279c9b03c2330b99461fa28341dc39fcf0",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l11-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson11.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "ORIGINAL_TIME_INTERVAL_FIXED_ORACLES_ELENA_CLOCK_TEACHER_RUBRIC_TESTS_UNRUN",
     "family": "time-minutes",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity On the Bus Again with your teacher. Show the representation and explain how it meets the goal: Let’s solve more problems involving time.",
-    "teacherReviewNote": "Clock minute-hand positioning and the actual end time need teacher review, not just elapsed duration."
+    "teacherReviewNote": "Clock minute-hand positioning and the actual end time need teacher review, not just elapsed duration.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson11ElapsedTimeTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: Band Practice (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_HTML_PLUS_SECTION_SUMMARY_ELENA_SOURCE_CLOCK_IMAGE_GAP",
+      "grading": "NUMERIC_PLUS_TEACHER_TIME_DRAW",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: On the Bus Again (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_HTML_PLUS_SECTION_SUMMARY_ELENA_SOURCE_CLOCK_IMAGE_GAP",
+      "grading": "NUMERIC_PLUS_TEACHER_TIME_DRAW",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Math Libs Time (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_HTML_PLUS_SECTION_SUMMARY_ELENA_SOURCE_CLOCK_IMAGE_GAP",
+      "grading": "NUMERIC_PLUS_TEACHER_TIME_DRAW",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_HTML_PLUS_SECTION_SUMMARY_ELENA_SOURCE_CLOCK_IMAGE_GAP",
+      "grading": "NUMERIC_PLUS_TEACHER_TIME_DRAW",
       "claimedParity": false
     },
     {
@@ -120,7 +123,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CLOCK_AND_BUS_SOURCE_PIXELS_NOT_REVIEWED"
     },
     {
       "id": "G3-U06-L11-IMAGE-02",
@@ -129,7 +132,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CLOCK_AND_BUS_SOURCE_PIXELS_NOT_REVIEWED"
     },
     {
       "id": "G3-U06-L11-IMAGE-03",
@@ -138,7 +141,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CLOCK_AND_BUS_SOURCE_PIXELS_NOT_REVIEWED"
     }
   ],
   "sourceElementCounts": {
@@ -152,20 +155,22 @@
     "expected": "75"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original Elena start/end hour not pixel-verified: source minute arithmetic36−32=4 only.",
+    "Original standalone publisher Student Task Statements PDF not inspected.",
+    "Source clock and bus images not visually pixel-compared; teacher-only Cool-down unavailable.",
+    "Tests, CI, Stage D, academic approval and deploy unrun."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "47a2bfc5d1d2deeb6926b893ac9787dd59e5963d9c42c7bb19661313f7e6b222",
+  "originalPreparationHtmlSHA256": "4b3d7204b058ac3627c38d6716642653825ca8a470175465bf7fb39b3a2c3be4",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-108-2021-source-bus-mathlibs-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-108-clock-teacher-rubric-20261025.json"
 }
