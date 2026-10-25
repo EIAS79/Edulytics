@@ -80,6 +80,8 @@ jobs:
         with:
           name: g3-stage-d-test-binaries
           path: tests/Edulytics.Tests/bin/Release/net10.0/
+      - name: Fail closed on source-specific worked examples with fewer than three explicit steps
+        run: node tools/curriculum/g3-stage-d-rich-example-contract.cjs '${{ matrix.batch }}'
       - name: Execute source mathematics, answer grading and teacher-review tests
         shell: bash
         run: |
