@@ -8828,60 +8828,237 @@
         "expected": "600"
       },
       "openTeacherTask": "Work through the original lesson's activity Close to Multiples of 10 with your teacher. Show the representation and explain how it meets the goal: You will reason about the position of numbers relative to your immediate multiples of 10 and 100, using number lines to do so.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "2021 archived public Student Facing HTML sections 1–3 reviewed for value lists and source questions. Twenty exact independent numeric anchors plus nine teacher tasks authored; original student task PDF/6 figure pixel files and gated publisher Cool-down remain unverified. Stage D and tests unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "For a given number, let’s find the closest multiple of 100 and the closest multiple of 10. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Act",
+        "sourceGoal": "For given numbers within 1,000, use the immediate hundreds and tens to decide which multiple of 100 and 10 is nearest.",
         "sourceLearningGoals": "Identify the closest multiples of 10 and 100 for numbers within 1,000. Understand that rounding is a formal way to say which number a given number is closer to, and that number is often a multiple of 10 or 100. Understand the meaning of “the closest multiple of 10.”",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Warm-up: the teacher presents the original 0–200 number-line point. Students give too-low, about-right and too-high estimates; its visual position is not automatically graded.",
+          "Activity 1: locate 128, 272, 436, 89 and 351 on correctly scaled number lines; compare distances to surrounding hundreds and tens, and complete the two nearest-multiple columns.",
+          "For 128 explicitly identify both 120 and 130 before selecting 130; explain why 128 is 28 from 100 and 72 from 200.",
+          "Activity 2: compare 349 to 300/400 and 340/350; 712 to 700/800 and 710/720; 568 to 500/600 and 560/570.",
+          "Explain a reliable way to find nearest tens and hundreds mentally, then apply it to 324 and 89. The teacher inspects diagrams, reasoning and oral discussion."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: For a given number, let’s find the closest multiple of 100 and the closest multiple of 10. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Act",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "A nearest-multiple scalar is not proof of accurate plotting or reasoning. Original six figure assets and student PDF are not locally pixel-verified; publisher Cool-down remains gated. Do not assert 1:1 visual/source parity or READY_FOR_STAGE_D."
       },
       "sourceBasedCheck": {
-        "prompt": "The source asks for the nearest multiple of 100 to 128. What is it?",
+        "prompt": "For the 2021 source value 272, enter its nearest multiple of 10.",
         "answerType": "integer",
-        "expected": "100"
+        "expected": "270"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-14/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ARCHIVED_STUDENT_FACING_TEXT_SOURCE_NUMBERS_ONLY",
+        "figurePixelsInspected": false,
+        "studentPdfRead": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L14-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Estimation Exploration: What Number Could this Be? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Nearest Multiples of 10 and 100.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L14-WU-ESTIMATES",
+          "sourceActivity": "Estimation Exploration",
+          "prompt": "On the teacher-provided original number line, discuss a plausible point between 100 and 200. Give and justify an estimate that is too low, about right, and too high; the exact point was not verified from the publisher figure.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L14-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Close to Multiples of 10 (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Nearest Multiples of 10 and 100.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L14-A1-01-HUNDRED",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 128: label its position on a hundred-to-hundred number line, then enter the closest multiple of 100. The teacher separately reviews point placement and reasoning.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L14-A1-01-TEN",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 128: find its two enclosing multiples of 10 and enter the nearest multiple of 10. The teacher separately reviews the enclosing pair and number-line evidence.",
+          "answerType": "integer",
+          "expected": "130"
+        },
+        {
+          "id": "G3-U03-L14-A1-01-POINT",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Show 128 on a correctly scaled, labeled 100-wide number line. Explain which ten and which hundred are nearest. The plotted point and explanation need teacher review.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L14-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: The Nearest Multiples (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Nearest Multiples of 10 and 100.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L14-A1-02-HUNDRED",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 272: label its position on a hundred-to-hundred number line, then enter the closest multiple of 100. The teacher separately reviews point placement and reasoning.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L14-A1-02-TEN",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 272: find its two enclosing multiples of 10 and enter the nearest multiple of 10. The teacher separately reviews the enclosing pair and number-line evidence.",
+          "answerType": "integer",
+          "expected": "270"
+        },
+        {
+          "id": "G3-U03-L14-A1-02-POINT",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Show 272 on a correctly scaled, labeled 100-wide number line. Explain which ten and which hundred are nearest. The plotted point and explanation need teacher review.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L14-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L14-A1-03-HUNDRED",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 436: label its position on a hundred-to-hundred number line, then enter the closest multiple of 100. The teacher separately reviews point placement and reasoning.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L14-A1-03-TEN",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 436: find its two enclosing multiples of 10 and enter the nearest multiple of 10. The teacher separately reviews the enclosing pair and number-line evidence.",
+          "answerType": "integer",
+          "expected": "440"
+        },
+        {
+          "id": "G3-U03-L14-A1-03-POINT",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Show 436 on a correctly scaled, labeled 100-wide number line. Explain which ten and which hundred are nearest. The plotted point and explanation need teacher review.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L14-A1-04-HUNDRED",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 89: label its position on a hundred-to-hundred number line, then enter the closest multiple of 100. The teacher separately reviews point placement and reasoning.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L14-A1-04-TEN",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 89: find its two enclosing multiples of 10 and enter the nearest multiple of 10. The teacher separately reviews the enclosing pair and number-line evidence.",
+          "answerType": "integer",
+          "expected": "90"
+        },
+        {
+          "id": "G3-U03-L14-A1-04-POINT",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Show 89 on a correctly scaled, labeled 100-wide number line. Explain which ten and which hundred are nearest. The plotted point and explanation need teacher review.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L14-A1-05-HUNDRED",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 351: label its position on a hundred-to-hundred number line, then enter the closest multiple of 100. The teacher separately reviews point placement and reasoning.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L14-A1-05-TEN",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Source activity value 351: find its two enclosing multiples of 10 and enter the nearest multiple of 10. The teacher separately reviews the enclosing pair and number-line evidence.",
+          "answerType": "integer",
+          "expected": "350"
+        },
+        {
+          "id": "G3-U03-L14-A1-05-POINT",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Show 351 on a correctly scaled, labeled 100-wide number line. Explain which ten and which hundred are nearest. The plotted point and explanation need teacher review.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L14-A1-128-ENCLOSING-TENS",
+          "sourceActivity": "Close to Multiples of 10",
+          "prompt": "Identify BOTH enclosing multiples of 10 surrounding 128 (120 and 130), then justify which is nearer. A single scalar is insufficient.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L14-A2-349-HUNDRED",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the archived original source value 349, choose the nearer of its two enclosing hundreds and explain why.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L14-A2-349-TEN",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the archived original source value 349, choose the nearer of its two enclosing tens and explain why.",
+          "answerType": "integer",
+          "expected": "350"
+        },
+        {
+          "id": "G3-U03-L14-A2-712-HUNDRED",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the archived original source value 712, choose the nearer of its two enclosing hundreds and explain why.",
+          "answerType": "integer",
+          "expected": "700"
+        },
+        {
+          "id": "G3-U03-L14-A2-712-TEN",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the archived original source value 712, choose the nearer of its two enclosing tens and explain why.",
+          "answerType": "integer",
+          "expected": "710"
+        },
+        {
+          "id": "G3-U03-L14-A2-568-HUNDRED",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the archived original source value 568, choose the nearer of its two enclosing hundreds and explain why.",
+          "answerType": "integer",
+          "expected": "600"
+        },
+        {
+          "id": "G3-U03-L14-A2-568-TEN",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the archived original source value 568, choose the nearer of its two enclosing tens and explain why.",
+          "answerType": "integer",
+          "expected": "570"
+        },
+        {
+          "id": "G3-U03-L14-A2-METHOD",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "Explain how you can decide the nearest hundred and nearest ten without first marking the number on a number line. Include distance or place-value reasoning; teacher judges the explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L14-A2-324-HUNDRED",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the original source value 324, enter its nearest multiple of 100; show your method to the teacher.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L14-A2-324-TEN",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the original source value 324, enter its nearest multiple of 10; show your method to the teacher.",
+          "answerType": "integer",
+          "expected": "320"
+        },
+        {
+          "id": "G3-U03-L14-A2-89-HUNDRED",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the original source value 89, enter its nearest multiple of 100; show your method to the teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L14-A2-89-TEN",
+          "sourceActivity": "The Nearest Multiples",
+          "prompt": "For the original source value 89, enter its nearest multiple of 10; show your method to the teacher.",
+          "answerType": "integer",
+          "expected": "90"
+        },
+        {
+          "id": "G3-U03-L14-ORIGINAL-COOLDOWN",
+          "sourceActivity": "Publisher Cool-down: Closest Multiple of 10 and 100",
+          "prompt": "Publisher's gated Cool-down is not part of this bank. A teacher must supply and review the original task. Edulytics separately offers its own independent exit question.",
           "answerType": "teacher",
           "expected": null
         }

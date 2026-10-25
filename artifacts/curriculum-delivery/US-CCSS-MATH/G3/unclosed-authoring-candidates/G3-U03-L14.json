@@ -11,16 +11,17 @@
   "originalTeacherHtml": "unit-3/lesson-14/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-14/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_ARCHIVED_2021_HTML_THREE_STUDENT_SECTIONS_ALL_VISIBLE_NUMBER_VALUES_AND_SIX_ALT_DESCRIPTIONS_REVIEWED_PDF_AND_IMAGES_NOT_READ",
     "goals": "Identify the closest multiples of 10 and 100 for numbers within 1,000. Understand that rounding is a formal way to say which number a given number is closer to, and that number is often a multiple of 10 or 100. Understand the meaning of “the closest multiple of 10.”",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 6,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": true,
+    "studentFacingSourceSectionsRead": 3
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_RICH_V2_SOURCE_TEXT_SPECIFIC_NUMBERS_RAZOR_VIEW_AUTHORING_PDF_FIGURES_UNVERIFIED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +30,12 @@
     "existingSourceBodyHash": "6479b97d092996aca022f17f7c2cb1126d9a2ca8e52b1b6f7c51b500b63c7ffd",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l14-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson14.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "20_SOURCE_TEXT_NUMERIC_ANCHORS_9_TEACHER_TASKS_TESTS_WRITTEN_NOT_RUN_SOURCE_PDF_GAP",
     "family": "rounding-estimation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +45,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Close to Multiples of 10 with your teacher. Show the representation and explain how it meets the goal: For a given number, let’s find the closest multiple of 100 and the closest multiple of 10. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Act",
-    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums."
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson14NearestTensHundredsSourceTests.cs",
+    "sourceTextNumericChecks": 20,
+    "teacherReviewTasks": 9
   },
   "sourceElements": [
     {
@@ -177,7 +183,9 @@
     "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
     "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
     "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred.",
+    "Original source student PDF for U03:L14 was not available in the reviewed device cache; original graphical point location and image geometry are unverified.",
+    "Twenty numeric checks are grounded in archived 2021 HTML values only, not a full PDF/subquestion parity claim."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
