@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-12/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-12/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_LOCAL_HTML_276_347_PUMPKINS_POSTERS_SOURCE_C_I_B_E_LABELS_VERIFIED_CARDS_BLACKLINE_GAP",
     "goals": "Ask and answer questions about situations involving measurements. Interpret representations of situations involving measurements.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICHV2_71KG_623KG_AND_CARD_C_I_12_TEACHER_GATED_REMAINING_CARDS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "88a19eb9c3a682e11e7c68bcceaa7f366570cfcc7f25bec83ac6dc6ab7133061",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l12-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson12.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_276_347_7_84_NUMERIC_ORACLES_TEACHER_CARD_SORT_RUBRIC_TESTS_UNRUN",
     "family": "measurement-word-problems",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Giant Pumpkin Event with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of and represent measurement situations at the fair.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson12PumpkinMeasurementTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: The Fair (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_LOCAL_HTML_CARD_SORT_BLACKLINE_GAP",
+      "grading": "NUMERIC_AND_TEACHER_CARD_MATCH",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Giant Pumpkin Event (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_LOCAL_HTML_CARD_SORT_BLACKLINE_GAP",
+      "grading": "NUMERIC_AND_TEACHER_CARD_MATCH",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Card Sort: Giant Pumpkins (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_LOCAL_HTML_CARD_SORT_BLACKLINE_GAP",
+      "grading": "NUMERIC_AND_TEACHER_CARD_MATCH",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_LOCAL_HTML_CARD_SORT_BLACKLINE_GAP",
+      "grading": "NUMERIC_AND_TEACHER_CARD_MATCH",
       "claimedParity": false
     },
     {
@@ -109,7 +112,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "PUBLISHER_CARDS_PHOTOS_NOT_SOURCE_PIXEL_INSPECTED"
     },
     {
       "id": "G3-U06-L12-IMAGE-02",
@@ -118,7 +121,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "PUBLISHER_CARDS_PHOTOS_NOT_SOURCE_PIXEL_INSPECTED"
     },
     {
       "id": "G3-U06-L12-IMAGE-03",
@@ -127,7 +130,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "PUBLISHER_CARDS_PHOTOS_NOT_SOURCE_PIXEL_INSPECTED"
     },
     {
       "id": "G3-U06-L12-IMAGE-04",
@@ -136,7 +139,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "PUBLISHER_CARDS_PHOTOS_NOT_SOURCE_PIXEL_INSPECTED"
     }
   ],
   "sourceElementCounts": {
@@ -150,20 +153,23 @@
     "expected": "121"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original blackline card deck not available locally: exact source B/E numeric story and remaining pairs unverified.",
+    "Original student standalone PDF not compared.",
+    "Source fair/pumpkin photos and card pixel/diagram artwork not inspected or copied; teacher must verify.",
+    "Original teacher-only Cool-down Which Diagram Matches? not inspected.",
+    "Tests, CI, Stage D, academic approval and production unrun."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "705729bb4226ae4ce3e7b203ce667e7f4092c345bc4dda2e00c9baeb86008221",
+  "originalPreparationHtmlSHA256": "fb7d8950d150453f93618fef896cce65fc061a40699b35177a20dc49b8f89d94",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-109-2021-giant-pumpkin-card-sort-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-109-pumpkin-representations-teacher-rubric-20261025.json"
 }
