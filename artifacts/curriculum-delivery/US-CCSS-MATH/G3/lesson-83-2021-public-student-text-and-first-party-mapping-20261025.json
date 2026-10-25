@@ -60,13 +60,21 @@
         "representWithEqualIntervals": 6
       }
     ],
-    "finalStickDiagram": "OPEN_GEOMETRIC_ESTIMATE_MUST_READ_ORIGINAL_FIGURE_TEACHER_REVIEW_ONLY"
+    "finalStickDiagram": "OPEN_GEOMETRIC_ESTIMATE_MUST_READ_ORIGINAL_FIGURE_TEACHER_REVIEW_ONLY",
+    "finalStickSourceSvgGeometry": {
+      "totalLengthUnits": 144,
+      "shadedLengthUnits": 123.4297,
+      "approxShadedFraction": 0.85715,
+      "teacherEstimatedNotExact": true
+    },
+    "allThreePublicStudentFacingTaskSectionsMapped": true
   },
   "stageB": {
     "richV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l04-2021.rich-lesson-v2.json",
     "seedingHook": "CommonCoreG3Unit5Lesson4RichV2",
     "renderedMaterializationUnverified": true,
-    "contentStatus": "FIRST_PARTY_SOURCE_TEXT_ALIGNED_VISUAL_COVERAGE_UNVERIFIED"
+    "contentStatus": "FIRST_PARTY_SOURCE_TEXT_ALIGNED_VISUAL_COVERAGE_UNVERIFIED",
+    "firstPartyVisualPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit5Lesson4.cshtml"
   },
   "stageC": {
     "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson4SecretFractionsTests.cs",
@@ -78,8 +86,147 @@
       "Four Pilolo drawn street representations",
       "Source-specific final stick estimation",
       "Gated publisher Cool-down"
-    ]
+    ],
+    "testCasesWrittenNotExecuted": "8 source numeric oracles; 5 deck-count checks; 12 target inventory check; source ambiguity safeguard"
   },
-  "readiness": "A_C_EXPLICIT_GAP",
-  "reason": "Full source figure/PDF parity and Stage D not verified; cursor must remain 82 and lesson84 forbidden until lesson83 closes"
+  "readiness": "READY_FOR_STAGE_D_A_B_C_AUTHORING_ONLY",
+  "reason": "Public original teacher and student-facing HTML, unique source images, 24+12 source card inventories and activity mathematics reviewed. Authored first-party Rich V2 and companion models. Publisher assessment, student PDF, tests and academic approval deliberately deferred, no direct source art copied.",
+  "device": "Our-CS",
+  "sourceOriginalHtmlSHA256": "53e70893962d0c3b5eeefb8635f2b17ecbbe3e53f37bcf18620c2c82315d8234",
+  "sourceOriginalPreparationHtmlSHA256": "66a5be91b4451a2857837f1aeb41bdd1565cbd827059c628482ada9628fd8e0b",
+  "originalSourceAssetHashes": [
+    {
+      "ordinal": 1,
+      "format": "PNG",
+      "sha256": "a9983b51cd800203d959078838939fbc7431ef9c17e7342defdc38381079b7c0",
+      "meaning": "Unit fraction cards, 24 units",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 2,
+      "format": "PNG",
+      "sha256": "77c2323fa0d5f6f792ce6af888c0fe0665027ac0f9a4fd8610a69c62d51cb5aa",
+      "meaning": "Secret fraction deck, 12 targets",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 3,
+      "format": "SVG",
+      "sha256": "93f1b6f74acd4015991454cfb6236b2129121175bff771a45e1d481465068f80",
+      "meaning": "Gameboard with fraction units",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 4,
+      "format": "JPEG",
+      "sha256": "50bf903665fdcd8f910619f457181abe9c9653da9cdb3acb7b60da13c3132bcf",
+      "meaning": "Pilolo Ghana contextual photograph",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 5,
+      "format": "SVG",
+      "sha256": "57e664fcdc3a96fa391a46f10f31a3d40ecfaa6ef00bf971795f0a4b6aaef651",
+      "meaning": "Source blank street rectangle",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 6,
+      "format": "SVG",
+      "sha256": "c6f1d690c6344cc3777fd0be7874c04790cdc9ffb128c02879db04371f9ce8f9",
+      "meaning": "Source final-stick unequal-parts diagram",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 7,
+      "format": "SVG",
+      "sha256": "23fae67e22444c96667e6de9c84bf47d9c05b3b15d67f2e287d10a18060a2cdc",
+      "meaning": "Summary rectangle two parts",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 8,
+      "format": "SVG",
+      "sha256": "bb6c609da88727243cb7f50a917ad1f6fb7be4f646744e5463a7b19356465cd9",
+      "meaning": "Summary sixths",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 9,
+      "format": "SVG",
+      "sha256": "7857b94fedc31b5eb71c27ac6d355bbd828d8b9c05601da987b26db8ef72e099",
+      "meaning": "Summary thirds",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 10,
+      "format": "SVG",
+      "sha256": "5d39db32117610de5f1c81d5219c10fbfd713dae776aa40df65f98f232dc13c4",
+      "meaning": "Summary eighths",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 11,
+      "format": "SVG",
+      "sha256": "696770cb75f9d82f50f9e9b94510e2b9450d29087c36e1f7ff7d6530521546e7",
+      "meaning": "Summary fourths",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 12,
+      "format": "SVG",
+      "sha256": "f21b3b698c5b7bec6675cc25a2a23368b4ecf2ace2b4b471df14f0b78852f4a7",
+      "meaning": "Summary labeled fourths",
+      "localReviewOnly": true,
+      "redistributed": false
+    },
+    {
+      "ordinal": 13,
+      "format": "SVG",
+      "sha256": "3f00cfe57540d553919078e318936acd13dfa0955aa87397c607b8acf0789ea0",
+      "meaning": "Summary three fourths",
+      "localReviewOnly": true,
+      "redistributed": false
+    }
+  ],
+  "sourceImagesUniqueReadOnDevice": 13,
+  "originalSourceAssetsSourceType": {
+    "png": 2,
+    "jpg": 1,
+    "svg": 10
+  },
+  "originalUnitFractionDeck": {
+    "1/2": 2,
+    "1/3": 3,
+    "1/4": 4,
+    "1/6": 6,
+    "1/8": 9
+  },
+  "originalSecretFractionDeckTargets": [
+    "2/2",
+    "2/3",
+    "3/3",
+    "2/4",
+    "3/4",
+    "4/4",
+    "2/6",
+    "4/6",
+    "5/6",
+    "2/8",
+    "3/8",
+    "5/8"
+  ],
+  "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-83-academic-source-coverage-and-human-rubric-20261025.json",
+  "sourceOriginalFigurePixelParityClaimed": false
 }

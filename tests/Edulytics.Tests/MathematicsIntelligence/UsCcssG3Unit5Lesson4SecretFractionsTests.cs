@@ -11,6 +11,40 @@ namespace Edulytics.Tests.MathematicsIntelligence;
 /// </summary>
 public sealed class UsCcssG3Unit5Lesson4SecretFractionsTests
 {
+    [Theory]
+    [InlineData("1/2",2)]
+    [InlineData("1/3",3)]
+    [InlineData("1/4",4)]
+    [InlineData("1/6",6)]
+    [InlineData("1/8",9)]
+    public void OriginalUnitFractionDeckCountsArePreserved(string fraction,int expectedCopies)
+    {
+        var source=Source();
+        var paragraph=string.Join(" ",source.GetProperty("ExplanationParagraphs")
+            .EnumerateArray().Select(x=>x.GetString()!));
+        Assert.Contains(fraction + " ×" + expectedCopies,paragraph);
+    }
+    [Fact]
+    public void OriginalTwelveSecretTargetsPreservedWithoutFixedPlayOutcome()
+    {
+        var source=Source();
+        var paragraph=string.Join(" ",source.GetProperty("ExplanationParagraphs")
+            .EnumerateArray().Select(x=>x.GetString()!));
+        foreach (var fraction in new[]{"2/2","2/3","3/3","2/4","3/4","4/4",
+            "2/6","4/6","5/6","2/8","3/8","5/8"})
+            Assert.Contains(fraction,paragraph);
+        Assert.Contains("VARIABLE",paragraph);
+    }
+    [Fact]
+    public void FinalStickFigureIsNotApproximatedAsOneHalf()
+    {
+        var paragraph=string.Join(" ",Source().GetProperty("ExplanationParagraphs")
+            .EnumerateArray().Select(x=>x.GetString()!));
+        Assert.Contains("NON-EQUAL",paragraph);
+        Assert.Contains("85.7%",paragraph);
+        Assert.Contains("Do not grade",paragraph);
+    }
+
     private static JsonElement Source()
     {
         using var stream = typeof(Edulytics.Data.Seeding.CommonCoreG3SourceTeachingCorrections)
