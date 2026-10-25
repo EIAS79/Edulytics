@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l18-2021-optional-design-3-page-pdf-midpoints-quarters-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L18",
+      "CultureCode": "en",
+      "Title": "Design With Fractions (optional)",
+      "ExplanationParagraphs": [
+        "OPTIONAL 2021 Grade 3 Unit 5 lesson 18 (no new content standard): design a geometric pattern by applying fractions to sides of squares. The publicly accessible teacher lesson and teacher preparation HTML were checked against the actual THREE-PAGE original Student Task Statements PDF, not just a heading index. Materials are paper and ruler/straightedge, with extra paper if needed. Lesson timing: 10-minute warm-up; 15-minute half design; 25-minute quarter design; 10-minute synthesis. This is a teacher-evaluated, drawing-heavy modelling lesson, not a fixed numerical worksheet.",
+        "Warm-up Notice and Wonder: Between 0 and 1 shows FOUR number lines at unequal drawing scales, all with endpoints labelled 0 and 1. Three show a midpoint and one is blank. Students suggest observations and questions. All can be halved at their own physical midpoint; quartering means finding halfway between zero and halfway, then halfway and one. One line's physical length must not be mistaken for a greater numerical unit than another; teacher reviews reasoning.",
+        "Original student PDF page 2, Activity 18.1: start with a SQUARE. Task 1: on EACH of its four sides locate the point at 1/2 of THAT side's length; connect adjacent side marks and describe the shape (another square, rotated). Task 2: REPEAT 1/2 on each side of the new square and connect the newly marked points (another square alternating orientation). Task 3: REPEAT the midpoint-connection process AT LEAST TWO MORE TIMES and make observations about the growing nested geometric pattern. These are three separate source tasks, not a single 'draw one half' question.",
+        "Source teacher guidance for halves: students may estimate, fold, use measured straightedges or copy/fold paper; teachers encourage partner discussion and precise middle points. Crucially midpoint is the SAME from either endpoint of an edge. All valid precise midpoint-based patterns give nested SQUARES with alternating horizontal/vertical versus diagonal sides; actual counts of iterations and comments are student-generated and teacher assessed.",
+        "Original student PDF page 3, Activity 18.2: start with ANOTHER square, then mark 1/4 of length on EACH of FOUR sides; connect successive marked points and describe new shape. Do this once more with 1/4 of every new side, then REPEAT the construction AT LEAST TWO MORE TIMES and make mathematical observations. Original task numbering is three parts, all of which must remain accessible to teacher. Preserve quarter, not half, and the repeated construction requirement.",
+        "For quarters, starting from either endpoint is NOT interchangeable: a quarter measured from one end is located at three quarters measured from the other. Valid choices may lead to a square, a non-square quadrilateral or a different shape on successive iterations. Students may select consistent clockwise/counterclockwise starts, or mixed endpoint starts. Some skinny parallelograms become hard to iterate after only two or three rounds; teacher explicitly checks attempted repetitions and accepts documented physical infeasibility instead of forcing a fabricated fixed four-round picture.",
+        "Source teacher lesson optional extensions, when time permits, include decorating the pattern, a different starting-size square/shape, different unit or non-unit fractions, or changing fraction constraints by iteration. THESE extensions are not required to finish the original three quarter tasks. Partner group and independent work, oral reasoning, iteration choices and accessibility supports (MLR2, representation for written directions) should remain human-led.",
+        "Lesson synthesis asks how partitioning geometric SIDES resembles and differs from locating fractions on number lines, which drawing choices are enjoyable or challenging, and how iteration changes the unit each round. Original sample Student Response, teacher-only documents and any hidden publisher solutions remain rights-restricted and are not copied; this Edulytics rubric is independently authored. The first-party displayed polygons are illustrative NEW drawings, never a reproduction of publisher SVGs.",
+        "Stage A evidence: original teacher HTML SHA256 2fd1029f02277f95a4c491440ba6bf5195d6e559021479408e6e811e39dcfd3b; original preparation HTML SHA256 66abf73875baa665ca9ca45cb212a0e354aec09b263319b0ad9bbacc66a1924e; original student PDF 3 pages SHA256 244b364b0467a8990679fba4a8960e3146e7be657e261aa0fcb2afdda2ab6ef8; two different original SVG hashes c74968f5a1093f898e8dc884715464480dac6777b4a347fa3069f38b856f9e34 and 29ebd244c601c937e5d79c81c4ebd63718c7c422fd17c128ad7bc280f7f74b70."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit fraction of a side",
+          "Definition": "Each shape in the design has its own complete edge length. A half or quarter is measured along that new edge.",
+          "Rule": "For side endpoints A,B, a fractional mark is A+t(B-A), where t=1/2 or 1/4 from chosen A.",
+          "Example": "Halfway along every side of a square gives four side midpoints."
+        },
+        {
+          "Title": "Midpoint does not depend on endpoint",
+          "Definition": "Half the distance from one endpoint coincides with half the distance from the other.",
+          "Rule": "A+(B-A)/2=B+(A-B)/2.",
+          "Example": "Four midpoints connected produce a new rotated square."
+        },
+        {
+          "Title": "Quarter depends on chosen starting endpoint",
+          "Definition": "The location at 1/4 of length depends on whether students measure from A or B.",
+          "Rule": "A+(B-A)/4 is generally different from B+(A-B)/4.",
+          "Example": "Quarter-point choices can make different quadrilaterals and sometimes thin parallelograms."
+        },
+        {
+          "Title": "Iteration and modelling",
+          "Definition": "Each newly constructed polygon supplies side lengths for the next iteration.",
+          "Rule": "Recalculate fractional points on newly created sides; do not reuse original-square coordinates.",
+          "Example": "At least two additional rounds after first and second construction, with teacher checking feasibility."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source half design: first iteration",
+          "Question": "What shape results from connecting midpoints on each side of a square?",
+          "Method": "Place 1/2 marks on all four original edges and connect adjacent points.",
+          "Steps": [
+            "Draw a square with four equal sides.",
+            "Locate every edge midpoint from either endpoint.",
+            "Connect adjacent midpoints using a straightedge."
+          ],
+          "Answer": "A smaller square rotated 45 degrees",
+          "Check": "All four resulting segments have equal length and adjacent sides are perpendicular."
+        },
+        {
+          "Title": "Source half design: later iterations",
+          "Question": "What happens after repeating the midpoint rule?",
+          "Method": "Take midpoints of each NEW square's sides.",
+          "Steps": [
+            "The next midpoint square returns horizontal and vertical edges.",
+            "Repeat the midpoint method at least two further times.",
+            "Describe alternating orientation and decreasing size."
+          ],
+          "Answer": "Nested squares alternating orientation",
+          "Check": "No fixed count of total student iterations is imposed beyond source minimum."
+        },
+        {
+          "Title": "Source quarter design: one possible branch",
+          "Question": "What shapes can result if the four starting endpoints for quarter marks vary?",
+          "Method": "Mark 1/4 of each original or new side and connect adjacent marks.",
+          "Steps": [
+            "A quarter measured from A is not the point a quarter from B.",
+            "Consistent clockwise-start choices can make one kind of polygon; mixed choices can make another.",
+            "Explain the chosen endpoints for each of four sides before drawing."
+          ],
+          "Answer": "Several mathematically valid shapes and patterns",
+          "Check": "Teacher checks 1/4 lengths, consistent side-wise units and actual drawing."
+        },
+        {
+          "Title": "Warm-up different scales",
+          "Question": "Does a longer printed zero-to-one line represent a larger numerical value at 1?",
+          "Method": "Contrast mathematical whole and physical display width.",
+          "Steps": [
+            "All source lines begin at 0 and end at 1.",
+            "Each midpoint locates 1/2 on its own interval.",
+            "Different printed widths do not change the point's mathematical value."
+          ],
+          "Answer": "No; each number line still shows 0 to 1",
+          "Check": "The fourth original line has no marked midpoint."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat the first nested square as completing the entire 18.1 or 18.2 task.",
+          "WhyWrong": "The student PDF contains three ordered steps, including two further repetitions after second design.",
+          "Correction": "Preserve each source subquestion and teacher record of iterations."
+        },
+        {
+          "Mistake": "Assume quarters act like midpoints when choosing endpoints.",
+          "WhyWrong": "A quarter from A and a quarter from B are not the same point.",
+          "Correction": "Require evidence of endpoint selection on each side."
+        },
+        {
+          "Mistake": "Demand the exact same 1/4-derived polygon from every student.",
+          "WhyWrong": "The publisher narrative explicitly allows multiple shapes depending on starting endpoints.",
+          "Correction": "Teacher checks validity of constraints, not exact silhouette."
+        },
+        {
+          "Mistake": "Judge a visual drawing entirely from typed fraction 1/4.",
+          "WhyWrong": "This cannot prove equal side-length partitions and adjacent point connections.",
+          "Correction": "Teacher examines ruler/fold/mark construction, repeated iterations and explanation."
+        }
+      ],
+      "SummaryPoints": [
+        "Optional original lesson 18, Grade 3 Unit 5, three-page pupil PDF and teacher preparation checked.",
+        "Four-number-line warm-up: all 0–1, three with midpoint and one without; variable printed width.",
+        "18.1 has three subquestions: draw/label side halves, connect; repeat halves on new square; at least two MORE iterations and observations. Result nested squares.",
+        "18.2 has three subquestions: quarter-length marks on every new side, connect; repeat; two MORE times and observe. Endpoint choice changes outcomes.",
+        "No unique digital answer: original source designs are MATCHED_TEACHER_LED, with separate optional extensions and teacher observations.",
+        "Gated publisher student solutions were not accessed; no source-material 100% parity claim, no test execution or Stage D."
+      ]
+    }
+  ]
+}
