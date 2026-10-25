@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-16/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-16/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "DIRECT_2021_SOURCE_HTML_PREPARATION_TWO_ASSETS_THREE_WARMUP_FIVE_POINTS_EIGHT_PAIRS_FOUR_MISSING_DENOMINATORS",
     "goals": "Compare two fractions with the same numerator by reasoning about their size.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SAME_NUMERATOR_REVERSE_DENOMINATOR_RULE_FIVE_LINES_AND_ALL_SOURCE_ITEMS_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "bada06143397cce740c85f140b257439d6af8f316a99c5207a671958f4042cf0",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l16-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "THREE_WARMUP_EIGHT_COMPARISONS_FOUR_MISSING_DENOMINATOR_GATES_TESTS_WRITTEN_UNRUN",
     "family": "fraction-comparison",
     "practiceAnswerType": "comparison",
     "coolDownAnswerType": "comparison",
@@ -42,7 +43,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Five Parts of Something with your teacher. Show the representation and explain how it meets the goal: Let’s compare two fractions with the same numerator. Required Preparation CCSS Standards Addressing 3.NF.A.3.d Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions As",
-    "teacherReviewNote": "For same numerator, smaller denominators make larger pieces; denominator-only conclusions need same whole."
+    "teacherReviewNote": "For same numerator, smaller denominators make larger pieces; denominator-only conclusions need same whole.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson16SameNumeratorTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +52,10 @@
       "sourceSection": "Warm-up: True or False: Unit Fractions (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_SEMANTIC_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_TEACHER_LINE",
       "claimedParity": false
     },
     {
@@ -61,10 +63,10 @@
       "sourceSection": "Activity 1: Five Parts of Something (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_SEMANTIC_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_TEACHER_LINE",
       "claimedParity": false
     },
     {
@@ -72,10 +74,10 @@
       "sourceSection": "Activity 2: Fractions with the Same Numerator (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_SOURCE_SEMANTIC_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_TEACHER_LINE",
       "claimedParity": false
     },
     {
@@ -106,19 +108,19 @@
       "id": "G3-U05-L16-IMAGE-01",
       "observedAltText": "Students in pairs discussing math.",
       "originalReference": "unit-5/lesson-16/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_ASSET_READ_ONLY_FIRSTPARTY_RECONSTRUCTION"
     },
     {
       "id": "G3-U05-L16-IMAGE-02",
       "observedAltText": "5 number lines. Scale 0 to 3, evenly spaced tick marks. First tick mark, 0. Last tick mark, 3. One of each: by halves, thirds, fourths, sixths, and eighths.",
       "originalReference": "unit-5/lesson-16/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_ASSET_READ_ONLY_FIRSTPARTY_RECONSTRUCTION"
     }
   ],
   "sourceElementCounts": {
@@ -132,20 +134,24 @@
     "expected": ">"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Source original standalone student PDF not checked.",
+    "Publisher teacher-gated Cool-down not accessed.",
+    "Source image artwork not copied or certified pixel-parity.",
+    "Real pupil number-line placements and explained reasoning require teacher.",
+    "Tests, CI, Stage D, academic approval and release not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "2733a7efca24f95857d99af17d73e7ddb0c89012e540e4f88ed9bcf7af629654",
+  "originalPreparationHtmlSHA256": "dca3990fef237a693337358a781c9b0e2b4d4ef475195461dd8c9e70547e6493",
+  "originalImagesRead": 2,
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-95-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-95-academic-source-coverage-and-human-rubric-20261025.json"
 }
