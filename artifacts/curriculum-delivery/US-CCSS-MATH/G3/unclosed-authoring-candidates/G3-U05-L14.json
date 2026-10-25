@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-14/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-14/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "DIRECT_2021_HTML_PREPARATION_TWO_SOURCE_SVG_AND_ALL_THREE_STUDENT_SECTIONS_REVIEWED",
     "goals": "Represent and compare fractions in a way that makes sense to them.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_FOUR_WARMUP_THREE_FRACTION_COMPARISONS_HAN_LIN_SAME_WHOLE_GUARD",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "cb5582078330c489072a2b01f11c70b191431df20da5aa30a0372cb7fb4dfa1a",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l14-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_SOURCE_WARMUP_AND_THREE_COMPARISON_ORACLES_PLUS_TEACHER_SVG_RUBRIC_TESTS_WRITTEN_UNRUN",
     "family": "fraction-comparison",
     "practiceAnswerType": "comparison",
     "coolDownAnswerType": "comparison",
@@ -42,7 +43,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Equivalent or Not? with your teacher. Show the representation and explain how it meets the goal: Let’s represent and compare fractions.",
-    "teacherReviewNote": "For same numerator, smaller denominators make larger pieces; denominator-only conclusions need same whole."
+    "teacherReviewNote": "For same numerator, smaller denominators make larger pieces; denominator-only conclusions need same whole.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson14FractionComparisonTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +52,10 @@
       "sourceSection": "Warm-up: Number Talk: Which Whole Numbers? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TO_FIRSTPARTY_FRACTIONS_A_B_C",
+      "grading": "SCALAR_PLUS_TEACHER_GEOMETRY",
       "claimedParity": false
     },
     {
@@ -61,10 +63,10 @@
       "sourceSection": "Activity 1: Equivalent or Not? (25 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TO_FIRSTPARTY_FRACTIONS_A_B_C",
+      "grading": "SCALAR_PLUS_TEACHER_GEOMETRY",
       "claimedParity": false
     },
     {
@@ -72,10 +74,10 @@
       "sourceSection": "Activity 2: Same Fractions, Different Result? (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TO_FIRSTPARTY_FRACTIONS_A_B_C",
+      "grading": "SCALAR_PLUS_TEACHER_GEOMETRY",
       "claimedParity": false
     },
     {
@@ -106,19 +108,19 @@
       "id": "G3-U05-L14-IMAGE-01",
       "observedAltText": "Number lines.",
       "originalReference": "unit-5/lesson-14/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SVG_READ_ONLY_RECONSTRUCTED_INDEPENDENTLY"
     },
     {
       "id": "G3-U05-L14-IMAGE-02",
       "observedAltText": "Two number lines. Top, 0 to 1 by sixths. Only 0 and 1 labeled. Point plotted at 4 sixths. Bottom, 0 to 1 by sixths, 0 and 1 labeled, point plotted at 5 sixths.",
       "originalReference": "unit-5/lesson-14/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SVG_READ_ONLY_RECONSTRUCTED_INDEPENDENTLY"
     }
   ],
   "sourceElementCounts": {
@@ -132,20 +134,24 @@
     "expected": ">"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original standalone student PDF uninspected.",
+    "Publisher Cool-down teacher gated.",
+    "Source diagram pixels not copied or exact parity certified.",
+    "Student explanation of Lin's invalid units requires teacher review.",
+    "New tests, CI, Stage D, academic approval and production deployment not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "5921eb05bb612a6f8622d2c77cde3a9f7993b2368cad53f5c92d071a0f9bda2d",
+  "originalPreparationHtmlSHA256": "d80158896405cdd7ac39aca069da88aa1b47279fa4edc135af0e16ba41e9b171",
+  "originalImagesRead": 2,
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-93-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-93-academic-source-coverage-and-human-rubric-20261025.json"
 }

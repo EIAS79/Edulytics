@@ -1,0 +1,125 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l14-2021-fraction-comparison-common-whole-han-lin-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L14",
+      "CultureCode": "en",
+      "Title": "How Do You Compare Fractions?",
+      "ExplanationParagraphs": [
+        "Original 2021 Number Talk: Which Whole Numbers? The four exact prompts are 16/1=16,16/2=8,16/4=4,20/4=5. Each is a whole number because denominator divides numerator without a remainder; discuss changing denominator while keeping numerator fixed and the relationship to earlier whole-number fraction lesson.",
+        "Activity1 Equivalent or Not? requires the three ORIGINAL source pairs in the source order: 1/2 vs1/3 NOT equivalent (a half is greater than a third of SAME unit); 4/6 vs5/6 NOT equivalent (four sixths is less than five sixths of same unit); 3/4 vs6/8 ARE equivalent. Students show reasoning using diagrams, symbols or number-line representations. Do not replace the exact source comparisons with generic random pairs.",
+        "Activity2 Same Fractions, Different Result? Original Han states 4/6<5/6, correct for the SAME whole; Lin states 4/6>5/6, incorrectly comparing drawings with DIFFERENT unit spans from zero to one. Both separately partition each number line into six equal parts, but Lin's FIRST source line 0–1 is physically longer than her SECOND source line 0–1. As a result, marked 4/6 on the longer drawn line may look farther right than 5/6 on the shorter, which is NOT a valid numeric fraction comparison.",
+        "Original Han image shows two 0–1 number lines with same full unit span and 4/6 at the fourth tick, 5/6 at fifth tick; 4/6 lies left of 5/6. Original Lin image intentionally has unequal physical widths for a complete unit: the top 0–1 spans about 336.6 SVG coordinate units, the bottom about 219.6 units. Both source figures were examined directly as SVG on Our-CS. Never infer that different physical positions on two differently scaled drawings imply numeric magnitude. Both numerators count equal sixths of a mathematically SAME unit, and 4<5.",
+        "Students discuss why Han and Lin's visual claims differ, what each knows about equal parts, and why sharing the same whole is essential. Teacher reviews actual drawn units, explanatory dialogue and the original diagrams. An exact numeric 4/6<5/6 answer alone does not prove understanding of the source deliberate unequal-scale misconception.",
+        "Source lesson synthesis asks how to decide whether given fractions are equivalent. Teacher-gated publisher Cool-down How Would You Decide? unavailable; independent Edulytics work is not a copy. On-device original public teacher lesson and preparation HTML plus two unique source SVGs reviewed. Original student task PDF, CI, compiled tests, academic review and Stage D remain unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Same whole for fraction comparison",
+          "Definition": "Fractions as ratios of parts must reference the SAME unit whole when comparing represented shaded lengths/areas.",
+          "Rule": "For equal positive denominator n, a/n<b/n exactly when a<b.",
+          "Example": "4/6<5/6."
+        },
+        {
+          "Title": "Equivalence",
+          "Definition": "Two fractions are equivalent when they represent the same numeric value and same relative location on consistently scaled lines.",
+          "Rule": "a/b=c/d if ad=bc for nonzero denominators.",
+          "Example": "3/4=6/8."
+        },
+        {
+          "Title": "Beware misleading number-line scales",
+          "Definition": "The same fraction drawn on a longer whole has a longer physical length than on a shorter whole.",
+          "Rule": "Do not compare absolute paper coordinates if the drawn 0-to-1 lengths differ.",
+          "Example": "Lin's 4/6 appears farther on a longer line than 5/6 on a shorter line; Han's consistent scales correctly show 4/6<5/6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Source warm-up",
+          "Question": "Find whole numbers equivalent to 16/1,16/2,16/4,20/4.",
+          "Method": "Divide exactly and check no remainder.",
+          "Steps": [
+            "16 divided by 1 =16; divided by 2 =8.",
+            "16 divided by 4 =4.",
+            "20 divided by 4 =5."
+          ],
+          "Answer": "16,8,4,5",
+          "Check": "All denominators divide numerator."
+        },
+        {
+          "Title": "Half and third",
+          "Question": "Are 1/2 and1/3 equivalent?",
+          "Method": "Use one fixed unit and split into sixths.",
+          "Steps": [
+            "1/2=3/6.",
+            "1/3=2/6.",
+            "3/6 is greater than 2/6."
+          ],
+          "Answer": "Not equivalent",
+          "Check": "1×3≠1×2."
+        },
+        {
+          "Title": "Four-sixths and five-sixths",
+          "Question": "Are 4/6 and5/6 equivalent?",
+          "Method": "Compare equal sixths of SAME whole.",
+          "Steps": [
+            "Both use sixth-sized intervals of one whole.",
+            "Four jumps reach fourth tick; five reach fifth.",
+            "4/6 < 5/6."
+          ],
+          "Answer": "Not equivalent",
+          "Check": "4<5."
+        },
+        {
+          "Title": "Three-fourths and six-eighths",
+          "Question": "Compare3/4 and6/8.",
+          "Method": "Split every fourth into two eighths.",
+          "Steps": [
+            "Three fourths =six eighths.",
+            "Both locate same fraction of one whole.",
+            "Product check 3×8=6×4."
+          ],
+          "Answer": "Equivalent",
+          "Check": "Both products =24."
+        },
+        {
+          "Title": "Han and Lin's different visual results",
+          "Question": "Why does Lin's image seem to show 4/6 farther than5/6?",
+          "Method": "Inspect scales of each original 0–1 line.",
+          "Steps": [
+            "Han uses matching complete-unit lengths for both lines, so 4/6 is left of5/6.",
+            "Lin drew a longer whole for4/6 and shorter whole for5/6.",
+            "The larger physical shaded distance is from a different unit, not a larger fraction."
+          ],
+          "Answer": "Han is correct; Lin compares DIFFERENT whole sizes.",
+          "Check": "Compare on identical 0–1 scales to see 4/6 < 5/6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Conclude 4/6>5/6 because Lin's top plotted dot lies farther right.",
+          "WhyWrong": "The original Lin top and bottom number-line wholes are different drawn lengths.",
+          "Correction": "Align the 0–1 whole scales before comparison."
+        },
+        {
+          "Mistake": "Treat 3/4 and6/8 as unequal because both numerator and denominator differ.",
+          "WhyWrong": "Multiplying numerator and denominator by two preserves value.",
+          "Correction": "Show same point or compare cross-products."
+        },
+        {
+          "Mistake": "Grade a diagram explanation with only a correct relation symbol.",
+          "WhyWrong": "Correct numerical comparison does not document noticing Lin's inconsistent whole sizes.",
+          "Correction": "Teacher reviews actual visual evidence and explanation."
+        }
+      ],
+      "SummaryPoints": [
+        "Four original whole-number warm-up answers 16,8,4,5.",
+        "Three original activity comparisons: 1/2 and1/3 not equal;4/6 and5/6 not equal;3/4 and6/8 equivalent.",
+        "Source Han correct:4/6<5/6; Lin's contrary conclusion arises because her original 0–1 units are physically different lengths.",
+        "Original two SVG figures were inspected. Source publisher Cool-down, standalone student PDF, tests and Stage D remain unverified."
+      ]
+    }
+  ]
+}
