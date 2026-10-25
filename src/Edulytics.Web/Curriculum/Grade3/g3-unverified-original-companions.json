@@ -26019,7 +26019,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "equal-group-activity-design",
       "independentPractice": {
@@ -26032,12 +26032,12 @@
         "answerType": "teacher",
         "expected": null
       },
-      "openTeacherTask": "Work through the original lesson's activity Design Your Notice and Wonder with your teacher. Show the representation and explain how it meets the goal: You will apply your understanding of equal groups to create a Notice and Wonder activity.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Notice and Wonder: Equal Groups: Examine the original instructor-provided image and offer observations and questions; do not infer unverified object counts.; Design Your Notice and Wonder: Choose a suitable equal-groups photo and prepare possible observations and questions.; Facilitate Your Notice and Wonder: Display your chosen photo, provide discussion time, then record classmates' contributions.",
+      "teacherReviewNote": "Individual public teacher/student 2021 HTML reviewed. Independent Edulytics source-specific learning and task rubrics updated; publisher visual/printed materials, physical tasks and gated Cool-down not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s create a Notice and Wonder activity.",
         "sourceLearningGoals": "Apply understanding of equal groups to create a Notice and Wonder activity.",
@@ -26063,30 +26063,30 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L12-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Equal Groups (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Notice and Wonder.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L12-ACTIVITY-TEACHER-1",
+          "sourceActivity": "Notice and Wonder: Equal Groups",
+          "prompt": "Examine the original instructor-provided image and offer observations and questions; do not infer unverified object counts.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L12-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Design Your Notice and Wonder (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Notice and Wonder.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L12-ACTIVITY-TEACHER-2",
+          "sourceActivity": "Design Your Notice and Wonder",
+          "prompt": "Choose a suitable equal-groups photo and prepare possible observations and questions.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L12-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Facilitate Your Notice and Wonder (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Notice and Wonder.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L12-ACTIVITY-TEACHER-3",
+          "sourceActivity": "Facilitate Your Notice and Wonder",
+          "prompt": "Display your chosen photo, provide discussion time, then record classmates' contributions.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L12-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L12-PUBLISHER-GATED-COOLDOWN",
+          "sourceActivity": "Cool-down: Notice and Wonder Reflection (5 minutes)",
+          "prompt": "Original publisher reflection/assessment is gated and not independently inspected; teacher reviews source separately. First-party tasks are not claimed publisher copies.",
           "answerType": "teacher",
           "expected": null
         }
