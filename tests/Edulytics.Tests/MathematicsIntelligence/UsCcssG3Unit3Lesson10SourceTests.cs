@@ -20,5 +20,5 @@ public sealed class UsCcssG3Unit3Lesson10SourceTests
  [InlineData("A2-4","167",true)]
  [InlineData("A2-4","168",false)]
  public void ExactOriginalSourceSums(string tail,string response,bool expected){var q=Lesson().SourceSubtasks.Single(x=>x.Id.EndsWith(tail,StringComparison.Ordinal));var r=Grade3SourceCompanionCatalogue.Grade(q,response);Assert.Equal(expected,r.NumericCorrect);Assert.True(r.TeacherReview);}
- [Fact]public void SourcePdfAndFirstPartyExitAreDistinct(){Assert.True(Lesson().ReadyForStageD);Assert.True(Lesson().OriginalStudentTaskPdfRead);Assert.Equal("547",Lesson().OriginalEdulyticsCoolDown!.Expected);Assert.Contains("804",Lesson().OriginalEdulyticsCoolDown.Prompt);foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher"))Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"257").NumericCorrect);}
+ [Fact]public void SourcePdfAndFirstPartyExitAreDistinct(){Assert.True(Lesson().ReadyForStageD);Assert.True(Lesson().OriginalStudentTaskPdfRead);Assert.Equal("547",Lesson().OriginalEdulyticsCoolDown!.Expected);Assert.Contains("804",Lesson().OriginalEdulyticsCoolDown!.Prompt);foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher"))Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"257").NumericCorrect);}
 }

@@ -16,8 +16,8 @@ public sealed class UsCcssG3Unit6Lesson3CombinedRulerTests
   return ls[0].Clone();
  }
  [Theory]
- [InlineData(4,2,4,1,2)][InlineData(3,2,4,1,2)]
- public void HalvesAndTwoFourthsMatch(int a,int quarterNum,int quarterDen,int halfNum,int halfDen)
+ [InlineData(2,4,1,2)]
+ public void HalvesAndTwoFourthsMatch(int quarterNum,int quarterDen,int halfNum,int halfDen)
  {
   Assert.Equal((double)quarterNum/quarterDen,(double)halfNum/halfDen,8);
  }

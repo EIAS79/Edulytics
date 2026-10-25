@@ -32,9 +32,9 @@ public sealed class UsCcssG3Unit1Lesson20CommutativeSourceTests
         Assert.True(l.ReadyForStageD);
         Assert.Equal(new[]{"60","58","58","56"},l.SourceSubtasks.Take(4).Select(x=>x.Expected));
         Assert.Equal(2,l.SourceSubtasks.Count(x=>x.AnswerType=="commutative-equation-pair"));
-        Assert.True(l.SourceSubtasks.Any(x=>x.Id=="G3-U01-L20-A1-02" && x.AnswerType=="teacher"));
-        Assert.True(l.SourceSubtasks.Any(x=>x.Id=="G3-U01-L20-A2-02" && x.AnswerType=="teacher"));
-        Assert.True(l.SourceSubtasks.Any(x=>x.Id=="G3-U01-L20-SYNTH" && x.AnswerType=="teacher"));
+        Assert.Contains(l.SourceSubtasks,x=>x.Id=="G3-U01-L20-A1-02" && x.AnswerType=="teacher");
+        Assert.Contains(l.SourceSubtasks,x=>x.Id=="G3-U01-L20-A2-02" && x.AnswerType=="teacher");
+        Assert.Contains(l.SourceSubtasks,x=>x.Id=="G3-U01-L20-SYNTH" && x.AnswerType=="teacher");
         Assert.True(Grade3SourceCompanionCatalogue.Grade(
             l.SourceSubtasks.Single(x=>x.Id=="G3-U01-L20-A2-01"),"6×3=18;3×6=18").NumericCorrect);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(

@@ -20,5 +20,5 @@ public sealed class UsCcssG3Unit3Lesson9SourceTests
  [InlineData("TRY-5","257",true)]
  [InlineData("TRY-5","258",false)]
  public void OriginalSourceExactSubtractionAndWrongAnswersFail(string suffix,string answer,bool expected){var q=Lesson().SourceSubtasks.Single(x=>x.Id.EndsWith(suffix,StringComparison.Ordinal));var r=Grade3SourceCompanionCatalogue.Grade(q,answer);Assert.Equal(expected,r.NumericCorrect);Assert.True(r.TeacherReview);}
- [Fact] public void Original2021PdfIsReadAndPublisherPromptNotAutoGraded(){Assert.True(Lesson().ReadyForStageD);Assert.True(Lesson().OriginalStudentTaskPdfRead);Assert.Equal("418",Lesson().OriginalEdulyticsCoolDown!.Expected);Assert.Contains("704",Lesson().OriginalEdulyticsCoolDown.Prompt);foreach(var t in Lesson().SourceSubtasks.Where(t=>t.AnswerType=="teacher"))Assert.Null(Grade3SourceCompanionCatalogue.Grade(t,"272").NumericCorrect);}
+ [Fact] public void Original2021PdfIsReadAndPublisherPromptNotAutoGraded(){Assert.True(Lesson().ReadyForStageD);Assert.True(Lesson().OriginalStudentTaskPdfRead);Assert.Equal("418",Lesson().OriginalEdulyticsCoolDown!.Expected);Assert.Contains("704",Lesson().OriginalEdulyticsCoolDown!.Prompt);foreach(var t in Lesson().SourceSubtasks.Where(t=>t.AnswerType=="teacher"))Assert.Null(Grade3SourceCompanionCatalogue.Grade(t,"272").NumericCorrect);}
 }
