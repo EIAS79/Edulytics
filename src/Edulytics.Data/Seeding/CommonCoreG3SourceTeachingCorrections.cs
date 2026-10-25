@@ -187,6 +187,9 @@ public static class CommonCoreG3SourceTeachingCorrections
                 CommonCoreG3Unit3Lesson8RichV2.Apply(lesson);
             // Source-indexed candidate only: ordinals 45–143 never imply full original-source parity.
             CommonCoreG3RemainingSourceIntakeRichV2.Apply(lesson);
+            // Override generic source-intake draft only for sequentially closed 2021 U03:L09.
+            if (string.Equals(lesson.LessonCode, CommonCoreG3Unit3Lesson9RichV2.LessonCode, StringComparison.Ordinal))
+                CommonCoreG3Unit3Lesson9RichV2.Apply(lesson);
 
             if (string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L01", StringComparison.Ordinal))

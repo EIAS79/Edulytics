@@ -7627,11 +7627,11 @@
         "Subtraction.",
         "Subtraction. Three-hundred plus ninety plus one, minus two-hundred plus ten plus five."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
         "prompt": "Compute 283 − 159 using a place-value algorithm.",
@@ -7639,26 +7639,27 @@
         "expected": "124"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Find 832 − 575 using any accurate recorded subtraction algorithm.",
+        "prompt": "Using an expanded place-value algorithm, find 704 − 286. Explain the exchange of a hundred and a ten.",
         "answerType": "integer",
-        "expected": "257"
+        "expected": "418"
       },
       "openTeacherTask": "Work through the original lesson's activity Revise Subtraction Work with your teacher. Show the representation and explain how it meets the goal: You will subtract within 1,000 using a subtraction algorithm that records numbers in expanded form.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 6 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 four-page Student Task Statements and archived teacher lesson read. Source Lin error is reversing the tens subtraction: incorrectly 50−20 rather than requested 20−50. Correct by regrouping 400+20+8 to300+120+8 before subtracting100+50+6, giving272. Select at least3/5 problems for accessibility. Original image, publisher gated cooldown and optional assets not reproduced.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn more about our first subtraction algorithm.",
+        "sourceGoal": "Let's learn more about our first subtraction algorithm.",
         "sourceLearningGoals": "Analyze and use a subtraction algorithm with the numbers written in expanded form.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Warmup: separate commutative addition/multiplication from noncommutative subtraction.",
+          "Find Lin's exact error before teaching a correction; model 428−156=272 by exchanging one hundred into tens.",
+          "Choose 3 of 5 source subtractions, use blocks, equations, or expanded recording; explain the exchange.",
+          "Use partner critique and MLR8 words decompose, hundreds, tens and ones.",
+          "First-party independent 704−286=418 is a new exit check; no publisher original cool-down parity claimed."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn more about our first subtraction algorithm.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original publisher figure not copied. Teacher critiques representations; scalar correct answers are only source checkpoints."
       },
       "sourceBasedCheck": {
         "prompt": "Lin's source subtraction example is 428 − 156. What is its correct value?",
@@ -7674,76 +7675,101 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S2-NUM1",
-          "sourceActivity": "Activity 1: Revise Subtraction Work (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 428 - 156. Show or explain a method to your teacher.",
+          "id": "G3-U03-L09-WU-TRUE-MULT",
+          "sourceActivity": "True/False",
+          "prompt": "Is 4×5 equal to 5×4? Explain the commutative property.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L09-WU-TRUE-ADD",
+          "sourceActivity": "True/False",
+          "prompt": "Is 125+200 equal to 200+125? Explain why.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L09-WU-FALSE-SUB",
+          "sourceActivity": "True/False",
+          "prompt": "Is 300−100 equal to 100−300? Explain your evidence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L09-LIN-RESULT",
+          "sourceActivity": "Revise Subtraction Work",
+          "prompt": "Compute 428−156 correctly and prepare an expanded-form demonstration.",
           "answerType": "integer",
           "expected": "272"
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S3-NUM2",
-          "sourceActivity": "Activity 2: Try the Algorithm (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 283 - 159. Show or explain a method to your teacher.",
+          "id": "G3-U03-L09-LIN-CRITIQUE",
+          "sourceActivity": "Revise Subtraction Work",
+          "prompt": "Identify Lin's reversal of 20 and 50 in the tens calculation; explain why exchanging a hundred to ten tens fixes it.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L09-TRY-1",
+          "sourceActivity": "Try the Algorithm",
+          "prompt": "Calculate 283−159 and show the regrouping using expanded form.",
           "answerType": "integer",
           "expected": "124"
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S3-NUM3",
-          "sourceActivity": "Activity 2: Try the Algorithm (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 425 - 192. Show or explain a method to your teacher.",
+          "id": "G3-U03-L09-TRY-2",
+          "sourceActivity": "Try the Algorithm",
+          "prompt": "Calculate 425−192 and show the regrouping using expanded form.",
           "answerType": "integer",
           "expected": "233"
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S3-NUM4",
-          "sourceActivity": "Activity 2: Try the Algorithm (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 639 - 465. Show or explain a method to your teacher.",
+          "id": "G3-U03-L09-TRY-3",
+          "sourceActivity": "Try the Algorithm",
+          "prompt": "Calculate 639−465 and show the regrouping using expanded form.",
           "answerType": "integer",
           "expected": "174"
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S3-NUM5",
-          "sourceActivity": "Activity 2: Try the Algorithm (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 591 - 128. Show or explain a method to your teacher.",
+          "id": "G3-U03-L09-TRY-4",
+          "sourceActivity": "Try the Algorithm",
+          "prompt": "Calculate 591−128 and show the regrouping using expanded form.",
           "answerType": "integer",
           "expected": "463"
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S3-NUM6",
-          "sourceActivity": "Activity 2: Try the Algorithm (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 832 - 575. Show or explain a method to your teacher.",
+          "id": "G3-U03-L09-TRY-5",
+          "sourceActivity": "Try the Algorithm",
+          "prompt": "Calculate 832−575 and show the regrouping using expanded form.",
           "answerType": "integer",
           "expected": "257"
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: True or False: Does It Commute? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Subtraction Algorithms (Part 2).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L09-TRY-CHOICE",
+          "sourceActivity": "Try the Algorithm",
+          "prompt": "Select at least 3 of the 5 source expressions when using the original accessibility option; explain a method to a partner.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Revise Subtraction Work (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Subtraction Algorithms (Part 2).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L09-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain why subtraction is not commutative and how an algorithm uses equivalent hundreds/tens/ones exchanges.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Try the Algorithm (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Subtraction Algorithms (Part 2).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
-          "id": "G3-U03-L09-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L09-COOL-ORIGINAL",
+          "sourceActivity": "Original restricted publisher Cool-down",
+          "prompt": "Ask the teacher for publisher How Did Andre Subtract?; independent Edulytics exit checks the same grade-level skill, not the original question.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceOriginalStudentTaskPdfPages": 4,
+      "sourceOriginalStudentTaskPdfSha256": "63467914b32464b95497ec8353b68e9fc610b4f8a2e31a1735edc5e01d0f1805",
+      "sourceOriginalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/f95qqatka4uu5c77i9maoewj5vf1",
+      "sourceToFirstPartyParityScope": "STATIC_2021_SUBTRACTION_SOURCE_SEMANTIC_NOT_ORIGINAL_PUBLISHER_ART"
     },
     {
       "ordinal": 46,
