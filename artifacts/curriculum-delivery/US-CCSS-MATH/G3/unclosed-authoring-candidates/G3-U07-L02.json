@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-7/lesson-2/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-2/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_LOCAL_TEACHER_PREPARATION_FOUR_TF_TWO_ORIGINAL_CARD_SORTS_20_QUADS_REVIEWED",
     "goals": "Sort triangles and quadrilaterals into subcategories. Understand that shared attributes of shapes can define a larger category, such as triangle or quadrilateral.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_TWO_SHAPE_SORTS_GALLERY_AND_4_TF_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "6ea5ddf667fe820b72879c2440cbb4d5d6f585e98015cd48eb5ff515f2afa31b",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l02-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson2.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_TF_NUMERIC_ORACLES_TEACHER_CARD_SORT_RUBRIC_TESTS_WRITTEN_UNRUN",
     "family": "shape-attributes",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Triangles with your teacher. Show the representation and explain how it meets the goal: Let’s sort shapes into more specific categories.",
-    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading."
+    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson2TriangleQuadSortTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: True or False: Multiples of Ten (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-7/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_WITH_CARD_GAP",
+      "grading": "NUMERIC_OR_TEACHER_OPEN_SORT",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Card Sort: Triangles (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-7/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_WITH_CARD_GAP",
+      "grading": "NUMERIC_OR_TEACHER_OPEN_SORT",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Card Sort: Quadrilaterals (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-7/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_WITH_CARD_GAP",
+      "grading": "NUMERIC_OR_TEACHER_OPEN_SORT",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-7/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_WITH_CARD_GAP",
+      "grading": "NUMERIC_OR_TEACHER_OPEN_SORT",
       "claimedParity": false
     },
     {
@@ -96,7 +99,7 @@
       "originalReference": "unit-7/lesson-2/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "RESTRICTED_NOT_COPIED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -109,7 +112,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_CARD_IMAGE_NOT_PIXEL_INSPECTED"
     },
     {
       "id": "G3-U07-L02-IMAGE-02",
@@ -118,7 +121,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_CARD_IMAGE_NOT_PIXEL_INSPECTED"
     }
   ],
   "sourceElementCounts": {
@@ -132,20 +135,22 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original Grade3 Triangle Cards and Quadrilateral Cards blackline master geometries not inspected.",
+    "Original standalone pupil PDF and teacher-gated Cool-down Describe the Shape not accessed.",
+    "Actual card sort grouping results require teacher observation and student justifications.",
+    "New .NET tests, CI, Stage D, academic approval, merge and deploy not performed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "a617a149382a5abd275324c47e71a53b8af3e92e3ca15976146a462b888b815d",
+  "originalPreparationHtmlSHA256": "1f9288c292f16ae9ad88d0344ab597b4aa8517681cd05579026bd051607c15c5",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-2021-original-triangle-quad-sort-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-triangle-quad-human-rubric-20261025.json"
 }

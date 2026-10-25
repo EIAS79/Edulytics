@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 114,
+    "lessonsFullyReadyForStageD": 115,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 29,
+    "lessonsWithACExplicitGap": 28,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,7 +32,7 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 114,
+    "lessonsIndividuallyComparedToAllOriginalElements": 115,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 3,
@@ -49,8 +49,8 @@
     "originalSvgGeometriesInspected": 219
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 114,
-    "firstUnclosedOrdinal": 115,
+    "lastConsecutiveReadyForStageDOrdinal": 115,
+    "firstUnclosedOrdinal": 116,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -993,15 +993,11 @@
     {
       "ordinal": 115,
       "lessonCode": "PED:US-CCSS-MATH:G3:U07:L02",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U07-L02.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-2021-original-triangle-quad-sort-evidence-20261025.json",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-triangle-quad-human-rubric-20261025.json"
     },
     {
       "ordinal": 116,
@@ -4911,12 +4907,12 @@
       "unitNumber": 7,
       "lessonNumber": 2,
       "title": "Attributes of Triangles and Quadrilaterals",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_LOCAL_4_TF_AND_SOURCE_TRIANGLE_20_QUADRILATERAL_SORTS_REVIEWED",
+      "stageB": "FIRSTPARTY_RICHV2_SOURCE_SHAPE_SORTS_AND_GALLERY",
+      "stageC": "FOUR_SCALAR_ASSERTIONS_TEACHER_CARD_RUBRIC_TESTS_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U07-L02.json",
       "stageD": "NOT_STARTED",
@@ -4930,9 +4926,12 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-2021-original-triangle-quad-sort-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-triangle-quad-human-rubric-20261025.json",
+      "originalStudentTaskPdfCompared": false,
+      "sourceMaterialParity100Claim": false
     },
     {
       "gradeOrdinal": 116,
@@ -6349,20 +6348,19 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 114,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U07:L01",
+    "gradeOrdinal": 115,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U07:L02",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-114-2021-original-shape-card-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-114-shape-sorting-human-rubric-20261025.json",
-    "sourceShapeCardPixelParity": false,
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-2021-original-triangle-quad-sort-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-115-triangle-quad-human-rubric-20261025.json",
     "testsRun": false,
     "stageD": "NOT_STARTED",
     "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 114,
-    "firstUnclosedGradeOrdinal": 115,
+    "lastClosedGradeOrdinal": 115,
+    "firstUnclosedGradeOrdinal": 116,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"
