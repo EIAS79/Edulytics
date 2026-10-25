@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-5/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-5/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_TEACHER_HTML_PREPARATION_AND_15_SOURCE_IMAGES_REVIEWED_9_NUMBER_LINE_CARDS_AND_5_FOLDS",
     "goals": "Extend understanding of whole numbers on the number line to see fractions on a number line.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 14,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_NINE_ORIGINAL_NUMBERLINE_CARDS_FIVE_FOLDINGS_AND_ANDRE_CLARE_EXPLANATIONS_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "e846109c4ea2e33a2811e979d17779488e475b0359ba85da552bc26cade4358b",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l05-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "NINE_STEP_SIZE_FIVE_FOLD_TARGETS_AND_OPEN_TEACHER_GATES_TESTS_WRITTEN_UNRUN",
     "family": "fractions-number-line",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +43,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Number Lines with your teacher. Show the representation and explain how it meets the goal: Let’s learn about fractions on the number line.",
-    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present."
+    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson5NumberLineSourceTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +52,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: Two Number Lines (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TEXT_SVG_TO_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_HUMAN_REVIEW",
       "claimedParity": false
     },
     {
@@ -61,10 +63,10 @@
       "sourceSection": "Activity 1: Card Sort: Number Lines (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TEXT_SVG_TO_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_HUMAN_REVIEW",
       "claimedParity": false
     },
     {
@@ -72,10 +74,10 @@
       "sourceSection": "Activity 2: Fold and Label the Number Line (25 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TEXT_SVG_TO_FIRST_PARTY_A_B_C_MAPPED",
+      "grading": "NUMERIC_PLUS_HUMAN_REVIEW",
       "claimedParity": false
     },
     {
@@ -106,127 +108,127 @@
       "id": "G3-U05-L05-IMAGE-01",
       "observedAltText": "Number lines.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-02",
       "observedAltText": "Number line. Evenly spaced tick marks labeled 0 and 8 with one tick mark in between. First tick mark, 0. Last tick mark, 8.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-03",
       "observedAltText": "Number line. 0 to 1 with 3 evenly spaced tick marks between. First tick mark, 0. Last tick mark, 1.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-04",
       "observedAltText": "Number line. Evenly spaced tick marks 0 to 3 with a tick mark between each. First tick mark, 0. Last tick mark 3.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-05",
       "observedAltText": "Number line. 0 to 2 with another tick mark between each number. First tick mark, 0. Last tick mark, 2.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-06",
       "observedAltText": "Number line. Evenly spaced tick marks. First one, 0. Last one, 4. Three unlabeled tick marks between 0 and 4.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-07",
       "observedAltText": "Number line. Tick marks at 0 and 1 with 5 unlabeled tick marks in between.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-08",
       "observedAltText": "Number line. 0 to 6. First tick mark 0, two unlabeled tick marks, last tick mark, 6.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-09",
       "observedAltText": "Number line. Evenly spaced tick marks 0 to 2 with two tick marks between 0 and 1 and two tick marks between 1 and 2. First tick mark, 0. Last tick mark, 2.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-10",
       "observedAltText": "Number line. Evenly spaced tick marks labeled 0, 2, and 4, with 3 unlabeled tick marks between 0 and 2 and between 2 and 4.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-11",
       "observedAltText": "Two students sorting cards.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-12",
       "observedAltText": "Number line.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-13",
       "observedAltText": "Number line. Tick marks at 0 and 1 with an unlabeled tick mark in between. Two labels of one half below number line with no corresponding tick marks.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L05-IMAGE-14",
       "observedAltText": "Number line. Evenly spaced tick marks labeled zero, one half, and one. Point plotted at one half.",
       "originalReference": "unit-5/lesson-5/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_CDN_ASSET_BYTES_READ_SEMANTICALLY_MAPPED_UNREPUBLISHED"
     }
   ],
   "sourceElementCounts": {
@@ -240,20 +242,169 @@
     "expected": "1/3"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Publisher's standalone student task PDF uninspected; publicly accessible 2021 HTML and math SVG asset semantics reviewed.",
+    "Published/staged runtime Rich V2 persistence and app output not executed.",
+    "Nine publisher diagram pixels are not copied or pixel-certified in first-party Razor; only independently drawn reconstructions.",
+    "Open-ended source card classifications, paper-fold constructions, Andre/Clare explanations and reflective Cool-down require teacher evidence.",
+    "Compiled .NET tests, Stage D, teacher academic approval and deployment deferred."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "18a1719696d9a2ee0a96b5c3b4eb177a447696ce1ebbbf32a898f782b24167c9",
+  "originalPreparationHtmlSHA256": "fd5c20406d485b0eb3ef1c0336c407efe7036e2e0f32b8292d5435fad494f805",
+  "originalSourceAssetsDownloadedForReadOnlyReview": 15,
+  "originalSvgGeometryFilesRead": 14,
+  "cardOrderAndMathematics": [
+    {
+      "card": "A",
+      "start": 0,
+      "end": 8,
+      "intervals": 2,
+      "unitStep": "4",
+      "marks": [
+        0,
+        4,
+        8
+      ],
+      "sourceAsset": 2
+    },
+    {
+      "card": "B",
+      "start": 0,
+      "end": 1,
+      "intervals": 4,
+      "unitStep": "1/4",
+      "marks": [
+        "0",
+        "1/4",
+        "2/4",
+        "3/4",
+        "1"
+      ],
+      "sourceAsset": 3
+    },
+    {
+      "card": "C",
+      "start": 0,
+      "end": 3,
+      "intervals": 6,
+      "unitStep": "1/2",
+      "marks": [
+        "0",
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "5/2",
+        "3"
+      ],
+      "sourceAsset": 4
+    },
+    {
+      "card": "D",
+      "start": 0,
+      "end": 2,
+      "intervals": 4,
+      "unitStep": "1/2",
+      "marks": [
+        "0",
+        "1/2",
+        "1",
+        "3/2",
+        "2"
+      ],
+      "sourceAsset": 5
+    },
+    {
+      "card": "E",
+      "start": 0,
+      "end": 4,
+      "intervals": 4,
+      "unitStep": "1",
+      "marks": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "sourceAsset": 6
+    },
+    {
+      "card": "F",
+      "start": 0,
+      "end": 1,
+      "intervals": 6,
+      "unitStep": "1/6",
+      "marks": [
+        "0",
+        "1/6",
+        "2/6",
+        "3/6",
+        "4/6",
+        "5/6",
+        "1"
+      ],
+      "sourceAsset": 7
+    },
+    {
+      "card": "G",
+      "start": 0,
+      "end": 6,
+      "intervals": 3,
+      "unitStep": "2",
+      "marks": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "sourceAsset": 8
+    },
+    {
+      "card": "H",
+      "start": 0,
+      "end": 2,
+      "intervals": 6,
+      "unitStep": "1/3",
+      "marks": [
+        "0",
+        "1/3",
+        "2/3",
+        "1",
+        "4/3",
+        "5/3",
+        "2"
+      ],
+      "sourceAsset": 9
+    },
+    {
+      "card": "I",
+      "start": 0,
+      "end": 4,
+      "intervals": 8,
+      "unitStep": "1/2",
+      "marks": [
+        "0",
+        "1/2",
+        "1",
+        "3/2",
+        "2",
+        "5/2",
+        "3",
+        "7/2",
+        "4"
+      ],
+      "sourceAsset": 10
+    }
+  ],
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-84-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-84-academic-source-coverage-and-human-rubric-20261025.json"
 }
