@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-4/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-4/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_LOCAL_TEACHER_HTML_PREPARATION_SOURCE_ALT_PLOTS_15_22_19_ITEMS_VERIFIED_PDF_UNAVAILABLE",
     "goals": "Interpret line plots that display measurement data in fractions of an inch.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_ORIGINAL_SOURCE_15_WARMUP_22_SEEDLINGS_19_QUARTER_TWIGS_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "13b319e0d1c1c16db9100506a0bae754bb401ef0559e38d6a5276c7b2020957c",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l04-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson4.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_FREQUENCIES_ALL_TWIG_SCALAR_RESPONSES_TEACHER_OPEN_TASK_RUBRIC_TESTS_WRITTEN_UNRUN",
     "family": "measurement-line-plot",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity A Set of Seedlings with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of line plots with lengths in half inches and quarter inches. Required Preparation CCSS Standards Building On 2.MD.D.9 Addressing 3.MD.B.4 Building Towards 3.MD.B.4 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min",
-    "teacherReviewNote": "Teacher checks the line plot uses the correct fractional scale and symbols."
+    "teacherReviewNote": "Teacher checks the line plot uses the correct fractional scale and symbols.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson4InterpretLinePlotsTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: A List and a Line Plot (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_PLOT_ALT_NUMERIC_TO_FIRSTPARTY_AUTHORING",
+      "grading": "NUMERIC_PLUS_TEACHER_GENERATED_QUESTIONS",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: A Set of Seedlings (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_PLOT_ALT_NUMERIC_TO_FIRSTPARTY_AUTHORING",
+      "grading": "NUMERIC_PLUS_TEACHER_GENERATED_QUESTIONS",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: All About Twigs (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_PLOT_ALT_NUMERIC_TO_FIRSTPARTY_AUTHORING",
+      "grading": "NUMERIC_PLUS_TEACHER_GENERATED_QUESTIONS",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_PLOT_ALT_NUMERIC_TO_FIRSTPARTY_AUTHORING",
+      "grading": "NUMERIC_PLUS_TEACHER_GENERATED_QUESTIONS",
       "claimedParity": false
     },
     {
@@ -108,8 +111,8 @@
       "originalReference": "unit-6/lesson-4/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_PLOT_DATA_EXTRACTED_FROM_ALT_AND_HTML_FIRSTPARTY_FREQUENCY_TABLE_NO_PIXEL_PARITY"
     },
     {
       "id": "G3-U06-L04-IMAGE-02",
@@ -117,8 +120,8 @@
       "originalReference": "unit-6/lesson-4/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_PLOT_DATA_EXTRACTED_FROM_ALT_AND_HTML_FIRSTPARTY_FREQUENCY_TABLE_NO_PIXEL_PARITY"
     },
     {
       "id": "G3-U06-L04-IMAGE-03",
@@ -126,8 +129,8 @@
       "originalReference": "unit-6/lesson-4/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_PLOT_DATA_EXTRACTED_FROM_ALT_AND_HTML_FIRSTPARTY_FREQUENCY_TABLE_NO_PIXEL_PARITY"
     },
     {
       "id": "G3-U06-L04-IMAGE-04",
@@ -135,8 +138,8 @@
       "originalReference": "unit-6/lesson-4/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_PLOT_DATA_EXTRACTED_FROM_ALT_AND_HTML_FIRSTPARTY_FREQUENCY_TABLE_NO_PIXEL_PARITY"
     }
   ],
   "sourceElementCounts": {
@@ -150,20 +153,23 @@
     "expected": "10"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original standalone publisher student task PDF not located in local source directory; no independent PDF-level parity.",
+    "Original 2021 publisher line plot geometry and Wikimedia twig illustration pixels not inspected or copied; alt frequency data used.",
+    "Source publisher gated Cool-down Interpret and Choose not inspected.",
+    "Open original pupil questions/observations and X-added position teacher-graded; original accessibility six-of-eight support remains optional.",
+    "Compiled tests, CI, Stage D, academic approval and deploy not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "c262ede5764330e7f4ad0dff71ffbb4098b6d24f3e27737b4c14957850d707ae",
+  "originalPreparationHtmlSHA256": "d85679a599802689e31d3e8c08807dd23716f70ae91c6efcf6dd1ba4e485d262",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-101-2021-source-15-22-19-plot-data-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-101-plot-teacher-rubric-20261025.json"
 }
