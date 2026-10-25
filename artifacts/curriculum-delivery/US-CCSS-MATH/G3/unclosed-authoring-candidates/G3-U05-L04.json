@@ -11,7 +11,7 @@
   "originalTeacherHtml": "unit-5/lesson-4/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-4/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_PUBLIC_THREE_STUDENT_FACING_TEXT_SECTIONS_INDIVIDUALLY_REVIEWED_FIGURE_PDF_REVIEW_OPEN",
     "goals": "Build non-unit fractions and whole numbers from unit fractions.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 12,
@@ -20,7 +20,7 @@
     "teacherFacingSourceExtractedNotFullyRead": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_SECRET_FRACTIONS_PILOLO_2021_FIRST_PARTY_RICH_V2_AUTHORED_PUBLISHER_VISUAL_PARITY_OPEN",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "ab52732b69104e670fb6e2be07fc55617ea15e421880cce8699c5dc3fdd49def",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l04-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "WARMUP_AND_FOUR_PILOLO_EXACT_FRACTION_ORACLES_WITH_TEACHER_GAME_AND_DIAGRAM_GATES_TESTS_WRITTEN_NOT_RUN",
     "family": "fractions-equal-partition",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +43,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Introduce Secret Fractions with your teacher. Show the representation and explain how it meets the goal: Let’s build other fractions from unit fractions.",
-    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram."
+    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson4SecretFractionsTests.cs"
   },
   "sourceElements": [
     {
@@ -237,16 +239,16 @@
   "authoringState": "A_C_EXPLICIT_GAP",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original 2021 student PDF and twelve publisher figures/gameboard/photograph not individually pixel and task mapped; original final stick diagram fraction NOT automatically graded.",
+    "Rich V2 authoring asset and source-specific lesson-seed hook written; build, persistence/materialization and authenticated UI not tested (Stage D).",
+    "Original Secret Fractions physical decks, played moves and all student-created gameboards require teacher evidence.",
+    "Source Pilolo diagram drawing, equal-size intervals and final source figure estimate remain human-reviewed.",
+    "Full parity and academic approval not claimed; numerical and metadata tests authored, not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-83-2021-public-student-text-and-first-party-mapping-20261025.json"
 }

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 83,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L04",
+  "sourceBasis": "Local 2021 first edition Student Facing HTML text previously extracted into versioned GitHub source archive; raw 2021 PDF and all original graphic bytes unavailable for review in this session",
+  "sourceStudentFacingSectionsRead": 3,
+  "originalTeacherHeadingsIndexed": 6,
+  "originalImageAltDescriptionsIndexed": 12,
+  "originalStudentPdfInspected": false,
+  "originalImagePixelsInspected": false,
+  "publisherCoolDownInspected": false,
+  "publisherAssetsCopied": false,
+  "stageA": {
+    "warmup": [
+      {
+        "expression": "3×3",
+        "answer": 9
+      },
+      {
+        "expression": "7×3",
+        "answer": 21
+      },
+      {
+        "expression": "10×3",
+        "answer": 30
+      },
+      {
+        "expression": "3×17",
+        "answer": 51
+      }
+    ],
+    "activity1": "Introduce Secret Fractions: separate facedown secret and unit decks, two target cards each player, turn choice pick one unit card or exchange both secret cards, shade equal-area gameboard on achieved target, first to build two wins; no fixed secret card solutions",
+    "activity2": [
+      {
+        "story": "rock",
+        "numerator": 4,
+        "denominator": 8,
+        "answer": "4/8",
+        "representWithEqualIntervals": 8
+      },
+      {
+        "story": "penny",
+        "numerator": 2,
+        "denominator": 3,
+        "answer": "2/3",
+        "representWithEqualIntervals": 3
+      },
+      {
+        "story": "stick",
+        "numerator": 3,
+        "denominator": 4,
+        "answer": "3/4",
+        "representWithEqualIntervals": 4
+      },
+      {
+        "story": "penny",
+        "numerator": 5,
+        "denominator": 6,
+        "answer": "5/6",
+        "representWithEqualIntervals": 6
+      }
+    ],
+    "finalStickDiagram": "OPEN_GEOMETRIC_ESTIMATE_MUST_READ_ORIGINAL_FIGURE_TEACHER_REVIEW_ONLY"
+  },
+  "stageB": {
+    "richV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l04-2021.rich-lesson-v2.json",
+    "seedingHook": "CommonCoreG3Unit5Lesson4RichV2",
+    "renderedMaterializationUnverified": true,
+    "contentStatus": "FIRST_PARTY_SOURCE_TEXT_ALIGNED_VISUAL_COVERAGE_UNVERIFIED"
+  },
+  "stageC": {
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson4SecretFractionsTests.cs",
+    "testsRun": false,
+    "independentNumericOracles": 8,
+    "teacherGates": [
+      "Secret target card variability",
+      "Equal-area physical gameboard",
+      "Four Pilolo drawn street representations",
+      "Source-specific final stick estimation",
+      "Gated publisher Cool-down"
+    ]
+  },
+  "readiness": "A_C_EXPLICIT_GAP",
+  "reason": "Full source figure/PDF parity and Stage D not verified; cursor must remain 82 and lesson84 forbidden until lesson83 closes"
+}
