@@ -11701,9 +11701,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "division-representations",
+      "firstPartyFamily": "bug-card-division-unknown-type-2021",
       "independentPractice": {
         "prompt": "Thirty ant legs come from five ants. How many legs on each ant?",
         "answerType": "integer",
@@ -11715,26 +11715,28 @@
         "expected": "8"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: All about Bugs with your teacher. Show the representation and explain how it meets the goal: You will write division expressions to represent division situations and solve “how many groups?” and “how many in each group?” problems.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 4 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "12 individually checked arithmetic and insect/card numeric source anchors; 13 teacher checks of all six card classifications, material use, source drawing and gallery display; no physical blackline/publisher CD verification.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s write division expressions and solve “how many groups?” and “how many in each group?” problems.",
-        "sourceLearningGoals": "Solve “how many groups?” and “how many in each group?” problems. Write division expressions to represent division situations.",
+        "sourceGoal": "Write division expressions for six bug situations, distinguishing unknown group count from unknown group size; solve both types and explain drawings.",
+        "sourceLearningGoals": "Solve both types of division problems; write exact expression for each context.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up:225−100=227−102=230−105=220−95=125; both numbers shift by the same amount.",
+          "Sort source insect cards A(10÷5=2/group), E(30÷5=6/group), F(50÷5=10/group) as UNKNOWN GROUP SIZE.",
+          "Sort source cards B(8÷2=4 beetles), C(14÷2=7 bees), D(12÷4=3 dragonflies) as UNKNOWN NUMBER OF GROUPS.",
+          "Have pairs classify all six cards, write expressions, and defend the difference between groups count and size (MLR8).",
+          "Each group designs a poster explaining one source bug problem and compares representations in a gallery walk (MLR7).",
+          "Student section summary contrasts Han12 pencils,2 per box→6 boxes (six groups of two) with Elena12 pencils,2 boxes→6 each (two groups of six); same12÷2, different unknown and drawing."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s write division expressions and solve “how many groups?” and “how many in each group?” problems.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Student source shows six card statements, not a fully verified blackline-master PDF. Physical cards, insect photo and source Cool-down pixel rights remain under source/teacher review."
       },
       "sourceBasedCheck": {
-        "prompt": "Source: eight beetle antennae means two antennae per beetle. How many beetles?",
-        "answerType": "integer",
-        "expected": "4"
+        "prompt": "Explain why Han and Elena both calculate 12÷2 but Han finds six boxes and Elena finds six pencils in each.",
+        "answerType": "teacher",
+        "expected": null
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-4/lesson-5/lesson.html",
@@ -11745,62 +11747,182 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S1-NUM1",
-          "sourceActivity": "Warm-up: Number Talk: What's the Same? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 225 - 100. Show or explain a method to your teacher.",
+          "id": "G3-U04-L05-WU-1",
+          "sourceActivity": "Number Talk: What's the Same?",
+          "prompt": "Mentally find 225−100 and justify why changing both values together can keep the same difference.",
           "answerType": "integer",
           "expected": "125"
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S1-NUM2",
-          "sourceActivity": "Warm-up: Number Talk: What's the Same? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 227 - 102. Show or explain a method to your teacher.",
+          "id": "G3-U04-L05-WU-2",
+          "sourceActivity": "Number Talk: What's the Same?",
+          "prompt": "Mentally find 227−102 and justify why changing both values together can keep the same difference.",
           "answerType": "integer",
           "expected": "125"
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S1-NUM3",
-          "sourceActivity": "Warm-up: Number Talk: What's the Same? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 230 - 105. Show or explain a method to your teacher.",
+          "id": "G3-U04-L05-WU-3",
+          "sourceActivity": "Number Talk: What's the Same?",
+          "prompt": "Mentally find 230−105 and justify why changing both values together can keep the same difference.",
           "answerType": "integer",
           "expected": "125"
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S1-NUM4",
-          "sourceActivity": "Warm-up: Number Talk: What's the Same? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 220 - 95. Show or explain a method to your teacher.",
+          "id": "G3-U04-L05-WU-4",
+          "sourceActivity": "Number Talk: What's the Same?",
+          "prompt": "Mentally find 220−95 and justify why changing both values together can keep the same difference.",
           "answerType": "integer",
           "expected": "125"
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: What's the Same? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Write Division Expressions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L05-A1-A",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Bug card A (Mole crickets): 10 digging legs divided among5 mole crickets; how many such legs per cricket? Write expression 10÷5, label the unknown (size in each group), and explain your grouping.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L05-A1-B",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Bug card B (Beetles): 8 antennae total,2 per beetle; how many beetles? Write expression 8÷2, label the unknown (number of groups), and explain your grouping.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L05-A1-C",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Bug card C (Bees): 14 antennae total,2 per bee; how many bees? Write expression 14÷2, label the unknown (number of groups), and explain your grouping.",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U04-L05-A1-D",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Bug card D (Dragonflies): 12 wings in total,4 per dragonfly; how many dragonflies? Write expression 12÷4, label the unknown (number of groups), and explain your grouping.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L05-A1-E",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Bug card E (Ants): 30 legs from5 equal-sized ants; how many legs per ant? Write expression 30÷5, label the unknown (size in each group), and explain your grouping.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L05-A1-F",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Bug card F (Butterflies): 50 spots shared equally by5 butterflies; how many spots per butterfly? Write expression 50÷5, label the unknown (size in each group), and explain your grouping.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U04-L05-SUMMARY-HAN",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Han owns12 coloured pencils and puts exactly2 pencils in each box. How many boxes are needed?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L05-SUMMARY-ELENA",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Elena owns12 coloured pencils and places them equally into2 boxes. How many pencils in each box?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L05-WU-PATTERN",
+          "sourceActivity": "Number Talk: What's the Same?",
+          "prompt": "Explain all four mental subtraction expressions have difference125, since the minuend and subtrahend increase/decrease equally.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Card Sort: All about Bugs (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Write Division Expressions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L05-A1-SORT-A",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Sort card A (Mole crickets) into HOW MANY IN EACH GROUP. Draw and justify the expression 10÷5 with units; teacher judges card sorting and partner explanation.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Solve a Buggy Problem (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Write Division Expressions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L05-A1-SORT-B",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Sort card B (Beetles) into HOW MANY GROUPS. Draw and justify the expression 8÷2 with units; teacher judges card sorting and partner explanation.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L05-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L05-A1-SORT-C",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Sort card C (Bees) into HOW MANY GROUPS. Draw and justify the expression 14÷2 with units; teacher judges card sorting and partner explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-A1-SORT-D",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Sort card D (Dragonflies) into HOW MANY GROUPS. Draw and justify the expression 12÷4 with units; teacher judges card sorting and partner explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-A1-SORT-E",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Sort card E (Ants) into HOW MANY IN EACH GROUP. Draw and justify the expression 30÷5 with units; teacher judges card sorting and partner explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-A1-SORT-F",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Sort card F (Butterflies) into HOW MANY IN EACH GROUP. Draw and justify the expression 50÷5 with units; teacher judges card sorting and partner explanation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-A1-MATERIALS",
+          "sourceActivity": "Card Sort: All about Bugs",
+          "prompt": "Original 2021 card-sort blackline master and partner activity use physical prepared cards. Student-visible cards A–F are individually mapped; teacher must verify actual handling and sorting.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-A2-POSTER",
+          "sourceActivity": "Solve a Buggy Problem",
+          "prompt": "Create a poster for one assigned insect question showing number of groups or group size, a diagram, division expression, solution and explanation. Teacher reviews classroom gallery walk and MLR7 compare-connect.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Prepare two-column display contrasting groups-count unknown and group-size unknown; explain same numeric division may represent both.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-SUMMARY-MODELS",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Compare source figure 6 groups of2 (Han boxes) with2 groups of6 (Elena's boxes). Both use12÷2 but their divisor has a different meaning.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-PHOTO-RIGHTS",
+          "sourceActivity": "Original figures",
+          "prompt": "Insect photograph is an attributed third-party asset. Original pixel fidelity and blackline appearance remain unverified; use independent dots or text instead.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L05-GATED-CD",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "2021 Ant Legs cool-down is gated. Teacher checks original independently; Edulytics authored exit task is distinct and not source-copy.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_2021_TEACHER_STUDENT_HTML_SIX_BUG_CARDS_EXACT_GROUP_TYPE_AUTHORING_NOT_PUBLISHER_COPIES"
     },
     {
       "ordinal": 63,

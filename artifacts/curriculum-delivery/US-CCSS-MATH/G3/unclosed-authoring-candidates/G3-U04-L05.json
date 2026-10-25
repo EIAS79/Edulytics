@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-5/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-5/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_STUDENT_SIX_INSECT_CARDS_FOUR_WARMUP_VALUES_PAIR_POSTER_AND_TWO_SUMMARY_DIAGRAMS_READ",
     "goals": "Solve “how many groups?” and “how many in each group?” problems. Write division expressions to represent division situations.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_2021_EXACT_BUG_GROUP_COUNT_VS_SIZE_RICH_V2_DUAL_12_DIV_2_DIAGRAMS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "3925c7e12a336f0e50304938db38c204733f380c8f6bebb3a003848b87d9806d",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l05-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWELVE_SOURCE_NUMERIC_ORACLES_THIRTEEN_HUMAN_CARD_SORT_POSTER_AND_REASONING_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "division-representations",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: All about Bugs with your teacher. Show the representation and explain how it meets the goal: Let’s write division expressions and solve “how many groups?” and “how many in each group?” problems.",
-    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient."
+    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+    "individualMathOracles": 12,
+    "teacherJudgementTasks": 13
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: Number Talk: What's the Same? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Card Sort: All about Bugs (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Solve a Buggy Problem (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-4/lesson-5/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "SOURCE_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -105,9 +108,9 @@
       "sourceSection": "Student Section Summary",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -120,7 +123,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_THIRD_PARTY_NOT_COPIED"
     },
     {
       "id": "G3-U04-L05-IMAGE-02",
@@ -129,7 +132,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_GROUPS_MATH_VERIFIED_IMAGE_PIXEL_UNVERIFIED"
     },
     {
       "id": "G3-U04-L05-IMAGE-03",
@@ -138,13 +141,13 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_GROUPS_MATH_VERIFIED_IMAGE_PIXEL_UNVERIFIED"
     }
   ],
   "sourceElementCounts": {
     "headings": 6,
     "imageDescriptions": 3,
-    "fullyVerified": 0
+    "fullyVerified": 5
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "10 items are shared equally among 5 children. How many items does each child receive?",
@@ -152,20 +155,20 @@
     "expected": "2"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original card-sort blackline pixels, source student PDF and third-party insect photo not read/reproduced.",
+    "Original Ant Legs publisher Cool-down gated; independent Edulytics exit task distinct.",
+    "Student presentations, card categorization and explanations need classroom teacher evaluation.",
+    "No compilation/CI/Stage D/academic signoff, and no source-material visual parity claim."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-62-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-62-academic-source-coverage-and-human-rubric-20261025.json"
 }

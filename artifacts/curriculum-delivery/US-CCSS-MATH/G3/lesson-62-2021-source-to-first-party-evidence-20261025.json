@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 62,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U04:L05",
+  "original": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-4\\lesson-5\\lesson.html",
+  "sourceHtmlSHA256": "4adf3633f407d29065d817346ebb19e9152d11bac0fba8fd0c36afb8706807e0",
+  "preparationSHA256": "581a0357372bb35f1912ecd02d6a713fc7a9074910dfb1df492c9a35748a2e76",
+  "referenceEdition": "IM K–5 First Edition 2021",
+  "sourceAreas": [
+    "Mental subtraction 4 expressions",
+    "Card sort 6 individual A–F contexts",
+    "Gallery poster and teacher comparison",
+    "Student summary two contrasting division situations and source diagrams",
+    "Publisher gated Ant Legs Cool-down"
+  ],
+  "numericOracles": 12,
+  "teacherTasks": 13,
+  "cardMath": [
+    {
+      "card": "A",
+      "context": "Mole crickets",
+      "expression": "10÷5",
+      "answer": "2",
+      "unknown": "GROUP_SIZE"
+    },
+    {
+      "card": "B",
+      "context": "Beetles",
+      "expression": "8÷2",
+      "answer": "4",
+      "unknown": "GROUP_COUNT"
+    },
+    {
+      "card": "C",
+      "context": "Bees",
+      "expression": "14÷2",
+      "answer": "7",
+      "unknown": "GROUP_COUNT"
+    },
+    {
+      "card": "D",
+      "context": "Dragonflies",
+      "expression": "12÷4",
+      "answer": "3",
+      "unknown": "GROUP_COUNT"
+    },
+    {
+      "card": "E",
+      "context": "Ants",
+      "expression": "30÷5",
+      "answer": "6",
+      "unknown": "GROUP_SIZE"
+    },
+    {
+      "card": "F",
+      "context": "Butterflies",
+      "expression": "50÷5",
+      "answer": "10",
+      "unknown": "GROUP_SIZE"
+    }
+  ],
+  "sourceWarmup": [
+    [
+      "225−100",
+      125
+    ],
+    [
+      "227−102",
+      125
+    ],
+    [
+      "230−105",
+      125
+    ],
+    [
+      "220−95",
+      125
+    ]
+  ],
+  "sourceSummary": {
+    "Han": "six groups of two =6 boxes",
+    "Elena": "two groups of six =6 per box",
+    "bothExpression": "12÷2"
+  },
+  "sourceElementMap": [
+    {
+      "id": "WU",
+      "coverage": "MATCHED_DIGITAL",
+      "correction": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l05-2021.rich-lesson-v2.json",
+      "test": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson5WriteDivisionExpressionsTests.cs"
+    },
+    {
+      "id": "A1-A-F",
+      "coverage": "MATCHED_DIGITAL",
+      "correction": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "test": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson5WriteDivisionExpressionsTests.cs",
+      "teacherBoundary": "original card sort and unknown type classification"
+    },
+    {
+      "id": "A2",
+      "coverage": "MATCHED_TEACHER_LED",
+      "correction": "src/Edulytics.Web/Views/Shared/_Grade3Unit4Lesson5.cshtml",
+      "teacherBoundary": "poster, peer compare and gallery walk"
+    },
+    {
+      "id": "SYNTHESIS",
+      "coverage": "MATCHED_TEACHER_LED",
+      "correction": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l05-2021.rich-lesson-v2.json"
+    },
+    {
+      "id": "STUDENT-SECTION-SUMMARY",
+      "coverage": "MATCHED_TEACHER_LED",
+      "correction": "src/Edulytics.Web/Views/Shared/_Grade3Unit4Lesson5.cshtml"
+    },
+    {
+      "id": "CARD-MASTER",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "teacherBoundary": "source blackline master pixels not verified; six publicly listed card statements compared"
+    },
+    {
+      "id": "INSECT-PHOTO",
+      "coverage": "RIGHTS_RESTRICTED",
+      "teacherBoundary": "third-party photo attributed; not copied"
+    },
+    {
+      "id": "COOLDOWN",
+      "coverage": "SOURCE_UNAVAILABLE",
+      "teacherBoundary": "original login-gated Ant Legs not copied"
+    }
+  ],
+  "sourceImagePixelVerified": false,
+  "sourceStudentTaskPdfVerified": false,
+  "originalBlacklineMasterPdfVerified": false,
+  "academicApproval": "NOT_CLAIMED",
+  "testsWrittenNotRun": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson5WriteDivisionExpressionsTests.cs",
+  "stageD": "NOT_STARTED",
+  "sourceParityPercent": null,
+  "authoringClosure": "READY_FOR_STAGE_D_FIRSTPARTY_SEMANTICS"
+}
