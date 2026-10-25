@@ -12719,9 +12719,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "fact-family-division",
+      "firstPartyFamily": "multiplication-table-commutative-missing-products",
       "independentPractice": {
         "prompt": "Knowing 3 × 5 = 15, what is 6 × 5?",
         "answerType": "integer",
@@ -12733,21 +12733,22 @@
         "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Products in the Table with your teacher. Show the representation and explain how it meets the goal: You will identify and explain patterns in the multiplication table.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Read 2021 local teacher/student/preparation and SVG two tables; original A–G positions verified, twelve numeric checks and thirteen open teacher reviews. No original third-party art copied.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s find patterns in the multiplication table and use them to multiply. Required Preparation CCSS Standards Addressing 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Tea",
-        "sourceLearningGoals": "Identify arithmetic patterns in the multiplication table and use them to find unknown multiplication facts. Recognize that multiplication is commutative.",
+        "sourceGoal": "Read multiplication table and explain patterns including commutativity, to recover unknown products.",
+        "sourceLearningGoals": "Find product at intersecting row/column and generate new facts from known products.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Source warm-up SVG is complete 1-to-5 multiplication table. Read intersection of factor row and column;3×5=5×3=15;4×5=5×4=20.",
+          "Original Activity1 partial ten-by-ten SVG inspected: A row2 col7=14, B row3 col9=27, C row4 col6=24, D row5 col8=40, E row6 col10=60, F row7 col7=49, G row8 col9=72.",
+          "Choose three other ORIGINAL blank source-table cells where factor7, factor9, factor10 appear, and explain; there is no fixed cell selection in the public source.",
+          "Original Activity2 2×4=8 yields4×2,4×4,2×8. For3×5,4×10,7×2,5×8 invent at least two mathematically justified new facts from each; teacher reviews multiple valid strategies.",
+          "Discuss adding one group, doubling, commutative order and skip-count patterns, including multiples of5 and10."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find patterns in the multiplication table and use them to multiply. Required Preparation CCSS Standards Addressing 3.OA.C.7 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Tea",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original source two multiplication SVG diagrams were inspected directly; independent HTML table recreates only mathematical structure, not publisher SVG paths. Original source teacher-gated Cool-down not read, Stage D/tests not run."
       },
       "sourceBasedCheck": {
         "prompt": "In the source known fact 2 × 4 = 8, what is 4 × 4?",
@@ -12763,34 +12764,182 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L09-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Multiplication Table (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Patterns in the Multiplication Table.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L09-A1-A",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter A lies at row-factor 2, column-factor 7. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "14"
+        },
+        {
+          "id": "G3-U04-L09-A1-B",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter B lies at row-factor 3, column-factor 9. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "27"
+        },
+        {
+          "id": "G3-U04-L09-A1-C",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter C lies at row-factor 4, column-factor 6. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L09-A1-D",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter D lies at row-factor 5, column-factor 8. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U04-L09-A1-E",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter E lies at row-factor 6, column-factor 10. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U04-L09-A1-F",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter F lies at row-factor 7, column-factor 7. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "49"
+        },
+        {
+          "id": "G3-U04-L09-A1-G",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Source original first edition 10×10 table letter G lies at row-factor 8, column-factor 9. Which product replaces it?",
+          "answerType": "integer",
+          "expected": "72"
+        },
+        {
+          "id": "G3-U04-L09-A2-KNOWN-1",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "Original If I Know starting fact 2×4. Compute the known product, then teacher reviews two other justified related products.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U04-L09-A2-KNOWN-2",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "Original If I Know starting fact 3×5. Compute the known product, then teacher reviews two other justified related products.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U04-L09-A2-KNOWN-3",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "Original If I Know starting fact 4×10. Compute the known product, then teacher reviews two other justified related products.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U04-L09-A2-KNOWN-4",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "Original If I Know starting fact 7×2. Compute the known product, then teacher reviews two other justified related products.",
+          "answerType": "integer",
+          "expected": "14"
+        },
+        {
+          "id": "G3-U04-L09-A2-KNOWN-5",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "Original If I Know starting fact 5×8. Compute the known product, then teacher reviews two other justified related products.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U04-L09-WU-STRUCTURE",
+          "sourceActivity": "Notice and Wonder: Multiplication Table",
+          "prompt": "Compare original 5×5 table rows and columns: show each cell is row factor × column factor. Explain why3×5 and5×3 equal15.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L09-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Products in the Table (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Patterns in the Multiplication Table.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L09-WU-20",
+          "sourceActivity": "Notice and Wonder: Multiplication Table",
+          "prompt": "Find both original places where 20 appears in a 1–5 multiplication table: row4,col5 and row5,col4. Teacher checks explanation of commutative order.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L09-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: If I Know, Then I Know: Multiplication (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Patterns in the Multiplication Table.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L09-A1-POS-A",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter A is at original source row2, column7, value14, not moved to a guessed position; relate to known nearby product and commutativity.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L09-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L09-A1-POS-B",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter B is at original source row3, column9, value27, not moved to a guessed position; relate to known nearby product and commutativity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A1-POS-C",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter C is at original source row4, column6, value24, not moved to a guessed position; relate to known nearby product and commutativity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A1-POS-D",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter D is at original source row5, column8, value40, not moved to a guessed position; relate to known nearby product and commutativity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A1-POS-E",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter E is at original source row6, column10, value60, not moved to a guessed position; relate to known nearby product and commutativity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A1-POS-F",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter F is at original source row7, column7, value49, not moved to a guessed position; relate to known nearby product and commutativity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A1-POS-G",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Check letter G is at original source row8, column9, value72, not moved to a guessed position; relate to known nearby product and commutativity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A1-THREE-OTHER",
+          "sourceActivity": "Products in the Table",
+          "prompt": "Original requests three additional empty cells, one using factor7, one factor9 and one factor10, and a student explanation. Locations are chosen by pupils, not fixed original numeric prompts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A2-TWO-STRATEGIES",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "For each source starter2×4,3×5,4×10,7×2,5×8 derive at least two other facts via known patterns. Teacher checks strategies, not a unique two-item correct list.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-A2-PARTNER",
+          "sourceActivity": "If I Know, Then I Know: Multiplication",
+          "prompt": "Teacher checks pair comparison and MLR2 language collection: add one group, swap factors, take one group away or double.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L09-COOLDOWN",
+          "sourceActivity": "Publisher Cool-down: Find the Missing Product",
+          "prompt": "Original publisher Cool-down gated; independent Edulytics exit task separate. Not a source-perfect assessment claim.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "ORIGINAL_2021_TWO_SVG_MULTIPLICATION_TABLE_GEOMETRIES_EXACT_LETTER_POSITIONS_INDEPENDENT_FIRSTPARTY_HTML"
     },
     {
       "ordinal": 67,
