@@ -37,6 +37,15 @@ public sealed class UsCcssG3Unit3Lesson6FlexibleAdditionSourceTests
         Assert.Equal(expected,r.NumericCorrect);Assert.True(r.TeacherReview);
     }
     [Fact]
+    public void IndependentCoolDownDoesNotCopy399Plus499SourceTask()
+    {
+        var lesson=Lesson();
+        Assert.Equal("887",lesson.OriginalEdulyticsCoolDown!.Expected);
+        Assert.Contains("389 + 498",lesson.OriginalEdulyticsCoolDown.Prompt);
+        Assert.DoesNotContain("399 + 499",lesson.OriginalEdulyticsCoolDown.Prompt);
+    }
+
+    [Fact]
     public void DiscussionAndOriginalCoolDownRemainTeacherReviewed()
     {
         var l=Lesson();Assert.False(l.ReadyForStageD);Assert.False(l.OriginalStudentTaskPdfRead);
