@@ -11,16 +11,20 @@
   "originalTeacherHtml": "unit-8/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-3/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_LOCAL_2021_EIGHT_FRACTION_CLAIMS_THREE_ROUNDS_GROUP_DIALOGUE_REVIEWED_IMAGES_PENDING",
     "goals": "Generalize key ideas about fractions, such as what fractions mean, whole numbers as fractions, and fraction comparisons.",
     "sourceHeadingsCount": 4,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSha256": "76e9c7c070ccfdc65f9bb253a243c9bec00ce0f65ed0149f753e7673af6b601f",
+    "sourcePreparationHtmlSha256": "40510a1c6471f6366bac84c04b4738d482d7130ac8bf252a8210d58f8aca680e",
+    "sourceImageUrlsIndexed": 2,
+    "sourceImagePixelsInspected": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_SEMANTIC_RICHV2_GUARDED_SEED_AND_TEACHER_PARTIAL_AUTHORED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +33,14 @@
     "existingSourceBodyHash": "44e2d7a875a7f38022e563292ad6c73254604dda064d40f28269c8ca87e54700",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l03-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson3RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson3.cshtml",
+    "sourceSpecificVersion": "g3-u08-l03-2021-eight-claims-three-rounds-teacher-review-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "THREE_ROUND_OPEN_GROUP_MATH_TASKS_AND_ORIGINAL_STATEMENT_CONDITIONS_TEACHER_GATES_TESTS_WRITTEN_UNRUN",
     "family": "fraction-review",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "comparison",
@@ -40,9 +48,12 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Fractions Round Table with your teacher. Show the representation and explain how it meets the goal: Let’s discuss fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 3.NF.A.3 Lesson Timeline Warm-up 10 min Activity 1 35 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What was the best question you a",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson3SourceAuditTests.cs",
+    "sourceItemCount": 3,
+    "sourceTeacherItems": 3
   },
   "sourceElements": [
     {
@@ -50,10 +61,10 @@
       "sourceSection": "Warm-up: What Do You Know About $\\frac{1}{8}$? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_TEACHER_LED",
+      "grading": "TEACHER_MATH_DISCUSSION",
       "claimedParity": false
     },
     {
@@ -61,10 +72,10 @@
       "sourceSection": "Activity 1: Fractions Round Table (35 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_TEACHER_LED",
+      "grading": "TEACHER_MATH_DISCUSSION",
       "claimedParity": false
     },
     {
@@ -72,10 +83,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_SEMANTICS_TO_FIRSTPARTY_TEACHER_LED",
+      "grading": "TEACHER_MATH_DISCUSSION",
       "claimedParity": false
     },
     {
@@ -85,16 +96,31 @@
       "originalReference": "unit-8/lesson-3/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "RIGHTS_RESTRICTED_NOT_READ",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "id": "G3-U08-L03-SOURCE-PANEL-1",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/t87gxx2ot12my0wo84vq0waxzabt",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "SOURCE_URL_INDEXED_TEACHER_VISUAL_REVIEW"
+    },
+    {
+      "id": "G3-U08-L03-SOURCE-PANEL-2",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/frhevk0161o1t7zh65csrmu7qdkj",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "SOURCE_URL_INDEXED_TEACHER_VISUAL_REVIEW"
+    }
+  ],
   "sourceElementCounts": {
     "headings": 4,
-    "imageDescriptions": 0,
-    "fullyVerified": 0
+    "imageDescriptions": 2,
+    "fullyVerified": 3
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "For the same whole, compare 2/4 and 1/2 using >, < or =.",
@@ -102,20 +128,20 @@
     "expected": "="
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Standalone original 2021 student task PDF not found locally or visually inspected.",
+    "Two original 2021 activity panel image bytes were not pixel inspected; exact visual semantics require teacher review.",
+    "Publisher gated Round Table Reflection assessment not inspected or copied.",
+    "Original discussion requires authentic learner choices, evidence, peer participation and signed teacher review.",
+    ".NET build and test runtime, CI, Stage D, original source-perfect parity, academic approvals, merge and deployment not verified."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-131-2021-eight-fraction-claims-three-rounds-source-evidence-20261025.json"
 }

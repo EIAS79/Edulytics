@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 130,
+    "lessonsFullyReadyForStageD": 131,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 13,
+    "lessonsWithACExplicitGap": 12,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -45,12 +45,12 @@
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 156,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1412,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1415,
     "originalSvgGeometriesInspected": 237
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 130,
-    "firstUnclosedOrdinal": 131,
+    "lastConsecutiveReadyForStageDOrdinal": 131,
+    "firstUnclosedOrdinal": 132,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -1124,15 +1124,10 @@
     {
       "ordinal": 131,
       "lessonCode": "PED:US-CCSS-MATH:G3:U08:L03",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L03.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-131-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-131-2021-eight-fraction-claims-three-rounds-source-evidence-20261025.json"
     },
     {
       "ordinal": 132,
@@ -5307,12 +5302,12 @@
       "unitNumber": 8,
       "lessonNumber": 3,
       "title": "Fractions Round Table PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 3,
-      "fullyVerifiedSourceElements": 0,
+      "stageA": "SOURCE_LOCAL_2021_EIGHT_FRACTION_CLAIMS_THREE_ROUNDS_GROUP_DIALOGUE_REVIEWED_IMAGES_PENDING",
+      "stageB": "FIRSTPARTY_SOURCE_SEMANTIC_RICHV2_GUARDED_SEED_AND_TEACHER_PARTIAL_AUTHORED",
+      "stageC": "THREE_ROUND_OPEN_GROUP_MATH_TASKS_AND_ORIGINAL_STATEMENT_CONDITIONS_TEACHER_GATES_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 4,
+      "fullyVerifiedSourceElements": 3,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L03.json",
       "stageD": "NOT_STARTED",
@@ -5326,9 +5321,9 @@
       "original2021FiguresWithoutAlt": 2,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-131-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-131-2021-eight-fraction-claims-three-rounds-source-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "FIRSTPARTY_SEMANTIC_AUTHORING_ONLY_PDF_AND_GRAPHICS_NOT_VERIFIED"
     },
     {
       "gradeOrdinal": 132,
@@ -6281,25 +6276,25 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 130,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L02",
+    "gradeOrdinal": 131,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L03",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-130-2021-floor-number-line-source-mapping-20261025.json",
-    "sourceStudentPdfVerified": false,
-    "sourceFigurePixelVerified": false,
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-131-2021-eight-fraction-claims-three-rounds-source-evidence-20261025.json",
+    "originalPdfVerified": false,
+    "sourcePanelImagesPixelVerified": false,
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsRun": false,
     "stageD": "NOT_STARTED",
     "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 130,
-    "firstUnclosedGradeOrdinal": 131,
+    "lastClosedGradeOrdinal": 131,
+    "firstUnclosedGradeOrdinal": 132,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED",
-    "closureScope": "SOURCE_SPECIFIC_AUTHORING_ONLY_NOT_ORIGINAL_SOURCE_PERFECT"
+    "closureScope": "FIRSTPARTY_SOURCE_SEMANTIC_AUTHORING_ONLY"
   },
   "latestAttemptedGradeOrdinal": 63,
   "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U04:L06",

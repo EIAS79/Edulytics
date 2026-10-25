@@ -24717,32 +24717,32 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: What Do You Know About $\\frac{1}{8}$? (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_EDITION_TEACHER_HTML_TO_FIRSTPARTY_TEACHER_RUBRIC"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Fractions Round Table (35 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_EDITION_TEACHER_HTML_TO_FIRSTPARTY_TEACHER_RUBRIC"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "FIRST_EDITION_TEACHER_HTML_TO_FIRSTPARTY_TEACHER_RUBRIC"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Cool-down: Round Table Reflection (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "RIGHTS_GATED_NOT_REPRODUCED"
         }
       ],
       "sourceVisualAltDescriptions": [],
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-review",
       "independentPractice": {
@@ -24756,21 +24756,22 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Fractions Round Table with your teacher. Show the representation and explain how it meets the goal: You will consider statements about fractions that will help them solidify your understanding of fractions as numbers.",
-      "teacherReviewNote": "Source 2 student sections and 4 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 first-edition teacher HTML reviewed. 8 original claims embedded as a table and in 2 image references, but image pixels not inspected. Group-of-four discussions in 3 rounds, agree/disagree/unsure with rational justifications and revisions. Teacher reviews source claim conditions and math discourse; publisher Cool-down gated.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s discuss fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 3.NF.A.3 Lesson Timeline Warm-up 10 min Activity 1 35 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What was the best question you a",
-        "sourceLearningGoals": "Generalize key ideas about fractions, such as what fractions mean, whole numbers as fractions, and fraction comparisons.",
+        "sourceGoal": "Generalize what fractions mean, comparisons and fractions as whole numbers.",
+        "sourceLearningGoals": "Represent, explain and debate mathematical meanings of fractions and parts of a whole.",
         "teachingSteps": [
-          "Identify the previous mathematical idea being applied.",
-          "Show an appropriate representation, model, diagram or calculation.",
-          "Explain your strategy and assess whether the result meets the task's design constraints."
+          "Start from original warm-up What Do You Know About 1/8?",
+          "Discuss teacher-selected original fractions statement panels in groups of 4.",
+          "For each statement run 3 rounds (initial/peer response/final), with agree/disagree/unsure and reasons.",
+          "Teacher reviews counterexamples, reference-whole ambiguity and shifts in student reasoning."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s discuss fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 3.NF.A.3 Lesson Timeline Warm-up 10 min Activity 1 35 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What was the best question you a",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not turn the source three-round discussion into a scalar quiz or assert that all groups must cover eight panels.",
+        "targetRichV2Field": "embedded first-party authored source-semantic guidance only"
       },
       "sourceBasedCheck": {
         "prompt": "The source fraction round table requires three discussion rounds. Choose one claim about what fractions mean, and record how your justified position changes through discussion.",
@@ -24786,27 +24787,72 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L03-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: What Do You Know About $\\frac{1}{8}$? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Fractions Round Table PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L03-SOURCE-01",
+          "sourceActivity": "Warm-up: What Do You Know About 1/8?",
+          "prompt": "Offer several correct visual, oral or number-line representations of 1/8 with your teacher, specifying the reference whole.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L03-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Fractions Round Table (35 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Fractions Round Table PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L03-SOURCE-02",
+          "sourceActivity": "Activity: Fractions Round Table",
+          "prompt": "In groups of four, discuss the original teacher-selected fraction statements across three rounds. First choose agree/disagree/unsure and justify; next respond to a peer; last record the final choice and explain a possible change of mind. Teacher evaluates your evidence.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L03-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L03-SOURCE-03",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Identify one source statement that provoked disagreement; explain what mathematical argument influenced you, or why you remain unsure.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceOriginalClaims": [
+        {
+          "sourceLabel": "A",
+          "summary": "All fractions are less than 1",
+          "teacherGuide": "Disagree: 5/4 and 3/2 exceed one whole"
+        },
+        {
+          "sourceLabel": "B",
+          "summary": "Fractions can appear on a number line",
+          "teacherGuide": "Agree: equal-length unit intervals partitioned into parts"
+        },
+        {
+          "sourceLabel": "C",
+          "summary": "Numerator determines piece size",
+          "teacherGuide": "Disagree in standard unit-fraction models: denominator determines equal piece size; numerator counts how many parts"
+        },
+        {
+          "sourceLabel": "D",
+          "summary": "Denominator indicates number of parts",
+          "teacherGuide": "Agree when referring to the number of equal parts making one whole"
+        },
+        {
+          "sourceLabel": "E",
+          "summary": "Whole numbers are fractions",
+          "teacherGuide": "Agree: any whole number n is n/1"
+        },
+        {
+          "sourceLabel": "F",
+          "summary": "All fractions are whole numbers",
+          "teacherGuide": "Disagree: 1/8 is not a whole number; some fractions like 6/2 are"
+        },
+        {
+          "sourceLabel": "G",
+          "summary": "One half is always greater than one third",
+          "teacherGuide": "Conditional: true only when the fractions refer to the same-size whole; not necessarily if wholes differ"
+        },
+        {
+          "sourceLabel": "H",
+          "summary": "Fractions can express lengths",
+          "teacherGuide": "Agree: one third of a meter can be described by a unit-length interval"
+        }
+      ],
+      "sourceOriginalClaimCount": 8,
+      "sourceRoundCount": 3,
+      "teacherImageReviewRequired": true
     },
     {
       "ordinal": 132,
