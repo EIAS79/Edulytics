@@ -1,0 +1,138 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l11-original-nine-figure-equivalences-two-wholes-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L11",
+      "CultureCode": "en",
+      "Title": "Generate Equivalent Fractions",
+      "ExplanationParagraphs": [
+        "Original 2021 warm-up Number Talk Something Times 8 has FOUR mental calculations: 2×8=16;6×8=48;10×8=80;12×8=96. Explain using related products, e.g. 12×8=10×8+2×8.",
+        "Source Activity1 Show Equivalence first displays a rectangle divided into four equal areas, two shaded. Jada asserts the shaded area also represents 4/8. Jada is right: divide EACH of the four quarters into two equal pieces without changing the whole or shaded area. 2/4=4/8. Tyler's concern invites a student-made diagram and explanation, not just the correct number.",
+        "Source Activity1 then requires three exact additional proofs: 1/3=2/6,6/8=3/4,6/6=2/2, each from their original 2021 drawn representations. Equal subdivisions may be regrouped but SAME whole and SAME shaded area must remain. Original drawings were read on Our-CS; independently drawn Edulytics teaching replaces copyrighted pixels.",
+        "Source Activity2 More Than One Name includes three original student diagrams: four of six equal pieces shaded =>4/6=2/3; two of eight equal pieces shaded =>2/8=1/4; four of four equal pieces shaded =>4/4=2/2=1. The source asks students to supply TWO valid names (additional equivalent names are allowed with correct reasoning).",
+        "The last source diagram is crucial: TWO equal-size whole rectangles, EACH split in half, together four half-sized regions but THREE shaded. Thus three half-sized parts from the same whole measure 3/2=6/4=1+1/2, NOT 3/4. There are two wholes, so treating the four visible half pieces as one whole gives a wrong denominator. Count equal unit fractions per ONE whole, not total pieces across both figures.",
+        "Source lesson synthesis asks pupils to show how shaded same-whole regions can have different fraction names, and a teacher checks drawings and explanations. Source teacher-gated Cool-down Two Fraction Names for Each Diagram was not accessed or reproduced. Original standalone student PDF, tests and Stage D are unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent fraction by subdividing",
+          "Definition": "Divide each of a whole's equal parts into the same count of smaller equal parts without changing shaded amount.",
+          "Rule": "a/b=(ka)/(kb) for positive k.",
+          "Example": "2/4=4/8, 1/3=2/6."
+        },
+        {
+          "Title": "Whole-number fraction names",
+          "Definition": "When all parts of one equal whole are shaded, the represented value is 1.",
+          "Rule": "n/n=1.",
+          "Example": "6/6=2/2=4/4."
+        },
+        {
+          "Title": "Multiple unit wholes",
+          "Definition": "Denominator counts equal-sized parts per each unit whole; several wholes may show an improper fraction.",
+          "Rule": "Three parts each one half of ONE whole count as 3/2, even if two whole figures are drawn.",
+          "Example": "The source last image is 3/2=6/4, not 3/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Number Talk all source products",
+          "Question": "Compute 2×8,6×8,10×8,12×8 mentally.",
+          "Method": "Multiply by eight using related known products.",
+          "Steps": [
+            "2×8=16.",
+            "6×8=48.",
+            "10×8=80.",
+            "12×8=80+16=96."
+          ],
+          "Answer": "16,48,80,96",
+          "Check": "96=12×8."
+        },
+        {
+          "Title": "Jada first rectangle",
+          "Question": "Two of four equal cells are shaded. Show why 4/8 is also correct.",
+          "Method": "Split every original fourth in half.",
+          "Steps": [
+            "Two equal quarters are shaded.",
+            "Four eighths are shaded after new equal subdivisions.",
+            "Area and unit whole remain unchanged."
+          ],
+          "Answer": "2/4=4/8",
+          "Check": "2×8=4×4."
+        },
+        {
+          "Title": "One third to sixths",
+          "Question": "Repartition one of three equal parts into sixths.",
+          "Method": "Split each third into two equal pieces.",
+          "Steps": [
+            "One third shaded in a three-part whole.",
+            "Six equal parts after splitting.",
+            "Two sixths remain shaded."
+          ],
+          "Answer": "1/3=2/6",
+          "Check": "1×6=2×3."
+        },
+        {
+          "Title": "Six eighths to fourths",
+          "Question": "Use the original six-of-eight shading to show fourths.",
+          "Method": "Pair adjacent eighths.",
+          "Steps": [
+            "Six of eight equal regions are shaded.",
+            "Pair each two eighths into a fourth.",
+            "Three fourths are shaded."
+          ],
+          "Answer": "6/8=3/4",
+          "Check": "6×4=8×3."
+        },
+        {
+          "Title": "Other original three rectangles",
+          "Question": "Name equivalences for 4/6, 2/8, 4/4 shaded.",
+          "Method": "Regroup congruent parts of one whole.",
+          "Steps": [
+            "Four sixths group to two thirds.",
+            "Two eighths group to one fourth.",
+            "Four fourths of the whole equal two halves."
+          ],
+          "Answer": "4/6=2/3;2/8=1/4;4/4=2/2",
+          "Check": "All equivalent names preserve each whole."
+        },
+        {
+          "Title": "Original two-whole improper fraction",
+          "Question": "Two equal whole rectangles, each divided into halves, have three of four regions shaded.",
+          "Method": "Count half-sized units across BOTH separate whole figures.",
+          "Steps": [
+            "Each original rectangle separately represents 1 whole.",
+            "Each contains two half-sized regions; three half-regions shaded total.",
+            "Three halves =3/2=6/4=1+1/2; NOT 3/4."
+          ],
+          "Answer": "3/2=6/4",
+          "Check": "More than one complete whole is shaded."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Label final three shaded parts as 3/4 because four visible regions are present.",
+          "WhyWrong": "The regions belong to TWO complete whole rectangles, not a single fourth-partitioned whole.",
+          "Correction": "Count three half-sized units:3/2."
+        },
+        {
+          "Mistake": "Reject Jada's 4/8 because the original has only four drawn regions.",
+          "WhyWrong": "Dividing each fourth in half changes the number of pieces but not shaded amount.",
+          "Correction": "Draw the added equal partitions to verify."
+        },
+        {
+          "Mistake": "Infer diagram equivalence solely from a typed scalar ratio.",
+          "WhyWrong": "Shading and same-whole visual geometry remain unverified by a number.",
+          "Correction": "Teacher checks equal area and partition reasoning."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up products:16,48,80,96.",
+        "Activity1:2/4=4/8;1/3=2/6;6/8=3/4;6/6=2/2.",
+        "Activity2:4/6=2/3,2/8=1/4,4/4=2/2; last two-whole image is 3/2=6/4, NOT 3/4.",
+        "Teacher checks source-equivalent diagrams and whole-size consistency; original gated Cool-down and standalone student PDF unverified; tests/Stage D deferred."
+      ]
+    }
+  ]
+}
