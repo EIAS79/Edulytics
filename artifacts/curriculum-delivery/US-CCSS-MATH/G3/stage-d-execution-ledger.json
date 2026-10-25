@@ -8,7 +8,7 @@
   "stageDWorkflow": ".github/workflows/us-ccss-g3-stage-d.yml",
   "lessonCount": 143,
   "authoringABCReady": 143,
-  "lastTestedSha": null,
+  "lastTestedSha": "9f874257d7f9e0933bc11f0cf08b62687b971a94",
   "lastVerifiedOrdinal": 0,
   "firstUnverifiedOrdinal": 1,
   "batchRanges": {
@@ -25,7 +25,7 @@
       143
     ]
   },
-  "state": "D_PENDING",
+  "state": "D_BLOCKED",
   "sourceParityPercentProven": null,
   "academicApprovalsNew": 0,
   "release": "NO_GO_PENDING_EVIDENCE",
@@ -45,15 +45,21 @@
     "Stage D only runs on GitHub CI, never on Our-CS or production database.",
     "Passing numeric tests cannot certify original artwork, publisher PDFs, student discussion/drawing or teacher approval.",
     "No approval until real source-element evidence, HTTPS E2E and rights/accessibility signoffs exist.",
-    "CI results must link the actual tested SHA. Ledger initialization is not a completed check."
+    "CI results must link the actual tested SHA. Ledger initialization is not a completed check.",
+    "Grade 3 Stage D tests D2/D3 passed only on 9f874..., not automatically on a later source/CI SHA.",
+    "Grade 3 source figure parity and teacher-gated task approvals cannot be inferred from any digital pass."
   ],
   "ciResults": {
-    "sharedBuild": "NOT_RUN",
-    "D1": "NOT_RUN",
-    "D2": "NOT_RUN",
-    "D3": "NOT_RUN",
-    "authenticatedE2E": "NOT_RUN",
-    "workflowRunId": null
+    "sharedBuild": "PASSED_ON_9f874257d7f9e0933bc11f0cf08b62687b971a94",
+    "D1": "FAILED_39_OF_907_TESTS_ON_9f874257d7f9e0933bc11f0cf08b62687b971a94",
+    "D2": "PASSED_1042_OF_1042_TESTS_ON_9f874257d7f9e0933bc11f0cf08b62687b971a94",
+    "D3": "PASSED_262_OF_262_TESTS_ON_9f874257d7f9e0933bc11f0cf08b62687b971a94",
+    "authenticatedE2E": "BLOCKED_AT_2026-10-25_SOURCE_BOUND_METADATA_INVENTORY_ON_PRIOR_CANDIDATE; NEW_HEAD_REQUIRES_CONFIRMATION",
+    "workflowRunId": 40240652334,
+    "workflowUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40240652334",
+    "testedHeadSha": "9f874257d7f9e0933bc11f0cf08b62687b971a94",
+    "newestE2ERunId": 40240910488,
+    "finalGreenCI": false
   },
   "lessons": [
     {
@@ -62,11 +68,11 @@
       "unit": 1,
       "unitLesson": 1,
       "batch": "D1",
-      "state": "D_PENDING",
+      "state": "D_BLOCKED",
       "build": "NOT_RUN",
-      "unitTests": "NOT_RUN",
-      "integration": "NOT_RUN",
-      "authenticatedE2E": "NOT_RUN",
+      "unitTests": "D1_BATCH_FAILED_ON_TESTED_SHA_9f874257",
+      "integration": "NOT_VERIFIED",
+      "authenticatedE2E": "NOT_VERIFIED",
       "sourceParity": "NOT_PROVEN",
       "academicApproval": "PENDING"
     },
@@ -2057,6 +2063,31 @@
       "authenticatedE2E": "NOT_RUN",
       "sourceParity": "NOT_PROVEN",
       "academicApproval": "PENDING"
+    }
+  ],
+  "currentCandidateSha": "15c521a9f234a5a2349a24af4776e1125d8fca94",
+  "currentCandidateNeedsRerun": true,
+  "currentCandidateRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40240910508",
+  "blockers": [
+    {
+      "scope": "D1",
+      "category": "SOURCE_TEST_REGRESSION",
+      "testsFailed": 39,
+      "testsPassed": 868,
+      "testedSha": "9f874257d7f9e0933bc11f0cf08b62687b971a94",
+      "proofRunId": 40240652334,
+      "action": "Resolve per-lesson source/teacher-grading contracts on the latest head; do not bypass failing original-source tests."
+    },
+    {
+      "scope": "AUTHENTICATED_E2E",
+      "category": "CLEAN_FIXTURE_STARTUP",
+      "observedRunId": 40240292881,
+      "reason": "Source-bound Common Core JSON metadata inventory drift after newer G3 repairs; exact G3 U01 L12/L15 gated target inventory selection patched on current branch; CI still pending."
+    },
+    {
+      "scope": "ACADEMIC",
+      "category": "ORIGINAL_SOURCE_PARITY_AND_APPROVAL",
+      "reason": "100% original figure/PDF rights, classroom performance and per-element parity not proven; approval withheld."
     }
   ]
 }
