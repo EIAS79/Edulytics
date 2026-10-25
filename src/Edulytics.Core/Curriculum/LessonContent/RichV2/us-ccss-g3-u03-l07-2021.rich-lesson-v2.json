@@ -53,7 +53,7 @@
             "500→505 adds5.",
             "2+100+5=107."
           ],
-          "Answer": "null",
+          "Answer": "107",
           "Check": "Explain and check the original difference with an addition inverse if appropriate."
         },
         {
@@ -65,8 +65,21 @@
             "12−5=7 ones and5−3=2 tens.",
             "2−1=1 hundred; result127."
           ],
-          "Answer": "null",
+          "Answer": "127",
           "Check": "Explain and check the original difference with an addition inverse if appropriate."
+        },
+        {
+          "Title": "Subtract hundreds and tens with place-value decomposition",
+          "Question": "Find 428−213 without changing the place value of any digit.",
+          "Method": "Independent worked strategy for an original verified source expression",
+          "Steps": [
+            "Break 213 into 200 + 10 + 3.",
+            "428 − 200 = 228.",
+            "228 − 10 = 218.",
+            "218 − 3 = 215."
+          ],
+          "Answer": "215",
+          "Check": "215 + 213 = 428; matching a source-numbered subtraction does not certify its student-produced drawing."
         }
       ],
       "CommonMistakes": [
