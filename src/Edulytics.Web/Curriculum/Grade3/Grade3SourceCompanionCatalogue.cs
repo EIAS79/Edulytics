@@ -161,6 +161,33 @@ public static class Grade3SourceCompanionCatalogue
                 "All missing sides match; teacher reviews original shape reasoning.");
         }
 
+        if (q.AnswerType == "rectangle-pair-perimeter-different-area")
+        {
+            if (!int.TryParse(q.Expected, NumberStyles.None, CultureInfo.InvariantCulture,
+                    out var target) || target is not (12 or 20 or 26 or 34))
+                return new(null, true, "Source rectangle task needs teacher review.");
+            var pairs = Regex.Match(submitted.Trim(),
+                @"^([0-9]{1,2})\s*,\s*([0-9]{1,2})\s*;\s*([0-9]{1,2})\s*,\s*([0-9]{1,2})$",
+                RegexOptions.CultureInvariant);
+            if (!pairs.Success)
+                return new(false, true, "Enter two width,length pairs: a,b;c,d.");
+            var a = int.Parse(pairs.Groups[1].Value, CultureInfo.InvariantCulture);
+            var b = int.Parse(pairs.Groups[2].Value, CultureInfo.InvariantCulture);
+            var c = int.Parse(pairs.Groups[3].Value, CultureInfo.InvariantCulture);
+            var d = int.Parse(pairs.Groups[4].Value, CultureInfo.InvariantCulture);
+            // Original 2021 blackline has 20 dot columns Ã— 25 dot rows:
+            // 19Ã—24 lengths are the maximum, in either orientation.
+            static bool FitsGrid(int x, int y) =>
+                x > 0 && y > 0 &&
+                ((x <= 19 && y <= 24) || (y <= 19 && x <= 24));
+            var correct = FitsGrid(a, b) && FitsGrid(c, d) &&
+                2 * (a + b) == target && 2 * (c + d) == target &&
+                a * b != c * d;
+            return new(correct, true, correct
+                ? "Both pairs have the stated linear perimeter and different areas; teacher must verify the actual two diagrams."
+                : "Check both perimeter sums, unequal square-unit areas and whether both fit the original dot grid.");
+        }
+
         if (q.AnswerType == "length-with-unit")
         {
             if (!TryReadLengthWithUnit(q.Expected, out var expectedLength, out var expectedDenominator, out var expectedUnit))

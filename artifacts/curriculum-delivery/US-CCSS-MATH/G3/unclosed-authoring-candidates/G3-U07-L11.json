@@ -11,16 +11,20 @@
   "originalTeacherHtml": "unit-7/lesson-11/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-11/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_TEACHER_PREPARATION_3PAGE_STUDENT_PDF_AND_19BY24_DOT_BLACKLINE_VERIFIED",
     "goals": "Draw rectangles with the same perimeter and different areas.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "1b5d8e754f7a31989ca5e82fd00b069eb9f697b9aef8643b8b45c4bc8ba8b0bb",
+    "originalSquareDotPaperPdfSha256": "61e18ad297edf8b074ea17b2f34df763ea5738edf3d64f0436f054034e8a6594",
+    "originalStudentPdfPagesRead": 3,
+    "originalGridUnitBoundsVerified": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_SPECIFIC_RECTANGLE_PAIR_RICHV2_WITH_TEACHER_DRAWING_BOUNDARY",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +32,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "fa0d6e53b516b1e649bae609cd5a4915d7c50b0ec21a5a45bf76874a0c8c0f6e",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l11-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson11RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson11.cshtml",
+    "authoredContentVersion": "g3-u07-l11-2021-two-rectangles-same-perimeter-distinct-areas-v1",
+    "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_DIVISION_MULTIPLICATION_ANCHORS_AND_FOUR_PERIMETER_PAIR_DIFFERENT_AREA_CHECKS_TESTS_WRITTEN_NOT_RUN",
     "family": "perimeter-area-relationship",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,72 +49,144 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Perimeter of 16 Units with your teacher. Show the representation and explain how it meets the goal: Let’s explore rectangles with the same perimeter.",
-    "teacherReviewNote": "Compare area and perimeter as distinct quantities and units; teacher verifies shape construction."
+    "teacherReviewNote": "Compare area and perimeter as distinct quantities and units; teacher verifies shape construction.",
+    "sourceNumericAnchorCount": 8,
+    "sourceHumanOnlyDrawingPosterGalleryTasks": 5,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson11RectanglePairsTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U07-L11-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: Multiply to Divide (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-7/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L11-WARMUP-01",
+      "originalSourceStudentPdfPage": 1,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "integer",
+      "sourceExpectedScalarOrPerimeter": "25",
+      "firstPartyPrompt": "G3-U07-L11-WARMUP-01",
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L11-HEADING-02",
-      "sourceSection": "Activity 1: Perimeter of 16 Units (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L11-WARMUP-02",
+      "originalSourceStudentPdfPage": 1,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "integer",
+      "sourceExpectedScalarOrPerimeter": "50",
+      "firstPartyPrompt": "G3-U07-L11-WARMUP-02",
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L11-HEADING-03",
-      "sourceSection": "Activity 2: Same Perimeter, Different Area (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L11-WARMUP-03",
+      "originalSourceStudentPdfPage": 1,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "integer",
+      "sourceExpectedScalarOrPerimeter": "10",
+      "firstPartyPrompt": "G3-U07-L11-WARMUP-03",
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L11-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-7/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L11-WARMUP-04",
+      "originalSourceStudentPdfPage": 1,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "integer",
+      "sourceExpectedScalarOrPerimeter": "17",
+      "firstPartyPrompt": "G3-U07-L11-WARMUP-04",
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L11-HEADING-05",
-      "sourceSection": "Cool-down: Perimeter of 18 (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-7/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L11-A1-MULTIPLE",
+      "originalSourceStudentPdfPage": 2,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalAnswerType": "teacher",
+      "sourceExpectedScalarOrPerimeter": null,
+      "firstPartyPrompt": "G3-U07-L11-A1-MULTIPLE",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-A2-P12",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "rectangle-pair-perimeter-different-area",
+      "sourceExpectedScalarOrPerimeter": "12",
+      "firstPartyPrompt": "G3-U07-L11-A2-P12",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-A2-P20",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "rectangle-pair-perimeter-different-area",
+      "sourceExpectedScalarOrPerimeter": "20",
+      "firstPartyPrompt": "G3-U07-L11-A2-P20",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-A2-P26",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "rectangle-pair-perimeter-different-area",
+      "sourceExpectedScalarOrPerimeter": "26",
+      "firstPartyPrompt": "G3-U07-L11-A2-P26",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-A2-P34",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_DRAWING_REVIEW",
+      "digitalAnswerType": "rectangle-pair-perimeter-different-area",
+      "sourceExpectedScalarOrPerimeter": "34",
+      "firstPartyPrompt": "G3-U07-L11-A2-P34",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-OWN",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalAnswerType": "teacher",
+      "sourceExpectedScalarOrPerimeter": null,
+      "firstPartyPrompt": "G3-U07-L11-OWN",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-POSTERS",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalAnswerType": "teacher",
+      "sourceExpectedScalarOrPerimeter": null,
+      "firstPartyPrompt": "G3-U07-L11-POSTERS",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-GALLERY",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalAnswerType": "teacher",
+      "sourceExpectedScalarOrPerimeter": null,
+      "firstPartyPrompt": "G3-U07-L11-GALLERY",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-SYNTHESIS",
+      "originalSourceStudentPdfPage": 3,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalAnswerType": "teacher",
+      "sourceExpectedScalarOrPerimeter": null,
+      "firstPartyPrompt": "G3-U07-L11-SYNTHESIS",
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L11-COOLDOWN",
+      "originalSourceStudentPdfPage": null,
+      "coverage": "PUBLISHER_GATED_RIGHTS_RESTRICTED",
+      "teacherReviewRequired": true
     }
   ],
   "images": [],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 0,
-    "fullyVerified": 0
+    "identified": 14,
+    "digitallyCheckableWithTeacherReview": 8,
+    "teacherOnly": 5,
+    "rightsRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "A rectangle is 5 cm by 3 cm. What is its area in square centimetres?",
@@ -113,20 +194,20 @@
     "expected": "15"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "NOT_MANUALLY_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-124-2021-same-perimeter-different-area-dot-grid-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Original gated publisher Cool-down unavailable and not copied.",
+    "Original source figure drawings, physical cut-outs, and gallery dialogue are teacher-led; digital dimension validation does not replace them.",
+    "Stage D runtime publication, tests, CI and independent academic signoff not performed."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L12"
 }

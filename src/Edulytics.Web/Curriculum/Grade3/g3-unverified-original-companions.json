@@ -23595,10 +23595,10 @@
         }
       ],
       "sourceVisualAltDescriptions": [],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter-area-relationship",
       "independentPractice": {
@@ -23612,20 +23612,21 @@
         "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Perimeter of 16 Units with your teacher. Show the representation and explain how it meets the goal: You will understand that rectangles with the same perimeter do not always have the same area.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 3-page student task, teacher lesson and standard 19\u00c3\u201424 interval dot paper inspected. Four mental products/division, open 16-unit exhaustive rectangle drawing, four pair-perimeter typed checks for 12/20/26/34, own choice, cutout posters and gallery require teacher. Gated original Cool-down remains restricted.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s explore rectangles with the same perimeter.",
+        "sourceGoal": "Let\u2019s explore rectangles with the same perimeter.",
         "sourceLearningGoals": "Draw rectangles with the same perimeter and different areas.",
         "teachingSteps": [
-          "Identify shape attributes, side lengths, area and perimeter constraints.",
-          "Draw or measure an accurate figure that meets the task conditions.",
-          "Explain and check the resulting geometric relationship."
+          "Use known five-multiples 25+50+10=85 to find 85\u00c3\u00b75=17.",
+          "Build all distinct positive-integer dimension pairs with half-perimeter 8: 1\u00c3\u20147,2\u00c3\u20146,3\u00c3\u20145,4\u00c3\u20144.",
+          "Draw two different-area rectangles for 12,20,26,34 target perimeters, plus optional own perimeter; verify both fit original dot paper.",
+          "Cut out 1\u00e2\u20ac\u201c2 shapes and tape to appropriate wall poster; gallery walk and teacher rationale remain required."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore rectangles with the same perimeter.",
+        "caution": "Matching perimeter does NOT mean matching area. The original 19\u00c3\u201424 dot-grid requires feasible whole-unit lengths; order/rotation is irrelevant, but typed rectangles do not prove drawings. Source teacher permits 3 of 5 perimeter tasks.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -23634,38 +23635,102 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-11/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "originalStudentPdfSha256": "1b5d8e754f7a31989ca5e82fd00b069eb9f697b9aef8643b8b45c4bc8ba8b0bb",
+        "originalBlacklineVerified": true,
+        "figurePixelsInspected": true,
+        "sourcePageSemanticElements": "4 number facts; original P16 rectangles; 4 pair drawings P12/20/26/34; own-choice pair, poster and gallery."
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L11-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Multiply to Divide (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Rectangles with the Same Perimeter PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L11-WARMUP-01",
+          "sourceActivity": "Warm-up: Number Talk: Multiply to Divide",
+          "prompt": "Find 5 \u00c3\u2014 5, and explain the multiplication or decomposition strategy to teacher.",
+          "answerType": "integer",
+          "expected": "25"
+        },
+        {
+          "id": "G3-U07-L11-WARMUP-02",
+          "sourceActivity": "Warm-up: Number Talk: Multiply to Divide",
+          "prompt": "Find 10 \u00c3\u2014 5, and explain the multiplication or decomposition strategy to teacher.",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U07-L11-WARMUP-03",
+          "sourceActivity": "Warm-up: Number Talk: Multiply to Divide",
+          "prompt": "Find 2 \u00c3\u2014 5, and explain the multiplication or decomposition strategy to teacher.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L11-WARMUP-04",
+          "sourceActivity": "Warm-up: Number Talk: Multiply to Divide",
+          "prompt": "Find 85 \u00c3\u00b7 5, and explain the multiplication or decomposition strategy to teacher.",
+          "answerType": "integer",
+          "expected": "17"
+        },
+        {
+          "id": "G3-U07-L11-A1-MULTIPLE",
+          "sourceActivity": "Activity 1: Perimeter of 16 Units",
+          "prompt": "On original dot paper draw AS MANY different rectangles with 16 unit perimeter as you can, calculate the area of every drawing; teacher checks grid, completeness and reasoning.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L11-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Perimeter of 16 Units (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Rectangles with the Same Perimeter PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L11-A2-P12",
+          "sourceActivity": "Activity 2: Same Perimeter, Different Area",
+          "prompt": "Original perimeter 12 linear units: DRAW two grid-aligned, closed rectangles of DIFFERENT square-unit areas. Optionally check typed integer dimensions as a,b;c,d, but teacher verifies the actual drawings.",
+          "answerType": "rectangle-pair-perimeter-different-area",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U07-L11-A2-P20",
+          "sourceActivity": "Activity 2: Same Perimeter, Different Area",
+          "prompt": "Original perimeter 20 linear units: DRAW two grid-aligned, closed rectangles of DIFFERENT square-unit areas. Optionally check typed integer dimensions as a,b;c,d, but teacher verifies the actual drawings.",
+          "answerType": "rectangle-pair-perimeter-different-area",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U07-L11-A2-P26",
+          "sourceActivity": "Activity 2: Same Perimeter, Different Area",
+          "prompt": "Original perimeter 26 linear units: DRAW two grid-aligned, closed rectangles of DIFFERENT square-unit areas. Optionally check typed integer dimensions as a,b;c,d, but teacher verifies the actual drawings.",
+          "answerType": "rectangle-pair-perimeter-different-area",
+          "expected": "26"
+        },
+        {
+          "id": "G3-U07-L11-A2-P34",
+          "sourceActivity": "Activity 2: Same Perimeter, Different Area",
+          "prompt": "Original perimeter 34 linear units: DRAW two grid-aligned, closed rectangles of DIFFERENT square-unit areas. Optionally check typed integer dimensions as a,b;c,d, but teacher verifies the actual drawings.",
+          "answerType": "rectangle-pair-perimeter-different-area",
+          "expected": "34"
+        },
+        {
+          "id": "G3-U07-L11-OWN",
+          "sourceActivity": "Activity 2 / Lesson Synthesis",
+          "prompt": "Choose your own target perimeter and draw two different-area rectangles on original dot paper. Teacher observes and assesses rather than machine-certifying.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L11-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Same Perimeter, Different Area (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Rectangles with the Same Perimeter PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L11-POSTERS",
+          "sourceActivity": "Activity 2 / Lesson Synthesis",
+          "prompt": "Cut out 1\u00e2\u20ac\u201c2 of your source rectangles and post on the matching 12,20,26,34 wall posters. Teacher observes and assesses rather than machine-certifying.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L11-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L11-GALLERY",
+          "sourceActivity": "Activity 2 / Lesson Synthesis",
+          "prompt": "Discuss one Notice and one Wonder about the displayed original rectangles with partner. Teacher observes and assesses rather than machine-certifying.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U07-L11-SYNTHESIS",
+          "sourceActivity": "Activity 2 / Lesson Synthesis",
+          "prompt": "Explain why equal perimeter does not force equal area, using diagrams and units. Teacher observes and assesses rather than machine-certifying.",
           "answerType": "teacher",
           "expected": null
         }
