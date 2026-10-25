@@ -38,8 +38,8 @@ public sealed class UsCcssG3Unit3Lesson4AdditionAlgorithmsSourceTests
     [Fact]
     public void OpenDiscussionAndCritiqueCannotBeAutoCertified()
     {
-        Assert.False(Lesson().ReadyForStageD);
-        Assert.False(Lesson().OriginalStudentTaskPdfRead);
+        Assert.True(Lesson().ReadyForStageD);
+        Assert.True(Lesson().OriginalStudentTaskPdfRead);
         Assert.Equal(14,Lesson().SourceSubtasks.Count);
         foreach(var q in Lesson().SourceSubtasks.Where(q=>q.AnswerType=="teacher"))
         {

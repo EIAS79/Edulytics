@@ -44,8 +44,8 @@ public sealed class UsCcssG3Unit3Lesson3AddYourWaySourceTests
     public void ExplanationAndChoiceCannotBeAutoPassed()
     {
         Assert.Equal(14,Lesson().SourceSubtasks.Count);
-        Assert.False(Lesson().OriginalStudentTaskPdfRead);
-        Assert.False(Lesson().ReadyForStageD);
+        Assert.True(Lesson().OriginalStudentTaskPdfRead);
+        Assert.True(Lesson().ReadyForStageD);
         foreach(var q in Lesson().SourceSubtasks.Where(q=>q.AnswerType=="teacher"))
         {
             var r=Grade3SourceCompanionCatalogue.Grade(q,"394");

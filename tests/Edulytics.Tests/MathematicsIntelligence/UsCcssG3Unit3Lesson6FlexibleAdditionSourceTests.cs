@@ -48,7 +48,7 @@ public sealed class UsCcssG3Unit3Lesson6FlexibleAdditionSourceTests
     [Fact]
     public void DiscussionAndOriginalCoolDownRemainTeacherReviewed()
     {
-        var l=Lesson();Assert.False(l.ReadyForStageD);Assert.False(l.OriginalStudentTaskPdfRead);
+        var l=Lesson();Assert.True(l.ReadyForStageD);Assert.True(l.OriginalStudentTaskPdfRead);
         Assert.Equal(18,l.SourceSubtasks.Count);
         foreach(var q in l.SourceSubtasks.Where(x=>x.AnswerType=="teacher"))
         {

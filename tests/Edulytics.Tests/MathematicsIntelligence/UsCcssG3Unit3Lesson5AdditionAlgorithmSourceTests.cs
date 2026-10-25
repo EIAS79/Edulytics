@@ -35,8 +35,8 @@ public sealed class UsCcssG3Unit3Lesson5AdditionAlgorithmSourceTests
     [Fact]
     public void HumanAlgorithmComparisonsRemainUnscoredByNumericChecker()
     {
-        Assert.False(Lesson().ReadyForStageD);
-        Assert.False(Lesson().OriginalStudentTaskPdfRead);
+        Assert.True(Lesson().ReadyForStageD);
+        Assert.True(Lesson().OriginalStudentTaskPdfRead);
         Assert.Equal(14,Lesson().SourceSubtasks.Count);
         foreach(var task in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher"))
         {

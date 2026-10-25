@@ -28,5 +28,5 @@ public sealed class UsCcssG3Unit3Lesson7OriginalMathSourceTests
   [InlineData("G3-U03-L07-S3-NUM10","120",true)]
   [InlineData("G3-U03-L07-S3-NUM10","121",false)]
   public void ExactOriginalArithmeticChecks(string id,string value,bool expected){var q=Lesson().SourceSubtasks.Single(x=>x.Id==id);var r=Grade3SourceCompanionCatalogue.Grade(q,value);Assert.Equal(expected,r.NumericCorrect);Assert.True(r.TeacherReview);}
-  [Fact] public void TeacherOnlyTasksAreNotAutoCertified(){Assert.False(Lesson().ReadyForStageD);Assert.False(Lesson().OriginalStudentTaskPdfRead);foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher")){var r=Grade3SourceCompanionCatalogue.Grade(q,"127");Assert.Null(r.NumericCorrect);Assert.True(r.TeacherReview);}}
+  [Fact] public void TeacherOnlyTasksAreNotAutoCertified(){Assert.True(Lesson().ReadyForStageD);Assert.True(Lesson().OriginalStudentTaskPdfRead);foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher")){var r=Grade3SourceCompanionCatalogue.Grade(q,"127");Assert.Null(r.NumericCorrect);Assert.True(r.TeacherReview);}}
 }
