@@ -10964,85 +10964,129 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "division-situations",
+      "firstPartyFamily": "division-equal-sharing",
       "independentPractice": {
-        "prompt": "Thirty-two apples are in four equal boxes. How many per box?",
-        "answerType": "integer",
-        "expected": "8"
-      },
-      "originalEdulyticsCoolDown": {
-        "prompt": "Thirty-six apples are in six equal boxes. How many in one box?",
+        "prompt": "36 apples packed into six equal boxes. How many apples in each box?",
         "answerType": "integer",
         "expected": "6"
       },
+      "originalEdulyticsCoolDown": {
+        "prompt": "28 apples shared into 7 bags equally. How many apples per bag?",
+        "answerType": "integer",
+        "expected": "4"
+      },
       "openTeacherTask": "Work through the original lesson's activity How Many Apples? with your teacher. Show the representation and explain how it meets the goal: You will solve “how many in each group?” problems in a way that makes sense to them.",
-      "teacherReviewNote": "Source 4 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "All 3 original source group-size prompts and source prior-lesson contrast accounted for; original orchard image, gallery and original publisher Cool-down are human/restricted.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s represent and solve more problems.",
+        "sourceGoal": "Solve “how many in each group?” problems in a way that makes sense to them.",
         "sourceLearningGoals": "Solve “how many in each group?” problems in a way that makes sense to them.",
         "teachingSteps": [
-          "Identify total objects, group size and number of groups.",
-          "Represent equal sharing or the number of equal groups.",
-          "Interpret what the quotient counts in the story."
+          "Notice and wonder original orchard image; do not assume unverified picture count.",
+          "Share20 into4 equal groups→5 each,36 into6→6,45 into9→5.",
+          "Check via4×5=20,6×6=36,9×5=45.",
+          "Compare prior 24 in groups of8→3 groups with 20 in4 groups→5 each, and explain quotient units.",
+          "Teacher observes gallery response."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve more problems.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Avoid confusing equal group count with equal group size; original publisher orchard picture not copied."
       },
       "sourceBasedCheck": {
-        "prompt": "Source: 20 apples are shared among four equal boxes. How many apples per box?",
+        "prompt": "Original Student Facing: 45 apples in 9 boxes equally. How many apples in each?",
         "answerType": "integer",
         "expected": "5"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-4/lesson-2/lesson.html",
-        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "verified": "ORIGINAL_2021_STUDENT_FACING_TEXT_DIVISION_VALUES",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L02-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: More Apples (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “How Many in Each Group?.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L02-A1-1",
+          "sourceActivity": "How Many Apples?",
+          "prompt": "Original 2021 source: 20 apples packed into 4 boxes with EQUAL NUMBERS in each. How MANY APPLES IN EACH BOX?",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L02-A1-2",
+          "sourceActivity": "How Many Apples?",
+          "prompt": "Original 2021 source: 36 apples packed into 6 boxes with EQUAL NUMBERS in each. How MANY APPLES IN EACH BOX?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L02-A1-3",
+          "sourceActivity": "How Many Apples?",
+          "prompt": "Original 2021 source: 45 apples packed into 9 boxes with EQUAL NUMBERS in each. How MANY APPLES IN EACH BOX?",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L02-A3-PRIOR-COMPARISON",
+          "sourceActivity": "All the Apples",
+          "prompt": "Earlier source situation revisited by this lesson: 24 apples with 8 in EACH box. How many boxes?",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L02-WU-ORCHARD",
+          "sourceActivity": "Notice and Wonder: More Apples",
+          "prompt": "Observe the original apple orchard photograph (or a clearly labeled independent substitute) and discuss what you notice and wonder; no photo count was extracted.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L02-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: How Many Apples? (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “How Many in Each Group?.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L02-A1-20-DIAGRAM",
+          "sourceActivity": "How Many Apples?",
+          "prompt": "Represent 20 apples partitioned into FOUR boxes of FIVE apples each and explain why five is unknown.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L02-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Gallery Walk (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “How Many in Each Group?.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L02-A1-36-DIAGRAM",
+          "sourceActivity": "How Many Apples?",
+          "prompt": "Represent 36 apples partitioned into SIX boxes of SIX apples each; label total, boxes and equal sharing.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L02-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: All the Apples (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “How Many in Each Group?.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L02-A1-45-DIAGRAM",
+          "sourceActivity": "How Many Apples?",
+          "prompt": "Represent 45 apples partitioned into NINE boxes of FIVE apples each; identify objects per group.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L02-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L02-A2-GALLERY",
+          "sourceActivity": "Gallery Walk",
+          "prompt": "Compare posters showing equal sharing into a KNOWN number of boxes. Discuss similarities and differences in strategies with a partner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L02-A3-COMPARE",
+          "sourceActivity": "All the Apples",
+          "prompt": "Compare the earlier 24 apples with8 in each box (find 3 boxes) against 20 apples in4 boxes (find5 apples per box). Explain why a quotients' role depends on the unknown, not just ÷.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L02-ORIGINAL-COOLDOWN",
+          "sourceActivity": "Publisher Cool-down: Apples in Bags",
+          "prompt": "Original teacher-gated publisher Cool-down not read or copied; teacher reviews it separately; Edulytics uses its own goal-equivalent task.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_LOCAL_STUDENT_AND_TEACHER_HTML_EQUATION_AND_GOAL_EQUIVALENCE_NOT_ART"
     },
     {
       "ordinal": 60,

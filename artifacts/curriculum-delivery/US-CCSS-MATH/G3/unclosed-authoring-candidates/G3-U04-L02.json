@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-4/lesson-2/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-2/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_STUDENT_FOUR_SECTIONS_THREE_EQUAL_SHARING_PROBLEMS_ORIGINAL_COMPARISON_READ",
     "goals": "Solve “how many in each group?” problems in a way that makes sense to them.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "0da45ee150b97d00e8f179682aba6390db54cd3539bcf7d4c047ba9eb74e530a",
+    "preparationSha256": "0047da0b7f983ef8bf66c8fc9794d39e7428c0e5e9b2ceda0b38a21dc0109ad2"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_SPECIFIC_EQUAL_SHARE_RICH_V2_VISUAL_BOXES_AND_LESSON1_CONTRAST",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +31,12 @@
     "existingSourceBodyHash": "5822897a6ff0061e72659dadc9ed14c3c36d474faef3b780d9d8cbc4411076dc",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l02-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit4Lesson2.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_SOURCE_NUMERIC_ANCHORS_SEVEN_HUMAN_DRAWING_COMPARISON_TASKS_TESTS_NOT_RUN",
     "family": "division-situations",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,74 +46,53 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity How Many Apples? with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve more problems.",
-    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient."
+    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+    "sourceNumericChecks": 4,
+    "teacherReviewTasks": 7,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson2HowManyEachGroupSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U04-L02-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: More Apples (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-4/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "WU-ORCHARD",
+      "source": "Notice and Wonder source orchard photo",
+      "implementation": "TEACHER_SOURCE_PHOTO_OR_INDEPENDENT_SUBSTITUTE_NOT_COPY",
+      "fullPublisherVisualParity": false
     },
     {
-      "id": "G3-U04-L02-HEADING-02",
-      "sourceSection": "Activity 1: How Many Apples? (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-4/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "ACTIVITY1-1",
+      "source": "Original 20 apples in 4 equal boxes",
+      "implementation": "INDEPENDENT_DIVISION_GROUP_SIZE_20/4=5_TEACHER_DIAGRAM",
+      "fullPublisherVisualParity": false
     },
     {
-      "id": "G3-U04-L02-HEADING-03",
-      "sourceSection": "Activity 2: Gallery Walk (10 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-4/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "ACTIVITY1-2",
+      "source": "Original 36 apples in 6 equal boxes",
+      "implementation": "INDEPENDENT_DIVISION_GROUP_SIZE_36/6=6_TEACHER_DIAGRAM",
+      "fullPublisherVisualParity": false
     },
     {
-      "id": "G3-U04-L02-HEADING-04",
-      "sourceSection": "Activity 3: All the Apples (10 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-4/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "ACTIVITY1-3",
+      "source": "Original 45 apples in 9 equal boxes",
+      "implementation": "INDEPENDENT_DIVISION_GROUP_SIZE_45/9=5_TEACHER_DIAGRAM",
+      "fullPublisherVisualParity": false
     },
     {
-      "id": "G3-U04-L02-HEADING-05",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-4/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "GALLERY",
+      "source": "Peer gallery of posters",
+      "implementation": "HUMAN_COMPARE_DRAWINGS",
+      "fullPublisherVisualParity": false
     },
     {
-      "id": "G3-U04-L02-HEADING-06",
-      "sourceSection": "Cool-down: Apples in Bags (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-4/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "ACTIVITY3-PARTITIVE_VS_QUOTATIVE",
+      "source": "24 apples with8 each compared to20 apples in4 boxes",
+      "implementation": "FIRSTPARTY_TWO_DIVISION_INTERPRETATIONS_TEACHER_COMPARE",
+      "fullPublisherVisualParity": false
+    },
+    {
+      "id": "SOURCE-COOLDOWN",
+      "source": "Original Apples in Bags (5 minutes)",
+      "implementation": "GATED_TEACHER_ONLY_NOT_REPRODUCED",
+      "fullPublisherVisualParity": false
     }
   ],
   "images": [
@@ -124,9 +107,9 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 6,
-    "imageDescriptions": 1,
-    "fullyVerified": 0
+    "studentMathComparisons": 4,
+    "sourceImagePixelsVerified": 0,
+    "humanTasks": 7
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "20 items are shared equally among 5 children. How many items does each child receive?",
@@ -134,20 +117,18 @@
     "expected": "4"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original source apple-orchard picture pixels and original student PDF not inspected; teacher source HTML and Student Facing text used.",
+    "Original publisher Apples in Bags gated Cool-down is not copied or verified; oral comparisons and diagrams require teacher.",
+    "Tests, CI, Stage D, teacher signoff, merging and publishing not done."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_2021_LOCAL_HTML_FIRSTPARTY_SEMANTIC_GROUP_SIZE_NOT_ORIGINAL_PHOTO"
 }
