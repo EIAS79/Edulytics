@@ -14,7 +14,7 @@ internal static class CommonCoreG3Unit8Lesson4RichV2
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U08:L04";
     private const string ResourceName = "Edulytics.Data.Grade3.Unit8Lesson4RichV2";
     private const string ExpectedContentVersion =
-        "g3-g3-u08-l04-2021-tiny-house-three-options-area-perimeter-revision-v1";
+        "g3-u08-l04-2021-tiny-house-three-options-area-perimeter-revision-v1";
 
     private static readonly Lazy<JsonElement> Source = new(Load);
 

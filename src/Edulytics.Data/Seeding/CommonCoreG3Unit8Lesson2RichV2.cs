@@ -14,7 +14,7 @@ internal static class CommonCoreG3Unit8Lesson2RichV2
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U08:L02";
     private const string ResourceName = "Edulytics.Data.Grade3.Unit8Lesson2RichV2";
     private const string ExpectedContentVersion =
-        "g3-g3-u08-l02-2021-floor-number-line-thirteen-fractions-six-comparisons-v1";
+        "g3-u08-l02-2021-floor-number-line-thirteen-fractions-six-comparisons-v1";
 
     private static readonly Lazy<JsonElement> Source = new(Load);
 
