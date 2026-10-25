@@ -25157,31 +25157,31 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Notice and Wonder: Survey (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTIC_REVIEWED_FOR_TEACHER_AUTHORING"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: Create a Survey (10 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTIC_REVIEWED_FOR_TEACHER_AUTHORING"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Activity 2: Survey a Large Group (25 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTIC_REVIEWED_FOR_TEACHER_AUTHORING"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_SOURCE_SEMANTIC_REVIEWED_FOR_TEACHER_AUTHORING"
         },
         {
           "ordinal": 5,
           "sourceHeading": "Cool-down: Reflect on Collecting Data (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "RIGHTS_GATED_NOT_REPRODUCED"
         }
       ],
       "sourceVisualAltDescriptions": [
@@ -25190,7 +25190,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "survey-scaled-bar-graphs",
       "independentPractice": {
@@ -25204,21 +25204,22 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create a Survey with your teacher. Show the representation and explain how it meets the goal: You will use a survey to collect a data set with several categories.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Authentic school survey with up to 6 categories, no duplicate respondents, teams of 4, and data preserved for follow-on scaled graphs. Original blank table PDF and picture pixels unverified; no fabricated class results.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s survey a large group.",
-        "sourceLearningGoals": "Collect categorical data to create a data set with several categories.",
+        "sourceGoal": "Collect authentic categorical data for graphing.",
+        "sourceLearningGoals": "Draft a valid question and 1–6 choices, survey many unique students, record totals.",
         "teachingSteps": [
-          "Collect only authentic category responses using teacher-approved methods.",
-          "Choose a title, categories, consistent scale and accurate bar lengths.",
-          "Use the graph for addition or subtraction comparisons; justify answers."
+          "Study source science bar chart with teacher for notice-and-wonder.",
+          "Create in groups of four one survey question with up to six answer choices.",
+          "Plan question administration and a tally method that avoids repeat counts.",
+          "Survey a large group; preserve exact observed data for the next lesson."
         ],
-        "caution": "A visually plausible dataset is not evidence of authentic class responses.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Never replace observed responses with independent invented counts or claim source image pixel parity.",
+        "targetRichV2Field": "first-party source-specific teaching"
       },
       "sourceBasedCheck": {
         "prompt": "Design the original survey question with no more than six categorical answer options; explain how to avoid recording a student twice.",
@@ -25234,30 +25235,30 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L06-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Survey (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Survey the Class, Survey the School.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L06-SOURCE-01",
+          "sourceActivity": "Warm-up: Notice and Wonder: Survey",
+          "prompt": "Use the original science-topic bar graph with your teacher; discuss response categories and what you notice.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L06-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Create a Survey (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Survey the Class, Survey the School.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L06-SOURCE-02",
+          "sourceActivity": "Activity 1: Create a Survey",
+          "prompt": "In teams of four, create one real survey question and no more than six categories. Justify the category choices with the teacher.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L06-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Survey a Large Group (25 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Survey the Class, Survey the School.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L06-SOURCE-03",
+          "sourceActivity": "Activity 2: Survey a Large Group",
+          "prompt": "Organize a real large-group school survey, decide who asks and records, prevent double-counted respondents, then tabulate actual category totals for the next lesson.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L06-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L06-SOURCE-04",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Summarize findings and any surprising responses without replacing your actual class data; teacher checks tally.",
           "answerType": "teacher",
           "expected": null
         }

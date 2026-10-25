@@ -904,7 +904,7 @@
                 <p>The three original 2021 figures were inspected: first FIVE groups of three = 15, next SIX groups of three = 18, final SIX groups of FOUR = 24. In the original final drawing each group is a two-by-two mini-array. Explain how you see the equal groups.</p>
                 <div style="display:flex;flex-wrap:wrap;gap:15px;margin:10px 0" aria-label="Independently drawn equal-group warm-up representations">
                     @foreach(var model in new[]{(groups:5,each:3),(groups:6,each:3),(groups:6,each:4)}){
-                        <div><strong>@model.groups groups × @model.each = @(model.groups*model.each)</strong>
+                        <div><strong>@(model.groups) groups × @(model.each) = @(model.groups*model.each)</strong>
                             <div style="display:flex;flex-wrap:wrap;max-width:245px;gap:5px">
                                 @for(var group=0;group<model.groups;group++){
                                     <div style="@($"display:grid;grid-template-columns:repeat({(model.each==4?2:3)},12px);gap:2px;border:1px dashed #6f8295;padding:4px;margin-top:5px")" aria-hidden="true">
@@ -990,7 +990,7 @@
                 <p>Original 2021 source figures: 4 groups of 5 = 20, then 4 groups of 6 = 24, then 4 groups of 4 = 16. The original second image has FOUR clusters of SIX dots, not 'five groups of six' as its erroneous alt text says. These are independently authored grouped models with the correct mathematics.</p>
                 <div style="display:flex;gap:18px;flex-wrap:wrap;margin:12px 0">
                     @foreach(var model in new[]{(each:5,total:20),(each:6,total:24),(each:4,total:16)}){
-                        <div><strong>4 × @model.each = @model.total</strong>
+                        <div><strong>4 × @(model.each) = @(model.total)</strong>
                             <div style="display:flex;flex-wrap:wrap;max-width:205px;gap:8px;margin-top:7px"
                                  role="img" aria-label="@($"Four separate equal groups of {model.each} dots, total {model.total}")">
                                 @for(var group=0;group<4;group++){
@@ -1017,7 +1017,7 @@
                 <p>Original source rectangle 1 has eight one-meter intervals horizontally and four vertically: 8 m × 4 m = 32 m². Original rectangle 2 has FIVE internal ticks along the top, which means SIX intervals between the outer borders, and height 3 m: 6 m × 3 m = 18 m². These independent rectangles are proportioned according to the original row and column counts; the missing grid is imagined.</p>
                 <div style="display:flex;flex-wrap:wrap;gap:35px;margin:14px 0">
                     @foreach(var model in new[]{(width:8,height:4),(width:6,height:3)}){
-                        <div><strong>@model.width m × @model.height m = @(model.width*model.height) m²</strong>
+                        <div><strong>@(model.width) m × @(model.height) m = @(model.width*model.height) m²</strong>
                             <div style="@($"width:{model.width*23}px;height:{model.height*23}px;border:2px solid #477598;position:relative;margin:18px 5px 8px 0")"
                                  role="img" aria-label="@($"Independent outline showing a {model.width}-meter by {model.height}-meter rectangle, area {model.width*model.height} square meters, with top 1-meter divisions.")">
                                 <div style="position:absolute;left:0;right:0;top:-8px;display:flex">
@@ -1479,6 +1479,9 @@
         }
         @if(l.UnitNumber == 8 && l.LessonNumber == 5) {
             @await Html.PartialAsync("_Grade3Unit8Lesson5")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson6")
         }
         @if(l.SourceSubtasks.Count > 0) {
             <section class="panel" aria-label="Individual published source-aligned mathematical subtasks">

@@ -37,12 +37,12 @@
                 }
             }
             @if(Model.ShowDimensions && Model.LegOffset==0) {
-                <text x="@(45+Model.TopWidth*12)" y="20" text-anchor="middle">@Model.TopWidth @Model.Unit</text>
-                <text x="@(50+Model.TopWidth*24)" y="@(35+Model.TopHeight*12)">@Model.TopHeight @Model.Unit</text>
-                <text x="5" y="@(35+(Model.TopHeight+Model.LegHeight)*12)">@(Model.TopHeight+Model.LegHeight) @Model.Unit</text>
-                <text x="@(45+Model.LegWidth*12)" y="@(50+(Model.TopHeight+Model.LegHeight)*24)" text-anchor="middle">@Model.LegWidth @Model.Unit</text>
-                <text x="@(50+Model.LegWidth*24)" y="@(35+Model.TopHeight*24+Model.LegHeight*12)">@Model.LegHeight @Model.Unit</text>
-                <text x="@(45+Model.LegWidth*24+(Model.TopWidth-Model.LegWidth)*12)" y="@(22+Model.TopHeight*24)" text-anchor="middle">@(Model.TopWidth-Model.LegWidth) @Model.Unit</text>
+                @:<text x="@(45+Model.TopWidth*12)" y="20" text-anchor="middle">@Model.TopWidth @Model.Unit</text>
+                @:<text x="@(50+Model.TopWidth*24)" y="@(35+Model.TopHeight*12)">@Model.TopHeight @Model.Unit</text>
+                @:<text x="5" y="@(35+(Model.TopHeight+Model.LegHeight)*12)">@(Model.TopHeight+Model.LegHeight) @Model.Unit</text>
+                @:<text x="@(45+Model.LegWidth*12)" y="@(50+(Model.TopHeight+Model.LegHeight)*24)" text-anchor="middle">@Model.LegWidth @Model.Unit</text>
+                @:<text x="@(50+Model.LegWidth*24)" y="@(35+Model.TopHeight*24+Model.LegHeight*12)">@Model.LegHeight @Model.Unit</text>
+                @:<text x="@(45+Model.LegWidth*24+(Model.TopWidth-Model.LegWidth)*12)" y="@(22+Model.TopHeight*24)" text-anchor="middle">@(Model.TopWidth-Model.LegWidth) @Model.Unit</text>
             }
         </svg>
     </div><figcaption>

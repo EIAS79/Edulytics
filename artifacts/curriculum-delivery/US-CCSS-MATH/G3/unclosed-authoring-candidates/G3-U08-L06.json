@@ -11,16 +11,20 @@
   "originalTeacherHtml": "unit-8/lesson-6/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-6/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_SOURCE_PUBLIC_SURVEY_QUESTION_SIX_CHOICE_REAL_SCHOOL_COLLECTION_SOURCE_REVIEWED_IMAGE_GAP",
     "goals": "Collect categorical data to create a data set with several categories.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "93ce5d9b68179d176ffff5a9a8300c32ba3cac484970254b68033e745db8aa0a",
+    "sourcePreparationHtmlSHA256": "d34234d2a3a2b3998fb22dd8d9d55c297685040fad2ba99ebc7f8c746700222c",
+    "originalGraphPixelsInspected": false,
+    "originalSurveyMasterPdfInspected": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_SURVEY_RICHV2_GUARDED_MATERIALIZER_AND_RAZOR",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,20 +33,27 @@
     "existingSourceBodyHash": "11339d6e386a0d8cb03ae5790ab897333f755ebcef2bd2d01d0f7ad88b7ed9ef",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l06-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson6RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson6.cshtml",
+    "sourceSpecificVersion": "g3-u08-l06-2021-authentic-six-category-large-group-survey-data-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "AUTHENTIC_SURVEY_UP_TO_SIX_CATEGORIES_NO_DUPLICATES_TEACHER_GATE_TARGETED_TESTS_PASSED",
     "family": "survey-scaled-bar-graphs",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "integer",
     "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsExecuted": true,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Create a Survey with your teacher. Show the representation and explain how it meets the goal: Let’s survey a large group.",
-    "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data."
+    "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson6SourceAuditTests.cs",
+    "sourceItemCount": 4,
+    "sourceTeacherItems": 4
   },
   "sourceElements": [
     {
@@ -50,10 +61,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: Survey (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
       "claimedParity": false
     },
     {
@@ -61,10 +72,10 @@
       "sourceSection": "Activity 1: Create a Survey (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
       "claimedParity": false
     },
     {
@@ -72,10 +83,10 @@
       "sourceSection": "Activity 2: Survey a Large Group (25 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
       "claimedParity": false
     },
     {
@@ -83,10 +94,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_2021_HTML_SEMANTICS_AUTHORING_TEACHER_LED",
+      "grading": "TEACHER_AUTHENTIC_SURVEY",
       "claimedParity": false
     },
     {
@@ -96,26 +107,31 @@
       "originalReference": "unit-8/lesson-6/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "RIGHTS_RESTRICTED_NOT_READ",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
   ],
   "images": [
     {
-      "id": "G3-U08-L06-IMAGE-01",
-      "observedAltText": "Blank Survey Results Table.",
-      "originalReference": "unit-8/lesson-6/lesson.html",
-      "assetInspected": false,
-      "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "id": "G3-U08-L06-IMAGE-1",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/1hqf1xkf8h5h8706hdwzbpolce6r",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "SOURCE_URL_REVIEW_REQUIRED"
+    },
+    {
+      "id": "G3-U08-L06-IMAGE-2",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/55mtrosm16qr1ojtbxqe3w41bzq6",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "SOURCE_URL_REVIEW_REQUIRED"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
-    "imageDescriptions": 1,
-    "fullyVerified": 0
+    "imageDescriptions": 2,
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Fictional data: 20 students chose club A and 15 club B. How many MORE chose the larger club?",
@@ -123,20 +139,20 @@
     "expected": "5"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Blank survey blackline master and standalone pupil PDF not inspected; graphic 2 pixel images not validated.",
+    "Real school survey itself cannot be simulated or numerically completed without authentic responses.",
+    "Publisher gated Reflect on Collecting Data Cool-down not inspected.",
+    "Teacher must verify participant uniqueness, survey choices, counts, consent/privacy and next-lesson data use.",
+    "Local .NET compilation and three targeted xUnit tests passed; full Stage D authenticated UAT, academic approval and source visual parity are still pending."
   ],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "LOCAL_DOTNET_10_0_200_BUILD_AND_THREE_TARGETED_XUNIT_TESTS_PASSED_GITHUB_CI_PENDING",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-134-2021-authentic-large-group-six-category-survey-evidence-20261025.json"
 }

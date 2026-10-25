@@ -50,7 +50,7 @@
             <title>Independent missing-side figure</title>
             <polygon points="@coordinates" fill="#fff" stroke="#183d52" stroke-width="2" />
             @foreach(var label in labels) {
-                <text x="@label.X" y="@label.Y" text-anchor="middle" font-size="13">@label.Text</text>
+                @:<text x="@label.X" y="@label.Y" text-anchor="middle" font-size="13">@label.Text</text>
             }
         </svg>
     </div><figcaption>Use the supplied side labels and opposite-side relationships. Measuring the on-screen picture is not the method.</figcaption></figure>
