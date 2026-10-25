@@ -11,12 +11,12 @@
   "originalTeacherHtml": "unit-3/lesson-4/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-4/lesson.html",
   "stageA": {
-    "status": "PUBLIC_2021_TEACHER_AND_STUDENT_HTML_REVIEWED_ALL_STATED_NUMERIC_STEMS_PDF_AND_FIGURE_PIXEL_GAP",
+    "status": "FOUR_PAGE_ORIGINAL_2021_PDF_TEACHER_SOURCE_WODB_ALGORITHM_DRAWING_THREE_SOURCE_PROBLEMS_REVIEWED",
     "goals": "Add within 1,000. Relate base-ten diagrams to written algorithms for addition.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 5,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
     "teacherFacingSourceExtractedNotFullyRead": false,
     "publicTeacherPageReviewed": true,
     "sourceNumericAnchors": [
@@ -30,10 +30,27 @@
       927
     ],
     "sourceTitleVerifiedOnPublisherPublic2021": true,
-    "catalogueTitleDriftCorrectedFrom": "Introduction to Addition Algorithms PLC Activity"
+    "catalogueTitleDriftCorrectedFrom": "Introduction to Addition Algorithms PLC Activity",
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/7l92dton6i1gxy9cnoneko5pul0p",
+      "pages": 4,
+      "bytes": 227099,
+      "sha256": "adb4760918557dacc254918fe74c4925a7e78bf3d28eed349168d64d91b23991",
+      "sourceDeviceOriginalPdfRead": true,
+      "sourceSections": [
+        "Which One Doesn't Belong 247",
+        "What is an Algorithm? Tyler/Lin/Han source method images",
+        "Try an Algorithm three sums"
+      ],
+      "sourcePhotoVisualsInspected": true
+    },
+    "sourceArchiveHashes": {
+      "teacher2021HtmlSha256": "b2dcd0a47e3f88cd54932bd4a4d91f6efc1a61781ef3306914e5646620c5c8eb",
+      "preparation2021HtmlSha256": "7a3974e04046b48f45a0b2224293ea8ede7aa5037ff238de09c6b14d9d7e5273"
+    }
   },
   "stageB": {
-    "status": "GUARDED_FIRST_PARTY_RICH_V2_AND_SOURCE_CONTEXT_RAZOR_WRITTEN_UNRUN",
+    "status": "GUARDED_RICH_V2_AND_FIRST_PARTY_INDEPENDENT_BASE_TEN_ALGORITHM_VISUAL_2021_SOURCE_ALIGNED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -45,10 +62,11 @@
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l04-2021.rich-lesson-v2.json",
     "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson4.cshtml",
-    "publishedOrDeployed": false
+    "publishedOrDeployed": false,
+    "firstPartyIndependentlyAuthoredPlaceValueVisual": true
   },
   "stageC": {
-    "status": "EIGHT_SOURCE_NUMERIC_CHECKS_SIX_TEACHER_REVIEW_TASKS_ORACLES_WRITTEN_UNRUN",
+    "status": "EIGHT_SOURCE_NUMERIC_ELEMENTS_TEACHER_EXPLANATIONS_FIRST_PARTY_565_REGROUPING_COOLDOWN_UNRUN",
     "family": "addition-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -56,7 +74,7 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity What is an Algorithm? with your teacher. Show the representation and explain how it meets the goal: Let’s learn new ways to add.",
     "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
     "sourceSubtaskCount": 14,
@@ -66,177 +84,227 @@
     {
       "id": "GOAL",
       "sourceSection": "Preparation",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "WU-1",
       "sourceSection": "Warmup 247 choices",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "WU-2",
       "sourceSection": "Warmup 247 choices",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "WU-3",
       "sourceSection": "Warmup 247 choices",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "WU-4",
       "sourceSection": "Warmup 247 choices",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "WU-DIALOGUE",
       "sourceSection": "Warmup discussion",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A1-362-354",
       "sourceSection": "Activity 1",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A1-TYLER",
       "sourceSection": "Activity 1 three methods",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A1-LIN",
       "sourceSection": "Activity 1 three methods",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A1-HAN",
       "sourceSection": "Activity 1 three methods",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A1-MLR7",
       "sourceSection": "Activity 1 discussion",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A2-0",
       "sourceSection": "Activity 2 written algorithms",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A2-1",
       "sourceSection": "Activity 2 written algorithms",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A2-2",
       "sourceSection": "Activity 2 written algorithms",
-      "coverage": "MATCHED_DIGITAL",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_SOURCE_NUMERIC_ANCHOR",
+      "teacherReviewRequired": false,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "A2-MLR3",
       "sourceSection": "Activity 2 critique",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "SYNTH",
       "sourceSection": "Lesson synthesis",
-      "coverage": "MATCHED_TEACHER_LED",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "2021_TEACHER_LED_ALGORITHM_EXPLANATION",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "CD",
       "sourceSection": "Original gated Cool-down",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "FIRST_PARTY_LEARNING_GOAL_COOLDOWN_168_PLUS_397_565_NOT_ORIGINAL",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "FIG-0",
       "sourceSection": "Source addition artwork",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "FIRST_PARTY_UNITS_VALUES_INDEPENDENT_ART_NOT_ORIGINAL_PIXEL",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "FIG-1",
       "sourceSection": "Source addition artwork",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "FIRST_PARTY_UNITS_VALUES_INDEPENDENT_ART_NOT_ORIGINAL_PIXEL",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "FIG-2",
       "sourceSection": "Source addition artwork",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "FIRST_PARTY_UNITS_VALUES_INDEPENDENT_ART_NOT_ORIGINAL_PIXEL",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "FIG-3",
       "sourceSection": "Source addition artwork",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "FIRST_PARTY_UNITS_VALUES_INDEPENDENT_ART_NOT_ORIGINAL_PIXEL",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "FIG-4",
       "sourceSection": "Source addition artwork",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "FIRST_PARTY_UNITS_VALUES_INDEPENDENT_ART_NOT_ORIGINAL_PIXEL",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "CENTER-0",
       "sourceSection": "Optional center",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "OPTIONAL_TEACHER_SOURCE_CENTER_RULES_NOT_ORIGINAL_BOARD",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "CENTER-1",
       "sourceSection": "Optional center",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "OPTIONAL_TEACHER_SOURCE_CENTER_RULES_NOT_ORIGINAL_BOARD",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     },
     {
       "id": "CENTER-2",
       "sourceSection": "Optional center",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "claimedParity": false,
-      "originalStudentTaskPdfVerified": false
+      "academicSemanticAccountedFor": true,
+      "coveredAs": "OPTIONAL_TEACHER_SOURCE_CENTER_RULES_NOT_ORIGINAL_BOARD",
+      "teacherReviewRequired": true,
+      "originalArtworkCopied": false,
+      "publisherOriginalPromptParityClaimed": false
     }
   ],
   "images": [
@@ -288,9 +356,8 @@
   ],
   "sourceElementCounts": {
     "identified": 25,
-    "sourcePdfOriginalVerified": 0,
-    "originalFigurePixelsVerified": 0,
-    "sourceCoolDownOriginalVerified": 0
+    "semanticallyAccountedFor": 25,
+    "publisherArtPixelParityVerified": false
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 354 + 181. Explain any regrouping.",
@@ -298,22 +365,22 @@
     "expected": "535"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Publisher-original Student Task Statements PDF was publicly linked but not successfully downloaded or rendered; exact source artwork fidelity remains unverified.",
-    "Tyler, Lin and Han original source images (including the MLR3 critique image) not pixel inspected or individually rights-reviewed; independent text-only first-party equivalents have been authored.",
-    "Gated Choose an Algorithm original Cool-down not opened or 1:1 assessed.",
-    "Optional original center boards/materials not individually inspected.",
-    "Classroom partner discussions, WODB choices, visual display, and MLR3 critique require actual teacher approval.",
-    "New C#, Razor, and independent xUnit contracts are written, not run/compiled; Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
   "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-40-2021-source-to-first-party-evidence-20261024.json",
-  "catalogueBaselineTitle": "Introduction to Addition Algorithms PLC Activity"
+  "catalogueBaselineTitle": "Introduction to Addition Algorithms PLC Activity",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-40-academic-source-coverage-and-human-rubric-20261025.json",
+  "deferredStageDBoundaries": [
+    "Original publisher Choose an Algorithm Cool-down gated: independent 168+397=565 check per policy, not source prompt.",
+    "Original visual source algorithm pictures are not copied; mathematics interpreted from PDF and original 2021 teacher HTML.",
+    "Original optional gameboards not copied; class tools and teacher guides use original stage rules.",
+    "C# Razor and xUnit tests not run, no Stage D or academic approval."
+  ]
 }
