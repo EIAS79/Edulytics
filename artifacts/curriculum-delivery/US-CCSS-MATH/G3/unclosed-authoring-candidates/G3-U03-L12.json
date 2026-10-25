@@ -11,16 +11,27 @@
   "originalTeacherHtml": "unit-3/lesson-12/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-12/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SIX_PAGE_2021_PDF_FOUR_WARMUP_PRODUCTS_FIVE_SUBTRACTIONS_SPINNER_GAME_AND_SUMMARY_REVIEWED",
     "goals": "Subtract within 1,000 using algorithms or other strategies based on the numbers in the problem.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 7,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/bnp9nkpy2o5m07hz76za9087b46p",
+      "pages": 6,
+      "bytes": 121254,
+      "sha256": "4a149a4ef1aa17e99f4b3867c3bd192a185267cd76cc59132de81b2465c4d8e5",
+      "allSixOriginalPagesRead": true,
+      "originalGameboardPages4And5Read": true,
+      "sourceArtworkNotReused": true
+    },
+    "sourceTeacherHtmlSha256": "dd6ae30dfd1da091acbc1385e45548adc435a812a0608d40921870dda36e198b",
+    "sourcePreparationHtmlSha256": "85cdd2d6b9f56d1e458f8ec6de2a74a44c6e6d6f7a52932c115e5521fe2c66cb"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICH_V2_STRATEGIC_SUBTRACTION_FIRST_PARTY_SPINNER_RECORDING_AND_TEACHER_RUBRIC",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +40,12 @@
     "existingSourceBodyHash": "6e448577267e84f896692f82c3cd9c88d5ec66886ad1410a29d4a4f5f27fc0af",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l12-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson12.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TEN_SOURCE_MATH_ORACLES_SPINNER_PAIR_RUBRIC_GOAL_EQUIVALENT_88_COOLDOWN_UNRUN_TESTS",
     "family": "subtraction-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,76 +53,180 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity How Would You Subtract? with your teacher. Show the representation and explain how it meets the goal: Let’s consider when to use algorithms and when to use other strategies to subtract.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 19,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson12SubtractStrategicallySourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L12-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: Threes (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "GOAL",
+      "section": "Teacher source 2021 lesson goal",
+      "mode": "ACADEMIC_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L12-HEADING-02",
-      "sourceSection": "Activity 1: How Would You Subtract? (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WU-1",
+      "section": "Warm-up Number Talk",
+      "mode": "ORIGINAL_PDF_NUMERIC_12",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L12-HEADING-03",
-      "sourceSection": "Activity 2: Greatest Difference, Smallest Difference (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WU-2",
+      "section": "Warm-up Number Talk",
+      "mode": "ORIGINAL_PDF_NUMERIC_18",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L12-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WU-3",
+      "section": "Warm-up Number Talk",
+      "mode": "ORIGINAL_PDF_NUMERIC_14",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L12-HEADING-05",
-      "sourceSection": "Cool-down: An Algorithm or Another Strategy? (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WU-4",
+      "section": "Warm-up Number Talk",
+      "mode": "ORIGINAL_PDF_NUMERIC_21",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L12-HEADING-06",
-      "sourceSection": "Student Section Summary",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-12/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "A1-1",
+      "section": "How Would You Subtract?",
+      "mode": "ORIGINAL_PDF_NUMERIC_122",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-2",
+      "section": "How Would You Subtract?",
+      "mode": "ORIGINAL_PDF_NUMERIC_192",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-3",
+      "section": "How Would You Subtract?",
+      "mode": "ORIGINAL_PDF_NUMERIC_639",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-4",
+      "section": "How Would You Subtract?",
+      "mode": "ORIGINAL_PDF_NUMERIC_122",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-5",
+      "section": "How Would You Subtract?",
+      "mode": "ORIGINAL_PDF_NUMERIC_88",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "GAME-EXAMPLE",
+      "section": "Greatest Difference, Smallest Difference synthesis",
+      "mode": "ORIGINAL_PDF_NUMERIC_203",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "WU-RELATE",
+      "section": "Warm-up Number Talk",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-STRATEGIES",
+      "section": "How Would You Subtract?",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-PARTNERS",
+      "section": "How Would You Subtract?",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "GAME-SETUP",
+      "section": "Greatest Difference, Smallest Difference",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "GAME-DIFF",
+      "section": "Greatest Difference, Smallest Difference",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "GAME-ORIGINAL",
+      "section": "Greatest Difference, Smallest Difference",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "SYNTH",
+      "section": "Lesson synthesis",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "SECTION",
+      "section": "Student Section Summary",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "CD",
+      "section": "Original publisher Cool-down",
+      "mode": "TEACHER_LED_SOURCE_SEMANTIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "GAME-PDF-P4",
+      "section": "Original source game p4",
+      "mode": "FIRST_PARTY_DIGIT_PLACEMENT_BLANK_RECORDING",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "GAME-PDF-P5",
+      "section": "Original source game p5",
+      "mode": "FIRST_PARTY_SECOND_ROUND_BLANK_RECORDING",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "SPINNER",
+      "section": "Original publisher paperclip spinner",
+      "mode": "TEACHER_SUPPLIED_SOURCE_MATERIAL_NOT_COPIED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "SECTION-SUMMARY",
+      "section": "2021 source p6 section summary",
+      "mode": "FIRST_PARTY_SUBTRACTION_STRATEGY_REFLECTION",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     }
   ],
   "images": [
@@ -178,9 +295,8 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 6,
-    "imageDescriptions": 7,
-    "fullyVerified": 0
+    "identified": 24,
+    "semanticAuthoringVerified": 24
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 407 − 176. Show regrouping or another strategy.",
@@ -188,20 +304,21 @@
     "expected": "231"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-48-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-48-academic-source-coverage-and-human-rubric-20261025.json",
+  "publisherArtParityPercent": null,
+  "deferredStageD": [
+    "2021 publisher original spinner and blank gameboards remain external, and the first-party table is independent accessible structure, not an artwork copy.",
+    "Original publisher gated Cool-down unread; independent 505−417=88 used only for goal-equivalent assessment.",
+    "Tests and academic signoff not run; Stage D deferred."
+  ]
 }

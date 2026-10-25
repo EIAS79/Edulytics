@@ -8216,11 +8216,11 @@
         "Subtraction. Five-hundred thirty-eight minus one-hundred fifty-six equals eighty-two.",
         "Subtraction. Step four. Five-hundred thirty-eight minus one-hundred fifty-six equals three-hundred eighty-two."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
         "prompt": "Solve 451 − 329 by a sensible strategy or algorithm.",
@@ -8233,99 +8233,173 @@
         "expected": "88"
       },
       "openTeacherTask": "Work through the original lesson's activity How Would You Subtract? with your teacher. Show the representation and explain how it meets the goal: You will consider when you might use algorithms or other strategies to subtract.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 5 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "2021 six-page PDF inspected, including the original two-player digit placement and difference game boxes. Number Talk is multiplication, four products12/18/14/21; five subtraction answers122/192/639/122/88. Partner/spinner game, repeated rounds and strategy choice require teacher scoring. Independent 505−417=88 Cool-down only, source restricted. Tests unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s consider when to use algorithms and when to use other strategies to subtract.",
+        "sourceGoal": "Let's consider when to use algorithms and when to use other strategies to subtract.",
         "sourceLearningGoals": "Subtract within 1,000 using algorithms or other strategies based on the numbers in the problem.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Keep source Number Talk products of threes and twos, distinct from subtraction.",
+          "Have pupils calculate five original within-1000 differences by any explained valid method.",
+          "Play source Greatest Difference, Smallest Difference with teacher-supplied paperclip spinner and first-party recording boxes.",
+          "Compare 601−398=203 by counting on, and ask pupils to explain algorithm versus compensation choice."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider when to use algorithms and when to use other strategies to subtract.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not invent the publisher original spinner faces, claim source artwork reproduction or grade group participation numerically."
       },
       "sourceBasedCheck": {
-        "prompt": "The original source contains 600 − 478. Find the difference.",
+        "prompt": "The 2021 source has 600−478. Find the difference.",
         "answerType": "integer",
         "expected": "122"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-12/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "OFFICIAL_2021_SIX_PAGE_PDF_AND_ORIGINAL_TEACHER_HTML_MATH_AND_GAME_REVIEWED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S2-NUM1",
-          "sourceActivity": "Activity 1: How Would You Subtract? (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 451 - 329. Show or explain a method to your teacher.",
+          "id": "G3-U03-L12-WU-1",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 2 × 6 and explain a strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U03-L12-WU-2",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 3 × 6 and explain a strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U03-L12-WU-3",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 2 × 7 and explain a strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "14"
+        },
+        {
+          "id": "G3-U03-L12-WU-4",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Calculate 3 × 7 and explain a strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "21"
+        },
+        {
+          "id": "G3-U03-L12-A1-1",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Calculate 451 − 329 and explain a strategy to your teacher.",
           "answerType": "integer",
           "expected": "122"
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S2-NUM2",
-          "sourceActivity": "Activity 1: How Would You Subtract? (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 382 - 190. Show or explain a method to your teacher.",
+          "id": "G3-U03-L12-A1-2",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Calculate 382 − 190 and explain a strategy to your teacher.",
           "answerType": "integer",
           "expected": "192"
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S2-NUM3",
-          "sourceActivity": "Activity 1: How Would You Subtract? (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 924 - 285. Show or explain a method to your teacher.",
+          "id": "G3-U03-L12-A1-3",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Calculate 924 − 285 and explain a strategy to your teacher.",
           "answerType": "integer",
           "expected": "639"
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S2-NUM4",
-          "sourceActivity": "Activity 1: How Would You Subtract? (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 600 - 478. Show or explain a method to your teacher.",
+          "id": "G3-U03-L12-A1-4",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Calculate 600 − 478 and explain a strategy to your teacher.",
           "answerType": "integer",
           "expected": "122"
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S2-NUM5",
-          "sourceActivity": "Activity 1: How Would You Subtract? (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 505 - 417. Show or explain a method to your teacher.",
+          "id": "G3-U03-L12-A1-5",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Calculate 505 − 417 and explain a strategy to your teacher.",
           "answerType": "integer",
           "expected": "88"
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Threes (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Subtract Strategically.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L12-GAME-EXAMPLE",
+          "sourceActivity": "Greatest Difference, Smallest Difference synthesis",
+          "prompt": "Calculate 601 − 398 and explain a strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "203"
+        },
+        {
+          "id": "G3-U03-L12-WU-RELATE",
+          "sourceActivity": "Warm-up Number Talk",
+          "prompt": "Explain how knowing 2 groups of 6 helps find 3 groups of 6, and how 2 groups of 7 helps find 3 groups of 7.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: How Would You Subtract? (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Subtract Strategically.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L12-A1-STRATEGIES",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Compare a chosen written subtraction algorithm against counting-on or compensation; justify why your method is efficient for 382−190 and 600−478.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Greatest Difference, Smallest Difference (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Subtract Strategically.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L12-A1-PARTNERS",
+          "sourceActivity": "How Would You Subtract?",
+          "prompt": "Work independently on the five source differences then explain one to peers using a similar method and another using a different method (MLR8).",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L12-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L12-GAME-SETUP",
+          "sourceActivity": "Greatest Difference, Smallest Difference",
+          "prompt": "Choose greatest or smallest difference; with a partner use a real paperclip spinner to fill two three-digit numbers, marking each obtained digit in the hundreds, tens or ones place before subtraction.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L12-GAME-DIFF",
+          "sourceActivity": "Greatest Difference, Smallest Difference",
+          "prompt": "Subtract the two built numbers accurately, compare partners' differences using <, > or =, and play another round. Teacher checks each chosen place, calculation and comparison.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L12-GAME-ORIGINAL",
+          "sourceActivity": "Greatest Difference, Smallest Difference",
+          "prompt": "Teacher confirms source original spinner and blank two-player recording sheet; first-party boxes only, source gameboard not copied.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L12-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain when an algorithm is helpful and when another flexible strategy is better for the specific two numbers.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L12-SECTION",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Explain how the subtraction algorithm steps relate to place-value trades, and that valid alternative strategies may be chosen.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L12-CD",
+          "sourceActivity": "Original publisher Cool-down",
+          "prompt": "Source publisher question is gated; independent first-party 505−417=88 replaces it only at shared learning goal level, not word-for-word.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceOriginalStudentTaskPdfSha256": "4a149a4ef1aa17e99f4b3867c3bd192a185267cd76cc59132de81b2465c4d8e5",
+      "sourceOriginalStudentTaskPdfPages": 6,
+      "sourceOriginalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/bnp9nkpy2o5m07hz76za9087b46p",
+      "sourceToFirstPartyParityScope": "STATIC_SEMANTIC_SOURCE_FIRST_PARTY_NOT_PUBLISHER_IMAGE"
     },
     {
       "ordinal": 49,
