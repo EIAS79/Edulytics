@@ -6804,11 +6804,11 @@
         "Addition. Three-hundred sixty-five plus one-hundred eighty-two. Step 2 equals 47.",
         "Addition. Step 3. Three-hundred sixty-five plus one-hundred eighty-two equals five-hundred forty-seven."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "addition-within-1000",
       "independentPractice": {
         "prompt": "Compute 365 + 182 and explain the fourteen tens before regrouping.",
@@ -6821,10 +6821,10 @@
         "expected": "892"
       },
       "openTeacherTask": "Work through the original lesson's activity A New Addition Algorithm with your teacher. Show the representation and explain how it meets the goal: You will use an addition algorithm that records a single digit for the sum for each place value position and a 10 or 100 for a newly composed ten or hundred.",
-      "teacherReviewNote": "Warmup 100+99=199,100+101=201; Han versus Elena 367+231=598; composed 14 tens in 365+182=547; four source sums 526,892,552,901; teacher reviews representation, carries, open notices and companion discussion; original images, gated Cool-down and PDF not verified.",
+      "teacherReviewNote": "Warmup 100+99=199,100+101=201; Han versus Elena 367+231=598; composed 14 tens in 365+182=547; four source sums 526,892,552,901; teacher reviews representation, carries, open notices and companion discussion; original images, gated Cool-down and PDF not verified. Original 2021 four-page source PDF and local archived teacher lesson checked; all 8 numeric anchors, teacher reviewed Han/Elena and independent 892 cool-down, original publisher art/cool-down not copied.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
         "sourceGoal": "Let's learn another algorithm to add.",
@@ -6949,7 +6949,11 @@
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceOriginalStudentTaskPdfPageCount": 4,
+      "sourceOriginalStudentTaskPdfSha256": "bd856c68caa700fb55bc83f55554cb6d75c8634db720f2c1d9410d7662b2293b",
+      "sourceOriginalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/r96qq5u8rid8w5sedvv239d9di54",
+      "sourceToFirstPartyParityScope": "STATIC_SOURCE_MATH_SEMANTICS_NO_PUBLISHER_ART_PIXEL_PARITY"
     },
     {
       "ordinal": 42,
