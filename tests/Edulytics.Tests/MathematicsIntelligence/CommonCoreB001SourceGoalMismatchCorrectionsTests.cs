@@ -57,7 +57,7 @@ public sealed class CommonCoreB001SourceGoalMismatchCorrectionsTests
             Assert.Equal("CC BY 4.0", t.Lesson.SourceRights);
             Assert.NotEqual(CommonCoreB001SourceGoalMismatchCorrections.CorrectedContentVersion,
                 CanonicalLessonContentMaterializer.GetEffectiveContentVersion(t.Doc, t.Lesson));
-            Assert.Contains("Mathematical learning focus:", t.En.KeyConceptsAndRules);
+            Assert.Contains("Definition:", t.En.KeyConceptsAndRules);
             Assert.Contains("Step 1:", t.En.StepByStepSolutions);
             Assert.NotEmpty(t.En.WorkedExamples);
             Assert.DoesNotContain("Measurement units must be equal",
