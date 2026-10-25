@@ -14751,9 +14751,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-place-value",
+      "firstPartyFamily": "larger-than-twenty-multiplication-four-partitions",
       "independentPractice": {
         "prompt": "Use tens and ones to find 3 × 28.",
         "answerType": "integer",
@@ -14765,21 +14765,22 @@
         "expected": "74"
       },
       "openTeacherTask": "Work through the original lesson's activity $4 \\times 23$, Represented with your teacher. Show the representation and explain how it meets the goal: You will multiply within 100, where one factor is greater than 20.",
-      "teacherReviewNote": "Source 4 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "L73 2021 source 7 visual files read, including base-ten92, gridded4×23, Diego A-D splits, optional game photo. 16 scalar checks,12 human tasks. Tests not run.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s multiply numbers that are larger than 20.",
-        "sourceLearningGoals": "Multiply within 100, where one factor is greater than 20. Use properties based on place value and properties of operations to multiply.",
+        "sourceGoal": "Use models and distributive property to multiply numbers greater than20.",
+        "sourceLearningGoals": "Calculate one-digit×two-digit products to100 and explain place-value partitions.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up original3×10=30,3×20=60,3×50=150,3×25=75. Use mental relation.",
+          "Source Clare base-ten8 tens and12 ones=92; Andre 4×23 grid same92.",
+          "Diego four source equal-area partitions:12+11,15+8,10+13,20+3; D efficient tens/ones but all mathematically valid.",
+          "Source3×28=84. Mai2×37=2×30+2×7=74. Other products3×32=96,2×43=86,4×22=88,3×29=87.",
+          "Original Close to100 multiplication game is OPTIONAL, depends on student card draws: fixed numeric oracle inappropriate."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s multiply numbers that are larger than 20.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Seven original public illustrations visually inspected. Game illustration and publisher assets not copied, source Cool-down gated, academic and runtime Stage D deferred."
       },
       "sourceBasedCheck": {
         "prompt": "The source diagrams model 4 × 23. Find the product.",
@@ -14795,37 +14796,198 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L16-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Three Times Some Numbers (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Multiply Numbers Larger than 20.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L16-WU-3X10",
+          "sourceActivity": "Number Talk: Three Times Some Numbers",
+          "prompt": "Original 2021 source 3×10; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U04-L16-WU-3X20",
+          "sourceActivity": "Number Talk: Three Times Some Numbers",
+          "prompt": "Original 2021 source 3×20; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U04-L16-WU-3X50",
+          "sourceActivity": "Number Talk: Three Times Some Numbers",
+          "prompt": "Original 2021 source 3×50; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "150"
+        },
+        {
+          "id": "G3-U04-L16-WU-3X25",
+          "sourceActivity": "Number Talk: Three Times Some Numbers",
+          "prompt": "Original 2021 source 3×25; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "75"
+        },
+        {
+          "id": "G3-U04-L16-A1-4X23",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original 2021 source 4×23; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "92"
+        },
+        {
+          "id": "G3-U04-L16-A1-DIEGO-A",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original 2021 source 4×(12+11); find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "92"
+        },
+        {
+          "id": "G3-U04-L16-A1-DIEGO-B",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original 2021 source 4×(15+8); find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "92"
+        },
+        {
+          "id": "G3-U04-L16-A1-DIEGO-C",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original 2021 source 4×(10+13); find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "92"
+        },
+        {
+          "id": "G3-U04-L16-A1-DIEGO-D",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original 2021 source 4×(20+3); find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "92"
+        },
+        {
+          "id": "G3-U04-L16-A1-3X28",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original 2021 source 3×28; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "84"
+        },
+        {
+          "id": "G3-U04-L16-A2-2X37",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Original 2021 source 2×37; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "74"
+        },
+        {
+          "id": "G3-U04-L16-A2-3X32",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Original 2021 source 3×32; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "96"
+        },
+        {
+          "id": "G3-U04-L16-A2-2X43",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Original 2021 source 2×43; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "86"
+        },
+        {
+          "id": "G3-U04-L16-A2-4X22",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Original 2021 source 4×22; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "88"
+        },
+        {
+          "id": "G3-U04-L16-A2-3X29",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Original 2021 source 3×29; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "87"
+        },
+        {
+          "id": "G3-U04-L16-SYN-3X24",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original 2021 source 3×24; find the value and explain grouping.",
+          "answerType": "integer",
+          "expected": "72"
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-WU-NUMBER-TALK",
+          "sourceActivity": "Number Talk: Three Times Some Numbers",
+          "prompt": "Show how 3×20=60 helps 3×25=75, or half of3×50=150; mental reasoning is source priority.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L16-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: $4 \\times 23$, Represented (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Multiply Numbers Larger than 20.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L16-TEACHER-A1-CLARE",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original Clare base-ten picture has eight tens and twelve ones=80+12=92; regroup12 ones as one ten and2 ones.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L16-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Some Fine Products (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Multiply Numbers Larger than 20.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L16-TEACHER-A1-ANDRE",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Original Andre source gridded4×23 rectangle, groups of20 and3 visible, total92.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L16-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: Play Close to 100, Multiplication [OPTIONAL] (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “Multiply Numbers Larger than 20.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L16-TEACHER-A1-FOUR-PARTITIONS",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Diego source four partition images show widths12+11,15+8,10+13,20+3; every product4×23=92. Explain each.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L16-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L16-TEACHER-A1-D-PREFERRED",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Explain why source diagram D20+3 is usually more efficient using tens/ones; others are valid and are not marked incorrect.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-A1-3X28-MODEL",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Show3×28=3×20+3×8=60+24=84 in an independently drawn model.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-A2-MAI",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Original Mai begins 2×37 by writing2×30=60. Complete with2×7=14 and60+14=74.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-A2-EXPLAIN",
+          "sourceActivity": "Some Fine Products",
+          "prompt": "Explain each source product3×32=96,2×43=86,4×22=88,3×29=87 through place-value models.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-A3-OPTIONAL-GAME",
+          "sourceActivity": "Play Close to 100, Multiplication [OPTIONAL]",
+          "prompt": "Source Activity3 Close to100 is explicitly OPTIONAL. Players draw four digit cards and choose two digits to create a product near100, 5 rounds; game1 teen-factor, game2 over20. No predetermined source card values.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-A3-NO-FAKE-ORACLE",
+          "sourceActivity": "Play Close to 100, Multiplication [OPTIONAL]",
+          "prompt": "Game result depends on random student cards and opponent; do not assign machine-graded fixed winner or numeric answer.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-COOLDOWN",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Publisher Multiply Numbers Greater than20 Cool-down gated; independent Edulytics assessment not source equivalent.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L16-TEACHER-SYNTHESIS",
+          "sourceActivity": "4 × 23, Represented",
+          "prompt": "Use source examples to explain place value, grid vs ungridded representations and associative/double strategies.",
           "answerType": "teacher",
           "expected": null
         }
