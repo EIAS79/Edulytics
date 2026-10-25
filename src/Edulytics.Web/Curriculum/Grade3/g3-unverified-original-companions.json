@@ -9977,78 +9977,163 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "two-step-add-subtract",
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
+      "firstPartyFamily": "word-problems-representations",
       "independentPractice": {
-        "prompt": "A group starts with 225 markers, gets 60 more, then uses 35. How many are left?",
-        "answerType": "integer",
-        "expected": "250"
-      },
-      "originalEdulyticsCoolDown": {
-        "prompt": "A class begins with 180 pencils, adds 40, and gives away 65. What is left?",
-        "answerType": "integer",
-        "expected": "155"
-      },
-      "openTeacherTask": "Work through the original lesson's activity Card Sort: Situations, Equations, and Diagrams with your teacher. Show the representation and explain how it meets the goal: You will relate diagrams and equations to two-step word problems.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
-      "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
-      "independentTeachingGuidance": {
-        "sourceGoal": "Let’s connect diagrams and equations to situations.",
-        "sourceLearningGoals": "Relate diagrams and equations to two-step word problems.",
-        "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
-        ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s connect diagrams and equations to situations.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      },
-      "sourceBasedCheck": {
-        "prompt": "Clare starts with 225 beads, receives 48, and uses 70. How many remain?",
+        "prompt": "Clare has 225 beads, receives 48, then uses 70. How many remain?",
         "answerType": "integer",
         "expected": "203"
       },
+      "originalEdulyticsCoolDown": {
+        "prompt": "Han starts with 225 beads and uses 6 groups of 10. How many beads remain?",
+        "answerType": "integer",
+        "expected": "165"
+      },
+      "openTeacherTask": "Work through the original lesson's activity Card Sort: Situations, Equations, and Diagrams with your teacher. Show the representation and explain how it meets the goal: You will relate diagrams and equations to two-step word problems.",
+      "teacherReviewNote": "Source three student sections, five source numeric families and original image-only cards B,H,K separately teacher-gated. Nine scalar anchors, seven teacher gallery/card activities; source publisher artwork not copied.",
+      "firstPartyTasksAreNotOriginalPublisherPrompts": true,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": false,
+      "independentTeachingGuidance": {
+        "sourceGoal": "Relate diagrams and equations to two-step word problems.",
+        "sourceLearningGoals": "Relate diagrams and equations to two-step word problems.",
+        "teachingSteps": [
+          "Notice and wonder diagrams for part-whole and equal-groups relationships.",
+          "Sort source A–L story/equation/diagram cards. Verify image-only cards B,H,K with original teacher material.",
+          "Explain A/F=203,C/J=165,D/L=295,E/G=285,I=332.",
+          "Complete a group poster, visit a partner group's poster, comment on reasonableness using actual mathematics."
+        ],
+        "caution": "Image-only source letter-card matches are not inferred and cannot auto-grade; original publisher Cool-down unavailable."
+      },
+      "sourceBasedCheck": {
+        "prompt": "Diego starts with225 baseball cards, gets35 then72. What is the new total?",
+        "answerType": "integer",
+        "expected": "332"
+      },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-18/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "SOURCE_TEXT_CARD_I",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L18-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Diagrams (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Diagrams and Equations for Word Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L18-CARD-A",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card A (Clare's beads), calculate the total 225 + 48 − 70. Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "203"
+        },
+        {
+          "id": "G3-U03-L18-CARD-F",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card F (Clare's equation), calculate the total 225 + 48 − 70. Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "203"
+        },
+        {
+          "id": "G3-U03-L18-CARD-C",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card C (Subtract six packs of 10), calculate the total 225 − (6 × 10). Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "165"
+        },
+        {
+          "id": "G3-U03-L18-CARD-J",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card J (Han makes six bracelets), calculate the total 225 − 6 × 10. Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "165"
+        },
+        {
+          "id": "G3-U03-L18-CARD-D",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card D (Elena's 7 notebooks with 10 clips), calculate the total 225 + (7 × 10). Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "295"
+        },
+        {
+          "id": "G3-U03-L18-CARD-L",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card L (Elena's equation), calculate the total (7 × 10) + 225. Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "295"
+        },
+        {
+          "id": "G3-U03-L18-CARD-E",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card E (Adding six packs of 10), calculate the total 225 + (6 × 10). Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "285"
+        },
+        {
+          "id": "G3-U03-L18-CARD-G",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card G (Andre buys six packs of crayons), calculate the total 225 + 6 × 10. Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "285"
+        },
+        {
+          "id": "G3-U03-L18-CARD-I",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "From original 2021 card I (Diego receives 35 then 72 cards), calculate the total 225 + 35 + 72. Numeric anchor only; the diagram/card matching remains teacher reviewed.",
+          "answerType": "integer",
+          "expected": "332"
+        },
+        {
+          "id": "G3-U03-L18-WU",
+          "sourceActivity": "Notice and Wonder: Diagrams",
+          "prompt": "Review original diagrams 142+20, four groups of5, and142+four groups5. Explain what is known versus unknown; the publisher graphics are teacher-supplied.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L18-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Card Sort: Situations, Equations, and Diagrams (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Diagrams and Equations for Word Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L18-CARD-SORT",
+          "sourceActivity": "Card Sort: Situations, Equations, and Diagrams",
+          "prompt": "Sort A–L by shared situation and operation; source image-only cards B,H,K must be checked against the original publisher figures by a teacher, not guessed from alt text.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L18-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Makes Sense to Me: A Gallery Walk (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Diagrams and Equations for Word Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L18-CARD-MATCHES",
+          "sourceActivity": "Card Sort",
+          "prompt": "Justify A↔F, C↔J, D↔L, E↔G from the matching stories and equations. Card I relates to an image-only diagram; teacher verifies its match.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L18-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L18-CARD-VISUALS",
+          "sourceActivity": "Card Sort",
+          "prompt": "The first-party diagram models must preserve 225 and change groups: 6×10 added, 6×10 removed, 7×10 added, 35 and72 added, and mixed subtraction/addition where applicable.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L18-POSTER",
+          "sourceActivity": "Makes Sense to Me: A Gallery Walk",
+          "prompt": "Solve the teacher-assigned problem with a group, create legible poster steps for others to follow, and explain why the answer makes sense.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L18-GALLERY",
+          "sourceActivity": "Makes Sense to Me: A Gallery Walk",
+          "prompt": "Inspect a peer poster and leave a sticky-note comment that tests the model and computation; teacher rubric required.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L18-CD",
+          "sourceActivity": "Publisher Cool-down: Equation Match",
+          "prompt": "Original gated publisher Equation Match not read; keep teacher-only and separate from independent Edulytics exit.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_LOCAL_PUBLIC_HTML_STORY_EQUATION_SEMANTICS_TEACHER_IMAGE_CARDS"
     },
     {
       "ordinal": 55,

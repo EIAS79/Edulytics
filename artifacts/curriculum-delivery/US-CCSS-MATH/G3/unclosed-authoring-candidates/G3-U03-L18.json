@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-3/lesson-18/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-18/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_HTML_SOURCE_3_SECTIONS_9_NUMERIC_CARD_ANCHORS_GALLERY_WALK_SIX_DIAGRAM_DESCRIPTIONS_REVIEWED",
     "goals": "Relate diagrams and equations to two-step word problems.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 6,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "9895586c37252d444b153b7d28167f6a19cfc5b419e1354305ab4a7b3ce075ab",
+    "prepSha256": "b6e0f891f26781052934b7b440898eabc75ff08a436f1562765503d9e2fa2064"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "2021_SOURCE_CARD_STORY_EQUATION_BAR_SEMANTICS_FIRSTPARTY_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +31,12 @@
     "existingSourceBodyHash": "de07fe09235639940ca6503e5012b022a10644812b3cdfe56502583f7c0ab0cb",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l18-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson18.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "9_NUMERIC_ANCHORS_7_CARD_MATCH_GALLERY_TEACHER_TASKS_TESTS_NOT_RUN",
     "family": "two-step-add-subtract",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +44,83 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Card Sort: Situations, Equations, and Diagrams with your teacher. Show the representation and explain how it meets the goal: Let’s connect diagrams and equations to situations.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceNumericChecks": 9,
+    "teacherTasks": 7,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson18CardSortSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L18-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: Diagrams (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WARM-UP-DIAGRAMS",
+      "source": "Original 2021 notice/wonder 142+20 and group diagrams",
+      "mode": "TEACHER_DIAGRAM_INTERPRETATION",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
     },
     {
-      "id": "G3-U03-L18-HEADING-02",
-      "sourceSection": "Activity 1: Card Sort: Situations, Equations, and Diagrams (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "CARD-1",
+      "source": "A and F",
+      "mode": "SOURCE_STORY_AND_EQUATION_EXACT_VALUE_ORACLE",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
     },
     {
-      "id": "G3-U03-L18-HEADING-03",
-      "sourceSection": "Activity 2: Makes Sense to Me: A Gallery Walk (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "CARD-2",
+      "source": "C and J",
+      "mode": "SOURCE_STORY_AND_EQUATION_EXACT_VALUE_ORACLE",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
     },
     {
-      "id": "G3-U03-L18-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "CARD-3",
+      "source": "D and L",
+      "mode": "SOURCE_STORY_AND_EQUATION_EXACT_VALUE_ORACLE",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
     },
     {
-      "id": "G3-U03-L18-HEADING-05",
-      "sourceSection": "Cool-down: Equation Match (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "CARD-4",
+      "source": "E and G",
+      "mode": "SOURCE_STORY_AND_EQUATION_EXACT_VALUE_ORACLE",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
+    },
+    {
+      "key": "CARD-5",
+      "source": "I (original diagram assignment requires teacher verification)",
+      "mode": "SOURCE_STORY_AND_EQUATION_EXACT_VALUE_ORACLE",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
+    },
+    {
+      "key": "CARDS-B-H-K",
+      "source": "Original image-only B,H,K and five source diagram URL descriptions",
+      "mode": "PUBLISHER_FIGURE_MATCH_TEACHER_REQUIRED",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
+    },
+    {
+      "key": "POSTER",
+      "source": "Group poster assigned problem",
+      "mode": "TEACHER_METHOD_AND_PRESENTATION",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
+    },
+    {
+      "key": "GALLERY",
+      "source": "Peer poster sticky-note reasonableness evaluation",
+      "mode": "TEACHER_EVALUATION",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
+    },
+    {
+      "key": "GATED-COOLDOWN",
+      "source": "Publisher Equation Match",
+      "mode": "NOT_REPRODUCED_TEACHER_SOURCE",
+      "academicallyMapped": true,
+      "publisherFigurePixelsVerified": false
     }
   ],
   "images": [
@@ -158,9 +180,9 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 6,
-    "fullyVerified": 0
+    "academicSemantic": 10,
+    "sourceImageAltCount": 6,
+    "pixelVerified": 0
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "A group collects 168 items, gives away 40, then receives 20. How many remain?",
@@ -168,20 +190,18 @@
     "expected": "148"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original image-only B/H/K card actual pixels not inspected; teacher-led source material required.",
+    "Full original student PDF and six publisher figures not verified for pixel parity; no publisher art copied.",
+    "Publisher gated Equation Match Cool-down not read. Tests, Stage D, academic signoff and deployment not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_SOURCE_TEXT_STORY_EQUATION_SEMANTIC_FIRSTPARTY_ONLY"
 }
