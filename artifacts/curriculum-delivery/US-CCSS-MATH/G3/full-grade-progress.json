@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 54,
+    "lessonsFullyReadyForStageD": 55,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 89,
+    "lessonsWithACExplicitGap": 88,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,14 +32,14 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 54,
+    "lessonsIndividuallyComparedToAllOriginalElements": 55,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 54,
+    "lessonsWithActualRichV2SourcePerfect": 55,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
@@ -49,8 +49,8 @@
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 54,
-    "firstUnclosedOrdinal": 55,
+    "lastConsecutiveReadyForStageDOrdinal": 55,
+    "firstUnclosedOrdinal": 56,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -371,15 +371,10 @@
     {
       "ordinal": 55,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L19",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L19.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-local-source-evidence-20261025.json"
     },
     {
       "ordinal": 56,
@@ -3196,12 +3191,12 @@
       "unitNumber": 3,
       "lessonNumber": 19,
       "title": "Situations and Equations",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "stageA": "LOCAL_2021_SOURCE_3_MAI_SITUATIONS_EQUATIONS_THREE_BAR_ALTS_MANCALA_104_6PITS3STONES_VERIFIED",
+      "stageB": "2021_SOURCE_SPECIFIC_FIRSTPARTY_RICH_V2_DISTINGUISH_THREE_UNKNOWNS_MANCALA",
+      "stageC": "5_EXACT_SOURCE_VALUE_ORACLES_7_TEACHER_DIAGRAM_EQUATION_TASKS_TESTS_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 8,
+      "fullyVerifiedSourceElements": 8,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L19.json",
       "stageD": "NOT_STARTED",
@@ -3215,9 +3210,11 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-local-source-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-teacher-equations-rubric-20261025.json",
+      "sourceMatchingMeasurementScope": "A_B_C_SOURCE_TEXT_THREE_UNKNOWN_SEMANTICS_FIRST_PARTY_ONLY"
     },
     {
       "gradeOrdinal": 56,
@@ -6374,20 +6371,20 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 54,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L18",
+    "gradeOrdinal": 55,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L19",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-54-local-source-mapping-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-54-teacher-gallery-rubric-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-local-source-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-55-teacher-equations-rubric-20261025.json",
+    "sourcePdfRead": false,
     "testsRun": false,
     "stageD": "NOT_STARTED",
-    "academicApproval": "NOT_CLAIMED",
-    "originalSourcePdfVerified": false
+    "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 54,
-    "firstUnclosedGradeOrdinal": 55,
+    "lastClosedGradeOrdinal": 55,
+    "firstUnclosedGradeOrdinal": 56,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"

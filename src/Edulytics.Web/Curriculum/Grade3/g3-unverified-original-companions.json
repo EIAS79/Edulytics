@@ -10194,78 +10194,135 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "two-step-add-subtract",
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
+      "firstPartyFamily": "situations-and-unknowns",
       "independentPractice": {
-        "prompt": "Mai has 104 beads and two equal packs bring her to 124. How many beads per pack?",
+        "prompt": "Mai had104 beads and adds two packs of 10. What is the total?",
         "answerType": "integer",
-        "expected": "10"
+        "expected": "124"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A jar contains 104 stones and six pits receive three stones each. How many remain?",
+        "prompt": "There are104 stones, six pits use three stones each. How many stay in the jar?",
         "answerType": "integer",
         "expected": "86"
       },
       "openTeacherTask": "Work through the original lesson's activity Mai’s Beads with your teacher. Show the representation and explain how it meets the goal: You will represent and solve two-step word problems.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Source Mai three equations and 3 diagram alts mapped independently, Kiran Mancala 104−6×3=86, exact five numbers and seven teacher constructions. Original source PDF and visual pixels not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
+        "sourceGoal": "Represent and solve two-step word problems using equations with a letter standing for the unknown quantity.",
         "sourceLearningGoals": "Represent and solve two-step word problems using equations with a letter standing for the unknown quantity.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Compare same warm-up128 with three8 segments, unknown104, whether unnamed or named b.",
+          "Match three Mai bead situations and respective equations with DIFFERENT meanings of unknown n.",
+          "Render three source-equivalent FIRST-PARTY bar diagrams; do not treat original publisher pixels as reproduced.",
+          "Mancala104−6×3=86; equation written with an unknown symbol, story checked by teacher."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not confuse pack size, initial count and final count; same objects and numbers have distinct unknowns."
       },
       "sourceBasedCheck": {
-        "prompt": "Mai has 104 beads and receives two packs of 10. How many beads now?",
+        "prompt": "104 + (2 × n) = 124. Find n.",
         "answerType": "integer",
-        "expected": "124"
+        "expected": "10"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-19/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "SOURCE_STUDENT_HTML_EQUATION",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L19-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: The Unknown (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Situations and Equations.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L19-WU-BAR-UNKNOWN",
+          "sourceActivity": "Notice and Wonder: The Unknown",
+          "prompt": "Original 2021 warm-up bar has total128, three8 segments and one unknown segment. Calculate the unknown part; teacher judges diagram labels.",
+          "answerType": "integer",
+          "expected": "104"
+        },
+        {
+          "id": "G3-U03-L19-MAI-PACK",
+          "sourceActivity": "Mai's Beads",
+          "prompt": "Mai has104 beads, buys TWO equal unknown packs and now has124. Enter beads PER pack.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U03-L19-MAI-INITIAL",
+          "sourceActivity": "Mai's Beads",
+          "prompt": "Mai has unknown starting beads, then adds two packs of10 to reach124. Enter starting beads.",
+          "answerType": "integer",
+          "expected": "104"
+        },
+        {
+          "id": "G3-U03-L19-MAI-FINAL",
+          "sourceActivity": "Mai's Beads",
+          "prompt": "Mai starts104 beads and receives two packs of10. Enter new total.",
+          "answerType": "integer",
+          "expected": "124"
+        },
+        {
+          "id": "G3-U03-L19-MANCALA",
+          "sourceActivity": "Represent, Solve, Explain",
+          "prompt": "Kiran has104 stones; removes3 stones for EACH of6 pits. Enter the stones left in the jar.",
+          "answerType": "integer",
+          "expected": "86"
+        },
+        {
+          "id": "G3-U03-L19-WARMUP-LABEL",
+          "sourceActivity": "Notice and Wonder: The Unknown",
+          "prompt": "Compare an unlabeled unknown and letter b in a bar with total128 and three parts8; explain why the unknown is104.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L19-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Mai's Beads (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Situations and Equations.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L19-MAI-PAIRS",
+          "sourceActivity": "Mai's Beads",
+          "prompt": "Match original three Mai situations to source equations 104+2×10=n,104+2×n=124,n+10+10=124; explain what n measures in EACH.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L19-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Represent, Solve, Explain (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Situations and Equations.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L19-MAI-DIAGRAMS",
+          "sourceActivity": "Mai's Beads",
+          "prompt": "Match original three bar diagrams: [104,10,10]→n, [104,n,n]→124, [n,10,10]→124; original image alignment remains teacher-reviewed.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L19-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L19-MANCALA-MODEL",
+          "sourceActivity": "Represent, Solve, Explain",
+          "prompt": "Write an equation using a letter for Kiran's remaining stones, such as r=104−6×3. Illustrate6 pits of3 and explain the result86.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L19-MANCALA-REASON",
+          "sourceActivity": "Represent, Solve, Explain",
+          "prompt": "Check that86 is less than starting104 and that the removed stones total18; teacher assesses story/equation coherence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L19-IMAGE-RIGHTS",
+          "sourceActivity": "Mancala source reference",
+          "prompt": "Mancala publisher photograph and original diagram pixels are not included; teacher uses original source if required.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L19-COOLDOWN",
+          "sourceActivity": "Publisher Cool-down How Many Beads?",
+          "prompt": "Original gated publisher Cool-down not accessed and not reproduced; use Edulytics independent source-goal equivalent instead.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_ORIGINAL_ARCHIVED_HTML_THREE_MAI_EQUATIONS_MANCALA_TAPE_MODELS"
     },
     {
       "ordinal": 56,
