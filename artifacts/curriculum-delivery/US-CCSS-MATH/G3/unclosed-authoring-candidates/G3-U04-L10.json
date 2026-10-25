@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-10/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-10/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_SOURCE_TEACHER_AND_STUDENT_TEN_ORIGINAL_RECTANGLE_SVGS_VISUALLY_READ",
     "goals": "Use area diagrams to explore strategies based on properties of multiplication.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 10,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_ORIGINAL_MATH_RECTANGLE_MODELS_RICH_V2_AND_GRIDS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "f99cf628a0fab35040b61a86338e0c1158bd9a709f39d1bf527da95833128732",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l10-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWELVE_SOURCE_NUMERIC_ORACLES_THIRTEEN_TEACHER_SHADE_EXPLANATION_TASKS_WRITTEN_UNRUN",
     "family": "distributive-property",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity From Diagrams to Expressions with your teacher. Show the representation and explain how it meets the goal: Let’s use rectangles to explore multiplication strategies.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualMathOracles": 12,
+    "teacherJudgementTasks": 13
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: How Many Do You See: Squares (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_SVG_MATH_MAPPED_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: From Diagrams to Expressions (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_SVG_MATH_MAPPED_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: From Expressions to Diagrams (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_SVG_MATH_MAPPED_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_SVG_MATH_MAPPED_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-4/lesson-10/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "SOURCE_GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -106,97 +109,97 @@
       "id": "G3-U04-L10-IMAGE-01",
       "observedAltText": "Partially shaded area diagram.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-02",
       "observedAltText": "Diagram. Rectangle split into 2 parts. Both parts partitioned into 2 rows of 6 of the same size squares.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-03",
       "observedAltText": "Shaded area diagram.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-04",
       "observedAltText": "Diagram. Rectangle partitioned into 3 rows of 6 of the same size squares. Rectangle length, 6. Rectangle width, 3.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-05",
       "observedAltText": "Area diagram. Rectangle split into two parts.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-06",
       "observedAltText": "Diagram. Rectangle split into 2 parts. One part partitioned into 3 rows of 5 of the same size squares, the other partitioned into 3 rows of 1 of the same size squares.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-07",
       "observedAltText": "Diagram. Rectangle partitioned into 4 rows of 9 of the same size squares. Rectangle length, 9. Rectangle width, 4.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-08",
       "observedAltText": "Diagram. Rectangle partitioned into 3 rows of 7 of the same size squares. Rectangle length, 7. Rectangle width, 3.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-09",
       "observedAltText": "Area diagram. Rectangle partitioned into 4 rows of 6 of the same size squares.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     },
     {
       "id": "G3-U04-L10-IMAGE-10",
       "observedAltText": "Diagram. A rectangle partitioned into 8 rows of 8 of the same size squares.",
       "originalReference": "unit-4/lesson-10/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_SVG_INSPECTED_FIRSTPARTY_GEOMETRY_NOT_PIXEL_COPY"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 10,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Find 4 × 6 using two smaller equal groups.",
@@ -204,20 +207,20 @@
     "expected": "24"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "10 original source SVGs visually inspected on device; publisher SVG code/path not copied to Edulytics.",
+    "Original student task PDF and gated Mark or Shade Parts source assessment not read/copied.",
+    "Pupil-generated4×9 partition and three expression-specific shading answers require teacher review.",
+    "Runtime tests/Stage D/CI/academic review not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-67-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-67-academic-source-coverage-and-human-rubric-20261025.json"
 }

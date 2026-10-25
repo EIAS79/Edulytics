@@ -13004,9 +13004,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "distributive-property",
+      "firstPartyFamily": "original-rectangle-decomposition-2021",
       "independentPractice": {
         "prompt": "A rectangular area with 4 rows of 9 tiles has what area?",
         "answerType": "integer",
@@ -13018,21 +13018,22 @@
         "expected": "36"
       },
       "openTeacherTask": "Work through the original lesson's activity From Diagrams to Expressions with your teacher. Show the representation and explain how it meets the goal: You will use area diagrams to explore multiplication strategies based on properties of operations.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 1 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Ten 2021 source rectangle SVGs reviewed; checked shaded and total warm-up cells, Andre/Elena distinct partitions and Noah/Priya/Tyler. 12 numeric and13 teacher review tasks; Stage D not started.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s use rectangles to explore multiplication strategies.",
-        "sourceLearningGoals": "Use area diagrams to explore strategies based on properties of multiplication.",
+        "sourceGoal": "Use rectangular area diagrams to explain multiplication decomposition and regrouping.",
+        "sourceLearningGoals": "Relate one expression to corresponding shaded smaller rectangles.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Four original warm-up SVGs: first4×4 has8 blue and16 total;4×6 split after two rows=24;3×6 with5 shaded columns=15 shaded and18 total; complete3×6=18.",
+          "Andre3×6 split3+3 gives2×(3×3)=18. Elena same3×6 split5+1 gives3×5+3×1=18; explain both.",
+          "Source Activity1 independent pupil shading of4×9=36 allows multiple correct partitions.",
+          "Activity2 Noah3×7 split5+2 gives21; Priya4×6 split2+2 rows gives24; Tyler8×8 split5+3 rows gives64.",
+          "Teacher checks original figure dimensions, non-overlap, diagrams and collaborative explanation."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use rectangles to explore multiplication strategies.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "All ten original SVG sources visually inspected from device. Independent Edulytics illustrations, not publisher SVG reproductions. Gated original Cool-down and source student PDF not verified."
       },
       "sourceBasedCheck": {
         "prompt": "Source rectangle area: 6 × 3 equals what?",
@@ -13048,37 +13049,177 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L10-STAGE-ABC-CANDIDATE-S2-NUM1",
-          "sourceActivity": "Activity 1: From Diagrams to Expressions (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 15 + 3. Show or explain a method to your teacher.",
+          "id": "G3-U04-L10-WU-SHADED-FIRST",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "The first source 4 by 4 picture has eight blue squares; count shaded.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U04-L10-WU-TOTAL-FIRST",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Count ALL squares in the first original four-by-four picture.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U04-L10-WU-SPLIT-4X6",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Original picture has four rows of six; total squares.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L10-WU-FIVE-SHADED",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Original three-by-six picture has 5 shaded columns; count blue cells.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U04-L10-WU-TOTAL-3X6",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Count all cells in original three-by-six picture.",
           "answerType": "integer",
           "expected": "18"
         },
         {
-          "id": "G3-U04-L10-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: How Many Do You See: Squares (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Explore Multiplication Strategies with Rectangles.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L10-WU-OTHER-3X6",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Count unit squares in other source complete 3×6 grid.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U04-L10-A1-ANDRE",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Andre two squares3×3:2×(3×3).",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U04-L10-A1-ELENA",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Elena3×6: (3×5)+(3×1).",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U04-L10-A1-FOUR-BY-NINE",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Source second Activity1 pupil-defined decomposition of4×9.",
+          "answerType": "integer",
+          "expected": "36"
+        },
+        {
+          "id": "G3-U04-L10-A2-NOAH",
+          "sourceActivity": "From Expressions to Diagrams",
+          "prompt": "Source Noah(5×3)+(2×3).",
+          "answerType": "integer",
+          "expected": "21"
+        },
+        {
+          "id": "G3-U04-L10-A2-PRIYA",
+          "sourceActivity": "From Expressions to Diagrams",
+          "prompt": "Source Priya2×(2×6).",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L10-A2-TYLER",
+          "sourceActivity": "From Expressions to Diagrams",
+          "prompt": "Source Tyler(5×8)+(3×8).",
+          "answerType": "integer",
+          "expected": "64"
+        },
+        {
+          "id": "G3-U04-L10-WU-4X4",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Explain eight blue of sixteen total in original four-by-four warm-up, with two separated 2×2 shaded regions.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L10-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: From Diagrams to Expressions (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Explore Multiplication Strategies with Rectangles.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L10-WU-4X6",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Original four-by-six visual has two sections of two rows each; show2×(2×6)=24.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L10-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: From Expressions to Diagrams (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Explore Multiplication Strategies with Rectangles.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L10-WU-3X6",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Original3×6 warmup is 5 shaded columns plus1 unshaded;15+3=18.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L10-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L10-WU-PARTNER",
+          "sourceActivity": "How Many Do You See: Squares",
+          "prompt": "Discuss multiple ways of grouping squares without counting one-by-one.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A1-ANDRE",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Show Andre two three-by-three halves and2×9=18; interpret thick partition.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A1-ELENA",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Show Elena 3 rows with five columns plus one, 3×5+3×1=18.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A1-COMPARE",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Teacher compares Andre and Elena decompositions, same total18 different grouping.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A1-4X9",
+          "sourceActivity": "From Diagrams to Expressions",
+          "prompt": "Draw and shade OWN valid partition of4×9=36; explain decomposed expression. Many valid answers.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A2-NOAH",
+          "sourceActivity": "From Expressions to Diagrams",
+          "prompt": "Shade first five columns of original three-by-seven rectangle and last two, for5×3+2×3=21.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A2-PRIYA",
+          "sourceActivity": "From Expressions to Diagrams",
+          "prompt": "Shade original four-by-six as two two-row strips,2×(2×6)=24.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-A2-TYLER",
+          "sourceActivity": "From Expressions to Diagrams",
+          "prompt": "Shade original eight-by-eight as5×8 and3×8 bands =64.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain properties through area diagrams and partner interpretations, not just integer product.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L10-GATED-CD",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Publisher Mark or Shade Parts to Find Area Cool-down teacher-gated; independent student task remains separate.",
           "answerType": "teacher",
           "expected": null
         }
