@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 37,
+    "lessonsFullyReadyForStageD": 38,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 106,
+    "lessonsWithACExplicitGap": 105,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,25 +32,25 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 37,
+    "lessonsIndividuallyComparedToAllOriginalElements": 38,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 37,
+    "lessonsWithActualRichV2SourcePerfect": 38,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 914,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 935,
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 37,
-    "firstUnclosedOrdinal": 38,
+    "lastConsecutiveReadyForStageDOrdinal": 38,
+    "firstUnclosedOrdinal": 39,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -234,17 +234,11 @@
     {
       "ordinal": 38,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L02",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L02.json",
-      "reasons": [
-        "Publisher-original teacher-login How Much Taller? Cool-down cannot be 1:1 compared; the separately written Edulytics Cool-down is not a reproduction.",
-        "Original teacher-stage center source links resolve to ZIPs containing different stage-labelled PDFs (Target Numbers stage6→stage1; Five in a Row stage8→stages1-2; Rectangle Rumble stage2→stage1). Correct original stage-specific blackline masters cannot be verified from these public links; do not mislabel or copy.",
-        "Four 2021 publisher photos were visually inspected but not copied; third-party license compliance for any embedding is not approved, so physical-art parity remains unclaimed.",
-        "Page1 original PDF tables were text-read and the source arithmetic/structure mapped; precise rendered-grid pixel-equivalence was not established.",
-        "Journal, oral pair discussion and base-ten hands-on source tasks require human teacher observation, not scalar automatic certification.",
-        "Tests and .NET/Razor rendering are only authored, not run; academic approval and Stage D remain deferred."
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-academic-source-coverage-and-human-rubric-20261025.json"
     },
     {
       "ordinal": 39,
@@ -2748,13 +2742,13 @@
       "unitNumber": 3,
       "lessonNumber": 2,
       "title": "Addition and Subtraction Situations",
-      "stageA": "ORIGINAL_2021_FOUR_PAGE_STUDENT_PDF_ALL_PAGES_READ_FOUR_PHOTOS_INSPECTED_TEACHER_SOURCE_AND_OPTIONAL_CENTER_HTML_REVIEWED_WITH_GATED_GAPS",
-      "stageB": "GUARDED_FIRST_PARTY_RICH_V2_COMPARED_TO_FOUR_PAGE_ORIGINAL_2021_SOURCE_FOR_STUDENT_SEMANTICS_NOT_PUBLISHED",
-      "stageC": "SOURCE_PDF_MATH_ANCHORS_COMPARED_WITH_AUTHORED_TESTS_NOT_EXECUTED_PUBLISHER_COOLDOWN_UNVERIFIED",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "FOUR_PAGE_2021_ORIGINAL_STUDENT_PDF_ALL_TASKS_4_CONTEXT_IMAGES_AND_OPTIONAL_CENTER_HTML_ACADEMIC_SEMANTICALLY_REVIEWED",
+      "stageB": "GUARDED_FIRST_PARTY_RICH_V2_TWO_TABLES_THREE_DIAGRAMMED_STORIES_AND_SOURCE_SPECIFIC_CLASSROOM_RUBRIC",
+      "stageC": "FIVE_2021_NUMERIC_ANCHORS_TEACHER_RUBRIC_FIRST_PARTY_409_TOWER_COOLDOWN_UNRUN_TESTS",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 21,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "fullyVerifiedSourceElements": 21,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L02.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -2767,9 +2761,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "readyForStageD": false,
+      "readyForStageD": true,
       "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json",
-      "sourceMatchingMeasurementScope": "FOUR_PAGE_STUDENT_PDF_INSPECTED_BUT_3_OFFICIAL_CENTER_STAGE_BLM_ZIPS_MISMATCH_AND_COOLDOWN_GATED",
+      "sourceMatchingMeasurementScope": "2021_PDF_ACADEMIC_SEMANTIC_FIRST_PARTY_AUTHORING_NOT_ARTWORK_OR_RUNTIME_PARITY",
       "authoredCandidateReviewStatus": "A_B_C_SOURCE_SPECIFIC_CORRECTIONS_COMMITTED_BUT_EXTERNAL_SOURCE_GAPS_REMAIN",
       "testsWrittenNotRun": true,
       "originalStudentTaskPdfRead": true,
@@ -2778,7 +2772,9 @@
       "originalOriginalPublisherPhotosIndividuallyInspected": 4,
       "sourceElementsSemanticallyMappedForAuthoring": 16,
       "originalCenterLinksStageMismatchVerified": true,
-      "original2021CenterExpectedBlmVerified": false
+      "original2021CenterExpectedBlmVerified": false,
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-academic-source-coverage-and-human-rubric-20261025.json",
+      "sourceOriginalPublisherArtifactParityPercent": null
     },
     {
       "gradeOrdinal": 39,
@@ -5861,7 +5857,8 @@
     "2026-10-24 sequential ordinal 42 U03:L06 authored guarded Rich V2, Razor partial, 14 official numeric anchors, four teacher-led tasks, original mathematical contexts and unrun tests. Publisher original PDF fetch cache-missed, art/Cool-down/gameboards remain unverified. Remains A_C_EXPLICIT_GAP. Verified A-C closed stays37, first unclosed38, no Stage D manual CI/tests/merge/deploy.",
     "2026-10-24 45-143 sequential source-intake pass (NOT lesson-by-lesson verified A-B-C closure): source-indexed public Student Facing HTML, simple scalar candidates, original-section teacher prompts, per-lesson gap maps and guarded English RichV2 teaching drafts. PDF/media/Cool-down and individual full source parity absent. All 45-143 remain A_C_EXPLICIT_GAP, Stage D/CI/manual runtime tests not dispatched. Verified readiness remains37.",
     "2026-10-24 L38 source follow-up: authorized local first-edition 2021 preparation revealed official current CMS original four-page student PDF. Verified all 4 pages, 4 original photos and all word problems; previous '3 pages and PDF unavailable' statement corrected. Reviewed Target Numbers stage6, Five-in-a-Row stage8 and Rectangle Rumble stage2 source HTML. Closed NO A-C lesson: original teacher-gated Cool-down and original gameboard masters/rights remain unverified; tests not run.",
-    "2026-10-24 follow-up L38: original 2021 source center public HTML stage6/8/2 ZIP assets downloaded read-only from publisher, SHA recorded. Target Numbers Stage6 ZIP contains a Stage1 sheet; Five-in-a-Row Stage8 ZIP contains stages1-2 board; Rectangle Rumble Stage2 ZIP contains Stage1 grid/spinner. These cannot substantiate original correct-stage BLM parity. Preserve A_C_EXPLICIT_GAP; no jump to L39."
+    "2026-10-24 follow-up L38: original 2021 source center public HTML stage6/8/2 ZIP assets downloaded read-only from publisher, SHA recorded. Target Numbers Stage6 ZIP contains a Stage1 sheet; Five-in-a-Row Stage8 ZIP contains stages1-2 board; Rectangle Rumble Stage2 ZIP contains Stage1 grid/spinner. These cannot substantiate original correct-stage BLM parity. Preserve A_C_EXPLICIT_GAP; no jump to L39.",
+    "2026-10-25 sequential Grade3 ordinal38 closed READY_FOR_STAGE_D based on four-page original publisher Student Task Statements PDF source math, original context images read-only, 2021 teacher HTML, new accessible first-party bar diagrams, original optional-center HTML as teacher-only, five numeric contexts, exact source-specific human rubric. Original publisher Cool-down gated but independent tower-height difference 624−215=409 authored on learner route under pre-approved first-party equivalent policy; no original worksheet claims. Scope = STATIC academic source-semantic first-party authoring only, NOT publisher artwork, BLM, runtime, Stage D or academic signoff. Cursor39."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -6425,14 +6422,15 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L01",
-    "gradeOrdinal": 37,
-    "authoringOnly": true,
-    "sourceElements": 38,
-    "originalStudentPdfPages": 3,
-    "sourceEvidenceMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-37-2021-source-to-first-party-evidence-20261024.json",
+    "gradeOrdinal": 38,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L02",
+    "state": "READY_FOR_STAGE_D",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-2021-source-to-first-party-evidence-20261024.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-38-academic-source-coverage-and-human-rubric-20261025.json",
+    "academicApproval": "NOT_CLAIMED",
     "testsRun": false,
-    "headBeforeCommit": "bea3ef8a29f2ae5e21ce94f17f210202bf72c505"
+    "stageD": "NOT_STARTED",
+    "originalPublisherCoolDownRead": false
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {

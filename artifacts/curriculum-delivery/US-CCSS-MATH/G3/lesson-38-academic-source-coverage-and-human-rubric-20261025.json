@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "ordinal": 38,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L02",
+  "contract": "A-B-C semantic source coverage for first-party Edulytics authoring ONLY, NOT publisher PDF pixel parity, student observation, testing, or academic signoff",
+  "original2021FourPagePdf": {
+    "url": "https://cms-assets.illustrativemathematics.org/r1f5we7npgv95ylyrb16vrkn0vh0",
+    "name": "Grade3-3-2-Lesson-student-task-statements.pdf",
+    "pages": 4,
+    "bytes": 33210584,
+    "sha256": "ce1fa255f1f21511696f0951fabd063a5954b0881b421ff346de19ead64829b1",
+    "allPageTextsRead": true,
+    "sourceImagesInspected": 4,
+    "originalStudentTaskPdfNotEmbeddedInEdulytics": true,
+    "pageContents": [
+      "p1 two partially filled 5x5 addition tables",
+      "p2 Iguazu Falls 115+131 ft and Washington Monument 555 vs Lincoln Memorial 99 ft",
+      "p3 Eiffel Tower steps 674-328",
+      "p4 three alternative journal questions"
+    ]
+  },
+  "sourceAcademicElementsAccountedFor": 21,
+  "sourceAcademicElementsTotal": 21,
+  "sourceSemanticAuthoringCoveragePercent": 100,
+  "publisherOriginalCoolDownAccessed": false,
+  "cooldownException": {
+    "ledgerPolicy": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
+    "originalRestrictedTitle": "How Much Taller?",
+    "independentFirstPartyPrompt": "A tower 624 ft tall stands beside one 215 ft tall. How much taller is the first?",
+    "computedExpected": "409",
+    "unit": "feet",
+    "learnerAutoGrade": "integer, based on quantitative difference",
+    "teacherCheck": "explain subtraction method and interpret feet; do not claim original teacher worksheet reviewed"
+  },
+  "originalStudentAnchors": [
+    {
+      "label": "Warm-up first grid center",
+      "expected": "60",
+      "primary": "30 + 30",
+      "mode": "DIGITAL_PLUS_TEACHER_REASONING"
+    },
+    {
+      "label": "Warm-up second grid center",
+      "expected": "60",
+      "primary": "30 + 30",
+      "mode": "DIGITAL_PLUS_TEACHER_REASONING"
+    },
+    {
+      "label": "Iguazu two drops",
+      "expected": "246 ft",
+      "primary": "115 ft + 131 ft",
+      "mode": "DIGITAL_WITH_UNITS_AND_TEACHER"
+    },
+    {
+      "label": "Washington vs Lincoln height",
+      "expected": "456 ft",
+      "primary": "555 ft - 99 ft",
+      "mode": "DIGITAL_WITH_UNITS_AND_TEACHER"
+    },
+    {
+      "label": "Eiffel flights",
+      "expected": "346 steps",
+      "primary": "674 - 328 steps",
+      "mode": "DIGITAL_VALUE_AND_TEACHER_UNITS"
+    }
+  ],
+  "classroomRubric": [
+    {
+      "source": "WU Notice and Wonder",
+      "target": "Analyze the structure of two partially filled tables; make a justified notice and wonder rather than filling every missing cell",
+      "minimumEvidence": "One pattern about commutativity or constant diagonal, supported by examples",
+      "teacherRequired": true
+    },
+    {
+      "source": "Monuments and Falls Q1",
+      "target": "Combine two 115/131-foot successive drops",
+      "minimumEvidence": "246 feet with addition equation, number-line or diagram",
+      "teacherRequired": true
+    },
+    {
+      "source": "Monuments and Falls Q2",
+      "target": "Compare Washington 555 feet vs Lincoln 99 feet",
+      "minimumEvidence": "456 feet from a valid difference representation",
+      "teacherRequired": true
+    },
+    {
+      "source": "Monuments and Falls Q3",
+      "target": "Between first and second Eiffel floors",
+      "minimumEvidence": "346 steps with subtraction or counting-on strategy, not 674 total steps",
+      "teacherRequired": true
+    },
+    {
+      "source": "Journal About Connections",
+      "target": "Student responds to one of three original journal choices independently; then exchanges with partner",
+      "minimumEvidence": "One coherent reflection plus partner interaction; verbal and manipulatives permitted",
+      "teacherRequired": true
+    },
+    {
+      "source": "Lesson synthesis",
+      "target": "Explain preferred strategy and one new strategy worth learning",
+      "minimumEvidence": "Names and compares two mathematically meaningful strategies",
+      "teacherRequired": true
+    }
+  ],
+  "optionalCenters": [
+    {
+      "name": "Target Numbers stage6",
+      "teacherMethodVerified": true,
+      "gameboardsNotOriginalVerified": true,
+      "action": "Teacher supplies proper stage6 sheet; use original 2021 HTML rules only"
+    },
+    {
+      "name": "Five in a Row stage8",
+      "teacherMethodVerified": true,
+      "gameboardsNotOriginalVerified": true,
+      "action": "Teacher supplies stage8 gameboard; public linked ZIP is stage1/2, not a certified substitute"
+    },
+    {
+      "name": "Rectangle Rumble stage2",
+      "teacherMethodVerified": true,
+      "gameboardsNotOriginalVerified": true,
+      "action": "Teacher supplies 15x15 grid and spinner or an independently made equivalent; public linked ZIP is stage1"
+    }
+  ],
+  "originalPhotoTreatment": "All four original publisher photos visually inspected on four-page PDF; first-party classroom mathematics references their subjects without embedding source image bytes. No copyright license granted or publisher visual parity claimed.",
+  "verificationBoundaries": {
+    "originalPublisherCoolDown": false,
+    "optionalOriginalCenterBlacklineStageFiles": false,
+    "thirdPartyPublisherArtworkCopied": false,
+    "unrunXUnitTests": true,
+    "sourceRichV2StaticAuthoringOnly": true,
+    "runtimeValidated": false,
+    "StageDStarted": false,
+    "academicSignoff": false
+  },
+  "individuallyAccountedSourceElements": [
+    {
+      "id": "WU-LAUNCH",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Warm-up",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "WU-1-MIDDLE",
+      "mode": "ORIGINAL_STUDENT_PDF_NUMERIC_SEMANTIC_MATCH",
+      "sourceSection": "Warm-up table 1",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": false,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "WU-2-MIDDLE",
+      "mode": "ORIGINAL_STUDENT_PDF_NUMERIC_SEMANTIC_MATCH",
+      "sourceSection": "Warm-up table 2",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": false,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "WU-1-REASON",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Warm-up synthesis",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "WU-2-REASON",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Warm-up synthesis",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A1-IGUAZU",
+      "mode": "ORIGINAL_STUDENT_PDF_NUMERIC_SEMANTIC_MATCH",
+      "sourceSection": "Activity 1 task 1",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": false,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A1-DC",
+      "mode": "ORIGINAL_STUDENT_PDF_NUMERIC_SEMANTIC_MATCH",
+      "sourceSection": "Activity 1 task 2",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": false,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A1-EIFFEL",
+      "mode": "ORIGINAL_STUDENT_PDF_NUMERIC_SEMANTIC_MATCH",
+      "sourceSection": "Activity 1 task 3",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": false,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A1-STRATEGY",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Activity 1 synthesis",
+      "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "PHOTO-1",
+      "mode": "SOURCE_PHOTO_CONTEXT_DESCRIBED_INDEPENDENT_SCHEMATIC_NO_REUSE",
+      "sourceSection": "Activity 1 artwork",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "PHOTO-2",
+      "mode": "SOURCE_PHOTO_CONTEXT_DESCRIBED_INDEPENDENT_SCHEMATIC_NO_REUSE",
+      "sourceSection": "Activity 1 artwork",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "PHOTO-3",
+      "mode": "SOURCE_PHOTO_CONTEXT_DESCRIBED_INDEPENDENT_SCHEMATIC_NO_REUSE",
+      "sourceSection": "Activity 1 artwork",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "PHOTO-4",
+      "mode": "SOURCE_PHOTO_CONTEXT_DESCRIBED_INDEPENDENT_SCHEMATIC_NO_REUSE",
+      "sourceSection": "Activity 1 artwork",
+      "firstPartyLocator": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson2.cshtml",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A2-JOURNAL-1",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Activity 2 journal",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A2-JOURNAL-2",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Activity 2 journal",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "A2-JOURNAL-3",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Activity 2 journal",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "SYNTH",
+      "mode": "ORIGINAL_MATH_GOAL_MAPPED_TO_TEACHER_RUBRIC",
+      "sourceSection": "Lesson synthesis",
+      "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "CD",
+      "mode": "FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+      "sourceSection": "Original How Much Taller? Cool-down",
+      "firstPartyLocator": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "CENTER-1",
+      "mode": "OPTIONAL_TEACHER_LED_SOURCE_RULES_MATCHED_STAGE_SPECIFIC_BLM_NOT_REUSED",
+      "sourceSection": "Suggested optional center",
+      "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "CENTER-2",
+      "mode": "OPTIONAL_TEACHER_LED_SOURCE_RULES_MATCHED_STAGE_SPECIFIC_BLM_NOT_REUSED",
+      "sourceSection": "Suggested optional center",
+      "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    },
+    {
+      "id": "CENTER-3",
+      "mode": "OPTIONAL_TEACHER_LED_SOURCE_RULES_MATCHED_STAGE_SPECIFIC_BLM_NOT_REUSED",
+      "sourceSection": "Suggested optional center",
+      "firstPartyLocator": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l02-2021.rich-lesson-v2.json",
+      "teacherReviewRequired": true,
+      "originalSourceMaterialParityClaimed": false
+    }
+  ]
+}
