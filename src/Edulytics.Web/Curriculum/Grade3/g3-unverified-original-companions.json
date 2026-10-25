@@ -15595,9 +15595,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "larger-number-division",
+      "firstPartyFamily": "two-division-interpretations-tens-exchange-2021",
       "independentPractice": {
         "prompt": "Divide 63 into three equal groups.",
         "answerType": "integer",
@@ -15609,21 +15609,21 @@
         "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Divide with Base-Ten Blocks with your teacher. Show the representation and explain how it meets the goal: You will recognize that the two interpretations of division still apply when dividing larger numbers and to use base-ten diagrams to interpret and represent division within 100.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "2021 teacher/student source + original Jada/Han SVG geometry checked on Our-CS,15 numeric oracles and12 human tasks. Tests authored but unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s make sense of representations of division.",
-        "sourceLearningGoals": "Recognize that division of larger numbers can still mean finding the number of groups or finding the size of each group. Use base-ten blocks to represent division where the quotient is more than 10.",
+        "sourceGoal": "Divide larger numbers with base-ten blocks and interpret divisor as group count or group size.",
+        "sourceLearningGoals": "Find quotients above ten and represent tens-to-ones exchange.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up original True/False truth sequence true,true,false,true, justify by place value.",
+          "Divide39÷3=13,55÷5=11,45÷3=15 (trade one ten),63÷3=21,84÷7=12 (exchange remaining ten),100÷5=20.",
+          "Original Jada 60÷5: five groups of12 using five tens plus ten ones, original Han60÷5: twelve groups of five. Both quotient12.",
+          "Choose divisor role in64÷4=16,72÷6=12,75÷15=5; synthesis96÷8=12 and explain exchanges."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of representations of division.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Four original publisher visual assets viewed (3 SVG, 1 PNG); first-party equivalents only. Gated cool-down, source student PDF, runtime tests and Stage D not certified."
       },
       "sourceBasedCheck": {
         "prompt": "Source base-ten problem 55 ÷ 5 has which quotient?",
@@ -15639,30 +15639,191 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L19-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: True or False: Ones, Tens, Twenties (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Ways to Divide Larger Numbers.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L19-WARM1",
+          "sourceActivity": "True or False: Ones, Tens, Twenties",
+          "prompt": "Original source truth-value claim: 4×10=40×1. Enter 1 if true,0 if false; teacher checks place-value argument.",
+          "answerType": "integer",
+          "expected": "1"
+        },
+        {
+          "id": "G3-U04-L19-WARM2",
+          "sourceActivity": "True or False: Ones, Tens, Twenties",
+          "prompt": "Original source truth-value claim: 4×20=4×2×10. Enter 1 if true,0 if false; teacher checks place-value argument.",
+          "answerType": "integer",
+          "expected": "1"
+        },
+        {
+          "id": "G3-U04-L19-WARM3",
+          "sourceActivity": "True or False: Ones, Tens, Twenties",
+          "prompt": "Original source truth-value claim: 8×20=8×2×1. Enter 1 if true,0 if false; teacher checks place-value argument.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U04-L19-WARM4",
+          "sourceActivity": "True or False: Ones, Tens, Twenties",
+          "prompt": "Original source truth-value claim: 8×20=16×10. Enter 1 if true,0 if false; teacher checks place-value argument.",
+          "answerType": "integer",
+          "expected": "1"
+        },
+        {
+          "id": "G3-U04-L19-A1-LAUNCH39",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Original source equation 39÷3. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "13"
+        },
+        {
+          "id": "G3-U04-L19-A1-55",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Original source equation 55÷5. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "11"
+        },
+        {
+          "id": "G3-U04-L19-A1-45",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Original source equation 45÷3. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U04-L19-A1-63",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Original source equation 63÷3. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "21"
+        },
+        {
+          "id": "G3-U04-L19-A1-84",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Original source equation 84÷7. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L19-A1-100",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Original source equation 100÷5. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U04-L19-A2-60",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Original source equation 60÷5. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L19-A2-64",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Original source equation 64÷4. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U04-L19-A2-72",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Original source equation 72÷6. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L19-A2-75",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Original source equation 75÷15. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L19-SYNTHESIS-96",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original source equation 96÷8. Find the quotient and explain both divisor interpretations where appropriate.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L19-WARM-REASON",
+          "sourceActivity": "True or False: Ones, Tens, Twenties",
+          "prompt": "Explain that 8×20=160 but8×2×1=16; 8×20=16×10 TRUE. Preserve mathematical justification instead of binary score alone.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L19-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Divide with Base-Ten Blocks (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Ways to Divide Larger Numbers.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L19-A1-39-DRAW",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Source teacher launch: draw three equal groups of 13 from39 (3 tens+9 ones).",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L19-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Different Ways to Show Division (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Ways to Divide Larger Numbers.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L19-A1-55-NO-EXCHANGE",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Source55÷5=11: five tens in five groups and five ones, no tens exchange needed.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L19-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L19-A1-45-EXCHANGE",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Source45÷3=15 requires trading one ten for ten ones after distributing three tens; four tens and five ones regrouped correctly.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-A1-84-EXCHANGE",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "For84÷7=12 show seven tens in seven groups and convert remaining ten+four ones into two ones per group.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-A1-63-100",
+          "sourceActivity": "Divide with Base-Ten Blocks",
+          "prompt": "Source63÷3=21 and100÷5=20 can place tens in groups without ones exchange; compare with84÷7.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-A2-JADA",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Original picture shows 60 as six tens, then five groups of one ten and two ones: sixty divided into five groups of12.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-A2-HAN",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Original picture shows 60 divided into twelve groups with five in each (6 rods partitioned into two groups of five per rod).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-A2-COMPARE",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "Compare Jada divisor5 as count of groups vs Han divisor5 as size per group; both60÷5=12.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-A2-CHOOSE",
+          "sourceActivity": "Different Ways to Show Division",
+          "prompt": "For64÷4,72÷6 and75÷15, justify whether dividing into4/6/15 groups or groups of4/6/15 is more efficient.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original96÷8=12. Explain eight groups of12 and twelve groups of8, including trading remaining ten and six ones.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L19-GATED",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original Find the Value Cool-down is gated and not reproduced as source parity.",
           "answerType": "teacher",
           "expected": null
         }

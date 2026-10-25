@@ -1,0 +1,125 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u04-l19-firstedition2021-tens-trade-two-division-roles-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U04:L19",
+      "CultureCode": "en",
+      "Title": "Ways to Divide Larger Numbers",
+      "ExplanationParagraphs": [
+        "Original warm-up statements:4×10=40×1 true;4×20=4×2×10 true;8×20=8×2×1 FALSE (160 vs16);8×20=16×10 true. Discuss reasons, not guessing.",
+        "Activity1 source base-ten equations:39÷3=13,55÷5=11,45÷3=15,63÷3=21,84÷7=12,100÷5=20. Sometimes it is necessary to trade a ten into ten ones, particularly45÷3 and84÷7.",
+        "Original source diagrams for Activity2 show SIX ten rods divided two ways. Jada interprets divisor5 as the number of groups, yielding five groups of12 (one ten and two ones). Han interprets divisor5 as the size of each group, yielding twelve groups of5; both show60÷5=12. These are distinct original 2021 image constructions verified locally.",
+        "Further source questions:64÷4=16,72÷6=12,75÷15=5. Choose whether to make the divisor number of groups or group size and justify. For75÷15 grouping in sets of15 is often helpful.",
+        "Synthesis original96÷8=12 can be represented as8 groups of12 or12 groups of8; both need place-value reasoning.",
+        "All diagrams in Edulytics are independently authored, not publisher paths. Teacher judges concrete models and comparisons; publisher Find the Value Cool-down gated, original student PDF not independently inspected, tests/Stage D unrun."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equal groups",
+          "Definition": "Division finds size per group when group count is given.",
+          "Rule": "total÷number of groups=size",
+          "Example": "60÷5=12 in each of five groups"
+        },
+        {
+          "Title": "Group count",
+          "Definition": "Division can find how many equal groups fit when size is known.",
+          "Rule": "total÷group size=group count",
+          "Example": "60÷5=12 groups of five"
+        },
+        {
+          "Title": "Trade a ten",
+          "Definition": "One base-ten rod may be exchanged for ten single units.",
+          "Rule": "1 ten=10 ones",
+          "Example": "45÷3=15 requires regrouping"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "55÷5",
+          "Question": "Find 55÷5 using base-ten grouping.",
+          "Method": "Partition tens and ones, trading when required.",
+          "Steps": [
+            "Distribute five tens into five groups.",
+            "Distribute five ones equally.",
+            "Each group receives one ten and one one."
+          ],
+          "Answer": "11",
+          "Check": "55÷5=11"
+        },
+        {
+          "Title": "45÷3",
+          "Question": "Find 45÷3 using base-ten grouping.",
+          "Method": "Partition tens and ones, trading when required.",
+          "Steps": [
+            "Three of four tens can go into three groups.",
+            "Trade leftover ten for ten ones.",
+            "Fifteen ones across three groups yields five each, total15."
+          ],
+          "Answer": "15",
+          "Check": "45÷3=15"
+        },
+        {
+          "Title": "84÷7",
+          "Question": "Find 84÷7 using base-ten grouping.",
+          "Method": "Partition tens and ones, trading when required.",
+          "Steps": [
+            "Give each of seven groups one ten.",
+            "Exchange remaining ten to ten ones; combine four ones.",
+            "Fourteen ones divided into seven groups gives two each."
+          ],
+          "Answer": "12",
+          "Check": "84÷7=12"
+        },
+        {
+          "Title": "60÷5",
+          "Question": "Find 60÷5 using base-ten grouping.",
+          "Method": "Partition tens and ones, trading when required.",
+          "Steps": [
+            "Use five groups with a ten and two ones each.",
+            "Alternatively twelve groups of five.",
+            "Both show quotient twelve."
+          ],
+          "Answer": "12",
+          "Check": "60÷5=12"
+        },
+        {
+          "Title": "96÷8",
+          "Question": "Find 96÷8 using base-ten grouping.",
+          "Method": "Partition tens and ones, trading when required.",
+          "Steps": [
+            "Eight tens can be distributed across eight groups.",
+            "Exchange last ten, add six ones.",
+            "Sixteen ones across eight groups gives two each."
+          ],
+          "Answer": "12",
+          "Check": "96÷8=12"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Say8×20=8×2×1.",
+          "WhyWrong": "Ten factor lost;160 is not16.",
+          "Correction": "8×20=8×2×10=160."
+        },
+        {
+          "Mistake": "Confuse five groups of12 with twelve groups of5 as different quotients.",
+          "WhyWrong": "Both represent60÷5=12 with distinct divisor interpretations.",
+          "Correction": "Say clearly what the divisor counts in each model."
+        },
+        {
+          "Mistake": "Fail to trade tens for45÷3 and84÷7.",
+          "WhyWrong": "Leftover tens cannot be distributed equally in whole ten rods.",
+          "Correction": "Regroup one ten into ten ones."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warm-up T,T,F,T.",
+        "Original sources quotient values13,11,15,21,12,20,12,16,12,5,12.",
+        "Jada five groups of12; Han twelve groups of5.",
+        "Original images read, Stage D not started."
+      ]
+    }
+  ]
+}
