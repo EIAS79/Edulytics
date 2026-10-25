@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-7/lesson-1/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-1/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_LOCAL_TEACHER_PREPARATION_4_WARMUP_AND_TWO_PAIR_SORT_STEPS_REVIEWED_SOURCE_BLACKLINE_GAP",
     "goals": "Describe attributes of shapes. Sort shapes based on attributes in a way that makes sense to them.",
     "sourceHeadingsCount": 4,
     "originalImageDescriptionsCount": 3,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SHAPE_ATTRIBUTE_MULTI_VALID_SORTS_AND_SECRET_TWO_CATEGORY_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "9f71865e95819ead4a1726c0a6f9b55267c73fffaa9a401dd0ddd07e98087543",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l01-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson1.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "VERIFIED_CARD_O_BFMS_TEACHER_RULE_AND_TWO_SOURCE_SORT_GATES_TESTS_AUTHORED_UNRUN",
     "family": "shape-attributes",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s sort shapes into groups.",
-    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading."
+    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson1ShapeSortTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: Who's in the Group? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-7/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_PUBLIC_2021_SHAPE_SORT_TO_FIRSTPARTY_TEACHER_AUTHORING",
+      "grading": "TEACHER_SOURCE_CARD_SORT",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Card Sort: Shapes (35 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-7/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_PUBLIC_2021_SHAPE_SORT_TO_FIRSTPARTY_TEACHER_AUTHORING",
+      "grading": "TEACHER_SOURCE_CARD_SORT",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-7/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_PUBLIC_2021_SHAPE_SORT_TO_FIRSTPARTY_TEACHER_AUTHORING",
+      "grading": "TEACHER_SOURCE_CARD_SORT",
       "claimedParity": false
     },
     {
@@ -85,7 +88,7 @@
       "originalReference": "unit-7/lesson-1/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "RESTRICTED_PUBLISHER_NOT_REVIEWED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -98,7 +101,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_ALT_ONLY_BLACKLINE_PDF_UNINSPECTED"
     },
     {
       "id": "G3-U07-L01-IMAGE-02",
@@ -107,7 +110,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_ALT_ONLY_BLACKLINE_PDF_UNINSPECTED"
     },
     {
       "id": "G3-U07-L01-IMAGE-03",
@@ -116,7 +119,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_ALT_ONLY_BLACKLINE_PDF_UNINSPECTED"
     }
   ],
   "sourceElementCounts": {
@@ -130,20 +133,23 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original Grade3 Shape Cards blackline master not independently inspected; card O/B/F/M/S letter claims derived from teacher text only.",
+    "Warm-up original A-D images not pixel-verified; no unique odd-one-out oracle.",
+    "Original standalone student PDF and restricted Cool-down Tell Me About It not inspected.",
+    "Teacher must inspect real card geometry and pupils' open group sort explanations.",
+    "Tests, CI, Stage D, academic approval, merge, deployment not performed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "84fe058ac93c4b2e01899f7e9d8c1aeb17ca9c22c57f1c683a99eeb4c1bc10f6",
+  "originalPreparationHtmlSHA256": "f22dd23ef528474d55d051807dc60ae85c5c729cf578ef4ce513247602055cae",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-114-2021-original-shape-card-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-114-shape-sorting-human-rubric-20261025.json"
 }
