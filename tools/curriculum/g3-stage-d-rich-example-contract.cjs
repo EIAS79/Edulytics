@@ -27,6 +27,8 @@ for (const file of fs.readdirSync(root)) {
   documents++;
   const source = JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
   for (const lesson of source.Lessons || []) {
+    if ((lesson.KeyConcepts || []).length < 3)
+      bad.push(file + " — " + (lesson.LessonCode || "unknown lesson") + ": fewer than three source-specific key concepts");
     for (const work of lesson.WorkedExamples || []) {
       examples++;
       if (!Array.isArray(work.Steps) || work.Steps.length < 3 ||
