@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l09-firstedition2021-reconstruct-one-from-nonunit-and-optional-threequarters-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L09",
+      "CultureCode": "en",
+      "Title": "All Kinds of Numbers on the Number Line",
+      "ExplanationParagraphs": [
+        "Original warm-up Which One Doesn't Belong: Many Number Lines presents four pictures A–D (an indicated 1/2, a plotted whole 1, 0-to-1 quarter subdivisions, and a 0-to-2 line with 1 marked). Students invent and justify which picture does not belong; different classifications can be correct. These are picture-reasoning tasks not a fixed-letter multiple-choice quiz.",
+        "Original Activity 1 Locate 1 Again changes the direction of the mathematical task: the 2021 picture already marks zero and a NON-UNIT fraction (2/3, 5/4 or 11/8), not zero and one. To recover the position of 1, partition the known 0-to-fraction length into the NUMBER OF numerator intervals (2, 5 or 11) and use the DENOMINATOR count (3, 4 or 8) of those same unit-fraction-size intervals starting at zero. This distinction is crucial: the numerator determines how many pieces are already spanned by the marked fraction.",
+        "Original given 2/3: from 0 to 2/3 are TWO 1/3 intervals; extend ONE more equally long 1/3 segment to the RIGHT to locate 1, exactly THREE third-length intervals after 0. Original given 5/4: the marked fraction spans FIVE quarters; one lies at the FOURTH quarter, LEFT of the 5/4 mark. Original given 11/8: the marked fraction spans ELEVEN eighths; one lies at the EIGHTH eighth, LEFT of the 11/8 mark.",
+        "Source Activity 1 includes individual solutions and repeated student discussions under MLR1 Stronger and Clearer Each Time. The teacher checks how a student constructs equal lengths, recovers 1 from non-unit source marks, explains which direction 1 lies and revises written reasoning after partners' feedback. A numeric 1 coordinate alone cannot verify original constructions.",
+        "Original Activity 2 is EXPLICITLY OPTIONAL: Locate 3/4 starting from a number line showing the unit-fraction position 1/3. Students first use THREE one-third lengths to locate 1; then split the 0-to-1 whole into FOUR equal spaces and mark the THIRD fourth at 3/4. Source allows either a single combined thirds-and-fourths line or separate number lines with common unit scale. It goes BEYOND required Grade 3 depth, so must not be turned into mandatory assessment or progression gate. Thirds and fourths need not be placed on the same scale as if a third equals a fourth.",
+        "The 2021 Student Section Summary ties together unit fractions on a 0-to-1 line, non-unit fractions, whole-number coincidence (6/6=1 and 12/6=2) and locating 1 when only a fractional point is provided. The original source Cool-down is titled Where is 1 Now? but its contents are teacher-gated; no source assessment text is represented as verified or copied. Only independent first-party mathematical diagrams and explanation content are authored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Recover one from a non-unit point",
+          "Definition": "A source position labeled a/b spans a equal 1/b lengths from zero.",
+          "Rule": "Partition 0-to-a/b into a congruent lengths, then count b of those lengths from zero to locate 1.",
+          "Example": "If the mark is 5/4, the fourth of five equal substeps along that distance is at 1."
+        },
+        {
+          "Title": "The unit can be to the left or right",
+          "Definition": "If the known fraction is less than 1, locate 1 beyond it; if greater than 1, locate 1 before it.",
+          "Rule": "Compare numerator a and denominator b of the given a/b.",
+          "Example": "For 2/3 move right to 1; for 11/8 move left to 1."
+        },
+        {
+          "Title": "Numerator versus denominator responsibilities",
+          "Definition": "The numerator determines the count of subintervals up to the known source mark; denominator determines the count from zero to 1.",
+          "Rule": "a equal parts to known a/b; b equal parts to 1.",
+          "Example": "11/8 spans 11 eighths; 1 is at 8 eighths."
+        },
+        {
+          "Title": "Optional cross-denominator transfer",
+          "Definition": "Using a 1/3 point to construct 3/4 needs first establishing the whole and then repartitioning.",
+          "Rule": "Locate 1 from three thirds, then locate 3/4 using four equal subdivisions of that whole.",
+          "Example": "An optional multi-representation activity, never a core Grade 3 assessment gate."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original 2/3 source anchor → recover 1",
+          "Question": "Only zero and 2/3 are marked on the line. Locate the missing number 1.",
+          "Method": "Partition the length to the given mark into numerator-many equal intervals, then take denominator-many from zero.",
+          "Steps": [
+            "From 0 to 2/3, divide into 2 congruent intervals.",
+            "These are each 1/3 of the reference whole.",
+            "Count 3 matching intervals from zero to mark 1.",
+            "This lies to the RIGHT of the 2/3 mark."
+          ],
+          "Answer": "1",
+          "Check": "Given mark contains 2 steps of length 1/3; one contains 3 such steps."
+        },
+        {
+          "Title": "Original 5/4 source anchor → recover 1",
+          "Question": "Only zero and 5/4 are marked on the line. Locate the missing number 1.",
+          "Method": "Partition the length to the given mark into numerator-many equal intervals, then take denominator-many from zero.",
+          "Steps": [
+            "From 0 to 5/4, divide into 5 congruent intervals.",
+            "These are each 1/4 of the reference whole.",
+            "Count 4 matching intervals from zero to mark 1.",
+            "This lies to the LEFT of the 5/4 mark."
+          ],
+          "Answer": "1",
+          "Check": "Given mark contains 5 steps of length 1/4; one contains 4 such steps."
+        },
+        {
+          "Title": "Original 11/8 source anchor → recover 1",
+          "Question": "Only zero and 11/8 are marked on the line. Locate the missing number 1.",
+          "Method": "Partition the length to the given mark into numerator-many equal intervals, then take denominator-many from zero.",
+          "Steps": [
+            "From 0 to 11/8, divide into 11 congruent intervals.",
+            "These are each 1/8 of the reference whole.",
+            "Count 8 matching intervals from zero to mark 1.",
+            "This lies to the LEFT of the 11/8 mark."
+          ],
+          "Answer": "1",
+          "Check": "Given mark contains 11 steps of length 1/8; one contains 8 such steps."
+        },
+        {
+          "Title": "Optional — locate 3/4 from 1/3",
+          "Question": "Given zero and 1/3, locate 3/4 with a valid diagram.",
+          "Method": "Construct the whole from thirds, then quarters from the recovered whole.",
+          "Steps": [
+            "Copy the length from 0 to 1/3 three times to locate 1.",
+            "Divide 0-to-1 into four equal lengths.",
+            "Mark the end of the third such length as 3/4.",
+            "You may use one line or two lines with the same unit scale."
+          ],
+          "Answer": "3/4",
+          "Check": "Optional original 2021 activity exceeds required Grade 3 depth; teacher reviews representation."
+        },
+        {
+          "Title": "Student summary fractions located at integers",
+          "Question": "Which whole numbers do 6/6 and 12/6 name?",
+          "Method": "Count equal sixths across the unit.",
+          "Steps": [
+            "6 sixths total one whole.",
+            "12 sixths total two wholes."
+          ],
+          "Answer": "1, 2",
+          "Check": "6/6=1, 12/6=2; source summary, not another mandated worksheet task."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Split the line to 5/4 into FOUR parts because the denominator is 4.",
+          "WhyWrong": "The line from 0 to the KNOWN point 5/4 spans five fourths, so four intervals would be too large.",
+          "Correction": "Use numerator five to subdivide known distance, then count denominator four to locate one."
+        },
+        {
+          "Mistake": "Place 1 to the right of a known 11/8 point.",
+          "WhyWrong": "11/8 is greater than 1.",
+          "Correction": "Locate 1 at the eighth of eleven equal intervals between zero and known 11/8."
+        },
+        {
+          "Mistake": "Require the optional 3/4-from-1/3 task from every student.",
+          "WhyWrong": "The publisher specifically marks it OPTIONAL and deeper than mandated Grade 3 expectations.",
+          "Correction": "Treat it as enrichment only, allow different valid number-line strategies."
+        },
+        {
+          "Mistake": "Assume one third and one fourth are the same sized intervals.",
+          "WhyWrong": "They represent different partition counts of the same whole.",
+          "Correction": "Find common whole first before locating a fraction with new denominator."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up A–D open number line visual sorting: teacher reviews multiple justifications.",
+        "Main three given non-unit source anchor points: 2/3, 5/4, 11/8, all require recovering 1 from numerator-sized subdivisions.",
+        "For 2/3, one is to the right; for 5/4 and 11/8, one lies to the left of the marked fraction.",
+        "Optional transfer: from 1/3, first locate 1, then divide into fourths and locate 3/4. Source says beyond Grade 3 required depth.",
+        "Source synthesis explicitly identifies 6/6=1 and 12/6=2.",
+        "Original 2021 artwork, standalone task PDF, teacher-only Cool-down, Stage D and tests remain unverified."
+      ]
+    }
+  ]
+}
