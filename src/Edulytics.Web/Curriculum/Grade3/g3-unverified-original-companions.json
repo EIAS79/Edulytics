@@ -9704,7 +9704,7 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L17",
       "unitNumber": 3,
       "lessonNumber": 17,
-      "title": "Does It Make Sense? PLC Activity",
+      "title": "Does It Make Sense?",
       "edition": "2021 first edition",
       "localSourceRelativePath": "unit-3/lesson-17/lesson.html",
       "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-17/lesson.html",
@@ -9753,78 +9753,170 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "rounding-estimation",
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
+      "firstPartyFamily": "multi-step-add-subtract",
       "independentPractice": {
-        "prompt": "There are 252 beads. Remove 92 and add 203. What is the exact resulting number?",
+        "prompt": "There are 212 beads; 98 are used and 308 are added. How many beads now?",
         "answerType": "integer",
-        "expected": "363"
+        "expected": "422"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A collection has 326 beads and gives away 32 then 84. What remains?",
+        "prompt": "Jada had 326 beads, gave away 32, then used 84. How many remain?",
         "answerType": "integer",
         "expected": "210"
       },
       "openTeacherTask": "Work through the original lesson's activity Quick Estimates with your teacher. Show the representation and explain how it meets the goal: You will use mental computation and estimation strategies such as rounding to decide if answers to two-step word problems make sense.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "All three source student sections and teacher lesson compared. Eight exact equation anchors and nine human estimation/partner/publisher material controls. Source wooden bead photo is not reproduced.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s decide if our answers make sense. Required Preparation CCSS Standards Addressing 3.OA.D.8 Building Towards 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
+        "sourceGoal": "Assess the reasonableness of answers using mental computation and estimation strategies including rounding. Solve two-step word problems using addition and subtraction in a way that makes sense to them.",
         "sourceLearningGoals": "Assess the reasonableness of answers using mental computation and estimation strategies including rounding. Solve two-step word problems using addition and subtraction in a way that makes sense to them.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Judge source warm-up inequalities based on the three original left-side sums247,423,368.",
+          "Use Priya original 212−98+308 to test if about400 is sensible; exact422.",
+          "Estimate source Clare252−92+203=363 and Han558+302−250=610.",
+          "Solve Jada326−32−84=210 or Noah624+132+48=804; exchange solutions and judge partner reasoning."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s decide if our answers make sense. Required Preparation CCSS Standards Addressing 3.OA.D.8 Building Towards 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Q",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Estimate is not an exact answer; classroom reasoning and comparison are teacher-graded."
       },
       "sourceBasedCheck": {
-        "prompt": "The source Priya estimates around 400 beads after starting with 212, using 98, and adding 308. Explain whether 400 is a reasonable estimate.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "After Han combines 558 and 302 beads and uses 250, how many are left?",
+        "answerType": "integer",
+        "expected": "610"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-17/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "2021_LOCAL_ORIGINAL_STUDENT_HTML_TEXT",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L17-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: True or False: Is it Greater? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Does It Make Sense? PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L17-WU-1",
+          "sourceActivity": "True or False: Is it Greater?",
+          "prompt": "Calculate the original source left side 132 + 115; then decide with teacher whether it is greater than 200.",
+          "answerType": "integer",
+          "expected": "247"
+        },
+        {
+          "id": "G3-U03-L17-WU-2",
+          "sourceActivity": "True or False: Is it Greater?",
+          "prompt": "Calculate the original source left side 228 + 195; then decide with teacher whether it is greater than 400.",
+          "answerType": "integer",
+          "expected": "423"
+        },
+        {
+          "id": "G3-U03-L17-WU-3",
+          "sourceActivity": "True or False: Is it Greater?",
+          "prompt": "Calculate the original source left side 217 + 151; then decide with teacher whether it is greater than 400.",
+          "answerType": "integer",
+          "expected": "368"
+        },
+        {
+          "id": "G3-U03-L17-PRIYA",
+          "sourceActivity": "Quick Estimates",
+          "prompt": "Priya original beads story (212 initial, 98 used, 308 added): what is the exact total after the changes? Use this numerical check as an anchor, not a replacement for the estimation explanation.",
+          "answerType": "integer",
+          "expected": "422"
+        },
+        {
+          "id": "G3-U03-L17-CLARE",
+          "sourceActivity": "Quick Estimates",
+          "prompt": "Clare original beads story (252 initially, 92 used, 203 received): what is the exact total after the changes? Use this numerical check as an anchor, not a replacement for the estimation explanation.",
+          "answerType": "integer",
+          "expected": "363"
+        },
+        {
+          "id": "G3-U03-L17-HAN",
+          "sourceActivity": "Quick Estimates",
+          "prompt": "Han original beads story (558 and 302 combined, 250 spent): what is the exact total after the changes? Use this numerical check as an anchor, not a replacement for the estimation explanation.",
+          "answerType": "integer",
+          "expected": "610"
+        },
+        {
+          "id": "G3-U03-L17-JADA",
+          "sourceActivity": "Solve and Reason",
+          "prompt": "Jada original beads story (326 initially, 32 given, 84 used): what is the exact total after the changes? Use this numerical check as an anchor, not a replacement for the estimation explanation.",
+          "answerType": "integer",
+          "expected": "210"
+        },
+        {
+          "id": "G3-U03-L17-NOAH",
+          "sourceActivity": "Solve and Reason",
+          "prompt": "Noah original beads story (624 Monday,132 Tuesday,48 Wednesday): what is the exact total after the changes? Use this numerical check as an anchor, not a replacement for the estimation explanation.",
+          "answerType": "integer",
+          "expected": "804"
+        },
+        {
+          "id": "G3-U03-L17-WU-1-COMPARE",
+          "sourceActivity": "True or False: Is it Greater?",
+          "prompt": "Decide whether 132 + 115 > 200 is true or false; explain with mental strategy. Expected true.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L17-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Quick Estimates (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Does It Make Sense? PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L17-WU-2-COMPARE",
+          "sourceActivity": "True or False: Is it Greater?",
+          "prompt": "Decide whether 228 + 195 > 400 is true or false; explain with mental strategy. Expected true.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L17-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Solve and Reason (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Does It Make Sense? PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L17-WU-3-COMPARE",
+          "sourceActivity": "True or False: Is it Greater?",
+          "prompt": "Decide whether 217 + 151 > 400 is true or false; explain with mental strategy. Expected false.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L17-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L17-A1-PRIYA-ESTIMATE",
+          "sourceActivity": "Quick Estimates",
+          "prompt": "Priya estimates 400 for 212-98+308. Determine whether 400 is reasonable and justify by rounding or compensation (exact 422).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L17-A1-CLARE-HAN",
+          "sourceActivity": "Quick Estimates",
+          "prompt": "Estimate Clare's 252−92+203 and Han's 558+302−250 independently, and explain the chosen rounded values.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L17-A2-PARTNER",
+          "sourceActivity": "Solve and Reason",
+          "prompt": "Solve EITHER Jada's story or Noah's story, exchange solutions and evaluate the partner's answer and strategy.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L17-SUMMARY",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain why quick reasonableness checks need not exactly match precise answers.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L17-PUBLISHER-PHOTO",
+          "sourceActivity": "Original source art",
+          "prompt": "Wooden beads picture is publisher art, not copied; teacher may show source original or use a separately marked first-party substitute.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L17-COOLDOWN",
+          "sourceActivity": "Publisher gated Cool-down",
+          "prompt": "Original gated Beads in the Bin Cool-down not inspected, not copied and requires source teacher review.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_LOCAL_PUBLIC_TEACHER_STUDENT_HTML_BEAD_STORIES_NOT_PUBLISHER_IMAGES"
     },
     {
       "ordinal": 54,
