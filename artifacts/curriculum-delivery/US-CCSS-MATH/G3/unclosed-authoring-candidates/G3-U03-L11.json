@@ -11,16 +11,27 @@
   "originalTeacherHtml": "unit-3/lesson-11/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-11/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "THREE_PAGE_2021_STUDENT_PDF_FOUR_WARMUP_TWO_SOURCE_ACTIVITIES_TEACHER_HTML_REVIEWED",
     "goals": "Analyze different steps in subtraction algorithms and reason about when certain steps might be more productive.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/r12q0hxzfegb7qf53pvfdvk2lt9o",
+      "pages": 3,
+      "bytes": 61533,
+      "sha256": "272901bad3bc5c60fb73abf3c87afb7bd80e9848c20457ee509f7f20152e6ca5",
+      "teacherOriginalReadFromDevice": true,
+      "allThreePagesTextRead": true,
+      "originalArtworkNotReused": true
+    },
+    "sourceTeacherHtmlSha256": "b0ba25b39106329788c3c90bf40a88a20d1970b213da3b0be2783c4ed13db80a",
+    "sourcePreparationHtmlSha256": "ac38ca278c5f3ccda2cb46ae72431d5c56aa66e64fc296a88125e2b437d2ae5b"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "GUARDED_SOURCE_SPECIFIC_RICH_V2_TWO_SUBTRACTION_ALGORITHM_DIAGRAM_ALTERNATIVES_AND_TEACHER_RUBRIC",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +40,13 @@
     "existingSourceBodyHash": "7e2b19c4f93441863a76cc2f132402bee1906b9776b38c0c430907c98c03a86d",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l11-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson11.cshtml",
+    "firstPartyAlgorithmEquivalentDiagrams": true
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SIX_ORIGINAL_SOURCE_NUMERIC_ANCHORS_SEVEN_TEACHER_TASKS_AND_GOAL_EQUIVALENT_134_COOLDOWN_UNRUN",
     "family": "subtraction-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +54,138 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Compare Two Subtraction Algorithms with your teacher. Show the representation and explain how it meets the goal: Let’s think about subtraction algorithms in more detail. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 13,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson11SubtractionAlgorithmsSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L11-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: Subtract within 1,000 (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "GOAL",
+      "section": "Teacher goal",
+      "mode": "SOURCE_GOAL_ALIGNED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L11-HEADING-02",
-      "sourceSection": "Activity 1: Compare Two Subtraction Algorithms (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "NUM-WU-1",
+      "section": "Number Talk",
+      "mode": "ORIGINAL_PDF_MATH_EXACT_200",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L11-HEADING-03",
-      "sourceSection": "Activity 2: Use an Algorithm? (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "NUM-WU-2",
+      "section": "Number Talk",
+      "mode": "ORIGINAL_PDF_MATH_EXACT_250",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L11-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "NUM-WU-3",
+      "section": "Number Talk",
+      "mode": "ORIGINAL_PDF_MATH_EXACT_245",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     },
     {
-      "id": "G3-U03-L11-HEADING-05",
-      "sourceSection": "Cool-down: Subtraction Reflection (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "NUM-WU-4",
+      "section": "Number Talk",
+      "mode": "ORIGINAL_PDF_MATH_EXACT_235",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "NUM-A1-DIFF",
+      "section": "Compare Two Subtraction Algorithms",
+      "mode": "ORIGINAL_PDF_MATH_EXACT_283",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "NUM-A2-DIFF",
+      "section": "Use an Algorithm?",
+      "mode": "ORIGINAL_PDF_MATH_EXACT_134",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-METHOD-A",
+      "section": "2021 PDF p2 algorithm A",
+      "mode": "FIRST_PARTY_2021_MATH_PROCESS_DECOMPOSE_FIRST",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-METHOD-B",
+      "section": "2021 PDF p2 algorithm B",
+      "mode": "FIRST_PARTY_2021_MATH_PROCESS_DECOMPOSE_ON_DEMAND",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A1-ADVANTAGE",
+      "section": "2021 teacher synthesis",
+      "mode": "TEACHER_REVIEW_STRATEGY_TRADEOFF",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A2-ELENA",
+      "section": "2021 PDF p3 Elena claim",
+      "mode": "TEACHER_REVIEW_ZERO_TENS_AND_REGROUPING",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "A2-NOAH",
+      "section": "2021 PDF p3 Noah algorithm",
+      "mode": "TEACHER_REVIEW_ORIGINAL_PICTURE_AND_CORRECTION",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "MLR8",
+      "section": "Teacher language support",
+      "mode": "TEACHER_LEARNING_ACCESS",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "SYNTH",
+      "section": "Lesson synthesis",
+      "mode": "TEACHER_PROCESS_RUBRIC",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "CD",
+      "section": "Original publisher gated Cool-down",
+      "mode": "FIRST_PARTY_GOAL_EQUIVALENT_134_NOT_ORIGINAL",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "FIGURE-A",
+      "section": "Original source algorithm A vector art",
+      "mode": "INDEPENDENT_FIRST_PARTY_TEXT_ARTWORK_NOT_COPIED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "FIGURE-B",
+      "section": "Original source algorithm B vector art",
+      "mode": "INDEPENDENT_FIRST_PARTY_TEXT_ARTWORK_NOT_COPIED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
+    },
+    {
+      "key": "FIGURE-NOAH",
+      "section": "Original source Noah vector art",
+      "mode": "INDEPENDENT_FIRST_PARTY_TEXT_ARTWORK_NOT_COPIED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false
     }
   ],
   "images": [
@@ -131,9 +218,8 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 3,
-    "fullyVerified": 0
+    "identified": 18,
+    "semanticAuthoringVerified": 18
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 439 − 166. Show regrouping or another strategy.",
@@ -141,20 +227,21 @@
     "expected": "273"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-47-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-47-academic-source-coverage-and-human-rubric-20261025.json",
+  "publisherArtParityPercent": null,
+  "deferredStageD": [
+    "The original source algorithm vectors were inspected as math/process in the teacher source; no exact publisher artwork copied or visual pixel parity claimed.",
+    "Gated original publisher Cool-down not read; independent goal-equivalent Edulytics 301−167=134 used instead.",
+    "Tests, actual learner runtime, teacher academic signoff and Stage D were not run."
+  ]
 }

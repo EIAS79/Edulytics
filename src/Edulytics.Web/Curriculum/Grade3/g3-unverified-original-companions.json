@@ -8010,11 +8010,11 @@
         "Subtraction. Five-hundred and eight minus one-hundred fifty-six equals two.",
         "Subtraction. Three-hundred and one minus one-hundred sixty-seven."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
         "prompt": "Calculate 824 − 541 with a place-value strategy.",
@@ -8027,106 +8027,131 @@
         "expected": "134"
       },
       "openTeacherTask": "Work through the original lesson's activity Compare Two Subtraction Algorithms with your teacher. Show the representation and explain how it meets the goal: You will consider subtraction algorithms in more detail, with a focus on decomposing as needed and on cases when it is necessary to decompose multiple units to subtract across zeros.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 6 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "2021 source PDF (3 pages) and teacher HTML inspected. Both source algorithms on 824−541=283 are first-party explained. The 301−167=134 zero-tens challenge needs 1 hundred→10 tens→10 ones; teacher checks original diagram, MLR8 pair comparison, and written work. Original gated reflection not copied. Tests unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s think about subtraction algorithms in more detail. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions",
+        "sourceGoal": "Let's think about subtraction algorithms in more detail.",
         "sourceLearningGoals": "Analyze different steps in subtraction algorithms and reason about when certain steps might be more productive.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Run four source Number Talk differences 200,250,245,235, with place-value reasoning.",
+          "Compare pre-decomposition and on-demand decomposition using 824−541=283.",
+          "Explain Elena and Noah's 301−167=134 issue by exchanging a hundred into ten tens, then one ten into ten ones.",
+          "Revoice each partner's reasons in MLR8, keeping teacher scoring separate from numeric checks."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s think about subtraction algorithms in more detail. Required Preparation CCSS Standards Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not auto-score the algorithm step explanation, infer pixel parity or copy gated reflection."
       },
       "sourceBasedCheck": {
-        "prompt": "The source asks how to subtract 167 from 301. What is the answer?",
+        "prompt": "Calculate 824−541 and explain how exchanging one hundred supplies enough tens.",
         "answerType": "integer",
-        "expected": "134"
+        "expected": "283"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-11/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "2021_ORIGINAL_THREE_PAGE_PDF_AND_2021_LOCAL_TEACHER_HTML_SOURCE_NUMERICS",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S1-NUM1",
-          "sourceActivity": "Warm-up: Number Talk: Subtract within 1,000 (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 400 - 200. Show or explain a method to your teacher.",
+          "id": "G3-U03-L11-WU-1",
+          "sourceActivity": "Number Talk",
+          "prompt": "Calculate 400 − 200 and explain your place-value method to a teacher.",
           "answerType": "integer",
           "expected": "200"
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S1-NUM2",
-          "sourceActivity": "Warm-up: Number Talk: Subtract within 1,000 (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 450 - 200. Show or explain a method to your teacher.",
+          "id": "G3-U03-L11-WU-2",
+          "sourceActivity": "Number Talk",
+          "prompt": "Calculate 450 − 200 and explain your place-value method to a teacher.",
           "answerType": "integer",
           "expected": "250"
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S1-NUM3",
-          "sourceActivity": "Warm-up: Number Talk: Subtract within 1,000 (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 450 - 205. Show or explain a method to your teacher.",
+          "id": "G3-U03-L11-WU-3",
+          "sourceActivity": "Number Talk",
+          "prompt": "Calculate 450 − 205 and explain your place-value method to a teacher.",
           "answerType": "integer",
           "expected": "245"
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S1-NUM4",
-          "sourceActivity": "Warm-up: Number Talk: Subtract within 1,000 (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 450 - 215. Show or explain a method to your teacher.",
+          "id": "G3-U03-L11-WU-4",
+          "sourceActivity": "Number Talk",
+          "prompt": "Calculate 450 − 215 and explain your place-value method to a teacher.",
           "answerType": "integer",
           "expected": "235"
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S2-NUM5",
-          "sourceActivity": "Activity 1: Compare Two Subtraction Algorithms (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 824 - 541. Show or explain a method to your teacher.",
+          "id": "G3-U03-L11-A1-DIFF",
+          "sourceActivity": "Compare Two Subtraction Algorithms",
+          "prompt": "Calculate 824 − 541 and explain your place-value method to a teacher.",
           "answerType": "integer",
           "expected": "283"
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S3-NUM6",
-          "sourceActivity": "Activity 2: Use an Algorithm? (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 301 - 167. Show or explain a method to your teacher.",
+          "id": "G3-U03-L11-A2-DIFF",
+          "sourceActivity": "Use an Algorithm?",
+          "prompt": "Calculate 301 − 167 and explain your place-value method to a teacher.",
           "answerType": "integer",
           "expected": "134"
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Subtract within 1,000 (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Analyze Subtraction Algorithms.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L11-WU-TALK",
+          "sourceActivity": "Number Talk",
+          "prompt": "Explain why subtracting 5 ones and then 10 more ones from 450 changes 250 to 245 and then to 235.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Compare Two Subtraction Algorithms (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Analyze Subtraction Algorithms.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L11-A1-COMPARE",
+          "sourceActivity": "Compare Two Subtraction Algorithms",
+          "prompt": "Compare Method A (decompose needed units BEFORE subtraction) and Method B (subtract right-to-left and compose units as needed); explain their tradeoffs, using original source illustrations under teacher review.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Use an Algorithm? (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Analyze Subtraction Algorithms.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L11-A1-EXPLAIN",
+          "sourceActivity": "Compare Two Subtraction Algorithms",
+          "prompt": "Show 824−541 using BOTH approaches, including where the ten is exchanged and what happens to the hundreds, tens and ones.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L11-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L11-A2-ELENA",
+          "sourceActivity": "Use an Algorithm?",
+          "prompt": "Explain why Elena believes 301−167 is impossible with 0 in the tens place, then demonstrate why exchange of one hundred into 10 tens and one ten into 10 ones makes subtraction possible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L11-A2-NOAH",
+          "sourceActivity": "Use an Algorithm?",
+          "prompt": "Explain how Noah’s written approach can be completed; review publisher original source image with teacher if available.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L11-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain why an algorithm that decomposes first and an algorithm that decomposes when needed can both work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L11-CD",
+          "sourceActivity": "Original publisher restricted Cool-down",
+          "prompt": "Use the separately authored Edulytics 301−167=134 Cool-down; original publisher reflection is gated and not claimed equivalent word-for-word.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceOriginalStudentTaskPdfSha256": "272901bad3bc5c60fb73abf3c87afb7bd80e9848c20457ee509f7f20152e6ca5",
+      "sourceOriginalStudentTaskPdfPages": 3,
+      "sourceOriginalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/r12q0hxzfegb7qf53pvfdvk2lt9o",
+      "sourceToFirstPartyParityScope": "STATIC_2021_SOURCE_SEMANTIC_EDULYTICS_AUTHORING_NOT_ORIGINAL_ART"
     },
     {
       "ordinal": 48,
