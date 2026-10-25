@@ -11981,7 +11981,7 @@
       "publishedRichV2Compared": false,
       "sourceElementMapVerified": false,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "fact-family-division",
+      "firstPartyFamily": "division-unknown-factor-partial-source-2021",
       "independentPractice": {
         "prompt": "If 25 tomatoes are in five equal bunches, how many per bunch?",
         "answerType": "integer",
@@ -11993,26 +11993,27 @@
         "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity Equations about Onions with your teacher. Show the representation and explain how it meets the goal: You will relate multiplication and division and recognize division as an unknown factor problem.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Partial original 2021 warm-up and two onion equations verified; original Activity2 multirow image content unavailable, therefore lesson63 remains A_C_EXPLICIT_GAP and cursor MUST remain63.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
       "status": "A_C_EXPLICIT_GAP",
       "readyForStageD": false,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s connect division equations to multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.2 3.OA.B.6 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflect",
-        "sourceLearningGoals": "Explain the relationship between multiplication and division equations. Interpret division equations and multiplication equations with a missing factor.",
+        "sourceGoal": "Relate division to an unknown factor in multiplication: total=number of groups×size of each group.",
+        "sourceLearningGoals": "Interpret unknown factor and quotient in related multiplication and division equations.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Original warm-up:3×?=12 and12÷3=?; both missing values4.",
+          "Original onion story: fourteen onions split equally between two bags; Lin2×?=14 and Mai14÷2=?; both answer7 and both pupils are right.",
+          "Explain the equivalence2×7=14 ↔14÷2=7 and how group count, group size and total appear in each.",
+          "At the Farmers' Market requires the ORIGINAL illustrated source table; its rows are not available from local 2021 text. Do not invent rows or declare table coverage.",
+          "Finish with teacher explanation of the word quotient, and optional pupil-created independent equal-group examples that are NOT labelled publisher source."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s connect division equations to multiplication equations. Required Preparation CCSS Standards Addressing 3.OA.A.2 3.OA.B.6 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflect",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "A–C remains blocked until the original illustrated Farmers' Market table and its rows are individually inspected and corrected. Original Boxed Muffins Cool-down teacher-gated; photo pixels not copied."
       },
       "sourceBasedCheck": {
-        "prompt": "Source: fourteen onions equally divided into two bags. How many onions per bag?",
-        "answerType": "integer",
-        "expected": "7"
+        "prompt": "2 ×7 =14 and14÷2=7 express the same 14 onions in two bags; explain why Lin and Mai are both correct.",
+        "answerType": "teacher",
+        "expected": null
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-4/lesson-6/lesson.html",
@@ -12023,30 +12024,79 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L06-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Missing Numbers (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Division as an Unknown Factor.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L06-WU-MISSING-FACTOR",
+          "sourceActivity": "Notice and Wonder",
+          "prompt": "Original warm-up contains3 × □ = 12. What value makes the equation true? Explain.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L06-WU-QUOTIENT",
+          "sourceActivity": "Notice and Wonder",
+          "prompt": "The same warm-up contains12 ÷ 3 = □. What is the missing result? Explain how it relates to the multiplication equation.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L06-A1-ONION-FACTOR",
+          "sourceActivity": "Equations about Onions",
+          "prompt": "14 onions placed equally in2 bags. In Lin's equation2 × □ = 14, what is the unknown factor?",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U04-L06-A1-ONION-QUOTIENT",
+          "sourceActivity": "Equations about Onions",
+          "prompt": "14 onions placed equally into2 bags. In Mai's equation14 ÷ 2 = □, what quotient matches Lin’s equation?",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U04-L06-WU-NOTICE",
+          "sourceActivity": "Notice and Wonder",
+          "prompt": "Compare3×?=12 and12÷3=? as two representations of one missing-factor relationship; teacher checks what pupils notice or wonder.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L06-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Equations about Onions (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Division as an Unknown Factor.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L06-A1-BOTH",
+          "sourceActivity": "Equations about Onions",
+          "prompt": "Lin’s2×?=14 and Mai’s14÷2=? are BOTH valid descriptions of two bags with14 onions. Explain the role of total, bags and onions per bag.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L06-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: At the Farmers' Market (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Division as an Unknown Factor.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L06-A2-SOURCE-IMAGE-UNAVAILABLE",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "The source's actual student matching table is stored ONLY as a referenced figure with alt 'Table for matching situations with drawings and equations'; its individual original rows and quantities are not visible in the local 2021 HTML or AccessIM text. DO NOT assert any invented table rows. Teacher must inspect the actual original image/statement PDF and record mapping before approval.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L06-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L06-A2-REPRESENTATIONS",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Use teacher-supplied ORIGINAL table rows to explain how drawings, multiplication missing-factor equations and division equations align. Mark source row coverage unresolved until each row is examined.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Use 14 onions in two bags to define quotient7 and explain that multiplication has missing factor7 while division has quotient7.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-ORIGINAL-FIGURE",
+          "sourceActivity": "Original artwork",
+          "prompt": "The farmers’ market photo and diagram table have source URLs but their image pixels and row geometry are unverified; they were not copied.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-COOLDOWN",
+          "sourceActivity": "Original publisher Cool-down",
+          "prompt": "Original Boxed Muffins Cool-down is teacher-gated and not reproduced. Edulytics exit task remains independent.",
           "answerType": "teacher",
           "expected": null
         }
