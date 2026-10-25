@@ -14,7 +14,7 @@ internal static class CommonCoreG3Unit8Lesson6RichV2
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U08:L06";
     private const string ResourceName = "Edulytics.Data.Grade3.Unit8Lesson6RichV2";
     private const string ExpectedContentVersion =
-        "g3-g3-u08-l06-2021-authentic-six-category-large-group-survey-data-v1";
+        "g3-u08-l06-2021-authentic-six-category-large-group-survey-data-v1";
 
     private static readonly Lazy<JsonElement> Source = new(Load);
 

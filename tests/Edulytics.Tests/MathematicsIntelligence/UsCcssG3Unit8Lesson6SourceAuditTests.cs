@@ -42,4 +42,17 @@ public sealed class UsCcssG3Unit8Lesson6SourceAuditTests
         var f=t!.GetField("ResourceName",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Static);
         Assert.Equal("Edulytics.Data.Grade3.Unit8Lesson6RichV2",f!.GetRawConstantValue());
     }
+    [Fact]
+    public void MaterializerActuallyLoadsVersionGuardedRichV2()
+    {
+        var t=System.Reflection.Assembly.Load("Edulytics.Data")
+            .GetType("Edulytics.Data.Seeding.CommonCoreG3Unit8Lesson6RichV2");
+        Assert.NotNull(t);
+        var loader=t!.GetMethod("Load",
+            System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Static);
+        Assert.NotNull(loader);
+        var lesson=Assert.IsType<JsonElement>(loader!.Invoke(null,null));
+        Assert.Equal(Code,lesson.GetProperty("LessonCode").GetString());
+        Assert.Equal("Survey the Class, Survey the School",lesson.GetProperty("Title").GetString());
+    }
 }
