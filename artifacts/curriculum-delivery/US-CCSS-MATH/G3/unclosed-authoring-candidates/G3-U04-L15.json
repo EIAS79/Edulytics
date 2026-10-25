@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-15/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_FIVE_SOURCE_SVGS_WODB_SCALE_MISTAKE_AND_FOUR_FESTIVAL_MATH_CONTEXTS_READ",
     "goals": "Multiply within 100, where one factor is a teen number.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 5,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICHV2_TO_SCALE_AREA_DIAGRAMS_ALL_FOUR_FESTIVAL_PROBLEMS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "89ed7539905eec8ad315639c003331ddd008a90007b81c5434db0cc47788abff",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l15-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWELVE_NUMERIC_THIRTEEN_TEACHER_GALLERY_SCALING_TASKS_TESTS_NOT_RUN",
     "family": "multiplication-place-value",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Equal Groups, Larger Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s solve some problems with equal groups that have larger numbers.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualMathOracles": 12,
+    "teacherJudgementTasks": 13
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: Rectangles (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_SEMANTICS_VISUAL_MAP",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Equal Groups, Larger Numbers (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_SEMANTICS_VISUAL_MAP",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Gallery Walk: Equal Groups, Larger Numbers (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_SEMANTICS_VISUAL_MAP",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_SEMANTICS_VISUAL_MAP",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-4/lesson-15/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "SOURCE_GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -106,52 +109,52 @@
       "id": "G3-U04-L15-IMAGE-01",
       "observedAltText": "Area diagram. Gridded rectangle. Top measurement 14, left side measurement 7.",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_VISUALLY_INSPECTED_INDEPENDENT_TO_SCALE_MODEL"
     },
     {
       "id": "G3-U04-L15-IMAGE-02",
       "observedAltText": "Area diagram. Rectangle divided into 2 parts. One part labeled 70 with a top measurement of 10, the other labeled 21, with a top measurement of 3. Left side measurement 7.",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_VISUALLY_INSPECTED_INDEPENDENT_TO_SCALE_MODEL"
     },
     {
       "id": "G3-U04-L15-IMAGE-03",
       "observedAltText": "Area diagram. Rectangle divided into 2 parts. One part labeled 70 with a top measurement of 10, the other labeled 28, with a top measurement of 4. Left side measurement 7.",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_VISUALLY_INSPECTED_INDEPENDENT_TO_SCALE_MODEL"
     },
     {
       "id": "G3-U04-L15-IMAGE-04",
       "observedAltText": "Area diagram. Rectangle. Top measurement 14, left side measurement 7.",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_VISUALLY_INSPECTED_INDEPENDENT_TO_SCALE_MODEL"
     },
     {
       "id": "G3-U04-L15-IMAGE-05",
       "observedAltText": "Diagram.",
       "originalReference": "unit-4/lesson-15/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SVG_VISUALLY_INSPECTED_INDEPENDENT_TO_SCALE_MODEL"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 5,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Find 5 × 17; show a rectangular area model.",
@@ -159,20 +162,21 @@
     "expected": "85"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "5 source SVGs viewed; original C is deliberately not proportional and addressed explicitly.",
+    "Original student task PDF not separately read; source teacher+student public text individually mapped.",
+    "Teacher original gallery sticky-note behavior remains manually assessed.",
+    "Publisher Find the Area Cool-down gated and not copied.",
+    "Tests authored not executed, no CI/Stage D or academic approval."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-72-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-72-academic-source-coverage-and-human-rubric-20261025.json"
 }

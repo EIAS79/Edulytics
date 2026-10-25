@@ -14463,9 +14463,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-place-value",
+      "firstPartyFamily": "art-festival-teen-areas-to-scale-gallery",
       "independentPractice": {
         "prompt": "A mosaic has 12 rows of eight 1-inch tiles. What is its area in square inches?",
         "answerType": "integer",
@@ -14477,21 +14477,22 @@
         "expected": "80"
       },
       "openTeacherTask": "Work through the original lesson's activity Equal Groups, Larger Numbers with your teacher. Show the representation and explain how it meets the goal: You will multiply within 100, where one factor is a teen number.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "All five 2021 source SVGs visually inspected. Original C diagram equal-width visual error for70+28 documented; 4 art-festival problems and sticky-note walk mapped. 12 numeric,13 teacher tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s solve some problems with equal groups that have larger numbers.",
-        "sourceLearningGoals": "Multiply within 100, where one factor is a teen number.",
+        "sourceGoal": "Solve teen-factor art-festival problems and model area consistently with correct scale and units.",
+        "sourceLearningGoals": "Use gridded/ungrounded scaled area decompositions and compare solutions in a gallery.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warmup original A=7×14=98, B=7×13=91, C=7×14=98 but inaccurately drawn equal-width halves, D=7×14=98. WODB has multiple justifiable differences.",
+          "Mural15 feet×4 feet=60 sq.ft.; mosaic12×8 one-inch tiles=96 sq.in.",
+          "Chalk sidewalk6feet×14feet=84 sq.ft. Use poster with another student solving same way; stickers5×16=80 stickers.",
+          "Gallery Walk requires sticky notes describing why pupils think poster solutions make sense. Compare full grid, subdivided grid and ungridded scaled area models.",
+          "Teacher values explanatory representations and labels, not numeric-only product."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve some problems with equal groups that have larger numbers.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Five original publisher SVGs visually inspected, C scaling concern verified; independent first-party diagrams only. Publisher Cool-down gated, source PDF not reviewed."
       },
       "sourceBasedCheck": {
         "prompt": "The source mural is 15 feet by four feet. What area in square feet?",
@@ -14507,30 +14508,177 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L15-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Which One Doesn't Belong: Rectangles (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Equal Groups, Larger Numbers.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L15-WU-A",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "Original warmup gridded diagram A7×14 has98 square units.",
+          "answerType": "integer",
+          "expected": "98"
+        },
+        {
+          "id": "G3-U04-L15-WU-B",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "Original warmup B7×(10+3)=70+21=91, not98.",
+          "answerType": "integer",
+          "expected": "91"
+        },
+        {
+          "id": "G3-U04-L15-WU-C",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "Original warmup C7×(10+4)=70+28=98, despite visually incorrectly equal-width partitions.",
+          "answerType": "integer",
+          "expected": "98"
+        },
+        {
+          "id": "G3-U04-L15-WU-D",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "Original warmup D ungridded7×14=98.",
+          "answerType": "integer",
+          "expected": "98"
+        },
+        {
+          "id": "G3-U04-L15-A1-MURAL",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Original art festival mural15feet×4feet, area in SQUARE FEET.",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U04-L15-A1-MOSAIC",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Original mosaic12 rows×8 columns one-INCH tiles, area in SQUARE INCHES.",
+          "answerType": "integer",
+          "expected": "96"
+        },
+        {
+          "id": "G3-U04-L15-A1-SIDEWALK",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Original festival sidewalk6feet×14feet, area in SQUARE FEET.",
+          "answerType": "integer",
+          "expected": "84"
+        },
+        {
+          "id": "G3-U04-L15-A1-STICKERS",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Original art-festival pack5 sheets×16 stickers each, count stickers.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U04-L15-FIRSTPARTY-6X10",
+          "sourceActivity": "Independent source-aligned component",
+          "prompt": "Independent component for source sidewalk6×(10+4):6×10.",
+          "answerType": "integer",
+          "expected": "60"
+        },
+        {
+          "id": "G3-U04-L15-FIRSTPARTY-6X4",
+          "sourceActivity": "Independent source-aligned component",
+          "prompt": "Independent component for source sidewalk6×(10+4):6×4.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L15-FIRSTPARTY-5X10",
+          "sourceActivity": "Independent source-aligned component",
+          "prompt": "Independent component for source stickers5×16:5×10.",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U04-L15-FIRSTPARTY-5X6",
+          "sourceActivity": "Independent source-aligned component",
+          "prompt": "Independent component for source stickers5×16:5×6.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-WU-A",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "Source four WODB diagrams A full grid7×14, B seven by13 split10+3 labels70 and21, C seven by14 split10+4 labels70 and28 visually split halfway (WRONG scale), D ungridded7×14. Teacher discusses defensible reasons each stands out.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L15-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Equal Groups, Larger Numbers (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Equal Groups, Larger Numbers.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L15-TEACHER-WU-C-SCALE",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "Original C is deliberately misleading: the visual 70 and28 partitions should not be same width. Correct proportional model should be10:4, not1:1.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L15-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Gallery Walk: Equal Groups, Larger Numbers (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Equal Groups, Larger Numbers.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L15-TEACHER-WU-B-DIFFERENT",
+          "sourceActivity": "Which One Doesn't Belong: Rectangles",
+          "prompt": "B is7×13=91, whereas A/C/D describe7×14=98; do not claim all four yield98.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L15-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L15-TEACHER-A1-MURAL-MODEL",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Draw15×4 as4×(10+5)=40+20=60 square feet.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A1-MOSAIC-MODEL",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Represent12 rows×8 columns of1-inch square tiles; count96 square inches.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A1-SIDEWALK-MODEL",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Source6ft×14ft sidewalk=84 sq.ft. Mark grid, decomposed grid or to-scale ungridded model. Student creates third-problem poster.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A1-STICKERS-MODEL",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Five sheets of16 stickers=80 stickers. Avoid confusing count with square units.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A1-POSTER",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Source pupils may do at least two of four art problems and MUST create a partner poster for the sidewalk problem in the source lesson; teacher checks.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A2-STICKY-NOTES",
+          "sourceActivity": "Gallery Walk: Equal Groups, Larger Numbers",
+          "prompt": "Original gallery walk uses sticky notes on posters to explain WHY a solution makes sense or not, beyond matching numerical answers.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A2-REPRESENTATIONS",
+          "sourceActivity": "Gallery Walk: Equal Groups, Larger Numbers",
+          "prompt": "Original teacher synthesis compares full grid, decomposed labelled grid, and ungridded labelled diagram, including the order of discussion.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-A2-DISCUSSION",
+          "sourceActivity": "Gallery Walk: Equal Groups, Larger Numbers",
+          "prompt": "Partners compare labelled factors and product on source sidewalk posters; teacher MLR8 listening and representation assessment.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-LESSON-SYNTHESIS",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Explain benefits/drawbacks of gridded, partial, ungridded area models and need for source diagrams to be to scale.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L15-TEACHER-COOLDOWN",
+          "sourceActivity": "Equal Groups, Larger Numbers",
+          "prompt": "Original publisher Find the Area Cool-down gated; Edulytics independent assessment not source-perfect.",
           "answerType": "teacher",
           "expected": null
         }
