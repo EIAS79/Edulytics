@@ -26271,7 +26271,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "measurement-estimation-design",
       "independentPractice": {
@@ -26284,12 +26284,12 @@
         "answerType": "rational",
         "expected": "7/4"
       },
-      "openTeacherTask": "Work through the original lesson's activity Design Your Estimation Exploration with your teacher. Show the representation and explain how it meets the goal: You will apply your understanding of measurement of fractional lengths to create an Estimation Exploration activity.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Fractional Measurement: Estimate: Review original earthworm image with teacher; without verified scale do not manufacture a length.; Design Your Estimation Exploration: Select a measured object; compose nearest-half- or quarter-inch question and estimates that are low/right/high.; Facilitate Your Estimation Exploration: Show the object, invite estimates and partner explanations, then record the class responses.",
+      "teacherReviewNote": "Individual public teacher/student 2021 HTML reviewed. Independent Edulytics source-specific learning and task rubrics updated; publisher visual/printed materials, physical tasks and gated Cool-down not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s create an Estimation Exploration activity.",
         "sourceLearningGoals": "Apply understanding of measuring objects to the nearest half and fourth of an inch to create an Estimation Exploration activity.",
@@ -26315,30 +26315,30 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L14-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Estimation Exploration: Fractional Measurement (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Estimation Exploration.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L14-ACTIVITY-TEACHER-1",
+          "sourceActivity": "Fractional Measurement: Estimate",
+          "prompt": "Review original earthworm image with teacher; without verified scale do not manufacture a length.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L14-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Design Your Estimation Exploration (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Estimation Exploration.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L14-ACTIVITY-TEACHER-2",
+          "sourceActivity": "Design Your Estimation Exploration",
+          "prompt": "Select a measured object; compose nearest-half- or quarter-inch question and estimates that are low/right/high.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L14-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Facilitate Your Estimation Exploration (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Estimation Exploration.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L14-ACTIVITY-TEACHER-3",
+          "sourceActivity": "Facilitate Your Estimation Exploration",
+          "prompt": "Show the object, invite estimates and partner explanations, then record the class responses.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L14-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L14-PUBLISHER-GATED-COOLDOWN",
+          "sourceActivity": "Cool-down: Estimation Exploration Reflection (5 minutes)",
+          "prompt": "Original publisher reflection/assessment is gated and not independently inspected; teacher reviews source separately. First-party tasks are not claimed publisher copies.",
           "answerType": "teacher",
           "expected": null
         }
