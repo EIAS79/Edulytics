@@ -11,16 +11,23 @@
   "originalTeacherHtml": "unit-7/lesson-6/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-6/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_TEACHER_PREPARATION_3_PAGE_STUDENT_PDF_4_PAGE_BLACKLINE_AND_6_FIGURE_ARTS_REVIEWED",
     "goals": "Describe perimeter as the length of the boundary of a flat shape. Find the perimeter of two-dimensional shapes.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 6,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "e623801d791d58b20b80c64f1762dcb7a3f320785551d9f885bd42b147cb7fd4",
+    "originalStudentPdfPagesRead": 3,
+    "originalBlacklinePdfSha256": "bd01e554780ee8f6e11c51181e36e24f3f6bf397b5066f23cf93dcb8476f7518",
+    "originalBlacklinePdfPagesRead": 4,
+    "originalVectorOrPhotoAssetsInspected": 6,
+    "originalTeacherHtmlSha256": "3657417426a93aa05222d064fbdb466cc97dfa4fe00dcb723a053f58b85d56a0",
+    "originalPreparationHtmlSha256": "083ce3fbac5617967c0809fe0b0069562e4dfe42cc86bbe2457837b5961c23f7"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_BLACKLINE_PHYSICAL_AND_UNIT_AWARE_RICHV2_GUARDED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +35,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "c1231a52553453e0c5568f68fc908b247d53728ef1a65a656cc2bf829221933e",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l06-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson6RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson6.cshtml",
+    "authoredContentVersion": "g3-u07-l06-2021-physical-paperclips-grid-tick-perimeter-v1",
+    "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "NINE_SOURCE_NUMERIC_ANCHORS_WITH_UNIT_BOUNDARIES_AND_TEACHER_PHYSICAL_WARMUP_EXPLANATIONS_TESTS_WRITTEN_UNRUN",
     "family": "perimeter",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +52,146 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity What Does It Take to Build the Shapes? with your teacher. Show the representation and explain how it meets the goal: Let’s find the distance around shapes.",
-    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides."
+    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+    "sourceNumericQuestionCount": 9,
+    "sourceOpenHumanReasoningItems": 2,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson6PerimeterUnitTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U07-L06-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: Paper Clips & Shapes (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-7/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L06-WARMUP-PHOTO",
+      "originalSourcePage": "student-pdf-page-1",
+      "sourceKind": "PHOTO_NOTICE_AND_WONDER",
+      "coverage": "MATCHED_TEACHER_LED",
+      "companionTaskId": "G3-U07-L06-WARMUP",
+      "sourceEvidence": "Original paperclip picture visually reviewed; no fixed unique scalar expected.",
+      "teacherBoundary": "Prediction, longer jumbo clips require fewer, oral partner discourse"
     },
     {
-      "id": "G3-U07-L06-HEADING-02",
-      "sourceSection": "Activity 1: What Does It Take to Build the Shapes? (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L06-BLACKLINE-A",
+      "originalSourcePage": "blackline master shape A",
+      "sourceKind": "PAPERCLIP_PHYSICAL_BOUNDARY",
+      "verifiedStandardClipCount": 13,
+      "coverage": "MATCHED_TEACHER_LED",
+      "numericAnchor": "G3-U07-L06-PAPERCLIP-A",
+      "originalBlacklinePdfSha256": "bd01e554780ee8f6e11c51181e36e24f3f6bf397b5066f23cf93dcb8476f7518",
+      "teacherBoundary": "Actual 1.25in paperclip count, source group of 4 physical work, 1in clips require 80 percent print scaling; arithmetic alone never completes task"
     },
     {
-      "id": "G3-U07-L06-HEADING-03",
-      "sourceSection": "Activity 2: Distance Around (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L06-BLACKLINE-B",
+      "originalSourcePage": "blackline master shape B",
+      "sourceKind": "PAPERCLIP_PHYSICAL_BOUNDARY",
+      "verifiedStandardClipCount": 9,
+      "coverage": "MATCHED_TEACHER_LED",
+      "numericAnchor": "G3-U07-L06-PAPERCLIP-B",
+      "originalBlacklinePdfSha256": "bd01e554780ee8f6e11c51181e36e24f3f6bf397b5066f23cf93dcb8476f7518",
+      "teacherBoundary": "Actual 1.25in paperclip count, source group of 4 physical work, 1in clips require 80 percent print scaling; arithmetic alone never completes task"
     },
     {
-      "id": "G3-U07-L06-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-7/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L06-BLACKLINE-C",
+      "originalSourcePage": "blackline master shape C",
+      "sourceKind": "PAPERCLIP_PHYSICAL_BOUNDARY",
+      "verifiedStandardClipCount": 12,
+      "coverage": "MATCHED_TEACHER_LED",
+      "numericAnchor": "G3-U07-L06-PAPERCLIP-C",
+      "originalBlacklinePdfSha256": "bd01e554780ee8f6e11c51181e36e24f3f6bf397b5066f23cf93dcb8476f7518",
+      "teacherBoundary": "Actual 1.25in paperclip count, source group of 4 physical work, 1in clips require 80 percent print scaling; arithmetic alone never completes task"
     },
     {
-      "id": "G3-U07-L06-HEADING-05",
-      "sourceSection": "Cool-down: What is the Perimeter? (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-7/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L06-BLACKLINE-D",
+      "originalSourcePage": "blackline master shape D",
+      "sourceKind": "PAPERCLIP_PHYSICAL_BOUNDARY",
+      "verifiedStandardClipCount": 14,
+      "coverage": "MATCHED_TEACHER_LED",
+      "numericAnchor": "G3-U07-L06-PAPERCLIP-D",
+      "originalBlacklinePdfSha256": "bd01e554780ee8f6e11c51181e36e24f3f6bf397b5066f23cf93dcb8476f7518",
+      "teacherBoundary": "Actual 1.25in paperclip count, source group of 4 physical work, 1in clips require 80 percent print scaling; arithmetic alone never completes task"
+    },
+    {
+      "id": "G3-U07-L06-PERIMETER-A",
+      "originalSourcePage": "student-pdf-page-3, figure A",
+      "sourceKind": "SOURCE_DIAGRAM_NUMERIC_BOUNDARY",
+      "sourceIntervalsSum": 22,
+      "sourceUnitKind": "GRID_UNIT",
+      "coverage": "MATCHED_DIGITAL",
+      "companionTaskId": "G3-U07-L06-PERIMETER-A",
+      "gradingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson6PerimeterUnitTests.cs",
+      "teacherBoundary": "Teacher validates method: dots vs intervals, concave indent, and no unlike-unit physical comparison"
+    },
+    {
+      "id": "G3-U07-L06-PERIMETER-B",
+      "originalSourcePage": "student-pdf-page-3, figure B",
+      "sourceKind": "SOURCE_DIAGRAM_NUMERIC_BOUNDARY",
+      "sourceIntervalsSum": 26,
+      "sourceUnitKind": "GRID_UNIT",
+      "coverage": "MATCHED_DIGITAL",
+      "companionTaskId": "G3-U07-L06-PERIMETER-B",
+      "gradingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson6PerimeterUnitTests.cs",
+      "teacherBoundary": "Teacher validates method: dots vs intervals, concave indent, and no unlike-unit physical comparison"
+    },
+    {
+      "id": "G3-U07-L06-PERIMETER-C",
+      "originalSourcePage": "student-pdf-page-3, figure C",
+      "sourceKind": "SOURCE_DIAGRAM_NUMERIC_BOUNDARY",
+      "sourceIntervalsSum": 33,
+      "sourceUnitKind": "TICK_INTERVAL",
+      "coverage": "MATCHED_DIGITAL",
+      "companionTaskId": "G3-U07-L06-PERIMETER-C",
+      "gradingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson6PerimeterUnitTests.cs",
+      "teacherBoundary": "Teacher validates method: dots vs intervals, concave indent, and no unlike-unit physical comparison"
+    },
+    {
+      "id": "G3-U07-L06-PERIMETER-D",
+      "originalSourcePage": "student-pdf-page-3, figure D",
+      "sourceKind": "SOURCE_DIAGRAM_NUMERIC_BOUNDARY",
+      "sourceIntervalsSum": 32,
+      "sourceUnitKind": "TICK_INTERVAL",
+      "coverage": "MATCHED_DIGITAL",
+      "companionTaskId": "G3-U07-L06-PERIMETER-D",
+      "gradingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson6PerimeterUnitTests.cs",
+      "teacherBoundary": "Teacher validates method: dots vs intervals, concave indent, and no unlike-unit physical comparison"
+    },
+    {
+      "id": "G3-U07-L06-PERIMETER-E",
+      "originalSourcePage": "student-pdf-page-3, figure E",
+      "sourceKind": "SOURCE_DIAGRAM_NUMERIC_BOUNDARY",
+      "sourceIntervalsSum": 30,
+      "sourceUnitKind": "TICK_INTERVAL",
+      "coverage": "MATCHED_DIGITAL",
+      "companionTaskId": "G3-U07-L06-PERIMETER-E",
+      "gradingTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson6PerimeterUnitTests.cs",
+      "teacherBoundary": "Teacher validates method: dots vs intervals, concave indent, and no unlike-unit physical comparison"
+    },
+    {
+      "id": "G3-U07-L06-UNIT-COMPARISON",
+      "originalSourcePage": "teacher Activity 2 synthesis",
+      "sourceKind": "PEDAGOGY_UNIT_SIZE",
+      "coverage": "MATCHED_TEACHER_LED",
+      "teacherBoundary": "Source C 33 tick units > D 32 > E 30; A22 grid units not directly comparable to C33 tick lengths"
+    },
+    {
+      "id": "G3-U07-L06-LESSON-SYNTHESIS",
+      "originalSourcePage": "teacher Lesson Synthesis",
+      "sourceKind": "OPEN_EXPLANATION",
+      "coverage": "MATCHED_TEACHER_LED",
+      "companionTaskId": "G3-U07-L06-SYNTHESIS",
+      "teacherBoundary": "Definition + concrete frame/fence/ribbon context and partner review"
+    },
+    {
+      "id": "G3-U07-L06-MATERIALS-PREPARATION",
+      "originalSourcePage": "teacher preparation",
+      "sourceKind": "PHYSICAL_MATERIALS",
+      "coverage": "MATCHED_TEACHER_LED",
+      "teacherBoundary": "25–50 paperclips 1¼in each per group of 4; blackline copying and scale"
+    },
+    {
+      "id": "G3-U07-L06-COOLDOWN",
+      "originalSourcePage": "publisher teacher-gated Cool-down What is the Perimeter?",
+      "sourceKind": "RESTRICTED_PUBLISHER_COOLDOWN",
+      "coverage": "RIGHTS_RESTRICTED",
+      "teacherBoundary": "Not copied or falsely equated with original independently authored Edulytics exit task"
     }
   ],
   "images": [
@@ -158,9 +251,10 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 6,
-    "fullyVerified": 0
+    "identified": 14,
+    "fullyMappedDigitally": 5,
+    "teacherLed": 8,
+    "rightsRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "A polygon has boundary segments 4, 3, 3, 5 metres. Find its perimeter.",
@@ -168,20 +262,20 @@
     "expected": "15"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-119-2021-paperclips-blackline-perimeter-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Teacher-gated original Cool-down unavailable, first-party exit not a publisher duplicate.",
+    "Original paperclip photo, blackline drawings and diagram art remain source-linked not embedded.",
+    "Effective DB publication, compiled grading, tests, Stage D and academic approval are not evidenced during authoring."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L07"
 }

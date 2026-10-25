@@ -22622,10 +22622,10 @@
         "4-sided shape with side lengths shown with tick marks.",
         "6-sided shape with side lengths shown with tick marks."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
@@ -22639,20 +22639,20 @@
         "expected": "22"
       },
       "openTeacherTask": "Work through the original lesson's activity What Does It Take to Build the Shapes? with your teacher. Show the representation and explain how it meets the goal: You will understand perimeter and find the perimeter of shapes by counting to determine the side lengths.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 3-page student task PDF, 4-page shape blackline master and illustrated/publisher vector source reviewed. Counted paperclip A13 B9 C12 D14; figure A22 B26 grid units, C33 D32 E30 printed tick units. Original teacher forbids comparison without unit equivalence. All hands-on and explanations require teacher observation; tests/Stage D not run.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s find the distance around shapes.",
+        "sourceGoal": "Let\u2019s find the distance around shapes.",
         "sourceLearningGoals": "Describe perimeter as the length of the boundary of a flat shape. Find the perimeter of two-dimensional shapes.",
         "teachingSteps": [
           "Identify shape attributes, side lengths, area and perimeter constraints.",
           "Draw or measure an accurate figure that meets the task conditions.",
           "Explain and check the resulting geometric relationship."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the distance around shapes.",
+        "caution": "Never compare raw numeric perimeters when source diagrams use different-sized physical length units; a hands-on paperclip task cannot be certified by scalar answers.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -22661,38 +22661,87 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-6/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "localHtml": "Original first edition 2021 teacher lesson SHA256 3657417426a93aa05222d064fbdb466cc97dfa4fe00dcb723a053f58b85d56a0",
+        "verified": "Three-page student PDF and four-page A\u2013D blackline printed shape master reviewed, including actual figure geometry and tick intervals.",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L06-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Paper Clips & Shapes (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Distance Around Shapes.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L06-WARMUP",
+          "sourceActivity": "Warm-up: Notice and Wonder",
+          "prompt": "Look at the original source paperclip-on-shape photograph; notice and wonder how equal-size clips cover the entire boundary. Teacher discusses the prediction.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L06-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: What Does It Take to Build the Shapes? (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Distance Around Shapes.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
+          "id": "G3-U07-L06-PAPERCLIP-A",
+          "sourceActivity": "Activity 1: What Does It Take to Build the Shapes?",
+          "prompt": "On original 2021 paperclip blackline A, with specified 1\u00bc-inch paperclips and original print scale, how many same-sized clips span the boundary? Enter only the numerical count. Build/justify with your teacher; mismatched clip size requires actual remeasurement.",
+          "answerType": "integer",
+          "expected": "13"
         },
         {
-          "id": "G3-U07-L06-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Distance Around (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Distance Around Shapes.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
+          "id": "G3-U07-L06-PAPERCLIP-B",
+          "sourceActivity": "Activity 1: What Does It Take to Build the Shapes?",
+          "prompt": "On original 2021 paperclip blackline B, with specified 1\u00bc-inch paperclips and original print scale, how many same-sized clips span the boundary? Enter only the numerical count. Build/justify with your teacher; mismatched clip size requires actual remeasurement.",
+          "answerType": "integer",
+          "expected": "9"
         },
         {
-          "id": "G3-U07-L06-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L06-PAPERCLIP-C",
+          "sourceActivity": "Activity 1: What Does It Take to Build the Shapes?",
+          "prompt": "On original 2021 paperclip blackline C, with specified 1\u00bc-inch paperclips and original print scale, how many same-sized clips span the boundary? Enter only the numerical count. Build/justify with your teacher; mismatched clip size requires actual remeasurement.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U07-L06-PAPERCLIP-D",
+          "sourceActivity": "Activity 1: What Does It Take to Build the Shapes?",
+          "prompt": "On original 2021 paperclip blackline D, with specified 1\u00bc-inch paperclips and original print scale, how many same-sized clips span the boundary? Enter only the numerical count. Build/justify with your teacher; mismatched clip size requires actual remeasurement.",
+          "answerType": "integer",
+          "expected": "14"
+        },
+        {
+          "id": "G3-U07-L06-PERIMETER-A",
+          "sourceActivity": "Activity 2: Distance Around",
+          "prompt": "Inspect original 2021 student task PDF shape A; count EVERY boundary segment in its grid intervals. Enter the number of length units. Explain your counts and unit interpretation to your teacher.",
+          "answerType": "integer",
+          "expected": "22"
+        },
+        {
+          "id": "G3-U07-L06-PERIMETER-B",
+          "sourceActivity": "Activity 2: Distance Around",
+          "prompt": "Inspect original 2021 student task PDF shape B; count EVERY boundary segment in its grid intervals. Enter the number of length units. Explain your counts and unit interpretation to your teacher.",
+          "answerType": "integer",
+          "expected": "26"
+        },
+        {
+          "id": "G3-U07-L06-PERIMETER-C",
+          "sourceActivity": "Activity 2: Distance Around",
+          "prompt": "Inspect original 2021 student task PDF shape C; count EVERY boundary segment in its marked intervals. Enter the number of length units. Explain your counts and unit interpretation to your teacher.",
+          "answerType": "integer",
+          "expected": "33"
+        },
+        {
+          "id": "G3-U07-L06-PERIMETER-D",
+          "sourceActivity": "Activity 2: Distance Around",
+          "prompt": "Inspect original 2021 student task PDF shape D; count EVERY boundary segment in its marked intervals. Enter the number of length units. Explain your counts and unit interpretation to your teacher.",
+          "answerType": "integer",
+          "expected": "32"
+        },
+        {
+          "id": "G3-U07-L06-PERIMETER-E",
+          "sourceActivity": "Activity 2: Distance Around",
+          "prompt": "Inspect original 2021 student task PDF shape E; count EVERY boundary segment in its marked intervals. Enter the number of length units. Explain your counts and unit interpretation to your teacher.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U07-L06-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain to your teacher what perimeter means and give two practical uses. State why C (33 printed ticks) is not automatically physically longer than A (22 grid spaces).",
           "answerType": "teacher",
           "expected": null
         }
