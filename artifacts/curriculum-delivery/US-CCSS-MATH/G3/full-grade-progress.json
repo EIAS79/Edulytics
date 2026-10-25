@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 136,
+    "lessonsFullyReadyForStageD": 137,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 7,
+    "lessonsWithACExplicitGap": 6,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -37,20 +37,20 @@
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 3,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
-    "sourceAdaptedCheckedItems": 137,
-    "sourceSpecificReviewDeltas": 137,
+    "sourceAdaptedCheckedItems": 138,
+    "sourceSpecificReviewDeltas": 138,
     "lessonsWithActualRichV2SourcePerfect": 56,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 156,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1434,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1438,
     "originalSvgGeometriesInspected": 237
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 136,
-    "firstUnclosedOrdinal": 137,
+    "lastConsecutiveReadyForStageDOrdinal": 137,
+    "firstUnclosedOrdinal": 138,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -1177,7 +1177,7 @@
     {
       "ordinal": 137,
       "lessonCode": "PED:US-CCSS-MATH:G3:U08:L09",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L09.json",
       "reasons": [
         "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
@@ -1185,7 +1185,7 @@
         "Gated publisher Cool-down and source materials not verified",
         "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
       ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-137-2021-source-intake-candidate-20261024.json"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-137-2021-multiplication-game-strategies-evidence-20261025.json"
     },
     {
       "ordinal": 138,
@@ -5456,12 +5456,12 @@
       "unitNumber": 8,
       "lessonNumber": 9,
       "title": "Multiplication Game Day",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "stageA": "2021_ORIGINAL_LOCAL_TEACHER_PREPARATION_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_VISUAL_OR_MASTER_GAP",
+      "stageB": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_MATERIALIZER_RAZOR_AND_EXISTING_GOAL_PRESERVED",
+      "stageC": "SOURCE_NUMERICAL_ANCHORS_INDEPENDENT_EXAMPLES_AND_TEACHER_TASKS_TESTS_PENDING",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 5,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L09.json",
       "stageD": "NOT_STARTED",
@@ -5475,9 +5475,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-137-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-137-2021-multiplication-game-strategies-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "SOURCE_SPECIFIC_FIRSTPARTY_AUTHORING_ONLY_ORIGINAL_IMAGE_PRINT_PARITY_OPEN"
     },
     {
       "gradeOrdinal": 138,
@@ -6256,10 +6256,10 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 136,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L08",
+    "gradeOrdinal": 137,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L09",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-136-2021-multiplication-card-sort-and-compare-evidence-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-137-2021-multiplication-game-strategies-evidence-20261025.json",
     "sourceGraphPixelsVerified": false,
     "originalSurveyMasterPdfVerified": false,
     "testsRun": true,
@@ -6269,12 +6269,12 @@
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 136,
-    "firstUnclosedGradeOrdinal": 137,
+    "lastClosedGradeOrdinal": 137,
+    "firstUnclosedGradeOrdinal": 138,
     "testsRun": true,
     "ciRun": false,
     "stageD": "NOT_STARTED",
-    "closureScope": "SOURCE_SPECIFIC_FIRSTPARTY_NUMERICAL_WARMUP_AND_TEACHER_CARD_GAMES_ORIGINAL_BLACKLINE_GAP"
+    "closureScope": "SOURCE_SPECIFIC_FIRSTPARTY_AUTHORING_ONLY_ORIGINAL_IMAGE_PRINT_PARITY_OPEN"
   },
   "latestAttemptedGradeOrdinal": 63,
   "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U04:L06",

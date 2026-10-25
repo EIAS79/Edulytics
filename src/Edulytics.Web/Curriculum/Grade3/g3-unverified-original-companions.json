@@ -25588,7 +25588,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-fluency-games",
       "independentPractice": {
@@ -25601,12 +25601,12 @@
         "answerType": "integer",
         "expected": "72"
       },
-      "openTeacherTask": "Work through the original lesson's activity Introduce Rectangle Rumble and How Close? with your teacher. Show the representation and explain how it meets the goal: You will practice multiplying within 100.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Rectangle Rumble: Play in pairs with different rectangle colors and factor spinners; represent products by grid rectangles, total area and explain who wins.; How Close? Multiply to 100: Use four cards per partner, choose two or three values to multiply, score the absolute distance to 100 and sum round scores.; Choice Time: Multiplication Games: Choose Compare, How Close? or Rectangle Rumble; demonstrate a strategy in the real selected center.",
+      "teacherReviewNote": "Individual public teacher/student 2021 HTML reviewed. Independent Edulytics source-specific learning and task rubrics updated; publisher visual/printed materials, physical tasks and gated Cool-down not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s play multiplication games.",
         "sourceLearningGoals": "Practice finding products within 100 by playing multiplication games.",
@@ -25632,30 +25632,58 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L09-STAGE-ABC-CANDIDATE-S1-TEACHER",
+          "id": "G3-U08-L09-EXPLICIT-NUMERIC-1",
           "sourceActivity": "Warm-up: Number Talk: Multiplying Large Factors (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Multiplication Game Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "Calculate 4 × 10 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U08-L09-EXPLICIT-NUMERIC-2",
+          "sourceActivity": "Warm-up: Number Talk: Multiplying Large Factors (10 minutes)",
+          "prompt": "Calculate 4 × 20 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U08-L09-EXPLICIT-NUMERIC-3",
+          "sourceActivity": "Warm-up: Number Talk: Multiplying Large Factors (10 minutes)",
+          "prompt": "Calculate 4 × 21 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "84"
+        },
+        {
+          "id": "G3-U08-L09-EXPLICIT-NUMERIC-4",
+          "sourceActivity": "Warm-up: Number Talk: Multiplying Large Factors (10 minutes)",
+          "prompt": "Calculate 4 × 24 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "96"
+        },
+        {
+          "id": "G3-U08-L09-ACTIVITY-TEACHER-1",
+          "sourceActivity": "Rectangle Rumble",
+          "prompt": "Play in pairs with different rectangle colors and factor spinners; represent products by grid rectangles, total area and explain who wins.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L09-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Introduce Rectangle Rumble and How Close? (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Multiplication Game Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L09-ACTIVITY-TEACHER-2",
+          "sourceActivity": "How Close? Multiply to 100",
+          "prompt": "Use four cards per partner, choose two or three values to multiply, score the absolute distance to 100 and sum round scores.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L09-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Choice Time: Multiplication Games (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Multiplication Game Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L09-ACTIVITY-TEACHER-3",
+          "sourceActivity": "Choice Time: Multiplication Games",
+          "prompt": "Choose Compare, How Close? or Rectangle Rumble; demonstrate a strategy in the real selected center.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L09-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L09-PUBLISHER-GATED-COOLDOWN",
+          "sourceActivity": "Cool-down: Reflect on Multiplication (5 minutes)",
+          "prompt": "Original publisher reflection/assessment is gated and not independently inspected; teacher reviews source separately. First-party tasks are not claimed publisher copies.",
           "answerType": "teacher",
           "expected": null
         }

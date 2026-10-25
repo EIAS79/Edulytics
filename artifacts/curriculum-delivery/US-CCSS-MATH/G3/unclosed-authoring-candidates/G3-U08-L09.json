@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-8/lesson-9/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-9/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_LOCAL_TEACHER_PREPARATION_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_VISUAL_OR_MASTER_GAP",
     "goals": "Practice finding products within 100 by playing multiplication games.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "c2b7b4104c49a77bbaca42cd33dccc7189af33d31459230f8a75b96379da91e3",
+    "sourcePreparationHtmlSHA256": "868a8b2ee6cbc3c4065d35ed1d48f8008d7fdf923a4537b546e1981d10f5fb9d"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_MATERIALIZER_RAZOR_AND_EXISTING_GOAL_PRESERVED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,20 +31,27 @@
     "existingSourceBodyHash": "d5dca31c76d1e56cc5deea787c173c16e1abd5ec1ff1f0973145c76d391fc424",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l09-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson9RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson9.cshtml",
+    "sourceSpecificVersion": "g3-u08-l09-2021-multiplication-game-strategies-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_SPECIFIC_AND_TEACHER_GATED_FOCUSED_LOCAL_DOTNET_TESTS_PASSED",
     "family": "multiplication-fluency-games",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
     "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsExecuted": true,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Introduce Rectangle Rumble and How Close? with your teacher. Show the representation and explain how it meets the goal: Let’s play multiplication games.",
-    "teacherReviewNote": "Teacher witnesses the game interaction and checks multiple strategies."
+    "teacherReviewNote": "Teacher witnesses the game interaction and checks multiple strategies.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson9SourceAuditTests.cs",
+    "sourceItemCount": 8,
+    "sourceTeacherItems": 4
   },
   "sourceElements": [
     {
@@ -50,10 +59,10 @@
       "sourceSection": "Warm-up: Number Talk: Multiplying Large Factors (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -61,10 +70,10 @@
       "sourceSection": "Activity 1: Introduce Rectangle Rumble and How Close? (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -72,10 +81,10 @@
       "sourceSection": "Activity 2: Choice Time: Multiplication Games (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -83,10 +92,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-9/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -96,7 +105,7 @@
       "originalReference": "unit-8/lesson-9/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_GATED_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -105,7 +114,7 @@
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 0,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 3 equal groups with 6 objects in each group? Show your groups in a drawing.",
@@ -113,20 +122,20 @@
     "expected": "18"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Source spinner boards, grid and card masters have not been independently inspected.",
+    "Original standalone Student Task PDF or unverified source figure pixel parity not certified.",
+    "Original gated publisher Cool-down not accessed/copied, and first-party examples are distinctly labeled.",
+    "Teacher must review group discussion, student-authored activities and physical materials.",
+    "Full authenticated Stage D UAT and separate academic approval not performed."
   ],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "FOCUSED_LOCAL_DOTNET_TESTS_PASSED_GITHUB_CI_PENDING",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-137-2021-multiplication-game-strategies-evidence-20261025.json"
 }
