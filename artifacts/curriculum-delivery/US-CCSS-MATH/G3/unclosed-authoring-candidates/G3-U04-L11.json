@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-11/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-11/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_LOCAL_ORIGINAL_SOURCE_13_VISUAL_ASSETS_CARD_A_TO_L_AND_UNGRIDDED_RECTANGLES_INDIVIDUALLY_REVIEWED",
     "goals": "Apply associative and distributive properties of multiplication to find products within 100. Recognize that multiplication is associative and can be distributed over addition.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 9,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_UNGRIDDED_A_B_C_RECTANGLES_AND_EXACT_SOURCE_A_L_CARD_EXPRESSIONS_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "22c621a374729fce1b200753918143a74e10bfbb7132656d83a87d5ed10bcf09",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l11-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWENTY_NUMERIC_ORACLES_THIRTEEN_TEACHER_REVIEW_TASKS_TESTS_WRITTEN_NOT_RUN",
     "family": "distributive-property",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Mark, then Express with your teacher. Show the representation and explain how it meets the goal: Let’s use different strategies to find the area of ungridded rectangles.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualMathOracles": 20,
+    "teacherJudgementTasks": 13
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: Multiplication in Many Forms (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_SHEET_AND_FIRSTPARTY_SEMANTIC_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Mark, then Express (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_SHEET_AND_FIRSTPARTY_SEMANTIC_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Card Sort: Different Expressions, Same Rectangle (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_SHEET_AND_FIRSTPARTY_SEMANTIC_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_SHEET_AND_FIRSTPARTY_SEMANTIC_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-4/lesson-11/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -105,9 +108,9 @@
       "sourceSection": "Student Section Summary",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_SHEET_AND_FIRSTPARTY_SEMANTIC_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -117,88 +120,88 @@
       "id": "G3-U04-L11-IMAGE-01",
       "observedAltText": "Diagram. Rectangle split into 2 parts. One part partitioned into 3 rows of 2 of the same size squares, the other partitioned into 3 rows of 4 of the same size squares.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-02",
       "observedAltText": "Rectangle split into two parts. One part labeled 6 with horizontal side 2, the other labeled 12 with horizontal side 4.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-03",
       "observedAltText": "Addition. Three times 2 plus three times 4.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-04",
       "observedAltText": "Array. 3 rows of 6 dots.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-05",
       "observedAltText": "Rectangle. Horizontal side 9, vertical side 5.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-06",
       "observedAltText": "Rectangle. Horizontal side 6, vertical side 6.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-07",
       "observedAltText": "Diagram. Rectangle. Horizontal side, 8 yards. Vertical side, 7 yards.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-08",
       "observedAltText": "Area diagram.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U04-L11-IMAGE-09",
       "observedAltText": "Diagram. Rectangle split into 2 parts. One part partitioned into 3 rows of 5 of the same size squares, the other partitioned into 3 rows of 2 of the same size squares.",
       "originalReference": "unit-4/lesson-11/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_SOURCE_DIAGRAM_VIEWED_INDEPENDENT_FIRSTPARTY_EQUIVALENT"
     }
   ],
   "sourceElementCounts": {
     "headings": 6,
     "imageDescriptions": 9,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Find 5 × 8 using two smaller equal groups.",
@@ -206,20 +209,21 @@
     "expected": "40"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "13 individual source assets including complete original A–L card sheet visually inspected, publisher art not copied.",
+    "Physical blackline master and student-task PDF not separately opened; public source image cards verified mathematically.",
+    "Ungridded shading, explaining same-area groupings and alternate warmup justifications require teacher.",
+    "Original Expressions for a Rectangle Cool-down gated.",
+    "Runtime tests/Stage D/academic approval not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-68-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-68-academic-source-coverage-and-human-rubric-20261025.json"
 }

@@ -13293,9 +13293,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "distributive-property",
+      "firstPartyFamily": "ungridded-rectangle-source-card-sort-expressions",
       "independentPractice": {
         "prompt": "A rectangle is divided into a 5×3 portion and a 2×3 portion. What total area?",
         "answerType": "integer",
@@ -13307,21 +13307,23 @@
         "expected": "32"
       },
       "openTeacherTask": "Work through the original lesson's activity Mark, then Express with your teacher. Show the representation and explain how it meets the goal: You will represent multiplication strategies on an ungridded rectangle.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "All original 2021 source figures, including the complete card-sort image A–L, examined. Twenty numeric oracles and thirteen teacher rubric tasks. Ungridded physical marking and sorting teacher only; source pixels not embedded.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s use different strategies to find the area of ungridded rectangles.",
-        "sourceLearningGoals": "Apply associative and distributive properties of multiplication to find products within 100. Recognize that multiplication is associative and can be distributed over addition.",
+        "sourceGoal": "Express rectangular areas without grid lines and sort mathematically equivalent original source card expressions.",
+        "sourceLearningGoals": "Apply distributive and associative multiplication to ungridded rectangles and same-area expression families.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Original warm-up shows A3×6 gridded split2+4, B ungridded regions widths2 and4 labelled areas6 and12 (missing height3), C3×2+3×4 and D3 rows of6 dots. All total18; reasons which doesn't belong are flexible.",
+          "Source Activity1 ungridded rectangles: A9×5=45, B6×6=36, C8 yards×7 yards=56 square yards; shade a chosen partition and explain, not just numeric output.",
+          "Read original published card PNG image from device: A28 B42 C28 D24 E48 F24 G24 H36 I42 J36 K48 L28.",
+          "Original 12 source cards sort by area: 28 A/C/L,42 B/I,24 D/F/G,48 E/K,36 H/J. Discuss that equal value does not automatically prove an identical specific shape; model feasible rectangles.",
+          "Explain association example F(4×3)×2=24 and G4×(2×3)=24 and distributive connections E3×6+5×6=48 matching K8×6.",
+          "Student summary multiplication6×5=30,division30÷5=6,30÷6=5, and7×3=(5×3)+(2×3)=21."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use different strategies to find the area of ungridded rectangles.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "13 distinct original public visual assets including the source A–L card sheet read visually, no publisher photo/art copied. Original physical blackline sheet/student PDF and protected Cool-down not certified; Stage D/tests not run."
       },
       "sourceBasedCheck": {
         "prompt": "For the original source's ungridded rectangles, shade or partition each figure and explain why different expressions have equal area.",
@@ -13337,34 +13339,238 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L11-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Which One Doesn't Belong: Multiplication in Many Forms (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Multiplication Strategies on Ungridded Rectangles.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L11-WU-18",
+          "sourceActivity": "Which One Doesn't Belong: Multiplication in Many Forms",
+          "prompt": "Original Which One Doesn't Belong source A/B/C/D each represents how many objects or square units?",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U04-L11-A1-A",
+          "sourceActivity": "Mark, then Express",
+          "prompt": "Original UNGRIDDED rectangle A has horizontal9 and vertical5. Find area.",
+          "answerType": "integer",
+          "expected": "45"
+        },
+        {
+          "id": "G3-U04-L11-A1-B",
+          "sourceActivity": "Mark, then Express",
+          "prompt": "Original ungridded rectangle B has sides6 and6. Find area.",
+          "answerType": "integer",
+          "expected": "36"
+        },
+        {
+          "id": "G3-U04-L11-A1-C",
+          "sourceActivity": "Mark, then Express",
+          "prompt": "Original ungridded rectangle C is8 yards wide and7 yards tall. Find area in SQUARE YARDS.",
+          "answerType": "integer",
+          "expected": "56"
+        },
+        {
+          "id": "G3-U04-L11-CARD-A",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card A: (7×2)×2. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "28"
+        },
+        {
+          "id": "G3-U04-L11-CARD-B",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card B: 6×7. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U04-L11-CARD-C",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card C: 7×4. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "28"
+        },
+        {
+          "id": "G3-U04-L11-CARD-D",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card D: 8×3. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L11-CARD-E",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card E: 3×6+5×6. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U04-L11-CARD-F",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card F: (4×3)×2. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L11-CARD-G",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card G: 4×(2×3). Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L11-CARD-H",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card H: 4×9. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "36"
+        },
+        {
+          "id": "G3-U04-L11-CARD-I",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card I: (5×6)+(2×6). Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U04-L11-CARD-J",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card J: 2×(2×9). Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "36"
+        },
+        {
+          "id": "G3-U04-L11-CARD-K",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card K: 8×6. Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U04-L11-CARD-L",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original 2021 expression card L: (5×4)+(2×4). Find mathematical area, then the teacher checks which other card(s) can represent the SAME area.",
+          "answerType": "integer",
+          "expected": "28"
+        },
+        {
+          "id": "G3-U04-L11-SUMMARY-MUL",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Original section summary:6×5=?.",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U04-L11-SUMMARY-DIV5",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Original section summary:30÷5=?.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L11-SUMMARY-DIV6",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Original section summary:30÷6=?.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L11-SUMMARY-SEVEN3",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Original section summary7×3 and5×3+2×3; area?",
+          "answerType": "integer",
+          "expected": "21"
+        },
+        {
+          "id": "G3-U04-L11-WU-MULTI-REASONS",
+          "sourceActivity": "Which One Doesn't Belong: Multiplication in Many Forms",
+          "prompt": "All original warmup representations A gridded3×(2+4), B ungridded parts labelled6 and12, C expression3×2+3×4, D3×6 dot array give18. Name a valid reason each does not belong.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L11-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Mark, then Express (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Multiplication Strategies on Ungridded Rectangles.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L11-WU-SIDE3",
+          "sourceActivity": "Which One Doesn't Belong: Multiplication in Many Forms",
+          "prompt": "Find missing unlabelled vertical side of source ungridded B from area6 in width2 or area12 in width4: height3. Explain.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L11-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Card Sort: Different Expressions, Same Rectangle (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Multiplication Strategies on Ungridded Rectangles.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L11-A1-MARK-A",
+          "sourceActivity": "Mark, then Express",
+          "prompt": "Original ungridded rectangle A 9×5; make your own valid subdivision and expression; use square units, not automatically linear units. Teacher checks correspondence.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L11-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L11-A1-MARK-B",
+          "sourceActivity": "Mark, then Express",
+          "prompt": "Original ungridded rectangle B 6×6; make your own valid subdivision and expression; use square units, not automatically linear units. Teacher checks correspondence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A1-MARK-C",
+          "sourceActivity": "Mark, then Express",
+          "prompt": "Original ungridded rectangle C 8×7; make your own valid subdivision and expression; use square yards, not automatically linear units. Teacher checks correspondence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A2-SORT-28",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Use actual 2021 original A–L card expressions to justify exact same-area set A,C,L, product 28, plausible rectangle 7×4 or4×7. Card arrangement must be geometrically defensible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A2-SORT-42",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Use actual 2021 original A–L card expressions to justify exact same-area set B,I, product 42, plausible rectangle 6×7. Card arrangement must be geometrically defensible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A2-SORT-24",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Use actual 2021 original A–L card expressions to justify exact same-area set D,F,G, product 24, plausible rectangle 8×3 or4×6. Card arrangement must be geometrically defensible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A2-SORT-48",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Use actual 2021 original A–L card expressions to justify exact same-area set E,K, product 48, plausible rectangle 8×6. Card arrangement must be geometrically defensible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A2-SORT-36",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Use actual 2021 original A–L card expressions to justify exact same-area set H,J, product 36, plausible rectangle 4×9. Card arrangement must be geometrically defensible.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-A2-ASSOC",
+          "sourceActivity": "Card Sort: Different Expressions, Same Rectangle",
+          "prompt": "Original F (4×3)×2 and G 4×(2×3) both give24, but regroup different factors; explain with one compatible rectangle.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-SECTION-SUMMARY",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Explain6×5=30,30÷5=6,30÷6=5 and7×3=5×3+2×3=21; teacher checks inverse relationship and decomposition.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L11-GATED-CD",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original Expressions for a Rectangle publisher Cool-down teacher-gated and not reproduced. Independently authored Edulytics exit question is distinct.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "ORIGINAL_2021_PUBLIC_CARD_SHEET_A_TO_L_VISUALLY_READ_AND_UNGRIDDED_RECTANGLES_FIRSTPARTY_MATH"
     },
     {
       "ordinal": 69,
