@@ -23432,10 +23432,10 @@
         "Info gap. Problem and data cards",
         "Information Gap routine directions for problem card student and data card student."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter-area-relationship",
       "independentPractice": {
@@ -23449,20 +23449,22 @@
         "expected": "28"
       },
       "openTeacherTask": "Work through the original lesson's activity Rope Off the Garden with your teacher. Show the representation and explain how it meets the goal: You will solve problems that involve both perimeter and area of rectangles in order to reinforce the difference between perimeter and area.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original first edition student 3-page PDF plus the actual one-page four-card garden/playground blackline reviewed. Four warm-up truth checks and rope 76 ft anchored. The original Information Gap two card-pairs require separate teacher-controlled distribution and dialogue. Teacher source answers/secret data live only in authoring ledger, not exposed as ordinary public task.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s solve problems involving perimeter and area.",
+        "sourceGoal": "Let\u2019s solve problems involving perimeter and area.",
         "sourceLearningGoals": "Solve problems that involve perimeter and area of rectangles.",
         "teachingSteps": [
-          "Identify shape attributes, side lengths, area and perimeter constraints.",
-          "Draw or measure an accurate figure that meets the task conditions.",
-          "Explain and check the resulting geometric relationship."
+          "Explain warm-up yes/yes/no/no.",
+          "On 30-by-8-foot garden, find rope via perimeter 76 ft by either correctly interpreted addition or grouped multiplication.",
+          "Distribute Problem Card 1 separately from Data Card 1. Ask \"why\" and repeat until sufficient information.",
+          "Repeat for Problem Card 2 and Data Card 2 with roles swapped; keep solutions withheld until teacher review.",
+          "Contrast linear perimeter units and square area units in synthesis."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems involving perimeter and area.",
+        "caution": "Do not reveal both sides of original info-gap cards simultaneously. The question \u201cWho do you agree with?\u201d accepts Diego direct addition AND Clare multiplication if she groups matching sides rather than multiplies length\u00d7width for area.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -23471,38 +23473,74 @@
         "expected": "76"
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-10/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "originalSourcePdfSHA256": "9247af31cb9e1df6f862f9e62fc56d9e9ce3d6e29c5f7840b5162b3b7f40d0ce",
+        "originalBlacklineVerified": true,
+        "figurePixelsInspected": true,
+        "sourceMath": "2021 warmup T T F F; garden perimeter 76 ft; two source info-gap cards verified separately with mathematical keys only in evidence ledger."
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L10-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: True or False: Divide in Parts (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Problem Solving With Perimeter and Area.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L10-WARMUP-01",
+          "sourceActivity": "Warm-up: True or False: Divide in Parts",
+          "prompt": "Original source True/False 60 \u00f7 6 = 10 Enter yes/no, explaining each relationship to teacher.",
+          "answerType": "yes-no",
+          "expected": "yes"
+        },
+        {
+          "id": "G3-U07-L10-WARMUP-02",
+          "sourceActivity": "Warm-up: True or False: Divide in Parts",
+          "prompt": "Original source True/False 72 \u00f7 6 = (60 \u00f7 6)+(12 \u00f7 6) Enter yes/no, explaining each relationship to teacher.",
+          "answerType": "yes-no",
+          "expected": "yes"
+        },
+        {
+          "id": "G3-U07-L10-WARMUP-03",
+          "sourceActivity": "Warm-up: True or False: Divide in Parts",
+          "prompt": "Original source True/False 78 \u00f7 6 = (60 \u00f7 10)+(18 \u00f7 6) Enter yes/no, explaining each relationship to teacher.",
+          "answerType": "yes-no",
+          "expected": "no"
+        },
+        {
+          "id": "G3-U07-L10-WARMUP-04",
+          "sourceActivity": "Warm-up: True or False: Divide in Parts",
+          "prompt": "Original source True/False 96 \u00f7 8 = (80 \u00f7 8)\u2212(16 \u00f7 8) Enter yes/no, explaining each relationship to teacher.",
+          "answerType": "yes-no",
+          "expected": "no"
+        },
+        {
+          "id": "G3-U07-L10-ROPE",
+          "sourceActivity": "Activity 1: Rope Off the Garden",
+          "prompt": "Original rectangular school garden is 30 feet by 8 feet. How many feet of rope go around the boundary? Enter full length with linear unit; separately explain Clare and Diego methods to teacher.",
+          "answerType": "length-with-unit",
+          "expected": "76 ft"
+        },
+        {
+          "id": "G3-U07-L10-BOTH-METHODS",
+          "sourceActivity": "Activity 1: Rope Off the Garden",
+          "prompt": "Explain WHEN multiplication is valid for boundary length (two repeated pairs of equal sides) versus 30\u00d78 surface. Discuss with teacher; a yes/no about Clare is not adequate without knowing her factors.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L10-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Rope Off the Garden (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Problem Solving With Perimeter and Area.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L10-INFO-GAP-1",
+          "sourceActivity": "Activity 2: Info Gap: A Garden and a Playground",
+          "prompt": "Teacher supplies original Problem Card 1 and Data Card 1 separately. Ask for needed measurements, justify WHY, then solve independently and show teacher. Never display both original card contents together in this interface.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L10-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Info Gap: A Garden and a Playground (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Problem Solving With Perimeter and Area.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L10-INFO-GAP-2",
+          "sourceActivity": "Activity 2: Info Gap: A Garden and a Playground",
+          "prompt": "Teacher switches roles and supplies original Problem Card 2 and Data Card 2 separately. Use missing side then area, with square units; teacher reviews actual question cycle and solution.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L10-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L10-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Use examples to compare same side lengths but different linear perimeter and square-unit area. Teacher hears and reviews explanation.",
           "answerType": "teacher",
           "expected": null
         }

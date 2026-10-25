@@ -17,13 +17,13 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 122,
+    "lessonsFullyReadyForStageD": 123,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 21,
+    "lessonsWithACExplicitGap": 20,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
-    "sourceElementsIndexed": 1851,
+    "sourceElementsIndexed": 1861,
     "sourceElementsFullyComparedToEffectiveProduct": 0,
     "firstPartyOriginalCoolDownLessonsAuthored": 143,
     "firstPartyOriginalCoolDownNumericQuestions": 134,
@@ -32,7 +32,7 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 122,
+    "lessonsIndividuallyComparedToAllOriginalElements": 123,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 3,
@@ -45,12 +45,12 @@
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 156,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1344,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1353,
     "originalSvgGeometriesInspected": 237
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 122,
-    "firstUnclosedOrdinal": 123,
+    "lastConsecutiveReadyForStageDOrdinal": 123,
+    "firstUnclosedOrdinal": 124,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -1060,15 +1060,10 @@
     {
       "ordinal": 123,
       "lessonCode": "PED:US-CCSS-MATH:G3:U07:L10",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U07-L10.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-123-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-123-2021-original-information-gap-card-separation-evidence-20261025.json"
     },
     {
       "ordinal": 124,
