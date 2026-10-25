@@ -12,7 +12,7 @@ namespace Edulytics.Data.Seeding;
 internal static class CommonCoreG3Unit7Lesson15RichV2
 {
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U07:L15";
-    private const string ResourceName = "Edulytics.Data.Grade3.Unit7Lesson13RichV2";
+    private const string ResourceName = "Edulytics.Data.Grade3.Unit7Lesson15RichV2";
     private const string ExpectedContentVersion =
         "g3-u07-l15-2021-rectangle-robot-fixed-perimeter-open-drawing-v1";
 

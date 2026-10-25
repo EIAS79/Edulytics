@@ -32,10 +32,35 @@
           "Method": "Area product and perimeter double-sum are distinct.",
           "Steps": [
             "Area 5×3=15 square feet.",
-            "Border 2(5+3)=16 feet."
+            "Border 2(5+3)=16 feet.",
+            "Keep area in square feet and edge length in linear feet; these dimensions are independent examples rather than the original hidden card numbers."
           ],
           "Answer": "15 square feet of area, 16 feet of edging",
           "Check": "This example does not certify original open visuals or discussions."
+        },
+        {
+          "Title": "Independent fabric area example (not a publisher card answer)",
+          "Question": "An illustrative rectangular fabric piece measures 6 by 4 feet; how much area does it cover?",
+          "Method": "Multiply adjacent side lengths",
+          "Steps": [
+            "Identify width 4 feet and length 6 feet.",
+            "Compute 6×4=24.",
+            "Report 24 square feet of fabric, not feet of border."
+          ],
+          "Answer": "24 square feet",
+          "Check": "The original MLR4 hidden source measurements remain separate and unavailable to pupils in this first-party example."
+        },
+        {
+          "Title": "Independent border plus hem example",
+          "Question": "A fictional 5-by-3-foot lapa needs ribbon around its border plus 2 feet of separate hem. What total length is used?",
+          "Method": "Perimeter plus linear hem",
+          "Steps": [
+            "Compute perimeter 2×(5+3)=16 feet.",
+            "Add the hypothetical shirt hem 2 feet.",
+            "Use 16+2=18 linear feet of ribbon; do not include the fabric's 15 square feet of area."
+          ],
+          "Answer": "18 feet",
+          "Check": "These independent numbers are not the original two-source-card measurements; teachers review card exchanges."
         }
       ],
       "CommonMistakes": [

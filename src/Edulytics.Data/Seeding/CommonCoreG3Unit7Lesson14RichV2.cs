@@ -12,7 +12,7 @@ namespace Edulytics.Data.Seeding;
 internal static class CommonCoreG3Unit7Lesson14RichV2
 {
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U07:L14";
-    private const string ResourceName = "Edulytics.Data.Grade3.Unit7Lesson13RichV2";
+    private const string ResourceName = "Edulytics.Data.Grade3.Unit7Lesson14RichV2";
     private const string ExpectedContentVersion =
         "g3-u07-l14-2021-wax-print-repeated-quadrilateral-and-bundle-info-gap-v1";
 
