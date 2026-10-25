@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-4/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-4/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_LOCAL_TEACHER_PREPARATION_ALL_FOUR_STUDENT_SECTIONS_SOURCE_NUMBERS_AND_DIAGRAM_ALTS_REVIEWED",
     "goals": "Interpret division expressions. Understand that the same division expression can be used to represent both types of division situations.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 8,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_2021_SOURCE_SPECIFIC_RICH_V2_EXACT_FIVE_SPINNINGTOP_MATCHES_TWO_DIVISOR_ROLES_AND_BLOCK_DIAGRAMS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "18b32dcf8ef26870e9e6428c19e4ea66822c2d0be273439dad628c9d9df25fe8",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l04-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FIFTEEN_SOURCE_NUMERIC_ORACLES_ELEVEN_TEACHER_DIAGRAM_REASONING_TASKS_TESTS_WRITTEN_NOT_RUN",
     "family": "division-representations",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,10 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Spinning Tops with your teacher. Show the representation and explain how it meets the goal: Let’s make sense of division expressions. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflecti",
-    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient."
+    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+    "individualMathOracles": 15,
+    "teacherJudgementTasks": 11,
+    "semanticRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-61-academic-source-coverage-and-human-rubric-20261025.json"
   },
   "sourceElements": [
     {
@@ -50,9 +54,9 @@
       "sourceSection": "Warm-up: Number Talk: More or Less? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +65,9 @@
       "sourceSection": "Activity 1: Spinning Tops (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +76,9 @@
       "sourceSection": "Activity 2: Cars in Boxes (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +87,9 @@
       "sourceSection": "Activity 3: Stacks of Blocks (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -94,9 +98,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATCHED_TEACHER_LED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -107,7 +111,7 @@
       "originalReference": "unit-4/lesson-4/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "SOURCE_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -120,7 +124,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     },
     {
       "id": "G3-U04-L04-IMAGE-02",
@@ -129,7 +133,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     },
     {
       "id": "G3-U04-L04-IMAGE-03",
@@ -138,7 +142,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     },
     {
       "id": "G3-U04-L04-IMAGE-04",
@@ -147,7 +151,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     },
     {
       "id": "G3-U04-L04-IMAGE-05",
@@ -156,7 +160,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     },
     {
       "id": "G3-U04-L04-IMAGE-06",
@@ -165,7 +169,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     },
     {
       "id": "G3-U04-L04-IMAGE-07",
@@ -174,7 +178,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_DIAGRAM_MATH_READ_ORIGINAL_PIXELS_UNVERIFIED"
     },
     {
       "id": "G3-U04-L04-IMAGE-08",
@@ -183,13 +187,13 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_DIAGRAM_MATH_READ_ORIGINAL_PIXELS_UNVERIFIED"
     }
   ],
   "sourceElementCounts": {
     "headings": 6,
     "imageDescriptions": 8,
-    "fullyVerified": 0
+    "fullyVerified": 5
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "24 items are shared equally among 4 children. How many items does each child receive?",
@@ -197,20 +201,21 @@
     "expected": "6"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Publisher images/third-party photo pixels not checked or copied; no source-material-parity claim.",
+    "Student source task PDF not visually verified; source public student-facing HTML mathematically reviewed.",
+    "Publisher Han’s Tops Cool-down gated; independent Edulytics exit task kept separate.",
+    "Teacher diagrams/explanations/collaboration remain human-evaluated; no automatic success claimed.",
+    "Runtime/CI/Stage D/academic review not run or approved."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-61-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-61-academic-source-coverage-and-human-rubric-20261025.json"
 }

@@ -11410,9 +11410,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "division-representations",
+      "firstPartyFamily": "division-two-meanings-firstedition-2021",
       "independentPractice": {
         "prompt": "Twenty-four tops are split equally into four colours. How many of each colour?",
         "answerType": "integer",
@@ -11424,26 +11424,27 @@
         "expected": "7"
       },
       "openTeacherTask": "Work through the original lesson's activity Spinning Tops with your teacher. Show the representation and explain how it meets the goal: You will interpret division expressions and understand that the same division expression can be used to represent both types of division situations.",
-      "teacherReviewNote": "Source 4 student sections and 6 teacher headings; 4 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Math: 4 subtraction + 5 spinning-top + 2 car + 4 block answers (15 integer checks); 11 teacher tasks for expression mapping, diagrams, explanations, image and gated assessment boundaries. Tests written, not run; source PDF not checked.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s make sense of division expressions. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflecti",
-        "sourceLearningGoals": "Interpret division expressions. Understand that the same division expression can be used to represent both types of division situations.",
+        "sourceGoal": "A division expression can describe an unknown number of groups OR an unknown size in each group; context specifies what divisor means.",
+        "sourceLearningGoals": "Interpret expressions and explain two contexts for an identical numerical division.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up: mentally compute500−475=25,504−475=29,512−475=37,512−449=63; justify how the changes affect the difference.",
+          "Spinning Tops: map five original situations in order to expression letters C,A,E,B,D (24÷4,24÷2,24÷6,12÷2,12÷6). Distinguish fixed group counts from fixed group sizes.",
+          "Cars in Boxes: both of Han’s 21-car stories map to21÷3; in one 3 means box count and in the other 3 means cars per box.",
+          "Stacks of Blocks: source diagrams A=2 groups of3, B=3 groups of2. Kiran→B/C, Han→A/C, Jada→A/D, Mai→B/D where source expression C=6÷2 and D=6÷3.",
+          "Synthesis: the quotient of six divided by two is three, yet only story context and drawing identify which quantity is asked."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of division expressions. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflecti",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original publisher/third-party photos were not copied or visually verified; the publisher-gated Han’s Tops cool-down is unavailable. Teacher checks diagram and justification tasks separately."
       },
       "sourceBasedCheck": {
-        "prompt": "Han has 21 toy cars and three equal boxes. How many cars per box?",
-        "answerType": "integer",
-        "expected": "7"
+        "prompt": "Two Han stories both use21÷3 and give seven; explain why ‘three’ means a different known quantity.",
+        "answerType": "teacher",
+        "expected": null
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-4/lesson-4/lesson.html",
@@ -11454,69 +11455,189 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S1-NUM1",
-          "sourceActivity": "Warm-up: Number Talk: More or Less? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 500 - 475. Show or explain a method to your teacher.",
+          "id": "G3-U04-L04-WU-1",
+          "sourceActivity": "Number Talk: More or Less?",
+          "prompt": "Original mental subtraction: 500 − 475. Explain how you found the difference.",
           "answerType": "integer",
           "expected": "25"
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S1-NUM2",
-          "sourceActivity": "Warm-up: Number Talk: More or Less? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 504 - 475. Show or explain a method to your teacher.",
+          "id": "G3-U04-L04-WU-2",
+          "sourceActivity": "Number Talk: More or Less?",
+          "prompt": "Original mental subtraction: 504 − 475. Explain how you found the difference.",
           "answerType": "integer",
           "expected": "29"
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S1-NUM3",
-          "sourceActivity": "Warm-up: Number Talk: More or Less? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 512 - 475. Show or explain a method to your teacher.",
+          "id": "G3-U04-L04-WU-3",
+          "sourceActivity": "Number Talk: More or Less?",
+          "prompt": "Original mental subtraction: 512 − 475. Explain how you found the difference.",
           "answerType": "integer",
           "expected": "37"
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S1-NUM4",
-          "sourceActivity": "Warm-up: Number Talk: More or Less? (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 512 - 449. Show or explain a method to your teacher.",
+          "id": "G3-U04-L04-WU-4",
+          "sourceActivity": "Number Talk: More or Less?",
+          "prompt": "Original mental subtraction: 512 − 449. Explain how you found the difference.",
           "answerType": "integer",
           "expected": "63"
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: More or Less? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Interpret Division Expressions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L04-A1-CLARE",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "24 tops split into four equal colour groups; how many of each colour? Explain why the divisor names that group quantity.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L04-A1-PRIYA",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "Two painters share 24 tops equally; how many tops does each paint? Explain why the divisor names that group quantity.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L04-A1-STORE",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "24 tops arranged equally in six boxes; how many per box? Explain why the divisor names that group quantity.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L04-A1-DIEGO",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "12 tops given as gifts, two per friend; how many friends receive gifts? Explain why the divisor names that group quantity.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L04-A1-DREIDELS",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "Six friends share 12 dreidels equally; how many per friend? Explain why the divisor names that group quantity.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L04-A2-HAN-THREE-BOXES",
+          "sourceActivity": "Cars in Boxes",
+          "prompt": "21 toy cars placed equally into three boxes: how many cars per box?",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U04-L04-A2-HAN-THREE-PER",
+          "sourceActivity": "Cars in Boxes",
+          "prompt": "21 toy cars packed with three cars per box: how many boxes are needed?",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U04-L04-A3-KIRAN",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "Six blocks, two in each stack: how many stacks? A teacher checks both the independently drawn group model and which division expression is appropriate.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L04-A3-HAN",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "Six blocks shared into two stacks: how many blocks in each? A teacher checks both the independently drawn group model and which division expression is appropriate.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L04-A3-JADA",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "Six blocks with three in each stack: how many stacks? A teacher checks both the independently drawn group model and which division expression is appropriate.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L04-A3-MAI",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "Six blocks arranged as three equal stacks: how many in each? A teacher checks both the independently drawn group model and which division expression is appropriate.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L04-WU-REASONING",
+          "sourceActivity": "Number Talk: More or Less?",
+          "prompt": "Explain why 500−475=25,504−475=29,512−475=37,512−449=63; distinguish changes to minuend and subtrahend.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Spinning Tops (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Interpret Division Expressions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L04-A1-MATCH",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "Associate source cases Clare →24÷4, Priya →24÷2, shop →24÷6, Diego →12÷2, six friends →12÷6. Teacher evaluates the reason the divisor differs.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Cars in Boxes (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Interpret Division Expressions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L04-A1-CULTURAL-PHOTOS",
+          "sourceActivity": "Spinning Tops",
+          "prompt": "Discuss cultural spinning-top examples with teacher. Original third-party photos and source attributions are not copied into Edulytics.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: Stacks of Blocks (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “Interpret Division Expressions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L04-A2-TWO-ROLES",
+          "sourceActivity": "Cars in Boxes",
+          "prompt": "Two distinct Han contexts both require21÷3=7, but 3 signifies boxes in one and cars per box in the other; teacher checks language and grouping.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L04-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L04-A3-DRAW-KIRAN",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "KIRAN: independently draw 3 stacks of2; source drawing B, expression 6÷2. Teacher checks picture, context and divisor interpretation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L04-A3-DRAW-HAN",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "HAN: independently draw 2 stacks of3; source drawing A, expression 6÷2. Teacher checks picture, context and divisor interpretation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L04-A3-DRAW-JADA",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "JADA: independently draw 2 stacks of3; source drawing A, expression 6÷3. Teacher checks picture, context and divisor interpretation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L04-A3-DRAW-MAI",
+          "sourceActivity": "Stacks of Blocks",
+          "prompt": "MAI: independently draw 3 stacks of2; source drawing B, expression 6÷3. Teacher checks picture, context and divisor interpretation.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L04-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain why an expression alone cannot disclose whether the unknown is number of groups or size of each group.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L04-SOURCE-ART",
+          "sourceActivity": "Original figure evidence",
+          "prompt": "Original eight distinct source figures include cultural toy photos, toy cars and two group diagrams. Only the diagram group counts were semantically read; original pixels and third-party rights remain unverified.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L04-COOLDOWN",
+          "sourceActivity": "Original publisher Cool-down",
+          "prompt": "Source 2021 Han’s Tops cool-down is login-gated. It is not reproduced; teacher checks source separately, while Edulytics uses a distinct independent exit task.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "SOURCE_MATH_SEMANTICS_PUBLIC_TEACHER_STUDENT_HTML_FIRSTPARTY_TEACHING_NOT_PUBLISHER_ART_OR_GATED_CD"
     },
     {
       "ordinal": 62,
