@@ -9464,8 +9464,8 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
         "prompt": "How many whole numbers from 45 through 54 inclusive round to 50 to the nearest ten?",
@@ -9478,21 +9478,21 @@
         "expected": "550"
       },
       "openTeacherTask": "Work through the original lesson's activity All the Numbers with your teacher. Show the representation and explain how it meets the goal: You will use your understanding of rounding to consider all the numbers that round to a given number.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Three public student sections and section-summary source mapped: four exact warm-ups, three required and two extension rounding intervals, first-party mystery clues, teacher-reviewed partner game; original art and gated Cool-down not verified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s look for patterns in rounding.",
+        "sourceGoal": "Recognize and generalize patterns in the rounding of whole numbers within 1,000.",
         "sourceLearningGoals": "Recognize and generalize patterns in the rounding of whole numbers within 1,000.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Number talk: 5×7,4×7,6×7,4×8 by related groups.",
+          "Explore all integers that round to 50 or70 to nearest ten and600 to nearest hundred under halfway-up.",
+          "Extension 100 and500 to nearest hundred; inclusive ranges 50..149 and450..549.",
+          "Play secret index card game: each student supplies odd/even, rounded benchmark and interval clues; accept multiple valid guesses until revealed."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s look for patterns in rounding.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Cannot auto-grade open-ended index cards or source figure geometry. Source pictures only have alt text."
       },
       "sourceBasedCheck": {
         "prompt": "List every whole number that rounds to 50 to the nearest ten. Explain why the list begins and ends where it does.",
@@ -9508,34 +9508,196 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L16-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: More Groups, Fewer Groups (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Round and Round Again.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L16-WU-1",
+          "sourceActivity": "Number Talk: More Groups, Fewer Groups",
+          "prompt": "From the original warm-up, calculate 5 × 7 mentally.",
+          "answerType": "integer",
+          "expected": "35"
+        },
+        {
+          "id": "G3-U03-L16-WU-2",
+          "sourceActivity": "Number Talk: More Groups, Fewer Groups",
+          "prompt": "From the original warm-up, calculate 4 × 7 mentally.",
+          "answerType": "integer",
+          "expected": "28"
+        },
+        {
+          "id": "G3-U03-L16-WU-3",
+          "sourceActivity": "Number Talk: More Groups, Fewer Groups",
+          "prompt": "From the original warm-up, calculate 6 × 7 mentally.",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U03-L16-WU-4",
+          "sourceActivity": "Number Talk: More Groups, Fewer Groups",
+          "prompt": "From the original warm-up, calculate 4 × 8 mentally.",
+          "answerType": "integer",
+          "expected": "32"
+        },
+        {
+          "id": "G3-U03-L16-A1-50-10-LOW",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the SMALLEST number that rounds to 50 to nearest 10?",
+          "answerType": "integer",
+          "expected": "45"
+        },
+        {
+          "id": "G3-U03-L16-A1-50-10-HIGH",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the LARGEST number that rounds to 50 to nearest 10?",
+          "answerType": "integer",
+          "expected": "54"
+        },
+        {
+          "id": "G3-U03-L16-A1-50-10-COUNT",
+          "sourceActivity": "All the Numbers",
+          "prompt": "How many integer values round to 50 to nearest 10? State just the count; explain the complete interval to your teacher.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U03-L16-A1-70-10-LOW",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the SMALLEST number that rounds to 70 to nearest 10?",
+          "answerType": "integer",
+          "expected": "65"
+        },
+        {
+          "id": "G3-U03-L16-A1-70-10-HIGH",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the LARGEST number that rounds to 70 to nearest 10?",
+          "answerType": "integer",
+          "expected": "74"
+        },
+        {
+          "id": "G3-U03-L16-A1-70-10-COUNT",
+          "sourceActivity": "All the Numbers",
+          "prompt": "How many integer values round to 70 to nearest 10? State just the count; explain the complete interval to your teacher.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U03-L16-A1-600-100-LOW",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the SMALLEST number that rounds to 600 to nearest 100?",
+          "answerType": "integer",
+          "expected": "550"
+        },
+        {
+          "id": "G3-U03-L16-A1-600-100-HIGH",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the LARGEST number that rounds to 600 to nearest 100?",
+          "answerType": "integer",
+          "expected": "649"
+        },
+        {
+          "id": "G3-U03-L16-A1-600-100-COUNT",
+          "sourceActivity": "All the Numbers",
+          "prompt": "How many integer values round to 600 to nearest 100? State just the count; explain the complete interval to your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L16-A1-100-100-LOW",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the SMALLEST number that rounds to 100 to nearest 100?",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U03-L16-A1-100-100-HIGH",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the LARGEST number that rounds to 100 to nearest 100?",
+          "answerType": "integer",
+          "expected": "149"
+        },
+        {
+          "id": "G3-U03-L16-A1-100-100-COUNT",
+          "sourceActivity": "All the Numbers",
+          "prompt": "How many integer values round to 100 to nearest 100? State just the count; explain the complete interval to your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L16-A1-500-100-LOW",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the SMALLEST number that rounds to 500 to nearest 100?",
+          "answerType": "integer",
+          "expected": "450"
+        },
+        {
+          "id": "G3-U03-L16-A1-500-100-HIGH",
+          "sourceActivity": "All the Numbers",
+          "prompt": "For whole numbers rounded by the lesson's halfway-up convention, what is the LARGEST number that rounds to 500 to nearest 100?",
+          "answerType": "integer",
+          "expected": "549"
+        },
+        {
+          "id": "G3-U03-L16-A1-500-100-COUNT",
+          "sourceActivity": "All the Numbers",
+          "prompt": "How many integer values round to 500 to nearest 100? State just the count; explain the complete interval to your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L16-WU-PATTERN",
+          "sourceActivity": "Number Talk: More Groups, Fewer Groups",
+          "prompt": "Explain how 5×7,4×7,6×7 and4×8 relate using one more or fewer group and a changed factor.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L16-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: All the Numbers (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Round and Round Again.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L16-A1-LISTS",
+          "sourceActivity": "All the Numbers",
+          "prompt": "List all whole numbers in the three original sets: 45–54,65–74,550–649; compare the pattern with a partner. Extension: 50–149 and450–549.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L16-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: What's My Mystery Number? (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Round and Round Again.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L16-A1-VISUAL",
+          "sourceActivity": "All the Numbers",
+          "prompt": "Use the original 30–60 number-line illustration if available, or an independently authored equivalent. Explain why the upper bound ends one integer before the next midpoint.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L16-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L16-A2-CARD",
+          "sourceActivity": "What's My Mystery Number?",
+          "prompt": "Write a hidden number 100–1000 and the three required clues: odd/even, rounds to a stated place value, and lies between two stated bounds. Teacher reviews consistency.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L16-A2-TEAM",
+          "sourceActivity": "What's My Mystery Number?",
+          "prompt": "Pass clues around the team, let each person reason and guess, then reveal and discuss ambiguities. Do not auto-grade an arbitrary hidden number without its actual clues.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L16-A2-ORIGINAL-PICTURE",
+          "sourceActivity": "What's My Mystery Number?",
+          "prompt": "Source figures (three) are not reproduced. The teacher must check a supplied source/reference picture or explicitly marked first-party substitute.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L16-SUMMARY",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Explain why ten-to-one intervals have ten integers and hundred-to-one intervals have one hundred integers when halfway-up is used.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L16-CD",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Publisher's gated Clare mystery number Cool-down not read or copied. Use Edulytics original independent check separately.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_ARCHIVED_TEACHER_STUDENT_HTML_ROUNDING_RANGES_MYSTERY_GAME_FIRSTPARTY_NOT_PUBLISHER_PIXELS"
     },
     {
       "ordinal": 53,

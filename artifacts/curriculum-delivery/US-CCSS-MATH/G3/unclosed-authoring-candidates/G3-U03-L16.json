@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-3/lesson-16/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-16/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_SOURCE_WARMUP_FOUR_MULTIPLICATIONS_THREE_ROUNDING_INTERVALS_TWO_EXTENSIONS_AND_MYSTERY_CLUES_REVIEWED",
     "goals": "Recognize and generalize patterns in the rounding of whole numbers within 1,000.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "8676bf8e00956c86bd983af0c4c45938e2dc36dc6c5b669bad2b01541478d99e",
+    "prepHtmlSha256": "de9c670daff4fd52d1666903e23b41090aa5413a2c11646fdcc78a2dc19590e0"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "2021_SOURCE_SPECIFIC_FIRST_PARTY_RICH_V2_WARMUP_INTERVALS_AND_MYSTERY_GAME",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +31,12 @@
     "existingSourceBodyHash": "44606915553f15c576f3c7737a961094d044f43bbf9ce3f30b8c1e0b8da5d14d",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l16-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson16.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "19_SOURCE_NUMERIC_ORACLES_8_HUMAN_ACTIVITIES_TESTS_AUTHORED_NOT_RUN",
     "family": "rounding-estimation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,76 +44,79 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity All the Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s look for patterns in rounding.",
-    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums."
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "sourceNumericChecks": 19,
+    "teacherReviewTasks": 8,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson16RoundingIntervalsSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L16-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: More Groups, Fewer Groups (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WU-4",
+      "mode": "FOUR_EXACT_MULTIPLICATION_CHECKS_AND_TEACHER_PATTERN",
+      "source": "5x7,4x7,6x7,4x8",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
     },
     {
-      "id": "G3-U03-L16-HEADING-02",
-      "sourceSection": "Activity 1: All the Numbers (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "A1-50-BY-10",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "45..54",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
     },
     {
-      "id": "G3-U03-L16-HEADING-03",
-      "sourceSection": "Activity 2: What's My Mystery Number? (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "A1-70-BY-10",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "65..74",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
     },
     {
-      "id": "G3-U03-L16-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "A1-600-BY-100",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "550..649",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
     },
     {
-      "id": "G3-U03-L16-HEADING-05",
-      "sourceSection": "Cool-down: What is Clare's Mystery Number? (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "A1-100-BY-100",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "50..149",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
     },
     {
-      "id": "G3-U03-L16-HEADING-06",
-      "sourceSection": "Student Section Summary",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-16/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "A1-500-BY-100",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "450..549",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A2-CARD",
+      "mode": "STUDENT_CHOOSES_MYSTERY_NUMBER_THREE_CLUES_TEACHER_REVIEW",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A2-GAME",
+      "mode": "TURN_TAKING_ANSWERS_TEACHER_REVIEW",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "ORIGINAL-IMAGES",
+      "mode": "THREE_IMAGE_ALTS_RECORDED_PUBLISHER_PIXELS_NOT_VERIFIED_INDEPENDENT_SCHEMATICS",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "CD",
+      "mode": "GATED_PUBLISHER_NOT_COPIED",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
     }
   ],
   "images": [
@@ -142,9 +149,9 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 6,
-    "imageDescriptions": 3,
-    "fullyVerified": 0
+    "academicSemantic": 10,
+    "sourceImageAlts": 3,
+    "sourceFigurePixelVerified": 0
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Round 346 to the nearest hundred (fifty rounds up).",
@@ -152,20 +159,18 @@
     "expected": "300"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Source original 2021 student PDF and three image pixels not independently read, although local teacher/student HTML text and alt roles were reviewed.",
+    "Original publisher Clare mystery Cool-down gated; no source Cool-down copy.",
+    "Original physical cards and partner discussion require teacher. .NET tests/Stage D/CI/UAT/academic approval not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_LOCAL_SOURCE_STUDENT_TEACHER_HTML_MATHEMATICAL_SEMANTICS_ONLY"
 }
