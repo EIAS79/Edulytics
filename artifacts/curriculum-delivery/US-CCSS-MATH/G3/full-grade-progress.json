@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 73,
+    "lessonsFullyReadyForStageD": 74,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 70,
+    "lessonsWithACExplicitGap": 69,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,7 +32,7 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 73,
+    "lessonsIndividuallyComparedToAllOriginalElements": 74,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
@@ -44,13 +44,13 @@
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
-    "originalImagePixelFilesInspected": 18,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1257,
-    "originalSvgGeometriesInspected": 73
+    "originalImagePixelFilesInspected": 19,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1261,
+    "originalSvgGeometriesInspected": 77
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 73,
-    "firstUnclosedOrdinal": 74,
+    "lastConsecutiveReadyForStageDOrdinal": 74,
+    "firstUnclosedOrdinal": 75,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -3752,12 +3752,12 @@
       "unitNumber": 4,
       "lessonNumber": 17,
       "title": "Use the Four Operations to Solve Problems",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "ORIGINAL_2021_FOUR_TRUEFALSE_AND_FOUR_OPS_SOURCE_PARTY_TWO_STEP_STORIES_5_FIGURES_VERIFIED",
+      "stageB": "FIRSTPARTY_TWO_STEP_CONTEXTUAL_EQUATIONS_AND_SOURCE_REVIEW_RICHV2",
+      "stageC": "FOURTEEN_SOURCE_NUMERIC_TWELVE_OPEN_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L17.json",
       "stageD": "NOT_STARTED",
@@ -3771,9 +3771,10 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-2021-source-to-first-party-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-academic-source-coverage-and-human-rubric-20261025.json"
     },
     {
       "gradeOrdinal": 75,
@@ -6379,20 +6380,20 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 73,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U04:L16",
+    "gradeOrdinal": 74,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U04:L17",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-73-2021-source-to-first-party-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-73-academic-source-coverage-and-human-rubric-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-2021-source-to-first-party-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-academic-source-coverage-and-human-rubric-20261025.json",
     "testsRun": false,
     "originalPdfRead": false,
     "stageD": "NOT_STARTED",
-    "academicApproval": "NOT_RECORDED"
+    "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 73,
-    "firstUnclosedGradeOrdinal": 74,
+    "lastClosedGradeOrdinal": 74,
+    "firstUnclosedGradeOrdinal": 75,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"

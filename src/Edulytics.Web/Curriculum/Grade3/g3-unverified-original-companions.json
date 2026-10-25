@@ -15057,9 +15057,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "four-operations-problems",
+      "firstPartyFamily": "all-four-operations-two-step-party-problems",
       "independentPractice": {
         "prompt": "A source situation has 168 muffins, 104 in a basket, and eight equal boxes. How many per box?",
         "answerType": "integer",
@@ -15071,21 +15071,22 @@
         "expected": "160"
       },
       "openTeacherTask": "Work through the original lesson's activity Questions about a Situation with your teacher. Show the representation and explain how it meets the goal: You will solve two-step problems using all four operations.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 complete party situations and five images verified; warmup T/T/T/F, per-table8, rings183, muffins8, cups160, section summary120/91/84. 14 numeric anchors+12 teacher tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s use the four operations to solve problems.",
-        "sourceLearningGoals": "Represent two-step word problems using equations with a letter standing for the unknown quantity. Solve two-step word problems using the four operations.",
+        "sourceGoal": "Use addition, subtraction, multiplication and division in two-step contextual equations.",
+        "sourceLearningGoals": "Write a letter for the unknown, choose operation order, use parentheses and reason.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up original four true/false: T,T,T,F, because3×40=120 vs7×10=70.",
+          "Source party 142 guests,94 in roomA,6 equal tables in roomB;48 guests and8/table using(142−94)÷6=g.",
+          "Source also specifies4 pieces silverware and1 plate for each guest; open student-generated questions may use them, but teacher focuses highlighted tables question.",
+          "Kiran156 rings plus3 people making9 each→183; Mai168−104=64 distributed into8 boxes→8 each; cups184−3×8=160 remaining.",
+          "Teacher checks coherent two-step equations using unknown letters and parentheses and MLR5 Co-Craft Questions."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use the four operations to solve problems.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Five original 2021 teacher visual assets read including reused summary diagrams; publisher photo not copied. Protected Andre's Balloons Cool-down and student PDF unverified."
       },
       "sourceBasedCheck": {
         "prompt": "A source party starts with 156 rings and three people each add nine. How many rings total?",
@@ -15101,30 +15102,184 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L17-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: True or False: Multiply by 10 (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Use the Four Operations to Solve Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L17-WU-2X40",
+          "sourceActivity": "True or False: Multiply by 10",
+          "prompt": "Calculate source quantity: 2×40. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U04-L17-WU-3X50",
+          "sourceActivity": "True or False: Multiply by 10",
+          "prompt": "Calculate source quantity: 3×50. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "150"
+        },
+        {
+          "id": "G3-U04-L17-WU-3X40",
+          "sourceActivity": "True or False: Multiply by 10",
+          "prompt": "Calculate source quantity: 3×40. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "120"
+        },
+        {
+          "id": "G3-U04-L17-WU-7X10",
+          "sourceActivity": "True or False: Multiply by 10",
+          "prompt": "Calculate source quantity: 7×10. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "70"
+        },
+        {
+          "id": "G3-U04-L17-A1-ROOM-B",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Calculate source quantity: 142 guests−94 guests in roomA, number in roomB. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U04-L17-A1-EACH-TABLE",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Calculate source quantity: (142−94)÷6 equal tables, guests/table. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U04-L17-A1-SILVERWARE",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Calculate source quantity: 142 guests each4 pieces of silverware, total pieces (student-generated question). Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "568"
+        },
+        {
+          "id": "G3-U04-L17-A1-PLATES",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Calculate source quantity: 142 guests each1 plate, total plates (student-generated question). Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "142"
+        },
+        {
+          "id": "G3-U04-L17-A2-PAPER-RINGS",
+          "sourceActivity": "Party Problems",
+          "prompt": "Calculate source quantity: 156 existing +3 people×9 further rings. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "183"
+        },
+        {
+          "id": "G3-U04-L17-A2-MUFFINS",
+          "sourceActivity": "Party Problems",
+          "prompt": "Calculate source quantity: (168−104)÷8 muffins per box. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U04-L17-A2-CUPS",
+          "sourceActivity": "Party Problems",
+          "prompt": "Calculate source quantity: 184−(3×8) remaining cups. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "160"
+        },
+        {
+          "id": "G3-U04-L17-SUM-4X30",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Calculate source quantity: 4×30. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "120"
+        },
+        {
+          "id": "G3-U04-L17-SUM-7X13",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Calculate source quantity: 7×13. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "91"
+        },
+        {
+          "id": "G3-U04-L17-SUM-3X28",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Calculate source quantity: 3×28. Explain units and relationships when relevant.",
+          "answerType": "integer",
+          "expected": "84"
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-WU-FOUR-TF",
+          "sourceActivity": "True or False: Multiply by 10",
+          "prompt": "Warmup original4 statements:2×40=2×4×10 true;2×40=8×10 true;3×50=15×10 true;3×40=7×10 FALSE (120 vs70). Explain mentally, not just numeric endpoints.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L17-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Questions about a Situation (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Use the Four Operations to Solve Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L17-TEACHER-A1-QUESTIONS",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Original source situation142 guests, roomA94, roomB6 equal tables,4 silverware pieces and one plate each. Students generate as many possible mathematical questions as reasonable; source supplies no fixed complete list.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L17-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Party Problems (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Use the Four Operations to Solve Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L17-TEACHER-A1-TABLE-EQUATION",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Source featured question '(142−94)÷6=g' with parentheses first, g=8 guests/table; teacher checks unknown symbol and quantity.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L17-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L17-TEACHER-A1-DIVISION-FOCUS",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Original teacher allows equivalent (g×6)+94=142 but instructional synthesis emphasizes subtraction then division; preserve equivalence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-A1-SOURCE-IMAGES",
+          "sourceActivity": "Questions about a Situation",
+          "prompt": "Original summary visuals from prior section12 tens=120, seven sets13=91,3×28 partition10+10+8=84 and20+8=84; visual assets reviewed.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-A2-RINGS-SYMBOL",
+          "sourceActivity": "Party Problems",
+          "prompt": "Original Kiran156 rings Mon–Thu, Friday Kiran and two friends EACH9 more: r=156+(3×9)=183. Not only two people.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-A2-MUFFIN-SYMBOL",
+          "sourceActivity": "Party Problems",
+          "prompt": "Original Mai168 muffins,104 into basket, rest split8 boxes: m=(168−104)÷8=8.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-A2-CUP-SYMBOL",
+          "sourceActivity": "Party Problems",
+          "prompt": "Original184 cups, three tables each8 people take a cup: c=184−(3×8)=160; distinguish cups remaining.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-A2-TWO-STEP",
+          "sourceActivity": "Party Problems",
+          "prompt": "Student writes ONE equation with a letter for unknown and parentheses, provides drawing/reasoning. Teacher reviews source MLR5 Co-Craft question stems.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-LESSON-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare all four operations and explain order of operations, including why parentheses force multiplication or subtraction first.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-GATED",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Publisher Andre's Balloons Cool-down gated, cannot assert source-perfect assessment equivalence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L17-TEACHER-TEACHER-REVIEW",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Teacher observes group discussion and checks original party question generation rather than accepting numerical anchor as all source work.",
           "answerType": "teacher",
           "expected": null
         }

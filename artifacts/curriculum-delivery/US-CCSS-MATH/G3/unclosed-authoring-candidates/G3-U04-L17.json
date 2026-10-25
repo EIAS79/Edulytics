@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-17/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-17/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_FOUR_TRUEFALSE_AND_FOUR_OPS_SOURCE_PARTY_TWO_STEP_STORIES_5_FIGURES_VERIFIED",
     "goals": "Represent two-step word problems using equations with a letter standing for the unknown quantity. Solve two-step word problems using the four operations.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 5,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_TWO_STEP_CONTEXTUAL_EQUATIONS_AND_SOURCE_REVIEW_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "1330849cdf0c415e59a7a27e321df1f5ee9e8db91e4db36606324c10b4e3211f",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l17-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOURTEEN_SOURCE_NUMERIC_TWELVE_OPEN_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "four-operations-problems",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Questions about a Situation with your teacher. Show the representation and explain how it meets the goal: Let’s use the four operations to solve problems.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualMathOracles": 14,
+    "teacherJudgementTasks": 12
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: True or False: Multiply by 10 (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIRSTPARTY_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Questions about a Situation (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIRSTPARTY_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Party Problems (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIRSTPARTY_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIRSTPARTY_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-4/lesson-17/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "SOURCE_GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -105,9 +108,9 @@
       "sourceSection": "Student Section Summary",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_MATH_FIRSTPARTY_TEACHER_REVIEW",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -117,52 +120,52 @@
       "id": "G3-U04-L17-IMAGE-01",
       "observedAltText": "Handmade paper party decoration.",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_IMAGE_INSPECTED_FIRSTPARTY_NOT_COPIED"
     },
     {
       "id": "G3-U04-L17-IMAGE-02",
       "observedAltText": "Base ten blocks. 12 tens.",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_IMAGE_INSPECTED_FIRSTPARTY_NOT_COPIED"
     },
     {
       "id": "G3-U04-L17-IMAGE-03",
       "observedAltText": "Base ten blocks. 7 sets of 1 ten and 3 ones.",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_IMAGE_INSPECTED_FIRSTPARTY_NOT_COPIED"
     },
     {
       "id": "G3-U04-L17-IMAGE-04",
       "observedAltText": "Diagram. Gridded rectangle partitioned into 3 parts, two labeled 30 with a measurement of 10 at the top, and one labeled 24 with a measurement of 8 at the top. Side measurement 3.",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_IMAGE_INSPECTED_FIRSTPARTY_NOT_COPIED"
     },
     {
       "id": "G3-U04-L17-IMAGE-05",
       "observedAltText": "Area diagram. Rectangle divided into 2 parts. One part labeled 60 with a top measurement of 20, the other labeled 24, with a top measurement of 8. Left side measurement 3.",
       "originalReference": "unit-4/lesson-17/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_IMAGE_INSPECTED_FIRSTPARTY_NOT_COPIED"
     }
   ],
   "sourceElementCounts": {
     "headings": 6,
     "imageDescriptions": 5,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "60 counters are packed in 3 equal boxes. How many counters in each box?",
@@ -170,20 +173,21 @@
     "expected": "20"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Five unique source images inspected; publisher pixels not copied.",
+    "Original teacher-student source question stems verified; original student PDF not separately inspected.",
+    "Open question generation and single combined equation letter/parenthesis require teacher review.",
+    "Original Andre's Balloons Cool-down gated and not copied.",
+    "Tests authored not executed, no Stage D, CI or academic approval."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-academic-source-coverage-and-human-rubric-20261025.json"
 }
