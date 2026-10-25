@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-2/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-2/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_SEVEN_SVGS_AND_A_D_SOURCE_DOM_LABELS_VISUALLY_VERIFIED",
     "goals": "Express the area of each part as a unit fraction of the whole. Partition shapes into halves, thirds, fourths, sixths, and eighths.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 4,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
     "teacherFacingSourceExtractedNotFullyRead": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SIX_FRACTION_STRIPS_SECRET_SHADE_TRADE_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "1fee6fe6cb8a9f5bf7a79af1636903f6775881d4ffc28ed3a1de8684aabbca7b",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l02-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "ELEVEN_NUMERIC_TWENTY_THREE_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "fractions-equal-partition",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Partition the Strips with your teacher. Show the representation and explain how it meets the goal: Let’s use fractions to describe parts.",
-    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram."
+    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
+    "individualMathOracles": 11,
+    "teacherJudgementTasks": 23
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: Shaded Parts (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_FIRSTPARTY_FRACTION_MODEL_AND_PEER_WORKFLOW_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Partition the Strips (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_FIRSTPARTY_FRACTION_MODEL_AND_PEER_WORKFLOW_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Partition, Shade, Trade (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_FIRSTPARTY_FRACTION_MODEL_AND_PEER_WORKFLOW_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_FIRSTPARTY_FRACTION_MODEL_AND_PEER_WORKFLOW_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-5/lesson-2/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -106,43 +109,43 @@
       "id": "G3-U05-L02-IMAGE-01",
       "observedAltText": "Diagram. Rectangle partitioned into 2 parts.",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_IMAGE_PIXELS_INSPECTED_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U05-L02-IMAGE-02",
       "observedAltText": "Diagram. Rectangle partitioned into 3 equal parts, 1 of them shaded.",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_IMAGE_PIXELS_INSPECTED_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U05-L02-IMAGE-03",
       "observedAltText": "Diagram. Rectangle.",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_IMAGE_PIXELS_INSPECTED_FIRSTPARTY_EQUIVALENT"
     },
     {
       "id": "G3-U05-L02-IMAGE-04",
       "observedAltText": "Diagram.",
       "originalReference": "unit-5/lesson-2/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SOURCE_IMAGE_PIXELS_INSPECTED_FIRSTPARTY_EQUIVALENT"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 4,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "An equal-area whole has 6 parts; exactly one part is selected. Write its unit fraction.",
@@ -150,20 +153,21 @@
     "expected": "1/6"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Seven original source SVG figures visually inspected; source A–D labels grounded in original DOM.",
+    "Publisher original SVG paths, physical Strip blackline artwork and original student task PDF not copied/verified pixel-for-pixel.",
+    "Original Label the Parts Cool-down gated and not certified.",
+    "Physical folds, child-generated secret one-part shading and MLR8 require human review.",
+    "No actual compilation, .NET tests, Stage D, CI or academic approval."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-81-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-81-academic-source-coverage-and-human-rubric-20261025.json"
 }

@@ -17077,9 +17077,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "fractions-equal-partition",
+      "firstPartyFamily": "fraction-strips-pair-shade-trade-original-2021",
       "independentPractice": {
         "prompt": "When a paper strip is cut into three equal sections, what is the fraction of one section?",
         "answerType": "rational",
@@ -17093,21 +17093,22 @@
         "requiredDenominator": 6
       },
       "openTeacherTask": "Work through the original lesson's activity Partition the Strips with your teacher. Show the representation and explain how it meets the goal: You will partition shapes into equal parts and express each equal-size part as a unit fraction.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Grade3 ordinal81 U05:L02 original warmup A equal-area L-shaped blue half,B third,C unequal,D horizontal half confirmed from source DOM labels. Seven original SVG figures read. Six originally equal strips, five fold fractions and partner shade/trade preserved.11 numeric anchors,23 teacher tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s use fractions to describe parts.",
-        "sourceLearningGoals": "Express the area of each part as a unit fraction of the whole. Partition shapes into halves, thirds, fourths, sixths, and eighths.",
+        "sourceGoal": "Partition equal-size rectangles and express one shaded equal part as unit fraction.",
+        "sourceLearningGoals": "Create six-strip tool; use unit fraction labels and peer identification of unlabeled shaded fraction.",
         "teachingSteps": [
-          "Identify the whole and divide it into equal parts.",
-          "Represent the fraction with a number line or equal-area drawing.",
-          "Explain the unit fractions, position, equality or comparison."
+          "Original warm-up A L-shaped shading nonetheless equal half, B1/3, C unequal two pieces (not halves), D horizontal equal half; distinguish equal AREA from same shape outline.",
+          "Create six originally equal paper strips: leave one whole, fold others into halves, fourths, eighths, thirds, sixths, all vertical subdivisions; keep strips for later.",
+          "Draw rectangular equal partitions for2,3,4,6,8 and label each region1/n.",
+          "Original Partition Shade Trade: shade one part on a student-chosen equal partition without label, exchange with partner to identify1/n; grade explanation, not prescribed n.",
+          "Source synthesis contrasts all six parts called sixths with exactly ONE sixth shaded and named1/6."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use fractions to describe parts.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Seven unique original source SVG figures visually read on owner device with exact warmup A–D DOM label mapping. Original blackline pixels and source cooldown gated; Stage D/tests unrun."
       },
       "sourceBasedCheck": {
         "prompt": "Source paper strips partitioned into fourths: what fraction does one equal piece represent?",
@@ -17124,30 +17125,240 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U05-L02-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Which One Doesn't Belong: Shaded Parts (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Name Parts as Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L02-WU-PARTS-A",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Original 2021 figure A (L-shaped shaded half, equal area to unshaded irregular opposite). Count visible regions; teacher separately verifies equal area before naming unit fraction.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L02-WU-PARTS-B",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Original 2021 figure B (three equal vertical thirds, left third shaded). Count visible regions; teacher separately verifies equal area before naming unit fraction.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L02-WU-PARTS-C",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Original 2021 figure C (off-center vertical strip creates two unequal parts). Count visible regions; teacher separately verifies equal area before naming unit fraction.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L02-WU-PARTS-D",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Original 2021 figure D (two equal horizontal halves, top shaded). Count visible regions; teacher separately verifies equal area before naming unit fraction.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L02-A1-DENOM-2",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold strip into 2 equal parts; give the denominator of its unit fraction 1/2.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L02-A1-DENOM-3",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold strip into 3 equal parts; give the denominator of its unit fraction 1/3.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L02-A1-DENOM-4",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold strip into 4 equal parts; give the denominator of its unit fraction 1/4.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L02-A1-DENOM-6",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold strip into 6 equal parts; give the denominator of its unit fraction 1/6.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U05-L02-A1-DENOM-8",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold strip into 8 equal parts; give the denominator of its unit fraction 1/8.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U05-L02-SYNTHESIS-1OF6",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original source shows six EQUAL parts with exactly one shaded: how many parts are shaded?",
+          "answerType": "integer",
+          "expected": "1"
+        },
+        {
+          "id": "G3-U05-L02-SYNTHESIS-DENOM6",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original synthesis sixths diagram: total equal parts?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U05-L02-WU-A",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Visual source A blue L-shaped region is ONE HALF in area despite not rectangular; correct source geometry must be explained, not rejected based only on silhouette.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L02-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Partition the Strips (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Name Parts as Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L02-WU-B",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Source B rectangle in three equal strips, one shaded1/3. Teacher checks areas and meaning.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L02-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Partition, Shade, Trade (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Name Parts as Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L02-WU-C",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Source C rectangle split unevenly into two vertical pieces, so cannot name each1/2; different from A.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L02-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U05-L02-WU-D",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Source D top and bottom equal halves; can label one shaded1/2.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-WU-CHOICE",
+          "sourceActivity": "Which One Doesn't Belong: Shaded Parts",
+          "prompt": "Original which-one-doesn't-belong accepts multiple defensible distinguishing explanations; source A/B/D equal-area and C not.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-SIX",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Original blackline requires SIX strips all initially equal-size; reserve one intact whole1 and fold the other five into2,3,4,6,8 equal vertical sections.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-HALVES",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold and mark2 equal columns, label each1/2. Teacher checks equality.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-THIRDS",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold and mark3 equal vertical columns, label each1/3. Teacher checks equality.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-FOURTHS",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold and mark4 equal columns, using halves halved if helpful, label each1/4.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-SIXTHS",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold and mark6 equal columns, using thirds halved if helpful, label each1/6.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-EIGHTHS",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Fold and mark8 equal columns, using fourths halved if helpful, label each1/8.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A1-KEEP",
+          "sourceActivity": "Partition the Strips",
+          "prompt": "Original fraction strips are to be KEPT for future lessons or glued into workbook, not discarded after source lesson.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-DRAW2",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Partition a blank rectangle into halves by drawing lines and name each1/2; precision teacher checked.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-DRAW3",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Partition rectangle into thirds and name each1/3; teacher checks area.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-DRAW4",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Partition rectangle into fourths and name each1/4.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-DRAW6",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Partition rectangle into sixths and name each1/6.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-DRAW8",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Partition rectangle into eighths and name each1/8.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-SECRET",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Original partner trade: each pupil partitions a blank rectangle into an individually chosen number of equal parts and shades exactly ONE without labeling or telling partner the answer.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-TRADE",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Students swap unlabeled rectangles and deduce partner's shaded unit fraction, with explanation. Task is intentionally nonunique.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-SHADE",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Teacher verifies only ONE of n equal parts shaded, not a source fixed n; partner identifies 1/n.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-A2-MLR8",
+          "sourceActivity": "Partition, Shade, Trade",
+          "prompt": "Original source MLR8 partner rehearses explanation of partitions, equality, and denominators.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare a strip with every region labelled1/6 versus another strip showing exactly one shaded1/6. Distinguish equal parts from one chosen part.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L02-GATED",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original Label the Parts Cool-down requires teacher login, source statement not copied or certified.",
           "answerType": "teacher",
           "expected": null
         }
