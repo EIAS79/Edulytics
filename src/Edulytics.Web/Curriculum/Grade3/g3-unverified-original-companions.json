@@ -16396,9 +16396,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "four-operations-problems",
+      "firstPartyFamily": "optional-community-garden-open-yield-modelling",
       "independentPractice": {
         "prompt": "Twelve strawberries grow per plant; eight plants in one row produce how many?",
         "answerType": "integer",
@@ -16410,21 +16410,24 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Produce with your teacher. Show the representation and explain how it meets the goal: You will use multiplication and division to model a real-world design problem.",
-      "teacherReviewNote": "Source 3 student sections and 4 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Source 2021 original optional garden lesson inspected: strawberry 7×8=56; harvest96 each row; source physical intervals not uniquely garden outside boundaries; six crop facts and open two-crop50–100 each constraints. 6 numeric anchors (4 independent examples clearly flagged),13 teacher reviews.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s plan a school garden.",
-        "sourceLearningGoals": "Represent and solve “How many groups?” and “How many in each group?” problems in a real-world context. Solve two-step problems in a real-world context.",
+        "sourceGoal": "Model a school community garden using equal groups, arrays, spacing and harvest constraints.",
+        "sourceLearningGoals": "Develop and defend pupil-selected garden design with multiplication and division.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up garden photograph: discuss plant spacing, plants to grow and space required.",
+          "Activity1 seven rows of eight strawberry plants→56; 12 strawberries per plant→96 per row. Spacing4 feet between rows,2 feet between plants.",
+          "Distinguish physical distance between first/last plant centers24 by14 feet from total garden footprint, which needs boundary assumptions.",
+          "Activity2 students choose ANY TWO of source's six crop options and propose count/layout yielding between50–100 each. Use printed source crop spacing and yields.",
+          "Example independent plan strawberries six plants yielding72 and tomatoes four yielding80; first-party sample, not original fixed answer.",
+          "Pinto beans yields100–125 beans per plant; potatoes yield5–10 potatoes each, require ranges and caveats.",
+          "End with MLR7 Compare and Connect teacher-judged visuals and reflections."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s plan a school garden.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Optional source original activity has no Cool-down. All original seven horticultural photographs read; independently authored diagrams rather than third-party images. Original task PDF and academic signoff not certified."
       },
       "sourceBasedCheck": {
         "prompt": "A strawberry patch has seven rows of eight plants. How many plants?",
@@ -16440,30 +16443,135 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L22-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Garden (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “School Community Garden (optional).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L22-A1-PLANTS",
+          "sourceActivity": "Produce",
+          "prompt": "Original strawberry patch7 rows each with8 plants: how many plants?",
+          "answerType": "integer",
+          "expected": "56"
+        },
+        {
+          "id": "G3-U04-L22-A1-STRAWBERRIES-ROW",
+          "sourceActivity": "Produce",
+          "prompt": "Original each strawberry plant produces12,8 plants in each row: how many strawberries per row?",
+          "answerType": "integer",
+          "expected": "96"
+        },
+        {
+          "id": "G3-U04-L22-FIRSTPARTY-ALL-STRAWBERRIES",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Explicit first-party extension: 56 plants each yields12 strawberries; how many for entire patch?",
+          "answerType": "integer",
+          "expected": "672"
+        },
+        {
+          "id": "G3-U04-L22-FIRSTPARTY-TOMATOES",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Independent SAMPLE plan 4 tomato plants×20 tomatoes: sample harvest.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U04-L22-FIRSTPARTY-CANTALOUPES",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Independent SAMPLE plan 8 cantaloupe plants×8 cantaloupes: sample harvest.",
+          "answerType": "integer",
+          "expected": "64"
+        },
+        {
+          "id": "G3-U04-L22-FIRSTPARTY-ZUCCHINI",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Independent SAMPLE plan10 zucchini plants×8: sample harvest.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U04-L22-WARM-NOTICE",
+          "sourceActivity": "Notice and Wonder: Garden",
+          "prompt": "Observe the source photograph of strawberry rows; discuss plant spacing and what is needed for a community garden. Teacher observes, no source numeric value.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L22-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Produce (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “School Community Garden (optional).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L22-A1-ARRAY",
+          "sourceActivity": "Produce",
+          "prompt": "Draw seven rows each containing eight strawberry plants and explain7×8=56.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L22-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Plan the Garden (25 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “School Community Garden (optional).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L22-A1-SPACE",
+          "sourceActivity": "Produce",
+          "prompt": "Original row-to-row spacing4 feet and plant-to-plant2 feet; with7 row positions and8 plant positions, outer-center separations are6×4=24ft and7×2=14ft respectively. A garden-bed footprint may require boundary clearance; do NOT claim source specifies precise outer-edge length/width.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L22-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L22-A1-YIELD",
+          "sourceActivity": "Produce",
+          "prompt": "Original 12 strawberries per plant and8 per row→96 per row; explain using equal groups.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-SIX-CHOICES",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Student source must select TWO plant types from strawberries, cantaloupe, zucchini, tomatoes, pinto beans, potatoes; no publisher-fixed two choices.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-HARVEST-BOUND",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "For EACH chosen crop source requires50–100 harvested fruits/vegetables; teacher checks expected yield and valid plant count, not one fixed total.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-ROW-DISTANCE",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Teacher checks garden arrangement respects source spacing rows vs between plants separately; units in feet, note crop-specific conditions.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-PINTO-RANGE",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Pinto beans:20–25 pods per plant and around5 beans per pod→100–125 beans per plant. Source harvest range may exceed100 with one plant; discuss modelling assumptions or choose other crop.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-POTATO-RANGE",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Potatoes yield5–10 per plant, so ten plants yield range50–100; distinguish uncertainty from fixed values.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-VALID-PLAN",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Sample first-party plan strawberries6×12=72 and tomatoes4×20=80. Teacher checks row spacing and full garden drawing; clearly example, not prescribed.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-A2-VISUAL",
+          "sourceActivity": "Plan the Garden",
+          "prompt": "Teacher evaluates source planning diagram, two selected crops, number of plants, area/spacing, projected harvest, and MLR7 Compare and Connect between groups.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain how multiplication and division informed garden spacing/harvest, note other horticultural requirements sunlight, water and soil.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L22-OPTIONAL",
+          "sourceActivity": "Lesson identity",
+          "prompt": "This 2021 lesson is officially OPTIONAL, do not claim source includes a Cool-down; no source numerical assignment for two choices.",
           "answerType": "teacher",
           "expected": null
         }
