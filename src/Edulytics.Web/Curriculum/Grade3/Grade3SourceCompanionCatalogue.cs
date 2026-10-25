@@ -161,6 +161,31 @@ public static class Grade3SourceCompanionCatalogue
                 "All missing sides match; teacher reviews original shape reasoning.");
         }
 
+        if (q.AnswerType == "rectangle-pair-area-different-perimeter")
+        {
+            if (!int.TryParse(q.Expected, NumberStyles.None, CultureInfo.InvariantCulture,
+                    out var target) || target is not (12 or 20 or 42 or 48))
+                return new(null, true, "Source open drawing requires teacher review.");
+            var match = Regex.Match(submitted.Trim(),
+                @"^([0-9]{1,2})\s*,\s*([0-9]{1,2})\s*;\s*([0-9]{1,2})\s*,\s*([0-9]{1,2})$",
+                RegexOptions.CultureInvariant);
+            if (!match.Success)
+                return new(false, true, "Enter positive dimensions a,b;c,d.");
+            var a = int.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+            var b = int.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+            var c = int.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
+            var d = int.Parse(match.Groups[4].Value, CultureInfo.InvariantCulture);
+            static bool FitsGrid(int x, int y) =>
+                x > 0 && y > 0 &&
+                ((x <= 19 && y <= 24) || (y <= 19 && x <= 24));
+            var correct = FitsGrid(a, b) && FitsGrid(c, d) &&
+                a * b == target && c * d == target &&
+                2 * (a + b) != 2 * (c + d);
+            return new(correct, true, correct
+                ? "Equal square-unit area and different linear perimeters; teacher must inspect the actual two drawings."
+                : "Check both areas, unequal perimeters, and feasible source dot-paper bounds.");
+        }
+
         if (q.AnswerType == "rectangle-pair-perimeter-different-area")
         {
             if (!int.TryParse(q.Expected, NumberStyles.None, CultureInfo.InvariantCulture,

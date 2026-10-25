@@ -23794,10 +23794,10 @@
         "4 quadrilaterals on a dot grid",
         "rectangles on a dot grid"
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter-area-relationship",
       "independentPractice": {
@@ -23811,20 +23811,21 @@
         "expected": "22"
       },
       "openTeacherTask": "Work through the original lesson's activity Area of 24 with your teacher. Show the representation and explain how it meets the goal: You will understand that rectangles with the same area do not always have the same perimeter.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 teacher/preparation, 4 pupil PDF pages, illustrated section summary and separate square dot-paper blackline inspected on authorized PC. Four number talk answers and four equal-area/different-perimeter pair checks, with teacher-owned page2 drawing, own-choice, poster and gallery.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s explore rectangles with the same area.",
+        "sourceGoal": "Let\u2019s explore rectangles with the same area.",
         "sourceLearningGoals": "Draw rectangles with the same area and different perimeters.",
         "teachingSteps": [
-          "Identify shape attributes, side lengths, area and perimeter constraints.",
-          "Draw or measure an accurate figure that meets the task conditions.",
-          "Explain and check the resulting geometric relationship."
+          "Decompose 96\u00f74 into 80\u00f74+16\u00f74.",
+          "Draw feasible integer factor rectangles of area24 and find their perimeters.",
+          "For area12/20/42/48 draw different-perimeter pairs on 19\u00d724 interval paper.",
+          "Cut and post paper rectangles, then discuss notice/wonder and compare 2021 section-summary diagrams."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore rectangles with the same area.",
+        "caution": "Area is fixed by PRODUCT; unlike previous lesson, different PERIMETERS are required. Source original small page2 grid cannot fit all theoretical factor rectangles. Standard full-grid paper supports 19\u00d724 intervals. Typed pairs not proof of drawing.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -23833,38 +23834,103 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-12/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "sourceEdition": "2021 First Edition",
+        "originalStudentPdfSha256": "3ef5df683c39437353ea8d1102e6ebfac028ffd51abefdf8552f04f1081e35bc",
+        "originalFourPagesInspected": true,
+        "originalStandardDotPaperInspected": true,
+        "sourceSectionSummaryVisuallyReviewed": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L12-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Divide in Parts (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Rectangles with the Same Area.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L12-WARMUP-01",
+          "sourceActivity": "Warm-up: Number Talk: Divide in Parts",
+          "prompt": "Find original 40\u00f74 mentally; explain quotient decomposition to teacher.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L12-WARMUP-02",
+          "sourceActivity": "Warm-up: Number Talk: Divide in Parts",
+          "prompt": "Find original 60\u00f74 mentally; explain quotient decomposition to teacher.",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U07-L12-WARMUP-03",
+          "sourceActivity": "Warm-up: Number Talk: Divide in Parts",
+          "prompt": "Find original 80\u00f74 mentally; explain quotient decomposition to teacher.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U07-L12-WARMUP-04",
+          "sourceActivity": "Warm-up: Number Talk: Divide in Parts",
+          "prompt": "Find original 96\u00f74 mentally; explain quotient decomposition to teacher.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U07-L12-A1",
+          "sourceActivity": "Activity 1: Area of 24",
+          "prompt": "On original small printed grid DRAW AS MANY area-24 rectangles as possible, find perimeter for EACH, compare and explain. Do not assume long 1\u00d724 rectangle fits smaller page-2 grid. Teacher checks.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L12-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Area of 24 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Rectangles with the Same Area.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L12-A2-AREA12",
+          "sourceActivity": "Activity 2: Same Area, Different Perimeter",
+          "prompt": "For original area 12 square units, DRAW two rectangles with equal area but DIFFERENT perimeters. Optionally check your full-grid feasible integer dimension pairs a,b;c,d. Teacher reviews diagrams.",
+          "answerType": "rectangle-pair-area-different-perimeter",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U07-L12-A2-AREA20",
+          "sourceActivity": "Activity 2: Same Area, Different Perimeter",
+          "prompt": "For original area 20 square units, DRAW two rectangles with equal area but DIFFERENT perimeters. Optionally check your full-grid feasible integer dimension pairs a,b;c,d. Teacher reviews diagrams.",
+          "answerType": "rectangle-pair-area-different-perimeter",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U07-L12-A2-AREA42",
+          "sourceActivity": "Activity 2: Same Area, Different Perimeter",
+          "prompt": "For original area 42 square units, DRAW two rectangles with equal area but DIFFERENT perimeters. Optionally check your full-grid feasible integer dimension pairs a,b;c,d. Teacher reviews diagrams.",
+          "answerType": "rectangle-pair-area-different-perimeter",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U07-L12-A2-AREA48",
+          "sourceActivity": "Activity 2: Same Area, Different Perimeter",
+          "prompt": "For original area 48 square units, DRAW two rectangles with equal area but DIFFERENT perimeters. Optionally check your full-grid feasible integer dimension pairs a,b;c,d. Teacher reviews diagrams.",
+          "answerType": "rectangle-pair-area-different-perimeter",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U07-L12-OWN",
+          "sourceActivity": "Activity 2 / Section Synthesis",
+          "prompt": "Choose your own area and draw two rectangles with that area but different perimeters. Teacher evaluates actual physical work and reasoning.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L12-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Same Area, Different Perimeter (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Rectangles with the Same Area.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L12-POSTER",
+          "sourceActivity": "Activity 2 / Section Synthesis",
+          "prompt": "Cut out source rectangles and post on correct area-labelled wall display: 12,20,42 or 48 square units. Teacher evaluates actual physical work and reasoning.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L12-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L12-GALLERY",
+          "sourceActivity": "Activity 2 / Section Synthesis",
+          "prompt": "With partner, walk gallery; explain one notice and one wonder using the source area/perimeter contrasts. Teacher evaluates actual physical work and reasoning.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U07-L12-SUMMARY",
+          "sourceActivity": "Activity 2 / Section Synthesis",
+          "prompt": "Discuss original section-summary figures and distinguish linear perimeter and square-unit area. Teacher evaluates actual physical work and reasoning.",
           "answerType": "teacher",
           "expected": null
         }
