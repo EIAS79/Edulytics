@@ -9117,8 +9117,8 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
         "prompt": "Round 750 to the nearest hundred using halves-round-up.",
@@ -9131,21 +9131,22 @@
         "expected": "440"
       },
       "openTeacherTask": "Work through the original lesson's activity Can the Nearest Ten and Hundred be the Same? with your teacher. Show the representation and explain how it meets the goal: You will round whole numbers within 1,000 to the nearest ten or hundred.",
-      "teacherReviewNote": "Source 2 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "28 source-number checks; six human tasks; original local source student/teacher HTML reviewed, no source figures; original PDF and publisher gated exit not verified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s round to the nearest ten and hundred. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-dow",
+        "sourceGoal": "Round whole numbers within 1,000 to the nearest ten and hundred, using the convention of rounding up when the number is halfway between two multiples of 10 or 100.",
         "sourceLearningGoals": "Round whole numbers within 1,000 to the nearest ten and hundred, using the convention of rounding up when the number is halfway between two multiples of 10 or 100.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Count by 10 from0 to200 and by 100 from0 to900.",
+          "Round the five original values to BOTH tens and hundreds.",
+          "Teach halfway-up using 415 to 420 and 750 to 800, acknowledging exact distance ties.",
+          "Round seven school counts independently, sum Andre 700, Lin 680; compare original total 683.",
+          "Ask children to predict, discuss patterns and explain errors."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s round to the nearest ten and hundred. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-dow",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Rounded component sums differ from rounding the original grand total; original publisher Cool-down not copied."
       },
       "sourceBasedCheck": {
         "prompt": "Source rounding task: round 415 to its nearest multiple of 10 using the midpoint convention.",
@@ -9161,27 +9162,245 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L15-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Choral Count: Tens and Hundreds (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Round to the Nearest Ten and Hundred.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L15-A1-18-10",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 18: round to nearest ten.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U03-L15-A1-18-100",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 18: round to nearest hundred.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L15-A1-97-10",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 97: round to nearest ten.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L15-A1-97-100",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 97: round to nearest hundred.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L15-A1-312-10",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 312: round to nearest ten.",
+          "answerType": "integer",
+          "expected": "310"
+        },
+        {
+          "id": "G3-U03-L15-A1-312-100",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 312: round to nearest hundred.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L15-A1-439-10",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 439: round to nearest ten.",
+          "answerType": "integer",
+          "expected": "440"
+        },
+        {
+          "id": "G3-U03-L15-A1-439-100",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 439: round to nearest hundred.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L15-A1-601-10",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 601: round to nearest ten.",
+          "answerType": "integer",
+          "expected": "600"
+        },
+        {
+          "id": "G3-U03-L15-A1-601-100",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Source number 601: round to nearest hundred.",
+          "answerType": "integer",
+          "expected": "600"
+        },
+        {
+          "id": "G3-U03-L15-A1-415",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "415 is exactly halfway between 410 and 420; use the conventional halfway-up rule for nearest ten.",
+          "answerType": "integer",
+          "expected": "420"
+        },
+        {
+          "id": "G3-U03-L15-A1-750",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "750 is exactly halfway between 700 and 800; use the halfway-up rule for nearest hundred.",
+          "answerType": "integer",
+          "expected": "800"
+        },
+        {
+          "id": "G3-U03-L15-A2-PLAYGROUND-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at playground: 94. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L15-A2-PLAYGROUND-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at playground: 94. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "90"
+        },
+        {
+          "id": "G3-U03-L15-A2-CAFETERIA-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at cafeteria: 163. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L15-A2-CAFETERIA-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at cafeteria: 163. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "160"
+        },
+        {
+          "id": "G3-U03-L15-A2-ART-ROOM-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at art room: 36. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L15-A2-ART-ROOM-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at art room: 36. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U03-L15-A2-LIBRARY-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at library: 13. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L15-A2-LIBRARY-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at library: 13. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U03-L15-A2-CLASSROOMS-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at classrooms: 216. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L15-A2-CLASSROOMS-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at classrooms: 216. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "220"
+        },
+        {
+          "id": "G3-U03-L15-A2-GYMNASIUM-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at gymnasium: 109. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L15-A2-GYMNASIUM-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at gymnasium: 109. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "110"
+        },
+        {
+          "id": "G3-U03-L15-A2-MUSIC-ROOM-100",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at music room: 52. Enter Andre's nearest-hundred estimate.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L15-A2-MUSIC-ROOM-10",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "School source count at music room: 52. Enter Lin's nearest-ten estimate.",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U03-L15-A2-ANDRE-TOTAL",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "Enter Andre's sum of seven individually rounded hundreds.",
+          "answerType": "integer",
+          "expected": "700"
+        },
+        {
+          "id": "G3-U03-L15-A2-LIN-TOTAL",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "Enter Lin's sum of seven individually rounded tens.",
+          "answerType": "integer",
+          "expected": "680"
+        },
+        {
+          "id": "G3-U03-L15-CHORAL",
+          "sourceActivity": "Choral Count: Tens and Hundreds",
+          "prompt": "Count from 0 to 200 by tens and from 0 to 900 by hundreds; explain the shared terms 100 and 200.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L15-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Can the Nearest Ten and Hundred be the Same? (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Round to the Nearest Ten and Hundred.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L15-A1-TIES",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Evaluate Kiran and Priya's midpoint claims: two equal-distance candidates exist, yet the lesson adopts a consistent convention.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L15-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L15-A1-97",
+          "sourceActivity": "Can the Nearest Ten and Hundred be the Same?",
+          "prompt": "Explain why 97 rounds to 100 for both the nearest ten and the nearest hundred.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L15-A2-PREDICT",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "Predict before calculating whose total is greater, Andre's rounded hundreds or Lin's rounded tens, with reasoning.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L15-A2-OBSERVE",
+          "sourceActivity": "Round to Estimate",
+          "prompt": "Make two observations about the seven school-count pairs, decide if the prediction was correct and compare both errors with true total 683.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L15-GATED-COOLDOWN",
+          "sourceActivity": "Publisher Cool-down: Round It Twice",
+          "prompt": "Original teacher-login Cool-down was not inspected. A teacher must supply it; Edulytics authored an independent exit check.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_LOCAL_ARCHIVED_HTML_MATH_SEMANTICS_NO_PUBLISHER_PDF_OR_GATED_COOLDOWN"
     },
     {
       "ordinal": 52,

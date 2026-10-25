@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 50,
+    "lessonsFullyReadyForStageD": 51,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 93,
+    "lessonsWithACExplicitGap": 92,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,14 +32,14 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 50,
+    "lessonsIndividuallyComparedToAllOriginalElements": 51,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 50,
+    "lessonsWithActualRichV2SourcePerfect": 51,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
@@ -49,8 +49,8 @@
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 50,
-    "firstUnclosedOrdinal": 51,
+    "lastConsecutiveReadyForStageDOrdinal": 51,
+    "firstUnclosedOrdinal": 52,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -339,15 +339,10 @@
     {
       "ordinal": 51,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L15",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L15.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-local-2021-evidence-20261025.json"
     },
     {
       "ordinal": 52,
@@ -3092,12 +3087,12 @@
       "unitNumber": 3,
       "lessonNumber": 15,
       "title": "Round to the Nearest Ten and Hundred",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 3,
-      "fullyVerifiedSourceElements": 0,
+      "stageA": "LOCAL_2021_TEACHER_CHORAL_AND_TWO_STUDENT_SECTIONS_FIVE_ROUNDINGS_MIDPOINTS_SEVEN_SCHOOL_ROWS_VERIFIED",
+      "stageB": "GUARDED_2021_FIRSTPARTY_RICH_V2_TWO_TABLES_MIDPOINT_RULE_AND_ESTIMATE_ERRORS",
+      "stageC": "28_NUMERIC_2021_SOURCE_ANCHORS_6_TEACHER_TASKS_TESTS_WRITTEN_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 7,
+      "fullyVerifiedSourceElements": 7,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L15.json",
       "stageD": "NOT_STARTED",
@@ -3111,9 +3106,11 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-local-2021-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-teacher-rubric-20261025.json",
+      "sourceMatchingMeasurementScope": "A_B_C_2021_LOCAL_HTML_MATH_SEMANTIC_FIRSTPARTY_NOT_GATED_PUBLISHER_OR_TESTED"
     },
     {
       "gradeOrdinal": 52,
@@ -6386,24 +6383,20 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 50,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L14",
+    "gradeOrdinal": 51,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L15",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-50-local-2021-text-to-first-party-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-50-academic-source-coverage-and-human-rubric-20261025.json",
-    "originalStudentPdf": "NOT_VERIFIED",
-    "originalPublisherArt": "NOT_VERIFIED",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-local-2021-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-51-teacher-rubric-20261025.json",
+    "originalStudentPdfVerified": false,
     "academicApproval": "NOT_CLAIMED",
     "testsRun": false,
-    "stageD": "NOT_STARTED",
-    "sourceScope": "A_B_C_ORIGINAL_2021_LOCAL_HTML_SEMANTIC_AUTHORING_ONLY__NOT_PUBLISHER_IMAGE_PIXEL_OR_RUNTIME_PARITY"
+    "stageD": "NOT_STARTED"
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 50,
-    "firstUnclosedGradeOrdinal": 51,
-    "sourceAcademicSemanticPercentageAuthoringOnly": 100,
-    "originalStudentPdfVerified": false,
+    "lastClosedGradeOrdinal": 51,
+    "firstUnclosedGradeOrdinal": 52,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED",
