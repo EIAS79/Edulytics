@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-7/lesson-14/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-14/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_FIRST_EDITION_PUPIL_TEACHER_BLACKLINE_INDIVIDUAL_ELEMENT_AUTHORING_CHECK_COMPLETE",
     "goals": "Apply geometric understanding to solve problems about wax prints.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentPdfPagesRead": 4,
+    "originalStudentTaskPdfSha256": "b42d954bb426b0154a1fb0aeee2a0d9e2398662c262018eace72832429b1c5f9"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "ORIGINAL_SOURCE_SPECIFIC_FIRST_PARTY_RICH_V2_AND_CANONICAL_SEED_GUARD_WRITTEN",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +30,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "1514f520c67f6a5160bbde18ee34080b2a93e2af9ec65d33256820ba01c79faf",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l14-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson14RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson14.cshtml",
+    "authoredContentVersion": "g3-u07-l14-2021-wax-print-repeated-quadrilateral-and-bundle-info-gap-v1",
+    "publisherArtEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "INDIVIDUAL_SOURCE_TASKS_MAPPED_WITH_RIGHTS_BOUNDARIES_TESTS_AUTHORED_NOT_EXECUTED",
     "family": "geometry-application",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -40,65 +47,58 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Create a Wax Print Pattern with your teacher. Show the representation and explain how it meets the goal: Let’s analyze and make wax prints.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualSourceTasksMapped": 5,
+    "numericallyAnchoredCount": 0,
+    "teacherReviewedSourceItems": 5,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson14SourceAuditTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U07-L14-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: Textiles (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-7/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L14-SOURCE-01",
+      "activity": "Warm-up: Notice and Wonder: Textiles",
+      "originalStudentPdfPage": 1,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L14-HEADING-02",
-      "sourceSection": "Activity 1: Create a Wax Print Pattern (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L14-SOURCE-02",
+      "activity": "Activity 1: Create a Wax Print Pattern",
+      "originalStudentPdfPage": 2,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L14-HEADING-03",
-      "sourceSection": "Activity 2: Info Gap: The Bundle (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L14-SOURCE-03",
+      "activity": "Activity 2: Info Gap: The Bundle, first card pair",
+      "originalStudentPdfPage": 3,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L14-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-7/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L14-SOURCE-04",
+      "activity": "Activity 2: Info Gap: The Bundle, second card pair",
+      "originalStudentPdfPage": 4,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
     },
     {
-      "id": "G3-U07-L14-HEADING-05",
-      "sourceSection": "Cool-down: Quadrilaterals in a Pattern (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-7/lesson-14/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L14-SOURCE-05",
+      "activity": "Lesson Synthesis",
+      "originalStudentPdfPage": 4,
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyExpected": null,
+      "teacherReviewRequired": true
+    },
+    {
+      "id": "G3-U07-L14-PUBLISHER-COOLDOWN",
+      "coverage": "RIGHTS_RESTRICTED_NOT_REPRODUCED"
     }
   ],
   "images": [
@@ -106,34 +106,34 @@
       "id": "G3-U07-L14-IMAGE-01",
       "observedAltText": "Woman selling wax prints.",
       "originalReference": "unit-7/lesson-14/lesson.html",
-      "assetInspected": false,
-      "originalRightsChecked": false,
+      "assetInspected": true,
+      "originalRightsChecked": true,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_REVIEWED_NOT_EMBEDDED"
     },
     {
       "id": "G3-U07-L14-IMAGE-02",
       "observedAltText": "Gap activity. problem cards and data cards",
       "originalReference": "unit-7/lesson-14/lesson.html",
-      "assetInspected": false,
-      "originalRightsChecked": false,
+      "assetInspected": true,
+      "originalRightsChecked": true,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_REVIEWED_NOT_EMBEDDED"
     },
     {
       "id": "G3-U07-L14-IMAGE-03",
       "observedAltText": "Information Gap routine directions for problem card student and data card student.",
       "originalReference": "unit-7/lesson-14/lesson.html",
-      "assetInspected": false,
-      "originalRightsChecked": false,
+      "assetInspected": true,
+      "originalRightsChecked": true,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_REVIEWED_NOT_EMBEDDED"
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 3,
-    "fullyVerified": 0
+    "identified": 6,
+    "mapped": 5,
+    "publisherRightsRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Sketch an original park, print, or robot design and justify one shape and measurement choice.",
@@ -141,20 +141,20 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "NOT_RUN",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-127-2021-wax-print-quadrilaterals-hidden-bundle-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Original pattern drawings require teacher visual assessment of two quadrilateral categories and at least five repeats; both hidden information-gap rounds require partner questions and card confidentiality. A scalar answer alone is never an academic approval.",
+    "Publisher original gated assessment not accessed or copied.",
+    "No runtime tests, CI, Stage D, publication, academic approval or claims of complete source copyright parity."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L15"
 }

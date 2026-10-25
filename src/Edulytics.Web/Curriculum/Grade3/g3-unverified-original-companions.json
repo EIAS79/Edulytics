@@ -24136,10 +24136,10 @@
         "Gap activity. problem cards and data cards",
         "Information Gap routine directions for problem card student and data card student."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "geometry-application",
       "independentPractice": {
@@ -24153,20 +24153,20 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create a Wax Print Pattern with your teacher. Show the representation and explain how it meets the goal: You will consider how geometric attributes, perimeter, and area are used to design and use wax print fabric.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original pattern drawings require teacher visual assessment of two quadrilateral categories and at least five repeats; both hidden information-gap rounds require partner questions and card confidentiality. A scalar answer alone is never an academic approval.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s analyze and make wax prints.",
+        "sourceGoal": "Let\u2019s analyze and make wax prints.",
         "sourceLearningGoals": "Apply geometric understanding to solve problems about wax prints.",
         "teachingSteps": [
           "Sketch the design and identify mathematical attributes.",
           "Use measurements or labels that make the constraints checkable.",
           "Explain the area, perimeter or shape reasoning used."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s analyze and make wax prints.",
+        "caution": "Original pattern drawings require teacher visual assessment of two quadrilateral categories and at least five repeats; both hidden information-gap rounds require partner questions and card confidentiality. A scalar answer alone is never an academic approval.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -24175,40 +24175,55 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-14/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "sourceStudentPdfPagesRead": 4,
+        "studentTaskPdfSha256": "b42d954bb426b0154a1fb0aeee2a0d9e2398662c262018eace72832429b1c5f9",
+        "teacherHtmlSha256": "da4f9738f5eb9fb1bfa482b022a7d42b002de2714c12def67a7fd31c7ceb01d3",
+        "sourceBlacklineSha256": "272d69de50b007f00284d54b420a320b87490beeb4fc02da2234b07219944295",
+        "individualElementsVerified": true,
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L14-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Textiles (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Wax Prints PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L14-SOURCE-01",
+          "sourceActivity": "Warm-up: Notice and Wonder: Textiles",
+          "prompt": "Look at the original 2021 wax print textile photograph and discuss repeated shape features and questions with your teacher.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 1
         },
         {
-          "id": "G3-U07-L14-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Create a Wax Print Pattern (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Wax Prints PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L14-SOURCE-02",
+          "sourceActivity": "Activity 1: Create a Wax Print Pattern",
+          "prompt": "Make a source-standard-dot-paper colored wax print using a rhombus/rectangle/square AND another quadrilateral outside those categories, repeating EACH shape at least FIVE times. Teacher inspects geometry.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 2
         },
         {
-          "id": "G3-U07-L14-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Info Gap: The Bundle (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Wax Prints PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L14-SOURCE-03",
+          "sourceActivity": "Activity 2: Info Gap: The Bundle, first card pair",
+          "prompt": "Your teacher privately distributes original Problem Card 1 and Data Card 1. Ask for and explain each needed measurement, then calculate remaining cloth area without displaying both cards; teacher checks work.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 3
         },
         {
-          "id": "G3-U07-L14-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L14-SOURCE-04",
+          "sourceActivity": "Activity 2: Info Gap: The Bundle, second card pair",
+          "prompt": "Switch roles for original Problem Card 2 and Data Card 2. Ask what ribbon-length information is required and explain the perimeter-plus-hem computation; teacher reviews.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 4
+        },
+        {
+          "id": "G3-U07-L14-SOURCE-05",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain why wax print fabric consumption is measured by area but ribbon around its border needs perimeter. Teacher evaluates explanation and units.",
+          "answerType": "teacher",
+          "expected": null,
+          "sourcePage": 4
         }
       ]
     },
