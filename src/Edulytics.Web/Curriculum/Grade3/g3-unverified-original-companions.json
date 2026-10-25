@@ -16643,9 +16643,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "fractions-equal-partition",
+      "firstPartyFamily": "equal-area-geometry-name-unit-fractions-2021",
       "independentPractice": {
         "prompt": "Fold a rectangular whole into six equal parts, shade one and name the unit fraction.",
         "answerType": "rational",
@@ -16659,21 +16659,22 @@
         "requiredDenominator": 8
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Partitions with your teacher. Show the representation and explain how it meets the goal: You will be introduced to fractions as numbers we write to describe the parts of a whole that has been partitioned into equal parts.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Source grade ordinal80 = U05:L01 first fraction lesson. Original four warm-up figures, twelve actual labelled A–L figures and fraction strips visual checked; exact labels mapped from original HTML. Numeric17 part-count/denominator anchors,30 teacher equal-area, card-sort, folding and unit fraction reasoning tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s name parts of a whole.",
-        "sourceLearningGoals": "Partition shapes into 2, 3, 4, 6, or 8 parts with equal area and name those parts as halves, thirds, fourths, sixths, and eighths. Recognize that equal-size parts in a shape can be named with numbers called fractions.",
+        "sourceGoal": "Partition whole shapes into equal-area parts and name unit fractions half, third, fourth, sixth, eighth.",
+        "sourceLearningGoals": "Recognize that fractions name equal areas; distinguish parts of unequal size.",
         "teachingSteps": [
-          "Identify the whole and divide it into equal parts.",
-          "Represent the fraction with a number line or equal-area drawing.",
-          "Explain the unit fractions, position, equality or comparison."
+          "Warm-up: A diagonally split equal halves, B shaded equal half, C circle two equal halves, D UNEQUAL halves (not true halves). The prompt Which One Doesn't Belong accepts multiple defensible explanations.",
+          "Original 2021 A–L card sheet fully visually inspected. Valid example equal-group sort A,B,D,E,F,G,J,K,L vs unequal C,H,I. Pupils allowed ANY two clear, justified categories.",
+          "Sort cards with MLR2 terminology and justify equal-area versus number-of-pieces distinction. No arbitrary official numeric label for non-equal region.",
+          "Fold four paper rectangles into3,6,4,8 equal regions; source gives four physical rectangles. Display unit fractions1/3,1/6,1/4,1/8; review1/2.",
+          "Numerator1 counts one chosen part, denominator counts total EQUAL pieces. Label source equal halves with1/2, do not label unequal areas1/2."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s name parts of a whole.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "17 original distinct SVG assets visually read; A–L labels mapped by actual original DOM to art and geometry. All Edulytics renderings independent. Publisher Fold and Name/Card Sort blackline paper and gated Cool-down not separately inspected; Stage D/tests not run."
       },
       "sourceBasedCheck": {
         "prompt": "Fold and label a rectangle into three, six, four, or eight equal-area parts as requested in the source. Demonstrate that parts are equal.",
@@ -16689,30 +16690,331 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U05-L01-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Which One Doesn't Belong: Shapes with Parts (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Name the Parts.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L01-A1-CARD-A",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card A (circle, vertical diameter, equal semicircles). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-B",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card B (square, both perpendicular centered segments, four equal quarters). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-C",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card C (rectangle, off-center vertical cut creates two unequal regions). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-D",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card D (circle, cross-shaped two perpendicular centered diameters, quarters). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-E",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card E (square, centered horizontal cut, two equal halves). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-F",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card F (rectangle, centered vertical cut, two equal halves). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-G",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card G (rectangle, two evenly spaced horizontal cuts, equal thirds). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-H",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card H (circle, two oblique parallel-style cuts, three unequal areas). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-I",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card I (square, off-corner diagonal partial cut forms a small triangle and large remainder). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-J",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card J (circle, three equal central sectors, thirds). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-K",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card K (rectangle, two evenly spaced vertical cuts, thirds). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L01-A1-CARD-L",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original source 2021 card L (rectangle, three evenly spaced vertical cuts, fourths). How MANY visible pieces? Count only, then teacher evaluates whether pieces are equal areas.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L01-A2-DENOM-2",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Original lesson synthesis: when a whole is partitioned into 2 EQUAL parts, what is the denominator of a unit fraction?",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L01-A2-DENOM-3",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Original lesson synthesis: when a whole is partitioned into 3 EQUAL parts, what is the denominator of a unit fraction?",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L01-A2-DENOM-4",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Original lesson synthesis: when a whole is partitioned into 4 EQUAL parts, what is the denominator of a unit fraction?",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L01-A2-DENOM-6",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Original lesson synthesis: when a whole is partitioned into 6 EQUAL parts, what is the denominator of a unit fraction?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U05-L01-A2-DENOM-8",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Original lesson synthesis: when a whole is partitioned into 8 EQUAL parts, what is the denominator of a unit fraction?",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U05-L01-WU-A",
+          "sourceActivity": "Which One Doesn't Belong: Shapes with Parts",
+          "prompt": "Explain original warm-up A: rectangle diagonally into two equal-area triangular halves; other shapes also can be halves.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L01-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Card Sort: Partitions (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Name the Parts.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L01-WU-B",
+          "sourceActivity": "Which One Doesn't Belong: Shapes with Parts",
+          "prompt": "Original warm-up B shows rectangle with one equal half shaded; being shaded is distinguishing, but not an error.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L01-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Fold and Name (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Name the Parts.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L01-WU-C",
+          "sourceActivity": "Which One Doesn't Belong: Shapes with Parts",
+          "prompt": "Original warm-up C circle divided into two equal semicircles; compare with rectangles.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L01-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U05-L01-WU-D",
+          "sourceActivity": "Which One Doesn't Belong: Shapes with Parts",
+          "prompt": "Original warm-up D rectangle divided into two UNEQUAL parts. Explain why the two regions cannot be called halves just because there are two.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-OPEN-CATEGORIES",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Original pupil task sort cards into ANY TWO categories of THEIR choosing and explain; equal-vs-unequal is a source-recommended possible split, not uniquely mandated.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-FAIR-EQUAL",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "One valid teacher demonstration: A,B,D,E,F,G,J,K,L have equal-area pieces (regardless of shape/orientation).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-FAIR-UNEQUAL",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "One valid teacher demonstration: C,H,I have unequal-area pieces and cannot call all regions unit fractions of a whole.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-NO-COUNT-ONLY",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Teacher checks source card-shape geometries and why equal-area regions matter, not merely number of cut lines.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-MLR2",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Source MLR2 collects whole, part, partition, equal area, half, third, fourth and explains student sorting choices.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-FOLD-3",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Use one rectangle and fold into exactly THREE equal parts, mark folds and label each1/3. Teacher checks equal areas.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-FOLD-6",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Use another rectangle folded into SIX equal parts and label each1/6; splitting thirds into halves is an allowable approach.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-FOLD-4",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Use another rectangle into FOUR equal parts1/4, by repeat halving or a sound equivalent.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-FOLD-8",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Use another rectangle into EIGHT equal parts1/8; splitting fourths into halves is a valid strategy.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-4-SHEETS",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Original Fold and Name student needs FOUR copies of physical rectangle blackline; first-party foldable diagram is a digital equivalent but printed master pixels not certified.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-NAMES",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Synthesis original unit fraction mapping 2=half1/2,3=third1/3,4=fourth1/4,6=sixth1/6,8=eighth1/8.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A2-FRACTION-NUM",
+          "sourceActivity": "Fold and Name",
+          "prompt": "Explain numerator1 counts ONE chosen equal part and denominator counts TOTAL equal parts of whole.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Lesson Synthesis",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-GATED",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Publisher Cool-down",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-A",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card A from original DOM image crosswalk: vertical diameter, equal semicircles. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-B",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card B from original DOM image crosswalk: both perpendicular centered segments, four equal quarters. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-C",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card C from original DOM image crosswalk: off-center vertical cut creates two unequal regions. Unequal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-D",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card D from original DOM image crosswalk: cross-shaped two perpendicular centered diameters, quarters. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-E",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card E from original DOM image crosswalk: centered horizontal cut, two equal halves. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-F",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card F from original DOM image crosswalk: centered vertical cut, two equal halves. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-G",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card G from original DOM image crosswalk: two evenly spaced horizontal cuts, equal thirds. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-H",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card H from original DOM image crosswalk: two oblique parallel-style cuts, three unequal areas. Unequal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-I",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card I from original DOM image crosswalk: off-corner diagonal partial cut forms a small triangle and large remainder. Unequal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-J",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card J from original DOM image crosswalk: three equal central sectors, thirds. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-K",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card K from original DOM image crosswalk: two evenly spaced vertical cuts, thirds. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L01-A1-VISUAL-L",
+          "sourceActivity": "Card Sort: Partitions",
+          "prompt": "Check exact published source card L from original DOM image crosswalk: three evenly spaced vertical cuts, fourths. Equal areas. Teacher may accept independently reasoned other two-category sorts.",
           "answerType": "teacher",
           "expected": null
         }
