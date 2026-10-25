@@ -13951,9 +13951,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-place-value",
+      "firstPartyFamily": "teen-products-equal-groups-farmers-market",
       "independentPractice": {
         "prompt": "Five rows with 15 chairs each have how many chairs?",
         "answerType": "integer",
@@ -13965,21 +13965,23 @@
         "expected": "64"
       },
       "openTeacherTask": "Work through the original lesson's activity Problems with Teen Numbers with your teacher. Show the representation and explain how it meets the goal: You will solve problems involving multiplication within 100, where one factor is a teen number, in a way that makes sense to them.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Grade3 ordinal70 original 2021 teacher/student full math and egg carton image viewed: 7 dozen84 eggs, chairs5×15=75, tabletop4×16=64 square feet; warm-up4×18 estimates open. 8 numeric anchors+12 human tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s multiply some teen numbers.",
-        "sourceLearningGoals": "Multiply within 100, where one factor is a teen number, in a way that makes sense to them.",
+        "sourceGoal": "Solve teen-factor equal-group products with diagrams, decomposition and peer comparison.",
+        "sourceLearningGoals": "Multiply one factor in the teens within100, using multiple strategies and representations.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Source estimation warm-up4×18; exact anchor72; too-low/about-right/too-high are teacher-judged.",
+          "Original image of one-dozen egg carton was viewed on device: two rows of six eggs. Seven dozen eggs=7×12=84.",
+          "Original farmers market chair context has5 rows of15 chairs→75; emphasize5×(10+5)=50+25=75.",
+          "Original table-top rectangle measures4 feet by16 feet, area64 square feet.",
+          "Students show each answer using objects, diagrams, cubes or base-ten blocks. The chairs problem is converted into paired posters for the next gallery walk.",
+          "Source gallery walk has students compare posters from multiple strategies and use MLR7 Compare/Connect teacher-observed discourse."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s multiply some teen numbers.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original egg-carton source image inspected but not reproduced. Student PDF and publisher assessment login gated/unverified; tests written but unrun."
       },
       "sourceBasedCheck": {
         "prompt": "Seven dozen eggs contain how many eggs?",
@@ -13995,30 +13997,142 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L13-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Estimation Exploration: Multiply Teens (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Solve Problems With Equal Groups.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L13-WARM-4X18",
+          "sourceActivity": "Estimation Exploration: Multiply Teens",
+          "prompt": "Compute exact anchor for original open estimate4×18 (teacher assesses low/near/high choices separately).",
+          "answerType": "integer",
+          "expected": "72"
+        },
+        {
+          "id": "G3-U04-L13-A1-EGGS",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Original source: a farmers market seller has seven DOZEN eggs. How many eggs? 7×12.",
+          "answerType": "integer",
+          "expected": "84"
+        },
+        {
+          "id": "G3-U04-L13-A1-CHAIRS",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Original source: five rows of fifteen chairs at a farmers market. How many chairs? 5×15.",
+          "answerType": "integer",
+          "expected": "75"
+        },
+        {
+          "id": "G3-U04-L13-A1-TABLE",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Original source: farmer table top4 feet by16 feet. What AREA in square feet? 4×16.",
+          "answerType": "integer",
+          "expected": "64"
+        },
+        {
+          "id": "G3-U04-L13-FIRSTPARTY-4X10",
+          "sourceActivity": "Independent digital component",
+          "prompt": "Independent decomposed component for original4×18:4×10.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U04-L13-FIRSTPARTY-4X8",
+          "sourceActivity": "Independent digital component",
+          "prompt": "Independent decomposed component for original4×18:4×8.",
+          "answerType": "integer",
+          "expected": "32"
+        },
+        {
+          "id": "G3-U04-L13-FIRSTPARTY-5X10",
+          "sourceActivity": "Independent digital component",
+          "prompt": "Independent decomposed component for original5×15:5×10.",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U04-L13-FIRSTPARTY-5X5",
+          "sourceActivity": "Independent digital component",
+          "prompt": "Independent decomposed component for original5×15:5×5.",
+          "answerType": "integer",
+          "expected": "25"
+        },
+        {
+          "id": "G3-U04-L13-WARM-LOW",
+          "sourceActivity": "Estimation Exploration: Multiply Teens",
+          "prompt": "Choose and defend one too-low estimate for original4×18 (for instance60), separately from numeric exact anchor72.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L13-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Problems with Teen Numbers (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Solve Problems With Equal Groups.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L13-WARM-ABOUT",
+          "sourceActivity": "Estimation Exploration: Multiply Teens",
+          "prompt": "Choose an about-right estimate for original4×18, explain why 4×20=80 is a reasonable nearby benchmark.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L13-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Gallery Walk: Problems with Teen Numbers (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Solve Problems With Equal Groups.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L13-WARM-HIGH",
+          "sourceActivity": "Estimation Exploration: Multiply Teens",
+          "prompt": "Choose and justify an estimate that is too high for4×18 (for example100); 'too low' and 'too high' are open to discussion.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L13-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L13-A1-DOZEN",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Original cartoon egg carton visually checked: two rows of six eggs=12. Seven dozen gives7×12=84; explain units.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-A1-EGGS-MODEL",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Draw seven groups of a dozen (7×(10+2)=70+14=84), teacher reviews equal groups without embedding original illustration.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-A1-CHAIR-MODEL",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Choose five rows of15 and demonstrate5×(10+5)=75 via a drawing/counters; teacher reviews matching rows.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-A1-TABLE-AREA",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Draw or model a rectangle4 feet×16 feet=64 square feet and distinguish area from perimeter.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-A1-POSTER",
+          "sourceActivity": "Problems with Teen Numbers",
+          "prompt": "Original instruction: pair with another learner who solved chairs problem using similar method, create visual poster. Teacher observes, not machine grading.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-A2-GALLERY",
+          "sourceActivity": "Gallery Walk: Problems with Teen Numbers",
+          "prompt": "Conduct original 8–10 minute gallery walk of pupils' chairs posters in pairs, noting how strategies are alike and different.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-A2-MLR7",
+          "sourceActivity": "Gallery Walk: Problems with Teen Numbers",
+          "prompt": "Teacher prompts source MLR7 Compare and Connect: chairs represented as rows of15, groups of5, partition into10+5 or other methods; compare equal answers.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain prior smaller-fact strategies extended to teen factors, distributive decompositions and area modelling.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L13-GATED-CD",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original Bags of Oranges assessment gated; do not invent source question or claim edition-perfect task.",
           "answerType": "teacher",
           "expected": null
         }
