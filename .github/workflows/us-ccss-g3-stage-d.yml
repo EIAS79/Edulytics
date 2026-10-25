@@ -22,6 +22,17 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Stage D results must be attributed to the exact authored head,
+          # not the synthetic pull_request merge ref used by default.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact Grade 3 candidate SHA
+        env:
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD_SHA"
+          echo "G3_STAGE_D_TESTED_SHA=$EXPECTED_HEAD_SHA"
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -43,6 +54,17 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Stage D results must be attributed to the exact authored head,
+          # not the synthetic pull_request merge ref used by default.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact Grade 3 candidate SHA
+        env:
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD_SHA"
+          echo "G3_STAGE_D_TESTED_SHA=$EXPECTED_HEAD_SHA"
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.200'
@@ -70,6 +92,17 @@ jobs:
         batch: [D1, D2, D3]
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Stage D results must be attributed to the exact authored head,
+          # not the synthetic pull_request merge ref used by default.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact Grade 3 candidate SHA
+        env:
+          EXPECTED_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD_SHA"
+          echo "G3_STAGE_D_TESTED_SHA=$EXPECTED_HEAD_SHA"
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
