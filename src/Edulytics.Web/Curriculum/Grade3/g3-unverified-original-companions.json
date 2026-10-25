@@ -7776,7 +7776,7 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L10",
       "unitNumber": 3,
       "lessonNumber": 10,
-      "title": "Subtraction Algorithms (Part 3) PLC Activity",
+      "title": "Subtraction Algorithms (Part 3)",
       "edition": "2021 first edition",
       "localSourceRelativePath": "unit-3/lesson-10/lesson.html",
       "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-10/lesson.html",
@@ -7826,11 +7826,11 @@
         "Subtraction. Five-hundred twenty-eight minus two-hundred seventy-one.",
         "Subtraction. Five-hundred thirty-eight, minus one-hundred fifty-six, equals three-hundred eighty-two."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "subtraction-within-1000",
       "independentPractice": {
         "prompt": "Compute 691 − 358 using Clare's algorithm.",
@@ -7838,26 +7838,27 @@
         "expected": "333"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Compute 492 − 325 and explain decomposing hundreds or tens.",
+        "prompt": "Using Clare's compact place-value subtraction method, calculate 804 − 257 and explain any exchanges.",
         "answerType": "integer",
-        "expected": "167"
+        "expected": "547"
       },
       "openTeacherTask": "Work through the original lesson's activity A New Subtraction Algorithm with your teacher. Show the representation and explain how it meets the goal: You will use a subtraction algorithm that records a single digit for the difference between the numbers in each place value position and a condensed notation for a decomposed hundred or ten.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 6 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 3-page PDF and archived teacher lesson compared. Warmup 300+20=200+120, source 528−271=257 Andre/Clare expanded/compact algorithms, worked538−156=382, four student sums333,342,135,167. Teacher reviews language, layout and partner explanations; source images not copied; independent 804−257=547 exit.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn another algorithm to subtract.",
+        "sourceGoal": "Let's learn another algorithm to subtract.",
         "sourceLearningGoals": "Relate subtraction algorithms to one another using place value understanding. Subtract numbers within 1,000 using another algorithm based on place value.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Warmup notice-and-wonder compact decomposition of 300+20 into200+120.",
+          "Compare 528−271 by Andre expanded values vs Clare compact digits4 hundreds12 tens.",
+          "Solve six original math contexts with decompositions including 538−156 worked example.",
+          "Use MLR8 teacher-scored verbal explanations and compare algorithms.",
+          "Independent 804−257 exit without reproducing original publisher gated Cool-down."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn another algorithm to subtract.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "The original title has no 'PLC Activity'. No artwork, board, or publisher-only question is copied."
       },
       "sourceBasedCheck": {
         "prompt": "Andre and Clare each calculate 528 − 271. What difference must both obtain?",
@@ -7873,76 +7874,88 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S2-NUM1",
-          "sourceActivity": "Activity 1: A New Subtraction Algorithm (20 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 528 - 271. Show or explain a method to your teacher.",
+          "id": "G3-U03-L10-WU-REP",
+          "sourceActivity": "Digits that Disappear",
+          "prompt": "Explain why 300+20 and 200+120 are equal and how compact digits 2 hundreds and 12 tens mean the same thing.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L10-A1-COMPARE",
+          "sourceActivity": "A New Subtraction Algorithm",
+          "prompt": "Describe Andre's expanded 400+120 and Clare's compact hundreds 4/tens12 for 528−271; explain their different recording steps.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L10-A1-SUM",
+          "sourceActivity": "A New Subtraction Algorithm",
+          "prompt": "Find528−271 using two correct algorithms and compare methods.",
           "answerType": "integer",
           "expected": "257"
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S3-NUM2",
-          "sourceActivity": "Activity 2: Try Clare's Algorithm (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 538-156. Show or explain a method to your teacher.",
+          "id": "G3-U03-L10-A2-DEMO",
+          "sourceActivity": "Try Clare's Algorithm",
+          "prompt": "Show the compact value of538−156 after regrouping.",
           "answerType": "integer",
           "expected": "382"
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S3-NUM3",
-          "sourceActivity": "Activity 2: Try Clare's Algorithm (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 691 - 358. Show or explain a method to your teacher.",
+          "id": "G3-U03-L10-A2-1",
+          "sourceActivity": "Try Clare's Algorithm",
+          "prompt": "Calculate 691−358 and explain using Clare's place-value recording.",
           "answerType": "integer",
           "expected": "333"
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S3-NUM4",
-          "sourceActivity": "Activity 2: Try Clare's Algorithm (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 926 - 584. Show or explain a method to your teacher.",
+          "id": "G3-U03-L10-A2-2",
+          "sourceActivity": "Try Clare's Algorithm",
+          "prompt": "Calculate 926−584 and explain using Clare's place-value recording.",
           "answerType": "integer",
           "expected": "342"
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S3-NUM5",
-          "sourceActivity": "Activity 2: Try Clare's Algorithm (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 317-182. Show or explain a method to your teacher.",
+          "id": "G3-U03-L10-A2-3",
+          "sourceActivity": "Try Clare's Algorithm",
+          "prompt": "Calculate 317−182 and explain using Clare's place-value recording.",
           "answerType": "integer",
           "expected": "135"
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S3-NUM6",
-          "sourceActivity": "Activity 2: Try Clare's Algorithm (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 492-325. Show or explain a method to your teacher.",
+          "id": "G3-U03-L10-A2-4",
+          "sourceActivity": "Try Clare's Algorithm",
+          "prompt": "Calculate 492−325 and explain using Clare's place-value recording.",
           "answerType": "integer",
           "expected": "167"
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Digits that Disappear (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Subtraction Algorithms (Part 3) PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L10-A2-PARTNER",
+          "sourceActivity": "Try Clare's Algorithm",
+          "prompt": "Use MLR8 sentence frames to discuss the decomposition and one-digit-per-place answer with a partner.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: A New Subtraction Algorithm (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Subtraction Algorithms (Part 3) PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L10-SYNTH",
+          "sourceActivity": "Lesson synthesis",
+          "prompt": "Explain how Andre's written values 400/120 correspond to Clare's digits 4/12 in hundreds/tens.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Try Clare's Algorithm (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Subtraction Algorithms (Part 3) PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
-          "id": "G3-U03-L10-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L10-CD-ORIGINAL",
+          "sourceActivity": "Publisher original restricted Cool-down",
+          "prompt": "Obtain the original publisher teacher-only Cool-down from your teacher. Edulytics independently assesses subtraction on 804−257.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "catalogueBaselineTitle": "Subtraction Algorithms (Part 3) PLC Activity",
+      "sourceOriginalStudentTaskPdfPages": 3,
+      "sourceOriginalStudentTaskPdfSha256": "b22ea0703fe95951a68ecacd07b484c67c8f8b7081afaf16a2cc95e16f48919e",
+      "sourceOriginalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/zi1mhqseajs4tx2dd1zaclfhvm0c",
+      "sourceToFirstPartyParityScope": "STATIC_2021_SOURCE_SEMANTIC_FIRST_PARTY_NOT_PUBLISHER_ART"
     },
     {
       "ordinal": 47,

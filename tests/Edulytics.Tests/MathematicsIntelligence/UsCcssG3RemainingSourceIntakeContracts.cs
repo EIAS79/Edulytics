@@ -12,8 +12,8 @@ public sealed class UsCcssG3RemainingSourceIntakeContracts
             var entry=Grade3SourceCompanionCatalogue.Codes
                .Select(code=>{Grade3SourceCompanionCatalogue.TryGet(code,out var l);return l;})
                .Single(l=>l!.Ordinal==ordinal)!;
-            Assert.Equal(ordinal == 45,entry.ReadyForStageD);
-            Assert.Equal(ordinal == 45,entry.OriginalStudentTaskPdfRead);
+            Assert.Equal(ordinal <= 46,entry.ReadyForStageD);
+            Assert.Equal(ordinal <= 46,entry.OriginalStudentTaskPdfRead);
             Assert.NotEmpty(entry.SourceSubtasks);
             foreach(var task in entry.SourceSubtasks)
             {

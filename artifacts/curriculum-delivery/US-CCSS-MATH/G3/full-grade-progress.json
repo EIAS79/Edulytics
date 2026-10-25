@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 45,
+    "lessonsFullyReadyForStageD": 46,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 98,
+    "lessonsWithACExplicitGap": 97,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,25 +32,25 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 45,
+    "lessonsIndividuallyComparedToAllOriginalElements": 46,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 45,
+    "lessonsWithActualRichV2SourcePerfect": 46,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1101,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1118,
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 45,
-    "firstUnclosedOrdinal": 46,
+    "lastConsecutiveReadyForStageDOrdinal": 46,
+    "firstUnclosedOrdinal": 47,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -299,15 +299,10 @@
     {
       "ordinal": 46,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L10",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L10.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-2021-source-to-first-party-evidence-20261025.json"
     },
     {
       "ordinal": 47,
@@ -2958,14 +2953,14 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L10",
       "unitNumber": 3,
       "lessonNumber": 10,
-      "title": "Subtraction Algorithms (Part 3) PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 10,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "title": "Subtraction Algorithms (Part 3)",
+      "stageA": "THREE_PAGE_2021_STUDENT_PDF_WARMUP_ANDRE_CLARE_COMPACT_SUBTRACTION_FOUR_SUMS_AND_LOCAL_TEACHER_REVIEWED",
+      "stageB": "GUARDED_FIRST_PARTY_SOURCE_SPECIFIC_RICH_V2_AND_ANDRE_CLARE_SUBTRACTION_RECORD_COMPARISON",
+      "stageC": "SIX_SOURCE_NUMERIC_AND_FOUR_OPEN_TEACHER_TASKS_DISTINCT_547_COOLDOWN_UNRUN_TEST",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 17,
+      "fullyVerifiedSourceElements": 17,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L10.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -2978,9 +2973,11 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-2021-source-to-first-party-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceMatchingMeasurementScope": "STATIC_2021_SOURCE_SEMANTIC_FIRST_PARTY_NOT_PUBLISHER_ART_RUNTIME",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-academic-source-coverage-and-human-rubric-20261025.json"
     },
     {
       "gradeOrdinal": 47,
@@ -5830,7 +5827,8 @@
     "2026-10-25 sequential Grade3 ordinal42 closed after original 6-page 2021 source PDF via authorized local source archive, 14 source expression oracles + four human strategy tasks, 35 scoped academic elements, newly created carry-1 value model, distinct unpublished 389+498=887 goal-equivalent Cool-down (fixed earlier 399+499 duplication), unrun regression contract. No source artwork or gated original publisher Cool-down claimed, Stage D not started.",
     "2026-10-25 ordinal43 in sequence source PDF original4 pages, local 2021 teacher source and 10 original numeric anchors, Jada/Han source image meaning model independently composed, teacher diagram matching rubric and new independently-authored 506−389=117 exit (replacing duplicate source 505−398). 24/24 scoped semantic source items; tests not run and StageD pending.",
     "2026-10-25 ordinal44 in-order original three-page 2021 source student PDF, image A-D card sort inspected in source (not republished); five scalar oracles, Jada/Kiran 391−215=176 regrouping model, teacher-scored picture/algorithm match, distinct first-party403−187=216 exit. 17/17 academic authoring coverage, no test run/Stage D.",
-    "2026-10-25 in-order Grade3 ordinal45 original four-page 2021 Student PDF and cached original teacher HTML checked, precise Lin 428−156 error (reversed20/50), 3 truefalse, five numerical algorithm source sums and three-of-five accessibility. Replace generic source intake with guarded source-specific RichV2 and Razor, new first-party704−286=418 Cool-down, human rubric and authored unrun tests. Source static semantic authoring READY; no publisher art or academic/StageD signoff."
+    "2026-10-25 in-order Grade3 ordinal45 original four-page 2021 Student PDF and cached original teacher HTML checked, precise Lin 428−156 error (reversed20/50), 3 truefalse, five numerical algorithm source sums and three-of-five accessibility. Replace generic source intake with guarded source-specific RichV2 and Razor, new first-party704−286=418 Cool-down, human rubric and authored unrun tests. Source static semantic authoring READY; no publisher art or academic/StageD signoff.",
+    "2026-10-25 ordinal46 in-order original three-page U03 L10 PDF/teacher HTML source; remove unsupported PLC Activity title, author guarded RichV2/first-party student view showing Andre528−271 expanded vs Clare compact equal257, source six subtraction numeric anchors and MLR8 human teacher rubric; unique804−257=547 Cool-down, static semantic authoring closure only, no test execution or Stage D."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -6394,11 +6392,11 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 45,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L09",
+    "gradeOrdinal": 46,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L10",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-45-2021-source-to-first-party-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-45-academic-source-coverage-and-human-rubric-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-2021-source-to-first-party-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-academic-source-coverage-and-human-rubric-20261025.json",
     "academicApproval": "NOT_CLAIMED",
     "testsRun": false,
     "stageD": "NOT_STARTED"

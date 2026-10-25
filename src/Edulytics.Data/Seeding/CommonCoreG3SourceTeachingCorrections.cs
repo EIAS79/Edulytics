@@ -190,6 +190,8 @@ public static class CommonCoreG3SourceTeachingCorrections
             // Override generic source-intake draft only for sequentially closed 2021 U03:L09.
             if (string.Equals(lesson.LessonCode, CommonCoreG3Unit3Lesson9RichV2.LessonCode, StringComparison.Ordinal))
                 CommonCoreG3Unit3Lesson9RichV2.Apply(lesson);
+            if (string.Equals(lesson.LessonCode, CommonCoreG3Unit3Lesson10RichV2.LessonCode, StringComparison.Ordinal))
+                CommonCoreG3Unit3Lesson10RichV2.Apply(lesson);
 
             if (string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L01", StringComparison.Ordinal))

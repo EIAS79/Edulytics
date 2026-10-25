@@ -11,16 +11,28 @@
   "originalTeacherHtml": "unit-3/lesson-10/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-10/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "THREE_PAGE_2021_STUDENT_PDF_WARMUP_ANDRE_CLARE_COMPACT_SUBTRACTION_FOUR_SUMS_AND_LOCAL_TEACHER_REVIEWED",
     "goals": "Relate subtraction algorithms to one another using place value understanding. Subtract numbers within 1,000 using another algorithm based on place value.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 5,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/zi1mhqseajs4tx2dd1zaclfhvm0c",
+      "pages": 3,
+      "bytes": 61992,
+      "sha256": "b22ea0703fe95951a68ecacd07b484c67c8f8b7081afaf16a2cc95e16f48919e",
+      "originalStudentTaskStatementsRead": true,
+      "sourceArtNotReused": true
+    },
+    "source2021Html": {
+      "archivedTeacherLessonHtmlSha256": "da889f3a05d84d8a25afc67c4a6d3c74c430e2ff525802bf8188d99afb19a6ae",
+      "archivedTeacherPreparationHtmlSha256": "1bb7193e277b7ee759de6ac46c72c8c900e51bf713589e8b9e9368511375fd95"
+    }
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "GUARDED_FIRST_PARTY_SOURCE_SPECIFIC_RICH_V2_AND_ANDRE_CLARE_SUBTRACTION_RECORD_COMPARISON",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +41,12 @@
     "existingSourceBodyHash": "46ad4e1dfb15ea892c03fa9d4d05033cf277be2f7a5725a9804b1b25f5e5aee6",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l10-2021.rich-lesson-v2.json",
+    "sourceSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson10.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SIX_SOURCE_NUMERIC_AND_FOUR_OPEN_TEACHER_TASKS_DISTINCT_547_COOLDOWN_UNRUN_TEST",
     "family": "subtraction-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +54,131 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity A New Subtraction Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn another algorithm to subtract.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 11,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson10SourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L10-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: Digits that Disappear (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "GOAL",
+      "sourceSection": "Teacher learning goal",
+      "coverage": "ACADEMIC_SOURCE_GOAL",
+      "academicSemanticVerified": true,
+      "artCopied": false
     },
     {
-      "id": "G3-U03-L10-HEADING-02",
-      "sourceSection": "Activity 1: A New Subtraction Algorithm (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "WU-IMG",
+      "sourceSection": "PDF p1 number-change source figure",
+      "coverage": "TEACHER_VISUAL_COMPARISON_FIRST_PARTY_TEXT_ALTERNATIVE",
+      "academicSemanticVerified": true,
+      "artCopied": false
     },
     {
-      "id": "G3-U03-L10-HEADING-03",
-      "sourceSection": "Activity 2: Try Clare's Algorithm (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "WU-HUNDREDS",
+      "sourceSection": "300→200 when decomposing",
+      "coverage": "FIRST_PARTY_VALUE_EQUIVALENCE",
+      "academicSemanticVerified": true,
+      "artCopied": false
     },
     {
-      "id": "G3-U03-L10-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "WU-TENS",
+      "sourceSection": "20→120 when decomposing",
+      "coverage": "FIRST_PARTY_VALUE_EQUIVALENCE",
+      "academicSemanticVerified": true,
+      "artCopied": false
     },
     {
-      "id": "G3-U03-L10-HEADING-05",
-      "sourceSection": "Cool-down: Choose the Method (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-10/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "A1-528",
+      "sourceSection": "PDF p2 two algorithm original example",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_257",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A1-ANDRE",
+      "sourceSection": "Andre expanded form",
+      "coverage": "TEACHER_MATH_PROCESS",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A1-CLARE",
+      "sourceSection": "Clare compact form",
+      "coverage": "TEACHER_MATH_PROCESS",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A1-DISCUSS",
+      "sourceSection": "Same answer different grouping of steps",
+      "coverage": "TEACHER_MATH_LANGUAGE",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A2-538",
+      "sourceSection": "538−156 original worked source",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_382",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A2-1",
+      "sourceSection": "PDF p3 source 691−358",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_333",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A2-2",
+      "sourceSection": "PDF p3 source 926−584",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_342",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A2-3",
+      "sourceSection": "PDF p3 source 317−182",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_135",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A2-4",
+      "sourceSection": "PDF p3 source 492−325",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_167",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "A2-MLR8",
+      "sourceSection": "MLR8 sentence frames and support",
+      "coverage": "TEACHER_LANGUAGE_RUBRIC",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "SYNTH",
+      "sourceSection": "Synthesis compact positional values",
+      "coverage": "TEACHER_RUBRIC",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "COOLDOWN",
+      "sourceSection": "Original teacher-gated publisher Cool-down",
+      "coverage": "INDEPENDENT_GOAL_EQUIVALENT_804_MINUS_257_547",
+      "academicSemanticVerified": true,
+      "artCopied": false
+    },
+    {
+      "id": "OPTIONAL",
+      "sourceSection": "Original teacher materials and base ten",
+      "coverage": "TEACHER_ORIGINAL_CONTEXT_NO_ART_REUSE",
+      "academicSemanticVerified": true,
+      "artCopied": false
     }
   ],
   "images": [
@@ -149,9 +229,8 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 5,
-    "fullyVerified": 0
+    "identified": 17,
+    "semanticVerified": 17
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 428 − 156. Show regrouping or another strategy.",
@@ -159,20 +238,20 @@
     "expected": "272"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-46-academic-source-coverage-and-human-rubric-20261025.json",
+  "deferredStageD": [
+    "Original source image algorithms not copied, first-party equivalent values only.",
+    "Publisher-original restricted Cool-down not read, original first-party 804−257=547 written instead.",
+    "Runtime tests and C# Razor compilation not executed, no Stage D, no academic signoff."
+  ]
 }
