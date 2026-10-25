@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "gradeOrdinal": 112,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L15",
+  "device": "Our-CS",
+  "sourceTeacherHTMLSHA256": "56213b64179c765060c4f844d4dac80de665a08209c96ecd2c0fda61d4a1ce97",
+  "sourcePreparationHTMLSHA256": "30f4cb2773c2aebf31f83a836dd87863d1cc2e81f8a2c4b2cc284ee55a9b6442",
+  "warmup": [
+    [
+      80,
+      8,
+      10
+    ],
+    [
+      72,
+      8,
+      9
+    ],
+    [
+      96,
+      8,
+      12
+    ],
+    [
+      96,
+      4,
+      24
+    ]
+  ],
+  "sourceSixFairVariants": [
+    {
+      "task": "Entry fee",
+      "equation": "(6+1)×9",
+      "answer": "$63",
+      "mandatory": true
+    },
+    {
+      "task": "Pumpkin weigh-off",
+      "equation": "12:25 PM−11:12 AM",
+      "answer": "73 minutes / 1 hour 13 minutes",
+      "choice": "time"
+    },
+    {
+      "task": "Carnival arrival",
+      "equation": "12:10 PM−48 minutes",
+      "answer": "11:22 AM",
+      "choice": "time"
+    },
+    {
+      "task": "Sheep daily water",
+      "equation": "91÷7",
+      "answer": "13 liters per sheep",
+      "choice": "measurement"
+    },
+    {
+      "task": "Actual cow mass",
+      "equation": "273+277",
+      "answer": "550 kilograms",
+      "choice": "measurement"
+    },
+    {
+      "task": "Ears of corn per row",
+      "equation": "54÷9",
+      "answer": "6 ears per row",
+      "mandatory": true
+    }
+  ],
+  "sourceRequiredTaskCount": 4,
+  "sourceMandatory": [
+    "entry",
+    "corn"
+  ],
+  "sourceChoiceGroups": [
+    [
+      "pumpkin weigh-off",
+      "carnival duration"
+    ],
+    [
+      "sheep water",
+      "butter cow"
+    ]
+  ],
+  "sourceGallery": {
+    "differentStrategy": true,
+    "clarityFeatureMinimum": 3,
+    "poster": true,
+    "partnerWalk": true
+  },
+  "sourceSectionSummary": {
+    "pumpkinSeedlingLiters": 84,
+    "perSeedlingLiters": 12,
+    "answerSeedlings": 7
+  },
+  "sourceStudentFacingSectionsReviewed": 3,
+  "sourceImagesAltReviewed": 6,
+  "originalImagesNotPixelRead": true,
+  "originalStudentStandalonePDFNotReviewed": true,
+  "publisherCoolDownNotAccessed": true,
+  "sourceMaterialParity100Claim": false,
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l15-2021.rich-lesson-v2.json",
+  "viewPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson15.cshtml",
+  "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson15FairChoiceTests.cs",
+  "rubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-112-fair-poster-gallery-human-rubric-20261025.json",
+  "testsRun": false,
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "authoringState": "READY_FOR_STAGE_D"
+}

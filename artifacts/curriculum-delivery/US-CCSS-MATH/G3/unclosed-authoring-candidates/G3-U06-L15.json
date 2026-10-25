@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-15/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_PUBLIC_2021_TEACHER_PREPARATION_4_WARMUP_6_FAIR_VARIANTS_FOUR_PROBLEM_CHOICE_GALLERY_REVIEWED",
     "goals": "Analyze strategies for solving problems and for presenting solutions. Use the four operations to solve one-step word problems involving measurements.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 6,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_RICHV2_ORIGINAL_FAIR_FOUR_CHOICE_ROUTE_AND_GALLERY",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "ff37320d6e72e6272172720747e1cd4c4c9bc6bded00f7a8e52bde3e95875e75",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l15-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson15.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_WARMUP_SIX_FAIR_MATH_ORACLES_TEACHER_POSTER_RUBRIC_TESTS_WRITTEN_UNRUN",
     "family": "measurement-word-problems",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity A Day at the Fair with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems about spending a day at the fair and think about how to best show our solutions.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson15FairChoiceTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Number Talk: Divide by 8 (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_AUTHORING_SOURCE_ALIGNED",
+      "grading": "NUMERIC_PLUS_TEACHER_POSTER",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: A Day at the Fair (25 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_AUTHORING_SOURCE_ALIGNED",
+      "grading": "NUMERIC_PLUS_TEACHER_POSTER",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: A Day at the Fair Gallery Walk (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_AUTHORING_SOURCE_ALIGNED",
+      "grading": "NUMERIC_PLUS_TEACHER_POSTER",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_AUTHORING_SOURCE_ALIGNED",
+      "grading": "NUMERIC_PLUS_TEACHER_POSTER",
       "claimedParity": false
     },
     {
@@ -96,7 +99,7 @@
       "originalReference": "unit-6/lesson-15/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_RESTRICTED_NOT_INSPECTED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -105,10 +108,10 @@
       "sourceSection": "Student Section Summary",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_LOCAL_HTML_AUTHORING_SOURCE_ALIGNED",
+      "grading": "NUMERIC_PLUS_TEACHER_POSTER",
       "claimedParity": false
     }
   ],
@@ -120,7 +123,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_ALT_ONLY_COPY_NOT_PERMITTED"
     },
     {
       "id": "G3-U06-L15-IMAGE-02",
@@ -129,7 +132,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_ALT_ONLY_COPY_NOT_PERMITTED"
     },
     {
       "id": "G3-U06-L15-IMAGE-03",
@@ -138,7 +141,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_ALT_ONLY_COPY_NOT_PERMITTED"
     },
     {
       "id": "G3-U06-L15-IMAGE-04",
@@ -147,7 +150,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_ALT_ONLY_COPY_NOT_PERMITTED"
     },
     {
       "id": "G3-U06-L15-IMAGE-05",
@@ -156,7 +159,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_ALT_ONLY_COPY_NOT_PERMITTED"
     },
     {
       "id": "G3-U06-L15-IMAGE-06",
@@ -165,7 +168,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_VISUAL_ALT_ONLY_COPY_NOT_PERMITTED"
     }
   ],
   "sourceElementCounts": {
@@ -179,20 +182,23 @@
     "expected": "142"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original standalone student task PDF not checked locally; source-art pixel parity unavailable.",
+    "Third-party photos and book diagrams have not been independently pixel-inspected or redistributed.",
+    "Original teacher-gated Cool-down Problem Solving Reflection not read.",
+    "Actual poster/gallery work requires teacher inspection; source choice paths and numeric responses written.",
+    "Tests, CI, Stage D, academic approval, merge and release not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "56213b64179c765060c4f844d4dac80de665a08209c96ecd2c0fda61d4a1ce97",
+  "originalPreparationHtmlSHA256": "30f4cb2773c2aebf31f83a836dd87863d1cc2e81f8a2c4b2cc284ee55a9b6442",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-112-2021-fair-original-choice-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-112-fair-poster-gallery-human-rubric-20261025.json"
 }
