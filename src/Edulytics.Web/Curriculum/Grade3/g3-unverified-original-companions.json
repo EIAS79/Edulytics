@@ -24453,10 +24453,10 @@
         "Square. partitioned into 2 parts. smaller part shaded",
         "2 squares. Each partitioned into 2 equal parts. 1 part shaded."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "fraction-review",
       "independentPractice": {
@@ -24471,20 +24471,20 @@
         "requiredDenominator": 8
       },
       "openTeacherTask": "Work through the original lesson's activity Estimation Exploration: Diagram with your teacher. Show the representation and explain how it meets the goal: You will practice reasoning about fraction representations through estimation.",
-      "teacherReviewNote": "Source 4 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Three-part too-low/about-right/too-high estimates and multi-answer warm-up require teacher assessment; optional exact fraction values are not substitutes for original estimator and partner revision tasks.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s explore estimations with fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 10 min Activity 3 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
+        "sourceGoal": "Let\u2019s explore estimations with fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 10 min Activity 3 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
         "sourceLearningGoals": "Estimate fractions represented in diagrams and on number lines.",
         "teachingSteps": [
           "Identify the previous mathematical idea being applied.",
           "Show an appropriate representation, model, diagram or calculation.",
           "Explain your strategy and assess whether the result meets the task's design constraints."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore estimations with fractions. Required Preparation CCSS Standards Addressing 3.NF.A.1 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 10 min Activity 3 10 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflectio",
+        "caution": "Three-part too-low/about-right/too-high estimates and multi-answer warm-up require teacher assessment; optional exact fraction values are not substitutes for original estimator and partner revision tasks.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -24493,47 +24493,55 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-8/lesson-1/lesson.html",
-        "verified": "LOCAL_STUDENT_FACING_SOURCE_TEXT",
-        "figurePixelsInspected": false
+        "sourceStudentPdfPagesRead": 4,
+        "studentTaskPdfSha256": "1521ba63af5860607a93799c07bd96cb766050c9e3c1bd1b00d5022d7cf71305",
+        "teacherHtmlSha256": "30ac7612d28f521052af0829691f99d0c219e8266b703133ecfaf7eb878a8cde",
+        "sourceBlacklineSha256": null,
+        "individualElementsVerified": true,
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L01-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Which One Doesn't Belong: Fractions (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Estimation Explorations with Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L01-SOURCE-01",
+          "sourceActivity": "Warm-up: Which One Doesn't Belong?",
+          "prompt": "Review original four source visual figures A\u2013D. Find a defensible reason any could be the odd one out; teacher checks partner explanation.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 1
         },
         {
-          "id": "G3-U08-L01-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Estimation Exploration: Diagram (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Estimation Explorations with Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L01-SOURCE-02",
+          "sourceActivity": "1.1 Estimation Exploration: Diagram",
+          "prompt": "Look at original shaded square; propose too-low, about-right, too-high FRACTION ESTIMATES and justify ordering. Teacher review; optional exact 5/8 not mandatory.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 2
         },
         {
-          "id": "G3-U08-L01-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Estimation Exploration: Fraction Strip (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Estimation Explorations with Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L01-SOURCE-03",
+          "sourceActivity": "1.2 Estimation Exploration: Fraction Strip",
+          "prompt": "On original source strip, make too-low, about-right, too-high fractional-length estimates and justify. Optional exact 1/3 not required.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 3
         },
         {
-          "id": "G3-U08-L01-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: Estimation Exploration: Number Line (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “Estimation Explorations with Fractions.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L01-SOURCE-04",
+          "sourceActivity": "1.3 Estimation Exploration: Number Line",
+          "prompt": "Estimate the original 0\u20132 number-line marked position with one low, one approximate, one high fraction. Optional exact 4/3 not required; teacher reviews.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 4
         },
         {
-          "id": "G3-U08-L01-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L01-SOURCE-05",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain what you knew about source marker being between 1 and 2, closer to 1, and how to choose a denominator. Teacher evaluates.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 4
         }
       ]
     },
