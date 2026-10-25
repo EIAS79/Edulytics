@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-3/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_SOURCE_WARMUP_BOTH_MULTIROW_ORIGINAL_IMAGE_TABLES_FIVE_FIGURES_VISUALLY_VERIFIED",
     "goals": "Understand a fraction $\\frac{a}{b}$ as the quantity formed by $a$ parts of size $\\frac{1}{b}$.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
     "teacherFacingSourceExtractedNotFullyRead": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_EIGHT_ORIGINAL_NONUNIT_FRACTION_ROWS_AND_2_ROUND_MEMORY_MATCH_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "509d068b69d6852703c798306b4698477c438356f21bebd32ac56bbb0bc4a682",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l03-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "EIGHTEEN_NUMERIC_FIFTEEN_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "fractions-equal-partition",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Write and Read Fractions with your teacher. Show the representation and explain how it meets the goal: Let’s learn about non-unit fractions.",
-    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram."
+    "teacherReviewNote": "Teacher verifies shape equal-area partition; fraction string alone does not certify a valid diagram.",
+    "individualMathOracles": 18,
+    "teacherJudgementTasks": 15
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: Notice and Wonder: More than One Part (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_VISUAL_ROW_SEMANTICS_FIRSTPARTY_MATCHED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Write and Read Fractions (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_VISUAL_ROW_SEMANTICS_FIRSTPARTY_MATCHED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Fraction Match (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_VISUAL_ROW_SEMANTICS_FIRSTPARTY_MATCHED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_VISUAL_ROW_SEMANTICS_FIRSTPARTY_MATCHED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-5/lesson-3/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -106,34 +109,34 @@
       "id": "G3-U05-L03-IMAGE-01",
       "observedAltText": "Diagram.",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_TABLE_OR_SVG_VISUALLY_READ_INDEPENDENT_MODEL"
     },
     {
       "id": "G3-U05-L03-IMAGE-02",
       "observedAltText": "Table with shapes and information to find about the related fractions.",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_TABLE_OR_SVG_VISUALLY_READ_INDEPENDENT_MODEL"
     },
     {
       "id": "G3-U05-L03-IMAGE-03",
       "observedAltText": "Diagram. Rectangle partitioned into 8 equal parts, 5 shaded.",
       "originalReference": "unit-5/lesson-3/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_TABLE_OR_SVG_VISUALLY_READ_INDEPENDENT_MODEL"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 3,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "An equal-area whole has 8 parts; exactly one part is selected. Write its unit fraction.",
@@ -141,20 +144,21 @@
     "expected": "1/8"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "All five original source image assets inspected including both tabular illustrations; 8 rows transcribed without guessing.",
+    "Publisher original image pixels/printed physical game cards and original student task PDF not copied or verified for pixel parity.",
+    "Teacher must check four new student-authored card pairs and two rounds of partner game.",
+    "Original Shaded Fraction Cool-down teacher-gated.",
+    "No runtime tests/Stage D/CI/academic signoff performed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-82-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-82-academic-source-coverage-and-human-rubric-20261025.json"
 }

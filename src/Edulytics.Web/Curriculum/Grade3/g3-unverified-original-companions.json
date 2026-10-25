@@ -17420,9 +17420,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "fractions-equal-partition",
+      "firstPartyFamily": "nonunit-fractions-multirow-table-two-round-card-match",
       "independentPractice": {
         "prompt": "A whole has eight equal parts and five are shaded. Name the fraction.",
         "answerType": "rational",
@@ -17436,21 +17436,23 @@
         "requiredDenominator": 6
       },
       "openTeacherTask": "Work through the original lesson's activity Write and Read Fractions with your teacher. Show the representation and explain how it meets the goal: You will understand non-unit fractions.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 original visual warmup four fourths, two full multirow source tables with eight distinct source rows including6/4 and7/6, original5/8 and7/6 diagrams visually inspected on owner PC.18 numeric shaded counts,15 teacher tasks including unique Fraction Match source game process.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn about non-unit fractions.",
-        "sourceLearningGoals": "Understand a fraction $\\frac{a}{b}$ as the quantity formed by $a$ parts of size $\\frac{1}{b}$.",
+        "sourceGoal": "Represent non-unit fractions as sums of unit fractions, including fractions equal to or above one whole.",
+        "sourceLearningGoals": "Count shaded equal-size parts, use pictorial fractions and pair matching cards.",
         "teachingSteps": [
-          "Identify the whole and divide it into equal parts.",
-          "Represent the fraction with a number line or equal-area drawing.",
-          "Explain the unit fractions, position, equality or comparison."
+          "Warmup original four squares with1,2,3,4 fourths blue; example third labelled3/4.",
+          "Activity1 original TABLE1 five rows1/4,3/4,4/4,2/3,3/8 and TABLE2 three rows4/6,6/4,7/6. Teachers review full shaded-row mapping, number and word names.",
+          "For6/4/7/6, show two rectangles each equal whole: one full with4 or6 parts, second partial.",
+          "Activity2 source Fraction Match memory game: source deck Part1, second part8 blanks for pupils to design4 new diagram-number matching pairs, play two rounds and explain why cards match.",
+          "Source synthesized entire wholes2/2,3/3,4/4,6/6; contrast1/8 and5/8, and7/6 = one whole+one sixth.",
+          "Do not introduce formal vocabulary numerator/denominator as 2021 source explicitly defers names until later."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about non-unit fractions.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "5 original picture assets including both TABLE graphics visually read and source rows transcribed mathematically. Publisher Fraction Match printed blackline pixels and original gated assessment unverified, Stage D/tests not run."
       },
       "sourceBasedCheck": {
         "prompt": "In the source non-unit fraction table, 3 of 4 equal parts are shaded. Write its value.",
@@ -17467,30 +17469,233 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U05-L03-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: More than One Part (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Non-unit Fractions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L03-WU-1",
+          "sourceActivity": "Notice and Wonder: More than One Part",
+          "prompt": "Original warm-up shows square quartered into 4 equal pieces and 1 shaded, entering fraction 1/4. How many fourths are shaded?",
+          "answerType": "integer",
+          "expected": "1"
+        },
+        {
+          "id": "G3-U05-L03-WU-2",
+          "sourceActivity": "Notice and Wonder: More than One Part",
+          "prompt": "Original warm-up shows square quartered into 4 equal pieces and 2 shaded, entering fraction 2/4. How many fourths are shaded?",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L03-WU-3",
+          "sourceActivity": "Notice and Wonder: More than One Part",
+          "prompt": "Original warm-up shows square quartered into 4 equal pieces and 3 shaded, entering fraction 3/4. How many fourths are shaded?",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L03-WU-4",
+          "sourceActivity": "Notice and Wonder: More than One Part",
+          "prompt": "Original warm-up shows square quartered into 4 equal pieces and 4 shaded, entering fraction 4/4. How many fourths are shaded?",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE1-ROW1",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 1 row 1: one of four squares in2×2 quarter grid shaded; find NUMBER of shaded equal 4-ths across entire one-whole rectangles. Expected fraction 1/4; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "1"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE1-ROW2",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 1 row 2: three of four in quartered square shaded; find NUMBER of shaded equal 4-ths across entire one-whole rectangles. Expected fraction 3/4; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE1-ROW3",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 1 row 3: all four quarter parts of one square shaded; find NUMBER of shaded equal 4-ths across entire one-whole rectangles. Expected fraction 4/4; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE1-ROW4",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 1 row 4: two of three vertical equal strips blue; find NUMBER of shaded equal 3-ths across entire one-whole rectangles. Expected fraction 2/3; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE1-ROW5",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 1 row 5: three of eight cells in a two-row four-column rectangular grid shaded; find NUMBER of shaded equal 8-ths across entire one-whole rectangles. Expected fraction 3/8; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE2-ROW1",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 2 row 1: top three cells plus first bottom cell of six shaded; find NUMBER of shaded equal 6-ths across entire one-whole rectangles. Expected fraction 4/6; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE2-ROW2",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 2 row 2: two one-whole quartered rectangles: first4 blue, second2 blue; count six fourths total; find NUMBER of shaded equal 4-ths across entire one-whole rectangles. Expected fraction 6/4; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U05-L03-A1-TABLE2-ROW3",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original first edition 2021 visual table 2 row 3: two one-whole sixths rectangles: first six blue, second one blue; seven sixths total; find NUMBER of shaded equal 6-ths across entire one-whole rectangles. Expected fraction 7/6; teacher checks the written fraction.",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U05-L03-SYN-5OF8",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original eight equal parts diagram has five blue. How many eighths are shaded?",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U05-L03-SYN-7OF6",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original synthesis image has one whole6/6 and another1/6. How many sixths total?",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U05-L03-MATCH-WHOLE2",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Source game synthesis full2/2, numerator count?",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U05-L03-MATCH-WHOLE3",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Source game synthesis full3/3, numerator count?",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U05-L03-MATCH-WHOLE4",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Source game synthesis full4/4, numerator count?",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U05-L03-MATCH-WHOLE6",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Source game synthesis full6/6, numerator count?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U05-L03-WU-CHANGES",
+          "sourceActivity": "Notice and Wonder: More than One Part",
+          "prompt": "Explain why first original 2021 four square diagrams are1/4,2/4,3/4,4/4, and each whole is same size; third labelled3/4.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L03-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Write and Read Fractions (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Non-unit Fractions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L03-A1-EACH-PART",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Original two multirow SOURCE images have each whole rectangle representing1; all fractions count equal parts and size of each part.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L03-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Fraction Match (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Non-unit Fractions PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U05-L03-A1-FIRST-ROWS",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Read table1 five source rows exactly1/4,3/4,4/4,2/3,3/8; teacher checks shaded-piece counts, word names and numerals.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U05-L03-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U05-L03-A1-SECOND-ROWS",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Read table2 three source rows exactly4/6,6/4,7/6 with each of two rectangles a separate whole for improper fractions.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A1-GREATER-ONE",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Explain6/4 and7/6 are greater than one because first rectangle fully shaded, second partially shaded; counting unit parts across more than one equal whole.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A1-NAME",
+          "sourceActivity": "Write and Read Fractions",
+          "prompt": "Teacher expects students to say shaded number and one-part size, then write fraction and word name without requiring formal numerator/denominator terms (introduced in later section).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A2-MATCH-RULE",
+          "sourceActivity": "Fraction Match",
+          "prompt": "Original Fraction Match memory game: card face-down array, flip two, pair picture and fraction same value; successful match keep and play again; maximum two matches on one turn.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A2-CARD-PART1",
+          "sourceActivity": "Fraction Match",
+          "prompt": "Source Fraction Match Part1 uses publisher blackline cards not read pixel by pixel; independent Edulytics deck is not falsely publisher-identical.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A2-FOUR-PAIRS",
+          "sourceActivity": "Fraction Match",
+          "prompt": "Original Part2 blackline has8 blank cards; pupils create FOUR NEW matching diagram-and-number pairs to extend deck, not four source-fixed numerical questions.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A2-SECOND-ROUND",
+          "sourceActivity": "Fraction Match",
+          "prompt": "Play second original game with combined source/created pairs and explain match equality (MLR8); teacher witnesses cards and turn taking.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-A2-WHOLES",
+          "sourceActivity": "Fraction Match",
+          "prompt": "Original synthesis 2/2,3/3,4/4,6/6 each equals one whole; denominator parts all shaded.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-SYNTHESIS-FIVE8",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original 1/8 is one unit,5/8 is five pieces of one eighth, and the numerator5 counts five shaded.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-SYNTHESIS-SEVEN6",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original7/6 means seven sixths, one complete six-part rectangle plus one of six pieces in another rectangle, not7/6 of one rectangle.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-NO-TERMS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Preserve edition framing: original does not INTRODUCE technical terms numerator and denominator yet, despite showing top and bottom quantities.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U05-L03-GATED",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original Shaded Fraction Cool-down is teacher-gated; independent exit checks not source parity.",
           "answerType": "teacher",
           "expected": null
         }
