@@ -1,0 +1,126 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l15-2021-same-denominator-pairs-and-ten-spin-rounds-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L15",
+      "CultureCode": "en",
+      "Title": "Compare Fractions with the Same Denominator",
+      "ExplanationParagraphs": [
+        "The 2021 original warm-up Notice and Wonder: Two More Strips uses ONE partly-covered source photograph/diagram. Both strips use same-size unit-fraction pieces; parts of the second are hidden. Students may have multiple mathematical observations and inferences; do NOT infer an exact hidden count from an obscured photograph or invent a numeric answer. Teacher checks number of visible fractional parts, same whole and reasoning.",
+        "Activity1 requires TWO original circle-the-greater pairs: 1/2 versus3/2: the greater is 3/2 (more half-lengths, exceeds one); 3/8 versus2/8: the greater is 3/8. Then FOUR original inequality comparisons: 1/6<4/6;4/4<5/4;2/3>1/3;4/8<6/8. All must be preserved individually with the exact source fractions; equality is NOT an acceptable relation for any of these six.",
+        "The original optional 'If you have time' area gives FOUR missing-numerator INEQUALITIES: 1/2<n/2 requires n>1;6/4>n/4 requires n<6;4/3<n/3 requires n>4;5/8>n/8 requires n<5. For the grade-3 source, use appropriate whole-number nonnegative numerators; multiple values can be correct for each. Do not impose one arbitrary numerator or count the extension as mandatory.",
+        "Why the rule works: within the SAME unit whole and fixed positive denominator, each fraction uses the SAME interval size. A larger numerator contains more equally-sized intervals, so yields a greater value. Example 3/8>2/8, but equal numerator with different denominators is a different comparison skill and must not be mixed into this lesson's assessed family.",
+        "Activity2 Spin to Win: Same Denominator is an OPEN ten-round two-player spinner game. Players distinguish their markings by different pen colors. Highest initial spin becomes Player1, who chooses round-one denominator from the ORIGINAL choices 2,3,4,6,8. Each player spins a numerator and locates the resulting fraction on the SAME line with that denominator. The greater fraction wins that round and chooses the next round denominator; after TEN rounds the participant winning more rounds wins the game. Drawn numerators and winning order vary; teacher verifies actual spinner results and equal partition geometry, not a single fixed transcript.",
+        "A valid winner check, conditional on two recorded numerators a and b and common denominator d>0, is a>b; if a=b the fractions are tied mathematically and the original source does not specify a universal tie-breaker in the public student-facing excerpt. Preserve teacher decision instead of inventing a tie rule. The original game spinner artwork and teacher-only Cool-down Same Denominator are not copied. Standalone pupil PDF, published RichV2 UI, tests, academic approval and Stage D remain unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Same denominator",
+          "Definition": "Fractions with same positive denominator share the same unit fraction size when whole unit is the same.",
+          "Rule": "For d>0: a/d>b/d iff a>b.",
+          "Example": "3/8>2/8."
+        },
+        {
+          "Title": "Improper fractions can be larger",
+          "Definition": "Fraction numerator may exceed denominator; the result is beyond one whole.",
+          "Rule": "a/d>1 if a>d.",
+          "Example": "3/2>1/2."
+        },
+        {
+          "Title": "Incomplete inequality",
+          "Definition": "Many numerator choices may meet an inequality when the denominator is fixed.",
+          "Rule": "1/2<n/2 for every integer n>1.",
+          "Example": "n=2 or n=3 are both valid, if appropriate to task limits."
+        },
+        {
+          "Title": "Ten-round fraction game",
+          "Definition": "A player's spinner result determines their fraction and position; the result cannot be a fixed source answer.",
+          "Rule": "Use SAME denominator for both competitors within a round; compare numerators.",
+          "Example": "Conditional rolls 2 and3 on eighths:3/8 wins over2/8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original two choose-the-greater prompts",
+          "Question": "Which is greater: 1/2 or3/2; 3/8 or2/8?",
+          "Method": "With same denominator compare numerator.",
+          "Steps": [
+            "3 halves exceed 1 half, so3/2 is greater.",
+            "3 eighths exceed 2 eighths, so3/8 is greater."
+          ],
+          "Answer": "3/2 and3/8",
+          "Check": "Same unit whole, positive denominator."
+        },
+        {
+          "Title": "Original four relation symbols",
+          "Question": "Complete the four original paired comparisons.",
+          "Method": "Compare numerators, preserve source denominator.",
+          "Steps": [
+            "1/6<4/6.",
+            "4/4<5/4.",
+            "2/3>1/3.",
+            "4/8<6/8."
+          ],
+          "Answer": "<, <, >, <",
+          "Check": "All four comparisons are strict, none equal."
+        },
+        {
+          "Title": "Original optional four missing numerators",
+          "Question": "Find acceptable numerators for 1/2<n/2,6/4>n/4,4/3<n/3,5/8>n/8.",
+          "Method": "Use same denominator to compare numerators.",
+          "Steps": [
+            "First requires n>1 (e.g.2).",
+            "Second n<6 (e.g.5).",
+            "Third n>4 (e.g.5).",
+            "Fourth n<5 (e.g.4)."
+          ],
+          "Answer": "Illustrative answers 2,5,5,4; many other valid numerators",
+          "Check": "OPTIONAL and not unique."
+        },
+        {
+          "Title": "Conditional spinner round",
+          "Question": "Two students choose sixths and spin numerators3 and5.",
+          "Method": "Plot both on sixths line from same whole.",
+          "Steps": [
+            "Both choose denominator6.",
+            "3/6 at third tick,5/6 at fifth tick.",
+            "5/6 wins this illustrative round."
+          ],
+          "Answer": "Player with5/6 wins",
+          "Check": "Not a claim of original fixed dice/spinner outcome."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 3/2 as invalid because it exceeds one.",
+          "WhyWrong": "The original source explicitly compares 1/2 and3/2.",
+          "Correction": "Locate more half-lengths beyond one."
+        },
+        {
+          "Mistake": "Compare numerator sizes across different denominators using this rule.",
+          "WhyWrong": "Different denominators mean different unit sizes.",
+          "Correction": "The source activity is SAME denominator only; preserve same whole."
+        },
+        {
+          "Mistake": "Provide just one accepted numerator in optional extension.",
+          "WhyWrong": "Four original prompts admit many integer solutions.",
+          "Correction": "Check inequality truth and grade-level number domain rather than one fixed target."
+        },
+        {
+          "Mistake": "Set predetermined spinner winner or invent a tie-breaker.",
+          "WhyWrong": "Original game results depend on actual spinner outcomes; public student page doesn't specify tie policy.",
+          "Correction": "Teacher checks play and applies local tie handling without claiming publisher parity."
+        }
+      ],
+      "SummaryPoints": [
+        "Original fixed choose-greater answers:3/2 and3/8.",
+        "Original four strict relation symbols:1/6<4/6,4/4<5/4,2/3>1/3,4/8<6/8.",
+        "Original optional missing numerators: n>1,n<6,n>4,n<5; multiple valid responses.",
+        "Spin to Win has 10 rounds and denominator choices 2,3,4,6,8; actual spinner results teacher-reviewed.",
+        "Publisher Cool-down, standalone original student PDF, source visual reproduction, tests and Stage D not claimed."
+      ]
+    }
+  ]
+}
