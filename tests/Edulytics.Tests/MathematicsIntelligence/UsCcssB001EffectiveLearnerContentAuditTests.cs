@@ -32,6 +32,50 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
         throw new InvalidOperationException("Edulytics root not found");
     }
 
+    // Historical B001 labels and the 2021 Grade 3 first-party authored heading
+    // can differ. Only exact, immutable source/authoring pairs are admitted; this
+    // is technical render consistency, never publisher-title certification.
+    private static bool IsSourceBoundGrade3FirstPartyTitle(
+        string root, string code, string oldTitle, string effectiveTitle, string sourceUrl)
+    {
+        var path=Path.Combine(root,"artifacts","curriculum-delivery",
+            "US-CCSS-MATH","G3","stage-d-source-bound-display-title-reconciliation.json");
+        var manifestPath=Path.Combine(root,"artifacts","curriculum-delivery",
+            "US-CCSS-MATH","G3","grade-manifest.json");
+        if(!File.Exists(path)||!File.Exists(manifestPath))return false;
+        using var aliases=JsonDocument.Parse(File.ReadAllText(path));
+        var list=aliases.RootElement.GetProperty("entries").EnumerateArray().ToArray();
+        if(list.Length!=30||list.Select(x=>x.GetProperty("lessonCode").GetString())
+            .Distinct(StringComparer.Ordinal).Count()!=30)return false;
+        var matches=list.Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
+        if(matches.Length!=1)return false;
+        var row=matches[0];
+        if(row.GetProperty("historicalCatalogueTitle").GetString()!=oldTitle ||
+           row.GetProperty("firstPartyDisplayTitle").GetString()!=effectiveTitle ||
+           row.GetProperty("sourceUrl").GetString()!=sourceUrl)return false;
+        using var manifest=JsonDocument.Parse(File.ReadAllText(manifestPath));
+        var lesson=manifest.RootElement.GetProperty("lessons").EnumerateArray()
+            .Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
+        if(lesson.Length!=1||
+           lesson[0].GetProperty("title").GetString()!=oldTitle ||
+           lesson[0].GetProperty("sourceTeacherUrl").GetString()!=sourceUrl ||
+           lesson[0].GetProperty("originalSemanticSha256").GetString()!=
+             row.GetProperty("originalSemanticSha256").GetString())return false;
+        var authored=Path.Combine(root,row.GetProperty("richV2Path").GetString()!
+            .Replace('/',Path.DirectorySeparatorChar));
+        var checkpoint=Path.Combine(root,row.GetProperty("authoringCandidatePath").GetString()!
+            .Replace('/',Path.DirectorySeparatorChar));
+        if(!File.Exists(authored)||!File.Exists(checkpoint))return false;
+        using var authoredJson=JsonDocument.Parse(File.ReadAllText(authored));
+        var items=authoredJson.RootElement.GetProperty("Lessons");
+        if(items.GetArrayLength()!=1||items[0].GetProperty("LessonCode").GetString()!=code||
+           items[0].GetProperty("Title").GetString()!=effectiveTitle)return false;
+        using var candidate=JsonDocument.Parse(File.ReadAllText(checkpoint));
+        return candidate.RootElement.GetProperty("lessonCode").GetString()==code &&
+            candidate.RootElement.GetProperty("authoringState").GetString()=="READY_FOR_STAGE_D" &&
+            candidate.RootElement.GetProperty("readyForStageD").GetBoolean();
+    }
+
     // The historical B001 catalogue retained activity-name aliases for these three
     // 2021 IM lessons. The actual locally archived teacher/student pages have the
     // following lesson headings. Reconciliation must be exact and source-bound,
@@ -39,6 +83,10 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
     private static bool IsVerified2021PublisherTitleCorrection(
         string root, string code, string historicalTitle, string effectiveTitle, string sourceUrl)
     {
+        if (code.StartsWith("PED:US-CCSS-MATH:G3:",StringComparison.Ordinal))
+            return IsSourceBoundGrade3FirstPartyTitle(root,code,historicalTitle,
+                effectiveTitle,sourceUrl);
+
         // Three further Grade 1 catalogue aliases have exact, source-SHA-pinned
         // first-party corrections. Keep the historic B001 labels unchanged.
         // Accept only these precise old/new titles, official lesson URLs,

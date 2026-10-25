@@ -39,6 +39,15 @@ else:
     raise RuntimeError("Unsupported disposable rehearsal programme")
 
 
+
+# Grade 3 title reconciliation is exact-source-bound technical evidence only.
+# This never counts as original publisher title parity or academic acceptance.
+_G3_REPO_ROOT = Path(__file__).resolve().parents[2]
+_G3_ALIAS_FILE = _G3_REPO_ROOT / "artifacts/curriculum-delivery/US-CCSS-MATH/G3/stage-d-source-bound-display-title-reconciliation.json"
+_G3_TITLE_ALIASES = ({row["lessonCode"]: row for row in json.loads(
+    _G3_ALIAS_FILE.read_text(encoding="utf-8"))["entries"]}
+    if PROGRAMME == "US-CCSS" else {})
+
 def sql(query):
     return subprocess.check_output(
         ["psql", "-h", "127.0.0.1", "-U", "postgres", "-d",
@@ -1443,6 +1452,31 @@ if PROGRAMME == "US-CCSS" and os.environ.get("EDULYTICS_B001_ALL500_READS") == "
             assert '@"' + original_heading + '"' in reviewed_row, (
                 code, "unrecognized corrected publisher heading")
             effective_title = original_heading
+        elif code in _G3_TITLE_ALIASES:
+            alias = _G3_TITLE_ALIASES[code]
+            assert title == alias["historicalCatalogueTitle"], (
+                code, "historical title identity changed")
+            assert lesson["sourceUrl"] == alias["sourceUrl"], (
+                code, "source-preparation identity changed")
+            candidates = json.loads((_G3_REPO_ROOT / alias["authoringCandidatePath"])
+                .read_text(encoding="utf-8"))
+            original = json.loads((_G3_REPO_ROOT /
+                "artifacts/curriculum-delivery/US-CCSS-MATH/G3/grade-manifest.json")
+                .read_text(encoding="utf-8"))
+            source_rows = [s for s in original["lessons"] if s["lessonCode"] == code]
+            assert len(source_rows) == 1
+            assert source_rows[0]["originalSemanticSha256"] == alias["originalSemanticSha256"]
+            assert source_rows[0]["sourceTeacherUrl"] == alias["sourceUrl"]
+            assert source_rows[0]["title"] == alias["historicalCatalogueTitle"]
+            authored = json.loads((_G3_REPO_ROOT / alias["richV2Path"])
+                .read_text(encoding="utf-8"))
+            assert len(authored["Lessons"]) == 1
+            assert authored["Lessons"][0]["LessonCode"] == code
+            assert authored["Lessons"][0]["Title"] == alias["firstPartyDisplayTitle"]
+            assert candidates["lessonCode"] == code
+            assert candidates["authoringState"] == "READY_FOR_STAGE_D"
+            assert candidates["readyForStageD"] is True
+            effective_title = alias["firstPartyDisplayTitle"]
         expected = re.sub(
             r"\s+", " ", html.unescape(effective_title)).casefold()
         assert expected in rendered, (
