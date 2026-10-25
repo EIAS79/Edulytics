@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-18/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-18/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_SOURCE_TEACHER_STUDENT_AQUARIUM_BUS_LUNCH_QUOTIENTS_AND_IMAGE_REVIEWED",
     "goals": "Solve problems involving division within 100, with quotients over 10, in a way that makes sense to them.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICHV2_EQUAL_GROUPS_LARGER_DIVIDENDS_UNKNOWN_ROLE",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "f2cf68dea86266218e6a2661a221e3368b8ad1f15463fcb8b0bcada6ef5db732",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l18-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TEN_NUMERIC_TWELVE_TEACHER_STRATEGY_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "larger-number-division",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Groups on a Field Trip with your teacher. Show the representation and explain how it meets the goal: Let’s divide with larger numbers.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualMathOracles": 10,
+    "teacherJudgementTasks": 12
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: What Do You Know About Division? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_FIRSTPARTY_SOURCE_SEMANTICS",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Groups on a Field Trip (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_FIRSTPARTY_SOURCE_SEMANTICS",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: Bus Ride and Lunch Groups (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_FIRSTPARTY_SOURCE_SEMANTICS",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-18/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "MATH_FIRSTPARTY_SOURCE_SEMANTICS",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -96,7 +99,7 @@
       "originalReference": "unit-4/lesson-18/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "SOURCE_GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -106,16 +109,16 @@
       "id": "G3-U04-L18-IMAGE-01",
       "observedAltText": "Students at an aquarium.",
       "originalReference": "unit-4/lesson-18/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "AQUARIUM_SOURCE_IMAGE_VIEWED_INDEPENDENT_EQUIVALENT"
     }
   ],
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 1,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "52 objects are shared equally by 4 children. How many objects each?",
@@ -123,20 +126,21 @@
     "expected": "13"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Source aquarium image visually inspected, publisher art not embedded.",
+    "Open division warmup and source MLR7/5 Practices human collaboration require teacher.",
+    "Original student task PDF not separately read; public 2021 source math checked.",
+    "Recess Teams publisher assessment gated; independent exit not source-perfect.",
+    "No .NET execution, CI, Stage D or academic approval."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-75-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-75-academic-source-coverage-and-human-rubric-20261025.json"
 }

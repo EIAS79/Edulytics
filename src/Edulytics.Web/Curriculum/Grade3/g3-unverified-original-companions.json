@@ -15339,9 +15339,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "larger-number-division",
+      "firstPartyFamily": "fieldtrip-divide-larger-numbers",
       "independentPractice": {
         "prompt": "72 people ride equally on three buses. How many per bus?",
         "answerType": "integer",
@@ -15353,21 +15353,22 @@
         "expected": "12"
       },
       "openTeacherTask": "Work through the original lesson's activity Groups on a Field Trip with your teacher. Show the representation and explain how it meets the goal: You will solve problems involving division within 100, with quotients over 10, in a way that makes sense to them.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original L75 first edition context and photo verified. Three source quotient anchors12 groups,24 people per bus,6 tables, plus7 independently authored inverse/chunk checks; 12 teacher reasoning tasks. StageD not executed.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s divide with larger numbers.",
-        "sourceLearningGoals": "Solve problems involving division within 100, with quotients over 10, in a way that makes sense to them.",
+        "sourceGoal": "Interpret and solve division with larger dividends and quotient greater than ten.",
+        "sourceLearningGoals": "Differentiate divisor specifying group count from specifying group size.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Original warmup open division representations: share drawings, symbols, equal groups.",
+          "Original aquarium field trip48 pupils, groups of4→12 groups, compare multiplication up4×10=40 then4×2=8 and chunk division.",
+          "Original science museum72 people into3 buses→24 per bus, group count known.",
+          "Original lunch72 people with12 per long table→6 tables, group size known.",
+          "Source teacher MLR7 Compare and Connect and contrasting strategies are assessed separately from integer quotients."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s divide with larger numbers.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original aquarium picture viewed but publisher asset not copied. Source teacher-only Recess Teams Cool-down and student PDF unverified, tests and Stage D not run."
       },
       "sourceBasedCheck": {
         "prompt": "Source aquarium trip: 48 pupils in groups of four. How many groups?",
@@ -15383,30 +15384,156 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L18-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: What Do You Know About Division? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Larger Numbers in Equal Groups.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L18-A1-GROUPS",
+          "sourceActivity": "Groups on a Field Trip",
+          "prompt": "Find the value: 48 aquarium pupils in equal groups of4. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L18-A1-4X12",
+          "sourceActivity": "Groups on a Field Trip",
+          "prompt": "Find the value: 4×12 check for48 pupils. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U04-L18-A1-40DIV4",
+          "sourceActivity": "Independent source-related component",
+          "prompt": "Find the value: 40÷4 first ten groups. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U04-L18-A1-8DIV4",
+          "sourceActivity": "Independent source-related component",
+          "prompt": "Find the value: 8÷4 remaining two groups. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L18-A2-BUS",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Find the value: 72 people share equally across3 buses. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L18-A2-3X24",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Find the value: 3×24 check72 people. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "72"
+        },
+        {
+          "id": "G3-U04-L18-A2-TABLES",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Find the value: 72 people at tables of12; how many tables. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L18-A2-12X6",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Find the value: 12×6 check72 people. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "72"
+        },
+        {
+          "id": "G3-U04-L18-A2-60DIV3",
+          "sourceActivity": "Independent source-related component",
+          "prompt": "Find the value: 60÷3 chunk of 72÷3. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U04-L18-A2-12DIV3",
+          "sourceActivity": "Independent source-related component",
+          "prompt": "Find the value: 12÷3 remaining chunk. Explain with correct units.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-WU-DIVISION",
+          "sourceActivity": "What Do You Know About Division?",
+          "prompt": "Original warm-up What Do You Know About Division? Teacher elicits many representations—drawing, cubes, equations, expressions—with no fixed numerical source answer.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L18-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Groups on a Field Trip (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Larger Numbers in Equal Groups.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L18-TEACHER-A1-NOTICE-WONDER",
+          "sourceActivity": "Groups on a Field Trip",
+          "prompt": "Source field-trip prelaunch shows aquarium trip/grouping situation before revealing48 pupils/4 each. Pupils notice and wonder about grouping.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L18-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Bus Ride and Lunch Groups (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Larger Numbers in Equal Groups.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L18-TEACHER-A1-REASON",
+          "sourceActivity": "Groups on a Field Trip",
+          "prompt": "Source48÷4=12 GROUPS of four students; demonstrate groups, multiplication up4×10 then4×2, or dividend split40+8.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L18-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L18-TEACHER-A1-MODEL",
+          "sourceActivity": "Groups on a Field Trip",
+          "prompt": "Original MLR7 Compare and Connect emphasizes HOW groups of four appear in each student-generated diagram, not just scalar 12.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-A1-STRATEGY-DISPLAY",
+          "sourceActivity": "Groups on a Field Trip",
+          "prompt": "Teacher original5 Practices strategy discussion selects varied pupil models and explains why they reach the same count.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-A2-BUS-ROLE",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Original72÷3=24 per bus, where divisor3 names NUMBER of buses; teacher checks group size unknown.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-A2-TABLE-ROLE",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Original72÷12=6 tables, where divisor12 names people IN EACH GROUP; teacher checks number of tables unknown.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-A2-SWITCH",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Compare why a learner might change methods from72÷3 to72÷12; equal total72 but divisor meaning differs.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-A2-UNITS",
+          "sourceActivity": "Bus Ride and Lunch Groups",
+          "prompt": "Teacher checks answers name12 groups,24 people/bus,6 tables, never bare number or swapped units.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Source division strategies with larger numbers48,72; compare drawing, base ten blocks, multiplying up and breaking apart.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-PHOTO-BOUNDARY",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original source aquarium illustration inspected for context but not publisher-copied; independent visual group models.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L18-TEACHER-GATED",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Publisher original Recess Teams Cool-down requires login, first-party exit question not certified equivalent.",
           "answerType": "teacher",
           "expected": null
         }
