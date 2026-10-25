@@ -16166,9 +16166,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "four-operations-problems",
+      "firstPartyFamily": "apples-four-operations-source-2021",
       "independentPractice": {
         "prompt": "Eight brownies at $3 each add money to a cash box now containing $125. How much was there before?",
         "answerType": "integer",
@@ -16180,21 +16180,22 @@
         "expected": "48"
       },
       "openTeacherTask": "Work through the original lesson's activity Apple Adventure with your teacher. Show the representation and explain how it meets the goal: You will represent and solve two-step word problems using the four operations.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "2021 source whole lesson, number-list pixels and section-summary four-group tens SVG visually reviewed; original 12 candidate numbers including 400/300/240/12/350/290/230/10/340/280/170/5. Seven numeric source anchor checks, twelve teacher tasks preserving nonunique apples tuples.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s represent and solve problems using all four operations. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Quest",
-        "sourceLearningGoals": "Represent two-step word problems using equations with a letter standing for the unknown quantity. Solve two-step word problems using the four operations.",
+        "sourceGoal": "Solve two-step word problems using four operations and letters for unknown quantities.",
+        "sourceLearningGoals": "Select context-compatible quantities; represent multiple operations with equations.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warm-up context is intentionally missing quantities; elicit questions about boxes, loose apples and total.",
+          "Apple Adventure original 12-number pool:400,300,240,12,350,290,230,10,340,280,170,5. E.g. total400,loose280,boxes10,perBox12 satisfies400=280+10×12; other choices possible.",
+          "Original teacher-only synthesis illustration200−152=48,48÷8=6, but example values not source list entries.",
+          "Apple Days Tyler85−5×10=35 apples; Clare125−8×3=101 dollars; jars(200−184)÷4=4 each.",
+          "Source section summary52÷4=13, visualize4 groups of1 ten and3 ones."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems using all four operations. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Quest",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original source list SVG and base-ten illustration read; photos are background context not mathematically authoritative; never copy publisher pixels. Original student PDF and gated publisher assessment not read. Stage D/tests unrun."
       },
       "sourceBasedCheck": {
         "prompt": "At the orchard 85 apples are displayed, and five rows of ten were stacked. How many remain?",
@@ -16210,30 +16211,135 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L21-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Apples Again (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Solve Problems Using the Four Operations PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L21-A1-SAMPLE-BOX",
+          "sourceActivity": "Apple Adventure",
+          "prompt": "Original source teacher example (not from 12-number pool): (200−152)÷8 unknown apples per box.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L21-A2-TYLER",
+          "sourceActivity": "Apple Days",
+          "prompt": "Tyler has85 apples and displays5 rows of10. How many apples are left? 85−5×10.",
+          "answerType": "integer",
+          "expected": "35"
+        },
+        {
+          "id": "G3-U04-L21-A2-CLARE",
+          "sourceActivity": "Apple Days",
+          "prompt": "Clare sold8 brownies for $3 each; after the money went in, cashbox held $125. How many dollars were in it previously? 125−8×3.",
+          "answerType": "integer",
+          "expected": "101"
+        },
+        {
+          "id": "G3-U04-L21-A2-JARS",
+          "sourceActivity": "Apple Days",
+          "prompt": "Orchard began with200 applesauce jars, sold184, shared remainder among4 workers. How many per worker? (200−184)÷4.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L21-SECTION-52",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Original source summary52÷4, what is quotient?",
+          "answerType": "integer",
+          "expected": "13"
+        },
+        {
+          "id": "G3-U04-L21-SECTION-40",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Source section summary4×10 portion of52; what is subtotal?",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U04-L21-SECTION-12",
+          "sourceActivity": "Student Section Summary",
+          "prompt": "Source section summary 4×3 portion of52; what is subtotal?",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U04-L21-WARM-PROMPTS",
+          "sourceActivity": "Notice and Wonder: Apples Again",
+          "prompt": "Farmer picked some apples, some packed equally sized boxes and some loose: describe at least two mathematically meaningful missing-quantity questions. Source deliberately has NO source-fixed counts here.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L21-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Apple Adventure (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Solve Problems Using the Four Operations PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L21-A1-SOURCE-LIST",
+          "sourceActivity": "Apple Adventure",
+          "prompt": "Use original source numbers exactly: 400,300,240,12,350,290,230,10,340,280,170,5; don't invent values in the list.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L21-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Apple Days (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Solve Problems Using the Four Operations PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L21-A1-VALID-FOUR",
+          "sourceActivity": "Apple Adventure",
+          "prompt": "Choose ANY four numbers (total, loose, boxes, apples-per-box) from source list so total=loose+boxes×perBox; validate arithmetic and explain quantities. Multiple valid tuples.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L21-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L21-A1-OTHER",
+          "sourceActivity": "Apple Adventure",
+          "prompt": "Find a SECOND valid original-list tuple and justify why independently chosen choices also work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-A1-TEACHER-SAMPLE",
+          "sourceActivity": "Apple Adventure",
+          "prompt": "Original teacher synthesis uses 200 total,152 loose,8 boxes to find6 each; those 3 values are illustrative and NOT entries in original twelve-number list.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-A2-TYLER-EQ",
+          "sourceActivity": "Apple Days",
+          "prompt": "Write symbol n for remaining apples:5×10+n=85; solve n=35 and draw array.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-A2-CLARE-EQ",
+          "sourceActivity": "Apple Days",
+          "prompt": "Write prior cash amount c, then c+8×3=125; c=101 dollars.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-A2-JARS-EQ",
+          "sourceActivity": "Apple Days",
+          "prompt": "Write source equation (200−184)÷4=j, j=4 jars each. Explain subtraction before division.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-A2-TWO-STEP",
+          "sourceActivity": "Apple Days",
+          "prompt": "Compare different two-step structures: multiply then subtract, add after multiply and invert, subtract then divide; teacher checks diagram and units.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-SECTION-52",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original source section summary 52÷4=13 using tens exchange, or 4×(10+3)=52.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Identify known versus unknown quantities, justify estimates/check answers by substitution, use all four operations when required.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L21-COOLDOWN-GATED",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Publisher Apples at the Farm Stand original Cool-down gated; any local practice must be labelled independent.",
           "answerType": "teacher",
           "expected": null
         }

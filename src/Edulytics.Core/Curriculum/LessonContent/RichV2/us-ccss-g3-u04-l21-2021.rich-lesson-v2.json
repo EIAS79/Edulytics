@@ -1,0 +1,130 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u04-l21-firstedition2021-apple-adventure-12-number-pool-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U04:L21",
+      "CultureCode": "en",
+      "Title": "Solve Problems Using the Four Operations",
+      "ExplanationParagraphs": [
+        "Original warm-up: A farmer picked apples; some apples are packed equally into boxes and some are loose. The story initially has no numbers. Pupils suggest questions and quantities rather than being given a fabricated fixed answer.",
+        "Activity1 Apple Adventure source figure is a precise list of TWELVE numbers:400,300,240,12,350,290,230,10,340,280,170,5. Choose four such that TOTAL=LOOSE + NUMBER_OF_BOXES × APPLES_PER_BOX. Source does not mandate a unique selection. E.g.400=280+10×12,350=290+5×12,340=280+5×12,300=240+5×12,230=170+5×12. Teacher judges chosen tuples and unit labels.",
+        "Public teacher synthesis separately displays a sample that uses200 total,152 apples loose and8 boxes, therefore(200−152)÷8=6 apples per box. Those numbers are NOT in the original activity's twelve-number choice list; do not mistake them for given selections.",
+        "Activity2 Apple Days Tyler's display:85 apples total,5 rows of10 in display, so85−(5×10)=35 apples left. Equation5×10+n=85, n=35.",
+        "Clare's cash box: after eight brownies at$3 each the box has$125. Earlier cash c satisfies c+8×3=125, c=101 dollars.",
+        "Applesauce jars:200 originally,184 sold, remaining16 divided among4 workers gives(200−184)÷4=4 jars per worker.",
+        "Student section summary original52÷4=13, shown as four groups of one ten and three ones, or4×(10+3)=52. Interpret unknowns through base-ten diagrams.",
+        "Four original visual assets inspected: number-list SVG, orchard-barn illustration, apple-tree photograph and four groups of13 base-ten SVG. App uses new first-party math models, not copied source pixels. Gated Apples at the Farm Stand Cool-down and Stage D/tests remain outside closure."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two-step word problems",
+          "Definition": "Apply operations in a meaningful order to find an unknown.",
+          "Rule": "Known quantities+unknown form equation.",
+          "Example": "85−(5×10)=35."
+        },
+        {
+          "Title": "Boxes and loose apples",
+          "Definition": "Total equals packed boxes plus loose apples.",
+          "Rule": "total=loose+boxes×applesPerBox",
+          "Example": "400=280+10×12."
+        },
+        {
+          "Title": "Unknown letter",
+          "Definition": "Letter represents the missing amount in a contextual equation.",
+          "Rule": "c+8×3=125",
+          "Example": "c=101."
+        },
+        {
+          "Title": "Inverse operations",
+          "Definition": "Subtract before dividing when removing sold items or unpacked items.",
+          "Rule": "(total−used)÷groups",
+          "Example": "(200−184)÷4=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Apple Adventure choice",
+          "Question": "Choose original-list numbers for packed and loose apples.",
+          "Method": "Represent the two-step expression with an unknown symbol.",
+          "Steps": [
+            "Total400, loose280, boxes10, size12.",
+            "10×12=120.",
+            "280+120=400; all four numbers on original list."
+          ],
+          "Answer": "400",
+          "Check": "400=280+10×12."
+        },
+        {
+          "Title": "Tyler's apple display",
+          "Question": "85 total apples; 5 rows of10 displayed.",
+          "Method": "Represent the two-step expression with an unknown symbol.",
+          "Steps": [
+            "5×10=50 displayed.",
+            "85−50=35 left."
+          ],
+          "Answer": "35",
+          "Check": "50+35=85."
+        },
+        {
+          "Title": "Clare's cashbox",
+          "Question": "$125 after8 brownies at$3 each.",
+          "Method": "Represent the two-step expression with an unknown symbol.",
+          "Steps": [
+            "8×3=24 earned.",
+            "125−24=101 previously."
+          ],
+          "Answer": "101",
+          "Check": "101+24=125."
+        },
+        {
+          "Title": "Apple sauce jars",
+          "Question": "200 jars,184 sold, remaining shared among4.",
+          "Method": "Represent the two-step expression with an unknown symbol.",
+          "Steps": [
+            "200−184=16 remaining.",
+            "16÷4=4."
+          ],
+          "Answer": "4",
+          "Check": "184+4×4=200."
+        },
+        {
+          "Title": "Source summary",
+          "Question": "52÷4",
+          "Method": "Represent the two-step expression with an unknown symbol.",
+          "Steps": [
+            "4×10=40.",
+            "4×3=12.",
+            "40+12=52, so each group has13."
+          ],
+          "Answer": "13",
+          "Check": "13×4=52."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat Apple's number-list problem as having one exact numeric solution.",
+          "WhyWrong": "Pupils are asked to choose four source numbers that satisfy a relationship; many work.",
+          "Correction": "Validate total=loose+boxes×perBox, not one prescribed tuple."
+        },
+        {
+          "Mistake": "Use teacher example200,152,8 as original activity choices.",
+          "WhyWrong": "These sample numbers are displayed only later for discussion, not on the original source list.",
+          "Correction": "Keep source list and teacher illustration separate."
+        },
+        {
+          "Mistake": "Say the applesauce jars result is16 per person.",
+          "WhyWrong": "16 are remaining altogether.",
+          "Correction": "Divide16 by4; answer4 per person."
+        }
+      ],
+      "SummaryPoints": [
+        "Exact twelve-number source list and nonunique valid tuples preserved.",
+        "Teacher example200,152,8→6 explicitly separated.",
+        "Apple Days answers35 apples,101 dollars and4 jars.",
+        "Original four visual assets read; Stage D/tests not run."
+      ]
+    }
+  ]
+}
