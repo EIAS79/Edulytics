@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-8/lesson-15/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-15/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_LOCAL_TEACHER_PREPARATION_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_VISUAL_OR_MASTER_GAP",
     "goals": "Apply understanding of addition and subtraction within 1,000 to create a Number Talk activity.",
     "sourceHeadingsCount": 7,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "91ff536d5808f7423a9b613908228934aa37f708ffbfb1ccbf34b71c1c77a000",
+    "sourcePreparationHtmlSHA256": "e6556ea06b8876194d4e56d7c2ca4e74fc3469e0fceb0d13d427f2fcbacdcda3"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_MATERIALIZER_RAZOR_AND_EXISTING_GOAL_PRESERVED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,20 +31,27 @@
     "existingSourceBodyHash": "0889ecd2c3c613ceccbf6cbbcbb3728dfdef1f004bd425ae2cd79c6b7ff64b50",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l15-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson15RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson15.cshtml",
+    "sourceSpecificVersion": "g3-u08-l15-2021-student-designed-addition-subtraction-number-talks-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_SPECIFIC_AND_TEACHER_GATED_FOCUSED_LOCAL_DOTNET_TESTS_PASSED",
     "family": "number-talk-design",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
     "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsExecuted": true,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Number Talk Design 1 with your teacher. Show the representation and explain how it meets the goal: Let’s create a Number Talk activity. Required Preparation CCSS Standards Building On 3.NBT.A.2 Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 15 min Activity 3 15 min Activity 4 15 min Lesson Synthesis 10 min Cool-d",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson15SourceAuditTests.cs",
+    "sourceItemCount": 15,
+    "sourceTeacherItems": 5
   },
   "sourceElements": [
     {
@@ -50,10 +59,10 @@
       "sourceSection": "Warm-up: Number Talk: Addition (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -61,10 +70,10 @@
       "sourceSection": "Activity 1: Number Talk Design 1 (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -72,10 +81,10 @@
       "sourceSection": "Activity 2: Number Talk Design 2 (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -83,10 +92,10 @@
       "sourceSection": "Activity 3: Number Talk Design 3 (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -94,10 +103,10 @@
       "sourceSection": "Activity 4: Number Talk Design 4 (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -105,10 +114,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-15/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -118,7 +127,7 @@
       "originalReference": "unit-8/lesson-15/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_GATED_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -127,7 +136,7 @@
   "sourceElementCounts": {
     "headings": 7,
     "imageDescriptions": 0,
-    "fullyVerified": 0
+    "fullyVerified": 6
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Calculate 575 − 147 mentally; explain regrouping.",
@@ -135,20 +144,20 @@
     "expected": "428"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Open student-authored arithmetic sequences and publisher reflection Cool-down require teacher review.",
+    "Original standalone Student Task PDF or unverified source figure pixel parity not certified.",
+    "Original gated publisher Cool-down not accessed/copied, and first-party examples are distinctly labeled.",
+    "Teacher must review group discussion, student-authored activities and physical materials.",
+    "Full authenticated Stage D UAT and separate academic approval not performed."
   ],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "FOCUSED_LOCAL_DOTNET_TESTS_PASSED_GITHUB_CI_PENDING",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-143-2021-student-designed-addition-subtraction-number-talks-evidence-20261025.json"
 }

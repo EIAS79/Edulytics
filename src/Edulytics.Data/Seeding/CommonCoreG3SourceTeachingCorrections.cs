@@ -385,6 +385,8 @@ public static class CommonCoreG3SourceTeachingCorrections
                 CommonCoreG3Unit8Lesson13RichV2.Apply(lesson);
             if (string.Equals(lesson.LessonCode, CommonCoreG3Unit8Lesson14RichV2.LessonCode, StringComparison.Ordinal))
                 CommonCoreG3Unit8Lesson14RichV2.Apply(lesson);
+            if (string.Equals(lesson.LessonCode, CommonCoreG3Unit8Lesson15RichV2.LessonCode, StringComparison.Ordinal))
+                CommonCoreG3Unit8Lesson15RichV2.Apply(lesson);
 
             if (string.Equals(lesson.LessonCode,
                 "PED:US-CCSS-MATH:G3:U01:L01", StringComparison.Ordinal))

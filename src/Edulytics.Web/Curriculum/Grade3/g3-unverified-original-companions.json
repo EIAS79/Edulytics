@@ -26410,7 +26410,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "number-talk-design",
       "independentPractice": {
@@ -26423,12 +26423,12 @@
         "answerType": "integer",
         "expected": "703"
       },
-      "openTeacherTask": "Work through the original lesson's activity Number Talk Design 1 with your teacher. Show the representation and explain how it meets the goal: You will apply your understanding of addition and subtraction to create a Number Talk activity.",
-      "teacherReviewNote": "Source 5 student sections and 7 teacher headings; 10 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Number Talk Design 1: Give at least two mental strategies for 600−400, 600−399 and 500−399; invent one fourth related subtraction.; Number Talk Design 2: Use 500+199 and 504+199, explain strategies and invent two additional related addition expressions.; Number Talk Design 3: Extend 900−400 with three additional subtraction expressions connected by a mental method.; Number Talk Design 4: Create four addition/subtraction expressions and explain a meaningful Number Talk progression.",
+      "teacherReviewNote": "Individual public teacher/student 2021 HTML reviewed. Independent Edulytics source-specific learning and task rubrics updated; publisher visual/printed materials, physical tasks and gated Cool-down not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s create a Number Talk activity. Required Preparation CCSS Standards Building On 3.NBT.A.2 Addressing 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 15 min Activity 3 15 min Activity 4 15 min Lesson Synthesis 10 min Cool-d",
         "sourceLearningGoals": "Apply understanding of addition and subtraction within 1,000 to create a Number Talk activity.",
@@ -26454,114 +26454,107 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S1-NUM1",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-1",
           "sourceActivity": "Warm-up: Number Talk: Addition (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 300 + 400. Show or explain a method to your teacher.",
+          "prompt": "Calculate 300 + 400 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "700"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S1-NUM2",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-2",
           "sourceActivity": "Warm-up: Number Talk: Addition (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 300 + 437. Show or explain a method to your teacher.",
+          "prompt": "Calculate 300 + 437 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "737"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S1-NUM3",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-3",
           "sourceActivity": "Warm-up: Number Talk: Addition (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 321 + 437. Show or explain a method to your teacher.",
+          "prompt": "Calculate 321 + 437 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "758"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S1-NUM4",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-4",
           "sourceActivity": "Warm-up: Number Talk: Addition (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 425 + 514. Show or explain a method to your teacher.",
+          "prompt": "Calculate 425 + 514 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "939"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S2-NUM5",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-5",
           "sourceActivity": "Activity 1: Number Talk Design 1 (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 600 - 400. Show or explain a method to your teacher.",
+          "prompt": "Calculate 600 - 400 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "200"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S2-NUM6",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-6",
           "sourceActivity": "Activity 1: Number Talk Design 1 (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 600 - 399. Show or explain a method to your teacher.",
+          "prompt": "Calculate 600 - 399 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "201"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S2-NUM7",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-7",
           "sourceActivity": "Activity 1: Number Talk Design 1 (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 500 - 399. Show or explain a method to your teacher.",
+          "prompt": "Calculate 500 - 399 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "101"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S3-NUM8",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-8",
           "sourceActivity": "Activity 2: Number Talk Design 2 (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 500 + 199. Show or explain a method to your teacher.",
+          "prompt": "Calculate 500 + 199 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "699"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S3-NUM9",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-9",
           "sourceActivity": "Activity 2: Number Talk Design 2 (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 504 + 199. Show or explain a method to your teacher.",
+          "prompt": "Calculate 504 + 199 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "703"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S4-NUM10",
+          "id": "G3-U08-L15-EXPLICIT-NUMERIC-10",
           "sourceActivity": "Activity 3: Number Talk Design 3 (15 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 900 - 400. Show or explain a method to your teacher.",
+          "prompt": "Calculate 900 - 400 mentally and explain your method if asked.",
           "answerType": "integer",
           "expected": "500"
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Addition (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Number Talk.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L15-ACTIVITY-TEACHER-1",
+          "sourceActivity": "Number Talk Design 1",
+          "prompt": "Give at least two mental strategies for 600−400, 600−399 and 500−399; invent one fourth related subtraction.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Number Talk Design 1 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Number Talk.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L15-ACTIVITY-TEACHER-2",
+          "sourceActivity": "Number Talk Design 2",
+          "prompt": "Use 500+199 and 504+199, explain strategies and invent two additional related addition expressions.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Number Talk Design 2 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Number Talk.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L15-ACTIVITY-TEACHER-3",
+          "sourceActivity": "Number Talk Design 3",
+          "prompt": "Extend 900−400 with three additional subtraction expressions connected by a mental method.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: Number Talk Design 3 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “Number Talk.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L15-ACTIVITY-TEACHER-4",
+          "sourceActivity": "Number Talk Design 4",
+          "prompt": "Create four addition/subtraction expressions and explain a meaningful Number Talk progression.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-S5-TEACHER",
-          "sourceActivity": "Activity 4: Number Talk Design 4 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 5 for “Number Talk.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
-          "id": "G3-U08-L15-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L15-PUBLISHER-GATED-COOLDOWN",
+          "sourceActivity": "Cool-down: Number Talk Reflection (5 minutes)",
+          "prompt": "Original publisher reflection/assessment is gated and not independently inspected; teacher reviews source separately. First-party tasks are not claimed publisher copies.",
           "answerType": "teacher",
           "expected": null
         }
