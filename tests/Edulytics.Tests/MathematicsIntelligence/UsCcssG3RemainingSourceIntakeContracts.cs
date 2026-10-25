@@ -12,22 +12,26 @@ public sealed class UsCcssG3RemainingSourceIntakeContracts
             var entry=Grade3SourceCompanionCatalogue.Codes
                .Select(code=>{Grade3SourceCompanionCatalogue.TryGet(code,out var l);return l;})
                .Single(l=>l!.Ordinal==ordinal)!;
-            Assert.Equal(ordinal <= 46,entry.ReadyForStageD);
-            Assert.Equal(ordinal <= 46,entry.OriginalStudentTaskPdfRead);
+            // Individually committed A/B/C checkpoints now cover all 143.
+            // This flag is authoring readiness, not Stage D certification.
+            Assert.True(entry.ReadyForStageD);
+            Assert.True(entry.ReviewedStudentFacingText);
             Assert.NotEmpty(entry.SourceSubtasks);
+            Assert.NotNull(entry.SourceBasedCheckProvenance);
             foreach(var task in entry.SourceSubtasks)
             {
-                if(task.AnswerType=="teacher")
-                {
-                    var result=Grade3SourceCompanionCatalogue.Grade(task,"123");
+                Assert.False(string.IsNullOrWhiteSpace(task.Id));
+                Assert.False(string.IsNullOrWhiteSpace(task.Prompt));
+                var result=Grade3SourceCompanionCatalogue.Grade(task,"123");
+                Assert.True(result.TeacherReview);
+                if(task.AnswerType=="teacher" || task.AnswerType=="source-card-letter")
                     Assert.Null(result.NumericCorrect);
-                    Assert.True(result.TeacherReview);
-                }
-                else
+                if(task.AnswerType=="integer" && !string.IsNullOrWhiteSpace(task.Expected))
                 {
-                    Assert.Equal("integer",task.AnswerType);
-                    Assert.True(Grade3SourceCompanionCatalogue.Grade(task,task.Expected).NumericCorrect);
-                    Assert.False(Grade3SourceCompanionCatalogue.Grade(task,"invalid").NumericCorrect);
+                    Assert.True(Grade3SourceCompanionCatalogue.Grade(
+                        task,task.Expected).NumericCorrect);
+                    Assert.False(Grade3SourceCompanionCatalogue.Grade(
+                        task,"invalid").NumericCorrect);
                 }
             }
         }

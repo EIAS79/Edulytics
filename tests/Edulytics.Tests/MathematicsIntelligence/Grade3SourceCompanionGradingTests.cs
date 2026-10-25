@@ -534,7 +534,11 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.TryGet(lessonCode,out var entry));
         Assert.NotNull(entry!.SourceBasedCheck);
         Assert.True(entry.ReviewedStudentFacingText);
-        Assert.False(entry.SourceBasedCheckProvenance!.FigurePixelsInspected);
+        // The 2021 diagrams for L12-L14 were inspected after this original
+        // test was drafted; a source pixel inspection does NOT imply an
+        // automatic diagram score or academic approval.
+        Assert.Equal(number is 12 or 13 or 14,
+            entry.SourceBasedCheckProvenance!.FigurePixelsInspected);
         var yes=Grade3SourceCompanionCatalogue.Grade(entry.SourceBasedCheck!, expected.ToString());
         var no=Grade3SourceCompanionCatalogue.Grade(entry.SourceBasedCheck!, (expected+1).ToString());
         Assert.True(yes.NumericCorrect);
