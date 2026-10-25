@@ -13627,9 +13627,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiply-multiples-of-ten",
+      "firstPartyFamily": "multiply-one-digit-by-multiples-of-ten-place-value",
       "independentPractice": {
         "prompt": "Find 5 × 60 using groups of tens.",
         "answerType": "integer",
@@ -13641,21 +13641,22 @@
         "expected": "280"
       },
       "openTeacherTask": "Work through the original lesson's activity A Whole Lot of Dollars with your teacher. Show the representation and explain how it meets the goal: You will multiply one-digit numbers by multiples of 10.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Source 2021 local teacher/student math reviewed with both SVG source figures. 21 numeric checks, 11 teacher tasks for $100 options, $150 alternatives, 6 final balances and Jada/Kiran. No Stage D.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s multiply one-digit numbers times multiples of 10.",
-        "sourceLearningGoals": "Multiply one-digit whole numbers by multiples of 10 using strategies based on place value and the properties of operations.",
+        "sourceGoal": "Multiply one-digit numbers by tens using base-ten rods, play-money amounts and associative grouping.",
+        "sourceLearningGoals": "Use tens and single-digit products to calculate multiples of ten.",
         "teachingSteps": [
-          "Represent the multiple of ten as groups of ten.",
-          "Multiply the one-digit counts using known facts.",
-          "Explain why the result contains that many tens."
+          "Warmup original twelve rods of ten arranged four rows of three:3×40=4×30=120.",
+          "A Whole Lot of Dollars: eight original starting $100 bill options, identify five correct totals; $150 same denomination in5,10,50 bill sets.",
+          "Player final totals Andre140,Clare140,Jada250,Lin160,Noah300,Tyler210; Noah wins.",
+          "Jada skip counts thirty eight times; Kiran uses8×3=24 so24 tens=240. Source second image24 rods in8 rows of3.",
+          "Original five source calculations5×60=300,8×50=400,4×30=120,7×40=280,9×20=180; justify in tens."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s multiply one-digit numbers times multiples of 10.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original 2 base-ten SVG drawings individually viewed, only first-party geometry recreated. Protected Cool-down, source student PDF and academic approval not verified; tests not run."
       },
       "sourceBasedCheck": {
         "prompt": "In the source, 8 × 30 is represented with base-ten blocks. What is its product?",
@@ -13671,30 +13672,226 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L12-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Tens (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Multiply Multiples of Ten.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L12-WU-TWELVE-TENS",
+          "sourceActivity": "Notice and Wonder: Tens",
+          "prompt": "The original first diagram consists of twelve rods each representing ten. Find the total.",
+          "answerType": "integer",
+          "expected": "120"
+        },
+        {
+          "id": "G3-U04-L12-A2-24-TENS",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second image: 24 tens from eight groups of three tens, what is total?",
+          "answerType": "integer",
+          "expected": "240"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-ONE100",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 1 bills of $100. What is total, as 1×100? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-FOUR20",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 4 bills of $20. What is total, as 4×20? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-TEN10",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 10 bills of $10. What is total, as 10×10? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-TEN5",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 10 bills of $5. What is total, as 10×5? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-FIVE20",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 5 bills of $20. What is total, as 5×20? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-TWENTY10",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 20 bills of $10. What is total, as 20×10? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-TWENTY5",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 20 bills of $5. What is total, as 20×5? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U04-L12-A1-BILLS-TWO50",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original source bill option 2 bills of $50. What is total, as 2×50? Compare to starting $100 with teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U04-L12-A1-END-ANDRE",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original end-of-board-game player ANDRE: nine $10 and ten $5. What dollar amount?",
+          "answerType": "integer",
+          "expected": "140"
+        },
+        {
+          "id": "G3-U04-L12-A1-END-CLARE",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original end-of-board-game player CLARE: fourteen $10. What dollar amount?",
+          "answerType": "integer",
+          "expected": "140"
+        },
+        {
+          "id": "G3-U04-L12-A1-END-JADA",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original end-of-board-game player JADA: ten $10 and three $50. What dollar amount?",
+          "answerType": "integer",
+          "expected": "250"
+        },
+        {
+          "id": "G3-U04-L12-A1-END-LIN",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original end-of-board-game player LIN: eight $20. What dollar amount?",
+          "answerType": "integer",
+          "expected": "160"
+        },
+        {
+          "id": "G3-U04-L12-A1-END-NOAH",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original end-of-board-game player NOAH: six $50. What dollar amount?",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U04-L12-A1-END-TYLER",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original end-of-board-game player TYLER: twenty-one $10. What dollar amount?",
+          "answerType": "integer",
+          "expected": "210"
+        },
+        {
+          "id": "G3-U04-L12-A2-5X60",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second activity: find 5×60 using tens and explain the grouping.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U04-L12-A2-8X50",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second activity: find 8×50 using tens and explain the grouping.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U04-L12-A2-4X30",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second activity: find 4×30 using tens and explain the grouping.",
+          "answerType": "integer",
+          "expected": "120"
+        },
+        {
+          "id": "G3-U04-L12-A2-7X40",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second activity: find 7×40 using tens and explain the grouping.",
+          "answerType": "integer",
+          "expected": "280"
+        },
+        {
+          "id": "G3-U04-L12-A2-9X20",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second activity: find 9×20 using tens and explain the grouping.",
+          "answerType": "integer",
+          "expected": "180"
+        },
+        {
+          "id": "G3-U04-L12-WU-VISUAL",
+          "sourceActivity": "Notice and Wonder: Tens",
+          "prompt": "Original warm-up 12 ten rods arranged4 rows of3:3×40=4×30=120, or3×4×10. Explain the same groups.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L12-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: A Whole Lot of Dollars (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Multiply Multiples of Ten.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L12-A1-100-OPTIONS",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Original $100 starting money allows one $100,ten $10,five $20,twenty $5,two $50; reject four $20/ten $5/twenty $10. Teacher checks multiple representations.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L12-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Two Strategies (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Multiply Multiples of Ten.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L12-A1-150-OPTIONS",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Noah pays Lin exactly $150 using one denomination:30×$5,15×$10,3×$50 only among original denominations; check no $20 or $100 exact whole-bill options.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L12-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L12-A1-WINNER",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Compare source six final balances: Andre140,Clare140,Jada250,Lin160,Noah300,Tyler210. Noah alone is the winner.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-A1-PLAYS",
+          "sourceActivity": "A Whole Lot of Dollars",
+          "prompt": "Teacher observes paired play-money representation, base-ten block/group counting and MLR8 reasoning, not just totals.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-A2-JADA",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Jada original skip-counting30,60,90,120,150,180,210,240 for eight thirties; show why that is8×30.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-A2-KIRAN",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Kiran knows8×3=24 then24×10=240. Compare eight rows of3 ten-rods to Jada's eight groups of30.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-A2-240-VISUAL",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Source second original diagram24 base ten rods organised8 rows of3=24 tens=240. Check first-party equivalent diagram with correct grouping.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-A2-EXPLAIN",
+          "sourceActivity": "Two Strategies",
+          "prompt": "Explain5×60=30 tens=300,8×50=40 tens=400,4×30=12 tens=120,7×40=28 tens=280,9×20=18 tens=180.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Connect multiplying one digit by a multiple of ten with associative regrouping a×(b×10)=(a×b)×10 and related place-value reasoning.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L12-SOURCE-COOLDOWN",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Original What's the Value? publisher Cool-down requires login; Edulytics independently authored exit exercise is not source parity.",
           "answerType": "teacher",
           "expected": null
         }
