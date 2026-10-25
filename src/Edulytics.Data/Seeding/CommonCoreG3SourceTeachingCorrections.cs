@@ -565,7 +565,7 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "which category is greater. Only generate an " +
                     "auto-gradable item when the actual within-20 " +
                     "arithmetic scope has been checked.\n" +
-                    "Two-step comparison example: if two distinct " +
+                    "A two-step comparison example: if two distinct " +
                     "teacher-selected categories contain a and b " +
                     "learners and a third contains c, compare (a+b) " +
                     "with c. Use the classroom counts; do not supply " +
