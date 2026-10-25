@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-8/lesson-8/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-8/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_TEACHER_PREPARATION_STUDENT_TASKS_AND_FOUR_EXPLICIT_PRODUCTS_REVIEWED_PRINTED_CARDS_GAP",
     "goals": "Practice multiplication within 100. Reflect on multiplication fluency.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "localTeacherSha256": "bf80bfa1db7a864054d4bbcb1b868605b778edfd31d35e989b52a966462c61cb",
+    "localPreparationSha256": "d59d4216a94d25fe411a2a3e119e26509db47d0f389e63be752dacb01d834d01"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICHV2_AND_RAZOR_GUARDED_MATERIALIZER",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,20 +31,26 @@
     "existingSourceBodyHash": "e499e19877a5b4e585cb162bafcde4d293f1971a8df4a0c039739358b5a6f6e1",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l08-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson8RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson8.cshtml",
+    "sourceSpecificVersion": "g3-u08-l08-2021-authentic-mental-products-card-sort-compare-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_ORIGINAL_MENTAL_PRODUCTS_TEACHER_CARD_GAMES_SIX_FOCUSED_TESTS_PASSED",
     "family": "multiplication-fluency-games",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
     "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsExecuted": true,
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Card Sort: Multiplication with your teacher. Show the representation and explain how it meets the goal: Let’s sort multiplication facts and play a multiplication game.",
-    "teacherReviewNote": "Teacher witnesses the game interaction and checks multiple strategies."
+    "teacherReviewNote": "Teacher witnesses the game interaction and checks multiple strategies.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson8SourceAuditTests.cs",
+    "sourceItemCount": 7
   },
   "sourceElements": [
     {
@@ -50,10 +58,10 @@
       "sourceSection": "Warm-up: Number Talk: Products (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_PUBLIC_2021_TEXT_FIRSTPARTY_SKILLS",
+      "grading": "MACHINE_WARMUP_OR_TEACHER_CENTER",
       "claimedParity": false
     },
     {
@@ -61,10 +69,10 @@
       "sourceSection": "Activity 1: Card Sort: Multiplication (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_PUBLIC_2021_TEXT_FIRSTPARTY_SKILLS",
+      "grading": "MACHINE_WARMUP_OR_TEACHER_CENTER",
       "claimedParity": false
     },
     {
@@ -72,10 +80,10 @@
       "sourceSection": "Activity 2: Compare, Multiply Within 100 (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_PUBLIC_2021_TEXT_FIRSTPARTY_SKILLS",
+      "grading": "MACHINE_WARMUP_OR_TEACHER_CENTER",
       "claimedParity": false
     },
     {
@@ -83,10 +91,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_PUBLIC_2021_TEXT_FIRSTPARTY_SKILLS",
+      "grading": "MACHINE_WARMUP_OR_TEACHER_CENTER",
       "claimedParity": false
     },
     {
@@ -96,7 +104,7 @@
       "originalReference": "unit-8/lesson-8/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_GATED_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -105,7 +113,7 @@
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 0,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "How many objects are there in 5 equal groups with 5 objects in each group? Show your groups in a drawing.",
@@ -113,20 +121,19 @@
     "expected": "25"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Publisher blackline card decks/recording sheets and separately published student PDF not inspected; the first-party activity is original and not a source duplicate.",
+    "Actual two-player interaction, sorting accuracy and five practice goals require teacher review.",
+    "Original gated Multiplication Reflection Cool-down unavailable.",
+    "Full Rich V2 published UAT, academic approval and Stage D not performed."
   ],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "LOCAL_DOTNET_SIX_TARGETED_XUNIT_TESTS_PASSED_GITHUB_CI_PENDING",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-136-2021-multiplication-card-sort-and-compare-evidence-20261025.json"
 }

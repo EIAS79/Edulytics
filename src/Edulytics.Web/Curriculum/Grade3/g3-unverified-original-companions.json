@@ -25442,7 +25442,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "multiplication-fluency-games",
       "independentPractice": {
@@ -25455,12 +25455,12 @@
         "answerType": "integer",
         "expected": "54"
       },
-      "openTeacherTask": "Work through the original lesson's activity Card Sort: Multiplication with your teacher. Show the representation and explain how it meets the goal: You will evaluate your fluency with multiplication within 100.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Use the original 3-category card sort and two-player Compare center with actual participants; record 5 personal facts for practice, and explain efficient multiplication.",
+      "teacherReviewNote": "Original local public 2021 teacher/student HTML individually reviewed; 4 explicit warm-up facts and 2 teacher-reviewed card activities. Publisher cards/blackline master and gated Cool-down not reviewed; teacher verifies pair practice.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s sort multiplication facts and play a multiplication game.",
         "sourceLearningGoals": "Practice multiplication within 100. Reflect on multiplication fluency.",
@@ -25486,30 +25486,51 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L08-STAGE-ABC-CANDIDATE-S1-TEACHER",
+          "id": "G3-U08-L08-NUMBER-TALK-1",
           "sourceActivity": "Warm-up: Number Talk: Products (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Multiplication Center Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
+          "prompt": "Find 2 × 4 mentally; explain your strategy if asked.",
+          "answerType": "integer",
+          "expected": "8"
         },
         {
-          "id": "G3-U08-L08-STAGE-ABC-CANDIDATE-S2-TEACHER",
+          "id": "G3-U08-L08-NUMBER-TALK-2",
+          "sourceActivity": "Warm-up: Number Talk: Products (10 minutes)",
+          "prompt": "Find 5 × 4 mentally; explain your strategy if asked.",
+          "answerType": "integer",
+          "expected": "20"
+        },
+        {
+          "id": "G3-U08-L08-NUMBER-TALK-3",
+          "sourceActivity": "Warm-up: Number Talk: Products (10 minutes)",
+          "prompt": "Find 10 × 4 mentally; explain your strategy if asked.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U08-L08-NUMBER-TALK-4",
+          "sourceActivity": "Warm-up: Number Talk: Products (10 minutes)",
+          "prompt": "Find 17 × 4 mentally; explain your strategy if asked.",
+          "answerType": "integer",
+          "expected": "68"
+        },
+        {
+          "id": "G3-U08-L08-CARD-SORT-TEACHER",
           "sourceActivity": "Activity 1: Card Sort: Multiplication (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Multiplication Center Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "Sort 1 × 1 to 10 × 10 card facts with a partner into three fluency groups and select five personal practice facts. Show teacher your three categories and strategy for an uncertain product. Source paper cards not digitally reproduced.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L08-STAGE-ABC-CANDIDATE-S3-TEACHER",
+          "id": "G3-U08-L08-COMPARE-CARD-TEACHER",
           "sourceActivity": "Activity 2: Compare, Multiply Within 100 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Multiplication Center Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "Play the two-player Compare game and explain why each winning multiplication product is greater; teacher witnesses rules and your strategy. Publisher card deck itself not verified.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L08-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L08-GATED-COOLDOWN",
+          "sourceActivity": "Cool-down: Multiplication Reflection (5 minutes)",
+          "prompt": "Publisher's gated original reflective assessment is unavailable; request authorized source from teacher. Independently authored practice does not claim source equivalence.",
           "answerType": "teacher",
           "expected": null
         }
