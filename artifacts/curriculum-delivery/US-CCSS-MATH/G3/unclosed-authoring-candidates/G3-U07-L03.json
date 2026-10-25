@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-7/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-3/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_LOCAL_HTML_PREP_4_PRODUCTS_TEACHER_AND_PAIR_MYSTERY_SHAPE_5_QUESTION_RULE_REVIEWED",
     "goals": "Describe and identify shapes using their distinguishing attributes.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_MYSTERY_QUAD_HIDDEN_CARD_FIVE_YESNO_AND_ROLE_SWAP",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "ec35569c3210e75e6fce6f6a5997e484de162473ac41ce7f05acdbc2d023852d",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l03-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson3.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_SOURCE_MULTIPLES_40_ORACLES_AND_FIVE_QUESTION_CONTRACT_TEACHER_RUBRIC_UNRUN",
     "family": "shape-attributes",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Learn How to Play Mystery Quadrilateral with your teacher. Show the representation and explain how it meets the goal: Let’s play Mystery Quadrilateral.",
-    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading."
+    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson3MysteryQuadrilateralTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Number Talk: Multiply Multiples of Ten (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-7/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_ORIGINAL_2021_SOURCE_MYSTERY_GAME_SEMANTICS",
+      "grading": "NUMERIC_OR_TEACHER_SELECTED_CARD",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Learn How to Play Mystery Quadrilateral (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-7/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_ORIGINAL_2021_SOURCE_MYSTERY_GAME_SEMANTICS",
+      "grading": "NUMERIC_OR_TEACHER_SELECTED_CARD",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Play Mystery Quadrilateral (25 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-7/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_ORIGINAL_2021_SOURCE_MYSTERY_GAME_SEMANTICS",
+      "grading": "NUMERIC_OR_TEACHER_SELECTED_CARD",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-7/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_ORIGINAL_2021_SOURCE_MYSTERY_GAME_SEMANTICS",
+      "grading": "NUMERIC_OR_TEACHER_SELECTED_CARD",
       "claimedParity": false
     },
     {
@@ -96,7 +99,7 @@
       "originalReference": "unit-7/lesson-3/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_GATE_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -109,7 +112,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SHAPE_CARDS_PIXEL_GAP"
     }
   ],
   "sourceElementCounts": {
@@ -123,20 +126,22 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original quadrilateral-card blackline source pixels and S/U/X are not independently verified.",
+    "Original standalone pupil PDF and restricted teacher Cool-down Mystery Shape not inspected.",
+    "Each actual chosen mystery card and yes/no truthfulness require teacher observation.",
+    ".NET tests, CI, Stage D, academic approval, merge and production not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "20aba2c371feac123b29df724edb270a0a33e242df0478cd9f567acc66a18d75",
+  "originalPreparationHtmlSHA256": "7ae37382d333500f19850c2d46d349ac863ea09a36c085150bb0ebf72fbfa7c9",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-116-2021-source-mystery-quadrilateral-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-116-source-mystery-shape-human-rubric-20261025.json"
 }
