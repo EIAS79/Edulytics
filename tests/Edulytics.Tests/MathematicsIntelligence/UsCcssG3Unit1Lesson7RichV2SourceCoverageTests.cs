@@ -24,7 +24,7 @@ public sealed class UsCcssG3Unit1Lesson7RichV2SourceCoverageTests
     {
         var r=RichLessonContentV2Registry.Find(Code,"en");
         Assert.NotNull(r);
-        var a=r.ExplanationParagraphs.Single(x=>x.Contains("Bugs in the Garden",StringComparison.Ordinal));
+        var a=r.ExplanationParagraphs.Single(x=>x.StartsWith("Activity 2 — Questions About Bugs in the Garden",StringComparison.Ordinal));
         Assert.Contains("NEVER the pass authority",a);
         Assert.Contains("Teacher",r.WorkedExamples[2].Check,StringComparison.OrdinalIgnoreCase);
         Assert.Contains("BEFORE the source Cool-down",r.ExplanationParagraphs.Last());

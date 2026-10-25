@@ -184,7 +184,7 @@ public sealed class UsCcssG3Unit1Lesson1GraphCandidateTests
         var picture = view.IndexOf("2. Picture Time", StringComparison.Ordinal);
         var activity = view.IndexOf("3. Two graphs", StringComparison.Ordinal);
         var synthesis = view.IndexOf("4. Lesson synthesis", StringComparison.Ordinal);
-        var cooldown = view.IndexOf("5. Edulytics-authored Cool-down", StringComparison.Ordinal);
+        var cooldown = view.IndexOf("5. Source-aligned 2021 Cool-down", StringComparison.Ordinal);
         Assert.True(warmup >= 0 && warmup < picture &&
                     picture < activity && activity < synthesis && synthesis < cooldown);
 

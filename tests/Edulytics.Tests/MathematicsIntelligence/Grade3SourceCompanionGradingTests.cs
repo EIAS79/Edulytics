@@ -186,7 +186,7 @@ public sealed class Grade3SourceCompanionGradingTests
         }
         Assert.Equal("multiplication-equation",lesson.IndependentPractice!.AnswerType);
         Assert.Equal("multiplication-equation",lesson.OriginalEdulyticsCoolDown!.AnswerType);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -205,7 +205,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.Grade(unknownProduct,"10").NumericCorrect);
         var incompletePicture=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-01");
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(incompletePicture,"30").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -225,7 +225,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal("8",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-01").Expected);
         Assert.Equal("16",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-02").Expected);
         Assert.Equal("2",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-03").Expected);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -240,7 +240,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"20").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"24").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -254,7 +254,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"12").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"16").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -275,7 +275,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal("multiplication-expression",lesson.IndependentPractice!.AnswerType);
         Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"28").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -293,7 +293,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(Grade3SourceCompanionCatalogue.Grade(backyardTree,"8").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(
             lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A1-COCRAFT"),"35").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Theory]
@@ -327,7 +327,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal("commutative-equation-pair",lesson.IndependentPractice!.AnswerType);
         Assert.Equal("commutative-equation-pair",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"21").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -341,7 +341,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"42").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.SourceSubtasks[3],"42").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
         Assert.Equal(16,2*1+2*1+2*2+2*4);
         Assert.Equal(42,2*2+2*4+2*5+2*10);
         Assert.Equal(6,2*2+2);
@@ -363,7 +363,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(
             lesson.SourceSubtasks[3],"1").NumericCorrect);
         Assert.Equal("teacher",lesson.IndependentPractice!.AnswerType);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -378,7 +378,7 @@ public sealed class Grade3SourceCompanionGradingTests
             Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"20").NumericCorrect));
         Assert.Equal("integer",lesson.IndependentPractice!.AnswerType);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"12").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -396,7 +396,7 @@ public sealed class Grade3SourceCompanionGradingTests
             lesson.SourceBasedCheck!,"8").NumericCorrect);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(
             lesson.IndependentPractice!,"24").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -414,7 +414,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.True(Grade3SourceCompanionCatalogue.Grade(fourth,"45").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(unknown,"30").NumericCorrect);
         Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A1-")));
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -433,7 +433,7 @@ public sealed class Grade3SourceCompanionGradingTests
             Assert.True(Grade3SourceCompanionCatalogue.Grade(task,task.Expected).NumericCorrect);
             Assert.False(Grade3SourceCompanionCatalogue.Grade(task,"999").NumericCorrect);
         }
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Theory]
@@ -470,7 +470,7 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.False(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"21 in²").NumericCorrect);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"24 in²").NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.SourceSubtasks[8],"25").NumericCorrect);
-        Assert.False(lesson.ReadyForStageD);
+        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
     }
 
     [Fact]
@@ -567,7 +567,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit", "place-value-parts" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "multiplication-equation-either-order", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit", "place-value-parts" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -623,6 +623,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "clock-time" => "13:99 pm",
                     "multiplication-expression" => "1x1",
                     "multiplication-equation" => "1x1=1",
+                    "multiplication-equation-either-order" => "1x1=1",
                     "commutative-equation-pair" => "1x2=2;2x1=2",
                     "area-with-unit" => "999 cm²",
                     "coverage-combination" => "0,0,0",

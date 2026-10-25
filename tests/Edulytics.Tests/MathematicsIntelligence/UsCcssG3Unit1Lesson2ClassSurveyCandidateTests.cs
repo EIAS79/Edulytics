@@ -106,8 +106,16 @@ public sealed class UsCcssG3Unit1Lesson2ClassSurveyCandidateTests
         Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeDifference(
             classOfThirty, "Bus", "Car", 1, out var correct));
         Assert.True(correct);
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
+            classOfThirty, "Walk", "Bus", "Bike", 16, out var correctWithinTwenty));
+        Assert.True(correctWithinTwenty); // 14 + 5 - 3 = 16 remains in the mathematical within-20 scope.
+        UsCcssG3Unit1Lesson2ClassSurveyCandidate.ClassroomCount[] beyondTwenty =
+        [
+            new("Walk", 18), new("Bike", 7), new("Car", 5)
+        ];
+        Assert.True(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGetValidatedCounts(beyondTwenty, out _));
         Assert.False(UsCcssG3Unit1Lesson2ClassSurveyCandidate.TryGradeTwoStep(
-            classOfThirty, "Walk", "Bus", "Bike", 16, out _));
+            beyondTwenty, "Walk", "Bike", "Car", 20, out _)); // 25 combined exceeds 20.
     }
 
     [Fact]
