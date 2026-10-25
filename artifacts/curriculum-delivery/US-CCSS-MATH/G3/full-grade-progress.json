@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 134,
+    "lessonsFullyReadyForStageD": 135,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 9,
+    "lessonsWithACExplicitGap": 8,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -37,20 +37,20 @@
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 3,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
-    "sourceAdaptedCheckedItems": 135,
-    "sourceSpecificReviewDeltas": 135,
+    "sourceAdaptedCheckedItems": 136,
+    "sourceSpecificReviewDeltas": 136,
     "lessonsWithActualRichV2SourcePerfect": 56,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 156,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1426,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1430,
     "originalSvgGeometriesInspected": 237
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 134,
-    "firstUnclosedOrdinal": 135,
+    "lastConsecutiveReadyForStageDOrdinal": 135,
+    "firstUnclosedOrdinal": 136,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -1156,15 +1156,10 @@
     {
       "ordinal": 135,
       "lessonCode": "PED:US-CCSS-MATH:G3:U08:L07",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L07.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-135-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-135-2021-authentic-scaled-bar-graph-and-partner-questions-evidence-20261025.json"
     },
     {
       "ordinal": 136,
@@ -5403,12 +5398,12 @@
       "unitNumber": 8,
       "lessonNumber": 7,
       "title": "Graph and Answer",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "stageA": "LOCAL_2021_TEACHER_PREPARATION_AND_THREE_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_WARMUP_PIXEL_GAP",
+      "stageB": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_GUARDED_MATERIALIZER_AND_RAZOR",
+      "stageC": "AUTHENTIC_SOURCE_SCALED_GRAPH_PARTNER_TASKS_4_LOCAL_DOTNET_TESTS_PASSED",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 5,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L07.json",
       "stageD": "NOT_STARTED",
@@ -5422,9 +5417,9 @@
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-135-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-135-2021-authentic-scaled-bar-graph-and-partner-questions-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "FIRSTPARTY_AUTHENTIC_SURVEY_GRAPH_WITH_PUBLISHER_IMAGE_PDF_GATED_GAPS"
     },
     {
       "gradeOrdinal": 136,
@@ -6261,24 +6256,25 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 134,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L06",
+    "gradeOrdinal": 135,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L07",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-134-2021-authentic-large-group-six-category-survey-evidence-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-135-2021-authentic-scaled-bar-graph-and-partner-questions-evidence-20261025.json",
     "sourceGraphPixelsVerified": false,
     "originalSurveyMasterPdfVerified": false,
-    "testsRun": false,
+    "testsRun": true,
     "stageD": "NOT_STARTED",
-    "academicApproval": "NOT_CLAIMED"
+    "academicApproval": "NOT_CLAIMED",
+    "targetedUnitTestsPassed": 4
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 134,
-    "firstUnclosedGradeOrdinal": 135,
-    "testsRun": false,
+    "lastClosedGradeOrdinal": 135,
+    "firstUnclosedGradeOrdinal": 136,
+    "testsRun": true,
     "ciRun": false,
     "stageD": "NOT_STARTED",
-    "closureScope": "AUTHENTIC_SOURCE_SURVEY_SEMANTIC_FIRSTPARTY_AUTHORING_ONLY"
+    "closureScope": "PUBLIC_SOURCE_HTML_FIRSTPARTY_AUTHENTIC_SCALED_GRAPH_SEMANTICS_NO_FULL_PARITY"
   },
   "latestAttemptedGradeOrdinal": 63,
   "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U04:L06",

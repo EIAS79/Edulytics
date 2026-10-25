@@ -11,16 +11,19 @@
   "originalTeacherHtml": "unit-8/lesson-7/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-7/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_TEACHER_PREPARATION_AND_THREE_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_WARMUP_PIXEL_GAP",
     "goals": "Draw a scaled bar graph to represent a data set with several categories. Solve one- and two-step “how many more” and “how many less” problems using information presented in scaled bar graphs.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "d6012c5c30cc23d34c2d63670fd1eeae82a55b77b53f67ae6b918fadad07bb46",
+    "sourcePreparationHtmlSHA256": "27d5675c373416ff789cad06ffacaf39ea16d7ca5315d1494212a27a8ceedfff",
+    "originalGraphPixelsInspected": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_GUARDED_MATERIALIZER_AND_RAZOR",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,20 +32,27 @@
     "existingSourceBodyHash": "580fe2a995d122a14a0dcd5024094bb515eedda75ce560c404562a4429424c39",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l07-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson7RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson7.cshtml",
+    "sourceSpecificVersion": "g3-u08-l07-2021-authentic-survey-scaled-bar-graphs-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "AUTHENTIC_SOURCE_SCALED_GRAPH_PARTNER_TASKS_4_LOCAL_DOTNET_TESTS_PASSED",
     "family": "survey-scaled-bar-graphs",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "integer",
     "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsExecuted": true,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Draw a Scaled Bar Graph with your teacher. Show the representation and explain how it meets the goal: Let’s represent our data on scaled bar graphs and answer questions about the data.",
-    "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data."
+    "teacherReviewNote": "Data authenticity and graphical fidelity are teacher reviewed. Numerical Cool-down uses separate fictional data.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson7SourceAuditTests.cs",
+    "sourceItemCount": 4,
+    "sourceTeacherItems": 4
   },
   "sourceElements": [
     {
@@ -50,10 +60,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: Graph (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_2021_PUBLIC_SOURCE_SEMANTICS_FIRST_PARTY_TEACHER_REVIEWED",
+      "grading": "TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -61,10 +71,10 @@
       "sourceSection": "Activity 1: Draw a Scaled Bar Graph (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_2021_PUBLIC_SOURCE_SEMANTICS_FIRST_PARTY_TEACHER_REVIEWED",
+      "grading": "TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -72,10 +82,10 @@
       "sourceSection": "Activity 2: Ask and Answer Questions (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_2021_PUBLIC_SOURCE_SEMANTICS_FIRST_PARTY_TEACHER_REVIEWED",
+      "grading": "TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -83,10 +93,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "LOCAL_2021_PUBLIC_SOURCE_SEMANTICS_FIRST_PARTY_TEACHER_REVIEWED",
+      "grading": "TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -96,16 +106,24 @@
       "originalReference": "unit-8/lesson-7/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_GATED_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "id": "G3-U08-L07-IMAGE-1",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/5klvdrd7by04jzk8ihxmxg2z536p",
+      "sourcePixelsInspected": false,
+      "embedded": false,
+      "coverage": "ORIGINAL_WARMUP_GRAPH_PIXEL_VERIFICATION_PENDING"
+    }
+  ],
   "sourceElementCounts": {
     "headings": 5,
-    "imageDescriptions": 0,
-    "fullyVerified": 0
+    "imageDescriptions": 1,
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Fictional data: 25 students chose club A and 20 club B. How many MORE chose the larger club?",
@@ -113,20 +131,19 @@
     "expected": "5"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original public teacher and student HTML read; original warm-up graph image pixels and standalone Student Task PDF not independently reviewed.",
+    "Actual school survey is teacher-provided; Edulytics cannot claim real frequencies or certify hand-drawn graphs and partner exchanges automatically.",
+    "Gated publisher Cool-down not accessed, reproduced, or certified.",
+    "Local .NET compilation and four focused xUnit tests passed. Full authenticated Stage D UAT, published Rich V2 render/grading, academic approval and original image parity remain pending."
   ],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "FOUR_TARGETED_LOCAL_XUNIT_TESTS_PASS_GITHUB_CI_NOT_PROVEN",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-135-2021-authentic-scaled-bar-graph-and-partner-questions-evidence-20261025.json"
 }

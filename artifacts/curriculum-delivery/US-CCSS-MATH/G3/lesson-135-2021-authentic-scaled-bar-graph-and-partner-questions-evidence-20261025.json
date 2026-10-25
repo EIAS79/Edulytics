@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "gradeOrdinal": 135,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U08:L07",
+  "referenceEdition": "IM K-5 First Edition 2021",
+  "sourceRelativePath": "unit-8/lesson-7/lesson.html",
+  "localTeacherLessonSha256": "d6012c5c30cc23d34c2d63670fd1eeae82a55b77b53f67ae6b918fadad07bb46",
+  "localTeacherPreparationSha256": "27d5675c373416ff789cad06ffacaf39ea16d7ca5315d1494212a27a8ceedfff",
+  "verifiedStudentFacingSections": 3,
+  "sourceSections": [
+    {
+      "ordinal": 1,
+      "kind": "WARM_UP",
+      "title": "Warm-up: Notice and Wonder: Graph (10 minutes)",
+      "review": "Original unlabeled/unspecified scale graph; non-integer person when 1 response per unit, teacher discussion",
+      "coverage": "TEACHER_SOURCE_ART_NOT_PIXEL_VERIFIED",
+      "sourceTextCompared": true,
+      "publisherParityClaimed": false
+    },
+    {
+      "ordinal": 2,
+      "kind": "ACTIVITY",
+      "title": "Activity 1: Draw a Scaled Bar Graph (20 minutes)",
+      "review": "Actual Lesson 6 category counts; intervals, maximum/minimum, title, labels",
+      "coverage": "TEACHER_REVIEW_REAL_SCHOOL_DATA",
+      "sourceTextCompared": true,
+      "publisherParityClaimed": false
+    },
+    {
+      "ordinal": 3,
+      "kind": "ACTIVITY",
+      "title": "Activity 2: Ask and Answer Questions (20 minutes)",
+      "review": "Author more/fewer and A-or-B-versus-C questions, exchange graphs with new partner",
+      "coverage": "TEACHER_REVIEW_PARTNER_COMPARISON",
+      "sourceTextCompared": true,
+      "publisherParityClaimed": false
+    },
+    {
+      "ordinal": 4,
+      "kind": "SYNTHESIS",
+      "title": "Lesson Synthesis",
+      "review": "Benefits of consistent scale other than one when sampling a large school population",
+      "coverage": "TEACHER_DISCUSSION",
+      "sourceTextCompared": true,
+      "publisherParityClaimed": false
+    },
+    {
+      "ordinal": 5,
+      "kind": "PUBLISHER_GATED",
+      "title": "Cool-down: Graph Question (5 minutes)",
+      "review": "Publisher-only gated material not read, copied, or passed off as first-party equivalent",
+      "coverage": "UNAVAILABLE_NO_PARITY_CLAIM",
+      "sourceTextCompared": false,
+      "publisherParityClaimed": false
+    }
+  ],
+  "firstPartyRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l07-2021.rich-lesson-v2.json",
+  "sourceGraphAssetUrl": "https://cms-assets.illustrativemathematics.org/5klvdrd7by04jzk8ihxmxg2z536p",
+  "originalGraphPixelsVerified": false,
+  "originalStudentTaskPdfVerified": false,
+  "publisherGatedCoolDownReviewed": false,
+  "fullParityCertified": false,
+  "independentExample": {
+    "categories": [
+      "Space",
+      "Animals",
+      "Weather"
+    ],
+    "frequencies": [
+      12,
+      8,
+      4
+    ],
+    "scale": 2,
+    "intervals": [
+      6,
+      4,
+      2
+    ],
+    "oneStepDifference": 4,
+    "twoStepUnionMinusThird": 16,
+    "fictional": true
+  },
+  "humanRubric": [
+    "Authentic recorded survey data from previous lesson, without invented figures",
+    "Consistent labeled graph scale and heights matching authentic counts",
+    "Title and both axis labels; individual category names",
+    "Mathematically valid one-step how-many-more/fewer and two-step combined-category comparisons",
+    "Partner discussion/verification and oral reasoning"
+  ],
+  "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson7SourceAuditTests.cs",
+  "testsWritten": true,
+  "testsRun": true,
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "noMergeNoDeploy": true,
+  "testResult": "DOTNET_10_FOCUSED_4_PASSED_ZERO_FAILED_LOCAL"
+}

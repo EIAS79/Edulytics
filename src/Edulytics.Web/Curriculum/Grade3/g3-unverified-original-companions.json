@@ -25316,7 +25316,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "survey-scaled-bar-graphs",
       "independentPractice": {
@@ -25329,19 +25329,20 @@
         "answerType": "integer",
         "expected": "15"
       },
-      "openTeacherTask": "Work through the original lesson's activity Draw a Scaled Bar Graph with your teacher. Show the representation and explain how it meets the goal: You will draw a scaled bar graph to represent a data set with several categories.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Use observed survey results from Unit 8 Lesson 6. Make an accurately scaled bar graph with labelled category/count axes and title. Write distinct how-many-more, how-many-fewer, and two-categories-together-versus-third comparisons; exchange with a new partner and check reasoning. Do not invent original survey responses.",
+      "teacherReviewNote": "Verified 2021 local teacher lesson+preparation HTML and 3 public student-facing sections against authored source-specific Rich V2. Classroom survey remains authentic data, original warm-up graph pixels and separate Student Task PDF remain unverified. Teacher judges bar graph, scale and cross-partner explanations; publisher-gated Cool-down not claimed.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s represent our data on scaled bar graphs and answer questions about the data.",
         "sourceLearningGoals": "Draw a scaled bar graph to represent a data set with several categories. Solve one- and two-step “how many more” and “how many less” problems using information presented in scaled bar graphs.",
         "teachingSteps": [
-          "Collect only authentic category responses using teacher-approved methods.",
-          "Choose a title, categories, consistent scale and accurate bar lengths.",
-          "Use the graph for addition or subtraction comparisons; justify answers."
+          "Review the unlabeled-scale warm-up graphic with the teacher; integer people cannot be inferred from fractional counts.",
+          "Use the real preceding survey and choose a readable consistent unit per bar-graph interval.",
+          "Label graph title, categories, frequency axis and scale; map heights back to recorded frequencies.",
+          "Generate one-step more/fewer and two-step A-or-B-versus-C comparisons, exchange with a new partner and check reasoning."
         ],
         "caution": "A visually plausible dataset is not evidence of authentic class responses.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
@@ -25360,30 +25361,30 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L07-STAGE-ABC-CANDIDATE-S1-TEACHER",
+          "id": "G3-U08-L07-ABC-WARMUP-SCALE-TEACHER",
           "sourceActivity": "Warm-up: Notice and Wonder: Graph (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Graph and Answer.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "Examine the original unlabeled-scale vegetable graph with the teacher. Explain why a single response per interval would imply fractional students, and how a consistent scale affects interpretations. The original graphic must be consulted rather than simulated by invented coordinates.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L07-STAGE-ABC-CANDIDATE-S2-TEACHER",
+          "id": "G3-U08-L07-ABC-ACTIVITY1-REALGRAPH-TEACHER",
           "sourceActivity": "Activity 1: Draw a Scaled Bar Graph (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Graph and Answer.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "From actual school survey tallies gathered in Lesson 6, choose and label a suitable equal-interval scale, plot every category with correct heights, and add a title and axes. Check the least and most frequent categories. Teacher reviews actual data and graphical accuracy.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L07-STAGE-ABC-CANDIDATE-S3-TEACHER",
+          "id": "G3-U08-L07-ABC-ACTIVITY2-PARTNER-TEACHER",
           "sourceActivity": "Activity 2: Ask and Answer Questions (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Graph and Answer.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "Create three questions from your authentic graph: compare two individual categories as more, compare as fewer, and compare the combined counts of two disjoint categories with a third. Exchange with a partner from a different group, answer and check the explanations together.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L07-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L07-ABC-PUBLISHER-COOLDOWN-UNAVAILABLE",
+          "sourceActivity": "Cool-down: Graph Question (5 minutes)",
+          "prompt": "The publisher-gated source Cool-down is not independently available in the local public HTML. Ask the teacher for authorized source review; Edulytics fictional questions are independent, not source copies.",
           "answerType": "teacher",
           "expected": null
         }
