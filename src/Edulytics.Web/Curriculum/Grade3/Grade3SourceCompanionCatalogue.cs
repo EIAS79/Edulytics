@@ -83,6 +83,28 @@ public static class Grade3SourceCompanionCatalogue
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
+        if (q.AnswerType == "shape-category-set")
+        {
+            // Source G3 U07 L05 has six set-valued names; square also
+            // qualifies as both rectangle and rhombus. Drawings and
+            // category explanations remain a teacher's responsibility.
+            var categories = new[] { "triangle", "quadrilateral", "pentagon",
+                "hexagon", "rhombus", "rectangle", "square" };
+            var actual = submitted.Split(',', StringSplitOptions.TrimEntries);
+            var expected = q.Expected?.Split('|', StringSplitOptions.TrimEntries);
+            var valid = expected is not null &&
+                actual.Length is >= 1 and <= 7 &&
+                actual.Length == actual.Distinct(StringComparer.OrdinalIgnoreCase).Count() &&
+                actual.All(x => categories.Contains(x, StringComparer.OrdinalIgnoreCase)) &&
+                expected.All(x => categories.Contains(x, StringComparer.OrdinalIgnoreCase));
+            var correct = valid && actual.Length == expected!.Length &&
+                actual.ToHashSet(StringComparer.OrdinalIgnoreCase)
+                    .SetEquals(expected);
+            return new(correct, true, correct
+                ? "All geometric categories match this inspected 2021 source figure. Teacher still reviews the justification."
+                : "Choose all and only valid category names (comma separated). Squares are also rectangles, rhombuses and quadrilaterals.");
+        }
+
         if (q.AnswerType == "place-value-parts")
         {
             if (!int.TryParse(q.Expected, NumberStyles.None, CultureInfo.InvariantCulture,

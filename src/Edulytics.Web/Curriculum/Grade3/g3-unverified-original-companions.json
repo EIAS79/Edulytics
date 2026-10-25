@@ -22370,7 +22370,7 @@
       "studentFacingGoal": "You will use your knowledge of geometric attributes to name quadrilaterals in different ways and to draw quadrilaterals that are not rhombuses, rectangles, or squares.",
       "sourceActivityNames": [
         "All the Ways",
-        "Draw One That’s Not . . ."
+        "Draw One That\u2019s Not . . ."
       ],
       "sourceHeadings": [
         {
@@ -22419,10 +22419,10 @@
         "5 rhombuses",
         "4 squares."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "shape-attributes",
       "independentPractice": {
@@ -22436,20 +22436,21 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity All the Ways with your teacher. Show the representation and explain how it meets the goal: You will use your knowledge of geometric attributes to name quadrilaterals in different ways and to draw quadrilaterals that are not rhombuses, rectangles, or squares.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "The 7-page original 2021 PDF and 6 shape geometries, all 4 division anchors, 4 open construction prompts and section-summary drawings were inspected. Six inclusion-set selections auto-grade categories only; teacher checks original figures, drawing, geometric reasoning and peer discourse. Publisher gated Cool-down is not copied; Stage D is unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s describe and draw shapes in specific groups. Required Preparation CCSS Standards Addressing 3.G.A.1 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Question",
+        "sourceGoal": "Let\u2019s describe and draw shapes in specific groups. Required Preparation CCSS Standards Addressing 3.G.A.1 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Question",
         "sourceLearningGoals": "Draw examples of quadrilaterals that are not rhombuses, rectangles, or squares. Understand that shapes can be in more than one category.",
         "teachingSteps": [
-          "Look for attributes named in the task: sides, angles, parallel sides.",
-          "Test each attribute even when a figure is rotated.",
-          "Justify or revise the classification with a labelled drawing."
+          "Derive 70\u00f77=10, 77\u00f77=11, 63\u00f77=9 and 56\u00f77=8 by adding or removing equal groups of seven.",
+          "Inspect every source polygon; use sides, right angles and equal lengths, NOT orientation, to choose all applicable names.",
+          "Compare sets with a partner and state why figure 6 is square, rectangle, rhombus and quadrilateral.",
+          "Construct four different classes of exclusion examples on dot grids; teacher judges lengths, angles, and explanations."
         ],
-        "caution": "Shape type depends on defining properties, not orientation or apparent size.",
+        "caution": "A square is BOTH a rectangle and rhombus, even if rotated. The six source figures have unequal category SETS. Do not auto-certify a drawing or a pupil explanation.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -22458,38 +22459,108 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-5/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "localHtml": "Original 2021 teacher lesson and preparation SHA256 27544d45918efb3bcdc6c7831f72cd6d1bee3f551862864630b9acdc70729369 / 9c31479ad7f923b62b2f862786664b86aa052491a07ee12fce1e2efa7c09801c",
+        "verified": "7 original PDF pages and six exact SVG shape properties inspected; 4 divisions plus 6 set-valued checks. Drawing/MLR8 teacher only. Publisher Cool-down restricted.",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L05-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Divide by 7 (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Attributes of Other Quadrilaterals.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L05-WARMUP-01",
+          "sourceActivity": "Warm-up: Number Talk: Divide by 7",
+          "prompt": "From the 2021 Number Talk, mentally calculate 70 \u00f7 7, then describe the seven-groups relationship to your teacher.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L05-WARMUP-02",
+          "sourceActivity": "Warm-up: Number Talk: Divide by 7",
+          "prompt": "From the 2021 Number Talk, mentally calculate 77 \u00f7 7, then describe the seven-groups relationship to your teacher.",
+          "answerType": "integer",
+          "expected": "11"
+        },
+        {
+          "id": "G3-U07-L05-WARMUP-03",
+          "sourceActivity": "Warm-up: Number Talk: Divide by 7",
+          "prompt": "From the 2021 Number Talk, mentally calculate 63 \u00f7 7, then describe the seven-groups relationship to your teacher.",
+          "answerType": "integer",
+          "expected": "9"
+        },
+        {
+          "id": "G3-U07-L05-WARMUP-04",
+          "sourceActivity": "Warm-up: Number Talk: Divide by 7",
+          "prompt": "From the 2021 Number Talk, mentally calculate 56 \u00f7 7, then describe the seven-groups relationship to your teacher.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U07-L05-SHAPE-01",
+          "sourceActivity": "Activity 1: All the Ways",
+          "prompt": "Look at original 2021 student-PDF figure 1 (linked above). Enter ALL its true category names, comma separated (triangle, quadrilateral, pentagon, hexagon, rectangle, rhombus, square). The teacher checks the image-based justification.",
+          "answerType": "shape-category-set",
+          "expected": "quadrilateral"
+        },
+        {
+          "id": "G3-U07-L05-SHAPE-02",
+          "sourceActivity": "Activity 1: All the Ways",
+          "prompt": "Look at original 2021 student-PDF figure 2 (linked above). Enter ALL its true category names, comma separated (triangle, quadrilateral, pentagon, hexagon, rectangle, rhombus, square). The teacher checks the image-based justification.",
+          "answerType": "shape-category-set",
+          "expected": "triangle"
+        },
+        {
+          "id": "G3-U07-L05-SHAPE-03",
+          "sourceActivity": "Activity 1: All the Ways",
+          "prompt": "Look at original 2021 student-PDF figure 3 (linked above). Enter ALL its true category names, comma separated (triangle, quadrilateral, pentagon, hexagon, rectangle, rhombus, square). The teacher checks the image-based justification.",
+          "answerType": "shape-category-set",
+          "expected": "quadrilateral"
+        },
+        {
+          "id": "G3-U07-L05-SHAPE-04",
+          "sourceActivity": "Activity 1: All the Ways",
+          "prompt": "Look at original 2021 student-PDF figure 4 (linked above). Enter ALL its true category names, comma separated (triangle, quadrilateral, pentagon, hexagon, rectangle, rhombus, square). The teacher checks the image-based justification.",
+          "answerType": "shape-category-set",
+          "expected": "quadrilateral|rhombus"
+        },
+        {
+          "id": "G3-U07-L05-SHAPE-05",
+          "sourceActivity": "Activity 1: All the Ways",
+          "prompt": "Look at original 2021 student-PDF figure 5 (linked above). Enter ALL its true category names, comma separated (triangle, quadrilateral, pentagon, hexagon, rectangle, rhombus, square). The teacher checks the image-based justification.",
+          "answerType": "shape-category-set",
+          "expected": "quadrilateral|rectangle"
+        },
+        {
+          "id": "G3-U07-L05-SHAPE-06",
+          "sourceActivity": "Activity 1: All the Ways",
+          "prompt": "Look at original 2021 student-PDF figure 6 (linked above). Enter ALL its true category names, comma separated (triangle, quadrilateral, pentagon, hexagon, rectangle, rhombus, square). The teacher checks the image-based justification.",
+          "answerType": "shape-category-set",
+          "expected": "quadrilateral|rectangle|rhombus|square"
+        },
+        {
+          "id": "G3-U07-L05-DRAW-01",
+          "sourceActivity": "Activity 2: Draw One That's Not",
+          "prompt": "Draw a quadrilateral that is not a square on a dot grid, label geometric properties, and explain to your teacher why it meets the constraint.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L05-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: All the Ways (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Attributes of Other Quadrilaterals.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L05-DRAW-02",
+          "sourceActivity": "Activity 2: Draw One That's Not",
+          "prompt": "Draw a quadrilateral that is not a rhombus on a dot grid, label geometric properties, and explain to your teacher why it meets the constraint.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L05-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Draw One That's Not . . . (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Attributes of Other Quadrilaterals.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L05-DRAW-03",
+          "sourceActivity": "Activity 2: Draw One That's Not",
+          "prompt": "Draw a quadrilateral that is not a rectangle on a dot grid, label geometric properties, and explain to your teacher why it meets the constraint.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L05-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L05-DRAW-04",
+          "sourceActivity": "Activity 2: Draw One That's Not",
+          "prompt": "Draw a quadrilateral that is neither a square, a rhombus nor a rectangle (several different examples) on a dot grid, label geometric properties, and explain to your teacher why it meets the constraint.",
           "answerType": "teacher",
           "expected": null
         }
