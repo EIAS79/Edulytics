@@ -80,6 +80,15 @@ public static class Grade3SourceCompanionCatalogue
             return new(null, true,
                 "Open construction, dialogue or explanation: only teacher review can assess this activity.");
 
+        if (q.AnswerType == "source-card-letter")
+        {
+            // An original publisher card match cannot be digitally certified from
+            // an isolated label, including an empty or malformed submission.
+            // Handle this before the generic blank/length rejection.
+            return new(null, true,
+                "Original card geometry and the matching explanation require teacher review.");
+        }
+
         if (string.IsNullOrWhiteSpace(submitted) || submitted.Length > 100)
             return new(false, true, "Enter an answer and explain your strategy to your teacher.");
 
@@ -329,15 +338,6 @@ public static class Grade3SourceCompanionCatalogue
             return new(correct, true, correct
                 ? "The source quantity and square-area unit match; explain the object-size reasoning to your teacher."
                 : "Select the complete original area quantity WITH its square unit. A number alone or a different unit cannot pass.");
-        }
-
-        if (q.AnswerType == "source-card-letter")
-        {
-            // The original A–G publisher card matching requires inspecting
-            // physical source geometry. A standalone label cannot establish
-            // diagram parity or a successful card match; fail closed.
-            return new(null, true,
-                "The original rectangle card, row/column model and matching explanation need teacher review; a letter alone is not automatically scored.");
         }
 
         if (q.AnswerType == "yes-no")
