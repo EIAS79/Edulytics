@@ -46,10 +46,10 @@ public sealed class Grade3Lesson4ActivitiesController(
             new("Travel survey", null, true, message +
                 " Only the teacher can verify real classmates' responses or participation.")
         };
-        if (valid)
+        if (valid && data is { } validatedData)
         {
-            var car = data!.Single(x => x.Category == "Car").Students;
-            var train = data.Single(x => x.Category == "Train").Students;
+            var car = validatedData.Single(x => x.Category == "Car").Students;
+            var train = validatedData.Single(x => x.Category == "Train").Students;
             feedback.Add(Conditional("Full symbols for Car", answers.CarWholeSymbols, car / 2));
             feedback.Add(Conditional("Half symbols for Train", answers.TrainHalfSymbol, train % 2));
         }
