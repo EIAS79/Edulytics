@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-7/lesson-4/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-4/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_LOCAL_PUBLIC_SOURCE_WARMUP_ABD_QUADS_RIGHT_TRIANGLE_E_AND_RECTANGLE_RHOMBUS_SQUARE_SUBTASKS_REVIEWED",
     "goals": "Identify attributes of rhombuses, rectangles, and squares.",
     "sourceHeadingsCount": 4,
     "originalImageDescriptionsCount": 11,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_EXAMPLES_NONEXAMPLES_AND_FOUR_FAMILY_ATTRIBUTES_WITH_VISUAL_TEACHER_GATES",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "0d135f72d96aeae8eec1aa54ade2bd79325201f4e56efe9dec167ff3cca88967",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l04-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson4.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_SEMANTIC_PROPERTIES_TEACHER_VISUAL_RUBRIC_AND_TESTS_WRITTEN_UNRUN",
     "family": "shape-attributes",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity What Makes These Shapes So? with your teacher. Show the representation and explain how it meets the goal: Let’s find out what makes rectangles, rhombuses, and squares what they are. Required Preparation Activity 1: Create a chart with labels showing a rectangle, rhombus, and square for the lesson synthesis. CCSS Standards Addressing 3.G.A.1 Lesson Timel",
-    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading."
+    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson4ShapePropertiesTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Which One Doesn't Belong: More Attributes (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-7/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_PUBLIC_HTML_TO_FIRSTPARTY_WITH_ORIGINAL_IMAGES_UNCERTIFIED",
+      "grading": "TEACHER_ORIGINAL_FIGURE_INSPECTION",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: What Makes These Shapes So? (35 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-7/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_PUBLIC_HTML_TO_FIRSTPARTY_WITH_ORIGINAL_IMAGES_UNCERTIFIED",
+      "grading": "TEACHER_ORIGINAL_FIGURE_INSPECTION",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-7/lesson-4/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_PUBLIC_HTML_TO_FIRSTPARTY_WITH_ORIGINAL_IMAGES_UNCERTIFIED",
+      "grading": "TEACHER_ORIGINAL_FIGURE_INSPECTION",
       "claimedParity": false
     },
     {
@@ -85,7 +88,7 @@
       "originalReference": "unit-7/lesson-4/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "RESTRICTED_PUBLISHER_UNREAD",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -98,7 +101,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-02",
@@ -107,7 +110,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-03",
@@ -116,7 +119,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-04",
@@ -125,7 +128,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-05",
@@ -134,7 +137,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-06",
@@ -143,7 +146,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-07",
@@ -152,7 +155,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-08",
@@ -161,7 +164,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-09",
@@ -170,7 +173,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-10",
@@ -179,7 +182,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     },
     {
       "id": "G3-U07-L04-IMAGE-11",
@@ -188,7 +191,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_SOURCE_IMAGE_ALT_ONLY_NOT_PIXEL_APPROVED"
     }
   ],
   "sourceElementCounts": {
@@ -202,20 +205,22 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original right triangle A–H source figure pixels and publisher rectangle/rhombus/square example sets not inspected; membership letters except explicit teacher E unknown.",
+    "Original standalone student PDF not checked; publisher teacher-gated Cool-down Find the Rhombuses not accessible.",
+    "Teacher must confirm each pupil's circles and explanations against actual original diagrams.",
+    "New tests, CI, Stage D, academic approval, merge and deploy not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "6a7df9e955339cce5cc254693a2c4b844d487910572cc606ef11c60d3c687cd0",
+  "originalPreparationHtmlSHA256": "72dd475d6b7fcbc51c31ec6ea8eae057a39d63e759b17c99e4f24e6154572246",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-117-2021-source-definition-shapes-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-117-source-definition-visual-rubric-20261025.json"
 }
