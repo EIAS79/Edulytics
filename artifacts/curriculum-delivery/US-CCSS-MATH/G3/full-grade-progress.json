@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 140,
+    "lessonsFullyReadyForStageD": 141,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 3,
+    "lessonsWithACExplicitGap": 2,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -37,20 +37,20 @@
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 3,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
-    "sourceAdaptedCheckedItems": 141,
-    "sourceSpecificReviewDeltas": 141,
+    "sourceAdaptedCheckedItems": 142,
+    "sourceSpecificReviewDeltas": 142,
     "lessonsWithActualRichV2SourcePerfect": 56,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 156,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1450,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1454,
     "originalSvgGeometriesInspected": 237
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 140,
-    "firstUnclosedOrdinal": 141,
+    "lastConsecutiveReadyForStageDOrdinal": 141,
+    "firstUnclosedOrdinal": 142,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -1229,7 +1229,7 @@
     {
       "ordinal": 141,
       "lessonCode": "PED:US-CCSS-MATH:G3:U08:L13",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L13.json",
       "reasons": [
         "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
@@ -1237,7 +1237,7 @@
         "Gated publisher Cool-down and source materials not verified",
         "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
       ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-141-2021-source-intake-candidate-20261024.json"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-141-2021-student-designed-how-many-do-you-see-evidence-20261025.json"
     },
     {
       "ordinal": 142,
@@ -5572,12 +5572,12 @@
       "unitNumber": 8,
       "lessonNumber": 13,
       "title": "How Many Do You See? PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
-      "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "stageA": "2021_ORIGINAL_LOCAL_TEACHER_PREPARATION_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_VISUAL_OR_MASTER_GAP",
+      "stageB": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_MATERIALIZER_RAZOR_AND_EXISTING_GOAL_PRESERVED",
+      "stageC": "SOURCE_NUMERICAL_ANCHORS_INDEPENDENT_EXAMPLES_AND_TEACHER_TASKS_TESTS_PENDING",
+      "authoringClosure": "READY_FOR_STAGE_D",
+      "sourceElementsIdentified": 5,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U08-L13.json",
       "stageD": "NOT_STARTED",
@@ -5591,9 +5591,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-141-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-141-2021-student-designed-how-many-do-you-see-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "SOURCE_SPECIFIC_FIRSTPARTY_AUTHORING_ONLY_ORIGINAL_IMAGE_PRINT_PARITY_OPEN"
     },
     {
       "gradeOrdinal": 142,
@@ -6256,10 +6256,10 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 140,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L12",
+    "gradeOrdinal": 141,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U08:L13",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-140-2021-student-created-notice-wonder-equal-groups-evidence-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-141-2021-student-designed-how-many-do-you-see-evidence-20261025.json",
     "sourceGraphPixelsVerified": false,
     "originalSurveyMasterPdfVerified": false,
     "testsRun": true,
@@ -6269,8 +6269,8 @@
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 140,
-    "firstUnclosedGradeOrdinal": 141,
+    "lastClosedGradeOrdinal": 141,
+    "firstUnclosedGradeOrdinal": 142,
     "testsRun": true,
     "ciRun": false,
     "stageD": "NOT_STARTED",

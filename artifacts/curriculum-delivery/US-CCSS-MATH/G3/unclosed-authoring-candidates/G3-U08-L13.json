@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-8/lesson-13/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-13/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_LOCAL_TEACHER_PREPARATION_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_VISUAL_OR_MASTER_GAP",
     "goals": "Apply understanding of equal groups and multiplication to create a How Many Do You See activity.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "c5a0d56bea9fab1628a49493a331fe673ae001296ceb3b6b485dedcc0b82217d",
+    "sourcePreparationHtmlSHA256": "4f79c9820aa9d973c96a7b7f7e788de8cc98d565be06b2b17ed5abec68cb0bc0"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_MATERIALIZER_RAZOR_AND_EXISTING_GOAL_PRESERVED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,20 +31,27 @@
     "existingSourceBodyHash": "cea5f489575e5a2663537a79d826e6ec93f3f4e9b452eb07a3a39e5d02dd8e20",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l13-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson13RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson13.cshtml",
+    "sourceSpecificVersion": "g3-u08-l13-2021-student-designed-how-many-do-you-see-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SOURCE_SPECIFIC_AND_TEACHER_GATED_FOCUSED_LOCAL_DOTNET_TESTS_PASSED",
     "family": "equal-group-activity-design",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
     "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
     "testsWritten": true,
-    "testsExecuted": false,
+    "testsExecuted": true,
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Design Your How Many Do You See with your teacher. Show the representation and explain how it meets the goal: Let’s create a How Many Do You See activity.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson13SourceAuditTests.cs",
+    "sourceItemCount": 4,
+    "sourceTeacherItems": 4
   },
   "sourceElements": [
     {
@@ -50,10 +59,10 @@
       "sourceSection": "Warm-up: How Many Do You See: Equal Groups (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -61,10 +70,10 @@
       "sourceSection": "Activity 1: Design Your How Many Do You See (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -72,10 +81,10 @@
       "sourceSection": "Activity 2: Facilitate Your How Many Do You See (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -83,10 +92,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
       "claimedParity": false
     },
     {
@@ -96,7 +105,7 @@
       "originalReference": "unit-8/lesson-13/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_GATED_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -115,7 +124,7 @@
   "sourceElementCounts": {
     "headings": 5,
     "imageDescriptions": 1,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Write a fresh equal-group observation prompt and explain multiple ways classmates could see it.",
@@ -123,20 +132,20 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original warm-up dot display artwork pixels have not been inspected.",
+    "Original standalone Student Task PDF or unverified source figure pixel parity not certified.",
+    "Original gated publisher Cool-down not accessed/copied, and first-party examples are distinctly labeled.",
+    "Teacher must review group discussion, student-authored activities and physical materials.",
+    "Full authenticated Stage D UAT and separate academic approval not performed."
   ],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "FOCUSED_LOCAL_DOTNET_TESTS_PASSED_GITHUB_CI_PENDING",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-141-2021-student-designed-how-many-do-you-see-evidence-20261025.json"
 }
