@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 43,
+    "lessonsFullyReadyForStageD": 44,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 100,
+    "lessonsWithACExplicitGap": 99,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,25 +32,25 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 43,
+    "lessonsIndividuallyComparedToAllOriginalElements": 44,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
     "sourceStudentFacingTextsIndividuallyReviewedLessons": 143,
     "sourceAdaptedCheckedItems": 135,
     "sourceSpecificReviewDeltas": 135,
-    "lessonsWithActualRichV2SourcePerfect": 43,
+    "lessonsWithActualRichV2SourcePerfect": 44,
     "remainingWithoutIndividualStudentFacingTextReview": 0,
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 14,
-    "sourceElementsSemanticallyVerifiedForAuthoring": 1068,
+    "sourceElementsSemanticallyVerifiedForAuthoring": 1085,
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 43,
-    "firstUnclosedOrdinal": 44,
+    "lastConsecutiveReadyForStageDOrdinal": 44,
+    "firstUnclosedOrdinal": 45,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -283,15 +283,9 @@
     {
       "ordinal": 44,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L08",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L08.json",
-      "reasons": [
-        "original card-sort deck PDF and diagram pairing assets not inspected",
-        "source arithmetic diagrams have not had pixel-level inspection",
-        "publisher-only Cool-down cannot be asserted source-equivalent",
-        "Teacher-led source representations and discussions not academically approved.",
-        "New C#, Razor and xUnit contracts have not been compiled/run; Stage D and CI uninvoked."
-      ],
+      "reasons": [],
       "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-2021-source-to-first-party-evidence-20261024.json"
     },
     {
@@ -2908,13 +2902,13 @@
       "unitNumber": 3,
       "lessonNumber": 8,
       "title": "Subtraction Algorithms (Part 1)",
-      "stageA": "PUBLIC_2021_STUDENT_FACING_HTML_ARITHMETIC_AND_TEACHER_STRUCTURES_REVIEWED_ORIGINAL_PDF_ART_OPEN",
-      "stageB": "SOURCE_SPECIFIC_GUARDED_RICH_V2_FIRST_PARTY_TEACHING_AND_COMPANION_AUTHORED_NOT_RUN",
-      "stageC": "SOURCE_NUMERIC_AND_TEACHER_REVIEW_CONTRACTS_AUTHORED_UNRUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "THREE_PAGE_OFFICIAL_2021_ORIGINAL_PDF_JADA_KIRAN_AND_SOURCE_CARD_SORT_A_TO_D_VISUALLY_REVIEWED",
+      "stageB": "GUARDED_FIRST_PARTY_RICH_V2_391_MINUS_215_BASE_TEN_MODEL_AND_TEACHER_CARD_MATCHING",
+      "stageC": "FIVE_ORIGINAL_2021_NUMERIC_ORACLES_TEACHER_PICTURE_MATCH_NEW_216_COOLDOWN_TESTS_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 17,
-      "fullyVerifiedSourceElements": 0,
-      "verifiedParityPercent": null,
+      "fullyVerifiedSourceElements": 17,
+      "verifiedParityPercent": 100,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L08.json",
       "stageD": "NOT_STARTED",
       "academicApproval": "NOT_CLAIMED",
@@ -2928,8 +2922,10 @@
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
       "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-2021-source-to-first-party-evidence-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "SOURCE_SPECIFIC_AUTHORING_ADDED_MISSING_PDF_AND_ORIGINAL_ART_BLOCK_SOURCE_MATERIAL_PARITY"
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "SOURCE_SPECIFIC_AUTHORING_ADDED_MISSING_PDF_AND_ORIGINAL_ART_BLOCK_SOURCE_MATERIAL_PARITY",
+      "sourceMatchingMeasurementScope": "STATIC_ACADEMIC_SOURCE_SEMANTIC_NOT_ORIGINAL_ARTWORK_OR_RUNTIME",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-academic-source-coverage-and-human-rubric-20261025.json"
     },
     {
       "gradeOrdinal": 45,
@@ -5835,7 +5831,8 @@
     "2026-10-25 ordinal40 closed sequential after source device inspection of original 2021 PDF four pages (SHA adb476...), original archived 2021 teacher HTML WODB and 362+354 Tyler/Lin/Han 3-way methods, exact sums 706,525,927, human MLR3/7 rubric and first-party 168+397=565 alternative Cool-down. 25/25 semantic authoring scope only, no original art/teacher-locked publisher Cool-down/test run/Stage D/academic signoff.",
     "2026-10-25 Grade3 ordinal41 in-order A-C source semantic 28/28 closure, original four-page PDF sha bd856c..., two table cells199/201, Han vs Elena598, compose14 tens547 and source sums526/892/552/901; teacher explanation and original independent 273+619=892 Cool-down. Original art and restricted publisher prompt excluded, tests and Stage D not run.",
     "2026-10-25 sequential Grade3 ordinal42 closed after original 6-page 2021 source PDF via authorized local source archive, 14 source expression oracles + four human strategy tasks, 35 scoped academic elements, newly created carry-1 value model, distinct unpublished 389+498=887 goal-equivalent Cool-down (fixed earlier 399+499 duplication), unrun regression contract. No source artwork or gated original publisher Cool-down claimed, Stage D not started.",
-    "2026-10-25 ordinal43 in sequence source PDF original4 pages, local 2021 teacher source and 10 original numeric anchors, Jada/Han source image meaning model independently composed, teacher diagram matching rubric and new independently-authored 506−389=117 exit (replacing duplicate source 505−398). 24/24 scoped semantic source items; tests not run and StageD pending."
+    "2026-10-25 ordinal43 in sequence source PDF original4 pages, local 2021 teacher source and 10 original numeric anchors, Jada/Han source image meaning model independently composed, teacher diagram matching rubric and new independently-authored 506−389=117 exit (replacing duplicate source 505−398). 24/24 scoped semantic source items; tests not run and StageD pending.",
+    "2026-10-25 ordinal44 in-order original three-page 2021 source student PDF, image A-D card sort inspected in source (not republished); five scalar oracles, Jada/Kiran 391−215=176 regrouping model, teacher-scored picture/algorithm match, distinct first-party403−187=216 exit. 17/17 academic authoring coverage, no test run/Stage D."
   ],
   "coolDownPolicy": {
     "code": "FIRST_PARTY_EQUIVALENT_COOL_DOWN_NOT_SOURCE_COPY",
@@ -6399,11 +6396,11 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 43,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L07",
+    "gradeOrdinal": 44,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L08",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-43-2021-source-to-first-party-evidence-20261024.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-43-academic-source-coverage-and-human-rubric-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-2021-source-to-first-party-evidence-20261024.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-academic-source-coverage-and-human-rubric-20261025.json",
     "academicApproval": "NOT_CLAIMED",
     "testsRun": false,
     "stageD": "NOT_STARTED"

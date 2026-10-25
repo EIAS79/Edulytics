@@ -18,5 +18,7 @@ public sealed class UsCcssG3Unit3Lesson8OriginalMathSourceTests
   [InlineData("G3-U03-L08-S2-NUM5","176",true)]
   [InlineData("G3-U03-L08-S2-NUM5","177",false)]
   public void ExactOriginalArithmeticChecks(string id,string value,bool expected){var q=Lesson().SourceSubtasks.Single(x=>x.Id==id);var r=Grade3SourceCompanionCatalogue.Grade(q,value);Assert.Equal(expected,r.NumericCorrect);Assert.True(r.TeacherReview);}
-  [Fact] public void TeacherOnlyTasksAreNotAutoCertified(){Assert.False(Lesson().ReadyForStageD);Assert.False(Lesson().OriginalStudentTaskPdfRead);foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher")){var r=Grade3SourceCompanionCatalogue.Grade(q,"127");Assert.Null(r.NumericCorrect);Assert.True(r.TeacherReview);}}
+  [Fact] public void FirstPartyCoolDownDoesNotRepeatSourceNumberTalk()
+  {var l=Lesson();Assert.Equal("216",l.OriginalEdulyticsCoolDown!.Expected);Assert.Contains("403",l.OriginalEdulyticsCoolDown.Prompt);Assert.DoesNotContain("204",l.OriginalEdulyticsCoolDown.Prompt);}
+  [Fact] public void TeacherOnlyTasksAreNotAutoCertified(){Assert.True(Lesson().ReadyForStageD);Assert.True(Lesson().OriginalStudentTaskPdfRead);foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher")){var r=Grade3SourceCompanionCatalogue.Grade(q,"127");Assert.Null(r.NumericCorrect);Assert.True(r.TeacherReview);}}
 }
