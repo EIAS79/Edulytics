@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-5/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-5/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_2021_LOCAL_TEACHER_HTML_PREPARATION_4_WARMUP_AND_TWO_STUDENT_GENERATED_ACTIVITIES_REVIEWED",
     "goals": "Create a line plot where the horizontal scale is marked off in appropriate units— whole numbers, halves, or quarters—to represent measurement data. Generate measurement data by measuring lengths using a ruler marked with halves and fourths of an inch.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 3,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_4_PRODUCTS_REAL_TEN_MEASUREMENTS_BLANK_PLOT_AND_GALLERY_WALK_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "835503ecf2817aaedecd42333c6843bc4a12e0952487a780394bf3d8aacdd1ba",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l05-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson5.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_FIXED_MULTIPLICATION_ORACLES_AND_GROUP_PLOT_TEACHER_RUBRIC_TESTS_AUTHORED_UNRUN",
     "family": "measurement-line-plot",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Go for a Measurement Walk with your teacher. Show the representation and explain how it meets the goal: Let’s collect measurement data and show them on a line plot.",
-    "teacherReviewNote": "Teacher checks the line plot uses the correct fractional scale and symbols."
+    "teacherReviewNote": "Teacher checks the line plot uses the correct fractional scale and symbols.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson5CreateLinePlotTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Number Talk: Multiply Teen Numbers (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "PUBLIC_LOCAL_2021_HTML_SOURCE_TO_FIRSTPARTY_AUTHORING",
+      "grading": "MENTAL_NUMERIC_OR_TEACHER_OWN_DATA",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Go for a Measurement Walk (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "PUBLIC_LOCAL_2021_HTML_SOURCE_TO_FIRSTPARTY_AUTHORING",
+      "grading": "MENTAL_NUMERIC_OR_TEACHER_OWN_DATA",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Let's Make a Line Plot (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "PUBLIC_LOCAL_2021_HTML_SOURCE_TO_FIRSTPARTY_AUTHORING",
+      "grading": "MENTAL_NUMERIC_OR_TEACHER_OWN_DATA",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "PUBLIC_LOCAL_2021_HTML_SOURCE_TO_FIRSTPARTY_AUTHORING",
+      "grading": "MENTAL_NUMERIC_OR_TEACHER_OWN_DATA",
       "claimedParity": false
     },
     {
@@ -105,10 +108,10 @@
       "sourceSection": "Student Section Summary",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "PUBLIC_LOCAL_2021_HTML_SOURCE_TO_FIRSTPARTY_AUTHORING",
+      "grading": "MENTAL_NUMERIC_OR_TEACHER_OWN_DATA",
       "claimedParity": false
     }
   ],
@@ -119,8 +122,8 @@
       "originalReference": "unit-6/lesson-5/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "INDEPENDENT_FIRST_PARTY_BLANK_LINE_NO_SOURCE_ART_COPY"
     },
     {
       "id": "G3-U06-L05-IMAGE-02",
@@ -128,8 +131,8 @@
       "originalReference": "unit-6/lesson-5/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "INDEPENDENT_FIRST_PARTY_BLANK_LINE_NO_SOURCE_ART_COPY"
     },
     {
       "id": "G3-U06-L05-IMAGE-03",
@@ -137,8 +140,8 @@
       "originalReference": "unit-6/lesson-5/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "INDEPENDENT_FIRST_PARTY_BLANK_LINE_NO_SOURCE_ART_COPY"
     }
   ],
   "sourceElementCounts": {
@@ -152,20 +155,23 @@
     "expected": "7"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Standalone original publisher pupil PDF not available in local archive: no separately rendered PDF parity.",
+    "Original two-line blackline masters and source ruler figures not inspected or copied; visual/pixel parity explicitly unapproved.",
+    "Original gated publisher Cool-down Complete the Line Plot not reviewed.",
+    "At least ten actual object lengths, number-line plot, poster and gallery-walk teacher evidence cannot be certified before class completes them.",
+    "New source tests, CI, Stage D, academic approval and publication have not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "c1b26874b4d458b3215e77938a5f4f65a39d84d706d370ee64e779e42c1913f6",
+  "originalPreparationHtmlSHA256": "d82e8e574efa333db7e09573aa4cd76cc7f6fa0f99925e786e9c8c352b3cef8",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-102-2021-source-measurement-walk-lineplot-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-102-open-lineplot-teacher-rubric-20261025.json"
 }
