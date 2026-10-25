@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 103,
+    "lessonsFullyReadyForStageD": 104,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 40,
+    "lessonsWithACExplicitGap": 39,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,7 +32,7 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 103,
+    "lessonsIndividuallyComparedToAllOriginalElements": 104,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 3,
@@ -49,8 +49,8 @@
     "originalSvgGeometriesInspected": 219
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 103,
-    "firstUnclosedOrdinal": 104,
+    "lastConsecutiveReadyForStageDOrdinal": 104,
+    "firstUnclosedOrdinal": 105,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -894,15 +894,11 @@
     {
       "ordinal": 104,
       "lessonCode": "PED:US-CCSS-MATH:G3:U06:L07",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U06-L07.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-2021-source-liquid-volume-open-physical-task-evidence-20261025.json",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-liquid-volume-teacher-rubric-20261025.json"
     },
     {
       "ordinal": 105,
@@ -4603,12 +4599,12 @@
       "unitNumber": 6,
       "lessonNumber": 7,
       "title": "Introduction to Liquid Volume PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "ORIGINAL_2021_TEACHER_HTML_PREPARATION_A_B_AND_LITER_VOLUME_STUDENT_TASKS_REVIEWED",
+      "stageB": "FIRSTPARTY_RICHV2_OPEN_UNIT_ESTIMATES_REPEATED_LITER_FILL",
+      "stageC": "CUMULATIVE_LITER_SCALAR_CHECKS_TEACHER_VESSEL_RUBRIC_TESTS_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
-      "fullyVerifiedSourceElements": 0,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U06-L07.json",
       "stageD": "NOT_STARTED",
@@ -4622,9 +4618,12 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-2021-source-liquid-volume-open-physical-task-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-liquid-volume-teacher-rubric-20261025.json",
+      "originalStudentTaskPdfCompared": false,
+      "sourceMaterialParity100Claim": false
     },
     {
       "gradeOrdinal": 105,
@@ -6360,20 +6359,19 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 103,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U06:L06",
+    "gradeOrdinal": 104,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U06:L07",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-103-2021-source-five-weights-pets-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-103-physical-weight-teacher-rubric-20261025.json",
-    "studentPdfCompared": false,
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-2021-source-liquid-volume-open-physical-task-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-liquid-volume-teacher-rubric-20261025.json",
     "testsRun": false,
     "stageD": "NOT_STARTED",
     "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 103,
-    "firstUnclosedGradeOrdinal": 104,
+    "lastClosedGradeOrdinal": 104,
+    "firstUnclosedGradeOrdinal": 105,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"
