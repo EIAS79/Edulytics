@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-13/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-13/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "DIRECT_2021_TEACHER_PREPARATION_THREE_STUDENT_FACING_SECTIONS_ELEVEN_ASSETS_FOUR_ALIGNED_LINES_REVIEWED",
     "goals": "Express whole numbers as fractions. Recognize fractions that are equivalent to whole numbers.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 9,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICHV2_FOUR_SOURCE_NUMBERLINES_SIX_WHOLE_CHECKS_THREE_COLUMN_GROUP_TABLE",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "2b457504391f894c32b3e68dda76dc222d9a52907ae8282e3058a2746740a753",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l13-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SIX_SOURCE_DIVISIBILITY_THREE_WHOLE_ALIGNMENT_AND_THREE_TABLE_ANCHOR_TESTS_WRITTEN_UNRUN",
     "family": "equivalent-fractions",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +43,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Hidden Whole Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s find fractions and whole numbers that are equivalent. Required Preparation CCSS Standards Addressing 3.NF.A.3.c Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Quest",
-    "teacherReviewNote": "Equivalent numerical fractions accepted, but teacher confirms diagrams or fraction number lines."
+    "teacherReviewNote": "Equivalent numerical fractions accepted, but teacher confirms diagrams or fraction number lines.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson13WholeFractionTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +52,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: Four Number Lines (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_STUDENT_TASK_TO_FIRSTPARTY_AUTHORING_A_B_C",
+      "grading": "SCALAR_WITH_HUMAN_LINE_DRAWINGS",
       "claimedParity": false
     },
     {
@@ -61,10 +63,10 @@
       "sourceSection": "Activity 1: Hidden Whole Numbers (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_STUDENT_TASK_TO_FIRSTPARTY_AUTHORING_A_B_C",
+      "grading": "SCALAR_WITH_HUMAN_LINE_DRAWINGS",
       "claimedParity": false
     },
     {
@@ -72,10 +74,10 @@
       "sourceSection": "Activity 2: Write Them as Fractions (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_STUDENT_TASK_TO_FIRSTPARTY_AUTHORING_A_B_C",
+      "grading": "SCALAR_WITH_HUMAN_LINE_DRAWINGS",
       "claimedParity": false
     },
     {
@@ -83,10 +85,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_STUDENT_TASK_TO_FIRSTPARTY_AUTHORING_A_B_C",
+      "grading": "SCALAR_WITH_HUMAN_LINE_DRAWINGS",
       "claimedParity": false
     },
     {
@@ -117,82 +119,82 @@
       "id": "G3-U05-L13-IMAGE-01",
       "observedAltText": "4 number lines. Evenly spaced tick marks. 0 to 3 ones by ones, 0 to 6 halves by halves, 0 to 9 thirds by thirds, 0 to 12 fourths by fourths.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-02",
       "observedAltText": "Number line.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-03",
       "observedAltText": "Number line. Scale 0 to 6 halves by halves, evenly spaced tick marks. First tick mark, 0. Last tick mark, 6 halves.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-04",
       "observedAltText": "Number line. Scale 0 to 9 thirds by thirds, evenly spaced tick marks. First tick mark, 0. Last tick mark, 9 thirds.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-05",
       "observedAltText": "Number line. Scale 0 to 12 fourths by fourths, evenly spaced tick marks. First tick mark, 0. Last tick mark, 12 fourths.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-06",
       "observedAltText": "Number line. Evenly spaced tick marks labeled 0 to 3.� First tick mark, 0. Last tick mark, 3.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-07",
       "observedAltText": "Two students looking at an equation on chart paper.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-08",
       "observedAltText": "Diagram.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     },
     {
       "id": "G3-U05-L13-IMAGE-09",
       "observedAltText": "Number line. Scale 0 to 1 by eighths and fourths. Evenly spaced tick marks. First tick mark, 0. Last tick mark, 1. Point plotted at 3 fourths.",
       "originalReference": "unit-5/lesson-13/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_DEVICE_UNREPUBLISHED"
     }
   ],
   "sourceElementCounts": {
@@ -206,20 +208,24 @@
     "expected": "1/1"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Standalone original publisher student task PDF not inspected.",
+    "Publisher original Cool-down restricted; independent assessment not a publisher equivalent.",
+    "First-party presentation not pixel identical to original copyright visuals.",
+    "Group-selected fraction entries and student reasoning require teacher review.",
+    "Tests, CI, Stage D, academic sign-off and production deployment not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "c618e34e9604f96f45504b74ff34502ef52357981d62869e9e89950dbda3d178",
+  "originalPreparationHtmlSHA256": "17ede6e1fc33bb6deedf6bd37e783a4f43777aad3beb55485f60607b6cc6a55c",
+  "originalSourceImageUrlsReadOnlyReviewed": 11,
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-92-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-92-academic-source-coverage-and-human-rubric-20261025.json"
 }
