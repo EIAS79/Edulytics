@@ -14198,9 +14198,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "multiplication-place-value",
+      "firstPartyFamily": "teen-numbers-area-and-base-ten",
       "independentPractice": {
         "prompt": "Use 3 × (10 + 4) to find 3 × 14.",
         "answerType": "integer",
@@ -14212,21 +14212,22 @@
         "expected": "78"
       },
       "openTeacherTask": "Work through the original lesson's activity A Factor Greater than Ten with your teacher. Show the representation and explain how it meets the goal: You will make sense of representations of the multiplication of teen numbers.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Seven original 2021 SVG sources inspected; 11 numeric oracles,12 teacher diagram/reasoning tasks. No Stage D.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s make sense of some ways to represent the multiplication of teen numbers.",
-        "sourceLearningGoals": "Make sense of representations of multiplication (base-ten blocks and area diagrams) where one factor is a teen number.",
+        "sourceGoal": "Compare teen multiplication models with place value and distributive grouping.",
+        "sourceLearningGoals": "Interpret equal groups, grids, base-ten blocks and ungridded rectangles.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warmup two groups12=24, original loose square groups and two different rod layouts.",
+          "Tyler seven groups13 split10+3→70+21=91.",
+          "Apply his method to3×14=42, optionally4×12=48 and5×16=80.",
+          "Andre gridded, Clare base-ten, Diego ungridded rectangle all show3×15=45 via30+15.",
+          "Synthesis source7×6=5×6+2×6=42 and3×15=3×10+3×5=45."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make sense of some ways to represent the multiplication of teen numbers.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Seven source SVGs inspected; independent Edulytics visuals, no publisher artwork. Source Cool-down gated; student PDF and Stage D/tests not verified."
       },
       "sourceBasedCheck": {
         "prompt": "Tyler's source decomposition 7 × 13 is how much?",
@@ -14242,30 +14243,163 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L14-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: Seeing Groups (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Ways to Represent Multiplication of Teen Numbers PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L14-WU-TWO-TWELVES",
+          "sourceActivity": "Notice and Wonder: Seeing Groups",
+          "prompt": "Two original groups of12 squares",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L14-A1-SEVEN-THIRTEENS",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Tyler seven groups of13 each",
+          "answerType": "integer",
+          "expected": "91"
+        },
+        {
+          "id": "G3-U04-L14-A1-SEVEN-TENS",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "7×10 tens component",
+          "answerType": "integer",
+          "expected": "70"
+        },
+        {
+          "id": "G3-U04-L14-A1-SEVEN-THREES",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "7×3 ones component",
+          "answerType": "integer",
+          "expected": "21"
+        },
+        {
+          "id": "G3-U04-L14-A1-THREE-FOURTEENS",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Source3×14",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U04-L14-A1-OPTIONAL-FOUR-TWELVES",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Original optional4×12",
+          "answerType": "integer",
+          "expected": "48"
+        },
+        {
+          "id": "G3-U04-L14-A1-OPTIONAL-FIVE-SIXTEENS",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Original optional5×16",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U04-L14-A2-THREE-FIFTEENS",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Andre, Clare and Diego all3×15",
+          "answerType": "integer",
+          "expected": "45"
+        },
+        {
+          "id": "G3-U04-L14-A2-THREE-TENS",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "3×10 component",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U04-L14-A2-THREE-FIVES",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "3×5 component",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U04-L14-SYNTHESIS-SEVEN-SIXES",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Source7×6",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U04-L14-WU-THREE-REPRESENTATIONS",
+          "sourceActivity": "Notice and Wonder: Seeing Groups",
+          "prompt": "Warm-up compare original loose two groups of twelve and two base-ten representations with one ten rod and two ones each.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L14-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: A Factor Greater than Ten (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Ways to Represent Multiplication of Teen Numbers PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L14-WU-ORIENTATION",
+          "sourceActivity": "Notice and Wonder: Seeing Groups",
+          "prompt": "Explain source two base-ten models with different grouping orientation, both24.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L14-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Ways to Represent (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Ways to Represent Multiplication of Teen Numbers PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L14-A1-TYLER-CORRECT",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Original Tyler seven sets of one ten and three ones. Confirm 7×13=7×10+7×3=91 with place-value diagram.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L14-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L14-A1-THREE-FOURTEENS",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Show3×14=30+12=42 with independently authored base-ten model.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-A1-OPTIONAL",
+          "sourceActivity": "A Factor Greater than Ten",
+          "prompt": "Source optionally4×12 and5×16 if time; don't silently require them as original mandatory work.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-A2-ANDRE",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Original Andre model3×15 gridded rectangle split at10+5 columns.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-A2-CLARE",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Original Clare model3×15 uses three base-ten rods and fifteen ones.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-A2-DIEGO",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Original Diego ungridded area diagram has height3 and widths10,5 with labelled areas30,15.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-A2-MATCH-ALL",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Relate all Andre/Clare/Diego visuals to3×15=45 with partner explanation MLR8.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-SYNTHESIS",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Relate source7×6=(5×6)+(2×6) to 3×15=(3×10)+(3×5) without requiring property names.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-COOL-DOWN-GATED",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Publisher original Multiply and Explain Cool-down gated; independent Edulytics exit task not certified source-equivalent.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L14-SOURCE-RIGHTS",
+          "sourceActivity": "Ways to Represent",
+          "prompt": "Original seven SVG geometries visually inspected, ensure no publisher SVG paths are embedded.",
           "answerType": "teacher",
           "expected": null
         }
