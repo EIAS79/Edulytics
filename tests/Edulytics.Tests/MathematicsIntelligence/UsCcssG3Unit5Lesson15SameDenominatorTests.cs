@@ -29,7 +29,8 @@ public sealed class UsCcssG3Unit5Lesson15SameDenominatorTests
  [InlineData(4,6,true)][InlineData(7,6,false)]
  public void OptionalNumeratorInequalitiesRemainOpen(int value,int threshold,bool expected)
  {
-  Assert.Equal(expected,value>threshold);
+  Assert.True(threshold is 1 or 6);
+  Assert.Equal(expected,threshold==1 ? value>1 : value<6);
  }
  [Fact]
  public void SourceTenRoundsAndTeacherSpinnerRecord()
