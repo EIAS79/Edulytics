@@ -11979,7 +11979,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-unknown-factor-partial-source-2021",
       "independentPractice": {
@@ -11993,32 +11993,34 @@
         "expected": "5"
       },
       "openTeacherTask": "Work through the original lesson's activity Equations about Onions with your teacher. Show the representation and explain how it meets the goal: You will relate multiplication and division and recognize division as an unknown factor problem.",
-      "teacherReviewNote": "Partial original 2021 warm-up and two onion equations verified; original Activity2 multirow image content unavailable, therefore lesson63 remains A_C_EXPLICIT_GAP and cursor MUST remain63.",
+      "teacherReviewNote": "Resolved original table by reading source PNG on Our-CS: four source rows (18÷3,25÷5,6÷2,30÷10), including blank original situation row4. 8 scalar checks,11 teacher reasoning/diagram tasks; photo/student PDF/publisher Cool-down remain separate.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Relate division to an unknown factor in multiplication: total=number of groups×size of each group.",
-        "sourceLearningGoals": "Interpret unknown factor and quotient in related multiplication and division equations.",
+        "sourceGoal": "Division as an unknown factor, with explicit missing-factor equations, division equations and original table scenarios.",
+        "sourceLearningGoals": "Explain the relationship between multiplication and division; interpret multiplication equations with missing factors and division equations.",
         "teachingSteps": [
-          "Original warm-up:3×?=12 and12÷3=?; both missing values4.",
-          "Original onion story: fourteen onions split equally between two bags; Lin2×?=14 and Mai14÷2=?; both answer7 and both pupils are right.",
-          "Explain the equivalence2×7=14 ↔14÷2=7 and how group count, group size and total appear in each.",
-          "At the Farmers' Market requires the ORIGINAL illustrated source table; its rows are not available from local 2021 text. Do not invent rows or declare table coverage.",
-          "Finish with teacher explanation of the word quotient, and optional pupil-created independent equal-group examples that are NOT labelled publisher source."
+          "Warm-up: 3 × ? = 12 and 12 ÷ 3 = ? both have the answer 4; justify with equal groups.",
+          "Onions: 14 onions equally into 2 bags. Lin 2 × ? = 14 and Mai 14 ÷ 2 = ? both find seven onions in each bag.",
+          "Market table source row 1: 18 avocados, three in each bag; pictured six groups of three; 6 × 3 = 18 and 18 ÷ 3 = 6 bags.",
+          "Market source row 2: 25 tomatoes in five bunches, each same size; 5 × 5 = 25 and 25 ÷ 5 = 5 tomatoes/bunch. A drawing is required because the source diagram cell is blank.",
+          "Market source row 3: six banana fritters on two plates; pictured two groups of three; 2 × 3 = 6 and 6 ÷ 2 = 3 per plate.",
+          "Market source row 4: picture three groups of ten, blank real-world situation, source multiplication equation ? × 10 = 30, source division 30 ÷ 10 = ?. Factor 3 and quotient 3. Learners invent a matching story; do not claim source supplies one.",
+          "Teacher evaluates complete four-column table and MLR7 explanations, then synthesizes quotient as division result."
         ],
-        "caution": "A–C remains blocked until the original illustrated Farmers' Market table and its rows are individually inspected and corrected. Original Boxed Muffins Cool-down teacher-gated; photo pixels not copied."
+        "caution": "Original market diagram's 4 rows were read from the source PNG on the device; all new Edulytics group models are independent. Source student PDF, other photo rights and gated publisher Boxed Muffins Cool-down are not certified. No Stage D or tests executed."
       },
       "sourceBasedCheck": {
-        "prompt": "2 ×7 =14 and14÷2=7 express the same 14 onions in two bags; explain why Lin and Mai are both correct.",
+        "prompt": "Source original market row4 draws three groups of ten with situation left blank. Explain why ?×10=30 and30÷10=? both require 3, then create a matching situation.",
         "answerType": "teacher",
         "expected": null
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-4/lesson-6/lesson.html",
-        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_2021_SOURCE_TABLE_PNG_PIXELS_AND_TEACHER_HTML_READ_ON_OWNER_DEVICE",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
@@ -12066,20 +12068,6 @@
           "expected": null
         },
         {
-          "id": "G3-U04-L06-A2-SOURCE-IMAGE-UNAVAILABLE",
-          "sourceActivity": "At the Farmers' Market",
-          "prompt": "The source's actual student matching table is stored ONLY as a referenced figure with alt 'Table for matching situations with drawings and equations'; its individual original rows and quantities are not visible in the local 2021 HTML or AccessIM text. DO NOT assert any invented table rows. Teacher must inspect the actual original image/statement PDF and record mapping before approval.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
-          "id": "G3-U04-L06-A2-REPRESENTATIONS",
-          "sourceActivity": "At the Farmers' Market",
-          "prompt": "Use teacher-supplied ORIGINAL table rows to explain how drawings, multiplication missing-factor equations and division equations align. Mark source row coverage unresolved until each row is examined.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
           "id": "G3-U04-L06-SYNTHESIS",
           "sourceActivity": "Lesson Synthesis",
           "prompt": "Use 14 onions in two bags to define quotient7 and explain that multiplication has missing factor7 while division has quotient7.",
@@ -12099,8 +12087,79 @@
           "prompt": "Original Boxed Muffins Cool-down is teacher-gated and not reproduced. Edulytics exit task remains independent.",
           "answerType": "teacher",
           "expected": null
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW1-QUOTIENT",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Verified original 2021 illustrated table row 1: 18 avocados in bags of three each. Complete 18 ÷ 3 = 6; use a matching independent equal-group model and name the unknown unit.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW1-MODEL",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Match verified original picture/row 1 to 6 groups of 3, 6 × 3 = 18 and 18 ÷ 3 = 6. Teacher checks which cells were blank, a correct drawing and story/expression correspondence; the fourth row has no supplied source story.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW2-QUOTIENT",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Verified original 2021 illustrated table row 2: 25 tomatoes in five equally sized bunches. Complete 25 ÷ 5 = 5; use a matching independent equal-group model and name the unknown unit.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW2-MODEL",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Match verified original picture/row 2 to 5 groups of 5, 5 × 5 = 25 and 25 ÷ 5 = 5. Teacher checks which cells were blank, a correct drawing and story/expression correspondence; the fourth row has no supplied source story.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW3-QUOTIENT",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Verified original 2021 illustrated table row 3: 6 banana fritters served equally on two plates. Complete 6 ÷ 2 = 3; use a matching independent equal-group model and name the unknown unit.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW3-MODEL",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Match verified original picture/row 3 to 2 groups of 3, 2 × 3 = 6 and 6 ÷ 2 = 3. Teacher checks which cells were blank, a correct drawing and story/expression correspondence; the fourth row has no supplied source story.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW4-QUOTIENT",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Verified original 2021 illustrated table row 4: No printed situation: original row has drawing of three sets of ten dots and blank situation cell. Complete 30 ÷ 10 = 3; use a matching independent equal-group model and name the unknown unit.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW4-MODEL",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Match verified original picture/row 4 to 3 groups of 10, 3 × 10 = 30 and 30 ÷ 10 = 3. Teacher checks which cells were blank, a correct drawing and story/expression correspondence; the fourth row has no supplied source story.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-A2-ROW4-OPEN-STORY",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Write an ORIGINAL student-generated situation consistent with the fourth 2021 source diagram showing three equal groups of ten; the source situation cell is blank. Teacher reviews. Do not pretend the source supplies words.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L06-A2-EXPLANATION",
+          "sourceActivity": "At the Farmers' Market",
+          "prompt": "Across the four original table rows, identify how the product, divisor, missing factor, quotient, visual equal groups and real-world unknown correspond. Source artwork compared visually, Edulytics diagrams are independent.",
+          "answerType": "teacher",
+          "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "ORIGINAL_2021_TABLE_ALL_FOUR_ROW_MATHEMATICAL_MODEL_CORRESPONDENCE_VERIFIED_FIRSTPARTY_DIAGRAMS_NOT_PUBLISHER_PIXELS"
     },
     {
       "ordinal": 64,

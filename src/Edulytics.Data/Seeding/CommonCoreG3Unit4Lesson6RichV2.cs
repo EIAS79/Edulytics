@@ -14,7 +14,7 @@ internal static class CommonCoreG3Unit4Lesson6RichV2
     internal const string LessonCode = "PED:US-CCSS-MATH:G3:U04:L06";
     private const string ResourceName = "Edulytics.Data.Grade3.Unit4Lesson6RichV2";
     private const string ExpectedContentVersion =
-        "g3-u04-l06-firstedition2021-onions-unknown-factor-partial-20261025-v1";
+        "g3-u04-l06-firstedition2021-four-market-table-rows-verified-20261025-v2";
 
     private static readonly Lazy<JsonElement> Source = new(Load);
 
