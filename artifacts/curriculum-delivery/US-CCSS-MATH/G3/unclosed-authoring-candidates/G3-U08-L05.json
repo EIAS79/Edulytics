@@ -11,16 +11,20 @@
   "originalTeacherHtml": "unit-8/lesson-5/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-5/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_LOCAL_ONE_THOUSAND_USD_SINGLE_ROOM_FINISHING_ESTIMATES_AND_PARTNER_SOURCE_REVIEWED_COSTS_GAP",
     "goals": "Solve problems about the cost of finishing a room in a tiny house.",
     "sourceHeadingsCount": 4,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "4e986dbadda235ea89d9dfbd2f89ded241f0934ed711fec45dafed4b725ef251",
+    "sourcePreparationHtmlSHA256": "8ee348bdf3f84b2dfda89fc6e810553d16cabe94486cebfe05be5425e799c489",
+    "sourceImagePixelInspected": false,
+    "sourceOriginalCostSheetRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "ORIGINAL_BUDGET_SEMANTICS_FIRSTPARTY_RICH_V2_AND_GUARDED_MATERIALIZER",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +32,15 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "a3925007b50ab1a32b1c80c13e651e379c6d3e62da61a0c4fbe7c43aa9314cd5",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l05-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson5RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson5.cshtml",
+    "sourceSpecificVersion": "g3-u08-l05-2021-one-room-one-thousand-budget-independent-cost-example-v1"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TEACHER_GATED_SOURCE_COST_LIST_AND_SAMPLE_BUDGET_ARITHMETIC_REGRESSION_TEST_WRITTEN_NOT_RUN",
     "family": "tiny-house-project",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,9 +48,12 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity What’s the Cost? with your teacher. Show the representation and explain how it meets the goal: Let’s calculate the cost of finishing a room in a tiny house.",
-    "teacherReviewNote": "Teacher checks design constraints, currency context and drawings."
+    "teacherReviewNote": "Teacher checks design constraints, currency context and drawings.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson5SourceAuditTests.cs",
+    "sourceItemCount": 3,
+    "sourceTeacherItems": 3
   },
   "sourceElements": [
     {
@@ -50,10 +61,10 @@
       "sourceSection": "Warm-up: Estimation Exploration: Cost of a Room (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-8/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_PUBLIC_SOURCE_SEMANTIC_FIRSTPARTY_TEACHER_LED",
+      "grading": "TEACHER_MATERIALS_REQUIRED",
       "claimedParity": false
     },
     {
@@ -61,10 +72,10 @@
       "sourceSection": "Activity 1: What's the Cost? (35 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-8/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_PUBLIC_SOURCE_SEMANTIC_FIRSTPARTY_TEACHER_LED",
+      "grading": "TEACHER_MATERIALS_REQUIRED",
       "claimedParity": false
     },
     {
@@ -72,10 +83,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-8/lesson-5/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_PUBLIC_SOURCE_SEMANTIC_FIRSTPARTY_TEACHER_LED",
+      "grading": "TEACHER_MATERIALS_REQUIRED",
       "claimedParity": false
     },
     {
@@ -85,16 +96,25 @@
       "originalReference": "unit-8/lesson-5/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "RIGHTS_GATED_ORIGINAL_ASSESSMENT_UNAVAILABLE",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "id": "G3-U08-L05-BUS-COST-LABELLED",
+      "sourceAssetUrl": "https://cms-assets.illustrativemathematics.org/atx3fukc9685r9osjm3x8dchoz6c",
+      "sourcePixelsInspected": false,
+      "sourceLabelPricesVerified": false,
+      "embedded": false,
+      "coverage": "SOURCE_IMAGE_LINK_ONLY"
+    }
+  ],
   "sourceElementCounts": {
     "headings": 4,
-    "imageDescriptions": 0,
-    "fullyVerified": 0
+    "imageDescriptions": 1,
+    "fullyVerified": 3
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Flooring costs 5 units per square metre for 15 square metres. Find the total cost.",
@@ -102,20 +122,20 @@
     "expected": "75"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original cost sheet exact prices not individually inspected; original room completion source practice cannot be auto-graded or claimed fully source-perfect.",
+    "Original labelled bus image source pixels and prices not visually checked; one public image URL indexed.",
+    "Standalone 2021 student task PDF and publisher gated source Cool-down were not verified.",
+    "Teacher must check original price list, authentic Lesson 4 design, item quantities and partner reasoning.",
+    "Only first-party invented budget example computed; .NET tests authored not executed; Stage D, CI and academic approval remain outstanding."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-133-2021-room-budget-original-sheet-gap-evidence-20261025.json"
 }

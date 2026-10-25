@@ -25039,32 +25039,32 @@
           "ordinal": 1,
           "sourceHeading": "Warm-up: Estimation Exploration: Cost of a Room (10 minutes)",
           "sourceType": "WARM_UP",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_LOCAL_SOURCE_SEMANTIC_REVIEW_FIRSTPARTY_TEACHER_RUBRIC"
         },
         {
           "ordinal": 2,
           "sourceHeading": "Activity 1: What's the Cost? (35 minutes)",
           "sourceType": "ACTIVITY",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_LOCAL_SOURCE_SEMANTIC_REVIEW_FIRSTPARTY_TEACHER_RUBRIC"
         },
         {
           "ordinal": 3,
           "sourceHeading": "Lesson Synthesis",
           "sourceType": "TEACHER_SYNTHESIS",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "2021_LOCAL_SOURCE_SEMANTIC_REVIEW_FIRSTPARTY_TEACHER_RUBRIC"
         },
         {
           "ordinal": 4,
           "sourceHeading": "Cool-down: Find the Cost? (5 minutes)",
           "sourceType": "PUBLISHER_COOL_DOWN_RESTRICTED",
-          "mappingState": "SOURCE_INDEX_ONLY_NOT_ONE_TO_ONE_VERIFIED"
+          "mappingState": "RIGHTS_GATED_NOT_REPRODUCED"
         }
       ],
       "sourceVisualAltDescriptions": [],
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "tiny-house-project",
       "independentPractice": {
@@ -25078,21 +25078,23 @@
         "expected": "160"
       },
       "openTeacherTask": "Work through the original lesson's activity What’s the Cost? with your teacher. Show the representation and explain how it meets the goal: You will apply what you’ve learned about operations to calculate the cost to finish a space in a tiny house.",
-      "teacherReviewNote": "Source 2 student sections and 4 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 public teacher source: one-room finishing, $1,000 maximum with original publisher cost sheet, estimate too low/right/high on original bus image and compare with partner. Sheet prices and image pixels not verified. Independent example $930/$70 is NOT source values.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s calculate the cost of finishing a room in a tiny house.",
-        "sourceLearningGoals": "Solve problems about the cost of finishing a room in a tiny house.",
+        "sourceGoal": "Plan a feasible room finish within an exact $1,000 budget.",
+        "sourceLearningGoals": "Calculate and explain item costs and multiple-step money sums using source price list.",
         "teachingSteps": [
-          "Identify the previous mathematical idea being applied.",
-          "Show an appropriate representation, model, diagram or calculation.",
-          "Explain your strategy and assess whether the result meets the task's design constraints."
+          "Teacher displays original bus picture; pupils estimate too low/about right/too high.",
+          "Reuse actual learner Lesson 4 room design and original source cost sheet.",
+          "Record item unit cost × quantity, exact cost sum and remaining $1,000 balance.",
+          "Revise choices that exceed budget; discuss estimates and tradeoffs.",
+          "Teacher verifies real cost list, selected items, original source diagram and class presentation."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s calculate the cost of finishing a room in a tiny house.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Do not claim guessed sample prices are 2021 source costs or force one answer for every room.",
+        "targetRichV2Field": "embedded first-party budget math lesson only"
       },
       "sourceBasedCheck": {
         "prompt": "Source tile flooring costs $5 for each square foot. How much for 20 square feet of tile flooring?",
@@ -25108,27 +25110,31 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L05-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Estimation Exploration: Cost of a Room (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Tiny House: Cost.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L05-SOURCE-01",
+          "sourceActivity": "Warm-up: Estimation Exploration: Cost of a Room",
+          "prompt": "From the original publisher-labelled bus image, explain one too-low, one about-right and one too-high estimate for all items; teacher checks source photo values.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L05-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: What's the Cost? (35 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Tiny House: Cost.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L05-SOURCE-02",
+          "sourceActivity": "Activity 1: What Is the Cost?",
+          "prompt": "Using your authentic previous tiny-house design and original price sheet, finish one room on a budget of at most $1,000. Compute exact quantities, costs and money remaining; teacher reviews choices.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L05-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L05-SOURCE-03",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain your decisions and one peer observation about different rooms; teacher checks source price sheet and reasoning.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "originalCostSheetIndividuallyVerified": false,
+      "sourceBudgetDollars": 1000,
+      "sourcePublisherPriceListInspected": false,
+      "firstPartySampleCost": 930
     },
     {
       "ordinal": 134,
