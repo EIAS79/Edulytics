@@ -10386,78 +10386,150 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "two-step-add-subtract",
+      "firstPartyFamily": "information-gap-multistep",
       "independentPractice": {
-        "prompt": "Invent a two-step information-gap problem and separate its problem card from its data card.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "A first-party bake sale has 5 trays of 8 muffins and 13 extra. How many in total?",
+        "answerType": "integer",
+        "expected": "53"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "A class has 99 beads and adds eight groups of three beads. How many beads?",
+        "prompt": "6 boxes contain 8 cups each and 9 more cups sit loose. How many cups?",
+        "answerType": "integer",
+        "expected": "57"
+      },
+      "openTeacherTask": "Work through the original lesson's activity Info Gap: Introduction with your teacher. Show the representation and explain how it meets the goal: You will continue to represent and solve two-step word problems, including problems in which not all necessary information is given up front.",
+      "teacherReviewNote": "Four exact source warm-up numeric items, two clearly labeled first-party info-gap examples and eight teacher protocol tasks. Original publisher Bake Sale source card image numbers NOT read; no full source card parity claim.",
+      "firstPartyTasksAreNotOriginalPublisherPrompts": true,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": false,
+      "independentTeachingGuidance": {
+        "sourceGoal": "Represent and solve two-step word problems.",
+        "sourceLearningGoals": "Represent and solve two-step word problems.",
+        "teachingSteps": [
+          "Use four original warm-up calculations with multiplication before addition.",
+          "Teacher shows source original chairs cards if available; students ask for amount in corner, number per row and rows, explaining relevance.",
+          "Source holder discloses only card-known requested information and refuses data they do not have.",
+          "Teacher supplies original Bake Sale image-only cards OR explicitly uses independently authored alternative 5 trays×8+13=53; distinguish sources.",
+          "Swap info gap roles; require individual solve and partner mathematical explanation."
+        ],
+        "caution": "Original publisher problem/data numerical values not present in local student HTML and cannot be certified or auto-graded."
+      },
+      "sourceBasedCheck": {
+        "prompt": "Original warm-up: 99+(8×3). What is the result?",
         "answerType": "integer",
         "expected": "123"
       },
-      "openTeacherTask": "Work through the original lesson's activity Info Gap: Introduction with your teacher. Show the representation and explain how it meets the goal: You will continue to represent and solve two-step word problems, including problems in which not all necessary information is given up front.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
-      "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
-      "independentTeachingGuidance": {
-        "sourceGoal": "Let’s represent and solve more problems.",
-        "sourceLearningGoals": "Represent and solve two-step word problems.",
-        "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
-        ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve more problems.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      },
-      "sourceBasedCheck": {
-        "prompt": "For the source information-gap activity, specify which facts a partner needs to provide, why, and when there is enough information to solve.",
-        "answerType": "teacher",
-        "expected": null
-      },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-20/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "ORIGINAL_STUDENT_WARMUP_TEXT_ONLY",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L20-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Two Steps (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “More Practice to Represent and Solve.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L20-WU-1",
+          "sourceActivity": "Number Talk: Two Steps",
+          "prompt": "Original public 2021 warm-up: 20 + (2 × 3). Calculate the exact result.",
+          "answerType": "integer",
+          "expected": "26"
+        },
+        {
+          "id": "G3-U03-L20-WU-2",
+          "sourceActivity": "Number Talk: Two Steps",
+          "prompt": "Original public 2021 warm-up: 30 + (4 × 3). Calculate the exact result.",
+          "answerType": "integer",
+          "expected": "42"
+        },
+        {
+          "id": "G3-U03-L20-WU-3",
+          "sourceActivity": "Number Talk: Two Steps",
+          "prompt": "Original public 2021 warm-up: 50 + (8 × 3). Calculate the exact result.",
+          "answerType": "integer",
+          "expected": "74"
+        },
+        {
+          "id": "G3-U03-L20-WU-4",
+          "sourceActivity": "Number Talk: Two Steps",
+          "prompt": "Original public 2021 warm-up: 99 + (8 × 3). Calculate the exact result.",
+          "answerType": "integer",
+          "expected": "123"
+        },
+        {
+          "id": "G3-U03-L20-FIRSTPARTY-CHAIRS",
+          "sourceActivity": "Info Gap: Introduction",
+          "prompt": "INDEPENDENT Edulytics example, NOT original publisher card: 3 rows of 6 chairs and 4 additional chairs. Enter total chairs after requesting required data.",
+          "answerType": "integer",
+          "expected": "22"
+        },
+        {
+          "id": "G3-U03-L20-FIRSTPARTY-BAKE",
+          "sourceActivity": "Info Gap: Bake Sale",
+          "prompt": "INDEPENDENT Edulytics example, NOT original publisher data: 5 trays hold 8 muffins each, plus 13 extra muffins. Enter total after collecting both values.",
+          "answerType": "integer",
+          "expected": "53"
+        },
+        {
+          "id": "G3-U03-L20-WU-STRATEGY",
+          "sourceActivity": "Number Talk: Two Steps",
+          "prompt": "Explain mentally why multiplying before adding gives original 26,42,74,123; compare alternative strategies.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L20-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Info Gap: Introduction (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “More Practice to Represent and Solve.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L20-INTRO-NEED",
+          "sourceActivity": "Info Gap: Introduction",
+          "prompt": "In original classroom routine, the problem-card student asks specifically for number of chairs in corner, chairs per row and number of rows; justify why each item is needed.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L20-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Info Gap: Bake Sale (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “More Practice to Represent and Solve.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L20-INTRO-DATA",
+          "sourceActivity": "Info Gap: Introduction",
+          "prompt": "Data card holder provides only requested data that is actually stated. If asked for missing or unavailable information, respond I don't have that information. Do not disclose the answer.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L20-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L20-INTRO-PAIR",
+          "sourceActivity": "Info Gap: Introduction",
+          "prompt": "Students decide when enough data exist, independently solve, then compare strategies. Teacher verifies original hidden card if supplied.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L20-BAKE-NEED",
+          "sourceActivity": "Info Gap: Bake Sale",
+          "prompt": "Perform original information-gap questioning for the teacher-supplied Bake Sale problem/data cards. Cards' publisher contents were only images and cannot be inferred from local HTML.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L20-BAKE-FIRSTPARTY",
+          "sourceActivity": "Info Gap: Bake Sale",
+          "prompt": "Alternative independently authored first-party bake-sale card uses 5 trays×8 muffins plus13; separate problem/data cards; students articulate which numbers are needed and why.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L20-BAKE-SWAP",
+          "sourceActivity": "Info Gap: Bake Sale",
+          "prompt": "Trade roles, receive a new original source/first-party card set, solve independently then compare the communication and result.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L20-SOURCE-GATE",
+          "sourceActivity": "Publisher visual cards and reflection",
+          "prompt": "Original public teacher lesson image-based problem and data cards, including Bake Sale numerical specifics, were not pixel-verified. Do NOT claim copied exact source values or original gated reflection.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "FIRST_PARTY_GOAL_EQUIVALENT_INFO_GAP_ORIGINAL_PUBLISHER_HIDDEN_CARDS_UNVERIFIED"
     },
     {
       "ordinal": 57,
