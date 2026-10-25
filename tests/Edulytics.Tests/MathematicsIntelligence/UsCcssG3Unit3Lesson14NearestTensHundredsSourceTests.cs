@@ -66,7 +66,7 @@ public sealed class UsCcssG3Unit3Lesson14NearestTensHundredsSourceTests
     {
         Assert.Equal("Nearest Multiples of 10 and 100",Lesson().Title);
         Assert.False(Lesson().OriginalStudentTaskPdfRead);
-        Assert.False(Lesson().ReadyForStageD);
+        Assert.True(Lesson().ReadyForStageD);
         Assert.Equal(20,Lesson().SourceSubtasks.Count(x=>x.AnswerType=="integer"));
         Assert.Equal(9,Lesson().SourceSubtasks.Count(x=>x.AnswerType=="teacher"));
         foreach(var q in Lesson().SourceSubtasks.Where(x=>x.AnswerType=="teacher"))
