@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-8/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-8/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_LOCAL_HTML_PREPARATION_SOURCE_READ_4_DIVISION_4_CAPACITY_ITEMS_8_PLUS_5_FIGURE_PROMPTS",
     "goals": "Measure and estimate liquid volumes of objects using standard units of liters (L).",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 14,
     "originalAllSubquestionsIndividuallyVerified": false,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRST_PARTY_SOURCE_4_DIVISION_BATHTUB_CAPACITY_AND_13_DRAWING_GATED_TASKS_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "45a3be1318882ed638f1c99419b1dfb7e36c6c78be7a2e3e6ae87a84225f4132",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l08-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson8.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_DIVISION_NUMERIC_ORACLES_FIVE_SHADE_VALUES_EIGHT_SOURCE_IMAGE_READINGS_TEACHER_GATE_TESTS_UNRUN",
     "family": "litre-estimation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Estimate Liquid Volume with your teacher. Show the representation and explain how it meets the goal: Let’s measure and estimate liquid volume. Required Preparation CCSS Standards Addressing 3.MD.A.2 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions What i",
-    "teacherReviewNote": "Teacher checks actual estimation and measurement of litres, not merely arithmetic."
+    "teacherReviewNote": "Teacher checks actual estimation and measurement of litres, not merely arithmetic.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson8EstimateMeasureVolumeTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Number Talk: Divide by 3 (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_HTML_TO_FIRSTPARTY_VISUAL_GATED",
+      "grading": "NUMERIC_ESTIMATION_OR_TEACHER_IMAGE_READING",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Estimate Liquid Volume (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_HTML_TO_FIRSTPARTY_VISUAL_GATED",
+      "grading": "NUMERIC_ESTIMATION_OR_TEACHER_IMAGE_READING",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Measure Liquid Volume (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_HTML_TO_FIRSTPARTY_VISUAL_GATED",
+      "grading": "NUMERIC_ESTIMATION_OR_TEACHER_IMAGE_READING",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_HTML_TO_FIRSTPARTY_VISUAL_GATED",
+      "grading": "NUMERIC_ESTIMATION_OR_TEACHER_IMAGE_READING",
       "claimedParity": false
     },
     {
@@ -105,10 +108,10 @@
       "sourceSection": "Student Section Summary",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_LOCAL_HTML_TO_FIRSTPARTY_VISUAL_GATED",
+      "grading": "NUMERIC_ESTIMATION_OR_TEACHER_IMAGE_READING",
       "claimedParity": false
     }
   ],
@@ -120,7 +123,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-02",
@@ -129,7 +132,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-03",
@@ -138,7 +141,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-04",
@@ -147,7 +150,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-05",
@@ -156,7 +159,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-06",
@@ -165,7 +168,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-07",
@@ -174,7 +177,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-08",
@@ -183,7 +186,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-09",
@@ -192,7 +195,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-10",
@@ -201,7 +204,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-11",
@@ -210,7 +213,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-12",
@@ -219,7 +222,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-13",
@@ -228,7 +231,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     },
     {
       "id": "G3-U06-L08-IMAGE-14",
@@ -237,7 +240,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_IMAGE_ALT_ONLY_VISUAL_PIXEL_READING_NOT_INSPECTED"
     }
   ],
   "sourceElementCounts": {
@@ -251,20 +254,23 @@
     "expected": "5"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Thirteen original source diagrams A-H and P-T not source-pixel inspected; A-H eight exact numeric water levels unverified, all pupil visual readings teacher-gated.",
+    "Original separately formatted Student Task Statements PDF not available in local archive; no PDF source parity.",
+    "Original teacher-gated Cool-down Measure in Liters not available and not copied.",
+    "Optional highest-two combination cannot certify numeric total without original A-H readings.",
+    "Authored tests, CI, Stage D, academic approval, merge and live rendering not performed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "3d06f08e6406434fb7dbf8ed00e4cffe810c38c055c386b47e1841572fc1f9c9",
+  "originalPreparationHtmlSHA256": "4e697c77131e157b50a759c568664242ea60cb23911020341a95fc7d8b61170f",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-105-2021-local-estimate-liquid-volume-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-105-volume-diagram-teacher-rubric-20261025.json"
 }
