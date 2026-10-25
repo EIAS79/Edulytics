@@ -24277,10 +24277,10 @@
       "sourceVisualAltDescriptions": [
         "sample response. robot on dot grid"
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "geometry-application",
       "independentPractice": {
@@ -24294,20 +24294,20 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Create Your Own Robot with your teacher. Show the representation and explain how it meets the goal: You will draw rectangles with specified perimeters to create a robot.",
-      "teacherReviewNote": "Source 2 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "All source tasks are open rectangle drawings and complete robot area explanations; do not auto certify a guessed total or a partial set of parts. Teacher checks each drawn body part and gallery.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s use perimeter and area to design robots.",
+        "sourceGoal": "Let\u2019s use perimeter and area to design robots.",
         "sourceLearningGoals": "Apply geometric understanding to solve problems about robots.",
         "teachingSteps": [
           "Sketch the design and identify mathematical attributes.",
           "Use measurements or labels that make the constraints checkable.",
           "Explain the area, perimeter or shape reasoning used."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use perimeter and area to design robots.",
+        "caution": "All source tasks are open rectangle drawings and complete robot area explanations; do not auto certify a guessed total or a partial set of parts. Teacher checks each drawn body part and gallery.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -24316,33 +24316,79 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-15/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "sourceStudentPdfPagesRead": 3,
+        "studentTaskPdfSha256": "5d12dd8a4c36cdb51c3a2e07058bc942d74f1e620a26505ed511496419f177ba",
+        "teacherHtmlSha256": "482dca8cb11d937a6a0e67f1902cba66ca40ec9c64858f67f2a71dc980b50466",
+        "sourceBlacklineSha256": "0b34335428eee7fa053c0e46e1738c2271ca38d48d802a90b1352dfaa1f2f3be",
+        "individualElementsVerified": true,
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L15-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: What Do You Know About Area and Perimeter? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Design Your Own Robot.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L15-SOURCE-01",
+          "sourceActivity": "Warm-up: What Do You Know About Area and Perimeter?",
+          "prompt": "Explain and illustrate area versus perimeter and how to calculate both; teacher reviews discussion.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 1
         },
         {
-          "id": "G3-U07-L15-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Create Your Own Robot (35 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Design Your Own Robot.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L15-SOURCE-02",
+          "sourceActivity": "Activity 15.1: Rectangle robot head",
+          "prompt": "Draw rectangle robot HEAD of perimeter36 units; show dimensions and area, teacher checks.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 2
         },
         {
-          "id": "G3-U07-L15-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L15-SOURCE-03",
+          "sourceActivity": "Activity 15.1: Rectangle robot neck",
+          "prompt": "Draw rectangle NECK of perimeter8 units; show dimensions and area, teacher checks.",
           "answerType": "teacher",
-          "expected": null
+          "expected": null,
+          "sourcePage": 2
+        },
+        {
+          "id": "G3-U07-L15-SOURCE-04",
+          "sourceActivity": "Activity 15.1: Rectangle robot body",
+          "prompt": "Draw rectangle BODY of perimeter64 units; show dimensions and area, teacher checks.",
+          "answerType": "teacher",
+          "expected": null,
+          "sourcePage": 2
+        },
+        {
+          "id": "G3-U07-L15-SOURCE-05",
+          "sourceActivity": "Activity 15.1: Both rectangle arms",
+          "prompt": "Draw TWO rectangular arms, EACH with perimeter24 units; give both areas and methods, teacher checks.",
+          "answerType": "teacher",
+          "expected": null,
+          "sourcePage": 2
+        },
+        {
+          "id": "G3-U07-L15-SOURCE-06",
+          "sourceActivity": "Activity 15.1: Both rectangle legs",
+          "prompt": "Draw TWO rectangular legs, EACH with perimeter32 units; give both areas, teacher checks.",
+          "answerType": "teacher",
+          "expected": null,
+          "sourcePage": 2
+        },
+        {
+          "id": "G3-U07-L15-SOURCE-07",
+          "sourceActivity": "Activity 15.1: Extra rectangular feature and total area",
+          "prompt": "Include ONE additional rectangular feature, calculate area of every part, then calculate YOUR robot total area; teacher checks no omitted/overcounted regions.",
+          "answerType": "teacher",
+          "expected": null,
+          "sourcePage": 2
+        },
+        {
+          "id": "G3-U07-L15-SOURCE-08",
+          "sourceActivity": "Activity 15.1: Gallery Walk and Section Summary",
+          "prompt": "Compare different robot areas with same specified part perimeters in teacher-led gallery walk, and reflect on geometric design uses.",
+          "answerType": "teacher",
+          "expected": null,
+          "sourcePage": 3
         }
       ]
     },
