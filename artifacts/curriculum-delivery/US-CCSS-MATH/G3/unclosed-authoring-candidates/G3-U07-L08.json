@@ -11,16 +11,20 @@
   "originalTeacherHtml": "unit-7/lesson-8/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-8/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_TEACHER_PREP_4_STUDENT_PDF_PAGES_4_DIVISIONS_8_ORIGINAL_DIAGRAMS_INDIVIDUALLY_REVIEWED",
     "goals": "Find the perimeter of two-dimensional shapes given all or some of the side lengths.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 10,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "5a92314b8ebe02ed1975168003faff99e1c84b37729bbdc5ce6ca892d60e9d3b",
+    "originalStudentPdfPagesRead": 4,
+    "sourceArticleIllustrationsReviewed": true,
+    "sourceSpecialUnitRisk": "Source 8.1 includes cm / inches / feet; source 8.2 stepped figure has 40 with no length unit"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_PERIMETER_INFERENCE_UNIT_AWARE_RICHV2_SHA_GUARDED",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +32,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "bd392237dce9010ed57f3f56a207b8d2c0e6da93f4bd40c400a2c8013a6d534a",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l08-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson8RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson8.cshtml",
+    "authoredContentVersion": "g3-u07-l08-2021-eight-source-perimeters-side-symmetry-and-unknown-v1",
+    "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWELVE_SOURCE_NUMERIC_ANCHORS_UNIT_STRICT_INCH_AND_FOOT_PLUS_THREE_TEACHER_CASES_TESTS_WRITTEN_UNRUN",
     "family": "perimeter",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +49,230 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Ways to Find Perimeter with your teacher. Show the representation and explain how it meets the goal: Let’s find the perimeter of more shapes.",
-    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides."
+    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+    "sourceNumberTalkCount": 4,
+    "sourceOriginalPupilPerimeterCount": 8,
+    "teacherReviewItems": 3,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson8SourcePerimetersAndLinearUnitTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U07-L08-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: Decreasing Dividend (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-7/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L08-WARMUP-01",
+      "sourceStudentPdfPage": 1,
+      "sourceKind": "NUMBER_TALK_DIVISION",
+      "dividend": 90,
+      "divisor": 9,
+      "expectedInteger": 10,
+      "firstPartySubtask": "G3-U07-L08-WARMUP-01",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L08-HEADING-02",
-      "sourceSection": "Activity 1: Ways to Find Perimeter (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L08-WARMUP-02",
+      "sourceStudentPdfPage": 1,
+      "sourceKind": "NUMBER_TALK_DIVISION",
+      "dividend": 81,
+      "divisor": 9,
+      "expectedInteger": 9,
+      "firstPartySubtask": "G3-U07-L08-WARMUP-02",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L08-HEADING-03",
-      "sourceSection": "Activity 2: Something is Missing (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L08-WARMUP-03",
+      "sourceStudentPdfPage": 1,
+      "sourceKind": "NUMBER_TALK_DIVISION",
+      "dividend": 45,
+      "divisor": 9,
+      "expectedInteger": 5,
+      "firstPartySubtask": "G3-U07-L08-WARMUP-03",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L08-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-7/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L08-WARMUP-04",
+      "sourceStudentPdfPage": 1,
+      "sourceKind": "NUMBER_TALK_DIVISION",
+      "dividend": 54,
+      "divisor": 9,
+      "expectedInteger": 6,
+      "firstPartySubtask": "G3-U07-L08-WARMUP-04",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L08-HEADING-05",
-      "sourceSection": "Cool-down: A Triangle and a Square (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-7/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L08-NOTICE",
+      "sourceStudentPdfPage": 2,
+      "sourceKind": "ORAL_IMAGE_COMPARE_5_BY_3_RECTANGLES",
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartySubtask": "G3-U07-L08-NOTICE",
+      "teacherBoundary": "One 5-by-3 dot-grid rectangle and one length-labelled counterpart; no original illustration copied"
+    },
+    {
+      "id": "G3-U07-L08-A1-01",
+      "sourceStudentPdfPage": 2,
+      "sourceKind": "PUPIL_ACTIVITY1_PERIMETER_DIAGRAM",
+      "originalSideLengthValues": [
+        10,
+        8,
+        12
+      ],
+      "expectedLinearPerimeter": 30,
+      "sourcePrintedUnit": "cm",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A1-01",
+      "teacherBoundary": "Teacher evaluates chosen perimeter strategy and actual original image; numeral with wrong unit must not pass"
+    },
+    {
+      "id": "G3-U07-L08-A1-02",
+      "sourceStudentPdfPage": 2,
+      "sourceKind": "PUPIL_ACTIVITY1_PERIMETER_DIAGRAM",
+      "originalSideLengthValues": [
+        16,
+        24,
+        16,
+        24
+      ],
+      "expectedLinearPerimeter": 80,
+      "sourcePrintedUnit": "in",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A1-02",
+      "teacherBoundary": "Teacher evaluates chosen perimeter strategy and actual original image; numeral with wrong unit must not pass"
+    },
+    {
+      "id": "G3-U07-L08-A1-03",
+      "sourceStudentPdfPage": 3,
+      "sourceKind": "PUPIL_ACTIVITY1_PERIMETER_DIAGRAM",
+      "originalSideLengthValues": [
+        13,
+        5,
+        5,
+        11,
+        2
+      ],
+      "expectedLinearPerimeter": 36,
+      "sourcePrintedUnit": "cm",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A1-03",
+      "teacherBoundary": "Teacher evaluates chosen perimeter strategy and actual original image; numeral with wrong unit must not pass"
+    },
+    {
+      "id": "G3-U07-L08-A1-04",
+      "sourceStudentPdfPage": 3,
+      "sourceKind": "PUPIL_ACTIVITY1_PERIMETER_DIAGRAM",
+      "originalSideLengthValues": [
+        8,
+        8,
+        4,
+        4,
+        4,
+        4
+      ],
+      "expectedLinearPerimeter": 32,
+      "sourcePrintedUnit": "ft",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A1-04",
+      "teacherBoundary": "Teacher evaluates chosen perimeter strategy and actual original image; numeral with wrong unit must not pass"
+    },
+    {
+      "id": "G3-U07-L08-A1-05",
+      "sourceStudentPdfPage": 3,
+      "sourceKind": "PUPIL_ACTIVITY1_PERIMETER_DIAGRAM",
+      "originalSideLengthValues": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "expectedLinearPerimeter": 36,
+      "sourcePrintedUnit": "cm",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A1-05",
+      "teacherBoundary": "Teacher evaluates chosen perimeter strategy and actual original image; numeral with wrong unit must not pass"
+    },
+    {
+      "id": "G3-U07-L08-A2-01",
+      "sourceStudentPdfPage": 4,
+      "sourceKind": "PUPIL_ACTIVITY2_MISSING_SIDE_PERIMETER",
+      "originalCompleteSideLengthValues": [
+        21,
+        9,
+        21,
+        9
+      ],
+      "inferenceRule": "Missing opposite rectangle sides each equal printed counterpart",
+      "expectedLinearPerimeter": 60,
+      "sourcePrintedUnit": "cm",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A2-01",
+      "teacherBoundary": "Teacher validates original diagram, how the missing length is proven and unit handling"
+    },
+    {
+      "id": "G3-U07-L08-A2-02",
+      "sourceStudentPdfPage": 4,
+      "sourceKind": "PUPIL_ACTIVITY2_MISSING_SIDE_PERIMETER",
+      "originalCompleteSideLengthValues": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        200
+      ],
+      "inferenceRule": "11 short sides x40, long aligned bottom 5x40",
+      "expectedLinearPerimeter": 640,
+      "sourcePrintedUnit": null,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A2-02",
+      "teacherBoundary": "Teacher validates original diagram, how the missing length is proven and unit handling"
+    },
+    {
+      "id": "G3-U07-L08-A2-03",
+      "sourceStudentPdfPage": 4,
+      "sourceKind": "PUPIL_ACTIVITY2_MISSING_SIDE_PERIMETER",
+      "originalCompleteSideLengthValues": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "inferenceRule": "Equal octagon side lengths inherited from problem",
+      "expectedLinearPerimeter": 240,
+      "sourcePrintedUnit": "in",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "firstPartySubtask": "G3-U07-L08-A2-03",
+      "teacherBoundary": "Teacher validates original diagram, how the missing length is proven and unit handling"
+    },
+    {
+      "id": "G3-U07-L08-GALLERY",
+      "sourceStudentPdfPage": null,
+      "sourceKind": "TEACHER_VISUAL_GALLERY_WALK",
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartySubtask": "G3-U07-L08-GALLERY",
+      "teacherBoundary": "Observe and assess explanation, gallery comparisons or rhombus equal-sides property"
+    },
+    {
+      "id": "G3-U07-L08-SYNTHESIS",
+      "sourceStudentPdfPage": null,
+      "sourceKind": "TEACHER_RHOMBUS_7_IN_TRANSFER",
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartySubtask": "G3-U07-L08-SYNTHESIS",
+      "teacherBoundary": "Observe and assess explanation, gallery comparisons or rhombus equal-sides property"
+    },
+    {
+      "id": "G3-U07-L08-COOLDOWN",
+      "sourceStudentPdfPage": null,
+      "sourceKind": "PUBLISHER_GATED_COOLDOWN",
+      "coverage": "RIGHTS_RESTRICTED",
+      "teacherBoundary": "Original teacher-only A Triangle and a Square assessment unavailable and not embedded"
     }
   ],
   "images": [
@@ -194,9 +368,10 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 10,
-    "fullyVerified": 0
+    "identified": 16,
+    "digitallyMappedWithTeacherReasoning": 12,
+    "teacherLed": 3,
+    "rightsRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "A polygon has boundary segments 2, 5, 5, 3 metres. Find its perimeter.",
@@ -204,20 +379,20 @@
     "expected": "15"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "NOT_MANUALLY_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-121-2021-perimeters-known-and-missing-side-source-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Publisher gated Cool-down not available, no claim of duplication.",
+    "All source four-page student PDF original polygon figures individually visually reviewed; no publisher graphics copied.",
+    "Published DB, runtime student access, executed unit tests, CI, Stage D and academic signoff intentionally deferred."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L09"
 }

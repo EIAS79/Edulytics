@@ -515,7 +515,7 @@ public static class Grade3SourceCompanionCatalogue
         unit = "";
         if (string.IsNullOrWhiteSpace(answer) || answer.Length > 100) return false;
         var match = Regex.Match(answer.Trim(),
-            @"^([0-9]{1,4}(?:\.[0-9]{1,6}|/[0-9]{1,4}| +[0-9]{1,4}/[0-9]{1,4})?)\s*(cm|m|ft|centimet(?:er|re)s?|met(?:er|re)s?|f(?:oo|ee)t)$",
+            @"^([0-9]{1,4}(?:\.[0-9]{1,6}|/[0-9]{1,4}| +[0-9]{1,4}/[0-9]{1,4})?)\s*(cm|m|ft|in|inch(?:es)?|centimet(?:er|re)s?|met(?:er|re)s?|f(?:oo|ee)t)$",
             RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
         if (!match.Success) return false;
         var value = match.Groups[1].Value;
@@ -533,7 +533,8 @@ public static class Grade3SourceCompanionCatalogue
         }
         var literal = match.Groups[2].Value.ToLowerInvariant();
         unit = literal == "cm" || literal.StartsWith("centimet", StringComparison.Ordinal)
-            ? "cm" : literal == "m" || literal.StartsWith("met", StringComparison.Ordinal) ? "m" : "ft";
+            ? "cm" : literal == "m" || literal.StartsWith("met", StringComparison.Ordinal) ? "m"
+            : literal == "in" || literal.StartsWith("inch", StringComparison.Ordinal) ? "in" : "ft";
         // Bounded exact cross-products stay below 10^16; no rounding or
         // unit conversion. Equivalent whole, decimal and fraction forms work.
         return numerator > 0 && denominator > 0;

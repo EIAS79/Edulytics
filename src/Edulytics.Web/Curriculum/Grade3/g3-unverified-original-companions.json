@@ -23041,10 +23041,10 @@
         "Octagon. Each side 30 inches.",
         "Rhombus."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
@@ -23058,20 +23058,22 @@
         "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity Ways to Find Perimeter with your teacher. Show the representation and explain how it meets the goal: You will find perimeters of shapes given all or some of the side lengths.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "First edition 2021 original 4-page student PDF, teacher activities, eight perimeter figures and source units reviewed one-to-one. Strict cm/ft/in checks; 12-sided indent is ELEVEN equal sides of 40 plus bottom five widths of 40, not regular dodecagon; gallery drawing, mental strategies and original publisher gated Cool-down remain teacher/rights-only.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s find the perimeter of more shapes.",
+        "sourceGoal": "Let\u2019s find the perimeter of more shapes.",
         "sourceLearningGoals": "Find the perimeter of two-dimensional shapes given all or some of the side lengths.",
         "teachingSteps": [
-          "Identify shape attributes, side lengths, area and perimeter constraints.",
-          "Draw or measure an accurate figure that meets the task conditions.",
-          "Explain and check the resulting geometric relationship."
+          "Compute 90/9,81/9,45/9,54/9 mentally.",
+          "Compare dot-grid 5\u00d73 and dimension-labelled 5\u00d73 rectangles orally.",
+          "Add or group all side lengths from original student PDF 8.1, keeping cm/in/ft separately.",
+          "Infer missing opposite rectangle sides and the stepped-figure 5\u00d740 bottom; review eight original source polygons with teacher.",
+          "Use gallery walk to justify missing sides; a teacher reviews explanations."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s find the perimeter of more shapes.",
+        "caution": "Never drop physical cm/inch/foot units; no automatic academic approval from scalar perimeter answer, and the 40-unit stepped bottom must be inferred as five short widths.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -23080,38 +23082,115 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-8/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "localHtml": "Original teacher source SHA256 badf2038c954eb941bf6678318899b532c03f016c82111e78209318d429d1d44",
+        "verified": "All 4 original student PDF pages individually inspected, 4 warm-up values, 5 Activity1 original figures, 3 Activity2 original diagrams; missing side inferred, original linear units preserved.",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L08-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Decreasing Dividend (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Find the Perimeter PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L08-WARMUP-01",
+          "sourceActivity": "Warm-up: Number Talk: Decreasing Dividend",
+          "prompt": "Original 2021 source Number Talk 90 \u00f7 9. Enter the numeric quotient; explain the mental division strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L08-WARMUP-02",
+          "sourceActivity": "Warm-up: Number Talk: Decreasing Dividend",
+          "prompt": "Original 2021 source Number Talk 81 \u00f7 9. Enter the numeric quotient; explain the mental division strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "9"
+        },
+        {
+          "id": "G3-U07-L08-WARMUP-03",
+          "sourceActivity": "Warm-up: Number Talk: Decreasing Dividend",
+          "prompt": "Original 2021 source Number Talk 45 \u00f7 9. Enter the numeric quotient; explain the mental division strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U07-L08-WARMUP-04",
+          "sourceActivity": "Warm-up: Number Talk: Decreasing Dividend",
+          "prompt": "Original 2021 source Number Talk 54 \u00f7 9. Enter the numeric quotient; explain the mental division strategy to your teacher.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U07-L08-NOTICE",
+          "sourceActivity": "Activity 1: Ways to Find Perimeter",
+          "prompt": "Compare the two original source 5-by-3 rectangles: one drawn on a dot grid and one with opposite sides labelled 5 and 3. Notice and wonder and explain equivalence to a partner.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L08-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Ways to Find Perimeter (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Find the Perimeter PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L08-A1-01",
+          "sourceActivity": "Activity 1: Ways to Find Perimeter",
+          "prompt": "Using original 2021 pupil PDF section 8.1 figure 1, triangle with sides 10, 8, 12 centimetres. Enter full LINEAR perimeter with correct unit (cm, in or ft). Teacher still checks diagram and method.",
+          "answerType": "length-with-unit",
+          "expected": "30 cm"
+        },
+        {
+          "id": "G3-U07-L08-A1-02",
+          "sourceActivity": "Activity 1: Ways to Find Perimeter",
+          "prompt": "Using original 2021 pupil PDF section 8.1 figure 2, rectangle with opposite sides 16 and 24 inches. Enter full LINEAR perimeter with correct unit (cm, in or ft). Teacher still checks diagram and method.",
+          "answerType": "length-with-unit",
+          "expected": "80 in"
+        },
+        {
+          "id": "G3-U07-L08-A1-03",
+          "sourceActivity": "Activity 1: Ways to Find Perimeter",
+          "prompt": "Using original 2021 pupil PDF section 8.1 figure 3, five-sided concave outline with sides 13, 5, 5, 11, 2 centimetres. Enter full LINEAR perimeter with correct unit (cm, in or ft). Teacher still checks diagram and method.",
+          "answerType": "length-with-unit",
+          "expected": "36 cm"
+        },
+        {
+          "id": "G3-U07-L08-A1-04",
+          "sourceActivity": "Activity 1: Ways to Find Perimeter",
+          "prompt": "Using original 2021 pupil PDF section 8.1 figure 4, hexagon with two sides 8 feet and four sides 4 feet. Enter full LINEAR perimeter with correct unit (cm, in or ft). Teacher still checks diagram and method.",
+          "answerType": "length-with-unit",
+          "expected": "32 ft"
+        },
+        {
+          "id": "G3-U07-L08-A1-05",
+          "sourceActivity": "Activity 1: Ways to Find Perimeter",
+          "prompt": "Using original 2021 pupil PDF section 8.1 figure 5, four equal sides each 9 centimetres. Enter full LINEAR perimeter with correct unit (cm, in or ft). Teacher still checks diagram and method.",
+          "answerType": "length-with-unit",
+          "expected": "36 cm"
+        },
+        {
+          "id": "G3-U07-L08-A2-01",
+          "sourceActivity": "Activity 2: Something is Missing",
+          "prompt": "Original 2021 pupil PDF section 8.2 figure 1: source 21 cm by 9 cm rectangle with opposite sides unlabeled. Enter correct total perimeter and printed linear unit; explain inferred unlabeled edges with a teacher.",
+          "answerType": "length-with-unit",
+          "expected": "60 cm"
+        },
+        {
+          "id": "G3-U07-L08-A2-02",
+          "sourceActivity": "Activity 2: Something is Missing",
+          "prompt": "Original 2021 pupil PDF section 8.2 figure 2: right-angled 12-gon, eleven 40-length short sides and one long bottom span five short horizontal lengths, no unit printed. Enter correct total perimeter (no unit on source); explain inferred unlabeled edges with a teacher.",
+          "answerType": "integer",
+          "expected": "640"
+        },
+        {
+          "id": "G3-U07-L08-A2-03",
+          "sourceActivity": "Activity 2: Something is Missing",
+          "prompt": "Original 2021 pupil PDF section 8.2 figure 3: octagon whose eight equal sides each measure 30 inches. Enter correct total perimeter and printed linear unit; explain inferred unlabeled edges with a teacher.",
+          "answerType": "length-with-unit",
+          "expected": "240 in"
+        },
+        {
+          "id": "G3-U07-L08-GALLERY",
+          "sourceActivity": "Activity 2: Something is Missing",
+          "prompt": "Create an annotated visual poster showing where the missing sides of the original right-angled 12-gon come from. Compare with partner/gallery; teacher must assess supporting reasoning.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L08-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Something is Missing (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Find the Perimeter PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
-          "id": "G3-U07-L08-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L08-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Teacher shows a rhombus with one side 7 inches. Explain why the four equal sides give 28 inches; describe side grouping and alternatives.",
           "answerType": "teacher",
           "expected": null
         }
