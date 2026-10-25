@@ -15890,9 +15890,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "larger-number-division",
+      "firstPartyFamily": "source-78-divide-3-strategies-optional-compare",
       "independentPractice": {
         "prompt": "Find 68 ÷ 4 with a place-value grouping strategy.",
         "answerType": "integer",
@@ -15904,21 +15904,21 @@
         "expected": "13"
       },
       "openTeacherTask": "Work through the original lesson's activity Ways to Divide with your teacher. Show the representation and explain how it meets the goal: You will analyze representations and strategies for finding quotients with larger numbers and to divide within 100.",
-      "teacherReviewNote": "Source 4 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Source 2021 warmup + Lin/Priya/Tyler regrouping, one original SVG viewed; 11 scalar checks,13 teacher tasks including optional Compare separated.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s use different strategies to divide.",
-        "sourceLearningGoals": "Analyze strategies for representing and reasoning about division. Divide within 100 using strategies based on place value and properties of operations.",
+        "sourceGoal": "Analyze multiple strategies for 78÷3 and flexibly divide within100.",
+        "sourceLearningGoals": "Relate partial multiplication equations, base-ten images and quotients.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Warmup source3×5,6×5,10×5,65÷5 yielding15,30,50,13.",
+          "Original Lin source diagram78 as7 tens8 ones traded into3 groups of2 tens6 ones=26; Priya3×10 twice +3×6, Tyler3×20+3×6.",
+          "Original80÷5=16,68÷4=17,91÷7=13 and optional84÷14=6.",
+          "Optional original Compare:92÷4=23 vs72÷3=24, latter larger. Do not confuse optional center with mandatory content."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s use different strategies to divide.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Source single SVG inspected, independent first-party visual. Publisher card blackline and cool-down unverified; tests written not run."
       },
       "sourceBasedCheck": {
         "prompt": "Source models decompose 78 ÷ 3. What quotient?",
@@ -15934,37 +15934,170 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L20-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Multiplication and Division (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Strategies for Dividing.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L20-WU-1",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original 3×5: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U04-L20-WU-2",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original 6×5: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "30"
+        },
+        {
+          "id": "G3-U04-L20-WU-3",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original 10×5: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "50"
+        },
+        {
+          "id": "G3-U04-L20-WU-4",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original 65÷5: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "13"
+        },
+        {
+          "id": "G3-U04-L20-A1-78",
+          "sourceActivity": "Ways to Divide",
+          "prompt": "Original 78÷3: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "26"
+        },
+        {
+          "id": "G3-U04-L20-A2-80",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Original 80÷5: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U04-L20-A2-68",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Original 68÷4: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "17"
+        },
+        {
+          "id": "G3-U04-L20-A2-91",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Original 91÷7: find value and explain the strategy. ",
+          "answerType": "integer",
+          "expected": "13"
+        },
+        {
+          "id": "G3-U04-L20-A2-84-OPTIONAL",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Original 84÷14: find value and explain the strategy. This belongs to an optional source task.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L20-A3-COMPARE1",
+          "sourceActivity": "OPTIONAL Compare Stage 4",
+          "prompt": "Original 92÷4: find value and explain the strategy. This belongs to an optional source task.",
+          "answerType": "integer",
+          "expected": "23"
+        },
+        {
+          "id": "G3-U04-L20-A3-COMPARE2",
+          "sourceActivity": "OPTIONAL Compare Stage 4",
+          "prompt": "Original 72÷3: find value and explain the strategy. This belongs to an optional source task.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U04-L20-WU-RELATE",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Explain why3×5=15,6×5=30,10×5=50 help derive65÷5=13 by (10+3)×5=65.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L20-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Ways to Divide (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Strategies for Dividing.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L20-A1-LIN",
+          "sourceActivity": "Ways to Divide",
+          "prompt": "Original source image for Lin shows seven tens and eight ones regrouped into3 groups of two tens and six ones: 78÷3=26; independently redraw.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L20-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: How Would You Divide? (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Strategies for Dividing.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L20-A1-PRIYA",
+          "sourceActivity": "Ways to Divide",
+          "prompt": "Priya original equations3×10=30 twice and3×6=18 sum78; quotient10+10+6=26. Tie to equal groups.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L20-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: Compare, Divide within 100 [OPTIONAL] (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “Strategies for Dividing.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L20-A1-TYLER",
+          "sourceActivity": "Ways to Divide",
+          "prompt": "Tyler original equations3×20=60 plus3×6=18; quotient20+6=26.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L20-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L20-A1-COMPARE",
+          "sourceActivity": "Ways to Divide",
+          "prompt": "Compare Lin's blocks, Priya's two tens-chunks and Tyler's one 20-chunk: same26, different regrouping.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-A2-80",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Explain strategy for80÷5=16 using e.g.5×(10+6)=50+30.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-A2-68",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Explain strategy for68÷4=17, e.g.4×(10+7)=40+28.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-A2-91",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Explain91÷7=13 via7×10+7×3=70+21.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-A2-OPTIONAL",
+          "sourceActivity": "How Would You Divide?",
+          "prompt": "Source explicitly If you have time:84 students in groups of14 gives6 groups. Do not imply mandatory.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-A3-PLAY",
+          "sourceActivity": "OPTIONAL Compare Stage 4",
+          "prompt": "Activity3 explicitly optional: two pupils sort quotient cards from source blackline with two-digit divisors removed for G3, higher quotient wins a turn.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-A3-EXAMPLE",
+          "sourceActivity": "OPTIONAL Compare Stage 4",
+          "prompt": "Original comparison92÷4=23 vs72÷3=24, second larger. This math is tied to optional task.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare multiplication-up, place-value blocks and distributive split; teacher checks pupil explanations and preference.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L20-GATED",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original One More Division protected source task is not copied.",
           "answerType": "teacher",
           "expected": null
         }

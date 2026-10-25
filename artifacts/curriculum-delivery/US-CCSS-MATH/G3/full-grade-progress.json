@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 76,
+    "lessonsFullyReadyForStageD": 77,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 67,
+    "lessonsWithACExplicitGap": 66,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,7 +32,7 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 76,
+    "lessonsIndividuallyComparedToAllOriginalElements": 77,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
@@ -46,11 +46,11 @@
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
     "originalImagePixelFilesInspected": 21,
     "sourceElementsSemanticallyVerifiedForAuthoring": 1265,
-    "originalSvgGeometriesInspected": 80
+    "originalSvgGeometriesInspected": 81
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 76,
-    "firstUnclosedOrdinal": 77,
+    "lastConsecutiveReadyForStageDOrdinal": 77,
+    "firstUnclosedOrdinal": 78,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -3843,12 +3843,12 @@
       "unitNumber": 4,
       "lessonNumber": 20,
       "title": "Strategies for Dividing",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_ORIGINAL_STUDENT_TEACHER_QUOTIENTS_AND_LIN_SVG_VERIFIED",
+      "stageB": "SOURCE_SPECIFIC_RICHV2_THREE_78_DIV_3_MODELS_AND_OPTIONAL_COMPARE",
+      "stageC": "11_NUMERIC_ORACLES_13_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 5,
-      "fullyVerifiedSourceElements": 0,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L20.json",
       "stageD": "NOT_STARTED",
@@ -3862,9 +3862,11 @@
       "original2021FiguresWithoutAlt": 2,
       "original2021RelativeSvgReferences": 2,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-2021-source-to-first-party-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-academic-source-coverage-and-human-rubric-20261025.json",
+      "sourceMatchingMeasurementScope": "SOURCE_LIN_DIAGRAM_MATH_OPTIONAL_COMPARE_BOUNDARY_FIRSTPARTY"
     },
     {
       "gradeOrdinal": 78,
@@ -6383,11 +6385,11 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 76,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U04:L19",
+    "gradeOrdinal": 77,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U04:L20",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-76-2021-source-to-first-party-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-76-academic-source-coverage-and-human-rubric-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-2021-source-to-first-party-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-academic-source-coverage-and-human-rubric-20261025.json",
     "testsRun": false,
     "originalPdfRead": false,
     "stageD": "NOT_STARTED",
@@ -6395,8 +6397,8 @@
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 76,
-    "firstUnclosedGradeOrdinal": 77,
+    "lastClosedGradeOrdinal": 77,
+    "firstUnclosedGradeOrdinal": 78,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"

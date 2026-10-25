@@ -1309,6 +1309,9 @@
         @if(l.UnitNumber == 4 && l.LessonNumber == 19) {
             @await Html.PartialAsync("_Grade3Unit4Lesson19")
         }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 20) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson20")
+        }
         @if(l.SourceSubtasks.Count > 0) {
             <section class="panel" aria-label="Individual published source-aligned mathematical subtasks">
                 <h2>@(l.SourceSubtasks.All(q => q.AnswerType=="teacher") ? "Original public source: teacher-reviewed constructions and discussion" : "Original public source: individually checked mathematical subtasks")</h2>

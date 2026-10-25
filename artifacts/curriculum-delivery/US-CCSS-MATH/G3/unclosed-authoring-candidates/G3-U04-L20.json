@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-4/lesson-20/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-20/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "2021_ORIGINAL_STUDENT_TEACHER_QUOTIENTS_AND_LIN_SVG_VERIFIED",
     "goals": "Analyze strategies for representing and reasoning about division. Divide within 100 using strategies based on place value and properties of operations.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
     "teacherFacingSourceExtractedNotFullyRead": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "SOURCE_SPECIFIC_RICHV2_THREE_78_DIV_3_MODELS_AND_OPTIONAL_COMPARE",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "788da7b60854c78e7680ba869f5c6eb0d571a4c86fe16928c85f1c65ff89d409",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l20-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "11_NUMERIC_ORACLES_13_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "larger-number-division",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +43,9 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Ways to Divide with your teacher. Show the representation and explain how it meets the goal: Let’s use different strategies to divide.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "individualMathOracles": 11,
+    "teacherJudgementTasks": 13
   },
   "sourceElements": [
     {
@@ -50,9 +53,9 @@
       "sourceSection": "Warm-up: Number Talk: Multiplication and Division (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-4/lesson-20/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_MATH_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -61,9 +64,9 @@
       "sourceSection": "Activity 1: Ways to Divide (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-20/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_MATH_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -72,9 +75,9 @@
       "sourceSection": "Activity 2: How Would You Divide? (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-20/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_MATH_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -83,9 +86,9 @@
       "sourceSection": "Activity 3: Compare, Divide within 100 [OPTIONAL] (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-4/lesson-20/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_MATH_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -94,9 +97,9 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-4/lesson-20/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "FIRSTPARTY_SOURCE_MATH_MATCH",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     },
@@ -107,7 +110,7 @@
       "originalReference": "unit-4/lesson-20/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "GATED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -117,16 +120,16 @@
       "id": "G3-U04-L20-IMAGE-01",
       "observedAltText": "Base ten diagram. 7 tens and 8 ones with arrow pointing to three groups of 2 tens and 6 ones.",
       "originalReference": "unit-4/lesson-20/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "SVG_VISUALLY_INSPECTED_FIRSTPARTY_MODEL"
     }
   ],
   "sourceElementCounts": {
     "headings": 6,
     "imageDescriptions": 1,
-    "fullyVerified": 0
+    "fullyVerified": 4
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "20 objects are shared equally by 2 children. How many objects each?",
@@ -134,20 +137,20 @@
     "expected": "10"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Source Lin SVG visually inspected; original art not copied.",
+    "Full original optional physical Compare Stage4 card pack/student PDF not visually compared.",
+    "Gated One More Division original Cool-down unverified.",
+    "No compilation, runtime tests, Stage D, CI or academic approval."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-2021-source-to-first-party-evidence-20261025.json",
+  "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-academic-source-coverage-and-human-rubric-20261025.json"
 }
