@@ -74,7 +74,9 @@ public sealed class Grade3SourceCompanionGradingTests
         Assert.Equal(7,lesson.SourceSubtasks.Count(task=>task.AnswerType=="teacher"));
         Assert.Equal("yes-no",lesson.SourceSubtasks.Last().AnswerType);
         Assert.Contains(lesson.SourceSubtasks, task =>
-            task.Id=="G3-U01-L10-A2-01" && task.Prompt.Contains("TWELVE cards A–L"));
+            task.Id=="G3-U01-L10-A2-01" &&
+            task.SourceActivity.Contains("12 source cards A–L",StringComparison.OrdinalIgnoreCase) &&
+            task.Prompt.Contains("twelve-card A–L deck",StringComparison.OrdinalIgnoreCase));
         Assert.Contains("4 × 5", lesson.SourceSubtasks[6].Prompt);
         Assert.True(lesson.OriginalStudentTaskPdfRead);
         Assert.True(lesson.OriginalTeacherBlacklineMasterPdfRead);
@@ -176,58 +178,75 @@ public sealed class Grade3SourceCompanionGradingTests
     [Fact]
     public void LessonThirteenCapturesNineMatchesAndSevenEquationWritingContexts()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U01:L13",out var lesson));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L13",out var lesson));
+        Assert.NotNull(lesson);
         Assert.Equal(16,lesson!.SourceSubtasks.Count);
-        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
-        foreach(var q in lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-equation")){
-            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
+        Assert.Equal(9,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A1-")));
+        Assert.Equal(7,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A2-")));
+        Assert.All(lesson.SourceSubtasks,q=>{
+            Assert.Equal("multiplication-equation-either-order",q.AnswerType);
+            var graded=Grade3SourceCompanionCatalogue.Grade(q,q.Expected);
+            Assert.True(graded.NumericCorrect);
+            Assert.True(graded.TeacherReview);
             Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"999").NumericCorrect);
-        }
-        Assert.Equal("multiplication-equation",lesson.IndependentPractice!.AnswerType);
-        Assert.Equal("multiplication-equation",lesson.OriginalEdulyticsCoolDown!.AnswerType);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        });
+        Assert.Equal("multiplication-equation-either-order",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal("multiplication-equation-either-order",lesson.OriginalEdulyticsCoolDown!.AnswerType);
+        Assert.True(lesson.ReadyForStageD); // Only A/B/C, not academic approval.
     }
-
     [Fact]
     public void LessonFourteenDistinguishesUnknownGroupCountFromProductAndBlocksUnreadDiagrams()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U01:L14",out var lesson));
-        Assert.Equal(10,lesson!.SourceSubtasks.Count);
-        Assert.Equal(3,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L14",out var lesson));
+        Assert.NotNull(lesson);
+        Assert.Equal(20,lesson!.SourceSubtasks.Count);
+        Assert.Equal(4,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-WU-")));
+        Assert.Equal(6,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.Equal(5,lesson.SourceSubtasks.Count(q=>q.AnswerType=="multiplication-unknown-equation"));
+        Assert.Equal(9,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
         Assert.Contains("□ × 5 = 35",lesson.IndependentPractice!.Prompt);
         Assert.DoesNotContain("5 × □ = 35",lesson.IndependentPractice.Prompt);
+        foreach(var card in lesson.SourceSubtasks.Where(q=>q.AnswerType=="teacher"))
+        {
+            Assert.Null(Grade3SourceCompanionCatalogue.Grade(card,"7").NumericCorrect);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(card,"7").TeacherReview);
+        }
+        var sourceUnknown=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-01-SYMBOL");
+        Assert.Equal("multiplication-unknown-equation",sourceUnknown.AnswerType);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(sourceUnknown,sourceUnknown.Expected).NumericCorrect);
         var packs=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-02");
         Assert.True(Grade3SourceCompanionCatalogue.Grade(packs,"9").NumericCorrect);
         Assert.False(Grade3SourceCompanionCatalogue.Grade(packs,"5").NumericCorrect);
-        var unknownProduct=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-03");
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(unknownProduct,"10").NumericCorrect);
-        var incompletePicture=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-01");
-        Assert.Null(Grade3SourceCompanionCatalogue.Grade(incompletePicture,"30").NumericCorrect);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        var product=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L14-A2-03");
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(product,"10").NumericCorrect);
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
     public void LessonFifteenKeepsAllTwelveSourceProblemsAndThreeUnknownRoles()
     {
-        // Unexecuted Stage C source contracts.
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U01:L15",out var lesson));
-        Assert.Equal(12,lesson!.SourceSubtasks.Count);
-        var expected=new[]{10,20,30,40,3,12,6,8,16,2,45,10};
-        for(var i=0;i<expected.Length;i++){
-            var q=lesson.SourceSubtasks[i];
-            Assert.Equal("integer",q.AnswerType);
-            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,expected[i].ToString()).NumericCorrect);
-            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,(expected[i]+1).ToString()).NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L15",out var lesson));
+        Assert.NotNull(lesson);
+        Assert.Equal(17,lesson!.SourceSubtasks.Count);
+        Assert.Equal(14,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
+        Assert.Equal(3,lesson.SourceSubtasks.Count(q=>q.AnswerType=="multiplication-unknown-equation"));
+        foreach(var q in lesson.SourceSubtasks.Where(q=>q.AnswerType=="integer"))
+        {
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,(int.Parse(q.Expected!)+1).ToString()).NumericCorrect);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).TeacherReview);
+        }
+        foreach(var q in lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-unknown-equation"))
+        {
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"1x1=1").NumericCorrect);
         }
         Assert.Equal("8",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-01").Expected);
         Assert.Equal("16",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-02").Expected);
         Assert.Equal("2",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-A2-03").Expected);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        Assert.Equal("40",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-CD-01").Expected);
+        Assert.Equal("5",lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L15-CD-02").Expected);
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
     public void LessonSixteenConstructionCannotPassAsAnUnrelatedInteger()
     {
@@ -260,42 +279,49 @@ public sealed class Grade3SourceCompanionGradingTests
     [Fact]
     public void LessonEighteenSeparatesWrittenExpressionsFromTeacherObservedArrayDrawings()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U01:L18",out var lesson));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L18",out var lesson));
+        Assert.NotNull(lesson);
         Assert.Equal(10,lesson!.SourceSubtasks.Count);
+        Assert.Equal(1,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
         var expected=new[]{"3x5","4x5","2x6","2x10"};
-        var expressionTasks=lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-expression").ToArray();
-        Assert.Equal(4,expressionTasks.Length);
-        for(var i=0;i<expressionTasks.Length;i++){
-            Assert.Equal(expected[i],expressionTasks[i].Expected);
-            Assert.True(Grade3SourceCompanionCatalogue.Grade(expressionTasks[i],expected[i]).NumericCorrect);
-            Assert.False(Grade3SourceCompanionCatalogue.Grade(expressionTasks[i],
-                (i+1==3?"12":"15")).NumericCorrect);
+        var expr=lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-expression-either-order").ToArray();
+        Assert.Equal(4,expr.Length);
+        for(var i=0;i<expr.Length;i++)
+        {
+            Assert.Equal(expected[i],expr[i].Expected);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(expr[i],expected[i]).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(expr[i],"15").NumericCorrect);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(expr[i],expected[i]).TeacherReview);
         }
-        Assert.Equal("multiplication-expression",lesson.IndependentPractice!.AnswerType);
+        Assert.Equal(5,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.Equal("multiplication-expression-either-order",lesson.IndependentPractice!.AnswerType);
         Assert.Equal("teacher",lesson.OriginalEdulyticsCoolDown!.AnswerType);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(lesson.OriginalEdulyticsCoolDown,"28").NumericCorrect);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
     public void LessonNineteenRequiresCompleteEquationsForTreeArrays()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U01:L19",out var lesson));
-        Assert.Equal(9,lesson!.SourceSubtasks.Count);
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U01:L19",out var lesson));
+        Assert.NotNull(lesson);
+        Assert.Equal(12,lesson!.SourceSubtasks.Count);
+        Assert.Equal(5,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
+        Assert.Equal(3,lesson.SourceSubtasks.Count(q=>q.AnswerType=="multiplication-unknown-equation"));
+        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="multiplication-equation"));
+        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
         Assert.Equal("multiplication-equation",lesson.IndependentPractice!.AnswerType);
-        var originalTree=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A2-01");
-        var backyardTree=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A2-02");
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(originalTree,"5 × 9 = 45").NumericCorrect);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(backyardTree,"8 = 2 × 4").NumericCorrect);
-        Assert.False(Grade3SourceCompanionCatalogue.Grade(originalTree,"45").NumericCorrect);
-        Assert.False(Grade3SourceCompanionCatalogue.Grade(backyardTree,"8").NumericCorrect);
+        var original=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A2-01");
+        var backyard=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A2-02");
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(original,"5 × 9 = 45").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(backyard,"8 = 2 × 4").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(original,"45").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(backyard,"8").NumericCorrect);
+        foreach(var q in lesson.SourceSubtasks.Where(q=>q.AnswerType=="multiplication-unknown-equation"))
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
         Assert.Null(Grade3SourceCompanionCatalogue.Grade(
             lesson.SourceSubtasks.Single(q=>q.Id=="G3-U01-L19-A1-COCRAFT"),"35").NumericCorrect);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Theory]
     [InlineData("2x5=10;5x2=10",true)]
     [InlineData("5 × 2 = 10; 2 × 5 = 10",true)]
@@ -351,72 +377,92 @@ public sealed class Grade3SourceCompanionGradingTests
     [Fact]
     public void SecondUnitAreaIntroductionRequiresOriginalGeometryAndTeacherReview()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U02:L01",out var lesson));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U02:L01",out var lesson));
+        Assert.NotNull(lesson);
         Assert.Equal(10,lesson!.SourceSubtasks.Count);
-        Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
-        Assert.Equal(8,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(
-            lesson.SourceSubtasks[1],"12").NumericCorrect);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(
-            lesson.SourceSubtasks[2],"20").NumericCorrect);
-        Assert.Null(Grade3SourceCompanionCatalogue.Grade(
-            lesson.SourceSubtasks[3],"1").NumericCorrect);
+        Assert.Equal(3,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
+        Assert.Equal(7,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        Assert.Equal(new[]{"8","12","20"},lesson.SourceSubtasks.Take(3).Select(q=>q.Expected));
+        foreach(var q in lesson.SourceSubtasks.Take(3))
+        {
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"999").NumericCorrect);
+        }
+        foreach(var q in lesson.SourceSubtasks.Skip(3))
+            Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"12").NumericCorrect);
         Assert.Equal("teacher",lesson.IndependentPractice!.AnswerType);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
-    public void UnitTwoLessonTwoKeepsSixPublisherFiguresUnscoredWithoutOriginalImages()
+    public void UnitTwoLessonTwoChecksSixNowInspectedFigureAreasButNeverAutoGradesTileDrawings()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U02:L02",out var lesson));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U02:L02",out var lesson));
+        Assert.NotNull(lesson);
         Assert.Equal(13,lesson!.SourceSubtasks.Count);
         Assert.Equal(6,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A2-")));
-        Assert.All(lesson.SourceSubtasks,q=>Assert.Equal("teacher",q.AnswerType));
-        Assert.All(lesson.SourceSubtasks,q=>
-            Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"20").NumericCorrect));
+        var publishedFigureCounts=new[]{"9","18","13","30","36","21"};
+        var numerical=lesson.SourceSubtasks.Where(q=>q.Id.Contains("-A2-")).ToArray();
+        Assert.Equal(publishedFigureCounts,numerical.Select(q=>q.Expected));
+        for(var i=0;i<numerical.Length;i++)
+        {
+            Assert.Equal("integer",numerical[i].AnswerType);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(numerical[i],publishedFigureCounts[i]).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(numerical[i],"999").NumericCorrect);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(numerical[i],publishedFigureCounts[i]).TeacherReview);
+        }
+        Assert.Equal(7,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        foreach(var open in lesson.SourceSubtasks.Where(q=>q.AnswerType=="teacher"))
+            Assert.Null(Grade3SourceCompanionCatalogue.Grade(open,"12").NumericCorrect);
         Assert.Equal("integer",lesson.IndependentPractice!.AnswerType);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice,"12").NumericCorrect);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
-    public void UnitTwoLessonThreeProtectsFourPartiallyTiledTasksAndRectangleCardSort()
+    public void UnitTwoLessonThreeProtectsFourInspectedNumericalTileCountsAndTeacherCardSort()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U02:L03",out var lesson));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U02:L03",out var lesson));
+        Assert.NotNull(lesson);
         Assert.Equal(14,lesson!.SourceSubtasks.Count);
-        Assert.Equal(4,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A1-0")));
         Assert.Equal(4,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-WU-")));
-        Assert.All(lesson.SourceSubtasks,q=>Assert.Equal("teacher",q.AnswerType));
-        var areaEight = lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L03-A2-EIGHT");
-        Assert.Null(Grade3SourceCompanionCatalogue.Grade(areaEight,"8").NumericCorrect);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(
-            lesson.SourceBasedCheck!,"8").NumericCorrect);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(
-            lesson.IndependentPractice!,"24").NumericCorrect);
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        var numeric=lesson.SourceSubtasks.Where(q=>q.Id.Contains("-A1-0")).ToArray();
+        Assert.Equal(new[]{"25","15","24","12"},numeric.Select(q=>q.Expected));
+        foreach(var q in numeric)
+        {
+            Assert.Equal("integer",q.AnswerType);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).NumericCorrect);
+            Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"999").NumericCorrect);
+            Assert.True(Grade3SourceCompanionCatalogue.Grade(q,q.Expected).TeacherReview);
+        }
+        Assert.Equal(10,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
+        var draw=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L03-A2-EIGHT");
+        Assert.Null(Grade3SourceCompanionCatalogue.Grade(draw,"8").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.SourceBasedCheck!,"8").NumericCorrect);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(lesson.IndependentPractice!,"24").NumericCorrect);
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
-    public void UnitTwoLessonFourNeverGuessesThirdAreaOrSpoilsHiddenRectangleTask()
+    public void UnitTwoLessonFourUsesInspectedThirdAreaButKeepsInfoGapTeacherReviewed()
     {
-        Assert.True(Grade3SourceCompanionCatalogue.TryGet(
-            "PED:US-CCSS-MATH:G3:U02:L04",out var lesson));
+        Assert.True(Grade3SourceCompanionCatalogue.TryGet("PED:US-CCSS-MATH:G3:U02:L04",out var lesson));
+        Assert.NotNull(lesson);
         Assert.Equal(11,lesson!.SourceSubtasks.Count);
+        Assert.Equal(8,lesson.SourceSubtasks.Count(q=>q.AnswerType=="integer"));
+        Assert.Equal(3,lesson.SourceSubtasks.Count(q=>q.AnswerType=="teacher"));
         var first=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L04-A2-01");
         var second=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L04-A2-02");
-        var unknown=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L04-A2-03");
+        var third=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L04-A2-03");
         var fourth=lesson.SourceSubtasks.Single(q=>q.Id=="G3-U02-L04-A2-04");
         Assert.True(Grade3SourceCompanionCatalogue.Grade(first,"18").NumericCorrect);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(second,"30").NumericCorrect);
+        Assert.Equal("60",third.Expected);
+        Assert.True(Grade3SourceCompanionCatalogue.Grade(third,"60").NumericCorrect);
+        Assert.False(Grade3SourceCompanionCatalogue.Grade(third,"30").NumericCorrect);
         Assert.True(Grade3SourceCompanionCatalogue.Grade(fourth,"45").NumericCorrect);
-        Assert.Null(Grade3SourceCompanionCatalogue.Grade(unknown,"30").NumericCorrect);
         Assert.Equal(2,lesson.SourceSubtasks.Count(q=>q.Id.Contains("-A1-")));
-        Assert.True(lesson.ReadyForStageD); // A/B/C authoring closure; not Stage D or academic approval.
+        foreach(var q in lesson.SourceSubtasks.Where(q=>q.Id.Contains("-A1-")))
+            Assert.Null(Grade3SourceCompanionCatalogue.Grade(q,"60").NumericCorrect);
+        Assert.True(lesson.ReadyForStageD);
     }
-
     [Fact]
     public void UnitTwoLessonFiveKeepsSevenCardMatchesTeacherOnlyAndFiveDrawingAreaChecks()
     {
@@ -567,7 +613,7 @@ public sealed class Grade3SourceCompanionGradingTests
             {
                 Assert.False(string.IsNullOrWhiteSpace(question.Prompt));
                 Assert.Contains(question.AnswerType, new[]
-                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "multiplication-equation-either-order", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit", "place-value-parts" });
+                    { "teacher", "integer", "rational", "comparison", "clock-time", "multiplication-expression", "multiplication-equation", "multiplication-equation-either-order", "multiplication-expression-either-order", "commutative-equation-pair", "area-with-unit", "coverage-combination", "constrained-side-length", "rectangle-dimensions", "length-with-unit", "place-value-parts" });
                 if (question.AnswerType == "teacher")
                 {
                     Assert.Null(question.Expected);
@@ -624,6 +670,7 @@ public sealed class Grade3SourceCompanionGradingTests
                     "multiplication-expression" => "1x1",
                     "multiplication-equation" => "1x1=1",
                     "multiplication-equation-either-order" => "1x1=1",
+                    "multiplication-expression-either-order" => "1x1",
                     "commutative-equation-pair" => "1x2=2;2x1=2",
                     "area-with-unit" => "999 cm²",
                     "coverage-combination" => "0,0,0",
