@@ -25873,7 +25873,7 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "division-fluency",
       "independentPractice": {
@@ -25886,12 +25886,12 @@
         "answerType": "integer",
         "expected": "12"
       },
-      "openTeacherTask": "Work through the original lesson's activity Play Race to 1 with your teacher. Show the representation and explain how it meets the goal: You will develop fluency with dividing within 100.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "openTeacherTask": "Race to 1: Play with the original source starter numbers 12, 16, 18, 24, reroll divisor five, use recorded quotients or fresh starters, and finish at quotient 1.; Compare, Division: Use two-player comparison with teacher-approved division cards and explain winning quotient comparisons.",
+      "teacherReviewNote": "Individual public teacher/student 2021 HTML reviewed. Independent Edulytics source-specific learning and task rubrics updated; publisher visual/printed materials, physical tasks and gated Cool-down not certified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": true,
       "independentTeachingGuidance": {
         "sourceGoal": "Let’s play division games.",
         "sourceLearningGoals": "Practice dividing whole numbers within 100.",
@@ -25917,30 +25917,51 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U08-L11-STAGE-ABC-CANDIDATE-S1-TEACHER",
+          "id": "G3-U08-L11-EXPLICIT-NUMERIC-1",
           "sourceActivity": "Warm-up: Number Talk: Divide 48 (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Division Game Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "prompt": "Calculate 48 ÷ 2 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "24"
+        },
+        {
+          "id": "G3-U08-L11-EXPLICIT-NUMERIC-2",
+          "sourceActivity": "Warm-up: Number Talk: Divide 48 (10 minutes)",
+          "prompt": "Calculate 48 ÷ 3 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U08-L11-EXPLICIT-NUMERIC-3",
+          "sourceActivity": "Warm-up: Number Talk: Divide 48 (10 minutes)",
+          "prompt": "Calculate 48 ÷ 4 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "12"
+        },
+        {
+          "id": "G3-U08-L11-EXPLICIT-NUMERIC-4",
+          "sourceActivity": "Warm-up: Number Talk: Divide 48 (10 minutes)",
+          "prompt": "Calculate 48 ÷ 6 mentally and explain your method if asked.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U08-L11-ACTIVITY-TEACHER-1",
+          "sourceActivity": "Race to 1",
+          "prompt": "Play with the original source starter numbers 12, 16, 18, 24, reroll divisor five, use recorded quotients or fresh starters, and finish at quotient 1.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L11-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Play Race to 1 (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Division Game Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U08-L11-ACTIVITY-TEACHER-2",
+          "sourceActivity": "Compare, Division",
+          "prompt": "Use two-player comparison with teacher-approved division cards and explain winning quotient comparisons.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U08-L11-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Play Compare, Division (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Division Game Day.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
-        },
-        {
-          "id": "G3-U08-L11-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U08-L11-PUBLISHER-GATED-COOLDOWN",
+          "sourceActivity": "Cool-down: Reflect on Division Games (5 minutes)",
+          "prompt": "Original publisher reflection/assessment is gated and not independently inspected; teacher reviews source separately. First-party tasks are not claimed publisher copies.",
           "answerType": "teacher",
           "expected": null
         }
