@@ -10577,78 +10577,170 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "classroom-supplies-project",
+      "firstPartyFamily": "budget-word-problems",
       "independentPractice": {
-        "prompt": "Design a valid classroom-spending plan under a $1,000 cap and explain the exact total and remaining balance.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "An independent example list costs68 for work supplies,658 for books,230 for special and15 for games. How much in total?",
+        "answerType": "integer",
+        "expected": "971"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Create a different $1,000 class-supplies purchase plan with clear quantities, prices and a justified total.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "A shopping list totals971 within an original classroom budget1000. How much remains?",
+        "answerType": "integer",
+        "expected": "29"
       },
       "openTeacherTask": "Work through the original lesson's activity Make a Wish List with your teacher. Show the representation and explain how it meets the goal: You will use your understanding of estimation, rounding, and addition within 1,000 to solve a problem about a class wish list.",
-      "teacherReviewNote": "Source 3 student sections and 4 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Optional original source choice budget1000, discrepancy Warmup aquarium159 versus Activity1 aquarium150. Four source prices, six independently authored sample totals, seven teacher-open tasks. No unique original shopping answer.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s make a wish list for class supplies. Required Preparation CCSS Standards Addressing 3.NBT.A.1 3.NBT.A.2 Building Towards 3.NBT.A.1 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 15 min Lesson Synthesis 10 min Teacher Ref",
+        "sourceGoal": "Add and subtract within 1,000 to solve real-world problems. Round whole numbers to the nearest ten or hundred to solve problems.",
         "sourceLearningGoals": "Add and subtract within 1,000 to solve real-world problems. Round whole numbers to the nearest ten or hundred to solve problems.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Compare warm-up and Activity1 price source discrepancy: aquarium159 versus150.",
+          "Use all original Activity1 table prices to plan educational purchases with $1000, allowing duplicates.",
+          "Compute four category totals, exact grand total and leftover or overspend; examples are not source unique answers.",
+          "Compare another group's plan and mathematical differences by category and total."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s make a wish list for class supplies. Required Preparation CCSS Standards Addressing 3.NBT.A.1 3.NBT.A.2 Building Towards 3.NBT.A.1 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 15 min Lesson Synthesis 10 min Teacher Ref",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Teacher must accept different consistent affordable or analyzed-overbudget choices; 971 is only independent Edulytics sample."
       },
       "sourceBasedCheck": {
-        "prompt": "Create a spending plan no greater than $1,000 using source classroom-supplies prices; explain why it benefits the class.",
-        "answerType": "teacher",
-        "expected": null
+        "prompt": "What does the original Activity1 table price the class aquarium at?",
+        "answerType": "integer",
+        "expected": "150"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-21/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
+        "verified": "2021_ORIGINAL_ACTIVITY1_TABLE_NOT_WARMUP",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L21-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: School Supplies List (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Classroom Supplies (optional).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L21-SOURCE-MARKERS",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Original Activity1 price of a box of25 markers",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U03-L21-SOURCE-NATURE",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Original set of nature books price",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L21-SOURCE-AQUARIUM",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Original Activity1 aquarium price (not the warmup display)",
+          "answerType": "integer",
+          "expected": "150"
+        },
+        {
+          "id": "G3-U03-L21-SOURCE-ZOO",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Original zoo trip price",
+          "answerType": "integer",
+          "expected": "350"
+        },
+        {
+          "id": "G3-U03-L21-EXAMPLE-SUPPLIES",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "First-party plan supplies5+8+40+15",
+          "answerType": "integer",
+          "expected": "68"
+        },
+        {
+          "id": "G3-U03-L21-EXAMPLE-BOOKS",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "First-party plan books250+400+8",
+          "answerType": "integer",
+          "expected": "658"
+        },
+        {
+          "id": "G3-U03-L21-EXAMPLE-SPECIAL",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "First-party plan aquarium150+carpet65+fishfood15",
+          "answerType": "integer",
+          "expected": "230"
+        },
+        {
+          "id": "G3-U03-L21-EXAMPLE-GAMES",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "First-party plan board game",
+          "answerType": "integer",
+          "expected": "15"
+        },
+        {
+          "id": "G3-U03-L21-EXAMPLE-TOTAL",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "First-party total of category amounts68+658+230+15",
+          "answerType": "integer",
+          "expected": "971"
+        },
+        {
+          "id": "G3-U03-L21-EXAMPLE-CHANGE",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "First-party budget1000 less total971",
+          "answerType": "integer",
+          "expected": "29"
+        },
+        {
+          "id": "G3-U03-L21-NOTICE",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Original warm-up school supplies list includes aquarium price159, while task Activity1 list prices the aquarium150. Discuss discrepancy explicitly; do not silently overwrite.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L21-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Make a Wish List (25 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Classroom Supplies (optional).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L21-FREE-CHOICE",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Create an arbitrary wish list for the source1000 budget; repeated items are permitted. No single correct purchase list.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L21-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: What's on Your List? (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Classroom Supplies (optional).” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L21-CATEGORIES",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Compute totals for supplies, books/maps, special items and puzzles/games on the pupil's own choices.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L21-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L21-BALANCE",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Compare total with1000, determine leftover OR overspend based on arbitrary choice and justify using estimation and exact sum.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L21-COLLABORATE",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Trade lists, explain item value and compare each category plus total spending difference.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L21-PRICE-BOUNDARY",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "Teacher decides how the source discrepant 159 versus150 aquarium displays are represented, retaining original provenance.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L21-OPTIONAL",
+          "sourceActivity": "Classroom Supplies",
+          "prompt": "The 2021 lesson is optional and does not provide a normal original publisher gated Cool-down for duplication.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "OPEN_PUPIL_BUDGET_NONUNIQUE_FIRSTPARTY_EXAMPLE_NOT_EXACT_WISHLIST"
     },
     {
       "ordinal": 58,

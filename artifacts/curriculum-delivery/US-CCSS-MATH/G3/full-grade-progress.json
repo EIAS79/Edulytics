@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 56,
+    "lessonsFullyReadyForStageD": 57,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 87,
+    "lessonsWithACExplicitGap": 86,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -49,8 +49,8 @@
     "originalSvgGeometriesInspected": 28
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 56,
-    "firstUnclosedOrdinal": 57,
+    "lastConsecutiveReadyForStageDOrdinal": 57,
+    "firstUnclosedOrdinal": 58,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -387,15 +387,10 @@
     {
       "ordinal": 57,
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L21",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L21.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-2021-source-evidence-20261025.json"
     },
     {
       "ordinal": 58,
@@ -3248,10 +3243,10 @@
       "unitNumber": 3,
       "lessonNumber": 21,
       "title": "Classroom Supplies (optional)",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "LOCAL_2021_STUDENT_TEACHER_HTML_SOURCE_EXACT_PRICE_TABLE_159_VS_150_DISCREPANCY_AND_OPTIONAL_TASK_REVIEWED",
+      "stageB": "2021_SOURCE_SPECIFIC_CLASSROOM_BUDGET_FIRSTPARTY_NONUNIQUE_WISHLIST_RICH_V2",
+      "stageC": "FOUR_SOURCE_PRICE_ANCHORS_SIX_FIRSTPARTY_SUMS_SEVEN_TEACHER_OPEN_TASKS_TESTS_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -3267,9 +3262,11 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-2021-source-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-budget-teacher-rubric-20261025.json",
+      "sourceMatchingMeasurementScope": "2021_SOURCE_TEXT_EXACT_PRICE_AUTHORING_FIRSTPARTY_OPEN_BUDGET_NOT_UNIQUE_OUTPUT"
     },
     {
       "gradeOrdinal": 58,
@@ -6368,20 +6365,20 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 56,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L20",
+    "gradeOrdinal": 57,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U03:L21",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-56-2021-information-gap-source-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-56-info-gap-teacher-rubric-20261025.json",
-    "originalPublisherCardData": "UNVERIFIED",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-2021-source-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-57-budget-teacher-rubric-20261025.json",
     "testsRun": false,
     "stageD": "NOT_STARTED",
+    "originalPdfRead": false,
     "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means Stage A-C authored and mapped; not a test run, publisher artwork copy, deployed lesson or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 56,
-    "firstUnclosedGradeOrdinal": 57,
+    "lastClosedGradeOrdinal": 57,
+    "firstUnclosedGradeOrdinal": 58,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"

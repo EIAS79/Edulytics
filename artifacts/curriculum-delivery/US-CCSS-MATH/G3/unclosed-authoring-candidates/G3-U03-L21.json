@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-3/lesson-21/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-21/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_STUDENT_TEACHER_HTML_SOURCE_EXACT_PRICE_TABLE_159_VS_150_DISCREPANCY_AND_OPTIONAL_TASK_REVIEWED",
     "goals": "Add and subtract within 1,000 to solve real-world problems. Round whole numbers to the nearest ten or hundred to solve problems.",
     "sourceHeadingsCount": 4,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "a2e7948721915a6275d7e87623ae30876179810bbabb04d82a493d5a3f07efa3",
+    "prepSha256": "ce18187dffaf65ff8d93494fbcfcb3bb0d9797834064abb2d20431b8b1fbee23"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "2021_SOURCE_SPECIFIC_CLASSROOM_BUDGET_FIRSTPARTY_NONUNIQUE_WISHLIST_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +31,12 @@
     "existingSourceBodyHash": "c5844c16777e6e34dadac5b10cbfaa1b9ef27896bac4543b57a7a126c4e21ad4",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l21-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson21.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "FOUR_SOURCE_PRICE_ANCHORS_SIX_FIRSTPARTY_SUMS_SEVEN_TEACHER_OPEN_TASKS_TESTS_NOT_RUN",
     "family": "classroom-supplies-project",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "teacher",
@@ -42,52 +46,54 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Make a Wish List with your teacher. Show the representation and explain how it meets the goal: Let’s make a wish list for class supplies. Required Preparation CCSS Standards Addressing 3.NBT.A.1 3.NBT.A.2 Building Towards 3.NBT.A.1 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 25 min Activity 2 15 min Lesson Synthesis 10 min Teacher Ref",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceNumericChecks": 4,
+    "firstPartyExampleChecks": 6,
+    "teacherTasks": 7,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson21BudgetSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L21-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: School Supplies List (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-21/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WARMUP",
+      "source": "Source example product prices incl aquarium159",
+      "mode": "TEACHER_NOTICE_WITH_DISCREPANCY",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
     },
     {
-      "id": "G3-U03-L21-HEADING-02",
-      "sourceSection": "Activity 1: Make a Wish List (25 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-21/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "PRICE-TABLE",
+      "source": "Source Activity1 classroom shopping prices incl aquarium150",
+      "mode": "SOURCE_PRICE_ANCHORS",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
     },
     {
-      "id": "G3-U03-L21-HEADING-03",
-      "sourceSection": "Activity 2: What's on Your List? (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-21/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WISHLIST",
+      "source": "Original $1000 budget, unlimited valid purchase quantity choices",
+      "mode": "FIRSTPARTY_NONUNIQUE_EXAMPLE_TEACHER_OPEN",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
     },
     {
-      "id": "G3-U03-L21-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-21/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "CATEGORIES",
+      "source": "Four separate category subtotals",
+      "mode": "FOUR_INDEPENDENT_EXAMPLE_SUMS",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "REMAINDER",
+      "source": "Leftover or over budget",
+      "mode": "FIRSTPARTY_1000_MINUS_971_EXAMPLE",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
+    },
+    {
+      "key": "PEER",
+      "source": "Share and compare spending by category/total",
+      "mode": "TEACHER_REVIEW",
+      "semanticallyAccountedFor": true,
+      "publisherArtCopied": false
     }
   ],
   "images": [],
@@ -102,20 +108,18 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original student PDF not read but optional lesson's public teacher/student HTML task price table reviewed.",
+    "Open budget choices and peer comparison not machine certifiable; no unique publisher wish list output.",
+    "Runtime tests/Stage D/CI/teacher approval/production not executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "2021_SOURCE_TEXT_EXACT_PRICE_AUTHORING_FIRSTPARTY_OPEN_BUDGET_NOT_UNIQUE_OUTPUT"
 }
