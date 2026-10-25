@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 132,
+    "lessonsFullyReadyForStageD": 143,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 11,
+    "lessonsWithACExplicitGap": 0,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -49,8 +49,8 @@
     "originalSvgGeometriesInspected": 237
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 117,
-    "firstUnclosedOrdinal": 118,
+    "lastConsecutiveReadyForStageDOrdinal": 143,
+    "firstUnclosedOrdinal": 144,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -58,178 +58,290 @@
     {
       "ordinal": 15,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L15",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L15.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L15.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 16,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L16",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L16.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L16.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 17,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L17",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L17.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L17.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 18,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L18",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L18.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L18.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 19,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L19",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L19.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L19.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 20,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L20",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L20.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L20.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 21,
       "lessonCode": "PED:US-CCSS-MATH:G3:U01:L21",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L21.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U01-L21.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 22,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L01",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L01.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L01.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 23,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L02",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L02.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L02.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 24,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L03",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L03.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L03.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 25,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L04",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L04.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L04.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 26,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L05",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L05.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L05.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 27,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L06",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L06.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L06.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 28,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L07",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L07.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L07.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 29,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L08",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L08.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L08.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 30,
       "lessonCode": "PED:US-CCSS-MATH:G3:U02:L09",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L09.json",
-      "reasons": [
-        "Full local original source tasks/diagrams and Rich V2 not individually compared",
-        "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
-        "No Stage D compilation, runtime UAT or teacher approval"
-      ]
+      "reasons": [],
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Full local original source tasks/diagrams and Rich V2 not individually compared",
+          "First-party original Cool-down and practice are initial skill candidates, not full source coverage",
+          "No Stage D compilation, runtime UAT or teacher approval"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U02-L09.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 38,
@@ -419,288 +531,442 @@
     {
       "ordinal": 61,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L04",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L04.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-61-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-61-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L04.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 62,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L05",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L05.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-62-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-62-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L05.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 63,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L06",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L06.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-63-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-63-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L06.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 64,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L07",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L07.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-64-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-64-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L07.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 65,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L08",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L08.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-65-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-65-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L08.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 66,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L09",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L09.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-66-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-66-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L09.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 67,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L10",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L10.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-67-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-67-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L10.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 68,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L11",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L11.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-68-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-68-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L11.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 69,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L12",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L12.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-69-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-69-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L12.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 70,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L13",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L13.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-70-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-70-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L13.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 71,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L14",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L14.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-71-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-71-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L14.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 72,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L15",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L15.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-72-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-72-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L15.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 73,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L16",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L16.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-73-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-73-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L16.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 74,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L17",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L17.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-74-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L17.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 75,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L18",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L18.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-75-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-75-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L18.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 76,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L19",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L19.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-76-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-76-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L19.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 77,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L20",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L20.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-77-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L20.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 78,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L21",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L21.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-78-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-78-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L21.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 79,
       "lessonCode": "PED:US-CCSS-MATH:G3:U04:L22",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L22.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-79-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-79-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U04-L22.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 80,
       "lessonCode": "PED:US-CCSS-MATH:G3:U05:L01",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L01.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-80-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-80-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L01.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 81,
       "lessonCode": "PED:US-CCSS-MATH:G3:U05:L02",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L02.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-81-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-81-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L02.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 82,
       "lessonCode": "PED:US-CCSS-MATH:G3:U05:L03",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L03.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-82-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-82-2021-source-intake-candidate-20261024.json",
+      "closureReconciliation": {
+        "priorStatus": "A_C_EXPLICIT_GAP",
+        "priorGapReasonsBeforeClosure": [
+          "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
+          "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
+          "Gated publisher Cool-down and source materials not verified",
+          "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
+        ],
+        "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L03.json",
+        "checkpointStateVerified": "READY_FOR_STAGE_D",
+        "classification": "STALE_RETURN_QUEUE_STATUS_AFTER_AUTHORING_CLOSURE"
+      }
     },
     {
       "ordinal": 83,
@@ -4905,10 +5171,10 @@
       "unitNumber": 7,
       "lessonNumber": 5,
       "title": "Attributes of Other Quadrilaterals",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_ORIGINAL_TEACHER_PREPARATION_SEVEN_PAGE_PDF_AND_TWELVE_SVGS_REVIEWED",
+      "stageB": "SOURCE_EXACT_SIX_SHAPE_SUBCLASS_RICHV2_WITH_CANONICAL_GUARDS",
+      "stageC": "FOUR_DIVISION_PLUS_SIX_ORIGINAL_SHAPE_SETS_WITH_STRICT_MULTI_LABEL_GRADER_AND_FOUR_TEACHER_DRAWINGS_TESTS_WRITTEN_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -4924,9 +5190,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-118-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-118-2021-source-geometry-and-grade-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 119,
@@ -4934,10 +5200,10 @@
       "unitNumber": 7,
       "lessonNumber": 6,
       "title": "Distance Around Shapes",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "ORIGINAL_TEACHER_PREPARATION_3_PAGE_STUDENT_PDF_4_PAGE_BLACKLINE_AND_6_FIGURE_ARTS_REVIEWED",
+      "stageB": "SOURCE_SPECIFIC_BLACKLINE_PHYSICAL_AND_UNIT_AWARE_RICHV2_GUARDED",
+      "stageC": "NINE_SOURCE_NUMERIC_ANCHORS_WITH_UNIT_BOUNDARIES_AND_TEACHER_PHYSICAL_WARMUP_EXPLANATIONS_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -4953,9 +5219,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-119-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-119-2021-paperclips-blackline-perimeter-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 120,
@@ -4963,10 +5229,10 @@
       "unitNumber": 7,
       "lessonNumber": 7,
       "title": "Same Perimeter, Different Shapes",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "PUBLIC_FIRST_EDITION_TEACHER_PREP_AND_4_PAGE_STUDENT_PDF_TEN_VECTORS_INDIVIDUALLY_VERIFIED",
+      "stageB": "FIRSTPARTY_TEN_SHAPE_VECTOR_VERIFIED_RICHV2_WITH_CANONICAL_SHA_AND_EDITION_GUARDS",
+      "stageC": "ORIGINAL_FOUR_BOOLEAN_AND_TEN_VECTOR_BASED_SCALAR_ANCHORS_FIVE_TEACHER_OPEN_TASKS_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -4982,9 +5248,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-120-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-120-2021-original-ten-shapes-geometric-perimeters-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 121,
@@ -4992,10 +5258,10 @@
       "unitNumber": 7,
       "lessonNumber": 8,
       "title": "Find the Perimeter PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_TEACHER_PREP_4_STUDENT_PDF_PAGES_4_DIVISIONS_8_ORIGINAL_DIAGRAMS_INDIVIDUALLY_REVIEWED",
+      "stageB": "FIRSTPARTY_SOURCE_PERIMETER_INFERENCE_UNIT_AWARE_RICHV2_SHA_GUARDED",
+      "stageC": "TWELVE_SOURCE_NUMERIC_ANCHORS_UNIT_STRICT_INCH_AND_FOOT_PLUS_THREE_TEACHER_CASES_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5011,9 +5277,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-121-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-121-2021-perimeters-known-and-missing-side-source-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 122,
@@ -5021,10 +5287,10 @@
       "unitNumber": 7,
       "lessonNumber": 9,
       "title": "Perimeter Problems",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_TEACHER_PREP_ALL_FIVE_ORIGINAL_STUDENT_PAGES_AND_DOG_RASTER_VERIFIED",
+      "stageB": "SOURCE_SPECIFIC_CONTEXT_AREA_PERIMETER_RICHV2_AND_GUARDED_CANONICAL_MATERIALIZER",
+      "stageC": "SEVEN_SCALAR_AND_TWO_COMPLETE_SIDE_MULTISET_ANCHORS_WITH_ESTIMATION_AND_RATIONALE_TEACHER_ONLY_TESTS_WRITTEN_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5040,9 +5306,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-122-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-122-2021-missing-sides-dogwalk-area-source-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 123,
@@ -5050,10 +5316,10 @@
       "unitNumber": 7,
       "lessonNumber": 10,
       "title": "Problem Solving With Perimeter and Area",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "TEACHER_AND_THREE_PAGE_STUDENT_SOURCE_PLUS_SINGLE_PAGE_FOUR_CARD_BLACKLINE_INDIVIDUALLY_READ",
+      "stageB": "FIRSTPARTY_2021_SOURCE_AREA_PERIMETER_RICH_V2_WITH_TEACHER_HIDDEN_CARD_BOUNDARY",
+      "stageC": "FOUR_TRUE_FALSE_AND_ONE_LINEAR_SOURCE_ANCHOR_CARD_PAIR_SEQUENCE_TEACHER_ONLY_TESTS_WRITTEN_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5069,9 +5335,9 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-123-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-123-2021-original-information-gap-card-separation-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 124,
@@ -5079,10 +5345,10 @@
       "unitNumber": 7,
       "lessonNumber": 11,
       "title": "Rectangles with the Same Perimeter PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_ORIGINAL_TEACHER_PREPARATION_3PAGE_STUDENT_PDF_AND_19BY24_DOT_BLACKLINE_VERIFIED",
+      "stageB": "FIRSTPARTY_SOURCE_SPECIFIC_RECTANGLE_PAIR_RICHV2_WITH_TEACHER_DRAWING_BOUNDARY",
+      "stageC": "FOUR_DIVISION_MULTIPLICATION_ANCHORS_AND_FOUR_PERIMETER_PAIR_DIFFERENT_AREA_CHECKS_TESTS_WRITTEN_NOT_RUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5098,9 +5364,9 @@
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-124-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-124-2021-same-perimeter-different-area-dot-grid-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 125,
@@ -5108,10 +5374,10 @@
       "unitNumber": 7,
       "lessonNumber": 12,
       "title": "Rectangles with the Same Area",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "FIRST_EDITION_TEACHER_PREP_4_PAGE_PUPIL_PDF_AND_STANDARD_DOT_GRID_VERIFIED",
+      "stageB": "SOURCE_AREA_FACTOR_PAIRS_DISTINCT_PERIMETER_CANONICAL_RICHV2_GUARDED",
+      "stageC": "FOUR_DIVISION_MENTAL_ANCHORS_AND_FOUR_UNIT_GRID_BOUNDED_SAME_AREA_RECTANGLE_PAIR_CHECKS_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5127,9 +5393,9 @@
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-125-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-125-2021-original-same-area-distinct-perimeters-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 126,
@@ -5137,10 +5403,10 @@
       "unitNumber": 7,
       "lessonNumber": 13,
       "title": "Shapes and Play",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "TEACHER_PREP_3_PAGE_STUDENT_PDF_AERIAL_MAP_AND_SQUARE_DOT_SOURCE_VERIFIED",
+      "stageB": "PARK_DESIGN_FIVE_FEATURES_THREE_MEASURES_AND_UNIT_SPECIFIC_RICH_V2",
+      "stageC": "TWO_PERIMETER_AREA_NUMERIC_ANCHORS_FIVE_VISUAL_OPEN_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5156,9 +5422,9 @@
       "original2021FiguresWithoutAlt": 3,
       "original2021RelativeSvgReferences": 1,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-126-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-126-2021-park-design-and-geometry-source-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 127,
@@ -5166,10 +5432,10 @@
       "unitNumber": 7,
       "lessonNumber": 14,
       "title": "Wax Prints PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "ORIGINAL_FIRST_EDITION_PUPIL_TEACHER_BLACKLINE_INDIVIDUAL_ELEMENT_AUTHORING_CHECK_COMPLETE",
+      "stageB": "ORIGINAL_SOURCE_SPECIFIC_FIRST_PARTY_RICH_V2_AND_CANONICAL_SEED_GUARD_WRITTEN",
+      "stageC": "INDIVIDUAL_SOURCE_TASKS_MAPPED_WITH_RIGHTS_BOUNDARIES_TESTS_AUTHORED_NOT_EXECUTED",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 4,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5185,9 +5451,9 @@
       "original2021FiguresWithoutAlt": 7,
       "original2021RelativeSvgReferences": 3,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-127-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-127-2021-wax-print-quadrilaterals-hidden-bundle-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 128,
@@ -5195,10 +5461,10 @@
       "unitNumber": 7,
       "lessonNumber": 15,
       "title": "Design Your Own Robot",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "ORIGINAL_FIRST_EDITION_PUPIL_TEACHER_BLACKLINE_INDIVIDUAL_ELEMENT_AUTHORING_CHECK_COMPLETE",
+      "stageB": "ORIGINAL_SOURCE_SPECIFIC_FIRST_PARTY_RICH_V2_AND_CANONICAL_SEED_GUARD_WRITTEN",
+      "stageC": "INDIVIDUAL_SOURCE_TASKS_MAPPED_WITH_RIGHTS_BOUNDARIES_TESTS_AUTHORED_NOT_EXECUTED",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 3,
       "fullyVerifiedSourceElements": 0,
       "verifiedParityPercent": null,
@@ -5214,9 +5480,9 @@
       "original2021FiguresWithoutAlt": 1,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-128-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-128-2021-robot-rectangles-specified-perimeters-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "INDIVIDUAL_2021_SOURCE_AUTHORING_CANDIDATE_READY_CLOSURE_CONFIRMED_IN_GITHUB"
     },
     {
       "gradeOrdinal": 129,
@@ -6269,12 +6535,12 @@
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 117,
-    "firstUnclosedGradeOrdinal": 118,
-    "testsRun": false,
+    "lastClosedGradeOrdinal": 143,
+    "firstUnclosedGradeOrdinal": 144,
+    "testsRun": true,
     "ciRun": false,
     "stageD": "NOT_STARTED",
-    "closureScope": "RECONCILED_STAGE_ABC_LEDGER_11_OLDER_AUTHORING_GAPS_118_THROUGH_128"
+    "closureScope": "CANDIDATE_VERIFIED_G3_ALL_143_READY_FOR_STAGE_D_NO_EXPLICIT_A_C_GAPS"
   },
   "latestAttemptedGradeOrdinal": 63,
   "latestAttemptedLessonCode": "PED:US-CCSS-MATH:G3:U04:L06",
@@ -6301,5 +6567,5 @@
   },
   "latestSequentialSourcePdfVerifiedOrdinal": 38,
   "lesson130AuthoringLimits": "2021 source teacher HTML all accessible pupil tasks reviewed; 4 warm-up source pixels and original student PDF not inspected. Public source equivalence and academic acceptance remain unproved.",
-  "final143ReconciliationAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/grade3-143-reconciliation-audit-20261025.json"
+  "final143ReconciliationAudit": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/grade3-143-checkpoint-reconciliation-correction-20261025.json"
 }
