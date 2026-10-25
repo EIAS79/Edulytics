@@ -8406,7 +8406,7 @@
       "lessonCode": "PED:US-CCSS-MATH:G3:U03:L13",
       "unitNumber": 3,
       "lessonNumber": 13,
-      "title": "Multiples of 100 PLC Activity",
+      "title": "Multiples of 100",
       "edition": "2021 first edition",
       "localSourceRelativePath": "unit-3/lesson-13/lesson.html",
       "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-13/lesson.html",
@@ -8457,11 +8457,11 @@
         "Number line. Scale 300 to 400 by 100's. Evenly spaced tick marks.",
         "Number line. Scale 400 to 500 by 100's. Evenly spaced tick marks."
       ],
-      "originalStudentTaskPdfRead": false,
+      "originalStudentTaskPdfRead": true,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
-      "sourceToFirstPartyParityVerified": false,
+      "sourceElementMapVerified": true,
+      "sourceToFirstPartyParityVerified": true,
       "firstPartyFamily": "rounding-estimation",
       "independentPractice": {
         "prompt": "Which multiple of 100 is closer to 229: 200 or 300? Write it.",
@@ -8474,64 +8474,286 @@
         "expected": "500"
       },
       "openTeacherTask": "Work through the original lesson's activity About 100? Close to 100? with your teacher. Show the representation and explain how it meets the goal: You will reason about the position of numbers relative to your immediate multiples of 100, using number lines to do so.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original source title is Multiples of 100 (no PLC suffix). Four-page PDF includes marching-band estimate, seven-school count subjective 'about/close to' discussions, five groups A-E totaling25 number-line labels, and 364 between300 and400. School informal close labels are never numerically auto-keyed. Original publisher photograph and gated Cool-down are not copied; teacher reviews estimation and visual number lines. 481→500 independent Cool-down.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s explore multiples of 100 and how other numbers relate to them. Required Preparation CCSS Standards Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-",
+        "sourceGoal": "Let's explore multiples of 100 and how other numbers relate to them.",
         "sourceLearningGoals": "Recognize that numbers are often approximated by their closest multiples of 10 or 100. Understand the meaning of the nearest multiple of 100.",
         "teachingSteps": [
-          "Identify hundreds, tens and ones in each number.",
-          "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
-          "Check the answer by the inverse operation or a reasonable estimate."
+          "Use original photo for three defensible band estimates; avoid assigning an exact numerical answer.",
+          "Use seven school counts and allow justified different classifications for 'about' and 'close'.",
+          "Give each group one of source sets A–E and use number lines labelled by consecutive hundreds to record position and nearest hundred.",
+          "Study source 364 between300 and400; distances64/36 imply400 nearer.",
+          "Keep nearest hundred arithmetic separate from human analysis of school grouping, photographs and group-work process."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s explore multiples of 100 and how other numbers relate to them. Required Preparation CCSS Standards Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "No numeric threshold for informal close to, no claiming publication rights in marching-band photo, no copying publisher Cool-down."
       },
       "sourceBasedCheck": {
-        "prompt": "The source asks which hundred is closer to 364. Write that nearest hundred.",
+        "prompt": "The original source asks for the closest hundred to 364. Which multiple of100 is closer,300 or400?",
         "answerType": "integer",
         "expected": "400"
       },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-3/lesson-13/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_ONLY",
-        "figurePixelsInspected": false
+        "verified": "ORIGINAL_FOUR_PAGE_2021_PDF_AND_TEACHER_HTML_ALL_25_ASSIGNED_NUMBERS_REVIEWED",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U03-L13-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Estimation Exploration: Marching Band (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Multiples of 100 PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L13-GROUP-A-1",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group A source number 94: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-A-2",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group A source number 36: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-A-3",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group A source number 109: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-A-4",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group A source number 163: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-A-5",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group A source number 229: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-B-1",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group B source number 24: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-B-2",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group B source number 52: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-B-3",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group B source number 216: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-B-4",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group B source number 11: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-B-5",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group B source number 481: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "500"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-C-1",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group C source number 187: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-C-2",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group C source number 135: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-C-3",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group C source number 67: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-C-4",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group C source number 83: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-C-5",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group C source number 241: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-D-1",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group D source number 332: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-D-2",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group D source number 154: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-D-3",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group D source number 408: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-D-4",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group D source number 296: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-D-5",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group D source number 45: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "0"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-E-1",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group E source number 279: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "300"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-E-2",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group E source number 205: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "200"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-E-3",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group E source number 377: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-E-4",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group E source number 449: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L13-GROUP-E-5",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Group E source number 73: place it on the correct hundred-to-hundred number line and enter its mathematically nearest multiple of 100; explain the position with your teacher.",
+          "answerType": "integer",
+          "expected": "100"
+        },
+        {
+          "id": "G3-U03-L13-364-NEAREST",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "The original student source asks where 364 lies between 300 and 400. Which is its nearest multiple of 100?",
+          "answerType": "integer",
+          "expected": "400"
+        },
+        {
+          "id": "G3-U03-L13-BAND-ESTIMATE",
+          "sourceActivity": "Estimation Exploration: Marching Band",
+          "prompt": "View the original marching-band image with a teacher. Give three defensible estimates: too low, about right and too high, explaining whom you counted; no invented exact crowd size.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L13-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: About 100? Close to 100? (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Multiples of 100 PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L13-SCHOOL-ABOUT100",
+          "sourceActivity": "About 100? Close to 100?",
+          "prompt": "Use all seven original school counts (94,163,36,13,216,109,52). Sort about 100 versus not about 100, and explain your interpretation; not a uniquely numeric key.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L13-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Close to Multiples of 100 (25 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Multiples of 100 PLC Activity.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U03-L13-SCHOOL-CLOSE",
+          "sourceActivity": "About 100? Close to 100?",
+          "prompt": "Sort seven school counts as close to 0,100,200 or set aside. Discuss why 52 might be closer to 100 than 0 but not reasonably described as close to either in the original exercise.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U03-L13-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U03-L13-LINE-SETS",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Teacher assigns ONE original group A–E. Place each of its five source numbers on an appropriate 100-interval number line and mark/label its position. Comparisons require teacher inspection.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L13-364-BRACKET",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Explain that the two enclosing multiples of 100 for 364 are 300 and 400 and that distances 64 and 36 show 400 is nearer.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L13-GROUP-EXPLAIN",
+          "sourceActivity": "Close to Multiples of 100",
+          "prompt": "Complete an original-source table with each assigned group number and nearest multiple of 100; justify 449→400 and discuss examples 67 and135 both nearest100.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L13-SYNTH",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain how to use lower and upper 100 tick marks to find the nearest multiple without declaring every school value 'close to' its nearest endpoint.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L13-PHOTO",
+          "sourceActivity": "Original image and rights",
+          "prompt": "Original 2007 marching-band photograph attributed to Jason Crews / CC BY 2.0; view through teacher source, no original photo copied into Edulytics.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U03-L13-CD",
+          "sourceActivity": "Original publisher gated Cool-down",
+          "prompt": "The publisher's Locate, Label, and Name source Cool-down is not accessible; Edulytics independently asks round 481 to nearest hundred (500).",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceOriginalStudentTaskPdfSha256": "4859a2b40ce682b0a31be2db2d8b32785acc0dd233b8ac83ae2dec314457f3ae",
+      "sourceOriginalStudentTaskPdfPages": 4,
+      "sourceOriginalStudentTaskPdfUrl": "https://cms-assets.illustrativemathematics.org/6eqxtlu604llirl45yjla15cuo27",
+      "sourceToFirstPartyParityScope": "STATIC_2021_SOURCE_SEMANTIC_FIRST_PARTY_NOT_PUBLISHER_PHOTOGRAPH_OR_RUNTIME"
     },
     {
       "ordinal": 50,

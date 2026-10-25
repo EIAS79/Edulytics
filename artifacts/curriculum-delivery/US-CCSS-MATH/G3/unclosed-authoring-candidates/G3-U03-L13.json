@@ -6,21 +6,34 @@
   "lessonCode": "PED:US-CCSS-MATH:G3:U03:L13",
   "unitNumber": 3,
   "lessonNumber": 13,
-  "title": "Multiples of 100 PLC Activity",
+  "title": "Multiples of 100",
   "referenceEdition": "IM K–5 First Edition (2021)",
   "originalTeacherHtml": "unit-3/lesson-13/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-13/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_FOUR_PAGE_2021_PDF_MARCHING_BAND_SCHOOL_COUNTS_ALL25_GROUP_NUMBERS_AND_364_REVIEWED",
     "goals": "Recognize that numbers are often approximated by their closest multiples of 10 or 100. Understand the meaning of the nearest multiple of 100.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 6,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/6eqxtlu604llirl45yjla15cuo27",
+      "pages": 4,
+      "bytes": 7920390,
+      "sha256": "4859a2b40ce682b0a31be2db2d8b32785acc0dd233b8ac83ae2dec314457f3ae",
+      "allStudentPageTextsRead": true,
+      "originalMarchingBandPhotoInspected": true,
+      "publisherArtworkNotReproduced": true
+    },
+    "originalTeacherHtmlSha256": "6c1e86c475d508ff092c5be9880b1a7f99f08c4bba53956b1e0b6703b31efb39",
+    "originalPreparationHtmlSha256": "6317f2e051565aaaace2154eb010369d93ad1e4930d832f6b8139e25e05a368c",
+    "sourceBandPhotoVisuallyRead": true,
+    "originalSourceTitleCorrected": true
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "GUARDED_2021_SOURCE_SPECIFIC_RICH_V2_FIRST_PARTY_HUNDRED_NUMBERLINES_ALL5_SOURCE_GROUPS_TEACHER_CLOSENESS_RUBRIC",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +42,13 @@
     "existingSourceBodyHash": "482ff1323ef65396b1295712f2dc4d3fd0969848eb8d68adca86e20635c84bd8",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l13-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson13.cshtml",
+    "inheritedPLCActivitySuffixRemoved": true
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWENTYSIX_SOURCE_NEAREST_HUNDRED_NUMERIC_ORACLES_NINE_HUMAN_TASKS_GOAL_EQUIVALENT_500_COOLDOWN_UNRUN",
     "family": "rounding-estimation",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +56,356 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity About 100? Close to 100? with your teacher. Show the representation and explain how it meets the goal: Let’s explore multiples of 100 and how other numbers relate to them. Required Preparation CCSS Standards Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 25 min Lesson Synthesis 10 min Cool-",
-    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums."
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "sourceSubtaskCount": 35,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson13MultiplesOfHundredSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U03-L13-HEADING-01",
-      "sourceSection": "Warm-up: Estimation Exploration: Marching Band (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-3/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "GOAL",
+      "section": "Original 2021 teacher learning goal",
+      "mode": "SOURCE_GOAL_MAPPED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": false
     },
     {
-      "id": "G3-U03-L13-HEADING-02",
-      "sourceSection": "Activity 1: About 100? Close to 100? (10 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WARMUP-PHOTO",
+      "section": "Marching Band image, original PDF p1",
+      "mode": "TEACHER_EXTERNAL_SOURCE_IMAGE_ESTIMATION_NO_COPY",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
     },
     {
-      "id": "G3-U03-L13-HEADING-03",
-      "sourceSection": "Activity 2: Close to Multiples of 100 (25 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-3/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WARMUP-TOO-LOW",
+      "section": "Source p1 too low estimate",
+      "mode": "TEACHER_CLASSROOM_ESTIMATION",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
     },
     {
-      "id": "G3-U03-L13-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-3/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WARMUP-ABOUT-RIGHT",
+      "section": "Source p1 about right estimate",
+      "mode": "TEACHER_CLASSROOM_ESTIMATION",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
     },
     {
-      "id": "G3-U03-L13-HEADING-05",
-      "sourceSection": "Cool-down: Locate, Label, and Name (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-3/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "key": "WARMUP-TOO-HIGH",
+      "section": "Source p1 too high estimate",
+      "mode": "TEACHER_CLASSROOM_ESTIMATION",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-PLAYGROUND",
+      "section": "Source p2 school count playground=94",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-CAFETERIA",
+      "section": "Source p2 school count cafeteria=163",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-ART-ROOM",
+      "section": "Source p2 school count art room=36",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-LIBRARY",
+      "section": "Source p2 school count library=13",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-CLASSROOMS",
+      "section": "Source p2 school count classrooms=216",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-GYMNASIUM",
+      "section": "Source p2 school count gymnasium=109",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-MUSIC-ROOM",
+      "section": "Source p2 school count music room=52",
+      "mode": "TEACHER_SOURCE_ABOUT100_VS_NOT_ABOUT100_AND_CLOSENESS_EXPLAIN",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "SCHOOL-TABLE",
+      "section": "Source p2 close0/100/200 or aside",
+      "mode": "TEACHER_OPEN_EXPLAINED_CLOSENESS_NOT_AUTO_GRADED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-A-1",
+      "section": "Source p3-4 A number 94",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-A-2",
+      "section": "Source p3-4 A number 36",
+      "mode": "NUMERIC_NEAREST_HUNDRED_0_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-A-3",
+      "section": "Source p3-4 A number 109",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-A-4",
+      "section": "Source p3-4 A number 163",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-A-5",
+      "section": "Source p3-4 A number 229",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-B-1",
+      "section": "Source p3-4 B number 24",
+      "mode": "NUMERIC_NEAREST_HUNDRED_0_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-B-2",
+      "section": "Source p3-4 B number 52",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-B-3",
+      "section": "Source p3-4 B number 216",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-B-4",
+      "section": "Source p3-4 B number 11",
+      "mode": "NUMERIC_NEAREST_HUNDRED_0_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-B-5",
+      "section": "Source p3-4 B number 481",
+      "mode": "NUMERIC_NEAREST_HUNDRED_500_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-C-1",
+      "section": "Source p3-4 C number 187",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-C-2",
+      "section": "Source p3-4 C number 135",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-C-3",
+      "section": "Source p3-4 C number 67",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-C-4",
+      "section": "Source p3-4 C number 83",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-C-5",
+      "section": "Source p3-4 C number 241",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-D-1",
+      "section": "Source p3-4 D number 332",
+      "mode": "NUMERIC_NEAREST_HUNDRED_300_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-D-2",
+      "section": "Source p3-4 D number 154",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-D-3",
+      "section": "Source p3-4 D number 408",
+      "mode": "NUMERIC_NEAREST_HUNDRED_400_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-D-4",
+      "section": "Source p3-4 D number 296",
+      "mode": "NUMERIC_NEAREST_HUNDRED_300_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-D-5",
+      "section": "Source p3-4 D number 45",
+      "mode": "NUMERIC_NEAREST_HUNDRED_0_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-E-1",
+      "section": "Source p3-4 E number 279",
+      "mode": "NUMERIC_NEAREST_HUNDRED_300_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-E-2",
+      "section": "Source p3-4 E number 205",
+      "mode": "NUMERIC_NEAREST_HUNDRED_200_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-E-3",
+      "section": "Source p3-4 E number 377",
+      "mode": "NUMERIC_NEAREST_HUNDRED_400_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-E-4",
+      "section": "Source p3-4 E number 449",
+      "mode": "NUMERIC_NEAREST_HUNDRED_400_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "GROUP-E-5",
+      "section": "Source p3-4 E number 73",
+      "mode": "NUMERIC_NEAREST_HUNDRED_100_PLUS_TEACHER_POINT_PLACEMENT",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "364-INTERVAL",
+      "section": "Source PDF p4 364 between300 and400",
+      "mode": "SOURCE_INTERVAL_TEACHER_300_400",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "364-NEAREST",
+      "section": "Source PDF p4 364 nearest400",
+      "mode": "SOURCE_NUMERIC_400",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": false
+    },
+    {
+      "key": "SYNTHE",
+      "section": "Original lesson synthesis",
+      "mode": "TEACHER_MATH_REASONING",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "COOLDOWN",
+      "section": "Gated original Locate, Label and Name",
+      "mode": "INDEPENDENT_SOURCE_GOAL_EQUIVALENT_481_TO500",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
+    },
+    {
+      "key": "COPYRIGHT",
+      "section": "Original photo Jason Crews CC BY2.0",
+      "mode": "PUBLISHER_PHOTO_RIGHTS_BOUNDED_NOT_REPUBLISHED",
+      "academicSemanticAuthoringAccountedFor": true,
+      "publisherArtworkRepublished": false,
+      "teacherRequired": true
     }
   ],
   "images": [
@@ -158,9 +465,8 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 6,
-    "fullyVerified": 0
+    "identified": 43,
+    "semanticAuthoringVerified": 43
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Round 325 to the nearest hundred (fifty rounds up).",
@@ -168,20 +474,23 @@
     "expected": "300"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalCatalogTitle": "Multiples of 100 PLC Activity",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-49-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-49-academic-source-coverage-and-human-rubric-20261025.json",
+  "publisherArtParityPercent": null,
+  "deferredStageD": [
+    "Original marching-band 2007 image from source publisher viewed, but not embedded or copied; source visual pixel/rights parity not claimed.",
+    "Original 'about100' informal classifications are intentionally teacher-scored; a computational nearest-hundred function is not the same rubric.",
+    "Original publisher Locate, Label and Name Cool-down gated and not inspected. Independent 481→500 used only for goal equivalence.",
+    "New tests not run, academic signoff and Stage D deferred."
+  ]
 }
