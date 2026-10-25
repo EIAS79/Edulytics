@@ -11,16 +11,21 @@
   "originalTeacherHtml": "unit-7/lesson-7/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-7/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "PUBLIC_FIRST_EDITION_TEACHER_PREP_AND_4_PAGE_STUDENT_PDF_TEN_VECTORS_INDIVIDUALLY_VERIFIED",
     "goals": "Find the perimeter of two-dimensional shapes. Understand that many different shapes can have the same perimeter.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 2,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "f3a5bd7438ada5693e4bf6295fd233aa984425b9041e55228c5e02940ecf64aa",
+    "originalStudentPdfPagesRead": 4,
+    "originalTenShapePdfVectorsVerified": true,
+    "originalTeacherHtmlSha256": "7755b415366d3bbd73c17fa1702d84b615cc7792bde27f6b4ea46469392225b8",
+    "originalPreparationHtmlSha256": "b5e372462bfabb73af41386c848fe1457784a0d2223ff52066128d6b3b485318"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_TEN_SHAPE_VECTOR_VERIFIED_RICHV2_WITH_CANONICAL_SHA_AND_EDITION_GUARDS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +33,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "854f9b8e1cdb2a5ce0482ee4c6e14fdb0d6001586e5595c945035f574c2d09ff",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l07-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson7RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson7.cshtml",
+    "authoredContentVersion": "g3-u07-l07-2021-ten-source-figures-equal-perimeter-drawing-v1",
+    "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "ORIGINAL_FOUR_BOOLEAN_AND_TEN_VECTOR_BASED_SCALAR_ANCHORS_FIVE_TEACHER_OPEN_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "perimeter",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -40,65 +50,298 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity All Kinds of Shapes with your teacher. Show the representation and explain how it meets the goal: Let’s learn about shapes with the same perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 3.NBT.A.2 Building Towards 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
-    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides."
+    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+    "sourceTrueFalseCount": 4,
+    "sourcePerimeterCount": 10,
+    "openTeacherConstructionsAndMatchingCount": 5,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson7EqualPerimeterTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U07-L07-HEADING-01",
-      "sourceSection": "Warm-up: True or False: Sums of Four Numbers (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-7/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L07-WARMUP-01",
+      "sourcePDFPage": 1,
+      "sourceSection": "Warm-up: True or False: Sums of Four Numbers",
+      "elementKind": "SOURCE_EQUATION_TRUE_FALSE",
+      "correct": false,
+      "basedOnSum": 396,
+      "digitalCompanionSubtask": "G3-U07-L07-TF-01",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L07-HEADING-02",
-      "sourceSection": "Activity 1: All Kinds of Shapes (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L07-WARMUP-02",
+      "sourcePDFPage": 1,
+      "sourceSection": "Warm-up: True or False: Sums of Four Numbers",
+      "elementKind": "SOURCE_EQUATION_TRUE_FALSE",
+      "correct": true,
+      "basedOnSum": 396,
+      "digitalCompanionSubtask": "G3-U07-L07-TF-02",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L07-HEADING-03",
-      "sourceSection": "Activity 2: Draw Your Own (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L07-WARMUP-03",
+      "sourcePDFPage": 1,
+      "sourceSection": "Warm-up: True or False: Sums of Four Numbers",
+      "elementKind": "SOURCE_EQUATION_TRUE_FALSE",
+      "correct": false,
+      "basedOnSum": 396,
+      "digitalCompanionSubtask": "G3-U07-L07-TF-03",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L07-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-7/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L07-WARMUP-04",
+      "sourcePDFPage": 1,
+      "sourceSection": "Warm-up: True or False: Sums of Four Numbers",
+      "elementKind": "SOURCE_EQUATION_TRUE_FALSE",
+      "correct": true,
+      "basedOnSum": 396,
+      "digitalCompanionSubtask": "G3-U07-L07-TF-04",
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING"
     },
     {
-      "id": "G3-U07-L07-HEADING-05",
-      "sourceSection": "Cool-down: Create Your Own Shapes (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-7/lesson-7/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L07-SHAPE-A",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 267,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        6,
+        1
+      ],
+      "verifiedPerimeterGridUnits": 18,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-A"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-B",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 269,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "verifiedPerimeterGridUnits": 16,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-B"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-C",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 271,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        1,
+        4,
+        1,
+        4
+      ],
+      "verifiedPerimeterGridUnits": 10,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-C"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-D",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 273,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "verifiedPerimeterGridUnits": 10,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-D"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-E",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 275,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        7,
+        1,
+        7,
+        1
+      ],
+      "verifiedPerimeterGridUnits": 16,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-E"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-F",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 277,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        1,
+        3,
+        2,
+        2,
+        2,
+        3,
+        1,
+        8
+      ],
+      "verifiedPerimeterGridUnits": 22,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-F"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-G",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 279,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        7,
+        2,
+        7,
+        2
+      ],
+      "verifiedPerimeterGridUnits": 18,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-G"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-H",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 281,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        6,
+        3,
+        6,
+        3
+      ],
+      "verifiedPerimeterGridUnits": 18,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-H"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-I",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 283,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        2,
+        3,
+        1,
+        2,
+        1,
+        1
+      ],
+      "verifiedPerimeterGridUnits": 10,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-I"
+    },
+    {
+      "id": "G3-U07-L07-SHAPE-J",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "ORIGINAL_SOURCE_PDF_VECTOR_GEOMETRY",
+      "pdfDrawingIndex": 285,
+      "sourceGridSizePdfPoints": 19.36,
+      "normalizedSourceBoundarySegmentLengths": [
+        6,
+        5,
+        1,
+        4,
+        5,
+        1
+      ],
+      "verifiedPerimeterGridUnits": 22,
+      "coverage": "MATCHED_DIGITAL_WITH_TEACHER_REASONING",
+      "digitalCompanionSubtask": "G3-U07-L07-PERIMETER-J"
+    },
+    {
+      "id": "G3-U07-L07-MATCH",
+      "sourcePDFPage": 2,
+      "sourceSection": "7.1 All Kinds of Shapes",
+      "elementKind": "OPEN_CHOICE_3_SHAPES_MATCH_ANOTHER",
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalCompanionSubtask": "G3-U07-L07-MATCH",
+      "teacherBoundary": "Choose any 3 original source shapes; compare valid matching different outlines; oral explanation teacher-only."
+    },
+    {
+      "id": "G3-U07-L07-DRAW-12",
+      "sourcePDFPage": 3,
+      "elementKind": "TWO_DISTINCT_AXIS_ALIGNED_SHAPES_WITH_TARGET_PERIMETER",
+      "perimeterTargetGridUnits": 12,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalCompanionSubtask": "G3-U07-L07-DRAW-12",
+      "teacherBoundary": "Inspect 2 different CLOSED horizontal/vertical grid shapes actually fitting source grid, with labeled perimeter sums; no arbitrary diagonal shortcuts"
+    },
+    {
+      "id": "G3-U07-L07-DRAW-26",
+      "sourcePDFPage": 3,
+      "elementKind": "TWO_DISTINCT_AXIS_ALIGNED_SHAPES_WITH_TARGET_PERIMETER",
+      "perimeterTargetGridUnits": 26,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalCompanionSubtask": "G3-U07-L07-DRAW-26",
+      "teacherBoundary": "Inspect 2 different CLOSED horizontal/vertical grid shapes actually fitting source grid, with labeled perimeter sums; no arbitrary diagonal shortcuts"
+    },
+    {
+      "id": "G3-U07-L07-DRAW-48",
+      "sourcePDFPage": 3,
+      "elementKind": "TWO_DISTINCT_AXIS_ALIGNED_SHAPES_WITH_TARGET_PERIMETER",
+      "perimeterTargetGridUnits": 48,
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalCompanionSubtask": "G3-U07-L07-DRAW-48",
+      "teacherBoundary": "Inspect 2 different CLOSED horizontal/vertical grid shapes actually fitting source grid, with labeled perimeter sums; no arbitrary diagonal shortcuts"
+    },
+    {
+      "id": "G3-U07-L07-PARTNER",
+      "sourcePDFPage": 4,
+      "elementKind": "OPEN_PARTNER_DESIGN_AND_COMPARE",
+      "coverage": "MATCHED_TEACHER_LED",
+      "digitalCompanionSubtask": "G3-U07-L07-PARTNER",
+      "teacherBoundary": "Original asks choose a length with partner, draw another, discuss same/different"
+    },
+    {
+      "id": "G3-U07-L07-SYNTHESIS",
+      "sourcePDFPage": null,
+      "elementKind": "ORIGINAL_TEACHER_FLEXIBLE_STRING_PAPERCLIPS",
+      "coverage": "MATCHED_TEACHER_LED",
+      "teacherBoundary": "Teacher compares perimeter methods using same connected clip string; not numerical answer alone"
+    },
+    {
+      "id": "G3-U07-L07-COOLDOWN",
+      "sourcePDFPage": null,
+      "elementKind": "PUBLISHER_GATED_COOLDOWN",
+      "coverage": "RIGHTS_RESTRICTED",
+      "teacherBoundary": "Publisher original gated Create Your Own Shapes not accessed; independent first-party exit is separate"
     }
   ],
   "images": [
@@ -122,9 +365,10 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 2,
-    "fullyVerified": 0
+    "identified": 21,
+    "digitallyMappedWithTeacherReasoning": 14,
+    "teacherLedMapped": 6,
+    "publisherRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "A polygon has boundary segments 5, 4, 4, 6 metres. Find its perimeter.",
@@ -132,20 +376,20 @@
     "expected": "19"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "NOT_MANUALLY_RUN_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-120-2021-original-ten-shapes-geometric-perimeters-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Original publisher Cool-down gated, not accessed or reproduced.",
+    "Original A–J geometry inspected in source PDF; raw vector assets not copied to learner application.",
+    "No published DB comparison, actual student interaction, runtime test execution, CI, Stage D or independent academic approval yet."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L08"
 }

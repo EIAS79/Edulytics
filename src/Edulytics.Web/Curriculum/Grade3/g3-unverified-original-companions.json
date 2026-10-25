@@ -22799,10 +22799,10 @@
         "10 shapes labeled A to J, on dot grid.",
         "Dot grid."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
@@ -22816,20 +22816,21 @@
         "expected": "24"
       },
       "openTeacherTask": "Work through the original lesson's activity All Kinds of Shapes with your teacher. Show the representation and explain how it meets the goal: You will practice finding the perimeter of shapes and to understand that many different shapes can have the same perimeter.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "The 2021 four-page original pupil PDF and teacher preparation plus 10 original figure vector polygons were verified individually on authorized device. Warm-up 4 truth values and 10 grid perimeters can be checked; the source requests ANY THREE figures and 12/26/48-unit drawings and explanations require teacher review; publisher Cool-down gated, tests unrun.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s learn about shapes with the same perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 3.NBT.A.2 Building Towards 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
+        "sourceGoal": "Let\u2019s learn about shapes with the same perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 3.NBT.A.2 Building Towards 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
         "sourceLearningGoals": "Find the perimeter of two-dimensional shapes. Understand that many different shapes can have the same perimeter.",
         "teachingSteps": [
-          "Identify shape attributes, side lengths, area and perimeter constraints.",
-          "Draw or measure an accurate figure that meets the task conditions.",
-          "Explain and check the resulting geometric relationship."
+          "Check four true/false identities using regrouping and total 396.",
+          "Choose any three original A\u2013J shapes. Trace edge intervals and calculate a source perimeter.",
+          "Find a visually different shape with the same boundary length; A, G, H all share 18.",
+          "Draw two distinct feasible closed axis-aligned shapes for 12, 26, 48 unit perimeters; discuss with partner."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s learn about shapes with the same perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 3.NBT.A.2 Building Towards 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min",
+        "caution": "The original source requests ANY THREE of the ten shapes, not mandatory grading of all ten. Count concave boundary edges; no diagonal grid edge is a single unit. Drawings and pair explanation need teacher evaluation.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -22838,38 +22839,143 @@
         "expected": null
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-7/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "localHtml": "Original G3 Unit7 Lesson7 teacher page hash 7755b415366d3bbd73c17fa1702d84b615cc7792bde27f6b4ea46469392225b8",
+        "verified": "2021 original 4-page student PDF; A-J original vector drawing perimeters independently computed at 19.36 PDF points per dot-unit.",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L07-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: True or False: Sums of Four Numbers (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Same Perimeter, Different Shapes.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L07-TF-01",
+          "sourceActivity": "Warm-up: True or False: Sums of Four Numbers",
+          "prompt": "Original 2021 True/False identity 1: The sum 123+75+123+75 equals 100+100+70+70+5+5+3+3. Answer yes or no and tell a teacher WHY (the repeated addends total 396).",
+          "answerType": "yes-no",
+          "expected": "no"
+        },
+        {
+          "id": "G3-U07-L07-TF-02",
+          "sourceActivity": "Warm-up: True or False: Sums of Four Numbers",
+          "prompt": "Original 2021 True/False identity 2: The sum 123+75+123+75 equals 2\u00d7123 + 2\u00d775. Answer yes or no and tell a teacher WHY (the repeated addends total 396).",
+          "answerType": "yes-no",
+          "expected": "yes"
+        },
+        {
+          "id": "G3-U07-L07-TF-03",
+          "sourceActivity": "Warm-up: True or False: Sums of Four Numbers",
+          "prompt": "Original 2021 True/False identity 3: The sum 123+75+123+75 equals 208+208. Answer yes or no and tell a teacher WHY (the repeated addends total 396).",
+          "answerType": "yes-no",
+          "expected": "no"
+        },
+        {
+          "id": "G3-U07-L07-TF-04",
+          "sourceActivity": "Warm-up: True or False: Sums of Four Numbers",
+          "prompt": "Original 2021 True/False identity 4: The sum 123+75+123+75 equals 246+150. Answer yes or no and tell a teacher WHY (the repeated addends total 396).",
+          "answerType": "yes-no",
+          "expected": "yes"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-A",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure A from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-B",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure B from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-C",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure C from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-D",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure D from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-E",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure E from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-F",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure F from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "22"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-G",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure G from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-H",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure H from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "18"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-I",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure I from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U07-L07-PERIMETER-J",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose original figure J from the linked 2021 student PDF page 2. Count every horizontal and vertical dot-grid interval around its boundary; give the numeric perimeter. Teacher checks your method and explanations.",
+          "answerType": "integer",
+          "expected": "22"
+        },
+        {
+          "id": "G3-U07-L07-MATCH",
+          "sourceActivity": "Activity 1: All Kinds of Shapes",
+          "prompt": "Choose any three source figures, show their perimeter calculations, and locate another equal-perimeter partner on the original grid. Explain why different outlines may share perimeter.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L07-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: All Kinds of Shapes (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Same Perimeter, Different Shapes.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L07-DRAW-12",
+          "sourceActivity": "Activity 2: Draw Your Own",
+          "prompt": "Draw TWO different closed grid-aligned shapes with perimeter 12 horizontal/vertical dot intervals. Do not use diagonal shortcuts. Show all side lengths and justify both results to a teacher.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L07-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Draw Your Own (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Same Perimeter, Different Shapes.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L07-DRAW-26",
+          "sourceActivity": "Activity 2: Draw Your Own",
+          "prompt": "Draw TWO different closed grid-aligned shapes with perimeter 26 horizontal/vertical dot intervals. Do not use diagonal shortcuts. Show all side lengths and justify both results to a teacher.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L07-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L07-DRAW-48",
+          "sourceActivity": "Activity 2: Draw Your Own",
+          "prompt": "Draw TWO different closed grid-aligned shapes with perimeter 48 horizontal/vertical dot intervals. Do not use diagonal shortcuts. Show all side lengths and justify both results to a teacher.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U07-L07-PARTNER",
+          "sourceActivity": "Activity 2: Draw Your Own",
+          "prompt": "With your partner choose a new perimeter, draw a closed grid-aligned shape each and discuss how the shapes are the same/different.",
           "answerType": "teacher",
           "expected": null
         }
