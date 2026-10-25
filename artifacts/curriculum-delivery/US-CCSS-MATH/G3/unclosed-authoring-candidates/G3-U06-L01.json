@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-1/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-1/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "ORIGINAL_2021_TEACHER_HTML_PREPARATION_AND_THREE_PAGE_STUDENT_TASK_PDF_REVIEWED",
     "goals": "Measure lengths using a ruler marked with halves of an inch.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICH_V2_ORIGINAL_OPEN_OBJECT_TABLES_HALF_INCH_RULER_MIXED_NUMBER",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "2a94588f54569284f9aafc86c07491c3315bdbd8aee1dfdfa79036aeeb1b98d4",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l01-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson1.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "HALF_INCH_TICKS_MIXED_NUMBER_NUMERIC_CHECKS_AND_TEACHER_MEASUREMENT_RUBRIC_WRITTEN_UNRUN",
     "family": "fractional-inch-measurement",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Measure Around the Room with your teacher. Show the representation and explain how it meets the goal: Let’s measure the length of objects around the room.",
-    "teacherReviewNote": "Teacher must examine ruler alignment, endpoint and fractional tick placement."
+    "teacherReviewNote": "Teacher must examine ruler alignment, endpoint and fractional tick placement.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson1HalfInchMeasureTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: What Do You Know About Inches? (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_HTML_AND_PDF_TO_FIRST_PARTY_A_B_C",
+      "grading": "TEACHER_MEASUREMENT",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Measure Around the Room (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_HTML_AND_PDF_TO_FIRST_PARTY_A_B_C",
+      "grading": "TEACHER_MEASUREMENT",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: Partition Inches into Halves (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_HTML_AND_PDF_TO_FIRST_PARTY_A_B_C",
+      "grading": "TEACHER_MEASUREMENT",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-1/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_ORIGINAL_HTML_AND_PDF_TO_FIRST_PARTY_A_B_C",
+      "grading": "TEACHER_MEASUREMENT",
       "claimedParity": false
     },
     {
@@ -96,7 +99,7 @@
       "originalReference": "unit-6/lesson-1/lesson.html",
       "sourceFullyCompared": false,
       "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
+      "coverage": "PUBLISHER_COOLDOWN_TEACHER_GATED_NOT_INSPECTED",
       "grading": "NOT_CERTIFIED",
       "claimedParity": false
     }
@@ -108,8 +111,8 @@
       "originalReference": "unit-6/lesson-1/lesson.html",
       "assetInspected": false,
       "originalRightsChecked": false,
-      "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "digitalAlternativeVerified": true,
+      "coverage": "ORIGINAL_HAND_RULER_PHOTO_NOT_COPIED_OR_PIXEL_VERIFIED"
     }
   ],
   "sourceElementCounts": {
@@ -123,20 +126,25 @@
     "expected": "4/2"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Publisher original blackline master source file (five rulers per page) not inspected, no pixel or cutout parity claim.",
+    "Teacher-gated 2021 original Cool-down restricted and not copied.",
+    "Source photograph not independently visually verified or copied; first-party alternative is a new half-inch number-line ruler.",
+    "Actual student-chosen physical object lengths and correct ruler placement require teacher evidence; no single number key.",
+    "New source-specific .NET tests, CI, Stage D, academic signoff and deployment were not run."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "10cb3943dba6311564222b25b0fbbabf8adccbbc0f49d6f2ff47a42c4a0bb11b",
+  "originalPreparationHtmlSHA256": "c2430a8872cee63d70f221b86fe809fcb701ea428565c4e021d0e61f2dd047d6",
+  "originalStudentPdfSHA256": "9b0b85d3cedba0868fd91e03a79352d29df808a8a2b85d8d4c86700c28d89c9d",
+  "originalStudentPDFPagesReviewed": 3,
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-98-2021-original-pdf-measurement-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-98-academic-measurement-rubric-20261025.json"
 }
