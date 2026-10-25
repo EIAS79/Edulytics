@@ -23259,10 +23259,10 @@
         "Rectangle with sides marked 21 and 9 centimeters.",
         "Rectangle with one long side labeled 12 feet."
       ],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "perimeter",
       "independentPractice": {
@@ -23276,20 +23276,22 @@
         "expected": "4"
       },
       "openTeacherTask": "Work through the original lesson's activity Missing Measurements with your teacher. Show the representation and explain how it meets the goal: You will find unknown side lengths given the perimeter of a shape and solve problems involving perimeter.",
-      "teacherReviewNote": "Source 3 student sections and 6 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "All five original pupil PDF pages checked; seven source scalar/multiset perimeter anchors + 16-block source raster path + 80 tiles area distinction. Original source three-estimate warm-up and reasoning teacher-owned; restricted Cool-down gated. Eight mathematical answers, not unconditional original publisher parity.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s solve problems about perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How are students wo",
+        "sourceGoal": "Let\u2019s solve problems about perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How are students wo",
         "sourceLearningGoals": "Find unknown side lengths given the perimeter of a shape. Solve problems that involve perimeters of shapes.",
         "teachingSteps": [
-          "Identify shape attributes, side lengths, area and perimeter constraints.",
-          "Draw or measure an accurate figure that meets the task conditions.",
-          "Explain and check the resulting geometric relationship."
+          "Discuss too-low/about-right/too-high smaller Statue base estimates; larger base 528 ft perimeter does not identify smaller base precisely.",
+          "Solve 32\u2212(10+2+11+4)=5 cm, rectangle 8+8+20+20=56 ft, and 65/5=13 inches.",
+          "Solve park P380 feet, square frame P36 inches, flowerbed opposite sides 12,4,4 feet.",
+          "Trace the actual Kiran route on original map for 16 total block lengths including two half lengths.",
+          "Show why 10\u00d78 floor needs 80 tiles through AREA rather than 36-ft room perimeter."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s solve problems about perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How are students wo",
+        "caution": "The source intentionally contrasts AREA (80 one-ft-square tiles) versus PERIMETER; original smaller Statue base has no exact side length. Multi-side lengths require complete multiset. Dog route 16 blocks requires teacher visual inspection.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -23298,38 +23300,81 @@
         "expected": "380"
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-9/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "teacherSourceHash": "f5095fc2d01ef361127c70ed06c898efc5e9ad3d64b98acc115527f0efcee1f6",
+        "originalStudentPdfSha256": "8cd6fd9f7851420ef387d869e959a47d91210eb6b6e398c18b03f46de7ec6756",
+        "verified": "2021 original source 5-page PDF read, including Statue estimation photo, missing pentagon/rectangle sides and dog path. Source image walked intervals add to 16 blocks.",
+        "figurePixelsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L09-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Estimation Exploration: Statue of Liberty (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Perimeter Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L09-WARMUP",
+          "sourceActivity": "Warm-up: Estimation Exploration",
+          "prompt": "Original Statue of Liberty larger square base is 132 ft per side. Give three numerical estimates for SMALLER base perimeter: too low, about right, too high. Exact smaller length is not given. Discuss with teacher.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L09-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Missing Measurements (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Perimeter Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
+          "id": "G3-U07-L09-A1-01",
+          "sourceActivity": "Activity 1: Missing Measurements",
+          "prompt": "Original pupil pentagon has P32 cm and known edges 10,2,11,4 cm; enter missing fifth side WITH cm unit and explain to teacher.",
+          "answerType": "length-with-unit",
+          "expected": "5 cm"
         },
         {
-          "id": "G3-U07-L09-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Can I Use Perimeter? (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Perimeter Problems.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
-          "answerType": "teacher",
-          "expected": null
+          "id": "G3-U07-L09-A1-02",
+          "sourceActivity": "Activity 1: Missing Measurements",
+          "prompt": "Original pupil rectangle has P56 feet, short side 8 ft. Enter ALL THREE missing sides as lengths with ft units, separated by commas, order irrelevant. Explain opposite equal sides.",
+          "answerType": "linear-length-multiset",
+          "expected": "8 ft|20 ft|20 ft"
         },
         {
-          "id": "G3-U07-L09-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L09-A1-03",
+          "sourceActivity": "Activity 1: Missing Measurements",
+          "prompt": "Original equal-five-sided pentagon P65 inches. Enter length of EACH single side including inches.",
+          "answerType": "length-with-unit",
+          "expected": "13 in"
+        },
+        {
+          "id": "G3-U07-L09-A2-01",
+          "sourceActivity": "Activity 2: Can I Use Perimeter?",
+          "prompt": "Original rectangular park 70 ft by 120 ft: how many feet of perimeter fencing? Supply linear unit.",
+          "answerType": "length-with-unit",
+          "expected": "380 ft"
+        },
+        {
+          "id": "G3-U07-L09-A2-02",
+          "sourceActivity": "Activity 2: Can I Use Perimeter?",
+          "prompt": "Original square picture has 9-inch side. How many inches of ribbon around all sides?",
+          "answerType": "length-with-unit",
+          "expected": "36 in"
+        },
+        {
+          "id": "G3-U07-L09-A2-03",
+          "sourceActivity": "Activity 2: Can I Use Perimeter?",
+          "prompt": "Original rectangular flowerbed total P32 ft, one long side 12 ft: enter ALL THREE other side lengths in ft, separated by commas, order independent.",
+          "answerType": "linear-length-multiset",
+          "expected": "12 ft|4 ft|4 ft"
+        },
+        {
+          "id": "G3-U07-L09-A2-04",
+          "sourceActivity": "Activity 2: Can I Use Perimeter?",
+          "prompt": "Original Kiran dog-walk raster map: follow source house-to-house path (north 1.5, east 2, south 1, east 1, north 1, east 1, south 2, west 1, south 1, west 3, north 1.5 blocks) and give walked block count, while teacher checks traced drawing.",
+          "answerType": "integer",
+          "expected": "16"
+        },
+        {
+          "id": "G3-U07-L09-A2-05",
+          "sourceActivity": "Activity 2: Can I Use Perimeter?",
+          "prompt": "Original 10-ft by 8-ft room tiled with 1-square-foot tiles: enter TILE COUNT. Use AREA rather than perimeter; explain distinction to teacher.",
+          "answerType": "integer",
+          "expected": "80"
+        },
+        {
+          "id": "G3-U07-L09-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Using original five-page source PDF section summary, compare 21\u00d79 cm rectangle boundary 60 cm, 32-ft perimeter rectangle with 12,4,4 ft other sides; explain when AREA not perimeter applies.",
           "answerType": "teacher",
           "expected": null
         }

@@ -130,6 +130,37 @@ public static class Grade3SourceCompanionCatalogue
                 : "Check the values of hundreds, tens and ones and whether their total equals the target whole.");
         }
 
+        if (q.AnswerType == "linear-length-multiset")
+        {
+            // Complete list of missing sides: source U07 L09 asks for three.
+            var expected = q.Expected?.Split('|', StringSplitOptions.TrimEntries);
+            var supplied = submitted.Split(',', StringSplitOptions.TrimEntries);
+            if (expected is null || expected.Length is < 2 or > 6 ||
+                supplied.Length != expected.Length)
+                return new(false, true, "Supply every missing side length and unit, separated by commas.");
+            var matched = new bool[expected.Length];
+            foreach (var value in supplied)
+            {
+                if (!TryReadLengthWithUnit(value, out var number, out var denom, out var unit))
+                    return new(false, true, "Each missing side needs its source length unit.");
+                var index = -1;
+                for (var k = 0; k < expected.Length; k++)
+                {
+                    if (matched[k] || !TryReadLengthWithUnit(expected[k],
+                        out var target, out var targetDenom, out var targetUnit) ||
+                        unit != targetUnit || number * targetDenom != target * denom)
+                        continue;
+                    index = k;
+                    break;
+                }
+                if (index < 0)
+                    return new(false, true, "Check ALL missing sides and their units; repeated side lengths matter.");
+                matched[index] = true;
+            }
+            return new(true, true,
+                "All missing sides match; teacher reviews original shape reasoning.");
+        }
+
         if (q.AnswerType == "length-with-unit")
         {
             if (!TryReadLengthWithUnit(q.Expected, out var expectedLength, out var expectedDenominator, out var expectedUnit))
