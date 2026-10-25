@@ -11,16 +11,19 @@
   "originalTeacherHtml": "unit-7/lesson-13/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-13/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "TEACHER_PREP_3_PAGE_STUDENT_PDF_AERIAL_MAP_AND_SQUARE_DOT_SOURCE_VERIFIED",
     "goals": "Apply geometric understanding to solve problems about parks.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 0,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "6a4477d30665cd4358a216b63b19764e9446480a7dd39f8d52f148356daefb16",
+    "originalBlacklineSha256": "1b6044f51c2d234c2b0d314cb05edff540854c2013d4919d05b17ce6a9606fb6",
+    "originalStudentPdfPagesRead": 3
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "PARK_DESIGN_FIVE_FEATURES_THREE_MEASURES_AND_UNIT_SPECIFIC_RICH_V2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -28,11 +31,16 @@
     "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
     "existingSourceBodyHash": "53c872dcf3b0a8a2334445f512c093efbd7cc22783606afd055bc778cc02bab4",
     "effectivePublishedRichV2Inspected": false,
-    "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l13-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson13RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson13.cshtml",
+    "authoredContentVersion": "g3-u07-l13-2021-park-design-five-features-two-measures-v1",
+    "originalPublisherArtworkEmbedded": false
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "TWO_PERIMETER_AREA_NUMERIC_ANCHORS_FIVE_VISUAL_OPEN_TEACHER_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "geometry-application",
     "practiceAnswerType": "teacher",
     "coolDownAnswerType": "teacher",
@@ -40,72 +48,75 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Design a Park with your teacher. Show the representation and explain how it meets the goal: Let’s design a park.",
-    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient."
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceScalarNumericalCount": 2,
+    "teacherOnlyOriginalTasks": 5,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson13ParkModelTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U07-L13-HEADING-01",
-      "sourceSection": "Warm-up: Notice and Wonder: A Park (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-7/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L13-WARMUP",
+      "sourceOriginalStudentPage": 1,
+      "coverage": "TEACHER_REVIEW_REQUIRED_OPEN_VISUAL",
+      "expected": null,
+      "teacherReview": true
     },
     {
-      "id": "G3-U07-L13-HEADING-02",
-      "sourceSection": "Activity 1: Design a Park (20 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L13-DESIGN",
+      "sourceOriginalStudentPage": 2,
+      "coverage": "TEACHER_REVIEW_REQUIRED_OPEN_VISUAL",
+      "expected": null,
+      "teacherReview": true
     },
     {
-      "id": "G3-U07-L13-HEADING-03",
-      "sourceSection": "Activity 2: Park Problems (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-7/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L13-PARK-FENCE",
+      "sourceOriginalStudentPage": 3,
+      "coverage": "DIGITAL_NUMBER_WITH_TEACHER_UNITS_AND_REASONING",
+      "expected": "40",
+      "teacherReview": true
     },
     {
-      "id": "G3-U07-L13-HEADING-04",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-7/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L13-PARK-AREA",
+      "sourceOriginalStudentPage": 3,
+      "coverage": "DIGITAL_NUMBER_WITH_TEACHER_UNITS_AND_REASONING",
+      "expected": "84",
+      "teacherReview": true
     },
     {
-      "id": "G3-U07-L13-HEADING-05",
-      "sourceSection": "Cool-down: Possible Perimeters (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-7/lesson-13/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "G3-U07-L13-ALTERNATE",
+      "sourceOriginalStudentPage": 3,
+      "coverage": "TEACHER_REVIEW_REQUIRED_OPEN_VISUAL",
+      "expected": null,
+      "teacherReview": true
+    },
+    {
+      "id": "G3-U07-L13-48-PERIMETERS",
+      "sourceOriginalStudentPage": 3,
+      "coverage": "TEACHER_REVIEW_REQUIRED_OPEN_VISUAL",
+      "expected": null,
+      "teacherReview": true
+    },
+    {
+      "id": "G3-U07-L13-SYNTHESIS",
+      "sourceOriginalStudentPage": 3,
+      "coverage": "TEACHER_REVIEW_REQUIRED_OPEN_VISUAL",
+      "expected": null,
+      "teacherReview": true
+    },
+    {
+      "id": "G3-U07-L13-COOLDOWN",
+      "coverage": "PUBLISHER_GATED_RIGHTS_RESTRICTED",
+      "teacherReview": true
     }
   ],
   "images": [],
   "sourceElementCounts": {
-    "headings": 5,
-    "imageDescriptions": 0,
-    "fullyVerified": 0
+    "identified": 8,
+    "digitalAnchors": 2,
+    "teacherOnly": 5,
+    "rightsRestricted": 1
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "Sketch an original park, print, or robot design and justify one shape and measurement choice.",
@@ -113,20 +124,20 @@
     "expected": null
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
-  "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
-  ],
+  "openGaps": [],
   "stageD": "NOT_STARTED",
-  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "ci": "NOT_EXECUTED",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-126-2021-park-design-and-geometry-source-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Aerial photograph and diagram remain publisher-linked, not copied.",
+    "Teacher observes real five-feature park and three double-measure explanations, multiple valid designs.",
+    "Original publisher gated Cool-down unavailable; Stage D, CI, runtime tests and academic approval deferred."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L14"
 }

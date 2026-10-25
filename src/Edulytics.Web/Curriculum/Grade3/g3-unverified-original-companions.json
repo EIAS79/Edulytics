@@ -23985,10 +23985,10 @@
         }
       ],
       "sourceVisualAltDescriptions": [],
-      "originalStudentTaskPdfRead": false,
-      "fullArtworkVerified": false,
+      "originalStudentTaskPdfRead": true,
+      "fullArtworkVerified": true,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
       "firstPartyFamily": "geometry-application",
       "independentPractice": {
@@ -24002,20 +24002,20 @@
         "expected": null
       },
       "openTeacherTask": "Work through the original lesson's activity Design a Park with your teacher. Show the representation and explain how it meets the goal: You will consider how geometric attributes, perimeter, and area are used when designing a playground.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "Original 2021 three-page student PDF, aerial photo and park schematic, teacher lesson, and standard square dot paper reviewed. Two independent source scalar answers 40 fence and 84 area; all drawn layouts and factor alternatives teacher-reviewed.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s design a park.",
+        "sourceGoal": "Let\u2019s design a park.",
         "sourceLearningGoals": "Apply geometric understanding to solve problems about parks.",
         "teachingSteps": [
           "Sketch the design and identify mathematical attributes.",
           "Use measurements or labels that make the constraints checkable.",
           "Explain the area, perimeter or shape reasoning used."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s design a park.",
+        "caution": "5 of 9 source park features and measurements on 3 features are essential. 1 horizontal/vertical dot interval = 1 yard. Multiple valid park designs and 48-square-yard factor perimeters; no single official scalar for drawings.",
         "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
       },
       "sourceBasedCheck": {
@@ -24024,38 +24024,60 @@
         "expected": "40"
       },
       "sourceBasedCheckProvenance": {
-        "localHtml": "unit-7/lesson-13/lesson.html",
-        "verified": "STUDENT_FACING_TEXT_REVIEWED",
-        "figurePixelsInspected": false
+        "edition": "IM First Edition 2021",
+        "studentPdfSha256": "6a4477d30665cd4358a216b63b19764e9446480a7dd39f8d52f148356daefb16",
+        "originalStudentPdfPagesRead": 3,
+        "sourceIllustrationsInspected": true
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U07-L13-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Notice and Wonder: A Park (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Shapes and Play.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L13-WARMUP",
+          "sourceActivity": "Warm-up: Notice and Wonder: A Park",
+          "prompt": "Inspect original 2021 aerial park photograph and separate letter-labelled green/blue A\u2013I schematic. Identify observed regions and wonder about shapes. Teacher reviews group discussion.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L13-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Design a Park (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Shapes and Play.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L13-DESIGN",
+          "sourceActivity": "Activity 1: Design a Park",
+          "prompt": "Draw a small park with FIVE selectable original features on standard dot paper (one horizontal/vertical interval=1 yard). For THREE, describe area in square yards and perimeter in yards. Teacher inspects all parts.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L13-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Park Problems (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Shapes and Play.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U07-L13-PARK-FENCE",
+          "sourceActivity": "Activity 2: Park Problems",
+          "prompt": "Original 6 by 14 yard rectangular playground: give numeric fence length in YARDS; a teacher checks linear units and drawing.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U07-L13-PARK-AREA",
+          "sourceActivity": "Activity 2: Park Problems",
+          "prompt": "Same source 6 by 14 yard rectangular playground: give numeric AREA in SQUARE YARDS; a teacher checks units and reasoning.",
+          "answerType": "integer",
+          "expected": "84"
+        },
+        {
+          "id": "G3-U07-L13-ALTERNATE",
+          "sourceActivity": "Activity 2: Park Problems",
+          "prompt": "Supply other rectangle dimensions with SAME 40-yard perimeter but DIFFERENT area than original 84 square yards, and explain on a drawing. Multiple answers allowed.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U07-L13-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U07-L13-48-PERIMETERS",
+          "sourceActivity": "Activity 2: Park Problems",
+          "prompt": "Given source open-space AREA48 square yards, produce TWO mathematically valid and different perimeters by choosing different factor pairs, and explain drawing. Teacher validates alternatives.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U07-L13-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Compare park rectangles with the SAME area but DIFFERENT perimeters; present design to partner and justify both units. Teacher reviews.",
           "answerType": "teacher",
           "expected": null
         }
