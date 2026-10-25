@@ -540,7 +540,7 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "real response; one picture stands for one learner. " +
                     "The bar height equals the category count on a " +
                     "common number axis. First learn the numbers from " +
-                    "the real class; only then ask 'how many more/fewer'. " +
+                    "the actual class; only then ask 'how many more/fewer'. " +
                     "For an arithmetic task that combines two categories, " +
                     "add those two counts and compare with a third. " +
                     "Use addition/subtraction within 20 for automatically " +
@@ -908,7 +908,8 @@ public static class CommonCoreG3SourceTeachingCorrections
                     "Step 3 (25-minute graph creation): " +
                     "reuse the original L04 class travel " +
                     "preferences and make a bar graph " +
-                    "using tick interval 2 or 5 with " +
+                    "using scale 2 or 5 with a tick interval that " +
+                    "is consistently labelled; include " +
                     "a title and clear category labels.\n" +
                     "Step 4: preserve non-multiple counts " +
                     "exactly, explain between-tick bar " +
