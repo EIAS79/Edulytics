@@ -11,16 +11,18 @@
   "originalTeacherHtml": "unit-4/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-4/lesson-3/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "LOCAL_2021_STUDENT_FOUR_SECTIONS_TEACHER_ELENA_A_B_AND_A3_THREE_GROUP_DIAGRAM_ROLES_REVIEWED",
     "goals": "Interpret and relate drawings and descriptions of division situations. Understand that a division situation may involve finding an unknown number of groups or finding an unknown number of objects in each group.",
     "sourceHeadingsCount": 6,
     "originalImageDescriptionsCount": 7,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "9fe68773b06cb15784ec1af852067c6c57e0499430ea7cf74164f08dd5082745",
+    "preparationSha256": "34ae625b26ffcc1fe0152538dfa0cd1cec4d4a2d1549dee115052d269d528049"
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "2021_FIRSTPARTY_RICH_V2_SOURCE_ELENA_TWO_VS_SIX_GROUPS_AND_ACTIVITY3_SIX_PAIR_MATCHES",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +31,13 @@
     "existingSourceBodyHash": "205f92de0bdb9d61f7f70ddeb7882c4b1c420f1fc8ebd64b2fc45d27dd63d809",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": true,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u04-l03-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit4Lesson3.cshtml",
+    "independentVisualModels": 5
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "ELEVEN_ORIGINAL_NUMERIC_ORACLES_NINE_TEACHER_DIAGRAM_REASONING_TASKS_TESTS_WRITTEN_UNRUN",
     "family": "division-representations",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,74 +47,65 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Groups of Students with your teacher. Show the representation and explain how it meets the goal: Let’s represent division situations with drawings. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher",
-    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient."
+    "teacherReviewNote": "Teacher verifies whether the unknown is group size or group count, rather than rewarding a bare quotient.",
+    "sourceNumericChecks": 11,
+    "teacherReviewTasks": 9,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit4Lesson3DivisionSituationDrawingsSourceTests.cs"
   },
   "sourceElements": [
     {
-      "id": "G3-U04-L03-HEADING-01",
-      "sourceSection": "Warm-up: Number Talk: The More Things Change... (10 minutes)",
-      "elementKind": "WARM_UP",
-      "originalReference": "unit-4/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "WARMUP-4",
+      "source": "120+120,121+119,125+115,129+111",
+      "implemented": "FOUR_EXACT_240_ORACLES_PLUS_HUMAN_PATTERN_EXPLANATION",
+      "sourceImagePixelsVerified": false
     },
     {
-      "id": "G3-U04-L03-HEADING-02",
-      "sourceSection": "Activity 1: Groups of Students (10 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-4/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "ACTIVITY1",
+      "source": "Groups of students: groups of2 versus 2 groups",
+      "implemented": "FIRSTPARTY_12_DOTS_SIX_BY_TWO_AND_TWO_BY_SIX",
+      "sourceImagePixelsVerified": false
     },
     {
-      "id": "G3-U04-L03-HEADING-03",
-      "sourceSection": "Activity 2: Elena's Colored Pencils (10 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-4/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "ELENA",
+      "source": "12 colored pencils 2 boxes / teacher narrative A=2 groups6, B=6 groups2",
+      "implemented": "ELENA_SOURCE_A_CORRECT_AND_B_INCORRECT_FIRSTPARTY_DOTS",
+      "sourceImagePixelsVerified": false
     },
     {
-      "id": "G3-U04-L03-HEADING-04",
-      "sourceSection": "Activity 3: Which Drawing Matches? (15 minutes)",
-      "elementKind": "ACTIVITY",
-      "originalReference": "unit-4/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "A3-FIGURE-A",
+      "source": "two groups of four dot groups",
+      "implemented": "SOURCE_MAI_GROUP_COUNT_2_AND_LIN_GROUP_SIZE_4",
+      "sourceImagePixelsVerified": false
     },
     {
-      "id": "G3-U04-L03-HEADING-05",
-      "sourceSection": "Lesson Synthesis",
-      "elementKind": "TEACHER_SYNTHESIS",
-      "originalReference": "unit-4/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "A3-FIGURE-B",
+      "source": "ten groups of two dot groups",
+      "implemented": "SOURCE_KIRAN_GROUP_COUNT_10_AND_NOAH_GROUP_SIZE_2",
+      "sourceImagePixelsVerified": false
     },
     {
-      "id": "G3-U04-L03-HEADING-06",
-      "sourceSection": "Cool-down: Party Favors (5 minutes)",
-      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
-      "originalReference": "unit-4/lesson-3/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
-      "claimedParity": false
+      "id": "A3-FIGURE-C",
+      "source": "three groups of five dot groups",
+      "implemented": "SOURCE_PRIYA_GROUP_COUNT_3_AND_JADA_GROUP_SIZE_5",
+      "sourceImagePixelsVerified": false
+    },
+    {
+      "id": "TEACHER-REASONING",
+      "source": "Why one drawing can fit two stories",
+      "implemented": "OPEN_EXPLANATION_TEACHER_ASSESSES_UNKNOWNS",
+      "sourceImagePixelsVerified": false
+    },
+    {
+      "id": "PUBLISHER-ART",
+      "source": "Eight figure URL references including original photographs/diagrams",
+      "implemented": "NO_PUBLISHER_PIXEL_OR_ART_PARITY_CLAIM",
+      "sourceImagePixelsVerified": false
+    },
+    {
+      "id": "ORIGINAL-CD",
+      "source": "Gated Party Favors Cool-down",
+      "implemented": "NOT_REPRODUCED_INDEPENDENT_EDULYTICS_GOAL_EQUIVALENT",
+      "sourceImagePixelsVerified": false
     }
   ],
   "images": [
@@ -178,9 +174,10 @@
     }
   ],
   "sourceElementCounts": {
-    "headings": 6,
-    "imageDescriptions": 7,
-    "fullyVerified": 0
+    "studentMathElementsMapped": 11,
+    "sourceOriginalImagesIndexed": 8,
+    "sourceImagePixelVerified": 0,
+    "teacherReviewTasks": 9
   },
   "firstPartyOriginalCoolDown": {
     "prompt": "15 items are shared equally among 3 children. How many items does each child receive?",
@@ -188,20 +185,18 @@
     "expected": "5"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Publisher eight original image pixel files not inspected or copied; only source HTML ALT descriptions and teacher narrative mapped into independent drawings.",
+    "Original student task PDF and gated Party Favors Cool-down not read and not claimed equivalent to exact publisher content.",
+    "Tests authored but .NET, Stage D, CI, teacher approval, merge and deploy remain unexecuted."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_2021_LOCAL_SOURCE_STUDENT_TEACHER_MATHEMATICAL_SEMANTICS_FIRSTPARTY_DRAWINGS_NOT_PUBLISHER_PIXEL"
 }

@@ -11155,113 +11155,192 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "division-representations",
+      "firstPartyFamily": "division-two-interpretations",
       "independentPractice": {
-        "prompt": "Eight crayons are put in two equal bags. How many in a bag?",
+        "prompt": "Mai has8 markers and puts4 in each box. How many boxes?",
         "answerType": "integer",
-        "expected": "4"
+        "expected": "2"
       },
       "originalEdulyticsCoolDown": {
-        "prompt": "Fifteen pencils are placed equally on three tables. How many per table?",
-        "answerType": "integer",
-        "expected": "5"
-      },
-      "openTeacherTask": "Work through the original lesson's activity Groups of Students with your teacher. Show the representation and explain how it meets the goal: You will interpret descriptions or drawings of division situations and recognize whether you involve finding an unknown number of groups or finding an unknown number of objects in each group.",
-      "teacherReviewNote": "Source 4 student sections and 6 teacher headings; 4 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
-      "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
-      "testsExecuted": false,
-      "independentTeachingGuidance": {
-        "sourceGoal": "Let’s represent division situations with drawings. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher",
-        "sourceLearningGoals": "Interpret and relate drawings and descriptions of division situations. Understand that a division situation may involve finding an unknown number of groups or finding an unknown number of objects in each group.",
-        "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
-        ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent division situations with drawings. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.A.2 Lesson Timeline Warm-up 10 min Activity 1 10 min Activity 2 10 min Activity 3 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
-      },
-      "sourceBasedCheck": {
-        "prompt": "Elena has 12 pencils equally in two boxes. How many pencils in each?",
+        "prompt": "An independent task:18 pencils shared into3 equal bags. How many in each bag?",
         "answerType": "integer",
         "expected": "6"
       },
+      "openTeacherTask": "Work through the original lesson's activity Groups of Students with your teacher. Show the representation and explain how it meets the goal: You will interpret descriptions or drawings of division situations and recognize whether you involve finding an unknown number of groups or finding an unknown number of objects in each group.",
+      "teacherReviewNote": "Warm-up four 240 sums, Elena's 2x6/6x2 A/B, Activity3 A two-four B ten-two C three-five each matching 2 stories. Publisher figures not copied; numeric/checks 11; human9.",
+      "firstPartyTasksAreNotOriginalPublisherPrompts": true,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
+      "testsExecuted": false,
+      "independentTeachingGuidance": {
+        "sourceGoal": "Interpret and relate drawings and descriptions of division situations. Understand that a division situation may involve finding an unknown number of groups or finding an unknown number of objects in each group.",
+        "sourceLearningGoals": "Interpret and relate drawings and descriptions of division situations. Understand that a division situation may involve finding an unknown number of groups or finding an unknown number of objects in each group.",
+        "teachingSteps": [
+          "Show the invariant sum240 across all four source warm-up expressions.",
+          "Compare 12 students in groups of2 versus2 groups, maintaining different group counts.",
+          "Elena 12 objects TWO boxes: teacher explicitly says source A two×six is correct, source B six×two incorrect.",
+          "Activity3 A: Mai2 boxes/Lin4 each; B: Kiran10 tables/Noah2 each; C: Priya3 desks/Jada5 each.",
+          "Have pupils explain why same completed group arrangement can map to two division stories with distinct unknowns."
+        ],
+        "caution": "Source art pixels not verified. First-party dot models are mathematic equivalents, not original illustration reproduction."
+      },
+      "sourceBasedCheck": {
+        "prompt": "Original source: Noah puts20 pencils equally into10 boxes. How many per box?",
+        "answerType": "integer",
+        "expected": "2"
+      },
       "sourceBasedCheckProvenance": {
         "localHtml": "unit-4/lesson-3/lesson.html",
-        "verified": "2021_STUDENT_FACING_SOURCE_TEXT",
+        "verified": "LOCAL_2021_STUDENT_TEXT_AND_TEACHER_NARRATIVE",
         "figurePixelsInspected": false
       },
       "reviewedStudentFacingText": true,
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S1-NUM1",
-          "sourceActivity": "Warm-up: Number Talk: The More Things Change... (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 120 + 120. Show or explain a method to your teacher.",
+          "id": "G3-U04-L03-WU-1",
+          "sourceActivity": "Number Talk: The More Things Change",
+          "prompt": "Original 2021 number talk: 120 + 120. Compute the value mentally.",
           "answerType": "integer",
           "expected": "240"
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S1-NUM2",
-          "sourceActivity": "Warm-up: Number Talk: The More Things Change... (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 121 + 119. Show or explain a method to your teacher.",
+          "id": "G3-U04-L03-WU-2",
+          "sourceActivity": "Number Talk: The More Things Change",
+          "prompt": "Original 2021 number talk: 121 + 119. Compute the value mentally.",
           "answerType": "integer",
           "expected": "240"
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S1-NUM3",
-          "sourceActivity": "Warm-up: Number Talk: The More Things Change... (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 125 + 115. Show or explain a method to your teacher.",
+          "id": "G3-U04-L03-WU-3",
+          "sourceActivity": "Number Talk: The More Things Change",
+          "prompt": "Original 2021 number talk: 125 + 115. Compute the value mentally.",
           "answerType": "integer",
           "expected": "240"
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S1-NUM4",
-          "sourceActivity": "Warm-up: Number Talk: The More Things Change... (10 minutes)",
-          "prompt": "First-party calculation based on a mathematical expression in the public 2021 lesson: 129 + 111. Show or explain a method to your teacher.",
+          "id": "G3-U04-L03-WU-4",
+          "sourceActivity": "Number Talk: The More Things Change",
+          "prompt": "Original 2021 number talk: 129 + 111. Compute the value mentally.",
           "answerType": "integer",
           "expected": "240"
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: The More Things Change... (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Division Situation Drawings.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L03-ELENA",
+          "sourceActivity": "Elena's Colored Pencils",
+          "prompt": "Original Elena source: 12 pencils shared equally into TWO boxes. How MANY PENCILS IN EACH?",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L03-A3-MAI",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Original Mai situation: 8 markers, 4 in EACH box, number of boxes unknown. Find the requested number of groups; teacher separately checks drawing A matching.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L03-A3-KIRAN",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Original Kiran situation: 20 pens, 2 at EACH table, number of tables unknown. Find the requested number of groups; teacher separately checks drawing B matching.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U04-L03-A3-LIN",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Original Lin situation: 8 colored pencils into 2 equal bags, objects in each bag unknown. Find the requested objects per group; teacher separately checks drawing A matching.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L03-A3-PRIYA",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Original Priya situation: 15 crayons, 5 per desk, number of desks unknown. Find the requested number of groups; teacher separately checks drawing C matching.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L03-A3-NOAH",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Original Noah situation: 20 pencils into 10 boxes equally, pencils per box unknown. Find the requested objects per group; teacher separately checks drawing B matching.",
+          "answerType": "integer",
+          "expected": "2"
+        },
+        {
+          "id": "G3-U04-L03-A3-JADA",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Original Jada situation: 15 markers into 3 equal table groups, markers on each table unknown. Find the requested objects per group; teacher separately checks drawing C matching.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L03-WU-EXPLAIN",
+          "sourceActivity": "Number Talk: The More Things Change",
+          "prompt": "Explain how all original pairs 120+120,121+119,125+115,129+111 remain 240 despite one addend increasing and the other decreasing.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Groups of Students (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Division Situation Drawings.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L03-A1-GROUPS",
+          "sourceActivity": "Groups of Students",
+          "prompt": "Contrast groups OF 2 students (six groups for 12) with TWO groups (six students each). Both involve twelve; words set different known quantities.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: Elena's Colored Pencils (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Division Situation Drawings.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L03-A2-ELENA-A",
+          "sourceActivity": "Elena's Colored Pencils",
+          "prompt": "2021 source teacher narrative confirms Elena's situation matches figure A, showing TWO groups of SIX; B shows SIX groups of TWO and does not fit 'two boxes'.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-S4-TEACHER",
-          "sourceActivity": "Activity 3: Which Drawing Matches? (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 4 for “Division Situation Drawings.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L03-A3-PAIR-A",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Source Activity 3 figure A (two groups of four dots) fits Mai's group-count problem and Lin's group-size problem. Teacher checks why unknown changes.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L03-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L03-A3-PAIR-B",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Source Activity 3 figure B (ten groups of two dots) fits Kiran's group-count problem and Noah's group-size problem.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L03-A3-PAIR-C",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Source Activity 3 figure C (three groups of five dots) fits Priya's group-count problem and Jada's group-size problem.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L03-A3-SAME-DRAWING",
+          "sourceActivity": "Which Drawing Matches?",
+          "prompt": "Explain why the SAME completed group drawing can model one story with unknown group count and another with unknown group size; context identifies the unknown.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L03-ORIGINAL-PUBLISHER-VISUAL",
+          "sourceActivity": "Source graphical evidence",
+          "prompt": "Eight original image URL entries and source ALT descriptions were indexed, but original pixels were not verified; compare with independently generated dot groups rather than asserting graphic identity.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L03-COOLDOWN",
+          "sourceActivity": "Publisher Cool-down: Party Favors",
+          "prompt": "Original gated Party Favors source Cool-down not read or reproduced. Teacher reviews original; Edulytics independent question is distinct.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_LOCAL_HTML_MATH_GROUPS_2021_TEACHER_A_B_DESCRIPTION_INDEPENDENT_FIRSTPARTY_FIGURES"
     },
     {
       "ordinal": 61,
