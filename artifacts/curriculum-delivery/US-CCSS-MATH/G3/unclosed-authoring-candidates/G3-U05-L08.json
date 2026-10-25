@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-5/lesson-8/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-8/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_2021_DIVISION_WARMUP_31_GROUP_ASSIGNED_FRACTIONS_11_WHOLE_AND_4_REVERSE_UNIT_LINE_CASES_REVIEWED",
     "goals": "Locate whole numbers on the number line given the location of a unit fraction and express them as fractions. Recognize that whole numbers can be written as fractions.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 6,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_RICHV2_COMPLETE_GROUP_COUNTS_EQUIVALENT_INTEGERS_AND_KNOWN_UNIT_LANDMARKS",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,11 @@
     "existingSourceBodyHash": "091f1d9f7cc8d5441b1fdc520a6c7c76e8208d9c67c315ac68f42e60f57c65ac",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l08-2021.rich-lesson-v2.json"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "4_DIVISIONS_31_EXACT_FRACTIONS_11_INTEGERS_8_REVERSE_UNIT_TARGETS_WRITTEN_UNRUN",
     "family": "fractions-number-line",
     "practiceAnswerType": "rational",
     "coolDownAnswerType": "rational",
@@ -42,7 +43,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Fractions Located at Whole Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s work with fractions and whole numbers on the number line. Required Preparation CCSS Standards Addressing 3.NF.A.2 3.NF.A.3.c 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Te",
-    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present."
+    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson8FractionsWholeNumbersTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +52,10 @@
       "sourceSection": "Warm-up: Number Talk: Divide by 4 (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TO_2021_MATHEMATICAL_FIRSTPARTY_A_B_C",
+      "grading": "NUMERIC_PLUS_HUMAN",
       "claimedParity": false
     },
     {
@@ -61,10 +63,10 @@
       "sourceSection": "Activity 1: Fractions Located at Whole Numbers (15 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TO_2021_MATHEMATICAL_FIRSTPARTY_A_B_C",
+      "grading": "NUMERIC_PLUS_HUMAN",
       "claimedParity": false
     },
     {
@@ -72,10 +74,10 @@
       "sourceSection": "Activity 2: Locate 1 on the Number Line (20 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_SOURCE_TO_2021_MATHEMATICAL_FIRSTPARTY_A_B_C",
+      "grading": "NUMERIC_PLUS_HUMAN",
       "claimedParity": false
     },
     {
@@ -106,55 +108,55 @@
       "id": "G3-U05-L08-IMAGE-01",
       "observedAltText": "Number line. Evenly spaced tick marks 0 to 5. First tick mark, 0. Last tick mark, 5.",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "OWNER_DEVICE_ORIGINAL_BYTES_READ_ONLY_NO_ART_COPY"
     },
     {
       "id": "G3-U05-L08-IMAGE-02",
       "observedAltText": "Number line. Scale 1 to 5 by 1's. Evenly spaced tick marks.",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "OWNER_DEVICE_ORIGINAL_BYTES_READ_ONLY_NO_ART_COPY"
     },
     {
       "id": "G3-U05-L08-IMAGE-03",
       "observedAltText": "Number line. Tick marks labeled zero and one half.",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "OWNER_DEVICE_ORIGINAL_BYTES_READ_ONLY_NO_ART_COPY"
     },
     {
       "id": "G3-U05-L08-IMAGE-04",
       "observedAltText": "Number line. Tick marks labeled zero and one fourth.",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "OWNER_DEVICE_ORIGINAL_BYTES_READ_ONLY_NO_ART_COPY"
     },
     {
       "id": "G3-U05-L08-IMAGE-05",
       "observedAltText": "Number line. Tick marks labeled zero and one sixth.",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "OWNER_DEVICE_ORIGINAL_BYTES_READ_ONLY_NO_ART_COPY"
     },
     {
       "id": "G3-U05-L08-IMAGE-06",
       "observedAltText": "Number line. Tick marks labeled zero and one eighth.",
       "originalReference": "unit-5/lesson-8/lesson.html",
-      "assetInspected": false,
+      "assetInspected": true,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "OWNER_DEVICE_ORIGINAL_BYTES_READ_ONLY_NO_ART_COPY"
     }
   ],
   "sourceElementCounts": {
@@ -168,20 +170,23 @@
     "expected": "1/8"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original publisher Student Task PDF and gated Cool-down not verified.",
+    "Publisher image artwork not copied; visual pixel parity not claimed.",
+    "Teacher reviews group discussion, drawn fractions and equal-distance construction.",
+    "No tests/Stage D/production persistence/academic approval/CI/merge/deploy executed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "f54fad0fd3bed394d49654b4b9d74d3a3d9bb7367b2317ceea5512de9adb3246",
+  "originalPreparationHtmlSHA256": "66a361ede4d2061109413d32217daf3637d25ae344f46bdff6412af50df71f2f",
+  "originalSourceAssetsDownloadedForReadOnlyReview": 6,
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-87-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-87-academic-source-coverage-and-human-rubric-20261025.json"
 }
