@@ -12470,9 +12470,9 @@
       "originalStudentTaskPdfRead": false,
       "fullArtworkVerified": false,
       "publishedRichV2Compared": false,
-      "sourceElementMapVerified": false,
+      "sourceElementMapVerified": true,
       "sourceToFirstPartyParityVerified": false,
-      "firstPartyFamily": "fact-family-division",
+      "firstPartyFamily": "personal-multiplication-fact-sort-related-quotients",
       "independentPractice": {
         "prompt": "From 7 × 6 = 42, find 42 ÷ 7.",
         "answerType": "integer",
@@ -12484,21 +12484,22 @@
         "expected": "4"
       },
       "openTeacherTask": "Work through the original lesson's activity Card Sort: Multiplication with your teacher. Show the representation and explain how it meets the goal: You will practice identifying multiplication facts within 100 and to use products you know to determine unknown quotients.",
-      "teacherReviewNote": "Source 3 student sections and 5 teacher headings; 0 extracted first-party scalar checks require separate teacher review for full 2021 task. Source PDF art, publisher Cool-down and original physical/game materials not 1:1 verified.",
+      "teacherReviewNote": "2021 original teacher and pupil lesson fully read; 4 warmup +2 original 4×5 family +4 explicitly first-party example checks;11 teacher tasks for personalized card sorting and related division. Source cards original blackline pixels unverified.",
       "firstPartyTasksAreNotOriginalPublisherPrompts": true,
-      "status": "A_C_EXPLICIT_GAP",
-      "readyForStageD": false,
+      "status": "READY_FOR_STAGE_D",
+      "readyForStageD": true,
       "testsExecuted": false,
       "independentTeachingGuidance": {
-        "sourceGoal": "Let’s consider the products and quotients we know right away or can find quickly.",
-        "sourceLearningGoals": "Identify known single-digit multiplication facts and their related division facts.",
+        "sourceGoal": "Assess personal recall of multiplication facts and derive related division facts from known products.",
+        "sourceLearningGoals": "Identify known facts within100 and derive matching quotients.",
         "teachingSteps": [
-          "Represent each equal group, array, multiplication or division situation.",
-          "Identify which factor, quotient or relationship is unknown.",
-          "Check that the number and explanation answer the original context."
+          "Original warm-up4×10=40,40÷4=10,40÷10=4,60÷6=10; explain inverse facts.",
+          "Card Sort: each pupil with a partner sorts facts into knows right away / can find quickly / does not know yet, chooses five difficult multiplication facts and practices strategies. This is a personalized classification.",
+          "Reuse card stack in If I Know Then I Know table. Original source example4×5=20 implies20÷4=5 and20÷5=4.",
+          "Pupil-chosen card combinations have no fixed publisher answer list. Independently authored Edulytics examples6×7=42 and3×8=24 provide extra checks, visibly distinct from publisher text.",
+          "Synthesis: a known product yields two quotient equations, with two choices of divisor."
         ],
-        "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s consider the products and quotients we know right away or can find quickly.",
-        "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+        "caution": "Original multiplication-card blackline pixels, student task PDF, photo and protected Cool-down not inspected/copied. Pupil confidence sorting and five selected facts require teacher assessment."
       },
       "sourceBasedCheck": {
         "prompt": "If 4 × 5 = 20, then source-related 20 ÷ 5 equals what?",
@@ -12514,34 +12515,154 @@
       "studentFacingLearningGoalProvenance": "GRADE3_2021_CANONICAL_LEARNING_GOAL_FROM_EXISTING_SOURCE_BOUND_PACK",
       "sourceSubtasks": [
         {
-          "id": "G3-U04-L08-STAGE-ABC-CANDIDATE-S1-TEACHER",
-          "sourceActivity": "Warm-up: Number Talk: Multiplication and Division (10 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 1 for “Relate Quotients to Familiar Products.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L08-WU-1",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original warm-up: evaluate 4×10 mentally and explain related facts.",
+          "answerType": "integer",
+          "expected": "40"
+        },
+        {
+          "id": "G3-U04-L08-WU-2",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original warm-up: evaluate 40÷4 mentally and explain related facts.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U04-L08-WU-3",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original warm-up: evaluate 40÷10 mentally and explain related facts.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L08-WU-4",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Original warm-up: evaluate 60÷6 mentally and explain related facts.",
+          "answerType": "integer",
+          "expected": "10"
+        },
+        {
+          "id": "G3-U04-L08-A2-EXAMPLE-1",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Source statement: if 4×5=20, find 20÷4.",
+          "answerType": "integer",
+          "expected": "5"
+        },
+        {
+          "id": "G3-U04-L08-A2-EXAMPLE-2",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Source statement: if 4×5=20, find 20÷5.",
+          "answerType": "integer",
+          "expected": "4"
+        },
+        {
+          "id": "G3-U04-L08-A2-FIRSTPARTY-6X7-A",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Independently authored Edulytics practice, NOT fixed publisher card: from a known multiplication product derive 42÷6.",
+          "answerType": "integer",
+          "expected": "7"
+        },
+        {
+          "id": "G3-U04-L08-A2-FIRSTPARTY-6X7-B",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Independently authored Edulytics practice, NOT fixed publisher card: from a known multiplication product derive 42÷7.",
+          "answerType": "integer",
+          "expected": "6"
+        },
+        {
+          "id": "G3-U04-L08-A2-FIRSTPARTY-3X8-A",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Independently authored Edulytics practice, NOT fixed publisher card: from a known multiplication product derive 24÷3.",
+          "answerType": "integer",
+          "expected": "8"
+        },
+        {
+          "id": "G3-U04-L08-A2-FIRSTPARTY-3X8-B",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Independently authored Edulytics practice, NOT fixed publisher card: from a known multiplication product derive 24÷8.",
+          "answerType": "integer",
+          "expected": "3"
+        },
+        {
+          "id": "G3-U04-L08-WU-INVERSE",
+          "sourceActivity": "Number Talk: Multiplication and Division",
+          "prompt": "Explain 4×10=40 ↔40÷4=10 and40÷10=4; additionally60÷6=10 can be checked by6×10=60.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L08-STAGE-ABC-CANDIDATE-S2-TEACHER",
-          "sourceActivity": "Activity 1: Card Sort: Multiplication (20 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 2 for “Relate Quotients to Familiar Products.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L08-A1-SORT-READY",
+          "sourceActivity": "Card Sort: Multiplication",
+          "prompt": "Teacher observes accurate PERSONAL sorting into facts pupil knows instantly; original scoring is self-reflection, not predetermined right or wrong.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L08-STAGE-ABC-CANDIDATE-S3-TEACHER",
-          "sourceActivity": "Activity 2: If I Know, Then I Know (15 minutes)",
-          "prompt": "With your teacher, complete and discuss original 2021 Student Facing section 3 for “Relate Quotients to Familiar Products.” Use the original publisher page for its tables, diagrams, open questions and directions. Independently describe or show a justified mathematical representation; a scalar answer cannot certify the full task.",
+          "id": "G3-U04-L08-A1-SORT-QUICK",
+          "sourceActivity": "Card Sort: Multiplication",
+          "prompt": "Teacher observes accurate PERSONAL sorting into facts pupil can compute quickly; original scoring is self-reflection, not predetermined right or wrong.",
           "answerType": "teacher",
           "expected": null
         },
         {
-          "id": "G3-U04-L08-STAGE-ABC-CANDIDATE-ORIGINAL-COOLDOWN",
-          "sourceActivity": "Original 2021 publisher Cool-down",
-          "prompt": "The original publisher Cool-down is gated or not separately verified. Ask the teacher for the original source; the Edulytics exit assessment is not a claim of source parity.",
+          "id": "G3-U04-L08-A1-SORT-NOTYET",
+          "sourceActivity": "Card Sort: Multiplication",
+          "prompt": "Teacher observes accurate PERSONAL sorting into facts pupil does not know yet; original scoring is self-reflection, not predetermined right or wrong.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-A1-FIVE-FACTS",
+          "sourceActivity": "Card Sort: Multiplication",
+          "prompt": "Student selects five personally unfamiliar multiplication facts and writes them down; teacher checks all five and associated learning strategies.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-A1-COLLABORATION",
+          "sourceActivity": "Card Sort: Multiplication",
+          "prompt": "Use source paired quiz/partner help and three categories, with MLR8 structured explanations, without auto-marking confidence.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-A1-CARD-MASTER",
+          "sourceActivity": "Card Sort: Multiplication",
+          "prompt": "Original blackline card pack and sorting sheet physical pixels not individually reviewed; first-party multiplication cards are mathematical skill analogues, not publisher copies.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-A2-TWO-QUOTIENTS",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "For any original or first-party multiplication card a×b=c, derive c÷a=b and c÷b=a, with units and consistent unknown factors.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-A2-OWN-CARDS",
+          "sourceActivity": "If I Know, Then I Know",
+          "prompt": "Pupils physically reuse partner card stack from preceding activity and populate own If I Know / Then I Know table; teacher checks chosen cards, not source-fixed card list.",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-SYNTHESIS",
+          "sourceActivity": "Lesson Synthesis",
+          "prompt": "Explain why knowing a multiplication product generates two related division facts (unless repeated factors duplicate numerical equations).",
+          "answerType": "teacher",
+          "expected": null
+        },
+        {
+          "id": "G3-U04-L08-GATED-CD",
+          "sourceActivity": "Publisher Cool-down",
+          "prompt": "Original Multiplication and Division Facts Cool-down is login-gated; Edulytics exit task is independent, not the publisher assessment.",
           "answerType": "teacher",
           "expected": null
         }
-      ]
+      ],
+      "sourceToFirstPartyParityScope": "2021_LOCAL_PUBLIC_LESSON_MATH_AND_PERSONALISED_CARD_WORKFLOW_FIRSTPARTY_CARD_SET_NO_PUBLISHER_COPY"
     },
     {
       "ordinal": 66,
