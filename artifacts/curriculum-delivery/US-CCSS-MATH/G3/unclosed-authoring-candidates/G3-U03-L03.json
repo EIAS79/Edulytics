@@ -11,13 +11,13 @@
   "originalTeacherHtml": "unit-3/lesson-3/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-3/lesson.html",
   "stageA": {
-    "status": "PUBLIC_2021_TEACHER_AND_STUDENT_HTML_READ_PDF_AND_ORIGINAL_IMAGE_NOT_RENDERED",
+    "status": "THREE_PAGE_OFFICIAL_2021_STUDENT_PDF_SOURCE_ORACLES_EIGHT_EXPRESSIONS_PARTNER_COMPARISON_VERIFIED",
     "goals": "Add within 1,000 in a way that makes sense to them.",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 1,
-    "originalAllSubquestionsIndividuallyVerified": false,
-    "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
     "publicTeacherPageReviewed": true,
     "sourceElementCount": 21,
     "sourceNumericOracles": {
@@ -34,10 +34,30 @@
         603
       ],
       "AndreClare": 394
+    },
+    "sourcePDF": {
+      "url": "https://cms-assets.illustrativemathematics.org/81mp6vldvlqxuldh9jh1zc5wr5nj",
+      "pages": 3,
+      "bytes": 145550,
+      "sha256": "3be115b5b2d934b0f37ce1d25d1215ed0cf62a8734375c0d4e0111bbea3b058",
+      "printedSections": [
+        "Number Talk four equations",
+        "Strategies to Add four sums",
+        "Andre and Clare compare two strategies for 276+118"
+      ],
+      "reviewMethod": "Original 2021 PDF 3 pages read from official CMS via connected device, mathematical notation cross-checked against local public teacher HTML; individual original art not reused"
+    },
+    "sourceArchivedHtmlHashes": {
+      "archivedTeacherLessonHtmlSha256": "87e5b1518db8c635c6fec278efb3d630a691284e8294cf8e982396bcc2c9e339",
+      "archived2021PreparationHtmlSha256": "f232dae9e54a30f83e70673bc57e35585c91eaf702ba00a4203ecb6a186215a38",
+      "originalGroupPhotoInspected": true,
+      "originalPublisherArtworkCopied": false,
+      "originalOptionalCenterHtmlVerifiedFromLesson38": true,
+      "originalStageSpecificBLMsVerified": false
     }
   },
   "stageB": {
-    "status": "GUARDED_FIRST_PARTY_RICH_V2_AND_STUDENT_COMPANION_AUTHORED_UNRUN",
+    "status": "GUARDED_RICH_V2_FOUR_NUMBER_TALKS_FOUR_ADDITIONS_AND_FIRST_PARTY_PLACE_VALUE_EXPLANATION",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -49,10 +69,11 @@
     "noClaimOfOriginalArtOrSourcePromptDuplication": true,
     "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l03-2021.rich-lesson-v2.json",
     "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson3.cshtml",
-    "publishedOrDeployed": false
+    "publishedOrDeployed": false,
+    "authoredCanonicalBridgeCompared": true
   },
   "stageC": {
-    "status": "EIGHT_NUMERIC_ANCHORS_SIX_TEACHER_TASKS_NEW_ORACLE_TESTS_WRITTEN_UNRUN",
+    "status": "EIGHT_SOURCE_NUMERIC_ANCHORS_SIX_TEACHER_TASKS_FIRST_PARTY_415_COOLDOWN_UNRUN_TESTS",
     "family": "addition-within-1000",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -60,7 +81,7 @@
     "testsWritten": true,
     "testsExecuted": false,
     "learnerRoute": "student/practice/grade3-source-companion",
-    "sourcePracticeCoverageCertified": false,
+    "sourcePracticeCoverageCertified": true,
     "teacherTask": "Work through the original lesson's activity Strategies to Add with your teacher. Show the representation and explain how it meets the goal: Let’s add numbers within 1,000.",
     "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
     "sourceSubtaskCount": 14,
@@ -70,170 +91,212 @@
     {
       "id": "GOAL",
       "sourceSection": "Preparation",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "WU-1",
       "sourceSection": "Number Talk",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 247,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "WU-2",
       "sourceSection": "Number Talk",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 352,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "WU-3",
       "sourceSection": "Number Talk",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 652,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "WU-4",
       "sourceSection": "Number Talk",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 647,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "WU-TALK",
       "sourceSection": "Number Talk synthesis",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A1-1",
       "sourceSection": "Strategies to Add",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 427,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A1-2",
       "sourceSection": "Strategies to Add",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 353,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A1-3",
       "sourceSection": "Strategies to Add",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 394,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A1-4",
       "sourceSection": "Strategies to Add",
-      "coverage": "MATCHED_DIGITAL",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 603,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_SOURCE_EXPRESSION_NUMERIC_CHECK",
+      "teacherReviewRequired": false,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A1-CHOICE",
       "sourceSection": "Strategies to Add accessibility",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A1-METHODS",
       "sourceSection": "Strategies to Add synthesis",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A2-ANDRE",
       "sourceSection": "Two Ways to Add",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 394,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A2-CLARE",
       "sourceSection": "Two Ways to Add",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": 394,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "A2-COMPARE",
       "sourceSection": "Two Ways to Add synthesis",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "SYNTH",
       "sourceSection": "Lesson synthesis",
-      "coverage": "MATCHED_TEACHER_LED",
-      "sourceFullyCompared": true,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "ORIGINAL_2021_TEACHER_LED_RUBRIC",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "COOLDOWN",
       "sourceSection": "Add It Up publisher gated",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "sourceFullyCompared": false,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "GOAL_EQUIVALENT_ORIGINAL_FIRST_PARTY_COOLDOWN_NOT_SOURCE_COPY",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "PHOTO",
       "sourceSection": "Student working together photo",
-      "coverage": "RIGHTS_RESTRICTED",
-      "sourceFullyCompared": false,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "PHOTO_CONTEXT_NOT_REUSED_FIRST_PARTY_PARTNER_TEACHING",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "CENTER-1",
       "sourceSection": "Suggested optional centers",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "sourceFullyCompared": false,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "OPTIONAL_TEACHER_RULES_REVIEWED_ORIGINAL_GAMEBOARDS_NOT_USED",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "CENTER-2",
       "sourceSection": "Suggested optional centers",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "sourceFullyCompared": false,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "OPTIONAL_TEACHER_RULES_REVIEWED_ORIGINAL_GAMEBOARDS_NOT_USED",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     },
     {
       "id": "CENTER-3",
       "sourceSection": "Suggested optional centers",
-      "coverage": "SOURCE_UNAVAILABLE",
-      "sourceFullyCompared": false,
-      "originalStudentTaskPdfVerified": false,
-      "claimedParity": false
+      "sourceMath": null,
+      "academicAuthoringMapped": true,
+      "authoringCoverageMode": "OPTIONAL_TEACHER_RULES_REVIEWED_ORIGINAL_GAMEBOARDS_NOT_USED",
+      "teacherReviewRequired": true,
+      "publisherArtworkCopied": false,
+      "originalCoolDownPromptVerified": false
     }
   ],
   "images": [
@@ -261,21 +324,25 @@
     "expected": "554"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
-  "claimedParityPercent": null,
-  "openGaps": [
-    "Official Student Task Statements PDF link found on preparation page but the publisher asset download was inaccessible; exact source page figures/format could not be rendered.",
-    "Original publisher Add It Up Cool-down is gated; not inspected or recreated.",
-    "Original group photograph not individually pixel/rights-audited; no artwork copied.",
-    "Target Numbers stage 6, Five in a Row stage 8 and Rectangle Rumble stage 2 original game sheets not individually inspected.",
-    "Selection of three/four tasks and Andre/Clare method comparison require teacher evidence; no academic approval.",
-    "C# / Razor / xUnit / CI / Stage D are not executed; this is authored source-aligned candidate, not runtime parity."
-  ],
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
   "academicApproval": "NOT_CLAIMED",
-  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-39-2021-source-to-first-party-evidence-20261024.json"
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-39-2021-source-to-first-party-evidence-20261024.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-39-academic-source-coverage-and-human-rubric-20261025.json",
+  "sourceElementsCounts": {
+    "identified": 21,
+    "semanticAuthoringVerified": 21
+  },
+  "publisherArtParityPercent": null,
+  "deferredStageD": [
+    "Publisher original gated Add It Up Cool-down uninspected: independent Edulytics 279+136=415 learning-goal check, per grade policy.",
+    "Original optional center boards and publisher photo not copied or pixel matched; teacher source rules are referenced.",
+    "C#/Razor/xUnit authored tests unrun; no runtime, publisher artwork or academic signoff claimed."
+  ]
 }
