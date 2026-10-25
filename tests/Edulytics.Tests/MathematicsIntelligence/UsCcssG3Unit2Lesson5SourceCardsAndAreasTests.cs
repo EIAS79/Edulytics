@@ -50,12 +50,15 @@ public sealed class UsCcssG3Unit2Lesson5SourceCardsAndAreasTests
         var q=Assert.Single(l!.SourceSubtasks,x=>x.Id==id);
         Assert.Equal("source-card-letter",q.AnswerType);
         Assert.Equal(correct,q.Expected);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,correct).NumericCorrect);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,correct.ToLowerInvariant()).NumericCorrect);
-        Assert.False(Grade3SourceCompanionCatalogue.Grade(q,wrong).NumericCorrect);
-        Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"").NumericCorrect);
-        Assert.False(Grade3SourceCompanionCatalogue.Grade(q,"15").NumericCorrect);
-        Assert.True(Grade3SourceCompanionCatalogue.Grade(q,correct).TeacherReview);
+        // The original publisher card geometry is a physical/source-art task.
+        // Retain the inspected answer-key label without awarding a screen-only
+        // numeric pass before the teacher verifies the actual match.
+        foreach (var response in new[] { correct, correct.ToLowerInvariant(), wrong, "", "15" })
+        {
+            var review=Grade3SourceCompanionCatalogue.Grade(q,response);
+            Assert.Null(review.NumericCorrect);
+            Assert.True(review.TeacherReview);
+        }
     }
 
     [Fact]
