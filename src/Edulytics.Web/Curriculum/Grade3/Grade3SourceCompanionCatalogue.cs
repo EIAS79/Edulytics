@@ -303,8 +303,12 @@ public static class Grade3SourceCompanionCatalogue
             static string? CanonicalQuantity(string? raw)
             {
                 if (string.IsNullOrWhiteSpace(raw)) return null;
-                var normalized = Regex.Replace(raw.Trim().ToLowerInvariant()
-                        .Replace("²", "2"), @"\s+", "")
+                var input = raw.Trim().ToLowerInvariant();
+                // "square feet" and "square meters" imply the exponent 2;
+                // do not accept a bare linear unit as an area.
+                var hasSquareWord = Regex.IsMatch(input,
+                    @"\b(square|sq\.)\b", RegexOptions.CultureInvariant);
+                var normalized = Regex.Replace(input.Replace("²", "2"), @"\s+", "")
                     .Replace("^", "")
                     .Replace("square", "")
                     .Replace("sq.", "")
@@ -313,6 +317,8 @@ public static class Grade3SourceCompanionCatalogue
                     .Replace("feet", "ft").Replace("foot", "ft")
                     .Replace("centimeters", "cm").Replace("centimeter", "cm")
                     .Replace("meters", "m").Replace("meter", "m");
+                if (hasSquareWord && !normalized.EndsWith("2", StringComparison.Ordinal))
+                    normalized += "2";
                 return normalized is "9in2" or "3ft2" or "55cm2" or "55m2"
                     ? normalized : null;
             }
@@ -327,19 +333,11 @@ public static class Grade3SourceCompanionCatalogue
 
         if (q.AnswerType == "source-card-letter")
         {
-            // Grade 3 Unit 2 Lesson 5 — independently drawn first-party
-            // A–G rectangle cards with source-equivalent row/column geometry.
-            // Only the CARD label is auto-checked; the student's explanation,
-            // physical matching and area-unit reasoning still require a teacher.
-            var value = submitted.Trim().ToUpperInvariant();
-            var expected = q.Expected?.Trim().ToUpperInvariant();
-            var valid = value.Length == 1 && value[0] is >= 'A' and <= 'G' &&
-                expected is not null && expected.Length == 1 &&
-                expected[0] is >= 'A' and <= 'G';
-            var correct = valid && string.Equals(value, expected, StringComparison.Ordinal);
-            return new(correct, true, correct
-                ? "This letter matches the first-party rectangle model. Explain the equal square rows/columns to your teacher."
-                : "Select one card A–G. Compare the source expression with BOTH side lengths and explain.");
+            // The original A–G publisher card matching requires inspecting
+            // physical source geometry. A standalone label cannot establish
+            // diagram parity or a successful card match; fail closed.
+            return new(null, true,
+                "The original rectangle card, row/column model and matching explanation need teacher review; a letter alone is not automatically scored.");
         }
 
         if (q.AnswerType == "yes-no")
