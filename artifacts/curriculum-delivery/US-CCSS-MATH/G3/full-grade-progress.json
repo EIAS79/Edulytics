@@ -17,9 +17,9 @@
   "totals": {
     "catalogueLessons": 143,
     "units": 8,
-    "lessonsFullyReadyForStageD": 85,
+    "lessonsFullyReadyForStageD": 86,
     "lessonsWithFirstEditionPublicSourceIndexed": 143,
-    "lessonsWithACExplicitGap": 58,
+    "lessonsWithACExplicitGap": 57,
     "remainingWithoutOriginalReview": 0,
     "numericCandidateCodeFilesAuthored": 9,
     "stageCRegressionFilesWrittenNotRun": 9,
@@ -32,7 +32,7 @@
     "firstPartyOriginalCoolDownCandidateLessonsAuthored": 135,
     "firstPartyOriginalPracticeCandidateLessonsAuthored": 135,
     "lessonsIndexedWith2021LocalHtml": 143,
-    "lessonsIndividuallyComparedToAllOriginalElements": 85,
+    "lessonsIndividuallyComparedToAllOriginalElements": 86,
     "lessonsWithAllStudentFacingTextExtracted": 143,
     "localStudentFacingTaskSectionsExtracted": 430,
     "localStudentFacingTaskSectionsIndividuallyMapped": 0,
@@ -44,13 +44,13 @@
     "lessonsWithUnverifiedSourceToProductMapping": 143,
     "lessonsWithAllOriginalFiguresVerified": 0,
     "lessonsWithLocalHtmlFigureUrlsAudited": 143,
-    "originalImagePixelFilesInspected": 81,
+    "originalImagePixelFilesInspected": 91,
     "sourceElementsSemanticallyVerifiedForAuthoring": 1265,
-    "originalSvgGeometriesInspected": 156
+    "originalSvgGeometriesInspected": 165
   },
   "cursor": {
-    "lastConsecutiveReadyForStageDOrdinal": 85,
-    "firstUnclosedOrdinal": 86,
+    "lastConsecutiveReadyForStageDOrdinal": 86,
+    "firstUnclosedOrdinal": 87,
     "highestSequentiallySourceIndexedOrdinal": 143,
     "nextAfterExternalGapOrdinal": null
   },
@@ -732,15 +732,11 @@
     {
       "ordinal": 86,
       "lessonCode": "PED:US-CCSS-MATH:G3:U05:L07",
-      "status": "A_C_EXPLICIT_GAP",
+      "status": "READY_FOR_STAGE_D",
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L07.json",
-      "reasons": [
-        "Original 2021 Student Task Statements PDF, diagrams/art/cards and visual geometry were not inspected one-to-one",
-        "Source subquestions and full teacher strategies not individually certified by the HTML-derived intake",
-        "Gated publisher Cool-down and source materials not verified",
-        "Runtime/CI/Stage D/academic approval not executed; teacher-led open tasks unapproved"
-      ],
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-2021-source-intake-candidate-20261024.json"
+      "reasons": [],
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-2021-source-to-first-party-evidence-20261025.json",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-academic-source-coverage-and-human-rubric-20261025.json"
     },
     {
       "ordinal": 87,
@@ -4110,12 +4106,12 @@
       "unitNumber": 5,
       "lessonNumber": 7,
       "title": "Non-unit Fractions on the Number Line PLC Activity",
-      "stageA": "ORIGINAL_PUBLIC_2021_HTML_SECTION_INDEX_AND_SIMPLE_MATH_EXTRACT_REVIEW_REQUIRED",
-      "stageB": "SOURCE_SPECIFIC_RICH_V2_CONTENT_CANDIDATE_FROM_HTML_NOT_FULL_TEACHER_SOURCE_PARITY",
-      "stageC": "SOURCE_DERIVED_SCALAR_CANDIDATES_PLUS_TEACHER_TASKS_TESTS_NOT_RUN",
-      "authoringClosure": "A_C_EXPLICIT_GAP",
+      "stageA": "2021_SOURCE_CHORAL_COUNT_SCOOT_AND_EIGHT_NONUNIT_FRACTIONS_REVIEWED",
+      "stageB": "FIRSTPARTY_16_QUARTERS_SCOOT_SCOPE_EIGHT_ORIGINAL_PAIRS_RICHV2",
+      "stageC": "SIXTEEN_QUARTER_TERMS_EIGHT_NUMERIC_ORACLES_TEACHER_RUBRIC_TESTS_UNRUN",
+      "authoringClosure": "READY_FOR_STAGE_D",
       "sourceElementsIdentified": 3,
-      "fullyVerifiedSourceElements": 0,
+      "fullyVerifiedSourceElements": 4,
       "verifiedParityPercent": null,
       "checkpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L07.json",
       "stageD": "NOT_STARTED",
@@ -4129,9 +4125,11 @@
       "original2021FiguresWithoutAlt": 0,
       "original2021RelativeSvgReferences": 0,
       "original2021FigurePixelParityApproved": false,
-      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-2021-source-intake-candidate-20261024.json",
-      "readyForStageD": false,
-      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED"
+      "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-2021-source-to-first-party-evidence-20261025.json",
+      "readyForStageD": true,
+      "authoredCandidateReviewStatus": "AUTOMATED_SOURCE_INDEX_AUTHORING_ONLY_NOT_INDIVIDUALLY_PDF_VERIFIED",
+      "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-academic-source-coverage-and-human-rubric-20261025.json",
+      "sourceMatchingMeasurementScope": "16_QUARTER_CHORAL_0TO4_EIGHT_SOURCE_FRACTIONS_OPEN_NUMBERLINE_SCOOT"
     },
     {
       "gradeOrdinal": 87,
@@ -6389,19 +6387,19 @@
     "noReadinessPromotion": true
   },
   "lastClosure": {
-    "gradeOrdinal": 85,
-    "lessonCode": "PED:US-CCSS-MATH:G3:U05:L06",
+    "gradeOrdinal": 86,
+    "lessonCode": "PED:US-CCSS-MATH:G3:U05:L07",
     "state": "READY_FOR_STAGE_D",
-    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-85-2021-source-to-first-party-evidence-20261025.json",
-    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-85-academic-source-coverage-and-human-rubric-20261025.json",
+    "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-2021-source-to-first-party-evidence-20261025.json",
+    "teacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-86-academic-source-coverage-and-human-rubric-20261025.json",
     "testsRun": false,
     "stageD": "NOT_STARTED",
     "academicApproval": "NOT_CLAIMED"
   },
   "progressRule": "Ready means source-specific stages A/B/C authored and mapped, not a passing test, publisher artwork copy, deployed lesson, original student task PDF certification or academic signoff",
   "latestSequentialCheckpoint": {
-    "lastClosedGradeOrdinal": 85,
-    "firstUnclosedGradeOrdinal": 86,
+    "lastClosedGradeOrdinal": 86,
+    "firstUnclosedGradeOrdinal": 87,
     "testsRun": false,
     "ciRun": false,
     "stageD": "NOT_STARTED"
