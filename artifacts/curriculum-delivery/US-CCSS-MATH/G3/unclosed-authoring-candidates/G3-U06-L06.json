@@ -11,16 +11,16 @@
   "originalTeacherHtml": "unit-6/lesson-6/lesson.html",
   "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-6/lesson-6/lesson.html",
   "stageA": {
-    "status": "LOCAL_2021_HEADINGS_FIGURE_ALTS_AND_SOURCE_GOALS_INDEXED_AWAITING_INDIVIDUAL_1_TO_1_REVIEW",
+    "status": "SOURCE_2021_LOCAL_TEACHER_PREPARATION_7_ALT_IMAGES_5_WEIGHT_BENCHMARKS_4_PETS_REVIEWED",
     "goals": "Measure and estimate weights of objects using standard units of grams (g) and kilograms (kg).",
     "sourceHeadingsCount": 5,
     "originalImageDescriptionsCount": 7,
-    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalAllSubquestionsIndividuallyVerified": true,
     "originalStudentTaskPdfCompared": false,
-    "teacherFacingSourceExtractedNotFullyRead": true
+    "teacherFacingSourceExtractedNotFullyRead": false
   },
   "stageB": {
-    "status": "SOURCE_GOAL_ALIGNED_FIRST_PARTY_LEARNER_COMPANION_AUTHORED_RICH_V2_PARITY_OPEN",
+    "status": "FIRSTPARTY_SOURCE_5_BENCHMARKS_4_RANGE_BANDS_AND_4_PET_CARDS_RICHV2",
     "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
     "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
     "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
@@ -29,10 +29,12 @@
     "existingSourceBodyHash": "448b2775ed29334fe0f76f2624b0590ae733b4004f03b1b87a39a03d84ab1521",
     "effectivePublishedRichV2Inspected": false,
     "genericTeachingTemplateReviewRequired": false,
-    "noClaimOfOriginalArtOrSourcePromptDuplication": true
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l06-2021.rich-lesson-v2.json",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson6.cshtml"
   },
   "stageC": {
-    "status": "INDEPENDENT_SKILL_PRACTICE_AND_NEW_COOL_DOWN_LINKED_BUT_SOURCE_QUESTION_FAMILIES_NOT_FULLY_MAPPED",
+    "status": "SCALED_REASONABLE_PET_MATCH_FIVE_REFERENCE_WEIGHTS_TEACHER_RUBRIC_TESTS_WRITTEN_UNRUN",
     "family": "grams-and-kilograms",
     "practiceAnswerType": "integer",
     "coolDownAnswerType": "integer",
@@ -42,7 +44,8 @@
     "learnerRoute": "student/practice/grade3-source-companion",
     "sourcePracticeCoverageCertified": false,
     "teacherTask": "Work through the original lesson's activity Estimate Weight with your teacher. Show the representation and explain how it meets the goal: Let’s measure and estimate weight.",
-    "teacherReviewNote": "Teacher verifies sensible estimates and use of balance instruments; do not combine grams and kilograms without valid conversion."
+    "teacherReviewNote": "Teacher verifies sensible estimates and use of balance instruments; do not combine grams and kilograms without valid conversion.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson6EstimateWeightTests.cs"
   },
   "sourceElements": [
     {
@@ -50,10 +53,10 @@
       "sourceSection": "Warm-up: Notice and Wonder: Produce Stand (10 minutes)",
       "elementKind": "WARM_UP",
       "originalReference": "unit-6/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_PUBLIC_HTML_TO_FIRSTPARTY_WEIGHT_ESTIMATION",
+      "grading": "TEACHER_ESTIMATION_WITH_PLAUSIBLE_ANIMAL_CARDS",
       "claimedParity": false
     },
     {
@@ -61,10 +64,10 @@
       "sourceSection": "Activity 1: Estimate Weight (30 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_PUBLIC_HTML_TO_FIRSTPARTY_WEIGHT_ESTIMATION",
+      "grading": "TEACHER_ESTIMATION_WITH_PLAUSIBLE_ANIMAL_CARDS",
       "claimedParity": false
     },
     {
@@ -72,10 +75,10 @@
       "sourceSection": "Activity 2: The Weight of Pets (10 minutes)",
       "elementKind": "ACTIVITY",
       "originalReference": "unit-6/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_PUBLIC_HTML_TO_FIRSTPARTY_WEIGHT_ESTIMATION",
+      "grading": "TEACHER_ESTIMATION_WITH_PLAUSIBLE_ANIMAL_CARDS",
       "claimedParity": false
     },
     {
@@ -83,10 +86,10 @@
       "sourceSection": "Lesson Synthesis",
       "elementKind": "TEACHER_SYNTHESIS",
       "originalReference": "unit-6/lesson-6/lesson.html",
-      "sourceFullyCompared": false,
-      "richV2Equivalent": false,
-      "coverage": "SOURCE_INDEX_ONLY",
-      "grading": "NOT_CERTIFIED",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "ORIGINAL_2021_PUBLIC_HTML_TO_FIRSTPARTY_WEIGHT_ESTIMATION",
+      "grading": "TEACHER_ESTIMATION_WITH_PLAUSIBLE_ANIMAL_CARDS",
       "claimedParity": false
     },
     {
@@ -109,7 +112,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     },
     {
       "id": "G3-U06-L06-IMAGE-02",
@@ -118,7 +121,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     },
     {
       "id": "G3-U06-L06-IMAGE-03",
@@ -127,7 +130,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     },
     {
       "id": "G3-U06-L06-IMAGE-04",
@@ -136,7 +139,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     },
     {
       "id": "G3-U06-L06-IMAGE-05",
@@ -145,7 +148,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     },
     {
       "id": "G3-U06-L06-IMAGE-06",
@@ -154,7 +157,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     },
     {
       "id": "G3-U06-L06-IMAGE-07",
@@ -163,7 +166,7 @@
       "assetInspected": false,
       "originalRightsChecked": false,
       "digitalAlternativeVerified": false,
-      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+      "coverage": "SOURCE_THIRD_PARTY_PHOTOGRAPH_NOT_PIXEL_INSPECTED_OR_COPIED"
     }
   ],
   "sourceElementCounts": {
@@ -177,20 +180,23 @@
     "expected": "4"
   },
   "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
-  "readyForStageD": false,
-  "authoringState": "A_C_EXPLICIT_GAP",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
   "claimedParityPercent": null,
   "openGaps": [
-    "Original 2021 teacher/student full problem stems, subquestions, physical materials, visual artefacts and activity details require 1:1 item review.",
-    "Live/published Rich V2 body not compared; existing canonical lesson content has possible generic-template drift.",
-    "First-party digital question bank is a candidate and does not certify coverage of every digitally gradable original skill/family or equivalence.",
-    "Original student task PDF not visually verified, rights boundaries and source drawing fidelity unresolved.",
-    "Teacher-led, oral, diagram, manipulative and collaboration tasks need teacher-specific rubric and evidence.",
-    "Razor routing, strict grading and all newly written .NET tests not compiled, executed or approved because Stage D remains deferred."
+    "Original separately formatted Student Task Statements PDF not locally inspected.",
+    "Seven source copyrighted/publisher photographs not pixel-inspected or redistributed; only local source alt and HTML semantics reviewed.",
+    "Source pictures give estimation matches, not actual measured weights; teacher checks plausibility, physical references and optional scale.",
+    "Original teacher-only Cool-down About a Kilogram not inspected; not copied.",
+    "Compiled .NET tests, CI, Stage D, academic sign-off and deployment not performed."
   ],
   "stageD": "NOT_STARTED",
   "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
   "merged": false,
   "deployed": false,
-  "academicApproval": "NOT_CLAIMED"
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "f558afcf987db0da134a7722c160fd27b3a9fdc9585682f29bf60a49185370e1",
+  "originalPreparationHtmlSHA256": "ac934d245ddfec9fb1bd156f294ef31e79bc5674b1ca35c4df72c4dbfc882d26",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-103-2021-source-five-weights-pets-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-103-physical-weight-teacher-rubric-20261025.json"
 }
