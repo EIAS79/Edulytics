@@ -103,6 +103,31 @@ public sealed class MathematicsCanonicalLessonContentSeeder
     /// materializer version, exact stored predecessor, status and absence of
     /// persisted translations. This does not approve human classroom work.
     /// </summary>
+    /// <summary>
+    /// The 2026-10-26 production SELECT-only inventory confirmed exactly two
+    /// Grade 3 B001-corrected JSON metadata predecessors (U01:L12, U01:L15).
+    /// This is not a general Grade 3 migration: allow these exact old markers
+    /// only when the pinned 2021 Grade 3 source hash/edition and effective
+    /// Rich V2 successor match, and ONLY after verifying no persisted prose.
+    /// </summary>
+    public static bool IsGuardedG3KnownProductionJsonMetadataPredecessor(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,
+        string existingContentVersion,
+        string expectedContentVersion,
+        bool verifiedNoPersistedTranslations) =>
+        verifiedNoPersistedTranslations &&
+        document.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+        document.VersionCode == "CCSSM-2010" &&
+        document.ContentVersion == CommonCoreG3SourceTeachingCorrections.BaseContentVersion &&
+        (lesson.LessonCode is
+            "PED:US-CCSS-MATH:G3:U01:L12" or
+            "PED:US-CCSS-MATH:G3:U01:L15") &&
+        CommonCoreG3SourceTeachingCorrections.IsTarget(document, lesson) &&
+        existingContentVersion == "us-ccss-b001-original-source-goals-repaired-v1" &&
+        expectedContentVersion ==
+            CommonCoreG3SourceTeachingCorrections.CorrectionContentVersion;
+
     public static bool IsGuardedG2KnownProductionJsonMetadataPredecessor(
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson,
@@ -292,6 +317,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     target.Document, target.Lesson, content.ContentVersion,
                     expectedVersion, verifiedNoPersistedTranslations: true) &&
                 !IsGuardedG2KnownProductionJsonMetadataPredecessor(
+                    target.Document, target.Lesson, content.ContentVersion,
+                    expectedVersion, verifiedNoPersistedTranslations: true) &&
+                !IsGuardedG3KnownProductionJsonMetadataPredecessor(
                     target.Document, target.Lesson, content.ContentVersion,
                     expectedVersion, verifiedNoPersistedTranslations: true))
                 throw new InvalidOperationException(
@@ -1030,6 +1058,32 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                         if (content.Status != document.Status)
                             throw new InvalidOperationException(
                                 "G2 metadata-only publication status drift: " +
+                                sourceLesson.LessonCode);
+                        content.ContentVersion = expectedContentVersion;
+                        content.UpdatedAtUtc = now;
+                        ApplyStatusMetadata(content, document.Status, now);
+                        continue;
+                    }
+
+                    // Only the TWO production-observed Grade 3 B001 markers
+                    // can advance to the source-SHA-guarded G3 version.
+                    // Recheck the absence of stored translations at mutation.
+                    var guardedG3JsonMetadata =
+                        metadataOnly &&
+                        IsGuardedG3KnownProductionJsonMetadataPredecessor(
+                            document, sourceLesson, content.ContentVersion,
+                            expectedContentVersion,
+                            verifiedNoPersistedTranslations: true) &&
+                        !await _db.CurriculumLessonContentTranslations
+                            .AsNoTracking()
+                            .AnyAsync(row =>
+                                row.CurriculumLessonContentId == content.Id, ct);
+
+                    if (guardedG3JsonMetadata)
+                    {
+                        if (content.Status != document.Status)
+                            throw new InvalidOperationException(
+                                "G3 metadata-only publication status drift: " +
                                 sourceLesson.LessonCode);
                         content.ContentVersion = expectedContentVersion;
                         content.UpdatedAtUtc = now;
