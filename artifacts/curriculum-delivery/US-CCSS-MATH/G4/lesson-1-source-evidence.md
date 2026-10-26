@@ -48,3 +48,9 @@ Authored focused `tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs`, **WR
 - Added narrowly scoped Rich V2 enum/renderer first-party SVG case and 3 G4 L01 Rich V2 visuals: four mathematical figures; lengths 1–5 area table at widths 2/3/4; width3 area≤30 mathematics.
 - Wrote `lesson-1-element-coverage-ledger.json` tracking 20 atomized source elements. Source Cool-down access remains blocked; no fabricated coverage. All authored elements remain RUNTIME_UNVERIFIED pending actual Stage D.
 - **No** publisher graphics committed; no main merge or production deployment; tests Stage D unrun.
+
+## Stage C original-source lesson-specific engine authoring
+- Added a narrow Grade4-U01-L01 `LessonPracticeContract` overriding the broad mapped CCSS 4.OA.B.4 factors/primes practice with source-specific widths, whole-number rectangle areas and exact multiple checks (4 families only for this lesson).
+- Added a new exact generator+independent parameter-validated verifier/solver for four numeric families, explicit positive whole-number bounds; registered families in existing question-family registry, and dispatched only those families through existing shared exact engine.
+- Open-ended A-D warm-up, physical tiles, paper grid drawings, partner explanations and protected original Cool-down **remain separate teacher-led tasks**. This is not automatic original-task completion.
+- Stage C code written, but `.NET`, GitHub CI, student answer persistence and authenticated workflows deliberately **NOT RUN** per supplied A–B–C plan. The original source Cool-down remains unavailable. `READY_FOR_STAGE_D` is not yet awarded.

@@ -7,7 +7,7 @@
   "stages": {
     "A": "2021_TEACHER_AND_STUDENT_PDF_3P_TEXT_AND_VISUAL_FIGURES_VERIFIED; COOLDOWN_NOT_OBTAINED",
     "B": "FIRSTPARTY_RICHV2_AREA_VECTORS_AND_15_RECTANGLE_EXAMPLE_AUTHORED; RUNTIME_UNVERIFIED",
-    "C": "NUMERIC_SKILL_SAMPLES_AUTHORED; PRACTICE_GENERATION_GRADING_UNVERIFIED",
+    "C": "G4_L01_FOUR_EXACT_WIDTH_AREA_AND_MULTIPLE_FAMILIES_IMPLEMENTED_AND_ROUTED; TESTS_WRITTEN_NOT_RUN",
     "D": "NOT_RUN"
   },
   "sourceFiles": [
@@ -30,8 +30,8 @@
     "The original five-minute Cool-down is educator-authenticated; no 2021 source task details verified. Optional Edulytics examples cannot be counted as it.",
     "Source task’s tile construction, grid paper drawings, student explanations and all partner/teacher-led tasks have not been tested as actual learner/teacher UI flows.",
     "First-party G4 L01 Rich V2 sidecar authored and structurally checked, but build/runtime display, per-skill Practice generator/verifier/grading and any representation are NOT_RUN / UNVERIFIED.",
-    "Mapped standard 4.OA.B.4 alone selects generic factors/primes rules; cannot assert the source-specific rectangle-construction task is autograded.",
-    "First-party A–D SVG and table now authored; student/teacher visual and accessibility runtime paths remain unverified."
+    "First-party A–D SVG and table now authored; student/teacher visual and accessibility runtime paths remain unverified.",
+    "Source-specific Practice contract and generator/solver/verifier are authored; no Stage D .NET builds, authenticated generation, scoring or persisted answer tests performed."
   ],
   "sourceParityProvenPercent": null,
   "readyForStageD": false,
@@ -78,5 +78,33 @@
     "execution": "node --test on ephemeral unmodified snapshot fetched from GitHub pinned SHA ea1c9cf6fb483ae0f57b9bac77b02ebebc6c1ef7",
     "scope": "Static identity / mathematical guard / Rich V2 source task structure",
     "stageD": false
+  },
+  "stageCContract": {
+    "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
+    "skillId": "geometry.rectangle.area",
+    "allowedQuestionFamilies": [
+      "usccss.g4.u01.l01.fixed_width_area",
+      "usccss.g4.u01.l01.area_is_multiple",
+      "usccss.g4.u01.l01.missing_whole_length",
+      "usccss.g4.u01.l01.possible_area_above30"
+    ],
+    "forbiddenAsSourceParity": [
+      "number.lcm.two_numbers",
+      "generic factors/primes tasks substituted for construction"
+    ],
+    "answerTypes": [
+      "exact_integer 0/1 for possible and integer product or length"
+    ],
+    "representationRequirements": [
+      "rectangle dimensions and square-unit labels; manual original constructions"
+    ],
+    "capabilityReadiness": "AUTHORED_NOT_STAGE_D_VERIFIED",
+    "teacherReviewRequired": [
+      "source A–D discussion",
+      "physical tiles",
+      "draw and label area models",
+      "explain why 28 is not width-three multiple",
+      "original gated cool-down"
+    ]
   }
 }

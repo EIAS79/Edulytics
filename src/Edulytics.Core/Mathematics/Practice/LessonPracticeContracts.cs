@@ -959,6 +959,10 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Grade 4 Unit 1 Lesson 1: strictly source-bound rectangle-area subskills.
+        // Hand constructions, open explanations, and publisher Cool-down remain teacher-led.
+        foreach (var reviewed in UsCcssG4Unit1FirstLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
         foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
         {
