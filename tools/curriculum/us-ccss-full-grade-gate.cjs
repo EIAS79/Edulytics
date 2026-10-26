@@ -124,7 +124,7 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   ]);
   const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
   if(names.status!==0)return false;
-  const changed=names.stdout.trim().split(/\\r?\\n/).filter(Boolean);
+  const changed=names.stdout.trim().split(/\r?\n/).filter(Boolean);
   if(changed.length===0 || changed.some(p=>!auditedG3Only.has(p)))return false;
   return changed.every(p=>{
     const hashes=auditedG3Only.get(p);
