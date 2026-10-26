@@ -35,7 +35,7 @@
   "sourceParityProvenPercent": null,
   "readyForStageD": false,
   "testsWritten": true,
-  "testsRun": false,
+  "testsRun": true,
   "academicApproved": false,
   "studentTaskPdf": {
     "source": "2021 original source URL linked from local 2021 teacher preparation.html",
@@ -44,5 +44,14 @@
     "sha256": "b5f8272ce99b0579280376b0ba0b89800599cbf8b5765150ea2e83ee83e43a4a",
     "textReviewed": true,
     "figuresVisuallyVerified": false
+  },
+  "focusedTest": {
+    "target": "tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs",
+    "testCount": 5,
+    "pass": 5,
+    "fail": 0,
+    "execution": "node --test on ephemeral unmodified snapshot fetched from GitHub pinned SHA ea1c9cf6fb483ae0f57b9bac77b02ebebc6c1ef7",
+    "scope": "Static identity / mathematical guard / Rich V2 source task structure",
+    "stageD": false
   }
 }
