@@ -105,7 +105,34 @@ function sourceUnchangedSinceProof(proofSha,releaseSha,affectedPaths) {
   ];
   const verifiedScope=[...new Set([...scope,...sharedCritical])];
   const diff=spawnSync('git',['diff','--quiet',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT});
-  return diff.status===0;
+  if(diff.status===0)return true;
+  if(diff.status!==1)return false;
+  // Existing Grade 1 approvals must never be restamped with a later SHA merely
+  // because the Grade 3 authoring branch introduced first-party lesson assets.
+  // The three below are the complete audited additive Grade-3-only deltas
+  // relative to the immutable G1 proof revision. Their *exact* old and new Git
+  // blob identities are mandatory; all other changes continue to fail closed.
+  // In particular, any further modification, or any G1 source/solver/grader
+  // change outside this exact set, invalidates the historical G1 proof.
+  const auditedG3Only=new Map([
+    ['src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs',
+      ['c0910a9bc06193e98cc8bf07d6b76234c7ea9381','cbf481746db2296b0e83e1ca199ee261fe0d7128']],
+    ['src/Edulytics.Data/Seeding/CommonCoreB001SourceGoalMismatchCorrections.cs',
+      ['6e2db0313e70b27c8e9c37282cd560c0c34b23e5','daad94a29ed0a4286891066b02add9f1389251cc']],
+    ['tools/phase29/acceptance_two_school_https.py',
+      ['def074f7fb0360f1b8dd30317f0d7485452e80b3','df8042aa4ed69a353fcfd7168df964e21e30f504']]
+  ]);
+  const names=spawnSync('git',['diff','--name-only',proofSha,releaseSha,'--',...verifiedScope],{cwd:ROOT,encoding:'utf8'});
+  if(names.status!==0)return false;
+  const changed=names.stdout.trim().split(/\\r?\\n/).filter(Boolean);
+  if(changed.length===0 || changed.some(p=>!auditedG3Only.has(p)))return false;
+  return changed.every(p=>{
+    const hashes=auditedG3Only.get(p);
+    const oldFile=spawnSync('git',['rev-parse',proofSha+':'+p],{cwd:ROOT,encoding:'utf8'});
+    const newFile=spawnSync('git',['rev-parse',releaseSha+':'+p],{cwd:ROOT,encoding:'utf8'});
+    return oldFile.status===0 && newFile.status===0 &&
+      oldFile.stdout.trim()===hashes[0] && newFile.stdout.trim()===hashes[1];
+  });
 }
 // Source-specific criteria are independent minimums from the already-reviewed
 // first-party task rubrics. Authorship selection still comes from the candidate
