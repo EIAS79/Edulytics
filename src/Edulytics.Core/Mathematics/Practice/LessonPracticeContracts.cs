@@ -959,6 +959,9 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // G4 U01 L05: source contexts need exact and minimum distinction.
+        foreach(var reviewed in UsCcssG4Unit1FifthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 optional U01 L04: use existing exact fact-recall families.
         foreach(var reviewed in UsCcssG4Unit1FourthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;

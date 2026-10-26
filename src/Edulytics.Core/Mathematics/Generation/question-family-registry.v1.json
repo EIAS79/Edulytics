@@ -4,6 +4,60 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g4.u01.l05.exact_seating",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-exact-or-at-least-arithmetic",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l05.minimum_packages",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-exact-or-at-least-arithmetic",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l05.shared_multiples",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-exact-or-at-least-arithmetic",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g4.u01.l03.classify_area",
       "version": 1,
       "skillId": "supporting.number.factors_primes",
