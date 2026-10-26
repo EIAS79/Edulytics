@@ -959,6 +959,10 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // G4 U02 L02: reuse exact fraction bar and equivalence checks;
+        // the original >1 multi-whole diagrams remain teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Unit2SecondLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // G4 U02 L01: reuse existing exact fraction-bar identification; paper strips and explanation remain teacher-reviewed.
         foreach(var reviewed in UsCcssG4Unit2FirstLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
