@@ -9,7 +9,7 @@
       "Title": "Multiples of a Number",
       "ExplanationParagraphs": [
         "Goal: use rectangles and their areas to reason about multiples of a whole-number side length. Grade 3 knowledge of tiled arrays and width × length is the starting point. The 2021 first-edition student task is a three-page activity set; Edulytics examples and explanations below are independently authored and are not substituted for the teacher-supervised source tasks.",
-        "Warm-up — Which One Doesn’t Belong? (10 minutes): the original three-page 2021 student PDF displays four labeled mathematical area figures, A–D. Discuss which could be the odd one out using a reason about area, rather than the figures’ apparent orientation. Each figure can have multiple defensible explanations. Keep this as an original-figure, teacher-reviewed activity until the exact original diagrams have been independently inspected and a lawful equivalent prepared. Do not substitute a guessed A–D drawing or force one machine-graded answer.",
+        "Warm-up — Which One Doesn’t Belong? (10 minutes): the original 2021 Student Task Statements PDF page 1 has now been rendered and visually read. A is a 5 × 4 ungridded rectangle (20 square units); B is a 4-column by 5-row tile array (20 square units); C is a 4 × 6 rectangle (24 square units); D is a six-sided L: a 2 × 7 tall rectangle and a 2 × 3 extension (20 square units). Edulytics independently reconstructs these mathematical forms as vectors, without copying publisher artwork. C is the only figure with area 24, B alone is gridded, and D alone is not a rectangle; the choice and the mathematical justification are teacher-reviewed, not auto-graded.",
         "Activity 1 — Build Rectangles and Find Area (20 minutes): work with inch tiles, ideally at least 36 per pair, and form FIVE distinct positive whole-number-length rectangles of each width: 2 tiles, 3 tiles and 4 tiles. Record fifteen areas in a three-row, five-column table, use square tiles as the unit, discuss each row’s skip-counting pattern with a partner, and predict one further area for each width with a reason. This is not completed by a single multiplication exercise. The first-party example with lengths 1 through 5 is a demonstration, not a claim that the source uniquely chooses those lengths.",
         "Activity 2 — What Areas Can You Build? (15 minutes): Elena is making rectangles that are 3 units wide and have an area no greater than 30 square units. For positive whole-number side lengths, construct and draw every possible rectangle, label width, length and area, list possible areas, and explain the pattern. In independent subquestions, explain why area 28 cannot occur; give two further possible areas above 30 with reasoning; then name and justify another impossible area. Drawing on centimeter grid paper, discussing mathematical explanations and reviewing the original task parts belong to the learner and teacher. Never substitute one auto-graded number for the entire investigation.",
         "Lesson synthesis (10 minutes): connect rectangular arrays with multiplication. If a width is 3 units, possible positive whole-number areas are multiples of 3. Test 28 as a multiple of 4 by 4 × 7 = 28, and distinguish this from impossibility for width 3. Explain why a fixed-width area sequence rises by that width and distinguish square-unit areas from unit side lengths. Maintain a mathematical-community discussion. After synthesis, allocate a separate five-minute Cool-down; the exact 2021 publisher Cool-down is educator-sign-in restricted and not represented as verified in this record. An Edulytics-created question such as 'A rectangle is 4 units wide; can its area be 28 square units? Explain.' is optional supplementary assessment, not the original publisher task.",
@@ -125,20 +125,111 @@
           "Correction": "Prepare three table rows, one for each width, with five distinct area entries and corresponding constructions per row."
         },
         {
-          "Mistake": "Answering the original figure warm-up with an invented or unverified digital drawing.",
-          "WhyWrong": "The 2021 source’s four figure representations and their mathematical details have not been individually reconstructed and verified; no single automatic answer is licensed by that gap.",
-          "Correction": "Use the source handout with a teacher until a first-party, checked equivalent is available; give reasons based on actual displayed area models."
+          "Mistake": "Calculating the L-shaped diagram D as if the missing upper-right region were filled, or assuming every figure has the same area.",
+          "WhyWrong": "A=5×4=20, B=4×5=20, C=4×6=24, and D=2×7 + 2×3=20. D is not a 4×7 rectangle.",
+          "Correction": "Count the separately dimensioned rectangles or compute the true L-shaped area as 14+6=20; let the teacher review different justified choices."
         }
       ],
       "SummaryPoints": [
         "Source: first-edition 2021 Grade 4 Unit 1 Lesson 1, three-page original student PDF read directly from the archived preparation HTML’s linked resource; teacher-facing preparation and lesson read locally.",
-        "Warm-up uses the source’s four labeled area figures with teacher-reviewed justifications; do not claim pixel-perfect or verified third-party figure reuse.",
+        "2021 original student p1 fully inspected including geometric forms: A=20 (5×4), B=20 (4×5 unit grid), C=24 (4×6), D=20 (2×7 + 2×3 L); independent mathematical diagrams offered. A–D open reasoning remains teacher-reviewed.",
         "Activity 1 requires five different rectangles at EACH width 2, 3 and 4 tiles, area table, prediction, partner explanation and tile handling.",
         "Activity 2 requires all width-3 rectangles with area at most 30 (positive whole-number lengths 1–10), grid drawings, all areas, and distinct explanations for 28’s impossibility, two areas above 30 and another impossible area.",
         "Lesson synthesis ties area to multiples; the original Cool-down remains educator-gated. Additional Edulytics questions are labeled separate and are not the publisher cool-down.",
         "Numerical area/divisibility may be automatically graded only using a verified width/length/area contract; building, drawing and mathematical explanations remain teacher-reviewed. 100% source parity and runtime coverage are not yet certified."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "Grade4Unit1AreaFigures",
+          "Title": "Area warm-up — independently drawn figure models",
+          "Description": "Four mathematically equivalent first-party models, not publisher artwork. A has width 5 and height 4, area 20 square units. B has 4 columns and 5 rows of unit squares, area 20. C has width 4 and height 6, area 24. D is an L formed from a 2-by-7 strip plus a 2-by-3 extension, area 20. Explain a justified choice to a teacher.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Three fixed widths: example of five distinct lengths each",
+          "Description": "Learners make 15 separate tile rectangles. This table is an independently authored illustrative solution; the original source leaves the length choices open.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Length in tiles",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Width 2 / areas",
+              "Cells": [
+                "2",
+                "4",
+                "6",
+                "8",
+                "10"
+              ]
+            },
+            {
+              "Label": "Width 3 / areas",
+              "Cells": [
+                "3",
+                "6",
+                "9",
+                "12",
+                "15"
+              ]
+            },
+            {
+              "Label": "Width 4 / areas",
+              "Cells": [
+                "4",
+                "8",
+                "12",
+                "16",
+                "20"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Elena's possible rectangles, with width three",
+          "Description": "Positive whole-number lengths and areas ≤30. Teacher reviews the learner's original grid-paper drawings and explanations.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Length (units)",
+              "Cells": [
+                "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
+              ]
+            },
+            {
+              "Label": "Area (square units)",
+              "Cells": [
+                "3, 6, 9, 12, 15, 18, 21, 24, 27, 30"
+              ]
+            },
+            {
+              "Label": "Not possible",
+              "Cells": [
+                "28 square units: 28÷3 has remainder 1"
+              ]
+            },
+            {
+              "Label": "Above 30 possible",
+              "Cells": [
+                "33 (3×11) and 36 (3×12)"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]

@@ -41,3 +41,10 @@ Authored focused `tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs`, **WR
 - Command: `node --test tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs` (applied to that isolated snapshot), **5/5 PASS, 0 FAIL**. Includes source identity, no generic shape-classification fallback, divisible/nondivisible rectangle areas, open checkpoint fail-closed guard, Rich V2 PDF-task coverage.
 - This is a **focused static and mathematics guard**, NOT a successful .NET build, authenticated lesson render, teacher/learner workflow, or Practice generate/grade test. Stage D/CI remains `NOT_RUN`.
 - As original source diagrams, educator-gated cool-down and graded/manual runtime evidence are still missing, **A–B–C remains incomplete at ordinal 1**. No skip to lesson 2.
+
+## Original page-1 diagrams verified visually (this iteration)
+- Source 2021 first-edition Student Task Statements PDF 3 pages; original text and **vector artwork visually rendered and inspected** on authorized Our-CS. The original PDF/images/logos are NOT committed.
+- A rectangle 5×4=20; B 4 columns×5 rows tiled=20; C rectangle 4×6=24; D L composed from vertical 2×7 and side 2×3=20. C is only area24; B only fully tiled and D only non-rectangle. Student choice/reasoning teacher-evaluated.
+- Added narrowly scoped Rich V2 enum/renderer first-party SVG case and 3 G4 L01 Rich V2 visuals: four mathematical figures; lengths 1–5 area table at widths 2/3/4; width3 area≤30 mathematics.
+- Wrote `lesson-1-element-coverage-ledger.json` tracking 20 atomized source elements. Source Cool-down access remains blocked; no fabricated coverage. All authored elements remain RUNTIME_UNVERIFIED pending actual Stage D.
+- **No** publisher graphics committed; no main merge or production deployment; tests Stage D unrun.

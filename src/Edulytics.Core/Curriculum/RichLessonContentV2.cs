@@ -24,7 +24,8 @@ public enum RichLessonVisualKind
     PlaceValueChart = 6,
     Scale = 7,
     EquationSet = 8,
-    ShapeDecomposition = 9
+    ShapeDecomposition = 9,
+    Grade4Unit1AreaFigures = 10
 }
 
 public sealed class RichLessonContentV2Document

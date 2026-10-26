@@ -5,8 +5,8 @@
   "title": "Multiples of a Number",
   "status": "A_C_EXPLICIT_GAP",
   "stages": {
-    "A": "TEACHER_AND_ORIGINAL_2021_STUDENT_PDF_READ; FIGURE_AND_COOLDOWN_GAPS",
-    "B": "GRADE4_L01_FIRST_PARTY_RICHV2_AUTHORED; RUNTIME_UNVERIFIED",
+    "A": "2021_TEACHER_AND_STUDENT_PDF_3P_TEXT_AND_VISUAL_FIGURES_VERIFIED; COOLDOWN_NOT_OBTAINED",
+    "B": "FIRSTPARTY_RICHV2_AREA_VECTORS_AND_15_RECTANGLE_EXAMPLE_AUTHORED; RUNTIME_UNVERIFIED",
     "C": "NUMERIC_SKILL_SAMPLES_AUTHORED; PRACTICE_GENERATION_GRADING_UNVERIFIED",
     "D": "NOT_RUN"
   },
@@ -26,11 +26,12 @@
     }
   ],
   "blockedOn": [
-    "Original 2021 PDF student TASK TEXT now verified, but original warm-up A–D figures and legal first-party equivalent NOT individually verified.",
+    "Original educator-gated 2021 Cool-down not verified; do not claim publisher-source parity or invent its item.",
     "The original five-minute Cool-down is educator-authenticated; no 2021 source task details verified. Optional Edulytics examples cannot be counted as it.",
     "Source task’s tile construction, grid paper drawings, student explanations and all partner/teacher-led tasks have not been tested as actual learner/teacher UI flows.",
     "First-party G4 L01 Rich V2 sidecar authored and structurally checked, but build/runtime display, per-skill Practice generator/verifier/grading and any representation are NOT_RUN / UNVERIFIED.",
-    "Mapped standard 4.OA.B.4 alone selects generic factors/primes rules; cannot assert the source-specific rectangle-construction task is autograded."
+    "Mapped standard 4.OA.B.4 alone selects generic factors/primes rules; cannot assert the source-specific rectangle-construction task is autograded.",
+    "First-party A–D SVG and table now authored; student/teacher visual and accessibility runtime paths remain unverified."
   ],
   "sourceParityProvenPercent": null,
   "readyForStageD": false,
@@ -43,7 +44,31 @@
     "pages": 3,
     "sha256": "b5f8272ce99b0579280376b0ba0b89800599cbf8b5765150ea2e83ee83e43a4a",
     "textReviewed": true,
-    "figuresVisuallyVerified": false
+    "figuresVisuallyVerified": true,
+    "figures": {
+      "A": {
+        "width": 5,
+        "height": 4,
+        "area": 20
+      },
+      "B": {
+        "columns": 4,
+        "rows": 5,
+        "area": 20
+      },
+      "C": {
+        "width": 4,
+        "height": 6,
+        "area": 24
+      },
+      "D": {
+        "components": [
+          "2×7",
+          "2×3"
+        ],
+        "area": 20
+      }
+    }
   },
   "focusedTest": {
     "target": "tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs",
