@@ -1,0 +1,138 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-u02-l16-2021-compare-order-source-abc-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U02:L16",
+      "CultureCode": "en",
+      "Title": "Compare and Order Fractions",
+      "ExplanationParagraphs": [
+        "Learning goal: Compare and order fractions using an efficient, accurate strategy. Different fractions may be compared using benchmarks, equal numerators/denominators, equivalent fractions, or common denominators.",
+        "Original 2021 source warm-up (10 min): 5×6, 5×12, 6×12, and 11×12. Explain how knowing one product helps you find another.",
+        "Original source Activity 1 Compare Fractions Game (20 min): groups 2–4 use the Grade4 fraction-card deck. The greater (or greatest) fraction wins the round; equal greatest fractions trigger another draw among tied players. Keep track of difficult comparisons and justify the winners.",
+        "Original source Activity 2 Fractions in Order (15 min): Order each of the four sets below from least to greatest. Start with two sets independently, then discuss with a partner. Show mathematical reasons rather than copying the answer.",
+        "Use a common whole. Benchmark fractions against 1/2 or 1, convert when needed, and carefully handle close values like 101/100 versus 21/20.",
+        "Teacher-led lesson synthesis (10 min): discuss multiple ordering methods, defend your reasoning, and identify two specific skills learned in this unit.",
+        "Edulytics independently authored Cool-down, NOT the publisher's gated original: arrange 3/8, 1/2, 2/3 from least to greatest and explain. Open explanation requires teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Flexible comparisons",
+          "Definition": "Fractions may be compared by benchmarks or exact equivalence.",
+          "Rule": "Check common whole, then use a mathematically valid strategy.",
+          "Example": "3/8 < 1/2 because 3/8 < 4/8."
+        },
+        {
+          "Title": "Increasing order",
+          "Definition": "Ascending order means every adjacent fraction is no larger than the next.",
+          "Rule": "Compare exact rational values; group by 1/2 and 1 to reduce work.",
+          "Example": "1/4 < 1/2 < 3/4."
+        },
+        {
+          "Title": "Equivalent fractions and ties",
+          "Definition": "Different representations can have exactly the same value.",
+          "Rule": "Equal values trigger another card in the source game.",
+          "Example": "2/4 = 3/6 = 1/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Benchmark then order",
+          "Question": "Order 1/4, 3/4, 2/3 from least to greatest.",
+          "Method": "Place 1/4 below 1/2, then compare 2/3 and 3/4 by twelfths.",
+          "Steps": [
+            "1/4 is less than both other fractions.",
+            "2/3 = 8/12 and 3/4 = 9/12.",
+            "So 1/4 < 2/3 < 3/4."
+          ],
+          "Answer": "1/4 < 2/3 < 3/4",
+          "Check": "Cross products 2×4=8 < 3×3=9."
+        },
+        {
+          "Title": "Equivalent fraction tie",
+          "Question": "Which card wins: 3/6 or 2/4?",
+          "Method": "Rewrite both in halves.",
+          "Steps": [
+            "3/6 = 1/2.",
+            "2/4 = 1/2.",
+            "These cards are equivalent, so follow the source tie rule."
+          ],
+          "Answer": "Tie; draw an additional card.",
+          "Check": "3×4=12 equals 2×6=12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Picking the larger printed denominator as the larger number.",
+          "WhyWrong": "A denominator alone describes part size, not whole value.",
+          "Correction": "Compare equivalent forms or benchmark relationships."
+        },
+        {
+          "Mistake": "Rounding close fractions prematurely.",
+          "WhyWrong": "101/100 and 21/20 differ exactly.",
+          "Correction": "Use exact rational comparisons, e.g. 101×20 versus 21×100."
+        },
+        {
+          "Mistake": "Forgetting ties in the card game.",
+          "WhyWrong": "Different names can show equal rational values.",
+          "Correction": "Check equivalence and replay the tied round according to source rules."
+        }
+      ],
+      "SummaryPoints": [
+        "Source: 10-minute Number Talk, 20-minute Compare Fractions game, 15-minute ordering, and teacher synthesis.",
+        "The four original ordering problem sets are presented without the four finished answer keys in learner content.",
+        "Exact numeric pair and three-fraction ordering Practice is reused, while four-item source reasoning stays teacher assessed.",
+        "Original 2021 teacher source verified; original student PDF unavailable for independent visual verification; publisher Cool-down not accessed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original four sets — order least to greatest",
+          "Description": "Source 2021 Grade4 U02 L16 Activity2. The teacher reviews every four-fraction ordering and the student explanations.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Set A",
+              "Cells": [
+                "3/12",
+                "2/4",
+                "2/3",
+                "1/8"
+              ]
+            },
+            {
+              "Label": "Set B",
+              "Cells": [
+                "8/5",
+                "5/6",
+                "11/12",
+                "11/10"
+              ]
+            },
+            {
+              "Label": "Set C",
+              "Cells": [
+                "21/20",
+                "9/10",
+                "6/5",
+                "101/100"
+              ]
+            },
+            {
+              "Label": "Set D",
+              "Cells": [
+                "5/8",
+                "2/5",
+                "3/7",
+                "3/6"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

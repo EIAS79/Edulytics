@@ -963,6 +963,9 @@ public static class LessonPracticeContractRegistry
         foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L15: reuse exact common-denominator and unlike comparison numeric families.
+        // Grade4 U02 L16: source four fraction sets, reused exact 2-3 value checks.
+        foreach(var reviewed in UsCcssG4Unit2SixteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         foreach(var reviewed in UsCcssG4Unit2FifteenthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L14: reuse exact comparator and benchmark; mixed li/km is teacher led.
