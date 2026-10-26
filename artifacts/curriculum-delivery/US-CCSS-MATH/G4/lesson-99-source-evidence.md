@@ -1,0 +1,10 @@
+# G4 ordinal 99 — Situations Involving Equal-size Groups
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-13_preparation.html SHA256=c18fc691cd0de9491ff8e51def0b74b5d104a1c27e4c04971c53954efcd2a98e
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-13\lesson.html SHA256=5b6f3de9b3c979a80f97e0edf1e11f516dc00a56e2b77269a2934aa0739fc0f4
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-13\lesson.html SHA256=11acb6137c07171144e3fcd3292ed6672012f738f6095aee914e93228a2c82b0
+- Preserved existing learning explanation: Learning goal: You will solve division problems in context, and to recall the two meanings of division: “how many in each group” and “how many groups. In grade 3, you learned about the relationship between multiplication and division and reasoned about division in terms of equal groups. You also saw two interpretations of division: as a way to find the size of a group and as a way to find the number of groups. You used these understandings to find quotients and to reason about division problems 
+- Original 2021 sections: Warm-up: Estimation Exploration: Lots of Paletas	 (10 minutes); Activity 1:  Paletas for a Class Party	 (15 minutes); Activity 2: More Snacks for a Class Party (20 minutes); Cool-down:  After the Class Party	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 24*3 = 72.
+- Edulytics first-party Cool-down: Forty-eight paletas are packed 6 per box. How many boxes?; teacher key: 8 boxes.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.
