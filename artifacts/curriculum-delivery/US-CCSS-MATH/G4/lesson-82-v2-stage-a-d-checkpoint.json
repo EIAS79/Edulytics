@@ -1,0 +1,42 @@
+{
+  "ordinal": 82,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L14",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "e98bcafabacde2b1e3fbe84b3491eb06d00eb8771c7d9d39c522ee5e0bdd0faa",
+    "teacher": "09ef86cbe026bca063d5120470a6a91888dcbfef43cca9880278a3f1ac0e4245",
+    "student": "fec891880f18d41d27c4b4ddc4961d90b4024c7a09eec911cb6878b1e7b0cf51"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "A 3-L bottle loses 750 mL. How much remains?",
+    "teacherAnswer": "2,250 mL"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:24:12+01:00",
+  "closeAtLocal": "2026-10-26T23:24:12+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-82-local-source-guard.test.cjs"
+  }
+}
