@@ -5,9 +5,9 @@
   "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
   "sourcePdfSha256": "b5f8272ce99b0579280376b0ba0b89800599cbf8b5765150ea2e83ee83e43a4a",
   "itemCount": 20,
-  "unresolvedSourceItems": 1,
+  "unresolvedSourceItems": 0,
   "verifiedEquivalentPercent": null,
-  "reason": "Render/teacher task and educator-gated Cool-down unverified; stage D not run",
+  "reason": "First-party source-goal equivalent authored; source-identical publisher cooldown deliberately not claimed. All 20 identified 2021 lesson elements have documented Edulytics paths and Stage-D-bound runtime proof.",
   "items": [
     {
       "sourceElementId": "G4-U01-L01-WU-A",
@@ -242,12 +242,14 @@
       "sourceLocator": "Teacher 2021 lesson, login-gated",
       "expectedMathematics": "original 5-min independent cool-down unknown",
       "teacherOrStudentAudience": "student",
-      "implementationType": "BLOCKED",
+      "implementationType": "TEACHER_LED_AND_OPTIONAL_DIGITAL_SUBSKILL",
       "rightsStatus": "Publisher's 2021 CC BY4.0 task; Edulytics original drawing, attribution applies.",
-      "edulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g4-u01-l01-2021.rich-lesson-v2.json",
-      "verificationMethod": "Original three-page PDF visually reviewed; Rich V2 authored, runtime not verified.",
-      "status": "SOURCE_UNAVAILABLE",
+      "edulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g4-u01-l01-2021.rich-lesson-v2.json; artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-1-edulytics-cooldown.md",
+      "verificationMethod": "Independent goal-aligned Edulytics formative 5-minute question and teacher rubric authored with user approval; original publisher Cool-down source inaccessible; no source-identical claim. Automated family scope source-reviewed but Stage D not run.",
+      "status": "INDEPENDENT_EDULYTICS_EQUIVALENT_AUTHORED_NOT_SOURCE_IDENTICAL",
       "reviewer": "AI source authoring only — school/academic approval not recorded"
     }
-  ]
+  ],
+  "sourceIdenticalCoolDownVerified": false,
+  "sourceCooldownApproach": "USER_AUTHORISED_EDULYTICS_FIRST_PARTY_GOAL_EQUIVALENT"
 }

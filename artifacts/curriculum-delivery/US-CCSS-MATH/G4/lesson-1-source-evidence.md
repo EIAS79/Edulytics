@@ -57,3 +57,9 @@ Authored focused `tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs`, **WR
 
 ### Stage D tests authored, not executed
 Added focused C# xUnit cases checking exact G4 L01 contract routing, 4 seeded generator families, independent width×length/divisibility oracle, rejection of incorrect/invalid boundaries, and Rich V2 original-2021 visual and teacher-review semantics. These are **WRITTEN_NOT_RUN**, no .NET test/build, E2E or GitHub Actions triggered intentionally.
+
+## User-authorised first-party Edulytics Cool-down and A-C handoff
+- User expressly permitted authoring an independent Edulytics Cool-down from verified lesson goal/content/skill, instead of requiring inaccessible exact publisher Cool-down.
+- Student task: width 3, area 25 cannot be a positive whole-number-sided rectangle; give a valid positive area <30 and justify. Teacher rubric in `lesson-1-edulytics-cooldown.md`; the existing `area_is_multiple` numeric family is a separate auto-gradeable subskill.
+- Under this **specific, explicit source-substitution exception**, the 20 inventoried A/B/C elements have complete authored source-goal pedagogical paths. Status set READY_FOR_STAGE_D for *testing and runtime verification*, with `sourceParityProvenPercent:null` because the original publisher Cool-down has never been inspected. This does not assert publisher-source fidelity of that restricted item, academic approval, tested runtime, or deployment.
+- All actual runtime integration and authenticated E2E remain for Stage D, as the attached plan separates them. Tests written but not deliberately run in this phase.

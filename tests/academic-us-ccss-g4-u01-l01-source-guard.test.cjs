@@ -24,7 +24,7 @@ test('independent multiples arithmetic regression', () => {
 });
 test('fail-closed checkpoint blocks advancing to lesson 2', () => {
  const x=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-1-v2-stage-a-d-checkpoint.json'),'utf8'));
- assert.equal(x.status,'A_C_EXPLICIT_GAP');assert.equal(x.readyForStageD,false);assert.equal(x.sourceParityProvenPercent,null);
+ assert.equal(x.status,'READY_FOR_STAGE_D');assert.equal(x.readyForStageD,true);assert.equal(x.sourceParityProvenPercent,null);assert.equal(x.approvedSourceDifference.publisherCoolDownOriginalSeen,false);assert.equal(x.approvedSourceDifference.userAuthorisedOriginalEdulyticsCoolDown,true);
 });
 
 

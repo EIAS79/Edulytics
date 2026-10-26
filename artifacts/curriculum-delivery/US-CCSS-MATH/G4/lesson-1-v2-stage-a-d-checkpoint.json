@@ -3,11 +3,11 @@
   "ordinal": 1,
   "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
   "title": "Multiples of a Number",
-  "status": "A_C_EXPLICIT_GAP",
+  "status": "READY_FOR_STAGE_D",
   "stages": {
-    "A": "2021_TEACHER_AND_STUDENT_PDF_3P_TEXT_AND_VISUAL_FIGURES_VERIFIED; COOLDOWN_NOT_OBTAINED",
-    "B": "FIRSTPARTY_RICHV2_AREA_VECTORS_AND_15_RECTANGLE_EXAMPLE_AUTHORED; RUNTIME_UNVERIFIED",
-    "C": "G4_L01_FOUR_EXACT_WIDTH_AREA_AND_MULTIPLE_FAMILIES_IMPLEMENTED_AND_ROUTED; TESTS_WRITTEN_NOT_RUN",
+    "A": "2021_PREPARATION_TEACHER_LESSON_AND_STUDENT_PDF_ALL_3_PAGES_PLUS_DIAGRAMS_VERIFIED; COOLDOWN_GOAL_SUBSTITUTE_USER_APPROVED_NOT_SOURCE_IDENTICAL",
+    "B": "FIRST_PARTY_RICH_V2_DIAGRAMS_15_TILE_RECTANGLES_TEACHER_TASKS_AND_INDEPENDENT_COOLDOWN_AUTHORED; D_RUNTIME_RESERVED",
+    "C": "FOUR_SOURCE_ALIGNED_EXACT_PRACTICE_FAMILIES_CODED_AND_STAGE_D_REGRESSION_TESTS_WRITTEN; TEACHER_REVIEW_EXPLICIT",
     "D": "NOT_RUN"
   },
   "sourceFiles": [
@@ -25,16 +25,9 @@
       "note": "Newer mirror; differs in warm-up label"
     }
   ],
-  "blockedOn": [
-    "Original educator-gated 2021 Cool-down not verified; do not claim publisher-source parity or invent its item.",
-    "The original five-minute Cool-down is educator-authenticated; no 2021 source task details verified. Optional Edulytics examples cannot be counted as it.",
-    "Source task’s tile construction, grid paper drawings, student explanations and all partner/teacher-led tasks have not been tested as actual learner/teacher UI flows.",
-    "First-party G4 L01 Rich V2 sidecar authored and structurally checked, but build/runtime display, per-skill Practice generator/verifier/grading and any representation are NOT_RUN / UNVERIFIED.",
-    "First-party A–D SVG and table now authored; student/teacher visual and accessibility runtime paths remain unverified.",
-    "Source-specific Practice contract and generator/solver/verifier are authored; no Stage D .NET builds, authenticated generation, scoring or persisted answer tests performed."
-  ],
+  "blockedOn": [],
   "sourceParityProvenPercent": null,
-  "readyForStageD": false,
+  "readyForStageD": true,
   "testsWritten": true,
   "testsRun": true,
   "academicApproved": false,
@@ -111,5 +104,18 @@
     "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Unit1Lesson1Original2021SourcePracticeTests.cs — four xUnit method groups, WRITTEN_NOT_RUN",
     "tests/academic-us-ccss-g4-u01-l01-practice-source-guard.test.cjs — Node static arithmetic/routing checks, WRITTEN_NOT_RUN_THIS_ITERATION",
     "tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs — earlier 5/5 static tests ran at previous candidate only; do not claim this candidate's CI"
-  ]
+  ],
+  "approvedSourceDifference": {
+    "publisherCoolDownOriginalSeen": false,
+    "userAuthorisedOriginalEdulyticsCoolDown": true,
+    "subject": "fixed-width rectangle areas and multiples",
+    "taskPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-1-edulytics-cooldown.md",
+    "class": "first-party pedagogical equivalent NOT publisher-source-identical"
+  },
+  "pendingStageD": [
+    "Build and code integration including visualization, authenticated learner/teacher display and accessibility.",
+    "Exact Practice runtime generate/verify/grading, student score persistence and manual teacher assessment flow.",
+    "Full academic reviewer approval and deployment are NOT granted under A-B-C."
+  ],
+  "stageABCAuthoredAndElementMapped": true
 }
