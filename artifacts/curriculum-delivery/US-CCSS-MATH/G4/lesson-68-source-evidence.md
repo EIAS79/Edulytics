@@ -1,0 +1,10 @@
+# G4 ordinal 68 — Bees are Buzzing (optional)
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-4_lesson-23_preparation.html SHA256=34019daf342247514e0c7aea338c73b566d55181e7fe412328a0988d18206261
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-4\lesson-23\lesson.html SHA256=984d499ec03d8c06d3e86fd14ae704ce94e3904b95ec3413081ef8a0ef6999f9
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-4\lesson-23\lesson.html SHA256=b6aff9f1c181aafa7dec5a257d5080e3e6937674d3613a634d34651d9d0d2db7
+- Preserved existing learning explanation: Learning goal: You will use estimation to make sense of a wide range of numbers and to use addition and subtraction to investigate how an insect population can change over time. This lesson is optional because it does not address any new mathematical content standards. This lesson does provide you with an opportunity to apply precursor skills of mathematical modeling. In previous lessons, you developed place value understanding for numbers up to 1,000,000 and rounded, added, and subtracted numbe
+- Original 2021 sections: Warm-up:  Estimation Exploration: Bees	 (10 minutes); Activity 1:  Termites, Ants, and Bees	 (20 minutes); Activity 2:  Bee Population	 (15 minutes)
+- Corrections: removed irrelevant generic concept; repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; replaced incorrect misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 46000+7000-12000 = 41000.
+- Edulytics first-party Cool-down: Explain which hive changes would increase its population.; teacher key: New bees joining increase; bees leaving decrease.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.
