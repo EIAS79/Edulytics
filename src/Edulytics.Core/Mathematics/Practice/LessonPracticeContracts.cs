@@ -959,6 +959,9 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // G4 U01 L06: exact locker divisors and open/closed parity.
+        foreach(var reviewed in UsCcssG4Unit1SixthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // G4 U01 L05: source contexts need exact and minimum distinction.
         foreach(var reviewed in UsCcssG4Unit1FifthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
