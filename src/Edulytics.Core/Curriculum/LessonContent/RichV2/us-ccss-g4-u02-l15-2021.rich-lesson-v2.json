@@ -1,0 +1,103 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-u02-l15-2021-common-denominator-source-abc-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U02:L15",
+      "CultureCode": "en",
+      "Title": "Common Denominators to Compare",
+      "ExplanationParagraphs": [
+        "Source: 2021 Grade 4 Unit 2 Lesson 15. The five-minute opening asks how 15 and 30 are related. Their shared multiples prepare us for using common denominators.",
+        "Learning goal: compare two fractions with unlike, non-multiple-related denominators by writing equivalent fractions with a common denominator. Fractions describe the same whole, so equal denominators mean equal-size fractional parts.",
+        "Activity 15.1 Tricky Fractions? (20 minutes): first compare 4/3 with 13/12, then 4/3 with 7/5. The second pair requires rewriting both fractions if using a common denominator. Han's proposed limitation is a reasoning prompt, not a ban on converting both fractions.",
+        "Discuss Priya and Lin's distinct approaches with a teacher; distinguish mathematically equivalent transformations from unequal-size drawn segments. Explain each result clearly rather than guessing from denominator size.",
+        "Activity 15.2 Use a Common Denominator, or Not: construct equivalent representations for 5/6 and 3/4, 2/3 and 5/8, 2/6 and 4/10, 7/4 and 17/10. Students may use equivalent fractions or another valid exact strategy, then explain the comparisons.",
+        "Edulytics first-party Cool-down (not the gated publisher source item): justify 7/10<5/7 using a common denominator and an independently checked inequality. Original diagram arguments and any remaining publisher questions stay teacher-reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent fractions preserve value",
+          "Definition": "Scaling numerator and denominator by the same positive factor changes the representation, not the value.",
+          "Rule": "a/b = (ka)/(kb) for nonzero b and positive k.",
+          "Example": "5/6 = 10/12, not 5/12."
+        },
+        {
+          "Title": "Common denominator",
+          "Definition": "A denominator shared by two equivalent forms makes equal-sized parts.",
+          "Rule": "Choose any common multiple of both denominators, and scale both correctly.",
+          "Example": "2/3 = 16/24, 5/8 = 15/24, so 2/3>5/8."
+        },
+        {
+          "Title": "Independent fraction comparison",
+          "Definition": "Check a/b versus c/d with positive denominators by comparing ad to bc.",
+          "Rule": "Do not round; exact integer arithmetic preserves close comparisons.",
+          "Example": "7/4 versus17/10: 7*10=70 > 17*4=68."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "When only one fraction needs conversion",
+          "Question": "Is 4/3 or 13/12 larger?",
+          "Method": "Rewrite 4/3 in twelfths.",
+          "Steps": [
+            "Multiply 4/3 by 4/4 to get 16/12.",
+            "Compare 16 to 13 with equal denominators."
+          ],
+          "Answer": "4/3 > 13/12",
+          "Check": "4*12=48 > 13*3=39."
+        },
+        {
+          "Title": "When both fractions need conversion",
+          "Question": "Compare 4/3 and 7/5.",
+          "Method": "Use 15 as the common denominator.",
+          "Steps": [
+            "4/3 = 20/15.",
+            "7/5 = 21/15.",
+            "Since 20<21, the second fraction is greater."
+          ],
+          "Answer": "4/3 < 7/5",
+          "Check": "4*5=20 < 7*3=21."
+        },
+        {
+          "Title": "Source activity 15.2: four comparisons",
+          "Question": "Compare 5/6 to 3/4, 2/3 to 5/8, 2/6 to 4/10, and 7/4 to 17/10.",
+          "Method": "Construct equivalent fractions with shared denominators.",
+          "Steps": [
+            "5/6=10/12 > 9/12=3/4.",
+            "2/3=16/24 > 15/24=5/8.",
+            "2/6=10/30 < 12/30=4/10.",
+            "7/4=35/20 > 34/20=17/10."
+          ],
+          "Answer": "Greater, greater, less, greater",
+          "Check": "Cross products: 20>18,16>15,20<24,70>68."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Converting only the denominator.",
+          "WhyWrong": "5/6 is not 5/12.",
+          "Correction": "Multiply both numerator and denominator by the same factor."
+        },
+        {
+          "Mistake": "Comparing numerators while denominators differ.",
+          "WhyWrong": "The fractions' parts are different sizes.",
+          "Correction": "Make common denominators or use cross products of positive denominators."
+        },
+        {
+          "Mistake": "Assuming a greater denominator implies a greater fraction.",
+          "WhyWrong": "Denominator tells partition size, not alone the value.",
+          "Correction": "Use exact equivalence and benchmarks or cross multiplication."
+        }
+      ],
+      "SummaryPoints": [
+        "Source warm-up links factors/multiples of 15 and 30 to fraction denominators.",
+        "Source pairs 4/3 versus13/12 and 4/3 versus7/5 show converting one versus both.",
+        "Source activity 15.2 four denominator-matching examples receive an exact rational check.",
+        "Source PDF 3p read as text; diagrams/remaining publisher prompts are not claimed as pixel/source parity; teacher reviews open arguments."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

@@ -942,7 +942,7 @@ public static class LessonPracticeContractRegistry
                     "G1 B03 source lesson missing original contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // B001 first source-reviewed unshipped grade positions 16–18.
+        // B001 first source-reviewed unshipped grade positions 16â€“18.
         foreach (var reviewed in UsCcssG1Unit2StoryPracticeContracts.Reviewed)
         {
             if (!byLesson.ContainsKey(reviewed.LessonCode))
@@ -962,7 +962,10 @@ public static class LessonPracticeContractRegistry
         // Grade4 U02 L08: existing source-aligned exact numeric families.
         foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
-        // Grade4 U02 L14: reuse exact same-unit comparator and benchmark; mixed li/km requires teacher-led conversion.
+        // Grade4 U02 L15: reuse exact common-denominator and unlike comparison numeric families.
+        foreach(var reviewed in UsCcssG4Unit2FifteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L14: reuse exact comparator and benchmark; mixed li/km is teacher led.
         foreach(var reviewed in UsCcssG4Unit2FourteenthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L13: source same-denominator equivalent comparisons and original true/false.
@@ -1161,7 +1164,7 @@ public static class LessonPracticeContractRegistry
             byLesson[reviewed.LessonCode] = reviewed;
         foreach (var reviewed in UsCcssG2Unit9LessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
-        // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
+        // V1 G1-009: exact original 2021 G1 ordinals 41â€“45 (U03 L04â€“L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
         foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
         {
@@ -1180,7 +1183,7 @@ public static class LessonPracticeContractRegistry
         }
         foreach(var reviewed in UsCcssG1FullGradeUnit4FinalPracticeContracts.Reviewed)
         {
-            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("Missing original G1 U04 L16–23 practice base lesson: "+reviewed.LessonCode);
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("Missing original G1 U04 L16â€“23 practice base lesson: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
         foreach(var reviewed in UsCcssG1FullGradeUnit5AdditionPracticeContracts.Reviewed)
@@ -1198,7 +1201,7 @@ public static class LessonPracticeContractRegistry
         foreach(var reviewed in UsCcssG1FullGradeTensAndOnesPracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))
-                throw new InvalidOperationException("Missing canonical G1 U04 L06–10 source lesson Practice contract: "+reviewed.LessonCode);
+                throw new InvalidOperationException("Missing canonical G1 U04 L06â€“10 source lesson Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
         foreach(var reviewed in UsCcssG1FullGradeStrategyAndTensPracticeContracts.Reviewed)
@@ -1231,14 +1234,14 @@ public static class LessonPracticeContractRegistry
                 throw new InvalidOperationException("V1 G1-009 missing: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // V1 G1-008: original 2021 G1 ordinals 36–40, including optional L22.
+        // V1 G1-008: original 2021 G1 ordinals 36â€“40, including optional L22.
         foreach(var reviewed in UsCcssG1NextSourceFivePracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))
                 throw new InvalidOperationException("V1 G1-008 missing: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // V1 G1-007: five consecutive original 2021 lessons L16–L20.
+        // V1 G1-007: five consecutive original 2021 lessons L16â€“L20.
         foreach(var reviewed in UsCcssG1Unit2EquationsAndStoriesPracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))
@@ -1253,7 +1256,7 @@ public static class LessonPracticeContractRegistry
                     "V1 G1-006 missing original lesson: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // V1 G1-005: source-ordered Grade 1 Unit 2 lessons 6–10.
+        // V1 G1-005: source-ordered Grade 1 Unit 2 lessons 6â€“10.
         // Replace only the five existing generic contracts, preserve prior grades.
         foreach (var reviewed in UsCcssG1Unit2NextFivePracticeContracts.Reviewed)
         {
