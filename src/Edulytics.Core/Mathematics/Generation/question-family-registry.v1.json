@@ -4,6 +4,60 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g4.u01.l02.find_partner",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-positive-whole-number-factor-pair-recomputation",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l02.is_side_factor",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-positive-whole-number-factor-pair-recomputation",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l02.count_unique_pairs",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-positive-whole-number-factor-pair-recomputation",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.g4.u01.l01.fixed_width_area",
       "version": 1,
       "skillId": "geometry.rectangle.area",
