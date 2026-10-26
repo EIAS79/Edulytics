@@ -332,7 +332,13 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         if (!hasMismatch)
             return;
 
-        await SeedDocumentsAsync(selected, ct, metadataOnly: true);
+        // The full 143-lesson Grade 3 pack was already materialized and
+        // source-SHA checked by LoadEmbeddedDocuments. The 294-row list above
+        // is a FILTERED subset (only two Grade 3 B001 rows): re-running the
+        // whole-grade authoring transform on it fails its 143-lesson guard.
+        // Preserve this narrow preflight and seed the prepared rows directly.
+        await SeedAlreadyMaterializedDocumentsAsync(
+            selected, ct, metadataOnly: true);
 
         var after = await _db.CurriculumLessonContents.AsNoTracking()
             .Where(x => ids.Contains(x.PedagogicalLessonId))
@@ -718,6 +724,19 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                 .Materialize(document);
         }
 
+        await SeedAlreadyMaterializedDocumentsAsync(documents, ct, metadataOnly);
+    }
+
+    // Only source packages already validated and materialized as COMPLETE
+    // canonical packs by LoadEmbeddedDocuments may use this private method.
+    // The source-bound caller has additionally preflighted all 294 exact
+    // identities, status, stored predecessor and absence of saved prose.
+    // Never apply whole-grade transforms to the subsequently filtered rows.
+    private async Task SeedAlreadyMaterializedDocumentsAsync(
+        IReadOnlyCollection<CanonicalLessonContentPackDocument> documents,
+        CancellationToken ct,
+        bool metadataOnly)
+    {
         ValidateDistinctTargets(documents);
 
         if (_db.Database.IsNpgsql())
