@@ -5,9 +5,9 @@
   "title": "Multiples of a Number",
   "status": "A_C_EXPLICIT_GAP",
   "stages": {
-    "A": "PARTIAL",
-    "B": "SOURCE_GOAL_CORRECTIONS_AUTHORED_RUNTIME_UNVERIFIED",
-    "C": "NOT_VERIFIED",
+    "A": "TEACHER_AND_ORIGINAL_2021_STUDENT_PDF_READ; FIGURE_AND_COOLDOWN_GAPS",
+    "B": "GRADE4_L01_FIRST_PARTY_RICHV2_AUTHORED; RUNTIME_UNVERIFIED",
+    "C": "NUMERIC_SKILL_SAMPLES_AUTHORED; PRACTICE_GENERATION_GRADING_UNVERIFIED",
     "D": "NOT_RUN"
   },
   "sourceFiles": [
@@ -26,14 +26,23 @@
     }
   ],
   "blockedOn": [
-    "Original 2021 student-task PDF and access-gated cool-down are not verified; local grade-4 archive has 0 PDF files.",
-    "2021 teacher warm-up 'Which One Does Not Belong?' vs newer AccessIM student 'Which Three Go Together' needs source edition resolution and figures.",
-    "No complete atomized diagram/image and original activity parity in learner UI; physical construction remains teacher-reviewed.",
-    "Grade4 Rich V2 runtime rendering, Practice grader, questions, and student access are not yet verified."
+    "Original 2021 PDF student TASK TEXT now verified, but original warm-up A–D figures and legal first-party equivalent NOT individually verified.",
+    "The original five-minute Cool-down is educator-authenticated; no 2021 source task details verified. Optional Edulytics examples cannot be counted as it.",
+    "Source task’s tile construction, grid paper drawings, student explanations and all partner/teacher-led tasks have not been tested as actual learner/teacher UI flows.",
+    "First-party G4 L01 Rich V2 sidecar authored and structurally checked, but build/runtime display, per-skill Practice generator/verifier/grading and any representation are NOT_RUN / UNVERIFIED.",
+    "Mapped standard 4.OA.B.4 alone selects generic factors/primes rules; cannot assert the source-specific rectangle-construction task is autograded."
   ],
   "sourceParityProvenPercent": null,
   "readyForStageD": false,
   "testsWritten": true,
   "testsRun": false,
-  "academicApproved": false
+  "academicApproved": false,
+  "studentTaskPdf": {
+    "source": "2021 original source URL linked from local 2021 teacher preparation.html",
+    "url": "https://cms-assets.illustrativemathematics.org/8qvojxum833zkwf43q6ahvral1r4",
+    "pages": 3,
+    "sha256": "b5f8272ce99b0579280376b0ba0b89800599cbf8b5765150ea2e83ee83e43a4a",
+    "textReviewed": true,
+    "figuresVisuallyVerified": false
+  }
 }

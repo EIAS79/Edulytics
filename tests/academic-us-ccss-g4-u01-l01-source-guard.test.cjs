@@ -26,3 +26,20 @@ test('fail-closed checkpoint blocks advancing to lesson 2', () => {
  const x=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-1-v2-stage-a-d-checkpoint.json'),'utf8'));
  assert.equal(x.status,'A_C_EXPLICIT_GAP');assert.equal(x.readyForStageD,false);assert.equal(x.sourceParityProvenPercent,null);
 });
+
+
+test('G4 U01 L01 first-party Rich V2 retains source PDF activity boundaries', () => {
+ const v2 = JSON.parse(fs.readFileSync(path.join(root,'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g4-u01-l01-2021.rich-lesson-v2.json'),'utf8'));
+ assert.equal(v2.SchemaVersion,1);
+ assert.equal(v2.Lessons.length,1);
+ const l=v2.Lessons[0];
+ assert.equal(l.LessonCode,'PED:US-CCSS-MATH:G4:U01:L01');
+ assert.equal(l.Title,'Multiples of a Number');
+ assert.ok(l.ExplanationParagraphs.length>=2 && l.KeyConcepts.length>=3 && l.WorkedExamples.length>=3 && l.CommonMistakes.length>=2 && l.SummaryPoints.length>=3);
+ assert.ok(l.ExplanationParagraphs.some(s=>s.includes('FIVE distinct') && s.includes('2 tiles')));
+ assert.ok(l.ExplanationParagraphs.some(s=>s.includes('Elena') && s.includes('28')));
+ assert.ok(l.ExplanationParagraphs.some(s=>s.includes('Cool-down') && s.includes('not represented as verified')));
+ for(const e of l.WorkedExamples){assert.ok(e.Title && e.Question && e.Method && e.Answer && e.Steps.length>=3);}
+ const caps = l.WorkedExamples.find(e=>e.Title.startsWith('Activity 2 — all Elena'));
+ assert.ok(caps && caps.Answer.includes('27,30'));
+});

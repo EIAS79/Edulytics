@@ -1,0 +1,145 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g4-u01-l01-im2021-first-party-richv2-20261026-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
+      "CultureCode": "en",
+      "Title": "Multiples of a Number",
+      "ExplanationParagraphs": [
+        "Goal: use rectangles and their areas to reason about multiples of a whole-number side length. Grade 3 knowledge of tiled arrays and width × length is the starting point. The 2021 first-edition student task is a three-page activity set; Edulytics examples and explanations below are independently authored and are not substituted for the teacher-supervised source tasks.",
+        "Warm-up — Which One Doesn’t Belong? (10 minutes): the original three-page 2021 student PDF displays four labeled mathematical area figures, A–D. Discuss which could be the odd one out using a reason about area, rather than the figures’ apparent orientation. Each figure can have multiple defensible explanations. Keep this as an original-figure, teacher-reviewed activity until the exact original diagrams have been independently inspected and a lawful equivalent prepared. Do not substitute a guessed A–D drawing or force one machine-graded answer.",
+        "Activity 1 — Build Rectangles and Find Area (20 minutes): work with inch tiles, ideally at least 36 per pair, and form FIVE distinct positive whole-number-length rectangles of each width: 2 tiles, 3 tiles and 4 tiles. Record fifteen areas in a three-row, five-column table, use square tiles as the unit, discuss each row’s skip-counting pattern with a partner, and predict one further area for each width with a reason. This is not completed by a single multiplication exercise. The first-party example with lengths 1 through 5 is a demonstration, not a claim that the source uniquely chooses those lengths.",
+        "Activity 2 — What Areas Can You Build? (15 minutes): Elena is making rectangles that are 3 units wide and have an area no greater than 30 square units. For positive whole-number side lengths, construct and draw every possible rectangle, label width, length and area, list possible areas, and explain the pattern. In independent subquestions, explain why area 28 cannot occur; give two further possible areas above 30 with reasoning; then name and justify another impossible area. Drawing on centimeter grid paper, discussing mathematical explanations and reviewing the original task parts belong to the learner and teacher. Never substitute one auto-graded number for the entire investigation.",
+        "Lesson synthesis (10 minutes): connect rectangular arrays with multiplication. If a width is 3 units, possible positive whole-number areas are multiples of 3. Test 28 as a multiple of 4 by 4 × 7 = 28, and distinguish this from impossibility for width 3. Explain why a fixed-width area sequence rises by that width and distinguish square-unit areas from unit side lengths. Maintain a mathematical-community discussion. After synthesis, allocate a separate five-minute Cool-down; the exact 2021 publisher Cool-down is educator-sign-in restricted and not represented as verified in this record. An Edulytics-created question such as 'A rectangle is 4 units wide; can its area be 28 square units? Explain.' is optional supplementary assessment, not the original publisher task.",
+        "Practice scope: numeric multiplication and divisibility can be graded automatically only when the question shows a clear fixed rectangle width/length/area and independently computes the area or divisibility relation. Constructing 15 distinct tile rectangles, drawing the original grid diagrams, debating which of four original warm-up figures is different, and explaining free-form conclusions remain teacher-reviewed; generic 4.OA.B.4 factors/primes questions are not automatically a source-aligned substitute. Original PDF and source teacher pages are references, not copied assets."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area of a rectangle",
+          "Definition": "The number of unit squares covering a rectangle.",
+          "Rule": "For positive whole-number sides, area = width × length and is labeled square units.",
+          "Example": "A rectangle 3 units wide and 7 units long has area 21 square units."
+        },
+        {
+          "Title": "Multiples of a fixed width",
+          "Definition": "Products obtained by multiplying a given whole number by whole-number lengths.",
+          "Rule": "Possible areas of positive whole-number-length rectangles of width w are w, 2w, 3w, … .",
+          "Example": "With width 4, lengths 1, 2, 3, 4 produce areas 4, 8, 12, 16."
+        },
+        {
+          "Title": "Checking if an area is possible",
+          "Definition": "Determine whether a proposed area can be formed by multiplying the given width by a positive whole-number length.",
+          "Rule": "An area A can be made exactly if A ÷ width is a positive whole number with no remainder.",
+          "Example": "28 ÷ 3 has remainder 1, so width 3 cannot give exactly 28 square units."
+        },
+        {
+          "Title": "Distinct rectangle constructions",
+          "Definition": "Different whole-number lengths for the same width produce different rectangular areas.",
+          "Rule": "To meet the source activity, physically build or draw five distinct rectangles PER specified width.",
+          "Example": "Width 2 with lengths 2, 3, 4, 5, 6 gives areas 4, 6, 8, 10, 12 square tiles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Activity 1 — five rectangles per fixed width",
+          "Question": "Show one possible set of five distinct rectangles for each width 2, 3, and 4 tiles and give their areas.",
+          "Method": "Use the same illustrative positive lengths 1, 2, 3, 4, 5 for each width, physically build or sketch them and calculate every area; other distinct lengths also satisfy the task.",
+          "Steps": [
+            "Choose length 1, 2, 3, 4 and 5 for each row; build the rectangles using tiles.",
+            "For width 2 multiply each length to obtain areas 2, 4, 6, 8 and 10 square tiles.",
+            "For width 3 obtain 3, 6, 9, 12 and 15; for width 4 obtain 4, 8, 12, 16 and 20.",
+            "Record all 15 entries in a three-row table and discuss why the area increases by the width each time."
+          ],
+          "Answer": "For lengths 1–5: width 2 → 2,4,6,8,10; width 3 → 3,6,9,12,15; width 4 → 4,8,12,16,20 square tiles.",
+          "Check": "Every entry equals width × length; there are five distinct lengths at each of the three widths, yielding 15 valid area entries. A teacher still checks the physical models."
+        },
+        {
+          "Title": "Activity 1 — predict a further area",
+          "Question": "For each of the widths 2, 3 and 4 tiles, can you make a rectangle with length 6 tiles? State its area and explain.",
+          "Method": "Continue the fixed-width multiplication patterns.",
+          "Steps": [
+            "For width 2, multiply 2 × 6 = 12 square tiles.",
+            "For width 3, multiply 3 × 6 = 18 square tiles.",
+            "For width 4, multiply 4 × 6 = 24 square tiles.",
+            "Compare these with each row of the table; each result is the next multiple of its width after length 5."
+          ],
+          "Answer": "12, 18 and 24 square tiles respectively.",
+          "Check": "2 × 6=12; 3 × 6=18; 4 × 6=24."
+        },
+        {
+          "Title": "Activity 2 — all Elena rectangles up to 30",
+          "Question": "Elena’s rectangles have width 3 units, positive whole-number length, and area at most 30 square units. Which lengths and areas are possible?",
+          "Method": "Solve 3 × length ≤ 30 for positive whole numbers, then construct and label each rectangle.",
+          "Steps": [
+            "Divide the 30-square-unit cap by width 3 to get a maximum length of 10 units.",
+            "List all permitted lengths from 1 to 10, with no missing positive whole-number values.",
+            "Multiply 3 by every length to get areas 3,6,9,12,15,18,21,24,27,30 square units.",
+            "Draw or tile each corresponding 3-by-length rectangle and label side lengths and square-unit area."
+          ],
+          "Answer": "Lengths 1–10 units; respective areas 3,6,9,12,15,18,21,24,27,30 square units.",
+          "Check": "Every area is 3 × a whole-number length and at most 30; 3 × 11 = 33 is excluded by the cap."
+        },
+        {
+          "Title": "Activity 2 — impossible and above-30 areas",
+          "Question": "Explain why width 3 cannot make area 28 square units; then name two possible areas above 30 and one other impossible area.",
+          "Method": "Use exact division by the fixed width and a whole-number side length.",
+          "Steps": [
+            "Compute 28 ÷ 3: 3 × 9 = 27 with 1 left over; there is no whole-number length.",
+            "Above 30, choose length 11 to get 3 × 11 = 33 square units.",
+            "Choose length 12 to get 3 × 12 = 36 square units.",
+            "Choose area 34 as impossible: 34 ÷ 3 leaves remainder 1, so a whole-number side cannot produce it."
+          ],
+          "Answer": "28 is impossible; 33 and 36 are possible above 30; 34 is impossible.",
+          "Check": "28 % 3 = 1, 33 % 3 = 0, 36 % 3 = 0, 34 % 3 = 1."
+        },
+        {
+          "Title": "Lesson synthesis — one number may be a multiple of 4 but not of 3",
+          "Question": "Is 28 a possible area for width 4, and is it possible for width 3 if sides must be positive whole numbers?",
+          "Method": "Compare divisibility separately for each fixed width.",
+          "Steps": [
+            "Divide 28 by 4 and obtain the whole-number length 7.",
+            "Draw or tile a 4 × 7 rectangle to show 28 square units.",
+            "Divide 28 by 3 and get quotient 9 with remainder 1.",
+            "Explain that different widths have different sets of possible rectangular areas."
+          ],
+          "Answer": "Possible for width 4 (4 × 7); impossible for width 3.",
+          "Check": "4 × 7 = 28; 3 × 9 = 27 and 3 × 10 = 30."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating an area measured in square units as a width or length measured in units.",
+          "WhyWrong": "Area counts unit squares, while sides count linear units; the numerical product is not a side length.",
+          "Correction": "Label 3 units × 7 units = 21 square units, with distinct dimensions and area."
+        },
+        {
+          "Mistake": "Assuming that 28 square units is possible for every rectangle width.",
+          "WhyWrong": "For width 3 it would require non-whole-number length 28/3; for width 4 it works with length 7.",
+          "Correction": "Test candidate areas by dividing by the fixed width, checking a whole-number side with zero remainder."
+        },
+        {
+          "Mistake": "Submitting five areas in total rather than five for each of three widths.",
+          "WhyWrong": "The source Activity 1 calls for five distinct rectangles at width 2, five at width 3 and five at width 4.",
+          "Correction": "Prepare three table rows, one for each width, with five distinct area entries and corresponding constructions per row."
+        },
+        {
+          "Mistake": "Answering the original figure warm-up with an invented or unverified digital drawing.",
+          "WhyWrong": "The 2021 source’s four figure representations and their mathematical details have not been individually reconstructed and verified; no single automatic answer is licensed by that gap.",
+          "Correction": "Use the source handout with a teacher until a first-party, checked equivalent is available; give reasons based on actual displayed area models."
+        }
+      ],
+      "SummaryPoints": [
+        "Source: first-edition 2021 Grade 4 Unit 1 Lesson 1, three-page original student PDF read directly from the archived preparation HTML’s linked resource; teacher-facing preparation and lesson read locally.",
+        "Warm-up uses the source’s four labeled area figures with teacher-reviewed justifications; do not claim pixel-perfect or verified third-party figure reuse.",
+        "Activity 1 requires five different rectangles at EACH width 2, 3 and 4 tiles, area table, prediction, partner explanation and tile handling.",
+        "Activity 2 requires all width-3 rectangles with area at most 30 (positive whole-number lengths 1–10), grid drawings, all areas, and distinct explanations for 28’s impossibility, two areas above 30 and another impossible area.",
+        "Lesson synthesis ties area to multiples; the original Cool-down remains educator-gated. Additional Edulytics questions are labeled separate and are not the publisher cool-down.",
+        "Numerical area/divisibility may be automatically graded only using a verified width/length/area contract; building, drawing and mathematical explanations remain teacher-reviewed. 100% source parity and runtime coverage are not yet certified."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
