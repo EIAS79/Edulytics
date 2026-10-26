@@ -18,6 +18,14 @@
   "sourceParityProvenPercent": null,
   "academicApproved": false,
   "focusedTestsWritten": true,
-  "focusedTestsRun": false,
-  "productionTouched": false
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "focusedTestResults": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "sourceCommit": "a3fbbf54f1d7e09c213535ab6b4476b5b9216e75",
+    "command": "node --test tests/academic-us-ccss-g4-u02-l02-source-guard.test.cjs",
+    "stageD": false
+  }
 }
