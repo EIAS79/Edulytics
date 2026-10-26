@@ -959,6 +959,9 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Grade4 U02 L08: existing source-aligned exact numeric families.
+        foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L07: existing exact equivalent-number-line and fraction generation; teacher original visuals.
         foreach(var reviewed in UsCcssG4Unit2SeventhLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
