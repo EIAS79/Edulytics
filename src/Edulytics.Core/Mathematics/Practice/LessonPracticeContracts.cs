@@ -959,6 +959,9 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Grade4 U02 L06: reuse benchmark numerical Practice, teacher-assess source drawings and optional cards.
+        foreach(var reviewed in UsCcssG4Unit2SixthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L05: original source equivalent number line points and running story.
         foreach(var reviewed in UsCcssG4Unit2FifthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
