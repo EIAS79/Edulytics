@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L109: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L23").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Use the four operations and inverse checks, preserving place value in multi-digit written methods."));assert.ok(t.quickSummary.includes("Find 12,500 − 9,876, then check by addition."));assert.equal(50000-999,49001);});
+test('L109: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-109-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"932cef2ae9377e4bc5ef7f837d037c6a4dd27b1059dce861d85f8b5865d71831");assert.equal(c.readyForStageD,false);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

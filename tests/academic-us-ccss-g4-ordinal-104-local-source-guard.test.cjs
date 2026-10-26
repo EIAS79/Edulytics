@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L104: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L18").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Record each convenient portion of a dividend as a partial quotient; add the quotient contributions."));assert.ok(t.quickSummary.includes("Use partial quotients to find 684 ÷ 6."));assert.equal(465/5,93);});
+test('L104: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-104-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"b92e42106e82768d75f2696ac48d0b818ee8427071c551f47bc00d493e6dfaeb");assert.equal(c.readyForStageD,false);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

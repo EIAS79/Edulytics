@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L107: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L21").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Multi-step word problems use equal groups and then compare the computed total with the budget."));assert.ok(t.quickSummary.includes("A class spends $17 per ticket for 28 tickets from $500. What remains?"));assert.equal(900-45*18,90);});
+test('L107: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-107-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"9dde6fab98d0fc0c23c1b65707f615cdd188c54cc451929451f309c942a753b7");assert.equal(c.readyForStageD,false);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L102: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L16").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Divide with place-value blocks; trade larger units when fewer blocks than groups."));assert.ok(t.quickSummary.includes("Show with blocks how 96 ÷ 4 = 24."));assert.equal(488/4,122);});
+test('L102: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-102-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"485bd44e211c12225dd376ff61527ecce4b74f7048b7de7640d0a1b22c5ebf41");assert.equal(c.readyForStageD,false);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

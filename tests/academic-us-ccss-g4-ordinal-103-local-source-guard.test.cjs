@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L103: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L17").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping."));assert.ok(t.quickSummary.includes("Represent 117 ÷ 3 with a base-ten diagram."));assert.equal(235/5,47);});
+test('L103: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-103-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"eeb11886c911a838673ca7b9d84db4f4c175157e4976a05eb51dff5d587436b7");assert.equal(c.readyForStageD,false);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});
