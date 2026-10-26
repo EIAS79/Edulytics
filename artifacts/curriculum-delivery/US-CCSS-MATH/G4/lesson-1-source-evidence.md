@@ -54,3 +54,6 @@ Authored focused `tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs`, **WR
 - Added a new exact generator+independent parameter-validated verifier/solver for four numeric families, explicit positive whole-number bounds; registered families in existing question-family registry, and dispatched only those families through existing shared exact engine.
 - Open-ended A-D warm-up, physical tiles, paper grid drawings, partner explanations and protected original Cool-down **remain separate teacher-led tasks**. This is not automatic original-task completion.
 - Stage C code written, but `.NET`, GitHub CI, student answer persistence and authenticated workflows deliberately **NOT RUN** per supplied A–B–C plan. The original source Cool-down remains unavailable. `READY_FOR_STAGE_D` is not yet awarded.
+
+### Stage D tests authored, not executed
+Added focused C# xUnit cases checking exact G4 L01 contract routing, 4 seeded generator families, independent width×length/divisibility oracle, rejection of incorrect/invalid boundaries, and Rich V2 original-2021 visual and teacher-review semantics. These are **WRITTEN_NOT_RUN**, no .NET test/build, E2E or GitHub Actions triggered intentionally.
