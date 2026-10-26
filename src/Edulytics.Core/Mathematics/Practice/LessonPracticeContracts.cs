@@ -959,6 +959,9 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Grade4 U02 L03: original same-numerator and same-denominator comparisons.
+        foreach(var reviewed in UsCcssG4Unit2ThirdLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // G4 U02 L02: reuse exact fraction bar and equivalence checks;
         // the original >1 multi-whole diagrams remain teacher-reviewed.
         foreach(var reviewed in UsCcssG4Unit2SecondLessonPracticeContracts.Reviewed)

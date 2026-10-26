@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
 {
+  "id": "usccss.g4.u02.l03.same_denominator",
+  "version": 1,
+  "skillId": "fractions.compare.unlike_denominators",
+  "requiredCapabilities": [
+    "lesson.practice.exact.generate",
+    "lesson.practice.exact.verify"
+  ],
+  "answerType": "exact_integer",
+  "verificationPolicy": "positive-rational-exact-cross-products",
+  "representations": [
+    "symbolic",
+    "fraction_bars"
+  ],
+  "status": "ShadowVerified",
+  "productionRouting": false,
+  "lessonPracticeRouting": true
+},
+{
+  "id": "usccss.g4.u02.l03.same_numerator",
+  "version": 1,
+  "skillId": "fractions.compare.unlike_denominators",
+  "requiredCapabilities": [
+    "lesson.practice.exact.generate",
+    "lesson.practice.exact.verify"
+  ],
+  "answerType": "exact_integer",
+  "verificationPolicy": "positive-rational-exact-cross-products",
+  "representations": [
+    "symbolic",
+    "fraction_bars"
+  ],
+  "status": "ShadowVerified",
+  "productionRouting": false,
+  "lessonPracticeRouting": true
+},
+{
   "id": "usccss.g4.u01.l07.is_factor",
   "version": 1,
   "skillId": "supporting.number.factors_primes",
