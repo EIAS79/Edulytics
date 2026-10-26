@@ -962,6 +962,9 @@ public static class LessonPracticeContractRegistry
         // Grade4 U02 L08: existing source-aligned exact numeric families.
         foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L13: source same-denominator equivalent comparisons and original true/false.
+        foreach(var reviewed in UsCcssG4Unit2ThirteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L12: reuse exact half/one benchmark and fraction comparison, original25-grid teacher-assessed.
         foreach(var reviewed in UsCcssG4Unit2TwelfthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
