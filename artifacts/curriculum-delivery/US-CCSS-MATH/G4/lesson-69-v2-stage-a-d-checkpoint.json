@@ -1,0 +1,42 @@
+{
+  "ordinal": 69,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L01",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "f61b4dc9ef9bdd0d13ce228666e2e752f3c7959938a779049e2072e8b4629f1b",
+    "teacher": "d7a2ffd0b0508a0642b10a4632b0538e8920250b808ab4f7a1f3fc6d58337cf5",
+    "student": "b4e58405afd68eefd68fb9be6b66c8def755c2dde7161c78758122b44dda2172"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Show six times as many as four cubes using a tape diagram.",
+    "teacherAnswer": "Six equal groups of four; total 24 cubes"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:19:48+01:00",
+  "closeAtLocal": "2026-10-26T23:19:48+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-69-local-source-guard.test.cjs"
+  }
+}
