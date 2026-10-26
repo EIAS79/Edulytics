@@ -962,6 +962,9 @@ public static class LessonPracticeContractRegistry
         // Grade4 U02 L08: existing source-aligned exact numeric families.
         foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
+        // G4 U02 L09: reuse exact fraction equivalence and number-line Practice; six poster reasoning sets remain teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Unit2NinthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L07: existing exact equivalent-number-line and fraction generation; teacher original visuals.
         foreach(var reviewed in UsCcssG4Unit2SeventhLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
