@@ -962,6 +962,9 @@ public static class LessonPracticeContractRegistry
         // Grade4 U02 L08: existing source-aligned exact numeric families.
         foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L11: reuse exact common-factor reduction and multiple generation; optional card art teacher supplied.
+        foreach(var reviewed in UsCcssG4Unit2EleventhLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L10: original common-multiplier fractions; reuse existing exact generator.
         foreach(var reviewed in UsCcssG4Unit2TenthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
