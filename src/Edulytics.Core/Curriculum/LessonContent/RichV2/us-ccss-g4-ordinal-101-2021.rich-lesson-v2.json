@@ -1,0 +1,71 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-u06-l15-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+      "CultureCode": "en",
+      "Title": "Situations Involving Area",
+      "ExplanationParagraphs": [
+        "Learning goal: You will use partial quotients to solve division problems that involve tiling squares and finding a side length of a rectangle with a known area.\nIn this lesson, you encounter division as you find a side length of a rectangle whose area is a three-digit number and one side is a one-digit number. The context involves tiling rectangles with square tiles. This enables you to connect the dividend to the number of tiles in the rectangle and the divisor to the number of rectangles along one side.",
+        "Area is measured in square units. An unknown side length equals area divided by the known side length.",
+        "Source teacher sequence: Estimation Exploration: Area of a Soccer Field; Elena's Mural; Tyler's Mural; Lesson Synthesis. Use grid-paper/physical diagrams with teacher support when needed.",
+        "Elena: 189 square tiles ÷ 7 tiles across = 27 tiles long. Tyler: 197 ÷ 6 gives 32 complete columns with 5 leftover tiles.",
+        "First-party Edulytics Cool-down (not the publisher's gated item): A garden has an area of 168 square metres and is 6 metres wide. Find the missing length using partial quotients.",
+        "Original student-mirror URL saved locally returns 404; the 2021 teacher page contains Student Facing task text. Original figures and classroom gallery-walk fidelity are not certified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area-to-division relationship",
+          "Definition": "Area of a rectangle = width × length.",
+          "Rule": "Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context.",
+          "Example": "189 tiles with a width of 7 tiles make a length of 27 tiles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Elena's mural: partial quotients",
+          "Question": "189 square tiles form a rectangular mural 7 tiles wide. How long is it?",
+          "Method": "Split the area into 140 + 49, then divide each part by 7.",
+          "Steps": [
+            "189 = 140 + 49.",
+            "140 ÷ 7 = 20 and 49 ÷ 7 = 7.",
+            "20 + 7 = 27.",
+            "7 × 27 = 189 confirms the missing length."
+          ],
+          "Answer": "27 tiles",
+          "Check": "7 × 27 = 189 tiles."
+        },
+        {
+          "Title": "Tyler's leftover tiles",
+          "Question": "197 tiles are available for a 6-tile-wide complete rectangular mural. How long can it be?",
+          "Method": "Partial quotients with a contextual remainder.",
+          "Steps": [
+            "197 = 180 + 12 + 5.",
+            "180 ÷ 6 = 30 and 12 ÷ 6 = 2.",
+            "30 + 2 = 32 complete columns; 5 tiles remain.",
+            "6 × 32 = 192 tiles used; 33 columns would need 198 tiles."
+          ],
+          "Answer": "32 tiles long; 5 unused",
+          "Check": "197 = 6 × 32 + 5, with 0 ≤ 5 < 6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rounding up a remainder to create one more full column.",
+          "WhyWrong": "33 columns of width 6 require 198 tiles, but only 197 exist.",
+          "Correction": "Interpret quotient 32 as complete columns and remainder 5 as unused tiles."
+        }
+      ],
+      "SummaryPoints": [
+        "Original learning goal and source activity sequence retained.",
+        "Division/partial-quotient methods match area models.",
+        "Teacher reviews original diagrams, classroom gallery walk and open explanations.",
+        "First-party Cool-down: 168 ÷ 6 = 28 metres; not a publisher-gated task."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
