@@ -1,0 +1,43 @@
+{
+  "ordinal": 95,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L09",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "09cdf7106fb138f4837f204632f489d0989b9287c266cb75fda4eaef13a1c3f8",
+    "teacher": "94ca1b3ff2255f1cf8024517aabdab5bf308958541452d160bb5c231b3d5e8d4",
+    "student": "e449f3e08e78dea8017c6d9c103fc9758856cf266a104a7ca17272d05df2b95f"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Compute 1,205 \u00d7 3.",
+    "teacherAnswer": "3,615"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:34:33+01:00",
+  "closeAtLocal": "2026-10-26T23:34:33+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-95-local-source-guard.test.cjs"
+  }
+}
