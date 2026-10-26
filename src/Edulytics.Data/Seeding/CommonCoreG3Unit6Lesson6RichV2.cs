@@ -89,4 +89,3 @@ internal static class CommonCoreG3Unit6Lesson6RichV2
         source.GetProperty(key).GetString() ??
         throw new InvalidOperationException($"Grade 3 U06 L06 missing {key}.");
 }
-

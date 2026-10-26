@@ -828,4 +828,3 @@ public sealed class Grade3RectangleConstraint
     public int MaximumArea { get; set; }
     public string LinearUnit { get; set; } = "";
 }
-

@@ -826,4 +826,3 @@ public sealed class Grade3SourceCompanionGradingTests
     }
 
 }
-

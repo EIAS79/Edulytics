@@ -1000,4 +1000,3 @@ public static class CommonCoreG3SourceTeachingCorrections
         string MisconceptionCaution,
         IReadOnlyList<string> TeachingSteps);
 }
-
