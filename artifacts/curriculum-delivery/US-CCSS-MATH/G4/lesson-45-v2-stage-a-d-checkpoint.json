@@ -1,0 +1,41 @@
+{
+  "ordinal": 45,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L20",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "SOURCE_OPTIONAL_DESIGN_REQUIRES_TEACHER_REVIEW; NO_UNVERIFIED_AUTOMATIC_GRADING_CLAIM",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "5229197633840e80dd9b2b2814719f678ec547edad0d71aa495fcb4229917909",
+    "teacherLesson": "a787433ba4f03d6a70a97621978d90014dd5365699c9b4b6a02a1c8a945a91db",
+    "studentPdf": "94018c47b5fa37dcb34d4592e54262171c0290e773a3123add68d78f43a77365"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Which One Doesn\u2019t Belong: Sticky Notes (10 minutes)",
+    "Activity 1: Estimation Exploration: Sticky Notes (15 minutes)",
+    "Activity 2: Design Your Initial (30 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-45-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:41+01:00",
+  "closeAtLocal": "2026-10-26T22:41:41+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

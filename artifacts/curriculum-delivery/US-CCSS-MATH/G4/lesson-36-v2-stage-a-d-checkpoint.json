@@ -1,0 +1,44 @@
+{
+  "ordinal": 36,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L11",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "080f36c2913aece28eb284b818157e77a4ad0a9a88512af72fc3bafc7201c5eb",
+    "teacherLesson": "e72b359794cb6a54af8c3e72b0038b98a923ed64dd281f841107a3a7e130de8a",
+    "studentPdf": "26319051fa796699eed68b5b3ab28e0b0f9717663d27629f373dc92d569394bf"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Which One Doesn\u2019t Belong: Fractional Values (10 minutes)",
+    "Activity 1: Friendship Bracelets (15 minutes)",
+    "Activity 2: Multiple Ways to Subtract (20 minutes)",
+    "Cool-down: A Shorter Strip, Please (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-36-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:41+01:00",
+  "closeAtLocal": "2026-10-26T22:40:42+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

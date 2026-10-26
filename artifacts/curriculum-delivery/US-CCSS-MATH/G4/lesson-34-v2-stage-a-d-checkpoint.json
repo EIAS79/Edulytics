@@ -1,0 +1,45 @@
+{
+  "ordinal": 34,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L09",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "cbf3a6f20448c54cc9017b0add62fc9ab37e75c3634ab79ce053db3b01e0bdeb",
+    "teacherLesson": "5c59ad077a24dffb54a5cb7c8fe6087dce79df0f1ba6e9ae2ee4f552cb98d12d",
+    "studentPdf": "b84a26328c08876ffcebf6334c460b13e228dda699c036edd54232171525296c"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: True or False: Sums of Tenths (10 minutes)",
+    "Activity 1: Jump to Subtract (20 minutes)",
+    "Activity 2: What\u2019s the Difference? (15 minutes)",
+    "Activity 3: Make a Jump, Subtraction Edition [OPTIONAL] (15 minutes)",
+    "Cool-down: Differences of Fifths (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-34-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:40+01:00",
+  "closeAtLocal": "2026-10-26T22:40:41+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

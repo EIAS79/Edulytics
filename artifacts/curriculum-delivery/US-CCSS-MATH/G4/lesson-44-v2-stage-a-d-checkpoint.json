@@ -1,0 +1,45 @@
+{
+  "ordinal": 44,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L19",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "bccb55e8ea1ce72d3b2631c82770e9ecbac4618ef1d7f9d4a44c1b1e9a7d7f19",
+    "teacherLesson": "cb1ec00c45a71296cf8b402177cbddb870d1c073880d6b9fcc125fcd21e3fe42",
+    "studentPdf": "a05be762a1dc05ec5d9e6a6dc37a05587f29d95be255b473947e259f7ea43528"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Notice and Wonder: Sticky Notes (10 minutes)",
+    "Activity 1: Sticky-note Designs (25 minutes)",
+    "Activity 2: Hiking Trails (20 minutes)",
+    "Activity 3: Find a Match (25 minutes)",
+    "Cool-down: Han\u2019s Design (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-44-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:40+01:00",
+  "closeAtLocal": "2026-10-26T22:41:41+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

@@ -1,0 +1,42 @@
+{
+  "ordinal": 46,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L01",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "SOURCE_OPTIONAL_DESIGN_REQUIRES_TEACHER_REVIEW; NO_UNVERIFIED_AUTOMATIC_GRADING_CLAIM",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "e4bd0e37ab37c0b46ce94baa180e125d85ae8bcdbfc42780d2c7486b059a40a9",
+    "teacherLesson": "f553b0ba5c75116da5d377662bfdd3cee546ff1827b294ce8f6adab037842147",
+    "studentPdf": "b6ffe8dc89adf77819947bec117e1fe250e59dc5710dafb1eb4b9d14109032ec"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up:  Notice and Wonder: Shaded Grid\t (10 minutes)",
+    "Activity 1:  Shady Fractions\t (20 minutes)",
+    "Activity 2:  Ways to Express a Number\t (15 minutes)",
+    "Cool-down:  What Does It Represent?\t (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-46-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:42+01:00",
+  "closeAtLocal": "2026-10-26T22:41:42+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

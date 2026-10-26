@@ -1,0 +1,44 @@
+{
+  "ordinal": 35,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L10",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "d3354249b9f4307bf8691d96295b88b5dccfee7bb26326baf5d7b2f97764a7d0",
+    "teacherLesson": "fcf99f949455fdfb51a4ad2063094a389dec5ef43a28b8a91070a3cacce52564",
+    "studentPdf": "4772bbc4aec417873ec6d71e9db2dfe9936a9cca8d6d0a8e360ceaac2ffeafea"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Number Talk: Groups of Twelfths (10 minutes)",
+    "Activity 1: What\u2019s Left? (20 minutes)",
+    "Activity 2: Card Sort: Twelfths (15 minutes)",
+    "Cool-down: Two Differences (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-35-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:41+01:00",
+  "closeAtLocal": "2026-10-26T22:40:41+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

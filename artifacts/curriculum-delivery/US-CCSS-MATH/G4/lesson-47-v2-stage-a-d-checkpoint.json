@@ -1,0 +1,44 @@
+{
+  "ordinal": 47,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L02",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_supporting.decimals.compare_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "7e3dd96a26c8fcea2695b53d8c3ee253be616200adf9e56356ade5e23cf3b2ec",
+    "teacherLesson": "21cfa53d592a59bcd5f265edd3eb3bd3f1d8a42a3e0ac1f9cd1fd0d1591b3cbb",
+    "studentPdf": "85a471597979e76520d6a75356b208a0d9b593bbead236ab9ff4a2377effd5ab"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up:  True or False: Equivalent Fractions\t (10 minutes)",
+    "Activity 1:  Card Sort: Diagrams of Fractions and Decimals\t (15 minutes)",
+    "Activity 2:  True or Not True?\t (20 minutes)",
+    "Cool-down:  Equal or Not Equal?\t (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "supporting.decimals.compare"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-47-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:42+01:00",
+  "closeAtLocal": "2026-10-26T22:41:43+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

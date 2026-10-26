@@ -1,0 +1,44 @@
+{
+  "ordinal": 48,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_supporting.decimals.compare_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "ec69e0ae1e5089ec169fa79208a3c5c283ea87d51f4244848a573f94b7e3ea05",
+    "teacherLesson": "98fcb2daba710ea1a21a37b6ae75045bb3f10a9b0fcae93847fff52758a0e35b",
+    "studentPdf": "b670187979840682190668fb51b052e98e333aed30369a8a13c1bb50eeb3b445"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up:  Which One Doesn\u2019t Belong: Decimals and Fractions\t (10 minutes)",
+    "Activity 1:  Points on Number Lines\t (20 minutes)",
+    "Activity 2:  Decimals Compared\t (15 minutes)",
+    "Cool-down:  More to Compare\t (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "supporting.decimals.compare"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-48-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:43+01:00",
+  "closeAtLocal": "2026-10-26T22:41:43+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

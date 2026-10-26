@@ -964,6 +964,78 @@ public static class LessonPracticeContractRegistry
             byLesson[reviewed.LessonCode]=reviewed;
         // Grade4 U02 L15: reuse exact common-denominator and unlike comparison numeric families.
         // Grade4 U02 L16: source four fraction sets, reused exact 2-3 value checks.
+        // G4 ordinal 25: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal25SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 26: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal26SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 27: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal27SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 28: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal28SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 29: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal29SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 30: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal30SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 31: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal31SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 32: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal32SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 33: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal33SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 34: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal34SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 35: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal35SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 36: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal36SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 37: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal37SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 38: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal38SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 39: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal39SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 40: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal40SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 41: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal41SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 42: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal42SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 43: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal43SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 44: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal44SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 47: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal47SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 48: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal48SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 49: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal49SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 50: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal50SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         foreach(var reviewed in UsCcssG4Unit2SixteenthLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
         foreach(var reviewed in UsCcssG4Unit2FifteenthLessonPracticeContracts.Reviewed)
