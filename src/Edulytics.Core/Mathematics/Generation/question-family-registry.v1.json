@@ -4,6 +4,42 @@
   "status": "Shadow",
   "families": [
 {
+  "id": "usccss.g4.u01.l07.is_factor",
+  "version": 1,
+  "skillId": "supporting.number.factors_primes",
+  "requiredCapabilities": [
+    "lesson.practice.exact.generate",
+    "lesson.practice.exact.verify"
+  ],
+  "answerType": "exact_integer",
+  "verificationPolicy": "positive-whole-number-source-target-divisibility",
+  "representations": [
+    "symbolic",
+    "contextual"
+  ],
+  "status": "ShadowVerified",
+  "productionRouting": false,
+  "lessonPracticeRouting": true
+},
+{
+  "id": "usccss.g4.u01.l07.is_multiple",
+  "version": 1,
+  "skillId": "supporting.number.factors_primes",
+  "requiredCapabilities": [
+    "lesson.practice.exact.generate",
+    "lesson.practice.exact.verify"
+  ],
+  "answerType": "exact_integer",
+  "verificationPolicy": "positive-whole-number-source-target-divisibility",
+  "representations": [
+    "symbolic",
+    "contextual"
+  ],
+  "status": "ShadowVerified",
+  "productionRouting": false,
+  "lessonPracticeRouting": true
+},
+{
   "id": "usccss.g4.u01.l06.student_touches",
   "version": 1,
   "skillId": "supporting.number.factors_primes",
