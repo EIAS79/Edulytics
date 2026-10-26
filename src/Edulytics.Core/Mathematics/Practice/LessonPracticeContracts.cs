@@ -959,6 +959,9 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Optional Grade4 U01 L08: existing numeric area and prime classification only; teacher reviews artwork.
+        foreach(var reviewed in UsCcssG4Unit1EighthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade 4 U01 L07: preserve source factor/multiple direction and teacher-led Stage2.
         foreach(var reviewed in UsCcssG4Unit1SeventhLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
