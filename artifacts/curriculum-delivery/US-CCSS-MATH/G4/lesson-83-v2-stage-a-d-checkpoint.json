@@ -1,0 +1,43 @@
+{
+  "ordinal": 83,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L15",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "f12bb8a612c2aa270971960f8e8b4b7b50673bd0aa029d8c6cc22f6745f411ab",
+    "teacher": "99cad6ca8e5eaf284656b50012d5fe9fef18c6fb70ee7274b8f8108d492160c2",
+    "student": "c91c568c26d1eaf5d9831ccc218fc57d216df750b749b40c570da78e64c61d50"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "What length is longer: 230 cm or 2 m?",
+    "teacherAnswer": "230 cm, by 30 cm"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:24:40+01:00",
+  "closeAtLocal": "2026-10-26T23:24:40+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-83-local-source-guard.test.cjs"
+  }
+}
