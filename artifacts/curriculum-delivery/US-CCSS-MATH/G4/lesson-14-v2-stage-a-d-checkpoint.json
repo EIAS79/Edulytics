@@ -16,6 +16,14 @@
   "independentEdulyticsCoolDown": true,
   "academicApproved": false,
   "testsWritten": true,
-  "testsRun": false,
-  "sourceParityProvenPercent": null
+  "testsRun": true,
+  "sourceParityProvenPercent": null,
+  "focusedTestResults": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "sourceCommit": "22cdbb9f8af9fed6e976bb48837abe8452094f9d",
+    "command": "node --test tests/academic-us-ccss-g4-u02-l06-source-guard.test.cjs",
+    "stageD": false
+  }
 }
