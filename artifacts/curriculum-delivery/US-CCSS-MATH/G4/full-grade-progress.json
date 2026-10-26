@@ -8,7 +8,7 @@
   "lastClosedOrdinal": 100,
   "currentLessonOrdinal": 101,
   "readyForStageD": 100,
-  "status": "G4_AUTHORING_TO_149_COMPLETE_STAGE_C_AND_D_BLOCKED",
+  "status": "G4_149_OF_149_CONTENT_AUTHORED_98_TARGETED_TESTS_GREEN_STAGE_C_D_BLOCKED",
   "lessonStates": {
     "1": "READY_FOR_STAGE_D",
     "2": "READY_FOR_STAGE_D",
@@ -160,7 +160,7 @@
     "148": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
     "149": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING"
   },
-  "testRuns": "POST100_TESTS_AUTHORED_NOT_RUN; FULL_GRADE_STAGE_D_NOT_RUN; NO_GITHUB_ACTION_RUNS_OBSERVED",
+  "testRuns": "G4_TARGETED_CI_98_OF_98_PASSED_ON_7127D347; STAGE_C_RUNTIME_PRACTICE_NOT_PROVEN; STAGE_D_NOT_RUN",
   "mainMerged": false,
   "renderDeployed": false,
   "productionDbMutated": false,
@@ -173,12 +173,17 @@
   "authoredPost100Lessons": 49,
   "newFocusedTestFilesAuthored": 49,
   "newFocusedTestsAuthored": 98,
-  "newFocusedTestsExecuted": 0,
+  "newFocusedTestsExecuted": 98,
   "authoringNotes": "101-149 Stage A/B content addressed; first-party cooldowns added; no real exact Practice proof, visual parity, teacher review, CI Stage D or production deployment. Previously recorded 1-100 READY_FOR_STAGE_D does not mean D executed.",
   "knownSourceMirror404Ordinals": [
     99,
     100,
     101,
     102
-  ]
+  ],
+  "newFocusedTestsPassed": 98,
+  "newFocusedTestsFailed": 0,
+  "newFocusedTestRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40418944485",
+  "newFocusedTestsTestedSha": "7127d3479961f2f33c934716aaed757ec1fa586e",
+  "lastVerifiedTargetedRun": "https://github.com/EIAS79/Edulytics/actions/runs/40418944485"
 }
