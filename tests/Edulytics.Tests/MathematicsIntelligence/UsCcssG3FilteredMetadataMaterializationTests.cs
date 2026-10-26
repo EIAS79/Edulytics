@@ -54,7 +54,7 @@ public sealed class UsCcssG3FilteredMetadataMaterializationTests
             Lessons = selected.ToList()
         };
         var exception = Assert.Throws<InvalidOperationException>(() =>
-            CanonicalLessonContentMaterializer.Materialize(filteredPack));
+            CommonCoreG3SourceTeachingCorrections.Apply(filteredPack));
         Assert.Contains("Expected the full Grade 3 2021 set of 143 lessons",
             exception.Message);
         // Fail-closed behavior still holds for incomplete unvalidated packs.
