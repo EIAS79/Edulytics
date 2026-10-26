@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 111,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L14",
+  "title": "What Makes Sense in the Problem?",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-6/lesson-14/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U06.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U06.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U06-L14.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "A lemonade stand starts with 132 litres and has 90 litres remaining. How many litres were served?",
+      "answerType": "integer",
+      "expected": "42"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-6/lesson-14/lesson.html",
+      "verified": "SOURCE_STUDENT_FACING_TEXT",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: Give and Take (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-6/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Carnival Time Number Choice (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-6/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Lemonade Break (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-6/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-6/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: A Show at the Carnival (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-6/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Ferris wheel.",
+      "Diagram. A rectangle split into 14 parts, each labeled 4. Total length, 56."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "A lemonade stand starts with 132 litres and has 90 litres remaining. How many litres were served?",
+      "answerType": "integer",
+      "expected": "42"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s think about what numbers and questions make sense in problems. Required Preparation CCSS Standards Addressing 3.MD.A.1 3.MD.A.2 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 mi",
+      "sourceLearningGoals": "Reason about quantities, questions, and solutions that make sense in measurement problems. Solve one-step word problems involving time and liquid volume.",
+      "teachingSteps": [
+        "Choose and state the correct unit and a correctly labelled scale.",
+        "Use ruler, line plot, clock or measuring instrument as the task requires.",
+        "Check endpoints, fractional marks and whether the answer has reasonable units."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s think about what numbers and questions make sense in problems. Required Preparation CCSS Standards Addressing 3.MD.A.1 3.MD.A.2 3.NBT.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 mi",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "A fair stand sells 34 litres from 96 litres. How much is left?",
+      "answerType": "integer",
+      "expected": "62"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "A shop has 56 litres after sales and pours them into 4-litre jugs. How many full jugs?",
+      "answerType": "integer",
+      "expected": "14"
+    },
+    "humanRubric": "Source asks students to create questions corresponding to different mathematical work, including 132−90 and sale of 56 L in 4-L jugs.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

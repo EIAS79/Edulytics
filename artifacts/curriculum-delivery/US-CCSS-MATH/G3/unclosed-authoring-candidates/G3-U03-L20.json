@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 56,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L20",
+  "unitNumber": 3,
+  "lessonNumber": 20,
+  "title": "More Practice to Represent and Solve",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-20/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-20/lesson.html",
+  "stageA": {
+    "status": "LOCAL_2021_PUBLIC_SOURCE_INFO_GAP_METHOD_FOUR_WARMUP_VALUES_ORIGINAL_CARD_NUMBERS_IMAGE_ONLY_UNAVAILABLE",
+    "goals": "Represent and solve two-step word problems.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 3,
+    "originalAllSubquestionsIndividuallyVerified": false,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "a2784203008df4cb593f2194ef00e9774531976fb242932d43065bff12cadee9",
+    "prepSha256": "7def2db5998a5747ef6335cea03cf474160a3af36bb31d96f31bc84d604166bb"
+  },
+  "stageB": {
+    "status": "2021_INFO_GAP_METHOD_FIRSTPARTY_SEPARATELY_LABELED_CHAIRS_BAKE_CARD_RICH_V2",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L20",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "5a7867f5109b55af25504221988b434dcaae33dd63da249d0d88e584bfdb7cbe",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": true,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l20-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson20.cshtml"
+  },
+  "stageC": {
+    "status": "4_ORIGINAL_NUMERIC_WARMUP_2_FIRSTPARTY_GOAL_EQUIVALENT_8_HUMAN_INFO_GAP_TASKS_UNRUN",
+    "family": "two-step-add-subtract",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Info Gap: Introduction with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve more problems.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceNumericChecks": 4,
+    "independentFirstPartyNumericChecks": 2,
+    "teacherTasks": 8,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson20InformationGapSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "key": "NUMBER-TALK",
+      "source": "2021 original 20+2x3,30+4x3,50+8x3,99+8x3",
+      "mode": "FOUR_EXACT_PUBLIC_STUDENT_TEXT_VALUES",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    },
+    {
+      "key": "INTRO-CHAIRS",
+      "source": "2021 source information gap sample chairs in corner/rows/chairs each",
+      "mode": "TEACHER_SOURCE_HIDDEN_CARD_OR_INDEPENDENT_FIRSTPARTY_VALUES",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    },
+    {
+      "key": "DATA-DISCLOSURE",
+      "source": "Problem card requests and data card restrictions",
+      "mode": "TEACHER_INFORMATION_GAP_PROTOCOL",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    },
+    {
+      "key": "BAKE-SALE",
+      "source": "Original 2021 Bake Sale picture-only problem/data cards",
+      "mode": "ORIGINAL_NUMERIC_CARD_CONTENT_NOT_READ_TEACHER_REQUIRED_INDEPENDENT_BAKE_CARD",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    },
+    {
+      "key": "TRADE-ROLES",
+      "source": "New sets of problem/data cards and independent solve",
+      "mode": "TEACHER_PARTNER_CARD_REVIEW",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    },
+    {
+      "key": "IMAGES",
+      "source": "Three source figures alt + additional unlabeled image links",
+      "mode": "NO_PUBLISHER_PIXEL_REUSE",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    },
+    {
+      "key": "COOLDOWN",
+      "source": "Publisher Reflection gated",
+      "mode": "TEACHER_ONLY_NOT_COPIED",
+      "sourceMethodologyMapped": true,
+      "sourceCardNumericParityCertified": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L20-IMAGE-01",
+      "observedAltText": "Gap activity. Data card",
+      "originalReference": "unit-3/lesson-20/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L20-IMAGE-02",
+      "observedAltText": "Gap activity. Problem and data cards",
+      "originalReference": "unit-3/lesson-20/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L20-IMAGE-03",
+      "observedAltText": "Information Gap routine directions for problem card student and data card student.",
+      "originalReference": "unit-3/lesson-20/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "sourceMethodologyCovered": 7,
+    "originalPublisherCardNumericSourceUnverified": true
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "A group collects 170 items, gives away 16, then receives 10. How many remain?",
+    "answerType": "integer",
+    "expected": "164"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original picture-only chairs and Bake Sale publisher problem/data card numbers not inspected; no original-card numeric parity. Teacher must supply source.",
+    "Original student PDF/publisher visual pixels and restricted publisher Reflection unavailable.",
+    ".NET tests, CI, Stage D, teacher approval, authenticated UAT and production not performed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_FIRSTPARTY_SOURCE_METHOD_EQUIVALENCE_ONLY_ORIGINAL_HIDDEN_CARDS_NOT_CERTIFIED"
+}

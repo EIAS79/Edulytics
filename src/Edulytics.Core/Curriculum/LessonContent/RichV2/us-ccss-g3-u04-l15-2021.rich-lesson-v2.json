@@ -1,0 +1,136 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u04-l15-firstedition2021-art-areas-five-diagrams-to-scale-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U04:L15",
+      "CultureCode": "en",
+      "Title": "Equal Groups, Larger Numbers",
+      "ExplanationParagraphs": [
+        "Original Which One Doesn't Belong? compares four distinct representations. Source A is a full7×14 grid, area98. B divides a7×13 rectangle into widths10 and3, with areas70+21=91. C divides7×14 into widths10 and4 labelled70+28=98 but image halves appear EQUAL in width—geometrically incorrect scaling, intended discussion point. D shows ungridded7×14=98. Multiple answers can have sensible distinguishing reasons; teacher checks and corrects scaling.",
+        "Original Activity1 takes place at an art festival. Four original problems: mural15ft×4ft=60 square feet, mosaic12 rows×8 columns of1-inch-square tiles=96 square inches, sidewalk chalk6ft×14ft=84 square feet, sticker pack5 sheets×16 stickers=80 stickers. Learners may be supported to complete at least two problems, but all mathematical source content is mapped.",
+        "Source sidewalk poster task: pupils with a partner who used a similar strategy create a visual for the third problem6×14=84; show decomposing14 into10+4 as60+24. Do not mistake area units square feet for sticker counts.",
+        "Original Activity2 gallery walk requires pairs to compare poster representations AND leave STICKY NOTES explaining why they agree or disagree. Teacher highlights three different representations of6×14: fully gridded, partitioned/labeled grid, or scaled ungridded area diagram. These are observable collaboration tasks.",
+        "Teacher synthesizes strengths and limitations of complete grid, partitioned grid and ungridded source diagrams. Source original five SVGs checked visually; no publisher SVG markup reused. Original gated Find the Area Cool-down and source student PDF not verified. Tests, Stage D and academic signoff deferred."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Square units",
+          "Definition": "Area of two lengths uses squared units.",
+          "Rule": "length×width",
+          "Example": "15feet×4feet=60 square feet"
+        },
+        {
+          "Title": "Scale of diagram",
+          "Definition": "Part sizes should reflect relative numerical widths.",
+          "Rule": "10:4 is not1:1",
+          "Example": "Original C is intentionally disproportionate despite labelled70+28"
+        },
+        {
+          "Title": "Gallery walk feedback",
+          "Definition": "Teacher checks student explanations and sticky-note justification.",
+          "Rule": "Compare full grid / decomposed / ungridded models",
+          "Example": "Sidewalk6×14=84"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Mural",
+          "Question": "15×4",
+          "Method": "Draw a correctly scaled source-aligned rectangular array and label units.",
+          "Steps": [
+            "15×4",
+            "Compute 60 square feet.",
+            "Verify equal groups or side lengths and source unit."
+          ],
+          "Answer": "60 square feet",
+          "Check": "15×4 = 60"
+        },
+        {
+          "Title": "Mosaic",
+          "Question": "12×8",
+          "Method": "Draw a correctly scaled source-aligned rectangular array and label units.",
+          "Steps": [
+            "12×8",
+            "Compute 96 square inches.",
+            "Verify equal groups or side lengths and source unit."
+          ],
+          "Answer": "96 square inches",
+          "Check": "12×8 = 96"
+        },
+        {
+          "Title": "Sidewalk",
+          "Question": "6×14",
+          "Method": "Draw a correctly scaled source-aligned rectangular array and label units.",
+          "Steps": [
+            "6×14",
+            "Compute 84 square feet.",
+            "Verify equal groups or side lengths and source unit."
+          ],
+          "Answer": "84 square feet",
+          "Check": "6×14 = 84"
+        },
+        {
+          "Title": "Stickers",
+          "Question": "5×16",
+          "Method": "Draw a correctly scaled source-aligned rectangular array and label units.",
+          "Steps": [
+            "5×16",
+            "Compute 80 stickers.",
+            "Verify equal groups or side lengths and source unit."
+          ],
+          "Answer": "80 stickers",
+          "Check": "5×16 = 80"
+        },
+        {
+          "Title": "Area B",
+          "Question": "7×13",
+          "Method": "Draw a correctly scaled source-aligned rectangular array and label units.",
+          "Steps": [
+            "7×13",
+            "Compute 91 square units.",
+            "Verify equal groups or side lengths and source unit."
+          ],
+          "Answer": "91 square units",
+          "Check": "7×13 = 91"
+        },
+        {
+          "Title": "Area C",
+          "Question": "7×14",
+          "Method": "Draw a correctly scaled source-aligned rectangular array and label units.",
+          "Steps": [
+            "7×14",
+            "Compute 98 square units.",
+            "Verify equal groups or side lengths and source unit."
+          ],
+          "Answer": "98 square units",
+          "Check": "7×14 = 98"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume all warm-up diagrams represent the same area.",
+          "WhyWrong": "Source B represents7×13=91, not7×14=98.",
+          "Correction": "Distinguish numeric dimensions and the scaling error in C."
+        },
+        {
+          "Mistake": "Accept equal halves for70 and28 in source diagram C as true scale.",
+          "WhyWrong": "70 and28 do not occupy equal area.",
+          "Correction": "Show correct 10:4 width ratio."
+        },
+        {
+          "Mistake": "Record tile area as96 inches.",
+          "WhyWrong": "Each tile is1 square inch.",
+          "Correction": "96 square inches."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up A98,B91,C98 mis-scaled,D98.",
+        "Original festival mural60sq.ft., mosaic96sq.in., sidewalk84sq.ft., stickers80.",
+        "Teacher checks sticky-note gallery, area labels and scaling.",
+        "Source 5 SVG figures inspected; no runtime tests or Stage D."
+      ]
+    }
+  ]
+}

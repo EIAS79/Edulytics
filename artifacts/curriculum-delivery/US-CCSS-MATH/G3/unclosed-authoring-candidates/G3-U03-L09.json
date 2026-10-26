@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 45,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L09",
+  "unitNumber": 3,
+  "lessonNumber": 9,
+  "title": "Subtraction Algorithms (Part 2)",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-9/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-9/lesson.html",
+  "stageA": {
+    "status": "FOUR_PAGE_OFFICIAL_2021_PDF_TRUE_FALSE_LIN_EXACT_ERROR_FIVE_ALGORITHM_SUMS_AND_TEACHER_ACCESS_REVIEWED",
+    "goals": "Analyze and use a subtraction algorithm with the numbers written in expanded form.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 3,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/f95qqatka4uu5c77i9maoewj5vf1",
+      "pages": 4,
+      "bytes": 70915,
+      "sha256": "63467914b32464b95497ec8353b68e9fc610b4f8a2e31a1735edc5e01d0f1805",
+      "firstEditionYear": 2021,
+      "pdfTextAndTeacherOriginalCompared": true,
+      "sourceLinFigureOriginalBytesNotRepublished": true
+    },
+    "sourceLocalHtmlHashes": {
+      "teacherSha": "e7a4e0bc37125d09cad3966587340130780b22909b6534c4fcc0bbc71fd4eeed",
+      "preparationSha": "115397a4f5b0051ab709799fda20b86940d384a24cd0ff2b0e96e64ade691b9f"
+    }
+  },
+  "stageB": {
+    "status": "GUARDED_CANONICAL_RICH_V2_EXPLICIT_LIN_ERROR_FIRST_PARTY_DECOMPOSITION_VIEW_WITH_3_OF_5_ACCESS",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L09",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "0eda61185023aa32301930e1c4285726712d11db4149e20fff9e29cb92f52814",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l09-2021.rich-lesson-v2.json",
+    "sourceSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson9.cshtml"
+  },
+  "stageC": {
+    "status": "SIX_EXACT_2021_SOURCE_NUMERIC_ANCHORS_THREE_TRUE_FALSE_OPEN_RUBRIC_INDEPENDENT_418_EXIT_TESTS_WRITTEN_NOT_RUN",
+    "family": "subtraction-within-1000",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Revise Subtraction Work with your teacher. Show the representation and explain how it meets the goal: Let’s learn more about our first subtraction algorithm.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 13,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson9SourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "GOAL",
+      "source": "Teacher preparation and 3.NBT.A.2",
+      "coverage": "TEACHER_GOAL_MAPPING",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "WU-MULT",
+      "source": "PDF p1 multiplication commutative",
+      "coverage": "TEACHER_TRUE_FALSE_EXPLANATION",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "WU-ADD",
+      "source": "PDF p1 addition commutative",
+      "coverage": "TEACHER_TRUE_FALSE_EXPLANATION",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "WU-SUB",
+      "source": "PDF p1 subtraction not commutative",
+      "coverage": "TEACHER_TRUE_FALSE_EXPLANATION",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "LIN-IMAGE",
+      "source": "PDF p2 original Lin incorrect expanded algorithm",
+      "coverage": "FIRST_PARTY_ARITHMETIC_RECONSTRUCTION_NO_ORIGINAL_IMAGE",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "LIN-ERROR",
+      "source": "Teacher source exact 20-from50 reversal error",
+      "coverage": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "LIN-272",
+      "source": "428−156=272",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_ANCHOR",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "TRY-1",
+      "source": "PDF p3–4 original source subtraction 283−159",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_ANCHOR",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "TRY-2",
+      "source": "PDF p3–4 original source subtraction 425−192",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_ANCHOR",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "TRY-3",
+      "source": "PDF p3–4 original source subtraction 639−465",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_ANCHOR",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "TRY-4",
+      "source": "PDF p3–4 original source subtraction 591−128",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_ANCHOR",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "TRY-5",
+      "source": "PDF p3–4 original source subtraction 832−575",
+      "coverage": "ORIGINAL_SOURCE_NUMERIC_ANCHOR",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "CHOICE",
+      "source": "Original teacher MLR8/accessibility 3-of-5 practice option",
+      "coverage": "TEACHER_ACCESSIBILITY_RUBRIC",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "SYNTH",
+      "source": "Lesson synthesis critique of algorithms",
+      "coverage": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "COOL",
+      "source": "Original teacher-gated How Did Andre Subtract?",
+      "coverage": "INDEPENDENT_GOAL_EQUIVALENT_COOLDOWN_704_MINUS_286_418",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    },
+    {
+      "id": "OPTIONAL-MATERIALS",
+      "source": "Original base-ten physical blocks and optional centers",
+      "coverage": "TEACHER_SOURCE_ORIGINAL_MATERIAL_REFERENCE_NO_REUSE",
+      "sourceAcademicSemanticVerified": true,
+      "originalPublisherImageParityClaimed": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L09-IMAGE-01",
+      "observedAltText": "Subtraction. Four-hundred plus twenty plus eight, minus one-hundred plus fifty plus six, equals three-hundred plus thirty plus two.",
+      "originalReference": "unit-3/lesson-9/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L09-IMAGE-02",
+      "observedAltText": "Subtraction.",
+      "originalReference": "unit-3/lesson-9/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L09-IMAGE-03",
+      "observedAltText": "Subtraction. Three-hundred plus ninety plus one, minus two-hundred plus ten plus five.",
+      "originalReference": "unit-3/lesson-9/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 16,
+    "verifiedForStaticSourceSemanticAuthoring": 16
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Calculate 417 − 196. Show regrouping or another strategy.",
+    "answerType": "integer",
+    "expected": "221"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-45-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-45-academic-source-coverage-and-human-rubric-20261025.json",
+  "deferredStageD": [
+    "Publisher How Did Andre Subtract? Cool-down teacher restricted; first-party704−286=418 independent equivalent.",
+    "Original Lin image not copied, first-party textual exchange verified against local source teacher narrative.",
+    "Original optional source materials teacher-supplied; no unreviewed gameboard assets embedded.",
+    "No compiled/test-executed, no Stage D/merge/deploy/academic signoff."
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l10-2021-source-abc-firstparty-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L10",
+      "CultureCode": "en",
+      "Title": "Subtraction Algorithms (Part 3)",
+      "ExplanationParagraphs": [
+        "Subtraction Algorithms (Part 3): relate expanded-form subtraction to a more compact written algorithm that records each place-value difference with one digit, and any composed hundred or ten in the appropriate column. The 2021 source lesson does NOT carry the inherited 'PLC Activity' title suffix.",
+        "Warm-up — Notice and Wonder: Digits that Disappear (10 minutes). Compare the expanded form 300+20 and the equivalent decomposition 200+120. In expanded form, the decomposed hundred is written as 100, while in compact hundreds/tens digits the 3 becomes 2 and 2 tens becomes 12 tens. Ask students to notice how fewer written zeros still represent exactly the same quantity. Use blocks or diagrams to clarify and teacher-review their ideas.",
+        "Activity 1 — A New Subtraction Algorithm (20 minutes). Andre and Clare both start from 528−271. Andre records the hundreds and tens expanded: 500+20+8 becomes 400+120+8, then remove200+70+1 to obtain200+50+7=257. Clare records the same 4 hundreds and 12 tens compactly as 4 and 12 in their respective places, then subtracts2 hundreds,7 tens,1 one. The final difference is 257 in either notation. Partners complete both and explain why one needs summing partial-value terms at the end and the other produces the digits directly.",
+        "Activity 2 — Try Clare's Algorithm (15 minutes). Source worked example 538−156=382. Use the compact algorithm for four original student exercises: 691−358=333, 926−584=342, 317−182=135, 492−325=167. Display and explain the decomposition whenever the upper digit is smaller than the lower digit in a place-value column.",
+        "For 691−358: 1 one cannot remove8 ones, so trade one ten: 8 tens and11 ones; 11−8=3 ones,8−5=3 tens,6−3=3 hundreds, giving333. For 926−584: tens cannot subtract8 tens from2 tens, so exchange one hundred to get12 tens; 12−8=4 tens and8−5=3 hundreds,8−5=3 hundreds. Final 342.",
+        "For 317−182 exchange a hundred for ten tens: 2 hundreds and 11 tens. 7−2=5 ones;11−8=3 tens;2−1=1 hundred, final135. 492−325 needs only ones exchange, 12−5=7 ones,8−2=6 tens,4−3=1 hundred, final167. Check results using inverse addition.",
+        "Use MLR8 Discussion Supports sentence frames: 'First, I ... because ...', 'Then, I ... because ...'. Permit partners, manipulatives and teacher interaction. The source describes 528 and 271 as student work to be compared, not as one fixed mandatory pencil-and-paper format.",
+        "Lesson synthesis: ask how place-value understanding allows writing fewer digits when an expanded 400 and120 correspond to compact 4 and12 in hundreds/tens columns. Discuss where the sum of decomposed parts is or is not needed.",
+        "An independent Edulytics Cool-down uses 804−257=547 with exchanges, rather than copying the publisher original teacher-gated Cool-down or repeating the source 492−325 example. The source PDF is linked; publisher illustrations are not reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Expanded notation and compact algorithm",
+          "Definition": "400+120+8 and 4 hundreds,12 tens,8 ones express the same number.",
+          "Rule": "The place of a digit determines its value.",
+          "Example": "528=500+20+8=400+120+8."
+        },
+        {
+          "Title": "Trade without changing value",
+          "Definition": "A hundred may be exchanged for ten tens; a ten for ten ones.",
+          "Rule": "Only trade to make an equivalent representation before subtracting.",
+          "Example": "528−271=(400+120+8)−(200+70+1)=257."
+        },
+        {
+          "Title": "Validate subtraction with inverse addition",
+          "Definition": "A difference plus the subtrahend equals the original minuend.",
+          "Rule": "Check each result by adding back the amount removed.",
+          "Example": "333+358=691."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Andre and Clare",
+          "Question": "Find528−271 with either expanded or compact records.",
+          "Method": "Regroup a hundred into ten tens.",
+          "Steps": [
+            "528=500+20+8=400+120+8.",
+            "Subtract200+70+1.",
+            "Remain200+50+7=257.",
+            "Clare records2 hundreds5 tens7 ones directly."
+          ],
+          "Answer": "257",
+          "Check": "257+271=528."
+        },
+        {
+          "Title": "Compact with ones exchange",
+          "Question": "Compute691−358.",
+          "Method": "Trade a ten for ten ones.",
+          "Steps": [
+            "691 becomes6 hundreds8 tens11 ones.",
+            "11−8=3;8−5=3;6−3=3.",
+            "333."
+          ],
+          "Answer": "333",
+          "Check": "333+358=691."
+        },
+        {
+          "Title": "Compact with hundreds exchange",
+          "Question": "Compute926−584.",
+          "Method": "Trade a hundred for ten tens.",
+          "Steps": [
+            "926 becomes8 hundreds12 tens6 ones.",
+            "6−4=2;12−8=4;8−5=3.",
+            "342."
+          ],
+          "Answer": "342",
+          "Check": "342+584=926."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating 12 in the tens position as twelve ones.",
+          "WhyWrong": "The notation means twelve tens, i.e.120.",
+          "Correction": "Identify the column and regroup into8? Actually 12 tens=120, not12 ones."
+        },
+        {
+          "Mistake": "Taking away 8 ones from1 one without regrouping in691−358.",
+          "WhyWrong": "Subtracting the small ones digit from the larger reverses order.",
+          "Correction": "Exchange one ten, then11−8=3."
+        },
+        {
+          "Mistake": "Dropping a newly decomposed hundred when 926−584.",
+          "WhyWrong": "The hundreds column must decrease from9 to8.",
+          "Correction": "Record8 hundreds and12 tens, yielding342."
+        },
+        {
+          "Mistake": "Grading written comparison of Andre and Clare solely from scalar257.",
+          "WhyWrong": "Original source explicitly asks for comparing process and final representation.",
+          "Correction": "Teacher reviews methods and communication."
+        }
+      ],
+      "SummaryPoints": [
+        "Source warm-up compares300+20 with200+120 using compact digit positions.",
+        "Andre and Clare528−271=257 using expanded and compact algorithms.",
+        "Worked reference538−156=382.",
+        "Four source exercises:333,342,135,167.",
+        "Explain decomposition and how fewer digits preserve the same number.",
+        "Independent original Edulytics exit804−257=547; original publisher locked Cool-down never copied."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

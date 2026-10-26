@@ -1,0 +1,113 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l17-original2021-beads-reasonableness-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L17",
+      "CultureCode": "en",
+      "Title": "Does It Make Sense?",
+      "ExplanationParagraphs": [
+        "The original 2021 lesson Does It Make Sense? combines mental computation, reasonable estimation and two-step addition/subtraction word problems. It does NOT ask merely for isolated hundreds rounding.",
+        "Warm-up — True or False: Is it Greater? (10 min). Compare 132+115>200 (247>200 true), 228+195>400 (423>400 true) and 217+151>400 (368>400 false). Students explain their mental checks rather than enter a Boolean without reasons.",
+        "Activity 1 — Quick Estimates (15 min). Priya starts with212 beads, uses98 and adds308: total422. Her estimate about400 is reasonable. Explain a mental approximation such as 200−100+300≈400 while keeping the exact 422 separate.",
+        "Clare has252 beads, uses92, receives203: exact363, quick estimate250−90+200≈360. Han combines558 with302 then uses250: exact610, quick estimate560+300−250≈610. A valid rounding strategy need not match the exact answer perfectly.",
+        "Activity 2 — Solve and Reason (20 min). Jada begins326, gives32 and uses84: 326−32−84=210. Noah uses624 beads on Monday, 132 more Tuesday and48 Wednesday: 624+132+48=804. Students choose one, show their own strategy, exchange work and judge if a partner answer makes sense.",
+        "Discussion, estimating, selecting a strategy and comparing a partner's work must be assessed by a teacher. Only the eight exact numerical anchors can be machine-checked without losing the intent. No publisher bead photo or restricted original Beads in the Bin Cool-down is reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reasonableness",
+          "Definition": "A rough estimate checks whether a precise computed result has the right magnitude.",
+          "Rule": "Choose appropriate benchmark arithmetic but do not confuse rounded and exact.",
+          "Example": "422 is reasonably described as about400."
+        },
+        {
+          "Title": "Sequential changes",
+          "Definition": "Addition adds received pieces; subtraction removes used or gifted pieces.",
+          "Rule": "Read the story chronology and preserve sign at every change.",
+          "Example": "212−98+308=422."
+        },
+        {
+          "Title": "Mental comparison",
+          "Definition": "Compare sums with a threshold without necessarily completing a long algorithm.",
+          "Rule": "Related benchmark values can prove true or false with explanations.",
+          "Example": "217+151=368, which is not above400."
+        },
+        {
+          "Title": "Partner reasoning",
+          "Definition": "Judge whether another solution's strategy and numerical result agree with the source story.",
+          "Rule": "Teacher reviews all free-form checks and diagrams.",
+          "Example": "Jada's final210 should be below326."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Priya estimate",
+          "Question": "Is 400 a reasonable estimate for 212−98+308?",
+          "Method": "Approximate and calculate independently.",
+          "Steps": [
+            "Use200−100+300≈400.",
+            "Compute exactly:212−98=114.",
+            "Add308 to get422.",
+            "422 is close enough to400 to justify the rough estimate."
+          ],
+          "Answer": "About 400 is sensible; exact 422.",
+          "Check": "Do not mark400 as the exact count."
+        },
+        {
+          "Title": "Jada two-step change",
+          "Question": "What remains from326 after giving32 and using84?",
+          "Method": "Remove both groups.",
+          "Steps": [
+            "326−32=294.",
+            "294−84=210.",
+            "Check 32+84=116,326−116=210."
+          ],
+          "Answer": "210 beads.",
+          "Check": "A result greater than326 would be suspect."
+        },
+        {
+          "Title": "Noah three days",
+          "Question": "How many beads did Noah use over three days 624,132,48?",
+          "Method": "Add all days.",
+          "Steps": [
+            "624+132=756.",
+            "756+48=804.",
+            "Check approximate600+130+50=780;804 is reasonable."
+          ],
+          "Answer": "804 beads.",
+          "Check": "All source contributions added exactly once."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat an estimate of400 as precise answer422.",
+          "WhyWrong": "The source asks separately if the estimate makes sense; numerical precision is different.",
+          "Correction": "Write about400 and exactly422 explicitly."
+        },
+        {
+          "Mistake": "Subtract 308 for Priya because she had used beads earlier.",
+          "WhyWrong": "The 308 beads were placed BACK in the bag, not used.",
+          "Correction": "212−98+308."
+        },
+        {
+          "Mistake": "For Noah subtract the Tuesday/Wednesday beads.",
+          "WhyWrong": "He uses additional beads each day, and the question is total used.",
+          "Correction": "624+132+48."
+        },
+        {
+          "Mistake": "Grade partner explanation from scalar result alone.",
+          "WhyWrong": "The source asks for reasonableness and a demonstration of method.",
+          "Correction": "Teacher reviews logic, estimates and arithmetic."
+        }
+      ],
+      "SummaryPoints": [
+        "Warm-up:247>200 true,423>400 true,368>400 false.",
+        "Source bead totals Priya422, Clare363, Han610, Jada210, Noah804.",
+        "Estimate and exact result are different claims; compare approximate magnitude.",
+        "Source photo not copied and gated Cool-down not claimed."
+      ]
+    }
+  ]
+}

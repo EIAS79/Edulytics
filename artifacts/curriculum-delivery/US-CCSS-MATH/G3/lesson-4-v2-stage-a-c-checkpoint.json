@@ -1,0 +1,259 @@
+{
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 4,
+  "unitNumber": 1,
+  "lessonNumber": 4,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L04",
+  "title": "Create Scaled Picture Graphs",
+  "sourceEdition": "Illustrative Mathematics K–5 First Edition (2021)",
+  "localTeacherLessonHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-1\\lesson-4\\lesson.html",
+  "localTeacherPreparationHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\03_Grade_3_IM_K5\\unit-1\\lesson-4\\preparation.html",
+  "sourcePacketPath": "docs/curriculum/batches/US-CCSS-B001-2021-SOURCE-PEDAGOGY-PACKETS-2-OF-2.json",
+  "sourceReferenceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/lesson.html",
+  "targetSourceParityPercent": 100,
+  "claimedSourceParityPercent": null,
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "sourceInventory": {
+    "identifiedElements": 8,
+    "fullyMappedAndVerified": 0,
+    "localTeacherLessonHtmlInspected": true,
+    "localPreparationHtmlInspected": true,
+    "studentTaskPdfInspected": false,
+    "sourceFiguresFullyVerified": false
+  },
+  "sourceElements": [
+    {
+      "id": "goal_prep_timing",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 teacher guide pp.49–50 and public preparation",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "G3 U1 L4 scaled picture graph focus, 3.MD.B.3, time 10+15+20+10+5, poster, MLR8/cube support",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "warmup_15_25",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher guide pp.51–52",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Two source dot examples 3×5=15 and 5×5=25, teacher 30-sec flash, 1-min partner discussion, first-party drawings",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "activity1_survey_pupils",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher guide pp.52–53",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Group-of-four real student survey and private paper table; C/T/B/Bal/P/H exactly; no fixed invented survey data",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "activity1_list_v_tally_norms",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher lesson Activity 1 synthesis",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Individual paper list vs category totals, collaboration norms and teacher discussion; not machine graded",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "activity2_scaled_pictograph",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 teacher guide pp.54–55 and Student Facing Activity 2",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Draw class-derived six-category graph; one whole mark=two, half mark=one, title, category labels and key; first-party visuals",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "activity2_partner_and_access",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher guide p.54 access and activity synthesis",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Teacher reviews student-authored graph; 2-min partner comparisons, MLR8 sentence frames, concrete connecting-cube pairs",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "synthesis_balloon_plus2_car_plus1",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher guide pp.55–56",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Two separate source graph modifications: Balloon +2 = one full; Car +1 = one half or completing existing half; separately captured reasoning",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "community_norms_synthesis",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher guide Lesson Synthesis and Math Community",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Teacher reviews norms before Cool-down, partnership and teacher-led discussion; no fabricated observed performance",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "cooldown_plane_plus_four",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 teacher guide pp.50–51, Complete the Picture Graph",
+      "codePath": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson4ScaledTravelSurvey.cs",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "FOUR absent Plane pupils; two additional full Plane pictures at key2; machine grade 2 and teacher-scored actual drawing, sample dataset clearly first-party",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "optional_centers",
+      "parityStatus": "MATCHED_TEACHER_LED",
+      "sourceLocation": "2021 teacher guide Suggested Centers",
+      "codePath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Sort and Display stage2 / Capture Squares stage3 optional teacher-led work, not falsely scored as source mathematics",
+      "sourceArtCopied": false
+    },
+    {
+      "id": "figure_rights_student_facing",
+      "parityStatus": "MATCHED_DIGITAL",
+      "sourceLocation": "2021 Student Facing public teacher HTML and 2021 teacher guide pp.49–56",
+      "codePath": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "sourceSemanticAuthoringVerified": true,
+      "sourceSemanticProof": "Source image mathematical quantities and prompts re-authored with original first-party drawings; no publisher figure copies, no claim of pixel/printed-PDF identity",
+      "sourceArtCopied": false
+    }
+  ],
+  "stageA": {
+    "status": "2021_TEACHER_GUIDE_11_OF_11_SOURCE_SEMANTIC_ELEMENTS_MATCHED",
+    "sourceGoal": "Represent data using scaled picture graphs",
+    "scale": 2,
+    "categories": [
+      "car",
+      "train",
+      "boat",
+      "balloon",
+      "plane",
+      "helicopter"
+    ],
+    "sampleClassCountsFromSource": null,
+    "sourceWarning": "Counts are classroom responses and cannot be assumed; teacher must review data and odd-number half symbols.",
+    "teacherPublic2021TextRechecked": true,
+    "sourceActivity2Key": "1 full independently drawn picture = 2 students; a half picture represents 1 student",
+    "sourceSynthesisChanges": [
+      {
+        "category": "Balloon",
+        "additionalStudents": 2,
+        "representation": "one full pictograph mark"
+      },
+      {
+        "category": "Car",
+        "additionalStudents": 1,
+        "representation": "half pictograph mark, or completion of prior half mark"
+      }
+    ],
+    "teacherLedIndividualSurveyCollection": {
+      "status": "PAPER_ONLY_TEMPLATE_AUTHORED_UNVERIFIED_PUPIL_COLLECTION",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "private": false,
+      "onlineStudentNamesStored": false
+    },
+    "sourceGuide": "https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf",
+    "originalWarmupCounts": [
+      15,
+      25
+    ],
+    "sourceCoolDown": "Four absent Plane pupils add two full symbols under key2"
+  },
+  "stageB": {
+    "status": "ORIGINAL_2021_SOURCE_MATH_RICH_V2_AND_INDEPENDENT_STUDENT_ACTIVITY_AUTHORED",
+    "files": {
+      "core": "src/Edulytics.Core/Mathematics/Curriculum/UsCcssG3Unit1Lesson4ScaledTravelSurvey.cs",
+      "controller": "src/Edulytics.Web/Controllers/Grade3Lesson4ActivitiesController.cs",
+      "model": "src/Edulytics.Web/ViewModels/LessonContent/Grade3Lesson4PracticePage.cs",
+      "view": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "studentLink": "src/Edulytics.Web/Views/StudentPortal/Lesson.cshtml"
+    },
+    "featureNotes": [
+      "Classroom 6-category survey, input counts not invented",
+      "Scale 2 with exact fractional one-student half mark",
+      "Two teacher-bound numeric conditional questions",
+      "Fictional first-party Cool-down with numeric and open rubric",
+      "Math Community and new warm-up diagram"
+    ],
+    "synthesisAccurateToSource": true,
+    "synthesisOldMistake": "Generic one-more change did not name source Car category",
+    "synthesisCorrection": "Specified both original balloon +2 and car +1 situations, with parity-aware half marks.",
+    "richV2ProposedSourceSpecificCorrection": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "effectiveLearnerBodyCompared": false,
+    "currentContentStatus": "SOURCE_CORRECTED_AUTHORING_NOT_RUNTIME_VERIFIED",
+    "twoSourceGraphChangeReasoningFieldsSeparatelyAuthored": true,
+    "richV2Embedded": {
+      "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l04-2021.rich-lesson-v2.json",
+      "version": "g3-u01-l04-2021-source-warmup-cooldown-20261024-v3",
+      "staticSourceSemanticVerified": true,
+      "liveRuntimeVerified": false
+    },
+    "studentViewChronologyCorrection": {
+      "path": "src/Edulytics.Web/Views/Grade3Lesson4Activities/Index.cshtml",
+      "source": "Original 2021 Lesson Synthesis and Math Community before Cool-down",
+      "sourceSynthesisBeforeCooldown": true,
+      "publisherImageCopied": false
+    },
+    "sourceArtworkCopied": false
+  },
+  "stageC": {
+    "status": "SOURCE_COOLDOWN_NUMERIC_GRADER_AND_ALL_TEACHER_RUBRIC_PROMPTS_AUTHORED_TESTS_UNRUN",
+    "routes": [
+      "student/practice/grade3-u01-l04"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4ScaledTravelSurveyTests.cs",
+    "testsRun": false,
+    "teacherReviewTasks": [
+      "real class survey",
+      "student-drawn graph",
+      "partner dialogue",
+      "Cool-down open graph/explanation"
+    ],
+    "teacherOnlyBalloonAndCarGraphChangeResponsesNotAutoGraded": true,
+    "unrunStaticSourceSynthesisContractWritten": true,
+    "richV2RegressionFile": {
+      "path": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs",
+      "written": true,
+      "executed": false
+    },
+    "coolDownSourceSkill": {
+      "newPlanePupils": 4,
+      "newWholeSymbols": 2,
+      "teacherReviewsActualGraphDrawing": true
+    },
+    "testFiles": [
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4ScaledTravelSurveyTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson4RichV2SourceCoverageTests.cs"
+    ]
+  },
+  "originalCoolDownPolicy": "FIRST_PARTY_EDULYTICS_EQUIVALENT_AUTHORIZED",
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "GITHUB_AUTO_TRIGGERED_UNREQUESTED_DO_NOT_TREAT_AS_STAGE_D_APPROVAL",
+  "academicApproval": "NOT_CLAIMED",
+  "merged": false,
+  "deployed": false,
+  "source2021GitHubOnlyExecution": {
+    "date": "2026-10-23",
+    "officialTeacherUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/lesson.html",
+    "officialPreparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-4/preparation.html",
+    "publicTextSourceReviewed": true,
+    "sourceStudentTaskPdfAccess": "OFFICIAL_LINK_PRESENT_FETCH_CACHE_MISS",
+    "originalDotImagesAccess": "OFFICIAL_IMAGE_LINK_PRESENT_FETCH_CACHE_MISS",
+    "publisherCoolDown": "ORIGINAL_TEACHER_LOGIN_ONLY_INDEPENDENT_EQUIVALENT_ALLOWED",
+    "authoredRichV2File": "src/Edulytics.Data/Seeding/CommonCoreG3SourceTeachingCorrections.cs",
+    "authoringFix": "Explicit 2021 distinction between preference-survey and actual-travel survey; six original Car/Train/Boat/Balloon/Plane/Helicopter categories; key-2 with odd half marks; correct Balloon plus-two / Car plus-one parity-dependent synthesizing; teacher-led data attestation.",
+    "sourceRightsAndStudentTaskParityCertified": false,
+    "policy": "NO_OUR_CS_GITHUB_AND_OFFICIAL_ORIGIN_ONLY",
+    "note": "No original PDF or publisher image pixels inspected, no final publisher assessment copied, and no effective learner runtime executed."
+  },
+  "nextAction": "Return to L04 after publisher source asset access: inspect original Student Task Statements PDF and actual dot/blank-grid pixels, verify every part against effective Rich V2/teacher-rubric and scale-two Practice. Remain A_C_EXPLICIT_GAP. Tests only WRITTEN.",
+  "closureEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-4-stage-a-b-c-authoring-closure-evidence-20261024.json",
+  "sourceSemanticAuthoringCoveragePercent": 100
+}

@@ -1,0 +1,16 @@
+@using Edulytics.Web.Curriculum.Grade3
+<section class="panel" aria-label="Additive area source representations">
+    <h2>Activity 1 — Rectangles in Rectangles</h2>
+    <p>This model has the same mathematical structure as the original community garden. Shading represents vegetables; unshaded squares represent flowers. Each square is one square foot. Find the area of the whole garden and explain why adding the two parts gives the same area.</p>
+    @await Html.PartialAsync("_Grade3AreaGrid",new Grade3AreaGrid(6,7,"1 square foot",ShadedColumns:5))
+    <p>Now design your own garden. Draw and label the area of each part and of the whole garden. Share how counting or multiplication checks your result; your design may be a rectangle or a figure made from rectangles.</p>
+    <h2>Activity 2 — Find the Rectangles</h2>
+    <p>Record what you notice and wonder. Discuss possible strategies with a partner, then independently find the area. Use shading, notes and labels so others can follow your work. Show each square exactly once in the total.</p>
+    @await Html.PartialAsync("_Grade3AreaGrid",new Grade3AreaGrid(9,10,"1 square unit",TopRows:4,TopColumns:5))
+    <p>Display your work for a gallery walk. Compare a vertical and a horizontal decomposition. Connect each multiplication expression to its rectangle. Use parentheses to group the two rectangle areas. More than two parts, or a diagonal partition with justified area, can also work; then try a second method using grid lines.</p>
+    <p>Your teacher reviews the design, decompositions, equations and explanations. A correct number alone cannot show these activities.</p>
+    <h3>New Edulytics Cool-down figure</h3>
+    <p>This is a separate first-party task. Split the figure into non-overlapping rectangles, find the total area, and write a parenthesized expression matching your split.</p>
+    @await Html.PartialAsync("_Grade3AreaGrid",new Grade3AreaGrid(6,8,"1 square unit",TopRows:2,TopColumns:3))
+    <p><a href="https://cms-assets.illustrativemathematics.org/jdwp2sbf6hgby6n5o1keai3xesyr" target="_blank" rel="noopener noreferrer">Original 2021 three-page Student Task Statements</a>. These grids are independently drawn; publisher artwork and the gated original Cool-down are not reproduced.</p>
+</section>

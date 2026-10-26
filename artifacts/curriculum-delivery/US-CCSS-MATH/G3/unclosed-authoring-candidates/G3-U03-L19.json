@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 55,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L19",
+  "unitNumber": 3,
+  "lessonNumber": 19,
+  "title": "Situations and Equations",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-19/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-19/lesson.html",
+  "stageA": {
+    "status": "LOCAL_2021_SOURCE_3_MAI_SITUATIONS_EQUATIONS_THREE_BAR_ALTS_MANCALA_104_6PITS3STONES_VERIFIED",
+    "goals": "Represent and solve two-step word problems using equations with a letter standing for the unknown quantity.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 6,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "3c9898ab5fc4421a48b8d4da1f99f763b7a4dbb5ad8205d989542e306ad43a03",
+    "prepSha256": "9d0d06fd92811f4a48e03f468d5698bb308a5d8fe7f52784f436d40d34624cd6"
+  },
+  "stageB": {
+    "status": "2021_SOURCE_SPECIFIC_FIRSTPARTY_RICH_V2_DISTINGUISH_THREE_UNKNOWNS_MANCALA",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L19",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "fb275602d87ba474803adbd71b5cad6fbca8105537b17f7d5a1e90349df88cac",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l19-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson19.cshtml"
+  },
+  "stageC": {
+    "status": "5_EXACT_SOURCE_VALUE_ORACLES_7_TEACHER_DIAGRAM_EQUATION_TASKS_TESTS_NOT_RUN",
+    "family": "two-step-add-subtract",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Mai’s Beads with your teacher. Show the representation and explain how it meets the goal: Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceNumericChecks": 5,
+    "teacherTasks": 7,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson19MaiMancalaSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "key": "WARMUP",
+      "source": "2021 total128 with three segments 8 and unknown",
+      "mode": "FIRSTPARTY_EXACT_104_PLUS_TEACHER_LABELS",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "MAI-S1",
+      "source": "Original situation1:104+2*n=124",
+      "mode": "FIRSTPARTY_PACK_SIZE_N10",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "MAI-S2",
+      "source": "Original situation2:n+10+10=124",
+      "mode": "FIRSTPARTY_START_N104",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "MAI-S3",
+      "source": "Original situation3:104+2*10=n",
+      "mode": "FIRSTPARTY_TOTAL_N124",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "BAR-3",
+      "source": "Three 2021 Mai diagram ALT descriptions",
+      "mode": "FIRSTPARTY_BAR_MODELS_TEACHER_SOURCE_CHECK",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "MANCALA",
+      "source": "Kiran104 stones and six pits times three",
+      "mode": "FIRSTPARTY_R86_STORY_EQUATION",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "MANCALA-PHOTO",
+      "source": "Source publisher Mancala-in-progress image",
+      "mode": "TEACHER_EXTERNAL_SOURCE_NO_IMAGE_COPY",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    },
+    {
+      "key": "ORIGINAL-CD",
+      "source": "Publisher How Many Beads gated Cool-down",
+      "mode": "NOT_COPIED_GOAL_EQUIVALENT_EDULYTICS_EXIT",
+      "mathematicalSemanticMapped": true,
+      "sourcePixelImageProven": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L19-IMAGE-01",
+      "observedAltText": "Diagram. One rectangle split into 4 parts. One part labeled question mark. The other 3 parts labeled 8. Total length, 128.",
+      "originalReference": "unit-3/lesson-19/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L19-IMAGE-02",
+      "observedAltText": "Diagram. One rectangle split into 4 parts. One part labeled b. The other three parts labeled 8. Total length, 128.",
+      "originalReference": "unit-3/lesson-19/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L19-IMAGE-03",
+      "observedAltText": "Diagram. One rectangle split into 3 parts. One part labeled n. The other two parts labeled 10. Total length, 124.",
+      "originalReference": "unit-3/lesson-19/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L19-IMAGE-04",
+      "observedAltText": "Diagram. One rectangle split into 3 parts. One part labeled 104. The other two parts labeled 10. Total length, n.",
+      "originalReference": "unit-3/lesson-19/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L19-IMAGE-05",
+      "observedAltText": "Diagram. One rectangle split into 3 parts. One part labeled 104. The other two parts, labeled n. Total length, 124.",
+      "originalReference": "unit-3/lesson-19/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L19-IMAGE-06",
+      "observedAltText": "A game called Mancala in progress.",
+      "originalReference": "unit-3/lesson-19/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "semanticMapped": 8,
+    "publisherVisualAltCount": 6,
+    "sourceVisualPixelsVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "A group collects 169 items, gives away 48, then receives 25. How many remain?",
+    "answerType": "integer",
+    "expected": "146"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original publisher bars and Mancala photograph not pixel verified; original student task PDF not inspected, local 2021 teacher/student HTML used.",
+    "Original How Many Beads? Cool-down gated/not copied.",
+    "Stage D/.NET runtime tests/CI/manual UAT/academic approval/merge/deployment not run."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_SOURCE_TEXT_THREE_UNKNOWN_SEMANTICS_FIRST_PARTY_ONLY"
+}

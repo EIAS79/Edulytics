@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 41,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L05",
+  "unitNumber": 3,
+  "lessonNumber": 5,
+  "title": "Another Addition Algorithm",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-5/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-5/lesson.html",
+  "stageA": {
+    "status": "FOUR_PAGE_2021_SOURCE_PDF_TABLE_HAN_ELENA_14_TENS_AND_FOUR_SUMS_READ",
+    "goals": "Relate written algorithms to each other using place value understanding.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 8,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "publicTeacherPageReviewed": true,
+    "sourceNumericAnchors": [
+      199,
+      201,
+      598,
+      547,
+      526,
+      892,
+      552,
+      901
+    ],
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/r96qq5u8rid8w5sedvv239d9di54",
+      "pages": 4,
+      "bytes": 79849,
+      "sha256": "bd856c68caa700fb55bc83f55554cb6d75c8634db720f2c1d9410d7662b2293b",
+      "sourceReadDevice": "Our-CS",
+      "originalPrintedSourceExamined": true,
+      "parts": [
+        "p1 two number-table missing cells 199,201",
+        "p2 Han vs Elena 367+231 algorithm comparison",
+        "p3 Han vs Elena compose 14 tens for 365+182 and first exercise",
+        "p4 three additional algorithm expressions"
+      ],
+      "artNotReproduced": true
+    },
+    "sourceArchivedHtml": {
+      "original2021TeacherSha256": "a7dd7f9c35c7b5fc5d4e698158051ae11dbd4b1d8e6fc9e92c4bb3bc12e10289",
+      "original2021PreparationSha256": "3721280d471f4cdb49b8c47f36b26e59800bab394e306f3108a4e621a3a7e18d"
+    }
+  },
+  "stageB": {
+    "status": "GUARDED_FIRST_PARTY_RICH_V2_TABLE_AND_HAN_ELENA_DIFFERENT_WRITTEN_ALGORITHMS_REVIEWED",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L05",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "4b4412f78f5bcd35cee414156b1473ccee5cf3f49b194e9279e7b9459b0caffa",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l05-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson5.cshtml",
+    "publishedOrDeployed": false
+  },
+  "stageC": {
+    "status": "EIGHT_SOURCE_NUMERIC_ANCHORS_14_TASKS_INDEPENDENT_892_COOLDOWN_TESTS_UNRUN",
+    "family": "addition-within-1000",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity A New Addition Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn another algorithm to add. Required Preparation CCSS Standards Addressing 3.NBT.A.2 3.OA.D.9 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Think abo",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 14,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson5AdditionAlgorithmSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "GOAL",
+      "sourceSection": "Preparation",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "WU-CELL1",
+      "sourceSection": "Warm-up",
+      "sourceNumericTarget": "100+99=199",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "WU-CELL2",
+      "sourceSection": "Warm-up",
+      "sourceNumericTarget": "100+101=201",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "WU-PATTERN",
+      "sourceSection": "Warm-up",
+      "sourceNumericTarget": "commutativity/odd-even/diagonal",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A1-SUM",
+      "sourceSection": "Activity1",
+      "sourceNumericTarget": "367+231=598",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A1-HAN",
+      "sourceSection": "Activity1",
+      "sourceNumericTarget": "8+90+500=598",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A1-ELENA",
+      "sourceSection": "Activity1",
+      "sourceNumericTarget": "ones8,tens9,hundreds5",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A1-COMPARE",
+      "sourceSection": "Activity1",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-SUM",
+      "sourceSection": "Activity2",
+      "sourceNumericTarget": "365+182=547",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-COMPOSE",
+      "sourceSection": "Activity2",
+      "sourceNumericTarget": "140 tens-value=100+40",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-EX-1",
+      "sourceSection": "Activity2 practice",
+      "sourceNumericTarget": 526,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-EX-2",
+      "sourceSection": "Activity2 practice",
+      "sourceNumericTarget": 892,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-EX-3",
+      "sourceSection": "Activity2 practice",
+      "sourceNumericTarget": 552,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-EX-4",
+      "sourceSection": "Activity2 practice",
+      "sourceNumericTarget": 901,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OFFICIAL_2021_SOURCE_PDF_NUMERIC_ANCHOR",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "A2-DOUBLE-CARRY",
+      "sourceSection": "Activity2",
+      "sourceNumericTarget": "354+198=552",
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "SYNTH",
+      "sourceSection": "Lesson synthesis",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "TEACHER_SOURCE_STRATEGY_RUBRIC",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "CD",
+      "sourceSection": "Original Cool-down",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_INDEPENDENT_GOAL_EQUIVALENT_273_PLUS_619_892_COOLDOWN",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-1",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-2",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-3",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-4",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-5",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-6",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-7",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "FIG-8",
+      "sourceSection": "Original algorithm graphics",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "FIRST_PARTY_ALGORITHM_NUMERIC_REPRESENTATION_SOURCE_PUBLISHER_ART_NOT_COPIED",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "CENTER-1",
+      "sourceSection": "Optional center",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OPTIONAL_TEACHER_LED_STAGE_CENTER_RULES_NO_ORIGINAL_BLM_COPY",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "CENTER-2",
+      "sourceSection": "Optional center",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OPTIONAL_TEACHER_LED_STAGE_CENTER_RULES_NO_ORIGINAL_BLM_COPY",
+      "originalPublisherArtParityClaimed": false
+    },
+    {
+      "id": "CENTER-3",
+      "sourceSection": "Optional center",
+      "sourceNumericTarget": null,
+      "academicSemanticAuthoringAccountedFor": true,
+      "mode": "OPTIONAL_TEACHER_LED_STAGE_CENTER_RULES_NO_ORIGINAL_BLM_COPY",
+      "originalPublisherArtParityClaimed": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L05-IMAGE-01",
+      "observedAltText": "Addition. Three-hundred sixty-seven plus two-hundred thirty-one is eight (step one), plus ninety (step two), plus five-hundred (step 3) equals five-hundred ninety-eight (step 4).",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-02",
+      "observedAltText": "Addition. Three-hundred sixty-seven plus two-hundred thirty-one.�Step one equals 8.",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-03",
+      "observedAltText": "Addition. Step two. Three-hundred sixty-seven plus two-hundred thirty one equals ninety-eight.",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-04",
+      "observedAltText": "Addition. Step three. Three-hundred sixty-seven plus two-hundred thirty-one equals five-hundred ninety-eight.",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-05",
+      "observedAltText": "Addition. Steps 1-4. Three-hundred sixty-five plus one-hundred eighty-two equals seven plus one-hundred forty plus four-hundred equals five-hundred forty-seven.",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-06",
+      "observedAltText": "Addition. Three-hundred sixty-five plus one-hundred eighty-two equals 7 (step 1).",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-07",
+      "observedAltText": "Addition. Three-hundred sixty-five plus one-hundred eighty-two. Step 2 equals 47.",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L05-IMAGE-08",
+      "observedAltText": "Addition. Step 3. Three-hundred sixty-five plus one-hundred eighty-two equals five-hundred forty-seven.",
+      "originalReference": "unit-3/lesson-5/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 28,
+    "semanticAuthoringVerified": 28,
+    "originalArtworkParityVerified": false
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Calculate 365 + 141. Explain any regrouping.",
+    "answerType": "integer",
+    "expected": "506"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-41-2021-source-to-first-party-evidence-20261024.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-41-academic-source-coverage-and-human-rubric-20261025.json",
+  "deferredStageD": [
+    "Original publisher use-an-algorithm teacher-gated Cool-down not inspected; independent 273+619 goal-equivalent check.",
+    "No publisher algorithm illustration image files reused, no exact visual pixel parity.",
+    "Original optional teacher-center boards not reproduced.",
+    "C#, Razor and xUnit tests not executed; Stage D and academic approval deferred."
+  ]
+}

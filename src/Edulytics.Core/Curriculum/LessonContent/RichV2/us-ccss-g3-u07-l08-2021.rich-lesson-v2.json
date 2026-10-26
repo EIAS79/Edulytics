@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u07-l08-2021-eight-source-perimeters-side-symmetry-and-unknown-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U07:L08",
+      "CultureCode": "en",
+      "Title": "Find the Perimeter",
+      "ExplanationParagraphs": [
+        "The first-edition 2021 Grade 3 Unit 7 Lesson 8 original teacher guide, teacher preparation and all four pages of the student-task PDF were inspected on the connected authorized PC. Visuals, side lengths, units, diagram cases and teacher activities were compared individually, not merely inferred from headings. The source images and gated publisher Cool-down were NOT copied into the first-party Edulytics teaching content.",
+        "Goal: find the perimeter when some, or all, original side lengths are given (3.MD.D.8), alongside division fluency within 100 (3.OA.C.7). Sequence: warm-up 10 minutes, Activity 1 20, Activity 2 15, synthesis 10, gated Cool-down 5. Perimeter is total LINEAR boundary length, not square area. Every shape side must be counted once in the original unit, including inward edges.",
+        "Warm-up Number Talk: Decreasing Dividend uses four exactly sourced mental division facts 90 ÷ 9 = 10, 81 ÷ 9 = 9, 45 ÷ 9 = 5, 54 ÷ 9 = 6. Removing one group of nine from 90 gives the second result; halving 90 and the quotient gives 45 ÷ 9. Pupils explain strategies orally; a machine-checked integer alone is not the complete discussion.",
+        "Activity 1 teacher launch shows the same 5 by 3 rectangle in two displays: dot-grid intervals versus a 5 and 3 labelled-side rectangle. Both have perimeter 5+3+5+3 = 16 corresponding equal-sized length units, but the lesson launch asks NOTICE and WONDER rather than forcing a unique machine score. It introduces identical boundary lengths despite representation differences.",
+        "Original student tasks 8.1 figures 1–5 are ALL independently verified: (1) triangle sides 10,8,12 centimetres: 30 cm; (2) rectangle 16 and 24 INCHES on opposite pairs: 2×(16+24)=80 in; (3) concave five-sided shape with 13,5,5,11,2 CENTIMETRES: 36 cm; (4) hexagon with TWO eight-foot long sides and FOUR four-foot short sides: 2×8+4×4=32 feet; (5) rotated rhombus/four-equal-side quadrilateral with four sides each 9 centimetres: 4×9=36 cm. Use actual linear units cm/in/ft and never convert to square units. Comparing 30 cm and 80 in numerically as raw unconverted numbers is invalid.",
+        "Activity 1 mathematically valid approaches include direct addition, grouping matching side lengths, symmetry, and multiplying equal side lengths. The original teacher focuses discussion on the six-sided 8/4-foot shape and invites alternative group strategies: (8+8)+(4+4+4+4), 2×8+4×4, or 2×(8+4+4). All are 32 feet. Pupils work with partners and need teacher-observed rationale.",
+        "Activity 2 original student PDF page 4 has THREE missing-side problems: (1) rectangle with sides 21 cm and 9 cm, opposite sides inherited from rectangle definition, total 2×(21+9)=60 cm. (2) TWELVE-sided right-angled stepped figure: ELEVEN short segments all have common length 40 [source shows no physical unit], the ONE long bottom side equals five horizontal short segments or 5×40 = 200, so total 11×40 + 200 = 640 source unspecified units. Do not assume cm/inches when none appear. (3) EIGHT-sided equilateral octagon with one side marked 30 INCHES and all others equal, 8×30=240 inches. Number of vertices, opposite equal sides and visible tick labels all matter; no source diagrams are added to the app.",
+        "For the stepped 12-gon the bottom edge spans five 40-unit horizontal components; there are ELEVEN other 40-unit edges. Summing only those eleven yields 440, an incorrect incomplete perimeter. Equally, treating the 12-gon as a regular 12-gon with 12 equal short sides is wrong. Teacher gallery walk requires diagram annotation of the missing bottom length and geometric support for the inference.",
+        "Original synthesis displays a rhombus with one side labelled 7 inches (all sides equal) and asks the perimeter: 4×7 = 28 inches. This is a separate teacher-led transfer example, not one of the eight student-PDF 8.1/8.2 numeric prompts. Original gated publisher Cool-down A Triangle and a Square is not accessed; first-party independent exit task is NOT the publisher original. Stage D compilation, authenticated user flow, executed tests, CI, teacher approval and production parity are not claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Add all lengths",
+          "Definition": "Perimeter is the length around the entire closed boundary.",
+          "Rule": "Add every side exactly once with a linear unit.",
+          "Example": "Original concave five-side shape: 13+5+5+11+2=36 cm."
+        },
+        {
+          "Title": "Equal opposite rectangle sides",
+          "Definition": "Rectangle opposite sides have equal lengths.",
+          "Rule": "P=2(a+b); 21 cm and 9 cm -> 60 cm.",
+          "Example": "Original activity 2 #1."
+        },
+        {
+          "Title": "Equal side classes",
+          "Definition": "Equal-length polygon sides can be grouped before addition.",
+          "Rule": "Source hexagon 2×8 + 4×4 = 32 feet; rhombus 4×9 = 36 cm.",
+          "Example": "Original activities 1 #4 and #5."
+        },
+        {
+          "Title": "Missing boundary segments",
+          "Definition": "Use axis-aligned geometry to recover unlabelled sides.",
+          "Rule": "Original 12-gon bottom 5×40=200; other 11 sides each 40; P=640.",
+          "Example": "Original activity 2 #2."
+        },
+        {
+          "Title": "Never drop units",
+          "Definition": "Centimetres, inches and feet are distinct LINEAR units.",
+          "Rule": "Report each source result in its specified unit; no arbitrary scalar equivalence.",
+          "Example": "80 inches is not 80 cm or 80 feet."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Long-and-short hexagon",
+          "Question": "Find perimeter of original shape with two 8-foot and four 4-foot sides.",
+          "Method": "Group equal side lengths.",
+          "Steps": [
+            "Two longer sides total 8+8=16 feet.",
+            "Four shorter sides total 4+4+4+4=16 feet.",
+            "Sum 16+16=32 feet."
+          ],
+          "Answer": "32 ft",
+          "Check": "Also 2×(8+4+4)=32 feet."
+        },
+        {
+          "Title": "Missing long edge",
+          "Question": "Find perimeter of 12-sided original stepped figure with 11 short sides marked as 40.",
+          "Method": "Recover horizontal bottom from aligned upper segments.",
+          "Steps": [
+            "Count 11 source short sides ×40 = 440.",
+            "The horizontal bottom spans 5 matching widths, so 5×40=200.",
+            "Total 440+200=640 unspecified length units."
+          ],
+          "Answer": "640",
+          "Check": "Do not invent a centimetre/inch unit for the original unlabeled length."
+        },
+        {
+          "Title": "One labelled rhombus side",
+          "Question": "Teacher synthesis rhombus has one side 7 in; find perimeter.",
+          "Method": "Use defining four equal-length sides.",
+          "Steps": [
+            "All four sides are 7 in.",
+            "Multiply 7 by 4.",
+            "Add the four equal sides: 7 + 7 + 7 + 7 = 28 inches."
+          ],
+          "Answer": "28 in",
+          "Check": "Different from the separate 9 cm original pupil task."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Omit the concave indentation sides.",
+          "WhyWrong": "Perimeter follows the outline, not its convex hull or bounding box.",
+          "Correction": "Trace 13+5+5+11+2 cm one segment at a time."
+        },
+        {
+          "Mistake": "Use 80 cm or 80 ft for 16×24-inch rectangle.",
+          "WhyWrong": "Original labelled sides are inches and changing units makes the answer wrong.",
+          "Correction": "Write 80 in; grader enforces linear units."
+        },
+        {
+          "Mistake": "Calculate stepped-figure perimeter as 11×40=440.",
+          "WhyWrong": "The bottom long side is not included in the eleven equal short edges.",
+          "Correction": "Infer extra 200 and answer 640 unspecified length units."
+        },
+        {
+          "Mistake": "Assume the original stepped shape has 12 equal sides.",
+          "WhyWrong": "Eleven equal short edges but a longer bottom edge.",
+          "Correction": "Use its right-angle alignment and total horizontal displacement."
+        },
+        {
+          "Mistake": "Confuse 30 cm and 30 square centimetres.",
+          "WhyWrong": "Perimeter is linear, not surface area.",
+          "Correction": "Use an unsquared length unit and explain."
+        }
+      ],
+      "SummaryPoints": [
+        "Number Talk quotient facts: 10,9,5,6.",
+        "Student 8.1: 30 cm, 80 inches, 36 cm, 32 feet, 36 cm.",
+        "Student 8.2: 60 cm, 640 unlabelled units, 240 inches.",
+        "Teacher synthesis separate rhombus with 7 in side gives 28 in.",
+        "Publisher Cool-down inaccessible, PDF shape graphics linked only, tests/Stage D not run."
+      ]
+    }
+  ]
+}

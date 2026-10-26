@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 122,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U07:L09",
+  "unitNumber": 7,
+  "lessonNumber": 9,
+  "title": "Perimeter Problems",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-7/lesson-9/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-9/lesson.html",
+  "stageA": {
+    "status": "2021_TEACHER_PREP_ALL_FIVE_ORIGINAL_STUDENT_PAGES_AND_DOG_RASTER_VERIFIED",
+    "goals": "Find unknown side lengths given the perimeter of a shape. Solve problems that involve perimeters of shapes.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 7,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "8cd6fd9f7851420ef387d869e959a47d91210eb6b6e398c18b03f46de7ec6756",
+    "originalStudentPdfPagesRead": 5,
+    "originalRoutePictureVerified": true
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_CONTEXT_AREA_PERIMETER_RICHV2_AND_GUARDED_CANONICAL_MATERIALIZER",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U07:L09",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "0047b23d01119fd1d150bb172bb4f901d6af5410018e82cdff5887269d819cdc",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l09-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson9RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson9.cshtml",
+    "authoredContentVersion": "g3-u07-l09-2021-missing-lengths-context-area-route-v1",
+    "originalPublisherArtworkEmbedded": false
+  },
+  "stageC": {
+    "status": "SEVEN_SCALAR_AND_TWO_COMPLETE_SIDE_MULTISET_ANCHORS_WITH_ESTIMATION_AND_RATIONALE_TEACHER_ONLY_TESTS_WRITTEN_NOT_RUN",
+    "family": "perimeter",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Missing Measurements with your teacher. Show the representation and explain how it meets the goal: Let’s solve problems about perimeter. Required Preparation CCSS Standards Addressing 3.MD.D.8 Lesson Timeline Warm-up 10 min Activity 1 15 min Activity 2 20 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions How are students wo",
+    "teacherReviewNote": "Teacher checks all boundary segments, including missing sides.",
+    "sourceNumericScalarCases": 6,
+    "sourceMissingSideMultisetCases": 2,
+    "sourceTeacherOnlyOriginalProblems": 2,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson9PerimeterAndAreaTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U07-L09-WARMUP",
+      "originalStudentPDFPage": 1,
+      "coverage": "TEACHER_ESTIMATION_NO_UNIQUE_SCALAR",
+      "firstPartyAnswerType": "teacher",
+      "expected": null,
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A1-01",
+      "originalStudentPDFPage": 2,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "length-with-unit",
+      "expected": "5 cm",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A1-02",
+      "originalStudentPDFPage": 2,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "linear-length-multiset",
+      "expected": "8 ft|20 ft|20 ft",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A1-03",
+      "originalStudentPDFPage": 2,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "length-with-unit",
+      "expected": "13 in",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A2-01",
+      "originalStudentPDFPage": 3,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "length-with-unit",
+      "expected": "380 ft",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A2-02",
+      "originalStudentPDFPage": 3,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "length-with-unit",
+      "expected": "36 in",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A2-03",
+      "originalStudentPDFPage": 3,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "linear-length-multiset",
+      "expected": "12 ft|4 ft|4 ft",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A2-04",
+      "originalStudentPDFPage": 4,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "integer",
+      "expected": "16",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-A2-05",
+      "originalStudentPDFPage": 4,
+      "coverage": "DIGITAL_ANCHOR_WITH_TEACHER_REASONING",
+      "firstPartyAnswerType": "integer",
+      "expected": "80",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-SYNTHESIS",
+      "originalStudentPDFPage": 5,
+      "coverage": "TEACHER_SECTION_SYNTHESIS",
+      "firstPartyAnswerType": "teacher",
+      "expected": null,
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    },
+    {
+      "id": "G3-U07-L09-COOLDOWN",
+      "originalStudentPDFPage": null,
+      "coverage": "PUBLISHER_GATED_RIGHTS_RESTRICTED",
+      "teacherReviewRequired": true,
+      "originalPublisherTaskReproductionClaimed": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U07-L09-IMAGE-01",
+      "observedAltText": "Statue of Liberty with bases labeled smaller square base and larger square base.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L09-IMAGE-02",
+      "observedAltText": "Pentagon with sides marked in centimeters as 10, 2, 11, 4, and question mark.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L09-IMAGE-03",
+      "observedAltText": "Rectangle with one short side labeled 8 feet.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L09-IMAGE-04",
+      "observedAltText": "Pentagon.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L09-IMAGE-05",
+      "observedAltText": "Route Kiran took to walk his dog.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L09-IMAGE-06",
+      "observedAltText": "Rectangle with sides marked 21 and 9 centimeters.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    },
+    {
+      "id": "G3-U07-L09-IMAGE-07",
+      "observedAltText": "Rectangle with one long side labeled 12 feet.",
+      "originalReference": "unit-7/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_PUBLISHER_VISUAL_REVIEWED_WITH_FIRSTPARTY_DESCRIPTION_NOT_EMBEDDED"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 11,
+    "mappedOrGated": 11,
+    "digitallyCheckedWithTeacherReview": 8,
+    "teacherOnly": 2,
+    "rightsRestricted": 1
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "A polygon has boundary segments 3, 3, 6, 4 metres. Find its perimeter.",
+    "answerType": "integer",
+    "expected": "16"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_MANUALLY_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-122-2021-missing-sides-dogwalk-area-source-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "The publisher original Cool-down is gated and unverified, not copied.",
+    "Original Statue photograph and rasterized Kiran route were inspected and linked, not embedded.",
+    "Stage D runtime/compilation, independent academic signoff and authenticated published Rich V2 verification not executed."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L10"
+}

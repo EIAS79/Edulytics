@@ -1,0 +1,1642 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3SourceCompanionPage
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · First-party lesson companion";
+    var l = Model.Lesson;
+    var roadSigns = Edulytics.Web.Curriculum.Grade3.Grade3SourceCompanionCatalogue.Local2021RoadSignGraph;
+    var showRoadSigns = l.UnitNumber == 1 && (l.LessonNumber == 9 || l.LessonNumber == 10);
+    var showMinuteClock = l.UnitNumber == 6 && l.LessonNumber == 9;
+}
+<style>
+.g3-original{max-width:940px;margin:0 auto;padding:20px;color:#1e3d54}
+.g3-original .panel{background:#fff;border:1px solid #d9e4ec;border-radius:14px;padding:22px;margin:16px 0}
+.g3-original label{display:block;font-weight:700;margin:12px 0 5px}
+.g3-original textarea,.g3-original input{padding:10px;width:100%;max-width:700px;border:1px solid #7d93a8;border-radius:8px;font:inherit}
+.g3-original textarea:focus,.g3-original input:focus{outline:3px solid #b5dce8}
+.g3-original button{padding:12px 20px;border:0;border-radius:8px;background:#167789;color:white;font:inherit;cursor:pointer}
+.g3-original .ok{border-left:4px solid #21805a;padding-left:10px}
+.g3-original .no{border-left:4px solid #ad3b45;padding-left:10px}
+.g3-original .human{border-left:4px solid #b08b24;padding-left:10px}
+.g3-original .source-chart{border-collapse:collapse;width:100%;margin:14px 0}
+.g3-original .source-chart th,.g3-original .source-chart td{padding:9px;text-align:left;border-bottom:1px solid #d4e1e8}
+.g3-original .source-pictogram{font-size:1.3rem;display:inline-block;margin-right:.35rem;color:#147b96}
+.g3-original .source-scale{display:flex;justify-content:space-between;max-width:360px;font-variant-numeric:tabular-nums}
+.g3-original .source-key{font-weight:700}
+.g3-original .first-party-array{display:grid;gap:7px;width:max-content;max-width:100%;margin:12px 0;padding:12px;border:2px solid #8daeb7;border-radius:8px}
+.g3-original .first-party-dot{display:block;background:#147b96;border-radius:50%;width:17px;height:17px}
+
+</style>
+<main class="g3-original">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <p>EDULYTICS · ORIGINAL COMPANION · GRADE 3 UNIT @l.UnitNumber LESSON @l.LessonNumber</p>
+    <h1>@l.Title</h1>
+    <p><strong>Learning goal:</strong> @l.StudentFacingGoal</p>
+    <p>This is a separately authored skill practice supplement, not the original publisher worksheet or an approved school assessment. Teacher-led activities and original images must be studied with the teacher.</p>
+    <form asp-controller="Grade3SourceCompanion" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+        @if(l.IndependentTeachingGuidance is not null) {
+            <section class="panel">
+                <h2>How to approach this lesson</h2>
+                <ol>
+                @foreach(var step in l.IndependentTeachingGuidance.TeachingSteps) {
+                    <li>@step</li>
+                }
+                </ol>
+                <p><strong>Check carefully:</strong> @l.IndependentTeachingGuidance.Caution</p>
+                <p>These independently written learning notes supplement the 2021 source goal;
+                    they do not replace teacher materials or certify the published Rich V2 content.</p>
+            </section>
+        }
+        <section class="panel">
+            <h2>1. Source activity context and teacher work</h2>
+            <p>Read, discuss, or construct the named original 2021 lesson activities under your teacher's guidance. Their original figures and materials are not reproduced by this supplemental page.</p>
+            <ul>
+            @foreach(var name in l.SourceActivityNames) {
+                <li>@name</li>
+            }
+            </ul>
+            <p>@l.OpenTeacherTask</p>
+            <label for="original-work">How did you represent and explain the original source activity?</label>
+            <textarea id="original-work" name="SourceWorkReflection" rows="4" maxlength="2000">@Model.Answers.SourceWorkReflection</textarea>
+        </section>
+        @if(showRoadSigns) {
+            <section class="panel" aria-label="Independently reconstructed 2021 road-sign data">
+                <h2>Road signs as equal groups</h2>
+                <p class="source-key">Key: one picture symbol represents two road signs.</p>
+                <p>The numerical values below come from the local 2021 source description.
+                    This is an original Edulytics data representation, not publisher artwork.</p>
+                <table class="source-chart">
+                    <caption>Signs observed on the way home</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Picture symbols</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var category in roadSigns) {
+                            <tr>
+                                <th scope="row">@category.Category</th>
+                                <td>
+                                    @for(var symbol=0;symbol<category.SymbolCount;symbol++){
+                                        <span class="source-pictogram" aria-hidden="true">■</span>
+                                    }
+                                    <span class="visually-hidden">@category.SymbolCount independently drawn symbols; two road signs per symbol</span>
+                                </td>
+                                    </tr>
+                        }
+                    </tbody>
+                </table>
+                <p>Count the picture symbols and use the key to work out the total. Symbol-count scale: 0, 1, 2, 3, 4, 5.
+                    To count signs, multiply each category's symbol count by two.</p>
+                <p><strong>Think and draw:</strong> Show the speed-limit signs as three
+                    equal groups of two. Make a diagram for a different category and
+                    compare your representation with your teacher or partner.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 9) {
+            <section class="panel" aria-label="Source-aligned equal-groups constructions">
+                <h2>Source Number Talk — four addition expressions in order</h2>
+                <p>Mentally calculate 40 + 35, 45 + 35, 45 + 36, and 34 + 58. Discuss where a new ten is composed, and why each related expression changes from the previous one.</p>
+                <h2>Source road-sign graph: three separate tasks</h2>
+                <ol>
+                    <li>Represent speed-limit signs using three groups of two.</li>
+                    <li>Choose and justify the statement: three pictures, with two speed-limit signs per picture. Explain why the alternatives three pictures of one and two pictures of two are false.</li>
+                    <li>Explain how five groups of two dots model the street-sign category.</li>
+                </ol>
+                <h2>Source equal-group situations: three different contexts</h2>
+                <ol>
+                    <li>Four people, each wearing two shoes: model four groups of two and explain the total.</li>
+                    <li>Two boxes containing ten markers each: model two groups of ten and explain the total.</li>
+                    <li>Three basketball teams with five players each: model three groups of five and explain the total.</li>
+                </ol>
+                <p>Use the original-work response field above for your calculations, diagrams and explanations. Draw the groups or use counters with a teacher; an integer-only response does not certify the source representations or partner discussion.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 10) {
+            <section class="panel" aria-label="First edition 2021 lesson 10 original source sequence">
+                <h2>Warm-up — six pairs of socks (10 minutes)</h2>
+                <p>Notice and wonder: draw six SEPARATE pairs with TWO socks in each. There are 6 groups of 2, 12 socks. Explain your observations and question with a partner; the teacher checks the discussion.</p>
+                <h2>Activity 1 — picture graph to equal-part tape (15 minutes)</h2>
+                <p>Elena's scaled road-sign graph above has key one square = TWO signs. The three speed-limit squares correspond to this independently drawn tape model, not copied publisher artwork:</p>
+                <div role="img" aria-label="A tape diagram with three equal partitions, each labelled two signs, so three groups of two total six" style="display:flex;max-width:480px;border:2px solid #1d5264;border-radius:6px;overflow:hidden;margin:12px 0;">
+                    @for(var part=0;part<3;part++) {
+                        <span style="flex:1;border-right:1px solid #1d5264;text-align:center;padding:18px 0;font-weight:700">2</span>
+                    }
+                </div>
+                <p>Select and DRAW a different original category: Stop 2 groups of 2, Yield 1 group of 2, or Street 5 groups of 2. Explain what is the same and different compared with a picture graph. A teacher checks the representation and the partner dialogue.</p>
+                <h2>Activity 2 — original A–L 12-card equal-groups sort (20 minutes)</h2>
+                <p>The original first-edition card deck was examined: it has four situation cards A, B, D and J, and eight corresponding drawing/diagram cards. Use the source cards with your partner; match all FIVE sets: A–F–L (three groups of five), B–H–K (four groups of three), C–I (three groups of two), D–G (two groups of ten), E–J (three groups of ten). TWO are triples and THREE are pairs; the original deck does not have four matching triples. Explain how group counts and sizes agree. Give each pair ONE original printed deck.</p>
+                <p><a href="https://cms-assets.illustrativemathematics.org/hed6b8kerveg64nag78blbcvj1jk" target="_blank" rel="noopener noreferrer">Official 2021 blackline masters ZIP — obtain the Equal Groups cards with your teacher</a>. This links to publisher-hosted source materials; Edulytics does not copy or claim rights over the original card images.</p>
+                <ul>
+                    <li>Situation A: THREE bags, FIVE footballs per bag → 3 groups of 5.</li>
+                    <li>Situation B: FOUR boxes, THREE toy cars per box → 4 groups of 3.</li>
+                    <li>Situation D: TWO boxes, TEN doughnuts per box → 2 groups of 10.</li>
+                    <li>Situation J: THREE bins, TEN ice cubes per bin → 3 groups of 10.</li>
+                    <li>Additional card-only pair C–I: three groups of two (no separate situation card).</li>
+                </ul>
+                <p>Now complete TWO DIFFERENT Student Facing source drawings: FOUR bags of TWO strawberries, and FOUR hands with FIVE fingers each. Draw group boundaries, not just the totals 8 and 20. Teacher reviews both drawings and explanations; the printed source card sort is teacher-led.</p>
+                <h2>Lesson synthesis — FIRST introduce multiplication expressions (10 minutes)</h2>
+                <p>Show a four-part tape, with each partition equal to five. FIRST NOW introduce the notation <strong>4 × 5</strong> as “four groups of five,” and explain which factor counts groups and which counts members. Do not present multiplication notation as a requirement during the two earlier activities.</p>
+                <h2>Original 2021 Cool-down — Boxes of Shirts (5 minutes)</h2>
+                <p>The first-edition teacher guide asks whether four boxes with ten shirts each match this mathematical tape structure. The diagram below is independently drawn, not publisher artwork:</p>
+                <div role="img" aria-label="Four equal tape sections each labelled ten, representing four boxes with ten shirts apiece" style="display:flex;max-width:520px;border:2px solid #1d5264;border-radius:6px;overflow:hidden;margin:12px 0;">
+                    @for(var box=0;box<4;box++){
+                        <span style="flex:1;border-right:1px solid #1d5264;text-align:center;padding:18px 0;font-weight:700">10</span>
+                    }
+                </div>
+                <p>The correct yes/no judgment is YES: there are four equal parts, each worth ten shirts. But the original task also requires the student's explanation, which ONLY a teacher judges. Complete source subtask 8 below.</p>
+                <p>Extra independent Edulytics skill practice and its first-party Cool-down after the source task are OPTIONAL, not replacements for the original.</p>
+                <p><a href="https://cms-assets.illustrativemathematics.org/o2ira4alq51xndabaydw0w2w0h1s" target="_blank" rel="noopener noreferrer">2021 original four-page Student Task Statements PDF (publisher)</a>. Teacher-only suggested centers: Capture Squares Stage 4 and Five in a Row Stage 7.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 11) {
+            <section class="panel" aria-label="First-edition 2021 multiplication expression source activity">
+                <h2>Warm-up (10 minutes): choral count</h2>
+                <p>Count by 5 from 0 through 50, and by 2 from 0 through 20. Discuss why the last digits in the fives pattern alternate between 0 and 5. A teacher reviews the pattern explanation.</p>
+                <h2>Activity 1 (10 minutes): source A–L card to expression</h2>
+                <p>Your teacher distributes ONE source card from last lesson to each pair. Stand next to ONE of the five published expressions: <strong>3 × 5</strong>, <strong>4 × 3</strong>, <strong>3 × 2</strong>, <strong>2 × 10</strong>, <strong>3 × 10</strong>, then justify why the original card matches.</p>
+                <p>The source deck matching sets have been visually checked: A–F–L ↔ 3 × 5, B–H–K ↔ 4 × 3, C–I ↔ 3 × 2, D–G ↔ 2 × 10, E–J ↔ 3 × 10. They are TWO triples and THREE pairs, not four triples. <a href="https://cms-assets.illustrativemathematics.org/hed6b8kerveg64nag78blbcvj1jk" target="_blank" rel="noopener noreferrer">Official original 2021 source card deck</a>.</p>
+                <h2>Activity 2 (15 minutes): independently draw all four parts</h2>
+                <ol>
+                    <li>Draw FIVE equal groups of TWO for 5 × 2.</li>
+                    <li>Draw THREE equal groups of FOUR for 3 × 4, then compare a drawing to a tape.</li>
+                    <li>Draw THREE equal groups of TEN for 3 × 10.</li>
+                    <li>Write an expression of your choice, create a correct matching diagram, and explain your reasoning.</li>
+                </ol>
+                <p>During source synthesis, discuss how 3 × 4 changes for 5 × 4 (more groups) or 3 × 5 (more in each group). The teacher must inspect all drawings and partner talk.</p>
+                <h2>Activity 3 (10 minutes): ordered written expressions</h2>
+                <p>Read the original first-edition student representations. Three dot cubes with three dots each → <strong>3 × 3</strong>; two equal tape sections each labelled four → <strong>2 × 4</strong>; two packs of water holding six bottles each → <strong>2 × 6</strong>. Write the expression for EACH source subtask below; an integer product alone does not pass.</p>
+                <h2>Original first-edition 2021 Cool-down: Write an Expression (5 minutes)</h2>
+                <p>Six envelopes each hold two notes. Enter the ordered multiplication expression <strong>6 × 2</strong> in source subtask 11 and explain which factor identifies envelopes and which identifies notes. A teacher judges the explanation. The OTHER first-party Edulytics 4 × 6 practice Cool-down is independent and OPTIONAL.</p>
+                <p><a href="https://cms-assets.illustrativemathematics.org/0r8jr6l17d3mkw2bgcw14kewtax8" target="_blank" rel="noopener noreferrer">Original four-page 2021 Student Task Statements PDF</a>. Optional original centers: Capture Squares Stage 4 and Five in a Row Stage 7.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 12) {
+            <section class="panel" aria-label="Independently drawn first-edition 2021 equal-group source lesson">
+                <h2>Warm-up (10 minutes): two source-counted dot arrangements</h2>
+                <p>The official 2021 publisher SVGs were checked. Picture A has FOUR arrays of two rows of FIVE dots (40 altogether). Picture B has THIRTY dots (six rows of five). The following dots are independently drawn Edulytics models, not publisher artwork. Explain how you grouped them with your partner.</p>
+                <h3>Model A — four groups of ten (40)</h3>
+                <div role="img" aria-label="Four bordered groups each containing a two-row-by-five-dot array, total forty dots" style="display:grid;grid-template-columns:repeat(2,max-content);gap:10px;max-width:100%">
+                @for (var group=0;group<4;group++) {
+                    <div style="display:grid;grid-template-columns:repeat(5,17px);gap:8px;padding:10px;border:2px solid #54798b">
+                        @for (var i=0;i<10;i++) { <span class="first-party-dot" aria-hidden="true"></span> }
+                    </div>
+                }
+                </div>
+                <h3>Model B — six rows of five (30)</h3>
+                <div role="img" aria-label="Thirty dots organised as six rows of five" style="display:grid;grid-template-columns:repeat(5,17px);gap:8px;padding:10px;border:2px solid #54798b;width:max-content;max-width:100%">
+                    @for (var i=0;i<30;i++) { <span class="first-party-dot" aria-hidden="true"></span> }
+                </div>
+                <h2>Activity 1 (15 minutes): Co-Craft Questions BEFORE the full Tyler problem</h2>
+                <p><strong>FIRST:</strong> Tyler has three boxes. Generate mathematical questions from this partial information: 2 minutes alone, then 2–3 minutes with a partner. Do NOT guess how many baseballs there are before the next reveal.</p>
+                <p><strong>THEN:</strong> Each box contains exactly FIVE baseballs. Draw three groups of five and explain how a three-part tape represents <strong>3 × 5 = 15 baseballs</strong>.</p>
+                <div role="img" aria-label="Three equal tape parts labelled five baseballs each, fifteen in total" style="display:flex;border:2px solid #54798b;max-width:450px">
+                    @for (var part=0;part<3;part++) { <span style="flex:1;padding:16px;text-align:center;border-right:1px solid #54798b">5</span> }
+                </div>
+                <h2>Activity 2 (20 minutes): five source story contexts</h2>
+                <ol><li>4 fields × 2 teams = 8 teams</li><li>7 windows × 2 glass panes = 14 panes</li><li>5 bags × 10 earrings = 50 earrings</li><li>4 boxes × 5 pencils = 20 pencils</li><li>3 bags × 10 carrots = 30 carrots</li></ol>
+                <p>Enter each numeric total in its source-specific field below and provide a DIFFERENT labelled diagram or tape explanation in EACH corresponding reasoning field. Teacher checks the five representations; numeric correctness never substitutes for human review.</p>
+                <h2>Lesson synthesis (10 minutes), then independent Cool-down (5 minutes)</h2>
+                <p>Explain which representation helped you most: a drawing of groups, tape diagram or multiplication equation, and why. Teacher checks the response. Separate Edulytics original Cool-down: three groups of eight flags = 24. This does not copy the original educator-only Ducks in a Pond Cool-down. Teacher-led centers: Capture Squares Stage 5 and Five in a Row Stage 7.</p>
+                <p>Original sources: <a href="https://cms-assets.illustrativemathematics.org/l4x26uaxct8u8w8giavhu61jlb8o" target="_blank" rel="noopener noreferrer">Student Task Statements (four-page publisher PDF)</a>, <a href="https://cms-assets.illustrativemathematics.org/7joeg3fb91042g156ctkkewns45f" target="_blank" rel="noopener noreferrer">warm-up SVG A</a>, <a href="https://cms-assets.illustrativemathematics.org/sqvpvucqrrlz1iihakjyzv051d7f" target="_blank" rel="noopener noreferrer">warm-up SVG B</a>. No original publisher images or third-party photographs are embedded in Edulytics.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 13) {
+            <section class="panel" aria-label="Source multiplication equations visual and pedagogical context">
+                <h2>Source warm-up: which one doesn't belong?</h2>
+                <p>Compare a drawing of 3 groups of 5 dots, the expression 3 × 5, the equation 2 × 5 = 10 and the addition equation 7 + 8 = 15. Give more than one defensible answer and justify your classification with a partner. Original artwork is not copied here.</p>
+                <h2>Source Activity 1: equation matching</h2>
+                <p>The publisher's available equation list includes 3 × 5 = 15, 4 × 10 = 40, 2 × 10 = 20, 10 = 5 × 2, 30 = 6 × 5, 4 × 2 = 8, 16 = 8 × 2, 4 × 5 = 20, and 50 = 5 × 10. Match these with the nine original diagram or story cards as directed by your teacher. The third and eighth source pictures require original-material inspection; no substitute is presented as the original.</p>
+                <h2>Source Activity 2: write an equation for every representation</h2>
+                <p>Use the separately identified items below for all seven visible public descriptions. A full multiplication equation needs the correct factors, a product and the equals sign. Record the model, label the groups, and explain how factors and product connect to the drawing. The teacher compares original representations and confirms answers.</p>
+                <p>During synthesis, explain the distinction between an expression such as 3 × 5 and a true equation such as 3 × 5 = 15.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 14) {
+            <section class="panel" aria-label="Source multiplication with an unknown number">
+                <h2>Source warm-up — multiplication by five</h2>
+                <p>Work in the original order: 1 × 5, 2 × 5, 3 × 5, 4 × 5. Explain why the products increase by five as the number of groups increases.</p>
+                <h2>Activity 1: original unknown-number card sort</h2>
+                <p>The teacher supplies the actual printed Card Sort: Unknown Numbers. Match a situation, diagram and equation, and show whether the unknown is a FACTOR or the PRODUCT. The original card art is not available for first-party substitution.</p>
+                <h2>Activity 2: represent both types of missing numbers</h2>
+                <p>For 45 cards in packs of five, use □ × 5 = 45, not 5 × □ = 45 if the first factor is meant to count the packs. For five tape sections labelled two, use 5 × 2 = □; for six bags of ten balls, use 6 × 10 = □. Explain the meaning of the box and write the complete equation after finding its value.</p>
+                <p>The two remaining publisher diagrams have ambiguous accessible image descriptions and require original-image teacher inspection. Do not assume their missing factors from alt text alone. Include a description in each teacher-only row.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 15) {
+            <section class="panel" aria-label="Source three locations of a missing multiplication quantity">
+                <h2>Source warm-up: tens in increasing equal groups</h2>
+                <p>Calculate 1 × 10, 2 × 10, 3 × 10 and 4 × 10 mentally. Explain why the result increases by exactly ten.</p>
+                <h2>Source Activity 1: three stories, different unknowns</h2>
+                <p>For fifteen plates on tables of five, □ × 5 = 15 asks for the number of TABLES. Six sandwiches with two bread slices each, 6 × 2 = □ asks for a TOTAL. Sixty ice cubes in trays of ten, □ × 10 = 60 asks for the number of TRAYS. Include a drawing, equation, units and solution for each.</p>
+                <h2>Source Activity 2: multiplication mashup</h2>
+                <p>Find all five answers in the individual source items below. The sequence of sixteen socks in piles of two, eight piles of two, and sixteen socks divided into eight same-sized groups deliberately changes what is unknown: number of groups, total number of objects, and number in each group. Do NOT mark all three as the same question family. Teachers review the model and missing-variable meaning, not merely the correct number.</p>
+                <p>In the lesson's comparison discussion, explain when drawings, tape diagrams, skip-counting or equations help. Repeated addition may be a calculation method but should not be presented as the complete meaning of multiplication.</p>
+                <h2>First-party visual model — eight equal groups of two</h2>
+                <p>In the source Student Section Summary, Diego's eight groups of two socks
+                    are explained by a group drawing, an eight-part tape and the
+                    expression 8 × 2 and equation 8 × 2 = 16.
+                    The boxes below are a NEW Edulytics representation of the
+                    verified group counts, not the publisher's original picture.</p>
+                <div role="img" aria-label="Eight equal boxes, each with the number two: 8 groups of 2 socks, total 16 socks."
+                     style="display:flex;flex-wrap:wrap;gap:0;max-width:680px;border:2px solid #54798b;border-radius:5px;overflow:hidden;margin:12px 0">
+                    @for(var group=0;group<8;group++){
+                        <div style="box-sizing:border-box;flex:1 0 12.5%;min-width:68px;padding:14px 3px;border-right:1px solid #54798b;text-align:center;font-variant-numeric:tabular-nums">2</div>
+                    }
+                </div>
+                <h3>New Edulytics group drawing — sixteen as eight pairs</h3>
+                <p>The first-edition source drawing contains eight separate equal groups,
+                    arranged in two rows of four, with two countable objects in every group.
+                    The drawing below was independently constructed for Edulytics.
+                    Each outlined region represents ONE group, not an individual object.</p>
+                <div role="img" aria-label="Eight distinct groups in two rows of four. Each group encloses exactly two countable dots, representing sixteen socks in total."
+                     style="display:grid;grid-template-columns:repeat(4,minmax(48px,1fr));gap:12px;max-width:560px;margin:12px 0">
+                    @for(var pair=0;pair<8;pair++){
+                        <div aria-hidden="true" style="display:flex;align-items:center;justify-content:center;gap:8px;min-height:62px;border:2px dashed #346982;border-radius:18px;background:#f4f9fb">
+                            <span style="display:block;width:18px;height:18px;border-radius:50%;background:#147b96"></span>
+                            <span style="display:block;width:18px;height:18px;border-radius:50%;background:#147b96"></span>
+                        </div>
+                    }
+                </div>
+                <p><strong>Compare the two representations:</strong> count the groups,
+                    then count the objects in each group. Both show 8 × 2 = 16.
+                    A teacher reviews the learner's explanation; the picture alone
+                    is not an automatically graded source task.</p>
+                <p><strong>Groups:</strong> eight. <strong>Each group:</strong> two.
+                    <strong>Total:</strong> sixteen. <strong>Expression:</strong> 8 × 2.
+                    <strong>Equation:</strong> 8 × 2 = 16.
+                    Have the teacher compare this independently drawn model with
+                    the actual 2021 Section Summary before claiming visual parity.</p>
+                <h2>Reasoning, access and suggested practice centers</h2>
+                <p>Engagement support for Activity 1: break each of the three
+                    equation-and-solution stories into smaller steps and check progress.
+                    MLR8 Discussion Supports for Activity 2: identify unfamiliar
+                    vocabulary before the partner work, then ask the learner to
+                    explain which quantity is missing in each of the five stories.</p>
+                <p>After this source lesson, teacher-led suggested centers are
+                    Capture Squares, Stage 5 (Multiply with 2, 5, and 10),
+                    and Five in a Row, Stage 8 (Add within 1,000 with Composing).
+                    These are optional classroom centers, not an automatic score.</p>
+                <p>Teacher reflection: consider whose strategies were heard,
+                    valued and accepted within the small-group conversation.
+                    The independently authored Edulytics socks Cool-down below
+                    is separate from the publisher's first-edition Solve the Problem assessment.</p>
+                <h2>Verified first-edition 2021 source Cool-down — two independent tasks</h2>
+                <p>The first-edition 2021 IM teacher guide (Unit 1 Lesson 15,
+                    <a href="https://device.report/m/3299ef5a5a01a797f481c7adad78de2329a1c9b37d3043db91142e3cb01028cf"
+                       target="_blank" rel="noopener noreferrer">K5_v1 teacher guide source</a>)
+                    identifies two mathematics problems: four boxes with ten toys
+                    each (unknown total), and ten socks distributed into equal
+                    piles of two (unknown number of piles). The two individually
+                    paraphrased source items appear BELOW; enter their answers
+                    separately and SHOW the reasoning for each. A teacher must
+                    assess the strategy. The source's original teacher-facing
+                    printed layout and associated media have not been reused.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 16) {
+            <section class="panel" aria-label="Original Edulytics array representation, not publisher artwork">
+
+                <h2>Three independent Edulytics representations of the 2021 source mathematics</h2>
+                <p>The first-edition source warm-up shows twelve eggs in two equal rows of six.
+                    The first-party diagram below uses counting tokens rather than the publisher photograph.
+                    Notice and wonder, then identify equal rows and columns without changing the total.</p>
+                <div role="img" aria-label="First-party twelve-token egg-carton mathematical model: two rows with six tokens in each row; six columns with two tokens each."
+                     style="display:grid;grid-template-columns:repeat(6,minmax(28px,40px));gap:6px;max-width:300px;margin:12px 0">
+                    @for(var egg=0;egg<12;egg++){
+                        <span aria-hidden="true" style="display:block;height:30px;border-radius:30px;background:#f6d4a4;border:2px solid #845a2c"></span>
+                    }
+                </div>
+                <p>The Activity 1 source drawing compares four groups of five dots,
+                    placed in separate bounded regions, with the same twenty objects in a rectangular
+                    array. Both models below are newly drawn with first-party CSS,
+                    not the original publisher graphics.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:20px;margin:12px 0">
+                    <div>
+                        <strong>Four groups of five</strong>
+                        <div role="img" aria-label="Four independent groups of five dots, for twenty total dots."
+                             style="display:grid;grid-template-columns:repeat(2,minmax(100px,125px));gap:10px;margin-top:8px">
+                            @for(var cluster=0;cluster<4;cluster++){
+                                <div aria-hidden="true" style="display:grid;grid-template-columns:repeat(5,13px);gap:3px;padding:12px;border:2px dashed #35718a;border-radius:24px">
+                                    @for(var dot=0;dot<5;dot++){
+                                        <span style="display:block;width:11px;height:11px;border-radius:50%;background:#147b96"></span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <strong>Rectangular array: four rows of five</strong>
+                        <div role="img" aria-label="Four equal rows, with five dots per row and five equal columns, twenty dots in one rectangular array."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:8px;margin-top:8px;padding:12px;border:2px solid #35718a;border-radius:8px">
+                            @for(var dot=0;dot<20;dot++){
+                                <span aria-hidden="true" style="display:block;width:13px;height:13px;border-radius:50%;background:#147b96"></span>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <p>Original 2021 Student Task Statements has three pages: warm-up Notice and Wonder;
+                    Activity 1's two comparison/Noah-reasoning questions; and Activity 2's
+                    three physical-cube tasks (6 groups of 5, multiple arrays with 20 cubes,
+                    and multiple arrays with 24 cubes). Edulytics presents those
+                    source skills through teacher-reviewed prompts, not invented numeric passes.</p>
+                <h2>Source activity guidance: build arrays with actual cubes</h2>
+                <p>For the original activity, groups use actual connecting cubes: six groups of five, then twenty cubes, then twenty-four cubes. The teacher checks arrangement, groups and the explanations. A correct product alone cannot approve an array drawing.</p>
+                <p>The following 6-row by 5-column diagram is independently created for Edulytics and is an EXAMPLE, not the publisher's source image.</p>
+                <div class="first-party-array" style="grid-template-columns:repeat(5,17px)" role="img" aria-label="A first-party illustration of 6 equal rows containing 5 dots each">
+                    @for(var i=0;i<30;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <p>Compare these six equal rows to six equal groups of five. You can also read five equal columns of six. For 20 cubes, try more than one rectangular arrangement. For 24 cubes, find several — do not insist on finding every factor pair.</p>
+                <p>The warm-up original carton image and Noah's two drawings still require a teacher to inspect the source visual. Discuss whether both circles and rectangular arrays can show the same equal groups.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 17) {
+            <section class="panel" aria-label="Source arrays built from original grouped drawings">
+                <h2>Original picture and card-sort work</h2>
+                <p>For the original four warm-up illustrations, images A, B and C each contain 15 dots, and D contains 16. But their arrangements differ: an answer of just “D has more dots” misses other potential valid array/non-array explanations. Examine the original pictures with the teacher.</p>
+                <p>The original Card Sort Arrays is a separate physical matching task: keep and discuss the group sizes as drawings transform into rows or columns, then edit your written explanation after discussing it with a partner.</p>
+
+                <h2>Independently authored 2021-skill card sort</h2>
+                <p>The original first-edition blackline includes twelve cards (A–L). This new
+                    Edulytics deck shows the verified original mathematical group counts with
+                    independently drawn points and grouped regions. It is NOT an image copy
+                    or a replacement for a teacher's actual card handout. Discuss each
+                    proposed pair; a single total alone does not certify matching group size.</p>
+                @{
+                    var firstPartyCards = new (string Id, bool Separate, int Groups, int Each)[]
+                    {
+                        ("A", false, 5, 5), ("B", true, 7, 2),
+                        ("C", false, 3, 4), ("D", true, 4, 5),
+                        ("E", true, 3, 10), ("F", false, 10, 3),
+                        ("G", true, 3, 4), ("H", false, 5, 4),
+                        ("I", false, 2, 6), ("J", true, 5, 5),
+                        ("K", false, 7, 2), ("L", true, 6, 2)
+                    };
+                }
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+                    @foreach(var card in firstPartyCards) {
+                        <article style="border:2px solid #38758c;border-radius:8px;padding:10px" aria-label="Edulytics first-party visual card @card.Id">
+                            <strong>Card @card.Id</strong>
+                            @if(card.Separate) {
+                                <div role="img" aria-label="@card.Groups separate equal groups, each containing @card.Each dots."
+                                     style="display:flex;flex-wrap:wrap;gap:5px;margin-top:9px">
+                                    @for(var group=0;group<card.Groups;group++) {
+                                        <div aria-hidden="true" style="display:flex;flex-wrap:wrap;gap:2px;padding:5px;border:1px dashed #35718a;border-radius:9px;max-width:128px">
+                                            @for(var dot=0;dot<card.Each;dot++) {
+                                                <span style="width:9px;height:9px;background:#b7602e;border-radius:50%"></span>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            } else {
+                                <div role="img" aria-label="Rectangular array with @card.Groups rows, @card.Each dots per row."
+                                     style="display:grid;grid-template-columns:repeat(@card.Each,11px);gap:4px;margin-top:9px;width:max-content">
+                                    @for(var dot=0;dot<card.Groups*card.Each;dot++) {
+                                        <span aria-hidden="true" style="width:9px;height:9px;background:#307e96;border-radius:50%"></span>
+                                    }
+                                </div>
+                            }
+                        </article>
+                    }
+                </div>
+                <p><strong>Teacher key, not automatic grading:</strong> A–J (25);
+                    B–K (14); C–G (12); D–H (20); E–F (30); I–L (12).
+                    Cards use different group orientations. Partners must match
+                    representations and then explain why a row or column represents
+                    the corresponding equal group; MLR1 requires revising the explanation
+                    after feedback.</p>
+                <h2>Warm-up structure — four original source quantities</h2>
+                <p>Source A, B and C each have fifteen dots in different arrangements,
+                    while D is a complete four-by-four array of sixteen. The published
+                    B source arrangement has an incomplete column despite seemingly
+                    equal-length rows. Discuss different defensible choices, not merely
+                    the letter with the different total. The publisher's exact
+                    warm-up artwork is not copied here.</p>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;margin:12px 0">
+                    @{
+                        var aPositions = new HashSet<int> { 0,5,10,15,20, 1,6,11,16,21, 7,12,17, 13,14 };
+                        var bPositions = new HashSet<int>(Enumerable.Range(0,16).Where(index=>index!=10));
+                    }
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New A — 15</strong>
+                        <div role="img" aria-label="Original Edulytics model A: fifteen dots in an asymmetrical layout with incomplete columns."
+                             style="display:grid;grid-template-columns:repeat(5,15px);gap:6px;margin-top:9px">
+                            @for(var slot=0;slot<25;slot++){
+                                <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:@(aPositions.Contains(slot)?"#a7508f":"transparent")"></span>
+                            }
+                        </div>
+                    </article>
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New B — 15</strong>
+                        <div role="img" aria-label="Original Edulytics model B: three complete rows plus a missing dot, so one column is incomplete."
+                             style="display:grid;grid-template-columns:repeat(4,15px);gap:6px;margin-top:9px">
+                            @for(var slot=0;slot<16;slot++){
+                                <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:@(bPositions.Contains(slot)?"#a7508f":"transparent")"></span>
+                            }
+                        </div>
+                    </article>
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New C — 15</strong>
+                        <div role="img" aria-label="Original Edulytics model C: five scattered mini-clusters of three dots each, not a rectangular array."
+                             style="display:flex;flex-wrap:wrap;gap:9px;margin-top:9px">
+                            @for(var group=0;group<5;group++){
+                                <div aria-hidden="true" style="display:flex;gap:3px;padding:4px;transform:rotate(@(group*13-26)deg)">
+                                    @for(var dot=0;dot<3;dot++){
+                                        <span style="width:10px;height:10px;border-radius:50%;background:#a7508f"></span>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </article>
+                    <article style="border:1px solid #68838d;padding:10px;border-radius:7px">
+                        <strong>New D — 16</strong>
+                        <div role="img" aria-label="Original Edulytics model D: complete four by four rectangular array with sixteen dots."
+                             style="display:grid;grid-template-columns:repeat(4,15px);gap:6px;margin-top:9px">
+                            @for(var dot=0;dot<16;dot++){
+                                <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:#a7508f"></span>
+                            }
+                        </div>
+                    </article>
+                </div>
+                <p>The official first-edition 2021 Student Task Statements PDF has
+                    three pages and source Activity 2 asks for drawing and explaining
+                    both twelve- and sixteen-dot arrays. Teacher reviews card sorting,
+                    student drawings and oral peer revisions.</p>
+                <h2>Source Activity 2: draw, rather than just count</h2>
+                <p>Reorganize 4 groups of 3 into a rectangular array; use 12 dots. Then use all 16 dots of the other source figure in two different arrays. Here is an independently drawn EXAMPLE of three rows of four dots; it does not replace the original source card artwork.</p>
+                <div class="first-party-array" style="grid-template-columns:repeat(4,17px)" role="img" aria-label="Independent example: three complete rows, four dots per row">
+                    @for(var i=0;i<12;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+
+                <h3>Independent visual starters for source Activity 2</h3>
+                <p>Four independent clusters of three dots supply twelve objects.
+                    Rearrange all twelve into one complete array, then explain where
+                    the groups of three appear in rows or columns.</p>
+                <div role="img" aria-label="Four small separate clusters, with three dots per cluster and twelve total."
+                     style="display:grid;grid-template-columns:repeat(2,minmax(75px,95px));gap:14px;margin:10px 0">
+                    @for(var group=0;group<4;group++){
+                        <div aria-hidden="true" style="display:flex;gap:4px;padding:10px;border:1px dashed #5a7280;border-radius:12px">
+                            @for(var dot=0;dot<3;dot++){
+                                <span style="width:13px;height:13px;border-radius:50%;background:#b7602e"></span>
+                            }
+                        </div>
+                    }
+                </div>
+                <p>Another original Edulytics starter has sixteen scattered tokens.
+                    It is deliberately <em>not</em> already an array. Students draw
+                    multiple complete rectangular versions using exactly those
+                    sixteen objects; examples are 4×4 and 2×8, but other valid
+                    rectangular orientations must be teacher-checked.</p>
+                <div role="img" aria-label="Sixteen irregularly placed first-party tokens, not originally in equal rectangular rows."
+                     style="display:flex;flex-wrap:wrap;gap:8px;max-width:245px;margin:10px 0;align-items:center">
+                    @for(var dot=0;dot<16;dot++){
+                        <span aria-hidden="true" style="display:block;width:12px;height:12px;border-radius:50%;margin-top:@((dot%4)*3)px;background:#b7602e"></span>
+                    }
+                </div>
+                <p>Show why all rows and columns form valid equal-sized groupings. Teacher evaluates your own drawings and actual peer explanation revision.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 18) {
+            <section class="panel" aria-label="Source arrays, expressions and human arrays">
+                <h2>Warm-up: a five-by-four triangle array</h2>
+                <p>Observe five rows of four triangles (20 in total), and explain how equal-size rows or columns help you count. The publisher's actual figure has not been copied.</p>
+                <p>This source-equivalent image is independently created by Edulytics:
+                    five complete rows of four triangular counters, twenty in total.
+                    The published first-edition 2021 triangle SVG was inspected for
+                    the mathematical 5×4 geometry; it has not been copied.</p>
+                <div role="img" aria-label="Five complete rows of four independently drawn triangles, twenty triangles total."
+                     style="display:grid;grid-template-columns:repeat(4,30px);gap:10px;max-width:165px;margin:12px 0">
+                    @for(var triangle=0;triangle<20;triangle++){
+                        <span aria-hidden="true" style="display:block;width:25px;height:24px;background:#a56a37;clip-path:polygon(50% 0%,100% 100%,0% 100%)"></span>
+                    }
+                </div>
+                <p>Draw FOUR separate source-context arrays, one per story:
+                    chairs 3×5, cars 4×5, eggs 2×6 and student lines 2×10.
+                    Each source learner subtask has a separate multiplication-expression
+                    input, with the array diagram and mathematical explanation reviewed
+                    by the teacher. For all four, either factor order is accepted
+                    where the student can justify the corresponding row/column grouping.</p>
+
+                <h2>Source Activity 1: draw a separate array and write a multiplication expression</h2>
+                <p>The four original array contexts are three rows of five chairs, four rows of five cars, two rows of six eggs, and two lines of ten pupils. Use objects or diagrams for each; enter the ROW count × GROUP size in the appropriate individual source task. Entering the total alone cannot demonstrate writing the expression.</p>
+                <p>Here is an independently authored three-row by five-column array illustration (not original publisher artwork):</p>
+                <div class="first-party-array" style="grid-template-columns:repeat(5,17px)" role="img" aria-label="Three rows with five dots each">
+                    @for(var i=0;i<15;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <h2>Source Activity 2: arrays from an expression</h2>
+                <p>Work as a class to form a human 4 × 6 array (adjustable for actual class size), then individually draw arrays for 2 × 3, 5 × 2 and 4 × 4. Teacher checks whether each array actually consists of equal rows and columns, rather than merely a set of isolated dots.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 19) {
+            <section class="panel" aria-label="Source array story problems and complete equations">
+                <h2>Warm-up: one fewer equal group each time</h2>
+                <p>Calculate 10 × 2, 9 × 2, 8 × 2 and 7 × 2, then explain why every next product is exactly two less.</p>
+                <h2>Source Activity 1: question co-crafting before the 7-row crayon task</h2>
+                <p><strong>Phase 1 — source MLR5 Co-craft Questions:</strong> reveal only
+                    the information that there are SEVEN ROWS. Learners propose several
+                    mathematically sensible questions, decide what more they need,
+                    compare their questions, and write their initial explanations.
+                    The teacher controls when the rest of the story is shown.</p>
+                <details>
+                    <summary><strong>Phase 2 — reveal the remaining source information AFTER co-crafting</strong></summary>
+                    <p>Each of the seven rows contains five crayons. Draw the complete
+                        array using thirty-five objects and write first 7 × 5 = □,
+                        then separately 7 × 5 = 35. The question generation and drawn
+                        representation remain teacher-reviewed.</p>
+                    <div role="img" aria-label="Seven equal rows, each containing five independently drawn crayon-shaped counters."
+                         style="display:grid;grid-template-columns:repeat(5,15px);gap:7px;margin:12px 0">
+                        @for(var crayon=0;crayon<35;crayon++){
+                            <span aria-hidden="true" style="height:24px;width:12px;background:#bf7252;border-radius:5px 5px 2px 2px"></span>
+                        }
+                    </div>
+                </details>
+                <h2>Source Activity 2: two separate coconut-tree arrays</h2>
+                <p>The source has one grove with five rows of nine trees and Tyler's backyard with two rows of four trees. Model and solve each individually. Enter the FULL equation (including both factors and the product), and show how the question-mark version becomes the completed version. A numeric total alone does not satisfy an equation-writing task.</p>
+                <h3>Two new Edulytics tree-array mathematical models</h3>
+                <p>Five rows of nine independently drawn tree tokens for the source grove
+                    and two rows of four tokens for the backyard. The original 2021
+                    coconut-grove photograph was reviewed as contextual media, not copied.
+                    Count the objects, then write one equality with a question mark
+                    and one COMPLETE solved equality for each problem.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:20px;margin:12px 0">
+                    <div><strong>Five rows with nine tree tokens each</strong>
+                        <div role="img" aria-label="Independent Edulytics model of five equal rows of nine trees."
+                             style="display:grid;grid-template-columns:repeat(9,13px);gap:6px;margin-top:8px">
+                            @for(var tree=0;tree<45;tree++){
+                                <span aria-hidden="true" style="width:11px;height:11px;border-radius:50% 50% 35% 35%;background:#41795d;border-bottom:3px solid #81674b"></span>
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Two rows with four tree tokens each</strong>
+                        <div role="img" aria-label="Independent Edulytics model of two rows of four trees."
+                             style="display:grid;grid-template-columns:repeat(4,13px);gap:6px;margin-top:8px">
+                            @for(var tree=0;tree<8;tree++){
+                                <span aria-hidden="true" style="width:11px;height:11px;border-radius:50% 50% 35% 35%;background:#41795d;border-bottom:3px solid #81674b"></span>
+                            }
+                        </div>
+                    </div>
+                </div>                <p>The original coconut-tree photograph may have third-party attribution; it is not reproduced here. Teacher checks actual diagrams and source question discussions.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 20) {
+            <section class="panel" aria-label="Source commutative array tasks">
+                <h2>Warm-up: subtract by place value</h2>
+                <p>Calculate 70 − 10, 68 − 10, 70 − 12 and 68 − 12 mentally, in that order. Discuss the tens and ones, then compare strategies with a partner.</p>
+                <h2>Activity 1: same ten dots, two array situations</h2>
+                <p>These two arrays are independently drawn examples, not copied publisher images. Invent a different REAL-WORLD situation for each array. Describe 2 groups of 5 in Image A and 5 groups of 2 in Image B.</p>
+                <div class="two">
+                    <div><strong>Image A: two horizontal groups of five</strong>
+                        <div role="img" aria-label="Independent model: two horizontal enclosed groups, five blue dots in each group, total ten."
+                             style="display:flex;flex-direction:column;gap:8px;max-width:240px;margin-top:12px">
+                            @for(var row=0;row<2;row++){
+                                <div style="display:flex;justify-content:space-around;border:2px solid #426a83;border-radius:45px;padding:9px">
+                                    @for(var dot=0;dot<5;dot++){<span class="first-party-dot" aria-hidden="true"></span>}
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Image B: five vertical groups of two</strong>
+                        <div role="img" aria-label="Independent model: five vertical enclosed columns, each containing two blue dots, total ten; two rows of five remain visible."
+                             style="display:grid;grid-template-columns:repeat(5,minmax(26px,35px));gap:7px;margin-top:12px">
+                            @for(var col=0;col<5;col++){
+                                <div style="display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:13px;border:2px solid #426a83;border-radius:40px;padding:9px 4px">
+                                    <span class="first-party-dot" aria-hidden="true"></span><span class="first-party-dot" aria-hidden="true"></span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <p>The original 2021 Image B groups COLUMNS vertically, not five horizontal rows. Both pictures contain two rows of five dots, but changing which dots are enclosed as equal groups changes the interpretation from 2 × 5 to 5 × 2.</p>
+                <p>Show both complete equations, 2 × 5 = 10 and 5 × 2 = 10, with an explanation of which factor refers to each kind of group. Their totals match but the imagined situations may differ.</p>
+                <h2>Activity 2: one array, two complete equations</h2>
+                <p>Examine the original 3 × 6 array shown by the teacher and justify how 3 × 6 = 18 and 6 × 3 = 18 can BOTH describe it. Work with several partners and revise your explanation after their questions.</p>
+                <div role="img" aria-label="Independent Edulytics three-row six-column dot array, total eighteen objects."
+                     style="display:grid;grid-template-columns:repeat(6,17px);gap:6px;max-width:max-content;margin:12px 0">
+                    @for(var dot=0;dot<18;dot++){<span class="first-party-dot" aria-hidden="true"></span>}
+                </div>
+                <p>Section summary model, separately authored: three equal groups, each with five counters (15 total), alongside the expressions 3 × 5 and equations 3 × 5 = 15 and 5 × 3 = 15. These are independent explanatory symbols and diagrams, not copies of source figures.</p>
+                <div role="img" aria-label="Three independent first-party groups with five countable dots each, fifteen counters in all."
+                     style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0">
+                    @for(var group=0;group<3;group++){
+                        <div style="display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:7px;width:95px;height:65px;border:2px dashed #426a83;border-radius:48px">
+                            @for(var i=0;i<5;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                        </div>
+                    }
+                </div>
+
+                <p>The original lesson synthesis also compares 3 × 4 = 12 and 4 × 3 = 12 before writing 3 × 4 = 4 × 3. The inverse order of factors does not change the product.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 1 && l.LessonNumber == 21) {
+            <section class="panel" aria-label="Original optional source modelling project with independent illustration">
+                <h2>Optional source project: plan a game night</h2>
+                <h3>Warm-up: Notice and Wonder, before revealing the context</h3>
+                <p>Look at this independently authored model first, without assuming what the six squares and surrounding circles represent. Describe what repeats and ask what information would help you understand the arrangement.</p>
+                <div role="img" aria-label="Six separate square centers arranged as three columns by two rows. Each square has one countable circle immediately above, below, left and right: four circles per square, twenty-four circles altogether."
+                     style="display:grid;grid-template-columns:repeat(3,76px);column-gap:17px;row-gap:18px;margin:14px 0">
+                    @for(var table=0;table<6;table++){
+                        <div style="position:relative;width:56px;height:56px;margin:10px;border:2px solid #436274;background:#e2f3ef;box-sizing:border-box">
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;top:-18px;left:19px;border-radius:50%;background:#266c86"></span>
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;bottom:-18px;left:19px;border-radius:50%;background:#266c86"></span>
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;left:-18px;top:19px;border-radius:50%;background:#266c86"></span>
+                            <span aria-hidden="true" style="position:absolute;width:12px;height:12px;right:-18px;top:19px;border-radius:50%;background:#266c86"></span>
+                        </div>
+                    }
+                </div>
+                <details>
+                    <summary>Teacher-controlled reveal of the original context</summary>
+                    <p>The six squares represent tables, and the four circles around each table represent potentially available seats. What information would you need BEFORE designing a seating plan for game night? This is not the final plan for sixteen tables.</p>
+                </details>
+                <p>Teacher access support: clarify unknown vocabulary with MLR8 and allow groups that need reduced complexity to work initially with fewer game types. Every pupil still creates a separate A–D graph in Activity 2, comparing their personal guest counts with their own group-designed seating plan.</p>
+                <p>Original constraints: 16 identical SQUARE tables, one person per available side, and four games: A needs 2 players, B 4, C 5, D 10. Decide which games run concurrently and how joined tables share edges. No single room layout is required.</p>
+                <p>Here is ONE independently constructed valid example for discussion, not an original publisher solution: run two games of EACH type. Games A and B use one table apiece per game, C uses two side-by-side tables per game, and D uses four tables in a straight row per game. This uses 2 + 2 + 4 + 8 = 16 tables, serving 4 + 8 + 10 + 20 = 42 guests.</p>
+                <table class="source-chart">
+                    <caption>First-party illustrative example — NOT the mandatory answer</caption>
+                    <thead><tr><th scope="col">Game</th><th scope="col">Players per game</th><th scope="col">Games</th><th scope="col">Tables per game</th><th scope="col">Guests</th></tr></thead>
+                    <tbody>
+                        <tr><td>A</td><td>2</td><td>2</td><td>1</td><td>4</td></tr>
+                        <tr><td>B</td><td>4</td><td>2</td><td>1</td><td>8</td></tr>
+                        <tr><td>C</td><td>5</td><td>2</td><td>2</td><td>10</td></tr>
+                        <tr><td>D</td><td>10</td><td>2</td><td>4</td><td>20</td></tr>
+                    </tbody>
+                </table>
+                <p>A straight row of <em>n</em> identical joined square tables has 2n + 2 exposed sides, not 4n: two sides per shared edge disappear. That allows six players around two joined tables, and ten around four in a row. An A table may have two deliberately unused seats.</p>
+                <h2>Source Activity 2: each learner draws a scaled bar graph</h2>
+                <p>For this illustrative example only, draw bars with heights A=4, B=8, C=10, D=20. Choose a scale counting by 2 rather than 1. Your ACTUAL own plan may have very different valid counts and require a different suitable scale. Every bar's height must match the number of playing guests in your own seating poster.</p>
+                <p>Record your distinct decisions, seating map, labelled axes and reasoned trade-offs in the source task fields. The classroom teacher judges your physical layout, game compatibility, graph precision and assumptions; neither the illustration nor a typed numerical result is an automatic pass.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 1) {
+            <section class="panel" aria-label="Source introduction to plane area, not length">
+                <h2>Unit 2 begins with area as COVERED SPACE</h2>
+                <h3>Warm-up — How Many Do You See?</h3>
+                <p>The three original 2021 dot pictures have 8 objects in two rows of four, 12 in four rows of three, and 20 in four rows of five. These accessible counting arrays are drawn independently for Edulytics; teacher asks for two different group-counting strategies, not merely three numbers.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:22px;margin:12px 0">
+                    <div><strong>2 × 4 = 8</strong>
+                        <div role="img" aria-label="Two equal rows of four, eight dots" style="display:grid;grid-template-columns:repeat(4,17px);gap:5px;margin-top:8px">
+                            @for(var i=0;i<8;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                        </div>
+                    </div>
+                    <div><strong>4 × 3 = 12</strong>
+                        <div role="img" aria-label="Four equal rows of three, twelve dots" style="display:grid;grid-template-columns:repeat(3,17px);gap:5px;margin-top:8px">
+                            @for(var i=0;i<12;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                        </div>
+                    </div>
+                    <div><strong>4 × 5 = 20</strong>
+                        <div role="img" aria-label="Four equal rows of five, twenty dots" style="display:grid;grid-template-columns:repeat(5,17px);gap:5px;margin-top:8px">
+                            @for(var i=0;i<20;i++){<span class="first-party-dot" aria-hidden="true"></span>}
+                        </div>
+                    </div>
+                </div>
+                <h3>Independent area comparison figures — NOT publisher artwork</h3>
+                <p>These diagrams are newly composed explanatory examples for comparing COVERED PLANE SPACE. Always decide using a cutout, overlay or equal-size reference pieces; judging by height, width or perimeter alone is insufficient.</p>
+                <svg viewBox="0 0 440 160" width="100%" style="max-width:440px" role="img" aria-label="Two independently drawn triangles: a wide low triangle and a narrower but higher triangle, to compare covered region rather than single side length">
+                    <polygon points="20,134 218,134 20,91" fill="#d6eafa" stroke="#355f83" strokeWidth="2"></polygon>
+                    <polygon points="278,134 396,134 278,23" fill="#ebdfb8" stroke="#8b6430" strokeWidth="2"></polygon>
+                </svg>
+                <svg viewBox="0 0 440 140" width="100%" style="max-width:440px" role="img" aria-label="Independent paired area models: smaller and larger oval">
+                    <ellipse cx="95" cy="68" rx="63" ry="27" fill="#d9eed6" stroke="#3e7858" strokeWidth="2"></ellipse>
+                    <ellipse cx="293" cy="68" rx="111" ry="45" fill="#d9eed6" stroke="#3e7858" strokeWidth="2"></ellipse>
+                </svg>
+                <p>Original Activity 1 also compares a hexagon with a much smaller triangle and two rectangles: the narrow very tall rectangle does NOT have to occupy more area. Original source comparisons require use of appropriate physical originals or independently verified shape relationships.</p>
+                <h3>Pattern blocks — equal pieces, equal area</h3>
+                <p>Original source blackline handout contains a hexagon and an indented eight-sided outline whose regions can be tiled using the SAME area worth of pattern blocks. The next page has labelled A (pentagon), B (slanted parallelogram), C (rectangle). Students should physically fill them with pattern blocks. The rectangle C covers more space than B although both can have a similar long dimension: C requires TALLER square units. Neither this description nor a numeric count replaces the original student tiling.</p>
+
+                <p>In the first lesson, compare the actual source's wide-low versus tall-thin triangles, unequal ovals, hexagon and triangle, and two rectangles that look different. Height or width alone does not decide which two-dimensional region covers more space. If shapes can be cut out and overlaid, justify which fits within the other.</p>
+                <h2>Original pattern-block comparisons</h2>
+                <p>Ask the teacher for the original printed hexagon and bent eight-sided shape, and for outlined shapes A (pentagon), B (parallelogram) and C (rectangle). Cover them with comparable pattern blocks. Explain whether the same blocks cover a different outline, and why rectangle C can cover more space than a shape with a similarly long side.</p>
+                <p>All these SOURCE image comparisons are listed individually below for human checking. Publisher diagrams and their exact geometry have not been copied or pixel-verified. The separate new Edulytics Cool-down is independently authored and teacher-reviewed.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 2) {
+            <section class="panel" aria-label="2021 original tiling tasks and unit squares">
+                <h2>Source lesson: one square is a unit of AREA</h2>
+                <p>Original warm-up: compare figures A (one small square), B (nine equal squares in a 3 × 3 grid with some shading), C (four equal squares in a 2 × 2 grid) and D (a rectangle tiled with blue and white squares). Discuss which one might not belong and give DIFFERENT defensible reasons; the originals must be viewed with a teacher.</p>
+                <h2>Activity 1: physical square tiles</h2>
+                <p>Working in a group of four with equal-inch tiles, each pupil makes a different shape and the group orders their shapes by covered area. The longest outline or largest perimeter does NOT determine the area; the area is measured in SAME-SIZED square units with no gaps or overlaps.</p>
+                <h2>Activity 2: six individual 2021 area figures</h2>
+                <p>The actual 2021 first-edition printed six-figure source handout and all six original SVG contours have now been inspected. Mathematical unit-square areas are <strong>9, 18, 13, 30, 36 and 21</strong>, respectively, computed by exact unit-tile decomposition of their 18-point boundary grids. The independently authored Edulytics models below represent the same mathematical counts without embedding publisher SVG artwork. Learners must still place tiles without gaps or overlaps and give teacher-reviewed reasoning.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:16px 0">
+                    <div><strong>Original 2021 task 1 — shape with two upright sections</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 1, 9 occupied unit squares arranged into 3 rows and 6 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(6,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<18;cell++){
+                                @if("010000010111111100"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 2 — tall shape with lower platform</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 2, 18 occupied unit squares arranged into 8 rows and 5 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<40;cell++){
+                                @if("0010000100001000010000100001111111111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 3 — L-shaped region</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 3, 13 occupied unit squares arranged into 5 rows and 5 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<25;cell++){
+                                @if("0001100011000110001111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 4 — 5-column by 6-row rectangle</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 4, 30 occupied unit squares arranged into 6 rows and 5 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(5,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<30;cell++){
+                                @if("111111111111111111111111111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 5 — wide tiered region</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 5, 36 occupied unit squares arranged into 8 rows and 7 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(7,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<56;cell++){
+                                @if("00001110000111001111100111111111110111111011110001111000"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div><strong>Original 2021 task 6 — six-step staircase</strong>
+                        <p>Build the model, find the covered area, then explain how every tile counts as one square unit.</p>
+                        <div role="img" aria-label="First-party accessible tile-grid model of source task 6, 21 occupied unit squares arranged into 6 rows and 6 columns of possible tile positions."
+                             style="display:grid;grid-template-columns:repeat(6,20px);gap:1px;margin:8px 0">
+                            @for(var cell=0;cell<36;cell++){
+                                @if("000001000011000111001111011111111111"[cell]=='1'){
+                                    <span aria-hidden="true" style="width:20px;height:20px;box-sizing:border-box;border:1px solid #346d81;background:#c7e9ed"></span>
+                                } else {
+                                    <span aria-hidden="true" style="width:20px;height:20px"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                <p>The numeric count for EACH source figure may be checked separately, but the instructor must approve placement of congruent tiles and explanations. Original-source printed artwork is not embedded; the independent 3 × 4 and 5 × 4 practice questions remain additional examples, not source identities.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 3) {
+            <section class="panel" aria-label="2021 Tile Rectangles area, source verified independent squares">
+                <h2>Warm-up — four different ways of tiling a rectangle</h2>
+                <p>First-edition original 2021 images checked: A has 24 uniform squares in four rows of six with alternating shading; B has a partial perimeter tiling; C has a complete 4-by-6 unit grid; D contains twenty-four 6-by-4 tiles arranged with gaps, crooked edges and overlaps. A and C give valid 24-square-unit covered areas, while D cannot be used as an accurate area model until the tiles are fixed.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:16px;margin:12px 0">
+                    <div><strong>A: checkerboard of 24 tiles</strong><div role="img" aria-label="Original skill equivalent A: 4 rows of 6 equal square positions, 24 in total, with alternating two colors" style="display:grid;grid-template-columns:repeat(6,17px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){
+                            @if(((cell/6)+(cell%6))%2==0){<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                            else {<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#fff;border:1px solid #547080"></span>}
+                        }
+                    </div></div>
+                    <div><strong>B: partial tiling (not measured yet)</strong><div role="img" aria-label="Independent six-column by four-row rectangle with some top and left squares covered but other unit cells still uncovered" style="display:grid;grid-template-columns:repeat(6,17px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){
+                            @if(cell/6==0||cell%6==0){<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                            else {<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#fff;border:1px solid #547080"></span>}
+                        }
+                    </div></div>
+                    <div><strong>C: complete, valid 24 tiles</strong><div role="img" aria-label="Independent filled four-row by six-column array, all 24 square cells occupied without gaps or overlaps" style="display:grid;grid-template-columns:repeat(6,17px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){<span aria-hidden="true" style="width:17px;height:17px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                    </div></div>
+                    <div><strong>D: invalid until realigned</strong><div role="img" aria-label="Twenty-four first-party tiles in a six-row, four-column region; deliberately crooked overlapping positions and visible gaps make this an invalid tiling" style="display:grid;grid-template-columns:repeat(4,18px);gap:3px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){
+                            @if(cell%4==1){<span aria-hidden="true" style="width:18px;height:18px;box-sizing:border-box;transform:rotate(10deg) translateX(-5px);background:#8bd1e6;border:1px solid #547080"></span>}
+                            else {<span aria-hidden="true" style="width:18px;height:18px;box-sizing:border-box;background:#8bd1e6;border:1px solid #547080"></span>}
+                        }
+                    </div></div>
+                </div>
+                <h2>Activity 1 — four separate original 2021 Time to Tile figures</h2>
+                <p>Source printed Time to Tile handout, both pages, has been inspected individually. Each pair receives twenty-four identical inch tiles and can reposition crooked or poorly centered printed pieces. Source outlines and exact verified total areas are: <strong>a: 5×5=25; b: 5×3=15; c: 6×4=24; d: 3×4=12 square units</strong>. The source already shows four, three, seven and several improperly placed tiles; these are NOT the final square-unit areas. Demonstrate correct placement and justify the chosen row and column counts to your teacher before revealing the completed models.</p>
+                <details><summary>Show independently designed complete area models AFTER attempting the source handout</summary>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:16px 0">
+                    <div><strong>Handout a — 5×5</strong><div role="img" aria-label="Independent complete 5 columns by 5 rows; 25 one-square-unit cells. Finish measuring all twenty-five original square units." style="display:grid;grid-template-columns:repeat(5,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<25;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    <div><strong>Handout b — 5×3</strong><div role="img" aria-label="Independent complete 5 columns by 3 rows; 15 one-square-unit cells. Fifteen square units when each of the three original tiles is aligned." style="display:grid;grid-template-columns:repeat(5,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<15;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    <div><strong>Handout c — 6×4</strong><div role="img" aria-label="Independent complete 6 columns by 4 rows; 24 one-square-unit cells. Twenty-four unit squares; align the mispositioned original tiles first." style="display:grid;grid-template-columns:repeat(6,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<24;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    <div><strong>Handout d — 3×4</strong><div role="img" aria-label="Independent complete 3 columns by 4 rows; 12 one-square-unit cells. Twelve unit squares; original rotated/overlapping pieces must be adjusted." style="display:grid;grid-template-columns:repeat(3,19px);gap:1px;margin:9px 0">
+                        @for(var i=0;i<12;i++){<span aria-hidden="true" style="width:19px;height:19px;box-sizing:border-box;background:#b6e7e0;border:1px solid #456979"></span>}
+                    </div></div>
+                    </div>
+                </details>
+                <p>MLR1 Stronger and Clearer Each Time: students explain how to tile an arbitrary rectangle without gaps or overlaps, exchange feedback with partners and revise their own written procedure. The number alone cannot certify this teacher-reviewed reasoning.</p>
+                <h2>Activity 2 — original Card Sort Rectangles: six A–F cards</h2>
+                <p>The actual first-edition 2021 <strong>Card Sort: Rectangles</strong> blackline PDF has been inspected. Use the first-party mathematically equivalent card diagrams below to arrange the cards first by a rule you choose, then by equal area. The original card set contains these six distinct rectangular arrays; each learner then draws a NEW rectangle with a different arrangement for each area family.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px;margin:12px 0">
+                    <div><strong>Card A</strong><div role="img" aria-label="Independently drawn source Card A math equivalent: 4 columns by 3 rows, 12 square units" style="display:grid;grid-template-columns:repeat(4,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<12;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card D</strong><div role="img" aria-label="Independently drawn source Card D math equivalent: 8 columns by 2 rows, 16 square units" style="display:grid;grid-template-columns:repeat(8,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<16;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card B</strong><div role="img" aria-label="Independently drawn source Card B math equivalent: 3 columns by 8 rows, 24 square units" style="display:grid;grid-template-columns:repeat(3,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card E</strong><div role="img" aria-label="Independently drawn source Card E math equivalent: 4 columns by 4 rows, 16 square units" style="display:grid;grid-template-columns:repeat(4,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<16;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card C</strong><div role="img" aria-label="Independently drawn source Card C math equivalent: 1 columns by 12 rows, 12 square units" style="display:grid;grid-template-columns:repeat(1,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<12;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                    <div><strong>Card F</strong><div role="img" aria-label="Independently drawn source Card F math equivalent: 2 columns by 12 rows, 24 square units" style="display:grid;grid-template-columns:repeat(2,15px);gap:1px;margin:7px 0">
+                        @for(var cell=0;cell<24;cell++){<span aria-hidden="true" style="width:15px;height:15px;box-sizing:border-box;border:1px solid #3b6a86;background:#dae9f6"></span>}
+                    </div></div>
+                </div>
+                <details><summary>Reveal area-category matches AFTER your own sort</summary>
+                    <p>A and C both cover 12 square units (4×3 and 1×12); D and E both cover 16 square units (8×2 and 4×4); B and F both cover 24 square units (3×8 and 2×12). Matching by same area does not require same perimeter, proportions or orientation. The independent Edulytics card graphics are not copies of the original publisher art.</p>
+                </details>
+                <p>Before sorting, compare the original lesson's three equal-12-square-unit representations and draw a rectangle with area eight (e.g. 1×8 or 2×4) on the supplied grid. Teacher checks drawings, the student's chosen first sort, the SECOND sort by area and creation of at least one different rectangle for each area family.</p>
+                <p>Original 2021 source drawings were read and mathematical dimensions verified, but no publisher image pixels are redistributed. Correct numeric answers alone never certify physical rearrangement, absence of gaps or overlaps, full-card classification or MLR8 discussion.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 4) {
+            <section class="panel" aria-label="Source hidden rectangle reconstruction and square-unit counting">
+                <h2>Warm-up: equal counts do not mean identical representations</h2>
+                <p>The publisher's four warm-up images depict 20 tiled squares (A), 24 square-with-dot cells (B), 20 array dots in four rows of five (C), and 20 dots in five groups of four (D). Give your own reasons that different pictures might not belong; mathematical explanation matters more than identifying only B.</p>
+                <h2>Source Activity 1: draw what your partner describes WITHOUT seeing it</h2>
+                <p>Use the original blank 12-by-12 grid and a folder between partners. Partner A draws a rectangle and describes HOW MANY ROWS and HOW MANY COLUMNS without revealing the total number of tiles or showing the drawing. Partner B draws the rectangle from the description. Compare, switch roles and repeat. The total must not be disclosed first, or the key source challenge is spoiled.</p>
+                <h2>Source Activity 2: find FOUR rectangular areas</h2>
+                <p>All FOUR original diagrams were independently checked against the 2021 source: 2 rows × 9 columns = 18 square units; 6 × 5 = 30; 6 × 10 = 60 for the originally unresolved THIRD drawing; and 5 × 9 = 45. State area in SQUARE UNITS and explain how equal-size tiles fully cover the region, rather than answering with a bare integer.</p>
+                <div class="two" aria-label="Independent rectangle unit-square models, not publisher graphics">
+                    @foreach(var rc in new[]{(r:2,c:9),(r:6,c:5),(r:6,c:10),(r:5,c:9)}){
+                        <div><strong>@rc.r × @rc.c = @(rc.r*rc.c) square units</strong>
+                            <div role="img" aria-label="@($"{rc.r} rows and {rc.c} columns of square tiles, area {rc.r*rc.c} square units")" style="display:grid;grid-template-columns:repeat(@rc.c,13px);gap:1px;margin:8px 0">
+                                @for(var sq=0;sq<rc.r*rc.c;sq++){<span aria-hidden="true" style="width:13px;height:13px;display:inline-block;background:#dbeaf5;border:1px solid #6f8295;box-sizing:border-box"></span>}
+                            </div>
+                        </div>
+                    }
+                </div>
+                <p>At synthesis, compare a 3×2 arrangement of distinct dots to a 3×2 unit-square region: arrays count objects, whereas area measures the space actually covered. Source graphics and the gated original Cool-down are not reproduced here.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 5) {
+            <section class="panel" aria-label="2021 source-equivalent rectangles, first-party drawings">
+                <h2>Warm-up — one more equal group</h2>
+                <p>The three original 2021 figures were inspected: first FIVE groups of three = 15, next SIX groups of three = 18, final SIX groups of FOUR = 24. In the original final drawing each group is a two-by-two mini-array. Explain how you see the equal groups.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:15px;margin:10px 0" aria-label="Independently drawn equal-group warm-up representations">
+                    @foreach(var model in new[]{(groups:5,each:3),(groups:6,each:3),(groups:6,each:4)}){
+                        <div><strong>@(model.groups) groups × @(model.each) = @(model.groups*model.each)</strong>
+                            <div style="display:flex;flex-wrap:wrap;max-width:245px;gap:5px">
+                                @for(var group=0;group<model.groups;group++){
+                                    <div style="@($"display:grid;grid-template-columns:repeat({(model.each==4?2:3)},12px);gap:2px;border:1px dashed #6f8295;padding:4px;margin-top:5px")" aria-hidden="true">
+                                        @for(var dot=0;dot<model.each;dot++){<span class="first-party-dot" style="width:10px;height:10px" aria-hidden="true"></span>}
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h2>Activity 1 — match source expressions to first-party rectangle cards A–G</h2>
+                <p>Seven original source cards have been inspected individually. These Edulytics rectangles are newly constructed from unit-square cells and preserve row/column counts; original publisher artwork is not used. Choose the card LETTER for each expression and explain the side-length structure. The letter feedback does not certify the explanation.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:18px;margin:12px 0" aria-label="Seven original first-party rectangle cards">
+                    @foreach(var card in new[]{(letter:"A",rows:2,cols:6),(letter:"B",rows:5,cols:7),(letter:"C",rows:8,cols:2),(letter:"D",rows:3,cols:3),(letter:"E",rows:7,cols:10),(letter:"F",rows:9,cols:5),(letter:"G",rows:8,cols:4)}){
+                        <div style="padding:9px;max-width:max-content">
+                            <strong>Card @card.letter</strong>
+                            <div role="img" aria-label="@($"First-party card {card.letter}, {card.rows} rows by {card.cols} columns of square units, area {card.rows*card.cols}")"
+                                 style="@($"display:grid;grid-template-columns:repeat({card.cols},12px);gap:1px;margin-top:5px")">
+                                @for(var sq=0;sq<card.rows*card.cols;sq++){
+                                    <span aria-hidden="true" style="display:block;width:12px;height:12px;box-sizing:border-box;border:1px solid #557b94;background:#daeff7"></span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <p>The seven original 2021 expressions: 9 × 5, 8 × 2, 7 × 10, 3 × 3, 2 × 6, 8 × 4 and 5 × 7. Match each individually. Both card letter and geometric explanation matter.</p>
+                <h2>Activity 2 — create five rectangles on your own unit-square grid</h2>
+                <p>Individually DRAW, label side lengths and find areas for 3 × 4, 4 × 6, 6 × 3, 7 × 4 and 3 × 2. Teachers may use the publisher's reduced-task support of at least three of five for suitable learners. The five mathematical areas are 12, 24, 18, 28 and 6 square units; numeric feedback alone never certifies tiled drawings.</p>
+                <p>Source synthesis compares the same 2 × 7 = 14 square-unit rectangle viewed as two rows of seven or seven columns of two. Rectangular area measures space fully covered by congruent tiles, unlike dot arrays that count objects. The publisher Cool-down is educator gated; Edulytics offers a separate first-party skill-equivalent task.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 6) {
+            <p class="note">Independent equivalent-count notation for the original four physical rectangles: 5×10=50, 3×6=18, 2×4=8 and 1×2=2 square cells. These different counts cover the same physical outline because the units have different sizes; the teacher checks the source print.</p>
+            <section class="panel" aria-label="Source area in square inches versus square centimetres">
+                <h2>The same number of squares is not always the same physical area</h2>
+                <p>All four original 2021 warm-up illustrations have been inspected: they show the SAME outer rectangular region (2:1 width to height) subdivided into 5×10 = 50 small square units, 3×6 = 18 larger square units, 2×4 = 8 still larger square units and finally 1×2 = 2 very large square units. Each partition has DIFFERENT-SIZED physical unit squares. The numerical counts 50, 18, 8 and 2 cannot be compared as areas without naming unit size.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:14px;margin:12px 0" aria-label="Four independently drawn equivalent-size rectangles with different square-unit counts">
+                    @foreach(var m in new[]{(letter:"A",rows:5,cols:10),(letter:"B",rows:3,cols:6),(letter:"C",rows:2,cols:4),(letter:"D",rows:1,cols:2)}){
+                        <div><strong>@m.letter: @(m.rows*m.cols) differently-sized square units</strong>
+                            <div role="img" aria-label="@($"First-party original-area-equivalent model {m.letter}: same 210 by 105 overall region, {m.rows} rows of {m.cols} square cells, total {m.rows*m.cols} cells")"
+                                 style="@($"width:210px;height:105px;display:grid;grid-template-columns:repeat({m.cols},1fr);grid-template-rows:repeat({m.rows},1fr);margin:8px 0")">
+                                @for(var x=0;x<m.rows*m.cols;x++){
+                                    <span aria-hidden="true" style="background:#d3eafa;border:1px solid #6c7f93;box-sizing:border-box"></span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h2>Activity 1: same count, DIFFERENT unit squares</h2>
+                <p>Partner 1 draws rectangles on one-inch-square paper; Partner 2 draws on one-centimetre-square paper. For each of 2 × 5, 7 × 3 and 6 × 8, the counts are respectively 10, 21 and 48 square units; however the first partner's actual region is larger because a square INCH is bigger than a square CENTIMETRE.</p>
+                <h2>Activity 2: measure the SAME original square twice</h2>
+                <p>Estimate the area of the teacher's 2-inch-by-2-inch square, trace/cut the source figure, and overlay it on both grids. It covers four square inches, but its area in square centimetres is NOT exactly 25; teachers must review the measurement and estimate. Do not round it or require a fixed integer from the original student task without measurement.</p>
+                <p>Important: the original first-edition Student Task Statements PDF (3 pages) and two separate 2021 physical measurement grid handouts (1-inch and 1-centimeter squares) have now been inspected. A pupil records two estimates FIRST, then physically traces or overlays the teacher-supplied source square and writes the observed inch² and cm² results plus BOTH multiplication expressions. The original printed drawing is not reproduced, and the source does not prescribe an EXACT whole-number cm² total.</p>
+                <p>The separate Edulytics examples below now require writing the unit alongside the number. Entering only “21” is insufficient for a prompt expecting “21 cm²”, and “21 in²” is the WRONG unit.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 7) {
+            <p class="note">Compare a square FOOT, square METER and square YARDS as area units: one square yard has side length one yard. Unit choice depends on the real object; a student must justify it rather than copy a nominal picture measurement.</p>
+            <section class="panel" aria-label="First-party source-aligned square-area units">
+                <h2>How big is ONE square foot or ONE square meter?</h2>
+                <p>Source 2021 warm-up: a pupil notices a large physical square outdoors. The original photograph is not copied here. Examine these independently drawn outline models instead; they are illustrative, not real-size prints. Each AREA unit is a square, not a single linear segment.</p>
+                <div style="display:flex;align-items:flex-end;gap:35px;flex-wrap:wrap;margin:16px 0">
+                    <div><strong>1 ft × 1 ft = 1 ft²</strong>
+                        <div role="img" aria-label="Small first-party outline square with one-foot sides, representing one square foot"
+                             style="width:55px;height:55px;background:#d9ecf5;border:3px solid #34779a;margin-top:8px"></div>
+                    </div>
+                    <div><strong>1 m × 1 m = 1 m²</strong>
+                        <div role="img" aria-label="Larger first-party outline square with one-meter sides, representing one square meter"
+                             style="width:181px;height:181px;background:#d6eee1;border:3px solid #2b8060;margin-top:8px"></div>
+                    </div>
+                </div>
+                <p>The original first-edition 2021 teacher examples also display physically sized square inches and square centimeters from the previous lesson. Show all FOUR: cm², in², ft², m², and ask which suits smaller or larger covered regions.</p>
+                <h2>Activity 1 — Teacher-reviewed reasons</h2>
+                <p>Suggest real spaces best measured by square meters, then real spaces best measured by square feet. Explain what one unit square would physically cover. A correct number without a physical-size explanation is not sufficient.</p>
+                <h2>Activity 2 — First-edition source contexts</h2>
+                <p>For each original context, select an area unit AND give a reason: a baseball field, the cover of your reading book, your classroom floor, a sheet of paper, a tabletop, and a phone screen. Several choices can be defensible with suitable reasoning; a teacher must review your examples.</p>
+                <p>Four additional original 2021 source comparisons have a specific quantity-and-unit answer: playing card ≈ 9 in²; student desk top ≈ 3 ft²; sticky note ≈ 55 cm²; classroom floor ≈ 55 m². Type the COMPLETE quantity including the SQUARED UNIT into the source checks below; a number alone must fail, and the teacher still reviews your justification.</p>
+                <h2>Optional scavenger hunt — source-page discrepancy</h2>
+                <p>The 2021 original online lesson HTML requests examples for cm², in², ft², and m². The actual 2021 five-page Student Task Statements PDF instead requests cm², in², ft², and SQUARE YARDS on its last page. This is a real discrepancy between source editions/formats. Work against the one your teacher assigned; write down which source version you used and justify your area-unit choices.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 8) {
+            <section class="panel" aria-label="Source-aligned original first-party models of missing rectangle squares">
+                <h2>Warm-up — one more or one less per equal group</h2>
+                <p>Original 2021 source figures: 4 groups of 5 = 20, then 4 groups of 6 = 24, then 4 groups of 4 = 16. The original second image has FOUR clusters of SIX dots, not 'five groups of six' as its erroneous alt text says. These are independently authored grouped models with the correct mathematics.</p>
+                <div style="display:flex;gap:18px;flex-wrap:wrap;margin:12px 0">
+                    @foreach(var model in new[]{(each:5,total:20),(each:6,total:24),(each:4,total:16)}){
+                        <div><strong>4 × @(model.each) = @(model.total)</strong>
+                            <div style="display:flex;flex-wrap:wrap;max-width:205px;gap:8px;margin-top:7px"
+                                 role="img" aria-label="@($"Four separate equal groups of {model.each} dots, total {model.total}")">
+                                @for(var group=0;group<4;group++){
+                                    <div aria-hidden="true" style="width:66px;display:flex;flex-wrap:wrap;justify-content:center;gap:3px;border:1px dashed #426a83;padding:5px;border-radius:9px">
+                                        @for(var dot=0;dot<model.each;dot++){<span class="first-party-dot" style="width:11px;height:11px" aria-hidden="true"></span>}
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h2>Activity 1 — restore Elena's hidden tile grid</h2>
+                <p>In the original math situation, the source art has TEN inch-square tiles across and NINE rows down. Every blank position is another unit square. The completed region therefore contains 9 × 10 = 90 square inches. This first-party demonstration uses a different palette and layout from the publisher's original diagram.</p>
+                <div style="display:grid;grid-template-columns:repeat(10,21px);grid-template-rows:repeat(9,21px);gap:0;width:max-content;border:1px solid #416b87;margin:12px 0"
+                     role="img" aria-label="Independent nine-row ten-column rectangle with some initial cells colored and blank cells outlined. The entire rectangle holds ninety equal square-inch tiles.">
+                    @for(var i=0;i<90;i++){
+                        var rr=i/10;var cc=i%10;
+                        var shown=rr==0 || cc==0 || (rr==1&&cc<4) || (rr==2&&cc<3);
+                        <span aria-hidden="true" style="@(shown?"background:#8ccee6;":"background:#fff;")border:1px solid #628296;box-sizing:border-box"></span>
+                    }
+                </div>
+                <p>The original real-world photograph represents Portuguese azulejo tiles; the original photos are references only, not reproduced here. Count the area of the whole rectangular surface instead of counting the few visible colored cells.</p>
+                <h2>Activity 2 — metric area without visible squares</h2>
+                <p>Original source rectangle 1 has eight one-meter intervals horizontally and four vertically: 8 m × 4 m = 32 m². Original rectangle 2 has FIVE internal ticks along the top, which means SIX intervals between the outer borders, and height 3 m: 6 m × 3 m = 18 m². These independent rectangles are proportioned according to the original row and column counts; the missing grid is imagined.</p>
+                <div style="display:flex;flex-wrap:wrap;gap:35px;margin:14px 0">
+                    @foreach(var model in new[]{(width:8,height:4),(width:6,height:3)}){
+                        <div><strong>@(model.width) m × @(model.height) m = @(model.width*model.height) m²</strong>
+                            <div style="@($"width:{model.width*23}px;height:{model.height*23}px;border:2px solid #477598;position:relative;margin:18px 5px 8px 0")"
+                                 role="img" aria-label="@($"Independent outline showing a {model.width}-meter by {model.height}-meter rectangle, area {model.width*model.height} square meters, with top 1-meter divisions.")">
+                                <div style="position:absolute;left:0;right:0;top:-8px;display:flex">
+                                    @for(var k=0;k<model.width;k++){
+                                        <span aria-hidden="true" style="flex:1;border-right:1px solid #477598;height:8px"></span>
+                                    }
+                                </div>
+                            </div>
+                            <p>Each top space represents 1 meter; teacher checks student multiplication and unit.</p>
+                        </div>
+                    }
+                </div>
+                <p>MLR8 asks pupils to explain why an incomplete first row and left edge still determine the full rectangular area. Rulers or straightedges may be used to complete the grid. The original educator-gated Cool-down remains separate from our first-party skill-equivalent assessment.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 9) {
+            <p class="note">Position a real ruler at ZERO on the rectangle edge before recording centimeters. Teacher observation of physical measurement is necessary; screen dimensions cannot prove a printed source length.</p>
+            <section class="panel" aria-label="Source-aligned first-party ruler and tape rectangle lesson">
+                <h2>Warm-up — five groups plus ONE more group</h2>
+                <p>The original first-edition diagrams both contain 18 dots. There are five black groups of three plus a new group of three shown in a different color, first as separate equal groups and then arranged as a full rectangular array. These are independently drawn examples and are NOT publisher images.</p>
+                <div style="display:flex;gap:24px;flex-wrap:wrap;margin:14px 0">
+                    <div><strong>5 × 3 + 3 = 18</strong>
+                        <div role="img" aria-label="Independent six separately outlined groups of three dots, last group visually differentiated, total eighteen"
+                             style="display:grid;grid-template-columns:repeat(3,53px);gap:5px;margin-top:9px">
+                            @for(var g=0;g<6;g++){
+                                <div style="display:flex;gap:3px;border:1px dashed #56839e;padding:7px">
+                                    @for(var dot=0;dot<3;dot++){<span class="first-party-dot" style="@((g==5)?"background:#bd5e30;width:11px;height:11px":"width:11px;height:11px")" aria-hidden="true"></span>}
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div><strong>6 × 3 = 18</strong>
+                        <div role="img" aria-label="First-party three-row six-column array, final column is a distinct group of three"
+                             style="display:grid;grid-template-columns:repeat(6,15px);gap:5px;margin-top:9px">
+                            @for(var i=0;i<18;i++){<span class="first-party-dot" style="@((i%6==5)?"background:#bd5e30;width:12px;height:12px":"width:12px;height:12px")" aria-hidden="true"></span>}
+                        </div>
+                    </div>
+                </div>
+                <h2>Activity 1 — measure source rectangles A, B and C</h2>
+                <p>Source first-edition 2021 A is a wide <strong>6 by 3 cm</strong> rectangle; B is a taller <strong>4 by 5 cm</strong> rectangle; C is a long <strong>10 by 3 cm</strong> rectangle in the original vector artwork. Those nominal centimeter dimensions were independently checked from the source SVG vector paths (28.3465 pt per cm), NOT inferred from alt text. Thus A = 18 cm², B = 20 cm² and C = 30 cm², so C has the largest area. Have students predict before using their real centimeter rulers to measure the original correctly printed 2021 handout. Physical print scaling is a separate teacher check.</p>
+                <p>These drawings are independently authored Edulytics models; they preserve the relevant 6:3, 4:5 and 10:3 mathematical proportions without copying source vector pixels. On-screen CSS pixels must NOT be used as physical centimeter ruler markings.</p>
+                <div style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin:14px 0">
+                    <div><strong>A — 6 × 3 = 18 cm²</strong><div role="img" aria-label="Independent model A, six equal units wide and three tall, area 18 square centimeters" style="width:144px;height:72px;border:2px solid #397c98;background:#e3f1f5;box-sizing:border-box;margin-top:8px"></div></div>
+                    <div><strong>B — 4 × 5 = 20 cm²</strong><div role="img" aria-label="Independent model B, four equal units wide and five tall, area 20 square centimeters" style="width:96px;height:120px;border:2px solid #397c98;background:#e3f1f5;box-sizing:border-box;margin-top:8px"></div></div>
+                    <div><strong>C — 10 × 3 = 30 cm²</strong><div role="img" aria-label="Independent model C, ten equal units wide and three tall, area 30 square centimeters" style="width:240px;height:72px;border:2px solid #397c98;background:#e3f1f5;box-sizing:border-box;margin-top:8px"></div></div>
+                </div>
+                <p>Teacher checks source PDF p2 A, B and C against a correctly printed 100% scale sheet, zero alignment, the measured side lengths and the <strong>square centimeter</strong> unit. The source image of a ruler displays each centimeter subdivided into smaller tick marks; centimeters are intervals between whole-number marks, not the number of ticks.</p>
+                <h2>Activity 2 — build with real tape and feet</h2>
+                <p>Your team of four receives ONE area target from the 2021 source: 4 ft², 6 ft², 9 ft², 10 ft², 12 ft², or 16 ft². Use a real yardstick or ruler and masking/painter's tape to construct a rectangle on the floor. Label actual foot side lengths, check length × width, and have every student explain the layout. Only the teacher can assess the physical build. Never accept a typed number as proof the rectangle was constructed.</p>
+                <p>First-party example ONLY, not a required solution: one 12 ft² target can be built as 3 ft by 4 ft. Other factor pairs or orientations may also be correct when physically feasible. Optional stand-alone digital practice has explicitly GIVEN side lengths (such as 7 cm × 4 cm) and is not a numerical substitute for source tasks A/B/C.</p>
+                <p>Lesson synthesis: compare complete square grids, partial grids and invisible grids; measuring the two side lengths still determines rectangle area when the scale and squared units agree.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 10) {
+            <section class="panel" aria-label="Community garden area models">
+                <h2>Paint a wall — choose and explain</h2>
+                <svg viewBox="0 0 300 170" width="300" style="max-width:100%;height:auto" role="img"
+                     aria-label="Rectangle six meters wide and three meters high">
+                    <title>Wall with given side lengths</title>
+                    <rect x="28" y="20" width="216" height="108" fill="#e3f1f5" stroke="#397c98" stroke-width="2" />
+                    <text x="136" y="152" text-anchor="middle">6 m</text>
+                    <text x="252" y="78">3 m</text>
+                </svg>
+                <table class="source-chart">
+                    <caption>Coverage of one container</caption>
+                    <thead><tr><th scope="col">Size</th><th scope="col">Coverage</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Small</th><td>3 m²</td></tr>
+                        <tr><th scope="row">Medium</th><td>10 m²</td></tr>
+                        <tr><th scope="row">Large</th><td>40 m²</td></tr>
+                    </tbody>
+                </table>
+                <p>Choose enough paint and explain why it works. Several purchases are possible.
+                    Prices are not given. This question does not require the fewest containers.</p>
+                <h2>Garden — first and second readings</h2>
+                <p>Elena has a rectangular space in a community garden. Her plants need at least
+                    20 ft². Her soil can fill at most 30 ft². One side of her space is 3 ft.</p>
+                <ol><li>Read the situation and discuss what is happening.</li>
+                    <li>Read it again. Identify the known quantities and their units.</li>
+                    <li>Only then open the garden questions below for the third read.</li></ol>
+                <p>Work in groups of three or four. Agree how everyone will contribute. Use tiles,
+                    grid paper as a scale model, and tools to make a poster. A centimeter on the paper
+                    can represent a foot in your model; it is not the same physical length.</p>
+                <details>
+                    <summary>After solving — compare area representations</summary>
+                    <p>A full grid, side intervals, and two labelled sides can describe the same rectangle.</p>
+                    <div role="img" aria-label="Independent three-row six-column array of eighteen equal square units"
+                         style="display:grid;grid-template-columns:repeat(6,24px);width:max-content;max-width:100%;margin:12px 0">
+                        @for(var cell=0;cell<18;cell++) {
+                            <span aria-hidden="true" style="display:block;width:24px;height:24px;border:1px solid #397c98;box-sizing:border-box;background:#e3f1f5"></span>
+                        }
+                    </div>
+                    <svg viewBox="0 0 220 120" width="220" style="max-width:100%;height:auto" role="img"
+                         aria-label="Independent rectangle with six equal intervals on the top and three on the left">
+                        <title>Six by three unit intervals without a full grid</title>
+                        <rect x="25" y="20" width="144" height="72" fill="none" stroke="#397c98" stroke-width="2" />
+                        @for(var mark=1;mark<6;mark++) {
+                            <line x1="@(25+24*mark)" y1="20" x2="@(25+24*mark)" y2="29" stroke="#397c98" />
+                        }
+                        @for(var mark=1;mark<3;mark++) {
+                            <line x1="25" y1="@(20+24*mark)" x2="34" y2="@(20+24*mark)" stroke="#397c98" />
+                        }
+                    </svg>
+                    <p>A 6-by-3 rectangle covers 18 square units. A square inch has sides of 1 inch;
+                        a square meter has sides of 1 meter. Select a unit suitable for the surface.
+                        These diagrams are conceptual models; screen size is not a physical ruler.</p>
+                    <div style="display:flex;gap:24px;flex-wrap:wrap">
+                        @foreach(var unit in new[] { "in", "m" }) {
+                            <svg viewBox="0 0 150 130" width="150" role="img" aria-label="@($"One square { (unit == "in" ? "inch" : "meter") }, each side one { (unit == "in" ? "inch" : "meter") }; conceptual diagram, not to scale")">
+                                <title>@($"One {unit} by one {unit}")</title>
+                                <rect x="25" y="15" width="80" height="80" fill="#e3f1f5" stroke="#397c98" stroke-width="2" />
+                                <text x="65" y="115" text-anchor="middle">1 @unit</text>
+                                <text x="112" y="58">1 @unit</text>
+                            </svg>
+                        }
+                    </div>
+                    <p>The two unit models are not drawn to a common physical scale. A real square
+                        meter is much larger than a square inch.</p>
+                </details>
+            </section>
+        }
+        @if(showMinuteClock) {
+            <section class="panel" aria-label="Edulytics original analogue clock reading">
+                <h2>Read an original analogue clock</h2>
+                <p>The time is in the afternoon. Read the hour and minute hands,
+                    then enter the complete time. This diagram is independently
+                    drawn for this lesson's skill and is not copied publisher artwork.</p>
+                <svg viewBox="0 0 240 240" width="240" height="240"
+                     role="img" aria-label="An analogue dial showing the hour hand a little past two and the minute hand one tick past the seven; count the minute marks accurately">
+                    <title>Read the hour and minute hands</title>
+                    <circle cx="120" cy="120" r="94" stroke="#244860"
+                            stroke-width="3" fill="#ffffff" />
+                    @for(var tick=0;tick<60;tick++) {
+                        var theta=tick*Math.PI/30.0;
+                        var outer=87;
+                        var inner=tick%5==0?75:82;
+                        var x1=(120+inner*Math.Sin(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        var y1=(120-inner*Math.Cos(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        var x2=(120+outer*Math.Sin(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        var y2=(120-outer*Math.Cos(theta)).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        <line x1="@x1" y1="@y1" x2="@x2" y2="@y2"
+                              stroke="#244860" stroke-width="@(tick%5==0?2.5:1)" />
+                    }
+                    <text x="120" y="48" text-anchor="middle" font-size="18">12</text>
+                    <text x="192" y="126" text-anchor="middle" font-size="18">3</text>
+                    <text x="120" y="197" text-anchor="middle" font-size="18">6</text>
+                    <text x="48" y="126" text-anchor="middle" font-size="18">9</text>
+                    <line x1="120" y1="120" x2="164" y2="111"
+                          stroke="#22445b" stroke-width="7" stroke-linecap="round" />
+                    <line x1="120" y1="120" x2="82" y2="173"
+                          stroke="#167b91" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="120" cy="120" r="5" fill="#22445b" />
+                </svg>
+                <p>Use the small marks for individual minutes, not only the
+                    5-minute numbers. The clock alone cannot tell a.m. from p.m.</p>
+            </section>
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit2Lesson11")
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit2Lesson12")
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit2Lesson13")
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit2Lesson14")
+        }
+        @if(l.UnitNumber == 2 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit2Lesson15")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 1) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson1")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 2) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson2")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 3) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson3")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 4) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson4")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 5) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson5")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson6")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 7) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson7")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 8) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson8")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 9) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson9")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 10) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson10")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson11")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson12")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson13")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson14")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson15")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 16) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson16")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 17) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson17")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 18) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson18")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 19) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson19")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 20) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson20")
+        }
+        @if(l.UnitNumber == 3 && l.LessonNumber == 21) {
+            @await Html.PartialAsync("_Grade3Unit3Lesson21")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 1) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson1")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 2) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson2")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 3) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson3")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 4) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson4")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 5) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson5")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson6")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 7) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson7")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 8) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson8")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 9) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson9")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 10) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson10")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson11")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson12")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson13")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson14")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson15")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 16) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson16")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 17) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson17")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 18) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson18")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 19) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson19")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 20) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson20")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 21) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson21")
+        }
+        @if(l.UnitNumber == 4 && l.LessonNumber == 22) {
+            @await Html.PartialAsync("_Grade3Unit4Lesson22")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 1) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson1")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 2) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson2")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 3) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson3")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 4) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson4")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 5) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson5")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson6")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 7) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson7")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 8) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson8")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 9) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson9")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 10) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson10")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson11")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson12")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson13")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson14")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson15")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 16) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson16")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 17) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson17")
+        }
+        @if(l.UnitNumber == 5 && l.LessonNumber == 18) {
+            @await Html.PartialAsync("_Grade3Unit5Lesson18")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 1) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson1")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 2) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson2")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 3) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson3")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 4) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson4")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 5) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson5")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson6")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 7) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson7")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 8) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson8")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 9) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson9")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 10) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson10")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson11")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson12")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson13")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson14")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson15")
+        }
+        @if(l.UnitNumber == 6 && l.LessonNumber == 16) {
+            @await Html.PartialAsync("_Grade3Unit6Lesson16")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 1) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson1")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 2) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson2")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 3) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson3")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 4) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson4")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 5) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson5")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson6")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 7) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson7")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 8) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson8")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 9) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson9")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 10) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson10")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson11")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson12")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson13")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson14")
+        }
+        @if(l.UnitNumber == 7 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit7Lesson15")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 1) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson1")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 2) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson2")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 3) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson3")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 4) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson4")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 5) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson5")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 6) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson6")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 7) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson7")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 8) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson8")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 9) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson9")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 10) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson10")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 11) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson11")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 12) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson12")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 13) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson13")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 14) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson14")
+        }
+        @if(l.UnitNumber == 8 && l.LessonNumber == 15) {
+            @await Html.PartialAsync("_Grade3Unit8Lesson15")
+        }
+        @if(l.SourceSubtasks.Count > 0) {
+            <section class="panel" aria-label="Individual published source-aligned mathematical subtasks">
+                <h2>@(l.SourceSubtasks.All(q => q.AnswerType=="teacher") ? "Original public source: teacher-reviewed constructions and discussion" : "Original public source: individually checked mathematical subtasks")</h2>
+                <p>These independently worded prompts preserve the source contexts. For each one, draw equal groups, explain the representation or discuss as required. A teacher judges the drawings, card matches and explanations; machine-checkable numeric anchors never establish completion of the original source activities.</p>
+                @for(var i=0;i<l.SourceSubtasks.Count;i++){
+                    var task=l.SourceSubtasks[i];
+                    @if(l.UnitNumber == 2 && l.LessonNumber == 10 && task.Id.Contains("-A2-", StringComparison.Ordinal)) {
+                        <details class="panel" open="@(Model.Submitted)">
+                            <summary>Third read — garden task @(i+1)</summary>
+                            <p>@task.Prompt</p>
+                            @if(task.AnswerType != "teacher") {
+                                <label for="source-sub-answer-@i">One possible other side, with ft</label>
+                                <input id="source-sub-answer-@i" name="SourceSubtaskAnswers[@i]" maxlength="100"
+                                       value="@Model.Answers.SourceSubtaskAnswers.ElementAtOrDefault(i)" inputmode="text" />
+                            } else {
+                                <input type="hidden" name="SourceSubtaskAnswers[@i]" value="" />
+                                <p>Your teacher reviews this activity; no automatic completion grade applies.</p>
+                            }
+                            <label for="source-sub-explain-@i">My diagram, poster notes or explanation</label>
+                            <textarea id="source-sub-explain-@i" name="SourceSubtaskReasoning[@i]"
+                                      rows="3" maxlength="2000">@Model.Answers.SourceSubtaskReasoning.ElementAtOrDefault(i)</textarea>
+                        </details>
+                        continue;
+                    }
+                    <div class="panel">
+                        <h3>@task.SourceActivity — task @(i+1)</h3>
+                        <p>@task.Prompt</p>
+                        @if(task.AnswerType!="teacher"){
+                            <label for="source-sub-answer-@i">@(task.AnswerType=="yes-no" ? "Does the diagram match? Enter yes or no" : "My calculated response")</label>
+                            <input id="source-sub-answer-@i" name="SourceSubtaskAnswers[@i]" maxlength="100"
+                                value="@Model.Answers.SourceSubtaskAnswers.ElementAtOrDefault(i)" inputmode="text" />
+                        } else {
+                            <input type="hidden" name="SourceSubtaskAnswers[@i]" value="" />
+                            <p>Source task requires a teacher-reviewed diagram, card match or spoken explanation. No automatic numeric pass applies.</p>
+                        }
+                        <label for="source-sub-explain-@i">My matching diagram, equation or explanation</label>
+                        <textarea id="source-sub-explain-@i" name="SourceSubtaskReasoning[@i]"
+                            rows="3" maxlength="2000">@Model.Answers.SourceSubtaskReasoning.ElementAtOrDefault(i)</textarea>
+                    </div>
+                }
+                <p>Source task PDF figures, co-crafted oral questions and the publisher Cool-down are NOT automatically certified by these entries.</p>
+            </section>
+        }
+        @if(l.SourceBasedCheck is not null) {
+            <section class="panel">
+                <h2>Source-aligned skill check — locally reviewed text</h2>
+                <p>@l.SourceBasedCheck.Prompt</p>
+                <p>The mathematical situation is adapted from the original public 2021 Student Facing HTML. Publisher figures and teacher-only Cool-downs are not reproduced.</p>
+                @if(l.SourceBasedCheck.AnswerType != "teacher") {
+                    <label for="source-check-answer">My answer</label>
+                    <input id="source-check-answer" name="SourceCheckAnswer" value="@Model.Answers.SourceCheckAnswer" maxlength="100" inputmode="text" required="@(l.UnitNumber!=1 || (l.LessonNumber!=10 && l.LessonNumber!=11))" />
+                } else {
+                    <p>This source-based problem requires a drawing, measurement, reasoning or project. A teacher must evaluate it; the numeric grader cannot approve it.</p>
+                }
+                <label for="source-check-reason">My drawing, equation and explanation</label>
+                <textarea id="source-check-reason" name="SourceCheckReasoning" rows="3" maxlength="2000">@Model.Answers.SourceCheckReasoning</textarea>
+            </section>
+        }
+        @if(l.UnitNumber==1 && l.LessonNumber==9) {
+            <section class="panel">
+                <h2>2021 source lesson 9 — original Cool-down boundary</h2>
+                <p>The last individually mapped source subtask above is the real 2021 "Represent Equal Groups" Cool-down: Jada has 3 bags, 5 bracelets in each. Build three groups of five and explain how your picture or counters show the bags. Teacher reviews this task. The optional Edulytics stickers exercise below does NOT replace it.</p>
+                <p>Do NOT require multiplication expressions at this stage. In the original 2021 sequence those expressions are introduced in a later lesson; only equal-group representations and reasoning are required here.</p>
+                <p>Teacher supplies 20 connecting cubes or counters per student for both original activities and records partner/MLR8 oral work separately.</p>
+            </section>
+        }
+        <section class="panel">
+            <h2>2. New Edulytics skill practice</h2>
+            <p>@l.IndependentPractice!.Prompt</p>
+            @if(l.IndependentPractice.AnswerType != "teacher") {
+                <label for="practice">My answer</label>
+                <input id="practice" name="PracticeAnswer" value="@Model.Answers.PracticeAnswer" maxlength="100" inputmode="text" required="@(l.UnitNumber!=1 || (l.LessonNumber!=10 && l.LessonNumber!=11))" />
+            } else {
+                <p>This task requires a teacher to evaluate your design or original reasoning. There is no numeric pass.</p>
+            }
+            <label for="practice-reasoning">Drawing, equation or explanation</label>
+            <textarea id="practice-reasoning" name="PracticeReasoning" rows="4" maxlength="2000">@Model.Answers.PracticeReasoning</textarea>
+        </section>
+        <section class="panel">
+            <h2>@(l.UnitNumber==1 && (l.LessonNumber==9 || l.LessonNumber==10 || l.LessonNumber==11) ? "3. OPTIONAL Edulytics-authored extra Cool-down (NOT publisher source)" : "3. New Edulytics Cool-down")</h2>
+            <p>@l.OriginalEdulyticsCoolDown!.Prompt</p>
+            @if(l.OriginalEdulyticsCoolDown.AnswerType != "teacher") {
+                <label for="cool-answer">My answer</label>
+                <input id="cool-answer" name="CoolDownAnswer" value="@Model.Answers.CoolDownAnswer" maxlength="100" inputmode="text" required="@(l.UnitNumber!=1 || (l.LessonNumber!=10 && l.LessonNumber!=11))" />
+            } else {
+                <p>Your teacher reviews the response or constructed work; no automated grade is possible.</p>
+            }
+            <label for="cool-reasoning">Explain my strategy with a representation</label>
+            <textarea id="cool-reasoning" name="CoolDownReasoning" rows="4" maxlength="2000">@Model.Answers.CoolDownReasoning</textarea>
+        </section>
+        <section class="panel">
+            <h2>4. Teacher-only evaluation rubric</h2>
+            <p>@l.TeacherReviewNote</p>
+            <p>Correct numeric values are only mathematical checks. They do not prove source task parity, actual classroom participation, a correct diagram, or completion of this lesson.</p>
+        </section>
+        <button type="submit">Check eligible numeric answers</button>
+    </form>
+    @if(Model.Submitted) {
+        <section class="panel" aria-live="polite">
+            <h2>Mathematical feedback (not a school grade)</h2>
+            @if(Model.SourceSubtaskFeedback is not null) {
+                @for(var i=0;i<Model.SourceSubtaskFeedback.Count;i++){
+                    var feedback=Model.SourceSubtaskFeedback[i];
+                    <div class="@(feedback.NumericCorrect==true?"ok":feedback.NumericCorrect==false?"no":"human")">
+                        <h3>Source subtask @(i+1): @l.SourceSubtasks[i].SourceActivity</h3>
+                        <p>@(feedback.NumericCorrect==true?"Numerical result correct.":feedback.NumericCorrect==false?"Numerical answer needs revision.":"Requires teacher judgment.") @feedback.Message</p>
+                        <p><em>Individual drawings and reasoning remain teacher-reviewed, even if the integer is correct.</em></p>
+                    </div>
+                }
+            }
+            @foreach(var item in new[] {
+                (Name:"Source-aligned numerical check",Feedback:Model.SourceCheckFeedback),
+                (Name:"Original skill practice",Feedback:Model.PracticeFeedback),
+                (Name:"Edulytics Cool-down",Feedback:Model.CoolDownFeedback)
+            }) {
+                @if(item.Feedback is not null) {
+                <div class="@(item.Feedback.NumericCorrect==true?"ok":item.Feedback.NumericCorrect==false?"no":"human")">
+                    <h3>@item.Name</h3>
+                    <p>@(item.Feedback.NumericCorrect==true?"Numerical result correct.":item.Feedback.NumericCorrect==false?"Numerical result needs revision.":"Requires teacher judgment.") @item.Feedback.Message</p>
+                    <p><em>Reasoning, drawings, representations and human tasks remain teacher-reviewed.</em></p>
+                </div>
+                }
+            }
+        </section>
+    }
+    <p>Academic alignment reference: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-@l.UnitNumber/lesson-@l.LessonNumber/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5 Grade 3, First Edition (2021)</a> (CC BY 4.0 where applicable). This independently written companion is an authoring candidate and has not passed source-perfect acceptance or CI.</p>
+</main>

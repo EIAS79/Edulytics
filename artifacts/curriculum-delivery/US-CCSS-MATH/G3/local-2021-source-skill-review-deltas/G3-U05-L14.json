@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 93,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L14",
+  "title": "How Do You Compare Fractions?",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-5/lesson-14/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U05.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U05.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U05-L14.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Are the source fractions 3/4 and 6/8 equivalent? Enter = if equal or a comparison symbol.",
+      "answerType": "comparison",
+      "expected": "="
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-5/lesson-14/lesson.html",
+      "verified": "STUDENT_FACING_SOURCE_TEXT_REVIEWED",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Number Talk: Which Whole Numbers? (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-5/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Equivalent or Not? (25 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Same Fractions, Different Result? (10 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-5/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-5/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: How Would You Decide? (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-5/lesson-14/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Number lines.",
+      "Two number lines. Top, 0 to 1 by sixths. Only 0 and 1 labeled. Point plotted at 4 sixths. Bottom, 0 to 1 by sixths, 0 and 1 labeled, point plotted at 5 sixths."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Are the source fractions 3/4 and 6/8 equivalent? Enter = if equal or a comparison symbol.",
+      "answerType": "comparison",
+      "expected": "="
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s represent and compare fractions.",
+      "sourceLearningGoals": "Represent and compare fractions in a way that makes sense to them.",
+      "teachingSteps": [
+        "Ensure both fractions refer to the same-sized whole.",
+        "Use equal partitions or a number line to compare size.",
+        "Write <, > or = and explain why the difference in numerator or denominator matters."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and compare fractions.",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Compare 1/2 and 1/3 on equal-sized wholes.",
+      "answerType": "comparison",
+      "expected": ">"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "Compare 4/6 and 5/6 using <, > or =.",
+      "answerType": "comparison",
+      "expected": "<"
+    },
+    "humanRubric": "Source asks why different-sized diagrams can confuse comparison. Comparisons require same-sized wholes.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "grade": "Grade 3",
+  "gradeOrdinal": 55,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L19",
+  "title": "Situations and Equations",
+  "originalSourceEdition": "IM K–5 First Edition 2021",
+  "original2021LocalLessonHtml": "unit-3/lesson-19/lesson.html",
+  "studentFacingSourceArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-student-facing-text/U03.json",
+  "teacherPageElementArchive": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/local-2021-teacher-page-elements/U03.json",
+  "baseCheckpointPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/unclosed-authoring-candidates/G3-U03-L19.json",
+  "stageA": {
+    "state": "PUBLIC_STUDENT_FACING_TASK_TEXT_INDIVIDUALLY_REVIEWED_2021",
+    "originalAllVisualGeometryVerified": false,
+    "teacherManualOrManipulativesFullyReviewed": false,
+    "sourceTextSkillAdaptation": {
+      "prompt": "Mai has 104 beads and receives two packs of 10. How many beads now?",
+      "answerType": "integer",
+      "expected": "124"
+    },
+    "sourceCheckProvenance": {
+      "localHtml": "unit-3/lesson-19/lesson.html",
+      "verified": "STUDENT_FACING_TEXT_ONLY",
+      "figurePixelsInspected": false
+    },
+    "originalSourceHeadings": [
+      {
+        "sourceElementId": "S-1",
+        "heading": "Warm-up: Notice and Wonder: The Unknown (10 minutes)",
+        "kind": "WARM_UP",
+        "referenceHtml": "unit-3/lesson-19/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-2",
+        "heading": "Activity 1: Mai's Beads (20 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-19/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-3",
+        "heading": "Activity 2: Represent, Solve, Explain (15 minutes)",
+        "kind": "ACTIVITY",
+        "referenceHtml": "unit-3/lesson-19/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-4",
+        "heading": "Lesson Synthesis",
+        "kind": "TEACHER_SYNTHESIS",
+        "referenceHtml": "unit-3/lesson-19/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      },
+      {
+        "sourceElementId": "S-5",
+        "heading": "Cool-down: How Many Beads? (5 minutes)",
+        "kind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+        "referenceHtml": "unit-3/lesson-19/lesson.html",
+        "currentOneToOneStatus": "MISMATCH_BLOCKED",
+        "reason": "Original item/subquestions/teacher strategy and corresponding Rich V2 effective learner body have not been verified one-to-one."
+      }
+    ],
+    "originalSourceVisualAltDescriptions": [
+      "Diagram. One rectangle split into 4 parts. One part labeled question mark. The other 3 parts labeled 8. Total length, 128.",
+      "Diagram. One rectangle split into 4 parts. One part labeled b. The other three parts labeled 8. Total length, 128.",
+      "Diagram. One rectangle split into 3 parts. One part labeled n. The other two parts labeled 10. Total length, 124.",
+      "Diagram. One rectangle split into 3 parts. One part labeled 104. The other two parts labeled 10. Total length, n.",
+      "Diagram. One rectangle split into 3 parts. One part labeled 104. The other two parts, labeled n. Total length, 124.",
+      "A game called Mancala in progress."
+    ],
+    "originalElementsFullyOneToOneVerified": 0,
+    "originalStudentTaskPdfRead": false
+  },
+  "stageB": {
+    "state": "FIRST_PARTY_LEARNER_SKILL_ADAPTATION_WRITTEN_RICH_V2_EFFECTIVE_BODY_UNVERIFIED",
+    "learnerSourceCheck": {
+      "prompt": "Mai has 104 beads and receives two packs of 10. How many beads now?",
+      "answerType": "integer",
+      "expected": "124"
+    },
+    "supplementalLessonTeachingGuidance": {
+      "sourceGoal": "Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
+      "sourceLearningGoals": "Represent and solve two-step word problems using equations with a letter standing for the unknown quantity.",
+      "teachingSteps": [
+        "Identify hundreds, tens and ones in each number.",
+        "Use a place-value drawing, number line or algorithm appropriate to this lesson.",
+        "Check the answer by the inverse operation or a reasonable estimate."
+      ],
+      "caution": "Check that the representation, units, and reasoning meet the specific goal: Let’s represent and solve problems. Required Preparation CCSS Standards Addressing 3.OA.D.8 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Questions Who has been sharing",
+      "targetRichV2Field": "lesson-specific correction proposal; not the published canonical body"
+    },
+    "candidateBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "learnerRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "existingContentReplacedOrPublished": false
+  },
+  "stageC": {
+    "state": "NUMERIC_OR_TEACHER_CONTRACT_AUTHORED_TESTS_NOT_EXECUTED",
+    "firstPartyPractice": {
+      "prompt": "Mai has 104 beads and two equal packs bring her to 124. How many beads per pack?",
+      "answerType": "integer",
+      "expected": "10"
+    },
+    "independentEdulyticsCoolDown": {
+      "prompt": "A jar contains 104 stones and six pits receive three stones each. How many remain?",
+      "answerType": "integer",
+      "expected": "86"
+    },
+    "humanRubric": "Different source equations place the unknown in different locations; students must explain equation alignment.",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsExecuted": false,
+    "sourceTaskFullCoverageConfirmed": false
+  },
+  "originalImageRightsAudited": false,
+  "originalPublisherCoolDownCopied": false,
+  "equivalentFirstPartyCoolDownAuthorized": true,
+  "oneToOneElementParityPercent": null,
+  "authoringClosure": "A_C_EXPLICIT_GAP",
+  "readyForStageD": false,
+  "academicApproval": "NOT_CLAIMED",
+  "gaps": [
+    "Original public 2021 figures/cards/diagrams and geometry need pixel/material review.",
+    "Exact teacher instructions, original subquestions and actual student task PDF remain unverified one-to-one.",
+    "Published Rich V2 rendering and materialized translations not confirmed against source.",
+    "Source-to-digital full skill-family and source item coverage not formally verified.",
+    "Teacher-led work requires classroom/scoring evidence; source skill check is not original task duplication.",
+    "All written .NET and Razor test contracts deliberately not run until Stage D."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_INTENTIONALLY",
+  "merged": false,
+  "deployed": false
+}

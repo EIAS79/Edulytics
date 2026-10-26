@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u07-l11-2021-two-rectangles-same-perimeter-distinct-areas-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U07:L11",
+      "CultureCode": "en",
+      "Title": "Rectangles with the Same Perimeter",
+      "ExplanationParagraphs": [
+        "Verified from original IM K–5 First Edition 2021 Grade 3 Unit 7 Lesson 11: public teacher lesson, preparation, three original student PDF pages and one-page Square Dot Paper Standard from the source blackline ZIP. The 20-column by 25-row original printed dot sheet provides 19×24 unit intervals when connecting adjacent dots. No publisher art embedded in Edulytics. Original gated publisher Cool-down Perimeter of 18 not read or reproduced.",
+        "Purpose: draw rectangles having equal perimeter but DIFFERENT area. CCSS 3.MD.D.8 and 3.OA.C.7. Source structure: Number Talk Multiply to Divide 10 min, Perimeter of 16 Units 15 min, Same Perimeter Different Area 20 min, synthesis 10 min, gated Cool-down 5 min. Teacher uses MLR8 peer explanation, scissors/tape cut-outs, FOUR labeled wall posters and a gallery walk, not just a fill-the-blank number.",
+        "Source warm-up four mental expressions: 5Ã—5=25, 10Ã—5=50, 2Ã—5=10, 85Ã·5=17. This last quotient is constructed using 25+50+10=85, equivalent to 5Ã—(5+10+2)=85. Grade integer answers but teacher examines the multiplication-decomposition reasoning.",
+        "Activity 11.1 asks learners to draw AS MANY different rectangles as they can with perimeter exactly 16 grid units, find the AREA of EACH drawing, and justify. With positive integer dot intervals, half perimeter is 8. Ignoring rotation, exhaustive dimensions are 1Ã—7 (area 7 square units), 2Ã—6 (area 12), 3Ã—5 (area 15), 4Ã—4 (area 16). They all have 16 linear units of perimeter, but different square-unit areas. Source drawing and completeness are teacher-reviewed, not a single scalar.",
+        "Activity 11.2 asks for TWO different-area rectangles for EACH of four explicit perimeters: 12, 20, 26, 34 linear units, then lets students CHOOSE their own perimeter. Source teacher accessibility adjustment allows students to select THREE of the FIVE perimeter prompts. Independently check dimension pairs, but do not claim that merely typing four dimensions proves the printed drawings exist.",
+        "Feasible grid-aligned source examples on the 19-by-24-interval dot sheet: 12 units can be 1Ã—5 (area5) and 2Ã—4 (area8). 20 units: 2Ã—8 (area16) and 4Ã—6 (area24). 26 units: 3Ã—10 (area30) and 5Ã—8 (area40). 34 units: 7Ã—10 (area70) and 8Ã—9 (area72). Each rectangle pair has exactly matching perimeter and unequal areas; area is in SQUARE units rather than linear units. Numerous other pairs are valid if source sheet supports the dimensions.",
+        "The independent typed pair checker accepts four positive whole-number dimensions a,b;c,d, with both 2(a+b) and 2(c+d) equal to source target, and aÃ—b UNEQUAL to cÃ—d. It also requires each rectangle fit the original dot sheet in either orientation: 19 horizontal unit intervals by 24 vertical. Order of rectangles and rotation do not affect validity. Actual drawing straightness, closedness, dots/interval scaling and explanation remain teacher approval.",
+        "Source activity 11.2 further requires selecting one or two paper rectangle cut-outs, taping them to the appropriate labeled 12/20/26/34 poster, and discussing what students notice/wonder on a gallery walk. Original teacher may challenge students to notice that changing opposite dimensions keeps total linear perimeter fixed but changes area, or to ask about parity of whole-unit perimeters.",
+        "Lesson synthesis contrasts total boundary length and space covered. Matching perimeters need not imply matching areas, and visually different rectangles may share area in other situations. The same perimeter is constrained by a+b, while area depends on aÃ—b. Publisher Cool-down Perimeter of 18 is teacher-gated and not reproduced. Tests written but not executed; no runtime/CI/academic Stage D approval is represented.",
+        "The original 19×24 unit-interval dot paper, area-model cut-outs and source perimeters 12, 20, 26, 34 belong to teacher-gated drawing tasks. The physical source master remains teacher supervised."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perimeter fixed by sum",
+          "Definition": "For rectangle width w, length l, P=2(w+l).",
+          "Rule": "For a fixed even P, w+l=P/2.",
+          "Example": "16 units -> widths and lengths add to 8."
+        },
+        {
+          "Title": "Area depends on product",
+          "Definition": "Rectangle area A=wÃ—l measured in square units.",
+          "Rule": "Different factors with same sum often have different products.",
+          "Example": "1Ã—7 area7, 4Ã—4 area16, both perimeter16."
+        },
+        {
+          "Title": "Two different-area rectangles",
+          "Definition": "Both drawings meet the same requested linear perimeter but have unequal products.",
+          "Rule": "2(a+b)=2(c+d)=target AND aÃ—b != cÃ—d.",
+          "Example": "2Ã—8 and 4Ã—6 both P20; areas16 vs24."
+        },
+        {
+          "Title": "Dot paper dimensions",
+          "Definition": "One length unit is the interval between neighboring printed dots.",
+          "Rule": "Original source grid allows 19 width and 24 height unit intervals.",
+          "Example": "Source 34-unit task allows 8Ã—9 or 7Ã—10."
+        },
+        {
+          "Title": "Teacher drawing / gallery",
+          "Definition": "Cut out and post source rectangles for collaborative comparison.",
+          "Rule": "Writing numerical dimensions alone cannot certify sketch precision or gallery reasoning.",
+          "Example": "Source four posters 12,20,26,34 and optional student-selected fifth target."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Enumerating perimeter 16",
+          "Question": "Draw multiple original-task rectangles with P16 and compare area.",
+          "Method": "Use w+l=8 with positive integer widths.",
+          "Steps": [
+            "1+7=8 gives area7.",
+            "2+6=8 gives area12.",
+            "3+5=8 gives area15.",
+            "4+4=8 gives area16."
+          ],
+          "Answer": "Four unique integer-sided rectangle dimensions ignoring orientation",
+          "Check": "Teacher reviews all actual dot-paper drawings and explanations."
+        },
+        {
+          "Title": "Two distinct areas same perimeter 26",
+          "Question": "Can 3Ã—10 and 5Ã—8 both have P26?",
+          "Method": "Compare sums and products.",
+          "Steps": [
+            "3+10=13, 5+8=13.",
+            "Both perimeters 2Ã—13=26.",
+            "Areas 30 vs40 square units."
+          ],
+          "Answer": "Yes, valid distinct-area pair",
+          "Check": "Both fit original 19×24 source dot sheet."
+        },
+        {
+          "Title": "Source multiplication to divide",
+          "Question": "How does 25+50+10 help with 85Ã·5?",
+          "Method": "Sum three known multiples of five.",
+          "Steps": [
+            "5Ã—5=25; 10Ã—5=50; 2Ã—5=10.",
+            "Their sum is 85.",
+            "5+10+2=17 groups of five."
+          ],
+          "Answer": "17",
+          "Check": "17Ã—5=85."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume equal perimeter implies equal area.",
+          "WhyWrong": "Sum of factors fixed does not fix product.",
+          "Correction": "Compare original 1Ã—7 vs4Ã—4 with perimeter16 but area7 vs16."
+        },
+        {
+          "Mistake": "Submit two rotations of the same rectangle.",
+          "WhyWrong": "Swapping width and length leaves product unchanged.",
+          "Correction": "Require genuinely different areas."
+        },
+        {
+          "Mistake": "Treat 12 linear units as 12 square units.",
+          "WhyWrong": "Perimeter measures boundary; area counts tiles.",
+          "Correction": "Use linear length units for perimeter and square units for area."
+        },
+        {
+          "Mistake": "Submit dimensions outside original printed dot grid.",
+          "WhyWrong": "The actual figure must fit on 19×24 intervals.",
+          "Correction": "Use feasible pairs; teacher inspects paper."
+        },
+        {
+          "Mistake": "Conclude typed dimensions are proof of original drawing.",
+          "WhyWrong": "Source asks for actual rectangles, cut-outs, posters and discussion.",
+          "Correction": "Keep teacher assessment and gallery walk."
+        }
+      ],
+      "SummaryPoints": [
+        "Source warm-up answers 25,50,10,17.",
+        "P16 source all possible positive integer-side dimensions ignoring rotation: 1Ã—7,2Ã—6,3Ã—5,4Ã—4; areas 7,12,15,16.",
+        "Original four target perimeters 12,20,26,34 plus student-chosen fifth; two DIFFERENT-AREA rectangles for each attempted target.",
+        "Original 19×24 printed-grid intervals are checked; teacher selects 3 of 5 tasks when accessibility adjustment applies.",
+        "Source cut-outs, posters, peer explanations and gated Cool-down remain teacher/rights-only; Stage D and tests not run."
+      ]
+    }
+  ]
+}

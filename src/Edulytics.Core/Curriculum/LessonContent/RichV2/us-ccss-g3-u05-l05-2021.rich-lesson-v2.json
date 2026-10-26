@@ -1,0 +1,155 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u05-l05-firstedition2021-nine-numberline-cards-five-folds-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U05:L05",
+      "CultureCode": "en",
+      "Title": "To the Number Line",
+      "ExplanationParagraphs": [
+        "In the original 2021 warm-up Notice and Wonder: Two Number Lines, students compare number-line representations and notice that lengths smaller than one whole can be represented as equal intervals. Discuss what stays the same about the distance from 0 to 1, rather than treating tick marks as isolated objects.",
+        "Activity 1 is a nine-card, open-ended classification task (A–I), NOT nine predetermined answers to one category: A 0–8 two intervals (step 4); B 0–1 four intervals (step 1/4); C 0–3 six intervals (step 1/2); D 0–2 four intervals (step 1/2); E 0–4 four intervals (step 1); F 0–1 six intervals (step 1/6); G 0–6 three intervals (step 2); H 0–2 six intervals (step 1/3); I 0–4 eight intervals (step 1/2). The original SVG assets for all nine cards were read from the owner-device 2021 teacher HTML. Possible categories overlap and include 0-to-1 unit fractional partition vs intervals greater than 1, same interval length despite different endpoints, or multi-whole number lines. Teacher assesses mathematical justification of the student's chosen groups.",
+        "Activity 2 contrasts two correct ways of using 1/2: Andre marks the LENGTH of each half-interval (each spans one half) while Clare labels the POINT halfway between zero and one. A mathematical number line locates numbers at ticks; distance statements describe the segments between ticks. Do not treat the two label placements as competing incorrect answers; ask pupils how both representations can make sense.",
+        "The original five hands-on fold-and-label tasks each use a fresh 0-to-1 line: fold into halves and locate 1/2; thirds and locate 1/3; fourths and locate 1/4; sixths and locate 1/6; eighths and locate 1/8. Make equally spaced marks and keep endpoints 0 and 1 fixed. Partners share their folding strategies; teachers check physical equal-length folding and explanations, not a fraction string alone.",
+        "Whole-number number lines with labels beyond 1 are not fraction strips whose right endpoint is always 1: cards A, C, D, E, G, H and I extend beyond 1. For example, card I runs from 0 to 4 with half-step intervals, whereas card F runs 0 to 1 with sixth-step intervals. Count spaces, not merely printed numbers or marks; the step size is (right endpoint − left endpoint)/number of equal intervals.",
+        "The 2021 publisher Cool-down is a teacher-gated reflection, not a numeric question automatically reconstructable from the public HTML. Edulytics' separately authored independent Cool-down and companion practice are not claimed to copy or certify that reflection. Publisher line drawings or photographs are not embedded, and no visual pixel-parity is claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit on the number line",
+          "Definition": "The segment from 0 to 1 is one entire unit, whatever the printed width of the drawing.",
+          "Rule": "1/n of that unit is the length of one of n equal segments between 0 and 1.",
+          "Example": "Four equal steps across 0 to 1 locate 1/4, 2/4, 3/4, 1."
+        },
+        {
+          "Title": "Fraction as a point",
+          "Definition": "The fraction k/n denotes the number at the end of k successive 1/n intervals from zero.",
+          "Rule": "Mark a point at k/n; distinguish the label of a point from the length of a segment.",
+          "Example": "A tick midway between 0 and 1 is the number 1/2."
+        },
+        {
+          "Title": "Interval size from endpoints",
+          "Definition": "The length of one equal interval is the total span divided by the count of intervals.",
+          "Rule": "step=(right−left)/equal interval count; the same count of marks may represent very different lengths.",
+          "Example": "0–8 with 2 intervals means each interval is 4; 0–1 with 4 intervals means each is 1/4."
+        },
+        {
+          "Title": "More than one whole",
+          "Definition": "A line from zero beyond one includes multiple complete unit lengths.",
+          "Rule": "Use one unit 0 to 1 as reference when labeling fractional points beyond 1.",
+          "Example": "Card I has half-step marks across four whole units, including 3/2 and 7/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Card A — large-number intervals",
+          "Question": "Card A shows 0, one middle tick, and 8. What is each step?",
+          "Method": "Divide total span by two equal intervals.",
+          "Steps": [
+            "Total span from zero to eight is 8.",
+            "There is one interior tick and hence TWO spaces.",
+            "8 ÷ 2 = 4; middle tick means 4."
+          ],
+          "Answer": "4",
+          "Check": "0,4,8; do not call each gap one half of the unit from 0 to 1."
+        },
+        {
+          "Title": "Card B — quarters",
+          "Question": "Card B goes from zero to one with three interior ticks.",
+          "Method": "Divide one full unit into four equal intervals.",
+          "Steps": [
+            "Three interior marks create four equal gaps.",
+            "Each gap has length 1/4 of 0-to-1.",
+            "First three interior points are 1/4, 2/4 and 3/4."
+          ],
+          "Answer": "1/4",
+          "Check": "Four quarters equal one whole."
+        },
+        {
+          "Title": "Card F — sixths",
+          "Question": "Card F goes from zero to one with five interior ticks.",
+          "Method": "Divide the unit into six equal intervals.",
+          "Steps": [
+            "Five interior marks give six equal spaces.",
+            "Each step is 1/6.",
+            "First interior point is 1/6."
+          ],
+          "Answer": "1/6",
+          "Check": "Six sixths reach 1."
+        },
+        {
+          "Title": "Card H — thirds across two wholes",
+          "Question": "Card H goes from 0 to 2 with two extra ticks within each unit.",
+          "Method": "Three equal steps per complete whole.",
+          "Steps": [
+            "One unit has two interior ticks => three equal intervals.",
+            "Across two wholes there are six intervals.",
+            "The first tick is 1/3; fourth tick is 4/3."
+          ],
+          "Answer": "1/3",
+          "Check": "Six steps of 1/3 give 2."
+        },
+        {
+          "Title": "Card I — halves across four wholes",
+          "Question": "Card I shows labeled 0,2,4, with three ticks inside each interval from 0 to 2 and 2 to 4.",
+          "Method": "Eight equal steps from zero to four.",
+          "Steps": [
+            "Each two-unit span has four equal intervals.",
+            "Each interval is 2 ÷ 4 = 1/2.",
+            "A full 0-to-4 line has eight half-unit intervals."
+          ],
+          "Answer": "1/2",
+          "Check": "8 × (1/2) = 4."
+        },
+        {
+          "Title": "Andre and Clare — two interpretations",
+          "Question": "Andre labels two half-length segments; Clare labels the middle point 1/2. Explain.",
+          "Method": "Separate segment length from the point at a location.",
+          "Steps": [
+            "0 to halfway is a segment of length 1/2.",
+            "Halfway to 1 is another segment of length 1/2.",
+            "The halfway tick is at the number 1/2, so Andre describes lengths and Clare locates the number."
+          ],
+          "Answer": "Both make sense in different ways",
+          "Check": "A point label belongs at the tick; a length label can describe a gap."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat the count of tick marks as the number of equal intervals.",
+          "WhyWrong": "Two endpoints with three interior marks create four spaces, not three or five.",
+          "Correction": "Count gaps between ticks, including the two end gaps."
+        },
+        {
+          "Mistake": "Assume card A 0-to-8's interval must be a fraction less than 1.",
+          "WhyWrong": "The two intervals cover eight units in total and each interval measures 4.",
+          "Correction": "Read endpoints before computing size."
+        },
+        {
+          "Mistake": "Say Andre or Clare must be wrong because their half labels are in different positions.",
+          "WhyWrong": "Andre describes half-LENGTHS, Clare locates 1/2 as a POINT.",
+          "Correction": "Distinguish representation of a length from a number at a mark."
+        },
+        {
+          "Mistake": "Assume every number line ends at 1.",
+          "WhyWrong": "Original cards A,C,D,E,G,H,I have endpoints beyond 1.",
+          "Correction": "Preserve multi-whole scope; keep the 0-to-1 distance as the unit."
+        },
+        {
+          "Mistake": "Write 1/3 after one fold that makes three visibly unequal gaps.",
+          "WhyWrong": "Unit fractions require equal-sized pieces.",
+          "Correction": "Use congruent folds; teacher checks actual marks or drawings."
+        }
+      ],
+      "SummaryPoints": [
+        "Number-line fractions use equal SPACES between ticks; numbers are at tick locations.",
+        "Original nine sorting cards: A 0–8 step4; B 0–1 quarters; C 0–3 halves; D 0–2 halves; E 0–4 ones; F 0–1 sixths; G 0–6 step2; H 0–2 thirds; I 0–4 halves.",
+        "The card sort is open: pupils classify cards with different valid rationales; teacher reviews groups and arguments.",
+        "Andre's two half labels measure segment lengths; Clare's half mark locates the numeric point.",
+        "Students physically fold separate lines into 2,3,4,6,8 equal intervals and locate first corresponding unit fractions.",
+        "Original 2021 publisher Cool-down, student PDF, tests and Stage D remain unverified; first-party diagrams only."
+      ]
+    }
+  ]
+}

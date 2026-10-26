@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u03-l19-firstedition2021-mai-unknowns-mancala-20261025-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U03:L19",
+      "CultureCode": "en",
+      "Title": "Situations and Equations",
+      "ExplanationParagraphs": [
+        "An unknown letter can represent a beginning quantity, the amount in each group, or a final result. The source's 2021 lesson compares THREE Mai bead stories that use nearly the same numbers but place the unknown differently.",
+        "Warm-up — Notice and Wonder: The Unknown. The original bar contains a total128 and three known parts each8, leaving a missing part128−3×8=104. Naming the missing part b does not change its value.",
+        "Activity 1 — Mai's Beads (20 minutes). Situation1: Mai starts with104 beads, buys two equal unknown packs and finishes with124. Equation104+2×n=124, so n=10 beads in EACH pack.",
+        "Situation2: Mai starts with an unknown, adds two packs of10 and finishes with124. Equation n+10+10=124, so n=104 starting beads. Situation3: Mai begins with104, buys two packs of10, and seeks the total. Equation104+2×10=n, so n=124 final beads.",
+        "Distinguish the corresponding original tape-bar source roles: (a) 104 with two unknown equal parts totaling124; (b) unknown initial plus two known10 parts totaling124; (c) 104 plus two known10 parts with unknown total. The archived descriptions reveal this mathematical structure without granting rights to the original figure pixels.",
+        "Activity2 — Represent, Solve, Explain (15 minutes). Kiran begins with104 mancala stones and removes3 for EACH of six pits: r=104−(6×3)=86 remain. Draw six equal 3-stone groups removed, label the jar's remaining count with an unknown letter, and verify 86+18=104.",
+        "Compare the pupil's word situation, diagram, equation and result. The teacher reviews the representations and explanations; numeric Edulytics checks are separate. Original publisher Mancala photograph and gated original How Many Beads? Cool-down not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unknown per group",
+          "Definition": "A variable naming one equal pack's contents.",
+          "Rule": "Find the difference in total and divide by number of packs.",
+          "Example": "104+2n=124 gives n=10."
+        },
+        {
+          "Title": "Unknown initial value",
+          "Definition": "A variable naming the starting quantity before known additions.",
+          "Rule": "Subtract all known later additions from total.",
+          "Example": "n+10+10=124 gives n=104."
+        },
+        {
+          "Title": "Unknown final value",
+          "Definition": "A variable naming result after known changes.",
+          "Rule": "Compute all known changes.",
+          "Example": "104+2×10=n gives n=124."
+        },
+        {
+          "Title": "Represent groups removed",
+          "Definition": "Subtraction of multiple equal groups uses multiplication for the total removed.",
+          "Rule": "Start minus groups×size.",
+          "Example": "104−6×3=86 stones."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "One source story, unknown group size",
+          "Question": "Mai has104, receives two equal unknown packs and ends124. What is in each?",
+          "Method": "Solve a part-whole model.",
+          "Steps": [
+            "104+2×n=124.",
+            "Subtract104 from both sides:2n=20.",
+            "Divide by2:n=10.",
+            "Check104+2×10=124."
+          ],
+          "Answer": "10 beads each.",
+          "Check": "n is EACH pack, not the starting total."
+        },
+        {
+          "Title": "Initial unknown",
+          "Question": "Mai ends124 after adding two packs of10. Initial amount?",
+          "Method": "Undo additions.",
+          "Steps": [
+            "n+10+10=124.",
+            "n=124−20=104.",
+            "Check104+20=124."
+          ],
+          "Answer": "104 starting beads.",
+          "Check": "The location of unknown changed."
+        },
+        {
+          "Title": "Mancala",
+          "Question": "Kiran has104 stones and places3 in six pits. How many remain?",
+          "Method": "Multiply removed stones, then subtract.",
+          "Steps": [
+            "Six groups of3 use6×3=18 stones.",
+            "104−18=86.",
+            "Check86+18=104."
+          ],
+          "Answer": "86 stones.",
+          "Check": "The source asks for the jar remainder, not stones on board."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use n=124 in all three Mai equations.",
+          "WhyWrong": "The unknown stands for distinct quantities across stories.",
+          "Correction": "Determine whether n denotes each pack, starting amount or ending amount."
+        },
+        {
+          "Mistake": "Subtract just3 stones from Mancala jar.",
+          "WhyWrong": "There are6 pits with3 stones EACH.",
+          "Correction": "Subtract18 total, leaving86."
+        },
+        {
+          "Mistake": "Match diagram by color or layout instead of quantities.",
+          "WhyWrong": "Only the labeled relationships are mathematical invariants.",
+          "Correction": "Check 104, two groups10 or unknown, and target124."
+        }
+      ],
+      "SummaryPoints": [
+        "Mai story1 104+2n=124 => n10; story2 n+10+10=124 => n104; story3 104+2×10=n => n124.",
+        "Warm-up unknown=128−3×8=104.",
+        "Mancala104−6×3=86.",
+        "Teacher evaluates diagram/equation correspondence. Original images, PDF and gated source exit remain unverified."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U01:L01",
+  "sourceEdition": "Illustrative Mathematics K–5 first edition 2021",
+  "teacherSourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html",
+  "preparationUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/preparation.html",
+  "reviewDate": "2026-10-23",
+  "step": "L01 Stage B code closure attempt; strictly no Stage D",
+  "publicSourceReviewed": {
+    "dataOrder": [
+      4,
+      3,
+      1,
+      2,
+      7,
+      6
+    ],
+    "namedCounts": {
+      "Walk": 4,
+      "Bike": 3,
+      "Skateboard": 1,
+      "Car": 2,
+      "Bus": 7,
+      "Train": 6
+    },
+    "barYAxis": {
+      "min": 0,
+      "max": 8,
+      "increment": 1
+    },
+    "pictureSymbolValue": 1,
+    "requiredSequence": [
+      "untitled/unlabelled warmup",
+      "titled/unlabelled Picture Time",
+      "labelled picture graph and bar graph",
+      "10min lesson synthesis",
+      "5min publisher-restricted Cool-down; independent Edulytics equivalent"
+    ],
+    "studentFacingDistinctSubparts": 5,
+    "rights": "Only first-party wording and graphics; source's linked PDF and original images not inspected or copied"
+  },
+  "authored": {
+    "newRichV2EmbeddedSource": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u01-l01-2021.rich-lesson-v2.json",
+    "registryResolution": "RichLessonContentV2Registry.Find has precedence over generated composer, via LessonContentService",
+    "richBodyContains": [
+      "explanations",
+      "4 concepts",
+      "3 worked examples",
+      "4 pitfalls",
+      "5 source milestones and summary"
+    ],
+    "questionGrading": "Original five Student Facing responses teacher-only; separate supplemental machine-graded numeric and independent Cool-down remain via Grade3Lesson1ActivitiesController",
+    "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit1Lesson1RichV2SourceCoverageTests.cs",
+    "testsRun": false,
+    "ciRequested": false
+  },
+  "readOnlyDatabaseCheck": {
+    "provider": "Neon",
+    "projectName": "Edulytiks",
+    "branch": "production",
+    "queries": [
+      "SELECT COUNT(*) FROM \"CurriculumLessonContentTranslations\"",
+      "SELECT p.\"Code\", p.\"OfficialLessonNodeId\" FROM \"CurriculumPedagogicalLessons\" p WHERE p.\"Code\"='PED:US-CCSS-MATH:G3:U01:L01'"
+    ],
+    "findings": [
+      "0 rows in inspected translation table",
+      "L01 pedagogical lesson exists, but its OfficialLessonNodeId is null"
+    ],
+    "noDBWrites": true,
+    "publicationOrEffectiveBodyCertified": false
+  },
+  "unresolved": [
+    "Publisher Student Task Statements PDF link unavailable via public retrieval: cache miss, not examined",
+    "Original first-edition picture/bar graph image pixel assets inaccessible: cache miss, not examined; ALT text used only",
+    "Publisher original Cool-down behind educator log-in, independent equivalent does not certify original-material parity",
+    "Original image/third-party rights verification incomplete",
+    "Rich V2 resource exists in source code; no app build, tests, live page check, seeding, release or runtime acceptance",
+    "Not all 11 source elements signed off against actual learner/teacher delivery"
+  ],
+  "closure": {
+    "state": "A_C_EXPLICIT_GAP",
+    "readyForStageD": false,
+    "verifiedSourceElements": 0,
+    "identifiedSourceElements": 11,
+    "sourceParityPercent": null,
+    "academicApproval": "NOT_CLAIMED",
+    "stageD": "NOT_STARTED"
+  }
+}

@@ -1,0 +1,300 @@
+@model Edulytics.Web.ViewModels.LessonContent.Grade3Lesson1PracticePage
+@using Edulytics.Core.Mathematics.Curriculum
+@{
+    Layout = "_StudentLayout";
+    ViewData["Title"] = "Grade 3 · Make Sense of Data";
+    var source = UsCcssG3Unit1Lesson1GraphCandidate.Values;
+    var library = UsCcssG3OriginalCoolDownCandidates.Lesson1LibraryGraph;
+    var sourceCoolDown = UsCcssG3Unit1Lesson1SourceCoolDown.Values;
+}
+<style>
+.g3-data {max-width:1000px;margin:0 auto 30px;padding:20px;color:#17344d}
+.g3-data .panel {background:#fff;border:1px solid #d6e3ec;border-radius:16px;padding:22px;margin:16px 0}
+.g3-data h1 {font-size:1.9rem;line-height:1.25}
+.g3-data h2 {font-size:1.3rem}
+.g3-data .note {color:#405e73;max-width:80ch}
+.g3-data .picture-columns {display:grid;grid-template-columns:repeat(6,minmax(54px,1fr));gap:10px;max-width:680px;overflow-x:auto;border-bottom:2px solid #587e91;padding:8px}
+.g3-data .picture-column {display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:54px}
+.g3-data .picture-stack {height:192px;display:flex;flex-direction:column-reverse;align-items:center;justify-content:flex-start;gap:3px}
+.g3-data .picture-mark {display:block;color:#127b91;font-size:1.2rem;line-height:21px}
+.g3-data .picture-column-label {margin-top:7px;font-size:.78rem;text-align:center;overflow-wrap:anywhere}
+.g3-data .picture-rows {display:grid;grid-template-columns:minmax(110px,160px) 1fr;gap:9px;align-items:center}
+.g3-data .dots {font-size:1.2rem;letter-spacing:.28rem;overflow-wrap:anywhere}
+.g3-data .bar-graph {max-width:670px;display:grid;grid-template-columns:30px 1fr;column-gap:7px}
+.g3-data .axis-ticks {height:160px;display:flex;flex-direction:column;justify-content:space-between;font-size:.85rem;color:#39576b}
+.g3-data .bar-chart {display:grid;grid-template-columns:repeat(6,minmax(32px,1fr));gap:8px;align-items:end;height:160px;border-left:2px solid #658097;border-bottom:2px solid #658097;padding:0 9px}
+.g3-data .bar-col {height:160px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.g3-data .bar {width:72%;max-width:64px;background:#158398;border-radius:4px 4px 0 0;color:#fff;text-align:center;font-weight:700}
+.g3-data .bar-labels {grid-column:2;display:grid;grid-template-columns:repeat(6,minmax(32px,1fr));gap:8px;padding:0 9px}
+.g3-data .bar-label {font-size:.8rem;text-align:center;overflow-wrap:anywhere;margin-top:5px}
+.g3-data .source-cooldown-bars {grid-template-columns:repeat(4,minmax(32px,1fr));height:200px}
+.g3-data .source-cooldown-bar-col {height:200px}
+.g3-data .source-cooldown-ticks {height:200px}
+.g3-data .source-cooldown-labels {grid-template-columns:repeat(4,minmax(32px,1fr))}
+.g3-data .bar-x-axis-title {grid-column:2;margin:7px 0 0;text-align:center;font-weight:700;font-size:.9rem;color:#17344d}
+.g3-data .scale {font-weight:600;color:#4a6476}
+.g3-data label {display:block;font-weight:700;margin:12px 0 5px}
+.g3-data input,.g3-data textarea {width:100%;max-width:680px;padding:10px;border:1px solid #69899e;border-radius:8px;font:inherit}
+.g3-data input:focus,.g3-data textarea:focus {outline:3px solid #b2e3ef}
+.g3-data .two {display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.g3-data .submit {background:#08778a;border:0;border-radius:8px;padding:12px 20px;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.g3-data .good {border-left:4px solid #186b4b;padding-left:12px}
+.g3-data .bad {border-left:4px solid #af2f40;padding-left:12px}
+.g3-data .review {border-left:4px solid #aa7416;padding-left:12px}
+</style>
+<main class="g3-data">
+    <a asp-controller="StudentPortal" asp-action="Lesson" asp-route-id="@Model.LessonId">← Back to lesson</a>
+    <header>
+        <p>EDULYTICS · INDEPENDENT STUDENT ACTIVITIES</p>
+        <h1>Grade 3 · Make Sense of Data</h1>
+        <p class="note">Learning goal: explain what category graphs tell us, compare picture and bar graphs, and invent questions that the data can answer. The drawings and Cool-down here are created by Edulytics, not copied publisher images or restricted exam items.</p>
+    </header>
+
+    <form asp-controller="Grade3Lesson1Activities" asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="curriculumAdoptionId" value="@Model.CurriculumAdoptionId" />
+        <input type="hidden" name="lessonId" value="@Model.LessonId" />
+
+        <section class="panel" aria-labelledby="warmup">
+            <h2 id="warmup">1. Notice and wonder — picture graph (15 minutes)</h2>
+            <p>A mark stands for one student. Before seeing category labels, look at these six columns. Explain what you notice and what you wonder. Think quietly for 1 minute, then discuss with a partner for 1 minute. The teacher records different observations and questions before revealing the context.</p>
+            <div class="picture-columns" role="group" aria-label="Unlabelled picture graph with six upright columns, left to right: 4, 3, 1, 2, 7 and 6 symbols; each symbol represents one student">
+                @for (var i = 0; i < source.Count; i++)
+                {
+                    <div class="picture-column">
+                        <div class="picture-stack" aria-label="Column @(i + 1): @source[i].NumberOfStudents students">
+                            @for (var mark = 0; mark < source[i].NumberOfStudents; mark++)
+                            {
+                                <span class="picture-mark" aria-hidden="true">●</span>
+                            }
+                        </div>
+                        <strong class="picture-column-label">Column @(i + 1)</strong>
+                    </div>
+                }
+            </div>
+            <p class="note">Key: ● = 1 student. The numbered column placeholders are not category names.</p>
+            <label for="warmup-observations">What do you notice? What do you wonder?</label>
+            <textarea id="warmup-observations" name="WarmupObservations" rows="3" maxlength="2000">@Model.Answers.WarmupObservations</textarea>
+            <p class="note">Teacher-led warm-up synthesis: suggest situations the anonymous graph could represent. After the partner exchange, create the Math Community T-chart NOW (Doing Math / Norms; Students / Teacher), and record examples under Doing Math. Do not auto-grade teacher observations.</p>
+            <table class="table" aria-label="Math Community warm-up teacher-led T-chart template">
+                <thead><tr><th scope="col">Role</th><th scope="col">Doing Math</th><th scope="col">Norms</th></tr></thead>
+                <tbody><tr><th scope="row">Students</th><td>____________</td><td>____________</td></tr><tr><th scope="row">Teacher</th><td>____________</td><td>____________</td></tr></tbody>
+            </table>
+            <p class="note">Teacher discussion: no invented context is automatically marked correct or wrong.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="picture">
+            <h2 id="picture">2. Picture Time — understand the context (10 minutes)</h2>
+            <p>The same six columns now have the title <strong>How We Get Home</strong>, but category names are still hidden. After 30 seconds of quiet thinking, suggest possible travel labels with a partner for 2–3 minutes. Explain how the title changes what you can infer and why no particular category name can be proved without more data.</p>
+            <h3>How We Get Home — columns still unlabelled</h3>
+            <div class="picture-columns" role="group" aria-label="Six unlabelled vertical picture graph categories under title How We Get Home; symbol key one pupil; counts 4, 3, 1, 2, 7 and 6">
+                @for (var i = 0; i < source.Count; i++)
+                {
+                    <div class="picture-column">
+                        <div class="picture-stack" aria-label="Column @(i + 1): @source[i].NumberOfStudents students">
+                            @for (var mark = 0; mark < source[i].NumberOfStudents; mark++)
+                            {
+                                <span class="picture-mark" aria-hidden="true">●</span>
+                            }
+                        </div>
+                        <strong class="picture-column-label">Column @(i + 1)</strong>
+                    </div>
+                }
+            </div>
+            <p>Key: ● = 1 student. A graph title gives context, not missing category names.</p>
+            <p class="note">Teacher language-support prompt (Representation): Why is this a picture graph? What information does the key provide? Give pupils quiet thinking time before partners justify different possible categories.</p>
+            <label for="plausible-categories">Your possible labels and explanation</label>
+            <textarea id="plausible-categories" name="PlausibleCategories" rows="3" maxlength="2000">@Model.Answers.PlausibleCategories</textarea>
+        </section>
+
+        <section class="panel" aria-labelledby="graphs">
+            <h2 id="graphs">3. Two graphs, one dataset (20 minutes)</h2>
+            <p>Now read the category names given by the 2021 lesson. Both diagrams are independently authored Edulytics representations of the same numeric data, not copies of publisher figures. Discuss similarities with a partner for 2 minutes, then spend 7–10 minutes on the three source questions.</p>
+            <h3>How We Get Home — picture graph</h3>
+            <div class="picture-columns" role="group" aria-label="How We Get Home: 6 upright columns, one symbol per student, Walk 4, Bike 3, Skateboard 1, Car 2, Bus 7, Train 6">
+                @foreach (var item in source)
+                {
+                    <div class="picture-column">
+                        <div class="picture-stack" aria-label="@item.Label: @item.NumberOfStudents students">
+                            @for (var mark = 0; mark < item.NumberOfStudents; mark++)
+                            {
+                                <span class="picture-mark" aria-hidden="true">●</span>
+                            }
+                        </div>
+                        <strong class="picture-column-label">@item.Label</strong>
+                    </div>
+                }
+            </div>
+            <p class="note">Key: ● = 1 student.</p>
+            <h3>How We Get Home — bar graph</h3>
+            <p class="scale"><strong>Vertical axis: Number of students.</strong> Scale: 0 to 8, increasing in steps of 1 student. Horizontal axis: Ways to get home.</p>
+            <div class="bar-graph" role="img" aria-label="How We Get Home bar graph. Axis zero to eight in ones. Walk four, bike three, skateboard one, car two, bus seven, train six.">
+                <div class="axis-ticks" aria-hidden="true">
+                    @for (var tick = 8; tick >= 0; tick--) { <span>@tick</span> }
+                </div>
+                <div class="bar-chart" aria-hidden="true">
+                    @foreach (var item in source)
+                    {
+                        <div class="bar-col">
+                            <div class="bar" style="height:@(item.NumberOfStudents * 20)px">@item.NumberOfStudents</div>
+                        </div>
+                    }
+                </div>
+                <div class="bar-labels" aria-hidden="true">
+                    @foreach (var item in source) { <span class="bar-label">@item.Label</span> }
+                </div>
+                <p class="bar-x-axis-title" aria-label="Horizontal axis: Ways to get home">@UsCcssG3Unit1Lesson1GraphCandidate.BarXAxisTitle</p>
+            </div>
+            <p class="note">Both representations have the same categories and quantities. One uses a symbol per student; the other uses bar height. For scale accessibility, read the explicit counts on each bar.</p>
+            <p class="note">MLR8 discussion support: after a student shares a comparison, ask a partner to restate it in precise mathematical language before offering another idea. This oral task requires teacher observation.</p>
+            <label for="graph-comparison">Source activity 2, part 1: How are the two graphs the same, and how are they different?</label>
+            <textarea id="graph-comparison" name="GraphComparison" rows="3" maxlength="2000">@Model.Answers.GraphComparison</textarea>
+            <label for="graph-learnings">Source activity 2, part 2: What can we learn about how students get home from these graphs?</label>
+            <textarea id="graph-learnings" name="GraphLearnings" rows="3" maxlength="2000">@Model.Answers.GraphLearnings</textarea>
+            <label for="two-questions">Source activity 2, part 3: Write TWO different questions the graphs can answer</label>
+            <textarea id="two-questions" name="TwoGraphQuestions" rows="3" maxlength="2000">@Model.Answers.TwoGraphQuestions</textarea>
+            <h3>Additional Edulytics numeric practice — not source student questions</h3>
+            <p class="note">These three machine-checkable items practise the published graph's numbers. The five source student-facing tasks above remain open-response work for the teacher to review; numeric correctness never substitutes for them.</p>
+            <div class="two">
+                <div>
+                    <label for="bus-count">How many students take the bus?</label>
+                    <input id="bus-count" name="BusCount" value="@Model.Answers.BusCount" inputmode="numeric" maxlength="12" />
+                </div>
+                <div>
+                    <label for="bus-skate">How many more travel by bus than by skateboard?</label>
+                    <input id="bus-skate" name="BusSkateboardDifference" value="@Model.Answers.BusSkateboardDifference" inputmode="numeric" maxlength="12" />
+                </div>
+                <div>
+                    <label for="source-total">How many students appear in the six categories together?</label>
+                    <input id="source-total" name="TotalStudents" value="@Model.Answers.TotalStudents" inputmode="numeric" maxlength="12" />
+                </div>
+            </div>
+        </section>
+
+        <section class="panel" aria-label="Lesson synthesis and Math Community reasoning">
+            <h2>4. Lesson synthesis (10 minutes) — how can a graph communicate information?</h2>
+            <p>Explain how the title, key, labelled categories and one-unit bar axis let you read and compare the same responses. Can you ask a question that the graph cannot answer?</p>
+            <label for="synthesis-reflection">My synthesis and an example of an unanswerable question</label>
+            <textarea id="synthesis-reflection" name="SynthesisReflection" rows="3" maxlength="2000">@Model.Answers.SynthesisReflection</textarea>
+            <label for="math-community-reflection">What does respectful mathematical discussion look and sound like for students and the teacher?</label>
+            <textarea id="math-community-reflection" name="MathCommunityReflection" rows="3" maxlength="2000">@Model.Answers.MathCommunityReflection</textarea>
+            <p class="note">Teacher-only observation: 1-minute independent warm-up, partner dialogue, justified category suggestions, precise restating of a peer's observation (MLR8), and reflection on norms. Numeric checks do not assess these activities.</p>
+        </section>
+        <section class="panel" aria-labelledby="cooldown">
+            <h2 id="cooldown">5. Source-aligned 2021 Cool-down: Describe and Ask (5 minutes)</h2>
+            <p>The following <strong>four-category travel graph</strong> uses the mathematical data in the first-edition 2021 teacher guide: Bike 6, Walk 4, Bus 8 and Car 2. Edulytics independently draws the bars and does not reproduce the publisher's images, names or logo. This is a source-aligned classroom response, not an automatically graded numeric problem.</p>
+            <h3>@UsCcssG3Unit1Lesson1SourceCoolDown.GraphTitle — source dataset, independent Edulytics drawing</h3>
+            <p class="scale">Four categories; vertical scale from 0 to 10, increasing in steps of 1 student. Read the category names and vertical tick marks before answering.</p>
+            <div class="bar-graph" role="img" aria-label="2021 lesson 1 Cool-down mathematics: How We Get Home. Vertical scale 0 to 10 by ones. Bike 6, Walk 4, Bus 8, Car 2; independently drawn by Edulytics.">
+                <div class="axis-ticks source-cooldown-ticks" aria-hidden="true">
+                    @for (var tick = UsCcssG3Unit1Lesson1SourceCoolDown.YAxisMax;
+                        tick >= UsCcssG3Unit1Lesson1SourceCoolDown.YAxisMin;
+                        tick -= UsCcssG3Unit1Lesson1SourceCoolDown.YAxisStep)
+                    {
+                        <span>@tick</span>
+                    }
+                </div>
+                <div class="bar-chart source-cooldown-bars" aria-hidden="true">
+                    @foreach (var item in sourceCoolDown)
+                    {
+                        <div class="bar-col source-cooldown-bar-col">
+                            <div class="bar" style="height:@(item.Count * 20)px"></div>
+                        </div>
+                    }
+                </div>
+                <div class="bar-labels source-cooldown-labels" aria-hidden="true">
+                    @foreach (var item in sourceCoolDown)
+                    {
+                        <span class="bar-label">@item.Label</span>
+                    }
+                </div>
+                <p class="bar-x-axis-title">Travel home from school</p>
+            </div>
+            <label for="source-cool-fact">Source Cool-down part 1: Write ONE fact the travel graph supports</label>
+            <textarea id="source-cool-fact" name="SourceCoolDownFact" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownFact</textarea>
+            <label for="source-cool-question">Source Cool-down part 2: Write ONE question that the travel graph can answer</label>
+            <textarea id="source-cool-question" name="SourceCoolDownQuestion" rows="3" maxlength="2000">@Model.Answers.SourceCoolDownQuestion</textarea>
+            <p class="note">Both source Cool-down open responses are for the teacher to assess; no automatic pass is issued. The source bar graph and the earlier six-category lesson graph are DIFFERENT datasets.</p>
+            <h3>Additional, independent Edulytics Cool-down practice (optional)</h3>
+            <p>This is a NEW fictional library survey with its own separate categories. It checks related graph-reading skills and is not the publisher's original travel dataset or a replacement for the two source questions above.</p>
+            <div class="picture-rows">
+                @foreach (var item in library)
+                {
+                    <strong>@item.Category</strong>
+                    <span class="dots" aria-label="@item.Students learners chose @item.Category">@(string.Concat(Enumerable.Repeat("● ", item.Students)))</span>
+                }
+            </div>
+            <p class="note">Key: ● = 1 student.</p>
+            <div class="two">
+                <div>
+                    <label for="cool-count">How many chose Space?</label>
+                    <input id="cool-count" name="CoolDownCount" value="@Model.Answers.CoolDownCount" maxlength="12" inputmode="numeric" />
+                </div>
+                <div>
+                    <label for="cool-diff">How many more chose Comics than Sports?</label>
+                    <input id="cool-diff" name="CoolDownDifference" value="@Model.Answers.CoolDownDifference" maxlength="12" inputmode="numeric" />
+                </div>
+            </div>
+            <label for="cool-fact">Write ONE fact that the library graph supports</label>
+            <textarea id="cool-fact" name="CoolDownFact" rows="3" maxlength="2000">@Model.Answers.CoolDownFact</textarea>
+            <label for="cool-question">Write ONE different question answerable from the library graph and explain its answer</label>
+            <textarea id="cool-question" name="CoolDownOriginalQuestion" rows="3" maxlength="2000">@Model.Answers.CoolDownOriginalQuestion</textarea>
+            <p class="note">The two original 2021 Cool-down skill types (state one graph fact; author one graph question) are offered separately using NEW Edulytics survey data; the teacher reviews both, and this page checks numbers only.</p>
+        </section>
+
+        <button class="submit" type="submit">Check my numeric answers</button>
+    </form>
+
+    @if (Model.Submitted)
+    {
+        <section class="panel" aria-live="polite" aria-label="Answer feedback">
+            <h2>Feedback</h2>
+            @foreach (var item in Model.Feedback)
+            {
+                <div class="@(item.MachineCorrect == true ? "good" : item.MachineCorrect == false ? "bad" : "review")">
+                    <h3>@item.Label</h3>
+                    <p>@(item.MachineCorrect == true ? "Correct." : item.MachineCorrect == false ? "Check your answer." : item.TeacherReviewRequired ? "Teacher review required." : "Not attempted.") @item.Reason</p>
+                    @if (item.TeacherReviewRequired)
+                    {
+                        <p class="note">Reasoning, original questions and partner discussion are not automatically certified.</p>
+                    }
+                </div>
+            }
+            <p class="note">Feedback exists only in this page response. No official grade or verified classroom participation is saved by this activity.</p>
+            <p class="note">For teacher-led source tasks, the learner can choose to print or save a local copy of this completed page for the teacher to examine. This handoff is NOT a teacher sign-off, a stored submission, or a verified classroom observation.</p>
+            <button type="button" class="submit" data-grade3-print-page="true">Print or save a copy for teacher review</button>
+        </section>
+    }
+
+    <section class="panel">
+        <h2>Teacher discussion and optional centres</h2>
+        <p>In pairs, check whether each graph question has enough information; compare title, key, labels and the unit scale. Discuss what respectful mathematical discussion looks like, and have pupils reflect on their thinking.</p>
+        <table class="table" aria-label="Independently authored Math Community discussion guide">
+            <thead><tr><th scope="col">Who?</th><th scope="col">Doing mathematics</th><th scope="col">Discussion norms</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Students</th><td>Make an observation, ask a data question, justify an answer.</td><td>Think quietly first; listen and respond to partners.</td></tr>
+                <tr><th scope="row">Teacher</th><td>Display the data and invite multiple interpretations.</td><td>Give wait time; record and invite reasoning from every learner.</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Optional teacher-led center 1 — Sort and Display, Stage 2 (Picture or Bar Graphs).</strong> Gather 20–30 physical items (for example, blocks or counters) that can be sorted into 3 categories. Children sort and organize the items, draw a picture graph or bar graph on the recording sheet, and ask a partner TWO answerable graph questions. Source materials: an item collection and the teacher-provided Stage 2 recording sheet; do not automatically certify handling of objects or oral responses.</p>
+        <p><strong>Optional teacher-led center 2 — Capture Squares, Stage 3 (Add within 20).</strong> In pairs use the Stage 3 gameboard and spinner, number cards 0–10, paper clips, and colored pencils or crayons. Spin for a number 6–10 (including a wild space for a chosen number), flip a 0–10 card, find the sum, and complete the corresponding gameboard action under teacher guidance. This is a physical partner game, not an automatically graded source task.</p>
+        <p class="note">Both optional centers are defined by the 2021 first-edition Unit 1 Teacher Guide (Sort and Display Stage 2; Capture Squares Stage 3). Use the authorized teacher copies of board/sheet when available, or keep independently drawn first-party materials distinct from source artwork.</p>
+        <p class="note">Post-lesson teacher reflection from the original preparation: how did the students' lived experiences shape the discussion of interpreting category graphs? Classroom evidence and teacher observation must be recorded outside this unsaved learner companion.</p>
+        <h3>Teacher review rubric — five original Student Facing subparts</h3>
+        <p class="note">Teacher name: ____________________ &nbsp; Review date: ______________ &nbsp; Class/lesson: ______________</p>
+        <table class="table" aria-label="Item-by-item teacher evidence rubric; no original open response is automatically graded">
+            <thead><tr><th scope="col">Source task</th><th scope="col">What the teacher checks</th><th scope="col">Assessment</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">1. Notice and Wonder</th><td>Observation grounded in the six unlabelled columns; a genuinely investigable wonder; observe partner talk.</td><td>Human review only</td></tr>
+                <tr><th scope="row">2. Picture Time</th><td>Plausible possible categories under the new title; explains why missing labels are not yet known; observe discussion.</td><td>Human review only</td></tr>
+                <tr><th scope="row">3. Compare picture and bar graphs</th><td>A supported similarity and a supported difference in representation, including key versus numbered vertical scale.</td><td>Human review only</td></tr>
+                <tr><th scope="row">4. Learn from both graphs</th><td>At least one defensible categorical fact using the labelled 4, 3, 1, 2, 7, 6 responses; teacher rejects claims not supported by data.</td><td>Human review only</td></tr>
+                <tr><th scope="row">5. Write two graph questions</th><td>Two distinct questions that can each be answered from the shown quantities; oral explanation or written reasoning checked by teacher.</td><td>Human review only</td></tr>
+            </tbody>
+        </table>
+        <p class="note">Teacher disposition for each of the five tasks (handwritten or school-managed record): accepted / needs revision / not observed. The teacher should record the evidence separately; this web page does not authenticate the teacher's judgment.</p>
+        <p class="note">Optional Edulytics numeric questions and the independently authored Cool-down are checked separately. They do not replace these original teacher-led source tasks. This companion does not save teacher review decisions or prove live classroom participation.</p>
+    </section>
+    <p class="note">Curriculum source: <a href="https://im.kendallhunt.com/k5/teachers/grade-3/unit-1/lesson-1/lesson.html" rel="noopener noreferrer">Illustrative Mathematics K–5, Grade 3 Unit 1 Lesson 1 (2021)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer">CC BY 4.0</a>. Attribution is for alignment of objectives and data; Edulytics graphics, wording and Cool-down are independently authored. No publisher logos or original artwork are reproduced.</p>
+    <script src="~/js/grade3-lesson1-print.js" asp-append-version="true" defer></script>
+</main>

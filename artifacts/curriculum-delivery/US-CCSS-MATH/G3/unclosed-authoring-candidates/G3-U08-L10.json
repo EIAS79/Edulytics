@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 138,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U08:L10",
+  "unitNumber": 8,
+  "lessonNumber": 10,
+  "title": "Multiplication and Division PLC Activity",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-8/lesson-10/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-8/lesson-10/lesson.html",
+  "stageA": {
+    "status": "2021_ORIGINAL_LOCAL_TEACHER_PREPARATION_PUBLIC_STUDENT_SECTIONS_INDIVIDUALLY_REVIEWED_VISUAL_OR_MASTER_GAP",
+    "goals": "Interpret representations of the relationship between multiplication and division. Represent the relationship between multiplication and division.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 6,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceTeacherHtmlSHA256": "dd2e82ff1237c6b9f59729b7645da2b78c01e99735ee0fcdfbe87c8d70b43b88",
+    "sourcePreparationHtmlSHA256": "b1061d7939e30c373f1be2f06c626099da60c2e8a508bd9b56715ad33e4a6afd"
+  },
+  "stageB": {
+    "status": "SOURCE_SPECIFIC_FIRSTPARTY_RICHV2_MATERIALIZER_RAZOR_AND_EXISTING_GOAL_PRESERVED",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U08:L10",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "d2823d5a8f702a253e339e5539f42657a3f68530725af80c7dc422307cc822e3",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u08-l10-2021.rich-lesson-v2.json",
+    "canonicalMaterializer": "src/Edulytics.Data/Seeding/CommonCoreG3Unit8Lesson10RichV2.cs",
+    "firstPartyRazorPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit8Lesson10.cshtml",
+    "sourceSpecificVersion": "g3-u08-l10-2021-multiplication-division-matched-representations-v1"
+  },
+  "stageC": {
+    "status": "SOURCE_SPECIFIC_AND_TEACHER_GATED_FOCUSED_LOCAL_DOTNET_TESTS_PASSED",
+    "family": "division-fluency",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": true,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Card Sort: Find the Match with your teacher. Show the representation and explain how it meets the goal: Let’s represent equal groups and write equal groups situations.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit8Lesson10SourceAuditTests.cs",
+    "sourceItemCount": 4,
+    "sourceTeacherItems": 4
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U08-L10-HEADING-01",
+      "sourceSection": "Warm-up: Which One Doesn't Belong: Multiplication and Division (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L10-HEADING-02",
+      "sourceSection": "Activity 1: Card Sort: Find the Match (25 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L10-HEADING-03",
+      "sourceSection": "Activity 2: Find the Match Gallery Walk (10 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L10-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "SOURCE_2021_HTML_SEMANTIC_FIRSTPARTY_TEACHER_GATED",
+      "grading": "INTEGER_EXPLICIT_SOURCE_OR_TEACHER_REVIEW",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U08-L10-HEADING-05",
+      "sourceSection": "Cool-down: Relate Multiplication to Division (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "PUBLISHER_GATED_UNAVAILABLE",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U08-L10-IMAGE-01",
+      "observedAltText": "Diagram. Array",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U08-L10-IMAGE-02",
+      "observedAltText": "Diagram. Rectangle",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U08-L10-IMAGE-03",
+      "observedAltText": "diagram. tape diagram",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U08-L10-IMAGE-04",
+      "observedAltText": "Division expression. 24 divided by 6",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U08-L10-IMAGE-05",
+      "observedAltText": "Find the match activity. Find the match cards",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U08-L10-IMAGE-06",
+      "observedAltText": "Find the match activity. find the match cards",
+      "originalReference": "unit-8/lesson-10/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 5,
+    "imageDescriptions": 6,
+    "fullyVerified": 4
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Place 8 tokens into groups of 2. How many groups?",
+    "answerType": "integer",
+    "expected": "4"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original publisher equation/diagram cards and A–D warm-up images were not inspected.",
+    "Original standalone Student Task PDF or unverified source figure pixel parity not certified.",
+    "Original gated publisher Cool-down not accessed/copied, and first-party examples are distinctly labeled.",
+    "Teacher must review group discussion, student-authored activities and physical materials.",
+    "Full authenticated Stage D UAT and separate academic approval not performed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "FOCUSED_LOCAL_DOTNET_TESTS_PASSED_GITHUB_CI_PENDING",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceAcademicSemanticEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-138-2021-multiplication-division-matched-representations-evidence-20261025.json"
+}

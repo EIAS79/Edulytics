@@ -38,7 +38,12 @@ public static class CommonCoreB001SourceGoalMismatchCorrections
             // lessons supersede the older B001 generic corrections. Keep the
             // original B001 candidates for all other genuinely targeted lessons.
             (CommonCoreG2Unit2AddSubtractCompareTeachingCorrection.IsTarget(doc,lesson) ||
-             CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(doc,lesson)
+             CommonCoreG2Unit3FriendshipBraceletsTeachingCorrection.IsTarget(doc,lesson) ||
+             // The newer, source-hash-guarded Grade 3 teaching corrections
+             // supersede generic B001 candidate prose for the SAME original
+             // lesson. If the source identity is not verified, keep failing
+             // closed rather than skipping either correction by grade alone.
+             CommonCoreG3SourceTeachingCorrections.IsTarget(doc,lesson)
                ? null
                : Repairs.SingleOrDefault(x=>x.Code==lesson.LessonCode)) : null;
 

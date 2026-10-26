@@ -1,0 +1,161 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u06-l04-2021-original-lineplot-15-22-19-data-quarters-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U06:L04",
+      "CultureCode": "en",
+      "Title": "Interpret Measurement Data on Line Plots",
+      "ExplanationParagraphs": [
+        "Original 2021 Grade 3 Unit 6 Lesson 4, CCSS 3.MD.B.4, teaches reading already-created line plots displaying lengths to nearest half or quarter inch. The locally stored teacher lesson.html SHA256 c262ede5764330e7f4ad0dff71ffbb4098b6d24f3e27737b4c14957850d707ae and preparation.html SHA256 d85679a599802689e31d3e8c08807dd23716f70ae91c6efcf6dd1ba4e485d262 were read on Our-CS and compared against the 2021 student-facing text and plot accessible descriptions. A separately formatted publisher Student Task Statements PDF and copyrighted figure pixels were not inspected; the first-party frequency displays are independently constructed and source-index based, not claimed pixel identical.",
+        "Warm-up Notice and Wonder: A List and a Line Plot (10 minutes) presents EXACTLY FIFTEEN original whole-inch twig lengths in source order: 3,5,4,4,5,6,7,5,3,4,4,5,6,6,4. The original line plot has x-counts at 3 inches:2; at4:5; at5:4; at6:3; at7:1. Students notice how listed measurements are represented with one X per measurement and where the most/least common or longest/shortest appear. There are multiple valid observations and wonderings, so do not machine-score a single verbal statement.",
+        "Activity1 A Set of Seedlings (20 minutes): original student list contains TWENTY-TWO measured seedlings at half-inch increments. In original order: 1/2,1,1,1/2,1 1/2,2 1/2,4,1/2,3,1 1/2,5,1 1/2,1 1/2,2 1/2,3,1/2,2 1/2,1 1/2,1,1 1/2,4,2 inches. The corresponding ORIGINAL source line plot 0–6 has frequencies at 1/2:4;1:3;1 1/2:6;2:1;2 1/2:3;3:2;3 1/2:0;4:2;4 1/2:0;5:1. Every single numerical value is mapped; do not replace data with random generic plant measurements.",
+        "Activity1 source teacher discussion: shortest seedling 1/2 inch; tallest 5 inches; number of seedlings 22; most common seedling height 1 1/2 inches with SIX X marks; there are TWO seedlings of 3 inches. Pupils must write THREE valid mathematical statements about the original line plot and AT LEAST TWO relevant questions that are more easily answered from the plot than from the unsorted list. These are open human-reviewed tasks and questions need not match the teacher's suggestions. A seedling-sketch invitation needs teacher review, not an automatically graded inch answer.",
+        "Activity2 All About Twigs (15 minutes) starts with a source line plot from 0 to8 whole inches marked at quarter-inch intervals. There are exactly TWELVE occupied-or-empty quarter positions from 4 3/4 through 7 1/2, in original sequence with X-counts 1,1,0,1,1,3,5,2,1,3,0,1. Their corresponding values are 4 3/4:1;5:1;5 1/4:0;5 1/2:1;5 3/4:1;6:3;6 1/4:5;6 1/2:2;6 3/4:1;7:3;7 1/4:0;7 1/2:1. Each X indicates ONE twig measurement. These source counts sum to NINETEEN twigs.",
+        "The source questions must be retained individually: total 19; 6 1/2 inch twigs TWO (because 6 1/2=6 2/4); twigs less than6 inches FOUR; more than6 inches TWELVE (three exactly 6 are excluded from both); shortest twig 4 3/4 inches; longest7 1/2 inches; most common6 1/4 inches with five X marks. The plot also prompts the pupil to ADD one X representing a twig between3 and4 inches, THEN report the value of the added X. A teacher or student may legitimately select 3 1/4,3 1/2, or3 3/4 on a quarter-tick line. Do not impose the source teacher's example of3 1/4 as the one forced answer; assess both placement and stated length together.",
+        "Source accessibility guidance (MLR6 Three Reads) has pupils first interpret the plotted context, second locate measurable quantities and third answer each source question. Adaptation allows a student to complete six of the eight teacher-grouped questions as an accessibility support; this must not delete original prompts from the first-party lesson. Source synthesis asks what X stands for, how labels and quarter marks show measurement, and how leftmost/rightmost and tallest stacks reveal minimum, maximum and mode. Publisher teacher-gated Cool-down Interpret and Choose is not inspected, no copyright art copied, tests not executed and Stage D not started."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "X represents a measurement",
+          "Definition": "Each X vertically stacked above a number-line tick represents one observed length with that value.",
+          "Rule": "Total sample size equals the sum of all X stacks.",
+          "Example": "The original twig line plot has19 X marks in total."
+        },
+        {
+          "Title": "Frequency on half-inch plot",
+          "Definition": "A half-inch tick scale may place X above lengths 0.5,1,1.5,2,...",
+          "Rule": "One half=2/4; each increase by half makes a new category.",
+          "Example": "At1 1/2 inches the original seedling plot has6 X marks."
+        },
+        {
+          "Title": "Frequency on quarter-inch plot",
+          "Definition": "A quarter-inch scale locates fractions k/4, including mixed numbers.",
+          "Rule": "Count marks and compare fractions with consistent unit.",
+          "Example": "6 1/2 inches is the SAME position as 6 2/4."
+        },
+        {
+          "Title": "Mode minimum maximum",
+          "Definition": "Mode is a category with most X marks; minimum and maximum are the leftmost/rightmost observed ticks, respectively.",
+          "Rule": "Empty positions with zero X do not define minimum or maximum.",
+          "Example": "Twig mode 6 1/4 with 5 X, min4 3/4, max7 1/2."
+        },
+        {
+          "Title": "Add one new X",
+          "Definition": "When adding a measurement to a plot, place one X above the correct marked position and say its value.",
+          "Rule": "The newly drawn X increases frequency of just that position by one.",
+          "Example": "Allowed between3 and4 ticks:3 1/4,3 1/2,3 3/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Original warm-up 15 twig observations",
+          "Question": "How do we represent five 4-inch twig lengths?",
+          "Method": "Count the occurrences of value4 in original 15-element list.",
+          "Steps": [
+            "Read original list in order.",
+            "Count five appearances of 4.",
+            "Draw five stacked X marks above the 4-inch tick."
+          ],
+          "Answer": "Five X at 4 inches",
+          "Check": "Other original counts at3,5,6,7 are2,4,3,1."
+        },
+        {
+          "Title": "Original 22 seedling lengths",
+          "Question": "What is the most common seedling height, and what are min/max?",
+          "Method": "Read original half-inch X stack counts.",
+          "Steps": [
+            "The largest stack is 6 above1 1/2.",
+            "Smallest non-empty tick is1/2.",
+            "Largest non-empty tick is5."
+          ],
+          "Answer": "Mode1 1/2 in; min1/2 in; max5 in",
+          "Check": "4+3+6+1+3+2+0+2+0+1=22."
+        },
+        {
+          "Title": "Original twig count and 6 1/2",
+          "Question": "How many total twigs and how many at6 1/2 inches?",
+          "Method": "Sum all source X stacks, then inspect seventh? correct 6 1/2 tick.",
+          "Steps": [
+            "All12 quarter-position counts add to19.",
+            "6 1/2=6 2/4.",
+            "The corresponding X stack holds two marks."
+          ],
+          "Answer": "19 total; 2 at6 1/2 inches",
+          "Check": "Use actual source quarter ticks, not an assumed half-only plot."
+        },
+        {
+          "Title": "Compare lengths to six inches",
+          "Question": "How many original twigs are strictly less or greater than6 inches?",
+          "Method": "Keep the three 6-inch observations excluded from both strict groups.",
+          "Steps": [
+            "Stacks below6 total four.",
+            "Exactly6 stack contains three.",
+            "Stacks greater than6 total twelve."
+          ],
+          "Answer": "4 less than6;12 more than6",
+          "Check": "4+3+12=19."
+        },
+        {
+          "Title": "Source shortest longest mode",
+          "Question": "Find extreme and most common twig lengths.",
+          "Method": "Find leftmost/rightmost non-empty X and tallest source stack.",
+          "Steps": [
+            "Leftmost observed twig tick is4 3/4.",
+            "Rightmost nonempty tick is7 1/2.",
+            "Maximum stack five X marks at6 1/4."
+          ],
+          "Answer": "Shortest4 3/4; longest7 1/2; mode6 1/4 inches",
+          "Check": "The 7 1/4 tick has zero X; not max."
+        },
+        {
+          "Title": "Original add one X with variable answer",
+          "Question": "Place an X for a twig between3 and4 inches and say what length you added.",
+          "Method": "Choose any original quarter tick strictly between3 and4.",
+          "Steps": [
+            "3 1/4 is valid.",
+            "3 1/2 is also valid.",
+            "3 3/4 is also valid; record and explain the chosen tick."
+          ],
+          "Answer": "One of3 1/4,3 1/2,3 3/4 inches",
+          "Check": "Teacher checks new X and written value agree."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mistake the 19 original twig measurements for 22 seedlings.",
+          "WhyWrong": "They are two different original line plots with different tick resolutions.",
+          "Correction": "Use 22 half-inch seedlings, 19 quarter-inch twigs."
+        },
+        {
+          "Mistake": "Include the 3 exactly-six-inch twigs among more-than-six.",
+          "WhyWrong": "More than is a strict comparison.",
+          "Correction": "Count only X to right of6;12."
+        },
+        {
+          "Mistake": "Count blank quarter positions as actual measured twigs.",
+          "WhyWrong": "Source frequencies at5 1/4 and7 1/4 are zero.",
+          "Correction": "Only X marks count."
+        },
+        {
+          "Mistake": "Force added3-to-4 X to be at3 1/4 only.",
+          "WhyWrong": "Quarter scale has three valid internal positions; teacher examples are not exclusive.",
+          "Correction": "Accept3 1/4,3 1/2,3 3/4 when point and label agree."
+        },
+        {
+          "Mistake": "Treat pupil-generated statements/questions about seedlings as fixed-answer numbers.",
+          "WhyWrong": "Original asks 3 self-generated statements and at least2 questions.",
+          "Correction": "Teacher checks data-based mathematical validity, not a preset wording."
+        }
+      ],
+      "SummaryPoints": [
+        "Source warm-up 15 lengths frequencies3:2,4:5,5:4,6:3,7:1.",
+        "Original seedlings 22 values; half-inch ticks counts [4,3,6,1,3,2,0,2,0,1] from0.5 to5.0; 3 statements and at least2 questions are student-generated.",
+        "Original quarter-inch twig plot 19 values; count at6.5=2, below6=4, above6=12, at6=3, minimum4.75, maximum7.5, mode6.25 with five X.",
+        "Source final X-added task allows3.25,3.5 or3.75 inches, with teacher verifying the drawing.",
+        "Original publisher student PDF, image pixels, cool-down and academic Stage D not verified; tests authored but not executed."
+      ]
+    }
+  ]
+}

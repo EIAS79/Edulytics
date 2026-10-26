@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "gradeOrdinal": 104,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U06:L07",
+  "device": "Our-CS",
+  "originalTeacherHtmlSHA256": "594fd3cea6477a3a8c122389fc81a76607f4642bfdaa4a70a93be67c0aa5f4c1",
+  "originalPreparationHtmlSHA256": "8e80f1ef9cdab2a3be2433a9b31d80c8c3b092dcac9ffdb2c7a1b0132c93055c",
+  "sourceStudentFacingSectionsReviewed": 3,
+  "sourceSevenElementTasks": [
+    {
+      "section": "Warm-up",
+      "task": "Notice and Wonder: bowl and jar, discuss how to measure holding capacity"
+    },
+    {
+      "section": "Activity1 A",
+      "task": "three ordered estimates too-low/about-right/too-high for A in reusable small 'unit' containers"
+    },
+    {
+      "section": "Activity1 B",
+      "task": "three ordered estimates too-low/about-right/too-high for B in SAME small unit"
+    },
+    {
+      "section": "Activity1 comparison",
+      "task": "actually fill A and B with same unit container and compare capacity"
+    },
+    {
+      "section": "Activity2 estimate",
+      "task": "three estimates for number of liters large transparent container holds"
+    },
+    {
+      "section": "Activity2 experiment",
+      "task": "pour ONE liter at a time; label actual water levels; 0 at bottom,1L,2L,...; report measured actual"
+    },
+    {
+      "section": "Synthesis",
+      "task": "define liquid volume and give real containers with marked capacity"
+    }
+  ],
+  "sourceActivity1": {
+    "containers": [
+      "A",
+      "B",
+      "unit"
+    ],
+    "studentsPerGroup": 4,
+    "threeEstimatesPerA": true,
+    "threeEstimatesPerB": true,
+    "measuredCapacitiesNotFixed": true,
+    "unitConstant": true
+  },
+  "sourceActivity2": {
+    "standardUnit": "liter",
+    "symbol": "L",
+    "oneLiterRepeatedFill": true,
+    "zeroAtBottom": true,
+    "realContainerNotFixed": true,
+    "nineLiterExampleOnly": true,
+    "videoAlternativeReferencedNotOpened": true
+  },
+  "sourceTwoVisualDescriptions": [
+    "partially filled bowl and jar",
+    "three containers A B unit"
+  ],
+  "originalSourceArtNotPixelVerified": true,
+  "standaloneStudentPdfNotInspected": true,
+  "publisherGatedCooldownNotInspected": true,
+  "firstPartyRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u06-l07-2021.rich-lesson-v2.json",
+  "firstPartyViewPath": "src/Edulytics.Web/Views/Shared/_Grade3Unit6Lesson7.cshtml",
+  "firstPartyTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit6Lesson7LiquidVolumeTests.cs",
+  "teacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-104-liquid-volume-teacher-rubric-20261025.json",
+  "testsNotRun": true,
+  "stageD": "NOT_STARTED",
+  "academicApproval": "NOT_CLAIMED",
+  "state": "READY_FOR_STAGE_D"
+}

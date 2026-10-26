@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 118,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U07:L05",
+  "unitNumber": 7,
+  "lessonNumber": 5,
+  "title": "Attributes of Other Quadrilaterals",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-7/lesson-5/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-7/lesson-5/lesson.html",
+  "stageA": {
+    "status": "2021_ORIGINAL_TEACHER_PREPARATION_SEVEN_PAGE_PDF_AND_TWELVE_SVGS_REVIEWED",
+    "goals": "Draw examples of quadrilaterals that are not rhombuses, rectangles, or squares. Understand that shapes can be in more than one category.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 7,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "originalStudentTaskPdfSha256": "c7f21f414e4a857d806e13f6c3a302abde6f540a080106c5ec4bc13debf492f6",
+    "originalStudentPdfPagesRead": 7,
+    "originalGeometrySvgCount": 12,
+    "originalTeacherHtmlSha256": "27544d45918efb3bcdc6c7831f72cd6d1bee3f551862864630b9acdc70729369",
+    "originalPreparationHtmlSha256": "9c31479ad7f923b62b2f862786664b86aa052491a07ee12fce1e2efa7c09801c"
+  },
+  "stageB": {
+    "status": "SOURCE_EXACT_SIX_SHAPE_SUBCLASS_RICHV2_WITH_CANONICAL_GUARDS",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U07:L05",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "d701e0ea31dc7544c6e6a250fdac0dcc1fbcff1e2eaa4f3a0b4594e7423d623c",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l05-2021.rich-lesson-v2.json",
+    "canonicalMaterializerBridge": "src/Edulytics.Data/Seeding/CommonCoreG3Unit7Lesson5RichV2.cs",
+    "firstPartyView": "src/Edulytics.Web/Views/Shared/_Grade3Unit7Lesson5.cshtml",
+    "authoredContentVersion": "g3-u07-l05-2021-six-shape-inclusion-and-open-quadrilaterals-v1",
+    "originalPublisherArtworkEmbedded": false
+  },
+  "stageC": {
+    "status": "FOUR_DIVISION_PLUS_SIX_ORIGINAL_SHAPE_SETS_WITH_STRICT_MULTI_LABEL_GRADER_AND_FOUR_TEACHER_DRAWINGS_TESTS_WRITTEN_NOT_RUN",
+    "family": "shape-attributes",
+    "practiceAnswerType": "teacher",
+    "coolDownAnswerType": "teacher",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity All the Ways with your teacher. Show the representation and explain how it meets the goal: Let’s describe and draw shapes in specific groups. Required Preparation CCSS Standards Addressing 3.G.A.1 3.OA.C.7 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 min Teacher Reflection Question",
+    "teacherReviewNote": "Shape classification, image context and orientation require teacher review; no unsupported auto-grading.",
+    "sourceNumericQuestionCount": 4,
+    "sourceSetValuedQuestionCount": 6,
+    "sourceOpenHumanReasoningItems": 4,
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+    "sourceStudentTaskPdfSourceLink": "https://cms-assets.illustrativemathematics.org/f7p5ykdvdzqxa4est0ezo494xyay"
+  },
+  "sourceElements": [
+    {
+      "id": "SOURCE-118-WARMUP-01",
+      "sourcePosition": "Student PDF page 1, Number Talk",
+      "sourceKind": "DIGITIZABLE_ARITHMETIC",
+      "verifiedSourceExpression": "70 / 7",
+      "expectedInteger": 10,
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-WARMUP-01",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Oral mental strategy discussed separately"
+    },
+    {
+      "id": "SOURCE-118-WARMUP-02",
+      "sourcePosition": "Student PDF page 1, Number Talk",
+      "sourceKind": "DIGITIZABLE_ARITHMETIC",
+      "verifiedSourceExpression": "77 / 7",
+      "expectedInteger": 11,
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-WARMUP-02",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Oral mental strategy discussed separately"
+    },
+    {
+      "id": "SOURCE-118-WARMUP-03",
+      "sourcePosition": "Student PDF page 1, Number Talk",
+      "sourceKind": "DIGITIZABLE_ARITHMETIC",
+      "verifiedSourceExpression": "63 / 7",
+      "expectedInteger": 9,
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-WARMUP-03",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Oral mental strategy discussed separately"
+    },
+    {
+      "id": "SOURCE-118-WARMUP-04",
+      "sourcePosition": "Student PDF page 1, Number Talk",
+      "sourceKind": "DIGITIZABLE_ARITHMETIC",
+      "verifiedSourceExpression": "56 / 7",
+      "expectedInteger": 8,
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-WARMUP-04",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Oral mental strategy discussed separately"
+    },
+    {
+      "id": "SOURCE-118-SHAPE-01",
+      "sourcePosition": "Student PDF pages 2, original figure 1",
+      "sourceKind": "DIGITIZABLE_SET_WITH_VISUAL_SOURCE_LINK_AND_TEACHER_REASONING",
+      "verifiedSourceCategories": [
+        "quadrilateral"
+      ],
+      "geometryEvidenceSvgSha256": "1073bae58cd33e94338613528c25bd6e114c27dae9d3dcd0306adf10dad60e67",
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-SHAPE-01",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Student reasoning and original figure viewing remain teacher evidence"
+    },
+    {
+      "id": "SOURCE-118-SHAPE-02",
+      "sourcePosition": "Student PDF pages 2, original figure 2",
+      "sourceKind": "DIGITIZABLE_SET_WITH_VISUAL_SOURCE_LINK_AND_TEACHER_REASONING",
+      "verifiedSourceCategories": [
+        "triangle"
+      ],
+      "geometryEvidenceSvgSha256": "725aa06467340db87fe45b7d83d27f27d73ef47f7c322932d8147130810ca4a1",
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-SHAPE-02",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Student reasoning and original figure viewing remain teacher evidence"
+    },
+    {
+      "id": "SOURCE-118-SHAPE-03",
+      "sourcePosition": "Student PDF pages 2, original figure 3",
+      "sourceKind": "DIGITIZABLE_SET_WITH_VISUAL_SOURCE_LINK_AND_TEACHER_REASONING",
+      "verifiedSourceCategories": [
+        "quadrilateral"
+      ],
+      "geometryEvidenceSvgSha256": "6faf70fbb250ec6a215101b387cb7fe39d3c0808ea1180bee0fe78b6af3cf7cc",
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-SHAPE-03",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Student reasoning and original figure viewing remain teacher evidence"
+    },
+    {
+      "id": "SOURCE-118-SHAPE-04",
+      "sourcePosition": "Student PDF pages 2, original figure 4",
+      "sourceKind": "DIGITIZABLE_SET_WITH_VISUAL_SOURCE_LINK_AND_TEACHER_REASONING",
+      "verifiedSourceCategories": [
+        "quadrilateral",
+        "rhombus"
+      ],
+      "geometryEvidenceSvgSha256": "29b184b9cbdb9fe409e1e2da5eb5b53b8f5d63f4d0f6b53cfc4fb2b47e996b7a",
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-SHAPE-04",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Student reasoning and original figure viewing remain teacher evidence"
+    },
+    {
+      "id": "SOURCE-118-SHAPE-05",
+      "sourcePosition": "Student PDF pages 3, original figure 5",
+      "sourceKind": "DIGITIZABLE_SET_WITH_VISUAL_SOURCE_LINK_AND_TEACHER_REASONING",
+      "verifiedSourceCategories": [
+        "quadrilateral",
+        "rectangle"
+      ],
+      "geometryEvidenceSvgSha256": "8d714f884fed273db4e9e08152d515cc8600fe261c7c34dd1e4c3ef10cef754d",
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-SHAPE-05",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Student reasoning and original figure viewing remain teacher evidence"
+    },
+    {
+      "id": "SOURCE-118-SHAPE-06",
+      "sourcePosition": "Student PDF pages 3, original figure 6",
+      "sourceKind": "DIGITIZABLE_SET_WITH_VISUAL_SOURCE_LINK_AND_TEACHER_REASONING",
+      "verifiedSourceCategories": [
+        "quadrilateral",
+        "rectangle",
+        "rhombus",
+        "square"
+      ],
+      "geometryEvidenceSvgSha256": "71811dc496098b64d5f1eec800470012b64e166f3cd0a6c454ffacaaa319fc11",
+      "coverage": "MATCHED_DIGITAL",
+      "companionId": "G3-U07-L05-SHAPE-06",
+      "testPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit7Lesson5ShapeSetsTests.cs",
+      "teacherBoundary": "Student reasoning and original figure viewing remain teacher evidence"
+    },
+    {
+      "id": "SOURCE-118-DRAW-01",
+      "sourcePosition": "Student PDF page 4, open construction 1",
+      "sourceKind": "OPEN_DOT_GRID_CONSTRUCTION",
+      "coverage": "MATCHED_TEACHER_LED",
+      "companionId": "G3-U07-L05-DRAW-01",
+      "teacherBoundary": "Teacher checks four sides, side equality, right angles, multiple valid designs and explanation"
+    },
+    {
+      "id": "SOURCE-118-DRAW-02",
+      "sourcePosition": "Student PDF page 4, open construction 2",
+      "sourceKind": "OPEN_DOT_GRID_CONSTRUCTION",
+      "coverage": "MATCHED_TEACHER_LED",
+      "companionId": "G3-U07-L05-DRAW-02",
+      "teacherBoundary": "Teacher checks four sides, side equality, right angles, multiple valid designs and explanation"
+    },
+    {
+      "id": "SOURCE-118-DRAW-03",
+      "sourcePosition": "Student PDF page 4, open construction 3",
+      "sourceKind": "OPEN_DOT_GRID_CONSTRUCTION",
+      "coverage": "MATCHED_TEACHER_LED",
+      "companionId": "G3-U07-L05-DRAW-03",
+      "teacherBoundary": "Teacher checks four sides, side equality, right angles, multiple valid designs and explanation"
+    },
+    {
+      "id": "SOURCE-118-DRAW-04",
+      "sourcePosition": "Student PDF page 5, open construction 4",
+      "sourceKind": "OPEN_DOT_GRID_CONSTRUCTION",
+      "coverage": "MATCHED_TEACHER_LED",
+      "companionId": "G3-U07-L05-DRAW-04",
+      "teacherBoundary": "Teacher checks four sides, side equality, right angles, multiple valid designs and explanation"
+    },
+    {
+      "id": "SOURCE-118-TEACHING-01",
+      "sourcePosition": "Lesson preparation/learning goals and 10+20+15+10+5 timings",
+      "sourceKind": "SOURCE_INSTRUCTIONAL_CONTEXT",
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l05-2021.rich-lesson-v2.json",
+      "teacherBoundary": "MLR8 partner restatement, rulers, open reasoning and classroom observation"
+    },
+    {
+      "id": "SOURCE-118-TEACHING-02",
+      "sourcePosition": "Synthesis: how thinking about possible quadrilaterals changed",
+      "sourceKind": "SOURCE_INSTRUCTIONAL_CONTEXT",
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l05-2021.rich-lesson-v2.json",
+      "teacherBoundary": "MLR8 partner restatement, rulers, open reasoning and classroom observation"
+    },
+    {
+      "id": "SOURCE-118-TEACHING-03",
+      "sourcePosition": "Student section summary: right triangles and four shape class inclusion definitions",
+      "sourceKind": "SOURCE_INSTRUCTIONAL_CONTEXT",
+      "coverage": "MATCHED_TEACHER_LED",
+      "firstPartyRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u07-l05-2021.rich-lesson-v2.json",
+      "teacherBoundary": "MLR8 partner restatement, rulers, open reasoning and classroom observation"
+    },
+    {
+      "id": "SOURCE-118-SUMMARY-VISUAL-01",
+      "sourcePosition": "Student PDF page 6 or 7, right triangles, source summary 4 examples",
+      "sourceKind": "ORIGINAL_SUMMARY_EXAMPLES",
+      "coverage": "MATCHED_TEACHER_LED",
+      "geometryEvidenceSvgSha256": "1e5cbb57efd6ccd3181678046ef830634d564c4e89b6e9eaaed6174ba612363f",
+      "teacherBoundary": "Original publisher visual shapes not copied; teacher-led comparison for examples and counterexamples"
+    },
+    {
+      "id": "SOURCE-118-SUMMARY-VISUAL-02",
+      "sourcePosition": "Student PDF page 6 or 7, rectangles, source summary 5 examples",
+      "sourceKind": "ORIGINAL_SUMMARY_EXAMPLES",
+      "coverage": "MATCHED_TEACHER_LED",
+      "geometryEvidenceSvgSha256": "f4679b566aecd68089c5a16f8bca2e0e246815516e8bea55655fb08085ce0a6a",
+      "teacherBoundary": "Original publisher visual shapes not copied; teacher-led comparison for examples and counterexamples"
+    },
+    {
+      "id": "SOURCE-118-SUMMARY-VISUAL-03",
+      "sourcePosition": "Student PDF page 6 or 7, rhombuses, source summary 5 examples",
+      "sourceKind": "ORIGINAL_SUMMARY_EXAMPLES",
+      "coverage": "MATCHED_TEACHER_LED",
+      "geometryEvidenceSvgSha256": "fe3e6de27440f05f03f91f05c5cab55e30b86d587be13d7e1bb35780a595bf34",
+      "teacherBoundary": "Original publisher visual shapes not copied; teacher-led comparison for examples and counterexamples"
+    },
+    {
+      "id": "SOURCE-118-SUMMARY-VISUAL-04",
+      "sourcePosition": "Student PDF page 6 or 7, squares, source summary 4 examples",
+      "sourceKind": "ORIGINAL_SUMMARY_EXAMPLES",
+      "coverage": "MATCHED_TEACHER_LED",
+      "geometryEvidenceSvgSha256": "aad01b3175f402f45b1b7c4d69d602d7ec4be14c317dbcca233e2caf6df721ba",
+      "teacherBoundary": "Original publisher visual shapes not copied; teacher-led comparison for examples and counterexamples"
+    },
+    {
+      "id": "SOURCE-118-COOLDOWN-RESTRICTED",
+      "sourcePosition": "Teacher lesson: Describe It, Draw It (5 minutes)",
+      "sourceKind": "PUBLISHER_GATED_COOLDOWN",
+      "coverage": "RIGHTS_RESTRICTED",
+      "teacherBoundary": "Publisher original content was not accessed or copied. Independent Edulytics exit prompt is not the original source task."
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U07-L05-SVG-01",
+      "assetInspected": true,
+      "sha256": "1073bae58cd33e94338613528c25bd6e114c27dae9d3dcd0306adf10dad60e67",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-02",
+      "assetInspected": true,
+      "sha256": "725aa06467340db87fe45b7d83d27f27d73ef47f7c322932d8147130810ca4a1",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-03",
+      "assetInspected": true,
+      "sha256": "6faf70fbb250ec6a215101b387cb7fe39d3c0808ea1180bee0fe78b6af3cf7cc",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-04",
+      "assetInspected": true,
+      "sha256": "29b184b9cbdb9fe409e1e2da5eb5b53b8f5d63f4d0f6b53cfc4fb2b47e996b7a",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-05",
+      "assetInspected": true,
+      "sha256": "8d714f884fed273db4e9e08152d515cc8600fe261c7c34dd1e4c3ef10cef754d",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-06",
+      "assetInspected": true,
+      "sha256": "71811dc496098b64d5f1eec800470012b64e166f3cd0a6c454ffacaaa319fc11",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-07",
+      "assetInspected": true,
+      "sha256": "95c7ce77140fe8cbe230caba551adb8472fa7bf41c36d5cb986f37d4011c82f8",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-08",
+      "assetInspected": true,
+      "sha256": "26272d2eccc71eda3a432a507f2d63790899afaa529c79779d678b6c3ccd3a92",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-09",
+      "assetInspected": true,
+      "sha256": "1e5cbb57efd6ccd3181678046ef830634d564c4e89b6e9eaaed6174ba612363f",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-10",
+      "assetInspected": true,
+      "sha256": "f4679b566aecd68089c5a16f8bca2e0e246815516e8bea55655fb08085ce0a6a",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-11",
+      "assetInspected": true,
+      "sha256": "fe3e6de27440f05f03f91f05c5cab55e30b86d587be13d7e1bb35780a595bf34",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    },
+    {
+      "id": "G3-U07-L05-SVG-12",
+      "assetInspected": true,
+      "sha256": "aad01b3175f402f45b1b7c4d69d602d7ec4be14c317dbcca233e2caf6df721ba",
+      "originalRightsChecked": true,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_FIGURE_READONLY_LINK_AND_FIRST_PARTY_PROPERTY_DESCRIPTIONS"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 22,
+    "mappedOrExplicitRightsLimit": 22,
+    "publisherRestricted": 1,
+    "sourceMaterialParityProven": null
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Draw a shape meeting a chosen set of attributes, rotate it and explain why its type does not change.",
+    "answerType": "teacher",
+    "expected": null
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_MANUALLY_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-118-2021-source-geometry-and-grade-evidence-20261025.json",
+  "sourceMaterialLimitations": [
+    "Publisher original Cool-down gated; not read/copied; separate goal-aligned Edulytics exit task.",
+    "No publisher visual SVG paths or logos embedded; original seven-page PDF linked for teacher.",
+    "Published DB Rich V2 vs effective production, authenticated runtime, tests, CI and academic signature belong to later Stage D."
+  ],
+  "nextSequentialLesson": "PED:US-CCSS-MATH:G3:U07:L06"
+}

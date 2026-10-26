@@ -403,6 +403,14 @@ public sealed class MathematicsCanonicalLessonContentSeeder
          CommonCoreG2Unit4AgeRiddlesCorrection.IsTarget(document, lesson) ||
          CommonCoreG1Unit2StorySourceCorrections.IsTarget(document, lesson) ||
          CommonCoreB001SourceGoalMismatchCorrections.IsTarget(document, lesson) ||
+         // Retain exactly the TWO historical B001 Grade 3 metadata identities
+         // after the newer SHA-verified Grade 3 teaching correction supersedes
+         // their obsolete generic prose. Do not admit the remaining 141 Grade 3
+         // candidates into this previously approved production inventory.
+         ((lesson.LessonCode is
+             "PED:US-CCSS-MATH:G3:U01:L12" or
+             "PED:US-CCSS-MATH:G3:U01:L15") &&
+             CommonCoreG3SourceTeachingCorrections.IsTarget(document, lesson)) ||
          CommonCoreG1Unit2Part2SourceTeachingCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2NextFiveSourceTeachingCorrections.IsTarget(document, lesson) ||
          CommonCoreG1Unit2CompareFiveSourceTeachingCorrections.IsTarget(document, lesson) ||

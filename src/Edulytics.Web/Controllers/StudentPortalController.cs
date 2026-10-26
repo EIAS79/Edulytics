@@ -275,6 +275,7 @@ public sealed class StudentPortalController : Controller
         ViewData["GameAdoptionId"] = availability.GameAdoptionId;
         ViewData["ExactPracticeAdoptionId"] = availability.ExactPracticeAdoptionId;
         ViewData["LessonPracticePilotAdoptionId"] = availability.PilotAdoptionId;
+        ViewData["Grade3AuthoredActivityAdoptionId"] = availability.Grade3AuthoredActivityAdoptionId;
         return View(nameof(Lesson), lesson.Value);
     }
 
@@ -430,7 +431,7 @@ public sealed class StudentPortalController : Controller
         return RedirectToAction(nameof(Notifications));
     }
 
-    private async Task<(Guid? GameAdoptionId, Guid? ExactPracticeAdoptionId, Guid? PilotAdoptionId)>
+    private async Task<(Guid? GameAdoptionId, Guid? ExactPracticeAdoptionId, Guid? PilotAdoptionId, Guid? Grade3AuthoredActivityAdoptionId)>
         FindLessonPracticeAvailabilityAsync(
             Guid actorId,
             Guid lessonId,
@@ -440,6 +441,10 @@ public sealed class StudentPortalController : Controller
         Guid? gameAdoptionId = null;
         Guid? exactPracticeAdoptionId = null;
         Guid? pilotAdoptionId = null;
+        Guid? grade3AuthoredActivityAdoptionId = null;
+        var requiresGrade3Companion =
+            lessonDetail.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal);
 
         // Resolve exact Practice independently from optional game presentation.
         var initial = await _privatePractice.GetWorkspaceAsync(actorId, null, cancellationToken);
@@ -449,16 +454,19 @@ public sealed class StudentPortalController : Controller
             lessonDetail,
             ref gameAdoptionId,
             ref exactPracticeAdoptionId,
-            ref pilotAdoptionId);
+            ref pilotAdoptionId,
+            ref grade3AuthoredActivityAdoptionId);
 
         if (HasResolvedPracticeAvailability(
                 exactPracticeAdoptionId,
-                pilotAdoptionId))
+                pilotAdoptionId) &&
+            (!requiresGrade3Companion || grade3AuthoredActivityAdoptionId.HasValue))
         {
             return (
                 gameAdoptionId,
                 exactPracticeAdoptionId,
-                pilotAdoptionId);
+                pilotAdoptionId,
+                grade3AuthoredActivityAdoptionId);
         }
 
         foreach (var curriculum in initial.Curricula)
@@ -476,20 +484,22 @@ public sealed class StudentPortalController : Controller
                 lessonDetail,
                 ref gameAdoptionId,
                 ref exactPracticeAdoptionId,
-                ref pilotAdoptionId);
+                ref pilotAdoptionId,
+                ref grade3AuthoredActivityAdoptionId);
 
-            // Exact Practice is the primary launch path and a legacy pilot is
-            // sufficient on its own. Neither requires scanning unrelated
-            // curriculum workspaces for a third optional presentation mode.
+            // Continue scanning authorized curricula for a Grade 3
+            // authored companion, even if another course has Practice.
             if (HasResolvedPracticeAvailability(
-                    exactPracticeAdoptionId,
-                    pilotAdoptionId))
+                exactPracticeAdoptionId,
+                pilotAdoptionId) &&
+            (!requiresGrade3Companion || grade3AuthoredActivityAdoptionId.HasValue))
             {
                 break;
             }
         }
 
-        return (gameAdoptionId, exactPracticeAdoptionId, pilotAdoptionId);
+        return (gameAdoptionId, exactPracticeAdoptionId, pilotAdoptionId,
+            grade3AuthoredActivityAdoptionId);
     }
 
     private static bool HasResolvedPracticeAvailability(
@@ -504,11 +514,21 @@ public sealed class StudentPortalController : Controller
         StudentLessonDetail lessonDetail,
         ref Guid? gameAdoptionId,
         ref Guid? exactPracticeAdoptionId,
-        ref Guid? pilotAdoptionId)
+        ref Guid? pilotAdoptionId,
+        ref Guid? grade3AuthoredActivityAdoptionId)
     {
         var lesson = workspace.Lessons.FirstOrDefault(x => x.LessonId == lessonId);
         if (lesson is null || !workspace.SelectedCurriculumAdoptionId.HasValue)
             return;
+
+        // Owner-authorized Grade 3 activities are not generic Practice.
+        // An enrolled learner may open them before exact Practice rollout.
+        if (!grade3AuthoredActivityAdoptionId.HasValue &&
+            lesson.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal))
+        {
+            grade3AuthoredActivityAdoptionId = workspace.SelectedCurriculumAdoptionId;
+        }
 
         if (!pilotAdoptionId.HasValue &&
             string.Equals(lesson.LessonCode, LessonPracticePilotCode, StringComparison.Ordinal))

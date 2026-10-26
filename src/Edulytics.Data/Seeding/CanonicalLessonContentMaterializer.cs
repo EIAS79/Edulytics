@@ -120,6 +120,7 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreSourceBoundHtmlEntityCorrections.Apply(document);
         CommonCoreT001MixedAddSubtractContentCorrection.Apply(document);
         CommonCoreT001FindThePairContentCorrection.Apply(document);
+        CommonCoreG3SourceTeachingCorrections.Apply(document);
 
         ValidateUnicode(document);
         CanonicalLessonContentPackContract.Validate(document);
@@ -455,8 +456,10 @@ public static class CanonicalLessonContentMaterializer
             .GetExpectedContentVersion(document, lesson, g1Unit6To8);
         var mixed = CommonCoreT001MixedAddSubtractContentCorrection
             .GetExpectedContentVersion(document, lesson, html);
-        return CommonCoreT001FindThePairContentCorrection
+        var finalG1 = CommonCoreT001FindThePairContentCorrection
             .GetExpectedContentVersion(document, lesson, mixed);
+        return CommonCoreG3SourceTeachingCorrections
+            .GetExpectedContentVersion(document, lesson, finalG1);
     }
 
     public static bool IsReviewedCorrectionTarget(
@@ -771,6 +774,8 @@ public static class CanonicalLessonContentMaterializer
         CommonCoreT001MixedAddSubtractContentCorrection
             .CanUpgradeExisting(document, lesson, existingContentVersion) ||
         CommonCoreT001FindThePairContentCorrection
+            .CanUpgradeExisting(document, lesson, existingContentVersion) ||
+        CommonCoreG3SourceTeachingCorrections
             .CanUpgradeExisting(document, lesson, existingContentVersion);
 
     public static string ComputeLessonFingerprint(

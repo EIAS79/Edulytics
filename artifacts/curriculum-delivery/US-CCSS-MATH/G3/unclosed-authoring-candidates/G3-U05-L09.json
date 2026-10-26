@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 88,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U05:L09",
+  "unitNumber": 5,
+  "lessonNumber": 9,
+  "title": "All Kinds of Numbers on the Number Line",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-5/lesson-9/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-5/lesson-9/lesson.html",
+  "stageA": {
+    "status": "DIRECT_2021_ORIGINAL_THREE_NONUNIT_KNOWN_POINTS_OPTIONAL_THREEQUARTERS_AND_THIRTEEN_VISUAL_ASSETS",
+    "goals": "Locate 1 on the number line given the location of a non-unit fraction.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 13,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false
+  },
+  "stageB": {
+    "status": "FIRST_PARTY_RICHV2_AND_NUMERATOR_BASED_UNIT_RECONSTRUCTION_OPTIONAL_TRANSFER_PRESERVED",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U05:L09",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "a4e247ce514ef3bbb6f926e0138120d766f6df7ebb0408331e9731a1f247fbd0",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "sourceSpecificRichV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u05-l09-2021.rich-lesson-v2.json"
+  },
+  "stageC": {
+    "status": "THREE_NONUNIT_UNIT_COORDINATE_ORACLES_AND_OPTIONAL_TRANSFER_TEACHER_GATES_TESTS_WRITTEN_UNRUN",
+    "family": "fractions-number-line",
+    "practiceAnswerType": "rational",
+    "coolDownAnswerType": "rational",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": false,
+    "teacherTask": "Work through the original lesson's activity Locate 1 Again with your teacher. Show the representation and explain how it meets the goal: Let’s locate numbers on the number line when we are given the location of one fraction. Required Preparation CCSS Standards Addressing 3.NF.A.2 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-down 5 mi",
+    "teacherReviewNote": "Teacher checks zero-to-one unit, equal spacing and placement of numbers beyond one when present.",
+    "lessonSpecificTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit5Lesson9RecoverWholeNumberTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "G3-U05-L09-HEADING-01",
+      "sourceSection": "Warm-up: Which One Doesn't Belong: Many Number Lines (10 minutes)",
+      "elementKind": "WARM_UP",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_PUBLIC_SOURCE_TO_FIRSTPARTY_A_B_C_MAPPED",
+      "grading": "SCALAR_PLUS_TEACHER_OPTIONAL_PRESERVED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L09-HEADING-02",
+      "sourceSection": "Activity 1: Locate 1 Again (20 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_PUBLIC_SOURCE_TO_FIRSTPARTY_A_B_C_MAPPED",
+      "grading": "SCALAR_PLUS_TEACHER_OPTIONAL_PRESERVED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L09-HEADING-03",
+      "sourceSection": "Activity 2: Locate $\\frac{3}{4}$ [OPTIONAL] (15 minutes)",
+      "elementKind": "ACTIVITY",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_PUBLIC_SOURCE_TO_FIRSTPARTY_A_B_C_MAPPED",
+      "grading": "SCALAR_PLUS_TEACHER_OPTIONAL_PRESERVED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L09-HEADING-04",
+      "sourceSection": "Lesson Synthesis",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L09-HEADING-05",
+      "sourceSection": "Cool-down: Where is 1 Now? (5 minutes)",
+      "elementKind": "PUBLISHER_COOL_DOWN_RESTRICTED",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "sourceFullyCompared": false,
+      "richV2Equivalent": false,
+      "coverage": "SOURCE_INDEX_ONLY",
+      "grading": "NOT_CERTIFIED",
+      "claimedParity": false
+    },
+    {
+      "id": "G3-U05-L09-HEADING-06",
+      "sourceSection": "Student Section Summary",
+      "elementKind": "TEACHER_SYNTHESIS",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "sourceFullyCompared": true,
+      "richV2Equivalent": true,
+      "coverage": "2021_ORIGINAL_PUBLIC_SOURCE_TO_FIRSTPARTY_A_B_C_MAPPED",
+      "grading": "SCALAR_PLUS_TEACHER_OPTIONAL_PRESERVED",
+      "claimedParity": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U05-L09-IMAGE-01",
+      "observedAltText": "Number line. Tick marks at zero and one half, a point plotted at one half.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-02",
+      "observedAltText": "Number line. Tick marks labeled zero and one. Point plotted at one.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-03",
+      "observedAltText": "Number line. 0 to 1 with 3 evenly spaced tick marks between. First tick mark, 0. Last tick mark, 1.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-04",
+      "observedAltText": "Number line. Evenly spaced tick marks labeled zero, one, and two. Point plotted at the one.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-05",
+      "observedAltText": "Number line. Two tick marks, zero and two thirds.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-06",
+      "observedAltText": "Number line, two tick marks. One tick mark, 0. Second tick mark, five fourths.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-07",
+      "observedAltText": "Number line, two tick marks, zero and eleven eighths.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-08",
+      "observedAltText": "Fractions.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-09",
+      "observedAltText": "Number line. Tick marks labeled zero and one third.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-10",
+      "observedAltText": "Number line. One tick mark labeled zero.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-11",
+      "observedAltText": "Number line. Scale 0 to 1, evenly spaced tick marks. First tick mark, 0. Second tick, one sixth, point plotted. 4 unlabeled tick marks. Last tick mark, 1.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-12",
+      "observedAltText": "Number line. Scale 0 to 2. First tick mark, 0. Second tick, one sixth, point plotted. 4 unlabeled tick marks. Seventh tick mark, 1. Last tick mark, 2.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    },
+    {
+      "id": "G3-U05-L09-IMAGE-13",
+      "observedAltText": "Number line. Scale 0 to 2 by sixths, evenly spaced tick marks. First tick mark, 0. Last tick mark, 2. Points plotted at 2 sixths and 7 sixths.",
+      "originalReference": "unit-5/lesson-9/lesson.html",
+      "assetInspected": true,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "ORIGINAL_IMAGE_BYTES_READ_ON_OWNER_DEVICE_NOT_REPRODUCED"
+    }
+  ],
+  "sourceElementCounts": {
+    "headings": 6,
+    "imageDescriptions": 13,
+    "fullyVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Divide the zero-to-one number line into 2 equal intervals. Write the fraction at the first tick after zero.",
+    "answerType": "rational",
+    "expected": "1/2"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original standalone student task PDF and teacher-only publisher Where is 1 Now? assessment not verified.",
+    "Publisher image pixels not copied; first-party reconstructions are not pixel-parity claims.",
+    "Optional 3/4-from-1/3 is beyond core grade3 depth and must never be mandatory.",
+    "Teacher must review drawings of equal lengths, reverse unit reconstruction, and peer-edited explanations.",
+    "No tests, Stage D, runtime persistence, production deployment or academic review executed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "originalTeacherHtmlSHA256": "54eddcb246635dcbcedfbc8f6424bf622e68f0ca17166596e60cebc72ea7d40f",
+  "originalPreparationHtmlSHA256": "4088255dbf2489771cc140cd2de1da61a59e62410caa6fd386afb9c1ad76e535",
+  "originalSourceAssetsDownloadedForReadOnlyReview": 13,
+  "sourceSpecificEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-88-2021-source-to-first-party-evidence-20261025.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-88-academic-source-coverage-and-human-rubric-20261025.json"
+}

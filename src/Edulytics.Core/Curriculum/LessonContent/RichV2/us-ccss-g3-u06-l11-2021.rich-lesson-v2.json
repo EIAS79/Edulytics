@@ -1,0 +1,138 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g3-u06-l11-2021-han-55-elena-32-and-four-mathlibs-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G3:U06:L11",
+      "CultureCode": "en",
+      "Title": "Solve Problems Involving Time (Part 2)",
+      "ExplanationParagraphs": [
+        "Original 2021 Grade3 Unit6 Lesson11 aligns CCSS3.MD.A.1 and combines elapsed-time problems with UNKNOWN START, END or DURATION. Locally stored teacher lesson.html SHA256 47a2bfc5d1d2deeb6926b893ac9787dd59e5963d9c42c7bb19661313f7e6b222 and preparation.html SHA256 4b3d7204b058ac3627c38d6716642653825ca8a470175465bf7fb39b3a2c3be4 were read on Our-CS, along with all three original student-facing task sections. Original standalone student PDF, source clock image pixels and teacher-gated Cool-down Time and Time Again were not reviewed.",
+        "Warm-up Notice and Wonder Band Practice (10 minutes): Han ate dinner BEFORE catching a bus and had to hurry after getting off to reach band practice on time. The source gives NO fixed dinner/practice times; students ask their own questions or suggest plausible timing. Teacher may ask what start/end times would be needed to answer a travel question. Do not invent fixed warm-up measurements or one required story solution.",
+        "Activity1 On the Bus Again (15 minutes): the source provides two ACTUAL ANALOG CLOCK ILLUSTRATIONS of Han boarding and leaving the bus. The original student text asks duration. Crucially, the source PUBLIC student Section Summary specifies an exact worked sequence: Han boards at5:42 and leaves at6:37; jumps3min→5:45,15min→6:00,30min→6:30,7min→6:37; total55 minutes. Source teacher confirms the ride crosses an hour. These numeric facts are backed by teacher/student summary text, though original clock drawing pixels have not been checked.",
+        "Activity1 second task shows Elena's waiting start and later boarding by ANALOG CLOCKS, and asks students to DRAW the missing minute hand to represent WAITING EXACTLY32 MINUTES. Teacher synthesis states for the non-hour-crossing example that36−32=4, indicating minute positions4 and36 within the same hour. The actual clock hour and original drawing hand positions have NOT been visually verified from the local HTML, so no fabricated time-of-day for Elena. Keep minute-hand drawing as human-visual evaluation anchored to full original source clock.",
+        "Activity2 Math Libs Time (20 minutes) has exactly FOUR ORIGINAL templates, each with student-generated blanks for person NAME and ACTIVITY. Those blanks can hold MANY acceptable names/events, but the original numerical facts do NOT change. Problem1 start8:25 a.m., finish8:50 a.m. =>25 minutes. Problem2 finish5:38 p.m. after20min => start5:18 p.m. Problem3 start10:45 a.m., finish11:18 a.m. =>33 minutes (crosses11:00). Problem4 start3:30 p.m., duration45 minutes =>4:15 p.m. (crosses4:00). Each original task must remain a separate answer and reasoning opportunity.",
+        "Explain different UNKNOWN quantities: given start+end solve duration; given finish+duration solve start; given start+duration solve finish. Accept accurate number lines, labeled clocks, addition/subtraction equations, minute jumps, time tables and prose; teacher checks reasoning and tolerates valid independent created names and activities. Preserve all four source problem numbers and AM/PM labels; no random replacement by generic word problems.",
+        "Student Section Summary repeats that Han spent55 minutes on the bus and identifies the source exact sequence3+15+30+7=55. It also revisits tell-and-write to nearest minute. Publisher original clock/bus artwork and independently formatted PDF, teacher-only Cool-down, CI, executed tests and Stage D not claimed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Calculate duration from two times",
+          "Definition": "Elapsed minutes are the positive difference from start clock to end clock.",
+          "Rule": "Count forward in jumps, splitting at hour boundaries.",
+          "Example": "5:42→6:37 is55 minutes."
+        },
+        {
+          "Title": "Unknown start time",
+          "Definition": "Start equals finish minus duration.",
+          "Rule": "Count backward by elapsed minutes from end.",
+          "Example": "5:38pm minus20minutes =5:18pm."
+        },
+        {
+          "Title": "Unknown end time",
+          "Definition": "End equals start plus duration.",
+          "Rule": "Add minutes, carrying across60-minute boundary.",
+          "Example": "3:30pm+45min=4:15pm."
+        },
+        {
+          "Title": "Human-drawn minute hand",
+          "Definition": "Teacher evaluates accuracy of new minute hand on provided source clock.",
+          "Rule": "Waiting duration32min reflected by positions e.g. minute4 to36 within one hour.",
+          "Example": "Without original face pixels do not certify precise Elena clock hour."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Han original time crossing hour",
+          "Question": "How long from5:42 to6:37?",
+          "Method": "Count forward in four source steps.",
+          "Steps": [
+            "5:42→5:45 is3min.",
+            "5:45→6:00 is15min.",
+            "6:00→6:30 is30min, and6:30→6:37 is7min."
+          ],
+          "Answer": "55 minutes",
+          "Check": "Original Section Summary gives3+15+30+7=55."
+        },
+        {
+          "Title": "Math Libs original 1",
+          "Question": "Name and activity: started at 8:25 a.m., finished at8:50 a.m.; elapsed?",
+          "Method": "Identify whether start, end or elapsed is missing.",
+          "Steps": [
+            "Keep original given times and units.",
+            "Add/subtract minutes using a full-hour checkpoint if necessary.",
+            "Keep any student-proposed name/activity; compute from original numeric data."
+          ],
+          "Answer": "25 minutes",
+          "Check": "Original 2021 student-facing numeric prompt."
+        },
+        {
+          "Title": "Math Libs original 2",
+          "Question": "Name and activity: finished5:38 p.m. after20 minutes; start?",
+          "Method": "Identify whether start, end or elapsed is missing.",
+          "Steps": [
+            "Keep original given times and units.",
+            "Add/subtract minutes using a full-hour checkpoint if necessary.",
+            "Keep any student-proposed name/activity; compute from original numeric data."
+          ],
+          "Answer": "5:18 p.m.",
+          "Check": "Original 2021 student-facing numeric prompt."
+        },
+        {
+          "Title": "Math Libs original 3",
+          "Question": "Name and activity: started10:45 a.m., ended11:18 a.m.; elapsed?",
+          "Method": "Identify whether start, end or elapsed is missing.",
+          "Steps": [
+            "Keep original given times and units.",
+            "Add/subtract minutes using a full-hour checkpoint if necessary.",
+            "Keep any student-proposed name/activity; compute from original numeric data."
+          ],
+          "Answer": "33 minutes",
+          "Check": "Original 2021 student-facing numeric prompt."
+        },
+        {
+          "Title": "Math Libs original 4",
+          "Question": "Name and activity: started3:30 p.m., took45min; finish?",
+          "Method": "Identify whether start, end or elapsed is missing.",
+          "Steps": [
+            "Keep original given times and units.",
+            "Add/subtract minutes using a full-hour checkpoint if necessary.",
+            "Keep any student-proposed name/activity; compute from original numeric data."
+          ],
+          "Answer": "4:15 p.m.",
+          "Check": "Original 2021 student-facing numeric prompt."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Invent exact Elena hour from 36−32=4 without inspecting source clocks.",
+          "WhyWrong": "The local teacher text supplies minute arithmetic, not whole clock-face hour certification.",
+          "Correction": "Keep original clock-source teacher review."
+        },
+        {
+          "Mistake": "Treat Han bus duration as 37−42 negative minutes.",
+          "WhyWrong": "The trip crosses6:00 hour boundary.",
+          "Correction": "Count5:42→6:37=55minutes."
+        },
+        {
+          "Mistake": "Require one specific name/activity in Math Libs.",
+          "WhyWrong": "Student chooses both context blanks in each original problem.",
+          "Correction": "Grade original numbers and reasoning, accept many plausible contexts."
+        },
+        {
+          "Mistake": "Convert the second original Math Libs story to elapsed time unknown.",
+          "WhyWrong": "It asks UNKNOWN START given5:38 end and20 minutes.",
+          "Correction": "Calculate start5:18 p.m."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warm-up Han's dinner→bus→band practice is open scenario without fixed time information.",
+        "Source Section Summary verifies Han boarded5:42, exited6:37, spent55minutes (3+15+30+7).",
+        "Source Elena waited32min and teacher notes36−32=4 minute arithmetic; source analog clock actual hour/pixels remain teacher-gated.",
+        "Four original Math Libs answers25min;start5:18pm;33min;finish4:15pm, with free pupil-written names/activities.",
+        "Publisher PDF/image pixels/gated Cool-down not independently inspected; source-specific tests written not run, Stage D deferred."
+      ]
+    }
+  ]
+}

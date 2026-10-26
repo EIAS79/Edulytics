@@ -1,0 +1,25 @@
+@model Edulytics.Web.Curriculum.Grade3.Grade3AreaGrid
+@if(Model.Rows is >= 1 and <= 20 && Model.Columns is >= 1 and <= 20 &&
+    Model.TopRows >= 0 && Model.TopRows < Model.Rows &&
+    (Model.TopRows == 0 || (Model.TopColumns > 0 && Model.TopColumns <= Model.Columns)) &&
+    Model.ShadedColumns >= 0 && Model.ShadedColumns <= Model.Columns) {
+    var description=Model.TopRows == 0
+        ? $"{Model.Columns} columns and {Model.Rows} rows of equal unit squares."
+        : $"The top {Model.TopRows} rows each have {Model.TopColumns} squares aligned left; the bottom {Model.Rows-Model.TopRows} rows each have {Model.Columns} squares.";
+    <figure>
+        <div style="overflow-x:auto">
+            <svg viewBox="0 0 @(Model.Columns*24+12) @(Model.Rows*24+12)" width="@(Model.Columns*24+12)" height="@(Model.Rows*24+12)" role="img" aria-label="@description Each square represents @Model.Unit.">
+                <title>Independent equal-unit area grid</title>
+                @for(var r=0;r<Model.Rows;r++) {
+                    @for(var c=0;c<Model.Columns;c++) {
+                        if(r<Model.TopRows && c>=Model.TopColumns) continue;
+                        <rect x="@(6+c*24)" y="@(6+r*24)" width="24" height="24" fill="@(c<Model.ShadedColumns?"#a9d6e5":"#fff")" stroke="#183d52" stroke-width="1" />
+                    }
+                }
+            </svg>
+        </div>
+        <figcaption>Each square represents @Model.Unit.
+            @if(Model.ShadedColumns > 0) { <span>The first @Model.ShadedColumns columns are shaded.</span> }
+        </figcaption>
+    </figure>
+}

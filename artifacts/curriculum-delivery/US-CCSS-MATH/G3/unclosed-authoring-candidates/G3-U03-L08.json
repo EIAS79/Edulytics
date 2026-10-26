@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 44,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L08",
+  "unitNumber": 3,
+  "lessonNumber": 8,
+  "title": "Subtraction Algorithms (Part 1)",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-8/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-8/lesson.html",
+  "stageA": {
+    "status": "THREE_PAGE_OFFICIAL_2021_ORIGINAL_PDF_JADA_KIRAN_AND_SOURCE_CARD_SORT_A_TO_D_VISUALLY_REVIEWED",
+    "goals": "Relate base-ten diagrams to written algorithms for subtraction.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 4,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": true,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceNumericAnchors": [
+      {
+        "expression": "100 - 98",
+        "value": 2
+      },
+      {
+        "expression": "101 - 99",
+        "value": 2
+      },
+      {
+        "expression": "200 - 98",
+        "value": 102
+      },
+      {
+        "expression": "204 - 98",
+        "value": 106
+      },
+      {
+        "expression": "391-215",
+        "value": 176
+      }
+    ],
+    "originalSourceVisualsVerified": false,
+    "sourcePdf": {
+      "url": "https://cms-assets.illustrativemathematics.org/rectn67hzz8f209jh5wpkbk8ijqq",
+      "pages": 3,
+      "bytes": 955445,
+      "sha256": "c239e09f528af02ce11643a8337c2c425b3093ea479039bb82155122d369d720",
+      "studentPdfReviewed": true,
+      "printedCardSortImagePage3Inspected": true
+    },
+    "sourceHtmlHashes": {
+      "teacherHtmlSha256": "0eb39b50933b11cace6eee3b5ce35a94db9b1eb270aa105ccc953f6b10d6bc43",
+      "preparationHtmlSha256": "c69b4328e4a4b84bb5a72f942504cfe1fb462cc79bf144b629f5b17e58f417ab"
+    }
+  },
+  "stageB": {
+    "status": "GUARDED_FIRST_PARTY_RICH_V2_391_MINUS_215_BASE_TEN_MODEL_AND_TEACHER_CARD_MATCHING",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L08",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "f8bd9258f273d34e02891de17aaf59ecda776334062f364383c347cb78ac39f0",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": true,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "richV2SourceSpecificEmbeddedSidecar": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l08-2021.rich-lesson-v2.json",
+    "sourceSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson8.cshtml"
+  },
+  "stageC": {
+    "status": "FIVE_ORIGINAL_2021_NUMERIC_ORACLES_TEACHER_PICTURE_MATCH_NEW_216_COOLDOWN_TESTS_NOT_RUN",
+    "family": "subtraction-within-1000",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity From Drawings to an Algorithm with your teacher. Show the representation and explain how it meets the goal: Let’s learn a new way to subtract.",
+    "teacherReviewNote": "Teacher checks drawing, representations, mathematical reasoning, verbal discussion and the original activity material; numeric response alone is insufficient.",
+    "sourceSubtaskCount": 9,
+    "numericChecksWritten": 5,
+    "newRegressionTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson8OriginalMathSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "id": "HEADING-1",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "HEADING-2",
+      "sourceSection": "Activity 1: From Drawings to an Algorithm (15 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "HEADING-3",
+      "sourceSection": "Activity 2: Card Sort: Diagrams and Algorithms (20 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "HEADING-4",
+      "sourceSection": "Lesson Synthesis",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "HEADING-5",
+      "sourceSection": "Cool-down: Connect a Diagram and an Algorithm (5 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "STUDENT-S1-NUM1",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "EXACT_2021_SOURCE_MATHEMATICS",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "STUDENT-S1-NUM2",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "EXACT_2021_SOURCE_MATHEMATICS",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "STUDENT-S1-NUM3",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "EXACT_2021_SOURCE_MATHEMATICS",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "STUDENT-S1-NUM4",
+      "sourceSection": "Warm-up: Number Talk: Subtraction Strategies (10 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "EXACT_2021_SOURCE_MATHEMATICS",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "STUDENT-S2-NUM5",
+      "sourceSection": "Activity 1: From Drawings to an Algorithm (15 minutes)",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "EXACT_2021_SOURCE_MATHEMATICS",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "TEACHER-OPEN-1",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "TEACHER-OPEN-2",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "TEACHER-OPEN-3",
+      "sourceSection": "Open diagrams, explanation, card/material or communication",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "TEACHER_SCORED_PLACE_VALUE_DECOMPOSITION",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "SOURCE-IMAGE-1",
+      "sourceSection": "Original 2021 source art",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "ORIGINAL_2021_SOURCE_PICTURE_INSPECTED_TEACHER_VISUAL_MATCH_NOT_AUTO_GRADED",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "SOURCE-IMAGE-2",
+      "sourceSection": "Original 2021 source art",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "ORIGINAL_2021_SOURCE_PICTURE_INSPECTED_TEACHER_VISUAL_MATCH_NOT_AUTO_GRADED",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "SOURCE-IMAGE-3",
+      "sourceSection": "Original 2021 source art",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "ORIGINAL_2021_SOURCE_PICTURE_INSPECTED_TEACHER_VISUAL_MATCH_NOT_AUTO_GRADED",
+      "publisherImageCopied": false
+    },
+    {
+      "id": "SOURCE-IMAGE-4",
+      "sourceSection": "Original 2021 source art",
+      "academicSemanticSourceAccountedFor": true,
+      "mode": "ORIGINAL_2021_SOURCE_PICTURE_INSPECTED_TEACHER_VISUAL_MATCH_NOT_AUTO_GRADED",
+      "publisherImageCopied": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L08-IMAGE-01",
+      "observedAltText": "Student representation of a base ten diagram with 3 hundreds, 2 crossed out, 9 tens with 2 crossed out with arrow pointing to 1 ten with 4 crossed out and a one, crossed out.",
+      "originalReference": "unit-3/lesson-8/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L08-IMAGE-02",
+      "observedAltText": "Subtraction. Three-hundred plus ninety plus one, minus two-hundred plus ten plus five.",
+      "originalReference": "unit-3/lesson-8/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L08-IMAGE-03",
+      "observedAltText": "Addition.",
+      "originalReference": "unit-3/lesson-8/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L08-IMAGE-04",
+      "observedAltText": "Subtraction.",
+      "originalReference": "unit-3/lesson-8/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "identified": 17,
+    "semanticVerified": 17
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Calculate 409 − 186. Show regrouping or another strategy.",
+    "answerType": "integer",
+    "expected": "223"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": 100,
+  "openGaps": [],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "sourceElementMapPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-2021-source-to-first-party-evidence-20261024.json",
+  "sourceAcademicSemanticRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G3/lesson-44-academic-source-coverage-and-human-rubric-20261025.json",
+  "deferredStageD": [
+    "Original publisher teacher-gated Cool-down not read; independent Edulytics 403−187=216 task",
+    "Original publisher card art not embedded, matching remains teacher assessed",
+    "No tests executed, Stage D or academic approval"
+  ]
+}

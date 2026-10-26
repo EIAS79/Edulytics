@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 51,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L15",
+  "unitNumber": 3,
+  "lessonNumber": 15,
+  "title": "Round to the Nearest Ten and Hundred",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-15/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-15/lesson.html",
+  "stageA": {
+    "status": "LOCAL_2021_TEACHER_CHORAL_AND_TWO_STUDENT_SECTIONS_FIVE_ROUNDINGS_MIDPOINTS_SEVEN_SCHOOL_ROWS_VERIFIED",
+    "goals": "Round whole numbers within 1,000 to the nearest ten and hundred, using the convention of rounding up when the number is halfway between two multiples of 10 or 100.",
+    "sourceHeadingsCount": 5,
+    "originalImageDescriptionsCount": 0,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceLocalHtmlSha256": "4df880e78829e012db71734c40324d8de3643b26614d77ff2a4e97e69926d136",
+    "preparationHtmlSha256": "72598288014cfda3284b7350ae88504fcca0618f8ea5d580c8ad1a61d8beb431"
+  },
+  "stageB": {
+    "status": "GUARDED_2021_FIRSTPARTY_RICH_V2_TWO_TABLES_MIDPOINT_RULE_AND_ESTIMATE_ERRORS",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L15",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "2aef34778194da17c6fcaa6922172156f80d32c05f500da8b287fb4b69823093",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l15-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson15.cshtml"
+  },
+  "stageC": {
+    "status": "28_NUMERIC_2021_SOURCE_ANCHORS_6_TEACHER_TASKS_TESTS_WRITTEN_NOT_RUN",
+    "family": "rounding-estimation",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity Can the Nearest Ten and Hundred be the Same? with your teacher. Show the representation and explain how it meets the goal: Let’s round to the nearest ten and hundred. Required Preparation CCSS Standards Building On 2.NBT.B.8 Addressing 3.NBT.A.1 Building Towards 3.NBT.A.1 Lesson Timeline Warm-up 10 min Activity 1 20 min Activity 2 15 min Lesson Synthesis 10 min Cool-dow",
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "sourceNumericChecks": 28,
+    "teacherReviewTasks": 6,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson15RoundingAndSchoolEstimateSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "key": "WARM-UP",
+      "source": "Original choral count: tens 0–200 and hundreds 0–900",
+      "mode": "TEACHER_ORAL_PATTERNS",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    },
+    {
+      "key": "TABLE",
+      "source": "Five original rounding values 18,97,312,439,601",
+      "mode": "EXACT_TEN_HUNDRED_DOUBLE_CHECK",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    },
+    {
+      "key": "MIDPOINT",
+      "source": "Kiran 415 and Priya 750",
+      "mode": "ROUND_HALFWAY_UP_SEPARATELY_FROM_DISTANCE",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    },
+    {
+      "key": "SCHOOL",
+      "source": "Original school seven locations/counts",
+      "mode": "14_NUMERIC_INDEPENDENT_ROUNDINGS",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    },
+    {
+      "key": "SCHOOL-SUM",
+      "source": "Andre and Lin sums",
+      "mode": "700_680_VS_ACTUAL_683",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    },
+    {
+      "key": "PREDICT",
+      "source": "Partner prediction and two observations",
+      "mode": "TEACHER_EXPLANATION",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    },
+    {
+      "key": "COOL-DOWN",
+      "source": "Gated publisher exit",
+      "mode": "TEACHER_SOURCE_NOT_COPIED_FIRSTPARTY_EXIT",
+      "academicSemanticAuthored": true,
+      "originalPublisherMaterialReproduced": false
+    }
+  ],
+  "images": [],
+  "sourceElementCounts": {
+    "semanticSourceElementsMapped": 7,
+    "publisherOriginalFigureCount": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Round 339 to the nearest hundred (fifty rounds up).",
+    "answerType": "integer",
+    "expected": "300"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Original student task PDF separately unread; local 2021 public HTML is the text source.",
+    "Original publisher Cool-down gated/not accessed; independently authored goal-equivalent only.",
+    "Stage D, .NET tests, CI, teacher approval, authenticated UAT and deployment not executed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_2021_LOCAL_HTML_MATH_SEMANTIC_FIRSTPARTY_NOT_GATED_PUBLISHER_OR_TESTED"
+}

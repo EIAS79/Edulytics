@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "programme": "US-CCSS-MATH",
+  "grade": "Grade 3",
+  "gradeOrdinal": 52,
+  "lessonCode": "PED:US-CCSS-MATH:G3:U03:L16",
+  "unitNumber": 3,
+  "lessonNumber": 16,
+  "title": "Round and Round Again",
+  "referenceEdition": "IM K–5 First Edition (2021)",
+  "originalTeacherHtml": "unit-3/lesson-16/lesson.html",
+  "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-3/unit-3/lesson-16/lesson.html",
+  "stageA": {
+    "status": "LOCAL_2021_SOURCE_WARMUP_FOUR_MULTIPLICATIONS_THREE_ROUNDING_INTERVALS_TWO_EXTENSIONS_AND_MYSTERY_CLUES_REVIEWED",
+    "goals": "Recognize and generalize patterns in the rounding of whole numbers within 1,000.",
+    "sourceHeadingsCount": 6,
+    "originalImageDescriptionsCount": 3,
+    "originalAllSubquestionsIndividuallyVerified": true,
+    "originalStudentTaskPdfCompared": false,
+    "teacherFacingSourceExtractedNotFullyRead": false,
+    "sourceHtmlSha256": "8676bf8e00956c86bd983af0c4c45938e2dc36dc6c5b669bad2b01541478d99e",
+    "prepHtmlSha256": "de9c670daff4fd52d1666903e23b41090aa5413a2c11646fdcc78a2dc19590e0"
+  },
+  "stageB": {
+    "status": "2021_SOURCE_SPECIFIC_FIRST_PARTY_RICH_V2_WARMUP_INTERVALS_AND_MYSTERY_GAME",
+    "originalCompanionBankPath": "src/Edulytics.Web/Curriculum/Grade3/g3-unverified-original-companions.json",
+    "originalCompanionController": "src/Edulytics.Web/Controllers/Grade3SourceCompanionController.cs",
+    "originalCompanionRazor": "src/Edulytics.Web/Views/Grade3SourceCompanion/Index.cshtml",
+    "originalCompanionLessonCode": "PED:US-CCSS-MATH:G3:U03:L16",
+    "richV2PackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g3-phase29-v1.lesson-content-pack.json",
+    "existingSourceBodyHash": "44606915553f15c576f3c7737a961094d044f43bbf9ce3f30b8c1e0b8da5d14d",
+    "effectivePublishedRichV2Inspected": false,
+    "genericTeachingTemplateReviewRequired": false,
+    "noClaimOfOriginalArtOrSourcePromptDuplication": true,
+    "newSourceSpecificRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g3-u03-l16-2021.rich-lesson-v2.json",
+    "newSourceSpecificPartial": "src/Edulytics.Web/Views/Shared/_Grade3Unit3Lesson16.cshtml"
+  },
+  "stageC": {
+    "status": "19_SOURCE_NUMERIC_ORACLES_8_HUMAN_ACTIVITIES_TESTS_AUTHORED_NOT_RUN",
+    "family": "rounding-estimation",
+    "practiceAnswerType": "integer",
+    "coolDownAnswerType": "integer",
+    "sharedTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/Grade3SourceCompanionGradingTests.cs",
+    "testsWritten": true,
+    "testsExecuted": false,
+    "learnerRoute": "student/practice/grade3-source-companion",
+    "sourcePracticeCoverageCertified": true,
+    "teacherTask": "Work through the original lesson's activity All the Numbers with your teacher. Show the representation and explain how it meets the goal: Let’s look for patterns in rounding.",
+    "teacherReviewNote": "When lesson introduces rounding, teacher checks number-line justification and that estimates are not treated as exact sums.",
+    "sourceNumericChecks": 19,
+    "teacherReviewTasks": 8,
+    "newTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG3Unit3Lesson16RoundingIntervalsSourceTests.cs"
+  },
+  "sourceElements": [
+    {
+      "key": "WU-4",
+      "mode": "FOUR_EXACT_MULTIPLICATION_CHECKS_AND_TEACHER_PATTERN",
+      "source": "5x7,4x7,6x7,4x8",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A1-50-BY-10",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "45..54",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A1-70-BY-10",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "65..74",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A1-600-BY-100",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "550..649",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A1-100-BY-100",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "50..149",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A1-500-BY-100",
+      "mode": "WHOLE_NUMBER_INCLUSIVE_INTERVAL_LOW_HIGH_COUNT_AND_TEACHER_ENUMERATION",
+      "source": "450..549",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A2-CARD",
+      "mode": "STUDENT_CHOOSES_MYSTERY_NUMBER_THREE_CLUES_TEACHER_REVIEW",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "A2-GAME",
+      "mode": "TURN_TAKING_ANSWERS_TEACHER_REVIEW",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "ORIGINAL-IMAGES",
+      "mode": "THREE_IMAGE_ALTS_RECORDED_PUBLISHER_PIXELS_NOT_VERIFIED_INDEPENDENT_SCHEMATICS",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    },
+    {
+      "key": "CD",
+      "mode": "GATED_PUBLISHER_NOT_COPIED",
+      "educationalSemanticAccountedFor": true,
+      "publisherArtworkReproduced": false
+    }
+  ],
+  "images": [
+    {
+      "id": "G3-U03-L16-IMAGE-01",
+      "observedAltText": "Number line. Scale 30 to 60 by 10's.",
+      "originalReference": "unit-3/lesson-16/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L16-IMAGE-02",
+      "observedAltText": "Can you guess the mystery number?",
+      "originalReference": "unit-3/lesson-16/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    },
+    {
+      "id": "G3-U03-L16-IMAGE-03",
+      "observedAltText": "Number line. Scale 0 to 100 by 10's. A point between 50 and 55.",
+      "originalReference": "unit-3/lesson-16/lesson.html",
+      "assetInspected": false,
+      "originalRightsChecked": false,
+      "digitalAlternativeVerified": false,
+      "coverage": "SOURCE_IMAGE_ALT_ONLY"
+    }
+  ],
+  "sourceElementCounts": {
+    "academicSemantic": 10,
+    "sourceImageAlts": 3,
+    "sourceFigurePixelVerified": 0
+  },
+  "firstPartyOriginalCoolDown": {
+    "prompt": "Round 346 to the nearest hundred (fifty rounds up).",
+    "answerType": "integer",
+    "expected": "300"
+  },
+  "declaredCoolDownPolicy": "OWNER_APPROVED_FIRST_PARTY_GOAL_EQUIVALENT_NOT_PUBLISHER_COPY",
+  "readyForStageD": true,
+  "authoringState": "READY_FOR_STAGE_D",
+  "claimedParityPercent": null,
+  "openGaps": [
+    "Source original 2021 student PDF and three image pixels not independently read, although local teacher/student HTML text and alt roles were reviewed.",
+    "Original publisher Clare mystery Cool-down gated; no source Cool-down copy.",
+    "Original physical cards and partner discussion require teacher. .NET tests/Stage D/CI/UAT/academic approval not executed."
+  ],
+  "stageD": "NOT_STARTED",
+  "ci": "NOT_EXECUTED_FOR_THIS_AUTHORING_COMMIT",
+  "merged": false,
+  "deployed": false,
+  "academicApproval": "NOT_CLAIMED",
+  "closureScope": "A_B_C_LOCAL_SOURCE_STUDENT_TEACHER_HTML_MATHEMATICAL_SEMANTICS_ONLY"
+}
