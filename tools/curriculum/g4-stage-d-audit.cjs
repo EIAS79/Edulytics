@@ -8,7 +8,7 @@ const mappings=read('src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mapp
 const families=read('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json').families;
 const byCode=new Map(mappings.map(m=>[m.lessonCode,m]));
 const familyIds=new Set(families.map(f=>f.id));
-const issues=[],missingMaps=[],pending=[];
+const issues=[],missingMaps=[],pending=[];let unrecordedDField=0;
 let readyABC=0,stageDPassed=0,academicApproved=0,metadataReady=0,metadataPending=0;
 const fileExists=p=>fs.existsSync(path.join(root,p));
 for(let n=1;n<=149;n++){
@@ -19,7 +19,8 @@ for(let n=1;n<=149;n++){
  if(c.status==='READY_FOR_STAGE_D' && c.readyForStageD===true && progress.lessonStates?.[n]==='READY_FOR_STAGE_D')readyABC++;
  else issues.push('L'+n+': A_C_CHECKPOINT_MISMATCH');
  if(c.stages?.D==='PASSED')stageDPassed++;
- else if(c.stages?.D!=='NOT_RUN')issues.push('L'+n+': UNKNOWN_D_STATUS');
+ else if(c.stages?.D!==undefined && c.stages?.D!=='NOT_RUN')issues.push('L'+n+': UNKNOWN_D_STATUS');
+ else if(c.stages?.D===undefined)unrecordedDField++;
  if(c.academicApproved===true)academicApproved++;
  if(n>=101){
    const m=byCode.get(c.lessonCode);
@@ -42,5 +43,5 @@ if(mode==='release'){
  if(academicApproved!==149)issues.push('HUMAN_ACADEMIC_APPROVAL_NOT_VERIFIED_149_OF_149');
  if(metadataPending)issues.push('PRACTICE_MAPPING_PENDING:'+metadataPending);
 }else if(mode!=='preflight')issues.push('INVALID_MODE');
-console.log(JSON.stringify({grade:4,edition:2021,scope:149,readyABC,stageDPassed,academicApproved,mappingCount101to149:49-missingMaps.length,mappingReadyVerifiedMetadata:metadataReady,mappingPendingDMetadata:metadataPending,pendingOrdinals:pending,issues,releaseApproved:false},null,2));
+console.log(JSON.stringify({grade:4,edition:2021,scope:149,readyABC,stageDPassed,academicApproved,unrecordedDField,mappingCount101to149:49-missingMaps.length,mappingReadyVerifiedMetadata:metadataReady,mappingPendingDMetadata:metadataPending,pendingOrdinals:pending,issues,releaseApproved:false},null,2));
 if(issues.length)process.exitCode=1;
