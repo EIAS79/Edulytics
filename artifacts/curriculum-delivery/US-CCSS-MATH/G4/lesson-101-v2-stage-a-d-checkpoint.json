@@ -1,12 +1,12 @@
 {
   "ordinal": 101,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
-  "status": "A_C_EXPLICIT_GAP_L101_TEACHER_VISUAL_AND_AUTHENTICATED_SCORE_PENDING",
+  "status": "A_C_EXPLICIT_GAP_L101_SOURCE_VISUAL_AND_TEACHER_DELIVERY_AUDIT",
   "readyForStageD": false,
   "stages": {
     "A": "2021_SOURCE_GOALS_ALL_VISIBLE_STUDENT_FACING_TASKS_AND_TEACHER_MOVES_ATOMIC_LEDGER_AUTHORED; LINKED_STUDENT_PDF_COOLDOWN_AND_ORIGINAL_IMAGE_BYTES_UNAVAILABLE",
     "B": "2021_SOURCE_LEARNING_GOAL_AND_ELENA_TYLER_EXAMPLES_RETAINED; GENERIC_THIRD_EXAMPLE_REPLACED_WITH_SOURCE_WARMUP_SOCCER_ESTIMATION; THREE_FIRST_PARTY_MATH_VISUAL_MODELS_AUTHORED; RUNTIME_AND_SOURCE_FIGURE_PARITY_UNVERIFIED",
-    "C": "FOCUSED_RUNTIME_TESTS_3_PASSED_0_FAILED; EARLIER_OFF_TARGET_OFFICIAL_FALLBACK_BLOCKED_FOR_G4_L101; SOURCE_SPECIFIC_LESSON_PRACTICE_STILL_REVIEW_REQUIRED_AND_SAVED_ATTEMPT_NOT_PROVEN",
+    "C": "2021_TWO_EXACT_SOURCE_ALIGNED_FAMILIES_ROUTE_VERIFIED_AND_INTEGER_INTERACTION_TESTED_4_PASSED; AUTHENTICATED_SAVED_ATTEMPT_DEFERRED_TO_D",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -73,5 +73,16 @@
     "failed": "https://github.com/EIAS79/Edulytics/actions/runs/40524243428",
     "passed": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
     "reason": "Previously unintended fallback was discovered and corrected."
-  }
+  },
+  "focusedTestEvidenceLatest": {
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40531550626",
+    "sha": "633de6b82ada9b1ae19ef4e34a5c9d6eb4f4c1e8",
+    "passed": 4,
+    "failed": 0,
+    "scope": "L101 exact Practice families, correct/wrong/malformed, runtime route and real Rich V2 source-correct lesson lookup"
+  },
+  "stageDRisks": [
+    "L101 browser-rendered student diagram and persisted scored attempt not yet independently verified",
+    "Full-grade Rich V2 validation of legacy files remains a separate Stage D gate"
+  ]
 }
