@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.7.15-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-ordinal-126-abc-source-parity-repair",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U07:L15",
@@ -13,7 +13,9 @@
         "Corrected mathematical focus: Write an equation for the total of adjacent angles and subtract known values to find the missing angle.",
         "Edulytics authored guidance: A right angle of 90° is partitioned into 62° and an unknown angle. Write x + 62 = 90 and solve x = 28. Check that the parts sum to the unchanged 90° turn.",
         "First-party Cool-down (not publisher assessment): A straight angle has adjacent parts 71° and 53°. Find the remaining angle.",
-        "Images, drawing/protractor accuracy, partner tasks and the gated original publisher Cool-down require original task evidence and teacher/visual review."
+        "Images, drawing/protractor accuracy, partner tasks and the gated original publisher Cool-down require original task evidence and teacher/visual review.",
+        "2021 original source evidence from earlier local Our-CS inspection: In Shaded and Unshaded Angles the original right-angle figure labels one part 62°, hence shaded complement is 90°−62°=28°. The source also shows a straight angle partitioned into three including 71° and a shaded part; do not assign a numeric answer without all labels and the actual source figure. Information Gap: A Whole Bunch of Angles is a partner-card communication task; teacher checks explanations and unknown-value equations. Original warm-up asks pupils to count obtuse angles in a folded heart image.",
+        "Source timeline: Warm-up: How Many Do You See: Obtuse Angles (10 minutes); Activity 1: Shaded and Unshaded Angles (15 minutes); Activity 2: Info Gap: A Whole Bunch of Angles (20 minutes); Cool-down: Heart to Heart (5 minutes). Keep exact physical artwork and teacher/partner evidence separate from supplementary Edulytics numerical or textual Practice."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,17 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Original right-angle shaded part",
+          "Question": "A right angle consists of an unshaded 62° sector and one shaded sector. How many degrees is the shaded sector?",
+          "Method": "A right angle is 90°. Subtract the known 62° part.",
+          "Steps": [
+            "90−62=28.",
+            "28+62=90."
+          ],
+          "Answer": "28°.",
+          "Check": "This 62° label is reported in the original 2021 student excerpt."
         }
       ],
       "CommonMistakes": [
@@ -83,6 +96,11 @@
           "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
           "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
           "Correction": "Use the original constraints and this rule: Write an equation for the total of adjacent angles and subtract known values to find the missing angle."
+        },
+        {
+          "Mistake": "Treating archived publisher images or partner cards as though a numerical engine inspected them.",
+          "WhyWrong": "The recorded text excerpt does not encode all diagram geometry and answers.",
+          "Correction": "Teacher reviews the lawfully available original source figure or student construction; digital family is supplementary."
         }
       ],
       "SummaryPoints": [

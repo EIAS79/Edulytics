@@ -1,12 +1,12 @@
 {
   "ordinal": 126,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L15",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "ORIGINAL_2021_LOCAL_TEACHER_STUDENT_SOURCE_INTAKE_REUSED",
+    "B": "ORIGINAL_TASKS_AND_CORRECT_SOURCE_EXAMPLES_RECONCILED_WITH_EXISTING_RICH_V2",
+    "C": "EXISTING_EXACT_FAMILIES_REUSED_FOCUSED_XUNIT_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,38 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
-  ]
+  "blockers": [],
+  "sourceEdition": "2021 First Edition",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 Our-CS original local intake",
+    "sourceStudentExcerpts": [
+      "How many angles do you see in the folded paper heart? | Student Response | Teachers with a valid work email address can click here to register or sign in for free access to Student Response.",
+      "Find the measurement of each shaded angle. Show how you know. | Description: 4 angles. A. Right angle partitioned into two angles. One shaded green, one labeled 62 degrees. B. Straight angle partitioned into 3 angles. One labeled 71 degrees, one shaded yellow,",
+      "Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. | Pause here so your teacher can review your work. Ask your teacher for a new set of cards and repeat the activity, trading roles with your partner."
+    ],
+    "originalSourceActivities": [
+      "Warm-up: How Many Do You See: Obtuse Angles (10 minutes)",
+      "Activity 1: Shaded and Unshaded Angles (15 minutes)",
+      "Activity 2: Info Gap: A Whole Bunch of Angles (20 minutes)",
+      "Cool-down: Heart to Heart (5 minutes)"
+    ],
+    "primarySkillId": "geometry.angles.compose_decompose_known_turn",
+    "allowedFamilies": [
+      "usccss.g4.u07.l13.additive_angle_part"
+    ],
+    "firstPartyCoolDown": {
+      "prompt": "A straight angle has adjacent parts 71° and 53°. Find the remaining angle.",
+      "teacherAnswer": "56°."
+    },
+    "sourceFigurePixelParityVerified": false,
+    "teacherOnlyTasks": [
+      "Source four angle partition drawings and concealed partner cards require teacher source checking."
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal126SourceMathematicsStageCTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  }
 }
