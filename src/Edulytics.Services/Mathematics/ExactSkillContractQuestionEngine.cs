@@ -67,6 +67,7 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.perimeter_area.rectangle_missing_side",
             "usccss.g4.u06.l15.area_partial_quotients",
             "usccss.g4.u06.l15.mural_complete_columns",
+            "usccss.g4.u06.l16.base_ten_equal_groups",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -1085,6 +1086,16 @@ public sealed class ExactSkillContractQuestionEngine
                 lesson101Area % lesson101Width == lesson101Leftover &&
                 value >= 0 && (long)value * lesson101Width + lesson101Leftover == lesson101Area,
 
+            "usccss.g4.u06.l16.base_ten_equal_groups" =>
+                parameters.TryGetValue("dividend",out var n102) &&
+                parameters.TryGetValue("divisor",out var d102) &&
+                parameters.TryGetValue("tensAfterTrade",out var t102) &&
+                parameters.TryGetValue("onesAfterTrade",out var o102) &&
+                d102>=2 && d102<=9 && n102>=24 && n102<=999 &&
+                t102==n102/10%10+10*((n102/100)%d102) &&
+                o102==n102%10+10*(t102%d102) && o102%d102==0 &&
+                n102%d102==0 && value>0 && (long)value*d102==n102,
+
             "geometry.perimeter_area.rectangle_missing_side" =>
                 parameters["knownSide"] > 0 &&
                 parameters["area"] > 0 &&
@@ -1872,6 +1883,7 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildRectangleMissingSide(random, scale),
             "usccss.g4.u06.l15.area_partial_quotients" => BuildG4MuralMissingSide(random, false),
             "usccss.g4.u06.l15.mural_complete_columns" => BuildG4MuralMissingSide(random, true),
+            "usccss.g4.u06.l16.base_ten_equal_groups" => BuildG4BaseTenDivision(random),
             "geometry.polygons.interior_angle_sum" =>
                 BuildPolygonInteriorAngleSum(random, scale),
             "geometry.polygons.missing_interior_angle" =>
@@ -3064,6 +3076,20 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
+    private static ExactProblem BuildG4BaseTenDivision(Random random)
+    {
+        var d=random.Next(2,10);
+        var q=random.Next(12,Math.Min(120,999/d)+1);
+        var n=d*q;
+        var tens=n/10%10+10*((n/100)%d);
+        var ones=n%10+10*(tens%d);
+        return Problem("usccss.g4.u06.l16.base_ten_equal_groups",
+            "Share "+n+" using base-ten blocks into "+d+" equal groups.",
+            "Exchange hundreds to tens and tens to ones. Each group receives "+q+". Check multiplication.",
+            AssessmentItemType.Numeric,("dividend",n),("divisor",d),
+            ("tensAfterTrade",tens),("onesAfterTrade",ones));
+    }
+
     private static ExactProblem BuildG4MuralMissingSide(Random random, bool withRemainder)
     {
         // 2021 IM G4 U06:L15: first-party partial quotient and mural-remainder tasks.
@@ -3937,6 +3963,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l15.area_partial_quotients" or
             "usccss.g4.u06.l15.mural_complete_columns" =>
                 (p["area"] / p["knownSide"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l16.base_ten_equal_groups" => (p["dividend"]/p["divisor"]).ToString(CultureInfo.InvariantCulture),
 
             "geometry.polygons.interior_angle_sum" =>
                 ((p["sides"] - 2) * 180).ToString(CultureInfo.InvariantCulture),

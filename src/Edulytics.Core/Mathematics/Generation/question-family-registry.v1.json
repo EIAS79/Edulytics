@@ -19344,6 +19344,25 @@
       "status": "PracticeVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l16.base_ten_equal_groups",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-tens-and-ones-trading-and-multiplication-check",
+      "representations": [
+        "place_value_chart",
+        "base_ten_blocks",
+        "symbolic"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
