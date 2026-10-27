@@ -108,7 +108,7 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
                row.GetProperty("firstPartyDisplayTitle").GetString()!=effectiveTitle ||
                row.GetProperty("sourceUrl").GetString()!=sourceUrl ||
                historicalTitle!=effectiveTitle+" PLC Activity")return false;
-            var unit=code.Substring(code.IndexOf(":U",StringComparison.Ordinal)+2,2).TrimStart('0');
+            var unit=code.Substring(code.LastIndexOf(":U",StringComparison.Ordinal)+2,2).TrimStart('0');
             var lessonNumber=code.Substring(code.LastIndexOf(":L",StringComparison.Ordinal)+2).TrimStart('0');
             if(sourceUrl!="https://im.kendallhunt.com/k5/teachers/grade-4/unit-"+
                unit+"/lesson-"+lessonNumber+"/preparation.html")return false;
