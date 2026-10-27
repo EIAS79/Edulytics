@@ -1,12 +1,12 @@
 {
   "ordinal": 110,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L24",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_EXACT_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_LOCAL_TEACHER_PREPARATION_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "ORIGINAL_GOAL_RETAINED; MISALIGNED_KEY_RULE_AND_METHOD_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_ADDED; REAL_PRACTICE_NOT_VERIFIED",
+    "A": "2021_SOURCE_HISTORICAL_NAVAJO_YUPIK_ALL_NINE_PHILADELPHIA_CHICAGO_STUDENT_TABLES_AND_PREP_INSPECTED; ORIGINAL_GRAPH_AND_MAP_TEACHER_ONLY",
+    "B": "SEVEN_SOURCE_CORRECT_WORKED_EXAMPLES_THREE_FIRST_PARTY_EQUATION_VISUALS_AND_129840_INDEPENDENT_MULTISTEP_COOLDOWN; ORIGINAL_CENSUS_NOT_CLAIMED_CURRENT",
+    "C": "EXISTING_EXACT_KERNEL_EXTENDED_WITH_6_POPULATION_COMPARISON_MODES_AND_SINGLE_ALLOWED_FAMILY; THREE_OF_THREE_FOCUSED_DOTNET_GREEN_40553916251; WRONG_MALFORMED_TAMPERED_REJECTED",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -14,17 +14,86 @@
     "teacher": "b80a8d574e9d96e0529c2169d29a7ef6924f151e698db7a4836173d8a3c650f2"
   },
   "firstPartyCooldown": {
-    "prompt": "Given counts 7,025 and 3,981, estimate then calculate the difference.",
-    "teacherAnswer": "About 3,000; exactly 3,044."
+    "prompt": "A first-party survey lists 178,420 English-only, 35,680 Spanish and 12,900 other-language speakers. About how many more speak English only?",
+    "teacherAnswer": "178420-(35680+12900)=129840; estimate about 130000"
   },
   "sourceVisualParityProven": false,
   "originalPublisherCooldownVerified": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Visual, original tasks and teacher-led parity are not fully demonstrated",
-    "SkillContract, exact question generation and correct/wrong/malformed grading not established",
-    "Authenticated scoring and Grade 4 Stage D not run"
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceTeacherSha256": "b80a8d574e9d96e0529c2169d29a7ef6924f151e698db7a4836173d8a3c650f2",
+    "sourcePrepSha256": "082bed9f3ecc93b340f569ebe36f3b0d21acf941a39e7c7121357ac75bb88e00",
+    "sourceStudentFacingReadFromOriginal2021Teacher": true,
+    "sourceMath": [
+      {
+        "element": "A01-NAVAJO-YUPIK",
+        "answer": 147076,
+        "source": "166826-19750",
+        "type": "DIGITAL_PLUS_TEACHER"
+      },
+      {
+        "element": "A01-RATIO",
+        "answer": "approximately 8",
+        "source": "166826/19750",
+        "type": "DIGITAL_APPROX_PLUS_TEACHER_EXPLANATION"
+      },
+      {
+        "element": "A01-THREE",
+        "answer": 191736,
+        "source": "166826+13445+11465",
+        "type": "DIGITAL_PLUS_TEACHER"
+      },
+      {
+        "element": "A01-OTHER-NINE",
+        "answer": 55146,
+        "source": "166826-(19750+17855+13445+13190+11465+9735+9635+9615+6990)",
+        "type": "DIGITAL_PLUS_TEACHER"
+      },
+      {
+        "element": "A02-PHILLY",
+        "answer": 1090073,
+        "source": "1224539-(127352+6750+364)",
+        "type": "DIGITAL_PLUS_TEACHER"
+      },
+      {
+        "element": "A02-CITIES",
+        "answer": 314243,
+        "source": "(422568+25777)-(127352+6750)",
+        "type": "DIGITAL_PLUS_TEACHER"
+      }
+    ],
+    "firstPartyCoolDown": 129840,
+    "firstPartyVisuals": 3,
+    "originalPublisherAssessmentVerified": false,
+    "originalPublisherGraphicsCopied": false,
+    "teacherOnlyTasks": [
+      "Original graph interpretation and notice/wonder warm-up",
+      "Reasonableness of estimates, source demographics historical context, incomplete category coverage",
+      "Number of speakers according to source 2009–2013 and Philadelphia 2017 classroom dataset",
+      "Oral explanations, partner strategy sharing, source chart/map review"
+    ],
+    "exactAllowedFamily": "usccss.g4.u06.l24.language_population_comparisons",
+    "sourceAlignedModes": 6,
+    "generatorAndIndependentVerifierPassed": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40553916251",
+    "focusedTestCandidateSha": "aed81f25c7a5be7f7a82ab4daddb9a59bfa9f807",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false,
+    "sourceLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-110-2021-source-evidence.json"
+  },
+  "stageDRisks": [
+    "Publisher historical infographic/map not copied; teacher-led source interpretation remains human-reviewed",
+    "Original publisher gated Cool-down not available, independent Edulytics alternative provided",
+    "Student authenticated scoring and actual source media parity pending Stage D"
   ]
 }
