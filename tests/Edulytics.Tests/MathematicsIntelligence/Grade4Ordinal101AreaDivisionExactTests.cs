@@ -57,6 +57,19 @@ public sealed class Grade4Ordinal101AreaDivisionExactTests
     }
 
     [Fact]
+    public void StageCMappingRemainsClosedUntilReviewedLearnerInteractionAndSavedAttempt()
+    {
+        const string lesson = "PED:US-CCSS-MATH:G4:U06:L15";
+        Assert.False(LessonPracticeCapabilityResolver.TryResolve(lesson, out var routed));
+        Assert.Null(routed);
+        foreach (var family in Families)
+        {
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+            Assert.False(LessonPracticeInteractionRegistry.TryResolve(family, out _));
+        }
+    }
+
+    [Fact]
     public void SourceCasesAndContextualRemainderDoNotAllowAnExtraColumn()
     {
         Assert.Equal(27, 189 / 7);

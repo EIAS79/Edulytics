@@ -5,6 +5,8 @@ on:
       - curriculum/g4-sequential-abc-20261026
     paths:
       - '.github/workflows/g4-2021-l101-focused.yml'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal101AreaDivisionExactTests.cs'
+      - 'src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json'
   workflow_dispatch:
 permissions:
   contents: read
