@@ -23,6 +23,17 @@ public sealed class Grade4Ordinal112GeometryCommunicationTests
     [Fact]
     public void DoNotFakeNumericScoringForOpenDrawingActivities()
     {
-        Assert.False(LessonPracticeCapabilityResolver.TryResolve(Code,out _));
+        // A first-party digital precision-of-words exercise is legitimate support.
+        // It does NOT machine-score the original hidden picture cards, dot drawing,
+        // or teacher review of the source figures.
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(Code,out _));
+        var engine = new ExactSkillContractQuestionEngine();
+        const string family = "usccss.g4.u07.l01.geometric_description_precision";
+        var examples = engine.Generate("g4-2021-u07-l01-open-drawings-separate", family,
+            [family], ExactSkillQuestionDifficulty.Standard, 4, 20210701, []);
+        Assert.All(examples, item => {
+            Assert.Contains("Which instruction is clearer", item.Prompt);
+            Assert.DoesNotContain("original blackline", item.Prompt);
+        });
     }
 }

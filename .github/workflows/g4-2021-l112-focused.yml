@@ -18,4 +18,4 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-      - run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4Ordinal112DescriptionPrecisionTests --configuration Release --verbosity minimal
+      - run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4Ordinal112 --configuration Release --verbosity minimal
