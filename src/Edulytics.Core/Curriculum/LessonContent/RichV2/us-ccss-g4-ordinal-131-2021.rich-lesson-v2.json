@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.4-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l131-symmetry-abc",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L04",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: A line of symmetry divides a figure into two reflected matching halves; a fold tests correspondence.",
         "Edulytics worked explanation: Fold or imagine folding the actual given paper figure along the proposed line. Compare the resulting halves: matching edges and corners indicate symmetry. Count distinct valid folding axes, not just lines passing through the center.",
         "First-party Edulytics Cool-down (not gated original): How many lines of symmetry does a non-square rectangle have?",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "2021 original Unit 8 Lesson 4 defines line symmetry by FOLDING paper so the two halves match exactly. The source Lin paper pieces are sorted into categories by whether a fold gives a match. In Search of Symmetry original cards require sorting figures by 0, 1, 2 or more actual reflection axes; optional Just Keep Folding remains optional. The original illustrated pattern-block image must be teacher-reviewed, never inferred from prose.",
+        "Supplementary first-party numeric Practice lists unambiguous shape definitions: square 4 symmetry axes, nonsquare rectangle 2, equilateral triangle 3, non-equilateral isosceles triangle 1, scalene triangle 0, non-square rhombus 2, nonrhombus kite 1, oblique nonrectangle parallelogram 0. These are descriptions NOT publisher diagrams."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,18 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Reflection axes of a nonsquare rectangle",
+          "Question": "How many lines of reflection symmetry does a rectangle have if it is not a square?",
+          "Method": "Fold through centre along width and length midlines.",
+          "Steps": [
+            "Vertical middle line matches left and right halves.",
+            "Horizontal middle line matches upper and lower halves.",
+            "Diagonals do not match for a nonsquare rectangle."
+          ],
+          "Answer": "2.",
+          "Check": "Distinguishes square which has 4 axes."
         }
       ],
       "CommonMistakes": [
@@ -83,6 +97,11 @@
           "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
           "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
           "Correction": "Use the original constraints and this rule: A line of symmetry divides a figure into two reflected matching halves; a fold tests correspondence."
+        },
+        {
+          "Mistake": "Counting a rotation as though it were a reflection symmetry line.",
+          "WhyWrong": "Line symmetry requires identical halves reflected across one fixed line.",
+          "Correction": "Check a fold test for each distinct line."
         }
       ],
       "SummaryPoints": [

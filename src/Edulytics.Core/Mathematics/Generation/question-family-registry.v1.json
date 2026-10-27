@@ -19727,6 +19727,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u08.l04.symmetry_axis_counts",
+      "version": 1,
+      "skillId": "geometry.symmetry.count_lines_for_defined_shapes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-known-elementary-shape-reflection-axis-count-fixtures",
+      "representations": [
+        "first_party_text_defined_regular_and_irregular_shapes",
+        "reflection_symmetry_axis_counts",
+        "teacher_led_original_folded_paper_and_source_card_images"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

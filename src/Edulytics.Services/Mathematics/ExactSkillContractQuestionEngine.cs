@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u08.l04.symmetry_axis_counts",
             "usccss.g4.u07.l13.additive_angle_part",
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
@@ -1171,6 +1172,19 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u08.l04.symmetry_axis_counts" =>
+                parameters.TryGetValue("caseType", out var c131) &&
+                parameters.TryGetValue("variant", out var v131) &&
+                parameters.TryGetValue("axisCount", out var a131) &&
+                c131 is >= 0 and <= 7 &&
+                v131 is >= 0 and <= 2 &&
+                a131 == (c131 switch
+                {
+                    0 => 4, 1 => 2, 2 => 3, 3 => 1,
+                    4 => 0, 5 => 2, 6 => 1, 7 => 0, _ => -1
+                }) &&
+                value == a131,
 
             "usccss.g4.u07.l13.additive_angle_part" =>
                 parameters.TryGetValue("caseType", out var c124) &&
@@ -2322,6 +2336,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u08.l04.symmetry_axis_counts" => BuildG4SymmetryAxisCounts(random),
             "usccss.g4.u07.l13.additive_angle_part" => BuildG4AdditiveAnglePart(random),
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => BuildG4AngleClassificationByBounds(random),
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => BuildG4PerpendicularRightAngleJudgment(random),
@@ -3677,6 +3692,34 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+    private static ExactProblem BuildG4SymmetryAxisCounts(Random random)
+    {
+        // 2021 G4 Unit 8 lines of symmetry. Described first-party
+        // canonical shapes only, NOT the original source card pictures.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        string[] shapeNames = [
+            "a square", "a rectangle that is NOT a square",
+            "an equilateral triangle", "an isosceles triangle that is NOT equilateral",
+            "a scalene triangle", "a rhombus that is NOT a square",
+            "a kite that is NOT a rhombus", "a slanted parallelogram that is NOT a rectangle"
+        ];
+        int[] axes = [4, 2, 3, 1, 0, 2, 1, 0];
+        var name = shapeNames[mode];
+        var count = axes[mode];
+        var cue = variant switch
+        {
+            0 => "A line of symmetry folds the figure into matching halves.",
+            1 => "Reflect one half to see whether the other half matches exactly.",
+            _ => "Only count DISTINCT reflection axes, not turn rotations."
+        };
+        return Problem("usccss.g4.u08.l04.symmetry_axis_counts",
+            $"An INDEPENDENTLY DESCRIBED geometric figure is {name}. How many lines of reflection symmetry does it have? {cue}",
+            $"The described shape has {count} reflection line(s). This does not imply the original publisher shape card has the same geometry.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant), ("axisCount", count));
+    }
 
     private static ExactProblem BuildG4AdditiveAnglePart(Random random)
     {
@@ -5043,6 +5086,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u08.l04.symmetry_axis_counts" => p["axisCount"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l13.additive_angle_part" => p["unknownDegrees"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => p["classCode"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => p["perpendicularAnswer"].ToString(CultureInfo.InvariantCulture),
