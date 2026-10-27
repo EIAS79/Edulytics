@@ -1,8 +1,8 @@
 # Edulytics Grade 4 — authoring through lesson 149, NOT release readiness
 
-**Branch:** `curriculum/g4-sequential-abc-20261026`  
-**Grade inventory:** 149 canonical lessons.  
-**Historical technical ledger before this continuation:** ordinals 1–100 marked `READY_FOR_STAGE_D` (Stage D was NOT executed).  
+**Branch:** `curriculum/g4-sequential-abc-20261026`
+**Grade inventory:** 149 canonical lessons.
+**Historical technical ledger before this continuation:** ordinals 1–100 marked `READY_FOR_STAGE_D` (Stage D was NOT executed).
 **This continuation:** 101 already repaired separately; 102–149 inspected against original local 2021 teacher preparation + student-facing material, then repaired/extended in the learner content pack and Rich V2, with first-party Cool-down and two focused static tests each. Source hashes and activity/excerpt evidence are in `lesson-102-149-original-source-intake.json`.
 
 ## What is actually established

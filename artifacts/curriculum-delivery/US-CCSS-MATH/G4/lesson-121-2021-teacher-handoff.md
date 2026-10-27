@@ -1,7 +1,7 @@
 # Grade 4 IM/KH 2021 U07:L10 (ordinal 121) — Angle Measurement and Perpendicular Lines
 
 **Original local files (Our-CS, no online research):** `C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-7\lesson-10\lesson.html`, `preparation.html`. Teacher SHA256 `7fa3ddf253c2da39ce255914ee3ca33d30b2b0a2a448326386de2915e4c7e9c7` exactly matches archived 2021 intake. Local preparation SHA256 `62c22ec6b90aadc8cd4111c3a1660b49d61f06a01eff062722b4dd409d0a5188`, archived prep intake `6b53e9ae3e21afa3bc77da2b9d53cb4b8906198404bd5869d21012155b8e5cbe` (byte-different caches; keep both).
- 
+
 **Warm-up, Number Talk: Quotients (10 minutes).** Full source has four statements and results: 180÷2=90, 180÷4=45, 360÷8=45, 360÷16=22.5. Teacher elicits efficient halving and structural explanation.
 
 **Activity 1, Angles Here, There, Everywhere (15 minutes).** Give each student a physical protractor and straightedge. Source shows standalone rays, and angles **s,t** in trapezoid, **q,r** in rhombus, **e,f** at three intersecting lines. Extend too-short rays where needed; align protractor centre with vertex and correct baseline, or find difference of two numbers on the same protractor scale. Estimate reasonableness against 90°. Teachers read the actual figures/labels; no fabricated source figure measurements.
