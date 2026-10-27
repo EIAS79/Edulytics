@@ -1348,6 +1348,20 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G4 U06:L15: official outcome/title fallback would route
+        // unrelated general Practice before the source-specific mural/area
+        // interaction and persisted grading are approved. Keep it fail-closed.
+        // The numeric quotient verifier is focused-tested; the complete
+        // source teaching, teacher-led drawings and Gradebook are not.
+        byLesson["PED:US-CCSS-MATH:G4:U06:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G4:U06:L15",
+            "geometry.perimeter_area",
+            "AREA_PARTIAL_QUOTIENTS_AND_MURAL_COMPLETE_COLUMNS_PENDING",
+            [],
+            "IM2021_G4_U06_L15_A_TO_C_PENDING",
+            "REVIEW_REQUIRED",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

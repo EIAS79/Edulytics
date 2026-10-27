@@ -60,6 +60,10 @@ public sealed class Grade4Ordinal101AreaDivisionExactTests
     public void StageCMappingRemainsClosedUntilReviewedLearnerInteractionAndSavedAttempt()
     {
         const string lesson = "PED:US-CCSS-MATH:G4:U06:L15";
+        Assert.True(LessonPracticeContractRegistry.TryResolve(lesson, out var pending));
+        Assert.NotNull(pending);
+        Assert.Equal("REVIEW_REQUIRED", pending!.Readiness);
+        Assert.Empty(pending.AllowedQuestionFamilies);
         Assert.False(LessonPracticeCapabilityResolver.TryResolve(lesson, out var routed));
         Assert.Null(routed);
         foreach (var family in Families)
