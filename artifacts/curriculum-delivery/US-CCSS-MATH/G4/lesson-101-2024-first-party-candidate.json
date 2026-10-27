@@ -42,6 +42,26 @@
       ],
       "answer": 12,
       "check": "9×12=108"
+    },
+    {
+      "prompt": "96 ÷ 4",
+      "steps": [
+        "Model nine tens and six ones.",
+        "Share eight tens among four groups, giving two tens per group; one ten remains.",
+        "Exchange remaining ten into ten ones, join with six ones and distribute sixteen ones: four ones to each group."
+      ],
+      "answer": 24,
+      "check": "4×24=96"
+    },
+    {
+      "prompt": "86 ÷ 2",
+      "steps": [
+        "Represent eight tens and six ones.",
+        "Share eight tens among two groups, four tens to each.",
+        "Share six ones among two groups, three ones to each; each group contains forty-three."
+      ],
+      "answer": 43,
+      "check": "2×43=86"
     }
   ],
   "sourceTaskComparisons": [
@@ -102,5 +122,15 @@
   "isEmbeddedRuntime": false,
   "qaStatus": "WRITTEN_NOT_RUN",
   "academicApproval": false,
-  "rights": "Independent Edulytics authored expressions; do not reuse 2024 protected artwork or text verbatim without rights review."
+  "rights": "Independent Edulytics authored expressions; do not reuse 2024 protected artwork or text verbatim without rights review.",
+  "sourceReuseProposal": {
+    "legacyOrdinal": 102,
+    "legacyLessonCode": "PED:US-CCSS-MATH:G4:U06:L16",
+    "sourceEdition": 2021,
+    "exact2024TitleMatch": true,
+    "five2024MathExercisesMatch": true,
+    "sameLessonIdentityAuthorized": false,
+    "legacyStudentRecordsUntouched": true
+  },
+  "tests": "WRITTEN_NOT_RUN"
 }
