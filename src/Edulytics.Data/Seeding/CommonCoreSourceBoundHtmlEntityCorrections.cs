@@ -134,6 +134,21 @@ public static class CommonCoreSourceBoundHtmlEntityCorrections
             var alreadyCorrected = !english.WorkedExamples.Contains("&nbsp;",
                 StringComparison.Ordinal);
 
+            // Source authoring later replaced the old entity-only prose.
+            // Accept the immutable reviewed candidate text, normalize literal
+            // HTML entities if present, and reject any other changed body.
+            if (ReviewedGrade4ExampleHashes.TryGetValue(repair.Code, out var authored) &&
+                (beforeHash == authored.Raw || beforeHash == authored.Normalized))
+            {
+                if (beforeHash == authored.Raw)
+                    english.WorkedExamples = english.WorkedExamples.Replace("&nbsp;", " ",
+                        StringComparison.Ordinal);
+                if (Sha(english.WorkedExamples) != authored.Normalized)
+                    throw new InvalidOperationException("Grade 4 2021 source-authored entity normalization drift: " + repair.Code);
+                continue;
+            }
+
+
             if (alreadyCorrected)
             {
                 // Only accept an idempotent second pass if reverting exactly
@@ -163,6 +178,22 @@ public static class CommonCoreSourceBoundHtmlEntityCorrections
                     "HTML entity source-bound post-rewrite hash mismatch.");
         }
     }
+
+    // Exact newer Grade 4 A-C English worked-example SHA-256 pairs.
+    // Only these source-identity-and-outcome-pinned examples can supersede
+    // the earlier entity-only correction. Neither state is academic approval.
+    private static readonly IReadOnlyDictionary<string, (string Raw, string Normalized)> ReviewedGrade4ExampleHashes =
+        new Dictionary<string, (string Raw, string Normalized)>(StringComparer.Ordinal)
+        {
+            ["PED:US-CCSS-MATH:G4:U02:L03"] = ("b3f83bdd74bd712ec5385464a818b7901dec1d5212d69d3808daf4b755b6df60", "b3f83bdd74bd712ec5385464a818b7901dec1d5212d69d3808daf4b755b6df60"),
+            ["PED:US-CCSS-MATH:G4:U02:L17"] = ("7319aa82fa292a04a1014a0f8b58e12f218848d0d654868930704d06ade2cbb8", "7319aa82fa292a04a1014a0f8b58e12f218848d0d654868930704d06ade2cbb8"),
+            ["PED:US-CCSS-MATH:G4:U05:L04"] = ("4a6a702786598c3209d0e8fab2ee36de95debd87ef3eadd4490988fc062910f6", "6d97b61505eb94840b9ef82ea9891d324597a7b263befc58a1bafc0ec9a04b7d"),
+            ["PED:US-CCSS-MATH:G4:U06:L01"] = ("51df4ab91178651ce46e1693765a856efbb9d3119826be845baf260e9839d292", "33d8175e9401351edfeeb3df61dc5574796cfc28f11cc09afae91466f0a8460c"),
+            ["PED:US-CCSS-MATH:G4:U06:L22"] = ("b3e170beacf66e5c2d99e1a84effd5d80af24e0ad3893f5e6d067cb2748eaef4", "b3e170beacf66e5c2d99e1a84effd5d80af24e0ad3893f5e6d067cb2748eaef4"),
+            ["PED:US-CCSS-MATH:G4:U06:L25"] = ("d848a8e501134b90282c657c4056093c5605df0fd20c9508b825eb84cce76990", "d848a8e501134b90282c657c4056093c5605df0fd20c9508b825eb84cce76990"),
+            ["PED:US-CCSS-MATH:G4:U07:L04"] = ("e5960bb56610ac3a77e2b0fa345b677bb2ccaf2c611f8847f3b02457235f4e29", "b2a14884ed20be7b7da33f02a27e18c57c134c3208382dd803976656bd45f63d"),
+            ["PED:US-CCSS-MATH:G4:U07:L14"] = ("ccd63231ec110339f477085da7be3dc27bb7df0517553de45b", "9eb7276110aed15f19c8b26bde02cc89a0e17674deb858d4789521572ccc34ed"),
+        };
 
     private static string CorrectedShaFor(Repair repair)
     {
