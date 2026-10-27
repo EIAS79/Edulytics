@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l09-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l09-source-abc-2021-v1-stage-d-comparison-measure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L09",
@@ -21,6 +21,18 @@
           "Definition": "Grams/kilograms and liters/milliliters",
           "Rule": "Use 1 kg = 1,000 g and 1 L = 1,000 mL; context decides weight or capacity.",
           "Example": "How many grams are in 2 kilograms?"
+        },
+        {
+          "Title": "Mathematical relationship",
+          "Definition": "Kilograms and litres each convert to 1,000 smaller units: grams or millilitres.",
+          "Rule": "Kilograms and litres each convert to 1,000 smaller units: grams or millilitres.",
+          "Example": "Convert 3 kilograms 250 grams to grams."
+        },
+        {
+          "Title": "Exact inverse and unit check",
+          "Definition": "The physical dimensions of mass and capacity are not interchangeable.",
+          "Rule": "The physical dimensions of mass and capacity are not interchangeable.",
+          "Example": "Convert 2 litres 500 millilitres to millilitres."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "2000",
           "Check": "Exact arithmetic: 2*1000 = 2000."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 1",
+          "Question": "Convert 3 kilograms 250 grams to grams.",
+          "Method": "Kilograms and litres each convert to 1,000 smaller units: grams or millilitres.",
+          "Steps": [
+            "One kg equals 1,000 g.",
+            "3 kg=3,000 g.",
+            "Add 250 g to obtain 3,250 g."
+          ],
+          "Answer": "3,250 g",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 2",
+          "Question": "Convert 2 litres 500 millilitres to millilitres.",
+          "Method": "Kilograms and litres each convert to 1,000 smaller units: grams or millilitres.",
+          "Steps": [
+            "One litre equals 1,000 mL.",
+            "2 L=2,000 mL.",
+            "Add 500 mL to obtain 2,500 mL."
+          ],
+          "Answer": "2,500 mL",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Confusing mass units with volume units.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Use 1 kg = 1,000 g and 1 L = 1,000 mL; context decides weight or capacity."
+        },
+        {
+          "Mistake": "Converting 2 L to 2,000 grams without a density.",
+          "WhyWrong": "The comparison ratio or measurement units do not match the task.",
+          "Correction": "Litres convert to millilitres, not automatically to grams."
         }
       ],
       "SummaryPoints": [

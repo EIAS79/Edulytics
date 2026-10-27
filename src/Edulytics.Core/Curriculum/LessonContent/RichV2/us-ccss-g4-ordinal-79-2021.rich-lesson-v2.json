@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l11-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l11-source-abc-2021-v1-stage-d-comparison-measure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L11",
@@ -21,6 +21,18 @@
           "Definition": "Pounds and ounces",
           "Rule": "Use the customary relation 1 pound = 16 ounces before comparing or adding masses.",
           "Example": "How many ounces are in 3 pounds?"
+        },
+        {
+          "Title": "Mathematical relationship",
+          "Definition": "One pound contains sixteen ounces in US customary mass units.",
+          "Rule": "One pound contains sixteen ounces in US customary mass units.",
+          "Example": "Convert 3 lb to ounces."
+        },
+        {
+          "Title": "Exact inverse and unit check",
+          "Definition": "Multiplying by 16 converts pounds into ounces.",
+          "Rule": "Multiplying by 16 converts pounds into ounces.",
+          "Example": "Convert 2 lb 5 oz into ounces."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "48",
           "Check": "Exact arithmetic: 3*16 = 48."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 1",
+          "Question": "Convert 3 lb to ounces.",
+          "Method": "One pound contains sixteen ounces in US customary mass units.",
+          "Steps": [
+            "Use 1 lb=16 oz.",
+            "Multiply 3×16.",
+            "Three pounds equal 48 oz."
+          ],
+          "Answer": "48 oz",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 2",
+          "Question": "Convert 2 lb 5 oz into ounces.",
+          "Method": "One pound contains sixteen ounces in US customary mass units.",
+          "Steps": [
+            "Two pounds equal 2×16=32 oz.",
+            "Add the extra five ounces.",
+            "The total is 37 oz."
+          ],
+          "Answer": "37 oz",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Confusing the 16 ounces in a pound with the 12 inches in a foot.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Use the customary relation 1 pound = 16 ounces before comparing or adding masses."
+        },
+        {
+          "Mistake": "Assuming each pound contains ten ounces.",
+          "WhyWrong": "The comparison ratio or measurement units do not match the task.",
+          "Correction": "The correct pound-to-ounce multiplier is 16."
         }
       ],
       "SummaryPoints": [

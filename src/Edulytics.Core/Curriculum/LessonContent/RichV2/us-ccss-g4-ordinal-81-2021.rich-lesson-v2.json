@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l13-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l13-source-abc-2021-v1-stage-d-comparison-measure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L13",
@@ -21,6 +21,18 @@
           "Definition": "Fractional measurement and time durations",
           "Rule": "Split one hour into equal minute parts, then solve a multi-step total.",
           "Example": "How many minutes are in one quarter of an hour?"
+        },
+        {
+          "Title": "Mathematical relationship",
+          "Definition": "Fractional measurement conversions preserve a consistent whole unit.",
+          "Rule": "Fractional measurement conversions preserve a consistent whole unit.",
+          "Example": "A strip is 1/2 m and another 75 cm. Total length in cm?"
+        },
+        {
+          "Title": "Exact inverse and unit check",
+          "Definition": "Express fractions of metres as centimetres when applying a whole-number scale.",
+          "Rule": "Express fractions of metres as centimetres when applying a whole-number scale.",
+          "Example": "Three equal ropes measure 1/4 m each. What is their total in cm?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "15",
           "Check": "Exact arithmetic: 60/4 = 15."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 1",
+          "Question": "A strip is 1/2 m and another 75 cm. Total length in cm?",
+          "Method": "Fractional measurement conversions preserve a consistent whole unit.",
+          "Steps": [
+            "Half a metre is 100÷2=50 cm.",
+            "Add 50 cm+75 cm.",
+            "The total is 125 cm."
+          ],
+          "Answer": "125 cm",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 2",
+          "Question": "Three equal ropes measure 1/4 m each. What is their total in cm?",
+          "Method": "Fractional measurement conversions preserve a consistent whole unit.",
+          "Steps": [
+            "One quarter metre equals 25 cm.",
+            "Multiply 3×25=75.",
+            "The total is 75 cm."
+          ],
+          "Answer": "75 cm",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Confusing one fourth of an hour with 25 minutes.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Split one hour into equal minute parts, then solve a multi-step total."
+        },
+        {
+          "Mistake": "Adding metres and centimetres without conversion.",
+          "WhyWrong": "The comparison ratio or measurement units do not match the task.",
+          "Correction": "Convert fractional metres and centimetres to a common unit."
         }
       ],
       "SummaryPoints": [

@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l06-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l06-source-abc-2021-v1-stage-d-comparison-measure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L06",
@@ -21,6 +21,18 @@
           "Definition": "Tenfold multiplicative relationships",
           "Rule": "Multiply by ten to compare a quantity that is ten times the original.",
           "Example": "What is ten times 128?"
+        },
+        {
+          "Title": "Mathematical relationship",
+          "Definition": "Ten times as many is multiplication by ten, not addition of ten.",
+          "Rule": "Ten times as many is multiplication by ten, not addition of ten.",
+          "Example": "There are 80 blocks. Another box holds ten times as many. How many?"
+        },
+        {
+          "Title": "Exact inverse and unit check",
+          "Definition": "A base-ten shift checks the tenfold quantity.",
+          "Rule": "A base-ten shift checks the tenfold quantity.",
+          "Example": "A 2,500 cm cable is ten times a reference cable. Find the reference length."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "1280",
           "Check": "Exact arithmetic: 10*128 = 1280."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 1",
+          "Question": "There are 80 blocks. Another box holds ten times as many. How many?",
+          "Method": "Ten times as many is multiplication by ten, not addition of ten.",
+          "Steps": [
+            "One group contains 80 blocks.",
+            "Multiply 80×10.",
+            "The total is 800 blocks."
+          ],
+          "Answer": "800",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 2",
+          "Question": "A 2,500 cm cable is ten times a reference cable. Find the reference length.",
+          "Method": "Ten times as many is multiplication by ten, not addition of ten.",
+          "Steps": [
+            "The given 2,500 cm is ten copies.",
+            "Divide 2,500÷10=250.",
+            "Check 250×10=2,500 cm."
+          ],
+          "Answer": "250 cm",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Assuming 128 × 10 is 1,2800 by misplacing a digit.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Multiply by ten to compare a quantity that is ten times the original."
+        },
+        {
+          "Mistake": "Claiming ten times 80 is 90.",
+          "WhyWrong": "The comparison ratio or measurement units do not match the task.",
+          "Correction": "Ten copies of eighty total eight hundred."
         }
       ],
       "SummaryPoints": [

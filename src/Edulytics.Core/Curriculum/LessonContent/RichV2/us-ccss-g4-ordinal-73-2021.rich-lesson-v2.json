@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l05-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l05-source-abc-2021-v1-stage-d-comparison-measure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L05",
@@ -21,6 +21,18 @@
           "Definition": "One- and two-step comparison problems",
           "Rule": "Model the multiplicative step first; then perform the required increase, decrease, or combination.",
           "Example": "A fair sold six groups of eight tickets and four more. Total?"
+        },
+        {
+          "Title": "Mathematical relationship",
+          "Definition": "Two-step multiplicative problems require checking the relationship at each step.",
+          "Rule": "Two-step multiplicative problems require checking the relationship at each step.",
+          "Example": "There are 8 cards. One class has triple and another has double the triple. How many?"
+        },
+        {
+          "Title": "Exact inverse and unit check",
+          "Definition": "Addition and multiplication express distinct comparisons.",
+          "Rule": "Addition and multiplication express distinct comparisons.",
+          "Example": "A collection has 12 items; another has four times as many, then 7 are removed. How many left?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "52",
           "Check": "Exact arithmetic: 6*8+4 = 52."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 1",
+          "Question": "There are 8 cards. One class has triple and another has double the triple. How many?",
+          "Method": "Two-step multiplicative problems require checking the relationship at each step.",
+          "Steps": [
+            "First class: 3×8=24 cards.",
+            "Second class: 2×24=48 cards.",
+            "Check 2×3×8=48."
+          ],
+          "Answer": "48 cards",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
+        },
+        {
+          "Title": "Edulytics independent comparison or measurement 2",
+          "Question": "A collection has 12 items; another has four times as many, then 7 are removed. How many left?",
+          "Method": "Two-step multiplicative problems require checking the relationship at each step.",
+          "Steps": [
+            "Multiply 4×12=48.",
+            "Subtract the seven removed items.",
+            "48−7=41."
+          ],
+          "Answer": "41",
+          "Check": "Numerically checked first-party illustration; source publisher diagrams and original teacher scoring remain outside automatic certification."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Changing a 'times' relation into an addition before the comparison step.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Model the multiplicative step first; then perform the required increase, decrease, or combination."
+        },
+        {
+          "Mistake": "Adding multipliers in a sequential multiplicative situation.",
+          "WhyWrong": "The comparison ratio or measurement units do not match the task.",
+          "Correction": "If a quantity is doubled then tripled, the factor is six."
         }
       ],
       "SummaryPoints": [
