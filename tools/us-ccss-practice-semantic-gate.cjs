@@ -17,8 +17,16 @@ const required=[
 ];
 const explicit=mappings.filter(x=>x.lessonCode.startsWith('PED:US-CCSS-MATH:')
   &&x.sourceType==='ReviewedPublisherLessonExactPractice');
-if(explicit.length!==35||required.some(c=>!explicit.some(e=>e.lessonCode===c)))
- throw Error('Required 35 reviewed source routes unavailable');
+// The original 35 Common Core routes are a fixed historical baseline.
+// Grade 4 Stage D additionally introduced 44 scoped exact mappings; they are
+// technical candidates, not independent academic signoffs or release approval.
+// Do not misclassify those additive routes as lost baseline routes.
+const originalReviewed=explicit.filter(x=>!x.lessonCode.startsWith('PED:US-CCSS-MATH:G4:'));
+const grade4StageDCandidates=explicit.filter(x=>x.lessonCode.startsWith('PED:US-CCSS-MATH:G4:'));
+if(originalReviewed.length!==35||grade4StageDCandidates.length!==44||
+   new Set(explicit.map(x=>x.lessonCode)).size!==explicit.length||
+   required.some(c=>!originalReviewed.some(e=>e.lessonCode===c)))
+ throw Error('Original 35 source routes or 44 Grade 4 Stage D candidates drifted');
 if(clauses.summary.allClauses!==121||clauses.summary.withPublisherExactDirectCode!==106
   ||clauses.summary.withoutExactDirectCode!==15)
  throw Error('121-child clause source evidence drift');
@@ -29,7 +37,9 @@ if(s.clauses!==121||s.exactPublisherChildCodeEvidence!==106
   ||s.releaseReady!==false||ledger.clauseEvidence.some(c=>c.certificationStatus!=='NOT_FULLY_CERTIFIED'))
  throw Error('US academic truthfulness release gate breached');
 const report={
- schemaVersion:4,productionReady:false,sourceReferencedLessons:35,targetedNewLessonRoutes:8,
+ schemaVersion:4,productionReady:false,sourceReferencedLessons:originalReviewed.length,targetedNewLessonRoutes:8,
+ grade4TechnicalCandidateRoutes:grade4StageDCandidates.length,
+ grade4CandidateAcademicStatus:'NOT_CERTIFIED',
  sourceEvidence:{childClauses:121,exactPublisherCodeReferences:106,
   withoutExactPublisherChildCodeReference:15},
  numericPracticeFamiliesAdded:11,
