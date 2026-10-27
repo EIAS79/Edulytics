@@ -8,89 +8,158 @@
       "CultureCode": "en",
       "Title": "Division With and Without Remainders",
       "ExplanationParagraphs": [
-        "Learning goal: You will use an algorithm that uses partial quotients to find whole number quotients and remainders with up to four-digit dividends and one-digit divisors.\nIn this lesson, you deepen and apply what you learned about partial quotients to divide four-digit numbers by single-digit divisors.",
-        "Source activity sequence: Warm-up: Notice and Wonder: Equations with Hundreds (10 minutes); Activity 1: A Stack of Partial Quotients (15 minutes); Activity 2: Andre and Elena’s Work (10 minutes); Activity 3: Incomplete Calculations (10 minutes); Cool-down: Find a Quotient (5 minutes)",
-        "Exact mathematical focus: A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor.",
-        "Edulytics authored model: 389 − (7 × 50) = 39. 39 − (7 × 5) = 4. 389 = 7 × 55 + 4; the remainder 4 is less than 7.",
-        "First-party Cool-down: Find 947 ÷ 4 and give the quotient and remainder.",
-        "Original diagrams, live construction, classroom response, and publisher login-gated Cool-down are not digitally certified."
+        "2021 goal: Find whole-number quotients and remainders for up to four-digit dividends divided by one-digit divisors using partial quotients.",
+        "Warm-up: 100=33×3+1, 200=66×3+2, 300=100×3; identify the pattern of remainders of hundreds divided by three.",
+        "Activity 1: Analyze Jada's 389÷7: subtract 280, then 49, then 56; 4 remains and partial quotients 40+7+8=55. Divide 702÷3=234 without a remainder.",
+        "Activity 2: Andre and Elena make recording mistakes for 2316÷5. Predict remainder from the final digit; a valid calculation produces quotient 463, remainder 1. Students explain why and correct the original student algorithms with teacher.",
+        "Activity 3: Complete at least two partial-quotient approaches to 3294÷3. Parts 3000,270,24 give partial quotients 1000,90,8; the quotient is 1098. Or 3300÷3−6÷3=1098.",
+        "First-party Edulytics Cool-down (not the source gated item): 947÷4=236 remainder 3, checked by 4×236+3=947."
       ],
       "KeyConcepts": [
         {
-          "Title": "Lesson mathematics",
-          "Definition": "A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor.",
-          "Rule": "A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor.",
-          "Example": "389 − (7 × 50) = 39."
+          "Title": "Valid remainder",
+          "Definition": "Whole units left over after forming all complete divisor-sized groups.",
+          "Rule": "Dividend = divisor×quotient+remainder, 0≤remainder<divisor.",
+          "Example": "389 = 7×55+4."
         },
         {
-          "Title": "Original task representation",
-          "Definition": "The purpose of this lesson is for students to use an algorithm that uses partial quotients to find whole number quotients and remainders with up to four-digit dividends and one-digit divisors. Students also analyze some common errors when using an algorithm that uses partial quotients.",
-          "Rule": "Honor the original quantities, units, diagrams and type of student response.",
-          "Example": "Jada used partial quotients to find out how many groups of 7 are in 389. | Analyze Jada’s steps in the algorithm. | Description: Divide. 3 hundred eighty 9 divided by 7, 11 rows. First row: fifty 5. Second row: 8. Third row: 7. Fourth row: 40. Fifth row: 7, lo"
+          "Title": "Partial-quotient subtraction",
+          "Definition": "Subtract a divisible chunk and record how many groups that chunk contains.",
+          "Rule": "Every subtraction equals divisor×partial quotient; add partial quotients.",
+          "Example": "389−280−49−56=4; 40+7+8=55."
         },
         {
-          "Title": "Evidence and checking",
-          "Definition": "Verify the original task using a mathematically meaningful representation.",
-          "Rule": "Show why the result or drawn figure satisfies every given condition; teacher judges open construction.",
-          "Example": "Activity 1: A Stack of Partial Quotients (15 minutes)"
+          "Title": "Error checking",
+          "Definition": "Use estimation, multiples and the quotient-remainder identity to detect recorded mistakes.",
+          "Rule": "A purported subtraction of 2000 for quotient 40 at divisor 5 is wrong because 5×40=200.",
+          "Example": "2316=5×463+1; 463 is reasonable and 103 is far too small."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Edulytics source-goal example",
-          "Question": "389 − (7 × 50) = 39.",
-          "Method": "A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor.",
+          "Title": "Jada's stack: 389 ÷ 7",
+          "Question": "Explain the partial quotients and remainder in Jada's calculation.",
+          "Method": "Match every subtracted multiple of 7 to its partial quotient.",
           "Steps": [
-            "389 − (7 × 50) = 39.",
-            "39 − (7 × 5) = 4.",
-            "389 = 7 × 55 + 4; the remainder 4 is less than 7."
+            "Subtract 7×40=280 from 389 to leave 109.",
+            "Subtract 7×7=49 to leave 60, then 7×8=56 to leave 4.",
+            "Add 40+7+8=55 and identify 4 as a remainder smaller than 7."
           ],
-          "Answer": "389 = 7 × 55 + 4; the remainder 4 is less than 7.",
-          "Check": "389%7 = 4"
+          "Answer": "55 r 4",
+          "Check": "7×55+4=389"
         },
         {
-          "Title": "Guided original task 1 (teacher-reviewed)",
-          "Question": "Jada used partial quotients to find out how many groups of 7 are in 389. | Analyze Jada’s steps in the algorithm. | Description: Divide. 3 hundred eighty 9 divided by 7, 11 rows. First row: fifty 5. Second row: 8. Third row: 7. Fourth row: 40. Fifth row: 7, lo",
-          "Method": "Use the lesson's original objective: The purpose of this lesson is for students to use an algorithm that uses partial quotients to find whole number quotients and remainders with up to four-digit dividends and one-digit divisors. Students also analyze some common errors when using an algorithm that uses partial quotients.",
+          "Title": "702 ÷ 3 with no remainder",
+          "Question": "Use partial quotients to divide 702 into three equal groups.",
+          "Method": "Subtract large multiples of 3 and finish at zero.",
           "Steps": [
-            "Read all givens and the requested output of Activity 1: A Stack of Partial Quotients (15 minutes).",
-            "Model the source task mathematically: A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor.",
-            "Present the reasoning, answer, drawn construction or student-created artifact and check it against the original conditions."
+            "Subtract 3×200=600; 102 remains.",
+            "Subtract 3×30=90; 12 remains.",
+            "Subtract 3×4=12; zero remains. Add 200+30+4=234."
           ],
-          "Answer": "Open student source task; a teacher must check the actual response and any required figure. No automatic source answer is asserted.",
-          "Check": "Not a verified original publisher answer or machine-scored Practice item."
+          "Answer": "234 r 0",
+          "Check": "3×234=702"
         },
         {
-          "Title": "Guided original task 2 (teacher-reviewed)",
-          "Question": "Andre and Elena are dividing 2,316 by 5. Before they begin, Andre says, “I can already tell that there will be a remainder.” | Without doing any calculations, decide if you agree with Andre. Explain your reasoning. | Here is Andre and Elena’s work. Each studen",
-          "Method": "Use the lesson's original objective: The purpose of this lesson is for students to use an algorithm that uses partial quotients to find whole number quotients and remainders with up to four-digit dividends and one-digit divisors. Students also analyze some common errors when using an algorithm that uses partial quotients.",
+          "Title": "Andre and Elena: 2316 ÷ 5",
+          "Question": "Explain the expected remainder and show a correct record to check their work.",
+          "Method": "Predict divisibility, then subtract matched partial products.",
           "Steps": [
-            "Read all givens and the requested output of Activity 2: Andre and Elena’s Work (10 minutes).",
-            "Model the source task mathematically: A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor.",
-            "Present the reasoning, answer, drawn construction or student-created artifact and check it against the original conditions."
+            "A number ending in 6 is not divisible by 5; it must leave a remainder.",
+            "Subtract 5×400=2000, then 5×60=300, then 5×3=15.",
+            "One remains; sum 400+60+3=463."
           ],
-          "Answer": "Open student source task; a teacher must check the actual response and any required figure. No automatic source answer is asserted.",
-          "Check": "Not a verified original publisher answer or machine-scored Practice item."
+          "Answer": "463 r 1",
+          "Check": "5×463+1=2316"
+        },
+        {
+          "Title": "Incomplete records: 3294 ÷ 3",
+          "Question": "Complete two different ways to divide 3294 by 3.",
+          "Method": "Partial quotients or a nearby multiple correction.",
+          "Steps": [
+            "3294=3000+270+24.",
+            "Divide each chunk: 1000+90+8=1098.",
+            "Alternatively 3300÷3−6÷3=1100−2=1098."
+          ],
+          "Answer": "1098 r 0",
+          "Check": "3×1098=3294"
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Using an unrelated operation or representation.",
-          "WhyWrong": "It does not match the actual source-goal procedure.",
-          "Correction": "A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor."
+          "Mistake": "Rounding a leftover up to a complete group.",
+          "WhyWrong": "Four leftover items cannot make a seven-item group.",
+          "Correction": "Record 389÷7 as 55 r 4; verify 7×55+4=389."
         },
         {
-          "Mistake": "Reporting a plausible number or classification without matching the task's required model.",
-          "WhyWrong": "A response lacking the original drawing, units, reasoning or construction does not demonstrate the required objective.",
-          "Correction": "Use A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor. and verify the original task constraints."
+          "Mistake": "Subtracting 2000 but recording a partial quotient of 40 at divisor 5.",
+          "WhyWrong": "Five times forty is two hundred, not two thousand.",
+          "Correction": "Record the corresponding partial quotient 400."
+        },
+        {
+          "Mistake": "Reporting a remainder greater than or equal to the divisor.",
+          "WhyWrong": "One or more additional complete groups could still be made.",
+          "Correction": "Continue dividing until the remainder is smaller than the divisor."
         }
       ],
       "SummaryPoints": [
-        "Learning goal: You will use an algorithm that uses partial quotients to find whole number quotients and remainders with up to four-digit dividends and one-digit divisors.",
-        "First-party Cool-down: Find 947 ÷ 4 and give the quotient and remainder.",
-        "Revisit the source activity: Activity 1: A Stack of Partial Quotients (15 minutes)"
+        "Record each subtracted divisible chunk and the matching partial quotient.",
+        "Remainder may be zero or positive, but always less than the divisor.",
+        "Use dividend=divisor×quotient+remainder to check source answers and detect errors.",
+        "Teacher checks the student-written algorithm and critiques, which numeric Practice alone does not grade."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "CalculationChain",
+          "Title": "389 divided by 7",
+          "Description": "First-party remainder diagram, not the original publisher asset.",
+          "PrimaryLabel": "389 ÷ 7",
+          "SecondaryLabel": "55 r 4",
+          "Items": [
+            "389−280=109 (40 groups)",
+            "109−49=60 (7 groups)",
+            "60−56=4 (8 groups)"
+          ],
+          "SecondaryItems": [
+            "40+7+8=55",
+            "7×55+4=389"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "2316 divided by 5",
+          "Description": "Compare the valid mathematical recording with the source students' incomplete or erroneous algorithms.",
+          "PrimaryLabel": "2316 ÷ 5",
+          "SecondaryLabel": "463 r 1",
+          "Items": [
+            "2316−2000=316 (400 groups)",
+            "316−300=16 (60 groups)",
+            "16−15=1 (3 groups)"
+          ],
+          "SecondaryItems": [
+            "5×463+1=2316"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Two recordings for 3294 divided by 3",
+          "Description": "Demonstrates legitimate alternative partial quotients.",
+          "PrimaryLabel": "3294 ÷ 3",
+          "SecondaryLabel": "1098",
+          "Items": [
+            "3000÷3=1000",
+            "270÷3=90; 24÷3=8",
+            "1000+90+8=1098",
+            "3300÷3−6÷3=1100−2=1098"
+          ],
+          "SecondaryItems": [
+            "3×1098=3294"
+          ],
+          "Rows": []
+        }
+      ],
       "Videos": []
     }
   ]

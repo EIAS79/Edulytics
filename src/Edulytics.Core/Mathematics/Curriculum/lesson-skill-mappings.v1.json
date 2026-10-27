@@ -4722,6 +4722,33 @@
         "First-party explanation and algorithm diagrams carry the requested method; generic numeric answer alone does not certify student explanations.",
         "Partial-quotient numerical generator, rejection of tampered decompositions and Rich V2 loading passed 2/3 focused tests on first run 40538371110; final routing requires an additional focused green run."
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L19",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6",
+        "CCSS:4.OA.A.3",
+        "CCSS:4.OA.B.4"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "PENDING_FOCUSED_CI",
+      "practiceMechanic": "G4_2021_U06_L19_PARTIAL_QUOTIENTS_WITHOUT_OR_WITH_REMAINDER",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l19.partial_quotients_remainders"
+      ],
+      "evidence": [
+        "Source teacher 2021 warmup 100=33×3+1, Jada 389÷7 and 702÷3, Andre/Elena 2316÷5, incomplete 3294÷3.",
+        "Exact generator and verifier check dividend = divisor×quotient+remainder, 0≤remainder<divisor and the recorded partial quotient decomposition.",
+        "Teacher scores original student error explanations and handwritten algorithms, not a bare quotient entry."
+      ]
     }
   ]
 }

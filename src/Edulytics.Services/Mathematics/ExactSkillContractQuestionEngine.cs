@@ -69,6 +69,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l15.mural_complete_columns",
             "usccss.g4.u06.l16.base_ten_equal_groups",
             "usccss.g4.u06.l18.partial_quotients_recording",
+            "usccss.g4.u06.l19.partial_quotients_remainders",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -734,7 +735,8 @@ public sealed class ExactSkillContractQuestionEngine
         }
 
         if (family is "number.whole.divide.with_remainder.build" or
-            "number.whole.divide.with_remainder.apply")
+            "number.whole.divide.with_remainder.apply" or
+            "usccss.g4.u06.l19.partial_quotients_remainders")
         {
             var dividend = parameters["dividend"];
             var divisor = parameters["divisor"];
@@ -743,6 +745,15 @@ public sealed class ExactSkillContractQuestionEngine
 
             var quotient = dividend / divisor;
             var remainder = dividend % divisor;
+            if (family == "usccss.g4.u06.l19.partial_quotients_remainders" &&
+                (!parameters.TryGetValue("partialTens", out var qTens) ||
+                 !parameters.TryGetValue("partialOnes", out var qOnes) ||
+                 !parameters.TryGetValue("remainder", out var rSource) ||
+                 dividend < 100 || dividend > 9999 || divisor < 2 || divisor > 9 ||
+                 rSource != remainder || qTens < 10 || qTens % 10 != 0 ||
+                 qOnes < 0 || qOnes > 9 ||
+                 (long)divisor * (qTens + qOnes) + remainder != dividend))
+                return false;
             var expected = $"{quotient.ToString(CultureInfo.InvariantCulture)} r {remainder.ToString(CultureInfo.InvariantCulture)}";
             return string.Equals(
                 NormalizeRemainderAnswer(answer),
@@ -1842,6 +1853,7 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.divide.with_remainder.build" or
             "number.whole.divide.with_remainder.apply" =>
                 BuildDivisionWithRemainder(family, random, scale),
+            "usccss.g4.u06.l19.partial_quotients_remainders" => BuildG4PartialQuotientsRemainder(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
                 BuildFractionOfQuantity(family, random, scale),
@@ -3090,6 +3102,26 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
+    private static ExactProblem BuildG4PartialQuotientsRemainder(Random random)
+    {
+        var divisor = random.Next(2, 10);
+        var quotient = random.Next(50, Math.Min(900, (9999 - divisor + 1) / divisor) + 1);
+        var remainder = random.Next(0, divisor);
+        var dividend = divisor * quotient + remainder;
+        var tens = quotient / 10 * 10;
+        var ones = quotient % 10;
+        return Problem("usccss.g4.u06.l19.partial_quotients_remainders",
+            "Use partial quotients to divide " + dividend + " by " + divisor +
+            ". Show the subtractions. Give quotient and remainder as 'q r r'.",
+            "Subtract " + divisor*tens + " (= " + divisor + " × " + tens +
+            "), then " + divisor*ones + " (= " + divisor + " × " + ones +
+            "). " + remainder + " remains. Check " + dividend + " = " +
+            divisor + " × " + quotient + " + " + remainder + ".",
+            AssessmentItemType.ShortAnswer,
+            ("dividend",dividend),("divisor",divisor),
+            ("partialTens",tens),("partialOnes",ones),("remainder",remainder));
+    }
+
     private static ExactProblem BuildG4PartialQuotients(Random random)
     {
         // IM K-5 G4 2021 U06:L18: use equations and subtraction for partial quotients.
@@ -3917,7 +3949,8 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["left"] * p["right"]).ToString(CultureInfo.InvariantCulture),
 
             "number.whole.divide.with_remainder.build" or
-            "number.whole.divide.with_remainder.apply" =>
+            "number.whole.divide.with_remainder.apply" or
+            "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
 
             "fractions.of_quantity.build" or
