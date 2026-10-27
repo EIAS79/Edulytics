@@ -49,9 +49,16 @@ public sealed class CommonCorePhase04SourceEntityPresentationTests
                     .Single(candidate => candidate.GetProperty("cultureCode")
                         .GetString() == "en");
                 var originalExamples = english.GetProperty("workedExamples").GetString()!;
-                Assert.True(originalExamples.Contains("&nbsp;", StringComparison.Ordinal) ||
-                    originalExamples.Contains("&lt;", StringComparison.Ordinal),
-                    $"Expected raw-source entity warning: {lessonCode}");
+                // The Phase 04 audit records the historical original source. The
+                // owner-authored Grade 4 replacement may remove raw HTML entities
+                // at authoring time; all other flagged source packs must retain
+                // their original source warning and still be safely parsed.
+                var hasOriginalEntity =
+                    originalExamples.Contains("&nbsp;", StringComparison.Ordinal) ||
+                    originalExamples.Contains("&lt;", StringComparison.Ordinal);
+                Assert.True(hasOriginalEntity ||
+                    lessonCode.StartsWith("PED:US-CCSS-MATH:G4:", StringComparison.Ordinal),
+                    $"An unapproved non-Grade-4 source entity was removed: {lessonCode}");
 
                 var parsed = LessonPresentationParser.ToPlainText(originalExamples);
                 var readerItems = LessonPresentationParser.Parse(
