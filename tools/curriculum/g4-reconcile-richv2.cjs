@@ -33,7 +33,7 @@ for(let n=101;n<=149;n++){
  const goal=text(t.explanation.split('\n')[0]);
  const sourceTask=text(src.studentFacingEvidence?.[1])||text(src.studentFacingEvidence?.[0])||goal;
  const sourceActivity=text(src.activities?.[1])||'original lesson source activity';
- const cooldown=text(cp.firstPartyCooldown?.prompt)||'Explain the lesson's mathematical relationship.';
+ const cooldown=text(cp.firstPartyCooldown?.prompt)||"Explain the lesson\u0027s mathematical relationship.";
  const teacherKey=text(cp.firstPartyCooldown?.teacherAnswer)||'Teacher evaluates the result and explanation.';
  // Extra concepts describe distinct elements of the source lesson, not a generic repetition of a formula.
  const conceptAdd=[
