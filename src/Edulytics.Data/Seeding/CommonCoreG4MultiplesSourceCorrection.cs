@@ -15,6 +15,11 @@ public static class CommonCoreG4MultiplesSourceCorrection
 {
     public const string LessonCode = "PED:US-CCSS-MATH:G4:U01:L01";
     public const string CorrectedContentVersion = "us-ccss-g4-u01-l01-multiples-source-correction-v1";
+    public const string Reviewed2021AuthoringContentVersion = "us-ccss-g4-u01-l01-2021-source-authoring-v2";
+    // Pinned full English teaching body after the original 2021 A-C handoff.
+    // Never infer approval from a partial phrase match.
+    private const string Reviewed2021AuthoringBodySha256 =
+        "be1cc20779ca77576a16b36de54c1dd10cc2f648aa1a29768aa307bddf2077a0";
 
     private const string ExpectedSourceUrl =
         "https://im.kendallhunt.com/k5/teachers/grade-4/unit-1/lesson-1/preparation.html";
@@ -86,6 +91,12 @@ public static class CommonCoreG4MultiplesSourceCorrection
                 ?? throw new InvalidOperationException(
                     "US Common Core G4 multiples source lacks canonical English translation.");
 
+            // Later first-party 2021 source authoring supersedes the earlier
+            // one-off prose correction. Preserve it only on an exact complete
+            // SHA-256 match; unknown changed learner text must still fail closed.
+            if (IsReviewed2021Authoring(english))
+                continue;
+
             if (string.Equals(english.StepByStepSolutions, NewStepByStepSolutions,
                     StringComparison.Ordinal))
             {
@@ -122,7 +133,19 @@ public static class CommonCoreG4MultiplesSourceCorrection
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson,
         string priorVersion) =>
-        IsTarget(document, lesson) ? CorrectedContentVersion : priorVersion;
+        IsTarget(document, lesson)
+            ? lesson.Translations.Any(t => string.Equals(t.CultureCode, "en", StringComparison.Ordinal) && IsReviewed2021Authoring(t))
+                ? Reviewed2021AuthoringContentVersion
+                : CorrectedContentVersion
+            : priorVersion;
+
+    private static bool IsReviewed2021Authoring(CanonicalLessonContentPackTranslation english) =>
+        string.Equals(ComputeBodySha256(
+                english.CultureCode, english.Title, english.Explanation,
+                english.KeyConceptsAndRules, english.WorkedExamples,
+                english.StepByStepSolutions, english.CommonMistakes,
+                english.QuickSummary), Reviewed2021AuthoringBodySha256,
+            StringComparison.Ordinal);
 
     public static bool CanUpgradeExisting(
         CanonicalLessonContentPackDocument document,

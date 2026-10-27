@@ -32,14 +32,16 @@ public sealed class CommonCoreG4MultiplesSourceCorrectionTests
         var (doc, lesson, english) = GetEffectiveLesson();
 
         Assert.Equal("CCSS:4.OA.B.4", Assert.Single(lesson.OutcomeCodes));
-        Assert.Equal(CommonCoreG4MultiplesSourceCorrection.CorrectedContentVersion,
+        Assert.Equal(CommonCoreG4MultiplesSourceCorrection.Reviewed2021AuthoringContentVersion,
             CanonicalLessonContentMaterializer
                 .GetEffectiveContentVersion(doc, lesson));
 
-        Assert.Contains("3 × 4 = 12", english.StepByStepSolutions);
-        Assert.Contains("3 × 9 = 27", english.StepByStepSolutions);
-        Assert.Contains("3 × 10 = 30", english.StepByStepSolutions);
-        Assert.Contains("4 × 7 = 28", english.WorkedExamples);
+        Assert.Contains("positive whole-number length", english.StepByStepSolutions);
+        Assert.Contains("3 × 10", english.StepByStepSolutions);
+        Assert.Contains("28 ÷ 3", english.StepByStepSolutions);
+        Assert.Contains("33 = 3 × 11", english.StepByStepSolutions);
+        Assert.Contains("five at width 3 tiles and five at width 4 tiles", english.WorkedExamples);
+        Assert.Contains("28 is impossible", english.WorkedExamples);
         Assert.DoesNotContain("Identify the figure", english.StepByStepSolutions);
         Assert.DoesNotContain("classifying a figure", english.CommonMistakes);
         Assert.DoesNotContain("&nbsp;", english.WorkedExamples);
@@ -48,7 +50,7 @@ public sealed class CommonCoreG4MultiplesSourceCorrectionTests
         {
             var area = 3 * length;
             Assert.Equal(0, area % 3);
-            Assert.Contains($"3 × {length} = {area}", english.WorkedExamples);
+            Assert.Contains(area.ToString(), english.WorkedExamples);
         }
 
         Assert.Equal(28, 4 * 7);
