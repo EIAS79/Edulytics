@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l04-ordinal29-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l04-ordinal29-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L04",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "The group count multiplies the numerator of a fixed non-unit fraction.",
+          "Rule": "The group count multiplies the numerator of a fixed non-unit fraction.",
+          "Example": "Three boxes each hold 2/5 kg. Total?"
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "15/4 = 3 and 3/4 cups.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Three boxes each hold 2/5 kg. Total?",
+          "Method": "The group count multiplies the numerator of a fixed non-unit fraction.",
+          "Steps": [
+            "Each box contains two fifths",
+            "Three boxes total 3×2/5=6/5 kg",
+            "6/5=1 1/5 kg"
+          ],
+          "Answer": "1 1/5 kg",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Four cups each hold 3/8 litre. Total?",
+          "Method": "The group count multiplies the numerator of a fixed non-unit fraction.",
+          "Steps": [
+            "Count four copies of 3/8",
+            "4×3/8=12/8 litres",
+            "12/8=1 1/2 litres"
+          ],
+          "Answer": "1 1/2 litres",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Multiplying the denominator by the group count changes the unit size and gives the wrong product.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Calculate n × (a/b)=(n×a)/b and, when useful, rewrite as a mixed number."
+        },
+        {
+          "Mistake": "Calculating 3×2/5 as 6/15.",
+          "WhyWrong": "Calculating 3×2/5 as 6/15.",
+          "Correction": "Three copies of two fifths make six fifths."
         }
       ],
       "SummaryPoints": [

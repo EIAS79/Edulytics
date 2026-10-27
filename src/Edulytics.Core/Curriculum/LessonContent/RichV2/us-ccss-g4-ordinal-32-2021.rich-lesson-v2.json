@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l07-ordinal32-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l07-ordinal32-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L07",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "a/b can be decomposed into c/b and (a−c)/b.",
+          "Rule": "a/b can be decomposed into c/b and (a−c)/b.",
+          "Example": "Decompose 9/5 starting with 1/5."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "9/5 = 4/5 + 5/5.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Decompose 9/5 starting with 1/5.",
+          "Method": "a/b can be decomposed into c/b and (a−c)/b.",
+          "Steps": [
+            "Keep the denominator five",
+            "Subtract numerators 9−1=8",
+            "9/5=1/5+8/5"
+          ],
+          "Answer": "1/5+8/5",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Decompose 9/5 starting with 6/5.",
+          "Method": "a/b can be decomposed into c/b and (a−c)/b.",
+          "Steps": [
+            "Both parts are fifths",
+            "Subtract numerators 9−6=3",
+            "9/5=6/5+3/5"
+          ],
+          "Answer": "6/5+3/5",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Adding denominators when counting like-sized fifths misrepresents the unit.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Decompose or add numerators when the denominators name equal-size units; preserve the total."
+        },
+        {
+          "Mistake": "4/5+4/5 equals 8/5, not 9/5.",
+          "WhyWrong": "4/5+4/5 equals 8/5, not 9/5.",
+          "Correction": "Use the missing fifth in the second addend."
         }
       ],
       "SummaryPoints": [

@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l10-ordinal35-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l10-ordinal35-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L10",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "Rename each whole as d/d when subtracting fractional pieces.",
+          "Rule": "Rename each whole as d/d when subtracting fractional pieces.",
+          "Example": "Compute 2−3/5."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "3 − 5/4 = 7/4 = 1 and 3/4.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Compute 2−3/5.",
+          "Method": "Rename each whole as d/d when subtracting fractional pieces.",
+          "Steps": [
+            "Convert 2 to 10/5",
+            "Subtract 3 fifths from 10 fifths",
+            "7/5=1 2/5"
+          ],
+          "Answer": "1 2/5",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Compute 4−5/6.",
+          "Method": "Rename each whole as d/d when subtracting fractional pieces.",
+          "Steps": [
+            "Convert 4 to 24/6",
+            "Subtract 5/6 leaving 19/6",
+            "19/6=3 1/6"
+          ],
+          "Answer": "3 1/6",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Subtracting five from three while ignoring that the five denotes fourths.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Rename the whole number using denominator-sized parts and subtract exact fractional pieces."
+        },
+        {
+          "Mistake": "Treating 2−3/5 as 1/5.",
+          "WhyWrong": "Treating 2−3/5 as 1/5.",
+          "Correction": "Two wholes are ten fifths."
         }
       ],
       "SummaryPoints": [

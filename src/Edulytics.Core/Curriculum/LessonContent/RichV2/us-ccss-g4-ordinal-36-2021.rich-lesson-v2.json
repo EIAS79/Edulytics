@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l11-ordinal36-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l11-ordinal36-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L11",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "Regroup a mixed number by exchanging a whole for fractional pieces.",
+          "Rule": "Regroup a mixed number by exchanging a whole for fractional pieces.",
+          "Example": "Find 5 1/4−2 3/4."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "8 and 5/8 inches.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Find 5 1/4−2 3/4.",
+          "Method": "Regroup a mixed number by exchanging a whole for fractional pieces.",
+          "Steps": [
+            "Regroup 5 1/4 as 4 5/4",
+            "Subtract 2 wholes and 3 quarters",
+            "2 2/4=2 1/2"
+          ],
+          "Answer": "2 1/2",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Find 4 1/8−1 5/8.",
+          "Method": "Regroup a mixed number by exchanging a whole for fractional pieces.",
+          "Steps": [
+            "Regroup 4 1/8 as 3 9/8",
+            "Subtract 1 whole and 5/8",
+            "2 4/8=2 1/2"
+          ],
+          "Answer": "2 1/2",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Subtracting 7 from 4 without borrowing one whole creates an incorrect negative part.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Rewrite whole/fraction components with matching denominators; regroup as needed before subtracting."
+        },
+        {
+          "Mistake": "Subtracting a larger fractional part without regrouping a whole.",
+          "WhyWrong": "Subtracting a larger fractional part without regrouping a whole.",
+          "Correction": "Borrow one complete whole in the required denominator."
         }
       ],
       "SummaryPoints": [

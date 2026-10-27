@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l06-ordinal31-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l06-ordinal31-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L06",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "In a repeated recipe, multiply the fraction per serving by the number of servings.",
+          "Rule": "In a repeated recipe, multiply the fraction per serving by the number of servings.",
+          "Example": "Three batches need 2/3 cup each. How much?"
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "8/10 = 4/5 litre.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Three batches need 2/3 cup each. How much?",
+          "Method": "In a repeated recipe, multiply the fraction per serving by the number of servings.",
+          "Steps": [
+            "Each batch needs 2/3 cup",
+            "Multiply 3×2/3=6/3 cups",
+            "Six thirds make two cups"
+          ],
+          "Answer": "2 cups",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Six ribbons use 1/4 metre each. How much?",
+          "Method": "In a repeated recipe, multiply the fraction per serving by the number of servings.",
+          "Steps": [
+            "Each ribbon takes one quarter metre",
+            "Multiply 6×1/4=6/4 metres",
+            "6/4=1 1/2 metres"
+          ],
+          "Answer": "1 1/2 metres",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Dividing the fractional amount by servings when the task asks for their total.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Identify the amount per serving and number of servings, multiply exactly, then name the correct unit."
+        },
+        {
+          "Mistake": "Multiplying the denominator by the group count.",
+          "WhyWrong": "Multiplying the denominator by the group count.",
+          "Correction": "All servings use the same fractional unit."
         }
       ],
       "SummaryPoints": [

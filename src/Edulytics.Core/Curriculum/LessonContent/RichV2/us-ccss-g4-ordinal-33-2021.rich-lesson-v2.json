@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l08-ordinal33-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l08-ordinal33-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L08",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "Adding same-denominator fractions advances the numerator-sized count on a number line.",
+          "Rule": "Adding same-denominator fractions advances the numerator-sized count on a number line.",
+          "Example": "Start at 5/8 then jump forward 6/8."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "5/8 + 2/8 = 7/8.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Start at 5/8 then jump forward 6/8.",
+          "Method": "Adding same-denominator fractions advances the numerator-sized count on a number line.",
+          "Steps": [
+            "Partition number line in eighths",
+            "Move forward six eighths from five eighths",
+            "5/8+6/8=11/8=1 3/8"
+          ],
+          "Answer": "1 3/8",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Find 7/6+4/6.",
+          "Method": "Adding same-denominator fractions advances the numerator-sized count on a number line.",
+          "Steps": [
+            "Use sixth-sized units",
+            "Add numerators 7+4=11",
+            "11/6=1 5/6"
+          ],
+          "Answer": "1 5/6",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Adding denominators or jumping from the wrong starting tick gives a false endpoint.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Add fraction numerators or corresponding equal-length jumps; convert improper results accurately when needed."
+        },
+        {
+          "Mistake": "Adding denominators to get 5/8+6/8=11/16.",
+          "WhyWrong": "Adding denominators to get 5/8+6/8=11/16.",
+          "Correction": "The size of each part remains one eighth."
         }
       ],
       "SummaryPoints": [

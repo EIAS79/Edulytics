@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l09-ordinal34-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l09-ordinal34-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L09",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "Subtracting same-denominator fractions moves backwards by equal-sized parts.",
+          "Rule": "Subtracting same-denominator fractions moves backwards by equal-sized parts.",
+          "Example": "Move back 3/8 from 11/8."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "13/8 − 6/8 = 7/8.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Move back 3/8 from 11/8.",
+          "Method": "Subtracting same-denominator fractions moves backwards by equal-sized parts.",
+          "Steps": [
+            "Mark eighth-sized intervals",
+            "Subtract 11−3=8 eighths",
+            "8/8=1 whole"
+          ],
+          "Answer": "1",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Find 13/6−7/6.",
+          "Method": "Subtracting same-denominator fractions moves backwards by equal-sized parts.",
+          "Steps": [
+            "Keep sixth-sized parts",
+            "Subtract numerators 13−7=6",
+            "6/6=1 and 1+7/6=13/6"
+          ],
+          "Answer": "1",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Reversing the jump direction for a difference or changing the common denominator.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Subtract equal-sized numerator parts and retain the denominator, with regrouping where needed."
+        },
+        {
+          "Mistake": "Subtracting denominators to obtain division by zero.",
+          "WhyWrong": "Subtracting denominators to obtain division by zero.",
+          "Correction": "Keep the same partition size."
         }
       ],
       "SummaryPoints": [

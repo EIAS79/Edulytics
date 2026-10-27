@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l05-ordinal30-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l05-ordinal30-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L05",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "Equivalent whole-number-times-fraction expressions can have distinct factors.",
+          "Rule": "Equivalent whole-number-times-fraction expressions can have distinct factors.",
+          "Example": "Express 12/5 using factor four."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "6 × 2/5 = 12/5.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Express 12/5 using factor four.",
+          "Method": "Equivalent whole-number-times-fraction expressions can have distinct factors.",
+          "Steps": [
+            "Keep fifth-sized units",
+            "Divide numerator 12 by 4 to get 3",
+            "4×3/5=12/5"
+          ],
+          "Answer": "4×3/5",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Express 12/5 using factor three.",
+          "Method": "Equivalent whole-number-times-fraction expressions can have distinct factors.",
+          "Steps": [
+            "Keep fifth-sized units",
+            "Divide numerator 12 by 3 to get 4",
+            "3×4/5=12/5"
+          ],
+          "Answer": "3×4/5",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Writing a different product with a different value by neglecting to preserve total fractional pieces.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Find a unit fraction or non-unit fraction factor that yields the required total."
+        },
+        {
+          "Mistake": "Claiming 6×2/5 differs from 3×4/5.",
+          "WhyWrong": "Claiming 6×2/5 differs from 3×4/5.",
+          "Correction": "Both products are 12/5."
         }
       ],
       "SummaryPoints": [

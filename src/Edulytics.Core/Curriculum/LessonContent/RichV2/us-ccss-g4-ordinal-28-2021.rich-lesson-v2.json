@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l03-ordinal28-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l03-ordinal28-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L03",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent fraction method",
+          "Definition": "n copies of 1/d make n/d of the same whole.",
+          "Rule": "n copies of 1/d make n/d of the same whole.",
+          "Example": "What are three copies of 1/8?"
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "5/10 = 1/2.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "What are three copies of 1/8?",
+          "Method": "n copies of 1/d make n/d of the same whole.",
+          "Steps": [
+            "One group is one eighth",
+            "Three groups are three eighth-sized pieces",
+            "3×1/8=3/8"
+          ],
+          "Answer": "3/8",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Write 7/6 as whole-number times unit fraction.",
+          "Method": "n copies of 1/d make n/d of the same whole.",
+          "Steps": [
+            "Keep sixth-sized pieces",
+            "Count seven copies of 1/6",
+            "7×1/6=7/6=1 1/6"
+          ],
+          "Answer": "7×1/6",
+          "Check": "First-party numeric reasoning; teacher reviews original 2021 drawings and open-response source tasks."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Confusing the number of groups with the size of each fractional piece.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Multiply number of groups by unit fraction, or solve the missing whole-number/fraction factor exactly."
+        },
+        {
+          "Mistake": "Changing the denominator to n×d confuses group count with part size.",
+          "WhyWrong": "Changing the denominator to n×d confuses group count with part size.",
+          "Correction": "Keep the denominator d and count n unit parts."
         }
       ],
       "SummaryPoints": [
