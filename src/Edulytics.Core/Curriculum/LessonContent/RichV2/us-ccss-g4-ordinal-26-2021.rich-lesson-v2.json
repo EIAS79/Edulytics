@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l01-ordinal26-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l01-ordinal26-abc-v1-stage-d-math-enrichment-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L01",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Repeated addition keeps the unit fraction",
+          "Definition": "Whole-number multiplication counts copies of the same fractional unit.",
+          "Rule": "n groups of 1/d gives n/d of the same whole.",
+          "Example": "3×1/4=3/4, not 3/12."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "5/2 oranges = 2 and 1/2 oranges.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics model: three quarters by equal groups",
+          "Question": "Three plates each hold 1/4 of an orange. What is the total?",
+          "Method": "Use repeated addition and a whole partitioned in fourths.",
+          "Steps": [
+            "Each plate contributes one fourth of an equally sized orange.",
+            "Add 1/4+1/4+1/4 as three copies of 1/4.",
+            "Record 3×1/4=3/4 orange."
+          ],
+          "Answer": "3/4 orange.",
+          "Check": "The physical representation remains subject to teacher review."
+        },
+        {
+          "Title": "Edulytics model: eight eighths make one whole",
+          "Question": "Eight equal groups each contain 1/8 of a unit. How many wholes is that?",
+          "Method": "Count eighth-sized pieces without changing the partition size.",
+          "Steps": [
+            "A complete whole is divided into eight equal parts.",
+            "Eight groups each contribute one of those 1/8 pieces.",
+            "8×1/8=8/8=1 complete whole."
+          ],
+          "Answer": "1 whole.",
+          "Check": "Exact rational equality, using one consistent whole."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Multiplying a fraction denominator by the number of groups instead of counting unit pieces. ",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Multiply the number of groups by the fractional amount in each group; preserve the fraction unit."
+        },
+        {
+          "Mistake": "Changing the denominator when counting more equal groups.",
+          "WhyWrong": "Three quarter-sized pieces are still quarters of one same-sized whole.",
+          "Correction": "Keep denominator 4 and count 3 unit pieces to get 3/4."
         }
       ],
       "SummaryPoints": [

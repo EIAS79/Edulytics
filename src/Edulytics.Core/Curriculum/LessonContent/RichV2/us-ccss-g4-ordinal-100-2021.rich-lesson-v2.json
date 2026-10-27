@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l14-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l14-source-abc-2021-v1-stage-d-math-enrichment-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L14",
@@ -21,6 +21,12 @@
           "Definition": "Factors and multiples in contexts",
           "Rule": "Use a factor to find equal groups or list whole-number multiples.",
           "Example": "How many groups of seven make 42?"
+        },
+        {
+          "Title": "An unknown factor is a quotient",
+          "Definition": "If the eighth multiple of n equals 104 then 8×n=104.",
+          "Rule": "Solve the missing factor by dividing 104 by 8.",
+          "Example": "104÷8=13, so the fifteenth multiple is 15×13=195."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +41,30 @@
           ],
           "Answer": "6",
           "Check": "Exact arithmetic: 42/7 = 6."
+        },
+        {
+          "Title": "Source Number Talk: related divisions by seven",
+          "Question": "Evaluate 21÷7, 35÷7, 140÷7 and 196÷7.",
+          "Method": "Use known multiples of 7 and multiplication checks.",
+          "Steps": [
+            "Use 7×3=21 and 7×5=35, giving 3 and 5.",
+            "Use 7×20=140 and 7×28=196, giving 20 and 28.",
+            "Multiply each quotient by 7 to check against its dividend."
+          ],
+          "Answer": "3, 5, 20 and 28 respectively.",
+          "Check": "All four 2021 warm-up expressions are included in the A-C content pack."
+        },
+        {
+          "Title": "Han's multiples: identify an unknown factor",
+          "Question": "Han's eighth multiple equals 104. What is the number, its fifteenth multiple, and the multiple number at 286?",
+          "Method": "Write each unknown as the number of equal groups or the group size.",
+          "Steps": [
+            "Solve 8×n=104 to find n=104÷8=13.",
+            "The fifteenth multiple is 15×13=195.",
+            "Since 286÷13=22, the twenty-second multiple equals 286."
+          ],
+          "Answer": "Number 13; fifteenth multiple 195; 286 is the twenty-second multiple.",
+          "Check": "The three prompts follow the source activity described in the A-C pack."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +72,11 @@
           "Mistake": "Treating any larger number as a multiple without checking divisibility.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Use a factor to find equal groups or list whole-number multiples."
+        },
+        {
+          "Mistake": "Reading the eighth multiple as n+8 instead of 8×n.",
+          "WhyWrong": "The eighth multiple of n represents eight equal groups of n.",
+          "Correction": "Use 8n=104, so n=13."
         }
       ],
       "SummaryPoints": [

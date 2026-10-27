@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u02-l17-ordinal25-abc-v1",
+  "ContentVersion": "g4-source-sequential-u02-l17-ordinal25-abc-v1-stage-d-math-enrichment-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U02:L17",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Unit intervals and comparison",
+          "Definition": "A fraction's position is defined relative to one fixed unit interval.",
+          "Rule": "Write all positions in fourths before comparing or scoring a paper-clip game.",
+          "Example": "3/2 is 6/4, so 7/4 lies to its right."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "Yes; 5/4 > 1.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent model: a clip at seven fourths",
+          "Question": "On an evenly divided 0-to-2 number line, is 7/4 to the left or right of 3/2?",
+          "Method": "Compare locations using common fourths.",
+          "Steps": [
+            "Rewrite 3/2 as 6/4 without changing the whole.",
+            "Compare 7/4 with 6/4 on the same marked interval.",
+            "Since 7>6, the clip at 7/4 is 1/4 to the right of 3/2."
+          ],
+          "Answer": "Right of 3/2 by 1/4.",
+          "Check": "New first-party numeric illustration; actual original paper-clip toss is teacher reviewed."
+        },
+        {
+          "Title": "Edulytics independent model: two scored clip landings",
+          "Question": "A clip lands at 3/4 on one attempt and at 5/4 on the next. Which landing is greater?",
+          "Method": "Use the same fourth-unit benchmark and compare numerators.",
+          "Steps": [
+            "Partition each whole into four equal intervals.",
+            "Locate 3/4 before 1 and 5/4 one fourth beyond 1.",
+            "Compare: 5/4−3/4=2/4=1/2."
+          ],
+          "Answer": "5/4 is greater, by 1/2.",
+          "Check": "Teacher reviews any physical-game rule or hand-drawn number line."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Placing a fraction by counting ticks without verifying the unit interval changes its value.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Locate the interval 0 to 2, subdivide equal whole units and justify a mark between benchmark numbers."
+        },
+        {
+          "Mistake": "Placing 7/4 to the left of 3/2 because 4 is less than 2.",
+          "WhyWrong": "Denominators label subdivisions, not the size of the number alone.",
+          "Correction": "Rewrite 3/2 as 6/4; 7/4 exceeds it by 1/4."
         }
       ],
       "SummaryPoints": [

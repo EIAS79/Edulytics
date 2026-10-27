@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u04-l05-ordinal50-abc-v1",
+  "ContentVersion": "g4-source-sequential-u04-l05-ordinal50-abc-v1-stage-d-math-enrichment-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L05",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Compare decimals by equal place values",
+          "Definition": "A number with one decimal place can be rewritten to hundredths.",
+          "Rule": "Compare 0.50 and 0.47 as 50 and 47 hundredths.",
+          "Example": "0.50>47/100."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "1 whole.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics model: tenths versus hundredths",
+          "Question": "Which is greater, 0.5 or 47/100?",
+          "Method": "Convert both values to hundredths.",
+          "Steps": [
+            "Write 0.5 as 0.50, which is 50/100.",
+            "Write 47/100 as 0.47.",
+            "Since 50>47, conclude 0.50>0.47."
+          ],
+          "Answer": "0.5 is greater by 0.03.",
+          "Check": "0.50−0.47=0.03."
+        },
+        {
+          "Title": "Edulytics model: order three equivalent representations",
+          "Question": "Order 0.37, 2/5 and 0.41 from least to greatest.",
+          "Method": "Translate fifths to tenths or hundredths.",
+          "Steps": [
+            "Multiply 2/5 by 20/20 to obtain 40/100=0.40.",
+            "Express the three quantities as 0.37, 0.40 and 0.41.",
+            "Compare hundredths: 37<40<41."
+          ],
+          "Answer": "0.37 < 2/5 < 0.41.",
+          "Check": "All comparisons concern the same unit whole."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Mistaking 0.50 for 0.05 or equating a larger raw numerator to a greater fractional value.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Convert tenths and hundredths to equivalent place values before addition or comparing decimal distances."
+        },
+        {
+          "Mistake": "Assuming that 0.5 and 0.05 are equal because both contain the digit five.",
+          "WhyWrong": "The 5 is in the tenths place in 0.5, and in the hundredths place in 0.05.",
+          "Correction": "0.5=0.50 and 0.05=5/100; 0.50 is ten times 0.05."
         }
       ],
       "SummaryPoints": [

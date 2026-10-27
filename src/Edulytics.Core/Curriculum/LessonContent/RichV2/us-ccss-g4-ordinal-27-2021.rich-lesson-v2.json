@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l02-ordinal27-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l02-ordinal27-abc-v1-stage-d-math-enrichment-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L02",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Match a picture to a multiplication expression",
+          "Definition": "Each equal group carries the same fractional-sized piece.",
+          "Rule": "A drawing of n groups of 1/d matches n×(1/d) and gives n/d.",
+          "Example": "3 groups of 1/6 give 3/6=1/2."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "7/8.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics representation: three sixths",
+          "Question": "A model shows three groups each containing 1/6 of an identical whole. Write the total.",
+          "Method": "Translate equal groups into multiplication, then simplify.",
+          "Steps": [
+            "Identify three equally sized groups each worth 1/6.",
+            "Write 3×(1/6)=3/6.",
+            "Simplify 3/6 by dividing numerator and denominator by 3."
+          ],
+          "Answer": "1/2 whole.",
+          "Check": "Teacher reviews the student's independently drawn diagram."
+        },
+        {
+          "Title": "Edulytics representation: five quarters",
+          "Question": "Five groups each contain 1/4 of a whole. Write the total as a mixed number.",
+          "Method": "Multiply groups by unit size, then divide the numerator by the denominator.",
+          "Steps": [
+            "Five groups of one quarter mean 5×1/4.",
+            "Count five quarter pieces to obtain 5/4.",
+            "Regroup four quarters as 1 whole, with one quarter left."
+          ],
+          "Answer": "1 1/4 wholes.",
+          "Check": "Preserve the same-sized whole in every group."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Counting drawn partitions without checking that all wholes have equal size.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Read a product as equal groups; match its numerators and denominators to a partitioned unit."
+        },
+        {
+          "Mistake": "Counting three groups of sixths as 3/3.",
+          "WhyWrong": "The whole remains partitioned into six equal parts.",
+          "Correction": "Use 3/6, then simplify to 1/2."
         }
       ],
       "SummaryPoints": [

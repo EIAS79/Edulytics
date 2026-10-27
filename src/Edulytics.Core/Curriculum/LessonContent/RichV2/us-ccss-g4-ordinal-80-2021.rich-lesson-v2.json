@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l12-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l12-source-abc-2021-v1-stage-d-math-enrichment-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L12",
@@ -21,6 +21,12 @@
           "Definition": "Hours, minutes and seconds",
           "Rule": "Use 1 hour = 60 minutes and 1 minute = 60 seconds.",
           "Example": "How many minutes are in 2 hours and 15 minutes?"
+        },
+        {
+          "Title": "Converting parts of an hour",
+          "Definition": "An hour is 60 minutes; fractional hours are corresponding fractions of 60 minutes.",
+          "Rule": "One half hour is 30 minutes, three quarters of an hour is 45 minutes.",
+          "Example": "1 1/2 hours is 60+30=90 minutes."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +41,30 @@
           ],
           "Answer": "135",
           "Check": "Exact arithmetic: 2*60+15 = 135."
+        },
+        {
+          "Title": "Mai's schedule: hours to minutes",
+          "Question": "Mai spends 1 1/2 hours on homework and reading. How many minutes is that?",
+          "Method": "Convert each part of the mixed hour into minutes.",
+          "Steps": [
+            "One full hour equals 60 minutes.",
+            "Half an hour equals 60÷2=30 minutes.",
+            "Add 60+30=90 minutes."
+          ],
+          "Answer": "90 minutes.",
+          "Check": "The 2021 described schedule contains this 1 1/2-hour activity."
+        },
+        {
+          "Title": "Diego's timer: minutes to seconds",
+          "Question": "Diego allows 30 minutes for daily reading. How many seconds is that?",
+          "Method": "Use the stated conversion 1 minute=60 seconds.",
+          "Steps": [
+            "Identify the unit required: seconds.",
+            "Multiply 30 minutes by 60 seconds per minute.",
+            "30×60=1800 seconds; check 1800÷60=30 minutes."
+          ],
+          "Answer": "1,800 seconds.",
+          "Check": "This uses the original teacher-activity conversion described in the source pack."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +72,11 @@
           "Mistake": "Treating hours as 100 minutes.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Use 1 hour = 60 minutes and 1 minute = 60 seconds."
+        },
+        {
+          "Mistake": "Reading 1 1/2 hours as 1 minute and 30 seconds.",
+          "WhyWrong": "A half-hour is 30 minutes, while a half-minute is 30 seconds.",
+          "Correction": "Convert the stated whole unit before adding: 1 1/2 hours=90 minutes."
         }
       ],
       "SummaryPoints": [
