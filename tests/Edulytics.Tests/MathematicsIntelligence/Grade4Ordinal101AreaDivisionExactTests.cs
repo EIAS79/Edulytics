@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Edulytics.Core.Mathematics.Practice;
+using Edulytics.Core.Curriculum;
 using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -72,6 +73,21 @@ public sealed class Grade4Ordinal101AreaDivisionExactTests
             Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, ui!.InteractionKind);
             Assert.Equal("exact_integer", ui.AnswerType);
         }
+    }
+
+    [Fact]
+    public void SourceCorrectRichV2LessonLoadsIndependentlyOfOtherLegacyGradeFiles()
+    {
+        var lesson = RichLessonContentV2Registry.Find(
+            "PED:US-CCSS-MATH:G4:U06:L15", "en");
+        Assert.NotNull(lesson);
+        Assert.Equal("Situations Involving Area", lesson!.Title);
+        Assert.Equal(3, lesson.WorkedExamples.Count);
+        Assert.Equal(3, lesson.Visuals.Count);
+        Assert.Equal(RichLessonVisualKind.ShapeDecomposition, lesson.Visuals[1].Kind);
+        Assert.Contains(lesson.WorkedExamples, x => x.Question.Contains("189"));
+        Assert.Contains(lesson.WorkedExamples, x => x.Question.Contains("197"));
+        Assert.Contains(lesson.WorkedExamples, x => x.Question.Contains("2,280"));
     }
 
     [Fact]
