@@ -21,6 +21,18 @@
           "Definition": "Complete unfinished long division by subtracting accurate partial products of the divisor and summing partial quotients.",
           "Rule": "Complete unfinished long division by subtracting accurate partial products of the divisor and summing partial quotients.",
           "Example": "Divide 7,465 by 5 with convenient chunks: 5,000 and 2,000 leave 465."
+        },
+        {
+          "Title": "Source-constrained mathematical representation",
+          "Definition": "Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder.",
+          "Rule": "Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder.",
+          "Example": "Worked Edulytics example: Divide 7,465 by 5 with convenient chunks: 5,000 and 2,000 leave 465. Subtract 400 and 65, each divisible by 5. Add quotient contributions 1,000 + 400 + 80 + 13 = 1,493. Check 1,493 × 5 = 7,465."
+        },
+        {
+          "Title": "Evaluate the result in context",
+          "Definition": "An answer must represent exactly the quantity asked for.",
+          "Rule": "Verify every operation with an inverse, decomposition, or direct substitution into the original task.",
+          "Example": "First-party Edulytics Cool-down (publisher's original not inspected): Find 8,256 ÷ 6, checking by multiplication."
         }
       ],
       "WorkedExamples": [
@@ -36,6 +48,30 @@
           ],
           "Answer": "Check 1,493 × 5 = 7,465.",
           "Check": "Checked arithmetic exemplar: 7465/5 = 1493; not a generator verification."
+        },
+        {
+          "Title": "Original-task guided solution process 1 (teacher-reviewed)",
+          "Question": "Math focus: Complete unfinished long division by subtracting accurate partial products of the divisor and summing partial quotients.",
+          "Method": "Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
+        },
+        {
+          "Title": "Original-task guided solution process 2 (teacher-reviewed)",
+          "Question": "Worked Edulytics example: Divide 7,465 by 5 with convenient chunks: 5,000 and 2,000 leave 465. Subtract 400 and 65, each divisible by 5. Add quotient contributions 1,000 + 400 + 80 + 13 = 1,493. Check 1,493 × 5 = 7,465.",
+          "Method": "Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
         }
       ],
       "CommonMistakes": [
@@ -43,11 +79,17 @@
           "Mistake": "Mismatched units, operation or question scope.",
           "WhyWrong": "The answer may be numerically plausible but not solve the actual source task.",
           "Correction": "Complete unfinished long division by subtracting accurate partial products of the divisor and summing partial quotients."
+        },
+        {
+          "Mistake": "Using the right-looking arithmetic but answering a different quantity from the question.",
+          "WhyWrong": "Scaling, remainder interpretation and problem constraints change the meaning of the numerical result.",
+          "Correction": "Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder."
         }
       ],
       "SummaryPoints": [
         "Learning goal: You will reinforce your understanding of division algorithms that use partial quotients and build your fluency in using it to divide multi-digit numbers by a single-digit divisor.",
-        "First-party Cool-down: Find 8,256 ÷ 6, checking by multiplication."
+        "First-party Cool-down: Find 8,256 ÷ 6, checking by multiplication.",
+        "Check every source constraint: Subtract legitimate multiples of the divisor, sum partial quotients and check dividend = divisor × quotient + remainder."
       ],
       "Visuals": [],
       "Videos": []
