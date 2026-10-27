@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l20-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l20-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L20",
@@ -21,6 +21,18 @@
           "Definition": "Accurate addition/subtraction through 1,000,000",
           "Rule": "Use algorithms with correctly aligned digits, then estimate and verify the result.",
           "Example": "Find 458,722 + 234,118."
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "Multiple regroupings can occur in multi-digit operations.",
+          "Rule": "Multiple regroupings can occur in multi-digit operations.",
+          "Example": "Compute 653,279+178,546."
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "Use inverse operations to check the magnitude.",
+          "Rule": "Use inverse operations to check the magnitude.",
+          "Example": "Compute 900,000−456,789."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "692840",
           "Check": "Exact arithmetic: 458722+234118 = 692840."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "Compute 653,279+178,546.",
+          "Method": "Multiple regroupings can occur in multi-digit operations.",
+          "Steps": [
+            "Add 178,000 to 653,279 to get 831,279.",
+            "Add remaining 546.",
+            "The result is 831,825."
+          ],
+          "Answer": "831,825",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "Compute 900,000−456,789.",
+          "Method": "Multiple regroupings can occur in multi-digit operations.",
+          "Steps": [
+            "900,000−456,000=444,000.",
+            "Subtract the remaining 789.",
+            "444,000−789=443,211."
+          ],
+          "Answer": "443,211",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Losing the carried hundreds or tens across a place.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Use algorithms with correctly aligned digits, then estimate and verify the result."
+        },
+        {
+          "Mistake": "Losing a carried digit when regrouping across columns.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "Carry each ten into the correct adjacent place."
         }
       ],
       "SummaryPoints": [

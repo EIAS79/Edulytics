@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l16-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l16-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L16",
@@ -21,6 +21,18 @@
           "Definition": "Round whole numbers to a named place",
           "Rule": "Look at the next smaller place: 5–9 round up, 0–4 round down, preserving the target unit.",
           "Example": "Rounded to the nearest 1,000, what is 46,580? Calculate its distance from 47,000."
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "Rounding a multi-digit whole number requires a specified power of ten.",
+          "Rule": "Rounding a multi-digit whole number requires a specified power of ten.",
+          "Example": "Round 356,499 to nearest thousand."
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "A halfway case follows the stated rounding convention.",
+          "Rule": "A halfway case follows the stated rounding convention.",
+          "Example": "Round 356,500 to nearest thousand using half-up."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "420",
           "Check": "Exact arithmetic: 47000-46580 = 420."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "Round 356,499 to nearest thousand.",
+          "Method": "Rounding a multi-digit whole number requires a specified power of ten.",
+          "Steps": [
+            "Identify 356,000 and 357,000.",
+            "Their distances are 499 and 501.",
+            "Choose 356,000 because 499<501."
+          ],
+          "Answer": "356,000",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "Round 356,500 to nearest thousand using half-up.",
+          "Method": "Rounding a multi-digit whole number requires a specified power of ten.",
+          "Steps": [
+            "It is exactly midway between 356,000 and 357,000.",
+            "Apply the stated ties-up convention.",
+            "Round to 357,000."
+          ],
+          "Answer": "357,000",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Rounding to a different place than requested.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Look at the next smaller place: 5–9 round up, 0–4 round down, preserving the target unit."
+        },
+        {
+          "Mistake": "Rounding 356,499 up to 357,000 without checking the midpoint.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "356,499 is 499 away from 356,000, so 356,000 is nearer."
         }
       ],
       "SummaryPoints": [

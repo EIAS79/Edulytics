@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l02-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l02-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L02",
@@ -21,6 +21,18 @@
           "Definition": "Connect multiplicative comparison diagrams and equations",
           "Rule": "Match each tape diagram's number of equal groups to the multiplier.",
           "Example": "Kiran has 5 cubes and Jada has 4 times as many. How many does Jada have?"
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "One comparison situation can be represented with a diagram, sentence, and equation.",
+          "Rule": "One comparison situation can be represented with a diagram, sentence, and equation.",
+          "Example": "A tape diagram has three bars of 8 objects. How many total objects?"
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "Multipliers state how many equal copies of the reference quantity.",
+          "Rule": "Multipliers state how many equal copies of the reference quantity.",
+          "Example": "A rectangle of unit cards shows 4 equal rows of 6. What equation fits?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "20",
           "Check": "Exact arithmetic: 4*5 = 20."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "A tape diagram has three bars of 8 objects. How many total objects?",
+          "Method": "One comparison situation can be represented with a diagram, sentence, and equation.",
+          "Steps": [
+            "One reference bar has eight.",
+            "Three equal bars mean 8+8+8.",
+            "The equivalent expression is 3×8=24."
+          ],
+          "Answer": "24",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "A rectangle of unit cards shows 4 equal rows of 6. What equation fits?",
+          "Method": "One comparison situation can be represented with a diagram, sentence, and equation.",
+          "Steps": [
+            "One row contains six cards.",
+            "Four equal rows contain four copies of six.",
+            "Write 4×6=24."
+          ],
+          "Answer": "4×6=24",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Confusing the number in each group with the number of groups.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Match each tape diagram's number of equal groups to the multiplier."
+        },
+        {
+          "Mistake": "Using addition when a diagram has repeated equal groups.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "Three copies of eight represent 3×8, not 3+8."
         }
       ],
       "SummaryPoints": [

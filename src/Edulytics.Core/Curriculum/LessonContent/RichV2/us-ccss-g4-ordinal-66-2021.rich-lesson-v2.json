@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l21-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l21-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L21",
@@ -21,6 +21,18 @@
           "Definition": "Zeros and decomposing in the subtraction algorithm",
           "Rule": "Regroup through zero-valued positions as needed and preserve each column's total.",
           "Example": "Find 400,005 − 29,786."
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "Zeros require regrouping across empty place-value positions.",
+          "Rule": "Zeros require regrouping across empty place-value positions.",
+          "Example": "Compute 50,004−28,758."
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "Regrouped representations are numerically equivalent.",
+          "Rule": "Regrouped representations are numerically equivalent.",
+          "Example": "Compute 300,020−97,856."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "370219",
           "Check": "Exact arithmetic: 400005-29786 = 370219."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "Compute 50,004−28,758.",
+          "Method": "Zeros require regrouping across empty place-value positions.",
+          "Steps": [
+            "Subtract 28,000 to obtain 22,004.",
+            "Subtract 758 using regrouping across zeros.",
+            "22,004−758=21,246."
+          ],
+          "Answer": "21,246",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "Compute 300,020−97,856.",
+          "Method": "Zeros require regrouping across empty place-value positions.",
+          "Steps": [
+            "Subtract 97,000 to obtain 203,020.",
+            "Subtract remaining 856 with exchange.",
+            "203,020−856=202,164."
+          ],
+          "Answer": "202,164",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Changing a zero column to 10 without subtracting from a higher nonzero position.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Regroup through zero-valued positions as needed and preserve each column's total."
+        },
+        {
+          "Mistake": "Attempting to borrow from zero without further exchange.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "Exchange from the nearest higher nonzero place."
         }
       ],
       "SummaryPoints": [

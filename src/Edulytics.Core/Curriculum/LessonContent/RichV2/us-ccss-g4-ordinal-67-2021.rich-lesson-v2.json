@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l22-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l22-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L22",
@@ -21,6 +21,18 @@
           "Definition": "Solve contextual large-number problems",
           "Rule": "Choose operations from the relationships, not from the sizes of the numbers alone.",
           "Example": "A fundraiser collects 24,000 and 17,500 and spends 8,500. What remains?"
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "Contextual large-number problems may require several linked operations.",
+          "Rule": "Contextual large-number problems may require several linked operations.",
+          "Example": "A hypothetical total of 200,450 grows by 178,730 then falls by 96,120. Final?"
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "Inverse calculations verify the result in the given context.",
+          "Rule": "Inverse calculations verify the result in the given context.",
+          "Example": "Start with 840,000; remove 245,650 then 139,870."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "33000",
           "Check": "Exact arithmetic: 24000+17500-8500 = 33000."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "A hypothetical total of 200,450 grows by 178,730 then falls by 96,120. Final?",
+          "Method": "Contextual large-number problems may require several linked operations.",
+          "Steps": [
+            "200,450+178,730=379,180.",
+            "379,180−96,120=283,060.",
+            "Check 283,060+96,120=379,180."
+          ],
+          "Answer": "283,060",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "Start with 840,000; remove 245,650 then 139,870.",
+          "Method": "Contextual large-number problems may require several linked operations.",
+          "Steps": [
+            "840,000−245,650=594,350.",
+            "594,350−139,870=454,480.",
+            "Add both removed amounts back to check 840,000."
+          ],
+          "Answer": "454,480",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Adding all quantities when an expense must be subtracted.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Choose operations from the relationships, not from the sizes of the numbers alone."
+        },
+        {
+          "Mistake": "Stopping after the first step of a multi-step problem.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "Execute every given change in order."
         }
       ],
       "SummaryPoints": [

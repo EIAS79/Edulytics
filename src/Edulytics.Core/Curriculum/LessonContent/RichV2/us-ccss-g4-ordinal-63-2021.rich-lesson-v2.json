@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l18-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l18-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L18",
@@ -21,6 +21,18 @@
           "Definition": "Add and subtract place-aligned multi-digit numbers",
           "Rule": "Align ones through hundred-thousands before carrying/borrowing; check with inverse operation.",
           "Example": "Calculate 42,050 − 3,790."
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "Standard algorithms align matching place-value columns.",
+          "Rule": "Standard algorithms align matching place-value columns.",
+          "Example": "Compute 58,234+17,605."
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "The inverse operation checks every computed difference.",
+          "Rule": "The inverse operation checks every computed difference.",
+          "Example": "Compute 90,125−47,680."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "38260",
           "Check": "Exact arithmetic: 42050-3790 = 38260."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "Compute 58,234+17,605.",
+          "Method": "Standard algorithms align matching place-value columns.",
+          "Steps": [
+            "Add 58,234+17,000=75,234.",
+            "Add the remaining 605.",
+            "75,234+605=75,839."
+          ],
+          "Answer": "75,839",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "Compute 90,125−47,680.",
+          "Method": "Standard algorithms align matching place-value columns.",
+          "Steps": [
+            "Subtract 47,000, leaving 43,125.",
+            "Subtract the remaining 680, leaving 42,445.",
+            "Check 42,445+47,680=90,125."
+          ],
+          "Answer": "42,445",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Aligning the rightmost nonzero digits instead of same place values.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Align ones through hundred-thousands before carrying/borrowing; check with inverse operation."
+        },
+        {
+          "Mistake": "Adding without aligning ones, tens and hundreds.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "Preserve matching place values across the columns."
         }
       ],
       "SummaryPoints": [

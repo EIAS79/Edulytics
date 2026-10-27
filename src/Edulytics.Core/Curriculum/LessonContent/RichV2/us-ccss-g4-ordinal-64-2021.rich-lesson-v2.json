@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l19-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l19-source-abc-2021-v1-stage-d-firstparty-math-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L19",
@@ -21,6 +21,18 @@
           "Definition": "Compose and decompose within the standard algorithms",
           "Rule": "Regroup a place into ten of the next smaller place without changing number value.",
           "Example": "Find 72,403 + 18,597."
+        },
+        {
+          "Title": "Lesson mathematical relationship",
+          "Definition": "Place-value composition and decomposition preserve the number during regrouping.",
+          "Rule": "Place-value composition and decomposition preserve the number during regrouping.",
+          "Example": "Compute 47,596+18,407."
+        },
+        {
+          "Title": "Independent verification",
+          "Definition": "An inverse calculation can verify a regrouped result.",
+          "Rule": "An inverse calculation can verify a regrouped result.",
+          "Example": "Compute 60,204−18,975."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "91000",
           "Check": "Exact arithmetic: 72403+18597 = 91000."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 1",
+          "Question": "Compute 47,596+18,407.",
+          "Method": "Place-value composition and decomposition preserve the number during regrouping.",
+          "Steps": [
+            "47,596+18,000=65,596.",
+            "Add remaining 407.",
+            "65,596+407=66,003."
+          ],
+          "Answer": "66,003",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
+        },
+        {
+          "Title": "Edulytics independent source-goal model 2",
+          "Question": "Compute 60,204−18,975.",
+          "Method": "Place-value composition and decomposition preserve the number during regrouping.",
+          "Steps": [
+            "60,204−18,000=42,204.",
+            "Subtract the remaining 975.",
+            "42,204−975=41,229."
+          ],
+          "Answer": "41,229",
+          "Check": "First-party arithmetic; original publisher figures and teacher-led activities remain pending independent academic review."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Borrowing from a zero without regrouping across the next nonzero place.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Regroup a place into ten of the next smaller place without changing number value."
+        },
+        {
+          "Mistake": "Subtracting eight ones from four without exchanging a ten.",
+          "WhyWrong": "The mathematical operation or unit interpretation is incorrect.",
+          "Correction": "Exchange a ten for ten ones before subtracting."
         }
       ],
       "SummaryPoints": [
