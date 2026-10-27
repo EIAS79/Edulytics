@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "edition": "2021 First Edition",
+  "ordinal": 111,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L25",
+  "optional": true,
+  "noNewContentStandards": true,
+  "teacherSource": "unit-6/lesson-25/lesson.html",
+  "prepSource": "unit-6/lesson-25/preparation.html",
+  "sourceHashes": {
+    "teacher": "7a840f26e77493dd4a35c3e431d3892d40d8379075ee5fba22922552b91dd0c1",
+    "prep": "263e0bf112ab9745ca32f0b31393ad6298d91d6adbbb247a96d872cd02036754"
+  },
+  "sourceElements": [
+    {
+      "item": "WU",
+      "expected": "four rows each containing four coloured flowers; ask students how they group sixteen",
+      "delivery": "TEACHER_LED"
+    },
+    {
+      "item": "A1",
+      "expected": "six tissue paper layers, accordion-fold pattern and physical construction",
+      "delivery": "TEACHER_LED"
+    },
+    {
+      "item": "A2-PATTERNS",
+      "expected": "Priya 2 big + 2 small, Jada 1 big + 2 small in 12-flower garland",
+      "delivery": "DIGITAL_PLUS_TEACHER"
+    },
+    {
+      "item": "A2-25",
+      "expected": "25 of each pattern: 250 big and 350 small",
+      "delivery": "DIGITAL_PLUS_TEACHER"
+    },
+    {
+      "item": "A2-155",
+      "expected": "155/16 = 9 full garlands and 11 left over",
+      "delivery": "DIGITAL_PLUS_TEACHER"
+    },
+    {
+      "item": "A2-TIME",
+      "expected": "155 flowers times 3 minutes =465 worker-minutes; two parallel workers approx 78/77 yields 234 minute elapsed",
+      "delivery": "EXPLICIT_ASSUMPTION_IN_DIGITAL_PLUS_TEACHER"
+    },
+    {
+      "item": "A3",
+      "expected": "Student-authored flower pattern and multi-step problem exchanged with partner",
+      "delivery": "TEACHER_LED"
+    }
+  ],
+  "rightLimits": "Photographs and flower construction not copied; original teacher student-facing source verified; no publisher Cool-down in this optional lesson",
+  "teacherOnly": [
+    "Original photo sequence and construction with tissue paper and rubber bands or pipe cleaners",
+    "Drawing of two repeating patterns, grouping strategies, peer reasoning",
+    "Student-created stories and responses evaluated by teacher",
+    "Original real-world ambiguous timing requires explaining assumptions"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "14 Priya and 9 Jada garlands; count big flowers",
+    "answer": 120
+  },
+  "sourceMath": [
+    "Priya 6 big/6 small per 12",
+    "Jada 4 big/8 small per 12",
+    "25 pairs: 250 big 350 small",
+    "155=9x16+11",
+    "155x3=465 total worker-minutes, 78x3=234 parallel elapsed"
+  ],
+  "practice": {
+    "family": "usccss.g4.u06.l25.flower_garland_patterns",
+    "modes": 6,
+    "correctWrongMalformedTampered": "WRITTEN_NOT_RUN"
+  },
+  "stageD": "NOT_RUN",
+  "readyForStageD": false
+}
