@@ -11,3 +11,7 @@ Stage D diagnostics: tools/curriculum/g4-stage-d-audit.cjs preflight, CI workflo
 Missing gates NOT waived: per-lesson source-element 1:1/rights, graphics/keyboard and accessibility, authenticated student/teacher routes, Grade 4 Practice correct/wrong/malformed and persisted score/tenant isolation, assessment lifecycle, final full-grade regression, academic reviewer approval.
 
 Academic and release status NO_GO until evidence is bound to immutable candidate SHA, all mandatory gates pass and authorized release decision is recorded. No Neon production write, Render deploy or merge is authorized by digital diagnostics alone.
+
+## 2026-10-27 — Final Grade 4 diagnostic result
+
+Exactly 149/149 Grade 4 Rich V2 documents passed full-grade structural audit; focused .NET 181/181 and Node source shards 306/306 at pinned candidate `a031ffbe5f4fd5a02d90126a847958e35367d824` in [run 40596583316](https://github.com/EIAS79/Edulytics/actions/runs/40596583316). All 149 lessons remain **D_BLOCKED** for full acceptance due unverified source-element denominator/rights, authenticated and visual E2E, and absent human academic approval. Existing practice metadata 13 READY_VERIFIED and 36 pending is not per-lesson generator/grader verification. Release is **NO_GO_TECHNICAL**; see [report](grade4-final-ci-summary.md) and [issue #579](https://github.com/EIAS79/Edulytics/issues/579).
