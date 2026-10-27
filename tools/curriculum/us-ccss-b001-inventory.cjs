@@ -37,10 +37,10 @@ function buildCatalogue() {
   const lessons = [];
   const segments = [];
   const titleAliases = json(g4IndexAliasesPath);
-  assert.equal(titleAliases.entries.length, 13, 'Grade 4 source-index title alias denominator drift');
-  const expectedTitleAliasCodes = new Set(["PED:US-CCSS-MATH:G4:U01:L01","PED:US-CCSS-MATH:G4:U01:L06","PED:US-CCSS-MATH:G4:U02:L04","PED:US-CCSS-MATH:G4:U02:L08","PED:US-CCSS-MATH:G4:U02:L12","PED:US-CCSS-MATH:G4:U03:L02","PED:US-CCSS-MATH:G4:U03:L03","PED:US-CCSS-MATH:G4:U03:L10","PED:US-CCSS-MATH:G4:U03:L15","PED:US-CCSS-MATH:G4:U04:L03","PED:US-CCSS-MATH:G4:U04:L06","PED:US-CCSS-MATH:G4:U04:L16","PED:US-CCSS-MATH:G4:U04:L20"]);
+  assert.equal(titleAliases.entries.length, 14, 'Grade 4 source-index title alias denominator drift');
+  const expectedTitleAliasCodes = new Set(["PED:US-CCSS-MATH:G4:U01:L01","PED:US-CCSS-MATH:G4:U01:L06","PED:US-CCSS-MATH:G4:U02:L04","PED:US-CCSS-MATH:G4:U02:L08","PED:US-CCSS-MATH:G4:U02:L12","PED:US-CCSS-MATH:G4:U03:L02","PED:US-CCSS-MATH:G4:U03:L03","PED:US-CCSS-MATH:G4:U03:L10","PED:US-CCSS-MATH:G4:U03:L15","PED:US-CCSS-MATH:G4:U04:L03","PED:US-CCSS-MATH:G4:U04:L06","PED:US-CCSS-MATH:G4:U04:L16","PED:US-CCSS-MATH:G4:U04:L20","PED:US-CCSS-MATH:G4:U06:L15"]);
   const byAliasCode = new Map(titleAliases.entries.map(row => [row.lessonCode,row]));
-  assert.equal(byAliasCode.size, 13, 'Duplicate Grade 4 source-index alias');
+  assert.equal(byAliasCode.size, 14, 'Duplicate Grade 4 source-index alias');
   assert([...byAliasCode.keys()].every(code => expectedTitleAliasCodes.has(code)), 'Unreviewed Grade 4 title alias');
 
   for (const input of gradeInputs) {
