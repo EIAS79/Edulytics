@@ -27,7 +27,17 @@ jobs:
         with:
           node-version: '24'
       - run: node tools/curriculum/g4-stage-d-audit.cjs preflight
-      - run: node tools/curriculum/g4-richv2-full-grade-audit.cjs
+  richv2-fullgrade-audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check all 149 teaching bodies (no silent narrowing)
+        run: node tools/curriculum/g4-richv2-full-grade-audit.cjs
   build-and-math:
     needs: inventory
     runs-on: ubuntu-24.04
@@ -103,7 +113,7 @@ jobs:
       - run: node --test tests/academic-us-ccss-g4-richv2-materialization.test.cjs
   diagnostic-summary:
     name: Grade4-digital-diagnostics-NOT-release
-    needs: [inventory, build-and-math, node-source-shards, richv2]
+    needs: [inventory, build-and-math, node-source-shards, richv2, richv2-fullgrade-audit]
     if: always()
     runs-on: ubuntu-24.04
     steps:
@@ -112,9 +122,11 @@ jobs:
           MATH: ${{ needs.build-and-math.result }}
           SOURCE: ${{ needs.node-source-shards.result }}
           CONTENT: ${{ needs.richv2.result }}
+          FULLGRADE: ${{ needs.richv2-fullgrade-audit.result }}
         run: |
           test "$INVENTORY" = success
           test "$MATH" = success
           test "$SOURCE" = success
           test "$CONTENT" = success
+          test "$FULLGRADE" = success
           echo 'Diagnostic checks passed only. Not authenticated E2E, academic signoff or authorization to deploy.'
