@@ -177,8 +177,7 @@ public static class RichLessonContentV2Registry
             using var stream = assembly.GetManifestResourceStream(name)
                 ?? throw new InvalidOperationException(
                     $"Embedded rich lesson resource was not found: {name}.");
-            var document = JsonSerializer.Deserialize<RichLessonContentV2Document>(
-                stream, JsonOptions)
+            var document = DeserializeReaderSafeDocument(stream)
                 ?? throw new InvalidOperationException(
                     $"Embedded rich lesson resource is invalid: {name}.");
             foreach (var lesson in document.Lessons)
@@ -190,6 +189,17 @@ public static class RichLessonContentV2Registry
             }
         }
         return index;
+    }
+
+    // The canonical first-party Rich V2 drafts can contain literal non-breaking
+    // spaces copied from source notes. Normalize them at both registry loading
+    // paths, before parsing, so user-visible text and direct/cached retrieval
+    // share the same semantics. Embedded source JSON remains unchanged.
+    private static RichLessonContentV2Document? DeserializeReaderSafeDocument(Stream stream)
+    {
+        using var reader = new StreamReader(stream);
+        var json = reader.ReadToEnd().Replace('\u00A0', ' ');
+        return JsonSerializer.Deserialize<RichLessonContentV2Document>(json, JsonOptions);
     }
 
     private static IReadOnlyList<RichLessonContentV2Document> LoadDocuments()
@@ -210,9 +220,7 @@ public static class RichLessonContentV2Registry
                 ?? throw new InvalidOperationException(
                     $"Embedded rich lesson resource was not found: {name}.");
 
-            var document = JsonSerializer.Deserialize<RichLessonContentV2Document>(
-                stream,
-                JsonOptions)
+            var document = DeserializeReaderSafeDocument(stream)
                 ?? throw new InvalidOperationException(
                     $"Embedded rich lesson resource is invalid: {name}.");
 
