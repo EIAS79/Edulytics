@@ -1,12 +1,12 @@
 {
   "ordinal": 109,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L23",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_EXACT_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_LOCAL_TEACHER_PREPARATION_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "ORIGINAL_GOAL_RETAINED; MISALIGNED_KEY_RULE_AND_METHOD_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_ADDED; REAL_PRACTICE_NOT_VERIFIED",
+    "A": "2021_LOCAL_PREPARATION_AND_TEACHER_STUDENT_FACING_WARMUP_MAI_FIVE_TRIPS_MUSIC_AND_HAN_THREE_WEEKS_COMPARED; ORIGINAL_POSTERS_TEACHER_ONLY",
+    "B": "SOURCE_MAI_AND_HAN_EXACT_NUMBERS_RETAINED; SIX_DISTINCT_EXPLANATIONS_AND_THREE_INDEPENDENT_EQUATION_VISUALS; FIRST_PARTY_MULTISTEP_5640FT_COOLDOWN_REPLACES_OFF_TOPIC_DIFFERENCE",
+    "C": "EXISTING_EXACT_KERNEL_EXTENDED_WITH_SOURCE_6_MODE_FAMILY_AND_LESSON_MAPPING; THREE_OF_THREE_FOCUSED_TESTS_GREEN_RUN_40552247723; WRONG_MALFORMED_TAMPERED_REJECTED",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -14,17 +14,55 @@
     "teacher": "932cef2ae9377e4bc5ef7f837d037c6a4dd27b1059dce861d85f8b5865d71831"
   },
   "firstPartyCooldown": {
-    "prompt": "Find 12,500 − 9,876, then check by addition.",
-    "teacherAnswer": "2,624."
+    "prompt": "Four class round trips of 230+170+150ft one way, two music round trips 310ft one way; total distance?",
+    "teacherAnswer": "5,640 feet: 4×2×(230+170+150)+2×2×310"
   },
   "sourceVisualParityProven": false,
   "originalPublisherCooldownVerified": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Visual, original tasks and teacher-led parity are not fully demonstrated",
-    "SkillContract, exact question generation and correct/wrong/malformed grading not established",
-    "Authenticated scoring and Grade 4 Stage D not run"
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceTeacherSha256": "932cef2ae9377e4bc5ef7f837d037c6a4dd27b1059dce861d85f8b5865d71831",
+    "sourcePrepSha256": "9d7ad8e44cbfbd541f068ab4cddd740bf1a1c6cb07ba0bc008391c8adc7b91ce",
+    "sourceStudentFacingReadFromOriginal2021Teacher": true,
+    "sourceMath": [
+      "157+134+162+275=728; two-way=1456",
+      "2364/6=394 music room feet",
+      "5×1456+2364=9644, less than two miles by 916ft",
+      "32550/7=4650; 32550-28098=4452",
+      "120000-(32550+28098+36249)=23103"
+    ],
+    "firstPartyCoolDown": "4×2×(230+170+150)+2×2×310=5640ft",
+    "firstPartyVisuals": 3,
+    "originalPublisherGraphicsCopied": false,
+    "originalPublisherAssessmentVerified": false,
+    "teacherOnlyTasks": [
+      "Warm-up explain 4 true/false difference statements and place-value reasoning",
+      "Mai's number-line poster and oral travel-counting assumptions",
+      "Han's four-week steps table and challenge poster with visual review",
+      "Student-authored equations, reasonableness arguments, grid-paper work"
+    ],
+    "exactAllowedFamily": "usccss.g4.u06.l23.four_operation_contexts",
+    "sourceAlignedModes": 6,
+    "generatorAndIndependentVerifierPassed": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40552247723",
+    "focusedTestCandidateSha": "8705d75588c062c40c978030eed9684eb3c34dd9",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false,
+    "sourceLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-109-2021-source-evidence.json"
+  },
+  "stageDRisks": [
+    "Original publisher diagram and login-gated Cool-down not copied or certified",
+    "Authenticated end-to-end saved attempt and production rendering pending Stage D",
+    "Independent first-party visuals and teacher-led discussion need final product acceptance"
   ]
 }
