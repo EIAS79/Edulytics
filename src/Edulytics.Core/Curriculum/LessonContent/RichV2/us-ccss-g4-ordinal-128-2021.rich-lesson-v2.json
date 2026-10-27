@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.1-source-abc-2021-v1",
+  "ContentVersion": "2021-g4-l128-abc-refined",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L01",
@@ -13,7 +13,8 @@
         "Source-goal geometric reasoning: Sort figures by verifiable attributes: number of sides, right angles, equal lengths, parallel sides and symmetry.",
         "Edulytics worked explanation: Inspect all original shape cards before grouping. List at least one shared attribute for each category and test every member. Explain why a figure might fit more than one mathematically valid category.",
         "First-party Edulytics Cool-down (not gated original): Sort a square and a non-square rectangle by right angles and equal side lengths.",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "Unit 8 original source introduces shape classification using attributes. The four Which One Doesn't Belong figures have different properties: one right-angle triangle and quadrilaterals including a parallelogram and trapezoid. Source Activity 1 Card Sort: Shapes asks 3–5 categories with written sticky-note titles. Activity 2 Guess the Category asks partner to supply 3 examples and 3 nonexamples. Categories may overlap and require justified source card sorting; do not infer a single answer key from excerpted diagram descriptions."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +72,18 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "First-party shape category reasoning",
+          "Question": "Can a square fit both the quadrilateral and rectangle categories?",
+          "Method": "Check definitions rather than the drawing orientation.",
+          "Steps": [
+            "Square has four sides, so is a quadrilateral.",
+            "Square has four right angles, so is a rectangle.",
+            "A figure can belong to several valid attribute categories."
+          ],
+          "Answer": "Yes, both categories.",
+          "Check": "Independent example. Original cards/categories teacher assessed."
         }
       ],
       "CommonMistakes": [
@@ -83,6 +96,11 @@
           "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
           "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
           "Correction": "Use the original constraints and this rule: Sort figures by verifiable attributes: number of sides, right angles, equal lengths, parallel sides and symmetry."
+        },
+        {
+          "Mistake": "Treating card sorting as a unique rigid classification.",
+          "WhyWrong": "Original exercise accepts justified overlapping attribute groupings.",
+          "Correction": "Explain the selected attribute for 3 examples and 3 counterexamples."
         }
       ],
       "SummaryPoints": [
