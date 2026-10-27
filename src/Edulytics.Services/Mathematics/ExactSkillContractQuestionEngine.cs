@@ -72,6 +72,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders",
             "usccss.g4.u06.l20.contextual_remainder_decisions",
             "usccss.g4.u06.l21.multistep_contexts",
+            "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
@@ -1155,6 +1156,50 @@ public sealed class ExactSkillContractQuestionEngine
                     _ => -1
                 }),
 
+
+            "usccss.g4.u06.l23.four_operation_contexts" =>
+                parameters.TryGetValue("caseType", out var l109Mode) &&
+                parameters.TryGetValue("segmentA", out var l109A) &&
+                parameters.TryGetValue("segmentB", out var l109B) &&
+                parameters.TryGetValue("segmentC", out var l109C) &&
+                parameters.TryGetValue("segmentD", out var l109D) &&
+                parameters.TryGetValue("longTrips", out var l109LongTrips) &&
+                parameters.TryGetValue("musicTrips", out var l109MusicTrips) &&
+                parameters.TryGetValue("musicTotalFeet", out var l109Music) &&
+                parameters.TryGetValue("feetPerMile", out var l109FeetPerMile) &&
+                parameters.TryGetValue("days", out var l109Days) &&
+                parameters.TryGetValue("week1", out var l109W1) &&
+                parameters.TryGetValue("week2", out var l109W2) &&
+                parameters.TryGetValue("week3", out var l109W3) &&
+                parameters.TryGetValue("stepTarget", out var l109Target) &&
+                l109Mode is >= 0 and <= 5 &&
+                l109A is >= 100 and <= 200 &&
+                l109B is >= 100 and <= 200 &&
+                l109C is >= 100 and <= 200 &&
+                l109D is >= 100 and <= 200 &&
+                l109LongTrips == 5 && l109MusicTrips == 3 &&
+                l109Music is >= 1200 and <= 2400 &&
+                l109Music % (2 * l109MusicTrips) == 0 &&
+                l109FeetPerMile == 5280 &&
+                l109Days == 7 &&
+                l109W1 >= 26000 && l109W1 <= 35000 && l109W1 % 7 == 0 &&
+                l109W2 > 0 && l109W2 < l109W1 &&
+                l109W1 - l109W2 is >= 2000 and <= 6000 &&
+                l109W3 is >= 32000 and <= 38000 &&
+                l109Target == 120000 &&
+                l109LongTrips * 2 * (l109A + l109B + l109C + l109D) + l109Music < 2 * l109FeetPerMile &&
+                l109W1 + l109W2 + l109W3 < l109Target &&
+                value == (l109Mode switch
+                {
+                    0 => 2 * (l109A + l109B + l109C + l109D),
+                    1 => l109Music / (2 * l109MusicTrips),
+                    2 => 2 * l109FeetPerMile - (l109LongTrips * 2 * (l109A + l109B + l109C + l109D) + l109Music),
+                    3 => l109W1 / l109Days,
+                    4 => l109W1 - l109W2,
+                    5 => l109Target - l109W1 - l109W2 - l109W3,
+                    _ => -1
+                }),
+
             "usccss.g4.u06.l21.multistep_contexts" =>
                 parameters.TryGetValue("caseType", out var l107Mode) &&
                 parameters.TryGetValue("count", out var l107Count) &&
@@ -1942,6 +1987,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" => BuildG4PartialQuotientsRemainder(random),
             "usccss.g4.u06.l20.contextual_remainder_decisions" => BuildG4ContextualRemainder(random),
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
+            "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
@@ -3281,6 +3327,50 @@ public sealed class ExactSkillContractQuestionEngine
             ("upperRiseFeet", riseF), ("suppliedInches", supply));
     }
 
+
+    private static ExactProblem BuildG4FourOperations(Random random)
+    {
+        // IM K-5 2021 Grade 4 U06:L23: travel segments, round trips,
+        // music-distance inversion, miles comparison, and weekly step table.
+        // Reuse the existing exact whole-number kernel; no new engine.
+        var mode = random.Next(0, 6);
+        var a = random.Next(100, 201);
+        var b = random.Next(100, 201);
+        var c = random.Next(100, 201);
+        var d = random.Next(100, 201);
+        const int longTrips = 5, musicTrips = 3, feetPerMile = 5280, days = 7, target = 120000;
+        var musicTotal = random.Next(200, 401) * musicTrips * 2;
+        var week1 = random.Next(3800, 4901) * days;
+        var week2 = week1 - random.Next(2000, 6001);
+        var week3 = random.Next(32000, 38001);
+        var oneWay = a + b + c + d;
+        var roundTrip = 2 * oneWay;
+        var prompt = mode switch
+        {
+            0 => $"A pupil travels {a}, {b}, {c}, and {d} feet between classrooms, and returns along the same route. How many feet is one whole round trip?",
+            1 => $"A pupil makes {musicTrips} round trips between homeroom and music. Altogether those trips cover {musicTotal} feet. How far away is music one way?",
+            2 => $"A pupil makes {longTrips} classroom round trips on a route with one-way segments {a}, {b}, {c}, and {d} feet, and also walks {musicTotal} feet to music in the week. How many feet short of two miles is the weekly total? (1 mile = {feetPerMile} feet.)",
+            3 => $"A pupil takes {week1} steps in one week, the same number each of {days} days. How many steps per day?",
+            4 => $"A fitness challenge has {week1} steps in week one and {week2} in week two. How many fewer steps were taken in week two?",
+            _ => $"A four-week challenge goal is {target} steps. The first three weeks are {week1}, {week2}, and {week3} steps. How many more steps are needed in week four?"
+        };
+        var solution = mode switch
+        {
+            0 => $"Add segments: {oneWay} feet one way. Double to include returning: {roundTrip} feet.",
+            1 => $"There are {2 * musicTrips} one-way journeys. Divide {musicTotal} by {2 * musicTrips}.",
+            2 => $"Double the {oneWay}-foot route, multiply by {longTrips}, add {musicTotal} music feet, then subtract from {2 * feetPerMile}.",
+            3 => $"Share {week1} steps equally among {days} days, then check by multiplication.",
+            4 => $"Subtract the week-two total {week2} from week one {week1}; check by adding the difference back.",
+            _ => $"Add the three known weeks ({week1} + {week2} + {week3}), subtract from {target}, then check the four-week total."
+        };
+        return Problem("usccss.g4.u06.l23.four_operation_contexts", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("segmentA", a), ("segmentB", b),
+            ("segmentC", c), ("segmentD", d), ("longTrips", longTrips),
+            ("musicTrips", musicTrips), ("musicTotalFeet", musicTotal),
+            ("feetPerMile", feetPerMile), ("days", days), ("week1", week1),
+            ("week2", week2), ("week3", week3), ("stepTarget", target));
+    }
+
     private static ExactProblem BuildG4MultiStepContext(Random random)
     {
         // 2021 IM G4 U06:L21. Reuse multiplication and exact division with
@@ -4143,6 +4233,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l23.four_operation_contexts" => (p["caseType"] switch { 0 => 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]), 1 => p["musicTotalFeet"] / (2 * p["musicTrips"]), 2 => 2 * p["feetPerMile"] - (p["longTrips"] * 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]) + p["musicTotalFeet"]), 3 => p["week1"] / p["days"], 4 => p["week1"] - p["week2"], _ => p["stepTarget"] - p["week1"] - p["week2"] - p["week3"] }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l21.multistep_contexts" => (p["caseType"] switch { 0 => p["budget"] - p["dailyRevenue"], 1 => p["count"] * p["days"], _ => p["count"] * p["days"] * (p["drinkPrice"] + p["popcornPrice"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l20.contextual_remainder_decisions" => (p["caseType"] switch { 0 => p["dividend"] / p["divisor"] + 1, 1 => p["dividend"] / p["divisor"], 2 => p["dividend"] % p["divisor"], 3 => (p["dividend"] - p["shortfall"]) / p["divisor"], _ => p["dividend"] / p["divisor"] }).ToString(CultureInfo.InvariantCulture),
 
