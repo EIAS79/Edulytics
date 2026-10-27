@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l05.angle_common_vertex_rays",
             "usccss.g4.u07.l03.dot_grid_parallel_intersect",
             "usccss.g4.u07.l02.geometry_cards_number_talk",
             "usccss.g4.u07.l01.geometric_description_precision",
@@ -1164,6 +1165,23 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l05.angle_common_vertex_rays" =>
+                parameters.TryGetValue("caseType", out var l116Case) &&
+                parameters.TryGetValue("variant", out var l116Variant) &&
+                parameters.TryGetValue("start1", out var l116Start1) &&
+                parameters.TryGetValue("start2", out var l116Start2) &&
+                parameters.TryGetValue("direction1", out var l116Dir1) &&
+                parameters.TryGetValue("direction2", out var l116Dir2) &&
+                l116Case is >= 0 and <= 7 &&
+                l116Variant is >= 0 and <= 2 &&
+                l116Start1 is >= 0 and <= 3 &&
+                l116Start2 is >= 0 and <= 3 &&
+                l116Dir1 is >= 0 and <= 7 &&
+                l116Dir2 is >= 0 and <= 7 &&
+                l116Dir1 != l116Dir2 &&
+                (l116Start1 == l116Start2) == (l116Case < 4) &&
+                value == (l116Start1 == l116Start2 ? 1 : 2),
+
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" =>
                 parameters.TryGetValue("caseType", out var l114Case) &&
                 parameters.TryGetValue("variant", out var l114Variant) &&
@@ -2131,6 +2149,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l05.angle_common_vertex_rays" => BuildG4AngleCommonVertexRays(random),
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" => BuildG4ParallelIntersectDotGrid(random),
             "usccss.g4.u07.l02.geometry_cards_number_talk" => BuildG4PointLineRayCardAndNumberTalk(random),
             "usccss.g4.u07.l01.geometric_description_precision" => BuildG4GeometricDescriptionPrecision(random),
@@ -3479,6 +3498,42 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4AngleCommonVertexRays(Random random)
+    {
+        // Original 2021 G4 U07:L05 introduces angles as two distinct rays
+        // with a common starting vertex. Source pictures, partner drawings
+        // and the inaccessible publisher Cool-down are teacher-only.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        var (start1, start2, direction1, direction2) = mode switch
+        {
+            0 => (0, 0, 2, 0), // P east and north
+            1 => (1, 1, 1, 4), // Q northeast and south
+            2 => (2, 2, 6, 0), // R west and north
+            3 => (3, 3, 3, 5), // S southeast and southwest
+            4 => (0, 1, 2, 0), // different starting points
+            5 => (1, 2, 1, 4),
+            6 => (2, 3, 6, 0),
+            _ => (3, 0, 3, 5)
+        };
+        string[] pointNames = ["P", "Q", "R", "S"];
+        string[] directions = ["north", "northeast", "east", "southeast",
+            "south", "southwest", "west", "northwest"];
+        var reminder = variant switch
+        {
+            0 => "Treat each arm as a ray continuing indefinitely.",
+            1 => "The apparent length of the drawn arms does not determine the angle.",
+            _ => "Look at the START of each ray, not where its drawing happens to end."
+        };
+        var prompt = $"Ray 1 starts at {pointNames[start1]} and extends {directions[direction1]}. Ray 2 starts at {pointNames[start2]} and extends {directions[direction2]}. Do THESE TWO named rays make an angle with one common starting vertex? Answer 1=yes or 2=no. {reminder}";
+        var solution = start1 == start2
+            ? $"Yes: both rays start at {pointNames[start1]} and head in different directions. That point is the angle vertex."
+            : $"No: the rays start at different points ({pointNames[start1]} and {pointNames[start2]}), so as specified they do not share one starting vertex.";
+        return Problem("usccss.g4.u07.l05.angle_common_vertex_rays", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant), ("start1", start1),
+            ("start2", start2), ("direction1", direction1), ("direction2", direction2));
+    }
+
     private static ExactProblem BuildG4ParallelIntersectDotGrid(Random random)
     {
         // IM 2021 G4 U07:L03: first-party dot-grid support for relationships
@@ -4571,6 +4626,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l05.angle_common_vertex_rays" => (p["start1"] == p["start2"] ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" => (p["caseType"] < 4 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l02.geometry_cards_number_talk" => (p["caseType"] < 4
                 ? p["caseType"] + 1

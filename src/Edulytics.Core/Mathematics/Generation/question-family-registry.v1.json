@@ -19576,6 +19576,24 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l05.angle_common_vertex_rays",
+      "version": 1,
+      "skillId": "geometry.angles.identify_shared_ray_vertex",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "check-two-ray-starting-vertex-and-distinct-direction-labels",
+      "representations": [
+        "textual_rays_and_starting_points",
+        "teacher_led_figure_discovery"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

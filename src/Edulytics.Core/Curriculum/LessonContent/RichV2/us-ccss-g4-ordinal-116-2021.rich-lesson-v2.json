@@ -1,96 +1,173 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.7.5-source-abc-2021-v1",
+  "ContentVersion": "g4-4.7.5-source-abc-2021-v2-ray-angle",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U07:L05",
       "CultureCode": "en",
       "Title": "What is an Angle?",
       "ExplanationParagraphs": [
-        "Learning goal: You will introduce angles and to motivate a need for vocabulary to describe what you are and your size.\nIn this lesson, you are introduced to angles. You learn that an angle can be defined in terms of the geometric parts you have been working with in this unit. In previous grades, you have used “square corners” to describe right angles within two-dimensional shapes.",
-        "2021 lesson activities: Warm-up: Notice and Wonder: A Wall of Clocks (5 minutes); Activity 1: Tricky Figures (15 minutes); Activity 2: Angles or Not Angles? (15 minutes); Activity 3: Discover Angles (10 minutes); Cool-down: Spot the Angles (5 minutes)",
-        "Corrected mathematical focus: An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length.",
-        "Edulytics authored guidance: Use the original examples to decide whether two rays share a common vertex. Mark the vertex and arms of each valid angle. Explain why separated segments need not form an angle unless their rays share a vertex.",
-        "First-party Cool-down (not publisher assessment): Draw two rays PA and PB starting at P, mark the angle APB.",
-        "Images, drawing/protractor accuracy, partner tasks and the gated original publisher Cool-down require original task evidence and teacher/visual review."
+        "Learning goal: recognize angles and describe their vertices, sides and size. The 2021 Grade 4 Unit 7 Lesson 5 introduces angle language by comparing clock hands, partner descriptions and original diagrams; it is not yet a protractor-measurement lesson.",
+        "An angle is formed by two rays with one common endpoint called the vertex. The rays are its arms or sides. For a non-zero angle, the rays head in different directions. Angle size depends on how much one ray would turn to face the other, not on how long the rays appear when drawn.",
+        "Warm-up (5 min), Notice and Wonder: A Wall of Clocks. Use legally available original clock photos or independently drawn clock faces to notice pairs of hands as rays from a central point; record observations. The third-party source photo is not copied or asserted to be displayed.",
+        "Activity 1 (15 min), Tricky Figures: partners sit back to back, one describes an unseen figure on a card and the other draws. They compare, revise and specify the endpoints, vertex and direction; teacher checks the real figures and descriptions.",
+        "Activity 2 (15 min), Angles or Not Angles?: examine each ACTUAL source figure and justify whether it contains at least one angle. The original Student Facing discussion contrasts Clare and Kiran interpreting one nontrivial diagram; don't resolve their disagreement without the actual picture. Discuss rays, hidden/extended lines and possible shared vertices with the teacher.",
+        "Activity 3 (10 min), Discover Angles: locate and name angles in student drawings or lawful diagrams, mark the common vertex and two arms, and compare how wide an opening appears without using drawn ray length as a measure.",
+        "First-party Edulytics Cool-down (5 min, NOT the source Spot the Angles): draw two distinct rays PA and PB both beginning at P, mark ∠APB and explain why P is the vertex. The teacher reviews the drawing.",
+        "Digital Practice is a supplementary first-party classification of pairs of textual rays with specified STARTING points and directions, answered 1=yes common-vertex angle or 2=no. No original publisher figure, clock image, partner drawing, angle measurement or open explanation is auto-graded."
       ],
       "KeyConcepts": [
         {
-          "Title": "Geometric reasoning",
-          "Definition": "An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length.",
-          "Rule": "An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length.",
-          "Example": "Use the original examples to decide whether two rays share a common vertex."
+          "Title": "Vertex and angle arms",
+          "Definition": "A non-zero angle is formed by two differently directed rays beginning at the same point, called its vertex.",
+          "Rule": "The middle letter in ∠APB is the vertex P; ray PA and ray PB are its arms.",
+          "Example": "A ray starting at P heading east and a second ray starting at P heading north make an angle at P."
         },
         {
-          "Title": "Original activity representation",
-          "Definition": "The purpose of this lesson is to introduce angles and to motivate a need for vocabulary to describe what they are and their size.",
-          "Rule": "Represent the mathematical attributes and quantities exactly as requested by the original student task.",
-          "Example": "Work with a partner in this activity. Choose a role: A or B. Sit back to back, or use a divider to keep one person from seeing the other person’s work. | Partner A: | Your teacher will give you a card. Don’t show it to y"
+          "Title": "Recognizing a non-example",
+          "Definition": "Two rays specified with different starting points do not themselves give one shared starting vertex.",
+          "Rule": "Do not decide an angle exists merely from two directional descriptions. Check the rays' actual common endpoint in the source figure.",
+          "Example": "A ray beginning at P toward the east and another beginning at Q toward the north have different named starting vertices."
         },
         {
-          "Title": "Checking student evidence",
-          "Definition": "The task requires an actual explanation, construction or calculation.",
-          "Rule": "Verify the required diagram, operation and labels instead of inferring success from a numeric answer.",
-          "Example": "Activity 2: Angles or Not Angles? (15 minutes)"
+          "Title": "Angle size as turn",
+          "Definition": "For rays with a common vertex, angle size describes turning from one ray toward the other, not the length of the drawn arms.",
+          "Rule": "Longer drawn arms do not by themselves make an angle larger.",
+          "Example": "Two rays drawn at the same opening from P represent the same angle even if one visible stroke is longer."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Source-goal mathematical steps",
-          "Question": "Use the original examples to decide whether two rays share a common vertex.",
-          "Method": "An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length.",
+          "Title": "Two rays sharing P",
+          "Question": "Ray 1 begins at P and extends east. Ray 2 begins at P and extends north. Do they form an angle with one common starting vertex?",
+          "Method": "Check the origin of each ray and whether the directions are distinct.",
           "Steps": [
-            "Use the original examples to decide whether two rays share a common vertex.",
-            "Mark the vertex and arms of each valid angle.",
-            "Explain why separated segments need not form an angle unless their rays share a vertex."
+            "Both start at P.",
+            "East and north are different directions.",
+            "P is the common vertex; the arms are the two rays."
           ],
-          "Answer": "Explain why separated segments need not form an angle unless their rays share a vertex.",
-          "Check": "Static arithmetic exemplar: 90-45 = 45; does not validate source artwork."
+          "Answer": "Yes (option 1): angle at vertex P.",
+          "Check": "The vertex remains P no matter how long the strokes are drawn."
         },
         {
-          "Title": "Guided 2021 source activity 1 (teacher-scored)",
-          "Question": "Work with a partner in this activity. Choose a role: A or B. Sit back to back, or use a divider to keep one person from seeing the other person’s work. | Partner A: | Your teacher will give you a card. Don’t show it to your partner.",
-          "Method": "The purpose of this lesson is to introduce angles and to motivate a need for vocabulary to describe what they are and their size.",
+          "Title": "Different starting points",
+          "Question": "Ray 1 begins at P and extends east; ray 2 begins at Q and extends north. Do THESE TWO named rays have the same starting vertex?",
+          "Method": "Compare their defined start points rather than assuming that drawings must connect.",
           "Steps": [
-            "Identify the given information in Activity 1: Tricky Figures (15 minutes).",
-            "Choose the lesson-specific representation: An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length.",
-            "Apply the method, explain each step, and compare the final response with the actual figure or context."
+            "The first ray starts at P.",
+            "The second ray starts at Q, a different labelled point.",
+            "As specified, the two rays do not share one beginning, so this pair does not define one common-vertex angle."
           ],
-          "Answer": "Open response; teacher checks the original activity and visual work.",
-          "Check": "This scaffold is not a publisher answer key or verified digital question."
+          "Answer": "No (option 2): their starting points differ.",
+          "Check": "A diagram may contain other angles, but this numerical question only concerns the specified two rays."
         },
         {
-          "Title": "Guided 2021 source activity 2 (teacher-scored)",
-          "Question": "Decide if each figure shows at least one angle. Explain or show your reasoning for each. | Clare and Kiran are looking at this diagram. Clare says there are no angles because the rays do not meet at a point. Kiran says he sees two angles. | Do you ag",
-          "Method": "The purpose of this lesson is to introduce angles and to motivate a need for vocabulary to describe what they are and their size.",
+          "Title": "Angle stays same when drawn arm length changes",
+          "Question": "Two rays start at R, one west and one north. A learner redraws the western arm with a longer visible stroke but keeps both directions. Is the angle at R larger?",
+          "Method": "Angle size is determined by turn between the rays.",
           "Steps": [
-            "Identify the given information in Activity 2: Angles or Not Angles? (15 minutes).",
-            "Choose the lesson-specific representation: An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length.",
-            "Apply the method, explain each step, and compare the final response with the actual figure or context."
+            "Both drawings use the same common endpoint R.",
+            "The west and north directions are unchanged.",
+            "Only the visible length of one arm changes, so the opening and angle size are unchanged."
           ],
-          "Answer": "Open response; teacher checks the original activity and visual work.",
-          "Check": "This scaffold is not a publisher answer key or verified digital question."
+          "Answer": "No, the angle remains the same size.",
+          "Check": "Changing ray length on the page does not change direction."
+        },
+        {
+          "Title": "Original partner Tricky Figures (teacher-scored)",
+          "Question": "Back to back, one partner describes an unseen figure card and the other draws it; then compare.",
+          "Method": "Describe the number of rays, their start points, orientations, connections and any common vertex.",
+          "Steps": [
+            "Explain where the shared endpoint or potential vertex should be located.",
+            "Specify each arm's direction and which drawn strokes continue as rays.",
+            "Compare the sketch against the actual lawful source card and revise unclear instructions."
+          ],
+          "Answer": "Teacher-reviewed figure description and corresponding drawing.",
+          "Check": "Do not infer source-card fidelity from a numeric Practice selection."
+        },
+        {
+          "Title": "Original Angles or Not Angles? debate (teacher-scored)",
+          "Question": "The source depicts figures and a Clare/Kiran disagreement about whether one diagram contains angles. Explain the possibilities using the actual figure.",
+          "Method": "Inspect the original source lines/rays, their endpoints and their geometric relationships.",
+          "Steps": [
+            "Look for a point where the two rays defining an angle begin.",
+            "If a diagram contains intersecting lines, examine which rays can be formed at their intersection; do not decide solely from a cropped stroke.",
+            "State which source angles can be justified and mark their vertices under teacher review."
+          ],
+          "Answer": "Depends on the actual source diagram; not digitally certified.",
+          "Check": "No unsupported assertion that Clare or Kiran is correct without the source image."
+        },
+        {
+          "Title": "First-party Cool-down ∠APB (teacher-scored)",
+          "Question": "Draw ray PA and ray PB with a common starting point P and mark ∠APB.",
+          "Method": "Draw two distinct directions from P, label A and B along the rays and mark an arc near P.",
+          "Steps": [
+            "Put vertex P on paper.",
+            "Draw a ray from P toward A and another from P toward B, with different directions.",
+            "Mark the opening and explain that both rays begin at P."
+          ],
+          "Answer": "Two valid rays forming an angle at P, teacher-reviewed.",
+          "Check": "First-party assessment, not reproduction of the gated publisher Cool-down."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Treating figures as only their appearance.",
-          "WhyWrong": "Ignores the necessary mathematical attributes or turn sizes.",
-          "Correction": "An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length."
+          "Mistake": "Using the lengths of drawn ray strokes to compare angle sizes.",
+          "WhyWrong": "An angle describes the opening or turning between rays, and mathematical rays continue indefinitely.",
+          "Correction": "Keep the ray directions fixed; changing how much is drawn does not change the angle."
         },
         {
-          "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
-          "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
-          "Correction": "Use the original constraints and this rule: An angle consists of two rays with the same endpoint (vertex); its size is the amount of turning, not ray length."
+          "Mistake": "Calling any two named rays a single angle without checking their common start point.",
+          "WhyWrong": "An angle's two arms share one vertex, and different labelled starts may not define the requested angle.",
+          "Correction": "Locate the actual endpoints before naming the angle."
+        },
+        {
+          "Mistake": "Assuming the disputed 2021 diagram contains no angles because two visible strokes do not seem to touch.",
+          "WhyWrong": "Visible crops can conceal the full rays and shared geometry; the original problem demands diagram-specific interpretation.",
+          "Correction": "Teacher and student inspect the original figure and identify any actual common starting vertices or rays from intersections."
         }
       ],
       "SummaryPoints": [
-        "Learning goal: You will introduce angles and to motivate a need for vocabulary to describe what you are and your size.",
-        "First-party Cool-down: Draw two rays PA and PB starting at P, mark the angle APB.",
-        "Teacher-reviewed source requirement: Activity 1: Tricky Figures (15 minutes)"
+        "A non-zero angle comprises two differently directed rays sharing one endpoint (vertex).",
+        "In ∠APB, P names the vertex, and ray PA and ray PB are its arms.",
+        "The opening/turn controls angle size; drawn stroke lengths do not.",
+        "Source clock images, partner Tricky Figures, angle-or-not angle discussions, student drawing and the protected publisher Cool-down all remain teacher-reviewed.",
+        "Supplementary text-only digital ray-origin classification has no verified publisher figure parity."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "First-party textual vertex examples",
+          "Description": "Not a copy of source angle diagrams or clock illustrations.",
+          "PrimaryLabel": "Ray 1: starts P, east",
+          "SecondaryLabel": "Ray 2: starts P, north",
+          "Items": [
+            "Both start at P.",
+            "Different directions → an angle at P.",
+            "∠APB uses P as the middle vertex."
+          ],
+          "SecondaryItems": [
+            "Teacher reviews any actual drawing."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Different ray starts",
+          "Description": "The named rays do not share their STARTING vertex.",
+          "PrimaryLabel": "Ray 1 starts P; ray 2 starts Q",
+          "SecondaryLabel": "P and Q are different points",
+          "Items": [
+            "No common starting vertex for these two rays.",
+            "An unrelated drawn crossing can define OTHER angles, not automatically the requested pair."
+          ],
+          "SecondaryItems": [
+            "Text-only source-goal support, not publisher figure parity."
+          ],
+          "Rows": []
+        }
+      ],
       "Videos": []
     }
   ]

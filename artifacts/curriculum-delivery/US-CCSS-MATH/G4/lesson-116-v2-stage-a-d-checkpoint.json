@@ -1,12 +1,12 @@
 {
   "ordinal": 116,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L05",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "RECORDED_ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_FACING_WALL_CLOCKS_TRICKY_FIGURES_ANGLES_DISCOVERY_REUSED",
+    "B": "REMOVED_WRONG_MATH_EXAMPLE_AND_REWROTE_SHARED_VERTEX_NONEXAMPLES_TURN_SIZE_AND_TEACHER_SOURCE_TASKS",
+    "C": "EXACT_RAY_VERTEX_FAMILY_WITH_8_DETERMINISTIC_MODES_AND_3_FOCUSED_TEST_METHODS_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,48 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
+  "blockers": [],
+  "sourceEdition": "2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-116-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-116-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "6303ed67e97716462442119bc1d46124312eb7ded7e4062b946a10846ad35350",
+    "sourceTeacherSha256": "1e774cbf674d3fc6c5b7337a0b780c5b7fdc795e6d76fced5eade93e1f3273c7",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-102-149-original-source-intake.json",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-116-2021-source-evidence.json",
+    "sourceElementsCount": 17,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "primarySkillId": "geometry.angles.identify_shared_ray_vertex",
+    "allowedFamily": "usccss.g4.u07.l05.angle_common_vertex_rays",
+    "firstPartyCoolDown": {
+      "prompt": "Draw two rays PA and PB starting at P, mark the angle APB.",
+      "teacherAnswer": "P is the vertex; PA and PB are its rays."
+    },
+    "teacherOnlyTasks": [
+      "Wall of Clocks visual warm-up",
+      "Tricky Figures back-to-back card discussion and drawn figure",
+      "Angles or Not Angles? source drawings incl Clare/Kiran ambiguous source visual",
+      "Discover Angles constructions and freehand Cool-down"
+    ],
+    "digitalPracticeScope": "Eight synthetic text ray-pair recognition modes; not source visual or angle measurement",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal116AngleVertexRecognitionTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Source original disputed Clare/Kiran figure inaccessible from cached text alone; no correctness claim for its geometric resolution.",
+    "Original clock photographs, figures and publisher Cool-down are not digitally reproduced or runtime assessed.",
+    "Test compilation, .NET unit execution, authenticated scoring/persistence, registered runtime wiring, visual licensing and CI Stage D remain unverified."
   ]
 }
