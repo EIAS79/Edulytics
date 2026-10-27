@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l12-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l12-source-abc-2021-v1-stage-d-independent-problems-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L12",
@@ -21,6 +21,18 @@
           "Definition": "Solve multiplication word problems",
           "Rule": "Identify equal groups or array factors, multiply and interpret the units.",
           "Example": "A set has 365 items in each of 4 collections. How many items?"
+        },
+        {
+          "Title": "Exact task method",
+          "Definition": "Contextual multiplication uses the number of equal groups and the amount per group.",
+          "Rule": "Contextual multiplication uses the number of equal groups and the amount per group.",
+          "Example": "Eight boxes each contain 125 pencils. Total?"
+        },
+        {
+          "Title": "Independent partial-product check",
+          "Definition": "The numeric product must retain the situation's unit.",
+          "Rule": "The numeric product must retain the situation's unit.",
+          "Example": "A grid has 34 rows and 26 columns. How many positions?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "1460",
           "Check": "Exact arithmetic: 365*4 = 1460."
+        },
+        {
+          "Title": "Edulytics independently calculated example 1",
+          "Question": "Eight boxes each contain 125 pencils. Total?",
+          "Method": "Contextual multiplication uses the number of equal groups and the amount per group.",
+          "Steps": [
+            "Identify eight equal boxes.",
+            "Multiply 125×8=1,000.",
+            "Retain the unit pencils."
+          ],
+          "Answer": "1,000 pencils",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
+        },
+        {
+          "Title": "Edulytics independently calculated example 2",
+          "Question": "A grid has 34 rows and 26 columns. How many positions?",
+          "Method": "Contextual multiplication uses the number of equal groups and the amount per group.",
+          "Steps": [
+            "Each row has 26 positions.",
+            "Multiply 34×(20+6).",
+            "680+204=884 positions."
+          ],
+          "Answer": "884 positions",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Adding factors instead of multiplying repeated groups.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Identify equal groups or array factors, multiply and interpret the units."
+        },
+        {
+          "Mistake": "Using addition where a repeated group count is intended.",
+          "WhyWrong": "The chosen operation or representation does not match the stated context.",
+          "Correction": "Multiply count by the single-group quantity."
         }
       ],
       "SummaryPoints": [

@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l20-ordinal45-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l20-ordinal45-abc-v1-stage-d-independent-problems-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L20",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Exact task method",
+          "Definition": "A repeated fractional design combines equal-size fractional portions.",
+          "Rule": "A repeated fractional design combines equal-size fractional portions.",
+          "Example": "A proposed design uses 3 strips each covering 2/3 of a unit. Total fractional area represented?"
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "Yes: 7 and 1/2 inches is within 9 inches.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independently calculated example 1",
+          "Question": "A proposed design uses 3 strips each covering 2/3 of a unit. Total fractional area represented?",
+          "Method": "A repeated fractional design combines equal-size fractional portions.",
+          "Steps": [
+            "Every strip contributes 2/3 of the same unit.",
+            "Multiply 3×2/3=6/3.",
+            "Regroup six thirds as two complete units."
+          ],
+          "Answer": "2 unit areas",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
+        },
+        {
+          "Title": "Edulytics independently calculated example 2",
+          "Question": "Eight separate pieces each represent 1/4 of a unit. What total?",
+          "Method": "A repeated fractional design combines equal-size fractional portions.",
+          "Steps": [
+            "Each piece is one quarter.",
+            "Multiply eight copies: 8×1/4=8/4.",
+            "The combined amount is two units."
+          ],
+          "Answer": "2 units",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Mixing width and height orientations or claiming that a physical layout fits from arithmetic on only one dimension.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Select the note orientation, multiply note length by count, and verify that the resulting dimension fits available width."
+        },
+        {
+          "Mistake": "Counting overlapping pieces twice as extra area.",
+          "WhyWrong": "The chosen operation or representation does not match the stated context.",
+          "Correction": "Use the same unit whole and non-overlapping pieces."
         }
       ],
       "SummaryPoints": [

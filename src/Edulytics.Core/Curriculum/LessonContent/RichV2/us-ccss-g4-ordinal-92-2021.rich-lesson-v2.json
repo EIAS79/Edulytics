@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l06-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l06-source-abc-2021-v1-stage-d-independent-problems-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L06",
@@ -21,6 +21,18 @@
           "Definition": "Multiply two-digit by one-digit numbers",
           "Rule": "Break two-digit number into tens and ones; multiply and add partial products.",
           "Example": "Find 47 × 6."
+        },
+        {
+          "Title": "Exact task method",
+          "Definition": "Multiply a two-digit number by one digit using the distributive property.",
+          "Rule": "Multiply a two-digit number by one digit using the distributive property.",
+          "Example": "Compute 68×4."
+        },
+        {
+          "Title": "Independent partial-product check",
+          "Definition": "Partial products for tens and ones must both be added.",
+          "Rule": "Partial products for tens and ones must both be added.",
+          "Example": "Compute 35×7."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "282",
           "Check": "Exact arithmetic: 47*6 = 282."
+        },
+        {
+          "Title": "Edulytics independently calculated example 1",
+          "Question": "Compute 68×4.",
+          "Method": "Multiply a two-digit number by one digit using the distributive property.",
+          "Steps": [
+            "Split 68 into 60+8.",
+            "Compute 60×4=240 and 8×4=32.",
+            "Add 240+32=272."
+          ],
+          "Answer": "272",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
+        },
+        {
+          "Title": "Edulytics independently calculated example 2",
+          "Question": "Compute 35×7.",
+          "Method": "Multiply a two-digit number by one digit using the distributive property.",
+          "Steps": [
+            "Split 35 into 30+5.",
+            "Compute 30×7=210 and 5×7=35.",
+            "Add 210+35=245."
+          ],
+          "Answer": "245",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Dropping the product contributed by the tens.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Break two-digit number into tens and ones; multiply and add partial products."
+        },
+        {
+          "Mistake": "Calculating 68×4 using only 60×4.",
+          "WhyWrong": "The chosen operation or representation does not match the stated context.",
+          "Correction": "The eight ones also contribute 32."
         }
       ],
       "SummaryPoints": [

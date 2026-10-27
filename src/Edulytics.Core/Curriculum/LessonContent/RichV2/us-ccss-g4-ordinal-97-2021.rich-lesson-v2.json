@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l11-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l11-source-abc-2021-v1-stage-d-independent-problems-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L11",
@@ -21,6 +21,18 @@
           "Definition": "Relate partial products to the standard algorithm",
           "Rule": "Connect each partial product to its place-value meaning in the standard layout.",
           "Example": "Find 24 × 32."
+        },
+        {
+          "Title": "Exact task method",
+          "Definition": "The standard multiplication algorithm compresses the same partial products.",
+          "Rule": "The standard multiplication algorithm compresses the same partial products.",
+          "Example": "Compute 62×14 with two partial rows."
+        },
+        {
+          "Title": "Independent partial-product check",
+          "Definition": "A tens-row result must have the correct tens place value.",
+          "Rule": "A tens-row result must have the correct tens place value.",
+          "Example": "Compute 39×24."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "768",
           "Check": "Exact arithmetic: 24*32 = 768."
+        },
+        {
+          "Title": "Edulytics independently calculated example 1",
+          "Question": "Compute 62×14 with two partial rows.",
+          "Method": "The standard multiplication algorithm compresses the same partial products.",
+          "Steps": [
+            "Calculate 62×4=248.",
+            "Calculate 62×10=620.",
+            "Add 248+620=868."
+          ],
+          "Answer": "868",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
+        },
+        {
+          "Title": "Edulytics independently calculated example 2",
+          "Question": "Compute 39×24.",
+          "Method": "The standard multiplication algorithm compresses the same partial products.",
+          "Steps": [
+            "Calculate 39×4=156.",
+            "Calculate 39×20=780.",
+            "Add 156+780=936."
+          ],
+          "Answer": "936",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Misaligning the second partial-products row one place to the right.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Connect each partial product to its place-value meaning in the standard layout."
+        },
+        {
+          "Mistake": "Using a ones-place row for the tens digit.",
+          "WhyWrong": "The chosen operation or representation does not match the stated context.",
+          "Correction": "A digit 1 in 14 represents 10."
         }
       ],
       "SummaryPoints": [

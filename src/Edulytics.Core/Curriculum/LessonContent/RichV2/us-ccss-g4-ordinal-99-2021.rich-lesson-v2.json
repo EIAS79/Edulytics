@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l13-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l13-source-abc-2021-v1-stage-d-independent-problems-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L13",
@@ -21,6 +21,18 @@
           "Definition": "Situations with equal-size groups",
           "Rule": "Use multiplication or division consistently for the total, number of groups or group size.",
           "Example": "A class of 24 students receives three paletas each. How many paletas?"
+        },
+        {
+          "Title": "Exact task method",
+          "Definition": "Division can ask how many equal groups or how many items in each group.",
+          "Rule": "Division can ask how many equal groups or how many items in each group.",
+          "Example": "Ninety-six counters are put in equal groups of eight. How many groups?"
+        },
+        {
+          "Title": "Independent partial-product check",
+          "Definition": "Use inverse multiplication to check a quotient.",
+          "Rule": "Use inverse multiplication to check a quotient.",
+          "Example": "One hundred forty-four tiles are shared equally among twelve groups. How many in each?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "72",
           "Check": "Exact arithmetic: 24*3 = 72."
+        },
+        {
+          "Title": "Edulytics independently calculated example 1",
+          "Question": "Ninety-six counters are put in equal groups of eight. How many groups?",
+          "Method": "Division can ask how many equal groups or how many items in each group.",
+          "Steps": [
+            "Each group contains eight counters.",
+            "Divide 96÷8=12 groups.",
+            "Check 12×8=96 counters."
+          ],
+          "Answer": "12 groups",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
+        },
+        {
+          "Title": "Edulytics independently calculated example 2",
+          "Question": "One hundred forty-four tiles are shared equally among twelve groups. How many in each?",
+          "Method": "Division can ask how many equal groups or how many items in each group.",
+          "Steps": [
+            "The total is 144 tiles and group count is 12.",
+            "Divide 144÷12=12 tiles per group.",
+            "Check 12 groups×12 tiles=144."
+          ],
+          "Answer": "12 tiles per group",
+          "Check": "First-party mathematically checked example; teacher assesses actual original source artwork and open student solutions."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Choosing multiplication when the total is being partitioned into equal groups.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Use multiplication or division consistently for the total, number of groups or group size."
+        },
+        {
+          "Mistake": "Confusing the number of groups with the size of each group.",
+          "WhyWrong": "The chosen operation or representation does not match the stated context.",
+          "Correction": "State which quantity the divisor represents."
         }
       ],
       "SummaryPoints": [
