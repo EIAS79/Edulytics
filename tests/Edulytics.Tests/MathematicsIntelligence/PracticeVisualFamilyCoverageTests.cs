@@ -103,7 +103,7 @@ public sealed class PracticeVisualFamilyCoverageTests
 
             Assert.False(
                 string.IsNullOrWhiteSpace(svg),
-                $"Visual Practice family has no deterministic SVG renderer: {family}");
+                $"Visual Practice family has no deterministic SVG renderer: {family}; exact generated parameters: {json}");
             Assert.StartsWith("<svg", svg!, StringComparison.Ordinal);
             Assert.Contains("</svg>", svg!, StringComparison.Ordinal);
         }
