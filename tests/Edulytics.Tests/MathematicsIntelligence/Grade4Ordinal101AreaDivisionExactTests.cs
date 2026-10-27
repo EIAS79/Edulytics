@@ -84,6 +84,11 @@ public sealed class Grade4Ordinal101AreaDivisionExactTests
         Assert.Equal("Situations Involving Area", lesson!.Title);
         Assert.Equal(3, lesson.WorkedExamples.Count);
         Assert.Equal(3, lesson.Visuals.Count);
+        Assert.Single(lesson.Visuals[0].Rows);
+        Assert.Equal(7, lesson.Visuals[1].Rows.Count);
+        Assert.All(lesson.Visuals[1].Rows, row => Assert.Equal(2, row.Cells.Count));
+        Assert.Equal(6, lesson.Visuals[2].Rows.Count);
+        Assert.All(lesson.Visuals[2].Rows, row => Assert.Equal(2, row.Cells.Count));
         Assert.Equal(RichLessonVisualKind.ShapeDecomposition, lesson.Visuals[1].Kind);
         Assert.Contains(lesson.WorkedExamples, x => x.Question.Contains("189"));
         Assert.Contains(lesson.WorkedExamples, x => x.Question.Contains("197"));

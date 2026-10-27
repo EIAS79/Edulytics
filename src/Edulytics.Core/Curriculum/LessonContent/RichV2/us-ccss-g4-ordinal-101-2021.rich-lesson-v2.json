@@ -111,12 +111,24 @@
             "Use 40 × length = 2,280 to check.",
             "The original estimation prompts require a teacher to assess students' reasons."
           ],
-          "Rows": []
+          "Rows": [
+            {
+              "Label": "Field width and area model",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "40 m width × 50 m length = 2,000 m²",
+                "40 m × 7 m = 280 m²",
+                "50 m + 7 m = 57 m",
+                "40 m × 57 m = 2,280 m²"
+              ]
+            }
+          ]
         },
         {
           "Kind": "ShapeDecomposition",
           "Title": "189-tile mural: area partition",
-          "Description": "Edulytics independent schematic explanation of seven equally wide rows and a complete rectangular area; visual source comparison pending.",
+          "Description": "Edulytics first-party tabular area grid: seven equal rows, each split 20+7 = 27 positions, for 7×27 = 189 square tiles. Not a copy of the original publisher artwork.",
           "PrimaryLabel": "Width = 7 tiles; total area = 189 square tiles",
           "SecondaryLabel": "Length = 20 + 7 = 27 tiles",
           "Items": [
@@ -129,12 +141,76 @@
             "Keep the width of 7 tiles fixed in both sub-rectangles.",
             "This is first-party symbolic support; the original publisher's image is not reproduced."
           ],
-          "Rows": []
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 6",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            },
+            {
+              "Label": "Row 7",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "20 tile positions (part 140 ÷ 7)",
+                "7 tile positions (part 49 ÷ 7)"
+              ]
+            }
+          ]
         },
         {
           "Kind": "EquationSet",
           "Title": "197 available tiles and a complete 6-wide mural",
-          "Description": "Represent the contextual remainder rather than incorrectly rounding the mural's side length upward.",
+          "Description": "Edulytics first-party 6-row area grid with 32 columns per row (192 used tiles); five spare tiles are outside the full rectangle. A 33rd column would need six. Original 2021 publisher gallery walk remains teacher-led.",
           "PrimaryLabel": "197 = (6 × 32) + 5",
           "SecondaryLabel": "32 complete columns; 5 unused tiles",
           "Items": [
@@ -147,7 +223,62 @@
             "The remaining five tiles cannot make a sixth tile in the next column.",
             "Teacher checks the student's grid drawing, model and verbal justification."
           ],
-          "Rows": []
+          "Rows": [
+            {
+              "Label": "Row 1",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 2",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 3",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 4",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 5",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            },
+            {
+              "Label": "Row 6",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "30 complete tile positions",
+                "2 complete tile positions"
+              ]
+            }
+          ]
         }
       ],
       "Videos": []
