@@ -4782,7 +4782,6 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G4:U06:L21",
       "primarySkills": [
-        "number.whole.multiply",
         "number.whole.divide"
       ],
       "prerequisites": [
@@ -4803,7 +4802,12 @@
       "evidence": [
         "2021 source Teacher and Student Facing: 45 students × $18, $900 museum budget, 5 strategies and 14×35 transfer.",
         "Movie tickets $9, $3132 revenue per day with equal count the second day; $7 drink and $5 popcorn per attendee.",
-        "Digitally verifiable budget dollars, two-day ticket counts, and combined refreshment dollars use independent numeric grading; poster comparison and student-authored questions remain teacher-only."
+        "Digitally verifiable budget dollars, two-day ticket counts, and combined refreshment dollars use independent numeric grading; poster comparison and student-authored questions remain teacher-only.",
+        "Exact projection requires one primary skill, matching family skillId; multiplication and subtraction remain explicit secondary skills rather than creating a spurious generic practice fallback."
+      ],
+      "secondarySkills": [
+        "number.whole.multiply",
+        "number.whole.add_subtract"
       ]
     }
   ]
