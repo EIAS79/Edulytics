@@ -21,6 +21,18 @@
           "Definition": "Represent all given constraints in a multi-step operation, and interpret division remainders for resources like buses or tickets.",
           "Rule": "Represent all given constraints in a multi-step operation, and interpret division remainders for resources like buses or tickets.",
           "Example": "A 53-story building has one 17-ft floor and 52 other 11-ft stories."
+        },
+        {
+          "Title": "Source-constrained mathematical representation",
+          "Definition": "Represent each step of the context and interpret any division remainder in terms of buses or objects.",
+          "Rule": "Represent each step of the context and interpret any division remainder in terms of buses or objects.",
+          "Example": "Worked Edulytics example: A 53-story building has one 17-ft floor and 52 other 11-ft stories. Calculate 17 + (52 × 11) = 589 ft. Use the total to verify the truth of the original source claim. For groups of people, round up nonzero remainders when every person needs a seat."
+        },
+        {
+          "Title": "Evaluate the result in context",
+          "Definition": "An answer must represent exactly the quantity asked for.",
+          "Rule": "Verify every operation with an inverse, decomposition, or direct substitution into the original task.",
+          "Example": "First-party Edulytics Cool-down (publisher's original not inspected): Forty-nine students need buses with 20 seats each. How many buses?"
         }
       ],
       "WorkedExamples": [
@@ -36,6 +48,30 @@
           ],
           "Answer": "For groups of people, round up nonzero remainders when every person needs a seat.",
           "Check": "Checked arithmetic exemplar: 17+52*11 = 589; not a generator verification."
+        },
+        {
+          "Title": "Original-task guided solution process 1 (teacher-reviewed)",
+          "Question": "Math focus: Represent all given constraints in a multi-step operation, and interpret division remainders for resources like buses or tickets.",
+          "Method": "Represent each step of the context and interpret any division remainder in terms of buses or objects.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Represent each step of the context and interpret any division remainder in terms of buses or objects.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
+        },
+        {
+          "Title": "Original-task guided solution process 2 (teacher-reviewed)",
+          "Question": "Worked Edulytics example: A 53-story building has one 17-ft floor and 52 other 11-ft stories. Calculate 17 + (52 × 11) = 589 ft. Use the total to verify the truth of the original source claim. For groups of people, round up nonzero remainders when every person needs a seat.",
+          "Method": "Represent each step of the context and interpret any division remainder in terms of buses or objects.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Represent each step of the context and interpret any division remainder in terms of buses or objects.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
         }
       ],
       "CommonMistakes": [
@@ -43,11 +79,17 @@
           "Mistake": "Mismatched units, operation or question scope.",
           "WhyWrong": "The answer may be numerically plausible but not solve the actual source task.",
           "Correction": "Represent all given constraints in a multi-step operation, and interpret division remainders for resources like buses or tickets."
+        },
+        {
+          "Mistake": "Using the right-looking arithmetic but answering a different quantity from the question.",
+          "WhyWrong": "Scaling, remainder interpretation and problem constraints change the meaning of the numerical result.",
+          "Correction": "Represent each step of the context and interpret any division remainder in terms of buses or objects."
         }
       ],
       "SummaryPoints": [
         "Learning goal: You will practice solving multi-step problems using all operations.",
-        "First-party Cool-down: Forty-nine students need buses with 20 seats each. How many buses?"
+        "First-party Cool-down: Forty-nine students need buses with 20 seats each. How many buses?",
+        "Check every source constraint: Represent each step of the context and interpret any division remainder in terms of buses or objects."
       ],
       "Visuals": [],
       "Videos": []
