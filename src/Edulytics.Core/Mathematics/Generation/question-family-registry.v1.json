@@ -19651,6 +19651,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l09.protractor_dual_scale_reading",
+      "version": 1,
+      "skillId": "geometry.angles.protractor_read_from_correct_zero",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "two-complementary-protractor-scales-zero-anchored-to-initial-ray-validate-fixture-and-parameters",
+      "representations": [
+        "first_party_text_protractor_dual_scale",
+        "degree_reading",
+        "teacher_led_original_protractor_figures"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

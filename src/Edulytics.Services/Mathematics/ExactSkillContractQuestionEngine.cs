@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l09.protractor_dual_scale_reading",
             "usccss.g4.u07.l08.full_turn_degree_benchmarks",
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
             "usccss.g4.u07.l06.compare_angle_openings",
@@ -1168,6 +1169,28 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l09.protractor_dual_scale_reading" =>
+                parameters.TryGetValue("caseType", out var l120Case) &&
+                parameters.TryGetValue("variant", out var l120Variant) &&
+                parameters.TryGetValue("zeroScale", out var l120ZeroScale) &&
+                parameters.TryGetValue("outerReading", out var l120Outer) &&
+                parameters.TryGetValue("innerReading", out var l120Inner) &&
+                parameters.TryGetValue("targetDegrees", out var l120Target) &&
+                l120Case is >= 0 and <= 7 &&
+                l120Variant is >= 0 and <= 2 &&
+                l120ZeroScale == (l120Variant == 1 ? 1 : 0) &&
+                l120Outer is >= 1 and <= 179 &&
+                l120Inner is >= 1 and <= 179 &&
+                l120Outer + l120Inner == 180 &&
+                l120Target == (l120Case switch
+                {
+                    0 => 25, 1 => 45, 2 => 65, 3 => 80,
+                    4 => 100, 5 => 115, 6 => 140, 7 => 160,
+                    _ => -1
+                }) &&
+                (l120ZeroScale == 0 ? l120Outer : l120Inner) == l120Target &&
+                value == l120Target,
+
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" =>
                 parameters.TryGetValue("caseType", out var l119Mode) &&
                 parameters.TryGetValue("variant", out var l119Variant) &&
@@ -2243,6 +2266,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l09.protractor_dual_scale_reading" => BuildG4ProtractorDualScaleReading(random),
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" => BuildG4FullTurnDegreeBenchmarks(random),
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => BuildG4ClockHourAngleTurnCompare(random),
             "usccss.g4.u07.l06.compare_angle_openings" => BuildG4CompareAngleOpenings(random),
@@ -3595,6 +3619,35 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4ProtractorDualScaleReading(Random random)
+    {
+        // IM/KH 2021 G4 U07:L09: 1 degree is 1/360 of a full turn,
+        // and the scale beginning at zero on the aligned ray is used.
+        // This first-party textual protractor model does NOT measure
+        // any original 2021 figure or the student's physical instrument.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        int[] benchmarks = [25, 45, 65, 80, 100, 115, 140, 160];
+        var degrees = benchmarks[mode];
+        var zeroScale = variant == 1 ? 1 : 0; // 0 outer, 1 inner
+        var outer = zeroScale == 0 ? degrees : 180 - degrees;
+        var inner = 180 - outer;
+        var zeroName = zeroScale == 0 ? "OUTER" : "INNER";
+        var cue = variant switch
+        {
+            0 => "The first ray has been aligned with the zero at the outer edge.",
+            1 => "The first ray has been aligned with the zero at the inner edge.",
+            _ => "Be careful not to choose the opposite zero scale."
+        };
+        var prompt = $"A FIRST-PARTY half-circle protractor description has two opposite scales. Its OUTER scale reads {outer}° and INNER scale reads {inner}° where the second ray crosses the rim. The initial ray is aligned with the ZERO of the {zeroName} scale. What is the angle size in degrees? {cue}";
+        return Problem("usccss.g4.u07.l09.protractor_dual_scale_reading", prompt,
+            $"The zero of the {zeroName} scale is aligned with the initial ray. Read the SAME scale: {degrees}°. The other scale would give {180 - degrees}°, which is not the aligned reading.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("zeroScale", zeroScale), ("outerReading", outer),
+            ("innerReading", inner), ("targetDegrees", degrees));
+    }
+
     private static ExactProblem BuildG4FullTurnDegreeBenchmarks(Random random)
     {
         // 2021 IM Grade 4 Unit 7 Lesson 8: a 360-degree full turn and
@@ -4835,6 +4888,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l09.protractor_dual_scale_reading" => p["targetDegrees"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" => (p["questionKind"] == 0 ? p["numerator"] : p["questionKind"] == 1 ? p["denominator"] : 360 - p["degrees"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => (p["questionKind"] == 0 ? (p["stepA"] > p["stepB"] ? 1 : p["stepA"] < p["stepB"] ? 2 : 3) : Math.Abs(p["stepA"] - p["stepB"])).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l06.compare_angle_openings" => (p["steps1"] > p["steps2"] ? 1 : p["steps1"] < p["steps2"] ? 2 : 3).ToString(CultureInfo.InvariantCulture),

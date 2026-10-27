@@ -1,30 +1,73 @@
 {
   "ordinal": 120,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L09",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "LOCAL_ORIGINAL_2021_IMKH_TEACHER_PREP_AND_STUDENT_FACING_READ_SHA_VERIFIED_EVERY_FOUR_WARMUPS_SIX_FRACTIONS_ELENA_KIRAN",
+    "B": "SOURCE_ALIGNED_GOALS_EXAMPLES_GRADE4_PROTRACTOR_TWO_ZERO_SCALES_CORRECT_100_DEG_SOURCE_CONCLUSION_FIRST_PARTY_65_COOLDOWN",
+    "C": "EXTENDED_EXISTING_EXACT_ENGINE_DUAL_SCALE_EIGHT_FIXTURES_3_XUNIT_METHODS_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
-    "prep": "d1c1cd6c346d1bc41830b5a6a78208be671ea98d0fcfa958ab23bf60c917c3d2",
+    "prep": "70bd20a54cb1c9a4f334eff5bb26bda0db0ff872b56b8b954a0eee4680a28bc2",
+    "prepArchivedIntake": "d1c1cd6c346d1bc41830b5a6a78208be671ea98d0fcfa958ab23bf60c917c3d2",
     "teacher": "372ecdab16ab2cfe9c2ffbffa3c5188d69573991d9b8b1c5bd9dc076a3439373"
   },
   "firstPartyCooldown": {
-    "prompt": "Draw and measure an angle of 65° with a protractor.",
-    "teacherAnswer": "65° subject to physical measurement and teacher confirmation."
+    "prompt": "Draw and measure an angle of 65° with a protractor, explain aligned zero scale.",
+    "teacherAnswer": "65° physical angle with accurate vertex, baseline and measured second ray."
   },
   "originalPublisherCooldownVerified": false,
   "sourceVisualParityProven": false,
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
+  "blockers": [],
+  "sourceEdition": "IM/KH 2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-120-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-120-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "70bd20a54cb1c9a4f334eff5bb26bda0db0ff872b56b8b954a0eee4680a28bc2",
+    "sourceTeacherSha256": "372ecdab16ab2cfe9c2ffbffa3c5188d69573991d9b8b1c5bd9dc076a3439373",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "original intake 2021 AND direct local Our-CS HTML teacher/prep",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-120-2021-source-evidence.json",
+    "sourceElementsCount": 20,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "sourceFigurePixelParityVerified": false,
+    "primarySkillId": "geometry.angles.protractor_read_from_correct_zero",
+    "allowedFamily": "usccss.g4.u07.l09.protractor_dual_scale_reading",
+    "firstPartyCoolDown": {
+      "prompt": "Draw and measure an angle of 65° with a protractor, explain aligned zero scale.",
+      "teacherAnswer": "65° physical angle with accurate vertex, baseline and measured second ray."
+    },
+    "teacherOnlyTasks": [
+      "Original four protractor drawing measurements and student discussions",
+      "Protractor without numbers/ticks original source geometry",
+      "Source partner explanations and source four-figure alignment",
+      "65° independently authored physical construction and measurement",
+      "Original publisher access-gated Measure the Angles Cool-down"
+    ],
+    "digitalPracticeScope": "8 first-party two-scale exact numerical angles and 3 variants per case, same zero-aligned scale; source printed diagrams not asserted digitally",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal120ProtractorDualScaleReadingTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "New C# family/test runtime not tested yet; local verified source is text with original figures not pixel-reviewed.",
+    "Original four printed source protractor pictures and teacher-reviewed 65° construction need hands-on review.",
+    "Teacher student-response login gated, no source publisher Cool-down copied.",
+    "Source original preparation hash differs between local unit-7 and archived intake (preserve both)."
   ]
 }

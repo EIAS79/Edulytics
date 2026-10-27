@@ -5179,6 +5179,37 @@
         "Three independent xUnit test methods written but deliberately UNRUN. .NET/CI/UI/gradebook and Stage D deferred.",
         "Edulytics CCSS classification for fractional degrees of circle: 4.MD.C.5; original stored 2021 publisher source content remains separately evidenced and is not treated as a verified source standards code."
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L09",
+      "primarySkills": [
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "secondarySkills": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "prerequisites": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L09_FIRST_PARTY_PROTRACTOR_TWO_SCALE_ZERO_ALIGNMENT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l09.protractor_dual_scale_reading"
+      ],
+      "evidence": [
+        "IM/KH 2021 teacher preparation SHA256 d1c1cd6c346d1bc41830b5a6a78208be671ea98d0fcfa958ab23bf60c917c3d2; local original teacher Student Facing SHA256 372ecdab16ab2cfe9c2ffbffa3c5188d69573991d9b8b1c5bd9dc076a3439373.",
+        "2021 warm-up True or False: There's Something About 45, with 2×45=6×15 and 4×45=2×90; Activity 1 1° as 1/360 turn; Activity 2 original four angles with protractors and Elena/Kiran 80° dispute. Original protected Measure the Angles Cool-down not verified.",
+        "First-party digital exact reading only: given specified protractor scales whose opposite labels sum to 180 and the zero mark aligned to the initial ray, choose the reading on that scale. Does NOT measure original source figures or actual student-drawn protractors.",
+        "Teacher inspects four original publisher diagrams, 80° source dispute, angle construction and physical measuring technique. No source artwork copied.",
+        "C# generator/verifier and three focused test methods authored only; no .NET, CI, authenticated scoring, approval or Stage D."
+      ]
     }
   ]
 }
