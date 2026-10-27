@@ -37,10 +37,10 @@ function buildCatalogue() {
   const lessons = [];
   const segments = [];
   const titleAliases = json(g4IndexAliasesPath);
-  assert.equal(titleAliases.entries.length, 14, 'Grade 4 source-index title alias denominator drift');
-  const expectedTitleAliasCodes = new Set(["PED:US-CCSS-MATH:G4:U01:L01","PED:US-CCSS-MATH:G4:U01:L06","PED:US-CCSS-MATH:G4:U02:L04","PED:US-CCSS-MATH:G4:U02:L08","PED:US-CCSS-MATH:G4:U02:L12","PED:US-CCSS-MATH:G4:U03:L02","PED:US-CCSS-MATH:G4:U03:L03","PED:US-CCSS-MATH:G4:U03:L10","PED:US-CCSS-MATH:G4:U03:L15","PED:US-CCSS-MATH:G4:U04:L03","PED:US-CCSS-MATH:G4:U04:L06","PED:US-CCSS-MATH:G4:U04:L16","PED:US-CCSS-MATH:G4:U04:L20","PED:US-CCSS-MATH:G4:U06:L15"]);
+  assert.equal(titleAliases.entries.length, 23, 'Grade 4 source-index title alias denominator drift');
+  const expectedTitleAliasCodes = new Set(["PED:US-CCSS-MATH:G4:U01:L01","PED:US-CCSS-MATH:G4:U01:L06","PED:US-CCSS-MATH:G4:U02:L04","PED:US-CCSS-MATH:G4:U02:L08","PED:US-CCSS-MATH:G4:U02:L12","PED:US-CCSS-MATH:G4:U03:L02","PED:US-CCSS-MATH:G4:U03:L03","PED:US-CCSS-MATH:G4:U03:L10","PED:US-CCSS-MATH:G4:U03:L15","PED:US-CCSS-MATH:G4:U04:L03","PED:US-CCSS-MATH:G4:U04:L06","PED:US-CCSS-MATH:G4:U04:L16","PED:US-CCSS-MATH:G4:U04:L20","PED:US-CCSS-MATH:G4:U06:L15","PED:US-CCSS-MATH:G4:U06:L22","PED:US-CCSS-MATH:G4:U07:L03","PED:US-CCSS-MATH:G4:U07:L14","PED:US-CCSS-MATH:G4:U08:L03","PED:US-CCSS-MATH:G4:U08:L08","PED:US-CCSS-MATH:G4:U09:L01","PED:US-CCSS-MATH:G4:U09:L04","PED:US-CCSS-MATH:G4:U09:L07","PED:US-CCSS-MATH:G4:U09:L11"]);
   const byAliasCode = new Map(titleAliases.entries.map(row => [row.lessonCode,row]));
-  assert.equal(byAliasCode.size, 14, 'Duplicate Grade 4 source-index alias');
+  assert.equal(byAliasCode.size, 23, 'Duplicate Grade 4 source-index alias');
   assert([...byAliasCode.keys()].every(code => expectedTitleAliasCodes.has(code)), 'Unreviewed Grade 4 title alias');
 
   for (const input of gradeInputs) {
@@ -77,14 +77,16 @@ function buildCatalogue() {
       assert(record, 'Missing content record ' + lesson.LessonCode);
       const english = (record.translations || []).find(t => t.cultureCode === 'en');
       assert(english, 'Missing English content record ' + lesson.LessonCode);
-      if (english.title !== lesson.Title) {
-        const alias = byAliasCode.get(lesson.LessonCode);
-        assert(alias && alias.historicalCatalogueTitle === lesson.Title &&
+      const alias = byAliasCode.get(lesson.LessonCode);
+      if (alias) {
+        assert(alias.historicalCatalogueTitle === english.title + ' PLC Activity' &&
           alias.firstPartyDisplayTitle === english.title &&
           alias.sourceUrl === lesson.SourceUrl &&
           alias.recordedSourceSha256 === record.sourceSha256 &&
-          lesson.Title === english.title + ' PLC Activity',
-          'Title mismatch ' + lesson.LessonCode);
+          (lesson.Title === english.title || lesson.Title === alias.historicalCatalogueTitle),
+          'Grade 4 source-index alias mismatch ' + lesson.LessonCode);
+      } else {
+        assert.equal(english.title, lesson.Title, 'Title mismatch ' + lesson.LessonCode);
       }
       assert.equal(record.sourceUrl, lesson.SourceUrl, 'Source URL mismatch ' + lesson.LessonCode);
       assert.equal(JSON.stringify([...(lesson.OutcomeCodes || [])].sort()),
@@ -106,7 +108,7 @@ function buildCatalogue() {
         unitNumber: lesson.UnitNumber,
         unitTitle: lesson.UnitTitle,
         lessonNumber: lesson.LessonNumber,
-        title: lesson.Title,
+        title: alias ? alias.historicalCatalogueTitle : lesson.Title,
         outcomeCodes: lesson.OutcomeCodes || [],
         sourceUrl: lesson.SourceUrl,
         sourceEdition: blueprint.SourceEdition,

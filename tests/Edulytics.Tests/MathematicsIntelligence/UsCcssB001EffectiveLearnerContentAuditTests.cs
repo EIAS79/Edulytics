@@ -87,8 +87,8 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             return IsSourceBoundGrade3FirstPartyTitle(root,code,historicalTitle,
                 effectiveTitle,sourceUrl);
 
-        // Grade 4 2021 unit indices use a "PLC Activity" display suffix on 14
-        // indexed lesson titles (13 in B001). The corresponding individual teacher
+        // Grade 4 2021 unit indices use a "PLC Activity" display suffix on 23
+        // indexed lesson titles (13 historical B001 aliases, 10 later blueprint aliases). The individual teacher
         // preparation pages use the lesson heading without that suffix. The alias
         // registry is exact-code, exact-title, URL and recorded-source-hash pinned;
         // it does not certify publisher parity, academic approval or image rights.
@@ -99,7 +99,7 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             if (!File.Exists(aliasPath))return false;
             using var aliases=JsonDocument.Parse(File.ReadAllText(aliasPath));
             var entries=aliases.RootElement.GetProperty("entries").EnumerateArray().ToArray();
-            if(entries.Length!=14 || entries.Select(x=>x.GetProperty("lessonCode").GetString())
+            if(entries.Length!=23 || entries.Select(x=>x.GetProperty("lessonCode").GetString())
                    .Distinct(StringComparer.Ordinal).Count()!=13)return false;
             var g4AliasMatches=entries.Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
             if(g4AliasMatches.Length!=1)return false;
