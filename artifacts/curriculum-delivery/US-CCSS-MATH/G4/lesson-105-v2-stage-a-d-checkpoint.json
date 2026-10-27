@@ -1,12 +1,12 @@
 {
   "ordinal": 105,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L19",
-  "status": "STAGE_C_FOCUSED_TEST_PENDING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
     "A": "2021_TEACHER_SOURCE_WARMUP_REMAINDER_PATTERN_JADA_389_AND_702_ANDRE_ELENA_2316_INCOMPLETE_3294_VERIFIED",
     "B": "FOUR_CORRECT_INDEPENDENT_STUDENT_EXAMPLES_THREE_MATH_VISUALS_AND_947_COOLDOWN",
-    "C": "EXTENDED_EXISTING_WHOLE_DIVISION_ENGINE_WITH_PARTIAL_QUOTIENT_REMAINDER_FAMILY; FOCUSED_TEST_PENDING",
+    "C": "G4_2021_L105_EXACT_PARTIAL_QUOTIENT_WITH_OR_WITHOUT_REMAINDER_FAMILY_ROUTED; FOCUSED_3_OF_3_GREEN_40540528041; TEACHER_ONLY_OPEN_ALGORITHM_EXPLANATION",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -20,10 +20,44 @@
   "sourceVisualParityProven": false,
   "originalPublisherCooldownVerified": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Focused exact generator, quotient-and-remainder response UI and wrong/malformed answer grading not yet verified.",
-    "Open algorithm explanations and original publisher diagrams require teacher review; authenticated attempt persistence belongs to Stage D."
-  ]
+  "blockers": [],
+  "stageDRisks": [
+    "Original publisher diagrams and protected original Cool-down not copied; first-party visuals and assessment used.",
+    "Authenticated saved attempts, grade-wide acceptance and publication remain Stage D."
+  ],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceTeacherSha256": "46bd284ffe3739df084cd99abadb3a7bab66483ed1260f4ae126d6e511a13b66",
+    "sourcePrepSha256": "84d2506af1fa0da9b5462dfcd218d8919ccf569a742bf258c63263fb5b96d867",
+    "sourceStudentFacingReadFromOriginal2021Teacher": true,
+    "sourceMath": [
+      "389÷7=55 r 4",
+      "702÷3=234 r 0",
+      "2316÷5=463 r 1",
+      "3294÷3=1098 r 0"
+    ],
+    "independentCoolDown": "947÷4=236 r 3",
+    "firstPartyVisuals": 3,
+    "originalPublisherGraphicsCopied": false,
+    "originalPublisherAssessmentVerified": false,
+    "teacherOnlyTasks": [
+      "written partial-quotient algorithms",
+      "spotting Andre/Elena mistakes",
+      "classroom explanation of remainders"
+    ],
+    "exactAllowedFamily": "usccss.g4.u06.l19.partial_quotients_remainders",
+    "questionFamilyResponseType": "quotient_and_remainder",
+    "generatorAndIndependentVerifierPassed": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40540528041",
+    "focusedTestCandidateSha": "6009cff224dd2f8f11d93d84fab64c85d322dea3",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false
+  }
 }
