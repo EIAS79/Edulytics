@@ -192,7 +192,7 @@ public static class CommonCoreSourceBoundHtmlEntityCorrections
             ["PED:US-CCSS-MATH:G4:U06:L22"] = ("b3e170beacf66e5c2d99e1a84effd5d80af24e0ad3893f5e6d067cb2748eaef4", "b3e170beacf66e5c2d99e1a84effd5d80af24e0ad3893f5e6d067cb2748eaef4"),
             ["PED:US-CCSS-MATH:G4:U06:L25"] = ("d848a8e501134b90282c657c4056093c5605df0fd20c9508b825eb84cce76990", "d848a8e501134b90282c657c4056093c5605df0fd20c9508b825eb84cce76990"),
             ["PED:US-CCSS-MATH:G4:U07:L04"] = ("e5960bb56610ac3a77e2b0fa345b677bb2ccaf2c611f8847f3b02457235f4e29", "b2a14884ed20be7b7da33f02a27e18c57c134c3208382dd803976656bd45f63d"),
-            ["PED:US-CCSS-MATH:G4:U07:L14"] = ("ccd63231ec110339f477085da7be3dc27bb7df0517553de45b", "9eb7276110aed15f19c8b26bde02cc89a0e17674deb858d4789521572ccc34ed"),
+            ["PED:US-CCSS-MATH:G4:U07:L14"] = ("ccd63231ec110339f477085da7be3dc27bb7b8ea2d40ad1bb7df0517553de45b", "9eb7276110aed15f19c8b26bde02cc89a0e17674deb858d4789521572ccc34ed"),
         };
 
     private static string CorrectedShaFor(Repair repair)
