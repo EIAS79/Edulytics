@@ -1,12 +1,12 @@
 {
   "ordinal": 138,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L01",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_ORIGINAL_LOCAL_FABRIC_SOURCE_INTAKE_REUSED",
+    "B": "HEAD_WRAP_5_TIMES_2_SIXTHS_YARD_1_AND_2_THIRDS_AND_TWO_YARD_TARGET",
+    "C": "REUSED_FRACTION_OF_QUANTITY_SUBSKILL_TEST_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,29 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 Our-CS original local source",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Fluency and Fractions (10 minutes)",
+      "Activity 1: Let’s Make Head Wraps! (15 minutes)",
+      "Activity 2: Make 2 Yards of Fabric (10 minutes)",
+      "Activity 3: Play by the Rules (10 minutes)",
+      "Cool-down: Compare to 2 (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(5 \\times \\frac{10}{5}\\) | \\(9 \\times \\frac{6}{3}\\)",
+      "Jada and Lin saw a picture of head wraps made of African wax print fabric and would like to make their own. | Jada stitches together 5 pieces of fabric that each have a length of \\(\\frac{2}{6}\\) yard. Write an equation to show the total length of fabric Jada u",
+      "Jada and Lin’s moms taught the fourth-grade class how to combine and use fabric pieces for head wraps. The lengths of each piece of fabric are listed here. | \\(\\frac{2}{6}\\) yard | \\(\\frac{2}{6}\\) yard"
+    ],
+    "allowedFamily": "fractions.of_quantity.build",
+    "teacherOnlyTasks": [
+      "Actual source fabric piece table and selection under rules",
+      "Original family/student story and drawings"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal138SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }
