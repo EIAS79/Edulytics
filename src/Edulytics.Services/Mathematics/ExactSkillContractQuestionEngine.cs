@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks",
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
             "usccss.g4.u07.l06.compare_angle_openings",
             "usccss.g4.u07.l05.angle_common_vertex_rays",
@@ -1167,6 +1168,35 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks" =>
+                parameters.TryGetValue("caseType", out var l119Mode) &&
+                parameters.TryGetValue("variant", out var l119Variant) &&
+                parameters.TryGetValue("questionKind", out var l119Kind) &&
+                parameters.TryGetValue("degrees", out var l119Deg) &&
+                parameters.TryGetValue("numerator", out var l119Num) &&
+                parameters.TryGetValue("denominator", out var l119Den) &&
+                l119Mode is >= 0 and <= 7 &&
+                l119Variant is >= 0 and <= 2 &&
+                l119Kind is >= 0 and <= 2 &&
+                l119Deg is >= 1 and <= 360 &&
+                l119Num is >= 1 and <= 3 &&
+                l119Den is >= 1 and <= 8 &&
+                l119Deg * l119Den == 360 * l119Num &&
+                (l119Mode switch
+                {
+                    0 => l119Deg == 45 && l119Num == 1 && l119Den == 8,
+                    1 => l119Deg == 60 && l119Num == 1 && l119Den == 6,
+                    2 => l119Deg == 90 && l119Num == 1 && l119Den == 4,
+                    3 => l119Deg == 120 && l119Num == 1 && l119Den == 3,
+                    4 => l119Deg == 180 && l119Num == 1 && l119Den == 2,
+                    5 => l119Deg == 240 && l119Num == 2 && l119Den == 3,
+                    6 => l119Deg == 270 && l119Num == 3 && l119Den == 4,
+                    7 => l119Deg == 360 && l119Num == 1 && l119Den == 1,
+                    _ => false
+                }) &&
+                value == (l119Kind == 0 ? l119Num :
+                    l119Kind == 1 ? l119Den : 360 - l119Deg),
+
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" =>
                 parameters.TryGetValue("caseType", out var l118Case) &&
                 parameters.TryGetValue("questionKind", out var l118Kind) &&
@@ -2213,6 +2243,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks" => BuildG4FullTurnDegreeBenchmarks(random),
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => BuildG4ClockHourAngleTurnCompare(random),
             "usccss.g4.u07.l06.compare_angle_openings" => BuildG4CompareAngleOpenings(random),
             "usccss.g4.u07.l05.angle_common_vertex_rays" => BuildG4AngleCommonVertexRays(random),
@@ -3564,6 +3595,40 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4FullTurnDegreeBenchmarks(Random random)
+    {
+        // 2021 IM Grade 4 Unit 7 Lesson 8: a 360-degree full turn and
+        // benchmark degree/fraction angles. Paper half-circle measuring tool
+        // and original figures remain teacher-reviewed; no image-copy claim.
+        var mode = random.Next(0, 8);
+        var kind = random.Next(0, 3);
+        var variant = random.Next(0, 3);
+        int[] degrees = [45, 60, 90, 120, 180, 240, 270, 360];
+        int[] numerators = [1, 1, 1, 1, 1, 2, 3, 1];
+        int[] denominators = [8, 6, 4, 3, 2, 3, 4, 1];
+        var deg = degrees[mode];
+        var num = numerators[mode];
+        var den = denominators[mode];
+        var promptTask = kind switch
+        {
+            0 => "Express this turn as a fraction of a full turn in LOWEST TERMS. What is the NUMERATOR?",
+            1 => "Express this turn as a fraction of a full turn in LOWEST TERMS. What is the DENOMINATOR?",
+            _ => "How many more DEGREES must the ray turn in the same direction to make exactly one 360-degree full turn?"
+        };
+        var cue = variant switch
+        {
+            0 => "Remember that a full turn around the shared endpoint is 360 degrees.",
+            1 => "Use an imagined circle divided into equal angular parts.",
+            _ => "You may reason with a half-turn 180 degrees or quarter-turn 90 degrees."
+        };
+        return Problem("usccss.g4.u07.l08.full_turn_degree_benchmarks",
+            $"A ray turns {deg} degrees around its fixed vertex. {promptTask} {cue}",
+            $"The turn is {deg}/360 = {num}/{den} of a full revolution. The remaining turn is {360 - deg} degrees.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("questionKind", kind), ("variant", variant),
+            ("degrees", deg), ("numerator", num), ("denominator", den));
+    }
+
     private static ExactProblem BuildG4ClockHourAngleTurnCompare(Random random)
     {
         // Source IM 2021 Grade 4 Unit 7 Lesson 7: use a CLOCK to model
@@ -4770,6 +4835,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks" => (p["questionKind"] == 0 ? p["numerator"] : p["questionKind"] == 1 ? p["denominator"] : 360 - p["degrees"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => (p["questionKind"] == 0 ? (p["stepA"] > p["stepB"] ? 1 : p["stepA"] < p["stepB"] ? 2 : 3) : Math.Abs(p["stepA"] - p["stepB"])).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l06.compare_angle_openings" => (p["steps1"] > p["steps2"] ? 1 : p["steps1"] < p["steps2"] ? 2 : 3).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l05.angle_common_vertex_rays" => (p["start1"] == p["start2"] ? 1 : 2).ToString(CultureInfo.InvariantCulture),

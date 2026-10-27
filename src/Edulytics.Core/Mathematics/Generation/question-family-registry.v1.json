@@ -19632,6 +19632,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l08.full_turn_degree_benchmarks",
+      "version": 1,
+      "skillId": "geometry.angles.degree_benchmark_full_turn_fraction",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "fixed-eight-benchmark-degree-fraction-identity-and-360-degree-completion-guard",
+      "representations": [
+        "turn_fraction_of_full_360_degrees",
+        "numeric_benchmarks",
+        "teacher_led_paper_semicircle"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
