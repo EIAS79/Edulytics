@@ -21,6 +21,18 @@
           "Definition": "A multiplicative comparison describes a scaling factor; distinguish 'four times as much' from 'four more'.",
           "Rule": "A multiplicative comparison describes a scaling factor; distinguish 'four times as much' from 'four more'.",
           "Example": "Identify the two quantities in the source price comparison."
+        },
+        {
+          "Title": "Source-constrained mathematical representation",
+          "Definition": "Identify the reference quantity and multiplicative scale, not an additive difference.",
+          "Rule": "Identify the reference quantity and multiplicative scale, not an additive difference.",
+          "Example": "Worked Edulytics example: Identify the two quantities in the source price comparison. If one quantity is four times another, multiply the base by four. For a model price of $7, four times as expensive is $28, not $11. Check units and which item is the base before dividing or multiplying."
+        },
+        {
+          "Title": "Evaluate the result in context",
+          "Definition": "An answer must represent exactly the quantity asked for.",
+          "Rule": "Verify every operation with an inverse, decomposition, or direct substitution into the original task.",
+          "Example": "First-party Edulytics Cool-down (publisher's original not inspected): A product costs $7 and another is four times as much. Find the second price."
         }
       ],
       "WorkedExamples": [
@@ -36,6 +48,30 @@
           ],
           "Answer": "Check units and which item is the base before dividing or multiplying.",
           "Check": "Checked arithmetic exemplar: 7*4 = 28; not a generator verification."
+        },
+        {
+          "Title": "Original-task guided solution process 1 (teacher-reviewed)",
+          "Question": "Math focus: A multiplicative comparison describes a scaling factor; distinguish 'four times as much' from 'four more'.",
+          "Method": "Identify the reference quantity and multiplicative scale, not an additive difference.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Identify the reference quantity and multiplicative scale, not an additive difference.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
+        },
+        {
+          "Title": "Original-task guided solution process 2 (teacher-reviewed)",
+          "Question": "Worked Edulytics example: Identify the two quantities in the source price comparison. If one quantity is four times another, multiply the base by four. For a model price of $7, four times as expensive is $28, not $11. Check units and which item is the base before dividing or multiplying.",
+          "Method": "Identify the reference quantity and multiplicative scale, not an additive difference.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Identify the reference quantity and multiplicative scale, not an additive difference.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
         }
       ],
       "CommonMistakes": [
@@ -43,11 +79,17 @@
           "Mistake": "Mismatched units, operation or question scope.",
           "WhyWrong": "The answer may be numerically plausible but not solve the actual source task.",
           "Correction": "A multiplicative comparison describes a scaling factor; distinguish 'four times as much' from 'four more'."
+        },
+        {
+          "Mistake": "Using the right-looking arithmetic but answering a different quantity from the question.",
+          "WhyWrong": "Scaling, remainder interpretation and problem constraints change the meaning of the numerical result.",
+          "Correction": "Identify the reference quantity and multiplicative scale, not an additive difference."
         }
       ],
       "SummaryPoints": [
         "Learning goal: You will solve problems involving multiplicative comparison.",
-        "First-party Cool-down: A product costs $7 and another is four times as much. Find the second price."
+        "First-party Cool-down: A product costs $7 and another is four times as much. Find the second price.",
+        "Check every source constraint: Identify the reference quantity and multiplicative scale, not an additive difference."
       ],
       "Visuals": [],
       "Videos": []
