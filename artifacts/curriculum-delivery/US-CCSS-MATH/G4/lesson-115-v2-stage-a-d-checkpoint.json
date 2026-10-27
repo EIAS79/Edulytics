@@ -1,12 +1,12 @@
 {
   "ordinal": 115,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L04",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "PREVIOUS_2021_ORIGINAL_SOURCE_PREP_AND_STUDENT_FACING_MAP_CLASSROOM_AND_FOUR_SIDED_FIGURE_TASKS_REUSED",
+    "B": "REPLACED_OFF_TOPIC_3_PLUS_2_SCAFFOLD_WITH_SOURCE_GOAL_PARALLELS_INTERSECTIONS_TRANSVERSAL_AND_THREE_PAIRS_CLASSROOM_DRAWING",
+    "C": "REUSED_L114_EXACT_DOT_GRID_FAMILY_WITH_NEW_L115_WRONG_MALFORMED_TRANSVERSAL_TESTS_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,48 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
+  "blockers": [],
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-115-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-115-2021-teacher-handoff.md",
+  "sourceEdition": "2021 First Edition",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "aae1fa82bab86fba68db10ff3a76a6f4577d382a2e12b1491d668e30096a4153",
+    "sourceTeacherSha256": "129ba64cbf401a7463d9fb6a20518853cdcaf0a9c81f67bf8b11d194133ffa89",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceEvidenceReusedFrom": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-102-149-original-source-intake.json",
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-115-2021-source-evidence.json",
+    "sourceElementsCount": 15,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "sourceVisualParityProven": false,
+    "primarySkillId": "geometry.lines.parallel_intersect.classify_dot_grid",
+    "allowedFamily": "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+    "sharedFamilySource": "G4 U07:L03",
+    "firstPartyCoolDown": {
+      "prompt": "Draw two parallel segments and a transversal; mark intersections.",
+      "teacherAnswer": "Parallel pair stays parallel even when crossed by a transversal."
+    },
+    "teacherOnlyTasks": [
+      "2021 Which One Doesn't Belong source quadrilateral figures",
+      "2021 historical map annotation and attribution",
+      "Original classroom drawing containing 3 parallel pairs and intersecting right-angle segments",
+      "Oral geometric explanation and protected publisher Cool-down"
+    ],
+    "digitalPracticeScope": "Reused first-party exact relationship classification only, no source artwork copied",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal115MapClassroomParallelLinesTests.cs",
+    "focusedTestMethodsAuthored": 2,
+    "testsAuthoredNotRun": true,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Map figure and four-sided drawings never visually inspected in authenticated student UI; teacher-only verification required.",
+    "Original protected publisher Cool-down not reproduced, and public-domain map attribution needs teacher review where supplied.",
+    "Compilation, .NET tests, authenticated answer persistence, tenant security, repository CI and Stage D intentionally not executed."
   ]
 }
