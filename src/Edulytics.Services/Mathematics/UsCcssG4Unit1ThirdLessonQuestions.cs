@@ -31,7 +31,8 @@ internal static class UsCcssG4Unit1ThirdLessonQuestions
  public static string Solve(string family,IReadOnlyDictionary<string,int> p)
  {
   if(!Valid(family,p))throw new InvalidOperationException("Invalid G4 L03 parameters");
-  var a=p["area"],count=Enumerable.Range(1,(int)Math.Sqrt(a)).Count(x=>a%x==0);
+  var a=p["area"];
+  var count=Enumerable.Range(1,(int)Math.Sqrt(a)).Count(x=>a%x==0);
   var answer=family switch
   {
     Classification => a==1?0:count==1?1:2,
