@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "kind": "NON_RUNTIME_FIRST_PARTY_CANDIDATE",
+  "edition": "2024 v360",
+  "ordinal": 101,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+  "sourceTitle": "Base-Ten Blocks to Divide",
+  "firstPartyTitle": "Dividing with Hundreds, Tens and Ones",
+  "goal": "Represent division with base-ten blocks, exchange place-value units when needed, and explain equal sharing.",
+  "warmup": {
+    "type": "TEACHER_LED",
+    "prompt": "What can base-ten blocks tell you about the number 324 and sharing quantities?",
+    "supports": "Invite models using hundreds, tens and ones; listen for exchanges."
+  },
+  "workedExamples": [
+    {
+      "prompt": "488 ÷ 4",
+      "steps": [
+        "Model four hundreds, eight tens and eight ones.",
+        "Share the four hundreds into four equal groups, one hundred per group.",
+        "Share eight tens and eight ones: each group receives two tens and two ones."
+      ],
+      "answer": 122,
+      "check": "4×122=488"
+    },
+    {
+      "prompt": "104 ÷ 8",
+      "steps": [
+        "Trade one hundred for ten tens and distribute one ten to each of eight groups.",
+        "Two tens remain: trade for twenty ones, then combine with four ones.",
+        "Share twenty-four ones among eight groups, giving three ones to each group."
+      ],
+      "answer": 13,
+      "check": "8×13=104"
+    },
+    {
+      "prompt": "108 ÷ 9",
+      "steps": [
+        "Trade one hundred for ten tens, and distribute nine tens among nine equal groups.",
+        "Trade the remaining ten for ten ones and combine with the eight ones.",
+        "Share eighteen ones among nine groups, giving two ones to each."
+      ],
+      "answer": 12,
+      "check": "9×12=108"
+    }
+  ],
+  "sourceTaskComparisons": [
+    {
+      "source": "2024 Activity 1 number 488÷4",
+      "sameNumericResult": true,
+      "needTeacherRepresentation": true
+    },
+    {
+      "source": "2024 Activity 1 number 104÷8",
+      "sameNumericResult": true,
+      "needTeacherRepresentation": true
+    },
+    {
+      "source": "2024 Activity 2 number 96÷4",
+      "correctAnswer": 24,
+      "needTeacherRepresentation": true
+    },
+    {
+      "source": "2024 Activity 2 number 86÷2",
+      "correctAnswer": 43,
+      "needTeacherRepresentation": true
+    },
+    {
+      "source": "2024 Activity 2 number 108÷9",
+      "correctAnswer": 12,
+      "needTeacherRepresentation": true
+    }
+  ],
+  "independentEdulyticsCooldown": {
+    "prompt": "Show with base-ten blocks or a labelled block diagram how to divide 132 into six equal groups. Explain the exchanges.",
+    "answer": 22,
+    "teacherRubric": [
+      "Regroup the hundred into ten tens and combine with three tens to make thirteen tens.",
+      "Give two tens to each of the six groups, leaving one ten.",
+      "Regroup the remaining ten into ten ones, add the original two ones and give two ones to each group.",
+      "Explain that each group contains twenty-two and that 6×22=132."
+    ]
+  },
+  "teacherOnly": [
+    "Supply base-ten blocks and observe student grouping.",
+    "Compare diagrams and oral explanations; do not auto-grade original group work.",
+    "Source figures, any published artwork and original protected Cool-down are not copied."
+  ],
+  "skillContractCandidate": {
+    "skill": "grade4.base_ten_division.place_value_exchanges",
+    "answerTypes": [
+      "exact_integer",
+      "teacher_review_diagram"
+    ],
+    "allowedQuestionFamilies": [],
+    "forbiddenQuestionFamilies": [
+      "geometry.perimeter_area.rectangle_missing_side",
+      "geometry.rectangle.area.exact"
+    ],
+    "capabilityReadiness": "BLOCKED_FAMILY_AND_GRADER_UNREVIEWED"
+  },
+  "isEmbeddedRuntime": false,
+  "qaStatus": "WRITTEN_NOT_RUN",
+  "academicApproval": false,
+  "rights": "Independent Edulytics authored expressions; do not reuse 2024 protected artwork or text verbatim without rights review."
+}

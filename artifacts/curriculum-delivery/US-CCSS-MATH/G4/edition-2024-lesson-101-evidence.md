@@ -1,0 +1,7 @@
+# Grade 4 edition migration — first open lesson is 2024 ordinal 101
+
+The user chose the newer **2024 v360** source. The local teacher/student file inventory is **151 lessons**, not the 2021 legacy active 149. Unit 6 has 26 rather than 25 and Unit 8 has 11 rather than 10. New ordinal 101 / U06:L15 is **Base-Ten Blocks to Divide**; the previous 2021 ordinal 101 was **Situations Involving Area**, corresponding to 2024 U06:L14. Do not silently treat these as one lesson.
+
+Local source files were read on Our-CS only: 2024 teacher/student/preparation sources and actual MathJax data for 488÷4, 104÷8, 96÷4, 86÷2, 108÷9. Their SHA-256 values and paths are in `grade4-source-edition-2024-decision.json`. Existing 2021 grade inventory, 2021 Rich V2 and all old learner IDs/results are retained unchanged.
+
+A separately written 2024 Edulytics lesson draft and source element starter ledger are staged **outside the active Rich V2 registry** pending an explicit 151-row identity mapping, rights clearance and exact Practice review. The source notice is **CC BY-NC 4.0**, so this commercial product must not assume it can reproduce protected publisher text/images. Teacher-led base-ten blocks, student diagrams, protected original assessment and all uninspected assets remain open A–C tasks. Full original element denominator remains incomplete. No A–C closure, no tests run, no CI/Stage D, no production mutation.
