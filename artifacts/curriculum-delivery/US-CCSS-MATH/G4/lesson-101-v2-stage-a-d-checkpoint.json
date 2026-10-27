@@ -1,12 +1,12 @@
 {
   "ordinal": 101,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
-  "status": "A_C_EXPLICIT_GAP_L101_SOURCE_MEDIA_AND_ROUTING_PERSISTENCE",
+  "status": "A_C_EXPLICIT_GAP_L101_TEACHER_VISUAL_AND_AUTHENTICATED_SCORE_PENDING",
   "readyForStageD": false,
   "stages": {
     "A": "2021_SOURCE_GOALS_ALL_VISIBLE_STUDENT_FACING_TASKS_AND_TEACHER_MOVES_ATOMIC_LEDGER_AUTHORED; LINKED_STUDENT_PDF_COOLDOWN_AND_ORIGINAL_IMAGE_BYTES_UNAVAILABLE",
     "B": "2021_SOURCE_LEARNING_GOAL_AND_ELENA_TYLER_EXAMPLES_RETAINED; GENERIC_THIRD_EXAMPLE_REPLACED_WITH_SOURCE_WARMUP_SOCCER_ESTIMATION; THREE_FIRST_PARTY_MATH_VISUAL_MODELS_AUTHORED; RUNTIME_AND_SOURCE_FIGURE_PARITY_UNVERIFIED",
-    "C": "G4_L101_SOURCE_SKILL_FAMILY_MAPPING_RECORDED_REVIEW_REQUIRED; FOCUSED_DOTNET_2_PASS; INTERACTION_AND_PERSISTED_STUDENT_ATTEMPT_STILL_UNVERIFIED",
+    "C": "FOCUSED_RUNTIME_TESTS_3_PASSED_0_FAILED; EARLIER_OFF_TARGET_OFFICIAL_FALLBACK_BLOCKED_FOR_G4_L101; SOURCE_SPECIFIC_LESSON_PRACTICE_STILL_REVIEW_REQUIRED_AND_SAVED_ATTEMPT_NOT_PROVEN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -31,8 +31,9 @@
     "Existing rectangle_missing_side exact generator/verifier identified and source-aligned to positive exact division; lesson-specific mapping/teacher remainder interpretation and authenticated grading are not demonstrated.",
     "Targeted correct/wrong/malformed question and saved-attempt tests not run under the authoring-only policy.",
     "Two 2021 teacher-page images have verified URL and alt text but local image-byte/visual geometry verification is pending.",
-    "New exact/remainder question generation, verifier and focused tests are authored but NOT executed and NOT lesson-routed.",
-    "Explicit projection remains intentionally fail-closed until lesson Practice interaction and saved scored attempt are verified; the skill mapping is REVIEW_REQUIRED rather than READY_VERIFIED."
+    "Explicit projection remains intentionally fail-closed until lesson Practice interaction and saved scored attempt are verified; the skill mapping is REVIEW_REQUIRED rather than READY_VERIFIED.",
+    "Confirmed three focused .NET tests pass on candidate commit cb3705a5, including generator/verifier and fail-closed student Practice routing.",
+    "Independent authenticated learner answer submission and persisted scoring are not verified; teacher-led diagrams and original graphic parity remain unverified."
   ],
   "sourceEdition": "1st Edition (2021)",
   "activeCurriculumEdition": "2021",
@@ -57,5 +58,20 @@
     "skipped": 0,
     "total": 2,
     "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+  },
+  "newestFocusedTestEvidence": {
+    "sha": "cb3705a5decab6c98313a8a760d37898ce5de420",
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "createdUtc": "2026-10-27T14:49:29Z",
+    "finishedUtc": "2026-10-27T14:51:16Z",
+    "runSeconds": 107,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "lastStageCRedGreenEvidence": {
+    "failed": "https://github.com/EIAS79/Edulytics/actions/runs/40524243428",
+    "passed": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "reason": "Previously unintended fallback was discovered and corrected."
   }
 }

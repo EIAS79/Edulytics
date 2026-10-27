@@ -3,7 +3,7 @@
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
   "edition": "1st Edition (2021)",
   "ordinal": 101,
-  "status": "NARROW_ENGINE_GENERATOR_VERIFIER_TESTED_ROUTING_AND_TEACHER_REVIEW_PENDING",
+  "status": "FOCUSED_TESTS_3_PASS_GENERIC_FALLBACK_BLOCKED_UNTIL_REVIEW",
   "sourceTitle": "Situations Involving Area",
   "learningObjective": "Use partial quotients to find an unknown side length of a rectangle when its area and the other side are known, and interpret a leftover-tile remainder in context.",
   "curriculumCodes": [
@@ -124,18 +124,17 @@
     "enabled": false,
     "reason": "No lesson-specific mapping/negative and malformed response test execution; deployment not approved."
   },
-  "currentStageCStatus": "REVIEWED_SOURCE_FOCUSED_VERIFIER_TESTS_PASS_MAPPING_ADDED_BUT_RUNTIME_PRESENTATION_PERSISTENCE_NOT_TESTED",
+  "currentStageCStatus": "GENERATOR_VERIFIER_PASSED_AND_UNINTENDED_GENERIC_ROUTE_BLOCKED; AUTHENTICATED_SAVED_GRADEBOOK_ATTEMPT_PENDING",
   "tests": {
-    "state": "FOCUSED_DOTNET_EXECUTED_PASSED",
-    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
-    "testSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
-    "workflow": "g4-2021-l101-focused.yml",
-    "filter": "FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests",
+    "state": "FOCUSED_DOTNET_RUN_SUCCESS",
+    "sha": "cb3705a5decab6c98313a8a760d37898ce5de420",
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "createdUtc": "2026-10-27T14:49:29Z",
+    "finishedUtc": "2026-10-27T14:51:16Z",
+    "runSeconds": 107,
+    "passed": 3,
     "failed": 0,
-    "passed": 2,
-    "skipped": 0,
-    "total": 2,
-    "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+    "skipped": 0
   },
   "teacherLed": [
     "Original diagrams and source visuals need teacher fidelity review",
@@ -169,5 +168,10 @@
       "usccss.g4.u06.l15.area_partial_quotients",
       "usccss.g4.u06.l15.mural_complete_columns"
     ]
+  },
+  "fallbackRegression": {
+    "detected": "https://github.com/EIAS79/Edulytics/actions/runs/40524243428",
+    "correctedBy": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "behavior": "Implicit official-outcome fallback no longer exposes L101 unreviewed families."
   }
 }

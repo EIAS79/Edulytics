@@ -8,7 +8,7 @@
   "lastClosedOrdinal": 100,
   "currentLessonOrdinal": 101,
   "readyForStageD": 100,
-  "status": "G4_2021_AUTHORING_149_L101_NARROW_TEST_2_PASS_A_C_GAPS_REMAIN",
+  "status": "G4_2021_L101_THREE_NARROW_TESTS_PASS_STILL_A_C_PENDING",
   "lessonStates": {
     "1": "READY_FOR_STAGE_D",
     "2": "READY_FOR_STAGE_D",
@@ -110,7 +110,7 @@
     "98": "READY_FOR_STAGE_D",
     "99": "READY_FOR_STAGE_D",
     "100": "READY_FOR_STAGE_D",
-    "101": "A_C_EXPLICIT_GAP_L101_SOURCE_MEDIA_AND_ROUTING_PERSISTENCE",
+    "101": "A_C_EXPLICIT_GAP_L101_TEACHER_VISUAL_AND_AUTHENTICATED_SCORE_PENDING",
     "102": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
     "103": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
     "104": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
@@ -209,5 +209,19 @@
     "skipped": 0,
     "total": 2,
     "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+  },
+  "stageC101Evidence": {
+    "run": {
+      "sha": "cb3705a5decab6c98313a8a760d37898ce5de420",
+      "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+      "createdUtc": "2026-10-27T14:49:29Z",
+      "finishedUtc": "2026-10-27T14:51:16Z",
+      "runSeconds": 107,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "foundAndFixedGenericFallback": true,
+    "stillUnrouted": true
   }
 }
