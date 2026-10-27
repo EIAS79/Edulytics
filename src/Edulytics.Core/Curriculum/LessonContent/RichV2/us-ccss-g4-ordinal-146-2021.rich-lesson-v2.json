@@ -21,6 +21,18 @@
           "Definition": "Write a mathematically solvable original story from constrained numbers, quantities and a chosen operation; include a checked answer.",
           "Rule": "Write a mathematically solvable original story from constrained numbers, quantities and a chosen operation; include a checked answer.",
           "Example": "Choose the allowed numbers and operation specified by the original creative task."
+        },
+        {
+          "Title": "Source-constrained mathematical representation",
+          "Definition": "Construct a word problem with explicit quantities, operation, question and a checked model solution.",
+          "Rule": "Construct a word problem with explicit quantities, operation, question and a checked model solution.",
+          "Example": "Worked Edulytics example: Choose the allowed numbers and operation specified by the original creative task. Assign each value a meaningful unit and relationship in the story. Write a question whose answer follows from those numbers. For instance, 36 crayons shared equally by six classes means 36 ÷ 6 = 6 crayons per class; explain how to check it."
+        },
+        {
+          "Title": "Evaluate the result in context",
+          "Definition": "An answer must represent exactly the quantity asked for.",
+          "Rule": "Verify every operation with an inverse, decomposition, or direct substitution into the original task.",
+          "Example": "First-party Edulytics Cool-down (publisher's original not inspected): Create and solve a valid equal-sharing word problem using 36 and 6."
         }
       ],
       "WorkedExamples": [
@@ -36,6 +48,30 @@
           ],
           "Answer": "For instance, 36 crayons shared equally by six classes means 36 ÷ 6 = 6 crayons per class; explain how to check it.",
           "Check": "Checked arithmetic exemplar: 36/6 = 6; not a generator verification."
+        },
+        {
+          "Title": "Original-task guided solution process 1 (teacher-reviewed)",
+          "Question": "Math focus: Write a mathematically solvable original story from constrained numbers, quantities and a chosen operation; include a checked answer.",
+          "Method": "Construct a word problem with explicit quantities, operation, question and a checked model solution.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Construct a word problem with explicit quantities, operation, question and a checked model solution.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
+        },
+        {
+          "Title": "Original-task guided solution process 2 (teacher-reviewed)",
+          "Question": "Worked Edulytics example: Choose the allowed numbers and operation specified by the original creative task. Assign each value a meaningful unit and relationship in the story. Write a question whose answer follows from those numbers. For instance, 36 crayons shared equally by six classes means 36 ÷ 6 = 6 crayons per class; explain how to check it.",
+          "Method": "Construct a word problem with explicit quantities, operation, question and a checked model solution.",
+          "Steps": [
+            "Identify what the problem gives and the unknown requested.",
+            "Apply the source-goal operation: Construct a word problem with explicit quantities, operation, question and a checked model solution.",
+            "Verify the resulting expression or construction against the given situation and justify any remainder."
+          ],
+          "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
+          "Check": "A guided reasoning pathway, not an independently tested Practice item."
         }
       ],
       "CommonMistakes": [
@@ -43,11 +79,17 @@
           "Mistake": "Mismatched units, operation or question scope.",
           "WhyWrong": "The answer may be numerically plausible but not solve the actual source task.",
           "Correction": "Write a mathematically solvable original story from constrained numbers, quantities and a chosen operation; include a checked answer."
+        },
+        {
+          "Mistake": "Using the right-looking arithmetic but answering a different quantity from the question.",
+          "WhyWrong": "Scaling, remainder interpretation and problem constraints change the meaning of the numerical result.",
+          "Correction": "Construct a word problem with explicit quantities, operation, question and a checked model solution."
         }
       ],
       "SummaryPoints": [
         "Learning goal: You will create your own mathematical questions and word problems given constraints (specific values, possible operations).",
-        "First-party Cool-down: Create and solve a valid equal-sharing word problem using 36 and 6."
+        "First-party Cool-down: Create and solve a valid equal-sharing word problem using 36 and 6.",
+        "Check every source constraint: Construct a word problem with explicit quantities, operation, question and a checked model solution."
       ],
       "Visuals": [],
       "Videos": []
