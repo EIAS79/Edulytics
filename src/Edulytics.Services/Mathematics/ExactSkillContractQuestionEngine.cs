@@ -72,6 +72,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders",
             "usccss.g4.u06.l20.contextual_remainder_decisions",
             "usccss.g4.u06.l21.multistep_contexts",
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -1122,6 +1123,38 @@ public sealed class ExactSkillContractQuestionEngine
                 (long)partialDivisor * (partialTens + partialOnes) == partialDividend &&
                 value == partialTens + partialOnes,
 
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" =>
+                parameters.TryGetValue("caseType", out var l108Mode) &&
+                parameters.TryGetValue("sheetWidthInches", out var l108SheetW) &&
+                parameters.TryGetValue("sheetHeightInches", out var l108SheetH) &&
+                parameters.TryGetValue("bannerHeightInches", out var l108BannerH) &&
+                parameters.TryGetValue("bannerLengthFeet", out var l108BannerF) &&
+                parameters.TryGetValue("leftWidthFeet", out var l108LeftW) &&
+                parameters.TryGetValue("rightWidthYards", out var l108RightW) &&
+                parameters.TryGetValue("lowerHeightYards", out var l108LowerH) &&
+                parameters.TryGetValue("upperRiseFeet", out var l108Rise) &&
+                parameters.TryGetValue("suppliedInches", out var l108Supply) &&
+                l108Mode is >= 0 and <= 4 &&
+                l108SheetW is >= 36 and <= 49 &&
+                l108SheetH is >= 24 and <= 34 &&
+                l108BannerH == 8 &&
+                l108BannerF is >= 6 and <= 8 &&
+                l108LeftW is >= 8 and <= 13 &&
+                l108RightW is >= 2 and <= 4 &&
+                l108LowerH is >= 3 and <= 5 &&
+                l108Rise is >= 2 and <= 6 &&
+                l108Supply > 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise) &&
+                l108Supply <= 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise) + 500 &&
+                value == (l108Mode switch
+                {
+                    0 => l108SheetW * l108SheetH - (l108BannerF * 12 * l108BannerH),
+                    1 => 2 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise),
+                    2 => 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise),
+                    3 => (l108LeftW + 3 * l108RightW) * (3 * l108LowerH) + l108LeftW * l108Rise,
+                    4 => l108Supply - 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise),
+                    _ => -1
+                }),
+
             "usccss.g4.u06.l21.multistep_contexts" =>
                 parameters.TryGetValue("caseType", out var l107Mode) &&
                 parameters.TryGetValue("count", out var l107Count) &&
@@ -1909,6 +1942,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" => BuildG4PartialQuotientsRemainder(random),
             "usccss.g4.u06.l20.contextual_remainder_decisions" => BuildG4ContextualRemainder(random),
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
                 BuildFractionOfQuantity(family, random, scale),
@@ -3206,6 +3240,47 @@ public sealed class ExactSkillContractQuestionEngine
             ("caseType", caseType), ("dividend", dividend), ("divisor", divisor), ("shortfall", shortfall));
     }
 
+    private static ExactProblem BuildG4MeasurementConversions(Random random)
+    {
+        // IM 2021 G4 U06:L22: reuse exact rectangle math and whole-unit conversions.
+        var mode = random.Next(0, 5);
+        var sheetW = random.Next(36, 50);
+        var sheetH = random.Next(24, 35);
+        const int bannerH = 8;
+        var bannerF = random.Next(6, 9);
+        var leftW = random.Next(8, 14);
+        var rightWYd = random.Next(2, 5);
+        var lowerHYd = random.Next(3, 6);
+        var riseF = random.Next(2, 7);
+        var bottomF = leftW + 3 * rightWYd;
+        var leftH = 3 * lowerHYd + riseF;
+        var perimeterF = 2 * (bottomF + leftH);
+        var supply = 12 * perimeterF + random.Next(60, 501);
+        var prompt = mode switch
+        {
+            0 => "A poster is " + sheetW + " inches by " + sheetH + " inches. A banner requires " + bannerH + " inches by " + bannerF + " feet. How many square inches of poster area are spare?",
+            1 => "A six-sided L-shaped classroom has bottom " + (12 * bottomF) + " inches, right rise " + lowerHYd + " yards, inset " + rightWYd + " yards, inner rise " + riseF + " feet, top " + leftW + " feet and left side " + (12 * leftH) + " inches. How many feet is the entire outside perimeter?",
+            2 => "A six-sided L-shaped classroom has bottom " + (12 * bottomF) + " inches, right rise " + lowerHYd + " yards, inset " + rightWYd + " yards, inner rise " + riseF + " feet, top " + leftW + " feet and left side " + (12 * leftH) + " inches. How many INCHES of baseboard does the perimeter require?",
+            3 => "An L-shaped room comprises a " + bottomF + "-foot by " + (3 * lowerHYd) + "-foot base and an upper " + leftW + "-foot by " + riseF + "-foot rectangle. How many SQUARE FEET of carpet are required?",
+            _ => "A classroom's six-sided L-shaped floor has bottom " + bottomF + " feet, right rise " + (3 * lowerHYd) + " feet, inset " + (3 * rightWYd) + " feet, inside rise " + riseF + " feet, top " + leftW + " feet and left side " + leftH + " feet. The school received " + supply + " inches of baseboard. How many INCHES are spare?"
+        };
+        var solution = mode switch
+        {
+            0 => "Available square inches minus banner area after converting feet to inches.",
+            1 => "Convert all six sides to feet and sum outside perimeter.",
+            2 => "Find the six-side perimeter in feet, then multiply by 12 inches per foot.",
+            3 => "Add the non-overlapping rectangles' areas in square feet.",
+            _ => "Convert the six-side perimeter to inches and subtract from supply."
+        };
+        return Problem("usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
+            prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("sheetWidthInches", sheetW),
+            ("sheetHeightInches", sheetH), ("bannerHeightInches", bannerH),
+            ("bannerLengthFeet", bannerF), ("leftWidthFeet", leftW),
+            ("rightWidthYards", rightWYd), ("lowerHeightYards", lowerHYd),
+            ("upperRiseFeet", riseF), ("suppliedInches", supply));
+    }
+
     private static ExactProblem BuildG4MultiStepContext(Random random)
     {
         // 2021 IM G4 U06:L21. Reuse multiplication and exact division with
@@ -4067,6 +4142,7 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.divide.with_remainder.apply" or
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l21.multistep_contexts" => (p["caseType"] switch { 0 => p["budget"] - p["dailyRevenue"], 1 => p["count"] * p["days"], _ => p["count"] * p["days"] * (p["drinkPrice"] + p["popcornPrice"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l20.contextual_remainder_decisions" => (p["caseType"] switch { 0 => p["dividend"] / p["divisor"] + 1, 1 => p["dividend"] / p["divisor"], 2 => p["dividend"] % p["divisor"], 3 => (p["dividend"] - p["shortfall"]) / p["divisor"], _ => p["dividend"] / p["divisor"] }).ToString(CultureInfo.InvariantCulture),
 
