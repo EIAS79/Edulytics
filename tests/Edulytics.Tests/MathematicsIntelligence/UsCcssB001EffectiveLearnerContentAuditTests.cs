@@ -101,9 +101,9 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             var entries=aliases.RootElement.GetProperty("entries").EnumerateArray().ToArray();
             if(entries.Length!=14 || entries.Select(x=>x.GetProperty("lessonCode").GetString())
                    .Distinct(StringComparer.Ordinal).Count()!=13)return false;
-            var matching=entries.Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
-            if(matching.Length!=1)return false;
-            var row=matching[0];
+            var g4AliasMatches=entries.Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
+            if(g4AliasMatches.Length!=1)return false;
+            var row=g4AliasMatches[0];
             if(row.GetProperty("historicalCatalogueTitle").GetString()!=historicalTitle ||
                row.GetProperty("firstPartyDisplayTitle").GetString()!=effectiveTitle ||
                row.GetProperty("sourceUrl").GetString()!=sourceUrl ||
