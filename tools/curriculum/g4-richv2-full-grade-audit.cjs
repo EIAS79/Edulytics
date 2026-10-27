@@ -19,3 +19,5 @@ for(const name of files){
  }
 }
 console.log(JSON.stringify({grade4RichFiles:files.length,grade4DocumentsChecked:count,structurallyValid:valid,structurallyInvalid:invalid.length,invalid},null,2));
+
+if(invalid.length)process.exitCode=1;

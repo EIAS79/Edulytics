@@ -5,6 +5,7 @@ on:
       - curriculum/g4-sequential-abc-20261026
     paths:
       - '.github/workflows/g4-richv2-reconcile-20261027.yml'
+      - 'tools/curriculum/g4-richv2-full-grade-audit.cjs'
       - 'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g4-ordinal-*-2021.rich-lesson-v2.json'
       - 'artifacts/curriculum-delivery/US-CCSS-MATH/G4/g4-101-149-richv2-practice-audit.json'
   workflow_dispatch:
