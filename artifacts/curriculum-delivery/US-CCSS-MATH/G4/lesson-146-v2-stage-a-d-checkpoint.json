@@ -1,12 +1,12 @@
 {
   "ordinal": 146,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L09",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_ORIGINAL_LOCAL_SOURCE_INTAKE_REUSED_STUDENT_PROBLEM_AUTHORING",
+    "B": "SOURCE_1564_OPERATION_CONSTRAINTS_AND_WALK_DISTANCES_REPAIRED",
+    "C": "EXISTING_EXACT_TWO_DIGIT_MULTIPLICATION_REUSED_TEST_WRITTEN_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,30 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 Our-CS archived local source",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Difference and Thousands (10 minutes)",
+      "Activity 1: What’s the Question? (15 minutes)",
+      "Activity 2: What’s the Problem? (20 minutes)",
+      "Cool-down: A Music Festival (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(5,\\!000 - 403\\) | \\(5,\\!300 - 473\\)",
+      "George Meegan walked 19,019 miles between 1977 and 1983. He finished at age 31. He wore out 12 pairs of hiking boots. | Jean Beliveau walked 46,900 miles between 2000 and 2011 and finished at age 56. | Attribution: By pen_ash. Pixabay. Pixabay. Source.",
+      "Elena, Noah, and Han each created a problem with an answer of 1,564. | Elena used multiplication. | Noah used multi-digit numbers and addition only."
+    ],
+    "allowedFamily": "usccss.g4.u09.l05.two_digit_partial_products",
+    "teacherOnlyTasks": [
+      "Student-created questions from walker facts",
+      "Elena Noah Han specific authored contextual problems and operation constraints",
+      "Original publisher A Music Festival assessment"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal146AuthorConstraintsTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
 }
