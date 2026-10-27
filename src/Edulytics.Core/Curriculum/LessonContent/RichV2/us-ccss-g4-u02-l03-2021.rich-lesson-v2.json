@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u02-l03-original-source-fraction-compare-v1",
+  "ContentVersion": "g4-u02-l03-original-source-fraction-compare-v1-stage-d-math-closure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U02:L03",
@@ -59,6 +59,18 @@
           ],
           "Answer": "4/6 greater.",
           "Check": "4×6<4×10 comparing cross products."
+        },
+        {
+          "Title": "Independently authored Grade 4 lesson reasoning",
+          "Question": "Which is greater, 3/7 or 5/7?",
+          "Method": "Use the exact relationship and representation requested by this lesson.",
+          "Steps": [
+            "Both numbers refer to the same whole partitioned into seven equal pieces.",
+            "Compare the numerators: five pieces exceed three.",
+            "Their difference is 2/7 of that whole."
+          ],
+          "Answer": "5/7",
+          "Check": "First-party mathematically checked model. Original publisher activity and student drawings require independent teacher review."
         }
       ],
       "CommonMistakes": [
@@ -66,6 +78,11 @@
           "Mistake": "Bigger denominator always means bigger value.",
           "WhyWrong": "It makes each equal-whole unit piece smaller.",
           "Correction": "4/6 >4/10."
+        },
+        {
+          "Mistake": "Comparing only denominators and ignoring the numerator.",
+          "WhyWrong": "Equal denominators mean each piece has equal size; count the pieces.",
+          "Correction": "Equal denominators mean each piece has equal size; count the pieces."
         }
       ],
       "SummaryPoints": [

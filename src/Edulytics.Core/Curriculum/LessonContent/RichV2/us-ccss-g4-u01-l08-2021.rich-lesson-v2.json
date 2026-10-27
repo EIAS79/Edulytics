@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u01-l08-source-art-abc-v1",
+  "ContentVersion": "g4-u01-l08-source-art-abc-v1-stage-d-math-closure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U01:L08",
@@ -58,6 +58,18 @@
           ],
           "Answer": "Yes.",
           "Check": "1 is not prime."
+        },
+        {
+          "Title": "Independently authored Grade 4 lesson reasoning",
+          "Question": "Two rectangular art regions measure 5×6 squares and 3×10 squares. Are their areas equal?",
+          "Method": "Use the exact relationship and representation requested by this lesson.",
+          "Steps": [
+            "Compute area of first region: 5×6=30.",
+            "Compute area of second region: 3×10=30.",
+            "Both cover 30 unit squares even though their side lengths differ."
+          ],
+          "Answer": "Yes; both 30 square units",
+          "Check": "First-party mathematically checked model. Original publisher activity and student drawings require independent teacher review."
         }
       ],
       "CommonMistakes": [
@@ -65,6 +77,11 @@
           "Mistake": "Only verifying one subshape instead of the complete partition.",
           "WhyWrong": "The source's12-region count and extensions are global.",
           "Correction": "Teacher reviews the whole18×24 artwork and student proof."
+        },
+        {
+          "Mistake": "Treating equal area as a guarantee of equal perimeter.",
+          "WhyWrong": "A 5×6 rectangle has perimeter 22 units; a 3×10 rectangle has perimeter 26.",
+          "Correction": "A 5×6 rectangle has perimeter 22 units; a 3×10 rectangle has perimeter 26."
         }
       ],
       "SummaryPoints": [

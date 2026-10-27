@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u01-l06-original-2021-abc-v1",
+  "ContentVersion": "g4-u01-l06-original-2021-abc-v1-stage-d-math-closure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U01:L06",
@@ -59,6 +59,18 @@
           ],
           "Answer": "5 touches, OPEN.",
           "Check": "16 is perfect square."
+        },
+        {
+          "Title": "Independently authored Grade 4 lesson reasoning",
+          "Question": "For the locker game, how many positive-numbered students touch locker 36?",
+          "Method": "Use the exact relationship and representation requested by this lesson.",
+          "Steps": [
+            "A student touches locker 36 exactly when the student's number divides 36.",
+            "List factors: 1,2,3,4,6,9,12,18,36.",
+            "There are nine factors, so locker 36 is toggled an odd number of times."
+          ],
+          "Answer": "9 students; final locker open",
+          "Check": "First-party mathematically checked model. Original publisher activity and student drawings require independent teacher review."
         }
       ],
       "CommonMistakes": [
