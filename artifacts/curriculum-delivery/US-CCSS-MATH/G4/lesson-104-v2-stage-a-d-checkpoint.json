@@ -1,12 +1,12 @@
 {
   "ordinal": 104,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L18",
-  "status": "STAGE_C_FOCUSED_TEST_PENDING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
     "A": "2021_LOCAL_PREP_AND_TEACHER_STUDENT_FACING_WARMUP_90_96_960_954; PRIYA_TYLER_465_AND_428; TEACHER_SYNTHESIS_738_REVIEWED",
     "B": "CORRECTED_PRIYA_EQUATIONS_TYLER_SUBTRACTIVE_METHOD_428_AND_WARMUP; THREE_INDEPENDENT_FIRST_PARTY_MATH_VISUALS_AND_684_COOLDOWN",
-    "C": "EXISTING_EXACT_DIVISION_KERNEL_EXTENDED_WITH_G4_U06_L18_PARTIAL_QUOTIENT_FAMILY_AND_SCOPED_TEST; FOCUSED_CI_PENDING",
+    "C": "G4_2021_U06_L18_EXACT_PARTIAL_QUOTIENTS_FAMILY_ROUTED; FOCUSED_3_OF_3_GREEN_40538855858; TEACHER_ONLY_OPEN_ALGORITHM_EXPLANATION",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -20,10 +20,48 @@
   "sourceVisualParityProven": false,
   "originalPublisherCooldownVerified": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Focused source-aligned generator, verifier, routing and Rich V2 load tests not yet completed.",
-    "Teacher evaluates handwritten partial quotient recordings and reasoning; authenticated per-student persistence remains a Stage D gate."
-  ]
+  "blockers": [],
+  "stageDRisks": [
+    "Original publisher illustration and protected publisher Cool-down not copied; mathematically equivalent first-party diagrams and assessment used.",
+    "Authenticated student attempt persistence and full-grade acceptance remain for Stage D."
+  ],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "lessonCode": "PED:US-CCSS-MATH:G4:U06:L18",
+    "originalTeacherPreparationHash": "4c216d3db66d52f993fbe1ef7d15853b068b5cebdaebc354515ba93bd1dd96c4",
+    "originalTeacherTaskHash": "b92e42106e82768d75f2696ac48d0b818ee8427071c551f47bc00d493e6dfaeb",
+    "sourceTeacherAndStudentFacingInspected": true,
+    "originalNumericalTasks": [
+      "90÷3=30",
+      "96÷3=32",
+      "960÷3=320",
+      "954÷3=318",
+      "465÷5=93",
+      "428÷4=107"
+    ],
+    "independentCoolDown": "684÷6=114",
+    "originalPublisherCoolDownVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "originalGraphicsCopied": false,
+    "independentVisuals": 3,
+    "teacherOnlyMethods": [
+      "student-created subtraction records",
+      "compare Priya and Tyler reasoning",
+      "explain partial quotient decomposition"
+    ],
+    "exactQuestionFamily": "usccss.g4.u06.l18.partial_quotients_recording",
+    "generatorAndIndependentVerifierTested": true,
+    "routingVerified": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40538855858",
+    "focusedTestCandidateSha": "6149ed7174bfd552944c0969c20e1e12c35657b4",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false
+  }
 }
