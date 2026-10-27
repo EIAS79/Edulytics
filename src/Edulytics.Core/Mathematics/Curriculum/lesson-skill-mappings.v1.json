@@ -5280,6 +5280,40 @@
         "NO new engine: reuse existing exact protractor zero-scale (U07:L09) and 90° perpendicular judgement (U07:L10) for supplementary digital prompts; actual drawing/paper and source figure parity NOT machine-scored.",
         "Three scoped xUnit checks authored UNRUN. No dotnet build, CI or Stage D."
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L12",
+      "primarySkills": [
+        "geometry.angles.classify_acute_right_obtuse_straight"
+      ],
+      "secondarySkills": [
+        "geometry.angles.protractor_read_from_correct_zero",
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "prerequisites": [
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.6",
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L12_ANGLE_CLASSIFICATION_DEGREES_AND_TEACHER_FIGURES",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l12.classify_angles_by_degree_bounds"
+      ],
+      "evidence": [
+        "Original 2021 IM/KH teacher prep/source student facing previously INSPECTED on Our-CS, hashes recorded in archived original source intake ordinal 123 (prep 3f46671adf768735d0d3bea79611a7036b8729c5d28f87591913794816fc60bc; teacher c10558faabd5fbbff256ee7556d1a9d1c2886d06e4a1d1901d8cc8fa305cb027). New direct device read was attempted but remote timeout prevented independent re-read.",
+        "2021 original purpose explicitly to classify acute, obtuse, and straight angles and draw acute/obtuse; source warm-up Fractions of 120 and 360; Activity 1 Sorting Angles specifically continues physical 4 cards from prior U07:L11.",
+        "Original Activity 2 What Is It, Really? includes Mai and Jada whether a straight line constitutes an angle and a letter Y measured by Tyler/Andre. Do not assert actual pictured angle degree values or unseen teacher answers.",
+        "2021 Activity 3 Small Angles, Large Angles (15 min) and protected original Cool-down are source listed but visual original student prompts not verified in this run; retain teacher assessment.",
+        "Extend existing shared ExactSkillContractQuestionEngine with first-party 8 exact angle classifications using boundaries 90° and 180°. This numeric exact family does not claim original source figure/drawing parity.",
+        "Three xUnit scoped methods AUTHORED NOT EXECUTED; .NET, CI, runtime, gradebook and academic approval deferred."
+      ]
     }
   ]
 }

@@ -19689,6 +19689,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
+      "version": 1,
+      "skillId": "geometry.angles.classify_acute_right_obtuse_straight",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "fixed-eight-source-relevant-angle-measures-validated-and-classification-by-90-180-degree-boundaries",
+      "representations": [
+        "first_party_numeric_degree_measure",
+        "acute_right_obtuse_straight_classification",
+        "teacher_led_source_angles_and_paper_cards"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

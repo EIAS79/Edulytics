@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
             "usccss.g4.u07.l09.protractor_dual_scale_reading",
             "usccss.g4.u07.l08.full_turn_degree_benchmarks",
@@ -1169,6 +1170,23 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds" =>
+                parameters.TryGetValue("caseType", out var l123Case) &&
+                parameters.TryGetValue("variant", out var l123Variant) &&
+                parameters.TryGetValue("degrees", out var l123Degrees) &&
+                parameters.TryGetValue("classCode", out var l123Class) &&
+                l123Case is >= 0 and <= 7 &&
+                l123Variant is >= 0 and <= 2 &&
+                l123Degrees == (l123Case switch
+                {
+                    0 => 20, 1 => 35, 2 => 45, 3 => 70,
+                    4 => 90, 5 => 110, 6 => 130, 7 => 180,
+                    _ => -1
+                }) &&
+                l123Class == (l123Degrees < 90 ? 1 :
+                    l123Degrees == 90 ? 2 : l123Degrees < 180 ? 3 : 4) &&
+                value == l123Class,
 
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" =>
                 parameters.TryGetValue("caseType", out var l121Case) &&
@@ -2283,6 +2301,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => BuildG4AngleClassificationByBounds(random),
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => BuildG4PerpendicularRightAngleJudgment(random),
             "usccss.g4.u07.l09.protractor_dual_scale_reading" => BuildG4ProtractorDualScaleReading(random),
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" => BuildG4FullTurnDegreeBenchmarks(random),
@@ -3637,6 +3656,36 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4AngleClassificationByBounds(Random random)
+    {
+        // Source IM 2021 Grade 4 U07:L12: acute, right,
+        // obtuse and straight angles. First-party numeric classification
+        // does NOT inspect source cards, letter Y drawings, or paper angles.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        int[] measures = [20, 35, 45, 70, 90, 110, 130, 180];
+        var degrees = measures[mode];
+        var answer = degrees < 90 ? 1 : degrees == 90 ? 2 :
+            degrees < 180 ? 3 : 4;
+        var cue = variant switch
+        {
+            0 => "One ray starts at the vertex and another defines the measured turn.",
+            1 => "The line segments may have any length; only the opening is classified.",
+            _ => "A straight angle can look like a line, but it is still a 180-degree turn."
+        };
+        return Problem("usccss.g4.u07.l12.classify_angles_by_degree_bounds",
+            $"An INDEPENDENTLY AUTHORED angle measures {degrees} degrees. " +
+            "Classify it using 1=acute, 2=right, 3=obtuse, 4=straight. " + cue,
+            $"An angle of {degrees} degrees is " +
+            (answer == 1 ? "acute (less than 90 degrees)." :
+             answer == 2 ? "right (exactly 90 degrees)." :
+             answer == 3 ? "obtuse (between 90 and 180 degrees)." :
+             "straight (exactly 180 degrees)."),
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("degrees", degrees), ("classCode", answer));
+    }
+
     private static ExactProblem BuildG4PerpendicularRightAngleJudgment(Random random)
     {
         // IM/KH 2021 Grade 4 Unit 7 Lesson 10: one right angle formed at
@@ -4942,6 +4991,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => p["classCode"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => p["perpendicularAnswer"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l09.protractor_dual_scale_reading" => p["targetDegrees"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" => (p["questionKind"] == 0 ? p["numerator"] : p["questionKind"] == 1 ? p["denominator"] : 360 - p["degrees"]).ToString(CultureInfo.InvariantCulture),

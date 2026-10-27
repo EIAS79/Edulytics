@@ -1,12 +1,12 @@
 {
   "ordinal": 123,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L12",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "PREVIOUS_2021_LOCAL_SOURCE_INTAKE_REUSED",
+    "B": "ANGLE_TYPE_CLASSIFICATION_REPAIRED",
+    "C": "EIGHT_CLASSIFICATION_CASES_TESTS_AUTHORED_NOT_RUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -14,17 +14,29 @@
     "teacher": "c10558faabd5fbbff256ee7556d1a9d1c2886d06e4a1d1901d8cc8fa305cb027"
   },
   "firstPartyCooldown": {
-    "prompt": "Classify angles of 45°, 130°, and 180°.",
-    "teacherAnswer": "Acute, obtuse, and straight, respectively."
+    "prompt": "Classify 45°, 130°, and 180°.",
+    "teacherAnswer": "Acute, obtuse, straight."
   },
   "originalPublisherCooldownVerified": false,
   "sourceVisualParityProven": false,
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
-  ]
+  "blockers": [],
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-123-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-123-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 local Our-CS source intake (new direct read timed out)",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-123-2021-source-evidence.json",
+    "sourceElementsCount": 12,
+    "primarySkillId": "geometry.angles.classify_acute_right_obtuse_straight",
+    "allowedFamily": "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal123AngleDegreeClassificationTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  }
 }
