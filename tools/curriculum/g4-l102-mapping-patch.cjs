@@ -1,0 +1,14 @@
+'use strict';
+const fs=require('fs'),assert=require('assert');
+const family='usccss.g4.u06.l16.base_ten_equal_groups',lesson='PED:US-CCSS-MATH:G4:U06:L16';
+const rf='src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json';
+const mf='src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json';
+let r=JSON.parse(fs.readFileSync(rf,'utf8'));
+assert(!r.families.some(x=>x.id===family));
+r.families.push({id:family,version:1,skillId:'number.whole.divide',requiredCapabilities:['number.whole.divide.exact','number.verify.whole.divide'],answerType:'exact_integer',verificationPolicy:'independent-tens-and-ones-trading-and-multiplication-check',representations:['place_value_chart','base_ten_blocks','symbolic'],status:'PracticeVerified',productionRouting:false,lessonPracticeRouting:true});
+let m=JSON.parse(fs.readFileSync(mf,'utf8'));
+assert(!m.mappings.some(x=>x.lessonCode===lesson));
+m.mappings.push({lessonCode:lesson,primarySkills:['number.whole.divide'],sourceType:'OfficialMappedPedagogicalLesson',officialOutcomeMapped:true,officialOutcomeCodes:['CCSS:4.NBT.B.6'],mappingConfidence:'High',practiceReadiness:'READY_VERIFIED',practiceMechanic:'G4_2021_U06_L16_BASE_TEN_EQUAL_GROUPS',allowedQuestionFamilies:[family],evidence:['2021 teacher Student Facing source: 488÷4,104÷8,96÷4,86÷2,108÷9; teacher assesses physical block models, group display, exchange explanations.','First-party mathematical model and focused exact generation/verification regression cover numerical Practice.']});
+fs.writeFileSync(rf,JSON.stringify(r,null,2)+'\n');
+fs.writeFileSync(mf,JSON.stringify(m,null,2)+'\n');
+console.log('Added one narrowly verified lesson contract and a source-specific family.');
