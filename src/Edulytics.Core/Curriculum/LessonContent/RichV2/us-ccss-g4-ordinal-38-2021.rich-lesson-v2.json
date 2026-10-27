@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l13-ordinal38-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l13-ordinal38-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L13",
@@ -32,6 +32,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Fractional Measurements on Line Plots reasoning",
+          "Definition": "Fractional lengths on a line plot require a consistent interval and unit.",
+          "Rule": "Fractional lengths on a line plot require a consistent interval and unit.",
+          "Example": "Difference between 2 1/2 inches and 1 3/4 inches?"
         }
       ],
       "WorkedExamples": [
@@ -46,6 +52,30 @@
           ],
           "Answer": "5 inches.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Difference between 2 1/2 inches and 1 3/4 inches?",
+          "Method": "Fractional lengths on a line plot require a consistent interval and unit.",
+          "Steps": [
+            "Convert 2 1/2 to 10/4 inches",
+            "Convert 1 3/4 to 7/4 inches",
+            "Subtract 10/4−7/4=3/4 inch"
+          ],
+          "Answer": "3/4 inch",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Difference between 6 1/4 and 5 7/8 inches?",
+          "Method": "Fractional lengths on a line plot require a consistent interval and unit.",
+          "Steps": [
+            "Rename quarter as two eighths",
+            "Regroup 6 2/8 as 5 10/8",
+            "Subtract to obtain 3/8 inch"
+          ],
+          "Answer": "3/8 inch",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -53,6 +83,11 @@
           "Mistake": "Treating each repeated measurement as a new tick label or mixing eighth- and quarter-inch spacing without conversion.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Check quarter- or eighth-inch units, preserve repeated marks on the plot, then answer measurement questions by exact fractional arithmetic."
+        },
+        {
+          "Mistake": "Confusing eighth inches with whole inches.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Read the fraction tick labels before subtracting."
         }
       ],
       "SummaryPoints": [

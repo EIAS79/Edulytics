@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l16-ordinal41-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l16-ordinal41-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L16",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Tenths and Hundredths, Together reasoning",
+          "Definition": "Convert tenths to hundredths before combining fractional distances.",
+          "Rule": "Convert tenths to hundredths before combining fractional distances.",
+          "Example": "Find 4/10+17/100."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "25/100 km = 1/4 km.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Find 4/10+17/100.",
+          "Method": "Convert tenths to hundredths before combining fractional distances.",
+          "Steps": [
+            "Convert 4/10 into 40/100",
+            "Add 40/100+17/100",
+            "The sum is 57/100"
+          ],
+          "Answer": "57/100",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Find 7/10+26/100.",
+          "Method": "Convert tenths to hundredths before combining fractional distances.",
+          "Steps": [
+            "Rename 7/10 as 70/100",
+            "Add 70/100+26/100",
+            "The sum is 96/100, below one whole"
+          ],
+          "Answer": "96/100",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Mistaking 2/10 for 2/100 changes the distance by a factor of ten.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Convert tenths to hundredths by multiplying numerator and denominator by ten, then combine."
+        },
+        {
+          "Mistake": "Adding denominators 10 and 100.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "One tenth equals ten hundredths."
         }
       ],
       "SummaryPoints": [

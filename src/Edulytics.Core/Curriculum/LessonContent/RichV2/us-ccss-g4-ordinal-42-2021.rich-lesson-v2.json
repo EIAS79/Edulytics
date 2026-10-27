@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l17-ordinal42-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l17-ordinal42-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L17",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Sums of Tenths and Hundredths reasoning",
+          "Definition": "Hundredths greater than 100/100 can be regrouped into whole units.",
+          "Rule": "Hundredths greater than 100/100 can be regrouped into whole units.",
+          "Example": "Find 9/10+35/100."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "24/100 = 6/25.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Find 9/10+35/100.",
+          "Method": "Hundredths greater than 100/100 can be regrouped into whole units.",
+          "Steps": [
+            "Rename 9/10 as 90/100",
+            "Add 90/100+35/100=125/100",
+            "Regroup as 1 25/100=1 1/4"
+          ],
+          "Answer": "1 1/4",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Find 6/10+75/100.",
+          "Method": "Hundredths greater than 100/100 can be regrouped into whole units.",
+          "Steps": [
+            "Rename 6/10 as 60/100",
+            "Add 60/100+75/100=135/100",
+            "Regroup as 1 35/100"
+          ],
+          "Answer": "1 35/100",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Combining 7 and 94 while ignoring that the two denominators describe different-sized parts.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Rewrite any tenths as hundredths, then find a missing addend with exact subtraction."
+        },
+        {
+          "Mistake": "Reading 125/100 as 125 wholes.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "One hundred hundredths make one whole."
         }
       ],
       "SummaryPoints": [

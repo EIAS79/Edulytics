@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u04-l03-ordinal48-abc-v1",
+  "ContentVersion": "g4-source-sequential-u04-l03-ordinal48-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L03",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Decimals on Number Lines reasoning",
+          "Definition": "A number line partitions decimals in equal tenth or hundredth intervals.",
+          "Rule": "A number line partitions decimals in equal tenth or hundredth intervals.",
+          "Example": "Order 0.3, 0.38 and 0.4 on a number line."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "0.45 < 0.50.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Order 0.3, 0.38 and 0.4 on a number line.",
+          "Method": "A number line partitions decimals in equal tenth or hundredth intervals.",
+          "Steps": [
+            "Express 0.3 as 0.30",
+            "Compare 30,38,40 hundredths",
+            "0.30<0.38<0.40"
+          ],
+          "Answer": "0.3 < 0.38 < 0.4",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "What is halfway between 0.3 and 0.4?",
+          "Method": "A number line partitions decimals in equal tenth or hundredth intervals.",
+          "Steps": [
+            "0.4−0.3=0.1",
+            "Half of 0.1 is 0.05",
+            "0.3+0.05=0.35"
+          ],
+          "Answer": "0.35",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Counting hundredth ticks without establishing the printed start, end and equal intervals.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Align tenths and hundredths accurately to positions between labelled endpoints, then compare values."
+        },
+        {
+          "Mistake": "Placing 0.38 before 0.3 because its digits have different lengths.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Rewrite 0.3 as 0.30 before comparing."
         }
       ],
       "SummaryPoints": [

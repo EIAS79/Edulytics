@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l14-ordinal39-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l14-ordinal39-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L14",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Problems about Fractional Measurement Data reasoning",
+          "Definition": "Fraction line-plot measurements can be compared or combined in consistent units.",
+          "Rule": "Fraction line-plot measurements can be compared or combined in consistent units.",
+          "Example": "Find 9 1/8−8 6/8 inches."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "3/8 inch.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Find 9 1/8−8 6/8 inches.",
+          "Method": "Fraction line-plot measurements can be compared or combined in consistent units.",
+          "Steps": [
+            "Write 9 1/8=73/8 and 8 6/8=70/8",
+            "Subtract 73/8−70/8=3/8",
+            "Keep inches as the difference unit"
+          ],
+          "Answer": "3/8 inch",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Add 3 1/4 and 2 3/8 inches.",
+          "Method": "Fraction line-plot measurements can be compared or combined in consistent units.",
+          "Steps": [
+            "Rename 1/4 as 2/8",
+            "Add whole parts 3+2=5",
+            "Add 2/8+3/8=5/8 for 5 5/8"
+          ],
+          "Answer": "5 5/8 inches",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Counting one x-mark for every distinct length instead of every observed shoe measurement.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Read tick labels in eighth-inches, count the marks at each value, and use like units in every comparison."
+        },
+        {
+          "Mistake": "Counting ticks without verifying the scale interval.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Confirm the common fractional ruler scale."
         }
       ],
       "SummaryPoints": [

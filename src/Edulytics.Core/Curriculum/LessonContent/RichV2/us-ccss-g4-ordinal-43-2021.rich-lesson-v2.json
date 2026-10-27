@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l18-ordinal43-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l18-ordinal43-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L18",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Lots of Fractions to Add reasoning",
+          "Definition": "Multi-term tenths and hundredths sums use common fractional units.",
+          "Rule": "Multi-term tenths and hundredths sums use common fractional units.",
+          "Example": "Find 2/10+3/100+5/10."
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "34/100 = 17/50.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Find 2/10+3/100+5/10.",
+          "Method": "Multi-term tenths and hundredths sums use common fractional units.",
+          "Steps": [
+            "Rename 2/10=20/100",
+            "Rename 5/10=50/100",
+            "Add 20+3+50=73 hundredths"
+          ],
+          "Answer": "73/100",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Find 4/10+7/100+25/100.",
+          "Method": "Multi-term tenths and hundredths sums use common fractional units.",
+          "Steps": [
+            "Rename 4/10=40/100",
+            "Add 40+7+25=72",
+            "Result 72/100=18/25"
+          ],
+          "Answer": "72/100",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Adding decimal digits without aligning the hundredths position changes the value.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Use equivalence 1/10=10/100, then group known friendly parts without dropping place value."
+        },
+        {
+          "Mistake": "Adding fraction denominators instead of combining same-sized units.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Use the same hundredths for every addend."
         }
       ],
       "SummaryPoints": [

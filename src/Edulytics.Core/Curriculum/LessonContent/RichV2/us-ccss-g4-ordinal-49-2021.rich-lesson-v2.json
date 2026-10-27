@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u04-l04-ordinal49-abc-v1",
+  "ContentVersion": "g4-source-sequential-u04-l04-ordinal49-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L04",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Compare and Order Decimals reasoning",
+          "Definition": "Decimal comparisons start with the largest place value.",
+          "Rule": "Decimal comparisons start with the largest place value.",
+          "Example": "Which is greater, 0.62 or 0.59?"
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "0.9 > 0.8.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Which is greater, 0.62 or 0.59?",
+          "Method": "Decimal comparisons start with the largest place value.",
+          "Steps": [
+            "0.62 has six tenths",
+            "0.59 has five tenths",
+            "Six tenths is greater than five tenths"
+          ],
+          "Answer": "0.62",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Order 0.08, 0.80 and 0.18.",
+          "Method": "Decimal comparisons start with the largest place value.",
+          "Steps": [
+            "Write all values in hundredths",
+            "Compare 8,80 and 18 hundredths",
+            "8<18<80"
+          ],
+          "Answer": "0.08 < 0.18 < 0.80",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Assuming longer written decimals must be greater, for example 0.45 versus 0.9.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Align values to hundredths when useful and compare from greatest place value left to right."
+        },
+        {
+          "Mistake": "Claiming 0.59 exceeds 0.62 because the digit 9 is larger than 2.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Compare tenths first, then hundredths."
         }
       ],
       "SummaryPoints": [

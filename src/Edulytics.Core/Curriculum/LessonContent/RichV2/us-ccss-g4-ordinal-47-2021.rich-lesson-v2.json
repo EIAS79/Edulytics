@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u04-l02-ordinal47-abc-v1",
+  "ContentVersion": "g4-source-sequential-u04-l02-ordinal47-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L02",
@@ -30,6 +30,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Equivalent Decimals reasoning",
+          "Definition": "Trailing zeros to the right of a decimal do not change its value.",
+          "Rule": "Trailing zeros to the right of a decimal do not change its value.",
+          "Example": "Are 0.4 and 0.40 equivalent?"
         }
       ],
       "WorkedExamples": [
@@ -44,6 +50,30 @@
           ],
           "Answer": "Yes: 0.2 = 0.20.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Are 0.4 and 0.40 equivalent?",
+          "Method": "Trailing zeros to the right of a decimal do not change its value.",
+          "Steps": [
+            "0.4=4 tenths",
+            "4 tenths=40 hundredths",
+            "0.4=0.40"
+          ],
+          "Answer": "Yes",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Are 0.70 and 0.7 equivalent?",
+          "Method": "Trailing zeros to the right of a decimal do not change its value.",
+          "Steps": [
+            "0.70=70/100",
+            "70/100 reduces to 7/10",
+            "7/10=0.7"
+          ],
+          "Answer": "Yes",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -51,6 +81,11 @@
           "Mistake": "Treating an additional trailing zero as increasing a number by a factor of ten.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Express each decimal as tenths or hundredths before deciding whether two notations name the same quantity."
+        },
+        {
+          "Mistake": "Claiming 0.4 differs in value from 0.40.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Both represent forty hundredths or four tenths."
         }
       ],
       "SummaryPoints": [

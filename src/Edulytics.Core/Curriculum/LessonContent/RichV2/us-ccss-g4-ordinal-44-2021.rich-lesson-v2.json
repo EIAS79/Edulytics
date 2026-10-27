@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u03-l19-ordinal44-abc-v1",
+  "ContentVersion": "g4-source-sequential-u03-l19-ordinal44-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U03:L19",
@@ -32,6 +32,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Flexible with Fractions (optional) reasoning",
+          "Definition": "Distinguish fraction multiplication from joining or removing fractional amounts.",
+          "Rule": "Distinguish fraction multiplication from joining or removing fractional amounts.",
+          "Example": "Evaluate 3×1/4+2/4."
         }
       ],
       "WorkedExamples": [
@@ -46,6 +52,30 @@
           ],
           "Answer": "3 and 1/4 inches.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Evaluate 3×1/4+2/4.",
+          "Method": "Distinguish fraction multiplication from joining or removing fractional amounts.",
+          "Steps": [
+            "Three copies of 1/4 give 3/4",
+            "Add two more quarters",
+            "3/4+2/4=5/4=1 1/4"
+          ],
+          "Answer": "1 1/4",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Evaluate 2×3/8−1/8.",
+          "Method": "Distinguish fraction multiplication from joining or removing fractional amounts.",
+          "Steps": [
+            "Two groups of 3/8 give 6/8",
+            "Remove one eighth",
+            "6/8−1/8=5/8"
+          ],
+          "Answer": "5/8",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -53,6 +83,11 @@
           "Mistake": "Adding the fractional denominator when two pieces use the same eighth-inch unit.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Translate each sticky-note length or trail measurement into common units, then compare total to the physical limit."
+        },
+        {
+          "Mistake": "Using multiplication for every operation in an optional mixed-operation task.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Read the context before selecting the operation."
         }
       ],
       "SummaryPoints": [

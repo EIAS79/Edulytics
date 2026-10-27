@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-source-sequential-u04-l01-ordinal46-abc-v1",
+  "ContentVersion": "g4-source-sequential-u04-l01-ordinal46-abc-v1-stage-d-reviewed-math-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L01",
@@ -31,6 +31,12 @@
           "Definition": "Keep units and meaning invariant.",
           "Rule": "Read the original task conditions before performing arithmetic.",
           "Example": "Check the work with the rational equality or inequality."
+        },
+        {
+          "Title": "Independent Decimal Numbers reasoning",
+          "Definition": "Tenths and hundredths have different places in decimal notation.",
+          "Rule": "Tenths and hundredths have different places in decimal notation.",
+          "Example": "Express 6/10 as decimal and hundredths."
         }
       ],
       "WorkedExamples": [
@@ -45,6 +51,30 @@
           ],
           "Answer": "78/100 = 0.78.",
           "Check": "Exact rational calculation confirmed; source example not copied."
+        },
+        {
+          "Title": "Edulytics independent example 1",
+          "Question": "Express 6/10 as decimal and hundredths.",
+          "Method": "Tenths and hundredths have different places in decimal notation.",
+          "Steps": [
+            "Six tenths uses tenths place",
+            "Write decimal 0.6",
+            "Equivalent hundredths are 60/100=0.60"
+          ],
+          "Answer": "0.6",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
+        },
+        {
+          "Title": "Edulytics independent example 2",
+          "Question": "Express 27/100 as a decimal.",
+          "Method": "Tenths and hundredths have different places in decimal notation.",
+          "Steps": [
+            "Denominator 100 means hundredth parts",
+            "Place digit 2 in tenths and 7 in hundredths",
+            "Write 0.27"
+          ],
+          "Answer": "0.27",
+          "Check": "Exact first-party numeric reasoning. Original publisher source graphics and teacher-scored activities remain independently reviewable."
         }
       ],
       "CommonMistakes": [
@@ -52,6 +82,11 @@
           "Mistake": "Reading 0.78 as seventy-eight tenths ignores the hundredths place.",
           "WhyWrong": "It does not preserve the intended mathematical relationship or original task condition.",
           "Correction": "Count fractional parts on the 10-by-10 unit model and express 78/100 as the decimal 0.78."
+        },
+        {
+          "Mistake": "Writing six tenths as 0.06.",
+          "WhyWrong": "The comparison or calculation loses the actual part size or task meaning.",
+          "Correction": "Six tenths equals 0.6, sixty hundredths."
         }
       ],
       "SummaryPoints": [
