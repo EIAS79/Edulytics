@@ -100,7 +100,7 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             using var aliases=JsonDocument.Parse(File.ReadAllText(aliasPath));
             var entries=aliases.RootElement.GetProperty("entries").EnumerateArray().ToArray();
             if(entries.Length!=23 || entries.Select(x=>x.GetProperty("lessonCode").GetString())
-                   .Distinct(StringComparer.Ordinal).Count()!=13)return false;
+                   .Distinct(StringComparer.Ordinal).Count()!=23)return false;
             var g4AliasMatches=entries.Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
             if(g4AliasMatches.Length!=1)return false;
             var row=g4AliasMatches[0];
