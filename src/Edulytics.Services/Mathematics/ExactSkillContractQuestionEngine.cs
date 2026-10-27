@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l01.geometric_description_precision",
             "usccss.g4.u06.l25.flower_garland_patterns",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
             "fractions.represent.interpret.fraction_bar",
@@ -1161,6 +1162,13 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l01.geometric_description_precision" =>
+                parameters.TryGetValue("caseType", out var l112Case) &&
+                parameters.TryGetValue("preciseFirst", out var l112First) &&
+                l112Case is >= 0 and <= 5 &&
+                l112First is 0 or 1 &&
+                value == (l112First == 1 ? 1 : 2),
+
             "usccss.g4.u06.l25.flower_garland_patterns" =>
                 parameters.TryGetValue("caseType", out var l111Case) &&
                 parameters.TryGetValue("garlandsEach", out var l111Pairs) &&
@@ -2075,6 +2083,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l01.geometric_description_precision" => BuildG4GeometricDescriptionPrecision(random),
             "usccss.g4.u06.l25.flower_garland_patterns" => BuildG4FlowerPatterns(random),
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
             "fractions.of_quantity.build" or
@@ -3418,6 +3427,38 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+    private static ExactProblem BuildG4GeometricDescriptionPrecision(Random random)
+    {
+        // Source IM 2021 G4 U07:L01: students compare how precisely partners
+        // describe locations and straight marks, not formal line/segment definitions.
+        // Independent first-party examples, never copies of protected figure cards.
+        var mode = random.Next(0, 6);
+        var preciseFirst = random.Next(0, 2);
+        var descriptions = mode switch
+        {
+            0 => ("Put a line somewhere near the top.",
+                  "Draw a horizontal straight stroke through the two marked top-row dots."),
+            1 => ("Draw a big shape here.",
+                  "Join the three dots labelled A, B and C to draw a triangle."),
+            2 => ("Put that mark over there.",
+                  "Mark point P where the vertical stroke crosses the horizontal stroke."),
+            3 => ("Draw something diagonal.",
+                  "Draw a straight stroke through dots P and R, extending it toward both paper edges."),
+            4 => ("Make a quadrilateral.",
+                  "Connect the four corner dots and describe which strokes are horizontal and vertical."),
+            _ => ("Add a dot there.",
+                  "Mark a dot halfway between labelled points A and B on the top straight stroke.")
+        };
+        var first = preciseFirst == 1 ? descriptions.Item2 : descriptions.Item1;
+        var second = preciseFirst == 1 ? descriptions.Item1 : descriptions.Item2;
+        return Problem("usccss.g4.u07.l01.geometric_description_precision",
+            $"A drawing partner cannot see your card. Which instruction is clearer about position or direction? 1) {first} 2) {second}. Answer 1 or 2.",
+            "Precise directions name points, relative locations, orientation, or endpoints; then compare the partner's drawing. This checks clarity, not the original open drawing.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("preciseFirst", preciseFirst));
+    }
+
     private static ExactProblem BuildG4FlowerPatterns(Random random)
     {
         // IM K-5 2021 G4 U06:L25 optional source: 12-flower repeating
@@ -4409,6 +4450,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l01.geometric_description_precision" => (p["preciseFirst"] == 1 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l25.flower_garland_patterns" => (p["caseType"] switch { 0 => p["garlandsEach"] * (p["priyaBig"] + p["jadaBig"]), 1 => p["garlandsEach"] * (p["priyaSmall"] + p["jadaSmall"]), 2 => p["flowersMade"] / p["flowersPerGarland"], 3 => p["flowersMade"] % p["flowersPerGarland"], 4 => p["flowersMade"] * (p["cutMinutes"] + p["finishMinutes"]), _ => ((p["flowersMade"] + p["workers"] - 1) / p["workers"]) * (p["cutMinutes"] + p["finishMinutes"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l24.language_population_comparisons" => (p["caseType"] switch { 0 => p["navajo"] - p["yupik"], 1 => p["navajo"] + p["apache"] + p["cherokee"], 2 => p["navajo"] - (p["yupik"] + p["dakota"] + p["apache"] + p["keres"] + p["cherokee"] + p["ojibwa"] + p["choctaw"] + p["zuni"] + p["pima"]), 3 => p["philadelphiaEnglish"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"] - p["philadelphiaAsian"], 4 => p["chicagoSpanish"] + p["chicagoIndo"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"], _ => (2 * p["navajo"] + p["yupik"]) / (2 * p["yupik"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l23.four_operation_contexts" => (p["caseType"] switch { 0 => 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]), 1 => p["musicTotalFeet"] / (2 * p["musicTrips"]), 2 => 2 * p["feetPerMile"] - (p["longTrips"] * 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]) + p["musicTotalFeet"]), 3 => p["week1"] / p["days"], 4 => p["week1"] - p["week2"], _ => p["stepTarget"] - p["week1"] - p["week2"] - p["week3"] }).ToString(CultureInfo.InvariantCulture),

@@ -19518,6 +19518,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l01.geometric_description_precision",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independently-check-precision-position-clarity-from-generated-option-order",
+      "representations": [
+        "symbolic",
+        "descriptive_instruction",
+        "teacher_led_figure_review"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
