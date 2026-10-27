@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l06.compare_angle_openings",
             "usccss.g4.u07.l05.angle_common_vertex_rays",
             "usccss.g4.u07.l03.dot_grid_parallel_intersect",
             "usccss.g4.u07.l02.geometry_cards_number_talk",
@@ -1165,6 +1166,37 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l06.compare_angle_openings" =>
+                parameters.TryGetValue("caseType", out var l117Mode) &&
+                parameters.TryGetValue("variant", out var l117Variant) &&
+                parameters.TryGetValue("start1", out var l117Start1) &&
+                parameters.TryGetValue("end1", out var l117End1) &&
+                parameters.TryGetValue("start2", out var l117Start2) &&
+                parameters.TryGetValue("end2", out var l117End2) &&
+                parameters.TryGetValue("steps1", out var l117Steps1) &&
+                parameters.TryGetValue("steps2", out var l117Steps2) &&
+                l117Mode is >= 0 and <= 7 &&
+                l117Variant is >= 0 and <= 2 &&
+                l117Start1 == 2 * l117Variant &&
+                l117Start2 == (l117Start1 + 2) % 8 &&
+                l117Steps1 is >= 1 and <= 4 &&
+                l117Steps2 is >= 1 and <= 4 &&
+                l117End1 == (l117Start1 + l117Steps1) % 8 &&
+                l117End2 == (l117Start2 + l117Steps2) % 8 &&
+                (l117Mode switch
+                {
+                    0 => l117Steps1 == 1 && l117Steps2 == 2,
+                    1 => l117Steps1 == 3 && l117Steps2 == 1,
+                    2 => l117Steps1 == 2 && l117Steps2 == 2,
+                    3 => l117Steps1 == 4 && l117Steps2 == 3,
+                    4 => l117Steps1 == 1 && l117Steps2 == 4,
+                    5 => l117Steps1 == 3 && l117Steps2 == 2,
+                    6 => l117Steps1 == 4 && l117Steps2 == 4,
+                    7 => l117Steps1 == 2 && l117Steps2 == 3,
+                    _ => false
+                }) &&
+                value == (l117Steps1 > l117Steps2 ? 1 : l117Steps1 < l117Steps2 ? 2 : 3),
+
             "usccss.g4.u07.l05.angle_common_vertex_rays" =>
                 parameters.TryGetValue("caseType", out var l116Case) &&
                 parameters.TryGetValue("variant", out var l116Variant) &&
@@ -2149,6 +2181,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l06.compare_angle_openings" => BuildG4CompareAngleOpenings(random),
             "usccss.g4.u07.l05.angle_common_vertex_rays" => BuildG4AngleCommonVertexRays(random),
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" => BuildG4ParallelIntersectDotGrid(random),
             "usccss.g4.u07.l02.geometry_cards_number_talk" => BuildG4PointLineRayCardAndNumberTalk(random),
@@ -3498,6 +3531,43 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4CompareAngleOpenings(Random random)
+    {
+        // IM 2021 G4 U07:L06 explores size as the opening/turn, not ray length.
+        // Eight first-party compass directions are 1/8 of a turn apart.
+        // Both compared angle openings are at most a half turn; no
+        // original A-P picture cards or protected publisher tasks are graded.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        var (steps1, steps2) = mode switch
+        {
+            0 => (1, 2),
+            1 => (3, 1),
+            2 => (2, 2),
+            3 => (4, 3),
+            4 => (1, 4),
+            5 => (3, 2),
+            6 => (4, 4),
+            _ => (2, 3)
+        };
+        var start1 = variant * 2;
+        var start2 = (start1 + 2) % 8;
+        var end1 = (start1 + steps1) % 8;
+        var end2 = (start2 + steps2) % 8;
+        string[] directions = ["north", "northeast", "east", "southeast",
+            "south", "southwest", "west", "northwest"];
+        var prompt = $"On a compass, adjacent named directions are one eighth of a full turn apart. Angle A has two arms from P pointing {directions[start1]} and {directions[end1]}; Angle B has two arms from Q pointing {directions[start2]} and {directions[end2]}. Compare the SMALLER openings, ignoring how long the arms are drawn: 1=A larger, 2=B larger, or 3=equal.";
+        var result = steps1 > steps2 ? "A is larger" :
+            steps1 < steps2 ? "B is larger" : "the openings are equal";
+        return Problem("usccss.g4.u07.l06.compare_angle_openings", prompt,
+            $"Count the compass intervals in each smaller opening: A has {steps1} eighth-turn steps, B has {steps2}. Therefore {result}. Arm length cannot change the opening.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("start1", start1), ("end1", end1),
+            ("start2", start2), ("end2", end2),
+            ("steps1", steps1), ("steps2", steps2));
+    }
+
     private static ExactProblem BuildG4AngleCommonVertexRays(Random random)
     {
         // Original 2021 G4 U07:L05 introduces angles as two distinct rays
@@ -4626,6 +4696,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l06.compare_angle_openings" => (p["steps1"] > p["steps2"] ? 1 : p["steps1"] < p["steps2"] ? 2 : 3).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l05.angle_common_vertex_rays" => (p["start1"] == p["start2"] ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" => (p["caseType"] < 4 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l02.geometry_cards_number_talk" => (p["caseType"] < 4

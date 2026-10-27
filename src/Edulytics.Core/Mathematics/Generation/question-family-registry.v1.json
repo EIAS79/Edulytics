@@ -19594,6 +19594,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l06.compare_angle_openings",
+      "version": 1,
+      "skillId": "geometry.angles.compare_opening_compass_turn",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-bounded-eighth-turn-angle-comparison-with-validated-compass-directions-and-answer-choice",
+      "representations": [
+        "described_compass_rays",
+        "angle_opening_compare",
+        "teacher_led_source_angle_cards"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
