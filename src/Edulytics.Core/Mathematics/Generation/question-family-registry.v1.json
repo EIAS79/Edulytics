@@ -3,132 +3,132 @@
   "registryVersion": "math-question-families-v1",
   "status": "Shadow",
   "families": [
-{
-  "id": "usccss.g4.u02.l03.same_denominator",
-  "version": 1,
-  "skillId": "fractions.compare.unlike_denominators",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "positive-rational-exact-cross-products",
-  "representations": [
-    "symbolic",
-    "fraction_bars"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
-{
-  "id": "usccss.g4.u02.l03.same_numerator",
-  "version": 1,
-  "skillId": "fractions.compare.unlike_denominators",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "positive-rational-exact-cross-products",
-  "representations": [
-    "symbolic",
-    "fraction_bars"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
-{
-  "id": "usccss.g4.u01.l07.is_factor",
-  "version": 1,
-  "skillId": "supporting.number.factors_primes",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "positive-whole-number-source-target-divisibility",
-  "representations": [
-    "symbolic",
-    "contextual"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
-{
-  "id": "usccss.g4.u01.l07.is_multiple",
-  "version": 1,
-  "skillId": "supporting.number.factors_primes",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "positive-whole-number-source-target-divisibility",
-  "representations": [
-    "symbolic",
-    "contextual"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
-{
-  "id": "usccss.g4.u01.l06.student_touches",
-  "version": 1,
-  "skillId": "supporting.number.factors_primes",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
-  "representations": [
-    "symbolic",
-    "contextual"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
-{
-  "id": "usccss.g4.u01.l06.touch_count",
-  "version": 1,
-  "skillId": "supporting.number.factors_primes",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
-  "representations": [
-    "symbolic",
-    "contextual"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
-{
-  "id": "usccss.g4.u01.l06.end_open",
-  "version": 1,
-  "skillId": "supporting.number.factors_primes",
-  "requiredCapabilities": [
-    "lesson.practice.exact.generate",
-    "lesson.practice.exact.verify"
-  ],
-  "answerType": "exact_integer",
-  "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
-  "representations": [
-    "symbolic",
-    "contextual"
-  ],
-  "status": "ShadowVerified",
-  "productionRouting": false,
-  "lessonPracticeRouting": true
-},
+    {
+      "id": "usccss.g4.u02.l03.same_denominator",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-rational-exact-cross-products",
+      "representations": [
+        "symbolic",
+        "fraction_bars"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u02.l03.same_numerator",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-rational-exact-cross-products",
+      "representations": [
+        "symbolic",
+        "fraction_bars"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l07.is_factor",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-whole-number-source-target-divisibility",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l07.is_multiple",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-whole-number-source-target-divisibility",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l06.student_touches",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l06.touch_count",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l06.end_open",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
     {
       "id": "usccss.g4.u01.l05.exact_seating",
       "version": 1,
@@ -19306,6 +19306,44 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l15.area_partial_quotients",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independently-recompute-integer-side-from-area-and-known-width-only-when-remainder-zero",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic",
+        "area_partition"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.g4.u06.l15.mural_complete_columns",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independently-recompute-floor-quotient-and-nonzero-remainder-in-complete-column-mural-context",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {

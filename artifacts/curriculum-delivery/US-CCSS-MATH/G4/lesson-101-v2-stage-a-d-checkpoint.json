@@ -1,12 +1,12 @@
 {
   "ordinal": 101,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
-  "status": "A_C_EXPLICIT_GAP_L101_SOURCE_MEDIA_AND_PRACTICE_RUNTIME",
+  "status": "A_C_EXPLICIT_GAP_L101_SOURCE_MEDIA_AND_ROUTING_PERSISTENCE",
   "readyForStageD": false,
   "stages": {
     "A": "2021_SOURCE_GOALS_ALL_VISIBLE_STUDENT_FACING_TASKS_AND_TEACHER_MOVES_ATOMIC_LEDGER_AUTHORED; LINKED_STUDENT_PDF_COOLDOWN_AND_ORIGINAL_IMAGE_BYTES_UNAVAILABLE",
     "B": "2021_SOURCE_LEARNING_GOAL_AND_ELENA_TYLER_EXAMPLES_RETAINED; GENERIC_THIRD_EXAMPLE_REPLACED_WITH_SOURCE_WARMUP_SOCCER_ESTIMATION; THREE_FIRST_PARTY_MATH_VISUAL_MODELS_AUTHORED; RUNTIME_AND_SOURCE_FIGURE_PARITY_UNVERIFIED",
-    "C": "EXTENDED_AREA_EXACT_AND_LEFTOVER_QUESTION_FAMILIES_STAGED_IN_EXISTING_KERNEL; TARGETED_TESTS_WRITTEN_NOT_RUN; FAMILY_ROUTING_AND_TEACHER_REVIEW_UNVERIFIED",
+    "C": "FOCUSED_EXACT_GENERATOR_AND_NEGATIVE_MALFORMED_VERIFIER_TESTS_2_PASSED; LESSON_ROUTING_AUTHENTICATED_SCORE_PERSISTENCE_TEACHER_DRAWING_REVIEW_UNVERIFIED",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,7 +22,7 @@
   "sourceVisualParityProven": false,
   "studentMirrorValid": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
   "blockers": [
     "No valid standalone student mirror (saved page is 404); teacher page Student Facing used.",
@@ -45,5 +45,16 @@
     "graphicRenderingVerified": false,
     "studentGraphicSubmissionVerified": false,
     "teacherDeliveryVerified": false
+  },
+  "focusedTestEvidence": {
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "testSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "workflow": "g4-2021-l101-focused.yml",
+    "filter": "FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests",
+    "failed": 0,
+    "passed": 2,
+    "skipped": 0,
+    "total": 2,
+    "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
   }
 }

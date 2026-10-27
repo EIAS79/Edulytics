@@ -3,7 +3,7 @@
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
   "edition": "1st Edition (2021)",
   "ordinal": 101,
-  "status": "STAGE_C_KERNEL_EXTENSION_WRITTEN_NOT_RUN",
+  "status": "NARROW_ENGINE_GENERATOR_VERIFIER_TESTED_ROUTING_AND_TEACHER_REVIEW_PENDING",
   "sourceTitle": "Situations Involving Area",
   "learningObjective": "Use partial quotients to find an unknown side length of a rectangle when its area and the other side are known, and interpret a leftover-tile remainder in context.",
   "curriculumCodes": [
@@ -124,8 +124,19 @@
     "enabled": false,
     "reason": "No lesson-specific mapping/negative and malformed response test execution; deployment not approved."
   },
-  "currentStageCStatus": "DESIGNED_NO_GENERATOR_GRADEBOOK_RUNTIME_PROOF",
-  "tests": "WRITTEN_NOT_RUN",
+  "currentStageCStatus": "FOCUSED_GENERATE_AND_VERIFY_PASSED; ROUTING_GRADEBOOK_AND_TEACHER_VISUAL_REVIEW_UNVERIFIED",
+  "tests": {
+    "state": "FOCUSED_DOTNET_EXECUTED_PASSED",
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "testSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "workflow": "g4-2021-l101-focused.yml",
+    "filter": "FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests",
+    "failed": 0,
+    "passed": 2,
+    "skipped": 0,
+    "total": 2,
+    "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+  },
   "teacherLed": [
     "Original diagrams and source visuals need teacher fidelity review",
     "Physical tiling and drawing original classroom activity remain teacher-observed",
@@ -141,10 +152,13 @@
       "usccss.g4.u06.l15.mural_complete_columns"
     ],
     "purpose": "Reuses existing exact area/division kernel, adds 3-digit tile count / 1-digit width and floor-quotient context in separate families.",
-    "status": "AUTHORED_NOT_TESTED_NOT_REGISTERED",
+    "status": "FOCUSED_TESTED_UNROUTED_SHADOW",
     "stagedNoProductionRouting": true,
     "teacherReviewedOriginalDrawingsRequired": true,
     "focusedTest": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal101AreaDivisionExactTests.cs",
-    "testState": "WRITTEN_NOT_RUN"
+    "testState": "2_PASSED_0_FAILED_FOCUSED_CI",
+    "testedSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "testRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "registryState": "SHADOW_UNROUTED_PRODUCTION_FALSE"
   }
 }

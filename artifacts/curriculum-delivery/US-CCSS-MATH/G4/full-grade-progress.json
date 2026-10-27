@@ -8,7 +8,7 @@
   "lastClosedOrdinal": 100,
   "currentLessonOrdinal": 101,
   "readyForStageD": 100,
-  "status": "G4_2021_AUTHORING_THROUGH_149_L101_STAGE_C_PRACTICE_UNVERIFIED",
+  "status": "G4_2021_AUTHORING_149_L101_NARROW_TEST_2_PASS_A_C_GAPS_REMAIN",
   "lessonStates": {
     "1": "READY_FOR_STAGE_D",
     "2": "READY_FOR_STAGE_D",
@@ -110,7 +110,7 @@
     "98": "READY_FOR_STAGE_D",
     "99": "READY_FOR_STAGE_D",
     "100": "READY_FOR_STAGE_D",
-    "101": "A_C_EXPLICIT_GAP_L101_SOURCE_AND_TEACHER_PRACTICE",
+    "101": "A_C_EXPLICIT_GAP_L101_SOURCE_MEDIA_AND_ROUTING_PERSISTENCE",
     "102": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
     "103": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
     "104": "STAGE_B_SOURCE_ALIGNED_C_PRACTICE_AND_RUNTIME_EVIDENCE_PENDING",
@@ -196,5 +196,18 @@
     "status": "STAGE_C_BLOCKED"
   },
   "activeCurriculumEdition": "Illustrative Mathematics K-5 First Edition (2021)",
-  "sourceEditionPolicy": "EXCLUSIVE_2021"
+  "sourceEditionPolicy": "EXCLUSIVE_2021",
+  "latestStageCFocusedEvidence": {
+    "ordinal": 101,
+    "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "testSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "workflow": "g4-2021-l101-focused.yml",
+    "filter": "FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests",
+    "failed": 0,
+    "passed": 2,
+    "skipped": 0,
+    "total": 2,
+    "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+  }
 }
