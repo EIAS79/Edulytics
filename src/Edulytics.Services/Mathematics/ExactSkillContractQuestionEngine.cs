@@ -3154,7 +3154,7 @@ public sealed class ExactSkillContractQuestionEngine
         // 2021 G4 U06:L20: keep rounding, short rows and missing savings distinct.
         var caseType = random.Next(0, 5);
         var divisor = random.Next(2, 10);
-        var quotient = random.Next(28, 650);
+        var quotient = random.Next(Math.Max(50, (100 + divisor - 1) / divisor), 650);
         var remainder = caseType == 4 ? 0 : random.Next(1, divisor);
         var dividend = divisor * quotient + remainder;
         var shortfall = caseType == 3 ? remainder : 0;
