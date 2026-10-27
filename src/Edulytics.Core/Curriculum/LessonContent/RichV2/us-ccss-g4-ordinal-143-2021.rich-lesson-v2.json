@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.9.6-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l143-division-partial-quotients",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U09:L06",
@@ -13,7 +13,9 @@
         "Math focus: Complete unfinished long division by subtracting accurate partial products of the divisor and summing partial quotients.",
         "Worked Edulytics example: Divide 7,465 by 5 with convenient chunks: 5,000 and 2,000 leave 465. Subtract 400 and 65, each divisible by 5. Add quotient contributions 1,000 + 400 + 80 + 13 = 1,493. Check 1,493 × 5 = 7,465.",
         "First-party Edulytics Cool-down (publisher's original not inspected): Find 8,256 ÷ 6, checking by multiplication.",
-        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review."
+        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review.",
+        "2021 U09:L06 reinforces multiple partial-quotient division algorithms and strategy comparison. Warm-up 48÷3=16, 480÷3=160. Activity 1 shows FOUR unfinished source calculations of 7,465÷5, total quotient 1,493. The student must finish at least two original partial-quotient representations, not simply enter the answer. Original displays are teacher-reviewed.",
+        "Activity 2 Jada and Noah consider computing 3,681÷9. Jada begins with 81÷9=9 while Noah begins with 3,600÷9=400; both correct partial-quotient groups combine to 409. The equivalence 3,600+81=3,681 and 400+9=409 is explicit mathematical evidence. Reuse established grade4 U06 partial-quotients recording family as supplementary numeric training rather than a new engine."
       ],
       "KeyConcepts": [
         {
@@ -72,6 +74,19 @@
           ],
           "Answer": "Requires original student work and teacher evaluation; no automatically graded publisher answer is claimed.",
           "Check": "A guided reasoning pathway, not an independently tested Practice item."
+        },
+        {
+          "Title": "Original Jada and Noah strategies",
+          "Question": "Find 3,681÷9 starting from 3,600 or 81.",
+          "Method": "Split dividend into multiples of 9.",
+          "Steps": [
+            "3,681=3,600+81.",
+            "3,600÷9=400.",
+            "81÷9=9.",
+            "400+9=409."
+          ],
+          "Answer": "409.",
+          "Check": "409×9=3,681."
         }
       ],
       "CommonMistakes": [
