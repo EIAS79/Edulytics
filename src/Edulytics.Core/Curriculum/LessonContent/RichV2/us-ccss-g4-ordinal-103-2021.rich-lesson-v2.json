@@ -9,88 +9,204 @@
       "Title": "Base-ten Diagrams to Represent Division",
       "ExplanationParagraphs": [
         "Learning goal: You will find the quotients of two-digit and three-digit dividends and one-digit divisors.\nIn grade 3, you used base-ten representations to help them reason about division of a two-digit number into equal-size groups. This lesson builds on that understanding and revisits it in the context of three-digit dividends. You recall that you can exchange or decompose one or more units of a higher place value for 10 units of the next lower place value in order to have enough units to put into equal groups.",
-        "Source activity sequence: Warm-up: Which One Doesn’t Belong: Base-ten Diagrams (10 minutes); Activity 1: Divide with Diagrams or Blocks (15 minutes); Activity 2: Help Noah Get Unstuck (20 minutes); Cool-down: Find the Value of a Quotient (5 minutes)",
-        "Exact mathematical focus: Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping.",
-        "Edulytics authored model: Represent 235 as 2 hundreds, 3 tens and 5 ones. Regroup to 23 tens, share 20 tens among 5 groups (4 tens each). Regroup remaining 3 tens into 30 ones; 35 ones give 7 to each group. Answer 47.",
-        "First-party Cool-down: Represent 117 ÷ 3 with a base-ten diagram.",
-        "Original diagrams, live construction, classroom response, and publisher login-gated Cool-down are not digitally certified."
+        "2021 source: Warm-up Which One Doesn't Belong with four base-ten representations; Activity 1 Priya's 64÷4 and 117÷3; Activity 2 Help Noah Get Unstuck with 235÷5 and 432÷6.",
+        "Equal groups are formed by exchanging one hundred for ten tens or one ten for ten ones. The quotient is the value of each equal group; a written diagram must show the trades.",
+        "64÷4=16; 117÷3=39; 235÷5=47; 432÷6=72. Source synthesis also discusses 712÷4=178 and multiple valid representations of 111.",
+        "First-party Edulytics Cool-down (not the publisher's protected original): explain with a diagram 156÷4=39, exchanging hundreds into tens and leftover tens into ones.",
+        "Teacher assesses the original diagram-comparison warm-up, student drawings, and Noah's explanation separately from machine-graded integer Practice."
       ],
       "KeyConcepts": [
         {
-          "Title": "Lesson mathematics",
-          "Definition": "Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping.",
-          "Rule": "Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping.",
-          "Example": "Represent 235 as 2 hundreds, 3 tens and 5 ones."
+          "Title": "Hundreds, tens and ones retain their value",
+          "Definition": "One hundred = ten tens, one ten = ten ones.",
+          "Rule": "Exchange a higher place-value unit whenever equal groups cannot receive a whole unit.",
+          "Example": "117 = 1 hundred + 1 ten + 7 ones; exchange the hundred into ten tens."
         },
         {
-          "Title": "Original task representation",
-          "Definition": "The purpose of this lesson is for students to find the quotients of two-digit and three-digit dividends and one-digit divisors. They do so by decomposing the dividend by place value—decomposing a larger unit to 10 of a smaller unit—and by reasoning in terms of equal-size groups.",
-          "Rule": "Honor the original quantities, units, diagrams and type of student response.",
-          "Example": "Priya draws a base-ten diagram to find the value of \\(64 \\div 4\\). A rectangle represents 10. A small square represents 1. | Use the diagram (or actual blocks) to help Priya complete the division. Explain or show your reasoning. | Use this base-ten diagram (or"
+          "Title": "Equal groups with base-ten diagrams",
+          "Definition": "The quotient is the total value assigned to each equal-size group.",
+          "Rule": "Share hundreds, trade leftovers, share tens, trade leftovers, then share ones.",
+          "Example": "64÷4 = 16; share four tens and sixteen ones among four groups."
         },
         {
-          "Title": "Evidence and checking",
-          "Definition": "Verify the original task using a mathematically meaningful representation.",
-          "Rule": "Show why the result or drawn figure satisfies every given condition; teacher judges open construction.",
-          "Example": "Activity 1: Divide with Diagrams or Blocks (15 minutes)"
+          "Title": "Explain and check the representation",
+          "Definition": "The diagram, numerical result and multiplication check must agree.",
+          "Rule": "The final quotient multiplied by the divisor must reconstruct the original dividend.",
+          "Example": "235÷5=47 since 5×47=235."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Edulytics source-goal example",
-          "Question": "Represent 235 as 2 hundreds, 3 tens and 5 ones.",
-          "Method": "Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping.",
+          "Title": "Priya's diagrams: 64÷4 and 117÷3",
+          "Question": "Use base-ten diagrams to solve 64÷4 and 117÷3. Show the exchange.",
+          "Method": "Trade leftover tens or hundreds into smaller units.",
           "Steps": [
-            "Represent 235 as 2 hundreds, 3 tens and 5 ones.",
-            "Regroup to 23 tens, share 20 tens among 5 groups (4 tens each).",
-            "Regroup remaining 3 tens into 30 ones; 35 ones give 7 to each group. Answer 47."
+            "64÷4: share four of six tens equally (one ten each), trade the remaining two tens for twenty ones and add four ones; six ones per group. Quotient 16.",
+            "117÷3: trade one hundred for ten tens; now eleven tens. Share nine tens equally (three tens each), trade two remaining tens into twenty ones, add seven ones; nine ones each.",
+            "Check 4×16=64 and 3×39=117. Draw the exchanges for a teacher to review."
           ],
-          "Answer": "Regroup remaining 3 tens into 30 ones; 35 ones give 7 to each group. Answer 47.",
-          "Check": "235/5 = 47"
+          "Answer": "16 and 39",
+          "Check": "4×16=64; 3×39=117."
         },
         {
-          "Title": "Guided original task 1 (teacher-reviewed)",
-          "Question": "Priya draws a base-ten diagram to find the value of \\(64 \\div 4\\). A rectangle represents 10. A small square represents 1. | Use the diagram (or actual blocks) to help Priya complete the division. Explain or show your reasoning. | Use this base-ten diagram (or",
-          "Method": "Use the lesson's original objective: The purpose of this lesson is for students to find the quotients of two-digit and three-digit dividends and one-digit divisors. They do so by decomposing the dividend by place value—decomposing a larger unit to 10 of a smaller unit—and by reasoning in terms of equal-size groups.",
+          "Title": "Help Noah get unstuck: 235÷5",
+          "Question": "Noah says he cannot distribute 2 hundreds and 3 tens among 5 groups. How does he find 235÷5?",
+          "Method": "Exchange hundreds into tens and leftover tens into ones.",
           "Steps": [
-            "Read all givens and the requested output of Activity 1: Divide with Diagrams or Blocks (15 minutes).",
-            "Model the source task mathematically: Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping.",
-            "Present the reasoning, answer, drawn construction or student-created artifact and check it against the original conditions."
+            "Trade two hundreds for twenty tens and combine with the existing three tens, making twenty-three tens.",
+            "Give four tens to each of five groups (twenty tens); trade the remaining three tens to thirty ones and add five existing ones.",
+            "Share thirty-five ones among five groups (seven each). Each group receives 4 tens and 7 ones =47."
           ],
-          "Answer": "Open student source task; a teacher must check the actual response and any required figure. No automatic source answer is asserted.",
-          "Check": "Not a verified original publisher answer or machine-scored Practice item."
+          "Answer": "47",
+          "Check": "5×47=235."
         },
         {
-          "Title": "Guided original task 2 (teacher-reviewed)",
-          "Question": "This diagram represents 235. | To find \\(235 \\div 5\\), Noah draws the following diagram but then gets stuck. | He says, “There are not enough of the hundreds or the tens pieces to put into 5 groups.”",
-          "Method": "Use the lesson's original objective: The purpose of this lesson is for students to find the quotients of two-digit and three-digit dividends and one-digit divisors. They do so by decomposing the dividend by place value—decomposing a larger unit to 10 of a smaller unit—and by reasoning in terms of equal-size groups.",
+          "Title": "Interpret base-ten diagrams: 432÷6",
+          "Question": "Find 432÷6 using blocks or drawings and explain why the sharing is equal.",
+          "Method": "Trade the 4 hundreds into 40 tens and combine with 3 tens.",
           "Steps": [
-            "Read all givens and the requested output of Activity 2: Help Noah Get Unstuck (20 minutes).",
-            "Model the source task mathematically: Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping.",
-            "Present the reasoning, answer, drawn construction or student-created artifact and check it against the original conditions."
+            "Write 432 as four hundreds, three tens and two ones. Exchange four hundreds for forty tens; there are forty-three tens.",
+            "Share forty-two tens among six groups, giving seven tens per group. One ten remains; exchange it for ten ones and combine with two ones.",
+            "Share twelve ones among six groups, giving two each. Quotient 72, and 6×72=432."
           ],
-          "Answer": "Open student source task; a teacher must check the actual response and any required figure. No automatic source answer is asserted.",
-          "Check": "Not a verified original publisher answer or machine-scored Practice item."
+          "Answer": "72",
+          "Check": "6×72=432."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Using an unrelated operation or representation.",
-          "WhyWrong": "It does not match the actual source-goal procedure.",
-          "Correction": "Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping."
+          "Mistake": "Giving each group an indivisible hundred when there are fewer hundreds than groups.",
+          "WhyWrong": "A single hundred block cannot go equally into three or five groups without exchange.",
+          "Correction": "Regroup one hundred as ten tens and resume equal sharing."
         },
         {
-          "Mistake": "Reporting a plausible number or classification without matching the task's required model.",
-          "WhyWrong": "A response lacking the original drawing, units, reasoning or construction does not demonstrate the required objective.",
-          "Correction": "Use Exchange 1 hundred for 10 tens or 1 ten for 10 ones when base-ten diagrams need regrouping. and verify the original task constraints."
+          "Mistake": "Ignoring the leftover ten after sharing the tens place.",
+          "WhyWrong": "The unshared value must still be divided across all equal groups.",
+          "Correction": "Exchange each remaining ten into ten ones, then distribute and check multiplication."
         }
       ],
       "SummaryPoints": [
-        "Learning goal: You will find the quotients of two-digit and three-digit dividends and one-digit divisors.",
-        "First-party Cool-down: Represent 117 ÷ 3 with a base-ten diagram.",
-        "Revisit the source activity: Activity 1: Divide with Diagrams or Blocks (15 minutes)"
+        "Source exercises: 64÷4=16, 117÷3=39, 235÷5=47 and 432÷6=72.",
+        "A base-ten diagram is an explanation of equal grouping and changing place-value units, not merely a correct quotient.",
+        "Teacher evaluates the original four-picture warm-up, drawings, Noah's reasoning and peer discussion.",
+        "Independent Edulytics Cool-down: 156÷4=39 with exchanges, not a publisher original."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "PlaceValueChart",
+          "Title": "Priya: 117 shared into three groups",
+          "Description": "First-party base-ten exchange diagram, not the original publisher artwork.",
+          "PrimaryLabel": "117 = 1 hundred + 1 ten + 7 ones",
+          "SecondaryLabel": "3 equal groups, 39 each",
+          "Items": [
+            "1 hundred → 10 tens; total 11 tens",
+            "Share 9 tens: 3 tens per group; 2 tens remain",
+            "2 tens → 20 ones, plus 7 ones = 27 ones",
+            "27 ones ÷3=9 ones each"
+          ],
+          "SecondaryItems": [
+            "Each group 3 tens + 9 ones=39",
+            "3×39=117"
+          ],
+          "Rows": [
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "1 hundred",
+                "1 ten",
+                "7 ones"
+              ]
+            },
+            {
+              "Label": "Exchange",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "0 hundreds",
+                "11 tens",
+                "7 ones"
+              ]
+            },
+            {
+              "Label": "Tens distributed",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "0 hundreds",
+                "3 tens/group; 2 left",
+                "7 ones"
+              ]
+            },
+            {
+              "Label": "Ones distributed",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "0 hundreds",
+                "3 tens/group",
+                "9 ones/group"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "PlaceValueChart",
+          "Title": "Noah: 235 shared into five groups",
+          "Description": "First-party explanation for the source Noah help task.",
+          "PrimaryLabel": "235 = 2 hundreds + 3 tens + 5 ones",
+          "SecondaryLabel": "5 equal groups, 47 each",
+          "Items": [
+            "2 hundreds → 20 tens +3 tens =23 tens",
+            "20 of 23 tens shared to 5 groups: 4 tens each",
+            "Trade remaining 3 tens to 30 ones; 35 ones available",
+            "Share 35 ones into 5 groups: 7 each"
+          ],
+          "SecondaryItems": [
+            "Every group has 4 tens +7 ones=47"
+          ],
+          "Rows": [
+            {
+              "Label": "Exchange hundreds",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "2 hundreds →20 tens",
+                "plus 3 tens",
+                "5 ones"
+              ]
+            },
+            {
+              "Label": "Distribute and exchange",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "4 tens each",
+                "3 tens→30 ones",
+                "35 ones÷5=7 each"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Source Activity 1 and 2 answer checks",
+          "Description": "The source diagram-comparison warm-up and original figures are teacher-reviewed.",
+          "PrimaryLabel": "Four source division exercises",
+          "SecondaryLabel": "Checks by multiplication",
+          "Items": [
+            "64÷4=16; 4×16=64",
+            "117÷3=39; 3×39=117",
+            "235÷5=47; 5×47=235",
+            "432÷6=72; 6×72=432"
+          ],
+          "SecondaryItems": [
+            "First-party Cool-down: 156÷4=39; 4×39=156"
+          ],
+          "Rows": []
+        }
+      ],
       "Videos": []
     }
   ]
