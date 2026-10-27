@@ -1,12 +1,12 @@
 {
   "ordinal": 104,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L18",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_EXACT_PRACTICE_UNVERIFIED",
+  "status": "STAGE_C_FOCUSED_TEST_PENDING",
   "readyForStageD": false,
   "stages": {
-    "A": "2021_LOCAL_TEACHER_PREPARATION_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "ORIGINAL_GOAL_RETAINED; MISALIGNED_KEY_RULE_AND_METHOD_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_ADDED; REAL_PRACTICE_NOT_VERIFIED",
+    "A": "2021_LOCAL_PREP_AND_TEACHER_STUDENT_FACING_WARMUP_90_96_960_954; PRIYA_TYLER_465_AND_428; TEACHER_SYNTHESIS_738_REVIEWED",
+    "B": "CORRECTED_PRIYA_EQUATIONS_TYLER_SUBTRACTIVE_METHOD_428_AND_WARMUP; THREE_INDEPENDENT_FIRST_PARTY_MATH_VISUALS_AND_684_COOLDOWN",
+    "C": "EXISTING_EXACT_DIVISION_KERNEL_EXTENDED_WITH_G4_U06_L18_PARTIAL_QUOTIENT_FAMILY_AND_SCOPED_TEST; FOCUSED_CI_PENDING",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -23,8 +23,7 @@
   "focusedTestsRun": false,
   "productionTouched": false,
   "blockers": [
-    "Visual, original tasks and teacher-led parity are not fully demonstrated",
-    "SkillContract, exact question generation and correct/wrong/malformed grading not established",
-    "Authenticated scoring and Grade 4 Stage D not run"
+    "Focused source-aligned generator, verifier, routing and Rich V2 load tests not yet completed.",
+    "Teacher evaluates handwritten partial quotient recordings and reasoning; authenticated per-student persistence remains a Stage D gate."
   ]
 }

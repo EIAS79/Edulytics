@@ -68,6 +68,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l15.area_partial_quotients",
             "usccss.g4.u06.l15.mural_complete_columns",
             "usccss.g4.u06.l16.base_ten_equal_groups",
+            "usccss.g4.u06.l18.partial_quotients_recording",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -1096,6 +1097,18 @@ public sealed class ExactSkillContractQuestionEngine
                 o102==n102%10+10*(t102%d102) && o102%d102==0 &&
                 n102%d102==0 && value>0 && (long)value*d102==n102,
 
+            "usccss.g4.u06.l18.partial_quotients_recording" =>
+                parameters.TryGetValue("dividend", out var partialDividend) &&
+                parameters.TryGetValue("divisor", out var partialDivisor) &&
+                parameters.TryGetValue("tensQuotient", out var partialTens) &&
+                parameters.TryGetValue("onesQuotient", out var partialOnes) &&
+                partialDividend is >= 100 and <= 999 &&
+                partialDivisor is >= 2 and <= 9 &&
+                partialTens >= 10 && partialTens % 10 == 0 &&
+                partialOnes is >= 0 and <= 9 &&
+                (long)partialDivisor * (partialTens + partialOnes) == partialDividend &&
+                value == partialTens + partialOnes,
+
             "geometry.perimeter_area.rectangle_missing_side" =>
                 parameters["knownSide"] > 0 &&
                 parameters["area"] > 0 &&
@@ -1884,6 +1897,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l15.area_partial_quotients" => BuildG4MuralMissingSide(random, false),
             "usccss.g4.u06.l15.mural_complete_columns" => BuildG4MuralMissingSide(random, true),
             "usccss.g4.u06.l16.base_ten_equal_groups" => BuildG4BaseTenDivision(random),
+            "usccss.g4.u06.l18.partial_quotients_recording" => BuildG4PartialQuotients(random),
             "geometry.polygons.interior_angle_sum" =>
                 BuildPolygonInteriorAngleSum(random, scale),
             "geometry.polygons.missing_interior_angle" =>
@@ -3076,6 +3090,30 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
+    private static ExactProblem BuildG4PartialQuotients(Random random)
+    {
+        // IM K-5 G4 2021 U06:L18: use equations and subtraction for partial quotients.
+        var divisor = random.Next(2, 10);
+        var lower = Math.Max(20, (100 + divisor - 1) / divisor);
+        var upper = Math.Min(125, 999 / divisor);
+        var quotient = random.Next(lower, upper + 1);
+        var tens = quotient / 10 * 10;
+        var ones = quotient % 10;
+        var dividend = divisor * quotient;
+        return Problem(
+            "usccss.g4.u06.l18.partial_quotients_recording",
+            "Use partial quotients to divide " + dividend + " by " + divisor +
+                ". Record two partial quotients in equations or a subtraction diagram.",
+            "Decompose " + dividend + " into " + (divisor * tens) + " + " + (divisor * ones) +
+                ". Divide each part by " + divisor + " to get " + tens + " and " + ones +
+                "; add partial quotients to get " + quotient + ". Check by multiplication.",
+            AssessmentItemType.Numeric,
+            ("dividend", dividend),
+            ("divisor", divisor),
+            ("tensQuotient", tens),
+            ("onesQuotient", ones));
+    }
+
     private static ExactProblem BuildG4BaseTenDivision(Random random)
     {
         var d=random.Next(2,10);
@@ -3964,6 +4002,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l15.mural_complete_columns" =>
                 (p["area"] / p["knownSide"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l16.base_ten_equal_groups" => (p["dividend"]/p["divisor"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l18.partial_quotients_recording" => (p["tensQuotient"] + p["onesQuotient"]).ToString(CultureInfo.InvariantCulture),
 
             "geometry.polygons.interior_angle_sum" =>
                 ((p["sides"] - 2) * 180).ToString(CultureInfo.InvariantCulture),

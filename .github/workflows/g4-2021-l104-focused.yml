@@ -1,0 +1,20 @@
+name: Grade4 2021 lesson 104 focused ABC
+on:
+  push:
+    branches:
+      - curriculum/g4-sequential-abc-20261026
+    paths:
+      - '.github/workflows/g4-2021-l104-focused.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lesson-104:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4Ordinal104PartialQuotientsTests --configuration Release --verbosity minimal

@@ -19363,6 +19363,25 @@
       "status": "PracticeVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l18.partial_quotients_recording",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-product-check-plus-partial-quotient-decomposition-of-dividend",
+      "representations": [
+        "equation_set",
+        "subtraction_diagram",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
