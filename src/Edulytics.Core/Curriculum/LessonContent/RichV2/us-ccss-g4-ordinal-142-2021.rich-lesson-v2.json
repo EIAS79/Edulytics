@@ -21,6 +21,18 @@
           "Definition": "A two-digit by two-digit product can be represented as partial products and reconciled to the standard algorithm.",
           "Rule": "A two-digit by two-digit product can be represented as partial products and reconciled to the standard algorithm.",
           "Example": "Decompose 14 as 10 + 4."
+        },
+        {
+          "Title": "Operational representation",
+          "Definition": "Compare partial products with the standard multi-digit multiplication algorithm.",
+          "Rule": "Compare partial products with the standard multi-digit multiplication algorithm.",
+          "Example": "Worked Edulytics example: Decompose 14 as 10 + 4. 23 × 14 = 23 × 10 + 23 × 4 = 230 + 92. Add partial products to obtain 322; align place values in the standard algorithm."
+        },
+        {
+          "Title": "Independent reasonableness check",
+          "Definition": "Use an equivalent representation or inverse operation to confirm the result.",
+          "Rule": "Interpret the answer with units and check it against the original problem restrictions.",
+          "Example": "First-party Edulytics Cool-down (publisher's original not inspected): Find 26 × 13 using partial products."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "Add partial products to obtain 322; align place values in the standard algorithm.",
           "Check": "Checked arithmetic exemplar: 23*14 = 322; not a generator verification."
+        },
+        {
+          "Title": "Source-goal guided reasoning 1 (teacher-reviewed)",
+          "Question": "Math focus: A two-digit by two-digit product can be represented as partial products and reconciled to the standard algorithm.",
+          "Method": "Compare partial products with the standard multi-digit multiplication algorithm.",
+          "Steps": [
+            "Identify the source-given quantities and required operation.",
+            "Apply this specific method: Compare partial products with the standard multi-digit multiplication algorithm.",
+            "Show the intermediate fractions, columns or products and verify the answer with the original conditions."
+          ],
+          "Answer": "Teacher checks the original problem's requested solution and explanation.",
+          "Check": "No independent student answer or original publisher assessment is asserted."
+        },
+        {
+          "Title": "Source-goal guided reasoning 2 (teacher-reviewed)",
+          "Question": "Worked Edulytics example: Decompose 14 as 10 + 4. 23 × 14 = 23 × 10 + 23 × 4 = 230 + 92. Add partial products to obtain 322; align place values in the standard algorithm.",
+          "Method": "Compare partial products with the standard multi-digit multiplication algorithm.",
+          "Steps": [
+            "Identify the source-given quantities and required operation.",
+            "Apply this specific method: Compare partial products with the standard multi-digit multiplication algorithm.",
+            "Show the intermediate fractions, columns or products and verify the answer with the original conditions."
+          ],
+          "Answer": "Teacher checks the original problem's requested solution and explanation.",
+          "Check": "No independent student answer or original publisher assessment is asserted."
         }
       ],
       "CommonMistakes": [
@@ -42,11 +78,17 @@
           "Mistake": "Mismatched units, operation or question scope.",
           "WhyWrong": "The answer may be numerically plausible but not solve the actual source task.",
           "Correction": "A two-digit by two-digit product can be represented as partial products and reconciled to the standard algorithm."
+        },
+        {
+          "Mistake": "Skipping the equivalence, regrouping or place-value step needed by the lesson.",
+          "WhyWrong": "An operation applied without its required representation may produce an incorrect result.",
+          "Correction": "Compare partial products with the standard multi-digit multiplication algorithm."
         }
       ],
       "SummaryPoints": [
         "Learning goal: You will deepen your understanding of the connections between algorithms that use partial products and the standard algorithm when multiplying a pair of two-digit numbers.",
-        "First-party Cool-down: Find 26 × 13 using partial products."
+        "First-party Cool-down: Find 26 × 13 using partial products.",
+        "Verification method: Compare partial products with the standard multi-digit multiplication algorithm."
       ],
       "Visuals": [],
       "Videos": []
