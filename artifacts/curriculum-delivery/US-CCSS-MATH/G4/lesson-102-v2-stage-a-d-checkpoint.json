@@ -1,12 +1,12 @@
 {
   "ordinal": 102,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L16",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_EXACT_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
     "A": "2021_LOCAL_TEACHER_PREP_AND_STUDENT_FACING_ALL_FIVE_DIVISION_PROMPTS_SOURCE_COMPARED",
     "B": "SOURCE_GOAL_AND_488_104_96_86_108_EXAMPLES_EXACTLY_REPAIRED; INDEPENDENT_PLACE_VALUE_CHARTS_AND_DISTINCT_COOLDOWN_AUTHORED",
-    "C": "FIRST_PARTY_COOLDOWN_ADDED; REAL_PRACTICE_NOT_VERIFIED",
+    "C": "EXISTING_EXACT_DIVISION_ENGINE_EXTENDED_FOR_2021_BASE_TEN_EXCHANGES; ONE_SOURCE_SPECIFIC_FAMILY_RUNTIME_AND_WRONG_MALFORMED_VERIFIED_3_PASS",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -20,11 +20,43 @@
   "sourceVisualParityProven": false,
   "originalPublisherCooldownVerified": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Visual, original tasks and teacher-led parity are not fully demonstrated",
-    "SkillContract, exact question generation and correct/wrong/malformed grading not established",
-    "Authenticated scoring and Grade 4 Stage D not run"
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceTeacherSha256": "485bd44e211c12225dd376ff61527ecce4b74f7048b7de7640d0a1b22c5ebf41",
+    "sourcePrepSha256": "d804429c85ff51f3cac1e0af3470bfb2f8cdc8360dbd8ce18052a2f3137b9dff",
+    "sourceElements": "five original numerical questions 488/4,104/8,96/4,86/2,108/9 with base-ten exchanges",
+    "allAvailableOriginalStudentTeacherTasksCompared": true,
+    "originalStudentAndTeacherTasksCompared": true,
+    "learnerTeachingSourceParityReviewed": true,
+    "practiceGeneratorAndVerifierIndependentlyReviewed": true,
+    "ownerApprovedIndependentEdulyticsAssessment": true,
+    "originalProtectedPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "independentCoolDownScoringReviewed": true,
+    "teacherOnlyActivitiesRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "sourceOriginalImagePixelsCertified": false,
+    "firstPartyVisualSupportReviewed": true,
+    "sourceSpecificAllowedFamilies": [
+      "usccss.g4.u06.l16.base_ten_equal_groups"
+    ],
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40534968026",
+    "focusedTestCandidateSha": "4eafc8a1379d4888cd6c5cd36595f8d4dcaf44a7",
+    "verifiedBotCommit": "849cd41b211836a7f26dad4fd2f18b3e1bbbc933",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "originalPublisherVisualEquivalenceNotClaimed": true,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false
+  },
+  "stageDRisks": [
+    "Browser interaction and persisted learner gradebook scoring deferred to Stage D",
+    "Original 2021 publisher artwork and protected Cool-down not copied; teacher-led physical block assignments require an actual school workflow",
+    "Full grade final candidate CI and academic gate not run"
   ]
 }
