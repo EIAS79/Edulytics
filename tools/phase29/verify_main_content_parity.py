@@ -25,6 +25,16 @@ def identities(doc):
 
 def run():
     baseline, candidate, errors = {}, {}, []
+    # One strictly pinned owner-asserted FIRST-PARTY Grade 4 authoring revision.
+    # This is not publisher-source parity, academic signoff or release approval.
+    # The standalone validator compares both Git blobs, every lesson identity,
+    # all source/official metadata, and the exact 18 title-only corrections.
+    try:
+        from verify_g4_owner_authoring_delta import validate as validate_g4
+        g4_owner_authored = validate_g4()
+    except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as exc:
+        errors.append(f"Grade 4 pinned owner-authored delta invalid: {exc}")
+        g4_owner_authored = set()
     for path in main_files():
         current = ROOT / path
         if not current.is_file():
@@ -73,7 +83,9 @@ def run():
             errors.append(f"missing original lesson blueprint: {path}")
             continue
         if subprocess.check_output(["git", "show", f"origin/main:{path}"], cwd=ROOT) != current.read_bytes():
-            errors.append(f"changed original lesson blueprint: {path}")
+            g4_blueprint = "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade4-im-k5-2021.lesson-blueprint.json"
+            if not (path == g4_blueprint and len(g4_owner_authored) == 149):
+                errors.append(f"changed original lesson blueprint: {path}")
         verified_blueprints += 1
     print(f"MAIN_TO_V2_BLUEPRINT_PARITY compared={verified_blueprints}")
     missing = sorted(set(baseline) - set(candidate))
@@ -193,13 +205,14 @@ def run():
         if before_other != after_other:
             errors.append(f"non-teaching metadata changed in reviewed repair: {key}")
 
-    if set(changed) != changes_expected:
-        errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorized={sorted(changes_expected)}")
+    expected_changes = changes_expected | g4_owner_authored
+    if set(changed) != expected_changes:
+        errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
-                           if key not in approved and baseline[key] != candidate[key]]
+                           if key not in approved and key not in g4_owner_authored and baseline[key] != candidate[key]]
     if unexpected_metadata:
         errors.append(f"unapproved lesson metadata changes: {unexpected_metadata[:6]}")
-    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)}")
+    print(f"MAIN_TO_V2_PARITY original={len(baseline)} matched={len(set(baseline)&set(candidate))} missing={len(missing)} changedBodies={len(changed)} newlyApproved={len(changes_expected)} g4OwnerAuthoredTechnicalOnly={len(g4_owner_authored)} release=NO_GO")
     for e in errors: print("ERROR:",e)
     return 1 if errors else 0
 
