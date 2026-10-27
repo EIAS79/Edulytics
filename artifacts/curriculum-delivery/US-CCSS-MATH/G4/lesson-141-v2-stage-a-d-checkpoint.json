@@ -1,12 +1,12 @@
 {
   "ordinal": 141,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L04",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_ORIGINAL_LOCAL_SOURCE_INTAKE_REUSED",
+    "B": "SOURCE_REGROUPING_ZEROS_PRIYA_HAN_COMPARISON_AND_CORRECT_19528",
+    "C": "REUSED_COLUMNAR_APPLY_EXACT_SUBSKILL_TEST_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,28 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 Our-CS local original teacher intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Differences (10 minutes)",
+      "Activity 1: Lots of Zeros (15 minutes)",
+      "Activity 2: Ways of Finding Differences (20 minutes)",
+      "Cool-down: A Couple of Differences (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each difference mentally. | \\(87 - 24\\) | \\(387 - 124\\)",
+      "Find the value of each difference. | a. | Caption: a.",
+      "To find the value of \\(20,\\!000 - 472\\), Priya and Han set up their calculations differently. | Priya | Caption: Priya"
+    ],
+    "allowedFamily": "number.whole.add_subtract.columnar.apply",
+    "teacherOnlyTasks": [
+      "Original Priya/Han comparison figures and student regrouping process",
+      "Method choice explanations"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal141SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }

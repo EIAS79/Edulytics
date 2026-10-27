@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.9.4-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l141-subtraction-zeros-source",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U09:L04",
@@ -13,7 +13,9 @@
         "Math focus: Regroup across zero place values in the standard subtraction algorithm and compare the result with counting-up methods.",
         "Worked Edulytics example: 5,000 − 311 requires regrouping through zero place values. Use a convenient compensation: 5,000 − 300 − 11 = 4,700 − 11. The result is 4,689; check by 4,689 + 311 = 5,000.",
         "First-party Edulytics Cool-down (publisher's original not inspected): Find 9,000 − 463 and verify by addition.",
-        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review."
+        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review.",
+        "2021 original U09:L04 focuses on choosing between place-value subtraction methods and standard regrouping algorithm, particularly zeros. Warm-up 87−24=63 and 387−124=263. Source discussion shows Priya and Han's DIFFERENT calculations for 20,000−472=19,528; the original illustrated algorithm setups require teacher visual comparison, not declaring one invalid.",
+        "Regrouping 20,000 across zeros can be accomplished using place value, or use compensation 20,000−500+28 = 19,528. Verify by addition 19,528+472=20,000. Existing columnar addition/subtraction family covers supplementary numerical arithmetic; it does not grade students' specific publisher-written methods or choice of the most efficient strategy."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,18 @@
           ],
           "Answer": "Teacher checks the original problem's requested solution and explanation.",
           "Check": "No independent student answer or original publisher assessment is asserted."
+        },
+        {
+          "Title": "Original source 20,000 minus 472",
+          "Question": "Find 20,000−472, explaining a reliable method.",
+          "Method": "Compensate to the nearby 500.",
+          "Steps": [
+            "20,000−500=19,500.",
+            "Subtracting 500 instead of 472 took 28 too many.",
+            "Add back 28 to get 19,528."
+          ],
+          "Answer": "19,528.",
+          "Check": "19,528+472=20,000."
         }
       ],
       "CommonMistakes": [
