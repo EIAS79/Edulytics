@@ -21,6 +21,18 @@
           "Definition": "Area of a rectangle = width × length.",
           "Rule": "Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context.",
           "Example": "189 tiles with a width of 7 tiles make a length of 27 tiles."
+        },
+        {
+          "Title": "Original task representation",
+          "Definition": "Use partial quotients to find unknown rectangle side lengths.",
+          "Rule": "Honor the original quantities, units, diagrams and type of student response.",
+          "Example": "Elena used 189 tiles in a mural seven tiles wide"
+        },
+        {
+          "Title": "Evidence and checking",
+          "Definition": "Verify the original task using a mathematically meaningful representation.",
+          "Rule": "Show why the result or drawn figure satisfies every given condition; teacher judges open construction.",
+          "Example": "Elena's mural"
         }
       ],
       "WorkedExamples": [
@@ -49,6 +61,18 @@
           ],
           "Answer": "32 tiles long; 5 unused",
           "Check": "197 = 6 × 32 + 5, with 0 ≤ 5 < 6."
+        },
+        {
+          "Title": "Guided original task 1 (teacher-reviewed)",
+          "Question": "Elena used 189 tiles in a mural seven tiles wide",
+          "Method": "Use the lesson's original objective: Use partial quotients to find unknown rectangle side lengths.",
+          "Steps": [
+            "Read all givens and the requested output of Elena's mural.",
+            "Model the source task mathematically: Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context.",
+            "Present the reasoning, answer, drawn construction or student-created artifact and check it against the original conditions."
+          ],
+          "Answer": "Open student source task; a teacher must check the actual response and any required figure. No automatic source answer is asserted.",
+          "Check": "Not a verified original publisher answer or machine-scored Practice item."
         }
       ],
       "CommonMistakes": [
@@ -56,6 +80,11 @@
           "Mistake": "Rounding up a remainder to create one more full column.",
           "WhyWrong": "33 columns of width 6 require 198 tiles, but only 197 exist.",
           "Correction": "Interpret quotient 32 as complete columns and remainder 5 as unused tiles."
+        },
+        {
+          "Mistake": "Reporting a plausible number or classification without matching the task's required model.",
+          "WhyWrong": "A response lacking the original drawing, units, reasoning or construction does not demonstrate the required objective.",
+          "Correction": "Use Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context. and verify the original task constraints."
         }
       ],
       "SummaryPoints": [
