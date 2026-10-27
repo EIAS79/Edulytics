@@ -1,12 +1,12 @@
 {
   "ordinal": 125,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L14",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "REUSED_ARCHIVED_2021_OUR_CS_ORIGINAL_TEACHER_AND_STUDENT_SOURCE",
+    "B": "CLOCK_PERPENDICULAR_90_DEGREE_QUADRANTS_30_DEGREE_MARKS_AND_6_8_OCLOCK_EXAMPLES_SOURCE_ALIGNED",
+    "C": "REUSED_EXACT_HOUR_CLOCK_FAMILY_AND_AUTHORED_SCOPED_STATIC_TEST_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,32 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 local source-only Our-CS intake ordinal 125",
+    "originalSourceActivities": [
+      "Warm-up: Which One Doesn’t Belong: Time After Time (10 minutes)",
+      "Activity 1: Draw a Clock (15 minutes)",
+      "Activity 2: Tick Tock (20 minutes)",
+      "Cool-down: One Angle at a Time (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Which one doesn’t belong? | Description: image of 4 unlabeled clocks. A. hour hand pointing around 2. minute hand pointing at 12. B. Hour hand pointing around&nbsp;4. Minute hand pointing at slightly before 9. C. Hour hand pointing around 7. Minute hand pointi",
+      "Kiran is drawing a clock. He draws a pair of perpendicular lines to find the placement of the numbers 3, 6, 9, and 12 around the circle. | How many degrees is each angle he has drawn so far? Explain how you know. | Help Kiran find the exact placement of the nu",
+      "What angles are formed by the hour and minute hands of the clock at these times? | 6 o’clock | 8 o’clock"
+    ],
+    "primarySkillId": "geometry.angles.compare_exact_hour_clock_turns",
+    "allowedFamily": "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
+    "teacherOnlyTasks": [
+      "Four clock diagrams warm-up",
+      "Physical clock drawn using protractor and ruler",
+      "Original source multiple-time illustrations and explanation",
+      "Publisher gated Cool-down"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal125ClockMarksStageCTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
 }
