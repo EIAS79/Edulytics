@@ -19420,6 +19420,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l21.multistep_contexts",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-numeric-recomputation-of-multi-step-revenue-budget-and-per-person-cost",
+      "representations": [
+        "contextual",
+        "equation_set",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
