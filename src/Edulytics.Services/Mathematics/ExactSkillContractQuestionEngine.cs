@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l02.geometry_cards_number_talk",
             "usccss.g4.u07.l01.geometric_description_precision",
             "usccss.g4.u06.l25.flower_garland_patterns",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
@@ -1162,6 +1163,24 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l02.geometry_cards_number_talk" =>
+                parameters.TryGetValue("caseType", out var l113Case) &&
+                parameters.TryGetValue("variant", out var l113Variant) &&
+                parameters.TryGetValue("first", out var l113A) &&
+                parameters.TryGetValue("second", out var l113B) &&
+                l113Case is >= 0 and <= 7 &&
+                l113Variant is >= 0 and <= 2 &&
+                (l113Case switch
+                {
+                    0 or 1 or 2 or 3 => l113A == 0 && l113B == 0 &&
+                        value == l113Case + 1,
+                    4 => l113A == 90 && l113B == 45 && value == 45,
+                    5 => l113A == 270 && l113B == 45 && value == 225,
+                    6 => l113A == 270 && l113B == 135 && value == 135,
+                    7 => l113A == 360 && l113B == 135 && value == 225,
+                    _ => false
+                }),
+
             "usccss.g4.u07.l01.geometric_description_precision" =>
                 parameters.TryGetValue("caseType", out var l112Case) &&
                 parameters.TryGetValue("preciseFirst", out var l112First) &&
@@ -2083,6 +2102,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l02.geometry_cards_number_talk" => BuildG4PointLineRayCardAndNumberTalk(random),
             "usccss.g4.u07.l01.geometric_description_precision" => BuildG4GeometricDescriptionPrecision(random),
             "usccss.g4.u06.l25.flower_garland_patterns" => BuildG4FlowerPatterns(random),
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
@@ -3428,6 +3448,46 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+    private static ExactProblem BuildG4PointLineRayCardAndNumberTalk(Random random)
+    {
+        // IM 2021 G4 U07:L02: four geometric figure categories and the four
+        // original mental subtraction expressions. Original physical card sort
+        // and student drawings remain teacher reviewed, not auto-graded.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        string[] letters = ["A and B", "P and Q", "R and S"];
+        var names = letters[variant];
+        var figure = mode switch
+        {
+            0 => $"A single marked dot labelled {names.Split(' ')[0]}.",
+            1 => $"A straight geometric path passing through {names} and extending indefinitely in BOTH directions.",
+            2 => $"A straight path that starts at the first of {names} and extends through the second in ONE direction only.",
+            _ => $"A finite straight part with exactly two endpoints labelled {names}."
+        };
+        var first = mode switch
+        {
+            4 => 90,
+            5 or 6 => 270,
+            7 => 360,
+            _ => 0
+        };
+        var second = mode switch
+        {
+            4 or 5 => 45,
+            6 or 7 => 135,
+            _ => 0
+        };
+        var prompt = mode < 4
+            ? $"Read this first-party geometry card: {figure} Which type is described? Answer 1=point, 2=line, 3=ray or 4=line segment."
+            : $"Mental number talk: calculate {first} − {second}. {(variant == 0 ? "Use a known benchmark." : variant == 1 ? "Explain the place-value decomposition." : "Check by adding your difference back.")}";
+        var solution = mode < 4
+            ? "Use dimension and endpoints: a point is a location, a line extends both ways, a ray starts at one point and continues one way, and a segment has two endpoints."
+            : $"Use a subtraction strategy; check {first - second} + {second} = {first}.";
+        return Problem("usccss.g4.u07.l02.geometry_cards_number_talk", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant), ("first", first), ("second", second));
+    }
+
     private static ExactProblem BuildG4GeometricDescriptionPrecision(Random random)
     {
         // Source IM 2021 G4 U07:L01: students compare how precisely partners
@@ -4450,6 +4510,9 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l02.geometry_cards_number_talk" => (p["caseType"] < 4
+                ? p["caseType"] + 1
+                : p["first"] - p["second"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l01.geometric_description_precision" => (p["preciseFirst"] == 1 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l25.flower_garland_patterns" => (p["caseType"] switch { 0 => p["garlandsEach"] * (p["priyaBig"] + p["jadaBig"]), 1 => p["garlandsEach"] * (p["priyaSmall"] + p["jadaSmall"]), 2 => p["flowersMade"] / p["flowersPerGarland"], 3 => p["flowersMade"] % p["flowersPerGarland"], 4 => p["flowersMade"] * (p["cutMinutes"] + p["finishMinutes"]), _ => ((p["flowersMade"] + p["workers"] - 1) / p["workers"]) * (p["cutMinutes"] + p["finishMinutes"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l24.language_population_comparisons" => (p["caseType"] switch { 0 => p["navajo"] - p["yupik"], 1 => p["navajo"] + p["apache"] + p["cherokee"], 2 => p["navajo"] - (p["yupik"] + p["dakota"] + p["apache"] + p["keres"] + p["cherokee"] + p["ojibwa"] + p["choctaw"] + p["zuni"] + p["pima"]), 3 => p["philadelphiaEnglish"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"] - p["philadelphiaAsian"], 4 => p["chicagoSpanish"] + p["chicagoIndo"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"], _ => (2 * p["navajo"] + p["yupik"]) / (2 * p["yupik"]) }).ToString(CultureInfo.InvariantCulture),
