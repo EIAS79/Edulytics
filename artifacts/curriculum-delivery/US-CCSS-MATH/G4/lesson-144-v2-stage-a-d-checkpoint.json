@@ -1,12 +1,12 @@
 {
   "ordinal": 144,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L07",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "ORIGINAL_LOCAL_IMKH_2021_TEACHER_AND_STUDENT_SOURCE_INTAKE_REUSED",
+    "B": "SOURCE_MULTIPLICATIVE_COMPARE_EXPLANATION_BASE_TIMES_FACTOR_AND_FIRST_PARTY_COOLDOWN_RETAINED",
+    "C": "EXISTING_MULTIPLICATION_FACT_VERIFIER_REUSED_TEST_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,30 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 local Our-CS source intake",
+    "sourceStudentExcerpts": [
+      "What do you notice? What do you wonder? | San Francisco, CA | Fort Wayne, IN",
+      "Bermuda is the most expensive country in the world and India is one of the least expensive. | Attribution: By Bilingual2000. CC BY-SA 4.0. Wikipedia. Source. | The table shows how prices of some things in the two countries compare. Estimate or calculate the mi",
+      "The cost of living in the United States is higher than in Ghana. | Attribution: By Amanor kwaku. CC BY-SA 4.0. Wikimedia Commons. Source. | Attribution: By Muntaka Chasant. CC BY-SA 4.0. Wikimedia Commons. Source."
+    ],
+    "originalSourceActivities": [
+      "Warm-up: Notice and Wonder: Two Cities (10 minutes)",
+      "Activity 1: The Most and Least Expensive (20 minutes)",
+      "Activity 2: The Cost of Living (15 minutes)",
+      "Cool-down: Restaurant Budget (5 minutes)"
+    ],
+    "allowedFamily": "number.whole.multiply.fact_recall.apply",
+    "teacherOnlyTasks": [
+      "Original Bermuda India source price table",
+      "Original US Ghana cost-of-living figures",
+      "Numerical source costs and model discussion require actual teacher source figures"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal144ComparisonTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
 }
