@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.7-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l134-source-abc-perimeter",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L07",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: Perimeter is the sum of the actual outside side lengths; symmetry and equal lengths can supply otherwise unmarked sides.",
         "Edulytics worked explanation: Read each original perimeter diagram and its units. Add only its exterior sides, using equal-side marks or symmetry where supported. For four outside lengths of 18, 26, 13 and 37 feet, the perimeter is 94 feet.",
         "First-party Edulytics Cool-down (not gated original): What is the perimeter of a triangle whose three sides are each 7 cm?",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "2021 source All the Way Around gives an explicit polygon A with four side lengths 18,26,13,37 FEET: perimeter = 94 feet. Figure B has 1/5,4/5,1/5,4/5 MILE: perimeter 10/5=2 miles. Figure C is an equal-sided triangle with a label requiring full original source picture, not invented. The source requires writing an expression in the correct length units; other Perimeter Expressions activity is optional.",
+        "The source Ponder Perimeter task supplies several geometric figure properties including symmetry and parallel sides, so students must infer unknown boundary lengths by properties before summing. First-party exact digital family assesses only separately described polygons with GIVEN integer sides. Publisher source fraction units and hidden geometry remain teacher-scored."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,29 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Actual source polygon A perimeter",
+          "Question": "Original 2021 four boundary sides are 18 ft, 26 ft, 13 ft, 37 ft. Find perimeter.",
+          "Method": "Sum four side lengths, keep linear unit.",
+          "Steps": [
+            "18+26=44 feet.",
+            "13+37=50 feet.",
+            "44+50=94 feet."
+          ],
+          "Answer": "94 ft.",
+          "Check": "Source excerpt lists all four numbers."
+        },
+        {
+          "Title": "Actual source fifth-mile polygon B perimeter",
+          "Question": "Original source sides 1/5,4/5,1/5,4/5 mile. Perimeter?",
+          "Method": "Add four like-denominator fractional lengths.",
+          "Steps": [
+            "(1+4+1+4)/5=10/5.",
+            "10/5=2 miles."
+          ],
+          "Answer": "2 miles.",
+          "Check": "Does not turn fractional miles into an unrelated integer unit."
         }
       ],
       "CommonMistakes": [

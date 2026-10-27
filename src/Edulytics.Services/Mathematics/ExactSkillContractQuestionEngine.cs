@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u08.l07.polygon_perimeter_sum",
             "usccss.g4.u08.l04.symmetry_axis_counts",
             "usccss.g4.u07.l13.additive_angle_part",
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
@@ -1172,6 +1173,27 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u08.l07.polygon_perimeter_sum" =>
+                parameters.TryGetValue("caseType", out var c134) &&
+                parameters.TryGetValue("variant", out var v134) &&
+                parameters.TryGetValue("sideA", out var a134) &&
+                parameters.TryGetValue("sideB", out var b134) &&
+                parameters.TryGetValue("sideC", out var d134) &&
+                parameters.TryGetValue("sideD", out var e134) &&
+                parameters.TryGetValue("perimeter", out var p134) &&
+                c134 is >= 0 and <= 7 &&
+                v134 is >= 0 and <= 2 &&
+                (a134,b134,d134,e134)==(c134 switch
+                {
+                    0 => (18,26,13,37), 1 => (7,7,7,0),
+                    2 => (4,9,4,9), 3 => (3,5,8,12),
+                    4 => (15,15,15,15), 5 => (12,17,19,0),
+                    6 => (8,6,8,6), 7 => (25,10,15,20),
+                    _ => (-1,-1,-1,-1)
+                }) &&
+                p134 == a134+b134+d134+e134 &&
+                value == p134,
 
             "usccss.g4.u08.l04.symmetry_axis_counts" =>
                 parameters.TryGetValue("caseType", out var c131) &&
@@ -2336,6 +2358,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u08.l07.polygon_perimeter_sum" => BuildG4PolygonPerimeterSum(random),
             "usccss.g4.u08.l04.symmetry_axis_counts" => BuildG4SymmetryAxisCounts(random),
             "usccss.g4.u07.l13.additive_angle_part" => BuildG4AdditiveAnglePart(random),
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => BuildG4AngleClassificationByBounds(random),
@@ -3692,6 +3715,35 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+    private static ExactProblem BuildG4PolygonPerimeterSum(Random random)
+    {
+        // 2021 Grade 4 U08:L07: perimeter is sum of boundary lengths,
+        // not area; original diagrams and fractional unit task teacher-led.
+        var mode=random.Next(0,8);
+        var variant=random.Next(0,3);
+        var (a,b,c,d)=mode switch
+        {
+            0 => (18,26,13,37), 1 => (7,7,7,0),
+            2 => (4,9,4,9), 3 => (3,5,8,12),
+            4 => (15,15,15,15), 5 => (12,17,19,0),
+            6 => (8,6,8,6), _ => (25,10,15,20)
+        };
+        var total=a+b+c+d;
+        var sides=d==0?$"{a}, {b}, {c}":$"{a}, {b}, {c}, {d}";
+        var cue=variant switch
+        {
+            0 => "Add the OUTER edge lengths only.",
+            1 => "Perimeter is linear distance around the boundary, not area.",
+            _ => "Use the same linear unit for every side."
+        };
+        return Problem("usccss.g4.u08.l07.polygon_perimeter_sum",
+            $"An INDEPENDENT polygon has consecutive side lengths {sides} units. What is its perimeter in those units? {cue}",
+            $"Add all boundary sides: {a}+{b}+{c}"+(d==0?"":$"+{d}")+$"={total} units.",
+            AssessmentItemType.Numeric,
+            ("caseType",mode),("variant",variant),("sideA",a),("sideB",b),
+            ("sideC",c),("sideD",d),("perimeter",total));
+    }
 
     private static ExactProblem BuildG4SymmetryAxisCounts(Random random)
     {
@@ -5086,6 +5138,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u08.l07.polygon_perimeter_sum" => p["perimeter"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u08.l04.symmetry_axis_counts" => p["axisCount"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l13.additive_angle_part" => p["unknownDegrees"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => p["classCode"].ToString(CultureInfo.InvariantCulture),

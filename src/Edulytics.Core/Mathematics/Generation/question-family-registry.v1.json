@@ -19746,6 +19746,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u08.l07.polygon_perimeter_sum",
+      "version": 1,
+      "skillId": "geometry.perimeter_area.add_polygon_sides",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixed-triangle-quadrilateral-side-length-vectors-and-sum-reconstruction",
+      "representations": [
+        "textual_independent_polygon_sides",
+        "linear_perimeter_units",
+        "teacher_led_publisher_original_figures_and_fractional_units"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
