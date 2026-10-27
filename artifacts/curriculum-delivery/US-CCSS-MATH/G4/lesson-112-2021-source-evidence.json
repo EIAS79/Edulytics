@@ -1,80 +1,188 @@
 {
   "schemaVersion": 1,
-  "ordinal": 112,
+  "scope": "G4_2021_L112",
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L01",
+  "ordinal": 112,
   "sourceEdition": "2021 First Edition",
-  "sourceFiles": {
-    "preparation": "unit-7/lesson-1/preparation.html",
-    "preparationSha256": "6a66c64984d2605376c9a8b8be7abd92122a907b45a3b1fd35b2316371df6d9d",
-    "teacher": "unit-7/lesson-1/lesson.html",
-    "teacherSha256": "d99cf6c477a828efc5fd3ad9686ee9a937bab5ec7842aa7515decc9b574e3a34"
-  },
-  "objective": "Introduce and motivate precise language to describe/draw geometric points, lines and their parts, without prematurely assessing formal line/segment distinctions.",
-  "observedSequence": [
-    "5-min Notice and Wonder about string art",
-    "25-min Do You See What I See? pairs with four blackline card images",
-    "15-min five extended lines connecting at least two dots apiece and trace a figure",
-    "10-min synthesis",
-    "5-min original publisher Cool-down Lines and More, gated"
-  ],
-  "sourceElements": [
+  "sourceTeacherSha256": "d99cf6c477a828efc5fd3ad9686ee9a937bab5ec7842aa7515decc9b574e3a34",
+  "sourcePrepExactSha256": "3ed98c57e04ba1640d7e354ab3adc83481f6342be9bc453e5173e3172dc2cd15",
+  "sourcePrepLocalSha256": "6a66c64984d2605376c9a8b8be7abd92122a907b45a3b1fd35b2316371df6d9d",
+  "identifiedElementCount": 17,
+  "elements": [
     {
-      "item": "WU-STRINGART",
-      "implementation": "FIRST_PARTY_TEACHER_LED",
-      "status": "SOURCE_IMAGE_NOT_OPENED",
-      "detail": "2021 teacher HTML contains source image URL and attribution; source image file not locally cached"
+      "sourceElementId": "G4-U07-L01-ID",
+      "category": "identity",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#catalog",
+      "expectedMathematics": "2021 First Edition Grade 4 Unit 7 Lesson 1",
+      "implementationType": "TEACHER_LED",
+      "status": "SOURCE_VERIFIED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
     },
     {
-      "item": "A01-FOUR-CARDS",
-      "implementation": "FIRST_PARTY_TEACHER_LED",
-      "status": "SOURCE_BLACKLINE_MASTER_UNAVAILABLE",
-      "detail": "Source describes four cards, original blackline assets not locally saved; teacher must create independently authored equivalents"
+      "sourceElementId": "G4-U07-L01-GOAL",
+      "category": "learning_goal",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#teacher_preparation",
+      "expectedMathematics": "Invite increasingly precise description/drawing, NOT formal geometry definitions",
+      "implementationType": "DIGITAL",
+      "status": "MATCHED_DIGITAL",
+      "verificationMethod": "source-read plus candidate test",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
     },
     {
-      "item": "A01-TALK",
-      "implementation": "TEACHER_LED",
-      "status": "SUPPORTED_BY_RICH_RUBRIC",
-      "detail": "Two partners describe, draw and revise using precise position/orientation; four rounds"
+      "sourceElementId": "G4-U07-L01-STD",
+      "category": "standards",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#teacher_preparation",
+      "expectedMathematics": "CCSS 4.G.A.1 addressed",
+      "implementationType": "DIGITAL",
+      "status": "MATCHED_DIGITAL",
+      "verificationMethod": "source-read plus candidate test",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
     },
     {
-      "item": "A02-DOTS",
-      "implementation": "TEACHER_LED",
-      "status": "SUPPORTED_BY_RICH_RUBRIC",
-      "detail": "Use straightedge for five lines through two dots each; original isometric dot visual not locally cached"
+      "sourceElementId": "G4-U07-L01-WU",
+      "category": "warm_up",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#lesson_warmup",
+      "expectedMathematics": "String art notice/wonder; partner sharing; teacher records words; original third-party image attribution",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
     },
     {
-      "item": "A02-SEGMENTS",
-      "implementation": "TEACHER_LED",
-      "status": "SUPPORTED_BY_RICH_RUBRIC",
-      "detail": "Trace portions of lines forming a letter or polygon without early formal line vs segment test"
+      "sourceElementId": "G4-U07-L01-WU-MEDIA",
+      "category": "visual",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#lesson_warmup_media",
+      "expectedMathematics": "Source references string-art image attributed to LWan98 CC BY-SA 3.0; no publisher image reused",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
     },
     {
-      "item": "CD-OPEN",
-      "implementation": "FIRST_PARTY_TEACHER_LED",
-      "status": "PUBLISHER_GATED",
-      "detail": "Independent redraw-and-describe cool-down is not original publisher item"
+      "sourceElementId": "G4-U07-L01-A01-PAIRS",
+      "category": "activity",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity1",
+      "expectedMathematics": "Back-to-back four image cards, two rounds each direction, partner verbal directions and comparison",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A01-CARDS",
+      "category": "asset",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity1_blackline",
+      "expectedMathematics": "Original blackline master remains publisher asset; teacher can supply legitimate printed cards or independent equivalents",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A01-LANGUAGE",
+      "category": "activity",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity1_synthesis",
+      "expectedMathematics": "Compare horizontal/vertical/point/top-bottom/right-left/crossings; revise words",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A01-ACCESS",
+      "category": "access",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity1_support",
+      "expectedMathematics": "MLR2 Collect & Display and accessible verbal sentence frames",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A02-FIVE",
+      "category": "activity",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity2_student_facing",
+      "expectedMathematics": "Draw FIVE long straight lines, each through TWO or more isometric dots",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A02-HIGHLIGHT",
+      "category": "activity",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity2_student_facing",
+      "expectedMathematics": "Trace and describe one triangle, quadrilateral, letter or number from line portions",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A02-DRAW",
+      "category": "visual",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity2_media",
+      "expectedMathematics": "Original isometric dot-field figure not claimed digitally equivalent; teacher provides geometric dot field and checks geometry",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-A02-SYN",
+      "category": "synthesis",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#activity2_synthesis",
+      "expectedMathematics": "Introduce line segment informally as shorter part of longer line; defer formal definition",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-LS",
+      "category": "synthesis",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#lesson_synthesis",
+      "expectedMathematics": "Discuss where lines, points and parts of lines appear, uses of precise positional words",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-CD",
+      "category": "assessment",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#first_party_cooldown",
+      "expectedMathematics": "Publisher Cool-down login protected; independent first-party two crossing-stroke peer-description teacher rubric",
+      "implementationType": "TEACHER_LED",
+      "status": "MATCHED_TEACHER_LED",
+      "verificationMethod": "2021 Student Facing/teacher guidance read; first-party teacher-led equivalent; original media not copied",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-PRACTICE",
+      "category": "digital",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#first_party_digital_family",
+      "expectedMathematics": "Compare six first-party precise versus vague geometric descriptions, randomized option order, valid 1 or 2",
+      "implementationType": "DIGITAL",
+      "status": "MATCHED_DIGITAL",
+      "verificationMethod": "source-read plus candidate test",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
+    },
+    {
+      "sourceElementId": "G4-U07-L01-GRADE",
+      "category": "assessment",
+      "sourceLocator": "2021 local teacher unit-7/lesson-1/lesson.html#focused_test",
+      "expectedMathematics": "Generate 8 unique source-goal support items per seed, correct/wrong/malformed/tampered test cases",
+      "implementationType": "DIGITAL",
+      "status": "MATCHED_DIGITAL",
+      "verificationMethod": "source-read plus candidate test",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md"
     }
   ],
-  "sourceDenominatorComplete": false,
-  "originalSourceVisualOpened": false,
-  "originalBlacklineCardsVerified": false,
-  "firstPartyWorkedExamples": 4,
-  "firstPartySymbolicTeachingAids": 3,
-  "originalPublisherImageCopied": false,
-  "rightsStatus": "Teacher independent redrawing from instructions, no third-party graphics reused",
-  "stageB": "SOURCE_OBJECTIVE_ALIGNED_FIRST_PARTY_OPEN_RESPONSE",
-  "stageC": {
-    "eligibleMachineScorableSourceTasks": 0,
-    "allowedQuestionFamilies": [],
-    "grading": "TEACHER_REVIEW_REQUIRED",
-    "separateRuntimeTeacherReviewWorkflowProven": false
-  },
-  "tests": "WRITTEN_NOT_RUN",
-  "readyForStageD": false,
-  "unresolved": [
-    "Original four blackline-card and isometric dot graphics unavailable for 1:1 source fidelity",
-    "No verified in-product teacher grading/review submission flow; only explanatory first-party rubric exists",
-    "Original publisher Cool-down protected; first-party open-ended substitute provided"
-  ],
-  "stageD": "NOT_RUN"
+  "sourceMaterialIdentity100PercentClaimed": false,
+  "originalImageBytesReviewed": false,
+  "originalPublisherCooldownVerified": false,
+  "pedagogicalCoverage": "DIGITAL_AND_TEACHER_LED_EACH_SOURCE_STEP",
+  "sourceMediaRights": "String-art attribution CC BY-SA 3.0; original cards/diagrams publisher-specific, not reused in first-party Edulytics materials"
 }

@@ -1,12 +1,12 @@
 {
   "ordinal": 112,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L01",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "2021_PREP_STUDENT_FACING_17_SOURCE_ELEMENTS_COMPARED; FOUR_PARTNER_CARDS_AND_DOT_FIELD_SOURCE_DESCRIBED; ORIGINAL_MEDIA_NOT_COPIED",
+    "B": "FIRST_PARTY_CLEAR_WORDS_THREE_OPEN_SOURCE_TASK_EXAMPLES_PLUS_TEACHER_ONLY_COOLDOWN_AND_THREE_SYMBOLIC_SUPPORT_VISUALS",
+    "C": "REUSE_EXISTING_EXACT_CHOICE_GENERATOR_WITH_SIX_GEOMETRY_PRECISION_MODES; LESSON_ROUTED_FOCUSED_4_OF_4_GREEN; WRONG_MALFORMED_TAMPER_REJECTED; SOURCE_OPEN_DRAWINGS_TEACHER_ONLY",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -20,11 +20,35 @@
   "originalPublisherCooldownVerified": false,
   "sourceVisualParityProven": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-112-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceStudentFacingReadFromTeacher": true,
+    "sourceTeacherSha256": "d99cf6c477a828efc5fd3ad9686ee9a937bab5ec7842aa7515decc9b574e3a34",
+    "publisherOriginalImagesCopied": false,
+    "openOriginalCardTeacherOnly": true,
+    "originalCoolDownVerified": false,
+    "independentCoolDown": true,
+    "allowedFamily": "usccss.g4.u07.l01.geometric_description_precision",
+    "sourceSpecificNumericAnswerEvaluation": true,
+    "focusedTestsPassed": 4,
+    "focusedTestsFailed": 0,
+    "focusedTestRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40557342396",
+    "focusedTestCandidateSha": "62811f7a23b3604290eb63e7bab722758739cc4e",
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false,
+    "originalImagePixelParityProven": false
+  },
+  "stageDRisks": [
+    "Original publisher card and dot-field image bytes not used; first-party teacher-delivered equivalents require academic approval.",
+    "Actual classroom drawing, partner comparisons and teacher-facing UI not authenticated/tested.",
+    "Application's complete embedded Rich V2 inventory and attempt persistence require Stage D."
   ]
 }
