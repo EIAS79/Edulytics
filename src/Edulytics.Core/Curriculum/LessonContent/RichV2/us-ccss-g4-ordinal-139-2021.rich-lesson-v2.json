@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.9.2-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l139-fraction-add-sub-abc",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U09:L02",
@@ -13,7 +13,9 @@
         "Math focus: Add and subtract fractions with unlike denominators by first expressing lengths as equivalent fractions with a common denominator.",
         "Worked Edulytics example: One straw part is 7/12 foot, another is 1/4 foot. Rewrite 1/4 as 3/12. Add 7/12 + 3/12 = 10/12 = 5/6 foot.",
         "First-party Edulytics Cool-down (publisher's original not inspected): Find 7/8 − 1/4 foot and give an equivalent simplest fraction.",
-        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review."
+        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review.",
+        "Original U09:L02 source uses one-foot paper straws to make a roller-coaster model: Noah needs 7/12 foot and Tyler 1/4 foot, both portions of a 1-foot straw. Each is less than one foot; together their stated portions are 7/12+1/4=7/12+3/12=10/12=5/6 foot, if a task asks for their combined length. The actual original task instructions may ask separate comparisons, so this combined-length calculation is explicitly supplementary.",
+        "Warm-up source 38+62=100 and 38 2/6+62 3/6=100 5/6. In Tall Enough for a Ride? the minimum height rule and the exact four student heights come from an original source TABLE. Do not assert which student may ride without viewing full original measurements and the ride height requirement. Numeric related-fraction family is reused, but it does not score the original hidden table."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,18 @@
           ],
           "Answer": "Teacher checks the original problem's requested solution and explanation.",
           "Check": "No independent student answer or original publisher assessment is asserted."
+        },
+        {
+          "Title": "Supplementary straw fraction combination",
+          "Question": "Two cut straw pieces measure 7/12 foot and 1/4 foot. What is their combined length?",
+          "Method": "Convert fourths to twelfths before adding.",
+          "Steps": [
+            "1/4=3/12.",
+            "7/12+3/12=10/12.",
+            "10/12=5/6 foot."
+          ],
+          "Answer": "5/6 foot.",
+          "Check": "Independent mathematical combination of given original amounts, not source-specific unpublished question answer."
         }
       ],
       "CommonMistakes": [

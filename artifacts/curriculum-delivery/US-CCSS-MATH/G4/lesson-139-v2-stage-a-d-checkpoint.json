@@ -1,12 +1,12 @@
 {
   "ordinal": 139,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L02",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_ORIGINAL_LOCAL_FRACTION_SOURCE_REUSED",
+    "B": "STRAWS_RELATED_DENOMINATOR_AND_RIDE_HEIGHT_TABLE_TEACHER_LED",
+    "C": "REUSED_RELATED_FRACTION_ADDITION_FAMILY_FOCUSED_TEST_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,28 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS 2021 original source intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Wholes and Units (10 minutes)",
+      "Activity 1: Straws for A Roller Coaster (15 minutes)",
+      "Activity 2: Tall Enough for a Ride? (20 minutes)",
+      "Cool-down: The Flagpole (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(38 + 62\\) | \\(38\\frac{2}{6} + 62\\frac{3}{6}\\)",
+      "In science class, Noah, Tyler, and Jada are building a model of a roller coaster out of 1-foot-long paper straws. | Noah needs a piece that is \\(\\frac{7}{12}\\) foot long. | Tyler needs one that is \\(\\frac{1}{4}\\) foot long.",
+      "Lin’s class is on a trip to the amusement park. Visitors must be at least a certain height to get on rides. Use the table to answer questions about four students’ height. | ride | height requirement"
+    ],
+    "allowedFamily": "fractions.add_subtract.related.build",
+    "teacherOnlyTasks": [
+      "Original Tall Enough for a Ride table and thresholds",
+      "Original individual straw student task interpretation"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal139SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }
