@@ -73,6 +73,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l20.contextual_remainder_decisions",
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
+            "usccss.g4.u06.l24.language_population_comparisons",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
@@ -1157,6 +1158,58 @@ public sealed class ExactSkillContractQuestionEngine
                 }),
 
 
+
+            "usccss.g4.u06.l24.language_population_comparisons" =>
+                parameters.TryGetValue("caseType", out var l110Case) &&
+                parameters.TryGetValue("navajo", out var l110Navajo) &&
+                parameters.TryGetValue("yupik", out var l110Yupik) &&
+                parameters.TryGetValue("dakota", out var l110Dakota) &&
+                parameters.TryGetValue("apache", out var l110Apache) &&
+                parameters.TryGetValue("keres", out var l110Keres) &&
+                parameters.TryGetValue("cherokee", out var l110Cherokee) &&
+                parameters.TryGetValue("ojibwa", out var l110Ojibwa) &&
+                parameters.TryGetValue("choctaw", out var l110Choctaw) &&
+                parameters.TryGetValue("zuni", out var l110Zuni) &&
+                parameters.TryGetValue("pima", out var l110Pima) &&
+                parameters.TryGetValue("philadelphiaEnglish", out var l110Eng) &&
+                parameters.TryGetValue("philadelphiaSpanish", out var l110PhSp) &&
+                parameters.TryGetValue("philadelphiaIndo", out var l110PhIn) &&
+                parameters.TryGetValue("philadelphiaAsian", out var l110PhAs) &&
+                parameters.TryGetValue("chicagoSpanish", out var l110ChSp) &&
+                parameters.TryGetValue("chicagoIndo", out var l110ChIn) &&
+                l110Case is >= 0 and <= 5 &&
+                l110Navajo is >= 135000 and <= 190000 &&
+                l110Yupik is >= 17500 and <= 23500 &&
+                l110Dakota is >= 15000 and <= 19000 &&
+                l110Apache is >= 11000 and <= 16000 &&
+                l110Keres is >= 11000 and <= 14000 &&
+                l110Cherokee is >= 9000 and <= 13000 &&
+                l110Ojibwa is >= 8000 and <= 11000 &&
+                l110Choctaw is >= 8000 and <= 11000 &&
+                l110Zuni is >= 8000 and <= 11000 &&
+                l110Pima is >= 6000 and <= 8000 &&
+                l110Eng is >= 1100000 and <= 1350000 &&
+                l110PhSp is >= 110000 and <= 150000 &&
+                l110PhIn is >= 5000 and <= 9000 &&
+                l110PhAs is >= 200 and <= 600 &&
+                l110ChSp is >= 395000 and <= 460000 &&
+                l110ChIn is >= 20000 and <= 32000 &&
+                l110Navajo > l110Yupik + l110Dakota + l110Apache + l110Keres +
+                              l110Cherokee + l110Ojibwa + l110Choctaw + l110Zuni + l110Pima &&
+                l110Eng > l110PhSp + l110PhIn + l110PhAs &&
+                l110ChSp + l110ChIn > l110PhSp + l110PhIn &&
+                value == (l110Case switch
+                {
+                    0 => l110Navajo - l110Yupik,
+                    1 => l110Navajo + l110Apache + l110Cherokee,
+                    2 => l110Navajo - (l110Yupik + l110Dakota + l110Apache + l110Keres +
+                                        l110Cherokee + l110Ojibwa + l110Choctaw + l110Zuni + l110Pima),
+                    3 => l110Eng - l110PhSp - l110PhIn - l110PhAs,
+                    4 => l110ChSp + l110ChIn - l110PhSp - l110PhIn,
+                    5 => (2 * l110Navajo + l110Yupik) / (2 * l110Yupik),
+                    _ => -1
+                }),
+
             "usccss.g4.u06.l23.four_operation_contexts" =>
                 parameters.TryGetValue("caseType", out var l109Mode) &&
                 parameters.TryGetValue("segmentA", out var l109A) &&
@@ -1988,6 +2041,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l20.contextual_remainder_decisions" => BuildG4ContextualRemainder(random),
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
+            "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
@@ -3328,6 +3382,57 @@ public sealed class ExactSkillContractQuestionEngine
     }
 
 
+
+    private static ExactProblem BuildG4LanguageComparisons(Random random)
+    {
+        // IM K-5 2021 G4 U06:L24: mathematical structure of original
+        // Census tasks; independently generated first-party data, not publisher figures.
+        var mode = random.Next(0, 6);
+        var navajo = random.Next(135000, 190001);
+        var yupik = random.Next(17500, 23501);
+        var dakota = random.Next(15000, 19001);
+        var apache = random.Next(11000, 16001);
+        var keres = random.Next(11000, 14001);
+        var cherokee = random.Next(9000, 13001);
+        var ojibwa = random.Next(8000, 11001);
+        var choctaw = random.Next(8000, 11001);
+        var zuni = random.Next(8000, 11001);
+        var pima = random.Next(6000, 8001);
+        var english = random.Next(1100000, 1350001);
+        var spanish = random.Next(110000, 150001);
+        var indo = random.Next(5000, 9001);
+        var asian = random.Next(200, 601);
+        var chicagoSpanish = random.Next(395000, 460001);
+        var chicagoIndo = random.Next(20000, 32001);
+        var nine = yupik + dakota + apache + keres + cherokee + ojibwa + choctaw + zuni + pima;
+        var prompt = mode switch
+        {
+            0 => $"In a sample language table, Navajo has {navajo} speakers and Yupik has {yupik}. How many more speak Navajo?",
+            1 => $"A sample table lists Navajo {navajo}, Apache {apache} and Cherokee {cherokee} speakers. How many speak these three languages altogether?",
+            2 => $"A sample language table has Navajo {navajo} speakers. The other nine counts are {yupik}, {dakota}, {apache}, {keres}, {cherokee}, {ojibwa}, {choctaw}, {zuni}, and {pima}. How many more speak Navajo than all nine combined?",
+            3 => $"In a sample city table, {english} speak English only, while {spanish} speak Spanish, {indo} other Indo-European, and {asian} Asian languages. By how many does the English-only count exceed the other categories combined?",
+            4 => $"In two sample cities, Chicago has {chicagoSpanish} Spanish and {chicagoIndo} other Indo-European speakers, and Philadelphia has {spanish} and {indo} respectively. How many more people speak those two language categories in Chicago?",
+            _ => $"In a sample language table, {navajo} speak Navajo and {yupik} speak Yupik. About how many times as many speak Navajo? Round the ratio to the nearest whole number."
+        };
+        var solution = mode switch
+        {
+            0 => "Subtract Yupik speakers from Navajo speakers and check by addition.",
+            1 => "Add Navajo, Apache and Cherokee counts, grouping to check the total.",
+            2 => $"Sum all nine other categories to {nine}, then subtract from the Navajo count. Check by addition.",
+            3 => "Add all three non-English categories, then subtract from the English-only count.",
+            4 => "Add the two Chicago language groups, add the two Philadelphia groups, then subtract. Check with a rounded estimate.",
+            _ => "Divide the larger count by the smaller and round to the nearest whole number; compare nearby multiples for reasonableness."
+        };
+        return Problem("usccss.g4.u06.l24.language_population_comparisons", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("navajo", navajo), ("yupik", yupik),
+            ("dakota", dakota), ("apache", apache), ("keres", keres),
+            ("cherokee", cherokee), ("ojibwa", ojibwa), ("choctaw", choctaw),
+            ("zuni", zuni), ("pima", pima),
+            ("philadelphiaEnglish", english), ("philadelphiaSpanish", spanish),
+            ("philadelphiaIndo", indo), ("philadelphiaAsian", asian),
+            ("chicagoSpanish", chicagoSpanish), ("chicagoIndo", chicagoIndo));
+    }
+
     private static ExactProblem BuildG4FourOperations(Random random)
     {
         // IM K-5 2021 Grade 4 U06:L23: travel segments, round trips,
@@ -4233,6 +4338,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l24.language_population_comparisons" => (p["caseType"] switch { 0 => p["navajo"] - p["yupik"], 1 => p["navajo"] + p["apache"] + p["cherokee"], 2 => p["navajo"] - (p["yupik"] + p["dakota"] + p["apache"] + p["keres"] + p["cherokee"] + p["ojibwa"] + p["choctaw"] + p["zuni"] + p["pima"]), 3 => p["philadelphiaEnglish"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"] - p["philadelphiaAsian"], 4 => p["chicagoSpanish"] + p["chicagoIndo"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"], _ => (2 * p["navajo"] + p["yupik"]) / (2 * p["yupik"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l23.four_operation_contexts" => (p["caseType"] switch { 0 => 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]), 1 => p["musicTotalFeet"] / (2 * p["musicTrips"]), 2 => 2 * p["feetPerMile"] - (p["longTrips"] * 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]) + p["musicTotalFeet"]), 3 => p["week1"] / p["days"], 4 => p["week1"] - p["week2"], _ => p["stepTarget"] - p["week1"] - p["week2"] - p["week3"] }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l21.multistep_contexts" => (p["caseType"] switch { 0 => p["budget"] - p["dailyRevenue"], 1 => p["count"] * p["days"], _ => p["count"] * p["days"] * (p["drinkPrice"] + p["popcornPrice"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l20.contextual_remainder_decisions" => (p["caseType"] switch { 0 => p["dividend"] / p["divisor"] + 1, 1 => p["dividend"] / p["divisor"], 2 => p["dividend"] % p["divisor"], 3 => (p["dividend"] - p["shortfall"]) / p["divisor"], _ => p["dividend"] / p["divisor"] }).ToString(CultureInfo.InvariantCulture),

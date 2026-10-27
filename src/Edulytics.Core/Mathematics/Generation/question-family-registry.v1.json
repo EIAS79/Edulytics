@@ -19478,6 +19478,26 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l24.language_population_comparisons",
+      "version": 1,
+      "skillId": "supporting.reasoning.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-source-structured-language-population-difference-sum-and-rounded-ratio-check",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "table",
+        "bar_graph_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
