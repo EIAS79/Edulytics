@@ -15,3 +15,8 @@
 - `artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-2021-source-element-ledger.json` records 31 identified source and delivery elements, including inaccessible linked PDFs, teacher response pages, original Cool-down and unverified media; denominator remains incomplete.
 - `artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-2021-teacher-led-handoff.md` is independent first-party classroom guidance, NOT proof of app delivery or student completion.
 - Tests of two existing-engine extensions are written in `Grade4Ordinal101AreaDivisionExactTests.cs`, **not run**, and no exact families were promoted to student routing.
+
+## Source-aligned teaching correction: Rich V2 v2
+- Original Elena/Tyler number models preserved. A previously generic third worked example was replaced by the actual 2021 soccer field task (2,280 m² / 40 m), including **estimate vs exact-answer distinction**.
+- Three new **first-party mathematical visual-model metadata** entries are authored for the soccer estimate, 189/7 area partition, and 197/6 contextual remainder. These are not the publisher's original SVG/PNG assets and not evidence that the UI displays graphical equivalents.
+- 2021 original figure bytes remain unavailable locally; linked HTML image URLs and alt text alone do not establish visual parity. No changes to existing learner records, original source files, or 2024 material.

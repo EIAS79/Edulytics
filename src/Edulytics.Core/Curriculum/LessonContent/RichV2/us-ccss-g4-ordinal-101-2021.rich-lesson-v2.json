@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l15-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l15-source-abc-2021-v2",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
@@ -63,16 +63,17 @@
           "Check": "197 = 6 × 32 + 5, with 0 ≤ 5 < 6."
         },
         {
-          "Title": "Guided original task 1 (teacher-reviewed)",
-          "Question": "Elena used 189 tiles in a mural seven tiles wide",
-          "Method": "Use the lesson's original objective: Use partial quotients to find unknown rectangle side lengths.",
+          "Title": "Soccer-field estimation and exact area check",
+          "Question": "A rectangular soccer field has an area of 2,280 m² and a width of 40 m. What length is reasonable? Then find its exact length.",
+          "Method": "Use estimated benchmarks before dividing area by width; write partial quotients.",
           "Steps": [
-            "Read all givens and the requested output of Elena's mural.",
-            "Model the source task mathematically: Unknown side = area ÷ known side; when dividing tile counts, interpret a remainder in context.",
-            "Present the reasoning, answer, drawn construction or student-created artifact and check it against the original conditions."
+            "Estimate: 40 × 50 = 2,000 m² and 40 × 60 = 2,400 m², so a reasonable length is between 50 m and 60 m.",
+            "Partition 2,280 = 2,000 + 280, where 2,000 ÷ 40 = 50 and 280 ÷ 40 = 7.",
+            "Combine 50 + 7 = 57 m and verify 40 × 57 = 2,280 m².",
+            "For the original estimation discussion, accept defensible too-low, approximately-right, and too-high estimates separately from the exact computed length."
           ],
-          "Answer": "Open student source task; a teacher must check the actual response and any required figure. No automatic source answer is asserted.",
-          "Check": "Not a verified original publisher answer or machine-scored Practice item."
+          "Answer": "57 m (exact); estimates near 50–60 m must be reasoned about separately",
+          "Check": "40 × 57 = 2,280 m²"
         }
       ],
       "CommonMistakes": [
@@ -93,7 +94,62 @@
         "Teacher reviews original diagrams, classroom gallery walk and open explanations.",
         "First-party Cool-down: 168 ÷ 6 = 28 metres; not a publisher-gated task."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Independent area calculation for the soccer field",
+          "Description": "First-party symbolic support, not a copy of the publisher's diagram. Estimate before finding the exact unknown side.",
+          "PrimaryLabel": "Area: 2,280 m²; width: 40 m",
+          "SecondaryLabel": "Unknown length: metres",
+          "Items": [
+            "40 × 50 = 2,000 m² (too small)",
+            "40 × 60 = 2,400 m² (too large)",
+            "2,280 ÷ 40 = (2,000 ÷ 40) + (280 ÷ 40)",
+            "Length = 50 + 7 = 57 m"
+          ],
+          "SecondaryItems": [
+            "Use 40 × length = 2,280 to check.",
+            "The original estimation prompts require a teacher to assess students' reasons."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "189-tile mural: area partition",
+          "Description": "Edulytics independent schematic explanation of seven equally wide rows and a complete rectangular area; visual source comparison pending.",
+          "PrimaryLabel": "Width = 7 tiles; total area = 189 square tiles",
+          "SecondaryLabel": "Length = 20 + 7 = 27 tiles",
+          "Items": [
+            "189 = 140 + 49",
+            "140 = 7 × 20",
+            "49 = 7 × 7",
+            "7 × (20 + 7) = 189"
+          ],
+          "SecondaryItems": [
+            "Keep the width of 7 tiles fixed in both sub-rectangles.",
+            "This is first-party symbolic support; the original publisher's image is not reproduced."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "197 available tiles and a complete 6-wide mural",
+          "Description": "Represent the contextual remainder rather than incorrectly rounding the mural's side length upward.",
+          "PrimaryLabel": "197 = (6 × 32) + 5",
+          "SecondaryLabel": "32 complete columns; 5 unused tiles",
+          "Items": [
+            "197 = 180 + 12 + 5",
+            "180 ÷ 6 = 30 and 12 ÷ 6 = 2",
+            "Length = 30 + 2 = 32",
+            "6 × 33 = 198 > 197, so 33 complete columns are impossible."
+          ],
+          "SecondaryItems": [
+            "The remaining five tiles cannot make a sixth tile in the next column.",
+            "Teacher checks the student's grid drawing, model and verbal justification."
+          ],
+          "Rows": []
+        }
+      ],
       "Videos": []
     }
   ]
