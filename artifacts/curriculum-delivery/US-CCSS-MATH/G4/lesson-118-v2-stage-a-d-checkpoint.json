@@ -1,12 +1,12 @@
 {
   "ordinal": 118,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L07",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "ORIGINAL_2021_PREP_AND_TEACHER_STUDENT_FACING_ANDRE_12_TO_3_AND_CLOCK_PAIR_COMPARISON_REVIEWED_FROM_RECORDED_SOURCE",
+    "B": "SOURCE_GOAL_CLOCK_TURN_AND_EXACT_HOUR_REPRESENTATIONS_WITH_DRAWING_TEACHER_SCORING",
+    "C": "EXACT_HOUR_8_PAIR_TWO_MODE_CLOCK_TURN_VERIFIER_AND_3_TEST_METHODS_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -14,17 +14,57 @@
     "teacher": "bb856930b3a5bd2416658f5b9e8778963eee096b9a3c4e304ae2f884d4e63feb"
   },
   "firstPartyCooldown": {
-    "prompt": "At exactly 8:00, what is the smaller angle between the hands?",
-    "teacherAnswer": "120°."
+    "prompt": "At exactly 5:00 and 8:00, which smaller clock-hand angle is larger and by how many hour-mark intervals? Explain.",
+    "teacherAnswer": "At 5:00, 5 gaps; at 8:00, 4 gaps; 5:00 is larger by one gap (30°)."
   },
   "originalPublisherCooldownVerified": false,
   "sourceVisualParityProven": false,
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
+  "blockers": [],
+  "sourceEdition": "2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-118-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-118-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "d124982d883f23d9a4ee443c8abdcc2ab1234076e92835b5a3d6e771c5c60296",
+    "sourceTeacherSha256": "bb856930b3a5bd2416658f5b9e8778963eee096b9a3c4e304ae2f884d4e63feb",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-102-149-original-source-intake.json",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-118-2021-source-evidence.json",
+    "sourceElementsCount": 17,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "sourceFigurePixelParityVerified": false,
+    "primarySkillId": "geometry.angles.compare_exact_hour_clock_turns",
+    "allowedFamily": "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
+    "firstPartyCoolDown": {
+      "prompt": "At exactly 5:00 and 8:00, which smaller clock-hand angle is larger and by how many hour-mark intervals? Explain.",
+      "teacherAnswer": "At 5:00, 5 gaps; at 8:00, 4 gaps; 5:00 is larger by one gap (30°)."
+    },
+    "teacherOnlyTasks": [
+      "Two Sets of Angles original source visuals",
+      "Andre draw rays at clock-centre from 12 to 3",
+      "Original pairs of depicted clock hands incl 5:00 and student explanation",
+      "Original protected publisher Cool-down"
+    ],
+    "digitalPracticeScope": "8 first-party exact-hour clock pairs, comparative and difference tasks, explicitly not non-exact time or original drawings",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal118ClockTurnComparisonTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Original source clock images and pairs not verified visually, and source standalone student PDF not reviewed.",
+    "First-party exact-hour mechanic and source activity drawings need actual learner UI and teacher assessment; not a claim of certified publisher tasks.",
+    "New C# family and tests are UNRUN. Full Stage D, exact candidate check, authorized student Practice and persistence, security/CI, and production remain deferred."
   ]
 }

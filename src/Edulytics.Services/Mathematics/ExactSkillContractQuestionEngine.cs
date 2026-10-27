@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
             "usccss.g4.u07.l06.compare_angle_openings",
             "usccss.g4.u07.l05.angle_common_vertex_rays",
             "usccss.g4.u07.l03.dot_grid_parallel_intersect",
@@ -1166,6 +1167,37 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare" =>
+                parameters.TryGetValue("caseType", out var l118Case) &&
+                parameters.TryGetValue("questionKind", out var l118Kind) &&
+                parameters.TryGetValue("variant", out var l118Variant) &&
+                parameters.TryGetValue("hourA", out var l118HourA) &&
+                parameters.TryGetValue("hourB", out var l118HourB) &&
+                parameters.TryGetValue("stepA", out var l118StepA) &&
+                parameters.TryGetValue("stepB", out var l118StepB) &&
+                l118Case is >= 0 and <= 7 &&
+                l118Kind is 0 or 1 &&
+                l118Variant is >= 0 and <= 2 &&
+                l118HourA is >= 1 and <= 11 &&
+                l118HourB is >= 1 and <= 11 &&
+                l118StepA == Math.Min(l118HourA, 12 - l118HourA) &&
+                l118StepB == Math.Min(l118HourB, 12 - l118HourB) &&
+                (l118Case switch
+                {
+                    0 => l118HourA == 3 && l118HourB == 5,
+                    1 => l118HourA == 8 && l118HourB == 2,
+                    2 => l118HourA == 3 && l118HourB == 9,
+                    3 => l118HourA == 6 && l118HourB == 5,
+                    4 => l118HourA == 10 && l118HourB == 4,
+                    5 => l118HourA == 7 && l118HourB == 8,
+                    6 => l118HourA == 1 && l118HourB == 11,
+                    7 => l118HourA == 4 && l118HourB == 6,
+                    _ => false
+                }) &&
+                value == (l118Kind == 0
+                    ? (l118StepA > l118StepB ? 1 : l118StepA < l118StepB ? 2 : 3)
+                    : Math.Abs(l118StepA - l118StepB)),
+
             "usccss.g4.u07.l06.compare_angle_openings" =>
                 parameters.TryGetValue("caseType", out var l117Mode) &&
                 parameters.TryGetValue("variant", out var l117Variant) &&
@@ -2181,6 +2213,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => BuildG4ClockHourAngleTurnCompare(random),
             "usccss.g4.u07.l06.compare_angle_openings" => BuildG4CompareAngleOpenings(random),
             "usccss.g4.u07.l05.angle_common_vertex_rays" => BuildG4AngleCommonVertexRays(random),
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" => BuildG4ParallelIntersectDotGrid(random),
@@ -3531,6 +3564,47 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4ClockHourAngleTurnCompare(Random random)
+    {
+        // Source IM 2021 Grade 4 Unit 7 Lesson 7: use a CLOCK to model
+        // turns. At EXACT hours (minute hand at 12) each hour-mark
+        // separation represents 1/12 full turn. The smaller angle
+        // has at most six hour-mark intervals. Not minute-half-hour math.
+        var mode = random.Next(0, 8);
+        var kind = random.Next(0, 2); // compare vs "by how many intervals?"
+        var variant = random.Next(0, 3);
+        var (hourA, hourB) = mode switch
+        {
+            0 => (3, 5),
+            1 => (8, 2),
+            2 => (3, 9),
+            3 => (6, 5),
+            4 => (10, 4),
+            5 => (7, 8),
+            6 => (1, 11),
+            _ => (4, 6)
+        };
+        var aSteps = Math.Min(hourA, 12 - hourA);
+        var bSteps = Math.Min(hourB, 12 - hourB);
+        var task = kind == 0
+            ? "Which smaller angle is larger: 1=clock A, 2=clock B, or 3=equal?"
+            : "By HOW MANY 1-hour-mark intervals do the two smaller angle openings differ? Give a nonnegative whole number.";
+        var context = variant switch
+        {
+            0 => "Treat both clock hands as rays starting from the clock centre.",
+            1 => "Both clocks show exactly an hour; neither minute hand has moved past 12.",
+            _ => "Follow the SHORTER turn from 12 to the hour hand, not the hand's printed length."
+        };
+        var prompt = $"At exactly {hourA}:00 (clock A) and exactly {hourB}:00 (clock B), each minute hand points to 12. Each hour mark is one twelfth of a full turn. {task} {context}";
+        var solution = $"At exactly {hourA}:00 the smaller opening is {aSteps} hour-mark intervals; at exactly {hourB}:00 it is {bSteps}. " +
+            (kind == 0 ? "Compare those openings; lengths of the drawn hands cannot change the size." :
+            $"They differ by {Math.Abs(aSteps - bSteps)} intervals. One interval equals 30 degrees, though no protractor calculation is required.");
+        return Problem("usccss.g4.u07.l07.clock_hour_angle_turn_compare", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("questionKind", kind), ("variant", variant),
+            ("hourA", hourA), ("hourB", hourB),
+            ("stepA", aSteps), ("stepB", bSteps));
+    }
+
     private static ExactProblem BuildG4CompareAngleOpenings(Random random)
     {
         // IM 2021 G4 U07:L06 explores size as the opening/turn, not ray length.
@@ -4696,6 +4770,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => (p["questionKind"] == 0 ? (p["stepA"] > p["stepB"] ? 1 : p["stepA"] < p["stepB"] ? 2 : 3) : Math.Abs(p["stepA"] - p["stepB"])).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l06.compare_angle_openings" => (p["steps1"] > p["steps2"] ? 1 : p["steps1"] < p["steps2"] ? 2 : 3).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l05.angle_common_vertex_rays" => (p["start1"] == p["start2"] ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l03.dot_grid_parallel_intersect" => (p["caseType"] < 4 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
