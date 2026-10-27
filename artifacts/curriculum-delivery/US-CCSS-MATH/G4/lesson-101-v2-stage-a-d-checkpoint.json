@@ -1,12 +1,12 @@
 {
   "ordinal": 101,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
-  "status": "STAGE_C_BLOCKED_MISSING_EXACT_PRACTICE_EVIDENCE",
+  "status": "A_C_EXPLICIT_GAP_2024_EDITION_MIGRATION",
   "readyForStageD": false,
   "stages": {
-    "A": "2021_PREPARATION_AND_TEACHER_STUDENT_FACING_TASKS_VERIFIED; STANDALONE_STUDENT_MIRROR_404",
-    "B": "CORRECT_ORIGINAL_GOAL_RETAINED_AND_OFF_TOPIC_METHOD_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; SOURCE_ALIGNED_PRACTICE_AND_AUTHENTICATED_GRADING_UNVERIFIED",
+    "A": "2024_TEACHER_STUDENT_SOURCE_READ; ORIGINAL_EDITION_IDENTITY_CROSSWALK_PENDING",
+    "B": "2024_NEW_EDITION_NOT_YET_MIGRATED; EXISTING_2021_AREA_CONTENT_RETAINED",
+    "C": "2024_BASE_TEN_PRACTICE_FAMILY_AND_TEACHER_MANIPULATIVE_RUBRIC_PENDING",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -25,8 +25,21 @@
   "focusedTestsRun": false,
   "productionTouched": false,
   "blockers": [
-    "No valid standalone student mirror (saved page is 404); teacher page Student Facing used.",
-    "No independently reviewed source-aligned Practice family / wrong-and-malformed-answer proof / persisted attempt.",
-    "No authenticated lesson materialization, diagram/teacher review or Stage D gate evidence."
-  ]
+    "New selected 2024 grade has 151 lessons versus 149 in active 2021 blueprint: versioned identity crosswalk is mandatory.",
+    "2024 U06:L15 is Base-Ten Blocks to Divide whereas old active 2021 U06:L15 is Situations Involving Area.",
+    "2024 publisher materials declare CC BY-NC 4.0; commercial permissions for protected source content and images unresolved.",
+    "2024 base-ten division Practice and teacher-led manipulatives not completely aligned and independently reviewed.",
+    "2024 source element inventory denominator not complete; Stage D not run."
+  ],
+  "newerSource": {
+    "edition": "2024 v360",
+    "title": "Base-Ten Blocks to Divide",
+    "sourceDecisionFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/grade4-source-edition-2024-decision.json",
+    "rightsStatus": "CC_BY_NC_4_0_COMMERCIAL_REUSE_REVIEW_REQUIRED",
+    "stageAClosure": false,
+    "stageBClosure": false,
+    "stageCClosure": false,
+    "stageD": "NOT_RUN",
+    "firstPartyCandidate": "DRAFT_PENDING"
+  }
 }
