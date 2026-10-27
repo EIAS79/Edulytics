@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.5-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l132-symmetry-abc",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L05",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: Complete a line-symmetric figure by placing every missing point or segment at equal perpendicular distance on the opposite side of the axis.",
         "Edulytics worked explanation: Locate the given symmetry axis on the actual source drawing. Count perpendicular grid squares from each existing vertex to the axis. Reflect each vertex to the other side at the same distance, then connect corresponding vertices. Check that both halves coincide under a fold.",
         "First-party Edulytics Cool-down (not gated original): On grid paper, draw the missing half of a triangle reflected across a dashed vertical line.",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "2021 original Half-drawn Figures requires constructing the missing half by reflecting each vertex/segment across a printed dashed symmetry axis. What’s the Whole Picture? includes a triangle, trapezoid and rhombus partly shown, each with a marked fold axis. Optional What Could the Whole Figure Be? invites multiple valid source drawings; no fixed numerical answer should be guessed from text-only excerpts.",
+        "Original Number Talk Keeping Track yields 43+57+50+7+3+40=200 and 243+57+43+257=600, using friendly sums. The previous U08:L04 exact axis-count numeric family is reused only to reinforce reflection vocabulary; drawing the source mirrored half requires teacher inspection."
       ],
       "KeyConcepts": [
         {
@@ -72,6 +74,19 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Complete a reflected shape",
+          "Question": "A triangle lies to the left of a vertical dashed axis. How can a missing right half be completed?",
+          "Method": "Mirror vertices at equal perpendicular distances across the axis.",
+          "Steps": [
+            "Measure each original vertex's shortest distance to the axis.",
+            "Place its reflection at the same distance on the opposite side.",
+            "Join reflected vertices in the same corresponding order.",
+            "Teacher checks the actual source grid drawing."
+          ],
+          "Answer": "A completed line-symmetric figure.",
+          "Check": "No original publisher figure coordinates inferred."
         }
       ],
       "CommonMistakes": [
@@ -84,6 +99,11 @@
           "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
           "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
           "Correction": "Use the original constraints and this rule: Complete a line-symmetric figure by placing every missing point or segment at equal perpendicular distance on the opposite side of the axis."
+        },
+        {
+          "Mistake": "Copying the existing half in the same direction, rather than reversing it about the fold.",
+          "WhyWrong": "Mirror images must be equally distant on opposite sides of the axis.",
+          "Correction": "Reflect each corresponding vertex and segment across the dashed line."
         }
       ],
       "SummaryPoints": [

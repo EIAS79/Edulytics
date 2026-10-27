@@ -1,12 +1,12 @@
 {
   "ordinal": 132,
   "lessonCode": "PED:US-CCSS-MATH:G4:U08:L05",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_PENDING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_ORIGINAL_TEACHER_PREP_AND_STUDENT_FACING_TASK_INSPECTED",
-    "B": "SOURCE_GOAL_FIGURE_REASONING_AND_MISCONCEPTIONS_TARGETED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED_UNVERIFIED_DRAWING_AND_PRACTICE",
+    "A": "REUSED_ORIGINAL_LOCAL_2021_SOURCE",
+    "B": "MISSING_HALF_REFLECTION_TASKS_AND_NUMBER_TALK_REPAIRED",
+    "C": "REUSED_SYMMETRY_AXIS_FAMILY_AND_FOCUSED_XUNIT_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,29 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Publisher/student figure parity and drawing/folding tasks need visual teacher evaluation",
-    "Exact Practice generation/answer checking not tested for this geometry skill",
-    "No authenticated runtime or Stage D evidence"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original local 2021 Our-CS source intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Keeping Track (10 minutes)",
+      "Activity 1: Half-drawn Figures (15 minutes)",
+      "Activity 2: What’s the Whole Picture? (20 minutes)",
+      "Activity 3: What Could the Whole Figure Be? [OPTIONAL] (10 minutes)",
+      "Cool-down: Make Them Whole (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(43 + 57 + 50 + 7 + 3 + 40\\) | \\(243 + 57 + 43 + 257\\)",
+      "Each shaded triangle is half of a whole figure that has a line of symmetry shown by the dashed line. | Clare drew in some segments to show the missing half of each figure. | Description: 2 shapes on grid. Left grid has two triangles, one shaded, one not, shari",
+      "Here are three figures. Each figure is half of a whole figure. The dashed line is a line symmetry of that figure. | Description: 3 shapes. Triangle with a horizontal side overlapping a dashed line. Trapezoid with horizontal side overlapping a dash line. Rhombu"
+    ],
+    "allowedFamily": "usccss.g4.u08.l04.symmetry_axis_counts",
+    "teacherOnlyTasks": [
+      "Original half-figures on source dashed axes",
+      "Mirrored paper/grid drawing"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal132SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }
