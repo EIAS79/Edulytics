@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - run: node tools/curriculum/g4-richv2-full-grade-audit.cjs
       - run: node tools/curriculum/g4-reconcile-richv2.cjs --check
       - run: node --test tests/academic-us-ccss-g4-richv2-materialization.test.cjs
       - uses: actions/setup-dotnet@v4
