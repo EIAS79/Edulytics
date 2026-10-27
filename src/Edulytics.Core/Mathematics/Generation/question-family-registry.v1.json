@@ -19708,6 +19708,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l13.additive_angle_part",
+      "version": 1,
+      "skillId": "geometry.angles.compose_decompose_known_turn",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixtures-degree-turn-identity-difference-validated",
+      "representations": [
+        "first_party_text_adjacent_angles",
+        "right_straight_full_turn",
+        "teacher_led_source_paper_angle_cutouts_and_kite"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

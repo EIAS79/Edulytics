@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l13.additive_angle_part",
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
             "usccss.g4.u07.l09.protractor_dual_scale_reading",
@@ -1170,6 +1171,26 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u07.l13.additive_angle_part" =>
+                parameters.TryGetValue("caseType", out var c124) &&
+                parameters.TryGetValue("variant", out var v124) &&
+                parameters.TryGetValue("totalDegrees", out var t124) &&
+                parameters.TryGetValue("knownDegrees", out var k124) &&
+                parameters.TryGetValue("unknownDegrees", out var u124) &&
+                c124 is >= 0 and <= 7 &&
+                v124 is >= 0 and <= 2 &&
+                (t124, k124) == (c124 switch
+                {
+                    0 => (90,62), 1 => (180,73),
+                    2 => (360,120), 3 => (90,34),
+                    4 => (180,120), 5 => (360,275),
+                    6 => (90,45), 7 => (180,95),
+                    _ => (-1,-1)
+                }) &&
+                u124 == t124-k124 &&
+                u124 > 0 &&
+                value == u124,
 
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" =>
                 parameters.TryGetValue("caseType", out var l123Case) &&
@@ -2301,6 +2322,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l13.additive_angle_part" => BuildG4AdditiveAnglePart(random),
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => BuildG4AngleClassificationByBounds(random),
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => BuildG4PerpendicularRightAngleJudgment(random),
             "usccss.g4.u07.l09.protractor_dual_scale_reading" => BuildG4ProtractorDualScaleReading(random),
@@ -3656,6 +3678,36 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4AdditiveAnglePart(Random random)
+    {
+        // 2021 IM/KH G4 U07:L13 numerical supplementary additivity.
+        // Original p/q/r/s source cutouts and folded kite are teacher-led.
+        var mode = random.Next(0,8);
+        var variant = random.Next(0,3);
+        var (total,known) = mode switch
+        {
+            0 => (90,62), 1 => (180,73),
+            2 => (360,120), 3 => (90,34),
+            4 => (180,120), 5 => (360,275),
+            6 => (90,45), _ => (180,95)
+        };
+        var unknown = total-known;
+        var cue = variant switch
+        {
+            0 => "Two adjacent angles make up the total turn.",
+            1 => "The ray lengths do not affect angular measurement.",
+            _ => "Subtract the known part from the right, straight or full turn."
+        };
+        return Problem("usccss.g4.u07.l13.additive_angle_part",
+            $"FIRST-PARTY angle pair: two non-overlapping adjacent angles together measure {total} degrees. " +
+            $"One is {known} degrees. How many degrees is the OTHER angle? {cue}",
+            $"The total turn is {total} degrees and the known part is {known} degrees, so the missing part is {total}-{known}={unknown} degrees.",
+            AssessmentItemType.Numeric,
+            ("caseType",mode),("variant",variant),
+            ("totalDegrees",total),("knownDegrees",known),
+            ("unknownDegrees",unknown));
+    }
+
     private static ExactProblem BuildG4AngleClassificationByBounds(Random random)
     {
         // Source IM 2021 Grade 4 U07:L12: acute, right,
@@ -4991,6 +5043,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l13.additive_angle_part" => p["unknownDegrees"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => p["classCode"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => p["perpendicularAnswer"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l09.protractor_dual_scale_reading" => p["targetDegrees"].ToString(CultureInfo.InvariantCulture),

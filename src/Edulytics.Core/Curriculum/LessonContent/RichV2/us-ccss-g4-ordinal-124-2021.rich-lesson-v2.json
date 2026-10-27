@@ -1,94 +1,134 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.7.13-source-abc-2021-v1",
+  "ContentVersion": "g4-4.7.13-source-abc-2021-v2-additive-parts",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U07:L13",
       "CultureCode": "en",
       "Title": "Find Angle Measurements",
       "ExplanationParagraphs": [
-        "Learning goal: You will find unknown angle measurements by composing or decomposing known measurements, and to see that an angle is not determined by the length of the segments that form it.\nIn this lesson, you use tactile tools to find angle measurements and observe more clearly that angles are additive. You compose and decompose angles by arranging paper cutouts, by folding paper or tracing, and by drawing diagrams. You arrange smaller angles whose sizes are unknown into larger angles with familiar sizes and features ( \\(90^\\circ\\) , \\(180^\\circ\\) , and \\(360^\\circ\\) ).",
+        "2021 IM/KH G4 U07:L13 Find Angle Measurements. Goal: calculate unknown angle measures by adding or subtracting adjacent known angles; show angle size does NOT depend on length of drawn segments. Compose benchmark turns 90°, 180°, 360° with physical angle corners, tracing, measuring and folding. Archived local Our-CS source inspection reused.",
         "2021 lesson activities: Warm-up: Notice and Wonder: Corner Pieces (10 minutes); Activity 1: How Big Are These Angles? (25 minutes); Activity 2: Angles in a Kite (10 minutes); Cool-down: Sets of Three Angles (5 minutes)",
-        "Corrected mathematical focus: Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown.",
-        "Edulytics authored guidance: Identify the right angle of 90° and its labelled part of 62°. Calculate the missing part: 90° − 62° = 28°. Explain that enlarging the segment drawings does not change their angle measurements.",
-        "First-party Cool-down (not publisher assessment): A straight angle contains a 73° part. What is the other adjacent angle?",
-        "Images, drawing/protractor accuracy, partner tasks and the gated original publisher Cool-down require original task evidence and teacher/visual review."
+        "Mathematical rule: If two non-overlapping adjacent angles with a common vertex combine into a 90°, 180°, 360° or otherwise known turn, then unknown part = total degrees − known part. Illustrative independent examples: 90°−62°=28°; 180°−73°=107°. These particular numbers are Edulytics-authored, not verified publisher figure measurements.",
+        "Original Activity 1 How Big Are These Angles? (25 min): teacher gives materials to measure angles p,q,r,s relative to known right-angle components. The source student task requires explanation or actual display of reasoning; do not invent publisher p/q/r/s values from truncated text excerpts.",
+        "Original Activity 2 Angles in a Kite (10 min): take a SQUARE sheet and follow THREE original pictured folding steps to form a kite, then use fold-line and benchmark angles to reason. Real precise folds and the original kite diagrams are teacher-scored, not interpreted from source snippets.",
+        "First-party Edulytics Cool-down: a 180° straight angle includes one 73° adjacent part. The other is 180−73=107°. This is independently authored: original 2021 publisher Cool-down Sets of Three Angles is teacher-access gated.",
+        "Supplementary digital Practice extends the existing exact angle kernel with eight fixed first-party numerical adjacent-angle cases across right (90°), straight (180°), and full (360°) benchmark totals. Numerical accuracy does NOT establish whether a learner folded the source kite, measured source p,q,r,s, or reasoned from real cutouts."
       ],
       "KeyConcepts": [
         {
-          "Title": "Geometric reasoning",
-          "Definition": "Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown.",
-          "Rule": "Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown.",
-          "Example": "Identify the right angle of 90° and its labelled part of 62°."
+          "Title": "Additive adjacent angle measurement",
+          "Definition": "Two adjacent nonoverlapping angles sharing a vertex together occupy the sum of their turn measures.",
+          "Rule": "known + unknown = total; unknown = total - known.",
+          "Example": "For a 90° right angle with a 62° part, the remaining angle is 28° (independent example)."
         },
         {
-          "Title": "Original activity representation",
-          "Definition": "The purpose of this lesson is for students to find unknown angle measurements by composing or decomposing known measurements, and to see that an angle is not determined by the length of the segments that form it.",
-          "Rule": "Represent the mathematical attributes and quantities exactly as requested by the original student task.",
-          "Example": "Your teacher will give you materials that can help you find angle measurements. | Use the materials and what you know about a right angle to find the size of angles \\(p\\), \\(q\\), \\(r\\), and \\(s\\). Be prepared to explain "
+          "Title": "Turn benchmarks",
+          "Definition": "A right angle has 90°, a straight angle 180°, and a full turn 360°.",
+          "Rule": "Subtract components only within a specified total; check unknown is positive and both parts sum to the full turn.",
+          "Example": "180° = 73° + 107°."
         },
         {
-          "Title": "Checking student evidence",
-          "Definition": "The task requires an actual explanation, construction or calculation.",
-          "Rule": "Verify the required diagram, operation and labels instead of inferring success from a numeric answer.",
-          "Example": "Activity 2: Angles in a Kite (10 minutes)"
+          "Title": "Segment length independence",
+          "Definition": "The angular opening between rays does not depend on how long the drawn segments are.",
+          "Rule": "Preserve ray directions and common vertex; longer/shorter segments alone do not change angle size.",
+          "Example": "Two different-length rays with the same directions still form the same angle."
+        },
+        {
+          "Title": "Publisher source physical elements",
+          "Definition": "Original p,q,r,s figures, corner pieces and square-to-kite folding require the original student images and physical materials.",
+          "Rule": "Teacher checks original diagrams and constructions. First-party numeric problems are not copied source figures.",
+          "Example": "Angles in a Kite is a 10-minute source activity with three pictured steps."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Source-goal mathematical steps",
-          "Question": "Identify the right angle of 90° and its labelled part of 62°.",
-          "Method": "Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown.",
+          "Title": "First-party complement within a right angle",
+          "Question": "A right angle 90° contains a 62° part. What is the other?",
+          "Method": "Subtract a known adjacent part from total.",
           "Steps": [
-            "Identify the right angle of 90° and its labelled part of 62°.",
-            "Calculate the missing part: 90° − 62° = 28°.",
-            "Explain that enlarging the segment drawings does not change their angle measurements."
+            "Total is 90°.",
+            "Known is 62°.",
+            "Unknown = 90−62=28°."
           ],
-          "Answer": "Explain that enlarging the segment drawings does not change their angle measurements.",
-          "Check": "Static arithmetic exemplar: 180-73 = 107; does not validate source artwork."
+          "Answer": "28°.",
+          "Check": "62+28=90."
         },
         {
-          "Title": "Guided 2021 source activity 1 (teacher-scored)",
-          "Question": "Your teacher will give you materials that can help you find angle measurements. | Use the materials and what you know about a right angle to find the size of angles \\(p\\), \\(q\\), \\(r\\), and \\(s\\). Be prepared to explain or show your reasoning. | Next",
-          "Method": "The purpose of this lesson is for students to find unknown angle measurements by composing or decomposing known measurements, and to see that an angle is not determined by the length of the segments that form it.",
+          "Title": "First-party straight angle Cool-down",
+          "Question": "A straight angle has a part measuring 73°. Find its remaining adjacent angle.",
+          "Method": "Straight angle total = 180°.",
           "Steps": [
-            "Identify the given information in Activity 1: How Big Are These Angles? (25 minutes).",
-            "Choose the lesson-specific representation: Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown.",
-            "Apply the method, explain each step, and compare the final response with the actual figure or context."
+            "180° is straight.",
+            "Unknown = 180°−73°.",
+            "Unknown = 107°."
           ],
-          "Answer": "Open response; teacher checks the original activity and visual work.",
-          "Check": "This scaffold is not a publisher answer key or verified digital question."
+          "Answer": "107°.",
+          "Check": "73+107=180."
         },
         {
-          "Title": "Guided 2021 source activity 2 (teacher-scored)",
-          "Question": "Your teacher will give you a square sheet of paper. Follow the steps to fold the paper into a kite. Fold as precisely as possible. | Description: 3 steps to fold a kite. step 1, with corners of square pointing up, down, left, right, fold right corner",
-          "Method": "The purpose of this lesson is for students to find unknown angle measurements by composing or decomposing known measurements, and to see that an angle is not determined by the length of the segments that form it.",
+          "Title": "First-party full-turn split",
+          "Question": "Two non-overlapping adjacent turns total 360° and one measures 120°. What is the other?",
+          "Method": "Full turn total = 360°.",
           "Steps": [
-            "Identify the given information in Activity 2: Angles in a Kite (10 minutes).",
-            "Choose the lesson-specific representation: Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown.",
-            "Apply the method, explain each step, and compare the final response with the actual figure or context."
+            "Write 120° + x = 360°.",
+            "Subtract 120 from 360.",
+            "x=240°."
           ],
-          "Answer": "Open response; teacher checks the original activity and visual work.",
-          "Check": "This scaffold is not a publisher answer key or verified digital question."
+          "Answer": "240°.",
+          "Check": "120+240=360."
+        },
+        {
+          "Title": "Original activity p,q,r,s requires source",
+          "Question": "Use the publisher's original right angle, paper materials and diagrams to find p, q, r, s.",
+          "Method": "Arrange/trace teacher's original corner pieces; compare with a 90° right angle.",
+          "Steps": [
+            "Obtain original student diagram or teacher cutout.",
+            "Show how a chosen known benchmark is composed.",
+            "Compute only after determining the actual source labelled parts.",
+            "Explain each angle physically or in a labeled diagram."
+          ],
+          "Answer": "Source-specific numeric values require actual source figures, not invented.",
+          "Check": "Teacher-scored only."
+        },
+        {
+          "Title": "Folded paper kite",
+          "Question": "Follow the source's three pictured folding instructions starting from a square and use fold geometry to justify angles.",
+          "Method": "Make precise paper folds and reason from right/straight angles.",
+          "Steps": [
+            "Start with an actual square sheet and teacher's three source steps.",
+            "Fold precisely and label relevant vertices and creases.",
+            "Use 90°/180° reference angles to compose/decompose.",
+            "Show and verify the construction with teacher."
+          ],
+          "Answer": "Depends on original folded paper; teacher verifies.",
+          "Check": "The source folding diagram is not digitally cloned."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Treating figures as only their appearance.",
-          "WhyWrong": "Ignores the necessary mathematical attributes or turn sizes.",
-          "Correction": "Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown."
+          "Mistake": "Adding when finding an unknown part of a known total.",
+          "WhyWrong": "The known part and unknown part must sum to the benchmark.",
+          "Correction": "Unknown = total − known."
         },
         {
-          "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
-          "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
-          "Correction": "Use the original constraints and this rule: Adjacent angles compose a larger angle; subtract known parts from 90°, 180°, or a known total to find an unknown."
+          "Mistake": "Assuming longer rays make larger angles.",
+          "WhyWrong": "Only directions and shared vertex determine angular opening.",
+          "Correction": "Compare the degree turn, not the drawn line lengths."
+        },
+        {
+          "Mistake": "Assigning 62° or 73° to the publisher's p,q,r,s or kite pictures.",
+          "WhyWrong": "Those figures were not visually measured here.",
+          "Correction": "Treat these as Edulytics first-party numeric examples only."
         }
       ],
       "SummaryPoints": [
-        "Learning goal: You will find unknown angle measurements by composing or decomposing known measurements, and to see that an angle is not determined by the length of the segments that form it.",
-        "First-party Cool-down: A straight angle contains a 73° part. What is the other adjacent angle?",
-        "Teacher-reviewed source requirement: Activity 1: How Big Are These Angles? (25 minutes)"
+        "Original source activities: Corner Pieces, p/q/r/s unknown angles, three-step square-to-kite physical folds.",
+        "Compose/decompose adjacent turns: unknown = total − known; benchmark totals 90°,180°,360°.",
+        "Changing ray length alone does not change angle measure.",
+        "First-party Cool-down 180°−73°=107° (not original gated publisher Cool-down).",
+        "Existing exact question kernel EXTENDED only; original figures and folded paper teacher-reviewed; tests UNRUN."
       ],
       "Visuals": [],
       "Videos": []
