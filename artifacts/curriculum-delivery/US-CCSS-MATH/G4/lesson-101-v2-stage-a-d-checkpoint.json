@@ -1,12 +1,12 @@
 {
   "ordinal": 101,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
-  "status": "STAGE_C_BLOCKED_MISSING_EXACT_PRACTICE_EVIDENCE",
+  "status": "STAGE_C_REUSE_CANDIDATE_BLOCKED_RUNTIME_EVIDENCE",
   "readyForStageD": false,
   "stages": {
     "A": "2021_PREPARATION_AND_TEACHER_STUDENT_FACING_TASKS_VERIFIED; STANDALONE_STUDENT_MIRROR_404",
     "B": "CORRECT_ORIGINAL_GOAL_RETAINED_AND_OFF_TOPIC_METHOD_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; SOURCE_ALIGNED_PRACTICE_AND_AUTHENTICATED_GRADING_UNVERIFIED",
+    "C": "EXISTING_RECTANGLE_MISSING_SIDE_ENGINE_REVIEWED; ALLOWLIST_CANDIDATE_NOT_ACTIVATED; CONTEXTUAL_REMAINDER_TEACHER_REVIEW; TARGETED_NEGATIVE_AND_PERSISTENCE_EVIDENCE_PENDING",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -27,8 +27,11 @@
   "blockers": [
     "No valid standalone student mirror (saved page is 404); teacher page Student Facing used.",
     "No independently reviewed source-aligned Practice family / wrong-and-malformed-answer proof / persisted attempt.",
-    "No authenticated lesson materialization, diagram/teacher review or Stage D gate evidence."
+    "No authenticated lesson materialization, diagram/teacher review or Stage D gate evidence.",
+    "Existing rectangle_missing_side exact generator/verifier identified and source-aligned to positive exact division; lesson-specific mapping/teacher remainder interpretation and authenticated grading are not demonstrated.",
+    "Targeted correct/wrong/malformed question and saved-attempt tests not run under the authoring-only policy."
   ],
   "sourceEdition": "1st Edition (2021)",
-  "activeCurriculumEdition": "2021"
+  "activeCurriculumEdition": "2021",
+  "exactPracticeContract": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-2021-exact-practice-contract.json"
 }
