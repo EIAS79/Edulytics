@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l07-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l07-source-abc-2021-v1-stage-d-placevalue-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L07",
@@ -21,6 +21,18 @@
           "Definition": "Place-value counting through 100,000",
           "Rule": "Count forward by units of 1, 10, 100 or 1,000, including exchanges across place-value boundaries.",
           "Example": "What follows 9,950 when counting by tens?"
+        },
+        {
+          "Title": "Base-ten representation",
+          "Definition": "A five-digit number is the sum of its place values.",
+          "Rule": "A five-digit number is the sum of its place values.",
+          "Example": "Expand 43,205."
+        },
+        {
+          "Title": "Inverse verification",
+          "Definition": "Zeros hold the position of absent place values.",
+          "Rule": "Zeros hold the position of absent place values.",
+          "Example": "What is the value of the 7 in 70,450?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "9960",
           "Check": "Exact arithmetic: 9950+10 = 9960."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 1",
+          "Question": "Expand 43,205.",
+          "Method": "A five-digit number is the sum of its place values.",
+          "Steps": [
+            "4 ten-thousands give 40,000.",
+            "3 thousands give 3,000; 2 hundreds give 200.",
+            "Add 40,000+3,000+200+5=43,205."
+          ],
+          "Answer": "40,000+3,000+200+5",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 2",
+          "Question": "What is the value of the 7 in 70,450?",
+          "Method": "A five-digit number is the sum of its place values.",
+          "Steps": [
+            "Read its position from the rightmost ones place.",
+            "The digit 7 occupies ten-thousands.",
+            "Multiply 7×10,000=70,000."
+          ],
+          "Answer": "70,000",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Skipping a new ten-thousands digit at a place-value boundary.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Count forward by units of 1, 10, 100 or 1,000, including exchanges across place-value boundaries."
+        },
+        {
+          "Mistake": "Reading the digit 3 in 43,205 as only 3.",
+          "WhyWrong": "The stated place value, scale, or arithmetic relationship is not preserved.",
+          "Correction": "The thousands-position 3 represents 3,000."
         }
       ],
       "SummaryPoints": [

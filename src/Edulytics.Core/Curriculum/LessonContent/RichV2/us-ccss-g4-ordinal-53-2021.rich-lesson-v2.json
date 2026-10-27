@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l08-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l08-source-abc-2021-v1-stage-d-placevalue-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L08",
@@ -21,6 +21,18 @@
           "Definition": "Regrouping base-ten blocks to represent up to 1,000,000",
           "Rule": "If the small cube stands for 10 instead of 1, every block's value becomes ten times as large.",
           "Example": "A diagram originally models 15,710. What value would all blocks represent if every unit is now worth ten times as much?"
+        },
+        {
+          "Title": "Base-ten representation",
+          "Definition": "Six-digit numbers include hundred-thousands and lower places.",
+          "Rule": "Six-digit numbers include hundred-thousands and lower places.",
+          "Example": "Expand 530,406."
+        },
+        {
+          "Title": "Inverse verification",
+          "Definition": "Addition of expanded terms checks the standard representation.",
+          "Rule": "Addition of expanded terms checks the standard representation.",
+          "Example": "Expand 902,010."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "157100",
           "Check": "Exact arithmetic: 15710*10 = 157100."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 1",
+          "Question": "Expand 530,406.",
+          "Method": "Six-digit numbers include hundred-thousands and lower places.",
+          "Steps": [
+            "Read 5 hundred-thousands: 500,000.",
+            "Read 3 ten-thousands: 30,000.",
+            "Add the remaining 400 and 6: 530,406."
+          ],
+          "Answer": "500,000+30,000+400+6",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 2",
+          "Question": "Expand 902,010.",
+          "Method": "Six-digit numbers include hundred-thousands and lower places.",
+          "Steps": [
+            "9 hundred-thousands equal 900,000.",
+            "2 thousands equal 2,000.",
+            "One ten adds 10: 902,010."
+          ],
+          "Answer": "900,000+2,000+10",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Relabeling only the small cube and not the whole base-ten model.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "If the small cube stands for 10 instead of 1, every block's value becomes ten times as large."
+        },
+        {
+          "Mistake": "Confusing the four hundreds in 530,406 with four tens.",
+          "WhyWrong": "The stated place value, scale, or arithmetic relationship is not preserved.",
+          "Correction": "The digit 4 contributes 400."
         }
       ],
       "SummaryPoints": [

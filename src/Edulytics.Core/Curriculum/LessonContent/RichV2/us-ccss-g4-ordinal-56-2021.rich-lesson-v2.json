@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l11-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l11-source-abc-2021-v1-stage-d-placevalue-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L11",
@@ -21,6 +21,18 @@
           "Definition": "Uniformly scaled number lines",
           "Rule": "Check both endpoints and tick interval: each tenfold increase changes the coordinate by a factor of ten.",
           "Example": "What is 100 times 3,470?"
+        },
+        {
+          "Title": "Base-ten representation",
+          "Definition": "A number line uses equal intervals to show place value.",
+          "Rule": "A number line uses equal intervals to show place value.",
+          "Example": "Where is 230,000 relative to 200,000 and 300,000?"
+        },
+        {
+          "Title": "Inverse verification",
+          "Definition": "Midpoints are half the distance between labelled endpoints.",
+          "Rule": "Midpoints are half the distance between labelled endpoints.",
+          "Example": "Find midpoint of 70,000 and 80,000."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "347000",
           "Check": "Exact arithmetic: 3470*100 = 347000."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 1",
+          "Question": "Where is 230,000 relative to 200,000 and 300,000?",
+          "Method": "A number line uses equal intervals to show place value.",
+          "Steps": [
+            "Find 230,000−200,000=30,000.",
+            "Find 300,000−230,000=70,000.",
+            "Both differences are positive, so the point lies between."
+          ],
+          "Answer": "between 200,000 and 300,000",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 2",
+          "Question": "Find midpoint of 70,000 and 80,000.",
+          "Method": "A number line uses equal intervals to show place value.",
+          "Steps": [
+            "Compute the interval: 80,000−70,000=10,000.",
+            "Half the interval is 5,000.",
+            "Add 70,000+5,000=75,000."
+          ],
+          "Answer": "75,000",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Keeping identical positions after changing the scale of the number line.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Check both endpoints and tick interval: each tenfold increase changes the coordinate by a factor of ten."
+        },
+        {
+          "Mistake": "Positioning 230,000 beyond 300,000.",
+          "WhyWrong": "The stated place value, scale, or arithmetic relationship is not preserved.",
+          "Correction": "200,000<230,000<300,000."
         }
       ],
       "SummaryPoints": [

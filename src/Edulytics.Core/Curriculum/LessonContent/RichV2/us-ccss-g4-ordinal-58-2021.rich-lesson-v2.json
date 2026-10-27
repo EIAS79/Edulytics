@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l13-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l13-source-abc-2021-v1-stage-d-placevalue-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L13",
@@ -21,6 +21,18 @@
           "Definition": "Order whole numbers by place value",
           "Rule": "Compare the leading differing digit and arrange all given numbers consistently.",
           "Example": "What is the difference between 35,100 and 31,500?"
+        },
+        {
+          "Title": "Base-ten representation",
+          "Definition": "Order large numbers by comparing leftmost differing digits.",
+          "Rule": "Order large numbers by comparing leftmost differing digits.",
+          "Example": "Order 502,000, 520,000, 205,000."
+        },
+        {
+          "Title": "Inverse verification",
+          "Definition": "Check each adjacent pair to verify ascending order.",
+          "Rule": "Check each adjacent pair to verify ascending order.",
+          "Example": "Order 98,700, 87,900, 97,800."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "3600",
           "Check": "Exact arithmetic: 35100-31500 = 3600."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 1",
+          "Question": "Order 502,000, 520,000, 205,000.",
+          "Method": "Order large numbers by comparing leftmost differing digits.",
+          "Steps": [
+            "205,000 begins with two hundred-thousands.",
+            "The remaining numbers both begin with five.",
+            "502,000<520,000 because 0<2 in ten-thousands."
+          ],
+          "Answer": "205,000 < 502,000 < 520,000",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 2",
+          "Question": "Order 98,700, 87,900, 97,800.",
+          "Method": "Order large numbers by comparing leftmost differing digits.",
+          "Steps": [
+            "87,900 has only eight ten-thousands.",
+            "Both remaining values have nine ten-thousands.",
+            "97,800<98,700 by comparing thousands."
+          ],
+          "Answer": "87,900 < 97,800 < 98,700",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Ordering on digit count alone when all numbers have equal length.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Compare the leading differing digit and arrange all given numbers consistently."
+        },
+        {
+          "Mistake": "Putting 502,000 before 205,000 in ascending order.",
+          "WhyWrong": "The stated place value, scale, or arithmetic relationship is not preserved.",
+          "Correction": "Two hundred-thousands is less than five hundred-thousands."
         }
       ],
       "SummaryPoints": [

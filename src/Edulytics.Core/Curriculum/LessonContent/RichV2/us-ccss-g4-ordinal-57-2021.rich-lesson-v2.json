@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l12-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l12-source-abc-2021-v1-stage-d-placevalue-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L12",
@@ -21,6 +21,18 @@
           "Definition": "Multi-digit comparisons by most significant place",
           "Rule": "Compare number of digits, then compare same-position digits starting from the greatest place.",
           "Example": "Which is larger, 817 or 762, and by how much?"
+        },
+        {
+          "Title": "Base-ten representation",
+          "Definition": "Compare numbers at their first different highest place.",
+          "Rule": "Compare numbers at their first different highest place.",
+          "Example": "Which is larger, 507,040 or 570,004?"
+        },
+        {
+          "Title": "Inverse verification",
+          "Definition": "A lower-place digit cannot outweigh a higher-place difference.",
+          "Rule": "A lower-place digit cannot outweigh a higher-place difference.",
+          "Example": "Which is larger, 803,120 or 803,102?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "55",
           "Check": "Exact arithmetic: 817-762 = 55."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 1",
+          "Question": "Which is larger, 507,040 or 570,004?",
+          "Method": "Compare numbers at their first different highest place.",
+          "Steps": [
+            "Both have five hundred-thousands.",
+            "Compare the ten-thousands digits: 0 and 7.",
+            "Since 7>0, 570,004 is greater."
+          ],
+          "Answer": "570,004",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 2",
+          "Question": "Which is larger, 803,120 or 803,102?",
+          "Method": "Compare numbers at their first different highest place.",
+          "Steps": [
+            "Both share the thousands and hundreds values.",
+            "Compare the tens digits: 2 and 0.",
+            "Since 2>0, 803,120 is greater."
+          ],
+          "Answer": "803,120",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Comparing digits in ones place before hundreds or thousands.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Compare number of digits, then compare same-position digits starting from the greatest place."
+        },
+        {
+          "Mistake": "Comparing 507,040 and 570,004 using the final digits.",
+          "WhyWrong": "The stated place value, scale, or arithmetic relationship is not preserved.",
+          "Correction": "The ten-thousands places determine the result."
         }
       ],
       "SummaryPoints": [

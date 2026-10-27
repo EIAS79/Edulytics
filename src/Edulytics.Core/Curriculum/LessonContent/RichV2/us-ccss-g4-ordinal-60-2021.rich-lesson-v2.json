@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u04-l15-source-abc-2021-v1",
+  "ContentVersion": "g4-u04-l15-source-abc-2021-v1-stage-d-placevalue-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U04:L15",
@@ -21,6 +21,18 @@
           "Definition": "Nearest multiples of 1,000, 10,000 and 100,000",
           "Rule": "Compare distances to adjacent multiples on an equal-interval line.",
           "Example": "How far is 374,500 above 370,000?"
+        },
+        {
+          "Title": "Base-ten representation",
+          "Definition": "Nearest-multiple rounding compares distances to the bounding multiples.",
+          "Rule": "Nearest-multiple rounding compares distances to the bounding multiples.",
+          "Example": "Nearest thousand to 348,620?"
+        },
+        {
+          "Title": "Inverse verification",
+          "Definition": "Choose the closer endpoint after computing both distances.",
+          "Rule": "Choose the closer endpoint after computing both distances.",
+          "Example": "Nearest ten-thousand to 473,500?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "4500",
           "Check": "Exact arithmetic: 374500-370000 = 4500."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 1",
+          "Question": "Nearest thousand to 348,620?",
+          "Method": "Nearest-multiple rounding compares distances to the bounding multiples.",
+          "Steps": [
+            "Find bounding multiples 348,000 and 349,000.",
+            "Compute distances 620 and 380.",
+            "Choose 349,000 since 380<620."
+          ],
+          "Answer": "349,000",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
+        },
+        {
+          "Title": "Edulytics independently authored place-value model 2",
+          "Question": "Nearest ten-thousand to 473,500?",
+          "Method": "Nearest-multiple rounding compares distances to the bounding multiples.",
+          "Steps": [
+            "Find 470,000 and 480,000.",
+            "Distances are 3,500 and 6,500.",
+            "Choose 470,000 because 3,500<6,500."
+          ],
+          "Answer": "470,000",
+          "Check": "First-party exact arithmetic; original 2021 publisher drawings and teacher-reviewed student activity not certified."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Choosing the closest multiple only by the first digit.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Compare distances to adjacent multiples on an equal-interval line."
+        },
+        {
+          "Mistake": "Rounding 348,620 to 348,000 without checking the upper endpoint.",
+          "WhyWrong": "The stated place value, scale, or arithmetic relationship is not preserved.",
+          "Correction": "349,000 is only 380 away, whereas 348,000 is 620 away."
         }
       ],
       "SummaryPoints": [
