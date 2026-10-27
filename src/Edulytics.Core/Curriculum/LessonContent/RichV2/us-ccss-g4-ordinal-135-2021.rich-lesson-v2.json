@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.8-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l135-abc-perimeter-and-symmetry",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L08",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: To find unknown lengths from perimeter, subtract the total known side lengths, then use the figure's equal-side or symmetry constraints.",
         "Edulytics worked explanation: Use the original 64-inch-perimeter diagrams; identify matching sides first. For a rectangle of perimeter 64 inches and one side 12 inches, double the known side then subtract: 64 − 24 = 40. Divide 40 across the other two equal sides to obtain 20 inches each.",
         "First-party Edulytics Cool-down (not gated original): A rectangle has perimeter 64 inches and one side 14 inches. Find the other side.",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "Original 2021 Unit 8 Lesson 8: four original figures EACH have perimeter 64 inches and figures P,R,S each have one symmetry line. Do not invent which individual side is unknown or its size without original diagram. Lin’s Design says 145 inches of decorative tape outlines a figure with reflection symmetry; the given half-figure and its dash axis determine remaining lengths, so the actual source answer requires the original picture.",
+        "Original warm-up two source equalities are TRUE: 1 1/5 +2 2/5 +3 3/5 +4 4/5 =12, and 10−1/2−2/2−3/2−4/2=5. Missing side principle: perimeter total minus all other known boundary lengths. Repeat a corresponding boundary length only when the source's symmetry gives equality. Digital existing rectangle missing-side family is only supplementary."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,17 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Independent 64-inch perimeter missing side",
+          "Question": "A figure has perimeter 64 inches and three known sides 16,18,14 inches. What is the fourth side?",
+          "Method": "Subtract known boundary lengths from 64.",
+          "Steps": [
+            "16+18+14=48 inches.",
+            "64−48=16 inches."
+          ],
+          "Answer": "16 inches.",
+          "Check": "First-party example, not source figure P/R/S."
         }
       ],
       "CommonMistakes": [
