@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u06.l25.flower_garland_patterns",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
@@ -1159,6 +1160,38 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u06.l25.flower_garland_patterns" =>
+                parameters.TryGetValue("caseType", out var l111Case) &&
+                parameters.TryGetValue("garlandsEach", out var l111Pairs) &&
+                parameters.TryGetValue("flowersMade", out var l111Flowers) &&
+                parameters.TryGetValue("flowersPerGarland", out var l111GarlandSize) &&
+                parameters.TryGetValue("priyaBig", out var l111Pb) &&
+                parameters.TryGetValue("priyaSmall", out var l111Ps) &&
+                parameters.TryGetValue("jadaBig", out var l111Jb) &&
+                parameters.TryGetValue("jadaSmall", out var l111Js) &&
+                parameters.TryGetValue("cutMinutes", out var l111Cut) &&
+                parameters.TryGetValue("finishMinutes", out var l111Finish) &&
+                parameters.TryGetValue("workers", out var l111Workers) &&
+                l111Case is >= 0 and <= 5 &&
+                l111Pairs is >= 10 and <= 40 &&
+                l111Flowers is >= 120 and <= 250 &&
+                l111GarlandSize == 16 &&
+                l111Pb == 6 && l111Ps == 6 &&
+                l111Jb == 4 && l111Js == 8 &&
+                l111Cut == 1 && l111Finish == 2 &&
+                l111Workers == 2 &&
+                value == (l111Case switch
+                {
+                    0 => l111Pairs * (l111Pb + l111Jb),
+                    1 => l111Pairs * (l111Ps + l111Js),
+                    2 => l111Flowers / l111GarlandSize,
+                    3 => l111Flowers % l111GarlandSize,
+                    4 => l111Flowers * (l111Cut + l111Finish),
+                    5 => ((l111Flowers + l111Workers - 1) / l111Workers) * (l111Cut + l111Finish),
+                    _ => -1
+                }),
+
             "usccss.g4.u06.l24.language_population_comparisons" =>
                 parameters.TryGetValue("caseType", out var l110Case) &&
                 parameters.TryGetValue("navajo", out var l110Navajo) &&
@@ -2042,6 +2075,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u06.l25.flower_garland_patterns" => BuildG4FlowerPatterns(random),
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
@@ -3383,6 +3417,43 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+    private static ExactProblem BuildG4FlowerPatterns(Random random)
+    {
+        // IM K-5 2021 G4 U06:L25 optional source: 12-flower repeating
+        // cycles, 25 of each garland, 155/16, and two-worker timing.
+        // Original physical flower construction is teacher-led.
+        var mode = random.Next(0, 6);
+        var garlands = random.Next(10, 41);
+        var made = random.Next(120, 251);
+        const int perGarland = 16, priyaBig = 6, priyaSmall = 6;
+        const int jadaBig = 4, jadaSmall = 8, cut = 1, finish = 2, workers = 2;
+        var question = mode switch
+        {
+            0 => $"Each 12-flower Priya garland repeats 2 big and 2 small, and each 12-flower Jada garland repeats 1 big and 2 small. If they make {garlands} garlands of each type, how many big flowers altogether?",
+            1 => $"Each 12-flower Priya garland repeats 2 big and 2 small, and each 12-flower Jada garland repeats 1 big and 2 small. If they make {garlands} garlands of each type, how many small flowers altogether?",
+            2 => $"Two students have {made} paper flowers. Each complete garland requires {perGarland} flowers. How many complete garlands can they make?",
+            3 => $"Two students have {made} paper flowers. Each complete garland requires {perGarland} flowers. How many flowers will be left after making as many complete garlands as possible?",
+            4 => $"Making each paper flower needs {cut} minute to cut strips and {finish} minutes to finish. For {made} flowers, how many total worker-minutes of effort are needed?",
+            _ => $"Making each of {made} paper flowers takes {cut} minute to cut and {finish} minutes to finish. Two students work simultaneously and split the flower count as equally as possible, completing their own flowers one at a time. How many minutes until all are finished?"
+        };
+        var solution = mode switch
+        {
+            0 => $"Priya uses {priyaBig} big and Jada {jadaBig} big per garland: multiply {garlands} by their combined total.",
+            1 => $"Priya uses {priyaSmall} small and Jada {jadaSmall} small per garland: multiply {garlands} by their combined total.",
+            2 => $"Divide {made} by {perGarland} and use only whole garlands.",
+            3 => $"Divide {made} by {perGarland}; the remainder cannot form a whole garland.",
+            4 => $"Each flower uses {cut}+{finish} minutes. Multiply by {made} flowers for total worker-minutes.",
+            _ => $"Divide {made} flowers between two students as evenly as possible. The larger share takes {((made + 1) / 2)} flowers times {cut + finish} minutes; both work at once."
+        };
+        return Problem("usccss.g4.u06.l25.flower_garland_patterns", question, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("garlandsEach", garlands), ("flowersMade", made),
+            ("flowersPerGarland", perGarland), ("priyaBig", priyaBig),
+            ("priyaSmall", priyaSmall), ("jadaBig", jadaBig),
+            ("jadaSmall", jadaSmall), ("cutMinutes", cut),
+            ("finishMinutes", finish), ("workers", workers));
+    }
+
     private static ExactProblem BuildG4LanguageComparisons(Random random)
     {
         // IM K-5 2021 G4 U06:L24: mathematical structure of original
@@ -4338,6 +4409,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l25.flower_garland_patterns" => (p["caseType"] switch { 0 => p["garlandsEach"] * (p["priyaBig"] + p["jadaBig"]), 1 => p["garlandsEach"] * (p["priyaSmall"] + p["jadaSmall"]), 2 => p["flowersMade"] / p["flowersPerGarland"], 3 => p["flowersMade"] % p["flowersPerGarland"], 4 => p["flowersMade"] * (p["cutMinutes"] + p["finishMinutes"]), _ => ((p["flowersMade"] + p["workers"] - 1) / p["workers"]) * (p["cutMinutes"] + p["finishMinutes"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l24.language_population_comparisons" => (p["caseType"] switch { 0 => p["navajo"] - p["yupik"], 1 => p["navajo"] + p["apache"] + p["cherokee"], 2 => p["navajo"] - (p["yupik"] + p["dakota"] + p["apache"] + p["keres"] + p["cherokee"] + p["ojibwa"] + p["choctaw"] + p["zuni"] + p["pima"]), 3 => p["philadelphiaEnglish"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"] - p["philadelphiaAsian"], 4 => p["chicagoSpanish"] + p["chicagoIndo"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"], _ => (2 * p["navajo"] + p["yupik"]) / (2 * p["yupik"]) }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l23.four_operation_contexts" => (p["caseType"] switch { 0 => 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]), 1 => p["musicTotalFeet"] / (2 * p["musicTrips"]), 2 => 2 * p["feetPerMile"] - (p["longTrips"] * 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]) + p["musicTotalFeet"]), 3 => p["week1"] / p["days"], 4 => p["week1"] - p["week2"], _ => p["stepTarget"] - p["week1"] - p["week2"] - p["week3"] }).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u06.l21.multistep_contexts" => (p["caseType"] switch { 0 => p["budget"] - p["dailyRevenue"], 1 => p["count"] * p["days"], _ => p["count"] * p["days"] * (p["drinkPrice"] + p["popcornPrice"]) }).ToString(CultureInfo.InvariantCulture),
