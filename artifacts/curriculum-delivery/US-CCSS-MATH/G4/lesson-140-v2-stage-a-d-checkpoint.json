@@ -1,12 +1,12 @@
 {
   "ordinal": 140,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L03",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_LOCAL_ORIGINAL_SOURCE_INTAKE_REUSED",
+    "B": "TENTHS_REGROUPING_SOURCE_NUMBER_TALK_AND_9_2_5_STORY_AUTHORING_PRESERVED",
+    "C": "REUSED_SAME_DENOMINATOR_MIXED_FRACTION_FAMILY_TEST_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,28 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS 2021 local original intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: One Whole, Many Names (10 minutes)",
+      "Activity 1: Relay Race at Recess (20 minutes)",
+      "Activity 2: You Be the Author (15 minutes)",
+      "Cool-down: Mai’s Milky Cereal (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(1 - \\frac{8}{10}\\) | \\(1\\frac{4}{10} - \\frac{8}{10}\\)",
+      "Students in the fourth-grade class had a relay race during recess. Each team had four runners. Each runner ran the length of the school playground. | Here are the times of the runners for two teams. | runner",
+      "Think of three situations as described here. After each problem is written, trade papers with a partner to compare your problems and check your solutions. | A problem that can be solved by addition and has \\(9\\frac{2}{5}\\) as an answer | A problem that can be "
+    ],
+    "allowedFamily": "fractions.add_subtract.same_denominator.mixed.build",
+    "teacherOnlyTasks": [
+      "Original relay times source table",
+      "Students' own fraction addition/subtraction stories"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal140SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }
