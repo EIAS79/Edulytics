@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Edulytics.Core.Curriculum;
 using Edulytics.Services.Mathematics;
+using Edulytics.Core.Mathematics.Practice;
 namespace Edulytics.Tests.MathematicsIntelligence;
 public sealed class Grade4Ordinal112GeometryCommunicationTests
 {
