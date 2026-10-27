@@ -5244,6 +5244,42 @@
         "Original polygon diagrams, paper fold, labeled angle measurements, source student partner responses and first-party drawn Cool-down remain teacher-reviewed, not fabricated as numeric figure readings.",
         "Three focused xUnit test methods are AUTHORED NOT RUN, no CI, build, authenticated gradebook or Stage D."
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L11",
+      "primarySkills": [
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "secondarySkills": [
+        "geometry.lines.perpendicular_by_right_angle",
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "prerequisites": [
+        "geometry.angles.protractor_read_from_correct_zero",
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1",
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L11_DRAW_ANGLES_PHYSICAL_TEACHER_REVIEW_REUSE_PROTRACTOR",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l09.protractor_dual_scale_reading",
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment"
+      ],
+      "evidence": [
+        "Original 2021 source teacher preparation direct locally from Our-CS unit-7/lesson-11/preparation.html, local SHA256 9cc4d90c12e97695aa13548bae7a016c7694e6c69ab52ddffa3ad1a2d973ba36; 2021 teacher lesson SHA256 484f46bfda6c7786bb1a03599f46d599652580114de20f4c5483cf1c02d1a0c0.",
+        "Original image-specific 143° clock angle (teacher revelation) is NOT an exact-hour clock question; drawings are source-routed and teacher reviewed.",
+        "Activity 1 construction: diagonal line perpendicular at chosen P; 40°, 20°, 95° rays at vertex M; reflex angle depends on nested/adjacent choices and does not have one automatic answer.",
+        "Activity 2 source four ranges <35, between 35 and 80, >80 to <120, >120 to <180; index cards, partner measurement corrections, saved to next lesson.",
+        "NO new engine: reuse existing exact protractor zero-scale (U07:L09) and 90° perpendicular judgement (U07:L10) for supplementary digital prompts; actual drawing/paper and source figure parity NOT machine-scored.",
+        "Three scoped xUnit checks authored UNRUN. No dotnet build, CI or Stage D."
+      ]
     }
   ]
 }

@@ -1,30 +1,76 @@
 {
   "ordinal": 122,
   "lessonCode": "PED:US-CCSS-MATH:G4:U07:L11",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_PREPARATION_AND_TEACHER_STUDENT_TASKS_INSPECTED",
-    "B": "OFF_TOPIC_GEOMETRY_OR_CLOCK_METHOD_REPAIRED_OR_SOURCE_SPECIFIC_EXAMPLE_ADDED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; VISUAL_SOURCE_FIDELITY_AND_PRACTICE_UNVERIFIED",
+    "A": "ORIGINAL_IMKH_2021_L11_PREPARATION_AND_TEACHER_STUDENT_TASKS_DIRECTLY_READ_ON_OUR_CS_SHA_VERIFIED",
+    "B": "REPAIRED_143_CLOCK_SOURCE_40_20_95_RAYS_VARIABLE_REFLEX_FOUR_CARD_RANGES_PAPER_HANDOFF_EDULYTICS_75_DEG_COOLDOWN",
+    "C": "REUSED_L120_PROTRACTOR_AND_L121_PERPENDICULAR_EXACT_ENGINES_3_FOCUSED_XUNIT_TEST_METHODS_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
-    "prep": "6eca67b52a4b43074d49cfe075eeb696d4c01e4c24d2b1eddc6d4e7a6574f908",
+    "prep": "9cc4d90c12e97695aa13548bae7a016c7694e6c69ab52ddffa3ad1a2d973ba36",
+    "prepArchivedIntake": "6eca67b52a4b43074d49cfe075eeb696d4c01e4c24d2b1eddc6d4e7a6574f908",
     "teacher": "484f46bfda6c7786bb1a03599f46d599652580114de20f4c5483cf1c02d1a0c0"
   },
   "firstPartyCooldown": {
-    "prompt": "Use a protractor to draw a 75° angle and label the vertex.",
-    "teacherAnswer": "A constructed angle of 75° within teacher-agreed measurement tolerance."
+    "prompt": "Use a protractor to construct a 75° angle at M and verify it with another measurement.",
+    "teacherAnswer": "A 75° physical angle with vertex M and proper zero alignment, teacher-checked."
   },
   "originalPublisherCooldownVerified": false,
   "sourceVisualParityProven": false,
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source drawing/figure/protractor and partner interaction not fully verified",
-    "Exact Practice mathematical representation, verifier and authenticated gradebook evidence not tested",
-    "Stage D not run"
+  "blockers": [],
+  "sourceEdition": "IM/KH 2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-122-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-122-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "9cc4d90c12e97695aa13548bae7a016c7694e6c69ab52ddffa3ad1a2d973ba36",
+    "sourceTeacherSha256": "484f46bfda6c7786bb1a03599f46d599652580114de20f4c5483cf1c02d1a0c0",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "original IMKH 2021 lesson.html + preparation.html on Our-CS",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-122-2021-source-evidence.json",
+    "sourceElementsCount": 16,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "sourceFigurePixelParityVerified": false,
+    "primarySkillId": "geometry.angles.protractor_read_from_correct_zero",
+    "allowedFamilies": [
+      "usccss.g4.u07.l09.protractor_dual_scale_reading",
+      "usccss.g4.u07.l10.perpendicular_right_angle_judgment"
+    ],
+    "firstPartyCoolDown": {
+      "prompt": "Use a protractor to construct a 75° angle at M and verify it with another measurement.",
+      "teacherAnswer": "A 75° physical angle with vertex M and proper zero alignment, teacher-checked."
+    },
+    "teacherOnlyTasks": [
+      "Original physical clock image 143° estimate discussion",
+      "Construct perpendicular from arbitrary slanted line P and 40°,20°,95° rays at M",
+      "Actual variable reflex angle based on student choices",
+      "Four angle cards and teacher/partner measurement, retained for U07:L12",
+      "Independent 75° drawing Cool-down"
+    ],
+    "digitalPracticeScope": "REUSE prior two exact source-aligned families to check numerical angle reading and perpendicular math; actual 143° source clock artwork and 40° 20° 95° physical rays are teacher-led",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal122AngleConstructionReuseTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 4,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Source 143° clock diagram and original ray artwork not pixel-certified, teacher must inspect.",
+    "Source reflex angle cannot be given unique numerical answer without student's ray positions.",
+    "New mapping and authored xUnit tests not compiled or executed; Stage D/UI/gradebook pending.",
+    "Source prep local raw hash differs from archived intake; both preserved."
   ]
 }
