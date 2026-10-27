@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l16-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l16-source-abc-2021-v1-stage-d-mathematical-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L16",
@@ -21,6 +21,18 @@
           "Definition": "Perimeters of rectangles",
           "Rule": "Perimeter is twice the sum of length and width; compare perimeters rather than area.",
           "Example": "A rectangle is 8 cm by 5 cm. Find its perimeter."
+        },
+        {
+          "Title": "Exact source-goal relationship",
+          "Definition": "The perimeter of a rectangle is twice its length plus twice its width.",
+          "Rule": "The perimeter of a rectangle is twice its length plus twice its width.",
+          "Example": "A rectangle is 8 cm by 5 cm. Its perimeter?"
+        },
+        {
+          "Title": "Independent check or representation",
+          "Definition": "Compare two rectangles using the same unit and complete boundary.",
+          "Rule": "Compare two rectangles using the same unit and complete boundary.",
+          "Example": "Compare perimeters of 6 by 4 cm and 7 by 3 cm rectangles."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "26",
           "Check": "Exact arithmetic: 2*(8+5) = 26."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 1",
+          "Question": "A rectangle is 8 cm by 5 cm. Its perimeter?",
+          "Method": "The perimeter of a rectangle is twice its length plus twice its width.",
+          "Steps": [
+            "Identify opposite sides of equal length.",
+            "Add 8+5+8+5.",
+            "Perimeter equals 26 cm."
+          ],
+          "Answer": "26 cm",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 2",
+          "Question": "Compare perimeters of 6 by 4 cm and 7 by 3 cm rectangles.",
+          "Method": "The perimeter of a rectangle is twice its length plus twice its width.",
+          "Steps": [
+            "First perimeter 2×(6+4)=20 cm.",
+            "Second perimeter 2×(7+3)=20 cm.",
+            "The boundary lengths are equal."
+          ],
+          "Answer": "both 20 cm",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Multiplying length by width gives area, not perimeter.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Perimeter is twice the sum of length and width; compare perimeters rather than area."
+        },
+        {
+          "Mistake": "Using area instead of perimeter when comparing boundaries.",
+          "WhyWrong": "The reasoning does not preserve the task's mathematical quantities or representation.",
+          "Correction": "Perimeter adds all four sides, not length×width."
         }
       ],
       "SummaryPoints": [

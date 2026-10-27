@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l15-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l15-source-abc-2021-v1-stage-d-mathematical-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L15",
@@ -21,6 +21,18 @@
           "Definition": "Length measurements and comparisons",
           "Rule": "Record lengths with a consistent unit and compare converted measurements.",
           "Example": "Convert 5 meters to centimeters."
+        },
+        {
+          "Title": "Exact source-goal relationship",
+          "Definition": "One yard equals three feet and one foot equals twelve inches.",
+          "Rule": "One yard equals three feet and one foot equals twelve inches.",
+          "Example": "Convert 2 yards 1 foot to feet."
+        },
+        {
+          "Title": "Independent check or representation",
+          "Definition": "Use a common unit before subtracting or comparing lengths.",
+          "Rule": "Use a common unit before subtracting or comparing lengths.",
+          "Example": "Convert 5 feet 6 inches into inches."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "500",
           "Check": "Exact arithmetic: 5*100 = 500."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 1",
+          "Question": "Convert 2 yards 1 foot to feet.",
+          "Method": "One yard equals three feet and one foot equals twelve inches.",
+          "Steps": [
+            "Two yards equal 2×3=6 feet.",
+            "Add the extra one foot.",
+            "The total is 7 feet."
+          ],
+          "Answer": "7 ft",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 2",
+          "Question": "Convert 5 feet 6 inches into inches.",
+          "Method": "One yard equals three feet and one foot equals twelve inches.",
+          "Steps": [
+            "Five feet equal 5×12=60 inches.",
+            "Add six inches.",
+            "The length equals 66 inches."
+          ],
+          "Answer": "66 in",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Counting an uneven measurement gap as a full equal unit.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Record lengths with a consistent unit and compare converted measurements."
+        },
+        {
+          "Mistake": "Claiming one yard equals twelve inches.",
+          "WhyWrong": "The reasoning does not preserve the task's mathematical quantities or representation.",
+          "Correction": "Three feet make thirty-six inches."
         }
       ],
       "SummaryPoints": [

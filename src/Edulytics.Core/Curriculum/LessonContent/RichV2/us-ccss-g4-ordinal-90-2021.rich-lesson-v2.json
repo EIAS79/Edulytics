@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l04-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l04-source-abc-2021-v1-stage-d-mathematical-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L04",
@@ -21,6 +21,18 @@
           "Definition": "Numerical patterns from arithmetic rules",
           "Rule": "Identify and test a constant difference or other pattern before extending the sequence.",
           "Example": "A number pattern is 9, 18, 27. What is the next term?"
+        },
+        {
+          "Title": "Exact source-goal relationship",
+          "Definition": "A numerical pattern is defined by a precise repeated rule.",
+          "Rule": "A numerical pattern is defined by a precise repeated rule.",
+          "Example": "Continue 2,4,8,16."
+        },
+        {
+          "Title": "Independent check or representation",
+          "Definition": "Use consecutive differences or ratios to validate the rule.",
+          "Rule": "Use consecutive differences or ratios to validate the rule.",
+          "Example": "Continue 7,12,17,22."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "36",
           "Check": "Exact arithmetic: 27+9 = 36."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 1",
+          "Question": "Continue 2,4,8,16.",
+          "Method": "A numerical pattern is defined by a precise repeated rule.",
+          "Steps": [
+            "Check 4÷2=2 and 8÷4=2.",
+            "The multiplier remains two.",
+            "Next value is 16×2=32."
+          ],
+          "Answer": "32",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 2",
+          "Question": "Continue 7,12,17,22.",
+          "Method": "A numerical pattern is defined by a precise repeated rule.",
+          "Steps": [
+            "Find differences: +5,+5,+5.",
+            "Apply the same +5 rule.",
+            "The next number is 27."
+          ],
+          "Answer": "27",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Assuming a sequence always increases by 10 when it actually increases by 9.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Identify and test a constant difference or other pattern before extending the sequence."
+        },
+        {
+          "Mistake": "Extending 2,4,8,16 by adding two.",
+          "WhyWrong": "The reasoning does not preserve the task's mathematical quantities or representation.",
+          "Correction": "Each term doubles; the differences are not constant."
         }
       ],
       "SummaryPoints": [

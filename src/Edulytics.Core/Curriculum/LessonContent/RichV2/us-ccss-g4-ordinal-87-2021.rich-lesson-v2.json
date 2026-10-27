@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u06-l01-source-abc-2021-v1",
+  "ContentVersion": "g4-u06-l01-source-abc-2021-v1-stage-d-mathematical-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U06:L01",
@@ -21,6 +21,18 @@
           "Definition": "Visual patterns that grow",
           "Rule": "Identify what remains fixed and what changes by a consistent step.",
           "Example": "A tower pattern has heights 4, 7, 10. What is the next height if the step stays +3?"
+        },
+        {
+          "Title": "Exact source-goal relationship",
+          "Definition": "Growing shape patterns add a predictable quantity each step.",
+          "Rule": "Growing shape patterns add a predictable quantity each step.",
+          "Example": "A first-party sequence has 3,6,9,12 tiles. Next two counts?"
+        },
+        {
+          "Title": "Independent check or representation",
+          "Definition": "Use consecutive changes to identify an additive growth rule.",
+          "Rule": "Use consecutive changes to identify an additive growth rule.",
+          "Example": "A shape adds two squares each stage, beginning with 5. Stage four?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "13",
           "Check": "Exact arithmetic: 10+3 = 13."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 1",
+          "Question": "A first-party sequence has 3,6,9,12 tiles. Next two counts?",
+          "Method": "Growing shape patterns add a predictable quantity each step.",
+          "Steps": [
+            "Successive differences are all +3.",
+            "Continue 12+3=15.",
+            "Then 15+3=18."
+          ],
+          "Answer": "15, 18",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 2",
+          "Question": "A shape adds two squares each stage, beginning with 5. Stage four?",
+          "Method": "Growing shape patterns add a predictable quantity each step.",
+          "Steps": [
+            "Stage one is 5 squares.",
+            "Apply +2 three times: 5,7,9,11.",
+            "The fourth stage has 11 squares."
+          ],
+          "Answer": "11",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Extrapolating a pattern from one picture without testing the growth rule.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Identify what remains fixed and what changes by a consistent step."
+        },
+        {
+          "Mistake": "Assuming a growing pattern is always doubling.",
+          "WhyWrong": "The reasoning does not preserve the task's mathematical quantities or representation.",
+          "Correction": "Compute actual differences before asserting a rule."
         }
       ],
       "SummaryPoints": [

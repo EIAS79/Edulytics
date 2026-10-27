@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l18-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l18-source-abc-2021-v1-stage-d-mathematical-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L18",
@@ -21,6 +21,18 @@
           "Definition": "Justify true and false mathematical statements",
           "Rule": "For the optional game, test each claim using known unit relationships before choosing the lie.",
           "Example": "Which is the lie: 100 cm = 1 m; 2,000 m = 2 km; 1 kg = 100 g?"
+        },
+        {
+          "Title": "Exact source-goal relationship",
+          "Definition": "Multiplicative claims about animals require accurate measurement units.",
+          "Rule": "Multiplicative claims about animals require accurate measurement units.",
+          "Example": "Hypothetical animal A is 5 kg and B is four times as heavy. Find B."
+        },
+        {
+          "Title": "Independent check or representation",
+          "Definition": "Hypothetical comparisons are not validated zoological measurements.",
+          "Rule": "Hypothetical comparisons are not validated zoological measurements.",
+          "Example": "Hypothetical length 240 cm is six times a reference. Find it."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "900",
           "Check": "Exact arithmetic: 1000-100 = 900."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 1",
+          "Question": "Hypothetical animal A is 5 kg and B is four times as heavy. Find B.",
+          "Method": "Multiplicative claims about animals require accurate measurement units.",
+          "Steps": [
+            "Mark the reference quantity as 5 kg.",
+            "Apply factor four: 4×5=20 kg.",
+            "Check 20÷5=4."
+          ],
+          "Answer": "20 kg",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 2",
+          "Question": "Hypothetical length 240 cm is six times a reference. Find it.",
+          "Method": "Multiplicative claims about animals require accurate measurement units.",
+          "Steps": [
+            "Divide 240 by comparison factor six.",
+            "240÷6=40 cm.",
+            "Check 40×6=240."
+          ],
+          "Answer": "40 cm",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Calling a statement true without checking the unit relation.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "For the optional game, test each claim using known unit relationships before choosing the lie."
+        },
+        {
+          "Mistake": "Treating a made-up length as a true animal fact.",
+          "WhyWrong": "The reasoning does not preserve the task's mathematical quantities or representation.",
+          "Correction": "Label hypothetical values and verify any real-world claim independently."
         }
       ],
       "SummaryPoints": [

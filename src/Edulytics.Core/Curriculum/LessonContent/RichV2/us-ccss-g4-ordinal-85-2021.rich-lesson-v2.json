@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u05-l17-source-abc-2021-v1",
+  "ContentVersion": "g4-u05-l17-source-abc-2021-v1-stage-d-mathematical-examples-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U05:L17",
@@ -21,6 +21,18 @@
           "Definition": "Find missing dimensions from perimeter",
           "Rule": "Solve 2 × (length + width) = perimeter with consistent units.",
           "Example": "A rectangle has perimeter 30 cm and one side 5 cm. Find the other side."
+        },
+        {
+          "Title": "Exact source-goal relationship",
+          "Definition": "Fractional side lengths can be added to compute rectangle perimeter.",
+          "Rule": "Fractional side lengths can be added to compute rectangle perimeter.",
+          "Example": "Perimeter of rectangle 2 1/2 m by 1 1/2 m?"
+        },
+        {
+          "Title": "Independent check or representation",
+          "Definition": "The same unit must be maintained in every side of a perimeter sum.",
+          "Rule": "The same unit must be maintained in every side of a perimeter sum.",
+          "Example": "Perimeter of a square with 3/4-m side?"
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "10",
           "Check": "Exact arithmetic: 30/2-5 = 10."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 1",
+          "Question": "Perimeter of rectangle 2 1/2 m by 1 1/2 m?",
+          "Method": "Fractional side lengths can be added to compute rectangle perimeter.",
+          "Steps": [
+            "Add length and width: 2 1/2+1 1/2=4 m.",
+            "Double the pair of adjacent sides.",
+            "Perimeter equals 8 m."
+          ],
+          "Answer": "8 m",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
+        },
+        {
+          "Title": "Edulytics source-goal mathematical model 2",
+          "Question": "Perimeter of a square with 3/4-m side?",
+          "Method": "Fractional side lengths can be added to compute rectangle perimeter.",
+          "Steps": [
+            "All four sides are equal.",
+            "Multiply 4×3/4=12/4.",
+            "Regroup to 3 metres."
+          ],
+          "Answer": "3 m",
+          "Check": "First-party mathematical illustration. Drawings, optional activities, and real-world evidence remain teacher reviewed."
         }
       ],
       "CommonMistakes": [
@@ -42,6 +78,11 @@
           "Mistake": "Using the full perimeter as one pair of opposite sides.",
           "WhyWrong": "It changes the unit, place value, or operation.",
           "Correction": "Solve 2 × (length + width) = perimeter with consistent units."
+        },
+        {
+          "Mistake": "Ignoring fractional parts when adding sides.",
+          "WhyWrong": "The reasoning does not preserve the task's mathematical quantities or representation.",
+          "Correction": "Combine fractional parts and whole parts exactly."
         }
       ],
       "SummaryPoints": [
