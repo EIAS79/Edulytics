@@ -12,6 +12,9 @@ test('All Grade 4 L101-L149 embedded Rich V2 resources satisfy runtime minimum f
 });
 test('Do not conflate Rich V2 structure with verified Practice or Stage D',()=>{
  const a=read('artifacts/curriculum-delivery/US-CCSS-MATH/G4/g4-101-149-richv2-practice-audit.json');
- assert.equal(a.structuredRichV2Count,49);assert.equal(a.exactPracticeMappingsUnverified.length,49);
- for(const l of a.perLesson){assert.equal(l.exactPracticeMapped,false);assert.equal(l.fullStageDVerified,false);}
+ assert.equal(a.structuredRichV2Count,49);assert.equal(a.lessonsWithExactPracticeMappings,13);assert.equal(a.exactPracticeMappingsUnverified.length,36);
+ const mapped=new Set(a.perLesson.filter(x=>x.exactPracticeMapped).map(x=>x.ordinal));
+ assert.deepEqual([...mapped],Array.from({length:13},(_,i)=>101+i));
+ for(const l of a.perLesson){assert.equal(l.fullStageDVerified,false);}
+ assert.equal(a.perLesson.length,49);
 });
