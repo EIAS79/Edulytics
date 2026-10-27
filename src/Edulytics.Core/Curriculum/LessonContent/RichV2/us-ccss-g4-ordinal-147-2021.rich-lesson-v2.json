@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.9.10-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l147-estimation-abc",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U09:L10",
@@ -13,7 +13,10 @@
         "Math focus: Use estimation assumptions explicitly; show how the estimates are constructed and when a different assumption would change them.",
         "Worked Edulytics example: Jada brushes for two minutes twice per day, or four minutes per day. Across seven days, an estimated total is 4 × 7 = 28 minutes. State days and routine clearly; another period needs a new multiplication. Create a parallel estimation question with stated assumptions for classmates.",
         "First-party Edulytics Cool-down (publisher's original not inspected): If this routine holds for 30 days, estimate the total brushing minutes.",
-        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review."
+        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review.",
+        "2021 ORIGINAL Estimation Exploration: No Driver Required uses TWO source images of a parking tower in Wolfstadt, Germany, showing automated vehicle storage. Image-specific estimates like parking capacity, floor height or number of cars have NO justified numeric answer without inspecting pictures and specifying assumptions. Present too-low/about-right/too-high estimates and require pupils to justify assumptions.",
+        "Source Dental Care explicitly states Jada brushes for 2 minutes, twice daily, and replaces her toothbrush every three months. Independent grounded calculations: 4 minutes daily; 28 minutes in seven days; roughly 1,460 minutes per 365-day year (about 24 h 20 min) if the habit holds; 12÷3=4 toothbrush replacement intervals per year. Clarify these are derived planning estimates, not actual observed quantities, and year length / behaviour can vary.",
+        "Source Activity 2 asks students to brainstorm 4–5 possible estimation topics, select a favourite, draft a question and have peers estimate it. Activity 3 requires FACILITATING the learner’s Estimation Exploration rather than answering a single arithmetic problem. The first-party math engine from U06:L23 may support independent multistep arithmetic, but student-authored estimates and source image reading are TEACHER scored."
       ],
       "KeyConcepts": [
         {
@@ -72,6 +75,18 @@
           ],
           "Answer": "Multiple valid student-created responses may exist; teacher must inspect the explanation.",
           "Check": "No machine-graded source creativity or explanation is certified."
+        },
+        {
+          "Title": "Source dental-care unit estimates",
+          "Question": "If Jada brushes for 2 minutes twice each day, estimate minutes per week and per 365-day year.",
+          "Method": "Multiply time per brushing by daily frequency and days.",
+          "Steps": [
+            "2×2=4 minutes per day.",
+            "4×7=28 minutes per week.",
+            "4×365=1,460 minutes per 365-day year."
+          ],
+          "Answer": "28 min/week and approximately 1,460 min/year.",
+          "Check": "Derived from source habit assumption; not a claimed source hidden answer."
         }
       ],
       "CommonMistakes": [
@@ -84,6 +99,11 @@
           "Mistake": "Assuming a single numerical answer proves the required original reasoning or student-created task.",
           "WhyWrong": "The lesson explicitly requires construction, comparison or an explanation that may admit several valid answers.",
           "Correction": "Estimate with explicit assumptions, units, a calculation and a reasonableness check."
+        },
+        {
+          "Mistake": "Treating an estimate as an exact source measurement.",
+          "WhyWrong": "The source expects reasonable bounds and assumptions, especially for original parking tower imagery.",
+          "Correction": "State what is known, what is assumed, bounds and why chosen result is reasonable."
         }
       ],
       "SummaryPoints": [

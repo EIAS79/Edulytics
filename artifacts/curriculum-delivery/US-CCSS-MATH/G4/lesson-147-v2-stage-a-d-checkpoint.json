@@ -1,12 +1,12 @@
 {
   "ordinal": 147,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L10",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_LOCAL_ORIGINAL_PREP_STUDENT_SOURCE_INTAKE_REUSED",
+    "B": "ESTIMATION_BOUNDS_ASSUMPTIONS_DENTAL_2_MINUTES_TWICE_DAILY_AND_STUDENT_AUTHORED_EXPLORATION_RESTORED",
+    "C": "EXISTING_MULTISTEP_ARITHMETIC_REUSED_SUBSKILL_SCOPED_TEST_WRITTEN_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,31 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "original 2021 local Our-CS source-only inspection",
+    "originalSourceActivities": [
+      "Warm-up: Estimation Exploration: No Driver Required (10 minutes)",
+      "Activity 1: Dental Care (10 minutes)",
+      "Activity 2: Get Your Classmates to Estimate (15 minutes)",
+      "Activity 3: Facilitate Your “Estimation Exploration” Activity (10 minutes)",
+      "Cool-down: Reflection (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Here are pictures showing the exterior and interior of a parking tower in Wolfstadt, Germany. The parking is automated: each car goes up on a lift and is then placed in a parking space. | Attribution: By falco. Pixabay. Pixabay. Source. | Attribution: By pxher",
+      "Jada brushes for 2 minutes, twice a day. She changes her toothbrush every 3 months.​​​​​​ | Based on this information, make some estimates and show your reasoning: | Attribution: By PDPics. Pixabay. Pixabay. Source.",
+      "It’s your turn to create an estimation problem. | Think of situations or look around for images that would make interesting estimation problems. Write down 4–5 ideas or possible topics. | Choose your favorite idea. Then:"
+    ],
+    "allowedFamily": "usccss.g4.u06.l23.four_operation_contexts",
+    "teacherOnlyTasks": [
+      "Original parking tower photographs with estimation bounds",
+      "Each student's 4–5 idea brainstorming, written prompt and peer presentation",
+      "Original teacher reflection Cool-down"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal147EstimationTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
 }
