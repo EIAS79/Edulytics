@@ -1,12 +1,12 @@
 {
   "ordinal": 142,
   "lessonCode": "PED:US-CCSS-MATH:G4:U09:L05",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_RUNTIME_EVIDENCE_MISSING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "ORIGINAL_2021_TEACHER_PREP_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "SOURCE_TARGET_OPERATION_AND_WORKED_SOLUTION_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED; EXACT_GENERATOR_AND_AUTHENTICATED_GRADING_NOT_VERIFIED",
+    "A": "2021_LOCAL_ORIGINAL_TWO_DIGIT_MULTIPLICATION_SOURCE_REUSED",
+    "B": "34_TIMES_21_PARTIAL_PRODUCTS_AND_SEVEN_CUBED_RIDDLE_REPAIRED",
+    "C": "EXTENDED_EXISTING_EXACT_KERNEL_TWO_DIGIT_MULTIPLICATION_EIGHT_CASES_TEST_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,29 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Source open-ended tasks, original diagrams and teacher judgment not verified",
-    "No proof of exact allowed question family, independent scoring or real saved attempts",
-    "Stage D and protected full-grade CI remain unrun"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS 2021 original source intake",
+    "originalSourceActivities": [
+      "Warm-up: Estimation Exploration: A Silly Riddle (10 minutes)",
+      "Activity 1: Two Methods Revisited (20 minutes)",
+      "Activity 2: Two by Two (15 minutes)",
+      "Cool-down: Four by One and Two by Two (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Seven teachers are going to the park. | Each teacher is taking 7 students. | Each student is bringing 7 fishbowls.",
+      "Earlier in the course, we used these two ways to multiply numbers: | A | Caption: A",
+      "Here are two ways to find the value of \\(34 \\times 21\\). | A | Caption: A"
+    ],
+    "allowedFamily": "usccss.g4.u09.l05.two_digit_partial_products",
+    "primarySkillId": "number.whole.multiply.two_digit_partial_products",
+    "teacherOnlyTasks": [
+      "Original A/B partial products and standard algorithm figures",
+      "Estimate riddle strategy and source printed material"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal142TwoDigitMultiplicationTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }

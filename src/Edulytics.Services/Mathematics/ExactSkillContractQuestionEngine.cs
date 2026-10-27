@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u09.l05.two_digit_partial_products",
             "usccss.g4.u08.l07.polygon_perimeter_sum",
             "usccss.g4.u08.l04.symmetry_axis_counts",
             "usccss.g4.u07.l13.additive_angle_part",
@@ -1173,6 +1174,25 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u09.l05.two_digit_partial_products" =>
+                parameters.TryGetValue("caseType", out var c142) &&
+                parameters.TryGetValue("variant", out var v142) &&
+                parameters.TryGetValue("multiplicand", out var a142) &&
+                parameters.TryGetValue("multiplier", out var b142) &&
+                parameters.TryGetValue("product", out var p142) &&
+                c142 is >= 0 and <= 7 &&
+                v142 is >= 0 and <= 2 &&
+                (a142,b142)==(c142 switch
+                {
+                    0 => (34,21), 1 => (23,14),
+                    2 => (46,32), 3 => (72,15),
+                    4 => (58,24), 5 => (16,43),
+                    6 => (29,31), 7 => (87,12),
+                    _ => (-1,-1)
+                }) &&
+                p142 == a142*b142 &&
+                value == p142,
 
             "usccss.g4.u08.l07.polygon_perimeter_sum" =>
                 parameters.TryGetValue("caseType", out var c134) &&
@@ -2358,6 +2378,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u09.l05.two_digit_partial_products" => BuildG4TwoDigitPartialProducts(random),
             "usccss.g4.u08.l07.polygon_perimeter_sum" => BuildG4PolygonPerimeterSum(random),
             "usccss.g4.u08.l04.symmetry_axis_counts" => BuildG4SymmetryAxisCounts(random),
             "usccss.g4.u07.l13.additive_angle_part" => BuildG4AdditiveAnglePart(random),
@@ -3715,6 +3736,37 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+    private static ExactProblem BuildG4TwoDigitPartialProducts(Random random)
+    {
+        // 2021 G4 U09:L05 multiplication via 2-digit partial products.
+        // Source visual method diagrams still teacher reviewed.
+        var mode=random.Next(0,8);
+        var variant=random.Next(0,3);
+        var (a,b)=mode switch
+        {
+            0 => (34,21), 1 => (23,14), 2 => (46,32),
+            3 => (72,15), 4 => (58,24), 5 => (16,43),
+            6 => (29,31), _ => (87,12)
+        };
+        var tens=(b/10)*10;
+        var ones=b%10;
+        var first=a*tens;
+        var second=a*ones;
+        var answer=first+second;
+        var cue=variant switch
+        {
+            0 => "Use tens and ones in a partial-products model.",
+            1 => "Both partial products add to the final product.",
+            _ => "Check the standard algorithm against distributive multiplication."
+        };
+        return Problem("usccss.g4.u09.l05.two_digit_partial_products",
+            $"FIRST-PARTY multiplication: Find {a} times {b}. {cue}",
+            $"Split {b} into {tens}+{ones}; {a}×{tens}={first}, {a}×{ones}={second}, total={answer}.",
+            AssessmentItemType.Numeric,
+            ("caseType",mode),("variant",variant),
+            ("multiplicand",a),("multiplier",b),("product",answer));
+    }
 
     private static ExactProblem BuildG4PolygonPerimeterSum(Random random)
     {
@@ -5138,6 +5190,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u09.l05.two_digit_partial_products" => p["product"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u08.l07.polygon_perimeter_sum" => p["perimeter"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u08.l04.symmetry_axis_counts" => p["axisCount"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l13.additive_angle_part" => p["unknownDegrees"].ToString(CultureInfo.InvariantCulture),

@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.9.5-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l142-two-digit-products",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U09:L05",
@@ -13,7 +13,9 @@
         "Math focus: A two-digit by two-digit product can be represented as partial products and reconciled to the standard algorithm.",
         "Worked Edulytics example: Decompose 14 as 10 + 4. 23 × 14 = 23 × 10 + 23 × 4 = 230 + 92. Add partial products to obtain 322; align place values in the standard algorithm.",
         "First-party Edulytics Cool-down (publisher's original not inspected): Find 26 × 13 using partial products.",
-        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review."
+        "Original models, source figures, student-authored problems and teacher-scored explanations require separate academic review.",
+        "2021 U09:L05 focuses on connecting the two-digit by two-digit STANDARD multiplication algorithm to partial products; this is NOT only fact-recall drills. The source compares diagrams for 34×21, giving 34×(20+1)=680+34=714. Original 2021 source setup diagrams A and B, place-value boxes and written algorithms require teacher visual verification.",
+        "Source Estimation Exploration: A Silly Riddle: seven teachers each take seven students; each student carries seven fishbowls. Interpreting the stated multiplicative hierarchy gives 7×7×7=343 fishbowls. First-party 8-pair numeric exact digital family now EXTENDS the existing shared exact kernel to 2-digit partial products; it is not a new independent engine and does not copy the original source diagrams."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,18 @@
           ],
           "Answer": "Teacher checks the original problem's requested solution and explanation.",
           "Check": "No independent student answer or original publisher assessment is asserted."
+        },
+        {
+          "Title": "Source 34×21 by partial products",
+          "Question": "Two source diagrams represent 34×21. Compute accurately.",
+          "Method": "Use distributive property 34×(20+1).",
+          "Steps": [
+            "34×20=680.",
+            "34×1=34.",
+            "680+34=714."
+          ],
+          "Answer": "714.",
+          "Check": "21×34=714."
         }
       ],
       "CommonMistakes": [

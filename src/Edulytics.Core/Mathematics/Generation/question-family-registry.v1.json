@@ -19765,6 +19765,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u09.l05.two_digit_partial_products",
+      "version": 1,
+      "skillId": "number.whole.multiply.two_digit_partial_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixed-two-digit-number-pairs-product-and-reconstructed-parameters",
+      "representations": [
+        "two_digit_multiplication",
+        "distributive_partial_products",
+        "teacher_led_source_algorithm_figures"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
