@@ -1,0 +1,120 @@
+name: Grade 4 Stage D 2021 digital diagnostics
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/us-ccss-g4-stage-d.yml'
+      - 'tools/curriculum/g4-stage-d-audit.cjs'
+      - 'artifacts/curriculum-delivery/US-CCSS-MATH/G4/**'
+      - 'src/Edulytics.Core/Mathematics/**'
+      - 'src/Edulytics.Services/Mathematics/**'
+      - 'tests/academic-us-ccss-g4-**'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/curriculum/g4-stage-d-audit.cjs preflight
+      - run: node tools/curriculum/g4-richv2-full-grade-audit.cjs
+  build-and-math:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.200'
+      - run: dotnet restore tests/Edulytics.Tests/Edulytics.Tests.csproj
+      - run: dotnet build tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore
+      - name: Run Grade 4-focused .NET tests at the same head
+        run: |
+          mkdir -p stage-d-results
+          dotnet vstest tests/Edulytics.Tests/bin/Release/net10.0/Edulytics.Tests.dll --TestCaseFilter:"FullyQualifiedName~Grade4" --Logger:"trx;LogFileName=g4.trx" --ResultsDirectory:stage-d-results
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade4-dotnet-test-results
+          path: stage-d-results/
+          if-no-files-found: warn
+  node-source-shards:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [D1, D2, D3]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Execute source-contract tests for every lesson in the shard
+        shell: bash
+        env:
+          BATCH: ${{ matrix.batch }}
+        run: |
+          set -euo pipefail
+          set --
+          if [ "$BATCH" = D1 ]; then
+            for f in tests/academic-us-ccss-g4-u01-*.test.cjs tests/academic-us-ccss-g4-u02-*.test.cjs; do
+              test -f "$f" && set -- "$@" "$f"
+            done
+            lo=25; hi=50
+          elif [ "$BATCH" = D2 ]; then
+            lo=51; hi=100
+          else
+            lo=101; hi=149
+          fi
+          for n in $(seq "$lo" "$hi"); do
+            f="tests/academic-us-ccss-g4-ordinal-$n-local-source-guard.test.cjs"
+            if [ ! -f "$f" ]; then f="tests/academic-us-ccss-g4-ordinal-$n-source-guard.test.cjs"; fi
+            test -s "$f" || { echo "Missing lesson source suite: $n"; exit 1; }
+            set -- "$@" "$f"
+          done
+          node --test "$@"
+  richv2:
+    needs: inventory
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/curriculum/g4-reconcile-richv2.cjs --check
+      - run: node --test tests/academic-us-ccss-g4-richv2-materialization.test.cjs
+  diagnostic-summary:
+    name: Grade4-digital-diagnostics-NOT-release
+    needs: [inventory, build-and-math, node-source-shards, richv2]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - env:
+          INVENTORY: ${{ needs.inventory.result }}
+          MATH: ${{ needs.build-and-math.result }}
+          SOURCE: ${{ needs.node-source-shards.result }}
+          CONTENT: ${{ needs.richv2.result }}
+        run: |
+          test "$INVENTORY" = success
+          test "$MATH" = success
+          test "$SOURCE" = success
+          test "$CONTENT" = success
+          echo 'Diagnostic checks passed only. Not authenticated E2E, academic signoff or authorization to deploy.'
