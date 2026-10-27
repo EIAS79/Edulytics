@@ -1356,10 +1356,10 @@ public static class LessonPracticeContractRegistry
         byLesson["PED:US-CCSS-MATH:G4:U06:L15"] = new LessonPracticeContract(
             "PED:US-CCSS-MATH:G4:U06:L15",
             "geometry.perimeter_area",
-            "AREA_PARTIAL_QUOTIENTS_AND_MURAL_COMPLETE_COLUMNS_PENDING",
-            [],
-            "IM2021_G4_U06_L15_A_TO_C_PENDING",
-            "REVIEW_REQUIRED",
+            "AREA_PARTIAL_QUOTIENTS_AND_MURAL_COMPLETE_COLUMNS",
+            ["usccss.g4.u06.l15.area_partial_quotients", "usccss.g4.u06.l15.mural_complete_columns"],
+            "IM2021_G4_U06_L15_SOURCE_ALIGNED_NUMERIC_PLUS_TEACHER_LED",
+            "READY_VERIFIED",
             Version);
 
         return byLesson.Values
