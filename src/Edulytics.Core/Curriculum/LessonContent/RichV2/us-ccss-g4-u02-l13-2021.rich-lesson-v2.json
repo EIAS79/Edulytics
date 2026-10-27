@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g4-u02-l13-equivalent-fraction-comparisons-2021-abc-v1",
+  "ContentVersion": "g4-u02-l13-equivalent-fraction-comparisons-2021-abc-v1-stage-d-fraction-math-closure-v1",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -59,6 +59,18 @@
           ],
           "Answer": "FALSE: they are equal.",
           "Check": "1×100=4×25."
+        },
+        {
+          "Title": "Independent exact fraction reasoning",
+          "Question": "Compare 5/6 and 7/9 with a common denominator.",
+          "Method": "Convert to equivalent equal-sized fractional parts and check the comparison.",
+          "Steps": [
+            "The least common denominator of 6 and 9 is 18.",
+            "Scale 5/6 to 15/18 and 7/9 to 14/18.",
+            "15/18>14/18, so 5/6>7/9."
+          ],
+          "Answer": "5/6 is greater",
+          "Check": "First-party mathematical calculation; original pupil diagrams and open reasoning require separate teacher review."
         }
       ],
       "CommonMistakes": [

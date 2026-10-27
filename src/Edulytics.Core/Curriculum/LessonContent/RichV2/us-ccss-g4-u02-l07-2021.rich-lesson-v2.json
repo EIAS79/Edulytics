@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u02-l07-2021-original-fraction-equivalents-v1",
+  "ContentVersion": "g4-u02-l07-2021-original-fraction-equivalents-v1-stage-d-fraction-math-closure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U02:L07",
@@ -59,6 +59,18 @@
           ],
           "Answer": "5/4=15/12=20/16",
           "Check": "5/4>1. Do not clamp to1."
+        },
+        {
+          "Title": "Independent exact fraction reasoning",
+          "Question": "Show why 5/3 and 10/6 are the same number beyond one whole.",
+          "Method": "Convert to equivalent equal-sized fractional parts and check the comparison.",
+          "Steps": [
+            "Multiply numerator and denominator of 5/3 by two.",
+            "5/3=(5×2)/(3×2)=10/6.",
+            "Both are 1 2/3, so both points lie beyond one."
+          ],
+          "Answer": "5/3=10/6",
+          "Check": "First-party mathematical calculation; original pupil diagrams and open reasoning require separate teacher review."
         }
       ],
       "CommonMistakes": [

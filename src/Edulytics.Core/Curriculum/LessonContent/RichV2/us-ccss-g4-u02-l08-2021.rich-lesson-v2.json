@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-u02-l08-2021-source-v1",
+  "ContentVersion": "g4-u02-l08-2021-source-v1-stage-d-fraction-math-closure-v1",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U02:L08",
@@ -27,6 +27,12 @@
           "Definition": "Numbers greater than1 stay beyond the unit endpoint on an equal-scale line.",
           "Rule": "6/5=12/10=18/15=24/20.",
           "Example": "The point6/5 lies right of1."
+        },
+        {
+          "Title": "Compatible denominators and exact points",
+          "Definition": "Equivalent fractions use identical points with an unchanged unit whole.",
+          "Rule": "Scale numerator and denominator by the same integer; preserve positions beyond one whole.",
+          "Example": "2/3=6/9=8/12, but not an exact fraction with denominator ten."
         }
       ],
       "WorkedExamples": [
@@ -53,6 +59,18 @@
           ],
           "Answer": "6/9, no integer tenths,8/12",
           "Check": "All valid fractions equal2/3."
+        },
+        {
+          "Title": "Independent exact fraction reasoning",
+          "Question": "Which fractions with denominators 9, 10, and 12 equal 2/3?",
+          "Method": "Convert to equivalent equal-sized fractional parts and check the comparison.",
+          "Steps": [
+            "Nine is three times three, so 2/3=6/9.",
+            "Twelve is four times three, so 2/3=8/12.",
+            "Ten is not a multiple of three, so no integer numerator of tenths gives exactly 2/3."
+          ],
+          "Answer": "6/9 and 8/12; no exact integer tenths",
+          "Check": "First-party mathematical calculation; original pupil diagrams and open reasoning require separate teacher review."
         }
       ],
       "CommonMistakes": [
