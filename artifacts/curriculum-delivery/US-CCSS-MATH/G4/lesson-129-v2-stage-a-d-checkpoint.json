@@ -1,12 +1,12 @@
 {
   "ordinal": 129,
   "lessonCode": "PED:US-CCSS-MATH:G4:U08:L02",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_PENDING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_ORIGINAL_TEACHER_PREP_AND_STUDENT_FACING_TASK_INSPECTED",
-    "B": "SOURCE_GOAL_FIGURE_REASONING_AND_MISCONCEPTIONS_TARGETED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED_UNVERIFIED_DRAWING_AND_PRACTICE",
+    "A": "REUSED_ORIGINAL_2021_LOCAL_SOURCE",
+    "B": "REPAIRED_RIGHT_TRIANGLE_THREE_SIDES_AND_RIGHT_ANGLE_AND_ORIGINAL_CARD_SORT",
+    "C": "REUSED_PERPENDICULAR_SUBSKILL_AND_AUTHORED_FOCUSED_TEST_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,27 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Publisher/student figure parity and drawing/folding tasks need visual teacher evaluation",
-    "Exact Practice generation/answer checking not tested for this geometry skill",
-    "No authenticated runtime or Stage D evidence"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 local Our-CS source intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Sums and Products (10 minutes)",
+      "Activity 1: Triangle Hunt (25 minutes)",
+      "Activity 2: The Right Kind of Triangle (10 minutes)",
+      "Cool-down: Which Would Fit in the Set? (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(12 + 12 + 75\\) | \\(12\\frac{1}{2} + 12\\frac{1}{2} + 75\\)",
+      "From the set of triangle cards, find all the triangles that have each attribute. Record their letter names here. | Description: Table. 3 rows, 3 columns. First row. a. No right angles. b. parallel sides. c. perpendicular sides Second row. d. The same length fo",
+      "Identify all shapes that are right triangles. For each right triangle, mark the right angle with a small square. | Description: 8 shapes. A. 3 sides, two equal sides, 3 acute angles. B. 4 sides, 1 pair of parallel sides, 2 right angles. C. 3 sides. 1 right ang"
+    ],
+    "teacherOnlyTasks": [
+      "Original triangle card IDs and printed eight mixed shapes"
+    ],
+    "allowedFamily": "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal129StageCTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }
