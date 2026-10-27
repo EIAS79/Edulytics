@@ -65,6 +65,8 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.polygons.regular_interior_angle",
             "geometry.perimeter_area.triangle_area",
             "geometry.perimeter_area.rectangle_missing_side",
+            "usccss.g4.u06.l15.area_partial_quotients",
+            "usccss.g4.u06.l15.mural_complete_columns",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -1071,6 +1073,18 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["base"] * parameters["height"] % 2 == 0 &&
                 value * 2 == parameters["base"] * parameters["height"],
 
+            "usccss.g4.u06.l15.area_partial_quotients" or
+            "usccss.g4.u06.l15.mural_complete_columns" =>
+                parameters.TryGetValue("knownSide", out var lesson101Width) &&
+                parameters.TryGetValue("area", out var lesson101Area) &&
+                parameters.TryGetValue("leftover", out var lesson101Leftover) &&
+                lesson101Width is >= 2 and <= 9 &&
+                lesson101Area is >= 100 and <= 999 &&
+                lesson101Leftover >= 0 && lesson101Leftover < lesson101Width &&
+                (family == "usccss.g4.u06.l15.area_partial_quotients" ? lesson101Leftover == 0 : lesson101Leftover > 0) &&
+                lesson101Area % lesson101Width == lesson101Leftover &&
+                value >= 0 && (long)value * lesson101Width + lesson101Leftover == lesson101Area,
+
             "geometry.perimeter_area.rectangle_missing_side" =>
                 parameters["knownSide"] > 0 &&
                 parameters["area"] > 0 &&
@@ -1856,6 +1870,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildTriangleArea(random, scale),
             "geometry.perimeter_area.rectangle_missing_side" =>
                 BuildRectangleMissingSide(random, scale),
+            "usccss.g4.u06.l15.area_partial_quotients" => BuildG4MuralMissingSide(random, false),
+            "usccss.g4.u06.l15.mural_complete_columns" => BuildG4MuralMissingSide(random, true),
             "geometry.polygons.interior_angle_sum" =>
                 BuildPolygonInteriorAngleSum(random, scale),
             "geometry.polygons.missing_interior_angle" =>
@@ -3048,6 +3064,29 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
+    private static ExactProblem BuildG4MuralMissingSide(Random random, bool withRemainder)
+    {
+        // 2021 IM G4 U06:L15: first-party partial quotient and mural-remainder tasks.
+        var width = random.Next(2, 10);
+        var minLength = Math.Max(20, (100 + width - 1) / width);
+        var maxLength = Math.Min(110, (999 - (width - 1)) / width);
+        var length = random.Next(minLength, maxLength + 1);
+        var leftover = withRemainder ? random.Next(1, width) : 0;
+        var area = width * length + leftover;
+        var tens = (length / 10) * 10;
+        var ones = length - tens;
+        var family = withRemainder ? "usccss.g4.u06.l15.mural_complete_columns" : "usccss.g4.u06.l15.area_partial_quotients";
+        var prompt = withRemainder
+            ? $"A student has {area} square tiles for a complete rectangular mural {width} tiles wide. What is the greatest whole-number length in tiles?"
+            : $"A rectangular mural has area {area} square tiles and is {width} tiles wide. Find its length using partial quotients.";
+        var solution = $"Use partial quotients: {width} × {tens} = {width * tens} and " +
+            $"{width} × {ones} = {width * ones}. The full rectangle has " +
+            $"{width} × {length} = {width * length} tiles. " +
+            (withRemainder ? $"{leftover} tile(s) remain; they cannot form a full column." : "No tiles remain; check by multiplication.");
+        return Problem(family, prompt, solution, AssessmentItemType.Numeric,
+            ("knownSide", width), ("area", area), ("leftover", leftover));
+    }
+
     private static ExactProblem BuildRectangleMissingSide(Random random, int scale)
     {
         var knownSide = random.Next(2, 8 + scale * 2);
@@ -3894,7 +3933,9 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.perimeter_area.triangle_area" =>
                 (p["base"] * p["height"] / 2).ToString(CultureInfo.InvariantCulture),
 
-            "geometry.perimeter_area.rectangle_missing_side" =>
+            "geometry.perimeter_area.rectangle_missing_side" or
+            "usccss.g4.u06.l15.area_partial_quotients" or
+            "usccss.g4.u06.l15.mural_complete_columns" =>
                 (p["area"] / p["knownSide"]).ToString(CultureInfo.InvariantCulture),
 
             "geometry.polygons.interior_angle_sum" =>

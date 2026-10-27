@@ -3,7 +3,7 @@
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
   "edition": "1st Edition (2021)",
   "ordinal": 101,
-  "status": "STAGE_C_REUSE_CANDIDATE_NOT_APPROVED",
+  "status": "STAGE_C_KERNEL_EXTENSION_WRITTEN_NOT_RUN",
   "sourceTitle": "Situations Involving Area",
   "learningObjective": "Use partial quotients to find an unknown side length of a rectangle when its area and the other side are known, and interpret a leftover-tile remainder in context.",
   "curriculumCodes": [
@@ -111,7 +111,8 @@
     "twenty seven?"
   ],
   "allowedQuestionFamiliesCandidate": [
-    "geometry.perimeter_area.rectangle_missing_side"
+    "usccss.g4.u06.l15.area_partial_quotients",
+    "usccss.g4.u06.l15.mural_complete_columns"
   ],
   "allowedQuestionFamiliesActivated": [],
   "forbiddenQuestionFamilies": [
@@ -132,5 +133,18 @@
   ],
   "academicApproved": false,
   "readyForStageD": false,
-  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-source-evidence.md"
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-source-evidence.md",
+  "extendedEngine": {
+    "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "familyIds": [
+      "usccss.g4.u06.l15.area_partial_quotients",
+      "usccss.g4.u06.l15.mural_complete_columns"
+    ],
+    "purpose": "Reuses existing exact area/division kernel, adds 3-digit tile count / 1-digit width and floor-quotient context in separate families.",
+    "status": "AUTHORED_NOT_TESTED_NOT_REGISTERED",
+    "stagedNoProductionRouting": true,
+    "teacherReviewedOriginalDrawingsRequired": true,
+    "focusedTest": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal101AreaDivisionExactTests.cs",
+    "testState": "WRITTEN_NOT_RUN"
+  }
 }
