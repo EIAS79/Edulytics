@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
             "usccss.g4.u07.l09.protractor_dual_scale_reading",
             "usccss.g4.u07.l08.full_turn_degree_benchmarks",
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
@@ -1168,6 +1169,22 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment" =>
+                parameters.TryGetValue("caseType", out var l121Case) &&
+                parameters.TryGetValue("variant", out var l121Variant) &&
+                parameters.TryGetValue("angleDegrees", out var l121Degrees) &&
+                parameters.TryGetValue("perpendicularAnswer", out var l121Answer) &&
+                l121Case is >= 0 and <= 7 &&
+                l121Variant is >= 0 and <= 2 &&
+                l121Degrees == (l121Case switch
+                {
+                    0 or 1 or 2 or 3 => 90,
+                    4 => 75, 5 => 80, 6 => 100, 7 => 120,
+                    _ => -1
+                }) &&
+                l121Answer == (l121Degrees == 90 ? 1 : 2) &&
+                value == l121Answer,
 
             "usccss.g4.u07.l09.protractor_dual_scale_reading" =>
                 parameters.TryGetValue("caseType", out var l120Case) &&
@@ -2266,6 +2283,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => BuildG4PerpendicularRightAngleJudgment(random),
             "usccss.g4.u07.l09.protractor_dual_scale_reading" => BuildG4ProtractorDualScaleReading(random),
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" => BuildG4FullTurnDegreeBenchmarks(random),
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => BuildG4ClockHourAngleTurnCompare(random),
@@ -3619,6 +3637,42 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4PerpendicularRightAngleJudgment(Random random)
+    {
+        // IM/KH 2021 Grade 4 Unit 7 Lesson 10: one right angle formed at
+        // an intersection characterizes perpendicular LINES and EXTENDED
+        // line segments. Student paper folds and original polygon diagrams
+        // are handled by teachers, not represented as source-figure copies.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        int[] angleMeasures = [90, 90, 90, 90, 75, 80, 100, 120];
+        var degrees = angleMeasures[mode];
+        var answer = degrees == 90 ? 1 : 2;
+        var context = mode switch
+        {
+            0 => "One line is horizontal and another goes straight upward at the intersection.",
+            1 => "Two drawn lines cross diagonally at an accurately measured angle.",
+            2 => "Two polygon sides meet at a shared corner; extend their supporting straight lines.",
+            3 => "Two different paper creases go through point P and form four angles.",
+            4 => "Two lines cross; one angle is acute.",
+            5 => "Two lines cross; an acute angle is measured.",
+            6 => "Two lines cross; one angle is obtuse.",
+            _ => "Two lines cross; one angle is obtuse."
+        };
+        var cue = variant switch
+        {
+            0 => "Do not judge by apparent line length.",
+            1 => "Use 90 degrees as the right-angle benchmark.",
+            _ => "Think about the four angles around a shared intersection."
+        };
+        return Problem("usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+            $"FIRST-PARTY textual lines: {context} ONE of the angles at the intersection measures {degrees} degrees. Are the supporting two straight lines PERPENDICULAR? Answer 1 for YES, 2 for NO. {cue}",
+            $"Perpendicular lines intersect at 90 degrees. The stated angle is {degrees} degrees, so the correct code is {answer} ({(answer == 1 ? "YES" : "NO")}). A physical fold/drawing still needs teacher confirmation.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("angleDegrees", degrees), ("perpendicularAnswer", answer));
+    }
+
     private static ExactProblem BuildG4ProtractorDualScaleReading(Random random)
     {
         // IM/KH 2021 G4 U07:L09: 1 degree is 1/360 of a full turn,
@@ -4888,6 +4942,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => p["perpendicularAnswer"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l09.protractor_dual_scale_reading" => p["targetDegrees"].ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l08.full_turn_degree_benchmarks" => (p["questionKind"] == 0 ? p["numerator"] : p["questionKind"] == 1 ? p["denominator"] : 360 - p["degrees"]).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => (p["questionKind"] == 0 ? (p["stepA"] > p["stepB"] ? 1 : p["stepA"] < p["stepB"] ? 2 : 3) : Math.Abs(p["stepA"] - p["stepB"])).ToString(CultureInfo.InvariantCulture),

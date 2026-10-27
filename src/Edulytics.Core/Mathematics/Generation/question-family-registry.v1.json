@@ -19670,6 +19670,25 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+      "version": 1,
+      "skillId": "geometry.lines.perpendicular_by_right_angle",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixed-angle-measures-perpendicular-iff-measured-intersection-90-degrees",
+      "representations": [
+        "first_party_text_intersecting_lines",
+        "90_degree_perpendicular_judgment",
+        "teacher_led_source_fold_and_shapes"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
