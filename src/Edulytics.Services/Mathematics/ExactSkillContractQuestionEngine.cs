@@ -74,6 +74,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts",
             "usccss.g4.u06.l23.four_operation_contexts",
             "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect",
             "usccss.g4.u07.l02.geometry_cards_number_talk",
             "usccss.g4.u07.l01.geometric_description_precision",
             "usccss.g4.u06.l25.flower_garland_patterns",
@@ -1163,6 +1164,34 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect" =>
+                parameters.TryGetValue("caseType", out var l114Case) &&
+                parameters.TryGetValue("variant", out var l114Variant) &&
+                parameters.TryGetValue("r1", out var l114R1) &&
+                parameters.TryGetValue("c1", out var l114C1) &&
+                parameters.TryGetValue("r2", out var l114R2) &&
+                parameters.TryGetValue("c2", out var l114C2) &&
+                parameters.TryGetValue("r3", out var l114R3) &&
+                parameters.TryGetValue("c3", out var l114C3) &&
+                parameters.TryGetValue("r4", out var l114R4) &&
+                parameters.TryGetValue("c4", out var l114C4) &&
+                l114Case is >= 0 and <= 7 &&
+                l114Variant is >= 0 and <= 2 &&
+                l114R1 is >= 1 and <= 5 && l114R2 is >= 1 and <= 5 &&
+                l114R3 is >= 1 and <= 5 && l114R4 is >= 1 and <= 5 &&
+                l114C1 is >= 1 and <= 5 && l114C2 is >= 1 and <= 5 &&
+                l114C3 is >= 1 and <= 5 && l114C4 is >= 1 and <= 5 &&
+                (l114R1 != l114R2 || l114C1 != l114C2) &&
+                (l114R3 != l114R4 || l114C3 != l114C4) &&
+                // Exact direction cross-product: equal zero means parallel.
+                ((l114R2 - l114R1) * (l114C4 - l114C3) ==
+                 (l114C2 - l114C1) * (l114R4 - l114R3)) == (l114Case < 4) &&
+                // Coincident lines do not count as two distinct parallel lines.
+                (l114Case >= 4 ||
+                 (l114R2 - l114R1) * (l114C3 - l114C1) !=
+                 (l114C2 - l114C1) * (l114R3 - l114R1)) &&
+                value == (l114Case < 4 ? 1 : 2),
+
             "usccss.g4.u07.l02.geometry_cards_number_talk" =>
                 parameters.TryGetValue("caseType", out var l113Case) &&
                 parameters.TryGetValue("variant", out var l113Variant) &&
@@ -2102,6 +2131,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
             "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
             "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect" => BuildG4ParallelIntersectDotGrid(random),
             "usccss.g4.u07.l02.geometry_cards_number_talk" => BuildG4PointLineRayCardAndNumberTalk(random),
             "usccss.g4.u07.l01.geometric_description_precision" => BuildG4GeometricDescriptionPrecision(random),
             "usccss.g4.u06.l25.flower_garland_patterns" => BuildG4FlowerPatterns(random),
@@ -3449,6 +3479,37 @@ public sealed class ExactSkillContractQuestionEngine
 
 
 
+    private static ExactProblem BuildG4ParallelIntersectDotGrid(Random random)
+    {
+        // IM 2021 G4 U07:L03: first-party dot-grid support for relationships
+        // between two distinct infinite lines. Original drawing, figure
+        // counting, and student explanations remain teacher-assessed.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        var (r1, c1, r2, c2, r3, c3, r4, c4) = mode switch
+        {
+            0 => (1, 1, 1, 4, 3, 1, 3, 4), // horizontal parallels
+            1 => (1, 1, 4, 1, 1, 3, 4, 3), // vertical parallels
+            2 => (1, 1, 3, 3, 1, 3, 3, 5), // ascending parallels
+            3 => (1, 5, 3, 3, 1, 3, 3, 1), // descending parallels
+            4 => (2, 1, 2, 5, 1, 3, 4, 3), // right-angle crossing
+            5 => (2, 1, 2, 5, 1, 1, 4, 4), // diagonal crosses horizontal
+            6 => (1, 3, 4, 3, 1, 5, 4, 2), // diagonal crosses vertical
+            _ => (1, 1, 4, 4, 1, 4, 4, 1)  // diagonals cross between dots
+        };
+        string[] firstNames = ["h", "m", "p"];
+        string[] secondNames = ["g", "n", "q"];
+        var prompt = $"On a 5 by 5 dot field, line {firstNames[variant]} passes through the dots at row {r1}, column {c1} and row {r2}, column {c2}. Line {secondNames[variant]} passes through row {r3}, column {c3} and row {r4}, column {c4}. Imagine BOTH straight lines extended indefinitely. Are the two different lines 1=parallel (never meet) or 2=intersecting (meet somewhere)? Answer 1 or 2.";
+        var solution = mode < 4
+            ? "The two lines have the same direction and are at different positions, so extending both does not make them meet. They are parallel."
+            : "The two lines have different directions; when extended, they meet at one point, even when that point is between grid dots. They are intersecting.";
+        return Problem("usccss.g4.u07.l03.dot_grid_parallel_intersect", prompt, solution,
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("r1", r1), ("c1", c1), ("r2", r2), ("c2", c2),
+            ("r3", r3), ("c3", c3), ("r4", r4), ("c4", c4));
+    }
+
     private static ExactProblem BuildG4PointLineRayCardAndNumberTalk(Random random)
     {
         // IM 2021 G4 U07:L02: four geometric figure categories and the four
@@ -4510,6 +4571,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
             "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect" => (p["caseType"] < 4 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
             "usccss.g4.u07.l02.geometry_cards_number_talk" => (p["caseType"] < 4
                 ? p["caseType"] + 1
                 : p["first"] - p["second"]).ToString(CultureInfo.InvariantCulture),

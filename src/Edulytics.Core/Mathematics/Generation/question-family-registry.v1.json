@@ -19557,6 +19557,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+      "version": 1,
+      "skillId": "geometry.lines.parallel_intersect.classify_dot_grid",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-integer-cross-product-direction-and-distinct-line-check",
+      "representations": [
+        "first_party_dot_grid_coordinates",
+        "line_relation_description",
+        "teacher_led_construction"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
