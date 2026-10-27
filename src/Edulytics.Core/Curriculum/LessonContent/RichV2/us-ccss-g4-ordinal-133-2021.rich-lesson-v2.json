@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.6-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l133-abc-symmetry-optional",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L06",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: Draw a figure satisfying all stated constraints together, including specific symmetry axes and parallel/perpendicular segments.",
         "Edulytics worked explanation: Identify all source construction constraints before drawing. Add grid segments to the original parallel pair to create a closed figure. Check all lines of symmetry and pairs of parallel or perpendicular segments, adjusting the figure if necessary.",
         "First-party Edulytics Cool-down (not gated original): Draw an isosceles trapezoid with one line of symmetry and one pair of parallel sides.",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "IM/KH 2021 explicitly marks this entire symmetry construction lesson OPTIONAL; preserving that is important. Original dot-array warm-up has centre column 6 dots and on each side columns of 4, 2, 1 respectively: 6+2×(4+2+1)=20 dots. The array is shaped like a rhombus. The source actual dot-grid alignment still requires inspection for drawing constraints.",
+        "You’re Gonna Draw It: It’s Symmetric asks learners to add segments to parallel equal-length base segments so a resulting figure has exactly one reflection axis, then construct other variants. Hidden Shapes asks whether specified figures can be built by joining original field dots; yes/no depends on exact dot positions. Never assert a source shape can or cannot be drawn from the truncated excerpt. Use last lesson's symmetry axis count exact family only as independent prerequisite Practice."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,18 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Original 7-column dot pattern count",
+          "Question": "A source dot pattern has column counts 1,2,4,6,4,2,1. How many dots?",
+          "Method": "Sum symmetric column pairs.",
+          "Steps": [
+            "Central column has 6.",
+            "Paired columns: 2×4=8, 2×2=4, 2×1=2.",
+            "Total=6+8+4+2=20."
+          ],
+          "Answer": "20 dots.",
+          "Check": "Directly grounded in archived original text description."
         }
       ],
       "CommonMistakes": [
