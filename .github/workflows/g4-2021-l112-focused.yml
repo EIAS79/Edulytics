@@ -5,6 +5,7 @@ on:
       - curriculum/g4-sequential-abc-20261026
     paths:
       - '.github/workflows/g4-2021-l112-focused.yml'
+      - 'tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal112DescriptionPrecisionTests.cs'
   workflow_dispatch:
 permissions:
   contents: read

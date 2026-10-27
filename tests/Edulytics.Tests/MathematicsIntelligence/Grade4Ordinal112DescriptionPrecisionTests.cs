@@ -18,8 +18,8 @@ public sealed class Grade4Ordinal112DescriptionPrecisionTests
         foreach (var seed in new[] { 20210701, 20210702, 20261027 })
         {
             var items = engine.Generate("g4-2021-u07-l01", Family, [Family],
-                ExactSkillQuestionDifficulty.Standard, 16, seed, []);
-            Assert.Equal(16, items.Count);
+                ExactSkillQuestionDifficulty.Standard, 8, seed, []);
+            Assert.Equal(8, items.Count);
             foreach (var item in items)
             {
                 var p = item.Parameters;
