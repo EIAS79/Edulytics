@@ -124,7 +124,7 @@
     "enabled": false,
     "reason": "No lesson-specific mapping/negative and malformed response test execution; deployment not approved."
   },
-  "currentStageCStatus": "FOCUSED_GENERATE_AND_VERIFY_PASSED; ROUTING_GRADEBOOK_AND_TEACHER_VISUAL_REVIEW_UNVERIFIED",
+  "currentStageCStatus": "REVIEWED_SOURCE_FOCUSED_VERIFIER_TESTS_PASS_MAPPING_ADDED_BUT_RUNTIME_PRESENTATION_PERSISTENCE_NOT_TESTED",
   "tests": {
     "state": "FOCUSED_DOTNET_EXECUTED_PASSED",
     "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
@@ -160,5 +160,14 @@
     "testedSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
     "testRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
     "registryState": "SHADOW_UNROUTED_PRODUCTION_FALSE"
+  },
+  "reviewedLessonSkillMapping": {
+    "path": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceReadiness": "REVIEW_REQUIRED_STAGE_C_RUNTIME_PRESENTATION_AND_PERSISTENCE",
+    "approvedProduction": false,
+    "exactFamilyIds": [
+      "usccss.g4.u06.l15.area_partial_quotients",
+      "usccss.g4.u06.l15.mural_complete_columns"
+    ]
   }
 }

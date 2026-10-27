@@ -4611,6 +4611,43 @@
         "CCSS:2.NBT.A.2",
         "CCSS:2.NBT.B.5"
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+      "primarySkills": [
+        "geometry.perimeter_area"
+      ],
+      "secondarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "Local original IM 2021 teacher: U06:L15 Situations Involving Area with Elena's 189 tiles in width 7, Tyler's 197 tiles in width 6, field area 2280 square metres and width 40 metres.",
+        "Exact question generator independently validated both area/side quotient and contextual nonzero remainder: focused .NET tests 2 passed, zero failed on commit 3c681d80.",
+        "Teacher-led grid diagram, oral estimation, gallery-walk and student drawings are outside numeric auto-grader.",
+        "SOURCE REVIEW OPEN: teacher page student-facing source verified; 2 original media images not compared at pixel/byte level."
+      ],
+      "practiceReadiness": "REVIEW_REQUIRED_STAGE_C_RUNTIME_PRESENTATION_AND_PERSISTENCE",
+      "practiceMechanic": "G4_2021_U06_L15_AREA_PARTIAL_QUOTIENTS_AND_MURAL_COMPLETE_COLUMNS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l15.area_partial_quotients",
+        "usccss.g4.u06.l15.mural_complete_columns"
+      ],
+      "forbiddenQuestionFamilies": [
+        "geometry.rectangle.area.exact",
+        "geometry.perimeter_area.rectangle_perimeter",
+        "geometry.perimeter_area.triangle_area"
+      ],
+      "visualAndTeacherReview": "First-party visual examples remain source-aligned math-only; teacher verifies actual tiling drawings, estimate reasoning and remainder interpretation.",
+      "evidenceStatus": "FOCUSED_NUMERIC_VERIFIER_PASSED_ROUTING_NOT_APPROVED"
     }
   ]
 }
