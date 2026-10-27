@@ -57,19 +57,20 @@ public sealed class Grade4Ordinal101AreaDivisionExactTests
     }
 
     [Fact]
-    public void StageCMappingRemainsClosedUntilReviewedLearnerInteractionAndSavedAttempt()
+    public void OnlyTwoSourceAlignedFamiliesReachGrade4Lesson101IntegerInteraction()
     {
         const string lesson = "PED:US-CCSS-MATH:G4:U06:L15";
-        Assert.True(LessonPracticeContractRegistry.TryResolve(lesson, out var pending));
-        Assert.NotNull(pending);
-        Assert.Equal("REVIEW_REQUIRED", pending!.Readiness);
-        Assert.Empty(pending.AllowedQuestionFamilies);
-        Assert.False(LessonPracticeCapabilityResolver.TryResolve(lesson, out var routed));
-        Assert.Null(routed);
-        foreach (var family in Families)
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(lesson, out var contract));
+        Assert.NotNull(contract);
+        Assert.Equal("READY_VERIFIED", contract!.Readiness);
+        Assert.Equal(Families, contract.AllowedQuestionFamilies);
+        foreach (var family in contract.AllowedQuestionFamilies)
         {
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
-            Assert.False(LessonPracticeInteractionRegistry.TryResolve(family, out _));
+            Assert.True(LessonPracticeInteractionRegistry.TryResolve(family, out var ui));
+            Assert.NotNull(ui);
+            Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad, ui!.InteractionKind);
+            Assert.Equal("exact_integer", ui.AnswerType);
         }
     }
 
