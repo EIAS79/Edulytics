@@ -1,12 +1,12 @@
 {
   "ordinal": 130,
   "lessonCode": "PED:US-CCSS-MATH:G4:U08:L03",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_PENDING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_ORIGINAL_TEACHER_PREP_AND_STUDENT_FACING_TASK_INSPECTED",
-    "B": "SOURCE_GOAL_FIGURE_REASONING_AND_MISCONCEPTIONS_TARGETED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED_UNVERIFIED_DRAWING_AND_PRACTICE",
+    "A": "ORIGINAL_2021_LOCAL_QUADRILATERAL_SOURCE_REUSED",
+    "B": "SQUARE_RECTANGLE_ATTRIBUTE_HIERARCHY_AND_SOURCE_NAMED_CARD_SETS_REPAIRED",
+    "C": "REUSED_PARALLEL_LINES_SUBSKILL_AND_AUTHORED_TEST_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,30 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Publisher/student figure parity and drawing/folding tasks need visual teacher evaluation",
-    "Exact Practice generation/answer checking not tested for this geometry skill",
-    "No authenticated runtime or Stage D evidence"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS original 2021 source intake",
+    "originalSourceActivities": [
+      "Warm-up: How Many Do You See: Brick Pattern (10 minutes)",
+      "Activity 1: Quadrilateral Hunt (20 minutes)",
+      "Activity 2: What’s True about These Quadrilaterals? (15 minutes)",
+      "Activity 3: Guess Again [OPTIONAL] (10 minutes)",
+      "Cool-down: Quadrilaterals Rule (5 minutes)"
+    ],
+    "originalStudentExcerpts": [
+      "How many bricks have 2 pairs of parallel sides? | Attribution: By Falco. Pixabay. Pixabay. Source. | Student Response",
+      "Find the quadrilaterals that have each of the following attributes. Record their letter names here. | attribute | quadrilaterals with the attribute",
+      "Here are four sets of quadrilaterals. | Quadrilaterals D and AA are squares. | Quadrilaterals K, Z, and AA are rectangles."
+    ],
+    "allowedFamily": "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+    "teacherOnlyTasks": [
+      "Exact source quadrilateral card images",
+      "Brick pattern source count",
+      "Optional Guess Again peer discussion"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal130SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }

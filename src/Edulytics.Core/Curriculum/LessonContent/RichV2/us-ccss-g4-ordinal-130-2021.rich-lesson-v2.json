@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.3-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l130-source-abc-refined",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L03",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: Classify quadrilaterals using parallel sides, right angles and equal side lengths, not their orientation.",
         "Edulytics worked explanation: A quadrilateral has four sides; identify parallel or perpendicular pairs on each original card. Test whether right angles are present and which sides have equal lengths. A square is both a rectangle and a rhombus, meeting the required properties of each.",
         "First-party Edulytics Cool-down (not gated original): Explain why every square is also a rectangle.",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "Original source Quadrilateral Hunt asks students to record letter identifiers of quadrilaterals that share sides, angles, parallel or perpendicular properties, and then reason from the four overlapping original sets. Original reported facts: quadrilaterals D and AA are squares; K, Z, and AA are rectangles. The lesson explicitly requires hierarchies: every square has four right angles, so every square is also a rectangle (even if a particular provided subset does not enumerate every member). Drawing and card label parity need teacher-original visuals.",
+        "Warm-up source Brick Pattern asks how many bricks have 2 pairs of parallel sides; original picture count not safely derivable from plain text. Optional Activity 3 Guess Again remains optional, not mandatory."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +73,18 @@
           ],
           "Answer": "Open response; teacher checks the original activity and visual work.",
           "Check": "This scaffold is not a publisher answer key or verified digital question."
+        },
+        {
+          "Title": "Quadrilateral attribute inclusion",
+          "Question": "If a quadrilateral is a square, does it also have the attributes of a rectangle?",
+          "Method": "Check definitions of right angles and opposite side pairs.",
+          "Steps": [
+            "Square has four equal sides and four 90° corners.",
+            "Rectangle has four 90° corners.",
+            "Therefore all squares are rectangles; the reverse is not true."
+          ],
+          "Answer": "Yes. Every square is a rectangle.",
+          "Check": "Independent mathematical classification, not publisher card-letter answer key."
         }
       ],
       "CommonMistakes": [
@@ -83,6 +97,11 @@
           "Mistake": "Assuming a drawing, classification or calculation is correct from appearance alone.",
           "WhyWrong": "The original task requires a mathematical attribute or reasoning check.",
           "Correction": "Use the original constraints and this rule: Classify quadrilaterals using parallel sides, right angles and equal side lengths, not their orientation."
+        },
+        {
+          "Mistake": "Assuming card subset listings are exhaustive mathematical definitions.",
+          "WhyWrong": "Source lists named examples; category inheritance is defined by attributes.",
+          "Correction": "Check each square's right angles and the broader rectangle class."
         }
       ],
       "SummaryPoints": [
