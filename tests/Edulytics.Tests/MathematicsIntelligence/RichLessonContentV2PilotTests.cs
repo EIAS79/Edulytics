@@ -320,15 +320,15 @@ public sealed class RichLessonContentV2PilotTests
     }
 
     [Fact]
-    public void PilotRegistry_PreservesOriginal26And143Grade3LessonsWithoutDuplicates()
+    public void PilotRegistry_PreservesOriginal26And143Grade3And149Grade4LessonsWithoutDuplicates()
     {
         var lessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(x => x.Lessons)
             .ToArray();
 
-        Assert.Equal(26 + 143, lessons.Length);
+        Assert.Equal(26 + 143 + 149, lessons.Length);
         Assert.Equal(
-            26 + 143,
+            26 + 143 + 149,
             lessons.Select(x => x.LessonCode)
                 .Distinct(StringComparer.Ordinal)
                 .Count());
