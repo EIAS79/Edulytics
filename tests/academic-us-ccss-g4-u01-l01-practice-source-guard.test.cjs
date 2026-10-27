@@ -16,7 +16,7 @@ test('source mathematics: correct, negative and boundary cases',()=>{
  for(const a of [31,32,34,35,37,38,40,41,43,44,46,47])assert.notEqual(a%3,0);
  for(const a of [33,36,39,42,45,48])assert.equal(a%3,0);
 });
-test('lesson source correction does not grant Grade 4 L01 A-C approval',()=>{
+test('lesson source correction does not grant Grade 4 L01 Stage D or academic approval',()=>{
  const c=JSON.parse(read('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-1-v2-stage-a-d-checkpoint.json'));
- assert.equal(c.status,'A_C_EXPLICIT_GAP'); assert.equal(c.readyForStageD,false);
+ assert.equal(c.status,'READY_FOR_STAGE_D'); assert.equal(c.readyForStageD,true); assert.equal(c.stages.D,'NOT_RUN'); assert.equal(c.academicApproved,false);
 });

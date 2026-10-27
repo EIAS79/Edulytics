@@ -30,5 +30,5 @@ test('stage A-C source limitations and exact reuse are honest; Stage D not run',
  assert.equal(cp.stages.D,'NOT_RUN');
  assert.equal(cp.academicApproved,false);
  const pg=load('artifacts/curriculum-delivery/US-CCSS-MATH/G4/full-grade-progress.json');
- assert.equal(pg.lastClosedOrdinal,24);assert.equal(pg.currentLessonOrdinal,25);
+ assert.equal(pg.lastClosedOrdinal,149);assert.equal(pg.currentLessonOrdinal,150);assert.equal(pg.status,'G4_2021_A_C_COMPLETE_149_OF_149_STAGE_D_PENDING');
 });
