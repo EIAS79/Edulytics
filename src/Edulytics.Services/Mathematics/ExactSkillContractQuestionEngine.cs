@@ -70,6 +70,7 @@ public sealed class ExactSkillContractQuestionEngine
             "usccss.g4.u06.l16.base_ten_equal_groups",
             "usccss.g4.u06.l18.partial_quotients_recording",
             "usccss.g4.u06.l19.partial_quotients_remainders",
+            "usccss.g4.u06.l20.contextual_remainder_decisions",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -1120,6 +1121,31 @@ public sealed class ExactSkillContractQuestionEngine
                 (long)partialDivisor * (partialTens + partialOnes) == partialDividend &&
                 value == partialTens + partialOnes,
 
+            "usccss.g4.u06.l20.contextual_remainder_decisions" =>
+                parameters.TryGetValue("caseType", out var l106Case) &&
+                parameters.TryGetValue("dividend", out var l106Total) &&
+                parameters.TryGetValue("divisor", out var l106Divisor) &&
+                parameters.TryGetValue("shortfall", out var l106Short) &&
+                l106Case is >= 0 and <= 4 &&
+                l106Total is >= 100 and <= 9999 &&
+                l106Divisor is >= 2 and <= 9 &&
+                l106Short >= 0 && l106Short < l106Divisor &&
+                (l106Case switch
+                {
+                    0 or 1 or 2 => l106Short == 0 && l106Total % l106Divisor > 0,
+                    3 => l106Short > 0 && l106Total % l106Divisor == l106Short,
+                    4 => l106Short == 0 && l106Total % l106Divisor == 0,
+                    _ => false
+                }) &&
+                value == (l106Case switch
+                {
+                    0 => l106Total / l106Divisor + 1,
+                    1 => l106Total / l106Divisor,
+                    2 => l106Total % l106Divisor,
+                    3 => (l106Total - l106Short) / l106Divisor,
+                    _ => l106Total / l106Divisor
+                }),
+
             "geometry.perimeter_area.rectangle_missing_side" =>
                 parameters["knownSide"] > 0 &&
                 parameters["area"] > 0 &&
@@ -1854,6 +1880,7 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.divide.with_remainder.apply" =>
                 BuildDivisionWithRemainder(family, random, scale),
             "usccss.g4.u06.l19.partial_quotients_remainders" => BuildG4PartialQuotientsRemainder(random),
+            "usccss.g4.u06.l20.contextual_remainder_decisions" => BuildG4ContextualRemainder(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
                 BuildFractionOfQuantity(family, random, scale),
@@ -3122,6 +3149,35 @@ public sealed class ExactSkillContractQuestionEngine
             ("partialTens",tens),("partialOnes",ones),("remainder",remainder));
     }
 
+    private static ExactProblem BuildG4ContextualRemainder(Random random)
+    {
+        // 2021 G4 U06:L20: keep rounding, short rows and missing savings distinct.
+        var caseType = random.Next(0, 5);
+        var divisor = random.Next(2, 10);
+        var quotient = random.Next(28, 650);
+        var remainder = caseType == 4 ? 0 : random.Next(1, divisor);
+        var dividend = divisor * quotient + remainder;
+        var shortfall = caseType == 3 ? remainder : 0;
+        var prompt = caseType switch
+        {
+            0 => $"All {dividend} muffins must go in boxes that hold {divisor} muffins each. How many boxes are needed?",
+            1 => $"An auditorium has {dividend} seats arranged in full rows of {divisor}, plus one short row. How many full rows are there?",
+            2 => $"An auditorium has {dividend} seats arranged in full rows of {divisor}, plus one short row. How many seats are in that short row?",
+            3 => $"A school needs ${dividend} for a garden. It saves the same number of dollars each month for {divisor} months and is still short by ${shortfall}. How much did it save per month?",
+            _ => $"A student invents a story for {dividend} ÷ {divisor} using equal groups. How many are in each group?"
+        };
+        var solution = caseType switch
+        {
+            0 => $"{dividend} = {divisor} × {quotient} + {remainder}; all muffins must be boxed, so use {quotient + 1} boxes.",
+            1 => $"{dividend} = {divisor} × {quotient} + {remainder}; there are {quotient} full rows and one short row.",
+            2 => $"{dividend} = {divisor} × {quotient} + {remainder}; the short row has {remainder} seats.",
+            3 => $"Saved total is {dividend} − {shortfall} = {dividend - shortfall}; divide by {divisor} months to get {quotient} dollars.",
+            _ => $"{dividend} = {divisor} × {quotient}; each of the {divisor} equal groups has {quotient}."
+        };
+        return Problem("usccss.g4.u06.l20.contextual_remainder_decisions", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", caseType), ("dividend", dividend), ("divisor", divisor), ("shortfall", shortfall));
+    }
+
     private static ExactProblem BuildG4PartialQuotients(Random random)
     {
         // IM K-5 G4 2021 U06:L18: use equations and subtraction for partial quotients.
@@ -3952,6 +4008,7 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.divide.with_remainder.apply" or
             "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
+            "usccss.g4.u06.l20.contextual_remainder_decisions" => (p["caseType"] switch { 0 => p["dividend"] / p["divisor"] + 1, 1 => p["dividend"] / p["divisor"], 2 => p["dividend"] % p["divisor"], 3 => (p["dividend"] - p["shortfall"]) / p["divisor"], _ => p["dividend"] / p["divisor"] }).ToString(CultureInfo.InvariantCulture),
 
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>

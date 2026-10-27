@@ -19401,6 +19401,25 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l20.contextual_remainder_decisions",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-Euclidean-quotient-and-remainder-plus-contextual-rounding-or-short-row-or-savings-choice",
+      "representations": [
+        "contextual",
+        "equation_set",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {
