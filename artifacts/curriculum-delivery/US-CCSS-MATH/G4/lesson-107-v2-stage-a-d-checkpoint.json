@@ -1,12 +1,12 @@
 {
   "ordinal": 107,
   "lessonCode": "PED:US-CCSS-MATH:G4:U06:L21",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_EXACT_PRACTICE_UNVERIFIED",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_LOCAL_TEACHER_PREPARATION_AND_STUDENT_FACING_TASKS_INSPECTED",
-    "B": "ORIGINAL_GOAL_RETAINED; MISALIGNED_KEY_RULE_AND_METHOD_REPAIRED",
-    "C": "FIRST_PARTY_COOLDOWN_ADDED; REAL_PRACTICE_NOT_VERIFIED",
+    "A": "2021_LOCAL_PREP_AND_STUDENT_FACING_MUSEUM_FIVE_STRATEGIES_14x35_AND_MOVIE_3132_DIV_9_696_8352_VERIFIED; GATED_COOLDOWN_INDEPENDENT",
+    "B": "FIVE_SOURCE_ALIGNED_EXACT_EXAMPLES_AND_3_FIRST_PARTY_EQUATION_VISUALS_CORRECTED; TEACHER_ONLY_POSTERS_AND_STUDENT_AUTHORED_QUESTIONS",
+    "C": "G4_2021_U06_L21_MULTISTEP_EXACT_FAMILY_ROUTED; 3_OF_3_FOCUSED_DOTNET_GREEN_40545531709; WRONG_MALFORMED_TAMPERED_REJECTED",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -20,11 +20,46 @@
   "sourceVisualParityProven": false,
   "originalPublisherCooldownVerified": false,
   "academicApproved": false,
-  "focusedTestsRun": false,
+  "focusedTestsRun": true,
   "productionTouched": false,
-  "blockers": [
-    "Visual, original tasks and teacher-led parity are not fully demonstrated",
-    "SkillContract, exact question generation and correct/wrong/malformed grading not established",
-    "Authenticated scoring and Grade 4 Stage D not run"
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourceTeacherSha256": "9dde6fab98d0fc0c23c1b65707f615cdd188c54cc451929451f309c942a753b7",
+    "sourcePrepSha256": "d8a65c06427060a9ae17a9a2e6ea248cd02ea96315665e6f330d9cbf8170807b",
+    "sourceStudentFacingReadFromOriginal2021Teacher": true,
+    "sourceMath": [
+      "45×18=810, 900−810=90",
+      "14×35=490",
+      "3132÷9=348",
+      "348×2=696",
+      "696×(7+5)=8352"
+    ],
+    "firstPartyCooldown": "500−28×17=24",
+    "firstPartyVisuals": 3,
+    "originalPublisherGraphicsCopied": false,
+    "originalPublisherAssessmentVerified": false,
+    "teacherOnlyTasks": [
+      "warmup comparisons",
+      "5 source posters and gallery walk",
+      "student-authored movie question and explanations"
+    ],
+    "exactAllowedFamily": "usccss.g4.u06.l21.multistep_contexts",
+    "generatorAndIndependentVerifierPassed": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40545531709",
+    "focusedTestCandidateSha": "8362800a2d47fb1f784ce56eb6c852bdb3ad346c",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false,
+    "sourceLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-107-2021-source-element-ledger.json"
+  },
+  "stageDRisks": [
+    "Original image bytes, publisher Cool-down, gallery material, and authenticated teacher/student rendering are not source-certified.",
+    "Grade 4 Rich V2 full runtime, persisted learner attempt, academic approval and publication not Stage D verified."
   ]
 }
