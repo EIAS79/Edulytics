@@ -27,6 +27,7 @@ const englishFields = ['title', 'explanation', 'keyConceptsAndRules',
   'workedExamples', 'stepByStepSolutions', 'commonMistakes', 'quickSummary'];
 const isNonempty = x => typeof x === 'string' && x.trim() !== '';
 const isSha256 = x => typeof x === 'string' && /^[0-9a-f]{64}$/i.test(x);
+const g4IndexAliasesPath = 'artifacts/curriculum-delivery/US-CCSS-MATH/G4/g4-b001-index-display-title-aliases.json';
 const json = relativePath => JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'));
 
 function buildCatalogue() {
@@ -35,6 +36,12 @@ function buildCatalogue() {
   const seen = new Set();
   const lessons = [];
   const segments = [];
+  const titleAliases = json(g4IndexAliasesPath);
+  assert.equal(titleAliases.entries.length, 13, 'Grade 4 source-index title alias denominator drift');
+  const expectedTitleAliasCodes = new Set(["PED:US-CCSS-MATH:G4:U01:L01","PED:US-CCSS-MATH:G4:U01:L06","PED:US-CCSS-MATH:G4:U02:L04","PED:US-CCSS-MATH:G4:U02:L08","PED:US-CCSS-MATH:G4:U02:L12","PED:US-CCSS-MATH:G4:U03:L02","PED:US-CCSS-MATH:G4:U03:L03","PED:US-CCSS-MATH:G4:U03:L10","PED:US-CCSS-MATH:G4:U03:L15","PED:US-CCSS-MATH:G4:U04:L03","PED:US-CCSS-MATH:G4:U04:L06","PED:US-CCSS-MATH:G4:U04:L16","PED:US-CCSS-MATH:G4:U04:L20"]);
+  const byAliasCode = new Map(titleAliases.entries.map(row => [row.lessonCode,row]));
+  assert.equal(byAliasCode.size, 13, 'Duplicate Grade 4 source-index alias');
+  assert([...byAliasCode.keys()].every(code => expectedTitleAliasCodes.has(code)), 'Unreviewed Grade 4 title alias');
 
   for (const input of gradeInputs) {
     const blueprintPath = 'src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/' + input.blueprint;
@@ -70,7 +77,15 @@ function buildCatalogue() {
       assert(record, 'Missing content record ' + lesson.LessonCode);
       const english = (record.translations || []).find(t => t.cultureCode === 'en');
       assert(english, 'Missing English content record ' + lesson.LessonCode);
-      assert.equal(english.title, lesson.Title, 'Title mismatch ' + lesson.LessonCode);
+      if (english.title !== lesson.Title) {
+        const alias = byAliasCode.get(lesson.LessonCode);
+        assert(alias && alias.historicalCatalogueTitle === lesson.Title &&
+          alias.firstPartyDisplayTitle === english.title &&
+          alias.sourceUrl === lesson.SourceUrl &&
+          alias.recordedSourceSha256 === record.sourceSha256 &&
+          lesson.Title === english.title + ' PLC Activity',
+          'Title mismatch ' + lesson.LessonCode);
+      }
       assert.equal(record.sourceUrl, lesson.SourceUrl, 'Source URL mismatch ' + lesson.LessonCode);
       assert.equal(JSON.stringify([...(lesson.OutcomeCodes || [])].sort()),
         JSON.stringify([...(record.outcomeCodes || [])].sort()), 'Outcome mismatch ' + lesson.LessonCode);
