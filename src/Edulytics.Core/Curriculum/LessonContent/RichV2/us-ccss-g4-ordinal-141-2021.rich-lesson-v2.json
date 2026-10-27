@@ -21,6 +21,18 @@
           "Definition": "Regroup across zero place values in the standard subtraction algorithm and compare the result with counting-up methods.",
           "Rule": "Regroup across zero place values in the standard subtraction algorithm and compare the result with counting-up methods.",
           "Example": "5,000 − 311 requires regrouping through zero place values."
+        },
+        {
+          "Title": "Operational representation",
+          "Definition": "Regroup through zero place values and verify subtraction with inverse addition.",
+          "Rule": "Regroup through zero place values and verify subtraction with inverse addition.",
+          "Example": "Worked Edulytics example: 5,000 − 311 requires regrouping through zero place values. Use a convenient compensation: 5,000 − 300 − 11 = 4,700 − 11. The result is 4,689; check by 4,689 + 311 = 5,000."
+        },
+        {
+          "Title": "Independent reasonableness check",
+          "Definition": "Use an equivalent representation or inverse operation to confirm the result.",
+          "Rule": "Interpret the answer with units and check it against the original problem restrictions.",
+          "Example": "First-party Edulytics Cool-down (publisher's original not inspected): Find 9,000 − 463 and verify by addition."
         }
       ],
       "WorkedExamples": [
@@ -35,6 +47,30 @@
           ],
           "Answer": "The result is 4,689; check by 4,689 + 311 = 5,000.",
           "Check": "Checked arithmetic exemplar: 5000-311 = 4689; not a generator verification."
+        },
+        {
+          "Title": "Source-goal guided reasoning 1 (teacher-reviewed)",
+          "Question": "Math focus: Regroup across zero place values in the standard subtraction algorithm and compare the result with counting-up methods.",
+          "Method": "Regroup through zero place values and verify subtraction with inverse addition.",
+          "Steps": [
+            "Identify the source-given quantities and required operation.",
+            "Apply this specific method: Regroup through zero place values and verify subtraction with inverse addition.",
+            "Show the intermediate fractions, columns or products and verify the answer with the original conditions."
+          ],
+          "Answer": "Teacher checks the original problem's requested solution and explanation.",
+          "Check": "No independent student answer or original publisher assessment is asserted."
+        },
+        {
+          "Title": "Source-goal guided reasoning 2 (teacher-reviewed)",
+          "Question": "Worked Edulytics example: 5,000 − 311 requires regrouping through zero place values. Use a convenient compensation: 5,000 − 300 − 11 = 4,700 − 11. The result is 4,689; check by 4,689 + 311 = 5,000.",
+          "Method": "Regroup through zero place values and verify subtraction with inverse addition.",
+          "Steps": [
+            "Identify the source-given quantities and required operation.",
+            "Apply this specific method: Regroup through zero place values and verify subtraction with inverse addition.",
+            "Show the intermediate fractions, columns or products and verify the answer with the original conditions."
+          ],
+          "Answer": "Teacher checks the original problem's requested solution and explanation.",
+          "Check": "No independent student answer or original publisher assessment is asserted."
         }
       ],
       "CommonMistakes": [
@@ -42,11 +78,17 @@
           "Mistake": "Mismatched units, operation or question scope.",
           "WhyWrong": "The answer may be numerically plausible but not solve the actual source task.",
           "Correction": "Regroup across zero place values in the standard subtraction algorithm and compare the result with counting-up methods."
+        },
+        {
+          "Mistake": "Skipping the equivalence, regrouping or place-value step needed by the lesson.",
+          "WhyWrong": "An operation applied without its required representation may produce an incorrect result.",
+          "Correction": "Regroup through zero place values and verify subtraction with inverse addition."
         }
       ],
       "SummaryPoints": [
         "Learning goal: You will practice the standard algorithm for subtraction and to compare this method to other methods.",
-        "First-party Cool-down: Find 9,000 − 463 and verify by addition."
+        "First-party Cool-down: Find 9,000 − 463 and verify by addition.",
+        "Verification method: Regroup through zero place values and verify subtraction with inverse addition."
       ],
       "Visuals": [],
       "Videos": []
