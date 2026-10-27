@@ -1,0 +1,41 @@
+name: Grade 4 Rich V2 schema repair (staging branch only)
+on:
+  push:
+    paths:
+      - 'tools/curriculum/g4-reconcile-richv2.cjs'
+      - 'tests/academic-us-ccss-g4-richv2-materialization.test.cjs'
+      - 'tests/Edulytics.Tests/Phase29/Grade4RichV2RegistryRuntimeTests.cs'
+    branches: [curriculum/g4-sequential-abc-20261026]
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    if: github.repository == 'EIAS79/Edulytics'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/curriculum/g4-reconcile-richv2.cjs --write
+      - run: node --test tests/academic-us-ccss-g4-richv2-materialization.test.cjs
+      - run: node tools/curriculum/g4-reconcile-richv2.cjs --check
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4RichV2RegistryRuntimeTests --configuration Release --verbosity minimal
+      - name: Commit repaired grade 4 Rich V2 JSON only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g4-ordinal-*-2021.rich-lesson-v2.json
+          git add artifacts/curriculum-delivery/US-CCSS-MATH/G4/g4-101-149-richv2-practice-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "fix(g4): satisfy real Rich V2 loader for L101-L149; audit unmapped Practice"
+            git push origin HEAD:curriculum/g4-sequential-abc-20261026
+          fi
