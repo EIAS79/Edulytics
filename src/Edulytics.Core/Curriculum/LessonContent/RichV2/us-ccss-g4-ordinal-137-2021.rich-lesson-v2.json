@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "g4-4.8.10-source-abc-2021-v1",
+  "ContentVersion": "g4-2021-l137-optional-symmetry-angle",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:G4:U08:L10",
@@ -13,7 +13,9 @@
         "Source-goal geometric reasoning: Use symmetry, equal sides and right angles to deduce missing angles; reflected corresponding angles have equal measurements.",
         "Edulytics worked explanation: Mark the given reflection line and known angle measurements. Equate the corresponding angles that symmetry preserves. If a 70° angle is bisected by a reflection line, each half is 35°. Use right and straight angle totals to check any remaining angle.",
         "First-party Edulytics Cool-down (not gated original): A symmetry line divides an 84° angle into two equal angles. Find each one.",
-        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation."
+        "Original student diagrams, teacher card sorting, paper folding, and physical drawings require figure-by-figure / teacher validation.",
+        "Original 2021 U08:L10 is OPTIONAL: use line symmetry, equal lengths and angle facts to solve mirrored paper geometry. Before and After, Angle Edition shows folded paper resulting in the same folded shape for Noah, Clare, Andre, and Elena, with original diagrams differing. Angular Fish requires drawing its single symmetry line and finding original labeled a,b,c,d,e,f WITHOUT protractor, using equal mirrored angles and totals 90°,180°,360°. The truncated source excerpt does not give numeric labels or drawn fish geometry; never invent a–f numeric values.",
+        "Digital reuse: previous exact additive angle family tests only independent explicitly specified adjacent degree parts. Symmetry-axis count family may support vocabulary, but cannot grade a teacher's original fish illustration. The source original single symmetry line is teacher checked."
       ],
       "KeyConcepts": [
         {
@@ -72,6 +74,18 @@
           ],
           "Answer": "Open visual response must be reviewed by a teacher.",
           "Check": "No automated source-figure grading is claimed."
+        },
+        {
+          "Title": "First-party symmetric-angle reasoning",
+          "Question": "A straight 180° angle is split into two equal angles by a symmetry axis. What is each measure?",
+          "Method": "Divide total straight angle into equal parts.",
+          "Steps": [
+            "Two mirrored angles are equal.",
+            "180÷2=90 degrees.",
+            "Each equals a right angle."
+          ],
+          "Answer": "90° each.",
+          "Check": "Independent illustrative question, not numeric label a–f on publisher fish."
         }
       ],
       "CommonMistakes": [

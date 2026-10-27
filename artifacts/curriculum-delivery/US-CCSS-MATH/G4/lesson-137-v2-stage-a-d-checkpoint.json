@@ -1,12 +1,12 @@
 {
   "ordinal": 137,
   "lessonCode": "PED:US-CCSS-MATH:G4:U08:L10",
-  "status": "STAGE_B_SOURCE_ALIGNED_C_VISUAL_PRACTICE_PENDING",
-  "readyForStageD": false,
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
   "stages": {
-    "A": "2021_ORIGINAL_TEACHER_PREP_AND_STUDENT_FACING_TASK_INSPECTED",
-    "B": "SOURCE_GOAL_FIGURE_REASONING_AND_MISCONCEPTIONS_TARGETED",
-    "C": "FIRST_PARTY_COOLDOWN_AUTHORED_UNVERIFIED_DRAWING_AND_PRACTICE",
+    "A": "OPTIONAL_2021_LOCAL_ORIGINAL_SOURCE_REUSED",
+    "B": "SOURCE_ANGULAR_FISH_SINGLE_SYMMETRY_AXIS_AND_UNKNOWN_A_TO_F_TEACHER_SCOPED",
+    "C": "REUSED_ADDITIVE_ANGLE_FAMILY_FOCUSED_XUNIT_AUTHORED_UNRUN",
     "D": "NOT_RUN"
   },
   "sourceHashes": {
@@ -22,9 +22,29 @@
   "academicApproved": false,
   "focusedTestsRun": false,
   "productionTouched": false,
-  "blockers": [
-    "Publisher/student figure parity and drawing/folding tasks need visual teacher evaluation",
-    "Exact Practice generation/answer checking not tested for this geometry skill",
-    "No authenticated runtime or Stage D evidence"
-  ]
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "optionalSourceLesson": true,
+    "sourceEvidenceReusedFrom": "2021 Our-CS original local source intake",
+    "originalSourceActivities": [
+      "Warm-up: How Many Do You See: Symmetry in a Star (10 minutes)",
+      "Activity 1: Before and After, Angle Edition (25 minutes)",
+      "Activity 2: Angular Fish (15 minutes)",
+      "Cool-down: Stage Symmetry, Revisited (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "How many lines of symmetry do you see? How do you see them? | Student Response | Teachers with a valid work email address can click here to register or sign in for free access to Student Response.",
+      "Noah, Clare, Andre, and Elena each have a sheet of paper with one line of symmetry. When they folded their paper along the line of symmetry, they all produced the same shape. The dashed line represents the folding line. | Draw the shape of the unfolded paper t",
+      "Here is a diagram of an origami fish, which has one line of symmetry. | Draw the line of symmetry. | Without measuring, find the measurement of angles labeled \\(a\\)–\\(f\\). Be prepared to explain your reasoning."
+    ],
+    "allowedFamily": "usccss.g4.u07.l13.additive_angle_part",
+    "teacherOnlyTasks": [
+      "Origami Angular Fish original a-f geometry",
+      "Folded Noah/Clare/Andre/Elena figures"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal137SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
 }
