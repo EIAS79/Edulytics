@@ -34,7 +34,7 @@ test('G1 96 historical exact-source scopes are unchanged except seven SHA-pinned
   }
   assert.equal(paths.size,124);
   const changed=execFileSync('git',['diff','--name-only',proof,head,'--',...paths],
-    {cwd:ROOT,encoding:'utf8'}).trim().split(/\\r?\\n/).filter(Boolean);
+    {cwd:ROOT,encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean);
   assert.equal(changed.length,7, 'Unexpected change in a Grade 1 proof-affecting code path');
   assert.deepEqual(changed.filter(p=>p.includes('/G1')).sort(),[],
     'Grade 1-specific source code itself changed');
