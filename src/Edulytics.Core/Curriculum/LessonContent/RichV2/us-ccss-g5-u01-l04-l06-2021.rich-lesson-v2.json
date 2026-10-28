@@ -1,0 +1,381 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u01-l04-l06-im2021-first-party-richv2-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
+      "CultureCode": "en",
+      "Title": "Use Layers to Determine Volume PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: determine volume when a rectangular prism is shown partly filled with unit cubes. Explain how the known cubes identify the size of a complete layer, infer unseen layers, and connect different multiplication expressions to the same prism. A drawing of incomplete cube detail does not mean the prism itself is hollow.",
+        "Warm-up — estimate from partial information: an independently authored drawing description shows nine unit cubes in the front face of a fully packed prism but conceals its depth. Give one estimate too low, a plausible middle estimate, and one too high; explain why an exact cube count needs the number of matching layers. This is an estimation discussion, not an exact-answer quiz.",
+        "Activity 1 — layers in prisms: learners inspect complete and partly pictured box solids, make a layer-count/number-of-layers/volume table, and explain how a solid rotated onto another face can be counted by different layers. Try a first-party 2 × 3 × 4 cube prism: 2 layers of 12 and 3 layers of 8 both represent 24 cubes.",
+        "Activity 2 — expressions and orientations: for a first-party solid measuring 5, 2 and 4 unit cubes along its edges, build and explain 4 × (5 × 2) = 40 and 5 × (4 × 2) = 40. Describe what each pair of factors means as a layer and height. Retell the explanation with physical connecting cubes, a tactile model, or an accessible grid-layer table.",
+        "Assessment boundary: the publisher's actual lesson includes partially filled prism diagrams, estimation with incomplete information and peer explanations. A single length × width × height answer can support computation but cannot assess estimation reasoning, choice of layers or the explanation. Teacher reviews representations and multiple defensible estimates. Source: public first-edition 2021 teacher lesson page; original gated Cool-down is not asserted verified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Full layer versus visible cubes",
+          "Definition": "A face or row of visible cubes can reveal a full layer in a packed rectangular prism even if other cubes are hidden.",
+          "Rule": "Determine the cube count in one complete layer, then multiply by the matching number of layers.",
+          "Example": "For a 2 × 3 × 4 prism, one 2 × 3 layer contains 6 cubes; four layers contain 24."
+        },
+        {
+          "Title": "Layer grouping and rotation",
+          "Definition": "A packed prism can be decomposed into equal cube layers along different directions.",
+          "Rule": "Every complete grouping counts the same cubes exactly once, so rotating the prism does not change volume.",
+          "Example": "2 × 12 = 3 × 8 = 4 × 6 = 24."
+        },
+        {
+          "Title": "Interpreting parentheses",
+          "Definition": "Grouping symbols show which two dimensions are multiplied to count one layer.",
+          "Rule": "(length × width) × height connects cube layers with the total volume.",
+          "Example": "(5 × 2) × 4 represents four layers of ten cubes each."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Count a partly pictured prism",
+          "Question": "A full rectangular prism has a base 2 cubes by 3 cubes and 4 layers, but only the bottom layer is drawn. What is the volume?",
+          "Method": "Infer complete equal layers from the prism description rather than assuming the picture displays all cubes.",
+          "Steps": [
+            "Count a full base layer: 2 × 3 = 6 cubes.",
+            "Identify four equally sized layers, including the three not fully shown.",
+            "Calculate 6 × 4 = 24 and label cubic units."
+          ],
+          "Answer": "24 cubic units.",
+          "Check": "The prism is fully packed and four sets of six cubes account for every unit cube."
+        },
+        {
+          "Title": "Two orientations, one volume",
+          "Question": "Explain why the same 2 × 3 × 4 prism can be counted as 2 × 12 or 3 × 8.",
+          "Method": "Group all cubes into different complete sets without duplication.",
+          "Steps": [
+            "One orientation gives two layers, each with 3 × 4 = 12 cubes.",
+            "Another gives three layers, each with 2 × 4 = 8 cubes.",
+            "Multiply to verify 2 × 12 = 24 and 3 × 8 = 24."
+          ],
+          "Answer": "Both expressions represent 24 cubic units.",
+          "Check": "The physical model uses the same 24 cubes in either orientation; teacher reviews the explanation."
+        },
+        {
+          "Title": "Interpret the factors of a prism expression",
+          "Question": "For a 5 × 2 × 4 prism, what does 4 × (5 × 2) mean?",
+          "Method": "Identify a rectangular layer and the count of equivalent layers.",
+          "Steps": [
+            "Count 5 × 2 = 10 cubes on one face layer.",
+            "Identify the remaining edge length 4 as the number of complete layers.",
+            "Multiply 4 × 10 = 40."
+          ],
+          "Answer": "40 cubic units: four layers of ten.",
+          "Check": "The pair of factors in parentheses must match two perpendicular side lengths of one layer."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Count only the drawn blocks",
+          "WhyWrong": "Partially represented prisms may be fully packed even when interior cubes are not depicted.",
+          "Correction": "Use the given layer dimensions and count hidden cubes implied by the complete prism."
+        },
+        {
+          "Mistake": "A different base gives a different volume",
+          "WhyWrong": "Choosing another face changes the count of layers and cubes per layer, but not the total number of cubes.",
+          "Correction": "Reorient a model and verify that the different products have the same value."
+        }
+      ],
+      "SummaryPoints": [
+        "A complete rectangular prism has equal full layers even if its picture shows only part of the cube structure.",
+        "Different equal-layer decompositions and numerical expressions can represent the same volume.",
+        "Estimation explanations and chosen decompositions are reviewed by a teacher, not auto-passed by one numeric answer.",
+        "Source: 2021 first-edition Grade 5 Unit 1 Lesson 4, https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-4/lesson.html; first-party Edulytiks worked models, CC BY 4.0 attribution."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Volume from alternative layer choices",
+          "Description": "Original text table showing alternative orientations of a 2 × 3 × 4 unit-cube prism; not publisher artwork.",
+          "Rows": [
+            {
+              "Label": "Dimension used as layer count",
+              "Cells": [
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Cubes per complete layer",
+              "Cells": [
+                "12",
+                "8",
+                "6"
+              ]
+            },
+            {
+              "Label": "Volume in cubic units",
+              "Cells": [
+                "24",
+                "24",
+                "24"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
+      "CultureCode": "en",
+      "Title": "Side Lengths of Rectangular Prisms PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: describe a rectangular prism using length, width and height of a chosen rectangular base and connect these measurements to layers and volume. This source lesson explicitly allows more than one face to serve as the base; the corresponding height changes as the solid is rotated.",
+        "Warm-up — notice and wonder: imagine a 2 × 3 × 5 unit-cube prism resting on each of its three differently sized rectangular face pairs. Which measurements describe the bottom rectangle, and which measurement becomes the number of layers? Share observations rather than evaluating one chosen orientation as uniquely correct.",
+        "Activity 1 — match faces to bases: build or describe three prisms with shared 3 × 4 faces but different third edge lengths. Select possible base rectangles; more than one can be valid. Explain why the same rectangle can describe a base for different prisms and why the prism volume depends on the corresponding height.",
+        "Activity 2 — growing prisms: hold a 4 × 5 cube base constant and grow one layer at a time. Describe the pattern in volumes 20, 40, 60 and 80 cubic units for heights 1 through 4. Name the base area in square units and the final solid volume in cubic units.",
+        "Activity 3 and synthesis: use precise vocabulary to translate between a cube model, a rectangular base, its area and corresponding height. The source includes an additional discussion of using a base to describe a prism. Original first-party numerical models here supplement rather than replace peer physical modeling; source Cool-down is gated and not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rectangular base",
+          "Definition": "A two-dimensional face of the prism that can be chosen to identify a set of parallel layers.",
+          "Rule": "Any rectangular face may be a base, but the height must be perpendicular to that selected face.",
+          "Example": "A 2 × 3 × 5 prism may have a base 2 × 3 with height 5, or 2 × 5 with height 3."
+        },
+        {
+          "Title": "Length, width, height",
+          "Definition": "Three mutually perpendicular linear dimensions describing a rectangular prism.",
+          "Rule": "A chosen base uses length and width; the remaining perpendicular dimension is the height.",
+          "Example": "For a 4 × 5 base with height 3, there are three complete 20-cube layers."
+        },
+        {
+          "Title": "Volume as base area times height",
+          "Definition": "The volume combines a two-dimensional layer area with its three-dimensional repetition.",
+          "Rule": "Base area × corresponding height yields cubic units.",
+          "Example": "(4 × 5 square units) × 3 units = 60 cubic units."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Several valid bases",
+          "Question": "A prism measures 2, 3 and 5 units. Give two different valid base and height descriptions.",
+          "Method": "Choose perpendicular dimensions for the base and use the remaining dimension as height.",
+          "Steps": [
+            "Use 2 × 3 as the base and 5 as the height: 6 × 5 = 30.",
+            "Rotate the solid: use 3 × 5 as the base and 2 as the height: 15 × 2 = 30.",
+            "Explain that the volume stays fixed despite changing which face rests on the table."
+          ],
+          "Answer": "Both descriptions give 30 cubic units.",
+          "Check": "Each choice uses all three dimensions once, and the base and height are perpendicular."
+        },
+        {
+          "Title": "Grow one equal layer at a time",
+          "Question": "What volume does a 4 by 5 unit base produce with heights 1, 2, 3 and 4?",
+          "Method": "Compute base area once, then multiply by each height.",
+          "Steps": [
+            "Count 4 × 5 = 20 square units of area in the base.",
+            "For successive heights 1–4, calculate 20×1, 20×2, 20×3, 20×4.",
+            "Describe the increase of twenty cubic units for each added full layer."
+          ],
+          "Answer": "20, 40, 60, and 80 cubic units.",
+          "Check": "The difference between successive volumes is always the 20-unit-cube base layer."
+        },
+        {
+          "Title": "Find a missing height from a known layer",
+          "Question": "A solid consists of 4 by 5 cube layers and has volume 100 cubic units. How many layers are present?",
+          "Method": "Use the relationship between the base area and number of layers.",
+          "Steps": [
+            "One full layer contains 4 × 5 = 20 unit cubes.",
+            "Divide 100 by 20 to find the count of complete layers.",
+            "Check that five groups of twenty cubes total one hundred."
+          ],
+          "Answer": "Five layers; height is 5 units.",
+          "Check": "20 square units × 5 units = 100 cubic units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 'base' as a permanently fixed face",
+          "WhyWrong": "The prism may be turned and then rests on another rectangular face.",
+          "Correction": "Describe the corresponding perpendicular height every time you choose a new base."
+        },
+        {
+          "Mistake": "Write square units for the final volume",
+          "WhyWrong": "Square units measure one face but the full solid adds the third dimension.",
+          "Correction": "Multiply base area by height and use cubic units for the resulting space."
+        }
+      ],
+      "SummaryPoints": [
+        "A rectangular prism has three perpendicular side lengths: length, width and height relative to a chosen base.",
+        "Any face can be the base if its matching perpendicular dimension is used for the height.",
+        "Base area in square units times height in units gives the volume in cubic units.",
+        "Source: 2021 first-edition Grade 5 Unit 1 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-5/lesson.html; descriptions and examples independently written for Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rotating the same prism",
+          "Description": "First-party table comparing three choices of base on the same 2 × 3 × 5 solid.",
+          "Rows": [
+            {
+              "Label": "Base dimensions",
+              "Cells": [
+                "2 × 3",
+                "2 × 5",
+                "3 × 5"
+              ]
+            },
+            {
+              "Label": "Height",
+              "Cells": [
+                "5",
+                "3",
+                "2"
+              ]
+            },
+            {
+              "Label": "Volume",
+              "Cells": [
+                "30",
+                "30",
+                "30"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
+      "CultureCode": "en",
+      "Title": "Expressions for Volume",
+      "ExplanationParagraphs": [
+        "Goal: write and interpret numerical expressions for rectangular-prism volume, including parentheses that identify one rectangular layer. Distinguish expressions that have the correct product from expressions that merely contain familiar dimension numbers with an incorrect operation.",
+        "Warm-up — true or false: compare 4 × (3 × 5) and (4 × 3) × 5 using a layered prism model. Explain the equality through counts of identical cubes rather than invoking an unexplained symbolic property.",
+        "Activity 1 — expression card sort: learners compare descriptions of unit-cube prisms with expressions that group base dimensions and corresponding heights. For an independently authored 2 × 4 × 3 prism, match (2 × 4) × 3, 4 × (2 × 3) and 2 × (4 × 3); explain why 2 + 4 + 3 is not the volume.",
+        "Activity 2 — compare two tables: complete one table that multiplies the three side lengths and another that multiplies base area by its corresponding height. For a 6 × 3 × 4 prism, both methods result in 72 cubic units. Use any face as a base if the height is chosen consistently.",
+        "Optional activity and synthesis — two truths and a false statement: generate two valid representations and one plausible invalid expression for a first-party rectangular-prism example; ask a partner to defend each judgment and explain which numbers count rows, columns and layers. The source's card-sort images, tables, group discussions and open explanations are teacher-reviewed; an automatically graded product does not complete them."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "A volume expression represents geometry",
+          "Definition": "The grouping of factors describes a base and the number of equal layers.",
+          "Rule": "A × (B × C) counts A layers each with B × C cubes.",
+          "Example": "3 × (2 × 4) represents a solid with three layers of eight cubes."
+        },
+        {
+          "Title": "Volume and parentheses",
+          "Definition": "Parentheses specify which factors combine into the base area.",
+          "Rule": "(length × width) × height and length × (width × height) both give the cube count.",
+          "Example": "(6 × 3) × 4 = 72 and 6 × (3 × 4) = 72."
+        },
+        {
+          "Title": "Test an expression against a model",
+          "Definition": "A candidate must match the measured edge lengths and the cube-layer meaning.",
+          "Rule": "Show the layer size, layer count and product; reject an unrelated sum or arbitrary mismatched factor.",
+          "Example": "For sides 2, 4 and 3, 2 + 4 + 3 = 9 does not measure the 24-cube volume."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Three matching expressions",
+          "Question": "Write three different multiplication expressions for a 2 by 4 by 3 prism.",
+          "Method": "Choose each axis once as the number of layers and group the other two as layer area.",
+          "Steps": [
+            "For three layers of eight, write (2 × 4) × 3 = 24.",
+            "For four layers of six, write (2 × 3) × 4 = 24.",
+            "For two layers of twelve, write (4 × 3) × 2 = 24."
+          ],
+          "Answer": "Each represents 24 cubic units.",
+          "Check": "All three expressions group the same 24 unit cubes into different equal layers."
+        },
+        {
+          "Title": "Find a false expression",
+          "Question": "For a prism with side lengths 2, 4 and 3, is 2 + 4 + 3 the volume?",
+          "Method": "Contrast adding edge lengths with counting unit cubes.",
+          "Steps": [
+            "A complete layer with sides 2 and 4 contains 8 cubes.",
+            "Three such layers contain 8 × 3 = 24 cubes.",
+            "Adding 2 + 4 + 3 gives only 9, a sum of lengths without a volume model."
+          ],
+          "Answer": "No; the volume is 24 cubic units, not 9.",
+          "Check": "The length sum cannot represent the number of complete unit cubes filling this prism."
+        },
+        {
+          "Title": "Connect two calculation tables",
+          "Question": "A rectangular prism has dimensions 6, 3 and 4 units. Compare 6×3×4 with a base-area times height calculation.",
+          "Method": "Use any valid base and the matching perpendicular height.",
+          "Steps": [
+            "Compute the 6 × 3 base area: 18 square units.",
+            "Multiply by 4 units of height to obtain 72 cubic units.",
+            "Check that 6 × 3 × 4 gives the same result regardless of grouping."
+          ],
+          "Answer": "72 cubic units by either method.",
+          "Check": "18 × 4 = 72 and each axis dimension was accounted for once."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add the edge lengths instead of multiplying",
+          "WhyWrong": "Sum of lengths does not count cubic units that fill a rectangular prism.",
+          "Correction": "Identify a complete base layer and multiply by the matching number of layers."
+        },
+        {
+          "Mistake": "Match solely by numerical value without explaining factors",
+          "WhyWrong": "A matching number could arise from unrelated quantities rather than a correct geometric representation.",
+          "Correction": "Label the selected base dimensions and corresponding height for every proposed expression."
+        }
+      ],
+      "SummaryPoints": [
+        "Numerical expressions for volume must correspond to the prism's layer structure and appropriate units.",
+        "Different parentheses can group the same three perpendicular dimensions into different base-and-height descriptions.",
+        "Sorting source-style expression cards and justifying whether an expression matches a prism remain teacher-reviewed activities.",
+        "Source: 2021 first-edition Grade 5 Unit 1 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-6/lesson.html; original Edulytiks worked examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Same prism, equivalent expressions",
+          "Description": "Original table for a 2 × 4 × 3 unit-cube prism; each grouping represents the full volume.",
+          "Rows": [
+            {
+              "Label": "Number of layers",
+              "Cells": [
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Cubes per layer",
+              "Cells": [
+                "12",
+                "8",
+                "6"
+              ]
+            },
+            {
+              "Label": "Equivalent expression",
+              "Cells": [
+                "2 × (4 × 3)",
+                "3 × (2 × 4)",
+                "4 × (2 × 3)"
+              ]
+            },
+            {
+              "Label": "Volume cubic units",
+              "Cells": [
+                "24",
+                "24",
+                "24"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
