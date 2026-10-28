@@ -116,16 +116,42 @@
         "PED:US-CCSS-MATH:G7:U06:L01",
         "PED:US-CCSS-MATH:G7:U07:L01"
       ],
-      "evidence": "Potential source role discrepancies: U04 L01 7.RP.A.2.a, U06 L01 7.EE.B.4, U07 L01 7.G.B.5 appear Addressing in the blueprint but publisher's preparation lists them Building Towards. Grade-owned blueprint change requires checking outcome code impact, source alignment graph and persisted seeded contracts.",
+      "evidence": "CONFIRMED against historical official preparation pages on 2026-10-28: U04/L01 7.RP.A.2.a is Building Towards, U06/L01 7.EE.B.4 is Building Towards, U07/L01 7.G.B.5 is Building Towards. Grade 7 blueprint contains each same standard twice, once as BuildingTowards with no OutcomeCode and once as extra Addressing with accepted OutcomeCode. Do not simply delete extra Addressing without reconciling the canonical OutcomeCodes, validated semantic graph hashes, seed/materialization and existing attempts.",
       "sharedPaths": [
         "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade7-our-2017.lesson-blueprint.json",
         "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g7-phase29-v1.lesson-content-pack.json"
       ],
-      "requiredAction": "Crosscheck preparation and full grade/lesson standards role before making narrow Grade7 blueprint correction; update dependent metadata with source evidence without changing accepted formal mapping by assertion.",
+      "requiredAction": "Academic owner and Supervisor 1 validate publisher standards roles as source of truth and inspect currently accepted OutcomeCodes and seeder behavior. Make a minimal Grade 7 blueprint/source-identity correction with SHA/semantic graph migration only under reviewed criteria, plus targeted source/tenant regression; do not alter shared curriculum mapping or production seed as a guess.",
       "tests": [
         "Official source reconciliation",
         "Blueprint and content pack exact OutcomeCodes",
         "Seeder and learner context identity"
+      ],
+      "sourceChecks": [
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G7:U04:L01",
+          "publisherUrl": "https://im.kendallhunt.com/MS/teachers/2/4/1/preparation.html",
+          "reference": "7.RP.A.2.a",
+          "officialRole": "BuildingTowards",
+          "blueprintExtraRole": "Addressing",
+          "blueprintDerivedOutcomeCode": "CCSS:7.RP.A.2"
+        },
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
+          "publisherUrl": "https://im.kendallhunt.com/MS/teachers/2/6/1/preparation.html",
+          "reference": "7.EE.B.4",
+          "officialRole": "BuildingTowards",
+          "blueprintExtraRole": "Addressing",
+          "blueprintDerivedOutcomeCode": "CCSS:7.EE.B.4"
+        },
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G7:U07:L01",
+          "publisherUrl": "https://im.kendallhunt.com/MS/teachers/2/7/1/preparation.html",
+          "reference": "7.G.B.5",
+          "officialRole": "BuildingTowards",
+          "blueprintExtraRole": "Addressing",
+          "blueprintDerivedOutcomeCode": "CCSS:7.G.B.5"
+        }
       ]
     },
     {
