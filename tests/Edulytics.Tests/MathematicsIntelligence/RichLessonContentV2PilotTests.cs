@@ -320,15 +320,33 @@ public sealed class RichLessonContentV2PilotTests
     }
 
     [Fact]
-    public void PilotRegistry_PreservesOriginal26And143Grade3And149Grade4LessonsWithoutDuplicates()
+    public void PilotRegistry_PreservesHistoricalLessonsAndGrade7WithoutDuplicates()
     {
         var lessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(x => x.Lessons)
             .ToArray();
 
-        Assert.Equal(26 + 143 + 149, lessons.Length);
+        // Keep the historic coverage independently checked; a newly curated
+        // grade must not invalidate a global count or hide missing older lessons.
         Assert.Equal(
-            26 + 143 + 149,
+            143,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal)));
+        Assert.Equal(
+            149,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal)));
+        Assert.Equal(
+            145,
+            lessons.Count(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal)));
+
+        // Existing 24 Cambridge Stage 6 and 2 UAE pilot lessons remain
+        // guarded by their dedicated tests above. Do not pin the global sum:
+        // future grades can add curated content on their own branches.
+        Assert.True(lessons.Length >= 26 + 143 + 149 + 145);
+        Assert.Equal(
+            lessons.Length,
             lessons.Select(x => x.LessonCode)
                 .Distinct(StringComparer.Ordinal)
                 .Count());
