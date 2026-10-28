@@ -1,0 +1,1297 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L01",
+      "CultureCode": "en",
+      "Title": "One of These Things Is Not Like the Others",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Compare flavors, mixtures or shapes by proportional reasoning, making defensible claims even when there is no single exact answer. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/1/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "This exploratory lesson uses ratios and unit rates to discuss what looks or tastes similar. Multiple explanations can be valid; evaluate the reasoning and stated assumptions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Ratio of ingredients",
+          "Definition": "A ratio compares the quantities in a mixture.",
+          "Rule": "Two mixtures have equal concentration when their ingredient ratios match.",
+          "Example": "2 scoops per 5 cups and 4 scoops per 10 cups have the same ratio."
+        },
+        {
+          "Title": "Unit rate",
+          "Definition": "A comparable intensity can be expressed per one unit.",
+          "Rule": "Divide both ingredients consistently.",
+          "Example": "6 scoops in 12 cups gives 0.5 scoops per cup."
+        },
+        {
+          "Title": "Evidence and assumptions",
+          "Definition": "Appearance alone need not prove equivalent ratios.",
+          "Rule": "Explain how measurements support or limit a claim.",
+          "Example": "Unknown quantities permit reasonable hypotheses but not certainty."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare two recipes",
+          "Question": "Mix A has 2 scoops of powder per 5 cups of water; B has 4 per 10. Would their concentration be equal?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Calculate A: 2/5=0.4 scoop per cup.",
+            "Calculate B: 4/10=0.4 scoop per cup.",
+            "Compare the ratios and state the equal-mixture assumption."
+          ],
+          "Answer": "Yes, they have equal powder-per-water ratios if the materials are the same.",
+          "Check": "Both have 0.4 scoops per cup."
+        },
+        {
+          "Title": "Different concentration",
+          "Question": "Mix A has 3 scoops per 6 cups; mix B has 5 scoops per 8 cups. Which has more powder per cup?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "A: 3/6=0.5.",
+            "B: 5/8=0.625.",
+            "Compare 0.625>0.5."
+          ],
+          "Answer": "Mix B has a higher powder-to-water ratio.",
+          "Check": "The comparison is per one cup of water."
+        },
+        {
+          "Title": "Open visual argument",
+          "Question": "Two untitled rectangles look different sizes, but their measurements are hidden. Can appearance prove that their side ratios match?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Identify that length and width measurements are missing.",
+            "Explain that similar appearance is not numerical evidence.",
+            "Propose measuring matching sides to compare their ratios."
+          ],
+          "Answer": "No definite conclusion; measure and compare matching length ratios.",
+          "Check": "Teacher review checks justification, not one numeric response."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating equal total volume with equal flavor",
+          "WhyWrong": "Concentration depends on ingredient ratios, not only total volume.",
+          "Correction": "Compute ingredients per one unit of the other quantity."
+        },
+        {
+          "Mistake": "Treating an open comparison as a unique-answer calculation",
+          "WhyWrong": "The original activity intentionally allows more than one defensible approach.",
+          "Correction": "Record assumptions and evaluate explanations with a teacher rubric."
+        }
+      ],
+      "SummaryPoints": [
+        "Compare flavors, mixtures or shapes by proportional reasoning, making defensible claims even when there is no single exact answer.",
+        "Divide both ingredients consistently.",
+        "Explain how measurements support or limit a claim."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L02",
+      "CultureCode": "en",
+      "Title": "Introducing Proportional Relationships with Tables",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Identify constant quotients in tables and express a relationship as y=kx, including inverse constants. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/2/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "A proportional table shows equivalent ratios in each row. When axes or designated dependent quantities are swapped, the constant becomes reciprocal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Constant of proportionality",
+          "Definition": "The constant k links y and x in y=kx.",
+          "Rule": "For every row with x≠0, calculate y/x.",
+          "Example": "(2,12) and (3,18) both give k=6."
+        },
+        {
+          "Title": "Proportional table",
+          "Definition": "Pairs all follow one common multiplicative rule.",
+          "Rule": "Check every row, not just one.",
+          "Example": "(1,4),(2,8),(5,20) share k=4."
+        },
+        {
+          "Title": "Reverse relationship",
+          "Definition": "Interchanging quantities changes the rate to 1/k.",
+          "Rule": "If y=6x then x=y/6.",
+          "Example": "6 miles per hour becomes 1/6 hour per mile."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identify table constant",
+          "Question": "Pairs are (2,12),(3,18),(5,30). Are they proportional?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute 12/2=6.",
+            "Compute 18/3=6 and 30/5=6.",
+            "Write y=6x."
+          ],
+          "Answer": "Yes, k=6.",
+          "Check": "All three quotients agree."
+        },
+        {
+          "Title": "Complete a table",
+          "Question": "A runner travels at 4 miles per hour. Find the distances after 1, 2.5 and 4 hours.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Write distance=4×time.",
+            "Find 4, 10 and 16 miles.",
+            "Check each distance/time equals 4."
+          ],
+          "Answer": "4, 10, 16 miles.",
+          "Check": "The ratio stays 4 mi/h."
+        },
+        {
+          "Title": "Reverse the rate",
+          "Question": "If d=5t, with d in km and t in hours, express t as a function of d.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Divide both sides of d=5t by 5.",
+            "Obtain t=d/5.",
+            "Interpret 1/5 hour per km."
+          ],
+          "Answer": "t=(1/5)d.",
+          "Check": "Substituting d=10 gives t=2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing differences instead of ratios",
+          "WhyWrong": "Constant addition alone does not establish proportionality.",
+          "Correction": "Compare y/x for each nonzero x."
+        },
+        {
+          "Mistake": "Using the same k after swapping quantities",
+          "WhyWrong": "The inverted rate has reciprocal units and value.",
+          "Correction": "Use 1/k in the reverse equation."
+        }
+      ],
+      "SummaryPoints": [
+        "Identify constant quotients in tables and express a relationship as y=kx, including inverse constants.",
+        "Check every row, not just one.",
+        "If y=6x then x=y/6."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L03",
+      "CultureCode": "en",
+      "Title": "More about Constant of Proportionality",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Interpret constants as speed or conversion factors and calculate missing measurements efficiently. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/3/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "Rates in context have units. The constant for feet-to-inches is 12 inches per foot; the inverse has feet per inch."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Conversion factor",
+          "Definition": "A fixed multiplier converts one measurement unit to another.",
+          "Rule": "inches=12×feet.",
+          "Example": "3 ft=36 in."
+        },
+        {
+          "Title": "Speed as constant",
+          "Definition": "For constant-speed motion, distance and time are proportional.",
+          "Rule": "distance=speed×time.",
+          "Example": "60 km/h for 2 h gives 120 km."
+        },
+        {
+          "Title": "Rate units",
+          "Definition": "The units of k explain what is being compared.",
+          "Rule": "Read k as units of y per unit of x.",
+          "Example": "6 metres/second means 6 metres for each second."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert a measurement",
+          "Question": "How many inches are 4.5 feet?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Use 12 inches per foot.",
+            "Compute 4.5×12=54.",
+            "Label answer in inches."
+          ],
+          "Answer": "54 inches.",
+          "Check": "54/4.5=12."
+        },
+        {
+          "Title": "Find travel distance",
+          "Question": "A cyclist travels 14 km/h for 2.5 hours. How far?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Use distance=14×time.",
+            "Compute 14×2.5=35.",
+            "Check 35/2.5=14 km/h."
+          ],
+          "Answer": "35 km.",
+          "Check": "Time and speed units give km."
+        },
+        {
+          "Title": "Find constant from a table",
+          "Question": "A vehicle travels 45 km in 1.5 h and 120 km in 4 h. Find its speed.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute 45/1.5=30.",
+            "Compute 120/4=30.",
+            "Both give 30 kilometres each hour."
+          ],
+          "Answer": "30 km/h.",
+          "Check": "The two rates coincide."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignoring the rate's units",
+          "WhyWrong": "A number by itself may represent a different conversion direction.",
+          "Correction": "Include source and target units in k."
+        },
+        {
+          "Mistake": "Applying 12 backwards for inches-to-feet",
+          "WhyWrong": "Reversing a unit conversion requires division.",
+          "Correction": "Divide inches by 12 to get feet."
+        }
+      ],
+      "SummaryPoints": [
+        "Interpret constants as speed or conversion factors and calculate missing measurements efficiently.",
+        "distance=speed×time.",
+        "Read k as units of y per unit of x."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L04",
+      "CultureCode": "en",
+      "Title": "Proportional Relationships and Equations",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Translate proportional tables and contexts into y=kx and explain k as the unit value. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/4/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "Every row of a proportional table satisfies one equation with no additive intercept. The unit row x=1 immediately identifies k."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equation model",
+          "Definition": "A proportional relationship can be written y=kx.",
+          "Rule": "Multiply x by k to obtain y.",
+          "Example": "For k=7, y=7x."
+        },
+        {
+          "Title": "One-unit row",
+          "Definition": "When x=1, the output equals k.",
+          "Rule": "Read the y-entry at x=1.",
+          "Example": "If (1,3.5) is in a proportional table, k=3.5."
+        },
+        {
+          "Title": "Testing equations",
+          "Definition": "Check every given pair against the equation.",
+          "Rule": "Substitute x and y values.",
+          "Example": "(4,20) fits y=5x."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Build an equation",
+          "Question": "Tickets cost $6 each. Find an equation for total cost y of x tickets.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Identify $6 per ticket as k.",
+            "Write y=6x.",
+            "Check 3 tickets cost 6×3=18."
+          ],
+          "Answer": "y=6x.",
+          "Check": "The price per ticket is constant."
+        },
+        {
+          "Title": "Read k from a table",
+          "Question": "Pairs are (1,2.5),(4,10),(8,20). Find k.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Use x=1 row: k=2.5.",
+            "Check 10/4=2.5.",
+            "Check 20/8=2.5."
+          ],
+          "Answer": "k=2.5.",
+          "Check": "All table entries satisfy y=2.5x."
+        },
+        {
+          "Title": "Fill a table",
+          "Question": "For y=(3/4)x, find y when x=8 and x=12.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute (3/4)×8=6.",
+            "Compute (3/4)×12=9.",
+            "Check ratios 6/8=9/12=3/4."
+          ],
+          "Answer": "6 and 9.",
+          "Check": "Both points have constant k=3/4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding a fixed fee in a proportional equation",
+          "WhyWrong": "A nonzero intercept prevents y=kx.",
+          "Correction": "Use y=kx only when the output is zero at input zero."
+        },
+        {
+          "Mistake": "Choosing k from only one inconsistent row",
+          "WhyWrong": "An equation must account for all table entries.",
+          "Correction": "Substitute every row."
+        }
+      ],
+      "SummaryPoints": [
+        "Translate proportional tables and contexts into y=kx and explain k as the unit value.",
+        "Read the y-entry at x=1.",
+        "Substitute x and y values."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L05",
+      "CultureCode": "en",
+      "Title": "Two Equations for Each Relationship",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Represent one proportional relationship in both directions and explain reciprocal constants. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/5/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "The equation for output per input and its reverse describe the same matching pairs, but the constants and units are reciprocal."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Forward equation",
+          "Definition": "Use y=kx when y is proportional to x.",
+          "Rule": "k=y/x.",
+          "Example": "If litres=3×minutes, flow is 3 L/min."
+        },
+        {
+          "Title": "Reverse equation",
+          "Definition": "Solve x=y/k to interchange input and output.",
+          "Rule": "Reverse constant=1/k.",
+          "Example": "Minutes=(1/3)×litres."
+        },
+        {
+          "Title": "Reciprocal check",
+          "Definition": "Two nonzero reciprocal constants multiply to 1.",
+          "Rule": "k×(1/k)=1.",
+          "Example": "3×1/3=1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two flow equations",
+          "Question": "A tap delivers 8 litres per minute. Write equations for litres L and minutes t.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Forward relation L=8t.",
+            "Divide by 8 to obtain t=L/8.",
+            "Describe the reverse rate as 1/8 min/L."
+          ],
+          "Answer": "L=8t and t=(1/8)L.",
+          "Check": "At t=3, both give L=24."
+        },
+        {
+          "Title": "Find reciprocal multiplier",
+          "Question": "A measurement converts by y=(5/2)x. What is the reverse?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Divide by 5/2.",
+            "Multiply by its reciprocal 2/5.",
+            "Write x=(2/5)y."
+          ],
+          "Answer": "x=(2/5)y.",
+          "Check": "(5/2)×(2/5)=1."
+        },
+        {
+          "Title": "Interpret both directions",
+          "Question": "If 9 dollars buy 3 notebooks, describe notebooks per dollar and dollars per notebook.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute notebooks/dollar=3/9=1/3.",
+            "Compute dollars/notebook=9/3=3.",
+            "Label the reciprocal units."
+          ],
+          "Answer": "1/3 notebook per dollar; $3 per notebook.",
+          "Check": "3×1/3=1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Failing to invert units with the rate",
+          "WhyWrong": "Reciprocal quantities also reverse their measurement dimensions.",
+          "Correction": "State units beside each constant."
+        },
+        {
+          "Mistake": "Applying k to both equations",
+          "WhyWrong": "That would produce a different relationship.",
+          "Correction": "Rearrange algebraically to obtain 1/k."
+        }
+      ],
+      "SummaryPoints": [
+        "Represent one proportional relationship in both directions and explain reciprocal constants.",
+        "Reverse constant=1/k.",
+        "k×(1/k)=1."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L06",
+      "CultureCode": "en",
+      "Title": "Using Equations to Solve Problems",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Form proportional equations from verbal situations without relying on a supplied table. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/6/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "Recognize the rate, choose variables with units and solve for an unknown. A ratio table is optional scaffolding, not a compulsory step."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Context-to-equation",
+          "Definition": "A fixed per-unit rate yields y=kx.",
+          "Rule": "Identify what x and y measure.",
+          "Example": "A 7 km/h rate gives d=7t."
+        },
+        {
+          "Title": "Missing input",
+          "Definition": "Solve x=y/k when y is given.",
+          "Rule": "Divide by the constant.",
+          "Example": "Distance 28 km at 7 km/h takes 4 h."
+        },
+        {
+          "Title": "Meaning of rate",
+          "Definition": "k must be explained in the actual context.",
+          "Rule": "Name both numerator and denominator units.",
+          "Example": "$4 per kg means price increases $4 per kg."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write from words",
+          "Question": "Fruit costs $4 per kilogram. Express total cost C for mass m.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Rate k=4 dollars per kilogram.",
+            "Write C=4m.",
+            "Check 2.5 kg costs $10."
+          ],
+          "Answer": "C=4m.",
+          "Check": "The formula has no fixed fee."
+        },
+        {
+          "Title": "Find an input",
+          "Question": "A train covers 126 km at constant 42 km/h. Find the time.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Use d=42t.",
+            "Solve t=126/42.",
+            "Compute t=3 h."
+          ],
+          "Answer": "3 hours.",
+          "Check": "42×3=126 km."
+        },
+        {
+          "Title": "Find an output",
+          "Question": "A printer uses 0.8 mL of ink per page. Find ink for 25 pages.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Define I=0.8p.",
+            "Substitute p=25.",
+            "Compute 0.8×25=20."
+          ],
+          "Answer": "20 mL.",
+          "Check": "20/25=0.8 mL/page."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using a rate without deciding variables",
+          "WhyWrong": "Unlabeled numbers may be multiplied in the wrong direction.",
+          "Correction": "Define the measured quantities first."
+        },
+        {
+          "Mistake": "Modeling a fixed setup fee with y=kx",
+          "WhyWrong": "A nonzero starting cost is not directly proportional.",
+          "Correction": "Test whether y=0 at x=0."
+        }
+      ],
+      "SummaryPoints": [
+        "Form proportional equations from verbal situations without relying on a supplied table.",
+        "Divide by the constant.",
+        "Name both numerator and denominator units."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L07",
+      "CultureCode": "en",
+      "Title": "Comparing Relationships with Tables",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Use quotients and contextual reasoning to classify tables as proportional, nonproportional or insufficiently evidenced. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/7/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "When there are too few data points or an uncertain context, distinguish evidence from certainty. Multiple matched pairs establish constant quotients for the rows, not necessarily an unobserved law."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quotient test",
+          "Definition": "A proportional table has constant y/x at every nonzero x.",
+          "Rule": "Compare ratios row by row.",
+          "Example": "(2,6),(4,12),(6,18) all give 3."
+        },
+        {
+          "Title": "Nonproportional counterexample",
+          "Definition": "Different row ratios disprove proportionality for the complete table.",
+          "Rule": "One mismatched row is enough.",
+          "Example": "(2,6),(4,13) have ratios 3 and 3.25."
+        },
+        {
+          "Title": "Insufficient information",
+          "Definition": "One nonzero pair does not determine whether all future values follow the rate.",
+          "Rule": "Propose more measurements or context.",
+          "Example": "From (2,6) alone, many models are possible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Confirm an observed constant",
+          "Question": "Pairs (2,6),(4,12),(6,18): do these table entries follow a proportional pattern?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute 6/2=3.",
+            "Compute 12/4=3.",
+            "Compute 18/6=3."
+          ],
+          "Answer": "Yes, the observed table is consistent with y=3x.",
+          "Check": "All three ratios match."
+        },
+        {
+          "Title": "Disprove a ratio",
+          "Question": "Pairs (2,6) and (4,13) are given. Are the values proportional?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "First quotient=6/2=3.",
+            "Second quotient=13/4=3.25.",
+            "Compare 3 and 3.25."
+          ],
+          "Answer": "No.",
+          "Check": "A common k does not fit both rows."
+        },
+        {
+          "Title": "Classify limited data",
+          "Question": "A table contains only the nonzero pair (3,15). Must the entire situation be proportional?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Calculate the observed quotient 15/3=5.",
+            "Note that another pair could follow or violate the rate.",
+            "Request a second measurement or the relationship rule."
+          ],
+          "Answer": "Not enough information to certify the situation.",
+          "Check": "Teacher reviews justification and what data would resolve it."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Checking constant differences instead of quotients",
+          "WhyWrong": "Equal additive differences are not sufficient for proportionality.",
+          "Correction": "Compare y/x and test zero behavior."
+        },
+        {
+          "Mistake": "Treating one pair as a proven general law",
+          "WhyWrong": "Many relationships pass through a single nonzero point.",
+          "Correction": "Record the evidence limit."
+        }
+      ],
+      "SummaryPoints": [
+        "Use quotients and contextual reasoning to classify tables as proportional, nonproportional or insufficiently evidenced.",
+        "One mismatched row is enough.",
+        "Propose more measurements or context."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L08",
+      "CultureCode": "en",
+      "Title": "Comparing Relationships with Equations",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Distinguish proportional and nonproportional formulas and explain why y=kx characterizes proportional relationships. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/8/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "A nonzero intercept changes the output at x=0. Algebraically equivalent forms count as proportional if they reduce to y=kx."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Proportional form",
+          "Definition": "An equation equivalent to y=kx has zero output when x=0.",
+          "Rule": "Simplify the equation before deciding.",
+          "Example": "2y=6x reduces to y=3x."
+        },
+        {
+          "Title": "Nonzero intercept",
+          "Definition": "An equation y=kx+b with b≠0 is not proportional.",
+          "Rule": "Test (0,0).",
+          "Example": "y=3x+2 gives y=2 at x=0."
+        },
+        {
+          "Title": "Table test",
+          "Definition": "Calculate several (x,y) pairs to inspect ratios and the origin.",
+          "Rule": "Check x=0 and at least two nonzero x values.",
+          "Example": "y=4x gives (0,0),(1,4),(2,8)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Simplify an equation",
+          "Question": "Does 3y=12x represent a proportional relationship?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Divide both sides by 3.",
+            "Obtain y=4x.",
+            "Identify k=4 and zero intercept."
+          ],
+          "Answer": "Yes, k=4.",
+          "Check": "The origin satisfies the relation."
+        },
+        {
+          "Title": "Reject an intercept",
+          "Question": "Does y=5x+7 represent a proportional relationship?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Set x=0.",
+            "Compute y=7, not 0.",
+            "Conclude this is not y=kx."
+          ],
+          "Answer": "No.",
+          "Check": "Proportional relationships pass through the origin."
+        },
+        {
+          "Title": "Build a diagnostic table",
+          "Question": "Compare y=2x and y=2x+3 at x=0,1,2.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "For y=2x: values 0,2,4.",
+            "For y=2x+3: values 3,5,7.",
+            "Compare origin and nonzero ratios."
+          ],
+          "Answer": "Only y=2x is proportional.",
+          "Check": "The second equation has intercept 3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rejecting 2y=6x because it is not written y=kx",
+          "WhyWrong": "Equivalent algebraic forms may still be proportional.",
+          "Correction": "Solve for y before classifying."
+        },
+        {
+          "Mistake": "Calling every straight-line formula proportional",
+          "WhyWrong": "Lines with nonzero intercepts are not proportional.",
+          "Correction": "Check the origin."
+        }
+      ],
+      "SummaryPoints": [
+        "Distinguish proportional and nonproportional formulas and explain why y=kx characterizes proportional relationships.",
+        "Test (0,0).",
+        "Check x=0 and at least two nonzero x values."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L09",
+      "CultureCode": "en",
+      "Title": "Solving Problems about Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Ask for missing information, decide whether a proportional model is appropriate, and use an equation to solve an authentic situation. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/9/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "Some contexts require a learner to ask questions before the rate and time are known. Info-gap reasoning is an open explanation requiring teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Information gap",
+          "Definition": "A problem can omit a required quantity.",
+          "Rule": "List needed rate, measurement and assumptions.",
+          "Example": "A travel-time calculation needs distance and speed."
+        },
+        {
+          "Title": "Model applicability",
+          "Definition": "A constant rate with zero initial quantity supports y=kx.",
+          "Rule": "Ask about fixed fees or variable rates.",
+          "Example": "A taxi base fare breaks direct proportionality."
+        },
+        {
+          "Title": "Solve with units",
+          "Definition": "Use d=vt and interpret the result.",
+          "Rule": "Check that distance and speed units agree.",
+          "Example": "At 12 km/h for 2.5 h, distance=30 km."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identify needed data",
+          "Question": "A cyclist wants to know travel time for a 36 km trip. What additional value is essential if speed is constant?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Use t=d/v.",
+            "Distance d=36 km is known.",
+            "Ask for speed v in km/h."
+          ],
+          "Answer": "The cyclist's constant speed.",
+          "Check": "Teacher checks whether missing information is identified and explained."
+        },
+        {
+          "Title": "Solve an info gap",
+          "Question": "The cyclist travels 36 km at 12 km/h. Find the time.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Write t=36/12.",
+            "Compute t=3.",
+            "Label hours."
+          ],
+          "Answer": "3 h.",
+          "Check": "12 km/h×3 h=36 km."
+        },
+        {
+          "Title": "Disprove a poor model",
+          "Question": "A taxi charges $5 plus $2 per km. Is price proportional to distance?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Write P=5+2d.",
+            "At d=0, price is $5.",
+            "A direct proportional price requires zero cost at zero distance."
+          ],
+          "Answer": "No.",
+          "Check": "The fixed base fare makes the relationship nonproportional."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Solving without verifying a fixed rate",
+          "WhyWrong": "Some situations are not directly proportional.",
+          "Correction": "Check the context and any starting amount."
+        },
+        {
+          "Mistake": "Hiding an essential assumption",
+          "WhyWrong": "A numeric result may depend on speed or cost assumptions.",
+          "Correction": "State what information was requested and how it was used."
+        }
+      ],
+      "SummaryPoints": [
+        "Ask for missing information, decide whether a proportional model is appropriate, and use an equation to solve an authentic situation.",
+        "Ask about fixed fees or variable rates.",
+        "Check that distance and speed units agree."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L10",
+      "CultureCode": "en",
+      "Title": "Introducing Graphs of Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Plot points from tables and recognize proportional graphs as lines through the origin. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/10/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "Graph values with clearly labeled axes. A proportional relationship has all points (x,kx) on the same straight line through (0,0)."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Origin",
+          "Definition": "The origin is the point (0,0).",
+          "Rule": "Every directly proportional graph passes through it.",
+          "Example": "For y=3x, x=0 gives y=0."
+        },
+        {
+          "Title": "Coordinate table",
+          "Definition": "Each input-output pair becomes one point.",
+          "Rule": "Plot x horizontally and y vertically.",
+          "Example": "(1,3),(2,6),(3,9) lie on y=3x."
+        },
+        {
+          "Title": "Nonproportional graph",
+          "Definition": "A line not passing through the origin is not a direct proportion.",
+          "Rule": "Check y at x=0.",
+          "Example": "y=3x+2 crosses the vertical axis at 2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Plot a proportional rule",
+          "Question": "Generate points for y=4x at x=0,1,2.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Substitute x=0: y=0.",
+            "Substitute x=1: y=4.",
+            "Substitute x=2: y=8 and plot."
+          ],
+          "Answer": "(0,0),(1,4),(2,8).",
+          "Check": "The three points share a line through the origin."
+        },
+        {
+          "Title": "Check graph membership",
+          "Question": "Does point (3,15) lie on the line y=5x?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Substitute x=3.",
+            "Compute 5×3=15.",
+            "Compare with displayed y=15."
+          ],
+          "Answer": "Yes.",
+          "Check": "The point satisfies the equation."
+        },
+        {
+          "Title": "Distinguish a shifted line",
+          "Question": "Find the y-intercept of y=2x+6 and decide if proportional.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Set x=0.",
+            "Compute y=6.",
+            "Compare (0,6) with (0,0)."
+          ],
+          "Answer": "Intercept 6; not proportional.",
+          "Check": "The graph misses the origin."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Interchanging axes without updating interpretation",
+          "WhyWrong": "Graph coordinates have a defined x and y order.",
+          "Correction": "Label both axes and each plotted coordinate."
+        },
+        {
+          "Mistake": "Calling every line proportional",
+          "WhyWrong": "A straight line is not sufficient.",
+          "Correction": "Verify it passes through the origin."
+        }
+      ],
+      "SummaryPoints": [
+        "Plot points from tables and recognize proportional graphs as lines through the origin.",
+        "Plot x horizontally and y vertically.",
+        "Check y at x=0."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L11",
+      "CultureCode": "en",
+      "Title": "Interpreting Graphs of Proportional Relationships",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Read a graph's constant of proportionality, explain the meaning of (1,k), and interpret rates in context. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/11/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "Axis labels and units are not decoration: the point (1,k) means k units of y for one unit of x."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Point (1,k)",
+          "Definition": "The output at input 1 is the constant k.",
+          "Rule": "Read the y-coordinate at x=1.",
+          "Example": "(1,8) means 8 units of y per x."
+        },
+        {
+          "Title": "Contextual slope",
+          "Definition": "A steeper graph of distance over time means faster speed when axes share scales.",
+          "Rule": "Calculate k=y/x.",
+          "Example": "(2 h,10 km) means 5 km/h."
+        },
+        {
+          "Title": "Graph-to-equation",
+          "Definition": "A point and the origin determine the rate for proportional data.",
+          "Rule": "Find k and write y=kx.",
+          "Example": "(3,18) implies y=6x."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Interpret a distance graph",
+          "Question": "A cyclist's distance-time graph includes (1,12). Find and interpret k.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Identify x=hours and y=km.",
+            "Compute k=12/1=12.",
+            "State 12 km/h."
+          ],
+          "Answer": "12 km/h.",
+          "Check": "For 2 hours the graph predicts 24 km."
+        },
+        {
+          "Title": "Write an equation from a point",
+          "Question": "A proportional graph passes through (0,0) and (3,18). Find its equation.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute k=18/3=6.",
+            "Write y=6x.",
+            "Check x=3 gives 18."
+          ],
+          "Answer": "y=6x.",
+          "Check": "The given point fits."
+        },
+        {
+          "Title": "Interpret a second point",
+          "Question": "For y=2.5x, where x is hours and y is litres, what does (4,10) mean?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Read 4 hours on the horizontal axis.",
+            "Read 10 litres vertically.",
+            "Check 10/4=2.5 L/h."
+          ],
+          "Answer": "10 litres in 4 hours.",
+          "Check": "The interpretation uses both axis units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading (1,k) as the total for all times",
+          "WhyWrong": "The point gives output at input one, not at every input.",
+          "Correction": "Describe it as a per-unit rate."
+        },
+        {
+          "Mistake": "Ignoring axis labels",
+          "WhyWrong": "Slope units depend on which quantity is horizontal.",
+          "Correction": "Interpret the axes before computing or naming k."
+        }
+      ],
+      "SummaryPoints": [
+        "Read a graph's constant of proportionality, explain the meaning of (1,k), and interpret rates in context.",
+        "Calculate k=y/x.",
+        "Find k and write y=kx."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L12",
+      "CultureCode": "en",
+      "Title": "Using Graphs to Compare Relationships",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Compare two proportional graphs on the same axes by their slopes and corresponding rates. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/12/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "With the same labeled axes and scales, the steeper proportional graph represents a larger constant of proportionality."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Steepness and k",
+          "Definition": "For y=kx, larger positive k gives a steeper line.",
+          "Rule": "Compare rise for the same run.",
+          "Example": "k=6 is steeper than k=4."
+        },
+        {
+          "Title": "Same-axis comparison",
+          "Definition": "Rates are comparable only when graph axes and units are consistent.",
+          "Rule": "Compare at one common x value.",
+          "Example": "At x=2, y=12 exceeds y=8."
+        },
+        {
+          "Title": "Unlabeled scale reasoning",
+          "Definition": "Even if numerical tick labels are unavailable, relative steepness can compare positive rates on identical axes.",
+          "Rule": "Do not invent exact k without scale labels.",
+          "Example": "The steeper distance-time line indicates faster travel."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare cyclists",
+          "Question": "Cyclist A has d=12t; cyclist B has d=8t. Which is faster?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Read k_A=12 km/h.",
+            "Read k_B=8 km/h.",
+            "Compare 12>8."
+          ],
+          "Answer": "Cyclist A.",
+          "Check": "At t=2 h, A travels 24 km and B 16 km."
+        },
+        {
+          "Title": "Use two points",
+          "Question": "Line A passes through (2,14), B through (2,10), both from origin. Which has greater k?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compute k_A=14/2=7.",
+            "Compute k_B=10/2=5.",
+            "Compare the rates."
+          ],
+          "Answer": "Line A has greater constant.",
+          "Check": "7>5."
+        },
+        {
+          "Title": "Qualitative comparison",
+          "Question": "Two proportional lines share axes and origin, but no numeric tick labels are provided. What can be concluded from their steepness?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Assume axes share the same orientation and scale.",
+            "Compare which line rises more for the same horizontal run.",
+            "State only the rate ordering, not exact numeric rates."
+          ],
+          "Answer": "The steeper positive line has the larger k; exact values are unknown.",
+          "Check": "Teacher reviews the representation-dependent argument."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing lines from differently scaled graphs",
+          "WhyWrong": "Visual steepness alone is not comparable if axes differ.",
+          "Correction": "Use the same axes or compute rates in common units."
+        },
+        {
+          "Mistake": "Inventing a numerical slope from an unlabeled graph",
+          "WhyWrong": "Without tick values exact k is not determined.",
+          "Correction": "Limit the claim to relative steepness."
+        }
+      ],
+      "SummaryPoints": [
+        "Compare two proportional graphs on the same axes by their slopes and corresponding rates.",
+        "Compare at one common x value.",
+        "Do not invent exact k without scale labels."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L13",
+      "CultureCode": "en",
+      "Title": "Two Graphs for Each Relationship",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Coordinate tables, equations and graphs after swapping axes; explain why reciprocal constants describe the same relation. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/13/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "The point (a,b) gives k=b/a when y is vertical. Swapping axes maps it to (b,a), giving the reciprocal constant a/b."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equation from a point",
+          "Definition": "For a nonzero a, point (a,b) on y=kx gives k=b/a.",
+          "Rule": "Divide y by x.",
+          "Example": "(2,8) gives k=4."
+        },
+        {
+          "Title": "Axis reversal",
+          "Definition": "Swapping x and y converts each (a,b) to (b,a).",
+          "Rule": "Change labels and formula together.",
+          "Example": "(2,8) becomes (8,2)."
+        },
+        {
+          "Title": "Reciprocal slope",
+          "Definition": "The inverse graph has k_inv=1/k for k≠0.",
+          "Rule": "Multiply forward and inverse rates to check 1.",
+          "Example": "4 and 1/4 are reciprocal."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Forward and inverse equations",
+          "Question": "Distance is 4 times time: d=4t. Give equation for time as function of distance.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Solve d=4t for t.",
+            "Divide by 4.",
+            "Write t=(1/4)d."
+          ],
+          "Answer": "d=4t; t=d/4.",
+          "Check": "Rates 4 and 1/4 are reciprocal."
+        },
+        {
+          "Title": "Swap a graph point",
+          "Question": "An original proportional graph has (2,8). What is the matching point after exchanging axes?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Identify original x=2 and y=8.",
+            "Exchange coordinate positions.",
+            "Determine inverse slope 2/8=1/4."
+          ],
+          "Answer": "(8,2), inverse k=1/4.",
+          "Check": "Both represent the same paired values."
+        },
+        {
+          "Title": "Build two tables",
+          "Question": "For y=3x, list two positive pairs and the inverse pairs.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Choose x=1,2 giving (1,3),(2,6).",
+            "Swap each pair to (3,1),(6,2).",
+            "Check inverse y=(1/3)x in the swapped coordinates."
+          ],
+          "Answer": "Forward (1,3),(2,6); inverse (3,1),(6,2).",
+          "Check": "The rates multiply to 1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Keeping the original k after exchanging axes",
+          "WhyWrong": "Swapping quantities changes the y-per-x rate.",
+          "Correction": "Take the reciprocal and update units."
+        },
+        {
+          "Mistake": "Swapping the coordinates but not axis labels",
+          "WhyWrong": "A graph is not interpretable without labels.",
+          "Correction": "Keep the quantities and axes consistent."
+        }
+      ],
+      "SummaryPoints": [
+        "Coordinate tables, equations and graphs after swapping axes; explain why reciprocal constants describe the same relation.",
+        "Change labels and formula together.",
+        "Multiply forward and inverse rates to check 1."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L14",
+      "CultureCode": "en",
+      "Title": "Four Representations",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Evaluate equivalent tables, equations, graphs and contexts; construct and critique proportional and nonproportional examples. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/14/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "A proportional relationship can appear in multiple consistent forms. Comparison requires checking unit rates, origin behavior and actual context."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Context",
+          "Definition": "A repeated per-unit quantity without fixed start can be proportional.",
+          "Rule": "State the quantities and constant rate.",
+          "Example": "$5 per item models y=5x."
+        },
+        {
+          "Title": "Table and equation",
+          "Definition": "A table should satisfy one y=kx equation.",
+          "Rule": "Check quotients for every nonzero row.",
+          "Example": "(1,5),(2,10),(3,15) follow y=5x."
+        },
+        {
+          "Title": "Graph and critique",
+          "Definition": "A proportional graph passes through (0,0) and has constant slope.",
+          "Rule": "Explain mismatches across representations.",
+          "Example": "y=5x+2 has fixed fee and is not proportional."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Match four representations",
+          "Question": "A shop charges $5 per identical item. Give an equation, two table rows and graph points.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Write y=5x.",
+            "Calculate (1,5) and (3,15).",
+            "Include the origin (0,0) on the line."
+          ],
+          "Answer": "y=5x; table rows (1,5),(3,15); graph through (0,0).",
+          "Check": "All representations use $5 per item."
+        },
+        {
+          "Title": "Critique a proposed match",
+          "Question": "A table is (1,5),(2,10) but a graph passes through (0,2). Can it describe y=5x?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Check the table quotient: 5.",
+            "Check y=5×0=0.",
+            "Compare expected (0,0) with drawn (0,2)."
+          ],
+          "Answer": "No; the graph is inconsistent.",
+          "Check": "The intercept contradicts the equation."
+        },
+        {
+          "Title": "Invent a nonproportional example",
+          "Question": "Create a context and equation with a fixed cost plus $5 per unit.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Choose a $3 setup fee.",
+            "Write y=3+5x.",
+            "Check y=3 at x=0."
+          ],
+          "Answer": "Example: printing costs $3 plus $5 per page; y=3+5x.",
+          "Check": "Teacher reviews the context and explanations; different valid examples exist."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating any rising graph as proportional",
+          "WhyWrong": "The origin and constant quotient matter.",
+          "Correction": "Verify all four representations agree."
+        },
+        {
+          "Mistake": "Leaving out units from k",
+          "WhyWrong": "A contextual rate needs units.",
+          "Correction": "Write dollars per item, km per hour, or the actual measured ratio."
+        }
+      ],
+      "SummaryPoints": [
+        "Evaluate equivalent tables, equations, graphs and contexts; construct and critique proportional and nonproportional examples.",
+        "Check quotients for every nonzero row.",
+        "Explain mismatches across representations."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G7:U02:L15",
+      "CultureCode": "en",
+      "Title": "Using Water Efficiently",
+      "ExplanationParagraphs": [
+        "Edulytiks learning target: Model water usage with realistic estimates, compare baths and showers and defend assumptions in an open-ended analysis. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/15/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
+        "The original investigation requires students to research or estimate quantities, explain assumptions and present a visual report. No single universal bath-or-shower answer is valid."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rate of water flow",
+          "Definition": "Water used can be modeled as flow rate times time.",
+          "Rule": "Litres=(litres/minute)×minutes.",
+          "Example": "8 L/min for 6 min uses 48 L."
+        },
+        {
+          "Title": "Break-even comparison",
+          "Definition": "Find duration where modeled shower use matches a chosen bath volume.",
+          "Rule": "time=bath litres/flow rate.",
+          "Example": "80 L at 8 L/min is 10 minutes."
+        },
+        {
+          "Title": "Assumptions and evidence",
+          "Definition": "Different fixtures and habits change the conclusion.",
+          "Rule": "State measured or estimated rates and volumes.",
+          "Example": "A lower-flow shower may use less water over the same duration."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate a shower",
+          "Question": "A shower flows at 8 L/min for 6 minutes. Estimate water used.",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Model water=rate×duration.",
+            "Compute 8×6=48.",
+            "State litres."
+          ],
+          "Answer": "48 L.",
+          "Check": "The model assumes constant flow."
+        },
+        {
+          "Title": "Compare with a bath",
+          "Question": "A bath uses 80 L; the shower flows 8 L/min. When would the shower use the same amount?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Set 8t=80.",
+            "Divide t=80/8.",
+            "Compute t=10 minutes."
+          ],
+          "Answer": "10 minutes.",
+          "Check": "At 10 min, 8×10=80 L."
+        },
+        {
+          "Title": "Defend an assumption",
+          "Question": "A student says 'showers always save water'. Is that proven from one 6-minute shower using 48 L and one 80 L bath?",
+          "Method": "Use the stated mathematical model, show each relationship explicitly and check the units or representations.",
+          "Steps": [
+            "Compare the two stated examples: 48<80.",
+            "Notice flow and time could change.",
+            "Explain why a single comparison does not prove an always claim."
+          ],
+          "Answer": "No. The given shower uses less water than the given bath, but other rates and durations may reverse the result.",
+          "Check": "Teacher reviews assumptions, data sources, the model and presentation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming one fixture always saves water",
+          "WhyWrong": "Real usage depends on duration, flow rate and bath volume.",
+          "Correction": "Compare quantitative scenarios with stated assumptions."
+        },
+        {
+          "Mistake": "Auto-grading a personal research conclusion from one target number",
+          "WhyWrong": "The source asks for research and argument, not a universal numeric fact.",
+          "Correction": "Require teacher review of data quality, calculation and justification."
+        }
+      ],
+      "SummaryPoints": [
+        "Model water usage with realistic estimates, compare baths and showers and defend assumptions in an open-ended analysis.",
+        "time=bath litres/flow rate.",
+        "State measured or estimated rates and volumes."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
