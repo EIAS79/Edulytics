@@ -183,12 +183,12 @@ test('Critical Grade 6 arithmetic and statistics examples have valid independent
   assert.equal(2 * (4 * 3 + 4 * 2 + 3 * 2), 52);         // prism surface area
   assert.equal(3 / 4 / (2 / 3), 9 / 8);                // fraction division
   assert.equal(3 / 2 * 2 / 3, 1);                    // reciprocal quotient check
-  assert.equal(4.32 / 0.12, 36);                     // decimal-divisor scaling
+  assert.ok(Math.abs(4.32 / 0.12 - 36) < 1e-10);       // decimal-divisor scaling
   assert.equal((3 + 5 + 7) / 3, 5);                   // mean
   assert.equal((2 + 0 + 2) / 3, 4 / 3);               // MAD
   assert.equal((2 * 6 + 2 * 8 + 2 * 7) / 2, 21);     // tent fabric model
   assert.equal(120 * 0.4, 48);                       // proportional scaling
-  assert.equal(40 * 0.18, 7.2);                      // percentage
+  assert.ok(Math.abs(40 * 0.18 - 7.2) < 1e-10);      // percentage
   assert.equal((30 / 120) * 100, 25);                // find percentage
 });
 
