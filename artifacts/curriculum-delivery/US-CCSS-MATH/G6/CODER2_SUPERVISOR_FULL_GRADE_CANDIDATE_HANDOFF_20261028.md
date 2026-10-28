@@ -60,3 +60,41 @@ No production state has been changed by Coder 2. Rolling back this unmerged work
 **Current unresolved gates:** The project-wide `LessonPracticeContractRegistry.BuildAllEntries` inserts explicit LessonPracticeContractProjection first, then official outcome rules and supporting rules with `TryAdd`, with grade-specific overrides later. Static eligibility is not the selected student question. A **single shared integration owner designated by Supervisor 1** must review exact Grade 6 contract priority and source-appropriate generators/verifiers/teacher-rubric persistence. The shared `CommonCoreRichContentCorrections` effective version marker may still differ from the candidate pack's contentVersion. Check every applicable persisted predecessor and authenticated effective content before any release. PR #591 remains **draft**, no Admin gate and no production authorization.
 
 **Separate cursors:** Next **public-source-task text comparison** is `PED:US-CCSS-MATH:G6:U01:L04`. Next **academic acceptance** remains `PED:US-CCSS-MATH:G6:U01:L01`, because no lesson has passed the complete A–D evidence sequence.
+
+## V4 final source-index / original-candidate checkpoint — 2026-10-28
+
+**Branch continuity:** existing `curriculum/us-ccss-g6-full-grade-20261028`, existing **draft PR #591**, original protected base `39c757630d2bd67217a1468fce099653ed0f3f53`. No branch reset, force-push, merge or production deployment. Never accessed Desktop Commander, Our-CS or Anas_Nitro. All authoring committed through the existing connected GitHub account; historical public source pages retrieved via browser tools.
+
+**Lesson coverage, carefully separated:**
+
+| Evidence category | Actual count |
+|---|---:|
+| Exact canonical Grade 6 lesson IDs | **147/147** |
+| Independently authored candidate English bodies | **147/147** |
+| Historical public student pages retrieved, original titles matched | **147/147** |
+| Historical public teacher pages retrieved, original titles matched | **147/147** |
+| Teacher page cool-down headings visible | **134/147** |
+| Original public student+teacher task bodies directly compared and candidate-repaired | **8/147** |
+| Explicit first-party Rich V2 lessons authored | **8/147** (4 Grade 6-scoped JSON files) |
+| Unique lesson-scoped human teacher-rubric **drafts**, not implemented | **16** |
+| Full academic Stage A source and real-product acceptance | **0/147** |
+| Exact selected Practice/verifier/feedback + attempts/teacher assessment verified | **0/147** |
+| Real Node/.NET, authenticated app, DB/tenant and protected CI Stage D passes | **0/147** |
+| Academically accepted and deployable lessons | **0/147** |
+
+**New immutable Grade 6-owned source evidence:** `g6-147-public-student-page-activity-index.json` and `g6-147-public-teacher-activity-cooldown-index.json`. Both list all 147 source-ordered lesson codes, matched original titles and public activity headings. They are strictly **source navigation/retrieval**, not 147 reviewed source tasks or proof of learner parity. `g6-ten-mp-only-source-heading-anchored-assessment-boundaries.json` describes 10 MP-only original instructional topics and suggested hybrid numeric/teacher-reviewed evidence; these are proposals without an integrated teacher assessment engine.
+
+**Eight directly examined public historical task cases:** U01:L01–L03 (mixed polygon tile coverage, half-square tangram, shifted shaded area), U01:L12 (covered cabinet without bottom; 12 unit-cube surface area), U01:L15–L16 (foldable nets, comparing cardboard usage and capacity, same-volume/different-surface and same-surface/different-volume), U09:L01–L02 (Fermi ant/warehouse/monument estimates, historic population ratios to approximate class diagrams). Corresponding original first-party canonical English text has been repaired. Eight explicit Rich V2 lessons with accessible textual visual descriptions sit in these four Grade 6-scoped files:
+- `src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json`
+- `src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l12-exposed-cabinet-and-cubes-20261028.rich-lesson-v2.json`
+- `src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l15-l16-nets-area-volume-20261028.rich-lesson-v2.json`
+- `src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u09-l01-l02-fermi-world-20261028.rich-lesson-v2.json`
+
+**Check actually exercised:** 18 of 18 callbacks from the committed `tests/academic-us-ccss-g6-original-lesson-authoring.test.cjs` executed successfully in a V8 **CommonJS compatibility harness** loading exact connected-GitHub candidate file contents. The harness mimicked `fs`, `path`, `node:test` and `node:assert` for source checks and numeric invariants. This is *not* `node --test`, `dotnet test`, actual C# compilation, GitHub Actions, authenticated student/teacher screens, persisted teacher evaluations, two-school isolation, or any deployment. Those real Stage D checks are **NOT_RUN**. The file/ledger metadata commit after this check requires normal exact-head re-execution before any guarded merge.
+
+**Critical Supervisor 1 shared single-writer dependencies, unchanged:**
+1. Resolve true selected `LessonPracticeContractRegistry.BuildAllEntries` Grade 6 precedence; prove each selected question family actually matches original lesson activity and has positive, negative, malformed, feedback and persistence tests. Especially `CCSS:6.G.A.1` area-conservation vs `shape-properties/shape_dimension`; MP-only original projects need human-grade/rubric integration. A rubric JSON is not a teacher UI or persisted assessment.
+2. Prove actual effective learner-body selection and safe metadata predecessor in `CommonCoreRichContentCorrections`, `CanonicalLessonContentMaterializer`, `MathematicsCanonicalLessonContentSeeder` and student/teacher service with `ReadFromJson`. No production/Neon writes or bypass of existing guard checks. Candidate pack's `contentVersion` does not override a shared effective-version marker by itself.
+3. Independently inspect original source task bodies/figures/applets and authentic Edulytiks learning/Practice for remaining **139/147** lessons. Source indexes lower browsing cost but are not a substitute. Check effective student/teacher rendering, accessibility, persisted submissions, two schools, other curricula regressions, protected exact-head CI and owner UAT. Protected branch remains unmerged and draft.
+
+**Next independent source-activity review cursor:** `PED:US-CCSS-MATH:G6:U01:L04`. **Next actual academic release-acceptance cursor:** `PED:US-CCSS-MATH:G6:U01:L01` (no passed A–D). Existing candidate content for all 147 is preserved; do not reset or redo it indiscriminately. `ADMIN_APPROVAL` is not a gate. **Release verdict: AUTHORING_CANDIDATE_COMPLETE, D_VERIFIED=FALSE, ACADEMICALLY_ACCEPTED=FALSE, REVIEW_ELIGIBLE=FALSE, MERGED=FALSE, VERIFIED_DEPLOYED=FALSE, OWNER_UAT=NOT_DONE, RELEASED=FALSE.**
