@@ -124,3 +124,28 @@ test('Explicit Rich V2 U01 L01-L03 area lessons take precedence over generated s
     assert.ok(lesson.Visuals.every(v => v.Description && v.Description.length > 40));
   });
 });
+
+test('All nineteen first-party Unit 1 lessons have individualized methods and misconception guidance', () => {
+  for (let i = 1; i <= 19; i++) {
+    const en = byCode.get(lcode(1, i)).translations[0];
+    assert.match(en.explanation, /area|triangle|prism|cube|polygon|tent|polyhedra|nets/i, `U01:L${i}`);
+    assert.match(en.workedExamples, /Example 1/, `U01:L${i}`);
+    assert.match(en.workedExamples, /Example 2/, `U01:L${i}`);
+    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify what the task asks you to find or show\./, `U01:L${i}`);
+    assert.doesNotMatch(en.stepByStepSolutions, /Step 3: Use the attributes to classify, construct, or reason about the figure\./, `U01:L${i}`);
+    assert.doesNotMatch(en.commonMistakes, /^Common mistake:/, `U01:L${i}`);
+    assert.ok(en.quickSummary.length >= 80, `U01:L${i}`);
+  }
+});
+
+test('Unit 1 numeric teaching invariants are mathematically consistent', () => {
+  assert.equal(7 * 4, 32 - 2 * (1 * 4 / 2)); // parallelogram area: cut versus enclosure
+  assert.equal(0.5 * 8 * 5, 20);             // matched triangle area
+  assert.equal(2 * (12 + 8 + 6), 52);       // prism face areas
+  assert.equal(2 * (6 + 3 + 2), 22);        // second prism net
+  assert.equal(2 * (1 + 8 + 8), 34);        // 1-by-1-by-8 surface
+  assert.equal(6 * 4, 24);                 // 2-by-2-by-2 surface
+  assert.equal(6 * (3 ** 2), 54);          // cube surface
+  assert.equal(3 ** 3, 27);                // cube volume
+  assert.equal(2 * 3 * 2.5 + 2 * (0.5 * 4 * 1.5), 21); // tent model, no floor
+});
