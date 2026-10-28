@@ -28,7 +28,7 @@ const target = [
   [6,1, 'draw and interpret tape diagrams'],
   [7,1, 'represent positive and negative quantities'],
   [8,1, 'collect and distinguish categorical and numerical data'],
-  [9,1, 'make defensible estimates of real-world quantities']
+  [9,1, 'construct, compare and critique Fermi estimates']
 ];
 
 test('Grade 6 canonical identity and nine-unit inventory are exact', () => {
@@ -96,9 +96,9 @@ test('Area source lessons explicitly teach area, units, and conservation, not on
 
 test('Fermi modeling is explicitly marked unsuitable for single-value automatic assessment', () => {
   const en = byCode.get(lcode(9, 1)).translations[0];
-  assert.match(en.explanation, /single machine-graded number/i);
-  assert.match(en.workedExamples, /Teacher-review prompt:/);
-  assert.match(en.commonMistakes, /solely because it differs from one reference number/i);
+  assert.match(en.explanation, /human review/i);
+  assert.match(en.workedExamples, /Student-estimation prompt/i);
+  assert.match(en.commonMistakes, /One numerical result cannot establish/i);
 });
 
 test('Explicit Rich V2 U01 L01-L03 area lessons take precedence over generated shape-properties examples', () => {
