@@ -19,7 +19,8 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-decimals-placevalue-maxproduct-source-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-richv2-source-expansion.test.cjs"
+    "tests/academic-us-ccss-g5-richv2-source-expansion.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -65,7 +66,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 23,
+    "richSidecarLessonCount": 26,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -79,8 +80,8 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 26,
-    "public2021LessonHtmlReviewedDuringV4": 19,
+    "public2021LessonOrPreparationHtmlReviewedCount": 29,
+    "public2021LessonHtmlReviewedDuringV4": 22,
     "codeCandidateWithAtLeastOneEditOrRichV2": 107,
     "noGradeOwnedCodeCandidate": 41
   },
@@ -110,8 +111,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "26 distinct public 2021 teacher/preparation or student-facing lesson HTML pages reviewed to varying depth; no complete 148/148 original Student Task PDF, visual/diagram, gated Cool-down and rights audit. Grade-owned content candidates are not academic acceptance.",
-      "next": "Continue from U02:L06 public source, resolve original PDFs and source rights with item-level evidence for all 148."
+      "issue": "29 distinct 2021 public teacher/student-facing lesson HTML pages reviewed to varying depth, 0 complete original Student Task PDF/Cool-down/source visual and rights audit; 148 Stage A–D individual acceptances outstanding.",
+      "next": "Continue with U02:L09 source original task and candidate; independently verify original Student Task PDFs and licensed visuals for all lessons."
     },
     {
       "id": "G5-D-004",
@@ -986,16 +987,19 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l06-l08-im2021-first-party-richv2-20261028-v1",
+      "sourceReviewedTask": "Three-mile equal-runner relay interpreted with 3÷2=3/2=1/2×3; source's two diagrams and partner explanation"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L07",
@@ -1034,16 +1038,19 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l06-l08-im2021-first-party-richv2-20261028-v1",
+      "sourceReviewedTask": "One quarter of nine and seven mile roads, match story, number-line and expression"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L08",
@@ -1088,16 +1095,19 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l06-l08-im2021-first-party-richv2-20261028-v1",
+      "sourceReviewedTask": "Multiply non-unit fractions using repeated unit-fraction quantities and matching shaded diagrams"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L09",
@@ -6631,23 +6641,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "86a07c1481698f94a7c2d03a627739994abad4ee",
+  "lastGradeContentCommit": "ddb11c86cf5f5dadfd8ef2147e2246b3344614e8",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "104 distinct Grade 5 canonical pack translations were previously editorially repaired, 23 Grade 5 direct Rich V2 lessons authored, 44 pack translations untouched. 26 distinct 2021 public lesson/preparation HTML pages sampled/reviewed, 0/148 original student task PDFs+gated cooldown independently verified. Stage A–D remains incomplete for all 148.",
+  "currentScopeDescription": "104 canonical Grade 5 pack translations editorially repaired, 26 original Rich V2 lessons authored, 44 original pack translations untouched. 29 distinct 2021 public lesson/preparation HTML sources reviewed (7 prior and 22 this V4 execution), zero complete student-task PDFs/gated cooldowns independently verified. Stage A–D incomplete for all 148.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "7e2278e69ced83a629f649977a651eed1d6776e1",
+  "lastCommittedTest": "884c6623eeecd3564d9f8386d5fa2eec5d0d69ed",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "7e2278e69ced83a629f649977a651eed1d6776e1",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U02:L06 (public 2021 teacher and student-facing activities)",
+    "lastKnownCommittedHeadBeforeLedger": "884c6623eeecd3564d9f8386d5fa2eec5d0d69ed",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U02:L09 — Relate Area to Multiplication",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "U02:L06 through U02:L17 and all remaining units; 148 individual A/B/C/D evidence still open",
+    "nextAcademic": "Source-review U02 L09–L17, U03 and remaining units; run actual Node/.NET/Practice and full per-lesson A-D before full grade PR",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main"
@@ -6656,10 +6666,10 @@
   "testEvidence": {
     "inMemoryConnectorV8RichV2SourceExpansion": {
       "status": "PASS",
-      "groups": 13,
-      "context": "Emulated node:test in V8, mocked node:fs with connector-backed JSON, NOT actual Node CLI",
+      "groups": 15,
+      "context": "Emulated node:test in V8, mocked node:fs with GitHub connector-backed JSON; NOT actual Node CLI",
       "testFile": "tests/academic-us-ccss-g5-richv2-source-expansion.test.cjs",
-      "verifiedTestCommit": "7e2278e69ced83a629f649977a651eed1d6776e1"
+      "verifiedTestCommit": "884c6623eeecd3564d9f8386d5fa2eec5d0d69ed"
     },
     "nodeCli": "NOT_RUN",
     "dotnet": "NOT_RUN",
