@@ -97,3 +97,45 @@ test('candidate ledger must not silently claim academic or runtime PASS',()=>{
     assert.notEqual(item.humanAcademicAcceptance,'APPROVED');
   }
 });
+
+
+test('Grade 7 visual audit preserves 145 lesson identities and labels each authored visual', () => {
+  const audit = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-visual-coverage-audit.json');
+  assert.equal(audit.counts.canonical, 145);
+  assert.equal(audit.lessons.length, 145);
+  assert.equal(new Set(audit.lessons.map(l => l.lessonCode)).size, 145);
+  assert.deepEqual(
+    new Set(audit.lessons.map(l => l.lessonCode)),
+    new Set(bp.Lessons.map(l => l.LessonCode))
+  );
+  const allowed = new Set([
+    'CalculationChain', 'NumberLine', 'DoubleNumberLine',
+    'FractionBars', 'RatioTable', 'PlaceValueChart', 'Scale',
+    'EquationSet', 'ShapeDecomposition'
+  ]);
+  const withVisual = lessons.filter(l => l.Visuals.length > 0);
+  assert.equal(withVisual.length, 28, 'Current V4 reviewed-structure coverage; remaining work is explicit');
+  assert.equal(audit.counts.visualsPresent, withVisual.length);
+  assert.equal(audit.counts.missingVisuals, 145 - withVisual.length);
+  for (const l of withVisual) {
+    for (const v of l.Visuals) {
+      assert.ok(allowed.has(v.Kind), l.LessonCode + ': unsupported renderer kind');
+      assert.ok(v.Title.trim(), l.LessonCode + ': visual title');
+      assert.ok(v.Description.trim(), l.LessonCode + ': alt/description');
+      if (v.Kind === 'RatioTable') {
+        assert.ok(v.Rows.length >= 2, l.LessonCode);
+        for (const row of v.Rows) {
+          assert.ok(row.Label.trim(), l.LessonCode + ': accessible row label');
+          assert.ok(row.Cells.length >= 2, l.LessonCode + ': comparable quantities');
+          assert.ok(row.Cells.every(x => String(x).trim()), l.LessonCode);
+        }
+      }
+    }
+  }
+  for (const row of audit.lessons) {
+    const candidate = byCode.get(row.lessonCode);
+    assert.equal(row.visualCount, candidate.Visuals.length, row.lessonCode);
+    assert.equal(row.visualAcademicReview, 'NOT_VERIFIED', row.lessonCode);
+    assert.equal(row.assistiveTechnologyTest, 'NOT_RUN', row.lessonCode);
+  }
+});
