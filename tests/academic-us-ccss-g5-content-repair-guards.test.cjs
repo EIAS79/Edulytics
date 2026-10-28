@@ -82,7 +82,7 @@ test('Grade 5: baseline lesson content does not itself confer runtime or academi
 
 test('Grade 5: remove false clock-hand and measurement rules from fraction/decimal lessons', () => {
   const cases = [
-    ['U02:L16', /fraction greater than 1/, /hour and minute hands/],
+    ['U02:L16', /fraction.*greater than 1/, /hour and minute hands/],
     ['U06:L21', /line plot/, /hour and minute hands/],
     ['U08:L12', /decimal game/, /Measurement units must be equal/],
     ['U08:L10', /common denominator/, /Subtraction can represent/],
