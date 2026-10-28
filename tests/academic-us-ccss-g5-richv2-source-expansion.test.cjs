@@ -65,7 +65,7 @@ test('volume sidecars L04-L06 teach partially pictured layers and alternative ba
     const text = lesson.ExplanationParagraphs.join(' ');
     assert.match(text, /layer|base/i);
     assert.match(text, /teacher|peer|partner/i);
-    assert.match(text, /2021/i);
+    assert.match(lesson.SummaryPoints.join(' '), /2021/i);
   }
   assert.match(get('U01:L04').WorkedExamples[0].Answer, /24/);
   assert.match(get('U01:L05').WorkedExamples[0].Answer, /30/);
