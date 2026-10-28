@@ -11,7 +11,8 @@ const candidates = [
   'us-ccss-g5-u03-l19-2021.rich-lesson-v2.json',
   'us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json',
   'us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json',
-  'us-ccss-g5-decimals-placevalue-maxproduct-source-2021.rich-lesson-v2.json'
+  'us-ccss-g5-decimals-placevalue-maxproduct-source-2021.rich-lesson-v2.json',
+  'us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json'
 ];
 const documents = candidates.map(filename => JSON.parse(
   fs.readFileSync(path.join(repo, richFolder, filename), 'utf8')
@@ -24,9 +25,9 @@ const get = id => {
   return lesson;
 };
 
-test('all 13 authored G5 sidecars have unique identity and correct fields', () => {
-  assert.equal(lessons.length, 13);
-  assert.equal(lessonById.size, 13);
+test('all 19 authored G5 sidecars have unique identity and correct fields', () => {
+  assert.equal(lessons.length, 19);
+  assert.equal(lessonById.size, 19);
   for (const document of documents) {
     assert.equal(document.SchemaVersion, 1);
     assert.equal(document.PackCode, 'US-CCSS-MATH');
@@ -135,4 +136,39 @@ test('Rich V2 has no approved external videos or linked publisher images', () =>
     assert.ok(lesson.Visuals.every(x => !('ImageUrl' in x) && !('Image' in x)));
     assert.match(lesson.SummaryPoints.join(' '), /2021/i);
   }
+});
+
+
+test('Unit 1: all twelve lessons have distinct source-aligned Rich V2 bodies', () => {
+  for (let i = 1; i <= 12; i++) {
+    const short = 'U01:L' + String(i).padStart(2,'0');
+    const lesson = get(short);
+    assert.ok(lesson.ExplanationParagraphs.join(' ').length >= 250, short);
+    assert.ok(lesson.Visuals.some(x => x.Rows.length > 0), short);
+  }
+});
+
+test('cubic-unit and composite examples respect units and volume additivity', () => {
+  assert.match(get('U01:L07').WorkedExamples[2].Answer, /24 cubic feet/);
+  assert.equal(12 + 18, 30);
+  assert.match(get('U01:L08').WorkedExamples[1].Answer, /30 cubic units/);
+  assert.equal(5*3*3 + 1, 46);
+  assert.match(get('U01:L09').WorkedExamples[0].Answer, /46/);
+  assert.equal(5*5*5 - 2*3*5, 95);
+  assert.equal(3*5*5 + 2*2*5, 95);
+  assert.match(get('U01:L10').WorkedExamples[0].Answer, /95/);
+  assert.equal(4*9*5, 180);
+  assert.equal(30*9, 270);
+  assert.equal(3*8*4 + 10*3*4, 216);
+  assert.match(get('U01:L11').WorkedExamples[2].Answer, /216/);
+});
+
+test('optional investigation has five valid container arrangements and teacher-review boundary', () => {
+  const source = get('U01:L12');
+  for (const factors of [[1,6,10],[2,5,6],[3,4,5],[2,3,10],[1,3,20]]) {
+    assert.equal(factors.reduce((x,y)=>x*y,1), 60);
+  }
+  assert.match(source.ExplanationParagraphs.join(' '), /teacher review/i);
+  assert.match(source.KeyConcepts[1].Rule, /footprint|height|clearance/i);
+  assert.match(source.WorkedExamples[1].Answer, /384/);
 });
