@@ -54,7 +54,7 @@ test('Grade 6 canonical identity and nine-unit inventory are exact', () => {
 });
 
 test('Every English lesson has a mathematical action goal and preserved source provenance', () => {
-  assert.match(pack.contentVersion, /^us-ccss-g6-learner-goal-repair-candidate-/);
+  assert.match(pack.contentVersion, /^us-ccss-g6-full-grade-authoring-candidate-/);
   for (const canonical of blueprint.Lessons) {
     const lesson = byCode.get(canonical.LessonCode);
     const en = lesson.translations.find(t => t.cultureCode === 'en');
@@ -148,4 +148,59 @@ test('Unit 1 numeric teaching invariants are mathematically consistent', () => {
   assert.equal(6 * (3 ** 2), 54);          // cube surface
   assert.equal(3 ** 3, 27);                // cube volume
   assert.equal(2 * 3 * 2.5 + 2 * (0.5 * 4 * 1.5), 21); // tent model, no floor
+});
+
+test('Every one of the 147 Grade 6 lessons has original worked teaching and a five-step mathematical procedure', () => {
+  const counts = new Map();
+  for (const lesson of pack.lessons) {
+    const en = lesson.translations.find(x => x.cultureCode === 'en');
+    const code = lesson.lessonCode;
+    assert.ok(en, code);
+    assert.match(en.explanation, /^Learning goal: You will [a-z][^\\n]+\\.\\n/, code);
+    assert.ok(en.explanation.length >= 250, code + ': explanation');
+    assert.ok((en.keyConceptsAndRules.match(/(?:^|\\n)- /g) || []).length >= 3, code + ': key concepts');
+    assert.match(en.workedExamples, /Example 1\\b/, code);
+    assert.match(en.workedExamples, /Example 2\\b/, code);
+    assert.equal((en.stepByStepSolutions.match(/Step [1-5]:/g) || []).length, 5, code + ': steps');
+    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify what the task asks you to find or show\\./, code);
+    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify the figure and the attributes named in the task\\./, code);
+    assert.ok(en.commonMistakes.length >= 80, code + ': misconception');
+    assert.doesNotMatch(en.commonMistakes, /^Common mistake: jumping/, code);
+    assert.ok(en.quickSummary.length >= 60, code + ': summary');
+    assert.doesNotMatch(en.explanation + en.keyConceptsAndRules + en.workedExamples,
+      /so nine\\?|hour and minute hands|the addends are the quantities being combined/i, code);
+    const prefix = code.match(/:U(\\d\\d):L\\d\\d$/);
+    assert.ok(prefix, code);
+    counts.set(prefix[1], (counts.get(prefix[1]) || 0) + 1);
+  }
+  assert.deepEqual([...counts.entries()].sort(), [
+    ['01', 19], ['02', 17], ['03', 17], ['04', 17], ['05', 15],
+    ['06', 19], ['07', 19], ['08', 18], ['09', 6]
+  ]);
+});
+
+test('Critical Grade 6 arithmetic and statistics examples have valid independent numeric checks', () => {
+  assert.equal(2 * (4 * 3 + 4 * 2 + 3 * 2), 52);         // prism surface area
+  assert.equal(3 / 4 / (2 / 3), 9 / 8);                // fraction division
+  assert.equal(3 / 2 * 2 / 3, 1);                    // reciprocal quotient check
+  assert.equal(4.32 / 0.12, 36);                     // decimal-divisor scaling
+  assert.equal((3 + 5 + 7) / 3, 5);                   // mean
+  assert.equal((2 + 0 + 2) / 3, 4 / 3);               // MAD
+  assert.equal((2 * 6 + 2 * 8 + 2 * 7) / 2, 21);     // tent fabric model
+  assert.equal(120 * 0.4, 48);                       // proportional scaling
+  assert.equal(40 * 0.18, 7.2);                      // percentage
+  assert.equal((30 / 120) * 100, 25);                // find percentage
+});
+
+test('Full-grade authoring is not confused with source, Practice or production approval', () => {
+  const record = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-147-academic-authoring-ledger.json'), 'utf8'));
+  assert.equal(record.lessons.length, 147);
+  assert.equal(record.summary.canonicalLessons, 147);
+  assert.equal(record.summary.substantiveLessonsRepaired, 147);
+  assert.equal(record.summary.fullStageAReviews, 0);
+  assert.equal(record.summary.stageDVerified, 0);
+  assert.equal(record.summary.academicallyAccepted, 0);
+  assert.equal(record.summary.releaseReady, false);
+  assert.ok(record.lessons.every(l => l.academicAcceptance === 'NOT_ACCEPTED'));
 });
