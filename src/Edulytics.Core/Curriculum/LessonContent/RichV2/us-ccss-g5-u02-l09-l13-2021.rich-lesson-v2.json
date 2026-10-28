@@ -1,0 +1,630 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u02-l09-l13-im2021-first-party-richv2-v5-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L09",
+      "CultureCode": "en",
+      "Title": "Relate Area to Multiplication",
+      "ExplanationParagraphs": [
+        "Goal: establish the area of a rectangle having one positive whole-number side and a UNIT fractional side by counting and regrouping shaded parts. The 2021 source deliberately allows students to choose counting, rearranging, or multiplication before giving a formal rule.",
+        "Warm-up: compare rectangular areas and a triangle in a Which One Doesn't Belong conversation. A 5-by-1 rectangle, a vertical unit array, and a 5-by-one-half shaded rectangle can all prompt different defensible distinctions; do not claim a unique answer.",
+        "Activity 1: draw one 8-unit-long rectangle of height 1, then rectangles of the same length with heights one half, one fourth and one eighth. Count partial unit squares, regroup equal shaded pieces into complete unit squares and explain why the areas 8, 4, 2 and 1 square units decrease in those proportions.",
+        "Activity 2: work on a first-party grid to draw your own 6-by-one-third rectangle. Some of its squares may be hidden behind shading; predict how many thirds are present, count the six third-squares and group into two square units. Compare 6×(1/3) with (1/3)×6 by reference to the model, not only commutativity symbols.",
+        "Teacher boundary: the original student tasks include choosing a method, producing shaded drawings and explaining why factors match area; drawings and open WODB arguments require teacher review. Numeric multiplication is only supporting Practice and must not be auto-certified as equivalent to the source activity."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit fractional width",
+          "Definition": "One side length names one of b equal pieces of a linear unit.",
+          "Rule": "For length a units and height 1/b unit, area is a×(1/b) square units.",
+          "Example": "6×1/3=2 square units."
+        },
+        {
+          "Title": "Rearranging fractional unit squares",
+          "Definition": "Shaded congruent strips can be collected into full squares without changing covered area.",
+          "Rule": "Six 1/3-unit-square pieces can make two unit squares.",
+          "Example": "6 thirds of a square equal 2 squares."
+        },
+        {
+          "Title": "Two area interpretations",
+          "Definition": "A×(1/b) counts A narrow parts while (1/b)×A takes a fraction of a whole A-square-unit rectangle.",
+          "Rule": "Both describe the same area if unit lengths and the shaded region match.",
+          "Example": "One quarter of eight square units is two."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Same length, different widths",
+          "Question": "What are areas of length-8 rectangles with heights 1, 1/2, 1/4 and 1/8?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Use 8 unit-length columns as the common horizontal side.",
+            "Partition a unit-height column into 1, 2, 4 or 8 equal-height strips.",
+            "Take one strip from each column and count/recombine the fractional square units."
+          ],
+          "Answer": "8, 4, 2, and 1 square units respectively.",
+          "Check": "Multiplying 8 by 1, 1/2, 1/4 and 1/8 gives the listed values."
+        },
+        {
+          "Title": "Count fractional square units",
+          "Question": "A rectangle is 6 units long and 1/3 unit high. Find its area.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Draw six equal unit-width columns.",
+            "Partition each unit square into three equal horizontal strips, shading one in each column.",
+            "Group the six shaded third-square strips into two full square units."
+          ],
+          "Answer": "2 square units.",
+          "Check": "6 × (1/3)=6/3=2, equivalent to (1/3) × 6."
+        },
+        {
+          "Title": "Interpret a fraction of a rectangle",
+          "Question": "A rectangle of 8 square units has one fourth of its area shaded. What shaded area is shown?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Divide the 8-square-unit rectangle into four congruent-area regions.",
+            "Select exactly one of the four regions.",
+            "Compare selected area with the entire eight-square-unit area."
+          ],
+          "Answer": "2 square units.",
+          "Check": "(1/4) × 8=2; teacher checks that the diagram actually has equal fourths."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Count shaded narrow strips as whole squares",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Partition the full-unit square according to the denominator before counting."
+        },
+        {
+          "Mistake": "Treat 1/4 as four unit squares",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "One fourth is smaller than one unit when the original unit remains fixed."
+        }
+      ],
+      "SummaryPoints": [
+        "A unit-fraction side length still produces an area in square units.",
+        "Count, regroup or multiply to justify the same rectangular area.",
+        "The original drawing and method-choice task is teacher-reviewed.",
+        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 9: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-9/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Relate Area to Multiplication — equal-area reasoning",
+          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Length",
+              "Cells": [
+                "8",
+                "8",
+                "8",
+                "8"
+              ]
+            },
+            {
+              "Label": "Height",
+              "Cells": [
+                "1",
+                "1/2",
+                "1/4",
+                "1/8"
+              ]
+            },
+            {
+              "Label": "Area (square units)",
+              "Cells": [
+                "8",
+                "4",
+                "2",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": [],
+      "SourceTaskAuditNote": "Unit-fraction rectangles of equal whole-number width; multiple counting strategies, hidden shaded units, drawing, comparison"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L10",
+      "CultureCode": "en",
+      "Title": "Fractional Side Lengths Less Than 1",
+      "ExplanationParagraphs": [
+        "Goal: find and represent rectangular areas when the width is a NON-UNIT fraction less than one. The source moves from one fourth or one third to widths such as two thirds or three fourths and invites multiple decomposition strategies.",
+        "Warm-up — estimate a length-seven rectangle shaded to a height between one half and one. Infer that the shaded area is between three and a half and seven square units, not an exact value without a precise shaded height. Discuss why an estimate around five square units is plausible rather than pretending a unique source-image result.",
+        "Activity 1: start with a first-party rectangle 5 units long and 3/4 unit high. In each one-unit horizontal segment, shade three of four equal-height strips. Count 15 quarter-square units and regroup them as 3 3/4 square units. Explain how 5×(3/4), (5×3)÷4, and 3×(5÷4) can all refer to the same area.",
+        "Activity 2: compare a 5-by-2/3 rectangle with a 5-by-3/4 rectangle. Without calculation, reason that the second shaded area is greater because 3/4 is greater than 2/3 for the same length. Draw an equivalent partition of the fractional widths and verify using exact 10/3 and 15/4 square units.",
+        "Source assessment boundary: the original student lesson calls for multiplication expressions for multiple given shaded diagrams; the diagrams and reasoning remain teacher-reviewed and may have more than one valid explanation. A numeric evaluator can check area only if the fractional side lengths are provided."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Non-unit fractional width",
+          "Definition": "A side length such as 3/4 means three of four equally sized linear-unit parts.",
+          "Rule": "A whole length times a non-unit fractional width gives area in square units.",
+          "Example": "5×3/4=15/4 square units."
+        },
+        {
+          "Title": "Repeated fractional area pieces",
+          "Definition": "Each one-unit column contributes the same fraction of a unit square.",
+          "Rule": "A columns of c/d square unit yield (a×c)/d square units.",
+          "Example": "Five 3/4-square-unit columns give 15/4."
+        },
+        {
+          "Title": "Area comparison with a fixed length",
+          "Definition": "For equal positive whole-number lengths, greater width produces greater area.",
+          "Rule": "If p>q>0 and length a>0, then ap>aq.",
+          "Example": "5×3/4>5×2/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Three quarters across five columns",
+          "Question": "Find the area of a 5-by-3/4 rectangle.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Divide five unit-square columns into four equal horizontal parts each.",
+            "Shade three in every column: 5×3=15 quarter-square pieces.",
+            "Regroup 15/4 as three whole square units and three quarters."
+          ],
+          "Answer": "15/4 = 3 3/4 square units.",
+          "Check": "5×(3/4)=(5×3)/4."
+        },
+        {
+          "Title": "Two thirds across five columns",
+          "Question": "Find the area of a 5-by-2/3 rectangle.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Partition each of five squares into thirds.",
+            "Shade two thirds of each column to obtain 10 thirds.",
+            "Regroup 10/3 as 3 1/3 square units."
+          ],
+          "Answer": "10/3 = 3 1/3 square units.",
+          "Check": "(5×2)/3=10/3."
+        },
+        {
+          "Title": "Compare two widths",
+          "Question": "With length fixed at 5, which area is larger: width 2/3 or width 3/4?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Use equal twelfths: 2/3=8/12; 3/4=9/12.",
+            "Both areas have five equal one-unit columns.",
+            "Since each 3/4-width column exceeds the 2/3-width column, its total area is larger."
+          ],
+          "Answer": "The 5-by-3/4 rectangle has larger area.",
+          "Check": "15/4 - 10/3 = 45/12−40/12=5/12 square unit."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Count the numerator as an unscaled whole width",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Each fractional strip has size 1/d of a unit, not one full unit."
+        },
+        {
+          "Mistake": "Multiply a whole length by a fractional width and report linear units",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Rectangular area is in square units; side lengths remain linear."
+        }
+      ],
+      "SummaryPoints": [
+        "Non-unit fraction widths combine several equal unit-fraction strips.",
+        "Different correct grouping strategies produce the same area.",
+        "Estimate before computing and explain any drawn representation.",
+        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-10/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fractional Side Lengths Less Than 1 — equal-area reasoning",
+          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Length",
+              "Cells": [
+                "5",
+                "5"
+              ]
+            },
+            {
+              "Label": "Width",
+              "Cells": [
+                "2/3",
+                "3/4"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "10/3",
+                "15/4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": [],
+      "SourceTaskAuditNote": "Exact width strips and diagrams for non-unit fractions less than one; shared whole and nonvisual alternative"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L11",
+      "CultureCode": "en",
+      "Title": "Fractional Side Lengths Greater Than 1 PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: find the area of a rectangle when one side length is a fraction or mixed number GREATER THAN one; connect the whole and fractional subregions to expressions using unit area. Distinguish an improper fraction from a mixed number.",
+        "Warm-up: inspect possible true/false equalities, such as 10÷3=10×(1/3) and the false statement 10÷3=10 1/3. Explain why 10/3 is 3 1/3, not 10 1/3, with an area or number-line model.",
+        "Activity 1: draw an original rectangle 4 units high and 3 2/3 units wide. Shade the 3-by-4 whole portion separately from the 2/3-by-4 portion. Compute 12+8/3=14 2/3 square units; show equivalent improper side width 11/3 and product (11/3)×4=44/3.",
+        "Activity 2: sort original expressions by whether they represent the modeled rectangle. 4×(3+2/3), 12+8/3 and 44/3 are equivalent, but 4×(3+3/2) is not. Require students to defend the matching area diagram and identify why the nonmatching expression changes the fractional width.",
+        "Assessment: the source calls for selecting every valid expression and explaining how the geometry supports each; a numeric yes/no is insufficient for the open proof. Teacher evaluates the drawn region, equality reasoning and partner explanations. No source image cards are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Mixed fractional side lengths",
+          "Definition": "A width above one may combine whole units and a part of a unit.",
+          "Rule": "If width w+f, the area for height h is h×w+h×f.",
+          "Example": "4×(3+2/3)=12+8/3."
+        },
+        {
+          "Title": "Improper fraction equivalence",
+          "Definition": "An improper fraction describes the same distance or area as an appropriately regrouped mixed number.",
+          "Rule": "3 2/3 = 11/3.",
+          "Example": "4×11/3 = 44/3."
+        },
+        {
+          "Title": "Distributive rectangle",
+          "Definition": "A split along one direction gives nonoverlapping rectangular subregions whose areas add.",
+          "Rule": "h×(w+f)=(h×w)+(h×f).",
+          "Example": "4×(3+2/3)=4×3+4×2/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Area with width above one",
+          "Question": "Find area of a rectangle 4 high and 3 2/3 wide.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Separate the 3-unit-wide region from the remaining 2/3-unit strip.",
+            "The first subarea is 4×3=12 square units.",
+            "The fractional subarea is 4×2/3=8/3; add to get 44/3."
+          ],
+          "Answer": "44/3 = 14 2/3 square units.",
+          "Check": "4×(11/3)=44/3."
+        },
+        {
+          "Title": "Match expressions to area",
+          "Question": "Which expressions match a 4-by-3 2/3 rectangle?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Write 4×(3 2/3) and convert width to 11/3.",
+            "Distribute: 4×3+4×2/3=12+8/3.",
+            "Compare 4×(3+3/2), whose width equals 4 1/2 instead."
+          ],
+          "Answer": "4×(3 2/3), 44/3 and 12+8/3 all match; 4×(3+3/2) does not.",
+          "Check": "The rejected expression is 18 square units, different from 14 2/3."
+        },
+        {
+          "Title": "Reject a mixed-number notation error",
+          "Question": "Is 10÷3 equal to 10 1/3?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Divide ten into three equal groups to obtain 10/3.",
+            "Group nine thirds into three wholes, leaving 1/3.",
+            "Compare 3 1/3 with 10 1/3."
+          ],
+          "Answer": "No; 10/3=3 1/3.",
+          "Check": "10 1/3 = 31/3, not 10/3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Read 10/3 as ten and one third",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Group the numerator into complete groups of the denominator."
+        },
+        {
+          "Mistake": "Forget the fractional strip when computing rectangular area",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Split the entire mixed-length side and include both whole and fractional regions."
+        }
+      ],
+      "SummaryPoints": [
+        "An area diagram can support a whole-times-mixed-number product.",
+        "Equivalent improper and mixed numbers produce the same exact area.",
+        "Matching and defending expressions and diagrams requires teacher review.",
+        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 11: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-11/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fractional Side Lengths Greater Than 1 PLC Activity — equal-area reasoning",
+          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Region",
+              "Cells": [
+                "Whole section",
+                "Fractional section",
+                "Total"
+              ]
+            },
+            {
+              "Label": "Widths",
+              "Cells": [
+                "3",
+                "2/3",
+                "3 2/3"
+              ]
+            },
+            {
+              "Label": "Area at height 4",
+              "Cells": [
+                "12",
+                "8/3",
+                "44/3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": [],
+      "SourceTaskAuditNote": "Above-one fractional width; matching valid symbolic expressions to the correct drawing"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L12",
+      "CultureCode": "en",
+      "Title": "Decompose Area",
+      "ExplanationParagraphs": [
+        "Goal: compare two differently shaped rectangular gardens with mixed-number lengths, using equal-area decompositions and mathematical argument. The source explicitly asks which of two gardens has the greater area, not merely to find two disconnected products.",
+        "Warm-up: calculate a mixed-number product by splitting the mixed number, such as 5×(2+1/2)=10+2 1/2. Explain why adding two partial products corresponds to two nonoverlapping subrectangles.",
+        "Activity 1: in an original garden scenario, Elena designs a 4-by-6 1/2-yard garden and Mateo designs a 5-by-5 1/4-yard garden. Use grids to show Elena's 24+2=26 square yards, and Mateo's 25+1 1/4=26 1/4 square yards. Explain why Mateo's is bigger by a quarter square yard, even though Elena's longest side is longer.",
+        "Activity 2: draw each garden, label whole-unit and fractional subrectangles, exchange diagrams with a partner and critique whether every length and product matches. Describe how different decompositions can have equal totals; include nonvisual text area parts alongside student drawings.",
+        "Teacher review: the original Noah/Priya comparison with mixed lengths is a class discussion and written-revision task; the first-party replacement uses different numbers to avoid reproducing publisher student illustrations. The verdict and the exact diagram-derived justification must both be checked."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Mixed-number decomposition",
+          "Definition": "A side such as 6 1/2 units can be split into 6 and 1/2.",
+          "Rule": "h×(a+f)=h×a+h×f.",
+          "Example": "4×6 1/2=24+2."
+        },
+        {
+          "Title": "Compare garden areas",
+          "Definition": "The larger single side does not alone determine which rectangle has greater area.",
+          "Rule": "Compute or estimate both products with matching square units.",
+          "Example": "4×6 1/2=26 while 5×5 1/4=26 1/4."
+        },
+        {
+          "Title": "A diagram supports a sum of subareas",
+          "Definition": "When a rectangle is split into pieces without overlap, the original area is the sum of the pieces.",
+          "Rule": "Every part must have corresponding valid side lengths.",
+          "Example": "5×5 1/4=5×5+5×1/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Elena's garden",
+          "Question": "Elena's garden is 4 yards by 6 1/2 yards. Find its area.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Draw a 4×6 whole-number region and a 4×1/2 strip.",
+            "Calculate 4×6=24 square yards.",
+            "Calculate 4×1/2=2 and add."
+          ],
+          "Answer": "26 square yards.",
+          "Check": "4×(13/2)=26."
+        },
+        {
+          "Title": "Mateo's garden",
+          "Question": "Mateo's garden is 5 yards by 5 1/4 yards. Find its area.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Draw a 5×5 region and an adjoining 5×1/4 strip.",
+            "Find 25 square yards for the square region.",
+            "Add 5/4=1 1/4 square yards."
+          ],
+          "Answer": "26 1/4 square yards.",
+          "Check": "5×21/4=105/4=26 1/4."
+        },
+        {
+          "Title": "Compare both gardens",
+          "Question": "Which garden is larger, and by how much?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Verify Elena's area is 26 square yards.",
+            "Verify Mateo's is 26 1/4 square yards.",
+            "Subtract 26 1/4−26 and explain the result geometrically."
+          ],
+          "Answer": "Mateo's garden is larger by 1/4 square yard.",
+          "Check": "A longer side does not necessarily give a larger rectangular area."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume the garden with the longest single side has greatest area",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Area depends on the product of BOTH perpendicular side lengths."
+        },
+        {
+          "Mistake": "Count a fractional strip as one whole extra strip",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Multiply the fractional length by the other full dimension before adding."
+        }
+      ],
+      "SummaryPoints": [
+        "A mixed-number side can be decomposed into whole and fractional strips.",
+        "Compare complete areas using square units before declaring a larger garden.",
+        "Garden drawings and revised comparisons are teacher-reviewed.",
+        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-12/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Decompose Area — equal-area reasoning",
+          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Garden",
+              "Cells": [
+                "Elena",
+                "Mateo"
+              ]
+            },
+            {
+              "Label": "Dimensions",
+              "Cells": [
+                "4 × 6 1/2",
+                "5 × 5 1/4"
+              ]
+            },
+            {
+              "Label": "Subareas",
+              "Cells": [
+                "24 + 2",
+                "25 + 1 1/4"
+              ]
+            },
+            {
+              "Label": "Area (square yards)",
+              "Cells": [
+                "26",
+                "26 1/4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": [],
+      "SourceTaskAuditNote": "Original two-garden comparison, mathematical proof and mixed-number decomposition"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L13",
+      "CultureCode": "en",
+      "Title": "Area and Properties of Operations",
+      "ExplanationParagraphs": [
+        "Goal: match decomposed shaded area diagrams with different algebraic expressions and explain both adding a fractional subrectangle and subtracting an unshaded strip from a larger rectangle. The source uses a partner card sort with multiple valid matches, so a single expression cannot certify the discussion.",
+        "Warm-up: compare 4×(6+1/3) with 4×6+4×1/3, then contrast the related subtraction 4×6−4×1/3. Explain that parentheses and the plus/minus sign identify which regions are shaded.",
+        "Activity 1: construct two original rectangles with height 4. Rectangle A has 2 3/4 units shaded width, so its area is 4×(2+3/4)=8+3=11 square units. Rectangle B has a 3-unit bounding width but one quarter-unit strip left unshaded, so its shaded area is 4×3−4×1/4=12−1=11. Make separate area text diagrams; do not imply that the two differently positioned shaded regions are identical in shape.",
+        "Activity 2: give a partner expression cards containing 4×(2 3/4), 4×3−4×1/4, 12−1, and 4×(2+1/4). Ask which cards match which original diagrams and require an explanation of the different shaded regions. The last expression represents only 9 square units and does not match either 11-square-unit rectangle.",
+        "Assessment: the source asks students to match card diagrams with more than one expression and then write new equivalent expressions, using area subregions for proof. Since a correct matching number is not proof of a valid diagram, the card-sort matching, writing and oral reasoning require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Addition decomposition",
+          "Definition": "Adjacent disjoint shaded rectangular pieces have total area equal to their summed areas.",
+          "Rule": "h×(a+f)=(h×a)+(h×f).",
+          "Example": "4×(2+3/4)=8+3=11."
+        },
+        {
+          "Title": "Subtraction decomposition",
+          "Definition": "A shaded rectangle may be the area of a bounding region minus an unshaded strip.",
+          "Rule": "h×(a−f)=(h×a)−(h×f).",
+          "Example": "4×(3−1/4)=12−1=11."
+        },
+        {
+          "Title": "Expression-to-diagram reasoning",
+          "Definition": "A valid area expression represents the actual selected shaded region and its dimensions.",
+          "Rule": "Numerically equal products need not correspond to the same partition or source diagram.",
+          "Example": "Both 8+3 and 12−1 equal 11, but represent different splits."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Add a fractional strip",
+          "Question": "Compute the area of a 4-by-2 3/4 shaded rectangle.",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Draw a height-4 region with width 2.",
+            "Add a separate height-4 by width-3/4 strip.",
+            "Calculate 4×2+4×3/4=8+3."
+          ],
+          "Answer": "11 square units.",
+          "Check": "4×11/4=11."
+        },
+        {
+          "Title": "Subtract an unshaded strip",
+          "Question": "A 4-by-3 rectangle has a 1/4-unit-wide unshaded strip. What shaded area remains?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Find full area 4×3=12 square units.",
+            "Find omitted strip area 4×1/4=1 square unit.",
+            "Subtract 12−1."
+          ],
+          "Answer": "11 square units.",
+          "Check": "4×(3−1/4)=11."
+        },
+        {
+          "Title": "Reject a false match",
+          "Question": "Does 4×(2+1/4) represent either previous 11-square-unit shaded region?",
+          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Steps": [
+            "Identify width 2+1/4=2 1/4.",
+            "Multiply by height 4 to obtain 9.",
+            "Compare 9 with the required shaded 11 square units."
+          ],
+          "Answer": "No; the expression represents 9 square units.",
+          "Check": "The expression's width is 1/2 unit shorter than the area-11 width 2 3/4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add an unshaded region as though it were colored",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Subtract areas that are physically absent from the shaded model."
+        },
+        {
+          "Mistake": "Claim matching expressions must show the same physical partition",
+          "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
+          "Correction": "Different decompositions may have equal totals; justify their own corresponding diagrams separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Distribute multiplication across plus and minus to match geometric regions.",
+        "A correct expression must match actual shaded and unshaded parts, not just a result.",
+        "Card sorts and explanation-rich matching remain teacher-reviewed.",
+        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-13/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Area and Properties of Operations — equal-area reasoning",
+          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Diagram",
+              "Cells": [
+                "A: shaded whole + strip",
+                "B: full rectangle − unshaded strip"
+              ]
+            },
+            {
+              "Label": "Expression",
+              "Cells": [
+                "4×(2+3/4)",
+                "4×(3−1/4)"
+              ]
+            },
+            {
+              "Label": "Parts",
+              "Cells": [
+                "8+3",
+                "12−1"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "11",
+                "11"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": [],
+      "SourceTaskAuditNote": "Original card-sort style expression-to-area mapping, with addition vs subtraction and distinct geometric partitions"
+    }
+  ]
+}
