@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l01-first-party-source-review-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "CultureCode": "en",
+      "Title": "Getting to Know You",
+      "ExplanationParagraphs": [
+        "Learning goal: distinguish a statistical question from a question with one fixed answer; explain whether each set of responses is numerical or categorical; design, collect and interpret a real survey. This is an original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition, Unit 1 Lesson 1 (CC BY 4.0), https://im.kendallhunt.com/HS/teachers/1/1/1/preparation.html. The publisher identifies 6.SP.A.1 as Building On and HSS-ID.A.1 as Building Towards, not as an Addressing target.",
+        "A statistical question anticipates variation across people or observations. Compare 'How many minutes does each student spend travelling to school?' (many possible responses) with 'How many minutes are in one hour?' (a fixed value). A number is not automatically statistical; the population and variability matter.",
+        "First-party guided activity: propose four answerable survey questions, at least one about numerical responses and one about categories. Explain why variation is expected, decide whom you can ask, record responses without names or identifying information, and report counts and a limitation of your sample. Collect actual answers only with classroom permission. Keep responses for a later display-building lesson. If collection is unavailable, use the clearly labelled fictional practice data below; do not claim they were collected from classmates.",
+        "Practice dataset (fictional, for demonstration only): twelve anonymous transportation responses are Walk, Bus, Bicycle, Walk, Bus, Bus, Bicycle, Walk, Bus, Bicycle, Walk, Bus. Record a frequency table and state what it does and does not imply about a wider population. Distinct questions such as transport method and commute duration need distinct response types.",
+        "Teacher-scored assessment rubric (0-2 each; total 8): 1) independently writes a statistical question anticipating variability; 2) identifies numerical versus categorical responses with a reason; 3) records and summarizes genuine or explicitly fictional responses without personal identifiers; 4) explains a justified interpretation and a sampling limitation. Award 0 for missing/incorrect, 1 for partially supported, 2 for specific and correct evidence. This task requires human review; no synthetic survey submission may be marked as a real participation grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistical question",
+          "Definition": "A question answered using variable data collected from a group or repeated observations.",
+          "Rule": "Ask whether different observations can reasonably give different responses.",
+          "Example": "'How long do students travel to school?' anticipates different travel times."
+        },
+        {
+          "Title": "Categorical versus numerical",
+          "Definition": "Categorical values are labels; numerical values are measurements or counts.",
+          "Rule": "A numeric label such as bus route 12 is categorical when arithmetic on the label has no meaning.",
+          "Example": "Bus, bicycle and walk are categories; commute time in minutes is numerical."
+        },
+        {
+          "Title": "Survey and sample",
+          "Definition": "A survey collects responses from a defined group; the sample may not represent everyone.",
+          "Rule": "Describe how responses were gathered and avoid identifying or inventing participants.",
+          "Example": "A voluntary group of twelve provides information about those twelve, not necessarily the entire school."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Recognize variability",
+          "Question": "Classify: A 'How many minutes are in an hour?' B 'How many minutes do students spend travelling here each morning?' Explain.",
+          "Method": "Specify the unit of observation and test whether different observations can reasonably differ.",
+          "Steps": [
+            "Question A has one fixed answer, 60, regardless of who is asked.",
+            "Question B asks about travel times across students, which can differ.",
+            "Because the B response depends on observations from multiple students, it anticipates variability and is statistical."
+          ],
+          "Answer": "A is non-statistical; B is statistical and yields numerical travel times.",
+          "Check": "A is fixed at 60 minutes; different students can reasonably give different nonnegative times for B."
+        },
+        {
+          "Title": "Classify and summarize a fictional sample",
+          "Question": "For twelve fictional replies, Walk 4, Bus 5 and Bicycle 3, what type are the data and what fraction chose Bus?",
+          "Method": "Identify categories, tally responses and divide the Bus count by the sample size.",
+          "Steps": [
+            "The answer labels Walk, Bus and Bicycle are categories, not measured quantities.",
+            "Count the responses: Walk 4, Bus 5, Bicycle 3.",
+            "Check that 4 + 5 + 3 = 12 responses.",
+            "Divide the Bus count by total replies: 5/12, approximately 41.7%.",
+            "Report that 5 of 12 fictional respondents chose Bus; do not generalize to all students."
+          ],
+          "Answer": "Categorical data; Bus accounts for 5/12 of the fictional sample (about 41.7%).",
+          "Check": "Counts sum to 12 and 5/12 lies between 0 and 1. The sample is invented for practice, not real survey evidence."
+        },
+        {
+          "Title": "Distinguish observations from real responses",
+          "Question": "Five fictional trip times in minutes are 9, 10, 10, 12, 15. Are these numerical data, and what is their mean?",
+          "Method": "Identify the measured variable and calculate the arithmetic mean without claiming real class data.",
+          "Steps": [
+            "The responses measure minutes; they are numerical.",
+            "The sum is 9 + 10 + 10 + 12 + 15 = 56 minutes.",
+            "Divide 56 by five observations to obtain 11.2 minutes.",
+            "The estimate describes only the invented example, not a class."
+          ],
+          "Answer": "Numerical data; the mean is 11.2 minutes.",
+          "Check": "11.2 x 5 = 56. The data are explicitly fictional."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling every question involving a number statistical.",
+          "WhyWrong": "A fixed answer such as the number of days in a specified seven-day week does not require variable data.",
+          "Correction": "State the observational population and explain why responses might vary."
+        },
+        {
+          "Mistake": "Treating numeric identifiers as quantitative measurements.",
+          "WhyWrong": "Adding bus route numbers or locker IDs does not represent a meaningful quantity.",
+          "Correction": "Use the data's role: label/category versus measured number."
+        },
+        {
+          "Mistake": "Claiming an invented sample represents a real class.",
+          "WhyWrong": "No real participant or response was observed.",
+          "Correction": "Mark samples as fictional; collect and document authentic anonymous responses only when authorized."
+        }
+      ],
+      "SummaryPoints": [
+        "Statistical questions anticipate variability; non-statistical questions can be answered without a distribution of variable observations.",
+        "Numerical values measure or count, while categorical values identify groups even if categories have numeral-like labels.",
+        "A valid survey result includes the actual population/sample and a justified limitation.",
+        "Open survey design, interpretation and authentic data collection must be assessed with a teacher rubric rather than fabricated auto-grading."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fictional commute mode survey",
+          "Description": "Accessible frequency table of invented responses from twelve hypothetical learners, not real classmates.",
+          "PrimaryLabel": "Transport mode",
+          "SecondaryLabel": "Response count",
+          "Rows": [
+            {
+              "Label": "Walk",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "Bus",
+              "Cells": [
+                "5"
+              ]
+            },
+            {
+              "Label": "Bicycle",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
