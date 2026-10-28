@@ -86,7 +86,49 @@
         "A visually plausible drawing can still be distorted.",
         "Explain a scaled-copy decision with at least two checked corresponding ratios."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Uniformly scaled triangle",
+          "Description": "Corresponding lengths are compared in the same order. Each copy/original quotient is 2. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Original side (units)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Copy side (units)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ]
+            },
+            {
+              "Label": "Scale factor",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -172,7 +214,49 @@
         "The copy-to-original length ratio is the scale factor.",
         "Reciprocal factors reverse scaling; angles remain unchanged."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Corresponding sides in two triangles",
+          "Description": "Vertices A↔D, B↔E, C↔F. Each copied side is 1.5 times its partner. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "ABC side",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "AB 4",
+                "BC 5",
+                "CA 6"
+              ]
+            },
+            {
+              "Label": "DEF side",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "DE 6",
+                "EF 7.5",
+                "FD 9"
+              ]
+            },
+            {
+              "Label": "Copy/original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1.5",
+                "1.5",
+                "1.5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -258,7 +342,49 @@
         "Use (kx,ky) to scale grid coordinates about the origin.",
         "Verify both shape preservation and matching length ratios."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Scale a triangle about the origin",
+          "Description": "Each coordinate is multiplied by 2; the origin stays fixed. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Point",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "(0,0)",
+                "(2,0)",
+                "(0,3)"
+              ]
+            },
+            {
+              "Label": "Factor-two copy",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "(0,0)",
+                "(4,0)",
+                "(0,6)"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -344,7 +470,49 @@
         "Angles stay equal in scaled copies.",
         "Use distances and angles together to test a proposed copy."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Distances in scaled copies",
+          "Description": "Invisible diagonals scale too; horizontal and vertical offsets are doubled. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measured distance",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Across",
+                "Up",
+                "Diagonal"
+              ]
+            },
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Copy",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -430,7 +598,49 @@
         "Reverse a scale by using 1/k.",
         "Scaled-copy lengths depend multiplicatively on k."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Scale-factor sizes",
+          "Description": "The same 12-unit segment is reduced, preserved, or enlarged depending on k. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Factor",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1/2",
+                "1",
+                "3/2"
+              ]
+            },
+            {
+              "Label": "Original length",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12",
+                "12",
+                "12"
+              ]
+            },
+            {
+              "Label": "Copy length",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "12",
+                "18"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -516,7 +726,49 @@
         "Use areas of rectangles, triangles or manipulatives to verify.",
         "The square-factor rule holds for reductions too."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Area is squared scaling",
+          "Description": "A 3-by-4 rectangle becomes 6-by-8 at scale factor 2, increasing area fourfold. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Measurement",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Width",
+                "Height",
+                "Area"
+              ]
+            },
+            {
+              "Label": "Original",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "12"
+              ]
+            },
+            {
+              "Label": "Copy",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "6",
+                "8",
+                "48"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -602,7 +854,49 @@
         "Convert units before using a unitless ratio.",
         "Use multiplication or division to move between drawing and reality."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Floor plan distance conversion",
+          "Description": "The model uses 1 cm on paper for 2 m of real distance. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Plan length (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1",
+                "3",
+                "7"
+              ]
+            },
+            {
+              "Label": "Actual length (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "6",
+                "14"
+              ]
+            },
+            {
+              "Label": "Rate (m/cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -688,7 +982,49 @@
         "Convert map lengths to actual distances.",
         "Use distance, speed and time with consistent units."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Measuring a bent map route",
+          "Description": "Add consecutive segments along the route before converting using 1 cm for 1 km. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Route portion",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "First segment",
+                "Second segment",
+                "Total estimate"
+              ]
+            },
+            {
+              "Label": "Map (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "7"
+              ]
+            },
+            {
+              "Label": "Actual (km)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "4",
+                "7"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -774,7 +1110,46 @@
         "Different scales can represent the same real object.",
         "A usable scale fits the drawing medium."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Room scale drawing",
+          "Description": "Using 1 cm for 2 m, both floor-plan dimensions shrink by the same rule. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Dimension",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Length",
+                "Width"
+              ]
+            },
+            {
+              "Label": "Room measurement (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "5"
+              ]
+            },
+            {
+              "Label": "Drawing measurement (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "4",
+                "2.5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -860,7 +1235,46 @@
         "Every drawing dimension changes by one common factor.",
         "Drawing area changes by the square of that factor."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Changing plan scales",
+          "Description": "One wall drawn at 1 cm:4 m and 1 cm:2 m changes drawing length but not actual distance. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scale",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1 cm:4 m",
+                "1 cm:2 m"
+              ]
+            },
+            {
+              "Label": "Wall drawing (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "Same actual wall (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "12",
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -946,7 +1360,49 @@
         "At 1:n, actual length=n×drawing length.",
         "A smaller n gives a larger drawing for the same real object."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Unitless 1:60 scale",
+          "Description": "Drawing and actual lengths are both in centimeters. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Drawing (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Actual (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "60",
+                "180",
+                "240"
+              ]
+            },
+            {
+              "Label": "Actual/drawing",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "60",
+                "60",
+                "60"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1032,7 +1488,46 @@
         "Equivalent scales have the same unitless ratio.",
         "Real areas use the square of the real-to-drawing length factor."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Convert inch–foot scale units",
+          "Description": "The same ratio 1 inch to 2.5 feet becomes 1 inch to 30 inches. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Drawing",
+                "Actual"
+              ]
+            },
+            {
+              "Label": "Inches",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1",
+                "30"
+              ]
+            },
+            {
+              "Label": "Feet",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "1/12",
+                "2.5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1118,7 +1613,46 @@
         "Choose one scale that fits the paper and use it consistently.",
         "Have a teacher review the drawing, measurement decisions and explanation."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Draw it to scale",
+          "Description": "At 1 cm:1 m, a measured 8-by-6 m room becomes an 8-by-6 cm rectangle. This first-party text table has labeled row headers so its numerical evidence is accessible without color or an image.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Dimension",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "Length",
+                "Width"
+              ]
+            },
+            {
+              "Label": "Actual (m)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "6"
+              ]
+            },
+            {
+              "Label": "Drawing (cm)",
+              "Numerator": 0,
+              "Denominator": 0,
+              "Cells": [
+                "8",
+                "6"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]
