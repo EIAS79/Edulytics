@@ -35,7 +35,12 @@
     "publicOriginalSourceTaskTextFullyReplicated": 0,
     "publicSourceTextActivityPairsDocumented": 12,
     "exactRuntimePracticeSelectionTracedToVerifiedStudentSession": 0,
-    "sourceAlignedRichV2AreaUpdated": 3
+    "sourceAlignedRichV2AreaUpdated": 3,
+    "humanScoredRubricCandidates": 3,
+    "humanScoredCriteriaAuthored": 12,
+    "authenticatedTeacherEvaluationFlowsVerified": 0,
+    "originalSourceActivitiesTextCompared": 12,
+    "exactPracticeTeacherScoringOutcomesVerified": 0
   },
   "sharedBlockers": [
     {
@@ -72,7 +77,7 @@
     }
   ],
   "sourceAuditNotes": "All 147 lessons received a full candidate rewrite of their English learning goal, explanation, key concepts, two original worked examples, five-step procedure, misconception and summary. 27 lesson teacher preparation page goals/topics had partial source inspection (all 19 U01 plus U02–U09 L01). Remaining 120 authorings use the previously checked-in source-derived first-party pedagogical description; this is NOT a fresh independent review of each original teacher page. All 147 publisher original student activities, media/figure parity and effective learner rendering remain unverified. On 2026-10-28 U01:L01–L03 additionally had direct PUBLIC historical student, teacher and practice text comparisons; see publicSourceTaskBoundaryFile. They remain NOT_ACCEPTED because effective UI, images/applets, actual assessment and protected academic review are absent.",
-  "testEvidence": "Connector-backed V8 structural review remains prior evidence only. Area source review compares public original teacher, student and practice tasks (three lessons). The committed Node tests have NOT been executed on an approved isolated full-repository runner, and .NET, authenticated UI, exact Practice, DB, two-school and cross-curriculum tests remain NOT_RUN.",
+  "testEvidence": "Executed 12 committed Grade 6 test callbacks against connector-fetched branch files in a JavaScript V8 compatibility harness, 12 PASS at content commit 6408ababdc7b87c3ade9cc9e87274854fa207b08. This is NOT an actual Node execution, .NET build, full application runtime or protected CI. Subsequent rubric/evidence/test edits require re-running for final head. Original public teacher/student/practice pages U01 L01–L03 reviewed as text; authenticated student/teacher routes, 147 actual Practice contracts, DB and tenants NOT_RUN.",
   "lessons": [
     {
       "sortOrder": 1,
@@ -134,7 +139,12 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": true
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
+        "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -210,7 +220,12 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": true
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
+        "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -284,7 +299,12 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": true
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
+        "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -358,7 +378,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -431,7 +455,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -506,7 +534,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -579,7 +611,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -650,7 +686,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -726,7 +766,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -799,7 +843,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -875,7 +923,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -948,7 +1000,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1021,7 +1077,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1092,7 +1152,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1167,7 +1231,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1245,7 +1313,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1322,7 +1394,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1397,7 +1473,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1470,7 +1550,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1543,7 +1627,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1616,7 +1704,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1687,7 +1779,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1760,7 +1856,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1833,7 +1933,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1906,7 +2010,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -1979,7 +2087,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2052,7 +2164,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2125,7 +2241,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2199,7 +2319,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2272,7 +2396,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2346,7 +2474,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2419,7 +2551,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2490,7 +2626,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2564,7 +2704,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2635,7 +2779,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2711,7 +2859,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2785,7 +2937,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2861,7 +3017,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -2936,7 +3096,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3009,7 +3173,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3084,7 +3252,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3159,7 +3331,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3233,7 +3409,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3304,7 +3484,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3378,7 +3562,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3455,7 +3643,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3526,7 +3718,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3599,7 +3795,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3675,7 +3875,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3749,7 +3953,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3823,7 +4031,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3894,7 +4106,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -3977,7 +4193,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4054,7 +4274,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4131,7 +4355,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4206,7 +4434,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4280,7 +4512,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4353,7 +4589,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4424,7 +4664,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4497,7 +4741,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4568,7 +4816,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4641,7 +4893,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4714,7 +4970,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4787,7 +5047,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4860,7 +5124,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4935,7 +5203,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5010,7 +5282,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5081,7 +5357,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5152,7 +5432,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5225,7 +5509,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5300,7 +5588,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5374,7 +5666,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5447,7 +5743,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5518,7 +5818,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5599,7 +5903,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5675,7 +5983,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5749,7 +6061,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5824,7 +6140,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5899,7 +6219,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -5974,7 +6298,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6049,7 +6377,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6125,7 +6457,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6203,7 +6539,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6278,7 +6618,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6349,7 +6693,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6428,7 +6776,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6501,7 +6853,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6574,7 +6930,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6652,7 +7012,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6731,7 +7095,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6805,7 +7173,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6882,7 +7254,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -6955,7 +7331,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7034,7 +7414,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7109,7 +7493,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7184,7 +7572,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7257,7 +7649,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7328,7 +7724,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7401,7 +7801,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7476,7 +7880,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7552,7 +7960,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7626,7 +8038,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7697,7 +8113,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7772,7 +8192,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7845,7 +8269,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -7922,7 +8350,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8000,7 +8432,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8080,7 +8516,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8151,7 +8591,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8228,7 +8672,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8303,7 +8751,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8376,7 +8828,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8451,7 +8907,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8528,7 +8988,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8607,7 +9071,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8682,7 +9150,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8761,7 +9233,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8835,7 +9311,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8916,7 +9396,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -8987,7 +9471,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9058,7 +9546,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9129,7 +9621,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9202,7 +9698,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9279,7 +9779,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9356,7 +9860,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9433,7 +9941,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9512,7 +10024,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9591,7 +10107,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9668,7 +10188,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9746,7 +10270,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9821,7 +10349,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9899,7 +10431,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -9972,7 +10508,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10047,7 +10587,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10123,7 +10667,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10197,7 +10745,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10270,7 +10822,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10344,7 +10900,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10418,7 +10978,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10493,7 +11057,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10568,7 +11136,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10647,7 +11219,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10731,7 +11307,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10815,7 +11395,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10889,7 +11473,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -10962,7 +11550,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -11038,7 +11630,11 @@
         "generatorVerifierAndResponseTests": "NOT_RUN",
         "teacherRubricNeeded": false,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false
+        "teacherOnlyJustificationRubricBoundaryDefined": false,
+        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyRubricPersistedVerified": false,
+        "humanEvaluatedLearnerSampleVerified": false,
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -11061,10 +11657,15 @@
   "lastTestAuthoringCommit": "c9b04f86bbab9b846a668666e2bfe2068107a01c",
   "nextUnrepairedLessonCode": null,
   "nextFullSourceTaskParityLesson": "PED:US-CCSS-MATH:G6:U01:L01",
-  "releaseVerdict": "AUTHORING_CANDIDATE_COMPLETE__RELEASE_BLOCKED",
+  "releaseVerdict": "FULL_GRADE_TEXT_AUTHORING_CANDIDATE__PRACTICE_RUNTIME_SOURCE_ACADEMIC_AND_RELEASE_BLOCKED",
   "publicSourceTaskBoundaryFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
   "publicSourceTaskReviewNote": "For U01:L01-L03 the public historical teacher/student/practice text and alt descriptions were checked. Teacher model answers behind login, publisher interactive applet functionality, exact diagram pixels, materialized Edulytiks student rendering, teacher evidence and exact selected Practice remain unverified. This DOES NOT mean three Stage A acceptances.",
   "lastSourceTaskAreaAuthoringCommit": "1860118f670f136319bac6930f181b4ca3e508a5",
   "lastSourceTaskBoundaryCommit": "c5e1c2f9d4c089aff2152a0a64b061d89c9acf1e",
-  "lastSourceTaskGuardCommit": "8b3b24efd2daad06ac0c7250624f3ee3a8014f9c"
+  "lastSourceTaskGuardCommit": "8b3b24efd2daad06ac0c7250624f3ee3a8014f9c",
+  "lastRubricCandidateCommit": "b0b44dace99266d33938bbb0062443876a35922a",
+  "lastGradeSourceBoundaryTestCommit": "d076067c37ef3c059b1a27056ab4a8c99da8b1c8",
+  "nextUnreviewedPublicSourceTaskLesson": "PED:US-CCSS-MATH:G6:U01:L04",
+  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U01:L01",
+  "nextSharedCapabilityWork": "Owner-designated single-writer trace of actual selected Practice contract and teacher-rubric persistence for U01 L01-L03 (then all 147) + protected metadata predecessor study"
 }
