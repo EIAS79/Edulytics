@@ -1,0 +1,119 @@
+{
+  "schema": "edulytiks-us-ccss-coder8-course-evidence-v1",
+  "asOf": "2026-10-28",
+  "operator": "Coder 8",
+  "supervisor": "American Supervisor 3",
+  "course": {
+    "curriculum": "US-CCSS-MATH",
+    "standardsVersion": "CCSSM-2010",
+    "blueprintCode": "US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC",
+    "courseCode": "ADV-ALG-FUNC",
+    "pathway": "Fourth Courses",
+    "unitCount": 1,
+    "lessonCount": 2
+  },
+  "git": {
+    "repository": "EIAS79/Edulytics",
+    "auditedMain": "39c757630d2bd67217a1468fce099653ed0f3f53",
+    "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+    "contentCommit": "14a487ccb5b04c2d3178e63ae99ba9f5e65c49a0",
+    "courseTestCommit": "e13fa7977b5b4f56fcef22f04ef412071862edb4"
+  },
+  "content": {
+    "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
+    "oldVersion": "phase30-common-core-rich-content-v1",
+    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+    "baselineFileBlobSha": "69306240d3f240177af7dcc6b25fc420c59a8316",
+    "candidateFileBlobSha": "6a581d4b3212a5ca122d7c1bef764d2e66ffe30b",
+    "sourceMetadataPreserved": true,
+    "migrationRequired": true,
+    "persistedPredecessorVerified": false,
+    "effectiveRenderedContentVerified": false,
+    "publisherTaskPdfIndependentlyRechecked": false
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "title": "All Systems Go",
+      "standardCodes": [
+        "CCSS:HSA-REI.C.8",
+        "CCSS:HSA-REI.C.9"
+      ],
+      "sourceSha256Recorded": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+      "canonicalBodySha256Recorded": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "changes": [
+        "2x2 inverse determinant and multiplication example",
+        "3x3 inverse using matrix-capable technology and independent verification",
+        "singular dependent vs inconsistent classification",
+        "inverse versus row reduction decision guidance"
+      ],
+      "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
+      "localMathOracle": "PASS_EXACT_ARITHMETIC",
+      "runtimeLessonPractice": "NOT_RUN"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "title": "Log Logic",
+      "standardCodes": [
+        "CCSS:HSF-BF.B.5"
+      ],
+      "sourceSha256Recorded": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+      "canonicalBodySha256Recorded": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "changes": [
+        "same-base comparison with logarithm bounds",
+        "base between zero and one reverses inequality",
+        "comparison across different bases",
+        "proof of product rule and counterexample to sum rule",
+        "logarithmic equation domain check"
+      ],
+      "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "practiceStatus": "PARTIAL_NUMERIC_SUBSKILLS_SHARED_INTEGRATION_REQUIRED_FOR_SOURCE_GOAL",
+      "localMathOracle": "PASS_DOUBLE_WITH_TOLERANCE",
+      "runtimeLessonPractice": "NOT_RUN"
+    }
+  ],
+  "verification": {
+    "staticClientSideInspections": {
+      "executed": true,
+      "total": 12,
+      "passed": 11,
+      "failed": 1,
+      "failure": "CCSS:HSA-REI.C.8 and .9 still map to one-step-formula-equation in shared official-outcome-practice-map.v1.json",
+      "method": "GitHub connector fetched exact branch content and JS assertions executed in this chat; no compiled .NET tests were run"
+    },
+    "independentOracle": "Python sympy inversion and substitution of existing 3x3 system passed; JS checked 3x3 product, 4 logarithm inverse powers and comparison ordering",
+    "dotnetCompile": "NOT_RUN: dotnet SDK unavailable in local execution container",
+    "dotnetTests": "NOT_RUN",
+    "protectedCi": "NOT_RUN",
+    "authenticatedTwoSchool": "NOT_RUN",
+    "effectiveStudentRoute": "NOT_VERIFIED",
+    "actualDeployedSha": "NOT_VERIFIED",
+    "ownerUat": "NOT_VERIFIED",
+    "academicApproved": "NOT_VERIFIED"
+  },
+  "release": {
+    "courseOwnedContentChanges": "2/2",
+    "practiceComplete": "0/2 certified",
+    "academicAccepted": "0/2",
+    "releaseCandidate": "BLOCKED_BY_INTEGRATION_OWNER",
+    "merged": false,
+    "deployed": false,
+    "gateIssues": [
+      "https://github.com/EIAS79/Edulytics/issues/584",
+      "https://github.com/EIAS79/Edulytics/issues/453"
+    ],
+    "parallelConflicts": [
+      "PR #399 touches shared Practice and materializer",
+      "PR #394 touches shared canonical lesson seeder"
+    ],
+    "nextRequiredOwner": "designated global integration owner",
+    "nextRequiredAction": "Resolve exact matrix/log Practice contract, source-aware content predecessor materialization and #453 HS adoption; rerun C# tests and cross-curriculum regressions, obtain protected exact SHA CI and authenticated student/teacher disposable testing before any production handoff"
+  },
+  "rights": {
+    "originalPublisherContentCopied": false,
+    "rightsEvidence": "Existing pack and blueprint record CC BY 4.0 Phase 29 source; exact source PDF hash/license not independently reverified this session",
+    "sourceTitlesPreserved": true,
+    "exactPublisherEquivalenceClaimed": false
+  }
+}
