@@ -1,7 +1,7 @@
 {
   "packCode": "US-CCSS-MATH",
   "versionCode": "CCSSM-2010",
-  "contentVersion": "us-ccss-g6-learner-goal-repair-candidate-20261028-v1",
+  "contentVersion": "us-ccss-g6-full-grade-authoring-candidate-20261028-v1",
   "sourcePolicyVersion": 2,
   "targetCurriculumPeriod": "2026-2027",
   "sourceCurriculumPeriod": "Common Core State Standards 2010",
@@ -3355,7 +3355,7 @@
           "keyConceptsAndRules": "Key ideas:\n- a^n = a × a × ... × a with n copies of a for positive integer n.\n- The base is the repeated factor; the exponent is the count of factors.\n- Exponential growth differs from multiplying the base by the exponent.",
           "workedExamples": "Example 1: 2^5 = 2×2×2×2×2 = 32, not 10.\nExample 2: 3^4 = 3×3×3×3 = 81, while 4^3 = 4×4×4 = 64; exchanging base and exponent changes the value.",
           "stepByStepSolutions": "Step 1: Identify base and positive integer exponent.\nStep 2: Write the repeated product with the correct count of factors.\nStep 3: Multiply carefully or group factors.\nStep 4: Compare with a visual repeated-doubling pattern when useful.\nStep 5: Explain why multiplying the base by the exponent is not equivalent.",
-          "commonMistakes": "Treating 2^5 as 2×5 mistakes repeated multiplication for repeated addition.",
+          "commonMistakes": "Treating 2^5 as 2×5 confuses repeated multiplication with one multiplication. Write the base five times and multiply before evaluating the power.",
           "quickSummary": "A positive whole-number exponent counts how many copies of the base are multiplied."
         }
       ]
@@ -3739,7 +3739,7 @@
           "keyConceptsAndRules": "Key ideas:\n- Rational numbers may be represented as fractions, decimals and signed integers.\n- The number line orders values from least at left to greatest at right.\n- Equivalent fraction-decimal forms can simplify comparisons.",
           "workedExamples": "Example 1: Order −2, −1/2, 0, 3/4: −2 < −1/2 < 0 < 3/4.\nExample 2: Compare −0.75 and −2/3. Since −0.75 < approximately −0.6667, −0.75 is the smaller number.",
           "stepByStepSolutions": "Step 1: Convert numbers to comparable fractions or decimals when useful.\nStep 2: Mark a common zero and appropriate tick scale.\nStep 3: Place negatives left of zero and positives right.\nStep 4: Read values in increasing or decreasing order as requested.\nStep 5: Check negative comparisons using magnitude and sign.",
-          "commonMistakes": "On a number line, −0.8 lies left of −0.5 even though 8 > 5 as unsigned digits.",
+          "commonMistakes": "On a number line, −0.8 lies left of −0.5 even though 8 > 5 as unsigned digits. Compare their signed locations rather than the absolute values of digits.",
           "quickSummary": "Order rational values on a common number line and compare negative numbers by position, not unsigned digits."
         }
       ]
@@ -5001,7 +5001,7 @@
           "title": "Rectangle Madness",
           "explanation": "Learning goal: You will use rectangle decompositions into squares to find greatest common factors and equivalent fractions.\nRepeatedly cutting the largest possible square from a rectangle illustrates the Euclidean algorithm for the greatest common factor of its side lengths. When a rectangle has integer sides, the side length of the largest equal square tile that fits both side lengths exactly is their GCF. Dividing numerator and denominator by that GCF simplifies a fraction.",
           "keyConceptsAndRules": "Key ideas:\n- A square that tiles an integer-sided rectangle without waste must have a side length dividing both dimensions.\n- The largest possible integer square tile side length is GCF(length,width).\n- Equivalent fractions divide numerator and denominator by the same nonzero factor.",
-          "workedExamples": "Example 1: A 12-by-8 rectangle can be tiled by 4-by-4 squares; 4 is GCF(12,8). The ratio 12:8 simplifies to 3:2.\nExample 2: A 15-by-9 rectangle has GCF(15,9)=3, so nine? It contains 5×3 =15 squares of side 3, and 15/9 simplifies to 5/3. Each small square covers 9 square units.",
+          "workedExamples": "Example 1: A 12-by-8 rectangle can be tiled by 4-by-4 squares; 4 is GCF(12,8). The ratio 12:8 simplifies to 3:2.\nExample 2: A 15-by-9 rectangle has GCF(15,9)=3, and contains 5×3 =15 squares of side 3, and 15/9 simplifies to 5/3. Each small square covers 9 square units.",
           "stepByStepSolutions": "Step 1: Draw or describe a rectangle with integer side lengths.\nStep 2: List common side-length divisors or remove largest available square sections.\nStep 3: Identify the maximum equal square side length dividing both dimensions.\nStep 4: Use that factor to simplify the corresponding side-length ratio.\nStep 5: Check that the reduced fraction multiplies back to the original values.",
           "commonMistakes": "The GCF is a length, not the number of tiles. For the 15-by-9 rectangle, side 3 gives 15 small tiles, not 3 tiles.",
           "quickSummary": "Square tiling and the Euclidean algorithm connect greatest common factors to equivalent fractions."
