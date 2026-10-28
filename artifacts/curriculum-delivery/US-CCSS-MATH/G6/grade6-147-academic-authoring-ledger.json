@@ -3,18 +3,18 @@
   "scope": "US-CCSS-MATH:G6:OUR-IM-2017",
   "branch": "curriculum/us-ccss-g6-full-grade-20261028",
   "sourceMainSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
-  "lastPackAuthoringCommit": "65c41675db9777586f0bacae44173a3dca7b96c8",
+  "lastPackAuthoringCommit": "decc799cf39da74de31e98d4762dbc3614978b84",
   "sourceEdition": "2017–2019 CC BY 4.0 lineage",
   "scopeNotice": "Only Grade 6. Do not infer acceptance, effective student content, persisted DB compatibility or verified Practice from JSON.",
   "summary": {
     "canonicalLessons": 147,
     "units": 9,
     "lessonIdsMatched": 147,
-    "originalPublisherTeacherPreparationGoalReviewed": 11,
+    "originalPublisherTeacherPreparationGoalReviewed": 27,
     "fullStageAReviews": 0,
     "learningGoalsModified": 147,
     "quickSummaryGoalsModified": 147,
-    "substantiveLessonsRepaired": 11,
+    "substantiveLessonsRepaired": 27,
     "sourceStudentTaskParityAccepted": 0,
     "confirmedPracticeRuntimeContracts": 0,
     "explicitPracticeMetadataMappings": 8,
@@ -25,8 +25,10 @@
     "releaseReady": false,
     "authoredGrade6RichV2Sidecars": 3,
     "richV2PublisherActivityParityVerified": 0,
-    "remainingBaselineGenericProcedureTemplates": 108,
-    "authenticatedStudentRichV2RenderVerified": 0
+    "remainingBaselineGenericProcedureTemplates": 100,
+    "authenticatedStudentRichV2RenderVerified": 0,
+    "lessonsNotSubstantivelyEdited": 120,
+    "partialSourceLessonCandidates": 27
   },
   "sharedBlockers": [
     {
@@ -62,8 +64,8 @@
       "requestedAction": "Read-only persisted-version inventory; isolated disposable DB materialization and authentic student content parity before protected release."
     }
   ],
-  "sourceAuditNotes": "Eleven original teacher preparation pages were inspected for narratives/learning targets and checked against the revised lessons. Full original student task sets, art and accessibility were not comprehensively reviewed. Other 136 lesson goals were derived from existing pack key concepts, not independently verified publisher tasks.",
-  "testEvidence": "Connected-GitHub in-memory JavaScript static reconciliation: 147 IDs, nine units, 147 action goals, source links, and 11 authored examples PASS on branch snapshot. The committed Node tests are NOT_RUN in Node; .NET, authenticated UI, two-school, actual Practice marking and cross-curriculum suites NOT_RUN. Rich V2 structure statically checked, not compiled/rendered.",
+  "sourceAuditNotes": "27 lesson topics and goal/teacher-preparation excerpts reviewed (all 19 Unit 1 plus the first lesson of Units 2–9). Source student-facing full tasks/artwork and actual rendered product were not fully inspected. All 147 goals were derived from first-party content/goal evidence, not an independent 147-source verification. No academic A-D pass is inferred.",
+  "testEvidence": "GitHub connector payload parsed, JS structural checks done in functions tool. Node test file committed but NOT_RUN in Node; .NET, CI, authenticated UI, two-school, generator verifier, persistence and cross-curriculum all NOT_RUN. Candidate tests in source control are not an executed CI run.",
   "lessons": [
     {
       "sortOrder": 1,
@@ -97,7 +99,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/1/preparation.html"
       },
       "stageB": {
@@ -132,7 +134,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify original publisher student activity parity, render explicit Grade 6 Rich V2 under authenticated student route, and develop exact area Practice via shared integration owner."
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 2,
@@ -166,7 +168,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/2/preparation.html"
       },
       "stageB": {
@@ -201,7 +203,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify original publisher student activity parity, render explicit Grade 6 Rich V2 under authenticated student route, and develop exact area Practice via shared integration owner."
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 3,
@@ -233,7 +235,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/3/preparation.html"
       },
       "stageB": {
@@ -268,7 +270,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify original publisher student activity parity, render explicit Grade 6 Rich V2 under authenticated student route, and develop exact area Practice via shared integration owner."
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 4,
@@ -298,17 +300,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/4/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -334,9 +336,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 5,
@@ -365,17 +367,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/5/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -401,9 +403,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 6,
@@ -434,17 +436,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/6/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -470,9 +472,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 7,
@@ -501,17 +503,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/7/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -537,9 +539,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 8,
@@ -566,17 +568,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/8/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -602,9 +604,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 9,
@@ -636,17 +638,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/9/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -672,9 +674,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 10,
@@ -703,17 +705,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/10/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -739,9 +741,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 11,
@@ -773,17 +775,17 @@
         "CCSS:6.G.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/11/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -809,9 +811,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 12,
@@ -840,17 +842,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/12/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -876,9 +878,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 13,
@@ -907,17 +909,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/13/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -943,9 +945,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 14,
@@ -972,17 +974,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/14/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -1008,9 +1010,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 15,
@@ -1041,17 +1043,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/15/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -1077,9 +1079,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 16,
@@ -1113,17 +1115,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/16/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -1149,9 +1151,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 17,
@@ -1184,17 +1186,17 @@
         "CCSS:6.EE.A.1"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/17/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -1220,9 +1222,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 18,
@@ -1253,17 +1255,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/18/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -1289,9 +1291,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 19,
@@ -1320,17 +1322,17 @@
         "CCSS:6.G.A.4"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "NOT_FULLY_REVIEWED",
-        "evidenceUrl": null
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
+        "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/19/preparation.html"
       },
       "stageB": {
         "learningGoalEdited": true,
         "quickSummaryGoalEdited": true,
-        "substantiveTeachingRepaired": false,
-        "sourceSpecificExamplesAndStrategiesAuthored": false,
+        "substantiveTeachingRepaired": true,
+        "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
         "fullLessonParityAccepted": false,
         "explicitGrade6RichV2SidecarAuthored": false,
@@ -1356,9 +1358,9 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN"
       },
-      "category": "UNASSESSED",
+      "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 20,
@@ -1390,7 +1392,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/2/1/preparation.html"
       },
       "stageB": {
@@ -1425,7 +1427,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 21,
@@ -1492,7 +1494,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 22,
@@ -1557,7 +1559,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 23,
@@ -1624,7 +1626,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 24,
@@ -1691,7 +1693,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 25,
@@ -1758,7 +1760,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 26,
@@ -1825,7 +1827,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 27,
@@ -1892,7 +1894,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 28,
@@ -1959,7 +1961,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 29,
@@ -2027,7 +2029,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 30,
@@ -2094,7 +2096,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 31,
@@ -2162,7 +2164,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 32,
@@ -2229,7 +2231,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 33,
@@ -2294,7 +2296,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 34,
@@ -2362,7 +2364,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 35,
@@ -2427,7 +2429,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 36,
@@ -2497,7 +2499,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 37,
@@ -2530,7 +2532,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/3/1/preparation.html"
       },
       "stageB": {
@@ -2565,7 +2567,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 38,
@@ -2635,7 +2637,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 39,
@@ -2704,7 +2706,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 40,
@@ -2771,7 +2773,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 41,
@@ -2840,7 +2842,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 42,
@@ -2909,7 +2911,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 43,
@@ -2977,7 +2979,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 44,
@@ -3042,7 +3044,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 45,
@@ -3110,7 +3112,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 46,
@@ -3181,7 +3183,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 47,
@@ -3246,7 +3248,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 48,
@@ -3313,7 +3315,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 49,
@@ -3383,7 +3385,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 50,
@@ -3451,7 +3453,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 51,
@@ -3519,7 +3521,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 52,
@@ -3584,7 +3586,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 53,
@@ -3661,7 +3663,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 54,
@@ -3695,7 +3697,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/4/1/preparation.html"
       },
       "stageB": {
@@ -3732,7 +3734,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 55,
@@ -3803,7 +3805,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 56,
@@ -3872,7 +3874,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 57,
@@ -3940,7 +3942,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 58,
@@ -4007,7 +4009,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 59,
@@ -4072,7 +4074,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 60,
@@ -4139,7 +4141,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 61,
@@ -4204,7 +4206,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 62,
@@ -4271,7 +4273,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 63,
@@ -4338,7 +4340,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 64,
@@ -4405,7 +4407,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 65,
@@ -4472,7 +4474,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 66,
@@ -4541,7 +4543,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 67,
@@ -4610,7 +4612,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 68,
@@ -4675,7 +4677,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 69,
@@ -4740,7 +4742,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 70,
@@ -4807,7 +4809,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 71,
@@ -4839,7 +4841,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/5/1/preparation.html"
       },
       "stageB": {
@@ -4876,7 +4878,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 72,
@@ -4944,7 +4946,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 73,
@@ -5011,7 +5013,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 74,
@@ -5076,7 +5078,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 75,
@@ -5151,7 +5153,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 76,
@@ -5221,7 +5223,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 77,
@@ -5289,7 +5291,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 78,
@@ -5358,7 +5360,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 79,
@@ -5427,7 +5429,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 80,
@@ -5496,7 +5498,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 81,
@@ -5565,7 +5567,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 82,
@@ -5635,7 +5637,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 83,
@@ -5707,7 +5709,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 84,
@@ -5776,7 +5778,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 85,
@@ -5841,7 +5843,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 86,
@@ -5879,7 +5881,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/6/1/preparation.html"
       },
       "stageB": {
@@ -5914,7 +5916,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 87,
@@ -5981,7 +5983,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 88,
@@ -6048,7 +6050,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 89,
@@ -6120,7 +6122,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 90,
@@ -6193,7 +6195,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 91,
@@ -6261,7 +6263,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 92,
@@ -6332,7 +6334,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 93,
@@ -6399,7 +6401,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 94,
@@ -6472,7 +6474,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 95,
@@ -6541,7 +6543,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 96,
@@ -6610,7 +6612,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 97,
@@ -6677,7 +6679,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 98,
@@ -6742,7 +6744,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 99,
@@ -6809,7 +6811,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 100,
@@ -6878,7 +6880,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 101,
@@ -6948,7 +6950,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 102,
@@ -7016,7 +7018,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 103,
@@ -7081,7 +7083,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 104,
@@ -7150,7 +7152,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 105,
@@ -7182,7 +7184,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/7/1/preparation.html"
       },
       "stageB": {
@@ -7217,7 +7219,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 106,
@@ -7288,7 +7290,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 107,
@@ -7360,7 +7362,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 108,
@@ -7434,7 +7436,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 109,
@@ -7499,7 +7501,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 110,
@@ -7570,7 +7572,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 111,
@@ -7639,7 +7641,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 112,
@@ -7706,7 +7708,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 113,
@@ -7775,7 +7777,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 114,
@@ -7846,7 +7848,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 115,
@@ -7919,7 +7921,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 116,
@@ -7988,7 +7990,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 117,
@@ -8061,7 +8063,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 118,
@@ -8129,7 +8131,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 119,
@@ -8204,7 +8206,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 120,
@@ -8269,7 +8271,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 121,
@@ -8334,7 +8336,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 122,
@@ -8399,7 +8401,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 123,
@@ -8466,7 +8468,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 124,
@@ -8502,7 +8504,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/8/1/preparation.html"
       },
       "stageB": {
@@ -8537,7 +8539,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 125,
@@ -8608,7 +8610,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 126,
@@ -8679,7 +8681,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 127,
@@ -8752,7 +8754,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 128,
@@ -8825,7 +8827,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 129,
@@ -8896,7 +8898,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 130,
@@ -8968,7 +8970,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 131,
@@ -9037,7 +9039,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 132,
@@ -9109,7 +9111,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 133,
@@ -9176,7 +9178,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 134,
@@ -9245,7 +9247,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 135,
@@ -9315,7 +9317,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 136,
@@ -9383,7 +9385,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 137,
@@ -9450,7 +9452,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 138,
@@ -9518,7 +9520,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 139,
@@ -9586,7 +9588,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 140,
@@ -9655,7 +9657,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 141,
@@ -9724,7 +9726,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 142,
@@ -9759,7 +9761,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PARTIAL_GOAL_REVIEW_ONLY",
+        "verdict": "PARTIAL_TEACHER_GOAL_AND_TOPIC_REVIEW_ONLY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/9/1/preparation.html"
       },
       "stageB": {
@@ -9797,7 +9799,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Compare all publisher student activities and verify exact Practice and effective runtime content"
+      "nextStep": "Review full historical publisher student-facing tasks, authentic effective body, exact Practice and tests before academic acceptance"
     },
     {
       "sortOrder": 143,
@@ -9875,7 +9877,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 144,
@@ -9953,7 +9955,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 145,
@@ -10021,7 +10023,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 146,
@@ -10088,7 +10090,7 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     },
     {
       "sortOrder": 147,
@@ -10158,10 +10160,12 @@
       },
       "category": "UNASSESSED",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review original publisher student and teacher activities; verify baseline content, goal repair, exact Practice and runtime precedence"
+      "nextStep": "Review original historical publisher teacher and student tasks, then repair or reuse individual content with exact Practice and tests"
     }
   ],
   "richV2CandidateFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
   "lastRichV2AuthoringCommit": "3cff37a31bfe5ff4d1f71cd657bb56d2c7a059de",
-  "currentTestCandidateFile": "tests/academic-us-ccss-g6-original-lesson-authoring.test.cjs"
+  "currentTestCandidateFile": "tests/academic-us-ccss-g6-original-lesson-authoring.test.cjs",
+  "lastTestAuthoringCommit": "f673cfd93a227e4b2f6e4a9b8a60936fa239560c",
+  "nextUnrepairedLessonCode": "PED:US-CCSS-MATH:G6:U02:L02"
 }
