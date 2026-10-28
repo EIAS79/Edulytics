@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v1",
+  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -86,7 +86,59 @@
         "Small measurement errors can cause scatter around a line.",
         "Area is not proportional to square diagonal length."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Square measurements and approximate proportionality",
+          "Description": "Independent examples: for squares of side 2, 4 and 6 cm, the perimeter is proportional to the diagonal, while the area is not. The exact expressions involving √2 show why measured quotients may vary slightly.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Square side s (cm)",
+              "Cells": [
+                "2",
+                "4",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Perimeter 4s (cm)",
+              "Cells": [
+                "8",
+                "16",
+                "24"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diagonal s√2 (cm)",
+              "Cells": [
+                "2√2",
+                "4√2",
+                "6√2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area s² (cm²)",
+              "Cells": [
+                "4",
+                "16",
+                "36"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -172,7 +224,49 @@
         "Find percentage from region area over total area.",
         "Uniform scaling leaves a region's percent coverage unchanged."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Percentage of area in a scale drawing",
+          "Description": "An original flag-inspired rectangle has 60 cm² total area and a 12 cm² region. Doubling side lengths multiplies both areas by four, preserving the percent colored.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Cells": [
+                "Whole rectangle",
+                "Colored part",
+                "Percent colored"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Original",
+              "Cells": [
+                "60 cm²",
+                "12 cm²",
+                "20%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Factor-two lengths",
+              "Cells": [
+                "240 cm²",
+                "48 cm²",
+                "20%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -258,7 +352,24 @@
         "The more negative of two numbers is smaller.",
         "Absolute value gives nonnegative distance from zero."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "NumberLine",
+          "Title": "Signed values around zero",
+          "Description": "A number line with equal five-unit intervals from −10 to 10. Negative numbers lie to the left of zero; a colder temperature of −9°C is left of −4°C. Use a ruler or thermometer for precise placement.",
+          "Items": [
+            "−10",
+            "−5",
+            "0",
+            "5",
+            "10"
+          ],
+          "SecondaryItems": [],
+          "Rows": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -344,7 +455,49 @@
         "Look for a fixed starting amount and changing ratios.",
         "Use words, tables or diagrams to justify a nonproportional rule."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "A predictable relationship that is not proportional",
+          "Description": "An original vehicle fee is 7 dollars plus 3 dollars per passenger. The increasing person-count ratios differ; this is a fixed-fee rule, not a proportional relationship.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Passengers",
+              "Cells": [
+                "0",
+                "2",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Total dollars",
+              "Cells": [
+                "7",
+                "13",
+                "19"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Dollars per passenger",
+              "Cells": [
+                "not defined",
+                "6.5",
+                "4.75"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -430,7 +583,22 @@
         "Use 90°, 180° and 360° appropriately.",
         "Angle measure depends on direction, not segment length."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Solve a straight-angle relation",
+          "Description": "Two neighboring angles form a straight 180-degree angle. Each displayed equality is a valid step for a 125-degree angle and its adjacent unknown angle.",
+          "Items": [
+            "125° + x = 180°",
+            "x = 180° − 125°",
+            "x = 55°"
+          ],
+          "SecondaryItems": [],
+          "Rows": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -516,7 +684,49 @@
         "Compare relative frequencies rather than raw counts.",
         "Random outcomes remain uncertain; justify predictions with evidence."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Observed chance results in a mystery-bag game",
+          "Description": "These numbers are an independent simulated illustrative tally, not the publisher's observed data. The 20 repeated draws show experimental frequency, not a guarantee for the next draw.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Observed color",
+              "Cells": [
+                "Blue",
+                "Not blue",
+                "Total"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Count out of 20",
+              "Cells": [
+                "15",
+                "5",
+                "20"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Relative frequency",
+              "Cells": [
+                "0.75",
+                "0.25",
+                "1.00"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -602,7 +812,39 @@
         "Scale every ingredient consistently when changing servings.",
         "Human review is required for an invented recipe and its justification."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Recipe totals compared with per-serving nutrition",
+          "Description": "Independent classroom recipe model. Divide recipe-level amounts by equal serving count. Do not infer that fictional data satisfy any external dietary guideline.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Cells": [
+                "Calories",
+                "Servings",
+                "Calories per serving"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Illustrative recipe",
+              "Cells": [
+                "720 kcal",
+                "6",
+                "120 kcal"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     }
   ]
