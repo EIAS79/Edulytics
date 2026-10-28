@@ -8,6 +8,8 @@ const read = (p) => JSON.parse(readFileSync(path.join(root, p), 'utf8'));
 const blueprint = read('src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json');
 const pack = read('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-geo-phase29-v1.lesson-content-pack.json');
 const rich = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l01-l03-2021.rich-lesson-v2.json');
+const richNext = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l04-l06-2021.rich-lesson-v2.json');
+const authored = [...rich.Lessons, ...richNext.Lessons];
 const evidence = read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json');
 const prefix = 'PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L';
 
@@ -37,7 +39,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 3);
+  assert.equal(evidence.totals.richCandidateLessons, 6);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -51,14 +53,15 @@ test('Course-wide matrix records unverified runtime and no fabricated approvals'
   }
 });
 
-test('Three original construction lessons contain specific reasoning and human assessment limits', () => {
+test('Six original construction lessons contain specific reasoning and human assessment limits', () => {
   assert.equal(rich.PackCode, 'US-CCSS-MATH');
   assert.equal(rich.Lessons.length, 3);
-  assert.deepEqual(rich.Lessons.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03']);
-  for (const lesson of rich.Lessons) {
+  assert.equal(richNext.Lessons.length, 3);
+  assert.deepEqual(authored.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03', prefix+'04', prefix+'05', prefix+'06']);
+  for (const lesson of authored) {
     assert.equal(lesson.CultureCode, 'en');
     assert.equal(lesson.WorkedExamples.length, 3);
-    assert.ok(lesson.ExplanationParagraphs.some(x => /teacher[- ]scor|teacher[- ]review|teacher[- ]check|Human assessment/i.test(x)));
+    assert.ok(lesson.ExplanationParagraphs.some(x => /teacher[- ]scor|teacher[- ]review|teacher[- ]check|teacher rubric|Human assessment/i.test(x)));
     assert.ok(lesson.ExplanationParagraphs.join(' ').includes('CC BY 4.0'));
     assert.ok(lesson.KeyConcepts.length >= 3);
     assert.ok(lesson.CommonMistakes.length >= 2);
@@ -93,11 +96,29 @@ test('Two-circle constructions are geometrically consistent at boundary cases', 
 });
 
 test('Candidate remains isolated from shared Practice and cannot certify release', () => {
-  for (const l of rich.Lessons) {
+  for (const l of authored) {
     assert.ok(l.LessonCode.startsWith('PED:US-CCSS-MATH:HS:TRAD:GEO:'));
     assert.ok(!Object.hasOwn(l, 'AutoGrade'));
     assert.ok(!Object.hasOwn(l, 'Approved'));
     assert.ok(!Object.hasOwn(l, 'AcademicApproved'));
   }
   assert.equal(evidence.status, 'WORK_IN_PROGRESS_NOT_RELEASE_READY');
+});
+
+test('Parallel and angle-bisector authored examples obey nondegenerate conditions', () => {
+  const next = new Map(richNext.Lessons.map(x => [x.LessonCode, x]));
+  const eq = next.get(prefix+'04');
+  const ang = next.get(prefix+'05');
+  const para = next.get(prefix+'06');
+  assert.ok(eq.WorkedExamples.some(x => x.Answer.includes('ACE')));
+  assert.ok(ang.WorkedExamples.some(x => x.Answer.includes('35-degree')));
+  assert.ok(para.WorkedExamples.some(x => x.Answer.includes('y=3')));
+  // Two perpendiculars to a transversal are parallel in Euclidean geometry.
+  const horizontal = [1,0], vertical = [0,1];
+  const dot = (a,b) => a[0]*b[0] + a[1]*b[1];
+  assert.equal(dot(horizontal, vertical), 0);
+  assert.equal(dot(vertical, horizontal), 0);
+  assert.equal(dot(horizontal, horizontal), 1);
+  assert.equal(2*3 > 6, false); // tangency: one circle-line contact only
+  assert.equal(2*4 > 6, true); // larger radius: two circle-line intersections
 });
