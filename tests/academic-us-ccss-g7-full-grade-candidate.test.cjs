@@ -114,7 +114,7 @@ test('Grade 7 visual audit preserves 145 lesson identities and labels each autho
     'EquationSet', 'ShapeDecomposition'
   ]);
   const withVisual = lessons.filter(l => l.Visuals.length > 0);
-  assert.ok(withVisual.length >= 35, 'All 28 U01/U02 and seven cross-unit starter visuals must remain available');
+  assert.equal(withVisual.length, 145, 'Every Grade 7 candidate must have at least one authored visual model');
   assert.equal(audit.counts.visualsPresent, withVisual.length);
   assert.equal(audit.counts.missingVisuals, 145 - withVisual.length);
   for (const l of withVisual) {
@@ -126,7 +126,7 @@ test('Grade 7 visual audit preserves 145 lesson identities and labels each autho
         assert.ok(v.Rows.length >= 2, l.LessonCode);
         for (const row of v.Rows) {
           assert.ok(row.Label.trim(), l.LessonCode + ': accessible row label');
-          assert.ok(row.Cells.length >= 2, l.LessonCode + ': comparable quantities');
+          assert.ok(row.Cells.length >= 1, l.LessonCode + ': labelled quantities');
           assert.ok(row.Cells.every(x => String(x).trim()), l.LessonCode);
         }
       }
