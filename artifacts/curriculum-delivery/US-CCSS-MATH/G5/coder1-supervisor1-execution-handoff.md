@@ -14,7 +14,7 @@
   - **U02 L01–L08: all 8** opening fraction-sharing/quotient lessons' teaching candidates; exploratory fair sharing, fraction/quotient equivalence, representational critique, relay-race half-of-three, quarter of roads and non-unit fraction multiplication. Each includes explicit partner/diagram teacher-review boundary.
   - **U03 L01 and L19: 2** fraction-of-fraction diagram and fraction-game optimization candidates.
   - **U05 L01: 1**, **U06 L01: 1**, **U07 L01: 1**, **U08 L01: 1** original source-specific decimal, place value, coordinate rectangle, and greatest-product candidates.
-- Seven Grade 5 Rich V2 files existed by the initial V4 checkpoint; **one additional U02 L06–L08 file** was added last. Seven new files total under V4: six Rich V2 files + the Grade 5 source-expansion test file. All are uniquely Grade 5-namespaced.
+- Seven Grade 5 Rich V2 files existed after the first V4 authoring pass; **one additional U02 L06–L08 file** was added last. Seven new files total under V4: six Rich V2 files + the Grade 5 source-expansion test file. All are uniquely Grade 5-namespaced.
 - Grade-specific tests added previously for baseline identity, opening volume Rich V2, fraction-game optimality, and under V4 `tests/academic-us-ccss-g5-richv2-source-expansion.test.cjs`, covering **26** Rich V2 lessons.
 - The authoritative **148-row machine-readable checkpoint** is `artifacts/curriculum-delivery/US-CCSS-MATH/G5/coder1-grade5-authoring-checkpoint.json`. It marks each individual lesson's source review, candidate B status, exact Practice unknowns, Stage D not-run and missing acceptance.
 
@@ -37,10 +37,10 @@
 The Grade 5 pack text was modified on the authoring branch without changing any shared materializer/seeder version mechanism. `CommonCoreRichContentCorrections.GetExpectedContentVersion` and `MathematicsCanonicalLessonContentSeeder` may preserve old persisted translations/versions. Code-level registration of new Rich V2 sidecars is visible, but actual authenticated rendered student lessons and seeded G5 canonical translations are not verified. Supervisor 1 must coordinate a tightly G5-scoped, migration-safe content-version/seed strategy with one writer; do not risk other curricula or real student data. Do not claim that committed pack changes automatically appear in production.
 
 ## Independent next work, not blocked by shared integration
-- Continue original 2021 student-task/PDF (and permitted teacher/lesson) comparisons by **exact lesson ID**, starting with U01 L01 original student task and then U01 L04 public preparation onwards; reconcile diagrams, source roles and individual assessments for all 148.
+- Continue original 2021 student-task/PDF (and permitted teacher/lesson) comparisons by **exact lesson ID**, starting with missing U01 L01 original student-task PDF evidence, while continuing new source HTML with U02 L09 onwards; reconcile diagrams, source roles and individual assessments for all 148.
 - For the 44 unchanged lessons, test and retain accurate existing content where sound rather than manufacturing edits.
 - Resolve actual runtime Grade 5 Practice coverage: 15 explicit eligible mappings exist, but all remaining exact projected mappings and actual generator/normalizer/verifier/feedback/score/persistence decisions are **NOT_CHECKED**, not zero.
-- Use an isolated disposable test environment to execute the three Node tests and .NET/authenticated/tenant/cross-curriculum checks. Do not mutate `Our-CS` or live production and do not dispatch final CI before frozen whole-grade candidacy.
+- Use an isolated disposable test environment to execute all four authored Grade 5 Node test files and .NET/authenticated/tenant/cross-curriculum checks. Do not mutate `Our-CS` or live production and do not dispatch final CI before frozen whole-grade candidacy.
 
 ## Decision
 `CODING_COMPLETE = false` · `D_VERIFIED = false` · `ACADEMICALLY_ACCEPTED = false` · `REVIEW_ELIGIBLE = false` · `MERGED = false` · `VERIFIED_DEPLOYED = false` · `OWNER_UAT = NOT_RUN` · **`RELEASE_BLOCKED`**.
