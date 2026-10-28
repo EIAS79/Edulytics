@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g6-u01-l01-l03-area-original-rich-v2-candidate-20261028-v1",
+  "ContentVersion": "us-ccss-g6-u01-l01-l03-source-student-task-aligned-rich-v2-candidate-20261028-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -8,98 +8,104 @@
       "CultureCode": "en",
       "Title": "Tiling the Plane",
       "ExplanationParagraphs": [
-        "Learning goal: Compare the area of tiling patterns and explain how area stays unchanged when equal-sized pieces are rearranged.",
-        "Area is the number of unit squares covering a two-dimensional region with no gaps or overlaps. Two matching regions have equal area. Six separate square tiles can make a 2-by-3 rectangle or a 1-by-6 rectangle without changing their total area; the boundaries need not have the same length.",
-        "Practice reasoning with equal-sized movable tile pieces and explain why a change in the tiles' arrangement can change the perimeter but not their combined area. This is original Edulytiks content referenced to the historical 2017–2019 OUR/IM Grade 6 Unit 1 Lesson 1 source, not copied publisher artwork."
+        "Learning goal: Compare how much region is covered by different shapes in a tiling, and justify area-preserving rearrangements.",
+        "A tiling covers the plane without gaps or overlap. Different shapes can have different area even when each is counted as one tile. In an original model, take one small triangular tile as 1 area unit; a matching rhombus is worth 2 such units and a matching trapezoid is worth 3.",
+        "For a pattern containing 3 red trapezoids, 4 blue rhombi and 7 green triangles, the colored contributions are 9, 8 and 7 triangular units respectively. Explain covered area using decomposition, not a comparison of color or tile count. Multiple tilings can use different shapes to cover the same region. Original Edulytiks tasks paraphrase the public 2017–2019 OUR/IM mathematical goals without copying publisher diagrams."
       ],
       "KeyConcepts": [
         {
-          "Title": "Area as coverage",
-          "Definition": "Area measures the two-dimensional region covered, in square units.",
-          "Rule": "Count equal-sized unit squares that fill the region without gaps or overlaps.",
-          "Example": "A full 2-by-3 grid of unit squares has area 6 square units."
+          "Title": "Tiling without gaps",
+          "Definition": "A tiling completely covers a target region using shapes without gaps or overlap.",
+          "Rule": "A visible blank space means the proposed design does not tile the entire target region.",
+          "Example": "Two neighboring triangular pieces may meet edge to edge; a white gap means their union leaves some region uncovered."
         },
         {
-          "Title": "Rearrangement preserves area",
-          "Definition": "A region can be cut into non-overlapping pieces and put back together without losing area.",
-          "Rule": "Add the unchanged piece areas; moving or turning pieces alone does not change the sum.",
-          "Example": "Six unit squares have area 6 square units whether they form one row or two rows."
+          "Title": "Compare unlike tiles",
+          "Definition": "Different polygons may cover different amounts of the plane.",
+          "Rule": "Convert each tile into a shared area unit, then multiply by tile count.",
+          "Example": "With small triangle area 1, a rhombus has area 2 and a trapezoid has area 3 triangular units."
         },
         {
-          "Title": "Distinguish area and perimeter",
-          "Definition": "Perimeter measures boundary length; area measures coverage.",
-          "Rule": "Do not infer equal perimeter from equal area or vice versa.",
-          "Example": "A 2-by-3 rectangle has perimeter 10 length units while a 1-by-6 rectangle has perimeter 14; both have area 6 square units."
+          "Title": "Conservation by rearrangement",
+          "Definition": "Moving or rotating unchanged shapes preserves their total combined area.",
+          "Rule": "Require pieces to neither overlap nor leave the intended combined region incomplete.",
+          "Example": "Two trapezoids have the same area as three rhombi or six smaller triangles under the shared unit model: 6 units."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Compare two tile patterns",
-          "Question": "Pattern A uses two rows of three unit squares; Pattern B uses one row of six identical unit squares. Do they have equal area?",
-          "Method": "Count non-overlapping equal-sized tiles in each region.",
+          "Title": "Which shapes cover the greatest area?",
+          "Question": "In a new tiled design, there are 3 red trapezoids, 4 blue rhombi and 7 green small triangles. One rhombus has the area of 2 triangles; one trapezoid has the area of 3. Which color contributes most area?",
+          "Method": "Change every polygon type into the same small-triangle area unit, then compare totals.",
           "Steps": [
-            "Pattern A has 2 × 3 = 6 tiles.",
-            "Pattern B has 1 × 6 = 6 tiles.",
-            "Because the same-sized tiles cover each region without gaps or overlaps, each region has 6 square units of area."
+            "Red: 3 trapezoids × 3 triangular units each = 9.",
+            "Blue: 4 rhombi × 2 triangular units each = 8.",
+            "Green: 7 triangles × 1 unit each = 7.",
+            "Compare 9 > 8 > 7 to conclude red covers the largest total area."
           ],
-          "Answer": "Yes. Each pattern covers 6 square units.",
-          "Check": "The perimeters differ but the square-tile totals match."
+          "Answer": "The red trapezoids cover 9 triangular area units, more than blue's 8 or green's 7.",
+          "Check": "The fewest tiles can cover the greatest area when individual tile shapes are larger."
         },
         {
-          "Title": "Combine two tile groups",
-          "Question": "A pattern is made from a 2-by-2 group of square tiles and a separate group of two square tiles. What is its total area if no tile overlaps?",
-          "Method": "Add the areas of two disjoint groups.",
+          "Title": "Make three equal-area mosaics",
+          "Question": "Compare an arrangement of 2 trapezoids, an arrangement of 3 rhombi and an arrangement of 6 small triangles. Can they cover equal area without gaps or overlap?",
+          "Method": "Use a common area unit and describe valid complete arrangements.",
           "Steps": [
-            "The 2-by-2 group covers 4 square units.",
-            "The second group covers 2 square units.",
-            "Add the two areas: 4 + 2 = 6 square units."
+            "Two trapezoids contribute 2 × 3 = 6 triangular area units.",
+            "Three rhombi contribute 3 × 2 = 6 triangular area units.",
+            "Six small triangles contribute 6 × 1 = 6 triangular area units.",
+            "All arrangements cover 6 units, provided they form non-overlapping complete regions."
           ],
-          "Answer": "6 square units.",
-          "Check": "The two groups contain six non-overlapping identical squares."
+          "Answer": "Yes; each design covers 6 small-triangle area units despite different polygon counts.",
+          "Check": "A student-created drawing must demonstrate that the pieces meet without gaps or overlap; this is a teacher-reviewed claim."
         },
         {
-          "Title": "Explain different equal-area designs",
-          "Question": "Construct or describe two different arrangements of eight identical square tiles that cover the same area. Explain why they are equal in area.",
-          "Method": "Open response with source-aligned explanation, for teacher review.",
+          "Title": "Explain a tiling comparison",
+          "Question": "Make two differently shaped patterns using the same set of movable pieces. Give two mathematically justified reasons why the patterns can look different while covering the same total area.",
+          "Method": "Open-ended visual justification for teacher review.",
           "Steps": [
-            "Choose eight identical unit squares.",
-            "Arrange them in one row, then rearrange into two rows of four.",
-            "Count unchanged tiles and explain that their union covers the same total number of square units."
+            "Identify the area contributed by each unchanged piece.",
+            "Construct a second complete, non-overlapping arrangement.",
+            "Explain what changed in the outline and what did not change about the pieces.",
+            "Present more than one defensible visual comparison or classification."
           ],
-          "Answer": "For example, a 1-by-8 strip and a 2-by-4 rectangle both have area 8 square units. Other valid rearrangements exist.",
-          "Check": "Teacher evaluates whether the pieces are equal, non-overlapping and correctly counted; a drawing is not graded by a single exact numeric answer."
+          "Answer": "The outlines and color arrangements may differ while the total area is unchanged because every piece is used exactly once.",
+          "Check": "Teacher rubric checks unit choice, complete coverage, equal piece inventory and explanation quality; it is not automatically graded from one number."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Counting different-sized tiles as equal unit squares.",
-          "WhyWrong": "A count of pieces is an area only when each piece represents the same unit area.",
-          "Correction": "Use equal unit squares or compute each different piece's area before adding."
+          "Mistake": "Assuming seven little triangles cover more area than three trapezoids because seven is a larger count.",
+          "WhyWrong": "Counts are incomparable until the areas of individual unlike polygons use one common unit.",
+          "Correction": "Break larger tiles into small-triangle units before adding their colored areas."
         },
         {
-          "Mistake": "Assuming a longer boundary means more area.",
-          "WhyWrong": "Rearrangements of the same pieces preserve area even when the boundary changes.",
-          "Correction": "Count covered square units independently from the perimeter."
+          "Mistake": "Calling any colorful pattern a complete tiling.",
+          "WhyWrong": "Blank uncovered regions or overlapping pieces violate coverage of the intended region.",
+          "Correction": "Check all boundaries and explain whether a whole region is covered without gaps or overlap."
         }
       ],
       "SummaryPoints": [
-        "Area counts coverage in equal square units.",
-        "Rearranging unchanged, non-overlapping pieces preserves combined area.",
-        "Different patterns can have the same area and different perimeters."
+        "A true tiling covers its target without gaps or overlaps.",
+        "Use a common area unit to compare different polygon shapes, not just tile counts.",
+        "Multiple arrangements can differ visually while preserving the same total covered area."
       ],
       "Visuals": [
         {
           "Kind": "ShapeDecomposition",
-          "Title": "Equal-area tile arrangements",
-          "Description": "Text-accessible diagram: six equal 1-by-1 tiles as a 2-row-by-3-column rectangle, or a 1-row-by-6-column strip. Both cover six squares; perimeters differ.",
-          "PrimaryLabel": "2 × 3 = 6 square units",
-          "SecondaryLabel": "1 × 6 = 6 square units",
+          "Title": "Equivalent small-triangle areas of three polygon types",
+          "Description": "Text-accessible first-party diagram description: a small green triangle is the unit; a blue rhombus can be split into 2 of those triangles; a red trapezoid can be split into 3. A tiling model uses 7 green triangles (area 7), 4 blue rhombi (area 8), and 3 red trapezoids (area 9). These comparisons use triangular area units, not square units. All component tiles are laid without gaps or overlaps.",
+          "PrimaryLabel": "Red = 3 × 3 = 9 triangle units",
+          "SecondaryLabel": "Blue = 4 × 2 = 8; green = 7 × 1 = 7",
           "Items": [
-            "Row 1: □ □ □",
-            "Row 2: □ □ □"
+            "Red trapezoid → 3 green-triangle units",
+            "Blue rhombus → 2 green-triangle units",
+            "Green small triangle → 1 triangle unit"
           ],
           "SecondaryItems": [
-            "Row: □ □ □ □ □ □"
+            "Red: nine units",
+            "Blue: eight units",
+            "Green: seven units"
           ],
           "Rows": []
         }
@@ -111,9 +117,9 @@
       "CultureCode": "en",
       "Title": "Finding Area by Decomposing and Rearranging",
       "ExplanationParagraphs": [
-        "Learning goal: Find the area of a region by decomposing it into non-overlapping figures and rearranging the pieces.",
-        "A region can be split into pieces whose areas are known and whose areas add to the original region. Alternatively, an enclosing rectangle can be measured and uncovered portions subtracted. Repositioning pieces without resizing or overlap cannot change their total area.",
-        "Use rectangular and triangular parts to justify a calculation visually and with square units. The examples are original first-party adaptations of the area-composition learning target, not reproductions of a licensed illustration."
+        "Learning goal: Define area precisely, compose and decompose right-triangle and square pieces, and explain equal-area rearrangements.",
+        "Area counts equal square units covering a two-dimensional region without gaps or overlap. A drawing with small and large squares cannot be evaluated merely by counting pieces: first express them in a shared unit. If two congruent figures exactly match when overlaid, their areas are equal.",
+        "An area-1 square divided diagonally makes two identical triangles, each area 1/2. Reassemble triangles into other non-overlapping figures and justify why their total area is unchanged. The 2017–2019 source also includes tangram-style hands-on construction and student explanations; the digital examples here do not certify that the original manipulatives or full interactive activity have been recreated."
       ],
       "KeyConcepts": [
         {
@@ -129,48 +135,50 @@
           "Example": "A 3-by-4 rectangle with a 2-by-2 corner removed has area 12 − 4 = 8 square units."
         },
         {
-          "Title": "Rearrangement",
-          "Definition": "Unchanged pieces can be moved or turned to reveal a familiar area formula.",
-          "Rule": "Do not stretch, overlap or discard a piece.",
-          "Example": "Two matching right triangles with legs 4 and 3 can make a 4-by-3 rectangle, so each triangle has area 6 square units."
+          "Title": "Triangle-square conservation",
+          "Definition": "Two congruent half-square triangles together cover one unit square.",
+          "Rule": "Every non-overlapping rearrangement of both unchanged triangles still has area 1 square unit.",
+          "Example": "Four half-square triangle pieces together have total area 4 × 1/2 = 2 square units."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Compute an L-shaped area by subtraction",
-          "Question": "A 3-by-4 rectangle has a 2-by-2 top-right corner removed. What area remains?",
-          "Method": "Compute the enclosing rectangle and subtract the removed part.",
+          "Title": "Different-sized tiles are not equal square units",
+          "Question": "A region is covered without gaps by two unit squares and four squares whose side length is 1/2 of the unit square. What is its area?",
+          "Method": "Convert each smaller square's area into the same unit-square measure.",
           "Steps": [
-            "Compute enclosing area: 3 × 4 = 12 square units.",
-            "Compute removed area: 2 × 2 = 4 square units.",
-            "Subtract exactly once: 12 − 4 = 8 square units."
+            "The two unit squares contribute 2 square units.",
+            "Each 1/2-by-1/2 square contributes 1/4 of a square unit.",
+            "Four small squares contribute 4 × 1/4 = 1 square unit.",
+            "The region's total area is 2 + 1 = 3 square units."
           ],
-          "Answer": "8 square units.",
-          "Check": "A separate partition gives 3 × 2 + 1 × 2 = 6 + 2 = 8."
+          "Answer": "3 square units, not the six counted pieces.",
+          "Check": "If the pieces had gaps or overlaps, the count would not equal the area of the full region."
         },
         {
-          "Title": "Compute the same area by decomposition",
-          "Question": "Divide the same L-shaped region into a bottom 3-by-2 part and a top-left 1-by-2 part. What area do the two parts cover?",
-          "Method": "Add the non-overlapping rectangular parts.",
+          "Title": "Build the same area from triangles",
+          "Question": "Cut a square of area 1 unit² along a diagonal. What is each triangle's area, and what area do four identical triangles cover after rearranging?",
+          "Method": "Match two triangles to the original square, then use additivity.",
           "Steps": [
-            "The bottom part is 3 × 2 = 6 square units.",
-            "The top-left part is 1 × 2 = 2 square units.",
-            "Add the disjoint areas: 6 + 2 = 8 square units."
+            "Two congruent triangles exactly recompose the area-1 square.",
+            "Each must therefore have area 1/2 square unit.",
+            "Four triangles cover 4 × 1/2 = 2 square units.",
+            "Moving the four pieces changes the outline but not their combined area."
           ],
-          "Answer": "8 square units.",
-          "Check": "Both methods describe exactly the enclosing 12-square-unit region with the same 4-square-unit corner absent."
+          "Answer": "Each triangle has area 1/2 square unit; four cover 2 square units.",
+          "Check": "Different non-square designs using the four identical pieces are valid if coverage is complete and pieces do not overlap."
         },
         {
           "Title": "Two matching triangles",
-          "Question": "A 4-by-3 rectangle is split along its diagonal into two matching right triangles. What is the area of each triangle?",
-          "Method": "Use the equal parts of a known rectangular area.",
+          "Question": "Describe two different non-square figures of area 2 using four congruent half-square triangles; explain how you know each figure's area.",
+          "Method": "Teacher-reviewed geometric construction with a component-area invariant.",
           "Steps": [
             "Calculate the rectangular area: 4 × 3 = 12 square units.",
             "The diagonal makes two matching regions of equal area.",
             "Divide the rectangle's area by two: 12 ÷ 2 = 6."
           ],
-          "Answer": "Each triangle has area 6 square units.",
-          "Check": "Two triangles together cover 12 square units and can be rearranged to remake the rectangle."
+          "Answer": "Any two non-overlapping non-square assemblies using all four half-square triangles each have area 2 square units; there is no unique required outline.",
+          "Check": "Teacher verifies both drawings use four congruent pieces without overlap and that the justification invokes square-unit area and conservation."
         }
       ],
       "CommonMistakes": [
@@ -193,17 +201,18 @@
       "Visuals": [
         {
           "Kind": "ShapeDecomposition",
-          "Title": "L-shape area two ways",
-          "Description": "A 3-by-4 rectangle with a 2-by-2 top-right corner removed: rectangle subtraction 12 − 4 = 8 or division into 3-by-2 and 1-by-2 parts totaling 8 square units.",
-          "PrimaryLabel": "12 − 4 = 8",
-          "SecondaryLabel": "6 + 2 = 8",
+          "Title": "Triangle composition and fractional area",
+          "Description": "First-party text-accessible construction: one area-1 unit square is bisected along its diagonal into two congruent right triangles, each with area 1/2 square unit. Rejoin two triangles to make a square or another fitting non-square polygon. Four copies each of area 1/2 cover 2 square units in any non-overlapping assembly.",
+          "PrimaryLabel": "2 × 1/2 = 1 square unit",
+          "SecondaryLabel": "4 × 1/2 = 2 square units",
           "Items": [
-            "Enclosing rectangle: 3 × 4",
-            "Removed corner: 2 × 2"
+            "Square (area 1)",
+            "Half-square triangle A (area 1/2)",
+            "Half-square triangle B (area 1/2)"
           ],
           "SecondaryItems": [
-            "Bottom: 3 × 2",
-            "Upper left: 1 × 2"
+            "Two matching triangles → square area 1",
+            "Four matching triangles → total area 2"
           ],
           "Rows": []
         }
@@ -215,9 +224,9 @@
       "CultureCode": "en",
       "Title": "Reasoning to Find Area",
       "ExplanationParagraphs": [
-        "Learning goal: Find the area of a polygon in multiple ways and justify why those ways give the same result.",
-        "To find an unfamiliar area, break a region into simpler non-overlapping shapes, move pieces to form a recognizable figure, or surround the region with a known rectangle and subtract unwanted pieces. Each strategy must measure the same covered region exactly once.",
-        "Compare methods and explain why they agree. State answers in square units; do not replace mathematical area reasoning with identifying a shape by its orientation."
+        "Learning goal: Compare shaded regions and find polygon areas by decomposing, rearranging and subtracting known missing parts.",
+        "When a shaded region is moved from one place to another, a missing piece and an exactly matching attached piece can cancel without changing total area. A 4-by-4 shaded square has area 16; removing one unit square and attaching it outside results in 16−1+1=16 square units. The outline changes, but the shaded area does not.",
+        "For grid-based figures, combine rectangles or triangles without counting every square. For off-grid figures use labeled perpendicular lengths. If a missing tilted square has unknown area, do not invent its measurement: a valid approach may be to decompose and rearrange surrounding measurable triangles. Explain why each method covers only the shaded part."
       ],
       "KeyConcepts": [
         {
@@ -241,40 +250,41 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Enclosed shaded region",
-          "Question": "Inside a 6-by-5 rectangle, a 3-by-2 region is unshaded. How much is shaded?",
-          "Method": "Enclosing area less the unshaded part.",
+          "Title": "Same shaded area with a hole and an attached piece",
+          "Question": "Figure A is a shaded 4-by-4 square. Figure B removes one shaded unit square from A's interior and attaches that same shaded unit square outside. Compare only the shaded regions.",
+          "Method": "Account for the removed and added congruent parts.",
           "Steps": [
-            "Compute 6 × 5 = 30 square units.",
-            "Compute the unshaded part: 3 × 2 = 6 square units.",
-            "Subtract: 30 − 6 = 24 square units."
+            "The original square has shaded area 4 × 4 = 16 square units.",
+            "Removing a unit square leaves 15 shaded square units.",
+            "Reattaching the same piece adds one square unit.",
+            "The modified shaded area is 15 + 1 = 16 square units."
           ],
-          "Answer": "24 square units.",
-          "Check": "The 6 square units removed and 24 remaining total the 30-square-unit enclosing rectangle."
+          "Answer": "The shaded areas are equal; each is 16 square units.",
+          "Check": "The one-square hole is unshaded, while the matching outside attachment is shaded."
         },
         {
-          "Title": "Compare areas, not outlines",
-          "Question": "A region has area 24 square units. Does it have the same area as a 3-by-8 rectangle?",
-          "Method": "Find the rectangle's area and compare numeric area in matching units.",
+          "Title": "Enclosing subtraction requires a known hole",
+          "Question": "A 6-by-6 square contains a 3-by-3 unshaded square. How much of the outer region is shaded?",
+          "Method": "Subtract the measurable unshaded interior.",
           "Steps": [
-            "Calculate 3 × 8 = 24 square units.",
-            "Compare the existing 24-square-unit area with the rectangle's 24 square units.",
-            "Conclude equal area despite different outlines."
+            "The outside square covers 6 × 6 = 36 square units.",
+            "The unshaded inside square covers 3 × 3 = 9 square units.",
+            "Subtract only the hole once: 36−9=27 square units."
           ],
-          "Answer": "Yes: both cover 24 square units.",
-          "Check": "Both values use square units; boundary length need not match."
+          "Answer": "27 square units.",
+          "Check": "When the size of an interior tilted hole is unknown, use a justified alternative such as rearranging measured triangles rather than inventing a dimension."
         },
         {
           "Title": "Two solutions to a corner-cut region",
-          "Question": "A 5-by-4 rectangle loses a 2-by-2 corner. Find the remaining area by subtraction, then describe an addition method.",
-          "Method": "Compute the enclosing area and exhibit a disjoint partition.",
+          "Question": "Sketch a shaded nonrectangular region that can be decomposed into measurable triangles and rectangles. Calculate its area in two methods without double-counting.",
+          "Method": "Teacher-reviewed source-aligned proof based on measurable non-overlapping pieces.",
           "Steps": [
             "Enclosing area is 5 × 4 = 20; missing corner area is 2 × 2 = 4.",
             "Subtract to get 20 − 4 = 16 square units.",
             "Partition the remaining region into a 5-by-2 strip and a 3-by-2 strip for 10 + 6 = 16."
           ],
           "Answer": "16 square units by either approach.",
-          "Check": "Both methods count the identical target region without overlapping or missing pieces."
+          "Check": "Teacher reviews region shading, explicit measurements, justification of every part and equality of the two methods."
         }
       ],
       "CommonMistakes": [
@@ -297,16 +307,18 @@
       "Visuals": [
         {
           "Kind": "ShapeDecomposition",
-          "Title": "Shaded rectangle comparison",
-          "Description": "A 6-by-5 rectangle has a 3-by-2 unshaded rectangle removed, leaving 24 square units. Compare with a 3-by-8 rectangle containing 24 square units.",
-          "PrimaryLabel": "6 × 5 − 3 × 2 = 24",
-          "SecondaryLabel": "3 × 8 = 24",
+          "Title": "Conserved shaded area after moving one square",
+          "Description": "Text-only geometric representation: begin with a 4-by-4 square shaded completely, area 16. In a second figure one unit square is an unshaded interior hole, while a congruent unit square is reattached outside the original boundary. The 15 still-shaded original unit squares plus 1 attached shaded square produce 16 shaded square units. The unshaded interior is not counted.",
+          "PrimaryLabel": "Original: 4 × 4 = 16",
+          "SecondaryLabel": "Modified: 16 − 1 + 1 = 16",
           "Items": [
-            "Whole 6-by-5 rectangle: 30",
-            "Hole 3-by-2: 6"
+            "A: sixteen shaded unit squares",
+            "B: fifteen shaded original squares",
+            "B: one shaded reattached outside square"
           ],
           "SecondaryItems": [
-            "Comparison rectangle 3-by-8: 24"
+            "B: one unshaded interior hole",
+            "Shaded area A = shaded area B = 16"
           ],
           "Rows": []
         }
