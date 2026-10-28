@@ -135,4 +135,55 @@ public sealed class SourceBoundCommonCoreJsonMetadataReconciliationTests
             CanonicalLessonContentMaterializer.GetEffectiveContentVersion(target.Doc,target.Lesson),
             content.ContentVersion);
     }
+    [Fact]
+    public void Grade4FirstLesson_ProductionJsonMetadataPredecessor_IsExactAndFailClosed()
+    {
+        var documents = MathematicsCanonicalLessonContentSeeder.LoadEmbeddedDocuments();
+        var target = documents.SelectMany(d =>
+                d.Lessons
+                    .Where(l => l.LessonCode == CommonCoreG4MultiplesSourceCorrection.LessonCode)
+                    .Select(l => (Doc: d, Lesson: l)))
+            .Single();
+        var expected = CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
+            target.Doc, target.Lesson);
+
+        Assert.Equal(
+            CommonCoreG4MultiplesSourceCorrection.Reviewed2021AuthoringContentVersion,
+            expected);
+        Assert.True(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG4KnownProductionJsonMetadataPredecessor(
+                target.Doc, target.Lesson,
+                CommonCoreG4MultiplesSourceCorrection.CorrectedContentVersion,
+                expected, verifiedNoPersistedTranslations: true));
+
+        // Never authorize a different old marker, different successor or
+        // the presence of PostgreSQL lesson prose.
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG4KnownProductionJsonMetadataPredecessor(
+                target.Doc, target.Lesson, "unknown-unapproved-predecessor",
+                expected, verifiedNoPersistedTranslations: true));
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG4KnownProductionJsonMetadataPredecessor(
+                target.Doc, target.Lesson,
+                CommonCoreG4MultiplesSourceCorrection.CorrectedContentVersion,
+                "unreviewed-successor", verifiedNoPersistedTranslations: true));
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG4KnownProductionJsonMetadataPredecessor(
+                target.Doc, target.Lesson,
+                CommonCoreG4MultiplesSourceCorrection.CorrectedContentVersion,
+                expected, verifiedNoPersistedTranslations: false));
+
+        var unrelated = documents.SelectMany(d =>
+                d.Lessons
+                    .Where(l => l.LessonCode == "PED:US-CCSS-MATH:G4:U01:L02")
+                    .Select(l => (Doc: d, Lesson: l)))
+            .Single();
+        Assert.False(MathematicsCanonicalLessonContentSeeder
+            .IsGuardedG4KnownProductionJsonMetadataPredecessor(
+                unrelated.Doc, unrelated.Lesson,
+                CommonCoreG4MultiplesSourceCorrection.CorrectedContentVersion,
+                expected, verifiedNoPersistedTranslations: true));
+    }
+
+
 }

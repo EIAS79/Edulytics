@@ -128,6 +128,37 @@ public sealed class MathematicsCanonicalLessonContentSeeder
         expectedContentVersion ==
             CommonCoreG3SourceTeachingCorrections.CorrectionContentVersion;
 
+    /// <summary>
+    /// The 2026-10-28 SELECT-only Neon production inventory verified that
+    /// G4 U01:L01 still holds the prior 2021 source correction marker and
+    /// contains zero persisted lesson translations. Allow ONLY this exact
+    /// source-SHA-bound transition to the reviewed owner-authored A-B-C body.
+    /// Other G4 lessons, unexpected predecessor versions and saved prose
+    /// must remain fail closed. This is metadata-only, not a copy of publisher work.
+    /// </summary>
+    public static bool IsGuardedG4KnownProductionJsonMetadataPredecessor(
+        CanonicalLessonContentPackDocument document,
+        CanonicalLessonContentPackLesson lesson,
+        string existingContentVersion,
+        string expectedContentVersion,
+        bool verifiedNoPersistedTranslations) =>
+        verifiedNoPersistedTranslations &&
+        document.PackCode == MathematicsCurriculumPackRegistry.CommonCoreCode &&
+        document.VersionCode == "CCSSM-2010" &&
+        document.ContentVersion == "phase30-common-core-rich-content-v1" &&
+        lesson.LessonCode == CommonCoreG4MultiplesSourceCorrection.LessonCode &&
+        lesson.SourceUrl ==
+            "https://im.kendallhunt.com/k5/teachers/grade-4/unit-1/lesson-1/preparation.html" &&
+        lesson.CanonicalBodySha256 ==
+            "b18e1bed2b1e3ad2d363bf493e5327be0f117e834958a6779ef018cc8c2e8b81" &&
+        lesson.OutcomeCodes.SequenceEqual(["CCSS:4.OA.B.4"]) &&
+        existingContentVersion ==
+            CommonCoreG4MultiplesSourceCorrection.CorrectedContentVersion &&
+        expectedContentVersion ==
+            CommonCoreG4MultiplesSourceCorrection.Reviewed2021AuthoringContentVersion &&
+        CanonicalLessonContentMaterializer.GetEffectiveContentVersion(
+            document, lesson) == expectedContentVersion;
+
     public static bool IsGuardedG2KnownProductionJsonMetadataPredecessor(
         CanonicalLessonContentPackDocument document,
         CanonicalLessonContentPackLesson lesson,
@@ -314,6 +345,9 @@ public sealed class MathematicsCanonicalLessonContentSeeder
             if (!CanonicalLessonContentMaterializer.CanUpgradeExisting(
                     target.Document, target.Lesson, content.ContentVersion) &&
                 !IsGuardedG1U04L21JsonMetadataPredecessor(
+                    target.Document, target.Lesson, content.ContentVersion,
+                    expectedVersion, verifiedNoPersistedTranslations: true) &&
+                !IsGuardedG4KnownProductionJsonMetadataPredecessor(
                     target.Document, target.Lesson, content.ContentVersion,
                     expectedVersion, verifiedNoPersistedTranslations: true) &&
                 !IsGuardedG2KnownProductionJsonMetadataPredecessor(
@@ -1061,6 +1095,32 @@ public sealed class MathematicsCanonicalLessonContentSeeder
                     // already verified all content identities/statuses and
                     // checked zero persisted translations across 294 targets.
                     // This targeted path cannot rewrite student-visible prose.
+                    // Exact production G4 U01:L01 metadata-only predecessor,
+                    // backed by the original source hash, reviewed A-B-C body,
+                    // and a fresh stored-translation emptiness check.
+                    var guardedG4JsonMetadata =
+                        metadataOnly &&
+                        IsGuardedG4KnownProductionJsonMetadataPredecessor(
+                            document, sourceLesson, content.ContentVersion,
+                            expectedContentVersion,
+                            verifiedNoPersistedTranslations: true) &&
+                        !await _db.CurriculumLessonContentTranslations
+                            .AsNoTracking()
+                            .AnyAsync(row =>
+                                row.CurriculumLessonContentId == content.Id, ct);
+
+                    if (guardedG4JsonMetadata)
+                    {
+                        if (content.Status != document.Status)
+                            throw new InvalidOperationException(
+                                "G4 metadata-only publication status drift: " +
+                                sourceLesson.LessonCode);
+                        content.ContentVersion = expectedContentVersion;
+                        content.UpdatedAtUtc = now;
+                        ApplyStatusMetadata(content, document.Status, now);
+                        continue;
+                    }
+
                     var guardedG2JsonMetadata =
                         metadataOnly &&
                         IsGuardedG2KnownProductionJsonMetadataPredecessor(
