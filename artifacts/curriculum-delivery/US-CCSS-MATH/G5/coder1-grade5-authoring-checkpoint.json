@@ -20,7 +20,10 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-richv2-source-expansion.test.cjs",
-    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json"
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u02-area-v5.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -66,7 +69,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 26,
+    "richSidecarLessonCount": 35,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -80,10 +83,12 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 29,
+    "public2021LessonOrPreparationHtmlReviewedCount": 38,
     "public2021LessonHtmlReviewedDuringV4": 22,
-    "codeCandidateWithAtLeastOneEditOrRichV2": 107,
-    "noGradeOwnedCodeCandidate": 41
+    "codeCandidateWithAtLeastOneEditOrRichV2": 108,
+    "noGradeOwnedCodeCandidate": 40,
+    "public2021LessonHtmlReviewedDuringV5": 9,
+    "originalStudentPdfAndGatedCooldownVerified": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
   "release": "RELEASE_BLOCKED",
@@ -111,8 +116,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "29 distinct 2021 public teacher/student-facing lesson HTML pages reviewed to varying depth, 0 complete original Student Task PDF/Cool-down/source visual and rights audit; 148 Stage A–D individual acceptances outstanding.",
-      "next": "Continue with U02:L09 source original task and candidate; independently verify original Student Task PDFs and licensed visuals for all lessons."
+      "issue": "38 distinct public 2021 lesson/preparation HTML pages examined; original complete source student PDFs, copyrighted images, gated responses/Cool-down and individual Stage A accepted findings remain incomplete.",
+      "next": "Continue U03:L02; independently verify original task PDF and rights before source academic acceptance."
     },
     {
       "id": "G5-D-004",
@@ -1137,16 +1142,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l09-l13-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Unit fractions of equal-width rectangular strips, regroup/hidden shaded parts, construct rectangles, WODB discussion",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-9/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_DISCUSSION_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L10",
@@ -1191,16 +1202,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l09-l13-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Non-unit fractional width less than one, estimation and shade/compare two equal-length rectangles",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-10/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_DISCUSSION_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L11",
@@ -1235,16 +1252,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l09-l13-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Mixed fraction greater than one, correct improper notation and select ALL matching shaded-region expressions",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-11/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_DISCUSSION_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L12",
@@ -1274,16 +1297,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l09-l13-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Compare Noah/Priya garden mixed-number areas using partitions, diagrams and distributive expressions",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-12/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_REPRESENTATION_AND_REASONING_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L13",
@@ -1323,16 +1352,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l09-l13-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Match decomposition and subtraction area diagrams to multiple expressions in a partner card sort",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-13/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_REPRESENTATION_AND_REASONING_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L14",
@@ -1365,16 +1400,22 @@
       "contentFieldsChanged": [
         "keyConceptsAndRules"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l14-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Info Gap Area: request missing side from partner, explain necessity, compute only when all dimensions known",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-14/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CORE_TASK_NUMERIC_SUBSKILL_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L15",
@@ -1418,16 +1459,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l14-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Use-each-number-once linked mixed-number area assignments, revise attempts, distinguish linear/square units",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-15/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_REPRESENTATION_AND_REASONING_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L16",
@@ -1466,16 +1513,22 @@
         "keyConceptsAndRules",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l14-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Estimate products versus garden area allowance; compare boundary including equality, select all fitting cases",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-16/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_REPRESENTATION_AND_REASONING_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L17",
@@ -1506,16 +1559,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED;SUPERVISOR_SHARED_INTEGRATION_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u02-l14-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedTask": "Optional: physically make congruent whole-by-mixed rectangle tiles and collaborate on an original mosaic",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-17/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CORE_TASK_NUMERIC_SUBSKILL_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L01",
@@ -6641,26 +6700,27 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "ddb11c86cf5f5dadfd8ef2147e2246b3344614e8",
+  "lastGradeContentCommit": "b7d8e12ad0ad515f12d8d2a004865b65d1767f3e",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "104 canonical Grade 5 pack translations editorially repaired, 26 original Rich V2 lessons authored, 44 original pack translations untouched. 29 distinct 2021 public lesson/preparation HTML sources reviewed (7 prior and 22 this V4 execution), zero complete student-task PDFs/gated cooldowns independently verified. Stage A–D incomplete for all 148.",
+  "currentScopeDescription": "V5: 35 Grade 5 direct Rich V2 candidates (26 preserved +9 U02 L09-L17); all 17 U02 have directly authored sidecar candidates; 104 existing baseline pack translations edited; 38/148 distinct public lesson/preparation HTML reviewed. Full Student Task PDF/gated Cool-down parity 0; source stage A, runtime Practice C, Stage D and academic acceptance remain 0/148.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "884c6623eeecd3564d9f8386d5fa2eec5d0d69ed",
+  "lastCommittedTest": "a82ea2d6ff81486a5e8af56bb3bffd5c7a297d19",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "884c6623eeecd3564d9f8386d5fa2eec5d0d69ed",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U02:L09 — Relate Area to Multiplication",
+    "lastKnownCommittedHeadBeforeLedger": "b7d8e12ad0ad515f12d8d2a004865b65d1767f3e",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U03:L02 — Fraction Multiplication and Division",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Source-review U02 L09–L17, U03 and remaining units; run actual Node/.NET/Practice and full per-lesson A-D before full grade PR",
+    "nextAcademic": "Review and author Unit 3 L02 onward with exact source/representation, preserve Grade5-only ownership, investigate selected Practice only with reproducible tests",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
-    "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main"
+    "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
+    "sharedIntegrationIssue592": "https://github.com/EIAS79/Edulytics/issues/592"
   },
   "sourceAccessPolicy": "V4: Never access Anas_Nitro; optional Our-CS device 98fe82ca-5db1-4369-9545-f146cc609375 via Primary account only after device preflight and only for source reading. No Desktop Commander access used in this execution.",
   "testEvidence": {
@@ -6678,5 +6738,30 @@
     "disposableDbSeed": "NOT_RUN",
     "twoSchoolTenantIsolation": "NOT_RUN",
     "ownerUat": "NOT_RUN"
+  },
+  "supervisorSharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "v5TestEvidence": {
+    "actualNodeCli": {
+      "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-u02-area-v5.test.cjs",
+      "node": "v22.16.0",
+      "environment": "Isolated sandbox container, NOT Our-CS, NOT Anas_Nitro",
+      "passes": 9,
+      "failures": 0,
+      "skipped": 1,
+      "scope": "Math-only oracles; Rich V2 files not available in local container",
+      "commitShaOfIdenticalGitHubTest": "NOT_VERIFIED_FULL_BYTE_PARITY"
+    },
+    "githubConnectorV8": {
+      "status": "PASS",
+      "groups": 10,
+      "failures": 0,
+      "scope": "Committed Node test bodies with both exact GitHub candidate Rich V2 files; mocked node:fs and node:test, NOT actual Node CLI",
+      "candidateTestCommit": "a82ea2d6ff81486a5e8af56bb3bffd5c7a297d19"
+    },
+    "dotnet": "NOT_RUN",
+    "database": "NOT_RUN",
+    "authenticatedTeacherStudent": "NOT_RUN",
+    "crossCurriculum": "NOT_RUN",
+    "protectedCi": "NOT_RUN"
   }
 }
