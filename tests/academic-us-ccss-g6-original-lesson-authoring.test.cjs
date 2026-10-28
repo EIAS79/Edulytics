@@ -297,3 +297,83 @@ test('U01 L12 Rich V2 cabinet and 12-cube surface area teaching has source-speci
   assert.equal(2 * (1 * 2 + 1 * 6 + 2 * 6), 40);
   assert.equal(2 * 2 * 3, 1 * 2 * 6);
 });
+
+test('All 147 public historical teacher pages have indexed activity headings without false source acceptance', () => {
+  const teachers = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json'), 'utf8'));
+  assert.equal(teachers.summary.canonicalLessons, 147);
+  assert.equal(teachers.summary.pagesRetrieved, 147);
+  assert.equal(teachers.summary.titleMismatches, 0);
+  assert.equal(teachers.summary.sourceTasksAcademicallyAccepted, 0);
+  assert.equal(teachers.lessons.length, 147);
+  assert.deepEqual(teachers.lessons.map(x => x.lessonCode), blueprint.Lessons.map(x => x.LessonCode));
+  for (let i = 0; i < 147; i++) {
+    const row = teachers.lessons[i];
+    assert.equal(row.expectedTitle, blueprint.Lessons[i].Title);
+    assert.equal(row.sourceDocumentTitle, blueprint.Lessons[i].Title);
+    assert.equal(row.fetchStatus, 'PUBLIC_TEXT_RETRIEVED');
+    assert.ok(row.teacherActivityHeadings.length >= 2, row.lessonCode);
+    assert.equal(row.originalLessonLearningGoalManuallyCompared, false);
+    assert.equal(row.teacherAssessmentImplementationVerified, false);
+    assert.equal(row.protectedTeacherResponsesVerified, false);
+  }
+});
+
+test('All ten MP-only Grade 6 source-heading-boundary proposals are distinct and human-scored', () => {
+  const assessment = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-ten-mp-only-source-heading-anchored-assessment-boundaries.json'), 'utf8'));
+  assert.equal(assessment.summary.mpOnlyOutcomeLessons, 10);
+  assert.equal(assessment.summary.sourceActivityBodiesIndependentlyCompared, 0);
+  assert.equal(assessment.summary.selectedPracticeVerified, 0);
+  assert.equal(assessment.summary.fullyTeacherGradedLessonsAccepted, 0);
+  assert.equal(assessment.entries.length, 10);
+  const seen = new Set();
+  for (const e of assessment.entries) {
+    assert.ok(!seen.has(e.lessonCode), 'duplicate assessment boundary: ' + e.lessonCode);
+    seen.add(e.lessonCode);
+    assert.ok(byCode.has(e.lessonCode), e.lessonCode);
+    assert.ok(e.publicStudentActivityHeadings.length >= 2);
+    assert.ok(e.publicTeacherActivityAndCooldownHeadings.length >= 2);
+    assert.equal(e.teacherRubricCandidate.maxScore, 8);
+    assert.equal(e.teacherRubricCandidate.criteria.length, 4);
+    assert.equal(e.teacherRubricCandidate.humanEvaluationRequired, true);
+    assert.equal(e.teacherRubricCandidate.autoGradingOfFullSourceTaskProhibited, true);
+    assert.equal(e.actualSelectedPracticeContract, 'NOT_TRACED');
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED');
+  }
+});
+
+test('U09 L01-L02 source-aware Fermi and historical population Rich V2 candidates remain explicitly review-only', () => {
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u09-l01-l02-fermi-world-20261028.rich-lesson-v2.json'), 'utf8'));
+  const source = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u09-l01-l02-public-source-task-assessment-boundaries.json'), 'utf8'));
+  assert.equal(rich.PackCode, 'US-CCSS-MATH');
+  assert.equal(rich.SchemaVersion, 1);
+  assert.deepEqual(rich.Lessons.map(x => x.LessonCode), [lcode(9,1),lcode(9,2)]);
+  assert.deepEqual(source.entries.map(x => x.lessonCode), [lcode(9,1),lcode(9,2)]);
+  for (const lesson of rich.Lessons) {
+    assert.ok(lesson.ExplanationParagraphs.length >= 3);
+    assert.ok(lesson.KeyConcepts.length >= 3);
+    assert.ok(lesson.WorkedExamples.length >= 3);
+    assert.ok(lesson.CommonMistakes.length >= 2);
+    assert.ok(lesson.SummaryPoints.length >= 3);
+    assert.ok(lesson.Visuals.length >= 1);
+    assert.ok(lesson.WorkedExamples.every(x => x.Steps.length >= 3 && x.Question && x.Method && x.Answer && x.Check));
+  }
+  source.entries.forEach(e => {
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED');
+    assert.equal(e.assessmentCandidate.maxScore, 8);
+    assert.equal(e.assessmentCandidate.realStudentSubmissionVerified, false);
+    assert.equal(e.assessmentCandidate.storedTeacherFeedbackVerified, false);
+    assert.equal(e.selectedPracticeGeneratorVerifierVerified, false);
+  });
+  assert.match(rich.Lessons[0].ExplanationParagraphs.join(' '), /cereal/i);
+  assert.match(rich.Lessons[0].WorkedExamples[2].Question, /monument/i);
+  assert.match(rich.Lessons[1].ExplanationParagraphs.join(' '), /historical 7.4-billion/i);
+  assert.match(rich.Lessons[1].WorkedExamples[1].Answer, /2 or 3/i);
+  assert.equal(2_000_000_000 * 0.125, 250_000_000);
+  assert.equal(25_000_000 * 10, 250_000_000);
+  assert.equal(20_000 * 10_000 * 10, 2_000_000_000);
+  assert.equal(12 / 30 * 100, 40);
+});
