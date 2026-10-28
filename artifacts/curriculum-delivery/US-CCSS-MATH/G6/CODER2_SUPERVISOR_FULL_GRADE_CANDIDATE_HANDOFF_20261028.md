@@ -40,3 +40,23 @@ This branch is Grade 6-owned and carries a full 147-lesson content candidate, no
 No production state has been changed by Coder 2. Rolling back this unmerged work means closing the draft PR/retiring the isolated branch. If a future authorized release changes persisted metadata, its rollback requires separate version and data compatibility proof.
 
 **Durable next acceptance cursor:** `PED:US-CCSS-MATH:G6:U01:L01` for actual source-student activity / effective rendered content / exact Practice parity, then proceed in canonical source order across all 147. This is **not** an authoring cursor: all 147 learner-text candidates exist. Preserve these committed candidates and do not bulk rewrite again without evidence.
+
+## V4 continuity checkpoint — 2026-10-28, source-activity and test follow-up
+
+**Machine boundary followed.** No Desktop Commander account or device was accessed during this checkpoint. In particular, no use of the forbidden Personal/Anas_Nitro connection. Source review used the public historical Kendall Hunt/OUR pages online. Our-CS remains allowed ONLY for source reads after Primary/device preflight, and was not needed. No local test software ran on Our-CS.
+
+**Preserved branch/PR:** `curriculum/us-ccss-g6-full-grade-20261028` and existing **draft PR #591**; no resets, force pushes, shared-core edits, database mutations, merges or deployments.
+
+**Concrete new Stage A/B authoring evidence for U01:L01–L03 (not academic acceptance):**
+- Public 2017–2019 student lessons, teacher lessons and practice pages were read for all three, with **12 observed source activities** and activity-level purpose/assessment boundaries recorded in `g6-u01-l01-l03-public-source-task-practice-boundaries.json`.
+- L01 now compares the area of red trapezoids, blue rhombi and green triangles using consistent triangular tiles as an area unit. It addresses unlike tile sizes, gap/overlap and student-created equal-area tilings, rather than perimeter-only square rows. Source activity roles include *Building Towards 6.G.A.1*.
+- L02 now explicitly diagnoses incorrect mixed-size-square tilings and models a unit square composed of two half-square triangles, original-equivalent non-square compositions, and teacher-reviewed diagrams.
+- L03 now compares a full shaded square with the equal shaded area left after one piece is removed and reattached elsewhere; it cautions against subtracting a tilted hole of unknown area. Decomposition and justification remain necessary.
+- The canonical content pack and **all three explicit Rich V2 sidecars** were revised. The new source-task fixture proposes **12 teacher-only rubric criteria**, but there is **no verified teacher scoring UI, stored rubric result or machine grading**. Public teacher example answers behind login and original figure pixels/applets were not independently checked.
+- Stage A fully accepted remains **0/147**, Stage C exact selected Practice accepted **0/147**, Stage D **0/147**, academically accepted **0/147**. The candidate still has **147/147 edited lesson prose** but not 147/147 fully reviewed source activities.
+
+**Exact local evidence:** An isolated JavaScript V8 compatibility harness loaded the committed Grade 6 `.test.cjs` text and six connector-retrieved branch fixture files, mapped its `require`, `fs`, `path` and `node:assert` calls to an in-memory adapter, and executed **12/12 test callbacks PASS** after correcting an erroneous area-unit assertion and teaching text. This is a useful *source assertion* check, **not** actual Node `node --test`, .NET, CI, generator/verifier, Render/Neon, two-school, authenticated routes or deployment. Final SHA must still be tested with real runners when shared integration is ready.
+
+**Current unresolved gates:** The project-wide `LessonPracticeContractRegistry.BuildAllEntries` inserts explicit LessonPracticeContractProjection first, then official outcome rules and supporting rules with `TryAdd`, with grade-specific overrides later. Static eligibility is not the selected student question. A **single shared integration owner designated by Supervisor 1** must review exact Grade 6 contract priority and source-appropriate generators/verifiers/teacher-rubric persistence. The shared `CommonCoreRichContentCorrections` effective version marker may still differ from the candidate pack's contentVersion. Check every applicable persisted predecessor and authenticated effective content before any release. PR #591 remains **draft**, no Admin gate and no production authorization.
+
+**Separate cursors:** Next **public-source-task text comparison** is `PED:US-CCSS-MATH:G6:U01:L04`. Next **academic acceptance** remains `PED:US-CCSS-MATH:G6:U01:L01`, because no lesson has passed the complete A–D evidence sequence.
