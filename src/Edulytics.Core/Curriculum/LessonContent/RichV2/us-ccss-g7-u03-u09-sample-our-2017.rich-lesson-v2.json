@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v3",
+  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v4",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -9,7 +9,7 @@
       "Title": "How Well Can You Measure?",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Use square measurements to compare potentially proportional relationships, taking account of realistic measurement error. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/3/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "For squares, diagonal length d equals side length times √2, and perimeter is four times side length. Thus perimeter/d is constant; area/d is not. Real ruler measurements may scatter near the ideal relationship."
+        "The source activity investigates measurement reliability: pupils measure square diagonals and perimeters, organize pairs, plot data, and then compare how diagonal length relates to area. Exact Pythagorean formulas belong to optional later-grade enrichment, not the required starting skill. Student source: https://im.kendallhunt.com/MS/students/2/3/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -33,16 +33,17 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Predict perimeter and diagonal",
-          "Question": "A square has side 5 cm. Give its perimeter and exact diagonal.",
-          "Method": "Show the relevant mathematical reasoning with units or justified conditions; verify the result.",
+          "Title": "Measure a square and compare its diagonal to its perimeter",
+          "Question": "Use a ruler on three original 2 cm, 3 cm and 5 cm squares: estimate each diagonal, calculate the perimeter and plot pairs (diagonal, perimeter). What trend do you expect?",
+          "Method": "Measure first; organize experimental data and inspect the scatter plot rather than assuming a later-grade theorem.",
           "Steps": [
-            "Compute P=4×5=20 cm.",
-            "Apply Pythagoras: d²=5²+5²=50.",
-            "Simplify d=5√2 cm."
+            "Carefully draw and measure three squares (sides 2, 3, 5 cm) and record diagonal lengths, approximately 2.8, 4.2 and 7.1 cm.",
+            "Calculate perimeters as 8, 12, and 20 cm.",
+            "Plot measured pairs (≈2.8,8), (≈4.2,12), (≈7.1,20) with the diagonal on the horizontal axis.",
+            "Describe a roughly straight-line trend near the origin and discuss measurement variation with a partner."
           ],
-          "Answer": "20 cm; 5√2 cm.",
-          "Check": "Perimeter/diagonal=4/√2."
+          "Answer": "Perimeters are 8,12,20 cm; diagonals are approximately 2.8,4.2,7.1 cm; plotting suggests proportionality with measurement uncertainty.",
+          "Check": "Teacher evaluates physical measurement, labeled plot and uncertainty discussion; exact √2 is optional enrichment, not a Grade 7 prerequisite."
         },
         {
           "Title": "Explain scatter from measurement",
@@ -67,6 +68,19 @@
           ],
           "Answer": "No constant area/diagonal ratio.",
           "Check": "Doubling side doubles diagonal but quadruples area."
+        },
+        {
+          "Title": "Explain why two measurements may only look proportional",
+          "Question": "Two independently measured squares have (diagonal, perimeter) pairs (2.8 cm,8 cm) and (4.2 cm,12 cm). Are these evidence for proportionality, and what would improve the conclusion?",
+          "Method": "Make a scatter plot and compare quotients with allowance for ruler measurement variation.",
+          "Steps": [
+            "Plot both pairs with the diagonal as x and perimeter as y.",
+            "Compute approximately 8/2.8≈2.86 and 12/4.2≈2.86.",
+            "Observe that similar ratios support a linear-through-origin model, but two points do not independently prove an exact law.",
+            "Collect more independently measured squares, compare accuracy and explain why the graph may show small scatter."
+          ],
+          "Answer": "Yes, they support an approximately proportional model; more measurements and a labeled scatter plot strengthen the claim.",
+          "Check": "Teacher checks measured data, plotting and qualified conclusion."
         }
       ],
       "CommonMistakes": [
@@ -289,7 +303,8 @@
       "Title": "Interpreting Negative Numbers",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Compare signed rational numbers on number lines and interpret temperatures and elevations relative to zero. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/5/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "A negative value indicates a location below a chosen reference point. Absolute value measures distance from zero, not whether the temperature or elevation is positive."
+        "A negative value indicates a location below a chosen reference point. Absolute value measures distance from zero, not whether the temperature or elevation is positive.",
+        "Publisher student task parity includes reading missing negative and fractional-degree thermometer ticks and locating sea animals on a signed vertical axis; interpreting a negative sign and magnitude is necessary but not sufficient. Student source: https://im.kendallhunt.com/MS/students/2/5/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -347,6 +362,19 @@
           ],
           "Answer": "6.25 units.",
           "Check": "Distance cannot be negative."
+        },
+        {
+          "Title": "Complete signed thermometer ticks and interpret sea level",
+          "Question": "A thermometer has equally spaced 5°C ticks at −10, [blank], 0, 5, [blank], 15, 20, [blank], 30°C. Fill the blanks and use a vertical number line to compare a fish at −7 m and bird at +10 m.",
+          "Method": "Complete the equal-step vertical ruler and distinguish signed positions from unsigned vertical separation.",
+          "Steps": [
+            "The 5°C increments yield −10, −5,0,5,10,15,20,25,30, so blanks are −5,10,25.",
+            "Plot fish at −7 m and bird at +10 m relative to the sea-level 0 m reference.",
+            "The bird is 17 m vertically above the fish (10−(−7)=17).",
+            "Explain why −7 m means below water rather than a negative physical distance."
+          ],
+          "Answer": "Thermometer blanks −5°C,10°C,25°C; vertical separation 17 m.",
+          "Check": "Teacher reviews thermometer tick spacing and the correctly labeled signed vertical number line."
         }
       ],
       "CommonMistakes": [
@@ -770,7 +798,8 @@
       "Title": "Mystery Bags",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Predict outcomes using repeated trials and compare evidence about likelihood, distinguishing observations from certainty. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/8/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "This source introduction uses concealed bags of colored objects and repeated experimental draws. Student predictions and arguments are teacher-reviewed; no single experimental outcome is guaranteed."
+        "This source introduction uses concealed bags of colored objects and repeated experimental draws. Student predictions and arguments are teacher-reviewed; no single experimental outcome is guaranteed.",
+        "The actual introductory publisher task uses a repeated-with-replacement colored-block bag game, with changing round points and group records. Independent worked fractions support prediction, but do not replace the physical trial protocol or teacher-reviewed conclusions. Student source: https://im.kendallhunt.com/MS/students/2/8/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -828,6 +857,19 @@
           ],
           "Answer": "No: the observation supports a high likelihood, not certainty.",
           "Check": "Teacher reviews the reasoning about randomness."
+        },
+        {
+          "Title": "Score a repeated mystery-bag experiment with replacement",
+          "Question": "Four learners each draw four blocks with replacement per round. In a trial record, the group gets 4 target-color draws in round 1, 9 in round 2 and 5 in round 3. If target colors award 1, 2 and 3 points respectively, find the group's total and explain the likelihood evidence.",
+          "Method": "Reconstruct each round's sample count and points, and separate observed color frequency from the game score.",
+          "Steps": [
+            "Each round has 4 learners×4 trials=16 draws with replacement.",
+            "Round 1 gives 4×1=4 points; round 2 gives 9×2=18.",
+            "Round 3 gives 5×3=15 points; total 4+18+15=37.",
+            "Color frequencies were 4/16,9/16,5/16; compare them as estimates, not certainty about the next draw."
+          ],
+          "Answer": "37 group points, with round frequencies 25%,56.25%,31.25% for the target color.",
+          "Check": "Teacher checks round data protocol, actual recorded draws, replacement and empirical-vs-theoretical claim."
         }
       ],
       "CommonMistakes": [
@@ -898,7 +940,8 @@
       "Title": "Planning Recipes",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Scale ingredient and nutritional information per serving and justify a recipe meeting specified nutrient thresholds. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/9/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "This optional open-ended source lesson asks learners to select or invent a recipe and defend their nutrition calculations. The numeric worked examples support arithmetic; the authentic recipe and justification require teacher assessment."
+        "This optional open-ended source lesson asks learners to select or invent a recipe and defend their nutrition calculations. The numeric worked examples support arithmetic; the authentic recipe and justification require teacher assessment.",
+        "The publisher student project includes ingredient-by-ingredient amounts per serving, caloric values, total calories per serving and percentage of a 2,000-calorie reference. The full invented recipe and source attribution require human review; a total-calorie division alone misses the ingredient-table task. Student source: https://im.kendallhunt.com/MS/students/2/9/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -956,6 +999,19 @@
           ],
           "Answer": "Yes under the specified classroom threshold.",
           "Check": "Teacher reviews the full invented recipe, source data and reasoning."
+        },
+        {
+          "Title": "Create a fully traceable per-serving nutrition table",
+          "Question": "A fictional recipe for four servings uses 600 g ingredient A at 2 kcal/g and 200 g ingredient B at 1.5 kcal/g. Calculate both ingredients' mass and calories per serving, total calories per serving, and fraction of an assumed 2,000 kcal daily reference.",
+          "Method": "Keep per-ingredient input quantities, unit caloric rates and serving count explicit.",
+          "Steps": [
+            "Ingredient A has 600/4=150 g per serving and 150×2=300 kcal.",
+            "Ingredient B has 200/4=50 g per serving and 50×1.5=75 kcal.",
+            "One serving provides 300+75=375 kcal.",
+            "Relative to a defined 2,000 kcal reference, compute 375/2000×100=18.75%."
+          ],
+          "Answer": "Ingredient A: 150 g/300 kcal; B: 50 g/75 kcal; total 375 kcal per serving, 18.75% of the illustrative 2,000 kcal reference.",
+          "Check": "Values and caloric factors are explicitly invented for a math model. Teacher checks the learner's actual selected recipe, reliable data sources, serving divisions and written explanation."
         }
       ],
       "CommonMistakes": [
