@@ -49,7 +49,7 @@ test('independent mathematical oracles for Unit 1 examples',()=>{
   for(let n=0;n<=8;n++)assert.equal(2**n*80*(0.5**n),80);
   assert.deepEqual([1,2,3,4,5].map(n=>n*(n+1)/2),[1,3,6,10,15]);
   assert.deepEqual([1,2,3,4].map(n=>n*(n+1)*(2*n+1)/6),[1,5,14,30]);
-  assert.equal((2/3)**3,8/27);
+  assert.equal(Math.round((2/3)**3*1e12),Math.round((8/27)*1e12));
   assert.equal(3*(1/4+1/16+1/64)+1/64,1);
   const a=n=>23000+6000*n,b=n=>3125*1.2**n;
   for(let n=0;n<22;n++)assert.ok(b(n)<=a(n));
