@@ -7,7 +7,8 @@
   "sourceRightsNote": "Public historical Kendall Hunt teacher, student and practice pages state CC BY 4.0 for licensed OUR/IM educational material; the IM name/logo are excluded. Candidate examples and descriptions are independently authored and do not embed publisher diagrams.",
   "sourceAccessCaveats": [
     "Public pages and available alt descriptions were read. Teacher model answer sections may require login; no protected student-response content was accessed.",
-    "Public source task comparison is not a claim that all figure pixels, applet interactions, authenticated Edulytiks rendering, student submissions or teacher evaluation were checked."
+    "Public source task comparison is not a claim that all figure pixels, applet interactions, authenticated Edulytiks rendering, student submissions or teacher evaluation were checked.",
+    "Standard roles are activity-level observations from the public teacher pages, not a replacement for the repository's official immutable blueprint alignments."
   ],
   "candidateBranch": "curriculum/us-ccss-g6-full-grade-20261028",
   "entries": [
@@ -61,6 +62,66 @@
           "geometry shape names and dimensions without comparing covered area",
           "single numeric mark for original design or oral justification"
         ]
+      },
+      "publicSourceLessonStandardsRoles": {
+        "buildingOn": [
+          "3.G.A"
+        ],
+        "buildingTowards": [
+          "6.G.A.1"
+        ],
+        "addressing": []
+      },
+      "teacherOnlyRubricCandidate": {
+        "status": "AUTHORING_ONLY_NO_VERIFIED_TEACHER_WORKFLOW",
+        "scoreRange": {
+          "min": 0,
+          "max": 8
+        },
+        "criteria": [
+          {
+            "criterion": "Tiling validity",
+            "maxPoints": 2,
+            "requiredEvidence": "Shows complete coverage and identifies a gap/overlap correctly",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Comparable units",
+            "maxPoints": 2,
+            "requiredEvidence": "Converts unlike polygons to a shared area unit before comparing",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Mathematical justification",
+            "maxPoints": 2,
+            "requiredEvidence": "Explains why rotations/rearrangements preserve the same piece areas",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Original representation",
+            "maxPoints": 2,
+            "requiredEvidence": "Presents a labeled design or accessible description supporting the conclusion",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedEvaluationVerified": false
       }
     },
     {
@@ -113,6 +174,68 @@
           "shape classification replacing area conservation",
           "grading an original drawing solely by a number"
         ]
+      },
+      "publicSourceLessonStandardsRoles": {
+        "buildingOn": [
+          "3.MD.C.5.b"
+        ],
+        "buildingTowards": [
+          "6.G.A"
+        ],
+        "addressing": [
+          "6.G.A.1"
+        ]
+      },
+      "teacherOnlyRubricCandidate": {
+        "status": "AUTHORING_ONLY_NO_VERIFIED_TEACHER_WORKFLOW",
+        "scoreRange": {
+          "min": 0,
+          "max": 8
+        },
+        "criteria": [
+          {
+            "criterion": "Precise meaning of area",
+            "maxPoints": 2,
+            "requiredEvidence": "Defines area as equal-size square coverage without gaps or overlap",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Fractional piece reasoning",
+            "maxPoints": 2,
+            "requiredEvidence": "Proves matching half-square triangles compose one unit square",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Area conservation",
+            "maxPoints": 2,
+            "requiredEvidence": "Creates a different shape from unchanged non-overlapping pieces",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Explanation quality",
+            "maxPoints": 2,
+            "requiredEvidence": "Uses a labeled diagram/description and exact area units",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedEvaluationVerified": false
       }
     },
     {
@@ -165,6 +288,66 @@
           "unjustified subtraction of an unknown tilted-hole area",
           "mere polygon classification"
         ]
+      },
+      "publicSourceLessonStandardsRoles": {
+        "buildingOn": [
+          "3.MD.C.7.d"
+        ],
+        "buildingTowards": [],
+        "addressing": [
+          "6.G.A.1"
+        ]
+      },
+      "teacherOnlyRubricCandidate": {
+        "status": "AUTHORING_ONLY_NO_VERIFIED_TEACHER_WORKFLOW",
+        "scoreRange": {
+          "min": 0,
+          "max": 8
+        },
+        "criteria": [
+          {
+            "criterion": "Shaded-region selection",
+            "maxPoints": 2,
+            "requiredEvidence": "Counts only actual shaded portions, excluding interior holes",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Defensible measurement",
+            "maxPoints": 2,
+            "requiredEvidence": "Uses known lengths or supported decompositions, not invented tilted-hole sizes",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Conservation proof",
+            "maxPoints": 2,
+            "requiredEvidence": "Shows an equal-area piece can be moved without changing the total",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          },
+          {
+            "criterion": "Second method",
+            "maxPoints": 2,
+            "requiredEvidence": "Explains how addition, rearrangement or justified subtraction gives the same area",
+            "scoring": {
+              "zero": "Missing or mathematically incorrect evidence",
+              "one": "Partially correct with a material gap in explanation",
+              "two": "Mathematically correct evidence with a clear justification"
+            }
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedEvaluationVerified": false
       }
     }
   ]
