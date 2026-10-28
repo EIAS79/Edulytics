@@ -243,3 +243,57 @@ test('Grade 6 public-source area activity boundaries match first-party candidate
   assert.equal(7 * 1, 7);
   assert.equal(16 - 1 + 1, 16);
 });
+
+test('All 147 historical public student lesson page titles and activity headings are indexed without academic acceptance', () => {
+  const index = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json'), 'utf8'));
+  assert.equal(index.status ?? index.reviewState, 'AUTOMATED_PUBLIC_STUDENT_PAGE_DISCOVERY_ONLY');
+  assert.equal(index.summary.canonicalLessons, 147);
+  assert.equal(index.summary.pagesRetrieved, 147);
+  assert.equal(index.summary.studentTasksHumanReviewed, 0);
+  assert.equal(index.summary.sourceTaskParityApproved, 0);
+  assert.equal(index.lessons.length, 147);
+  assert.deepEqual(index.lessons.map(x => x.lessonCode), blueprint.Lessons.map(x => x.LessonCode));
+  for (let i = 0; i < 147; i++) {
+    const row = index.lessons[i], source = blueprint.Lessons[i];
+    assert.equal(row.expectedTitle, source.Title);
+    assert.equal(row.sourceDocumentTitle, source.Title);
+    assert.equal(row.fetchStatus, 'PUBLIC_TEXT_RETRIEVED');
+    assert.ok(row.sourceActivityHeadings.length >= 2, row.lessonCode);
+    assert.equal(row.sourceLearnerTaskActivityParityApproved, false);
+    assert.equal(row.semanticAlignmentManuallyReviewed, false);
+    assert.equal(row.sourceImagesVerified, false);
+    assert.equal(row.sourceAppletBehaviorVerified, false);
+  }
+});
+
+test('U01 L12 Rich V2 cabinet and 12-cube surface area teaching has source-specific face exclusions and teacher boundary', () => {
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l12-exposed-cabinet-and-cubes-20261028.rich-lesson-v2.json'), 'utf8'));
+  const source = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l12-public-source-surface-area-boundary.json'), 'utf8'));
+  assert.equal(rich.SchemaVersion, 1);
+  assert.equal(rich.PackCode, 'US-CCSS-MATH');
+  assert.equal(rich.Lessons.length, 1);
+  assert.equal(rich.Lessons[0].LessonCode, lcode(1, 12));
+  assert.equal(source.lessonCode, lcode(1, 12));
+  assert.equal(source.verification.selectedPracticeContractRun, false);
+  assert.equal(source.verification.authStudentRichV2Rendered, false);
+  assert.equal(source.verification.academicAcceptance, 'NOT_ACCEPTED');
+  assert.equal(source.proposedRubric.teacherJudgmentRequired, true);
+  assert.equal(source.proposedRubric.criteria.length, 4);
+  const l = rich.Lessons[0];
+  assert.ok(l.ExplanationParagraphs.length >= 3);
+  assert.ok(l.KeyConcepts.length >= 3);
+  assert.ok(l.WorkedExamples.length >= 3);
+  assert.ok(l.CommonMistakes.length >= 2);
+  assert.ok(l.SummaryPoints.length >= 3);
+  assert.ok(l.Visuals.length >= 1);
+  assert.match(l.ExplanationParagraphs.join(' '), /excluded bottom|exclude.*bottom|bottom.*excluded/i);
+  assert.match(l.WorkedExamples[1].Answer, /32 and 40/);
+  assert.match(l.WorkedExamples[2].Check, /Teacher reviews/);
+  assert.equal(8 * 5 + 2 * (8 * 3) + 2 * (5 * 3), 118);
+  assert.equal(2 * (2 * 2 + 2 * 3 + 2 * 3), 32);
+  assert.equal(2 * (1 * 2 + 1 * 6 + 2 * 6), 40);
+  assert.equal(2 * 2 * 3, 1 * 2 * 6);
+});
