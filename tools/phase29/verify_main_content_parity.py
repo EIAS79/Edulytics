@@ -205,7 +205,19 @@ def run():
         if before_other != after_other:
             errors.append(f"non-teaching metadata changed in reviewed repair: {key}")
 
-    expected_changes = changes_expected | g4_owner_authored
+    # The 149 pinned first-party G4 edits were expected *once*, when the
+    # original main had the pre-authoring pack. After #578 promoted the
+    # authorized blobs to main, exact equality is the required state instead.
+    # validate_g4 already fails closed unless BOTH source/blueprint Git blobs
+    # are the approved old->new pair or approved published->published pair.
+    g4_lock = json.loads((
+        ROOT / "docs/curriculum/g4-2021-owner-authored-revision-lock.json"
+    ).read_text(encoding="utf8"))
+    original_main = subprocess.check_output(
+        ["git", "rev-parse", "origin/main"], cwd=ROOT, text=True
+    ).strip() == g4_lock["originalMainCommit"]
+    g4_new_changes = g4_owner_authored if original_main else set()
+    expected_changes = changes_expected | g4_new_changes
     if set(changed) != expected_changes:
         errors.append(f"unapproved or missing teaching-body edits: changed={changed[:9]}, authorizedCount={len(expected_changes)}")
     unexpected_metadata = [key for key in baseline.keys() & candidate.keys()
