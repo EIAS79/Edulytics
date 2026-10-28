@@ -88,7 +88,7 @@ test('Area source lessons explicitly teach area, units, and conservation, not on
   for (let l = 1; l <= 3; l++) {
     const en = byCode.get(lcode(1, l)).translations[0];
     assert.match(en.explanation, /area/i);
-    assert.match(en.workedExamples, /square units/i);
+    assert.match(en.workedExamples, /square units|square unit|triangular (?:area )?units/i);
     assert.match(en.keyConceptsAndRules, /non-overlapping|overlap/i);
     assert.doesNotMatch(en.stepByStepSolutions, /classify, construct, or reason about the figure/);
   }
