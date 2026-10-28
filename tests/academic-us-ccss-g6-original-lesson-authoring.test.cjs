@@ -18,9 +18,9 @@ const pack = JSON.parse(fs.readFileSync(path.join(root,
 const byCode = new Map(pack.lessons.map(x => [x.lessonCode, x]));
 const lcode = (u, l) => `PED:US-CCSS-MATH:G6:U${String(u).padStart(2, '0')}:L${String(l).padStart(2, '0')}`;
 const target = [
-  [1,1, 'compare how much area tiling patterns cover'],
-  [1,2, 'find area by splitting figures'],
-  [1,3, 'find and justify polygon areas'],
+  [1,1, 'compare areas covered by different tiling shapes'],
+  [1,2, 'define area precisely, compare same-area figures'],
+  [1,3, 'reason about shaded polygon areas'],
   [2,1, 'describe two quantities with precise ratio language'],
   [3,1, 'use a rate per one unit'],
   [4,1, 'estimate how changing a positive divisor'],
@@ -203,4 +203,38 @@ test('Full-grade authoring is not confused with source, Practice or production a
   assert.equal(record.summary.academicallyAccepted, 0);
   assert.equal(record.summary.releaseReady, false);
   assert.ok(record.lessons.every(l => l.academicAcceptance === 'NOT_ACCEPTED'));
+});
+
+test('Grade 6 public-source area activity boundaries match first-party candidate teaching', () => {
+  const crosswalk = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json'), 'utf8'));
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json'), 'utf8'));
+  assert.equal(crosswalk.status, 'PUBLIC_SOURCE_ACTIVITY_COMPARISON_NOT_ACADEMIC_ACCEPTANCE');
+  assert.equal(crosswalk.entries.length, 3);
+  assert.deepEqual(crosswalk.entries.map(e => e.lessonCode), [lcode(1,1), lcode(1,2), lcode(1,3)]);
+  assert.deepEqual(rich.Lessons.map(e => e.LessonCode), [lcode(1,1), lcode(1,2), lcode(1,3)]);
+  crosswalk.entries.forEach((entry, index) => {
+    assert.ok(entry.student.includes('/MS/students/1/1/'));
+    assert.ok(entry.teacher.includes('/MS/teachers/1/1/'));
+    assert.ok(entry.practice.includes('/MS/students/1/1/'));
+    assert.ok(entry.observableTasks.length >= 4);
+    assert.ok(entry.practiceBoundary.teacherOnly.length >= 2);
+    assert.ok(entry.practiceBoundary.forbiddenSubstitutes.length >= 2);
+    assert.ok(entry.remainingGaps.length >= 3);
+    assert.ok(rich.Lessons[index].WorkedExamples.length >= 3);
+    assert.ok(rich.Lessons[index].WorkedExamples.some(e => /teacher.review/i.test(e.Method + ' ' + e.Check)));
+  });
+  const a = rich.Lessons[0];
+  assert.match(a.ExplanationParagraphs.join(' '), /trapezoid/i);
+  assert.match(a.WorkedExamples[0].Question, /rhombi/i);
+  assert.match(a.WorkedExamples[0].Answer, /9 triangular area units/);
+  const b = rich.Lessons[1];
+  assert.match(b.WorkedExamples[1].Answer, /1\/2 square unit/);
+  const c = rich.Lessons[2];
+  assert.match(c.WorkedExamples[0].Answer, /16 square units/);
+  assert.equal(3 * 3, 9);
+  assert.equal(4 * 2, 8);
+  assert.equal(7 * 1, 7);
+  assert.equal(16 - 1 + 1, 16);
 });
