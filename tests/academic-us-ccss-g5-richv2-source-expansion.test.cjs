@@ -13,7 +13,8 @@ const candidates = [
   'us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json',
   'us-ccss-g5-decimals-placevalue-maxproduct-source-2021.rich-lesson-v2.json',
   'us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json',
-  'us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json'
+  'us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json',
+  'us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json'
 ];
 const documents = candidates.map(filename => JSON.parse(
   fs.readFileSync(path.join(repo, richFolder, filename), 'utf8')
@@ -26,9 +27,9 @@ const get = id => {
   return lesson;
 };
 
-test('all 23 authored G5 sidecars have unique identity and correct fields', () => {
-  assert.equal(lessons.length, 23);
-  assert.equal(lessonById.size, 23);
+test('all 26 authored G5 sidecars have unique identity and correct fields', () => {
+  assert.equal(lessons.length, 26);
+  assert.equal(lessonById.size, 26);
   for (const document of documents) {
     assert.equal(document.SchemaVersion, 1);
     assert.equal(document.PackCode, 'US-CCSS-MATH');
@@ -195,4 +196,26 @@ test('sharing examples reject reversed quotients and preserve fixed whole', () =
   assert.equal(5/2,2.5);
   assert.equal(3/6,0.5);
   assert.equal(4/3,1+1/3);
+});
+
+test('Unit 2 L06-L08 retains different fraction source reasoning tasks', () => {
+ for(const id of ['U02:L06','U02:L07','U02:L08']){
+  const l=get(id);
+  assert.match(l.SummaryPoints.join(' '), /2021/);
+  assert.match(l.ExplanationParagraphs.join(' '), /teacher|partner|peer/i);
+ }
+ assert.match(get('U02:L06').WorkedExamples[0].Answer, /3\/2/);
+ assert.match(get('U02:L07').WorkedExamples[1].Answer, /7\/4/);
+ assert.match(get('U02:L08').WorkedExamples[1].Answer, /6\/5/);
+});
+
+test('Unit 2 source problems preserve exact multiplication/division equivalences', () => {
+ assert.equal(3/2,3*(1/2));
+ assert.equal(9/4,2+1/4);
+ assert.equal(7/4,1+3/4);
+ assert.equal(3*(2/5),6/5);
+ assert.equal(2*(3/5),6/5);
+ assert.equal(3*(3/5),9/5);
+ assert.equal(2*(1/3*6),4);
+ assert.equal(2*(1/4*6),3);
 });
