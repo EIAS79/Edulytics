@@ -1,5 +1,7 @@
 # Edulytics — Continuous Whole-Grade Authoring / Final-CI Protocol V1
 
+> **Current-status notice (2026-10-28):** This protocol's Grade 1-specific working branch, draft PR #567 and October 2026 start SHA describe a completed historical run. PR #567 is merged. Retain the isolation, full-grade quality and exact-SHA final-CI principles for future grades; do **not** reuse the old branch/PR promotion instructions. Confirm the current grade and actual open PR before authoring. A merge is not equivalent to owner UAT or independently verified academic evidence.
+
 **Status:** Owner-requested execution-throughput amendment, 2026-10-19. Applied on an independent unpublished authoring branch, pending normal GitHub review and merge. Not a release approval.
 **Governing academic quality:** Original `EDULYTICS-GRADE-FIRST-5-V1`, especially original student-facing tasks, A–D, source-faithful teaching, genuine Practice and independent correctness tests.
 **Release policy:** `EDULYTICS-GRADE-FIRST-FULL-GRADE-V2`; one whole grade, no partial publication.

@@ -1,23 +1,23 @@
-# Edulytics — Curriculum Plans & Execution Procedures
+# Edulytics — Curriculum Plans and Execution Procedures
 
-Active curriculum **plans** and their two grade-first execution **SOPs** are stored in this folder; superseded Full-Grade V1 is preserved under the archive subfolder. No duplicate plan documents are kept in the parent directory.
+This index distinguishes **active policy** from completed, superseded or grade-specific **historical execution instructions**. Before any new grade work, read `AGENTS.md`, check current GitHub PR state and the live grade ledger; do not follow dates or ordinals copied from old plans.
 
-## Current grade-wide plan
+## Active governing policy and technical quality
 
-- [Grade-first full-grade execution plan V2](EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md) — sole active whole-grade delivery policy; original V1 per-lesson academic acceptance unchanged.
-- [Full-grade executor SOP](GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md) — step-by-step implementation and release procedures.
-- [Continuous whole-grade authoring + concentrated final-CI protocol](EDULYTICS_FULL_GRADE_CONTINUOUS_AUTHORING_FINAL_CI_PROTOCOL_V1.md) — owner-requested operational acceleration: isolate work from PR-triggered CI until frozen grade review; retain all original source/math/learner/rights and mandatory release criteria.
+- [Full-Grade V2 execution plan](EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V2.md) — current whole-grade/course release-unit policy.
+- [Full-grade executor SOP](GRADE_FIRST_FULL_GRADE_EXECUTOR_SOP.md) — step-by-step process.
+- [Continuous authoring/final-CI protocol](EDULYTICS_FULL_GRADE_CONTINUOUS_AUTHORING_FINAL_CI_PROTOCOL_V1.md) — general efficiency approach; its original Grade 1 branch and PR #567 handoff are historical.
+- [Original Five-Lesson V1 plan](EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md) — **retain unchanged**, authoritative *per-lesson* A–D/source/Practice/verification criteria, NOT a current five-lesson release schedule.
 
-## Original V1 quality criteria and historical execution
+## Historical plans and completed-run instructions (do not execute as current work queues)
 
-- [Grade-first five-lesson execution plan V1](EDULYTICS_GRADE_FIRST_FIVE_LESSON_EXECUTION_PLAN_V1.md) — **unchanged source text**, retaining the original A–F acceptance criteria and historical five-lesson batches. The full-grade plan changes release granularity, not quality.
-- [Five-lesson executor SOP](GRADE_FIRST_FIVE_EXECUTOR_SOP.md) — original-batch procedure; retained for audit and interpretation.
+- [Superseded Full-Grade V1](archive/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md).
+- [Superseded 20/500-lesson V2 batching policy](archive/EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md).
+- [Original 500-lesson academic certification policy](archive/US_CCSS_GRADE_BY_GRADE_LESSON_ACADEMIC_CERTIFICATION_PLAN.md).
+- [Historical five-lesson executor SOP](archive/GRADE_FIRST_FIVE_EXECUTOR_SOP.md).
+- [Grade 1 2026-10-21 Stage D execution handoff](archive/EDULYTICS_G1_STAGE_D_BULK_EXECUTION_AND_FINAL_CI_20261021.md).
+- [Grade 2 A–B–C sequential authoring-run policy](archive/EDULYTICS_GRADE_2_A_B_C_STRICT_SEQUENTIAL_POLICY.md).
 
-## Superseded or historical plans (not active release instructions)
+Older original paths remain as brief compatibility pointers. Historical merged Grade 1 PR #567, Grade 2 PR #571 and Grade 4 PR #578 are recorded in `AGENTS.md`. A merge does not establish educational acceptance, source-artwork parity or authenticated production UAT. Never upgrade historical `NO_GO` or `NOT_RUN` evidence by assertion.
 
-- [Superseded Full-Grade V1 (archived)](archive/EDULYTICS_GRADE_FIRST_FULL_GRADE_EXECUTION_PLAN_V1.md) — preserved for audit; no longer governs development, gates or plan identifiers.
-
-- [20-lesson / earlier 500-lesson batch execution plan V2](EDULYTICS_500_LESSON_BATCH_EXECUTION_PLAN_V2.md) — **SUPERSEDED / INACTIVE** in its own status block.
-- [Original grade-by-grade 500-lesson certification plan](US_CCSS_GRADE_BY_GRADE_LESSON_ACADEMIC_CERTIFICATION_PLAN.md) — **historical** document; do not use its former 500-lesson release policy as a current gate.
-
-> Relocation does not accept any lesson, authorize a deployment, alter original plan quality requirements, or replace historical evidence. Original historical plan Git blobs were preserved when moved.
+Relocating documentation does **not** alter academic quality, license rights, release gates, production data, existing student attempts or prior evidence. The complete archived plan texts remain unchanged as Git blobs.

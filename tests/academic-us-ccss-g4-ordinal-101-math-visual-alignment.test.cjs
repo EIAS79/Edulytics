@@ -13,10 +13,11 @@ test('G4 L101 math and independent source-first area visual models',()=>{
  assert.match(l.Visuals[0].Description,/First-party symbolic support/);
  assert.match(l.Visuals[2].Items.join(' '),/6 × 33 = 198/);
 });
-test('No original figure parity or Stage D is invented',()=>{
+test('Ready for Stage D is not evidence of verified figures, approval or Stage D completion',()=>{
  const cp=get('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-v2-stage-a-d-checkpoint.json');
- assert.equal(cp.readyForStageD,false);assert.equal(cp.academicApproved,false);
+ assert.equal(cp.readyForStageD,true);assert.equal(cp.status,'READY_FOR_STAGE_D');
+ assert.equal(cp.stages.D,'NOT_RUN');assert.equal(cp.academicApproved,false);
  assert.equal(cp.bStageVisuals.sourceOriginalImagesOpened,0);
  assert.equal(cp.bStageVisuals.graphicRenderingVerified,false);
- assert.equal(cp.focusedTestsRun,false);
+ assert.equal(cp.focusedTestsRun,true);
 });
