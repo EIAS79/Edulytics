@@ -139,3 +139,72 @@ test('Grade 7 visual audit preserves 145 lesson identities and labels each autho
     assert.equal(row.assistiveTechnologyTest, 'NOT_RUN', row.lessonCode);
   }
 });
+
+
+test('V5 actual student-source comparisons remain honest and lesson-specific', () => {
+  const parity = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-student-task-parity-v5.json');
+  const ledger = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authoring-ledger.json');
+  assert.equal(parity.lessons.length, 145);
+  assert.equal(new Set(parity.lessons.map(row => row.lessonCode)).size, 145);
+  assert.deepEqual(
+    new Set(parity.lessons.map(row => row.lessonCode)),
+    new Set(bp.Lessons.map(row => row.LessonCode))
+  );
+  const inspected = parity.lessons.filter(row => row.sourceInspected === 'DIRECT_STUDENT_PAGE_READ');
+  const unchecked = parity.lessons.filter(row => row.sourceInspected === 'NOT_CHECKED');
+  assert.equal(inspected.length, 21);
+  assert.equal(unchecked.length, 124);
+  assert.equal(parity.counts.stageAVerified, 0);
+  assert.equal(parity.counts.stageCVerified, 0);
+  assert.equal(parity.counts.stageDVerified, 0);
+  assert.equal(ledger.counts.sourceStudentPagesInspected, 21);
+  assert.equal(ledger.counts.sourceStudentPagesNotIndividuallyInspected, 124);
+  assert.equal(ledger.counts.stageAVerified, 0);
+  assert.equal(ledger.counts.stageCVerified, 0);
+  assert.equal(ledger.counts.stageDVerified, 0);
+  assert.equal(ledger.counts.staticRichWorkedExamples, 460);
+  const lessonRows = new Map(ledger.lessons.map(row => [row.lessonCode, row]));
+  for (const row of parity.lessons) {
+    const rich = byCode.get(row.lessonCode);
+    const evidence = lessonRows.get(row.lessonCode);
+    assert.ok(rich && evidence, row.lessonCode);
+    assert.equal(evidence.studentTaskInspection, row.sourceInspected, row.lessonCode);
+    assert.equal(row.actualRichWorkedExamples, rich.WorkedExamples.length, row.lessonCode);
+    assert.equal(row.actualRichVisuals, rich.Visuals.length, row.lessonCode);
+    assert.equal(evidence.visualCount, rich.Visuals.length, row.lessonCode);
+    assert.equal(evidence.richCandidateWorkedExamples, rich.WorkedExamples.length, row.lessonCode);
+    assert.equal(row.academicStageA, 'NOT_VERIFIED', row.lessonCode);
+    assert.equal(row.practiceExactSelectedFamily, 'NOT_VERIFIED', row.lessonCode);
+    assert.equal(row.stageD, 'NOT_RUN', row.lessonCode);
+    if (row.sourceInspected === 'DIRECT_STUDENT_PAGE_READ') {
+      assert.equal(evidence.stages.A, 'SOURCE_STUDENT_TASK_COMPARED_REPAIR_PENDING_ACCEPTANCE', row.lessonCode);
+      assert.equal(row.sourceStudentUrl, 'https://im.kendallhunt.com/MS/students/2/' +
+        row.unit + '/' + row.lesson + '/index.html');
+      assert.ok(row.sourceActivities && row.sourceTarget && row.sourceStudentEvidence &&
+        row.actualGradeOwnedRepair && row.teacherRubricRequired, row.lessonCode);
+      assert.ok(rich.WorkedExamples.length >= 4, row.lessonCode);
+    } else {
+      assert.equal(evidence.stages.A, 'NOT_CHECKED', row.lessonCode);
+      assert.equal(row.sourceStudentUrl, null, row.lessonCode);
+      assert.equal(row.sourceComparison, 'NOT_CHECKED', row.lessonCode);
+    }
+  }
+});
+
+test('U01 source-authentic constructions and U06 discrete nonproportional contrasts exist', () => {
+  for (let n = 1; n <= 13; n++) {
+    const code = 'PED:US-CCSS-MATH:G7:U01:L' + String(n).padStart(2, '0');
+    const l = byCode.get(code);
+    assert.ok(l.ExplanationParagraphs.join(' ').includes('Student task alignment:'), code);
+    assert.ok(l.WorkedExamples.some(w => /teacher|drawing|sketch|peer|construct/i.test(w.Check)), code);
+  }
+  const u01 = byCode.get('PED:US-CCSS-MATH:G7:U01:L01');
+  assert.ok(u01.WorkedExamples.some(w => w.Question.includes('block letter F')));
+  const u06 = byCode.get('PED:US-CCSS-MATH:G7:U06:L01');
+  assert.ok(u06.WorkedExamples.some(w => /toaster/i.test(w.Title)));
+  assert.ok(u06.WorkedExamples.some(w => /fixed-fee popcorn|unit-price and a fixed-fee/i.test(w.Title)));
+  const u07 = byCode.get('PED:US-CCSS-MATH:G7:U07:L01');
+  assert.ok(u07.WorkedExamples.some(w => /protractor/i.test(w.Title)));
+  const u03 = byCode.get('PED:US-CCSS-MATH:G7:U03:L01');
+  assert.ok(/measure a square/i.test(u03.WorkedExamples[0].Title));
+});
