@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v1",
+  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -67,6 +67,18 @@
           ],
           "Answer": "No definite conclusion; measure and compare matching length ratios.",
           "Check": "Teacher review checks justification, not one numeric response."
+        },
+        {
+          "Title": "Compare scaled geometric copies using equivalent ratios",
+          "Question": "Rectangle A is 3 units wide and 5 units high. Rectangle B is 6 units wide and 10 units high, while C is 6 units wide and 8 units high. Which is a scaled copy of A?",
+          "Method": "Compare both corresponding side ratios and justify whether one constant relates the two rectangles.",
+          "Steps": [
+            "For B, width ratio=6/3=2 and height ratio=10/5=2.",
+            "For C, width ratio=6/3=2 but height ratio=8/5=1.6.",
+            "Both corresponding ratios agree only for B; explain why C is distorted."
+          ],
+          "Answer": "B is a factor-2 scaled copy of A; C is not a scaled copy of A.",
+          "Check": "The teacher reviews diagrams or ratio-table explanations; a one-number answer alone does not establish the source's representation goal."
         }
       ],
       "CommonMistakes": [
@@ -84,7 +96,8 @@
       "SummaryPoints": [
         "Compare flavors, mixtures or shapes by proportional reasoning, making defensible claims even when there is no single exact answer.",
         "Divide both ingredients consistently.",
-        "Explain how measurements support or limit a claim."
+        "Explain how measurements support or limit a claim.",
+        "Equivalent ratios can justify scaled copies of geometric figures as well as mixtures."
       ],
       "Visuals": [
         {
