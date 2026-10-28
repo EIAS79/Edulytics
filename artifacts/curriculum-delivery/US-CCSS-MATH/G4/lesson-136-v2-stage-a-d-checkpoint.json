@@ -1,0 +1,50 @@
+{
+  "ordinal": 136,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U08:L09",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "OPTIONAL_LOCAL_2021_TEACHER_SOURCE_INTAKE_REUSED",
+    "B": "FOLDED_PAPER_AND_UNFOLDED_PERIMETER_EXPRESSIONS_PRESERVED",
+    "C": "REUSED_POLYGON_PERIMETER_FAMILY_FOCUSED_XUNIT_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "ac625594f6c6b0a92a9081c25e91edd65f25e88236492cec1f3b1f6cf37fce2e",
+    "teacher": "c82a04baca6948c1a350bdc19ac3f727b404a074a42d0333bd8255a546e94ab3"
+  },
+  "firstPartyCooldown": {
+    "prompt": "A 9-by-6-cm rectangular paper is folded on its symmetry line. Find its original perimeter.",
+    "teacherAnswer": "30 cm."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "optionalSourceLesson": true,
+    "sourceEvidenceReusedFrom": "Our-CS 2021 original source intake",
+    "originalSourceActivities": [
+      "Warm-up: Which One Doesn’t Belong: Figures (10 minutes)",
+      "Activity 1: Before and After (15 minutes)",
+      "Activity 2: Before and After, Perimeter Edition (20 minutes)",
+      "Cool-down: Fold It Once (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Which one doesn’t belong? | Description: 4 shapes. A. 4 sides. 1 pair of parallel sides. 2 right angles. B. kite, 2 pairs of equal length sides. 1 right angle between the two shorter sides. C. 2 vertical sides connected to two curves, one at the top, one at th",
+      "Mai has a piece of paper. She can get two different shapes by folding the paper along a line of symmetry. What is the shape of the paper before it was folded? | Diego folded a piece of paper once along a line of symmetry and got this right triangle. | Which sh",
+      "Jada folded a piece of paper along a line of symmetry and got this rectangle. | What could the paper look like before being folded? Draw one or more sketches. | Write an expression for the perimeter of the unfolded paper."
+    ],
+    "allowedFamily": "usccss.g4.u08.l07.polygon_perimeter_sum",
+    "teacherOnlyTasks": [
+      "Original Mai/Diego and Jada folded paper artwork",
+      "Possible alternative valid unfolded outlines"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal136SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

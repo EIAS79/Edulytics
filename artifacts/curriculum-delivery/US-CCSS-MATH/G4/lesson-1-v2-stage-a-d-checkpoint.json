@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "ordinal": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
+  "title": "Multiples of a Number",
+  "status": "READY_FOR_STAGE_D",
+  "stages": {
+    "A": "2021_PREPARATION_TEACHER_LESSON_AND_STUDENT_PDF_ALL_3_PAGES_PLUS_DIAGRAMS_VERIFIED; COOLDOWN_GOAL_SUBSTITUTE_USER_APPROVED_NOT_SOURCE_IDENTICAL",
+    "B": "FIRST_PARTY_RICH_V2_DIAGRAMS_15_TILE_RECTANGLES_TEACHER_TASKS_AND_INDEPENDENT_COOLDOWN_AUTHORED; D_RUNTIME_RESERVED",
+    "C": "FOUR_SOURCE_ALIGNED_EXACT_PRACTICE_FAMILIES_CODED_AND_STAGE_D_REGRESSION_TESTS_WRITTEN; TEACHER_REVIEW_EXPLICIT",
+    "D": "NOT_RUN"
+  },
+  "sourceFiles": [
+    {
+      "path": "04_Grade_4_IM_K5/unit-1/lesson-1/preparation.html",
+      "sha256": "99f65b13229ca30d502ac323d86b49da08607e0b9c054f3e1772255daf35f138"
+    },
+    {
+      "path": "04_Grade_4_IM_K5/unit-1/lesson-1/lesson.html",
+      "sha256": "b5a8cfbbd20d70cb98616a6a4ea5d628aac3ad5b679eb0330b0fd229e3f52a63"
+    },
+    {
+      "path": "04_Grade_4_IM_K5/accessim_student/unit-1/section-a/lesson-1.html",
+      "sha256": "1ff4d198c44514df48e063283fbab46ecd93fed429e1a610d191e8c9c9c7cf61",
+      "note": "Newer mirror; differs in warm-up label"
+    }
+  ],
+  "blockedOn": [],
+  "sourceParityProvenPercent": null,
+  "readyForStageD": true,
+  "testsWritten": true,
+  "testsRun": true,
+  "academicApproved": false,
+  "studentTaskPdf": {
+    "source": "2021 original source URL linked from local 2021 teacher preparation.html",
+    "url": "https://cms-assets.illustrativemathematics.org/8qvojxum833zkwf43q6ahvral1r4",
+    "pages": 3,
+    "sha256": "b5f8272ce99b0579280376b0ba0b89800599cbf8b5765150ea2e83ee83e43a4a",
+    "textReviewed": true,
+    "figuresVisuallyVerified": true,
+    "figures": {
+      "A": {
+        "width": 5,
+        "height": 4,
+        "area": 20
+      },
+      "B": {
+        "columns": 4,
+        "rows": 5,
+        "area": 20
+      },
+      "C": {
+        "width": 4,
+        "height": 6,
+        "area": 24
+      },
+      "D": {
+        "components": [
+          "2×7",
+          "2×3"
+        ],
+        "area": 20
+      }
+    }
+  },
+  "focusedTest": {
+    "target": "tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs",
+    "testCount": 5,
+    "pass": 5,
+    "fail": 0,
+    "execution": "node --test on ephemeral unmodified snapshot fetched from GitHub pinned SHA ea1c9cf6fb483ae0f57b9bac77b02ebebc6c1ef7",
+    "scope": "Static identity / mathematical guard / Rich V2 source task structure",
+    "stageD": false
+  },
+  "stageCContract": {
+    "lessonCode": "PED:US-CCSS-MATH:G4:U01:L01",
+    "skillId": "geometry.rectangle.area",
+    "allowedQuestionFamilies": [
+      "usccss.g4.u01.l01.fixed_width_area",
+      "usccss.g4.u01.l01.area_is_multiple",
+      "usccss.g4.u01.l01.missing_whole_length",
+      "usccss.g4.u01.l01.possible_area_above30"
+    ],
+    "forbiddenAsSourceParity": [
+      "number.lcm.two_numbers",
+      "generic factors/primes tasks substituted for construction"
+    ],
+    "answerTypes": [
+      "exact_integer 0/1 for possible and integer product or length"
+    ],
+    "representationRequirements": [
+      "rectangle dimensions and square-unit labels; manual original constructions"
+    ],
+    "capabilityReadiness": "AUTHORED_NOT_STAGE_D_VERIFIED",
+    "teacherReviewRequired": [
+      "source A–D discussion",
+      "physical tiles",
+      "draw and label area models",
+      "explain why 28 is not width-three multiple",
+      "original gated cool-down"
+    ]
+  },
+  "stageCPlannedTests": [
+    "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Unit1Lesson1Original2021SourcePracticeTests.cs — four xUnit method groups, WRITTEN_NOT_RUN",
+    "tests/academic-us-ccss-g4-u01-l01-practice-source-guard.test.cjs — Node static arithmetic/routing checks, WRITTEN_NOT_RUN_THIS_ITERATION",
+    "tests/academic-us-ccss-g4-u01-l01-source-guard.test.cjs — earlier 5/5 static tests ran at previous candidate only; do not claim this candidate's CI"
+  ],
+  "approvedSourceDifference": {
+    "publisherCoolDownOriginalSeen": false,
+    "userAuthorisedOriginalEdulyticsCoolDown": true,
+    "subject": "fixed-width rectangle areas and multiples",
+    "taskPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-1-edulytics-cooldown.md",
+    "class": "first-party pedagogical equivalent NOT publisher-source-identical"
+  },
+  "pendingStageD": [
+    "Build and code integration including visualization, authenticated learner/teacher display and accessibility.",
+    "Exact Practice runtime generate/verify/grading, student score persistence and manual teacher assessment flow.",
+    "Full academic reviewer approval and deployment are NOT granted under A-B-C."
+  ],
+  "stageABCAuthoredAndElementMapped": true
+}

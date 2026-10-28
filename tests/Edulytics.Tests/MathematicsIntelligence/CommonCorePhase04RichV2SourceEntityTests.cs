@@ -42,12 +42,17 @@ public sealed class CommonCorePhase04RichV2SourceEntityTests
         // take a different path and this acceptance contract must change.
         foreach (var code in flagged)
         {
-            Assert.Null(RichLessonContentV2Registry.Find(code, "en"));
+            // Original Phase 04 examples use the runtime composer. Grade 4 now
+            // has an explicit owner-authored curated Rich V2 sidecar; do not
+            // misclassify that intentional addition as an unexpected source.
+            var curated = RichLessonContentV2Registry.Find(code, "en");
+            if (curated is not null)
+                Assert.StartsWith("PED:US-CCSS-MATH:G4:", code);
             var lesson = lessonsByCode[code];
             var english = Assert.Single(lesson.Translations,
                 item => item.CultureCode == "en");
 
-            var rich = RichLessonContentV2RuntimeComposer.TryCompose(
+            var rich = curated ?? RichLessonContentV2RuntimeComposer.TryCompose(
                 code, AsBody(english));
             Assert.NotNull(rich);
 

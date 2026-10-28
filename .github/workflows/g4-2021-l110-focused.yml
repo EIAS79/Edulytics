@@ -1,0 +1,21 @@
+name: Grade4 2021 lesson 110 focused ABC
+on:
+  push:
+    branches:
+      - curriculum/g4-sequential-abc-20261026
+    paths:
+      - '.github/workflows/g4-2021-l110-focused.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lesson-110:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~Grade4Ordinal110PopulationTests --configuration Release --verbosity minimal
+# Focused L110 source prompt retest; 2021 table counts visible in student question.

@@ -1,0 +1,42 @@
+{
+  "ordinal": 55,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L10",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "a8453164901888f7d7c350460f3d216c4851e826cfc0ea11d46fbc4451914ad9",
+    "teacher": "40cdb4ff1a1ba1841dc32af483c9536f54afb4e26a2044df431fca2899f1783e",
+    "student": "71f9a28f968b77fa2fc70c5e7b837903767336a13e474bd048100996636cc54b"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "What number is ten times 7,000?",
+    "teacherAnswer": "70,000"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:10:51+01:00",
+  "closeAtLocal": "2026-10-26T23:10:51+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-55-local-source-guard.test.cjs"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "ordinal": 41,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L16",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.related.apply_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "c5da5ca7ecf82b0b745eafff72fb4bddaba6a3d075a0263dcdfc1ee6e361d4f7",
+    "teacherLesson": "33ef4e1c6b3da5f904e6330965f74f9e46b56a1d3a801be72d2062f6832eedea",
+    "studentPdf": "1cc653a1a504e74a38c4977f9d112b25e57051a8f2d51b0e847599c57de0eed2"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Notice and Wonder: Shaded Rectangles and Squares (10 minutes)",
+    "Activity 1: Tenths and Hundredths (15 minutes)",
+    "Activity 2: Walk, Stop, and Sip (20 minutes)",
+    "Cool-down: Some Sums (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.related.apply"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-41-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:39+01:00",
+  "closeAtLocal": "2026-10-26T22:41:39+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

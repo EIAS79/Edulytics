@@ -1,0 +1,166 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.6.18-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L18",
+      "CultureCode": "en",
+      "Title": "Divide with Partial Quotients",
+      "ExplanationParagraphs": [
+        "Learning goal: Analyze, explain, record, and use partial quotients to divide multi-digit whole numbers. The 2021 lesson contrasts Priya's equations with Tyler's vertical subtraction recording; both identify multiples of the divisor and add their partial quotients.",
+        "Warm-up number talk: 90 ÷ 3 = 30, 96 ÷ 3 = 32, 960 ÷ 3 = 320, 954 ÷ 3 = 318. Explain how each problem helps with the next instead of treating the warm-up as isolated arithmetic.",
+        "Activity 1: 465 ÷ 5 = 93 using 400 + 60 + 5, then 400 ÷ 5 = 80, 60 ÷ 5 = 12 and 5 ÷ 5 = 1. Explain each line, compare with your own approach, then use partial quotients for 428 ÷ 4 = 107.",
+        "Activity 2: Compare Priya's equations with Tyler's vertical record. Both partition the same dividend using multiples of five and both produce 93, but Tyler subtracts the dividend in chunks. Students explain why subtraction works and build a comparable recording for 428 ÷ 4.",
+        "Teacher synthesis: Students may decompose 738 ÷ 9 as 720 + 18 and obtain 80 + 2 = 82. A valid decomposition must use multiples of nine. Student-created recordings and verbal comparisons are reviewed by the teacher.",
+        "Independent Edulytics Cool-down, not the protected publisher item: use equations and a partial-quotient diagram to find 684 ÷ 6 = 114. Check 6 × 114 = 684."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Partial quotient",
+          "Definition": "A quotient for one divisible portion of a larger dividend.",
+          "Rule": "Find a multiple of the divisor that fits the remaining dividend; record the corresponding portion of the total quotient.",
+          "Example": "465 ÷ 5: 400 ÷ 5=80, 60 ÷ 5=12, 5 ÷ 5=1."
+        },
+        {
+          "Title": "Equation recording",
+          "Definition": "A list of smaller divisions whose dividends add to the original amount.",
+          "Rule": "Every chosen part must be divisible by the same divisor, and the partial quotients are added.",
+          "Example": "428 ÷ 4=(400 ÷ 4)+(28 ÷ 4)=100+7=107."
+        },
+        {
+          "Title": "Subtractive recording",
+          "Definition": "An equivalent vertical algorithm that repeatedly subtracts multiples of the divisor.",
+          "Rule": "Subtract divisor × chosen partial quotient until none of the dividend remains, then add partial quotients.",
+          "Example": "465−400=65; 65−60=5; 5−5=0. Add 80+12+1=93."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Priya: divide 465 by 5 with equations",
+          "Question": "Explain Priya's equations for 465 ÷ 5, including why her partial quotients add to 93.",
+          "Method": "Decompose 465 into convenient multiples of five.",
+          "Steps": [
+            "Write 465 = 400 + 60 + 5.",
+            "Find 400 ÷ 5 = 80, 60 ÷ 5 = 12 and 5 ÷ 5 = 1.",
+            "Add the partial quotients 80 + 12 + 1 = 93; verify 5 × 93 = 465."
+          ],
+          "Answer": "93",
+          "Check": "Each dividend piece is a multiple of 5 and sums to 465."
+        },
+        {
+          "Title": "Tyler: record subtraction for 465 ÷ 5",
+          "Question": "Why does Tyler subtract partial products in his record of 465 ÷ 5?",
+          "Method": "Subtract multiples of five and record each matching partial quotient.",
+          "Steps": [
+            "Subtract 5 × 80 = 400 from 465, leaving 65.",
+            "Subtract 5 × 12 = 60 from 65, leaving 5.",
+            "Subtract 5 × 1 = 5 from 5, leaving 0; add 80 + 12 + 1 = 93."
+          ],
+          "Answer": "93",
+          "Check": "465 − 400 − 60 − 5 = 0; 93 × 5 = 465."
+        },
+        {
+          "Title": "Use either recording to divide 428 by 4",
+          "Question": "Use Priya's method or Tyler's vertical recording to find 428 ÷ 4.",
+          "Method": "Decompose the dividend into divisible portions and add quotients.",
+          "Steps": [
+            "Choose 428 = 400 + 28, both divisible by four.",
+            "Compute 400 ÷ 4 = 100 and 28 ÷ 4 = 7.",
+            "Add 100 + 7 = 107, or subtract 400 and 28 vertically to reach zero."
+          ],
+          "Answer": "107",
+          "Check": "4 × 107 = 428."
+        },
+        {
+          "Title": "Warm-up: related division facts",
+          "Question": "Use 90÷3, 96÷3 and 960÷3 to reason about 954÷3.",
+          "Method": "Estimate using a nearby divisible benchmark, then combine partial quotients.",
+          "Steps": [
+            "90 ÷ 3 = 30 and 960 ÷ 3 = 320.",
+            "Split 954 = 900 + 54; 900 ÷ 3 = 300 and 54 ÷ 3 = 18.",
+            "Add 300 + 18 = 318 and check 3 × 318 = 954."
+          ],
+          "Answer": "318",
+          "Check": "3 × 318 = 954."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding the chosen multiples rather than the partial quotients.",
+          "WhyWrong": "400+60+5=465 is the dividend, not the quotient of 465÷5.",
+          "Correction": "Divide each part by 5, then add 80+12+1=93."
+        },
+        {
+          "Mistake": "Subtracting a number that is not a multiple of the divisor.",
+          "WhyWrong": "The matching partial quotient would not be a whole-number group, breaking the algorithm.",
+          "Correction": "Choose divisible chunks such as 400 and 28 for 428÷4, and account for every remaining unit."
+        },
+        {
+          "Mistake": "Stopping after one partial quotient while a remainder divisible by the divisor remains.",
+          "WhyWrong": "465÷5 is not just 80 after using the first 400; 65 still needs division.",
+          "Correction": "Continue until zero remains, then sum all recorded partial quotients."
+        }
+      ],
+      "SummaryPoints": [
+        "A partial quotient counts how many groups are contained in a divisible part of the dividend.",
+        "Priya's equations and Tyler's subtraction algorithm record the same mathematical operation.",
+        "Check each subtracted chunk is divisor × its partial quotient; finish when no divisible units remain.",
+        "Student explanations, diagram drawings and comparison of strategies are teacher-reviewed; Edulytics independently authors its Cool-down."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Priya's equations: 465 ÷ 5",
+          "Description": "First-party equation-based representation, not publisher artwork.",
+          "PrimaryLabel": "465 = 400 + 60 + 5",
+          "SecondaryLabel": "80 + 12 + 1 = 93",
+          "Items": [
+            "400 ÷ 5 = 80",
+            "60 ÷ 5 = 12",
+            "5 ÷ 5 = 1",
+            "80 + 12 + 1 = 93"
+          ],
+          "SecondaryItems": [
+            "5 × 93 = 465"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "CalculationChain",
+          "Title": "Tyler's subtraction record",
+          "Description": "Each subtraction corresponds to a partial quotient.",
+          "PrimaryLabel": "465 ÷ 5",
+          "SecondaryLabel": "Quotient = 80 + 12 + 1 = 93",
+          "Items": [
+            "465 − 400 = 65; record 80",
+            "65 − 60 = 5; record 12",
+            "5 − 5 = 0; record 1"
+          ],
+          "SecondaryItems": [
+            "Subtracted amounts are 5×80, 5×12, and 5×1."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "428 ÷ 4 by two matching methods",
+          "Description": "Teacher reviews the original open student method-comparison prompt.",
+          "PrimaryLabel": "428 = 400 + 28",
+          "SecondaryLabel": "107",
+          "Items": [
+            "400 ÷ 4 = 100",
+            "28 ÷ 4 = 7",
+            "100 + 7 = 107",
+            "428 − 400 − 28 = 0"
+          ],
+          "SecondaryItems": [
+            "4 × 107 = 428"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

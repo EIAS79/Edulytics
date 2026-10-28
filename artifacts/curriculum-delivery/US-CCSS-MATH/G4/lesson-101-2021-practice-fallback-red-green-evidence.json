@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "lessonOrdinal": 101,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+  "edition": "2021 first edition",
+  "originalTeacherLessonSha256": "2a33c4929ab0a847c121a43b4e51861d06280d42153275d6e8a836a1777d893f",
+  "scope": "Stage C narrow red-green test for reviewed mathematical family and safe routing",
+  "failure": {
+    "sha": "0159a5626c99921150c44fd12d712417f8bf70ed",
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524243428",
+    "failedTests": 1,
+    "diagnosis": "Existing official outcome/title projection automatically returned READY_VERIFIED generic Practice for 2021 G4 U06:L15, overriding review-only source-specific JSON mapping.",
+    "failureMethod": "Grade4Ordinal101AreaDivisionExactTests.StageCMappingRemainsClosedUntilReviewedLearnerInteractionAndSavedAttempt",
+    "firstFailedLine": 63
+  },
+  "fix": {
+    "file": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "code": "PED:US-CCSS-MATH:G4:U06:L15",
+    "behavior": "Overrides implicit official-outcome fallback with REVIEW_REQUIRED and empty allowed families only for L101. No generic fallback reaches student Practice while original source coverage and gradebook/persistence are pending.",
+    "productionRoutingActivated": false,
+    "otherLessonRoutesIntentionallyUntouched": true
+  },
+  "passed": {
+    "sha": "cb3705a5decab6c98313a8a760d37898ce5de420",
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "createdUtc": "2026-10-27T14:49:29Z",
+    "finishedUtc": "2026-10-27T14:51:16Z",
+    "runSeconds": 107,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "independentCorrectWrongMalformedNumericVerified": true,
+  "unapprovedRouteNowFailClosed": true,
+  "sourceDiagramsPixelVerified": false,
+  "firstPartyVisualsRenderedVerified": false,
+  "teacherLedDeliveryVerified": false,
+  "authenticatedSavedAttemptVerified": false,
+  "all2021SourceElementDenominatorComplete": false,
+  "AtoCClosure": false,
+  "readyForStageD": false,
+  "stageD": "NOT_RUN",
+  "historicalLastClosed": 100,
+  "nextOrdinal": 101
+}

@@ -1,0 +1,10 @@
+# G4 ordinal 60 — The Nearest Multiples of 1,000, 10,000, and 100,000
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-4_lesson-15_preparation.html SHA256=f0949e515d9fa4a976e0169f76a63e2b8c1745889b330ec778685e6ff6a29ecd
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-4\lesson-15\lesson.html SHA256=d8b1a653f46fede6aaa14178f913425587159babc5b14937d3b9eab3883866b8
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-4\lesson-15\lesson.html SHA256=bd81069ebe97aad3e85f9a148a4406f1c82f542b5552af74054309f9b6468043
+- Preserved existing learning explanation: Learning goal: You will determine the nearest multiple of 1,000, 10,000, and 100,000 and a given multi-digit whole number. Before this lesson, you named multiples of 10,000 and 100,000 that are near given numbers and identified the closest ones. You reasoned visually—by locating the numbers on a number line and approximating your distance from adjacent tick marks that indicate ten-thousands, or from endpoints that mark hundred-thousands. In this lesson, you begin to reason numerically—by thinkin
+- Original 2021 sections: Warm-up:  Estimation Exploration: What Could It Be?	 (10 minutes); Activity 1:  Closer to This or That?	 (20 minutes); Activity 2:  Closer to Which Number?	 [OPTIONAL] (10 minutes); Activity 3:  What’s the Nearest Multiple?	 (15 minutes); Cool-down:  The Nearest Multiples	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 374500-370000 = 4500.
+- Edulytics first-party Cool-down: Is 374,500 closer to 370,000 or 380,000?; teacher key: 370,000.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

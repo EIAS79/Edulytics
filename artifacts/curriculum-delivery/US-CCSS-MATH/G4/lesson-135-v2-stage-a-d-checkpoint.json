@@ -1,0 +1,49 @@
+{
+  "ordinal": 135,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U08:L08",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_ORIGINAL_SOURCE_INTAKE_REUSED",
+    "B": "SOURCE_64_INCHES_FOUR_SHAPES_LIN_145_TAPE_AND_FRACTION_WARMUP_PRESERVED",
+    "C": "RECTANGLE_MISSING_SIDE_SUBSKILL_REUSED_FOCUSED_TEST_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "0cc8bff0091c219290970f9e9e6cac9bbfb522c8c3e9092ef0cb16bf957aa3e2",
+    "teacher": "c08d5297f6c9233d9a36f8b81d8bcd9c051868146c1646d2db47a690ac61c321"
+  },
+  "firstPartyCooldown": {
+    "prompt": "A rectangle has perimeter 64 inches and one side 14 inches. Find the other side.",
+    "teacherAnswer": "18 inches."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "originalSourceActivities": [
+      "Warm-up: True or False: Equations with Fractions (10 minutes)",
+      "Activity 1: Unknown Lengths (20 minutes)",
+      "Activity 2: Lin’s Design (15 minutes)",
+      "Cool-down: Stage Symmetry (5 minutes)"
+    ],
+    "sourceEvidenceReusedFrom": "2021 Our-CS original local intake",
+    "sourceStudentExcerpts": [
+      "Decide if each statement is true or false. Be prepared to explain your reasoning. | \\(1\\frac{1}{5} + 2\\frac{2}{5} + 3\\frac{3}{5} + 4\\frac{4}{5} = 12\\) | \\(10 - \\frac{1}{2} - \\frac{2}{2} - \\frac{3}{2} - \\frac{4}{2} = 5\\)",
+      "Here are four shapes. | Each shape has a perimeter of 64 inches. | P, R, and S each have 1 line of symmetry.",
+      "Lin is using 145 inches of fancy tape for the outline of a design with line symmetry. | Here is half of the design. The dashed line is the line of symmetry. | Description: 5 sided figure in the shape of a V attached to a vertical dashed line. Sides lengths in "
+    ],
+    "allowedFamily": "geometry.perimeter_area.rectangle_missing_side",
+    "teacherOnlyTasks": [
+      "Actual P R S original half-shapes",
+      "Original Lin’s Design 145-inch boundary drawing"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal135SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

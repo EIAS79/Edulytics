@@ -1,0 +1,49 @@
+{
+  "ordinal": 140,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_ORIGINAL_SOURCE_INTAKE_REUSED",
+    "B": "TENTHS_REGROUPING_SOURCE_NUMBER_TALK_AND_9_2_5_STORY_AUTHORING_PRESERVED",
+    "C": "REUSED_SAME_DENOMINATOR_MIXED_FRACTION_FAMILY_TEST_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "e1a996f62cff5107ed1179f34f6824d1ad2062393cc82868f4fb37a5b1a114a6",
+    "teacher": "8e2cfd1315ba759e44b762d1e7101dac1e598f8e497ef9ee791631e27a2856b2"
+  },
+  "firstPartyCooldown": {
+    "prompt": "A relay runner took 1.30 minutes; a second runner took 0.47 minutes less. How long did the second runner take?",
+    "teacherAnswer": "0.83 min."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS 2021 local original intake",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: One Whole, Many Names (10 minutes)",
+      "Activity 1: Relay Race at Recess (20 minutes)",
+      "Activity 2: You Be the Author (15 minutes)",
+      "Cool-down: Mai’s Milky Cereal (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(1 - \\frac{8}{10}\\) | \\(1\\frac{4}{10} - \\frac{8}{10}\\)",
+      "Students in the fourth-grade class had a relay race during recess. Each team had four runners. Each runner ran the length of the school playground. | Here are the times of the runners for two teams. | runner",
+      "Think of three situations as described here. After each problem is written, trade papers with a partner to compare your problems and check your solutions. | A problem that can be solved by addition and has \\(9\\frac{2}{5}\\) as an answer | A problem that can be "
+    ],
+    "allowedFamily": "fractions.add_subtract.same_denominator.mixed.build",
+    "teacherOnlyTasks": [
+      "Original relay times source table",
+      "Students' own fraction addition/subtraction stories"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal140SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

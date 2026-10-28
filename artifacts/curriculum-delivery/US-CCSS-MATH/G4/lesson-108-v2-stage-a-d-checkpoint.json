@@ -1,0 +1,63 @@
+{
+  "ordinal": 108,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L22",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_PREP_AND_TEACHER_STUDENT_FACING_BANNER_CARPET_CLASSROOM_6_SIDES_WARMUP_VERIFIED; ORIGINAL_IMAGES_TEACHER_ONLY",
+    "B": "6_DISTINCT_REAL_SOURCE_AREA_PERIMETER_EXAMPLES_3_INDEPENDENT_EQUATION_VISUALS_AND_12_BY_8_FIRST_PARTY_COOLDOWN",
+    "C": "SINGLE_EXACT_MIXED_MEASUREMENT_RECTILINEAR_FAMILY_ROUTED; 5_MODES_SOURCE_ALIGNED_3_OF_3_FOCUSED_TESTS_GREEN_40547026828; WRONG_MALFORMED_TAMPERED_REJECTED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "d007be37113446003c50043681f52f425663ad94f102f051974a195fdc2e97c8",
+    "teacher": "e14ad370de36369e5b03ba6a1ca896b00392cdddc4593956fbbd6cb466a42db6"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Find the area and perimeter of a 12-ft by 8-ft room.",
+    "teacherAnswer": "96 ft² area and 40 ft perimeter."
+  },
+  "sourceVisualParityProven": false,
+  "originalPublisherCooldownVerified": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "f01cbf5b4e1ea22ef3723f3d1b1048221dc1cdf49b2cd576a4a8a3f19a37cc12",
+    "sourceTeacherSha256": "e14ad370de36369e5b03ba6a1ca896b00392cdddc4593956fbbd6cb466a42db6",
+    "sourceStudentFacingReadFromOriginal2021Teacher": true,
+    "sourceMath": [
+      "36×24=864in² and 8×96=768in²",
+      "64ft=768in of baseboard, 432in spare",
+      "Carpet 228ft² by two valid decompositions"
+    ],
+    "independentCoolDown": "12ft×8ft area96ft² perimeter40ft",
+    "firstPartyVisuals": 3,
+    "originalPublisherGraphicsCopied": false,
+    "originalPublisherAssessmentVerified": false,
+    "teacherOnlyTasks": [
+      "original grid",
+      "source L-shape and construction",
+      "cutting paper and justifying area"
+    ],
+    "exactAllowedFamily": "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
+    "generatorAndIndependentVerifierPassed": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40547026828",
+    "focusedTestCandidateSha": "09fe0712203272c78b2e4f366087a1ed8aee4d45",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false,
+    "sourceLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-108-2021-source-element-ledger.json"
+  },
+  "stageDRisks": [
+    "Original publisher drawing pixels and exact teacher/learner rendering not approved.",
+    "Authenticated student scoring persistence, full grade runtime CI and academic release remain Stage D."
+  ]
+}

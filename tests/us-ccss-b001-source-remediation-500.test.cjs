@@ -33,7 +33,12 @@ test('all 500 original 2021 teaching goals, canonical source hashes, outcomes an
   assert.ok(data.grades['Grade 1'].rawGenericExamples>30);
   assert.ok(data.grades['Grade 2'].repeatedRawStepTemplates>20);
   assert.ok(data.grades['Grade 3'].repeatedRawStepTemplates>20);
-  assert.ok(data.grades['Grade 4'].repeatedRawStepTemplates>10);
+  // The Grade 4 first-65 canonical bodies have since been individually authored;
+  // the old >10 repeated-template expectation was a stale baseline, not an
+  // invariant. Preserve the exact zero measurement instead of fabricating risk.
+  assert.equal(data.grades['Grade 4'].repeatedRawStepTemplates,0);
+  assert.ok(data.rows.filter(row=>row.grade==='Grade 4').every(row=>
+    row.rawEmbeddedNormalizedStepTemplateUsesInGrade===1));
   assert.equal(Object.values(data.priorityCounts).reduce((a,n)=>a+n,0),500);
   assert.equal(data.independentAcademicAcceptedInThisAudit,0);
   assert.equal(data.fullBatchPublishAuthorization,false);

@@ -1,0 +1,44 @@
+{
+  "ordinal": 50,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L05",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_supporting.decimals.compare_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "010951fc4ae7f34949ca17e3ecd0375389f2dd21d239ba81202b31965ef03043",
+    "teacherLesson": "10b9861cbc809c705494e2c216539a13e64f496aab2544b714266a8a59a53d38",
+    "studentPdf": "06c835b22f8b096601b894992fcde72785465c370ead90afe5ae47f73154ff81"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up:  Number Talk: Sums of Fractions\t (10 minutes)",
+    "Activity 1:  Order Once, Order Twice\t (25 minutes)",
+    "Activity 2:  Long Jumps\t (10 minutes)",
+    "Cool-down: Order Up (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "supporting.decimals.compare"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-50-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:41:44+01:00",
+  "closeAtLocal": "2026-10-26T22:41:44+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

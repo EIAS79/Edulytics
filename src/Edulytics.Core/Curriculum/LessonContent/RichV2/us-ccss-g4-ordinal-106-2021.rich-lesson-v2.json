@@ -1,0 +1,177 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.6.20-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L20",
+      "CultureCode": "en",
+      "Title": "Interpret Remainders in Division Situations",
+      "ExplanationParagraphs": [
+        "Learning goal: Represent division in situations with up to four-digit dividends and one-digit divisors. Interpret the quotient and any remainder based on what the numbers mean, not by a mechanical rule.",
+        "2021 source sequence: Choral Count (multiples of 2, 3 and 5); Muffins and Seats; Save for a Garden and a student-invented division situation; Lesson Synthesis; publisher Cool-down protected.",
+        "A context may need more containers than the whole-number quotient, or it may ask only for complete rows and leftover seats. A missing savings amount must be subtracted from the goal before dividing.",
+        "Teacher reviews the original open reasoning, diagrams, partner discussions and student-created word situations. First-party models are provided without copying publisher art.",
+        "Original source mathematical checkpoints: 378 = 4×94+2 (94 full boxes plus two unboxed, or 95 boxes if all must be boxed); 258 = 9×28+6; (1270−6)÷8=158; 711÷3=237; 3128÷8=391.",
+        "First-party Edulytics Cool-down (not the publisher's protected item): All 275 pupils need a seat on 8-seat buses. 275=8×34+3, so 35 buses are required."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "A remainder needs a contextual decision",
+          "Definition": "For N objects and groups of size d, N=d×q+r with 0≤r<d.",
+          "Rule": "Use q complete groups when asking for full groups; use q+1 when every object must fit and r>0.",
+          "Example": "378 muffins: 94 full boxes and 2 muffins remain, but 95 boxes if all must be boxed."
+        },
+        {
+          "Title": "A short row is the remainder",
+          "Definition": "A last partial row of seats does not count as a full row.",
+          "Rule": "Divide total seats by row size; full rows are q and seats in the short row are r.",
+          "Example": "258 seats with 9 per full row: 28 full rows and 6 seats in the short row."
+        },
+        {
+          "Title": "Reconstruct a missing savings contribution",
+          "Definition": "A school is still short by a certain amount after equal monthly contributions.",
+          "Rule": "Monthly saving = (goal − shortfall) ÷ months; verify months×saving + shortfall=goal.",
+          "Example": "($1270−$6)÷8=$158 per month, and 8×158+6=1270."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Muffins: 94 or 95 depends on the question",
+          "Question": "There are 378 muffins and boxes hold 4 each. How many full boxes? How many boxes if all muffins must fit?",
+          "Method": "Whole-number division, then interpret the two remaining muffins.",
+          "Steps": [
+            "378 = 4 × 94 + 2, so 94 boxes are completely filled.",
+            "If two muffins may remain unboxed, 94 boxes are enough for the full boxes.",
+            "If every muffin must be in a box, use one more box: 95."
+          ],
+          "Answer": "94 full boxes and 2 leftover; 95 boxes if all muffins must be boxed.",
+          "Check": "94 × 4 = 376; the remaining 2 require another box if packing everything."
+        },
+        {
+          "Title": "Auditorium: full rows and a short row",
+          "Question": "An auditorium has 258 seats in full rows of 9 and one shorter row. How many full rows, and how many seats in the short row?",
+          "Method": "Interpret quotient as complete rows and remainder as seats in the incomplete row.",
+          "Steps": [
+            "9 × 28 = 252, which is less than 258.",
+            "258 − 252 = 6 seats form a shorter row.",
+            "29 full rows would require 261 seats, which is too many."
+          ],
+          "Answer": "28 full rows and 6 seats in the short row.",
+          "Check": "9 × 28 + 6 = 258; 6 < 9."
+        },
+        {
+          "Title": "Garden: reconstruct 8 equal monthly savings",
+          "Question": "A school needs $1270. After saving equally for eight months, it is $6 short. How much did it save per month?",
+          "Method": "Subtract the missing amount before dividing.",
+          "Steps": [
+            "The school saved 1270 − 6 = 1264 dollars.",
+            "1264 ÷ 8 = 158 dollars per month.",
+            "Multiply back and restore the missing six dollars."
+          ],
+          "Answer": "$158 per month.",
+          "Check": "8 × 158 + 6 = 1270."
+        },
+        {
+          "Title": "Creating a division situation: 711 ÷ 3",
+          "Question": "Write a situation for 711 ÷ 3 and identify what the answer means.",
+          "Method": "Invent equal groups and solve an exact whole-number division.",
+          "Steps": [
+            "For example, 711 stickers are shared equally among three classes.",
+            "700 is not required; use partial quotients 600 ÷ 3=200 and 111 ÷ 3=37.",
+            "200 + 37 = 237, so each class receives 237 stickers."
+          ],
+          "Answer": "237 stickers per class in this independent example.",
+          "Check": "3 × 237 = 711. Teacher checks students' own story meaning."
+        },
+        {
+          "Title": "Creating a division situation: 3128 ÷ 8",
+          "Question": "Write a different situation for 3128 ÷ 8 and explain the quotient.",
+          "Method": "Partition the dividend and interpret one of eight equal shares.",
+          "Steps": [
+            "Suppose 3128 pencils are distributed equally among eight classrooms.",
+            "Use 8 × 390 = 3120 with 8 pencils left.",
+            "8 ÷ 8 = 1 more pencil per classroom, so 390 + 1 = 391."
+          ],
+          "Answer": "391 pencils per classroom in this independent example.",
+          "Check": "8 × 391 = 3128. Teacher assesses the invented scenario."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Answering 94 boxes when every one of 378 muffins must be packed.",
+          "WhyWrong": "94×4=376 leaves two muffins unboxed; the all-packed wording requires an additional box.",
+          "Correction": "The exact all-packed answer is 95 boxes. If leftovers are explicitly allowed, 94 full boxes plus two muffins is valid."
+        },
+        {
+          "Mistake": "Rounding 258 ÷ 9 up to 29 full rows.",
+          "WhyWrong": "29 full rows would need 261 seats and the source asks for full rows plus a shorter row.",
+          "Correction": "28 full rows and a 6-seat short row."
+        },
+        {
+          "Mistake": "Dividing the $1270 target by eight instead of subtracting the $6 shortfall.",
+          "WhyWrong": "Eight equal monthly savings sum to $1264, not $1270.",
+          "Correction": "(1270−6)÷8=158, then check 8×158+6=1270."
+        }
+      ],
+      "SummaryPoints": [
+        "Always interpret the quotient and remainder in the actual story.",
+        "378 muffins and boxes of 4: 94 full boxes plus 2, or 95 boxes when all muffins must fit.",
+        "258 seats, 9 per full row: 28 full rows and 6 seats in the short row.",
+        "Equal monthly savings: (1270−6)÷8=158. Student-written situations for 711÷3 and 3128÷8 require teacher review.",
+        "Edulytics independent Cool-down 275 pupils/8-seat buses: 35 buses, not the protected publisher item."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Muffin packing: complete boxes versus all muffins",
+          "Description": "First-party visual equation model; teacher assesses context and explanation.",
+          "PrimaryLabel": "378 = 4×94 + 2",
+          "SecondaryLabel": "94 full boxes, 2 left; 95 boxes for all muffins",
+          "Items": [
+            "94×4=376 muffins in full boxes",
+            "378−376=2 muffins unboxed",
+            "For all muffins in boxes: 94+1=95 boxes"
+          ],
+          "SecondaryItems": [
+            "Publisher's source image is not reproduced."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Seats: quotient and shorter row",
+          "Description": "First-party part-whole seat layout equation.",
+          "PrimaryLabel": "258 = 9×28 + 6",
+          "SecondaryLabel": "28 full rows; 6 seats in final short row",
+          "Items": [
+            "9×28=252",
+            "258−252=6",
+            "The six-seat row is shorter than nine."
+          ],
+          "SecondaryItems": [
+            "29 full rows are impossible because 9×29=261."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Garden savings: missing total first",
+          "Description": "First-party equations with no source artwork.",
+          "PrimaryLabel": "Target $1270, short $6, eight months",
+          "SecondaryLabel": "Monthly saving $158",
+          "Items": [
+            "1270−6=1264 dollars saved",
+            "1264÷8=158 per month",
+            "8×158+6=1270"
+          ],
+          "SecondaryItems": [
+            "Teacher reviews student explanation of the shortfall."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

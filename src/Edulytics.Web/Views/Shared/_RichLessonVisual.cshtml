@@ -102,6 +102,45 @@
             </table>
         </div>
     }
+    else if (Model.Kind == RichLessonVisualKind.Grade4Unit1AreaFigures)
+    {
+        // Independently drawn grade-four 2021 source-equivalent mathematical shapes.
+        // No publisher pixels, logos, or source asset are embedded.
+        <div class="rich-lesson-area-models">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450"
+                 role="img" aria-label="@Model.Description"
+                 style="width:100%;max-width:720px;height:auto">
+                <g fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="75" y="65" width="140" height="112"/>
+                    <rect x="395" y="65" width="112" height="140"/>
+                    @for (var i = 1; i < 4; i++)
+                    {
+                        <line x1="@(395 + i * 28)" x2="@(395 + i * 28)" y1="65" y2="205"/>
+                    }
+                    @for (var i = 1; i < 5; i++)
+                    {
+                        <line x1="395" x2="507" y1="@(65 + i * 28)" y2="@(65 + i * 28)"/>
+                    }
+                    <rect x="100" y="270" width="100" height="150"/>
+                    <path d="M395 270 H435 V350 H475 V410 H395 Z"/>
+                </g>
+                <g fill="currentColor" font-family="sans-serif" font-size="18">
+                    <text x="45" y="45">A</text>
+                    <text x="390" y="45">B</text>
+                    <text x="45" y="250">C</text>
+                    <text x="390" y="250">D</text>
+                    <text x="140" y="55">5</text>
+                    <text x="50" y="125">4</text>
+                    <text x="140" y="263">4</text>
+                    <text x="77" y="355">6</text>
+                    <text x="408" y="263">2</text>
+                    <text x="370" y="350">7</text>
+                    <text x="447" y="343">2</text>
+                    <text x="485" y="389">3</text>
+                </g>
+            </svg>
+        </div>
+    }
     else if (Model.Kind == RichLessonVisualKind.ShapeDecomposition)
     {
         <div class="rich-shape-decomposition" role="img" aria-label="@Model.Description">

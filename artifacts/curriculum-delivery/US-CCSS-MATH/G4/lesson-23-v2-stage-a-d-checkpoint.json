@@ -1,0 +1,32 @@
+{
+    "ordinal":  23,
+    "lessonCode":  "PED:US-CCSS-MATH:G4:U02:L15",
+    "status":  "READY_FOR_STAGE_D",
+    "readyForStageD":  true,
+    "stages":  {
+                   "A":  "ORIGINAL_TEACHER_PREP_AND_LESSON_READ_STUDENT3P_TEXT_READ; SOURCE_DIAGRAM_PIXEL_PARITY_NOT_CLAIMED",
+                   "B":  "PRESERVE_GOAL_REPLACE_GENERIC_FIVE_FIELDS_AND_FIRST_PARTY_RICHV2",
+                   "C":  "REUSE_EXISTING_EXACT_COMMON_DENOMINATOR_AND_SELECT_GREATER_NUMERIC_PRACTICE; OPEN_REASONING_TEACHER_LED",
+                   "D":  "NOT_RUN"
+               },
+    "sourceHashes":  {
+                         "teacherPrep":  "41800724045fa6657ffd2d261e5a627c2e0007b27b36714b984ce8653807b322",
+                         "teacherLesson":  "e725d036a9bc61ae4a1e3d1a3fdedb67f45784a5156fd4d691f2dc2125cb2eb4",
+                         "studentPdf":  "22989822c8f05dc416f5d8a200ab7430dc15b4fd5e088e1a23fe35b302260fcf"
+                     },
+    "originalPublisherCooldownVerified":  false,
+    "firstPartyFormative":  true,
+    "sourceVisualParityProven":  false,
+    "sourceParityProvenPercent":  null,
+    "academicApproved":  false,
+    "focusedTestsWritten":  true,
+    "focusedTestsRun":  true,
+    "productionTouched":  false,
+    "focusedTestResults":  {
+                               "stageD":  false,
+                               "failed":  0,
+                               "command":  "node --test tests/academic-us-ccss-g4-u02-l15-source-guard.test.cjs",
+                               "count":  2,
+                               "passed":  2
+                           }
+}

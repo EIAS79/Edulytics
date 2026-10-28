@@ -1,0 +1,42 @@
+{
+  "ordinal": 71,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "a92117006ccd209ab531dd74e1d4b56c8efa15ce5ce9f7385b364f26b7724c28",
+    "teacher": "efc06b662f877b30c0aacc34aef50c325b2cdd5ffe46d12d40cfe951bfa21136",
+    "student": "f4abb04bac3da44ebdaa8366aa542c4b92d0e5145f987896a455d7185ed4dd1e"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "A book drive raises 6 times as many books as a starting set of 9. What is the total?",
+    "teacherAnswer": "54 books"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:20:28+01:00",
+  "closeAtLocal": "2026-10-26T23:20:28+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-71-local-source-guard.test.cjs"
+  }
+}

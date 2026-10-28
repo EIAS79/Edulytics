@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const j=p=>JSON.parse(fs.readFileSync(path.join(__dirname,'..',p),'utf8'));
+test('L105: goal, method and math',()=>{const t=j('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json').lessons.find(x=>x.lessonCode==="PED:US-CCSS-MATH:G4:U06:L19").translations[0];assert.ok(t.explanation.startsWith('Learning goal:'));assert.ok(t.keyConceptsAndRules.includes("A whole-number division result must satisfy dividend = divisor × quotient + remainder, with remainder smaller than divisor."));assert.ok(t.quickSummary.includes("Find 947 ÷ 4 and give the quotient and remainder."));assert.equal(389%7,4);});
+test('L105: no fabricated academic approval',()=>{const c=j('artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-105-v2-stage-a-d-checkpoint.json');assert.equal(c.sourceHashes.teacher,"46bd284ffe3739df084cd99abadb3a7bab66483ed1260f4ae126d6e511a13b66");assert.equal(c.readyForStageD,true);assert.equal(c.academicApproved,false);assert.equal(c.stages.D,'NOT_RUN');});

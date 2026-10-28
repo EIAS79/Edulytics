@@ -1,0 +1,71 @@
+{
+  "ordinal": 114,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U07:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "RECORDED_ORIGINAL_2021_TEACHER_PREPARATION_AND_STUDENT_FACING_TASKS_REUSED_FROM_VERIFIED_SOURCE_INTAKE",
+    "B": "REPLACED_OFF_TOPIC_2_PLUS_2_SCAFFOLD_WITH_FIVE_SOURCE_GOAL_GEOMETRY_EXAMPLES_FIRST_PARTY_DOT_GRID_AND_TEACHER_ONLY_RUBRIC",
+    "C": "EXACT_DOT_GRID_PARALLEL_INTERSECT_FAMILY_SKILL_AND_EIGHT_FIXTURES_WITH_WRONG_MALFORMED_AND_TAMPER_GUARDS_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "1b4a56d3b54a0bfb60cb7cf1e0140a50f443396d7922cf18161f4af627a861bb",
+    "teacher": "aee2e5def172645cf84ba0d28135dc6e1c65d98cb61cfdaae0f55eba137ec5dc"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Draw one pair of parallel lines and one intersecting pair, labelling each.",
+    "teacherAnswer": "Teacher checks common point for intersecting pair and no meeting for parallel pair."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-114-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-114-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "1b4a56d3b54a0bfb60cb7cf1e0140a50f443396d7922cf18161f4af627a861bb",
+    "sourceTeacherSha256": "aee2e5def172645cf84ba0d28135dc6e1c65d98cb61cfdaae0f55eba137ec5dc",
+    "sourceStudentFacingFromTeacher": true,
+    "originalStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-102-149-original-source-intake.json",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-114-2021-source-evidence.json",
+    "sourceElementsCount": 17,
+    "firstPartyCoolDown": {
+      "prompt": "Draw one pair of parallel lines and one intersecting pair, labelling each.",
+      "teacherAnswer": "Teacher checks common point for intersecting pair and no meeting for parallel pair."
+    },
+    "originalPublisherCoolDownVerified": false,
+    "originalPublisherMediaCopied": false,
+    "sourceFigurePixelParityVerified": false,
+    "primarySkillId": "geometry.lines.parallel_intersect.classify_dot_grid",
+    "allowedFamily": "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+    "teacherOnlyTasks": [
+      "Curious Figure segment count with original or independent visual",
+      "Fourth line through original triangle/dot grid and quadrilateral proof",
+      "Draw and label intersecting lines h and g on original dot field",
+      "Draw parallel and intersecting pairs and mark intersection; original publisher Cool-down not reproduced"
+    ],
+    "digitalPracticeScope": "Eight source-goal first-party textual dot-grid line-relationship classifications, not freehand drawing",
+    "independentVerifier": "Exact integer direction cross-product with distinct-line guard",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal114ParallelIntersectingLinesTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "The first-party digital grid is textually encoded and has not been rendered or used in an authenticated student flow.",
+    "Publisher original Curious Figure, dot-field artworks and Cool-down not independently verified; teacher checks original diagrams and student constructions.",
+    "C# compilation, tests, persisted answer scores, tenant isolation and protected CI intentionally deferred to Stage D."
+  ]
+}

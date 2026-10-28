@@ -1,0 +1,42 @@
+{
+  "ordinal": 85,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L17",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "6dcd14a8af9f54e9c3792f2904051b731ecfe9727da6a2ffd40da5d8804d3ace",
+    "teacher": "a734208b4d225ba34fe687b1edf9a7acf2a5c9eef8baf011095c4e97834b9a27",
+    "student": "767ed92f5622d4312886321276e3f8d7470b68d4deae46bf7955fbb2c6f2c80f"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "A rectangle has perimeter 42 cm and length 12 cm. Find width.",
+    "teacherAnswer": "9 cm"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:28:59+01:00",
+  "closeAtLocal": "2026-10-26T23:29:00+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-85-local-source-guard.test.cjs"
+  }
+}

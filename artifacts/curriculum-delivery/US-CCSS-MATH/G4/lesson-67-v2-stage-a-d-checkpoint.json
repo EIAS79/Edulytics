@@ -1,0 +1,42 @@
+{
+  "ordinal": 67,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L22",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "6e9ed9a09b50320c3ca44bb8e04e0c6610384d17e5987882e075f4ce749c24ef",
+    "teacher": "fa672dacf30c8ba084a2ed72eedbbc160e4a6240c8c0a4b1d43e430f1ddacee4",
+    "student": "1d0df551541aa29ff0161eea6c115da2c69791cd7fc760e405a1bd1c6853d438"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Explain how to check the remaining amount using addition.",
+    "teacherAnswer": "33,000 + 8,500 = 24,000 + 17,500"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:17:13+01:00",
+  "closeAtLocal": "2026-10-26T23:17:14+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-67-local-source-guard.test.cjs"
+  }
+}

@@ -4611,6 +4611,1563 @@
         "CCSS:2.NBT.A.2",
         "CCSS:2.NBT.B.5"
       ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+      "primarySkills": [
+        "geometry.perimeter_area"
+      ],
+      "secondarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "evidence": [
+        "Local original IM 2021 teacher: U06:L15 Situations Involving Area with Elena's 189 tiles in width 7, Tyler's 197 tiles in width 6, field area 2280 square metres and width 40 metres.",
+        "Exact question generator independently validated both area/side quotient and contextual nonzero remainder: focused .NET tests 2 passed, zero failed on commit 3c681d80.",
+        "Teacher-led grid diagram, oral estimation, gallery-walk and student drawings are outside numeric auto-grader.",
+        "SOURCE REVIEW OPEN: teacher page student-facing source verified; 2 original media images not compared at pixel/byte level.",
+        "Both source-aligned numeric families are generated and independently verified; drawings, grid models and gallery walk remain explicitly teacher-reviewed."
+      ],
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_U06_L15_AREA_DIVISION_TWO_EXACT_FAMILIES_SOURCE_ALIGNED",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l15.area_partial_quotients",
+        "usccss.g4.u06.l15.mural_complete_columns"
+      ],
+      "forbiddenQuestionFamilies": [
+        "geometry.rectangle.area.exact",
+        "geometry.perimeter_area.rectangle_perimeter",
+        "geometry.perimeter_area.triangle_area"
+      ],
+      "visualAndTeacherReview": "First-party visual examples remain source-aligned math-only; teacher verifies actual tiling drawings, estimate reasoning and remainder interpretation.",
+      "evidenceStatus": "FOCUSED_NUMERIC_VERIFIER_PASSED_ROUTING_NOT_APPROVED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L16",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L16_BASE_TEN_EQUAL_GROUPS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l16.base_ten_equal_groups"
+      ],
+      "evidence": [
+        "2021 teacher Student Facing source: 488÷4,104÷8,96÷4,86÷2,108÷9; teacher assesses physical block models, group display, exchange explanations.",
+        "First-party mathematical model and focused exact generation/verification regression cover numerical Practice."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L17",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "OfficialMappedPedagogicalLesson",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L17_REUSE_EXACT_BASE_TEN_EQUAL_GROUPS_WITH_DIAGRAMS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l16.base_ten_equal_groups"
+      ],
+      "evidence": [
+        "2021 teacher Student Facing tasks: Priya 64÷4 and 117÷3; Noah 235÷5 and 432÷6 with base-ten diagrams; warm-up diagram comparison and explanation teacher scored.",
+        "Same verified division/exchange mechanism as previous U06:L16, reused rather than inventing a duplicate question engine.",
+        "First-party learner visuals show original mathematical exchange tasks without reproducing source artwork; teacher-only diagrams, open explanations and oral critiques are not auto-graded."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L18",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6",
+        "CCSS:4.OA.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L18_PARTIAL_QUOTIENT_EQUATIONS_AND_SUBTRACTION",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l18.partial_quotients_recording"
+      ],
+      "evidence": [
+        "Original 2021 teacher preparation and Student Facing: 90/3,96/3,960/3,954/3; Priya and Tyler 465/5, then 428/4.",
+        "Exact division output independently verified against divisor × sum(partial quotients); source comparison and open drawn methods retained for teacher review.",
+        "First-party explanation and algorithm diagrams carry the requested method; generic numeric answer alone does not certify student explanations.",
+        "Partial-quotient numerical generator, rejection of tampered decompositions and Rich V2 loading passed 2/3 focused tests on first run 40538371110; final routing requires an additional focused green run."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L19",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6",
+        "CCSS:4.OA.A.3",
+        "CCSS:4.OA.B.4"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L19_PARTIAL_QUOTIENTS_WITHOUT_OR_WITH_REMAINDER",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l19.partial_quotients_remainders"
+      ],
+      "evidence": [
+        "Source teacher 2021 warmup 100=33×3+1, Jada 389÷7 and 702÷3, Andre/Elena 2316÷5, incomplete 3294÷3.",
+        "Exact generator and verifier check dividend = divisor×quotient+remainder, 0≤remainder<divisor and the recorded partial quotient decomposition.",
+        "Teacher scores original student error explanations and handwritten algorithms, not a bare quotient entry.",
+        "First focused run 40540133242 verified maths content and independent correct/wrong/malformed/trace handling, 2/3 pass; routing readiness explicitly corrected and requires full focused rerun."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L20",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6",
+        "CCSS:4.OA.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L20_CONTEXTUAL_REMAINDER_DECISIONS_REUSE_DIVISION_KERNEL",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l20.contextual_remainder_decisions"
+      ],
+      "evidence": [
+        "2021 source teacher and Student Facing: 378 muffins ÷4, 258 seats ÷9, school $1270 short $6 after 8 months, learner-created quotient 711÷3 and 3128÷8.",
+        "Case-specific verification distinguishes number of full rows, seats in a short row, all-muffin boxes and subtracting savings shortfall before division.",
+        "Teacher reviews open-ended situation writing and justifications; multiple 94/95 muffin interpretations are valid when their explicit assumptions differ. Automated variant explicitly requires boxing all muffins.",
+        "Source images are not reproduced; first-party equations provide numeric mathematical models.",
+        "Focused correct/wrong/malformed and runtime route must pass before lesson A–C closure."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L21",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.add_subtract"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.5",
+        "CCSS:4.OA.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L21_MULTISTEP_BUDGET_MOVIE_REUSE_WHOLE_NUMBER_KERNEL",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l21.multistep_contexts"
+      ],
+      "evidence": [
+        "2021 source Teacher and Student Facing: 45 students × $18, $900 museum budget, 5 strategies and 14×35 transfer.",
+        "Movie tickets $9, $3132 revenue per day with equal count the second day; $7 drink and $5 popcorn per attendee.",
+        "Digitally verifiable budget dollars, two-day ticket counts, and combined refreshment dollars use independent numeric grading; poster comparison and student-authored questions remain teacher-only.",
+        "Exact projection requires one primary skill, matching family skillId; multiplication and subtraction remain explicit secondary skills rather than creating a spurious generic practice fallback."
+      ],
+      "secondarySkills": [
+        "number.whole.multiply",
+        "number.whole.add_subtract"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L22",
+      "primarySkills": [
+        "geometry.perimeter_area"
+      ],
+      "secondarySkills": [
+        "number.whole.multiply"
+      ],
+      "prerequisites": [
+        "number.whole.add_subtract"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.A.2",
+        "CCSS:4.MD.A.3",
+        "CCSS:4.OA.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L22_MIXED_MEASUREMENT_CONVERSIONS_AND_RECTILINEAR_PERIMETER_AREA",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l22.convert_l_shaped_area_perimeter"
+      ],
+      "evidence": [
+        "2021 source Activity 1: 36in×24in poster and 8in×8ft banner, independently cut-and-rearranged with teacher review.",
+        "2021 Activity 2 six-sided room with mixed 204/180 inches, 4/3 yards and 3/8 feet; perimeter 64ft=768in, 1200in delivery sufficient, area 228ft².",
+        "Only numeric unit-converted answers auto-grade; ruler/tile work, warm-up shaded figure and geometric construction remain teacher-observed."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L23",
+      "primarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract",
+        "number.whole.multiply",
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.add_subtract"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.4",
+        "CCSS:4.NBT.B.5",
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L23_FOUR_OPERATION_SCHOOL_TRAVEL_FITNESS_EXACT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l23.four_operation_contexts"
+      ],
+      "evidence": [
+        "2021 IM local teacher prep and Student Facing: warm-up four statements; Mai 157+134+162+275 feet doubled; three music round trips of 2364 feet; compare 5 long round trips + music with two miles.",
+        "Han four-week step table 32550/7=4650, 32550-28098=4452, and 120000-(32550+28098+36249)=23103.",
+        "Independent Edulytics multi-operation Cool-down uses a different route to avoid claiming publisher gated assessment equivalence.",
+        "Six learner-facing source-aligned numerical modes are auto-graded; number-line diagram, assumptions, posters and verbal explanation remain teacher-judged.",
+        "Exact source-specific family requires independent correct/wrong/malformed/tampered verifier and focused tests before A–C closure."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L24",
+      "primarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract",
+        "number.whole.multiply",
+        "number.whole.divide"
+      ],
+      "prerequisites": [
+        "number.whole.add_subtract"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.4",
+        "CCSS:4.OA.A.2",
+        "CCSS:4.OA.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L24_CENSUS_LANGUAGE_DATA_EXACT_REUSE_WHOLE_NUMBER_KERNEL",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l24.language_population_comparisons"
+      ],
+      "evidence": [
+        "2021 original teacher page U06:L24: Navajo 166826, Yupik 19750, Apache 13445, Cherokee 11465; all other nine total 111680.",
+        "2021 original Philadelphia English 1224539, non-English table 127352, 6750, 364; Chicago Spanish 422568 and Indo-European 25777 vs Philadelphia 127352 and 6750.",
+        "Six independent first-party digital modes: difference, subset sum, compare nine, compare three non-English categories, compare two-city totals, rounded multiplicative comparison.",
+        "Teacher reviews source bar-chart visual, estimates, unsupported extrapolation, alternate reasonable approximations and oral mathematical justifications.",
+        "Focused .NET test verifies lesson routing, generation, correct/wrong/invalid/tampered grading before A–C sign-off."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U06:L25",
+      "primarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "secondarySkills": [
+        "number.whole.multiply",
+        "number.whole.divide",
+        "number.whole.add_subtract"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.A.3",
+        "CCSS:4.OA.C.5"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U06_L25_OPTIONAL_FLOWER_PATTERN_AND_MULTI_STEP",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l25.flower_garland_patterns"
+      ],
+      "evidence": [
+        "Original 2021 source teacher student facing: 12-flower garlands; Priya cycle 2 big and 2 small; Jada cycle 1 big and 2 small; 25 garlands of each.",
+        "155 flowers, 16 flowers per garland: nine complete and eleven remaining; 1 minute cutting plus 2 minutes finishing per flower, shared by two workers.",
+        "Question mode 5 is first-party clarified parallel working and equal-as-possible allocation, avoids claiming a unique exact answer to the publisher's open-ended timing question.",
+        "Teacher assesses construction with tissue paper, visual source patterns, student-generated problems and peer explanations.",
+        "Six scoped digital exact modes with independent correct/wrong/malformed and tampered-input checks, focused CI before A–C closure."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L01",
+      "primarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.plane"
+      ],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U07_L01_DRAWING_DESCRIPTION_PRECISION",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l01.geometric_description_precision"
+      ],
+      "evidence": [
+        "Verified 2021 IM teacher preparation states formal line/segment definitions are not required at this lesson; students notice and draw.",
+        "Student Facing: back-to-back four geometric figure cards, draw five long lines through at least two dots each, trace familiar shapes.",
+        "The digital family compares first-party explicit and vague drawing instructions in six contexts; it does not replace teacher-graded original cards or constructions.",
+        "2021 string-art third-party image and publisher blackline master were not copied; teacher reviews original if lawfully accessible.",
+        "Focused Grade4Ordinal112DescriptionPrecisionTests and Grade4Ordinal112GeometryCommunicationTests: 4/4 passed, 0 failed, candidate 62811f7a23b3604290eb63e7bab722758739cc4e, GitHub Actions run 40557342396."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L02",
+      "primarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1",
+        "CCSS:4.NBT.B.4",
+        "CCSS:4.NBT.B.5"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "G4_2021_U07_L02_FOUR_GEOMETRY_CATEGORIES_AND_MENTAL_SUBTRACTION",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l02.geometry_cards_number_talk"
+      ],
+      "evidence": [
+        "2021 student-facing original teacher page: 90−45, 270−45, 270−135, 360−135; mental Number Talk.",
+        "2021 activity 1 sorts four card types: point, line, ray and line segment, including why a point marks a location.",
+        "2021 activity 2 uses dot paper for triangle, rhombus, trapezoid, hexagon, pentagon and rectangle, then uppercase, lowercase and numeral with ray/segments.",
+        "Digital source-goal support exercises formal classification of first-party descriptions and the four source mental-difference values. Original picture-card sort and constructed figures remain teacher reviewed.",
+        "Focused .NET Grade4Ordinal113PointsLinesRaysSegmentsTests 2 passed, 0 failed at GitHub Actions run 40558489341, source correct/wrong/malformed/tamper cases."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L03",
+      "primarySkills": [
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "prerequisites": [
+        "supporting.geometry.properties"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L03_PARALLEL_INTERSECT_DOT_GRID",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ],
+      "evidence": [
+        "2021 original teacher preparation SHA256 1b4a56d3b54a0bfb60cb7cf1e0140a50f443396d7922cf18161f4af627a861bb and teacher Student Facing SHA256 aee2e5def172645cf84ba0d28135dc6e1c65d98cb61cfdaae0f55eba137ec5dc.",
+        "Original warm-up asks how many segments; Activity 1 draws a fourth line around three triangle-forming lines; Activity 2 draws labelled lines h and g through at least two dots and identifies their intersection.",
+        "Digital first-party family classifies eight distinct dot-grid line pairs; correct answer is determined by exact geometric direction, with noncoincident parallel lines enforced.",
+        "Source visual artwork, constructed quadrilaterals, free drawing, explanations and the protected publisher Cool-down remain teacher-reviewed. No publisher media copied.",
+        "Stage C independent tests have been authored but neither .NET tests nor GitHub Actions/Stage D were executed."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L04",
+      "primarySkills": [
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "prerequisites": [
+        "supporting.geometry.properties"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L04_MAP_AND_CLASSROOM_PARALLEL_INTERSECT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ],
+      "evidence": [
+        "2021 IM original teacher preparation local SHA256 aae1fa82bab86fba68db10ff3a76a6f4577d382a2e12b1491d668e30096a4153; teacher lesson Student Facing local SHA256 129ba64cbf401a7463d9fb6a20518853cdcaf0a9c81f67bf8b11d194133ffa89.",
+        "2021 warm-up Four-sided Shapes, activity 1 historical Staten Island neighbourhood map and identifying parallel and intersecting line segments, and activity 2 classroom sketch with at least three pairs of parallel segments and intersecting square corners.",
+        "L114 reviewed first-party exact dot-grid pair classification family is reused, not duplicated. It supports digital identification of parallel/intersecting complete lines, not source image/map or student drawing assessment.",
+        "Source third-party historic Sanborn map is not copied. The learner-constructed drawing, right-angle proof, and teacher discussion remain teacher-led.",
+        "L115 source-specific independent verifier tests and map/classroom handoff authored without running .NET, Actions or Stage D."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L05",
+      "primarySkills": [
+        "geometry.angles.identify_shared_ray_vertex"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "prerequisites": [
+        "supporting.geometry.properties"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L05_COMMON_VERTEX_ANGLE_RECOGNITION",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l05.angle_common_vertex_rays"
+      ],
+      "evidence": [
+        "2021 original teacher preparation SHA256 6303ed67e97716462442119bc1d46124312eb7ded7e4062b946a10846ad35350 and local teacher Student Facing SHA256 1e774cbf674d3fc6c5b7337a0b780c5b7fdc795e6d76fced5eade93e1f3273c7.",
+        "Original Wall of Clocks Notice and Wonder, back-to-back partner Tricky Figures, Angles or Not Angles? including original disputed disconnected-ray drawing, Discover Angles and protected Spot the Angles Cool-down.",
+        "First-party text-based pairs of ray starts and orientations assess the common-vertex criterion, not the original source artwork or student drawing. The original disputed source figure must be interpreted by a teacher.",
+        "Angle size depends on turn, not drawn length. The later measurement curriculum is not claimed here.",
+        "Stage C lesson-specific independent correct/wrong/malformed/tampered tests authored only, .NET/Actions/Stage D not run."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L06",
+      "primarySkills": [
+        "geometry.angles.compare_opening_compass_turn"
+      ],
+      "secondarySkills": [
+        "geometry.angles.identify_shared_ray_vertex"
+      ],
+      "prerequisites": [
+        "geometry.angles.identify_shared_ray_vertex"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L06_COMPARE_OPENING_AND_TURN",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l06.compare_angle_openings"
+      ],
+      "evidence": [
+        "Original IM/KH 2021 G4 Unit 7 Lesson 6 teacher preparation SHA-256 3efcc5b10bd48188ea2440aaf698b3c778ab9ae128810e3cb85b5c7732976b8e, original teacher Student Facing SHA-256 98bc10a3c70036224025761d2473b8fd3fb8a9602f3afeb55d8300e69bb435b1.",
+        "Warm-up Which One Doesn't Belong Angles; Activity 1 original angle card sort into at least three categories; Activity 2 order the original A–P cards by size; original Compare Two Angles gated Cool-down not copied.",
+        "First-party digital comparison of two described compass-direction openings (each <= half turn) checks larger/equal; this does NOT auto-grade source picture cards or student reasoning.",
+        "Angle arm length does not determine angle opening. Teacher reviews categorisation and entire original A–P card ordering.",
+        "Stage C tests authored UNRUN. .NET compilation, authenticated UI, scores, tenant isolation and Stage D deferred."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L07",
+      "primarySkills": [
+        "geometry.angles.compare_exact_hour_clock_turns"
+      ],
+      "secondarySkills": [
+        "geometry.angles.compare_opening_compass_turn"
+      ],
+      "prerequisites": [
+        "geometry.angles.compare_opening_compass_turn"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L07_COMPARE_EXACT_HOUR_CLOCK_TURNS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l07.clock_hour_angle_turn_compare"
+      ],
+      "evidence": [
+        "IM/KH 2021 teacher prep SHA256 d124982d883f23d9a4ee443c8abdcc2ab1234076e92835b5a3d6e771c5c60296 and local teacher Student Facing SHA256 bb856930b3a5bd2416658f5b9e8778963eee096b9a3c4e304ae2f884d4e63feb.",
+        "Original warm-up Two Sets of Angles; Activity 1 Andre instructs 12-to-3 turning to draw an angle; Activity 2 compares source clock-hand angles including 5:00; teacher checks source figures/drawings.",
+        "Digital exact-hour-clock family models smaller angle turn for minute hand at 12 and hour hand on exact integer mark, then compares or gives amount by hour-mark intervals. It does NOT model times like 5:30 nor source visual figures.",
+        "Original Cool-down Which Angle Is Larger? By How Much? is gated; first-party equivalent provided with teacher-reviewed explanation.",
+        "Source images/partner explanations/clock diagrams and original publisher comparisons are teacher-only. .NET tests authored but UNRUN; Stage D pending."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L08",
+      "primarySkills": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "secondarySkills": [
+        "geometry.angles.compare_exact_hour_clock_turns"
+      ],
+      "prerequisites": [
+        "geometry.angles.compare_opening_compass_turn"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.5"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L08_360_DEGREE_FRACTIONAL_BENCHMARKS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l08.full_turn_degree_benchmarks"
+      ],
+      "evidence": [
+        "IM/KH 2021 teacher preparation source SHA256 ef87c091de9f3017f3f22334983feb8db3459b55a63ffb3b25a6279c557f90ef; teacher Student Facing SHA256 522f34bbcf72e6e7fbddb345912f598b08c4a6fd01f6fcad532fd22e4e458437.",
+        "Source Warm-up What Do You Know about 360?; Activity 1 A Full Turn 360°; Activity 2 Make a Measuring Tool with original semicircle and marked 120° and 180°; source original Cool-down Estimate Angle Size in Degrees gated.",
+        "First-party digital exact family teaches eight benchmark degree-to-reduced-fraction conversions and full-turn complements. Does not grade student handmade semicircle, source drawn rays, or estimated unseen publisher angles.",
+        "Half-circle benchmark 120° and 180° visually teacher-verified only; source original figure not copied.",
+        "Three independent xUnit test methods written but deliberately UNRUN. .NET/CI/UI/gradebook and Stage D deferred.",
+        "Edulytics CCSS classification for fractional degrees of circle: 4.MD.C.5; original stored 2021 publisher source content remains separately evidenced and is not treated as a verified source standards code."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L09",
+      "primarySkills": [
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "secondarySkills": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "prerequisites": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L09_FIRST_PARTY_PROTRACTOR_TWO_SCALE_ZERO_ALIGNMENT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l09.protractor_dual_scale_reading"
+      ],
+      "evidence": [
+        "IM/KH 2021 teacher preparation SHA256 d1c1cd6c346d1bc41830b5a6a78208be671ea98d0fcfa958ab23bf60c917c3d2; local original teacher Student Facing SHA256 372ecdab16ab2cfe9c2ffbffa3c5188d69573991d9b8b1c5bd9dc076a3439373.",
+        "2021 warm-up True or False: There's Something About 45, with 2×45=6×15 and 4×45=2×90; Activity 1 1° as 1/360 turn; Activity 2 original four angles with protractors and Elena/Kiran 80° dispute. Original protected Measure the Angles Cool-down not verified.",
+        "First-party digital exact reading only: given specified protractor scales whose opposite labels sum to 180 and the zero mark aligned to the initial ray, choose the reading on that scale. Does NOT measure original source figures or actual student-drawn protractors.",
+        "Teacher inspects four original publisher diagrams, 80° source dispute, angle construction and physical measuring technique. No source artwork copied.",
+        "C# generator/verifier and three focused test methods authored only; no .NET, CI, authenticated scoring, approval or Stage D."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L10",
+      "primarySkills": [
+        "geometry.lines.perpendicular_by_right_angle",
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "secondarySkills": [
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "prerequisites": [
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1",
+        "CCSS:4.MD.C.6",
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L10_PERPENDICULAR_JUDGMENT_AND_REUSED_PROTRACTOR_READING",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l09.protractor_dual_scale_reading",
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment"
+      ],
+      "evidence": [
+        "Original IM/KH 2021 Grade 4 U07:L10 teacher-preparation SHA256 6b53e9ae3e21afa3bc77da2b9d53cb4b8906198404bd5869d21012155b8e5cbe and teacher-student-facing SHA256 7fa3ddf253c2da39ce255914ee3ca33d30b2b0a2a448326386de2915e4c7e9c7. Source content was additionally read directly from Our-CS local 2021 HTML, not browsed online.",
+        "Original four warm-up quotients 180÷2=90, 180÷4=45, 360÷8=45, 360÷16=22.5; original Activity 1 protractor measurement on individual rays and s,t in trapezoid, q,r in rhombus, e,f for intersecting lines; Activity 2 Lin and Tyler fold two paper creases through P and trace four 90-degree angles.",
+        "Extend existing ExactSkillContractQuestionEngine by one right-angle-perpendicular numerical judgment, and REUSE prior Grade 4 L09 protractor dual-zero question family for measuring angle readings.",
+        "Original polygon diagrams, paper fold, labeled angle measurements, source student partner responses and first-party drawn Cool-down remain teacher-reviewed, not fabricated as numeric figure readings.",
+        "Three focused xUnit test methods are AUTHORED NOT RUN, no CI, build, authenticated gradebook or Stage D."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L11",
+      "primarySkills": [
+        "geometry.angles.protractor_read_from_correct_zero",
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "secondarySkills": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "prerequisites": [
+        "geometry.angles.protractor_read_from_correct_zero",
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1",
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L11_DRAW_ANGLES_PHYSICAL_TEACHER_REVIEW_REUSE_PROTRACTOR",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l09.protractor_dual_scale_reading",
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment"
+      ],
+      "evidence": [
+        "Original 2021 source teacher preparation direct locally from Our-CS unit-7/lesson-11/preparation.html, local SHA256 9cc4d90c12e97695aa13548bae7a016c7694e6c69ab52ddffa3ad1a2d973ba36; 2021 teacher lesson SHA256 484f46bfda6c7786bb1a03599f46d599652580114de20f4c5483cf1c02d1a0c0.",
+        "Original image-specific 143° clock angle (teacher revelation) is NOT an exact-hour clock question; drawings are source-routed and teacher reviewed.",
+        "Activity 1 construction: diagonal line perpendicular at chosen P; 40°, 20°, 95° rays at vertex M; reflex angle depends on nested/adjacent choices and does not have one automatic answer.",
+        "Activity 2 source four ranges <35, between 35 and 80, >80 to <120, >120 to <180; index cards, partner measurement corrections, saved to next lesson.",
+        "NO new engine: reuse existing exact protractor zero-scale (U07:L09) and 90° perpendicular judgement (U07:L10) for supplementary digital prompts; actual drawing/paper and source figure parity NOT machine-scored.",
+        "Three scoped xUnit checks authored UNRUN. No dotnet build, CI or Stage D."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L12",
+      "primarySkills": [
+        "geometry.angles.classify_acute_right_obtuse_straight"
+      ],
+      "secondarySkills": [
+        "geometry.angles.protractor_read_from_correct_zero",
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "prerequisites": [
+        "geometry.angles.protractor_read_from_correct_zero"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.6",
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L12_ANGLE_CLASSIFICATION_DEGREES_AND_TEACHER_FIGURES",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l12.classify_angles_by_degree_bounds"
+      ],
+      "evidence": [
+        "Original 2021 IM/KH teacher prep/source student facing previously INSPECTED on Our-CS, hashes recorded in archived original source intake ordinal 123 (prep 3f46671adf768735d0d3bea79611a7036b8729c5d28f87591913794816fc60bc; teacher c10558faabd5fbbff256ee7556d1a9d1c2886d06e4a1d1901d8cc8fa305cb027). New direct device read was attempted but remote timeout prevented independent re-read.",
+        "2021 original purpose explicitly to classify acute, obtuse, and straight angles and draw acute/obtuse; source warm-up Fractions of 120 and 360; Activity 1 Sorting Angles specifically continues physical 4 cards from prior U07:L11.",
+        "Original Activity 2 What Is It, Really? includes Mai and Jada whether a straight line constitutes an angle and a letter Y measured by Tyler/Andre. Do not assert actual pictured angle degree values or unseen teacher answers.",
+        "2021 Activity 3 Small Angles, Large Angles (15 min) and protected original Cool-down are source listed but visual original student prompts not verified in this run; retain teacher assessment.",
+        "Extend existing shared ExactSkillContractQuestionEngine with first-party 8 exact angle classifications using boundaries 90° and 180°. This numeric exact family does not claim original source figure/drawing parity.",
+        "Three xUnit scoped methods AUTHORED NOT EXECUTED; .NET, CI, runtime, gradebook and academic approval deferred."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L13",
+      "primarySkills": [
+        "geometry.angles.compose_decompose_known_turn"
+      ],
+      "secondarySkills": [
+        "geometry.angles.classify_acute_right_obtuse_straight"
+      ],
+      "prerequisites": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.7",
+        "CCSS:4.MD.C.5"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U07_L13_ADDITIVE_UNKNOWN_ANGLE",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l13.additive_angle_part"
+      ],
+      "evidence": [
+        "2021 IM/KH original local intake grade4 ordinal124 includes Corner Pieces, How Big Are These Angles, Angles in a Kite and Sets of Three Angles.",
+        "Original p,q,r,s numeric measures and kite fold geometry are not digitally verified or reproduced.",
+        "First-party numerical 90°,180°,360° adjacent angle composition family with eight validated fixtures.",
+        "First-party Cool-down: straight angle 180° split 73° and 107°.",
+        "Tests authored, not run; CI/Stage D and academic approval pending."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L14",
+      "primarySkills": [
+        "geometry.angles.compare_exact_hour_clock_turns"
+      ],
+      "secondarySkills": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "prerequisites": [
+        "geometry.angles.degree_benchmark_full_turn_fraction"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.5",
+        "CCSS:4.MD.C.7"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "2021_U07_L14_EXACT_HOUR_CLOCK_SUBSET_TEACHER_DRAWINGS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l07.clock_hour_angle_turn_compare"
+      ],
+      "evidence": [
+        "2021 original local archived source SHA256 teacher 308ea7cb12e65dba3157820870c8dc9ebe19bca110b7dcd3d49f1c962a93fc50",
+        "Warmup four original nonuniform clock images teacher-led; Draw a Clock perpendicular 90-degree quadrants and exact-hour mark 30-degree subdivisions.",
+        "Original Tick Tock asks 6 o'clock and 8 o'clock; smaller angles 180° and 120° respectively.",
+        "Existing exact hour numeric family reused; source illustrations and other times not machine-scored. Tests authored UNRUN."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L15",
+      "primarySkills": [
+        "geometry.angles.compose_decompose_known_turn"
+      ],
+      "secondarySkills": [
+        "geometry.angles.compose_decompose_known_turn"
+      ],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.7"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_ORDINAL_126_EXISTING_FAMILY_SOURCE_TEACHER_LED",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l13.additive_angle_part"
+      ],
+      "evidence": [
+        "2021 original local Our-CS teacher SHA 968eaa787e71d66b155e2d7b44da7a975dd839ba9f074e9614f0e41f7a1293b6",
+        "The purpose of this lesson is to use known angles to reason about unknown angles and write equations to reason about unknown angles.",
+        "Warm-up: How Many Do You See: Obtuse Angles (10 minutes)",
+        "Activity 1: Shaded and Unshaded Angles (15 minutes)",
+        "Activity 2: Info Gap: A Whole Bunch of Angles (20 minutes)",
+        "Cool-down: Heart to Heart (5 minutes)",
+        "How many angles do you see in the folded paper heart? | Student Response | Teachers with a valid work email address can click here to register or sign in for free access to Student Response.",
+        "Find the measurement of each shaded angle. Show how you know. | Description: 4 angles. A. Right angle partitioned into two angles. One shaded green, one labeled 62 degrees. B. Straight angle partitioned into 3 angles. One labeled 71 degrees, one shaded yellow,",
+        "Your teacher will give you either a problem card or a data card. Do not show or read your card to your partner. | Pause here so your teacher can review your work. Ask your teacher for a new set of cards and repeat the activity, trading roles with your partner.",
+        "Digital source diagrams not visually graded; Stage C tests authored but deliberately UNRUN."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U07:L16",
+      "primarySkills": [
+        "supporting.geometry.properties",
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "secondarySkills": [],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.1"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SOURCE_FIGURE_CHANGE_TEACHER_LED_WITH_REUSED_GEOMETRY_DESCRIPTION_PRACTICE",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l01.geometric_description_precision",
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ],
+      "evidence": [
+        "Original 2021 local intake teacher SHA 153126a4483ad397b8ac7dee6c40e902a9a60736b91503373685015f524a040d",
+        "The purpose of this lesson is for students to apply their understanding of geometric figures and measurements to draw, describe, and identify two-dimensional figures.",
+        "Warm-up: Notice and Wonder: Two Figures (10 minutes)",
+        "Activity 1: Make a Change (15 minutes)",
+        "Activity 2: Guess My Figure (20 minutes)",
+        "New exact engine not needed: geometry-description and parallel/intersection subset family reused; original drawing cards are teacher-only."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L01",
+      "primarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "secondarySkills": [
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.2"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U08_L01_SOURCE_SHAPE_ATTRIBUTE_GROUPING_TEACHER_LED",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l01.geometric_description_precision"
+      ],
+      "evidence": [
+        "2021 local source teacher SHA 3e661896302b5b6b66eb6ff6ccdc2f55b7da4c44416f74fa3120d7da20d896e4",
+        "The purpose of this lesson is for students to analyze two-dimensional figures and sort them into different categories based on their attributes.",
+        "Warm-up: Which One Doesn’t Belong: Geometric Figures (10 minutes)",
+        "Activity 1: Card Sort: Shapes (20 minutes)",
+        "Activity 2: Guess the Category (15 minutes)",
+        "Cool-down: What Do They Have in Common? (5 minutes)",
+        "Geometry text precision family supplementary only; categorical source cards and partner examples scored by teacher."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L02",
+      "primarySkills": [
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "prerequisites": [
+        "geometry.lines.perpendicular_by_right_angle"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.2"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "RIGHT_TRIANGLE_SOURCE_CARD_REVIEW_REUSES_90_DEGREE_SUBSKILL",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l10.perpendicular_right_angle_judgment"
+      ],
+      "evidence": [
+        "Original 2021 local teacher source 428ac2a1d80f2480f219bc69f3188a19f426b541b73f304cab914592f33220df",
+        "The purpose of this lesson is for students to classify triangles based on the their side lengths and the size of their angles. Students identify triangles with a right angle as right triangles.",
+        "Warm-up: Number Talk: Sums and Products (10 minutes)",
+        "Activity 1: Triangle Hunt (25 minutes)",
+        "Activity 2: The Right Kind of Triangle (10 minutes)",
+        "Cool-down: Which Would Fit in the Set? (5 minutes)",
+        "Numeric supplementary existing 90-degree perpendicular test is only a subskill; source triangle card side count and printed figures teacher-led."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L03",
+      "primarySkills": [
+        "supporting.geometry.properties",
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "secondarySkills": [],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.2"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "QUADRILATERAL_CARD_ATTRIBUTES_TEACHER_LED_PARALLEL_SUBSKILL_REUSED",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+      ],
+      "evidence": [
+        "2021 original teacher local intake SHA 6b855ce40b4179f95758e439dbc39d2bbca50242e534e0e22d4b9daf277622a9",
+        "The purpose of this lesson is for students to classify quadrilaterals by the size of their angles, the length of their sides, and the presence of parallel and perpendicular sides.",
+        "Warm-up: How Many Do You See: Brick Pattern (10 minutes)",
+        "Activity 1: Quadrilateral Hunt (20 minutes)",
+        "Activity 2: What’s True about These Quadrilaterals? (15 minutes)",
+        "Activity 3: Guess Again [OPTIONAL] (10 minutes)",
+        "Cool-down: Quadrilaterals Rule (5 minutes)",
+        "Original named category facts D and AA squares, K Z AA rectangles; images/letter validity still teacher-led.",
+        "Existing exact parallel/intersecting subskill supports one feature, not full square/rectangle card classification."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L04",
+      "primarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "prerequisites": [
+        "supporting.geometry.properties"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SOURCE_FOLDING_SYMMETRY_WITH_FIRST_PARTY_DESCRIBED_SHAPE_AXIS_COUNT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u08.l04.symmetry_axis_counts"
+      ],
+      "evidence": [
+        "Local 2021 original source intake teacher hash 3a6a0b1a5b79f77b8ec84853a3f42551ff00b9f7778961177e3340212a7ffe19",
+        "The purpose of this lesson is to introduce the concept of line symmetry and for students to identify lines of symmetry in two-dimensional figures.",
+        "Warm-up: Notice and Wonder: Seeing Double (10 minutes)",
+        "Activity 1: Perfect Matches (20 minutes)",
+        "Activity 2: In Search of Symmetry (15 minutes)",
+        "Activity 3: Just Keep Folding [OPTIONAL] (10 minutes)",
+        "Cool-down: One Line or More than One? (5 minutes)",
+        "Actual pattern-block artwork and original card categories require teacher inspection; first-party exact shape description axis count only.",
+        "New math family is EXTENSION of shared engine, NOT creation of separate engine."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L05",
+      "primarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "secondarySkills": [
+        "supporting.geometry.properties"
+      ],
+      "prerequisites": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.3"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SOURCE_MIRROR_HALF_PHYSICAL_TEACHER_LED_EXISTING_SYMMETRY_COUNT_REUSE",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u08.l04.symmetry_axis_counts"
+      ],
+      "evidence": [
+        "Original local 2021 source teacher SHA 68a35cabfce1e11412a54a8c30583453bb1171907068746c1c92fd12b29d2d4f",
+        "The purpose of this lesson is for students to identify figures with line symmetry and to complete line-symmetric figures.",
+        "Warm-up: Number Talk: Keeping Track (10 minutes)",
+        "Activity 1: Half-drawn Figures (15 minutes)",
+        "Activity 2: What’s the Whole Picture? (20 minutes)",
+        "Activity 3: What Could the Whole Figure Be? [OPTIONAL] (10 minutes)",
+        "Cool-down: Make Them Whole (5 minutes)",
+        "Original shaded triangle, trapezoid and rhombus with dashed symmetry line require teacher visual checks; axis-count family is supplementary, NOT pixel-verified."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L06",
+      "primarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "secondarySkills": [
+        "geometry.lines.parallel_intersect.classify_dot_grid"
+      ],
+      "prerequisites": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.G.A.3"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "OPTIONAL_SOURCE_SYMMETRIC_DOT_GRID_TEACHER_LED_REUSE_AXIS_COUNT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u08.l04.symmetry_axis_counts"
+      ],
+      "evidence": [
+        "OPTIONAL 2021 lesson original local SHA 3edfb93fd7ccb359042a4deb37a6faf12c5573034c7e9dfb18aac0432d520471",
+        "The purpose of this optional lesson is for students to use what they know about symmetry and parallel and perpendicular lines to complete or draw figures with those attributes on a grid.",
+        "Warm-up: How Many Do You See: Dot after Dot (10 minutes)",
+        "Activity 1: You’re Gonna Draw It: It’s Symmetric (20 minutes)",
+        "Activity 2: Hidden Shapes (10 minutes)",
+        "Cool-down: Can You See It? (5 minutes)",
+        "Source seven columns total 20 dots from documented 6 centre and symmetric 4,2,1 paired side columns.",
+        "Figure completion on original grid teacher-only; reuse first-party exact shape symmetry count."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L07",
+      "primarySkills": [
+        "geometry.perimeter_area.add_polygon_sides"
+      ],
+      "secondarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "prerequisites": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.A.3"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SOURCE_BOUNDARY_PERIMETER_SUM_FIRST_PARTY_INTEGER_EXTEND",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u08.l07.polygon_perimeter_sum"
+      ],
+      "evidence": [
+        "Original 2021 local teacher SHA ef4c77c569c8d0e6e35ff53abca0a9d6778c0eb9d0b575dce76733a7ef567294",
+        "The purpose of this lesson is for students to use the known attributes of two-dimensional figures (such as side lengths and symmetry) to reason about the perimeter of shapes.",
+        "Warm-up: Number Talk: Multiple Thirds (10 minutes)",
+        "Activity 1: All the Way Around (20 minutes)",
+        "Activity 2: Ponder Perimeter (15 minutes)",
+        "Activity 3: Perimeter Expressions [OPTIONAL] (10 minutes)",
+        "Cool-down: What's the Perimeter? (5 minutes)",
+        "Source figure A four sides 18 26 13 37 ft, sum 94; B 1/5 4/5 1/5 4/5 miles, sum 2.",
+        "New exact family for first-party integer polygon side sums is EXTEND on shared engine, not figure copy or fractional-mile source parity."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L08",
+      "primarySkills": [
+        "geometry.perimeter_area"
+      ],
+      "secondarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "prerequisites": [
+        "geometry.perimeter_area.add_polygon_sides"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.A.3",
+        "CCSS:4.G.A.3"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SYMMETRY_PERIMETER_MISSING_LENGTHS_TEACHER_SOURCE_WITH_RECTANGLE_SUBSET",
+      "allowedQuestionFamilies": [
+        "geometry.perimeter_area.rectangle_missing_side"
+      ],
+      "evidence": [
+        "Original 2021 local source SHA c08d5297f6c9233d9a36f8b81d8bcd9c051868146c1646d2db47a690ac61c321",
+        "The purpose of this lesson is for students to use the attributes of two-dimensional figures (such as perimeter and symmetry) to reason about side lengths.",
+        "Warm-up: True or False: Equations with Fractions (10 minutes)",
+        "Activity 1: Unknown Lengths (20 minutes)",
+        "Activity 2: Lin’s Design (15 minutes)",
+        "Cool-down: Stage Symmetry (5 minutes)",
+        "Source 64-inch perimeters and Lin 145-inch tape are original constraints; exact unknown side picture teacher-scored."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L09",
+      "primarySkills": [
+        "geometry.perimeter_area.add_polygon_sides"
+      ],
+      "secondarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "prerequisites": [
+        "geometry.perimeter_area.add_polygon_sides"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.A.3",
+        "CCSS:4.G.A.3"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "OPTIONAL_SOURCE_SYMMETRY_UNFOLDING_PERIMETER_TEACHER_LED_REUSE_PERIMETER_SUM",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u08.l07.polygon_perimeter_sum"
+      ],
+      "evidence": [
+        "OPTIONAL original local 2021 teacher c82a04baca6948c1a350bdc19ac3f727b404a074a42d0333bd8255a546e94ab3",
+        "The purpose of this optional lesson is for students to practice visualizing and drawing figures given lines of symmetry and to use symmetry to solve problems about side lengths and perimeter.",
+        "Warm-up: Which One Doesn’t Belong: Figures (10 minutes)",
+        "Activity 1: Before and After (15 minutes)",
+        "Activity 2: Before and After, Perimeter Edition (20 minutes)",
+        "Cool-down: Fold It Once (5 minutes)",
+        "Source folded paper/right triangle/Jada rectangle pictures not numerically inferred; perimeter family is supplementary to actual unfolding."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U08:L10",
+      "primarySkills": [
+        "geometry.angles.compose_decompose_known_turn"
+      ],
+      "secondarySkills": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "prerequisites": [
+        "geometry.symmetry.count_lines_for_defined_shapes"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.MD.C.7",
+        "CCSS:4.G.A.3"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "OPTIONAL_SYMMETRIC_ORIGAMI_ANGLES_TEACHER_LED_ADDITIVE_SUBSKILL",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l13.additive_angle_part"
+      ],
+      "evidence": [
+        "Original 2021 local teacher source 4fcb9311d90ba9ce96a88adfb42c32069d92235d54bbacee87bfcd201a56f03d",
+        "The purpose of this optional lesson is for students to use the attributes of figures (symmetry, equal side lengths, right angles) to reason about angle measurements.",
+        "Warm-up: How Many Do You See: Symmetry in a Star (10 minutes)",
+        "Activity 1: Before and After, Angle Edition (25 minutes)",
+        "Activity 2: Angular Fish (15 minutes)",
+        "Cool-down: Stage Symmetry, Revisited (5 minutes)",
+        "Angular Fish a–f not assigned numeric values without source figure and reflection axis; additive digital practice supplementary."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L01",
+      "primarySkills": [
+        "fractions.of_quantity"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.B.4"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "FRACTION_FABRIC_MULTIPLICATION_TEACHER_SOURCE_EXISTING_FRACTION_FAMILY",
+      "allowedQuestionFamilies": [
+        "fractions.of_quantity.build"
+      ],
+      "evidence": [
+        "2021 local original source SHA d0f39f1e1c175827340d0a3e3134197b3006956f7bd0370aaba0fc88a17506ce",
+        "The purpose of this lesson is for students to represent and solve problems involving fraction operations. Students also reason about equivalence to compare fractions to whole numbers.",
+        "Warm-up: Number Talk: Fluency and Fractions (10 minutes)",
+        "Activity 1: Let’s Make Head Wraps! (15 minutes)",
+        "Activity 2: Make 2 Yards of Fabric (10 minutes)",
+        "Activity 3: Play by the Rules (10 minutes)",
+        "Cool-down: Compare to 2 (5 minutes)",
+        "Original Jada 5 pieces of 2/6 each = 10/6 yards; visual fabric combination teacher-led."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L02",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.compare.benchmark"
+      ],
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.B.3"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SOURCE_ROLLER_COASTER_RELATED_FRACTIONS_TEACHER_RIDE_TABLE_REUSED_FRACTION_FAMILY",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.related.build"
+      ],
+      "evidence": [
+        "2021 original local teacher SHA 63607b7442be0677abaaf93c017449b7c3d45d0f7abbec9d769ade3e27cc19ab",
+        "The purpose of this lesson is for students to represent and solve problems involving the addition and subtraction of fractions. Students also reason about equivalence to compare fractions and make sense of problems.",
+        "Warm-up: Number Talk: Wholes and Units (10 minutes)",
+        "Activity 1: Straws for A Roller Coaster (15 minutes)",
+        "Activity 2: Tall Enough for a Ride? (20 minutes)",
+        "Cool-down: The Flagpole (5 minutes)",
+        "7/12 and 1/4 straw portions and original ride-height source table. Fraction family only independently generated related-denominator calculations."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L03",
+      "primarySkills": [
+        "fractions.add_subtract"
+      ],
+      "secondarySkills": [
+        "fractions.equivalent"
+      ],
+      "prerequisites": [
+        "fractions.equivalent"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NF.B.3",
+        "CCSS:4.NF.C.5"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "DECIMAL_FRACTION_RELAY_AND_STUDENT_WORD_PROBLEM_TEACHER_SOURCE",
+      "allowedQuestionFamilies": [
+        "fractions.add_subtract.same_denominator.mixed.build"
+      ],
+      "evidence": [
+        "Source 2021 local teacher SHA 8e2cfd1315ba759e44b762d1e7101dac1e598f8e497ef9ee791631e27a2856b2",
+        "The purpose of this lesson is to use understanding of equivalence to solve addition and subtraction problems with decimal fractions. Students also create their own word problems that involve the addition and subtraction of fractions.",
+        "Warm-up: Number Talk: One Whole, Many Names (10 minutes)",
+        "Activity 1: Relay Race at Recess (20 minutes)",
+        "Activity 2: You Be the Author (15 minutes)",
+        "Cool-down: Mai’s Milky Cereal (5 minutes)",
+        "Original runner time table and multiple possible 9 2/5 authoring tasks teacher reviewed."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L04",
+      "primarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "secondarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.4"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SUBTRACTION_ACROSS_ZEROS_AND_STRATEGY_SELECTION",
+      "allowedQuestionFamilies": [
+        "number.whole.add_subtract.columnar.apply"
+      ],
+      "evidence": [
+        "2021 original local teacher SHA c4922a6b77650996d527ab95415831e463cd17a704fc3aeb3a53bce0e4feb335",
+        "The purpose of this lesson is to practice the standard algorithm for subtraction and to compare this method to other methods. Students choose a subtraction method based on the relationship between the numbers in the expression and explain their choices.",
+        "Warm-up: Number Talk: Differences (10 minutes)",
+        "Activity 1: Lots of Zeros (15 minutes)",
+        "Activity 2: Ways of Finding Differences (20 minutes)",
+        "Cool-down: A Couple of Differences (5 minutes)",
+        "Priya/Han source displayed methods teacher-reviewed, while 20,000−472=19,528 arithmetic verified."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L05",
+      "primarySkills": [
+        "number.whole.multiply.two_digit_partial_products"
+      ],
+      "secondarySkills": [
+        "number.whole.multiply"
+      ],
+      "prerequisites": [
+        "number.whole.multiply.fact_recall"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.5"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "EXACT_TWO_DIGIT_PARTIAL_PRODUCTS_AND_STANDARD_MULTIPLICATION",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u09.l05.two_digit_partial_products"
+      ],
+      "evidence": [
+        "2021 original local teacher SHA f8e3f8de0c293a2fcb49dd7782b4ba02b9058d3ba80a0801836153885bc843fb",
+        "The purpose of this lesson is to deepen students’ understanding of the connections between algorithms that use partial products and the standard algorithm when multiplying a pair of two-digit numbers.",
+        "Warm-up: Estimation Exploration: A Silly Riddle (10 minutes)",
+        "Activity 1: Two Methods Revisited (20 minutes)",
+        "Activity 2: Two by Two (15 minutes)",
+        "Cool-down: Four by One and Two by Two (5 minutes)",
+        "Source pair 34×21=714 and original partial products compared with standard algorithm, original visual teacher-reviewed.",
+        "First-party eight two-digit pairs generated by shared exact engine; source publisher slides not copied."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L06",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "secondarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "prerequisites": [
+        "number.whole.divide"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "SOURCE_PARTIAL_QUOTIENTS_TWO_STRATEGIES_REUSED_U06_ENGINE",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l18.partial_quotients_recording"
+      ],
+      "evidence": [
+        "2021 original source teacher SHA b27a305c3c8bccefd52c35310f16abee7b3330c3145afff9581a71bcfb54f2fc",
+        "The purpose of this lesson is to reinforce students’ understanding of division algorithms that use partial quotients and build their fluency in using it to divide multi-digit numbers by a single-digit divisor. Students also consider different strategies for dividing and their merits.",
+        "Warm-up: Number Talk: Divide by 3 and by 6 (10 minutes)",
+        "Activity 1: Unfinished Divisions (15 minutes)",
+        "Activity 2: Where Do We Begin? (20 minutes)",
+        "Cool-down: Divide Like a Pro (5 minutes)",
+        "7,465/5=1,493, 3,681/9=409 from 3,600+81 decomposition. Original four partially written algorithms teacher scored."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L07",
+      "primarySkills": [
+        "number.whole.multiply"
+      ],
+      "secondarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "prerequisites": [
+        "number.whole.multiply.fact_recall"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.A.2"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U09_L07_MULTIPLICATIVE_COMPARISON_REUSE_BASIC_FACT_FAMILY_AND_TEACHER_RATIO_TABLE",
+      "allowedQuestionFamilies": [
+        "number.whole.multiply.fact_recall.apply"
+      ],
+      "evidence": [
+        "Original 2021 local Our-CS teacher SHA e62182238165ba73807268f41b73c9b6d45dac6f83c96334ed0b7df486603111",
+        "The purpose of this lesson is for students to solve problems involving multiplicative comparison.",
+        "Warm-up: Notice and Wonder: Two Cities (10 minutes)",
+        "Activity 1: The Most and Least Expensive (20 minutes)",
+        "Activity 2: The Cost of Living (15 minutes)",
+        "Cool-down: Restaurant Budget (5 minutes)",
+        "Bermuda-India and US-Ghana source tables require actual teacher visual review; no 2026 price claims or invented numerical table labels.",
+        "Digital first-party base×factor practice reuses shared exact fact family; literal original table word problems remain teacher-reviewed."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L08",
+      "primarySkills": [
+        "number.whole.divide"
+      ],
+      "secondarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "prerequisites": [
+        "number.whole.divide"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.A.3",
+        "CCSS:4.NBT.B.6"
+      ],
+      "mappingConfidence": "High",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U09_L08_FIELD_TRIP_BUS_REMAINDER_DECISION_REUSE_U06",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l20.contextual_remainder_decisions",
+        "usccss.g4.u06.l21.multistep_contexts"
+      ],
+      "evidence": [
+        "2021 original local Our-CS teacher SHA 99a8f550a5cd6e55453188eb05e0e14929c81063e73bee3887705e104b7ca104",
+        "The purpose of this lesson is for students to practice solving multi-step problems using all operations. Students interpret their solutions (including remainders in division situations) and determine the reasonableness of their answer for a given situation.",
+        "Warm-up: Number Talk: Divide by 8 (10 minutes)",
+        "Activity 1: Two Truths and a Lie, or Two Lies and a Truth? (15 minutes)",
+        "Activity 2: Buses for a Field Trip (20 minutes)",
+        "Cool-down: To and Fro (5 minutes)",
+        "Original Situation A 17+52×11=589, source warmup 848÷8=106 and 4848÷8=606, bus passenger 375 with 27/48 seats.",
+        "One-company-only counts 14 small and 8 large; unverified source additional scenarios and mixed-bus choices teacher reviewed.",
+        "Existing verified-in-source-code contextual-remainder and multistep exact families reused; targeted xUnit authored unrun."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L09",
+      "primarySkills": [
+        "supporting.reasoning.core",
+        "number.whole.multiply.two_digit_partial_products"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract"
+      ],
+      "prerequisites": [
+        "number.whole.multiply.two_digit_partial_products"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.A.3",
+        "CCSS:4.NBT.B.5"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "G4_2021_U09_L09_STUDENT_AUTHORED_WORD_PROBLEMS_TEACHER_LED_EXACT_MULTIPLICATION_REUSE",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u09.l05.two_digit_partial_products"
+      ],
+      "evidence": [
+        "2021 archived original local Our-CS teacher SHA 89542333c7ae957201a49a802f5383501ce74f33d77e62f21158e3dc0d128f9f",
+        "The purpose of this lesson is for students to create their own mathematical questions and word problems given constraints (specific values, possible operations).",
+        "Warm-up: Number Talk: Difference and Thousands (10 minutes)",
+        "Activity 1: What’s the Question? (15 minutes)",
+        "Activity 2: What’s the Problem? (20 minutes)",
+        "Cool-down: A Music Festival (5 minutes)",
+        "Original 19,019 and 46,900 miles from original student text; sample comparison 27,881 independently authored.",
+        "Source Elena multiplication and Noah addition-only leading to 1,564; independently authored 46×34,1500+64,2000−436 all 1,564.",
+        "Authoring rubric/learner-produced story teacher-scored; exact multiplication family only supplementary."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L10",
+      "primarySkills": [
+        "supporting.reasoning.core"
+      ],
+      "secondarySkills": [
+        "number.whole.multiply"
+      ],
+      "prerequisites": [
+        "number.whole.multiply"
+      ],
+      "sourceType": "ReviewedPublisherLessonExactPractice",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.A.3"
+      ],
+      "mappingConfidence": "Low",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "2021_U09_L10_TEACHER_ESTIMATION_EXPLORATION_FIRST_PARTY_MULTISTEP_ARITHMETIC_SUBSKILL",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l23.four_operation_contexts"
+      ],
+      "evidence": [
+        "2021 original local source teacher hash e2853d1b6465672e5288fe1a1b1f05e30d7e658eb7dbcaa7deca20a7242838e2",
+        "The purpose of this lesson is for students to analyze different kinds of estimation problems and ways to make estimates, and then write their own estimation problems.",
+        "Warm-up: Estimation Exploration: No Driver Required (10 minutes)",
+        "Activity 1: Dental Care (10 minutes)",
+        "Activity 2: Get Your Classmates to Estimate (15 minutes)",
+        "Activity 3: Facilitate Your “Estimation Exploration” Activity (10 minutes)",
+        "Cool-down: Reflection (5 minutes)",
+        "Original Dental Care 2 min twice per day, toothbrush change every 3 months; derived 4 min per day 28 min per week, 4 replacement intervals in 12 months.",
+        "Original parking tower photos and student-created 4-5 estimation ideas/facilitation are not automatically verified.",
+        "Reused existing multistep arithmetic family as supplementary only; no source parity implied."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L11",
+      "primarySkills": [
+        "supporting.reasoning.core",
+        "supporting.geometry.properties"
+      ],
+      "secondarySkills": [],
+      "prerequisites": [],
+      "sourceType": "ReviewedPublisherLessonTeacherScored",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.C.5"
+      ],
+      "mappingConfidence": "Low",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "2021_U09_L11_WODB_OPEN_ENDED_JUSTIFICATION_TEACHER_REVIEW_NUMBER_TALK_SUPPLEMENT",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u07.l02.geometry_cards_number_talk"
+      ],
+      "evidence": [
+        "Original 2021 local source teacher c21a5bd4d6924835043b7541e3fd94025588e223232b2227743813403567ae34",
+        "The purpose of this lesson is for students to analyze numbers, expressions, geometric figures, and computations, identify their shared features and unique features, and use their analyses to complete or create Which One Doesn’t Belong sets.",
+        "Warm-up: Which One Doesn’t Belong: Strings of Numbers (10 minutes)",
+        "Activity 1: Add One That Doesn’t Belong (20 minutes)",
+        "Activity 2: Add Two That Don’t Belong (15 minutes)",
+        "Activity 3: Add Three That Don’t Belong [OPTIONAL] (30 minutes)",
+        "Cool-down: Reflection (5 minutes)",
+        "Original warmup 0,4,8,12,16 and 3,6,9,12,15: +4 vs +3, overlapping number 12.",
+        "Activity 1 one missing choice, Activity 2 two missing, Activity 3 OPTIONAL with three missing; source visual card originals and multiple valid justifications teacher-reviewed.",
+        "Old geometry cards and number talk exact family is SUPPORTING only; no claim of digital WODB assessment parity."
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G4:U09:L12",
+      "primarySkills": [
+        "supporting.reasoning.core",
+        "number.whole.divide"
+      ],
+      "secondarySkills": [
+        "number.whole.add_subtract",
+        "fractions.of_quantity"
+      ],
+      "prerequisites": [
+        "number.whole.divide",
+        "number.whole.add_subtract"
+      ],
+      "sourceType": "ReviewedPublisherLessonTeacherScored",
+      "officialOutcomeMapped": true,
+      "officialOutcomeCodes": [
+        "CCSS:4.OA.B.4",
+        "CCSS:4.NF.B.4"
+      ],
+      "mappingConfidence": "Medium",
+      "practiceReadiness": "STAGE_C_AUTHORED_PENDING_STAGE_D",
+      "practiceMechanic": "GRADE4_2021_FINAL_STUDENT_AUTHORED_NUMBER_TALK_PATTERNS_TEACHER_LED_REUSE_ARITHMETIC_SUBSKILLS",
+      "allowedQuestionFamilies": [
+        "usccss.g4.u06.l23.four_operation_contexts",
+        "usccss.g4.u06.l18.partial_quotients_recording"
+      ],
+      "evidence": [
+        "2021 original local Our-CS source teacher hash 960f7585efbd6b6c32cb991abab52d9172c6d002d5503985889e71240bc6d88d",
+        "The purpose of this lesson is for students to use patterns, structure, and understanding of properties of operations to design a series of expressions for a Number Talk activity.",
+        "Warm-up: Number Talk: A Whole Number and a Fraction (10 minutes)",
+        "Activity 1: Related Numbers, Related Expressions (20 minutes)",
+        "Activity 2: Add One New Expression, Then Two (15 minutes)",
+        "Activity 3: Add Three New Expressions [OPTIONAL] (30 minutes)",
+        "Cool-down: Reflection (5 minutes)",
+        "Original 6×1/4=1 1/2,6×3/4=4 1/2; source 15+29=44 and 30+58=88; source 35÷5=7 and70÷5=14.",
+        "Source learner creates new expression(s), supplies at least two mental methods and designs Number Talk; open-ended teacher-scored, not exact source numeric auto-grade.",
+        "Prior shared four-operations and partial-quotients math families reused as independent numerical subskills. Stage C test authored but .NET/CI not run."
+      ]
     }
   ]
 }

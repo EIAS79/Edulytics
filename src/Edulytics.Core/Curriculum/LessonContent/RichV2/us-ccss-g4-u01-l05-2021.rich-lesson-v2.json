@@ -1,0 +1,137 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "G4-U01-L05-IM2021-FirstParty-ABC-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U01:L05",
+      "CultureCode": "en",
+      "Title": "More Multiples",
+      "ExplanationParagraphs": [
+        "Goal: interpret multiples of 6, 8 and 10 in real situations, including solutions that are impossible, several exact solutions and surplus packages. The 2021 first-edition source student PDF has 3 pages.",
+        "Warm-up 10 min: use original banquet seating illustration, ten chairs per table; each student records an estimate that is too low, about right and too high, then explains it to a partner. Source image and estimates are teacher-reviewed; do not use a guessed replacement.",
+        "Activity 1 20 min: the source restricts students to ONE table type (6 or 8 seats) and no empty chairs. Jada18: 3 tables of6. Noah30: 5 tables of6. Combined48: 8 tables of6 OR6 tables of8. Including two teachers50: neither type exactly seats all. Explain each of four distinct original questions with drawings, arrays or multiples.",
+        "Activity 2 15 min: hotdogs packs10, buns packs8. Lin50: 5 packs hotdogs, exactly50 buns impossible, 7 packs=56 buns to cover50. Diego72: 8 packs hotdogs=80, 9 packs buns=72; consider justified alternatives if surplus is permitted. Equal purchased counts may be40 or80. Explain every original problem part.",
+        "Lesson synthesis 10 min: exact versus at least, remainders, multiple or no exact solution and common multiples. Teacher records reasoning.",
+        "Independent FIRST-PARTY Edulytics Cool-down 5 min (NOT publisher original): 48 guests can fill 8 tables of6 or6 tables of8; 50 guests cannot fill either size without empty seats. Require a written reason; teacher reviews. Numeric exact Practice is a separate subskill."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exact seating",
+          "Definition": "A whole number of one table type with no empty chairs.",
+          "Rule": "people % seats = 0.",
+          "Example": "48 works with 6 and8;50 with neither."
+        },
+        {
+          "Title": "Minimum package coverage",
+          "Definition": "Whole packages to meet or exceed demand.",
+          "Rule": "ceil(needed/pack size).",
+          "Example": "50 buns need7 packs of8."
+        },
+        {
+          "Title": "Shared multiples",
+          "Definition": "Numbers divisible by both pack sizes.",
+          "Rule": "multiples of 40 divide by 8 and10.",
+          "Example": "40,80."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "48 guests",
+          "Question": "Exactly seat48 with either one table type?",
+          "Method": "Divide by6 and8.",
+          "Steps": [
+            "48÷6=8.",
+            "48÷8=6.",
+            "Both give no empty seats."
+          ],
+          "Answer": "8 six-seat tables or6 eight-seat tables.",
+          "Check": "Both products=48."
+        },
+        {
+          "Title": "50 guests",
+          "Question": "Exactly seat50 using only6-seat or only8-seat tables?",
+          "Method": "Check remainders.",
+          "Steps": [
+            "50%6=2.",
+            "50%8=2.",
+            "Neither possible with no empty chairs."
+          ],
+          "Answer": "Neither.",
+          "Check": "No exact multiple."
+        },
+        {
+          "Title": "50 buns",
+          "Question": "At least50 buns from packs of8?",
+          "Method": "Round up.",
+          "Steps": [
+            "6×8=48, insufficient.",
+            "7×8=56, sufficient.",
+            "Buy7 packs."
+          ],
+          "Answer": "7 packages.",
+          "Check": "56≥50."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mixing table types or allowing empty seats.",
+          "WhyWrong": "Original question disallows both.",
+          "Correction": "Check one size and exact divisibility."
+        },
+        {
+          "Mistake": "Using floor package count.",
+          "WhyWrong": "Six bun packs contain only48.",
+          "Correction": "Round up to7."
+        }
+      ],
+      "SummaryPoints": [
+        "Original teacher and three-page source student PDF inspected locally; source photo remains teacher-reviewed.",
+        "All four banquet seating questions (18,30,48,50) and all hotdog-bun subparts (50,72, shared multiples) retained.",
+        "First-party Edulytics Cool-down aligned with fixed-size grouping, not publisher-original.",
+        "Physical representations, source image and free explanations require teacher observation.",
+        "Stage D authenticated runtime and grading to be tested later."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact table arrangements — teacher key",
+          "Description": "One table size only, no empty seats.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "18 students",
+              "Cells": [
+                "6-seat:3",
+                "8-seat:never exact"
+              ]
+            },
+            {
+              "Label": "30 students",
+              "Cells": [
+                "6-seat:5",
+                "8-seat:never exact"
+              ]
+            },
+            {
+              "Label": "48 students",
+              "Cells": [
+                "6-seat:8",
+                "8-seat:6"
+              ]
+            },
+            {
+              "Label": "50 incl. teachers",
+              "Cells": [
+                "6-seat:not exact",
+                "8-seat:not exact"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

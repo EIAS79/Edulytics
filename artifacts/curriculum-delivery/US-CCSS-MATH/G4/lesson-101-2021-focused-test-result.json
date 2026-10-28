@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "ordinal": 101,
+  "edition": "2021",
+  "code": "PED:US-CCSS-MATH:G4:U06:L15",
+  "test": {
+    "runUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "testSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "workflow": "g4-2021-l101-focused.yml",
+    "filter": "FullyQualifiedName~Grade4Ordinal101AreaDivisionExactTests",
+    "failed": 0,
+    "passed": 2,
+    "skipped": 0,
+    "total": 2,
+    "scope": "New L101 generator and verifier correct/wrong/malformed/modified-parameter checks; no full gradebook/lesson routing, source diagrams or Stage D proof"
+  },
+  "registeredQuestionFamilies": [
+    {
+      "id": "usccss.g4.u06.l15.area_partial_quotients",
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.g4.u06.l15.mural_complete_columns",
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    }
+  ],
+  "A": {
+    "sourceGoal": "verified local 2021 pages",
+    "publisherCooldown": "gated-first-party permitted",
+    "studentMirror": "404",
+    "twoOriginalImages": "source URLs and alt verified; image bytes not inspected",
+    "denominatorComplete": false
+  },
+  "B": {
+    "originalMathCorrect": true,
+    "firstPartyWorkedExamples": 3,
+    "firstPartyVisualModels": 3,
+    "graphicRenderedVerified": false,
+    "teacherActualDeliveryVerified": false
+  },
+  "C": {
+    "exactGenerationVerificationTestsPassed": 2,
+    "questionFamiliesRegisteredInShadow": true,
+    "questionFamiliesLessonRouted": false,
+    "authenticatedScoringAndPersistenceVerified": false
+  },
+  "D": "NOT_RUN",
+  "closed": false,
+  "allowedToAdvance": false
+}

@@ -1,0 +1,10 @@
+# G4 ordinal 95 — Recording Partial Products: One-digit and Three- or Four-digit Factors
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-6_lesson-9_preparation.html SHA256=09cdf7106fb138f4837f204632f489d0989b9287c266cb75fda4eaef13a1c3f8
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-6\lesson-9\lesson.html SHA256=94ca1b3ff2255f1cf8024517aabdab5bf308958541452d160bb5c231b3d5e8d4
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-6\lesson-9\lesson.html SHA256=e449f3e08e78dea8017c6d9c103fc9758856cf266a104a7ca17272d05df2b95f
+- Preserved existing learning explanation: Learning goal: You will multiply a multi-digit number by a one-digit number using an algorithm that uses partial products. In previous lessons, you used diagrams to represent multiplication of a one-digit number and a whole number of up to four digits. You learned to decompose larger factors by place value and used diagrams and corresponding expressions to support them in finding partial products. In this lesson, you learn an algorithm for keeping track of partial products that come from multipl
+- Original 2021 sections: Warm-up:  Which One Doesn’t Belong: Expressions Galore	 (10 minutes); Activity 1:  An Algorithm for Noah	 (20 minutes); Activity 2: Try an Algorithm with Partial Products 	 (15 minutes); Cool-down:  Partial Products	 (5 minutes)
+- Corrections: removed non-publisher PLC title suffix; repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 203*4 = 812.
+- Edulytics first-party Cool-down: Compute 1,205 × 3.; teacher key: 3,615.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

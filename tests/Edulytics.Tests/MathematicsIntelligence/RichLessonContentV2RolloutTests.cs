@@ -115,7 +115,7 @@ public sealed class RichLessonContentV2RolloutTests
 
         Assert.Equal(5110, rows.Count);
         Assert.Equal(
-            26 + 143,
+            26 + 143 + 149,
             readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);
@@ -235,11 +235,16 @@ public sealed class RichLessonContentV2RolloutTests
             .SelectMany(x => x.Lessons)
             .First();
 
-        Assert.Same(
-            curated,
-            RichLessonContentV2Registry.Find(
-                curated.LessonCode,
-                curated.CultureCode));
+        // Find uses the intentionally isolated per-resource index so a broken
+        // unrelated lesson cannot prevent a valid lesson from loading. It may
+        // deserialize a different object instance; semantic parity is required.
+        var found = RichLessonContentV2Registry.Find(
+            curated.LessonCode,
+            curated.CultureCode);
+        Assert.NotNull(found);
+        Assert.Equal(
+            System.Text.Json.JsonSerializer.Serialize(curated),
+            System.Text.Json.JsonSerializer.Serialize(found));
     }
 
     [Fact]

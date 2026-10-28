@@ -1,0 +1,52 @@
+{
+  "ordinal": 148,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L11",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "IMKH_2021_ORIGINAL_LOCAL_WODB_SOURCE_REUSED",
+    "B": "ORIGINAL_PLUS_4_PLUS_3_NUMBER_STRINGS_AND_OPEN_REASONED_CLASSIFICATION_RESTORED",
+    "C": "SUPPLEMENTARY_EXACT_GEOMETRY_CARDS_NUMBER_TALK_REUSED_TEST_AUTHORED_UNRUN_OPEN_RESPONSE_TEACHER_SCORING",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "cfc19a5a93045b34e34effe43b43170d7dd8cecb5a0f3ef0906a07c766bac3be",
+    "teacher": "c21a5bd4d6924835043b7541e3fd94025588e223232b2227743813403567ae34"
+  },
+  "firstPartyCooldown": {
+    "prompt": "In 4, 6, 8 and 9, identify one item that differs and justify.",
+    "teacherAnswer": "9 is the only odd number; other justified rules can be considered."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 local Our-CS source-only inspection",
+    "originalSourceActivities": [
+      "Warm-up: Which One Doesn’t Belong: Strings of Numbers (10 minutes)",
+      "Activity 1: Add One That Doesn’t Belong (20 minutes)",
+      "Activity 2: Add Two That Don’t Belong (15 minutes)",
+      "Activity 3: Add Three That Don’t Belong [OPTIONAL] (30 minutes)",
+      "Cool-down: Reflection (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Which one doesn’t belong? | 0, 4, 8, 12, 16 | 3, 6, 9, 12, 15",
+      "Here are two incomplete Which One Doesn’t Belong sets, each with one item missing. For each set: | Find at least one reason that all items belong in the set. | Find at least one reason that each item doesn’t belong.",
+      "Here is an incomplete Which One Doesn’t Belong set. It has two missing items. | Find at least one reason that the first two items, A and B, belong in the set. | Add two items to complete the set. Make sure there is at least one reason that each new item belong"
+    ],
+    "allowedFamily": "usccss.g4.u07.l02.geometry_cards_number_talk",
+    "teacherOnlyTasks": [
+      "Original incomplete illustrated WODB sets with one/two missing elements",
+      "Multiple defensible explanations from each learner",
+      "Optional third activity and original reflection Cool-down"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal148NumberStringsTests.cs",
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "stageD": "NOT_RUN"
+  }
+}

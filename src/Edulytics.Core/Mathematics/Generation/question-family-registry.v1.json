@@ -4,6 +4,366 @@
   "status": "Shadow",
   "families": [
     {
+      "id": "usccss.g4.u02.l03.same_denominator",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-rational-exact-cross-products",
+      "representations": [
+        "symbolic",
+        "fraction_bars"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u02.l03.same_numerator",
+      "version": 1,
+      "skillId": "fractions.compare.unlike_denominators",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-rational-exact-cross-products",
+      "representations": [
+        "symbolic",
+        "fraction_bars"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l07.is_factor",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-whole-number-source-target-divisibility",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l07.is_multiple",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "positive-whole-number-source-target-divisibility",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l06.student_touches",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l06.touch_count",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l06.end_open",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-locker-divisor-and-toggling-parity",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l05.exact_seating",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-exact-or-at-least-arithmetic",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l05.minimum_packages",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-exact-or-at-least-arithmetic",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l05.shared_multiples",
+      "version": 1,
+      "skillId": "number.lcm",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-exact-or-at-least-arithmetic",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l03.classify_area",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-divisor-count-with-1-neither-exception",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l03.count_factor_pairs",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-divisor-count-with-1-neither-exception",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l03.valid_factor_side",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-whole-number-divisor-count-with-1-neither-exception",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l02.find_partner",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-positive-whole-number-factor-pair-recomputation",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l02.is_side_factor",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-positive-whole-number-factor-pair-recomputation",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l02.count_unique_pairs",
+      "version": 1,
+      "skillId": "supporting.number.factors_primes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-positive-whole-number-factor-pair-recomputation",
+      "representations": [
+        "symbolic",
+        "rectangle_dimensions"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l01.fixed_width_area",
+      "version": 1,
+      "skillId": "geometry.rectangle.area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-exact-area-and-divisibility-from-source-positive-whole-number-width-and-length",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l01.area_is_multiple",
+      "version": 1,
+      "skillId": "geometry.rectangle.area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-exact-area-and-divisibility-from-source-positive-whole-number-width-and-length",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l01.missing_whole_length",
+      "version": 1,
+      "skillId": "geometry.rectangle.area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-exact-area-and-divisibility-from-source-positive-whole-number-width-and-length",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u01.l01.possible_area_above30",
+      "version": 1,
+      "skillId": "geometry.rectangle.area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-exact-area-and-divisibility-from-source-positive-whole-number-width-and-length",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "algebra.linear.ax_plus_b_equals_c",
       "version": 1,
       "skillId": "algebra.linear.solve",
@@ -18944,6 +19304,484 @@
         "invented_story_model"
       ],
       "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l15.area_partial_quotients",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independently-recompute-integer-side-from-area-and-known-width-only-when-remainder-zero",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic",
+        "area_partition"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l15.mural_complete_columns",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independently-recompute-floor-quotient-and-nonzero-remainder-in-complete-column-mural-context",
+      "representations": [
+        "rectangle_dimensions",
+        "symbolic",
+        "contextual"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l16.base_ten_equal_groups",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-tens-and-ones-trading-and-multiplication-check",
+      "representations": [
+        "place_value_chart",
+        "base_ten_blocks",
+        "symbolic"
+      ],
+      "status": "PracticeVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l18.partial_quotients_recording",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-product-check-plus-partial-quotient-decomposition-of-dividend",
+      "representations": [
+        "equation_set",
+        "subtraction_diagram",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l19.partial_quotients_remainders",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "quotient_and_remainder",
+      "verificationPolicy": "independent-euclidean-division-plus-validated-partial-quotients",
+      "representations": [
+        "subtraction_diagram",
+        "equation_set",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l20.contextual_remainder_decisions",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-Euclidean-quotient-and-remainder-plus-contextual-rounding-or-short-row-or-savings-choice",
+      "representations": [
+        "contextual",
+        "equation_set",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l21.multistep_contexts",
+      "version": 1,
+      "skillId": "number.whole.divide",
+      "requiredCapabilities": [
+        "number.whole.divide.exact",
+        "number.verify.whole.divide"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-numeric-recomputation-of-multi-step-revenue-budget-and-per-person-cost",
+      "representations": [
+        "contextual",
+        "equation_set",
+        "symbolic"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
+      "version": 1,
+      "skillId": "geometry.perimeter_area",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-mixed-unit-perimeter-area-recomputation-from-six-sided-rectilinear-measurements",
+      "representations": [
+        "contextual",
+        "equation_set",
+        "diagram_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l23.four_operation_contexts",
+      "version": 1,
+      "skillId": "supporting.reasoning.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-source-structured-four-operation-travel-and-fitness-check",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "table",
+        "number_line_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l24.language_population_comparisons",
+      "version": 1,
+      "skillId": "supporting.reasoning.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-source-structured-language-population-difference-sum-and-rounded-ratio-check",
+      "representations": [
+        "symbolic",
+        "contextual",
+        "table",
+        "bar_graph_metadata"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u06.l25.flower_garland_patterns",
+      "version": 1,
+      "skillId": "supporting.reasoning.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-garland-cycle-count-divide-remainder-and-worker-minute-check",
+      "representations": [
+        "symbolic",
+        "pattern",
+        "table",
+        "contextual"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l01.geometric_description_precision",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independently-check-precision-position-clarity-from-generated-option-order",
+      "representations": [
+        "symbolic",
+        "descriptive_instruction",
+        "teacher_led_figure_review"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l02.geometry_cards_number_talk",
+      "version": 1,
+      "skillId": "supporting.geometry.properties",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "explicit-geometry-type-and-four-original-number-talk-differences-independent-from-answer",
+      "representations": [
+        "symbolic",
+        "textual_geometry_card",
+        "number_talk",
+        "teacher_led_diagram"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+      "version": 1,
+      "skillId": "geometry.lines.parallel_intersect.classify_dot_grid",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "exact-integer-cross-product-direction-and-distinct-line-check",
+      "representations": [
+        "first_party_dot_grid_coordinates",
+        "line_relation_description",
+        "teacher_led_construction"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l05.angle_common_vertex_rays",
+      "version": 1,
+      "skillId": "geometry.angles.identify_shared_ray_vertex",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "check-two-ray-starting-vertex-and-distinct-direction-labels",
+      "representations": [
+        "textual_rays_and_starting_points",
+        "teacher_led_figure_discovery"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l06.compare_angle_openings",
+      "version": 1,
+      "skillId": "geometry.angles.compare_opening_compass_turn",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "independent-bounded-eighth-turn-angle-comparison-with-validated-compass-directions-and-answer-choice",
+      "representations": [
+        "described_compass_rays",
+        "angle_opening_compare",
+        "teacher_led_source_angle_cards"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
+      "version": 1,
+      "skillId": "geometry.angles.compare_exact_hour_clock_turns",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "validate-exact-hour-clock-pair-and-minimum-hour-mark-turns-compare-or-difference",
+      "representations": [
+        "textual_exact_hour_clock_faces",
+        "turn_intervals",
+        "teacher_led_original_clock_comparison"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l08.full_turn_degree_benchmarks",
+      "version": 1,
+      "skillId": "geometry.angles.degree_benchmark_full_turn_fraction",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "fixed-eight-benchmark-degree-fraction-identity-and-360-degree-completion-guard",
+      "representations": [
+        "turn_fraction_of_full_360_degrees",
+        "numeric_benchmarks",
+        "teacher_led_paper_semicircle"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l09.protractor_dual_scale_reading",
+      "version": 1,
+      "skillId": "geometry.angles.protractor_read_from_correct_zero",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "two-complementary-protractor-scales-zero-anchored-to-initial-ray-validate-fixture-and-parameters",
+      "representations": [
+        "first_party_text_protractor_dual_scale",
+        "degree_reading",
+        "teacher_led_original_protractor_figures"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+      "version": 1,
+      "skillId": "geometry.lines.perpendicular_by_right_angle",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixed-angle-measures-perpendicular-iff-measured-intersection-90-degrees",
+      "representations": [
+        "first_party_text_intersecting_lines",
+        "90_degree_perpendicular_judgment",
+        "teacher_led_source_fold_and_shapes"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
+      "version": 1,
+      "skillId": "geometry.angles.classify_acute_right_obtuse_straight",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "fixed-eight-source-relevant-angle-measures-validated-and-classification-by-90-180-degree-boundaries",
+      "representations": [
+        "first_party_numeric_degree_measure",
+        "acute_right_obtuse_straight_classification",
+        "teacher_led_source_angles_and_paper_cards"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u07.l13.additive_angle_part",
+      "version": 1,
+      "skillId": "geometry.angles.compose_decompose_known_turn",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixtures-degree-turn-identity-difference-validated",
+      "representations": [
+        "first_party_text_adjacent_angles",
+        "right_straight_full_turn",
+        "teacher_led_source_paper_angle_cutouts_and_kite"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u08.l04.symmetry_axis_counts",
+      "version": 1,
+      "skillId": "geometry.symmetry.count_lines_for_defined_shapes",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-known-elementary-shape-reflection-axis-count-fixtures",
+      "representations": [
+        "first_party_text_defined_regular_and_irregular_shapes",
+        "reflection_symmetry_axis_counts",
+        "teacher_led_original_folded_paper_and_source_card_images"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u08.l07.polygon_perimeter_sum",
+      "version": 1,
+      "skillId": "geometry.perimeter_area.add_polygon_sides",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixed-triangle-quadrilateral-side-length-vectors-and-sum-reconstruction",
+      "representations": [
+        "textual_independent_polygon_sides",
+        "linear_perimeter_units",
+        "teacher_led_publisher_original_figures_and_fractional_units"
+      ],
+      "status": "StageCAuthoredPendingD",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g4.u09.l05.two_digit_partial_products",
+      "version": 1,
+      "skillId": "number.whole.multiply.two_digit_partial_products",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "eight-fixed-two-digit-number-pairs-product-and-reconstructed-parameters",
+      "representations": [
+        "two_digit_multiplication",
+        "distributive_partial_products",
+        "teacher_led_source_algorithm_figures"
+      ],
+      "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
     }

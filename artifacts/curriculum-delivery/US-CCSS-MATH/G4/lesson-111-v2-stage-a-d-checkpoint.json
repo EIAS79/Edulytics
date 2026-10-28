@@ -1,0 +1,71 @@
+{
+  "ordinal": 111,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L25",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_PREP_AND_TEACHER_STUDENT_FACING_OPTIONAL_PAPER_FLOWER_CONSTRUCTION_PATTERNS_25_GARLANDS_155_DIV_16_AND_TIME_TASKS_REVIEWED",
+    "B": "SEVEN_DISTINCT_SOURCE_MATH_EXAMPLES_AND_THREE_FIRST_PARTY_PATTERN_EQUATION_VISUALS; OPEN_ENDED_PARALLEL_WORK_ASSUMPTION_EXPLICIT; FIRST_PARTY_COOLDOWN_120_BIG",
+    "C": "EXISTING_EXACT_WHOLE_NUMBER_KERNEL_EXTENDED_WITH_6_PATTERN_CONTEXT_MODES; LESSON_ROUTED; FOCUSED_3_OF_3_DOTNET_GREEN_RUN_40554958079_WRONG_MALFORMED_TAMPERED_REJECTED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "334d734f50200a50408cdcad6067a5eb5f4d26bb50f52e37de67d46e19c6b8dc",
+    "teacher": "7a840f26e77493dd4a35c3e431d3892d40d8379075ee5fba22922552b91dd0c1"
+  },
+  "firstPartyCooldown": {
+    "prompt": "14 Priya and 9 Jada garlands; count big flowers",
+    "teacherAnswer": "14×6+9×4=120 big flowers"
+  },
+  "sourceVisualParityProven": false,
+  "originalPublisherCooldownVerified": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "1st Edition (2021)",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "263e0bf112ab9745ca32f0b31393ad6298d91d6adbbb247a96d872cd02036754",
+    "sourceTeacherSha256": "7a840f26e77493dd4a35c3e431d3892d40d8379075ee5fba22922552b91dd0c1",
+    "sourceStudentFacingReadFromOriginal2021Teacher": true,
+    "optionalNoNewStandards": true,
+    "sourceMath": [
+      "Priya 6 big/6 small per 12",
+      "Jada 4 big/8 small per 12",
+      "25 pairs: 250 big 350 small",
+      "155=9x16+11",
+      "155x3=465 total worker-minutes, 78x3=234 parallel elapsed"
+    ],
+    "sourceOriginalPhotosCopied": false,
+    "sourceCraftworkTeacherOnly": true,
+    "teacherOnlyTasks": [
+      "Original photo sequence and construction with tissue paper and rubber bands or pipe cleaners",
+      "Drawing of two repeating patterns, grouping strategies, peer reasoning",
+      "Student-created stories and responses evaluated by teacher",
+      "Original real-world ambiguous timing requires explaining assumptions"
+    ],
+    "firstPartyCoolDown": {
+      "prompt": "14 Priya and 9 Jada garlands; count big flowers",
+      "answer": 120
+    },
+    "firstPartyVisuals": 3,
+    "exactAllowedFamily": "usccss.g4.u06.l25.flower_garland_patterns",
+    "generatorAndIndependentVerifierPassed": true,
+    "wrongMalformedTamperedAnswersRejected": true,
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40554958079",
+    "focusedTestCandidateSha": "c5f77822b1f9ddc8b41cfc056e45bde8b30f3c6c",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false,
+    "sourceLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-111-2021-source-evidence.json"
+  },
+  "stageDRisks": [
+    "Teacher-led flower constructions and student-created problems remain ungraded numerically",
+    "Original publisher flower photos not copied; end-user source illustration parity not claimed",
+    "Authenticated student persistence/rendering pending Stage D"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "ordinal": 130,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U08:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "ORIGINAL_2021_LOCAL_QUADRILATERAL_SOURCE_REUSED",
+    "B": "SQUARE_RECTANGLE_ATTRIBUTE_HIERARCHY_AND_SOURCE_NAMED_CARD_SETS_REPAIRED",
+    "C": "REUSED_PARALLEL_LINES_SUBSKILL_AND_AUTHORED_TEST_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "22a37753283c5ac6f4e53bad9c8fff8eec0fd4dfa00606c5437b3946142f6d69",
+    "teacher": "6b855ce40b4179f95758e439dbc39d2bbca50242e534e0e22d4b9daf277622a9"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Explain why every square is also a rectangle.",
+    "teacherAnswer": "Both are quadrilaterals with four right angles; a square additionally has four equal sides."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS original 2021 source intake",
+    "originalSourceActivities": [
+      "Warm-up: How Many Do You See: Brick Pattern (10 minutes)",
+      "Activity 1: Quadrilateral Hunt (20 minutes)",
+      "Activity 2: What’s True about These Quadrilaterals? (15 minutes)",
+      "Activity 3: Guess Again [OPTIONAL] (10 minutes)",
+      "Cool-down: Quadrilaterals Rule (5 minutes)"
+    ],
+    "originalStudentExcerpts": [
+      "How many bricks have 2 pairs of parallel sides? | Attribution: By Falco. Pixabay. Pixabay. Source. | Student Response",
+      "Find the quadrilaterals that have each of the following attributes. Record their letter names here. | attribute | quadrilaterals with the attribute",
+      "Here are four sets of quadrilaterals. | Quadrilaterals D and AA are squares. | Quadrilaterals K, Z, and AA are rectangles."
+    ],
+    "allowedFamily": "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+    "teacherOnlyTasks": [
+      "Exact source quadrilateral card images",
+      "Brick pattern source count",
+      "Optional Guess Again peer discussion"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal130SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

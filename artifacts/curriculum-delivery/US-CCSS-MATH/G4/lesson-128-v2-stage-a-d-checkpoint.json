@@ -1,0 +1,49 @@
+{
+  "ordinal": 128,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U08:L01",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_OUR_CS_SOURCE_INTAKE_REUSED",
+    "B": "SOURCE_CARD_SORT_3_TO_5_CATEGORIES_3_EXAMPLES_3_COUNTEREXAMPLES_PRESERVED",
+    "C": "REUSED_GEOMETRY_DESCRIPTION_FAMILY_SCOPED_TEST_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "3c8fd1c990a917f8b4cfb7c8f7561e6fcc4e150f52b7ce46789d3c2430ff0aa5",
+    "teacher": "3e661896302b5b6b66eb6ff6ccdc2f55b7da4c44416f74fa3120d7da20d896e4"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Sort a square and a non-square rectangle by right angles and equal side lengths.",
+    "teacherAnswer": "Both have four right angles; only the square has four equal sides."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "2021 local Our-CS source intake",
+    "originalSourceActivities": [
+      "Warm-up: Which One Doesn’t Belong: Geometric Figures (10 minutes)",
+      "Activity 1: Card Sort: Shapes (20 minutes)",
+      "Activity 2: Guess the Category (15 minutes)",
+      "Cool-down: What Do They Have in Common? (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Which one doesn’t belong? | Description: 4 shapes. A. 4 sided figure. 2 sides of equal length form a right angle connected two other sides of equal length that don&#39;t meet. B. parallelogram. C. trapezoid with two right angles. D, A triangle with one right a",
+      "Sort the shapes from your teacher into 3–5 categories. For each category, write a title on a sticky note. | Share your categories with another group. Take turns listening to each other’s explanations. | Do your categories make sense to them?",
+      "Partner A: | Write down a category from the first activity (or think of a new one). Don’t show it to your partner. | Find 3 shapes that fit the category and 3 shapes that don’t. Place them in the columns of the table."
+    ],
+    "allowedFamily": "usccss.g4.u07.l01.geometric_description_precision",
+    "teacherOnlyTasks": [
+      "Original publisher shape cards",
+      "Partner's 3 examples plus 3 nonexamples"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal128StageCTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

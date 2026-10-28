@@ -87,6 +87,42 @@ public sealed class UsCcssB001EffectiveLearnerContentAuditTests
             return IsSourceBoundGrade3FirstPartyTitle(root,code,historicalTitle,
                 effectiveTitle,sourceUrl);
 
+        // Grade 4 2021 unit indices use a "PLC Activity" display suffix on 23
+        // indexed lesson titles (13 historical B001 aliases, 10 later blueprint aliases). The individual teacher
+        // preparation pages use the lesson heading without that suffix. The alias
+        // registry is exact-code, exact-title, URL and recorded-source-hash pinned;
+        // it does not certify publisher parity, academic approval or image rights.
+        if (code.StartsWith("PED:US-CCSS-MATH:G4:",StringComparison.Ordinal))
+        {
+            var aliasPath=Path.Combine(root,"artifacts","curriculum-delivery",
+                "US-CCSS-MATH","G4","g4-b001-index-display-title-aliases.json");
+            if (!File.Exists(aliasPath))return false;
+            using var aliases=JsonDocument.Parse(File.ReadAllText(aliasPath));
+            var entries=aliases.RootElement.GetProperty("entries").EnumerateArray().ToArray();
+            if(entries.Length!=23 || entries.Select(x=>x.GetProperty("lessonCode").GetString())
+                   .Distinct(StringComparer.Ordinal).Count()!=23)return false;
+            var g4AliasMatches=entries.Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
+            if(g4AliasMatches.Length!=1)return false;
+            var row=g4AliasMatches[0];
+            if(row.GetProperty("historicalCatalogueTitle").GetString()!=historicalTitle ||
+               row.GetProperty("firstPartyDisplayTitle").GetString()!=effectiveTitle ||
+               row.GetProperty("sourceUrl").GetString()!=sourceUrl ||
+               historicalTitle!=effectiveTitle+" PLC Activity")return false;
+            var unit=code.Substring(code.LastIndexOf(":U",StringComparison.Ordinal)+2,2).TrimStart('0');
+            var lessonNumber=code.Substring(code.LastIndexOf(":L",StringComparison.Ordinal)+2).TrimStart('0');
+            if(sourceUrl!="https://im.kendallhunt.com/k5/teachers/grade-4/unit-"+
+               unit+"/lesson-"+lessonNumber+"/preparation.html")return false;
+            var packPath=Path.Combine(root,"src","Edulytics.Core","Curriculum",
+                "LessonContent","Packs","us-ccss-math-g4-phase29-v1.lesson-content-pack.json");
+            using var sourcePack=JsonDocument.Parse(File.ReadAllText(packPath));
+            var sourceMatches=sourcePack.RootElement.GetProperty("lessons").EnumerateArray()
+                .Where(x=>x.GetProperty("lessonCode").GetString()==code).ToArray();
+            return sourceMatches.Length==1 &&
+                sourceMatches[0].GetProperty("sourceSha256").GetString()==
+                    row.GetProperty("recordedSourceSha256").GetString() &&
+                sourceMatches[0].GetProperty("sourceUrl").GetString()==sourceUrl;
+        }
+
         // Three further Grade 1 catalogue aliases have exact, source-SHA-pinned
         // first-party corrections. Keep the historic B001 labels unchanged.
         // Accept only these precise old/new titles, official lesson URLs,

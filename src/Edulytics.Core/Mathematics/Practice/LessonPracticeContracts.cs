@@ -942,7 +942,7 @@ public static class LessonPracticeContractRegistry
                     "G1 B03 source lesson missing original contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // B001 first source-reviewed unshipped grade positions 16–18.
+        // B001 first source-reviewed unshipped grade positions 16â€“18.
         foreach (var reviewed in UsCcssG1Unit2StoryPracticeContracts.Reviewed)
         {
             if (!byLesson.ContainsKey(reviewed.LessonCode))
@@ -959,6 +959,152 @@ public static class LessonPracticeContractRegistry
                     "B001 original source lesson missing practice contract: " + reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // Grade4 U02 L08: existing source-aligned exact numeric families.
+        foreach(var reviewed in UsCcssG4Unit2EighthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L15: reuse exact common-denominator and unlike comparison numeric families.
+        // Grade4 U02 L16: source four fraction sets, reused exact 2-3 value checks.
+        // G4 ordinal 25: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal25SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 26: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal26SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 27: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal27SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 28: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal28SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 29: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal29SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 30: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal30SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 31: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal31SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 32: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal32SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 33: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal33SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 34: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal34SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 35: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal35SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 36: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal36SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 37: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal37SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 38: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal38SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 39: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal39SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 40: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal40SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 41: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal41SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 42: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal42SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 43: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal43SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 44: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal44SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 47: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal47SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 48: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal48SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 49: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal49SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 ordinal 50: source-specific exact numeric SUBSKILL, original open tasks teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Ordinal50SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        foreach(var reviewed in UsCcssG4Unit2SixteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        foreach(var reviewed in UsCcssG4Unit2FifteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L14: reuse exact comparator and benchmark; mixed li/km is teacher led.
+        foreach(var reviewed in UsCcssG4Unit2FourteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L13: source same-denominator equivalent comparisons and original true/false.
+        foreach(var reviewed in UsCcssG4Unit2ThirteenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L12: reuse exact half/one benchmark and fraction comparison, original25-grid teacher-assessed.
+        foreach(var reviewed in UsCcssG4Unit2TwelfthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L11: reuse exact common-factor reduction and multiple generation; optional card art teacher supplied.
+        foreach(var reviewed in UsCcssG4Unit2EleventhLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L10: original common-multiplier fractions; reuse existing exact generator.
+        foreach(var reviewed in UsCcssG4Unit2TenthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 U02 L09: reuse exact fraction equivalence and number-line Practice; six poster reasoning sets remain teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Unit2NinthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L07: existing exact equivalent-number-line and fraction generation; teacher original visuals.
+        foreach(var reviewed in UsCcssG4Unit2SeventhLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L06: reuse benchmark numerical Practice, teacher-assess source drawings and optional cards.
+        foreach(var reviewed in UsCcssG4Unit2SixthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L05: original source equivalent number line points and running story.
+        foreach(var reviewed in UsCcssG4Unit2FifthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L04: reuse equivalence and number line subskills; source visual work teacher assessed.
+        foreach(var reviewed in UsCcssG4Unit2FourthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 U02 L03: original same-numerator and same-denominator comparisons.
+        foreach(var reviewed in UsCcssG4Unit2ThirdLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 U02 L02: reuse exact fraction bar and equivalence checks;
+        // the original >1 multi-whole diagrams remain teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Unit2SecondLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 U02 L01: reuse existing exact fraction-bar identification; paper strips and explanation remain teacher-reviewed.
+        foreach(var reviewed in UsCcssG4Unit2FirstLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Optional Grade4 U01 L08: existing numeric area and prime classification only; teacher reviews artwork.
+        foreach(var reviewed in UsCcssG4Unit1EighthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade 4 U01 L07: preserve source factor/multiple direction and teacher-led Stage2.
+        foreach(var reviewed in UsCcssG4Unit1SeventhLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 U01 L06: exact locker divisors and open/closed parity.
+        foreach(var reviewed in UsCcssG4Unit1SixthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G4 U01 L05: source contexts need exact and minimum distinction.
+        foreach(var reviewed in UsCcssG4Unit1FifthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade4 optional U01 L04: use existing exact fact-recall families.
+        foreach(var reviewed in UsCcssG4Unit1FourthLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade 4 Unit 1 Lesson 3: source-specific prime/composite rectangle subskills.
+        foreach (var reviewed in UsCcssG4Unit1ThirdLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade 4 Unit 1 Lesson 2: explicit factor-pair source-goal override.
+        foreach(var reviewed in UsCcssG4Unit1SecondLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade 4 Unit 1 Lesson 1: strictly source-bound rectangle-area subskills.
+        // Hand constructions, open explanations, and publisher Cool-down remain teacher-led.
+        foreach (var reviewed in UsCcssG4Unit1FirstLessonPracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
         foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
         {
@@ -1093,7 +1239,7 @@ public static class LessonPracticeContractRegistry
             byLesson[reviewed.LessonCode] = reviewed;
         foreach (var reviewed in UsCcssG2Unit9LessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
-        // V1 G1-009: exact original 2021 G1 ordinals 41–45 (U03 L04–L08).
+        // V1 G1-009: exact original 2021 G1 ordinals 41â€“45 (U03 L04â€“L08).
         // V1 G1-010: original 2021 ordinals 46-50 only (U03 L09-L13).
         foreach(var reviewed in UsCcssG1FullGradeUnit7GeometryTimePracticeContracts.Reviewed)
         {
@@ -1112,7 +1258,7 @@ public static class LessonPracticeContractRegistry
         }
         foreach(var reviewed in UsCcssG1FullGradeUnit4FinalPracticeContracts.Reviewed)
         {
-            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("Missing original G1 U04 L16–23 practice base lesson: "+reviewed.LessonCode);
+            if(!byLesson.ContainsKey(reviewed.LessonCode))throw new InvalidOperationException("Missing original G1 U04 L16â€“23 practice base lesson: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
         foreach(var reviewed in UsCcssG1FullGradeUnit5AdditionPracticeContracts.Reviewed)
@@ -1130,7 +1276,7 @@ public static class LessonPracticeContractRegistry
         foreach(var reviewed in UsCcssG1FullGradeTensAndOnesPracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))
-                throw new InvalidOperationException("Missing canonical G1 U04 L06–10 source lesson Practice contract: "+reviewed.LessonCode);
+                throw new InvalidOperationException("Missing canonical G1 U04 L06â€“10 source lesson Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
         foreach(var reviewed in UsCcssG1FullGradeStrategyAndTensPracticeContracts.Reviewed)
@@ -1163,14 +1309,14 @@ public static class LessonPracticeContractRegistry
                 throw new InvalidOperationException("V1 G1-009 missing: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // V1 G1-008: original 2021 G1 ordinals 36–40, including optional L22.
+        // V1 G1-008: original 2021 G1 ordinals 36â€“40, including optional L22.
         foreach(var reviewed in UsCcssG1NextSourceFivePracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))
                 throw new InvalidOperationException("V1 G1-008 missing: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // V1 G1-007: five consecutive original 2021 lessons L16–L20.
+        // V1 G1-007: five consecutive original 2021 lessons L16â€“L20.
         foreach(var reviewed in UsCcssG1Unit2EquationsAndStoriesPracticeContracts.Reviewed)
         {
             if(!byLesson.ContainsKey(reviewed.LessonCode))
@@ -1185,7 +1331,7 @@ public static class LessonPracticeContractRegistry
                     "V1 G1-006 missing original lesson: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
-        // V1 G1-005: source-ordered Grade 1 Unit 2 lessons 6–10.
+        // V1 G1-005: source-ordered Grade 1 Unit 2 lessons 6â€“10.
         // Replace only the five existing generic contracts, preserve prior grades.
         foreach (var reviewed in UsCcssG1Unit2NextFivePracticeContracts.Reviewed)
         {
@@ -1202,6 +1348,20 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM 2021 G4 U06:L15: official outcome/title fallback would route
+        // unrelated general Practice before the source-specific mural/area
+        // interaction and persisted grading are approved. Keep it fail-closed.
+        // The numeric quotient verifier is focused-tested; the complete
+        // source teaching, teacher-led drawings and Gradebook are not.
+        byLesson["PED:US-CCSS-MATH:G4:U06:L15"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G4:U06:L15",
+            "geometry.perimeter_area",
+            "AREA_PARTIAL_QUOTIENTS_AND_MURAL_COMPLETE_COLUMNS",
+            ["usccss.g4.u06.l15.area_partial_quotients", "usccss.g4.u06.l15.mural_complete_columns"],
+            "IM2021_G4_U06_L15_SOURCE_ALIGNED_NUMERIC_PLUS_TEACHER_LED",
+            "READY_VERIFIED",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();

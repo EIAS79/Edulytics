@@ -1,0 +1,42 @@
+{
+  "ordinal": 89,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L03",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "4095ad4d71ee40ff6318484b142ad5a3a248faeb358c9c0cf1b3352c14fc70b9",
+    "teacher": "de9ada0ed3713769b70696d614ca864f2dd3383efa00e0b3ea1c67e4dc2e2440",
+    "student": "9d1f65a86adcbeb4717d7ae4d382c4fc575bf2813d2590fff868b3e14a8e2a64"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "If the sequence continues 3, 5, 7, 9, what is the fifth count?",
+    "teacherAnswer": "11"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:30:50+01:00",
+  "closeAtLocal": "2026-10-26T23:30:50+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-89-local-source-guard.test.cjs"
+  }
+}

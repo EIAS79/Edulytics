@@ -1,0 +1,44 @@
+{
+  "ordinal": 27,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U03:L02",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_SOURCE_PREPARATION_AND_TEACHER_HTML_READ_STUDENT_PDF_VALID_BINARY_SHA; ARTWORK_ORIGINAL_PARITY_NOT_CERTIFIED",
+    "B": "PRESERVE_SOURCE_GOAL_REWRITE_FIVE_PROSE_FIELDS_AUTHOR_INDEPENDENT_RICH_V2_AND_EXACT_MODEL",
+    "C": "REUSE_PREEXISTING_EXACT_fractions.add_subtract.same_denominator.mixed.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "teacherPrep": "1efe0cb3746420610b85c5e897f7aa6327062ae69bd8b0de4e7b86c8452f76b9",
+    "teacherLesson": "09fc95f1bc04e72bde1353357a139e721c55a9d4827402579964507e0168c8bc",
+    "studentPdf": "db7c7e4d8e09bb7de073db6c2da3467c664c9612d163fad521a9738b48c61fde"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "sourceParityProvenPercent": null,
+  "academicApproved": false,
+  "originalSourceActivities": [
+    "Warm-up: Number Talk: Three, Six, Nine, Twelve (10 minutes)",
+    "Activity 1: Card Sort: Expressions and Diagrams (25 minutes)",
+    "Activity 2: Different Representations (10 minutes)",
+    "Cool-down: Equal Groups of Fractions (5 minutes)"
+  ],
+  "numericAutoGradeSubsetFamilies": [
+    "fractions.add_subtract.same_denominator.mixed.build"
+  ],
+  "originalSourceOpenTasksTeacherReviewed": true,
+  "focusedTestsWritten": true,
+  "focusedTestsRun": true,
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-27-source-guard.test.cjs",
+    "stageD": false
+  },
+  "startAtLocal": "2026-10-26T22:40:22+01:00",
+  "closeAtLocal": "2026-10-26T22:40:22+01:00",
+  "productionTouched": false,
+  "stageDRan": false
+}

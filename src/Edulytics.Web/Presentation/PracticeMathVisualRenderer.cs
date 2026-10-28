@@ -83,6 +83,7 @@ public static partial class PracticeMathVisualRenderer
                 "supporting.geometry.cuboid_volume" or
                 "supporting.geometry.solid.mixed" or
                 "supporting.geometry.surface_area_cuboid" => SolidParameterVisual(parameters),
+                "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => GradeFourLShapedMeasurementVisual(parameters),
                 "supporting.geometry.shape_dimension" => ShapeDimensionVisual(parameters),
                 "supporting.geometry.compound_area" or
                 "supporting.geometry.parallelogram_area" or

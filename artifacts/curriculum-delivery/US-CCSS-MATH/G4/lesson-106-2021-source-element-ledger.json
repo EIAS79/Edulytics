@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "edition": "Illustrative Mathematics / Kendall Hunt First Edition (2021)",
+  "ordinal": 106,
+  "code": "PED:US-CCSS-MATH:G4:U06:L20",
+  "source": {
+    "prep": "unit-6/lesson-20/preparation.html",
+    "prepSha": "582a7a44088bc4eb04add29838b0442b81a44eba18cfa90d59f84e14cd6d61a0",
+    "teacher": "unit-6/lesson-20/lesson.html",
+    "teacherSha": "8663b94f1946d26bdda307508d01bc4a1498f402065aa0f0687cdb5fa839f921",
+    "studentFacing": "embedded 2021 teacher lesson",
+    "publisherCoolDown": "gated, first-party pedagogical equivalent supplied",
+    "images": "publisher photos not reused; 3 first-party equation visuals"
+  },
+  "elements": [
+    {
+      "id": "G4-2021-U06-L20-WU",
+      "kind": "warmup",
+      "expected": "Choral counts by 2, 3, 5 from 90 and 105; discuss multiples",
+      "implementation": "TEACHER_LED",
+      "verified": "2021 source; teacher observation"
+    },
+    {
+      "id": "G4-2021-U06-L20-A1-378",
+      "kind": "student_task",
+      "expected": "378÷4=94 r2; 94 full boxes vs 95 all-packed boxes depending assumption",
+      "implementation": "MIXED_DIGITAL_AND_TEACHER",
+      "verified": "Source-specific numeric answer/interpretation checked; open reason is teacher reviewed"
+    },
+    {
+      "id": "G4-2021-U06-L20-A1-258",
+      "kind": "student_task",
+      "expected": "258÷9=28 complete rows and shorter 6-seat row",
+      "implementation": "MIXED_DIGITAL_AND_TEACHER",
+      "verified": "Exact case and teacher drawing"
+    },
+    {
+      "id": "G4-2021-U06-L20-A2-1270",
+      "kind": "student_task",
+      "expected": "(1270-6)÷8=158 each month",
+      "implementation": "MIXED_DIGITAL_AND_TEACHER",
+      "verified": "Exact savings shortfall and independent verifier"
+    },
+    {
+      "id": "G4-2021-U06-L20-A2-711",
+      "kind": "student_created_task",
+      "expected": "711÷3=237; student must write coherent context",
+      "implementation": "TEACHER_REVIEW_REQUIRED",
+      "verified": "Numeric quotient checked; original student invention not auto-scored"
+    },
+    {
+      "id": "G4-2021-U06-L20-A2-3128",
+      "kind": "student_created_task",
+      "expected": "3128÷8=391; student must write coherent context",
+      "implementation": "TEACHER_REVIEW_REQUIRED",
+      "verified": "Numeric quotient checked; original student invention not auto-scored"
+    },
+    {
+      "id": "G4-2021-U06-L20-SYN",
+      "kind": "teacher_synthesis",
+      "expected": "Interpret Euclidean quotient and leftover in different contexts; 274÷8=34 r2",
+      "implementation": "TEACHER_LED",
+      "verified": "Teacher teaching source and original synthesis"
+    },
+    {
+      "id": "G4-2021-U06-L20-CD",
+      "kind": "first_party_cooldown",
+      "expected": "All 275 pupils need seats on 8-seat buses; 35 buses",
+      "implementation": "DIGITAL_FIRST_PARTY",
+      "verified": "Pedagogical equivalent; not the publisher login-gated Cool-down"
+    },
+    {
+      "id": "G4-2021-U06-L20-VIS",
+      "kind": "visual",
+      "expected": "Independent muffin, seat, garden equations support the numerical modelling; source photos not copied",
+      "implementation": "MIXED_DIGITAL_AND_TEACHER",
+      "verified": "Rich V2 three first-party visuals, original publisher media bytes not claimed"
+    },
+    {
+      "id": "G4-2021-U06-L20-C",
+      "kind": "practice",
+      "expected": "Context-specific quotient and remainder family; numeric input correctly rejects invalid/wrong/tampered answers",
+      "implementation": "DIGITAL",
+      "verified": "Runtime Grade4 LessonPractice resolver and independent verifier: 3/3 focused dotnet tests green"
+    }
+  ],
+  "originalSourceMaterialParityPercent": null,
+  "originalPublisherCoolDownVerified": false,
+  "exactDigitalFamily": "usccss.g4.u06.l20.contextual_remainder_decisions",
+  "teacherRubric": "Require student equations, diagram/explanation for 94/95 and row-shortage distinctions, and coherent invented story; do not grant automatic diagram/writing credit.",
+  "testRun": {
+    "runId": 40542714230,
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40542714230",
+    "candidateSha": "090642ef0052eb2fd0952739194fe802f8d37064",
+    "passed": 3,
+    "failed": 0,
+    "focus": "Grade4Ordinal106ContextualRemainderTests",
+    "runtimeRichAndPracticeChecked": true,
+    "correctWrongMalformedTamperedChecked": true
+  },
+  "stageD": "NOT_RUN"
+}

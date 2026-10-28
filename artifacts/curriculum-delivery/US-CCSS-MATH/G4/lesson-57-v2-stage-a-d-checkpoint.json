@@ -1,0 +1,42 @@
+{
+  "ordinal": 57,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L12",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "f315ee1075560a06a4eb23fc3c6c208f79834a79cc132843624f3bd2ce687024",
+    "teacher": "ca45b345832ec34f8107d50325f7ede79d3095ece472f96391be045141f99e99",
+    "student": "9580f0c6f41d90a087c3aec36621d68db208a7146f2c1548f6d6164ce0c9774d"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Compare 504,210 and 540,120 using < or >.",
+    "teacherAnswer": "504,210 < 540,120"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:11:43+01:00",
+  "closeAtLocal": "2026-10-26T23:11:43+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-57-local-source-guard.test.cjs"
+  }
+}

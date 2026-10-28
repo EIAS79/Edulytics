@@ -1,0 +1,166 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.6.19-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L19",
+      "CultureCode": "en",
+      "Title": "Division With and Without Remainders",
+      "ExplanationParagraphs": [
+        "2021 goal: Find whole-number quotients and remainders for up to four-digit dividends divided by one-digit divisors using partial quotients.",
+        "Warm-up: 100=33×3+1, 200=66×3+2, 300=100×3; identify the pattern of remainders of hundreds divided by three.",
+        "Activity 1: Analyze Jada's 389÷7: subtract 280, then 49, then 56; 4 remains and partial quotients 40+7+8=55. Divide 702÷3=234 without a remainder.",
+        "Activity 2: Andre and Elena make recording mistakes for 2316÷5. Predict remainder from the final digit; a valid calculation produces quotient 463, remainder 1. Students explain why and correct the original student algorithms with teacher.",
+        "Activity 3: Complete at least two partial-quotient approaches to 3294÷3. Parts 3000,270,24 give partial quotients 1000,90,8; the quotient is 1098. Or 3300÷3−6÷3=1098.",
+        "First-party Edulytics Cool-down (not the source gated item): 947÷4=236 remainder 3, checked by 4×236+3=947."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Valid remainder",
+          "Definition": "Whole units left over after forming all complete divisor-sized groups.",
+          "Rule": "Dividend = divisor×quotient+remainder, 0≤remainder<divisor.",
+          "Example": "389 = 7×55+4."
+        },
+        {
+          "Title": "Partial-quotient subtraction",
+          "Definition": "Subtract a divisible chunk and record how many groups that chunk contains.",
+          "Rule": "Every subtraction equals divisor×partial quotient; add partial quotients.",
+          "Example": "389−280−49−56=4; 40+7+8=55."
+        },
+        {
+          "Title": "Error checking",
+          "Definition": "Use estimation, multiples and the quotient-remainder identity to detect recorded mistakes.",
+          "Rule": "A purported subtraction of 2000 for quotient 40 at divisor 5 is wrong because 5×40=200.",
+          "Example": "2316=5×463+1; 463 is reasonable and 103 is far too small."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Jada's stack: 389 ÷ 7",
+          "Question": "Explain the partial quotients and remainder in Jada's calculation.",
+          "Method": "Match every subtracted multiple of 7 to its partial quotient.",
+          "Steps": [
+            "Subtract 7×40=280 from 389 to leave 109.",
+            "Subtract 7×7=49 to leave 60, then 7×8=56 to leave 4.",
+            "Add 40+7+8=55 and identify 4 as a remainder smaller than 7."
+          ],
+          "Answer": "55 r 4",
+          "Check": "7×55+4=389"
+        },
+        {
+          "Title": "702 ÷ 3 with no remainder",
+          "Question": "Use partial quotients to divide 702 into three equal groups.",
+          "Method": "Subtract large multiples of 3 and finish at zero.",
+          "Steps": [
+            "Subtract 3×200=600; 102 remains.",
+            "Subtract 3×30=90; 12 remains.",
+            "Subtract 3×4=12; zero remains. Add 200+30+4=234."
+          ],
+          "Answer": "234 r 0",
+          "Check": "3×234=702"
+        },
+        {
+          "Title": "Andre and Elena: 2316 ÷ 5",
+          "Question": "Explain the expected remainder and show a correct record to check their work.",
+          "Method": "Predict divisibility, then subtract matched partial products.",
+          "Steps": [
+            "A number ending in 6 is not divisible by 5; it must leave a remainder.",
+            "Subtract 5×400=2000, then 5×60=300, then 5×3=15.",
+            "One remains; sum 400+60+3=463."
+          ],
+          "Answer": "463 r 1",
+          "Check": "5×463+1=2316"
+        },
+        {
+          "Title": "Incomplete records: 3294 ÷ 3",
+          "Question": "Complete two different ways to divide 3294 by 3.",
+          "Method": "Partial quotients or a nearby multiple correction.",
+          "Steps": [
+            "3294=3000+270+24.",
+            "Divide each chunk: 1000+90+8=1098.",
+            "Alternatively 3300÷3−6÷3=1100−2=1098."
+          ],
+          "Answer": "1098 r 0",
+          "Check": "3×1098=3294"
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rounding a leftover up to a complete group.",
+          "WhyWrong": "Four leftover items cannot make a seven-item group.",
+          "Correction": "Record 389÷7 as 55 r 4; verify 7×55+4=389."
+        },
+        {
+          "Mistake": "Subtracting 2000 but recording a partial quotient of 40 at divisor 5.",
+          "WhyWrong": "Five times forty is two hundred, not two thousand.",
+          "Correction": "Record the corresponding partial quotient 400."
+        },
+        {
+          "Mistake": "Reporting a remainder greater than or equal to the divisor.",
+          "WhyWrong": "One or more additional complete groups could still be made.",
+          "Correction": "Continue dividing until the remainder is smaller than the divisor."
+        }
+      ],
+      "SummaryPoints": [
+        "Record each subtracted divisible chunk and the matching partial quotient.",
+        "Remainder may be zero or positive, but always less than the divisor.",
+        "Use dividend=divisor×quotient+remainder to check source answers and detect errors.",
+        "Teacher checks the student-written algorithm and critiques, which numeric Practice alone does not grade."
+      ],
+      "Visuals": [
+        {
+          "Kind": "CalculationChain",
+          "Title": "389 divided by 7",
+          "Description": "First-party remainder diagram, not the original publisher asset.",
+          "PrimaryLabel": "389 ÷ 7",
+          "SecondaryLabel": "55 r 4",
+          "Items": [
+            "389−280=109 (40 groups)",
+            "109−49=60 (7 groups)",
+            "60−56=4 (8 groups)"
+          ],
+          "SecondaryItems": [
+            "40+7+8=55",
+            "7×55+4=389"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "2316 divided by 5",
+          "Description": "Compare the valid mathematical recording with the source students' incomplete or erroneous algorithms.",
+          "PrimaryLabel": "2316 ÷ 5",
+          "SecondaryLabel": "463 r 1",
+          "Items": [
+            "2316−2000=316 (400 groups)",
+            "316−300=16 (60 groups)",
+            "16−15=1 (3 groups)"
+          ],
+          "SecondaryItems": [
+            "5×463+1=2316"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Two recordings for 3294 divided by 3",
+          "Description": "Demonstrates legitimate alternative partial quotients.",
+          "PrimaryLabel": "3294 ÷ 3",
+          "SecondaryLabel": "1098",
+          "Items": [
+            "3000÷3=1000",
+            "270÷3=90; 24÷3=8",
+            "1000+90+8=1098",
+            "3300÷3−6÷3=1100−2=1098"
+          ],
+          "SecondaryItems": [
+            "3×1098=3294"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

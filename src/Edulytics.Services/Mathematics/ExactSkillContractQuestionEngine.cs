@@ -65,6 +65,31 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.polygons.regular_interior_angle",
             "geometry.perimeter_area.triangle_area",
             "geometry.perimeter_area.rectangle_missing_side",
+            "usccss.g4.u06.l15.area_partial_quotients",
+            "usccss.g4.u06.l15.mural_complete_columns",
+            "usccss.g4.u06.l16.base_ten_equal_groups",
+            "usccss.g4.u06.l18.partial_quotients_recording",
+            "usccss.g4.u06.l19.partial_quotients_remainders",
+            "usccss.g4.u06.l20.contextual_remainder_decisions",
+            "usccss.g4.u06.l21.multistep_contexts",
+            "usccss.g4.u06.l23.four_operation_contexts",
+            "usccss.g4.u06.l24.language_population_comparisons",
+            "usccss.g4.u09.l05.two_digit_partial_products",
+            "usccss.g4.u08.l07.polygon_perimeter_sum",
+            "usccss.g4.u08.l04.symmetry_axis_counts",
+            "usccss.g4.u07.l13.additive_angle_part",
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds",
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+            "usccss.g4.u07.l09.protractor_dual_scale_reading",
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks",
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare",
+            "usccss.g4.u07.l06.compare_angle_openings",
+            "usccss.g4.u07.l05.angle_common_vertex_rays",
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect",
+            "usccss.g4.u07.l02.geometry_cards_number_talk",
+            "usccss.g4.u07.l01.geometric_description_precision",
+            "usccss.g4.u06.l25.flower_garland_patterns",
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
             "fractions.represent.interpret.fraction_bar",
             "algebra.relationships.two_unknowns.total_difference",
             "measurement.scale.equal_intervals.read_value",
@@ -158,6 +183,13 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssT001RepresentationChoices.Supports(family.Trim()) ||
          UsCcssG1Batch03DataQuestions.Supports(family.Trim()) ||
          UsCcssG1Unit2StoryQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit2ThirdLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit1SeventhLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit1SixthLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit1FifthLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit1ThirdLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit1SecondLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG4Unit1FirstLessonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1FirstLessonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson2And3Questions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson4Questions.Supports(family.Trim()) ||
@@ -411,6 +443,20 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG1Unit2NextFiveQuestions.Verify(family,parameters,answer);
         if (UsCcssG1Unit2Part2Questions.Supports(family))
             return UsCcssG1Unit2Part2Questions.Verify(family, parameters, answer);
+        if (UsCcssG4Unit2ThirdLessonQuestions.Supports(family))
+            return UsCcssG4Unit2ThirdLessonQuestions.Verify(family,parameters,answer);
+        if (UsCcssG4Unit1SeventhLessonQuestions.Supports(family))
+            return UsCcssG4Unit1SeventhLessonQuestions.Verify(family,parameters,answer);
+        if (UsCcssG4Unit1SixthLessonQuestions.Supports(family))
+            return UsCcssG4Unit1SixthLessonQuestions.Verify(family,parameters,answer);
+        if (UsCcssG4Unit1FifthLessonQuestions.Supports(family))
+            return UsCcssG4Unit1FifthLessonQuestions.Verify(family,parameters,answer);
+        if (UsCcssG4Unit1ThirdLessonQuestions.Supports(family))
+            return UsCcssG4Unit1ThirdLessonQuestions.Verify(family,parameters,answer);
+        if (UsCcssG4Unit1SecondLessonQuestions.Supports(family))
+            return UsCcssG4Unit1SecondLessonQuestions.Verify(family,parameters,answer);
+        if (UsCcssG4Unit1FirstLessonQuestions.Supports(family))
+            return UsCcssG4Unit1FirstLessonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
             return UsCcssG2Unit1FirstLessonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1Lesson2And3Questions.Supports(family))
@@ -709,7 +755,8 @@ public sealed class ExactSkillContractQuestionEngine
         }
 
         if (family is "number.whole.divide.with_remainder.build" or
-            "number.whole.divide.with_remainder.apply")
+            "number.whole.divide.with_remainder.apply" or
+            "usccss.g4.u06.l19.partial_quotients_remainders")
         {
             var dividend = parameters["dividend"];
             var divisor = parameters["divisor"];
@@ -718,6 +765,15 @@ public sealed class ExactSkillContractQuestionEngine
 
             var quotient = dividend / divisor;
             var remainder = dividend % divisor;
+            if (family == "usccss.g4.u06.l19.partial_quotients_remainders" &&
+                (!parameters.TryGetValue("partialTens", out var qTens) ||
+                 !parameters.TryGetValue("partialOnes", out var qOnes) ||
+                 !parameters.TryGetValue("remainder", out var rSource) ||
+                 dividend < 100 || dividend > 9999 || divisor < 2 || divisor > 9 ||
+                 rSource != remainder || qTens < 10 || qTens % 10 != 0 ||
+                 qOnes < 0 || qOnes > 9 ||
+                 (long)divisor * (qTens + qOnes) + remainder != dividend))
+                return false;
             var expected = $"{quotient.ToString(CultureInfo.InvariantCulture)} r {remainder.ToString(CultureInfo.InvariantCulture)}";
             return string.Equals(
                 NormalizeRemainderAnswer(answer),
@@ -1050,6 +1106,540 @@ public sealed class ExactSkillContractQuestionEngine
                 parameters["base"] * parameters["height"] % 2 == 0 &&
                 value * 2 == parameters["base"] * parameters["height"],
 
+            "usccss.g4.u06.l15.area_partial_quotients" or
+            "usccss.g4.u06.l15.mural_complete_columns" =>
+                parameters.TryGetValue("knownSide", out var lesson101Width) &&
+                parameters.TryGetValue("area", out var lesson101Area) &&
+                parameters.TryGetValue("leftover", out var lesson101Leftover) &&
+                lesson101Width is >= 2 and <= 9 &&
+                lesson101Area is >= 100 and <= 999 &&
+                lesson101Leftover >= 0 && lesson101Leftover < lesson101Width &&
+                (family == "usccss.g4.u06.l15.area_partial_quotients" ? lesson101Leftover == 0 : lesson101Leftover > 0) &&
+                lesson101Area % lesson101Width == lesson101Leftover &&
+                value >= 0 && (long)value * lesson101Width + lesson101Leftover == lesson101Area,
+
+            "usccss.g4.u06.l16.base_ten_equal_groups" =>
+                parameters.TryGetValue("dividend",out var n102) &&
+                parameters.TryGetValue("divisor",out var d102) &&
+                parameters.TryGetValue("tensAfterTrade",out var t102) &&
+                parameters.TryGetValue("onesAfterTrade",out var o102) &&
+                d102>=2 && d102<=9 && n102>=24 && n102<=999 &&
+                t102==n102/10%10+10*((n102/100)%d102) &&
+                o102==n102%10+10*(t102%d102) && o102%d102==0 &&
+                n102%d102==0 && value>0 && (long)value*d102==n102,
+
+            "usccss.g4.u06.l18.partial_quotients_recording" =>
+                parameters.TryGetValue("dividend", out var partialDividend) &&
+                parameters.TryGetValue("divisor", out var partialDivisor) &&
+                parameters.TryGetValue("tensQuotient", out var partialTens) &&
+                parameters.TryGetValue("onesQuotient", out var partialOnes) &&
+                partialDividend is >= 100 and <= 999 &&
+                partialDivisor is >= 2 and <= 9 &&
+                partialTens >= 10 && partialTens % 10 == 0 &&
+                partialOnes is >= 0 and <= 9 &&
+                (long)partialDivisor * (partialTens + partialOnes) == partialDividend &&
+                value == partialTens + partialOnes,
+
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" =>
+                parameters.TryGetValue("caseType", out var l108Mode) &&
+                parameters.TryGetValue("sheetWidthInches", out var l108SheetW) &&
+                parameters.TryGetValue("sheetHeightInches", out var l108SheetH) &&
+                parameters.TryGetValue("bannerHeightInches", out var l108BannerH) &&
+                parameters.TryGetValue("bannerLengthFeet", out var l108BannerF) &&
+                parameters.TryGetValue("leftWidthFeet", out var l108LeftW) &&
+                parameters.TryGetValue("rightWidthYards", out var l108RightW) &&
+                parameters.TryGetValue("lowerHeightYards", out var l108LowerH) &&
+                parameters.TryGetValue("upperRiseFeet", out var l108Rise) &&
+                parameters.TryGetValue("suppliedInches", out var l108Supply) &&
+                l108Mode is >= 0 and <= 4 &&
+                l108SheetW is >= 36 and <= 49 &&
+                l108SheetH is >= 24 and <= 34 &&
+                l108BannerH == 8 &&
+                l108BannerF is >= 6 and <= 8 &&
+                l108LeftW is >= 8 and <= 13 &&
+                l108RightW is >= 2 and <= 4 &&
+                l108LowerH is >= 3 and <= 5 &&
+                l108Rise is >= 2 and <= 6 &&
+                l108Supply > 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise) &&
+                l108Supply <= 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise) + 500 &&
+                value == (l108Mode switch
+                {
+                    0 => l108SheetW * l108SheetH - (l108BannerF * 12 * l108BannerH),
+                    1 => 2 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise),
+                    2 => 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise),
+                    3 => (l108LeftW + 3 * l108RightW) * (3 * l108LowerH) + l108LeftW * l108Rise,
+                    4 => l108Supply - 24 * (l108LeftW + 3 * l108RightW + 3 * l108LowerH + l108Rise),
+                    _ => -1
+                }),
+
+
+
+
+            "usccss.g4.u09.l05.two_digit_partial_products" =>
+                parameters.TryGetValue("caseType", out var c142) &&
+                parameters.TryGetValue("variant", out var v142) &&
+                parameters.TryGetValue("multiplicand", out var a142) &&
+                parameters.TryGetValue("multiplier", out var b142) &&
+                parameters.TryGetValue("product", out var p142) &&
+                c142 is >= 0 and <= 7 &&
+                v142 is >= 0 and <= 2 &&
+                (a142,b142)==(c142 switch
+                {
+                    0 => (34,21), 1 => (23,14),
+                    2 => (46,32), 3 => (72,15),
+                    4 => (58,24), 5 => (16,43),
+                    6 => (29,31), 7 => (87,12),
+                    _ => (-1,-1)
+                }) &&
+                p142 == a142*b142 &&
+                value == p142,
+
+            "usccss.g4.u08.l07.polygon_perimeter_sum" =>
+                parameters.TryGetValue("caseType", out var c134) &&
+                parameters.TryGetValue("variant", out var v134) &&
+                parameters.TryGetValue("sideA", out var a134) &&
+                parameters.TryGetValue("sideB", out var b134) &&
+                parameters.TryGetValue("sideC", out var d134) &&
+                parameters.TryGetValue("sideD", out var e134) &&
+                parameters.TryGetValue("perimeter", out var p134) &&
+                c134 is >= 0 and <= 7 &&
+                v134 is >= 0 and <= 2 &&
+                (a134,b134,d134,e134)==(c134 switch
+                {
+                    0 => (18,26,13,37), 1 => (7,7,7,0),
+                    2 => (4,9,4,9), 3 => (3,5,8,12),
+                    4 => (15,15,15,15), 5 => (12,17,19,0),
+                    6 => (8,6,8,6), 7 => (25,10,15,20),
+                    _ => (-1,-1,-1,-1)
+                }) &&
+                p134 == a134+b134+d134+e134 &&
+                value == p134,
+
+            "usccss.g4.u08.l04.symmetry_axis_counts" =>
+                parameters.TryGetValue("caseType", out var c131) &&
+                parameters.TryGetValue("variant", out var v131) &&
+                parameters.TryGetValue("axisCount", out var a131) &&
+                c131 is >= 0 and <= 7 &&
+                v131 is >= 0 and <= 2 &&
+                a131 == (c131 switch
+                {
+                    0 => 4, 1 => 2, 2 => 3, 3 => 1,
+                    4 => 0, 5 => 2, 6 => 1, 7 => 0, _ => -1
+                }) &&
+                value == a131,
+
+            "usccss.g4.u07.l13.additive_angle_part" =>
+                parameters.TryGetValue("caseType", out var c124) &&
+                parameters.TryGetValue("variant", out var v124) &&
+                parameters.TryGetValue("totalDegrees", out var t124) &&
+                parameters.TryGetValue("knownDegrees", out var k124) &&
+                parameters.TryGetValue("unknownDegrees", out var u124) &&
+                c124 is >= 0 and <= 7 &&
+                v124 is >= 0 and <= 2 &&
+                (t124, k124) == (c124 switch
+                {
+                    0 => (90,62), 1 => (180,73),
+                    2 => (360,120), 3 => (90,34),
+                    4 => (180,120), 5 => (360,275),
+                    6 => (90,45), 7 => (180,95),
+                    _ => (-1,-1)
+                }) &&
+                u124 == t124-k124 &&
+                u124 > 0 &&
+                value == u124,
+
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds" =>
+                parameters.TryGetValue("caseType", out var l123Case) &&
+                parameters.TryGetValue("variant", out var l123Variant) &&
+                parameters.TryGetValue("degrees", out var l123Degrees) &&
+                parameters.TryGetValue("classCode", out var l123Class) &&
+                l123Case is >= 0 and <= 7 &&
+                l123Variant is >= 0 and <= 2 &&
+                l123Degrees == (l123Case switch
+                {
+                    0 => 20, 1 => 35, 2 => 45, 3 => 70,
+                    4 => 90, 5 => 110, 6 => 130, 7 => 180,
+                    _ => -1
+                }) &&
+                l123Class == (l123Degrees < 90 ? 1 :
+                    l123Degrees == 90 ? 2 : l123Degrees < 180 ? 3 : 4) &&
+                value == l123Class,
+
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment" =>
+                parameters.TryGetValue("caseType", out var l121Case) &&
+                parameters.TryGetValue("variant", out var l121Variant) &&
+                parameters.TryGetValue("angleDegrees", out var l121Degrees) &&
+                parameters.TryGetValue("perpendicularAnswer", out var l121Answer) &&
+                l121Case is >= 0 and <= 7 &&
+                l121Variant is >= 0 and <= 2 &&
+                l121Degrees == (l121Case switch
+                {
+                    0 or 1 or 2 or 3 => 90,
+                    4 => 75, 5 => 80, 6 => 100, 7 => 120,
+                    _ => -1
+                }) &&
+                l121Answer == (l121Degrees == 90 ? 1 : 2) &&
+                value == l121Answer,
+
+            "usccss.g4.u07.l09.protractor_dual_scale_reading" =>
+                parameters.TryGetValue("caseType", out var l120Case) &&
+                parameters.TryGetValue("variant", out var l120Variant) &&
+                parameters.TryGetValue("zeroScale", out var l120ZeroScale) &&
+                parameters.TryGetValue("outerReading", out var l120Outer) &&
+                parameters.TryGetValue("innerReading", out var l120Inner) &&
+                parameters.TryGetValue("targetDegrees", out var l120Target) &&
+                l120Case is >= 0 and <= 7 &&
+                l120Variant is >= 0 and <= 2 &&
+                l120ZeroScale == (l120Variant == 1 ? 1 : 0) &&
+                l120Outer is >= 1 and <= 179 &&
+                l120Inner is >= 1 and <= 179 &&
+                l120Outer + l120Inner == 180 &&
+                l120Target == (l120Case switch
+                {
+                    0 => 25, 1 => 45, 2 => 65, 3 => 80,
+                    4 => 100, 5 => 115, 6 => 140, 7 => 160,
+                    _ => -1
+                }) &&
+                (l120ZeroScale == 0 ? l120Outer : l120Inner) == l120Target &&
+                value == l120Target,
+
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks" =>
+                parameters.TryGetValue("caseType", out var l119Mode) &&
+                parameters.TryGetValue("variant", out var l119Variant) &&
+                parameters.TryGetValue("questionKind", out var l119Kind) &&
+                parameters.TryGetValue("degrees", out var l119Deg) &&
+                parameters.TryGetValue("numerator", out var l119Num) &&
+                parameters.TryGetValue("denominator", out var l119Den) &&
+                l119Mode is >= 0 and <= 7 &&
+                l119Variant is >= 0 and <= 2 &&
+                l119Kind is >= 0 and <= 2 &&
+                l119Deg is >= 1 and <= 360 &&
+                l119Num is >= 1 and <= 3 &&
+                l119Den is >= 1 and <= 8 &&
+                l119Deg * l119Den == 360 * l119Num &&
+                (l119Mode switch
+                {
+                    0 => l119Deg == 45 && l119Num == 1 && l119Den == 8,
+                    1 => l119Deg == 60 && l119Num == 1 && l119Den == 6,
+                    2 => l119Deg == 90 && l119Num == 1 && l119Den == 4,
+                    3 => l119Deg == 120 && l119Num == 1 && l119Den == 3,
+                    4 => l119Deg == 180 && l119Num == 1 && l119Den == 2,
+                    5 => l119Deg == 240 && l119Num == 2 && l119Den == 3,
+                    6 => l119Deg == 270 && l119Num == 3 && l119Den == 4,
+                    7 => l119Deg == 360 && l119Num == 1 && l119Den == 1,
+                    _ => false
+                }) &&
+                value == (l119Kind == 0 ? l119Num :
+                    l119Kind == 1 ? l119Den : 360 - l119Deg),
+
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare" =>
+                parameters.TryGetValue("caseType", out var l118Case) &&
+                parameters.TryGetValue("questionKind", out var l118Kind) &&
+                parameters.TryGetValue("variant", out var l118Variant) &&
+                parameters.TryGetValue("hourA", out var l118HourA) &&
+                parameters.TryGetValue("hourB", out var l118HourB) &&
+                parameters.TryGetValue("stepA", out var l118StepA) &&
+                parameters.TryGetValue("stepB", out var l118StepB) &&
+                l118Case is >= 0 and <= 7 &&
+                l118Kind is 0 or 1 &&
+                l118Variant is >= 0 and <= 2 &&
+                l118HourA is >= 1 and <= 11 &&
+                l118HourB is >= 1 and <= 11 &&
+                l118StepA == Math.Min(l118HourA, 12 - l118HourA) &&
+                l118StepB == Math.Min(l118HourB, 12 - l118HourB) &&
+                (l118Case switch
+                {
+                    0 => l118HourA == 3 && l118HourB == 5,
+                    1 => l118HourA == 8 && l118HourB == 2,
+                    2 => l118HourA == 3 && l118HourB == 9,
+                    3 => l118HourA == 6 && l118HourB == 5,
+                    4 => l118HourA == 10 && l118HourB == 4,
+                    5 => l118HourA == 7 && l118HourB == 8,
+                    6 => l118HourA == 1 && l118HourB == 11,
+                    7 => l118HourA == 4 && l118HourB == 6,
+                    _ => false
+                }) &&
+                value == (l118Kind == 0
+                    ? (l118StepA > l118StepB ? 1 : l118StepA < l118StepB ? 2 : 3)
+                    : Math.Abs(l118StepA - l118StepB)),
+
+            "usccss.g4.u07.l06.compare_angle_openings" =>
+                parameters.TryGetValue("caseType", out var l117Mode) &&
+                parameters.TryGetValue("variant", out var l117Variant) &&
+                parameters.TryGetValue("start1", out var l117Start1) &&
+                parameters.TryGetValue("end1", out var l117End1) &&
+                parameters.TryGetValue("start2", out var l117Start2) &&
+                parameters.TryGetValue("end2", out var l117End2) &&
+                parameters.TryGetValue("steps1", out var l117Steps1) &&
+                parameters.TryGetValue("steps2", out var l117Steps2) &&
+                l117Mode is >= 0 and <= 7 &&
+                l117Variant is >= 0 and <= 2 &&
+                l117Start1 == 2 * l117Variant &&
+                l117Start2 == (l117Start1 + 2) % 8 &&
+                l117Steps1 is >= 1 and <= 4 &&
+                l117Steps2 is >= 1 and <= 4 &&
+                l117End1 == (l117Start1 + l117Steps1) % 8 &&
+                l117End2 == (l117Start2 + l117Steps2) % 8 &&
+                (l117Mode switch
+                {
+                    0 => l117Steps1 == 1 && l117Steps2 == 2,
+                    1 => l117Steps1 == 3 && l117Steps2 == 1,
+                    2 => l117Steps1 == 2 && l117Steps2 == 2,
+                    3 => l117Steps1 == 4 && l117Steps2 == 3,
+                    4 => l117Steps1 == 1 && l117Steps2 == 4,
+                    5 => l117Steps1 == 3 && l117Steps2 == 2,
+                    6 => l117Steps1 == 4 && l117Steps2 == 4,
+                    7 => l117Steps1 == 2 && l117Steps2 == 3,
+                    _ => false
+                }) &&
+                value == (l117Steps1 > l117Steps2 ? 1 : l117Steps1 < l117Steps2 ? 2 : 3),
+
+            "usccss.g4.u07.l05.angle_common_vertex_rays" =>
+                parameters.TryGetValue("caseType", out var l116Case) &&
+                parameters.TryGetValue("variant", out var l116Variant) &&
+                parameters.TryGetValue("start1", out var l116Start1) &&
+                parameters.TryGetValue("start2", out var l116Start2) &&
+                parameters.TryGetValue("direction1", out var l116Dir1) &&
+                parameters.TryGetValue("direction2", out var l116Dir2) &&
+                l116Case is >= 0 and <= 7 &&
+                l116Variant is >= 0 and <= 2 &&
+                l116Start1 is >= 0 and <= 3 &&
+                l116Start2 is >= 0 and <= 3 &&
+                l116Dir1 is >= 0 and <= 7 &&
+                l116Dir2 is >= 0 and <= 7 &&
+                l116Dir1 != l116Dir2 &&
+                (l116Start1 == l116Start2) == (l116Case < 4) &&
+                value == (l116Start1 == l116Start2 ? 1 : 2),
+
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect" =>
+                parameters.TryGetValue("caseType", out var l114Case) &&
+                parameters.TryGetValue("variant", out var l114Variant) &&
+                parameters.TryGetValue("r1", out var l114R1) &&
+                parameters.TryGetValue("c1", out var l114C1) &&
+                parameters.TryGetValue("r2", out var l114R2) &&
+                parameters.TryGetValue("c2", out var l114C2) &&
+                parameters.TryGetValue("r3", out var l114R3) &&
+                parameters.TryGetValue("c3", out var l114C3) &&
+                parameters.TryGetValue("r4", out var l114R4) &&
+                parameters.TryGetValue("c4", out var l114C4) &&
+                l114Case is >= 0 and <= 7 &&
+                l114Variant is >= 0 and <= 2 &&
+                l114R1 is >= 1 and <= 5 && l114R2 is >= 1 and <= 5 &&
+                l114R3 is >= 1 and <= 5 && l114R4 is >= 1 and <= 5 &&
+                l114C1 is >= 1 and <= 5 && l114C2 is >= 1 and <= 5 &&
+                l114C3 is >= 1 and <= 5 && l114C4 is >= 1 and <= 5 &&
+                (l114R1 != l114R2 || l114C1 != l114C2) &&
+                (l114R3 != l114R4 || l114C3 != l114C4) &&
+                // Exact direction cross-product: equal zero means parallel.
+                ((l114R2 - l114R1) * (l114C4 - l114C3) ==
+                 (l114C2 - l114C1) * (l114R4 - l114R3)) == (l114Case < 4) &&
+                // Coincident lines do not count as two distinct parallel lines.
+                (l114Case >= 4 ||
+                 (l114R2 - l114R1) * (l114C3 - l114C1) !=
+                 (l114C2 - l114C1) * (l114R3 - l114R1)) &&
+                value == (l114Case < 4 ? 1 : 2),
+
+            "usccss.g4.u07.l02.geometry_cards_number_talk" =>
+                parameters.TryGetValue("caseType", out var l113Case) &&
+                parameters.TryGetValue("variant", out var l113Variant) &&
+                parameters.TryGetValue("first", out var l113A) &&
+                parameters.TryGetValue("second", out var l113B) &&
+                l113Case is >= 0 and <= 7 &&
+                l113Variant is >= 0 and <= 2 &&
+                (l113Case switch
+                {
+                    0 or 1 or 2 or 3 => l113A == 0 && l113B == 0 &&
+                        value == l113Case + 1,
+                    4 => l113A == 90 && l113B == 45 && value == 45,
+                    5 => l113A == 270 && l113B == 45 && value == 225,
+                    6 => l113A == 270 && l113B == 135 && value == 135,
+                    7 => l113A == 360 && l113B == 135 && value == 225,
+                    _ => false
+                }),
+
+            "usccss.g4.u07.l01.geometric_description_precision" =>
+                parameters.TryGetValue("caseType", out var l112Case) &&
+                parameters.TryGetValue("preciseFirst", out var l112First) &&
+                l112Case is >= 0 and <= 5 &&
+                l112First is 0 or 1 &&
+                value == (l112First == 1 ? 1 : 2),
+
+            "usccss.g4.u06.l25.flower_garland_patterns" =>
+                parameters.TryGetValue("caseType", out var l111Case) &&
+                parameters.TryGetValue("garlandsEach", out var l111Pairs) &&
+                parameters.TryGetValue("flowersMade", out var l111Flowers) &&
+                parameters.TryGetValue("flowersPerGarland", out var l111GarlandSize) &&
+                parameters.TryGetValue("priyaBig", out var l111Pb) &&
+                parameters.TryGetValue("priyaSmall", out var l111Ps) &&
+                parameters.TryGetValue("jadaBig", out var l111Jb) &&
+                parameters.TryGetValue("jadaSmall", out var l111Js) &&
+                parameters.TryGetValue("cutMinutes", out var l111Cut) &&
+                parameters.TryGetValue("finishMinutes", out var l111Finish) &&
+                parameters.TryGetValue("workers", out var l111Workers) &&
+                l111Case is >= 0 and <= 5 &&
+                l111Pairs is >= 10 and <= 40 &&
+                l111Flowers is >= 120 and <= 250 &&
+                l111GarlandSize == 16 &&
+                l111Pb == 6 && l111Ps == 6 &&
+                l111Jb == 4 && l111Js == 8 &&
+                l111Cut == 1 && l111Finish == 2 &&
+                l111Workers == 2 &&
+                value == (l111Case switch
+                {
+                    0 => l111Pairs * (l111Pb + l111Jb),
+                    1 => l111Pairs * (l111Ps + l111Js),
+                    2 => l111Flowers / l111GarlandSize,
+                    3 => l111Flowers % l111GarlandSize,
+                    4 => l111Flowers * (l111Cut + l111Finish),
+                    5 => ((l111Flowers + l111Workers - 1) / l111Workers) * (l111Cut + l111Finish),
+                    _ => -1
+                }),
+
+            "usccss.g4.u06.l24.language_population_comparisons" =>
+                parameters.TryGetValue("caseType", out var l110Case) &&
+                parameters.TryGetValue("navajo", out var l110Navajo) &&
+                parameters.TryGetValue("yupik", out var l110Yupik) &&
+                parameters.TryGetValue("dakota", out var l110Dakota) &&
+                parameters.TryGetValue("apache", out var l110Apache) &&
+                parameters.TryGetValue("keres", out var l110Keres) &&
+                parameters.TryGetValue("cherokee", out var l110Cherokee) &&
+                parameters.TryGetValue("ojibwa", out var l110Ojibwa) &&
+                parameters.TryGetValue("choctaw", out var l110Choctaw) &&
+                parameters.TryGetValue("zuni", out var l110Zuni) &&
+                parameters.TryGetValue("pima", out var l110Pima) &&
+                parameters.TryGetValue("philadelphiaEnglish", out var l110Eng) &&
+                parameters.TryGetValue("philadelphiaSpanish", out var l110PhSp) &&
+                parameters.TryGetValue("philadelphiaIndo", out var l110PhIn) &&
+                parameters.TryGetValue("philadelphiaAsian", out var l110PhAs) &&
+                parameters.TryGetValue("chicagoSpanish", out var l110ChSp) &&
+                parameters.TryGetValue("chicagoIndo", out var l110ChIn) &&
+                l110Case is >= 0 and <= 5 &&
+                l110Navajo is >= 135000 and <= 190000 &&
+                l110Yupik is >= 17500 and <= 23500 &&
+                l110Dakota is >= 15000 and <= 19000 &&
+                l110Apache is >= 11000 and <= 16000 &&
+                l110Keres is >= 11000 and <= 14000 &&
+                l110Cherokee is >= 9000 and <= 13000 &&
+                l110Ojibwa is >= 8000 and <= 11000 &&
+                l110Choctaw is >= 8000 and <= 11000 &&
+                l110Zuni is >= 8000 and <= 11000 &&
+                l110Pima is >= 6000 and <= 8000 &&
+                l110Eng is >= 1100000 and <= 1350000 &&
+                l110PhSp is >= 110000 and <= 150000 &&
+                l110PhIn is >= 5000 and <= 9000 &&
+                l110PhAs is >= 200 and <= 600 &&
+                l110ChSp is >= 395000 and <= 460000 &&
+                l110ChIn is >= 20000 and <= 32000 &&
+                l110Navajo > l110Yupik + l110Dakota + l110Apache + l110Keres +
+                              l110Cherokee + l110Ojibwa + l110Choctaw + l110Zuni + l110Pima &&
+                l110Eng > l110PhSp + l110PhIn + l110PhAs &&
+                l110ChSp + l110ChIn > l110PhSp + l110PhIn &&
+                value == (l110Case switch
+                {
+                    0 => l110Navajo - l110Yupik,
+                    1 => l110Navajo + l110Apache + l110Cherokee,
+                    2 => l110Navajo - (l110Yupik + l110Dakota + l110Apache + l110Keres +
+                                        l110Cherokee + l110Ojibwa + l110Choctaw + l110Zuni + l110Pima),
+                    3 => l110Eng - l110PhSp - l110PhIn - l110PhAs,
+                    4 => l110ChSp + l110ChIn - l110PhSp - l110PhIn,
+                    5 => (2 * l110Navajo + l110Yupik) / (2 * l110Yupik),
+                    _ => -1
+                }),
+
+            "usccss.g4.u06.l23.four_operation_contexts" =>
+                parameters.TryGetValue("caseType", out var l109Mode) &&
+                parameters.TryGetValue("segmentA", out var l109A) &&
+                parameters.TryGetValue("segmentB", out var l109B) &&
+                parameters.TryGetValue("segmentC", out var l109C) &&
+                parameters.TryGetValue("segmentD", out var l109D) &&
+                parameters.TryGetValue("longTrips", out var l109LongTrips) &&
+                parameters.TryGetValue("musicTrips", out var l109MusicTrips) &&
+                parameters.TryGetValue("musicTotalFeet", out var l109Music) &&
+                parameters.TryGetValue("feetPerMile", out var l109FeetPerMile) &&
+                parameters.TryGetValue("days", out var l109Days) &&
+                parameters.TryGetValue("week1", out var l109W1) &&
+                parameters.TryGetValue("week2", out var l109W2) &&
+                parameters.TryGetValue("week3", out var l109W3) &&
+                parameters.TryGetValue("stepTarget", out var l109Target) &&
+                l109Mode is >= 0 and <= 5 &&
+                l109A is >= 100 and <= 200 &&
+                l109B is >= 100 and <= 200 &&
+                l109C is >= 100 and <= 200 &&
+                l109D is >= 100 and <= 200 &&
+                l109LongTrips == 5 && l109MusicTrips == 3 &&
+                l109Music is >= 1200 and <= 2400 &&
+                l109Music % (2 * l109MusicTrips) == 0 &&
+                l109FeetPerMile == 5280 &&
+                l109Days == 7 &&
+                l109W1 >= 26000 && l109W1 <= 35000 && l109W1 % 7 == 0 &&
+                l109W2 > 0 && l109W2 < l109W1 &&
+                l109W1 - l109W2 is >= 2000 and <= 6000 &&
+                l109W3 is >= 32000 and <= 38000 &&
+                l109Target == 120000 &&
+                l109LongTrips * 2 * (l109A + l109B + l109C + l109D) + l109Music < 2 * l109FeetPerMile &&
+                l109W1 + l109W2 + l109W3 < l109Target &&
+                value == (l109Mode switch
+                {
+                    0 => 2 * (l109A + l109B + l109C + l109D),
+                    1 => l109Music / (2 * l109MusicTrips),
+                    2 => 2 * l109FeetPerMile - (l109LongTrips * 2 * (l109A + l109B + l109C + l109D) + l109Music),
+                    3 => l109W1 / l109Days,
+                    4 => l109W1 - l109W2,
+                    5 => l109Target - l109W1 - l109W2 - l109W3,
+                    _ => -1
+                }),
+
+            "usccss.g4.u06.l21.multistep_contexts" =>
+                parameters.TryGetValue("caseType", out var l107Mode) &&
+                parameters.TryGetValue("count", out var l107Count) &&
+                parameters.TryGetValue("ticketPrice", out var l107Price) &&
+                parameters.TryGetValue("budget", out var l107Budget) &&
+                parameters.TryGetValue("days", out var l107Days) &&
+                parameters.TryGetValue("drinkPrice", out var l107Drink) &&
+                parameters.TryGetValue("popcornPrice", out var l107Popcorn) &&
+                parameters.TryGetValue("dailyRevenue", out var l107Revenue) &&
+                l107Mode is >= 0 and <= 2 &&
+                l107Count is >= 25 and <= 390 &&
+                l107Price is >= 5 and <= 25 &&
+                l107Days == 2 &&
+                l107Drink is >= 5 and <= 12 &&
+                l107Popcorn is >= 2 and <= 9 &&
+                (long)l107Count * l107Price == l107Revenue &&
+                l107Budget > l107Revenue &&
+                l107Budget - l107Revenue <= 300 &&
+                value == (l107Mode switch
+                {
+                    0 => l107Budget - l107Revenue,
+                    1 => l107Count * l107Days,
+                    2 => l107Count * l107Days * (l107Drink + l107Popcorn),
+                    _ => -1
+                }),
+
+            "usccss.g4.u06.l20.contextual_remainder_decisions" =>
+                parameters.TryGetValue("caseType", out var l106Case) &&
+                parameters.TryGetValue("dividend", out var l106Total) &&
+                parameters.TryGetValue("divisor", out var l106Divisor) &&
+                parameters.TryGetValue("shortfall", out var l106Short) &&
+                l106Case is >= 0 and <= 4 &&
+                l106Total is >= 100 and <= 9999 &&
+                l106Divisor is >= 2 and <= 9 &&
+                l106Short >= 0 && l106Short < l106Divisor &&
+                (l106Case switch
+                {
+                    0 or 1 or 2 => l106Short == 0 && l106Total % l106Divisor > 0,
+                    3 => l106Short > 0 && l106Total % l106Divisor == l106Short,
+                    4 => l106Short == 0 && l106Total % l106Divisor == 0,
+                    _ => false
+                }) &&
+                value == (l106Case switch
+                {
+                    0 => l106Total / l106Divisor + 1,
+                    1 => l106Total / l106Divisor,
+                    2 => l106Total % l106Divisor,
+                    3 => (l106Total - l106Short) / l106Divisor,
+                    _ => l106Total / l106Divisor
+                }),
+
             "geometry.perimeter_area.rectangle_missing_side" =>
                 parameters["knownSide"] > 0 &&
                 parameters["area"] > 0 &&
@@ -1223,6 +1813,42 @@ public sealed class ExactSkillContractQuestionEngine
             var story=UsCcssG1Unit2Part2Questions.Build(family,random);
             return new ExactProblem(story.Family,story.Prompt,story.Solution,
                 story.ItemType,story.Parameters);
+        }
+        if (UsCcssG4Unit2ThirdLessonQuestions.Supports(family))
+        {
+            var item=UsCcssG4Unit2ThirdLessonQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG4Unit1SeventhLessonQuestions.Supports(family))
+        {
+            var item=UsCcssG4Unit1SeventhLessonQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG4Unit1SixthLessonQuestions.Supports(family))
+        {
+            var q=UsCcssG4Unit1SixthLessonQuestions.Build(family,random);
+            return new ExactProblem(q.Family,q.Prompt,q.Solution,q.ItemType,q.Parameters);
+        }
+        if (UsCcssG4Unit1FifthLessonQuestions.Supports(family))
+        {
+            var item=UsCcssG4Unit1FifthLessonQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG4Unit1ThirdLessonQuestions.Supports(family))
+        {
+            var item=UsCcssG4Unit1ThirdLessonQuestions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if (UsCcssG4Unit1SecondLessonQuestions.Supports(family))
+        {
+            var p2=UsCcssG4Unit1SecondLessonQuestions.Build(family,random);
+            return new ExactProblem(p2.Family,p2.Prompt,p2.Solution,p2.ItemType,p2.Parameters);
+        }
+        if (UsCcssG4Unit1FirstLessonQuestions.Supports(family))
+        {
+            var rectangle = UsCcssG4Unit1FirstLessonQuestions.Build(family, random);
+            return new ExactProblem(rectangle.Family, rectangle.Prompt, rectangle.Solution,
+                rectangle.ItemType, rectangle.Parameters);
         }
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
         {
@@ -1747,6 +2373,27 @@ public sealed class ExactSkillContractQuestionEngine
             "number.whole.divide.with_remainder.build" or
             "number.whole.divide.with_remainder.apply" =>
                 BuildDivisionWithRemainder(family, random, scale),
+            "usccss.g4.u06.l19.partial_quotients_remainders" => BuildG4PartialQuotientsRemainder(random),
+            "usccss.g4.u06.l20.contextual_remainder_decisions" => BuildG4ContextualRemainder(random),
+            "usccss.g4.u06.l21.multistep_contexts" => BuildG4MultiStepContext(random),
+            "usccss.g4.u06.l23.four_operation_contexts" => BuildG4FourOperations(random),
+            "usccss.g4.u06.l24.language_population_comparisons" => BuildG4LanguageComparisons(random),
+            "usccss.g4.u09.l05.two_digit_partial_products" => BuildG4TwoDigitPartialProducts(random),
+            "usccss.g4.u08.l07.polygon_perimeter_sum" => BuildG4PolygonPerimeterSum(random),
+            "usccss.g4.u08.l04.symmetry_axis_counts" => BuildG4SymmetryAxisCounts(random),
+            "usccss.g4.u07.l13.additive_angle_part" => BuildG4AdditiveAnglePart(random),
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => BuildG4AngleClassificationByBounds(random),
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => BuildG4PerpendicularRightAngleJudgment(random),
+            "usccss.g4.u07.l09.protractor_dual_scale_reading" => BuildG4ProtractorDualScaleReading(random),
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks" => BuildG4FullTurnDegreeBenchmarks(random),
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => BuildG4ClockHourAngleTurnCompare(random),
+            "usccss.g4.u07.l06.compare_angle_openings" => BuildG4CompareAngleOpenings(random),
+            "usccss.g4.u07.l05.angle_common_vertex_rays" => BuildG4AngleCommonVertexRays(random),
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect" => BuildG4ParallelIntersectDotGrid(random),
+            "usccss.g4.u07.l02.geometry_cards_number_talk" => BuildG4PointLineRayCardAndNumberTalk(random),
+            "usccss.g4.u07.l01.geometric_description_precision" => BuildG4GeometricDescriptionPrecision(random),
+            "usccss.g4.u06.l25.flower_garland_patterns" => BuildG4FlowerPatterns(random),
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => BuildG4MeasurementConversions(random),
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
                 BuildFractionOfQuantity(family, random, scale),
@@ -1799,6 +2446,10 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildTriangleArea(random, scale),
             "geometry.perimeter_area.rectangle_missing_side" =>
                 BuildRectangleMissingSide(random, scale),
+            "usccss.g4.u06.l15.area_partial_quotients" => BuildG4MuralMissingSide(random, false),
+            "usccss.g4.u06.l15.mural_complete_columns" => BuildG4MuralMissingSide(random, true),
+            "usccss.g4.u06.l16.base_ten_equal_groups" => BuildG4BaseTenDivision(random),
+            "usccss.g4.u06.l18.partial_quotients_recording" => BuildG4PartialQuotients(random),
             "geometry.polygons.interior_angle_sum" =>
                 BuildPolygonInteriorAngleSum(random, scale),
             "geometry.polygons.missing_interior_angle" =>
@@ -2991,6 +3642,784 @@ public sealed class ExactSkillContractQuestionEngine
             ("height", height));
     }
 
+    private static ExactProblem BuildG4PartialQuotientsRemainder(Random random)
+    {
+        var divisor = random.Next(2, 10);
+        var quotient = random.Next(50, Math.Min(900, (9999 - divisor + 1) / divisor) + 1);
+        var remainder = random.Next(0, divisor);
+        var dividend = divisor * quotient + remainder;
+        var tens = quotient / 10 * 10;
+        var ones = quotient % 10;
+        return Problem("usccss.g4.u06.l19.partial_quotients_remainders",
+            "Use partial quotients to divide " + dividend + " by " + divisor +
+            ". Show the subtractions. Give quotient and remainder as 'q r r'.",
+            "Subtract " + divisor*tens + " (= " + divisor + " × " + tens +
+            "), then " + divisor*ones + " (= " + divisor + " × " + ones +
+            "). " + remainder + " remains. Check " + dividend + " = " +
+            divisor + " × " + quotient + " + " + remainder + ".",
+            AssessmentItemType.ShortAnswer,
+            ("dividend",dividend),("divisor",divisor),
+            ("partialTens",tens),("partialOnes",ones),("remainder",remainder));
+    }
+
+    private static ExactProblem BuildG4ContextualRemainder(Random random)
+    {
+        // 2021 G4 U06:L20: keep rounding, short rows and missing savings distinct.
+        var caseType = random.Next(0, 5);
+        var divisor = random.Next(2, 10);
+        var quotient = random.Next(Math.Max(50, (100 + divisor - 1) / divisor), 650);
+        var remainder = caseType == 4 ? 0 : random.Next(1, divisor);
+        var dividend = divisor * quotient + remainder;
+        var shortfall = caseType == 3 ? remainder : 0;
+        var prompt = caseType switch
+        {
+            0 => $"All {dividend} muffins must go in boxes that hold {divisor} muffins each. How many boxes are needed?",
+            1 => $"An auditorium has {dividend} seats arranged in full rows of {divisor}, plus one short row. How many full rows are there?",
+            2 => $"An auditorium has {dividend} seats arranged in full rows of {divisor}, plus one short row. How many seats are in that short row?",
+            3 => $"A school needs ${dividend} for a garden. It saves the same number of dollars each month for {divisor} months and is still short by ${shortfall}. How much did it save per month?",
+            _ => $"A student invents a story for {dividend} ÷ {divisor} using equal groups. How many are in each group?"
+        };
+        var solution = caseType switch
+        {
+            0 => $"{dividend} = {divisor} × {quotient} + {remainder}; all muffins must be boxed, so use {quotient + 1} boxes.",
+            1 => $"{dividend} = {divisor} × {quotient} + {remainder}; there are {quotient} full rows and one short row.",
+            2 => $"{dividend} = {divisor} × {quotient} + {remainder}; the short row has {remainder} seats.",
+            3 => $"Saved total is {dividend} − {shortfall} = {dividend - shortfall}; divide by {divisor} months to get {quotient} dollars.",
+            _ => $"{dividend} = {divisor} × {quotient}; each of the {divisor} equal groups has {quotient}."
+        };
+        return Problem("usccss.g4.u06.l20.contextual_remainder_decisions", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", caseType), ("dividend", dividend), ("divisor", divisor), ("shortfall", shortfall));
+    }
+
+    private static ExactProblem BuildG4MeasurementConversions(Random random)
+    {
+        // IM 2021 G4 U06:L22: reuse exact rectangle math and whole-unit conversions.
+        var mode = random.Next(0, 5);
+        var sheetW = random.Next(36, 50);
+        var sheetH = random.Next(24, 35);
+        const int bannerH = 8;
+        var bannerF = random.Next(6, 9);
+        var leftW = random.Next(8, 14);
+        var rightWYd = random.Next(2, 5);
+        var lowerHYd = random.Next(3, 6);
+        var riseF = random.Next(2, 7);
+        var bottomF = leftW + 3 * rightWYd;
+        var leftH = 3 * lowerHYd + riseF;
+        var perimeterF = 2 * (bottomF + leftH);
+        var supply = 12 * perimeterF + random.Next(60, 501);
+        var prompt = mode switch
+        {
+            0 => "A poster is " + sheetW + " inches by " + sheetH + " inches. A banner requires " + bannerH + " inches by " + bannerF + " feet. How many square inches of poster area are spare?",
+            1 => "A six-sided L-shaped classroom has bottom " + (12 * bottomF) + " inches, right rise " + lowerHYd + " yards, inset " + rightWYd + " yards, inner rise " + riseF + " feet, top " + leftW + " feet and left side " + (12 * leftH) + " inches. How many feet is the entire outside perimeter?",
+            2 => "A six-sided L-shaped classroom has bottom " + (12 * bottomF) + " inches, right rise " + lowerHYd + " yards, inset " + rightWYd + " yards, inner rise " + riseF + " feet, top " + leftW + " feet and left side " + (12 * leftH) + " inches. How many INCHES of baseboard does the perimeter require?",
+            3 => "An L-shaped room comprises a " + bottomF + "-foot by " + (3 * lowerHYd) + "-foot base and an upper " + leftW + "-foot by " + riseF + "-foot rectangle. How many SQUARE FEET of carpet are required?",
+            _ => "A classroom's six-sided L-shaped floor has bottom " + bottomF + " feet, right rise " + (3 * lowerHYd) + " feet, inset " + (3 * rightWYd) + " feet, inside rise " + riseF + " feet, top " + leftW + " feet and left side " + leftH + " feet. The school received " + supply + " inches of baseboard. How many INCHES are spare?"
+        };
+        var solution = mode switch
+        {
+            0 => "Available square inches minus banner area after converting feet to inches.",
+            1 => "Convert all six sides to feet and sum outside perimeter.",
+            2 => "Find the six-side perimeter in feet, then multiply by 12 inches per foot.",
+            3 => "Add the non-overlapping rectangles' areas in square feet.",
+            _ => "Convert the six-side perimeter to inches and subtract from supply."
+        };
+        return Problem("usccss.g4.u06.l22.convert_l_shaped_area_perimeter",
+            prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("sheetWidthInches", sheetW),
+            ("sheetHeightInches", sheetH), ("bannerHeightInches", bannerH),
+            ("bannerLengthFeet", bannerF), ("leftWidthFeet", leftW),
+            ("rightWidthYards", rightWYd), ("lowerHeightYards", lowerHYd),
+            ("upperRiseFeet", riseF), ("suppliedInches", supply));
+    }
+
+
+
+
+
+
+    private static ExactProblem BuildG4TwoDigitPartialProducts(Random random)
+    {
+        // 2021 G4 U09:L05 multiplication via 2-digit partial products.
+        // Source visual method diagrams still teacher reviewed.
+        var mode=random.Next(0,8);
+        var variant=random.Next(0,3);
+        var (a,b)=mode switch
+        {
+            0 => (34,21), 1 => (23,14), 2 => (46,32),
+            3 => (72,15), 4 => (58,24), 5 => (16,43),
+            6 => (29,31), _ => (87,12)
+        };
+        var tens=(b/10)*10;
+        var ones=b%10;
+        var first=a*tens;
+        var second=a*ones;
+        var answer=first+second;
+        var cue=variant switch
+        {
+            0 => "Use tens and ones in a partial-products model.",
+            1 => "Both partial products add to the final product.",
+            _ => "Check the standard algorithm against distributive multiplication."
+        };
+        return Problem("usccss.g4.u09.l05.two_digit_partial_products",
+            $"FIRST-PARTY multiplication: Find {a} times {b}. {cue}",
+            $"Split {b} into {tens}+{ones}; {a}×{tens}={first}, {a}×{ones}={second}, total={answer}.",
+            AssessmentItemType.Numeric,
+            ("caseType",mode),("variant",variant),
+            ("multiplicand",a),("multiplier",b),("product",answer));
+    }
+
+    private static ExactProblem BuildG4PolygonPerimeterSum(Random random)
+    {
+        // 2021 Grade 4 U08:L07: perimeter is sum of boundary lengths,
+        // not area; original diagrams and fractional unit task teacher-led.
+        var mode=random.Next(0,8);
+        var variant=random.Next(0,3);
+        var (a,b,c,d)=mode switch
+        {
+            0 => (18,26,13,37), 1 => (7,7,7,0),
+            2 => (4,9,4,9), 3 => (3,5,8,12),
+            4 => (15,15,15,15), 5 => (12,17,19,0),
+            6 => (8,6,8,6), _ => (25,10,15,20)
+        };
+        var total=a+b+c+d;
+        var sides=d==0?$"{a}, {b}, {c}":$"{a}, {b}, {c}, {d}";
+        var cue=variant switch
+        {
+            0 => "Add the OUTER edge lengths only.",
+            1 => "Perimeter is linear distance around the boundary, not area.",
+            _ => "Use the same linear unit for every side."
+        };
+        return Problem("usccss.g4.u08.l07.polygon_perimeter_sum",
+            $"An INDEPENDENT polygon has consecutive side lengths {sides} units. What is its perimeter in those units? {cue}",
+            $"Add all boundary sides: {a}+{b}+{c}"+(d==0?"":$"+{d}")+$"={total} units.",
+            AssessmentItemType.Numeric,
+            ("caseType",mode),("variant",variant),("sideA",a),("sideB",b),
+            ("sideC",c),("sideD",d),("perimeter",total));
+    }
+
+    private static ExactProblem BuildG4SymmetryAxisCounts(Random random)
+    {
+        // 2021 G4 Unit 8 lines of symmetry. Described first-party
+        // canonical shapes only, NOT the original source card pictures.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        string[] shapeNames = [
+            "a square", "a rectangle that is NOT a square",
+            "an equilateral triangle", "an isosceles triangle that is NOT equilateral",
+            "a scalene triangle", "a rhombus that is NOT a square",
+            "a kite that is NOT a rhombus", "a slanted parallelogram that is NOT a rectangle"
+        ];
+        int[] axes = [4, 2, 3, 1, 0, 2, 1, 0];
+        var name = shapeNames[mode];
+        var count = axes[mode];
+        var cue = variant switch
+        {
+            0 => "A line of symmetry folds the figure into matching halves.",
+            1 => "Reflect one half to see whether the other half matches exactly.",
+            _ => "Only count DISTINCT reflection axes, not turn rotations."
+        };
+        return Problem("usccss.g4.u08.l04.symmetry_axis_counts",
+            $"An INDEPENDENTLY DESCRIBED geometric figure is {name}. How many lines of reflection symmetry does it have? {cue}",
+            $"The described shape has {count} reflection line(s). This does not imply the original publisher shape card has the same geometry.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant), ("axisCount", count));
+    }
+
+    private static ExactProblem BuildG4AdditiveAnglePart(Random random)
+    {
+        // 2021 IM/KH G4 U07:L13 numerical supplementary additivity.
+        // Original p/q/r/s source cutouts and folded kite are teacher-led.
+        var mode = random.Next(0,8);
+        var variant = random.Next(0,3);
+        var (total,known) = mode switch
+        {
+            0 => (90,62), 1 => (180,73),
+            2 => (360,120), 3 => (90,34),
+            4 => (180,120), 5 => (360,275),
+            6 => (90,45), _ => (180,95)
+        };
+        var unknown = total-known;
+        var cue = variant switch
+        {
+            0 => "Two adjacent angles make up the total turn.",
+            1 => "The ray lengths do not affect angular measurement.",
+            _ => "Subtract the known part from the right, straight or full turn."
+        };
+        return Problem("usccss.g4.u07.l13.additive_angle_part",
+            $"FIRST-PARTY angle pair: two non-overlapping adjacent angles together measure {total} degrees. " +
+            $"One is {known} degrees. How many degrees is the OTHER angle? {cue}",
+            $"The total turn is {total} degrees and the known part is {known} degrees, so the missing part is {total}-{known}={unknown} degrees.",
+            AssessmentItemType.Numeric,
+            ("caseType",mode),("variant",variant),
+            ("totalDegrees",total),("knownDegrees",known),
+            ("unknownDegrees",unknown));
+    }
+
+    private static ExactProblem BuildG4AngleClassificationByBounds(Random random)
+    {
+        // Source IM 2021 Grade 4 U07:L12: acute, right,
+        // obtuse and straight angles. First-party numeric classification
+        // does NOT inspect source cards, letter Y drawings, or paper angles.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        int[] measures = [20, 35, 45, 70, 90, 110, 130, 180];
+        var degrees = measures[mode];
+        var answer = degrees < 90 ? 1 : degrees == 90 ? 2 :
+            degrees < 180 ? 3 : 4;
+        var cue = variant switch
+        {
+            0 => "One ray starts at the vertex and another defines the measured turn.",
+            1 => "The line segments may have any length; only the opening is classified.",
+            _ => "A straight angle can look like a line, but it is still a 180-degree turn."
+        };
+        return Problem("usccss.g4.u07.l12.classify_angles_by_degree_bounds",
+            $"An INDEPENDENTLY AUTHORED angle measures {degrees} degrees. " +
+            "Classify it using 1=acute, 2=right, 3=obtuse, 4=straight. " + cue,
+            $"An angle of {degrees} degrees is " +
+            (answer == 1 ? "acute (less than 90 degrees)." :
+             answer == 2 ? "right (exactly 90 degrees)." :
+             answer == 3 ? "obtuse (between 90 and 180 degrees)." :
+             "straight (exactly 180 degrees)."),
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("degrees", degrees), ("classCode", answer));
+    }
+
+    private static ExactProblem BuildG4PerpendicularRightAngleJudgment(Random random)
+    {
+        // IM/KH 2021 Grade 4 Unit 7 Lesson 10: one right angle formed at
+        // an intersection characterizes perpendicular LINES and EXTENDED
+        // line segments. Student paper folds and original polygon diagrams
+        // are handled by teachers, not represented as source-figure copies.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        int[] angleMeasures = [90, 90, 90, 90, 75, 80, 100, 120];
+        var degrees = angleMeasures[mode];
+        var answer = degrees == 90 ? 1 : 2;
+        var context = mode switch
+        {
+            0 => "One line is horizontal and another goes straight upward at the intersection.",
+            1 => "Two drawn lines cross diagonally at an accurately measured angle.",
+            2 => "Two polygon sides meet at a shared corner; extend their supporting straight lines.",
+            3 => "Two different paper creases go through point P and form four angles.",
+            4 => "Two lines cross; one angle is acute.",
+            5 => "Two lines cross; an acute angle is measured.",
+            6 => "Two lines cross; one angle is obtuse.",
+            _ => "Two lines cross; one angle is obtuse."
+        };
+        var cue = variant switch
+        {
+            0 => "Do not judge by apparent line length.",
+            1 => "Use 90 degrees as the right-angle benchmark.",
+            _ => "Think about the four angles around a shared intersection."
+        };
+        return Problem("usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+            $"FIRST-PARTY textual lines: {context} ONE of the angles at the intersection measures {degrees} degrees. Are the supporting two straight lines PERPENDICULAR? Answer 1 for YES, 2 for NO. {cue}",
+            $"Perpendicular lines intersect at 90 degrees. The stated angle is {degrees} degrees, so the correct code is {answer} ({(answer == 1 ? "YES" : "NO")}). A physical fold/drawing still needs teacher confirmation.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("angleDegrees", degrees), ("perpendicularAnswer", answer));
+    }
+
+    private static ExactProblem BuildG4ProtractorDualScaleReading(Random random)
+    {
+        // IM/KH 2021 G4 U07:L09: 1 degree is 1/360 of a full turn,
+        // and the scale beginning at zero on the aligned ray is used.
+        // This first-party textual protractor model does NOT measure
+        // any original 2021 figure or the student's physical instrument.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        int[] benchmarks = [25, 45, 65, 80, 100, 115, 140, 160];
+        var degrees = benchmarks[mode];
+        var zeroScale = variant == 1 ? 1 : 0; // 0 outer, 1 inner
+        var outer = zeroScale == 0 ? degrees : 180 - degrees;
+        var inner = 180 - outer;
+        var zeroName = zeroScale == 0 ? "OUTER" : "INNER";
+        var cue = variant switch
+        {
+            0 => "The first ray has been aligned with the zero at the outer edge.",
+            1 => "The first ray has been aligned with the zero at the inner edge.",
+            _ => "Be careful not to choose the opposite zero scale."
+        };
+        var prompt = $"A FIRST-PARTY half-circle protractor description has two opposite scales. Its OUTER scale reads {outer}° and INNER scale reads {inner}° where the second ray crosses the rim. The initial ray is aligned with the ZERO of the {zeroName} scale. What is the angle size in degrees? {cue}";
+        return Problem("usccss.g4.u07.l09.protractor_dual_scale_reading", prompt,
+            $"The zero of the {zeroName} scale is aligned with the initial ray. Read the SAME scale: {degrees}°. The other scale would give {180 - degrees}°, which is not the aligned reading.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("zeroScale", zeroScale), ("outerReading", outer),
+            ("innerReading", inner), ("targetDegrees", degrees));
+    }
+
+    private static ExactProblem BuildG4FullTurnDegreeBenchmarks(Random random)
+    {
+        // 2021 IM Grade 4 Unit 7 Lesson 8: a 360-degree full turn and
+        // benchmark degree/fraction angles. Paper half-circle measuring tool
+        // and original figures remain teacher-reviewed; no image-copy claim.
+        var mode = random.Next(0, 8);
+        var kind = random.Next(0, 3);
+        var variant = random.Next(0, 3);
+        int[] degrees = [45, 60, 90, 120, 180, 240, 270, 360];
+        int[] numerators = [1, 1, 1, 1, 1, 2, 3, 1];
+        int[] denominators = [8, 6, 4, 3, 2, 3, 4, 1];
+        var deg = degrees[mode];
+        var num = numerators[mode];
+        var den = denominators[mode];
+        var promptTask = kind switch
+        {
+            0 => "Express this turn as a fraction of a full turn in LOWEST TERMS. What is the NUMERATOR?",
+            1 => "Express this turn as a fraction of a full turn in LOWEST TERMS. What is the DENOMINATOR?",
+            _ => "How many more DEGREES must the ray turn in the same direction to make exactly one 360-degree full turn?"
+        };
+        var cue = variant switch
+        {
+            0 => "Remember that a full turn around the shared endpoint is 360 degrees.",
+            1 => "Use an imagined circle divided into equal angular parts.",
+            _ => "You may reason with a half-turn 180 degrees or quarter-turn 90 degrees."
+        };
+        return Problem("usccss.g4.u07.l08.full_turn_degree_benchmarks",
+            $"A ray turns {deg} degrees around its fixed vertex. {promptTask} {cue}",
+            $"The turn is {deg}/360 = {num}/{den} of a full revolution. The remaining turn is {360 - deg} degrees.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("questionKind", kind), ("variant", variant),
+            ("degrees", deg), ("numerator", num), ("denominator", den));
+    }
+
+    private static ExactProblem BuildG4ClockHourAngleTurnCompare(Random random)
+    {
+        // Source IM 2021 Grade 4 Unit 7 Lesson 7: use a CLOCK to model
+        // turns. At EXACT hours (minute hand at 12) each hour-mark
+        // separation represents 1/12 full turn. The smaller angle
+        // has at most six hour-mark intervals. Not minute-half-hour math.
+        var mode = random.Next(0, 8);
+        var kind = random.Next(0, 2); // compare vs "by how many intervals?"
+        var variant = random.Next(0, 3);
+        var (hourA, hourB) = mode switch
+        {
+            0 => (3, 5),
+            1 => (8, 2),
+            2 => (3, 9),
+            3 => (6, 5),
+            4 => (10, 4),
+            5 => (7, 8),
+            6 => (1, 11),
+            _ => (4, 6)
+        };
+        var aSteps = Math.Min(hourA, 12 - hourA);
+        var bSteps = Math.Min(hourB, 12 - hourB);
+        var task = kind == 0
+            ? "Which smaller angle is larger: 1=clock A, 2=clock B, or 3=equal?"
+            : "By HOW MANY 1-hour-mark intervals do the two smaller angle openings differ? Give a nonnegative whole number.";
+        var context = variant switch
+        {
+            0 => "Treat both clock hands as rays starting from the clock centre.",
+            1 => "Both clocks show exactly an hour; neither minute hand has moved past 12.",
+            _ => "Follow the SHORTER turn from 12 to the hour hand, not the hand's printed length."
+        };
+        var prompt = $"At exactly {hourA}:00 (clock A) and exactly {hourB}:00 (clock B), each minute hand points to 12. Each hour mark is one twelfth of a full turn. {task} {context}";
+        var solution = $"At exactly {hourA}:00 the smaller opening is {aSteps} hour-mark intervals; at exactly {hourB}:00 it is {bSteps}. " +
+            (kind == 0 ? "Compare those openings; lengths of the drawn hands cannot change the size." :
+            $"They differ by {Math.Abs(aSteps - bSteps)} intervals. One interval equals 30 degrees, though no protractor calculation is required.");
+        return Problem("usccss.g4.u07.l07.clock_hour_angle_turn_compare", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("questionKind", kind), ("variant", variant),
+            ("hourA", hourA), ("hourB", hourB),
+            ("stepA", aSteps), ("stepB", bSteps));
+    }
+
+    private static ExactProblem BuildG4CompareAngleOpenings(Random random)
+    {
+        // IM 2021 G4 U07:L06 explores size as the opening/turn, not ray length.
+        // Eight first-party compass directions are 1/8 of a turn apart.
+        // Both compared angle openings are at most a half turn; no
+        // original A-P picture cards or protected publisher tasks are graded.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        var (steps1, steps2) = mode switch
+        {
+            0 => (1, 2),
+            1 => (3, 1),
+            2 => (2, 2),
+            3 => (4, 3),
+            4 => (1, 4),
+            5 => (3, 2),
+            6 => (4, 4),
+            _ => (2, 3)
+        };
+        var start1 = variant * 2;
+        var start2 = (start1 + 2) % 8;
+        var end1 = (start1 + steps1) % 8;
+        var end2 = (start2 + steps2) % 8;
+        string[] directions = ["north", "northeast", "east", "southeast",
+            "south", "southwest", "west", "northwest"];
+        var prompt = $"On a compass, adjacent named directions are one eighth of a full turn apart. Angle A has two arms from P pointing {directions[start1]} and {directions[end1]}; Angle B has two arms from Q pointing {directions[start2]} and {directions[end2]}. Compare the SMALLER openings, ignoring how long the arms are drawn: 1=A larger, 2=B larger, or 3=equal.";
+        var result = steps1 > steps2 ? "A is larger" :
+            steps1 < steps2 ? "B is larger" : "the openings are equal";
+        return Problem("usccss.g4.u07.l06.compare_angle_openings", prompt,
+            $"Count the compass intervals in each smaller opening: A has {steps1} eighth-turn steps, B has {steps2}. Therefore {result}. Arm length cannot change the opening.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("start1", start1), ("end1", end1),
+            ("start2", start2), ("end2", end2),
+            ("steps1", steps1), ("steps2", steps2));
+    }
+
+    private static ExactProblem BuildG4AngleCommonVertexRays(Random random)
+    {
+        // Original 2021 G4 U07:L05 introduces angles as two distinct rays
+        // with a common starting vertex. Source pictures, partner drawings
+        // and the inaccessible publisher Cool-down are teacher-only.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        var (start1, start2, direction1, direction2) = mode switch
+        {
+            0 => (0, 0, 2, 0), // P east and north
+            1 => (1, 1, 1, 4), // Q northeast and south
+            2 => (2, 2, 6, 0), // R west and north
+            3 => (3, 3, 3, 5), // S southeast and southwest
+            4 => (0, 1, 2, 0), // different starting points
+            5 => (1, 2, 1, 4),
+            6 => (2, 3, 6, 0),
+            _ => (3, 0, 3, 5)
+        };
+        string[] pointNames = ["P", "Q", "R", "S"];
+        string[] directions = ["north", "northeast", "east", "southeast",
+            "south", "southwest", "west", "northwest"];
+        var reminder = variant switch
+        {
+            0 => "Treat each arm as a ray continuing indefinitely.",
+            1 => "The apparent length of the drawn arms does not determine the angle.",
+            _ => "Look at the START of each ray, not where its drawing happens to end."
+        };
+        var prompt = $"Ray 1 starts at {pointNames[start1]} and extends {directions[direction1]}. Ray 2 starts at {pointNames[start2]} and extends {directions[direction2]}. Do THESE TWO named rays make an angle with one common starting vertex? Answer 1=yes or 2=no. {reminder}";
+        var solution = start1 == start2
+            ? $"Yes: both rays start at {pointNames[start1]} and head in different directions. That point is the angle vertex."
+            : $"No: the rays start at different points ({pointNames[start1]} and {pointNames[start2]}), so as specified they do not share one starting vertex.";
+        return Problem("usccss.g4.u07.l05.angle_common_vertex_rays", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant), ("start1", start1),
+            ("start2", start2), ("direction1", direction1), ("direction2", direction2));
+    }
+
+    private static ExactProblem BuildG4ParallelIntersectDotGrid(Random random)
+    {
+        // IM 2021 G4 U07:L03: first-party dot-grid support for relationships
+        // between two distinct infinite lines. Original drawing, figure
+        // counting, and student explanations remain teacher-assessed.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        var (r1, c1, r2, c2, r3, c3, r4, c4) = mode switch
+        {
+            0 => (1, 1, 1, 4, 3, 1, 3, 4), // horizontal parallels
+            1 => (1, 1, 4, 1, 1, 3, 4, 3), // vertical parallels
+            2 => (1, 1, 3, 3, 1, 3, 3, 5), // ascending parallels
+            3 => (1, 5, 3, 3, 1, 3, 3, 1), // descending parallels
+            4 => (2, 1, 2, 5, 1, 3, 4, 3), // right-angle crossing
+            5 => (2, 1, 2, 5, 1, 1, 4, 4), // diagonal crosses horizontal
+            6 => (1, 3, 4, 3, 1, 5, 4, 2), // diagonal crosses vertical
+            _ => (1, 1, 4, 4, 1, 4, 4, 1)  // diagonals cross between dots
+        };
+        string[] firstNames = ["h", "m", "p"];
+        string[] secondNames = ["g", "n", "q"];
+        var prompt = $"On a 5 by 5 dot field, line {firstNames[variant]} passes through the dots at row {r1}, column {c1} and row {r2}, column {c2}. Line {secondNames[variant]} passes through row {r3}, column {c3} and row {r4}, column {c4}. Imagine BOTH straight lines extended indefinitely. Are the two different lines 1=parallel (never meet) or 2=intersecting (meet somewhere)? Answer 1 or 2.";
+        var solution = mode < 4
+            ? "The two lines have the same direction and are at different positions, so extending both does not make them meet. They are parallel."
+            : "The two lines have different directions; when extended, they meet at one point, even when that point is between grid dots. They are intersecting.";
+        return Problem("usccss.g4.u07.l03.dot_grid_parallel_intersect", prompt, solution,
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant),
+            ("r1", r1), ("c1", c1), ("r2", r2), ("c2", c2),
+            ("r3", r3), ("c3", c3), ("r4", r4), ("c4", c4));
+    }
+
+    private static ExactProblem BuildG4PointLineRayCardAndNumberTalk(Random random)
+    {
+        // IM 2021 G4 U07:L02: four geometric figure categories and the four
+        // original mental subtraction expressions. Original physical card sort
+        // and student drawings remain teacher reviewed, not auto-graded.
+        var mode = random.Next(0, 8);
+        var variant = random.Next(0, 3);
+        string[] letters = ["A and B", "P and Q", "R and S"];
+        var names = letters[variant];
+        var figure = mode switch
+        {
+            0 => $"A single marked dot labelled {names.Split(' ')[0]}.",
+            1 => $"A straight geometric path passing through {names} and extending indefinitely in BOTH directions.",
+            2 => $"A straight path that starts at the first of {names} and extends through the second in ONE direction only.",
+            _ => $"A finite straight part with exactly two endpoints labelled {names}."
+        };
+        var first = mode switch
+        {
+            4 => 90,
+            5 or 6 => 270,
+            7 => 360,
+            _ => 0
+        };
+        var second = mode switch
+        {
+            4 or 5 => 45,
+            6 or 7 => 135,
+            _ => 0
+        };
+        var prompt = mode < 4
+            ? $"Read this first-party geometry card: {figure} Which type is described? Answer 1=point, 2=line, 3=ray or 4=line segment."
+            : $"Mental number talk: calculate {first} − {second}. {(variant == 0 ? "Use a known benchmark." : variant == 1 ? "Explain the place-value decomposition." : "Check by adding your difference back.")}";
+        var solution = mode < 4
+            ? "Use dimension and endpoints: a point is a location, a line extends both ways, a ray starts at one point and continues one way, and a segment has two endpoints."
+            : $"Use a subtraction strategy; check {first - second} + {second} = {first}.";
+        return Problem("usccss.g4.u07.l02.geometry_cards_number_talk", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("variant", variant), ("first", first), ("second", second));
+    }
+
+    private static ExactProblem BuildG4GeometricDescriptionPrecision(Random random)
+    {
+        // Source IM 2021 G4 U07:L01: students compare how precisely partners
+        // describe locations and straight marks, not formal line/segment definitions.
+        // Independent first-party examples, never copies of protected figure cards.
+        var mode = random.Next(0, 6);
+        var preciseFirst = random.Next(0, 2);
+        var descriptions = mode switch
+        {
+            0 => ("Put a line somewhere near the top.",
+                  "Draw a horizontal straight stroke through the two marked top-row dots."),
+            1 => ("Draw a big shape here.",
+                  "Join the three dots labelled A, B and C to draw a triangle."),
+            2 => ("Put that mark over there.",
+                  "Mark point P where the vertical stroke crosses the horizontal stroke."),
+            3 => ("Draw something diagonal.",
+                  "Draw a straight stroke through dots P and R, extending it toward both paper edges."),
+            4 => ("Make a quadrilateral.",
+                  "Connect the four corner dots and describe which strokes are horizontal and vertical."),
+            _ => ("Add a dot there.",
+                  "Mark a dot halfway between labelled points A and B on the top straight stroke.")
+        };
+        var first = preciseFirst == 1 ? descriptions.Item2 : descriptions.Item1;
+        var second = preciseFirst == 1 ? descriptions.Item1 : descriptions.Item2;
+        return Problem("usccss.g4.u07.l01.geometric_description_precision",
+            $"A drawing partner cannot see your card. Which instruction is clearer about position or direction? 1) {first} 2) {second}. Answer 1 or 2.",
+            "Precise directions name points, relative locations, orientation, or endpoints; then compare the partner's drawing. This checks clarity, not the original open drawing.",
+            AssessmentItemType.Numeric,
+            ("caseType", mode), ("preciseFirst", preciseFirst));
+    }
+
+    private static ExactProblem BuildG4FlowerPatterns(Random random)
+    {
+        // IM K-5 2021 G4 U06:L25 optional source: 12-flower repeating
+        // cycles, 25 of each garland, 155/16, and two-worker timing.
+        // Original physical flower construction is teacher-led.
+        var mode = random.Next(0, 6);
+        var garlands = random.Next(10, 41);
+        var made = random.Next(120, 251);
+        const int perGarland = 16, priyaBig = 6, priyaSmall = 6;
+        const int jadaBig = 4, jadaSmall = 8, cut = 1, finish = 2, workers = 2;
+        var question = mode switch
+        {
+            0 => $"Each 12-flower Priya garland repeats 2 big and 2 small, and each 12-flower Jada garland repeats 1 big and 2 small. If they make {garlands} garlands of each type, how many big flowers altogether?",
+            1 => $"Each 12-flower Priya garland repeats 2 big and 2 small, and each 12-flower Jada garland repeats 1 big and 2 small. If they make {garlands} garlands of each type, how many small flowers altogether?",
+            2 => $"Two students have {made} paper flowers. Each complete garland requires {perGarland} flowers. How many complete garlands can they make?",
+            3 => $"Two students have {made} paper flowers. Each complete garland requires {perGarland} flowers. How many flowers will be left after making as many complete garlands as possible?",
+            4 => $"Making each paper flower needs {cut} minute to cut strips and {finish} minutes to finish. For {made} flowers, how many total worker-minutes of effort are needed?",
+            _ => $"Making each of {made} paper flowers takes {cut} minute to cut and {finish} minutes to finish. Two students work simultaneously and split the flower count as equally as possible, completing their own flowers one at a time. How many minutes until all are finished?"
+        };
+        var solution = mode switch
+        {
+            0 => $"Priya uses {priyaBig} big and Jada {jadaBig} big per garland: multiply {garlands} by their combined total.",
+            1 => $"Priya uses {priyaSmall} small and Jada {jadaSmall} small per garland: multiply {garlands} by their combined total.",
+            2 => $"Divide {made} by {perGarland} and use only whole garlands.",
+            3 => $"Divide {made} by {perGarland}; the remainder cannot form a whole garland.",
+            4 => $"Each flower uses {cut}+{finish} minutes. Multiply by {made} flowers for total worker-minutes.",
+            _ => $"Divide {made} flowers between two students as evenly as possible. The larger share takes {((made + 1) / 2)} flowers times {cut + finish} minutes; both work at once."
+        };
+        return Problem("usccss.g4.u06.l25.flower_garland_patterns", question, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("garlandsEach", garlands), ("flowersMade", made),
+            ("flowersPerGarland", perGarland), ("priyaBig", priyaBig),
+            ("priyaSmall", priyaSmall), ("jadaBig", jadaBig),
+            ("jadaSmall", jadaSmall), ("cutMinutes", cut),
+            ("finishMinutes", finish), ("workers", workers));
+    }
+
+    private static ExactProblem BuildG4LanguageComparisons(Random random)
+    {
+        // IM K-5 2021 G4 U06:L24: mathematical structure of original
+        // Census tasks; independently generated first-party data, not publisher figures.
+        var mode = random.Next(0, 6);
+        var navajo = random.Next(135000, 190001);
+        var yupik = random.Next(17500, 23501);
+        var dakota = random.Next(15000, 19001);
+        var apache = random.Next(11000, 16001);
+        var keres = random.Next(11000, 14001);
+        var cherokee = random.Next(9000, 13001);
+        var ojibwa = random.Next(8000, 11001);
+        var choctaw = random.Next(8000, 11001);
+        var zuni = random.Next(8000, 11001);
+        var pima = random.Next(6000, 8001);
+        var english = random.Next(1100000, 1350001);
+        var spanish = random.Next(110000, 150001);
+        var indo = random.Next(5000, 9001);
+        var asian = random.Next(200, 601);
+        var chicagoSpanish = random.Next(395000, 460001);
+        var chicagoIndo = random.Next(20000, 32001);
+        var nine = yupik + dakota + apache + keres + cherokee + ojibwa + choctaw + zuni + pima;
+        var prompt = mode switch
+        {
+            0 => $"In a sample language table, Navajo has {navajo} speakers and Yupik has {yupik}. How many more speak Navajo?",
+            1 => $"A sample table lists Navajo {navajo}, Apache {apache} and Cherokee {cherokee} speakers. How many speak these three languages altogether?",
+            2 => $"A sample language table has Navajo {navajo} speakers. The other nine counts are {yupik}, {dakota}, {apache}, {keres}, {cherokee}, {ojibwa}, {choctaw}, {zuni}, and {pima}. How many more speak Navajo than all nine combined?",
+            3 => $"In a sample city table, {english} speak English only, while {spanish} speak Spanish, {indo} other Indo-European, and {asian} Asian languages. By how many does the English-only count exceed the other categories combined?",
+            4 => $"In two sample cities, Chicago has {chicagoSpanish} Spanish and {chicagoIndo} other Indo-European speakers, and Philadelphia has {spanish} and {indo} respectively. How many more people speak those two language categories in Chicago?",
+            _ => $"In a sample language table, {navajo} speak Navajo and {yupik} speak Yupik. About how many times as many speak Navajo? Round the ratio to the nearest whole number."
+        };
+        var solution = mode switch
+        {
+            0 => "Subtract Yupik speakers from Navajo speakers and check by addition.",
+            1 => "Add Navajo, Apache and Cherokee counts, grouping to check the total.",
+            2 => $"Sum all nine other categories to {nine}, then subtract from the Navajo count. Check by addition.",
+            3 => "Add all three non-English categories, then subtract from the English-only count.",
+            4 => "Add the two Chicago language groups, add the two Philadelphia groups, then subtract. Check with a rounded estimate.",
+            _ => "Divide the larger count by the smaller and round to the nearest whole number; compare nearby multiples for reasonableness."
+        };
+        return Problem("usccss.g4.u06.l24.language_population_comparisons", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("navajo", navajo), ("yupik", yupik),
+            ("dakota", dakota), ("apache", apache), ("keres", keres),
+            ("cherokee", cherokee), ("ojibwa", ojibwa), ("choctaw", choctaw),
+            ("zuni", zuni), ("pima", pima),
+            ("philadelphiaEnglish", english), ("philadelphiaSpanish", spanish),
+            ("philadelphiaIndo", indo), ("philadelphiaAsian", asian),
+            ("chicagoSpanish", chicagoSpanish), ("chicagoIndo", chicagoIndo));
+    }
+
+    private static ExactProblem BuildG4FourOperations(Random random)
+    {
+        // IM K-5 2021 Grade 4 U06:L23: travel segments, round trips,
+        // music-distance inversion, miles comparison, and weekly step table.
+        // Reuse the existing exact whole-number kernel; no new engine.
+        var mode = random.Next(0, 6);
+        var a = random.Next(100, 201);
+        var b = random.Next(100, 201);
+        var c = random.Next(100, 201);
+        var d = random.Next(100, 201);
+        const int longTrips = 5, musicTrips = 3, feetPerMile = 5280, days = 7, target = 120000;
+        var musicTotal = random.Next(200, 401) * musicTrips * 2;
+        var week1 = random.Next(3800, 4901) * days;
+        var week2 = week1 - random.Next(2000, 6001);
+        var week3 = random.Next(32000, 38001);
+        var oneWay = a + b + c + d;
+        var roundTrip = 2 * oneWay;
+        var prompt = mode switch
+        {
+            0 => $"A pupil travels {a}, {b}, {c}, and {d} feet between classrooms, and returns along the same route. How many feet is one whole round trip?",
+            1 => $"A pupil makes {musicTrips} round trips between homeroom and music. Altogether those trips cover {musicTotal} feet. How far away is music one way?",
+            2 => $"A pupil makes {longTrips} classroom round trips on a route with one-way segments {a}, {b}, {c}, and {d} feet, and also walks {musicTotal} feet to music in the week. How many feet short of two miles is the weekly total? (1 mile = {feetPerMile} feet.)",
+            3 => $"A pupil takes {week1} steps in one week, the same number each of {days} days. How many steps per day?",
+            4 => $"A fitness challenge has {week1} steps in week one and {week2} in week two. How many fewer steps were taken in week two?",
+            _ => $"A four-week challenge goal is {target} steps. The first three weeks are {week1}, {week2}, and {week3} steps. How many more steps are needed in week four?"
+        };
+        var solution = mode switch
+        {
+            0 => $"Add segments: {oneWay} feet one way. Double to include returning: {roundTrip} feet.",
+            1 => $"There are {2 * musicTrips} one-way journeys. Divide {musicTotal} by {2 * musicTrips}.",
+            2 => $"Double the {oneWay}-foot route, multiply by {longTrips}, add {musicTotal} music feet, then subtract from {2 * feetPerMile}.",
+            3 => $"Share {week1} steps equally among {days} days, then check by multiplication.",
+            4 => $"Subtract the week-two total {week2} from week one {week1}; check by adding the difference back.",
+            _ => $"Add the three known weeks ({week1} + {week2} + {week3}), subtract from {target}, then check the four-week total."
+        };
+        return Problem("usccss.g4.u06.l23.four_operation_contexts", prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", mode), ("segmentA", a), ("segmentB", b),
+            ("segmentC", c), ("segmentD", d), ("longTrips", longTrips),
+            ("musicTrips", musicTrips), ("musicTotalFeet", musicTotal),
+            ("feetPerMile", feetPerMile), ("days", days), ("week1", week1),
+            ("week2", week2), ("week3", week3), ("stepTarget", target));
+    }
+
+    private static ExactProblem BuildG4MultiStepContext(Random random)
+    {
+        // 2021 IM G4 U06:L21. Reuse multiplication and exact division with
+        // three context-dependent questions: budget, days, and concessions.
+        var caseType = random.Next(0, 3);
+        var count = caseType == 0 ? random.Next(30, 66) : random.Next(160, 391);
+        var ticketPrice = caseType == 0 ? random.Next(10, 24) : random.Next(7, 14);
+        var revenue = count * ticketPrice;
+        var budget = revenue + random.Next(20, 201);
+        const int days = 2;
+        var drink = random.Next(5, 13);
+        var popcorn = random.Next(2, 10);
+        var prompt = caseType switch
+        {
+            0 => "A museum trip has " + count + " students and tickets cost $" + ticketPrice + " each. Teachers have $" + budget + ". How many dollars remain after buying all tickets?",
+            1 => "A movie theater earned $" + revenue + " from $" + ticketPrice + " tickets each day, for two equal-sales days. How many tickets were sold over both days?",
+            _ => "A movie theater earned $" + revenue + " from $" + ticketPrice + " tickets each day, for two equal-sales days. Every ticket holder buys a $" + drink + " drink and $" + popcorn + " popcorn. What is the total in dollars from these extra purchases?"
+        };
+        var solution = caseType switch
+        {
+            0 => "Ticket cost = " + count + " × " + ticketPrice + " = " + revenue + "; subtract from $" + budget + ".",
+            1 => "Divide $" + revenue + " by $" + ticketPrice + " to find tickets per day, then double.",
+            _ => "Divide daily revenue by ticket price, double attendance, then multiply by (" + drink + " + " + popcorn + ")."
+        };
+        return Problem("usccss.g4.u06.l21.multistep_contexts",
+            prompt, solution, AssessmentItemType.Numeric,
+            ("caseType", caseType), ("count", count), ("ticketPrice", ticketPrice),
+            ("budget", budget), ("days", days), ("drinkPrice", drink),
+            ("popcornPrice", popcorn), ("dailyRevenue", revenue));
+    }
+
+    private static ExactProblem BuildG4PartialQuotients(Random random)
+    {
+        // IM K-5 G4 2021 U06:L18: use equations and subtraction for partial quotients.
+        var divisor = random.Next(2, 10);
+        var lower = Math.Max(20, (100 + divisor - 1) / divisor);
+        var upper = Math.Min(125, 999 / divisor);
+        var quotient = random.Next(lower, upper + 1);
+        var tens = quotient / 10 * 10;
+        var ones = quotient % 10;
+        var dividend = divisor * quotient;
+        return Problem(
+            "usccss.g4.u06.l18.partial_quotients_recording",
+            "Use partial quotients to divide " + dividend + " by " + divisor +
+                ". Record two partial quotients in equations or a subtraction diagram.",
+            "Decompose " + dividend + " into " + (divisor * tens) + " + " + (divisor * ones) +
+                ". Divide each part by " + divisor + " to get " + tens + " and " + ones +
+                "; add partial quotients to get " + quotient + ". Check by multiplication.",
+            AssessmentItemType.Numeric,
+            ("dividend", dividend),
+            ("divisor", divisor),
+            ("tensQuotient", tens),
+            ("onesQuotient", ones));
+    }
+
+    private static ExactProblem BuildG4BaseTenDivision(Random random)
+    {
+        var d=random.Next(2,10);
+        var q=random.Next(12,Math.Min(120,999/d)+1);
+        var n=d*q;
+        var tens=n/10%10+10*((n/100)%d);
+        var ones=n%10+10*(tens%d);
+        return Problem("usccss.g4.u06.l16.base_ten_equal_groups",
+            "Share "+n+" using base-ten blocks into "+d+" equal groups.",
+            "Exchange hundreds to tens and tens to ones. Each group receives "+q+". Check multiplication.",
+            AssessmentItemType.Numeric,("dividend",n),("divisor",d),
+            ("tensAfterTrade",tens),("onesAfterTrade",ones));
+    }
+
+    private static ExactProblem BuildG4MuralMissingSide(Random random, bool withRemainder)
+    {
+        // 2021 IM G4 U06:L15: first-party partial quotient and mural-remainder tasks.
+        var width = random.Next(2, 10);
+        var minLength = Math.Max(20, (100 + width - 1) / width);
+        var maxLength = Math.Min(110, (999 - (width - 1)) / width);
+        var length = random.Next(minLength, maxLength + 1);
+        var leftover = withRemainder ? random.Next(1, width) : 0;
+        var area = width * length + leftover;
+        var tens = (length / 10) * 10;
+        var ones = length - tens;
+        var family = withRemainder ? "usccss.g4.u06.l15.mural_complete_columns" : "usccss.g4.u06.l15.area_partial_quotients";
+        var prompt = withRemainder
+            ? $"A student has {area} square tiles for a complete rectangular mural {width} tiles wide. What is the greatest whole-number length in tiles?"
+            : $"A rectangular mural has area {area} square tiles and is {width} tiles wide. Find its length using partial quotients.";
+        var solution = $"Use partial quotients: {width} × {tens} = {width * tens} and " +
+            $"{width} × {ones} = {width * ones}. The full rectangle has " +
+            $"{width} × {length} = {width * length} tiles. " +
+            (withRemainder ? $"{leftover} tile(s) remain; they cannot form a full column." : "No tiles remain; check by multiplication.");
+        return Problem(family, prompt, solution, AssessmentItemType.Numeric,
+            ("knownSide", width), ("area", area), ("leftover", leftover));
+    }
+
     private static ExactProblem BuildRectangleMissingSide(Random random, int scale)
     {
         var knownSide = random.Next(2, 8 + scale * 2);
@@ -3472,6 +4901,20 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG1Unit2NextFiveQuestions.Solve(problem.Family,p);
         if (UsCcssG1Unit2Part2Questions.Supports(problem.Family))
             return UsCcssG1Unit2Part2Questions.Solve(problem.Family,p);
+        if (UsCcssG4Unit2ThirdLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit2ThirdLessonQuestions.Solve(problem.Family,p);
+        if (UsCcssG4Unit1SeventhLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit1SeventhLessonQuestions.Solve(problem.Family,p);
+        if (UsCcssG4Unit1SixthLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit1SixthLessonQuestions.Solve(problem.Family,p);
+        if (UsCcssG4Unit1FifthLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit1FifthLessonQuestions.Solve(problem.Family,p);
+        if (UsCcssG4Unit1ThirdLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit1ThirdLessonQuestions.Solve(problem.Family,p);
+        if (UsCcssG4Unit1SecondLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit1SecondLessonQuestions.Solve(problem.Family,p);
+        if (UsCcssG4Unit1FirstLessonQuestions.Supports(problem.Family))
+            return UsCcssG4Unit1FirstLessonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(problem.Family))
             return UsCcssG2Unit1FirstLessonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1Lesson2And3Questions.Supports(problem.Family))
@@ -3743,8 +5186,31 @@ public sealed class ExactSkillContractQuestionEngine
                 (p["left"] * p["right"]).ToString(CultureInfo.InvariantCulture),
 
             "number.whole.divide.with_remainder.build" or
-            "number.whole.divide.with_remainder.apply" =>
+            "number.whole.divide.with_remainder.apply" or
+            "usccss.g4.u06.l19.partial_quotients_remainders" =>
                 $"{(p["dividend"] / p["divisor"]).ToString(CultureInfo.InvariantCulture)} r {(p["dividend"] % p["divisor"]).ToString(CultureInfo.InvariantCulture)}",
+            "usccss.g4.u06.l22.convert_l_shaped_area_perimeter" => (p["caseType"] switch { 0 => p["sheetWidthInches"] * p["sheetHeightInches"] - (p["bannerLengthFeet"] * 12 * p["bannerHeightInches"]), 1 => 2 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 2 => 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]), 3 => (p["leftWidthFeet"] + 3 * p["rightWidthYards"]) * (3 * p["lowerHeightYards"]) + p["leftWidthFeet"] * p["upperRiseFeet"], _ => p["suppliedInches"] - 24 * (p["leftWidthFeet"] + 3 * p["rightWidthYards"] + 3 * p["lowerHeightYards"] + p["upperRiseFeet"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u09.l05.two_digit_partial_products" => p["product"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u08.l07.polygon_perimeter_sum" => p["perimeter"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u08.l04.symmetry_axis_counts" => p["axisCount"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l13.additive_angle_part" => p["unknownDegrees"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l12.classify_angles_by_degree_bounds" => p["classCode"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l10.perpendicular_right_angle_judgment" => p["perpendicularAnswer"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l09.protractor_dual_scale_reading" => p["targetDegrees"].ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l08.full_turn_degree_benchmarks" => (p["questionKind"] == 0 ? p["numerator"] : p["questionKind"] == 1 ? p["denominator"] : 360 - p["degrees"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l07.clock_hour_angle_turn_compare" => (p["questionKind"] == 0 ? (p["stepA"] > p["stepB"] ? 1 : p["stepA"] < p["stepB"] ? 2 : 3) : Math.Abs(p["stepA"] - p["stepB"])).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l06.compare_angle_openings" => (p["steps1"] > p["steps2"] ? 1 : p["steps1"] < p["steps2"] ? 2 : 3).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l05.angle_common_vertex_rays" => (p["start1"] == p["start2"] ? 1 : 2).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l03.dot_grid_parallel_intersect" => (p["caseType"] < 4 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l02.geometry_cards_number_talk" => (p["caseType"] < 4
+                ? p["caseType"] + 1
+                : p["first"] - p["second"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u07.l01.geometric_description_precision" => (p["preciseFirst"] == 1 ? 1 : 2).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l25.flower_garland_patterns" => (p["caseType"] switch { 0 => p["garlandsEach"] * (p["priyaBig"] + p["jadaBig"]), 1 => p["garlandsEach"] * (p["priyaSmall"] + p["jadaSmall"]), 2 => p["flowersMade"] / p["flowersPerGarland"], 3 => p["flowersMade"] % p["flowersPerGarland"], 4 => p["flowersMade"] * (p["cutMinutes"] + p["finishMinutes"]), _ => ((p["flowersMade"] + p["workers"] - 1) / p["workers"]) * (p["cutMinutes"] + p["finishMinutes"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l24.language_population_comparisons" => (p["caseType"] switch { 0 => p["navajo"] - p["yupik"], 1 => p["navajo"] + p["apache"] + p["cherokee"], 2 => p["navajo"] - (p["yupik"] + p["dakota"] + p["apache"] + p["keres"] + p["cherokee"] + p["ojibwa"] + p["choctaw"] + p["zuni"] + p["pima"]), 3 => p["philadelphiaEnglish"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"] - p["philadelphiaAsian"], 4 => p["chicagoSpanish"] + p["chicagoIndo"] - p["philadelphiaSpanish"] - p["philadelphiaIndo"], _ => (2 * p["navajo"] + p["yupik"]) / (2 * p["yupik"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l23.four_operation_contexts" => (p["caseType"] switch { 0 => 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]), 1 => p["musicTotalFeet"] / (2 * p["musicTrips"]), 2 => 2 * p["feetPerMile"] - (p["longTrips"] * 2 * (p["segmentA"] + p["segmentB"] + p["segmentC"] + p["segmentD"]) + p["musicTotalFeet"]), 3 => p["week1"] / p["days"], 4 => p["week1"] - p["week2"], _ => p["stepTarget"] - p["week1"] - p["week2"] - p["week3"] }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l21.multistep_contexts" => (p["caseType"] switch { 0 => p["budget"] - p["dailyRevenue"], 1 => p["count"] * p["days"], _ => p["count"] * p["days"] * (p["drinkPrice"] + p["popcornPrice"]) }).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l20.contextual_remainder_decisions" => (p["caseType"] switch { 0 => p["dividend"] / p["divisor"] + 1, 1 => p["dividend"] / p["divisor"], 2 => p["dividend"] % p["divisor"], 3 => (p["dividend"] - p["shortfall"]) / p["divisor"], _ => p["dividend"] / p["divisor"] }).ToString(CultureInfo.InvariantCulture),
 
             "fractions.of_quantity.build" or
             "fractions.of_quantity.apply" =>
@@ -3823,8 +5289,12 @@ public sealed class ExactSkillContractQuestionEngine
             "geometry.perimeter_area.triangle_area" =>
                 (p["base"] * p["height"] / 2).ToString(CultureInfo.InvariantCulture),
 
-            "geometry.perimeter_area.rectangle_missing_side" =>
+            "geometry.perimeter_area.rectangle_missing_side" or
+            "usccss.g4.u06.l15.area_partial_quotients" or
+            "usccss.g4.u06.l15.mural_complete_columns" =>
                 (p["area"] / p["knownSide"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l16.base_ten_equal_groups" => (p["dividend"]/p["divisor"]).ToString(CultureInfo.InvariantCulture),
+            "usccss.g4.u06.l18.partial_quotients_recording" => (p["tensQuotient"] + p["onesQuotient"]).ToString(CultureInfo.InvariantCulture),
 
             "geometry.polygons.interior_angle_sum" =>
                 ((p["sides"] - 2) * 180).ToString(CultureInfo.InvariantCulture),

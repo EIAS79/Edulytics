@@ -1,0 +1,13 @@
+# Grade 4 lesson 40 — PED:US-CCSS-MATH:G4:U03:L15 original 2021 source evidence
+Source preparation: https://im.kendallhunt.com/k5/teachers/grade-4/unit-3/lesson-15/preparation.html; SHA256 c843955b812f522e3c86d177da5c44b6be9b012a1f6360c53fac30864760c9cd.
+Source teacher lesson: https://im.kendallhunt.com/k5/teachers/grade-4/unit-3/lesson-15/lesson.html; SHA256 8ce0d026cd91c628f919dd4213b37d94910a75cc0331d059bf5d82bb379a22a7.
+Source Student Task Statements PDF: https://cms-assets.illustrativemathematics.org/scco3tmf0bhgtucypbl0x64ygj03; SHA256 3235c5b28ac296104a7ed68f5236dae88af1a8cf249c7dcc98308d4030a2ca1d. Source file binary downloaded and structural PDF signature/EOF checked, **visual artwork, figures and full publisher task parity NOT individually certified**.
+Original teacher activity sequence:
+- Warm-up: Which One Doesn't Belong: Halves, Fourths, Sixths, and Eights (10 minutes) | Source math expressions: \(\displaystyle{1\frac{1}{2}}\), \(\displaystyle{\frac{4}{4} + \frac{2}{4}}\), \(\displaystyle{\frac{12}{8}}\), \(\displaystyle{\frac{4}{6} }\)
+- Activity 1: All the Way to the Top (15 minutes) | Source math expressions: \(21\frac{1}{4}\), \(32\frac{3}{8}\), \(55\frac{1}{2}\), They are playing in a room that is 109 inches tall. Priya says that if they combine their towers to make a super tall tower, it would be too tall for the room and they’ll have to remove one brick.
+- Activity 2: Stacks of Blocks (20 minutes) | Source math expressions: \(\frac{1}{2}\), \(\frac{1}{3}\), \(\frac{1}{6}\), Andre stacks one block of each size. Will that stack be more than 1 foot tall? Explain or show how you know., \(1\frac{1}{2}\)
+- Cool-down: Which Stack is Taller? (5 minutes) | Source math expressions: visual/oral/written work
+Stage A: original teacher text plus source PDF binary verified by hashes; actual teacher source task fragments included above; graphics not independently approved.
+Stage B: five prior generic prose fields revised, Edulytics-authored explanation and worked model with source attribution, first-party Rich V2 coherent with original sequence; source PDF artwork not copied.
+Stage C: REUSE_PREEXISTING_EXACT_fractions.add_subtract.common_denominator.build_AS_PARTIAL_NUMERIC_PRACTICE; ORIGINAL_OPEN_TASKS_TEACHER_REVIEWED; exact supplementary Practice is not claimed as grading all original tasks. Original publisher Cool-down access not claimed.
+All source content and math examples are subject to author review. Official standard mapping from existing blueprint unchanged. Stage D NOT RUN; academic sign-off NOT GRANTED; no main merge/production mutation.

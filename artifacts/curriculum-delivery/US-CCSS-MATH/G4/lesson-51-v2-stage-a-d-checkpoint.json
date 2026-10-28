@@ -1,0 +1,44 @@
+{
+  "ordinal": 51,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L06",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "2e87620fef9bfe0939de2994a156535811ec8fe039b488c45db828a007fde4b4",
+    "teacher": "b0ae0592639ed41f286beba914e3926f9a807a00833fcd486a7921da2f586560",
+    "student": "32c44502d852ee9edaab49c79ddedc9e860ee7f0b5aff3aeb87f2efa18a8a89a"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "removed irrelevant generic concept",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "How many 1,000-blocks represent 20,000?",
+    "teacherAnswer": "20 blocks"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:07:31+01:00",
+  "closeAtLocal": "2026-10-26T23:07:31+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-51-local-source-guard.test.cjs"
+  }
+}

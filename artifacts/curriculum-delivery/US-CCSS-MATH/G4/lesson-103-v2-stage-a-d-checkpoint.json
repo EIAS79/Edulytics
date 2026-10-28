@@ -1,0 +1,68 @@
+{
+  "ordinal": 103,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L17",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_PREPARATION_AND_TEACHER_STUDENT_FACING_DIAGRAMS_PRIYA_NOAH_64_117_235_432_REVIEWED",
+    "B": "REUSE_CORRECT_GOAL_AND_REPAIR_THREE_MATH_MODELS_PLUS_THREE_FIRST_PARTY_DIAGRAMS_AND_DISTINCT_COOLDOWN",
+    "C": "REUSED_2021_U06_L16_EXACT_BASE_TEN_FAMILY_ROUTED; 3_OF_3_FOCUSED_TESTS_GREEN_ON_3E53AC0; TEACHER_REVIEW_FOR_DIAGRAMS_AND_ORAL_EXPLANATION",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "21d56f216cf2e55a287db6b6627e3eaa6a35230d45d82a94a5257c8e21d60907",
+    "teacher": "eeb11886c911a838673ca7b9d84db4f4c175157e4976a05eb51dff5d587436b7"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Using base-ten diagrams, explain how to share 156 equally among four groups, showing every trade.",
+    "teacherAnswer": "39 each. Exchange the hundred into ten tens, combine five tens to get fifteen tens. Share twelve tens among four groups, leaving three tens. Exchange to thirty ones, add six ones, then share thirty-six ones, nine each. Each group 3 tens + 9 ones =39."
+  },
+  "sourceVisualParityProven": false,
+  "originalPublisherCooldownVerified": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "lessonCode": "PED:US-CCSS-MATH:G4:U06:L17",
+    "sourceTeacherSha256": "eeb11886c911a838673ca7b9d84db4f4c175157e4976a05eb51dff5d587436b7",
+    "sourcePrepSha256": "21d56f216cf2e55a287db6b6627e3eaa6a35230d45d82a94a5257c8e21d60907",
+    "originalStudentAndTeacherTasksCompared": true,
+    "originalTaskMath": [
+      "64÷4=16",
+      "117÷3=39",
+      "235÷5=47",
+      "432÷6=72"
+    ],
+    "sourceMediaReuse": "First-party place-value models; original protected publisher images not copied",
+    "sourceCoolDown": "Edulytics independent 156÷4=39",
+    "originalPublisherAssessmentVerified": false,
+    "originalPublisherAssessmentNotReproduced": true,
+    "teacherOnlyActivitiesRubricIndependentlyReviewed": true,
+    "teacherEvidenceIsRequired": true,
+    "sourceOriginalImagePixelsCertified": false,
+    "firstPartyVisualSupportReviewed": true,
+    "sourceSpecificAllowedFamilies": [
+      "usccss.g4.u06.l16.base_ten_equal_groups"
+    ],
+    "sourceAlignedFamilyReuse": true,
+    "questionFamilyInteraction": "IntegerKeypad with visual representation",
+    "focusedTestUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40536141050",
+    "focusedTestCandidateSha": "3e53ac0ef7bee08c954b71a168c05a2a96696e86",
+    "focusedTestsPassed": 3,
+    "focusedTestsFailed": 0,
+    "lessonRuntimeVisualMaterialization": true,
+    "generatorAndIndependentVerifierFocused": true,
+    "wrongAndMalformedRejected": true,
+    "studentAttemptPersistenceStageD": "NOT_RUN",
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "releaseApproved": false
+  },
+  "stageDRisks": [
+    "Original publisher image pixels and protected assessment not certified; Edulytics first-party visuals/cool-down used.",
+    "Authenticated per-student score persistence, full grade registry validity, academic final approval and release remain Stage D."
+  ]
+}

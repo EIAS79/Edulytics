@@ -1,0 +1,175 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.7.7-source-abc-2021-v2-clock-turns",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U07:L07",
+      "CultureCode": "en",
+      "Title": "The Size of Angles on a Clock",
+      "ExplanationParagraphs": [
+        "Source goal: describe the size of an angle as the turning of one ray to another. IM/Kendall Hunt 2021 Grade 4 Unit 7 Lesson 7 models this using clock hands and the centre as the shared vertex. The objective is reasoning about turns, not using longer drawn arms or blindly measuring a printed clock.",
+        "Warm-up (10 minutes) — Notice and Wonder: Two Sets of Angles. Use the legally available original source figures or independently authored versions; inspect each angle opening and communicate observations. No original pixel-accurate artwork is claimed.",
+        "Activity 1 (15 minutes) — Draw Angles Andre's Way. Andre says to imagine both clock hands at 12, then turn the minute hand to point to 3. One hand stays at 12; one turns clockwise a QUARTER of a full turn. Draw two rays sharing the clock centre, one to 12 and one to 3. Partner checks the construction and explanation.",
+        "Activity 2 (20 minutes) — Compare Angles on the Clock. The original Student Facing includes drawn clock-hand angle pairs such as 5:00. The teacher must inspect each original source pair and the child's diagrams. At exact hours, the minute hand points at 12, so the smaller opening to hour h spans min(h,12−h) hour-mark steps. This numerical formula is optional internal authoring; learners can reason by counting 1/12-turn spaces.",
+        "For exact-hour worked examples, 5:00 is five hour-mark steps (150°) and 6:00 is six (180°); at 8:00 the smaller angle is four steps (120°) between the 8 and 12 hands. These angles are first-party clock models and do not assert that publisher source image measurements were read.",
+        "First-party Edulytics Cool-down (5 minutes, not the protected original Which Angle Is Larger? By How Much?): compare the smaller openings at exactly 5:00 and exactly 8:00; explain which is larger and by how many hour-mark intervals. 5:00 is larger by one interval, or 30°, if degrees are known.",
+        "Digital Practice: eight first-party pairs of EXACT-hour clock faces. Question kind 0 selects A larger/B larger/equal, and kind 1 asks the nonnegative difference in one-hour-mark intervals. Do not apply this exact-hour simplification to half-past times or imply that student source clock drawings/partner work are automatically assessed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "A clock's centre as vertex",
+          "Definition": "The hands of an analog clock can represent two rays sharing the centre as their vertex.",
+          "Rule": "At an exact hour, the minute hand is precisely at 12; the hour hand is precisely on that hour mark.",
+          "Example": "Andre's 12-to-3 hand turn forms a quarter-turn angle."
+        },
+        {
+          "Title": "Count smaller clock turns",
+          "Definition": "A full clock has 12 equal hour-mark gaps, each a twelfth of one full turn; the smaller opening at a whole hour covers at most 6 such gaps.",
+          "Rule": "Between 12 and exact hour h, smaller gap count is min(h, 12−h); stop at six gaps for half a turn.",
+          "Example": "At exactly 5:00, gap count is 5; at exactly 8:00, smaller gap count is 4."
+        },
+        {
+          "Title": "Compare by amount of turn",
+          "Definition": "Two clock-hand angles can be compared by how many equal intervals separate their arms.",
+          "Rule": "Count equal gaps and subtract gap counts to say how much larger. Ignore hand length.",
+          "Example": "5:00 is larger than 8:00 by one 1/12-turn interval."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Andre's drawing from 12 to 3",
+          "Question": "Both hands start pointing to 12. The minute hand turns clockwise until it points at 3. Draw the angle and describe the turn.",
+          "Method": "Mark clock centre P, then draw rays from P toward 12 and 3.",
+          "Steps": [
+            "Both rays start at the clock centre P.",
+            "The movement from 12 through 1, 2, to 3 spans three equal hour marks.",
+            "Three of twelve equal turns is a quarter of one full turn."
+          ],
+          "Answer": "A quarter-turn angle at P, represented by rays pointing to 12 and 3.",
+          "Check": "Original student sketch and oral explanation must be teacher-reviewed."
+        },
+        {
+          "Title": "Exact-hour 5:00 angle",
+          "Question": "At exactly 5:00, what is the smaller angle between the hour and minute hands in hour-mark intervals?",
+          "Method": "Minute hand at 12, hour hand at 5, and count the shorter path.",
+          "Steps": [
+            "From 12 clockwise to 5 spans five hour gaps.",
+            "Counterclockwise spans seven, so the smaller is five.",
+            "The five hour gaps equal 5/12 full turn (150°)."
+          ],
+          "Answer": "Five intervals (150°).",
+          "Check": "150° is valid only for exactly 5:00; do not use for 5:30."
+        },
+        {
+          "Title": "Exact-hour 8:00 angle",
+          "Question": "At exactly 8:00, what is the smaller angle between the hands?",
+          "Method": "Compare the two paths from 12 to 8; choose shorter.",
+          "Steps": [
+            "Clockwise 12 to 8 spans eight hour marks.",
+            "Counterclockwise 12 to 8 spans four.",
+            "The smaller opening is four gaps, equivalent to 120°."
+          ],
+          "Answer": "Four hour-mark intervals (120°).",
+          "Check": "4×30°=120°."
+        },
+        {
+          "Title": "Compare exact-hour 5:00 with 8:00",
+          "Question": "Which smaller clock angle is larger at exactly 5:00 or exactly 8:00, and by how many intervals?",
+          "Method": "Count the smaller opening on each complete clock face.",
+          "Steps": [
+            "Exactly 5:00 gives five equal hour gaps.",
+            "Exactly 8:00 gives four equal gaps.",
+            "Five exceeds four by one gap."
+          ],
+          "Answer": "5:00 larger by one hour-mark interval (30°).",
+          "Check": "Recognise the relative turn, not a long or short printed hand."
+        },
+        {
+          "Title": "Original source two sets and clock diagrams (teacher-scored)",
+          "Question": "Inspect each original 2021 Two Sets of Angles/Compare Angles on the Clock picture and explain which displayed angle is larger.",
+          "Method": "Trace the real rays/hands from the common vertex and compare the pictured turns.",
+          "Steps": [
+            "Use authorised original diagrams or independent substitutes; do not assume images match text-only models.",
+            "Mark the two arms and which turning direction the diagram asks about.",
+            "Student draws or explains; teacher checks each original picture and reasoning."
+          ],
+          "Answer": "Depends on actual original source figures, teacher-scored.",
+          "Check": "No fabricated publisher picture-figure parity or exact clock image values are asserted."
+        },
+        {
+          "Title": "First-party Cool-down (teacher-scored explanation)",
+          "Question": "Compare exactly 5:00 with exactly 8:00 and explain which smaller angle is larger and by how much in clock hour intervals.",
+          "Method": "Count from 12 by the shorter path for both clocks.",
+          "Steps": [
+            "At 5:00, five intervals.",
+            "At 8:00, four intervals.",
+            "Compare and give the difference in one equal interval."
+          ],
+          "Answer": "5:00 by one interval (30°).",
+          "Check": "Not a reproduction of the inaccessible original publisher Cool-down."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating 8:00 as eight hour-mark steps for the smaller angle.",
+          "WhyWrong": "The shorter opening from 12 to 8 runs backward through four marks.",
+          "Correction": "Count both routes around the clock and use the shorter path."
+        },
+        {
+          "Mistake": "Applying exact-hour formulas to half-hour drawings.",
+          "WhyWrong": "At times like 5:30, the hour hand has moved away from the precise 5 position.",
+          "Correction": "Only use the exact-hour shortcut when minutes are 00 and both hand positions are established."
+        },
+        {
+          "Mistake": "Claiming the original source clock-pair order or artwork was verified digitally.",
+          "WhyWrong": "The recorded original Student Facing excerpts do not provide all the needed actual diagrams.",
+          "Correction": "Teacher checks original figures, hands, ray directions, drawings and explanations."
+        }
+      ],
+      "SummaryPoints": [
+        "A clock centre is a common ray vertex; a hand turn changes the angular opening.",
+        "A 12-to-3 move is a quarter turn (three hour-mark intervals).",
+        "At exact hours, the smaller angle has at most six 1/12-turn gaps; 5:00=5, 8:00=4.",
+        "The first-party comparison family asks which is larger and by how many intervals, not original protected clock-figure interpretation.",
+        "Original source drawings, third-party pictures and gated Cool-down remain teacher-reviewed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "First-party exact-hour clock reference",
+          "Description": "Symbolic hand positions only; not original 2021 artwork.",
+          "PrimaryLabel": "5:00 → 5 intervals",
+          "SecondaryLabel": "8:00 → 4 intervals",
+          "Items": [
+            "Minute hand at 12 for both exact hours.",
+            "Smaller 5:00 opening: 5 intervals.",
+            "Smaller 8:00 opening: 4 intervals.",
+            "5:00 larger by one interval."
+          ],
+          "SecondaryItems": [
+            "One hour-mark interval is one twelfth turn (30°)."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Andre's quarter-turn construction",
+          "Description": "Teacher draws independently; does not reproduce publisher source drawing.",
+          "PrimaryLabel": "Start: both rays at 12",
+          "SecondaryLabel": "Turn one ray clockwise to 3",
+          "Items": [
+            "Common vertex: clock centre.",
+            "Turn is three of twelve equally spaced clock gaps.",
+            "Three twelfths is one quarter turn."
+          ],
+          "SecondaryItems": [
+            "Actual student's pair of rays requires teacher review."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

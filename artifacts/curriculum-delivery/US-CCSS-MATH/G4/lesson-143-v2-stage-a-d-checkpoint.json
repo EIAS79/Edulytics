@@ -1,0 +1,48 @@
+{
+  "ordinal": 143,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U09:L06",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "ORIGINAL_2021_LOCAL_DIVISION_SOURCE_REUSED",
+    "B": "SOURCE_7465_DIVIDE5_AND_3681_DIVIDE9_TWO_PARTIAL_QUOTIENT_STRATEGIES",
+    "C": "REUSED_EXISTING_PARTIAL_QUOTIENT_ENGINE_SCOPED_XUNIT_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "afb13abaa0521b97c2ec393b740c4ccda789153d33d890ecf4a921252eba3e04",
+    "teacher": "b27a305c3c8bccefd52c35310f16abee7b3330c3145afff9581a71bcfb54f2fc"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Find 8,256 ÷ 6, checking by multiplication.",
+    "teacherAnswer": "1,376."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "Our-CS local 2021 source",
+    "originalSourceActivities": [
+      "Warm-up: Number Talk: Divide by 3 and by 6 (10 minutes)",
+      "Activity 1: Unfinished Divisions (15 minutes)",
+      "Activity 2: Where Do We Begin? (20 minutes)",
+      "Cool-down: Divide Like a Pro (5 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "Find the value of each expression mentally. | \\(48 \\div 3\\) | \\(480 \\div 3\\)",
+      "Here are four calculations to find the value of \\(7,\\!465 \\div 5\\), but each one is unfinished. | Complete at least two of the unfinished calculations. Be prepared to explain how you know what to do to complete the work. | \\(\\displaystyle \\begin{align} 5,\\!000",
+      "Jada and Noah are finding the value of \\(3,\\!681 \\div 9\\). Jada says to start by dividing 81 by 9. Noah says start by dividing 3,600 by 9. | Explain why each suggestion is helpful for finding the quotient. | Find the value of \\(3,\\!681 \\div 9\\). Show your reas"
+    ],
+    "allowedFamily": "usccss.g4.u06.l18.partial_quotients_recording",
+    "teacherOnlyTasks": [
+      "Complete two of four original unfinished calculations and explain Jada/Noah methods"
+    ],
+    "testFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal143SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

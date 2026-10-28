@@ -1,0 +1,10 @@
+# G4 ordinal 72 — Solve Multiplicative Comparison Problems with Large Numbers
+- Local prep: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Exact_Sources\im.kendallhunt.com_k5_teachers_grade-4_unit-5_lesson-4_preparation.html SHA256=419d6651a3f8353c58ab62801216f58ba6547fb4fe889b117b022f1d6e7338b9
+- Local teacher: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\unit-5\lesson-4\lesson.html SHA256=ddd09fd90a0fefe819ee7bf742f7350c3218fbaf9d8fda23f2af3ccce303f91e
+- Local student: C:\Users\khali\Downloads\New folder (2)\Common Core\04_Grade_4_IM_K5\Student_Public_Mirror\unit-5\lesson-4\lesson.html SHA256=22bfda44fb901205b1ece6d8661080c078e8fb7fb5aff10df48b0e31a726ed5a
+- Preserved existing learning explanation: Learning goal: You will extend your understanding of multiplicative comparison to situations that involve larger quantities and larger multipliers. In previous lessons, you interpreted discrete diagrams in which each section represented one item and used them to solve multiplicative comparison problems. You also represented multiplicative comparison situations in which different parts of the problem were unknown. In this lesson, you extend your understanding of multiplicative comparison, includi
+- Original 2021 sections: Warm-up:  Notice and Wonder: Too Many Times More?	 (10 minutes); Activity 1: A New Kind of Diagram (15 minutes); Activity 2:  Who Read More?	 (20 minutes); Cool-down:  Represent Multiplicative Comparison	 (5 minutes)
+- Corrections: repaired domain-specific rule; supplemented existing example without removing original task; replaced generic/off-topic method; corrected specific misconception; authored missing first-party Cool-down; filled absent Rich V2 representation
+- Mathematical model (exact): 30*60 = 1800.
+- Edulytics first-party Cool-down: Write a comparison equation for 400 items and 3 times as many.; teacher key: 3 × 400 = 1,200.
+- Not publisher Cool-down; original visual parity and open source activities still teacher reviewed. Stage D not run; no academic sign-off.

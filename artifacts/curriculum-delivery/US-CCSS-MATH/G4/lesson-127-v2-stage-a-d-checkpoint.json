@@ -1,0 +1,51 @@
+{
+  "ordinal": 127,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U07:L16",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_ORIGINAL_LOCAL_OUR_CS_SOURCE_INTAKE_REUSED",
+    "B": "UNIT_7_FINAL_GEOMETRIC_ATTRIBUTES_AND_CARD_CHANGE_ACTIVITY_PRESERVED",
+    "C": "EXISTING_GEOMETRY_PRACTICE_FAMILIES_REUSED_FOCUSED_XUNIT_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "6db8ff72e23c8d0d62277a31be507964ea70d63dca6a6d58a534fa038e137d1c",
+    "teacher": "153126a4483ad397b8ac7dee6c40e902a9a60736b91503373685015f524a040d"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Draw a rectangle and tell a partner the properties that identify it.",
+    "teacherAnswer": "Four right angles, with opposite sides parallel and equal in length; human checks drawing."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEvidenceReusedFrom": "local Our-CS 2021 source intake",
+    "originalSourceActivities": [
+      "Warm-up: Notice and Wonder: Two Figures (10 minutes)",
+      "Activity 1: Make a Change (15 minutes)",
+      "Activity 2: Guess My Figure (20 minutes)"
+    ],
+    "sourceStudentExcerpts": [
+      "What do you notice? What do you wonder? | Description: Two figures composed of lines and angles. A. a right angle intersected by a pair of parallel lines. A line segment has its endpoint at the intersection of the right angle and one of the parallel lines. It ",
+      "Your teacher will give you a set of cards. Each partner picks one of the cards. | Draw the figure you selected, but make at least one change. | Look at your partner’s card and drawing. What change did your partner make?",
+      "Create a two-dimensional shape that has at least 3 of the following: | ray | line segment"
+    ],
+    "allowedFamilies": [
+      "usccss.g4.u07.l01.geometric_description_precision",
+      "usccss.g4.u07.l03.dot_grid_parallel_intersect"
+    ],
+    "teacherOnlyTasks": [
+      "Source Make a Change card diagrams",
+      "Partner response and Guess My Figure created figure"
+    ],
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal127SourceTests.cs",
+    "testsAuthoredNotRun": true,
+    "stageD": "NOT_RUN"
+  }
+}

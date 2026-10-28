@@ -1,0 +1,203 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "g4-4.6.23-source-abc-2021-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G4:U06:L23",
+      "CultureCode": "en",
+      "Title": "Solve Problems with Many Operations",
+      "ExplanationParagraphs": [
+        "2021 learning goal: Solve multi-step multi-digit problems using addition, subtraction, multiplication and division, while checking reasonableness and preserving units.",
+        "Warm-up: four true-or-false large-number differences. Activity 1: Mai's round-trip path between school classes and music; Activity 2: Han's four-week 120,000-step fitness target. The original publisher driving Cool-down remains gated.",
+        "Mai's path from homeroom through math, English and history to science includes 157+134+162+275=728 feet each way. A complete round trip is 1456 feet, repeated five times per week. Three music round trips totaling 2364 feet place the music classroom 394 feet away.",
+        "Weekly travel including all five long round trips and three music trips is 1456×5+2364=9644 feet. Two miles is 2×5280=10560 feet, so the distance is 916 feet short of two miles. Ask students to state which journeys they counted.",
+        "Fitness: 32550÷7=4650 steps per day during week one; the drop to 28098 steps in week two is 4452. First three weeks total 96897 steps; another 23103 reaches 120000 steps. Teacher discusses interpretation of the source challenge poster's suggested daily figure separately.",
+        "Independent Edulytics Cool-down (not the publisher's original): add three class-route segments, double for each return, and combine four class round trips with two music round trips to find 5,640 feet."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Use inverse operations and reasonable estimates",
+          "Definition": "Subtraction can be checked by addition, and division can be checked by multiplication.",
+          "Rule": "Use place-value calculation and sense-check the answer's size.",
+          "Example": "50000−999=49001; 49001+999=50000."
+        },
+        {
+          "Title": "Distances accumulate across full round trips",
+          "Definition": "A one-way journey must be doubled to represent returning along the same path.",
+          "Rule": "Add segment lengths, double for round trip, and multiply by repeat count.",
+          "Example": "157+134+162+275=728; 2×728=1456ft per trip."
+        },
+        {
+          "Title": "Reverse unknowns in multi-week totals",
+          "Definition": "Daily steps are weekly steps divided by seven; remaining steps are target minus weeks completed.",
+          "Rule": "Use exact division, subtraction and independent addition checks.",
+          "Example": "32550÷7=4650; 120000−(32550+28098+36249)=23103."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Warm-up: four true or false subtractions",
+          "Question": "Which are true: 50000−999=49001; 4799=5000−311; 3005=4000−1995; 2000−1234=1876?",
+          "Method": "Estimate and calculate differences using place value.",
+          "Steps": [
+            "50000−999=49001, so the first statement is true.",
+            "5000−311=4689, and 4000−1995=2005; second and third are false.",
+            "2000−1234=766, not 1876; the fourth is false."
+          ],
+          "Answer": "Only the first is true.",
+          "Check": "49001+999=50000, 4689+311=5000, 2005+1995=4000, 766+1234=2000."
+        },
+        {
+          "Title": "Mai's trip from homeroom to science and back",
+          "Question": "One-way segments are 157, 134, 162 and 275 feet. How far is the full round trip?",
+          "Method": "Add the one-way distances, then double.",
+          "Steps": [
+            "157+134=291 and 162+275=437 feet.",
+            "291+437=728 feet from homeroom to science.",
+            "Returning on the same path doubles the distance: 2×728=1456 feet."
+          ],
+          "Answer": "1456 feet",
+          "Check": "(157+134+162+275)×2=1456."
+        },
+        {
+          "Title": "Mai's music room one-way distance",
+          "Question": "Mai makes three music-class round trips, 2364 feet in total. How far is the room from homeroom?",
+          "Method": "One round trip is two copies of the one-way distance.",
+          "Steps": [
+            "Three round trips include six one-way journeys.",
+            "2364÷3=788 feet per round trip.",
+            "788÷2=394 feet one way."
+          ],
+          "Answer": "394 feet",
+          "Check": "3×2×394=2364 feet."
+        },
+        {
+          "Title": "Compare the weekly travel to two miles",
+          "Question": "Mai completes five 1456-foot class round trips plus three music round trips totaling 2364ft. Is this two miles or more?",
+          "Method": "Add all weekly journeys and compare with 2×5280ft.",
+          "Steps": [
+            "The five class trips total 5×1456=7280 feet.",
+            "All trips combined: 7280+2364=9644 feet.",
+            "Two miles is 10560 feet; 10560−9644=916 feet short."
+          ],
+          "Answer": "No; 916 feet less than two miles.",
+          "Check": "9644+916=10560 feet."
+        },
+        {
+          "Title": "Han's weekly steps and weekly drop",
+          "Question": "Han walked 32550 steps equally over seven days. Week two had 28098 steps. What was his daily count and week-to-week drop?",
+          "Method": "Divide equally, then subtract totals.",
+          "Steps": [
+            "32550÷7=4650 steps per day.",
+            "Week-one total 32550 is greater than week-two total 28098.",
+            "32550−28098=4452 fewer steps in week two."
+          ],
+          "Answer": "4650 daily steps; a 4452-step drop.",
+          "Check": "4650×7=32550 and 28098+4452=32550."
+        },
+        {
+          "Title": "Week four: reach the four-week step target",
+          "Question": "The first three weeks were 32550, 28098 and 36249 steps. How many more steps reach 120000 in week four?",
+          "Method": "Add recorded totals, then subtract from target.",
+          "Steps": [
+            "32550+28098=60648.",
+            "60648+36249=96897 steps in three weeks.",
+            "120000−96897=23103 further steps required."
+          ],
+          "Answer": "23103 steps in week four to reach the total.",
+          "Check": "96897+23103=120000."
+        },
+        {
+          "Title": "Independent Edulytics Cool-down: weekly round trips",
+          "Question": "A student walks one-way distances of 230, 170 and 150 feet to class and back, four days each week. They also make two music round trips, 310 feet one way each. How many feet do they travel altogether?",
+          "Method": "Add the class segments; double for each return; multiply by number of trips; add music journeys.",
+          "Steps": [
+            "One-way class distance: 230 + 170 + 150 = 550 feet.",
+            "Four class round trips: 4 × (2 × 550) = 4,400 feet.",
+            "Two music round trips: 2 × (2 × 310) = 1,240 feet.",
+            "Weekly total: 4,400 + 1,240 = 5,640 feet."
+          ],
+          "Answer": "5,640 feet",
+          "Check": "4 × 1,100 + 4 × 310 = 5,640 feet; units are feet."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding the one-way school segments but forgetting the return trip.",
+          "WhyWrong": "Mai returns to the homeroom on the same path, doubling the distance.",
+          "Correction": "2×(157+134+162+275)=1456ft per round trip."
+        },
+        {
+          "Mistake": "Dividing 2364 by only three and calling it the music room's one-way distance.",
+          "WhyWrong": "The three journeys are each round trips, so there are six one-way distances.",
+          "Correction": "2364÷(3×2)=394ft."
+        },
+        {
+          "Mistake": "Using 120000 minus only week three to find the week-four target.",
+          "WhyWrong": "The goal counts all four weeks, not just the last two.",
+          "Correction": "Subtract the sum of all three completed weeks: 120000−96897=23103."
+        }
+      ],
+      "SummaryPoints": [
+        "50000−999=49001 is the only true warm-up equation; inverse checks justify conclusions.",
+        "Homeroom-to-science one way is 728ft; one full round trip is 1456ft.",
+        "Music room is 394ft one way; all weekly class and music trips total 9644ft, under two miles.",
+        "Han walked 4650 steps daily in week one, dropped 4452 in week two, and needs 23103 further for the 120000 total.",
+        "Teacher checks assumptions, number-line representations, and the challenge poster; independent multi-operation Cool-down total is 5,640 feet."
+      ],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Class distances on a two-way route",
+          "Description": "Independent Edulytics numerical model, not publisher artwork.",
+          "PrimaryLabel": "157+134+162+275=728ft one way",
+          "SecondaryLabel": "1456ft round trip",
+          "Items": [
+            "728×2=1456",
+            "1456×5=7280 weekly class travel",
+            "2364÷6=394ft music room"
+          ],
+          "SecondaryItems": [
+            "Teacher observes explanation and original representation."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "All weekly journeys versus two miles",
+          "Description": "Independent Edulytics numerical model, not publisher artwork.",
+          "PrimaryLabel": "Five long round trips plus music trips",
+          "SecondaryLabel": "9644ft < 10560ft",
+          "Items": [
+            "7280+2364=9644",
+            "2×5280=10560",
+            "10560−9644=916ft short"
+          ],
+          "SecondaryItems": [
+            "Teacher observes explanation and original representation."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Four-week fitness totals",
+          "Description": "Independent Edulytics numerical model, not publisher artwork.",
+          "PrimaryLabel": "32550, 28098, 36249, ?",
+          "SecondaryLabel": "Week4 needs 23103",
+          "Items": [
+            "32550÷7=4650/day",
+            "32550−28098=4452",
+            "32550+28098+36249=96897",
+            "120000−96897=23103"
+          ],
+          "SecondaryItems": [
+            "Teacher observes explanation and original representation."
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

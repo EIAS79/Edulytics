@@ -1,0 +1,43 @@
+{
+  "ordinal": 61,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U04:L16",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "5600b48003f4c8086896f01e50c666bae061877a351a4390d9fe541a4696a70e",
+    "teacher": "63264fda9b866c82943f6c063f0c1fa2d71c1c321dc4b2286649a6bfdcf1377b",
+    "student": "28c5a105ec33619555ed689c138f7d721418bc694ce76c4fbc8cbead4746ce6f"
+  },
+  "changes": [
+    "removed non-publisher PLC title suffix",
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "Round 268,400 to the nearest 10,000.",
+    "teacherAnswer": "270,000"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:14:04+01:00",
+  "closeAtLocal": "2026-10-26T23:14:05+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-61-local-source-guard.test.cjs"
+  }
+}

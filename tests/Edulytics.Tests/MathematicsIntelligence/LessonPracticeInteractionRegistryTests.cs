@@ -30,7 +30,7 @@ public sealed class LessonPracticeInteractionRegistryTests
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
         Assert.Equal(
-            1025, // Source-reviewed authoring added 520 distinct lesson-routable families since the original 505-family count.
+            1070, // The Grade 4 2021 exact family registrations add 45 interaction contracts to the prior 1025.
             LessonPracticeInteractionRegistry.All.Count);
 
         Assert.All(

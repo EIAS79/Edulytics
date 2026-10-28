@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U06:L15",
+  "edition": "1st Edition (2021)",
+  "ordinal": 101,
+  "status": "FOCUSED_TESTS_3_PASS_GENERIC_FALLBACK_BLOCKED_UNTIL_REVIEW",
+  "sourceTitle": "Situations Involving Area",
+  "learningObjective": "Use partial quotients to find an unknown side length of a rectangle when its area and the other side are known, and interpret a leftover-tile remainder in context.",
+  "curriculumCodes": [
+    "CCSS:4.NBT.B.6"
+  ],
+  "reusePolicy": "Reuse existing exact geometry rectangle missing-side family; no new math engine.",
+  "reuseFamily": {
+    "id": "geometry.perimeter_area.rectangle_missing_side",
+    "engine": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "registry": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+    "familyStatus": "ShadowVerified",
+    "productionRouting": false,
+    "lessonPracticeRouting": true,
+    "questionType": "numeric integer",
+    "inputs": [
+      "knownSide",
+      "area"
+    ],
+    "solver": "area / knownSide, only if area is divisible by knownSide",
+    "independentVerification": "knownSide > 0 && area > 0 && area % knownSide === 0 && proposedSide === area/knownSide",
+    "sourceAlignedFor": "Elena and first-party Cool-down missing-side tasks",
+    "inappropriateFor": "Tyler's 197 tiles of width 6 because there is a remainder of 5 tiles, and original grid/drawing proof."
+  },
+  "sourceElements": [
+    {
+      "name": "Area of a Soccer Field",
+      "source": "2021 teacher lesson",
+      "kind": "warmup",
+      "teaching": "Estimate a length using given 2,280 m² and 40 m",
+      "answer": "57 m",
+      "status": "FIRST_PARTY_NUMERIC_CAN_BE_VERIFIED; ORIGINAL_VISUAL_REVIEW_PENDING"
+    },
+    {
+      "name": "Elena's Mural",
+      "source": "2021 student-facing inside teacher lesson",
+      "kind": "activity",
+      "teaching": "189 square tiles at width 7, length 27 by partitioning",
+      "answer": "27 tiles",
+      "status": "DIRECT_NUMERIC_CAN_BE_VERIFIED; CLASSROOM_VISUAL_REVIEW_PENDING"
+    },
+    {
+      "name": "Tyler's Mural",
+      "source": "2021 student-facing inside teacher lesson",
+      "kind": "activity",
+      "teaching": "197 tiles at width 6 requires 32 full columns and five leftover tiles",
+      "answer": "32 tiles used as length, 5 leftover; 192 tiles used",
+      "status": "TEACHER_REVIEW_CONTEXTUAL_REMAINDER_NOT_INCLUDED_IN_ALLOWLIST"
+    },
+    {
+      "name": "Edulytics first-party Cool-down",
+      "kind": "independent_assessment",
+      "teaching": "168 m² garden width 6 m, length by partial quotients",
+      "answer": "28 m",
+      "status": "AUTHORED_NOT_PUBLISHER_COOLDOWN"
+    }
+  ],
+  "numericPositiveExamples": [
+    {
+      "area": 189,
+      "width": 7,
+      "answer": 27
+    },
+    {
+      "area": 2280,
+      "width": 40,
+      "answer": 57
+    },
+    {
+      "area": 168,
+      "width": 6,
+      "answer": 28
+    }
+  ],
+  "numericNegativeCases": [
+    {
+      "area": 189,
+      "width": 7,
+      "attempt": 26,
+      "shouldAccept": false
+    },
+    {
+      "area": 189,
+      "width": 7,
+      "attempt": 28,
+      "shouldAccept": false
+    },
+    {
+      "area": 189,
+      "width": 0,
+      "attempt": 27,
+      "shouldAccept": false
+    },
+    {
+      "area": 197,
+      "width": 6,
+      "attempt": 32,
+      "shouldAccept": false,
+      "reason": "This family is for exact rectangular area division without leftover tiles, cannot mark 197/6 as an exact rectangular side."
+    }
+  ],
+  "malformedResponseCases": [
+    "",
+    "no idea",
+    "27 cm²",
+    "twenty seven?"
+  ],
+  "allowedQuestionFamiliesCandidate": [
+    "usccss.g4.u06.l15.area_partial_quotients",
+    "usccss.g4.u06.l15.mural_complete_columns"
+  ],
+  "allowedQuestionFamiliesActivated": [],
+  "forbiddenQuestionFamilies": [
+    "geometry.rectangle.area.exact",
+    "geometry.perimeter_area.rectangle_perimeter",
+    "geometry.perimeter_area.triangle_area"
+  ],
+  "currentSchoolRouting": {
+    "enabled": false,
+    "reason": "No lesson-specific mapping/negative and malformed response test execution; deployment not approved."
+  },
+  "currentStageCStatus": "GENERATOR_VERIFIER_PASSED_AND_UNINTENDED_GENERIC_ROUTE_BLOCKED; AUTHENTICATED_SAVED_GRADEBOOK_ATTEMPT_PENDING",
+  "tests": {
+    "state": "FOCUSED_DOTNET_RUN_SUCCESS",
+    "sha": "cb3705a5decab6c98313a8a760d37898ce5de420",
+    "url": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "createdUtc": "2026-10-27T14:49:29Z",
+    "finishedUtc": "2026-10-27T14:51:16Z",
+    "runSeconds": 107,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "teacherLed": [
+    "Original diagrams and source visuals need teacher fidelity review",
+    "Physical tiling and drawing original classroom activity remain teacher-observed",
+    "No source-identical publisher Cool-down is claimed"
+  ],
+  "academicApproved": false,
+  "readyForStageD": false,
+  "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-101-source-evidence.md",
+  "extendedEngine": {
+    "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "familyIds": [
+      "usccss.g4.u06.l15.area_partial_quotients",
+      "usccss.g4.u06.l15.mural_complete_columns"
+    ],
+    "purpose": "Reuses existing exact area/division kernel, adds 3-digit tile count / 1-digit width and floor-quotient context in separate families.",
+    "status": "FOCUSED_TESTED_UNROUTED_SHADOW",
+    "stagedNoProductionRouting": true,
+    "teacherReviewedOriginalDrawingsRequired": true,
+    "focusedTest": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal101AreaDivisionExactTests.cs",
+    "testState": "2_PASSED_0_FAILED_FOCUSED_CI",
+    "testedSha": "3c681d80e1624d14d6e9c49b1d4d4baea254ef9f",
+    "testRunUrl": "https://github.com/EIAS79/Edulytics/actions/runs/40515621157",
+    "registryState": "SHADOW_UNROUTED_PRODUCTION_FALSE"
+  },
+  "reviewedLessonSkillMapping": {
+    "path": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+    "practiceReadiness": "REVIEW_REQUIRED_STAGE_C_RUNTIME_PRESENTATION_AND_PERSISTENCE",
+    "approvedProduction": false,
+    "exactFamilyIds": [
+      "usccss.g4.u06.l15.area_partial_quotients",
+      "usccss.g4.u06.l15.mural_complete_columns"
+    ]
+  },
+  "fallbackRegression": {
+    "detected": "https://github.com/EIAS79/Edulytics/actions/runs/40524243428",
+    "correctedBy": "https://github.com/EIAS79/Edulytics/actions/runs/40524858414",
+    "behavior": "Implicit official-outcome fallback no longer exposes L101 unreviewed families."
+  }
+}

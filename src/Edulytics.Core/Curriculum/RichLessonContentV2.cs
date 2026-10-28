@@ -24,7 +24,8 @@ public enum RichLessonVisualKind
     PlaceValueChart = 6,
     Scale = 7,
     EquationSet = 8,
-    ShapeDecomposition = 9
+    ShapeDecomposition = 9,
+    Grade4Unit1AreaFigures = 10
 }
 
 public sealed class RichLessonContentV2Document
@@ -120,6 +121,12 @@ public static class RichLessonContentV2Registry
 
     private static readonly Lazy<IReadOnlyDictionary<string, RichLessonContentV2Lesson>>
         Lessons = new(BuildLessonIndex);
+    // A corrupt/unfinished DIFFERENT lesson must not prevent a valid learner
+    // lesson from opening. The grade-wide AllDocuments gate still validates
+    // every resource and therefore remains intentionally strict at Stage D.
+    private static readonly Lazy<IReadOnlyDictionary<string, (RichLessonContentV2Document Document, string ResourceName)>>
+        DirectLessonDocuments = new(BuildDirectLessonIndex);
+
 
     private static readonly Regex YouTubeVideoIdRegex =
         new(@"^[A-Za-z0-9_-]{11}$", RegexOptions.CultureInvariant | RegexOptions.Compiled);
@@ -136,20 +143,63 @@ public static class RichLessonContentV2Registry
 
         var normalizedCulture = NormalizeCulture(cultureCode);
 
-        if (Lessons.Value.TryGetValue(
+        if (DirectLessonDocuments.Value.TryGetValue(
                 Key(lessonCode, normalizedCulture),
                 out var exact))
         {
-            return exact;
+            Validate(exact.Document, exact.ResourceName);
+            return exact.Document.Lessons.First(x =>
+                Key(x.LessonCode, x.CultureCode) == Key(lessonCode, normalizedCulture));
         }
 
         if (normalizedCulture != "en" &&
-            Lessons.Value.TryGetValue(Key(lessonCode, "en"), out var english))
+            DirectLessonDocuments.Value.TryGetValue(Key(lessonCode, "en"), out var english))
         {
-            return english;
+            Validate(english.Document, english.ResourceName);
+            return english.Document.Lessons.First(x =>
+                Key(x.LessonCode, x.CultureCode) == Key(lessonCode, "en"));
         }
 
         return null;
+    }
+
+    private static IReadOnlyDictionary<string, (RichLessonContentV2Document Document, string ResourceName)>
+        BuildDirectLessonIndex()
+    {
+        var assembly = typeof(RichLessonContentV2Registry).Assembly;
+        var index = new Dictionary<string, (RichLessonContentV2Document Document, string ResourceName)>(
+            StringComparer.Ordinal);
+        foreach (var name in assembly.GetManifestResourceNames()
+                     .Where(x => x.EndsWith(".rich-lesson-v2.json",
+                         StringComparison.OrdinalIgnoreCase))
+                     .OrderBy(x => x, StringComparer.Ordinal))
+        {
+            using var stream = assembly.GetManifestResourceStream(name)
+                ?? throw new InvalidOperationException(
+                    $"Embedded rich lesson resource was not found: {name}.");
+            var document = DeserializeReaderSafeDocument(stream)
+                ?? throw new InvalidOperationException(
+                    $"Embedded rich lesson resource is invalid: {name}.");
+            foreach (var lesson in document.Lessons)
+            {
+                if (!index.TryAdd(Key(lesson.LessonCode, lesson.CultureCode),
+                        (document, name)))
+                    throw new InvalidOperationException(
+                        $"Duplicate Rich Lesson Content V2 entry: {lesson.LessonCode}:{lesson.CultureCode}.");
+            }
+        }
+        return index;
+    }
+
+    // The canonical first-party Rich V2 drafts can contain literal non-breaking
+    // spaces copied from source notes. Normalize them at both registry loading
+    // paths, before parsing, so user-visible text and direct/cached retrieval
+    // share the same semantics. Embedded source JSON remains unchanged.
+    private static RichLessonContentV2Document? DeserializeReaderSafeDocument(Stream stream)
+    {
+        using var reader = new StreamReader(stream);
+        var json = reader.ReadToEnd().Replace('\u00A0', ' ');
+        return JsonSerializer.Deserialize<RichLessonContentV2Document>(json, JsonOptions);
     }
 
     private static IReadOnlyList<RichLessonContentV2Document> LoadDocuments()
@@ -170,9 +220,7 @@ public static class RichLessonContentV2Registry
                 ?? throw new InvalidOperationException(
                     $"Embedded rich lesson resource was not found: {name}.");
 
-            var document = JsonSerializer.Deserialize<RichLessonContentV2Document>(
-                stream,
-                JsonOptions)
+            var document = DeserializeReaderSafeDocument(stream)
                 ?? throw new InvalidOperationException(
                     $"Embedded rich lesson resource is invalid: {name}.");
 

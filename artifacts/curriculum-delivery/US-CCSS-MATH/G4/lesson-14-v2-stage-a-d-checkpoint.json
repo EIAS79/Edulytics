@@ -1,0 +1,29 @@
+{
+  "ordinal": 14,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U02:L06",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stageA": "TEACHER_ORIGINAL_2021_AND_STUDENT5P_SOURCE_P2_AND_P4_VISUAL_VERIFIED",
+  "stageB": "CORRECT_EXISTING_CONTENT_PRESERVED; MISSING_SOURCE_ACTIVITIES_ADDED; FIRST_PARTY_RICHV2_AUTHORED",
+  "stageC": "REUSE_FRACTIONS_COMPARE_BENCHMARK_EXISTING_ENGINE; SOURCE_LINE_DRAWINGS_AND_OPTIONAL_CARDS_TEACHER_REVIEWED",
+  "stageD": "NOT_RUN",
+  "sourceHashes": {
+    "preparation": "8adbf01967424b4c361c0752a2340359efa45afa10f74e99e0e8cc8d2a627182",
+    "teacherLesson": "ea04603ae04eedc0be8e419e5ae30490b7bbd493a5627c5ced755ad04ac6b789",
+    "studentPdf": "24f2d904ab384aec6de2ba446fba978ec22641b256b5ba4274b72345faa47679"
+  },
+  "optionalPublisherCardMasterVerified": false,
+  "independentEdulyticsCoolDown": true,
+  "academicApproved": false,
+  "testsWritten": true,
+  "testsRun": true,
+  "sourceParityProvenPercent": null,
+  "focusedTestResults": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0,
+    "sourceCommit": "22cdbb9f8af9fed6e976bb48837abe8452094f9d",
+    "command": "node --test tests/academic-us-ccss-g4-u02-l06-source-guard.test.cjs",
+    "stageD": false
+  }
+}

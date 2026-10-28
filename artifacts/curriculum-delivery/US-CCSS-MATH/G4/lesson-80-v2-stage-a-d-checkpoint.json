@@ -1,0 +1,42 @@
+{
+  "ordinal": 80,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U05:L12",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "2021_LOCAL_SOURCE_TEACHER_PREP_TEACHER_LESSON_STUDENT_LESSON_VERIFIED_BY_SHA256",
+    "B": "RETAIN_CORRECT_GOAL_AND_EXAMPLES_REPAIR_SPECIFIC_GAPS_ONLY",
+    "C": "GOAL_ALIGNED_FIRST_PARTY_COOLDOWN_ADDED; EXISTING_GENERAL_PRACTICE_NOT_FALSELY_CERTIFIED_FOR_SOURCE_OPEN_TASKS",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "5d3b3b2f62b5329421115f05611ed56da5d42b6b3beb5e3181eaab0b454a553f",
+    "teacher": "b2b0a635fbc92f2cfed675597ec2241b487fb5ce9409a27bf885488277bb49aa",
+    "student": "3855308fa8299da2b9912f802e97a4088417b2d1a7a7d945dc7962fb588b33d2"
+  },
+  "changes": [
+    "repaired domain-specific rule",
+    "supplemented existing example without removing original task",
+    "replaced generic/off-topic method",
+    "corrected specific misconception",
+    "authored missing first-party Cool-down",
+    "filled absent Rich V2 representation"
+  ],
+  "firstPartyCooldown": {
+    "prompt": "How many seconds are in 3 minutes?",
+    "teacherAnswer": "180 s"
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": true,
+  "productionTouched": false,
+  "startAtLocal": "2026-10-26T23:23:29+01:00",
+  "closeAtLocal": "2026-10-26T23:23:30+01:00",
+  "focusedTestResults": {
+    "count": 2,
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test tests/academic-us-ccss-g4-ordinal-80-local-source-guard.test.cjs"
+  }
+}

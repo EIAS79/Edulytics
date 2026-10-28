@@ -16,6 +16,30 @@ test('146 unique canonical lessons, first new ordinal 51, old 50 historical only
   assert.equal(ledger.newLessons[0].lessonCode,'PED:US-CCSS-MATH:G1:U03:L14');
   assert.equal(ledger.historical.status,'HISTORICALLY_RELEASED_NO_RETEST');
 });
+test('G1 96 historical exact-source scopes are unchanged except seven SHA-pinned audited Grade 3/4 additions',()=>{
+  const {execFileSync}=require('node:child_process');
+  const {sourceUnchangedSinceProof}=require('../tools/curriculum/us-ccss-full-grade-gate.cjs');
+  const ledger=JSON.parse(fs.readFileSync(path.join(ROOT,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'),'utf8'));
+  const head=execFileSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'}).trim();
+  const proof='e702b36328ff90cbb01e7ac81a4a90c06e165989';
+  const paths=new Set();
+  assert.equal(ledger.newLessons.length,96);
+  for(const row of ledger.newLessons){
+    assert.equal(row.status,'INTERNALLY_ACCEPTED');
+    assert.equal(row.evidence.testedCodeSha,proof);
+    for(const p of row.evidence.affectedCodePaths)paths.add(p);
+    assert.equal(sourceUnchangedSinceProof(proof,head,row.evidence.affectedCodePaths),true,
+      'A previously accepted G1 lesson has an unaudited shared-code delta: '+row.ordinal);
+  }
+  assert.equal(paths.size,124);
+  const changed=execFileSync('git',['diff','--name-only',proof,head,'--',...paths],
+    {cwd:ROOT,encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean);
+  assert.equal(changed.length,7, 'Unexpected change in a Grade 1 proof-affecting code path');
+  assert.deepEqual(changed.filter(p=>p.includes('/G1')).sort(),[],
+    'Grade 1-specific source code itself changed');
+});
+
 test('the ACTUAL progress ledger counts every internally accepted lesson only with original V1 source, Practice, tests and SHA proofs',()=>{
   const ledger=JSON.parse(fs.readFileSync(
     path.join(ROOT,'artifacts/curriculum-delivery/US-CCSS-MATH/G1/full-grade-progress.json'),'utf8'));

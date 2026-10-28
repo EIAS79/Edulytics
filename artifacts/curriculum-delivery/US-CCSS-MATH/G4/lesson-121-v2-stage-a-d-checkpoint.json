@@ -1,0 +1,72 @@
+{
+  "ordinal": 121,
+  "lessonCode": "PED:US-CCSS-MATH:G4:U07:L10",
+  "status": "READY_FOR_STAGE_D",
+  "readyForStageD": true,
+  "stages": {
+    "A": "LOCAL_IMKH_2021_U07_L10_PREPARATION_AND_TEACHER_STUDENT_FACING_MEASUREMENT_FOLDS_FOUR_QUOTIENTS_VERIFIED",
+    "B": "RESTORED_SOURCE_FOUR_DIVISION_EXAMPLES_PROTRACTOR_ARBITRARY_RAYS_FOLD_PERPENDICULAR_POLYGON_LABELS_FIRST_PARTY_DRAW_COOLDOWN",
+    "C": "REUSED_L120_EXACT_PROTRACTOR_ENGINE_EXTENDED_8_CASE_RIGHT_ANGLE_JUDGMENT_WITH_3_XUNIT_TESTS_AUTHORED_UNRUN",
+    "D": "NOT_RUN"
+  },
+  "sourceHashes": {
+    "prep": "62c22ec6b90aadc8cd4111c3a1660b49d61f06a01eff062722b4dd409d0a5188",
+    "prepArchivedIntake": "6b53e9ae3e21afa3bc77da2b9d53cb4b8906198404bd5869d21012155b8e5cbe",
+    "teacher": "7fa3ddf253c2da39ce255914ee3ca33d30b2b0a2a448326386de2915e4c7e9c7"
+  },
+  "firstPartyCooldown": {
+    "prompt": "Draw two perpendicular lines crossing at P; mark one angle and explain the four 90° angles.",
+    "teacherAnswer": "Four 90° angles around P because intersecting perpendicular lines form right angles."
+  },
+  "originalPublisherCooldownVerified": false,
+  "sourceVisualParityProven": false,
+  "academicApproved": false,
+  "focusedTestsRun": false,
+  "productionTouched": false,
+  "blockers": [],
+  "sourceEdition": "IM/KH 2021 First Edition",
+  "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-121-2021-source-evidence.json",
+  "teacherLedHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-121-2021-teacher-handoff.md",
+  "aToCClosure": {
+    "status": "READY_FOR_STAGE_D",
+    "sourceEdition": "2021 First Edition",
+    "sourcePrepSha256": "62c22ec6b90aadc8cd4111c3a1660b49d61f06a01eff062722b4dd409d0a5188",
+    "sourceTeacherSha256": "7fa3ddf253c2da39ce255914ee3ca33d30b2b0a2a448326386de2915e4c7e9c7",
+    "sourceStudentFacingFromTeacher": true,
+    "sourceStudentStandaloneMirrorVerified": false,
+    "sourceEvidenceReusedFrom": "IMKH 2021 original intake AND direct local Our-CS 2021 files",
+    "sourceElementLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G4/lesson-121-2021-source-evidence.json",
+    "sourceElementsCount": 19,
+    "originalPublisherMediaCopied": false,
+    "originalPublisherCoolDownVerified": false,
+    "sourceFigurePixelParityVerified": false,
+    "primarySkillId": "geometry.lines.perpendicular_by_right_angle",
+    "allowedFamily": "usccss.g4.u07.l10.perpendicular_right_angle_judgment",
+    "reusedFamily": "usccss.g4.u07.l09.protractor_dual_scale_reading",
+    "firstPartyCoolDown": {
+      "prompt": "Draw two perpendicular lines crossing at P; mark one angle and explain the four 90° angles.",
+      "teacherAnswer": "Four 90° angles around P because intersecting perpendicular lines form right angles."
+    },
+    "teacherOnlyTasks": [
+      "Original angles and exact diagram labels s,t q,r e,f measuring with physical protractor",
+      "Paper folding two precise creases through P, repeated in two colours",
+      "Original source images of perpendicular polygon sides and group discussion",
+      "First-party 90° four-right-angles drawing and explanation"
+    ],
+    "digitalPracticeScope": "REUSE L120 digital protractor zero-alignment + 8 cases perpendicular 90° exactly, source figures teacher-led",
+    "focusedTestFile": "tests/Edulytics.Tests/MathematicsIntelligence/Grade4Ordinal121PerpendicularJudgmentTests.cs",
+    "focusedTestMethodsAuthored": 3,
+    "focusedFixturesAuthored": 8,
+    "testsAuthoredNotRun": true,
+    "focusedTestsPassed": null,
+    "focusedTestRunUrl": null,
+    "openACDefects": [],
+    "stageD": "NOT_RUN",
+    "academicApproved": false
+  },
+  "stageDRisks": [
+    "Local 2021 source preparation hash differs from archived intake, record and reconcile if byte parity required.",
+    "Publisher source polygon/ray picture exact values and physical fold precision require teacher hands-on scoring.",
+    "C# new exact family and focused C# tests have NOT been executed; protected CI and gradebook/lesson runtime are pending Stage D."
+  ]
+}

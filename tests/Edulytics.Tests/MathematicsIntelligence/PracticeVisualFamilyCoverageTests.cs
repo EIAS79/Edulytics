@@ -42,6 +42,57 @@ public sealed class PracticeVisualFamilyCoverageTests
         Assert.Contains("<ellipse", svg!, StringComparison.Ordinal);
     }
 
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    [InlineData(2)]
+    [InlineData(3)]
+    [InlineData(4)]
+    public void GradeFourLShapedVisual_RendersAllFiveSourceCasesWithoutDisclosingResult(int mode)
+    {
+        const string family = "usccss.g4.u06.l22.convert_l_shaped_area_perimeter";
+        var json = JsonSerializer.Serialize(new { parameters = new
+        {
+            caseType = mode,
+            sheetWidthInches = 49,
+            sheetHeightInches = 29,
+            bannerHeightInches = 8,
+            bannerLengthFeet = 8,
+            leftWidthFeet = 11,
+            rightWidthYards = 2,
+            lowerHeightYards = 5,
+            upperRiseFeet = 6,
+            suppliedInches = 1036
+        }});
+        var svg = PracticeMathVisualRenderer.RenderSvg(family, json);
+        Assert.NotNull(svg);
+        Assert.StartsWith("<svg", svg!, StringComparison.Ordinal);
+        Assert.Contains("</svg>", svg!, StringComparison.Ordinal);
+        Assert.Contains(mode == 0 ? "<rect" : "<polygon", svg!, StringComparison.Ordinal);
+        Assert.DoesNotContain("area = ", svg!, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("perimeter = ", svg!, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void GradeFourLShapedVisual_RejectsMalformedOrImpossibleMetadata()
+    {
+        const string family = "usccss.g4.u06.l22.convert_l_shaped_area_perimeter";
+        var invalid = JsonSerializer.Serialize(new { parameters = new
+        {
+            caseType = 1,
+            sheetWidthInches = 49,
+            sheetHeightInches = 29,
+            bannerHeightInches = 8,
+            bannerLengthFeet = 8,
+            leftWidthFeet = 11,
+            rightWidthYards = 2,
+            lowerHeightYards = 5,
+            upperRiseFeet = 6,
+            suppliedInches = 1
+        }});
+        Assert.Null(PracticeMathVisualRenderer.RenderSvg(family, invalid));
+    }
+
     [Fact]
     public void EveryLessonPracticeVisualFamily_GeneratesAndRendersDeterministically()
     {
@@ -103,7 +154,7 @@ public sealed class PracticeVisualFamilyCoverageTests
 
             Assert.False(
                 string.IsNullOrWhiteSpace(svg),
-                $"Visual Practice family has no deterministic SVG renderer: {family}");
+                $"Visual Practice family has no deterministic SVG renderer: {family}; exact generated parameters: {json}");
             Assert.StartsWith("<svg", svg!, StringComparison.Ordinal);
             Assert.Contains("</svg>", svg!, StringComparison.Ordinal);
         }
