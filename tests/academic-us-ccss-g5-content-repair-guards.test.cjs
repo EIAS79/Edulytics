@@ -85,7 +85,7 @@ test('Grade 5: remove false clock-hand and measurement rules from fraction/decim
     ['U02:L16', /fraction.*greater than 1/, /hour and minute hands/],
     ['U06:L21', /line plot/, /hour and minute hands/],
     ['U08:L12', /decimal game/i, /Measurement units must be equal/],
-    ['U08:L10', /common denominator/, /Subtraction can represent/],
+    ['U08:L10', /same denominator/, /Subtraction can represent/],
     ['U04:L06', /tens-row partial product/, /Measurement units must be equal/]
   ];
   for (const [shortCode, expected, rejected] of cases) {
