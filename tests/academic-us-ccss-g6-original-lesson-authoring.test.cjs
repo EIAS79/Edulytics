@@ -100,3 +100,27 @@ test('Fermi modeling is explicitly marked unsuitable for single-value automatic 
   assert.match(en.workedExamples, /Teacher-review prompt:/);
   assert.match(en.commonMistakes, /solely because it differs from one reference number/i);
 });
+
+test('Explicit Rich V2 U01 L01-L03 area lessons take precedence over generated shape-properties examples', () => {
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json'), 'utf8'));
+  assert.equal(rich.SchemaVersion, 1);
+  assert.equal(rich.PackCode, 'US-CCSS-MATH');
+  assert.equal(rich.Lessons.length, 3);
+  assert.deepEqual(rich.Lessons.map(l => l.LessonCode), [lcode(1, 1), lcode(1, 2), lcode(1, 3)]);
+  rich.Lessons.forEach(lesson => {
+    assert.equal(lesson.CultureCode, 'en');
+    assert.ok(lesson.ExplanationParagraphs.length >= 2);
+    assert.ok(lesson.KeyConcepts.length >= 3);
+    assert.ok(lesson.WorkedExamples.length >= 3);
+    assert.ok(lesson.CommonMistakes.length >= 2);
+    assert.ok(lesson.SummaryPoints.length >= 3);
+    assert.ok(lesson.Visuals.length >= 1);
+    lesson.WorkedExamples.forEach(ex => {
+      assert.ok(ex.Title && ex.Question && ex.Method && ex.Answer);
+      assert.ok(ex.Steps.length >= 3);
+    });
+    assert.match(lesson.ExplanationParagraphs.join(' '), /area/i);
+    assert.ok(lesson.Visuals.every(v => v.Description && v.Description.length > 40));
+  });
+});
