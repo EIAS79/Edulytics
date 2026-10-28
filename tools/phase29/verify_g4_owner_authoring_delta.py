@@ -27,11 +27,14 @@ def _read_candidate(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
-def _check_blob_pair(entry, old_key, new_key):
+def _check_blob_pair(entry, old_key, new_key, main_is_original):
     path = entry["path"]
-    old = _git("rev-parse", "origin/main:" + path)
-    new = _git("hash-object", path)
-    if old != entry[old_key] or new != entry[new_key] or old == new:
+    main_blob = _git("rev-parse", "origin/main:" + path)
+    candidate_blob = _git("hash-object", path)
+    expected_main = entry[old_key] if main_is_original else entry[new_key]
+    if (main_blob != expected_main or
+        candidate_blob != entry[new_key] or
+        (main_is_original and main_blob == candidate_blob)):
         raise ValueError("Pinned Grade 4 Git blob fingerprint drift: " + path)
     return path
 
@@ -45,8 +48,7 @@ def validate():
         lock.get("releaseStatus") != "NO_GO" or
         lock.get("sourceElementParity") != "NOT_VERIFIED" or
         lock.get("originalVisualAndThirdPartyAssetRights") != "REVIEW_REQUIRED" or
-        lock.get("authenticatedStudentTeacherRuntimeAcceptance") != "NOT_VERIFIED" or
-        _git("rev-parse", "origin/main") != lock.get("originalMainCommit")):
+        lock.get("authenticatedStudentTeacherRuntimeAcceptance") != "NOT_VERIFIED"):
         raise ValueError("Grade 4 owner revision authorization/release lock drift")
 
     pack_lock = lock["contentPack"]
@@ -60,11 +62,39 @@ def validate():
         blueprint_lock.get("allOtherBlueprintFields") != "MUST_MATCH_MAIN"):
         raise ValueError("Grade 4 change scope widened unexpectedly")
 
-    content_path = _check_blob_pair(pack_lock, "originalMainBlobSha", "ownerAuthoredCandidateBlobSha")
-    bp_path = _check_blob_pair(blueprint_lock, "originalMainBlobSha", "titleCorrectedCandidateBlobSha")
+    main_is_original = _git("rev-parse", "origin/main") == lock["originalMainCommit"]
+    content_path = _check_blob_pair(
+        pack_lock, "originalMainBlobSha", "ownerAuthoredCandidateBlobSha",
+        main_is_original)
+    bp_path = _check_blob_pair(
+        blueprint_lock, "originalMainBlobSha", "titleCorrectedCandidateBlobSha",
+        main_is_original)
     if (content_path != "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g4-phase29-v1.lesson-content-pack.json"
         or bp_path != "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade4-im-k5-2021.lesson-blueprint.json"):
         raise ValueError("Grade 4 revision paths changed")
+
+    # After #578 is merged, origin/main itself contains the exact signed-off
+    # owner-authored pack/title blob pair. Future hotfix PRs must preserve
+    # BOTH immutable published blobs. Requiring the pre-release main SHA
+    # forever would spuriously reject safe post-release code-only patches.
+    # This branch makes no new academic/source-equivalence claim; the original
+    # A-C audit is already pinned by the exact pair of published Git blobs.
+    if not main_is_original:
+        revised = _read_candidate(content_path)
+        corrected_bp = _read_candidate(bp_path)
+        lessons = revised.get("lessons")
+        titles = corrected_bp.get("Lessons")
+        if (not isinstance(lessons, list) or len(lessons) != 149 or
+            not isinstance(titles, list) or len(titles) != 149):
+            raise ValueError("Published Grade 4 lesson denominator changed")
+        codes = [row.get("lessonCode") for row in lessons]
+        if (len(set(codes)) != 149 or
+            any(not isinstance(c, str) or
+                not c.startswith("PED:US-CCSS-MATH:G4:") for c in codes) or
+            any(row.get("LessonCode") != code
+                for row, code in zip(titles, codes))):
+            raise ValueError("Published Grade 4 lesson identity/order changed")
+        return {("US-CCSS-MATH", code) for code in codes}
 
     original = _read_main(content_path)
     revised = _read_candidate(content_path)
