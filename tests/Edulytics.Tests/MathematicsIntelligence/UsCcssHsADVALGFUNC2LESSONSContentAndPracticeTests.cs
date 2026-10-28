@@ -140,16 +140,16 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
         var entries = practice.RootElement.GetProperty("entries").EnumerateArray().ToArray();
         foreach (var code in new[] { "CCSS:HSA-REI.C.8", "CCSS:HSA-REI.C.9" })
         {
-            var entry = Assert.Single(entries.Where(row =>
-                row.GetProperty("outcomeCode").GetString() == code));
+            var entry = Assert.Single(entries, row =>
+                row.GetProperty("outcomeCode").GetString() == code);
             var target = entry.GetProperty("targetRuleId").GetString()!;
             // Expected to FAIL on the prior main mapping until the designated
             // shared integration owner fixes this cross-course registry.
             Assert.NotEqual("one-step-formula-equation", target);
             Assert.Contains("matrix", target, StringComparison.OrdinalIgnoreCase);
         }
-        var logMap = Assert.Single(entries.Where(row =>
-            row.GetProperty("outcomeCode").GetString() == "CCSS:HSF-BF.B.5"));
+        var logMap = Assert.Single(entries, row =>
+            row.GetProperty("outcomeCode").GetString() == "CCSS:HSF-BF.B.5");
         Assert.Equal("exponential-log", logMap.GetProperty("targetRuleId").GetString());
     }
 
