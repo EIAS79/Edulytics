@@ -1,0 +1,754 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
+      "CultureCode": "en",
+      "Title": "Cubic Units of Measure",
+      "ExplanationParagraphs": [
+        "Goal: select and interpret an appropriately sized standard cubic unit for real objects, then find rectangular-prism volume with labeled length dimensions. A number such as 24 without a unit is incomplete: twenty-four cubic centimeters, inches and feet describe different spaces.",
+        "Warm-up: compare a cubic foot with a cubic yard using familiar objects. Explain why the same count of differently sized cubes cannot describe the same physical volume. Describe the size of a unit cube in terms of the length of one edge.",
+        "Activity 1 — choose units: consider a juice box, lunch box, freezer, moving truck and classroom. Which of cubic centimeter, cubic inch and cubic foot would give a useful magnitude? Multiple choices can be defended with an appropriate reason and context; do not score a single unit choice as universally correct.",
+        "Activity 2 — information-gap: your partner has the missing width of a rectangular freezer. The available dimensions are length 4 feet and height 3 feet. Ask exactly what additional measurement is needed; once a width of 2 feet is supplied in the first-party model, calculate 4 × 2 × 3 = 24 cubic feet. Explain what makes a question useful, and why multiplying before obtaining the width would be an unjustified guess.",
+        "Assessment: a numeric final volume can be checked exactly when all dimensions are known, but choices of units, questions asked, and mathematical justification need teacher review. This public 2021 source lesson explicitly uses an information-gap partner routine; its publisher materials are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cubic unit",
+          "Definition": "Volume of a cube with edges one unit long in the given linear unit.",
+          "Rule": "1 cm × 1 cm × 1 cm gives a cubic centimeter; 1 ft × 1 ft × 1 ft gives a cubic foot.",
+          "Example": "A 2-foot by 3-foot by 4-foot box holds 24 cubic feet."
+        },
+        {
+          "Title": "Choosing the measurement scale",
+          "Definition": "A useful cubic unit depends on the size of the object and the desired precision.",
+          "Rule": "Name the cubic unit explicitly when reporting volume; do not interchange units with unequal cube edge lengths.",
+          "Example": "A classroom volume is commonly expressed in cubic feet, not cubic centimeters."
+        },
+        {
+          "Title": "Information-gap measurement",
+          "Definition": "A missing perpendicular dimension prevents a unique rectangular-prism volume calculation.",
+          "Rule": "For V = length × width × height, know all three dimensions or base area and height before calculating.",
+          "Example": "A freezer 4 feet long and 3 feet high needs its width to determine the volume."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Choose a practical unit",
+          "Question": "Would cubic centimeters or cubic feet be more convenient to measure the volume of a large moving truck?",
+          "Method": "Compare the unit cube sizes with the object.",
+          "Steps": [
+            "A cubic centimeter has a 1-centimeter edge, tiny relative to a truck.",
+            "A cubic foot has a 1-foot edge and describes a much larger block of space.",
+            "Choose cubic feet as a reasonable, readable unit; other units are mathematically convertible but less convenient."
+          ],
+          "Answer": "Cubic feet are a sensible choice.",
+          "Check": "Teacher reviews the object-size explanation, not merely the chosen word."
+        },
+        {
+          "Title": "Ask the missing information",
+          "Question": "A freezer measures 4 feet long and 3 feet high; what else must you know to find its volume?",
+          "Method": "Identify which dimension is absent from length × width × height.",
+          "Steps": [
+            "List the two known perpendicular dimensions: 4 feet and 3 feet.",
+            "Note that different widths would yield different volumes.",
+            "Ask for the width or equivalent base area."
+          ],
+          "Answer": "The width is needed.",
+          "Check": "There is not yet a unique numerical volume; do not invent it."
+        },
+        {
+          "Title": "Finish an information gap",
+          "Question": "The freezer is 4 feet long, 2 feet wide and 3 feet high. Find its volume.",
+          "Method": "Multiply perpendicular side lengths using feet consistently.",
+          "Steps": [
+            "Calculate base area 4 × 2 = 8 square feet.",
+            "Multiply by the matching height of 3 feet.",
+            "Give the answer as a three-dimensional unit."
+          ],
+          "Answer": "24 cubic feet.",
+          "Check": "8 square feet × 3 feet = 24 cubic feet."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Answer with an unlabeled 24",
+          "WhyWrong": "The number alone does not specify the size of the measuring unit.",
+          "Correction": "Attach cubic feet, cubic inches or cubic centimeters as appropriate to the given dimensions."
+        },
+        {
+          "Mistake": "Infer a missing width without asking",
+          "WhyWrong": "The volume of a rectangular prism is not unique from only two side lengths.",
+          "Correction": "Ask for the missing perpendicular dimension and justify why it is needed."
+        }
+      ],
+      "SummaryPoints": [
+        "Different standard cubic units have different physical sizes.",
+        "Select a unit that makes sense for an object's scale and report it with the numerical volume.",
+        "Information-gap communication and defensible unit choices are teacher-reviewed; not every part is a fixed-response computation.",
+        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 7; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-7/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Choosing a cubic unit",
+          "Description": "Original sample selection guide; choices are justified judgments, not exact-answer publisher keys.",
+          "Rows": [
+            {
+              "Label": "Object",
+              "Cells": [
+                "Juice box",
+                "Freezer",
+                "Classroom"
+              ]
+            },
+            {
+              "Label": "Reasonable unit",
+              "Cells": [
+                "Cubic inch or centimeter",
+                "Cubic foot",
+                "Cubic foot"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
+      "CultureCode": "en",
+      "Title": "Figures Made of Prisms",
+      "ExplanationParagraphs": [
+        "Goal: find the volume of a solid composed of two or more non-overlapping rectangular prisms. Compare physical constructions and explain why the total space occupied equals the sum of volumes of the separate parts.",
+        "Warm-up: use a first-party collection of imagined composite solids and discuss which might be decomposed into two rectangular boxes. Different justified Which One Doesn't Belong choices are possible; do not substitute a single predetermined classification.",
+        "Activity 1 — put two prisms together: two classmates each build a right rectangular prism from equal unit cubes, bring the solids together without overlapping cube interiors, and show how their individual volumes add. As an example, 12 cubes and 10 cubes make a 22-cube composite regardless of arrangement.",
+        "Activity 2 — I see two prisms: a composite has one block 3 × 2 × 2 and another 3 × 2 × 3 joined at a face; their volumes 12 and 18 sum to 30 cubic units. Provide two possible decompositions or compare the sum to counting equal cube layers in the whole. Make the spatial arrangement explicit with accessible verbal descriptions.",
+        "Assessment boundary: a numeric sum is necessary but not sufficient when the source asks learners to construct or explain how the parts form the figure. Teacher checks the construction and whether the alleged pieces overlap. Actual publisher figure cards and restricted Cool-down are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Composite solid",
+          "Definition": "A figure constructed from multiple three-dimensional solids.",
+          "Rule": "Decompose into non-overlapping rectangular prisms, count each and add.",
+          "Example": "A twelve-cube prism and a ten-cube prism can form a 22-cube compound solid."
+        },
+        {
+          "Title": "Additivity of volume",
+          "Definition": "Total cubic-unit count equals the sum of counts of disjoint solid parts.",
+          "Rule": "If volumes V1 and V2 occupy non-overlapping spaces, Vtotal = V1 + V2.",
+          "Example": "A 12-cube piece plus an 18-cube piece occupies 30 cubes."
+        },
+        {
+          "Title": "Multiple decompositions",
+          "Definition": "One solid may be partitioned into equivalent disjoint parts in different ways.",
+          "Rule": "All valid partitions cover the original solid exactly once.",
+          "Example": "Six 5-cube layers or two rectangular prisms of 12 and 18 may represent the same volume."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Join two cube models",
+          "Question": "Jada builds a 12-cube prism and Diego builds a separate 10-cube prism. What is the new volume if the solids meet only along faces?",
+          "Method": "Add non-overlapping volumes.",
+          "Steps": [
+            "Count twelve cubes in the first piece.",
+            "Count ten in the second; touching faces contribute no additional cubic-unit volume.",
+            "Add 12 + 10 = 22."
+          ],
+          "Answer": "22 cubic units.",
+          "Check": "The physical pieces share no cube interiors."
+        },
+        {
+          "Title": "Two right rectangular prisms",
+          "Question": "One part is 3 × 2 × 2 cubes and the other 3 × 2 × 3. What is their combined volume?",
+          "Method": "Compute each prism volume and add.",
+          "Steps": [
+            "Find first volume: 3 × 2 × 2 = 12.",
+            "Find second volume: 3 × 2 × 3 = 18.",
+            "Add 12 + 18 = 30."
+          ],
+          "Answer": "30 cubic units.",
+          "Check": "A teacher checks the attachment has no overlap; counting the full five-layer 3×2 prism also gives 6×5=30."
+        },
+        {
+          "Title": "Check overlapping counts",
+          "Question": "A drawn composite has volumes 20 and 16 if treated as two boxes, but the descriptions include four of the same cubes in both pieces. What is the actual union volume?",
+          "Method": "Subtract the common cubes or choose a disjoint partition.",
+          "Steps": [
+            "Add the putative volumes to obtain 36.",
+            "Identify four cubes counted in both groups.",
+            "Remove one repeated count of those four cubes."
+          ],
+          "Answer": "32 cubic units.",
+          "Check": "20 + 16 − 4 = 32; a non-overlapping partition gives the same total."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Count shared cubes twice",
+          "WhyWrong": "Overlapping parts cannot be added as though disjoint.",
+          "Correction": "Create a non-overlapping decomposition or subtract the overlap once."
+        },
+        {
+          "Mistake": "Ignore a small attached cube row",
+          "WhyWrong": "Every cube in the solid contributes space, even if a standard large prism occupies most of it.",
+          "Correction": "Count each attached component as an additional non-overlapping volume."
+        }
+      ],
+      "SummaryPoints": [
+        "Volume is additive for disjoint rectangular prisms.",
+        "Different partitions can count the same cubic units without altering the result.",
+        "Teacher reviews original physical construction, decomposition and explanations beyond a numeric sum.",
+        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 8; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-8/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Adding disjoint prism volumes",
+          "Description": "Original accessible first-party layer table for two attached prisms.",
+          "Rows": [
+            {
+              "Label": "Piece",
+              "Cells": [
+                "A",
+                "B",
+                "Total"
+              ]
+            },
+            {
+              "Label": "Dimensions",
+              "Cells": [
+                "3 × 2 × 2",
+                "3 × 2 × 3",
+                "Combined"
+              ]
+            },
+            {
+              "Label": "Cubic units",
+              "Cells": [
+                "12",
+                "18",
+                "30"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
+      "CultureCode": "en",
+      "Title": "Measure Figures Made From Prisms",
+      "ExplanationParagraphs": [
+        "Goal: find composite-prism volumes even when unit cubes are not drawn. Use labeled measurements and subtraction to infer missing side lengths; support the answer with decompositions and parenthesized expressions.",
+        "Warm-up — multiplying by ten: compare 6 × 2, 6 × 2 × 10 and 60 × 20 × 10. Explain the role of tenfold place-value changes; do not confuse cubic-unit labels with the factor ten.",
+        "Activity 1 — find figure volumes: a 5 × 3 × 3 rectangular prism is attached to one additional one-unit cube without overlap, yielding 46 cubic units. Compare splitting off the one-cube part with counting layers of the combined solid when possible. For an L-shaped figure, mark a non-overlapping rectangular split and work out any missing side lengths using subtraction.",
+        "Activity 2 — expressions explain the solid: write and interpret the independent example (2 × 3 × 4) + (3 × 3 × 2) = 42 cubic units as two attached, non-overlapping solids. Explain what each factor represents geometrically. Different valid splits produce the same total; teacher checks the drawn boundary and units.",
+        "Academic boundary: the 2021 source requires interpreting measured composite diagrams and relating expressions to the parts, not just entering a sum. Open-ended decomposition, identifying inferred dimensions and peer explanations remain teacher-reviewed. Publisher diagrams and restricted Cool-down are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Measure a solid without visible cubes",
+          "Definition": "Volume may be inferred from linear lengths instead of explicitly drawn unit cubes.",
+          "Rule": "For each rectangular part, V = length × width × height with consistent units.",
+          "Example": "A 5 × 3 × 3 prism is 45 cubic units."
+        },
+        {
+          "Title": "Missing length from a diagram",
+          "Definition": "A total length minus a labeled part can yield the remaining segment.",
+          "Rule": "Do not invent an edge length; derive it from the whole and a known component.",
+          "Example": "An L-shaped footprint 9 units across with a 4-unit section leaves 5 units."
+        },
+        {
+          "Title": "An expression should identify parts",
+          "Definition": "An additive volume expression corresponds to disjoint three-dimensional regions.",
+          "Rule": "Group each prism's three perpendicular dimensions, then add volumes.",
+          "Example": "(2×3×4)+(3×3×2)=24+18=42."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "One extra cube",
+          "Question": "A 5-by-3-by-3 packed prism has one extra unit cube connected to a face. What is the total volume?",
+          "Method": "Add the volume of the large prism and its non-overlapping attachment.",
+          "Steps": [
+            "Find the large prism: 5×3×3=45.",
+            "Find the attached cube: 1 cubic unit.",
+            "Add them to obtain 46 cubic units."
+          ],
+          "Answer": "46 cubic units.",
+          "Check": "Every cube is included exactly once."
+        },
+        {
+          "Title": "Interpret a decomposed expression",
+          "Question": "Explain (2×3×4)+(3×3×2) as a composite prism.",
+          "Method": "Associate each product with a separate piece.",
+          "Steps": [
+            "First piece volume is 2×3×4=24.",
+            "Second piece volume is 3×3×2=18.",
+            "Join them along a face without overlap and add 24+18."
+          ],
+          "Answer": "42 cubic units.",
+          "Check": "Teacher checks the represented pieces cover the intended figure without overlap."
+        },
+        {
+          "Title": "Infer an unknown segment",
+          "Question": "An L-shaped solid is 9 units across overall. One section occupies 4 of those units; what is the other section's width?",
+          "Method": "Use part-whole subtraction before computing any three-dimensional volume.",
+          "Steps": [
+            "Label the full horizontal extent as 9.",
+            "Locate the given 4-unit part in the same direction.",
+            "Subtract 9−4=5 and only then use this length to label the split."
+          ],
+          "Answer": "The other width is 5 units.",
+          "Check": "The horizontal segments add back to 9; the final volume would need both pieces' other dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume all missing lengths equal a shown edge",
+          "WhyWrong": "A composite figure may have different segment lengths.",
+          "Correction": "Use total-minus-known-segment reasoning within the same direction."
+        },
+        {
+          "Mistake": "Multiply unrelated dimensions across two separate pieces",
+          "WhyWrong": "A composite shape is not necessarily one rectangular prism.",
+          "Correction": "Create and label disjoint rectangular solids; calculate each and add."
+        }
+      ],
+      "SummaryPoints": [
+        "Composite volume can be computed from standard dimensions without counting displayed cubes.",
+        "Derive missing side lengths from consistent labeled geometry before multiplying.",
+        "Parenthesized expressions must correspond to actual non-overlapping pieces; teacher reviews the decomposition.",
+        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 9; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-9/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Two-prism expression",
+          "Description": "First-party accessible reference for a composite numerical expression.",
+          "Rows": [
+            {
+              "Label": "Piece",
+              "Cells": [
+                "First prism",
+                "Second prism"
+              ]
+            },
+            {
+              "Label": "Three side lengths",
+              "Cells": [
+                "2, 3, 4",
+                "3, 3, 2"
+              ]
+            },
+            {
+              "Label": "Volume",
+              "Cells": [
+                "24",
+                "18"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "42 cubic units"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L10",
+      "CultureCode": "en",
+      "Title": "Represent Volume with Expressions PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: represent the same composite solid's volume with more than one valid expression, including adding non-overlapping prism parts and subtracting a missing rectangular part from a surrounding larger prism.",
+        "Warm-up: imagine an L-shaped volume made of two box-like pieces. Discuss whether its shape could be described as a filled rectangular block with a smaller cut-out, or as two joined rectangular prisms. Both interpretations require precise dimensions.",
+        "Activity 1 — compare expressions: in an original example, start with a 5 × 5 × 5 cube and remove a rectangular 2 × 3 × 5 block. The volume is 125−30=95. Alternatively show the same volume as (3 × 5 × 5) + (2 × 2 × 5) = 75+20=95, after verifying those two regions form a disjoint partition of the remaining space.",
+        "Activity 2 — draw two decompositions: use a grid or a text-based layer description to compare different cuts of the same stepped solid, then produce both matching expressions and explain which dimensions each represents. Include any missing length inferred by subtraction from the full bounding dimensions.",
+        "Source and teacher assessment: the 2021 source explicitly asks for multiple decompositions and expressions, including subtraction from a whole block. Choosing only the numeric result is insufficient when the source requires a diagram and proof that the decompositions represent the same space. Gated Cool-down and publisher pictures are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Add disjoint prism pieces",
+          "Definition": "The sum of volumes equals the whole if parts partition it with no gaps or overlap.",
+          "Rule": "Calculate each prism's volume, then add the results.",
+          "Example": "75+20=95 cubic units."
+        },
+        {
+          "Title": "Subtract a missing prism",
+          "Definition": "The occupied region can be a bounding rectangular prism minus an unoccupied rectangular block.",
+          "Rule": "Vremaining = Vbounding − Vmissing only when the missing solid lies entirely inside the bounding solid.",
+          "Example": "125−30=95 cubic units."
+        },
+        {
+          "Title": "Equivalent expressions for the same shape",
+          "Definition": "Two correct decompositions must count exactly the same occupied space.",
+          "Rule": "Compare the physical regions, not just arithmetic coincidence.",
+          "Example": "(3×5×5)+(2×2×5) = (5×5×5)−(2×3×5)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Subtract the empty rectangular part",
+          "Question": "A 5×5×5 cube-shaped region is missing a 2×3×5 rectangular block. What is the remaining volume?",
+          "Method": "Remove the missing block from the bounding cube.",
+          "Steps": [
+            "Compute bounding cube volume: 5×5×5=125.",
+            "Compute removed block volume: 2×3×5=30.",
+            "Subtract 125−30."
+          ],
+          "Answer": "95 cubic units.",
+          "Check": "Only the specified missing 30 cubes are removed."
+        },
+        {
+          "Title": "Add two remaining pieces",
+          "Question": "The same L-shaped solid can be split into a 3×5×5 box and a 2×2×5 box. Find its volume.",
+          "Method": "Sum two disjoint parts.",
+          "Steps": [
+            "Calculate 3×5×5=75.",
+            "Calculate 2×2×5=20.",
+            "Add 75+20=95."
+          ],
+          "Answer": "95 cubic units.",
+          "Check": "The two parts together cover the bounding block except for the original 2×3×5 cut-out."
+        },
+        {
+          "Title": "Check another expression",
+          "Question": "A student uses (5×5×5)+(2×3×5) for the cut-out solid. Explain the mistake.",
+          "Method": "Compare the sign of the missing piece in the representation.",
+          "Steps": [
+            "Interpret 125 as the volume of the complete bounding cube.",
+            "Interpret 30 as an absent region, not an attached region.",
+            "Correct the sign to subtraction; recompute 125−30=95."
+          ],
+          "Answer": "The valid expression uses subtraction and has volume 95 cubic units.",
+          "Check": "Adding the absent piece would incorrectly count space that is not occupied."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add a removed block as though it were attached",
+          "WhyWrong": "Empty space in a bounding prism must be subtracted.",
+          "Correction": "Label occupied and missing regions before selecting plus or minus."
+        },
+        {
+          "Mistake": "Write an expression with no geometric partition",
+          "WhyWrong": "Equal numerical values do not alone certify a shape decomposition.",
+          "Correction": "Show the side lengths and occupied region for each product."
+        }
+      ],
+      "SummaryPoints": [
+        "A composite solid may be represented by summing disjoint parts or subtracting an empty part from a bounding prism.",
+        "Equivalent numerical expressions must correspond to the same volume in cubic units.",
+        "Original student decomposition and justification remain teacher-assessed.",
+        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 10; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-10/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Equivalent volume calculations",
+          "Description": "First-party additive and subtractive expressions for a consistent step-shaped solid.",
+          "Rows": [
+            {
+              "Label": "Method",
+              "Cells": [
+                "Disjoint addition",
+                "Bounding subtraction"
+              ]
+            },
+            {
+              "Label": "Expression",
+              "Cells": [
+                "75 + 20",
+                "125 − 30"
+              ]
+            },
+            {
+              "Label": "Volume",
+              "Cells": [
+                "95",
+                "95"
+              ]
+            },
+            {
+              "Label": "Teacher check",
+              "Cells": [
+                "No overlap",
+                "Correct missing region"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
+      "CultureCode": "en",
+      "Title": "All Kinds of Prisms",
+      "ExplanationParagraphs": [
+        "Goal: solve real and mathematical volume problems involving packed rectangular prisms and real objects, including dimensions, given base area and composite garden designs. Choose a strategy appropriate to the given information rather than assuming every problem supplies three side lengths.",
+        "Warm-up: consider different box-shaped and partially pictured prism figures, describing what information is known and which dimensions would be needed to calculate volume. Multiple justified classifications are valid in the source warm-up.",
+        "Activity 1 — prism problems: a storage container 4 feet wide, 9 feet long and 5 feet high has volume 4×9×5 = 180 cubic feet. A walk-in closet with 30 square feet of floor area and a 9-foot ceiling has volume 30×9 = 270 cubic feet, even though the individual floor length and width are not given.",
+        "Activity 2 — raised-bed garden: a first-party T-like garden is built by joining non-overlapping rectangular pieces measuring 3 × 8 × 4 feet and 10 × 3 × 4 feet. Compute 96 and 120 cubic feet respectively; combine to 216 cubic feet. Show the location of the dividing plane or explain that the two pieces share only a face.",
+        "Assessment: the actual source requires interpreting realistic context, drawing or decomposing a joined garden volume, selecting base area versus edge lengths and justifying the calculation. Numeric Practice alone does not grade the learner's original garden design, reasoning or diagrams. Publisher images and gated Cool-down are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Volume from three dimensions",
+          "Definition": "A packed rectangular prism fills length × width × height cubic units.",
+          "Rule": "Multiply three mutually perpendicular lengths, keeping common units.",
+          "Example": "4 feet ×9 feet ×5 feet =180 cubic feet."
+        },
+        {
+          "Title": "Volume from given base area",
+          "Definition": "When the floor area is supplied, individual side lengths are not needed to find volume.",
+          "Rule": "V = base area × corresponding height.",
+          "Example": "30 square feet ×9 feet =270 cubic feet."
+        },
+        {
+          "Title": "Volume of joined boxes",
+          "Definition": "A union of disjoint rectangular prisms has the sum of their individual volumes.",
+          "Rule": "Separate the solid into parts that share no interior cubic units.",
+          "Example": "96+120=216 cubic feet for two garden beds."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Storage container",
+          "Question": "A box is 4 feet by 9 feet by 5 feet. Find the volume.",
+          "Method": "Multiply three linear dimensions.",
+          "Steps": [
+            "Compute base area 4×9=36 square feet.",
+            "Multiply by height 5 feet.",
+            "Label the result in cubic feet."
+          ],
+          "Answer": "180 cubic feet.",
+          "Check": "36×5=180."
+        },
+        {
+          "Title": "Closet with known floor area",
+          "Question": "A closet floor covers 30 square feet and its ceiling is 9 feet high. Find its volume.",
+          "Method": "Use provided base area without inventing length/width.",
+          "Steps": [
+            "Recognize 30 square feet is already the base area.",
+            "Multiply 30×9.",
+            "Attach cubic feet."
+          ],
+          "Answer": "270 cubic feet.",
+          "Check": "30 square feet×9 feet=270 cubic feet."
+        },
+        {
+          "Title": "Two-piece raised bed",
+          "Question": "A raised garden uses two joined, non-overlapping 3×8×4 and 10×3×4 foot boxes. What is its total volume?",
+          "Method": "Compute both prism volumes and sum them.",
+          "Steps": [
+            "First box: 3×8×4=96 cubic feet.",
+            "Second box: 10×3×4=120 cubic feet.",
+            "Join only at a face, so add the volumes."
+          ],
+          "Answer": "216 cubic feet.",
+          "Check": "96+120=216; teacher checks the proposed decomposition and design."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Invent a closet length and width",
+          "WhyWrong": "When floor area is already known, its separate dimensions are unnecessary.",
+          "Correction": "Use square-foot floor area times height."
+        },
+        {
+          "Mistake": "Count a shared boundary as a volume",
+          "WhyWrong": "A two-dimensional common face has zero cubic-unit volume.",
+          "Correction": "Add only the non-overlapping interior volumes of the adjoining prisms."
+        }
+      ],
+      "SummaryPoints": [
+        "Volume problems may provide three edge lengths, a base area plus height, or multiple rectangular components.",
+        "Report cubic units and choose a mathematical strategy that matches the given information.",
+        "Teacher reviews the garden's physical decomposition, units and explanation.",
+        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 11; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-11/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Different volume contexts",
+          "Description": "First-party comparison table for prisms, room space and a composite garden.",
+          "Rows": [
+            {
+              "Label": "Situation",
+              "Cells": [
+                "Storage box",
+                "Closet",
+                "Raised garden"
+              ]
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "4×9×5",
+                "30×9",
+                "(3×8×4)+(10×3×4)"
+              ]
+            },
+            {
+              "Label": "Cubic feet",
+              "Cells": [
+                "180",
+                "270",
+                "216"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
+      "CultureCode": "en",
+      "Title": "Lots and Lots of Garbage (optional)",
+      "ExplanationParagraphs": [
+        "Goal: explore how 60 equal-size shipping containers may be arranged in multiple rectangular arrays and reason about their practical placement; then make and justify estimates of container counts on a cargo ship using explicit assumptions. This optional lesson is an authentic modeling/investigation task rather than a unique numeric answer.",
+        "Warm-up: discuss the meaning of a ton as a unit of weight and the difference between how much material weighs and how much physical space it occupies. The source discusses about 3,300 tons of plastic trash as context; those mass figures do not by themselves give cubic volume without density or other capacity information.",
+        "Activity 1 — sixty containers: give at least five different positive-integer layer arrangements with product 60, for example 1×6×10, 2×5×6, 3×4×5, 2×3×10 and 1×3×20. Sketch or describe each layout, then choose a plausible arrangement for a boat and justify practical considerations such as height, stability and footprint. No layout is automatically 'best' without ship constraints.",
+        "Activity 2 — estimating a larger ship: estimate too low, plausible and too high container totals on a partly loaded cargo ship, then refine the estimate for a fuller ship. State assumptions about stacks, rows, columns, containers hidden from view and unusable deck space. Learners can give different valid estimates if assumptions are transparent and calculations follow them.",
+        "Assessment and source boundaries: evaluating an argument for a best arrangement, constructing five valid three-factor arrays and critiquing a Fermi-style estimate require teacher review. Automatically grading 60 as the only correct result would erase the original lesson purpose. Source photograph has separate attribution, not copied. Original gated Cool-down not inspected."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Array arrangements of sixty",
+          "Definition": "A fixed total can be represented by different factorizations into positive whole-number side counts.",
+          "Rule": "For a complete rectangular arrangement, layers × rows × columns = number of containers.",
+          "Example": "2×5×6=60 and 3×4×5=60."
+        },
+        {
+          "Title": "Practical constraints",
+          "Definition": "Mathematical volume alone does not determine whether a container layout is safe or desirable.",
+          "Rule": "Consider footprint, height, clearance, support and stability as distinct constraints.",
+          "Example": "A 1×3×20 layout uses 60 containers but may be unsuitable for a particular ship."
+        },
+        {
+          "Title": "Defensible modeling estimate",
+          "Definition": "A real-world estimate depends on assumptions about visible and concealed quantities.",
+          "Rule": "State assumptions, compute implied totals, compare bounds and revise when better information appears.",
+          "Example": "If 8 rows × 12 containers per row × 4 vertical layers are assumed, the modeled total is 384."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find five arrangements",
+          "Question": "Produce five different rectangular-array arrangements of 60 identical containers.",
+          "Method": "Factor 60 into three positive integers in different ways.",
+          "Steps": [
+            "Write 1×6×10=60 and 2×5×6=60.",
+            "Write 3×4×5=60 and 2×3×10=60.",
+            "Write 1×3×20=60; label which factor is layers, rows or columns."
+          ],
+          "Answer": "Five sample valid arrangements: 1×6×10, 2×5×6, 3×4×5, 2×3×10, 1×3×20.",
+          "Check": "All products are exactly 60; teacher checks the chosen geometry and whether any dimension restrictions apply."
+        },
+        {
+          "Title": "Estimate a container count",
+          "Question": "Assume 8 rows of 12 containers and 4 vertical layers on a rectangular ship section. How many containers are modeled?",
+          "Method": "Make the assumptions explicit and multiply.",
+          "Steps": [
+            "Identify 8×12=96 containers in one complete layer.",
+            "Assume exactly four such complete layers.",
+            "Multiply 96×4."
+          ],
+          "Answer": "384 under the stated model assumptions.",
+          "Check": "384 is not an observed fact about a real ship; changing the assumptions changes the estimate."
+        },
+        {
+          "Title": "Critique a best-arrangement claim",
+          "Question": "A group says the tallest possible stack of 60 must be best because it uses all containers. Is that conclusion justified?",
+          "Method": "Distinguish exact container count from practical placement conditions.",
+          "Steps": [
+            "Confirm that a tall stack could still contain exactly 60.",
+            "Ask whether the cargo ship has height, weight-distribution or safety limits.",
+            "Compare another arrangement with the same count but a lower height."
+          ],
+          "Answer": "Not necessarily; both may use 60, and suitability depends on unstated physical constraints.",
+          "Check": "A teacher reviews the proposed justification and what evidence would be needed."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a ton as a cubic-foot unit",
+          "WhyWrong": "Mass and volume measure different properties and need additional information to convert.",
+          "Correction": "Keep tons as a weight unit; determine container dimensions and density before making a volume inference."
+        },
+        {
+          "Mistake": "Claim one optimal layout without constraints",
+          "WhyWrong": "Multiple arrays hold the same total, and real-world suitability cannot be inferred from factorization alone.",
+          "Correction": "List assumptions, state safety and footprint constraints, and justify the choice."
+        }
+      ],
+      "SummaryPoints": [
+        "Sixty identical containers can be arranged in many different rectangular arrays.",
+        "Real-world ship container counts and layout decisions depend on explicit assumptions and practical limits.",
+        "This optional source investigation is teacher reviewed; no single numeric answer certifies the student task.",
+        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 12; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-12/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Five sample arrangements of 60 containers",
+          "Description": "First-party array table; these are examples rather than claims about actual ship configurations.",
+          "Rows": [
+            {
+              "Label": "Layers",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "2",
+                "1"
+              ]
+            },
+            {
+              "Label": "Rows",
+              "Cells": [
+                "6",
+                "5",
+                "4",
+                "3",
+                "3"
+              ]
+            },
+            {
+              "Label": "Columns",
+              "Cells": [
+                "10",
+                "6",
+                "5",
+                "10",
+                "20"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "60",
+                "60",
+                "60",
+                "60",
+                "60"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
