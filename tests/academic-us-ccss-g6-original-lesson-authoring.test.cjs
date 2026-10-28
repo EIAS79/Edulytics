@@ -222,6 +222,11 @@ test('Grade 6 public-source area activity boundaries match first-party candidate
     assert.ok(entry.practiceBoundary.teacherOnly.length >= 2);
     assert.ok(entry.practiceBoundary.forbiddenSubstitutes.length >= 2);
     assert.ok(entry.remainingGaps.length >= 3);
+    assert.equal(entry.teacherOnlyRubricCandidate.criteria.length, 4);
+    assert.equal(entry.teacherOnlyRubricCandidate.scoreRange.max, 8);
+    assert.equal(entry.teacherOnlyRubricCandidate.teacherDecisionRequired, true);
+    assert.equal(entry.teacherOnlyRubricCandidate.persistedEvaluationVerified, false);
+    assert.ok(entry.teacherOnlyRubricCandidate.criteria.every(c => c.maxPoints === 2 && c.requiredEvidence));
     assert.ok(rich.Lessons[index].WorkedExamples.length >= 3);
     assert.ok(rich.Lessons[index].WorkedExamples.some(e => /teacher.review/i.test(e.Method + ' ' + e.Check)));
   });
