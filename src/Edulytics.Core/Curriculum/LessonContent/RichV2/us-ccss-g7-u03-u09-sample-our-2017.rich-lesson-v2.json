@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v2",
+  "ContentVersion": "us-ccss-g7-cross-unit-original-rich-v2-candidate-20261028-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -147,7 +147,8 @@
       "Title": "Lots of Flags",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Scale fractional rectangle dimensions, compare different scales and calculate what fraction or percent of a flag is covered by a region. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/4/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "A flag can be used to compare scale factors and percentages, with the denominator equal to the entire rectangle's area. These examples use independently created measurements, not official flag geometry."
+        "A flag can be used to compare scale factors and percentages, with the denominator equal to the entire rectangle's area. These examples use independently created measurements, not official flag geometry.",
+        "First-party source-analog activity: select a plausible size for a flag, scale the entire flag and its corner panel, then estimate and compute the fraction covered, submitting a labeled drawing. Publisher student source: https://im.kendallhunt.com/MS/students/2/4/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -205,6 +206,19 @@
           ],
           "Answer": "Still 20%.",
           "Check": "The identical area factor cancels."
+        },
+        {
+          "Title": "Draw a larger flag and maintain the colored area proportion",
+          "Question": "An independently designed flag measures 12 cm by 8 cm with a 4-by-4 cm corner panel. A copy is 30 cm wide. Draw it, and calculate its panel size and covered percent.",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "The linear factor is 30/12=2.5, so the new height is 8×2.5=20 cm.",
+            "The panel becomes 10 cm by 10 cm.",
+            "Original fraction=16/96=1/6; copy fraction=100/600=1/6.",
+            "The area percentage is 16⅔% in each flag, because both areas grow by 2.5²."
+          ],
+          "Answer": "Copy 30×20 cm, panel 10×10 cm, colored fraction 1/6, or 16⅔%.",
+          "Check": "Teacher checks correspondence and a genuinely drawn, labeled flag rather than only the percent."
         }
       ],
       "CommonMistakes": [
@@ -378,7 +392,8 @@
       "Title": "Relationships between Quantities",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Recognize, reason about and explain predictable relationships that are not proportional, without requiring premature equation-solving. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/6/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "This introductory source lesson expressly studies predictable nonproportional situations and allows tables, diagrams or verbal reasoning. A generic proportional-rate Practice family would test the wrong target."
+        "This introductory source lesson expressly studies predictable nonproportional situations and allows tables, diagrams or verbal reasoning. A generic proportional-rate Practice family would test the wrong target.",
+        "Independent activity counterparts to the publisher's contrasting popcorn-price tables, nonproportional entrance fees, and full-batch toasting constraints. They test different mathematical models, not a generic proportional scaling rule. Student lesson: https://im.kendallhunt.com/MS/students/2/6/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -436,6 +451,45 @@
           ],
           "Answer": "17 tokens.",
           "Check": "The starting 5 stays even for zero visits."
+        },
+        {
+          "Title": "Compare a unit-price and a fixed-fee popcorn model",
+          "Question": "Theater A sells popcorn at $0.60/oz. Theater B charges $3.50 plus $0.25/oz. Make two pricing tables for 10,20,35 oz; which is proportional?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "A: 10→$6, 20→$12, 35→$21.",
+            "B: 10→$6, 20→$8.50, 35→$12.25.",
+            "In A, each price/ounce ratio equals $0.60 per oz.",
+            "In B, the quotients differ; $3.50 remains as a fixed initial fee."
+          ],
+          "Answer": "A is proportional: $6,$12,$21; B is not proportional: $6,$8.50,$12.25.",
+          "Check": "Teacher checks BOTH distinct tables and the explanation; the figures are original, not publisher examples."
+        },
+        {
+          "Title": "Recover fixed entrance fee from two tickets",
+          "Question": "For an original park: 2 passengers cost $14, and 4 cost $20. Assuming a fixed fee plus a constant per-person increase, find both components and predict a 30-passenger bus fee.",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "Two extra passengers add $6, so each adds $3.",
+            "For two, variable cost is $6 and fixed entry fee is $14−$6=$8.",
+            "Check 4 passengers: $8+4×$3=$20.",
+            "For 30: $8+30×$3=$98."
+          ],
+          "Answer": "$8 fixed plus $3 per person, so 30 passengers cost $98.",
+          "Check": "A teacher reviews the inferred rule and its stated assumptions."
+        },
+        {
+          "Title": "Count complete toaster batches",
+          "Question": "A four-slot toaster takes 35 seconds per batch, including partially filled batches. How long to toast nine slices?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "One batch holds at most four slices.",
+            "Two batches hold at most eight; nine require a third.",
+            "Three batches take 3×35=105 seconds.",
+            "A full or partial batch takes the same time, so cook time is stepwise, not proportional to individual slices."
+          ],
+          "Answer": "105 seconds, using three batches.",
+          "Check": "The student must justify the integer batch count, rather than dividing nine by four as a continuous ratio."
         }
       ],
       "CommonMistakes": [
@@ -496,6 +550,47 @@
           ],
           "PrimaryLabel": "",
           "SecondaryLabel": ""
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Price with and without an additive fee",
+          "Description": "Original contrasting nonproportional and proportional pricing data. Teacher also reviews whole-batch step tables; do not auto-grade ratio scaling alone.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Ounces of popcorn",
+              "Cells": [
+                "10",
+                "20",
+                "35"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Proportional price ($)",
+              "Cells": [
+                "6",
+                "12",
+                "21"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Fixed-fee price ($)",
+              "Cells": [
+                "6",
+                "8.50",
+                "12.25"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
         }
       ],
       "Videos": []
@@ -506,7 +601,8 @@
       "Title": "Relationships of Angles",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Use degree measure, adjacent-angle addition, straight angles and full-turn angles to find missing measures. Original first-party teaching aligned to https://im.kendallhunt.com/MS/teachers/2/7/1/preparation.html (OUR/IM 2017–2019 CC BY 4.0 source lineage; publisher artworks and assessments not reproduced).",
-        "A right angle is 90°, a straight angle 180° and a full turn 360°. This source lesson introduces hands-on composition and reasoning, with group justification rather than only numeric arithmetic."
+        "A right angle is 90°, a straight angle 180° and a full turn 360°. This source lesson introduces hands-on composition and reasoning, with group justification rather than only numeric arithmetic.",
+        "The publisher student activities center on composing physical pattern-block angles, determining 120° corners from three fitting hexagons, and reading the correct 0°-based protractor scale; these cannot be replaced by merely solving equations. Student lesson: https://im.kendallhunt.com/MS/students/2/7/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -564,6 +660,32 @@
           ],
           "Answer": "45°.",
           "Check": "Degrees do not measure distance."
+        },
+        {
+          "Title": "Compose and measure a complete turn",
+          "Question": "Three regular hexagon corners fit around a point. What is each interior angle? Can regular pentagon corners of 108° fill the point without gaps?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "A complete turn measures 360°.",
+            "Three equal hexagon corners give 360÷3=120° each.",
+            "Three pentagon corners total 3×108=324°, leaving a 36° gap.",
+            "Four pentagon corners total 432°, causing overlap; explain why no whole number fits exactly."
+          ],
+          "Answer": "Hexagon angle 120°; regular pentagons do not exactly tile around a point.",
+          "Check": "Teacher checks physical angle blocks or accurate student drawings and the justification."
+        },
+        {
+          "Title": "Read the right protractor scale",
+          "Question": "A ray starts at the right-pointing 0° baseline. Its second ray rises 40° counterclockwise; a pupil reports 140°. Which measure is correct?",
+          "Method": "Draw or tabulate the stated quantities, calculate and interpret the differences; use the source-appropriate teacher rubric for any original explanation or representation.",
+          "Steps": [
+            "Set the vertex at the protractor center and one ray on the right-facing 0°.",
+            "Follow the numbered scale increasing from the aligned 0°.",
+            "The second ray meets 40° on this scale; 140° belongs to the opposite starting direction.",
+            "Mark and draw the interior acute 40° wedge."
+          ],
+          "Answer": "40°, not 140°.",
+          "Check": "Teacher checks the ray sketch, baseline alignment and selection of the correct degree markings."
         }
       ],
       "CommonMistakes": [
@@ -597,6 +719,47 @@
           "Rows": [],
           "PrimaryLabel": "",
           "SecondaryLabel": ""
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Compare complete-turn and protractor reasoning",
+          "Description": "First-party text support for physical pattern-block/angle-model tasks; not a replacement for an accurate angular sketch.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Construction",
+              "Cells": [
+                "3 regular hexagons",
+                "3 regular pentagons",
+                "Acute ray from right-facing 0°"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Angle sum or reading",
+              "Cells": [
+                "3×120°=360°",
+                "3×108°=324°",
+                "40°"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Conclusion",
+              "Cells": [
+                "Exact fit",
+                "36° gap",
+                "Use right-starting scale"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
         }
       ],
       "Videos": []
