@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+  "ContentVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -86,7 +86,49 @@
         "d=2r.",
         "It is a length, not an area."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Radius and diameter measurements",
+          "Description": "For each circle diameter is twice radius. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (cm)",
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter/radius",
+              "Cells": [
+                "2",
+                "2",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -172,7 +214,49 @@
         "C=πd.",
         "Estimate C/d rather than expect exact decimals."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Circle diameter and circumference",
+          "Description": "Circumference is π times diameter for every circle; π is exact. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "2",
+                "4",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference (cm)",
+              "Cells": [
+                "2π",
+                "4π",
+                "6π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference/diameter",
+              "Cells": [
+                "π",
+                "π",
+                "π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -258,7 +342,49 @@
         "Half-arc length=πr.",
         "Do not count internal shared edges."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Circumference from a given radius",
+          "Description": "C=2πr; all outputs are linear measurements, not areas. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (cm)",
+              "Cells": [
+                "3",
+                "5",
+                "7"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "6",
+                "10",
+                "14"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference (cm)",
+              "Cells": [
+                "6π",
+                "10π",
+                "14π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -344,7 +470,49 @@
         "D=nπd.",
         "Speed=(turns/sec)×circumference."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Wheel roll without slipping",
+          "Description": "Travel per turn is one circumference of the wheel. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Wheel diameter (m)",
+              "Cells": [
+                "0.5",
+                "1",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "One turn (m)",
+              "Cells": [
+                "0.5π",
+                "π",
+                "2π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Two turns (m)",
+              "Cells": [
+                "π",
+                "2π",
+                "4π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -430,7 +598,49 @@
         "Subtract the area of holes or missing corners.",
         "Mark approximate results and assumptions."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Estimate an L-shaped region using decomposition",
+          "Description": "Two nonoverlapping rectangles are added to estimate the total covered area. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Region",
+              "Cells": [
+                "Main rectangle",
+                "Extension",
+                "Combined area"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Dimensions",
+              "Cells": [
+                "5 by 4",
+                "3 by 2",
+                "Disjoint pieces"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (square units)",
+              "Cells": [
+                "20",
+                "6",
+                "26"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -516,7 +726,49 @@
         "A grows by factor k² when r grows by k.",
         "A≈πr²."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Radius, diameter and circle area",
+          "Description": "Circle area is πr², so doubling radius multiplies area by four. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (cm)",
+              "Cells": [
+                "2",
+                "4",
+                "6"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Diameter (cm)",
+              "Cells": [
+                "4",
+                "8",
+                "12"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (cm²)",
+              "Cells": [
+                "4π",
+                "16π",
+                "36π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -602,7 +854,49 @@
         "Use C/2=πr.",
         "A≈(C/2)×r=πr²."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sector-rearrangement area relationship",
+          "Description": "The rearranged-sector argument uses half circumference as approximate base and radius as height. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius",
+              "Cells": [
+                "2",
+                "3",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Half-circumference",
+              "Cells": [
+                "2π",
+                "3π",
+                "5π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area=base×height",
+              "Cells": [
+                "4π",
+                "9π",
+                "25π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -688,7 +982,49 @@
         "A_semicircle=πr²/2.",
         "Rectangles and circular sectors can be combined exactly."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Full and half-disk areas",
+          "Description": "A half disk has half the area of its full circle. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius",
+              "Cells": [
+                "2",
+                "3",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Full disk area",
+              "Cells": [
+                "4π",
+                "9π",
+                "16π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Half-disk area",
+              "Cells": [
+                "2π",
+                "4.5π",
+                "8π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -774,7 +1110,49 @@
         "A=πr² in square units.",
         "State precision and units."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Boundary length versus covered area",
+          "Description": "Both measures use the same radius but different formulas and units. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (m)",
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Circumference (m)",
+              "Cells": [
+                "6π",
+                "8π",
+                "10π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (m²)",
+              "Cells": [
+                "9π",
+                "16π",
+                "25π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -860,7 +1238,55 @@
         "Scale each material cost separately.",
         "Check geometry, cost assumptions, layout and explanation."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cost model for stained-glass circle",
+          "Description": "At $5 per m² for glass and $3 per m for edging, area and perimeter costs grow at different rates. Independently authored accessible comparison table with labeled rows and no publisher image.",
+          "Items": [],
+          "SecondaryItems": [],
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Rows": [
+            {
+              "Label": "Radius (m)",
+              "Cells": [
+                "2",
+                "4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Glass cost",
+              "Cells": [
+                "20π dollars",
+                "80π dollars"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Edge cost",
+              "Cells": [
+                "12π dollars",
+                "24π dollars"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "32π dollars",
+                "104π dollars"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]
