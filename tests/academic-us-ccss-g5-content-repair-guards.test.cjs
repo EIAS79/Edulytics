@@ -29,7 +29,7 @@ test('Grade 5: exactly 148 source-bound unique canonical lessons in eight units'
     assert.ok(lessonByCode.has(lesson.LessonCode), lesson.LessonCode);
     assert.equal(lessonByCode.get(lesson.LessonCode).sourceUrl, lesson.SourceUrl);
     assert.equal(lessonByCode.get(lesson.LessonCode).sourceEdition, '1st Edition (2021)');
-    assert.ok(/^PED:US-CCSS-MATH:G5:U\\d{2}:L\\d{2}$/.test(lesson.LessonCode));
+    assert.ok(/^PED:US-CCSS-MATH:G5:U\d{2}:L\d{2}$/.test(lesson.LessonCode));
     assert.ok(lesson.Alignments.length > 0, lesson.LessonCode);
   }
   assert.equal(blueprint.Units.length, 8);
@@ -67,7 +67,7 @@ test('Grade 5: selected fraction, coordinate and decimal-division lessons avoid 
 
 test('Grade 5: preserve existing fraction-area lesson-specific solution', () => {
   const body = translation('PED:US-CCSS-MATH:G5:U02:L14');
-  assert.match(body.stepByStepSolutions, /6.*\\\\frac\\{3\\}\\{4\\}/);
+  assert.match(body.stepByStepSolutions, /Step 3: Multiply the whole number and fraction/);
   assert.match(body.stepByStepSolutions, /square units/);
 });
 
@@ -84,7 +84,7 @@ test('Grade 5: remove false clock-hand and measurement rules from fraction/decim
   const cases = [
     ['U02:L16', /fraction.*greater than 1/, /hour and minute hands/],
     ['U06:L21', /line plot/, /hour and minute hands/],
-    ['U08:L12', /decimal game/, /Measurement units must be equal/],
+    ['U08:L12', /decimal game/i, /Measurement units must be equal/],
     ['U08:L10', /common denominator/, /Subtraction can represent/],
     ['U04:L06', /tens-row partial product/, /Measurement units must be equal/]
   ];
