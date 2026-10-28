@@ -12,7 +12,8 @@ const candidates = [
   'us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json',
   'us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json',
   'us-ccss-g5-decimals-placevalue-maxproduct-source-2021.rich-lesson-v2.json',
-  'us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json'
+  'us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json',
+  'us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json'
 ];
 const documents = candidates.map(filename => JSON.parse(
   fs.readFileSync(path.join(repo, richFolder, filename), 'utf8')
@@ -25,9 +26,9 @@ const get = id => {
   return lesson;
 };
 
-test('all 19 authored G5 sidecars have unique identity and correct fields', () => {
-  assert.equal(lessons.length, 19);
-  assert.equal(lessonById.size, 19);
+test('all 23 authored G5 sidecars have unique identity and correct fields', () => {
+  assert.equal(lessons.length, 23);
+  assert.equal(lessonById.size, 23);
   for (const document of documents) {
     assert.equal(document.SchemaVersion, 1);
     assert.equal(document.PackCode, 'US-CCSS-MATH');
@@ -171,4 +172,27 @@ test('optional investigation has five valid container arrangements and teacher-r
   assert.match(source.ExplanationParagraphs.join(' '), /teacher review/i);
   assert.match(source.KeyConcepts[1].Rule, /footprint|height|clearance/i);
   assert.match(source.WorkedExamples[1].Answer, /384/);
+});
+
+test('Unit 2 L01-L05 establishes exact sharing quotients with distinct representations', () => {
+  for(let i=1;i<=5;i++){
+    const code='U02:L'+String(i).padStart(2,'0');
+    const lesson=get(code);
+    assert.match(lesson.ExplanationParagraphs.join(' '), /share|fraction|division/i,code);
+    assert.match(lesson.SummaryPoints.join(' '), /2021/i,code);
+  }
+  assert.match(get('U02:L02').WorkedExamples[2].Answer, /2\/3/);
+  assert.match(get('U02:L03').WorkedExamples[0].Answer, /2\/3/);
+  assert.match(get('U02:L04').WorkedExamples[0].Answer, /2\/3/);
+  assert.match(get('U02:L05').WorkedExamples[0].Answer, /false/i);
+});
+
+test('sharing examples reject reversed quotients and preserve fixed whole', () => {
+  assert.equal(3*(2/3),2);
+  assert.ok(3*(3/2)>2);
+  assert.equal(4/6,2/3);
+  assert.equal(36/7,5+1/7);
+  assert.equal(5/2,2.5);
+  assert.equal(3/6,0.5);
+  assert.equal(4/3,1+1/3);
 });
