@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "GRADE7_RICH145_436EXAMPLES_35VISUALS_CI_RECHECK_PENDING_RELEASE_BLOCKED",
+  "status": "ALL145_GRADE7_RICH_V2_AND_VISUAL_CANDIDATES_AUTHORED_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -35,8 +35,8 @@
     "Direct Rich V2 registry lookup is ahead of runtime composer in LessonContentService; persisted/seed effective content or authenticated student rendering are NOT_CHECKED.",
     "Exact Practice family selection, generation, verification, scoring, persistence, negative cases, tenant boundaries and .NET compilation NOT_RUN.",
     "Historical baseline source-license edition is CC BY 4.0; independent per-asset license and final academic review remain open.",
-    "Only 11 preparation-page samples have documented inspection from the prior Stage 0; URLs for all 145 are recorded, but are not proof that source pages or task parity have been reviewed.",
-    "28 original accessible tables are authored in U01/U02. Remaining 117 require task-relevant visual evaluation and applicable rendering. No assistive-tech or authenticated rendering proof."
+    "At least 12 original teacher preparation pages inspected, but URLs for all 145 do not prove original student task, Cool Down, academic content or Practice parity.",
+    "All 145 Rich V2 candidates now contain one labeled first-party visual representation (105 tables, 39 equation sets, one number line). Real rendered accessibility, graphics accuracy (particularly 17 geometry lessons), task activities and human review remain NOT_RUN/NOT_VERIFIED."
   ],
   "counts": {
     "catalogue": 145,
@@ -47,8 +47,8 @@
     "directRichCandidate": 145,
     "explicitPracticeMapping": 7,
     "unmappedOfficialOutcomeLessons": 2,
-    "externalSourcePageOpened": 11,
-    "sourceGoalsComparedDetailed": 4,
+    "externalSourcePageOpened": 12,
+    "sourceGoalsComparedDetailed": 6,
     "stageAVerified": 0,
     "stageBImplementedCandidate": 145,
     "stageCVerified": 0,
@@ -60,9 +60,9 @@
     "humanAcademicAccepted": 0,
     "productionUATVerified": 0,
     "sourcePreparationUrlsRecorded": 145,
-    "richWithAccessibleTableCandidate": 35,
-    "richWithoutAuthoredVisual": 110,
-    "richWithAuthoredVisualCandidates": 35
+    "richWithAccessibleTableCandidate": 145,
+    "richWithoutAuthoredVisual": 0,
+    "richWithAuthoredVisualCandidates": 145
   },
   "lessons": [
     {
@@ -304,7 +304,7 @@
       ],
       "effectiveContent": "STATIC_DIRECT_RICH_REGISTRY_PRECEDENCE_ONLY_DB_UI_NOT_CHECKED",
       "staticRichCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "sourceReview": "NOT_INDIVIDUALLY_SOURCE_CHECKED",
+      "sourceReview": "PREPARATION_PAGE_AND_GOAL_VERIFIED_STUDENT_TASK_PARITY_PENDING",
       "baselineFlags": {
         "malformedGoal": true,
         "genericWorkedApproach": true,
@@ -2237,14 +2237,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Identify center, radius, diameter and circumference, and use the equal-distance definition of a circle. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/2/preparation.html (",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L03",
@@ -2324,14 +2326,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Investigate the constant circumference-to-diameter ratio and interpret π as the constant of proportionality. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/3/preparation.h",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L04",
@@ -2385,14 +2389,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Calculate circumference and missing radii and decompose perimeter with circular pieces. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/4/preparation.html (CC BY 4.0 lineag",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L05",
@@ -2463,14 +2469,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Relate a rolling wheel's revolutions to distance and rate, and explain why larger wheels require fewer turns. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/5/preparation.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L06",
@@ -2540,14 +2548,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Decompose irregular polygons and estimate uncertain geographic shapes with clearly stated methods and approximations. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/6/prep",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L07",
@@ -2616,14 +2626,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Estimate circular area from grids and squares, and identify why area is not proportional to diameter. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/7/preparation.html (CC",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L08",
@@ -2677,14 +2689,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Explain the circle-area formula through informal dissection into near-parallelograms or triangles. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/8/preparation.html (CC BY",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L09",
@@ -2738,14 +2752,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Compute exact circular and semicircular areas and combined shapes, retaining π symbolically. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/9/preparation.html (CC BY 4.0 l",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L10",
@@ -2799,14 +2815,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Choose circumference for boundary tasks and area for coverage tasks; interpret uncertain real-world measurements. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/10/prepara",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L11",
@@ -2872,14 +2890,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Use circle circumference and area together with pricing models and justify a custom design under a spending limit. First-party mathematical examples, referencing the historical OUR/IM source https://im.kendallhunt.com/MS/teachers/2/3/11/prepar",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "29a8fa9a33479d551db37402585e67fc5459e283"
+      "richCandidateContentBlobSha": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L01",
@@ -3036,14 +3056,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Divide fractional quantities to find unit rates; compare fractional ratios. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/2/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L03",
@@ -3118,14 +3140,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Apply a unit price or constant of proportionality repeatedly. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/3/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L04",
@@ -3204,14 +3228,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Translate language for fractional increases and decreases into multiplying factors. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/4/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L05",
@@ -3276,14 +3302,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Use decimal notation for fractional increases and distinguish repeating decimals. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/5/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L06",
@@ -3347,14 +3375,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Compute percent increase or decrease from an original amount. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/6/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L07",
@@ -3413,14 +3443,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Recover original amount and calculate percentage changes using the original as 100%. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/7/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L08",
@@ -3484,14 +3516,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Model growth/discount equations and solve for original or final. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/8/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L09",
@@ -3555,14 +3589,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Calculate very small and fractional percentages using benchmark rates. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/9/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L10",
@@ -3621,14 +3657,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Compute sales tax and tips with the stated base and round money to cents. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/10/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L11",
@@ -3697,14 +3735,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Apply markup, markdown and commission percentages with clearly defined original bases. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/11/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L12",
@@ -3768,14 +3808,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Find unknown tax or discount percentages and reason through successive changes. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/12/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L13",
@@ -3844,14 +3886,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Calculate absolute measurement differences and describe measurement resolution. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/13/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L14",
@@ -3915,14 +3959,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Compute percent error relative to a nonzero correct/reference value. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/14/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L15",
@@ -3976,14 +4022,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Build intervals of measurements consistent with a maximum tolerance. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/15/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L16",
@@ -4037,14 +4085,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Write and solve original percent-change problems from realistic headlines, subject to teacher review. Source reference: https://im.kendallhunt.com/MS/teachers/2/4/16/preparation.html (historical OUR/IM CC BY 4.0); Edulytiks problems are original",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "7d7d8a1650e7da35c5d512075aa4883f67821eaf"
+      "richCandidateContentBlobSha": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L01",
@@ -4197,14 +4247,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Represent additions of signed temperatures with directed number-line arrows. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/2/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L03",
@@ -4283,14 +4335,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Add signed elevations, interpret zero-sum opposites and compare sign combinations. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/3/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L04",
@@ -4354,14 +4408,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Represent financial debt as a negative balance and combine credits and debits. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/4/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L05",
@@ -4425,14 +4481,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Use directed number-line changes to model subtraction as addition of the opposite. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/5/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L06",
@@ -4501,14 +4559,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Subtract rational numbers and distinguish signed differences from distances. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/6/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L07",
@@ -4578,14 +4638,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Use tables of signed changes to interpret inventories and other real quantities. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/7/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L08",
@@ -4644,14 +4706,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Model signed displacement as velocity multiplied by elapsed time. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/8/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L09",
@@ -4726,14 +4790,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Derive and use signed multiplication rules for rational numbers. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/9/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L10",
@@ -4797,14 +4863,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Multiply several signed rational factors using grouping and reciprocals. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/10/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L11",
@@ -4873,14 +4941,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Relate signed division to inverse multiplication and division by reciprocals. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/11/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L12",
@@ -4946,14 +5016,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Interpret a negative unit rate as falling quantity or depth. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/12/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L13",
@@ -5012,14 +5084,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Evaluate expressions involving rational numbers and order of operations. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/13/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L14",
@@ -5089,14 +5163,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Solve multi-step real-world problems with signed and fractional quantities. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/14/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L15",
@@ -5176,14 +5252,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Solve and verify one-variable equations with rational coefficients. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/15/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L16",
@@ -5258,14 +5336,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Translate rational-number contexts into equations and predict sign from their structure. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/16/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source).",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L17",
@@ -5325,14 +5405,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks objective: Model percentage market changes as signed amounts and distinguish net value from percentage return. Original mathematical tasks grounded in https://im.kendallhunt.com/MS/teachers/2/5/17/preparation.html (OUR/IM 2017–2019 CC BY 4.0 historical source)",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "f38ef700a78b45f60d318481b9101559653c3c14"
+      "richCandidateContentBlobSha": "6a84fefe10977c91cbf263cd434fca69116b927f"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
@@ -5479,14 +5561,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Represent a fixed initial amount and repeated quantities with segmented tape diagrams. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 2; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/2/preparat",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L03",
@@ -5550,14 +5634,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Match a tape's equal-length parts to an algebraic equation with one unknown. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 3; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/3/preparation.html (",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L04",
@@ -5621,14 +5707,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Use equivalent equations and tape diagrams to solve addition-first linear situations. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 4; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/4/preparati",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L05",
@@ -5698,14 +5786,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Solve equations with the same variable on both sides by matching or removing equal tape parts. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 5; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/5/",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L06",
@@ -5764,14 +5854,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Distinguish fixed-fee-plus-per-unit contexts from equal-share situations and select a fitting equation. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 6; teacher-source reference https://im.kendallhunt.com/MS/teache",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L07",
@@ -5830,14 +5922,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Solve two-step equations by undoing operations in inverse order. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 7; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/7/preparation.html (2017–2019 CC",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L08",
@@ -5896,14 +5990,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Solve equations through distribution, combining terms and inverse operations. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 8; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/8/preparation.html ",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L09",
@@ -5967,14 +6063,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Solve equations with negative constants and coefficients using the balance principle. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 9; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/9/preparati",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L10",
@@ -6033,14 +6131,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Compare valid solution routes for one equation and explain algebraic equivalence. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 10; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/10/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L11",
@@ -6105,14 +6205,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Represent unknowns in contextual multistep problems and interpret solved quantities. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 11; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/11/preparat",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L12",
@@ -6183,14 +6285,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Write equations for percent changes and recover an unknown starting quantity. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 12; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/12/preparation.htm",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L13",
@@ -6254,14 +6358,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Read and represent inequality solutions, including multiple possible numbers and boundary conditions. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 13; teacher-source reference https://im.kendallhunt.com/MS/teacher",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L14",
@@ -6320,14 +6426,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Translate real-world constraints to inequalities and interpret whole-number boundaries. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 14; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/14/prepa",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L15",
@@ -6386,14 +6494,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Solve one-variable inequalities with correct reversal when multiplying or dividing by negatives. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 15; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L16",
@@ -6452,14 +6562,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Describe solution sets with words and number lines, including open and closed boundaries. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 16; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/16/pre",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L17",
@@ -6518,14 +6630,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Construct inequalities for budgets, capacity and bounds; check what the solution represents. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 17; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/17/",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L18",
@@ -6595,14 +6709,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Use subtraction as addition of opposite and demonstrate equivalent expressions. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 18; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/18/preparation.h",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L19",
@@ -6666,14 +6782,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Apply distributive property in both directions for equivalent linear expressions. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 19; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/19/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L20",
@@ -6737,14 +6855,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Combine variable terms of identical form and separate constants. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 20; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/20/preparation.html (2017–2019 ",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L21",
@@ -6813,14 +6933,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Simplify expressions containing negative coefficients, subtraction and nested terms. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 21; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/21/preparat",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L22",
@@ -6884,14 +7006,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Use fractions, distribution and alternative forms to show expression equivalence. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 22; teacher-source reference https://im.kendallhunt.com/MS/teachers/2/6/22/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L23",
@@ -6964,14 +7088,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning target: Model varied numerical contexts with original expressions and justify assumptions under teacher review. Original first-party teaching associated with OUR/IM Grade 7 Unit 6 Lesson 23; teacher-source reference https://im.kendallhunt.com/MS/teach",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "EquationSet"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "9260c4384530587097b4de447c7acecf3ab48987"
+      "richCandidateContentBlobSha": "a2b2c44b2e3af46b95255195877d19dd70070491"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L01",
@@ -7128,14 +7254,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Recognize complementary and supplementary adjacent pairs and calculate missing measures. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/2/preparation.html (CC BY 4.0 attribution;",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L03",
@@ -7194,14 +7322,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Recognize complementary or supplementary nonadjacent angles and equal vertical angles formed by two intersecting lines. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/3/preparati",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L04",
@@ -7265,14 +7395,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Combine angle diagrams and equations to solve unknown angle relationships. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/4/preparation.html (CC BY 4.0 attribution; no copied ill",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L05",
@@ -7337,14 +7469,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Write and solve equations of the form px+q=r for complementary, supplementary or vertical angles. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/5/preparation.html (CC BY 4.0 att",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L06",
@@ -7404,14 +7538,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Explore which side and angle conditions determine a polygon and whether different solutions exist. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/6/preparation.html (CC BY 4.0 at",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L07",
@@ -7465,14 +7601,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Use more specific geometric constraints to determine uniqueness of polygon constructions. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/7/preparation.html (CC BY 4.0 attribution",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L08",
@@ -7526,14 +7664,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Classify whether three given measurements ensure identical triangles or permit different triangles. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/8/preparation.html (CC BY 4.0 a",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L09",
@@ -7592,14 +7732,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Construct triangles satisfying three conditions and test uniqueness by comparing independent drawings. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/9/preparation.html (CC BY 4.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L10",
@@ -7653,14 +7795,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Test possible, unique and impossible constructions with side and angle conditions. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/10/preparation.html (CC BY 4.0 attribution; no c",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L11",
@@ -7719,14 +7863,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Visualize and describe two-dimensional cross sections formed by slicing three-dimensional solids. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/11/preparation.html (CC BY 4.0 at",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L12",
@@ -7780,14 +7926,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Calculate volume of right prisms using base area times perpendicular height. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/12/preparation.html (CC BY 4.0 attribution; no copied ",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L13",
@@ -7847,14 +7995,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Decompose complex polygonal prism bases and calculate volume accurately. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/13/preparation.html (CC BY 4.0 attribution; no copied illu",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L14",
@@ -7928,14 +8078,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Calculate exterior surface area by identifying bases and lateral rectangles or using nets. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/14/preparation.html (CC BY 4.0 attributi",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L15",
@@ -7989,14 +8141,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Distinguish three-dimensional capacity from the covering area of a container. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/15/preparation.html (CC BY 4.0 attribution; no copied",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L16",
@@ -8060,14 +8214,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Solve contextual packaging, storage and design problems with appropriate geometric measures. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/16/preparation.html (CC BY 4.0 attribu",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L17",
@@ -8132,14 +8288,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks goal: Plan and construct a triangular prism from measured base and prism dimensions, acknowledging multiple valid designs. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/17/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "69dbe3454e8e875338de6bd03080e880457b5d30"
+      "richCandidateContentBlobSha": "ab496812596da693f2e7ad7485063ab04154bfc7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L01",
@@ -8256,14 +8414,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Conduct chance experiments with repeated trials, organize outcomes and compare relative frequencies. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/2/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L03",
@@ -8334,14 +8494,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Explain probability as a number from 0 to 1, identifying impossible and certain events. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/3/preparation.html (2017–2",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L04",
@@ -8422,14 +8584,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Use empirical frequencies to estimate probability and explain the effect of increased trials. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/4/preparation.html (",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L05",
@@ -8495,14 +8659,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Compare theoretical probability with observed variation and understand why more trials can reduce noise. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/5/prepara",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L06",
@@ -8584,14 +8750,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Design random-digit simulations to model events with a known probability and summarize results. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/6/preparation.html",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L07",
@@ -8645,14 +8813,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Model sequential independent random events and estimate joint probabilities from simulation. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/7/preparation.html (2",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L08",
@@ -8706,14 +8876,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Enumerate sample spaces systematically with tables and organized lists. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/8/preparation.html (2017–2019 CC BY 4.0 li",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L09",
@@ -8782,14 +8954,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Calculate probabilities for compound events from sample spaces and simple trees. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/9/preparation.html (2017–2019 CC ",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L10",
@@ -8853,14 +9027,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Choose, justify and critique simulation devices for complex chance experiments. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/10/preparation.html (2017–2019 CC ",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L11",
@@ -8919,14 +9095,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Compare two group distributions using mean, median and distributional context. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/11/preparation.html (2017–2019 CC B",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L12",
@@ -8985,14 +9163,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Explain why samples are needed when populations are large and identify limits of a sample-based claim. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/12/preparat",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L13",
@@ -9062,14 +9242,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Identify random sampling and distinguish representative samples from biased convenience samples. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/13/preparation.ht",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L14",
@@ -9134,14 +9316,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Design fair random sampling procedures and justify equal inclusion probabilities. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/14/preparation.html (2017–2019 C",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L15",
@@ -9222,14 +9406,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Use sample mean or median to estimate central tendency while acknowledging sampling variability. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/15/preparation.ht",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L16",
@@ -9315,14 +9501,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Use sample category proportions to estimate counts in a larger population. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/16/preparation.html (2017–2019 CC BY 4.",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L17",
@@ -9391,14 +9579,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Investigate variation among sample estimates and how repeated samples reveal uncertainty. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/17/preparation.html (201",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L18",
@@ -9468,14 +9658,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Use two sample distributions to infer differences with attention to overlap and variability. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/18/preparation.html (",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L19",
@@ -9534,14 +9726,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Design and interpret collaborative sampling comparisons and communicate limitations. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/19/preparation.html (2017–201",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L20",
@@ -9628,14 +9822,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning goal: Design a fair memory-test experiment, compare groups and justify population inferences without false automated scoring. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teacher",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867"
+      "richCandidateContentBlobSha": "304bfa5648365ab1e4b67421a4f1c15125ab7328"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L01",
@@ -9752,14 +9948,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Estimate restaurant expenses, distinguish fixed from per-serving costs and explain a defensible budget. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/2/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L03",
@@ -9837,14 +10035,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Use signed income and expense terms to model projected restaurant profit and loss. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/3/preparation.html (2017–2019 CC B",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L04",
@@ -9922,14 +10122,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Design an accurate scale plan of a restaurant with clearance and area constraints under teacher review. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/4/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L05",
@@ -10000,14 +10202,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Compare population densities by dividing counts of people or houses by area. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/5/preparation.html (2017–2019 CC BY 4.0 ",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L06",
@@ -10082,14 +10286,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Construct rough, transparent numerical estimates from assumptions and rates, then judge reasonableness. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/6/preparation",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L07",
@@ -10149,14 +10355,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Build and solve equations for contexts with related unknowns and several simultaneous relationships. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/7/preparation.ht",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L08",
@@ -10215,14 +10423,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Compare measurements by repeated trials and explain how rounding and uncertainty affect scale calculations. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/8/prepara",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L09",
@@ -10281,14 +10491,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Estimate area or volume from measured dimensions and compare sensitivity to measurement error. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/9/preparation.html (20",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L10",
@@ -10366,14 +10578,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Compare field measurement techniques and plan sensible distance estimates over rough or sloping ground. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/10/preparatio",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L11",
@@ -10437,14 +10651,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Calculate circumference, mark rotations and construct a calibrated trundle-wheel measurement device. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/11/preparation.h",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L12",
@@ -10503,14 +10719,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Record wheel rotations and compare measured route distances with precision and reproducibility. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/12/preparation.html (",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L13",
@@ -10575,14 +10793,16 @@
       },
       "humanAcademicAcceptance": "NOT_EVIDENCED",
       "productionUAT": "NOT_CHECKED",
-      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+      "richCandidateVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
       "richCandidateGoal": "Edulytiks learning objective: Design and justify a 5 km running route using mapped distances, lap counts and trundle-wheel measurements. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/13/prepara",
       "richCandidateWorkedExamples": 3,
-      "visualCount": 0,
-      "visualKinds": [],
-      "visualDisposition": "PENDING_INDIVIDUAL_VISUAL_AUTHORING",
+      "visualCount": 1,
+      "visualKinds": [
+        "RatioTable"
+      ],
+      "visualDisposition": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualRenderVerified": "NOT_RUN",
-      "richCandidateContentBlobSha": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386"
+      "richCandidateContentBlobSha": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe"
     }
   ],
   "authoring": {
@@ -10607,44 +10827,44 @@
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-l02-l11-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "29a8fa9a33479d551db37402585e67fc5459e283",
-        "contentVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "433fac8ca4bbd4524ddb0ea488aaac6e9816fe92",
+        "contentVersion": "us-ccss-g7-u03-circles-rich-v2-candidate-20261028-v2",
         "lessonCount": 10
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u04-l02-l16-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "7d7d8a1650e7da35c5d512075aa4883f67821eaf",
-        "contentVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "9a0fc2fcf7259d8adf6738ec1cb0cd7f3325514a",
+        "contentVersion": "us-ccss-g7-u04-percent-rich-v2-candidate-20261028-v2",
         "lessonCount": 15
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u05-l02-l17-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "f38ef700a78b45f60d318481b9101559653c3c14",
-        "contentVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "6a84fefe10977c91cbf263cd434fca69116b927f",
+        "contentVersion": "us-ccss-g7-u05-rational-rich-v2-candidate-20261028-v2",
         "lessonCount": 16
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u06-l02-l23-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "9260c4384530587097b4de447c7acecf3ab48987",
-        "contentVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "a2b2c44b2e3af46b95255195877d19dd70070491",
+        "contentVersion": "us-ccss-g7-u06-equations-inequalities-rich-v2-candidate-20261028-v2",
         "lessonCount": 22
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u07-l02-l17-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "69dbe3454e8e875338de6bd03080e880457b5d30",
-        "contentVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "ab496812596da693f2e7ad7485063ab04154bfc7",
+        "contentVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
         "lessonCount": 16
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u08-l02-l20-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "ce571efc5ae8c2f64ead2bbcbe478cd9a7ea9867",
-        "contentVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "304bfa5648365ab1e4b67421a4f1c15125ab7328",
+        "contentVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
         "lessonCount": 19
       },
       {
         "path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u09-l02-l13-our-2017.rich-lesson-v2.json",
-        "sourceBlobSHA": "d3f8ecba22a3ceab863e6ad9f7d10e7f6e77a386",
-        "contentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+        "sourceBlobSHA": "b45ef9618632a7d6c7302436b06cf7c9a66fa3fe",
+        "contentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
         "lessonCount": 12
       }
     ],
@@ -10655,9 +10875,10 @@
     "scope": "Existing draft PR #590, only Grade 7 Rich V2 and two explicitly Supervisor-authorized shared Rich V2 count tests",
     "visualAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-visual-coverage-audit.json",
     "visualCoverage": {
-      "present": 35,
-      "remaining": 110,
-      "authenticated": 0
+      "present": 145,
+      "remaining": 0,
+      "authenticated": 0,
+      "figureAndHumanAssessmentReviewStillRequired": true
     },
     "oldCiEvidence": {
       "commit": "8e2a47e11c2b49916b45eea32c4418e7702ff3ae",
@@ -10669,8 +10890,14 @@
       ],
       "previousCiStatus": "FAIL"
     },
-    "fixStatus": "FIXES_COMMITTED_NEW_HEAD_CI_PENDING",
+    "fixStatus": "TWO_AUTHORIZED_COUNT_TEST_FIXES_VERIFIED_ON_INTERMEDIATE_SHA_FINAL_HEAD_CI_PENDING",
     "remoteSafety": "Our-CS source-only, not accessed; Anas_Nitro forbidden and not accessed",
-    "resumeMarker": "Verify exact new-head CI after two global RichV2 count tests; review grade 7 source/student tasks individually and actual Practice family; close 110 task-relevant visual needs, then run isolated Stage D."
+    "resumeMarker": "Fresh exact-head CI; audit true source/student task parity for 145, resolve P0 aligned Practice on shared integration writer; test persisted student/teacher render, geometry figures and open-ended rubrics; tenant-safe Stage D and owner UAT.",
+    "verifiedIntermediateCommit": "55a36dfb608c551bd45bf7575f5f02112ead1a56",
+    "verifiedIntermediateChecks": [
+      "math-foundation-tests",
+      "richv2-fullgrade-audit",
+      "independent-full-product-regression"
+    ]
   }
 }
