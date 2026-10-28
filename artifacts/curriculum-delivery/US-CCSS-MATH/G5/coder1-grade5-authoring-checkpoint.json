@@ -11,7 +11,9 @@
     "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-content-repair-guards.test.cjs",
-    "tests/academic-us-ccss-g5-richv2-volume.test.cjs"
+    "tests/academic-us-ccss-g5-richv2-volume.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l19-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -57,7 +59,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 3,
+    "richSidecarLessonCount": 4,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -68,7 +70,7 @@
     },
     "unchangedLessonCount": 44,
     "fullPublisherTaskReviewCount": 0,
-    "publicPreparationReviewedCount": 3,
+    "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0
   },
@@ -147,7 +149,7 @@
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
@@ -202,7 +204,7 @@
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
@@ -251,7 +253,7 @@
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
@@ -1397,7 +1399,7 @@
         "commonMistakes"
       ],
       "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
       "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
@@ -2318,10 +2320,10 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
@@ -5214,7 +5216,7 @@
         "commonMistakes"
       ],
       "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
       "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
@@ -6288,7 +6290,7 @@
         "commonMistakes"
       ],
       "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
       "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
@@ -6554,12 +6556,22 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "f2b664ffb7e27c3f379bd5453698d2bd8235ccdc",
+  "lastGradeContentCommit": "0d24188ba71791c0f830c0f7292d84b6a7a077a4",
   "pendingTests": [
-    "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs",
-    ".NET focused compile/tests",
-    "authenticated student/teacher/two-school acceptance",
-    "exact-head protected GitHub CI"
+    "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
+    ".NET focused compile, source/copyright, runtime exact Practice tests",
+    "authenticated student/teacher/two-school tenant and accessible figure review",
+    "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "104 distinct Grade 5 canonical content translations changed in baseline pack, three Grade 5 Rich V2 lessons independently authored, 44 baseline translations untouched; all 148 still lack completed Stage A–D evidence."
+  "currentScopeDescription": "104 distinct Grade 5 baseline lesson translations editorially repaired, 4 Grade 5 direct Rich V2 sidecar lessons independently authored, 44 baseline translations untouched. 7 public 2021 source preparation pages reviewed directly, none of 148 original student PDFs/gated Cool-down separately reviewed. Stage A–D remains incomplete for all 148.",
+  "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
+  "lastCommittedTest": "7cffab44fd30b6c9b5b2aa2a561b68e1899488ad",
+  "nextResumeMarker": {
+    "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+    "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 student task PDF (public preparation alone is insufficient)",
+    "sourcePreparationContinuation": "PED:US-CCSS-MATH:G5:U01:L04",
+    "sharedMapping": "G5-SHARED-001",
+    "canonicalDatabaseMigration": "G5-SHARED-002",
+    "nextScoping": "Grade5-only branch; do not share mutable checkout or merge in-progress grade"
+  }
 }
