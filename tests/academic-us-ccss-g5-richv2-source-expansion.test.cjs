@@ -213,9 +213,9 @@ test('Unit 2 source problems preserve exact multiplication/division equivalences
  assert.equal(3/2,3*(1/2));
  assert.equal(9/4,2+1/4);
  assert.equal(7/4,1+3/4);
- assert.equal(3*(2/5),6/5);
- assert.equal(2*(3/5),6/5);
- assert.equal(3*(3/5),9/5);
+ assert.ok(Math.abs(3*(2/5)-6/5)<1e-12);
+ assert.ok(Math.abs(2*(3/5)-6/5)<1e-12);
+ assert.ok(Math.abs(3*(3/5)-9/5)<1e-12);
  assert.equal(2*(1/3*6),4);
  assert.equal(2*(1/4*6),3);
 });
