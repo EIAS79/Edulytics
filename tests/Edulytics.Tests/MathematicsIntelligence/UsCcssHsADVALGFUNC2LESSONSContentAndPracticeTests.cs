@@ -45,9 +45,9 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
             entries[0].GetProperty("sourceSha256").GetString());
         Assert.Equal("590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
             entries[1].GetProperty("sourceSha256").GetString());
-        Assert.Equal("fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+        Assert.Equal("6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
             entries[0].GetProperty("canonicalBodySha256").GetString());
-        Assert.Equal("456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+        Assert.Equal("f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
             entries[1].GetProperty("canonicalBodySha256").GetString());
         Assert.All(entries, x => Assert.Single(x.GetProperty("translations").EnumerateArray()));
     }
