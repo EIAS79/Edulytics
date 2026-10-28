@@ -5,18 +5,21 @@
   "scope": "Grade 7 Rich V2 only",
   "sourceBlueprintBlobSHA": "293b18da3f2e3198eb4807778a33d9a66b524537",
   "status": "ALL_145_VISUAL_MODELS_STRUCTURALLY_AUTHORED_NOT_RENDERED_OR_ACADEMICALLY_ACCEPTED",
-  "rendererEvidence": "Static UI examination: src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml renders 105 RatioTable comparisons with <table>/<th scope=row>, 39 EquationSet blocks with role=img/aria-label, and one NumberLine with role=img/aria-label. No actual screen reader, zoom/keyboard, multi-tenant browser, rendering, source-activity equivalence or independent academic review has been run.",
+  "rendererEvidence": "Static renderer source shows RatioTable, EquationSet, NumberLine and DoubleNumberLine markup; no authenticated product rendering or assistive-technology tests performed. One current V5 source-backed drawing activity is documented per each U01 13 lesson in grade7-student-task-parity-v5.json.",
   "counts": {
     "canonical": 145,
     "visualsPresent": 145,
+    "visualsTotal": 151,
     "missingVisuals": 0,
     "visualsHtmlRendered": 0,
     "visuallyOrAcademicallyAccepted": 0,
     "visualKinds": {
-      "RatioTable": 105,
+      "RatioTable": 110,
+      "DoubleNumberLine": 1,
       "NumberLine": 1,
       "EquationSet": 39
     },
+    "sourceStudentPagesRead": 21,
     "extraGeometricFigureAuditRequired": 17
   },
   "lessons": [
@@ -25,9 +28,10 @@
       "title": "What are Scaled Copies?",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
-      "visualCount": 1,
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
+      "visualCount": 2,
       "kinds": [
+        "RatioTable",
         "RatioTable"
       ],
       "status": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
@@ -36,16 +40,19 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
       "title": "Corresponding Parts and Scale Factors",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/2/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
-      "visualCount": 1,
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
+      "visualCount": 2,
       "kinds": [
+        "RatioTable",
         "RatioTable"
       ],
       "status": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
@@ -54,16 +61,19 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
       "title": "Making Scaled Copies",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/3/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
-      "visualCount": 1,
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
+      "visualCount": 2,
       "kinds": [
+        "RatioTable",
         "RatioTable"
       ],
       "status": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
@@ -72,14 +82,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
       "title": "Scaled Relationships",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/4/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -90,14 +102,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L05",
       "title": "The Size of the Scale Factor",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/5/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -108,14 +122,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L06",
       "title": "Scaling and Area",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/6/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -126,14 +142,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L07",
       "title": "Scale Drawings",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/7/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -144,14 +162,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
       "title": "Scale Drawings and Maps",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/8/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -162,14 +182,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
       "title": "Creating Scale Drawings",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/9/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -180,14 +202,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L10",
       "title": "Changing Scales in Scale Drawings",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/10/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -198,14 +222,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L11",
       "title": "Scales without Units",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/11/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -216,14 +242,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L12",
       "title": "Units in Scale Drawings",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/12/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -234,14 +262,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L13",
       "title": "Draw It to Scale",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/1/13/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "8f7bcad4478a8ff62fb960270654115e60e0d5b3",
+      "contentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -252,17 +282,20 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L01",
       "title": "One of These Things Is Not Like the Others",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
-      "visualCount": 1,
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
+      "visualCount": 2,
       "kinds": [
-        "RatioTable"
+        "RatioTable",
+        "DoubleNumberLine"
       ],
       "status": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualProposedKind": null,
@@ -270,14 +303,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L02",
       "title": "Introducing Proportional Relationships with Tables",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/2/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -288,14 +323,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L03",
       "title": "More about Constant of Proportionality",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/3/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -306,14 +343,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L04",
       "title": "Proportional Relationships and Equations",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/4/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -324,14 +363,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L05",
       "title": "Two Equations for Each Relationship",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/5/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -342,14 +383,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L06",
       "title": "Using Equations to Solve Problems",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/6/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -360,14 +403,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L07",
       "title": "Comparing Relationships with Tables",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/7/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -378,14 +423,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L08",
       "title": "Comparing Relationships with Equations",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/8/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -396,14 +443,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L09",
       "title": "Solving Problems about Proportional Relationships",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/9/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -414,14 +463,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L10",
       "title": "Introducing Graphs of Proportional Relationships",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/10/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -432,14 +483,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L11",
       "title": "Interpreting Graphs of Proportional Relationships",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/11/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -450,14 +503,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L12",
       "title": "Using Graphs to Compare Relationships",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/12/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -468,14 +523,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L13",
       "title": "Two Graphs for Each Relationship",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/13/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -486,14 +543,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L14",
       "title": "Four Representations",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/14/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -504,14 +563,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L15",
       "title": "Using Water Efficiently",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/2/15/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u02-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "dc8172d59fa31e47d9ad878a5688b5f6c3d07c2a",
+      "contentBlobSha": "9b396319d55e903bb23760b9be3f8c1fdf94a53b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -522,14 +583,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L01",
       "title": "How Well Can You Measure?",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/3/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -540,7 +603,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L02",
@@ -558,7 +623,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L03",
@@ -576,7 +643,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L04",
@@ -594,7 +663,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L05",
@@ -612,7 +683,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L06",
@@ -630,7 +703,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L07",
@@ -648,7 +723,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L08",
@@ -666,7 +743,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L09",
@@ -684,7 +763,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L10",
@@ -702,7 +783,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U03:L11",
@@ -720,14 +803,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L01",
       "title": "Lots of Flags",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/4/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -738,7 +823,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L02",
@@ -756,7 +843,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L03",
@@ -774,7 +863,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L04",
@@ -792,7 +883,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L05",
@@ -810,7 +903,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L06",
@@ -828,7 +923,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L07",
@@ -846,7 +943,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L08",
@@ -864,7 +963,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L09",
@@ -882,7 +983,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L10",
@@ -900,7 +1003,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L11",
@@ -918,7 +1023,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L12",
@@ -936,7 +1043,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L13",
@@ -954,7 +1063,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L14",
@@ -972,7 +1083,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L15",
@@ -990,7 +1103,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U04:L16",
@@ -1008,14 +1123,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L01",
       "title": "Interpreting Negative Numbers",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/5/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
       "visualCount": 1,
       "kinds": [
         "NumberLine"
@@ -1026,7 +1143,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L02",
@@ -1044,7 +1163,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L03",
@@ -1062,7 +1183,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L04",
@@ -1080,7 +1203,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L05",
@@ -1098,7 +1223,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L06",
@@ -1116,7 +1243,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L07",
@@ -1134,7 +1263,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L08",
@@ -1152,7 +1283,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L09",
@@ -1170,7 +1303,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L10",
@@ -1188,7 +1323,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L11",
@@ -1206,7 +1343,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L12",
@@ -1224,7 +1363,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L13",
@@ -1242,7 +1383,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L14",
@@ -1260,7 +1403,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L15",
@@ -1278,7 +1423,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L16",
@@ -1296,7 +1443,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U05:L17",
@@ -1314,16 +1463,19 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
       "title": "Relationships between Quantities",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/6/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
-      "visualCount": 1,
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
+      "visualCount": 2,
       "kinds": [
+        "RatioTable",
         "RatioTable"
       ],
       "status": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
@@ -1332,7 +1484,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L02",
@@ -1350,7 +1504,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L03",
@@ -1368,7 +1524,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L04",
@@ -1386,7 +1544,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L05",
@@ -1404,7 +1564,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L06",
@@ -1422,7 +1584,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L07",
@@ -1440,7 +1604,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L08",
@@ -1458,7 +1624,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L09",
@@ -1476,7 +1644,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L10",
@@ -1494,7 +1664,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L11",
@@ -1512,7 +1684,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L12",
@@ -1530,7 +1704,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L13",
@@ -1548,7 +1724,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L14",
@@ -1566,7 +1744,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L15",
@@ -1584,7 +1764,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L16",
@@ -1602,7 +1784,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L17",
@@ -1620,7 +1804,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L18",
@@ -1638,7 +1824,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L19",
@@ -1656,7 +1844,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L20",
@@ -1674,7 +1864,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L21",
@@ -1692,7 +1884,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L22",
@@ -1710,7 +1904,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L23",
@@ -1728,17 +1924,20 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": false,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L01",
       "title": "Relationships of Angles",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/7/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
-      "visualCount": 1,
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
+      "visualCount": 2,
       "kinds": [
-        "EquationSet"
+        "EquationSet",
+        "RatioTable"
       ],
       "status": "STRUCTURAL_VISUAL_PRESENT_NOT_AUTHENTICATED",
       "visualProposedKind": null,
@@ -1746,7 +1945,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L02",
@@ -1764,7 +1965,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L03",
@@ -1782,7 +1985,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L04",
@@ -1800,7 +2005,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L05",
@@ -1818,7 +2025,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L06",
@@ -1836,7 +2045,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L07",
@@ -1854,7 +2065,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L08",
@@ -1872,7 +2085,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L09",
@@ -1890,7 +2105,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L10",
@@ -1908,7 +2125,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L11",
@@ -1926,7 +2145,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L12",
@@ -1944,7 +2165,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L13",
@@ -1962,7 +2185,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L14",
@@ -1980,7 +2205,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L15",
@@ -1998,7 +2225,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L16",
@@ -2016,7 +2245,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L17",
@@ -2034,14 +2265,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": true
+      "figureOrDiagramBeyondTableRequired": true,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L01",
       "title": "Mystery Bags",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/8/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -2052,7 +2285,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L02",
@@ -2070,7 +2305,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L03",
@@ -2088,7 +2325,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L04",
@@ -2106,7 +2345,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L05",
@@ -2124,7 +2365,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L06",
@@ -2142,7 +2385,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L07",
@@ -2160,7 +2405,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L08",
@@ -2178,7 +2425,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L09",
@@ -2196,7 +2445,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L10",
@@ -2214,7 +2465,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L11",
@@ -2232,7 +2485,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L12",
@@ -2250,7 +2505,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L13",
@@ -2268,7 +2525,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L14",
@@ -2286,7 +2545,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L15",
@@ -2304,7 +2565,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L16",
@@ -2322,7 +2585,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L17",
@@ -2340,7 +2605,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L18",
@@ -2358,7 +2625,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L19",
@@ -2376,7 +2645,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U08:L20",
@@ -2394,14 +2665,16 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L01",
       "title": "Planning Recipes",
       "sourceUrl": "https://im.kendallhunt.com/MS/teachers/2/9/1/preparation.html",
       "contentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u03-u09-sample-our-2017.rich-lesson-v2.json",
-      "contentBlobSha": "f7f8f31708604fa19f2b56d567e2142f3b1e6fca",
+      "contentBlobSha": "454fdcaf0b174b474a64a7e25ed30faf63ebd07b",
       "visualCount": 1,
       "kinds": [
         "RatioTable"
@@ -2412,7 +2685,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": true,
+      "sourceParityStatus": "TASK_STRUCTURE_COMPARED_VISUAL_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L02",
@@ -2430,7 +2705,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L03",
@@ -2448,7 +2725,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L04",
@@ -2466,7 +2745,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L05",
@@ -2484,7 +2765,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L06",
@@ -2502,7 +2785,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L07",
@@ -2520,7 +2805,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L08",
@@ -2538,7 +2825,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L09",
@@ -2556,7 +2845,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L10",
@@ -2574,7 +2865,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L11",
@@ -2592,7 +2885,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L12",
@@ -2610,7 +2905,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U09:L13",
@@ -2628,7 +2925,9 @@
       "assistiveTechnologyTest": "NOT_RUN",
       "sourceStudentActivityParity": "NOT_VERIFIED",
       "authenticStudentArtifactRequired": true,
-      "figureOrDiagramBeyondTableRequired": false
+      "figureOrDiagramBeyondTableRequired": false,
+      "studentTaskSourceReviewed": false,
+      "sourceParityStatus": "NOT_CHECKED"
     }
   ]
 }
