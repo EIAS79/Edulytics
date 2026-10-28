@@ -377,3 +377,35 @@ test('U09 L01-L02 source-aware Fermi and historical population Rich V2 candidate
   assert.equal(20_000 * 10_000 * 10, 2_000_000_000);
   assert.equal(12 / 30 * 100, 40);
 });
+
+test('U01 L15-L16 geometry compares nets, exterior area and cubic volume in both directions', () => {
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l15-l16-nets-area-volume-20261028.rich-lesson-v2.json'), 'utf8'));
+  const review = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l15-l16-source-nets-area-volume-boundaries.json'), 'utf8'));
+  assert.equal(rich.PackCode, 'US-CCSS-MATH');
+  assert.deepEqual(rich.Lessons.map(l => l.LessonCode), [lcode(1,15),lcode(1,16)]);
+  assert.deepEqual(review.entries.map(l => l.lessonCode), [lcode(1,15),lcode(1,16)]);
+  for (const e of review.entries) {
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED');
+    assert.equal(e.teacherAssessment.maxScore, 8);
+    assert.equal(e.teacherAssessment.persistedTeacherGradeVerified, false);
+    assert.equal(e.selectedPracticeVerified, false);
+  }
+  for (const l of rich.Lessons) {
+    assert.ok(l.ExplanationParagraphs.length >= 3);
+    assert.ok(l.KeyConcepts.length >= 3);
+    assert.ok(l.WorkedExamples.length >= 3);
+    assert.ok(l.CommonMistakes.length >= 2);
+    assert.ok(l.SummaryPoints.length >= 3);
+    assert.ok(l.WorkedExamples.every(e => e.Steps.length >= 3 && e.Answer && e.Check));
+  }
+  assert.match(rich.Lessons[0].WorkedExamples[2].Check, /Teacher or peer validates/i);
+  assert.match(rich.Lessons[1].ExplanationParagraphs.join(' '), /22 square units/i);
+  assert.equal(2*6 + (3+4+5)*6, 84);
+  assert.equal(2*(6+12+18), 72);
+  assert.equal(2*(9+12+12), 66);
+  assert.equal(2*3*6, 3*3*4);
+  assert.equal(2*(1+5+5), 2*(2+3+6));
+  assert.ok(1*1*5 !== 1*2*3);
+});
