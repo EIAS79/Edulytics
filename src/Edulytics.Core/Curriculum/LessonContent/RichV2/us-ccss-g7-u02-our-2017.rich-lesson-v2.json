@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v2",
+  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -9,7 +9,8 @@
       "Title": "One of These Things Is Not Like the Others",
       "ExplanationParagraphs": [
         "Edulytiks learning target: Compare flavors, mixtures or shapes by proportional reasoning, making defensible claims even when there is no single exact answer. First-party teaching associated with OUR/IM 2017–2019: https://im.kendallhunt.com/MS/teachers/2/2/1/preparation.html. Examples below are original Edulytiks problems and do not reproduce the publisher's artwork or protected assessment.",
-        "This exploratory lesson uses ratios and unit rates to discuss what looks or tastes similar. Multiple explanations can be valid; evaluate the reasoning and stated assumptions."
+        "This exploratory lesson uses ratios and unit rates to discuss what looks or tastes similar. Multiple explanations can be valid; evaluate the reasoning and stated assumptions.",
+        "The actual publisher student lesson combines invented labels for double number lines, comparisons of three mystery mixtures, and scale-factor reasoning for crescent-shaped figures. The inventor must justify context/units and geometric matching, which a unit-rate-only score cannot assess. Student source: https://im.kendallhunt.com/MS/students/2/2/1/index.html."
       ],
       "KeyConcepts": [
         {
@@ -79,6 +80,19 @@
           ],
           "Answer": "B is a factor-2 scaled copy of A; C is not a scaled copy of A.",
           "Check": "The teacher reviews diagrams or ratio-table explanations; a one-number answer alone does not establish the source's representation goal."
+        },
+        {
+          "Title": "Invent a contextual double number line with units",
+          "Question": "Top ticks read 0,2,4,6,8,10 and bottom ticks read 0,1,2,3,4,5. Draw them together and invent an everyday interpretation for both sets of values. Why do 10 and 5 correspond?",
+          "Method": "Label both axes with chosen quantities and units, match aligned ticks and defend the chosen context to a teacher.",
+          "Steps": [
+            "Invent a reasonable context: top is kilograms of apples, bottom is price in dollars.",
+            "State that each 2 kg costs $1, or $0.50 for each kg.",
+            "Check that 10 kg costs $5, and align all five nonzero tick pairs.",
+            "Ask a peer to propose a different sensible context for the same numbers."
+          ],
+          "Answer": "An example is mass in kilograms versus price in dollars at $0.50/kg; other unit-consistent contexts also qualify.",
+          "Check": "Teacher checks the actual double number line, context, labels and proportional argument."
         }
       ],
       "CommonMistakes": [
@@ -146,6 +160,30 @@
               ]
             }
           ]
+        },
+        {
+          "Kind": "DoubleNumberLine",
+          "Title": "Double number line for a consistent illustrative unit rate",
+          "Description": "Aligned values model a hypothetical apple price of $0.50 per kilogram. Top ticks are mass in kg and bottom ticks are cost in dollars. Physical scale, labeling and invented-context justification require student work.",
+          "PrimaryLabel": "Mass (kg)",
+          "SecondaryLabel": "Cost ($)",
+          "Items": [
+            "0",
+            "2",
+            "4",
+            "6",
+            "8",
+            "10"
+          ],
+          "SecondaryItems": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "Rows": []
         }
       ],
       "Videos": []
