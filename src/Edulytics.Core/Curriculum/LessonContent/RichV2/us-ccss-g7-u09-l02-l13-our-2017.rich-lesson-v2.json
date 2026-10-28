@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v1",
+  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -86,7 +86,49 @@
         "Variable cost is per serving multiplied by servings.",
         "Total cost=fixed+variable."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Restaurant operating budget model",
+          "Description": "Independent mathematical planning data for Costs of Running a Restaurant. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "100 meals, $3 per meal",
+                "80 meals, $2.50 each",
+                "Budget $600, fixed $240, meals $4"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Fixed cost",
+              "Cells": [
+                "$500",
+                "$0 stated",
+                "$240"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "$800 total",
+                "$200 ingredients",
+                "90 whole meals max"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -172,7 +214,49 @@
         "A loss is represented by a negative net result.",
         "Projected income and costs rely on assumptions about sales."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Income, expense and restaurant profit",
+          "Description": "Independent mathematical planning data for More Costs of Running a Restaurant. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "70 meals at $12",
+                "Sales $540 and expense $610",
+                "Fixed $300, $4 cost and $10 price"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Revenue or expense",
+              "Cells": [
+                "Revenue $840 / cost $640",
+                "Net $540−$610",
+                "Margin $6 per meal"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "$200 profit",
+                "$70 loss",
+                "50 meals break-even"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -258,7 +342,49 @@
         "Area measurements require squared units.",
         "Constraints on paths, spacing and access must be justified geometrically."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Restaurant floor-plan geometry and scale",
+          "Description": "Independent mathematical planning data for Restaurant Floor Plan. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Real measure",
+              "Cells": [
+                "Length 12 m",
+                "Width 8 m",
+                "Table side 1.5 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Scale",
+              "Cells": [
+                "1 cm:2 m",
+                "1 cm:2 m",
+                "1 cm:0.5 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Drawing measure",
+              "Cells": [
+                "6 cm",
+                "4 cm",
+                "3 cm"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -344,7 +470,59 @@
         "Derived density units are people per km² or houses per hectare.",
         "The largest population is not always the highest density."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Neighborhood population density comparisons",
+          "Description": "Independent mathematical planning data for How Crowded Is this Neighborhood?. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Neighborhood",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Residents",
+              "Cells": [
+                "4,000",
+                "120",
+                "300"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Area (km²)",
+              "Cells": [
+                "2",
+                "0.5",
+                "2"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Density (people/km²)",
+              "Cells": [
+                "2,000",
+                "240",
+                "150"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -430,7 +608,49 @@
         "Every assumption should be stated and revisable.",
         "The result is an order-of-magnitude estimate, not a precise census."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fermi estimation with explicit assumptions",
+          "Description": "Independent mathematical planning data for Fermi Problems. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Assumed activity",
+              "Cells": [
+                "250 students, 2 cups/day",
+                "30 readers, 12 pages/day",
+                "400 students, 70% lunches, 180 days"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Model",
+              "Cells": [
+                "250×2",
+                "30×12",
+                "400×0.7×180"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Estimated count",
+              "Cells": [
+                "500 cups/day",
+                "360 pages/day",
+                "50,400 lunches/year"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -516,7 +736,49 @@
         "Combine different constraints into one solvable equation.",
         "Check all original relationships and physical plausibility."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Solve multi-quantity restaurant equations",
+          "Description": "Independent mathematical planning data for More Expressions and Equations. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "3 adults at $13, 2 children at $8",
+                "Two numbers sum 35; gap 5",
+                "3 sandwiches and $4 drink cost $28"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Equation/model",
+              "Cells": [
+                "3×13 + 2×8",
+                "2x+5=35",
+                "3s+4=28"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Solution",
+              "Cells": [
+                "$55",
+                "15 and 20",
+                "s=$8"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -602,7 +864,49 @@
         "Repeated measurements reveal variability.",
         "Error propagates when scaling a measurement."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Absolute error and rounded intervals",
+          "Description": "Independent mathematical planning data for Measurement Error (Part 1). Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Reference",
+              "Cells": [
+                "2.5 m",
+                "10 cm rounded",
+                "6 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Recorded or assumed",
+              "Cells": [
+                "2.4 m",
+                "nearest 1 cm",
+                "+5% high"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "0.1 m low",
+                "[9.5,10.5) cm",
+                "6.3 m reading"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -688,7 +992,49 @@
         "A small difference in side length can produce a larger change in computed area.",
         "State interval or estimate rather than false exactness."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Nonlinear effect of length measurement errors",
+          "Description": "Independent mathematical planning data for Measurement Error (Part 2). Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Figure",
+              "Cells": [
+                "Square, actual side 10 m",
+                "Square, recorded side 10.2 m",
+                "Cube, edge 2.1 vs actual 2 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Reference area/volume",
+              "Cells": [
+                "100 m²",
+                "100 m²",
+                "8 m³"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Measured area/volume",
+              "Cells": [
+                "100 m²",
+                "104.04 m²",
+                "9.261 m³"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -774,7 +1120,49 @@
         "Repeated small-scale measurements accumulate error.",
         "Field methods require a recorded procedure and precision estimate."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Plan a long-route field measurement",
+          "Description": "Independent mathematical planning data for Measuring Long Distances Over Uneven Terrain. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Procedure",
+              "Cells": [
+                "8 segments each 25 m",
+                "Right-triangle slope, legs 30 and 40 m",
+                "Reference 100 m; measured 103 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "8×25",
+                "√(30²+40²)",
+                "|103−100|/100×100%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "200 m estimate",
+                "50 m sloped line",
+                "3% error"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -860,7 +1248,52 @@
         "Number of rotations×circumference gives travel distance.",
         "A homemade device needs calibration and a teacher-reviewed physical demonstration."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Trundle-wheel calibration arithmetic",
+          "Description": "Independent mathematical planning data for Building a Trundle Wheel. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Wheel quantity",
+              "Cells": [
+                "Diameter",
+                "Circumference",
+                "20 turns",
+                "Diameter if circumference =1 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Relation",
+              "Cells": [
+                "0.5 m",
+                "C=πd",
+                "20×0.5π",
+                "d=1/π"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "0.5 m",
+                "0.5π m",
+                "10π m",
+                "≈0.318 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -946,7 +1379,49 @@
         "Partial revolutions contribute proportionally.",
         "Calibrate on a known reference length before field use."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Converting wheel turns to route distance",
+          "Description": "Independent mathematical planning data for Using a Trundle Wheel to Measure Distances. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Trial",
+              "Cells": [
+                "Wheel C=0.8 m / 75 turns",
+                "Wheel C=1.2 m / 12.5 turns",
+                "Measured 52 m vs reference 50 m"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "0.8×75",
+                "1.2×12.5",
+                "2/50×100%"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Output",
+              "Cells": [
+                "60 m",
+                "15 m",
+                "4% error"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     },
     {
@@ -1032,7 +1507,49 @@
         "Lap count=target distance/lap distance.",
         "An authentic route design needs scale map, start/finish logic and field-verified lengths."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "5K route design arithmetic",
+          "Description": "Independent mathematical planning data for Designing a 5K Course. Real restaurant designs, Fermi investigations, floor plans, measurement apparatus and route designs still require field evidence and teacher assessment; a solved table is not an approved project.",
+          "Items": [],
+          "SecondaryItems": [],
+          "Rows": [
+            {
+              "Label": "Model",
+              "Cells": [
+                "Four 1,250 m loops",
+                "Three laps plus 800 m finish",
+                "Map 1 cm:200 m; actual 1 km"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "4×1,250",
+                "3×1,400 +800",
+                "1,000/200"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            },
+            {
+              "Label": "Length",
+              "Cells": [
+                "5,000 m",
+                "5,000 m",
+                "5 cm on map"
+              ],
+              "Numerator": 0,
+              "Denominator": 0
+            }
+          ],
+          "PrimaryLabel": "",
+          "SecondaryLabel": ""
+        }
+      ],
       "Videos": []
     }
   ]
