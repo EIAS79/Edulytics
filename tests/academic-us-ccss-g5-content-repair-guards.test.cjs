@@ -78,3 +78,26 @@ test('Grade 5: baseline lesson content does not itself confer runtime or academi
   assert.equal(pack.status, 'Published');
   assert.equal(pack.packCode, 'US-CCSS-MATH');
 });
+
+
+test('Grade 5: remove false clock-hand and measurement rules from fraction/decimal lessons', () => {
+  const cases = [
+    ['U02:L16', /fraction greater than 1/, /hour and minute hands/],
+    ['U06:L21', /line plot/, /hour and minute hands/],
+    ['U08:L12', /decimal game/, /Measurement units must be equal/],
+    ['U08:L10', /common denominator/, /Subtraction can represent/],
+    ['U04:L06', /tens-row partial product/, /Measurement units must be equal/]
+  ];
+  for (const [shortCode, expected, rejected] of cases) {
+    const body = translation('PED:US-CCSS-MATH:G5:' + shortCode);
+    assert.match(body.keyConceptsAndRules, expected, shortCode);
+    assert.doesNotMatch(body.keyConceptsAndRules, rejected, shortCode);
+  }
+});
+
+test('Grade 5: human-reviewed investigations remain written tasks', () => {
+  for (const code of ['U03:L19', 'U06:L21', 'U08:L13']) {
+    const body = translation('PED:US-CCSS-MATH:G5:' + code);
+    assert.match(body.stepByStepSolutions, /teacher|peer|partner/i, code);
+  }
+});
