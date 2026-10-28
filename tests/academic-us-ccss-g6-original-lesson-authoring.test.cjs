@@ -156,20 +156,20 @@ test('Every one of the 147 Grade 6 lessons has original worked teaching and a fi
     const en = lesson.translations.find(x => x.cultureCode === 'en');
     const code = lesson.lessonCode;
     assert.ok(en, code);
-    assert.match(en.explanation, /^Learning goal: You will [a-z][^\\n]+\\.\\n/, code);
+    assert.match(en.explanation, /^Learning goal: You will [a-z][^\n]+\.\n/, code);
     assert.ok(en.explanation.length >= 250, code + ': explanation');
-    assert.ok((en.keyConceptsAndRules.match(/(?:^|\\n)- /g) || []).length >= 3, code + ': key concepts');
-    assert.match(en.workedExamples, /Example 1\\b/, code);
-    assert.match(en.workedExamples, /Example 2\\b/, code);
+    assert.ok((en.keyConceptsAndRules.match(/(?:^|\n)- /g) || []).length >= 3, code + ': key concepts');
+    assert.match(en.workedExamples, /Example 1\b/, code);
+    assert.match(en.workedExamples, /Example 2\b/, code);
     assert.equal((en.stepByStepSolutions.match(/Step [1-5]:/g) || []).length, 5, code + ': steps');
-    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify what the task asks you to find or show\\./, code);
-    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify the figure and the attributes named in the task\\./, code);
+    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify what the task asks you to find or show\./, code);
+    assert.doesNotMatch(en.stepByStepSolutions, /Step 1: Identify the figure and the attributes named in the task\./, code);
     assert.ok(en.commonMistakes.length >= 80, code + ': misconception');
     assert.doesNotMatch(en.commonMistakes, /^Common mistake: jumping/, code);
     assert.ok(en.quickSummary.length >= 60, code + ': summary');
     assert.doesNotMatch(en.explanation + en.keyConceptsAndRules + en.workedExamples,
-      /so nine\\?|hour and minute hands|the addends are the quantities being combined/i, code);
-    const prefix = code.match(/:U(\\d\\d):L\\d\\d$/);
+      /so nine\?|hour and minute hands|the addends are the quantities being combined/i, code);
+    const prefix = code.match(/:U(\d\d):L\d\d$/);
     assert.ok(prefix, code);
     counts.set(prefix[1], (counts.get(prefix[1]) || 0) + 1);
   }
