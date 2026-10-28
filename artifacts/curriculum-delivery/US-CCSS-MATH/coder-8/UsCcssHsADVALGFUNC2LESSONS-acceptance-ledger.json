@@ -17,7 +17,9 @@
     "auditedMain": "39c757630d2bd67217a1468fce099653ed0f3f53",
     "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
     "contentCommit": "14a487ccb5b04c2d3178e63ae99ba9f5e65c49a0",
-    "courseTestCommit": "e13fa7977b5b4f56fcef22f04ef412071862edb4"
+    "courseTestCommit": "e13fa7977b5b4f56fcef22f04ef412071862edb4",
+    "canonicalBodyHashCommit": "0cab2b9bcbb127f8d20e65629275f24478ae3ab5",
+    "hashTestCommit": "037394c727ae7e14efac3dedf86a00c525e19bb7"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
@@ -40,7 +42,7 @@
         "CCSS:HSA-REI.C.9"
       ],
       "sourceSha256Recorded": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
-      "canonicalBodySha256Recorded": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "canonicalBodySha256Recorded": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
       "changes": [
         "2x2 inverse determinant and multiplication example",
         "3x3 inverse using matrix-capable technology and independent verification",
@@ -50,7 +52,8 @@
       "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
       "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
       "localMathOracle": "PASS_EXACT_ARITHMETIC",
-      "runtimeLessonPractice": "NOT_RUN"
+      "runtimeLessonPractice": "NOT_RUN",
+      "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
@@ -59,7 +62,7 @@
         "CCSS:HSF-BF.B.5"
       ],
       "sourceSha256Recorded": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
-      "canonicalBodySha256Recorded": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "canonicalBodySha256Recorded": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
       "changes": [
         "same-base comparison with logarithm bounds",
         "base between zero and one reverses inequality",
@@ -70,7 +73,8 @@
       "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
       "practiceStatus": "PARTIAL_NUMERIC_SUBSKILLS_SHARED_INTEGRATION_REQUIRED_FOR_SOURCE_GOAL",
       "localMathOracle": "PASS_DOUBLE_WITH_TOLERANCE",
-      "runtimeLessonPractice": "NOT_RUN"
+      "runtimeLessonPractice": "NOT_RUN",
+      "baselineCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30"
     }
   ],
   "verification": {
@@ -90,7 +94,17 @@
     "effectiveStudentRoute": "NOT_VERIFIED",
     "actualDeployedSha": "NOT_VERIFIED",
     "ownerUat": "NOT_VERIFIED",
-    "academicApproved": "NOT_VERIFIED"
+    "academicApproved": "NOT_VERIFIED",
+    "prInitialCi": {
+      "headSha": "aa69802249b7c0fd818f9b3094a85634154081f2",
+      "failures": [
+        40775122098,
+        40775122140,
+        40775122169
+      ],
+      "reason": "Revised canonical body hashes, source-evidence manifest approvals and safe predecessor materialization need coordinated review",
+      "checkedAt": "2026-10-28"
+    }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
@@ -101,7 +115,8 @@
     "deployed": false,
     "gateIssues": [
       "https://github.com/EIAS79/Edulytics/issues/584",
-      "https://github.com/EIAS79/Edulytics/issues/453"
+      "https://github.com/EIAS79/Edulytics/issues/453",
+      "Source-bound Phase04 canonical SHA and approved lesson-repair manifest need integration-owner update."
     ],
     "parallelConflicts": [
       "PR #399 touches shared Practice and materializer",
