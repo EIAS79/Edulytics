@@ -1,0 +1,494 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u02-l02-l05-first-party-sharing-richv2-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
+      "CultureCode": "en",
+      "Title": "Share More Sandwiches",
+      "ExplanationParagraphs": [
+        "Goal: connect one whole divided among several people with a unit fraction. This lesson builds on the previous exploratory sandwich models and now connects tape diagrams, fractions and division notation.",
+        "Warm-up: estimate a shaded fraction of one full rectangle and justify why an approximation lies between reasonable benchmarks. Source photograph or diagram is not copied.",
+        "Activity 1: share one identical sandwich equally among two, three, four and five people. Draw a separate equal-part model for each case and record the quotient 1÷b and fraction 1/b. Explain why portions become smaller when the number of recipients grows.",
+        "Activity 2: extend the model to two equally sized sandwiches shared among three people. Show that each recipient receives one third from each sandwich, or two thirds in total. Contrast this with a single sandwich shared among three.",
+        "The original source asks learners to explain one row with a diagram and discuss a pattern; those are teacher-reviewed rather than passed using only a numeric answer."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit fractions as equal shares",
+          "Definition": "One fixed whole split into b equal pieces.",
+          "Rule": "1÷b=1/b for b positive.",
+          "Example": "One sandwich for four children gives 1/4 each."
+        },
+        {
+          "Title": "More people for the same whole",
+          "Definition": "Increasing the number of equal parts makes each part smaller.",
+          "Rule": "1/5 < 1/2 for the same-sized sandwich.",
+          "Example": "Five recipients receive smaller shares than two."
+        },
+        {
+          "Title": "Fractions as quotients",
+          "Definition": "The dividend is the sandwich total and divisor the number of people.",
+          "Rule": "a÷b=a/b for b positive.",
+          "Example": "2÷3=2/3 sandwich."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "One sandwich for five",
+          "Question": "What is each share of one sandwich shared among five?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Choose one sandwich as the whole.",
+            "Draw five equal-area parts.",
+            "Give each person exactly one part."
+          ],
+          "Answer": "1/5 sandwich.",
+          "Check": "Five shares of 1/5 make one whole."
+        },
+        {
+          "Title": "Compare halves and fourths",
+          "Question": "Which is bigger: 1/2 or 1/4?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Draw two identical whole sandwiches.",
+            "Partition one into two parts and the other into four.",
+            "Recognize one half is two fourths."
+          ],
+          "Answer": "1/2 is larger.",
+          "Check": "2/4=1/2."
+        },
+        {
+          "Title": "Two sandwiches for three",
+          "Question": "How much does each person receive?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Partition two sandwiches into thirds.",
+            "Give each person one third from each.",
+            "Add 1/3+1/3."
+          ],
+          "Answer": "2/3 sandwich.",
+          "Check": "Three shares of 2/3 reproduce two sandwiches."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use the sandwich count as denominator",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Place the number of recipients in the denominator when each whole is divided equally."
+        },
+        {
+          "Mistake": "Treat extra recipients as larger portions",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Compare equal-sized pieces from the same unit whole."
+        }
+      ],
+      "SummaryPoints": [
+        "One sandwich for b people gives 1/b each.",
+        "Two sandwiches for three people give 2/3 each.",
+        "The source's diagram and pattern explanation need teacher review.",
+        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 2 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-2/lesson.html. First-party examples, no source artwork or restricted Cool-down."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Share More Sandwiches — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "People",
+              "Cells": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Amount per person",
+              "Cells": [
+                "1/2",
+                "1/3",
+                "1/4",
+                "1/5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L03",
+      "CultureCode": "en",
+      "Title": "Interpret Equations PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: write and interpret division equations for equal-sharing situations and diagnose reversed dividend/divisor errors. Use contextual reasonableness to reject impossible shares.",
+        "Warm-up: represent three halves on a number line or with shaded rectangles. Explain why 3/2 is 1 1/2, not the different number 3 1/2.",
+        "Activity 1: three dancers divide two liters of water equally. Draw two one-liter units split into thirds and allocate one third of each to every dancer. Write 2÷3=2/3 liters per person.",
+        "Source task critique: a hypothetical learner suggests 3/2 liter per dancer by reversing the story. Multiplying 3×3/2 gives 9/2 liters, more than the available two, so the interpretation cannot be correct.",
+        "Students must describe what each equation number means and critique a peer's reasoning. A numeric 2/3 result alone cannot grade the explanation or diagram. The original gated Cool-down is not accessed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sharing dividend",
+          "Definition": "The total quantity being split.",
+          "Rule": "In a÷b the total a is the dividend.",
+          "Example": "Two liters are shared: the dividend is 2."
+        },
+        {
+          "Title": "Sharing divisor",
+          "Definition": "The positive number of recipients.",
+          "Rule": "In a÷b, b is the number of equal shares.",
+          "Example": "Three dancers: the divisor is 3."
+        },
+        {
+          "Title": "Check by recombining",
+          "Definition": "All equal portions must recover the total.",
+          "Rule": "b×(a/b)=a.",
+          "Example": "3×2/3=2 liters."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Water for dancers",
+          "Question": "Three dancers share two liters. Write the quotient.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Keep two liters as total.",
+            "Share each liter in three equal parts.",
+            "Give one third of each to every dancer."
+          ],
+          "Answer": "2÷3=2/3 liters each.",
+          "Check": "3×(2/3)=2 liters."
+        },
+        {
+          "Title": "Refute reversed quotient",
+          "Question": "Can each of three dancers get 3/2 liters from only two liters?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Calculate 3×3/2=9/2 liters.",
+            "Compare 9/2 with the available 2.",
+            "Use total÷people in the correct order."
+          ],
+          "Answer": "No; 2/3 liter each.",
+          "Check": "9/2>2, so the claim is impossible."
+        },
+        {
+          "Title": "Three halves and mixed numbers",
+          "Question": "Does 3/2 equal 3 1/2?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Group two halves into one whole.",
+            "One more half remains.",
+            "Write 1 1/2 and compare with 3 1/2."
+          ],
+          "Answer": "No, 3/2=1 1/2.",
+          "Check": "3 1/2=7/2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reverse the two numbers in the division expression",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Label total quantity and people before writing the quotient."
+        },
+        {
+          "Mistake": "Read 3/2 as 3 1/2",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Count the three half-sized pieces, then regroup them into complete wholes."
+        }
+      ],
+      "SummaryPoints": [
+        "Dividend is the total and divisor is the count of equal shares.",
+        "A context can disprove an unreasonable reversed quotient.",
+        "Critique, drawing and explanation remain teacher-reviewed.",
+        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 3 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-3/lesson.html. First-party examples, no source artwork or restricted Cool-down."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Interpret Equations PLC Activity — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "Statement",
+              "Cells": [
+                "Correct",
+                "Reversed"
+              ]
+            },
+            {
+              "Label": "Liters per dancer",
+              "Cells": [
+                "2/3",
+                "3/2"
+              ]
+            },
+            {
+              "Label": "Liters for 3 dancers",
+              "Cells": [
+                "2",
+                "9/2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L04",
+      "CultureCode": "en",
+      "Title": "Division Situations",
+      "ExplanationParagraphs": [
+        "Goal: translate among word situations, fraction quotients and equal-parts diagrams, including student-authored stories. The 2021 original rotates equation, diagram and context cards among three partners.",
+        "Warm-up: investigate division by seven. Because 35÷7=5 and 1÷7=1/7, the exact values of 36÷7 and 37÷7 are 5 1/7 and 5 2/7.",
+        "Activity 1: six people share four pounds of blueberries. Describe the total, divide each pound into six equal pieces, and name each person's four sixths, or two thirds, of a pound. Match a diagram and the equation 4÷6=4/6.",
+        "Activity 2: have one partner invent an equal-sharing story from a quotient, another describe the diagram, and another match the equation. Explain why the three representations agree instead of merely providing a fraction.",
+        "The lesson's student-generated situations, original diagrams and group critique are teacher-reviewed; a single fraction calculation does not complete the task. Publisher diagram and gated Cool-down are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Correspondence of representations",
+          "Definition": "A diagram, story and equation can mean the same equal sharing.",
+          "Rule": "All must preserve total shared and number of recipients.",
+          "Example": "4 pounds for 6 people represents 4÷6."
+        },
+        {
+          "Title": "Exact mixed quotient",
+          "Definition": "A remainder can be partitioned into equal fractional shares.",
+          "Rule": "36÷7=5+1/7.",
+          "Example": "Thirty-six objects in seven groups gives five and one seventh each."
+        },
+        {
+          "Title": "Unit label",
+          "Definition": "The share has the same measurement unit as the total.",
+          "Rule": "Four pounds shared yields pounds per person.",
+          "Example": "4/6 pound each."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Blueberry shares",
+          "Question": "Six children equally share four pounds. What is each share?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Draw four identical one-pound bars.",
+            "Divide each into six equal parts.",
+            "Give one piece from each bar to every child."
+          ],
+          "Answer": "4/6=2/3 pound per child.",
+          "Check": "6×2/3=4 pounds."
+        },
+        {
+          "Title": "Division by seven",
+          "Question": "Evaluate 36÷7 exactly.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Divide thirty-five into five groups of seven.",
+            "One object remains.",
+            "Split the remaining object into seven equal parts."
+          ],
+          "Answer": "5 1/7.",
+          "Check": "7×5+1=36."
+        },
+        {
+          "Title": "Write a sharing story",
+          "Question": "Give a valid story for 3÷4.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Choose three identical whole objects.",
+            "Give them equally to four people.",
+            "Describe each share using fourths."
+          ],
+          "Answer": "Three equal loaves for four people: 3/4 loaf each.",
+          "Check": "Teacher checks the story's whole and the consistent diagram."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reverse four sixths to six fourths",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Keep the total amount and number of people in their original roles."
+        },
+        {
+          "Mistake": "Round a fractional remainder to a whole",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Use exact fractional parts of the fixed whole."
+        }
+      ],
+      "SummaryPoints": [
+        "Story, expression and equal-parts diagram must represent the same situation.",
+        "Fractions above one can be exact division results.",
+        "Learner-authored stories and diagrams require human evaluation.",
+        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-4/lesson.html. First-party examples, no source artwork or restricted Cool-down."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Division Situations — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "Total pounds",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "Recipients",
+              "Cells": [
+                "6"
+              ]
+            },
+            {
+              "Label": "Equation",
+              "Cells": [
+                "4÷6"
+              ]
+            },
+            {
+              "Label": "Share",
+              "Cells": [
+                "2/3 pound"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
+      "CultureCode": "en",
+      "Title": "Relate Division and Fractions",
+      "ExplanationParagraphs": [
+        "Goal: generalize how the relative sizes of dividend and divisor predict whether a positive fraction quotient is below, equal to or above one. In the original 2021 lesson learners choose numbers satisfying different blueberry-sharing constraints.",
+        "Warm-up — true or false: 5÷2=5/2 is true; 5/2=5 1/2 is false; 6/2=3 is true. Explain each with a division model rather than judging notation by appearance.",
+        "Activity 1: choose total pounds and recipient counts so each person gets less than one, exactly one, or more than one pound. If pounds and people are equal, the quotient is one. If pounds exceed people, each receives more than one; if people exceed pounds, each receives less than one.",
+        "Activity 2: create multiple pairs yielding one half pound each and discuss the invariant pattern: twice as many people as pounds. Compare with pairs yielding more than one pound each; write and review mathematical statements of the patterns.",
+        "The learner's multiple number pairs, poster claims and proof are teacher-reviewed; a correct individual quotient is not an academic replacement. Source illustrations and gated Cool-down are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fraction as quotient",
+          "Definition": "An a/b fraction is the exact result of a÷b for b positive.",
+          "Rule": "5÷2=5/2=2 1/2.",
+          "Example": "Five pounds shared by two people gives 2 1/2 pounds each."
+        },
+        {
+          "Title": "Compare to one",
+          "Definition": "Dividend relative to divisor determines whether quotient is greater or less than one.",
+          "Rule": "For a,b>0, a/b>1 iff a>b.",
+          "Example": "3/6 is below one; 4/3 above one."
+        },
+        {
+          "Title": "Generate equal ratios",
+          "Definition": "Several total/recipient pairs can give the same share.",
+          "Rule": "a/b=1/2 when b=2a.",
+          "Example": "3 pounds among 6 people gives 1/2 pound each."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "True or false",
+          "Question": "Does 5÷2=5/2 and does 5/2=5 1/2?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Interpret 5÷2 as five equal halves.",
+            "Group five halves into two whole units and one half.",
+            "Reject 5 1/2, which requires eleven halves."
+          ],
+          "Answer": "First is true; second is false.",
+          "Check": "5/2=2 1/2."
+        },
+        {
+          "Title": "Share more than one pound",
+          "Question": "Four pounds for three people: how much each?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Total 4 exceeds recipients 3.",
+            "Divide 4÷3=4/3.",
+            "Rewrite 4/3 as 1 1/3."
+          ],
+          "Answer": "1 1/3 pounds each.",
+          "Check": "3×4/3=4."
+        },
+        {
+          "Title": "Find one-half pairs",
+          "Question": "Choose an amount and people to make exactly 1/2 pound each.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Take three pounds.",
+            "Choose twice as many recipients: six.",
+            "Calculate 3÷6=1/2."
+          ],
+          "Answer": "3 pounds for 6 people gives 1/2 pound each.",
+          "Check": "6×1/2=3 pounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 5/2 as five wholes and one half",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Interpret five halves as two whole pairs plus one remaining half."
+        },
+        {
+          "Mistake": "Assume a fraction's size depends only on numerator",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Compare both positive numerator and denominator."
+        }
+      ],
+      "SummaryPoints": [
+        "A positive a/b is above one exactly when a exceeds b.",
+        "Equivalent ratios can describe many valid equal-sharing stories.",
+        "The original classification poster and number selection require teacher review.",
+        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 5 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-5/lesson.html. First-party examples, no source artwork or restricted Cool-down."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Relate Division and Fractions — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "Situation",
+              "Cells": [
+                "Less than 1",
+                "Exactly 1",
+                "Greater than 1"
+              ]
+            },
+            {
+              "Label": "Pounds",
+              "Cells": [
+                "3",
+                "4",
+                "4"
+              ]
+            },
+            {
+              "Label": "People",
+              "Cells": [
+                "6",
+                "4",
+                "3"
+              ]
+            },
+            {
+              "Label": "Share",
+              "Cells": [
+                "1/2",
+                "1",
+                "4/3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
