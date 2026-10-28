@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "historicalSourceEdition": "OUR/IM 2017–2019",
+  "status": "PUBLIC_SOURCE_STUDENT_TEACHER_TASKS_COMPARED__ACADEMIC_RELEASE_BLOCKED",
+  "sourceReviewDate": "2026-10-28",
+  "sourceReviewScope": "Public student and teacher lesson text for these two capstones, including teacher narrative and activity titles; excluded protected student-response answer keys, publisher artwork, original live manipulatives and actual Edulytiks student/teacher flows.",
+  "currentDataNotice": "Historical population counts in the original source are contextual teaching examples, not up-to-date demographic statements.",
+  "candidateRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u09-l01-l02-fermi-world-20261028.rich-lesson-v2.json",
+  "entries": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U09:L01",
+      "student": "https://im.kendallhunt.com/MS/students/1/9/1/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/9/1/index.html",
+      "sourceActivityHeadings": [
+        "1.1 Ant Trek",
+        "1.2 Stacks and Stacks of Cereal Boxes",
+        "1.3 Covering the Washington Monument"
+      ],
+      "observableSourceExpectations": [
+        "Estimate a long ant journey by combining distance/speed with compatible units and rest assumptions.",
+        "Model volume, dimensions and effective orientation for boxes in a 10-foot-tall warehouse.",
+        "Approximate tile coverage using trapezoidal and triangular exterior faces and allowance for cutting waste.",
+        "Present alternative estimates, justify variable precision and expose hidden simplifying assumptions."
+      ],
+      "currentFirstPartyCandidate": [
+        "Canonical English learner body now uses source-equivalent ant-travel and cereal packing as original numerical models.",
+        "Rich V2 U09:L01 contains three structured explanations and includes a teacher-only monument-surface-area design.",
+        "Estimates are marked as illustrative assumptions rather than current observed facts."
+      ],
+      "machineCheckableCandidate": [
+        "Dimensional unit conversion, arithmetic with stated fixed assumptions.",
+        "Numerical surface-area formula for completely specified exterior faces.",
+        "Compare reasonableness of clearly stated bounds."
+      ],
+      "teacherReviewed": [
+        "Quality of chosen assumptions, sources and independent estimation.",
+        "Feasibility of a warehouse floor beyond volume-only reasoning.",
+        "Visual comparison of monument face coverage and edge waste."
+      ],
+      "assessmentCandidate": {
+        "scoring": "Each criterion 0=incorrect/missing, 1=partial, 2=correct and justified",
+        "maxScore": 8,
+        "teacherJudgmentRequired": true,
+        "criteria": [
+          {
+            "name": "Quantities and assumptions stated accurately",
+            "maxPoints": 2
+          },
+          {
+            "name": "Rate, geometric and conversion calculations",
+            "maxPoints": 2
+          },
+          {
+            "name": "Uncertainty bounds and practical feasibility",
+            "maxPoints": 2
+          },
+          {
+            "name": "Original visual/model explanation and limitations",
+            "maxPoints": 2
+          }
+        ],
+        "realStudentSubmissionVerified": false,
+        "storedTeacherFeedbackVerified": false
+      },
+      "studentArtworkSourceValidated": false,
+      "publisherProtectedAnswerKeyAccessed": false,
+      "authenticatedRenderedRichV2Verified": false,
+      "selectedPracticeGeneratorVerifierVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U09:L02",
+      "student": "https://im.kendallhunt.com/MS/students/1/9/2/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/9/2/index.html",
+      "sourceActivityHeadings": [
+        "2.1 All 7.4 Billion of Us",
+        "2.2 About the People in the World",
+        "2.3 If Our Class Were the World"
+      ],
+      "observableSourceExpectations": [
+        "Use historical instructional 7.4-billion/30-class model and compute meaningful complements and percentages.",
+        "Ask original quantitative questions and identify plausible sources for new data.",
+        "Build a creative hypothetical class visual display with several researched attributes.",
+        "Round non-integer modeled people meaningfully and explain approximate equivalent ratios."
+      ],
+      "currentFirstPartyCandidate": [
+        "Canonical English model explicitly labels the 7.4-billion number as a dated historical teaching premise.",
+        "Rich V2 U09:L02 provides original examples for 14/30,12/30,5/30 calculations and the 2-versus-3 students rounding ambiguity.",
+        "Student-originated questions, references and visual displays are preserved for human assessment."
+      ],
+      "machineCheckableCandidate": [
+        "Evaluate fractions/percentages with a fixed historical class size.",
+        "Check candidate whole-person rounding and stated percentage deviations."
+      ],
+      "teacherReviewed": [
+        "Credibility, source date and relevance of student-chosen population estimates.",
+        "Visual display clarity, accessibility, overlapping categories, reasonable rounded counts.",
+        "Critical explanation of limitations of hypothetical versus real demographic groups."
+      ],
+      "assessmentCandidate": {
+        "scoring": "Each criterion 0=incorrect/missing, 1=partial, 2=correct and justified",
+        "maxScore": 8,
+        "teacherJudgmentRequired": true,
+        "criteria": [
+          {
+            "name": "Clearly sourced historical/reference population data",
+            "maxPoints": 2
+          },
+          {
+            "name": "Correct model scaling and whole-person rounding",
+            "maxPoints": 2
+          },
+          {
+            "name": "Original accessible diagrams and labeled categories",
+            "maxPoints": 2
+          },
+          {
+            "name": "Explanation of uncertainty, overlaps and ethical model limits",
+            "maxPoints": 2
+          }
+        ],
+        "realStudentSubmissionVerified": false,
+        "storedTeacherFeedbackVerified": false
+      },
+      "studentArtworkSourceValidated": false,
+      "publisherProtectedAnswerKeyAccessed": false,
+      "authenticatedRenderedRichV2Verified": false,
+      "selectedPracticeGeneratorVerifierVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    }
+  ]
+}
