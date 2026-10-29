@@ -176,6 +176,7 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+         UsCcssHsFourthCourseQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -407,6 +408,8 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssHsFourthCourseQuestions.Supports(family))
+            return UsCcssHsFourthCourseQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1721,6 +1724,11 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssHsFourthCourseQuestions.Supports(family))
+        {
+            var item = UsCcssHsFourthCourseQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
         {
             var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(family,random);
@@ -4865,6 +4873,8 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssHsFourthCourseQuestions.Supports(problem.Family))
+            return UsCcssHsFourthCourseQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
