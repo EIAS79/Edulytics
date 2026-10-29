@@ -14,19 +14,22 @@
   "status": "IN_PROGRESS_NOT_RELEASE_CANDIDATE",
   "contentChanges": [
     "c8013d9aa5ea42215b236b2751073dee56b1878f",
-    "4cc22d43bbc1328e6b675275349fdc7ca21c1a47"
+    "4cc22d43bbc1328e6b675275349fdc7ca21c1a47",
+    "da0a89b564e54539bd056d06076c99c748d3ae80",
+    "8a0b4d86e012c0719ee341e034695ec6925e4a83",
+    "a66f40fa5ba7bb74bdd084f5338cb0c842e11f54"
   ],
   "checkedStaticCounts": {
-    "sourceGroundedContentEdits": 11,
+    "sourceGroundedContentEdits": 20,
     "previouslyAuthoredPendingReview": 3,
-    "remainingDefectTriage": 106,
+    "remainingDefectTriage": 97,
     "exactExplicitPracticeMappingMetadata": 2
   },
   "nextCurriculumCursor": {
-    "ordinal": 12,
+    "ordinal": 21,
     "unitCode": "U02",
-    "lessonNumber": 1,
-    "reason": "U01 L01–L11 content edited; next lesson requires source-to-task authoring"
+    "lessonNumber": 10,
+    "reason": "U02 L01-L09 content edited; next source-specific lesson is U02 L10 (Multiplicity)"
   },
   "knownIntegrationIssues": [
     {
@@ -44,6 +47,12 @@
       "component": "Remaining exact Practice contracts and course-specific generator/verifier tests",
       "status": "NOT_VERIFIED",
       "owner": "Shared Practice engine owner"
+    },
+    {
+      "component": "Canonical body parity approval/version transition",
+      "status": "BLOCKED_CI",
+      "owner": "Shared academic/version integration owner",
+      "evidence": "Runs 40775554708, 40775554615 and additional candidate checks failed at prior head; no academic approval manifest or persisted predecessor reconciliation"
     }
   ],
   "claims": {
@@ -521,15 +530,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Translate a cut-and-fold paper-box construction into a volume polynomial, graph its feasible domain, and locate maximum physical volume",
+      "originalFirstPartyMathematicsVerification": "V(x)=x(3-2x)(8-2x); x=2/3 gives 200/27 and physical 0<x<1.5",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/1/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 13,
@@ -568,15 +583,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Build and evaluate polynomial investment balances using place value and staggered growth factors",
+      "originalFirstPartyMathematicsVerification": "C(1.05)=1639.089375; p(-5)=-495; C(1)=1450",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/2/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 14,
@@ -602,15 +623,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Recognize a polynomial and identify degree, leading coefficient, and relative graph extrema",
+      "originalFirstPartyMathematicsVerification": "x^3-3x has local high (-1,2) and low (1,-2)",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/3/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 15,
@@ -636,15 +663,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Prove polynomial closure under addition, subtraction and multiplication and give a division counterexample",
+      "originalFirstPartyMathematicsVerification": "(2x²-3x+1)(x²+4x-5)=2x⁴+5x³-21x²+19x-5",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/4/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 16,
@@ -669,15 +702,21 @@
       "publisherAlignmentRoles": [
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Find zeros and x-intercepts from linear factors and distinguish the y-intercept",
+      "originalFirstPartyMathematicsVerification": "(x+5)(x+1)(x-3) roots -5,-1,3 and f(0)=-15",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/5/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 17,
@@ -708,15 +747,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Rewrite standard/factored forms and compare nonzero vertical scalings with physical-domain restrictions",
+      "originalFirstPartyMathematicsVerification": "x(14-2x)(8.5-2x)=4x³-45x²+119x; physical 0<x<4.25",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/6/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 18,
@@ -742,15 +787,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Construct polynomials from prescribed zeros and select graphing windows that show all relevant roots",
+      "originalFirstPartyMathematicsVerification": "p=(x+1)(x-2)(x+15) roots -15,-1,2, so window -10..8 is insufficient",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/7/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 19,
@@ -780,15 +831,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Describe how polynomial degree parity and the leading term govern distant end behavior",
+      "originalFirstPartyMathematicsVerification": "positive odd x³ end directions down-left/up-right; positive even x⁴ both up",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/8/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 20,
@@ -814,15 +871,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "STATIC_MATH_ORACLE_CHECKED_NOT_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Use sign of leading coefficient and degree parity to match and construct polynomial end behavior",
+      "originalFirstPartyMathematicsVerification": "x(x+3)(2-x)=-x³-x²+6x, negative odd ends up-left/down-right",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/9/index.html",
+      "sourceComparedEvidence": "Publisher First Edition (2019–2021) teacher preparation and student lesson; independently authored Edulytiks example/solution aligned to goal, not copied answer key",
+      "sourceRights": "Illustrative Mathematics First Edition CC BY 4.0. Original explanatory adaptation by Edulytiks; publisher trademark excluded.",
+      "practiceTrace": "PENDING_EFFECTIVE_RUNTIME_CONTRACT_AND_AUTHENTICATED_ASSESSMENT"
     },
     {
       "ordinal": 21,
