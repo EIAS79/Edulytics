@@ -83,5 +83,6 @@ test('all U06 lessons use revised teaching but remain runtime and academic unver
   assert.equal(y.academicApproval,'NOT_VERIFIED');
   assert.equal(y.sourceToStudentCompared,true);
  }
- assert.equal(ledger.lessons[ledger.nextCurriculumCursor.ordinal-1].contentStatus,'CONTENT_DEFECT_TRIAGE_PENDING');
+ const firstUnfinished=ledger.lessons.find(x=>['CONTENT_DEFECT_TRIAGE_PENDING','EXISTING_AUTHORED_REVIEW_PENDING'].includes(x.contentStatus));
+ assert.equal(ledger.nextCurriculumCursor.ordinal,firstUnfinished?firstUnfinished.ordinal:ledger.lessons.length+1);
 });
