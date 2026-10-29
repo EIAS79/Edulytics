@@ -81,14 +81,14 @@ public static class LessonPracticeInteractionRegistry
             var lessonRoutable = family.TryGetProperty(
                     "lessonPracticeRouting", out var routing) &&
                 routing.ValueKind == JsonValueKind.True;
-            // Integration-pending question kernels must have a typed interaction
-            // contract for auditability, even while lesson capability and
-            // actual student routing remain explicitly disabled.
+            // Keep candidate HS kernels available for direct mathematics QA,
+            // but do not register a learner-facing interaction for any family
+            // whose academic/runtime readiness is still IntegrationPending.
             var integrationPending = family.TryGetProperty(
                     "status", out var status) &&
                 string.Equals(status.GetString(), "IntegrationPending",
                     StringComparison.Ordinal);
-            if (!lessonRoutable && !integrationPending)
+            if (!lessonRoutable || integrationPending)
                 continue;
 
             var id =
