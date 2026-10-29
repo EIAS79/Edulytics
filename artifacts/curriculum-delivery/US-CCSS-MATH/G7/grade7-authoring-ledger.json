@@ -11995,9 +11995,9 @@
     "academicQuality": "ORIGINAL_PARITY_AND_HUMAN_APPROVAL_PENDING",
     "mathOracle": "UNIQUE_VS_NONUNIQUE_AND_THREE_EQUAL_SECTORS",
     "nodeTestCommand": "node --test tests/academic-us-ccss-g7-v12-u07-l05-source-geometry.test.cjs",
-    "nodeTestExecution": "NOT_RUN_AT_LEDGER_COMMIT",
-    "dotnetTests": "NOT_RUN",
-    "fullGradeTests": "NOT_RUN",
+    "nodeTestExecution": "PASS_8_OF_8_ISOLATED_STAGING_GITHUB_BLOB_IDENTICAL_SVG_AND_TEST_REDUCED_EVIDENCE_LEDGER_PROJECTION",
+    "dotnetTests": "NOT_RUN_NO_DOTNET",
+    "fullGradeTests": "NOT_RUN_NO_FULL_REPO_CHECKOUT",
     "gradeRichCandidates": 145,
     "workedExamples": 584,
     "richVisualModels": 151,
@@ -12013,6 +12013,7 @@
     "C": 0,
     "D": 0,
     "ownerUAT": "NOT_RUN",
-    "release": "RELEASE_BLOCKED"
+    "release": "RELEASE_BLOCKED",
+    "nodeTestLimits": "Native Node v22.16.0 executed isolated with the exact Git blob source SVG (5949a7d33117be1665416477f1acce35d9f56a59) and exact test source (565126abc3d4008e4d5fdd5bb09edeb6425672ef); staging JSON evidence and ledger were reduced projections, NOT the full GitHub JSON. Full checked-out repository suite NOT_RUN. Separate read-only GitHub field checks on full evidence and ledger PASS."
   }
 }
