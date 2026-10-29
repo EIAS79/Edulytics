@@ -427,6 +427,7 @@
         "Learning goal: Convert between degrees and radians and estimate meaningful quarter, half and full turns without confusing scale.",
         "θrad=θdeg·π/180 θdeg=θrad·180/π",
         "Quarter turn π/2; half turn π; full turn 2π Check angle placement on diagram Use exact expressions before approximation",
+        "The first-edition task emphasizes intuitive relative angle sizes, double number lines, and shading sectors in a pie-colouring challenge before formal degree–radian algorithms. Students must locate half-, quarter-, and other fractional turns on a circle and explain how angle and arc fraction correspond; exact conversions support but must not replace that geometric reasoning.",
         "Authentic task: Annotate exact benchmark radian angles around unit circle; teacher reviews drawing. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 12, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
       ],
@@ -476,16 +477,16 @@
           "Check": "Check angle units, circle hypotheses and answer dimensions."
         },
         {
-          "Title": "Radian Sense — case 3",
-          "Question": "Convert 2 radians approximately to degrees.",
-          "Method": "Angle magnitude",
+          "Title": "Radian Sense: benchmark a pie sector with a double number line",
+          "Question": "An angle has measure 5π/6 radians. Draw its sector on a circle, mark how much of a full turn it covers, and give the corresponding degree benchmark.",
+          "Method": "Use 2π radians per full turn to locate sector fraction, then use known degree benchmarks.",
           "Steps": [
-            "Compute 2·180/π",
-            "Use π≈3.14159",
-            "≈114.59°"
+            "Relative fraction of a full turn is (5π/6)/(2π)=5/12, which is less than a half-turn.",
+            "On a double number line mark 0 ↔ 0°, π/2 ↔ 90°, 5π/6 ↔ 150°, and π ↔ 180°; 5π/6 falls between π/2 and π.",
+            "Shade 5/12 of the circle from the chosen initial ray in the specified counterclockwise direction and label 150°."
           ],
-          "Answer": "Approximately 114.59°.",
-          "Check": "Check angle units, circle hypotheses and answer dimensions."
+          "Answer": "5π/6 radians equals 150°, covering 5/12 of a full circle.",
+          "Check": "Counterclockwise shaded arc is smaller than a semicircle and greater than a quarter-circle; a teacher must verify the original sector drawing."
         }
       ],
       "CommonMistakes": [
