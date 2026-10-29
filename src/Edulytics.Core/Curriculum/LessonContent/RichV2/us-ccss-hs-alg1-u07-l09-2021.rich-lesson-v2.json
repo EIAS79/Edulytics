@@ -1,0 +1,130 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l09-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L09",
+      "CultureCode": "en",
+      "Title": "Solving Quadratic Equations by Using Factored Form",
+      "ExplanationParagraphs": [
+        "Learning goal: transform a quadratic equality to an expression equal zero, factor the expression and use the zero-product property to solve all real roots; check answers in the ORIGINAL equation. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 9 teacher https://im.kendallhunt.com/HS/teachers/1/7/9/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/9/index.html (CC BY 4.0). The source connects factoring with questions previously answered only by graphs.",
+        "Original equation x²+4x=12. Subtract12 to obtain x²+4x−12=0. Find factor constants6 and−2, sum4 product−12: (x+6)(x−2)=0. Roots x−6 and x2. Check x−6:36−24=12; x2:4+8=12.",
+        "Do not factor x²+4x directly and set x=0 or x−4 without handling right side12. Zero-product property requires a zero product. Graphically, the solutions are x-coordinates of intersections between y=x²+4x and horizontal line y=12. Equivalently they are zeros of y=x²+4x−12.",
+        "Student task: solve three equations with nonzero right sides via equal-zero transformation, graph one to confirm intersections, and critique a peer's invalid zero-product step. Teacher-scored rubric0–2 for valid rearrangement, correct factorization, both roots and complete verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Move target to zero",
+          "Definition": "Subtract same quantity from both sides before using factors.",
+          "Rule": "x²+4x=12 becomes x²+4x−12=0.",
+          "Example": "Root set unchanged."
+        },
+        {
+          "Title": "Factoring to solve",
+          "Definition": "Convert zero polynomial to product and solve each factor.",
+          "Rule": "(x+6)(x−2)=0.",
+          "Example": "x−6 or2."
+        },
+        {
+          "Title": "Graph intersection",
+          "Definition": "Equation f(x)=12 means intersections with horizontal y=12.",
+          "Rule": "Compare graph with zero-shifted graph.",
+          "Example": "Roots−6 and2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve x²+4x=12",
+          "Question": "Find all real roots.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Subtract12: x²+4x−12=0.",
+            "Factor (x+6)(x−2)=0.",
+            "Set x+6=0 or x−2=0.",
+            "Obtain x−6, x2.",
+            "Check both in original equation."
+          ],
+          "Answer": "x−6 and2.",
+          "Check": "At−6 left36−24=12; at2 left4+8=12."
+        },
+        {
+          "Title": "Explain graph interpretation",
+          "Question": "Which graph intersections correspond to the equation?",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Graph y=x²+4x.",
+            "Draw horizontal y=12.",
+            "At x−6 and2, output12.",
+            "Their intersection x-coordinates solve original equation.",
+            "Moving12 creates zero-crossing shifted function."
+          ],
+          "Answer": "Intersections(−6,12),(2,12).",
+          "Check": "Both original outputs equal12."
+        },
+        {
+          "Title": "Refute early zero-product",
+          "Question": "Does setting x(x+4)=0 solve x²+4x=12?",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "The original has left product x(x+4) equal12, not0.",
+            "If x=0, left0 not12.",
+            "If x−4, left0 not12.",
+            "Both guesses fail.",
+            "Subtract12 before factoring correct zero equation."
+          ],
+          "Answer": "No; it would solve a different equation.",
+          "Check": "Original substitution disproves candidates."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying zero-product before moving constant",
+          "WhyWrong": "The product equals12, not0.",
+          "Correction": "Create a zero equation first."
+        },
+        {
+          "Mistake": "Checking only the transformed expression",
+          "WhyWrong": "A sign error could change roots.",
+          "Correction": "Verify original equality."
+        }
+      ],
+      "SummaryPoints": [
+        "Rearrange to zero, factor, solve factors and check.",
+        "x²+4x=12 has real roots−6 and2.",
+        "Graph intersections support algebraic solutions.",
+        "Teacher reviews transformation logic."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factor and completing-square verification",
+          "Description": "Independent mathematical equations, checked roots and explanations, not a reproduction of publisher diagrams.",
+          "PrimaryLabel": "Expression or condition",
+          "SecondaryLabel": "Equivalent form or solutions",
+          "Rows": [
+            {
+              "Label": "x=−6",
+              "Cells": [
+                "original LHS12"
+              ]
+            },
+            {
+              "Label": "x=2",
+              "Cells": [
+                "original LHS12"
+              ]
+            },
+            {
+              "Label": "x=0",
+              "Cells": [
+                "LHS0, fails"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

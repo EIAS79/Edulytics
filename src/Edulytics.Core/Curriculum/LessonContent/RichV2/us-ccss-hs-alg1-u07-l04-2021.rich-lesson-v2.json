@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l04-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L04",
+      "CultureCode": "en",
+      "Title": "Solving Quadratic Equations with the Zero Product Property",
+      "ExplanationParagraphs": [
+        "Learning goal: justify and apply the zero-product property to an expression explicitly equal to zero, solve both linear factors, and check roots without dividing by variable expressions. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 4 teacher https://im.kendallhunt.com/HS/teachers/1/7/4/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/4/index.html (CC BY 4.0). The source formalizes the reasoning that was previously informal.",
+        "Original equation (2x+3)(x−4)=0. Over real numbers, a product is zero if at least one factor is zero: 2x+3=0 yields x=−3/2; x−4=0 yields x=4. Substitution into the original product verifies both. The coefficient2 does not create a third root.",
+        "The zero-product property cannot be applied to a product equalling12 as though either factor were12 or0. A nonzero product may have infinitely many factor combinations. Similarly, dividing both sides by x could remove the valid root x0 in an equation with x factor; prefer factoring and check every root.",
+        "Student task: illustrate zero products with a numerical table, identify roots for three signed-factor equations, critique a wrong step using zero product for nonzero right side, and explain why every identified root works. Teacher-scored rubric0–2 for property justification, factor equations, root checks and critique of inadmissible transformations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Zero-product property",
+          "Definition": "For real a,b, ab=0 implies a=0 or b=0.",
+          "Rule": "Requires product equal zero.",
+          "Example": "(2x+3)(x−4)=0."
+        },
+        {
+          "Title": "Linear factors",
+          "Definition": "Each factor yields one linear equation to solve.",
+          "Rule": "Solve 2x+3=0 and x−4=0 separately.",
+          "Example": "Roots−1.5 and4."
+        },
+        {
+          "Title": "Nonzero product caveat",
+          "Definition": "ab=c with c≠0 does not imply a=0 or b=0.",
+          "Rule": "Bring full expression to zero before using property.",
+          "Example": "(x+1)(x+2)=12 needs other methods."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve two factors",
+          "Question": "Solve(2x+3)(x−4)=0.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Either2x+3=0 or x−4=0.",
+            "First:2x=−3, x=−3/2.",
+            "Second:x=4.",
+            "Substitute each into its vanishing factor.",
+            "Both make original product zero."
+          ],
+          "Answer": "x=−1.5 and x4.",
+          "Check": "Both solve exact original equation."
+        },
+        {
+          "Title": "Show zero-factor identity",
+          "Question": "Why must ab=0 have zero factor over reals?",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Suppose neither a nor b is zero.",
+            "Then division by a and b is defined and their product is nonzero.",
+            "This contradicts ab=0.",
+            "Hence at least one must be zero."
+          ],
+          "Answer": "A zero factor is necessary.",
+          "Check": "Uses nonzero real-number multiplication."
+        },
+        {
+          "Title": "Reject nonzero misuse",
+          "Question": "Does (x+1)(x+2)=12 imply x=−1 or−2?",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "At x−1 left side0, not12.",
+            "At x−2 left side0, not12.",
+            "Therefore those are not solutions.",
+            "Set expression minus12 equal zero before attempting factorization."
+          ],
+          "Answer": "No; zero-product cannot be applied directly.",
+          "Check": "Direct substitution refutes proposed roots."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying zero product when right side is nonzero",
+          "WhyWrong": "Factor zero would make left0, not target.",
+          "Correction": "Rearrange equation to zero first."
+        },
+        {
+          "Mistake": "Dividing by a variable factor",
+          "WhyWrong": "May discard zero-factor solution.",
+          "Correction": "Keep both cases instead."
+        }
+      ],
+      "SummaryPoints": [
+        "A zero product requires at least one zero factor.",
+        "(2x+3)(x−4)=0 has two roots−1.5 and4.",
+        "Each root must be checked in original expression.",
+        "Teacher reviews the underlying justification."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic reasoning and verification",
+          "Description": "Independently authored mathematical examples with explicit solution multiplicity and physical context.",
+          "PrimaryLabel": "Input or equation",
+          "SecondaryLabel": "Root or output",
+          "Rows": [
+            {
+              "Label": "x−1.5",
+              "Cells": [
+                "first factor0"
+              ]
+            },
+            {
+              "Label": "x4",
+              "Cells": [
+                "second factor0"
+              ]
+            },
+            {
+              "Label": "product=12",
+              "Cells": [
+                "no direct zero-factor inference"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

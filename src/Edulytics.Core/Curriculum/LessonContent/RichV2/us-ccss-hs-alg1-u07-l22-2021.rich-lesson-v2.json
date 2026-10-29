@@ -1,0 +1,136 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l22-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L22",
+      "CultureCode": "en",
+      "Title": "Rewriting Quadratic Expressions in Vertex Form",
+      "ExplanationParagraphs": [
+        "Learning goal: use completing the square to convert standard and factored quadratic expressions into vertex form, revealing vertex and minimum/maximum while preserving the exact same function. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 22 teacher https://im.kendallhunt.com/HS/teachers/1/7/22/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/22/index.html (CC BY 4.0). Source revisits why each form shows different graph features.",
+        "Original f(x)=x²−6x+5. To complete, add and subtract9: f=(x²−6x+9)−9+5=(x−3)²−4. Vertex(3,−4), opening upward and minimum−4. In factored form f=(x−1)(x−5), so roots1,5. Standard form gives y-intercept5. All three descriptions represent one function.",
+        "Second scaled example g(x)=2x²+8x+3=2(x²+4x)+3=2[(x+2)²−4]+3=2(x+2)²−5, giving vertex(−2,−5). It is essential to factor leading coefficient2 before completing the inner square; otherwise vertical shift may be wrong.",
+        "Student task: rewrite two quadratics from standard form, match each representation to what it reveals most efficiently (zeros, vertical intercept, vertex), and verify one symmetric pair. Teacher-scored rubric0–2 for complete-square algebra, equivalence check, graph feature interpretation and form-selection explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vertex conversion",
+          "Definition": "Complete square by adding and subtracting half-coefficient squared.",
+          "Rule": "x²−6x+5=(x−3)²−4.",
+          "Example": "Vertex(3,−4)."
+        },
+        {
+          "Title": "Scaled vertex conversion",
+          "Definition": "Factor a first when a≠1.",
+          "Rule": "2x²+8x+3=2(x+2)²−5.",
+          "Example": "Vertex(−2,−5)."
+        },
+        {
+          "Title": "Features by form",
+          "Definition": "Standard reveals y-intercept, factored roots, vertex form extremum.",
+          "Rule": "Choose form according to question.",
+          "Example": "For f roots1,5 and min−4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert monic quadratic",
+          "Question": "Rewrite x²−6x+5.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Half−6 is−3, square9.",
+            "Add/subtract9 inside expression.",
+            "x²−6x+5=(x²−6x+9)−9+5.",
+            "Simplify (x−3)²−4.",
+            "Vertex(3,−4)."
+          ],
+          "Answer": "(x−3)²−4.",
+          "Check": "Expand returns original."
+        },
+        {
+          "Title": "Convert nonmonic quadratic",
+          "Question": "Rewrite2x²+8x+3.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Factor2 from quadratic/linear part:2(x²+4x)+3.",
+            "Inside add/subtract4:2[(x+2)²−4]+3.",
+            "Distribute constant−8 and add3.",
+            "Get2(x+2)²−5.",
+            "Vertex(−2,−5)."
+          ],
+          "Answer": "2(x+2)²−5.",
+          "Check": "Expand2x²+8x+8−5=2x²+8x+3."
+        },
+        {
+          "Title": "Read features across forms",
+          "Question": "For f=(x−1)(x−5)=x²−6x+5=(x−3)²−4, report features.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Factored zeros x1,5.",
+            "Standard f0=5.",
+            "Vertex form min−4 at x3.",
+            "Leading positive gives upward opening.",
+            "Check symmetry f1=f5=0."
+          ],
+          "Answer": "x-intercepts1,5; y-intercept5; vertex(3,−4).",
+          "Check": "All features agree across equivalent forms."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding complete-square constant without subtracting it from expression",
+          "WhyWrong": "Changes function outputs.",
+          "Correction": "Balance added value inside same expression."
+        },
+        {
+          "Mistake": "Completing nonmonic expression without extracting leading factor",
+          "WhyWrong": "Can produce wrong vertex shift.",
+          "Correction": "Factor a from variable terms first."
+        }
+      ],
+      "SummaryPoints": [
+        "Completing square rewrites, not changes, a quadratic function.",
+        "Vertex form makes extrema immediately visible.",
+        "Both monic and nonmonic conversion need correct balancing constants.",
+        "Teacher reviews representation-choice reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party exact quadratic reasoning and modeling table",
+          "Description": "Independently authored exact algebra, domain/units and mathematical evidence, not source images or real experiments.",
+          "PrimaryLabel": "Expression or scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "f standard",
+              "Cells": [
+                "x²−6x+5"
+              ]
+            },
+            {
+              "Label": "f factored",
+              "Cells": [
+                "(x−1)(x−5)"
+              ]
+            },
+            {
+              "Label": "f vertex",
+              "Cells": [
+                "(x−3)²−4"
+              ]
+            },
+            {
+              "Label": "g vertex",
+              "Cells": [
+                "2(x+2)²−5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

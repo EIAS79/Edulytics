@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l16-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L16",
+      "CultureCode": "en",
+      "Title": "The Quadratic Formula",
+      "ExplanationParagraphs": [
+        "Learning goal: apply the quadratic formula to ax²+bx+c=0 with a≠0, compute discriminant accurately, find both signs and compare results with factoring or graphing. Independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 16 teacher https://im.kendallhunt.com/HS/teachers/1/7/16/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/16/index.html (CC BY 4.0). The source introduces the general formula and evaluates its parts explicitly.",
+        "Original quadratic 2x²+3x−2=0 has a2,b3,c−2, discriminant D=b²−4ac=9−4(2)(−2)=25. Formula x=(−3±√25)/(2×2)=(-3±5)/4 yields x=1/2 or−2. Direct factoring (2x−1)(x+2)=0 gives the same roots, an independent check.",
+        "For a second equation 3x²+2x+2=0, D=2²−4×3×2=−20, so there are no real-number solutions. The formula does not manufacture a real square root of a negative discriminant. Distinguish real-number task scope from complex roots beyond the current lesson.",
+        "Student task: label coefficients including signs, calculate D and both branches without calculator precedence errors, compare to a factorization when available, and classify negative-D example. Teacher-scored rubric0–2 for coefficient extraction, discriminant and denominator, both valid roots and error/check reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadratic formula",
+          "Definition": "For real ax²+bx+c=0 with a≠0, x=(-b±√(b²−4ac))/(2a).",
+          "Rule": "Keep whole numerator divided by2a.",
+          "Example": "With a2,b3,c−2 roots1/2,−2."
+        },
+        {
+          "Title": "Discriminant",
+          "Definition": "D=b²−4ac decides real root count.",
+          "Rule": "Check signs and parentheses.",
+          "Example": "D25 yields two distinct real roots."
+        },
+        {
+          "Title": "Negative D",
+          "Definition": "If D<0, there are no real roots.",
+          "Rule": "Do not take a real sqrt of negative.",
+          "Example": "3x²+2x+2 has D−20."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve by formula",
+          "Question": "Solve2x²+3x−2=0.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Read a2,b3,c−2.",
+            "D=9−4×2×(−2)=25.",
+            "Apply x=(−3±5)/4.",
+            "Positive branch x2/4=1/2.",
+            "Negative branch x−8/4=−2.",
+            "Verify by factoring or substitution."
+          ],
+          "Answer": "x=1/2 or−2.",
+          "Check": "(2x−1)(x+2) has same zeros."
+        },
+        {
+          "Title": "Classify negative discriminant",
+          "Question": "Solve3x²+2x+2=0 over reals.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Read a3,b2,c2.",
+            "D=4−4×3×2=−20.",
+            "No real sqrt of−20.",
+            "Therefore no real roots for this quadratic."
+          ],
+          "Answer": "No real solutions.",
+          "Check": "The upward parabola remains above horizontal axis."
+        },
+        {
+          "Title": "Check incorrect denominator",
+          "Question": "What is denominator for2x²+3x−2?",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "General denominator is2a.",
+            "Here a2, so2a=4.",
+            "Writing denominator2 would double root magnitudes incorrectly.",
+            "Check e.g x1/2 in original yields 2×.25+1.5−2=0."
+          ],
+          "Answer": "Denominator4.",
+          "Check": "Back-substitution validates exact root."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Forgetting c's negative sign in D",
+          "WhyWrong": "Changes D and roots.",
+          "Correction": "Use parentheses around signed c."
+        },
+        {
+          "Mistake": "Dividing only the square-root term by2a",
+          "WhyWrong": "Formula entire numerator is over2a.",
+          "Correction": "Enclose−b±√D in parentheses."
+        },
+        {
+          "Mistake": "Taking negative discriminant as zero real root not applicable?",
+          "WhyWrong": "It signals no real roots, not one.",
+          "Correction": "Classify D sign correctly."
+        }
+      ],
+      "SummaryPoints": [
+        "The quadratic formula works for every real-coefficient quadratic with a≠0, with real roots when D≥0.",
+        "Exact coefficient signs and denominator matter.",
+        "D25 produces roots1/2 and−2 in the original example.",
+        "Teacher reviews coefficient and substitution logic."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact roots, signed discriminants and contextual verification",
+          "Description": "Independent original algebra and error-analysis data; teacher-reviewed explanations are not auto-grading proof.",
+          "PrimaryLabel": "Equation or case",
+          "SecondaryLabel": "Exact outcome",
+          "Rows": [
+            {
+              "Label": "a,b,c",
+              "Cells": [
+                "2,3,−2"
+              ]
+            },
+            {
+              "Label": "D",
+              "Cells": [
+                "25"
+              ]
+            },
+            {
+              "Label": "roots",
+              "Cells": [
+                "−2,1/2"
+              ]
+            },
+            {
+              "Label": "3x²+2x+2",
+              "Cells": [
+                "D−20, no real roots"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

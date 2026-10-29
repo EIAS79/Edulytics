@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l11-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L11",
+      "CultureCode": "en",
+      "Title": "What are Perfect Squares?",
+      "ExplanationParagraphs": [
+        "Learning goal: recognize algebraic perfect-square trinomials, derive identities (x±n)²=x²±2nx+n² and determine why the middle coefficient must be twice the product. Original independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 11 teacher https://im.kendallhunt.com/HS/teachers/1/7/11/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/11/index.html (CC BY 4.0). Source establishes structure for later completing the square.",
+        "Original examples x²+12x+36=(x+6)² and x²−10x+25=(x−5)². Expand (x+6)(x+6)=x²+6x+6x+36; the middle term12x comes from TWO cross terms. A scaled expression (2x+3)² expands to4x²+12x+9, not4x²+6x+9.",
+        "The pattern x²+bx+c is a perfect square when c=(b/2)² for monic leading coefficient1 and matching sign. Thus x²+8x+16 is a perfect square, but x²+8x+12 is not one of this exact monic pattern with a single repeated linear factor.",
+        "Student task: build two square diagrams, classify trinomials as perfect/nonperfect, explain the missing cross term in a wrong expansion and derive a general identity. Teacher-scored rubric0–2 for diagram/structure, exact expansions, valid criteria and error analysis."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perfect-square identity",
+          "Definition": "(x+n)²=x²+2nx+n².",
+          "Rule": "Two cross products each nx.",
+          "Example": "(x+6)²=x²+12x+36."
+        },
+        {
+          "Title": "Negative middle term",
+          "Definition": "(x−n)²=x²−2nx+n².",
+          "Rule": "Constant n² remains positive.",
+          "Example": "(x−5)²=x²−10x+25."
+        },
+        {
+          "Title": "Scaled square",
+          "Definition": "(ax+b)²=a²x²+2abx+b².",
+          "Rule": "Multiply cross coefficient2ab.",
+          "Example": "(2x+3)²=4x²+12x+9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Expand positive perfect square",
+          "Question": "Find (x+6)².",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Write (x+6)(x+6).",
+            "Multiply x²,6x,6x,36.",
+            "Combine middle terms12x.",
+            "Result x²+12x+36."
+          ],
+          "Answer": "x²+12x+36.",
+          "Check": "At x0 both36."
+        },
+        {
+          "Title": "Check negative perfect square",
+          "Question": "Factor x²−10x+25.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Constant25 is5².",
+            "Middle−10x equals−2×5x.",
+            "Therefore choose (x−5)².",
+            "Expand to x²−10x+25."
+          ],
+          "Answer": "(x−5)².",
+          "Check": "At x5 both0."
+        },
+        {
+          "Title": "Correct scaled expansion",
+          "Question": "Expand (2x+3)².",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Square 2x to get4x².",
+            "Cross terms 2x×3 twice total12x.",
+            "Square3 to get9.",
+            "Combine4x²+12x+9.",
+            "At x1 square5²=25 and polynomial4+12+9=25."
+          ],
+          "Answer": "4x²+12x+9.",
+          "Check": "Cross term is12x, not6x."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Omitting factor2 from cross term",
+          "WhyWrong": "A square of a binomial has two equal mixed products.",
+          "Correction": "Use2ab."
+        },
+        {
+          "Mistake": "Calling x²+8x+12 perfect square",
+          "WhyWrong": "For b8 expected constant16.",
+          "Correction": "Compare c with (b/2)²."
+        }
+      ],
+      "SummaryPoints": [
+        "Perfect-square identities arise from distributing repeated binomials.",
+        "Middle coefficient is twice product of binomial terms.",
+        "Recognizing perfect squares prepares for completing the square.",
+        "Teacher reviews symbolic and diagram explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factor and completing-square verification",
+          "Description": "Independent mathematical equations, checked roots and explanations, not a reproduction of publisher diagrams.",
+          "PrimaryLabel": "Expression or condition",
+          "SecondaryLabel": "Equivalent form or solutions",
+          "Rows": [
+            {
+              "Label": "(x+6)²",
+              "Cells": [
+                "x²+12x+36"
+              ]
+            },
+            {
+              "Label": "(x−5)²",
+              "Cells": [
+                "x²−10x+25"
+              ]
+            },
+            {
+              "Label": "(2x+3)²",
+              "Cells": [
+                "4x²+12x+9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

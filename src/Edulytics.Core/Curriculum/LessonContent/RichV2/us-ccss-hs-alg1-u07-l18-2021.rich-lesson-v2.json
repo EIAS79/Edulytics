@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l18-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L18",
+      "CultureCode": "en",
+      "Title": "Applying the Quadratic Formula (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: analyze and correct common errors in quadratic formula calculations, especially signed coefficients, discriminant order, numerator ±, and denominator2a; verify the roots by substitution. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 18 teacher https://im.kendallhunt.com/HS/teachers/1/7/18/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/18/index.html (CC BY 4.0). The source emphasizes error analysis more than rote answer production.",
+        "Original equation 3x²−5x−2=0 has a3,b−5,c−2. Discriminant D=(−5)²−4×3×(−2)=25+24=49. Formula x=(5±√49)/6=(5±7)/6 yields x2 or−1/3. The factored form (3x+1)(x−2)=0 provides an independent check.",
+        "An incorrect student step might use −5 rather than +5 for −b, or divide numerator by3 instead of6. Both produce candidates failing original substitution. For the second equation 2x²+4x+5=0, discriminant16−40=−24, so no real roots; a correct error analysis must distinguish algebraic failure from simply choosing wrong ±.",
+        "Student task: annotate a deliberately incorrect worked solution, locate first invalid step, correct it using exact fractions, and check both roots. Teacher-scored rubric0–2 each for coefficient signs, discriminant, entire fraction evaluation and reasoned error diagnosis/verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Signed coefficients",
+          "Definition": "The minus sign in−b changes sign of b.",
+          "Rule": "b=−5 gives−b=+5.",
+          "Example": "Numerator5±√D."
+        },
+        {
+          "Title": "Whole fraction",
+          "Definition": "Both−b and radical belong over2a.",
+          "Rule": "For a3 denominator6.",
+          "Example": "(5±7)/6."
+        },
+        {
+          "Title": "Independent back-check",
+          "Definition": "Plug roots into original or compare factors.",
+          "Rule": "(3x+1)(x−2)=0.",
+          "Example": "Roots2,−1/3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve signed coefficients",
+          "Question": "Solve3x²−5x−2=0.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Read a3,b−5,c−2.",
+            "D=25+24=49.",
+            "Use x=(5±7)/6.",
+            "Plus gives12/6=2.",
+            "Minus gives−2/6=−1/3.",
+            "Check original/factors."
+          ],
+          "Answer": "x2 or−1/3.",
+          "Check": "At x2 12−10−2=0; x−1/3 gives1/3+5/3−2=0."
+        },
+        {
+          "Title": "Find first sign mistake",
+          "Question": "What if a student writes x=(−5±7)/6?",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Original b=−5.",
+            "Formula numerator uses−b, so−(−5)=+5.",
+            "Student used b instead of−b.",
+            "Correct to(5±7)/6.",
+            "Test wrong candidate to show difference."
+          ],
+          "Answer": "Correct first sign to+5.",
+          "Check": "Right roots2 and−1/3."
+        },
+        {
+          "Title": "Recognize no-real-root case",
+          "Question": "Solve2x²+4x+5=0 over reals.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Read a2,b4,c5.",
+            "D=4²−4×2×5=16−40=−24.",
+            "Negative discriminant means no real roots.",
+            "Do not use an ordinary real square root of−24."
+          ],
+          "Answer": "No real solutions.",
+          "Check": "Equivalent vertex form2(x+1)²+3>0."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Failing to negate a negative b",
+          "WhyWrong": "Changes both roots.",
+          "Correction": "Compute−b explicitly before formula."
+        },
+        {
+          "Mistake": "Using denominator a rather than2a",
+          "WhyWrong": "Produces wrong values.",
+          "Correction": "Write2a first and parenthesize numerator."
+        },
+        {
+          "Mistake": "Treating no real roots as a calculator malfunction",
+          "WhyWrong": "Negative D is a mathematical condition.",
+          "Correction": "Classify root count before evaluating."
+        }
+      ],
+      "SummaryPoints": [
+        "The quadratic formula requires precise handling of signs and grouping.",
+        "Original signed example roots2 and−1/3.",
+        "Negative discriminant yields no real roots.",
+        "Teacher evaluates error analysis and verification."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact roots, signed discriminants and contextual verification",
+          "Description": "Independent original algebra and error-analysis data; teacher-reviewed explanations are not auto-grading proof.",
+          "PrimaryLabel": "Equation or case",
+          "SecondaryLabel": "Exact outcome",
+          "Rows": [
+            {
+              "Label": "3x²−5x−2",
+              "Cells": [
+                "roots2,−1/3"
+              ]
+            },
+            {
+              "Label": "D",
+              "Cells": [
+                "49"
+              ]
+            },
+            {
+              "Label": "2x²+4x+5",
+              "Cells": [
+                "D−24, no real roots"
+              ]
+            },
+            {
+              "Label": "invalid numerator sign",
+              "Cells": [
+                "−5 not +5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

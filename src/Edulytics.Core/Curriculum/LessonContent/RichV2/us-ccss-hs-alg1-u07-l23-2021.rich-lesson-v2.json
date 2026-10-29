@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l23-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L23",
+      "CultureCode": "en",
+      "Title": "Using Quadratic Expressions in Vertex Form to Solve Problems",
+      "ExplanationParagraphs": [
+        "Learning goal: use vertex form to find extrema in a real-world quadratic optimization model and solve a specified target value, carefully interpreting symmetry and feasible domains. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 23 teacher https://im.kendallhunt.com/HS/teachers/1/7/23/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/23/index.html (CC BY 4.0). The publisher applies complete-square representations to decisions, not merely symbols.",
+        "Original fenced rectangle: 40 metres of perimeter with width w metres and length20−w metres. Allowed widths 0≤w≤20 for a limiting mathematical model and 0<w<20 for non-degenerate rectangles. Area A(w)=w(20−w)=20w−w²=100−(w−10)² square metres. Maximum100m² at w10m and complementary length10m.",
+        "Target area84m² yields 100−(w−10)²=84, so (w−10)²=16 and w=6 or14. Both represent dimensions6m×14m, merely exchanging width/length, and are within the physical domain. The solutions need not correspond to two distinct rectangle shapes.",
+        "Student task: sketch feasible widths, convert area to vertex form, find largest area, solve target84 and explain equivalence of two dimension orderings. Teacher-scored rubric0–2 for context/units, vertex derivation, valid root interpretation and critique of treating negative/degenerate dimensions as physical rectangles."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vertex optimization",
+          "Definition": "A quadratic with negative squared coefficient is maximized at vertex.",
+          "Rule": "A(w)=100−(w−10)².",
+          "Example": "Maximum100 at w10."
+        },
+        {
+          "Title": "Target area equation",
+          "Definition": "Find dimensions meeting a specified output by setting A(w)=target.",
+          "Rule": "A(w)=84.",
+          "Example": "Widths6 or14."
+        },
+        {
+          "Title": "Domain and symmetry",
+          "Definition": "Width/length constraints can make two algebraic solutions one geometric shape.",
+          "Rule": "For perimeter40, length20−w.",
+          "Example": "(6,14) and(14,6) same dimensions swapped."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find maximum area",
+          "Question": "Perimeter40m, A(w)=w(20−w).",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Distribute A=20w−w².",
+            "Complete square A=100−(w−10)².",
+            "Squared term≥0, so A≤100.",
+            "Equality when w=10.",
+            "Length also10, giving square area100m²."
+          ],
+          "Answer": "Maximum100m² at10m×10m.",
+          "Check": "Perimeter2(10+10)=40m."
+        },
+        {
+          "Title": "Find widths for area84",
+          "Question": "Solve100−(w−10)²=84.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Subtract100:−(w−10)²=−16.",
+            "Multiply−1:(w−10)²=16.",
+            "Take square roots w−10=±4.",
+            "Widths w14 or6.",
+            "Lengths respectively6 or14."
+          ],
+          "Answer": "Dimensions6m×14m, either orientation.",
+          "Check": "Both areas84 and perimeter40."
+        },
+        {
+          "Title": "Reject out-of-domain width",
+          "Question": "Could w=−2 model a rectangle with perimeter40?",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Length would20−(−2)=22.",
+            "Area product−44m², not a valid geometric area.",
+            "Width negative violates 0<w<20.",
+            "Apply domain before interpreting model outputs."
+          ],
+          "Answer": "No, negative width invalid.",
+          "Check": "Physical lengths must be positive."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming both algebraic widths represent distinct dimensions",
+          "WhyWrong": "They exchange which side is called width.",
+          "Correction": "Compare unordered dimension pairs."
+        },
+        {
+          "Mistake": "Ignoring feasible interval for w",
+          "WhyWrong": "Negative or over20 length gives invalid rectangle.",
+          "Correction": "Restrict 0<w<20."
+        }
+      ],
+      "SummaryPoints": [
+        "Vertex form exposes maximum or minimum in context.",
+        "A=100−(w−10)² yields max100m² at w10m.",
+        "An area84m² corresponds to dimensions6m×14m.",
+        "Teacher reviews domain and geometric interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party exact quadratic reasoning and modeling table",
+          "Description": "Independently authored exact algebra, domain/units and mathematical evidence, not source images or real experiments.",
+          "PrimaryLabel": "Expression or scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "width6",
+              "Cells": [
+                "length14, area84"
+              ]
+            },
+            {
+              "Label": "width10",
+              "Cells": [
+                "length10, area100 max"
+              ]
+            },
+            {
+              "Label": "width14",
+              "Cells": [
+                "length6, area84"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

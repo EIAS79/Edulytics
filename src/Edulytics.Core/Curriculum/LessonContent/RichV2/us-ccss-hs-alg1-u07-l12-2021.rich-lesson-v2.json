@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l12-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L12",
+      "CultureCode": "en",
+      "Title": "Completing the Square (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: convert a monic quadratic equation to an equivalent perfect-square equation by adding (b/2)² to both sides, and then solve using positive/negative square roots. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 12 teacher https://im.kendallhunt.com/HS/teachers/1/7/12/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/12/index.html (CC BY 4.0). This source introduces the method using integer-friendly coefficients.",
+        "Original equation x²+8x=9. Half coefficient8 is4; square is16. Add16 to BOTH sides: x²+8x+16=25, or (x+4)²=25. Thus x+4=±5 and x=1 or−9. Direct substitution gives at1 1+8=9; at−9 81−72=9.",
+        "A second example x²−6x=7 requires adding9, yielding (x−3)²=16, giving x7 or−1. The completed-square constant depends on half the linear coefficient, including its sign, but squared constant itself is nonnegative. The method preserves equivalence only when the same addition is applied to both sides.",
+        "Student task: complete two monic squares, explain geometrically the missing corner needed to make a square, critique a step adding16 only on left, and check both roots. Teacher-scored rubric0–2 for the added term, legitimate equation transformation, full root set and verification."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Completing term",
+          "Definition": "For x²+bx, add (b/2)² to form a perfect square.",
+          "Rule": "Half b then square.",
+          "Example": "For b8 add16."
+        },
+        {
+          "Title": "Equation equivalence",
+          "Definition": "Adding same number to both sides preserves solutions.",
+          "Rule": "Add16 to both sides of x²+8x=9.",
+          "Example": "New right side25."
+        },
+        {
+          "Title": "Two square-root branches",
+          "Definition": "If (x+h)²=k>0, then x+h=±√k.",
+          "Rule": "Keep both roots.",
+          "Example": "(x+4)²=25 gives x1,−9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Complete x²+8x=9",
+          "Question": "Find exact roots.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Half linear coefficient8→4; square16.",
+            "Add16 to both sides.",
+            "Obtain x²+8x+16=25.",
+            "Rewrite (x+4)²=25.",
+            "Solve x+4=±5 to get x1,−9."
+          ],
+          "Answer": "x=1 or−9.",
+          "Check": "Both satisfy original."
+        },
+        {
+          "Title": "Complete x²−6x=7",
+          "Question": "Find exact roots.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Half coefficient−6→−3; square9.",
+            "Add9 to both sides.",
+            "Get x²−6x+9=16.",
+            "Rewrite (x−3)²=16.",
+            "Solve x−3=±4 to obtain x7,−1."
+          ],
+          "Answer": "x=7 or−1.",
+          "Check": "At7 49−42=7; at−1 1+6=7."
+        },
+        {
+          "Title": "Explain incorrect one-sided addition",
+          "Question": "Why can't we add16 only to left of x²+8x=9?",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Original solutions require left equal9.",
+            "Increasing left by16 makes it equal25 at the original solutions.",
+            "If right remains9, equation changes its solution set.",
+            "Add16 to both sides before factoring square."
+          ],
+          "Answer": "One-sided addition is not equivalence-preserving.",
+          "Check": "Original root x1 gives left new25, not9."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding half b instead of its square",
+          "WhyWrong": "A square needs (b/2)².",
+          "Correction": "For b8 add16, not4."
+        },
+        {
+          "Mistake": "Adding term only on one side",
+          "WhyWrong": "Changes the equation's solutions.",
+          "Correction": "Apply same addition both sides."
+        },
+        {
+          "Mistake": "Omitting negative square-root branch",
+          "WhyWrong": "Loses a valid real solution.",
+          "Correction": "Use ± for positive square target."
+        }
+      ],
+      "SummaryPoints": [
+        "Completing the square transforms a monic quadratic into a perfect square.",
+        "Add (b/2)² to both sides.",
+        "Solve both branches and check in the original.",
+        "Teacher reviews geometry and equivalence reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factor and completing-square verification",
+          "Description": "Independent mathematical equations, checked roots and explanations, not a reproduction of publisher diagrams.",
+          "PrimaryLabel": "Expression or condition",
+          "SecondaryLabel": "Equivalent form or solutions",
+          "Rows": [
+            {
+              "Label": "x²+8x=9",
+              "Cells": [
+                "roots1,−9"
+              ]
+            },
+            {
+              "Label": "x²−6x=7",
+              "Cells": [
+                "roots7,−1"
+              ]
+            },
+            {
+              "Label": "complete term b8",
+              "Cells": [
+                "16"
+              ]
+            },
+            {
+              "Label": "complete term b−6",
+              "Cells": [
+                "9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

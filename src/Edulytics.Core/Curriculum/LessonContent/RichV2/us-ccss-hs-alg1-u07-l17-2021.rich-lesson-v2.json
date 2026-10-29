@@ -1,0 +1,136 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l17-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L17",
+      "CultureCode": "en",
+      "Title": "Applying the Quadratic Formula (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: set up contextual quadratic equations that may be difficult to solve by inspection, use the formula appropriately and reject mathematical solutions inconsistent with real-world constraints. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 17 teacher https://im.kendallhunt.com/HS/teachers/1/7/17/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/17/index.html (CC BY 4.0). The source discusses why a real discriminant matters and when other methods may be simpler.",
+        "Original idealized foam-ball height h(t)=−5t²+20t+2 metres for t≥0 until landing. Ask when it reaches17 metres: −5t²+20t+2=17, so −5t²+20t−15=0; divide−5 to obtain t²−4t+3=0. Quadratic formula with a1,b−4,c3 yields D16−12=4 and t=(4±2)/2=1 or3 seconds.",
+        "The height function has vertex at t2, maximum h(2)=−20+40+2=22 metres. A target30 metres cannot be reached; equation h(t)=30 has no real roots and would give negative discriminant. Both 1s and3s are valid flight times for reaching17m; they correspond to rising and falling stages.",
+        "Student task: graph height and horizontal target levels, solve h=17 using formula and compare to factoring, explain impossibility of h=30, and articulate limitations of the gravity approximation. Teacher-scored rubric0–2 each for model equation, discriminant/roots, contextual selection and mathematical explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Target level equation",
+          "Definition": "To find time at specified height, set h(t)=target.",
+          "Rule": "Subtract target before solving.",
+          "Example": "h(t)=17 leads t²−4t+3=0."
+        },
+        {
+          "Title": "Two stages of flight",
+          "Definition": "A downward parabola can hit a height on ascent and descent.",
+          "Rule": "Two roots may both be physical.",
+          "Example": "17m at t1 and3."
+        },
+        {
+          "Title": "Impossible target",
+          "Definition": "A target greater than the model maximum has no real time solution.",
+          "Rule": "Compare to vertex output.",
+          "Example": "30m exceeds max22m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve height17",
+          "Question": "Find t with−5t²+20t+2=17.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Rearrange−5t²+20t−15=0.",
+            "Divide−5:t²−4t+3=0.",
+            "D=(−4)²−4×1×3=4.",
+            "Formula t=(4±2)/2.",
+            "Solutions t1 or3.",
+            "Both give height17."
+          ],
+          "Answer": "t1 and3 seconds.",
+          "Check": "At1−5+20+2=17; at3−45+60+2=17."
+        },
+        {
+          "Title": "Calculate maximum",
+          "Question": "Find h vertex.",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Coefficient a−5,b20.",
+            "Vertex t=−20/(2×−5)=2.",
+            "h(2)=−5×4+40+2=22.",
+            "The maximum is22m since a negative."
+          ],
+          "Answer": "22m at2s.",
+          "Check": "h1 and h3 both17."
+        },
+        {
+          "Title": "Reject impossible target",
+          "Question": "Can height ever reach30m in this model?",
+          "Method": "Preserve the solution set and verify each exact real root with the original quadratic equation.",
+          "Steps": [
+            "Maximum h is22m.",
+            "30 exceeds max so graph cannot intersect line y30.",
+            "Algebra h=30 gives−5t²+20t−28=0.",
+            "D=400−4×(−5)×(−28)=400−560=−160.",
+            "Therefore no real time solutions."
+          ],
+          "Answer": "No, target30m is above modeled maximum.",
+          "Check": "Negative discriminant confirms graphical conclusion."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Keeping only ascending root",
+          "WhyWrong": "Height can recur during descent.",
+          "Correction": "Check both positive roots."
+        },
+        {
+          "Mistake": "Interpreting an impossible height as a complex flight time",
+          "WhyWrong": "Physical time uses real nonnegative numbers.",
+          "Correction": "Check vertex and discriminant."
+        }
+      ],
+      "SummaryPoints": [
+        "A contextual target can lead to two valid real times or none.",
+        "The original ball model reaches17m at1s and3s.",
+        "Maximum22m makes30m impossible.",
+        "Teacher reviews exact algebra and physical validity."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact roots, signed discriminants and contextual verification",
+          "Description": "Independent original algebra and error-analysis data; teacher-reviewed explanations are not auto-grading proof.",
+          "PrimaryLabel": "Equation or case",
+          "SecondaryLabel": "Exact outcome",
+          "Rows": [
+            {
+              "Label": "t1",
+              "Cells": [
+                "h17m"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "h22m"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "h17m"
+              ]
+            },
+            {
+              "Label": "target30m",
+              "Cells": [
+                "no real time"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

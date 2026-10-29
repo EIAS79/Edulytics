@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l05-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L05",
+      "CultureCode": "en",
+      "Title": "How Many Solutions?",
+      "ExplanationParagraphs": [
+        "Learning goal: relate solutions of f(x)=0 to x-intercepts of graphs and classify when a quadratic equation has zero, one or two DISTINCT real solutions. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 5 teacher https://im.kendallhunt.com/HS/teachers/1/7/5/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/5/index.html (CC BY 4.0). Source includes graph-based investigations and algebraic re-expression.",
+        "Three original functions: A(x)=(x−2)²+1 has minimum1 and no x-intercepts, so A(x)=0 has no real roots. B(x)=(x−2)² touches axis at x2, so one distinct root. C(x)=(x−2)²−9 crosses at x=−1 and x5, so two roots. All share symmetry axis x2; moving constant changes the number of intersections.",
+        "At target output y=0, a parabola can miss, touch, or cross the horizontal axis twice. Two algebraic repeated factors such as (x−2)(x−2)=0 do not mean two distinct numerical answers. For equations in standard form the discriminant can later provide this count without graphing, but it is not necessary for this exploratory source lesson.",
+        "Student task: draw three graphs with aligned axes, classify each using vertex relative to y0, explain algebraic checks and critique someone listing root2 twice. Teacher-scored rubric0–2 each for accurate graphs, correct distinct solution count, algebra/graph connection and explanation of tangency."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "No real roots",
+          "Definition": "An upward parabola whose minimum is above zero does not meet x-axis.",
+          "Rule": "A(x)=(x−2)²+1≥1.",
+          "Example": "No real zero."
+        },
+        {
+          "Title": "One distinct root",
+          "Definition": "A parabola tangent to x-axis touches at its vertex.",
+          "Rule": "B(x)=(x−2)²=0.",
+          "Example": "Only x2."
+        },
+        {
+          "Title": "Two distinct roots",
+          "Definition": "A parabola cutting the axis in two points has two real solutions.",
+          "Rule": "(x−2)²=9.",
+          "Example": "x−1,5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Classify graph above zero",
+          "Question": "Solve(x−2)²+1=0.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Square term≥0.",
+            "Add1 makes total≥1.",
+            "It cannot equal zero for real x.",
+            "No x-intercepts occur."
+          ],
+          "Answer": "No real solutions.",
+          "Check": "Minimum1 at x2."
+        },
+        {
+          "Title": "Find single tangent root",
+          "Question": "Solve(x−2)²=0.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Square equals zero only if base is zero.",
+            "Set x−2=0.",
+            "Then x=2.",
+            "Graph touches axis at(2,0)."
+          ],
+          "Answer": "One distinct root x2.",
+          "Check": "Root repeated algebraically, not two distinct x-values."
+        },
+        {
+          "Title": "Find two crossing roots",
+          "Question": "Solve(x−2)²−9=0.",
+          "Method": "Solve the original independently authored equation and check every candidate in the source expression.",
+          "Steps": [
+            "Move9:(x−2)²=9.",
+            "Take ±3: x−2=3 or−3.",
+            "Solutions x5 or−1.",
+            "Graph crosses axis at both."
+          ],
+          "Answer": "Two distinct roots−1 and5.",
+          "Check": "Both substitute with output zero."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting multiplicity as distinct x-values",
+          "WhyWrong": "Double root is one numerical input.",
+          "Correction": "Count unique real solutions."
+        },
+        {
+          "Mistake": "Assuming all quadratics cross horizontal axis",
+          "WhyWrong": "Vertex can remain entirely above/below axis.",
+          "Correction": "Compare range with target."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadratic zeros correspond to x-intercepts.",
+        "A parabola may have none, one tangent root or two distinct roots.",
+        "Original A,B,C demonstrate all three cases.",
+        "Teacher scores graph and algebraic explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic reasoning and verification",
+          "Description": "Independently authored mathematical examples with explicit solution multiplicity and physical context.",
+          "PrimaryLabel": "Input or equation",
+          "SecondaryLabel": "Root or output",
+          "Rows": [
+            {
+              "Label": "(x−2)²+1=0",
+              "Cells": [
+                "0 real roots"
+              ]
+            },
+            {
+              "Label": "(x−2)²=0",
+              "Cells": [
+                "1 distinct root2"
+              ]
+            },
+            {
+              "Label": "(x−2)²−9=0",
+              "Cells": [
+                "2 roots−1,5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

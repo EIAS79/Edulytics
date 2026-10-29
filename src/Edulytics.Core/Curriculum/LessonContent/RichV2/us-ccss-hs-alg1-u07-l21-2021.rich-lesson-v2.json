@@ -1,0 +1,145 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l21-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L21",
+      "CultureCode": "en",
+      "Title": "Sums and Products of Rational and Irrational Numbers",
+      "ExplanationParagraphs": [
+        "Learning goal: reason precisely about which sums and products involving rational and irrational numbers are necessarily irrational and which can become rational, identifying key exceptions. Original independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 21 teacher https://im.kendallhunt.com/HS/teachers/1/7/21/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/21/index.html (CC BY 4.0). The source emphasizes logical arguments, not categorical guesses from limited examples.",
+        "Examples: 3+√2 is irrational because if it were rational, subtracting rational3 would make √2 rational, a contradiction. The product 3√2 is irrational because if it were rational, division by nonzero rational3 would make √2 rational. However 0·√2=0 is rational; the nonzero qualifier matters for products.",
+        "Two irrational values can have rational sum or product: √2+(−√2)=0 and √2·√2=2. They can also have irrational results, for example √2+√3 is irrational; for the latter a proof requires more than asserting both parts are irrational. A simpler clearly justified example √2+√2=2√2 is irrational. Similarly √2·√3=√6 irrational because6 is not a square.",
+        "Student task: categorize statements as always/sometimes/never true, supply either proof or counterexample, highlight the zero exception and critique statements such as 'irrational times rational is always irrational'. Teacher-scored rubric0–2 for exact examples, correct counterexamples, coherent proofs and careful quantifiers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rational plus irrational",
+          "Definition": "Adding a rational to irrational remains irrational.",
+          "Rule": "If sum were rational, subtract rational term to contradict.",
+          "Example": "3+√2 irrational."
+        },
+        {
+          "Title": "Nonzero rational product",
+          "Definition": "Multiplying irrational by nonzero rational remains irrational.",
+          "Rule": "Divide by nonzero rational to prove.",
+          "Example": "3√2 irrational;0√2=0 rational."
+        },
+        {
+          "Title": "Two irrationals",
+          "Definition": "Sum or product of two irrationals can be rational OR irrational.",
+          "Rule": "Use counterexamples to universal claims.",
+          "Example": "√2+(−√2)=0;√2·√2=2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove rational plus irrational",
+          "Question": "Show3+√2 is irrational.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Assume q=3+√2 is rational.",
+            "Then q−3 is rational since rational numbers closed under subtraction.",
+            "But q−3=√2, known irrational.",
+            "Contradiction proves assumption false."
+          ],
+          "Answer": "3+√2 is irrational.",
+          "Check": "Proof by contradiction."
+        },
+        {
+          "Title": "Handle zero exception",
+          "Question": "Classify3√2 and0√2.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "3 is nonzero rational, √2 irrational.",
+            "If3√2 were rational, dividing by3 would make√2 rational; impossible.",
+            "Thus3√2 irrational.",
+            "But0×√2=0, an integer rational.",
+            "The word nonzero matters."
+          ],
+          "Answer": "3√2 irrational;0√2 rational0.",
+          "Check": "Both follow exact arithmetic and logical conditions."
+        },
+        {
+          "Title": "Give rational results from irrationals",
+          "Question": "Show irrational pair can sum or multiply to rational.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "√2 and−√2 are both irrational.",
+            "Their sum√2−√2=0, rational.",
+            "√2 times√2=2, rational.",
+            "So statement 'two irrationals always produce irrational sum/product' is false."
+          ],
+          "Answer": "Both rational counterexamples0 and2.",
+          "Check": "Exact cancellation and square root identities."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming irrational×rational is always irrational without exception",
+          "WhyWrong": "Multiplier0 produces rational0.",
+          "Correction": "Require nonzero rational factor."
+        },
+        {
+          "Mistake": "Inferring types of all irrational pairs from one example",
+          "WhyWrong": "Other pairs can cancel or produce squares.",
+          "Correction": "Provide counterexample and quantify."
+        },
+        {
+          "Mistake": "Claiming a proof from decimal approximations",
+          "WhyWrong": "Finite digits cannot establish rationality.",
+          "Correction": "Use algebraic closure and contradiction."
+        }
+      ],
+      "SummaryPoints": [
+        "Rational plus irrational is irrational.",
+        "Nonzero rational times irrational is irrational; zero is exception.",
+        "Two irrational operands can sum or multiply to rational numbers.",
+        "Teacher evaluates proofs, counterexamples and quantifiers."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party exact quadratic reasoning and modeling table",
+          "Description": "Independently authored exact algebra, domain/units and mathematical evidence, not source images or real experiments.",
+          "PrimaryLabel": "Expression or scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "3+√2",
+              "Cells": [
+                "irrational"
+              ]
+            },
+            {
+              "Label": "3√2",
+              "Cells": [
+                "irrational"
+              ]
+            },
+            {
+              "Label": "0√2",
+              "Cells": [
+                "0 rational"
+              ]
+            },
+            {
+              "Label": "√2−√2",
+              "Cells": [
+                "0 rational"
+              ]
+            },
+            {
+              "Label": "√2×√2",
+              "Cells": [
+                "2 rational"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
