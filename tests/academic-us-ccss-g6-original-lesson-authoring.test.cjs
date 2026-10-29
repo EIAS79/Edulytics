@@ -568,7 +568,7 @@ test('Unit 4 fraction and packaging source opening checks retain exact mathemati
   assert.match(lesson(14).workedExamples, /1\/8 in³/);
   assert.match(lesson(15).workedExamples, /108\/27=4in³/);
   assert.match(lesson(16).workedExamples, /17\/12/);
-  assert.match(lesson(17).workedExamples, /NOT establish optimal packing/);
+  assert.match(lesson(17).workedExamples, /not establish optimal packing/i);
   assert.equal(9*3*4, 108);
   assert.equal(108/27, 4);
   assert.equal(3*2*4, 24);
