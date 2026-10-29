@@ -519,7 +519,7 @@
         "Learning goal: optional source practice collecting and interpreting classroom game trials to estimate conditional probabilities and determine independence, while distinguishing data estimates from an exact chance model.",
         "A symmetric payout game is fair in expectation when mean net gain equals zero Weight all outcomes by their probabilities",
         "Source-specific experiment: in a three-card bag with two red cards and one blue card, compare probabilities of red on a second draw with and without replacement. Without replacement the second-draw probability depends on the first draw; with replacement the conditional red probability remains 2/3 on each draw. Specify recorded counts and use the table's actual conditioning denominators.",
-        "Separate rounds require a mechanism that does not alter later probabilities Replacing cards may help ensure repeated-round independence Positive expected net gain favors player long term under model",
+        "Without replacement, a first red draw leaves one red and one blue card, changing the next red probability to 1/2. With replacement, the second draw retains probability 2/3 even after observing a first red; exact model independence differs from fluctuating classroom frequencies.",
         "Original student task: Students design a noncommercial, classroom probability board game with mathematical payoffs and critique whether repeated rounds are independent. Teacher scores rules, modelling and evidence. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 11, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
       ],
@@ -551,7 +551,7 @@
           "Steps": [
             "Expected gain (1/3)·2=2/3",
             "Expected loss (2/3)·(−1)=−2/3",
-            "Sum zero"
+            "Adding the two weighted outcomes gives expected net gain 2/3−2/3=0."
           ],
           "Answer": "Fair in expected net gain.",
           "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
@@ -569,17 +569,16 @@
           "Check": "Unconditional P(second red)=2/3 by symmetry, so this demonstrates dependence."
         },
         {
-          "Title": "Probabilities in Games: model 3",
-          "Question": "Bag has 2 red and 1 blue; draw red then do not replace. Probability second is red given first red?",
-          "Method": "Expected value",
+          "Title": "Probabilities in Games: replacement changes independence",
+          "Question": "A bag contains two red cards and one blue. After each draw, replace the selected card. Find P(second red | first red), and explain dependence.",
+          "Method": "Compute the conditional sample space after replacement.",
           "Steps": [
-            "After first red, bag contains 1 red,1 blue",
-            "Both remaining cards equiprobable",
-            "P(red second",
-            "red first)=1/2 versus initial 2/3"
+            "After the first red card is returned, all three cards remain: two red and one blue.",
+            "Given the first result, the next draw still gives red with probability 2/3.",
+            "P(second red | first red)=2/3 equals unconditional P(second red)=2/3, so the draws are independent under this with-replacement model."
           ],
-          "Answer": "1/2; draws dependent.",
-          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+          "Answer": "P(second red | first red)=2/3; successive draws are independent with replacement.",
+          "Check": "Contrast with without-replacement conditional probability 1/2 after a first red."
         }
       ],
       "CommonMistakes": [
@@ -631,8 +630,8 @@
               "Numerator": 0,
               "Denominator": 1,
               "Cells": [
-                "Bag has 2 red and 1 blue; draw red then do not replace. Probability second is red given first red?",
-                "1/2; draws dependent."
+                "A bag contains two red cards and one blue. After each draw, replace the selected card. Find P(second red | first red), and explain dependence.",
+                "P(second red | first red)=2/3; successive draws are independent with replacement."
               ]
             }
           ]
