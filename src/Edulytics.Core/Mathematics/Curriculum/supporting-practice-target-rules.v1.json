@@ -10554,6 +10554,28 @@
         "commonMistake": "Do not multiply bases or misread a negative exponent as a negative number; do not substitute logarithms.",
         "summary": "Verify the equivalent exact numerical value using the integer-exponent rules."
       }
+    },
+    {
+      "id": "hs-matrix-linear-systems",
+      "titlePatterns": [],
+      "codePatterns": [
+        "^PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01$"
+      ],
+      "skillId": "supporting.matrices.core",
+      "mechanic": "HS_MATRIX_SYSTEMS_EXACT",
+      "families": [
+        "usccss.hs.matrix.coefficients_2x2",
+        "usccss.hs.matrix.solve_2x2",
+        "usccss.hs.matrix.inverse_2x2",
+        "usccss.hs.matrix.classify_2x2"
+      ],
+      "content": {
+        "concept": "Represent a linear system as Ax=b and determine matrix dimensions, invertibility and consistency.",
+        "workedExample": "A=[[2,1],[1,1]], b=[5,3] yields (x,y)=(2,1) and inverse [[1,-1],[-1,2]].",
+        "solution": "Preserve variable order, compute the determinant, solve both equations and check by substitution.",
+        "commonMistake": "A singular system does not necessarily have no solution; distinguish inconsistent from dependent rows.",
+        "summary": "Use exact matrix operations and original-system substitution. 3×3 and open explanations remain teacher-reviewed until implemented."
+      }
     }
   ]
 }
