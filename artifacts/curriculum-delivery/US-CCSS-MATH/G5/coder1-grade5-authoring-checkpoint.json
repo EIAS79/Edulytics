@@ -74,7 +74,9 @@
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-source-geometry-v10.json",
     "tests/academic-us-ccss-g5-u01-measured-prisms-v10.test.cjs",
-    "tests/academic-us-ccss-g5-u01-equivalent-volume-v10.test.cjs"
+    "tests/academic-us-ccss-g5-u01-equivalent-volume-v10.test.cjs",
+    "tests/academic-us-ccss-g5-u01-prism-palooza-v11.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l11-source-prisms-v11.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -180,8 +182,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "148 Grade5 direct Rich V2 teaching candidates, one V10 source-geometry repair for U01 L09; 2021 teacher and Student Facing HTML verified for targeted lesson; original Student Task PDF, drawings/cards and gated Cool-down, exact selected Practice and A/B/C/D acceptance remain unverified.",
-      "next": "Continue original U01:L10 source task comparison; retain separate source license and teacher drawing rubric requirements."
+      "issue": "148 direct candidates; U01:L09–L11 2021 source-specific task/geometry repairs in branch. U01:L11 original Student Task PDF 4 pages and its figures inspected; other original PDFs and gated Cool-down remain mostly unverified. No effective B/C/D or academic approval.",
+      "next": "Continue U01:L12 original 2021 task/figures, then U02 first unaccepted. Owner of shared canonical pack version/selected content remains issue #592."
     },
     {
       "id": "G5-D-004",
@@ -7567,7 +7569,7 @@
       "sourceTaskAssessmentBoundary": "TEACHER_SCORED_AUTHENTIC_GAME_STUDENT_CREATED_TASK_OR_FACILITATION_NUMERIC_SUBCHECK_ONLY"
     }
   ],
-  "lastGradeContentCommit": "2d189e89793b81eaa10971e95a424bcac54a63f8",
+  "lastGradeContentCommit": "1089f0cc5499ec887da292e4fa68f22d9ea5417c",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
@@ -7575,15 +7577,15 @@
     "protected GitHub CI at final frozen branch head"
   ],
   "currentScopeDescription": "V10: 148/148 Grade5 direct first-party Rich V2 teaching candidates remain. Exact source read-only audit and measured-composite-prism repairs completed for U01:L09 (78 ft³,259 in³,420 in³) and U01:L10 (retained valid 95-unit example, added168 ft³ measured source task). Two exact GitHub Node test scripts tested in isolated Node v22.16.0: 9 PASS, 0 FAIL, 3 fixture SKIP. Original Student Task PDFs, figures/cards, gated Cool-down, selected Practice, .NET/DB/CI, authenticated student/teacher and owner UAT remain unverified; 0/148 A/B/C/D and accepted.",
-  "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "120342c592c1760b819e7633805c0b69104077d6",
+  "lastCodeCommit": "1089f0cc5499ec887da292e4fa68f22d9ea5417c",
+  "lastCommittedTest": "a0974714a4165fb20f22ea853a8b8380211eb082",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "120342c592c1760b819e7633805c0b69104077d6",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L11 — All Kinds of Prisms",
+    "lastKnownCommittedHeadBeforeLedger": "0023a43aca679e2b63cd402d80a2c05d7b303967",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L12 — Lots and Lots of Garbage (optional)",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Read original 2021 U01 L11 Student Facing/teacher source, compare source geometry and proper units with current Rich V2; edit only if source math/tasks differ, commit grade-owned fixture/test, retain #592 shared ownership and A–D false.",
+    "nextAcademic": "Independently compare original 2021 U01:L12 Student Facing task/figure/PDF and Grade-5 candidate; preserve academic A-D NO_GO. Then take first actually unaccepted U02 lesson. Source-PDF coverage remains incomplete from U01:L01 onward.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7920,5 +7922,38 @@
     "stageB": "NOT_VERIFIED",
     "stageC": "NOT_VERIFIED",
     "stageD": "NOT_RUN"
+  },
+  "v11Evidence": {
+    "date": "2026-10-29",
+    "lesson": "PED:US-CCSS-MATH:G5:U01:L11",
+    "classification": "GRADE5_DEFECT_FIXED",
+    "reviewedOriginalStudentTaskPdfPages": 4,
+    "originalPdfForThisOneLessonChecked": true,
+    "gatedCooldownChecked": false,
+    "individualSourceImageRightsChecked": false,
+    "grade5RichV2CorrectionCommit": "1089f0cc5499ec887da292e4fa68f22d9ea5417c",
+    "grade5NodeTestCommit": "a0974714a4165fb20f22ea853a8b8380211eb082",
+    "grade5SourceAuditCommit": "0023a43aca679e2b63cd402d80a2c05d7b303967",
+    "nativeNode": {
+      "command": "node --test /mnt/data/academic-us-ccss-g5-u01-prism-palooza-v11.exact.test.cjs",
+      "version": "v22.16.0",
+      "pass": 5,
+      "fail": 0,
+      "skip": 2,
+      "committedTestBlobSha": "f5f46a73439c7d719b92eda17c37b14fe73b9433",
+      "isolatedNodeTestBlobSha": "f5f46a73439c7d719b92eda17c37b14fe73b9433",
+      "exactByteParity": true,
+      "scope": "Mathematical oracles and invalid-construction guards run on isolated Node; two exact branch fixture tests skipped (repo unavailable). NOT entire repository or runtime."
+    },
+    "canonicalPack": "L11 generic learner translation remains unresolved pending source-safe pack/version transition; selected effective DB content not verified",
+    "gradeWideRichCandidateCount": 148,
+    "gradeWideStageAAccepted": 0,
+    "gradeWideEffectiveB": 0,
+    "gradeWidePracticeC": 0,
+    "gradeWideIntegratedD": 0,
+    "ownerUat": "NOT_RUN",
+    "release": "NO_GO",
+    "sharedIntegration": "https://github.com/EIAS79/Edulytics/issues/592",
+    "fullRepoCi": "NOT_VERIFIED_ON_FINAL_HEAD"
   }
 }
