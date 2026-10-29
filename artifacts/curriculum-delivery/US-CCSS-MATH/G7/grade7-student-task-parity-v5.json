@@ -40,7 +40,12 @@
       "actualGradeOwnedRepair": "Original grid F drawing, partner card sort and teacher reasoning rubric; no source imagery copied",
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
-      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT"
+      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
+      "v6Grade7TeacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v6RubricUIIntegrated": false,
+      "v6RubricStatus": "CANDIDATE_NOT_TEACHER_SCORED",
+      "v6FirstPartyStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "v6AuthenticFigureRendered": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
@@ -66,7 +71,12 @@
       "actualGradeOwnedRepair": "Original matched-vertex triangle construction; not yet real figure rendering",
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
-      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT"
+      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
+      "v6Grade7TeacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v6RubricUIIntegrated": false,
+      "v6RubricStatus": "CANDIDATE_NOT_TEACHER_SCORED",
+      "v6FirstPartyStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "v6AuthenticFigureRendered": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
@@ -92,7 +102,12 @@
       "actualGradeOwnedRepair": "Original L-shaped polygon graph construction and wrong-addition analysis",
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
-      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT"
+      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
+      "v6Grade7TeacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v6RubricUIIntegrated": false,
+      "v6RubricStatus": "CANDIDATE_NOT_TEACHER_SCORED",
+      "v6FirstPartyStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "v6AuthenticFigureRendered": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
@@ -1912,7 +1927,10 @@
       "actualGradeOwnedRepair": "Original popcorn two-price table plus park and four-slot toaster examples; shared Practice #592 remains P0",
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
-      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT"
+      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
+      "v6Grade7TeacherRubricPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v6RubricUIIntegrated": false,
+      "v6RubricStatus": "CANDIDATE_NOT_TEACHER_SCORED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L02",
@@ -3792,5 +3810,14 @@
     "Source student pages and representative activity descriptions are analyzed. Publisher downloadable illustrations, original materials and exact Cool Down fidelity are not automatically demonstrated by URL inspection.",
     "Original worked analogues and rubric notes are source-goal-oriented but never imply actual drawings, physical measurements, sample trials or projects were performed by a learner.",
     "Formal lesson-specific Stage A acceptance remains 0/145; source task structural inspection is separate from accepted academic fidelity."
-  ]
+  ],
+  "v6": {
+    "grade7StandaloneDiagramFiles": 3,
+    "teacherRubricProposals": 4,
+    "actualAuthenticatedLearnerOrTeacherIntegration": 0,
+    "academicStageAVerified": 0,
+    "sourceTaskComparisonsPreserved": 145,
+    "practiceIntegrationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "next": "U01 L01 actual authenticated geometry figure delivery and teacher rubric end-to-end, not yet selectable in Rich V2"
+  }
 }
