@@ -86,3 +86,73 @@ test('U04 L11-L14: source task artifacts, learner teaching and honest no-go boun
   assert.match(byCode.get(code(13)).translations[0].workedExamples,/126\/16/);
   assert.match(byCode.get(code(14)).translations[0].workedExamples,/400 small cubes/);
 });
+
+test('U04 L15-L17 public task source evidence remains non-approved without interactive and teacher proof',()=>{
+  const ev=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-v10-u04-l15-l17-public-source-task-evidence.json'),'utf8'));
+  assert.equal(ev.summary.currentDirectSourceTaskComparisons,132);
+  assert.equal(ev.summary.remainingSourceTaskComparisons,15);
+  assert.equal(ev.summary.academicAccepted,0);
+  assert.deepEqual(ev.lessons.map(x=>x.lessonCode),[15,16,17].map(code));
+  for(const row of ev.lessons){
+    assert.equal(row.fullPublicStudentActivityBodyCompared,true);
+    assert.equal(row.publicTeacherActivityAndGoalsCompared,true);
+    assert.equal(row.protectedTeacherResponseOrCooldownVerified,false);
+    assert.equal(row.sourceAppletOrFigureParityVerified,false);
+    assert.equal(row.liveLessonRenderVerified,false);
+    assert.equal(row.exactSelectedPracticeGeneratorGradingVerified,false);
+    assert.equal(row.teacherEvaluatedOpenResponsesPersisted,false);
+    assert.equal(row.twoSchoolIsolationVerified,false);
+    assert.equal(row.teacherRubricDraft.implemented,false);
+    assert.equal(row.academicAcceptance,'NOT_ACCEPTED');
+    assert.ok(byCode.get(row.lessonCode).translations[0].workedExamples.includes('Example 3:'));
+  }
+  assert.match(byCode.get(code(15)).translations[0].workedExamples,/960 half-inch cubes/);
+  assert.match(byCode.get(code(16)).translations[0].workedExamples,/four WHOLE batches/);
+  assert.match(byCode.get(code(17)).translations[0].workedExamples,/\$26\.90/);
+});
+test('U04 L15-L17 exact volume, limiting recipes and feasible axis-aligned shipment layouts',()=>{
+  const near=(a,b)=>Math.abs(a-b)<1e-9;
+  assert.equal(10*4*3,120);
+  assert.equal(20*8*6,960);
+  assert.equal(9*3*4,108);
+  assert.equal(108/27,4);
+  assert.equal(3**3,27);
+  assert.equal(6**3,216);
+  assert.equal(27/8,216/64);
+  assert.equal(10*(33/4)*6,495);
+  assert.equal(495*(4/5),396);
+  assert.equal(396/(10*33/4),24/5);
+  assert.equal(330/495,2/3);
+  assert.equal((17/2)*11*2,187);
+  assert.equal(9*9*(5/2),202.5);
+  assert.ok(187/81>1.5);
+  assert.deepEqual([(3/4)-(2/3),(3/4)*(2/3),(3/4)/(2/3),(3/4)+(2/3)]
+    .map(x=>Number(x.toFixed(10))),[1/12,1/2,9/8,17/12].map(x=>Number(x.toFixed(10))));
+  assert.equal((3/4)*(1/2),3/8);
+  assert.equal((1/2)/(3/4),2/3);
+  assert.equal((3/4)/(1/2),3/2);
+  assert.equal(13/4-3/2,7/4);
+  assert.equal((16/3)/(4/5),20/3);
+  assert.equal(8/9+7/3,29/9);
+  assert.equal((8/9)/(2/3),4/3);
+  assert.equal((29/2)/(9/2),29/9);
+  assert.equal((9/2)*(12/5),54/5);
+  assert.ok(near((22/5)-(17/8),91/40));
+  assert.equal((22/5)/(2/5),11);
+  assert.equal((17/4)/(3/4),17/3);
+  assert.equal((3/2)/(1/3),9/2);
+  assert.equal(Math.floor(Math.min(17/3,9/2)),4);
+  const small=[7/4,9/4,3/4];
+  const permutations=[[small[0],small[1],small[2]],[small[0],small[2],small[1]],
+    [small[1],small[0],small[2]],[small[1],small[2],small[0]],
+    [small[2],small[0],small[1]],[small[2],small[1],small[0]]];
+  const packing = dims=>Math.max(...permutations.map(s=>dims.reduce((acc,d,i)=>acc*Math.floor(d/s[i]),1)));
+  const capacities=[[43/8,69/8,13/8],[11,17/2,11/2],[95/8,27/8,109/8],[12,12,11/2]].map(packing);
+  assert.deepEqual(capacities,[18,132,144,240]);
+  const shipping=capacities.map((count,i)=>Math.ceil(270/count)*[6.8,13.45,13.45,18.75][i]);
+  assert.deepEqual(shipping.map(x=>Number(x.toFixed(2))),[102,40.35,26.9,37.5]);
+  assert.equal(132+144,276);
+  assert.ok(270*small.reduce((a,b)=>a*b,1)>12*12*5.5);
+  assert.throws(()=>parse('not-a-fraction'),/malformed fraction/);
+});
