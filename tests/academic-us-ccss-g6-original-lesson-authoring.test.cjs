@@ -575,3 +575,44 @@ test('Unit 4 fraction and packaging source opening checks retain exact mathemati
   assert.equal(Math.ceil(270/24), 12);
   assert.equal((3/4)/(2/3), 9/8);
 });
+
+
+test('Unit 5 decimal source examples remain place-value accurate and physically scoped', () => {
+  const source = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u05-15-public-student-source-opening-and-repair-matrix.json'), 'utf8'));
+  assert.equal(source.lessons.length, 15);
+  assert.equal(source.summary.newTargetedSupplements, 14);
+  assert.equal(source.summary.academicAccepted, 0);
+  const revised = new Set([1,2,3,4,5,6,8,9,10,11,12,13,14,15]);
+  source.lessons.forEach((e,i) => {
+    assert.equal(e.lessonCode, lcode(5,i+1));
+    assert.equal(e.v5SourceTaskCandidateSupplementAuthored, revised.has(i+1));
+    assert.equal(e.fullStudentTaskImageAppletFidelityVerified, false);
+    assert.equal(e.fullTeacherGuideReviewed, false);
+    assert.equal(e.exactGeneratedPracticeAndFeedbackVerified, false);
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED');
+  });
+  const en = n => byCode.get(lcode(5,n)).translations.find(x => x.cultureCode === 'en');
+  assert.match(en(1).workedExamples, /\$12\.18/);
+  assert.match(en(2).workedExamples, /thirteen hundredth squares/i);
+  assert.match(en(3).workedExamples, /0\.011/);
+  assert.match(en(4).workedExamples, /\$4\.83/);
+  assert.match(en(5).workedExamples, /720×0\.01=7\.2/);
+  assert.match(en(6).workedExamples, /0\.0987/);
+  assert.match(en(8).workedExamples, /11\.55/);
+  assert.match(en(9).workedExamples, /657÷3/);
+  assert.match(en(10).workedExamples, /1816÷4=454/);
+  assert.match(en(11).workedExamples, /\$67\.75/);
+  assert.match(en(12).workedExamples, /13\.45/);
+  assert.match(en(13).workedExamples, /1\.8÷0\.004=450/);
+  assert.match(en(14).workedExamples, /0\.2875/);
+  assert.match(en(15).workedExamples, /3\.375/);
+  assert.match(en(15).explanation, /cannot be inferred from sheet side lengths alone/);
+  assert.ok(Math.abs(2*(3.25+1.85+0.99)-12.18)<1e-10);
+  assert.ok(Math.abs(1.009+0.391-1.4)<1e-10);
+  assert.ok(Math.abs(0.02-0.0116-0.0084)<1e-10);
+  assert.equal(657/3,219);
+  assert.ok(Math.abs(53.8/4-13.45)<1e-10);
+  assert.ok(Math.abs(77.4/5-15.48)<1e-10);
+  assert.ok(Math.abs(4.86/(0.945/3.5)-18)<1e-10);
+});
