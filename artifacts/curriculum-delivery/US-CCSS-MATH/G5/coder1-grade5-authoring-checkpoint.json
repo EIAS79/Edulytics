@@ -53,7 +53,8 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u05-l24-l26-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l02-l06-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-u05-division-bookfair-v7.test.cjs",
-    "tests/academic-us-ccss-g5-u06-metric-v7.test.cjs"
+    "tests/academic-us-ccss-g5-u06-metric-v7.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -99,7 +100,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 104,
+    "richSidecarLessonCount": 109,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -113,15 +114,15 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 103,
+    "public2021LessonOrPreparationHtmlReviewedCount": 108,
     "public2021LessonHtmlReviewedDuringV4": 22,
-    "codeCandidateWithAtLeastOneEditOrRichV2": 133,
-    "noGradeOwnedCodeCandidate": 15,
+    "codeCandidateWithAtLeastOneEditOrRichV2": 137,
+    "noGradeOwnedCodeCandidate": 11,
     "public2021LessonHtmlReviewedDuringV5": 53,
     "originalStudentPdfAndGatedCooldownVerified": 0,
     "public2021LessonHtmlSourcesCitedButNotReverifiedAfterLedger": 4,
-    "verifiedOurCsTeacherAndStudentFacingHtmlLessonCountDuringV7": 21,
-    "distinctDirectRichSidecarsGitHubReconciled": 28,
+    "verifiedOurCsTeacherAndStudentFacingHtmlLessonCountDuringV7": 26,
+    "distinctDirectRichSidecarsGitHubReconciled": 29,
     "duplicateRichV2LessonCodeCount": 0,
     "editorialVerificationQualifiers": "92 historical or V7 public HTML pages described as consulted; 4 additional U05 L07-L10 citations in previous coder's sidecar not re-inspected. V7 directly inspected source teacher HTML including Student Facing for U05 L11-L20 (10). Does NOT imply original separate Student Task PDFs or gated responses checked."
   },
@@ -151,8 +152,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "21 V7 lessons Student Facing text inside 2021 teacher source HTML read on Our-CS; original Student Task PDF/figure asset legality/gated response, true Stage A acceptance and selected Practice C/runtime D remain unverified across grade.",
-      "next": "Continue U06 L07 source; do not treat source-html access as full original PDF or UAT verification."
+      "issue": "26 V7 original 2021 teacher-page Student Facing lessons reviewed on Our-CS. Individual original separate Student Task PDF, gated response, embedded image rights and full A/C/D acceptance 0/148.",
+      "next": "Continue U06 L12 source; do not claim learner-accepted source parity from HTML alone."
     },
     {
       "id": "G5-D-004",
@@ -5251,16 +5252,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student task PDF and gated teacher source not independently verified",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SUPERVISOR_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u06-l07-l11-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-7/lesson.html",
+      "sourceReviewedTask": "Customary inches/feet/yards card sort plus original rectangular field perimeters and whole lap counts compared to mile/two miles",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CUSTOMARY_LENGTH_CARD_SORT_AND_LAP_MODEL"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U06:L08",
@@ -5286,16 +5294,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student task PDF and gated teacher source not independently verified",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SUPERVISOR_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u06-l07-l11-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-8/lesson.html",
+      "sourceReviewedTask": "Original student card-sort fraction sums and differences using two valid categories; self-chosen drawings and unlike denominator operations",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_CARD_SORT_OR_DIAGRAM_AND_REASONING"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U06:L09",
@@ -5326,16 +5341,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student task PDF and gated teacher source not independently verified",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SUPERVISOR_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u06-l07-l11-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-9/lesson.html",
+      "sourceReviewedTask": "Explain equivalent fraction sums or differences using common denominators and compare alternate renamings",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_CARD_SORT_OR_DIAGRAM_AND_REASONING"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U06:L10",
@@ -5364,16 +5386,23 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student task PDF and gated teacher source not independently verified",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SUPERVISOR_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u06-l07-l11-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-10/lesson.html",
+      "sourceReviewedTask": "Explain why product of denominators always supplies a common denominator, while a smaller common multiple may be easier",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_CARD_SORT_OR_DIAGRAM_AND_REASONING"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U06:L11",
@@ -5399,16 +5428,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student task PDF and gated teacher source not independently verified",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SUPERVISOR_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u06-l07-l11-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-11/lesson.html",
+      "sourceReviewedTask": "Subtract mixed numbers via fraction regrouping or adding-on; compare gallery displays and choice of strategy",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_CARD_SORT_OR_DIAGRAM_AND_REASONING"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U06:L12",
@@ -7174,23 +7210,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "108f01f2d56caf23889e8f1e9a71c458ddcdf540",
+  "lastGradeContentCommit": "3d4b2b67e5b7b32b052ef89f780c699d74be511a",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V7: 104/148 distinct direct Grade 5 Rich V2 teaching candidates with no lesson-ID duplicate: U01 12,U02 17,U03 20,U04 21,U05 26,U06 L01-L06 six,U07 L01,U08 L01. 104 historical Grade5 pack translation edits remain. Read-only Primary/Our-CS local original 2021 teacher HTML Student Facing source comparison for 21 lessons newly in V7 (U05 L11-L26, U06 L02-L06). Source original PDF, rights, exact effective learner content, real Practice C and product D/human acceptances all remain 0/148. Shared integration #592 open.",
+  "currentScopeDescription": "V7: 109/148 direct G5 Rich V2 authored candidates, unique IDs, no dupes: U01 12, U02 17, U03 20, U04 21, U05 26, U06 L01-L11 11, U07/U08 one each. Historical 104 grade pack translation edits retained. 26 exact 2021 teacher Student Facing HTML sections inspected read-only on verified Primary/Our-CS during V7; separate original Student Task PDFs, restricted answers and source images rights NOT_VERIFIED; A/C/D acceptance 0/148.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
   "lastCommittedTest": "9f339b39df5efe3e5a67064a092d16ffefe37a11",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "9f339b39df5efe3e5a67064a092d16ffefe37a11",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U06:L07 — Multi-step Conversion Problems: Customary Length",
+    "lastKnownCommittedHeadBeforeLedger": "3d4b2b67e5b7b32b052ef89f780c699d74be511a",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U06:L12",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "2021 U06 L07-L21 source task HTML+student tasks, first-party lesson candidate authoring and original PDF gaps, followed by U07 and U08; Supervisor shared #592 Practice/seed only",
+    "nextAcademic": "Continue unit 6 L12-L21 source-read teaching and tests then U07/U08; defer shared route/seeding to Supervisor issue #592",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7282,7 +7318,12 @@
       "PED:US-CCSS-MATH:G5:U06:L03",
       "PED:US-CCSS-MATH:G5:U06:L04",
       "PED:US-CCSS-MATH:G5:U06:L05",
-      "PED:US-CCSS-MATH:G5:U06:L06"
+      "PED:US-CCSS-MATH:G5:U06:L06",
+      "PED:US-CCSS-MATH:G5:U06:L07",
+      "PED:US-CCSS-MATH:G5:U06:L08",
+      "PED:US-CCSS-MATH:G5:U06:L09",
+      "PED:US-CCSS-MATH:G5:U06:L10",
+      "PED:US-CCSS-MATH:G5:U06:L11"
     ],
     "noOtherComputerAccessed": true,
     "sourceRights": "Source pages expose CC BY 4.0 notice, but embedded pictures/other rights need individual verification; no source artwork copied."
