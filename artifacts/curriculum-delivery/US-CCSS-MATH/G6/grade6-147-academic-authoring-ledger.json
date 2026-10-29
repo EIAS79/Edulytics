@@ -52,10 +52,10 @@
     "authoredGrade6RichV2JsonFiles": 4,
     "selectedPracticeRuntimeContractsVerified": 0,
     "humanTeacherReviewsObserved": 0,
-    "directPublicStudentActivityBodiesCompared": 53,
+    "directPublicStudentActivityBodiesCompared": 75,
     "additionalStudentOnlyActivityBodiesReviewedV5": 7,
     "additionalMathematicalTeachingRepairedV5": 7,
-    "sourceActivitySemanticReviewRemaining": 94,
+    "sourceActivitySemanticReviewRemaining": 72,
     "g6NodeStaticCallbacksRunInV8CompatibilityHarness": 19,
     "v5RichV2VisualParserRepairAuthored": 1,
     "v5ExactHeadDotnetVisualRegressionVerified": 0,
@@ -82,7 +82,7 @@
     "v5Unit5SourceTaskFullyAccepted": 0,
     "v6Unit6PublicStudentTaskBodiesCompared": 19,
     "v6Unit6TargetedLessonExtensionsAuthored": 19,
-    "v6SourceTargetedLessonExtensionsTotal": 93,
+    "v6SourceTargetedLessonExtensionsTotal": 115,
     "v6Unit6FullTeacherStudentParityAccepted": 0,
     "v6Unit6AuthenticPracticeVerified": 0,
     "v6Unit6StudentVisualRenderVerified": 0,
@@ -92,7 +92,16 @@
     "v6Unit7TargetedLessonExtensionsAuthored": 19,
     "v6Unit7OriginalFigureAppletParityVerified": 0,
     "v6Unit7TeacherReviewWorkflowVerified": 0,
-    "v6Unit7StageDVerified": 0
+    "v6Unit7StageDVerified": 0,
+    "v6Unit8StudentTaskBodiesCompared": 18,
+    "v6Unit8TargetedLessonExtensionsAuthored": 18,
+    "v6Unit9FinalStudentBodiesCompared": 4,
+    "v6Unit9FinalTargetedExtensionsAuthored": 4,
+    "v6Units6To9DirectTaskBodiesCompared": 60,
+    "v6Units6To9FullSourceAcademicAcceptance": 0,
+    "v6SelectedPracticeRuntimeTests": 0,
+    "v6FinalNodeTestRuns": 0,
+    "v6FinalDotnetTestRuns": 0
   },
   "sharedBlockers": [
     {
@@ -129,7 +138,7 @@
     }
   ],
   "sourceAuditNotes": "All 147 historical public student pages and 147 teacher pages were retrieved and indexed by original title/activity heading. Retrieval/title matching is NOT independent content review. Eight lessons U01:L01-L03,L12,L15-L16 and U09:L01-L02 had direct public student/teacher activity comparison and original first-party candidate repairs; they are still NOT accepted because source figure/applet parity, effective student/teacher UI, exact Practice, persistence and tests are unverified. Other 139 lessons await full individual task-body review. The 10 MP-only rubric entries are heading-anchored candidates, not source-body signoffs or teacher-workflow implementation.",
-  "testEvidence": "V6 updated Grade 6 CJS source regression suite to 26 callbacks. The first 12 were exercised in isolated V8 compatibility harness with 12 PASS; 11 of subsequent 13 passed in a partial harness with two missing fixture errors, and one legitimate historical counter assertion was corrected. The new Unit 7 test has not yet been rerun on latest head. Actual Node/.NET and authenticated/tenant/DB remain NOT_RUN.",
+  "testEvidence": "V6 full Grade6 academic Node suite authored 28 callbacks. Prior V8 compatibility runs passed first 12/12 and 11/13 in second group with one missing source fixture and one stale Grade6 evidence count assertion; latter was fixed at dba413c. The new U7/U8/U9 tests require final exact-head V8 or genuine Node run. Actual Node, dotnet, auth, DB and tenant acceptance NOT_RUN.",
   "lessons": [
     {
       "sortOrder": 1,
@@ -11142,7 +11151,7 @@
         "publisherTeacherPreparationGoalChecked": true,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/8/1/preparation.html",
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11153,7 +11162,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11165,7 +11176,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11194,7 +11206,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 125,
@@ -11230,7 +11242,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11241,7 +11253,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11253,7 +11267,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11282,7 +11297,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 126,
@@ -11318,7 +11333,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11329,7 +11344,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11341,7 +11358,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11370,7 +11388,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 127,
@@ -11408,7 +11426,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11419,7 +11437,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11431,7 +11451,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11460,7 +11481,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 128,
@@ -11498,7 +11519,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11509,7 +11530,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11521,7 +11544,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11550,7 +11574,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 129,
@@ -11586,7 +11610,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11597,7 +11621,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11609,7 +11635,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11638,7 +11665,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 130,
@@ -11675,7 +11702,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11686,7 +11713,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11698,7 +11727,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11727,7 +11757,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 131,
@@ -11761,7 +11791,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11772,7 +11802,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11784,7 +11816,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11813,7 +11846,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 132,
@@ -11850,7 +11883,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11861,7 +11894,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11873,7 +11908,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11902,7 +11938,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 133,
@@ -11934,7 +11970,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -11945,7 +11981,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -11957,7 +11995,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -11986,7 +12025,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 134,
@@ -12020,7 +12059,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12031,7 +12070,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12043,7 +12084,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12072,7 +12114,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 135,
@@ -12107,7 +12149,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12118,7 +12160,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12130,7 +12174,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12159,7 +12204,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 136,
@@ -12192,7 +12237,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12203,7 +12248,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12215,7 +12262,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12244,7 +12292,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 137,
@@ -12276,7 +12324,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12287,7 +12335,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12299,7 +12349,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12328,7 +12379,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 138,
@@ -12361,7 +12412,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12372,7 +12423,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12384,7 +12437,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12413,7 +12467,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 139,
@@ -12446,7 +12500,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12457,7 +12511,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12469,7 +12525,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12498,7 +12555,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 140,
@@ -12532,7 +12589,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12543,7 +12600,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12555,7 +12614,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": true,
@@ -12584,7 +12644,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 141,
@@ -12618,7 +12678,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12629,7 +12689,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12641,7 +12703,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12670,7 +12733,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Compare full original teacher source, supply accessible real distributions, and verify exact Practice, open-response rubric, student plot and persisted feedback"
     },
     {
       "sortOrder": 142,
@@ -12894,7 +12957,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12905,7 +12968,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -12917,7 +12982,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -12950,7 +13016,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Verify full teacher guides and source voting slips/maps, exact assessment rubric workflow, authenticated student product and real grading/tenant tests."
     },
     {
       "sortOrder": 145,
@@ -12983,7 +13049,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -12994,7 +13060,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -13006,7 +13074,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -13035,7 +13104,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Verify full teacher guides and source voting slips/maps, exact assessment rubric workflow, authenticated student product and real grading/tenant tests."
     },
     {
       "sortOrder": 146,
@@ -13067,7 +13136,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -13078,7 +13147,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -13090,7 +13161,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -13119,7 +13191,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Verify full teacher guides and source voting slips/maps, exact assessment rubric workflow, authenticated student product and real grading/tenant tests."
     },
     {
       "sortOrder": 147,
@@ -13154,7 +13226,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_HEADINGS_INDEXED__TASK_PARITY_UNREVIEWED",
+        "verdict": "V6_SELECTED_PUBLIC_SOURCE_STUDENT_TASKS_COMPARED_NOT_TEACHER_FIGURE_OR_RUNTIME_PARITY",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -13165,7 +13237,9 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "originalPublicStudentSourceTaskBodyExamined": true,
+        "studentTaskOpeningComparedAgainstCandidate": true
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -13177,7 +13251,8 @@
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": false,
-        "sourceTaskAlignedRichV2Candidate": false
+        "sourceTaskAlignedRichV2Candidate": false,
+        "v6OriginalStudentSourceTaskAlignedExample3Authored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -13206,7 +13281,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Review individual original student/teacher activity bodies beyond source-heading indexing; compare learner content, selected Practice and real rendered student task."
+      "nextStep": "Verify full teacher guides and source voting slips/maps, exact assessment rubric workflow, authenticated student product and real grading/tenant tests."
     }
   ],
   "richV2CandidateFile": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json",
@@ -13215,7 +13290,7 @@
   "lastTestAuthoringCommit": "c9b04f86bbab9b846a668666e2bfe2068107a01c",
   "nextUnrepairedLessonCode": null,
   "nextFullSourceTaskParityLesson": "PED:US-CCSS-MATH:G6:U01:L01",
-  "releaseVerdict": "147_GRADE6_TEXT_CANDIDATES_AND_U06_SOURCE_REPAIRS__ACADEMIC_PRACTICE_D_RELEASE_BLOCKED",
+  "releaseVerdict": "GRADE6_147_AUTHORING_CANDIDATE__75_DIRECT_STUDENT_TASK_COMPARISONS__NO_ACADEMIC_OR_D_RELEASE",
   "publicSourceTaskBoundaryFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
   "publicSourceTaskReviewNote": "For U01:L01-L03 the public historical teacher/student/practice text and alt descriptions were checked. Teacher model answers behind login, publisher interactive applet functionality, exact diagram pixels, materialized Edulytiks student rendering, teacher evidence and exact selected Practice remain unverified. This DOES NOT mean three Stage A acceptances.",
   "lastSourceTaskAreaAuthoringCommit": "1860118f670f136319bac6930f181b4ca3e508a5",
@@ -13282,7 +13357,7 @@
   "v5Unit3SourceOpeningMatrix": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-17-public-source-opening-and-repair-matrix.json",
   "v5Unit3TeachingCommit": "4869a7b259b0e30e2dbd88a021f3bee451171da5",
   "v5Unit3SourceIndexCommit": "e40b9b014cb09eafaa1c01103f0dcdd34d339f29",
-  "nextBulkSourceScreen": "PED:US-CCSS-MATH:G6:U08:L01",
+  "nextBulkSourceScreen": "PED:US-CCSS-MATH:G6:U01:L11",
   "v5PackMetadataDiffEvidence": {
     "againstMainSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
     "comparedAtCodeCommit": "f9b07ffb95a7ebf073c1c1d6c3e77e8d0cafe31a",
@@ -13326,5 +13401,13 @@
     "41e74df989c708a81cde0c29d085fd93a2711e52",
     "1c103bb2a67b9ec720344fb7f956a099c60e3528"
   ],
-  "v6Unit7TestCommit": "dfebd5eb27ba43c197ef4995489255c1e5a2112b"
+  "v6Unit7TestCommit": "dfebd5eb27ba43c197ef4995489255c1e5a2112b",
+  "v6Unit8Evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u08-18-public-student-source-task-repair-matrix.json",
+  "v6Unit9FinalEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u09-l03-l06-public-source-task-repair-matrix.json",
+  "v6Unit8TeachingCommits": [
+    "31aa8683e21d3a43918820def1b02382e61e7002",
+    "4a0f5c59e992049c0b45545b9049e7b79bbd3b24"
+  ],
+  "v6Unit9FinalTeachingCommit": "28bc8ee2e919c359a01dfc8fdff1643d923065e6",
+  "v6Units8And9TestCommit": "2d0f84155f25acced26ce2a1244f4fe7a021c9b9"
 }
