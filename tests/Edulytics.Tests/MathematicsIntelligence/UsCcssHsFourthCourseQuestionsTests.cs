@@ -107,7 +107,13 @@ public sealed class UsCcssHsFourthCourseQuestionsTests
     {
         Assert.All(LessonPracticeContractRegistry.All,
             contract => Assert.Equal("READY_VERIFIED", contract.Readiness));
-        foreach (var family in Families.Concat(UsCcssHsFourthCourse3x3Questions.Families))
+        foreach (var family in Families.Concat(new[]
+        {
+            UsCcssHsFourthCourse3x3Questions.Coefficients,
+            UsCcssHsFourthCourse3x3Questions.Inverse,
+            UsCcssHsFourthCourse3x3Questions.SolveSystem,
+            UsCcssHsFourthCourse3x3Questions.RowReduce
+        }))
         {
             Assert.False(LessonPracticeInteractionRegistry.TryResolve(family, out _));
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
