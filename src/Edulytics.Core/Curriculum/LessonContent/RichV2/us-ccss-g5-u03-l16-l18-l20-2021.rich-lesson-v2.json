@@ -1,0 +1,498 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v5-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L16",
+      "CultureCode": "en",
+      "Title": "Reason About Quotients",
+      "ExplanationParagraphs": [
+        "Goal: compare and order quotients containing a positive whole number and a unit fraction WITHOUT necessarily computing each quotient. The 2021 source asks students to group expressions above or below one and justify an ordering by interpreting dividend and divisor.",
+        "Warm-up: estimate 97÷1/6 by comparison with 100÷1/6=600. Discuss too-low and too-high bounds while keeping the meaning of sixth-sized groups; avoid treating the fraction divisor as the number six.",
+        "Activity 1: compare six original expressions 12÷1/3, 12÷1/5, 12÷1/8, (1/3)÷12, (1/5)÷12, (1/8)÷12. First classify which quotients exceed one and which lie below one, using comparison of the positive dividend and divisor. Then order all six conceptually: 1/96 < 1/60 < 1/36 < 36 < 60 < 96.",
+        "Activity 2: choose two expressions and independently verify their exact values, explaining why a smaller unit-fraction divisor produces MORE groups from the same whole total while a smaller fractional dividend produces a SMALLER share with the same integer divisor. Compare with a partner and revise any incorrect order.",
+        "Assessment: numeric ordering can be checked, but the original source asks for explaining the ordering without calculation, discussing strategies and revising reasoning. Teacher reviews the qualitative comparisons and unit semantics, not only the selected number. No original card artwork or protected response is copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quotients of opposite magnitudes",
+          "Definition": "A positive whole divided by a proper unit fraction gives a result above one; a proper fraction divided among a positive whole count gives a result below one.",
+          "Rule": "n÷(1/b)=nb but (1/b)÷n=1/(bn).",
+          "Example": "12÷1/5=60 while 1/5÷12=1/60."
+        },
+        {
+          "Title": "Fixed whole, smaller divisor",
+          "Definition": "The number of small groups grows when their positive unit-fraction size decreases.",
+          "Rule": "For fixed n>0 and b<c, n÷1/b<n÷1/c.",
+          "Example": "12÷1/3<12÷1/8."
+        },
+        {
+          "Title": "Fixed integer divisor, smaller fractional dividend",
+          "Definition": "A smaller positive fractional starting amount gives a smaller equal share.",
+          "Rule": "For fixed n>0 and b<c, (1/c)÷n <(1/b)÷n.",
+          "Example": "1/8÷12 <1/3÷12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Sort without evaluating all quotients",
+          "Question": "Classify 12÷1/3,12÷1/5,1/3÷12,1/5÷12 relative to one.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "For whole divided by unit fraction, count many small fractions in each whole; values are greater than one.",
+            "For a unit fraction divided among twelve, the resulting share is smaller than the unit fraction and below one.",
+            "Use those meanings to group, then verify with independent mathematics."
+          ],
+          "Answer": "12÷1/3 and 12÷1/5 are above one; 1/3÷12 and 1/5÷12 are below one.",
+          "Check": "Exact check: 36,60 and 1/36,1/60."
+        },
+        {
+          "Title": "Order six quotient expressions",
+          "Question": "Put 12÷1/3,12÷1/5,12÷1/8,1/3÷12,1/5÷12,1/8÷12 in increasing order.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Place all three fractional-dividend quotients before the whole-dividend quotients.",
+            "Among the small shares, the one-eighth divided among twelve is smallest.",
+            "Among whole-dividend quotients, the one-eighth divisor yields the most groups."
+          ],
+          "Answer": "1/8÷12 < 1/5÷12 < 1/3÷12 < 12÷1/3 < 12÷1/5 < 12÷1/8.",
+          "Check": "Results are 1/96, 1/60, 1/36, 36, 60, 96."
+        },
+        {
+          "Title": "Bound a large quotient",
+          "Question": "Estimate 97÷1/6 without first calculating an exact long expression.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Compare 97 with 100, which is slightly greater.",
+            "Each whole contains six sixths, so 100÷1/6=600.",
+            "Conclude 97÷1/6 is slightly below 600 and verify."
+          ],
+          "Answer": "A sensible estimate is a little less than 600; exact value 582.",
+          "Check": "97×6=582, which is below 600."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume every quotient is smaller than its dividend",
+          "WhyWrong": "A positive divisor less than one increases the quotient.",
+          "Correction": "Interpret division as counting tiny groups instead of an unqualified rule about shrinking."
+        },
+        {
+          "Mistake": "Reverse the conceptual ordering when changing denominator",
+          "WhyWrong": "Larger denominators make unit fractions smaller and whole÷unit-fraction quotients larger.",
+          "Correction": "Compare group size and number of groups before sorting."
+        }
+      ],
+      "SummaryPoints": [
+        "Order quotient sizes using the meanings of dividends and unit-fraction divisors.",
+        "Explain why fraction-dividend and whole-dividend expressions lie on opposite sides of one.",
+        "The source's justifications and revisions are teacher-reviewed.",
+        "Source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 16 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-16/lesson.html. Public student-facing HTML task reviewed; original Edulytiks examples. Original Student Task PDF, gated Cool-down and rights of third-party source artwork not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Reason About Quotients — exact meaning",
+          "Description": "First-party text diagram or quotient-comparison table; no external source figure cards reproduced.",
+          "Rows": [
+            {
+              "Label": "Type",
+              "Cells": [
+                "1/8÷12",
+                "1/5÷12",
+                "1/3÷12",
+                "12÷1/3",
+                "12÷1/5",
+                "12÷1/8"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "1/96",
+                "1/60",
+                "1/36",
+                "36",
+                "60",
+                "96"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L17",
+      "CultureCode": "en",
+      "Title": "Fraction Multiplication and Division Situations",
+      "ExplanationParagraphs": [
+        "Goal: solve a real-world information-gap tiling problem with fractional side lengths, use area multiplication to identify needed tiles and distinguish missing measurements from provided data. The public 2021 task requires a structured partner dialogue, not a freely invented solution when tile dimensions are withheld.",
+        "Warm-up: compare whole÷unit-fraction and whole×unit-fraction expressions. For 3÷1/4=12 and 3×1/4=3/4, explain that the former counts quarter-unit groups and the latter selects a quarter of the three-unit quantity.",
+        "Activity 1 — original floor tile info gap: student A knows a floor is 2 feet wide and 1 1/2 feet long but not the size of each tile. Student B holds a tile card stating 1/4 foot by 1/2 foot. Student A must request those measurements, explain why both tile side lengths are necessary, and then show eight quarter-foot tile widths along the two-foot edge and three half-foot tile lengths along the 1 1/2-foot edge. The result is 8×3=24 nonoverlapping tiles.",
+        "Activity 2 — area check and role swap: the floor has area 3 square feet, each tile covers 1/8 square foot, and 24×1/8=3. In a second story, a wall has area 6 square feet and tiles cover 1/4 square foot each; determine 6÷1/4=24 tiles under an ideal non-waste assumption, specifying that whole tiles, edge cuts, and layout might matter in a real wall.",
+        "Assessment: the source emphasizes asking for the missing data and stating why, drawing/layout explanation, correct unit handling and operation choice. Teacher reviews question quality, the layout and assumptions; entering '24' is not an acceptable substitute for completing the original partner information-gap routine. Publisher tiles and gated cards not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area of one fractional tile",
+          "Definition": "The tile's area is the product of its two perpendicular fractional lengths.",
+          "Rule": "(1/4 foot)×(1/2 foot)=1/8 square foot.",
+          "Example": "Each tile covers one eighth of one square foot."
+        },
+        {
+          "Title": "Grid counting without overlaps",
+          "Definition": "A rectangular floor can be covered by rows×columns of congruent tiles when side lengths divide evenly.",
+          "Rule": "2÷1/4=8 columns, 1 1/2÷1/2=3 rows, 8×3=24 tiles.",
+          "Example": "24 tiles make exactly 3 square feet."
+        },
+        {
+          "Title": "Information-gap assessment",
+          "Definition": "No unique tile count exists without knowing tile dimensions or area.",
+          "Rule": "Ask for the missing tile size and justify why it is needed before calculating.",
+          "Example": "Different tile sizes change the required count on the same floor."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Missing tile dimensions",
+          "Question": "A floor is 2 ft by 1 1/2 ft, but tile dimensions are hidden. Can the exact count be known?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Calculate floor area 2×1 1/2=3 square feet.",
+            "Recognize that smaller tiles require more pieces and larger tiles fewer.",
+            "Ask the partner for tile length and width or an exact equivalent area plus layout constraints."
+          ],
+          "Answer": "No exact tile count until tile dimensions are supplied.",
+          "Check": "Teacher checks the request and the learner's explanation of necessity."
+        },
+        {
+          "Title": "Fill a floor with congruent tiles",
+          "Question": "Floor 2 ft×1 1/2 ft, tiles 1/4 ft×1/2 ft. How many fit without gaps?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Across 2 feet, count 2÷1/4=8 tile columns.",
+            "Along 1 1/2 feet, count (3/2)÷(1/2)=3 tile rows.",
+            "Multiply 8×3 and confirm compatible edge lengths."
+          ],
+          "Answer": "24 tiles.",
+          "Check": "One tile is 1/8 ft²; 24×1/8=3 ft², the floor area."
+        },
+        {
+          "Title": "A second tile area problem",
+          "Question": "A 6-square-foot wall is covered with tiles that each cover 1/4 square foot. How many ideal full tiles?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Treat six square feet as total target area.",
+            "Count quarter-square-foot groups inside six square feet.",
+            "Multiply 6×4."
+          ],
+          "Answer": "24 tiles in the ideal non-overlapping model.",
+          "Check": "24×1/4=6 square feet; real edge cutting may change purchase quantity."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Choose a tile count before the tile size is known",
+          "WhyWrong": "Several tile dimensions can fill or partly cover the same floor, yielding different counts.",
+          "Correction": "Ask for necessary dimensional information before answering."
+        },
+        {
+          "Mistake": "Multiply both widths and lengths without validating the layout",
+          "WhyWrong": "The tile count from area may not create a whole-tile fit in arbitrary dimensions.",
+          "Correction": "Check the number of rows and columns, nonoverlap, and edge-cut assumptions."
+        }
+      ],
+      "SummaryPoints": [
+        "Tile area and floor area share squared units; exact whole-tile counts also need a valid fit.",
+        "Identify and request missing measurements in an information-gap task.",
+        "Partner dialogue, drawing and contextual constraints remain teacher-reviewed.",
+        "Source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 17 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-17/lesson.html. Public student-facing HTML task reviewed; original Edulytiks examples. Original Student Task PDF, gated Cool-down and rights of third-party source artwork not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fraction Multiplication and Division Situations — exact meaning",
+          "Description": "First-party text diagram or quotient-comparison table; no external source figure cards reproduced.",
+          "Rows": [
+            {
+              "Label": "Quantity",
+              "Cells": [
+                "Floor",
+                "One tile"
+              ]
+            },
+            {
+              "Label": "Dimensions",
+              "Cells": [
+                "2 ft × 1 1/2 ft",
+                "1/4 ft × 1/2 ft"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "3 ft²",
+                "1/8 ft²"
+              ]
+            },
+            {
+              "Label": "Grid count",
+              "Cells": [
+                "8 columns × 3 rows",
+                "24 tiles total"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L18",
+      "CultureCode": "en",
+      "Title": "Represent Situations with Multiplication and Division",
+      "ExplanationParagraphs": [
+        "Goal: choose and justify multiplication and division representations for realistic fraction contexts, distinguishing why the same numbers give radically different answers when their roles are reversed. The public 2021 lesson explicitly relates a division equation and a multiplication equation to one contextual drawing.",
+        "Warm-up: compare 3×1/10=3/10 with 1/10×3=3/10, then compare 1/10÷3=1/30 with 3÷1/10=30. Explain that order is reversible in multiplication but not generally in division.",
+        "Activity 1 — original neighborhood meal: a package has 3 pounds of beans and each serving needs 1/4 pound. Count 12 quarter-pound portions and write 3÷1/4=12 and 12×1/4=3. Contrast with one quarter of a pound shared among three people: 1/4÷3=1/12 pound, and 3×1/12=1/4.",
+        "Activity 2: present two separate tape diagrams — one representing three whole pounds subdivided into fourths, the other representing one selected fourth subdivided into thirds — and ask partners to match each to its proper division and multiplication equation. Encourage a written explanation of why the order of multiplication factors is flexible but division terms are not.",
+        "Assessment: the original source requires stories, diagrams, both operations and partner revision; numeric result can be checked, but drawings and equation-story correspondence require teacher review. Original publisher images and gated solutions are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Whole divided by unit fraction",
+          "Definition": "Count the number of small fixed-size servings.",
+          "Rule": "3÷1/4=12; 12×1/4=3.",
+          "Example": "Three pounds supply twelve quarter-pound portions."
+        },
+        {
+          "Title": "Unit fraction divided by whole",
+          "Definition": "Distribute one fractional amount into equal smaller portions.",
+          "Rule": "1/4÷3=1/12; 3×1/12=1/4.",
+          "Example": "A quarter pound shared three ways gives each person a twelfth pound."
+        },
+        {
+          "Title": "Multiplication and division relations",
+          "Definition": "Division can be checked by multiplying quotient times divisor, but exchanging dividend and divisor changes the question.",
+          "Rule": "If a÷b=q, then q×b=a when b is nonzero.",
+          "Example": "12×1/4=3 and (1/12)×3=1/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Count servings",
+          "Question": "Three pounds of beans, quarter-pound portions. How many servings?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Count four quarter-pound groups in each full pound.",
+            "Multiply 3×4=12.",
+            "Write the matching division and multiplication statements."
+          ],
+          "Answer": "12 servings.",
+          "Check": "3÷1/4=12 and 12×1/4=3 pounds."
+        },
+        {
+          "Title": "Divide a quarter",
+          "Question": "One quarter pound is shared by three students. What does each receive?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Mark a quarter of a whole pound.",
+            "Divide the selected quarter into three equal pieces.",
+            "Compare the pieces to all twelve equal parts of the full pound."
+          ],
+          "Answer": "1/12 pound each.",
+          "Check": "1/4÷3=1/12 and 3×1/12=1/4."
+        },
+        {
+          "Title": "Distinguish equations with identical printed numbers",
+          "Question": "Are 3÷1/4 and 1/4÷3 the same?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Interpret the first as counting quarter-pound servings in three pounds.",
+            "Interpret the second as dividing one-quarter pound among three people.",
+            "Find each and explain the different resulting units."
+          ],
+          "Answer": "No; they are 12 versus 1/12.",
+          "Check": "12×1/4=3 while 1/12×3=1/4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Conclude division is commutative because multiplication is commutative",
+          "WhyWrong": "Swapping the dividend and divisor changes the number or size of groups.",
+          "Correction": "Write the actual story roles and check with inverse multiplication."
+        },
+        {
+          "Mistake": "Use the same area diagram for opposite division expressions",
+          "WhyWrong": "One model represents whole-group counting while the other represents fractional equal sharing.",
+          "Correction": "Draw the correct original whole and identify the divided quantity before partitioning."
+        }
+      ],
+      "SummaryPoints": [
+        "Related multiplication equations can verify a division calculation.",
+        "Whole÷unit fraction counts groups; unit fraction÷whole gives a smaller share.",
+        "The diagram-to-context explanation remains teacher-reviewed.",
+        "Source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 18 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-18/lesson.html. Public student-facing HTML task reviewed; original Edulytiks examples. Original Student Task PDF, gated Cool-down and rights of third-party source artwork not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Represent Situations with Multiplication and Division — exact meaning",
+          "Description": "First-party text diagram or quotient-comparison table; no external source figure cards reproduced.",
+          "Rows": [
+            {
+              "Label": "Situation",
+              "Cells": [
+                "Count portions",
+                "Share a quarter"
+              ]
+            },
+            {
+              "Label": "Division",
+              "Cells": [
+                "3÷1/4=12",
+                "1/4÷3=1/12"
+              ]
+            },
+            {
+              "Label": "Inverse check",
+              "Cells": [
+                "12×1/4=3",
+                "3×1/12=1/4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L20",
+      "CultureCode": "en",
+      "Title": "How Much in the Group? (optional)",
+      "ExplanationParagraphs": [
+        "Goal: recover an unknown WHOLE from the exact size of a unit-fraction share and explain why different equations represent the same relationship. The public 2021 task uses class sizes and checks the meaning of each number and inverse operation.",
+        "Warm-up: consider an approximately shaded one-quarter of a bar with a marked part labelled 14. Estimate the total whole, distinguishing a plausible estimate near 56 from a uniquely exact computation only when the fraction one-quarter is explicitly given.",
+        "Activity 1 — original student-club context: one fourth of the fifth-grade students belong to a chess club, and that club has seven students. Build four equal seven-student groups to find total 28. Explain the three equivalent relationships: (1/4)×T=7, T÷4=7 and 4×7=T.",
+        "Activity 2: another club contains 12 students and represents exactly one third of the grade. The whole grade has 36 students; compare 1/3×36=12, 36÷3=12 and 3×12=36. Present and critique an incorrect candidate equation (1/3)÷12=T, explaining why it is an unrelated division of a unit fraction by a large whole.",
+        "Assessment: the source asks learners to select ALL contextual equations and justify why an inverse relationship reconstructs the whole; a numeric T=28 or T=36 is only supporting evidence. Students' modeling, estimation and explanation remain teacher-reviewed. Gated source images and original student response were not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Recover the whole from a unit share",
+          "Definition": "If one of b equal shares of a whole is known, multiply that share by b to recover the total.",
+          "Rule": "If (1/b)×T=s then T=b×s.",
+          "Example": "One fourth of class is seven students, so whole class is 28."
+        },
+        {
+          "Title": "Equivalent missing-factor equations",
+          "Definition": "The relationships between total T and share s can use multiplication or division.",
+          "Rule": "T÷b=s, b×s=T and (1/b)×T=s.",
+          "Example": "28÷4=7, 4×7=28."
+        },
+        {
+          "Title": "Check a context-specific equation",
+          "Definition": "An equation must represent how many identical shares make the whole.",
+          "Rule": "An expression involving a fractional dividend may be valid arithmetic but irrelevant to the class-size story.",
+          "Example": "(1/4)÷7 is not a class-size reconstruction equation."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find the total grade",
+          "Question": "One fourth of a class is seven students. What is the whole count?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Represent one quarter as seven students.",
+            "Build four equal seven-student groups.",
+            "Multiply 4×7."
+          ],
+          "Answer": "28 students.",
+          "Check": "One fourth of 28 is 7 students."
+        },
+        {
+          "Title": "Compare three correct equations",
+          "Question": "Show three matching equations if one third of a grade has 12 students.",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Write (1/3)×T=12.",
+            "Rewrite as T÷3=12.",
+            "Use the inverse 3×12=T to find 36."
+          ],
+          "Answer": "T=36 students.",
+          "Check": "36÷3=12 and 1/3×36=12."
+        },
+        {
+          "Title": "Reject an unmatched candidate",
+          "Question": "Does 1/4÷7=T represent the whole when one fourth is seven students?",
+          "Method": "First-party, explicitly labeled mathematical representation with independent arithmetic check.",
+          "Steps": [
+            "Interpret the dividend 1/4 as a fractional amount divided among seven.",
+            "Observe the quotient would be 1/28, a tiny share.",
+            "Compare with four equal groups of seven students yielding the whole 28."
+          ],
+          "Answer": "No. The correct whole is 28 students, not 1/28.",
+          "Check": "Teacher reviews the explanation of which equation quantities correspond to students."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Divide the known one-fourth share by four to find the whole",
+          "WhyWrong": "The known share is only one of four equal groups, so the whole is larger.",
+          "Correction": "Multiply by the number of equal groups to recover the whole."
+        },
+        {
+          "Mistake": "Match an equation by its printed digits alone",
+          "WhyWrong": "Fractions and whole-number counts play different mathematical roles.",
+          "Correction": "Describe the context for each factor, dividend, divisor and missing value."
+        }
+      ],
+      "SummaryPoints": [
+        "An exact unit-fraction share can determine the original whole using inverse multiplication.",
+        "Multiple equations can correctly describe the same class-size situation.",
+        "Teacher reviews selected-equation reasoning, estimates and interpretation of the original whole.",
+        "Source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 20 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-20/lesson.html. Public student-facing HTML task reviewed; original Edulytiks examples. Original Student Task PDF, gated Cool-down and rights of third-party source artwork not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "How Much in the Group? (optional) — exact meaning",
+          "Description": "First-party text diagram or quotient-comparison table; no external source figure cards reproduced.",
+          "Rows": [
+            {
+              "Label": "Known share",
+              "Cells": [
+                "1/4 is 7 students",
+                "1/3 is 12 students"
+              ]
+            },
+            {
+              "Label": "Whole students",
+              "Cells": [
+                "28",
+                "36"
+              ]
+            },
+            {
+              "Label": "Division equation",
+              "Cells": [
+                "28÷4=7",
+                "36÷3=12"
+              ]
+            },
+            {
+              "Label": "Inverse multiplication",
+              "Cells": [
+                "4×7=28",
+                "3×12=36"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
