@@ -457,7 +457,8 @@ test('Unit 1 lessons 04-10 preserve direct public student activity purpose and o
   assert.match(en(10).workedExamples, /index card/);
   const ledger = JSON.parse(fs.readFileSync(path.join(root,
     'artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-147-academic-authoring-ledger.json'), 'utf8'));
-  assert.equal(ledger.summary.directPublicStudentActivityBodiesCompared, 15);
+  assert.equal(ledger.summary.v6Unit6PublicStudentTaskBodiesCompared, 19);
+  assert.equal(ledger.summary.directPublicStudentActivityBodiesCompared, 15 + ledger.summary.v6Unit6PublicStudentTaskBodiesCompared);
   assert.equal(ledger.summary.directPublicStudentTeacherSourceTaskTextCompared, 8);
   assert.equal(ledger.summary.fullStageAReviews, 0);
   assert.equal(ledger.summary.stageDVerified, 0);
