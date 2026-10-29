@@ -1336,3 +1336,83 @@ test('U03 L12–L15 independent percentage oracles reject swapping part and refe
   assert.ok(close(8/10,4/5) && close(4/5,80/100));
   assert.notEqual(8/100,80/100);
 });
+
+test('U03 L16–L17 and U04 L01–L02 original tasks retain human boundaries, approved source roles and no-go release', () => {
+  const data=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l16-l17-u04-l01-l02-public-student-teacher-task-comparison.json'), 'utf8'));
+  const expected=[lcode(3,16),lcode(3,17),lcode(4,1),lcode(4,2)];
+  assert.deepEqual(data.lessons.map(l=>l.lessonCode),expected);
+  assert.equal(data.summary.sourceStudentBodiesComparedThisBatch,4);
+  assert.equal(data.summary.newComparisonCount,117);
+  assert.equal(data.summary.remainingComparisonCount,30);
+  assert.equal(data.summary.academicAccepted,0);
+  assert.equal(data.integrity.exactPracticeSelection,'NOT_RUN');
+  assert.equal(data.integrity.dotnetTest,'NOT_RUN');
+  for(const record of data.lessons){
+    const en=byCode.get(record.lessonCode).translations[0];
+    assert.equal(record.publicStudentTaskBodySemanticsCompared,true);
+    assert.equal(record.publicTeacherActivityAndGoalsCompared,true);
+    assert.equal(record.protectedTeacherStudentResponsesOrHiddenAssetsRead,false);
+    assert.ok(record.sourceActivityPurposes.length>=4,record.lessonCode);
+    assert.ok(record.gradeOwnedOriginalTeachingEvidence.length>=3,record.lessonCode);
+    assert.equal(record.teacherRubricDraft.scoreMax,8,record.lessonCode);
+    assert.equal(record.teacherRubricDraft.implemented,false,record.lessonCode);
+    assert.equal(record.teacherRubricDraft.scorePersistenceVerified,false,record.lessonCode);
+    assert.equal(record.publisherOriginalFiguresAuthenticated,false,record.lessonCode);
+    assert.equal(record.effectiveStudentRichRenderingVerified,false,record.lessonCode);
+    assert.equal(record.selectedPracticeContractGeneratorVerifierVerified,false,record.lessonCode);
+    assert.equal(record.correctIncorrectEquivalentMalformedAnswerOutcomesVerified,false,record.lessonCode);
+    assert.equal(record.twoSchoolTenantIsolationVerified,false,record.lessonCode);
+    assert.equal(record.academicAcceptance,'NOT_ACCEPTED',record.lessonCode);
+    assert.match(en.workedExamples,/Example 3:/,record.lessonCode);
+    assert.ok(en.workedExamples.includes('Description: '),record.lessonCode);
+  }
+  assert.match(byCode.get(lcode(3,16)).translations[0].workedExamples,/112%/);
+  assert.match(byCode.get(lcode(3,16)).translations[0].workedExamples,/1,330\.56/);
+  assert.match(byCode.get(lcode(3,17)).translations[0].workedExamples,/7×87\.5\/2 = 306\.25/);
+  assert.match(byCode.get(lcode(3,17)).translations[0].workedExamples,/\$61\.04/);
+  assert.match(byCode.get(lcode(4,1)).translations[0].workedExamples,/86 books/);
+  assert.match(byCode.get(lcode(4,1)).translations[0].workedExamples,/0\.0009/);
+  assert.match(byCode.get(lcode(4,2)).translations[0].workedExamples,/24 half-pound bags/);
+  assert.match(byCode.get(lcode(4,2)).translations[0].workedExamples,/undefined rather than zero or infinity/);
+});
+
+test('U03 L16–L17 and U04 L01–L02 independent ratio, two-coat and division oracles', () => {
+  const near=(a,b)=>Math.abs(a-b)<1e-9;
+  assert.deepEqual([15,24,9].map(x=>x/20*100),[75,120,45]);
+  assert.deepEqual([9,51,84].map(x=>x/75*100),[12,68,112]);
+  assert.deepEqual([512/4,500/4],[128,125]);
+  assert.ok(near(0.9*133,119.7));
+  assert.ok(near(0.30*44,0.03*440));
+  assert.equal(21/28,30/40);
+  assert.ok(near(1386*0.96,1330.56) && near(1386*0.04,55.44));
+  assert.equal(3*3,9);                      // yards to feet on east wall
+  assert.equal(9*8,72);                     // east face
+  assert.equal(5*3,15);                     // window deduction
+  assert.equal(7*3,21);                     // west door deduction
+  assert.equal(0.5*8,4);                   // small partition end-face
+  assert.equal(7*175/4,306.25);           // seven quart cans, two coats
+  assert.ok(near(10.9*0.8,8.72));
+  assert.ok(near(7*8.72,61.04));
+  assert.ok(near(34.9+3*8.72,61.06));
+  assert.ok(near(34.9*2,69.8));
+  assert.deepEqual([5,2500,10000,500000].map(x=>5000/x),[1000,2,0.5,0.01]);
+  assert.equal(72/2,36);
+  assert.equal(43/0.5,86);
+  assert.equal(30/0.5,60);
+  assert.ok(near(30/0.45,200/3));
+  assert.equal(18/0.18,100);
+  assert.ok(near(18/19,0.9473684210526315));
+  assert.equal(9/10000,0.0009);
+  assert.equal(15000/1500000,0.01);
+  assert.ok(near(15000/14500,30/29));
+  assert.ok(12/12.1<1 && 12/11.9>1);
+  assert.equal(20/4,5);
+  assert.equal(12/6,2);
+  assert.equal(12/4,3);
+  assert.equal(12/2,6);
+  assert.equal(12/(1/2),24);
+  assert.equal(1/(1/2),2);
+  assert.equal(1/(1/5),5);
+  assert.equal(Number.isFinite(1/0),false);
+});
