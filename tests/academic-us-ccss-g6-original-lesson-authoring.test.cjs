@@ -876,7 +876,7 @@ test('U02 L04 L06 L08 retain exact source contexts for color mixtures, double nu
   }
   const e = n => byCode.get(lcode(2,n)).translations[0].workedExamples;
   assert.match(e(4), /add another 40 mL yellow/);
-  assert.match(e(4), /add 38 mL yellow/);
+  assert.match(e(4), /adding 38 mL yellow/);
   assert.match(e(6), /16 teaspoons require 4 cups/);
   assert.match(e(6), /12 tablespoons blue require 4 cups white/);
   assert.match(e(8), /seven bottles cost \$5\.25|7 bottles cost \$5\.25/);
