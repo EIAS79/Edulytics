@@ -177,6 +177,49 @@ public sealed class SupportingLessonPracticeR3Tests
         }
     }
 
+    [Theory]
+    [InlineData(0, 3, 9, 11, 3, true)]  // horizontal line y = 3
+    [InlineData(0, 3, 9, 11, 2, false)]
+    [InlineData(-2, 0, 8, -4, 13, true)] // vertical line x = -4
+    [InlineData(-2, 0, 8, 3, 13, false)]
+    [InlineData(0, 0, 0, 0, 0, false)]   // reject the degenerate non-line
+    public void Grade8MembershipSupportsAxisAlignedLinesButRejectsDegenerateEquations(
+        int a, int b, int c, int x, int y, bool expectedMember)
+    {
+        const string family = "usccss.g8.u03.l12.ordered_pair_membership";
+        var p = new Dictionary<string, int>
+        {
+            ["a"] = a, ["b"] = b, ["c"] = c, ["x"] = x, ["y"] = y
+        };
+        var nonDegenerate = a != 0 || b != 0;
+        Assert.Equal(nonDegenerate && expectedMember,
+            ExactSkillContractQuestionEngine.Verify(family, p, "yes"));
+        Assert.Equal(nonDegenerate && !expectedMember,
+            ExactSkillContractQuestionEngine.Verify(family, p, "no"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(family, p, "maybe"));
+    }
+
+    [Fact]
+    public void Grade8GeneratedMembershipIncludesAxisAlignedLinesAndNoDegeneratePairs()
+    {
+        const string code = "PED:US-CCSS-MATH:G8:U03:L12";
+        const string family = "usccss.g8.u03.l12.ordered_pair_membership";
+        var engine = new ExactSkillContractQuestionEngine();
+        var items = engine.Generate("g8-zero-coefficients", code,
+            [family], ExactSkillQuestionDifficulty.Standard, 48, 820313, []);
+        Assert.Equal(48, items.Count);
+        Assert.Contains(items, item => item.Parameters["a"] == 0);
+        Assert.Contains(items, item => item.Parameters["b"] == 0);
+        foreach (var item in items)
+        {
+            var p = item.Parameters;
+            Assert.True(p["a"] != 0 || p["b"] != 0);
+            var expected = (long)p["a"] * p["x"] + (long)p["b"] * p["y"] == p["c"];
+            Assert.Equal(expected ? "yes" : "no", item.CorrectAnswer);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(family, p, item.CorrectAnswer));
+        }
+    }
+
     private static string FindRoot()
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

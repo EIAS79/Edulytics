@@ -610,7 +610,7 @@ public sealed class ExactSkillContractQuestionEngine
                 !parameters.TryGetValue("c", out var c) ||
                 !parameters.TryGetValue("x", out var x) ||
                 !parameters.TryGetValue("y", out var y) ||
-                a == 0 || b == 0 ||
+                (a == 0 && b == 0) ||
                 Math.Abs((long)a) > 30 || Math.Abs((long)b) > 30 ||
                 Math.Abs((long)c) > 3000 ||
                 Math.Abs((long)x) > 30 || Math.Abs((long)y) > 30)
@@ -3431,8 +3431,12 @@ public sealed class ExactSkillContractQuestionEngine
     // substitution makes the equation true. This does NOT solve a 2x2 system.
     private static ExactProblem BuildGrade8TwoVariableMembership(Random random, int scale)
     {
-        var a = NonZero(random, -5 * scale, 5 * scale + 1);
-        var b = NonZero(random, -5 * scale, 5 * scale + 1);
+        // Vertical and horizontal lines (one coefficient zero) are valid
+        // two-variable linear equations. The degenerate 0x + 0y = c is not.
+        var a = random.Next(0, 6) == 0 ? 0 : NonZero(random, -5 * scale, 5 * scale + 1);
+        var b = a != 0 && random.Next(0, 6) == 0
+            ? 0
+            : NonZero(random, -5 * scale, 5 * scale + 1);
         var x = random.Next(-6 * scale, 6 * scale + 1);
         var y = random.Next(-6 * scale, 6 * scale + 1);
         var membership = random.Next(0, 2) == 0;
