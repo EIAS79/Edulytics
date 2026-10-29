@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 465" role="img" aria-labelledby="g7u07l05title g7u07l05desc">
+  <title id="g7u07l05title">Angle equations: insufficient information versus a solvable partition</title>
+  <desc id="g7u07l05desc">Panel A: a straight angle at P is split into a degrees, 90 degrees, and b degrees. The outer angles add to 90, but neither a nor b is uniquely determined. For example, 40 and 50 or 30 and 60 both work. The rays are illustrative and must not be measured to infer a fixed answer. Panel B: a straight angle at Q contains three adjacent equal sectors each labeled x plus 10 degrees and a final 30 degree sector. The three drawn sector boundaries are at 50, 100 and 150 degrees from the right-facing baseline. The correct equation is 3 times open parenthesis x plus 10 close parenthesis plus 30 equals 180. Each equal sector is 50 degrees, so x equals 40. The incorrect equation 3x plus 10 plus 30 equals 180 counts the 10 degree offset only once. Original Edulytiks examples, not publisher images.</desc>
+  <style>
+    .background{fill:#fff}.panel{fill:#f6f9fc;stroke:#62768b;stroke-width:1.5}
+    .line{stroke:#1d364e;stroke-width:3.2;stroke-linecap:round}
+    .ray{stroke:#99551e;stroke-width:3;stroke-linecap:round}
+    .heading{font:bold 19px system-ui,sans-serif;fill:#19334c}
+    .label{font:17px system-ui,sans-serif;fill:#19334c}
+    .small{font:15px system-ui,sans-serif;fill:#19334c}
+    .origin{fill:#19334c}
+  </style>
+  <rect class="background" width="1100" height="465"/>
+  <text class="heading" x="19" y="30">Choose an equation from the actual geometry</text>
+  <rect class="panel" x="17" y="48" width="510" height="373" rx="9"/>
+  <rect class="panel" x="540" y="48" width="543" height="373" rx="9"/>
+  <text class="heading" x="35" y="79">A. Not enough information</text>
+  <line id="g7l05-a-straight" class="line" x1="91" y1="290" x2="459" y2="290"/>
+  <line id="g7l05-a-ray-40" class="ray" x1="275" y1="290" x2="398.40" y2="186.46" data-angle-deg="40"/>
+  <line id="g7l05-a-ray-130" class="ray" x1="275" y1="290" x2="171.46" y2="166.60" data-angle-deg="130"/>
+  <circle class="origin" cx="275" cy="290" r="5"/>
+  <text class="small" x="280" y="311">P</text>
+  <text class="label" x="352" y="256">a°</text>
+  <text class="label" x="262" y="195">90°</text>
+  <text class="label" x="159" y="257">b°</text>
+  <text class="small" x="35" y="354">a + 90 + b = 180, so a + b = 90</text>
+  <text class="small" x="35" y="379">Examples: (a,b) = (40,50) or (30,60)</text>
+  <text class="small" x="35" y="403">Not to scale: no unique value for a or b.</text>
+  <text class="heading" x="558" y="79">B. Three equal angle sectors</text>
+  <line id="g7l05-b-straight" class="line" x1="616" y1="290" x2="982" y2="290"/>
+  <line id="g7l05-b-ray-50" class="ray" x1="795" y1="290" x2="896.56" y2="168.96" data-angle-deg="50"/>
+  <line id="g7l05-b-ray-100" class="ray" x1="795" y1="290" x2="767.56" y2="134.40" data-angle-deg="100"/>
+  <line id="g7l05-b-ray-150" class="ray" x1="795" y1="290" x2="658.17" y2="211.00" data-angle-deg="150"/>
+  <circle class="origin" cx="795" cy="290" r="5"/>
+  <text class="small" x="799" y="312">Q</text>
+  <text class="label" x="846" y="255">(x+10)°</text>
+  <text class="label" x="792" y="188">(x+10)°</text>
+  <text class="label" x="680" y="190">(x+10)°</text>
+  <text class="label" x="646" y="271">30°</text>
+  <text class="small" x="558" y="354">3(x+10) + 30 = 180</text>
+  <text class="small" x="558" y="379">3(x+10) = 150; x+10 = 50; x = 40</text>
+  <text class="small" x="558" y="403">3x+10+30=180 is wrong: three offsets!</text>
+  <text class="small" x="19" y="450">Independent Edulytiks reference: explain the diagram and check the equation, not just the number.</text>
+</svg>
