@@ -392,6 +392,7 @@
         "Learning goal: Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
         "A two-way table classifies the same observations by events A and B. Summing cells gives the grand total N and the row and column marginal totals; joint relative frequency P(A∩B) uses N as its denominator.",
         "Conditional probability changes the reference population. If count(B)>0, P(A|B)=count(A∩B)/count(B). If count(A)>0, P(B|A)=count(A∩B)/count(A). These are generally different numbers and should not be interchanged.",
+        "Source task parity: in addition to reading a supplied two-way relative-frequency table, students perform paired fair-number-cube trials, record ordered outcomes in a 6-by-6 table, compute observed relative frequencies, and interpret why finite empirical estimates need not exactly equal theoretical values. The data below are hypothetical illustrative counts, not an assertion that a class experiment occurred.",
         "Original source-specific student task: Students construct an original two-way table from supplied hypothetical counts and analyze two different conditionals. Teacher checks notation. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 4, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
       ],
@@ -417,16 +418,16 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Tables of Relative Frequencies: original probability scenario 1",
-          "Question": "Table rows A/not A and cols B/not B counts [[12,8],[18,12]]. Find total.",
-          "Method": "Two-way table",
+          "Title": "Tables of Relative Frequencies: 36-outcome theoretical dice table",
+          "Question": "Two distinct fair six-sided dice are rolled independently once. How many ordered sample outcomes exist, and what is the theoretical probability that both dice show the same number?",
+          "Method": "Construct six possible faces for each of two labelled dice, and count diagonal matching outcomes.",
           "Steps": [
-            "Add all four cells 12+8+18+12",
-            "Grand total=50",
-            "Row A count=20, column B count=30"
+            "The ordered sample space is {(a,b): a,b∈{1,2,3,4,5,6}}, with 6×6=36 equally likely outcomes.",
+            "Exactly six diagonal outcomes have equal results: (1,1),(2,2),(3,3),(4,4),(5,5),(6,6).",
+            "Therefore P(both the same)=6/36=1/6. Classroom relative frequency may differ from 1/6 in finitely many trials."
           ],
-          "Answer": "Total 50; A total 20; B total 30.",
-          "Check": "Check denominators, sample-space assumptions and probability bounds."
+          "Answer": "36 ordered outcomes; matching probability 1/6.",
+          "Check": "Both dice must be independently fair for the 36 outcome equiprobability; record physical classroom observations separately."
         },
         {
           "Title": "Tables of Relative Frequencies: original probability scenario 2",
@@ -484,8 +485,8 @@
               "Numerator": 0,
               "Denominator": 1,
               "Cells": [
-                "Table rows A/not A and cols B/not B counts [[12,8],[18,12]]. Find total.",
-                "Total 50; A total 20; B total 30."
+                "Two distinct fair six-sided dice are rolled independently once. How many ordered sample outcomes exist, and what is the theoretical probability that both dice show the same number?",
+                "36 ordered outcomes; matching probability 1/6."
               ]
             },
             {
