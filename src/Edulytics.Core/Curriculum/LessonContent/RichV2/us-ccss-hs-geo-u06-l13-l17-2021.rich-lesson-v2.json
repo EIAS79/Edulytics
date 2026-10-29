@@ -408,24 +408,23 @@
           "Question": "Triangle A=(0,2),B=(−2,0),C=(2,0). Find orthocenter.",
           "Method": "Orthocenter",
           "Steps": [
-            "BC horizontal, A altitude x=0",
-            "AC has slope −1/2 so B altitude slope 2",
-            "Through B(−2,0): y=2(x+2); at x=0 y=4"
+            "BC is horizontal, so the altitude from A is vertical line x=0.",
+            "AC has slope (0−2)/(2−0)=−1, hence the perpendicular altitude from B has slope +1.",
+            "That line through B=(−2,0) is y=x+2; setting x=0 gives y=2."
           ],
-          "Answer": "Orthocenter H=(0,4).",
+          "Answer": "Orthocenter H=(0,2), which is the right-angle vertex A.",
           "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
         },
         {
           "Title": "Lines in Triangles — worked example 3",
-          "Question": "Verify third altitude of same triangle passes through H=(0,4).",
+          "Question": "Verify the third altitude of triangle A=(0,2), B=(−2,0), C=(2,0) goes through H=(0,2).",
           "Method": "Obtuse case",
           "Steps": [
-            "AB slope (0−2)/(−2−0)=1",
-            "Altitude from C has slope −1",
-            "Through C(2,0), line y=−(x−2)",
-            "At x=0 this yields y=2, not 4"
+            "AB has slope (0−2)/(−2−0)=+1.",
+            "The perpendicular altitude from C therefore has slope −1.",
+            "Its equation is y=−(x−2)=−x+2, which includes (0,2)."
           ],
-          "Answer": "The proposed H=(0,4) is incorrect; recheck the other altitude equations.",
+          "Answer": "The third altitude passes through H=(0,2), confirming concurrence.",
           "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
         }
       ],
