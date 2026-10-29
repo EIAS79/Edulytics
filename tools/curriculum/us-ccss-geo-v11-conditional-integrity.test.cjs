@@ -167,3 +167,33 @@ test('Razor renders probability notation as safely encoded text, without unsafe 
   assert.ok(!reader.includes('Html.Raw('));
   assert.ok(!visual.includes('Html.Raw('));
 });
+
+test('U08 L11 fair two-sided token game: conditional faces, not types', () => {
+  const stem='PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L11';
+  const lesson=byCode.get(stem);
+  assert.ok(lesson);
+  const tokens=[['blank','blank'],['star','blank'],['star','star']];
+  const outcomes=tokens.flatMap((faces,token)=>faces.map(face=>({token,face})));
+  assert.equal(outcomes.length,6);
+  const observed=outcomes.filter(x=>x.face==='star');
+  assert.equal(observed.length,3);
+  const doubleStarObserved=observed.filter(x=>x.token===2);
+  assert.equal(doubleStarObserved.length,2);
+  assert.equal(doubleStarObserved.length/observed.length,2/3);
+  assert.notEqual(doubleStarObserved.length/observed.length,1/2);
+  assert.ok(lesson.WorkedExamples[2].Question.includes('visible face shows a star'));
+  assert.ok(lesson.WorkedExamples[2].Answer.includes('2/3'));
+  assert.ok(lesson.ExplanationParagraphs.some(x=>x.includes('empirical frequencies')||x.includes('sampling variation')));
+});
+
+test('372 authored worked examples are structurally inspected, not all mathematically certified', () => {
+  const worked=lessons.flatMap(lesson=>lesson.WorkedExamples.map(example=>({lesson:lesson.LessonCode,example})));
+  assert.equal(worked.length,372);
+  for(const {lesson,example} of worked){
+    assert.ok(example.Question&&example.Method&&example.Answer&&example.Check,lesson);
+    assert.ok(Array.isArray(example.Steps)&&example.Steps.length>=3,lesson);
+    assert.ok(example.Steps.every(step=>typeof step==='string'&&step.trim()),lesson);
+    assert.deepEqual(semanticDefects(example),[],lesson);
+  }
+  // Structural completeness is not independent certification of 372 answers.
+});
