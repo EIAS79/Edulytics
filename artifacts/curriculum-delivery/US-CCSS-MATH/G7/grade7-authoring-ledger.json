@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "G7_V8_CI_DESCRIPTOR_REPAIR_AND_SIX_GEOMETRY_FIGURE_CANDIDATES_RELEASE_BLOCKED",
+  "status": "G7_V8_NINE_GRADE_ONLY_GEOMETRY_MODELS_TEN_TEACHER_RUBRICS_PENDING_AUTHENTIC_INTEGRATION",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -66,8 +66,8 @@
     "richVisualModels": 151,
     "sourceStudentPagesInspected": 145,
     "sourceStudentPagesNotIndividuallyInspected": 0,
-    "gradeOwnedSvgFigureCandidates": 6,
-    "gradeOwnedTeacherRubricDrafts": 7
+    "gradeOwnedSvgFigureCandidates": 9,
+    "gradeOwnedTeacherRubricDrafts": 10
   },
   "lessons": [
     {
@@ -670,7 +670,14 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/1/7/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "v8GradeOwnedOriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+      "v8GradeOnlyRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v8TeacherRubricDraft": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v8SvgPublicSource": "SVG_SOURCE_AUTHORED_GRADE_ONLY",
+      "v8SharedRendererInvoked": "NO",
+      "v8StudentRichRender": "NOT_RUN",
+      "v8TeacherScorePersisted": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
@@ -757,7 +764,14 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/1/8/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "v8GradeOwnedOriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+      "v8GradeOnlyRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v8TeacherRubricDraft": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v8SvgPublicSource": "SVG_SOURCE_AUTHORED_GRADE_ONLY",
+      "v8SharedRendererInvoked": "NO",
+      "v8StudentRichRender": "NOT_RUN",
+      "v8TeacherScorePersisted": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
@@ -834,7 +848,14 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/1/9/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "v8GradeOwnedOriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+      "v8GradeOnlyRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v8TeacherRubricDraft": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+      "v8SvgPublicSource": "SVG_SOURCE_AUTHORED_GRADE_ONLY",
+      "v8SharedRendererInvoked": "NO",
+      "v8StudentRichRender": "NOT_RUN",
+      "v8TeacherScorePersisted": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L10",
@@ -11727,12 +11748,13 @@
     "gradePartialExtension": "b1262c17c8e54768598dc502095db2f51b2e9689",
     "newScopedXunit": [
       "206440184d570a0ce35056700a5412bca23178fd",
-      "92aae50869475a33c65629e002d89cf511c830b1"
+      "92aae50869475a33c65629e002d89cf511c830b1",
+      "cde69ca80718b9165ffa7e2f57d9a81dd6537b6f"
     ],
     "newRubricDrafts": "6c89138704a7f2dfca9205aef183dd3c9ecc968d",
     "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v8-six-figure-source-acceptance-evidence.json",
-    "gradeAssets": 6,
-    "gradeRubricDrafts": 7,
+    "gradeAssets": 9,
+    "gradeRubricDrafts": 10,
     "existingRichCandidates": 145,
     "workedExamples": 584,
     "visualRichV2Records": 151,
@@ -11749,6 +11771,7 @@
     "stageD": 0,
     "release": "RELEASE_BLOCKED",
     "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
-    "durableNext": "Check exact new-head .NET and relevant CI; if failing inspect logs. Grade-only next U01 L07–L09 with original scale-map/floor-plan reference figures and teacher rubrics; Supervisor 1 owns guarded shared Rich V2 hook and Practice."
+    "durableNext": "Check latest exact-head CI and any xUnit failure logs, then U01 L10–L13 original drawing-scale and floor-plan models; Supervisor 1 controls shared renderer hook and exact Practice under #592. Keep academic A/B/C/D at 0.",
+    "continuationEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v8-nine-geometry-figures-continuation.json"
   }
 }
