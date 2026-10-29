@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G7:U07:L05",
+  "status": "GRADE_OWNED_AUTHORED_ASSET_TEACHER_RUBRIC_CANDIDATE_NOT_APPROVED",
+  "release": "RELEASE_BLOCKED",
+  "source": {
+    "student": "https://im.kendallhunt.com/MS/students/2/7/5/index.html",
+    "teacher": "https://im.kendallhunt.com/MS/teachers/2/7/5/preparation.html",
+    "verifiedScope": "DIRECT_READ_PUBLIC_STUDENT_TEXT_DIAGRAM_ALT_DESCRIPTIONS_AND_TEACHER_PREPARATION_2026_10_29",
+    "sourceAttribution": "Open Up Resources / Illustrative Mathematics, 2017-2019, CC BY 4.0 for cited curriculum text. SVG is newly authored Edulytiks geometry, not original publisher art.",
+    "notInspected": "Publisher image pixels, restricted Teacher Guide, Cool Down and student-produced responses; academic full-figure fidelity and Stage A acceptance NOT_VERIFIED.",
+    "teacherObjectives": [
+      "Critique whether an equation matches the angle diagram.",
+      "Solve angle-equation relationships and explain in words and other representations.",
+      "Write equations of forms px+q=r and p(x+q)=r for actual angle diagrams."
+    ],
+    "studentTaskComparisons": [
+      {
+        "activity": "5.1 Is This Enough?",
+        "sourceDetail": "Three angles on one side of a straight line are a, 90°, and b; decide whether values a and b are uniquely determined and justify.",
+        "currentCandidate": "Existing Rich V2 fourth example already identifies underdetermination with two solution pairs. New first-party Panel A supplies a correctly labeled independent geometric analogue, not the publisher image.",
+        "coverage": "ORIGINAL_GEOMETRIC_ANALOGUE_NOT_VERIFIED_SOURCE_FIGURE_PARITY"
+      },
+      {
+        "activity": "5.2 What Does It Look Like?",
+        "sourceDetail": "Five visually presented problems ask students to critique different proposed equations. Types include vertically opposite, supplementary, complementary, paired unknown sectors and nested angle relationships.",
+        "currentCandidate": "New Panel B illustrates three equal sectors (x+10)° plus 30° filling a straight angle. Students must reject the distractor 3x+10+30=180; not claimed to reproduce the five original diagrams.",
+        "coverage": "PARTIAL_INDEPENDENT_ANALOGUE_FIVE_SOURCE_FIGURES_NOT_REPRODUCED"
+      },
+      {
+        "activity": "5.3 Calculate the Measure",
+        "sourceDetail": "Use marked intersecting, straight, perpendicular and partitioned angles to obtain unknown measures, showing organized steps. Includes multiple nested angles and an optional three-square exact-angle conjecture.",
+        "currentCandidate": "Existing Rich V2 candidate has three numerical examples (including 3x+30=180) plus an underdetermination task. New SVG adds geometry verification and grouped px+q interpretation. Optional challenge and all source figures not demonstrated.",
+        "coverage": "PARTIAL_REUSE_PLUS_NEW_REFERENCE_NOT_COMPLETE_SOURCE_TASK_PARITY"
+      }
+    ],
+    "licensingRestriction": "No publisher image tracing, no copied original tasks or assessment cards."
+  },
+  "asset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l05-equation-choice-underdetermined-and-equal-parts.svg",
+  "publicAsset": "/curriculum/us-ccss-g7/geometry/u07-l05-equation-choice-underdetermined-and-equal-parts.svg",
+  "math": {
+    "panelA": {
+      "vertex": [
+        275,
+        290
+      ],
+      "straightBaseline": [
+        91,
+        290,
+        459,
+        290
+      ],
+      "dividerBearingsDeg": [
+        40,
+        130
+      ],
+      "angleLabels": [
+        "a",
+        "90",
+        "b"
+      ],
+      "constraint": "a+90+b=180",
+      "knownSum": "a+b=90",
+      "alternativePairs": [
+        [
+          40,
+          50
+        ],
+        [
+          30,
+          60
+        ]
+      ],
+      "uniqueSolution": false,
+      "diagramNotToScale": true
+    },
+    "panelB": {
+      "vertex": [
+        795,
+        290
+      ],
+      "straightBaseline": [
+        616,
+        290,
+        982,
+        290
+      ],
+      "dividerBearingsDeg": [
+        50,
+        100,
+        150
+      ],
+      "actualSectorMeasuresDeg": [
+        50,
+        50,
+        50,
+        30
+      ],
+      "correctEquation": "3(x+10)+30=180",
+      "incorrectEquation": "3x+10+30=180",
+      "x": 40,
+      "groupedEqualPartsCount": 3
+    }
+  },
+  "learnerTask": "Without measuring the schematic in A, explain why a+b=90 gives no unique pair; draw two distinct labeled valid constructions. For B, independently partition a straight angle into three equal (x+10)° sectors and a 30° remainder, write 3(x+10)+30=180, solve x=40 and check every constructed sector. Critique the incorrect 3x+10+30 equation. Then compare a peer's different chosen equation and explain the corresponding geometry in writing.",
+  "teacherAssessment": {
+    "mode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+    "maxScore": 12,
+    "rubricDraft": [
+      {
+        "id": "g7-u07-l05-1",
+        "criterion": "Construct two genuinely distinct valid angle diagrams for a+90+b=180 and explain why a and b are not individually determined",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7-u07-l05-2",
+        "criterion": "Draw a 180° straight angle split into three equal sectors and a 30° sector with correctly labeled rays and measures",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7-u07-l05-3",
+        "criterion": "Select, solve and check 3(x+10)+30=180; explain why the alternate 3x+10+30 form is wrong",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "id": "g7-u07-l05-4",
+        "criterion": "Explain and critique peers' angle-equation choices and communicate valid geometric reasoning, not merely a numeric result",
+        "points": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "recordedStudentArtifact": false,
+    "teacherUiIntegrated": false,
+    "teacherScorePersisted": "NOT_RUN",
+    "scoringDecision": "Human teacher only; no automatic numeric grade or passing academic sign-off."
+  },
+  "responseCases": [
+    {
+      "kind": "correct",
+      "submission": "a+b=90 admits (40,50) and (30,60); 3(x+10)+30=180 yields x=40, with accurate student drawings",
+      "expected": "Numerically valid, pending student-artifact and written teacher rubric review"
+    },
+    {
+      "kind": "incorrect",
+      "submission": "a=45 and b=45 must be the only solution",
+      "expected": "Reject uniqueness: many nonnegative pairs sum to 90"
+    },
+    {
+      "kind": "incorrect",
+      "submission": "3x+10+30=180 yields x=140/3",
+      "expected": "Reject: ten-degree addition applies to all three equal sectors, not just one"
+    },
+    {
+      "kind": "incomplete",
+      "submission": "x=40 only, with no equation, angular construction or alternative a,b pair",
+      "expected": "No complete source-task credit"
+    },
+    {
+      "kind": "malformed",
+      "submission": "Non-straight baseline or rays failing to share a vertex, or nonadjacent sectors claimed to fill one line",
+      "expected": "Correct the construction before evaluation"
+    }
+  ],
+  "tests": {
+    "nativeFixture": "tests/academic-us-ccss-g7-v12-u07-l05-source-geometry.test.cjs",
+    "command": "node --test tests/academic-us-ccss-g7-v12-u07-l05-source-geometry.test.cjs",
+    "execution": "NOT_RUN_AT_GITHUB_AUTHORING",
+    "dotnet": "NOT_RUN",
+    "authenticatedStudentBrowser": "NOT_RUN"
+  },
+  "integration": {
+    "supervisorIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+    "sharedPr": "https://github.com/EIAS79/Edulytics/pull/599",
+    "sharedOwner": "American Supervisor 1",
+    "sharedFilesModified": false,
+    "richRendererFigureHook": "PENDING",
+    "selectedPractice": "NOT_EXECUTED",
+    "teacherSubmissionPersistence": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN"
+  },
+  "academic": {
+    "A": "NOT_VERIFIED",
+    "B": "NOT_VERIFIED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED",
+    "humanApproval": "NOT_EVIDENCED",
+    "ownerUAT": "NOT_RUN"
+  }
+}
