@@ -1,0 +1,190 @@
+using System.Text.Json;
+using Edulytics.Core.Mathematics.Practice;
+using Xunit;
+
+namespace Edulytics.Tests.MathematicsIntelligence;
+
+/// <summary>
+/// Course-specific mathematical fixtures intended for the shared integration owner.
+/// Static oracles and registry assertions are NOT substitutes for authenticated
+/// student submissions, persisted grading, source signoff or owner UAT.
+/// </summary>
+public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
+{
+    private const string MatrixLesson = "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01";
+    private const string LogLesson = "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02";
+    private const string FixturePath =
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json";
+
+    [Fact]
+    public void FixtureTracksExactlyTwoLessonIdentitiesAndTwentySixReviewableCases()
+    {
+        using var document = LoadFixtures();
+        var root = document.RootElement;
+        Assert.Equal("PROPOSED_EXPECTATIONS_NOT_RUNTIME_VERIFICATION",
+            root.GetProperty("status").GetString());
+
+        var course = root.GetProperty("course");
+        Assert.Equal("ADV-ALG-FUNC", course.GetProperty("code").GetString());
+        Assert.Equal("Fourth Courses", course.GetProperty("pathway").GetString());
+        Assert.Equal(new[] { MatrixLesson, LogLesson },
+            course.GetProperty("canonicalLessons").EnumerateArray()
+                .Select(x => x.GetString()).ToArray());
+
+        var cases = root.GetProperty("cases").EnumerateArray().ToArray();
+        Assert.Equal(26, cases.Length);
+        Assert.Equal(26, cases.Select(x => x.GetProperty("id").GetString())
+            .Distinct(StringComparer.Ordinal).Count());
+        Assert.Equal(11, cases.Count(x => x.GetProperty("lessonCode").GetString() == MatrixLesson));
+        Assert.Equal(15, cases.Count(x => x.GetProperty("lessonCode").GetString() == LogLesson));
+
+        Assert.All(cases, item =>
+        {
+            var isMatrix = item.GetProperty("lessonCode").GetString() == MatrixLesson;
+            Assert.Equal(isMatrix
+                    ? new[] { "CCSS:HSA-REI.C.8", "CCSS:HSA-REI.C.9" }.Contains(item.GetProperty("officialTarget").GetString())
+                    : item.GetProperty("officialTarget").GetString() == "CCSS:HSF-BF.B.5",
+                true);
+            Assert.False(string.IsNullOrWhiteSpace(item.GetProperty("expectedCanonical").GetString()));
+            Assert.False(string.IsNullOrWhiteSpace(item.GetProperty("acceptedEquivalent").GetString()));
+            Assert.False(string.IsNullOrWhiteSpace(item.GetProperty("rejectWrongOrMalformed").GetString()));
+        });
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "singular-dependent");
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "singular-inconsistent");
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "log-decreasing");
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "invalid-input-negative");
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "log-product-justification");
+    }
+
+    [Fact]
+    public void SourceGoalCasesRequireReviewedHumanRubricsRatherThanFakeNumericScoring()
+    {
+        using var d = LoadFixtures();
+        var cases = d.RootElement.GetProperty("cases").EnumerateArray().ToArray();
+        foreach (var id in new[] { "M11", "L13" })
+        {
+            var row = Assert.Single(cases, x => x.GetProperty("id").GetString() == id);
+            Assert.Equal("HUMAN_RUBRIC", row.GetProperty("gradingPolicy").GetString());
+        }
+        var invalid = cases.Where(x => x.GetProperty("gradingPolicy").GetString()
+            == "REJECT_INVALID_INPUT").ToArray();
+        Assert.True(invalid.Length >= 5);
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "dimension-error");
+        Assert.Contains(cases, x => x.GetProperty("category").GetString() == "invalid-base-one");
+    }
+
+    [Fact]
+    public void ExactMatrixOraclesCoverInvertibleSingularAndWrongDimensionCases()
+    {
+        var a2 = new int[,] { { 2, 1 }, { 1, 1 } };
+        var inverse2 = new int[,] { { 1, -1 }, { -1, 2 } };
+        Assert.Equal(1, Determinant2(a2));
+        Assert.Equal(new[] { 2, 1 }, Multiply(inverse2, new[] { 5, 3 }));
+        Assert.Equal(new[] { 5, 3 }, Multiply(a2, new[] { 2, 1 }));
+        Assert.Equal(new[] { 1, 0 }, Multiply(a2, new[] { 1, -1 }));
+        Assert.Equal(new[] { 0, 1 }, Multiply(a2, new[] { -1, 2 }));
+
+        var a3 = new int[,] { { 1, 1, 1 }, { 2, -1, 1 }, { 1, 2, -1 } };
+        var numerator3 = new int[,] { { -1, 3, 2 }, { 3, -2, 1 }, { 5, -1, -3 } };
+        Assert.Equal(7, Determinant3(a3));
+        Assert.Equal(new[] { 7, 14, 21 }, Multiply(numerator3, new[] { 6, 3, 2 }));
+        Assert.Equal(new[] { 6, 3, 2 }, Multiply(a3, new[] { 1, 2, 3 }));
+        for (var column = 0; column < 3; column++)
+        {
+            var unit = Enumerable.Range(0, 3).Select(i => i == column ? 1 : 0).ToArray();
+            var numeratorColumn = Multiply(numerator3, unit);
+            Assert.Equal(unit.Select(x => x * 7),
+                Multiply(a3, numeratorColumn));
+        }
+
+        var singular = new int[,] { { 1, 1 }, { 2, 2 } };
+        Assert.Equal(0, Determinant2(singular));
+        Assert.Equal(2 * 2, 4); // compatible second equation: infinitely many
+        Assert.NotEqual(2 * 2, 5); // incompatible second equation: no solution
+        Assert.Throws<ArgumentException>(() => Multiply(a2, new[] { 5, 3, 1 }));
+    }
+
+    [Theory]
+    [InlineData(2.0, 32.0, 5.0)]
+    [InlineData(3.0, 0.1111111111111111, -2.0)]
+    [InlineData(0.5, 4.0, -2.0)]
+    [InlineData(2.0, 0.125, -3.0)]
+    public void LogFixtureInverseOraclesAcceptPositiveDomains(double b, double x, double expected)
+    {
+        Assert.True(ValidRealLog(b, x));
+        Assert.InRange(Math.Abs(Math.Log(x) / Math.Log(b) - expected), 0, 1e-10);
+        Assert.InRange(Math.Abs(Math.Pow(b, expected) - x), 0, 1e-10);
+    }
+
+    [Fact]
+    public void LogFixturesRejectInvalidInputsAndRespectMonotonicity()
+    {
+        foreach (var (b, x) in new[] { (1d, 5d), (0d, 3d), (-2d, 8d), (2d, 0d), (2d, -2d) })
+            Assert.False(ValidRealLog(b, x));
+        Assert.True(Math.Log(3, 2) < Math.Log(5, 2));
+        Assert.True(Math.Log(3, 0.5) > Math.Log(5, 0.5));
+        Assert.True(Math.Log(3, 4) < Math.Log(3, 2));
+        Assert.InRange(Math.Abs(Math.Log(7) / Math.Log(2) - 2.807354922057604),
+            0, 1e-11);
+        Assert.True(Math.Abs(Math.Log(6, 2)
+            - (Math.Log(2, 2) + Math.Log(4, 2))) > 0.1);
+    }
+
+    [Fact]
+    public void LessonPracticeRegistryMustExposeActualMatrixAndLogCompetencies()
+    {
+        // Deliberately FAILS on the old shared official outcome Practice mapping.
+        // Do not relax readiness or replace matrix systems with one-variable equations.
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(MatrixLesson, out var matrix));
+        Assert.NotNull(matrix);
+        Assert.Equal("READY_VERIFIED", matrix.Readiness);
+        Assert.NotEmpty(matrix.AllowedQuestionFamilies);
+        Assert.All(matrix.AllowedQuestionFamilies, family =>
+            Assert.DoesNotContain("algebra.linear.ax_plus_b_equals_c", family, StringComparison.Ordinal));
+        Assert.Contains(matrix.AllowedQuestionFamilies,
+            family => family.Contains("matri", StringComparison.OrdinalIgnoreCase)
+                   || family.Contains("matrix", StringComparison.OrdinalIgnoreCase));
+
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(LogLesson, out var logs));
+        Assert.NotNull(logs);
+        Assert.Equal("READY_VERIFIED", logs.Readiness);
+        Assert.Contains(logs.AllowedQuestionFamilies,
+            family => family.Contains("logarith", StringComparison.OrdinalIgnoreCase));
+    }
+
+    private static int Determinant2(int[,] a) =>
+        a[0, 0] * a[1, 1] - a[0, 1] * a[1, 0];
+
+    private static int Determinant3(int[,] a) =>
+        a[0, 0] * (a[1, 1] * a[2, 2] - a[1, 2] * a[2, 1])
+        - a[0, 1] * (a[1, 0] * a[2, 2] - a[1, 2] * a[2, 0])
+        + a[0, 2] * (a[1, 0] * a[2, 1] - a[1, 1] * a[2, 0]);
+
+    private static int[] Multiply(int[,] a, int[] vector)
+    {
+        if (a.GetLength(1) != vector.Length)
+            throw new ArgumentException("Matrix/vector dimensions must agree.", nameof(vector));
+        return Enumerable.Range(0, a.GetLength(0))
+            .Select(row => Enumerable.Range(0, a.GetLength(1))
+                .Sum(col => a[row, col] * vector[col])).ToArray();
+    }
+
+    private static bool ValidRealLog(double b, double x) =>
+        double.IsFinite(b) && double.IsFinite(x) && b > 0 && b != 1 && x > 0;
+
+    private static JsonDocument LoadFixtures() =>
+        JsonDocument.Parse(File.ReadAllText(Path.Combine(FindRoot(),
+            FixturePath.Replace('/', Path.DirectorySeparatorChar))));
+
+    private static string FindRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+        while (directory is not null)
+        {
+            if (File.Exists(Path.Combine(directory.FullName, "Edulytics.sln")))
+                return directory.FullName;
+            directory = directory.Parent;
+        }
+        throw new DirectoryNotFoundException("Edulytics solution root not found.");
+    }
+}
