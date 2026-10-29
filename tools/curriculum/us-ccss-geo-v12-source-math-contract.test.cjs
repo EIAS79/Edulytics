@@ -23,7 +23,7 @@ test('V12 source-ledger accounts for all 33 syllabus-only and six teacher-only n
   assert.equal(initial.length,67);
   assert.ok(reaudited.every(x=>x.unit===5 && x.sourceResearch.studentLessonUrl.includes('/students/2/5/')));
   assert.ok(reaudited.every(x=>x.sourceResearch.academicSignoff===false));
-  assert.equal(source.lessons.filter(x=>/PENDING|PREPARATION_ONLY/.test(x.stageA)).length,0);
+  assert.equal(source.lessons.filter(x=>['SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING','SOURCE_TEACHER_PREPARATION_ONLY'].includes(x.stageA)).length,0);
   assert.equal(source.totals.gradeAccepted,0);
   assert.equal(source.totals.sourceTaskPagesReadInV12,39);
   for(const x of reviewed) {
