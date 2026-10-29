@@ -25,20 +25,23 @@
     "3dace0a1c09232e8997b64b8d4c70bf34595d74d",
     "654e1474ab449e278a17fb023c7b43a3781bf518",
     "c00e764cf73ba7a40253c466cfafc652cdcd5c07",
-    "63626729674722ab87d868c94af47c59f14e0b97"
+    "63626729674722ab87d868c94af47c59f14e0b97",
+    "cff8c9a90f79dda72be1d05ea7929dc13888f33e",
+    "0206d2015f4b87cddf60ab2182420afc889517ad",
+    "0fde4d4343b9cf598bde9812dfb9c07d8c5ee13e"
   ],
   "checkedStaticCounts": {
-    "sourceGroundedContentEdits": 45,
+    "sourceGroundedContentEdits": 55,
     "previouslyAuthoredPendingReview": 1,
-    "remainingDefectTriage": 73,
+    "remainingDefectTriage": 63,
     "exactExplicitPracticeMappingMetadata": 2,
     "sourceReviewedReused": 1
   },
   "nextCurriculumCursor": {
-    "ordinal": 47,
-    "unitCode": "U03",
-    "lessonNumber": 10,
-    "reason": "U03 L01-L09 source-specific authoring and nine focused mathematical oracle tests completed; continue at A New Kind of Number"
+    "ordinal": 57,
+    "unitCode": "U04",
+    "lessonNumber": 1,
+    "reason": "U01 11/11 revised, U02 25 revised plus one source-reviewed reuse, U03 19/19 revised. Next source-specific lesson U04:L01."
   },
   "knownIntegrationIssues": [
     {
@@ -2061,15 +2064,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Explain why x²=−1 has no real root and justify extension beyond the real line",
+      "originalFirstPartyMathematicsVerification": "i²=−1; (3i)²=−9, so no real square equals −1",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/10/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 48,
@@ -2096,15 +2105,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Use imaginary unit i²=−1 and represent non-real solutions in a+bi form",
+      "originalFirstPartyMathematicsVerification": "±3i squared equals −9; ±i√5 squared equals −5",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/11/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 49,
@@ -2130,15 +2145,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Add/subtract complex numbers by components and derive the four-power cycle of i",
+      "originalFirstPartyMathematicsVerification": "(2+3i)+(−8−8i)=−6−5i; powers i^0..i^8 cycle mod four",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/12/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 50,
@@ -2169,15 +2190,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Multiply complex numbers distributively using i²=−1",
+      "originalFirstPartyMathematicsVerification": "(8+i)(−5+3i)=−43+19i; (3+2i)²=5+12i; conjugate product 13",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/13/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 51,
@@ -2206,15 +2233,21 @@
       "publisherAlignmentRoles": [
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Practice complex arithmetic and periodic i powers with precise explanation",
+      "originalFirstPartyMathematicsVerification": "i^100=1, i^38=−1; (1+i)^8=16",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/14/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 52,
@@ -2241,15 +2274,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Ask for missing data and recover a complex factor from product real/imaginary equations",
+      "originalFirstPartyMathematicsVerification": "(2+3i)(a+bi)=2+16i gives a=4,b=2 and verifies",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/15/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 53,
@@ -2275,15 +2314,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Solve real quadratics by completing the square and quadratic formula",
+      "originalFirstPartyMathematicsVerification": "x²−6x+7=0 gives x=3±√2 by two equivalent methods",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/16/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 54,
@@ -2317,15 +2362,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Complete the square to find non-real complex conjugate roots and classify solutions",
+      "originalFirstPartyMathematicsVerification": "x²−8x+19=0 gives x=4±i√3, with −3 square remainder",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/17/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 55,
@@ -2356,15 +2407,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Use quadratic formula with negative discriminant and verify complex roots",
+      "originalFirstPartyMathematicsVerification": "x²−12x+41=0 gives 6±i√5; 3x²−10x+50 roots (5±5i√5)/3",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/18/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 56,
@@ -2394,15 +2451,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Construct quadratics by real/non-real root category and explain discriminant/graph evidence",
+      "originalFirstPartyMathematicsVerification": "2x²+4x+4 roots −1±i, while 2x²+4x+2 has repeated root −1",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/19/index.html",
+      "sourceComparedEvidence": "First Edition 2019–2021 IM publisher teacher and student source inspected; original Edulytiks adapted instruction and mathematical oracle, not publisher approval",
+      "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021, CC BY 4.0, new Edulytiks adaptation",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 57,
@@ -4829,6 +4892,13 @@
       "verifiedGitBlobSha": "a540aa2a2efc7aa9135b31a85cc7fc913e71556a",
       "executionPlace": "isolated container, exact SHA of source matches GitHub",
       "scope": "U03 L01-L09 independently checked math, not app verifier"
+    },
+    {
+      "command": "node --test /mnt/data/coder7-validation/tests/coder-7/UsCcssHsALG2120LESSONS.U03-complex-math.test.cjs",
+      "result": "PASS_10_OF_10",
+      "verifiedGitBlobSha": "4d28abf57bd37dd2c0e85735c1fdba13941cf4aa",
+      "executionPlace": "isolated local container exact GitHub blob match",
+      "scope": "U03 L10–L19 complex arithmetic/quadratic root checks, no app verifier"
     }
   ],
   "ciBlocker": "Current authoritative CI at 924324f6c11602e96fae043ebc8e027ad2e1eb98 failed canonical-body parity: modified teaching with newlyApproved=0 and no authorized version predecessor; do not bypass."
