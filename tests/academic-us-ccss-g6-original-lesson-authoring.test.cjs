@@ -538,3 +538,40 @@ test('Unit 3 rate, percent above 100 and painting estimates retain sourced task 
   assert.equal(250*1.4, 350);
   assert.equal(2*(9+10)*8-5*3-7*3, 268);
 });
+
+
+test('Unit 4 fraction and packaging source opening checks retain exact mathematical examples and release boundaries', () => {
+  const source = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-17-public-student-source-opening-and-repair-matrix.json'), 'utf8'));
+  assert.equal(source.lessons.length, 17);
+  assert.equal(source.summary.candidateLessonsWithSourceSpecificSupplements, 13);
+  assert.equal(source.summary.academicAccepted, 0);
+  const revised = new Set([1,3,4,5,6,8,10,12,13,14,15,16,17]);
+  source.lessons.forEach((r,i) => {
+    assert.equal(r.lessonCode, lcode(4,i+1));
+    assert.equal(r.newGrade6TeachingSupplementCommitted, revised.has(i+1));
+    assert.equal(r.fullOriginalStudentBodyIndependentlyReviewed, false);
+    assert.equal(r.fullTeacherGuideIndependentlyReviewed, false);
+    assert.equal(r.selectedExactPracticeQuestionVerified, false);
+    assert.equal(r.academicAcceptance, 'NOT_ACCEPTED');
+  });
+  const lesson = n => byCode.get(lcode(4,n)).translations.find(t => t.cultureCode === 'en');
+  assert.match(lesson(1).workedExamples, /5000÷500000=0\.01/);
+  assert.match(lesson(3).workedExamples, /nine|=9 jars/);
+  assert.match(lesson(4).keyConceptsAndRules, /triangle represents 1\/6/);
+  assert.match(lesson(5).keyConceptsAndRules, /rhombus is 2\/3/);
+  assert.match(lesson(6).workedExamples, /1½ groups/);
+  assert.match(lesson(8).workedExamples, /2½ cups/);
+  assert.match(lesson(10).workedExamples, /9\/8/);
+  assert.match(lesson(12).workedExamples, /request the piece length/i);
+  assert.match(lesson(13).workedExamples, /1\/9 in²/);
+  assert.match(lesson(14).workedExamples, /1\/8 in³/);
+  assert.match(lesson(15).workedExamples, /108\/27=4in³/);
+  assert.match(lesson(16).workedExamples, /17\/12/);
+  assert.match(lesson(17).workedExamples, /NOT establish optimal packing/);
+  assert.equal(9*3*4, 108);
+  assert.equal(108/27, 4);
+  assert.equal(3*2*4, 24);
+  assert.equal(Math.ceil(270/24), 12);
+  assert.equal((3/4)/(2/3), 9/8);
+});
