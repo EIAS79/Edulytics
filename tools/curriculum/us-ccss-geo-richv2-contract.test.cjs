@@ -159,7 +159,7 @@ test('Original square, dynamic geometry and Voronoi candidates have truthful ass
 test('Rigid-motion isometries preserve squared distance; reflection reverses orientation and order can matter', () => {
   const candidate = new Map(richFourth.Lessons.map(x => [x.LessonCode, x]));
   assert.ok(candidate.get(prefix+'10').WorkedExamples.some(x => x.Answer.includes('(-3,1)')));
-  assert.ok(candidate.get(prefix+'11').WorkedExamples.some(x => x.Answer.includes('(-1,1)')));
+  assert.ok(candidate.get(prefix+'11').WorkedExamples.some(x => x.Answer.replaceAll('−', '-').includes('(-1,1)')));
   assert.ok(candidate.get(prefix+'12').WorkedExamples.some(x => x.Answer.includes('non-parallel')));
   const d2=(a,b)=>(a[0]-b[0])**2+(a[1]-b[1])**2;
   const shift=(p)=>[p[0]+2,p[1]-1];
