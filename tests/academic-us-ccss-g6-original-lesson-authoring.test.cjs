@@ -1269,3 +1269,70 @@ test('U03 L08–L11 independent oracles retain motion direction, exact ranking a
   assert.equal(28/1.4,20);
   assert.ok(close((0.2/2.5)*10,0.8));
 });
+
+test('U03 L12–L15 original percent lesson tasks require human-scored source-specific representations', () => {
+  const d = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l12-l15-public-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(d.summary.studentBodiesDirectComparedThisBatch,4);
+  assert.equal(d.summary.teacherActivityBodiesComparedThisBatch,4);
+  assert.equal(d.summary.updatedDirectReviews,113);
+  assert.equal(d.summary.remainingDirectReviews,34);
+  assert.equal(d.summary.academicAccepted,0);
+  assert.deepEqual(d.lessons.map(l=>l.lessonCode),[12,13,14,15].map(n=>lcode(3,n)));
+  for(const l of d.lessons) {
+    const x=byCode.get(l.lessonCode).translations[0].workedExamples;
+    assert.equal(l.publicStudentTaskBodiesCompared,true);
+    assert.equal(l.publicTeacherActivitiesAndGoalsCompared,true);
+    assert.equal(l.protectedTeacherCooldownAndFullGuideReviewed,false);
+    assert.ok(l.sourceTasks.length>=4);
+    assert.ok(l.newFirstPartyCandidateExamples.length>=3);
+    assert.ok(l.representationsStillToVerify.length>=2);
+    assert.equal(l.teacherRubricCandidate.scoreMax,8);
+    assert.equal(l.teacherRubricCandidate.implemented,false);
+    assert.equal(l.teacherRubricCandidate.persisted,false);
+    assert.equal(l.authenticatedStudentVisualCheck,'NOT_RUN');
+    assert.equal(l.exactSelectedPracticeContractCheck,'NOT_RUN');
+    assert.equal(l.generatorCorrectWrongEquivalentMalformedChecks,'NOT_RUN');
+    assert.equal(l.publisherVisualOrInfoCardEquivalenceVerified,false);
+    assert.equal(l.academicAcceptance,'NOT_ACCEPTED');
+    assert.match(x,/Example 3:/);
+    assert.match(x,/Description: (Tape diagram|Double number line|Ratio table)/);
+  }
+  assert.match(byCode.get(lcode(3,12)).translations[0].workedExamples,/3 liters/);
+  assert.match(byCode.get(lcode(3,12)).translations[0].workedExamples,/1,000%/);
+  assert.match(byCode.get(lcode(3,13)).translations[0].workedExamples,/150%, 6/);
+  assert.match(byCode.get(lcode(3,13)).translations[0].workedExamples,/400%/);
+  assert.match(byCode.get(lcode(3,14)).translations[0].workedExamples,/\$48 paid/);
+  assert.match(byCode.get(lcode(3,14)).translations[0].workedExamples,/25% full/);
+  assert.match(byCode.get(lcode(3,15)).translations[0].workedExamples,/70% of the concert audience/);
+  assert.match(byCode.get(lcode(3,15)).translations[0].workedExamples,/0\.8×x/);
+});
+
+test('U03 L12–L15 independent percentage oracles reject swapping part and reference whole', () => {
+  const close=(a,b)=>Math.abs(a-b)<1e-8;
+  assert.equal(9/0.2,45);
+  assert.equal(90/9,10);
+  assert.equal(9/90*100,10);
+  assert.equal(90/9*100,1000);
+  assert.ok(close(5*0.4,2) && close(5*1.5,7.5));
+  assert.ok(close(1.5/0.5,3));
+  assert.ok(close(3*0.8,2.4));
+  assert.ok(close(3*1.5,4.5));
+  assert.deepEqual([10,2000,24].map(x=>x*0.5),[5,1000,12]);
+  assert.deepEqual([10,2000,24].map(x=>x*0.1),[1,200,2.4000000000000004]);
+  assert.ok([10,2000,24].every((v,i)=>close(v*0.75,[7.5,1500,18][i])));
+  assert.deepEqual([50,25,10,75,150].map(p=>9/(p/100)),[18,36,90,12,6]);
+  assert.deepEqual([[7,14],[5,20],[3,30],[6,8],[20,5]].map(([a,b])=>100*a/b),[50,25,10,75,400]);
+  assert.equal(15*0.1,1.5);
+  assert.equal(24*0.25,6);
+  assert.ok(close(1/0.8,1.25));
+  assert.equal(60*0.2,12);
+  assert.equal(60*(1-0.2),48);
+  assert.equal(9/36*100,25);
+  assert.deepEqual([30,140,44].map(p=>250*p/100),[75,350,110]);
+  assert.equal(350/2,175);
+  assert.equal(175/250*100,70);
+  assert.deepEqual([1,4,10,55,120].map(p=>Number((p*0.8).toFixed(2))),[0.8,3.2,8,44,96]);
+  assert.ok(close(8/10,4/5) && close(4/5,80/100));
+  assert.notEqual(8/100,80/100);
+});
