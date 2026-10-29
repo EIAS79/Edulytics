@@ -405,3 +405,27 @@ test('Source-specific numeric oracles for solids, conics, circles and conditiona
   // Fair game E=2*(1/3)-1*(2/3)=0.
   assert.ok(near(2/3-2/3,0));
 });
+
+test('U05-U08: 60 first-party rendered reasoning aids have valid native visual schema', () => {
+  const latest=authored.filter(x=>/U0[5-8]:L/.test(x.LessonCode));
+  assert.equal(latest.length,60);
+  for(const lesson of latest){
+    assert.equal(lesson.Visuals.length,1,lesson.LessonCode);
+    const v=lesson.Visuals[0];
+    assert.ok(v.Title&&v.Description);
+    const unit=Number(lesson.LessonCode.match(/U(\d+):L/)[1]);
+    if(unit===5){
+      assert.equal(v.Kind,'ShapeDecomposition');
+      assert.equal(v.Rows.length,3);
+      assert.ok(v.Rows.every(r=>r.Label&&r.Cells.length===2));
+    }else if(unit===6||unit===7){
+      assert.equal(v.Kind,'EquationSet');
+      assert.ok(v.Items.length>=4);
+      assert.equal(v.Items.at(-1),lesson.WorkedExamples[0].Answer);
+    }else if(unit===8){
+      assert.equal(v.Kind,'RatioTable');
+      assert.equal(v.Rows.length,3);
+      assert.ok(v.Rows.every(r=>r.Label&&r.Cells.length===2));
+    }
+  }
+});
