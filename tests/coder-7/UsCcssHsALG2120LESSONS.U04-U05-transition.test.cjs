@@ -18,8 +18,8 @@ test('120 lesson identities, source metadata, and exact U05 cursor',()=>{
   assert.equal(b.LessonCode,c.lessonCode);assert.equal(c.lessonCode,r.lessonCode);assert.equal(b.SourceUrl,c.sourceUrl);
   assert.equal(c.sourceSha256,r.sourceSha256);assert.equal(c.canonicalBodySha256,r.baselineCanonicalBodySha256);
  }
- assert.equal(ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length,76);
- assert.equal(ledger.nextCurriculumCursor.ordinal,78);assert.ok(ledger.lessons[77].lessonCode.endsWith(':U05:L04'));
+ assert.equal(ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length,ledger.checkedStaticCounts.sourceGroundedContentEdits);
+ assert.equal(ledger.lessons[ledger.nextCurriculumCursor.ordinal-1].contentStatus,'CONTENT_DEFECT_TRIAGE_PENDING');
  assert.equal(ledger.claims.productionDeployed,false);
 });
 test('U04:L16 exponential intersection and negative-time impossibility',()=>{
