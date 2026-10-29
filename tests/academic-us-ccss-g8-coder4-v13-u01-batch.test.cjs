@@ -48,7 +48,8 @@ test('U01 V13 documents original source scope without misrepresenting full parit
   const extended=read('docs/curriculum/us-ccss-g8-coder4-v13-u01-l11-l17-source-evidence-20261029.json');
   // L09-L17 pack received a later source-specific batch. Its older V13 hash remains
   // an immutable historical checkpoint, not a checksum of the newest pack.
-  const expected=pack.includes('l09-l17')?extended.updatedRichCandidateHash:evidence.updatedRichCandidateHashes[pack];
+  const early=read('docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json');
+  const expected=pack.includes('l09-l17')?extended.updatedRichCandidateHash:early.newContentHash;
   assert.equal(sha(file),expected);
   const rich=read(file).Lessons.find(x=>x.LessonCode.endsWith(':'+id));
   const src=source.rows.find(x=>x.lessonCode===rich.LessonCode);
