@@ -64,7 +64,16 @@
     "unit2FullSourceTeacherStudentTaskParityVerified": 0,
     "unit3PublicStudentSourceOpeningsScreened": 17,
     "unit3SourceTargetedTeachingExtensionsAuthored": 10,
-    "unit3FullSourceAcademicTaskParityVerified": 0
+    "unit3FullSourceAcademicTaskParityVerified": 0,
+    "v5Unit1TargetedExtensionsAuthored": 7,
+    "v5Unit2TargetedExtensionsAuthored": 11,
+    "v5Unit3TargetedExtensionsAuthored": 10,
+    "v5SourceTargetedLessonExtensionsTotal": 28,
+    "v5RawNodeTestRuns": 0,
+    "v5V8CommonJsCallbacksPassing": 22,
+    "v5UnapprovedOriginalTeachingBodyChanges": 147,
+    "v5Grade6NonTeachingMetadataChangesComparedToMain": 0,
+    "v5Grade6PackLevelContentVersionChangesComparedToMain": 1
   },
   "sharedBlockers": [
     {
@@ -12915,7 +12924,7 @@
   "lastTestAuthoringCommit": "c9b04f86bbab9b846a668666e2bfe2068107a01c",
   "nextUnrepairedLessonCode": null,
   "nextFullSourceTaskParityLesson": "PED:US-CCSS-MATH:G6:U01:L01",
-  "releaseVerdict": "V5_AUTHORING_CANDIDATE_WITH_U01_U03_SOURCE_SUPPLEMENTS__RELEASE_BLOCKED",
+  "releaseVerdict": "RELEASE_BLOCKED__GRADE6_147_TEXT_CANDIDATES__28_V5_SOURCE_TASK_EXTENSIONS__NO_A_D_ACCEPTANCE",
   "publicSourceTaskBoundaryFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
   "publicSourceTaskReviewNote": "For U01:L01-L03 the public historical teacher/student/practice text and alt descriptions were checked. Teacher model answers behind login, publisher interactive applet functionality, exact diagram pixels, materialized Edulytiks student rendering, teacher evidence and exact selected Practice remain unverified. This DOES NOT mean three Stage A acceptances.",
   "lastSourceTaskAreaAuthoringCommit": "1860118f670f136319bac6930f181b4ca3e508a5",
@@ -12939,7 +12948,7 @@
   ],
   "nextDeepOriginalSourceActivityReview": "PED:US-CCSS-MATH:G6:U01:L11",
   "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L01",
-  "nextSharedIntegrationAction": "Supervisor 1-designated single integration writer: exact selected Grade 6 Practice contract trace and teacher-rubric assessment persistence; safe read-from-JSON metadata version predecessor, then authentic UI/DB/tenant tests.",
+  "nextSharedIntegrationAction": "Supervisor 1-designated single-writer shared RichV2 test coexistence with G7 PR #590, exact G6 lesson Practice, rubric storage, guarded Grade6 content materialization/promotion; issue #592 comment 6484465498",
   "lastSourceIndicesVerified": {
     "studentTitleMatches": 147,
     "teacherTitleMatches": 147,
@@ -12954,9 +12963,27 @@
   "v5VisualDescriptionRevisionCommit": "c05bca5b0eb17495fbe25660d5649f1ce5dec37a",
   "v5Grade6NodeTestAdditionCommit": "a47bdc9c9f166df2f18bf74fe513bd8d67151b82",
   "ciPriorHeadEvidence": {
-    "headSha": "535333a70105823b6040d4151d16ce8e4355f248",
-    "observed": "Previous GitHub Actions .NET suite: 5267/5269 in math foundation (2 stale global RichV2 count failures); 6792/6795 in full production regression (2 RichV2 counts + 1 U01 L02 visual parser failure); original-data-parity changedBodies=147 newlyApproved=0 release=NO_GO; none of this certifies latest changed candidate.",
-    "source": "https://github.com/EIAS79/Edulytics/pull/591#issuecomment-6484225135"
+    "sha": "535333a70105823b6040d4151d16ce8e4355f248",
+    "jobs": {
+      "mathFoundation": {
+        "status": "FAIL",
+        "passing": 5267,
+        "failed": 2,
+        "reason": "Global Rich V2 fixed count 318/326"
+      },
+      "productionRegression": {
+        "status": "FAIL",
+        "passing": 6792,
+        "failed": 3,
+        "reason": "Two global Rich V2 fixed counts and Grade6 U01 L02 missing parser visual"
+      },
+      "originalDataParity": {
+        "status": "FAIL",
+        "changedBodies": 147,
+        "newlyApproved": 0,
+        "reason": "No source/body promotion approvals for changed teaching text"
+      }
+    }
   },
   "v5Unit2SourceOpeningMatrix": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-17-public-student-source-opening-and-repair-matrix.json",
   "v5Unit2ContentCommit": "4d565eab758dc04a9fee61dc725c4b14b322bbfa",
@@ -12964,5 +12991,27 @@
   "v5Unit3SourceOpeningMatrix": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-17-public-source-opening-and-repair-matrix.json",
   "v5Unit3TeachingCommit": "4869a7b259b0e30e2dbd88a021f3bee451171da5",
   "v5Unit3SourceIndexCommit": "e40b9b014cb09eafaa1c01103f0dcdd34d339f29",
-  "nextBulkSourceScreen": "PED:US-CCSS-MATH:G6:U04:L01"
+  "nextBulkSourceScreen": "PED:US-CCSS-MATH:G6:U04:L01",
+  "v5PackMetadataDiffEvidence": {
+    "againstMainSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
+    "comparedAtCodeCommit": "f9b07ffb95a7ebf073c1c1d6c3e77e8d0cafe31a",
+    "all147CanonicalLessonCodesPreserved": true,
+    "nonBodyLessonMetadataChanges": 0,
+    "nonBodyTranslationMetadataChanges": 0,
+    "topLevelContentVersionChangedFrom": "phase30-common-core-rich-content-v1",
+    "topLevelContentVersionChangedTo": "us-ccss-g6-full-grade-authoring-candidate-20261028-v1",
+    "licenseSourceProvenancePreserved": true,
+    "parityGateStillBlocked": true
+  },
+  "v5GradeOnlyTestEvidence": {
+    "sourceCommit": "f9b07ffb95a7ebf073c1c1d6c3e77e8d0cafe31a",
+    "testFile": "tests/academic-us-ccss-g6-original-lesson-authoring.test.cjs",
+    "callbacks": 22,
+    "passing": 22,
+    "runner": "V8 compatibility harness with mocked node modules, in-memory GitHub source data",
+    "actualNodeRun": false,
+    "actualDotnetAtLatestHead": false,
+    "protectedCICurrentHead": "QUEUED_AS_LAST_OBSERVED",
+    "note": "The source-test method does not prove actual lesson parser visuals, auth, exact Practice, or persistence."
+  }
 }
