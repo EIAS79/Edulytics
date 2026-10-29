@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l10-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L10",
+      "CultureCode": "en",
+      "Title": "Graphs of Functions in Standard and Factored Forms",
+      "ExplanationParagraphs": [
+        "Learning goal: connect coefficients and factors of a quadratic expression to the horizontal and vertical intercepts of its graph, recognizing why the same function has multiple forms. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L10 teacher https://im.kendallhunt.com/HS/teachers/1/6/10/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/10/index.html (CC BY 4.0). The source invites students to notice patterns rather than simply memorize a sign rule.",
+        "Original function f(x)=(x−2)(x−6)=x²−8x+12. Factored form immediately gives zeros x=2 and x=6 because either factor can be zero. Standard form immediately gives y-intercept f(0)=12. The graph is an upward parabola symmetric about midpoint x=4; f(4)=(2)(−2)=−4 is its minimum.",
+        "The two representations are not two separate graphs. Check outputs at x0,2,4,6,8: 12,0,−4,0,12. At x8 the value12 agrees with symmetry about axis4. The standard-form constant term matches the y-intercept only because f(0)=c.",
+        "Student task: match three expressions to a common graph, label both intercept types, test points and propose what graphical features each form reveals most efficiently. Teacher-scored rubric0–2 for equivalence, intercept reasoning, accurate graph with symmetry and articulate form-to-feature comparison."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Factored zeros",
+          "Definition": "A product equals zero if one factor equals zero.",
+          "Rule": "Solve each linear factor.",
+          "Example": "(x−2)(x−6)=0 at x2,6."
+        },
+        {
+          "Title": "Standard-form y-intercept",
+          "Definition": "For ax²+bx+c, at x0 output is c.",
+          "Rule": "Evaluate f(0).",
+          "Example": "For x²−8x+12 the vertical intercept is(0,12)."
+        },
+        {
+          "Title": "Symmetry",
+          "Definition": "For two distinct zeros, a vertical axis lies halfway between them.",
+          "Rule": "Average roots for quadratic with equal-height ends.",
+          "Example": "Axis x=(2+6)/2=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Derive both forms and roots",
+          "Question": "Expand (x−2)(x−6), find zeros.",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "Expand x²−6x−2x+12=x²−8x+12.",
+            "Set product=0.",
+            "Either x−2=0 or x−6=0.",
+            "Thus zeros are x2 and6."
+          ],
+          "Answer": "Standard x²−8x+12; x-intercepts(2,0),(6,0).",
+          "Check": "Direct substitution returns0."
+        },
+        {
+          "Title": "Read y-intercept",
+          "Question": "Find f(0).",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "Use factored (−2)(−6)=12.",
+            "Alternatively in standard form constant c=12.",
+            "Therefore graph crosses y-axis at(0,12).",
+            "Both forms represent one function."
+          ],
+          "Answer": "y-intercept(0,12).",
+          "Check": "Two independent methods agree."
+        },
+        {
+          "Title": "Find vertex from symmetric roots",
+          "Question": "Find minimum f(4).",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "Midpoint of2 and6 is4.",
+            "At x4, factors2 and−2 multiply to−4.",
+            "Leading coefficient+1 means upward opening.",
+            "Vertex is(4,−4), the minimum point."
+          ],
+          "Answer": "Vertex(4,−4).",
+          "Check": "Symmetric x0 and8 each output12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling x2 and6 the y-intercepts",
+          "WhyWrong": "They are input values where output0.",
+          "Correction": "Label horizontal intercepts as (x,0)."
+        },
+        {
+          "Mistake": "Treating standard and factored forms as different functions",
+          "WhyWrong": "Distributivity shows identical outputs.",
+          "Correction": "Compare one exact graph."
+        }
+      ],
+      "SummaryPoints": [
+        "Factored form reveals zeros, standard form reveals y-intercept.",
+        "f=(x−2)(x−6)=x²−8x+12 has zeros2,6 and vertical intercept12.",
+        "Its vertex is(4,−4).",
+        "Teacher scores graph explanations and expression comparisons."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factored/standard form numerical representation",
+          "Description": "First-party input-output values and independent expression checks; no publisher image.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Graph output",
+          "Rows": [
+            {
+              "Label": "x0",
+              "Cells": [
+                "f12"
+              ]
+            },
+            {
+              "Label": "x2",
+              "Cells": [
+                "f0"
+              ]
+            },
+            {
+              "Label": "x4",
+              "Cells": [
+                "f−4"
+              ]
+            },
+            {
+              "Label": "x6",
+              "Cells": [
+                "f0"
+              ]
+            },
+            {
+              "Label": "x8",
+              "Cells": [
+                "f12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

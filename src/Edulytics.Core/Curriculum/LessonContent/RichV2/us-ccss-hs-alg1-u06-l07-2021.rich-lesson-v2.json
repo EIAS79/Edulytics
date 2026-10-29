@@ -1,0 +1,147 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l07-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L07",
+      "CultureCode": "en",
+      "Title": "Building Quadratic Functions to Describe Situations (Part 3)",
+      "ExplanationParagraphs": [
+        "Learning goal: construct a quadratic revenue function from price and demand, interpret the zeros and maximum in context, and choose a reasonable domain. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L07 teacher https://im.kendallhunt.com/HS/teachers/1/6/7/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/7/index.html (CC BY 4.0). The source transitions from projectile motion to price/revenue modeling.",
+        "Original hypothetical ticket market: estimated tickets sold at price p dollars is q(p)=60−2p for 0≤p≤30. Revenue is price times quantity R(p)=p(60−2p)=60p−2p² dollars. For continuous price approximation, the graph is downward-opening with zeros p0 and p30; in real ticket sales counts must be nonnegative integers and prices may be restricted to cents or whole dollars.",
+        "Complete square R(p)=450−2(p−15)², showing maximum revenue $450 at price$15 and expected30 tickets. At price$10 and price$20, revenue is $400 in each case, reflecting symmetry around the maximizing price. Negative prices or quantities are outside the model and cannot be treated as feasible points.",
+        "Student task: create a table for prices0,5,10,15,20,25,30, draw a graph with common axes, interpret R=0 at both endpoints in different ways and critique whether real demand actually obeys a linear rule. Teacher-scored rubric0–2 for model from context, verified vertex/zeros, domain and critique of assumptions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Revenue function",
+          "Definition": "Revenue = unit price × quantity sold.",
+          "Rule": "R(p)=p·q(p).",
+          "Example": "With q=60−2p, R=60p−2p²."
+        },
+        {
+          "Title": "Revenue maximum",
+          "Definition": "The vertex of a downward quadratic maximizes the continuous model.",
+          "Rule": "p=−b/(2a)=15.",
+          "Example": "R(15)=$450."
+        },
+        {
+          "Title": "Contextual zeros",
+          "Definition": "A zero can correspond to free price or zero demand, with different meanings.",
+          "Rule": "Check both factors.",
+          "Example": "p0 price zero; p30 demand zero."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Form revenue polynomial",
+          "Question": "If q=60−2p, find R(p).",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Revenue equals price times ticket count.",
+            "R=p(60−2p).",
+            "Distribute p: R=60p−2p².",
+            "At p10, q40, R=$400.",
+            "All quantities have stated units."
+          ],
+          "Answer": "R(p)=60p−2p².",
+          "Check": "Price×tickets gives dollars."
+        },
+        {
+          "Title": "Find maximizing price",
+          "Question": "What p maximizes R?",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Quadratic coefficient a=−2 and b=60.",
+            "Vertex input p=−60/(2×−2)=15.",
+            "Quantity at15 is60−30=30.",
+            "Revenue15×30=$450.",
+            "Complete-square form450−2(p−15)² confirms maximum."
+          ],
+          "Answer": "Price$15, estimated30 tickets, revenue$450.",
+          "Check": "Quadratic opens downward."
+        },
+        {
+          "Title": "Find and interpret zero revenue",
+          "Question": "Solve p(60−2p)=0.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Zero-product property gives p=0 or 60−2p=0.",
+            "Second gives p=30.",
+            "At p0 tickets may be numerous but price is free.",
+            "At p30 demand model predicts0 tickets.",
+            "Both yield zero revenue for different reasons."
+          ],
+          "Answer": "Zeros p0 and p30 dollars.",
+          "Check": "Both satisfy domain0≤p≤30."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using quantity q as though it were revenue",
+          "WhyWrong": "Price must multiply quantity.",
+          "Correction": "Write R=pq."
+        },
+        {
+          "Mistake": "Continuing demand to negative sales",
+          "WhyWrong": "At p>30 model predicts negative tickets.",
+          "Correction": "Restrict price domain."
+        },
+        {
+          "Mistake": "Claiming hypothetical revenue maximizer is real market optimization",
+          "WhyWrong": "Actual demand may be different.",
+          "Correction": "Label invented linear-demand assumption."
+        }
+      ],
+      "SummaryPoints": [
+        "Revenue from linear demand is often a downward-opening quadratic.",
+        "R(p)=60p−2p² has maximum$450 at price$15.",
+        "Zeros p0 and p30 have distinct contextual meanings.",
+        "Teacher reviews economic assumptions and graph interpretations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independently authored geometric or quadratic model",
+          "Description": "Accessible numerical table and original situation, not copied publisher figures or authentic measurements.",
+          "PrimaryLabel": "Input or scenario",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "price$0",
+              "Cells": [
+                "R$0"
+              ]
+            },
+            {
+              "Label": "price$10",
+              "Cells": [
+                "R$400"
+              ]
+            },
+            {
+              "Label": "price$15",
+              "Cells": [
+                "R$450"
+              ]
+            },
+            {
+              "Label": "price$20",
+              "Cells": [
+                "R$400"
+              ]
+            },
+            {
+              "Label": "price$30",
+              "Cells": [
+                "R$0"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

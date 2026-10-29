@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l17-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L17",
+      "CultureCode": "en",
+      "Title": "Changing the Vertex",
+      "ExplanationParagraphs": [
+        "Learning goal: construct quadratic expressions for specified vertex positions by changing h and k, explain horizontal and vertical translations and preserve the effect of a on opening. Independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L17 teacher https://im.kendallhunt.com/HS/teachers/1/6/17/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/17/index.html (CC BY 4.0). This source reverses the previous tasks: students start with desired vertices and design equations.",
+        "Original design requirement: create an upward-opening parabola with vertex(−1,5), scaled vertically by2 from y=x². One valid function is f(x)=2(x+1)²+5. It reaches minimum5 at x−1 and f(0)=7. Another target vertex(3,−2), same shape and opening, is g(x)=2(x−3)²−2, obtained by shifting the vertex4 right and7 down.",
+        "Graph g has zero values when2(x−3)²−2=0, so (x−3)²=1 and roots2 and4; vertex at(3,−2). At x0, g=2×9−2=16. Changes in h shift left/right, changes in k shift up/down; the outside factor a=2 maintains relative curvature.",
+        "Student task: given three desired vertices, write valid vertex-form functions with chosen a and justify signs; compare f and g at their vertices and one reflected pair; critique a formula using (x+3)² for vertex+3. Teacher-scored rubric0–2 for valid equation from a target vertex, accurate translations, graph features and reasoned sign choices."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Design from vertex",
+          "Definition": "For target(h,k), use f(x)=a(x−h)²+k, a≠0.",
+          "Rule": "Choose the correct inside sign.",
+          "Example": "Vertex(−1,5) gives2(x+1)²+5."
+        },
+        {
+          "Title": "Horizontal and vertical translation",
+          "Definition": "Changing h moves graph horizontally; changing k moves it vertically.",
+          "Rule": "Compare old/new vertex coordinates.",
+          "Example": "From(−1,5) to(3,−2) shifts+4 right,−7 down."
+        },
+        {
+          "Title": "Keep shape",
+          "Definition": "Holding a fixed preserves opening and relative vertical stretch.",
+          "Rule": "Compare same horizontal offsets from vertex.",
+          "Example": "Both use a=2 and open upward."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Create function at vertex(−1,5)",
+          "Question": "Use upward scale2.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "Vertex input h=−1, so inside x−(−1)=x+1.",
+            "Vertex output k=5.",
+            "Choose a=2>0.",
+            "Function f=2(x+1)²+5.",
+            "Check f(−1)=5."
+          ],
+          "Answer": "f(x)=2(x+1)²+5.",
+          "Check": "Minimum5 at required input."
+        },
+        {
+          "Title": "Translate vertex to(3,−2)",
+          "Question": "Construct g with same opening.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "New h=3, k=−2.",
+            "Keep a=2.",
+            "Write g(x)=2(x−3)²−2.",
+            "Check g(3)=−2.",
+            "Compare positions: right4, down7."
+          ],
+          "Answer": "g=2(x−3)²−2.",
+          "Check": "Same scale2; shifted vertex."
+        },
+        {
+          "Title": "Find g's horizontal intercepts",
+          "Question": "Solve2(x−3)²−2=0.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "Add2:2(x−3)²=2.",
+            "Divide2:(x−3)²=1.",
+            "Take square roots x−3=±1.",
+            "Thus x=2 or4.",
+            "Check g2=g4=0."
+          ],
+          "Answer": "Zeros x2,x4.",
+          "Check": "Symmetric around vertex axis x3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Writing (x+3)² for target vertex+3",
+          "WhyWrong": "That expression has vertex input−3.",
+          "Correction": "Use x−h."
+        },
+        {
+          "Mistake": "Changing a inadvertently while claiming pure translation",
+          "WhyWrong": "Changing a also changes width.",
+          "Correction": "Keep a fixed during shift comparison."
+        }
+      ],
+      "SummaryPoints": [
+        "Vertex form lets a student design a graph from its desired vertex.",
+        "Holding a fixed changes only position when h,k change.",
+        "g(x)=2(x−3)²−2 has vertex(3,−2), roots2,4.",
+        "Teacher reviews constructed models and sign reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party vertex-form graph checks",
+          "Description": "Accessible equation/output table for original examples, not source-publisher artwork.",
+          "PrimaryLabel": "Feature",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "f vertex",
+              "Cells": [
+                "(−1,5)"
+              ]
+            },
+            {
+              "Label": "f at x0",
+              "Cells": [
+                "7"
+              ]
+            },
+            {
+              "Label": "g vertex",
+              "Cells": [
+                "(3,−2)"
+              ]
+            },
+            {
+              "Label": "g zeros",
+              "Cells": [
+                "2,4"
+              ]
+            },
+            {
+              "Label": "g at x0",
+              "Cells": [
+                "16"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l08-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L08",
+      "CultureCode": "en",
+      "Title": "Equivalent Quadratic Expressions",
+      "ExplanationParagraphs": [
+        "Learning goal: use an area diagram and distributive reasoning to write factored and expanded quadratic expressions, verify they represent the same quantity for all inputs and identify common distribution mistakes. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L08 teacher https://im.kendallhunt.com/HS/teachers/1/6/8/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/8/index.html (CC BY 4.0). Source uses rectangle diagrams to explain equivalence, not merely mechanical FOIL mnemonics.",
+        "Original rectangle with side lengths x+3 and x+5 units, for physical x≥0. Partition along both additions into four subrectangles: x², 5x, 3x and15 square units. Total area (x+3)(x+5)=x²+8x+15. Each term counts a nonoverlapping region; multiplying just first and last pieces would miss the two strips.",
+        "Check using x=2: dimensions5×7, area35. Expanded expression gives4+16+15=35. At x=0 the rectangle3×5 area15. A numerical match at two inputs is supporting evidence, while the distributive diagram proves the identity algebraically for all real x.",
+        "Student task: draw two decomposition diagrams for the same rectangle, label all four pieces, write and explain both forms, and critique the false expression x²+15. Teacher-scored rubric0–2 for complete diagram, accurate expansion, identity justification and interpretation of context domain."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distributive area model",
+          "Definition": "Partition a rectangle to visualize multiplying two binomials.",
+          "Rule": "Multiply every pair of terms.",
+          "Example": "(x+3)(x+5)=x²+5x+3x+15."
+        },
+        {
+          "Title": "Combine like terms",
+          "Definition": "Add same-variable terms of equal degree.",
+          "Rule": "5x+3x=8x.",
+          "Example": "Expanded x²+8x+15."
+        },
+        {
+          "Title": "Identity",
+          "Definition": "Equivalent expressions give equal values for every input in common domain.",
+          "Rule": "Use distributivity rather than only examples.",
+          "Example": "(x+3)(x+5)≡x²+8x+15."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Expand by area tiles",
+          "Question": "Multiply (x+3)(x+5).",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Multiply x×x=x².",
+            "Multiply x×5=5x and3×x=3x.",
+            "Multiply constants3×5=15.",
+            "Add x²+5x+3x+15.",
+            "Combine to x²+8x+15."
+          ],
+          "Answer": "x²+8x+15.",
+          "Check": "Each partial rectangle area is counted."
+        },
+        {
+          "Title": "Evaluate both forms",
+          "Question": "Check x=2.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Original dimensions x+3=5, x+5=7, area35.",
+            "Expanded value2²+8×2+15=4+16+15=35.",
+            "Both agree.",
+            "Distributive identity ensures agreement at other x too."
+          ],
+          "Answer": "35 square units.",
+          "Check": "Direct substitution independent of expansion."
+        },
+        {
+          "Title": "Disprove missing cross terms",
+          "Question": "Is (x+3)(x+5)=x²+15?",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "At x=2, left35.",
+            "Right4+15=19.",
+            "Values disagree, disproving equality.",
+            "Missing terms5x+3x account for16 at x2."
+          ],
+          "Answer": "No; correct polynomial includes8x.",
+          "Check": "Counterexample shows error."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying only first and last terms",
+          "WhyWrong": "The two cross products are omitted.",
+          "Correction": "Draw four rectangles or distribute systematically."
+        },
+        {
+          "Mistake": "Calling a spot-check a proof of all-value equivalence",
+          "WhyWrong": "Finitely many points do not prove identity.",
+          "Correction": "Use algebraic distributivity."
+        }
+      ],
+      "SummaryPoints": [
+        "Area decompositions justify expanded quadratic expressions.",
+        "Factored and expanded forms of same model are algebraically equivalent.",
+        "Cross terms are essential: x²+8x+15.",
+        "Teacher verifies visual proof and domain awareness."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independently authored geometric or quadratic model",
+          "Description": "Accessible numerical table and original situation, not copied publisher figures or authentic measurements.",
+          "PrimaryLabel": "Input or scenario",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x=0",
+              "Cells": [
+                "area15"
+              ]
+            },
+            {
+              "Label": "x=1",
+              "Cells": [
+                "area24"
+              ]
+            },
+            {
+              "Label": "x=2",
+              "Cells": [
+                "area35"
+              ]
+            },
+            {
+              "Label": "x=3",
+              "Cells": [
+                "area48"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
