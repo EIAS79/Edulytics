@@ -39,7 +39,7 @@ test('U06 L05 unit-circle Pythagorean identity positive and negative',()=>{
     near(Math.cos(a)**2+Math.sin(a)**2,1);
   }
   near(Math.sqrt(3)/2**1,Math.sqrt(3)/2);
-  assert.ok(-.5**2+(-.5)**2!==1);
+  assert.ok((-.5)**2+(-.5)**2!==1);
 });
 test('U06 L06 quadrant-four ratios and impossible QII signs',()=>{
   const cos=7/25,sin=-24/25;
