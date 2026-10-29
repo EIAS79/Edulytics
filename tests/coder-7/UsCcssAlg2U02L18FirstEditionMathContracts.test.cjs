@@ -118,3 +118,17 @@ test('negative and malformed student answers must not count as equivalent', () =
   }
   assert.equal(equal(4,4),true);
 });
+
+test('18.3 source-task matches occur in the actual learner body, not only in a fixture', () => {
+  const body=t.workedExamples;
+  const expected = [
+    ['a(x)=4/x-1','D'], ['b(x)=1/x-4','B'], ['c(x)=(1+4x)/x=4+1/x','A'],
+    ['d(x)=(x+4)/x=1+4/x','C'], ['e(x)=(1-4x)/x=1/x-4','B'],
+    ['f(x)=(4-x)/x=4/x-1','D'], ['g(x)=1+4/x','C'], ['h(x)=1/x+4','A']
+  ];
+  for (const [formula, graph] of expected) {
+    assert.ok(body.includes(formula+' -> '+graph),formula+' must map to source graph '+graph);
+  }
+  assert.match(body,/x=0/);
+  assert.match(body,/x=1 is a vertical asymptote and y=1\/2/);
+});

@@ -66,3 +66,8 @@ These tests verify independent arithmetic, polynomial identities, root and multi
 - **Adoption and Practice:** #453 remains open. The current review neither proves high-school course selection nor all 120 effective Practice contracts. Existing metadata alone does not prove authenticated student scoring.
 
 **Next lesson:** `PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L19`, ordinal 30. The course is not complete, reviewed, merged or deployed.
+
+
+## V11 source-task gap closure: U02 L18 (2026-10-29)
+
+Checked the original [student activities](https://im.kendallhunt.com/HS/students/3/2/18/index.html) and [teacher preparation](https://im.kendallhunt.com/HS/teachers/3/2/18/preparation.html). Activity 18.3 has eight functions to match against graphs A-D. Prior learner worked examples covered 18.1 and the paperback 18.2 but did not expose those eight mappings in the learner body. The course-owned Rich V2 worked example now includes all eight exact equation-to-graph-label mappings, their four horizontal asymptotes, x=0 domain exclusion and the optional extension. A new course-owned Node regression checks source-task visibility in the actual student content. The source graphical figures are NOT replicated and authenticated rendering of a first-party graph remains NOT_VERIFIED. This does not grant academic Stage A or Stage B acceptance; canonical predecessor SHA remains unchanged, the proposed successor digest is recomputed, and a version-owner decision is still required.
