@@ -1199,3 +1199,73 @@ test('U03 L04–L07 independent dimensional rate oracles detect reciprocal and d
   assert.ok(near(750/(5/2+10/8),200));
   assert.notEqual(10/4,15/4);       // scaling only one side breaks ratio
 });
+
+test('U03 L08–L11 student/teacher source boundaries cover accessible ratios and percent explanations', () => {
+  const d = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l08-l11-public-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(d.summary.publicStudentTaskBodiesCompared, 4);
+  assert.equal(d.summary.publicTeacherActivityBodiesCompared, 4);
+  assert.equal(d.summary.newTotalDirectSourceComparisons, 109);
+  assert.equal(d.summary.sourceComparisonsRemaining, 38);
+  assert.equal(d.summary.fullStageAAccepted, 0);
+  assert.equal(d.noGo.nativeNodeFullCheckout, 'NOT_RUN');
+  assert.deepEqual(d.lessons.map(x=>x.lessonCode),[8,9,10,11].map(n=>lcode(3,n)));
+  for(const entry of d.lessons){
+    const content = byCode.get(entry.lessonCode).translations[0].workedExamples;
+    assert.equal(entry.originalStudentActivityBodiesCompared,true);
+    assert.equal(entry.publicTeacherActivityNarrativeAndLearningGoalsCompared,true);
+    assert.equal(entry.protectedTeacherGuideAndCooldownRead,false);
+    assert.ok(entry.sourceTasks.length>=4);
+    assert.ok(entry.representationAndAssessmentRequirements.length>=3);
+    assert.ok(entry.firstPartyOriginalTeachingAdded.length>=3);
+    assert.equal(entry.rubricDraft.scoreMax,8);
+    assert.equal(entry.rubricDraft.actualRubricDeployed,false);
+    assert.equal(entry.rubricDraft.scoresPersisted,false);
+    assert.equal(entry.originalPublisherImageAndCardEquivalenceVerified,false);
+    assert.equal(entry.authenticatedAccessibleStudentPresentationVerified,false);
+    assert.equal(entry.selectedPracticeGeneratorVerifierTested,false);
+    assert.equal(entry.teacherEvaluationPersisted,false);
+    assert.equal(entry.twoSchoolAccessIsolationTested,false);
+    assert.equal(entry.academicAcceptance,'NOT_ACCEPTED');
+    assert.match(content,/Example 3:/);
+    assert.match(content,/Description: (Ratio table|Double number line)/);
+  }
+  assert.match(byCode.get(lcode(3,8)).translations[0].workedExamples,/6\.2 mph/);
+  assert.match(byCode.get(lcode(3,8)).translations[0].workedExamples,/3\.125 miles apart/);
+  assert.match(byCode.get(lcode(3,9)).translations[0].workedExamples,/1,150\.0104 m/);
+  assert.match(byCode.get(lcode(3,9)).translations[0].workedExamples,/coyote, ostrich/);
+  assert.match(byCode.get(lcode(3,10)).translations[0].workedExamples,/six quarters total 150 cents/);
+  assert.match(byCode.get(lcode(3,10)).translations[0].workedExamples,/four nickels/);
+  assert.match(byCode.get(lcode(3,11)).translations[0].workedExamples,/45 pounds/);
+  assert.match(byCode.get(lcode(3,11)).translations[0].workedExamples,/0\.20\/2\.50 = 8%/);
+});
+
+test('U03 L08–L11 independent oracles retain motion direction, exact ranking and inverted percents', () => {
+  const close=(a,b)=>Math.abs(a-b)<1e-8;
+  assert.ok(close(75/12,6.25));
+  assert.ok(close(8*(75/12),50));
+  assert.ok(close(30*(12/75),4.8));
+  assert.deepEqual([0,1,2,3].map(h=>24-(3+3.4)*h),[24,17.6,11.2,4.800000000000001].map(x=>Number(x.toFixed(10))));
+  assert.ok(close(24/(3+3.4),3.75));
+  assert.ok(close(24/2.5-3.4,6.2));
+  assert.ok(close(6*3.75,22.5));
+  assert.ok(close(24*2/3,16));
+  assert.ok(close(2/12*60,10));
+  assert.ok(close(1/24*60,2.5));
+  assert.ok(close(15*(2/12+1/24),3.125));
+  assert.ok(close(5/(2/12+1/24),24));
+  const animals={cougar:1408*0.9144,antelope:1609.344,hare:49632*0.0254,kangaroo:1073,ostrich:1.15*1000,coyote:3773*0.3048};
+  assert.deepEqual(Object.keys(animals).sort((a,b)=>animals[b]-animals[a]),['antelope','cougar','hare','coyote','ostrich','kangaroo']);
+  assert.ok(close(animals.coyote-animals.ostrich,0.0104));
+  assert.deepEqual([25,10,75].map(x=>x/100),[0.25,0.1,0.75]);
+  assert.equal(6*10,60);
+  assert.equal(6*25,150);
+  assert.equal(3*25+5*10,125);
+  assert.equal(100+2*10,4*25+4*5);
+  assert.deepEqual([50,100,150].map(p=>40*p/100),[20,40,60]);
+  assert.deepEqual([75,100,125].map(p=>8*p/100),[6,8,10]);
+  assert.equal(9/0.20,45);
+  assert.equal(9/0.30,30);
+  assert.equal(28/1.4,20);
+  assert.ok(close((0.2/2.5)*10,0.8));
+});
