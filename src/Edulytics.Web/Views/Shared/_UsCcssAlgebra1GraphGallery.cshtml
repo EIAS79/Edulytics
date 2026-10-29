@@ -1,0 +1,43 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+@{
+    // Course-local first-party SVG graphs. The three exact lesson codes are
+    // intentionally allowlisted: do not treat arbitrary source strings as URLs.
+    // A prepared diagram does NOT replace a student's own graphing activity.
+    var graphPath = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11" =>
+            "/images/curriculum/alg1-v11/u06-l11-factored-graph.svg",
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16" =>
+            "/images/curriculum/alg1-v11/u06-l16-vertex-graph.svg",
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24" =>
+            "/images/curriculum/alg1-v11/u07-l24-quadratic-line.svg",
+        _ => null
+    };
+    var explanation = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11" =>
+            "Source-aligned original comparison: opposite-opening factored quadratics share zeros 1 and 5. Compare the vertices and vertical intercepts before drawing your own labeled graphs.",
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16" =>
+            "Source-aligned original comparison: two vertex-form functions share the vertex (-2, 6), but one has a maximum and the other a minimum. Create and explain your own graph.",
+        "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24" =>
+            "Original modeling diagram: the height parabola and platform line intersect at (1, 7) and (4, 10). Equal height alone is not a collision; the horizontal position has not been modeled.",
+        _ => ""
+    };
+}
+@if (graphPath is not null)
+{
+    <figure class="rich-lesson-visual rich-lesson-visual--us-alg1-graph"
+            data-algebra1-source-graph="@Model.LessonCode">
+        <h3>Original coordinate graph — explanatory example</h3>
+        <img src="@graphPath"
+             alt="@explanation"
+             loading="lazy"
+             decoding="async"
+             style="display:block;width:100%;max-width:900px;height:auto;border:1px solid #aab4c0;border-radius:10px;background:#fff" />
+        <figcaption>
+            @explanation
+            This prepared figure is not evidence that the learner has performed the
+            source's graphing or modeling task. Teacher review remains required.
+        </figcaption>
+    </figure>
+}

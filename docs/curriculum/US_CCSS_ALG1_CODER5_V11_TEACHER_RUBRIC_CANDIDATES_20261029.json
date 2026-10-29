@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
+  "checkedAtDate": "2026-10-29",
+  "status": "THREE_SOURCE_SPECIFIC_DRAFT_TEACHER_RUBRICS_NOT_ACCEPTED",
+  "approvedTeacherRubricCount": 0,
+  "verifiedTeacherWorkflowCount": 0,
+  "draftCount": 3,
+  "teacherRubricCandidates": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11",
+      "title": "Graphing from the Factored Form",
+      "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/1/6/11/preparation.html",
+      "studentActivityUrl": "https://im.kendallhunt.com/HS/students/1/6/11/index.html",
+      "status": "DRAFT_TEACHER_RUBRIC_HUMAN_REVIEW_PENDING",
+      "sourceComparisonNote": "Teacher goal and student task reviewed against U06:L11 teacher preparation and student graph-comparison activities. Graphing-technology use must be documented if claimed.",
+      "studentTask": "Student task (original first-party source-equivalent comparison): without reading the prepared graph first, use g(x)=-2(x-1)(x-5) and h(x)=2(x-1)(x-5) to predict BOTH x-intercepts, each vertex, and each y-intercept. Complete an original table at x=0,1,2,3,4,5,6 for both functions. Plot the two parabolas on the SAME labeled coordinate axes, with distinct colors or point markers. Justify why their x-intercepts agree but their opening, extrema and y-intercepts differ; verify predictions using graphing technology if available. Submit your own plotted graph plus reasoning to an authorized teacher. A pre-drawn SVG is only an explanatory example, not an auto-graded student submission. Human-reviewed draft rubric: 0–2 each for correct table/zero products, both graphs with scale and labels, vertex/y-intercept reasoning, and actual independent verification and explanation.",
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "Table and zeros",
+          "expectedEvidence": "Correct outputs for both functions, all shared x-intercepts, with verified substitutions.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "Two self-created graphs",
+          "expectedEvidence": "Both graph curves plotted on one labeled scale with distinguishable markings; includes the vertices.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "Function-form explanations",
+          "expectedEvidence": "Identifies both extrema and y-intercepts and explains factor-product root relationships.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "Verification and communication",
+          "expectedEvidence": "Gives reasoned comparison, checking graphing technology only if actually used; independent learner work.",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "totalPoints": 8,
+      "scoreAnchors": {
+        "0": "Missing or mathematically incorrect evidence",
+        "1": "Partially supported evidence with material omissions",
+        "2": "Specific, correctly justified and independently verifiable evidence"
+      },
+      "requiredTeacherWorkflow": [
+        "authenticated submission by enrolled student in exact ALG1 lesson",
+        "authorized assigned teacher reviews actual learner artifact",
+        "teacher records 0-2 for each criterion, total 0-8 and narrative feedback",
+        "server checks school/class/course/lesson/teacher assignment",
+        "grade+feedback persisted with attempt ownership and audit trail"
+      ],
+      "teacherWorkflowVerified": false,
+      "submissionVerified": false,
+      "gradingVerified": false,
+      "feedbackPersistenceVerified": false,
+      "noFakeGrading": true
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16",
+      "title": "Graphing from the Vertex Form",
+      "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/1/6/16/preparation.html",
+      "studentActivityUrl": "https://im.kendallhunt.com/HS/students/1/6/16/index.html",
+      "status": "DRAFT_TEACHER_RUBRIC_HUMAN_REVIEW_PENDING",
+      "sourceComparisonNote": "U06:L16 source explicitly says informal structural sign reasoning should not be assessed. Grade the labeled graph, extrema and intercept identification, not a formal coefficient-sign proof.",
+      "studentTask": "Student task (original source-equivalent shared-vertex comparison): match the standard, factored and vertex descriptions of a sample function to their relevant graph features. On the SAME coordinate axes graph g(x)=-0.5(x+2)^2+6 and the original comparison q(x)=0.5(x+2)^2+6. Both have vertex (-2,6). Plot reflected pairs x=-4,0, label both y-intercepts g(0)=4 and q(0)=8, and identify g maximum and q minimum. Discuss with a partner how the two parabolas differ, and submit your own labeled graph. Teacher human-review draft rubric 0–2 each for graph points/symmetry, vertex and y-intercepts, correct min/max interpretation, and form-choice/explanation. In line with publisher teacher guidance, do NOT formally assess a proof for why a positive/negative square coefficient creates a minimum/maximum.",
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "Labeled original graph",
+          "expectedEvidence": "Both distinct curves, correct symmetric points and sensible coordinate-axis scale.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "Vertex and vertical intercepts",
+          "expectedEvidence": "Correct shared (-2,6) vertex and two y-intercepts (0,4),(0,8).",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "Maximum/minimum",
+          "expectedEvidence": "Correctly identifies g maximum=6 and q minimum=6 without demanding a formal proof.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "Form choice and explanation",
+          "expectedEvidence": "Explains how the chosen representations help read graph features and preserves learner work.",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "totalPoints": 8,
+      "scoreAnchors": {
+        "0": "Missing or mathematically incorrect evidence",
+        "1": "Partially supported evidence with material omissions",
+        "2": "Specific, correctly justified and independently verifiable evidence"
+      },
+      "requiredTeacherWorkflow": [
+        "authenticated submission by enrolled student in exact ALG1 lesson",
+        "authorized assigned teacher reviews actual learner artifact",
+        "teacher records 0-2 for each criterion, total 0-8 and narrative feedback",
+        "server checks school/class/course/lesson/teacher assignment",
+        "grade+feedback persisted with attempt ownership and audit trail"
+      ],
+      "teacherWorkflowVerified": false,
+      "submissionVerified": false,
+      "gradingVerified": false,
+      "feedbackPersistenceVerified": false,
+      "noFakeGrading": true
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24",
+      "title": "Using Quadratic Equations to Model Situations and Solve Problems",
+      "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/1/7/24/preparation.html",
+      "studentActivityUrl": "https://im.kendallhunt.com/HS/students/1/7/24/index.html",
+      "status": "DRAFT_TEACHER_RUBRIC_HUMAN_REVIEW_PENDING",
+      "sourceComparisonNote": "U07:L24 official teacher preparation lists open problems, choice of representation, and optional gallery walk; rubric candidates are not an approved teacher-scoring workflow.",
+      "studentTask": "Student culminating task — choose and independently solve two substantial ORIGINAL contexts without prescribed algebraic method. Task A: analyze the hypothetical H(t)=-t^2+6t+2 flight: initial height, maximum height/time, first nonnegative time reaching ground, and the two nonnegative times at height 8m; justify the useful equation form. Task B: analyze the line P(t)=t+6 and parabola H(t) on the same coordinate plane, derive all equal-height intersections algebraically and graphically, and explain why equal heights cannot establish a collision without horizontal-position data. Learners may complete both tasks or, if teacher authorizes, select one and prepare a visual display with a group/gallery-walk discussion. No graphing tool is required, but record genuine use if chosen. Original-first-party numbers are NOT publisher task/figure copies. Human-review draft rubric: 0–2 each for independently selected equivalent quadratic forms, exact verified solutions and units, complete labeled graph and contextual interpretation, and critique of model assumptions and clear group presentation. This task is human scored; generated examples, static SVGs and a rubric JSON never constitute a submitted assignment or a persisted grade.",
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "Independent model and representation",
+          "expectedEvidence": "Selects and justifies equation forms for both height and line-parabola problems, without step-by-step scaffolding.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "Solutions and verification",
+          "expectedEvidence": "Exact H ground and maximum and equal-height (1,7),(4,10) checked in original functions, with correct units.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "Visual graph and context",
+          "expectedEvidence": "Learner-created labeled parabola/line with valid physical time domain and interpreted maximum/roots.",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "Critical reasoning and communication",
+          "expectedEvidence": "Explains limitations of equal-height collision inference, records real tool use, and communicates findings clearly.",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "totalPoints": 8,
+      "scoreAnchors": {
+        "0": "Missing or mathematically incorrect evidence",
+        "1": "Partially supported evidence with material omissions",
+        "2": "Specific, correctly justified and independently verifiable evidence"
+      },
+      "requiredTeacherWorkflow": [
+        "authenticated submission by enrolled student in exact ALG1 lesson",
+        "authorized assigned teacher reviews actual learner artifact",
+        "teacher records 0-2 for each criterion, total 0-8 and narrative feedback",
+        "server checks school/class/course/lesson/teacher assignment",
+        "grade+feedback persisted with attempt ownership and audit trail"
+      ],
+      "teacherWorkflowVerified": false,
+      "submissionVerified": false,
+      "gradingVerified": false,
+      "feedbackPersistenceVerified": false,
+      "noFakeGrading": true
+    }
+  ]
+}

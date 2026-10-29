@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u06-l16-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u06-l16-v11-source-task-graph-review-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,8 @@
         "Learning goal: graph vertex-form quadratics using the vertex, opening and reflected points, and explain how coefficients a,h,k shape the curve. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L16 teacher https://im.kendallhunt.com/HS/teachers/1/6/16/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/16/index.html (CC BY 4.0). The source asks students to choose among forms based on which graph feature is needed.",
         "Original function g(x)=−0.5(x+2)²+6, vertex(−2,6). Since coefficient−0.5 is negative, it opens downward with maximum6. Points x0 and x−4 are both2 units from axis x−2, so g(0)=g(−4)=−.5×4+6=4. At x−1 and−3, g=5.5. Graph all these on common axes.",
         "The horizontal intercepts follow from−.5(x+2)²+6=0, so (x+2)²=12 and x=−2±√12≈−5.464 and1.464. These are optional additional graph features, not required to define the vertex; do not confuse y-intercept(0,4) with the x-intercepts.",
-        "Student task: choose vertex form to locate vertex before plotting, predict opening and range, draw symmetric points, and explain why a negative factor makes maximum not minimum. Teacher-scored rubric0–2 each for vertex/axis, opening and width, plotted symmetric pairs and verified intercepts or range."
+        "Second comparison function q(x)=0.5(x+2)^2+6 has the SAME vertex (-2,6) as g(x)=-0.5(x+2)^2+6, but opens upward with minimum 6, not maximum. At x=0 and x=-4, q=8 and g=4. These independently chosen parallel expressions support the official activity goal of graphing two functions that share a vertex.",
+        "Student task (original source-equivalent shared-vertex comparison): match the standard, factored and vertex descriptions of a sample function to their relevant graph features. On the SAME coordinate axes graph g(x)=-0.5(x+2)^2+6 and the original comparison q(x)=0.5(x+2)^2+6. Both have vertex (-2,6). Plot reflected pairs x=-4,0, label both y-intercepts g(0)=4 and q(0)=8, and identify g maximum and q minimum. Discuss with a partner how the two parabolas differ, and submit your own labeled graph. Teacher human-review draft rubric 0–2 each for graph points/symmetry, vertex and y-intercepts, correct min/max interpretation, and form-choice/explanation. In line with publisher teacher guidance, do NOT formally assess a proof for why a positive/negative square coefficient creates a minimum/maximum."
       ],
       "KeyConcepts": [
         {
