@@ -434,7 +434,7 @@ public sealed class StudentPrivatePracticeRepositoryTests
             Assert.False(choice.RequiresSchoolCourseSelection);
 
             var history = Assert.Single(await repo.ListPrivateAttemptsAsync(data.Ids.User));
-            Assert.Equal(data.Course == "ADV-ALG-FUNC" ? 4 : 7, history.Score);
+            Assert.Equal(data.Course == "ADV-ALG-FUNC" ? 4m : 7m, history.Score);
         }
         Assert.Null(await repo.GetContextAsync(first.User, second.Adoption));
         Assert.Null(await repo.GetContextAsync(second.User, first.Adoption));
