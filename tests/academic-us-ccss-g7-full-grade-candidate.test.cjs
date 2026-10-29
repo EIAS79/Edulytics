@@ -152,17 +152,17 @@ test('V5 actual student-source comparisons remain honest and lesson-specific', (
   );
   const inspected = parity.lessons.filter(row => row.sourceInspected === 'DIRECT_STUDENT_PAGE_READ');
   const unchecked = parity.lessons.filter(row => row.sourceInspected === 'NOT_CHECKED');
-  assert.equal(inspected.length, 21);
-  assert.equal(unchecked.length, 124);
+  assert.equal(inspected.length, 35);
+  assert.equal(unchecked.length, 110);
   assert.equal(parity.counts.stageAVerified, 0);
   assert.equal(parity.counts.stageCVerified, 0);
   assert.equal(parity.counts.stageDVerified, 0);
-  assert.equal(ledger.counts.sourceStudentPagesInspected, 21);
-  assert.equal(ledger.counts.sourceStudentPagesNotIndividuallyInspected, 124);
+  assert.equal(ledger.counts.sourceStudentPagesInspected, 35);
+  assert.equal(ledger.counts.sourceStudentPagesNotIndividuallyInspected, 110);
   assert.equal(ledger.counts.stageAVerified, 0);
   assert.equal(ledger.counts.stageCVerified, 0);
   assert.equal(ledger.counts.stageDVerified, 0);
-  assert.equal(ledger.counts.staticRichWorkedExamples, 460);
+  assert.equal(ledger.counts.staticRichWorkedExamples, 466);
   const lessonRows = new Map(ledger.lessons.map(row => [row.lessonCode, row]));
   for (const row of parity.lessons) {
     const rich = byCode.get(row.lessonCode);
