@@ -73,7 +73,8 @@
     "tests/academic-us-ccss-g5-u01-cubic-info-gap-v9.test.cjs",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-source-geometry-v10.json",
-    "tests/academic-us-ccss-g5-u01-measured-prisms-v10.test.cjs"
+    "tests/academic-us-ccss-g5-u01-measured-prisms-v10.test.cjs",
+    "tests/academic-us-ccss-g5-u01-equivalent-volume-v10.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -738,18 +739,49 @@
         "commonMistakes"
       ],
       "hasGrade5RichV2Sidecar": true,
-      "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
+      "sourceReview": "V10_PRIMARY_OUR_CS_2021_TEACHER_LESSON_AND_PREPARATION_STUDENT_FACING_READ_ORIGINAL_PDF_CARD_COOLDOWN_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
       "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageC": "SELECTED_PRACTICE_TEACHER_GRADEBOOK_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
       "production": "NOT_CHECKED",
-      "sourceReviewedTask": "Additive and subtractive decompositions of the same composite solid",
+      "sourceReviewedTask": "2021 opening prism Notice & Wonder, Activity1 same L-solid as 95 cubic units by two disjoint parts or bounding-minus-missing; Activity2 measured stepped figure 10×8×3 ft with 6×4×3 ft absent corner, two additive 96+72=120+48=168 ft³, Mai subtraction 240−72=168 ft³; teacher-judged expression-to-diagram mapping and comparison",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+      "sourceReviewClassification": "GRADE5_DEFECT_FIXED",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-10/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Primary/Our-CS:98fe82ca-5db1-4369-9545-f146cc609375 read-only",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_MULTIPLE_DECOMPOSITIONS_EXPRESSION_EQUIVALENCE_AND_GEOMETRY_NUMERIC_WITH_INVALID_SUBMISSION_SUBCHECK",
+      "sourceTaskPdfVerified": false,
+      "sourceProtectedCooldownVerified": false,
+      "sourceFiguresIndependentVerified": false,
+      "v10Evidence": {
+        "classification": "GRADE5_DEFECT_FIXED_PRESERVED_WORKING_95_MODEL",
+        "originalContentRetained": true,
+        "richEditCommit": "2d189e89793b81eaa10971e95a424bcac54a63f8",
+        "testCommit": "120342c592c1760b819e7633805c0b69104077d6",
+        "realNodeMath": {
+          "version": "v22.16.0",
+          "command": "node --test /mnt/data/g5_v10_exact_checkout/tests/academic-us-ccss-g5-u01-equivalent-volume-v10.test.cjs",
+          "scope": "isolated source/oracle runner; not full checked-out repo",
+          "githubBlobSha": "7ecd285bdb8c0db7066610ebf4d9ba87ae36ec01",
+          "localBlobSha": "7ecd285bdb8c0db7066610ebf4d9ba87ae36ec01",
+          "identicalBytes": true,
+          "pass": 4,
+          "fail": 0,
+          "skip": 1,
+          "reasonSkipped": "Rich V2 source is not mounted in the isolated test directory"
+        },
+        "teacherSource": "2021 original teacher HTML + preparation + embedded Student Facing checked read-only on Primary Our-CS; source PDF/cooldown not verified",
+        "selectedPractice": "NOT_RUN",
+        "dotnet": "NOT_RUN",
+        "CI": "NOT_RUN",
+        "ownerUat": "NOT_RUN"
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
@@ -7535,23 +7567,23 @@
       "sourceTaskAssessmentBoundary": "TEACHER_SCORED_AUTHENTIC_GAME_STUDENT_CREATED_TASK_OR_FACILITATION_NUMERIC_SUBCHECK_ONLY"
     }
   ],
-  "lastGradeContentCommit": "1526736736b3f15563ca86b4ecd8ee82f3fa7a06",
+  "lastGradeContentCommit": "2d189e89793b81eaa10971e95a424bcac54a63f8",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "148/148 direct source-grounded Grade5 RichV2 teaching candidates authored across 38 G5 JSON files; 104 prior baseline body editorial repairs. V10 updated U01:L09 against accessible 2021 teacher prep/lesson Student Facing, with voxel-equivalent volumes 78 ft³/259 in³/420 in³ and fail-closed drawing rubric. Real Node v22.16.0 exact GitHub test bytes 5 pass, 2 fixture skips; full source original student PDFs/figures/Cool-down, authenticated effective render, selected Practice, .NET/DB/tenant/CI/owner-UAT and academic acceptance NOT_VERIFIED / 0/148.",
+  "currentScopeDescription": "V10: 148/148 Grade5 direct first-party Rich V2 teaching candidates remain. Exact source read-only audit and measured-composite-prism repairs completed for U01:L09 (78 ft³,259 in³,420 in³) and U01:L10 (retained valid 95-unit example, added168 ft³ measured source task). Two exact GitHub Node test scripts tested in isolated Node v22.16.0: 9 PASS, 0 FAIL, 3 fixture SKIP. Original Student Task PDFs, figures/cards, gated Cool-down, selected Practice, .NET/DB/CI, authenticated student/teacher and owner UAT remain unverified; 0/148 A/B/C/D and accepted.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "8aac86fc36b0168008be6141b061dcb4485e6461",
+  "lastCommittedTest": "120342c592c1760b819e7633805c0b69104077d6",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "8aac86fc36b0168008be6141b061dcb4485e6461",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L10 — Represent Volume with Expressions PLC Activity",
+    "lastKnownCommittedHeadBeforeLedger": "120342c592c1760b819e7633805c0b69104077d6",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L11 — All Kinds of Prisms",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Compare 2021 U01 L10 Student Facing and teacher task with current U01 L10 candidate; fix only grade-owned observed defects, append exact math/geometry guards; preserve approval gates and shared #592 ownership.",
+    "nextAcademic": "Read original 2021 U01 L11 Student Facing/teacher source, compare source geometry and proper units with current Rich V2; edit only if source math/tasks differ, commit grade-owned fixture/test, retain #592 shared ownership and A–D false.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7864,6 +7896,29 @@
     "academicStageC": "NOT_VERIFIED",
     "academicStageD": "NOT_RUN",
     "sharedVersionTransition": "BLOCKED_SHARED_ISSUE_592",
-    "release": "NO_GO"
+    "release": "NO_GO",
+    "reviewedLessons": [
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
+        "classification": "GRADE5_DEFECT_FIXED"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G5:U01:L10",
+        "classification": "GRADE5_DEFECT_FIXED_PRESERVED_WORKING_95_MODEL"
+      }
+    ],
+    "nodeTestsTotal": {
+      "twoExactByteIdenticalGitHubCommittedFiles": true,
+      "pass": 9,
+      "fail": 0,
+      "skip": 3,
+      "source": "actual isolated native Node v22.16.0; 3 skipped because full GitHub fixtures absent, not full checkout"
+    },
+    "latestSourceReview": "PED:US-CCSS-MATH:G5:U01:L10",
+    "lastTestCommit": "120342c592c1760b819e7633805c0b69104077d6",
+    "stageA": "NOT_COMPLETE",
+    "stageB": "NOT_VERIFIED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_RUN"
   }
 }
