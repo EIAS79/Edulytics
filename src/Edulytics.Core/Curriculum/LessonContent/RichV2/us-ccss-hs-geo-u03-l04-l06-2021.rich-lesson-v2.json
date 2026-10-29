@@ -1,0 +1,287 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u03-l04-l06-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
+      "CultureCode": "en",
+      "Title": "Dilating Lines and Angles",
+      "ExplanationParagraphs": [
+        "Learning goal: Explain why positive dilations preserve angle measures and prove that the image of a line not through the centre is parallel to the original, whereas a line through the centre maps onto itself.",
+        "For a dilation with centre O and k>0, P′=O+k(P−O). For any distinct points A,B on line ℓ, B′−A′=k(B−A). Thus the image line has the same direction as ℓ. If O∉ℓ and k≠1, ℓ′ is a distinct parallel line; if k=1 it is literally the same line. If O∈ℓ, every image stays on ℓ, and ℓ maps to itself.",
+        "An angle is formed by two rays. Positive scaling leaves the rays' included angle unchanged because corresponding direction vectors are multiplied by the same positive scalar; the measured angles agree. A line segment can become shorter or longer without changing the direction or angle.",
+        "Verbal diagram: centre O=(0,0), line ℓ has equation y=2. Dilation k=3 maps every (x,2) to (3x,6), yielding line y=6 parallel to ℓ. Line x=0 passes through O and remains x=0.",
+        "Student task: construct images of an angle, an off-centre line and a line through the centre for three scale factors, including k=1; identify special cases. Teacher rubric (0–4): correct point images, direction-vector proof, centre-through-line handling and valid angles. Drawing and written proof are teacher assessed.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks independently authors prose and questions; source figures and restricted assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Angle preservation",
+          "Definition": "A positive dilation preserves the measure of each angle while scaling lengths.",
+          "Rule": "Corresponding ray direction vectors remain positive scalar multiples of their originals.",
+          "Example": "A 60° angle remains 60° under k=2."
+        },
+        {
+          "Title": "Off-centre line image",
+          "Definition": "For k>0, a line not through the dilation centre maps to a parallel line, possibly the same line only for k=1.",
+          "Rule": "Use B′−A′=k(B−A) and check whether centre lies on the line.",
+          "Example": "y=2 under origin-centred k=3 maps to y=6."
+        },
+        {
+          "Title": "Centre-through line",
+          "Definition": "Any infinite line containing dilation centre O is invariant as a set under positive dilation.",
+          "Rule": "Image points stay on that same line through O.",
+          "Example": "Under origin-centred dilation, x=0 stays x=0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove an off-centre line parallel",
+          "Question": "Under k=3 about O=(0,0), find the image of line y=2.",
+          "Method": "Transform general coordinates on the line.",
+          "Steps": [
+            "Every original line point has form (x,2).",
+            "Dilation gives image (3x,6).",
+            "As x runs all real numbers, 3x runs all real numbers, so the image set is exactly y=6.",
+            "Both y=2 and y=6 are horizontal and distinct, hence parallel."
+          ],
+          "Answer": "Image is line y=6, parallel to original y=2.",
+          "Check": "The centre O is not on y=2; factor 3 is not identity."
+        },
+        {
+          "Title": "A line through centre remains unchanged",
+          "Question": "Dilate line x=0 about O=(0,0) by k=1/2. What is its image?",
+          "Method": "Transform all points of the line.",
+          "Steps": [
+            "Any point P=(0,y) lies on x=0.",
+            "The image is P′=(0,y/2), still on x=0.",
+            "Conversely any (0,z) arises from original (0,2z), so the image fills the entire line.",
+            "Thus the line is unchanged as a point set."
+          ],
+          "Answer": "x=0 maps onto itself.",
+          "Check": "Individual off-centre points on it move; the whole infinite line is invariant."
+        },
+        {
+          "Title": "Preserve a right angle",
+          "Question": "Two rays have direction vectors (2,0) and (0,5) at vertex V. Dilate by k=0.4. Do they remain perpendicular?",
+          "Method": "Use dot product of image direction vectors.",
+          "Steps": [
+            "Original dot product (2,0)·(0,5)=0, so angle is 90°.",
+            "Dilated ray vectors become (0.8,0) and (0,2).",
+            "Their dot product is still 0.",
+            "Therefore their included angle remains 90°."
+          ],
+          "Answer": "Yes; a positive dilation preserves the right angle.",
+          "Check": "For k=0 no nondegenerate ray remains; that factor is outside this course's positive dilation definition."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling the off-centre line image always distinct from original for every positive factor.",
+          "WhyWrong": "k=1 is the identity dilation and leaves every line unchanged.",
+          "Correction": "State k≠1 when claiming distinct parallel lines; otherwise parallel direction can coincide."
+        },
+        {
+          "Mistake": "Claiming that a line through the centre has all points fixed.",
+          "WhyWrong": "Only the centre is fixed when k≠1; other points move along the invariant line.",
+          "Correction": "Differentiate invariant sets from individually fixed points."
+        }
+      ],
+      "SummaryPoints": [
+        "Positive dilation preserves angles and scales line direction vectors.",
+        "Off-centre line images are parallel; for k≠1 the lines are distinct.",
+        "Any line through the centre is invariant as a set, though most of its points move."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L05",
+      "CultureCode": "en",
+      "Title": "Splitting Triangle Sides with Dilation, Part 1",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the triangle midsegment theorem and extend it to any pair of proportional positions on sides by recognizing a dilation centred at a shared vertex.",
+        "Given nondegenerate triangle ABC, M midpoint of AB, N midpoint of AC, dilation centred A with factor 1/2 maps B to M and C to N. Image of side BC is MN. Since a dilation takes a line not through its centre to a parallel line and scales lengths by its factor, MN∥BC and MN=(1/2)BC.",
+        "The same reasoning works whenever M∈ray AB and N∈ray AC with AM/AB=AN/AC=k>0: dilation at A maps B→M and C→N, so MN∥BC and MN=k·BC. For points within original segments take 0<k<1; this gives the forward proportional division theorem, not an unsupported reverse implication.",
+        "Verbal diagram: A is apex, B and C base endpoints, M halfway along AB and N halfway along AC. Connect M to N; its line follows the direction of BC but its segment has half the length.",
+        "Student task: construct a midpoint triangle and a separate 2/3 segment triangle, label dilation centres/radii and justify both parallelism and exact length ratio without ruler estimates. Teacher rubric (0–4): correct midpoints/proportional points, explicit centre factor, line-image argument, and original proof quality. Drawn figures and explanations are human scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks independently authors prose and questions; source figures and restricted assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Midsegment theorem",
+          "Definition": "In a triangle, the segment connecting midpoints of two sides is parallel to and half the length of the third side.",
+          "Rule": "Use a 1/2 dilation centred at the vertex where those two sides meet.",
+          "Example": "If BC=12, midsegment MN=6 and MN∥BC."
+        },
+        {
+          "Title": "Proportional side division",
+          "Definition": "If AM/AB=AN/AC=k>0 along the same rays from A, the connecting segment MN is a dilation image of BC.",
+          "Rule": "A shared scale k gives MN∥BC and MN=k·BC.",
+          "Example": "If k=2/3 and BC=15, MN=10."
+        },
+        {
+          "Title": "Forward versus converse",
+          "Definition": "The proved forward statement starts from equal side fractions and concludes parallelism; the reverse needs a separate proof.",
+          "Rule": "Clearly label your assumption as a proportional division, not a consequence assumed in advance.",
+          "Example": "Using MN∥BC as a hypothesis for a proof that it is parallel is circular."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove midpoint parallelism",
+          "Question": "M and N are midpoints of AB and AC in triangle ABC. Prove MN∥BC.",
+          "Method": "Identify the centre-A half-size dilation.",
+          "Steps": [
+            "M midpoint AB gives AM/AB=1/2.",
+            "N midpoint AC gives AN/AC=1/2.",
+            "A dilation with centre A and factor 1/2 maps B→M and C→N.",
+            "It maps line BC, which does not pass through A, to parallel line MN.",
+            "Therefore MN∥BC."
+          ],
+          "Answer": "The midpoint segment MN is parallel to the third side BC.",
+          "Check": "A,B,C must be noncollinear for the off-centre line property."
+        },
+        {
+          "Title": "Prove half-length property",
+          "Question": "BC=14 cm. What is segment MN between midpoints of AB and AC?",
+          "Method": "Use the 1/2 dilation.",
+          "Steps": [
+            "The triangle ABC maps to AMN with factor 1/2.",
+            "Corresponding segment BC maps to MN.",
+            "All nonzero lengths scale by the same factor.",
+            "MN=(1/2)·14=7 cm."
+          ],
+          "Answer": "MN=7 cm.",
+          "Check": "The segment length is halved even if the triangle is obtuse or rotated."
+        },
+        {
+          "Title": "Two-thirds side partition",
+          "Question": "M is 2/3 of the way from A to B and N is 2/3 from A to C. If BC=15, determine MN.",
+          "Method": "Use centre-A dilation factor 2/3.",
+          "Steps": [
+            "Given AM/AB=AN/AC=2/3.",
+            "The single dilation at A maps B→M and C→N.",
+            "Thus MN∥BC and MN=(2/3)BC.",
+            "Compute MN=(2/3)·15=10."
+          ],
+          "Answer": "MN=10, parallel to BC.",
+          "Check": "Using different factors on the two sides would not justify the dilation relation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming any segment between two triangle sides is parallel to the third side.",
+          "WhyWrong": "The two endpoints may divide the sides in different ratios.",
+          "Correction": "Check equal fractions from the common apex before applying the dilation theorem."
+        },
+        {
+          "Mistake": "Treating the reverse parallel-to-proportional statement as already proved.",
+          "WhyWrong": "It is a converse that needs a separate argument in a later lesson.",
+          "Correction": "State explicitly which theorem direction is being used and its given hypothesis."
+        }
+      ],
+      "SummaryPoints": [
+        "Midpoint-to-midpoint segment is parallel to and half as long as the third side.",
+        "The proof is a 1/2 dilation about the common triangle vertex.",
+        "Equal proportional divisions yield a parallel segment, with precise source-independent teacher-reviewed proof."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L06",
+      "CultureCode": "en",
+      "Title": "Connecting Similarity and Transformations",
+      "ExplanationParagraphs": [
+        "Learning goal: Recognize similarity as a composition of positive dilation and rigid transformations, write correctly ordered similarity statements, and verify corresponding proportional side lengths and angle equality.",
+        "Figures are similar if a sequence of rigid motions and one or more positive dilations maps one to the other. A rigid motion is a special similarity of factor 1. Under a scale factor k, each pair of corresponding lengths differs by k, while corresponding angle measures agree. The total positive scale of successive dilations multiplies.",
+        "Verbal diagram: right triangle ABC with A=(0,0),B=(3,0),C=(0,4). Triangle DEF is constructed by dilating ABC by factor 2 about origin then translating by (1,1): D=(1,1), E=(7,1), F=(1,9). Every side ratio image/original is 2, and corresponding right-angle vertices are A↔D.",
+        "Contrast a square and a non-square rectangle: both have four right angles, but they may have inconsistent adjacent side ratios and are not always similar. In general polygons, equal angle data alone do not establish similarity; verify side ratios and actual transformation constraints.",
+        "Student task: group independently labelled triangles by similarity, write ordered similarity notation, find forward and inverse positive scale factors, and critique a pair of right-angled quadrilaterals lacking proportional sides. Teacher rubric (0–4): valid correspondence, consistent scale, meaningful transformation sequence and counterexample. Card-sorting and drawn figures require human assessment.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 3, CC BY 4.0. Edulytiks independently authors prose and questions; source figures and restricted assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Similarity definition",
+          "Definition": "Two figures are similar if a sequence of rigid motions and dilations maps one exactly onto the other.",
+          "Rule": "Track each vertex and total positive scale; congruence is special case k=1.",
+          "Example": "A 3–4–5 triangle is similar to a 6–8–10 triangle with scale factor 2."
+        },
+        {
+          "Title": "Scale ratio and inverse",
+          "Definition": "If figure F is scaled by k>0 to G, the reverse scale is 1/k.",
+          "Rule": "Take image length divided by original length in consistent order.",
+          "Example": "Forward 5/2, reverse 2/5."
+        },
+        {
+          "Title": "Correspondence in similarity",
+          "Definition": "Ordered notation such as ABC∼DEF specifies A↔D, B↔E, C↔F.",
+          "Rule": "Match angles and compare side ratios in that precise order.",
+          "Example": "AB/DE=BC/EF=AC/DF=1/2 for a size-doubled triangle."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Dilate then translate a right triangle",
+          "Question": "ABC has A=(0,0),B=(3,0),C=(0,4). Dilate k=2 about origin and translate (1,1). Find image.",
+          "Method": "Apply the same sequence to every vertex.",
+          "Steps": [
+            "Dilation sends A→(0,0), B→(6,0), C→(0,8).",
+            "Translation by (1,1) sends them to D=(1,1),E=(7,1),F=(1,9).",
+            "Original sides are 3,4,5; image sides are 6,8,10.",
+            "Corresponding angle measures remain equal and the scale factor is 2."
+          ],
+          "Answer": "ABC∼DEF with positive scale factor 2.",
+          "Check": "The ordered mapping A↔D,B↔E,C↔F agrees with all side ratios."
+        },
+        {
+          "Title": "Determine inverse scale",
+          "Question": "Similar triangles have side lengths 4,6,8 and 10,15,20 in corresponding order. What are forward and reverse scales?",
+          "Method": "Divide corresponding lengths in the requested direction.",
+          "Steps": [
+            "Forward scale is 10/4=5/2.",
+            "Check 15/6=5/2 and 20/8=5/2.",
+            "Reverse factor is (4/10)=2/5, the reciprocal.",
+            "Angle equality is required for similarity and follows here from triangle SSS proportionality."
+          ],
+          "Answer": "Forward factor 5/2; reverse factor 2/5.",
+          "Check": "Multiplying forward and reverse factors gives 1."
+        },
+        {
+          "Title": "Different rectangles are not necessarily similar",
+          "Question": "A 2-by-4 rectangle and a 3-by-5 rectangle each have four right angles. Are they similar?",
+          "Method": "Compare independent corresponding side ratios under both possible dimension pairings.",
+          "Steps": [
+            "Matching widths gives 3/2=1.5 while heights give 5/4=1.25.",
+            "Swapping correspondence gives width ratio 5/2=2.5 and height 3/4=0.75.",
+            "Neither mapping has one common scale factor.",
+            "Thus no rigid motion and uniform dilation can map one rectangle onto the other."
+          ],
+          "Answer": "No, equal right angles alone do not make the rectangles similar.",
+          "Check": "For rectangles, the aspect ratio is invariant up to rotation (possibly reciprocal)."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming any two rectangles are similar because their angles are all 90°.",
+          "WhyWrong": "Their aspect ratios may differ.",
+          "Correction": "Verify ratios of adjacent sides after an appropriate correspondence."
+        },
+        {
+          "Mistake": "Reversing a similarity statement without inverting the scale factor.",
+          "WhyWrong": "Image/original ratio depends on direction.",
+          "Correction": "Use k for F→G and 1/k for G→F; keep correspondence order consistent."
+        }
+      ],
+      "SummaryPoints": [
+        "Similarity means some positive dilation plus rigid motions can map one figure onto another.",
+        "All corresponding angles agree and side lengths have one common ratio.",
+        "Angles alone do not prove similarity for arbitrary quadrilaterals; human-reviewed transformation reasoning is required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
