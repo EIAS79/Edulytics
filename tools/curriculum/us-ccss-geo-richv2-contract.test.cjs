@@ -10,7 +10,8 @@ const pack = read('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-mat
 const rich = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l01-l03-2021.rich-lesson-v2.json');
 const richNext = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l04-l06-2021.rich-lesson-v2.json');
 const richThird = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l07-l09-2021.rich-lesson-v2.json');
-const authored = [...rich.Lessons, ...richNext.Lessons, ...richThird.Lessons];
+const richFourth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l10-l12-2021.rich-lesson-v2.json');
+const authored = [...rich.Lessons, ...richNext.Lessons, ...richThird.Lessons, ...richFourth.Lessons];
 const evidence = read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json');
 const prefix = 'PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L';
 
@@ -40,7 +41,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 9);
+  assert.equal(evidence.totals.richCandidateLessons, 12);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -54,12 +55,13 @@ test('Course-wide matrix records unverified runtime and no fabricated approvals'
   }
 });
 
-test('Nine original construction and modelling lessons have coherent authored candidate contracts', () => {
+test('Twelve construction, modelling and rigid-motion lessons have authored candidate contracts', () => {
   assert.equal(rich.PackCode, 'US-CCSS-MATH');
   assert.equal(rich.Lessons.length, 3);
   assert.equal(richNext.Lessons.length, 3);
   assert.equal(richThird.Lessons.length, 3);
-  assert.deepEqual(authored.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03', prefix+'04', prefix+'05', prefix+'06', prefix+'07', prefix+'08', prefix+'09']);
+  assert.equal(richFourth.Lessons.length, 3);
+  assert.deepEqual(authored.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03', prefix+'04', prefix+'05', prefix+'06', prefix+'07', prefix+'08', prefix+'09', prefix+'10', prefix+'11', prefix+'12']);
   for (const lesson of authored) {
     assert.equal(lesson.CultureCode, 'en');
     assert.equal(lesson.WorkedExamples.length, 3);
@@ -152,4 +154,24 @@ test('Original square, dynamic geometry and Voronoi candidates have truthful ass
     const side=Math.sqrt(2)*radius;
     assert.ok(Math.abs(side**2 - 2*radius*radius)<1e-10);
   }
+});
+
+test('Rigid-motion isometries preserve squared distance; reflection reverses orientation and order can matter', () => {
+  const candidate = new Map(richFourth.Lessons.map(x => [x.LessonCode, x]));
+  assert.ok(candidate.get(prefix+'10').WorkedExamples.some(x => x.Answer.includes('(-3,1)')));
+  assert.ok(candidate.get(prefix+'11').WorkedExamples.some(x => x.Answer.includes('(-1,1)')));
+  assert.ok(candidate.get(prefix+'12').WorkedExamples.some(x => x.Answer.includes('non-parallel')));
+  const d2=(a,b)=>(a[0]-b[0])**2+(a[1]-b[1])**2;
+  const shift=(p)=>[p[0]+2,p[1]-1];
+  const reflection=(p)=>[-p[0],p[1]];
+  for(const [p,q] of [[[0,0],[3,4]],[[1,-1],[-2,7]],[[2,3],[2,3]]]) {
+    assert.equal(d2(shift(p),shift(q)),d2(p,q));
+    assert.equal(d2(reflection(p),reflection(q)),d2(p,q));
+  }
+  assert.notDeepEqual(reflection(shift([1,0])),shift(reflection([1,0])));
+  assert.deepEqual(reflection([0,4]),[0,4]); // mirror fixed point
+  // A translation can form only a degenerate quadrilateral when parallel to its segment.
+  const determinant=(v,w)=>v[0]*w[1]-v[1]*w[0];
+  assert.equal(determinant([3,0],[2,0]),0);
+  assert.equal(determinant([3,0],[2,1]),3);
 });
