@@ -40,7 +40,14 @@ for(const c of spec.lessons[1].cases)test('L02 '+c.id,()=>{
  }
  if(c.expectedStatus==='WRONG_BRANCH'){
    assert.equal(c.function,'arctan');
-   assert.ok(Math.PI/2>=Math.PI/2);return;
+   assert.equal(c.candidateAngleExact,'pi/2');
+   const proposed=Math.PI/2;
+   assert.ok(!(proposed>-Math.PI/2 && proposed<Math.PI/2),c.id);
+   for(const input of [-10,-1,0,1,10]){
+     const principal=Math.atan(input);
+     assert.ok(principal>-Math.PI/2 && principal<Math.PI/2,c.id);
+   }
+   return;
  }
  const arg=c.argumentKind==='sin-angle'?Math.sin(Math.PI*c.anglePiNumerator/c.anglePiDenominator):c.argument;
  const fn={arcsin:'asin',arccos:'acos',arctan:'atan'}[c.function];
