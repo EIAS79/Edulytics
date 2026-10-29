@@ -13,9 +13,9 @@
   "rightsRecorded": "CC BY 4.0; individual source illustrations require independent rights audit",
   "materialization": "NOT_VERIFIED",
   "persistedContent": "NOT_CHECKED",
-  "nodeTestCommand": "node --test tools/curriculum/coder-9/UsCcssHsADVTRIGGEO5LESSONS.test.cjs",
-  "nodeTestRun": "NOT_RUN",
-  "dotnetTests": "NOT_RUN",
+  "nodeTestCommand": "node --test tools/curriculum/coder-9/UsCcssHsADVTRIGGEO5LESSONS.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOPracticeFixtures.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
+  "nodeTestRun": "PASS_20_OF_20_EXIT_0_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
+  "dotnetTests": "PASS_17_OF_17_AT_a0742cd2b7287e419855420ff4c4f5219f45b0fb; LATEST_SOURCE_GROUNDED_HEAD_RETEST_IN_PROGRESS",
   "authenticatedTenantTests": "NOT_RUN",
   "renderDeployment": "NOT_VERIFIED",
   "ownerUat": "NOT_VERIFIED",
@@ -23,7 +23,7 @@
   "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
   "practiceMapping": "No course-exact row in shared lesson-skill-mappings.v1.json at baseline",
   "adoptionIssue": "https://github.com/EIAS79/Edulytics/issues/453",
-  "sourceComparison": "PARTIAL; recorded source/page locators and public indexed source snippets compared, complete source-task and effective-rendered-body parity not independently verified",
+  "sourceComparison": "LOCKED_PDF_SHA_VERIFIED_AND_RELEVANT_STUDENT_TEACHER_TEXT_REVIEWED_ALL_FIVE; FIGURE_LAYOUT_SOURCE_EQUIVALENCE_AND_INDEPENDENT_ACADEMIC_SIGNOFF_PENDING",
   "shaPolicy": "sourceSha256 and canonicalBodySha256 fields retained as baseline provenance; owner must verify whether edited body requires a distinct content version and protected predecessor/materialization",
   "knownRisks": [
     "L03 publisher task solves equations with identities but direct real-world modeling equivalence is not independently established",
@@ -51,9 +51,19 @@
       "practiceFamilies": [],
       "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
       "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
-      "repoNodeTest": "NOT_RUN",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
       "authenticatedPractice": "NOT_RUN",
-      "academicApproval": "NOT_VERIFIED"
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        50,
+        53
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Right triangle cofunction identity and unit circle transformations added at f4c44db"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
@@ -73,9 +83,19 @@
       "practiceFamilies": [],
       "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
       "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
-      "repoNodeTest": "NOT_RUN",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
       "authenticatedPractice": "NOT_RUN",
-      "academicApproval": "NOT_VERIFIED"
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        54,
+        59
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Two-clue inverse trig source context and contradictory-location rejection added at f4c44db"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
@@ -95,9 +115,19 @@
       "practiceFamilies": [],
       "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
       "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
-      "repoNodeTest": "NOT_RUN",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
       "authenticatedPractice": "NOT_RUN",
-      "academicApproval": "NOT_VERIFIED"
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        59,
+        62
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Compressed-period four-root trig case and three-strategy comparison added at f4c44db"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
@@ -117,9 +147,19 @@
       "practiceFamilies": [],
       "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
       "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
-      "repoNodeTest": "NOT_RUN",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
       "authenticatedPractice": "NOT_RUN",
-      "academicApproval": "NOT_VERIFIED"
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        105,
+        111
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Same-area sheared cylinders and equal-area triangles added at f4c44db; sphere proof retained"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
@@ -139,9 +179,19 @@
       "practiceFamilies": [],
       "practiceStatus": "BLOCKED_BY_SHARED_CONTRACT_AND_ADOPTION",
       "testsInMemory": "MATH_ORACLE_AND_STATIC_STRUCTURE_CHECKED",
-      "repoNodeTest": "NOT_RUN",
+      "repoNodeTest": "PASS_20_20_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
       "authenticatedPractice": "NOT_RUN",
-      "academicApproval": "NOT_VERIFIED"
+      "academicApproval": "NOT_VERIFIED",
+      "directSourcePdfPages": [
+        81,
+        88
+      ],
+      "sourceBinaryShaMatch": true,
+      "originalSourceTeacherStudentTextRead": true,
+      "sourceTaskStatus": "SOURCE_TASK_MATHEMATICS_REPAIRED_EDULYTIKS_ORIGINAL; INDEPENDENT_EQUIVALENCE_REVIEW_PENDING",
+      "mathTestResult": "PASS_NODE_SOURCE_BASED_AND_SYMBOLIC_ORACLE",
+      "generatorStatus": "PROPOSED_FIXTURE_NOT_REGISTERED",
+      "sourceSpecificRepair": "Fixed/foci separation, vertical and translated ellipse examples added at 49691781"
     }
   ],
   "nextRequiredOwnerActions": [
@@ -149,5 +199,12 @@
     "Global integration owner: issue #453 HS course/pathway selection, exact five-lesson skill contracts and generator/normalizer/verifier, safe content version and seed predecessor, all shared regressions.",
     "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
     "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
-  ]
+  ],
+  "updatedAtUtc": "2026-10-29",
+  "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
+  "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
+  "technicalEvidence": "20 course Node tests passed plus 17 focused .NET at earlier revision, not CI acceptance",
+  "predecessorTransitionPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-content-predecessor-transition.json",
+  "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-source-target-practice-review.md",
+  "proposedPracticeFixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json"
 }
