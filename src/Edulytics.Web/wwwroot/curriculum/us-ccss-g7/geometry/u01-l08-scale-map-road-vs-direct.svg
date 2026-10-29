@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705 302" role="img" aria-labelledby="g7u01l08-title g7u01l08-desc">
+<title id="g7u01l08-title">Map road length versus direct distance at scale</title>
+<desc id="g7u01l08-desc">An independently designed route on a map whose scale factor is 1 drawing centimeter to 4 actual kilometers. Its road consists of three connected 2 centimeter segments, for 6 centimeters and 24 kilometers in all. A straight segment from start A to finish D is exactly 5 drawing centimeters and represents 20 kilometers. The first two road sections run horizontally; the last turns up and right to D. A ruler and route labels are necessary to distinguish traveled road distance from straight-line separation.</desc>
+<style>.heading{font:700 18px system-ui,sans-serif;fill:#152b3d}.text{font:15px system-ui,sans-serif;fill:#152b3d}.road{fill:none;stroke:#164365;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.direct{stroke:#a12e16;stroke-width:3;stroke-dasharray:8 6}.point{fill:#152b3d}.panel{fill:#fff;stroke:#536c7a;stroke-width:1.4}</style>
+<rect width="705" height="302" fill="#fff"/>
+<text class="heading" x="19" y="29">Scale map: route length is not direct distance</text>
+<rect class="panel" x="18" y="43" width="385" height="224" rx="9"/>
+<polyline class="road" points="75,210 123,210 171,210 186,164.404"/>
+<line class="direct" x1="75" y1="210" x2="186" y2="164.404"/>
+<circle class="point" cx="75" cy="210" r="4"/><circle class="point" cx="123" cy="210" r="4"/><circle class="point" cx="171" cy="210" r="4"/><circle class="point" cx="186" cy="164.404" r="4"/>
+<text class="text" x="59" y="230">A</text><text class="text" x="118" y="230">B</text><text class="text" x="169" y="230">C</text><text class="text" x="193" y="162">D</text>
+<text class="text" x="82" y="197">2 cm</text><text class="text" x="129" y="197">2 cm</text><text class="text" x="188" y="202">2 cm</text>
+<text class="text" x="82" y="139">Straight A–D: 5 cm</text>
+<rect class="panel" x="416" y="43" width="270" height="224" rx="9"/>
+<text class="heading" x="434" y="79">1 cm : 4 km</text>
+<text class="text" x="434" y="121">Road: 2+2+2 = 6 cm</text>
+<text class="text" x="434" y="152">Road: 6 × 4 = 24 km</text>
+<text class="text" x="434" y="190">Direct: 5 × 4 = 20 km</text>
+<text class="text" x="434" y="230">Route exceeds direct by 4 km</text>
+<text class="text" x="19" y="291">Original schematic; measure segments, label units and explain road-versus-direct.</text>
+</svg>
