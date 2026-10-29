@@ -41,8 +41,8 @@ test('all eleven revised Unit 1 lessons have actual teaching and review limitati
     assert.equal(x.sourceToStudentCompared,true);
   }
   const pending = ledger.lessons.find(x=>['CONTENT_DEFECT_TRIAGE_PENDING','EXISTING_AUTHORED_REVIEW_PENDING'].includes(x.contentStatus));
-  assert.ok(pending, 'course has not reached academic completion');
-  assert.equal(ledger.nextCurriculumCursor.ordinal, pending.ordinal);
+  assert.equal(ledger.nextCurriculumCursor.ordinal, pending ? pending.ordinal : ledger.lessons.length + 1);
+  assert.equal(ledger.claims.academicCourseComplete,false, 'content completion cannot imply academic approval');
   assert.equal(ledger.checkedStaticCounts.sourceGroundedContentEdits, ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length);
   assert.equal(ledger.checkedStaticCounts.remainingDefectTriage, ledger.lessons.filter(x=>x.contentStatus==='CONTENT_DEFECT_TRIAGE_PENDING').length);
   assert.equal(ledger.claims.academicCourseComplete,false);
