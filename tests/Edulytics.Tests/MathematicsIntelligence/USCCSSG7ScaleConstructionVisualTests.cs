@@ -277,8 +277,8 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
         var courtPoints = ReadPolygon(courtShape);
         Assert.Equal(280, courtPoints.Max(p => p.X) - courtPoints.Min(p => p.X), 8);
         Assert.Equal(140, courtPoints.Max(p => p.Y) - courtPoints.Min(p => p.Y), 8);
-        var bench = Assert.Single(court.Descendants(ns + "line")
-            .Where(e => (string?)e.Attribute("class") == "bench"));
+        var bench = Assert.Single(court.Descendants(ns + "line"),
+            e => (string?)e.Attribute("class") == "bench");
         Assert.Equal(90, Attr(bench, "x2") - Attr(bench, "x1"), 8);
 
         var map = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
@@ -298,12 +298,12 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
 
         var floor = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
             "u01-l09-studio-floor-plan-with-door.svg"));
-        var floorRegion = Assert.Single(floor.Descendants(ns + "rect")
-            .Where(e => (string?)e.Attribute("class") == "floor"));
+        var floorRegion = Assert.Single(floor.Descendants(ns + "rect"),
+            e => (string?)e.Attribute("class") == "floor");
         Assert.Equal(210, Attr(floorRegion, "width"), 8);
         Assert.Equal(150, Attr(floorRegion, "height"), 8);
-        var wall = Assert.Single(floor.Descendants(ns + "path")
-            .Where(e => (string?)e.Attribute("class") == "wall"));
+        var wall = Assert.Single(floor.Descendants(ns + "path"),
+            e => (string?)e.Attribute("class") == "wall");
         var wallSegments = (string)wall.Attribute("d")!;
         Assert.Contains("H194 M149 245H105", wallSegments, StringComparison.Ordinal);
         Assert.Equal(45, 194 - 149); // Door gap at 30px per 1 cm = 1.5 cm.
@@ -328,10 +328,10 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
 
         var conversion = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
             "u01-l11-unitless-scale-conversion.svg"));
-        var key = Assert.Single(conversion.Descendants(ns + "line")
-            .Where(e => (string?)e.Attribute("class") == "scale"));
-        var wall = Assert.Single(conversion.Descendants(ns + "line")
-            .Where(e => (string?)e.Attribute("class") == "wall"));
+        var key = Assert.Single(conversion.Descendants(ns + "line"),
+            e => (string?)e.Attribute("class") == "scale");
+        var wall = Assert.Single(conversion.Descendants(ns + "line"),
+            e => (string?)e.Attribute("class") == "wall");
         Assert.Equal(120, Attr(key, "x2") - Attr(key, "x1"), 8);
         Assert.Equal(48, Attr(wall, "x2") - Attr(wall, "x1"), 8);
         Assert.Equal(.4, 48d / 120d, 8); // 6 ft = 72 in; 72 / 180 = .4 in.
@@ -347,15 +347,15 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
 
         var classroom = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
             "u01-l13-classroom-floor-plan-peer-review.svg"));
-        var room = Assert.Single(classroom.Descendants(ns + "rect")
-            .Where(e => (string?)e.Attribute("class") == "room"));
+        var room = Assert.Single(classroom.Descendants(ns + "rect"),
+            e => (string?)e.Attribute("class") == "room");
         Assert.Equal(176, Attr(room, "width"), 8);
         Assert.Equal(132, Attr(room, "height"), 8);
-        var board = Assert.Single(classroom.Descendants(ns + "line")
-            .Where(e => (string?)e.Attribute("class") == "board"));
+        var board = Assert.Single(classroom.Descendants(ns + "line"),
+            e => (string?)e.Attribute("class") == "board");
         Assert.Equal(66, Attr(board, "x2") - Attr(board, "x1"), 8); // 3 cm.
-        var openWalls = Assert.Single(classroom.Descendants(ns + "path")
-            .Where(e => (string?)e.Attribute("class") == "wall"));
+        var openWalls = Assert.Single(classroom.Descendants(ns + "path"),
+            e => (string?)e.Attribute("class") == "wall");
         Assert.Contains("H174 M152 225H91", (string)openWalls.Attribute("d")!,
             StringComparison.Ordinal);
         Assert.Equal(22, 174 - 152); // One drawing centimeter opening.
