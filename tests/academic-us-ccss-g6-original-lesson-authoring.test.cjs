@@ -448,7 +448,7 @@ test('Unit 1 lessons 04-10 preserve direct public student activity purpose and o
     assert.ok(body.workedExamples.length >= 400, e.lessonCode);
   });
   const en = n => byCode.get(lcode(1,n)).translations[0];
-  assert.match(en(4).keyConceptsAndRules, /two parallel side pairs/);
+  assert.match(en(4).keyConceptsAndRules, /both pairs of parallel sides|two pairs of parallel opposite sides/);
   assert.match(en(5).workedExamples, /area is 60/);
   assert.match(en(6).explanation, /noncongruent parallelograms/);
   assert.match(en(7).keyConceptsAndRules, /not every triangle pair makes a rectangle/);
