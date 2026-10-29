@@ -686,3 +686,63 @@ test('Unit 7 all nineteen student source-targeted rational and coordinate lesson
   assert.equal(90 / 15, 6);
   assert.equal(100 / 12 | 0, 8);
 });
+
+
+test('Unit 8 eighteen data-distribution first-party source extensions preserve honest graph and grading limits', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u08-18-public-student-source-task-repair-matrix.json'), 'utf8'));
+  assert.equal(evidence.lessons.length, 18);
+  assert.equal(evidence.summary.comparedStudentSourceBodies, 18);
+  assert.equal(evidence.summary.fullAcademicSourceActivityParityAccepted, 0);
+  assert.deepEqual(evidence.lessons.map(x => x.lessonCode), Array.from({length:18}, (_, i) => lcode(8, i+1)));
+  for (const l of evidence.lessons) {
+    assert.ok(l.sourceActivityHeadings.length >= 2, l.lessonCode);
+    assert.equal(l.allFiguresAndAppletsRecreated, false);
+    assert.equal(l.authenticatedRenderedGraphVerified, false);
+    assert.equal(l.selectedPracticeVerifiersAndFeedbackVerified, false);
+    assert.equal(l.academicAcceptance, 'NOT_ACCEPTED');
+    assert.match(byCode.get(l.lessonCode).translations[0].workedExamples, /Example 3\b/, l.lessonCode);
+  }
+  const e = n => byCode.get(lcode(8,n)).translations[0].workedExamples;
+  assert.match(e(3), /dot plot/i);
+  assert.match(e(7), /\[40,60\)/);
+  assert.match(e(9), /31÷5=6\.2/);
+  assert.match(e(11), /MAD=/);
+  assert.match(e(15), /Q1=/);
+  assert.match(e(16), /Q3=/);
+  assert.match(e(18), /MAD 2/);
+  assert.equal((4+5+6+7+9)/5, 6.2);
+  assert.equal((3+1+1+3)/4, 2);
+  assert.equal((6+6+8+8)/4, 7);
+  assert.equal((Math.abs(6-7)+Math.abs(6-7)+Math.abs(8-7)+Math.abs(8-7))/4, 1);
+  assert.equal(21-1, 20);
+});
+
+test('Unit 9 final four source tasks distinguish numerical vote checks from human modeling assessments', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u09-l03-l06-public-source-task-repair-matrix.json'), 'utf8'));
+  assert.equal(evidence.lessons.length, 4);
+  assert.equal(evidence.summary.studentBodiesCompared, 4);
+  assert.equal(evidence.summary.fullOriginalTeacherStudentActivityParityAccepted, 0);
+  assert.deepEqual(evidence.lessons.map(x => x.lessonCode), [3,4,5,6].map(n => lcode(9,n)));
+  for (const l of evidence.lessons) {
+    assert.ok(l.sourceActivityHeadings.length >= 3);
+    assert.equal(l.originalDistrictMapsAndVoteSlipsRecreated, false);
+    assert.equal(l.authenticatedExactPracticeVerified, false);
+    assert.equal(l.teacherRubricPersistedAndGraded, false);
+    assert.equal(l.academicAcceptance, 'NOT_ACCEPTED');
+    assert.match(byCode.get(l.lessonCode).translations[0].workedExamples, /Example 3\b/);
+  }
+  const e = n => byCode.get(lcode(9,n)).translations[0].workedExamples;
+  assert.match(e(3), /28-by-12/);
+  assert.match(e(4), /153\/240=63\.75%/);
+  assert.match(e(5), /7 to 5/);
+  assert.match(e(6), /12 laptops/);
+  assert.equal(2*12*12+3*4*4, 336); // successive 28-by-12 area (288+48)
+  assert.equal(153/240*100, 63.75);
+  assert.equal(240*2/3, 160);
+  assert.equal(240*0.55, 132);
+  assert.equal(5+4+3, 12);
+  assert.equal(22+88, 110);
+  assert.ok(Math.abs(0.25*0.20*0.80-0.04)<1e-10);
+});
