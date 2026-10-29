@@ -1362,6 +1362,68 @@ public static class LessonPracticeContractRegistry
             "READY_VERIFIED",
             Version);
 
+        // Supervisor 3 shared HS integration: keep ALL seven courses' exact Practice
+        // gated until full 54-case fixture parity, tenant-authenticated persistence,
+        // content lineage and independently reviewed academic transitions pass.
+        // The limited initial closed-question implementations must not leak through
+        // the generic official-outcome projection while release remains NO-GO.
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+            "supporting.matrices.core",
+            "HS_MATRIX_SYSTEMS_EXACT",
+            ["usccss.hs.matrix.coefficients_2x2", "usccss.hs.matrix.solve_2x2", "usccss.hs.matrix.inverse_2x2", "usccss.hs.matrix.classify_2x2"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+            "supporting.exponentials_logs",
+            "HS_LOG_INVERSE_AND_COMPARISON",
+            ["usccss.hs.log.inverse_power", "usccss.hs.log.compare_order"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+            "supporting.trigonometry.core",
+            "HS_UNIT_CIRCLE_REFLECTION",
+            ["trig.unit_circle_reflection_exact"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+            "supporting.trigonometry.core",
+            "HS_PRINCIPAL_INVERSE",
+            ["trig.principal_inverse"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+            "trigonometry.modelling",
+            "HS_TRIG_MODEL_SOLUTIONS",
+            ["trig.model_all_time_solutions"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+            "supporting.geometry.solid",
+            "HS_CAVALIERI_SPHERE",
+            ["solid_geometry.cavalieri_sphere_volume"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+            "geometry.coordinate.straight_line",
+            "HS_FOCAL_CONICS",
+            ["coordinates.focal_distance_conics"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
             .ToArray();
