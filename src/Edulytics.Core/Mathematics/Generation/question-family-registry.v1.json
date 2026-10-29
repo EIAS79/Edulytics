@@ -19982,6 +19982,78 @@
       "status": "IntegrationPending",
       "productionRouting": false,
       "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.matrix.coefficients_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_3_by_3_matrix_and_rhs",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.matrix.solve_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_rational_triple",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.matrix.inverse_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_3_by_3_matrix",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.matrix.row_reduce_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_rational_triple",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
