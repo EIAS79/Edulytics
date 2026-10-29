@@ -745,7 +745,7 @@ test('Unit 9 final four source tasks distinguish numerical vote checks from huma
   assert.match(e(5), /7 to 5/);
   assert.match(e(6), /12 laptops/);
   assert.equal(2*12*12+3*4*4, 336); // successive 28-by-12 area (288+48)
-  assert.equal(153/240*100, 63.75);
+  assert.ok(Math.abs(153/240*100 - 63.75) < 1e-10);
   assert.equal(240*2/3, 160);
   assert.equal(240*0.55, 132);
   assert.equal(5+4+3, 12);
