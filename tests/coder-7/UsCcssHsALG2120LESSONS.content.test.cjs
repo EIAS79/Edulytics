@@ -28,7 +28,7 @@ test('120 lesson identities, provenance and unit counts', () => {
   assert.deepEqual(counts, [11,26,19,18,11,19,16]);
 });
 test('all eleven revised Unit 1 lessons have actual teaching and review limitations',()=>{
-  const rows = ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION');
+  const rows = ledger.lessons.filter(x=>x.unitCode==='U01' && x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION');
   assert.equal(rows.length, 11);
   for(const x of rows){
     const body = content.lessons[x.ordinal-1].translations[0];
@@ -40,7 +40,11 @@ test('all eleven revised Unit 1 lessons have actual teaching and review limitati
     assert.equal(x.runtimeMaterializationStatus,'NOT_VERIFIED');
     assert.equal(x.sourceToStudentCompared,true);
   }
-  assert.equal(ledger.nextCurriculumCursor.ordinal,12);
+  const pending = ledger.lessons.find(x=>['CONTENT_DEFECT_TRIAGE_PENDING','EXISTING_AUTHORED_REVIEW_PENDING'].includes(x.contentStatus));
+  assert.ok(pending, 'course has not reached academic completion');
+  assert.equal(ledger.nextCurriculumCursor.ordinal, pending.ordinal);
+  assert.equal(ledger.checkedStaticCounts.sourceGroundedContentEdits, ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length);
+  assert.equal(ledger.checkedStaticCounts.remainingDefectTriage, ledger.lessons.filter(x=>x.contentStatus==='CONTENT_DEFECT_TRIAGE_PENDING').length);
   assert.equal(ledger.claims.academicCourseComplete,false);
 });
 test('independent mathematical oracles for Unit 1 examples',()=>{
