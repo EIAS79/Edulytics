@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "G7_145_RICH_CANDIDATES_16_ORIGINAL_SVGS_17_DRAFT_RUBRICS_V9_RELEASE_BLOCKED",
+  "status": "G7_145_RICH_CANDIDATES_17_ORIGINAL_SVGS_18_DRAFT_RUBRICS_V10_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -66,8 +66,8 @@
     "richVisualModels": 151,
     "sourceStudentPagesInspected": 145,
     "sourceStudentPagesNotIndividuallyInspected": 0,
-    "gradeOwnedSvgFigureCandidates": 16,
-    "gradeOwnedTeacherRubricDrafts": 17
+    "gradeOwnedSvgFigureCandidates": 17,
+    "gradeOwnedTeacherRubricDrafts": 18
   },
   "lessons": [
     {
@@ -7870,7 +7870,12 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/7/3/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "v10GradeOwnedOriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l03-nonadjacent-vertical-and-complementary-angles.svg",
+      "v10SourceSpecificTeacherRubricDraft": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v10-u07-l03-source-geometry-rubric.json",
+      "v10GradeOwnedStaticMathTest": "tests/academic-us-ccss-g7-v10-u07-l03-nonadjacent-angles.test.cjs",
+      "v10SharedRendererIntegration": "SUPERVISOR1_PENDING_ISSUE_592",
+      "v10AcademicDisposition": "CANDIDATE_ONLY_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L04",
@@ -11909,5 +11914,32 @@
     },
     "release": "RELEASE_BLOCKED",
     "nextAction": "Execute new native Grade7 fixture test in isolated approved runner or G7-only CI, review exact-head Actions, Supervisor1 integrates guarded new partial after PR599; next grade-only source figure U07:L03 or U02 geometric comparison, original teacher rubric and honest per-lesson A/B/C/D."
+  },
+  "v10": {
+    "lessonCode": "PED:US-CCSS-MATH:G7:U07:L03",
+    "scope": "Source-specific Grade 7 original angle geometry, rubric draft and independent Node fixture only",
+    "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/7/3/index.html",
+    "sourcePreparationUrl": "https://im.kendallhunt.com/MS/teachers/2/7/3/preparation.html",
+    "newAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l03-nonadjacent-vertical-and-complementary-angles.svg",
+    "newEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v10-u07-l03-source-geometry-rubric.json",
+    "newTest": "tests/academic-us-ccss-g7-v10-u07-l03-nonadjacent-angles.test.cjs",
+    "originalSvgCandidates": 17,
+    "teacherRubricDrafts": 18,
+    "richCandidates": 145,
+    "workedExamples": 584,
+    "isolatedMathOracle": "PASS",
+    "nodeTestExecution": "NOT_RUN",
+    "dotnetTestExecution": "NOT_RUN",
+    "sharedIntegration": "SUPERVISOR1_ISSUE_592_PENDING",
+    "authenticatedStudentRender": "NOT_RUN",
+    "teacherScoring": "NOT_RUN",
+    "selectedPractice": "NOT_EXECUTED",
+    "twoSchoolIsolation": "NOT_RUN",
+    "academicA": 0,
+    "academicB": 0,
+    "academicC": 0,
+    "academicD": 0,
+    "ownerUAT": "NOT_RUN",
+    "release": "RELEASE_BLOCKED"
   }
 }

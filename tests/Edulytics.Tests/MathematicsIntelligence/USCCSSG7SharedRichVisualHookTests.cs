@@ -79,6 +79,7 @@ public sealed class USCCSSG7SharedRichVisualHookTests
     [InlineData("PED:US-CCSS-MATH:G7:U02:L01", "u02-l01-scaled-crescents.svg")]
     [InlineData("PED:US-CCSS-MATH:G7:U07:L01", "u07-l01-hexagon-angles-and-protractor.svg")]
     [InlineData("PED:US-CCSS-MATH:G7:U07:L02", "u07-l02-adjacent-right-and-straight-angles.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U07:L03", "u07-l03-nonadjacent-vertical-and-complementary-angles.svg")]
     public void NewGrade7UnitTwoAndSevenFigures_UseExactLessonGatesAndSafeLocalAssets(
         string lessonCode, string assetName)
     {

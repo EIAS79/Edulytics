@@ -11,6 +11,8 @@
             "/curriculum/us-ccss-g7/geometry/u07-l01-hexagon-angles-and-protractor.svg",
         "PED:US-CCSS-MATH:G7:U07:L02" =>
             "/curriculum/us-ccss-g7/geometry/u07-l02-adjacent-right-and-straight-angles.svg",
+        "PED:US-CCSS-MATH:G7:U07:L03" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l03-nonadjacent-vertical-and-complementary-angles.svg",
         _ => null
     };
     var description = Model.LessonCode switch
@@ -21,6 +23,8 @@
             "Three regular hexagon corners of 120 degrees each meet at one vertex to make 360 degrees. The right-hand protractor example measures 40 degrees counterclockwise from its zero ray, not 140 degrees.",
         "PED:US-CCSS-MATH:G7:U07:L02" =>
             "Two distinct angle constructions: 35 plus 55 degrees makes a 90-degree right angle; 125 plus 55 degrees makes a 180-degree straight angle. The parts are adjacent and have no overlapping interiors.",
+        "PED:US-CCSS-MATH:G7:U07:L03" =>
+            "Two intersecting straight lines form equal vertical-angle pairs of 55 and 55 degrees and 125 and 125 degrees, with adjacent angles summing to 180 degrees. At separate vertices, a 28-degree angle and a 62-degree angle sum to 90 degrees without being adjacent.",
         _ => ""
     };
     var learnerTask = Model.LessonCode switch
@@ -31,6 +35,8 @@
             "Assemble three hexagon corners, justify a full turn, and independently draw a right-starting 40-degree angle using the correct protractor scale. Explain why the 140-degree reading is a different angle.",
         "PED:US-CCSS-MATH:G7:U07:L02" =>
             "Cut or draw two original rectangular angle constructions, label adjacent parts of 90-degree and 180-degree angles, and explain why their measures add. Check both with a real protractor.",
+        "PED:US-CCSS-MATH:G7:U07:L03" =>
+            "Using a straightedge and protractor, draw two intersecting lines and measure all four angles. Mark both equal vertical pairs, explain why adjacent angles sum to 180 degrees, compare the measurements with a partner, and independently construct separate 28-degree and 62-degree angles to demonstrate nonadjacent complementary angles.",
         _ => ""
     };
 }
