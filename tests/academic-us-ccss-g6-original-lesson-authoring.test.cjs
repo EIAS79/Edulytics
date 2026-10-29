@@ -616,3 +616,37 @@ test('Unit 5 decimal source examples remain place-value accurate and physically 
   assert.ok(Math.abs(77.4/5-15.48)<1e-10);
   assert.ok(Math.abs(4.86/(0.945/3.5)-18)<1e-10);
 });
+
+
+test('Unit 6 complete nineteen original-source activity enhancements remain student-specific and unaccepted', () => {
+  const matrices = [
+    'g6-u06-l01-l10-student-source-opening-repair-matrix.json',
+    'g6-u06-l11-l19-student-source-opening-repair-matrix.json'
+  ].map(f => JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6', f), 'utf8')));
+  assert.equal(matrices[0].lessons.length, 10);
+  assert.equal(matrices[1].lessons.length, 9);
+  const rows = matrices.flatMap(m => m.lessons);
+  assert.deepEqual(rows.map(r => r.lessonCode),
+    Array.from({length:19}, (_, i) => lcode(6, i + 1)));
+  for (const row of rows) {
+    const en = byCode.get(row.lessonCode).translations.find(x => x.cultureCode === 'en');
+    assert.ok(row.originalStudentActivityHeadings?.length >= 2 ||
+              row.sourceStudentOpeningsAndSelectedTaskTextsCompared === true, row.lessonCode);
+    assert.match(en.workedExamples, /Example 3\b/, row.lessonCode);
+    assert.equal(row.academicAcceptance, 'NOT_ACCEPTED');
+    assert.ok(row.actualGrade6StudentRenderVerified === false || row.actualSelectedPracticeContract === 'NOT_RUN');
+  }
+  assert.match(byCode.get(lcode(6, 2)).translations[0].workedExamples, /66 ordered assignments/);
+  assert.match(byCode.get(lcode(6,12)).translations[0].workedExamples, /1,048,576/);
+  assert.match(byCode.get(lcode(6,13)).translations[0].workedExamples, /3\^1000 ends in 1/);
+  assert.match(byCode.get(lcode(6,16)).translations[0].workedExamples, /r=\(2\/5\)t/);
+  assert.match(byCode.get(lcode(6,18)).translations[0].workedExamples, /mosquito/i);
+  assert.equal(11 * 12 / 2, 66);
+  assert.equal(2 ** 20, 1048576);
+  assert.equal((3 ** 4) % 10, 1);
+  assert.equal(36 / 9, 4);
+  assert.equal(225 / 7.5, 30);
+  assert.equal(13 / 4 / (13 / 5), 1.25);
+  assert.equal(13 / 4 / (5 / 2), 1.3);
+});
