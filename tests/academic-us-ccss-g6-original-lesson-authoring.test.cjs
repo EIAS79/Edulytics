@@ -426,3 +426,41 @@ test('U01 L02 exposes an exact geometric visual description to the existing pres
   assert.ok(entry.practiceBoundary.teacherOnly.length >= 2);
   assert.ok(entry.practiceBoundary.forbiddenSubstitutes.length >= 2);
 });
+
+
+test('Unit 1 lessons 04-10 preserve direct public student activity purpose and open drawing rubric boundaries', () => {
+  const source = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-l10-public-student-activity-comparisons.json'), 'utf8'));
+  assert.equal(source.status, 'SEVEN_PUBLIC_STUDENT_ACTIVITY_BODY_COMPARISONS__NOT_FULL_STAGE_A');
+  assert.equal(source.summary.publicStudentBodiesCompared, 7);
+  assert.equal(source.summary.academicAcceptance, 0);
+  assert.deepEqual(source.entries.map(e => e.lessonCode), Array.from({ length: 7 }, (_, i) => lcode(1,i+4)));
+  source.entries.forEach((e, index) => {
+    const lesson = byCode.get(e.lessonCode);
+    const body = lesson.translations.find(x => x.cultureCode === 'en');
+    assert.equal(e.publicStudentActivityBodyCompared, true, e.lessonCode);
+    assert.equal(e.teacherGuideBodyCompletelyReviewed, false, e.lessonCode);
+    assert.equal(e.sourceAppletFunctionReplayed, false, e.lessonCode);
+    assert.equal(e.exactPracticeSelected, false, e.lessonCode);
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED', e.lessonCode);
+    assert.ok(e.studentOriginalActivityPurposes.length >= 3, e.lessonCode);
+    assert.ok(e.remainingActivityAndAssessmentChecks.length >= 2, e.lessonCode);
+    assert.ok(body.workedExamples.length >= 400, e.lessonCode);
+  });
+  const en = n => byCode.get(lcode(1,n)).translations[0];
+  assert.match(en(4).keyConceptsAndRules, /two parallel side pairs/);
+  assert.match(en(5).workedExamples, /area is 60/);
+  assert.match(en(6).explanation, /noncongruent parallelograms/);
+  assert.match(en(7).keyConceptsAndRules, /not every triangle pair makes a rectangle/);
+  assert.match(en(8).explanation, /SAME area as the original triangle|two entire matching copies/i);
+  assert.match(en(9).keyConceptsAndRules, /need not itself pass through the opposite vertex/);
+  assert.match(en(10).workedExamples, /index card/);
+  const ledger = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-147-academic-authoring-ledger.json'), 'utf8'));
+  assert.equal(ledger.summary.directPublicStudentActivityBodiesCompared, 15);
+  assert.equal(ledger.summary.directPublicStudentTeacherSourceTaskTextCompared, 8);
+  assert.equal(ledger.summary.fullStageAReviews, 0);
+  assert.equal(ledger.summary.stageDVerified, 0);
+  assert.equal(ledger.summary.academicallyAccepted, 0);
+  assert.equal(ledger.summary.releaseReady, false);
+});
