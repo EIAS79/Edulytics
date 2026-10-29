@@ -503,3 +503,38 @@ test('Original Unit 2 ratios source opening screening and eleven activity-specif
   assert.equal(85 / (2+15), 5);
   assert.equal(2*5+15*5, 85);
 });
+
+
+test('Unit 3 rate, percent above 100 and painting estimates retain sourced task limits', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-17-public-source-opening-and-repair-matrix.json'), 'utf8'));
+  assert.equal(evidence.status, 'PUBLIC_STUDENT_OPENING_TASK_SCREEN_ONLY__NOT_STAGE_A_COMPLETION');
+  assert.equal(evidence.lessons.length, 17);
+  assert.equal(evidence.summary.targetedCandidateTeachingCorrections, 10);
+  assert.equal(evidence.summary.academicAcceptance, 0);
+  const target = new Set([2,3,4,5,8,11,12,14,15,17]);
+  evidence.lessons.forEach((e, i) => {
+    assert.equal(e.lessonCode, lcode(3, i+1));
+    assert.equal(e.newGradeSpecificTeachingSupplement, target.has(i+1));
+    assert.equal(e.fullPublicStudentActivityBodyReviewed, false);
+    assert.equal(e.fullTeacherGuideBodyReviewed, false);
+    assert.equal(e.actualSelectedPracticeAndVerifierChecked, false);
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED');
+  });
+  const body = n => byCode.get(lcode(3,n)).translations[0];
+  assert.match(body(3).workedExamples, /cubic inches/);
+  assert.match(body(4).workedExamples, /40 km\/h over the limit/);
+  assert.match(body(5).workedExamples, /210 m\/min/);
+  assert.match(body(8).workedExamples, /3.75 hours/);
+  assert.match(body(11).workedExamples, /150% = \$60/);
+  assert.match(body(12).workedExamples, /100% whole is 5×9 = 45 lb/);
+  assert.match(body(14).workedExamples, /125%, of the discounted amount/);
+  assert.match(body(15).workedExamples, /140% has 350/);
+  assert.match(body(17).workedExamples, /268 ft²/);
+  assert.match(body(17).workedExamples, /NOT the complete area/);
+  assert.equal(75*8/5-80, 40);
+  assert.equal(24/6.4, 3.75);
+  assert.equal(9/0.2, 45);
+  assert.equal(250*1.4, 350);
+  assert.equal(2*(9+10)*8-5*3-7*3, 268);
+});
