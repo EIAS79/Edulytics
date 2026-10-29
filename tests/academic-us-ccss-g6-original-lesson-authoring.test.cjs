@@ -651,3 +651,38 @@ test('Unit 6 complete nineteen original-source activity enhancements remain stud
   assert.equal(13 / 4 / (13 / 5), 1.25);
   assert.equal(13 / 4 / (5 / 2), 1.3);
 });
+
+
+test('Unit 7 all nineteen student source-targeted rational and coordinate lessons remain review-only', () => {
+  const src = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u07-19-public-student-source-task-repair-matrix.json'), 'utf8'));
+  assert.equal(src.lessons.length, 19);
+  assert.equal(src.summary.originalStudentPageBodiesRead, 19);
+  assert.equal(src.summary.academicAccepted, 0);
+  assert.deepEqual(src.lessons.map(x => x.lessonCode), Array.from({length:19}, (_, i) => lcode(7, i + 1)));
+  for (const row of src.lessons) {
+    const lesson = byCode.get(row.lessonCode);
+    assert.ok(lesson, row.lessonCode);
+    assert.ok(row.originalSourceActivityHeadings.length >= 2, row.lessonCode);
+    assert.equal(row.originalVisualPixelAppletParityVerified, false);
+    assert.equal(row.authStudentRenderingTested, false);
+    assert.equal(row.runtimeSelectedPracticeTested, false);
+    assert.equal(row.academicAcceptance, 'NOT_ACCEPTED');
+    assert.match(lesson.translations[0].workedExamples, /Example 3\b/, row.lessonCode);
+  }
+  const example = n => byCode.get(lcode(7,n)).translations[0].workedExamples;
+  assert.match(example(2), /Folded number line/);
+  assert.match(example(7), /information gap/i);
+  assert.match(example(9), /52≤h≤72/);
+  assert.match(example(10), /3t>8/);
+  assert.match(example(12), /taxicab distance/i);
+  assert.match(example(16), /GCF\(30,18\)=6/);
+  assert.match(example(17), /LCM\(6,8\)=24/);
+  assert.match(example(18), /15 kits/);
+  assert.match(example(19), /coordinate house/i);
+  assert.equal(Math.abs(-4 - 2) + Math.abs(3 - 1), 8);
+  assert.equal(2 * (5 + 3), 16);
+  assert.equal(75 / 15, 5);
+  assert.equal(90 / 15, 6);
+  assert.equal(100 / 12 | 0, 8);
+});
