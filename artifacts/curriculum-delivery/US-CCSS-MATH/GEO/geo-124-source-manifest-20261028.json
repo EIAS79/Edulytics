@@ -26,7 +26,8 @@
     "2026-10-29 U05–U08 all 60 course-local RichV2 candidates authored. Source lesson title/ID alignment was checked against 124 canonical entries; individual activity parity, visual authenticity, clinical academic review, genuine teacher evidence capture, Practice, tenant and CI gate remain NOT_VERIFIED.",
     "V11 2026-10-29: official public teacher preparation reviewed for U06:L06-L07, U07:L08,L11, U08:L07-L11 (9); official student activity text additionally inspected for U08:L08,L09,L11 (3). These are preliminary task comparisons, NOT per-lesson Stage A acceptance; 33 U06-U08 remained source-syllabus-only and 6 teacher-only after this pass.",
     "V12 2026-10-29: all 33 previously syllabus-only plus 6 teacher-prep-only U06-U08 records now have public source teacher preparation AND student lesson activity pages examined; still no protected cool-down/teacher-guide verification, complete task parity acceptance, authentic assessed experience or Stage A signoff. Prior 85 initial comparisons remain initial. SourceOptional U08:L01 newly confirmed.",
-    "V12 2026-10-29: U05:L01–L18 teacher preparation and student lesson pages re-read. This is a second read with task/representation gap notes, NOT academic parity or acceptance; prior initial U01–U04=67 remain source-initial. U05:L08 contains an optional extra modelling activity but whole lesson is required."
+    "V12 2026-10-29: U05:L01–L18 teacher preparation and student lesson pages re-read. This is a second read with task/representation gap notes, NOT academic parity or acceptance; prior initial U01–U04=67 remain source-initial. U05:L08 contains an optional extra modelling activity but whole lesson is required.",
+    "V13 2026-10-29: U01:L01, U05:L11, U06:L15 and U07:L13 original public teacher and student activity lists independently rechecked with task-specific gap notes. V13 exact independent numeric oracles cover 27 of 372 worked-example slots; remaining 345 are NOT certified. This does not authorize source parity signoff, teacher cool-down access, renderer execution or A/B/C/D acceptance."
   ],
   "totals": {
     "blueprintLessons": 124,
@@ -43,7 +44,10 @@
     "sourceTeacherStudentPagesRecorded": 124,
     "stageAAccepted": 0,
     "v12PriorInitialSourceRowsReaudited": 18,
-    "v12PriorInitialSourceRowsNotReaudited": 67
+    "v12PriorInitialSourceRowsNotReaudited": 67,
+    "v13SourceTasksReopened": 4,
+    "v13IndependentlyRecomputedExampleSlots": 27,
+    "v13WorkedExamplesNotIndependentlyCertified": 345
   },
   "lessons": [
     {
@@ -87,7 +91,26 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/1/1/preparation.html",
+        "studentLessonUrl": "https://im.kendallhunt.com/HS/students/2/1/1/index.html",
+        "academicSignoff": false,
+        "v13IndependentReaudit": {
+          "date": "2026-10-29",
+          "studentActivitiesRead": [
+            "1.1: The Right Tool",
+            "1.2: Illegal Construction Moves",
+            "1.3: Can You Make a Perfect Copy?"
+          ],
+          "observedParityGap": "Actual student digital straightedge/compass construction and precise hexagon imitation are not verified as an interactive learner submission; original authored descriptive triangle and hexagon examples cover only selected knowledge.",
+          "actualCourseResponse": "No course code change; earlier construction body already includes compass radius, two-circle proof, and regular hexagon logic.",
+          "state": "INITIAL_REVIEW_REOPENED_NO_PROMOTION",
+          "sourceTaskAcceptance": "NOT_VERIFIED",
+          "protectedTeacherCooldown": "NOT_INSPECTED",
+          "rendererPracticePersistence": "NOT_VERIFIED"
+        }
+      }
     },
     {
       "ordinal": 2,
@@ -3572,7 +3595,21 @@
         "scope": "PUBLIC_SOURCE_REAUDIT_ACTIVITY_PROMPTS_AND_GOALS_NO_ACADEMIC_SIGNOFF",
         "sourceTaskObserved": "Compute prism and cylinder volumes from original drawings with justified base areas",
         "academicSignoff": false,
-        "verificationNote": "Unit5 re-audited source student lesson + teacher preparation; pedagogical representation/dynamic geometry and teacher-assessed activity parity NOT yet certified. Restricted teacher guides and cool-downs not inspected."
+        "verificationNote": "Unit5 re-audited source student lesson + teacher preparation; pedagogical representation/dynamic geometry and teacher-assessed activity parity NOT yet certified. Restricted teacher guides and cool-downs not inspected.",
+        "v13IndependentReaudit": {
+          "date": "2026-10-29",
+          "studentActivitiesRead": [
+            "11.1: New Heights",
+            "11.2: The Choice is Yours",
+            "11.3: The Cayan Tower"
+          ],
+          "observedParityGap": "Original multi-solid choice, sketch of oblique slant/perpendicular height and rotating floor-plan tower require actual learner 3D visuals and teacher-assessed reasoning; candidate has prism oblique-height and composite-volume examples but not all task representations.",
+          "actualCourseResponse": "Retain original V11 oblique prism height 10sin30° and composite-volume independent oracles; diagram source parity still open.",
+          "state": "SOURCE_REAUDIT_GAPS_OPEN",
+          "sourceTaskAcceptance": "NOT_VERIFIED",
+          "protectedTeacherCooldown": "NOT_INSPECTED",
+          "rendererPracticePersistence": "NOT_VERIFIED"
+        }
       }
     },
     {
@@ -4754,7 +4791,21 @@
         "sourceTaskObserved": "Partition line segments with coordinate weighted averages",
         "formalAlignmentRolesPreserved": true,
         "academicSignoff": false,
-        "verificationNote": "Actual public lesson task page and teacher preparation inspected; similarity of original first-party tasks and learner/student rendering NOT certified. No protected teacher guide, cooldown or scoring reviewed."
+        "verificationNote": "Actual public lesson task page and teacher preparation inspected; similarity of original first-party tasks and learner/student rendering NOT certified. No protected teacher guide, cooldown or scoring reviewed.",
+        "v13IndependentReaudit": {
+          "date": "2026-10-29",
+          "studentActivitiesRead": [
+            "15.1: Part Way: Points",
+            "15.2: Part Way: Segment",
+            "15.3: Part Way: Quadrilateral"
+          ],
+          "observedParityGap": "Original activity requires plotting partitions and proof of whole-quadrilateral common-centre dilation. V12 candidate had only isolated scalar partition examples. Interactive labelled coordinate construction remains missing.",
+          "actualCourseResponse": "V13 restores original task structure using independently authored A,B,C,D and their images under factor 1/5; V13 teacher rubric authored, no functioning submission.",
+          "state": "SOURCE_TASK_CONTENT_REPAIRED_RUNTIME_VISUAL_PENDING",
+          "sourceTaskAcceptance": "NOT_VERIFIED",
+          "protectedTeacherCooldown": "NOT_INSPECTED",
+          "rendererPracticePersistence": "NOT_VERIFIED"
+        }
       }
     },
     {
@@ -5585,7 +5636,21 @@
         "sourceTaskObserved": "Use s=rθ and justify sector area algebraically",
         "formalAlignmentRolesPreserved": true,
         "academicSignoff": false,
-        "verificationNote": "Actual public lesson task page and teacher preparation inspected; similarity of original first-party tasks and learner/student rendering NOT certified. No protected teacher guide, cooldown or scoring reviewed."
+        "verificationNote": "Actual public lesson task page and teacher preparation inspected; similarity of original first-party tasks and learner/student rendering NOT certified. No protected teacher guide, cooldown or scoring reviewed.",
+        "v13IndependentReaudit": {
+          "date": "2026-10-29",
+          "studentActivitiesRead": [
+            "13.1: What Fraction?",
+            "13.2: A Sector Area Shortcut",
+            "13.3: An Arc Length Shortcut"
+          ],
+          "observedParityGap": "Original source requires table and linear graph of arc length against radius; slope represents central angle in radians. V12 examples omitted graph construction. Physical diagram, dynamic teacher presentation and real on-screen graphic remain unverified.",
+          "actualCourseResponse": "V13 adds coherent slope example with four r/s pairs and original SVG graph; secure RichV2 asset reference and authenticated rendering still pending.",
+          "state": "SOURCE_TASK_CONTENT_REPAIRED_RUNTIME_VISUAL_PENDING",
+          "sourceTaskAcceptance": "NOT_VERIFIED",
+          "protectedTeacherCooldown": "NOT_INSPECTED",
+          "rendererPracticePersistence": "NOT_VERIFIED"
+        }
       }
     },
     {
