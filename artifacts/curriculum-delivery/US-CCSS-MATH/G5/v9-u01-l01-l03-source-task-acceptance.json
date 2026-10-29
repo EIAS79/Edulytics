@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "grade": "US-CCSS-MATH:G5:IM-K5-2021",
+  "stage": "V9 partial source-task acceptance slice, not academic approval",
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "sourceReferenceCommit": "6fe26acbd16e27d8fc7154cb7f7f1150c9f9b5ef",
+  "contentRepairCommit": "0ebc5f4f1c80c5f03d6fc20ad56bb4629dd797c9",
+  "testCommit": "14bf7ccb935cbc988408b0c4344455665e3b47af",
+  "sourceEvidence": {
+    "sourceEdition": "2021 IM K–5 Grade 5",
+    "sourceMode": "Original teacher lesson.html including Student Facing and preparation.html, read-only verified Primary/Our-CS",
+    "sourcePdf": "NOT_VERIFIED; original separate Student Task PDF not in inspected U01 lesson folder",
+    "sourceIllustrations": "Original source image/card contents not independently inspected; original first-party textual models, no copied publisher artwork",
+    "gatedResponse": "NOT_ACCESSED",
+    "stageA": "HTML_STUDENT_FACING_AND_TEACHER_ACTIVITIES_COMPARED__FULL_SOURCE_PDF_FIGURE_PARITY_PENDING",
+    "stageB": "NOT_RUN_AUTHENTICATED_APPLICATION",
+    "stageC": "NOT_RUN_ACTUAL_SELECTED_PRACTICE_AND_FEEDBACK",
+    "stageD": "NOT_RUN_COMPLETE_PRODUCT",
+    "academicAccepted": false
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-1/lesson.html",
+      "standards": {
+        "Addressing": [
+          "5.MD.C.3"
+        ],
+        "BuildingTowards": [
+          "5.MD.C.3"
+        ]
+      },
+      "observedTasks": [
+        "Open cube-object WODB and compare meanings of bigger",
+        "Construct cube objects and order by equal-cube count",
+        "Each participant makes connected nine-cube object; compare equal volumes despite different outline"
+      ],
+      "gradeOwnedRepair": "Four object ordering and nine-cube connected constructions added to Rich V2",
+      "teacherRubric": [
+        "Same-size face-connected non-overlapping unit cubes",
+        "Order multiple objects by actual cube count, not height",
+        "Construct two distinct connected nine-cube arrangements and justify equal volume",
+        "Accept multiple valid WODB arguments"
+      ],
+      "negativeAndBoundaryExamples": [
+        "A disconnected nine-cube set does not prove construction of a solid",
+        "Numeric-only 9 does not complete drawing/physical discourse",
+        "Different cube arrangements are equivalent in volume when common cube count is nine"
+      ],
+      "staticPractice": {
+        "readiness": "READY_VERIFIED metadata only",
+        "family": "usccss.g5.unit_cube_count",
+        "risk": "Box dimension multiplication may not test source's nonprism nine-cube assembly; actual selected family and submissions NOT_RUN"
+      }
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-2/lesson.html",
+      "standards": {
+        "Addressing": [
+          "5.MD.C.3",
+          "5.MD.C.3.b",
+          "5.MD.C.4"
+        ]
+      },
+      "observedTasks": [
+        "Partner builds arbitrary 8–12 cube solid, other counts and explains; swap",
+        "Guess My Prism: hide a completely filled 16–24 cube prism; partner reconstructs from description and compares rotated models"
+      ],
+      "gradeOwnedRepair": "Restored 16–24 cube partner hidden-prism reconstruction, accessible 2×3×3 worked case",
+      "teacherRubric": [
+        "Student description specifies rows, columns and layers, not cube total only",
+        "Partner reconstructs matching packed prism up to orientation",
+        "Pair compares and swaps roles; includes hidden cubes"
+      ],
+      "negativeAndBoundaryExamples": [
+        "18 alone cannot uniquely specify shape or complete peer task",
+        "2×3×3 and 3×2×3 are equivalent prism orientations",
+        "Disconnected 18-cube set is not packed prism"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-3/lesson.html",
+      "standards": {
+        "BuildingOn": [
+          "3.OA.C.7"
+        ],
+        "Addressing": [
+          "5.MD.C.4"
+        ],
+        "BuildingTowards": [
+          "5.MD.C.5"
+        ]
+      },
+      "observedTasks": [
+        "Mental three-factor product talk",
+        "Reconstruct full unit-cube prism from card images and count hidden cubes",
+        "Compare layer directions on completely packed prisms"
+      ],
+      "gradeOwnedRepair": "Added 2×4×5 model with 5 layers of 8 = 2 sections of 20 = 40; no source card images copied",
+      "teacherRubric": [
+        "Include invisible interior cubes",
+        "Use consistent fully packed prism and equivalent layer orientations",
+        "Explain correspondence with 2021 publisher card still blocked by absent exact figure"
+      ],
+      "negativeAndBoundaryExamples": [
+        "Counting top eight only is incorrect for five equal layers",
+        "Two correctly oriented layer-count methods for same prism are acceptable"
+      ]
+    }
+  ],
+  "testEvidence": {
+    "nativeNodeVersion": "v22.16.0",
+    "passed": 4,
+    "failed": 0,
+    "skipped": 1,
+    "exactRepoTestGitBlobSHA": "b77b3f94169d1dd8e1dfe4809356a0cdb01fbcdb",
+    "reasonSkipped": "Repository RichV2 sidecar not mounted in isolated local runner",
+    "scope": "Source-grounded math/construction unit oracles only; actual .NET, learner and selected Practice not executed"
+  },
+  "productGates": {
+    "dotnet": "NOT_RUN; SDK unavailable",
+    "authenticatedStudentTeacher": "NOT_RUN",
+    "persistentDatabase": "NOT_RUN",
+    "twoSchoolIsolation": "NOT_RUN",
+    "accessibilityRealUI": "NOT_RUN",
+    "ownerUAT": "NOT_RUN",
+    "release": "BLOCKED"
+  },
+  "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "nextCursor": "PED:US-CCSS-MATH:G5:U01:L04"
+}
