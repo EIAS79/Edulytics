@@ -821,3 +821,37 @@ test('U01 L13 L14 L17 L18 L19 match original polyhedron, net, cube and tent-floo
   assert.equal(8 * 6 + 2 * 6 * 5 + 2 * 0.5 * 8 * 3, 132);
   assert.equal(8 * 8 + 2 * 8 * 5 + 2 * 0.5 * 8 * 3, 168);
 });
+
+
+test('U02 L01–L03 original collection, ratio diagrams and recipes remain distinct and teacher-scored where needed', () => {
+  const record = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l01-l03-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(record.lessons.length, 3);
+  assert.equal(record.summary.studentTaskBodiesCompared, 3);
+  assert.equal(record.summary.academicAcceptance, 0);
+  assert.deepEqual(record.lessons.map(x => x.lessonCode), [1,2,3].map(n => lcode(2,n)));
+  for (const r of record.lessons) {
+    assert.ok(r.sourceActivities.length >= 3, r.lessonCode);
+    assert.ok(r.mathematicalTaskRequirements.length >= 4, r.lessonCode);
+    assert.equal(r.originalPublisherFigureOrCardAssetsReproduced, false);
+    assert.equal(r.authenticatedLearnerRenderedAndAccessible, false);
+    assert.equal(r.selectedPracticeContractGeneratorVerifierTested, false);
+    assert.equal(r.teacherEvaluationPersisted, false);
+    assert.equal(r.academicAcceptance, 'NOT_ACCEPTED');
+    assert.match(byCode.get(r.lessonCode).translations[0].workedExamples, /Example 3\b/);
+  }
+  const a = byCode.get(lcode(2, 1)).translations[0].workedExamples;
+  const b = byCode.get(lcode(2, 2)).translations[0].workedExamples;
+  const c = byCode.get(lcode(2, 3)).translations[0].workedExamples;
+  assert.match(a, /24-square-unit rectangle/);
+  assert.match(a, /16 yellow and 8 blue/);
+  assert.match(b, /4:2:1/);
+  assert.match(b, /24 ÷ 4/);
+  assert.match(c, /15,6/);
+  assert.match(c, /0.5 mg\/mL/);
+  assert.equal(16 + 8, 24);
+  assert.equal(12 + 6, 18);
+  assert.equal(16 / 8, 12 / 6);
+  assert.equal(15 / 5, 6 / 2);
+  assert.ok(150 / 300 > 200 / 500);
+});
