@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "scope": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "branch": "curriculum/us-ccss-g6-full-grade-20261028",
+  "sourceEdition": "OUR/IM 2017–2019 CC BY 4.0",
+  "reviewDate": "2026-10-29",
+  "reviewLevel": "DIRECT_PUBLIC_STUDENT_AND_TEACHER_ACTIVITY_BODY_COMPARISON__NOT_FULL_PARITY",
+  "sources": {
+    "studentTemplate": "https://im.kendallhunt.com/MS/students/1/2/{lesson}/index.html",
+    "teacherTemplate": "https://im.kendallhunt.com/MS/teachers/1/2/{lesson}/index.html",
+    "practiceTemplate": "https://im.kendallhunt.com/MS/students/1/2/{lesson}/practice.html"
+  },
+  "summary": {
+    "studentBodiesDirectlyCompared": 3,
+    "teacherActivityBodiesCompared": 3,
+    "originalVisualOrAppletImplementationVerified": 0,
+    "sourceTaskFullyAcademicallyAccepted": 0,
+    "authStudentVisualVerified": 0,
+    "selectedPracticeGeneratorVerifierChecked": 0,
+    "teacherRubricPersisted": 0
+  },
+  "limitations": [
+    "Public lesson and teacher activity narrative reviewed; protected teacher model answers and full independent publisher image-rights/media audit not completed.",
+    "Existing first-party content pack was augmented; source figures were not copied and parser-compatible visual descriptions were not confirmed through .NET renderer.",
+    "These ratios may be auto-graded for defined numeric subskills only; oral, open reasoning, pattern constructions and original table justifications require human scoring.",
+    "The historical memory cost is from a classroom example, not a current merchandise price."
+  ],
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U02:L10",
+      "title": "Comparing Situations by Examining Ratios",
+      "publicStudentUrl": "https://im.kendallhunt.com/MS/students/1/2/10/index.html",
+      "publicTeacherUrl": "https://im.kendallhunt.com/MS/teachers/1/2/10/index.html",
+      "publicPracticeUrl": "https://im.kendallhunt.com/MS/students/1/2/10/practice.html",
+      "sourceActivities": [
+        {
+          "source": "10.1 Treadmills",
+          "requirement": "Same distance, different elapsed durations; compare speed with pace/unit rate or proportional representation; irrelevant treadmill metrics must not determine speed"
+        },
+        {
+          "source": "10.2 Concert Tickets",
+          "requirement": "Compare 47 dollars for 3 with 141 dollars for 9 using a common scaling factor; explain a same-rate decision without relying on an integer unit price"
+        },
+        {
+          "source": "10.3 Sparkling Orange Juice",
+          "requirement": "Compare 3:4 and 4:5 ingredient ratios, and justify one-ingredient adjustments in both directions"
+        },
+        {
+          "source": "Lesson Practice",
+          "requirement": "Use comparable rates in motion, mixtures, unit prices and fractional food portions, with written reasoned explanations"
+        }
+      ],
+      "firstPartyEvidence": [
+        "3-mile in 24 and 30-minute text-accessible treadmill display and explicit 8 versus 10 minutes per mile",
+        "concert-ticket multiplicative argument 47:3 = 141:9",
+        "two direction-specific mixture adjustments and labeled double-number-line text candidate"
+      ],
+      "independentNumericalOracles": {
+        "paceAMinutesPerMile": 8,
+        "paceBMinutesPerMile": 10,
+        "slowerOrFaster": "24-minute 3-mile runner is faster",
+        "concertSameRate": true,
+        "linAddJuiceLiters": 0.2,
+        "noahAddSodaLiters": 0.3333333333333333
+      },
+      "teacherRubricCandidate": {
+        "criteria": [
+          "Explain speed using identical distance and differing times",
+          "Select appropriate comparable-unit representation",
+          "Justify concert equivalence with a valid scale factor",
+          "Justify mixture adjustment while correctly holding one component fixed"
+        ],
+        "maxTotal": 8,
+        "pointsPerCriterion": 2,
+        "implemented": false,
+        "persisted": false
+      },
+      "originalImageAppletOrVideoRecreated": false,
+      "actualStudentVisualRendered": false,
+      "selectedPracticeTested": false,
+      "teacherScoringPersisted": false,
+      "fullStageAApproved": false,
+      "stageCAccepted": false,
+      "stageDVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U02:L11",
+      "title": "Representing Ratios with Tables",
+      "publicStudentUrl": "https://im.kendallhunt.com/MS/students/1/2/11/index.html",
+      "publicTeacherUrl": "https://im.kendallhunt.com/MS/teachers/1/2/11/index.html",
+      "publicPracticeUrl": "https://im.kendallhunt.com/MS/students/1/2/11/practice.html",
+      "sourceActivities": [
+        {
+          "source": "11.1 How Is It Growing?",
+          "requirement": "Infer colored tile-row pattern and generalize the fourth, fifth and tenth figures; permit multiple valid arguments"
+        },
+        {
+          "source": "11.2 A Huge Amount of Sparkling Orange Juice",
+          "requirement": "Scale a 4:5 ratio to 36:45, 400:500 and 364:455; compare diagram practicality with table"
+        },
+        {
+          "source": "11.3 Batches of Trail Mix",
+          "requirement": "Complete 7:5 table for integer, fractional and large entries, and justify common factors"
+        },
+        {
+          "source": "Extension: Cookies",
+          "requirement": "Create multiple valid 2:5 sugar:flour table pairs satisfying distinct range requirements"
+        }
+      ],
+      "firstPartyEvidence": [
+        "accessible colored-tile pattern model 7n and fourth/fifth/tenth counts",
+        "ratio table for (7,5),(28,20),(14,10),(3.5,2.5),(350,250),(56,40)",
+        "first-party large-batch scaling and student-generated cookies entries"
+      ],
+      "independentNumericalOracles": {
+        "tilesFigure4": 28,
+        "tilesFigure5": 35,
+        "tilesFigure10": 70,
+        "litersSodaFor400Juice": 500,
+        "litersJuiceFor455Soda": 364,
+        "raisinsOuncesFor3Point5Almonds": 2.5,
+        "almondsOuncesFor250Raisins": 350
+      },
+      "teacherRubricCandidate": {
+        "criteria": [
+          "Represent and justify growing tile structure",
+          "Preserve ratio-table column units across fractional values",
+          "Explain when a table is more useful than a long double number line",
+          "Present at least one valid original recipe table meeting specified ranges"
+        ],
+        "maxTotal": 8,
+        "pointsPerCriterion": 2,
+        "implemented": false,
+        "persisted": false
+      },
+      "originalImageAppletOrVideoRecreated": false,
+      "actualStudentVisualRendered": false,
+      "selectedPracticeTested": false,
+      "teacherScoringPersisted": false,
+      "fullStageAApproved": false,
+      "stageCAccepted": false,
+      "stageDVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U02:L12",
+      "title": "Navigating a Table of Equivalent Ratios",
+      "publicStudentUrl": "https://im.kendallhunt.com/MS/students/1/2/12/index.html",
+      "publicTeacherUrl": "https://im.kendallhunt.com/MS/teachers/1/2/12/index.html",
+      "publicPracticeUrl": "https://im.kendallhunt.com/MS/students/1/2/12/practice.html",
+      "sourceActivities": [
+        {
+          "source": "12.1 Multiplying by a Unit Fraction",
+          "requirement": "Apply fractions of quantities mentally and explain strategies before the ratio table"
+        },
+        {
+          "source": "12.2 Comparing Taco Prices",
+          "requirement": "Use a table/unit price to compare 4-for-6 and 50-for-72, and calculate items purchasable for 15"
+        },
+        {
+          "source": "12.3 Hourly Wages",
+          "requirement": "Interpret one-fifth multiplier from five-hour pair to one-hour rate, then fractional hours"
+        },
+        {
+          "source": "12.4 Memory Card",
+          "requirement": "Use 2016 historical 128GB for $32 to compare repeated halving on double number line with a scalable ratio table"
+        },
+        {
+          "source": "Lesson extension",
+          "requirement": "Explain hypothetical gigabyte context, order-of-magnitude estimates and limits of current-technology generalization"
+        }
+      ],
+      "firstPartyEvidence": [
+        "4-for-6 taco versus 50-for-72 explicit two-rate comparison",
+        "unit-fraction hourly wage table (5,90),(1,18),(8,144),(3,54),(2.1,37.8)",
+        "2016 historical memory paired halving and line-versus-table selection"
+      ],
+      "independentNumericalOracles": {
+        "tacosFor15Dollars": 10,
+        "tacoPriceAt4For6": 1.5,
+        "tacoPriceAt50For72": 1.44,
+        "wagePerHour": 18,
+        "payFor2Point1Hours": 37.8,
+        "historicalDollarsPerGB": 0.25
+      },
+      "teacherRubricCandidate": {
+        "criteria": [
+          "Explain why the same fractional multiplier applies to both table entries",
+          "Compare ratios with meaningful units",
+          "Choose an efficient representation and justify it",
+          "Explicitly distinguish historical numeric context from present-day price claims"
+        ],
+        "maxTotal": 8,
+        "pointsPerCriterion": 2,
+        "implemented": false,
+        "persisted": false
+      },
+      "originalImageAppletOrVideoRecreated": false,
+      "actualStudentVisualRendered": false,
+      "selectedPracticeTested": false,
+      "teacherScoringPersisted": false,
+      "fullStageAApproved": false,
+      "stageCAccepted": false,
+      "stageDVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    }
+  ]
+}
