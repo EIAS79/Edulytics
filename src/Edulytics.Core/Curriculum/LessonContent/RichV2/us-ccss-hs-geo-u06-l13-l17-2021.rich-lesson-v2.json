@@ -219,6 +219,7 @@
         "Learning goal: Partition a segment at a stated positive ratio using weighted coordinate averages, and interpret internal versus external division.",
         "Point P at fraction t∈[0,1] from A to B is A+t(B−A) Compute each coordinate separately",
         "If AP:PB=m:n with m,n>0 then t=m/(m+n) Distinguish segment from entire line",
+        "Original student activities also compare a weighted average P=(1/3)A+(2/3)B with a 2:1 internal segment partition and construct a 1:4 dilation of a quadrilateral using A as centre. The lesson should make the shared centre and a consistent scale factor visible, not only compute isolated segment coordinates.",
         "Original student task: Draw line and mark partition ratios in two different coordinate settings; teacher checks exact construction. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 15, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
       ],
@@ -236,10 +237,10 @@
           "Example": "AP:PB=2:3 gives t=2/5"
         },
         {
-          "Title": "External case",
-          "Definition": "t outside [0,1] lies on extended line beyond segment",
-          "Rule": "Distinguish segment from entire line",
-          "Example": "t=1.5 produces point past B"
+          "Title": "Common-centre partition and dilation",
+          "Definition": "If every vertex X of a polygon is mapped to X′=A+t(X−A), with the SAME centre A and common factor t>0, then the image is a dilation of the polygon.",
+          "Rule": "For 1:4 internal division on AX, use t=1/(1+4)=1/5, so AX′:X′X=1:4 for every non-centre vertex.",
+          "Example": "From A=(2,3), B=(6,3), C=(8,9), D=(4,9), factors 1/5 give B′=(14/5,3), C′=(16/5,21/5), D′=(12/5,21/5)."
         }
       ],
       "WorkedExamples": [
@@ -268,16 +269,16 @@
           "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
         },
         {
-          "Title": "Weighted Averages — worked example 3",
-          "Question": "With A=(0,0),B=(4,0), t=3/2, is image on segment?",
-          "Method": "External case",
+          "Title": "Weighted Averages — common-centre quadrilateral dilation",
+          "Question": "For A=(2,3), B=(6,3), C=(8,9), D=(4,9), construct B′, C′ and D′ so AB′:B′B=AC′:C′C=AD′:D′D=1:4. Determine whether AB′C′D′ is a dilation of ABCD.",
+          "Method": "Translate each image point toward A by one fifth of its original displacement vector.",
           "Steps": [
-            "Coordinate A+t(B−A)=(6,0)",
-            "B endpoint has x=4",
-            "6 lies outside segment interval [0,4]"
+            "An internal ratio 1:4 gives t=1/(1+4)=1/5 from A to each other vertex; for every X, compute X′=A+(X−A)/5.",
+            "B′=(2,3)+(4,0)/5=(14/5,3); C′=(2,3)+(6,6)/5=(16/5,21/5); D′=(2,3)+(2,6)/5=(12/5,21/5).",
+            "All three rays from A have the SAME positive scale factor 1/5, so AB′C′D′ is the image of ABCD under a dilation centred at A."
           ],
-          "Answer": "No, point is beyond B.",
-          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+          "Answer": "Yes, with centre A and factor 1/5: B′=(14/5,3), C′=(16/5,21/5), D′=(12/5,21/5).",
+          "Check": "For AB length 4, AB′ length 4/5; for AC length √72, AC′ length √72/5. An image calculated using different centres would not justify one dilation."
         }
       ],
       "CommonMistakes": [
@@ -294,7 +295,7 @@
       ],
       "SummaryPoints": [
         "Partition a segment at a stated positive ratio using weighted coordinate averages, and interpret internal versus external division.",
-        "Do not reverse weights",
+        "For AP:PB=m:n with m,n>0, P=(n/(m+n))A+(m/(m+n))B; a whole-polygon dilation needs one common centre and the same factor.",
         "Teacher evaluation is required for original coordinate proofs and graphical submissions."
       ],
       "Visuals": [
@@ -305,10 +306,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Fraction t=2/(2+3)=2/5",
-            "Coordinate P=A+(2/5)(B−A)",
-            "P=(4,2)",
-            "P=(4,2)."
+            "An internal ratio 1:4 gives t=1/(1+4)=1/5 from A to each other vertex; for every X, compute X′=A+(X−A)/5.",
+            "B′=(2,3)+(4,0)/5=(14/5,3); C′=(2,3)+(6,6)/5=(16/5,21/5); D′=(2,3)+(2,6)/5=(12/5,21/5).",
+            "All three rays from A have the SAME positive scale factor 1/5, so AB′C′D′ is the image of ABCD under a dilation centred at A.",
+            "Yes, with centre A and factor 1/5: B′=(14/5,3), C′=(16/5,21/5), D′=(12/5,21/5)."
           ],
           "Rows": []
         }
