@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u07-l01-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u07-l01-v12-source-activities-reviewed-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,10 @@
         "Learning goal: use graphs and function notation to identify input values that produce a specified output of a quadratic function; understand that several inputs may share one output. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 1 teacher https://im.kendallhunt.com/HS/teachers/1/7/1/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/1/index.html (CC BY 4.0). The source opens by reading quadratic flight graphs rather than insisting on formal symbolic solving.",
         "Original invented arch-height model h(t)=16−(t−3)² metres for t∈[0,7] seconds. It rises to a maximum16m at t3 then falls. At t0 and t6, output is7m: h(0)=16−9=7 and h(6)=16−9=7. This is a graph interpretation, not two separate flights.",
         "To find which time corresponds to height7, intersect the parabola with horizontal line h=7. Its intersections are (0,7) and (6,7). The domain matters: the algebraic graph extends to other t values, but negative elapsed time would be invalid in a real launch. If the model has measurement uncertainty, a hand-drawn crossing may only approximate a value; this exact first-party model is constructed for exact checks.",
-        "Student task: graph original model, mark vertex and both points at height7, compare h(1) and h(5), and explain why a fixed output can correspond to two distinct inputs without violating function uniqueness. Teacher-scored rubric0–2 for graph, two correct inputs, context restrictions and complete interpretation."
+        "Student task: graph original model, mark vertex and both points at height7, compare h(1) and h(5), and explain why a fixed output can correspond to two distinct inputs without violating function uniqueness. Teacher-scored rubric0–2 for graph, two correct inputs, context restrictions and complete interpretation.",
+        "V12 source-aligned new independently authored GEOMETRIC CONSTRAINT task: a rectangular picture measures8 by5 inches, and a uniform nonoverlapping frame of border thickness x inches surrounds all four edges. The frame material covers 30 square inches. Outer dimensions are (8+2x) by (5+2x), so the necessary area equation is (8+2x)(5+2x)−8×5=30, equivalently4x²+26x=30. A border thickness of x=1 gives outer rectangle10×7 area70, picture area40, and frame area30. Negative x is impossible. Let students propose and explain this equation before completing formal quadratic solving techniques.",
+        "V12 geometric diagram task: draw an 8×5 inner rectangle centered in a 10×7 outer rectangle for x=1, label four strips of thickness1 and the corner regions; explain why the frame area is outer area minus picture area. Compare with the existing first-party flight example h(t)=16−(t−3)^2, which yields height7 at t0 and6, to explain that the same target output may have more than one input. The publisher uses a launched-object context and a physical framing-cut activity; independent values avoid copying the paper cut-out dimensions.",
+        "Draft teacher assessment0–2 each for labelled original picture/frame diagram, exact geometric area equation, check at x1 with units/domain, and interpretation of context roots/unknown inputs. This is evidence of an authored task, not of actual cutting, authenticated teacher grading, or a student solution."
       ],
       "KeyConcepts": [
         {
@@ -130,6 +133,39 @@
               "Label": "t6",
               "Cells": [
                 "h7m"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Picture-frame area model: independent dimensions",
+          "Description": "Border strips thickness x are included on both sides of each dimension; x=1 produces 30 square inches of material.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "picture",
+              "Cells": [
+                "8×5 = 40 in²"
+              ]
+            },
+            {
+              "Label": "outer at x=1",
+              "Cells": [
+                "(8+2)×(5+2)=70 in²"
+              ]
+            },
+            {
+              "Label": "frame at x=1",
+              "Cells": [
+                "70−40=30 in²"
+              ]
+            },
+            {
+              "Label": "general frame area",
+              "Cells": [
+                "(8+2x)(5+2x)−40=4x²+26x"
               ]
             }
           ]

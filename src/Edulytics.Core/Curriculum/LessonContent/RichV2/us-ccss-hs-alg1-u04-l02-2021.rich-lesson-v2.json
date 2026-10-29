@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l02-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l02-v12-source-activity-audit2-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,10 @@
         "Learning objective: use notation f(a)=b to identify and communicate named input-output relationships, explain values in units and distinguish an input from the function's output. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 2, https://im.kendallhunt.com/HS/teachers/1/4/2/preparation.html (CC BY 4.0). Publisher Addressing HSF-IF.A.1, HSF-IF.A.2 and HSF-IF.B.4. The source uses a dog's distance over time; this lesson retains context-sensitive interpretation with original data.",
         "Original hiking example: a traveller's elevation above trailhead is represented by H(t)=20+15t metres for 0≤t≤4 hours. H(2)=50 means the traveller is 50 m above trailhead after two hours; it is not the number of hours nor a multiplication of H by 2. H(0)=20 describes an initial elevation of 20 metres.",
         "Translate a verbal statement into f notation. If a reservoir has 280 litres after 3 hours, write V(3)=280 L, where V maps elapsed hours to remaining volume. A statement V(a)=V(b) means the two inputs yield the same measured volume; it does not force a=b for a non-injective function.",
-        "Student task: interpret at least five original notations with explicit units, map them to a labelled graph and table, explain why H(2) is different from 2H, and translate contextual data to notation in both directions. Teacher-scored rubric 0–2 each for correctly named function and argument, accurate units, correct graph/table match and verbal interpretation."
+        "Student task: interpret at least five original notations with explicit units, map them to a labelled graph and table, explain why H(2) is different from 2H, and translate contextual data to notation in both directions. Teacher-scored rubric 0–2 each for correctly named function and argument, accurate units, correct graph/table match and verbal interpretation.",
+        "V12 source-equivalent multi-function naming: the original source interprets three functions describing distance from a post over time, then introduces concise notation f(t),g(t),h(t). Use three independently invented probe models instead: f(t)=min(t,4) metres, g(t)=4−|t−3| metres, h(t)=2 metres for integer seconds t=0..6. At t=2, f(2)=2, g(2)=3, h(2)=2; at t=4, f(4)=4, g(4)=3, h(4)=2. Identical inputs can produce different outputs for DIFFERENT functions, without violating uniqueness within one named function. Source preparation/student: https://im.kendallhunt.com/HS/teachers/1/4/2/preparation.html and https://im.kendallhunt.com/HS/students/1/4/2/index.html.",
+        "V12 student task: match three original distance-time graphs to tables, name and use f, g and h, explain f(2)=2 metres in a sentence and compare it with g(2)=3 metres; translate one sentence into function notation and another back to the situation. Note the source expects interpretation from genuinely drawn graphs, so the existing one-function hiking calculation does not alone satisfy the activity.",
+        "Teacher draft rubric0–2 each for three correctly named function graph/table correspondences, input-output interpretation with units, meaning of multiple functions at same input, and student-authored notation/translation evidence."
       ],
       "KeyConcepts": [
         {

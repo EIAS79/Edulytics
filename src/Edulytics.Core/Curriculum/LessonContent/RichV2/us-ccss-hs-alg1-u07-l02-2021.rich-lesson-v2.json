@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u07-l02-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u07-l02-v12-source-activity-audit2-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,10 @@
         "Learning goal: translate a contextual target condition into a quadratic equation, compare rough graphical estimates with exact algebraic solutions, and decide which mathematical roots are contextually meaningful. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 2 teacher https://im.kendallhunt.com/HS/teachers/1/7/2/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/2/index.html (CC BY 4.0). The source revisits equations representing real constraints and asks when precise solving is necessary.",
         "Original rectangle problem: a garden's length is five metres greater than its width x≥0 metres, with target area84m². Area equation x(x+5)=84, or x²+5x−84=0. Factoring gives (x+12)(x−7)=0 and algebraic candidates −12 and7; only x7 is a positive width, giving length12 and area84m².",
         "Before exact solving, a graph of A(x)=x(x+5) suggests intersection with line y=84 near x7. Geometry requires nonnegative lengths, so the negative algebraic root is not physical. Distinguish writing equation (modeling) from solving it (finding admissible input). The factorization is an optional tool at this transition point and will be developed systematically later.",
-        "Student task: write an equation from area/perimeter language, estimate root on a labelled graph, independently verify width7, and critique a peer who accepts a negative side length. Teacher-scored rubric0–2 for variable/domain, correct equation, checked root and interpretation of why one mathematical answer is invalid."
+        "Student task: write an equation from area/perimeter language, estimate root on a labelled graph, independently verify width7, and critique a peer who accepts a negative side length. Teacher-scored rubric0–2 for variable/domain, correct equation, checked root and interpretation of why one mathematical answer is invalid.",
+        "V12 source target correction: the publisher lesson explicitly contrasts contextual linear equations with quadratic equations, graph-estimation limitations and factored expression zeros. Additional original examples supplement the existing garden width model. Ticket price T(k)=9k+3 dollars for an integer number k of tickets; if total75 dollars, 9k+3=75 gives k8. An independent flight h(t)=−4t²+16t+12 metres reaches the ground when t²−4t−3=0, giving t=2±√7; only positive t=2+√7≈4.646s is physically valid and cannot be read exactly from a rough hand sketch. Teacher/student: https://im.kendallhunt.com/HS/teachers/1/7/2/preparation.html and https://im.kendallhunt.com/HS/students/1/7/2/index.html.",
+        "V12 first-party revenue task: R(p)=p(40−2p)=40p−2p² dollars, with feasible price0≤p≤20. Zeros are p0 and20. To obtain revenue128, solve p(40−2p)=128, giving p²−20p+64=0=(p−4)(p−16), hence prices4 or16. Maximum model revenue200 occurs at price10. Students compare which form makes zeros easy to read and explain why a graph estimate is insufficient for a precise irrational flight time.",
+        "Proposed teacher rubric0–2 each for appropriate equation creation and contextual variables, correct factored-root/linear comparison, graph limits/exact checks, and valid physical/economic domains. Human score and official approval remain pending."
       ],
       "KeyConcepts": [
         {

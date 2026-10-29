@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u06-l01-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u06-l01-v12-source-activities-reviewed-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,10 @@
         "Learning goal: notice an amount that rises and then falls, reason geometrically about why it cannot have constant difference or ratio, and propose a way to compare rectangular areas without requiring symbolic formulas initially. Independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L01 teacher https://im.kendallhunt.com/HS/teachers/1/6/1/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/1/index.html (CC BY 4.0). The source introduces quadratic shape informally before naming or requiring quadratic notation.",
         "Original task: 24m of fencing is used for a rectangle; possible widths w=1,2,3,4,5,6,7,8,9,10,11 metres yield complementary lengths 11,10,9,8,7,6,5,4,3,2,1m. Areas in square metres are11,20,27,32,35,36,35,32,27,20,11. Without introducing an equation as mandatory, sketch the rectangle at w1,4,6 and9 and describe how the area increases to a peak then decreases.",
         "At fixed perimeter, increasing the width decreases the length. This creates competing effects: area is not always bigger with increased width. The largest area here is36m² at width6m and length6m. The growth from w1 to2 is+9m² but from w2 to3 is+7m², so a straight-line pattern is already contradicted; the areas are also not multiplied by one fixed factor.",
-        "Student activity: match several original rectangle sketches with width, length and area tables, graph values with common units, state what makes the area greatest, and compare with an increasing constant-difference or constant-factor pattern. Teacher-scored rubric0–2 each for diagrams, numerical area checks, qualitative peak description and reasoned contrast. Mathematical notation is optional in this introductory source lesson."
+        "Student activity: match several original rectangle sketches with width, length and area tables, graph values with common units, state what makes the area greatest, and compare with an increasing constant-difference or constant-factor pattern. Teacher-scored rubric0–2 each for diagrams, numerical area checks, qualitative peak description and reasoned contrast. Mathematical notation is optional in this introductory source lesson.",
+        "V12 source-equivalent Notice and Wonder THREE original tables, at integer n=0,1,2,3,4: L(n)=7n+2 has outputs2,9,16,23,30 (constant +7); E(n)=2×3^n has2,6,18,54,162 (constant factor3); Q(n)=12−(n−2)^2 has8,11,12,11,8 (rises then falls). Learners discuss in words and visuals before being required to use function notation or the term quadratic; those expressions are provided as optional teacher checks, not compulsory early student solutions.",
+        "V12 Measurement and Plotting Garden: using the independently chosen 24-metre perimeter, draw rectangles with widths 1,2,3,4,5,6,7,8,9,10,11 metres, each length12−w metres. Record area w(12−w) and graph width vs area on labeled axes (area in m²). From 11,20,27,32,35,36,35,32,27,20,11 identify the maximum 36 m² at 6×6m. Explain the rise-and-fall verbally, including why equal widths/length swaps give equal area.",
+        "The publisher student work explicitly has a three-table Notice and Wonder, diagrams of an enclosed garden and plotting garden area. The task is only complete after students prepare the actual diagrams and graphs; a table or provided SVG does not count as authentic student production. Teacher rubric0–2 for three table observations, measured rectangle drawings, area graph and qualitative maximum/comparison."
       ],
       "KeyConcepts": [
         {
@@ -123,6 +126,33 @@
               "Label": "width7,length5",
               "Cells": [
                 "area35m²"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Three independent patterns for Notice and Wonder",
+          "Description": "Students should graph or discuss the three patterns before using formal algebraic names.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "linear L(n), n=0..4",
+              "Cells": [
+                "2,9,16,23,30"
+              ]
+            },
+            {
+              "Label": "multiplicative E(n), n=0..4",
+              "Cells": [
+                "2,6,18,54,162"
+              ]
+            },
+            {
+              "Label": "rise/fall Q(n), n=0..4",
+              "Cells": [
+                "8,11,12,11,8"
               ]
             }
           ]

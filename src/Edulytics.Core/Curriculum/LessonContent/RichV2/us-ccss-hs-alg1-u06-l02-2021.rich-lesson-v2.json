@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u06-l02-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u06-l02-v12-source-activity-audit2-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,10 @@
         "Learning goal: compare a square-based visual pattern with linear and exponential patterns, generate expressions and graphs, and introduce the idea of a quadratic expression with a squared term. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L02 teacher https://im.kendallhunt.com/HS/teachers/1/6/2/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/2/index.html (CC BY 4.0). Students use structure rather than memorizing a taxonomy solely from equations.",
         "Original figures: draw an n-by-n square of tiles with an added row of three tiles that does not overlap. Total T(n)=n²+3 for positive integer n. At n1,2,3,4 counts4,7,12,19. Consecutive increases3,5,7 are not constant; second differences2,2 are constant. The geometric square grows in both dimensions, unlike an extension of a single strip.",
         "Contrast a linear strip L(n)=3n+1 giving4,7,10,13 and a double-growth pattern E(n)=2^(n+1) giving4,8,16,32 for n1–4. All start at4 but quickly differ. A quadratic function can be expressed without any x label in tile-count notation; its squared term reflects area growing in two directions.",
-        "Student activity: draw four original tile figures, construct a table for each pattern, calculate first and second differences, create a graph and write two equivalent explanations for why the square count is n². Teacher-scored rubric0–2 each for drawings, table accuracy, quadratic versus linear/exponential evidence and valid expression from visual structure."
+        "Student activity: draw four original tile figures, construct a table for each pattern, calculate first and second differences, create a graph and write two equivalent explanations for why the square count is n². Teacher-scored rubric0–2 each for drawings, table accuracy, quadratic versus linear/exponential evidence and valid expression from visual structure.",
+        "V12 source alignment: the original has a geometric diagram counting squares in different decompositions, visual dot-pattern comparisons of linear/exponential/quadratic change and student-produced graphs. Additional independent grid: a 7-by-9 rectangle with a missing 2-by-4 corner has area 63−8=55 unit squares. The same L-shaped figure can be decomposed into a 5-by-9 strip (45 squares) and a 2-by-5 strip (10 squares). This gives two expressions 7×9−2×4=5×9+2×5=55, justified by actual nonoverlapping regions; teacher/student: https://im.kendallhunt.com/HS/teachers/1/6/2/preparation.html and https://im.kendallhunt.com/HS/students/1/6/2/index.html.",
+        "V12 second visual task: invent first-party dot patterns L(n)=2n+1 (counts at steps0..4:1,3,5,7,9), Q(n)=n² (0,1,4,9,16) and E(n)=2^n (1,2,4,8,16). Draw each for n0..4, make an input/output table, graph each on a common scale and explain why first differences of Q are1,3,5,7, while E has fixed factor2. The squared term is a justified cell area, not merely a symbol. Avoid requiring rote formal equations in earlier unit6 lesson1.",
+        "Human rubric0–2 for valid L-shaped geometric decomposition, three actual diagrams and counts, graphs/tables with correct patterns, and explanation of quadratic squared-area term versus constant difference/factor."
       ],
       "KeyConcepts": [
         {

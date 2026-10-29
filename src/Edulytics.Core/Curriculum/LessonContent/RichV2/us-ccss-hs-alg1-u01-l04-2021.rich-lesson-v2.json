@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u01-l04-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u01-l04-v12-source-activities-reviewed-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,10 @@
         "Original data displays: at numerical values 1,2,3,4,5, data A have frequencies 1,2,4,2,1; B have 2,2,2,2,2; C have 5,3,1,1,1; D have 4,1,1,1,4. Use equally spaced values, draw one dot per observation and label each count. A is a roughly bell-shaped symmetric example, B uniform, C right-skewed and D bimodal. The data are fabricated specifically for mathematical practice, not attributed to actual students.",
         "Partner matching task: compare the four dot plots and their frequency tables, name their shapes, and support each classification with two observations. Trade roles: the partner challenges a match or explains why it is valid. Invent a possible numerical survey question that might generate one display, then explain why a graph alone cannot prove which real survey was conducted.",
         "Important distinctions: symmetry does not imply bell shape (a uniform display can be symmetric); a distribution's skew is named by the direction of its tail rather than the side containing its highest bar; two peaks may not represent two distinct populations. A box plot may conceal peaks that are obvious in a dot plot.",
-        "Teacher-scored rubric: give 0, 1 or 2 points each for accurate classification, numerical justification, plausible context with variable and units, and reasoned critique of partner claims (8 maximum). This is an explanation/card-matching activity, not a single machine-graded number. The first-party frequency tables are not publisher artwork."
+        "Teacher-scored rubric: give 0, 1 or 2 points each for accurate classification, numerical justification, plausible context with variable and units, and reasoned critique of partner claims (8 maximum). This is an explanation/card-matching activity, not a single machine-graded number. The first-party frequency tables are not publisher artwork.",
+        "V12 original source-aligned Which One Does Not Belong and card sort: make five first-party data sets at equally spaced values 1,2,3,4,5: A frequencies [1,2,4,2,1], B [2,2,2,2,2], C [5,3,1,1,1], D [4,1,1,1,4], E [1,1,1,3,5]. Without reading labels first, draw five DOT PLOTS and five matching FREQUENCY TABLES, shuffle these ten cards, and take turns explaining your five matches. A is symmetric bell-like, B uniform, C right-skewed, D bimodal and E left-skewed. Every displayed count is fictional, not a class survey.",
+        "V12 activity fidelity: the publisher explicitly includes a Which One Does Not Belong discussion and partner matching of ten representations, followed by suggesting a plausible real-world context for a displayed distribution. Students must invent at least two plausible contexts for one of the fictional graphs and explain why the source data cannot be inferred uniquely from a shape. The plotted dot positions and frequency cards must be student-created, not auto-inferred from rubric text.",
+        "Teacher draft assessment: observe actual partner turns and explanations, check 10 independently prepared cards, and score 0–2 for (1) frequencies and graph consistency, (2) correct five matches and shapes, (3) graph-based contextual explanations with uncertainty, and (4) peer questioning and mathematical language. A written draft is not authenticated teacher evidence."
       ],
       "KeyConcepts": [
         {
@@ -128,6 +131,45 @@
               "Label": "D",
               "Cells": [
                 "4,1,1,1,4 (n=11)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Five original distributions: frequency card reference",
+          "Description": "At values 1 to 5, each row provides five frequencies; students must draw and match actual dot plots separately.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "A symmetric bell",
+              "Cells": [
+                "1,2,4,2,1"
+              ]
+            },
+            {
+              "Label": "B uniform",
+              "Cells": [
+                "2,2,2,2,2"
+              ]
+            },
+            {
+              "Label": "C right-skew",
+              "Cells": [
+                "5,3,1,1,1"
+              ]
+            },
+            {
+              "Label": "D bimodal",
+              "Cells": [
+                "4,1,1,1,4"
+              ]
+            },
+            {
+              "Label": "E left-skew",
+              "Cells": [
+                "1,1,1,3,5"
               ]
             }
           ]

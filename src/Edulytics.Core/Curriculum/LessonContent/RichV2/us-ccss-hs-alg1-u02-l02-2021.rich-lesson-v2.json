@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u02-l02-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u02-l02-v12-source-activity-audit2-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,10 @@
         "Percent warm-up: 25%, 12% and 8% of 200 are 50, 24 and 16, respectively; p% of 200 is 200×p/100=2p for numeric percent value p. A 7% rate applied to price x dollars is 0.07x dollars, while total with tax and fixed fee can be written T=1.07x+95; distinguish one rate from the whole-price multiplier.",
         "Independent geometric reasoning: in a convex polyhedron such as a cube, the relationship between vertices V, edges E and faces F is V−E+F=2. For a cube V=8,E=12,F=6, so 8−12+6=2. A tetrahedron V=4,E=6,F=4 gives 4−6+4=2. These equations represent a relationship with variable values; they are not the formula for any arbitrary disconnected or nonconvex solid.",
         "Original shopping model: blueberries cost $3.20 per kilogram. Let q≥0 be mass in kilograms, and B=3.20q dollars be price. If q=2.5, then B=$8.00; if an original $15 coupon is valid for the whole purchase, represent the discounted price explicitly as B=max(0,3.20q−15), rather than silently permitting negative charges. The source pairs multiplication relationships with additive comparisons.",
-        "Student activity: interpret equations from words and vice versa, write at least one additive equation, multiplicative cost equation, percentage model and simple geometric relationship, state all units and domains, and peer-review a model for whether its assumptions are justified. Teacher-scored rubric (0–2 each, 8 maximum): correct constant/variable meanings, faithful equation construction, mathematical and domain accuracy, and reasoned critique and contextual interpretation."
+        "Student activity: interpret equations from words and vice versa, write at least one additive equation, multiplicative cost equation, percentage model and simple geometric relationship, state all units and domains, and peer-review a model for whether its assumptions are justified. Teacher-scored rubric (0–2 each, 8 maximum): correct constant/variable meanings, faithful equation construction, mathematical and domain accuracy, and reasoned critique and contextual interpretation.",
+        "V12 source-activity fidelity: the original student lesson combines mental percentages, vertex-edge-face relationships of solid figures, and progressively less-scaffolded contexts about income, spending and tax. In a warm-up compute25%,12%,8%,p% of 200; derive 50,24,16,2p. For a cube F=6,V=8,E=12 and tetrahedron F=4,V=4,E=6, verify V−E+F=2. This convex-solid relation is not claimed for arbitrary disjoint geometric assemblies. Teacher and student activity sources: https://im.kendallhunt.com/HS/teachers/1/2/2/preparation.html and https://im.kendallhunt.com/HS/students/1/2/2/index.html.",
+        "V12 independent sales scenario: a store charges $7 shipping after applying 8% sales tax to pre-tax goods cost x dollars. The model is T=1.08x+7. At x=$50, T=$61. If the shopper budget is $61, the constraint 1.08x+7≤61 gives x≤50 for nonnegative goods costs. Compare variable goods price x with fixed shipping7 and rate8%; a context may instead apply tax after shipping, creating a different model. Ask students to justify assumptions, not to memorize a single context-free equation.",
+        "Teacher human rubric 0–2 each for exact percentage calculations, correct polyhedral relationship and limits, clear fixed versus variable quantities/units, and a defensible tax/constraint equation with independent reasoning."
       ],
       "KeyConcepts": [
         {

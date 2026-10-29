@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u02-l01-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u02-l01-v12-source-activities-reviewed-20261029",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,10 @@
         "Original Edulytiks classroom scenario: each pizza costs $14 and contains enough equal servings for 3 guests; drinks and plates cost a combined $8 regardless of number of guests. Let n be the nonnegative whole number of guests and p the nonnegative whole number of pizzas. Cost C=14p+8 dollars, capacity constraint 3p≥n, and a budget constraint C≤120. If class attendance is at most 24, also require 0≤n≤24. Different assumptions about appetites would change the capacity constraint; state them explicitly.",
         "For 20 guests, seven pizzas provide 21 servings and cost 14×7+8=$106. Six pizzas provide only 18 servings so fail the capacity requirement. Eight pizzas cost 14×8+8=$120 and fit the budget, but nine cost $134 and violate it. No single solution is mathematically compulsory until the objective (least cost, maximum spare food or other preference) is specified.",
         "Modeling activity: with a partner, identify which costs are fixed and which scale with people, write and interpret at least two constraints with inequalities, produce an alternative feasible plan under a changed budget, and explain the strengths and weaknesses of your assumptions. A free-response plan and peer critique are human-scored. A single automatically graded cost result does not establish the source's modelling objective.",
-        "Teacher rubric, 0–2 each (8 maximum): correct variable definitions with integer/nonnegative domains, valid expression/equation and at least two inequalities, independently checked feasible plan with units, and justified assumptions with alternative/critique. Never claim an original student party plan or actual restaurant quote was collected if it was not."
+        "Teacher rubric, 0–2 each (8 maximum): correct variable definitions with integer/nonnegative domains, valid expression/equation and at least two inequalities, independently checked feasible plan with units, and justified assumptions with alternative/critique. Never claim an original student party plan or actual restaurant quote was collected if it was not.",
+        "V12 source-aligned three-group planning task (all data fictional): given 20 guests, $14 per pizza with 3 servings per pizza, and a fixed $8 for drinks/plates, GROUP A proposes 6 pizzas ($92, only 18 servings, invalid), GROUP B proposes 7 pizzas ($106, 21 servings, valid), GROUP C proposes 8 pizzas ($120, 24 servings, valid). The class budget is $120. Each group states variables n,p, expression C=14p+8, capacity 3p≥n, budget 14p+8≤120 and integer restrictions; a peer must question an assumption before selecting a plan.",
+        "V12 warm-up modeling analogue (independently chosen numbers): let m=$9 be a main dish, q be an integer number of $2 side dishes, and T=9+2q. At q=3, T=$15. Explain what each symbol represents and why an equation is a model of one possible meal, not a universal price. Change the day-of-party quantities into variables and identify possible integer/inequality constraints.",
+        "The publisher expects collaborative planning with more than one defensible approach. Teacher scores actual student proposals and rationale, not only the numerical cost: 0–2 each for assumptions/variables, expressions and units, valid constraints, and reasoned presentation/critique. Planning discussion remains unverified without learner evidence."
       ],
       "KeyConcepts": [
         {
@@ -129,6 +132,33 @@
               "Label": "9",
               "Cells": [
                 "$134; over budget"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Compare three fictional plans",
+          "Description": "The least dollar cost is not necessarily feasible. The guest capacity and budget must both hold.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "A: six pizzas",
+              "Cells": [
+                "18 servings, $92: capacity fails"
+              ]
+            },
+            {
+              "Label": "B: seven pizzas",
+              "Cells": [
+                "21 servings, $106: valid"
+              ]
+            },
+            {
+              "Label": "C: eight pizzas",
+              "Cells": [
+                "24 servings, $120: valid"
               ]
             }
           ]
