@@ -64,11 +64,18 @@ test('all seven Fourth Courses contract identities are integration-pending, not 
   const source = fs.readFileSync(path.join(root,
     'src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs'), 'utf8');
   const family = read('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json');
-  const ids = family.families.filter(x =>
-    x.id.startsWith('usccss.hs.') ||
-    ['trig.unit_circle_reflection_exact', 'trig.principal_inverse',
-      'trig.model_all_time_solutions', 'solid_geometry.cavalieri_sphere_volume',
-      'coordinates.focal_distance_conics'].includes(x.id));
+  const ownedIds = [
+    'usccss.hs.matrix.coefficients_2x2',
+    'usccss.hs.matrix.solve_2x2',
+    'usccss.hs.matrix.inverse_2x2',
+    'usccss.hs.matrix.classify_2x2',
+    'usccss.hs.log.inverse_power',
+    'usccss.hs.log.compare_order',
+    'trig.unit_circle_reflection_exact', 'trig.principal_inverse',
+    'trig.model_all_time_solutions', 'solid_geometry.cavalieri_sphere_volume',
+    'coordinates.focal_distance_conics'
+  ];
+  const ids = family.families.filter(x => ownedIds.includes(x.id));
   assert.equal(ids.length, 11);
   assert.ok(ids.every(x => x.productionRouting === false &&
     x.lessonPracticeRouting === false));
