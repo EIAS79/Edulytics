@@ -6,9 +6,20 @@
     "blueprint": "b26bf5354666b4c81f5d569666181027a48e3f5c414a5c72390178098e207ab4",
     "canonicalPack": "d7d13c9643126e81ceda7f897dd59c397e1e56e0167a441ed12015c5428b1d1e",
     "publisherCrosswalk": "e9dccdf2d6e7353cccb67e0cef68bfe7d4715ef51c1c2cfd067afc2ba7c0933c",
-    "richCandidateU01L01L08": "ff40437397f007609651016199025ff112907b8516c7db1fa31d31d88ee1acb3",
-    "richCandidateU01L09L17": "1fd39377ccc1b7a997a6a3cdc8c8876a6005f75e45e47d82bcfc936a33b1aa23",
-    "skillRegistry": "981a43438365e71202a53e38fef2ea76d4e161d397ebb9480fffd68636ffdb91"
+    "skillRegistry": "981a43438365e71202a53e38fef2ea76d4e161d397ebb9480fffd68636ffdb91",
+    "richCandidates": {
+      "us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json": "ff40437397f007609651016199025ff112907b8516c7db1fa31d31d88ee1acb3",
+      "us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json": "1fd39377ccc1b7a997a6a3cdc8c8876a6005f75e45e47d82bcfc936a33b1aa23",
+      "us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json": "85767218f47a43f1b5ea175e1def02619a2b21796e15b82d48d3a29f826ab831",
+      "us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json": "ece2dfe3d1b7fef68bedb82697c3fd322969ac84c454cb2ac2fffae4054e5c33",
+      "us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json": "abac5aa500010262a533b9819b4d5ff35f7ef6b7b046ab6c806269c4e22e2379",
+      "us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json": "c12e904d25031551fb83332bb2df3359e2c0cf7076fa1a70589ae29a0c80bc1d",
+      "us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json": "395830f88644d93efcf2ee220e24f1b4306f96dbcaeb85effb402222b4909517",
+      "us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json": "58a28e823e24182a396060bed1ce1c7283a535402630e7046ea23cdb878bd239",
+      "us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json": "d7aca7bd994afce45589268984c56862ff2c204fa99f7950f4826d06341024c1",
+      "us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json": "f72d42c8aad3550978f6e4a59c5b4ddaa5ae52e2c3fdd735e9a1f46e1cd90147",
+      "us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json": "a3aeb61902295f8bb69673e5ff06968025202d4ed1d043c86c02b4873b3e5ea6"
+    }
   },
   "counts": {
     "curriculumLessons": 131,
@@ -17,14 +28,14 @@
     "standardsRoleReviewRows": 22,
     "rawPackTemplatedGoals": 131,
     "rawPackGenericFiveSteps": 87,
-    "richV2AuthoredCandidates": 17,
+    "richV2AuthoredCandidates": 131,
     "exactPracticeVerified": 0,
     "humanAssessmentVerified": 0,
     "academicAccepted": 0,
     "fullGradeVerified": 0
   },
-  "license": "Open Up Resources / IM 6-8 Math, 2017-2019, CC BY 4.0. Source links in individual rows.",
-  "noClaim": "Source-page HTML and authored candidates are not complete academic A-D, authenticated runtime, exact Practice, full-grade CI, publisher artwork equivalence, or teacher evaluation. No APPROVED/RELEASED row is inferred.",
+  "license": "Open Up Resources / IM 6-8 Math, 2017-2019, CC BY 4.0; individual source links on each row.",
+  "noClaim": "Preparation pages, authored content and lesson identities do not certify activity parity, academic A-D, authenticated runtime, exact Practice, user UAT or publisher-figure equivalence.",
   "rows": [
     {
       "ordinal": 1,
@@ -76,9 +87,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -87,12 +98,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -139,9 +150,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -150,12 +161,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -210,9 +221,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -221,12 +232,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -265,9 +276,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -276,12 +287,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -336,9 +347,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -347,12 +358,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -400,9 +411,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -411,12 +422,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -471,9 +482,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -482,12 +493,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -542,9 +553,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l01-l08-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -553,12 +564,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -621,9 +632,9 @@
       "rawPackGenericFiveSteps": false,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -632,12 +643,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -684,9 +695,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -695,12 +706,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -756,9 +767,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -767,12 +778,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -811,9 +822,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -822,12 +833,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -875,9 +886,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -886,12 +897,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -947,9 +958,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -958,12 +969,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1019,9 +1030,9 @@
       "rawPackGenericFiveSteps": false,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1030,12 +1041,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1098,9 +1109,9 @@
       "rawPackGenericFiveSteps": false,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1109,12 +1120,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1181,9 +1192,9 @@
       "rawPackGenericFiveSteps": true,
       "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
       "authoredRichV2Version": "us-ccss-g8-u01-l09-l17-first-party-rich-v2-20261029-v1",
-      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1192,12 +1203,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Publisher activity-level parity",
-        "Actual Rich V2 rendering and accessibility",
-        "Exact Practice or teacher assessment interaction",
-        "Auth saved attempts/tenant isolation",
-        ".NET/CI final SHA",
-        "Lesson-specific academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1256,11 +1267,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1269,11 +1280,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1344,11 +1356,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1357,11 +1369,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1410,11 +1423,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1423,11 +1436,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1472,11 +1486,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1485,11 +1499,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1534,11 +1549,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1547,11 +1562,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1613,11 +1629,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1626,11 +1642,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1676,11 +1693,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1689,11 +1706,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1762,11 +1780,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1775,11 +1793,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1832,11 +1851,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1845,11 +1864,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1910,11 +1930,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -1923,11 +1943,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -1996,11 +2017,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2009,11 +2030,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2066,11 +2088,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2079,11 +2101,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2144,11 +2167,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u02-l01-l13-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u02-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2157,11 +2180,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2212,11 +2236,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2225,11 +2249,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2290,11 +2315,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2303,11 +2328,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2376,11 +2402,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2389,11 +2415,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2438,11 +2465,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2451,11 +2478,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2520,11 +2548,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2533,11 +2561,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2602,11 +2631,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2615,11 +2644,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2678,11 +2708,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2691,11 +2721,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2740,11 +2771,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2753,11 +2784,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2800,11 +2832,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2813,11 +2845,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2868,11 +2901,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2881,11 +2914,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -2938,11 +2972,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -2951,11 +2985,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3014,11 +3049,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": [
         "algebra.linear.ax_plus_b_equals_c"
       ],
@@ -3029,11 +3064,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3078,11 +3114,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3091,11 +3127,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3141,11 +3178,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u03-l01-l14-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u03-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3154,11 +3191,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3209,11 +3247,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3222,11 +3260,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3277,11 +3316,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3290,11 +3329,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3339,11 +3379,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3352,11 +3392,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3401,11 +3442,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3414,11 +3455,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3463,11 +3505,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": [
         "algebra.linear.ax_plus_b_equals_c"
       ],
@@ -3478,11 +3520,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3527,11 +3570,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3540,11 +3583,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3589,11 +3633,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3602,11 +3646,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3643,11 +3688,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3656,11 +3701,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3714,11 +3760,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3727,11 +3773,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3784,11 +3831,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3797,11 +3844,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3846,11 +3894,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3859,11 +3907,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3916,11 +3965,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3929,11 +3978,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -3978,11 +4028,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -3991,11 +4041,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4040,11 +4091,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4053,11 +4104,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4118,11 +4170,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4131,11 +4183,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4180,11 +4233,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u04-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4193,11 +4246,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4242,11 +4296,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4255,11 +4309,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4304,11 +4359,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4317,11 +4372,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4374,11 +4430,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4387,11 +4443,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4437,11 +4494,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4450,11 +4507,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4516,11 +4574,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4529,11 +4587,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4570,11 +4629,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4583,11 +4642,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4633,11 +4693,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4646,11 +4706,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4705,11 +4766,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4718,11 +4779,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4759,11 +4821,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4772,11 +4834,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4830,11 +4893,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l01-l10-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l01-l10-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4843,11 +4906,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4900,11 +4964,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4913,11 +4977,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -4960,11 +5025,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -4973,11 +5038,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5030,11 +5096,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5043,11 +5109,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5084,11 +5151,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5097,11 +5164,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5138,11 +5206,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5151,11 +5219,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5200,11 +5269,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5213,11 +5282,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5271,11 +5341,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5284,11 +5354,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5350,11 +5421,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5363,11 +5434,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5412,11 +5484,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5425,11 +5497,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5474,11 +5547,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5487,11 +5560,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5528,11 +5602,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5541,11 +5615,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5590,11 +5665,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u05-l11-l22-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5603,11 +5678,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5652,11 +5728,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5665,11 +5741,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5714,11 +5791,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5727,11 +5804,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5785,11 +5863,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5798,11 +5876,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5848,11 +5927,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5861,11 +5940,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5911,11 +5991,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -5924,11 +6004,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -5999,11 +6080,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6012,11 +6093,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6053,11 +6135,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6066,11 +6148,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6133,11 +6216,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6146,11 +6229,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6195,11 +6279,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6208,11 +6292,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6249,11 +6334,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6262,11 +6347,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6315,11 +6401,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u06-l01-l11-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6328,11 +6414,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6383,11 +6470,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6396,11 +6483,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6469,11 +6557,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6482,11 +6570,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6531,11 +6620,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6544,11 +6633,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6601,11 +6691,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6614,11 +6704,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6663,11 +6754,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6676,11 +6767,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6717,11 +6809,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6730,11 +6822,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6771,11 +6864,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6784,11 +6877,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6825,11 +6919,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6838,11 +6932,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6911,11 +7006,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6924,11 +7019,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -6982,11 +7078,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -6995,11 +7091,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7054,11 +7151,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7067,11 +7164,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7125,11 +7223,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7138,11 +7236,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7195,11 +7294,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7208,11 +7307,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7275,11 +7375,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7288,11 +7388,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7329,11 +7430,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7342,11 +7443,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7392,11 +7494,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u07-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7405,11 +7507,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7494,11 +7597,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7507,11 +7610,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7588,11 +7692,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7601,11 +7705,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7682,11 +7787,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7695,11 +7800,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7745,11 +7851,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7758,11 +7864,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7808,11 +7915,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7821,11 +7928,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7908,11 +8016,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7921,11 +8029,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -7979,11 +8088,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -7992,11 +8101,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8041,11 +8151,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": false,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8054,11 +8164,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8111,11 +8222,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8124,11 +8235,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8182,11 +8294,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8195,11 +8307,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8244,11 +8357,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8257,11 +8370,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8307,11 +8421,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8320,11 +8434,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8370,11 +8485,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8383,11 +8498,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8456,11 +8572,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8469,11 +8585,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8518,11 +8635,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8531,11 +8648,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8588,11 +8706,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u08-l01-l16-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u08-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8601,11 +8719,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8674,11 +8793,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u09-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8687,11 +8806,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8744,11 +8864,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u09-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8757,11 +8877,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8804,11 +8925,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u09-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8817,11 +8938,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8874,11 +8996,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u09-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8887,11 +9009,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -8940,11 +9063,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u09-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -8953,11 +9076,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     },
     {
@@ -9008,11 +9132,11 @@
       "canonicalPackVersion": "phase30-common-core-rich-content-v1",
       "rawPackTemplatedGoal": true,
       "rawPackGenericFiveSteps": true,
-      "authoredRichV2Asset": null,
-      "authoredRichV2Version": null,
-      "contentStatus": "SOURCE_AND_EFFECTIVE_BODY_REVIEW_PENDING",
+      "authoredRichV2Asset": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u09-l01-l06-2017.rich-lesson-v2.json",
+      "authoredRichV2Version": "us-ccss-g8-u09-first-party-rich-v2-20261029-v1",
       "sourcePreparationPageRetrieved": true,
       "completePublisherActivitiesReviewed": false,
+      "contentStatus": "FIRST_PARTY_AUTHORING_CANDIDATE_NOT_RUNTIME_VERIFIED",
       "explicitLessonSkillFamilies": null,
       "exactPracticeChecked": false,
       "humanAssessmentObserved": false,
@@ -9021,11 +9145,12 @@
       "academicAccepted": false,
       "stageD": "NOT_RUN",
       "unresolved": [
-        "Full source/student activity review",
-        "Effective content repair or accepted reuse",
-        "Exact Practice/teacher assessment",
-        "Authenticated render/attempts",
-        "Tests and academic acceptance"
+        "Original activity parity",
+        "Authenticated rendered lesson/diagrams",
+        "Exact Practice or teacher-assessed task persistence",
+        "Two-school isolation",
+        "Frozen-SHA CI",
+        "Independent academic acceptance"
       ]
     }
   ]

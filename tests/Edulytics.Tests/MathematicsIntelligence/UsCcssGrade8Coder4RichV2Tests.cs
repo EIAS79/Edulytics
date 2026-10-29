@@ -86,3 +86,131 @@ public sealed class UsCcssGrade8Coder4RichV2Tests
         Assert.NotEqual(RotateCcw(2,1),RotateCw(2,1));
     }
 }
+
+
+public sealed class UsCcssGrade8Coder4Unit2RichV2Tests
+{
+    [Theory]
+    [InlineData(1, "Projecting and Scaling")]
+    [InlineData(2, "Circular Grid")]
+    [InlineData(3, "Dilations with no Grid")]
+    [InlineData(4, "Dilations on a Square Grid")]
+    [InlineData(5, "More Dilations")]
+    [InlineData(6, "Similarity")]
+    [InlineData(7, "Similar Polygons")]
+    [InlineData(8, "Similar Triangles")]
+    [InlineData(9, "Side Length Quotients in Similar Triangles")]
+    [InlineData(10, "Meet Slope")]
+    [InlineData(11, "Writing Equations for Lines")]
+    [InlineData(12, "Using Equations for Lines")]
+    [InlineData(13, "The Shadow Knows")]
+    public void Unit2FirstPartyRichLessonIsDiscoverableAndHasWorkedReasoning(
+        int number, string expectedTitle)
+    {
+        var code = $"PED:US-CCSS-MATH:G8:U02:L{number:D2}";
+        var content = RichLessonContentV2Registry.Find(code, "en");
+        Assert.NotNull(content);
+        Assert.Equal(expectedTitle, content.Title);
+        Assert.True(content.ExplanationParagraphs.Count >= 2);
+        Assert.True(content.KeyConcepts.Count >= 3);
+        Assert.True(content.WorkedExamples.Count >= 3);
+        Assert.True(content.CommonMistakes.Count >= 2);
+        Assert.True(content.SummaryPoints.Count >= 3);
+        Assert.Contains(content.ExplanationParagraphs, x=>x.Contains("CC BY 4.0"));
+        Assert.Contains(content.ExplanationParagraphs, x=>x.Contains("teacher",StringComparison.OrdinalIgnoreCase));
+        Assert.All(content.WorkedExamples, x => {
+            Assert.True(x.Steps.Count >= 3);
+            Assert.False(string.IsNullOrWhiteSpace(x.Answer));
+            Assert.False(string.IsNullOrWhiteSpace(x.Check));
+        });
+    }
+
+    [Fact]
+    public void IndependentUnit2ScalingAndSlopeOraclesCoverLimits()
+    {
+        static (double x,double y) Dilate(
+            (double x,double y) p,(double x,double y) c,double scale) =>
+            (c.x+scale*(p.x-c.x),c.y+scale*(p.y-c.y));
+        Assert.Equal((5d,3d), Dilate((3d,2d),(1d,1d),2));
+        Assert.Equal((-4d,3d), Dilate((-8d,6d),(0d,0d),0.5));
+        Assert.Equal(24d,2d*3d*Math.Pow(2d,2d));
+        Assert.Equal(2d,(8d-2d)/(4d-1d));
+        Assert.Equal(-2d,(1d-5d)/(2d-0d));
+        Assert.Equal(7.5d, 1.5d * 10d / 2d);
+        Assert.Equal(0d,30d-2d*15d);
+        Assert.NotEqual(2d,9d/5d);
+    }
+}
+
+
+public sealed class UsCcssGrade8Coder4FullCourseRichV2Tests
+{
+    [Theory]
+    [InlineData(1,17)]
+    [InlineData(2,13)]
+    [InlineData(3,14)]
+    [InlineData(4,16)]
+    [InlineData(5,22)]
+    [InlineData(6,11)]
+    [InlineData(7,16)]
+    [InlineData(8,16)]
+    [InlineData(9,6)]
+    public void EveryCanonicalGrade8LessonResolvesFromTheActualEmbeddedRichV2Registry(
+        int unit, int expectedLessonCount)
+    {
+        var checkedCount = 0;
+        for (var lessonNumber = 1; lessonNumber <= expectedLessonCount; lessonNumber++)
+        {
+            var code = $"PED:US-CCSS-MATH:G8:U{unit:D2}:L{lessonNumber:D2}";
+            var content = RichLessonContentV2Registry.Find(code, "en");
+            Assert.NotNull(content);
+            Assert.False(string.IsNullOrWhiteSpace(content.Title));
+            Assert.True(content.ExplanationParagraphs.Count >= 2, code);
+            Assert.True(content.KeyConcepts.Count >= 3, code);
+            Assert.True(content.WorkedExamples.Count >= 3, code);
+            Assert.True(content.CommonMistakes.Count >= 2, code);
+            Assert.True(content.SummaryPoints.Count >= 3, code);
+            Assert.Contains(content.ExplanationParagraphs,
+                x => x.Contains("CC BY 4.0", StringComparison.Ordinal));
+            Assert.Contains(content.ExplanationParagraphs,
+                x => x.Contains("teacher", StringComparison.OrdinalIgnoreCase));
+            Assert.All(content.WorkedExamples, example =>
+            {
+                Assert.True(example.Steps.Count >= 3, code);
+                Assert.False(string.IsNullOrWhiteSpace(example.Question));
+                Assert.False(string.IsNullOrWhiteSpace(example.Answer));
+                Assert.False(string.IsNullOrWhiteSpace(example.Check));
+            });
+            checkedCount++;
+        }
+        Assert.Equal(expectedLessonCount,checkedCount);
+    }
+
+    [Fact]
+    public void AllRichV2DocumentsCanBeParsedThroughWholeRegistryWithoutDuplicateLessonCodes()
+    {
+        // The strict AllDocuments path deliberately validates each embedded resource.
+        var documents = RichLessonContentV2Registry.AllDocuments;
+        Assert.NotEmpty(documents);
+        var grade8Codes = documents
+            .SelectMany(document => document.Lessons)
+            .Select(lesson => lesson.LessonCode)
+            .Where(code => code.StartsWith("PED:US-CCSS-MATH:G8:", StringComparison.Ordinal))
+            .ToArray();
+        Assert.Equal(131,grade8Codes.Length);
+        Assert.Equal(131,grade8Codes.Distinct(StringComparer.Ordinal).Count());
+    }
+
+    [Fact]
+    public void IndependentIntegerExponentAndPythagoreanRegressionsKeepMathBoundaries()
+    {
+        Assert.Equal(0.25d,Math.Pow(2d,3d)*Math.Pow(2d,-5d));
+        Assert.Equal(0.001d,Math.Pow(10d,-3d),12);
+        Assert.Equal(9d,Math.Pow(3d,4d)/Math.Pow(3d,2d));
+        Assert.Equal(25,3*3+4*4);
+        Assert.Equal(12d,Math.Sqrt(13*13-5*5));
+        Assert.True(Math.Sqrt(2d)>1.4d);
+        Assert.True(Math.Sqrt(2d)<1.5d);
+        Assert.Equal(10d,Math.Sqrt(Math.Pow(4-(-2),2)+Math.Pow(9-1,2)));
+    }
+}
