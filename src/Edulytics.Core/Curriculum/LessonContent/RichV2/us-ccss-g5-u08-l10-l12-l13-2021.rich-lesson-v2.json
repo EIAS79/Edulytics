@@ -1,0 +1,381 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u08-l10-l12-l13-im2021-original-richv2-v8-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L10",
+      "CultureCode": "en",
+      "Title": "Here Comes the Sum",
+      "ExplanationParagraphs": [
+        "Goal: reason about how numerator and denominator sizes affect the sum of TWO positive fractions, then play a strategic greatest-sum game and a smallest-sum game with a partner. The source has four turns to place spinner-generated digits in two fraction numerators/two positive denominators and multiple rounds of play. The spinner's actual probabilities are not inferred from the original artwork.",
+        "Warm-up: with positive digits2,3,4,5 placed once each, compare the fraction sums5/2+4/3=23/6=3 5/6 and2/4+3/5=11/10=1.1. A strategy for a greater result places larger values upstairs and smaller downstairs, but valid exact outcomes depend on legal digit assignments, order and particular spinner results.",
+        "Activity 1 — original greatest-sum sample: suppose the four observed spinner digits in one round are2,3,4,5. One legal placement is5/2+4/3=23/6. Require every digit to be used once and denominators to be nonzero. A player must record the order in which each irreversible placement was made; knowing the four digits retrospectively does not prove an optimal game strategy under uncertainty.",
+        "Activity 2 — original smallest-sum sample with the same FOUR digit values: placing2/4+3/5 yields11/10. Compare with2/5+3/4=23/20, which is larger, and explain why cross-products are necessary when denominators differ. Repeat for four full rounds and explain the tie-break rule: combine round sums only in a tie, and prefer the larger total for greatest-sum versus the smaller total for smallest-sum.",
+        "Assessment: mathematical equivalence and legal use of four supplied digits are machine-checkable subskills; the complete four-round partner game, actual spinner outcomes, irrevocable placement decisions and strategy rationale require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fractions and magnitude",
+          "Definition": "For positive denominators, a larger numerator tends to increase value, while a larger denominator tends to decrease value for a fixed numerator.",
+          "Rule": "5/2>2/5.",
+          "Example": "Game decisions must use valid four digit assignments."
+        },
+        {
+          "Title": "Add unlike fractions",
+          "Definition": "Rewrite two fractions over a common denominator before combining.",
+          "Rule": "5/2+4/3=15/6+8/6=23/6.",
+          "Example": "2/4+3/5=10/20+12/20=22/20."
+        },
+        {
+          "Title": "Game rule and tie-break",
+          "Definition": "Each digit is placed once and irrevocably, and a round sum has an objective of maximum or minimum.",
+          "Rule": "Greatest wins by higher sum; smallest wins by lower sum.",
+          "Example": "Separate recorded game play from post hoc numeric optimization."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Greatest sum example",
+          "Question": "Use digits2,3,4,5 exactly once as two fractions. Evaluate5/2+4/3.",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Check each supplied positive digit appears once.",
+            "Find a common denominator six.",
+            "Compute15/6+8/6."
+          ],
+          "Answer": "23/6 or3 5/6.",
+          "Check": "The sample doesn't certify winning a real four-round game."
+        },
+        {
+          "Title": "Smallest sum example",
+          "Question": "Evaluate2/4+3/5.",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Find common denominator20.",
+            "Convert2/4 to10/20 and3/5 to12/20.",
+            "Add and simplify."
+          ],
+          "Answer": "22/20=11/10.",
+          "Check": "2/5+3/4=23/20, slightly greater."
+        },
+        {
+          "Title": "Compare unlike denominators",
+          "Question": "Which is greater: 11/10 or 23/20?",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Rewrite11/10 as22/20.",
+            "Compare the numerators22 and23.",
+            "State which is more suitable when seeking the smallest sum."
+          ],
+          "Answer": "23/20 is greater;11/10 is smaller.",
+          "Check": "The comparison uses equivalent-sized twentieths."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a high numerator as a universal guarantee of a winning fraction sum",
+          "WhyWrong": "The denominator also changes the fraction value, and the game constraints restrict placements.",
+          "Correction": "Compare complete fractions with a common denominator and legal digit assignments."
+        },
+        {
+          "Mistake": "Use a digit twice or change a written placement after a later spin",
+          "WhyWrong": "The source game requires each spinner result be placed in one unused box and not revised.",
+          "Correction": "Keep a valid four-placement sequence for every round."
+        }
+      ],
+      "SummaryPoints": [
+        "Greatest and smallest objectives reward different numerator/denominator choices.",
+        "A valid source game includes actual spinner outcomes, irreversible slots and four rounds.",
+        "Only teacher reviews partner decisions, strategy and complete play.",
+        "2021 IM Grade 5 Unit 8 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-10/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Here Comes the Sum — first-party game",
+          "Description": "Accessible original game record example; published spinner, source recording sheet and protected responses are not copied.",
+          "Rows": [
+            {
+              "Label": "Sample",
+              "Cells": [
+                "Greatest-style",
+                "Smallest-style",
+                "Alternative"
+              ]
+            },
+            {
+              "Label": "Fraction sum",
+              "Cells": [
+                "5/2+4/3",
+                "2/4+3/5",
+                "2/5+3/4"
+              ]
+            },
+            {
+              "Label": "Exact value",
+              "Cells": [
+                "23/6",
+                "11/10",
+                "23/20"
+              ]
+            },
+            {
+              "Label": "Digit-use",
+              "Cells": [
+                "2,3,4,5 once",
+                "2,3,4,5 once",
+                "2,3,4,5 once"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L12",
+      "CultureCode": "en",
+      "Title": "Decimal Game Day",
+      "ExplanationParagraphs": [
+        "Goal: practice decimal addition through TWO distinct first-party comparable game models: Race to One or One Tenth, where an exact TARGET is required and overshoots lose a turn, and Decimal Race to 500, where even-digit whole places and odd-digit fractional places govern legal number creation. The original source has no fixed turn count guaranteeing the exact target.",
+        "Warm-up: on Race to One, a die result4 can be used as0.4 or0.04. Starting with0.60 and rolling4, choosing0.4 reaches1.00 exactly whereas0.04 reaches0.64. Explain how changing the place-value choice changes numerical amount by tenfold.",
+        "Activity 1 — exact targets: Race to One permits tenths/hundredths; a fictional legal series0.4+0.4+0.2 reaches1.0. Race to One Tenth permits hundredths/thousandths; a legal hypothetical series0.04+0.03+0.03 reaches0.10. If a player at0.95 rolls6, neither0.6 nor0.06 is legal because both exceed1; that player loses the turn. If at0.095 and rolling6 for the tenth target, neither0.06 nor0.006 is legal. The teacher must confirm actual dice rolls and the full game record.",
+        "Activity 2 — Race to 500: suppose spins produce digits2,3,9. Legal decimals include2.39 and2.93 because the even 2 is in the ones place and the odd digits3 and9 occupy hundredths/tenths. With digits4,2,5, a legal number is42.5: even 4 and2 are whole-place digits, odd5 is a tenths digit. Add the chosen legal numbers to a running total; repeat spins and alternate with partner until one cumulative total reaches at least500. No numeric claim that a few sample rounds finish the game.",
+        "Assessment: exact summation and digit placement can be machine-checked per documented turn, but the source's authentic dice/spinner results, full progressions, partner play and strategy analysis remain teacher reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scale tenths/hundredths/thousandths",
+          "Definition": "A die digit used as a place-value decimal has a unit value selected by the game.",
+          "Rule": "4 tenths=0.4;4 hundredths=0.04;4 thousandths=0.004.",
+          "Example": "Changing units changes sum."
+        },
+        {
+          "Title": "Exact target and pass rule",
+          "Definition": "Race to One ends on exactly1; Race to One Tenth ends on exactly0.1. Overshoot moves are forbidden.",
+          "Rule": "0.4+0.4+0.2=1;0.04+0.03+0.03=0.1.",
+          "Example": "An overshoot loses a turn."
+        },
+        {
+          "Title": "Parity place constraint",
+          "Definition": "Decimal Race to500 only places even digits in whole-number places and odd digits in fractional places.",
+          "Rule": "2.39 is legal for digits2,3,9; 3.29 is illegal.",
+          "Example": "Turns add valid numbers until total reaches at least500."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reach exactly one",
+          "Question": "Three valid die results4,4,2 are used as tenths. What is the total?",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Record0.4,0.4,0.2 in order.",
+            "Add the tenths.",
+            "Compare with exact target1.00."
+          ],
+          "Answer": "1.00, so the target is reached.",
+          "Check": "Actual dice results must be supplied by learners."
+        },
+        {
+          "Title": "Reach a tenth",
+          "Question": "Three hypothetical die results4,3,3 are chosen as hundredths.",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Write0.04,0.03,0.03.",
+            "Add to0.10.",
+            "Check that no move exceeded0.1."
+          ],
+          "Answer": "0.10 exactly.",
+          "Check": "Alternative thousandth choices would change the sums."
+        },
+        {
+          "Title": "Check parity of a decimal",
+          "Question": "Can spins2,3,9 make2.93? What about3.29?",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Classify2 as even and3,9 as odd.",
+            "Place2 at ones and3,9 at tenths or hundredths.",
+            "Reject3.29 since the odd3 occupies a whole-number place."
+          ],
+          "Answer": "2.93 legal;3.29 illegal.",
+          "Check": "Teacher also checks use-once digits and cumulative totals."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "End the Race to One game after six moves because a worksheet has six rows",
+          "WhyWrong": "The official rules explicitly permit more or fewer turns.",
+          "Correction": "Stop only at the exact target; extend the record if needed."
+        },
+        {
+          "Mistake": "Treat an odd digit as a whole-number digit in Decimal Race to500",
+          "WhyWrong": "Game rules restrict odd digits to tenths/hundredths/thousandths.",
+          "Correction": "Place even digits in ones/tens/hundreds and odd in decimal places."
+        }
+      ],
+      "SummaryPoints": [
+        "Exact target and overrun rules matter more than any arbitrary worksheet-row count.",
+        "Fractional scale choices and parity constraints create genuine game strategy.",
+        "Teacher reviews authentic dice, spinner and opponent play.",
+        "2021 IM Grade 5 Unit 8 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-12/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Decimal Game Day — first-party game",
+          "Description": "Accessible original game record example; published spinner, source recording sheet and protected responses are not copied.",
+          "Rows": [
+            {
+              "Label": "Game",
+              "Cells": [
+                "Race to 1",
+                "Race to 0.1",
+                "Race to 500"
+              ]
+            },
+            {
+              "Label": "Original example",
+              "Cells": [
+                "0.4+0.4+0.2",
+                "0.04+0.03+0.03",
+                "2.93 legal for 2,3,9"
+              ]
+            },
+            {
+              "Label": "Rule",
+              "Cells": [
+                "Exact1; no overshoot",
+                "Exact0.1; no overshoot",
+                "Parity places; total≥500"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L13",
+      "CultureCode": "en",
+      "Title": "Multiply Fractions Game Day PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: play two partner fraction multiplication comparison games, first seeking the LARGEST product and then seeking the SMALLEST. Four spinner results must be written irreversibly in two numerators/two nonzero denominators; the source asks learners to reflect on why the goals lead to different placements.",
+        "Warm-up: compare3/2×4/5 with2/5×3/4 when the four digits2,3,4,5 are all used once. The first equals12/10=6/5, while the second equals6/20=3/10. Each factor is a fraction and the product uses integer multiplication of numerator components over denominator components.",
+        "Activity 1 — greatest-product example: with one hypothetical four-spin result2,3,4,5, assign3 and4 as numerators and2 and5 as denominators to make3/2×4/5=6/5. Explain that for a given set of positive digits large numerator choices and small denominator choices generally increase the product; real play requires choosing an irrevocable slot BEFORE later spins are known.",
+        "Activity 2 — smallest-product example: use2 and3 as numerators,4 and5 as denominators, giving2/4×3/5=6/20=3/10. Compare with2/5×3/4=6/20, which is equal, showing different legal assignments may create the SAME product. Ask learners to reflect on how equivalence differs from a claim of winning a partner game.",
+        "Assessment: both versions require at least two rounds and a partner comparison in the original source. Numeric multiplication and legal digit use can be checked, but student's actual spinner history, placement choices, strategic explanation and opponent outcome require teacher review. Do not invent a spinner's frequency distribution or unseen Wild rules."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Multiply fraction components",
+          "Definition": "For nonzero positive denominators, (a/b)×(c/d)=(ac)/(bd).",
+          "Rule": "3/2×4/5=12/10=6/5.",
+          "Example": "This is a fraction product, not a sum."
+        },
+        {
+          "Title": "Product magnitude",
+          "Definition": "For fixed other factors, increasing numerators raises positive product; increasing denominators lowers it.",
+          "Rule": "2/4×3/5=3/10.",
+          "Example": "Placement choice matters."
+        },
+        {
+          "Title": "Irrevocable game turns",
+          "Definition": "The original source's four spinner results fill the four fraction slots and cannot be moved after placement.",
+          "Rule": "Two rounds of greatest and smallest versions are required source tasks.",
+          "Example": "The winner depends on opposing player products."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Greater product demonstration",
+          "Question": "Use digits2,3,4,5 to evaluate3/2×4/5.",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Check each digit used exactly once.",
+            "Multiply numerators3×4=12.",
+            "Multiply denominators2×5=10 and simplify."
+          ],
+          "Answer": "6/5=1.2.",
+          "Check": "Demonstration is not evidence a real player won."
+        },
+        {
+          "Title": "Smaller product demonstration",
+          "Question": "Use digits2,3,4,5 in2/4×3/5.",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Multiply numerator factors2×3=6.",
+            "Multiply denominator factors4×5=20.",
+            "Simplify six twentieths."
+          ],
+          "Answer": "3/10=0.3.",
+          "Check": "Positive denominator requirement met."
+        },
+        {
+          "Title": "Compare two assignments",
+          "Question": "Compare2/4×3/5 with2/5×3/4.",
+          "Method": "First-party original sample turn; full multi-round peer game and strategic reflection remain teacher assessed.",
+          "Steps": [
+            "Calculate both numerators as2×3.",
+            "Calculate both denominators as4×5 or5×4.",
+            "Explain commutative multiplication."
+          ],
+          "Answer": "Both equal3/10.",
+          "Check": "Different choices can lead to equivalent products."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add the fractions or multiply numerators but add denominators",
+          "WhyWrong": "Multiplication of fractions uses product of denominators.",
+          "Correction": "Multiply numerator pair and denominator pair separately."
+        },
+        {
+          "Mistake": "Claim after-the-fact best arrangement equals a valid winning game",
+          "WhyWrong": "Learners don't know future spinner results when placing earlier digits.",
+          "Correction": "Record actual turn order and irreversible slots; let teacher compare full games."
+        }
+      ],
+      "SummaryPoints": [
+        "Greatest and smallest objectives use opposing strategies under positive digit assumptions.",
+        "Valid comparison requires both a fraction product and a recorded game history.",
+        "Teacher reviews spinner use and strategic reflection.",
+        "2021 IM Grade 5 Unit 8 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-13/lesson.html. Read-only original teacher/student-facing HTML on approved Our-CS; full original Student Task PDF, exact source spinner and protected Cool-down not independently verified. Game record examples here are independently authored and NOT recorded student attempts."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multiply Fractions Game Day PLC Activity — first-party game",
+          "Description": "Accessible original game record example; published spinner, source recording sheet and protected responses are not copied.",
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "Greatest-style sample",
+                "Smallest-style sample",
+                "Equivalent small sample"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "3/2×4/5",
+                "2/4×3/5",
+                "2/5×3/4"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "6/5",
+                "3/10",
+                "3/10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
