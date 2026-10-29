@@ -45,7 +45,11 @@ test('U01 V13 documents original source scope without misrepresenting full parit
  for(const id of list){
   const pack=id==='L08'?'us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json':'us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json';
   const file='src/Edulytics.Core/Curriculum/LessonContent/RichV2/'+pack;
-  assert.equal(sha(file),evidence.updatedRichCandidateHashes[pack]);
+  const extended=read('docs/curriculum/us-ccss-g8-coder4-v13-u01-l11-l17-source-evidence-20261029.json');
+  // L09-L17 pack received a later source-specific batch. Its older V13 hash remains
+  // an immutable historical checkpoint, not a checksum of the newest pack.
+  const expected=pack.includes('l09-l17')?extended.updatedRichCandidateHash:evidence.updatedRichCandidateHashes[pack];
+  assert.equal(sha(file),expected);
   const rich=read(file).Lessons.find(x=>x.LessonCode.endsWith(':'+id));
   const src=source.rows.find(x=>x.lessonCode===rich.LessonCode);
   assert.equal(rich.WorkedExamples.length,3,'existing worked examples must remain intact');
