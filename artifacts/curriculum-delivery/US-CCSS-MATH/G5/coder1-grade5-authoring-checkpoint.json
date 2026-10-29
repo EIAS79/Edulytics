@@ -23,7 +23,9 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l14-l17-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-u02-area-v5.test.cjs"
+    "tests/academic-us-ccss-g5-u02-area-v5.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u03-fractions-v5.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -69,7 +71,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 35,
+    "richSidecarLessonCount": 40,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -83,11 +85,11 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 38,
+    "public2021LessonOrPreparationHtmlReviewedCount": 43,
     "public2021LessonHtmlReviewedDuringV4": 22,
     "codeCandidateWithAtLeastOneEditOrRichV2": 108,
     "noGradeOwnedCodeCandidate": 40,
-    "public2021LessonHtmlReviewedDuringV5": 9,
+    "public2021LessonHtmlReviewedDuringV5": 14,
     "originalStudentPdfAndGatedCooldownVerified": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
@@ -116,8 +118,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "38 distinct public 2021 lesson/preparation HTML pages examined; original complete source student PDFs, copyrighted images, gated responses/Cool-down and individual Stage A accepted findings remain incomplete.",
-      "next": "Continue U03:L02; independently verify original task PDF and rights before source academic acceptance."
+      "issue": "43/148 distinct public 2021 lesson/preparation HTML pages examined; source student-task PDF/figures/gated responses remain unverified and original academic A acceptance is 0/148.",
+      "next": "Start next source HTML at U03 L07; separately resolve original full student tasks and diagram accessibility/rights."
     },
     {
       "id": "G5-D-004",
@@ -1655,16 +1657,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l02-l06-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-2/lesson.html",
+      "sourceReviewedTask": "Interpret 1/3×1/4 and 1/4×1/3 with two contrasting original-square partitions; give WODB explanations",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_GRID_AND_EXPLANATION_NUMERIC_SUBCHECK_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L03",
@@ -1693,16 +1701,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l02-l06-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-3/lesson.html",
+      "sourceReviewedTask": "Explore unit-fraction product denominator pattern by increasing rows with four constant columns; build and critique area diagrams",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_GRID_AND_EXPLANATION_NUMERIC_SUBCHECK_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L04",
@@ -1737,16 +1751,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l02-l06-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-4/lesson.html",
+      "sourceReviewedTask": "Original sports park 2/3 then one-half contextual allocation; model fraction of non-unit fraction and label initial whole",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_GRID_AND_EXPLANATION_NUMERIC_SUBCHECK_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L05",
@@ -1776,16 +1796,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l02-l06-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-5/lesson.html",
+      "sourceReviewedTask": "Grow shaded non-unit numerator in a unit-fraction row and match exact product expressions to diagrams",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_GRID_AND_EXPLANATION_NUMERIC_SUBCHECK_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L06",
@@ -1820,16 +1846,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l02-l06-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-6/lesson.html",
+      "sourceReviewedTask": "Use shaded 2D area rectangles for products with both fractions non-unit; explain equivalent repeated-unit expressions",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_FRACTION_GRID_AND_EXPLANATION_NUMERIC_SUBCHECK_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L07",
@@ -6700,23 +6732,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "b7d8e12ad0ad515f12d8d2a004865b65d1767f3e",
+  "lastGradeContentCommit": "bd51dc9b54918afa8aebf1318352e7db27e943a8",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V5: 35 Grade 5 direct Rich V2 candidates (26 preserved +9 U02 L09-L17); all 17 U02 have directly authored sidecar candidates; 104 existing baseline pack translations edited; 38/148 distinct public lesson/preparation HTML reviewed. Full Student Task PDF/gated Cool-down parity 0; source stage A, runtime Practice C, Stage D and academic acceptance remain 0/148.",
+  "currentScopeDescription": "V5: 40 direct Grade5 Rich V2 candidates: 26 preserved, new U02 L09-L17 (9) and new U03 L02-L06 (5). U01 12/12, U02 17/17 and U03 7/20 have direct authored candidate. Baseline pack 104 editorial repairs. 43 public 2021 teacher/student HTML sources reviewed; no 148/148 full original PDF/asset/gated-response parity. All A/C/D/academic acceptance 0.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "a82ea2d6ff81486a5e8af56bb3bffd5c7a297d19",
+  "lastCommittedTest": "9987e31d3de386c386444b057879be720815ff9a",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "b7d8e12ad0ad515f12d8d2a004865b65d1767f3e",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U03:L02 — Fraction Multiplication and Division",
+    "lastKnownCommittedHeadBeforeLedger": "9987e31d3de386c386444b057879be720815ff9a",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U03:L07 (next public 2021 source task and lesson-specific teaching)",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Review and author Unit 3 L02 onward with exact source/representation, preserve Grade5-only ownership, investigate selected Practice only with reproducible tests",
+    "nextAcademic": "Continue U03 L07-L20; independent source task work and exact Practice trace; per-lesson A–D still open",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -6762,6 +6794,22 @@
     "database": "NOT_RUN",
     "authenticatedTeacherStudent": "NOT_RUN",
     "crossCurriculum": "NOT_RUN",
-    "protectedCi": "NOT_RUN"
+    "protectedCi": "NOT_RUN",
+    "combinedActualNodeCli": {
+      "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-u02-area-v5.test.cjs /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-u03-fractions-v5.test.cjs",
+      "environment": "Isolated container Node.js v22.16.0; not Our-CS nor Anas_Nitro",
+      "passed": 14,
+      "failed": 0,
+      "skipped": 2,
+      "skipReason": "Published GitHub Grade 5 Rich V2 files not mounted in local test working directory; full sidecar validation tests skipped.",
+      "scope": "Two math-oracle test files only; .NET, runtime selection, DB, authenticated rendering and CI NOT_RUN",
+      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_20261029.tap"
+    },
+    "githubConnectorV8U03": {
+      "status": "PASS",
+      "groups": 6,
+      "scope": "Committed exact Grade5 U03 fixture and committed Node test via in-memory V8 mock; not Node CLI",
+      "verifiedTestCommit": "9987e31d3de386c386444b057879be720815ff9a"
+    }
   }
 }
