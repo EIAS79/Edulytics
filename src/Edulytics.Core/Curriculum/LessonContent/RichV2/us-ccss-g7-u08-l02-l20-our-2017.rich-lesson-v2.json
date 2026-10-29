@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v2",
+  "ContentVersion": "us-ccss-g7-u08-probability-sampling-rich-v2-candidate-20261028-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -9,7 +9,8 @@
       "Title": "Chance Experiments",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Conduct chance experiments with repeated trials, organize outcomes and compare relative frequencies. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/2/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Place chance events on an impossible-to-certain scale. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/2/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -67,6 +68,19 @@
           ],
           "Answer": "Blue.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Chance Experiments",
+          "Question": "A fair bag has 3 blue balls, 2 red balls, and no green balls; a ball is drawn without looking. Classify drawing green, blue, or red and explain all categories.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Five equally likely balls are in the bag.",
+            "P(green)=0 so impossible.",
+            "P(blue)=3/5=0.6, so more likely than not; P(red)=2/5=0.4, so less likely than not.",
+            "Arrange the event likelihoods on a 0-to-1 number line, stating one event certain (a ball is blue or red)."
+          ],
+          "Answer": "Green impossible; blue likely; red unlikely; blue-or-red certain.",
+          "Check": "Teacher checks probability number line and language nuance."
         }
       ],
       "CommonMistakes": [
@@ -147,7 +161,8 @@
       "Title": "What Are Probabilities?",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Explain probability as a number from 0 to 1, identifying impossible and certain events. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/3/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: List sample spaces and compare simple games. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/3/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -205,6 +220,19 @@
           ],
           "Answer": "2/5.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — What Are Probabilities?",
+          "Question": "One game pays if a fair coin is heads, another if an equally likely six-sided number cube shows a multiple of 3. Which has greater win probability?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Coin sample space {H,T}, with 1 winning outcome out of 2.",
+            "Cube sample space {1,2,3,4,5,6}, winning multiples {3,6}.",
+            "P(coin win)=1/2, P(cube win)=2/6=1/3.",
+            "Choose coin game for greater chance and explain equal-likelihood assumptions."
+          ],
+          "Answer": "Coin game, 1/2 versus 1/3.",
+          "Check": "Teacher reviews correctly enumerated sample spaces and game choice."
         }
       ],
       "CommonMistakes": [
@@ -285,7 +313,8 @@
       "Title": "Estimating Probabilities Through Repeated Experiments",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Use empirical frequencies to estimate probability and explain the effect of increased trials. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/4/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Run repeated simulated games and record empirical probability convergence. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/4/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -343,6 +372,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Probabilities Through Repeated Experiments",
+          "Question": "A spinner has four equal sectors, one marked win. In an illustrative first 20 spins it wins 7 times, in the next 80 wins 17 times. Compute both block frequencies and cumulative result.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "First 20 win fraction=7/20=0.35.",
+            "Next 80 win fraction=17/80=0.2125.",
+            "Combined 100 spins contain 24 wins, frequency=24/100=0.24.",
+            "Compare with theoretical 1/4=0.25 and discuss random variation without claiming convergence is guaranteed."
+          ],
+          "Answer": "Empirical cumulative 0.24 after 100 trials, close to theoretical 0.25.",
+          "Check": "Teacher evaluates actual trial log/graph; provided observations are explicitly hypothetical."
         }
       ],
       "CommonMistakes": [
@@ -419,7 +461,8 @@
       "Title": "More Estimating Probabilities",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Compare theoretical probability with observed variation and understand why more trials can reduce noise. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/5/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Group spinner experiments and compare identical sample spaces with different probabilities. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/5/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -477,6 +520,19 @@
           ],
           "Answer": "0.01.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — More Estimating Probabilities",
+          "Question": "Two spinners both have labels 1,2,3. Spinner A has three equal sectors, while B has six equal sectors with labels 1,1,1,2,2,3. Compare probability of landing on 3.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Both distinct-label sample spaces are {1,2,3}.",
+            "A has one of three equal sectors labeled 3, so P_A(3)=1/3.",
+            "B has one of six equal sectors labeled 3, so P_B(3)=1/6.",
+            "Draw sector counts, record 10 real trial outcomes for each, and discuss deviation from those theoretical values."
+          ],
+          "Answer": "Same labels but different P(3): 1/3 versus 1/6.",
+          "Check": "Teacher reviews proportional sector diagram and actual observation logs."
         }
       ],
       "CommonMistakes": [
@@ -547,7 +603,8 @@
       "Title": "Estimating Probabilities Using Simulation",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Design random-digit simulations to model events with a known probability and summarize results. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/6/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Construct simulations for a stated real-world probability. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/6/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -605,6 +662,19 @@
           ],
           "Answer": "1/4.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Probabilities Using Simulation",
+          "Question": "An imaginary delivery succeeds on 30% of days. Propose a fair-digit simulation and demonstrate how to record 12 trials without suggesting a made-up sample was actually run.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Choose uniform random digits 0–9; designate 0,1,2 as successes.",
+            "Each digit is equally likely, so success probability 3/10=30%.",
+            "For a real experiment use an actual 10-sector equal spinner, RNG or physical digit slips and record each trial.",
+            "Review why choosing 3 of 6 faces would incorrectly simulate 50%, not 30%."
+          ],
+          "Answer": "Three winning digits out of 10 give P(success)=0.30.",
+          "Check": "Teacher checks simulation mapping and actual trial provenance."
         }
       ],
       "CommonMistakes": [
@@ -675,7 +745,8 @@
       "Title": "Simulating Multi-step Experiments",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Model sequential independent random events and estimate joint probabilities from simulation. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/7/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Simulate multi-day events with at least a threshold of successes. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/7/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -733,6 +804,19 @@
           ],
           "Answer": "0.225.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Simulating Multi-step Experiments",
+          "Question": "A fictional weather model has independent rain probability 1/3 each day. For a six-day festival, what is a valid simulation for whether rain occurs at least 3 days?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Use a fair three-sector spinner (rain,not,not) once per day.",
+            "Record six separate spins per simulated festival week.",
+            "Classify a week as rain-threshold met only when 3 or more of six days show rain.",
+            "Repeat many independent weeks and divide successful-week counts by total simulated weeks to estimate probability."
+          ],
+          "Answer": "Use a six-spin-per-trial, 1/3-per-day simulation with success count at least 3.",
+          "Check": "Teacher checks authentic multi-step trial protocol and classification; no fabricated empirical estimate."
         }
       ],
       "CommonMistakes": [
@@ -803,7 +887,8 @@
       "Title": "Keeping Track of All Possible Outcomes",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Enumerate sample spaces systematically with tables and organized lists. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/8/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Create systematic outcome lists, two-way tables and tree diagrams. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/8/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -861,6 +946,19 @@
           ],
           "Answer": "1/2.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Keeping Track of All Possible Outcomes",
+          "Question": "A snack includes one of 2 sandwiches, one of 3 fruit choices and one of 2 drinks. How many distinct snack bundles are possible?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Multiplication principle gives 2×3×2=12 unique triples.",
+            "Draw a three-level tree: 2 first branches, 3 for each first branch, then 2 drinks each.",
+            "List representative choices systematically and check no duplicates or missing bundles.",
+            "Verify a two-way/intermediate table also gives 12."
+          ],
+          "Answer": "12 unique complete snack combinations.",
+          "Check": "Teacher assesses original tree/table completeness, labels and combinatorial reasoning."
         }
       ],
       "CommonMistakes": [
@@ -937,7 +1035,8 @@
       "Title": "Multi-step Experiments",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Calculate probabilities for compound events from sample spaces and simple trees. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/9/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Evaluate compound spinner events from explicit sample spaces. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/9/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -995,6 +1094,19 @@
           ],
           "Answer": "1/2.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Multi-step Experiments",
+          "Question": "Independently spin one of four equally likely colors R,B,G,Y and one of five equally likely numbers 1–5. Find P(blue and odd number).",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "There are 4×5=20 equally likely color-number pairs.",
+            "Blue has one possible color and odd numbers are 1,3,5 (three).",
+            "Favorable pairs are (B,1),(B,3),(B,5), exactly three.",
+            "Probability 3/20=0.15; verify with an enumerated table or tree."
+          ],
+          "Answer": "P(blue and odd)=3/20.",
+          "Check": "Teacher checks independence assumption and an authentic joint sample-space table."
         }
       ],
       "CommonMistakes": [
@@ -1065,7 +1177,8 @@
       "Title": "Designing Simulations",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Choose, justify and critique simulation devices for complex chance experiments. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/10/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Design a realistic multi-step simulation with a compound success threshold. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/10/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1123,6 +1236,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Designing Simulations",
+          "Question": "A fictional experiment produces a rare trait with probability 1/4 per offspring; a group requires at least 2 successes among 5 independent offspring. Design, but do not falsely claim to execute, a coin simulation.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Assign success to HH from two fair independent coins; HH has P=1/4.",
+            "For one family simulation perform five independent two-coin trials.",
+            "Count how many HH outcomes occur; record the family as successful if count≥2.",
+            "Repeat families; use successful-family fraction as empirical probability and describe sampling variability."
+          ],
+          "Answer": "Valid simulation: 5 two-coin trials per family with HH as success; threshold 2 of 5.",
+          "Check": "Teacher checks physical/simulated trial data and genuine empirical estimate."
         }
       ],
       "CommonMistakes": [
@@ -1193,7 +1319,8 @@
       "Title": "Comparing Groups",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Compare two group distributions using mean, median and distributional context. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/11/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare group centers and spread using graphical displays. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/11/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1251,6 +1378,19 @@
           ],
           "Answer": "10.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Comparing Groups",
+          "Question": "Two equal-sized groups have fictional measurements A={4,5,6,5,5} and B={10,11,12,11,11}. Compare mean, range and distribution shape.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "A has sum 25, mean 5 and range 6−4=2.",
+            "B has sum 55, mean 11 and range 12−10=2.",
+            "Means differ by 6 but ranges and relative within-group patterns are equal.",
+            "Draw aligned dot plots and describe shift right by 6 rather than inventing different spread."
+          ],
+          "Answer": "Means 5 vs 11, same range 2, B shifted +6.",
+          "Check": "Teacher checks equally scaled dot plots and center-versus-variation language."
         }
       ],
       "CommonMistakes": [
@@ -1324,7 +1464,8 @@
       "Title": "Larger Populations",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Explain why samples are needed when populations are large and identify limits of a sample-based claim. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/12/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Collect class name-length data and discuss population generalization. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/12/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1382,6 +1523,19 @@
           ],
           "Answer": "Not reliably.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Larger Populations",
+          "Question": "An illustrative class sample of five first-name lengths is {3,4,4,5,9} and matching last-name lengths {5,5,6,7,7}. Compute means and explain why one class is not automatically the whole-school population.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "First-name mean=(3+4+4+5+9)/5=5.",
+            "Last-name mean=(5+5+6+7+7)/5=6.",
+            "The sample suggests last names average 1 letter longer within this invented class.",
+            "It may not represent the school unless the selection process is defensible; collect actual data without publishing student names."
+          ],
+          "Answer": "Sample means 5 and 6 letters, an estimated one-letter difference only for this class.",
+          "Check": "Teacher reviews ethically collected anonymous data and sampling limitations."
         }
       ],
       "CommonMistakes": [
@@ -1452,7 +1606,8 @@
       "Title": "What Makes a Good Sample?",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Identify random sampling and distinguish representative samples from biased convenience samples. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/13/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Judge sample quality by selection mechanism and distribution. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/13/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1510,6 +1665,19 @@
           ],
           "Answer": "Can support a systematic random sample.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — What Makes a Good Sample?",
+          "Question": "A painter sells 20 paintings, but a gallery sample includes only the most expensive three. Is the sample mean a fair estimate of mean selling price for all 20?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "The sampling frame covers only gallery high-price items, not all 20 paintings.",
+            "Selection is linked to price, so the observed mean is systematically at risk of being too high.",
+            "A simple random sample over all 20 sales would give broader inclusion.",
+            "Compare sample and full-population plots or data before assessing possible bias; no numerical population mean is supplied here."
+          ],
+          "Answer": "Not a fair representative sample without further evidence; use a random selection from all 20.",
+          "Check": "Teacher checks bias argument and recognition that unknown prices cannot be invented."
         }
       ],
       "CommonMistakes": [
@@ -1580,7 +1748,8 @@
       "Title": "Sampling in a Fair Way",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Design fair random sampling procedures and justify equal inclusion probabilities. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/14/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare truly random samples with convenience sampling. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/14/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1638,6 +1807,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Sampling in a Fair Way",
+          "Question": "A school has a numbered roster of 200. One survey picks every 20th student after a random start 1–20, another polls only friends at a lunchtime table. Which is more defensible, and what could still go wrong?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Random-start systematic sample includes 10 distinct students spread across the roster.",
+            "The friends-at-one-table convenience group can overrepresent a shared interest or grade.",
+            "Systematic sampling may also be biased if the roster has a repeating 20-student pattern tied to the outcome.",
+            "Explain inclusion/selection and discuss when a genuine simple random draw would be preferable."
+          ],
+          "Answer": "Random-start systematic sample is more defensible than polling friends, but periodic ordering remains a risk.",
+          "Check": "Teacher checks actual sampling plan and qualified criticism of bias."
         }
       ],
       "CommonMistakes": [
@@ -1708,7 +1890,8 @@
       "Title": "Estimating Population Measures of Center",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Use sample mean or median to estimate central tendency while acknowledging sampling variability. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/15/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Estimate population center from random samples and assess outliers. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/15/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1766,6 +1949,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Population Measures of Center",
+          "Question": "A sample of five fictional transaction times is 2,3,3,4,18 minutes. Find mean and median, and select a center robust to the high outlier.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Ordered data are already 2,3,3,4,18.",
+            "Mean=(2+3+3+4+18)/5=30/5=6 minutes.",
+            "Median is third value 3 minutes.",
+            "18 pushes the mean up, so median better describes the typical lower cluster; generalization needs representative sampling."
+          ],
+          "Answer": "Mean 6 min, median 3 min; median more resistant to the outlier.",
+          "Check": "Teacher checks a dot plot or histogram and explanation of outlier influence."
         }
       ],
       "CommonMistakes": [
@@ -1836,7 +2032,8 @@
       "Title": "Estimating Population Proportions",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Use sample category proportions to estimate counts in a larger population. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/16/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Project sample proportions to a population with uncertainty. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/16/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -1894,6 +2091,19 @@
           ],
           "Answer": "Both 30%.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Estimating Population Proportions",
+          "Question": "In a genuinely randomly selected model sample of 80 commuters, 30 reported cycling. Estimate how many out of 1200 commuters may cycle, and explain why the estimate is not a census result.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Sample proportion=30/80=0.375.",
+            "Apply 0.375×1200=450 commuters.",
+            "The projection assumes the sampling frame is representative.",
+            "State potential sampling variation and rounding; a different sample may yield another estimate."
+          ],
+          "Answer": "Approximately 450 cyclists, conditional on representative sampling.",
+          "Check": "Teacher checks sampling evidence and explicitly qualified extrapolation."
         }
       ],
       "CommonMistakes": [
@@ -1967,7 +2177,8 @@
       "Title": "More about Sampling Variability",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Investigate variation among sample estimates and how repeated samples reveal uncertainty. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/17/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare distributions of sample means and population means. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/17/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -2025,6 +2236,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — More about Sampling Variability",
+          "Question": "From the same population, sample means 12,13,11,14,10 are recorded in five independent trials. Find their mean and spread, and explain why another sample could differ.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Sum of sample means is 60; average of them is 12.",
+            "Observed range is 14−10=4.",
+            "Plot each mean on a dot plot with frequency 1 and label the scale.",
+            "Separate distribution of sample means from the distribution of all individual observations."
+          ],
+          "Answer": "Mean of five sample means 12, observed range 4.",
+          "Check": "Teacher checks actual sample construction or labels hypothetical data, and comparison of distributions."
         }
       ],
       "CommonMistakes": [
@@ -2092,7 +2316,8 @@
       "Title": "Comparing Populations Using Samples",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Use two sample distributions to infer differences with attention to overlap and variability. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/18/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare two sampled populations using measures of center and spread. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/18/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -2150,6 +2375,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Comparing Populations Using Samples",
+          "Question": "Two samples are A={5,7,9,11} and B={9,11,13,15}. Compare means and mean absolute deviations and discuss if the sample proves the entire populations differ.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Mean A=(5+7+9+11)/4=8; mean B=12.",
+            "A deviations from 8 are 3,1,1,3, MAD=2.",
+            "B deviations from 12 are 3,1,1,3, MAD=2.",
+            "Difference in sample means is 4 with equal sampled MAD; population conclusions require random-sample context."
+          ],
+          "Answer": "Sample means 8 and 12; both sample MADs 2.",
+          "Check": "Teacher reviews comparative dot plots and bounded inference, not a guaranteed population claim."
         }
       ],
       "CommonMistakes": [
@@ -2217,7 +2455,8 @@
       "Title": "Comparing Populations With Friends",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Design and interpret collaborative sampling comparisons and communicate limitations. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/19/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Compare populations through information-gap dialogue and choose effective charts. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/19/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -2275,6 +2514,19 @@
           ],
           "Answer": "Not reliably.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Comparing Populations With Friends",
+          "Question": "A teacher gives one learner group A: 5,7,9,11 and another group B: 8,8,10,14; neither may show the raw card. What questions must partners ask to compare means and ranges?",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Each partner asks for the number of observations, total sum and extreme values or suitable summary.",
+            "A: mean 32/4=8, range 11−5=6.",
+            "B: mean 40/4=10, range 14−8=6.",
+            "Compare A mean 8 and B mean 10 with equal ranges 6, and discuss graph scale."
+          ],
+          "Answer": "Sample B has mean 2 more, both range 6.",
+          "Check": "Teacher checks partner question log and correctness of required information."
         }
       ],
       "CommonMistakes": [
@@ -2345,7 +2597,8 @@
       "Title": "Memory Test",
       "ExplanationParagraphs": [
         "Edulytiks learning goal: Design a fair memory-test experiment, compare groups and justify population inferences without false automated scoring. This first-party instructional material references historical OUR/IM lesson preparation https://im.kendallhunt.com/MS/teachers/2/8/20/preparation.html (2017–2019 CC BY 4.0 lineage). No source graphical assets or protected assessments reproduced.",
-        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias."
+        "Classify claims as theoretical, experimental or sample-based, and record actual data or justify explicit hypothetical data. Student-developed simulations, experiments, samples, group comparisons and discussion arguments require teacher review for design validity and bias.",
+        "Publisher student-task review: Conduct random-sample methods with data-grid selection and memory claims. The following independent task is a supporting first-party analogue, not a claim that actual group experiments or sampling have been conducted. Student source: https://im.kendallhunt.com/MS/students/2/8/20/index.html. Real trial logs, sampling procedures, labeled distributions, uncertainty and teacher assessment are required when the task calls for them."
       ],
       "KeyConcepts": [
         {
@@ -2403,6 +2656,19 @@
           ],
           "Answer": "No.",
           "Check": "Confirm totals, sample composition and rates; teacher review for inferred claims and fair experimental design."
+        },
+        {
+          "Title": "Source-student probability and sampling task — Memory Test",
+          "Question": "A 10-by-10 anonymous score grid has 100 values. Compare selecting 20 uniformly random distinct cells versus selecting the first 20 values or a contiguous path of 20.",
+          "Method": "Identify sample space, actual versus illustrative data and study design; create a student-sourced table, tree or graph, then justify the probability or estimate.",
+          "Steps": [
+            "Uniform sampling without replacement can give every cell equal inclusion probability 20/100.",
+            "The first 20 values may systematically reflect ordering, and a contiguous path can preserve local clustering.",
+            "Choose 20 distinct cell indices by a uniform random method, record their actual values and calculate the sample summary.",
+            "Compare a new independent random draw; avoid asserting causal effects from scores without an experimental design."
+          ],
+          "Answer": "A genuinely uniform 20-cell sample is defensible; first-20 or linked paths are not automatically representative.",
+          "Check": "Teacher checks a real reproducible selection protocol and the sampled-value calculations."
         }
       ],
       "CommonMistakes": [
