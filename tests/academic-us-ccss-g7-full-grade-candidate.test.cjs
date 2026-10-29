@@ -152,17 +152,17 @@ test('V5 actual student-source comparisons remain honest and lesson-specific', (
   );
   const inspected = parity.lessons.filter(row => row.sourceInspected === 'DIRECT_STUDENT_PAGE_READ');
   const unchecked = parity.lessons.filter(row => row.sourceInspected === 'NOT_CHECKED');
-  assert.equal(inspected.length, 45);
-  assert.equal(unchecked.length, 100);
+  assert.equal(inspected.length, 145);
+  assert.equal(unchecked.length, 0);
   assert.equal(parity.counts.stageAVerified, 0);
   assert.equal(parity.counts.stageCVerified, 0);
   assert.equal(parity.counts.stageDVerified, 0);
-  assert.equal(ledger.counts.sourceStudentPagesInspected, 45);
-  assert.equal(ledger.counts.sourceStudentPagesNotIndividuallyInspected, 100);
+  assert.equal(ledger.counts.sourceStudentPagesInspected, 145);
+  assert.equal(ledger.counts.sourceStudentPagesNotIndividuallyInspected, 0);
   assert.equal(ledger.counts.stageAVerified, 0);
   assert.equal(ledger.counts.stageCVerified, 0);
   assert.equal(ledger.counts.stageDVerified, 0);
-  assert.equal(ledger.counts.staticRichWorkedExamples, 476);
+  assert.equal(ledger.counts.staticRichWorkedExamples, 576);
   const lessonRows = new Map(ledger.lessons.map(row => [row.lessonCode, row]));
   for (const row of parity.lessons) {
     const rich = byCode.get(row.lessonCode);
@@ -207,4 +207,30 @@ test('U01 source-authentic constructions and U06 discrete nonproportional contra
   assert.ok(u07.WorkedExamples.some(w => /protractor/i.test(w.Title)));
   const u03 = byCode.get('PED:US-CCSS-MATH:G7:U03:L01');
   assert.ok(/measure a square/i.test(u03.WorkedExamples[0].Title));
+});
+
+test('V5 145 student source lessons retain physical task and teacher-only evidence boundaries', () => {
+  const parity = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-student-task-parity-v5.json');
+  const visual = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-visual-coverage-audit.json');
+  assert.equal(visual.counts.visualsTotal, 151);
+  assert.equal(visual.counts.visualsPresent, 145);
+  assert.equal(visual.counts.visualsHtmlRendered, 0);
+  assert.equal(visual.counts.visuallyOrAcademicallyAccepted, 0);
+  assert.equal(parity.counts.studentTaskPagesDirectlyRead, 145);
+  assert.equal(parity.counts.notIndividuallySourceChecked, 0);
+  const kinds = new Map();
+  for (const lesson of lessons) {
+    for (const v of lesson.Visuals) kinds.set(v.Kind, (kinds.get(v.Kind) || 0) + 1);
+  }
+  assert.equal(kinds.get('RatioTable'), 110);
+  assert.equal(kinds.get('DoubleNumberLine'), 1);
+  assert.equal(kinds.get('NumberLine'), 1);
+  assert.equal(kinds.get('EquationSet'), 39);
+  for (const row of parity.lessons) {
+    assert.equal(row.sourceInspected, 'DIRECT_STUDENT_PAGE_READ', row.lessonCode);
+    assert.equal(row.teacherRubricRequired, true, row.lessonCode);
+    assert.equal(row.academicStageA, 'NOT_VERIFIED', row.lessonCode);
+    assert.equal(row.stageD, 'NOT_RUN', row.lessonCode);
+    assert.equal(row.sourceTaskGraphicParity, 'NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT', row.lessonCode);
+  }
 });
