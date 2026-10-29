@@ -1,0 +1,388 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u04-l15-l17-im2021-first-party-richv2-v5-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L15",
+      "CultureCode": "en",
+      "Title": "Find Missing Side Lengths",
+      "ExplanationParagraphs": [
+        "Goal: use inverse multiplication/division to determine an unknown rectangular side from area or volume, distinguish square from cubic units, and explain when the available dimensions are INSUFFICIENT for a unique answer. The 2021 source finishes by discussing different valid side pairs for one known volume.",
+        "Warm-up: estimate an outdoor garden's area from a first-party text scenario with dimensions only approximately known. Give too-low, about-right and too-high estimates, explicitly stating assumptions; one photographic appearance does not establish a unique exact area.",
+        "Activity 1 — missing area width: a rectangular lawn has area 1536 square feet and length 48 feet. Compute width=1536÷48=32 feet using partial quotients 30×48=1440 then 2×48=96. Verify by multiplying 48×32.",
+        "Activity 2 — missing prism height: a storage prism has volume 2160 cubic feet and base area 120 square feet, so its height is 18 feet. Contrast an alternative prism with volume 960 cubic feet and one known dimension 32 feet. The other two perpendicular dimensions have product 30 square feet, so 5×6,3×10 and2×15 feet all give valid dimensions if no further constraints are supplied.",
+        "Teacher boundary: source requires identifying quantities with units, interpreting why area versus volume changes the operation, and producing several valid length pairs when one is underdetermined. A numeric auto-check cannot certify the argument that multiple solutions are permitted."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Missing rectangle side",
+          "Definition": "Dividing area by one known perpendicular side yields the other linear dimension.",
+          "Rule": "width=area÷length.",
+          "Example": "1536 ft²÷48 ft=32 ft."
+        },
+        {
+          "Title": "Missing prism height",
+          "Definition": "Dividing volume by its known base area yields corresponding linear height.",
+          "Rule": "height=volume÷base area.",
+          "Example": "2160 ft³÷120 ft²=18 ft."
+        },
+        {
+          "Title": "Not always one answer",
+          "Definition": "Knowing volume and only ONE edge leaves the product of two missing edges, not each edge individually.",
+          "Rule": "960 ft³÷32 ft=30 ft², with several factor pairs.",
+          "Example": "5×6,3×10 or2×15 feet are all possible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Lawn width",
+          "Question": "A lawn has area1536 square feet and length48 feet. Find width.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Choose convenient 48×30=1440.",
+            "Subtract1536−1440=96, which is48×2.",
+            "Add partial quotients30+2."
+          ],
+          "Answer": "32 feet.",
+          "Check": "48×32=1536 square feet."
+        },
+        {
+          "Title": "Prism height",
+          "Question": "A prism has volume2160 cubic feet and base area120 square feet.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Identify 120 ft² as base area.",
+            "Divide2160 by120.",
+            "Label linear height units."
+          ],
+          "Answer": "18 feet.",
+          "Check": "120 ft²×18 ft=2160 ft³."
+        },
+        {
+          "Title": "Explain multiple possible lengths",
+          "Question": "Volume960 cubic feet and one edge32 feet are known. Could the other edges be uniquely determined?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Divide960 by32 to find product30 square feet.",
+            "Factor30 using 5×6,3×10,2×15.",
+            "Show each pair times32 gives the original volume."
+          ],
+          "Answer": "No unique pair; 5 and6,3 and10,2 and15 feet are examples.",
+          "Check": "32×5×6=32×3×10=32×2×15=960 ft³."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Report square feet as a missing side length",
+          "WhyWrong": "Area divided by a linear side yields a linear measurement.",
+          "Correction": "Track units throughout division."
+        },
+        {
+          "Mistake": "Select one arbitrary factor pair as the only remaining prism dimensions",
+          "WhyWrong": "One known edge and volume determine only the product of the two remaining edges.",
+          "Correction": "Supply several valid factorizations or ask for another dimension."
+        }
+      ],
+      "SummaryPoints": [
+        "Area and volume missing-side problems use inverse multiplication with consistent units.",
+        "One fixed area plus a side may yield a unique missing side; one volume plus one edge may not determine the other two.",
+        "Teacher reviews the representation and proof of multiple valid solutions.",
+        "2021 Illustrative Mathematics K–5 Grade 5, Unit 4 Lesson 15 public HTML: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-15/lesson.html. Student Task PDF and gated Cool-down not independently verified. Examples and text diagrams are original Edulytiks work."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Find Missing Side Lengths — mathematical interpretation",
+          "Description": "Original accessible mathematical text diagram, without source photo or protected chart.",
+          "Rows": [
+            {
+              "Label": "Known",
+              "Cells": [
+                "Area 1536 ft² + length48 ft",
+                "Volume2160 ft³ + base120 ft²",
+                "Volume960 ft³ + edge32 ft"
+              ]
+            },
+            {
+              "Label": "Computed",
+              "Cells": [
+                "Width32 ft",
+                "Height18 ft",
+                "Other edges product30 ft²"
+              ]
+            },
+            {
+              "Label": "Unique?",
+              "Cells": [
+                "Yes",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L16",
+      "CultureCode": "en",
+      "Title": "World’s Record Noodle Soup",
+      "ExplanationParagraphs": [
+        "Goal: interpret a real division context in which the quotient may be a MIXED number and the remainder has a physical meaning. The 2021 source's record-long CONTINUOUS noodle matters: the noodle is not merely unrelated little noodles whose lengths are added with no physical model.",
+        "Warm-up: discuss an independently described single continuous noodle, its length and the number of people to share it. Distinguish a length measure (feet) from servings and elapsed production time; real photos and protected material are not reused.",
+        "Activity 1 — original long noodle: one continuous noodle measures2050 feet and is divided equally among80 diners. Estimate about2000÷80=25 feet per person, then compute2050÷80=25 with50 feet remaining. Divide the remaining50 feet equally to obtain50/80=5/8 foot per person. Each receives25 5/8 feet of noodle.",
+        "Activity 2 — interpret leftover and number of diners: if the same noodle were shared by100 diners, each receives2050÷100=20 1/2 feet. Compare the group count, remaining fraction and why more equal diners mean a shorter share. Use a tape-line description so the remainder is understood as food length, not an abandoned people count.",
+        "Assessment: the original source asks learners to estimate, interpret and reason about continuous-noodle fractional quotients, not only divide integers. The student explanation, remainder interpretation and comparison remain teacher-reviewed; numeric quotient validation is supporting."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Division with remainder as fraction",
+          "Definition": "When a length is shared equally and remainder remains, divide it as well.",
+          "Rule": "a÷b=q+r/b with0≤r<b.",
+          "Example": "2050÷80=25+50/80=25 5/8."
+        },
+        {
+          "Title": "Continuous noodle length",
+          "Definition": "The length of one object can be partitioned into equal portions without treating the fraction as new whole noodles.",
+          "Rule": "Every share multiplied by diner count reconstructs original length.",
+          "Example": "80×25 5/8 feet=2050 feet."
+        },
+        {
+          "Title": "Fixed total with more recipients",
+          "Definition": "More equal shares from a fixed positive total yield smaller share lengths.",
+          "Rule": "2050÷100<2050÷80.",
+          "Example": "20 1/2 ft<25 5/8 ft."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find a mixed quotient",
+          "Question": "2050 feet of noodle among80 diners. Length per person?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Remove80×25=2000 feet.",
+            "50 feet remain, shared equally as50/80 feet each.",
+            "Simplify50/80=5/8."
+          ],
+          "Answer": "25 5/8 feet per diner.",
+          "Check": "80×25=2000 and80×5/8=50, total2050 feet."
+        },
+        {
+          "Title": "Change diner count",
+          "Question": "If the same 2050-foot noodle is shared among100 diners, what is the share?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Compute100×20=2000 feet.",
+            "Split remaining50 feet among100 diners.",
+            "Simplify50/100=1/2 foot."
+          ],
+          "Answer": "20 1/2 feet per diner.",
+          "Check": "100×20 1/2=2050 feet."
+        },
+        {
+          "Title": "Check a wrong remainder interpretation",
+          "Question": "A student says each diner gets25 feet, while50 extra feet should simply be thrown away. Explain the error.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Identify leftover50 feet from the whole.",
+            "The sharing goal is equal division of the entire single noodle.",
+            "Give each diner50/80 feet beyond the25 feet."
+          ],
+          "Answer": "Each gets25 5/8 feet; no length is unaccounted for.",
+          "Check": "Teacher verifies the meaning of the fraction from the fixed continuous original."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignore the remainder in exact equal sharing",
+          "WhyWrong": "The continuous noodle has length beyond the whole-number partial share.",
+          "Correction": "Represent remainder divided by recipient count as a fractional length."
+        },
+        {
+          "Mistake": "Read the quotient remainder as extra whole people",
+          "WhyWrong": "The remainder is measured in feet, not in number of diners.",
+          "Correction": "Label every intermediate quantity in its proper units."
+        }
+      ],
+      "SummaryPoints": [
+        "A whole-number division remainder can become a fraction of the unit per person.",
+        "One original continuous object is shared entirely, preserving exact total length.",
+        "Teacher checks the real-world interpretation of a mixed-number quotient.",
+        "2021 Illustrative Mathematics K–5 Grade 5, Unit 4 Lesson 16 public HTML: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-16/lesson.html. Student Task PDF and gated Cool-down not independently verified. Examples and text diagrams are original Edulytiks work."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "World’s Record Noodle Soup — mathematical interpretation",
+          "Description": "Original accessible mathematical text diagram, without source photo or protected chart.",
+          "Rows": [
+            {
+              "Label": "Total length",
+              "Cells": [
+                "2050 ft",
+                "2050 ft"
+              ]
+            },
+            {
+              "Label": "Diners",
+              "Cells": [
+                "80",
+                "100"
+              ]
+            },
+            {
+              "Label": "Whole feet each",
+              "Cells": [
+                "25",
+                "20"
+              ]
+            },
+            {
+              "Label": "Fractional feet each",
+              "Cells": [
+                "5/8",
+                "1/2"
+              ]
+            },
+            {
+              "Label": "Total share",
+              "Cells": [
+                "25 5/8",
+                "20 1/2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L17",
+      "CultureCode": "en",
+      "Title": "Fractions as Partial Quotients (optional)",
+      "ExplanationParagraphs": [
+        "Goal: interpret quotients as fractions and determine which SUMS of fractional quotients represent the same exact dividend/divisor. The public 2021 optional lesson asks learners to select ALL matching expressions and then choose strategically helpful numerator decompositions.",
+        "Warm-up: consider a quotient fraction such as84/7. Explain why it equals84÷7, and why (70/7)+(14/7) gives10+2. The same denominator is essential when numerators are split and fractions interpreted as partial quotients.",
+        "Activity 1 — select expressions: for84/7, compare equivalent 84÷7, 70/7+14/7, 63/7+21/7 and (70÷7)+(14÷7). Reject the superficially similar 71/7+14/7 because its numerators total85, not84. Reject 70÷7+14 because the last14 is not divided by7.",
+        "Activity 2 — choose helpful chunks: for165÷15, compare150/15+15/15=10+1 with75/15+90/15=5+6. Both give11 and use complete divisor multiples. Discuss why 150 may be a faster mentally accessible decomposition, and why choosing numerators not divisible by15 can still give a valid but less friendly fractional calculation if the total is conserved.",
+        "Teacher boundary: the original source asks for all mathematically equivalent card choices, explanations and efficiency comparisons. An automated exact fraction answer can help but cannot pass a reasoning/card-selection exercise without checking what the learner selected and why. Source image cards and gated response not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "A fraction is division",
+          "Definition": "The fraction numerator divided by denominator expresses the exact quotient.",
+          "Rule": "84/7=84÷7=12.",
+          "Example": "84 objects divided into7 groups yields12."
+        },
+        {
+          "Title": "Partial quotient fractions add",
+          "Definition": "Splitting the numerator into parts and dividing each by the SAME divisor preserves value.",
+          "Rule": "(a+b)/d=a/d+b/d for positive d.",
+          "Example": "70/7+14/7=84/7."
+        },
+        {
+          "Title": "Check an entire expression",
+          "Definition": "A candidate sum may contain valid fractions yet not equal the target quotient.",
+          "Rule": "Numerators must total the original dividend when denominators are the same.",
+          "Example": "71/7+14/7=85/7, not84/7."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Select all exact quotient expressions",
+          "Question": "Which expressions equal84/7: 84÷7,70/7+14/7,63/7+21/7,71/7+14/7?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Compute target84/7=12.",
+            "Check numerator sums70+14 and63+21 both84.",
+            "Reject71+14=85."
+          ],
+          "Answer": "The first three are equivalent; the last is not.",
+          "Check": "84÷7=70/7+14/7=63/7+21/7=12."
+        },
+        {
+          "Title": "Compare two useful decompositions",
+          "Question": "Find165÷15 using fractions.",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Split as150/15+15/15=10+1.",
+            "Alternatively split75/15+90/15=5+6.",
+            "Compare which partial calculations are convenient."
+          ],
+          "Answer": "11 by either method.",
+          "Check": "15×11=165."
+        },
+        {
+          "Title": "Spot a false missing denominator",
+          "Question": "Does70÷7+14 equal84÷7?",
+          "Method": "First-party context model with exact multiplication or fraction-quotient inverse check.",
+          "Steps": [
+            "Find70÷7=10.",
+            "Add the undivided14 to get24.",
+            "Compare with84÷7=12 and locate the missing division by7."
+          ],
+          "Answer": "No; it equals24 instead of12.",
+          "Check": "Replace14 by14÷7=2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add a numerator not divided by the same divisor",
+          "WhyWrong": "The decomposition must distribute the division across EVERY numerator part.",
+          "Correction": "Keep /7 on both parts when splitting84/7."
+        },
+        {
+          "Mistake": "Treat any two true quotient expressions as a correct matching pair",
+          "WhyWrong": "Correctly computed individual fractions may sum to a different total.",
+          "Correction": "Add numerator contributions and compare with original dividend before accepting."
+        }
+      ],
+      "SummaryPoints": [
+        "Decomposing a quotient as a fraction sum can make division mentally easier.",
+        "Correct expressions preserve numerator total and consistent divisor.",
+        "Teacher reviews which expressions were chosen and the efficiency explanation.",
+        "2021 Illustrative Mathematics K–5 Grade 5, Unit 4 Lesson 17 public HTML: https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-17/lesson.html. Student Task PDF and gated Cool-down not independently verified. Examples and text diagrams are original Edulytiks work."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fractions as Partial Quotients (optional) — mathematical interpretation",
+          "Description": "Original accessible mathematical text diagram, without source photo or protected chart.",
+          "Rows": [
+            {
+              "Label": "Target",
+              "Cells": [
+                "84/7",
+                "165/15"
+              ]
+            },
+            {
+              "Label": "One correct split",
+              "Cells": [
+                "70/7+14/7",
+                "150/15+15/15"
+              ]
+            },
+            {
+              "Label": "Another split",
+              "Cells": [
+                "63/7+21/7",
+                "75/15+90/15"
+              ]
+            },
+            {
+              "Label": "Exact quotient",
+              "Cells": [
+                "12",
+                "11"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
