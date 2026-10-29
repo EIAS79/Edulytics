@@ -41,10 +41,11 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
         Assert.All(cases, item =>
         {
             var isMatrix = item.GetProperty("lessonCode").GetString() == MatrixLesson;
-            Assert.Equal(isMatrix
-                    ? new[] { "CCSS:HSA-REI.C.8", "CCSS:HSA-REI.C.9" }.Contains(item.GetProperty("officialTarget").GetString())
-                    : item.GetProperty("officialTarget").GetString() == "CCSS:HSF-BF.B.5",
-                true);
+            if (isMatrix)
+                Assert.True(new[] { "CCSS:HSA-REI.C.8", "CCSS:HSA-REI.C.9" }
+                    .Contains(item.GetProperty("officialTarget").GetString()));
+            else
+                Assert.Equal("CCSS:HSF-BF.B.5", item.GetProperty("officialTarget").GetString());
             Assert.False(string.IsNullOrWhiteSpace(item.GetProperty("expectedCanonical").GetString()));
             Assert.False(string.IsNullOrWhiteSpace(item.GetProperty("acceptedEquivalent").GetString()));
             Assert.False(string.IsNullOrWhiteSpace(item.GetProperty("rejectWrongOrMalformed").GetString()));
@@ -93,14 +94,17 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
         {
             var unit = Enumerable.Range(0, 3).Select(i => i == column ? 1 : 0).ToArray();
             var numeratorColumn = Multiply(numerator3, unit);
-            Assert.Equal(unit.Select(x => x * 7),
+            Assert.Equal(unit.Select(x => x * 7).ToArray(),
                 Multiply(a3, numeratorColumn));
         }
 
         var singular = new int[,] { { 1, 1 }, { 2, 2 } };
         Assert.Equal(0, Determinant2(singular));
-        Assert.Equal(2 * 2, 4); // compatible second equation: infinitely many
-        Assert.NotEqual(2 * 2, 5); // incompatible second equation: no solution
+        // Exact augmented-row elimination separates dependent from contradictory systems.
+        Assert.Equal(new[] { 0, 0, 0 },
+            new[] { 2 - 2 * 1, 2 - 2 * 1, 4 - 2 * 2 });
+        Assert.Equal(new[] { 0, 0, 1 },
+            new[] { 2 - 2 * 1, 2 - 2 * 1, 5 - 2 * 2 });
         Assert.Throws<ArgumentException>(() => Multiply(a2, new[] { 5, 3, 1 }));
     }
 
