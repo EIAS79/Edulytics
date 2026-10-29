@@ -20,7 +20,9 @@
       "EquationSet": 39
     },
     "sourceStudentPagesRead": 145,
-    "extraGeometricFigureAuditRequired": 17
+    "extraGeometricFigureAuditRequired": 17,
+    "standaloneGrade7SvgAssets": 3,
+    "authenticatedGrade7SvgRendered": 0
   },
   "lessons": [
     {
@@ -42,7 +44,10 @@
       "authenticStudentArtifactRequired": false,
       "figureOrDiagramBeyondTableRequired": false,
       "studentTaskSourceReviewed": true,
-      "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED"
+      "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED",
+      "v6OriginalStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "v6SvgGeometryStaticVerified": "PASS_SOURCE_MATH_ONLY",
+      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
@@ -63,7 +68,10 @@
       "authenticStudentArtifactRequired": false,
       "figureOrDiagramBeyondTableRequired": false,
       "studentTaskSourceReviewed": true,
-      "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED"
+      "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED",
+      "v6OriginalStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "v6SvgGeometryStaticVerified": "PASS_SOURCE_MATH_ONLY",
+      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
@@ -84,7 +92,10 @@
       "authenticStudentArtifactRequired": false,
       "figureOrDiagramBeyondTableRequired": false,
       "studentTaskSourceReviewed": true,
-      "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED"
+      "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED",
+      "v6OriginalStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "v6SvgGeometryStaticVerified": "PASS_SOURCE_MATH_ONLY",
+      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
@@ -2929,5 +2940,20 @@
       "studentTaskSourceReviewed": true,
       "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED"
     }
-  ]
+  ],
+  "v6": {
+    "staticSourceSvgAssets": 3,
+    "staticGeometryChecks": "PASS",
+    "sourceAssetMathCheckKinds": [
+      "uniform F factor 2",
+      "horizontal-stretched F rejected",
+      "triangle factor 1.5",
+      "L factor 0.5 and factor 3"
+    ],
+    "rubricArtifact": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+    "studentRichV2Integration": "NOT_IMPLEMENTED",
+    "teacherRubricUIIntegration": "NOT_IMPLEMENTED",
+    "screenReader": "NOT_RUN",
+    "next": "Supervisor-designated shared renderer/learner UI integration under #592, protected regression tests"
+  }
 }
