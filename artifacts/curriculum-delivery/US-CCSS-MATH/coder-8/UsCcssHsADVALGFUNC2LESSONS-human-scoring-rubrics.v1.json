@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "ADV-ALG-FUNC",
+  "pathway": "Fourth Courses",
+  "status": "PROPOSED_HUMAN_SCORING_NOT_RUNTIME_CERTIFIED",
+  "linkedFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json",
+  "scope": "Course-owned draft for teacher review of open responses. No automatic proof grading, academic approval, authenticated teacher route, persisted grade or production readiness is claimed.",
+  "scoringInstructions": {
+    "possiblePoints": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "criterionScoring": "Award each of four independent one-point criteria only when evidenced in student work; otherwise award zero for that criterion.",
+    "equivalence": "Accept mathematically equivalent reasoning and representations; do not require exact phrasing.",
+    "invalidResponses": "No credit for contradictory reasoning, impossible domains, or unsupported numeric guesses on criteria requiring justification.",
+    "humanDecision": "Final points and explanation require an authenticated teacher/reviewer after a real student submission; this file itself does not implement that workflow."
+  },
+  "rubrics": [
+    {
+      "caseId": "M05",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "gradingPolicy": "CLASSIFICATION_AND_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "classification",
+          "points": 1,
+          "requirement": "Identify infinitely many solutions, not unique or inconsistent."
+        },
+        {
+          "id": "parameterization",
+          "points": 1,
+          "requirement": "Provide x=2-t, y=t for all real t, or an equivalent free-variable description."
+        },
+        {
+          "id": "substitution",
+          "points": 1,
+          "requirement": "Verify both equations using the proposed family; the second is twice the first."
+        },
+        {
+          "id": "singular-reason",
+          "points": 1,
+          "requirement": "Explain why determinant zero does not imply no solution and why an inverse cannot be used."
+        }
+      ],
+      "acceptedReasoning": "Any correct one-parameter solution family plus a mathematically justified dependence argument.",
+      "invalidExamples": "Unique solution, no solutions, a single unqualified ordered pair, or an invented inverse matrix.",
+      "feedbackPolicy": "Reviewer records scored criteria, mathematical explanation and student-visible feedback. Numeric or keyword matching alone cannot certify reasoning."
+    },
+    {
+      "caseId": "M11",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "operation",
+          "points": 1,
+          "requirement": "Identify R2 <- R2 - 2R1 as replacement of one equation by itself minus twice another."
+        },
+        {
+          "id": "forward",
+          "points": 1,
+          "requirement": "Show that every solution of the original pair also satisfies the replaced equation."
+        },
+        {
+          "id": "reverse",
+          "points": 1,
+          "requirement": "Show reversibility by R2 <- R2 + 2R1 while retaining R1, so no solutions are lost."
+        },
+        {
+          "id": "equivalence",
+          "points": 1,
+          "requirement": "Conclude the two systems have exactly the same solution set; do not assert a change in rank or solution set."
+        }
+      ],
+      "acceptedReasoning": "Equivalent algebraic substitution or a correctly described sequence of reversible elementary row operations.",
+      "invalidExamples": "A matrix or numeric answer only; stating that row operations work without explaining why; multiplying an equation by zero.",
+      "feedbackPolicy": "Reviewer records scored criteria, mathematical explanation and student-visible feedback. Numeric or keyword matching alone cannot certify reasoning."
+    },
+    {
+      "caseId": "L13",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "domain",
+          "points": 1,
+          "requirement": "State x>0, y>0, b>0 and b!=1 for real logarithms."
+        },
+        {
+          "id": "inverse",
+          "points": 1,
+          "requirement": "Let u=log_b(x), v=log_b(y), so b^u=x and b^v=y."
+        },
+        {
+          "id": "exponent-law",
+          "points": 1,
+          "requirement": "Use b^(u+v)=b^u b^v=xy, a valid positive argument."
+        },
+        {
+          "id": "conclusion",
+          "points": 1,
+          "requirement": "Apply uniqueness/inverse to infer log_b(xy)=u+v, not log_b(x+y); justify the equality."
+        }
+      ],
+      "acceptedReasoning": "Equivalent derivation using the exponent law or valid change of base with its domain restrictions.",
+      "invalidExamples": "A decimal example or unreasoned rule statement, a false log-of-sum identity, or invalid real-log domains.",
+      "feedbackPolicy": "Reviewer records scored criteria, mathematical explanation and student-visible feedback. Numeric or keyword matching alone cannot certify reasoning."
+    }
+  ],
+  "releaseGates": {
+    "academicApproved": false,
+    "teacherWorkflowVerified": false,
+    "twoSchoolIsolationVerified": false,
+    "actualPersistedTeacherScoreVerified": false,
+    "productionReady": false
+  }
+}
