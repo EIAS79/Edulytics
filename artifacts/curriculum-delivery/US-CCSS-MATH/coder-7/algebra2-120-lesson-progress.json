@@ -17,19 +17,23 @@
     "4cc22d43bbc1328e6b675275349fdc7ca21c1a47",
     "da0a89b564e54539bd056d06076c99c748d3ae80",
     "8a0b4d86e012c0719ee341e034695ec6925e4a83",
-    "a66f40fa5ba7bb74bdd084f5338cb0c842e11f54"
+    "a66f40fa5ba7bb74bdd084f5338cb0c842e11f54",
+    "338503e92f01ed74171fea095e2f705af08f173d",
+    "95e1345840ca30cb8b79074de4945af64bd0d3ab",
+    "33fa4dd981a76e93bfe5398762ca8e651a88431e"
   ],
   "checkedStaticCounts": {
-    "sourceGroundedContentEdits": 20,
-    "previouslyAuthoredPendingReview": 3,
-    "remainingDefectTriage": 97,
-    "exactExplicitPracticeMappingMetadata": 2
+    "sourceGroundedContentEdits": 28,
+    "previouslyAuthoredPendingReview": 1,
+    "remainingDefectTriage": 90,
+    "exactExplicitPracticeMappingMetadata": 2,
+    "sourceReviewedReused": 1
   },
   "nextCurriculumCursor": {
-    "ordinal": 21,
+    "ordinal": 30,
     "unitCode": "U02",
-    "lessonNumber": 10,
-    "reason": "U02 L01-L09 content edited; next source-specific lesson is U02 L10 (Multiplicity)"
+    "lessonNumber": 19,
+    "reason": "U02 L01–L16 source-grounded content edits; U02 L17 source-reviewed and reused; U02 L18 preserved and augmented with source-specific paperback model."
   },
   "knownIntegrationIssues": [
     {
@@ -916,15 +920,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Relate root multiplicities to touching/crossing behavior when sketching factored polynomials",
+      "originalFirstPartyMathematicsVerification": "(x+1)(x−3)² has simple crossing at −1 and double touch at 3; vertical intercept 9",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/10/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 22,
@@ -955,15 +965,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Solve intersections between two polynomial functions using equality and both coordinates",
+      "originalFirstPartyMathematicsVerification": "(x+7)(x−4)=x−4 has both intersections (−6,−10) and (4,0)",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/11/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 23,
@@ -990,15 +1006,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Reverse polynomial multiplication by dividing a cubic by a known linear factor",
+      "originalFirstPartyMathematicsVerification": "x³+5x²+2x−8=(x−1)(x+2)(x+4); verify exact quotient and remainder 0",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/12/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 24,
@@ -1024,15 +1046,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Use long division to find polynomial quotient and remainder with domain caveats",
+      "originalFirstPartyMathematicsVerification": "2x³+7x²+7x+2=(x+1)(2x²+5x+2); (x²+1)/(x−1) remainder 2",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/13/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 25,
@@ -1058,15 +1086,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Identify missing information, factor and sketch source-scoped polynomials with partner explanation",
+      "originalFirstPartyMathematicsVerification": "x³−7x+6=(x−2)(x+3)(x−1); two different cubics with zeros 0 and −4",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/14/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 26,
@@ -1093,15 +1127,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Apply remainder theorem P(a)=r and solve unknown coefficient from factor data",
+      "originalFirstPartyMathematicsVerification": "P(2)=64−8u and root x=2 gives u=8; remainder for 6x²−7x−5 at 2 is 5",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/15/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 27,
@@ -1132,15 +1172,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Build rational fixed-volume closed cylinder surface area model and feasible minimum",
+      "originalFirstPartyMathematicsVerification": "Volume 452 cm³; S=2πr²+904/r; optimum r=(226/π)^(1/3) approx 4.159",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/16/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 28,
@@ -1175,8 +1221,8 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "EXISTING_AUTHORED_REVIEW_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "REUSE_SOURCE_REVIEWED_RUNTIME_PENDING",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": true,
       "practiceFamiliesExplicit": [
         "usccss.hs.rational_vertical_asymptote",
@@ -1186,10 +1232,17 @@
         "usccss.hs.rational_branch_limit_sign"
       ],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Review existing rational graph teaching for vertical asymptotes and ten-mile travel-time model",
+      "originalFirstPartyMathematicsVerification": "Original t(r)=10/r: t(8)=1.25 h, t(40/3)=0.75 h, r=0 excluded",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/17/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER",
+      "firstPartyExtension": "Preserved original source-aligned vertical asymptote lesson; no content edit this session"
     },
     {
       "ordinal": 29,
@@ -1219,15 +1272,22 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "EXISTING_AUTHORED_REVIEW_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Review and extend existing horizontal-asymptote teaching with source paperback average-cost model",
+      "originalFirstPartyMathematicsVerification": "Paperback average c(x)=4+120/x, c(50)=6.40, break-even 30 and positive profit 31",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/2/18/index.html",
+      "sourceComparedEvidence": "Original IM First Edition teacher preparation + student tasks, verified source-specific goal and independent Edulytiks maths oracle",
+      "sourceRights": "IM First Edition 2019–2021, CC BY 4.0; Edulytiks original explanation/adaptation, no claim of publisher endorsement",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER",
+      "firstPartyExtension": "Added original Edulytiks source-context paperback average-cost example; preserved prior authored math"
     },
     {
       "ordinal": 30,
@@ -4623,5 +4683,32 @@
       "academicApproval": "NOT_VERIFIED",
       "ownerUat": "NOT_VERIFIED"
     }
-  ]
+  ],
+  "testEvidence": [
+    {
+      "command": "node --test tests/coder-7/UsCcssHsALG2120LESSONS.U02-math.test.cjs",
+      "result": "PASS_8_OF_8",
+      "verifiedGitBlobSha": "f7da4d1473137ca582b0b18c394bd9973c829500",
+      "executionPlace": "Isolated local container, exact matching file hash",
+      "scope": "U02 L01-L09 mathematical oracle only"
+    },
+    {
+      "command": "node --test tests/coder-7/UsCcssHsALG2120LESSONS.U02-next-math.test.cjs",
+      "result": "PASS_8_OF_8",
+      "verifiedGitBlobSha": "61bca43c9cbc76b39aa4d385efb2b703dc8ac525",
+      "executionPlace": "Isolated local container, exact matching file hash",
+      "scope": "U02 L10-L18 mathematical oracle only"
+    },
+    {
+      "command": "dotnet test",
+      "result": "NOT_RUN",
+      "reason": ".NET SDK unavailable in local isolated container"
+    },
+    {
+      "command": "Full authenticated HS course and persisted Practice",
+      "result": "NOT_RUN",
+      "reason": "Shared #453 and parity/approved predecessor unresolved"
+    }
+  ],
+  "ciBlocker": "Current authoritative CI at 924324f6c11602e96fae043ebc8e027ad2e1eb98 failed canonical-body parity: modified teaching with newlyApproved=0 and no authorized version predecessor; do not bypass."
 }
