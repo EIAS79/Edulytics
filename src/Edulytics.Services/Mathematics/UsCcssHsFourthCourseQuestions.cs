@@ -133,13 +133,25 @@ public static class UsCcssHsFourthCourseQuestions
         }
         if (family == TrigModel)
         {
-            var period = random.Next(1, 5) * 4;
-            var amplitude = random.Next(1, 6);
-            var offset = random.Next(-3, 4);
+            var period = random.Next(1, 7) * 4;
+            var amplitude = random.Next(1, 6) * 2;
+            var offset = random.Next(-4, 5);
+            // 0, 1/2, -1/2, 1, -1 and invalid (>1) sine targets.
+            // This closed exact set avoids approximating or omitting a branch.
+            var targetMode = random.Next(0, 6);
+            var endInclusive = random.Next(0, 2);
+            var delta = targetMode switch
+            {
+                0 => 0, 1 => amplitude / 2, 2 => -amplitude / 2,
+                3 => amplitude, 4 => -amplitude, _ => 2 * amplitude
+            };
+            var target = offset + delta;
+            var closeMark = endInclusive == 1 ? "≤" : "<";
             return new Item(family,
-                $"A(t)={offset}+{amplitude}sin(2πt/{period}), 0≤t≤{period} seconds. List ALL times when A(t)={offset}, ascending, comma separated.",
-                "Check both sine branches and both inclusive endpoints within the stated time interval.",
-                AssessmentItemType.ShortAnswer, P(("period", period), ("amplitude", amplitude), ("offset", offset)));
+                $"A(t)={offset}+{amplitude}sin(2πt/{period}), 0≤t{closeMark}{period} seconds. List ALL times when A(t)={target}, ascending as exact fractions in seconds; write none if no real solution.",
+                "Check both sine branches and the stated interval endpoints. Reject outside-range targets.",
+                AssessmentItemType.ShortAnswer, P(("period", period), ("amplitude", amplitude), ("offset", offset),
+                    ("targetMode", targetMode), ("target", target), ("endInclusive", endInclusive)));
         }
         if (family == CavalieriVolume)
         {
@@ -187,7 +199,7 @@ public static class UsCcssHsFourthCourseQuestions
                 ? (Get(p, "quarterTurns") % 4) switch { 1 => 1, 3 or -1 => -1, _ => 0 }
                 : ((Get(p, "quarterTurns") % 4 + 4) % 4) switch { 0 => 1, 2 => -1, _ => 0 }).ToString(CultureInfo.InvariantCulture),
             TrigPrincipalInverse => Principal(Get(p, "function"), Get(p, "argument")),
-            TrigModel => $"0,{Get(p, "period") / 2},{Get(p, "period")}",
+            TrigModel => TrigModelAnswer(p),
             CavalieriVolume => Format(4 * Get(p, "radius") * Get(p, "radius") * Get(p, "radius"), 3),
             FocalConics => (Get(p, "hyperbola") == 1
                 ? Get(p, "c") * Get(p, "c") - Get(p, "a") * Get(p, "a")
@@ -203,7 +215,7 @@ public static class UsCcssHsFourthCourseQuestions
         var expected = Solve(family, p);
         if (family == MatrixClassification)
             return string.Equals(answer.Trim(), expected, StringComparison.OrdinalIgnoreCase);
-        if (family == LogCompare)
+        if (family == LogCompare || (family == TrigModel && ModelMode(p) == 5))
             return string.Equals(answer.Trim(), expected, StringComparison.Ordinal);
         if (family is MatrixCoefficients or MatrixInverse)
         {
@@ -258,7 +270,11 @@ public static class UsCcssHsFourthCourseQuestions
                     (Get(p, "reflection") switch { 0 => 2 - Get(p, "angle"), 1 => 2 + Get(p, "angle"), _ => 4 - Get(p, "angle") }),
                 TrigPrincipalInverse => Get(p, "function") is >= 0 and <= 2 && Get(p, "argument") is >= -3 and <= 3,
                 TrigModel => Get(p, "period") is >= 4 and <= 100 && Get(p, "period") % 4 == 0 &&
-                    Get(p, "amplitude") is >= 1 and <= 100 && Math.Abs(Get(p, "offset")) <= 100,
+                    Get(p, "amplitude") is >= 1 and <= 100 && Get(p, "amplitude") % 2 == 0 &&
+                    Math.Abs(Get(p, "offset")) <= 100 && ModelMode(p) is >= 0 and <= 5 &&
+                    ModelEnd(p) is 0 or 1 &&
+                    (!p.TryGetValue("target", out var suppliedTarget) ||
+                     suppliedTarget == Get(p, "offset") + ModelTargetDelta(p)),
                 CavalieriVolume => Get(p, "radius") is >= 1 and <= 100,
                 FocalConics => Get(p, "hyperbola") is 0 or 1 &&
                     Get(p, "a") > 0 && Get(p, "c") > 0 &&
@@ -270,6 +286,39 @@ public static class UsCcssHsFourthCourseQuestions
         {
             return false;
         }
+    }
+
+    private static int ModelMode(IReadOnlyDictionary<string, int> p) =>
+        p.TryGetValue("targetMode", out var mode) ? mode : 0;
+
+    private static int ModelEnd(IReadOnlyDictionary<string, int> p) =>
+        p.TryGetValue("endInclusive", out var inclusive) ? inclusive : 1;
+
+    private static int ModelTargetDelta(IReadOnlyDictionary<string, int> p) =>
+        ModelMode(p) switch
+        {
+            0 => 0, 1 => Get(p, "amplitude") / 2,
+            2 => -Get(p, "amplitude") / 2,
+            3 => Get(p, "amplitude"), 4 => -Get(p, "amplitude"),
+            5 => 2 * Get(p, "amplitude"),
+            _ => throw new ArgumentException("Invalid sine target mode.")
+        };
+
+    private static string TrigModelAnswer(IReadOnlyDictionary<string, int> p)
+    {
+        var period = Get(p, "period");
+        return ModelMode(p) switch
+        {
+            0 => ModelEnd(p) == 1
+                ? $"0,{Format(period, 2)},{period}"
+                : $"0,{Format(period, 2)}",
+            1 => $"{Format(period, 12)},{Format(5 * period, 12)}",
+            2 => $"{Format(7 * period, 12)},{Format(11 * period, 12)}",
+            3 => Format(period, 4),
+            4 => Format(3 * period, 4),
+            5 => "none",
+            _ => throw new ArgumentException("Invalid sine target.")
+        };
     }
 
     private static int Get(IReadOnlyDictionary<string, int> p, string key) => p[key];
