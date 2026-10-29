@@ -15,7 +15,7 @@
   "persistedContent": "NOT_CHECKED",
   "nodeTestCommand": "node --test tools/curriculum/coder-9/UsCcssHsADVTRIGGEO5LESSONS.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOPracticeFixtures.test.cjs tools/curriculum/coder-9/UsCcssHsADVTRIGGEOSourceTasks.test.cjs",
   "nodeTestRun": "PASS_20_OF_20_EXIT_0_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491",
-  "dotnetTests": "PASS_17_OF_17_AT_a0742cd2b7287e419855420ff4c4f5219f45b0fb; LATEST_SOURCE_GROUNDED_HEAD_RETEST_IN_PROGRESS",
+  "dotnetTests": "PASS_17_OF_17_EXIT_0_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491_WITH_SDK_10_0_301",
   "authenticatedTenantTests": "NOT_RUN",
   "renderDeployment": "NOT_VERIFIED",
   "ownerUat": "NOT_VERIFIED",
@@ -203,8 +203,10 @@
   "updatedAtUtc": "2026-10-29",
   "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
   "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
-  "technicalEvidence": "20 course Node tests passed plus 17 focused .NET at earlier revision, not CI acceptance",
+  "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
   "predecessorTransitionPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-content-predecessor-transition.json",
   "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-source-target-practice-review.md",
-  "proposedPracticeFixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json"
+  "proposedPracticeFixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json",
+  "dotnetCommand": "dotnet test <absolute repo>/tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --filter FullyQualifiedName~Phase29CanonicalContentPackPipelineTests --verbosity minimal --no-restore",
+  "dotnetSdkNote": "Repo global.json demands SDK 10.0.200; isolated external SDK-selection temp folder used installed 10.0.301 without modifying repository. Focused .NET tests passed, but not a protected required workflow."
 }
