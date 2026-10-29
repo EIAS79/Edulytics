@@ -23,7 +23,8 @@
     "U03:L02, L10, L12 are source-optional. First-party candidate text adds example reasoning but no genuine dynamic applet, measurement drawing or teacher submission flow; academic Stage D remains NOT_RUN.",
     "U04:L02 and U04:L03 are source-optional. All 64 RichV2 resources are course-local candidate text with explanatory verbal diagrams; no validated original drawn visuals or Practice/teacher capture on actual student/teacher runtime.",
     "Unit5 L01-L18 first-party candidate authoring only; source-page parity of every activity and original diagrams remain unverified. No academic A–D acceptance or Practice success is implied.",
-    "2026-10-29 U05–U08 all 60 course-local RichV2 candidates authored. Source lesson title/ID alignment was checked against 124 canonical entries; individual activity parity, visual authenticity, clinical academic review, genuine teacher evidence capture, Practice, tenant and CI gate remain NOT_VERIFIED."
+    "2026-10-29 U05–U08 all 60 course-local RichV2 candidates authored. Source lesson title/ID alignment was checked against 124 canonical entries; individual activity parity, visual authenticity, clinical academic review, genuine teacher evidence capture, Practice, tenant and CI gate remain NOT_VERIFIED.",
+    "V11 2026-10-29: official public teacher preparation reviewed for U06:L06-L07, U07:L08,L11, U08:L07-L11 (9); official student activity text additionally inspected for U08:L08,L09,L11 (3). These are preliminary task comparisons, NOT per-lesson Stage A acceptance; 33 U06-U08 remained source-syllabus-only and 6 teacher-only after this pass."
   ],
   "totals": {
     "blueprintLessons": 124,
@@ -33,7 +34,9 @@
     "genericFiveStepCandidates": 91,
     "persistedVerified": 0,
     "runtimeVerified": 0,
-    "gradeAccepted": 0
+    "gradeAccepted": 0,
+    "sourceResearchTeacherPrepVerifiedThisRecovery": 9,
+    "sourceResearchStudentLessonVerifiedThisRecovery": 3
   },
   "lessons": [
     {
@@ -4020,13 +4023,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_PREPARATION_ONLY",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/6/6/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": null,
+        "studentLessonViewed": null,
+        "scope": "TEACHER_PREPARATION_READ_ONLY",
+        "academicSignoff": false,
+        "verificationNote": "Teacher preparation source compared to lesson title/goal; not full accepted academic equivalence."
+      }
     },
     {
       "ordinal": 89,
@@ -4054,13 +4066,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_PREPARATION_ONLY",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/6/7/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": null,
+        "studentLessonViewed": null,
+        "scope": "TEACHER_PREPARATION_READ_ONLY",
+        "academicSignoff": false,
+        "verificationNote": "Official teacher preparation requires a focus/directrix dynamic applet; no actual lesson applet verified."
+      }
     },
     {
       "ordinal": 90,
@@ -4867,13 +4888,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_PREPARATION_ONLY",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/7/8/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": null,
+        "studentLessonViewed": null,
+        "scope": "TEACHER_PREPARATION_READ_ONLY",
+        "academicSignoff": false,
+        "verificationNote": "Teacher preparation source compared to lesson title/goal; not full accepted academic equivalence."
+      }
     },
     {
       "ordinal": 108,
@@ -4986,13 +5016,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_PREPARATION_ONLY",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/7/11/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": null,
+        "studentLessonViewed": null,
+        "scope": "TEACHER_PREPARATION_READ_ONLY",
+        "academicSignoff": false,
+        "verificationNote": "Source includes string-based physical measurement and a displayed applet; digital task parity not verified."
+      }
     },
     {
       "ordinal": 111,
@@ -5374,13 +5413,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_PREPARATION_ONLY",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/8/7/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": null,
+        "studentLessonViewed": null,
+        "scope": "TEACHER_PREPARATION_READ_ONLY",
+        "academicSignoff": false,
+        "verificationNote": "Teacher preparation source compared to lesson title/goal; not full accepted academic equivalence."
+      }
     },
     {
       "ordinal": 121,
@@ -5413,13 +5461,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/8/8/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": "https://im.kendallhunt.com/HS/students/2/8/8/index.html",
+        "studentLessonViewed": "2026-10-29",
+        "scope": "TEACHER_PREPARATION_AND_STUDENT_LESSON_READ",
+        "academicSignoff": false,
+        "verificationNote": "Teacher preparation source compared to lesson title/goal; not full accepted academic equivalence."
+      }
     },
     {
       "ordinal": 122,
@@ -5451,13 +5508,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/8/9/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": "https://im.kendallhunt.com/HS/students/2/8/9/index.html",
+        "studentLessonViewed": "2026-10-29",
+        "scope": "TEACHER_PREPARATION_AND_STUDENT_LESSON_READ",
+        "academicSignoff": false,
+        "verificationNote": "Teacher preparation source compared to lesson title/goal; not full accepted academic equivalence."
+      }
     },
     {
       "ordinal": 123,
@@ -5491,13 +5557,22 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_PREPARATION_ONLY",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/8/10/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": null,
+        "studentLessonViewed": null,
+        "scope": "TEACHER_PREPARATION_READ_ONLY",
+        "academicSignoff": false,
+        "verificationNote": "Teacher preparation source compared to lesson title/goal; not full accepted academic equivalence."
+      }
     },
     {
       "ordinal": 124,
@@ -5536,7 +5611,7 @@
       "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "SOURCE_SYLLABUS_MAPPED_INDIVIDUAL_PAGE_PENDING",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
       "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
@@ -5544,7 +5619,16 @@
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
       "sourceOptional": true,
-      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/8/11/preparation.html"
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/8/11/preparation.html",
+      "sourceResearch": {
+        "teacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/8/11/preparation.html",
+        "teacherPreparationViewed": "2026-10-29",
+        "studentLessonUrl": "https://im.kendallhunt.com/HS/students/2/8/11/index.html",
+        "studentLessonViewed": "2026-10-29",
+        "scope": "TEACHER_PREPARATION_AND_STUDENT_LESSON_READ",
+        "academicSignoff": false,
+        "verificationNote": "Source confirms this is optional and uses classroom game data; first-party token game is source-aligned but teacher submission workflow not verified."
+      }
     }
   ]
 }
