@@ -232,7 +232,9 @@
       "rubricIntegratedIntoTeacherUI": false,
       "studentAssetRenderedInRichV2": false,
       "studentArtifactPersisted": false,
-      "verifiedInTwoSchools": false
+      "verifiedInTwoSchools": false,
+      "v7GradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v7SharedRendererInvoked": false
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
@@ -357,7 +359,9 @@
       "rubricIntegratedIntoTeacherUI": false,
       "studentAssetRenderedInRichV2": false,
       "studentArtifactPersisted": false,
-      "verifiedInTwoSchools": false
+      "verifiedInTwoSchools": false,
+      "v7GradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v7SharedRendererInvoked": false
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
@@ -527,7 +531,9 @@
       "rubricIntegratedIntoTeacherUI": false,
       "studentAssetRenderedInRichV2": false,
       "studentArtifactPersisted": false,
-      "verifiedInTwoSchools": false
+      "verifiedInTwoSchools": false,
+      "v7GradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "v7SharedRendererInvoked": false
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
@@ -625,5 +631,14 @@
       "studentArtifactPersisted": false,
       "verifiedInTwoSchools": false
     }
-  ]
+  ],
+  "v7": {
+    "partial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "integrationHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v7-svg-student-renderer-integration-handoff.json",
+    "studentsAuthenticatedRendered": 0,
+    "rubricsScoredOrPersisted": 0,
+    "sharedRendererInvoked": false,
+    "teacherUiIntegration": false,
+    "release": "NO_GO"
+  }
 }
