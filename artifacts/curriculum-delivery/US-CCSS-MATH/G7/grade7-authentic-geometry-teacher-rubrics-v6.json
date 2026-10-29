@@ -963,6 +963,310 @@
       "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
       "sharedRendererInvoked": false,
       "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L07",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/7/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+      "model": {
+        "drawingDimensionsCm": [
+          14,
+          7
+        ],
+        "realDimensionsMeters": [
+          28,
+          14
+        ],
+        "mapScale": "1 cm : 2 m",
+        "realBenchMeters": 9,
+        "drawingBenchCm": 4.5
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Make a correctly measured rectangle 14 cm by 7 cm representing the real 28 m by 14 m court",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Draw the independent 4.5 cm bench segment representing a 9 m real object",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Label and justify map-to-real ratios consistently with units and a scale key",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Present a complete original drawing, ruler evidence and peer explanation",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Only a teacher may accept geometry, measurement accuracy and explanation; numeric answer is insufficient",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Shows 14×7 cm court and 4.5 cm bench at 1 cm:2 m",
+          "expectation": "Mathematics correct; teacher still checks ruler and original diagram"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims 9 m bench should be 9 cm at 1 cm:2 m",
+          "expectation": "Reject: the drawn bench should be 4.5 cm"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only computes 28×14 meters without drawing court or bench",
+          "expectation": "Not an accepted source drawing"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/8/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+      "model": {
+        "mapScale": "1 cm : 4 km",
+        "roadSegmentCm": [
+          2,
+          2,
+          2
+        ],
+        "roadLengthCm": 6,
+        "roadActualKm": 24,
+        "directLengthCm": 5,
+        "directActualKm": 20,
+        "excessKm": 4
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw three connected road segments and a distinct straight endpoint-to-endpoint segment",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Measure or label 6 cm total route and 5 cm direct distance on the same scale",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Convert both distances using 1 cm:4 km and explain 24 km versus 20 km",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Distinguish traveled route from direct separation, justify assumptions and check with a peer",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Only a teacher may accept geometry, measurement accuracy and explanation; numeric answer is insufficient",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Road 6 cm / 24 km, direct 5 cm / 20 km, road longer by 4 km",
+          "expectation": "Correct only if corresponding diagram is consistent"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Uses straight-line 20 km as total traveled road distance",
+          "expectation": "Reject: road segment lengths must be summed"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports 24 km without direct comparison or actual map measurements",
+          "expectation": "Requires teacher review; incomplete source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L09",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/9/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l09-studio-floor-plan-with-door.svg",
+      "model": {
+        "realRoomMeters": [
+          7,
+          5
+        ],
+        "drawingRoomCm": [
+          7,
+          5
+        ],
+        "mapScale": "1 cm : 1 m",
+        "realDoorMeters": 1.5,
+        "drawingDoorCm": 1.5,
+        "doorPlacement": "lower 7-meter wall, open gap rather than solid wall"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw accurately scaled and labeled 7 cm by 5 cm room boundary",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Leave a genuine 1.5 cm opening for a 1.5 m door at a plausible location",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Include 1 cm:1 m scale key, units, features and wall measurements",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Show peer feedback and revise construction or explanations where needed",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original diagram, ruler evidence and justified units",
+            "lowestLevel": "Missing, distorted, unmeasured or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Only a teacher may accept geometry, measurement accuracy and explanation; numeric answer is insufficient",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "7×5 cm plan, 1.5 cm lower-wall gap, scale and labels",
+          "expectation": "Mathematical draft acceptable subject to teacher-reviewed drawing and revision"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Closes all four walls then marks the 1.5 cm doorway on top of a solid line",
+          "expectation": "Reject as an inaccurate drawn opening"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Writes 7×5 cm without a floor plan, scale key or door",
+          "expectation": "Not a complete source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
     }
   ],
   "v7": {
@@ -975,7 +1279,7 @@
     "release": "NO_GO"
   },
   "v8": {
-    "status": "SIX_FIRST_PARTY_G7_U01_STATIC_DIAGRAM_CANDIDATES_SEVEN_TEACHER_RUBRIC_DRAFTS_NOT_INTEGRATED",
+    "status": "NINE_U01_SVG_SOURCE_CANDIDATES_TEN_TEACHER_RUBRIC_DRAFTS_NOT_INTEGRATED",
     "scope": "Added U01 L04–L06 teacher-only rubric drafts and original SVG diagrams, alongside existing U01 L01–L03 and U06 L01 candidates. Shared renderer, selected Practice, student artifact persistence, teacher scoring, cross-tenant tests and authenticated UI still NOT_RUN.",
     "gradeOnlyPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
     "sourceMathMathOracles": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
@@ -983,6 +1287,9 @@
     "stageA": "NOT_VERIFIED",
     "stageB": "NOT_VERIFIED",
     "stageC": "NOT_VERIFIED",
-    "stageD": "NOT_VERIFIED"
+    "stageD": "NOT_VERIFIED",
+    "geometryRubricDrafts": 9,
+    "totalRubricDrafts": 10,
+    "batch2": "U01 L07–L09 court, map and floorplan diagrams and teacher-only rubric drafts"
   }
 }
