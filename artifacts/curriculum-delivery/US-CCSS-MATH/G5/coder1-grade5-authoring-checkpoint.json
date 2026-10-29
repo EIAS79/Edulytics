@@ -69,7 +69,9 @@
     "tests/academic-us-ccss-g5-u01-source-fidelity-v9.test.cjs",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json",
     "tests/academic-us-ccss-g5-u01-layer-base-v9.test.cjs",
-    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l04-l05-ready-reuse-source-review.json"
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l04-l05-ready-reuse-source-review.json",
+    "tests/academic-us-ccss-g5-u01-cubic-info-gap-v9.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -145,7 +147,7 @@
     "v8SourceDuplicatesPreviouslyPreparationReviewed": 1,
     "sourceReviewRecordCountAtGrade": 148,
     "v8SourceCoverageNote": "V8 directly read 15 U08 teacher lesson HTML including Student Facing; L12 already had prior preparation review, so recorded distinct prior-source lesson count increases conservatively 125→139. Seven U07 newer committed RichV2 candidates reconciled without repeating source access or falsely claiming original Student PDF parity.",
-    "v9Original2021StudentFacingHtmlCompared": 5,
+    "v9Original2021StudentFacingHtmlCompared": 8,
     "v9OriginalSourceSeparatePdfInspected": 0,
     "v9StageAApproved": 0
   },
@@ -501,9 +503,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageA": "PARTIAL_SOURCE_HTML_COMPARED_READY_REUSE; ORIGINAL_STUDENT_PDF_IMAGE_AND_GATED_RESPONSE_NOT_VERIFIED; NO_ACADEMIC_ACCEPTANCE",
+      "stageB": "DIRECT_RICH_V2_CANDIDATE_RETAINED; AUTHENTICATED_LEARNER_TEACHER_RENDER_NOT_RUN",
+      "stageC": "ACTUAL_SELECTED_PRACTICE_VERIFIER_TEACHER_RUBRIC_NOT_RUN",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -511,7 +513,9 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "Matching mathematical expressions to prism bases, parentheses and false expression critique",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l04-l06-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l04-l06-im2021-first-party-richv2-20261028-v1",
+      "v9SourceTaskAudit": "PUBLIC_2021_TEACHER_STUDENT_FACING_HTML_COMPARED; REUSE_EXISTING_G5_RICH_V2_CANDIDATE; ORIGINAL_CARD/PDF/GATED_RESPONSE_NOT_VERIFIED",
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
@@ -543,9 +547,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageA": "PARTIAL_SOURCE_HTML_COMPARED_READY_REUSE; ORIGINAL_STUDENT_PDF_IMAGE_AND_GATED_RESPONSE_NOT_VERIFIED; NO_ACADEMIC_ACCEPTANCE",
+      "stageB": "DIRECT_RICH_V2_CANDIDATE_RETAINED; AUTHENTICATED_LEARNER_TEACHER_RENDER_NOT_RUN",
+      "stageC": "ACTUAL_SELECTED_PRACTICE_VERIFIER_TEACHER_RUBRIC_NOT_RUN",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -553,7 +557,9 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "Appropriate cubic units plus partner information-gap questioning about missing dimension",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+      "v9SourceTaskAudit": "PUBLIC_2021_TEACHER_STUDENT_FACING_HTML_COMPARED; REUSE_EXISTING_G5_RICH_V2_CANDIDATE; ORIGINAL_CARD/PDF/GATED_RESPONSE_NOT_VERIFIED",
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
@@ -590,9 +596,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageA": "PARTIAL_SOURCE_HTML_COMPARED_READY_REUSE; ORIGINAL_STUDENT_PDF_IMAGE_AND_GATED_RESPONSE_NOT_VERIFIED; NO_ACADEMIC_ACCEPTANCE",
+      "stageB": "DIRECT_RICH_V2_CANDIDATE_RETAINED; AUTHENTICATED_LEARNER_TEACHER_RENDER_NOT_RUN",
+      "stageC": "ACTUAL_SELECTED_PRACTICE_VERIFIER_TEACHER_RUBRIC_NOT_RUN",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -600,7 +606,9 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "Constructing composite prisms from disjoint rectangular solids and justifying additivity",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+      "v9SourceTaskAudit": "PUBLIC_2021_TEACHER_STUDENT_FACING_HTML_COMPARED; REUSE_EXISTING_G5_RICH_V2_CANDIDATE; ORIGINAL_CARD/PDF/GATED_RESPONSE_NOT_VERIFIED",
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
@@ -7502,16 +7510,16 @@
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V9: full authoring candidate coverage unchanged 148/148 and 104 baseline editorial repairs retained. In U01 L01–L03, corrected Grade5-only source-specific RichV2 gaps and captured partial original 2021 teacher Student Facing activity evidence and rubrics. In U01 L04–L05, source HTML comparison supports retaining existing Grade5 content with ready-reuse classification (not acceptance). Two exact GitHub-blob-matched native Node tests combined 7 PASS 0 FAIL 2 SKIP; skips due no repo checkout. Original Student Task PDFs/illustrations/gated response not verified. Zero accepted A–D, effective student rendering, selected Practice and owner UAT still release-blocked.",
+  "currentScopeDescription": "V9 checkpoint: 148/148 direct first-party Grade 5 Rich V2 authored candidates preserved across all eight units; historical 104 baseline pack edits unchanged. Grade5-only U01 L01-L03 source task improvements committed. U01 L04-L08 candidate reuse determined by original 2021 Student Facing + teacher HTML source comparisons. EIGHT source-task lesson comparisons with original separate PDF/card figures/gated response still unverified; zero Stage A academic approvals. Three SHA-identical locally native Node tests together 10 PASS 0 FAIL 3 SKIP, three sidecar fixture tests skipped without checkout. Actual B authenticated runtime, C selected Practice, D product/.NET/database/tenant/accessibility and owner UAT NOT_RUN. Existing Draft PR #596 preserved, no merge or deployment.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
   "lastCommittedTest": "14bf7ccb935cbc988408b0c4344455665e3b47af",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "a3fdac0e1fe87d10b66b7df6539ecee41a88eb98",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L06 — Expressions for Volume",
+    "lastKnownCommittedHeadBeforeLedger": "7ca0681e5fe7bc2d0cec9e9ed977c2a5326a748f",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L09 — Measure Figures Made From Prisms",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Continue Grade5 U01 L06+ source Student Facing tasks and per-lesson human rubric audit; full source card/PDF parity and A approvals remain pending for all; actual B/C/D runtime requires approved isolated clone, Supervisor shared issue #592.",
+    "nextAcademic": "Continue full 2021 Grade5 lesson task fidelity U01 L09 onwards. Follow independent student/PDF/card/cool-down task as available; do not promote academic A from text source alone. Actual B/C/D requires authorized app/DB/SDK and Supervisor issue #592.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7737,7 +7745,10 @@
       "PED:US-CCSS-MATH:G5:U01:L02",
       "PED:US-CCSS-MATH:G5:U01:L03",
       "PED:US-CCSS-MATH:G5:U01:L04",
-      "PED:US-CCSS-MATH:G5:U01:L05"
+      "PED:US-CCSS-MATH:G5:U01:L05",
+      "PED:US-CCSS-MATH:G5:U01:L06",
+      "PED:US-CCSS-MATH:G5:U01:L07",
+      "PED:US-CCSS-MATH:G5:U01:L08"
     ],
     "source2021TeacherStudentHtml": "READ_ONLY_PRIMARY_OUR_CS",
     "sourcePdf": "NOT_VERIFIED",
@@ -7766,7 +7777,10 @@
     "issue592": "https://github.com/EIAS79/Edulytics/issues/592",
     "additionalReusedSource": [
       "PED:US-CCSS-MATH:G5:U01:L04",
-      "PED:US-CCSS-MATH:G5:U01:L05"
+      "PED:US-CCSS-MATH:G5:U01:L05",
+      "PED:US-CCSS-MATH:G5:U01:L06",
+      "PED:US-CCSS-MATH:G5:U01:L07",
+      "PED:US-CCSS-MATH:G5:U01:L08"
     ],
     "nativeNodeSecond": {
       "version": "22.16.0",
@@ -7780,11 +7794,22 @@
     },
     "gradeOwnedReuseEvidenceCommit": "a3fdac0e1fe87d10b66b7df6539ecee41a88eb98",
     "combinedMathNode": {
-      "passed": 7,
+      "passed": 10,
       "failed": 0,
-      "skipped": 2,
-      "files": 2
+      "skipped": 3,
+      "files": 3
     },
-    "academicAccepted": 0
+    "academicAccepted": 0,
+    "nativeNodeThird": {
+      "version": "v22.16.0",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 1,
+      "realNativeNode": true,
+      "gitBlobParity": "9058fc068790ec08cbcc61af5dce35e3308925e3",
+      "testFile": "tests/academic-us-ccss-g5-u01-cubic-info-gap-v9.test.cjs",
+      "scope": "Arithmetic and cubic unit invariants; repo sidecar fixture skipped"
+    },
+    "gradeOwnedU01L06L08EvidenceCommit": "7ca0681e5fe7bc2d0cec9e9ed977c2a5326a748f"
   }
 }
