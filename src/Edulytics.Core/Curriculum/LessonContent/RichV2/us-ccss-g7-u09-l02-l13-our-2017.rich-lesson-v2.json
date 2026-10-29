@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v2",
+  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -9,7 +9,8 @@
       "Title": "Costs of Running a Restaurant",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Estimate restaurant expenses, distinguish fixed from per-serving costs and explain a defensible budget. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/2/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Restaurant ingredient cost spreadsheet with copied formulas and per-serving pricing. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/2/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -67,6 +68,19 @@
           ],
           "Answer": "90 meals.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Costs of Running a Restaurant",
+          "Question": "An original soup recipe for 8 servings needs 1.2 kg vegetable A at $3/kg and 0.8 kg vegetable B at $4.50/kg. Calculate ingredient cost per serving and write cell formulas that would recalculate if servings changed.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Ingredient A cost 1.2×3=$3.60 and B cost 0.8×4.50=$3.60.",
+            "Total ingredients cost $7.20; per serving $7.20/8=$0.90.",
+            "A spreadsheet can store amounts B2/B3, unit costs C2/C3, servings F1 and use D2=B2*C2, D3=B3*C3, total SUM(D2:D3), per serving=SUM(D2:D3)/F1.",
+            "Change F1 to 6 and verify per-serving cost becomes $1.20 if batch quantities remain the same."
+          ],
+          "Answer": "$7.20 per batch, $0.90 for 8 servings, $1.20 for 6 servings at same batch size.",
+          "Check": "Teacher checks an actual working spreadsheet with appropriately referenced cells and genuinely sourced ingredient costs if used for a real menu."
         }
       ],
       "CommonMistakes": [
@@ -137,7 +151,8 @@
       "Title": "More Costs of Running a Restaurant",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Use signed income and expense terms to model projected restaurant profit and loss. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/3/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: List fixed, one-time and ongoing restaurant expenses and compare profitability. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/3/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -195,6 +210,19 @@
           ],
           "Answer": "50 meals.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — More Costs of Running a Restaurant",
+          "Question": "An original café sells 800 meals at $9 each, food costs $3 per meal, and ongoing fixed expenses are $2,800/month. Compute monthly profit and break-even meal count.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Revenue is 800×$9=$7,200.",
+            "Food cost is 800×$3=$2,400; adding fixed expenses gives $5,200 costs.",
+            "Profit=$7,200−$5,200=$2,000.",
+            "Contribution margin is $9−$3=$6/meal; break-even fixed/$6=$2,800/$6≈466.67, so at least 467 whole meals."
+          ],
+          "Answer": "$2,000 profit at 800 meals; break-even 467 whole meals under the stated assumptions.",
+          "Check": "Teacher reviews independently proposed fixed versus per-meal costs, relevant missing expenses and a clear budget ledger."
         }
       ],
       "CommonMistakes": [
@@ -265,7 +293,8 @@
       "Title": "Restaurant Floor Plan",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Design an accurate scale plan of a restaurant with clearance and area constraints under teacher review. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/4/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Design a scale restaurant dining plan with area and table spacing. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/4/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -323,6 +352,19 @@
           ],
           "Answer": "54 m².",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Restaurant Floor Plan",
+          "Question": "A first-party café needs seating for 20 customers, assuming 15 ft² of dining floor per customer. Design a 20-by-15 ft rectangular dining zone at 1 cm:2 ft and label what must be checked before placing tables.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Area target 20×15=300 ft² and 20×15 rectangle meets it.",
+            "At 1 cm:2 ft, drawing size is 10 cm by 7.5 cm.",
+            "Record desired tables, server station, entry/exit and at least one scale-consistent path clearance.",
+            "Draw a realistic layout but do not claim feasibility until chair spacing, service reach and local code constraints are checked."
+          ],
+          "Answer": "300 ft² zone, 10 by 7.5 cm plan at 1 cm:2 ft; actual table design is teacher reviewed.",
+          "Check": "Teacher reviews measured scale drawing, physically plausible seating and walkway/service constraints; simple rectangle area is insufficient."
         }
       ],
       "CommonMistakes": [
@@ -393,7 +435,8 @@
       "Title": "How Crowded Is this Neighborhood?",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Compare population densities by dividing counts of people or houses by area. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/5/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Compare dot density and housing density across differently sized plots. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/5/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -451,6 +494,19 @@
           ],
           "Answer": "A is denser.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — How Crowded Is this Neighborhood?",
+          "Question": "Plot A has 18 dots in a 3-in by 2-in rectangle, and plot B has 25 dots in a 5-in by 1-in rectangle. Compare dots per square inch and describe the proportional equations.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "A area=3×2=6 in²; density 18/6=3 dots/in².",
+            "B area=5×1=5 in²; density 25/5=5 dots/in².",
+            "Use d=3a for A and d=5a for B where a is area in square inches.",
+            "Draw separate point (a,d) and lines from origin; compare 3 versus 5 density, not raw dot counts."
+          ],
+          "Answer": "Plot B denser: 5 versus 3 dots/in².",
+          "Check": "Teacher checks original plotted density arrays and the area-based units."
         }
       ],
       "CommonMistakes": [
@@ -531,7 +587,8 @@
       "Title": "Fermi Problems",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Construct rough, transparent numerical estimates from assumptions and rates, then judge reasonableness. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/6/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Fermi estimates with clearly stated uncertain assumptions. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/6/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -589,6 +646,19 @@
           ],
           "Answer": "About 50,400 lunches/year.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Fermi Problems",
+          "Question": "Estimate how many heartbeats an imaginary 13-year-old might have had if average pulse were 75 beats/minute throughout life, using 365 days per year. What limits the estimate?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Minutes per year=60×24×365=525,600.",
+            "Years 13 imply 13×525,600=6,832,800 minutes.",
+            "At 75 beats/minute estimate 6,832,800×75=512,460,000 beats.",
+            "Discuss leap years, changing heart rate, exact birth time and rest/exercise as uncertainty; this is an order-of-magnitude model."
+          ],
+          "Answer": "About 5.1×10^8 heartbeats under hypothetical assumptions.",
+          "Check": "Teacher checks assumptions, estimation strategy, units, bounds and critique; not an individual's real health measure."
         }
       ],
       "CommonMistakes": [
@@ -659,7 +729,8 @@
       "Title": "More Expressions and Equations",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Build and solve equations for contexts with related unknowns and several simultaneous relationships. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/7/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Build expressions and equations for tiered ticket costs and inventory. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/7/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -717,6 +788,19 @@
           ],
           "Answer": "$8.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — More Expressions and Equations",
+          "Question": "For a fictional school play, adult tickets cost x dollars and student tickets x−3 dollars. On one evening 40 adults and 70 students attend, bringing in $1,190. What are ticket prices?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Revenue equation is 40x+70(x−3)=1190.",
+            "Combine: 110x−210=1190, so 110x=1400.",
+            "Divide x=1400/110=140/11≈$12.73; student price x−3=107/11≈$9.73.",
+            "Explain that fractional-cent ticket prices make the assumptions unlikely for a real event; verify the exact algebra and propose realistic data."
+          ],
+          "Answer": "Mathematical prices 140/11 and 107/11 dollars; realistic-cent pricing requires reconsidering invented totals.",
+          "Check": "Teacher reviews expression building and real-world plausibility instead of rounding inconsistent data into exact equality."
         }
       ],
       "CommonMistakes": [
@@ -787,7 +871,8 @@
       "Title": "Measurement Error (Part 1)",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Compare measurements by repeated trials and explain how rounding and uncertainty affect scale calculations. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/8/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Repeated measurement with ruler uncertainty and worst-case percentage. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/8/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -845,6 +930,19 @@
           ],
           "Answer": "6.3 m.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Measurement Error (Part 1)",
+          "Question": "One board measures 10.0 cm to the nearest tenth. The true length can lie from 9.95 cm (inclusive) to just below 10.05 cm. Give the largest possible relative error measured against the actual length.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "A rounding to nearest 0.1 cm implies error magnitude no greater than about 0.05 cm.",
+            "At the lower actual bound 9.95 cm, relative error can be 0.05/9.95≈0.005025.",
+            "Express this as about 0.503% of actual length; at the upper side the denominator is larger.",
+            "Draw a scale/ruler reading and state endpoint conventions before presenting a strict largest value."
+          ],
+          "Answer": "Maximum relative error approximately 0.503%, with endpoint interpretation depending on rounding ties.",
+          "Check": "Teacher checks original physical ruler/uncertainty interval and correct percent denominator."
         }
       ],
       "CommonMistakes": [
@@ -915,7 +1013,8 @@
       "Title": "Measurement Error (Part 2)",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Estimate area or volume from measured dimensions and compare sensitivity to measurement error. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/9/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Propagate measurement error through area and volume multiplicatively. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/9/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -973,6 +1072,19 @@
           ],
           "Answer": "[19.5,20.5] m².",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Measurement Error (Part 2)",
+          "Question": "Two sides of a rectangle are independently measured 5% HIGH, so measured length and width each equal 1.05 times actual. What is the resulting area percent error? Extend to three dimensions.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Measured area factor=1.05×1.05=1.1025.",
+            "Area is 10.25% HIGH, not exactly 10%.",
+            "If all three dimensions are 5% HIGH, measured volume factor=1.05³=1.157625.",
+            "Volume is 15.7625% HIGH; clearly distinguish worst-direction assumptions and dimension units."
+          ],
+          "Answer": "Area +10.25% and volume +15.7625% under all-dimensions-5%-high assumptions.",
+          "Check": "Teacher checks labeled measured-vs-true shapes and interpretation; this is not a blanket bound for all rounding outcomes."
         }
       ],
       "CommonMistakes": [
@@ -1043,7 +1155,8 @@
       "Title": "Measuring Long Distances Over Uneven Terrain",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Compare field measurement techniques and plan sensible distance estimates over rough or sloping ground. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/10/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Compare repeated path measurements by distinct tools and percentage. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/10/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -1101,6 +1214,19 @@
           ],
           "Answer": "3%.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Measuring Long Distances Over Uneven Terrain",
+          "Question": "An original marked trail is measured twice by pacing at 612 m and 600 m, and another method returns 606 m. What might be reported, and how far are the first estimates apart as a percent of the 606 m comparator?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Record three labeled measurements: 612,600,606 m; identify methods and uncertainties.",
+            "Difference between first two is 12 m.",
+            "Relative to explicitly chosen 606 m comparator, 12/606×100≈1.98%.",
+            "Propose reporting around 606 m with a stated uncertainty, not a false exact distance; teacher should review the chosen comparator."
+          ],
+          "Answer": "Difference 12 m, about 1.98% of the 606 m comparison value.",
+          "Check": "Teacher checks actual repeated measurements and methodological notes; hypothetical data do not certify fieldwork."
         }
       ],
       "CommonMistakes": [
@@ -1171,7 +1297,8 @@
       "Title": "Building a Trundle Wheel",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Calculate circumference, mark rotations and construct a calibrated trundle-wheel measurement device. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/11/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Construct a click-counting trundle wheel with circumference calibration. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/11/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -1229,6 +1356,19 @@
           ],
           "Answer": "Approximately 0.318 m.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Building a Trundle Wheel",
+          "Question": "A hand-built wheel has measured diameter 0.45 m and rolls 32 rotations across a room. Estimate room length and explain why a physical wheel measurement is necessary.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Circumference C=πd=0.45π m per turn.",
+            "32 turns represent 32×0.45π=14.4π m≈45.24 m.",
+            "A wheel click marker must count one whole rotation, and the diameter must be measured across center.",
+            "Explain potential slips, partial rotations and rough floors as sources of error."
+          ],
+          "Answer": "Estimated distance 14.4π≈45.24 m.",
+          "Check": "Teacher must inspect actual constructed wheel, verified rotation marker and independently measured classroom path."
         }
       ],
       "CommonMistakes": [
@@ -1302,7 +1442,8 @@
       "Title": "Using a Trundle Wheel to Measure Distances",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Record wheel rotations and compare measured route distances with precision and reproducibility. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/12/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Repeated trundle-wheel trials and comparison with other methods. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/12/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -1360,6 +1501,19 @@
           ],
           "Answer": "4%.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Using a Trundle Wheel to Measure Distances",
+          "Question": "A wheel has circumference 0.8 m. On a marked path, three observed whole-and-partial turn counts are 75,74.5,75.5. Compute three distances and their average.",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Multiply 0.8×75=60 m.",
+            "Second 0.8×74.5=59.6 m; third 0.8×75.5=60.4 m.",
+            "The three mean distance=(60+59.6+60.4)/3=60 m.",
+            "Present uncertainty from 59.6 to 60.4 m and compare an independently measured reference path if available."
+          ],
+          "Answer": "Trial distances 60,59.6,60.4 m; mean 60 m.",
+          "Check": "Teacher checks actual three trial observations, wheel circumference and other group comparison."
         }
       ],
       "CommonMistakes": [
@@ -1430,7 +1584,8 @@
       "Title": "Designing a 5K Course",
       "ExplanationParagraphs": [
         "Edulytiks learning objective: Design and justify a 5 km running route using mapped distances, lap counts and trundle-wheel measurements. Independently authored educational tasks using historical OUR/IM Grade 7 source https://im.kendallhunt.com/MS/teachers/2/9/13/preparation.html (2017–2019 CC BY 4.0 lineage); publisher images/assessments not reproduced.",
-        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance."
+        "This optional integrated project builds on earlier Grade 7 mathematics and distinguishes computed illustrative answers from authentic student investigations. Teacher review is required for original designs, unit choices, physical measurements, assumptions and written justification; no numeric answer alone constitutes academic acceptance.",
+        "Publisher student lesson reviewed: Produce and revise a real 5K route using trundle measurements. First-party task below is an independent numerical and representation model, NOT a record of real ingredient prices, field measurements, student surveys, spreadsheet operations or trundle-wheel construction. Source: https://im.kendallhunt.com/MS/students/2/9/13/index.html. Project completion requires real artifacts, teacher rubric and genuine evidence; do not auto-approve an arithmetic result."
       ],
       "KeyConcepts": [
         {
@@ -1488,6 +1643,19 @@
           ],
           "Answer": "5 cm.",
           "Check": "Recompute numeric result and have a teacher review real-source data, design constraints and evidence when applicable."
+        },
+        {
+          "Title": "Original project task — Designing a 5K Course",
+          "Question": "An original school walk plan uses a measured loop of 1,250 m with a safe start/finish area. How many whole loops make 5 km, and what map evidence must a student supply before organizers approve it?",
+          "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
+          "Steps": [
+            "Convert target 5 km=5,000 m.",
+            "Compute 5,000/1,250=4 whole loops.",
+            "Draw loop route, start/finish position, safe crossings and direction arrows on an original scale map.",
+            "Use at least two authentic wheel measurements per route and revise if measurements differ; share a teacher-reviewed proposal."
+          ],
+          "Answer": "Four 1,250 m laps make 5 km in the model, pending real route measurement.",
+          "Check": "Teacher-only rubric: field measurement, repeated trials, accurate map/scale, physical safety, coherent revision and organizer-ready presentation."
         }
       ],
       "CommonMistakes": [
