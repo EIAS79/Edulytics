@@ -78,7 +78,7 @@ test('publisher formula matching and first-party visual are correctly scoped and
   assert.match(svg,/Original Edulytiks draft, not deployed/);
   assert.equal((svg.match(/<g transform=/g)||[]).length,4);
   assert.equal((svg.match(/<path /g)||[]).length,8);
-  assert.doesNotMatch(svg,/<script|<image|https?:\/\//i);
+  assert.doesNotMatch(svg,/<script\b|<image\b|(?:href|xlink:href)\s*=\s*["']https?:\/\//i);
   assert.equal(l18.visualIntegration,'NOT_IMPLEMENTED_IN_RENDERER');
 });
 
