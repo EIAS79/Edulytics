@@ -855,3 +855,36 @@ test('U02 L01–L03 original collection, ratio diagrams and recipes remain disti
   assert.equal(15 / 5, 6 / 2);
   assert.ok(150 / 300 > 200 / 500);
 });
+
+
+test('U02 L04 L06 L08 retain exact source contexts for color mixtures, double number lines and unit prices', () => {
+  const record = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l04-l06-l08-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(record.lessons.length, 3);
+  assert.equal(record.summary.sourceStudentBodiesCompared, 3);
+  assert.equal(record.summary.fullAcademicAccepted, 0);
+  assert.deepEqual(record.lessons.map(l => l.lessonCode), [4,6,8].map(n => lcode(2,n)));
+  for (const r of record.lessons) {
+    assert.ok(r.publicStudentTasksCompared.length >= 4, r.lessonCode);
+    assert.equal(r.nonNumericTasksTeacherAssessmentRequired, true);
+    assert.equal(r.originalImagesAppletOrPhysicalSourceReplicated, false);
+    assert.equal(r.liveLearnerRenderingVerified, false);
+    assert.equal(r.exactPracticeGeneratorVerifierChecked, false);
+    assert.equal(r.stageAAccepted, false);
+    assert.equal(r.academicAcceptance, 'NOT_ACCEPTED');
+    assert.match(byCode.get(r.lessonCode).translations[0].workedExamples, /Example 3\b/);
+  }
+  const e = n => byCode.get(lcode(2,n)).translations[0].workedExamples;
+  assert.match(e(4), /add another 40 mL yellow/);
+  assert.match(e(4), /add 38 mL yellow/);
+  assert.match(e(6), /16 teaspoons require 4 cups/);
+  assert.match(e(6), /12 tablespoons blue require 4 cups white/);
+  assert.match(e(8), /seven bottles cost \$5\.25|7 bottles cost \$5\.25/);
+  assert.match(e(8), /larger package is worse value/);
+  assert.equal(25 * 3 - 35, 40);
+  assert.equal(17 * 3 - 13, 38);
+  assert.equal(12 / 3, 4);
+  assert.equal(16 / 4, 4);
+  assert.equal(9 / 12 * 7, 5.25);
+  assert.ok(7 / 12 > 3 / 6);
+});
