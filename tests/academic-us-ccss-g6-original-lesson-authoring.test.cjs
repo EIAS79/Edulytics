@@ -919,3 +919,29 @@ test('U02 L05 L07 L09 check fractional casserole, number-line units and the 30-s
   assert.equal(10 * (30 / 6), 50);
   assert.equal((55 / 10 - 40 / 10) * 30, 45);
 });
+
+
+test('U02 L09 parser-recognizable measured path and two aligned double number line descriptions use exact source quantities', () => {
+  const en = byCode.get(lcode(2,9)).translations[0];
+  const descriptions = en.workedExamples.split('\n\n').filter(t => t.startsWith('Description: '));
+  assert.equal(descriptions.length, 3);
+  const measured = descriptions[0];
+  assert.match(measured, /line with three markings/i);
+  assert.match(measured, /the first mark is labeled "Warm-up"/i);
+  assert.match(measured, /the second mark is labeled "Start"/i);
+  assert.match(measured, /the third mark is labeled "Finish"/i);
+  assert.match(measured, /distance between the first and second mark is labeled 1 meter/i);
+  assert.match(measured, /distance between the second and third mark is labeled 10 meters/i);
+  for (const d of descriptions.slice(1)) {
+    assert.match(d, /double number line/i);
+    assert.match(d, /top number line is labeled "[^"]+"/i);
+    assert.match(d, /bottom number line is labeled "[^"]+"/i);
+    assert.ok((d.match(/numbers [0-9., ]+ are indicated/ig) || []).length === 2);
+  }
+  assert.match(descriptions[1], /0, 2, 4, 6, 8 are indicated/);
+  assert.match(descriptions[1], /0, 2\.5, 5, 7\.5, 10 are indicated/);
+  assert.match(descriptions[2], /0, 1, 2, 3, 4, 5 are indicated/);
+  assert.match(descriptions[2], /0, 2, 4, 6, 8, 10 are indicated/);
+  assert.equal(10/8, 1.25);
+  assert.equal(10/5, 2);
+});
