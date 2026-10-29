@@ -169,7 +169,7 @@ test('Rigid-motion isometries preserve squared distance; reflection reverses ori
     assert.equal(d2(reflection(p),reflection(q)),d2(p,q));
   }
   assert.notDeepEqual(reflection(shift([1,0])),shift(reflection([1,0])));
-  assert.deepEqual(reflection([0,4]),[0,4]); // mirror fixed point
+  assert.ok(reflection([0,4]).every((v,i) => Math.abs(v - [0,4][i]) < 1e-12)); // mirror fixed point; normalize signed zero
   // A translation can form only a degenerate quadrilateral when parallel to its segment.
   const determinant=(v,w)=>v[0]*w[1]-v[1]*w[0];
   assert.equal(determinant([3,0],[2,0]),0);
