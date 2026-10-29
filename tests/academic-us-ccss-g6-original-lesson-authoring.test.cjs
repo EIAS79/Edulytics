@@ -1087,3 +1087,38 @@ test('U02 L16–L17 preserve aquarium and source Fermi open-response boundaries'
   assert.equal(72 / (4+5) / 2, 4);
   assert.ok(Math.abs(5 / 3 - 1 - 2 / 3) < 1e-12);
 });
+
+
+test('U03 L01–L03 source-specific measurements preserve estimates, unit types and teacher-only tasks', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l01-l03-public-source-task-comparison.json'), 'utf8'));
+  assert.equal(evidence.summary.directStudentAndTeacherTaskBodiesCompared, 3);
+  assert.equal(evidence.summary.fullStageAAccepted, 0);
+  assert.deepEqual(evidence.lessons.map(l => l.lessonCode), [1,2,3].map(n => lcode(3,n)));
+  for(const l of evidence.lessons) {
+    assert.equal(l.originalTaskPurposes.length, 4);
+    assert.equal(l.teacherRubricDraft.scoreMax, 8);
+    assert.equal(l.teacherRubricDraft.implemented, false);
+    assert.equal(l.teacherRubricDraft.persisted, false);
+    assert.equal(l.originalMediaOrAppletVerified, false);
+    assert.equal(l.selectedPracticeContractVerified, false);
+    assert.equal(l.fullAcademicAcceptance, 'NOT_ACCEPTED');
+  }
+  const a = byCode.get(lcode(3,1)).translations[0];
+  const b = byCode.get(lcode(3,2)).translations[0];
+  const c = byCode.get(lcode(3,3)).translations[0];
+  assert.match(a.workedExamples, /24,348/);
+  assert.match(a.workedExamples, /29,217\.6 minutes/);
+  assert.match(a.workedExamples, /34\.5 meters/);
+  assert.match(b.workedExamples, /15\.625 cm/);
+  assert.match(b.workedExamples, /0\.9144 meter/);
+  assert.match(c.workedExamples, /16\.387064 cubic centimeters/);
+  assert.match(c.workedExamples, /Station 5 has no supplied measured teaspoon count/);
+  assert.ok(Math.abs((24348 * 18 / 15) - 29217.6) < 1e-8);
+  assert.equal(828 / 6, 138);
+  assert.equal(138 / 4, 34.5);
+  assert.equal(2.5**3, 15.625);
+  assert.equal(18/9,2);
+  assert.equal(18/6,3);
+  assert.ok(Math.abs(16.387064 * 3 - 49.161192) < 1e-9);
+});
