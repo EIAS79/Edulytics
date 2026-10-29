@@ -25,7 +25,8 @@
     "semanticTestFixCommit": "4d55a896fbab011b82d90efd70e8da8e48486921",
     "fixtureDataCommit": "300f19045833772f19c135f6f374e6a575f73e45",
     "fixtureTestsCommit": "f3a92ee01e638b81be534152195abd9a51365157",
-    "revisionDiffHandoffCommit": "fb6885829250ed4874182c601b69f0373bda7095"
+    "revisionDiffHandoffCommit": "fb6885829250ed4874182c601b69f0373bda7095",
+    "fixtureTestsOracleStrengtheningCommit": "71eb6f3eddbde45cd3b068fcfdfe1892e8825717"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
@@ -107,7 +108,7 @@
     "independentOracle": "Python sympy inversion and substitution of existing 3x3 system passed; JS checked 3x3 product, 4 logarithm inverse powers and comparison ordering",
     "dotnetCompile": "Prior GitHub CI compiled C# tests at ed083eef; new fixture-tests compilation awaits current GitHub CI. Local container has no dotnet SDK.",
     "dotnetTests": "EXECUTED_PRIOR_HEAD_WITH_FAILURE; CURRENT_HEAD_PENDING",
-    "protectedCi": "IN_PROGRESS_OR_QUEUED_FOR_NEW_CANDIDATE_SHA; NO_GREEN_CLAIM",
+    "protectedCi": "NOT_COMPLETE_FOR_FINAL_BRANCH_SHA; GITHUB_ACTIONS_QUEUED",
     "authenticatedTwoSchool": "NOT_VERIFIED_ISSUE_453",
     "effectiveStudentRoute": "NOT_VERIFIED",
     "actualDeployedSha": "NOT_VERIFIED",
@@ -170,7 +171,18 @@
         "V2 JSON parity: changedBodies=2,newlyApproved=0; explicit predecessor approval pending"
       ],
       "notFinalHead": true
-    }
+    },
+    "staticFixtureInspection": {
+      "status": "PASSED",
+      "checks": 17,
+      "passed": 17,
+      "failed": 0,
+      "executedVia": "GitHub connector retrieved course branch files; JavaScript independent deterministic assertions in this chat",
+      "scope": "Fixture identity, 26-case completeness, exact 3x3 inverse, singular classification, log order and domains, retained matrix Practice blocker",
+      "notEquivalentTo": ".NET compilation, runtime Practice generation, academic human signoff, persistent grading or authenticated two-school testing"
+    },
+    "finalCandidateExactShaCI": "NOT_VERIFIED",
+    "sourcePdfIndependentReview": "NOT_RUN_FULL_ORIGINAL_PDFS"
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
@@ -188,7 +200,7 @@
       "PR #399 touches shared Practice and materializer",
       "PR #394 touches shared canonical lesson seeder"
     ],
-    "nextRequiredOwner": "designated global integration owner",
+    "nextRequiredOwner": "designated global shared Practice + academic/version integration owner (issue #584); school adoption owner (#453); release owner only after protected acceptance",
     "nextRequiredAction": "Global shared owner #584: implement tested matrix/log question families and graders, separately approve append-only Phase04 source-body predecessor and materialization; adoption #453; exact-head protected CI, source review, disposable two-school scoring and persistence, then release owner UAT.",
     "acceptanceFixtureCaseCount": 26,
     "academicAcceptance": "0_OF_2_PENDING",
