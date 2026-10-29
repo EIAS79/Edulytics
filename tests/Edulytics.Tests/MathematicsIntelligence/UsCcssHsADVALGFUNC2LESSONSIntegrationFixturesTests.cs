@@ -74,6 +74,57 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
         Assert.Contains(cases, x => x.GetProperty("category").GetString() == "invalid-base-one");
     }
 
+
+    [Fact]
+    public void OpenResponseRubricsMustRemainHumanScoredAndTiedToFixtures()
+    {
+        using var fixtureDocument = LoadFixtures();
+        var fixtureCases = fixtureDocument.RootElement.GetProperty("cases")
+            .EnumerateArray().ToDictionary(x => x.GetProperty("id").GetString()!);
+        const string rubricPath =
+            "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json";
+        using var rubricDocument = JsonDocument.Parse(File.ReadAllText(
+            Path.Combine(FindRoot(), rubricPath.Replace('/', Path.DirectorySeparatorChar))));
+        var root = rubricDocument.RootElement;
+        Assert.Equal("PROPOSED_HUMAN_SCORING_NOT_RUNTIME_CERTIFIED",
+            root.GetProperty("status").GetString());
+
+        var rubrics = root.GetProperty("rubrics").EnumerateArray().ToArray();
+        Assert.Equal(new[] { "M05", "M11", "L13" },
+            rubrics.Select(x => x.GetProperty("caseId").GetString()).ToArray());
+        foreach (var rubric in rubrics)
+        {
+            var id = rubric.GetProperty("caseId").GetString()!;
+            Assert.True(fixtureCases.TryGetValue(id, out var fixtureCase));
+            Assert.Equal(fixtureCase.GetProperty("lessonCode").GetString(),
+                rubric.GetProperty("lessonCode").GetString());
+            Assert.Equal(fixtureCase.GetProperty("gradingPolicy").GetString(),
+                rubric.GetProperty("gradingPolicy").GetString());
+            Assert.True(rubric.GetProperty("requiresHumanReview").GetBoolean());
+            Assert.False(rubric.GetProperty("machineAutoGrade").GetBoolean());
+            Assert.Equal(4, rubric.GetProperty("maxPoints").GetInt32());
+            var criteria = rubric.GetProperty("criteria").EnumerateArray().ToArray();
+            Assert.Equal(4, criteria.Length);
+            Assert.Equal(4, criteria.Sum(x => x.GetProperty("points").GetInt32()));
+            Assert.All(criteria, criterion =>
+            {
+                Assert.Equal(1, criterion.GetProperty("points").GetInt32());
+                Assert.False(string.IsNullOrWhiteSpace(
+                    criterion.GetProperty("requirement").GetString()));
+            });
+            Assert.False(string.IsNullOrWhiteSpace(
+                rubric.GetProperty("acceptedReasoning").GetString()));
+            Assert.False(string.IsNullOrWhiteSpace(
+                rubric.GetProperty("invalidExamples").GetString()));
+        }
+
+        var gates = root.GetProperty("releaseGates");
+        foreach (var gate in new[] { "academicApproved", "teacherWorkflowVerified",
+                     "twoSchoolIsolationVerified", "actualPersistedTeacherScoreVerified",
+                     "productionReady" })
+            Assert.False(gates.GetProperty(gate).GetBoolean());
+    }
+
     [Fact]
     public void ExactMatrixOraclesCoverInvertibleSingularAndWrongDimensionCases()
     {
