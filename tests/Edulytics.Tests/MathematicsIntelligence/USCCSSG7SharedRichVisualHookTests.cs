@@ -54,7 +54,7 @@ public sealed class USCCSSG7SharedRichVisualHookTests
             // Real, local first-party asset must back each whitelisted URL.
             // This is a source/asset contract, not an authenticated HTTP test.
             var match = Regex.Match(assetSection,
-                Regex.Escape("\\\"" + code + "\\\"") +
+                Regex.Escape("\"" + code + "\"") +
                 @"\s*=>\s*""(?<url>/curriculum/us-ccss-g7/geometry/[a-z0-9-]+\.svg)""");
             Assert.True(match.Success, $"Missing safe SVG mapping for {code}");
             var url = match.Groups["url"].Value;
