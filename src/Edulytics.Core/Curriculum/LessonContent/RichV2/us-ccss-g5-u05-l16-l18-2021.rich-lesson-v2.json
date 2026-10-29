@@ -1,0 +1,387 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u05-l16-l18-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L16",
+      "CultureCode": "en",
+      "Title": "Addition and Subtraction",
+      "ExplanationParagraphs": [
+        "Learning goal: flexibly choose appropriate strategies for addition AND subtraction of decimals, not always performing a standard algorithm. The source asks students to explain why a place-value approach is better for some expressions and counting up or compensation for close values; there is also an optional set of larger decimal differences.",
+        "Warm-up: compare two ways to find 70.00−68.75: subtract using a correctly aligned vertical algorithm or add up 0.25 to 69 and 1.00 more to 70. Explain why the counting-up method is efficient when the two numbers are close, while for some unrelated numbers a place-value algorithm is clearer.",
+        "Activity 1 — subtraction choice: find 8.24−3.7=4.54, 102.5−8.06=94.44 and 52.00−51.68=0.32. For 8.24−3.70, a place-value subtraction may be straightforward; for 52−51.68, counting up via +0.32 may be shorter. Require the learner to state which decimal places are aligned and why their chosen method is sensible.",
+        "Activity 2 — mix operations: calculate 41.36−5.2=36.16, 120+24.85=144.85, 120−24.85=95.15, and 308.57+64.8=373.37. Compare strategies, including compensation when subtracting a quantity close to 25 or adding one close to 65. Optional challenge: compute 260.14−259.6=0.54 by counting up, and explain why a complicated subtraction layout is not mandatory.",
+        "Assessment: the official tasks emphasize strategy choice, interpretation of digit places, and comparing another student's reasoning. Exact sums/differences are automatable subskills but do not prove a student selected or justified a valid strategy. Original student drawings and protected response are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Flexible decimal method selection",
+          "Definition": "Place-value algorithms, counting up and compensation may all calculate an exact decimal result.",
+          "Rule": "52.00−51.68=0.32 by counting up.",
+          "Example": "The best strategy depends on the structure of the numbers."
+        },
+        {
+          "Title": "Align decimal places for both operations",
+          "Definition": "Add or subtract units of the same magnitude, writing missing hundredths as zero.",
+          "Rule": "8.24−3.7=8.24−3.70=4.54.",
+          "Example": "Do not align the final digit of unequal-precision decimals."
+        },
+        {
+          "Title": "Check differences by addition",
+          "Definition": "A valid subtraction result plus its subtrahend returns the starting quantity.",
+          "Rule": "51.68+0.32=52.00.",
+          "Example": "The inverse provides an independent arithmetic check."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Close decimals",
+          "Question": "Find 52−51.68 efficiently.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Start at 51.68 and count up 0.32 to 52.",
+            "Alternatively subtract 51 and 0.68 from 52.",
+            "Explain why counting up is shorter in this situation."
+          ],
+          "Answer": "0.32.",
+          "Check": "51.68+0.32=52.00."
+        },
+        {
+          "Title": "Different decimal lengths",
+          "Question": "Find 102.5−8.06.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Write 102.50−8.06 with decimal places aligned.",
+            "Subtract 8 whole units and six hundredths with necessary regrouping.",
+            "Check by inverse addition."
+          ],
+          "Answer": "94.44.",
+          "Check": "94.44+8.06=102.50."
+        },
+        {
+          "Title": "Mix sum and difference",
+          "Question": "Find 120+24.85 and 120−24.85.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "For addition, combine 120+24+0.85.",
+            "For subtraction, use 120−25+0.15 or aligned columns.",
+            "Explain why the results differ."
+          ],
+          "Answer": "144.85 and 95.15.",
+          "Check": "144.85−24.85=120;95.15+24.85=120."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use the same operation because adjacent exercises have the same decimal digits",
+          "WhyWrong": "Addition and subtraction answer different quantity questions.",
+          "Correction": "Read each operator and estimate the expected magnitude before calculating."
+        },
+        {
+          "Mistake": "Use a long written algorithm even when a simpler justified method works",
+          "WhyWrong": "The source is designed for strategy selection, not mandatory one-layout answers.",
+          "Correction": "Compare a counting-up or compensation model and justify the method selected."
+        }
+      ],
+      "SummaryPoints": [
+        "Exact decimal sums and differences can be checked using inverse operations.",
+        "Select and justify an efficient method based on number relationships.",
+        "Source discussion, optional challenges and method critique are teacher-reviewed.",
+        "2021 IM K–5 Grade 5 Unit 5 Lesson 16: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-16/lesson.html. Original source 2021 teacher HTML and Student Facing activity directly read on authorized Our-CS in V7; source student PDF, gated responses and image licenses remain separately unchecked. Original Edulytiks math examples and descriptions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Addition and Subtraction — place value model",
+          "Description": "Accessible original table, not publisher student graphic or card.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "52−51.68",
+                "102.50−8.06",
+                "120+24.85",
+                "120−24.85"
+              ]
+            },
+            {
+              "Label": "Exact",
+              "Cells": [
+                "0.32",
+                "94.44",
+                "144.85",
+                "95.15"
+              ]
+            },
+            {
+              "Label": "Possible method",
+              "Cells": [
+                "Count up",
+                "Place value",
+                "Break apart",
+                "Compensate"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L17",
+      "CultureCode": "en",
+      "Title": "Multiply Decimals and Whole Numbers",
+      "ExplanationParagraphs": [
+        "Learning goal: multiply a positive whole number by an amount of tenths or hundredths using repeated equal-sized parts, grids, whole-number products and place value. The source deliberately starts with easy grids before critiquing an imprecise student explanation that amounts to multiplying digits and assigning units.",
+        "Warm-up: describe two original full hundredths grids each with 40 hundredths selected; together they show 2×0.40=0.80 of one common unit. Explain why writing 80 hundredths equals eight tenths, not eighty entire wholes.",
+        "Activity 1 — gradually increase precision: calculate 3×0.6=1.8 as 18 tenths, 3×0.09=0.27 as 27 hundredths, and 3×0.69=2.07 as the sum 1.8+0.27. A learner may shade three diagrams of the same unit, use multiplication facts or present an accessible equal-parts description.",
+        "Activity 2 — critique incomplete reasoning: a classmate claims 'just multiply as if whole numbers and add a decimal' for 6×0.08. Ask the student to revise the explanation so it names 6 groups of 8 hundredths, hence 48 hundredths or 0.48. Contrast with 6×0.8=4.8 (48 tenths), and explain why the printed 8 occupies a different place in the two expressions.",
+        "Assessment: numeric products may be graded if the exact factors are supplied. Diagrams, the unit whole, the explanation of why the product has the right decimal place, and revisions of a peer's ambiguous method require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Whole-number groups of tenths",
+          "Definition": "Multiply the count of equal groups by the tenths contained in each group.",
+          "Rule": "3×0.6=3×6×0.1=1.8.",
+          "Example": "Eighteen tenths are one whole and eight tenths."
+        },
+        {
+          "Title": "Whole-number groups of hundredths",
+          "Definition": "Multiply the number of groups by the hundredths contained in one group.",
+          "Rule": "6×0.08=6×8×0.01=0.48.",
+          "Example": "Forty-eight hundredths are not forty-eight tenths."
+        },
+        {
+          "Title": "Distribute mixed place values",
+          "Definition": "Multiply tenths and hundredths separately, then add the two place-value contributions.",
+          "Rule": "3×0.69=3×0.60+3×0.09.",
+          "Example": "1.8+0.27=2.07."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Multiply tenths",
+          "Question": "Three groups contain 0.6 each. Find the total.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Interpret 0.6 as six tenths.",
+            "Multiply three groups by six tenths to obtain eighteen tenths.",
+            "Compose ten tenths into one whole."
+          ],
+          "Answer": "1.8.",
+          "Check": "3×6×0.1=1.8."
+        },
+        {
+          "Title": "Multiply hundredths",
+          "Question": "Six groups contain 0.08 each. Find the total.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Identify eight hundredths per group.",
+            "Calculate six times eight equals forty-eight hundredths.",
+            "Express that as a decimal."
+          ],
+          "Answer": "0.48.",
+          "Check": "6×0.08=0.48;6×0.8=4.8 is a different problem."
+        },
+        {
+          "Title": "Use known products",
+          "Question": "Find 3×0.69 by decomposing.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Rewrite 0.69 as 0.6+0.09.",
+            "Multiply the tenths contribution: 3×0.6=1.8.",
+            "Multiply the hundredths: 3×0.09=0.27 and add."
+          ],
+          "Answer": "2.07.",
+          "Check": "69×3=207 hundredths."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assign decimal places by a guess instead of naming place units",
+          "WhyWrong": "'Multiply digits then put a decimal' does not explain whether the factor counts tenths or hundredths.",
+          "Correction": "State the unit size of the repeated quantity and multiply number of units."
+        },
+        {
+          "Mistake": "Treat three tenths as three whole units on the grid",
+          "WhyWrong": "The original whole contains ten tenths or one hundred hundredths.",
+          "Correction": "Label both the fractional unit and the full unit square."
+        }
+      ],
+      "SummaryPoints": [
+        "Each product can be interpreted as a whole-number count of tenths or hundredths.",
+        "Place-value language justifies a product's decimal size.",
+        "Teacher reviews diagrams and student method critique, beyond numeric products.",
+        "2021 IM K–5 Grade 5 Unit 5 Lesson 17: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-17/lesson.html. Original source 2021 teacher HTML and Student Facing activity directly read on authorized Our-CS in V7; source student PDF, gated responses and image licenses remain separately unchecked. Original Edulytiks math examples and descriptions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multiply Decimals and Whole Numbers — place value model",
+          "Description": "Accessible original table, not publisher student graphic or card.",
+          "Rows": [
+            {
+              "Label": "Product",
+              "Cells": [
+                "3×0.6",
+                "3×0.09",
+                "3×0.69",
+                "6×0.08"
+              ]
+            },
+            {
+              "Label": "Selected fractional parts",
+              "Cells": [
+                "18 tenths",
+                "27 hundredths",
+                "207 hundredths",
+                "48 hundredths"
+              ]
+            },
+            {
+              "Label": "Decimal",
+              "Cells": [
+                "1.8",
+                "0.27",
+                "2.07",
+                "0.48"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L18",
+      "CultureCode": "en",
+      "Title": "Use Whole Number Facts",
+      "ExplanationParagraphs": [
+        "Learning goal: use the associative and distributive properties to rewrite a positive whole number times a decimal as exact whole-number products TIMES one tenth or one hundredth. The source first asks whether equations are true or false, and later asks for two different representations of the SAME source diagram.",
+        "Warm-up — truth and reasonableness: compare 5×0.6 with 30, and 4×0.08 with 32×0.01. The former is 3.0, not 30; the latter is 0.32 and correctly counts 32 hundredths. A whole number multiplied by a positive fraction less than one must yield a product less than that whole number.",
+        "Activity 1 — explain all place-value factors: calculate 7×0.04=(7×4)×0.01=0.28; contrast it with the incorrect 7×0.04=(7×4)×0.1=2.8. Complete an equation such as 8×0.7=(8×7)×___ with one tenth, and 8×0.07=(8×7)×___ with one hundredth. Explain why only the correct unit gives equivalent products.",
+        "Activity 2 — match two expressions to one model: an accessible hundredths diagram has four equal groups of 0.13, or a combined 52 hundredths. Interpret both 4×13×0.01=0.52 and 4×0.1+4×0.03=0.52, then critique the false shortcut 4×13×0.1=5.2. A student must describe the four grouped tenths-and-hundredths selections, not only calculate.",
+        "Assessment: false-equation critiques, blank-filling and diagram/expression matching can have numeric subchecks but the learner's justification and chosen interpretation are teacher-reviewed; original source visual and protected response not reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Associate whole facts with fractional units",
+          "Definition": "Rewrite a decimal amount as an integer number of a named place-value fraction.",
+          "Rule": "7×0.04=(7×4)×0.01=0.28.",
+          "Example": "The factor 0.01 is what makes 28 hundredths."
+        },
+        {
+          "Title": "Distribute across decimal places",
+          "Definition": "Multiply tenths and hundredths contributions separately and add.",
+          "Rule": "4×0.13=4×0.1+4×0.03.",
+          "Example": "0.4+0.12=0.52."
+        },
+        {
+          "Title": "Scale benchmark catches decimal errors",
+          "Definition": "If 0<d<1 and n>0, then 0<nd<n.",
+          "Rule": "7×0.04=0.28, not 2.8.",
+          "Example": "The product must be less than seven."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Whole-number fact with hundredths",
+          "Question": "Find 7×0.04 and justify the decimal.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Write 0.04 as 4×0.01.",
+            "Associate the whole factors: 7×4=28.",
+            "Count 28 hundredths."
+          ],
+          "Answer": "0.28.",
+          "Check": "7×0.04=28×0.01."
+        },
+        {
+          "Title": "Fill the unit blank",
+          "Question": "What value completes 8×0.07=(8×7)×___?",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Identify each 0.07 as seven hundredths.",
+            "Use 8×7=56.",
+            "Write the unit one hundredth to make 56 hundredths."
+          ],
+          "Answer": "0.01.",
+          "Check": "56×0.01=0.56."
+        },
+        {
+          "Title": "Match two expressions to one diagram",
+          "Question": "A model shows four groups of 0.13. Find the sum using whole-number facts and distribution.",
+          "Method": "First-party decimal model and independently checkable place-value computation, with teacher-reviewed justification.",
+          "Steps": [
+            "Count 4×13=52 hundredths in the combined groups.",
+            "Or split each group into 0.1 and 0.03.",
+            "Combine 0.4+0.12."
+          ],
+          "Answer": "0.52.",
+          "Check": "4×0.13=52×0.01=0.52."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 0.07 as seven tenths",
+          "WhyWrong": "Seven tenths is 0.7, which is ten times as large.",
+          "Correction": "Name the hundredth unit explicitly, not only the printed 7."
+        },
+        {
+          "Mistake": "Accept a product larger than the positive whole factor without checking",
+          "WhyWrong": "A positive multiplier below one produces a smaller positive product.",
+          "Correction": "Compare to n×1 and verify the resulting magnitude."
+        }
+      ],
+      "SummaryPoints": [
+        "Whole-number multiplication facts remain useful when the units are tenths or hundredths.",
+        "Associative and distributive properties provide two equivalent diagram interpretations.",
+        "Reasoned true/false statements and student diagrams remain teacher-reviewed.",
+        "2021 IM K–5 Grade 5 Unit 5 Lesson 18: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-18/lesson.html. Original source 2021 teacher HTML and Student Facing activity directly read on authorized Our-CS in V7; source student PDF, gated responses and image licenses remain separately unchecked. Original Edulytiks math examples and descriptions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Use Whole Number Facts — place value model",
+          "Description": "Accessible original table, not publisher student graphic or card.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "7×0.04",
+                "8×0.07",
+                "4×0.13"
+              ]
+            },
+            {
+              "Label": "Whole-number fact",
+              "Cells": [
+                "7×4=28",
+                "8×7=56",
+                "4×13=52"
+              ]
+            },
+            {
+              "Label": "Fractional unit",
+              "Cells": [
+                "0.01",
+                "0.01",
+                "0.01"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "0.28",
+                "0.56",
+                "0.52"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
