@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l09-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L09",
+      "CultureCode": "en",
+      "Title": "Comparing Graphs",
+      "ExplanationParagraphs": [
+        "Learning goal: compare two functions representing the same input-output quantities, identify intersections where A(t)=B(t), interpret A(t)>B(t) and compare rates of change with correct units. Independently authored Edulytiks lesson aligned with Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 9, https://im.kendallhunt.com/HS/teachers/1/4/9/preparation.html and student activities https://im.kendallhunt.com/HS/students/1/4/9/index.html (CC BY 4.0). The source compares population and media trends; our separate data are a new mathematical model, not those observed records.",
+        "Original fictional two savings accounts: account A starts with $10 and adds $4 each week, so A(t)=10+4t; account B starts with $2 and adds $6 weekly, so B(t)=2+6t, for t≥0 whole weeks. At week0 A has more; at week4 they agree at $26; after week4 B becomes larger. The mathematical graph comprises two straight lines, but realistic deposits occur at discrete whole-week times.",
+        "An intersection of the graphs identifies a shared output at the SAME input. Solve 10+4t=2+6t to obtain t=4 and output26. A(2)=18 exceeds B(2)=14, whereas B(6)=38 exceeds A(6)=34. Comparing slope alone does not prove which account has greater balance at every time because starting amounts differ.",
+        "Student activity: graph both lines on common time/balance axes, label their intersection and relative position before/after, translate symbolic comparisons into everyday language, and consider how to change deposit amounts to move the crossing. Teacher-scored rubric (0–2 each, max 8): accurate shared-axis graph, checked comparisons and intersection, correct rate/intercept interpretation, and justified contextual explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Compare outputs",
+          "Definition": "A(t)>B(t) means A has the larger output at the same input t.",
+          "Rule": "Use the same x coordinate and units for both functions.",
+          "Example": "At t2: A=18, B=14, so A(2)>B(2)."
+        },
+        {
+          "Title": "Intersection",
+          "Definition": "A(t)=B(t) is solved by the input coordinates where the two graphs meet.",
+          "Rule": "Solve and verify both expressions.",
+          "Example": "At t=4, A(4)=B(4)=26."
+        },
+        {
+          "Title": "Different average rates",
+          "Definition": "The rate and starting value together determine which function is larger.",
+          "Rule": "Compare both slopes and intercepts.",
+          "Example": "A adds $4/week but B adds $6/week after a smaller start."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find the crossing input",
+          "Question": "For A(t)=10+4t and B(t)=2+6t, find A(t)=B(t).",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "Set 10+4t=2+6t.",
+            "Subtract2 and4t to get 8=2t.",
+            "Divide by2: t=4.",
+            "Substitute A(4)=10+16=26 and B(4)=2+24=26.",
+            "Interpret as equal balances after four weeks."
+          ],
+          "Answer": "Intersection (4,$26).",
+          "Check": "Both function equations give $26."
+        },
+        {
+          "Title": "Compare before the crossing",
+          "Question": "Compare A(2) and B(2).",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "A(2)=10+4×2=18.",
+            "B(2)=2+6×2=14.",
+            "Since18>14, A has more savings at week2.",
+            "Difference is $4.",
+            "Week2 is before the equality at week4."
+          ],
+          "Answer": "A(2)>B(2) by $4.",
+          "Check": "Both evaluations use the same week2 input."
+        },
+        {
+          "Title": "Compare after the crossing",
+          "Question": "Compare values and rates at week6.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "A(6)=10+24=34.",
+            "B(6)=2+36=38.",
+            "B leads by $4 despite starting $8 behind.",
+            "B grows $2/week faster, so the difference changes by $2 per week."
+          ],
+          "Answer": "B(6)>A(6) by $4.",
+          "Check": "At week4 difference0, two weeks later difference4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing A(2) with B(6) as if same-time outputs",
+          "WhyWrong": "Inputs differ so the comparison does not answer which is greater at a particular week.",
+          "Correction": "Hold input t fixed."
+        },
+        {
+          "Mistake": "Assuming the function with higher rate starts higher",
+          "WhyWrong": "Slope does not determine initial value.",
+          "Correction": "Examine y-intercepts and graph intersection."
+        }
+      ],
+      "SummaryPoints": [
+        "Comparing functions uses common inputs, units and correctly labelled graphs.",
+        "A(t)=B(t) gives an intersection input; the associated outputs also agree.",
+        "The two original accounts cross at week4 with $26 each.",
+        "Teacher reviews graph comparison and contextual reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible function observations",
+          "Description": "Original hypothetical data and formula checks, not source-owned graphics or fabricated student participation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output or classification",
+          "Rows": [
+            {
+              "Label": "t=0 weeks",
+              "Cells": [
+                "A10, B2"
+              ]
+            },
+            {
+              "Label": "t=2 weeks",
+              "Cells": [
+                "A18, B14"
+              ]
+            },
+            {
+              "Label": "t=4 weeks",
+              "Cells": [
+                "A26, B26"
+              ]
+            },
+            {
+              "Label": "t=6 weeks",
+              "Cells": [
+                "A34, B38"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

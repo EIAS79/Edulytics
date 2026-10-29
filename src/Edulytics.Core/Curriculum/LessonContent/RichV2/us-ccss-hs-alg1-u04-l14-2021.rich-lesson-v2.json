@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l14-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L14",
+      "CultureCode": "en",
+      "Title": "Absolute Value Functions (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret absolute value as distance on a number line, write f(x)=|x| as a two-piece rule, and explain horizontal/vertical translations of V-shaped graphs with correct vertices and ranges. First-party Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 14, https://im.kendallhunt.com/HS/teachers/1/4/14/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/14/index.html (CC BY 4.0). The source generalizes from the prior lesson's guesses/error data; this candidate retains that connection.",
+        "Independent first-party distance graph f(x)=|x−5|+2 gives the distance of x from target5 plus an additional fixed2-point penalty. The graph has vertex (5,2), axis of symmetry x=5, range [2,∞), and domain all real inputs. The ordinary distance function d(x)=|x−5| has vertex (5,0) and nonnegative outputs; the added2 shifts the graph vertically without changing the V slopes.",
+        "Write the same f by cases: f(x)=7−x when x≤5, and f(x)=x−3 when x≥5. At x=5, both give2, so the function is well-defined at the shared breakpoint. At x=2 output5 and at x=8 output5. The function g(x)=|x+3| instead has vertex (−3,0); adding a positive number inside absolute bars moves the vertex left.",
+        "Student activity: sketch f(x), d(x), g(x) with common axes, compare vertex/range, convert at least one to cases and critique a wrong transformation claim. Teacher-scored rubric (0–2 each, total 8): accurate distance interpretation, correct cases and endpoint, accurate graph/vertex, and clear explanations of translations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distance function",
+          "Definition": "|x−a| is the nonnegative distance from x to a.",
+          "Rule": "Minimum zero at x=a.",
+          "Example": "|2−5|=3, |8−5|=3."
+        },
+        {
+          "Title": "Absolute value by cases",
+          "Definition": "|u|=−u when u<0 and u when u≥0.",
+          "Rule": "Split at the expression's zero.",
+          "Example": "|x−5|=5−x for x≤5; x−5 for x≥5."
+        },
+        {
+          "Title": "Graph translation",
+          "Definition": "f(x)=|x−h|+k has vertex (h,k), with V-shape slopes ±1.",
+          "Rule": "Read h from subtraction inside; k from addition outside.",
+          "Example": "|x−5|+2 has vertex (5,2), range y≥2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate the translated V",
+          "Question": "Calculate f(2),f(5),f(8) for f(x)=|x−5|+2.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "f(2)=|−3|+2=3+2=5.",
+            "f(5)=0+2=2.",
+            "f(8)=|3|+2=3+2=5.",
+            "The symmetric inputs2 and8 are equally distant from5.",
+            "Thus vertex is (5,2) with reflection symmetry."
+          ],
+          "Answer": "f(2)=5,f(5)=2,f(8)=5.",
+          "Check": "Both sides have nonnegative distance plus2."
+        },
+        {
+          "Title": "Write cases and check boundary",
+          "Question": "Represent f(x)=|x−5|+2 with separate linear expressions.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "For x≤5, |x−5|=5−x, hence f=7−x.",
+            "For x≥5, |x−5|=x−5, hence f=x−3.",
+            "At x5 both branches give2.",
+            "At x4 left branch gives3, matching |4−5|+2.",
+            "At x6 right branch gives3."
+          ],
+          "Answer": "f(x)=7−x for x≤5 and x−3 for x≥5.",
+          "Check": "Branches agree at the shared input."
+        },
+        {
+          "Title": "Compare horizontal translations",
+          "Question": "Where is the vertex of g(x)=|x+3|?",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Set inside quantity x+3=0.",
+            "Solve x=−3.",
+            "Absolute distance minimum is zero there.",
+            "Thus vertex is (−3,0), three units left of y=|x|."
+          ],
+          "Answer": "Vertex (−3,0).",
+          "Check": "g(−3)=0,g(0)=3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading |x+3| as a rightward shift",
+          "WhyWrong": "Inside addition moves the zero to x=−3.",
+          "Correction": "Solve inside expression equals zero."
+        },
+        {
+          "Mistake": "Omitting the vertical shift from the range",
+          "WhyWrong": "Minimum of |x−5|+2 is2, not zero.",
+          "Correction": "Add outside constant to the vertex output."
+        }
+      ],
+      "SummaryPoints": [
+        "Absolute value is a distance function and has a V-shaped graph.",
+        "f(x)=|x−h|+k has vertex (h,k) and range y≥k for unit coefficient.",
+        "The same function can be expressed with two linear pieces.",
+        "Teacher evaluates graph interpretation and piecewise reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original function input-output checks",
+          "Description": "Independent hypothetical first-party computations, not publisher artwork or observed student data.",
+          "PrimaryLabel": "Input or contextual constraint",
+          "SecondaryLabel": "Output or verification",
+          "Rows": [
+            {
+              "Label": "x=2",
+              "Cells": [
+                "f=5"
+              ]
+            },
+            {
+              "Label": "x=5",
+              "Cells": [
+                "f=2 minimum"
+              ]
+            },
+            {
+              "Label": "x=8",
+              "Cells": [
+                "f=5"
+              ]
+            },
+            {
+              "Label": "g(x)=|x+3|",
+              "Cells": [
+                "vertex(−3,0)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

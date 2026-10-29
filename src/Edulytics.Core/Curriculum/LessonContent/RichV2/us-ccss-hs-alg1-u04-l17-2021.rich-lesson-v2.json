@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l17-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L17",
+      "CultureCode": "en",
+      "Title": "Writing Inverse Functions to Solve Problems",
+      "ExplanationParagraphs": [
+        "Learning goal: write an inverse for a linear function stated in function notation, use it to solve a contextual problem or reverse a data model, and explain which input/output roles change. Original Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 17, https://im.kendallhunt.com/HS/teachers/1/4/17/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/4/17/index.html (CC BY 4.0). The source intentionally delays notation f^(-1) to prioritize meaning; this candidate uses 'inverse process' and does not force that symbol.",
+        "Independent tank model: water volume W(t)=80−2.5t litres for elapsed time t minutes until empty, 0≤t≤32. To find elapsed time from a remaining volume v litres, solve v=80−2.5t for t=(80−v)/2.5. Inverse input v is restricted to [0,80] litres and output time lies in [0,32] minutes. W(13)=47.5 litres; if only5 litres remain, t=(80−5)/2.5=30 minutes.",
+        "Original second hypothetical data model: a measured-looking percentage indicator increases approximately as P(t)=12+3.5t for years t∈[0,6]. Given an indicator level p, the inverse model t=(p−12)/3.5 estimates the year offset. This is invented for mathematical practice and does not describe actual phone subscriptions or real populations. Extrapolation past observed years may fail.",
+        "Student activity: explain inverse operation to a peer, construct forward/backward tables, sketch the input/output interchange, interpret a fractional time estimate and critique when a fitted model is not physically invertible beyond its observed range. Teacher-scored rubric 0–2 each for algebra, checked function composition, valid interpretation of units/domains and responsible modeling limitations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inverse as reverse question",
+          "Definition": "Given original output, solve for the input that produced it.",
+          "Rule": "Rewrite the output equation and isolate input.",
+          "Example": "From v=80−2.5t, t=(80−v)/2.5."
+        },
+        {
+          "Title": "Swapped units",
+          "Definition": "Original output units become inverse input units.",
+          "Rule": "Name the quantity when giving a number.",
+          "Example": "Tank forward: minutes→litres; inverse: litres→minutes."
+        },
+        {
+          "Title": "Model inversion limits",
+          "Definition": "An inverse algebra formula can produce values beyond a physical or fitted model's domain.",
+          "Rule": "Check output range and original data coverage.",
+          "Example": "Tank cannot have negative volume even if formula evaluated after32min."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find tank water after time",
+          "Question": "Evaluate W(13)=80−2.5×13.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Multiply 2.5×13=32.5 litres.",
+            "Subtract from initial80.",
+            "W(13)=47.5 litres.",
+            "13 minutes is within model domain [0,32]."
+          ],
+          "Answer": "47.5 litres.",
+          "Check": "Forward model value is nonnegative."
+        },
+        {
+          "Title": "Find time from remaining water",
+          "Question": "If tank holds 5 litres, how many minutes elapsed?",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Set 5=80−2.5t.",
+            "Subtract80: −75=−2.5t.",
+            "Divide by−2.5: t=30 minutes.",
+            "Check W(30)=80−75=5."
+          ],
+          "Answer": "30 minutes.",
+          "Check": "Both units and domain t≤32 satisfy."
+        },
+        {
+          "Title": "Invert a hypothetical linear trend",
+          "Question": "Given P(t)=12+3.5t, find t if level p=26.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Set26=12+3.5t.",
+            "Subtract12:14=3.5t.",
+            "Divide: t=4 years.",
+            "Check P(4)=12+14=26.",
+            "State that the fitted trend is only supported within its stated t range."
+          ],
+          "Answer": "t=4 years from baseline.",
+          "Check": "Forward and inverse values agree without real-world trend claims."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling inverse time a litre quantity",
+          "WhyWrong": "Input and output units switch during inversion.",
+          "Correction": "Label inverse input v in litres and output t in minutes."
+        },
+        {
+          "Mistake": "Applying tank formula after it empties",
+          "WhyWrong": "Negative volume is physically invalid.",
+          "Correction": "Restrict t∈[0,32]."
+        },
+        {
+          "Mistake": "Claiming a fitted model's inverse predicts real historical events precisely",
+          "WhyWrong": "Regression/fit is approximate and only based on observed data.",
+          "Correction": "State uncertainty and extrapolation limits."
+        }
+      ],
+      "SummaryPoints": [
+        "Invert a function by expressing original input in terms of original output.",
+        "The tank inverse maps remaining litres to elapsed minutes.",
+        "W(13)=47.5 L, 5L corresponds to30min in the simple linear model.",
+        "Teacher verifies context and valid domain before using predictions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original function input-output checks",
+          "Description": "Independent hypothetical first-party computations, not publisher artwork or observed student data.",
+          "PrimaryLabel": "Input or contextual constraint",
+          "SecondaryLabel": "Output or verification",
+          "Rows": [
+            {
+              "Label": "t=13 minutes",
+              "Cells": [
+                "W=47.5 L"
+              ]
+            },
+            {
+              "Label": "remaining5 L",
+              "Cells": [
+                "elapsed30 min"
+              ]
+            },
+            {
+              "Label": "tank empty",
+              "Cells": [
+                "t=32 min"
+              ]
+            },
+            {
+              "Label": "hypothetical trend P=26",
+              "Cells": [
+                "t=4 years"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

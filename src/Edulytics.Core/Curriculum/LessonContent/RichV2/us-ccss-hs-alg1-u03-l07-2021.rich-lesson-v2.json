@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l07-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L07",
+      "CultureCode": "en",
+      "Title": "The Correlation Coefficient",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret the correlation coefficient r as a description of the direction and strength of a linear association in paired numerical data; distinguish perfect linear relationships, weak linear association, and undefined r. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 3 Lesson 7, https://im.kendallhunt.com/HS/teachers/1/3/7/preparation.html (CC BY 4.0). The source uses matching scatter plots with correlation descriptions rather than presenting a mechanical regression recipe alone.",
+        "First-party perfect positive dataset pairs (1,2),(2,4),(3,6),(4,8) lie exactly on y=2x, so r=+1. First-party perfect negative pairs (1,8),(2,6),(3,4),(4,2) lie on y=10−2x, so r=−1. Correlation sign indicates direction and |r| indicates strength of *linear* association, not rate, units or causality.",
+        "Original U-shaped dataset x=−2,−1,0,1,2 and y=4,1,0,1,4 has Pearson r=0 because symmetrical positive and negative x deviations cancel the covariance. A clear nonlinear relationship exists despite no linear correlation. A data set with all x values identical has no defined Pearson r because the x standard deviation is zero; do not grade r=0 for an undefined denominator.",
+        "Student matching task: label at least four scatter plots as perfect positive, perfect negative, nonlinear with near-zero r, or undefined r. Explain how shifting/rescaling positive units can leave r unchanged while a negative vertical multiplier reverses its sign. Discuss why r is descriptive, not proof of cause.",
+        "Teacher-scored rubric (0–2 each, maximum 8): accurate direction/strength assignment, evidence from point trends, correct handling of nonlinear/undefined cases, and critical interpretation with no causal overclaim. Human reasoning and actual plotted evidence matter."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Pearson r",
+          "Definition": "Unitless number between −1 and 1 describing direction and strength of linear relationship.",
+          "Rule": "r=+1 for perfect positive line; r=−1 for perfect negative line.",
+          "Example": "(1,2),(2,4),(3,6) produce perfect positive correlation."
+        },
+        {
+          "Title": "Linear versus nonlinear association",
+          "Definition": "Correlation r measures linear pattern, not all kinds of dependence.",
+          "Rule": "A curved relationship can have r=0.",
+          "Example": "Symmetric U-shaped y=x² has zero sample Pearson correlation for symmetric x-values."
+        },
+        {
+          "Title": "Undefined correlation",
+          "Definition": "Pearson r cannot be calculated if one variable has zero variance.",
+          "Rule": "Do not substitute zero for division by zero.",
+          "Example": "All x=3 make the x standard deviation zero and r undefined."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Recognize a perfect positive line",
+          "Question": "What is r for x=1,2,3,4 and y=2,4,6,8?",
+          "Method": "Use the exact first-party paired-data model, compute each quantity, and interpret mathematical evidence.",
+          "Steps": [
+            "Every point satisfies exact y=2x.",
+            "As x rises, y rises proportionally at a constant positive rate.",
+            "All points lie exactly on a nonvertical straight line.",
+            "Nonzero variance in both variables guarantees r=+1 for this perfect positive relation."
+          ],
+          "Answer": "r=+1.",
+          "Check": "The sign and perfect-line condition agree."
+        },
+        {
+          "Title": "Recognize a negative line",
+          "Question": "What is r for x=1,2,3,4 and y=8,6,4,2?",
+          "Method": "Use the exact first-party paired-data model, compute each quantity, and interpret mathematical evidence.",
+          "Steps": [
+            "As x rises by 1, y falls by exactly 2.",
+            "All pairs satisfy y=10−2x.",
+            "Both variables vary and points lie on a perfect decreasing line.",
+            "Thus Pearson r=−1."
+          ],
+          "Answer": "r=−1.",
+          "Check": "Perfect negative direction with nonzero variances."
+        },
+        {
+          "Title": "Explain a zero linear correlation with curvature",
+          "Question": "What can r say about x=−2,−1,0,1,2 and y=4,1,0,1,4?",
+          "Method": "Use the exact first-party paired-data model, compute each quantity, and interpret mathematical evidence.",
+          "Steps": [
+            "Mean x=0; mean y=(4+1+0+1+4)/5=2.",
+            "The sum of x(y−2) terms is (−2)(2)+(−1)(−1)+0+1(−1)+2(2)=0.",
+            "Both x and y vary so the Pearson denominator is nonzero.",
+            "The covariance numerator is zero, hence r=0.",
+            "But y=x² is a deterministic U-shaped association, not independence."
+          ],
+          "Answer": "Pearson r=0 though a nonlinear relationship is present.",
+          "Check": "Symmetry cancels linear covariance but does not erase curvature."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Interpreting r as slope",
+          "WhyWrong": "r is a standardized strength/direction measure with no units; slope has output/input units.",
+          "Correction": "Separate rate of change from correlation."
+        },
+        {
+          "Mistake": "Interpreting r=0 as no possible relationship",
+          "WhyWrong": "A U-shaped deterministic relation can have zero linear correlation.",
+          "Correction": "Examine the scatter pattern for nonlinearity."
+        },
+        {
+          "Mistake": "Calling undefined r equal to zero",
+          "WhyWrong": "A zero standard deviation makes the formula undefined.",
+          "Correction": "Report undefined when all values of one variable are identical."
+        }
+      ],
+      "SummaryPoints": [
+        "Pearson r lies between −1 and +1 and is unitless.",
+        "Perfect increasing and decreasing straight lines have r=+1 and −1 respectively.",
+        "r=0 does not rule out nonlinear association; zero-variance data leave r undefined.",
+        "Teacher-scored plot interpretation must not be replaced with unsupported causal claims."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original bivariate statistical calculations",
+          "Description": "Original invented observations with explicit signs and labels; these are not actual classroom measurements.",
+          "PrimaryLabel": "Point or relationship",
+          "SecondaryLabel": "Computed result",
+          "Rows": [
+            {
+              "Label": "Perfect positive line",
+              "Cells": [
+                "r=+1"
+              ]
+            },
+            {
+              "Label": "Perfect negative line",
+              "Cells": [
+                "r=−1"
+              ]
+            },
+            {
+              "Label": "Symmetric U-shaped dataset",
+              "Cells": [
+                "r=0, nonlinear relationship"
+              ]
+            },
+            {
+              "Label": "Constant x",
+              "Cells": [
+                "r undefined"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

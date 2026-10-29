@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l16-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L16",
+      "CultureCode": "en",
+      "Title": "Finding and Interpreting Inverse Functions",
+      "ExplanationParagraphs": [
+        "Learning goal: find and explain inverses of linear functions involving multiple arithmetic operations, interpret units/domains and check the composition in both directions. First-party Edulytiks adaptation from Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 16, https://im.kendallhunt.com/HS/teachers/1/4/16/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/16/index.html (CC BY 4.0). Publisher Building On HSA-CED.A.2/HSA-CED.A.4 and Addressing HSA-CED.A.4/HSF-BF.B.4.",
+        "Original bookshop model T(n)=9n+5 dollars for n nonnegative whole-number books: $9 each and a one-time $5 delivery fee. Given bill T, solve n=(T−5)/9, but only bills of 5+9n for nonnegative integer n correspond to complete book purchases. A $50 bill implies n=(50−5)/9=5 books; $51 would imply 46/9 books and is not admissible under this model.",
+        "A familiar temperature relationship, Celsius C to Fahrenheit F, is F=(9/5)C+32. Reverse steps by subtracting32 then multiplying5/9, so C=(F−32)×5/9. Check0°C↔32°F, 100°C↔212°F, 40°C↔104°F. The mathematical inverse changes both units and input/output roles.",
+        "Student task: solve two multistep equations for input variables, create a two-column forward/inverse data table, distinguish mathematical inverse from physically admissible purchases and evaluate if a function is one-to-one. Teacher-scored rubric 0–2 each for correct isolation, two-way checks, units/domain reasoning and appropriate contextual interpretation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Reverse order",
+          "Definition": "Undo the final operation first, then earlier operations.",
+          "Rule": "For y=9x+5 subtract5 before dividing9.",
+          "Example": "x=(y−5)/9."
+        },
+        {
+          "Title": "Inverse domain and range",
+          "Definition": "The inverse's valid input values are the original function's attainable outputs.",
+          "Rule": "Respect discrete or restricted domain.",
+          "Example": "T(n) has bills {5,14,23,...}, not every real bill."
+        },
+        {
+          "Title": "Two-way verification",
+          "Definition": "Check both original(inverse(y)) and inverse(original(x)) where defined.",
+          "Rule": "Use numerical examples with units.",
+          "Example": "(104−32)×5/9=40°C; forward40°C=104°F."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve for book count",
+          "Question": "A $50 total follows T=9n+5. Find n.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Subtract delivery: T−5=9n.",
+            "Divide9: n=(T−5)/9.",
+            "At T=50, n=45/9=5 books.",
+            "Check 9×5+5=$50.",
+            "n is a nonnegative integer."
+          ],
+          "Answer": "5 books; inverse n=(T−5)/9 on attainable bills.",
+          "Check": "The original total reproduces $50."
+        },
+        {
+          "Title": "Invert Fahrenheit conversion",
+          "Question": "Find Celsius equivalent of 104°F.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Start F=(9/5)C+32.",
+            "Subtract32: F−32=(9/5)C.",
+            "Multiply by5/9: C=(F−32)×5/9.",
+            "At F=104, C=(104−32)×5/9=72×5/9=40.",
+            "Forward check (9/5)×40+32=104."
+          ],
+          "Answer": "40°C and inverse formula C=(F−32)5/9.",
+          "Check": "Both directions restore values and units."
+        },
+        {
+          "Title": "Classify unattainable bill",
+          "Question": "Could $51 be an exact T(n)=9n+5 for integer n≥0?",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Compute n=(51−5)/9=46/9.",
+            "This is not a whole number.",
+            "The model only permits integer book counts.",
+            "So $51 is not in the purchase-total range."
+          ],
+          "Answer": "No, not an attainable bill under the model.",
+          "Check": "Nearest five and six books cost $50 and $59."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reversing multiplication before undoing addition",
+          "WhyWrong": "This gives an incorrect rule.",
+          "Correction": "Subtract the fixed fee before dividing."
+        },
+        {
+          "Mistake": "Assuming every real output can be inverted into a physically valid count",
+          "WhyWrong": "Integer input constraints limit output range.",
+          "Correction": "Check inverse result is nonnegative integer."
+        }
+      ],
+      "SummaryPoints": [
+        "Linear inverse rules reverse the original operations in order.",
+        "A book-price inverse can produce an inadmissible fractional count.",
+        "Fahrenheit/Celsius conversion is reversible by solving for C.",
+        "Teacher verifies checks, units and contextual domain."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original function input-output checks",
+          "Description": "Independent hypothetical first-party computations, not publisher artwork or observed student data.",
+          "PrimaryLabel": "Input or contextual constraint",
+          "SecondaryLabel": "Output or verification",
+          "Rows": [
+            {
+              "Label": "5 books",
+              "Cells": [
+                "$50"
+              ]
+            },
+            {
+              "Label": "$51",
+              "Cells": [
+                "no whole-book inverse"
+              ]
+            },
+            {
+              "Label": "104°F",
+              "Cells": [
+                "40°C"
+              ]
+            },
+            {
+              "Label": "0°C",
+              "Cells": [
+                "32°F"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

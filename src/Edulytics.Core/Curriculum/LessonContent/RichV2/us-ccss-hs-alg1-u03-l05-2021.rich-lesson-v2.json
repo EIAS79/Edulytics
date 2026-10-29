@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l05-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L05",
+      "CultureCode": "en",
+      "Title": "Fitting Lines",
+      "ExplanationParagraphs": [
+        "Learning goal: compare candidate fit lines by residuals, calculate a least-squares regression line using legitimate technology when available and interpret fitted slope/intercept. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U03:L05, https://im.kendallhunt.com/HS/teachers/1/3/5/preparation.html (CC BY 4.0). The source includes an actual scatter-plot card sort and technology-assisted least-squares fit; a manual calculation is explicitly a substitute, not evidence that a calculator was used.",
+        "Original hypothetical data: (x,y)=(0,2),(1,4),(2,7),(3,9). The x mean is1.5, y mean5.5. Sum[(x−1.5)(y−5.5)]=12 and sum[(x−1.5)²]=5, giving regression slope12/5=2.4 and intercept5.5−2.4×1.5=1.9. Thus least-squares model is y=2.4x+1.9.",
+        "Predictions from fitted line are1.9,4.3,6.7,9.1 and residuals observed minus predicted are +0.1,−0.3,+0.3,−0.1. Squared residual sum=.01+.09+.09+.01=.20. For a plausible simpler line y=2x+2, predictions2,4,6,8 yield residuals0,0,1,1 and squared residual sum2. The least-squares fit is better under this specified criterion.",
+        "Student task: rank two lines by residual totals, use actual software if available to confirm least-squares coefficients, critique an outlier's effect and explain that line choice is based on an objective such as squared-error minimum. Teacher-scored rubric 0–2 each for correct fit arithmetic, two compared residual series, interpretation of model and actual or transparently simulated technology use."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Least-squares line",
+          "Definition": "Line minimizing sum of squared vertical residuals in a linear regression.",
+          "Rule": "Use data pairs and an explicit residual definition.",
+          "Example": "For four original points, fitted y=2.4x+1.9."
+        },
+        {
+          "Title": "Residual sum of squares",
+          "Definition": "Sum over (observed−predicted)² penalizes large errors.",
+          "Rule": "Compare models using same observations and units.",
+          "Example": "Fit SSE=.20 vs simple line SSE=2."
+        },
+        {
+          "Title": "Interpret coefficients",
+          "Definition": "Slope and intercept describe model change and initial prediction.",
+          "Rule": "Attach measured variable units.",
+          "Example": "Slope2.4 output units per x unit."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute slope by covariance sums",
+          "Question": "For pairs (0,2),(1,4),(2,7),(3,9), find least-squares slope.",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Mean x=1.5 and mean y=5.5.",
+            "Products of deviations sum to12.",
+            "Squares of x deviations sum to5.",
+            "Slope m=12/5=2.4.",
+            "Intercept b=5.5−2.4×1.5=1.9."
+          ],
+          "Answer": "Regression line y=2.4x+1.9.",
+          "Check": "Derived m,b satisfy the least-squares normal equations."
+        },
+        {
+          "Title": "Compute residual series",
+          "Question": "Find residuals of y=2.4x+1.9.",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Predictions for x0,1,2,3:1.9,4.3,6.7,9.1.",
+            "Subtract predictions from actual2,4,7,9.",
+            "Residuals .1,−.3,.3,−.1.",
+            "SSE=.01+.09+.09+.01=.20."
+          ],
+          "Answer": "Residuals .1,−.3,.3,−.1; SSE .20.",
+          "Check": "Residual sum equals0 as expected for this intercept fit."
+        },
+        {
+          "Title": "Compare another candidate",
+          "Question": "Does y=2x+2 have lower squared error?",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Predictions2,4,6,8.",
+            "Residuals0,0,1,1.",
+            "Square and add: SSE=0+0+1+1=2.",
+            "Compare2>.20; regression line has lower SSE."
+          ],
+          "Answer": "No; y=2.4x+1.9 has smaller SSE.",
+          "Check": "Both evaluated on identical four observations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing fit using absolute errors while claiming least squares",
+          "WhyWrong": "Different criteria can rank models differently.",
+          "Correction": "Specify sum of squared vertical residuals."
+        },
+        {
+          "Mistake": "Claiming software-generated regression from hand calculations",
+          "WhyWrong": "Authored calculations do not show a real software interaction.",
+          "Correction": "Document actual technology use or label as independent computation."
+        }
+      ],
+      "SummaryPoints": [
+        "Fit lines are compared against the same scatter observations.",
+        "Least squares minimizes squared vertical residuals.",
+        "This sample's fitted line y=2.4x+1.9 yields SSE .20.",
+        "Teacher checks reasoning, regression software evidence and model interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible statistical data",
+          "Description": "Original clearly fictional Edulytiks sample and calculation; no real pupils or publisher graphics.",
+          "PrimaryLabel": "Statistic or observation",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "Least-squares slope",
+              "Cells": [
+                "2.4"
+              ]
+            },
+            {
+              "Label": "Intercept",
+              "Cells": [
+                "1.9"
+              ]
+            },
+            {
+              "Label": "Least-squares SSE",
+              "Cells": [
+                "0.20"
+              ]
+            },
+            {
+              "Label": "Alternative SSE",
+              "Cells": [
+                "2.00"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

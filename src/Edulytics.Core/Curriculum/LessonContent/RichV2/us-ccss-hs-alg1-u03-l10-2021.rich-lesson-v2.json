@@ -1,0 +1,147 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l10-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L10",
+      "CultureCode": "en",
+      "Title": "Fossils and Flags",
+      "ExplanationParagraphs": [
+        "Learning goal: independently formulate a bivariate statistical investigation, collect trustworthy paired numerical observations or identify the limits of a simulated dataset, create an appropriate scatter plot, fit and interpret a linear model, examine residuals and correlation, and assess whether any causal claim is justified. Independently authored first-party Edulytiks adaptation of the optional research activity Illustrative Mathematics Algebra 1 First Edition Unit 3 Lesson 10, https://im.kendallhunt.com/HS/teachers/1/3/10/preparation.html (CC BY 4.0). The original teacher/student project invites authentic data about fossil measurements and flags; our examples are not publisher artifacts or measured specimens.",
+        "Original hypothetical flag-design dimensions (width centimetres, height centimetres) are (10,6),(15,9),(20,12),(25,15). All lie exactly on h=0.6w, so a scatter plot shows perfect positive linear association and the constant height-to-width ratio is 3/5. These are *constructed* first-party numerical examples, not measurements of countries' official flags.",
+        "Original separate hypothetical fossil illustration: measured-looking numbers (bone length cm, reconstructed model length cm) are (2,8),(3,11),(4,14),(5,18), where hand model y=3x+2 predicts 8,11,14,17 and leaves one residual +1. Nothing in the hypothetical pairs has scientific calibration, so no actual organism size, extinction date or biological conclusion should be inferred. A real fossil dataset needs an identified source, measurement definition, uncertainty and permissions.",
+        "Research task: select the flag or fossil theme, identify genuine and legally usable data and their provenance, collect at least several authentic paired numerical observations, show labelled scatter plot, choose a justified fit, describe residuals and r, and state what conclusions follow. If authentic measurements cannot be gathered, submit a simulated mathematics analysis clearly marked as not completing the original research/collection requirement.",
+        "Teacher-scored rubric 0–2 each (maximum 8): valid research question and source/provenance; transparent genuine observations or simulated limitation; accurate scatter/line/residual/correlation analysis with units; and defensible interpretation identifying selection bias and avoiding causal overclaims. Never grant synthetic fieldwork credit."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Paired-data provenance",
+          "Definition": "A research plot needs a traceable measurement definition and source for each paired observation.",
+          "Rule": "Distinguish measured data from a constructed classroom demonstration.",
+          "Example": "Flag dimensions (10,6) etc are explicitly fictional designs."
+        },
+        {
+          "Title": "Proportional scatter trend",
+          "Definition": "A line through origin can represent fixed width-to-height ratio.",
+          "Rule": "Check ratios across every observed pair.",
+          "Example": "For widths 10,15,20,25 and heights 6,9,12,15, each h/w=0.6."
+        },
+        {
+          "Title": "Residual with scientific limits",
+          "Definition": "A fitted line may approximate records but does not create real scientific evidence.",
+          "Rule": "Calculate residuals and disclose the lack of empirical calibration.",
+          "Example": "For constructed fossil-like (5,18), model y=3x+2 predicts17, residual+1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check constructed flag proportions",
+          "Question": "For widths 10,15,20,25 cm and heights 6,9,12,15 cm, test the ratio.",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Compute 6/10=0.6 and 9/15=0.6.",
+            "Compute 12/20=0.6 and 15/25=0.6.",
+            "All ratios match, giving model h=0.6w.",
+            "All points lie on an increasing line through origin; Pearson r=+1 with nonzero variances."
+          ],
+          "Answer": "Fixed ratio height/width=3/5; model h=0.6w.",
+          "Check": "All four original paired examples satisfy the model exactly."
+        },
+        {
+          "Title": "Compute residuals for the constructed fossil-like values",
+          "Question": "Model y=3x+2 on (2,8),(3,11),(4,14),(5,18).",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "At x=2 predicted8, observed8, residual0.",
+            "At x=3 predicted11, observed11, residual0.",
+            "At x=4 predicted14, observed14, residual0.",
+            "At x=5 predicted17, observed18, residual+1.",
+            "A positive residual indicates one point above the trial line."
+          ],
+          "Answer": "Residuals 0,0,0,+1 for the hand model.",
+          "Check": "The numbers are invented and have no independent scientific validation."
+        },
+        {
+          "Title": "Separate a proposed investigation from performed research",
+          "Question": "What proof is needed before saying an actual museum fossil sample was analyzed?",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Identify a credible museum or published dataset with definitions and rights.",
+            "Record real specimen measurements and units, including uncertainties.",
+            "Use the actual pairs for a scatter plot and justified statistical model.",
+            "Preserve raw values and distinguish model predictions from direct observations.",
+            "Without source or measurements, describe the exercise as hypothetical rather than performed fieldwork."
+          ],
+          "Answer": "Actual data source and raw pairs are required; the constructed example is not completed empirical research.",
+          "Check": "No original source/provenance or specimen observation was fabricated."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Describing invented flag dimensions as measurements of real nations",
+          "WhyWrong": "The ratios were chosen to illustrate a model.",
+          "Correction": "Label figures as hypothetical design examples."
+        },
+        {
+          "Mistake": "Using a model to assert biologically valid fossil reconstruction",
+          "WhyWrong": "There is no calibration or provenance for the constructed fossil-like pairs.",
+          "Correction": "Require verified empirical source before scientific claims."
+        },
+        {
+          "Mistake": "Declaring student research completed solely from a worked example",
+          "WhyWrong": "Task requires genuine data gathering and defense.",
+          "Correction": "Apply teacher rubric and mark missing research explicitly."
+        }
+      ],
+      "SummaryPoints": [
+        "An independent project must identify actual paired-data provenance and explain what is measured.",
+        "Constructed flag data show perfect proportionality but do not describe real national flags.",
+        "Constructed fossil-like data illustrate residual calculation without scientific inference.",
+        "Teacher reviews original research, data rights and mathematical interpretation; no simulated fieldwork credit."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original bivariate research illustration",
+          "Description": "Fictional numerical points with explicit provenance and limitations; no publisher or real participant data.",
+          "PrimaryLabel": "Variable / example",
+          "SecondaryLabel": "Statistic or interpretation",
+          "Rows": [
+            {
+              "Label": "Flag design width/height",
+              "Cells": [
+                "(10,6),(15,9),(20,12),(25,15)"
+              ]
+            },
+            {
+              "Label": "Flag ratio",
+              "Cells": [
+                "h/w=0.6"
+              ]
+            },
+            {
+              "Label": "Fossil-like trial model",
+              "Cells": [
+                "y=3x+2"
+              ]
+            },
+            {
+              "Label": "Fossil-like residuals",
+              "Cells": [
+                "0,0,0,+1"
+              ]
+            },
+            {
+              "Label": "Research status",
+              "Cells": [
+                "hypothetical unless real sourced pairs"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

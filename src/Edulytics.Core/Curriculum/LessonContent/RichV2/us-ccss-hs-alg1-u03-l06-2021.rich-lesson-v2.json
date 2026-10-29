@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l06-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L06",
+      "CultureCode": "en",
+      "Title": "Residuals",
+      "ExplanationParagraphs": [
+        "Learning goal: define a residual as observed output minus predicted output; calculate and plot residuals; explain patterns or systematic errors indicating that a linear model is or is not appropriate. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 3 Lesson 6, https://im.kendallhunt.com/HS/teachers/1/3/6/preparation.html (CC BY 4.0). The teacher and student source emphasize connecting points to residual graphs and interpreting model fit, not merely evaluating isolated subtraction.",
+        "Original dataset of hypothetical machine readings: paired (x,y)=(0,2),(1,4),(2,7),(3,9), with fitted line y=2.4x+1.9 from the prior learning sequence. Predicted outputs 1.9,4.3,6.7,9.1 yield residuals +0.1,-0.3,+0.3,-0.1. These residuals sum to zero and have squared sum 0.20; the horizontal residual axis is y=0, not the original regression line.",
+        "Original contrasting example for detecting curvature: x=−2,−1,0,1,2 and y=4,1,0,1,4. The horizontal line y=2 predicts the same number for every x. Residuals are 2,−1,−2,−1,2, a curved U pattern rather than apparently random scatter. A trend in residuals signals that a straight-line model leaves structure unexplained. The teacher must evaluate whether a model and its domain are meaningful.",
+        "Student activity: create an accessible two-column observed/predicted table, sketch a signed residual plot, compare a roughly unpatterned sequence against a visibly curved one, and critique an incorrect residual obtained by subtracting in reverse order. Disclose when plots are manually constructed instead of using actual software.",
+        "Teacher-scored rubric: 0–2 each for correct predicted values, signed residuals and zero-axis plot, reasoned pattern-based model critique, and appropriate contextual/technology limits (maximum 8). An automatically graded residual number alone does not demonstrate the source plotting and critique tasks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Residual",
+          "Definition": "The vertical difference from a measured response to its model prediction.",
+          "Rule": "Residual = observed y minus predicted ŷ; preserve sign.",
+          "Example": "At x=1, y=4 and ŷ=4.3 produce residual −0.3."
+        },
+        {
+          "Title": "Residual plot",
+          "Definition": "A graph of residuals against explanatory x-values.",
+          "Rule": "Plot residuals above or below a zero horizontal axis, with consistent scale.",
+          "Example": "Residuals +0.1,-0.3,+0.3,-0.1 cross zero."
+        },
+        {
+          "Title": "Residual pattern",
+          "Definition": "Structured curvature in residuals indicates the linear model may not capture a nonlinear trend.",
+          "Rule": "Inspect shape and scatter, not only sum of residuals.",
+          "Example": "For y=x² at x=−2,...,2, residuals against line y=2 show U-shape."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find signed residuals",
+          "Question": "Use the fitted line y=2.4x+1.9 for measured y=2,4,7,9 at x=0,1,2,3.",
+          "Method": "Use the exact first-party paired-data model, compute each quantity, and interpret mathematical evidence.",
+          "Steps": [
+            "Calculate predictions: 1.9,4.3,6.7,9.1.",
+            "Subtract predicted from observed in matching rows: 2−1.9=+0.1; 4−4.3=−0.3.",
+            "For remaining rows, 7−6.7=+0.3 and 9−9.1=−0.1.",
+            "Signed sum is 0.1−0.3+0.3−0.1=0.",
+            "Squared sum is 0.01+0.09+0.09+0.01=0.20."
+          ],
+          "Answer": "Residuals +0.1,−0.3,+0.3,−0.1; SSE 0.20.",
+          "Check": "Each residual equals its actual minus model prediction."
+        },
+        {
+          "Title": "Distinguish the residual axis",
+          "Question": "Where would the residual for x=1 be plotted?",
+          "Method": "Use the exact first-party paired-data model, compute each quantity, and interpret mathematical evidence.",
+          "Steps": [
+            "Read x=1 and actual y=4.",
+            "Find predicted ŷ=2.4(1)+1.9=4.3.",
+            "Compute residual 4−4.3=−0.3.",
+            "Place a dot at (1,−0.3) on axes x versus residual, below y=0."
+          ],
+          "Answer": "Residual plot point (1,−0.3).",
+          "Check": "A negative residual means the observation lies below the model."
+        },
+        {
+          "Title": "Find curvature in a residual graph",
+          "Question": "For y=x² at x=−2,−1,0,1,2, evaluate residuals relative to model ŷ=2.",
+          "Method": "Use the exact first-party paired-data model, compute each quantity, and interpret mathematical evidence.",
+          "Steps": [
+            "Observed values are 4,1,0,1,4.",
+            "Subtract predicted 2 from each: +2,−1,−2,−1,+2.",
+            "Arrange in x order to observe high positive tails with a negative center.",
+            "This U-shaped pattern suggests a constant/linear model misses important curvature."
+          ],
+          "Answer": "Residuals +2,−1,−2,−1,+2 suggest nonlinearity.",
+          "Check": "Residuals exhibit symmetry and systematic curvature, not random scatter."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Computing predicted minus observed",
+          "WhyWrong": "This reverses residual signs and wrongly places points.",
+          "Correction": "Use observed minus predicted every time."
+        },
+        {
+          "Mistake": "Concluding a model is good because residuals sum to zero",
+          "WhyWrong": "A fitted linear model with intercept can have zero residual sum yet still show curvature.",
+          "Correction": "Inspect residual positions and patterns."
+        },
+        {
+          "Mistake": "Plotting residuals on the original y-axis without zero baseline",
+          "WhyWrong": "The residual chart measures error, not measured outcome.",
+          "Correction": "Label residual units and draw zero line."
+        }
+      ],
+      "SummaryPoints": [
+        "Residual = observed response − model prediction and may be positive or negative.",
+        "A residual plot is interpreted relative to y=0.",
+        "Nonrandom patterns can reveal inadequacy of linear fit even when residuals sum to zero.",
+        "Teacher reviews plotted structure and critique; static examples are not proof of software use."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original bivariate statistical calculations",
+          "Description": "Original invented observations with explicit signs and labels; these are not actual classroom measurements.",
+          "PrimaryLabel": "Point or relationship",
+          "SecondaryLabel": "Computed result",
+          "Rows": [
+            {
+              "Label": "x=0",
+              "Cells": [
+                "observed 2, predicted 1.9, residual +0.1"
+              ]
+            },
+            {
+              "Label": "x=1",
+              "Cells": [
+                "observed 4, predicted 4.3, residual −0.3"
+              ]
+            },
+            {
+              "Label": "x=2",
+              "Cells": [
+                "observed 7, predicted 6.7, residual +0.3"
+              ]
+            },
+            {
+              "Label": "x=3",
+              "Cells": [
+                "observed 9, predicted 9.1, residual −0.1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

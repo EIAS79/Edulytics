@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l04-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L04",
+      "CultureCode": "en",
+      "Title": "Linear Models",
+      "ExplanationParagraphs": [
+        "Learning goal: read a scatter plot, propose and interpret an approximately linear model, explain slope/intercept with units and use the model for interpolation and cautious extrapolation. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U03:L04, https://im.kendallhunt.com/HS/teachers/1/3/4/preparation.html (CC BY 4.0). The source explores a line of best fit, interpretability and predictive limitations.",
+        "Original data for a hypothetical toy-machine test: elapsed hours x=0,1,2,3 and cumulative toy parts y=2,5,8,12. The hand-fit line y=3x+2 predicts 2,5,8,11, leaving a residual of +1 at last observation. Slope≈3 parts/hour and intercept2 already present at time0. The model approximates observations rather than claiming physical certainty.",
+        "Interpolate between measured hours: at x=1.5, predicted 3(1.5)+2=6.5 parts, which can describe an expected average output rather than an exact count. Extrapolate at x=5 to predict17 parts, but the model may break when machine performance changes. The line may be reasonable within data but unverified far outside the observed domain.",
+        "Student task: plot the four points and a defensible line manually or with actually observed technology, choose a competing line, justify which fits better, interpret slope/intercept and critique an extrapolated claim. Teacher-scored rubric 0–2 each for plot, plausible fit and residuals, correct rate/initial-value meaning and limits of prediction."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scatter plot",
+          "Definition": "Each point represents paired numerical observations.",
+          "Rule": "Label x/y variables and units.",
+          "Example": "(3,12) records 12 parts after3 hours."
+        },
+        {
+          "Title": "Linear model",
+          "Definition": "A line approximates trends without passing through every observation.",
+          "Rule": "Compare residuals before calling a line reasonable.",
+          "Example": "y=3x+2 predicts11 at x=3, observed12."
+        },
+        {
+          "Title": "Interpolation and extrapolation",
+          "Definition": "Interpolation predicts within measured x range; extrapolation beyond it.",
+          "Rule": "Make uncertainty and domain explicit.",
+          "Example": "At x=1.5 model predicts6.5; at x=5 predicts17 but less reliably."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read slope and intercept",
+          "Question": "Interpret y=3x+2.",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "At x=0, y=2, so intercept is two initial parts.",
+            "Each +1 hour raises predicted output by3.",
+            "Units for slope are parts per hour.",
+            "At x=2, predicted y=8, matching data."
+          ],
+          "Answer": "Slope3 parts/hour; intercept2 parts.",
+          "Check": "Model values agree at x=0,1,2."
+        },
+        {
+          "Title": "Compute model discrepancy",
+          "Question": "At x=3 the measured y is12; what is residual?",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Predicted y=3×3+2=11.",
+            "Residual defined observed minus predicted.",
+            "12−11=+1 part.",
+            "A positive residual places observation above model line."
+          ],
+          "Answer": "Residual +1 part.",
+          "Check": "Observed12 exceeds predicted11."
+        },
+        {
+          "Title": "Predict with caution",
+          "Question": "Find predictions for x=1.5 and x=5.",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Substitute1.5: y=3×1.5+2=6.5.",
+            "This is interpolation within0–3 measured range.",
+            "Substitute5: y=3×5+2=17.",
+            "This is extrapolation beyond observed data and may be less reliable."
+          ],
+          "Answer": "Predictions 6.5 and17 parts.",
+          "Check": "Correct arithmetic and prediction categories."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a fit line passes exactly through each observation",
+          "WhyWrong": "Real data generally scatter about a trend.",
+          "Correction": "Check observed minus predicted differences."
+        },
+        {
+          "Mistake": "Presenting extrapolated results as guaranteed future facts",
+          "WhyWrong": "A trend may change outside measured range.",
+          "Correction": "Describe uncertainty and assumptions."
+        }
+      ],
+      "SummaryPoints": [
+        "A line can approximate association between two numerical variables.",
+        "Slope has output-per-input units; intercept is predicted output at x=0.",
+        "Residuals and domain guide reasonableness of the model.",
+        "Teacher reviews original scatter plot and explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible statistical data",
+          "Description": "Original clearly fictional Edulytiks sample and calculation; no real pupils or publisher graphics.",
+          "PrimaryLabel": "Statistic or observation",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "x=0 observed",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "x=1 observed",
+              "Cells": [
+                "5"
+              ]
+            },
+            {
+              "Label": "x=2 observed",
+              "Cells": [
+                "8"
+              ]
+            },
+            {
+              "Label": "x=3 observed / predicted",
+              "Cells": [
+                "12 / 11"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

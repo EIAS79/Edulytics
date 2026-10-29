@@ -1,0 +1,146 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l13-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L13",
+      "CultureCode": "en",
+      "Title": "Absolute Value Functions (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: collect or use a numerical set of guesses, compute absolute errors from a fixed target and recognize the V-shaped error-versus-guess relationship; do not fabricate class measurements. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 13, https://im.kendallhunt.com/HS/teachers/1/4/13/preparation.html and student task https://im.kendallhunt.com/HS/students/1/4/13/index.html (CC BY 4.0). This source calls for at least 12 genuine class guesses in the student activity, not simply a standard algebra equation drill.",
+        "Independent five-guess hypothetical example: an invented container holds42 counters. Invented guesses 36,40,42,45,50 produce absolute errors |36−42|=6, |40−42|=2, |42−42|=0, |45−42|=3, |50−42|=8. The rule E(g)=|g−42|, for nonnegative integer guesses g, assigns exactly one absolute error to each guess.",
+        "Plotting ordered pairs (36,6),(40,2),(42,0),(45,3),(50,8) reveals a V-like pattern with minimum at (42,0). Extending guesses across both sides of target42 traces a V made of two linear rays with slopes −1 (to the left) and +1 (right). This is a mathematical generalization, not an observed scatter plot of actual classmates.",
+        "Student activity: if actually working with a class, collect at least 12 real guesses as the source describes, ensure anonymity, compute each error and discuss how the chosen target changes the graph. If no authentic observations are available, use the separate five-point demo and explicitly mark the source's collection requirement as unfulfilled.",
+        "Teacher-scored rubric 0–2 each: accurate genuine or explicitly hypothetical data provenance, correct absolute-error calculation, clear graph with labelled axes and vertex, and defensible rule/generalization with noted limitation (8 max). Do not grant physical observation credit from a fabricated dataset."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Absolute error",
+          "Definition": "Absolute difference between guess and target, ignoring direction.",
+          "Rule": "E(g)=|g−target|≥0.",
+          "Example": "Guess36 versus42 has error6."
+        },
+        {
+          "Title": "V-shape",
+          "Definition": "Absolute-distance outputs fall toward target and rise after it.",
+          "Rule": "Identify target as vertex input.",
+          "Example": "E(g)=|g−42| has minimum0 at g42."
+        },
+        {
+          "Title": "Authentic data requirement",
+          "Definition": "A synthetic illustration does not meet a class data-collection task.",
+          "Rule": "Separate real measured guesses from teacher-created numerical examples.",
+          "Example": "Five invented guesses are not 12 genuine classmates' guesses."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute error table",
+          "Question": "Target42, guesses36,40,42,45,50.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "Subtract target from each guess.",
+            "Absolute differences |−6|=6 and |−2|=2.",
+            "At target42 error0.",
+            "For45 and50, errors3 and8.",
+            "List ordered pairs with guess first, error second."
+          ],
+          "Answer": "Errors6,2,0,3,8.",
+          "Check": "All errors nonnegative and each pair follows |g−42|."
+        },
+        {
+          "Title": "Explain both sides of V",
+          "Question": "Write E(g)=|g−42| without absolute bars in two cases.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "If g≤42, g−42≤0 so |g−42|=42−g.",
+            "If g≥42, g−42≥0 so |g−42|=g−42.",
+            "Both rules give0 at g42.",
+            "Left side slope−1, right side slope+1."
+          ],
+          "Answer": "E(g)=42−g for g≤42; g−42 for g≥42.",
+          "Check": "The pieces agree at their common vertex."
+        },
+        {
+          "Title": "Shift target without changing basic shape",
+          "Question": "What happens if the actual count is45 instead of42?",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "New error E(g)=|g−45|.",
+            "Minimum now occurs at g45 rather than42.",
+            "For guess42 the new error is3.",
+            "The V moves three units right along the input axis without changing slopes."
+          ],
+          "Answer": "Vertex shifts from (42,0) to (45,0).",
+          "Check": "E(45)=0, E(42)=3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using signed guess−target as error",
+          "WhyWrong": "Negative errors contradict distance interpretation.",
+          "Correction": "Apply absolute value."
+        },
+        {
+          "Mistake": "Claiming five invented records represent the source's 12 class guesses",
+          "WhyWrong": "The collection was not performed.",
+          "Correction": "Label the demo and seek authentic evidence for the research task."
+        },
+        {
+          "Mistake": "Mistaking V-shape for a linear graph everywhere",
+          "WhyWrong": "Slope changes from−1 to+1 at the target.",
+          "Correction": "Treat the absolute value rule as piecewise."
+        }
+      ],
+      "SummaryPoints": [
+        "Absolute error is distance from the actual target.",
+        "E(g)=|g−42| has V-shaped graph with vertex (42,0).",
+        "Each original guess produces one nonnegative error.",
+        "Teacher-led data collection remains unverified unless real guesses are documented."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible function observations",
+          "Description": "Original hypothetical data and formula checks, not source-owned graphics or fabricated student participation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output or classification",
+          "Rows": [
+            {
+              "Label": "guess36",
+              "Cells": [
+                "error6"
+              ]
+            },
+            {
+              "Label": "guess40",
+              "Cells": [
+                "error2"
+              ]
+            },
+            {
+              "Label": "guess42",
+              "Cells": [
+                "error0"
+              ]
+            },
+            {
+              "Label": "guess45",
+              "Cells": [
+                "error3"
+              ]
+            },
+            {
+              "Label": "guess50",
+              "Cells": [
+                "error8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
