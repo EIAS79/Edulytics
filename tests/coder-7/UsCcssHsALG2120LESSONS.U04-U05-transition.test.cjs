@@ -45,7 +45,7 @@ test('U05:L01 cooling models, initial prediction and asymptote',()=>{
  const f=h=>45+20/(h+.5),g=h=>45+33*.5**(h+.5);
  near(f(0),85);near(g(0),45+33*Math.sqrt(.5));assert.ok(g(0)<f(0));
  near(f(1),45+20/1.5);near(g(1),45+33*.5**1.5);
- assert.ok(f(100)>45&&f(100)<46);assert.ok(g(100)>45&&g(100)<46);
+ assert.ok(f(100)>45&&f(100)<46);assert.ok(g(100)>=45&&g(100)<46);assert.ok(g(10)>45&&g(10)<46);
 });
 test('U05:L02 translated zeros and vertical table changes',()=>{
  const f=x=>x*x*(x-2),v=x=>f(x)-5,h=x=>f(x-4);
