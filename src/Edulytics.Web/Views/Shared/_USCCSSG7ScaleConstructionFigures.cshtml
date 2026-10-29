@@ -1,0 +1,66 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+@{
+    // Grade 7-specific opt-in visual. This partial deliberately has no
+    // global renderer registration or scoring side effects. Supervisor 1
+    // owns the shared Rich V2 invocation and authenticated proof.
+    var assetPath = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U01:L01" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+        "PED:US-CCSS-MATH:G7:U01:L02" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+        "PED:US-CCSS-MATH:G7:U01:L03" =>
+            "/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+        _ => null
+    };
+
+    var altText = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U01:L01" =>
+            "Original block letter F with width 4 and height 5, a correct copy twice as wide and twice as tall, and a counterexample twice as wide but unchanged in height. All use the same drawing unit.",
+        "PED:US-CCSS-MATH:G7:U01:L02" =>
+            "Two right triangles at equal page units: ABC has legs 4 and 3, and corresponding DEF has legs 6 and 4.5. Vertex pairs A to D, B to E and C to F show scale factor 1.5; the right angles remain 90 degrees.",
+        "PED:US-CCSS-MATH:G7:U01:L03" =>
+            "Three six-vertex L polygons at one common drawing unit: original width 6 height 5; smaller width 3 height 2.5 under scale factor one-half; larger width 18 height 15 under factor 3.",
+        _ => ""
+    };
+
+    var constructionPrompt = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U01:L01" =>
+            "Construct your own original and correctly scaled F. Explain why the horizontally stretched F is not a scaled copy using one horizontal and one vertical corresponding length.",
+        "PED:US-CCSS-MATH:G7:U01:L02" =>
+            "Draw and label both triangles. Identify matching vertices, sides and angles, and justify the factor 3/2 using two corresponding lengths. Check the unchanged right angles.",
+        "PED:US-CCSS-MATH:G7:U01:L03" =>
+            "Create both L copies on graph paper. Check the vertex order and every length multiplier; explain why adding the same number to each side is not scaling.",
+        _ => ""
+    };
+}
+@if (assetPath is not null)
+{
+    <section class="rich-lesson-section rich-lesson-section--g7-original-geometry"
+             aria-label="Grade 7 scaled-figure construction reference">
+        <h3>Construct and justify: original geometry model</h3>
+        <figure>
+            <img src="@assetPath"
+                 asp-append-version="true"
+                 alt="@altText"
+                 loading="lazy"
+                 decoding="async"
+                 width="925"
+                 style="display:block;max-width:100%;height:auto" />
+            <figcaption>
+                Original Edulytiks mathematical figure, not publisher artwork.
+                Reference geometry only: the student must still produce and
+                explain an independent scaled construction.
+            </figcaption>
+        </figure>
+        <p><strong>Your task:</strong> @constructionPrompt</p>
+        <p>
+            <strong>Assessment boundary:</strong> An answer such as a scale
+            factor alone cannot complete this task. A teacher must inspect
+            the drawing, corresponding geometry and the student's reasoning.
+            This reference figure does not submit, score or save student work.
+        </p>
+    </section>
+}
