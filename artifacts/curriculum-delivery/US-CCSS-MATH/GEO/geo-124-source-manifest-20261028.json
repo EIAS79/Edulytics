@@ -8,7 +8,7 @@
   "blueprintBlobSha": "5d2d8a73180f2a56a9cc74222a8ae14af025ec43",
   "canonicalPackBlobSha": "a0e5f89fad48c39490927e382f839205c8bc6d0f",
   "sourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
-  "sourceCheckedAt": "2026-10-29: official accessible Geometry Unit 1 and Unit 2 teacher/student pages; unit 2 L11 optional; no restricted assessments accessed",
+  "sourceCheckedAt": "2026-10-29: all official accessible Geometry Unit1, Unit2 and Unit3 teacher/student lesson pages; no protected assessments inspected",
   "status": "WORK_IN_PROGRESS_NOT_RELEASE_READY",
   "evidenceRules": [
     "Exactly 124 canonical identity rows; not lesson approval.",
@@ -19,12 +19,13 @@
     "U01:L08 is explicitly optional on the official teacher source page; previous baseline content has isSupporting=false. Preserve optional semantics in review and do not rewrite blueprint classification without owner-approved source-alignment clarification.",
     "PR #583 historical full-suite CI failed on hardcoded Rich V2 catalogue expectation 318 vs 324 with six candidate records; as more are embedded, global count test remains blocked pending shared-test owner integration. Do not mark CI green.",
     "All 22 unit-one candidates are independently authored first-party learning materials but have no implemented original visual diagrams or validated human-scored capture: they are candidates only, not Stage D accepted or student-visible.",
-    "31 Rich V2 candidates are source-informed first-party drafts; no original third-party art, no full activity rubric workflow runtime and no independent publisher equivalence tested."
+    "31 Rich V2 candidates are source-informed first-party drafts; no original third-party art, no full activity rubric workflow runtime and no independent publisher equivalence tested.",
+    "U03:L02, L10, L12 are source-optional. First-party candidate text adds example reasoning but no genuine dynamic applet, measurement drawing or teacher submission flow; academic Stage D remains NOT_RUN."
   ],
   "totals": {
     "blueprintLessons": 124,
     "canonicalContentLessons": 124,
-    "richCandidateLessons": 37,
+    "richCandidateLessons": 53,
     "templatedCanonicalGoals": 124,
     "genericFiveStepCandidates": 91,
     "persistedVerified": 0,
@@ -1806,11 +1807,11 @@
           "standard": "HSG-SRT.A.2"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -1849,16 +1850,18 @@
           "standard": "HSG-SRT.A.2"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceOptional": true,
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/3/2/preparation.html"
     },
     {
       "ordinal": 40,
@@ -1904,11 +1907,11 @@
           "standard": "HSG-SRT.A.2"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -1954,11 +1957,11 @@
           "standard": "HSG-SRT.A.3"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2001,11 +2004,11 @@
           "standard": "HSG-CO.C.10"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2044,11 +2047,11 @@
           "standard": "HSG-SRT.A.2"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2086,11 +2089,11 @@
           "standard": "HSG-SRT.A.3"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2129,11 +2132,11 @@
           "standard": "HSG-SRT.C.6"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2175,11 +2178,11 @@
           "standard": "HSG-SRT.A.3"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2208,16 +2211,18 @@
           "standard": "HSG-CO.B.8"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceOptional": true,
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/3/10/preparation.html"
     },
     {
       "ordinal": 48,
@@ -2255,11 +2260,11 @@
           "standard": "HSG-SRT.B.4"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2290,16 +2295,18 @@
           "standard": "HSN-Q.A.1"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceOptional": true,
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/3/12/preparation.html"
     },
     {
       "ordinal": 50,
@@ -2328,11 +2335,11 @@
           "standard": "HSG-SRT.B.4"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2367,11 +2374,11 @@
           "standard": "HSG-SRT.B.4"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2405,11 +2412,11 @@
           "standard": "HSG-SRT.C.8"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -2440,11 +2447,11 @@
           "standard": "HSN-Q.A.3"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
