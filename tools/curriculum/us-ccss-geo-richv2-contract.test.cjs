@@ -86,7 +86,8 @@ test('All indexed Geometry candidate resources have authored source-specific con
     assert.ok(lesson.WorkedExamples.every(ex => ex.Steps.length >= 3 && ex.Answer && ex.Check));
     assert.ok(!JSON.stringify(lesson).includes('You will constructing Patterns'));
     assert.ok(!JSON.stringify(lesson).includes('You will build It'));
-    assert.deepEqual(lesson.Visuals, []);
+    if (/U0[1-4]:L/.test(lesson.LessonCode)) assert.deepEqual(lesson.Visuals, []);
+    else assert.ok(lesson.Visuals.length >= 1, lesson.LessonCode);
     assert.deepEqual(lesson.Videos, []);
   }
 });
