@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "scope": "U01:L01-L22 RichV2 candidate schema, source identity and selected geometric invariants; NOT academic stage D",
+  "testedCommit": "c968e68ff6809cf965231d5eca4385dbf69ab473",
+  "testDateLocal": "2026-10-29",
+  "executionEnvironment": {
+    "device": "Anas_Nitro",
+    "workspace": "isolated Coder 6 verification scratch copied from exact GitHub branch files (not Coder 4 worktree)",
+    "nodeVersion": "v26.4.0",
+    "dotnet": "NOT_USED"
+  },
+  "command": "node --test tools/curriculum/us-ccss-geo-richv2-contract.test.cjs",
+  "results": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0,
+    "skip": 0,
+    "durationMs": 66.8494,
+    "exitCode": 0
+  },
+  "sourceInputs": [
+    "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-hs-traditional-geometry-im1e.lesson-blueprint.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-geo-phase29-v1.lesson-content-pack.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l04-l06-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l07-l09-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l10-l12-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l13-l15-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l16-l18-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l19-l22-2021.rich-lesson-v2.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json"
+  ],
+  "verifiedAssertions": [
+    "124 unique canonical blueprint/source identities and exact canonical source crosswalk",
+    "22 authored RichV2 IDs in exact Unit 1 source order, structural descriptions, three worked examples and at least two misconceptions each",
+    "manifest zero D_VERIFIED or release claims, correct optional source flags for U01:L08,L18,L22",
+    "selected independent circle/triangle and rigid motion invariants",
+    "Voronoi bisector and inscribed-square numeric invariants",
+    "angle-sum, rotation symmetry and isometry arithmetic properties"
+  ],
+  "notVerified": [
+    ".NET compile or unit/integration suite on current HEAD",
+    "actual Rich V2 runtime resolution and visual rendering",
+    "school GEO adoption, saved student attempts, teacher-scored rubric route",
+    "individual 22 lesson full authentic source/assessment acceptance",
+    "Practice generator, verifier, grading across seeds",
+    "disposable two-school tenant and production deploy",
+    "source-edit and rights/artwork parity",
+    "owner UAT"
+  ],
+  "knownCIRegression": {
+    "run": "https://github.com/EIAS79/Edulytics/actions/runs/40775348463",
+    "failure": "global RichLessonContentV2PilotTests and RichLessonContentV2RolloutTests expect 318 Rich V2 records; actual 324 on tested six-candidate commit, then 22-candidate additions predict 340 if baseline unchanged",
+    "sharedIntegrationOwner": "Supervisor 2 assigned global Rich V2 test/registry writer",
+    "status": "FAILURE_OBSERVED_FOR_PREVIOUS_SIX_CANDIDATE_SHA_NOT_YET_VERIFIED_ON_CURRENT_22_CANDIDATE_SHA"
+  },
+  "release": "NOT_FINISHED_RELEASE_BLOCKED"
+}
