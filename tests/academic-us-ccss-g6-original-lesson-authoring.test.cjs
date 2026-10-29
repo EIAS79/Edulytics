@@ -1057,3 +1057,33 @@ test('U02 L13–L15 mathematical oracle checks preserve units and limiting resou
   assert.equal((4 + 3 + 2) * (30 / 3), 90);
   assert.equal(Math.min(50/4,40/3,30/2) * (4+3+2), 112.5);
 });
+
+
+test('U02 L16–L17 preserve aquarium and source Fermi open-response boundaries', () => {
+  const data = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l16-l17-original-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(data.summary.directLessonBodies, 2);
+  assert.equal(data.summary.StageAFullyAccepted, 0);
+  assert.deepEqual(data.lessons.map(x=>x.lessonCode), [16,17].map(n=>lcode(2,n)));
+  for(const l of data.lessons) {
+    assert.equal(l.activities.length, 3);
+    assert.equal(l.teacherReviewRubric.maxPoints, 8);
+    assert.equal(l.teacherReviewRubric.teacherWorkflowVerified, false);
+    assert.equal(l.teacherReviewRubric.teacherScoresPersisted, false);
+    assert.equal(l.selectedPracticeGeneratorVerifierTested, false);
+    assert.equal(l.academicAcceptance, 'NOT_ACCEPTED');
+  }
+  const a = byCode.get(lcode(2,16)).translations[0].workedExamples;
+  const b = byCode.get(lcode(2,17)).translations[0].workedExamples;
+  assert.match(a,/10 chaperones and 75 student tickets/);
+  assert.match(a,/16 oil and 12 vinegar/);
+  assert.match(a,/four hours/);
+  assert.match(b,/5\/3 cups/);
+  assert.match(b,/teacher approval/i);
+  assert.match(b,/216,000 pages/);
+  assert.equal(85 * 2 / (15+2), 10);
+  assert.equal(85 * 15 / (15+2), 75);
+  assert.equal(28 * 4 / 7, 16);
+  assert.equal(72 / (4+5) / 2, 4);
+  assert.ok(Math.abs(5 / 3 - 1 - 2 / 3) < 1e-12);
+});
