@@ -358,6 +358,92 @@ public sealed class StudentPrivatePracticeRepositoryTests
         Assert.Single(await db.StudentItemExposures.ToListAsync());
     }
 
+    [Fact]
+    public async Task Two_disposable_schools_preserve_distinct_Fourth_Courses_and_persisted_scores()
+    {
+        // In-memory repository scope, not HTTP authentication or Postgres signoff.
+        await using var db = CreateDb();
+        var first = Ids.Create();
+        var second = Ids.Create();
+        var now = DateTime.UtcNow;
+        var schools = new[]
+        {
+            (Ids: first, Course: "ADV-ALG-FUNC", Label: "Advanced Algebra & Functions"),
+            (Ids: second, Course: "ADV-TRIG-GEO", Label: "Advanced Trigonometry & Geometry")
+        };
+        foreach (var data in schools)
+        {
+            var ids = data.Ids;
+            var adoption = Adoption(ids, now);
+            adoption.CurriculumLogicalLevel = 11;
+            adoption.CurriculumPathway = "Fourth Courses";
+            adoption.CurriculumLevelLabel = data.Label;
+            adoption.CurriculumLevelKey = CurriculumLevelIdentityRegistry.BuildKey(
+                MathematicsCurriculumPackRegistry.CommonCoreCode, 11,
+                "Fourth Courses", data.Course);
+            await db.AddRangeAsync(Student(ids, now), adoption, Class(ids, ids.Adoption),
+                Enrollment(ids, ids.Class));
+            foreach (var item in CurriculumLevelIdentityRegistry.SourceBackedAmericanHighSchoolCourses
+                .Where(x => x.Code is "ADV-ALG-FUNC" or "ADV-TRIG-GEO" or "ALG2"))
+            {
+                db.CurriculumPedagogicalLessons.Add(new CurriculumPedagogicalLesson
+                {
+                    Id = Guid.NewGuid(),
+                    FrameworkVersionId = ids.Framework,
+                    Code = item.Code,
+                    UnitKey = "U01",
+                    UnitTitle = "Isolation test",
+                    Title = item.Label,
+                    NativeLevel = item.Label,
+                    Pathway = item.Pathway,
+                    LogicalLevelFrom = 10,
+                    LogicalLevelTo = 13,
+                    SortOrder = 1,
+                    CreatedAtUtc = now,
+                    UpdatedAtUtc = now
+                });
+            }
+            db.PracticeAttempts.Add(new PracticeAttempt
+            {
+                Id = Guid.NewGuid(),
+                SchoolId = ids.School,
+                StudentProfileId = ids.Student,
+                CurriculumAdoptionId = ids.Adoption,
+                IsPrivate = true,
+                Status = PracticeAttemptStatus.Submitted,
+                Score = data.Course == "ADV-ALG-FUNC" ? 4 : 7,
+                MaxScore = 10,
+                Percentage = data.Course == "ADV-ALG-FUNC" ? 40 : 70,
+                StartedAtUtc = now.AddMinutes(-2),
+                SubmittedAtUtc = now
+            });
+        }
+        await db.SaveChangesAsync();
+
+        var repo = new StudentPrivatePracticeRepository(db);
+        foreach (var data in schools)
+        {
+            var own = await repo.GetContextAsync(data.Ids.User, data.Ids.Adoption);
+            Assert.NotNull(own);
+            var offered = Assert.Single(own!.Lessons);
+            Assert.Equal(data.Course, offered.Code);
+            Assert.Equal(data.Label, offered.NativeLevel);
+            Assert.Equal("Fourth Courses", offered.Pathway);
+
+            var choice = Assert.Single(await repo.ListCurriculaAsync(data.Ids.User));
+            Assert.False(choice.RequiresSchoolCourseSelection);
+
+            var history = Assert.Single(await repo.ListPrivateAttemptsAsync(data.Ids.User));
+            Assert.Equal(data.Course == "ADV-ALG-FUNC" ? 4 : 7, history.Score);
+        }
+        Assert.Null(await repo.GetContextAsync(first.User, second.Adoption));
+        Assert.Null(await repo.GetContextAsync(second.User, first.Adoption));
+        Assert.DoesNotContain((await repo.GetContextAsync(first.User, first.Adoption))!.Lessons,
+            x => x.Code == "ALG2" || x.Code == "ADV-TRIG-GEO");
+        Assert.DoesNotContain((await repo.GetContextAsync(second.User, second.Adoption))!.Lessons,
+            x => x.Code == "ALG2" || x.Code == "ADV-ALG-FUNC");
+    }
+
     private static EdulyticsDbContext CreateDb()
     {
         var options = new DbContextOptionsBuilder<EdulyticsDbContext>()
