@@ -634,6 +634,7 @@
       "ExplanationParagraphs": [
         "Learning goal: Solve combined circle geometry problems by selecting appropriate tangent, inscribed-angle, arc and sector theorems with valid hypotheses.",
         "Opposite angles of cyclic quadrilateral sum 180° Check all vertices on circle",
+        "Source-aligned original modelling: two hypothetical pizzas can be compared using sector area and price per square unit. Declare equal crust thickness and disregard toppings; larger radius and angle do not translate linearly into area because A=(θ/360)πr².",
         "At tangency radius perpendicular Use Pythagoras in right triangle from external point s=rθ and A=1/2r²θ",
         "Authentic task: Students choose and justify theorem sequences for a new circle diagram; teacher scores original proof and drawing. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 14, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
@@ -660,16 +661,16 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Putting It All Together — case 1",
-          "Question": "Cyclic quadrilateral opposite angle is 112°. Find other opposite.",
-          "Method": "Cyclic-angle reasoning",
+          "Title": "Compare sector-area pizza offers",
+          "Question": "Offer A is a 60° slice of radius-6 pizza priced 3 units; B a 40° slice of radius-9 pizza priced 4 units. Which is cheaper per square unit?",
+          "Method": "Find exact sector area then compare price divided by area.",
           "Steps": [
-            "Sum is 180°",
-            "Subtract 180−112",
-            "Other angle 68°"
+            "A has area (60/360)π·6²=6π, so price per area=3/(6π)=1/(2π).",
+            "B has area (40/360)π·9²=9π, so price per area=4/(9π).",
+            "Compare 1/2 with 4/9: since 4/9<1/2, offer B has smaller price per unit area."
           ],
-          "Answer": "68°.",
-          "Check": "Check angle units, circle hypotheses and answer dimensions."
+          "Answer": "Offer B is cheaper per area (4/(9π) versus 1/(2π)).",
+          "Check": "Assumes equal material quality and comparable slice geometry; area is square units."
         },
         {
           "Title": "Putting It All Together — case 2",
@@ -721,10 +722,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Sum is 180°",
-            "Subtract 180−112",
-            "Other angle 68°",
-            "68°."
+            "A has area (60/360)π·6²=6π, so price per area=3/(6π)=1/(2π).",
+            "B has area (40/360)π·9²=9π, so price per area=4/(9π).",
+            "Compare 1/2 with 4/9: since 4/9<1/2, offer B has smaller price per unit area.",
+            "Offer B is cheaper per area (4/(9π) versus 1/(2π))."
           ],
           "Rows": []
         }
