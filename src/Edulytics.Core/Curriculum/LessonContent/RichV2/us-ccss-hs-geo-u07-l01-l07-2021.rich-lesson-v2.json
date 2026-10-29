@@ -115,6 +115,7 @@
         "Learning goal: Prove an inscribed angle subtending an arc is half the corresponding central angle and use it to analyze intersecting chords.",
         "Vertex lies on circle, sides are chords Measure half the intercepted arc not containing vertex",
         "Inscribed angles intercepting same arc are equal Need vertices on same complementary arc Both arc measures referenced properly",
+        "Source task parity: after measuring central and inscribed angles to conjecture the half-arc relation, students prove triangles are similar when two chords cross inside a circle. An angle theorem alone or a numeric 90° calculation does not demonstrate this source proof task. Represent the intersecting chords, identify angle pairs intercepting the same arcs, then apply AA similarity.",
         "Source-specific student task: Prove inscribed angle using radii and isosceles triangles, then sketch chord intersection; teacher scores proof. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
         "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 2, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
       ],
@@ -132,10 +133,10 @@
           "Example": "Two such angles equal 35°"
         },
         {
-          "Title": "Intersecting chord angles",
-          "Definition": "Interior angle formed by intersecting chords equals half sum of opposite intercepted arcs",
-          "Rule": "Both arc measures referenced properly",
-          "Example": "Arcs 80°,100° produce 90°"
+          "Title": "Intersecting-chord triangle similarity",
+          "Definition": "If chords CB and DE intersect at an interior point F, triangles CFD and EFB can be shown similar by AA using inscribed angles on shared arcs and vertical angles.",
+          "Rule": "The angles FCD and FEB intercept arc DB; FDC and FBE intercept arc CE; the vertical angles CFD and EFB agree.",
+          "Example": "If arcs DB and CE measure 140° and 100°, the corresponding angles at C,E are 70° and at D,B are 50°."
         }
       ],
       "WorkedExamples": [
@@ -164,16 +165,16 @@
           "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
         },
         {
-          "Title": "Inscribed Angles: illustration 3",
-          "Question": "Two chords intersect inside circle, intercepted opposite arcs 80° and 100°. Find angle.",
-          "Method": "Intersecting chord angles",
+          "Title": "Inscribed Angles: AA similarity from two intersecting chords",
+          "Question": "Chords CB and DE intersect at interior F. The intercepted arcs DB and CE measure 140° and 100° respectively. Prove triangles CFD and EFB are similar.",
+          "Method": "Use inscribed angle theorem, the same intercepted arcs, and AA.",
           "Steps": [
-            "Interior-chord angle theorem gives half sum",
-            "Compute (80+100)/2",
-            "Angle=90°"
+            "The angles FCD and FEB are inscribed angles intercepting arc DB, so each measures 140°/2=70°.",
+            "The angles FDC and FBE both intercept arc CE, so each measures 100°/2=50°.",
+            "Thus two pairs of corresponding angles agree; by AA, triangle CFD is similar to triangle EFB (with F↔F as the remaining vertical-angle pair)."
           ],
-          "Answer": "90°.",
-          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+          "Answer": "Triangles CFD and EFB are similar by AA, with corresponding angle measures 70°,50°,60°.",
+          "Check": "Sum 70°+50°+60°=180°. Each asserted angle pair subtends the same arc; interior intersection and distinct endpoints are required."
         }
       ],
       "CommonMistakes": [
@@ -190,7 +191,7 @@
       ],
       "SummaryPoints": [
         "Prove an inscribed angle subtending an arc is half the corresponding central angle and use it to analyze intersecting chords.",
-        "Need vertices on same complementary arc",
+        "Inscribed angles on the same intercepted arc are equal; intersecting chords form AA-similar triangles when corresponding angles subtend the same arcs.",
         "Teacher-scored source-aligned diagram and proof evidence remains required."
       ],
       "Visuals": [
@@ -201,10 +202,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Inscribed-angle theorem says half its arc",
-            "Compute 120/2",
-            "Angle 60°",
-            "60°."
+            "The angles FCD and FEB are inscribed angles intercepting arc DB, so each measures 140°/2=70°.",
+            "The angles FDC and FBE both intercept arc CE, so each measures 100°/2=50°.",
+            "Thus two pairs of corresponding angles agree; by AA, triangle CFD is similar to triangle EFB (with F↔F as the remaining vertical-angle pair).",
+            "Triangles CFD and EFB are similar by AA, with corresponding angle measures 70°,50°,60°."
           ],
           "Rows": []
         }
