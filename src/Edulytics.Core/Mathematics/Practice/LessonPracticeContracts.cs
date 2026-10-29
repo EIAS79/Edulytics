@@ -888,7 +888,14 @@ public static class LessonPracticeContractRegistry
     private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
         AllEntries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
 
-    public static IReadOnlyList<LessonPracticeContract> All => AllEntries;
+    // The public runtime catalogue contains only reviewed, routable contracts.
+    // Keep INTEGRATION_PENDING candidates in ByLessonCode for explicit audit and
+    // fail-closed capability resolution, never as READY_VERIFIED runtime entries.
+    private static readonly LessonPracticeContract[] RoutableEntries = AllEntries
+        .Where(x => string.Equals(x.Readiness, "READY_VERIFIED", StringComparison.Ordinal))
+        .ToArray();
+
+    public static IReadOnlyList<LessonPracticeContract> All => RoutableEntries;
 
     private static LessonPracticeContract[] BuildAllEntries()
     {
