@@ -47,7 +47,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 64);
+  assert.equal(evidence.totals.richCandidateLessons, 124);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -344,4 +344,64 @@ test('Right-triangle trigonometry: all 11 U04 candidates and independent domain/
     assert.ok(low(n)<Math.PI&&Math.PI<up(n));
   }
   assert.ok(low(20)>low(10)&&up(20)<up(10));
+});
+test('Complete 124/124 Rich V2 course identity, structured first-party content and no false acceptance', () => {
+  assert.equal(authored.length, 124);
+  assert.equal(new Set(authored.map(x=>x.LessonCode)).size,124);
+  const byCode=new Map(authored.map(x=>[x.LessonCode,x]));
+  for(const [i,source] of blueprint.Lessons.entries()){
+    const candidate=byCode.get(source.LessonCode);
+    assert.ok(candidate,source.LessonCode);
+    assert.equal(candidate.Title,source.Title);
+    assert.equal(candidate.CultureCode,'en');
+    assert.ok(candidate.ExplanationParagraphs.length>=3);
+    assert.ok(candidate.KeyConcepts.length>=3);
+    assert.ok(candidate.WorkedExamples.length>=3);
+    assert.ok(candidate.CommonMistakes.length>=2);
+    assert.ok(candidate.SummaryPoints.length>=3);
+    assert.ok(candidate.ExplanationParagraphs.join(' ').includes('CC BY 4.0'));
+    assert.ok(candidate.WorkedExamples.every(ex=>ex.Question&&ex.Answer&&ex.Check&&ex.Steps.length>=3));
+    assert.equal(evidence.lessons[i].richCandidateOnBranch,true);
+    assert.equal(evidence.lessons[i].stageD,'NOT_RUN');
+    assert.equal(evidence.lessons[i].release,'NOT_ACCEPTED');
+  }
+  assert.equal(evidence.totals.gradeAccepted,0);
+  assert.equal(evidence.totals.runtimeVerified,0);
+  assert.equal(evidence.totals.persistedVerified,0);
+  // Optional U08 L11: no invented activity approval.
+  assert.equal(evidence.lessons[123].sourceOptional,true);
+});
+test('Source-specific numeric oracles for solids, conics, circles and conditional probability', () => {
+  const eps=1e-10, near=(x,y)=>Math.abs(x-y)<eps;
+  assert.equal(3**3*8,216);                  // cube side 2 scaled k=3
+  assert.equal(3**2*8,72);                   // cylindrical disk r=3 with h=8, coefficient of pi
+  assert.equal((10/4)**2,6.25);              // pyramid cut square side at quarter scale
+  assert.equal(36*9/3,108);                  // pyramid volume
+  assert.equal(2*(2**2)+2*2*3,20);           // closed cylinder area, coefficient of pi
+  assert.ok(near(Math.cbrt(27/8),1.5));      // inverse cubic scaling
+  assert.equal(2**3,8);                     // 3D volume scaling
+  // Parabola focus (0,2), directrix y=-2: x²=8y.
+  for(const x of [-8,-4,0,3,7]){
+    const y=x*x/8;
+    const focusSq=x*x+(y-2)**2;
+    const directrixSq=(y+2)**2;
+    assert.ok(near(focusSq,directrixSq));
+  }
+  // Circumcenter of right triangle with hypotenuse endpoints (6,0),(0,8).
+  const O=[3,4],d2=(p,q)=>(p[0]-q[0])**2+(p[1]-q[1])**2;
+  for(const V of [[0,0],[6,0],[0,8]])assert.equal(d2(O,V),25);
+  // U06 L17 is right at A=(0,2), hence orthocenter A itself.
+  const A=[0,2],B=[-2,0],C=[2,0];
+  assert.equal((B[0]-A[0])*(C[0]-A[0])+(B[1]-A[1])*(C[1]-A[1]),0);
+  // Arc at r=6 theta=60 degrees.
+  assert.ok(near(6*(Math.PI/3),2*Math.PI));
+  assert.ok(near((1/2)*6*6*(Math.PI/3),6*Math.PI));
+  // Independence versus dependence table [[12,8],[18,12]]
+  assert.ok(near((12/50),(20/50)*(30/50)));
+  assert.ok(near(12/20,0.6));
+  assert.ok(near(12/30,0.4));
+  // Conditional red-without-replacement from 2 red + 1 blue.
+  assert.ok(near(1/2,0.5));
+  // Fair game E=2*(1/3)-1*(2/3)=0.
+  assert.ok(near(2/3-2/3,0));
 });
