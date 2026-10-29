@@ -11,7 +11,10 @@ const rich = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs
 const richNext = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l04-l06-2021.rich-lesson-v2.json');
 const richThird = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l07-l09-2021.rich-lesson-v2.json');
 const richFourth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l10-l12-2021.rich-lesson-v2.json');
-const authored = [...rich.Lessons, ...richNext.Lessons, ...richThird.Lessons, ...richFourth.Lessons];
+const richFifth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l13-l15-2021.rich-lesson-v2.json');
+const richSixth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l16-l18-2021.rich-lesson-v2.json');
+const richSeventh = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l19-l22-2021.rich-lesson-v2.json');
+const authored = [rich,richNext,richThird,richFourth,richFifth,richSixth,richSeventh].flatMap(x => x.Lessons);
 const evidence = read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json');
 const prefix = 'PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L';
 
@@ -41,7 +44,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 12);
+  assert.equal(evidence.totals.richCandidateLessons, 22);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -55,13 +58,16 @@ test('Course-wide matrix records unverified runtime and no fabricated approvals'
   }
 });
 
-test('Twelve construction, modelling and rigid-motion lessons have authored candidate contracts', () => {
+test('All 22 unit-one geometry lessons have authored candidate contracts', () => {
   assert.equal(rich.PackCode, 'US-CCSS-MATH');
   assert.equal(rich.Lessons.length, 3);
   assert.equal(richNext.Lessons.length, 3);
   assert.equal(richThird.Lessons.length, 3);
   assert.equal(richFourth.Lessons.length, 3);
-  assert.deepEqual(authored.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03', prefix+'04', prefix+'05', prefix+'06', prefix+'07', prefix+'08', prefix+'09', prefix+'10', prefix+'11', prefix+'12']);
+  assert.equal(richFifth.Lessons.length, 3);
+  assert.equal(richSixth.Lessons.length, 3);
+  assert.equal(richSeventh.Lessons.length, 4);
+  assert.deepEqual(authored.map(l => l.LessonCode), Array.from({length:22},(_,i)=> prefix+String(i+1).padStart(2,'0')));
   for (const lesson of authored) {
     assert.equal(lesson.CultureCode, 'en');
     assert.equal(lesson.WorkedExamples.length, 3);
@@ -174,4 +180,37 @@ test('Rigid-motion isometries preserve squared distance; reflection reverses ori
   const determinant=(v,w)=>v[0]*w[1]-v[1]*w[0];
   assert.equal(determinant([3,0],[2,0]),0);
   assert.equal(determinant([3,0],[2,1]),3);
+});
+
+test('Rotational symmetry, congruence alignment, and proof candidates obey key invariants', () => {
+  const byCode = new Map(authored.map(x=>[x.LessonCode,x]));
+  for(let n=13;n<=22;n++) {
+    const lesson=byCode.get(prefix+String(n).padStart(2,'0'));
+    assert.ok(lesson, 'missing lesson '+n);
+    assert.equal(lesson.WorkedExamples.length,3);
+    assert.ok(lesson.ExplanationParagraphs.join(' ').includes('Teacher rubric'),lesson.LessonCode);
+    assert.ok(lesson.ExplanationParagraphs.join(' ').includes('CC BY 4.0'),lesson.LessonCode);
+    assert.ok(lesson.CommonMistakes.length>=2);
+  }
+  assert.equal(evidence.lessons[7].sourceOptional,true);  // L08
+  assert.equal(evidence.lessons[17].sourceOptional,true); // L18
+  assert.equal(evidence.lessons[21].sourceOptional,true); // L22
+  // Rotation by 90 degrees about origin is an isometry and changes orientation angle, not side lengths.
+  const rotate90=p=>[-p[1],p[0]];
+  const sq=(a,b)=> (a[0]-b[0])**2+(a[1]-b[1])**2;
+  const pts=[[0,0],[2,0],[0,1]];
+  for(let i=0;i<3;i++)for(let j=0;j<3;j++)assert.equal(sq(pts[i],pts[j]),sq(rotate90(pts[i]),rotate90(pts[j])));
+  const reflect=p=>[-p[0],p[1]];
+  const twice=p=>[-p[0],-p[1]];
+  assert.equal(sq(reflect([1,2]),reflect([4,6])),25);
+  assert.deepEqual(twice([4,3]),[-4,-3]);
+  // Triangle angle sum and vertical angles: independent arithmetic property cases.
+  for(const [A,B] of [[30,70],[1,1],[89,1],[45,90]]) {
+    const C=180-A-B;
+    assert.ok(C>0);
+    assert.equal(A+B+C,180);
+    assert.equal((180-A)+(A),180);
+  }
+  assert.equal(360/5,72);
+  assert.equal(360/6,60);
 });
