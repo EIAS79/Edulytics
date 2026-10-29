@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "ALL_145_SOURCE_PAGES_INSPECTED_584_ORIGINAL_WORKED_CANDIDATES_151_VISUALS_RELEASE_BLOCKED",
+  "status": "GRADE7_V6_145_SOURCE_REVIEWED_THREE_ORIGINAL_SVGS_FOUR_TEACHER_RUBRICS_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -11527,5 +11527,39 @@
       "Genuine owner UAT and verified production deployment"
     ]
   },
-  "sourceStudentTaskPageEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-student-task-parity-v5.json"
+  "sourceStudentTaskPageEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-student-task-parity-v5.json",
+  "v6": {
+    "previousVerifiedExactHead": {
+      "sha": "c6b31fe9815a4ace52d638535d46ae190dc266de",
+      "checksPassed": 24,
+      "checksTotal": 24
+    },
+    "newGrade7Files": [
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json"
+    ],
+    "newGrade7Tests": [
+      "tests/academic-us-ccss-g7-full-grade-candidate.test.cjs"
+    ],
+    "sourceLessonCodes": [
+      "PED:US-CCSS-MATH:G7:U01:L01",
+      "PED:US-CCSS-MATH:G7:U01:L02",
+      "PED:US-CCSS-MATH:G7:U01:L03",
+      "PED:US-CCSS-MATH:G7:U06:L01"
+    ],
+    "mathematicalGeometrySourceCheck": "PASS_BY_READ_ONLY_GITHUB_FILES_JAVASCRIPT_NOT_NODE",
+    "authenticDrawingStudentRendered": "NOT_RUN",
+    "teacherRubricIntegrated": "NOT_IMPLEMENTED",
+    "practiceRuntimeSelected": "NOT_EXECUTED",
+    "sourceReadingPreserved": 145,
+    "richCandidates": 145,
+    "richWorkedExamples": 584,
+    "richVisualModels": 151,
+    "sourceRubrics": 4,
+    "svgAssets": 3,
+    "release": "NO_GO",
+    "checkpoint": "U01:L01 verify actual UI rendering and teacher rubric + selected Practice under Supervisor 1 #592. Do not count static SVG as embedded Rich V2 or Stage A/B/C/D acceptance."
+  }
 }
