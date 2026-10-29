@@ -88,7 +88,31 @@
         "Uniform prisms give linear volume-height relations.",
         "Varying shapes may yield nonlinear graphs."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Volume and height in a right prism",
+          "Description": "Height is volume divided by constant base area 20 cm².",
+          "Rows": [
+            {
+              "Label": "volume (cm³)",
+              "Cells": [
+                "0",
+                "40",
+                "100"
+              ]
+            },
+            {
+              "Label": "height (cm)",
+              "Cells": [
+                "0",
+                "2",
+                "5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -264,7 +288,31 @@
         "Identify radius and perpendicular height.",
         "Use cubic units."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cylinder volume and height",
+          "Description": "For fixed radius 3, V=9πh, so the table shows the exact coefficient V/π.",
+          "Rows": [
+            {
+              "Label": "height",
+              "Cells": [
+                "0",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "Label": "V/π",
+              "Cells": [
+                "0",
+                "9",
+                "45"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -880,7 +928,31 @@
         "Radius scales volume cubically.",
         "Use cubic units and correct radius."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sphere volume proportional to radius cubed",
+          "Description": "V=(4/3)πr³. The table shows exact volume coefficients, not decimals.",
+          "Rows": [
+            {
+              "Label": "radius",
+              "Cells": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "V/π",
+              "Cells": [
+                "4/3",
+                "32/3",
+                "36"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1056,7 +1128,33 @@
         "Fixed-area cylinders are linear in h.",
         "Tip-up conical fill volumes scale cubically."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cylinder water volume as height rises",
+          "Description": "With fixed radius 2, water volume V=4πh.",
+          "Rows": [
+            {
+              "Label": "height h",
+              "Cells": [
+                "0",
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "V/π",
+              "Cells": [
+                "0",
+                "4",
+                "12",
+                "20"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]

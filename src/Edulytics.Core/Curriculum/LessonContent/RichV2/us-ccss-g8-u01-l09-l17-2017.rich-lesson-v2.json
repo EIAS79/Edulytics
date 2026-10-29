@@ -89,7 +89,36 @@
         "Translate a line by transforming all its points.",
         "Reason from angles and distances, not drawings alone."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Parallel lines after translation",
+          "Description": "Moving both horizontal lines two units up preserves their parallel nature.",
+          "Rows": [
+            {
+              "Label": "line",
+              "Cells": [
+                "A",
+                "B"
+              ]
+            },
+            {
+              "Label": "initial y",
+              "Cells": [
+                "1",
+                "4"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "3",
+                "6"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

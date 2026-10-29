@@ -88,7 +88,47 @@
         "Rigid moves preserve tile shape.",
         "Analyze vertex angles and edge matching."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fill 360 degrees around a vertex",
+          "Description": "Each indicated regular tile shape can meet without gaps when vertex angles sum to 360°.",
+          "Rows": [
+            {
+              "Label": "regular polygon",
+              "Cells": [
+                "square",
+                "hexagon",
+                "triangle"
+              ]
+            },
+            {
+              "Label": "corner angle",
+              "Cells": [
+                "90",
+                "120",
+                "60"
+              ]
+            },
+            {
+              "Label": "number",
+              "Cells": [
+                "4",
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "sum",
+              "Cells": [
+                "360",
+                "360",
+                "360"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -176,7 +216,33 @@
         "Polygon interior angle matters.",
         "No regular pentagon-only tessellation."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Hexagonal corners around a point",
+          "Description": "Exactly three hexagon angles of 120° sum to 360°.",
+          "Rows": [
+            {
+              "Label": "number",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "degrees total",
+              "Cells": [
+                "120",
+                "240",
+                "360",
+                "480"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -352,7 +418,31 @@
         "Temperature has multiple influences.",
         "Use association responsibly."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Negative association with latitude",
+          "Description": "Original lesson-example input-output table. Each row uses y = -0.5x + 40. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "20",
+                "40",
+                "60"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "30",
+                "20",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -440,7 +530,33 @@
         "A fitted line is approximate.",
         "Residuals reveal imperfect fit."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Latitude as an input to a model",
+          "Description": "Original lesson-example input-output table. Each row uses y = -0.5x + 40. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "30",
+                "40",
+                "60"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "40",
+                "25",
+                "20",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -528,7 +644,33 @@
         "Interpret slope with units and relevant domain.",
         "State limits of extrapolation and alternative factors."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Use a linear model without extrapolation claims",
+          "Description": "Original lesson-example input-output table. Each row uses y = -0.5x + 40. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "30",
+                "45",
+                "60"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "40",
+                "25",
+                "17.5",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]

@@ -176,7 +176,47 @@
         "Maintain identical operations on both sides.",
         "Verify bag weights by recomputing totals."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Which candidate balances 2x+3=11?",
+          "Description": "A solution has equal left and right sides; x=4 is the only solution shown.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "left",
+              "Cells": [
+                "3",
+                "11",
+                "13"
+              ]
+            },
+            {
+              "Label": "right",
+              "Cells": [
+                "11",
+                "11",
+                "11"
+              ]
+            },
+            {
+              "Label": "equal?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -352,7 +392,47 @@
         "Balance both sides when moving terms.",
         "Check the original equation after solving."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Variables on both sides",
+          "Description": "The two expressions equal each other only when x=4 among the candidates shown.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "5x+2",
+              "Cells": [
+                "2",
+                "22",
+                "27"
+              ]
+            },
+            {
+              "Label": "2x+14",
+              "Cells": [
+                "14",
+                "22",
+                "24"
+              ]
+            },
+            {
+              "Label": "equal?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -616,7 +696,55 @@
         "0=0 signals an identity.",
         "0=nonzero signals contradiction."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Identity versus contradiction",
+          "Description": "The first equation is true for all real x; the second equation 2x+1=2x+5 is never true.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "-2",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "Label": "2(x+3)",
+              "Cells": [
+                "2",
+                "6",
+                "12"
+              ]
+            },
+            {
+              "Label": "2x+6",
+              "Cells": [
+                "2",
+                "6",
+                "12"
+              ]
+            },
+            {
+              "Label": "2x+1",
+              "Cells": [
+                "-3",
+                "1",
+                "7"
+              ]
+            },
+            {
+              "Label": "2x+5",
+              "Cells": [
+                "1",
+                "5",
+                "11"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -792,7 +920,42 @@
         "The equality appears as a graph intersection.",
         "Interpret the solution in its domain."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Find the break-even month",
+          "Description": "Plan A=6+3m; plan B=18+m. They have equal price at month 6.",
+          "Rows": [
+            {
+              "Label": "months",
+              "Cells": [
+                "0",
+                "2",
+                "6",
+                "10"
+              ]
+            },
+            {
+              "Label": "A cost",
+              "Cells": [
+                "6",
+                "12",
+                "24",
+                "36"
+              ]
+            },
+            {
+              "Label": "B cost",
+              "Cells": [
+                "18",
+                "20",
+                "24",
+                "28"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -968,7 +1131,47 @@
         "Intersections can be computed by equal outputs.",
         "Verify both equations."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Intersection of two lines",
+          "Description": "For the same x, both y-values agree at (2,3). A graph must be represented separately.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "y=x+1",
+              "Cells": [
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "y=−x+5",
+              "Cells": [
+                "5",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "intersection?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1056,7 +1259,39 @@
         "Intersections can be zero, one or infinitely many.",
         "Graph shape and algebra must agree."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Parallel and distinct equations",
+          "Description": "Two lines with slope 2 and different intercepts never intersect.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "y=2x+1",
+              "Cells": [
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "y=2x−3",
+              "Cells": [
+                "-3",
+                "-1",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1144,7 +1379,47 @@
         "Back-substitute and obtain an ordered pair.",
         "Check both equations."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check both parts of a system",
+          "Description": "Only (3,7) satisfies y=2x+1 and x+y=10 in these choices.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "y=2x+1",
+              "Cells": [
+                "3",
+                "7",
+                "9"
+              ]
+            },
+            {
+              "Label": "x+y",
+              "Cells": [
+                "4",
+                "10",
+                "13"
+              ]
+            },
+            {
+              "Label": "valid?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1232,7 +1507,47 @@
         "Choose the simpler algebraic route.",
         "Check the original equations."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check the difference constraint",
+          "Description": "All listed pairs sum to 7, but only (4,3) also has x−y=1.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "4",
+                "3",
+                "2"
+              ]
+            },
+            {
+              "Label": "x+y",
+              "Cells": [
+                "7",
+                "7",
+                "7"
+              ]
+            },
+            {
+              "Label": "x−y",
+              "Cells": [
+                "-1",
+                "1",
+                "3"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1408,7 +1723,47 @@
         "Solve algebraically and validate context.",
         "A complete answer states quantities and units."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check a two-price fruit system",
+          "Description": "Eight fruits total; apples cost $2, pears $3. Five apples and three pears cost $19.",
+          "Rows": [
+            {
+              "Label": "apples",
+              "Cells": [
+                "0",
+                "5",
+                "8"
+              ]
+            },
+            {
+              "Label": "pears",
+              "Cells": [
+                "8",
+                "3",
+                "0"
+              ]
+            },
+            {
+              "Label": "number",
+              "Cells": [
+                "8",
+                "8",
+                "8"
+              ]
+            },
+            {
+              "Label": "cost",
+              "Cells": [
+                "24",
+                "19",
+                "16"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]

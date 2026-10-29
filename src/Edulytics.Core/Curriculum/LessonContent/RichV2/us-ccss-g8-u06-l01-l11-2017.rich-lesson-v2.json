@@ -352,7 +352,39 @@
         "Residuals quantify departures from the line.",
         "Predictions require caution."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Line prediction and residual",
+          "Description": "At x=4, the fit y=2x+2 predicts 10; observed 11 gives residual +1.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "observed",
+              "Cells": [
+                "11"
+              ]
+            },
+            {
+              "Label": "predicted",
+              "Cells": [
+                "10"
+              ]
+            },
+            {
+              "Label": "residual",
+              "Cells": [
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -440,7 +472,33 @@
         "Scatter around a trend matters.",
         "Association is not a causal claim."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "A negative linear trend",
+          "Description": "Original lesson-example input-output table. Each row uses y = -2x + 10. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "8",
+                "6",
+                "4",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -616,7 +674,35 @@
         "Curves and clusters require their own description.",
         "Match model form to data shape."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "U-shaped nonlinear association",
+          "Description": "The squared-input data do not have constant first differences.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "-2",
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "y=x²",
+              "Cells": [
+                "4",
+                "1",
+                "0",
+                "1",
+                "4"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -704,7 +790,31 @@
         "State evidence rather than unsupported claims.",
         "Outliers and confounders matter."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rate of increase between two observations",
+          "Description": "Original lesson-example input-output table. Each row uses y = 1.5x + 1.5. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "3",
+                "6",
+                "9"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -792,7 +902,39 @@
         "Compare conditional percentages.",
         "Avoid unsupported causal conclusions."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Conditional percentage of a group",
+          "Description": "Divide by the full group count 20, not by another category.",
+          "Rows": [
+            {
+              "Label": "choice",
+              "Cells": [
+                "bus",
+                "other",
+                "total"
+              ]
+            },
+            {
+              "Label": "count",
+              "Cells": [
+                "12",
+                "8",
+                "20"
+              ]
+            },
+            {
+              "Label": "percentage",
+              "Cells": [
+                "60%",
+                "40%",
+                "100%"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

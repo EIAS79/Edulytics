@@ -176,7 +176,31 @@
         "Keep the center and ray fixed.",
         "Scale every radius by one factor."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Circular grid distances at scale 2",
+          "Description": "Multiply each distance from the dilation center by 2; rays are unchanged.",
+          "Rows": [
+            {
+              "Label": "original radius",
+              "Cells": [
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "image radius",
+              "Cells": [
+                "4",
+                "6",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -352,7 +376,57 @@
         "For other centers scale P−C.",
         "Keep correspondence and ray directions clear."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Origin-centered dilations in coordinates",
+          "Description": "For k positive, both coordinates multiply by the same factor, including negative coordinates.",
+          "Rows": [
+            {
+              "Label": "point",
+              "Cells": [
+                "P",
+                "Q"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "2",
+                "-8"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "-3",
+                "6"
+              ]
+            },
+            {
+              "Label": "factor k",
+              "Cells": [
+                "2",
+                "0.5"
+              ]
+            },
+            {
+              "Label": "image x",
+              "Cells": [
+                "4",
+                "-4"
+              ]
+            },
+            {
+              "Label": "image y",
+              "Cells": [
+                "-6",
+                "3"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -440,7 +514,43 @@
         "Area scales by k squared.",
         "Reductions and enlargements obey the same ratios."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Dilation scales area by k²",
+          "Description": "A 2 by 3 rectangle dilated by k=2 becomes 4 by 6; its area goes from 6 to 24.",
+          "Rows": [
+            {
+              "Label": "state",
+              "Cells": [
+                "original",
+                "image"
+              ]
+            },
+            {
+              "Label": "length",
+              "Cells": [
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "width",
+              "Cells": [
+                "3",
+                "6"
+              ]
+            },
+            {
+              "Label": "area",
+              "Cells": [
+                "6",
+                "24"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -882,7 +992,33 @@
         "Signs encode direction.",
         "Vertical lines have undefined slope."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Line with slope two",
+          "Description": "Original lesson-example input-output table. Each row uses y = 2x + 0. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "0",
+                "2",
+                "8",
+                "10"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -970,7 +1106,33 @@
         "Find m from two points or a graph.",
         "Solve b by substituting one known point."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Line through two given points",
+          "Description": "Original lesson-example input-output table. Each row uses y = 2x + 1. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "3",
+                "7",
+                "9"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1058,7 +1220,33 @@
         "State rate and initial value with units.",
         "Interpret solutions within realistic domains."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Remaining water at constant loss rate",
+          "Description": "Original lesson-example input-output table. Each row uses y = -2x + 30. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "7",
+                "10",
+                "15"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "30",
+                "16",
+                "10",
+                "0"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

@@ -96,7 +96,55 @@
         "Informal descriptions must still be reproducible.",
         "Teacher review is required for alternative correct odd-one-out explanations."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Triangle translated right four and up two",
+          "Description": "Original rigid-motion table: translate every point by (4,2). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "5",
+                "7",
+                "5"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "3",
+                "3",
+                "5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -191,7 +239,55 @@
         "Reflections require a line of symmetry.",
         "Use corresponding points as evidence for the chosen action."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Translation left three and up two",
+          "Description": "Original rigid-motion table: translate every point by (-3,2). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "3"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "-2",
+                "0",
+                "-2"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "3",
+                "3",
+                "5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -288,7 +384,55 @@
         "Isometric grid rotations can be built by 60° tracing.",
         "Check constructions visually and preserve labels."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Triangle translated right four and down three",
+          "Description": "Original rigid-motion table: translate every point by (4,-3). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "5",
+                "7",
+                "5"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "-2",
+                "-2",
+                "-1"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -377,7 +521,60 @@
         "Transform every vertex before joining the edges.",
         "Check a peer can reproduce written directions."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Quadrilateral translated two units",
+          "Description": "Original rigid-motion table: translate every point by (2,0). All corresponding distances and angles must stay invariant. This table is not an interactive coordinate-grid construction.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "4",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1",
+                "3",
+                "2"
+              ]
+            },
+            {
+              "Label": "new x",
+              "Cells": [
+                "3",
+                "6",
+                "5",
+                "3"
+              ]
+            },
+            {
+              "Label": "new y",
+              "Cells": [
+                "1",
+                "1",
+                "3",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -466,7 +663,39 @@
         "The direction of a quarter-turn changes the formula.",
         "Verify center and distance invariance."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Coordinate-axis reflection comparisons",
+          "Description": "Original P=(3,2); reflecting over the x-axis changes only y, and reflecting over the y-axis changes only x.",
+          "Rows": [
+            {
+              "Label": "state",
+              "Cells": [
+                "P",
+                "x-axis image",
+                "y-axis image"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "3",
+                "3",
+                "-3"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "2",
+                "-2",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -555,7 +784,36 @@
         "Order can change the final figure.",
         "Every step can be checked through corresponding points."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Order matters for compositions",
+          "Description": "Starting at (1,1), translation by (2,0) then reflection in y-axis ends at (−3,1); the reverse order ends at (1,1).",
+          "Rows": [
+            {
+              "Label": "order",
+              "Cells": [
+                "translate then reflect",
+                "reflect then translate"
+              ]
+            },
+            {
+              "Label": "x",
+              "Cells": [
+                "-3",
+                "1"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "1",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

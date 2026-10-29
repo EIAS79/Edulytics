@@ -88,7 +88,31 @@
         "Side length is the principal square root.",
         "Not all square areas have integer side lengths."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Side length versus square area",
+          "Description": "A square of edge s has area s².",
+          "Rows": [
+            {
+              "Label": "edge",
+              "Cells": [
+                "1",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "area",
+              "Cells": [
+                "1",
+                "4",
+                "16"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -176,7 +200,36 @@
         "Area factor reveals side factor through square root.",
         "Use correct dimensions."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Doubling length quadruples square area",
+          "Description": "From edge 2 to 4, area rises from 4 to 16, factor four.",
+          "Rows": [
+            {
+              "Label": "state",
+              "Cells": [
+                "original",
+                "doubled"
+              ]
+            },
+            {
+              "Label": "edge",
+              "Cells": [
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "area",
+              "Cells": [
+                "4",
+                "16"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -528,7 +581,50 @@
         "Hypotenuse² equals sum of leg squares.",
         "Use positive lengths."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Exact right triangle triples",
+          "Description": "Original right-triangle numeric verification of a²+b²=c². It supplements but does not replace a labeled proof diagram.",
+          "Rows": [
+            {
+              "Label": "case",
+              "Cells": [
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "a",
+              "Cells": [
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "b",
+              "Cells": [
+                "4",
+                "12"
+              ]
+            },
+            {
+              "Label": "a²+b²",
+              "Cells": [
+                "25",
+                "169"
+              ]
+            },
+            {
+              "Label": "c",
+              "Cells": [
+                "5",
+                "13"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -616,7 +712,37 @@
         "Four triangles and the central square fill one larger square.",
         "Symbolic cancellation establishes a²+b²=c²."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Numerical decomposition for Pythagoras",
+          "Description": "For a=3, b=4: outer square side 7 has area 49, four triangles total area 24, inner c²=25. This is NOT the actual visual proof.",
+          "Rows": [
+            {
+              "Label": "measure",
+              "Cells": [
+                "a",
+                "b",
+                "outer side",
+                "outer area",
+                "four triangles",
+                "center c²"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "3",
+                "4",
+                "7",
+                "49",
+                "24",
+                "25"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -704,7 +830,50 @@
         "Subtract squares for unknown leg.",
         "Check physical feasibility."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Determine unknown hypotenuses",
+          "Description": "Original right-triangle numeric verification of a²+b²=c². It supplements but does not replace a labeled proof diagram.",
+          "Rows": [
+            {
+              "Label": "case",
+              "Cells": [
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "a",
+              "Cells": [
+                "8",
+                "3"
+              ]
+            },
+            {
+              "Label": "b",
+              "Cells": [
+                "15",
+                "4"
+              ]
+            },
+            {
+              "Label": "a²+b²",
+              "Cells": [
+                "289",
+                "25"
+              ]
+            },
+            {
+              "Label": "c",
+              "Cells": [
+                "17",
+                "5"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -880,7 +1049,50 @@
         "Keep traveled and direct distances distinct.",
         "Verify units and context."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Shortest path after perpendicular travel",
+          "Description": "Original right-triangle numeric verification of a²+b²=c². It supplements but does not replace a labeled proof diagram.",
+          "Rows": [
+            {
+              "Label": "case",
+              "Cells": [
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "a",
+              "Cells": [
+                "6",
+                "5"
+              ]
+            },
+            {
+              "Label": "b",
+              "Cells": [
+                "8",
+                "12"
+              ]
+            },
+            {
+              "Label": "a²+b²",
+              "Cells": [
+                "100",
+                "169"
+              ]
+            },
+            {
+              "Label": "c",
+              "Cells": [
+                "10",
+                "13"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -968,7 +1180,39 @@
         "Use signed coordinate differences.",
         "Distance is invariant under common translations."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Distance by coordinate differences",
+          "Description": "From (−2,1) to (4,9), Δx=6 and Δy=8, so distance is 10. A coordinate grid is separately required.",
+          "Rows": [
+            {
+              "Label": "measure",
+              "Cells": [
+                "Δx",
+                "Δy",
+                "distance"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "6",
+                "8",
+                "10"
+              ]
+            },
+            {
+              "Label": "square",
+              "Cells": [
+                "36",
+                "64",
+                "100"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1056,7 +1300,31 @@
         "Edge comes from cube root.",
         "Use cubic units."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cubic volume changes with edge length",
+          "Description": "A cube with side length s has three equal dimensions and exact volume s³ cubic units.",
+          "Rows": [
+            {
+              "Label": "edge",
+              "Cells": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "volume",
+              "Cells": [
+                "1",
+                "8",
+                "27"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1144,7 +1412,35 @@
         "Negative numbers have negative real cube roots.",
         "Verify by cubing."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Real cube roots preserve negative signs",
+          "Description": "Each cube root r satisfies r³=x even for negative x.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "-27",
+                "-8",
+                "0",
+                "8",
+                "27"
+              ]
+            },
+            {
+              "Label": "cube root",
+              "Cells": [
+                "-3",
+                "-2",
+                "0",
+                "2",
+                "3"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

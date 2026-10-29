@@ -288,3 +288,70 @@ public sealed class UsCcssGrade8Coder4TwoVariableRepresentationTests
         // family; see Supervisor 2 Issue #595. These displays are not C/D proof.
     }
 }
+
+public sealed class UsCcssGrade8Coder4V10OriginalVisualResourceTests
+{
+    [Fact]
+    public void SixtySevenGrade8LessonsLoadOriginalMathRepresentationsWithoutMutatingOtherCurricula()
+    {
+        var lessons = RichLessonContentV2Registry.AllDocuments
+            .SelectMany(document => document.Lessons)
+            .Where(lesson => lesson.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:G8:", StringComparison.Ordinal))
+            .OrderBy(lesson => lesson.LessonCode, StringComparer.Ordinal)
+            .ToArray();
+
+        Assert.Equal(131, lessons.Length);
+        Assert.Equal(131, lessons.Select(lesson => lesson.LessonCode)
+            .Distinct(StringComparer.Ordinal).Count());
+
+        var supported = lessons.Where(lesson => lesson.Visuals.Count > 0).ToArray();
+        Assert.Equal(67, supported.Length);
+        var ratioTables = supported.SelectMany(lesson => lesson.Visuals)
+            .Where(visual => visual.Kind == RichLessonVisualKind.RatioTable)
+            .ToArray();
+        Assert.Equal(67, ratioTables.Length);
+
+        var unitNumbers = supported
+            .Select(lesson => lesson.LessonCode.Split(':')[3])
+            .Distinct(StringComparer.Ordinal)
+            .OrderBy(x => x, StringComparer.Ordinal).ToArray();
+        Assert.Equal(
+            new[] { "U01", "U02", "U03", "U04", "U05", "U06", "U07", "U08", "U09" },
+            unitNumbers);
+
+        foreach (var lesson in supported)
+        {
+            var exact = RichLessonContentV2Registry.Find(lesson.LessonCode, "en");
+            Assert.NotNull(exact);
+            Assert.Equal(lesson.Title, exact.Title);
+            Assert.NotEmpty(exact.WorkedExamples);
+
+            foreach (var visual in exact.Visuals)
+            {
+                Assert.False(string.IsNullOrWhiteSpace(visual.Title));
+                Assert.False(string.IsNullOrWhiteSpace(visual.Description));
+                Assert.DoesNotContain(
+                    "cms-assets.illustrativemathematics.org",
+                    visual.Description,
+                    StringComparison.OrdinalIgnoreCase);
+
+                if (visual.Kind != RichLessonVisualKind.RatioTable)
+                    continue;
+
+                Assert.True(visual.Rows.Count >= 2);
+                var width = visual.Rows[0].Cells.Count;
+                Assert.InRange(width, 1, 6);
+                Assert.All(visual.Rows, row =>
+                {
+                    Assert.False(string.IsNullOrWhiteSpace(row.Label));
+                    Assert.Equal(width, row.Cells.Count);
+                    Assert.All(row.Cells, cell =>
+                        Assert.False(string.IsNullOrWhiteSpace(cell)));
+                });
+            }
+        }
+        // Loader and table semantics are not authenticated A/B acceptance,
+        // publisher activity parity or any Stage C/D Practice proof.
+    }
+}

@@ -176,7 +176,31 @@
         "Place-value reasoning supports the rule.",
         "Check bases and operations."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multiply powers of ten",
+          "Description": "Original exponent evaluation table. The nonzero base is 10; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "2",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "100",
+                "1000",
+                "100000"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -352,7 +376,31 @@
         "Equal nonzero powers divide to one.",
         "Negative result exponent represents a reciprocal."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Divide powers of ten",
+          "Description": "Original exponent evaluation table. The nonzero base is 10; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "2",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "100",
+                "1000",
+                "100000"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -440,7 +488,33 @@
         "Consecutive exponents differ by factors of ten.",
         "Use exact fractions when appropriate."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Negative powers mean reciprocals",
+          "Description": "Original exponent evaluation table. The nonzero base is 10; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "-3",
+                "-2",
+                "-1",
+                "0"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "0.001",
+                "0.01",
+                "0.1",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -528,7 +602,33 @@
         "Signs depend on base and parity.",
         "Exact rationals replace unrelated logarithms."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Positive and negative exponents of two",
+          "Description": "Original exponent evaluation table. The nonzero base is 2; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "-5",
+                "-2",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "0.03125",
+                "0.25",
+                "1",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -792,7 +892,31 @@
         "Negative powers express small positive scales.",
         "Exponent differences compare magnitudes."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Decimal and scientific notation",
+          "Description": "Scientific notation has a leading factor from 1 to below 10.",
+          "Rows": [
+            {
+              "Label": "decimal",
+              "Cells": [
+                "50000",
+                "62000",
+                "300000"
+              ]
+            },
+            {
+              "Label": "scientific",
+              "Cells": [
+                "5×10⁴",
+                "6.2×10⁴",
+                "3×10⁵"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -968,7 +1092,35 @@
         "Tiny is not zero.",
         "Tick increment controls resolution."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Equally spaced small decimals",
+          "Description": "Every number-line tick represents 0.0001, not 0.001.",
+          "Rows": [
+            {
+              "Label": "tick",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "0",
+                "0.0001",
+                "0.0002",
+                "0.0003",
+                "0.0004"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1144,7 +1296,33 @@
         "Exponent controls powers of ten.",
         "Convert both very large and very small numbers."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Scientific notation of 62,000",
+          "Description": "62000=6.2×10⁴ after moving the decimal four places.",
+          "Rows": [
+            {
+              "Label": "representation",
+              "Cells": [
+                "decimal",
+                "coefficient",
+                "power",
+                "product"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "62000",
+                "6.2",
+                "10000",
+                "6.2×10⁴"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -1320,7 +1498,39 @@
         "Combine coefficients only after alignment.",
         "Re-normalize results."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Add like powers of ten",
+          "Description": "Both terms have scale 10⁵, so add coefficients: 3+2=5.",
+          "Rows": [
+            {
+              "Label": "coefficient",
+              "Cells": [
+                "3",
+                "2",
+                "5"
+              ]
+            },
+            {
+              "Label": "scale",
+              "Cells": [
+                "10⁵",
+                "10⁵",
+                "10⁵"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "300000",
+                "200000",
+                "500000"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
