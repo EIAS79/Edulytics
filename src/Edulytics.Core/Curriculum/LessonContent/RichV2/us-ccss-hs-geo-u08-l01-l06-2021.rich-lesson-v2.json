@@ -89,7 +89,45 @@
         "Equally likely outcomes may use counting",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Up to Chance. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Chance experiment",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Is a fair six-sided die roll a chance experiment?",
+                "Yes."
+              ]
+            },
+            {
+              "Label": "Theoretical model",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A fair coin is flipped 30 times; 18 heads. What relative frequency?",
+                "Observed heads frequency 0.6."
+              ]
+            },
+            {
+              "Label": "Observed frequency",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Compare fair coin predicted heads with observed 0.6.",
+                "Observed rate does not disprove fairness."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -178,7 +216,45 @@
         "Count favorable outcomes / total if equiprobable",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Playing with Probability. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Sample space",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Toss two independent fair coins; probability exactly one head.",
+                "1/2."
+              ]
+            },
+            {
+              "Label": "Compound event",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Roll fair die; probability result even and greater than 2.",
+                "1/3."
+              ]
+            },
+            {
+              "Label": "Assumptions",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Select one card from three cards marked R,R,B uniformly. Probability red?",
+                "2/3."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -267,7 +343,45 @@
         "For fair 2×3 independent outcomes count 6",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Sample Spaces. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Tree diagram",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Coin then 3-option fair spinner. How many ordered outcomes?",
+                "6."
+              ]
+            },
+            {
+              "Label": "Two-way grid",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Two fair dice. How many ordered outcomes have sum 7?",
+                "6 outcomes; probability 1/6."
+              ]
+            },
+            {
+              "Label": "Event set",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Fair die event E=even. Find complement.",
+                "{1,3,5}."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -357,7 +471,45 @@
         "P(A∩B)=count intersection/N",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Tables of Relative Frequencies. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Two-way table",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Table rows A/not A and cols B/not B counts [[12,8],[18,12]]. Find total.",
+                "Total 50; A total 20; B total 30."
+              ]
+            },
+            {
+              "Label": "Joint frequency",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Find relative joint frequency A and B from same table.",
+                "0.24."
+              ]
+            },
+            {
+              "Label": "Conditional frequency",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Compute P(B|A) for that table.",
+                "0.6."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -446,7 +598,45 @@
         "Use common region, not full union",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Combining Events. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Union",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Among 100 outcomes, A=40, B=30, overlap=10. Find union count.",
+                "60."
+              ]
+            },
+            {
+              "Label": "Intersection",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Using same data, probability neither A nor B.",
+                "0.4."
+              ]
+            },
+            {
+              "Label": "Complement",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "From same data, probability both A and B.",
+                "0.10."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -535,7 +725,45 @@
         "Then union is sum",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for The Addition Rule. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Addition rule",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Given P(A)=0.5,P(B)=0.4,P(A∩B)=0.2. Find union.",
+                "0.7."
+              ]
+            },
+            {
+              "Label": "Mutually exclusive",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Fair die, A={1,2}, B={5,6}. Find union.",
+                "2/3."
+              ]
+            },
+            {
+              "Label": "Probability bounds",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "P(A∪B)=0.8,P(A)=0.5,P(B)=0.6. Find intersection.",
+                "0.3."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]
