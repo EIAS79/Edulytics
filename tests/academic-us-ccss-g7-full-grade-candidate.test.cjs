@@ -162,7 +162,7 @@ test('V5 actual student-source comparisons remain honest and lesson-specific', (
   assert.equal(ledger.counts.stageAVerified, 0);
   assert.equal(ledger.counts.stageCVerified, 0);
   assert.equal(ledger.counts.stageDVerified, 0);
-  assert.equal(ledger.counts.staticRichWorkedExamples, 576);
+  assert.equal(ledger.counts.staticRichWorkedExamples, 584);
   const lessonRows = new Map(ledger.lessons.map(row => [row.lessonCode, row]));
   for (const row of parity.lessons) {
     const rich = byCode.get(row.lessonCode);
