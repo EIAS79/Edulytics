@@ -47,7 +47,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 53);
+  assert.equal(evidence.totals.richCandidateLessons, 64);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -311,4 +311,37 @@ test('All 16 Similarity candidates and scaled model/Pythagorean/bank-shot indepe
   assert.deepEqual(bounce,[4.25,0]);
   assert.equal(150000000/12700*0.02>200,true); // metres: 2cm Earth model
   assert.equal(9*3**2,81); // area scale
+});
+
+test('Right-triangle trigonometry: all 11 U04 candidates and independent domain/oracle checks', () => {
+  const P='PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L';
+  const lessonByCode=new Map(authored.map(l=>[l.LessonCode,l]));
+  for(let i=1;i<=11;i++){
+    const item=lessonByCode.get(P+String(i).padStart(2,'0'));
+    assert.ok(item, 'missing U04 L'+i);
+    assert.equal(item.WorkedExamples.length,3);
+    assert.ok(item.WorkedExamples.every(ex=>ex.Steps.length>=3 && ex.Answer && ex.Check));
+    assert.ok(item.ExplanationParagraphs.some(t=>/Teacher rubric/i.test(t)));
+    assert.ok(item.ExplanationParagraphs.join(' ').includes('CC BY 4.0'));
+  }
+  assert.equal(evidence.lessons[54].sourceOptional,true);
+  assert.equal(evidence.lessons[55].sourceOptional,true);
+  const rad=d=>d*Math.PI/180, nearly=(a,b,e=1e-10)=>Math.abs(a-b)<e;
+  assert.ok(nearly(Math.sin(rad(30)),0.5));
+  assert.ok(nearly(Math.cos(rad(60)),0.5));
+  assert.ok(nearly(Math.tan(rad(45)),1));
+  for(const theta of [1,15,31,45,72,89]){
+    assert.ok(nearly(Math.sin(rad(theta)),Math.cos(rad(90-theta))));
+    assert.ok(nearly(Math.sin(rad(theta))**2+Math.cos(rad(theta))**2,1));
+    assert.ok(nearly(Math.atan(Math.tan(rad(theta)))*180/Math.PI,theta));
+  }
+  assert.ok(Number.isNaN(Math.asin(1.1))); // disallowed inverse-sine domain
+  assert.ok(nearly((7*Math.sqrt(3))**2+7**2,14**2));
+  assert.ok(nearly((9*Math.sqrt(2))**2,162));
+  assert.ok(nearly(Math.atan(35000/(150*5280))*180/Math.PI,2.53075,0.0005));
+  const low=n=>n*Math.sin(Math.PI/n),up=n=>n*Math.tan(Math.PI/n);
+  for(const n of [4,6,10,20,50,100]){
+    assert.ok(low(n)<Math.PI&&Math.PI<up(n));
+  }
+  assert.ok(low(20)>low(10)&&up(20)<up(10));
 });
