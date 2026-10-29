@@ -101,7 +101,10 @@
     "v6Units6To9FullSourceAcademicAcceptance": 0,
     "v6SelectedPracticeRuntimeTests": 0,
     "v6FinalNodeTestRuns": 0,
-    "v6FinalDotnetTestRuns": 0
+    "v6FinalDotnetTestRuns": 0,
+    "v7MeasuredPathDescriptionsNew": 1,
+    "v7DoubleNumberLineDescriptionsNew": 2,
+    "v7ActualDotNetVisualRegressionPasses": 0
   },
   "sharedBlockers": [
     {
@@ -138,7 +141,7 @@
     }
   ],
   "sourceAuditNotes": "All 147 historical public student pages and 147 teacher pages were retrieved and indexed by original title/activity heading. Retrieval/title matching is NOT independent content review. Eight lessons U01:L01-L03,L12,L15-L16 and U09:L01-L02 had direct public student/teacher activity comparison and original first-party candidate repairs; they are still NOT accepted because source figure/applet parity, effective student/teacher UI, exact Practice, persistence and tests are unverified. Other 139 lessons await full individual task-body review. The 10 MP-only rubric entries are heading-anchored candidates, not source-body signoffs or teacher-workflow implementation.",
-  "testEvidence": "Current V7 Grade6 authoring added two grade-owned callbacks (30 in committed .test.cjs); neither native node --test nor .NET was executed after new candidate HEAD. Prior head 4eb7640 had 10 CI successes, 6 failures, 2 skipped; old-head results cannot certify newer authoring. V8 prior 28/28 is nonnative and is not a fresh execution of new callbacks. Exact Practice/teacher/auth/DB/two-school remain unverified.",
+  "testEvidence": "At original V7 checkpoint 4eb7640, CI had 10 success/6 fail/2 skipped, but those are old-head evidence only. 34 committed Grade6 Node test callbacks now exist; native node --test, dotnet and authorized exact-head CI are NOT_RUN for latest V7 candidate SHA. Three newly authored V7 callback checks at SHA 31593deb passed in a V8 in-memory compatibility harness, not native Node. Later unit2/visual callbacks require exact-head verification.",
   "lessons": [
     {
       "sortOrder": 1,
@@ -2644,7 +2647,8 @@
         "studentTaskOpeningComparedAgainstCandidate": true,
         "publicStudentActivityBodyComparedAgainstPack": true,
         "fullTeacherGuideIndependentlyReviewed": false,
-        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l05-l07-l09-student-teacher-source-comparison.json"
+        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l05-l07-l09-student-teacher-source-comparison.json",
+        "sourceOriginalFigureAppletParityVerified": false
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -2658,7 +2662,9 @@
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
         "v5Unit2TaskSpecificSupplementAuthored": true,
-        "sourceTargetedSupplementAuthored": true
+        "sourceTargetedSupplementAuthored": true,
+        "gradeOwnedParserRecognizableMeasuredPathAuthored": true,
+        "gradeOwnedParserRecognizableDoubleNumberLinesAuthored": 2
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -2683,7 +2689,8 @@
         "twoSchool": "NOT_RUN",
         "persistence": "NOT_RUN",
         "accessibility": "NOT_RUN",
-        "crossCurriculum": "NOT_RUN"
+        "crossCurriculum": "NOT_RUN",
+        "grade6VisualRegressionNativeDotNet": "NOT_RUN_AT_NEW_HEAD"
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
@@ -13381,7 +13388,7 @@
   "lastTestAuthoringCommit": "c9b04f86bbab9b846a668666e2bfe2068107a01c",
   "nextUnrepairedLessonCode": null,
   "nextFullSourceTaskParityLesson": "PED:US-CCSS-MATH:G6:U01:L01",
-  "releaseVerdict": "G6_147_TEXT_CANDIDATES__90_DIRECT_SOURCE_TASK_COMPARISONS__57_REMAIN__ACADEMIC_AND_PRODUCTION_NO_GO",
+  "releaseVerdict": "GRADE6_147_LESSON_AUTHORING_CANDIDATE_90_STUDENT_SOURCE_BODIES_COMPARED__57_PENDING__VISUAL_CANDIDATE_NOT_DOTNET_VERIFIED__NO_GO",
   "publicSourceTaskBoundaryFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
   "publicSourceTaskReviewNote": "For U01:L01-L03 the public historical teacher/student/practice text and alt descriptions were checked. Teacher model answers behind login, publisher interactive applet functionality, exact diagram pixels, materialized Edulytiks student rendering, teacher evidence and exact selected Practice remain unverified. This DOES NOT mean three Stage A acceptances.",
   "lastSourceTaskAreaAuthoringCommit": "1860118f670f136319bac6930f181b4ca3e508a5",
@@ -13523,5 +13530,22 @@
   "v7TestingDisclaimer": "32 grade-owned test callbacks committed; latest three new callbacks verified only through connector-backed V8, not native Node test or protected current-head CI; exact authored source still requires rendering, Practice, independent academic approval.",
   "v7LastUnit2L05L07L09PackCommit": "43cd06c453c6df7a94a9efc446bcbbead6dd52a1",
   "v7LastUnit2L05L07L09EvidenceCommit": "3f378f1f1956280447894a2ab03fa62dc783a269",
-  "v7LastUnit2L05L07L09TestCommit": "c251a7d383c3bbd9eccc6fc1ff7054e23ddc93a7"
+  "v7LastUnit2L05L07L09TestCommit": "c251a7d383c3bbd9eccc6fc1ff7054e23ddc93a7",
+  "v7LastVisualRepairCommit": "70dd5a12d3d8722f7d0a4825018ce3cafdf31827",
+  "v7LastVisualTestCommit": "4d990d6fd12082066a72d14dae69828754058633",
+  "v7VisualParserBasis": "src/Edulytics.Web/Presentation/LessonPresentationParser.cs (read-only): MeasuredPath requires exactly three labeled marks and two labeled distances; DoubleNumberLine requires a labeled top and bottom line with at least two numeric axis values. Grade6 U02:L09 now contains three first-party Description: records in workedExamples; actual compiled parser/renderer and VisualContractTests pass NOT_RUN on current head.",
+  "v7CiPriorHeadEvidence": {
+    "sha": "4eb76400515ebdd4f4ff585e931916562478beed",
+    "completed": {
+      "success": 10,
+      "failure": 6,
+      "skipped": 2
+    },
+    "actualRootCauses": [
+      "two shared Rich V2 tests expected 318 vs actual 326",
+      "U01 L02 / U02 L09 visual contract",
+      "original-data parity 147 changed source lesson bodies newlyApproved 0"
+    ],
+    "afterAuthoringCommitCI": "NOT_VERIFIED_ON_CURRENT_SHA"
+  }
 }
