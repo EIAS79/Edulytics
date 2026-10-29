@@ -480,10 +480,10 @@
       "Title": "Represent Volume with Expressions PLC Activity",
       "ExplanationParagraphs": [
         "Goal: represent the same composite solid's volume with more than one valid expression, including adding non-overlapping prism parts and subtracting a missing rectangular part from a surrounding larger prism.",
-        "Warm-up: imagine an L-shaped volume made of two box-like pieces. Discuss whether its shape could be described as a filled rectangular block with a smaller cut-out, or as two joined rectangular prisms. Both interpretations require precise dimensions.",
+        "Warm-up — Notice and Wonder (public source 2021): examine two original text representations of the SAME stepped solid. One shows a yellow lower prism with 10-foot horizontal span and 3-foot depth plus a blue 5-by-3-by-5-foot upper part; the joined solid has overall height 8 feet. The alternate representation cuts vertically rather than horizontally. Ask what is alike or different about their dimensions, and do not equate matching products with identical geometry without checking the shared boundaries.",
         "Activity 1 — compare expressions: in an original example, start with a 5 × 5 × 5 cube and remove a rectangular 2 × 3 × 5 block. The volume is 125−30=95. Alternatively show the same volume as (3 × 5 × 5) + (2 × 2 × 5) = 75+20=95, after verifying those two regions form a disjoint partition of the remaining space.",
-        "Activity 2 — draw two decompositions: use a grid or a text-based layer description to compare different cuts of the same stepped solid, then produce both matching expressions and explain which dimensions each represents. Include any missing length inferred by subtraction from the full bounding dimensions.",
-        "Source and teacher assessment: the 2021 source explicitly asks for multiple decompositions and expressions, including subtraction from a whole block. Choosing only the numeric result is insufficient when the source requires a diagram and proof that the decompositions represent the same space. Gated Cool-down and publisher pictures are not reproduced."
+        "Activity 2 — source-measured two cuts and subtractive expression: use a 10-foot wide, 8-foot high, 3-foot deep stepped solid. Its right end reaches 4 feet high over 6 feet of width; infer left section width 10−6=4 feet and top extension height 8−4=4 feet. One valid vertical split is (4×8×3)+(6×4×3)=96+72=168 cubic feet. A horizontal split is (10×4×3)+(4×4×3)=120+48=168 cubic feet. Mai's bounding-prism approach is (10×8×3)−(6×4×3)=240−72=168 cubic feet. Have partners DRAW two DIFFERENT non-overlapping partitions and explain why the three equations describe precisely the same occupied region; numerical agreement alone is not enough.",
+        "Source and teacher assessment: the 2021 activity first compares 95-cube-unit additive/subtractive expressions, then asks for the 168-ft³ physical shape in two decompositions and a critique of Mai's subtraction. A complete response describes where each factor occurs in the actual drawing, derives unknown lengths (4 feet each), preserves cubic feet and compares strategies. The publicly accessible original 2021 teacher lesson/preparation HTML with embedded Student Facing text was inspected read-only on approved Our-CS; separate Student Task PDF, publisher figures/cards, restricted response and Cool-down remain not independently verified or reproduced."
       ],
       "KeyConcepts": [
         {
@@ -503,6 +503,12 @@
           "Definition": "Two correct decompositions must count exactly the same occupied space.",
           "Rule": "Compare the physical regions, not just arithmetic coincidence.",
           "Example": "(3×5×5)+(2×2×5) = (5×5×5)−(2×3×5)."
+        },
+        {
+          "Title": "Three valid expressions for one measured step solid",
+          "Definition": "The same 10-by-8-by-3-foot bounding region can be represented by two nonoverlapping additive partitions or by subtracting the missing corner.",
+          "Rule": "(4×8×3)+(6×4×3)=(10×4×3)+(4×4×3)=(10×8×3)−(6×4×3)=168.",
+          "Example": "96+72=120+48=240−72=168 ft³."
         }
       ],
       "WorkedExamples": [
@@ -541,6 +547,31 @@
           ],
           "Answer": "The valid expression uses subtraction and has volume 95 cubic units.",
           "Check": "Adding the absent piece would incorrectly count space that is not occupied."
+        },
+        {
+          "Title": "Two decompositions of measured prism with inferred 4-foot edges",
+          "Question": "A stepped solid is 10 ft wide, 8 ft high and 3 ft deep; its lower right 6-ft section rises 4 ft. Find two additive volume expressions.",
+          "Method": "Compare the same solid as a vertical or a horizontal partition without overlapping regions.",
+          "Steps": [
+            "Infer the left section width: 10−6=4 ft, and extra top height: 8−4=4 ft.",
+            "Vertical split: 4×8×3 + 6×4×3 = 96 + 72.",
+            "Horizontal split: 10×4×3 + 4×4×3 = 120 + 48.",
+            "Compare both partitions and label cubic feet."
+          ],
+          "Answer": "168 cubic feet for both decompositions.",
+          "Check": "The two decompositions cover the same three-dimensional occupied cubes without gaps or overlaps, despite using different addends."
+        },
+        {
+          "Title": "Explain Mai's bounding subtraction",
+          "Question": "Why does (10×8×3)−(6×4×3) represent the volume of the measured stepped solid?",
+          "Method": "Subtract the unoccupied corner prism from the complete bounding prism.",
+          "Steps": [
+            "The full 10×8×3 bounding box would contain 240 one-foot cubes.",
+            "The absent upper right 6×4×3 corner contains 72 one-foot cubes.",
+            "Remove the missing 72 to obtain 168, then connect the cut to each additive partition."
+          ],
+          "Answer": "240−72=168 cubic feet.",
+          "Check": "Subtracting is valid only because the missing prism lies fully inside the bounding box; adding it would be wrong."
         }
       ],
       "CommonMistakes": [
@@ -553,11 +584,22 @@
           "Mistake": "Write an expression with no geometric partition",
           "WhyWrong": "Equal numerical values do not alone certify a shape decomposition.",
           "Correction": "Show the side lengths and occupied region for each product."
+        },
+        {
+          "Mistake": "Assume the second measured shape is just the earlier 95-cube-unit figure",
+          "WhyWrong": "The 168-ft³ source activity has explicitly different lengths and physical feet units.",
+          "Correction": "Reconstruct from 10,8,6,4 and3 feet and compare the two measured cuts."
+        },
+        {
+          "Mistake": "Add the missing corner or count an overlapping region twice",
+          "WhyWrong": "Empty space in a bounding solid is subtracted, while two additive prisms must be disjoint.",
+          "Correction": "Use either disjoint partitions or subtract the 72-ft³ missing upper right corner from 240 ft³."
         }
       ],
       "SummaryPoints": [
         "A composite solid may be represented by summing disjoint parts or subtracting an empty part from a bounding prism.",
         "Equivalent numerical expressions must correspond to the same volume in cubic units.",
+        "For the source-measured figure, 96+72=120+48=240−72=168 ft³; the two missing segments are each 4 ft.",
         "Original student decomposition and justification remain teacher-assessed.",
         "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 10; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-10/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
       ],
@@ -593,6 +635,53 @@
               "Cells": [
                 "No overlap",
                 "Correct missing region"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Three expressions for one 168-foot-cubed step solid",
+          "Description": "First-party accessible descriptions of the source mathematical lengths and exact cuts; actual source artwork not copied.",
+          "Rows": [
+            {
+              "Label": "Boundary dimensions",
+              "Cells": [
+                "10 ft wide, 8 ft high, 3 ft deep; right part 6 ft wide and4 ft high"
+              ]
+            },
+            {
+              "Label": "Inferred dimensions",
+              "Cells": [
+                "Left section 10−6=4 ft; upper extension 8−4=4 ft"
+              ]
+            },
+            {
+              "Label": "Vertical two-prism split",
+              "Cells": [
+                "4×8×3=96 ft³",
+                "6×4×3=72 ft³"
+              ]
+            },
+            {
+              "Label": "Horizontal two-prism split",
+              "Cells": [
+                "10×4×3=120 ft³",
+                "4×4×3=48 ft³"
+              ]
+            },
+            {
+              "Label": "Bounding subtraction",
+              "Cells": [
+                "10×8×3=240 ft³",
+                "Subtract6×4×3=72 ft³"
+              ]
+            },
+            {
+              "Label": "Equal final volume",
+              "Cells": [
+                "168 ft³",
+                "168 ft³"
               ]
             }
           ]
