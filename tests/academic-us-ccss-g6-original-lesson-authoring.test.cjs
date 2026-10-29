@@ -1245,7 +1245,7 @@ test('U03 L08–L11 independent oracles retain motion direction, exact ranking a
   assert.ok(close(75/12,6.25));
   assert.ok(close(8*(75/12),50));
   assert.ok(close(30*(12/75),4.8));
-  assert.deepEqual([0,1,2,3].map(h=>24-(3+3.4)*h),[24,17.6,11.2,4.800000000000001].map(x=>Number(x.toFixed(10))));
+  assert.ok([0,1,2,3].every((h,i)=>close(24-(3+3.4)*h,[24,17.6,11.2,4.8][i])));
   assert.ok(close(24/(3+3.4),3.75));
   assert.ok(close(24/2.5-3.4,6.2));
   assert.ok(close(6*3.75,22.5));
