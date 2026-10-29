@@ -1,0 +1,619 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u06-l12-l16-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L12",
+      "CultureCode": "en",
+      "Title": "Solve Problems",
+      "ExplanationParagraphs": [
+        "Goal: use different strategies to add and subtract fractions with unlike denominators in MULTI-STEP real-world situations, estimate reasonableness and explain each step in context. The 2021 source's salad dressing task also asks whether the estimate means exactly or about a given amount.",
+        "Warm-up: compare 2/3 and3/4 using twelfths; both are less than one cup but together exceed one. Discuss whether a recipe total must be exact and which estimates convey enough useful precision.",
+        "Activity 1 — original recipe: combine 3/4 cup oil,1/3 cup vinegar and1/6 cup citrus. Convert to twelfths 9/12+4/12+2/12=15/12=1 1/4 cups. If the cook has a 1 1/2-cup bottle, 1/4 cup of capacity remains. Compare 'about one and a quarter' with an exact expression; a learner must justify a plausible estimate before computation.",
+        "Activity 2 — choose one context: hiker A travels 1 3/4 miles, then2/5 mile; the total is43/20=2 3/20 miles. If the route is 3 miles, 17/20 mile remains. In another original food task, 1/2 cup nuts plus1/3 cup nuts makes5/6 cup; to reach1 1/4 cups the cook needs5/12 cup more. Partners explain which equations represent each stage and why their units remain consistent.",
+        "Teacher boundary: source asks for estimation, explaining recipe quantities and two alternate story solutions. A numeric answer cannot auto-pass whether an estimate is reasonable or a partner communicated the context faithfully."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Add unlike fractions in one context",
+          "Definition": "Combine measurements after renaming as equal-sized parts of the same unit.",
+          "Rule": "3/4+1/3+1/6=15/12=1 1/4.",
+          "Example": "All amounts are cups of liquid."
+        },
+        {
+          "Title": "Follow-up subtraction",
+          "Definition": "A multi-step problem may require a total and a remaining amount.",
+          "Rule": "1 1/2−1 1/4=1/4.",
+          "Example": "A bottle's unused capacity is a positive difference."
+        },
+        {
+          "Title": "Estimate separately from calculate",
+          "Definition": "A reasonable benchmark helps evaluate magnitude without falsely claiming exactness.",
+          "Rule": "3/4+1/3+1/6 is a little greater than 1.",
+          "Example": "The exact sum is 1 1/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Salad dressing",
+          "Question": "Combine 3/4,1/3,1/6 cups.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Use twelfths to rename all three measures.",
+            "Add9+4+2=15 twelfths.",
+            "Regroup and keep the cup unit."
+          ],
+          "Answer": "1 1/4 cups.",
+          "Check": "15/12=5/4."
+        },
+        {
+          "Title": "Bottle remainder",
+          "Question": "How much capacity remains in a1 1/2-cup bottle?",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Use recipe volume 1 1/4 cups.",
+            "Convert to quarters:6/4−5/4.",
+            "Interpret the remaining part of a cup."
+          ],
+          "Answer": "1/4 cup.",
+          "Check": "5/4+1/4=3/2."
+        },
+        {
+          "Title": "Trail remaining",
+          "Question": "A hiker travels 1 3/4 miles, then2/5. How far remains in three miles?",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Convert1 3/4+2/5=35/20+8/20=43/20.",
+            "Express full trail3 miles as60/20.",
+            "Subtract43/20 from60/20."
+          ],
+          "Answer": "17/20 mile.",
+          "Check": "Travelled 2 3/20 plus remaining17/20 equals3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add denominators as though they were counts of like pieces",
+          "WhyWrong": "Thirds and fourths are unequal pieces.",
+          "Correction": "Rename each measure with a common denominator first."
+        },
+        {
+          "Mistake": "Call an estimate the exact volume or distance",
+          "WhyWrong": "A benchmark does not establish the precise fractional value.",
+          "Correction": "Label estimates approximate, then show exact equal-part calculation."
+        }
+      ],
+      "SummaryPoints": [
+        "Use equivalent fractions and multiple stages to solve real situations.",
+        "Connect the final sum and difference to their physical units.",
+        "Estimation, source story interpretation and group reasoning are teacher-reviewed.",
+        "IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 12: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-12/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Solve Problems — original model",
+          "Description": "First-party accessible mathematical table, not publisher graphics or activity cards.",
+          "Rows": [
+            {
+              "Label": "Recipe",
+              "Cells": [
+                "Oil",
+                "Vinegar",
+                "Citrus",
+                "Total"
+              ]
+            },
+            {
+              "Label": "Cups",
+              "Cells": [
+                "3/4",
+                "1/3",
+                "1/6",
+                "1 1/4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L13",
+      "CultureCode": "en",
+      "Title": "Put It All Together: Add and Subtract Fractions",
+      "ExplanationParagraphs": [
+        "Goal: critique claims about common denominators, distinguish invalid choices from two valid choices, and flexibly select convenient equivalent forms to add and subtract fractions. The original source contrasts denominators 18,24 and48 for6ths and8ths.",
+        "Warm-up: list multiples of6 and8. The first positive common multiple is24; 48 is also a common multiple, while18 is not divisible by8. Explain why using18 would force non-integer rescaling of eighths, so it cannot be the common denominator in the usual equivalent-fraction strategy.",
+        "Activity 1 — critique three learners: find 2/3+3/8. One student proposes denominator18, another24, another48. Denominator18 is not a multiple of8; 24 gives16/24+9/24=25/24;48 gives32/48+18/48=50/48=25/24. Students explain why both24 and48 work but24 is simpler.",
+        "Activity 2 — compare strategies: find 3/5+4/15 using fifteenths to get9/15+4/15=13/15. Find6/5−1/3 as18/15−5/15=13/15. For 4/7+5/6, denominator42 yields24/42+35/42=59/42. A partner chooses another valid common multiple and explains why the quotient stays equal.",
+        "Teacher boundary: the source asks whom the student agrees with, alternative denominator choices and written critique. Correct numeric sums are supporting evidence only; the reasons given for accepting or rejecting a denominator need teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common denominator test",
+          "Definition": "A common denominator is a positive multiple of every original denominator.",
+          "Rule": "24 and48 are multiples of6 and8;18 is not.",
+          "Example": "Use24 if convenient."
+        },
+        {
+          "Title": "Two valid equivalent calculations",
+          "Definition": "Changing numerator and denominator together preserves amount.",
+          "Rule": "2/3+3/8=16/24+9/24=25/24.",
+          "Example": "Using48 gives50/48."
+        },
+        {
+          "Title": "Choosing an efficient scale",
+          "Definition": "The least common multiple is often simpler than the full denominator product.",
+          "Rule": "3/5+4/15=9/15+4/15.",
+          "Example": "13/15."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Critique denominator choices",
+          "Question": "For2/3+3/8 compare proposed18,24,48.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Check divisibility by3 and8.",
+            "Reject18 because it is not divisible by8.",
+            "Use24 or48 to rename the fractions."
+          ],
+          "Answer": "24 and48 are valid; sum25/24.",
+          "Check": "16/24+9/24=25/24."
+        },
+        {
+          "Title": "Use denominator already available",
+          "Question": "Find3/5+4/15.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Fifteenths are a common unit because15 is divisible by5.",
+            "Rename3/5 as9/15.",
+            "Add four fifteenths."
+          ],
+          "Answer": "13/15.",
+          "Check": "13/15−4/15=9/15."
+        },
+        {
+          "Title": "Use a product common multiple",
+          "Question": "Find4/7+5/6.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Use42 because7×6=42.",
+            "Rename4/7 as24/42 and5/6 as35/42.",
+            "Add the like units."
+          ],
+          "Answer": "59/42=1 17/42.",
+          "Check": "59/42−35/42=24/42."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Accept any even number as a common denominator",
+          "WhyWrong": "A common denominator must be divisible by both original denominators.",
+          "Correction": "Test multiples of both 3 and8, not parity alone."
+        },
+        {
+          "Mistake": "Assume only the smallest denominator gives a correct sum",
+          "WhyWrong": "Any positive common multiple works with proper numerator scaling.",
+          "Correction": "Compare24 and48 calculations and reduce both."
+        }
+      ],
+      "SummaryPoints": [
+        "Evaluate denominator claims using exact divisibility.",
+        "Different correct choices preserve an equivalent result.",
+        "Teacher evaluates reasoning, not just numerical fraction sums.",
+        "IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 13: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-13/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Put It All Together: Add and Subtract Fractions — original model",
+          "Description": "First-party accessible mathematical table, not publisher graphics or activity cards.",
+          "Rows": [
+            {
+              "Label": "For 2/3+3/8",
+              "Cells": [
+                "18",
+                "24",
+                "48"
+              ]
+            },
+            {
+              "Label": "Valid common denominator?",
+              "Cells": [
+                "No",
+                "Yes",
+                "Yes"
+              ]
+            },
+            {
+              "Label": "Converted sum",
+              "Cells": [
+                "Not both integer equivalent parts",
+                "16/24+9/24",
+                "32/48+18/48"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "—",
+                "25/24",
+                "50/48"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L14",
+      "CultureCode": "en",
+      "Title": "Representing Fractions on a Line Plot",
+      "ExplanationParagraphs": [
+        "Goal: construct, label and INTERPRET a line plot with fractional values in halves, quarters and eighths, and use fraction addition on a partner spinner's actual outcomes. The original lesson has a physical two-spin game and then a line plot of measured egg weights. A calculation alone cannot substitute for recording real outcomes.",
+        "Warm-up: draw an original number line from zero to two with eighth-sized tick marks. Ask students where 1/4,1/2,3/4,1 1/8 and1 7/8 sit and require equal spacing. Mark numbers first, then X's for repeated values.",
+        "Activity 1 — first-party simulation demonstration only: spinner fractions are1/4,1/2,3/4. In five hypothetical two-spin rounds choose (1/4,1/2), (1/2,1/2), (1/4,3/4), (3/4,3/4), (1/2,3/4). Totals are3/4,1,1,1 1/2,1 1/4, giving one X at3/4, two at1, one at1 1/4 and one at1 1/2. The authentic task still requires learner-generated spinner outcomes; hypothetical outcomes are not scored as real student records.",
+        "Activity 2 — egg weights example: a fictional collection of eight eggs has weights1 1/2,1 5/8,1 5/8,1 3/4,1 7/8,1 7/8,1 7/8,2 ounces. Label a line plot from1 1/2 to2 in eighths. There are three eggs at1 7/8, or3/8 of the egg count, while each weighs1 7/8 ounces. Distinguish 'three eighths of the eggs' (fraction of count) from 'one and seven eighths ounces' (measurement).",
+        "Teacher boundary: students physically spin, choose the plot scale, construct X stacks, and critique a statement mixing weight fractions and count fractions. These drawings, observation data and explanations are teacher-reviewed; numerical counts alone are only subchecks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Line plot labels and X counts",
+          "Definition": "Each X represents one observed or simulated datum, plotted over its exact fractional measurement.",
+          "Rule": "Five rounds give two X's at one whole and one X at three other totals.",
+          "Example": "Use equal eighth tick spacing."
+        },
+        {
+          "Title": "Fraction of observations vs measured fraction",
+          "Definition": "A fraction of a dataset's COUNT differs from a fractional measurement.",
+          "Rule": "3/8 of eggs by count weigh1 7/8 ounces each.",
+          "Example": "These two fractions refer to different wholes."
+        },
+        {
+          "Title": "Add spin fractions with common parts",
+          "Definition": "Each round's total is the sum of two independently selected fractional positions.",
+          "Rule": "1/2+3/4=5/4=1 1/4.",
+          "Example": "The plot labels that exact point."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Record five hypothetical spins",
+          "Question": "Find totals for (1/4,1/2),(1/2,1/2),(1/4,3/4),(3/4,3/4),(1/2,3/4).",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Convert to fourths as needed and add each pair.",
+            "Count occurrences of each total.",
+            "Plot X marks at the exact corresponding fractional positions."
+          ],
+          "Answer": "3/4 once, 1 twice, 1 1/4 once, 1 1/2 once.",
+          "Check": "One plus two plus one plus one equals five rounds."
+        },
+        {
+          "Title": "Read egg frequencies",
+          "Question": "Eight fictional egg weights include three at1 7/8 oz. What fraction of eggs has that weight?",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Count eight total observations.",
+            "Count three X's at1 7/8.",
+            "Form a fraction of the number of eggs, not their ounces."
+          ],
+          "Answer": "3/8 of the eggs.",
+          "Check": "The measurement of each of those eggs is1 7/8 ounces."
+        },
+        {
+          "Title": "Choose an eighth scale",
+          "Question": "Where is1 5/8 compared with1 1/2 and1 7/8?",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Write1 1/2=1 4/8.",
+            "Mark1 5/8 one eighth to the right.",
+            "Mark1 7/8 two eighths farther to the right."
+          ],
+          "Answer": "1 1/2 <1 5/8<1 7/8.",
+          "Check": "Tick intervals must each represent1/8."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use a random-size gap for each eighth tick",
+          "WhyWrong": "Line-plot numeric scale must be linear and evenly spaced.",
+          "Correction": "Label tick intervals uniformly before adding data."
+        },
+        {
+          "Mistake": "Present hypothetical spinner data as the student's authentic rounds",
+          "WhyWrong": "Authentic gameplay requires the learner's observed outcomes.",
+          "Correction": "Keep examples clearly synthetic and review real recorded spins."
+        }
+      ],
+      "SummaryPoints": [
+        "Use repeated X's at correct fractional tick positions on a line plot.",
+        "Distinguish frequency fractions from fractional weights.",
+        "Physical gameplay, plot design and interpretive claims require teacher assessment.",
+        "IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 14: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-14/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Representing Fractions on a Line Plot — original model",
+          "Description": "First-party accessible mathematical table, not publisher graphics or activity cards.",
+          "Rows": [
+            {
+              "Label": "Plot value",
+              "Cells": [
+                "3/4",
+                "1",
+                "1 1/4",
+                "1 1/2"
+              ]
+            },
+            {
+              "Label": "Frequency in sample rounds",
+              "Cells": [
+                "1",
+                "2",
+                "1",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L15",
+      "CultureCode": "en",
+      "Title": "Problem Solving with Line Plots",
+      "ExplanationParagraphs": [
+        "Goal: recover missing data and answer questions about fractional line plots through an INFORMATION GAP with a partner. The source's incomplete fruit plots deliberately conceal essential information and require pupils to ask increasingly specific questions, not guess a single numeric result.",
+        "Warm-up: identify that an original eighth-scale chart from1 to2 1/2 ounces can represent multiple fruit observations. A student must know tick value, frequency and whether entries are missing before concluding the heaviest or most common measurement.",
+        "Activity 1 — first-party information gap: Student A has a fruit-weight question with the plot showing1 1/4oz twice and1 1/2oz once but no complete data. Student B holds a hidden card: two more apricots weighed1 3/4oz and one weighed2oz. Student A must ASK for remaining observations, then complete the plot: frequencies at1 1/4 two,1 1/2 one,1 3/4 two,2 one. The heaviest weight is2oz; the most common weight has a tie at1 1/4 and1 3/4. The tie is intentional and must not be silently flattened into one 'mode'.",
+        "Activity 2 — aggregate and fraction-of-data context: six fruits in that original sample weigh2×1 1/4+1 1/2+2×1 3/4+2=9 1/2 ounces, less than one pound (16oz). Two fruits of six are at1 3/4, or one third of observations. Distinguish two 1 3/4-oz fruit from a one-third share of the whole weight; a teacher checks the represented counts and reasoned question.",
+        "Teacher boundary: the source asks partner to request necessary data, refine a question, draw a full line plot and analyze aggregate weight. The final 2oz or9 1/2oz arithmetic cannot certify the communication activity. No published information-gap cards or student images copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Missing observations prevent unique findings",
+          "Definition": "An incomplete line plot cannot determine a mode, maximum or total without the relevant missing data.",
+          "Rule": "Request exact missing weights or frequencies before drawing conclusions.",
+          "Example": "The information gap is the core source task."
+        },
+        {
+          "Title": "Fractional plot frequencies",
+          "Definition": "Each X contributes exactly one fruit at the labeled weight.",
+          "Rule": "Two values at1 1/4 and two at1 3/4 create a two-way tie for mode.",
+          "Example": "Do not invent a single mode."
+        },
+        {
+          "Title": "Weighted total",
+          "Definition": "The total mass is the sum of (weight×frequency) across all labels.",
+          "Rule": "2×1 1/4+1 1/2+2×1 3/4+2=9 1/2oz.",
+          "Example": "One pound equals16oz in the mass context."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Ask for missing data",
+          "Question": "Can a pupil tell the exact heaviest apricot if a plot omits three observations?",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Notice the plot is incomplete.",
+            "Request the unreported weights from the partner.",
+            "Do not infer a maximum until all data are known."
+          ],
+          "Answer": "No. Ask for the missing weights first.",
+          "Check": "The missing set may contain a value higher than all visible weights."
+        },
+        {
+          "Title": "Find modes and maximum",
+          "Question": "Full data:1 1/4 twice,1 1/2 once,1 3/4 twice,2 once.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Count occurrences for each weight.",
+            "Find the maximum numeric weight2.",
+            "Identify both categories sharing the highest frequency2."
+          ],
+          "Answer": "Maximum2oz; modes tie at1 1/4 and1 3/4oz.",
+          "Check": "Teacher checks both modal positions and correct X's."
+        },
+        {
+          "Title": "Total weight",
+          "Question": "Compute the mass of the six fruits.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Multiply each weight by its frequency.",
+            "Add2.5+1.5+3.5+2.",
+            "Compare with16oz per pound."
+          ],
+          "Answer": "9 1/2 oz, less than one pound.",
+          "Check": "No overlap in observations and every fruit counted once."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Select one of two modal weights as the unique mode",
+          "WhyWrong": "Equal highest frequencies produce tied modes.",
+          "Correction": "Report both values and explain the equal X counts."
+        },
+        {
+          "Mistake": "Invent data from an intentionally incomplete line plot",
+          "WhyWrong": "The information-gap task is about asking for needed information.",
+          "Correction": "Request real card values before scoring a result."
+        }
+      ],
+      "SummaryPoints": [
+        "A complete line plot requires every datum and an accurately labeled fractional scale.",
+        "The heaviest, most frequent and total mass are distinct questions.",
+        "Teacher reviews information-gap questioning and plot construction.",
+        "IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 15: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-15/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Problem Solving with Line Plots — original model",
+          "Description": "First-party accessible mathematical table, not publisher graphics or activity cards.",
+          "Rows": [
+            {
+              "Label": "Weight (oz)",
+              "Cells": [
+                "1 1/4",
+                "1 1/2",
+                "1 3/4",
+                "2"
+              ]
+            },
+            {
+              "Label": "Frequency",
+              "Cells": [
+                "2",
+                "1",
+                "2",
+                "1"
+              ]
+            },
+            {
+              "Label": "Weight subtotal (oz)",
+              "Cells": [
+                "2 1/2",
+                "1 1/2",
+                "3 1/2",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L16",
+      "CultureCode": "en",
+      "Title": "Compare Products",
+      "ExplanationParagraphs": [
+        "Goal: compare a positive quantity multiplied by a fraction less than one, equal to one or greater than one WITHOUT treating every comparison as a long arithmetic problem. The 2021 source presents physical trail-distance fractions and asks children to construct their OWN valid fractions in inequalities.",
+        "Warm-up: picture a six-mile trail with a marked portion shorter than the whole. A one-half factor selects3 miles; a five-fourths factor selects a distance extending past the original six-mile path if the context permits. Explain the difference between a fraction of a whole and distance beyond the original trail.",
+        "Activity 1 — trail fractions: compare5/6 of a six-mile trail with7/6 of the same trail. The first is5 miles, the second7 miles, but the main conceptual evidence is that5/6<1 and7/6>1. Now compare three runners taking1/2,3/4 and5/4 of a four-mile route; predict ordering from fractions before computing2,3,5 miles.",
+        "Activity 2 — choose a numerator: complete n/9×36<36 with several valid positive integer numerators n=1,4,8; choose n=9 to obtain equality and n=10 to exceed36. Explain why ANY proper positive fraction reduces the value of a positive fixed whole, but changing signs or zero requires separate analysis not supplied by the original context.",
+        "Teacher boundary: source requires comparisons, a chosen missing numerator and explanatory claims about multiplier size, including drawings or partner dialogue. Numeric distances are supporting checks; teacher reviews the mathematical generalization."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fraction below one shrinks a positive factor",
+          "Definition": "For a positive a, multiplying by positive f<1 yields 0<fa<a.",
+          "Rule": "4×3/4=3<4.",
+          "Example": "Fewer than all equal parts of a full distance."
+        },
+        {
+          "Title": "Fraction above one increases positive factor",
+          "Definition": "A positive fraction greater than one produces a product above the original positive quantity.",
+          "Rule": "4×5/4=5>4.",
+          "Example": "A part-plus-extra amount is greater."
+        },
+        {
+          "Title": "One is unchanged",
+          "Definition": "Multiplying by one preserves the original quantity.",
+          "Rule": "9/9×36=36.",
+          "Example": "A numerator matching positive denominator selects the whole."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare without calculation",
+          "Question": "Order1/2,3/4,5/4 of a positive four-mile route.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Compare the fractions to one and to each other.",
+            "Use their order1/2<3/4<5/4.",
+            "Multiply four by each only as confirmation."
+          ],
+          "Answer": "2mi<3mi<5mi.",
+          "Check": "Teacher reviews the comparison argument."
+        },
+        {
+          "Title": "Choose several valid fractions",
+          "Question": "Find positive integer n such that n/9×36<36.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Recognize n/9 must be below one.",
+            "Choose n between1 and8 inclusive.",
+            "Give several examples and contrast n=9, n=10."
+          ],
+          "Answer": "For example n=1,4 or8.",
+          "Check": "n=9 yields36; n=10 yields40."
+        },
+        {
+          "Title": "Above-one fraction",
+          "Question": "Find7/6 of a six-mile course.",
+          "Method": "First-party mathematically equivalent model; human reviews drawings, communication and choices.",
+          "Steps": [
+            "Recognize7/6=1+1/6.",
+            "Compute one whole six miles plus one more sixth of it.",
+            "Compare with the original six."
+          ],
+          "Answer": "7 miles.",
+          "Check": "7/6×6=7>6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claim multiplication always makes a positive number bigger",
+          "WhyWrong": "A factor below one produces a smaller positive result.",
+          "Correction": "Compare multiplier with one before predicting size."
+        },
+        {
+          "Mistake": "Select only one valid numerator when the task permits many",
+          "WhyWrong": "Several fractions below one satisfy the inequality.",
+          "Correction": "State a valid range and illustrate multiple choices."
+        }
+      ],
+      "SummaryPoints": [
+        "The multiplier's relationship to one predicts the size of a positive product.",
+        "Original contexts often allow multiple correct fraction choices.",
+        "Teacher reviews fractional diagrams and generalization reasoning.",
+        "IM K–5 (2021 first edition), Grade 5 Unit 6 Lesson 16: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-16/lesson.html. Student Facing and teacher activities read-only reviewed on verified Our-CS. Gated teacher responses and original separate Student Task PDFs not checked; original examples and accessible tables by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Compare Products — original model",
+          "Description": "First-party accessible mathematical table, not publisher graphics or activity cards.",
+          "Rows": [
+            {
+              "Label": "Factor",
+              "Cells": [
+                "1/2",
+                "3/4",
+                "1",
+                "5/4"
+              ]
+            },
+            {
+              "Label": "Times4mi",
+              "Cells": [
+                "2mi",
+                "3mi",
+                "4mi",
+                "5mi"
+              ]
+            },
+            {
+              "Label": "Relative to4",
+              "Cells": [
+                "Less",
+                "Less",
+                "Equal",
+                "More"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
