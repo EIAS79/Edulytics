@@ -1004,3 +1004,56 @@ test('U02 L10–L12 independent numeric oracles reject common non-equivalent-rat
   assert.ok(Math.abs(18 * 2.1 - 37.8) < 1e-10);    // wages
   assert.equal(32 / 128, 0.25);                   // historical $/GB
 });
+
+
+test('U02 L13–L15 preserve public student/teacher tasks without claiming completed runtime grading', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l13-l15-original-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(evidence.summary.publicStudentAndTeacherBodiesReviewed, 3);
+  assert.equal(evidence.summary.activitiesCompared, 11);
+  assert.equal(evidence.summary.fullStageAAccepted, 0);
+  assert.deepEqual(evidence.lessons.map(x => x.lessonCode), [13,14,15].map(n => lcode(2,n)));
+  for (const lesson of evidence.lessons) {
+    assert.ok(lesson.sourceTaskExpectations.length >= 3, lesson.lessonCode);
+    assert.ok(lesson.firstPartyCandidateTeachingEvidence.length >= 3, lesson.lessonCode);
+    assert.equal(lesson.teacherRubricCandidate.implemented, false);
+    assert.equal(lesson.teacherRubricCandidate.persisted, false);
+    assert.equal(lesson.renderedAccessibilityVerified, false);
+    assert.equal(lesson.actualSelectedPracticeVerified, false);
+    assert.equal(lesson.academicAcceptance, 'NOT_ACCEPTED');
+  }
+  const a = byCode.get(lcode(2,13)).translations[0].workedExamples;
+  const b = byCode.get(lcode(2,14)).translations[0].workedExamples;
+  const c = byCode.get(lcode(2,15)).translations[0].workedExamples;
+  assert.match(a, /3,000 m requires 600 s/);
+  assert.match(a, /400 seconds/);
+  assert.match(a, /125 s/);
+  assert.match(a, /Description: Double number line/);
+  assert.match(b, /separation is 20 miles/);
+  assert.match(b, /order is Diego, Elena, Lin/);
+  assert.match(b, /13\.5 cups/);
+  assert.match(c, /50 red and 30 blue/);
+  assert.match(c, /21, 14 and 7 cups/);
+  assert.match(c, /112\.5 cups/);
+  assert.match(c, /Teacher reviews/);
+});
+
+test('U02 L13–L15 mathematical oracle checks preserve units and limiting resources', () => {
+  assert.equal(150 / 2, 75);
+  assert.equal(150 / 4, 37.5);
+  assert.equal(150 / 8, 18.75);
+  assert.equal(3000 / (100 / 20), 600);
+  assert.equal(3000 / (150 / 20), 400);
+  assert.equal(3000 / (360 / 15), 125);
+  assert.equal((65 - 60) * 4, 20);
+  assert.equal(9 * 3 / 2, 13.5);
+  assert.equal((270 - 54) / (54 / 3), 12);
+  assert.equal((325 - 100) / (100 / 4), 9);
+  assert.equal((480 - 160) / (160 / 5), 10);
+  assert.equal((5 + 3) * 10, 80);
+  assert.equal(5 * 10, 50);
+  assert.equal(3 * 10, 30);
+  assert.deepEqual([3, 2, 1].map(x => x * (42/6)), [21,14,7]);
+  assert.equal((4 + 3 + 2) * (30 / 3), 90);
+  assert.equal(Math.min(50/4,40/3,30/2) * (4+3+2), 112.5);
+});
