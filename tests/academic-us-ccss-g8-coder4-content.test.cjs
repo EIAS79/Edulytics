@@ -218,3 +218,42 @@ test('V8 fetched authentic student and teacher lesson activity structures for al
  assert.equal(proof.sourceEvidence.visualSourceInspectionPriority,true);
  assert.equal(proof.candidate.richV2VisualCount,0);
 });
+
+test('V9 activity-scoped publisher figure, cool-down and role evidence has 131 intact lesson identities with no false A-D promotions',()=>{
+ const activity=read('docs/curriculum/us-ccss-g8-coder4-v9-activity-figure-inventory-20261029.json');
+ const ledger=read('docs/curriculum/us-ccss-g8-coder4-v9-acceptance-ledger-20261029.json');
+ assert.equal(activity.counts.lessons,131);
+ assert.equal(activity.counts.studentActivities,411);
+ assert.equal(activity.counts.lessonsWithUniqueSourceFigures,113);
+ assert.equal(activity.counts.teacherOnlyActivityHeadings,117);
+ assert.equal(activity.counts.studentOnlyActivityHeadings,0);
+ assert.equal(activity.counts.totalActivityFigureOccurrences,339);
+ assert.equal(ledger.counts.sourceRoleDiscrepancyDecisions,22);
+ assert.equal(ledger.counts.lessonsWithFirstPartyRichV2Visuals,1);
+ assert.equal(ledger.counts.sourceTeacherOnlyActivities,117);
+ assert.deepEqual(ledger.rows.map(r=>r.lessonCode),bp.Lessons.map(l=>l.LessonCode));
+ const seen=new Set();
+ for(const row of ledger.rows){
+  assert.ok(!seen.has(row.lessonCode));seen.add(row.lessonCode);
+  assert.equal(row.status,'BLOCKED_WITH_CAUSE');
+  assert.equal(row.A,'NOT_ACCEPTED');assert.equal(row.B,'NOT_ACCEPTED');
+  assert.equal(row.C,'NOT_VERIFIED');assert.equal(row.D,'NOT_VERIFIED');
+  assert.ok(row.source.activityCount>0);
+  assert.ok(row.source.activityEvidence.every(a=>a.title&&a.bodySha256.length===64));
+  assert.equal(row.practice.securePersistedStudentAttemptVerified,false);
+  assert.equal(row.figures.effectiveBrowserFigureRenderingVerified,false);
+  assert.equal(row.figures.independentlyAccessibleSourceParityVerified,false);
+  if(row.standardsRoles.hasDiscrepancy)assert.equal(row.standardsRoles.ownerApproved,false);
+ }
+ const lesson=by.get('PED:US-CCSS-MATH:G8:U03:L12');
+ assert.equal(lesson.Visuals.length,2);
+ const table=lesson.Visuals.find(v=>v.Kind==='RatioTable');
+ assert.ok(table);assert.match(table.Description,/two-variable linear equation/i);
+ const xs=table.Rows[1].Cells.map(Number),ys=table.Rows[2].Cells.map(Number),
+  left=table.Rows[3].Cells.map(Number),yes=table.Rows[4].Cells;
+ for(let j=0;j<4;j++){
+  assert.equal(left[j],2*xs[j]+ys[j]);
+  assert.equal(yes[j],left[j]===7?'Yes':'No');
+ }
+ assert.equal(ledger.rows.find(x=>x.lessonCode.endsWith('U03:L12')).practice.explicitKnownMismatch,true);
+});

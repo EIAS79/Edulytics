@@ -1056,7 +1056,31 @@
         "A two-variable linear equation graphs a line.",
         "Test both positive and negative inputs."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Which ordered pairs solve 2x + y = 7?",
+          "Description": "An accessible table of four ordered pairs for a two-variable linear equation. Cases A, B and C lie on the line 2x + y = 7; case D does not. For each case substitute both coordinates. A graph of the line is still a separate teacher-reviewed task.",
+          "Rows": [
+            { "Label": "Case", "Cells": ["A", "B", "C", "D"] },
+            { "Label": "x", "Cells": ["0", "1", "2", "2"] },
+            { "Label": "y", "Cells": ["7", "5", "3", "4"] },
+            { "Label": "2x + y", "Cells": ["7", "7", "7", "8"] },
+            { "Label": "Satisfies equation?", "Cells": ["Yes", "Yes", "Yes", "No"] }
+          ]
+        },
+        {
+          "Kind": "EquationSet",
+          "Title": "Substitute both coordinates",
+          "Description": "From 2x + y = 7, solve for y = 7 − 2x. Substituting (2,3) gives 2·2 + 3 = 7, so it is a solution; substituting (2,4) gives 2·2 + 4 = 8, so it is not a solution.",
+          "Items": [
+            "2x + y = 7",
+            "y = 7 − 2x",
+            "(2,3): 2·2 + 3 = 7 ✓",
+            "(2,4): 2·2 + 4 = 8 ≠ 7"
+          ]
+        }
+      ],
       "Videos": []
     },
     {

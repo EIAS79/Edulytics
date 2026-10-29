@@ -253,3 +253,38 @@ public sealed class UsCcssGrade8Coder4ExistingPracticeSmokeTests
         // coverage, accessibility or teacher-assessed task has been verified.
     }
 }
+
+public sealed class UsCcssGrade8Coder4TwoVariableRepresentationTests
+{
+    [Fact]
+    public void Unit3Lesson12PublishesCorrectAccessiblePairTableButStillRequiresActualGraphAndPractice()
+    {
+        const string lessonCode = "PED:US-CCSS-MATH:G8:U03:L12";
+        var lesson = RichLessonContentV2Registry.Find(lessonCode, "en");
+        Assert.NotNull(lesson);
+        var table = Assert.Single(lesson.Visuals, x =>
+            x.Kind == RichLessonVisualKind.RatioTable);
+        var equations = Assert.Single(lesson.Visuals, x =>
+            x.Kind == RichLessonVisualKind.EquationSet);
+        Assert.Contains("two", table.Description, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("graph", table.Description, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("2x + y = 7", equations.Description, StringComparison.Ordinal);
+        Assert.Equal(5, table.Rows.Count);
+        Assert.Equal(
+            new[] { "Case", "x", "y", "2x + y", "Satisfies equation?" },
+            table.Rows.Select(row => row.Label));
+        var xRow = table.Rows[1].Cells.Select(int.Parse).ToArray();
+        var yRow = table.Rows[2].Cells.Select(int.Parse).ToArray();
+        var resultRow = table.Rows[3].Cells.Select(int.Parse).ToArray();
+        var solutionRow = table.Rows[4].Cells.ToArray();
+        Assert.Equal(4, xRow.Length);
+        for (var i = 0; i < xRow.Length; i++)
+        {
+            Assert.Equal(2 * xRow[i] + yRow[i], resultRow[i]);
+            Assert.Equal(resultRow[i] == 7 ? "Yes" : "No", solutionRow[i]);
+        }
+        Assert.Equal(new[] { "Yes", "Yes", "Yes", "No" }, solutionRow);
+        // The existing runtime maps this lesson to the wrong one-variable
+        // family; see Supervisor 2 Issue #595. These displays are not C/D proof.
+    }
+}
