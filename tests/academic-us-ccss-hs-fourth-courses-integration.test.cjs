@@ -81,8 +81,12 @@ test('all seven Fourth Courses contract identities are integration-pending, not 
   ];
   const ids = family.families.filter(x => ownedIds.includes(x.id));
   assert.equal(ids.length, 15);
+  // Family registration is needed for strict registry/interaction audits,
+  // but no producer may promote an IntegrationPending family into a
+  // READY_VERIFIED lesson or production route.
   assert.ok(ids.every(x => x.productionRouting === false &&
-    x.lessonPracticeRouting === false));
+    x.lessonPracticeRouting === true &&
+    x.status === 'IntegrationPending'));
   for (const course of ['ADV-ALG-FUNC', 'ADV-TRIG-GEO']) {
     for (let i = 1; i <= (course === 'ADV-ALG-FUNC' ? 2 : 5); i++) {
       const lesson = `PED:US-CCSS-MATH:HS:FOURTH:${course}:U01:L${String(i).padStart(2, '0')}`;
