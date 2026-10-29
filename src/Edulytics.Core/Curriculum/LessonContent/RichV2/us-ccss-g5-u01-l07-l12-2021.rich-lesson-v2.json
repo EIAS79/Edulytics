@@ -244,119 +244,229 @@
       "CultureCode": "en",
       "Title": "Measure Figures Made From Prisms",
       "ExplanationParagraphs": [
-        "Goal: find composite-prism volumes even when unit cubes are not drawn. Use labeled measurements and subtraction to infer missing side lengths; support the answer with decompositions and parenthesized expressions.",
-        "Warm-up — multiplying by ten: compare 6 × 2, 6 × 2 × 10 and 60 × 20 × 10. Explain the role of tenfold place-value changes; do not confuse cubic-unit labels with the factor ten.",
-        "Activity 1 — find figure volumes: a 5 × 3 × 3 rectangular prism is attached to one additional one-unit cube without overlap, yielding 46 cubic units. Compare splitting off the one-cube part with counting layers of the combined solid when possible. For an L-shaped figure, mark a non-overlapping rectangular split and work out any missing side lengths using subtraction.",
-        "Activity 2 — expressions explain the solid: write and interpret the independent example (2 × 3 × 4) + (3 × 3 × 2) = 42 cubic units as two attached, non-overlapping solids. Explain what each factor represents geometrically. Different valid splits produce the same total; teacher checks the drawn boundary and units.",
-        "Academic boundary: the 2021 source requires interpreting measured composite diagrams and relating expressions to the parts, not just entering a sum. Open-ended decomposition, identifying inferred dimensions and peer explanations remain teacher-reviewed. Publisher diagrams and restricted Cool-down are not copied."
+        "Learning goal (2021 first edition): determine composite solid volumes when individual unit cubes are NOT shown. Use given length measurements to infer missing edges, then explicitly connect each parenthesized expression to a non-overlapping rectangular-prism decomposition. Unit labels, drawing interpretation and partner justification matter.",
+        "Warm-up — Times Ten Number Talk: explain 6×2=12, 6×2×10=120, 6×20×10=1200 and 60×20×10=12000. Discuss the changing factors rather than treating a multiplication by ten as a volume unit.",
+        "Activity 1 — partner figures. Source Figure 1 describes a 7-foot horizontal length, 7-foot overall height, a 5-foot right-hand height, a 5-foot right-hand horizontal section and a 2-foot depth. Therefore the remaining lengths in those same directions are 7−5=2 feet. An original equivalent solid can be cut as (2×7×2)+(5×5×2)=28+50=78 cubic feet, or as (7×5×2)+(2×2×2)=70+8=78 cubic feet. Explain both valid non-overlapping partitions and do not substitute '78 cubic units' for its required feet-cubed unit.",
+        "Activity 1 — the second measured solid has depth 7 inches, a 9-inch upper span, a 5-inch lower span, a 5-inch total height and a 2-inch lower level; the overhang is 9−5=4 inches and upper level is 5−2=3 inches. Slice into top 9×3×7 and bottom 5×2×7 for 189+70=259 cubic inches, or left 5×5×7 and upper overhang 4×3×7 for 175+84=259 cubic inches. Partners should obtain the same total from DIFFERENT cuts and show how the parts cover the same whole without overlap.",
+        "Activity 2 — interpret the published parenthesized volume expressions, including ((2×3)×4)+((3×3)×2)=42 and (5×6)+(3×4)=42 cubic units. For the more explicitly measured composite figure, verify (5×8×6)+(5×4×9)=420 and (5×4×3)+(5×12×6)=420 cubic inches. The first 420 expression cuts vertical pieces (right 8-by-6 and left 4-by-9 with common 5-inch depth); the second cuts a full 12-by-6 lower layer and a 4-by-3 upper extension. A numeric equality by itself does NOT prove a student's partition matches the particular diagram.",
+        "Academic/Practice boundary: the 2021 teacher directions require partners to exchange figure solutions and use different decompositions, infer missing lengths, justify an expression's parentheses and specify cubic feet versus cubic inches. Numeric positives/negatives and 2D cell-union models support Practice, but teacher must evaluate student drawings, unit interpretation and explanation. The public teacher lesson and preparation HTML with embedded Student Facing text were read read-only on approved Our-CS; separate Student Task PDF, original publisher figures/cards and gated Cool-down were NOT verified or copied."
       ],
       "KeyConcepts": [
         {
-          "Title": "Measure a solid without visible cubes",
-          "Definition": "Volume may be inferred from linear lengths instead of explicitly drawn unit cubes.",
-          "Rule": "For each rectangular part, V = length × width × height with consistent units.",
-          "Example": "A 5 × 3 × 3 prism is 45 cubic units."
+          "Title": "Find missing edges from labeled geometry",
+          "Definition": "A composite prism may have a known overall extent plus a segment length in the same direction; subtract to determine the unknown length.",
+          "Rule": "7−5=2 feet for the first source shape; 9−5=4 inches and 5−2=3 inches for the second.",
+          "Example": "Do not subtract edges from unrelated directions."
         },
         {
-          "Title": "Missing length from a diagram",
-          "Definition": "A total length minus a labeled part can yield the remaining segment.",
-          "Rule": "Do not invent an edge length; derive it from the whole and a known component.",
-          "Example": "An L-shaped footprint 9 units across with a 4-unit section leaves 5 units."
+          "Title": "The same solid can be divided in multiple non-overlapping ways",
+          "Definition": "Summing volumes of disjoint rectangular pieces yields the volume of the whole, regardless of a valid horizontal or vertical cut.",
+          "Rule": "28+50=70+8=78 ft³; 189+70=175+84=259 in³.",
+          "Example": "Draw a boundary and account for every cubic unit exactly once."
         },
         {
-          "Title": "An expression should identify parts",
-          "Definition": "An additive volume expression corresponds to disjoint three-dimensional regions.",
-          "Rule": "Group each prism's three perpendicular dimensions, then add volumes.",
-          "Example": "(2×3×4)+(3×3×2)=24+18=42."
+          "Title": "Volume expressions and units must represent the actual three-dimensional shapes",
+          "Definition": "Three linear factors multiply into cubic units; alternatively base area times perpendicular height yields volume.",
+          "Rule": "5×8×6+5×4×9 = 5×4×3+5×12×6 = 420 in³.",
+          "Example": "A calculation of 42 can be correct arithmetically but still not correspond to the student's drawn split."
+        },
+        {
+          "Title": "Parentheses describe distinct measured subregions",
+          "Definition": "A grouped product within an addition expression counts one prism's volume, not an unrelated line length.",
+          "Rule": "((2×3)×4)+((3×3)×2)=42 and (5×6)+(3×4)=42.",
+          "Example": "Teacher checks geometric correspondence to the source representation."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "One extra cube",
-          "Question": "A 5-by-3-by-3 packed prism has one extra unit cube connected to a face. What is the total volume?",
-          "Method": "Add the volume of the large prism and its non-overlapping attachment.",
+          "Title": "Figure 1 — missing-foot edges and two splits",
+          "Question": "A measured L-shaped solid is 7 ft across and 7 ft high; its right/lower portion is 5 ft across and 5 ft high; depth is 2 ft. Determine volume.",
+          "Method": "Use the labeled source-style dimensions to build an original accessible text-only composite-prism representation, without reusing publisher artwork.",
           "Steps": [
-            "Find the large prism: 5×3×3=45.",
-            "Find the attached cube: 1 cubic unit.",
-            "Add them to obtain 46 cubic units."
+            "Compute missing widths/heights from the same orientation: 7−5=2 feet.",
+            "Vertical cut: (2×7×2)+(5×5×2)=28+50=78 ft³.",
+            "Horizontal cut: (7×5×2)+(2×2×2)=70+8=78 ft³.",
+            "Explain why the cuts cover exactly the same solid without overlap."
           ],
-          "Answer": "46 cubic units.",
-          "Check": "Every cube is included exactly once."
+          "Answer": "78 cubic feet.",
+          "Check": "Both partitions give 78 ft³; converting to a different unit without showing conversion is not acceptable."
         },
         {
-          "Title": "Interpret a decomposed expression",
-          "Question": "Explain (2×3×4)+(3×3×2) as a composite prism.",
-          "Method": "Associate each product with a separate piece.",
+          "Title": "Figure 2 — overhanging-inch solid",
+          "Question": "A measured two-level prism is 9 inches across at its top, 5 inches at its base, 5 inches high including a 2-inch lower level, and 7 inches deep. Find volume in two ways.",
+          "Method": "Use the labeled source-style dimensions to build an original accessible text-only composite-prism representation, without reusing publisher artwork.",
           "Steps": [
-            "First piece volume is 2×3×4=24.",
-            "Second piece volume is 3×3×2=18.",
-            "Join them along a face without overlap and add 24+18."
+            "Infer overhang length9−5=4 inches and upper height5−2=3 inches.",
+            "Horizontal cut: (9×3×7)+(5×2×7)=189+70=259 in³.",
+            "Vertical cut: (5×5×7)+(4×3×7)=175+84=259 in³.",
+            "Verify the overhang and shared depth are not double counted."
           ],
-          "Answer": "42 cubic units.",
-          "Check": "Teacher checks the represented pieces cover the intended figure without overlap."
+          "Answer": "259 cubic inches.",
+          "Check": "Each alternative covers the same non-overlapping 259 unit-inch cubes; 259 ft³ would be a unit error."
         },
         {
-          "Title": "Infer an unknown segment",
-          "Question": "An L-shaped solid is 9 units across overall. One section occupies 4 of those units; what is the other section's width?",
-          "Method": "Use part-whole subtraction before computing any three-dimensional volume.",
+          "Title": "Match parenthesized expressions to prism pieces",
+          "Question": "Interpret the arithmetic ((2×3)×4)+((3×3)×2) and (5×6)+(3×4), and explain what still requires a diagram.",
+          "Method": "Use the labeled source-style dimensions to build an original accessible text-only composite-prism representation, without reusing publisher artwork.",
           "Steps": [
-            "Label the full horizontal extent as 9.",
-            "Locate the given 4-unit part in the same direction.",
-            "Subtract 9−4=5 and only then use this length to label the split."
+            "First expression multiplies three perpendicular dimensions for each of two regions:24+18.",
+            "Second expression uses one base area times a corresponding height for each region:30+12.",
+            "Both totals are42; show how each grouped product corresponds to a non-overlapping piece of the specified figure.",
+            "Do not infer geometric equivalence from equal numerical results alone."
           ],
-          "Answer": "The other width is 5 units.",
-          "Check": "The horizontal segments add back to 9; the final volume would need both pieces' other dimensions."
+          "Answer": "Both expressions calculate 42 cubic units when attached to an appropriate matching geometry.",
+          "Check": "Teacher verifies that the actual source diagram's regions, orientation, base/height choices and boundaries match the interpretation."
+        },
+        {
+          "Title": "One 420-cubic-inch solid, two decompositions",
+          "Question": "A solid with constant 5-inch depth has a 12-by-6-inch lower rectangle and a 4-by-3-inch top extension. Express its volume two ways.",
+          "Method": "Use the labeled source-style dimensions to build an original accessible text-only composite-prism representation, without reusing publisher artwork.",
+          "Steps": [
+            "Vertical cut: (5×8×6)+(5×4×9)=240+180=420 in³.",
+            "Horizontal cut: (5×12×6)+(5×4×3)=360+60=420 in³.",
+            "Demonstrate both decompositions cover identical positions: the 4-inch-wide high section sits beside the 8-inch-wide lower section.",
+            "Interpret each parenthesis as one non-overlapping three-dimensional region."
+          ],
+          "Answer": "420 cubic inches.",
+          "Check": "The two representations cover the same solid; neither overlaps pieces or drops the top extension."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Assume all missing lengths equal a shown edge",
-          "WhyWrong": "A composite figure may have different segment lengths.",
-          "Correction": "Use total-minus-known-segment reasoning within the same direction."
+          "Mistake": "Subtract dimensions from different axes or assume the hidden edge equals a shown height",
+          "WhyWrong": "Missing sides are derived only by comparing lengths along the same direction.",
+          "Correction": "Label the whole and component segments; for example 9−5=4 inches across, 5−2=3 inches high."
         },
         {
-          "Mistake": "Multiply unrelated dimensions across two separate pieces",
-          "WhyWrong": "A composite shape is not necessarily one rectangular prism.",
-          "Correction": "Create and label disjoint rectangular solids; calculate each and add."
+          "Mistake": "Double-count a shared prism overlap, or leave a top extension out",
+          "WhyWrong": "Two numeric products cannot simply be added unless their represented sub-solids are disjoint and exhaust the shape.",
+          "Correction": "Mark each region once and compare horizontal/vertical voxel sets or a first-party sketch."
+        },
+        {
+          "Mistake": "Replace cubic feet with cubic inches or generic cubic units",
+          "WhyWrong": "The source's first partner solid uses feet, while the second and 420 example use inches.",
+          "Correction": "Carry ft³ and in³ from each length measurement through all products."
+        },
+        {
+          "Mistake": "Assume equal totals prove identical geometric explanations",
+          "WhyWrong": "42=42 may occur for two expressions without the student's sketch actually matching the source figure.",
+          "Correction": "Teacher reviews which length/area/height corresponds to every factor and boundary."
         }
       ],
       "SummaryPoints": [
-        "Composite volume can be computed from standard dimensions without counting displayed cubes.",
-        "Derive missing side lengths from consistent labeled geometry before multiplying.",
-        "Parenthesized expressions must correspond to actual non-overlapping pieces; teacher reviews the decomposition.",
-        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 9; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-9/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+        "Use known full lengths and labeled segments in the same direction to find missing edges.",
+        "Figure 1 has two valid volume sums 28+50=70+8=78 ft³; Figure 2 has 189+70=175+84=259 in³.",
+        "One additional measured source figure has 240+180=360+60=420 in³; both expressions must map to the same solid.",
+        "The original partnership requires distinct cuts and organized visual reasoning; grading only totals is insufficient.",
+        "Public 2021 IM K–5 Grade 5 Unit 1 Lesson 9 teacher lesson and preparation HTML reviewed on authorized Our-CS (read-only), including embedded Student Facing activity. Original Student Task PDF, protected Cool-down, source images/cards and individual asset licenses remain NOT_VERIFIED. https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-9/lesson.html"
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Two-prism expression",
-          "Description": "First-party accessible reference for a composite numerical expression.",
+          "Title": "Figure 1 — two non-overlapping cuts (feet)",
+          "Description": "Original text equivalent of two geometrically valid prism decompositions; measurements are obtained from the publicly accessible 2021 student-facing task text, not an unverified image.",
           "Rows": [
             {
-              "Label": "Piece",
+              "Label": "Dimensions",
               "Cells": [
-                "First prism",
-                "Second prism"
+                "2-ft-depth; width7; height7 at left and5 at right"
               ]
             },
             {
-              "Label": "Three side lengths",
+              "Label": "Vertical split",
               "Cells": [
-                "2, 3, 4",
-                "3, 3, 2"
+                "2×7×2 = 28",
+                "5×5×2 = 50"
               ]
             },
             {
-              "Label": "Volume",
+              "Label": "Horizontal split",
               "Cells": [
-                "24",
-                "18"
+                "7×5×2 = 70",
+                "2×2×2 = 8"
               ]
             },
             {
               "Label": "Total",
               "Cells": [
-                "42 cubic units"
+                "78 ft³",
+                "78 ft³"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Figure 2 — overhang (inches)",
+          "Description": "Original text equivalent of two geometrically valid prism decompositions; measurements are obtained from the publicly accessible 2021 student-facing task text, not an unverified image.",
+          "Rows": [
+            {
+              "Label": "Dimensions",
+              "Cells": [
+                "7-in depth; 9-in top width; 5-in bottom width; 5-in total height;2-in lower level"
+              ]
+            },
+            {
+              "Label": "Missing lengths",
+              "Cells": [
+                "overhang 9−5=4 in",
+                "upper height5−2=3 in"
+              ]
+            },
+            {
+              "Label": "Horizontal cut",
+              "Cells": [
+                "9×3×7=189",
+                "5×2×7=70"
+              ]
+            },
+            {
+              "Label": "Vertical cut",
+              "Cells": [
+                "5×5×7=175",
+                "4×3×7=84"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "259 in³",
+                "259 in³"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Activity 2 — two exact 420 in³ volume decompositions",
+          "Description": "Original text equivalent of two geometrically valid prism decompositions; measurements are obtained from the publicly accessible 2021 student-facing task text, not an unverified image.",
+          "Rows": [
+            {
+              "Label": "Cut",
+              "Cells": [
+                "Vertical",
+                "Horizontal"
+              ]
+            },
+            {
+              "Label": "First piece",
+              "Cells": [
+                "5×8×6=240",
+                "5×12×6=360"
+              ]
+            },
+            {
+              "Label": "Second piece",
+              "Cells": [
+                "5×4×9=180",
+                "5×4×3=60"
+              ]
+            },
+            {
+              "Label": "Volume",
+              "Cells": [
+                "420 in³",
+                "420 in³"
               ]
             }
           ]
