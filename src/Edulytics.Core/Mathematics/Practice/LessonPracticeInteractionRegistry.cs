@@ -78,13 +78,18 @@ public static class LessonPracticeInteractionRegistry
                      .GetProperty("families")
                      .EnumerateArray())
         {
-            if (!family.TryGetProperty(
-                    "lessonPracticeRouting",
-                    out var routing) ||
-                routing.ValueKind != JsonValueKind.True)
-            {
+            var lessonRoutable = family.TryGetProperty(
+                    "lessonPracticeRouting", out var routing) &&
+                routing.ValueKind == JsonValueKind.True;
+            // Integration-pending question kernels must have a typed interaction
+            // contract for auditability, even while lesson capability and
+            // actual student routing remain explicitly disabled.
+            var integrationPending = family.TryGetProperty(
+                    "status", out var status) &&
+                string.Equals(status.GetString(), "IntegrationPending",
+                    StringComparison.Ordinal);
+            if (!lessonRoutable && !integrationPending)
                 continue;
-            }
 
             var id =
                 family.GetProperty("id").GetString()?.Trim()
@@ -138,6 +143,21 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // Fourth Courses contract models exist for independently reviewed
+        // generators but are not available to learners until their owning lesson
+        // is READY_VERIFIED. These interaction types never grant capability.
+        if (familyId.StartsWith("usccss.hs.matrix.", StringComparison.Ordinal))
+            return LessonPracticeInteractionKind.StructuredEntry;
+        if (familyId == "usccss.hs.log.compare_order")
+            return LessonPracticeInteractionKind.RelationChoice;
+        if (familyId is "usccss.hs.log.inverse_power" or
+            "solid_geometry.cavalieri_sphere_volume" or
+            "coordinates.focal_distance_conics" or "trig.unit_circle_reflection_exact" or
+            "trig.principal_inverse")
+            return LessonPracticeInteractionKind.NumericEntry;
+        if (familyId == "trig.model_all_time_solutions")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
         // U06 responses are keyed LONGER/DIFFERENCE/RESULT/EQUATION,
         // never bare <,>,= choice; center/manual measurement needs a teacher.
         if(familyId.StartsWith("usccss.g1.u06.l",StringComparison.Ordinal) &&
