@@ -120,9 +120,14 @@ public static class UsCcssHsFourthCourseQuestions
         if (family == TrigPrincipalInverse)
         {
             var function = random.Next(0, 3);
-            var argument = random.Next(-1, 2);
+            // Seven valid exact inputs per function provide >10 distinct
+            // nonduplicated prompts per session without approximate arithmetic.
+            var argument = random.Next(-3, 4);
+            var literal = function == 2
+                ? argument switch { -3 => "-sqrt(3)", -2 => "-1/sqrt(3)", 2 => "1/sqrt(3)", 3 => "sqrt(3)", _ => argument.ToString(CultureInfo.InvariantCulture) }
+                : argument switch { -3 => "-sqrt(3)/2", -2 => "-1/2", 2 => "1/2", 3 => "sqrt(3)/2", _ => argument.ToString(CultureInfo.InvariantCulture) };
             return new Item(family,
-                $"Principal {(function == 0 ? "arcsin" : function == 1 ? "arccos" : "arctan")}({argument}) = ? Give the coefficient of π (e.g. 1/2 for π/2).",
+                $"Principal {(function == 0 ? "arcsin" : function == 1 ? "arccos" : "arctan")}({literal}) = ? Give the coefficient of π (e.g. 1/2 for π/2).",
                 "Respect the principal range: asin [-π/2,π/2], acos [0,π], atan (-π/2,π/2).",
                 AssessmentItemType.ShortAnswer, P(("function", function), ("argument", argument)));
         }
@@ -138,7 +143,7 @@ public static class UsCcssHsFourthCourseQuestions
         }
         if (family == CavalieriVolume)
         {
-            var radius = random.Next(2, 7);
+            var radius = random.Next(1, 16);
             return new Item(family,
                 $"A sphere has radius {radius} cm. Its volume is kπ cm³. Find the exact rational coefficient k.",
                 "Cavalieri's equal-height cross-section comparison motivates V=4πr³/3; the informal proof needs teacher review.",
@@ -251,7 +256,7 @@ public static class UsCcssHsFourthCourseQuestions
                 TrigReflection => Get(p, "angle") is >= 0 and <= 3 && Get(p, "function") is 0 or 1 &&
                     Get(p, "reflection") is >= 0 and <= 2 && Get(p, "quarterTurns") ==
                     (Get(p, "reflection") switch { 0 => 2 - Get(p, "angle"), 1 => 2 + Get(p, "angle"), _ => 4 - Get(p, "angle") }),
-                TrigPrincipalInverse => Get(p, "function") is >= 0 and <= 2 && Get(p, "argument") is >= -1 and <= 1,
+                TrigPrincipalInverse => Get(p, "function") is >= 0 and <= 2 && Get(p, "argument") is >= -3 and <= 3,
                 TrigModel => Get(p, "period") is >= 4 and <= 100 && Get(p, "period") % 4 == 0 &&
                     Get(p, "amplitude") is >= 1 and <= 100 && Math.Abs(Get(p, "offset")) <= 100,
                 CavalieriVolume => Get(p, "radius") is >= 1 and <= 100,
@@ -280,9 +285,24 @@ public static class UsCcssHsFourthCourseQuestions
 
     private static string Principal(int fn, int arg) => fn switch
     {
-        0 => arg switch { -1 => "-1/2", 0 => "0", 1 => "1/2", _ => throw new ArgumentException() },
-        1 => arg switch { -1 => "1", 0 => "1/2", 1 => "0", _ => throw new ArgumentException() },
-        2 => arg switch { -1 => "-1/4", 0 => "0", 1 => "1/4", _ => throw new ArgumentException() },
+        0 => arg switch
+        {
+            -3 => "-1/3", -2 => "-1/6", -1 => "-1/2", 0 => "0",
+            1 => "1/2", 2 => "1/6", 3 => "1/3",
+            _ => throw new ArgumentException()
+        },
+        1 => arg switch
+        {
+            -3 => "5/6", -2 => "2/3", -1 => "1", 0 => "1/2",
+            1 => "0", 2 => "1/3", 3 => "1/6",
+            _ => throw new ArgumentException()
+        },
+        2 => arg switch
+        {
+            -3 => "-1/3", -2 => "-1/6", -1 => "-1/4", 0 => "0",
+            1 => "1/4", 2 => "1/6", 3 => "1/3",
+            _ => throw new ArgumentException()
+        },
         _ => throw new ArgumentException()
     };
 
