@@ -17,8 +17,12 @@ test('V12 source-ledger accounts for all 33 syllabus-only and six teacher-only n
   assert.equal(byCode.size,124);
   const reviewed=source.lessons.filter(x=>x.stageA==='SOURCE_TEACHER_STUDENT_ACTIVITIES_READ_PARITY_UNVERIFIED');
   const initial=source.lessons.filter(x=>x.stageA==='SOURCE_TEACHER_STUDENT_COMPARE_INITIAL');
+  const reaudited=source.lessons.filter(x=>x.stageA==='SOURCE_TEACHER_STUDENT_REAUDIT_TASK_GAPS_PENDING');
   assert.equal(reviewed.length,39);
-  assert.equal(initial.length,85);
+  assert.equal(reaudited.length,18);
+  assert.equal(initial.length,67);
+  assert.ok(reaudited.every(x=>x.unit===5 && x.sourceResearch.studentLessonUrl.includes('/students/2/5/')));
+  assert.ok(reaudited.every(x=>x.sourceResearch.academicSignoff===false));
   assert.equal(source.lessons.filter(x=>/PENDING|PREPARATION_ONLY/.test(x.stageA)).length,0);
   assert.equal(source.totals.gradeAccepted,0);
   assert.equal(source.totals.sourceTaskPagesReadInV12,39);
