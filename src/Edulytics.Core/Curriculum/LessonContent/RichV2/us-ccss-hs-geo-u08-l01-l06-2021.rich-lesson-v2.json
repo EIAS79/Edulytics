@@ -1,0 +1,542 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u08-l01-l06-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L01",
+      "CultureCode": "en",
+      "Title": "Up to Chance",
+      "ExplanationParagraphs": [
+        "Learning goal: Distinguish chance experiments from deterministic situations and compare theoretical probability models with empirical relative frequencies.",
+        "Repeated procedure with uncertain outcome, defined outcomes and trial protocol Do not confuse unpredictable with unmodelled",
+        "Assign probabilities summing to 1 with justified assumptions Equally likely outcomes may use counting Finite samples vary from model",
+        "Original source-specific student task: Design independent coin/die experimental protocol and document real or synthetic observations without inventing classroom trials. Teacher reviews evidence. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 1, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Chance experiment",
+          "Definition": "Repeated procedure with uncertain outcome, defined outcomes and trial protocol",
+          "Rule": "Do not confuse unpredictable with unmodelled",
+          "Example": "Single fair die roll has six possible faces"
+        },
+        {
+          "Title": "Theoretical model",
+          "Definition": "Assign probabilities summing to 1 with justified assumptions",
+          "Rule": "Equally likely outcomes may use counting",
+          "Example": "Fair coin heads probability 1/2"
+        },
+        {
+          "Title": "Observed frequency",
+          "Definition": "Empirical fraction count(event)/number of trials",
+          "Rule": "Finite samples vary from model",
+          "Example": "18 heads in 30 flips is 0.6"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Up to Chance: original probability scenario 1",
+          "Question": "Is a fair six-sided die roll a chance experiment?",
+          "Method": "Chance experiment",
+          "Steps": [
+            "Procedure yields one face 1–6",
+            "Outcome not known before roll",
+            "Sample space finite and defined"
+          ],
+          "Answer": "Yes.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Up to Chance: original probability scenario 2",
+          "Question": "A fair coin is flipped 30 times; 18 heads. What relative frequency?",
+          "Method": "Theoretical model",
+          "Steps": [
+            "Count heads 18",
+            "Divide by total 30",
+            "18/30=0.6"
+          ],
+          "Answer": "Observed heads frequency 0.6.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Up to Chance: original probability scenario 3",
+          "Question": "Compare fair coin predicted heads with observed 0.6.",
+          "Method": "Observed frequency",
+          "Steps": [
+            "Theoretical P(H)=1/2",
+            "Observed 0.6 differs by 0.1",
+            "Variation is possible in 30 independent trials"
+          ],
+          "Answer": "Observed rate does not disprove fairness.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming finite relative frequency must equal theoretical probability",
+          "WhyWrong": "Sampling variation is possible",
+          "Correction": "Distinguish model from observation"
+        },
+        {
+          "Mistake": "Calling a predecided deterministic result random merely because observer is ignorant",
+          "WhyWrong": "Chance model requires specified trial mechanism",
+          "Correction": "State procedure and uncertainty"
+        }
+      ],
+      "SummaryPoints": [
+        "Distinguish chance experiments from deterministic situations and compare theoretical probability models with empirical relative frequencies.",
+        "Equally likely outcomes may use counting",
+        "Human-assessed modelling and experiment evidence remains pending."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L02",
+      "CultureCode": "en",
+      "Title": "Playing with Probability",
+      "ExplanationParagraphs": [
+        "Learning goal: Build explicit sample spaces for one- and two-stage chance experiments, count equally likely events and critique unsupported equiprobability assumptions.",
+        "Set of all possible outcomes of experiment For two fair coins, HH,HT,TH,TT",
+        "A subset satisfying multiple criteria such as exactly one head Count favorable outcomes / total if equiprobable Don't use simple counts for biased alternatives",
+        "Original source-specific student task: Construct a two-stage table and compare empirical and modelled event frequencies; teacher evaluates reasoning. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 2, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sample space",
+          "Definition": "Set of all possible outcomes of experiment",
+          "Rule": "For two fair coins, HH,HT,TH,TT",
+          "Example": "Ordered outcomes may differ"
+        },
+        {
+          "Title": "Compound event",
+          "Definition": "A subset satisfying multiple criteria such as exactly one head",
+          "Rule": "Count favorable outcomes / total if equiprobable",
+          "Example": "Exactly one head =2/4"
+        },
+        {
+          "Title": "Assumptions",
+          "Definition": "Equal sample-space probabilities require a fair independent trial model",
+          "Rule": "Don't use simple counts for biased alternatives",
+          "Example": "Unequal dice probabilities need weights"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Playing with Probability: original probability scenario 1",
+          "Question": "Toss two independent fair coins; probability exactly one head.",
+          "Method": "Sample space",
+          "Steps": [
+            "List HH,HT,TH,TT",
+            "Favorable HT and TH (2)",
+            "2/4=1/2"
+          ],
+          "Answer": "1/2.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Playing with Probability: original probability scenario 2",
+          "Question": "Roll fair die; probability result even and greater than 2.",
+          "Method": "Compound event",
+          "Steps": [
+            "Sample outcomes 1–6",
+            "Even outcomes {2,4,6}, >2 outcomes {3,4,5,6}",
+            "Intersection {4,6}: 2/6=1/3"
+          ],
+          "Answer": "1/3.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Playing with Probability: original probability scenario 3",
+          "Question": "Select one card from three cards marked R,R,B uniformly. Probability red?",
+          "Method": "Assumptions",
+          "Steps": [
+            "Distinct physical cards equally likely",
+            "Two of three are red",
+            "P(R)=2/3"
+          ],
+          "Answer": "2/3.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating HH and TH as same ordered outcome",
+          "WhyWrong": "Trial stages are distinguishable",
+          "Correction": "List ordered pairs"
+        },
+        {
+          "Mistake": "Assuming outcomes by label equally likely when cards repeated",
+          "WhyWrong": "Physical equally likely cards give weighted colors",
+          "Correction": "Count physical outcomes"
+        }
+      ],
+      "SummaryPoints": [
+        "Build explicit sample spaces for one- and two-stage chance experiments, count equally likely events and critique unsupported equiprobability assumptions.",
+        "Count favorable outcomes / total if equiprobable",
+        "Human-assessed modelling and experiment evidence remains pending."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L03",
+      "CultureCode": "en",
+      "Title": "Sample Spaces",
+      "ExplanationParagraphs": [
+        "Learning goal: Represent compound sample spaces with organized lists, trees and two-way tables, and verify the same event count in each.",
+        "Each successive branch represents one possible stage outcome Multiply branch counts under full factorial design",
+        "Rows and columns represent stages and every ordered pair appears exactly once For fair 2×3 independent outcomes count 6 Complement is all outcomes not in event",
+        "Original source-specific student task: Build matching tree and grid for a new two-stage experiment and justify identical event counts. Teacher scores representations. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 3, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tree diagram",
+          "Definition": "Each successive branch represents one possible stage outcome",
+          "Rule": "Multiply branch counts under full factorial design",
+          "Example": "Coin then three-color wheel has 2·3=6 paths"
+        },
+        {
+          "Title": "Two-way grid",
+          "Definition": "Rows and columns represent stages and every ordered pair appears exactly once",
+          "Rule": "For fair 2×3 independent outcomes count 6",
+          "Example": "Roll and coin sample 12 outcomes"
+        },
+        {
+          "Title": "Event set",
+          "Definition": "A named event is a subset of sample space",
+          "Rule": "Complement is all outcomes not in event",
+          "Example": "For die even E={2,4,6}, Eᶜ={1,3,5}"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Sample Spaces: original probability scenario 1",
+          "Question": "Coin then 3-option fair spinner. How many ordered outcomes?",
+          "Method": "Tree diagram",
+          "Steps": [
+            "Two coin outcomes H,T",
+            "Three spinner labels A,B,C",
+            "Product count 2·3=6"
+          ],
+          "Answer": "6.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Sample Spaces: original probability scenario 2",
+          "Question": "Two fair dice. How many ordered outcomes have sum 7?",
+          "Method": "Two-way grid",
+          "Steps": [
+            "List (1,6),(2,5),(3,4)",
+            "Include reverses (4,3),(5,2),(6,1)",
+            "Six of 36 equally likely outcomes"
+          ],
+          "Answer": "6 outcomes; probability 1/6.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Sample Spaces: original probability scenario 3",
+          "Question": "Fair die event E=even. Find complement.",
+          "Method": "Event set",
+          "Steps": [
+            "S={1,2,3,4,5,6}",
+            "E={2,4,6}",
+            "Complement S\\E={1,3,5}"
+          ],
+          "Answer": "{1,3,5}.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Double-counting same ordered outcome across rows",
+          "WhyWrong": "Each pair appears once in sample space",
+          "Correction": "Systematically enumerate"
+        },
+        {
+          "Mistake": "Listing only sums as equally likely outcomes for two dice",
+          "WhyWrong": "Some sums have more ordered pairs",
+          "Correction": "Use underlying 36 ordered outcomes"
+        }
+      ],
+      "SummaryPoints": [
+        "Represent compound sample spaces with organized lists, trees and two-way tables, and verify the same event count in each.",
+        "For fair 2×3 independent outcomes count 6",
+        "Human-assessed modelling and experiment evidence remains pending."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L04",
+      "CultureCode": "en",
+      "Title": "Tables of Relative Frequencies",
+      "ExplanationParagraphs": [
+        "Learning goal: Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
+        "Counts classified simultaneously by two attributes Row/column totals are marginals",
+        "Relative frequency for both attributes uses grand total P(A∩B)=count intersection/N P(A",
+        "Original source-specific student task: Students construct an original two-way table from supplied hypothetical counts and analyze two different conditionals. Teacher checks notation. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 4, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two-way table",
+          "Definition": "Counts classified simultaneously by two attributes",
+          "Rule": "Row/column totals are marginals",
+          "Example": "Counts 12,8,18,12 give total 50"
+        },
+        {
+          "Title": "Joint frequency",
+          "Definition": "Relative frequency for both attributes uses grand total",
+          "Rule": "P(A∩B)=count intersection/N",
+          "Example": "12/50=0.24"
+        },
+        {
+          "Title": "Conditional frequency",
+          "Definition": "Within subgroup B denominator is count(B)",
+          "Rule": "P(A",
+          "Example": "B)=count(A∩B)/count(B)"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Tables of Relative Frequencies: original probability scenario 1",
+          "Question": "Table rows A/not A and cols B/not B counts [[12,8],[18,12]]. Find total.",
+          "Method": "Two-way table",
+          "Steps": [
+            "Add all four cells 12+8+18+12",
+            "Grand total=50",
+            "Row A count=20, column B count=30"
+          ],
+          "Answer": "Total 50; A total 20; B total 30.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Tables of Relative Frequencies: original probability scenario 2",
+          "Question": "Find relative joint frequency A and B from same table.",
+          "Method": "Joint frequency",
+          "Steps": [
+            "Intersection count=12",
+            "Divide by grand total 50",
+            "12/50=0.24"
+          ],
+          "Answer": "0.24.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Tables of Relative Frequencies: original probability scenario 3",
+          "Question": "Compute P(B|A) for that table.",
+          "Method": "Conditional frequency",
+          "Steps": [
+            "Condition on row A total 12+8=20",
+            "Of those 12 fall in B",
+            "P(B",
+            "A)=12/20=0.6"
+          ],
+          "Answer": "0.6.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using grand total for conditional event",
+          "WhyWrong": "Conditional denominator is conditioned subgroup",
+          "Correction": "Use count of given event"
+        },
+        {
+          "Mistake": "Reading row/column orientation backward",
+          "WhyWrong": "Changes which conditional is computed",
+          "Correction": "Label numerator and denominator"
+        }
+      ],
+      "SummaryPoints": [
+        "Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
+        "P(A∩B)=count intersection/N",
+        "Human-assessed modelling and experiment evidence remains pending."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L05",
+      "CultureCode": "en",
+      "Title": "Combining Events",
+      "ExplanationParagraphs": [
+        "Learning goal: Use union, intersection and complement to interpret events in tables and Venn diagrams without double-counting overlap.",
+        "A∪B occurs if at least one event happens Count ",
+        "A∩B occurs only when both events hold Use common region, not full union P(Aᶜ)=1−P(A)",
+        "Original source-specific student task: Draw labelled Venn regions for disjoint/overlap examples and justify every count. Teacher reviews diagram. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 5, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Union",
+          "Definition": "A∪B occurs if at least one event happens",
+          "Rule": "Count ",
+          "Example": "A"
+        },
+        {
+          "Title": "Intersection",
+          "Definition": "A∩B occurs only when both events hold",
+          "Rule": "Use common region, not full union",
+          "Example": "Intersection 10 of 100 is 0.10"
+        },
+        {
+          "Title": "Complement",
+          "Definition": "Aᶜ contains outcomes outside A",
+          "Rule": "P(Aᶜ)=1−P(A)",
+          "Example": "If P(A)=0.4 complement 0.6"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Combining Events: original probability scenario 1",
+          "Question": "Among 100 outcomes, A=40, B=30, overlap=10. Find union count.",
+          "Method": "Union",
+          "Steps": [
+            "Add 40+30=70",
+            "Subtract overlap once 10",
+            "Union=60"
+          ],
+          "Answer": "60.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Combining Events: original probability scenario 2",
+          "Question": "Using same data, probability neither A nor B.",
+          "Method": "Intersection",
+          "Steps": [
+            "Union count 60 of total 100",
+            "Neither count=100−60=40",
+            "Probability 40/100=0.4"
+          ],
+          "Answer": "0.4.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "Combining Events: original probability scenario 3",
+          "Question": "From same data, probability both A and B.",
+          "Method": "Complement",
+          "Steps": [
+            "Intersection is 10 outcomes",
+            "Divide by total 100",
+            "P(A∩B)=0.10"
+          ],
+          "Answer": "0.10.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding union counts without subtracting overlap",
+          "WhyWrong": "Intersection counted twice",
+          "Correction": "Subtract intersection once"
+        },
+        {
+          "Mistake": "Confusing 'or' as exclusive in ordinary union",
+          "WhyWrong": "Mathematical union includes both",
+          "Correction": "State inclusive OR unless specified"
+        }
+      ],
+      "SummaryPoints": [
+        "Use union, intersection and complement to interpret events in tables and Venn diagrams without double-counting overlap.",
+        "Use common region, not full union",
+        "Human-assessed modelling and experiment evidence remains pending."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U08:L06",
+      "CultureCode": "en",
+      "Title": "The Addition Rule",
+      "ExplanationParagraphs": [
+        "Learning goal: Derive and apply P(A∪B)=P(A)+P(B)−P(A∩B), including the disjoint special case.",
+        "General union probability counts overlap once P(A∪B)=P(A)+P(B)−P(A∩B)",
+        "Disjoint A,B have P(A∩B)=0 Then union is sum Check result is within [0,1]",
+        "Original source-specific student task: Student proves addition rule by partitioning a Venn diagram into disjoint regions; teacher checks proof. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 6, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Addition rule",
+          "Definition": "General union probability counts overlap once",
+          "Rule": "P(A∪B)=P(A)+P(B)−P(A∩B)",
+          "Example": "0.5+0.4−0.2=0.7"
+        },
+        {
+          "Title": "Mutually exclusive",
+          "Definition": "Disjoint A,B have P(A∩B)=0",
+          "Rule": "Then union is sum",
+          "Example": "One die roll event 1 and 2 are disjoint"
+        },
+        {
+          "Title": "Probability bounds",
+          "Definition": "Events have 0≤P≤1 and overlap ≤each event probability",
+          "Rule": "Check result is within [0,1]",
+          "Example": "Union cannot exceed 1"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "The Addition Rule: original probability scenario 1",
+          "Question": "Given P(A)=0.5,P(B)=0.4,P(A∩B)=0.2. Find union.",
+          "Method": "Addition rule",
+          "Steps": [
+            "Use addition rule",
+            "0.5+0.4−0.2=0.7",
+            "Check 0≤0.7≤1"
+          ],
+          "Answer": "0.7.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "The Addition Rule: original probability scenario 2",
+          "Question": "Fair die, A={1,2}, B={5,6}. Find union.",
+          "Method": "Mutually exclusive",
+          "Steps": [
+            "Sets disjoint intersection empty",
+            "P(A)=2/6, P(B)=2/6",
+            "Union 4/6=2/3"
+          ],
+          "Answer": "2/3.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        },
+        {
+          "Title": "The Addition Rule: original probability scenario 3",
+          "Question": "P(A∪B)=0.8,P(A)=0.5,P(B)=0.6. Find intersection.",
+          "Method": "Probability bounds",
+          "Steps": [
+            "Rearrange P(intersection)=P(A)+P(B)−P(union)",
+            "0.5+0.6−0.8",
+            "Intersection=0.3"
+          ],
+          "Answer": "0.3.",
+          "Check": "Check denominators, sample-space assumptions and probability bounds."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Always adding P(A)+P(B)",
+          "WhyWrong": "Double-counts overlap",
+          "Correction": "Subtract joint event"
+        },
+        {
+          "Mistake": "Treating independence as disjointness",
+          "WhyWrong": "Independent events may overlap",
+          "Correction": "Check event intersection vs factorization separately"
+        }
+      ],
+      "SummaryPoints": [
+        "Derive and apply P(A∪B)=P(A)+P(B)−P(A∩B), including the disjoint special case.",
+        "Then union is sum",
+        "Human-assessed modelling and experiment evidence remains pending."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
