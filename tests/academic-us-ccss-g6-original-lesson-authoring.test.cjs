@@ -464,3 +464,42 @@ test('Unit 1 lessons 04-10 preserve direct public student activity purpose and o
   assert.equal(ledger.summary.academicallyAccepted, 0);
   assert.equal(ledger.summary.releaseReady, false);
 });
+
+
+test('Original Unit 2 ratios source opening screening and eleven activity-specific supports are fail-closed', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-17-public-student-source-opening-and-repair-matrix.json'), 'utf8'));
+  assert.equal(evidence.status, 'PUBLIC_STUDENT_SOURCE_HEADING_AND_OPENING_SCREEN__NOT_FULL_STAGE_A');
+  assert.equal(evidence.entries.length, 17);
+  assert.equal(evidence.summary.sourceAlignedCandidateExtensionsAuthored, 11);
+  assert.equal(evidence.summary.fullTeacherGuidesReviewed, 0);
+  assert.equal(evidence.summary.academicAcceptance, 0);
+  const edited = new Set([2,5,7,9,10,11,12,13,15,16,17]);
+  evidence.entries.forEach((e,index) => {
+    assert.equal(e.lessonCode, lcode(2,index+1));
+    assert.equal(e.publicSourcePageRetrieved, true);
+    assert.equal(e.fullOriginalStudentActivityBodyReviewed, false);
+    assert.equal(e.fullOriginalTeacherGuideReviewed, false);
+    assert.equal(e.sourceImageAppletsVerified, false);
+    assert.equal(e.actualSelectedPracticeContract, 'NOT_TRACED');
+    assert.equal(e.academicAcceptance, 'NOT_ACCEPTED');
+    assert.equal(e.authoredSourceTargetedExtension, edited.has(index+1));
+  });
+  const en = n => byCode.get(lcode(2,n)).translations[0];
+  assert.match(en(2).workedExamples, /white paint/);
+  assert.match(en(5).workedExamples, /half a batch/);
+  assert.match(en(7).workedExamples, /11,33/);
+  assert.match(en(9).workedExamples, /1.25 m\/s/);
+  assert.match(en(10).workedExamples, /0.2 L juice/);
+  assert.match(en(11).workedExamples, /400,500/);
+  assert.match(en(12).workedExamples, /\$37.80/);
+  assert.match(en(13).workedExamples, /600 seconds/);
+  assert.match(en(15).workedExamples, /50 mL and blue is 30 mL/);
+  assert.match(en(16).workedExamples, /10 chaperones and 75 students/);
+  assert.match(en(17).workedExamples, /216,000 pages\/year/);
+  assert.ok(Math.abs(3.2 / 4 - 4 / 5) < 1e-10);
+  assert.ok(Math.abs(4 / (5 + 1 / 3) - 3 / 4) < 1e-10);
+  assert.equal(455 / 5 * 4, 364);
+  assert.equal(85 / (2+15), 5);
+  assert.equal(2*5+15*5, 85);
+});
