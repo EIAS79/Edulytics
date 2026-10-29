@@ -57,7 +57,10 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l07-l11-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l12-l16-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u06-l17-l21-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-u06-fractions-v7.test.cjs"
+    "tests/academic-us-ccss-g5-u06-fractions-v7.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u07-l04-l08-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u08-l04-l11-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u07-u08-source-gap-v7.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -103,7 +106,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 119,
+    "richSidecarLessonCount": 126,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -117,15 +120,15 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 118,
+    "public2021LessonOrPreparationHtmlReviewedCount": 125,
     "public2021LessonHtmlReviewedDuringV4": 22,
-    "codeCandidateWithAtLeastOneEditOrRichV2": 141,
-    "noGradeOwnedCodeCandidate": 7,
+    "codeCandidateWithAtLeastOneEditOrRichV2": 148,
+    "noGradeOwnedCodeCandidate": 0,
     "public2021LessonHtmlReviewedDuringV5": 53,
     "originalStudentPdfAndGatedCooldownVerified": 0,
     "public2021LessonHtmlSourcesCitedButNotReverifiedAfterLedger": 4,
-    "verifiedOurCsTeacherAndStudentFacingHtmlLessonCountDuringV7": 36,
-    "distinctDirectRichSidecarsGitHubReconciled": 31,
+    "verifiedOurCsTeacherAndStudentFacingHtmlLessonCountDuringV7": 43,
+    "distinctDirectRichSidecarsGitHubReconciled": 33,
     "duplicateRichV2LessonCodeCount": 0,
     "editorialVerificationQualifiers": "92 historical or V7 public HTML pages described as consulted; 4 additional U05 L07-L10 citations in previous coder's sidecar not re-inspected. V7 directly inspected source teacher HTML including Student Facing for U05 L11-L20 (10). Does NOT imply original separate Student Task PDFs or gated responses checked."
   },
@@ -155,8 +158,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "V7 read original teacher-page Student Facing text for 36 lessons, but independent Student Task PDF, source images per-asset rights, gated responses and 148 Stage A/C/D acceptances not established.",
-      "next": "Continue U07 L02 with authentic source/student-visible activity comparison; never accept from page title alone."
+      "issue": "148/148 have grade-owned authoring candidate changes only; original separate PDFs, source visual/image rights, gated teacher response and exact selected Practice/real student rendering NOT_VERIFIED. Stage A/C/D and human academic acceptances remain 0/148.",
+      "next": "Finish proper academic A source PDF and effect B for all, with emphasis on U07/U08 remaining direct sidecar gaps and visual geometry, then runtime/Practice and whole-grade D CI."
     },
     {
       "id": "G5-D-004",
@@ -6132,16 +6135,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u07-l04-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u07-l04-l08-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-4/lesson.html",
+      "sourceReviewedTask": "Quadrilateral Guess Which One yes/no question plus student-defined twice sorts with side angles/parallel pairs; first-party coordinate quadrilateral",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DRAWING_GEOMETRY_HIERARCHY_OR_CARD_SORT"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U07:L05",
@@ -6172,16 +6182,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u07-l04-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u07-l04-l08-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-5/lesson.html",
+      "sourceReviewedTask": "Original source compares exclusive and inclusive trapezoid definitions; inclusive at-least-one parallel pair is course convention; coordinate figure and hierarchy",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DRAWING_GEOMETRY_HIERARCHY_OR_CARD_SORT"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U07:L06",
@@ -6217,16 +6234,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u07-l04-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u07-l04-l08-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-6/lesson.html",
+      "sourceReviewedTask": "Toothpick construction with equal lengths but changed angles: squares are rhombuses; rectangles are parallelograms; physical and drawn examples",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DRAWING_GEOMETRY_HIERARCHY_OR_CARD_SORT"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U07:L07",
@@ -6262,16 +6286,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u07-l04-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u07-l04-l08-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-7/lesson.html",
+      "sourceReviewedTask": "One-use quadrilateral clue cards and always/sometimes/never hierarchy with explicit example+counterexample under inclusive trapezoid convention",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DRAWING_GEOMETRY_HIERARCHY_OR_CARD_SORT"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U07:L08",
@@ -6307,16 +6338,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u07-l04-l08-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u07-l04-l08-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-8/lesson.html",
+      "sourceReviewedTask": "Two-way triangle sort side length and angles, impossible right/obtuse equilateral, all/some/none right triangles",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DRAWING_GEOMETRY_HIERARCHY_OR_CARD_SORT"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U07:L09",
@@ -6694,16 +6732,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u08-l04-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u08-l04-l11-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-4/lesson.html",
+      "sourceReviewedTask": "Estimate whole-number quotients using inverse multiplication and create many valid missing-dividend/divisor equations, including possible tie in nearest-ten benchmark",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_NUMBER_STRATEGY_OR_FOUR_ROUND_GAME"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U08:L05",
@@ -6977,16 +7022,23 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "VERIFIED_PRIMARY_OUR_CS_2021_TEACHER_LESSON_HTML_CONTAINS_STUDENT_FACING_NOT_ORIGINAL_STUDENT_PDF",
+      "stageA": "NOT_COMPLETE; original student PDF/figures and gated teacher response not independently checked",
+      "stageB": "RICH_V2_AUTHORED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "EXACT_RUNTIME_SELECTED_PRACTICE_NOT_CHECKED_SHARED_ISSUE_592",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u08-l04-l11-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u08-l04-l11-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-11/lesson.html",
+      "sourceReviewedTask": "Greatest fraction difference four-round spinner and smallest total difference with eight given digits used once; preserve game move ordering and teacher review",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Our-CS:98fe82ca-5db1-4369-9545-f146cc609375",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_NUMBER_STRATEGY_OR_FOUR_ROUND_GAME"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U08:L12",
@@ -7283,23 +7335,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "374405e4a5badf542b7285f46943c3638765672d",
+  "lastGradeContentCommit": "0d4155184ae5485d3dc8ab2d4f4a68bdf67b9683",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V7: 119/148 distinct direct Grade5 Rich V2 teaching candidates with original first-party explanations, mathematical examples, accessible text tables. Full U01 12, U02 17, U03 20, U04 21, U05 26, U06 21; plus U07 L01, U08 L01. Read 2021 teacher HTML Student Facing text via verified read-only Primary/Our-CS for 36 V7 lessons, but original student PDF/asset rights/gated answers unknown. 104 prior grade-only canonical pack translation edits preserved. Exact selected Practice C, live-rendered B, real product D and academic A all NOT_VERIFIED. Supervisor issue #592 still external.",
+  "currentScopeDescription": "V7 authoring candidate coverage 148/148: all 148 distinct Grade5 blueprint IDs have at least a prior grade-only baseline pack editorial modification or a direct original RichV2 candidate; of these 126/148 have direct authored RichV2 sidecars, 22 have no direct sidecar but were baseline-edited and still require effective runtime parity. 33 direct G5 sidecar files and 0 duplicate LessonCodes at static snapshot; U01–U06 directly complete, U07 6/13, U08 3/18. Source Student Facing teacher 2021 HTML inspected read-only Primary/Our-CS for 43 V7 lessons; original separate student PDFs, licensed source figures, gated response and all per-lesson A/Practice C/runtime D/human acceptance remain unverified (0/148).",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "9f339b39df5efe3e5a67064a092d16ffefe37a11",
+  "lastCommittedTest": "fff22d253faf034d015b54b12671cd9b7821d269",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "374405e4a5badf542b7285f46943c3638765672d",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U07:L02",
+    "lastKnownCommittedHeadBeforeLedger": "fff22d253faf034d015b54b12671cd9b7821d269",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U07:L02 — next lesson without direct RichV2 candidate",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Complete source-specific Unit7 L02-L13 then Unit8 L02-L18, plus independent original student PDF/rubric and runtime verification; shared issue #592 by Supervisor only",
+    "nextAcademic": "Investigate/verify source and learner-facing effective content for U07 L02-L03 and L09-L13, U08 L02-L03,L05-L10,L12-L18; 22 baseline-edited but no direct RichV2. Teacher-judged geometry drawings need actual visuals and original PDF comparison. Shared issue #592 remains Supervisor-only.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7406,7 +7458,14 @@
       "PED:US-CCSS-MATH:G5:U06:L18",
       "PED:US-CCSS-MATH:G5:U06:L19",
       "PED:US-CCSS-MATH:G5:U06:L20",
-      "PED:US-CCSS-MATH:G5:U06:L21"
+      "PED:US-CCSS-MATH:G5:U06:L21",
+      "PED:US-CCSS-MATH:G5:U07:L04",
+      "PED:US-CCSS-MATH:G5:U07:L05",
+      "PED:US-CCSS-MATH:G5:U07:L06",
+      "PED:US-CCSS-MATH:G5:U07:L07",
+      "PED:US-CCSS-MATH:G5:U07:L08",
+      "PED:US-CCSS-MATH:G5:U08:L04",
+      "PED:US-CCSS-MATH:G5:U08:L11"
     ],
     "noOtherComputerAccessed": true,
     "sourceRights": "Source pages expose CC BY 4.0 notice, but embedded pictures/other rights need individual verification; no source artwork copied."
@@ -7450,7 +7509,8 @@
     "committedNotYetNodeRun": [
       "tests/academic-us-ccss-g5-u05-multiply-v7.test.cjs",
       "tests/academic-us-ccss-g5-u06-metric-v7.test.cjs",
-      "tests/academic-us-ccss-g5-u06-fractions-v7.test.cjs"
+      "tests/academic-us-ccss-g5-u06-fractions-v7.test.cjs",
+      "tests/academic-us-ccss-g5-u07-u08-source-gap-v7.test.cjs"
     ]
   }
 }
