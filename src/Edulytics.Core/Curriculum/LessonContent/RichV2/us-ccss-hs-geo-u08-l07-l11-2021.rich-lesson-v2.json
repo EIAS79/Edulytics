@@ -367,8 +367,9 @@
       "CultureCode": "en",
       "Title": "Probabilities in Games",
       "ExplanationParagraphs": [
-        "Learning goal: Analyze fairness and independence of a probability game from its exact sample space and distinguish simulated frequency from expected gain.",
+        "Learning goal: optional source practice collecting and interpreting classroom game trials to estimate conditional probabilities and determine independence, while distinguishing data estimates from an exact chance model.",
         "A symmetric payout game is fair in expectation when mean net gain equals zero Weight all outcomes by their probabilities",
+        "Source-specific experiment: in a three-card bag with two red cards and one blue card, compare probabilities of red on a second draw with and without replacement. Without replacement the second-draw probability depends on the first draw; with replacement the conditional red probability remains 2/3 on each draw. Specify recorded counts and use the table's actual conditioning denominators.",
         "Separate rounds require a mechanism that does not alter later probabilities Replacing cards may help ensure repeated-round independence Positive expected net gain favors player long term under model",
         "Original student task: Students design a noncommercial, classroom probability board game with mathematical payoffs and critique whether repeated rounds are independent. Teacher scores rules, modelling and evidence. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 11, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
@@ -407,16 +408,16 @@
           "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
         },
         {
-          "Title": "Probabilities in Games: model 2",
-          "Question": "Game wins $3 with probability 1/4 and loses $1 otherwise. Expected gain?",
-          "Method": "Game independence",
+          "Title": "Probabilities in Games: conditional draw model",
+          "Question": "A bag contains two red cards and one blue. Draw without replacement. Find P(second red | first red).",
+          "Method": "Condition on the first observed result and count remaining equally likely cards.",
           "Steps": [
-            "Win contribution 0.25·3=0.75",
-            "Loss contribution 0.75·(−1)=−0.75",
-            "Expected value 0"
+            "After first red, two cards remain: one red and one blue.",
+            "The conditioned sample has two equally likely cards.",
+            "Only one is red, so probability of red on second draw given first red is 1/2."
           ],
-          "Answer": "0; fair on expectation.",
-          "Check": "Verify probabilities lie within [0,1] and condition event probability is positive when applicable."
+          "Answer": "P(second red | first red)=1/2.",
+          "Check": "Unconditional P(second red)=2/3 by symmetry, so this demonstrates dependence."
         },
         {
           "Title": "Probabilities in Games: model 3",
@@ -445,7 +446,7 @@
         }
       ],
       "SummaryPoints": [
-        "Analyze fairness and independence of a probability game from its exact sample space and distinguish simulated frequency from expected gain.",
+        "Classroom game data provide empirical estimates of conditional probabilities and evidence about independence; do not treat a small experimental sample as mathematical proof of the population model.",
         "Weight all outcomes by their probabilities",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
