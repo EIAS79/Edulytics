@@ -103,6 +103,18 @@ public sealed class UsCcssHsFourthCourseQuestionsTests
     }
 
     [Fact]
+    public void PendingFourthCourseKernelsNeverAppearInLearnerInteractionOrReadyCatalogue()
+    {
+        Assert.All(LessonPracticeContractRegistry.All,
+            contract => Assert.Equal("READY_VERIFIED", contract.Readiness));
+        foreach (var family in Families.Concat(UsCcssHsFourthCourse3x3Questions.Families))
+        {
+            Assert.False(LessonPracticeInteractionRegistry.TryResolve(family, out _));
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family));
+        }
+    }
+
+    [Fact]
     public void StudentRoutingIsStillFailClosedUntilFullIntegrationApproval()
     {
         foreach (var course in new[] { "ADV-ALG-FUNC", "ADV-TRIG-GEO" })
