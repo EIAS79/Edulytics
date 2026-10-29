@@ -60,6 +60,13 @@
         {
             <partial name="_RichLessonVisual" model="visual" />
         }
+        @* Grade 7 U01 first-party geometry; exact lesson whitelist lives in the
+           Grade 7-owned partial. Other grades and units remain untouched. *@
+        @if (Model.LessonCode is not null &&
+             Model.LessonCode.StartsWith("PED:US-CCSS-MATH:G7:U01:L", StringComparison.Ordinal))
+        {
+            <partial name="_USCCSSG7ScaleConstructionFigures" model="Model" />
+        }
     </div>
 </section>
 
