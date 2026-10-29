@@ -27,7 +27,11 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l02-l06-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-u03-fractions-v5.test.cjs",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l07-l10-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-u03-applied-v5.test.cjs"
+    "tests/academic-us-ccss-g5-u03-applied-v5.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l16-l18-l20-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u03-division-v5.test.cjs",
+    "tests/academic-us-ccss-g5-u03-final-v5.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -73,7 +77,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 44,
+    "richSidecarLessonCount": 53,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -87,11 +91,11 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 47,
+    "public2021LessonOrPreparationHtmlReviewedCount": 56,
     "public2021LessonHtmlReviewedDuringV4": 22,
     "codeCandidateWithAtLeastOneEditOrRichV2": 109,
     "noGradeOwnedCodeCandidate": 39,
-    "public2021LessonHtmlReviewedDuringV5": 18,
+    "public2021LessonHtmlReviewedDuringV5": 27,
     "originalStudentPdfAndGatedCooldownVerified": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
@@ -120,8 +124,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "47 distinct public 2021 lesson/preparation HTML pages compared; original full Student Task PDFs, unverified publisher image rights/gated response, teacher adjudication and academic A remain 0/148.",
-      "next": "From U03:L11 continue source comparison; separately resolve original PDF, image and rights parity before Stage A acceptance."
+      "issue": "56 public 2021 student-facing/teacher HTML lesson pages reviewed to varying depth; original full student PDFs, protected images/response materials and all 148 individual academic A conclusions remain NOT_COMPLETE.",
+      "next": "Continue with Unit 4 Lesson 1 source and preserve honest original PDF/rights gap."
     },
     {
       "id": "G5-D-004",
@@ -2099,11 +2103,11 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2114,7 +2118,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-11/lesson.html",
+      "sourceReviewedTask": "Share fractional leftovers: 1/2 tray ÷4 recipients =1/8 original tray; diagram not reversed",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_REASONING_WITH_EXACT_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L12",
@@ -2143,11 +2153,11 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2158,7 +2168,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-12/lesson.html",
+      "sourceReviewedTask": "Compare 1/3÷4 as 12 equal whole pieces using two tape diagram partitioning strategies",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_REASONING_WITH_EXACT_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L13",
@@ -2192,11 +2208,11 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2207,7 +2223,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-13/lesson.html",
+      "sourceReviewedTask": "Count whole-length groups when dividing 3 by 1/2,1/3,1/4; quilt strip context",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_REASONING_WITH_EXACT_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L14",
@@ -2236,11 +2258,11 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2251,7 +2273,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-14/lesson.html",
+      "sourceReviewedTask": "Compare changing dividend and changing unit fraction divisor with two distinct quantity patterns",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_REASONING_WITH_EXACT_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L15",
@@ -2285,11 +2313,11 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2301,7 +2329,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l11-l15-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-15/lesson.html",
+      "sourceReviewedTask": "Match fractional division story cards to expressions, reject unmatching valid-number cards, author own story",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CONTEXTUAL_EXPLANATION_INFORMATION_GAP"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L16",
@@ -2335,11 +2369,11 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2351,7 +2385,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l16-l18-l20-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-16/lesson.html",
+      "sourceReviewedTask": "Classify and order 6 reciprocal-type quotients without mandatory calculation and justify relative to 1",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_REASONING_WITH_EXACT_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L17",
@@ -2390,11 +2430,11 @@
         "keyConceptsAndRules",
         "stepByStepSolutions"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2407,7 +2447,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l16-l18-l20-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-17/lesson.html",
+      "sourceReviewedTask": "Request missing fractional tile dimensions, check compatible floor grid and exact tile count",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CONTEXTUAL_EXPLANATION_INFORMATION_GAP"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L18",
@@ -2446,11 +2492,11 @@
         "keyConceptsAndRules",
         "stepByStepSolutions"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2463,7 +2509,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l16-l18-l20-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-18/lesson.html",
+      "sourceReviewedTask": "Represent both 3÷1/4 and 1/4÷3 with different context and inverse multiplication equations",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_OR_REASONING_WITH_EXACT_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L19",
@@ -2556,11 +2608,11 @@
         "keyConceptsAndRules",
         "stepByStepSolutions"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "supporting.fractions.multiply_divide",
@@ -2572,7 +2624,13 @@
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l16-l18-l20-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u03-l16-l18-l20-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-20/lesson.html",
+      "sourceReviewedTask": "Recover missing whole from known unit-fraction share, select matching inverse equations and justify",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CONTEXTUAL_EXPLANATION_INFORMATION_GAP"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L01",
@@ -6758,23 +6816,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "009c042a1c45be6ceb1f327462d30baea6cf67c8",
+  "lastGradeContentCommit": "f76d6772b5c88f0ee25dbddff3828392eeda458b",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V5: 44 direct Grade 5 RichV2 candidates (26 prior +18 V5 source-specific), 104 edited canonical pack translations, 47 distinct 2021 public lesson/preparation HTML pages compared (18 new V5); 0/148 full A, 0/148 exact C, 0/148 Stage D, 0 accepted. U01 12/12 and U02 17/17 direct sidecars, U03 11/20 direct sidecars; remaining direct sidecar absence not automatically a defect.",
+  "currentScopeDescription": "V5: 53 distinct direct Grade 5 Rich V2 teaching candidates (26 existing, 27 V5), preserving 104 baseline pack editorial repairs and 44 untouched translations. U01 L01-L12 and U02 L01-L17 and U03 L01-L20 all now have directly authored candidate content. 56 distinct public 2021 publisher lesson/preparation HTML source pages reviewed; no completed source student PDFs/gated response or true A–D acceptance, no runtime Practice C proof, no D verified. Shared integration Supervisor 1 issue #592.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "607fd792bc3660f6d0285b3ec4fc8eec45b4786c",
+  "lastCommittedTest": "7fa07a065fb24c59f93e35f5a00a220825c30cd5",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "009c042a1c45be6ceb1f327462d30baea6cf67c8",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U03:L11 — next 2021 lesson source and original task comparison",
+    "lastKnownCommittedHeadBeforeLedger": "7fa07a065fb24c59f93e35f5a00a220825c30cd5",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U04:L01 — Estimate and Find Products",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Continue source evidence and individually justified repairs for U03 L11-L20, then U04–U08; Grade 5-owned files only",
+    "nextAcademic": "Source-review and individually author/reuse U04 L01 onward, including official student task comparison, mathematical representation and teacher-only boundary; complete C/D once shared integration #592 is ready",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -6822,14 +6880,13 @@
     "crossCurriculum": "NOT_RUN",
     "protectedCi": "NOT_RUN",
     "combinedActualNodeCli": {
-      "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-u02-area-v5.test.cjs /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-u03-fractions-v5.test.cjs /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-u03-applied-v5.test.cjs",
-      "environment": "Isolated sandbox Node.js v22.16.0; explicitly not Our-CS or Anas_Nitro",
-      "passed": 18,
+      "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-*-v5.test.cjs",
+      "environment": "isolated sandbox container Node.js v22.16.0; not Our-CS or Anas_Nitro",
+      "passed": 27,
       "failed": 0,
-      "skipped": 3,
-      "skipReason": "GitHub direct Rich V2 sidecar JSON not mounted in isolated local Node runner; 3 file-structure checks skipped",
-      "scope": "Math oracles only. Cannot certify application runtime, selected exact Practice, source PDFs, .NET, DB or authenticated screens.",
-      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_all_20261029.tap"
+      "skipped": 5,
+      "scope": "Standalone fractional arithmetic oracles only. Sidecar structure checks skipped because GitHub grade branch fixtures not locally mounted. .NET, exact Practice, DB, authenticated rendering, cross-curriculum CI NOT_RUN.",
+      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_all_final_20261029.tap"
     },
     "githubConnectorV8U03": {
       "status": "PASS",
