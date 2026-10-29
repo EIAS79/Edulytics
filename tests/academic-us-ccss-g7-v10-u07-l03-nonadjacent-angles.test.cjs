@@ -26,7 +26,7 @@ test('Original U07 L03 reference is accessible and excludes executable content',
   assert.match(svg,/<svg[^>]*role="img"[^>]*aria-labelledby=/);
   assert.match(svg,/<title id="g7-u07-l03-title">/);
   assert.match(svg,/<desc id="g7-u07-l03-desc">/);
-  assert.doesNotMatch(svg,/<script|<foreignObject|\\bonload\\s*=|\\bonclick\\s*=/i);
+  assert.doesNotMatch(svg, /<script|<foreignObject|\bonload\s*=|\bonclick\s*=/i);
   assert.equal(evidence.lessonCode,'PED:US-CCSS-MATH:G7:U07:L03');
   assert.match(evidence.sourceStudentUrl,/\/MS\/students\/2\/7\/3\/index.html$/);
 });
