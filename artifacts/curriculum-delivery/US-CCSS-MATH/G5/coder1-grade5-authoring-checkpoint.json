@@ -7487,10 +7487,10 @@
   ],
   "currentScopeDescription": "Grade 5 V8 full-grade authoring candidate coverage: 148/148 unique direct Grade5 Rich V2 lessons in 38 repository sidecars; all 8 units directly covered. 104 canonical Grade5 pack translations have previous editorial field edits; 148 candidate union. Of 15 latest Unit8 tasks, original teacher/student-facing 2021 lesson HTML source read-only on authorized Our-CS; separate Student Task PDFs/gated cool-down and asset-rights not verified. Last seven U07 sidecars reconciled without resetting. Math Node 15 pass, 1 skip, but original file structure runtime Node, .NET, authenticated learner/teacher, selected Practice, persisted seeding, tenant isolation, owner UAT and protected CI not run. All 148 academic A, effective B, runtime Practice C, release D remain NOT_COMPLETE. Issue #592 still open.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "582e58243a35cef344d4f9c7b09151648afc5fd4",
+  "lastCommittedTest": "39f973e958dd58c9a70c6ebb8701d0c847aed086",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "582e58243a35cef344d4f9c7b09151648afc5fd4",
+    "lastKnownCommittedHeadBeforeLedger": "39f973e958dd58c9a70c6ebb8701d0c847aed086",
     "sourceReviewContinuation": "GRADE5:U01:L01 — BEGIN PER-LESSON STAGE A original Student Task PDF + figure/rights and B effective student-visible verification for 148; no remaining authoring-only sidecar gap.",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
@@ -7690,10 +7690,10 @@
   },
   "v8Validation": {
     "static": "38 source-specific RichV2 JSON resources enumerated from GitHub branch, 148 distinct canonical Grade 5 LessonCodes, exact Unit1-8 lesson counts 12/17/20/21/26/21/13/18. Earlier 34 resources were fetched in five groups, four V8 files fetched again and inspected; no duplicate or missing basic content fields.",
-    "node": "REAL Node v22.16.0 isolated container executing EXACT file SHA c21e752d3bfe2dcec5cd6399e2071ae051266615: 15 PASS, 0 FAIL, 1 SKIP (JSON fixture not mounted). Unit 8 math only. Source/sidecar structural assertion using Node SKIPPED, GitHub file structure checked separately.",
+    "node": "REAL Node v22.16.0 isolated container executing EXACT file SHA cc14dabc9ed12028c5f87fe4ecafcb6501401947: 15 PASS, 0 FAIL, 1 SKIP (JSON fixture not mounted). Corrected fixtures path to ../src for real repository tests directory; structural test remains SKIPPED in isolated runner.",
     "testFile": "tests/academic-us-ccss-g5-u08-v8.test.cjs",
-    "testCommit": "582e58243a35cef344d4f9c7b09151648afc5fd4",
-    "testGitBlobSha": "c21e752d3bfe2dcec5cd6399e2071ae051266615",
+    "testCommit": "39f973e958dd58c9a70c6ebb8701d0c847aed086",
+    "testGitBlobSha": "cc14dabc9ed12028c5f87fe4ecafcb6501401947",
     "isolatedTestOutput": "/mnt/data/edulytiks_g5_v8_isolated/node_grade5_u08_v8.tap",
     "isolatedGitClone": "FAILED: DNS cannot resolve github.com; no real repo checkout",
     "dotNet": "NOT_RUN: dotnet SDK not installed",
@@ -7707,6 +7707,8 @@
     "CI": "NOT_RUN",
     "ownerUat": "NOT_RUN",
     "academicAccepted": 0,
-    "releaseReady": false
+    "releaseReady": false,
+    "staticEmbedNote": "Read src/Edulytics.Core/Edulytics.Core.csproj: EmbeddedResource wildcard Curriculum/LessonContent/RichV2/*.rich-lesson-v2.json includes grade-owned new source files at compile time. This is only static eligibility, NOT runtime effective render evidence.",
+    "branchDiffScope": "GitHub compare main...Grade5 at pre-ledger candidate: 102 ahead, 0 behind, 62 changed files, 0 paths outside approved Grade5 owned pack/sidecar/tests/artifacts; no open Grade5 PR and no GitHub Actions runs for branch as checked."
   }
 }
