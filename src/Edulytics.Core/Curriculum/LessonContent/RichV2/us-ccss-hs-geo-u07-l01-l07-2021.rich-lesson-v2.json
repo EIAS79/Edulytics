@@ -1,0 +1,630 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u07-l01-l07-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L01",
+      "CultureCode": "en",
+      "Title": "Lines, Angles, and Curves",
+      "ExplanationParagraphs": [
+        "Learning goal: Describe chords, arcs and central angles in a circle, distinguishing an arc from its straight chord.",
+        "Segment joining two points of a circle Length ≤diameter",
+        "Angle whose vertex is circle centre and sides radii One full turn is 360° Arc fraction=central angle/360°",
+        "Source-specific student task: Draw labelled original chord and two possible arcs, noting semicircle ambiguity; teacher reviews representation. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 1, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Chord",
+          "Definition": "Segment joining two points of a circle",
+          "Rule": "Length ≤diameter",
+          "Example": "Radius 5 chord length never exceeds 10"
+        },
+        {
+          "Title": "Central angle",
+          "Definition": "Angle whose vertex is circle centre and sides radii",
+          "Rule": "One full turn is 360°",
+          "Example": "90° cuts quarter circle"
+        },
+        {
+          "Title": "Minor arc",
+          "Definition": "Shorter arc connecting points, unless antipodal tie",
+          "Rule": "Arc fraction=central angle/360°",
+          "Example": "60° arc is 1/6 circumference"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Lines, Angles, and Curves: illustration 1",
+          "Question": "Circle radius 5, find longest possible chord.",
+          "Method": "Chord",
+          "Steps": [
+            "Longest chord passes through centre",
+            "Diameter=2r",
+            "2·5=10"
+          ],
+          "Answer": "Maximum chord length 10.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Lines, Angles, and Curves: illustration 2",
+          "Question": "A central angle 60° subtends which fraction of circle?",
+          "Method": "Central angle",
+          "Steps": [
+            "One full circle is 360°",
+            "Fraction=60/360",
+            "Simplify to 1/6"
+          ],
+          "Answer": "One sixth.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Lines, Angles, and Curves: illustration 3",
+          "Question": "Radius 3 circle with 90° central angle; find minor arc length.",
+          "Method": "Minor arc",
+          "Steps": [
+            "Circumference=2πr=6π",
+            "Arc fraction=90/360=1/4",
+            "Length=6π/4"
+          ],
+          "Answer": "3π/2 units.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating arc length and chord length",
+          "WhyWrong": "Arc curves while chord is straight",
+          "Correction": "Use circumference fraction for arc length"
+        },
+        {
+          "Mistake": "Calling every angle with point on circle central",
+          "WhyWrong": "Central vertex must be centre",
+          "Correction": "Identify vertex before theorem"
+        }
+      ],
+      "SummaryPoints": [
+        "Describe chords, arcs and central angles in a circle, distinguishing an arc from its straight chord.",
+        "One full turn is 360°",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L02",
+      "CultureCode": "en",
+      "Title": "Inscribed Angles",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove an inscribed angle subtending an arc is half the corresponding central angle and use it to analyze intersecting chords.",
+        "Vertex lies on circle, sides are chords Measure half the intercepted arc not containing vertex",
+        "Inscribed angles intercepting same arc are equal Need vertices on same complementary arc Both arc measures referenced properly",
+        "Source-specific student task: Prove inscribed angle using radii and isosceles triangles, then sketch chord intersection; teacher scores proof. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 2, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inscribed angle",
+          "Definition": "Vertex lies on circle, sides are chords",
+          "Rule": "Measure half the intercepted arc not containing vertex",
+          "Example": "120° intercepted arc produces 60° angle"
+        },
+        {
+          "Title": "Same-arc rule",
+          "Definition": "Inscribed angles intercepting same arc are equal",
+          "Rule": "Need vertices on same complementary arc",
+          "Example": "Two such angles equal 35°"
+        },
+        {
+          "Title": "Intersecting chord angles",
+          "Definition": "Interior angle formed by intersecting chords equals half sum of opposite intercepted arcs",
+          "Rule": "Both arc measures referenced properly",
+          "Example": "Arcs 80°,100° produce 90°"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Inscribed Angles: illustration 1",
+          "Question": "An inscribed angle intercepts a 120° arc; find measure.",
+          "Method": "Inscribed angle",
+          "Steps": [
+            "Inscribed-angle theorem says half its arc",
+            "Compute 120/2",
+            "Angle 60°"
+          ],
+          "Answer": "60°.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Inscribed Angles: illustration 2",
+          "Question": "Two inscribed angles intercept same 70° arc. Find each.",
+          "Method": "Same-arc rule",
+          "Steps": [
+            "Both intercept the same arc",
+            "Each is 70/2",
+            "They agree by theorem"
+          ],
+          "Answer": "35° each.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Inscribed Angles: illustration 3",
+          "Question": "Two chords intersect inside circle, intercepted opposite arcs 80° and 100°. Find angle.",
+          "Method": "Intersecting chord angles",
+          "Steps": [
+            "Interior-chord angle theorem gives half sum",
+            "Compute (80+100)/2",
+            "Angle=90°"
+          ],
+          "Answer": "90°.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using whole intercepted arc instead of half",
+          "WhyWrong": "Inscribed angles are half corresponding central angle",
+          "Correction": "Divide by two"
+        },
+        {
+          "Mistake": "Applying interior chord formula to exterior secants",
+          "WhyWrong": "Exterior uses half difference",
+          "Correction": "Check vertex location"
+        }
+      ],
+      "SummaryPoints": [
+        "Prove an inscribed angle subtending an arc is half the corresponding central angle and use it to analyze intersecting chords.",
+        "Need vertices on same complementary arc",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L03",
+      "CultureCode": "en",
+      "Title": "Tangent Lines",
+      "ExplanationParagraphs": [
+        "Learning goal: Use radius–tangent perpendicularity and equal tangent-segment lengths from a common exterior point.",
+        "Line meeting circle at exactly one point Radius to tangency point perpendicular",
+        "From same exterior P, tangent lengths PA=PB Right triangles PAO and PBO share PO and radii ∠APB=180°−∠AOB",
+        "Source-specific student task: Construct tangent from exterior point and prove perpendicular condition using right triangles; teacher reviews diagram. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 3, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tangent",
+          "Definition": "Line meeting circle at exactly one point",
+          "Rule": "Radius to tangency point perpendicular",
+          "Example": "OA⊥PA for tangent at A"
+        },
+        {
+          "Title": "External tangents",
+          "Definition": "From same exterior P, tangent lengths PA=PB",
+          "Rule": "Right triangles PAO and PBO share PO and radii",
+          "Example": "If PA=7 then PB=7"
+        },
+        {
+          "Title": "Circumscribed angle",
+          "Definition": "Angle between two tangents is supplementary to their central angle between radii",
+          "Rule": "∠APB=180°−∠AOB",
+          "Example": "Central 110° gives exterior 70°"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Tangent Lines: illustration 1",
+          "Question": "Circle centre O radius 5, tangent point A, exterior P with OP=13. Find PA.",
+          "Method": "Tangent",
+          "Steps": [
+            "OA⊥PA so triangle OAP right",
+            "PA²=OP²−OA²=169−25=144",
+            "Positive length PA=12"
+          ],
+          "Answer": "12 units.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Tangent Lines: illustration 2",
+          "Question": "From P two tangents PA and PB. PA=7. Find PB.",
+          "Method": "External tangents",
+          "Steps": [
+            "OA=OB radii, two right triangles share OP",
+            "By hypotenuse-leg congruence PA=PB",
+            "So PB=7"
+          ],
+          "Answer": "7 units.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Tangent Lines: illustration 3",
+          "Question": "Tangents meet P, central angle AOB=110°. Find angle APB.",
+          "Method": "Circumscribed angle",
+          "Steps": [
+            "Angles at A and B are each 90°",
+            "Quadrilateral OAPB angles total 360°",
+            "Angle P=360−90−90−110=70°"
+          ],
+          "Answer": "70°.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling a secant a tangent because it touches nearby",
+          "WhyWrong": "Tangent has single intersection and perpendicular radius",
+          "Correction": "Check circle-line intersection count"
+        },
+        {
+          "Mistake": "Assuming tangent point is any point on line",
+          "WhyWrong": "Radius perpendicular must meet at actual tangency",
+          "Correction": "Identify point A exactly"
+        }
+      ],
+      "SummaryPoints": [
+        "Use radius–tangent perpendicularity and equal tangent-segment lengths from a common exterior point.",
+        "Right triangles PAO and PBO share PO and radii",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L04",
+      "CultureCode": "en",
+      "Title": "Quadrilaterals in Circles",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove opposite angles of a cyclic quadrilateral are supplementary and use the converse under nondegenerate conditions.",
+        "All four distinct vertices lie on one circle Opposite interior angles sum 180°",
+        "Opposite inscribed angles intercept complementary arcs adding 360° Halving gives total 180° Use inscribed-angle construction",
+        "Source-specific student task: Construct two cyclic and one noncyclic quadrilateral and justify classification; teacher reviews. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 4, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cyclic quadrilateral",
+          "Definition": "All four distinct vertices lie on one circle",
+          "Rule": "Opposite interior angles sum 180°",
+          "Example": "A=110° implies C=70°"
+        },
+        {
+          "Title": "Arc proof",
+          "Definition": "Opposite inscribed angles intercept complementary arcs adding 360°",
+          "Rule": "Halving gives total 180°",
+          "Example": "Opposite pair B+D=180°"
+        },
+        {
+          "Title": "Converse",
+          "Definition": "A simple convex quadrilateral with opposite angles supplementary is cyclic",
+          "Rule": "Use inscribed-angle construction",
+          "Example": "Angle A+C=180° suffices"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Quadrilaterals in Circles: illustration 1",
+          "Question": "Cyclic ABCD has ∠A=110°. Find ∠C.",
+          "Method": "Cyclic quadrilateral",
+          "Steps": [
+            "Opposite cyclic angles supplementary",
+            "Compute 180−110=70",
+            "∠C=70°"
+          ],
+          "Answer": "70°.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Quadrilaterals in Circles: illustration 2",
+          "Question": "Cyclic ABCD has ∠B=85°. Find ∠D.",
+          "Method": "Arc proof",
+          "Steps": [
+            "Use ∠B+∠D=180°",
+            "Compute 180−85",
+            "∠D=95°"
+          ],
+          "Answer": "95°.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Quadrilaterals in Circles: illustration 3",
+          "Question": "A convex quadrilateral has opposite angles 70°,110°. Could it be cyclic?",
+          "Method": "Converse",
+          "Steps": [
+            "Sum 70+110=180°",
+            "Converse of cyclic-angle theorem applies",
+            "The quadrilateral admits a common circumcircle"
+          ],
+          "Answer": "Yes, if stated as opposite angles in a simple convex quadrilateral.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming every parallelogram cyclic",
+          "WhyWrong": "Only rectangles among ordinary parallelograms are cyclic",
+          "Correction": "Check supplementary opposite angles"
+        },
+        {
+          "Mistake": "Using adjacent rather than opposite angles",
+          "WhyWrong": "Cyclic property relates opposite vertices",
+          "Correction": "Check vertex order"
+        }
+      ],
+      "SummaryPoints": [
+        "Prove opposite angles of a cyclic quadrilateral are supplementary and use the converse under nondegenerate conditions.",
+        "Halving gives total 180°",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L05",
+      "CultureCode": "en",
+      "Title": "Triangles in Circles",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct the circumcircle of a noncollinear triangle by intersecting perpendicular bisectors and justify centre equidistant from vertices.",
+        "Intersection of perpendicular bisectors of triangle sides Equidistant from all vertices",
+        "Points equidistant from endpoints lie on bisector Intersect two sides' bisectors to locate circumcenter Draw circle centre O radius OA",
+        "Source-specific student task: Students construct and verify a circumcircle on paper or dynamic grid; teacher scores true compass steps. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 5, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Circumcenter",
+          "Definition": "Intersection of perpendicular bisectors of triangle sides",
+          "Rule": "Equidistant from all vertices",
+          "Example": "For right triangle midpoint of hypotenuse"
+        },
+        {
+          "Title": "Perpendicular-bisector locus",
+          "Definition": "Points equidistant from endpoints lie on bisector",
+          "Rule": "Intersect two sides' bisectors to locate circumcenter",
+          "Example": "OA=OB=OC"
+        },
+        {
+          "Title": "Circumradius",
+          "Definition": "Distance from circumcenter to any vertex",
+          "Rule": "Draw circle centre O radius OA",
+          "Example": "For right legs 6,8, hypotenuse 10, radius 5"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Triangles in Circles: illustration 1",
+          "Question": "Right triangle vertices (0,0),(6,0),(0,8). Find circumcenter.",
+          "Method": "Circumcenter",
+          "Steps": [
+            "Hypotenuse endpoints (6,0),(0,8)",
+            "Midpoint ((6+0)/2,(0+8)/2)=(3,4)",
+            "All three vertex distances equal 5"
+          ],
+          "Answer": "Centre (3,4), radius 5.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Triangles in Circles: illustration 2",
+          "Question": "A triangle circumcenter O is distance 7 from A. Find OB and OC.",
+          "Method": "Perpendicular-bisector locus",
+          "Steps": [
+            "Circumcenter on perpendicular bisectors",
+            "Thus OA=OB=OC",
+            "Given OA=7"
+          ],
+          "Answer": "OB=OC=7.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Triangles in Circles: illustration 3",
+          "Question": "For triangle A=(0,0),B=(4,0),C=(0,4), find circumcircle.",
+          "Method": "Circumradius",
+          "Steps": [
+            "Right angle at A",
+            "Hypotenuse BC midpoint (2,2)",
+            "Radius √((2−0)²+(2−0)²)=2√2"
+          ],
+          "Answer": "(x−2)²+(y−2)²=8.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Intersecting angle bisectors to locate circumcenter",
+          "WhyWrong": "Angle bisectors define incenter",
+          "Correction": "Use perpendicular side bisectors"
+        },
+        {
+          "Mistake": "Assuming circumcenter always lies inside triangle",
+          "WhyWrong": "Obtuse triangles have exterior circumcenter",
+          "Correction": "Extend bisectors beyond triangle"
+        }
+      ],
+      "SummaryPoints": [
+        "Construct the circumcircle of a noncollinear triangle by intersecting perpendicular bisectors and justify centre equidistant from vertices.",
+        "Intersect two sides' bisectors to locate circumcenter",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L06",
+      "CultureCode": "en",
+      "Title": "A Special Point",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove concurrency of triangle angle bisectors and characterize the incenter as point equally distant from all three side lines.",
+        "Intersection of all three internal angle bisectors Equidistant from side lines",
+        "Point on interior bisector has equal perpendicular distances to adjacent sides Use congruent right triangles r=Δ/s where Δ area and s semiperimeter",
+        "Source-specific student task: Students annotate an angle-bisector proof and separate incenter from circumcenter; teacher reviews. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 6, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Incenter",
+          "Definition": "Intersection of all three internal angle bisectors",
+          "Rule": "Equidistant from side lines",
+          "Example": "Always inside nondegenerate triangle"
+        },
+        {
+          "Title": "Angle-bisector locus",
+          "Definition": "Point on interior bisector has equal perpendicular distances to adjacent sides",
+          "Rule": "Use congruent right triangles",
+          "Example": "Distances to AB and AC match"
+        },
+        {
+          "Title": "Incircle radius",
+          "Definition": "Common perpendicular distance from incenter to sides",
+          "Rule": "r=Δ/s where Δ area and s semiperimeter",
+          "Example": "Triangle 3-4-5 has r=1"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "A Special Point: illustration 1",
+          "Question": "Right triangle legs 3,4,hypotenuse 5; find inradius.",
+          "Method": "Incenter",
+          "Steps": [
+            "Area Δ=3·4/2=6",
+            "Semiperimeter s=(3+4+5)/2=6",
+            "r=Δ/s=1"
+          ],
+          "Answer": "Inradius 1.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "A Special Point: illustration 2",
+          "Question": "What makes intersection of two internal angle bisectors an incenter?",
+          "Method": "Angle-bisector locus",
+          "Steps": [
+            "First bisector gives equal distances to its two lines",
+            "Second gives equal distances to another pair",
+            "All three distances equal, so point lies on third bisector"
+          ],
+          "Answer": "All three internal bisectors concur.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "A Special Point: illustration 3",
+          "Question": "A triangle area is 30 and semiperimeter 15. Find inradius.",
+          "Method": "Incircle radius",
+          "Steps": [
+            "Area formula Δ=rs",
+            "Set 30=15r",
+            "Solve r=2"
+          ],
+          "Answer": "2 units.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using circumcenter for incircle",
+          "WhyWrong": "Circumcenter equidistant from vertices, not sides",
+          "Correction": "Use angle bisectors"
+        },
+        {
+          "Mistake": "Measuring to side endpoints rather than perpendicular line distances",
+          "WhyWrong": "Inradius is perpendicular to side lines",
+          "Correction": "Drop right angles"
+        }
+      ],
+      "SummaryPoints": [
+        "Prove concurrency of triangle angle bisectors and characterize the incenter as point equally distant from all three side lines.",
+        "Use congruent right triangles",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L07",
+      "CultureCode": "en",
+      "Title": "Circles in Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: Construct a triangle incircle from the incenter and perpendicular foot to a side, proving tangency to all three sides.",
+        "Circle internally tangent to all three sides of nondegenerate triangle Centre is incenter and radius is perpendicular side distance",
+        "A circle is tangent to a line at foot of perpendicular radius Use equal distances from incenter to sides Δ=rs using three base-height triangles",
+        "Source-specific student task: Construct incircle with compass and identify every perpendicular foot; teacher verifies tangency. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 7, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Incircle",
+          "Definition": "Circle internally tangent to all three sides of nondegenerate triangle",
+          "Rule": "Centre is incenter and radius is perpendicular side distance",
+          "Example": "For 3-4-5 triangle r=1"
+        },
+        {
+          "Title": "Tangent proof",
+          "Definition": "A circle is tangent to a line at foot of perpendicular radius",
+          "Rule": "Use equal distances from incenter to sides",
+          "Example": "Three contacts at radius r"
+        },
+        {
+          "Title": "Area relation",
+          "Definition": "Triangle area equals r times semiperimeter",
+          "Rule": "Δ=rs using three base-height triangles",
+          "Example": "For s=12,r=2 area 24"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Circles in Triangles: illustration 1",
+          "Question": "Triangle area 24 and semiperimeter 12. Find incircle radius.",
+          "Method": "Incircle",
+          "Steps": [
+            "Use Δ=rs",
+            "Set 24=12r",
+            "Solve r=2"
+          ],
+          "Answer": "Radius 2.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Circles in Triangles: illustration 2",
+          "Question": "How is incircle centre constructed?",
+          "Method": "Tangent proof",
+          "Steps": [
+            "Bisect two internal vertex angles using compass",
+            "Their intersection I is equidistant from all sides",
+            "Third bisector passes I"
+          ],
+          "Answer": "Incenter I.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        },
+        {
+          "Title": "Circles in Triangles: illustration 3",
+          "Question": "If perpendicular distance from I to side AB is 3, find distances to BC and CA.",
+          "Method": "Area relation",
+          "Steps": [
+            "I is on all three internal bisectors",
+            "Perpendicular distances to all sides equal",
+            "Both other distances are 3"
+          ],
+          "Answer": "3 units each.",
+          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Drawing circle at circumcenter and assuming tangency",
+          "WhyWrong": "In general circumcircle and incircle differ",
+          "Correction": "Use angle-bisector intersection"
+        },
+        {
+          "Mistake": "Choosing arbitrary circle radius through triangle vertex",
+          "WhyWrong": "Incircle radius is perpendicular side distance",
+          "Correction": "Measure from incenter to a side"
+        }
+      ],
+      "SummaryPoints": [
+        "Construct a triangle incircle from the incenter and perpendicular foot to a side, proving tangency to all three sides.",
+        "Use equal distances from incenter to sides",
+        "Teacher-scored source-aligned diagram and proof evidence remains required."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
