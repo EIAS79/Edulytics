@@ -1,0 +1,372 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u04-l01-l04-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L01",
+      "CultureCode": "en",
+      "Title": "Angles and Steepness",
+      "ExplanationParagraphs": [
+        "Learning goal: use similarity to explain why a right-triangle ramp with one fixed acute angle has a fixed rise-to-run ratio; calculate side lengths and identify design information still needed.",
+        "Verbal diagram: horizontal run forms one leg, vertical rise the other, and the diagonal ramp surface is the hypotenuse; the acute ground angle determines the leg ratio.",
+        "Source learning activities consider ramp models, scale drawings and explanations. An independently written classroom task compares two hypothetical steepness designs without claiming current ADA compliance.",
+        "Teacher-scored activity: produce a labelled right-triangle diagram, explain the reason for the selected ratio, compare units and precision, and identify model assumptions. Teacher rubric (0–4): valid triangle and angle labels; correct ratios; mathematically justified reasoning; clear original representations and critique. A number alone does not grade the drawing or argument.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. All worked numerical questions and explanations below are independently authored Edulytiks content. Original source images and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rise and run",
+          "Definition": "Rise is vertical height; run is horizontal distance.",
+          "Rule": "Steepness is rise/run for positive horizontal run.",
+          "Example": "A 1.5 m rise over 18 m has ratio 1/12."
+        },
+        {
+          "Title": "Angle fixes ratio",
+          "Definition": "All nondegenerate right triangles with equal acute angle are AA-similar.",
+          "Rule": "Opposite/adjacent ratio is invariant under scaling.",
+          "Example": "Triangles with legs (1,12) and (2,24) have equal rise/run."
+        },
+        {
+          "Title": "Accessible modelling",
+          "Definition": "Ramp safety depends on geometry and other constraints; a right-triangle ratio is not a complete legal or safety decision.",
+          "Rule": "Confirm current applicable rules with qualified authorities; do not infer compliance from a generic example.",
+          "Example": "Rise 0.8 m and run 9.6 m is a mathematical 1:12 ramp model, not a certified design."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate rise and run",
+          "Question": "A hypothetical ramp rises 0.8 m with a chosen ratio rise:run of 1:12. Find horizontal run.",
+          "Method": "Apply the stated design ratio, not an unstated legal requirement.",
+          "Steps": [
+            "Write 0.8/run=1/12.",
+            "Multiply: run=12×0.8=9.6 m.",
+            "Use Pythagoras for ramp surface length: √(0.8²+9.6²)≈9.63 m.",
+            "Explain other design constraints are not assessed here."
+          ],
+          "Answer": "Run 9.6 m, sloped length approximately 9.63 m.",
+          "Check": "Ratio 0.8/9.6=1/12; this is mathematical only."
+        },
+        {
+          "Title": "Why fixed angle fixes steepness",
+          "Question": "Two ramps have rises 0.4 m and 1.0 m but identical acute slope angle. Find the ratio of their runs.",
+          "Method": "Use AA similarity then proportional scaling.",
+          "Steps": [
+            "Equal acute slope angles plus equal right angles give similar triangles.",
+            "Rise scale is 1.0/0.4=2.5.",
+            "If first run 4.8 m, second run 2.5×4.8=12 m.",
+            "Check both rise/run=1/12."
+          ],
+          "Answer": "The second run is 12 m.",
+          "Check": "Invariance comes from AA similarity, not a measurement guess."
+        },
+        {
+          "Title": "Identify insufficient data",
+          "Question": "A staircase height is known but no ramp angle or rise:run ratio is supplied. Is the run uniquely determined?",
+          "Method": "Test scale/angle ambiguity.",
+          "Steps": [
+            "Choose one 1:10 ramp for rise h>0: run=10h.",
+            "Choose another 1:12 ramp for same rise: run=12h.",
+            "Different runs satisfy the same rise.",
+            "The angle/steepness specification is additional necessary information."
+          ],
+          "Answer": "No unique run can be determined.",
+          "Check": "Never label an underspecified ramp design safe or compliant."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming an exact legal ramp ratio from a classroom model",
+          "WhyWrong": "Standards depend on jurisdiction and configuration, and geometry alone omits railings and other constraints.",
+          "Correction": "Treat given ratios as hypothetical unless a current verified applicable standard is specified."
+        },
+        {
+          "Mistake": "Dividing run by rise while calling the result rise/run",
+          "WhyWrong": "The reciprocal changes the interpreted steepness.",
+          "Correction": "Label vertical rise and horizontal run and write the intended fraction first."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: use similarity to explain why a right-triangle ramp with one fixed acute angle has a fixed rise-to-run ratio; calculate side lengths and identify design information still needed.",
+        "Ratios require corresponding sides, a right angle, and physically consistent units.",
+        "Drawn constructions, modelling claims and explained strategies require authentic teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L02",
+      "CultureCode": "en",
+      "Title": "Half a Square",
+      "ExplanationParagraphs": [
+        "Learning goal: derive the side–diagonal relation for a square and solve 45°–45°–90° right-triangle lengths with exact radicals.",
+        "Optional source lesson: diagonals of squares and rectangles reveal special right-triangle ratios. Source teacher/student page identifies this as optional and asks for measurements followed by exact generalization.",
+        "Teacher-scored activity: produce a labelled right-triangle diagram, explain the reason for the selected ratio, compare units and precision, and identify model assumptions. Teacher rubric (0–4): valid triangle and angle labels; correct ratios; mathematically justified reasoning; clear original representations and critique. A number alone does not grade the drawing or argument.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. All worked numerical questions and explanations below are independently authored Edulytiks content. Original source images and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Square diagonal",
+          "Definition": "A square side s>0 has a diagonal cutting it into two isosceles right triangles.",
+          "Rule": "Apply Pythagoras: d²=s²+s², so d=s√2.",
+          "Example": "Side 5 gives diagonal 5√2."
+        },
+        {
+          "Title": "45–45–90 rule",
+          "Definition": "Every nondegenerate right triangle with two 45° angles has congruent legs.",
+          "Rule": "Its side ratio is 1:1:√2.",
+          "Example": "Hypotenuse 12 gives each leg 12/√2=6√2."
+        },
+        {
+          "Title": "Similar rectangles",
+          "Definition": "Proportional side lengths make rectangle diagonals scale by the same factor.",
+          "Rule": "Apply Pythagoras to verify scaled legs and diagonal.",
+          "Example": "A 3-by-4 rectangle has diagonal 5; a 6-by-8 rectangle has diagonal 10."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Derive the unit-square diagonal",
+          "Question": "What is the exact diagonal of a square with sides 1?",
+          "Method": "Use the right triangle made by the diagonal.",
+          "Steps": [
+            "The diagonal is the hypotenuse of a 1-by-1 right triangle.",
+            "d²=1²+1²=2.",
+            "The positive length is d=√2.",
+            "Scaling by side s>0 gives d=s√2."
+          ],
+          "Answer": "Diagonal √2; general diagonal s√2.",
+          "Check": "The angles at the two nonright vertices are each 45°."
+        },
+        {
+          "Title": "Find sides from diagonal",
+          "Question": "A square has diagonal 18 cm. Find its side and area.",
+          "Method": "Invert the diagonal relation.",
+          "Steps": [
+            "Set 18=s√2.",
+            "Solve s=18/√2=9√2 cm.",
+            "Square side: area=(9√2)²=162 cm².",
+            "Check s√2=18 cm."
+          ],
+          "Answer": "Side 9√2 cm; area 162 cm².",
+          "Check": "Lengths and area units differ."
+        },
+        {
+          "Title": "Compare similar rectangle diagonals",
+          "Question": "Rectangle 3×4 has diagonal 5. A 1.5 scale copy has what diagonal?",
+          "Method": "Apply uniform scaling.",
+          "Steps": [
+            "The new sides are 4.5 and 6.",
+            "Pythagoras gives d=√(4.5²+6²)=7.5.",
+            "Uniform scale gives 1.5×5=7.5 independently.",
+            "Both methods agree."
+          ],
+          "Answer": "7.5 length units.",
+          "Check": "Rectangle must be scaled uniformly; scaling only one side would not preserve the diagonal ratio."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Writing d=2s",
+          "WhyWrong": "Pythagoras gives d²=2s², not d=2s.",
+          "Correction": "Take the positive square root: d=s√2."
+        },
+        {
+          "Mistake": "Leaving a negative radical length",
+          "WhyWrong": "Geometric segment lengths are nonnegative.",
+          "Correction": "Use positive square roots and check units."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: derive the side–diagonal relation for a square and solve 45°–45°–90° right-triangle lengths with exact radicals.",
+        "Ratios require corresponding sides, a right angle, and physically consistent units.",
+        "Drawn constructions, modelling claims and explained strategies require authentic teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L03",
+      "CultureCode": "en",
+      "Title": "Half an Equilateral Triangle",
+      "ExplanationParagraphs": [
+        "Learning goal: derive the 30°–60°–90° side ratio from an equilateral triangle's altitude and calculate exact missing sides.",
+        "Optional follow-on to Half a Square, with source measurement of equilateral altitudes and generalization. Use source-optional status in the ledger and do not promote original source art.",
+        "Teacher-scored activity: produce a labelled right-triangle diagram, explain the reason for the selected ratio, compare units and precision, and identify model assumptions. Teacher rubric (0–4): valid triangle and angle labels; correct ratios; mathematically justified reasoning; clear original representations and critique. A number alone does not grade the drawing or argument.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. All worked numerical questions and explanations below are independently authored Edulytiks content. Original source images and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Altitude midpoint",
+          "Definition": "An altitude from a vertex of an equilateral triangle bisects the opposite side.",
+          "Rule": "Use SSS/isosceles congruence to establish half-side length.",
+          "Example": "Equilateral side 10 has base halves 5."
+        },
+        {
+          "Title": "30–60–90 ratio",
+          "Definition": "Splitting a side-2s equilateral triangle yields short leg s, long leg s√3 and hypotenuse 2s.",
+          "Rule": "Use Pythagoras to derive long leg √((2s)²−s²)=s√3.",
+          "Example": "For short leg 4, hypotenuse 8 and long leg 4√3."
+        },
+        {
+          "Title": "Opposite-angle mapping",
+          "Definition": "The shortest side is opposite 30°, the long leg opposite 60°, the hypotenuse opposite 90°.",
+          "Rule": "Identify angle positions before selecting formula.",
+          "Example": "Given long leg 6√3, short leg 6 and hypotenuse 12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Derive the ratio",
+          "Question": "An equilateral triangle has side 2s. Find its altitude.",
+          "Method": "Bisect its base and apply Pythagoras.",
+          "Steps": [
+            "The altitude creates two right triangles with hypotenuse 2s and short leg s.",
+            "h²=(2s)²−s²=3s².",
+            "Take positive root h=s√3.",
+            "The half-triangle angles are 30°,60°,90°."
+          ],
+          "Answer": "Side ratio short:long:hypotenuse is 1:√3:2.",
+          "Check": "s must be positive."
+        },
+        {
+          "Title": "Find all sides",
+          "Question": "A 30–60–90 triangle's short leg is 7 cm. Find other sides.",
+          "Method": "Scale the special ratio.",
+          "Steps": [
+            "Use short leg s=7.",
+            "Long leg=s√3=7√3 cm.",
+            "Hypotenuse=2s=14 cm.",
+            "Check 7²+(7√3)²=49+147=196=14²."
+          ],
+          "Answer": "Long leg 7√3 cm; hypotenuse 14 cm.",
+          "Check": "Opposite angles distinguish the long from short leg."
+        },
+        {
+          "Title": "Recover short leg from long",
+          "Question": "A 30–60–90 triangle has long leg 9√3. Find short leg and hypotenuse.",
+          "Method": "Divide by √3.",
+          "Steps": [
+            "Equation s√3=9√3 gives s=9.",
+            "Hypotenuse 2s=18.",
+            "Check s²+(s√3)²=81+243=324.",
+            "√324=18."
+          ],
+          "Answer": "Short leg 9; hypotenuse 18.",
+          "Check": "Angle data are required to know which leg is long."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling the long leg 2s",
+          "WhyWrong": "2s is the hypotenuse, not the long leg.",
+          "Correction": "Map sides to the 30°,60°,90° opposite angles."
+        },
+        {
+          "Mistake": "Using 30°–60°–90° formulas for another right triangle",
+          "WhyWrong": "The formula follows from equilateral-splitting geometry.",
+          "Correction": "Verify the actual acute angles before using the special ratio."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: derive the 30°–60°–90° side ratio from an equilateral triangle's altitude and calculate exact missing sides.",
+        "Ratios require corresponding sides, a right angle, and physically consistent units.",
+        "Drawn constructions, modelling claims and explained strategies require authentic teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L04",
+      "CultureCode": "en",
+      "Title": "Ratios in Right Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: compare adjacent/hypotenuse, opposite/hypotenuse and opposite/adjacent ratios across similar right triangles before assigning trigonometric names.",
+        "The source deliberately keeps ratio descriptions unnamed until the following lesson; students measure many triangle sizes and compile a table of quotients. Preserve this pedagogical progression rather than introducing memorization as the first step.",
+        "Teacher-scored activity: produce a labelled right-triangle diagram, explain the reason for the selected ratio, compare units and precision, and identify model assumptions. Teacher rubric (0–4): valid triangle and angle labels; correct ratios; mathematically justified reasoning; clear original representations and critique. A number alone does not grade the drawing or argument.",
+        "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. All worked numerical questions and explanations below are independently authored Edulytiks content. Original source images and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fixed acute angle",
+          "Definition": "For a specified acute angle θ in a nondegenerate right triangle, AA similarity fixes every corresponding side ratio.",
+          "Rule": "Use similarity to compare triangles of different sizes.",
+          "Example": "A 3–4–5 triangle and scaled 6–8–10 have the same ratios."
+        },
+        {
+          "Title": "Three quotients",
+          "Definition": "For an acute reference angle, use adjacent/hypotenuse, opposite/hypotenuse, and opposite/adjacent.",
+          "Rule": "Mark opposite and adjacent relative to θ, not relative to picture left/right.",
+          "Example": "For opposite 3, adjacent 4, hypotenuse 5: 4/5,3/5,3/4."
+        },
+        {
+          "Title": "Complementary angles",
+          "Definition": "The other acute angle is 90°−θ; its opposite and adjacent legs swap.",
+          "Rule": "Thus one angle's adjacent/hypotenuse equals the other's opposite/hypotenuse.",
+          "Example": "A triangle with θ=35° has complementary 55°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute three ratios",
+          "Question": "Given right triangle opposite=3, adjacent=4, hypotenuse=5 for acute θ, find the requested three ratios.",
+          "Method": "Use labelled sides in the source's ordered table.",
+          "Steps": [
+            "Adjacent/hypotenuse=4/5=0.8.",
+            "Opposite/hypotenuse=3/5=0.6.",
+            "Opposite/adjacent=3/4=0.75.",
+            "Check 3²+4²=5² and every denominator positive."
+          ],
+          "Answer": "0.8, 0.6, 0.75 respectively.",
+          "Check": "Do not change θ midway through the table."
+        },
+        {
+          "Title": "Test scaling invariance",
+          "Question": "Double every side of a right triangle from 3,4,5 to 6,8,10. Do the ratios change?",
+          "Method": "Cancel the common dilation factor.",
+          "Steps": [
+            "Adjacent/hypotenuse becomes 8/10=4/5.",
+            "Opposite/hypotenuse becomes 6/10=3/5.",
+            "Opposite/adjacent becomes 6/8=3/4.",
+            "Each exactly matches its original ratio."
+          ],
+          "Answer": "No; a common scale factor cancels.",
+          "Check": "Requires the same acute corresponding angle."
+        },
+        {
+          "Title": "Complementary angle swap",
+          "Question": "The ratio opposite/hypotenuse for θ is 0.6 in a right triangle. What is adjacent/hypotenuse for its other acute angle φ?",
+          "Method": "Swap opposite and adjacent relative to the reference angle.",
+          "Steps": [
+            "The two acute angles satisfy θ+φ=90°.",
+            "The side opposite θ is adjacent to φ.",
+            "Their hypotenuse is the same side.",
+            "Thus adjacent(φ)/hypotenuse=opposite(θ)/hypotenuse=0.6."
+          ],
+          "Answer": "0.6.",
+          "Check": "This swaps angles within one right triangle or similar copies."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Defining opposite and adjacent without naming the reference angle",
+          "WhyWrong": "The labels swap when the reference angle changes.",
+          "Correction": "Mark θ first and classify both legs relative to θ."
+        },
+        {
+          "Mistake": "Claiming ratios from the measurement table must agree exactly at finite ruler precision",
+          "WhyWrong": "Recorded lengths include rounding and construction error.",
+          "Correction": "Treat observed decimals as approximations and use exact similarity to justify the invariant."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: compare adjacent/hypotenuse, opposite/hypotenuse and opposite/adjacent ratios across similar right triangles before assigning trigonometric names.",
+        "Ratios require corresponding sides, a right angle, and physically consistent units.",
+        "Drawn constructions, modelling claims and explained strategies require authentic teacher review."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
