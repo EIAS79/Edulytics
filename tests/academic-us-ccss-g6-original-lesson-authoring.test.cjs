@@ -783,3 +783,41 @@ test('U01 L11 polygons source tasks, trapezoid proof and independent visual mode
   assert.equal(2 * 2 + 4 * (2 * 2 / 2), 12); // original four-wing pinwheel
   assert.equal(crosswalk.releaseStatus, 'NO_GO__NOT_ACADEMICALLY_ACCEPTED');
 });
+
+
+test('U01 L13 L14 L17 L18 L19 match original polyhedron, net, cube and tent-floor task boundaries', () => {
+  const record = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l13-l14-l17-l18-l19-student-teacher-source-gap-repairs.json'), 'utf8'));
+  assert.equal(record.summary.compared, 5);
+  assert.equal(record.summary.fullActivityAcademicAcceptance, 0);
+  assert.deepEqual(record.lessons.map(x => x.lessonCode),
+    [13,14,17,18,19].map(n => lcode(1,n)));
+  for (const l of record.lessons) {
+    assert.ok(l.actualSourceRequirements.length >= 4, l.lessonCode);
+    assert.equal(l.sourceDrawingAppletParityApproved, false);
+    assert.equal(l.effectiveRichV2StudentRenderVerified, false);
+    assert.equal(l.runtimeSelectedPracticeVerified, false);
+    assert.equal(l.teacherRubricPersistedVerified, false);
+    assert.equal(l.academicAcceptance, 'NOT_ACCEPTED');
+    const example = byCode.get(l.lessonCode).translations[0].workedExamples;
+    assert.match(example, /Example 3\b/, l.lessonCode);
+  }
+  const example = n => byCode.get(lcode(1,n)).translations[0].workedExamples;
+  assert.match(example(13), /tetrahedron/i);
+  assert.match(example(14), /triangular prism net/i);
+  assert.match(example(17), /32 identical/);
+  assert.match(example(17), /27; 5 remain/);
+  assert.match(example(18), /1734 square units/);
+  assert.match(example(18), /4913 cubic units/);
+  const tent = byCode.get(lcode(1,19)).translations[0];
+  assert.match(tent.explanation, /REQUIRES a tent floor/);
+  assert.match(tent.keyConceptsAndRules, /MUST INCLUDE A FLOOR/);
+  assert.match(tent.workedExamples, /INCLUDING THE FLOOR/);
+  assert.doesNotMatch(tent.workedExamples, /Ignoring floor and seams/);
+  assert.equal(3 ** 3, 27);
+  assert.equal(4 ** 3, 64);
+  assert.equal(6 * (17 ** 2), 1734);
+  assert.equal(17 ** 3, 4913);
+  assert.equal(8 * 6 + 2 * 6 * 5 + 2 * 0.5 * 8 * 3, 132);
+  assert.equal(8 * 8 + 2 * 8 * 5 + 2 * 0.5 * 8 * 3, 168);
+});
