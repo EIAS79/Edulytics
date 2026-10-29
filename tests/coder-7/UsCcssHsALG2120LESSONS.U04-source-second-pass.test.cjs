@@ -44,7 +44,7 @@ test('U04 09 logs are inverse of base-ten exponentiation',()=>{
 });
 test('U04 10 equivalent base-two and base-five log statements',()=>{
  near(Math.log2(15),3.9068905956,1e-8);near(Math.log2(40),5.3219280948,1e-8);
- near(5**Math.log(25)/Math.log(5),25,1e-5);
+ near(5**(Math.log(25)/Math.log(5)),25,1e-5);
  assert.equal(2**4,16);assert.equal(5**2,25);
 });
 test('U04 11 logs can be negative when the argument is positive',()=>{
