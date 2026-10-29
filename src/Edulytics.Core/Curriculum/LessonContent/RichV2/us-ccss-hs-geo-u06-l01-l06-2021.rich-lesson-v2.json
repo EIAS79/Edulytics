@@ -219,6 +219,7 @@
         "Learning goal: Classify maps as rigid motions, nonrigid similarities, or neither based on whether distances are preserved or uniformly scaled.",
         "Preserves all pairwise distances Test squared distance ratios=1 Reflection (x,y)→(−x,y)",
         "Multiplies all distances by one k>0, preserves angles Uniform positive dilation k=2 Test independent direction lengths",
+        "Source activity parity: introduce the scale-3 coordinate map (x,y)↦(3x,3y) using a point B=(2,3), its image B′=(6,9), and auxiliary feet M=(2,0), N=(6,0). Students construct the two right triangles PMB and PNB′ and justify proportionality/angle agreement before classifying the map as a dilation. This independent reconstruction requires a genuine labelled coordinate diagram and teacher-reviewed reasoning.",
         "Source-specific original activity: Sort coordinate-rule cards with explicit counterexamples; teacher checks written classification. Teacher rubric (0–4): correct geometric assumptions, accurate symbolic and diagrammatic representation, verified computations, and justified explanation. Student-produced diagrams and proofs require teacher scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 3, CC BY 4.0. Independently authored Edulytiks examples, no copied figures/restricted assessments."
       ],
@@ -256,16 +257,16 @@
           "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
         },
         {
-          "Title": "Types of Transformations: worked application 2",
-          "Question": "Classify g(x,y)=(3x,3y).",
-          "Method": "Similarity",
+          "Title": "Types of Transformations: justify scale three with auxiliary right triangles",
+          "Question": "Point B=(2,3) maps to B′=(6,9). With origin P and feet M=(2,0), N=(6,0), explain why triangles PMB and PNB′ are similar and find PB:PB′.",
+          "Method": "Compare corresponding right-angle legs and infer AA similarity for the origin-centred dilation.",
           "Steps": [
-            "Difference vectors multiplied by 3",
-            "All distances multiplied by 3",
-            "Angles preserved, not generally congruent"
+            "PM=2, MB=3, PN=6, NB′=9; the horizontal and vertical leg pairs both have image/original ratio 3.",
+            "The triangles are right at M and N, and P,B,B′ lie on the same ray (both direction vectors are proportional), so their angles at P agree.",
+            "AA similarity gives PB′/PB=3 (or PB:PB′=1:3); independently PB=√13 and PB′=3√13."
           ],
-          "Answer": "Similarity, scale factor 3.",
-          "Check": "Check mathematical domain and original geometric hypothesis; no standalone auto-grade of proof."
+          "Answer": "Triangles PMB and PNB′ are similar by AA and PB:PB′=1:3.",
+          "Check": "The coordinate map sends every vector from origin to three times itself and each leg scales exactly 3."
         },
         {
           "Title": "Types of Transformations: worked application 3",
@@ -305,10 +306,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Displacement same for all points",
-            "Differences between points unchanged",
-            "Therefore all lengths preserved",
-            "Rigid translation."
+            "PM=2, MB=3, PN=6, NB′=9; the horizontal and vertical leg pairs both have image/original ratio 3.",
+            "The triangles are right at M and N, and P,B,B′ lie on the same ray (both direction vectors are proportional), so their angles at P agree.",
+            "AA similarity gives PB′/PB=3 (or PB:PB′=1:3); independently PB=√13 and PB′=3√13.",
+            "Triangles PMB and PNB′ are similar by AA and PB:PB′=1:3."
           ],
           "Rows": []
         }
