@@ -556,16 +556,16 @@
           "Check": "Check each hypothesis, unit and numerical result against v=bh"
         },
         {
-          "Title": "Prisms Practice — example 2",
-          "Question": "Oblique prism base area 14 cm² has perpendicular height 5 cm and lateral edge 7 cm. Find V.",
-          "Method": "Oblique prism",
+          "Title": "Oblique prism: missing perpendicular height",
+          "Question": "An oblique prism has base area 14 cm² and lateral edge length 10 cm making angle 30° with the base plane. Find its volume.",
+          "Method": "Resolve the lateral edge into its normal height component.",
           "Steps": [
-            "Given perpendicular height is 5",
-            "Use V=Bh, not lateral edge",
-            "14×5=70"
+            "The perpendicular height is h=10sin30° because the edge makes a 30° angle with its projection on the base plane.",
+            "Since sin30°=1/2, h=5 cm; the slanted 10 cm is NOT the volume height.",
+            "Use V=Bh=14×5=70 cm³."
           ],
           "Answer": "70 cm³.",
-          "Check": "Check each hypothesis, unit and numerical result against use perpendicular base separation"
+          "Check": "Height is measured perpendicular to base; use degree mode."
         },
         {
           "Title": "Prisms Practice — example 3",
