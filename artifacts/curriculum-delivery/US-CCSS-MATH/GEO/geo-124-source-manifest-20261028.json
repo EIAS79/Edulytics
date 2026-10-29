@@ -8,7 +8,7 @@
   "blueprintBlobSha": "5d2d8a73180f2a56a9cc74222a8ae14af025ec43",
   "canonicalPackBlobSha": "a0e5f89fad48c39490927e382f839205c8bc6d0f",
   "sourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
-  "sourceCheckedAt": "2026-10-29: official teacher/student lessons U01:L07-L12; U01:L01-L06 previously checked 2026-10-28",
+  "sourceCheckedAt": "2026-10-29 official teacher + accessible student online pages for U01:L07-L22; 2026-10-28 U01:L01-L06",
   "status": "WORK_IN_PROGRESS_NOT_RELEASE_READY",
   "evidenceRules": [
     "Exactly 124 canonical identity rows; not lesson approval.",
@@ -17,12 +17,13 @@
     "No published/approved/verified grade status is conferred by the baseline file's Published metadata.",
     "Historical reviewEvidence 119 included / 5 excluded conflicts with 124 current JSON records with isSupporting=false; investigate provenance before modifying historical acceptance metadata.",
     "U01:L08 is explicitly optional on the official teacher source page; previous baseline content has isSupporting=false. Preserve optional semantics in review and do not rewrite blueprint classification without owner-approved source-alignment clarification.",
-    "PR #583 historical full-suite CI failed on hardcoded Rich V2 catalogue expectation 318 vs 324 with six candidate records; as more are embedded, global count test remains blocked pending shared-test owner integration. Do not mark CI green."
+    "PR #583 historical full-suite CI failed on hardcoded Rich V2 catalogue expectation 318 vs 324 with six candidate records; as more are embedded, global count test remains blocked pending shared-test owner integration. Do not mark CI green.",
+    "All 22 unit-one candidates are independently authored first-party learning materials but have no implemented original visual diagrams or validated human-scored capture: they are candidates only, not Stage D accepted or student-visible."
   ],
   "totals": {
     "blueprintLessons": 124,
     "canonicalContentLessons": 124,
-    "richCandidateLessons": 12,
+    "richCandidateLessons": 22,
     "templatedCanonicalGoals": 124,
     "genericFiveStepCandidates": 91,
     "persistedVerified": 0,
@@ -404,7 +405,9 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceOptional": true,
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/1/8/preparation.html"
     },
     {
       "ordinal": 9,
@@ -649,11 +652,11 @@
           "standard": "HSG-CO.B.6"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -692,11 +695,11 @@
           "standard": "HSG-CO.A.4"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -735,11 +738,11 @@
           "standard": "HSG-CO.A.3"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -773,11 +776,11 @@
           "standard": "HSG-CO.A.3"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": false,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -824,11 +827,11 @@
           "standard": "HSG-CO.A.5"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -867,16 +870,18 @@
           "standard": "HSG-CO.A.5"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceOptional": true,
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/1/18/preparation.html"
     },
     {
       "ordinal": 19,
@@ -909,11 +914,11 @@
           "standard": "HSG-CO.C.9"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -961,11 +966,11 @@
           "standard": "HSG-CO.C.10"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -1016,11 +1021,11 @@
           "standard": "HSG-CO.C.9"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
@@ -1063,16 +1068,18 @@
           "standard": "HSG-CO.D.13"
         }
       ],
-      "richCandidateOnBranch": false,
+      "richCandidateOnBranch": true,
       "learnerGoalTemplateInCanonical": true,
       "genericFiveStepSolutionInCanonical": true,
-      "stageA": "NOT_VERIFIED",
-      "stageB": "NOT_VERIFIED",
+      "stageA": "SOURCE_TEACHER_STUDENT_COMPARE_INITIAL",
+      "stageB": "RICHV2_CANDIDATE_AUTHORED",
       "stageC": "NOT_VERIFIED",
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "sourceOptional": true,
+      "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/1/22/preparation.html"
     },
     {
       "ordinal": 23,
