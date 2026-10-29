@@ -197,3 +197,39 @@ test('372 authored worked examples are structurally inspected, not all mathemati
   }
   // Structural completeness is not independent certification of 372 answers.
 });
+
+test('all 372 worked examples and 372 key concepts have non-empty independent fields', () => {
+  const examples=lessons.flatMap(x=>x.WorkedExamples.map(e=>[x.LessonCode,e]));
+  const concepts=lessons.flatMap(x=>x.KeyConcepts.map(k=>[x.LessonCode,k]));
+  assert.equal(examples.length,372);
+  assert.equal(concepts.length,372);
+  for(const [id,example] of examples){
+    for(const field of ['Title','Question','Method','Answer','Check']){
+      assert.ok(typeof example[field]==='string' && example[field].trim(),id+': example.'+field);
+    }
+    assert.ok(example.Steps.length>=3,id+': steps');
+    assert.ok(example.Steps.every(step=>typeof step==='string'&&step.trim()),id+': empty step');
+  }
+  for(const [id,concept] of concepts){
+    for(const field of ['Title','Definition','Rule','Example']){
+      assert.ok(typeof concept[field]==='string' && concept[field].trim(),id+': concept.'+field);
+    }
+  }
+});
+
+test('focus/directrix absolute values survive in independent U06 L07 fields', () => {
+  const lesson=byCode.get('PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L07');
+  assert.ok(lesson);
+  assert.ok(lesson.KeyConcepts[1].Rule.includes('|y−d|'));
+  assert.ok(lesson.ExplanationParagraphs.some(p=>p.includes('|y+2|')));
+  assert.ok(lesson.WorkedExamples[0].Steps[0].includes('|y+2|'));
+  assert.ok(lesson.WorkedExamples[1].Steps[1].includes('|2−(−2)|'));
+  assert.deepEqual(lesson.Visuals[0].Items.slice(0,3),lesson.WorkedExamples[0].Steps);
+  // Exact independent checks for focus (0,2) and directrix y=-2.
+  for(const x of [-4,-2,0,2,4]){
+    const y=x*x/8;
+    const focusDist=Math.hypot(x,y-2);
+    const lineDist=Math.abs(y+2);
+    assert.ok(Math.abs(focusDist-lineDist)<1e-12);
+  }
+});
