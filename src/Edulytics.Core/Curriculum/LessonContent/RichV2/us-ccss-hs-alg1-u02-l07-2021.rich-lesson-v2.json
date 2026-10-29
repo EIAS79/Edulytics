@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l07-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L07",
+      "CultureCode": "en",
+      "Title": "Explaining Steps for Rewriting Equations",
+      "ExplanationParagraphs": [
+        "Learning objective: explain why an algebraic move preserves solution sets or fails; identify equations with no solutions and avoid dividing by an expression that could be zero. Edulytiks original lesson aligned to Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 7, https://im.kendallhunt.com/HS/teachers/1/2/7/preparation.html (CC BY 4.0), Addressing HSA-REI.A and HSA-REI.A.1. The source emphasizes oral arguments and critiques, not just computing x.",
+        "Original deliberate trap: x(x−4)=0 has solutions x=0 or x=4. Dividing both sides by x gives x−4=0, apparently leaving only x=4; the valid solution x=0 was lost because division by x is not allowed when x=0. Factoring and checking the zero-product property preserves both solutions. A second trap is x+2=x+5: subtract x to get 2=5, so it has no solution.",
+        "Partner reasoning task: assign one person a valid move (distributing, adding equal quantities, or dividing by a known nonzero constant) and the other an invalid move. Have each present a counterexample showing whether the entire original solution set is retained. Explain why x=0 cannot satisfy 6/x+1=8 because the original expression is undefined at zero.",
+        "Teacher-scored rubric (0–2 each, 8 max): correct original solution sets; explanation of valid moves; demonstration of division-by-variable pitfall; accurate no-solution and undefined-expression reasoning. It is not enough to record a final numeric value."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Proof of equivalence",
+          "Definition": "An algebraic transformation is valid when it preserves the full solution set.",
+          "Rule": "Justify reversible moves or separately check lost cases.",
+          "Example": "Dividing by a fixed nonzero number is reversible."
+        },
+        {
+          "Title": "Variable division risk",
+          "Definition": "Dividing by an expression that may be zero can discard valid solutions.",
+          "Rule": "Split out zero cases before division.",
+          "Example": "Dividing x(x−4)=0 by x discards solution x=0."
+        },
+        {
+          "Title": "No solution",
+          "Definition": "An equation has no solution when every possible input yields a false equality.",
+          "Rule": "Reduce and check contradictions.",
+          "Example": "x+2=x+5 reduces to 2=5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find lost solution after division",
+          "Question": "Analyze x(x−4)=0 and the move dividing by x.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Zero-product property gives x=0 or x−4=0.",
+            "So original set is {0,4}.",
+            "Division by x is undefined at x=0.",
+            "After dividing, equation x−4=0 keeps only 4.",
+            "Thus the equations are not equivalent."
+          ],
+          "Answer": "Original solutions {0,4}; divided equation only {4}.",
+          "Check": "Check 0(0−4)=0 and 4(4−4)=0."
+        },
+        {
+          "Title": "Recognize no solution",
+          "Question": "Solve x+2=x+5.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Subtract x from both sides.",
+            "Obtain 2=5.",
+            "This is false for every real number.",
+            "Original equation has empty solution set."
+          ],
+          "Answer": "No solution.",
+          "Check": "Difference between sides is always 3."
+        },
+        {
+          "Title": "Separate undefined from false",
+          "Question": "Can x=0 solve 6/x+1=8?",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Original expression 6/x requires x≠0.",
+            "At zero, division by zero is undefined, so substitution is not permitted.",
+            "For x≠0, 6/x=7.",
+            "Solve x=6/7 and verify 6/(6/7)+1=7+1=8."
+          ],
+          "Answer": "x=6/7; zero is outside the domain.",
+          "Check": "Original expression evaluates to 8 at 6/7."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing through by x without checking zero",
+          "WhyWrong": "This eliminates x=0 if it was a solution.",
+          "Correction": "Separate zero case or use factoring."
+        },
+        {
+          "Mistake": "Treating undefined as a wrong numerical answer",
+          "WhyWrong": "Division by zero is not a defined real calculation.",
+          "Correction": "Enforce original domain before solving."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent equation steps must preserve ALL solutions.",
+        "Dividing by a possibly zero expression can lose solutions.",
+        "A contradiction like 2=5 proves there are no solutions.",
+        "Teacher evaluates the explanation or counterexample, not only the answer."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original mathematically checkable table",
+          "Description": "Independent first-party numerical model; each row has an exact textual interpretation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x(x−4)=0",
+              "Cells": [
+                "x=0 or x=4"
+              ]
+            },
+            {
+              "Label": "x−4=0",
+              "Cells": [
+                "x=4 only"
+              ]
+            },
+            {
+              "Label": "x+2=x+5",
+              "Cells": [
+                "no solution"
+              ]
+            },
+            {
+              "Label": "6/x+1=8",
+              "Cells": [
+                "x=6/7, x≠0"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

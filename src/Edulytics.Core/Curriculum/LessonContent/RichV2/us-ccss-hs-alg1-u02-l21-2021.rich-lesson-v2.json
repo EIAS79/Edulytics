@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l21-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L21",
+      "CultureCode": "en",
+      "Title": "Graphing Linear Inequalities in Two Variables (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning objective: test ordered pairs against a two-variable inequality, identify the boundary line and half-plane of solutions and distinguish inclusive from strict inequalities. Original Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition U02:L21, https://im.kendallhunt.com/HS/teachers/1/2/21/preparation.html (CC BY 4.0). The source's primary activity plots solutions and non-solutions to discover the correct region, not just labels a prepared graph.",
+        "Original comparison 2x+3y≤12 in the real coordinate plane. The boundary line 2x+3y=12 has intercepts (6,0) and (0,4). Solving for y gives y≤4−(2/3)x, so shade below the line. The boundary is solid because equality satisfies ≤; for 2x+3y<12 it would be dashed.",
+        "Point (0,5) gives 15>12, so outside; (3,1) gives 9≤12, so inside; (0,4) gives 12, so on and included. Point (−1,−1) gives −5≤12, hence also inside the mathematical half-plane. Do not assume x or y must be positive unless the application context adds that restriction.",
+        "Student task: independently create the line and plot at least four solutions and four non-solutions, distinguish the solid/dashed boundary, and exchange explanations. Teacher-scored rubric (0–2 each, max 8): correct boundary and intercepts, accurate point classification, correct shading and inequality symbol, and justified graphic interpretation with accessible text."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Boundary line",
+          "Definition": "Replace inequality symbol with = to locate the separating straight line.",
+          "Rule": "Find intercepts and check a point on it.",
+          "Example": "2x+3y=12 passes through (0,4),(6,0)."
+        },
+        {
+          "Title": "Half-plane",
+          "Definition": "A linear inequality in two real variables determines one side of its boundary.",
+          "Rule": "Test a point not on the line to identify the shaded region.",
+          "Example": "y≤4−(2/3)x shades below."
+        },
+        {
+          "Title": "Inclusive boundary",
+          "Definition": "≤ and ≥ include equality boundary, while < and > exclude it.",
+          "Rule": "Use solid for included, dashed for excluded.",
+          "Example": "(0,4) satisfies 2x+3y≤12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Build a solution graph",
+          "Question": "Graph 2x+3y≤12.",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "Boundary line is 2x+3y=12.",
+            "At x=0, y=4; at y=0, x=6.",
+            "Solve for y: y≤4−(2/3)x.",
+            "Test origin (0,0): 0≤12 true, so shade the side containing origin.",
+            "Use solid line because equality included."
+          ],
+          "Answer": "All points on/below y=4−(2/3)x.",
+          "Check": "The origin is included and (0,5) excluded."
+        },
+        {
+          "Title": "Classify three points",
+          "Question": "Check (0,5),(3,1),(0,4) for 2x+3y≤12.",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "At (0,5), value is 15>12, false.",
+            "At (3,1), value is 6+3=9≤12, true.",
+            "At (0,4), value is 12≤12, true at boundary.",
+            "State included cases independently of any guess from the picture."
+          ],
+          "Answer": "Outside, inside, included boundary, respectively.",
+          "Check": "All substitutions use original inequality."
+        },
+        {
+          "Title": "Contrast strict and inclusive",
+          "Question": "Is (6,0) a solution to ≤ but not <?",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "At (6,0), 2×6+3×0=12.",
+            "For 2x+3y≤12, equality qualifies.",
+            "For 2x+3y<12, equality does not qualify.",
+            "Draw solid for first and dashed for second."
+          ],
+          "Answer": "Yes; boundary belongs only to the non-strict inequality.",
+          "Check": "Strictness is tested at exactly 12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Shading the wrong side because of visual intuition",
+          "WhyWrong": "The sign could be misread.",
+          "Correction": "Test a point such as (0,0)."
+        },
+        {
+          "Mistake": "Omitting boundary inclusion",
+          "WhyWrong": "A dashed line for ≤ loses valid equality solutions.",
+          "Correction": "Use solid for ≤ and ≥."
+        }
+      ],
+      "SummaryPoints": [
+        "Graph related equality, then test a point to find the half-plane.",
+        "For 2x+3y≤12, intercepts are (6,0),(0,4) and region is below a solid line.",
+        "Negative coordinates can be algebraically valid even without a physical interpretation.",
+        "Teacher assesses actual graph construction and reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible numerical check of original constraint",
+          "Description": "Text table of invented Edulytiks examples, not copyrighted publisher diagrams.",
+          "PrimaryLabel": "Test input",
+          "SecondaryLabel": "Mathematical and contextual conclusion",
+          "Rows": [
+            {
+              "Label": "(0,5)",
+              "Cells": [
+                "false, outside"
+              ]
+            },
+            {
+              "Label": "(3,1)",
+              "Cells": [
+                "true, inside"
+              ]
+            },
+            {
+              "Label": "(0,4)",
+              "Cells": [
+                "true, boundary"
+              ]
+            },
+            {
+              "Label": "(−1,−1)",
+              "Cells": [
+                "true, inside"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

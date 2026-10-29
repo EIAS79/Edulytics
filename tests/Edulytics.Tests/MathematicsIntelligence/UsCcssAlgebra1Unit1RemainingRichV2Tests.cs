@@ -231,7 +231,7 @@ public sealed class UsCcssAlgebra1Unit1RemainingRichV2Tests
         var lessons = RichLessonContentV2Registry.AllDocuments
             .SelectMany(document => document.Lessons)
             .Where(lesson => lesson.LessonCode.StartsWith(
-                "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:",
+                Prefix,
                 StringComparison.Ordinal))
             .ToArray();
         Assert.Equal(16, lessons.Length);

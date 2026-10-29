@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l20-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L20",
+      "CultureCode": "en",
+      "Title": "Writing and Solving Inequalities in One Variable",
+      "ExplanationParagraphs": [
+        "Learning objective: create and solve contextual one-variable inequalities, check assumptions and use algebraic structure to interpret signs and all-real solution sets. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L20, https://im.kendallhunt.com/HS/teachers/1/2/20/preparation.html (CC BY 4.0). Addressing HSA-CED.A.1, HSA-CED.A.3 and HSA-REI.B.3.",
+        "Original numbers for a fictional rehearsal dinner: food costs $5.29 per pound, two water bottles cost $2.49 each, and total budget is at most $60. Let x≥0 pounds of food. Constraint 5.29x+2(2.49)≤60. Subtract 4.98: 5.29x≤55.02; divide positive 5.29 to obtain x≤55.02/5.29≈10.40076. If food is sold to the nearest tenth-pound, maximum allowed is 10.4 pounds.",
+        "Structure warm-up: 0.5x>10x leads −9.5x>0, so x<0; for negative values multiplying by 0.5 gives a number less negative than multiplying by 10. Conversely, x<x+5 is true for every real x because subtracting x gives 0<5. No invented artificial endpoint should be added.",
+        "Student task: solve dinner constraint, check x=10.4 versus x=10.5, explain whether food can be fractionally purchased, and classify structural inequalities with zero, negative and positive values. Teacher-scored rubric (0–2 each, 8 max): correct translation, algebra and inequality direction, boundary/domain interpretation, and reasoned structural checks."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Budget with fixed cost",
+          "Definition": "A fixed charge plus a variable expense can be bounded by a total budget.",
+          "Rule": "Subtract fixed charges before dividing by positive rate.",
+          "Example": "5.29x+4.98≤60."
+        },
+        {
+          "Title": "Negative factor order",
+          "Definition": "Multiplication or division by a negative number reverses < and >.",
+          "Rule": "Check with signed test numbers.",
+          "Example": "0.5x>10x implies x<0."
+        },
+        {
+          "Title": "Always-true inequality",
+          "Definition": "Some inequalities hold over all real values.",
+          "Rule": "Simplify without inventing an endpoint.",
+          "Example": "x<x+5 reduces to 0<5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve a dinner budget",
+          "Question": "Maximum food weight with $5.29/lb, $4.98 bottles and $60 budget.",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "Set 5.29x+4.98≤60 and x≥0.",
+            "Subtract 4.98 to get 5.29x≤55.02.",
+            "Divide by 5.29>0 to get x≤55.02/5.29≈10.40076.",
+            "If purchased to one decimal place, choose 10.4 pounds.",
+            "Check 5.29×10.4+4.98=59.996≤60."
+          ],
+          "Answer": "x≤55.02/5.29 pounds; maximum 10.4 to the nearest tenth-pound.",
+          "Check": "10.5 pounds would cost $60.525 and exceed budget."
+        },
+        {
+          "Title": "Use structure with negative x",
+          "Question": "Solve 0.5x>10x.",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "Subtract 10x: −9.5x>0.",
+            "Divide by negative −9.5 and reverse sign.",
+            "Obtain x<0.",
+            "Check x=−2 gives −1>−20, true; x=2 gives 1>20 false."
+          ],
+          "Answer": "All real x<0.",
+          "Check": "Original inequality checked on both sides of zero."
+        },
+        {
+          "Title": "Find all-real solution range",
+          "Question": "Solve x<x+5.",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "Subtract x from both sides.",
+            "Get 0<5.",
+            "This is true independent of x.",
+            "Therefore every real x solves the original inequality."
+          ],
+          "Answer": "All real numbers.",
+          "Check": "Try negative, zero and positive values; all satisfy."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rounding the affordable weight upward",
+          "WhyWrong": "An increased purchase amount can exceed budget.",
+          "Correction": "Check rounded values in original total cost."
+        },
+        {
+          "Mistake": "Reversing inequality even when dividing by a positive factor",
+          "WhyWrong": "Only negative multiplication/division reverses order.",
+          "Correction": "Check the sign of 5.29 (positive)."
+        }
+      ],
+      "SummaryPoints": [
+        "Translate spending context and fixed charges before solving.",
+        "Strict and inclusive boundaries must match the text and units.",
+        "An inequality may have an interval, all real solutions or none.",
+        "Teacher evaluates assumptions and mathematical reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible numerical check of original constraint",
+          "Description": "Text table of invented Edulytiks examples, not copyrighted publisher diagrams.",
+          "PrimaryLabel": "Test input",
+          "SecondaryLabel": "Mathematical and contextual conclusion",
+          "Rows": [
+            {
+              "Label": "10.4 lb",
+              "Cells": [
+                "$59.996, feasible"
+              ]
+            },
+            {
+              "Label": "10.5 lb",
+              "Cells": [
+                "$60.525, infeasible"
+              ]
+            },
+            {
+              "Label": "0.5x>10x",
+              "Cells": [
+                "x<0"
+              ]
+            },
+            {
+              "Label": "x<x+5",
+              "Cells": [
+                "all real x"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

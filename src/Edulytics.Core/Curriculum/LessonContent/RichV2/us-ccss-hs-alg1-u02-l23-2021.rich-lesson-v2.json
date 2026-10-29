@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l23-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L23",
+      "CultureCode": "en",
+      "Title": "Solving Problems with Inequalities in Two Variables",
+      "ExplanationParagraphs": [
+        "Learning objective: match a two-variable inequality to its graphical solution region and relevant ordered pairs, use graphing technology when available and interpret solutions under contextual restrictions. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L23, https://im.kendallhunt.com/HS/teachers/1/2/23/preparation.html (CC BY 4.0). The source explicitly asks for graphing technology and matching equation, graph, point and description. Graph generation must be observed rather than inferred from written output.",
+        "Independent context: a community stall uses two materials, A at $3 per unit and B at $5 per unit, with at most $60 for supplies. Let a,b≥0 be whole-number units. The inequality is 3a+5b≤60. The boundary has intercepts (20,0),(0,12) and should be solid; the feasible region is the first-quadrant portion at or below the line. Do not include negative quantities despite the larger mathematical half-plane.",
+        "Point (5,9) has cost $60, so it is on and included. Point (7,8) costs $61, so it is outside. Point (10,6) costs $60 and also belongs to the boundary; point (0,0) is inside. A graphing system must be given the actual inequality and an appropriate window; if unavailable, produce a clearly labelled manual graph, not an invented software screenshot.",
+        "Student activity: match at least two independently made graph windows, an inequality, a verbal budget interpretation and a candidate point; use graphing technology to verify region and line inclusion where actually available. Teacher-scored rubric 0–2 each for correct model, boundaries and shading, point/classification checks, and authentic or explicitly simulated graphing explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Graph window",
+          "Definition": "A plotting range must show meaningful intercepts and feasible region.",
+          "Rule": "Select axes covering a≥0,b≥0 and intercepts.",
+          "Example": "Line intercepts (20,0) and (0,12) fit within a 0–22 by 0–14 window."
+        },
+        {
+          "Title": "Budget half-plane",
+          "Definition": "A linear budget inequality includes all affordable combinations.",
+          "Rule": "Graph equality boundary then shade the side that passes a test point.",
+          "Example": "3a+5b≤60 includes (0,0)."
+        },
+        {
+          "Title": "Context and integer solutions",
+          "Definition": "A continuous half-plane may contain points impossible in a discrete purchase.",
+          "Rule": "Require nonnegative whole numbers of units.",
+          "Example": "(5,9) is a valid integer budget plan."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Graph the budget constraint",
+          "Question": "Describe the region 3a+5b≤60.",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Boundary equality is 3a+5b=60.",
+            "Set b=0 to obtain a=20; set a=0 to obtain b=12.",
+            "Solve b≤12−(3/5)a.",
+            "Test origin cost 0≤60 and shade below the solid boundary.",
+            "Restrict to whole a,b≥0 in context."
+          ],
+          "Answer": "First-quadrant region at/below line through (20,0),(0,12).",
+          "Check": "All boundary points spend exactly $60."
+        },
+        {
+          "Title": "Classify valid and invalid points",
+          "Question": "Are (5,9) and (7,8) feasible?",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "At (5,9), 3×5+5×9=15+45=60.",
+            "Budget includes equality, so this pair is feasible.",
+            "At (7,8), 3×7+5×8=21+40=61.",
+            "Because 61>60, it is not feasible."
+          ],
+          "Answer": "(5,9) feasible, (7,8) over-budget.",
+          "Check": "Substituting directly confirms both."
+        },
+        {
+          "Title": "Distinguish graphing from physical domain",
+          "Question": "Would (−5,15) solve the cost inequality?",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Calculate 3(−5)+5(15)=−15+75=60.",
+            "Thus the pair is on the full mathematical boundary.",
+            "But a negative count of material A is impossible.",
+            "It fails the extra contextual domain a≥0."
+          ],
+          "Answer": "Algebraically included, physically impossible.",
+          "Check": "Both the budget and count-domain checks are necessary."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming a graphing-calculator plot proves actual purchase feasibility",
+          "WhyWrong": "Negative or noninteger coordinates may satisfy the numerical inequality.",
+          "Correction": "Apply the context domain independently."
+        },
+        {
+          "Mistake": "Omitting the boundary because of a misread sign",
+          "WhyWrong": "At most permits exact expenditure.",
+          "Correction": "Use a solid boundary for ≤."
+        }
+      ],
+      "SummaryPoints": [
+        "Graphing technology visualizes half-planes but requires an appropriate view window.",
+        "3a+5b≤60 uses a solid line with intercepts (20,0),(0,12).",
+        "Physical constraints can exclude mathematical solution points.",
+        "Teacher judges graph interpretation and actual software use."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original multi-constraint example",
+          "Description": "First-party mathematical examples with explicit limits, excluding publisher graphics and any unobserved real survey or product data.",
+          "PrimaryLabel": "Case",
+          "SecondaryLabel": "Constraint result",
+          "Rows": [
+            {
+              "Label": "(5,9)",
+              "Cells": [
+                "$60, feasible"
+              ]
+            },
+            {
+              "Label": "(7,8)",
+              "Cells": [
+                "$61, infeasible"
+              ]
+            },
+            {
+              "Label": "(10,6)",
+              "Cells": [
+                "$60, feasible"
+              ]
+            },
+            {
+              "Label": "(−5,15)",
+              "Cells": [
+                "$60, domain-invalid"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

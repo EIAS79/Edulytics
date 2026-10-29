@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l18-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L18",
+      "CultureCode": "en",
+      "Title": "Representing Situations with Inequalities",
+      "ExplanationParagraphs": [
+        "Learning goal: translate contextual minimum, maximum, exactly and strict constraints into inequalities, define a variable with units and justify feasible values. Edulytiks original adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L18, https://im.kendallhunt.com/HS/teachers/1/2/18/preparation.html (CC BY 4.0). Building On 6.EE.B.5 and 7.EE.B.4; Addressing HSA-CED.A.3; Building Towards HSA-CED.A.3 and HSN-Q.A.2.",
+        "Original community workshop scenario: a venue has a fixed $20 reservation cost and $7 supplies per registered participant. Total budget is at most $100, so 20+7n≤100. Because n counts people, n must be a nonnegative integer. At least 6 participants must register: n≥6. Combining these gives n=6,7,8,9,10 or 11. If 12 attend, total is $104 and exceeds budget.",
+        "Discuss language differences: 'at most' includes equality (≤), 'under' excludes equality (<), 'at least' includes equality (≥) and 'more than' excludes equality (>). Constraints also include physical maximum occupancy and nonnegative count domains even if they were not stated in the expense formula.",
+        "Student task: invent two plausible workshop modifications, represent each with multiple inequalities and test boundary cases that distinguish strict and inclusive limits. Partner critique should catch missing units and missing integer restrictions. Teacher-scored rubric (0–2 each, max 8): variable meaning, correctly translated comparison, valid combined feasible set and boundary/context explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inequality symbol",
+          "Definition": "Symbols <,≤,>,≥ express allowable ranges, with equality included only by ≤ or ≥.",
+          "Rule": "Translate the exact words before solving.",
+          "Example": "'At most $100' gives C≤100."
+        },
+        {
+          "Title": "Multiple constraints",
+          "Definition": "Real-world models can impose a lower and an upper bound at once.",
+          "Rule": "Take intersection of all conditions.",
+          "Example": "6≤n and 20+7n≤100."
+        },
+        {
+          "Title": "Discrete context",
+          "Definition": "Counting people requires whole-number nonnegative solutions.",
+          "Rule": "Round limits consistently and check boundaries.",
+          "Example": "n≤80/7≈11.43 means maximum 11 whole participants."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert a budget statement",
+          "Question": "Write an inequality for $20 fixed fee and $7 per person under at-most $100.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Let n be whole-number participants ≥0.",
+            "Total cost is 20+7n.",
+            "At most $100 means 20+7n≤100.",
+            "Subtract 20: 7n≤80, so n≤80/7.",
+            "Largest whole n is 11."
+          ],
+          "Answer": "20+7n≤100; n≤11 whole participants.",
+          "Check": "For n=11 total $97, for n=12 total $104."
+        },
+        {
+          "Title": "Combine a minimum and maximum",
+          "Question": "At least six participants are needed; what n are feasible?",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Minimum enrollment translates to n≥6.",
+            "Budget yields n≤80/7, and n must be whole.",
+            "Intersect these to obtain integers 6 through 11.",
+            "Check n=6 cost $62 and n=11 cost $97.",
+            "Each boundary is feasible."
+          ],
+          "Answer": "n∈{6,7,8,9,10,11}.",
+          "Check": "Both participant and cost constraints hold."
+        },
+        {
+          "Title": "Distinguish strict from inclusive",
+          "Question": "If a sponsor requires costs strictly below $97 rather than at most $97, is n=11 feasible?",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Write 20+7n<97.",
+            "At n=11, total is exactly 97.",
+            "Equality does not satisfy a strict < symbol.",
+            "The largest whole n below the threshold is 10, cost $90."
+          ],
+          "Answer": "No, 11 is excluded; maximum 10 under a strict $97 cap.",
+          "Check": "20+7×11=97 is not less than 97."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Replacing at most with <",
+          "WhyWrong": "A boundary payment at the exact limit is incorrectly excluded.",
+          "Correction": "Use ≤ for inclusive maximum."
+        },
+        {
+          "Mistake": "Allowing fractional participants",
+          "WhyWrong": "The algebraic range may contain noninteger counts.",
+          "Correction": "Restrict domain to nonnegative integers."
+        }
+      ],
+      "SummaryPoints": [
+        "Words such as at least, under and no more than determine inequality direction and inclusion.",
+        "Budget and participation constraints must be considered together.",
+        "For the original example, feasible whole participants are 6–11.",
+        "Teacher reviews translation, assumptions and boundary explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent original mathematical summary",
+          "Description": "Accessible text for the specific equation or context rather than a reproduction of publisher artwork.",
+          "PrimaryLabel": "Test case",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "n=6",
+              "Cells": [
+                "$62; feasible"
+              ]
+            },
+            {
+              "Label": "n=11",
+              "Cells": [
+                "$97; feasible"
+              ]
+            },
+            {
+              "Label": "n=12",
+              "Cells": [
+                "$104; over $100"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

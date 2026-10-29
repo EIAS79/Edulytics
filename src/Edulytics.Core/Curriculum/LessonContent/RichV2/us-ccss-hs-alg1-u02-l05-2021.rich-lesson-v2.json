@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l05-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L05",
+      "CultureCode": "en",
+      "Title": "Equations and Their Graphs",
+      "ExplanationParagraphs": [
+        "Learning objective: understand graphs as sets of solution pairs, determine whether a plotted point satisfies a linear equation, graph it using technology or a labelled manual alternative, and interpret axes in context. Edulytiks first-party source-aligned instruction for Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 5, https://im.kendallhunt.com/HS/teachers/1/2/5/preparation.html (CC BY 4.0). Building On 8.EE.B and 8.F.B.5; Addressing HSA-CED.A.2, HSA-CED.A.3, HSA-REI.D.10.",
+        "Original scenario: a community art club charges $6 registration and $4 per session, so total y=4x+6 dollars for number x≥0 of sessions (whole x). As a mathematical line over all real x the equation has infinitely many solutions; the meaningful scenario restricts x≥0 to integers. Graphing technology may draw the whole line, which should not be mistaken for permissible fractional attendance.",
+        "Data points (0,6),(1,10),(2,14),(3,18) lie on the equation. Pair (2,16) does not because 4×2+6=14, and (−1,2) satisfies the algebraic line but is not admissible in the modeled setting. Explain both the algebraic and contextual distinctions.",
+        "Student task: sketch or graph electronically the line and the feasible whole-number model, test candidate points, exchange a context with a peer and explain what an off-graph point would claim. Teacher-scored rubric (0–2 each, max 8): correctly labelled graph, correct substitution checks, context and domain explanation, correct technology disclosure (real graphing versus manual drawing)."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Graph as solution set",
+          "Definition": "Every point on the graph satisfies the equation.",
+          "Rule": "Substitute x and y from a point.",
+          "Example": "(2,14) lies on y=4x+6."
+        },
+        {
+          "Title": "Slope and intercept",
+          "Definition": "The y-intercept is value at x=0 and slope is change in y per unit change in x.",
+          "Rule": "Use coefficients and verify a second point.",
+          "Example": "The line has intercept 6 and slope 4."
+        },
+        {
+          "Title": "Context-limited graph",
+          "Definition": "A real-life situation may admit fewer values than the full real line.",
+          "Rule": "Impose the whole-number and nonnegative domains.",
+          "Example": "Only x=0,1,2,... sessions are valid."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Generate accurate point table",
+          "Question": "For y=4x+6, find y at x=0,1,2,3.",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "At x=0, y=6.",
+            "At x=1, y=10.",
+            "At x=2, y=14.",
+            "At x=3, y=18.",
+            "Every one-unit increase in x raises y by four."
+          ],
+          "Answer": "Points (0,6),(1,10),(2,14),(3,18).",
+          "Check": "Each gives true substitution."
+        },
+        {
+          "Title": "Test an off-graph pair",
+          "Question": "Is (2,16) on y=4x+6?",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "Read x=2 and y=16.",
+            "Compute right side 4(2)+6=14.",
+            "Because 16≠14, the claimed pair fails.",
+            "At two sessions the genuine club total is $14."
+          ],
+          "Answer": "No, (2,16) is not on the line.",
+          "Check": "The original equation gives 14, not 16."
+        },
+        {
+          "Title": "Separate algebraic and contextual solutions",
+          "Question": "Does (−1,2) satisfy the line, and is it a valid purchase?",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "Substitute x=−1, obtaining y=4(−1)+6=2.",
+            "The pair satisfies the full linear equation.",
+            "Negative sessions do not describe an admissible attendance choice.",
+            "The context's solution set is a discrete subset of the real graph."
+          ],
+          "Answer": "Algebraically yes; contextually invalid.",
+          "Check": "x must be a nonnegative integer."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling any point in the coordinate plane a solution",
+          "WhyWrong": "Only points satisfying the relation lie on its graph.",
+          "Correction": "Substitute both coordinates."
+        },
+        {
+          "Mistake": "Assuming every point on a drawn real line is a physical option",
+          "WhyWrong": "Real-valued graphing software ignores discrete context constraints unless specified.",
+          "Correction": "Explain and mark only admissible session counts."
+        }
+      ],
+      "SummaryPoints": [
+        "The graph contains all solution pairs to a two-variable equation.",
+        "y=4x+6 has slope 4, intercept 6 and point (2,14).",
+        "A contextual domain may be discrete even if a graphing tool draws a continuous line.",
+        "Teacher evaluates the graph, units and explanation; technology use cannot be inferred from text."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent accessible model table",
+          "Description": "Text-only original Edulytiks numerical context; labels carry the needed units and restrictions.",
+          "PrimaryLabel": "Scenario",
+          "SecondaryLabel": "Equation or value",
+          "Rows": [
+            {
+              "Label": "0 sessions",
+              "Cells": [
+                "$6"
+              ]
+            },
+            {
+              "Label": "1 session",
+              "Cells": [
+                "$10"
+              ]
+            },
+            {
+              "Label": "2 sessions",
+              "Cells": [
+                "$14"
+              ]
+            },
+            {
+              "Label": "3 sessions",
+              "Cells": [
+                "$18"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l04-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L04",
+      "CultureCode": "en",
+      "Title": "Equations and Their Solutions",
+      "ExplanationParagraphs": [
+        "Learning objective: decide whether a number solves a one-variable equation and whether an ordered pair solves a two-variable equation, and explain a solution's meaning in context. Edulytiks first-party source-aligned instruction, Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 4, https://im.kendallhunt.com/HS/teachers/1/2/4/preparation.html (CC BY 4.0). Official Addressing HSA-REI.A, HSA-REI.B.3. The source emphasizes checking and reasoning rather than just a mechanical solve procedure.",
+        "Original scenario: a bicycle technician charges a $12 service visit and $18 per hour. Total bill T=12+18h dollars for h≥0 hours. For bill T=66, substitute h=3 to verify 12+54=66; h=2 does not satisfy because total would be $48. A pair (3,66) solves T=12+18h, but (2,66) is not on the graph.",
+        "Student task: evaluate the truth of candidate solutions in one-variable and two-variable equations, explain why an incorrect candidate fails, then write a different plausible billing context. Compare numeric checks with reasoning about units; a graph point always uses coordinates in the correct order.",
+        "Teacher-scored rubric (0–2 each, total 8): interprets one-variable solution, verifies one true and one false candidate with substitution, interprets an ordered pair and domain, and gives a coherent contextual explanation. A multiple-choice check alone does not replace the source reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solution of equation",
+          "Definition": "A solution is a value (or ordered pair) making both sides equal.",
+          "Rule": "Substitute into the original equation.",
+          "Example": "h=3 satisfies 12+18h=66."
+        },
+        {
+          "Title": "Two-variable solution",
+          "Definition": "An ordered pair makes an equation in two variables true.",
+          "Rule": "Match variables to coordinates and units.",
+          "Example": "(h,T)=(3,66) satisfies T=12+18h."
+        },
+        {
+          "Title": "Domain",
+          "Definition": "Context limits meaningful values even when algebra accepts more.",
+          "Rule": "State h≥0 when h is hours worked.",
+          "Example": "h=-2 may solve a manipulated equation but cannot be a realistic positive work duration."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Test two candidate values",
+          "Question": "Does h=3 or h=2 solve 12+18h=66?",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "At h=3, 12+18×3=12+54=66, matching right side.",
+            "At h=2, 12+18×2=48, not 66.",
+            "Since only one candidate produces equality, h=3 is a solution and h=2 is not."
+          ],
+          "Answer": "h=3 solves, h=2 does not.",
+          "Check": "Original equation verified directly."
+        },
+        {
+          "Title": "Find the service hours",
+          "Question": "A $66 bill follows T=12+18h. Find h.",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "Subtract fixed charge: 18h=66−12=54.",
+            "Divide by positive 18: h=54/18=3.",
+            "Check 12+18×3=66.",
+            "Three hours satisfy h≥0."
+          ],
+          "Answer": "3 hours.",
+          "Check": "Back substitution returns exact total $66."
+        },
+        {
+          "Title": "Verify a graph point",
+          "Question": "Is (4,84) on the graph T=12+18h?",
+          "Method": "Explain the equivalence or contextual calculation and verify substitutions independently.",
+          "Steps": [
+            "Interpret ordered pair h=4 hours, T=$84.",
+            "Compute 12+18×4=12+72=84.",
+            "Compare this with claimed T=84; equal.",
+            "Thus the point is part of the relation."
+          ],
+          "Answer": "Yes, (4,84) is a solution.",
+          "Check": "Both values have the proper units and satisfy the equation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Only substituting into an equation after incorrect rearrangement",
+          "WhyWrong": "Algebraic mistakes could give a spurious result.",
+          "Correction": "Always check the original equation."
+        },
+        {
+          "Mistake": "Reversing coordinates",
+          "WhyWrong": "A point (T,h) cannot be read as (h,T).",
+          "Correction": "Label both axes and variable order."
+        }
+      ],
+      "SummaryPoints": [
+        "A one-variable solution is a valid input making an equation true.",
+        "A two-variable solution is an ordered pair that satisfies the relation.",
+        "Check candidates directly and interpret their context and units.",
+        "Reasoned explanation requires teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent accessible model table",
+          "Description": "Text-only original Edulytiks numerical context; labels carry the needed units and restrictions.",
+          "PrimaryLabel": "Scenario",
+          "SecondaryLabel": "Equation or value",
+          "Rows": [
+            {
+              "Label": "h=2 hours",
+              "Cells": [
+                "$48; not bill $66"
+              ]
+            },
+            {
+              "Label": "h=3 hours",
+              "Cells": [
+                "$66; valid"
+              ]
+            },
+            {
+              "Label": "h=4 hours",
+              "Cells": [
+                "$84; valid point"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
