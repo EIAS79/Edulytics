@@ -422,7 +422,7 @@ test('U05-U08: 60 first-party rendered reasoning aids have valid native visual s
     }else if(unit===6||unit===7){
       assert.equal(v.Kind,'EquationSet');
       assert.ok(v.Items.length>=4);
-      assert.equal(v.Items.at(-1),lesson.WorkedExamples[0].Answer);
+      assert.ok(lesson.WorkedExamples.some(ex => v.Items.at(-1) === ex.Answer && ex.Steps.every(step => v.Items.includes(step))), lesson.LessonCode + ': visual must show a COMPLETE worked example');
     }else if(unit===8){
       assert.equal(v.Kind,'RatioTable');
       assert.equal(v.Rows.length,3);
