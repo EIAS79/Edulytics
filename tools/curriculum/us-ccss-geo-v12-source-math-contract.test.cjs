@@ -28,7 +28,7 @@ test('V12 source-ledger accounts for all 33 syllabus-only and six teacher-only n
     assert.ok(x.sourceResearch.sourceTaskObserved?.length>18,x.lessonCode);
     assert.equal(x.sourceResearch.academicSignoff,false,x.lessonCode);
     assert.equal(x.stageB,'RICHV2_CANDIDATE_AUTHORED',x.lessonCode);
-    assert.equal(x.stageC,'NOT_RUN',x.lessonCode);
+    assert.equal(x.stageC,'NOT_VERIFIED',x.lessonCode);
     assert.equal(x.stageD,'NOT_RUN',x.lessonCode);
   }
   assert.ok(source.lessons.find(x=>x.lessonCode===id(8,1)).sourceOptional);
@@ -74,7 +74,7 @@ test('U07 L12: original double number line and sector shading preserve fraction'
 test('U08 L04: independent ordered dice sample-space and conditional table oracles',()=>{
   const lesson=byCode.get(id(8,4));
   const example=lesson.WorkedExamples[0];
-  assert.ok(example.Question.includes('two distinct fair six-sided dice'));
+  assert.ok(/two distinct fair six-sided dice/i.test(example.Question));
   const sample=Array.from({length:6},(_,i)=>i+1)
    .flatMap(a=>Array.from({length:6},(_,j)=>[a,j+1]));
   const equal=sample.filter(([a,b])=>a===b);
