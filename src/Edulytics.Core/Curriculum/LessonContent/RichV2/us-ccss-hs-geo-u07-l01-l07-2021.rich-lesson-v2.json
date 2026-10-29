@@ -531,6 +531,7 @@
       "ExplanationParagraphs": [
         "Learning goal: Prove concurrency of triangle angle bisectors and characterize the incenter as point equally distant from all three side lines.",
         "Intersection of all three internal angle bisectors Equidistant from side lines",
+        "Source task progression: a hypothetical mound of grains on a triangular card has ridges where the shortest paths to two sides are equally long. This physical analogy motivates, but does not prove, the angle-bisector distance locus. Draw perpendicular segments from a point on the interior bisector to each side and prove they are equal using congruent right triangles; then apply transitivity to the concurrence of all three internal bisectors.",
         "Point on interior bisector has equal perpendicular distances to adjacent sides Use congruent right triangles r=Δ/s where Δ area and s semiperimeter",
         "Source-specific student task: Students annotate an angle-bisector proof and separate incenter from circumcenter; teacher reviews. Teacher rubric (0–4): exact labelled construction, valid theorem hypothesis, correct numeric or logical consequences, and a defensible explanation. Original drawings and proofs need teacher review.",
         "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 6, CC BY 4.0. New Edulytiks examples without publisher figures or protected answers."
@@ -581,16 +582,16 @@
           "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
         },
         {
-          "Title": "A Special Point: illustration 3",
-          "Question": "A triangle area is 30 and semiperimeter 15. Find inradius.",
-          "Method": "Incircle radius",
+          "Title": "A Special Point: angle bisector distance and concurrency",
+          "Question": "In nondegenerate triangle ABC, internal bisectors of angles A and B meet at I. Prove the third internal angle bisector passes through I.",
+          "Method": "Use point-to-line perpendicular distances and the locus property of an internal angle bisector.",
           "Steps": [
-            "Area formula Δ=rs",
-            "Set 30=15r",
-            "Solve r=2"
+            "Because I lies on the internal bisector of angle A, its perpendicular distances to lines AB and AC are equal.",
+            "Because I lies on the internal bisector of angle B, its perpendicular distances to lines BA and BC are equal; hence the three side distances are all equal.",
+            "A point inside angle C equidistant from lines CA and CB lies on its internal angle bisector, so CI is the third bisector and all three meet at I."
           ],
-          "Answer": "2 units.",
-          "Check": "Check circle geometry, arc selection, and exact angle/length constraints."
+          "Answer": "The three internal bisectors concur at the incenter I, which is equally distant from all three side lines.",
+          "Check": "The point is inside a nondegenerate triangle; each distance is measured perpendicularly to a complete side line, and the bisector-locus converse applies."
         }
       ],
       "CommonMistakes": [
@@ -618,10 +619,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Area Δ=3·4/2=6",
-            "Semiperimeter s=(3+4+5)/2=6",
-            "r=Δ/s=1",
-            "Inradius 1."
+            "Because I lies on the internal bisector of angle A, its perpendicular distances to lines AB and AC are equal.",
+            "Because I lies on the internal bisector of angle B, its perpendicular distances to lines BA and BC are equal; hence the three side distances are all equal.",
+            "A point inside angle C equidistant from lines CA and CB lies on its internal angle bisector, so CI is the third bisector and all three meet at I.",
+            "The three internal bisectors concur at the incenter I, which is equally distant from all three side lines."
           ],
           "Rows": []
         }
