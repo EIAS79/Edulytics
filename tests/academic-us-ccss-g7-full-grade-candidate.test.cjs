@@ -234,3 +234,67 @@ test('V5 145 student source lessons retain physical task and teacher-only eviden
     assert.equal(row.sourceTaskGraphicParity, 'NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT', row.lessonCode);
   }
 });
+
+
+test('V6 source-original SVG polygons preserve actual scaled and distorted geometry', () => {
+  const rubric = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json');
+  const base = 'src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/';
+  assert.equal(rubric.releaseStatus, 'BLOCKED');
+  assert.equal(rubric.lessons.length, 4);
+  const fetchSvg = name => {
+    const svg = fs.readFileSync(path.join(root, base, name), 'utf8');
+    assert.match(svg, /<svg [^>]*role="img"/);
+    assert.match(svg, /aria-labelledby="/);
+    assert.match(svg, /<title id="/);
+    assert.match(svg, /<desc id="/);
+    assert.doesNotMatch(svg, /<script|<foreignObject|onload=|onclick=/i);
+    return [...svg.matchAll(/<polygon class="(?:shape|bad)" points="([^"]+)"\s*\/>/g)]
+      .map(match => match[1].split(' ').map(pair => pair.split(',').map(Number)));
+  };
+  const normal = points => points.map(([x, y]) => [x - points[0][0], y - points[0][1]]);
+  const assertFactor = (p, q, k) => {
+    assert.equal(p.length, q.length);
+    const a = normal(p), b = normal(q);
+    for (let i = 0; i < a.length; i++)
+      for (let dim = 0; dim < 2; dim++)
+        assert.ok(Math.abs(b[i][dim] - a[i][dim] * k) < 1e-9,
+          'Mismatched polygon coordinate and expected factor ' + k);
+  };
+  const f = fetchSvg('u01-l01-scaled-vs-stretched.svg');
+  assert.equal(f.length, 3);
+  assertFactor(f[0], f[1], 2);
+  assert.notDeepEqual(normal(f[2]), normal(f[1]), 'Stretched F must not equal uniform copy');
+  const t = fetchSvg('u01-l02-corresponding-triangles.svg');
+  assert.equal(t.length, 2);
+  assertFactor(t[0], t[1], 1.5);
+  const l = fetchSvg('u01-l03-scaled-l-construction.svg');
+  assert.equal(l.length, 3);
+  assertFactor(l[0], l[1], 0.5);
+  assertFactor(l[0], l[2], 3);
+});
+
+test('V6 grade-specific teacher rubrics do not claim a working or authenticated auto-grader', () => {
+  const rubric = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json');
+  assert.equal(rubric.statusEvidence.authenticatedStudentPageRender, 'NOT_RUN');
+  assert.equal(rubric.statusEvidence.studentPracticeSelection, 'NOT_EXECUTED');
+  assert.equal(rubric.statusEvidence.scoringPersistence, 'NOT_RUN');
+  const codes = new Set();
+  for (const l of rubric.lessons) {
+    assert.ok(byCode.has(l.lessonCode), l.lessonCode);
+    assert.ok(!codes.has(l.lessonCode));
+    codes.add(l.lessonCode);
+    assert.equal(l.assessmentMode, 'TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED');
+    assert.equal(l.teacherRubric.criteria.length, 4);
+    assert.equal(l.teacherRubric.maxScore, 12);
+    assert.equal(l.rubricIntegratedIntoTeacherUI, false);
+    assert.equal(l.studentAssetRenderedInRichV2, false);
+    assert.equal(l.studentArtifactPersisted, false);
+    assert.equal(l.verifiedInTwoSchools, false);
+    assert.ok(l.examples.some(x => x.kind === 'incorrect'));
+    assert.ok(l.examples.some(x => x.kind === 'correct'));
+  }
+  assert.equal(codes.size, 4);
+  assert.equal(Math.ceil(9 / 4) * 35, 105, 'Whole-toaster batches');
+  assert.equal(3.5 + 0.25 * 20, 8.5, 'Nonproportional pricing');
+  assert.notEqual(3.5 + 0.25 * 20, 0.6 * 20, 'Do not treat fixed-fee and rate-only as same rule');
+});
