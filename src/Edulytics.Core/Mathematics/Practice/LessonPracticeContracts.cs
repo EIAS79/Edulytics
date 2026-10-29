@@ -33,6 +33,10 @@ public static class LessonPracticeContractRegistry
 {
     public const string Version = "supporting-lesson-practice-v4";
 
+    // Not an approved exact Practice route until Issue #595 is resolved.
+    public const string QuarantinedGrade8TwoVariableLesson =
+        "PED:US-CCSS-MATH:G8:U03:L12";
+
     private static readonly LessonPracticeContract[] Entries =
     [
         // IM 2021 G1 U01 L01: two original activity goals, no subtraction.
@@ -601,14 +605,9 @@ public static class LessonPracticeContractRegistry
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
-        new(
-            "PED:US-CCSS-MATH:G8:U03:L12",
-            "algebra.linear.solve",
-            "LINEAR_EQUATION",
-            ["algebra.linear.ax_plus_b_equals_c"],
-            "SupportingLesson",
-            "READY_VERIFIED",
-            Version),
+        // Grade 8 U03:L12 was withdrawn from exact Practice after source
+        // comparison: Ax+By=C ordered-pair membership is NOT ax+b=c solving.
+        // A reviewed two-variable family must replace it; see issue #595.
         new(
             "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
             "fractions.add_subtract",
@@ -1361,6 +1360,10 @@ public static class LessonPracticeContractRegistry
             "IM2021_G4_U06_L15_SOURCE_ALIGNED_NUMERIC_PLUS_TEACHER_LED",
             "READY_VERIFIED",
             Version);
+
+        // Guard against broad official/supporting projections re-authorizing
+        // the semantically wrong Grade 8 contract from any registry layer.
+        byLesson.Remove(QuarantinedGrade8TwoVariableLesson);
 
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)

@@ -2016,17 +2016,15 @@
       ],
       "sourceType": "OfficialMappedPedagogicalLesson",
       "officialOutcomeMapped": true,
-      "mappingConfidence": "High",
+      "mappingConfidence": "RequiresReview",
       "evidence": [
-        "Common Core official closure verified this pedagogical lesson against CCSS:MP.3.",
-        "The existing primary/secondary skill classification and approved question-family restrictions are preserved.",
-        "No skill, mechanic, or question family was promoted solely because the official mapping changed."
+        "The original official MP.3 evidence remains a curriculum mapping, not a lesson-exact Practice certification.",
+        "The publisher lesson asks whether ordered pairs satisfy Ax+By=C and how these solution points appear on a graph.",
+        "The one-variable ax+b=c family is mathematically valid but semantically inappropriate; quarantined under issue #595 pending a reviewed two-variable lesson-specific generator and grader."
       ],
-      "practiceReadiness": "READY_VERIFIED",
-      "practiceMechanic": "LINEAR_EQUATION",
-      "allowedQuestionFamilies": [
-        "algebra.linear.ax_plus_b_equals_c"
-      ]
+      "practiceReadiness": "REVIEW_REQUIRED",
+      "practiceMechanic": "TWO_VARIABLE_ORDERED_PAIR_UNVERIFIED",
+      "allowedQuestionFamilies": []
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U04:L05",

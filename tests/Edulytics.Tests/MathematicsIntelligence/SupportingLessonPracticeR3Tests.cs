@@ -16,8 +16,8 @@ public sealed class SupportingLessonPracticeR3Tests
 
         var rootElement = document.RootElement;
         Assert.Equal(68, rootElement.GetProperty("total").GetInt32());
-        Assert.Equal(23, rootElement.GetProperty("approvedExistingSkill").GetInt32());
-        Assert.Equal(45, rootElement.GetProperty("deferredToOntology").GetInt32());
+        Assert.Equal(22, rootElement.GetProperty("approvedExistingSkill").GetInt32());
+        Assert.Equal(46, rootElement.GetProperty("deferredToOntology").GetInt32());
 
         var decisions = rootElement.GetProperty("decisions").EnumerateArray().ToArray();
         Assert.Equal(68, decisions.Length);
@@ -47,7 +47,7 @@ public sealed class SupportingLessonPracticeR3Tests
             .Select(x => x.GetProperty("lessonCode").GetString()!)
             .ToArray();
 
-        Assert.Equal(23, approvedCodes.Length);
+        Assert.Equal(22, approvedCodes.Length);
         foreach (var code in approvedCodes)
         {
 
@@ -101,8 +101,7 @@ public sealed class SupportingLessonPracticeR3Tests
     [Theory]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:S4:4NF-2:BUILD", "number.whole.divide.with_remainder.build")]
     [InlineData("PED:CAMBRIDGE-INTL-MATH:S5:5F-1:APPLY", "fractions.of_quantity.apply")]
-    [InlineData("PED:US-CCSS-MATH:G8:U03:L12", "algebra.linear.ax_plus_b_equals_c")]
-    [InlineData("PED:US-CCSS-MATH:G7:U06:L13", "algebra.linear.inequality.ax_plus_b_relation_c")]
+     [InlineData("PED:US-CCSS-MATH:G7:U06:L13", "algebra.linear.inequality.ax_plus_b_relation_c")]
     public void ReviewedLessonUsesNarrowExactFamily(string lessonCode, string family)
     {
         Assert.True(LessonPracticeContractRegistry.TryResolve(lessonCode, out var contract));
@@ -110,6 +109,32 @@ public sealed class SupportingLessonPracticeR3Tests
         Assert.Contains(contract!.AllowedQuestionFamilies, x => string.Equals(x, family, StringComparison.Ordinal));
     }
 
+
+    [Fact]
+    public void Grade8TwoVariableLessonRejectsPreviouslyMisalignedSingleVariablePractice()
+    {
+        const string blocked = LessonPracticeContractRegistry.QuarantinedGrade8TwoVariableLesson;
+        Assert.Equal("PED:US-CCSS-MATH:G8:U03:L12", blocked);
+
+        // A correct Rich V2 teaching asset does not authorize wrong Practice.
+        Assert.False(LessonPracticeContractRegistry.TryResolve(blocked, out _));
+        Assert.False(LessonPracticeCapabilityResolver.TryResolve(blocked, out _));
+
+        var root = FindRoot();
+        using var mapping = JsonDocument.Parse(File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json")));
+        var row = Assert.Single(mapping.RootElement
+            .GetProperty("mappings").EnumerateArray(),
+            x => x.GetProperty("lessonCode").GetString() == blocked);
+        Assert.Equal("REVIEW_REQUIRED", row.GetProperty("practiceReadiness").GetString());
+        Assert.Empty(row.GetProperty("allowedQuestionFamilies").EnumerateArray());
+
+        // Do not remove legitimate Grade 8 single-variable linear-equation Practice.
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(
+            "PED:US-CCSS-MATH:G8:U04:L05", out var valid));
+        Assert.NotNull(valid);
+        Assert.Contains("algebra.linear.ax_plus_b_equals_c", valid!.AllowedQuestionFamilies);
+    }
 
     private static string FindRoot()
     {
