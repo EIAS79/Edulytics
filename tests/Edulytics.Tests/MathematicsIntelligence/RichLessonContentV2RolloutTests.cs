@@ -114,9 +114,41 @@ public sealed class RichLessonContentV2RolloutTests
         }
 
         Assert.Equal(5110, rows.Count);
-        Assert.Equal(
-            26 + 143 + 149,
-            readyCurated);
+
+        // Exact lesson codes and English-only authored sidecars must remain
+        // anchored in the canonical curriculum; do not pin a global total
+        // that becomes stale as parallel American grade work is introduced.
+        var curatedLessons = RichLessonContentV2Registry.AllDocuments
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+        Assert.Equal(curatedLessons.Length, curatedLessons
+            .Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal)
+            .Count());
+        Assert.Equal(143, curatedLessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal)));
+        Assert.Equal(149, curatedLessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal)));
+        var grade5Curated = curatedLessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G5:", StringComparison.Ordinal));
+        var grade7Curated = curatedLessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G7:", StringComparison.Ordinal));
+        Assert.True(grade5Curated is 0 or 148,
+            $"Unexpected authored Grade 5 count: {grade5Curated}");
+        Assert.True(grade7Curated is 0 or 145,
+            $"Unexpected authored Grade 7 count: {grade7Curated}");
+
+        var canonicalCodes = documents
+            .SelectMany(x => x.Lessons)
+            .Select(x => x.LessonCode)
+            .ToHashSet(StringComparer.Ordinal);
+        Assert.All(curatedLessons, lesson =>
+        {
+            Assert.Contains(lesson.LessonCode, canonicalCodes);
+            Assert.Equal("en", NormalizeCulture(lesson.CultureCode));
+        });
+
+        Assert.Equal(curatedLessons.Length, readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);
         Assert.Equal(0, blockedContract);
