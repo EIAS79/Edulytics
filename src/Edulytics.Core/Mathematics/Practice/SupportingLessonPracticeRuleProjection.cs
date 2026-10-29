@@ -46,7 +46,10 @@ internal static class SupportingLessonPracticeRuleProjection
                         row.TryGetProperty("lessonPracticeRouting", out var routing) &&
                             routing.ValueKind == JsonValueKind.True,
                         row.TryGetProperty("verificationPolicy", out var verification) &&
-                            !string.IsNullOrWhiteSpace(verification.GetString())),
+                            !string.IsNullOrWhiteSpace(verification.GetString()),
+                        !(row.TryGetProperty("status", out var pendingStatus) &&
+                          string.Equals(pendingStatus.GetString(), "IntegrationPending",
+                              StringComparison.Ordinal))),
                     StringComparer.Ordinal);
 
             var projected = new List<LessonPracticeContract>();
@@ -74,6 +77,7 @@ internal static class SupportingLessonPracticeRuleProjection
                             !familyById.TryGetValue(familyId, out var family) ||
                             !family.LessonPracticeRouting ||
                             !family.HasVerificationPolicy ||
+                            !family.ReadyForProjection ||
                             !string.Equals(family.SkillId, rule.SkillId, StringComparison.Ordinal)))
                     {
                         continue;
@@ -203,5 +207,6 @@ internal static class SupportingLessonPracticeRuleProjection
     private sealed record FamilyRouting(
         string SkillId,
         bool LessonPracticeRouting,
-        bool HasVerificationPolicy);
+        bool HasVerificationPolicy,
+        bool ReadyForProjection);
 }
