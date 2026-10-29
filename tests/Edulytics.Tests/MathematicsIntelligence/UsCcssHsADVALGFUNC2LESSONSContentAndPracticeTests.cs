@@ -64,7 +64,8 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
         Assert.Contains("technology for 3×3", first.GetProperty("workedExamples").GetString()!);
         Assert.Contains("infinitely many solutions", first.GetProperty("workedExamples").GetString()!);
         Assert.Contains("row reduction", first.GetProperty("stepByStepSolutions").GetString()!);
-        Assert.Contains("reversed order", second.GetProperty("keyConceptsAndRules").GetString()!);
+        Assert.Contains("0<b<1, they reverse order: 0<x<y implies log_b x>log_b y",
+            second.GetProperty("keyConceptsAndRules").GetString()!);
         Assert.Contains("log₄3=ln3/ln4", second.GetProperty("workedExamples").GetString()!);
         Assert.Contains("log₂(x−3)=1 requires x>3", second.GetProperty("workedExamples").GetString()!);
         Assert.Contains("log_b(x+y)", second.GetProperty("commonMistakes").GetString()!);
