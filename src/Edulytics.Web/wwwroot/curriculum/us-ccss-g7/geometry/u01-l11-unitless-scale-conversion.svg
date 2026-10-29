@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 268" role="img" aria-labelledby="g7u01l11-title g7u01l11-desc">
+<title id="g7u01l11-title">Compare unit-bearing map scale with unitless 1 to 180</title>
+<desc id="g7u01l11-desc">An original scale conversion: one drawing inch represents fifteen actual feet, and fifteen feet equals 180 actual inches, so the unitless scale factor is 1 to 180. A six-foot wall is 72 actual inches and becomes 0.4 drawing inches. The two reference line segments use the same diagram scale, 120 pixels per drawing inch: one inch is 120 pixels and the measured 0.4 inch wall segment is 48 pixels. The actual wall is not drawn at paper scale; only the wall representation is.</desc>
+<style>.heading{font:700 18px system-ui,sans-serif;fill:#10293e}.text{font:15px system-ui,sans-serif;fill:#10293e}.panel{fill:#fff;stroke:#536779;stroke-width:1.5}.scale{stroke:#1b4162;stroke-width:5;stroke-linecap:round}.wall{stroke:#9e3419;stroke-width:5;stroke-linecap:round}</style>
+<rect width="700" height="268" fill="#fff"/>
+<text class="heading" x="19" y="29">Convert all units before using 1:180</text>
+<rect class="panel" x="18" y="46" width="325" height="182" rx="8"/>
+<rect class="panel" x="358" y="46" width="324" height="182" rx="8"/>
+<text class="heading" x="30" y="74">Drawing-scale key</text>
+<line class="scale" x1="76" y1="117" x2="196" y2="117"/>
+<text class="text" x="30" y="151">1 drawing in = 15 real ft</text>
+<text class="text" x="30" y="183">15 ft = 180 actual in</text>
+<text class="heading" x="370" y="74">Six-foot wall</text>
+<line class="wall" x1="417" y1="117" x2="465" y2="117"/>
+<text class="text" x="370" y="151">6 ft = 72 actual in</text>
+<text class="text" x="370" y="183">72/180 = 0.4 drawing in</text>
+<text class="text" x="19" y="251">Both drawn segments share one diagram unit; the real wall is only represented.</text>
+</svg>
