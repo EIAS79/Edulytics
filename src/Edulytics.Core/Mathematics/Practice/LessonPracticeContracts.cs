@@ -1371,7 +1371,8 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
             "supporting.matrices.core",
             "HS_MATRIX_SYSTEMS_EXACT",
-            ["usccss.hs.matrix.coefficients_2x2", "usccss.hs.matrix.solve_2x2", "usccss.hs.matrix.inverse_2x2", "usccss.hs.matrix.classify_2x2"],
+            ["usccss.hs.matrix.coefficients_2x2", "usccss.hs.matrix.solve_2x2", "usccss.hs.matrix.inverse_2x2", "usccss.hs.matrix.classify_2x2",
+             "usccss.hs.matrix.coefficients_3x3", "usccss.hs.matrix.solve_3x3", "usccss.hs.matrix.inverse_3x3", "usccss.hs.matrix.row_reduce_3x3"],
             "USCCSS_HS_SHARED_INTEGRATION_PENDING",
             "INTEGRATION_PENDING",
             Version);
