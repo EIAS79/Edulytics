@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+  "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U02:L18",
+  "title": "Graphs of Rational Functions (Part 2)",
+  "sourceEdition": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/HS/teachers/3/2/18/preparation.html",
+  "sourceStudentUrl": "https://im.kendallhunt.com/HS/students/3/2/18/index.html",
+  "status": "COURSE_OWNED_ACCEPTANCE_FIXTURE_PENDING_SHARED_APPROVAL",
+  "academicApproval": "NOT_VERIFIED",
+  "studentRuntime": "NOT_VERIFIED",
+  "practiceRuntime": "NOT_VERIFIED",
+  "gradingPersistence": "NOT_VERIFIED",
+  "sourceAuthorization": "First-party original Edulytiks adaptations, not publisher endorsed",
+  "contentVersionAtReview": "phase30-common-core-rich-content-v1",
+  "hashTransition": {
+    "immutableSourceSha256": "3ec01ea514d3a8d8edbd6bf1d5271079d0941e66e5558f508ce233ff5391ece0",
+    "historicalApprovedCanonicalBodySha256": "7cbc61c03b9ab3dcd69a13aed4fd3b580850f54446795458174cfa5e3b9fc475",
+    "recomputedAuthoredCanonicalBodySha256": "2ef725ec1a74d379838e2483a831dc377f02d08bb7349614ed5b83b0c9213fe8",
+    "hashInput": "UTF-8 joined with newline of title, explanation, keyConceptsAndRules, workedExamples, stepByStepSolutions, commonMistakes, quickSummary, each prefixed with key and colon",
+    "successorDecision": "REQUIRES_INDEPENDENT_ACADEMIC_VERSION_OWNER_APPROVAL",
+    "predecessorStorageAndEffectiveMaterialization": "NOT_VERIFIED",
+    "approvalRegisterChange": "NOT_AUTHORIZED_ON_CODER7_BRANCH"
+  },
+  "sourceActivities": [
+    {
+      "id": "18.1",
+      "title": "Rewritten Equations",
+      "assessment": "Auto-checkable exact-equivalence and counterexample plus human explanation",
+      "positive": [
+        {
+          "input": "x=7 for (x+7)/x and 1+7/x",
+          "expected": "2=2"
+        }
+      ],
+      "negative": [
+        {
+          "input": "x=7 for x/(x+7) and 1+x/7",
+          "expected": "0.5 != 2"
+        }
+      ],
+      "excluded": [
+        "x=0 for (x+7)/x",
+        "x=-7 for x/(x+7)"
+      ],
+      "rubric": [
+        "Check that rewriting preserves numerator-denominator grouping",
+        "Explain why equality fails using a valid domain counterexample"
+      ]
+    },
+    {
+      "id": "18.2",
+      "title": "Publishing a Paperback",
+      "assessment": "Auto numeric with separate teacher interpretation",
+      "functions": {
+        "totalCost": "T(x)=120+4x",
+        "averageCost": "c(x)=4+120/x",
+        "profitAtSalePrice8": "P(x)=4x-120",
+        "physicalDomain": "x is a positive integer"
+      },
+      "positive": [
+        {
+          "x": 50,
+          "averageCost": 6.4
+        },
+        {
+          "x": 100,
+          "averageCost": 5.2
+        },
+        {
+          "x": 30,
+          "profit": 0
+        },
+        {
+          "x": 31,
+          "profit": 4
+        }
+      ],
+      "negative": [
+        {
+          "x": 0,
+          "reason": "division by zero"
+        },
+        {
+          "x": 0.5,
+          "algebraicCost": 244,
+          "reason": "mathematically defined but no physical half-book"
+        },
+        {
+          "x": -1,
+          "reason": "negative printing count"
+        }
+      ],
+      "rubric": [
+        "Identify y=4 as limiting per-book production cost rather than exactly attainable total cost",
+        "At $8/book and complete sell-through, 30 breaks even and 31 first makes positive profit",
+        "State assumption about sales, fees and all copies sold"
+      ]
+    },
+    {
+      "id": "18.3",
+      "title": "Horizontal Asymptotes",
+      "assessment": "Graph-to-formula match plus teacher explanation of end behavior",
+      "sourceMathematics": {
+        "A": "y=4",
+        "B": "y=-4",
+        "C": "y=1",
+        "D": "y=-1"
+      },
+      "matching": {
+        "a": "D",
+        "b": "B",
+        "c": "A",
+        "d": "C",
+        "e": "B",
+        "f": "D",
+        "g": "C",
+        "h": "A"
+      },
+      "positive": [
+        {
+          "expression": "(1+4x)/x",
+          "horizontalAsymptote": 4
+        },
+        {
+          "expression": "(1-4x)/x",
+          "horizontalAsymptote": -4
+        }
+      ],
+      "negative": [
+        {
+          "expression": "(2x+3)/(x-1)",
+          "excludedX": 1,
+          "reason": "vertical asymptote not a hole"
+        },
+        {
+          "expression": "(x*x-1)/(x-1)",
+          "excludedX": 1,
+          "reason": "removable hole at (1,2), not a pole"
+        }
+      ],
+      "rubric": [
+        "Correct horizontal asymptote identification by valid algebraic rewriting",
+        "Explain equivalent expressions mapped to the same graph and domain",
+        "Distinguish domain exclusion, removable hole and vertical asymptote"
+      ]
+    }
+  ],
+  "originalVisualCandidate": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/visuals/U02-L18-asymptote-families.original.svg",
+  "visualIntegration": "NOT_IMPLEMENTED_IN_RENDERER",
+  "humanScoringGuidance": "Auto-score numerical and exact graph matches when contract exists; open-response graph sketches and rationale require review or validated rubrics, not fabricated perfect-match autograding",
+  "sharedOwnerTasks": [
+    "Confirm immutable predecessor and approved successor version by genuine independent content review",
+    "Do not update historical digest in place or bypass SHA parity test",
+    "Validate non-destructive materialization predecessor then successor in disposable DB",
+    "Implement lesson-specific Practice family, validator and score persistence in shared integration branch",
+    "Run two-school authenticated cross-lesson, cross-course and cross-tenant negative tests",
+    "Collect teacher rubric sign-off and actual learner UI/visual acceptance"
+  ],
+  "owner": "American Supervisor 3 / designated shared academic-content and Practice integration owner",
+  "release": "NO_GO"
+}
