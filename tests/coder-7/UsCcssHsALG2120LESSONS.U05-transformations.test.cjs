@@ -70,6 +70,7 @@ test('new original instructional content and exact next cursor remain uncertifie
   const row=ledger.lessons.find(x=>x.lessonCode.endsWith(':'+code));
   assert.equal(row.academicApproval,'NOT_VERIFIED');assert.equal(row.sourceToStudentCompared,true);
  }
- assert.equal(ledger.lessons[ledger.nextCurriculumCursor.ordinal-1].contentStatus,'CONTENT_DEFECT_TRIAGE_PENDING');
+ const firstUnfinished=ledger.lessons.find(x=>['CONTENT_DEFECT_TRIAGE_PENDING','EXISTING_AUTHORED_REVIEW_PENDING'].includes(x.contentStatus));
+ assert.equal(ledger.nextCurriculumCursor.ordinal,firstUnfinished?firstUnfinished.ordinal:ledger.lessons.length+1);
  assert.equal(ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length,ledger.checkedStaticCounts.sourceGroundedContentEdits);
 });
