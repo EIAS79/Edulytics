@@ -182,3 +182,39 @@ test('V7 per-lesson triage preserves source, Practice and teacher evidence witho
   assert.equal(row.evidence.integratedTeacherScoringRubric,false);
  }
 });
+
+test('V8 fetched authentic student and teacher lesson activity structures for all canonical Grade 8 identities without certifying source parity',()=>{
+ const fetched=read('docs/curriculum/us-ccss-g8-coder4-v8-publisher-activity-structure-20261029.json');
+ const ledger=read('docs/curriculum/us-ccss-g8-coder4-v8-acceptance-ledger-20261029.json');
+ assert.equal(fetched.student200,131);assert.equal(fetched.teacher200,131);
+ assert.equal(fetched.studentActivityHeadingsFetched,131);
+ assert.equal(fetched.sourceFigureInspectionPriorities,118);
+ assert.equal(ledger.counts.sourceActivityHeadings,411);
+ assert.equal(ledger.rows.length,131);
+ assert.deepEqual(ledger.rows.map(r=>r.lessonCode),bp.Lessons.map(x=>x.LessonCode));
+ assert.equal(ledger.counts.standardsRoleDifferences,22);
+ assert.equal(ledger.counts.explicitPracticeSemanticMismatch,1);
+ assert.equal(ledger.counts.aAccepted,0);assert.equal(ledger.counts.bAccepted,0);
+ assert.equal(ledger.counts.cVerified,0);assert.equal(ledger.counts.dVerified,0);
+ for(const x of ledger.rows){
+  assert.ok(x.sourceEvidence.teacherPreparationUrl.includes('/teachers/3/'));
+  assert.ok(x.sourceEvidence.studentLessonUrl.includes('/students/3/'));
+  assert.ok(x.sourceEvidence.teacherLessonHttp200);
+  assert.ok(x.sourceEvidence.studentLessonHttp200);
+  assert.match(x.sourceEvidence.studentHtmlSha256,/^[a-f0-9]{64}$/);
+  assert.match(x.sourceEvidence.teacherHtmlSha256,/^[a-f0-9]{64}$/);
+  assert.ok(x.sourceEvidence.studentActivityCount>0);
+  assert.equal(x.verdict,'BLOCKED_WITH_CAUSE');
+  assert.equal(x.stageA,'NOT_ACCEPTED');assert.equal(x.stageB,'NOT_ACCEPTED');
+  assert.equal(x.stageC,'NOT_VERIFIED');assert.equal(x.stageD,'NOT_VERIFIED');
+  assert.equal(x.sourceEvidence.fullSourceStudentActivityReviewedByHuman,false);
+  assert.equal(x.practice.attemptPersistenceVerified,false);
+  assert.equal(x.practice.generatedLessonSpecificPracticeVerified,false);
+ }
+ const twoVariable=ledger.rows.find(x=>x.lessonCode==='PED:US-CCSS-MATH:G8:U03:L12');
+ assert.deepEqual(twoVariable.sourceEvidence.studentActivityTitles,['12.1: Estimate Area','12.2: Apples and Oranges','12.3: Solutions and Everything Else']);
+ assert.equal(twoVariable.practice.knownSemanticMappingMismatch,true);
+ const proof=ledger.rows.find(x=>x.lessonCode==='PED:US-CCSS-MATH:G8:U08:L07');
+ assert.equal(proof.sourceEvidence.visualSourceInspectionPriority,true);
+ assert.equal(proof.candidate.richV2VisualCount,0);
+});
