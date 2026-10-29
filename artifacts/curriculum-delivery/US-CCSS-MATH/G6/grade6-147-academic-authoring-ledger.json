@@ -141,7 +141,7 @@
     }
   ],
   "sourceAuditNotes": "All 147 historical public student pages and 147 teacher pages were retrieved and indexed by original title/activity heading. Retrieval/title matching is NOT independent content review. Eight lessons U01:L01-L03,L12,L15-L16 and U09:L01-L02 had direct public student/teacher activity comparison and original first-party candidate repairs; they are still NOT accepted because source figure/applet parity, effective student/teacher UI, exact Practice, persistence and tests are unverified. Other 139 lessons await full individual task-body review. The 10 MP-only rubric entries are heading-anchored candidates, not source-body signoffs or teacher-workflow implementation.",
-  "testEvidence": "At original V7 checkpoint 4eb7640, CI had 10 success/6 fail/2 skipped, but those are old-head evidence only. 34 committed Grade6 Node test callbacks now exist; native node --test, dotnet and authorized exact-head CI are NOT_RUN for latest V7 candidate SHA. Three newly authored V7 callback checks at SHA 31593deb passed in a V8 in-memory compatibility harness, not native Node. Later unit2/visual callbacks require exact-head verification.",
+  "testEvidence": "Prior fixed version evidence retained. At exact committed SHA c55468750fdb867a1d487c16950ed144b7a551f2 all 6 new V7 CommonJS callback bodies passed a GitHub-fixture-backed V8 shim (6/6 PASS). This is NOT actual Node, .NET, CI, or authenticated application evidence. All 34 callbacks require actual Node --test execution on an approved full checkout; exact final head has no independent Stage D acceptance.",
   "lessons": [
     {
       "sortOrder": 1,
@@ -13547,5 +13547,12 @@
       "original-data parity 147 changed source lesson bodies newlyApproved 0"
     ],
     "afterAuthoringCommitCI": "NOT_VERIFIED_ON_CURRENT_SHA"
-  }
+  },
+  "v7DurableHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/CODER2_V7_DURABLE_HANDOFF_20261029.md",
+  "v7DurableHandoffCommit": "8f5ffb377ee8171ef5bfa924802bf5b289e1f0c5",
+  "v7LastTestWordFixCommit": "c55468750fdb867a1d487c16950ed144b7a551f2",
+  "v7SixNewCallbacksExecutedInV8": 6,
+  "v7SixNewCallbacksPassingInV8": 6,
+  "v7V8TestedExactHead": "c55468750fdb867a1d487c16950ed144b7a551f2",
+  "v7TestRunnerClassification": "V8_IN_MEMORY_SHIM__NOT_NATIVE_NODE_OR_DOTNET_OR_CI"
 }
