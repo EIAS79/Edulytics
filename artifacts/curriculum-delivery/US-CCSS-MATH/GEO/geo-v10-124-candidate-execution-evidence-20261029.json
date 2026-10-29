@@ -1,0 +1,91 @@
+{
+  "SchemaVersion": 1,
+  "CreatedDate": "2026-10-29",
+  "Role": "American US-CCSS Coder 6",
+  "Course": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "PR": "https://github.com/EIAS79/Edulytics/pull/583",
+  "PRState": "DRAFT_NO_GO",
+  "TestedCodeSha": "6a8170fb27221afc23396b0afa72cbdb9265bb04",
+  "Device": "Anas_Nitro / Personal",
+  "RecoveryClone": "C:\\Users\\codin\\Edulytiks-Coder6-GEO-Recovery-20261029",
+  "OriginalScratch": "C:\\Users\\codin\\Edulytiks-GEO-Coder6-Local-Tests (historical non-git copy; untouched)",
+  "Coverage": {
+    "blueprint": 124,
+    "canonical": 124,
+    "richCandidate": 124,
+    "authoredAddedThisRecovery": 60,
+    "byUnit": {
+      "U01": 22,
+      "U02": 15,
+      "U03": 16,
+      "U04": 11,
+      "U05": 18,
+      "U06": 17,
+      "U07": 14,
+      "U08": 11
+    },
+    "newVisualReasoningAids": 60,
+    "fullOriginalGeometryDiagramsVerified": 0,
+    "academicApproved": 0,
+    "studentRuntimeVerified": 0,
+    "practiceLessonContractVerified": 0,
+    "realAttemptsVerified": 0,
+    "persistedContentVersionVerified": 0,
+    "twoSchoolTenantVerified": 0
+  },
+  "Stages": {
+    "A": {
+      "initialSourceComparisonRecorded": 82,
+      "syllabusMappedIndividualSourcePagesPending": 42,
+      "approved": 0
+    },
+    "B": {
+      "richCandidateAuthored": 124,
+      "approved": 0
+    },
+    "C": {
+      "practiceAndTeacherAssessmentVerified": 0
+    },
+    "D": {
+      "endToEndReleaseAccepted": 0
+    }
+  },
+  "Tests": {
+    "runner": "Node.js v26.4.0",
+    "command": "node --test tools/curriculum/us-ccss-geo-richv2-contract.test.cjs",
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "checks": [
+      "124 blueprint/canonical identities and source URLs",
+      "no fake academic release status in 124-row manifest",
+      "Rich V2 full 124 source-ordered candidate identities, content schema and 60 native visual structures",
+      "selected mathematical invariants for construction, rigid transformations, congruence, similarity, trig, solid geometry, conics, circle geometry and probability"
+    ],
+    "notCovered": [
+      "source edition complete teacher/student activity parity for 60 candidates",
+      "all 372 authored worked-example answers independently certified",
+      "genuine original SVG/dynamic geometry diagrams and screen-reader inspection",
+      "real lesson-specific Practice generation, equivalence grading and attempt feedback",
+      "authorization, course selection, saved versions and tenant isolation",
+      "full .NET build/unit/E2E on exact branch HEAD"
+    ],
+    "dotnetLocal": "BLOCKED: dotnet executable not installed in PATH or standard installation folders on Anas_Nitro; global.json preserved at SDK 10.0.200",
+    "githubCiLastObserved": "QUEUED/PENDING on latest check; not recorded as PASS"
+  },
+  "Dependencies": {
+    "sharedCatalogRepair": "https://github.com/EIAS79/Edulytics/pull/598 (owned by Supervisor 2; separately reviewed, not merged; no duplicate global edits)",
+    "sharedAdoption": "https://github.com/EIAS79/Edulytics/issues/453 (owned by designated shared integration writer)",
+    "branchRule": "No direct main change, merge, real tenant writes or deploy"
+  },
+  "RiskNotes": [
+    "The 60 newly authored lessons have independent numeric examples and source-mapped first-party pedagogy but no individual professor approval.",
+    "Stage A statuses describe source-mapping progress, not academic acceptance.",
+    "Source optional U08:L11 is marked in manifest; optionality for other U05-U08 lessons needs full official page audit.",
+    "Native visuals use existing RichLessonVisualKind controls and are not substitutes for required original static diagrams or dynamic GeoGebra interactions.",
+    "Rich V2 resources are embedded candidates; actual persisted precedence, student/teacher visibility and lesson-specific evaluation remain unverified."
+  ],
+  "Decision": "NO_GO"
+}
