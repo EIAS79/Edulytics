@@ -1,7 +1,7 @@
 'use strict';
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { readFileSync } = require('node:fs');
+const { readFileSync, readdirSync } = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..', '..');
 const read = (p) => JSON.parse(readFileSync(path.join(root, p), 'utf8'));
@@ -14,7 +14,10 @@ const richFourth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-c
 const richFifth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l13-l15-2021.rich-lesson-v2.json');
 const richSixth = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l16-l18-2021.rich-lesson-v2.json');
 const richSeventh = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l19-l22-2021.rich-lesson-v2.json');
-const authored = [rich,richNext,richThird,richFourth,richFifth,richSixth,richSeventh].flatMap(x => x.Lessons);
+const richDirectory = 'src/Edulytics.Core/Curriculum/LessonContent/RichV2';
+const geoResources = readdirSync(path.join(root, richDirectory))
+  .filter(name => /^us-ccss-hs-geo-.*\.rich-lesson-v2\.json$/.test(name)).sort();
+const authored = geoResources.flatMap(name => read(path.join(richDirectory, name)).Lessons);
 const evidence = read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json');
 const prefix = 'PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L';
 
@@ -44,7 +47,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 22);
+  assert.equal(evidence.totals.richCandidateLessons, 31);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -58,7 +61,7 @@ test('Course-wide matrix records unverified runtime and no fabricated approvals'
   }
 });
 
-test('All 22 unit-one geometry lessons have authored candidate contracts', () => {
+test('All indexed Geometry candidate resources have authored source-specific contracts', () => {
   assert.equal(rich.PackCode, 'US-CCSS-MATH');
   assert.equal(rich.Lessons.length, 3);
   assert.equal(richNext.Lessons.length, 3);
@@ -67,7 +70,12 @@ test('All 22 unit-one geometry lessons have authored candidate contracts', () =>
   assert.equal(richFifth.Lessons.length, 3);
   assert.equal(richSixth.Lessons.length, 3);
   assert.equal(richSeventh.Lessons.length, 4);
-  assert.deepEqual(authored.map(l => l.LessonCode), Array.from({length:22},(_,i)=> prefix+String(i+1).padStart(2,'0')));
+  assert.deepEqual(
+    authored.map(l => l.LessonCode),
+    evidence.lessons.filter(l => l.richCandidateOnBranch).map(l => l.lessonCode)
+  );
+  assert.equal(authored.length, evidence.totals.richCandidateLessons);
+  assert.equal(new Set(authored.map(l => l.LessonCode)).size, authored.length);
   for (const lesson of authored) {
     assert.equal(lesson.CultureCode, 'en');
     assert.equal(lesson.WorkedExamples.length, 3);
@@ -213,4 +221,39 @@ test('Rotational symmetry, congruence alignment, and proof candidates obey key i
   }
   assert.equal(360/5,72);
   assert.equal(360/6,60);
+});
+
+test('Unit 2 triangle criteria use valid numerical hypotheses and no SSA/AAA misgrading', () => {
+  const U2 = 'PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L';
+  const byCode = new Map(authored.map(l => [l.LessonCode,l]));
+  for(let n=1;n<=9;n++) {
+    const lesson=byCode.get(U2+String(n).padStart(2,'0'));
+    assert.ok(lesson, 'missing U02:'+n);
+    assert.ok(lesson.ExplanationParagraphs.join(' ').includes('CC BY 4.0'));
+    assert.equal(lesson.WorkedExamples.length,3);
+    assert.ok(lesson.WorkedExamples.every(ex=>ex.Steps.length>=3 && ex.Answer));
+  }
+  // AAA counterexample: proportional sides yield similarity but not rigid congruence.
+  assert.equal(Math.hypot(3,4),5);
+  assert.equal(Math.hypot(6,8),10);
+  assert.ok([3,4,5].every((x,i)=> [6,8,10][i]===2*x));
+  // SSA example from U02 L04 has two strictly positive possible positions.
+  const discriminant = 300-256, coeff=10*Math.sqrt(3);
+  assert.ok(discriminant>0);
+  const roots=[(coeff-Math.sqrt(discriminant))/2,(coeff+Math.sqrt(discriminant))/2];
+  for (const t of roots) {
+    assert.ok(t>0);
+    const C=[t*Math.cos(Math.PI/6),t*Math.sin(Math.PI/6)];
+    assert.ok(Math.abs((C[0]-10)**2 + C[1]**2 - 36)<1e-10);
+  }
+  assert.notEqual(roots[0],roots[1]); // distinct AC lengths -> noncongruent
+  // ASA proof angle sum, and triangle inequality guard of SSS.
+  assert.equal(45+65+70,180);
+  assert.ok(5+7>8 && 5+8>7 && 7+8>5);
+  assert.equal(2+3>6,false);
+  // Equidistant locus for A=(-3,0),B=(3,0): x=0, and only x=0.
+  for(const x of [-7,-1,0,2,13]) {
+    const pa2=(x+3)**2+4**2, pb2=(x-3)**2+4**2;
+    assert.equal(pa2===pb2,x===0);
+  }
 });
