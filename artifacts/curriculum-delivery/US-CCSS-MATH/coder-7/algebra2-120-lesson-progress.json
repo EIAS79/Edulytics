@@ -22,20 +22,23 @@
     "95e1345840ca30cb8b79074de4945af64bd0d3ab",
     "33fa4dd981a76e93bfe5398762ca8e651a88431e",
     "1d2146e25df8c70bcb2ae885f595eba991e817f0",
-    "3dace0a1c09232e8997b64b8d4c70bf34595d74d"
+    "3dace0a1c09232e8997b64b8d4c70bf34595d74d",
+    "654e1474ab449e278a17fb023c7b43a3781bf518",
+    "c00e764cf73ba7a40253c466cfafc652cdcd5c07",
+    "63626729674722ab87d868c94af47c59f14e0b97"
   ],
   "checkedStaticCounts": {
-    "sourceGroundedContentEdits": 36,
+    "sourceGroundedContentEdits": 45,
     "previouslyAuthoredPendingReview": 1,
-    "remainingDefectTriage": 82,
+    "remainingDefectTriage": 73,
     "exactExplicitPracticeMappingMetadata": 2,
     "sourceReviewedReused": 1
   },
   "nextCurriculumCursor": {
-    "ordinal": 38,
+    "ordinal": 47,
     "unitCode": "U03",
-    "lessonNumber": 1,
-    "reason": "Unit 1 eleven content edits; Unit 2 25 content edits + L17 reviewed reuse. Next ordinal U03:L01."
+    "lessonNumber": 10,
+    "reason": "U03 L01-L09 source-specific authoring and nine focused mathematical oracle tests completed; continue at A New Kind of Number"
   },
   "knownIntegrationIssues": [
     {
@@ -1672,15 +1675,21 @@
         "BuildingOn",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Explain integer exponent rules and zero/negative exponents with nonzero-base restrictions",
+      "originalFirstPartyMathematicsVerification": "2³·2⁵=2⁸; 2⁵/2⁷=1/4; −2⁴ differs from (−2)⁴",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/1/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 39,
@@ -1710,15 +1719,21 @@
         "BuildingOn",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Use square/cube area and volume models to interpret exact root lengths",
+      "originalFirstPartyMathematicsVerification": "25−4·3=13, sqrt(13) is exact square edge; cube root 50 between 3 and 4",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/2/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 40,
@@ -1749,15 +1764,21 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Prove unit fractional exponents equal square and cube roots",
+      "originalFirstPartyMathematicsVerification": "9^(1/2)=3; 8^(1/3)=2; 7^(−1/3)=1/cuberoot(7)",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/3/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 41,
@@ -1787,15 +1808,21 @@
         "BuildingOn",
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Rewrite positive rational exponents as radical powers and estimate from graph",
+      "originalFirstPartyMathematicsVerification": "5^(2/3)=cuberoot(25); (2^(1/3))³=2; (1.26)³=2.000376",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/4/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 42,
@@ -1825,15 +1852,21 @@
         "BuildingOn",
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Rewrite negative rational powers as positive reciprocal radicals",
+      "originalFirstPartyMathematicsVerification": "9^(−1/2)=1/3; (2^(−2/3))³=1/4",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/5/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 43,
@@ -1858,15 +1891,21 @@
       "publisherAlignmentRoles": [
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Distinguish squared-equation two roots from one nonnegative principal root",
+      "originalFirstPartyMathematicsVerification": "x²=4 gives ±2; sqrt(4)+sqrt(9)=5; sqrt(x)=4 gives x=16",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/6/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 44,
@@ -1899,15 +1938,21 @@
       "publisherAlignmentRoles": [
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Recognize extraneous roots introduced by squaring and lost negative squared roots",
+      "originalFirstPartyMathematicsVerification": "x²−1=3 gives ±2; sqrt(x−1)=−3 produces extraneous candidate x=10",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/7/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 45,
@@ -1937,15 +1982,21 @@
         "BuildingOn",
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Compare cube and cube-root equations and unique real solutions",
+      "originalFirstPartyMathematicsVerification": "cuberoot(−64)=−4; cuberoot(t+4)=3 gives t=23",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/8/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 46,
@@ -1970,15 +2021,21 @@
       "publisherAlignmentRoles": [
         "Addressing"
       ],
-      "contentStatus": "CONTENT_DEFECT_TRIAGE_PENDING",
-      "sourceToStudentCompared": false,
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
+      "sourceToStudentCompared": true,
       "practiceMappingExplicit": false,
       "practiceFamiliesExplicit": [],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "runtimeMaterializationStatus": "BLOCKED_APPROVAL_VERSION_PREDECESSOR",
+      "testsStatus": "NODE_MATH_ORACLE_PASS_NO_AUTHENTICATED_PRACTICE",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "publisherTeacherLearningGoal": "Solve square/cube-root equations and construct zero-, one- and two-solution examples",
+      "originalFirstPartyMathematicsVerification": "sqrt(a−5)=5 gives a=30; cuberoot(a−5)=5 gives a=130; sqrt(x)=cuberoot(x) gives 0 and 1",
+      "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/3/9/index.html",
+      "sourceComparedEvidence": "Original IM Algebra 2 First Edition teacher and student lesson, independently written first-party explanation and checked mathematical cases; not publisher sign-off",
+      "sourceRights": "Illustrative Mathematics First Edition 2019–2021 CC BY 4.0, Edulytiks adaptation, attribution and edition preserved",
+      "practiceTrace": "PENDING_AUTHENTICATED_EXACT_CONTRACT_AND_VERIFIER"
     },
     {
       "ordinal": 47,
@@ -4765,6 +4822,13 @@
       "verifiedGitBlobSha": "592a1dbb89c386cacec9c89dd27ab7105c3f3c05",
       "executionPlace": "isolated local container, exact matching GitHub blob hash",
       "scope": "U02 L19-L26 independent mathematics; not application Practice verification"
+    },
+    {
+      "command": "node --test /mnt/data/coder7-validation/tests/coder-7/UsCcssHsALG2120LESSONS.U03-early-math.test.cjs",
+      "result": "PASS_9_OF_9",
+      "verifiedGitBlobSha": "a540aa2a2efc7aa9135b31a85cc7fc913e71556a",
+      "executionPlace": "isolated container, exact SHA of source matches GitHub",
+      "scope": "U03 L01-L09 independently checked math, not app verifier"
     }
   ],
   "ciBlocker": "Current authoritative CI at 924324f6c11602e96fae043ebc8e027ad2e1eb98 failed canonical-body parity: modified teaching with newlyApproved=0 and no authorized version predecessor; do not bypass."
