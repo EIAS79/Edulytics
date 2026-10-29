@@ -137,6 +137,7 @@
       "ExplanationParagraphs": [
         "Learning goal: Build explicit sample spaces for one- and two-stage chance experiments, count equally likely events and critique unsupported equiprobability assumptions.",
         "Set of all possible outcomes of experiment For two fair coins, HH,HT,TH,TT",
+        "Source task focus: design a closed-bag draw experiment where some participant labels occur on multiple equally likely physical slips. Record which label was drawn, replace or do not replace according to the declared protocol, and compare the empirical frequency to the theoretical fraction of slips bearing that label. Do not assume distinct visible names are equiprobable or invent observations that were never collected.",
         "A subset satisfying multiple criteria such as exactly one head Count favorable outcomes / total if equiprobable Don't use simple counts for biased alternatives",
         "Original source-specific student task: Construct a two-stage table and compare empirical and modelled event frequencies; teacher evaluates reasoning. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 2, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
@@ -175,16 +176,16 @@
           "Check": "Check denominators, sample-space assumptions and probability bounds."
         },
         {
-          "Title": "Playing with Probability: original probability scenario 2",
-          "Question": "Roll fair die; probability result even and greater than 2.",
-          "Method": "Compound event",
+          "Title": "Playing with Probability: repeated labels and observed trials",
+          "Question": "A bag contains three equally likely physical slips labelled Ana, Ana and Ben. A student independently replaces the slip after each of 20 draws and records Ana 15 times. State theoretical P(Ana), observed frequency, and why they differ.",
+          "Method": "Count physical slips for theoretical probability, then divide recorded event count by total trials.",
           "Steps": [
-            "Sample outcomes 1–6",
-            "Even outcomes {2,4,6}, >2 outcomes {3,4,5,6}",
-            "Intersection {4,6}: 2/6=1/3"
+            "The theoretical sample space consists of three equally likely slips, two labelled Ana, so P(Ana)=2/3.",
+            "The observed Ana relative frequency is 15/20=3/4=0.75.",
+            "The estimate 0.75 differs from the model value 2/3 because a finite series of chance draws can vary; the 20-draw table is hypothetical, not a claim of a classroom experiment."
           ],
-          "Answer": "1/3.",
-          "Check": "Check denominators, sample-space assumptions and probability bounds."
+          "Answer": "Model probability 2/3; hypothetical observed relative frequency 0.75; neither is necessarily an exact empirical estimate of a real class.",
+          "Check": "The 20 trials require replacement and independent fair draws for the model, and 15≤20."
         },
         {
           "Title": "Playing with Probability: original probability scenario 3",
@@ -239,8 +240,8 @@
               "Numerator": 0,
               "Denominator": 1,
               "Cells": [
-                "Roll fair die; probability result even and greater than 2.",
-                "1/3."
+                "A bag contains three equally likely physical slips labelled Ana, Ana and Ben. A student independently replaces the slip after each of 20 draws and records Ana 15 times. State theoretical P(Ana), observed frequency, and why they differ.",
+                "Model probability 2/3; hypothetical observed relative frequency 0.75; neither is necessarily an exact empirical estimate of a real class."
               ]
             },
             {
