@@ -1482,3 +1482,65 @@ test('U04 L03–L06 independent arithmetic checks quotient by fraction and chose
   assert.ok(near((3+1/2)/(3/4),14/3));
   assert.ok(near((14/3)*(3/4),3.5));
 });
+
+test('U04 L07–L10 public task evidence preserves applet and teacher-assessment no-go boundaries', () => {
+  const d=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l07-l10-public-student-teacher-division-task-comparison.json'), 'utf8'));
+  assert.equal(d.summary.batchDirectStudentTaskBodies,4);
+  assert.equal(d.summary.batchPublicTeacherTaskBodies,4);
+  assert.equal(d.summary.currentDirectTotal,125);
+  assert.equal(d.summary.directRemaining,22);
+  assert.equal(d.summary.academicallyAccepted,0);
+  assert.deepEqual(d.lessons.map(x=>x.lessonCode),[7,8,9,10].map(n=>lcode(4,n)));
+  for(const l of d.lessons) {
+    const content=byCode.get(l.lessonCode).translations[0].workedExamples;
+    assert.equal(l.publicStudentActivityBodiesCompared,true);
+    assert.equal(l.publicTeacherActivityPurposeCompared,true);
+    assert.equal(l.teacherProtectedResponsesRead,false);
+    assert.ok(l.sourceTaskPurposes.length>=4);
+    assert.ok(l.firstPartyOriginalTeaching.length>=3);
+    assert.equal(l.teacherAssessmentDraft.implemented,false);
+    assert.equal(l.teacherAssessmentDraft.persisted,false);
+    assert.equal(l.sourceOriginalMediaVerified,false);
+    assert.equal(l.authenticatedStudentAccessibleRepresentation,false);
+    assert.equal(l.exactSelectedPracticeContractVerified,false);
+    assert.equal(l.verifiedGraderCorrectWrongEquivalentMalformed,false);
+    assert.equal(l.twoSchoolIsolationVerified,false);
+    assert.equal(l.academicAcceptance,'NOT_ACCEPTED');
+    assert.match(content,/Example 3:/);
+    assert.match(content,/Description: (Tape diagram|Ratio table)/);
+  }
+  assert.match(byCode.get(lcode(4,7)).translations[0].workedExamples,/Friday 7\.5 cups/);
+  assert.match(byCode.get(lcode(4,8)).translations[0].workedExamples,/45 cups per complete pail/);
+  assert.match(byCode.get(lcode(4,9)).translations[0].workedExamples,/1\.875 liters/);
+  assert.match(byCode.get(lcode(4,10)).translations[0].workedExamples,/6÷\(4\/3\)=4\.5 groups/);
+});
+
+test('U04 L07–L10 numeric oracles keep group-size, fraction reference and non-unit division separate', () => {
+  const near=(a,b)=>Math.abs(a-b)<1e-9;
+  assert.deepEqual([12,22.5,6,7.5].map(x=>x/9),[4/3,2.5,2/3,5/6]);
+  assert.ok(near(3/9,1/3)&&near(0.5/5,0.1));
+  assert.ok(near(9/3,3)&&near(3/9,1/3));
+  assert.ok(near(6/4,1.5));
+  assert.ok(near((5/4)/(1/2),2.5));
+  assert.ok(near(2/(2/3),3));
+  assert.ok(near(15/2,7.5));
+  assert.ok(near(15/1.5,10));
+  assert.ok(near(15/(1/3),45));
+  assert.ok(near((3/4)/2,3/8));
+  assert.ok(near((3/4)/1.5,1/2));
+  assert.ok(near((3/4)/(1/3),9/4));
+  assert.ok(near(1/3+2/9,5/9));
+  assert.ok(1-Math.pow(2/3,9)<1);
+  assert.ok(near((3/4)/(2/5),15/8));
+  assert.ok(near(21/3.5,6));
+  assert.ok(near(2/(4/9),4.5));
+  assert.ok(near(3/(6/5),2.5));
+  assert.ok(near((5/4)/(5/6),1.5));
+  assert.deepEqual([(1/2)/(1/4)>1,1/(3/4)>1,(2/3)/(7/8)>1,(23/8)/(13/5)>1],[true,true,false,true]);
+  assert.ok(near((1/3)/(1/4),4/3));
+  assert.deepEqual([3,4,6].map(x=>12/x),[4,3,2]);
+  assert.deepEqual([3,4,6].map(x=>12*(1/x)),[4,3,2]);
+  assert.deepEqual([2,3,4,6,8,10,25].map(x=>6/(1/x)),[12,18,24,36,48,60,150]);
+  assert.deepEqual([2/3,3/4,4/3,4/6].map(x=>6/x),[9,8,4.5,9]);
+});
