@@ -71,7 +71,9 @@
     "tests/academic-us-ccss-g5-u01-layer-base-v9.test.cjs",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l04-l05-ready-reuse-source-review.json",
     "tests/academic-us-ccss-g5-u01-cubic-info-gap-v9.test.cjs",
-    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json"
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-source-geometry-v10.json",
+    "tests/academic-us-ccss-g5-u01-measured-prisms-v10.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -177,8 +179,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "148/148 Grade5-specific RichV2 teaching candidates authored and listed uniquely, but source original complete Student PDF, visual license/true representation and teaching/Practice/runtime parity, Academic Stage A/B/C/D and human academic acceptance remain UNVERIFIED for every lesson.",
-      "next": "Start 148 per-lesson original source PDF+asset rubric review; capture effective student/teacher render evidence with approved isolated runner. Don't equate static RichV2 with learning acceptance."
+      "issue": "148 Grade5 direct Rich V2 teaching candidates, one V10 source-geometry repair for U01 L09; 2021 teacher and Student Facing HTML verified for targeted lesson; original Student Task PDF, drawings/cards and gated Cool-down, exact selected Practice and A/B/C/D acceptance remain unverified.",
+      "next": "Continue original U01:L10 source task comparison; retain separate source license and teacher drawing rubric requirements."
     },
     {
       "id": "G5-D-004",
@@ -649,18 +651,48 @@
         "commonMistakes"
       ],
       "hasGrade5RichV2Sidecar": true,
-      "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
+      "sourceReview": "V10_PRIMARY_OUR_CS_2021_ORIGINAL_TEACHER_LESSON_PREPARATION_AND_EMBEDDED_STUDENT_FACING_TEXT_REVIEWED_ORIGINAL_STUDENT_TASK_PDF_COOLDOWN_FIGURES_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
       "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageC": "EXACT_SELECTED_PRACTICE_AND_TEACHER_RUBRIC_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
       "production": "NOT_CHECKED",
-      "sourceReviewedTask": "Measured composite prisms without drawn cubes; inferred missing lengths and valid splits",
+      "sourceReviewedTask": "2021 Figure 1 two missing 2-ft edges gives78 ft³ in 2 equivalent cuts; Figure2 missing4-in overhang and3-in upper level gives259 in³ in 2 cuts; grouped expression drawings42 and420 in³; source requires partner switching, different splits, unit labels and argument mapping each parenthesized factor to same solid",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+      "sourceReviewClassification": "GRADE5_DEFECT_FIXED",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-9/lesson.html",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTeacherHtmlDevice": "Primary/Our-CS:98fe82ca-5db1-4369-9545-f146cc609375; read-only source HTML",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_DIAGRAM_AND_ALTERNATE_NONOVERLAPPING_PRISM_DECOMPOSITION_NUMERIC_AND_WRONG_MALFORMED_SUBCHECK_ONLY",
+      "sourceAuditFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-source-geometry-v10.json",
+      "sourceTaskPdfVerified": false,
+      "sourceProtectedCooldownVerified": false,
+      "sourceFiguresIndependentVerified": false,
+      "v10Evidence": {
+        "classification": "GRADE5_DEFECT_FIXED",
+        "richEditCommit": "1526736736b3f15563ca86b4ecd8ee82f3fa7a06",
+        "auditCommit": "84aa9e7586706a5d1da7ac5442bf67a7b173bf14",
+        "testCommit": "8aac86fc36b0168008be6141b061dcb4485e6461",
+        "nodeActual": {
+          "command": "node --test /mnt/data/g5_v10_exact_checkout/tests/academic-us-ccss-g5-u01-measured-prisms-v10.test.cjs",
+          "environment": "isolated container Node.js v22.16.0, NOT Our-CS and NOT checkout",
+          "gitHubTestBlobSha": "6b6221dd83d1e56111b7852d7dfbf5901a94e8a4",
+          "localTestBlobSha": "6b6221dd83d1e56111b7852d7dfbf5901a94e8a4",
+          "passed": 5,
+          "failed": 0,
+          "skipped": 2,
+          "skipReason": "GitHub Rich V2 and source-audit JSON missing from local isolated pseudo-checkout"
+        },
+        "selectedPractice": "NOT_RUN",
+        "appBuild": "NOT_RUN",
+        "studentTeacherUAT": "NOT_RUN",
+        "database": "NOT_RUN",
+        "CI": "NOT_RUN"
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L10",
@@ -7503,23 +7535,23 @@
       "sourceTaskAssessmentBoundary": "TEACHER_SCORED_AUTHENTIC_GAME_STUDENT_CREATED_TASK_OR_FACILITATION_NUMERIC_SUBCHECK_ONLY"
     }
   ],
-  "lastGradeContentCommit": "0ebc5f4f1c80c5f03d6fc20ad56bb4629dd797c9",
+  "lastGradeContentCommit": "1526736736b3f15563ca86b4ecd8ee82f3fa7a06",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V9 checkpoint: 148/148 direct first-party Grade 5 Rich V2 authored candidates preserved across all eight units; historical 104 baseline pack edits unchanged. Grade5-only U01 L01-L03 source task improvements committed. U01 L04-L08 candidate reuse determined by original 2021 Student Facing + teacher HTML source comparisons. EIGHT source-task lesson comparisons with original separate PDF/card figures/gated response still unverified; zero Stage A academic approvals. Three SHA-identical locally native Node tests together 10 PASS 0 FAIL 3 SKIP, three sidecar fixture tests skipped without checkout. Actual B authenticated runtime, C selected Practice, D product/.NET/database/tenant/accessibility and owner UAT NOT_RUN. Existing Draft PR #596 preserved, no merge or deployment.",
+  "currentScopeDescription": "148/148 direct source-grounded Grade5 RichV2 teaching candidates authored across 38 G5 JSON files; 104 prior baseline body editorial repairs. V10 updated U01:L09 against accessible 2021 teacher prep/lesson Student Facing, with voxel-equivalent volumes 78 ft³/259 in³/420 in³ and fail-closed drawing rubric. Real Node v22.16.0 exact GitHub test bytes 5 pass, 2 fixture skips; full source original student PDFs/figures/Cool-down, authenticated effective render, selected Practice, .NET/DB/tenant/CI/owner-UAT and academic acceptance NOT_VERIFIED / 0/148.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "14bf7ccb935cbc988408b0c4344455665e3b47af",
+  "lastCommittedTest": "8aac86fc36b0168008be6141b061dcb4485e6461",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "7ca0681e5fe7bc2d0cec9e9ed977c2a5326a748f",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L09 — Measure Figures Made From Prisms",
+    "lastKnownCommittedHeadBeforeLedger": "8aac86fc36b0168008be6141b061dcb4485e6461",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L10 — Represent Volume with Expressions PLC Activity",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Continue full 2021 Grade5 lesson task fidelity U01 L09 onwards. Follow independent student/PDF/card/cool-down task as available; do not promote academic A from text source alone. Actual B/C/D requires authorized app/DB/SDK and Supervisor issue #592.",
+    "nextAcademic": "Compare 2021 U01 L10 Student Facing and teacher task with current U01 L10 candidate; fix only grade-owned observed defects, append exact math/geometry guards; preserve approval gates and shared #592 ownership.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7811,5 +7843,27 @@
       "scope": "Arithmetic and cubic unit invariants; repo sidecar fixture skipped"
     },
     "gradeOwnedU01L06L08EvidenceCommit": "7ca0681e5fe7bc2d0cec9e9ed977c2a5326a748f"
+  },
+  "v10Evidence": {
+    "date": "2026-10-29",
+    "reviewedLesson": "PED:US-CCSS-MATH:G5:U01:L09",
+    "source": "2021 public teacher lesson plus prep + embedded Student Facing locally on approved Primary/Our-CS, read-only",
+    "sourceClassification": "GRADE5_DEFECT_FIXED",
+    "fixedContentCommit": "1526736736b3f15563ca86b4ecd8ee82f3fa7a06",
+    "sourceFixtureCommit": "84aa9e7586706a5d1da7ac5442bf67a7b173bf14",
+    "gradeSpecificNodeTestCommit": "8aac86fc36b0168008be6141b061dcb4485e6461",
+    "nodeTestPassed": 5,
+    "nodeTestFailed": 0,
+    "nodeTestSkipped": 2,
+    "exactTestBlobMatched": true,
+    "originalStudentPdfChecked": false,
+    "gatedResponseChecked": false,
+    "originalFigureAssetRightsChecked": false,
+    "academicStageA": "NOT_COMPLETE",
+    "academicStageB": "NOT_VERIFIED",
+    "academicStageC": "NOT_VERIFIED",
+    "academicStageD": "NOT_RUN",
+    "sharedVersionTransition": "BLOCKED_SHARED_ISSUE_592",
+    "release": "NO_GO"
   }
 }
