@@ -38,10 +38,10 @@
       "WorkedExamples": [
         {
           "Title": "Determine whether AAA is enough",
-          "Question": "Triangles have respective angles 30°,60°,90° and sides 3,4,5 versus 6,8,10. Are they congruent?",
+          "Question": "Two right triangles have corresponding sides 3, 4, 5 and 6, 8, 10. They have identical three angles. Are they congruent?",
           "Method": "Distinguish angle equality from length invariance.",
           "Steps": [
-            "Both triples of lengths are in ratio 1:2 and so have the same corresponding angles.",
+            "The side triples are proportional by factor 2, so corresponding angles are equal by similarity.",
             "Corresponding side lengths differ: 3≠6.",
             "A rigid transformation preserves all lengths and cannot double a side.",
             "AAA therefore establishes similarity but not congruence."
