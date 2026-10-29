@@ -695,12 +695,18 @@
       "Title": "All Kinds of Prisms",
       "ExplanationParagraphs": [
         "Goal: solve real and mathematical volume problems involving packed rectangular prisms and real objects, including dimensions, given base area and composite garden designs. Choose a strategy appropriate to the given information rather than assuming every problem supplies three side lengths.",
-        "Warm-up: consider different box-shaped and partially pictured prism figures, describing what information is known and which dimensions would be needed to calculate volume. Multiple justified classifications are valid in the source warm-up.",
-        "Activity 1 — prism problems: a storage container 4 feet wide, 9 feet long and 5 feet high has volume 4×9×5 = 180 cubic feet. A walk-in closet with 30 square feet of floor area and a 9-foot ceiling has volume 30×9 = 270 cubic feet, even though the individual floor length and width are not given.",
-        "Activity 2 — raised-bed garden: a first-party T-like garden is built by joining non-overlapping rectangular pieces measuring 3 × 8 × 4 feet and 10 × 3 × 4 feet. Compute 96 and 120 cubic feet respectively; combine to 216 cubic feet. Show the location of the dividing plane or explain that the two pieces share only a face.",
-        "Assessment: the actual source requires interpreting realistic context, drawing or decomposing a joined garden volume, selecting base area versus edge lengths and justifying the calculation. Numeric Practice alone does not grade the learner's original garden design, reasoning or diagrams. Publisher images and gated Cool-down are not copied."
+        "Warm-up — Which One Doesn't Belong: the original four figures are not interchangeable. A depicts 5×5×3=75 unit cubes; B gives edge lengths 6, 5 and 7 units and therefore volume 210 cubic units; C displays only a 6×5 cube base (30 per layer) with unknown height; D is a stepped composite figure. Identify a defensible difference, and explain why a visible base alone does not determine total volume. The original warm-up permits multiple reasoned responses.",
+        "Activity 1 — Prism Palooza: Han's partly filled 10-by-6-by-5 unit-cube box has 10×6=60 cubes in each full layer and five layers, so 300 unit cubes when packed without gaps (not 60+5 or 10×6×4). Clare's 4-foot-wide, 9-foot-long, 5-foot-high storage container has volume 4×9×5=180 cubic feet. Mai's closet has 30 square feet of floor area and a 9-foot ceiling, so its volume is 30×9=270 cubic feet, without inventing missing individual floor dimensions. A complete response identifies the base and height and labels units.",
+        "Activity 2 — original 2021 raised-bed garden: the T-like solid consists of 10×3×4 and 8×3×4 foot right rectangular prisms sharing a 3×4-foot face, with no overlapping interiors. The separate volumes are 120 and 96 cubic feet, giving (10×3×4)+(8×3×4)=216 cubic feet. After moving the pieces into a straight prism, the equal-volume expression (10+8)×3×4=18×3×4=216 cubic feet is valid; do not claim the original T has the same outline as that prism. Noah may design another connected two-prism bed, for example lengths 12 and 6 feet at width 3 feet and height 4 feet, again making 216 cubic feet. The source asks students to explain their expression, propose changed dimensions, and justify their preferred design; teachers must review sketches, connections, overlap and explanatory arguments.",
+        "Assessment and source evidence: original 2021 teacher preparation and lesson Student Facing HTML were compared alongside the separate four-page 2021 Student Task PDF (all four pages, including the warm-up and original drawn prism/garden figures). The learner's reasoning, redesigned garden and visual classification are open mathematical tasks requiring teacher/approved rubric assessment; checking 216 alone is not proof of correct geometry. This independently authored text description does not reproduce the original figures. Individual external image attribution/rights and the login-gated Cool-down remain unverified; no automatic academic Stage A–D acceptance."
       ],
       "KeyConcepts": [
+        {
+          "Title": "Unit cubes in layers",
+          "Definition": "A rectangular box completely packed without gaps has the number of cubes per base layer multiplied by the number of layers.",
+          "Rule": "Count both directions in the base, then multiply by the vertical number of layers.",
+          "Example": "Han: (10×6) cubes per layer×5 layers=300 unit cubes."
+        },
         {
           "Title": "Volume from three dimensions",
           "Definition": "A packed rectangular prism fills length × width × height cubic units.",
@@ -718,9 +724,27 @@
           "Definition": "A union of disjoint rectangular prisms has the sum of their individual volumes.",
           "Rule": "Separate the solid into parts that share no interior cubic units.",
           "Example": "96+120=216 cubic feet for two garden beds."
+        },
+        {
+          "Title": "Equal volume is not identical shape",
+          "Definition": "A T-shaped garden and a long rectangular prism may occupy different locations and outlines while using equal total cubic feet.",
+          "Rule": "For a face-joined non-overlapping garden, add the volumes; rearrangement may verify the total but does not preserve shape.",
+          "Example": "(10×3×4)+(8×3×4)=(10+8)×3×4=216 cubic feet."
         }
       ],
       "WorkedExamples": [
+        {
+          "Title": "Han's partially filled box",
+          "Question": "The original 2021 task shows a prism 10 cubes wide, 6 cubes deep and 5 cubes high with only part of it filled. How many unit cubes fill it with no gaps?",
+          "Method": "Find cubes in one base layer and multiply by the number of layers.",
+          "Steps": [
+            "A complete base layer holds 10×6=60 unit cubes.",
+            "The box is 5 cube-layers high, whether or not all are drawn.",
+            "Multiply 60×5 and describe the number of unit cubes."
+          ],
+          "Answer": "300 unit cubes.",
+          "Check": "10×6×5=300; a partly shaded diagram does not mean the whole box contains only shaded cubes."
+        },
         {
           "Title": "Storage container",
           "Question": "A box is 4 feet by 9 feet by 5 feet. Find the volume.",
@@ -756,6 +780,31 @@
           ],
           "Answer": "216 cubic feet.",
           "Check": "96+120=216; teacher checks the proposed decomposition and design."
+        },
+        {
+          "Title": "Rearrange the original T garden",
+          "Question": "Verify the volume of two face-joined prisms 10×3×4 ft and 8×3×4 ft with a single-prism rearrangement.",
+          "Method": "Add without overlap, then rearrange conceptually without claiming the original outline is rectangular.",
+          "Steps": [
+            "Calculate 10×3×4=120 cubic feet and 8×3×4=96 cubic feet.",
+            "Check that the parts share only a face and add 120+96=216 cubic feet.",
+            "If rearranged end-to-end, dimensions become 18×3×4 feet and produce 216 cubic feet."
+          ],
+          "Answer": "216 cubic feet, by two equal-volume expressions.",
+          "Check": "The T garden's shape differs from an 18×3×4 straight prism; the volume is invariant under the proposed rearrangement."
+        },
+        {
+          "Title": "Noah's revised garden design",
+          "Question": "Suggest changed component side lengths for a connected, two-piece garden with the original 216-cubic-foot volume and explain the preferred design.",
+          "Method": "Choose new positive component lengths with a common 3-ft width and 4-ft height; ensure the two interiors do not overlap and share a face.",
+          "Steps": [
+            "Replace 10-foot and 8-foot component lengths by 12 feet and 6 feet.",
+            "Compute 12×3×4=144 cubic feet and 6×3×4=72 cubic feet.",
+            "Join the two boxes at a 3×4-foot face and check 144+72=216 cubic feet.",
+            "State a reason for preferring one garden (for example, accessibility or placement), not only the total number."
+          ],
+          "Answer": "One valid example: 12×3×4 ft and 6×3×4 ft, joined face-to-face, total 216 cubic feet.",
+          "Check": "The lengths differ from the original 10 and 8; accept other defensible designs after checking geometry, units and explanation."
         }
       ],
       "CommonMistakes": [
@@ -768,13 +817,25 @@
           "Mistake": "Count a shared boundary as a volume",
           "WhyWrong": "A two-dimensional common face has zero cubic-unit volume.",
           "Correction": "Add only the non-overlapping interior volumes of the adjoining prisms."
+        },
+        {
+          "Mistake": "Treat a partly filled drawing as a partly sized box",
+          "WhyWrong": "Han's task asks for the fully packed 10×6×5 prism, not the number of visible colored cubes.",
+          "Correction": "Use 60 cubes per base layer and 5 full layers to get 300 unit cubes."
+        },
+        {
+          "Mistake": "Claim a 216 total proves the garden design is correct",
+          "WhyWrong": "Overlapping, disconnected, or dimensionally inconsistent two-piece constructions can produce a coincidental numerical total.",
+          "Correction": "Check the 3×4-foot joining face, no interior overlap, changed dimensions, cubic-foot label and a reasoned design comparison."
         }
       ],
       "SummaryPoints": [
-        "Volume problems may provide three edge lengths, a base area plus height, or multiple rectangular components.",
-        "Report cubic units and choose a mathematical strategy that matches the given information.",
-        "Teacher reviews the garden's physical decomposition, units and explanation.",
-        "2021 IM K–5 first-edition Grade 5 Unit 1 Lesson 11; https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-11/lesson.html. Independently authored teaching, calculations and accessible text diagrams; source publisher images and gated Cool-down not reproduced."
+        "Warm-up A is 75 unit cubes and B is 210 cubic units; C gives a 30-cube base but not a known height. D is a composite shape. More than one classification can be justified.",
+        "Han: a 10×6×5 box holds 300 unit cubes; Clare's 4×9×5-ft container holds 180 ft³; Mai's 30-ft²-by-9-ft closet holds 270 ft³.",
+        "Original T garden: (10×3×4)+(8×3×4)=216 ft³. Rearranging the parts gives 18×3×4=216 ft³ without making the original T-shaped outline rectangular.",
+        "Noah's redesigned garden requires altered dimensions, correctly face-joined non-overlapping solids, the same 216 ft³ volume, and a written design preference.",
+        "Teacher checks the construction, units, sketches, source problem reasoning and open design justification; a final numeric answer alone is insufficient.",
+        "Original 2021 Grade 5 Unit 1 Lesson 11 preparation and teacher lesson HTML, plus the separate four-page Student Task PDF, were inspected for task and figure geometry. Figures are not reproduced; individual publisher image permissions and gated Cool-down remain NOT_VERIFIED. https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-11/lesson.html"
       ],
       "Visuals": [
         {
@@ -804,6 +865,45 @@
                 "180",
                 "270",
                 "216"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Face-joined garden: two parts and a volume-preserving rearrangement",
+          "Description": "Original text-only geometric crosswalk from the inspected 2021 Student Task PDF: one 10×3×4-ft bar and one 8×3×4-ft stem meet at a 3×4-ft face. A separate 18×3×4-ft prism is a rearrangement with equal volume, not the same outline. Teacher must examine any student drawing.",
+          "Rows": [
+            {
+              "Label": "Component",
+              "Cells": [
+                "Back bar: 10×3×4 ft",
+                "Front stem: 8×3×4 ft",
+                "Rearranged: 18×3×4 ft"
+              ]
+            },
+            {
+              "Label": "Volume",
+              "Cells": [
+                "120 ft³",
+                "96 ft³",
+                "216 ft³"
+              ]
+            },
+            {
+              "Label": "Geometric check",
+              "Cells": [
+                "Share 3×4-ft face",
+                "No shared interior",
+                "Equal volume, different outline"
+              ]
+            },
+            {
+              "Label": "Original total",
+              "Cells": [
+                "120+96=216 ft³",
+                "(10+8)×3×4=216 ft³",
+                "Do not count a shared face as volume"
               ]
             }
           ]
