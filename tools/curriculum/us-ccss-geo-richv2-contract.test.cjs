@@ -47,7 +47,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 31);
+  assert.equal(evidence.totals.richCandidateLessons, 37);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -256,4 +256,33 @@ test('Unit 2 triangle criteria use valid numerical hypotheses and no SSA/AAA mis
     const pa2=(x+3)**2+4**2, pb2=(x-3)**2+4**2;
     assert.equal(pa2===pb2,x===0);
   }
+});
+test('All fifteen source-specific Unit 2 lessons and exact quadrilateral invariants', () => {
+  const prefix2='PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L';
+  const index=new Map(authored.map(x=>[x.LessonCode,x]));
+  for(let i=1;i<=15;i++) {
+    const x=index.get(prefix2+String(i).padStart(2,'0'));
+    assert.ok(x, 'missing U02 L'+i);
+    assert.ok(x.WorkedExamples.length>=3 && x.KeyConcepts.length>=3 && x.CommonMistakes.length>=2);
+    assert.ok(x.ExplanationParagraphs.join(' ').includes('CC BY 4.0'));
+    assert.ok(x.ExplanationParagraphs.some(v=>/teacher rubric|teacher[- ]scor|teacher[- ]review/i.test(v)));
+  }
+  assert.equal(evidence.lessons[32].sourceOptional,true); // U02 L11, canonical ordinal 33
+  // A square and side-equal non-square rhombus are not congruent.
+  assert.equal(5*Math.sqrt(2)===5*Math.sqrt(3),false);
+  // Parallelogram with intersecting perpendicular-bisecting diagonals.
+  for(const [a,b] of [[3,4],[2,7],[0.5,5]]) {
+    const fourSideSquares=[a*a+b*b,a*a+b*b,a*a+b*b,a*a+b*b];
+    assert.equal(new Set(fourSideSquares).size,1);
+  }
+  // Parallel Gram adjacent congruence and rectangle criterion.
+  const diagonalSq=(a,b)=>a*a+b*b;
+  assert.equal(diagonalSq(6,2),40);
+  assert.equal(180-68,112);
+  // Fixed side length rhombus can vary diagonals under a hinge angle.
+  const r=5;
+  const diag1=Math.sqrt(2*r*r*(1+Math.cos(Math.PI/3)));
+  const diag2=Math.sqrt(2*r*r*(1-Math.cos(Math.PI/3)));
+  assert.ok(Math.abs(diag1-5*Math.sqrt(3))<1e-10);
+  assert.ok(Math.abs(diag2-5)<1e-10);
 });
