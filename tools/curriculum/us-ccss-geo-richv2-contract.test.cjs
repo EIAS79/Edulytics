@@ -9,7 +9,8 @@ const blueprint = read('src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-
 const pack = read('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-geo-phase29-v1.lesson-content-pack.json');
 const rich = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l01-l03-2021.rich-lesson-v2.json');
 const richNext = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l04-l06-2021.rich-lesson-v2.json');
-const authored = [...rich.Lessons, ...richNext.Lessons];
+const richThird = read('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l07-l09-2021.rich-lesson-v2.json');
+const authored = [...rich.Lessons, ...richNext.Lessons, ...richThird.Lessons];
 const evidence = read('artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json');
 const prefix = 'PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L';
 
@@ -39,7 +40,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 6);
+  assert.equal(evidence.totals.richCandidateLessons, 9);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -53,11 +54,12 @@ test('Course-wide matrix records unverified runtime and no fabricated approvals'
   }
 });
 
-test('Six original construction lessons contain specific reasoning and human assessment limits', () => {
+test('Nine original construction and modelling lessons have coherent authored candidate contracts', () => {
   assert.equal(rich.PackCode, 'US-CCSS-MATH');
   assert.equal(rich.Lessons.length, 3);
   assert.equal(richNext.Lessons.length, 3);
-  assert.deepEqual(authored.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03', prefix+'04', prefix+'05', prefix+'06']);
+  assert.equal(richThird.Lessons.length, 3);
+  assert.deepEqual(authored.map(l => l.LessonCode), [prefix+'01', prefix+'02', prefix+'03', prefix+'04', prefix+'05', prefix+'06', prefix+'07', prefix+'08', prefix+'09']);
   for (const lesson of authored) {
     assert.equal(lesson.CultureCode, 'en');
     assert.equal(lesson.WorkedExamples.length, 3);
@@ -121,4 +123,33 @@ test('Parallel and angle-bisector authored examples obey nondegenerate condition
   assert.equal(dot(horizontal, horizontal), 1);
   assert.equal(2*3 > 6, false); // tangency: one circle-line contact only
   assert.equal(2*4 > 6, true); // larger radius: two circle-line intersections
+});
+
+test('Original square, dynamic geometry and Voronoi candidates have truthful assessment boundaries', () => {
+  const byCode = new Map(richThird.Lessons.map(l => [l.LessonCode, l]));
+  const sq = byCode.get(prefix+'07'), digital = byCode.get(prefix+'08'), vor = byCode.get(prefix+'09');
+  assert.ok(sq.ExplanationParagraphs.join(' ').includes('four right'));
+  assert.ok(digital.ExplanationParagraphs.join(' ').includes('optional source lesson'));
+  assert.ok(digital.ExplanationParagraphs.join(' ').includes('Drag'));
+  assert.ok(vor.ExplanationParagraphs.join(' ').includes('Euclidean'));
+  for (const candidate of [sq, digital, vor]) {
+    assert.ok(candidate.ExplanationParagraphs.some(x => /teacher rubric|teacher[- ]scor|teacher[- ]review/i.test(x)), candidate.LessonCode);
+    assert.equal(candidate.WorkedExamples.length, 3);
+    assert.equal(candidate.Visuals.length, 0);
+  }
+  // Perpendicular bisector x=2 of A=(0,0),B=(4,0):
+  for (const y of [-9,0,2,11]) {
+    const distanceSq = (p,q) => (p[0]-q[0])**2 + (p[1]-q[1])**2;
+    assert.equal(distanceSq([2,y],[0,0]), distanceSq([2,y],[4,0]));
+  }
+  // A=(0,0), B=(4,0), C=(0,4): A is nearest where x<=2 and y<=2.
+  for(const [x,y] of [[0,0],[1,1],[2,2]]) {
+    const ds=(q)=> (x-q[0])**2+(y-q[1])**2;
+    assert.ok(ds([0,0])<=ds([4,0])&&ds([0,0])<=ds([0,4]));
+  }
+  // A circle of radius r has inscribed-square side r*sqrt(2), and area 2r^2.
+  for(const radius of [0.5,3,10]) {
+    const side=Math.sqrt(2)*radius;
+    assert.ok(Math.abs(side**2 - 2*radius*radius)<1e-10);
+  }
 });
