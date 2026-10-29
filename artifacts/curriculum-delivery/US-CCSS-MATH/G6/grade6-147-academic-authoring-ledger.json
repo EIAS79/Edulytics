@@ -52,10 +52,10 @@
     "authoredGrade6RichV2JsonFiles": 5,
     "selectedPracticeRuntimeContractsVerified": 0,
     "humanTeacherReviewsObserved": 0,
-    "directPublicStudentActivityBodiesCompared": 117,
+    "directPublicStudentActivityBodiesCompared": 121,
     "additionalStudentOnlyActivityBodiesReviewedV5": 7,
     "additionalMathematicalTeachingRepairedV5": 7,
-    "sourceActivitySemanticReviewRemaining": 30,
+    "sourceActivitySemanticReviewRemaining": 26,
     "g6NodeStaticCallbacksRunInV8CompatibilityHarness": 19,
     "v5RichV2VisualParserRepairAuthored": 1,
     "v5ExactHeadDotnetVisualRegressionVerified": 0,
@@ -144,7 +144,10 @@
     "v9AcademicApprovalCount": 0,
     "v9U03L16L17U04L01L02SourceBodiesCompared": 4,
     "v9U03L16L17U04L01L02TeachingSupplements": 4,
-    "v9FourthBatchNodeCallbacksAdded": 2
+    "v9FourthBatchNodeCallbacksAdded": 2,
+    "v9U04L03L06PublicTaskBodiesReviewed": 4,
+    "v9U04L03L06TeachingExtensions": 4,
+    "v9FifthBatchNodeCallbacksAdded": 2
   },
   "sharedBlockers": [
     {
@@ -5356,7 +5359,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_OPENING_SCREENED__FULL_STUDENT_TEACHER_DIAGRAM_APPLET_PARITY_NOT_VERIFIED",
+        "verdict": "PUBLIC_STUDENT_TEACHER_ACTIVITY_BODIES_COMPARED__FULL_SOURCE_MEDIA_COOLDOWN_AND_AUTH_PARITY_PENDING",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -5370,7 +5373,12 @@
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "v5Unit4PublicSourceOpeningScreened": true,
         "v5Unit4SourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-17-public-student-source-opening-and-repair-matrix.json",
-        "v5Unit4TeacherStudentCompleteActivityParityChecked": false
+        "v5Unit4TeacherStudentCompleteActivityParityChecked": false,
+        "publicStudentActivityBodyComparedAgainstPack": true,
+        "publicStudentFullActivitiesManuallyReviewed": true,
+        "publicTeacherActivityBodiesCompared": true,
+        "teacherGuideBodyCompletelyReviewed": false,
+        "sourceTaskComparisonEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l03-l06-original-student-teacher-fraction-task-comparison.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -5383,7 +5391,8 @@
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
-        "v5Unit4SourceTargetedSupplementAuthored": true
+        "v5Unit4SourceTargetedSupplementAuthored": true,
+        "v9SourceTaskSupplementAuthored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -5392,10 +5401,10 @@
         "missingOutcomeRules": [],
         "selectedRuntimeContract": "NOT_RUN",
         "generatorVerifierAndResponseTests": "NOT_RUN",
-        "teacherRubricNeeded": false,
+        "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false,
-        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
@@ -5412,7 +5421,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify complete original student tasks/teacher guide and original diagrams or applets, then actual selected Grade6 Practice/grading and teacher-reviewed drawings/persistence; no numeric-only acceptance."
+      "nextStep": "Verify original source fraction blocks and dot arrays, accessible authenticated partition manipulatives, selected exact Practice family and real group-size/count feedback, persisted teacher scoring, true Node/.NET/CI and two-school before Stage A-D acceptance."
     },
     {
       "sortOrder": 57,
@@ -5445,7 +5454,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_OPENING_SCREENED__FULL_STUDENT_TEACHER_DIAGRAM_APPLET_PARITY_NOT_VERIFIED",
+        "verdict": "PUBLIC_STUDENT_TEACHER_ACTIVITY_BODIES_COMPARED__FULL_SOURCE_MEDIA_COOLDOWN_AND_AUTH_PARITY_PENDING",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -5459,7 +5468,12 @@
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "v5Unit4PublicSourceOpeningScreened": true,
         "v5Unit4SourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-17-public-student-source-opening-and-repair-matrix.json",
-        "v5Unit4TeacherStudentCompleteActivityParityChecked": false
+        "v5Unit4TeacherStudentCompleteActivityParityChecked": false,
+        "publicStudentActivityBodyComparedAgainstPack": true,
+        "publicStudentFullActivitiesManuallyReviewed": true,
+        "publicTeacherActivityBodiesCompared": true,
+        "teacherGuideBodyCompletelyReviewed": false,
+        "sourceTaskComparisonEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l03-l06-original-student-teacher-fraction-task-comparison.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -5472,7 +5486,8 @@
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
-        "v5Unit4SourceTargetedSupplementAuthored": true
+        "v5Unit4SourceTargetedSupplementAuthored": true,
+        "v9SourceTaskSupplementAuthored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -5481,10 +5496,10 @@
         "missingOutcomeRules": [],
         "selectedRuntimeContract": "NOT_RUN",
         "generatorVerifierAndResponseTests": "NOT_RUN",
-        "teacherRubricNeeded": false,
+        "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false,
-        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
@@ -5501,7 +5516,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify complete original student tasks/teacher guide and original diagrams or applets, then actual selected Grade6 Practice/grading and teacher-reviewed drawings/persistence; no numeric-only acceptance."
+      "nextStep": "Verify original source fraction blocks and dot arrays, accessible authenticated partition manipulatives, selected exact Practice family and real group-size/count feedback, persisted teacher scoring, true Node/.NET/CI and two-school before Stage A-D acceptance."
     },
     {
       "sortOrder": 58,
@@ -5533,7 +5548,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_OPENING_SCREENED__FULL_STUDENT_TEACHER_DIAGRAM_APPLET_PARITY_NOT_VERIFIED",
+        "verdict": "PUBLIC_STUDENT_TEACHER_ACTIVITY_BODIES_COMPARED__FULL_SOURCE_MEDIA_COOLDOWN_AND_AUTH_PARITY_PENDING",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -5547,7 +5562,12 @@
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "v5Unit4PublicSourceOpeningScreened": true,
         "v5Unit4SourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-17-public-student-source-opening-and-repair-matrix.json",
-        "v5Unit4TeacherStudentCompleteActivityParityChecked": false
+        "v5Unit4TeacherStudentCompleteActivityParityChecked": false,
+        "publicStudentActivityBodyComparedAgainstPack": true,
+        "publicStudentFullActivitiesManuallyReviewed": true,
+        "publicTeacherActivityBodiesCompared": true,
+        "teacherGuideBodyCompletelyReviewed": false,
+        "sourceTaskComparisonEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l03-l06-original-student-teacher-fraction-task-comparison.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -5560,7 +5580,8 @@
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
-        "v5Unit4SourceTargetedSupplementAuthored": true
+        "v5Unit4SourceTargetedSupplementAuthored": true,
+        "v9SourceTaskSupplementAuthored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -5569,10 +5590,10 @@
         "missingOutcomeRules": [],
         "selectedRuntimeContract": "NOT_RUN",
         "generatorVerifierAndResponseTests": "NOT_RUN",
-        "teacherRubricNeeded": false,
+        "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false,
-        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
@@ -5589,7 +5610,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify complete original student tasks/teacher guide and original diagrams or applets, then actual selected Grade6 Practice/grading and teacher-reviewed drawings/persistence; no numeric-only acceptance."
+      "nextStep": "Verify original source fraction blocks and dot arrays, accessible authenticated partition manipulatives, selected exact Practice family and real group-size/count feedback, persisted teacher scoring, true Node/.NET/CI and two-school before Stage A-D acceptance."
     },
     {
       "sortOrder": 59,
@@ -5619,7 +5640,7 @@
         "publisherTeacherPreparationGoalChecked": false,
         "publisherStudentTaskAllChecked": false,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_OPENING_SCREENED__FULL_STUDENT_TEACHER_DIAGRAM_APPLET_PARITY_NOT_VERIFIED",
+        "verdict": "PUBLIC_STUDENT_TEACHER_ACTIVITY_BODIES_COMPARED__FULL_SOURCE_MEDIA_COOLDOWN_AND_AUTH_PARITY_PENDING",
         "evidenceUrl": null,
         "publicStudentTeacherPracticeTextCompared": false,
         "teacherHiddenResponsesRead": false,
@@ -5633,7 +5654,12 @@
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "v5Unit4PublicSourceOpeningScreened": true,
         "v5Unit4SourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-17-public-student-source-opening-and-repair-matrix.json",
-        "v5Unit4TeacherStudentCompleteActivityParityChecked": false
+        "v5Unit4TeacherStudentCompleteActivityParityChecked": false,
+        "publicStudentActivityBodyComparedAgainstPack": true,
+        "publicStudentFullActivitiesManuallyReviewed": true,
+        "publicTeacherActivityBodiesCompared": true,
+        "teacherGuideBodyCompletelyReviewed": false,
+        "sourceTaskComparisonEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l03-l06-original-student-teacher-fraction-task-comparison.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -5646,7 +5672,8 @@
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
-        "v5Unit4SourceTargetedSupplementAuthored": true
+        "v5Unit4SourceTargetedSupplementAuthored": true,
+        "v9SourceTaskSupplementAuthored": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -5655,10 +5682,10 @@
         "missingOutcomeRules": [],
         "selectedRuntimeContract": "NOT_RUN",
         "generatorVerifierAndResponseTests": "NOT_RUN",
-        "teacherRubricNeeded": false,
+        "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
-        "teacherOnlyJustificationRubricBoundaryDefined": false,
-        "teacherOnlyRubricAuthored": false,
+        "teacherOnlyJustificationRubricBoundaryDefined": true,
+        "teacherOnlyRubricAuthored": true,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
@@ -5675,7 +5702,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Verify complete original student tasks/teacher guide and original diagrams or applets, then actual selected Grade6 Practice/grading and teacher-reviewed drawings/persistence; no numeric-only acceptance."
+      "nextStep": "Verify original source fraction blocks and dot arrays, accessible authenticated partition manipulatives, selected exact Practice family and real group-size/count feedback, persisted teacher scoring, true Node/.NET/CI and two-school before Stage A-D acceptance."
     },
     {
       "sortOrder": 60,
@@ -13602,7 +13629,7 @@
     "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-ten-mp-only-source-heading-anchored-assessment-boundaries.json",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l15-l16-source-nets-area-volume-boundaries.json"
   ],
-  "nextDeepOriginalSourceActivityReview": "PED:US-CCSS-MATH:G6:U04:L03",
+  "nextDeepOriginalSourceActivityReview": "PED:US-CCSS-MATH:G6:U04:L07",
   "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L01",
   "nextSharedIntegrationAction": "Supervisor 1-designated single-writer shared RichV2 test coexistence with G7 PR #590, exact G6 lesson Practice, rubric storage, guarded Grade6 content materialization/promotion; issue #592 comment 6484465498",
   "lastSourceIndicesVerified": {
@@ -13764,8 +13791,8 @@
   "v9U03L04L07ContentCommit": "6b042b04775dc821ba8b47fbe2e8220c2bac0ff3",
   "v9U03L04L07EvidenceCommit": "1eb7dc7a8f644dd5f73ff347eeaa7c3f0cf2597e",
   "v9U03L04L07TestCommit": "501d81347e15fc5cd57ce4b415d45cffdfe48181",
-  "v9NextSourceReviewLesson": "PED:US-CCSS-MATH:G6:U04:L03",
-  "v9TestTruth": "Eight Grade6-only node:test callbacks committed in V9; native full-checkout Node NOT_RUN, .NET NOT_RUN, exact Practice/teacher persistence/authenticated UI/two school NOT_RUN. Candidate NO_GO with 117 source-body comparisons.",
+  "v9NextSourceReviewLesson": "PED:US-CCSS-MATH:G6:U04:L07",
+  "v9TestTruth": "Ten grade-only Node test callbacks committed across five V9 batches, not run on a complete native authorized checkout. .NET, Practice, authentic student and teacher, source applet, DB, two-school UAT NOT_RUN. 121 source-task text comparisons, academic 0/147, release NO_GO.",
   "v9U03L08L11EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l08-l11-public-student-teacher-task-comparison.json",
   "v9U03L08L11ContentCommit": "eb24ce1f2d6c73dd7dd2a809b794727777b708b9",
   "v9U03L08L11EvidenceCommit": "b1c74821fb86e2c3a92e70e966231940e4866492",
@@ -13777,5 +13804,9 @@
   "v9FourthBatchEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l16-l17-u04-l01-l02-public-student-teacher-task-comparison.json",
   "v9FourthBatchContentCommit": "42f2271d2a164fbed09a2c9b610e894019a1066a",
   "v9FourthBatchEvidenceCommit": "2d3d3c5a28dd5032c4ac99148928bf62baebda8c",
-  "v9FourthBatchTestCommit": "de420217039972a8de63410d308d29f1d0c7a795"
+  "v9FourthBatchTestCommit": "de420217039972a8de63410d308d29f1d0c7a795",
+  "v9FifthBatchEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l03-l06-original-student-teacher-fraction-task-comparison.json",
+  "v9FifthBatchContentCommit": "1b1f36d680b129f1a78cc232abbba3eb5f2c3b45",
+  "v9FifthBatchEvidenceCommit": "5708fccc07800a104115908798d44a53907fa34e",
+  "v9FifthBatchTestCommit": "77fd9c8ecd11bdfa2d5c904ccd5b26d0e3fb0252"
 }
