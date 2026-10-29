@@ -10,7 +10,7 @@
       "ExplanationParagraphs": [
         "Learning goal: Model a parabola as points equidistant from a focus and a directrix, and determine whether named points satisfy the locus.",
         "Parabola is set of points equidistant from fixed focus and line directrix Use perpendicular distance to the line Focus (0,2), directrix y=−2 produces x²=8y",
-        "Distance from (x,y) to horizontal line y=d is  y−d For focus (0,2), directrix y=−2, vertex (0,0)",
+        "The distance from a point (x,y) to a horizontal line y=d is |y−d|: draw the shortest perpendicular segment to the line. In this case the point-to-directrix distance is |y+2|. The focus-to-point distance is √(x²+(y−2)²); the parabola consists of the points where these distances are equal.",
         "Independent source-specific student task: Students draw equal-distance loci and explain perpendicular line distance; teacher reviews graphs. Teacher rubric (0–4): stated hypotheses, correctly labelled diagram or equation, valid algebra/proof, and interpreted counterexample. Drawings and arguments need teacher scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 7, CC BY 4.0. Original Edulytiks problems; no copied source illustrations or restricted assessments."
       ],
@@ -23,9 +23,9 @@
         },
         {
           "Title": "Distance-to-line",
-          "Definition": "Distance from (x,y) to horizontal line y=d is ",
-          "Rule": "y−d",
-          "Example": ""
+          "Definition": "The perpendicular distance from point (x,y) to a horizontal line y=d is the absolute value of their vertical-coordinate difference.",
+          "Rule": "distance((x,y),line y=d)=|y−d|; this number is nonnegative.",
+          "Example": "For P=(4,2) and directrix y=−2, the distance is |2−(−2)|=4."
         },
         {
           "Title": "Vertex",
@@ -40,28 +40,24 @@
           "Question": "Find equation focus (0,2), directrix y=−2.",
           "Method": "Focus-directrix",
           "Steps": [
-            "Equate √(x²+(y−2)²)=",
-            "y+2",
-            "",
-            "Square: x²+(y−2)²=(y+2)²",
-            "Cancel terms to get x²=8y"
+            "For P=(x,y), the distance to focus (0,2) is √(x²+(y−2)²), and distance to directrix y=−2 is |y+2|.",
+            "Equate and square these nonnegative distances: x²+(y−2)²=(y+2)².",
+            "Expand: x²+y²−4y+4=y²+4y+4, so x²=8y."
           ],
           "Answer": "x²=8y.",
-          "Check": "Substitute computed points and independently verify geometry or units."
+          "Check": "For x=4 the equation gives y=2; the focus and directrix distances are both exactly 4."
         },
         {
           "Title": "Distances and Parabolas: problem 2",
           "Question": "Is P=(4,2) on this parabola?",
           "Method": "Distance-to-line",
           "Steps": [
-            "Focus squared distance 4²+(2−2)²=16",
-            "Directrix distance ",
-            "2+2",
-            "=4 and square 16",
-            "They match"
+            "Compute the squared focus distance: (4−0)²+(2−2)²=16.",
+            "Compute the perpendicular directrix distance: |2−(−2)|=4, hence squared distance 16.",
+            "Because both distances equal 4, P=(4,2) is on the focus-directrix parabola."
           ],
           "Answer": "Yes.",
-          "Check": "Substitute computed points and independently verify geometry or units."
+          "Check": "The point satisfies x²=8y, since 16=8·2; both directrix and focus distances equal 4."
         },
         {
           "Title": "Distances and Parabolas: problem 3",
@@ -101,11 +97,9 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Equate √(x²+(y−2)²)=",
-            "y+2",
-            "",
-            "Square: x²+(y−2)²=(y+2)²",
-            "Cancel terms to get x²=8y",
+            "For P=(x,y), the distance to focus (0,2) is √(x²+(y−2)²), and distance to directrix y=−2 is |y+2|.",
+            "Equate and square these nonnegative distances: x²+(y−2)²=(y+2)².",
+            "Expand: x²+y²−4y+4=y²+4y+4, so x²=8y.",
             "x²=8y."
           ],
           "Rows": []
