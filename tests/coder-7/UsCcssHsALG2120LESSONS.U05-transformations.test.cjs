@@ -43,7 +43,7 @@ test('U05 L09 scaling input affects time but not walking distance',()=>{
  const f=t=>t<=1?2*t:4-2*t,g=t=>f(2*t),slow=t=>f(t/2);
  near(g(0),0);near(g(.25),1);near(g(.5),2);near(g(.75),1);near(g(1),0);
  near(slow(2),2);near(slow(4),0);
- assert.notEqual(g(.5),2*f(.5));
+ assert.notEqual(g(.75),2*f(.75));
 });
 test('U05 L10 previously authored function arithmetic and composition',()=>{
  const bookPerPerson=2530/309.35;
