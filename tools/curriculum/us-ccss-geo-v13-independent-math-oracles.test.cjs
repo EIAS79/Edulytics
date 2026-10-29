@@ -87,3 +87,51 @@ test('V13 original arc-length/radius graph SVG has accessible source data and co
  assert.ok(!/<(?:script|iframe|foreignObject|image)\b/i.test(svg));
  assert.ok(!/\bon[a-z]+\s*=|\b(?:href|xlink:href)\s*=|@import|url\(/i.test(svg));
 });
+
+test('V13 added quadrant SVG encodes one common dilation and both new static figures remain unlinked',()=>{
+ const meta=JSON.parse(readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v13-two-first-party-svg-candidates-20261029.json'),'utf8'));
+ assert.equal(meta.Assets.length,2);
+ assert.equal(meta.Status,'COURSE_LOCAL_STATIC_ASSETS_UNLINKED_NOT_AUTHENTICATED_RENDITION');
+ for(const asset of meta.Assets){
+  assert.equal(asset.RendererVerified,false);
+  assert.equal(asset.SourceFigureIdentical,false);
+  const svg=readFileSync(path.join(root,asset.Path),'utf8');
+  assert.match(svg,/role="img"/);
+  assert.match(svg,/<title id="[^"]+">/);
+  assert.match(svg,/<desc id="[^"]+">/);
+  assert.ok(!/<(?:script|iframe|foreignObject|image)\b/i.test(svg));
+  assert.ok(!/\bon[a-z]+\s*=|\b(?:href|xlink:href)\s*=|@import|url\(/i.test(svg));
+ }
+ const asset=meta.Assets.find(x=>x.LessonCode.endsWith('U06:L15'));
+ assert.ok(asset);
+ const v=asset.MathematicalFixture,A=v.A,sc=v.factor;
+ for(const [originalKey,imageKey] of [['B','BPrime'],['C','CPrime'],['D','DPrime']]){
+  const original=v[originalKey],image=v[imageKey];
+  for(let i=0;i<2;i++)assert.ok(near(lerp(A[i],original[i],sc),image[i]));
+ }
+ const svg=readFileSync(path.join(root,asset.Path),'utf8');
+ assert.ok(svg.includes('points="190,355 470,355 610,85 330,85"'));
+ assert.ok(svg.includes('points="190,355 246,355 274,301 218,301"'));
+ // Screen-space x=50+70x and y=490-45y for each coordinate vertex.
+ for(const coord of [A,v.B,v.C,v.D,v.BPrime,v.CPrime,v.DPrime]){
+   const x=50+70*coord[0],y=490-45*coord[1];
+   assert.ok(near(x,Math.round(x))&&near(y,Math.round(y)));
+ }
+});
+test('V13 four source re-audits disclose actual activity gaps and explicitly forbid academic signoff',()=>{
+ const record=JSON.parse(readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json'),'utf8'));
+ assert.equal(record.lessons.length,124);
+ assert.equal(record.totals.v13SourceTasksReopened,4);
+ assert.equal(record.totals.v13IndependentlyRecomputedExampleSlots,27);
+ assert.equal(record.totals.v13WorkedExamplesNotIndependentlyCertified,345);
+ for(const short of ['U01:L01','U05:L11','U06:L15','U07:L13']){
+  const row=record.lessons.find(x=>x.lessonCode.endsWith(short));
+  assert.ok(row,short);
+  assert.equal(row.sourceResearch.academicSignoff,false);
+  assert.equal(row.sourceResearch.v13IndependentReaudit.sourceTaskAcceptance,'NOT_VERIFIED');
+  assert.equal(row.sourceResearch.v13IndependentReaudit.protectedTeacherCooldown,'NOT_INSPECTED');
+  assert.ok(row.sourceResearch.v13IndependentReaudit.studentActivitiesRead.length>=3);
+  assert.ok(row.sourceResearch.v13IndependentReaudit.observedParityGap.length>50);
+ }
+ assert.equal(record.totals.gradeAccepted,0);
+});
