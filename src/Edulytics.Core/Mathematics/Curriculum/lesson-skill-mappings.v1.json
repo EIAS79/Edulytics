@@ -2012,19 +2012,21 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
       "primarySkills": [
-        "algebra.linear.solve"
+        "algebra.linear.two_variable.membership"
       ],
       "sourceType": "OfficialMappedPedagogicalLesson",
       "officialOutcomeMapped": true,
-      "mappingConfidence": "RequiresReview",
+      "mappingConfidence": "High",
       "evidence": [
-        "The original official MP.3 evidence remains a curriculum mapping, not a lesson-exact Practice certification.",
-        "The publisher lesson asks whether ordered pairs satisfy Ax+By=C and how these solution points appear on a graph.",
-        "The one-variable ax+b=c family is mathematically valid but semantically inappropriate; quarantined under issue #595 pending a reviewed two-variable lesson-specific generator and grader."
+        "The CCSS:MP.3 official outcome remains unchanged and is not synthesized from Practice.",
+        "Publisher lesson 8.3.12 evaluates whether points (x,y) satisfy Ax+By=C and relates solutions to the graph.",
+        "The exact yes/no membership question independently verifies integer substitution in the original two-variable equation; it does not replace the teacher-scored graphing activity."
       ],
-      "practiceReadiness": "REVIEW_REQUIRED",
-      "practiceMechanic": "TWO_VARIABLE_ORDERED_PAIR_UNVERIFIED",
-      "allowedQuestionFamilies": []
+      "practiceReadiness": "READY_VERIFIED",
+      "practiceMechanic": "TWO_VARIABLE_ORDERED_PAIR_MEMBERSHIP",
+      "allowedQuestionFamilies": [
+        "usccss.g8.u03.l12.ordered_pair_membership"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U04:L05",

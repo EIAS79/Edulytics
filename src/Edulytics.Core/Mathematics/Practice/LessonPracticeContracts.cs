@@ -33,8 +33,8 @@ public static class LessonPracticeContractRegistry
 {
     public const string Version = "supporting-lesson-practice-v4";
 
-    // Not an approved exact Practice route until Issue #595 is resolved.
-    public const string QuarantinedGrade8TwoVariableLesson =
+    // Exact source-specific lesson identity for two-variable membership Practice.
+    public const string Grade8TwoVariableMembershipLesson =
         "PED:US-CCSS-MATH:G8:U03:L12";
 
     private static readonly LessonPracticeContract[] Entries =
@@ -605,9 +605,16 @@ public static class LessonPracticeContractRegistry
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
-        // Grade 8 U03:L12 was withdrawn from exact Practice after source
-        // comparison: Ax+By=C ordered-pair membership is NOT ax+b=c solving.
-        // A reviewed two-variable family must replace it; see issue #595.
+        // Grade 8 8.3.12: test ordered-pair membership in Ax+By=C, not
+        // single-variable solving or a two-equation simultaneous system.
+        new(
+            "PED:US-CCSS-MATH:G8:U03:L12",
+            "algebra.linear.two_variable.membership",
+            "TWO_VARIABLE_ORDERED_PAIR_MEMBERSHIP",
+            ["usccss.g8.u03.l12.ordered_pair_membership"],
+            "IM2017_G8_U03_L12_SOURCE_VERIFIED_EXACT_MEMBERSHIP",
+            "READY_VERIFIED",
+            Version),
         new(
             "PED:CAMBRIDGE-INTL-MATH:S3:3F-4:BUILD",
             "fractions.add_subtract",
@@ -1360,10 +1367,6 @@ public static class LessonPracticeContractRegistry
             "IM2021_G4_U06_L15_SOURCE_ALIGNED_NUMERIC_PLUS_TEACHER_LED",
             "READY_VERIFIED",
             Version);
-
-        // Guard against broad official/supporting projections re-authorizing
-        // the semantically wrong Grade 8 contract from any registry layer.
-        byLesson.Remove(QuarantinedGrade8TwoVariableLesson);
 
         return byLesson.Values
             .OrderBy(x => x.LessonCode, StringComparer.Ordinal)

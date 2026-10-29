@@ -4,8 +4,8 @@
   "baselineCommit": "2c761c2e231da741a117352f9f4de489a4fe3cbc",
   "population": "68 baseline REVIEW_REQUIRED Supporting lessons after UAE official-curriculum rebuild",
   "total": 68,
-  "approvedExistingSkill": 22,
-  "deferredToOntology": 46,
+  "approvedExistingSkill": 23,
+  "deferredToOntology": 45,
   "policy": {
     "approveOnlyWhen": "Canonical lesson target is exactly represented by an existing reusable skill and production-safe exact family.",
     "deferWhen": "Candidate is only a broad textual match, misses the actual operation/representation, or requires a new canonical skill.",
@@ -595,10 +595,12 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
       "baselineStatus": "REVIEW_REQUIRED",
-      "decision": "DEFER_TO_R5_ONTOLOGY",
-      "primarySkills": [],
-      "reviewEvidence": "Supersedes the earlier R3 approval after source review: Grade 8 U03:L12 checks ordered pairs for Ax+By=C and graph solutions, which the approved one-variable ax+b=c contract does not assess. Fail closed pending lesson-exact two-variable generator, verifier and authenticated attempts (issue #595).",
-      "nextAction": "CREATE_OR_REUSE_TWO_VARIABLE_ORDERED_PAIR_MEMBERSHIP_EXACT_SKILL"
+      "decision": "APPROVED_EXISTING_SKILL",
+      "primarySkills": [
+        "algebra.linear.two_variable.membership"
+      ],
+      "reviewEvidence": "Grade 8 IM 2017 lesson 8.3.12 checks whether ordered pairs (x,y) satisfy Ax+By=C, with true/false decisions and point-graph interpretation. The reviewed exact membership skill uses independent integer substitution and does not solve an unrelated one-variable equation or 2x2 system; graph construction remains teacher-assessed.",
+      "nextAction": "VERIFY_AUTHENTICATED_MEMBERSHIP_PRACTICE_AND_GRAPHING_WORKFLOW"
     }
   ]
 }

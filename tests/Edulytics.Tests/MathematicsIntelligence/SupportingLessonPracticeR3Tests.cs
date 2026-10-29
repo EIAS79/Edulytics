@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Services.Practice;
+using Edulytics.Services.Mathematics;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
@@ -16,8 +17,8 @@ public sealed class SupportingLessonPracticeR3Tests
 
         var rootElement = document.RootElement;
         Assert.Equal(68, rootElement.GetProperty("total").GetInt32());
-        Assert.Equal(22, rootElement.GetProperty("approvedExistingSkill").GetInt32());
-        Assert.Equal(46, rootElement.GetProperty("deferredToOntology").GetInt32());
+        Assert.Equal(23, rootElement.GetProperty("approvedExistingSkill").GetInt32());
+        Assert.Equal(45, rootElement.GetProperty("deferredToOntology").GetInt32());
 
         var decisions = rootElement.GetProperty("decisions").EnumerateArray().ToArray();
         Assert.Equal(68, decisions.Length);
@@ -47,7 +48,7 @@ public sealed class SupportingLessonPracticeR3Tests
             .Select(x => x.GetProperty("lessonCode").GetString()!)
             .ToArray();
 
-        Assert.Equal(22, approvedCodes.Length);
+        Assert.Equal(23, approvedCodes.Length);
         foreach (var code in approvedCodes)
         {
 
@@ -111,14 +112,18 @@ public sealed class SupportingLessonPracticeR3Tests
 
 
     [Fact]
-    public void Grade8TwoVariableLessonRejectsPreviouslyMisalignedSingleVariablePractice()
+    public void Grade8TwoVariableLessonRequiresExactOrderedPairMembershipPractice()
     {
-        const string blocked = LessonPracticeContractRegistry.QuarantinedGrade8TwoVariableLesson;
+        const string blocked = LessonPracticeContractRegistry.Grade8TwoVariableMembershipLesson;
         Assert.Equal("PED:US-CCSS-MATH:G8:U03:L12", blocked);
 
         // A correct Rich V2 teaching asset does not authorize wrong Practice.
-        Assert.False(LessonPracticeContractRegistry.TryResolve(blocked, out _));
-        Assert.False(LessonPracticeCapabilityResolver.TryResolve(blocked, out _));
+        Assert.True(LessonPracticeContractRegistry.TryResolve(blocked, out var exact));
+        Assert.NotNull(exact);
+        Assert.Equal("algebra.linear.two_variable.membership", exact!.SkillId);
+        Assert.Equal(new[] { "usccss.g8.u03.l12.ordered_pair_membership" }, exact.AllowedQuestionFamilies);
+        Assert.DoesNotContain("algebra.linear.ax_plus_b_equals_c", exact.AllowedQuestionFamilies);
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(blocked, out _));
 
         var root = FindRoot();
         using var mapping = JsonDocument.Parse(File.ReadAllText(Path.Combine(
@@ -126,14 +131,50 @@ public sealed class SupportingLessonPracticeR3Tests
         var row = Assert.Single(mapping.RootElement
             .GetProperty("mappings").EnumerateArray(),
             x => x.GetProperty("lessonCode").GetString() == blocked);
-        Assert.Equal("REVIEW_REQUIRED", row.GetProperty("practiceReadiness").GetString());
-        Assert.Empty(row.GetProperty("allowedQuestionFamilies").EnumerateArray());
+        Assert.Equal("READY_VERIFIED", row.GetProperty("practiceReadiness").GetString());
+        Assert.Single(row.GetProperty("allowedQuestionFamilies").EnumerateArray());
 
         // Do not remove legitimate Grade 8 single-variable linear-equation Practice.
         Assert.True(LessonPracticeCapabilityResolver.TryResolve(
             "PED:US-CCSS-MATH:G8:U04:L05", out var valid));
         Assert.NotNull(valid);
         Assert.Contains("algebra.linear.ax_plus_b_equals_c", valid!.AllowedQuestionFamilies);
+    }
+
+    [Fact]
+    public void Grade8TwoVariableMembershipQuestionsUseIndependentPointSubstitution()
+    {
+        const string code = "PED:US-CCSS-MATH:G8:U03:L12";
+        const string family = "usccss.g8.u03.l12.ordered_pair_membership";
+        Assert.True(LessonPracticeCapabilityResolver.TryResolve(code, out var contract));
+        Assert.NotNull(contract);
+        var engine = new ExactSkillContractQuestionEngine();
+        var items = engine.Generate(
+            "usccss-grade8-regression", code,
+            contract!.AllowedQuestionFamilies,
+            ExactSkillQuestionDifficulty.Standard, 24, 820312, []);
+        Assert.Equal(24, items.Count);
+        Assert.Contains(items, item => item.CorrectAnswer == "yes");
+        Assert.Contains(items, item => item.CorrectAnswer == "no");
+        foreach (var item in items)
+        {
+            Assert.Equal(family, item.Family);
+            var p = item.Parameters;
+            var onLine = (long)p["a"] * p["x"] + (long)p["b"] * p["y"] == p["c"];
+            Assert.Equal(onLine ? "yes" : "no", item.CorrectAnswer);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family, p, item.CorrectAnswer));
+            Assert.True(ExactSkillContractQuestionEngine.Verify(
+                family, p, item.CorrectAnswer.ToUpperInvariant()));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, p, onLine ? "no" : "yes"));
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, p, "maybe; 1=1"));
+            var malformed = p.ToDictionary(pair => pair.Key, pair => pair.Value);
+            malformed.Remove("x");
+            Assert.False(ExactSkillContractQuestionEngine.Verify(
+                family, malformed, item.CorrectAnswer));
+        }
     }
 
     private static string FindRoot()

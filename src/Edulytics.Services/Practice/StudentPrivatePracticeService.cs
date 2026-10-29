@@ -124,18 +124,6 @@ public sealed class StudentPrivatePracticeService(
             scoped.LessonId.HasValue)
         {
             var exactLesson = context.Lessons.Single(x => x.Id == scoped.LessonId.Value);
-            // A missing exact contract normally permits broad outcome fallback;
-            // for this known semantic mismatch, fallback would misgrade Grade 8
-            // two-variable ordered-pair tasks as one-variable equations.
-            if (string.Equals(
-                    exactLesson.Code,
-                    LessonPracticeContractRegistry.QuarantinedGrade8TwoVariableLesson,
-                    StringComparison.Ordinal))
-            {
-                return StudentPrivatePracticeResult.Failure(
-                    StudentPrivatePracticeError.NoSupportedOutcomes);
-            }
-
             if (LessonPracticeContractRegistry.TryResolve(exactLesson.Code, out var practiceContract) &&
                 practiceContract is not null)
             {
