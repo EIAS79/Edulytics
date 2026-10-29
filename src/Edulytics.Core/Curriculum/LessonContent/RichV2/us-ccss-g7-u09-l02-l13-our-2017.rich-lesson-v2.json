@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v3",
+  "ContentVersion": "us-ccss-g7-u09-integrated-project-rich-v2-candidate-20261028-v4",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -791,16 +791,16 @@
         },
         {
           "Title": "Original project task — More Expressions and Equations",
-          "Question": "For a fictional school play, adult tickets cost x dollars and student tickets x−3 dollars. On one evening 40 adults and 70 students attend, bringing in $1,190. What are ticket prices?",
+          "Question": "For a fictional school play, adult tickets cost x dollars and student tickets x−3 dollars. On one evening 40 adults and 70 students attend, bringing in $1,110. What are ticket prices?",
           "Method": "Document assumptions and units, build the source-relevant spreadsheet, measurement apparatus, scale drawing, sampling table or proposal, then submit a teacher-reviewed artifact.",
           "Steps": [
-            "Revenue equation is 40x+70(x−3)=1190.",
-            "Combine: 110x−210=1190, so 110x=1400.",
-            "Divide x=1400/110=140/11≈$12.73; student price x−3=107/11≈$9.73.",
-            "Explain that fractional-cent ticket prices make the assumptions unlikely for a real event; verify the exact algebra and propose realistic data."
+            "Revenue equation is 40x+70(x−3)=1110.",
+            "Combine like terms: 110x−210=1110, so 110x=1320.",
+            "Divide by 110 to find x=$12 for adult tickets; student tickets cost x−3=$9.",
+            "Verify 40×$12+70×$9=$480+$630=$1,110 and explain both prices make sense for the invented context."
           ],
-          "Answer": "Mathematical prices 140/11 and 107/11 dollars; realistic-cent pricing requires reconsidering invented totals.",
-          "Check": "Teacher reviews expression building and real-world plausibility instead of rounding inconsistent data into exact equality."
+          "Answer": "Adult tickets cost $12 and student tickets cost $9; the calculated $1,110 revenue matches the total.",
+          "Check": "Teacher reviews the two-variable pricing story, equation structure, verification, reasonable price choices and any proposed changes to the model."
         }
       ],
       "CommonMistakes": [
