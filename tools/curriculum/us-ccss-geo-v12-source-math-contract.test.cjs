@@ -88,3 +88,36 @@ test('U08 L04: independent ordered dice sample-space and conditional table oracl
   assert.ok(near(joint/column,0.4));
   assert.notEqual(joint/row,joint/column);
 });
+
+test('U07 L06: independent incenter equal-perpendicular-distance oracle',()=>{
+  const lesson=byCode.get(id(7,6)),ex=lesson.WorkedExamples[2];
+  assert.ok(ex.Question.includes('internal bisectors'));
+  assert.ok(ex.Answer.includes('incenter'));
+  // Right triangle A=(0,0),B=(3,0),C=(0,4), incenter I=(1,1).
+  const I=[1,1],distAB=Math.abs(I[1]),distAC=Math.abs(I[0]);
+  const distBC=Math.abs(4*I[0]+3*I[1]-12)/5;
+  assert.ok(near(distAB,1)&&near(distAC,1)&&near(distBC,1));
+  assert.ok(ex.Steps[2].includes('CI is the third bisector'));
+});
+
+test('U08 L02: independent physical-slip model versus hypothetical observed frequency',()=>{
+  const lesson=byCode.get(id(8,2)),ex=lesson.WorkedExamples[1];
+  assert.ok(ex.Question.includes('20 draws'));
+  const slips=['Ana','Ana','Ben'];
+  const pAna=slips.filter(s=>s==='Ana').length/slips.length;
+  const observed=15/20;
+  assert.ok(near(pAna,2/3));
+  assert.ok(near(observed,.75));
+  assert.notEqual(observed,pAna);
+  assert.ok(ex.Answer.includes('2/3')&&ex.Answer.includes('0.75'));
+  assert.ok(ex.Steps[2].includes('hypothetical'));
+});
+
+test('U07 L10 retains source progression: the radian name first appears in following lesson',()=>{
+  const early=byCode.get(id(7,10)),next=byCode.get(id(7,11));
+  assert.ok(early.KeyConcepts[2].Rule.includes('next lesson'));
+  assert.ok(!early.KeyConcepts[2].Definition.includes('defines radians'));
+  assert.ok(next.KeyConcepts.some(c=>c.Title==='Radian'));
+  const theta=Math.PI/2, r1=3,r2=8;
+  assert.ok(near(r1*theta/r1,r2*theta/r2));
+});
