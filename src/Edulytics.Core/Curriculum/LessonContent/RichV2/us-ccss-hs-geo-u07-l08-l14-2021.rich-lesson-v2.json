@@ -1,0 +1,630 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u07-l08-l14-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L08",
+      "CultureCode": "en",
+      "Title": "Arcs and Sectors",
+      "ExplanationParagraphs": [
+        "Learning goal: Derive central-angle fraction formulas for arc lengths and sector areas using a known radius and degrees.",
+        "At central angle θ degrees, length L=(θ/360)2πr Use θ within [0,360]",
+        "Area A=(θ/360)πr² Use square units For positive minor θ, arc exceeds chord",
+        "Authentic task: Create an original segmented-circle diagram and justify fraction formulas; teacher reviews measurements. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 8, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Arc length",
+          "Definition": "At central angle θ degrees, length L=(θ/360)2πr",
+          "Rule": "Use θ within [0,360]",
+          "Example": "r=6,θ=60 gives 2π"
+        },
+        {
+          "Title": "Sector area",
+          "Definition": "Area A=(θ/360)πr²",
+          "Rule": "Use square units",
+          "Example": "r=6,θ=60 gives 6π"
+        },
+        {
+          "Title": "Arc vs chord",
+          "Definition": "Straight chord 2r sin(θ/2) may differ from arc length",
+          "Rule": "For positive minor θ, arc exceeds chord",
+          "Example": "For r=2,θ=60 chord 2, arc 2π/3"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Arcs and Sectors — case 1",
+          "Question": "Circle radius 6 central angle 60°. Find arc length.",
+          "Method": "Arc length",
+          "Steps": [
+            "Fraction θ/360=1/6",
+            "Circumference 2π·6=12π",
+            "Arc 12π/6=2π"
+          ],
+          "Answer": "2π units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Arcs and Sectors — case 2",
+          "Question": "Same circle radius 6 angle 60°; find sector area.",
+          "Method": "Sector area",
+          "Steps": [
+            "Disk area=π·36=36π",
+            "Sector fraction=1/6",
+            "Area=6π"
+          ],
+          "Answer": "6π square units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Arcs and Sectors — case 3",
+          "Question": "Radius 2 central angle 60°. Compare chord and arc.",
+          "Method": "Arc vs chord",
+          "Steps": [
+            "Chord=2r sin30°=4·1/2=2",
+            "Arc=(60/360)(4π)=2π/3",
+            "Since π>3, arc > chord"
+          ],
+          "Answer": "Chord 2; arc 2π/3.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Computing sector area with length formula",
+          "WhyWrong": "Length and area have different radius exponents",
+          "Correction": "Arc uses r, sector uses r²"
+        },
+        {
+          "Mistake": "Treating chord as curved arc",
+          "WhyWrong": "Chord is straight and typically shorter",
+          "Correction": "Distinguish measurement type"
+        }
+      ],
+      "SummaryPoints": [
+        "Derive central-angle fraction formulas for arc lengths and sector areas using a known radius and degrees.",
+        "Use square units",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L09",
+      "CultureCode": "en",
+      "Title": "Part to Whole",
+      "ExplanationParagraphs": [
+        "Learning goal: Request sufficient information to find missing circle circumferences, areas, arc lengths and sector fractions.",
+        "Area A=πr² determines r=√(A/π) for A>0 Use positive root",
+        "Known central angle determines arc fraction θ/360 Solve fraction × circumference Ask one additional variable",
+        "Authentic task: Pairs use partial data cards and ask exact information needed to compute each circle measure. Teacher scores questions. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 9, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Missing radius",
+          "Definition": "Area A=πr² determines r=√(A/π) for A>0",
+          "Rule": "Use positive root",
+          "Example": "A=49π implies r=7"
+        },
+        {
+          "Title": "Arc proportion",
+          "Definition": "Known central angle determines arc fraction θ/360",
+          "Rule": "Solve fraction × circumference",
+          "Example": "90° is quarter circumference"
+        },
+        {
+          "Title": "Information gap",
+          "Definition": "Arc length alone cannot determine both unknown radius and angle",
+          "Rule": "Ask one additional variable",
+          "Example": "L=rθ with θ radians"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Part to Whole — case 1",
+          "Question": "Circle area 49π. Find radius and circumference.",
+          "Method": "Missing radius",
+          "Steps": [
+            "Set πr²=49π",
+            "Positive root r=7",
+            "Circumference 2π·7=14π"
+          ],
+          "Answer": "Radius 7, circumference 14π.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Part to Whole — case 2",
+          "Question": "Arc is quarter of circle whose circumference 20π. Find arc length.",
+          "Method": "Arc proportion",
+          "Steps": [
+            "Arc fraction 1/4",
+            "Multiply (1/4)·20π",
+            "L=5π"
+          ],
+          "Answer": "5π.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Part to Whole — case 3",
+          "Question": "Arc length 6 on an unknown circle, central angle unspecified. Find unique radius?",
+          "Method": "Information gap",
+          "Steps": [
+            "Arc formula L=rθ (radians)",
+            "For θ=1 radius 6; for θ=2 radius 3",
+            "Both give arc length 6"
+          ],
+          "Answer": "No unique radius without angle.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming arc length determines circle radius",
+          "WhyWrong": "Angle remains unknown",
+          "Correction": "Ask central angle"
+        },
+        {
+          "Mistake": "Confusing 25π area with 25π circumference",
+          "WhyWrong": "Dimension and equation differ",
+          "Correction": "Check whether data are square or linear units"
+        }
+      ],
+      "SummaryPoints": [
+        "Request sufficient information to find missing circle circumferences, areas, arc lengths and sector fractions.",
+        "Solve fraction × circumference",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L10",
+      "CultureCode": "en",
+      "Title": "Angles, Arcs, and Radii",
+      "ExplanationParagraphs": [
+        "Learning goal: Use similarity of circles to show arc-length divided by radius depends only on central angle, anticipating radians.",
+        "For equal central angle, L/r is invariant across circles Both L and r scale equally",
+        "Central angle θ degrees yields L/r=πθ/180 Direct proportionality in θ Ratio is dimensionless and defines radians",
+        "Authentic task: Draw two similar circles and compare same-angle arcs with explicit proportional proof; teacher scores. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 10, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Arc/radius ratio",
+          "Definition": "For equal central angle, L/r is invariant across circles",
+          "Rule": "Both L and r scale equally",
+          "Example": "A 90° arc has L/r=π/2"
+        },
+        {
+          "Title": "Angle dependence",
+          "Definition": "Central angle θ degrees yields L/r=πθ/180",
+          "Rule": "Direct proportionality in θ",
+          "Example": "180° gives π"
+        },
+        {
+          "Title": "Unitless quantity",
+          "Definition": "Arc length and radius must have identical units to cancel",
+          "Rule": "Ratio is dimensionless and defines radians",
+          "Example": "Length 3 cm over radius 2 cm gives 1.5"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Angles, Arcs, and Radii — case 1",
+          "Question": "Circle radius 4 with 90° central angle. Find L/r.",
+          "Method": "Arc/radius ratio",
+          "Steps": [
+            "Arc L=(1/4)·2π·4=2π",
+            "Divide by radius 4",
+            "L/r=π/2"
+          ],
+          "Answer": "π/2.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Angles, Arcs, and Radii — case 2",
+          "Question": "Radius 10 and angle 180°: find arc/radius.",
+          "Method": "Angle dependence",
+          "Steps": [
+            "Half-circumference=πr=10π",
+            "Divide by r=10",
+            "Ratio=π"
+          ],
+          "Answer": "π.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Angles, Arcs, and Radii — case 3",
+          "Question": "Arc 3 cm, radius 2 cm. Find arc-to-radius ratio.",
+          "Method": "Unitless quantity",
+          "Steps": [
+            "Both units cm cancel",
+            "Compute 3/2",
+            "Ratio 1.5"
+          ],
+          "Answer": "1.5 (dimensionless).",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using ratio circumference/radius for a partial arc",
+          "WhyWrong": "That ratio corresponds to full 360°",
+          "Correction": "Use actual sector arc"
+        },
+        {
+          "Mistake": "Dividing quantities with incompatible units",
+          "WhyWrong": "Dimensionless ratio requires consistent units",
+          "Correction": "Convert first"
+        }
+      ],
+      "SummaryPoints": [
+        "Use similarity of circles to show arc-length divided by radius depends only on central angle, anticipating radians.",
+        "Direct proportionality in θ",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L11",
+      "CultureCode": "en",
+      "Title": "A New Way to Measure Angles",
+      "ExplanationParagraphs": [
+        "Learning goal: Define radian measure of a central angle as arc length divided by radius and derive 180°=π radians.",
+        "For arc length s and circle radius r>0, θ=s/r radians Length units must match",
+        "A full circumference has s=2πr so θ=2π Half revolution π 90°=π/2,45°=π/4",
+        "Authentic task: Measure an original circular arc and radius and explain quotient as invariant angle; teacher checks chart. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 11, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Radian",
+          "Definition": "For arc length s and circle radius r>0, θ=s/r radians",
+          "Rule": "Length units must match",
+          "Example": "s=6,r=3 means 2 rad"
+        },
+        {
+          "Title": "Full revolution",
+          "Definition": "A full circumference has s=2πr so θ=2π",
+          "Rule": "Half revolution π",
+          "Example": "360°=2π rad"
+        },
+        {
+          "Title": "Degrees to radians",
+          "Definition": "Multiply degrees by π/180",
+          "Rule": "90°=π/2,45°=π/4",
+          "Example": "30°=π/6"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "A New Way to Measure Angles — case 1",
+          "Question": "Arc length 6 cm in circle radius 3 cm; find central angle radians.",
+          "Method": "Radian",
+          "Steps": [
+            "Use θ=s/r",
+            "6/3=2",
+            "Angle 2 radians"
+          ],
+          "Answer": "2 rad.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "A New Way to Measure Angles — case 2",
+          "Question": "Convert 150° to radians.",
+          "Method": "Full revolution",
+          "Steps": [
+            "Multiply 150 by π/180",
+            "Reduce fraction 150/180=5/6",
+            "θ=5π/6"
+          ],
+          "Answer": "5π/6 rad.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "A New Way to Measure Angles — case 3",
+          "Question": "How many radians in full turn?",
+          "Method": "Degrees to radians",
+          "Steps": [
+            "Arc of one revolution has length 2πr",
+            "Divide by radius r",
+            "θ=2π"
+          ],
+          "Answer": "2π radians.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating radians as a length unit",
+          "WhyWrong": "s/r is dimensionless angle measure",
+          "Correction": "Label radians rather than cm"
+        },
+        {
+          "Mistake": "Using θ degrees in s=rθ without conversion",
+          "WhyWrong": "Formula s=rθ requires radians",
+          "Correction": "Convert first"
+        }
+      ],
+      "SummaryPoints": [
+        "Define radian measure of a central angle as arc length divided by radius and derive 180°=π radians.",
+        "Half revolution π",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L12",
+      "CultureCode": "en",
+      "Title": "Radian Sense",
+      "ExplanationParagraphs": [
+        "Learning goal: Convert between degrees and radians and estimate meaningful quarter, half and full turns without confusing scale.",
+        "θrad=θdeg·π/180 θdeg=θrad·180/π",
+        "Quarter turn π/2; half turn π; full turn 2π Check angle placement on diagram Use exact expressions before approximation",
+        "Authentic task: Annotate exact benchmark radian angles around unit circle; teacher reviews drawing. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 12, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Radian-degree conversion",
+          "Definition": "θrad=θdeg·π/180",
+          "Rule": "θdeg=θrad·180/π",
+          "Example": "π/3 rad =60°"
+        },
+        {
+          "Title": "Reference turns",
+          "Definition": "Quarter turn π/2; half turn π; full turn 2π",
+          "Rule": "Check angle placement on diagram",
+          "Example": "3π/2 is 270°"
+        },
+        {
+          "Title": "Angle magnitude",
+          "Definition": "1 rad ≈57.3°, not 1°",
+          "Rule": "Use exact expressions before approximation",
+          "Example": "2 rad≈114.59°"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Radian Sense — case 1",
+          "Question": "Convert 3π/4 radians to degrees.",
+          "Method": "Radian-degree conversion",
+          "Steps": [
+            "Multiply by 180/π",
+            "Cancel π",
+            "3·180/4=135"
+          ],
+          "Answer": "135°.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Radian Sense — case 2",
+          "Question": "Convert 225° to radians.",
+          "Method": "Reference turns",
+          "Steps": [
+            "225·π/180",
+            "Reduce 225/180=5/4",
+            "Result 5π/4"
+          ],
+          "Answer": "5π/4 rad.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Radian Sense — case 3",
+          "Question": "Convert 2 radians approximately to degrees.",
+          "Method": "Angle magnitude",
+          "Steps": [
+            "Compute 2·180/π",
+            "Use π≈3.14159",
+            "≈114.59°"
+          ],
+          "Answer": "Approximately 114.59°.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Converting using π/180 in wrong direction",
+          "WhyWrong": "Degrees→radians uses π/180, reverse 180/π",
+          "Correction": "Check a 180° test"
+        },
+        {
+          "Mistake": "Treating calculator radian mode as degree mode",
+          "WhyWrong": "Trig inputs need consistent mode",
+          "Correction": "Label units on all angles"
+        }
+      ],
+      "SummaryPoints": [
+        "Convert between degrees and radians and estimate meaningful quarter, half and full turns without confusing scale.",
+        "Check angle placement on diagram",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L13",
+      "CultureCode": "en",
+      "Title": "Using Radians",
+      "ExplanationParagraphs": [
+        "Learning goal: Derive s=rθ and A=(1/2)r²θ for a circular sector whose central angle θ is in radians.",
+        "s=rθ with θ in radians and r>0 Based on definition θ=s/r",
+        "A=(1/2)r²θ for 0≤θ≤2π, measured in radians Use area fraction θ/(2π) Use θ/(2π) for sector fraction",
+        "Authentic task: Students derive sector formula from area fraction then construct three sectors; teacher reviews derivation. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 13, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Arc formula",
+          "Definition": "s=rθ with θ in radians and r>0",
+          "Rule": "Based on definition θ=s/r",
+          "Example": "r=4, θ=π/3 gives 4π/3"
+        },
+        {
+          "Title": "Sector formula",
+          "Definition": "A=(1/2)r²θ for 0≤θ≤2π, measured in radians",
+          "Rule": "Use area fraction θ/(2π)",
+          "Example": "r=6,θ=π/2 gives 9π"
+        },
+        {
+          "Title": "Fraction awareness",
+          "Definition": "A full revolution is 2π radians, not 360 numerical radians",
+          "Rule": "Use θ/(2π) for sector fraction",
+          "Example": "θ=π/4 covers 1/8 disk"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Using Radians — case 1",
+          "Question": "Radius 4, θ=π/3. Find arc length.",
+          "Method": "Arc formula",
+          "Steps": [
+            "Use s=rθ",
+            "Multiply 4·π/3",
+            "s=4π/3"
+          ],
+          "Answer": "4π/3 length units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Using Radians — case 2",
+          "Question": "Radius 6, θ=π/2. Find sector area.",
+          "Method": "Sector formula",
+          "Steps": [
+            "Use (1/2)r²θ",
+            "(1/2)·36·π/2",
+            "A=9π"
+          ],
+          "Answer": "9π square units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Using Radians — case 3",
+          "Question": "Arc length 10, radius 5. Find sector area.",
+          "Method": "Fraction awareness",
+          "Steps": [
+            "θ=s/r=10/5=2 rad",
+            "Sector area=(1/2)r²θ=(1/2)25·2",
+            "Area 25"
+          ],
+          "Answer": "25 square units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using θ=90 directly in radian formula",
+          "WhyWrong": "The formula assumes radians",
+          "Correction": "Convert 90° to π/2"
+        },
+        {
+          "Mistake": "Using r instead of r² for area",
+          "WhyWrong": "Sector area is two-dimensional",
+          "Correction": "Use 1/2 r²θ"
+        }
+      ],
+      "SummaryPoints": [
+        "Derive s=rθ and A=(1/2)r²θ for a circular sector whose central angle θ is in radians.",
+        "Use area fraction θ/(2π)",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U07:L14",
+      "CultureCode": "en",
+      "Title": "Putting It All Together",
+      "ExplanationParagraphs": [
+        "Learning goal: Solve combined circle geometry problems by selecting appropriate tangent, inscribed-angle, arc and sector theorems with valid hypotheses.",
+        "Opposite angles of cyclic quadrilateral sum 180° Check all vertices on circle",
+        "At tangency radius perpendicular Use Pythagoras in right triangle from external point s=rθ and A=1/2r²θ",
+        "Authentic task: Students choose and justify theorem sequences for a new circle diagram; teacher scores original proof and drawing. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 14, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cyclic-angle reasoning",
+          "Definition": "Opposite angles of cyclic quadrilateral sum 180°",
+          "Rule": "Check all vertices on circle",
+          "Example": "Opposite 112° gives 68°"
+        },
+        {
+          "Title": "Tangent radius",
+          "Definition": "At tangency radius perpendicular",
+          "Rule": "Use Pythagoras in right triangle from external point",
+          "Example": "OP=10, r=6 implies tangent 8"
+        },
+        {
+          "Title": "Radian sector",
+          "Definition": "Arc and sector formulas use radians",
+          "Rule": "s=rθ and A=1/2r²θ",
+          "Example": "r=3,θ=2 gives s=6,A=9"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Putting It All Together — case 1",
+          "Question": "Cyclic quadrilateral opposite angle is 112°. Find other opposite.",
+          "Method": "Cyclic-angle reasoning",
+          "Steps": [
+            "Sum is 180°",
+            "Subtract 180−112",
+            "Other angle 68°"
+          ],
+          "Answer": "68°.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Putting It All Together — case 2",
+          "Question": "Exterior point 10 from centre of circle radius 6. Find tangent segment.",
+          "Method": "Tangent radius",
+          "Steps": [
+            "Radius to tangent perpendicular",
+            "t²=10²−6²=100−36=64",
+            "t=8"
+          ],
+          "Answer": "8 units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        },
+        {
+          "Title": "Putting It All Together — case 3",
+          "Question": "Circle radius 3 central angle 2 rad; find arc and sector.",
+          "Method": "Radian sector",
+          "Steps": [
+            "Arc s=rθ=3·2=6",
+            "Area 1/2·3²·2=9",
+            "Check units length versus area"
+          ],
+          "Answer": "Arc 6 units; sector 9 square units.",
+          "Check": "Check angle units, circle hypotheses and answer dimensions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using tangent theorem with point inside circle",
+          "WhyWrong": "No real tangent segments from interior point",
+          "Correction": "Check OP≥r"
+        },
+        {
+          "Mistake": "Combining degree formulas and radian formulas without conversion",
+          "WhyWrong": "Inconsistent angle measure gives wrong magnitudes",
+          "Correction": "State chosen angle unit"
+        }
+      ],
+      "SummaryPoints": [
+        "Solve combined circle geometry problems by selecting appropriate tangent, inscribed-angle, arc and sector theorems with valid hypotheses.",
+        "Use Pythagoras in right triangle from external point",
+        "Human-scored source activity remains a Stage C/D requirement."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
