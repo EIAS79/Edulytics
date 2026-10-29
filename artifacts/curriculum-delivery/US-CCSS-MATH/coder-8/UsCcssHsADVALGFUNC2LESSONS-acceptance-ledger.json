@@ -1,6 +1,6 @@
 {
   "schema": "edulytiks-us-ccss-coder8-course-evidence-v1",
-  "asOf": "2026-10-28",
+  "asOf": "2026-10-29",
   "operator": "Coder 8",
   "supervisor": "American Supervisor 3",
   "course": {
@@ -21,7 +21,11 @@
     "canonicalBodyHashCommit": "0cab2b9bcbb127f8d20e65629275f24478ae3ab5",
     "hashTestCommit": "037394c727ae7e14efac3dedf86a00c525e19bb7",
     "draftPr": "https://github.com/EIAS79/Edulytics/pull/585",
-    "latestVerifiedCandidateBodyHashChange": "0cab2b9bcbb127f8d20e65629275f24478ae3ab5"
+    "latestVerifiedCandidateBodyHashChange": "0cab2b9bcbb127f8d20e65629275f24478ae3ab5",
+    "semanticTestFixCommit": "4d55a896fbab011b82d90efd70e8da8e48486921",
+    "fixtureDataCommit": "300f19045833772f19c135f6f374e6a575f73e45",
+    "fixtureTestsCommit": "f3a92ee01e638b81be534152195abd9a51365157",
+    "revisionDiffHandoffCommit": "fb6885829250ed4874182c601b69f0373bda7095"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
@@ -55,7 +59,13 @@
       "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
       "localMathOracle": "PASS_EXACT_ARITHMETIC",
       "runtimeLessonPractice": "NOT_RUN",
-      "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c"
+      "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "stageB": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
+      "mappingAndPractice": "BLOCKED_584_EXPLICIT_MATRIX_SYSTEM_INVERSE_GENERATORS_REQUIRED",
+      "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
+      "authenticatedRuntime": "NOT_RUN_453",
+      "productionUat": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
@@ -76,7 +86,13 @@
       "practiceStatus": "PARTIAL_NUMERIC_SUBSKILLS_SHARED_INTEGRATION_REQUIRED_FOR_SOURCE_GOAL",
       "localMathOracle": "PASS_DOUBLE_WITH_TOLERANCE",
       "runtimeLessonPractice": "NOT_RUN",
-      "baselineCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30"
+      "baselineCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "stageB": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
+      "mappingAndPractice": "PARTIAL_LOG_EXACT_EVALUATION; COMPARISON_AND_REASONING_NOT_VERIFIED_SHARED_OWNER_584",
+      "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
+      "authenticatedRuntime": "NOT_RUN_453",
+      "productionUat": "NOT_RUN"
     }
   ],
   "verification": {
@@ -89,14 +105,14 @@
       "method": "GitHub connector fetched exact branch content and JS assertions executed in this chat; no compiled .NET tests were run"
     },
     "independentOracle": "Python sympy inversion and substitution of existing 3x3 system passed; JS checked 3x3 product, 4 logarithm inverse powers and comparison ordering",
-    "dotnetCompile": "NOT_RUN: dotnet SDK unavailable in local execution container",
-    "dotnetTests": "NOT_RUN",
-    "protectedCi": "NOT_RUN",
-    "authenticatedTwoSchool": "NOT_RUN",
+    "dotnetCompile": "Prior GitHub CI compiled C# tests at ed083eef; new fixture-tests compilation awaits current GitHub CI. Local container has no dotnet SDK.",
+    "dotnetTests": "EXECUTED_PRIOR_HEAD_WITH_FAILURE; CURRENT_HEAD_PENDING",
+    "protectedCi": "IN_PROGRESS_OR_QUEUED_FOR_NEW_CANDIDATE_SHA; NO_GREEN_CLAIM",
+    "authenticatedTwoSchool": "NOT_VERIFIED_ISSUE_453",
     "effectiveStudentRoute": "NOT_VERIFIED",
     "actualDeployedSha": "NOT_VERIFIED",
-    "ownerUat": "NOT_VERIFIED",
-    "academicApproved": "NOT_VERIFIED",
+    "ownerUat": "NOT_PERFORMED",
+    "academicApproved": "NOT_APPROVED",
     "prInitialCi": {
       "headSha": "aa69802249b7c0fd818f9b3094a85634154081f2",
       "failures": [
@@ -107,7 +123,54 @@
       "reason": "Revised canonical body hashes, source-evidence manifest approvals and safe predecessor materialization need coordinated review",
       "checkedAt": "2026-10-28"
     },
-    "phase04EvidenceManifestReview": "PENDING_BY_GLOBAL_ACADEMIC_EVIDENCE_OWNER"
+    "phase04EvidenceManifestReview": "PENDING_BY_GLOBAL_ACADEMIC_EVIDENCE_OWNER",
+    "courseOwnedSemanticTestCorrection": {
+      "status": "COMMITTED_NOT_FINAL_SHA_CI_VERIFIED",
+      "commit": "4d55a896fbab011b82d90efd70e8da8e48486921",
+      "detail": "Existing Log Logic rule already contains 'they reverse order' with 0<b<1; replaced brittle wording check with exact mathematical inequality 0<x<y implies log_b x>log_b y. No new lesson content/body hash changes."
+    },
+    "proposedIntegrationAcceptanceFixtures": {
+      "status": "AUTHORED_AND_COMMITTED_NOT_RUNTIME_CERTIFIED",
+      "path": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json",
+      "count": 26,
+      "matrixCases": 11,
+      "logCases": 15,
+      "executableOracleTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests.cs",
+      "runtimePracticeContractTest": "ENFORCED_EXPECTED_FAIL_UNTIL_SHARED_MAPPING_FIXED"
+    },
+    "academicVersionHandoff": {
+      "status": "PENDING_INTEGRATION_REVIEW",
+      "path": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-phase04-revision-handoff.md",
+      "previousBodyHashes": [
+        "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+        "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30"
+      ],
+      "candidateBodyHashes": [
+        "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+        "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6"
+      ],
+      "sourceShaUnchanged": true,
+      "historicalPhase04ManifestUnmodified": true,
+      "originalHumanAcademicSignoff": "PENDING",
+      "predecessorMigrationRun": false
+    },
+    "prHeadObservedCi": {
+      "verifiedHead": "ed083eefc9ad6ae15d7cdeb7d67e0527c2b17935",
+      "runIds": [
+        40775690145,
+        40775690308,
+        40775690395,
+        40775690210
+      ],
+      "result": "FAIL",
+      "failures": [
+        "One course-owned exact-string assertion for logarithm reversal (now fixed at 4d55a896)",
+        "Shared matrix Practice mapping to one-step-formula-equation (intentionally retained as failure)",
+        "Phase04 locked old body hash; missing reviewed new-revision academic evidence",
+        "V2 JSON parity: changedBodies=2,newlyApproved=0; explicit predecessor approval pending"
+      ],
+      "notFinalHead": true
+    }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
@@ -126,7 +189,13 @@
       "PR #394 touches shared canonical lesson seeder"
     ],
     "nextRequiredOwner": "designated global integration owner",
-    "nextRequiredAction": "Resolve exact matrix/log Practice contract, source-aware content predecessor materialization and #453 HS adoption; rerun C# tests and cross-curriculum regressions, obtain protected exact SHA CI and authenticated student/teacher disposable testing before any production handoff"
+    "nextRequiredAction": "Global shared owner #584: implement tested matrix/log question families and graders, separately approve append-only Phase04 source-body predecessor and materialization; adoption #453; exact-head protected CI, source review, disposable two-school scoring and persistence, then release owner UAT.",
+    "acceptanceFixtureCaseCount": 26,
+    "academicAcceptance": "0_OF_2_PENDING",
+    "versionTransition": "BLOCKED_584",
+    "lessonPractice": "NOT_PRODUCTION_VERIFIED",
+    "approvedCourseAdoption": "BLOCKED_453",
+    "handoffComment": "https://github.com/EIAS79/Edulytics/issues/584"
   },
   "rights": {
     "originalPublisherContentCopied": false,
