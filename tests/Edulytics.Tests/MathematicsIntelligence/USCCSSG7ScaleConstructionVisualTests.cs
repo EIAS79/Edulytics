@@ -196,6 +196,10 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
     [InlineData("PED:US-CCSS-MATH:G7:U01:L07")]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L08")]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L09")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L10")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L11")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L12")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L13")]
     public void Grade7GeometryRubric_IsTeacherOnlyDraft_NotACompletedStudentSubmission(
         string lessonCode)
     {
@@ -230,6 +234,10 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
     [InlineData("PED:US-CCSS-MATH:G7:U01:L07", "u01-l07-court-scale-and-bench.svg")]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L08", "u01-l08-scale-map-road-vs-direct.svg")]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L09", "u01-l09-studio-floor-plan-with-door.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L10", "u01-l10-changing-plan-scales.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L11", "u01-l11-unitless-scale-conversion.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L12", "u01-l12-unit-conversion-area-flag.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L13", "u01-l13-classroom-floor-plan-peer-review.svg")]
     public void Grade7ScaleDrawingProjects_HaveAccessibleOriginalSvgAndOptInModel(
         string lessonCode, string svgFile)
     {
@@ -299,6 +307,58 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
         var wallSegments = (string)wall.Attribute("d")!;
         Assert.Contains("H194 M149 245H105", wallSegments, StringComparison.Ordinal);
         Assert.Equal(45, 194 - 149); // Door gap at 30px per 1 cm = 1.5 cm.
+    }
+
+    [Fact]
+    public void FinalUnit1ScaleDrawings_PreserveLengthRatiosUnitsAndOpenDoorway()
+    {
+        XNamespace ns = "http://www.w3.org/2000/svg";
+        var garden = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l10-changing-plan-scales.svg"));
+        var gardenRects = garden.Descendants(ns + "polygon").Select(ReadPolygon).ToArray();
+        Assert.Equal(2, gardenRects.Length);
+        static double Width((double X, double Y)[] p) => p.Max(v => v.X) - p.Min(v => v.X);
+        static double Height((double X, double Y)[] p) => p.Max(v => v.Y) - p.Min(v => v.Y);
+        Assert.Equal(120, Width(gardenRects[0]), 8);
+        Assert.Equal(72, Height(gardenRects[0]), 8);
+        Assert.Equal(180, Width(gardenRects[1]), 8);
+        Assert.Equal(108, Height(gardenRects[1]), 8);
+        Assert.Equal(2.25, Width(gardenRects[1]) * Height(gardenRects[1]) /
+            (Width(gardenRects[0]) * Height(gardenRects[0])), 8);
+
+        var conversion = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l11-unitless-scale-conversion.svg"));
+        var key = Assert.Single(conversion.Descendants(ns + "line")
+            .Where(e => (string?)e.Attribute("class") == "scale"));
+        var wall = Assert.Single(conversion.Descendants(ns + "line")
+            .Where(e => (string?)e.Attribute("class") == "wall"));
+        Assert.Equal(120, Attr(key, "x2") - Attr(key, "x1"), 8);
+        Assert.Equal(48, Attr(wall, "x2") - Attr(wall, "x1"), 8);
+        Assert.Equal(.4, 48d / 120d, 8); // 6 ft = 72 in; 72 / 180 = .4 in.
+
+        var flag = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l12-unit-conversion-area-flag.svg"));
+        var flagPoints = ReadPolygon(Assert.Single(flag.Descendants(ns + "polygon")));
+        Assert.Equal(240, Width(flagPoints), 8);
+        Assert.Equal(144, Height(flagPoints), 8);
+        Assert.Equal(20, Width(flagPoints) / 12, 8);
+        Assert.Equal(12, Height(flagPoints) / 12, 8);
+        Assert.Equal(10_000, (240d * 10_000d) / 240d, 8);
+
+        var classroom = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l13-classroom-floor-plan-peer-review.svg"));
+        var room = Assert.Single(classroom.Descendants(ns + "rect")
+            .Where(e => (string?)e.Attribute("class") == "room"));
+        Assert.Equal(176, Attr(room, "width"), 8);
+        Assert.Equal(132, Attr(room, "height"), 8);
+        var board = Assert.Single(classroom.Descendants(ns + "line")
+            .Where(e => (string?)e.Attribute("class") == "board"));
+        Assert.Equal(66, Attr(board, "x2") - Attr(board, "x1"), 8); // 3 cm.
+        var openWalls = Assert.Single(classroom.Descendants(ns + "path")
+            .Where(e => (string?)e.Attribute("class") == "wall"));
+        Assert.Contains("H174 M152 225H91", (string)openWalls.Attribute("d")!,
+            StringComparison.Ordinal);
+        Assert.Equal(22, 174 - 152); // One drawing centimeter opening.
     }
 
     private static (double X, double Y)[][] LoadPolygons(string file)
