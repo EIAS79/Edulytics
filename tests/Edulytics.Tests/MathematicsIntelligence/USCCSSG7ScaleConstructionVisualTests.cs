@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Xml.Linq;
+using System.Text.Json;
 using Edulytics.Core.Curriculum;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
@@ -183,6 +184,43 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
         }
         // This verifies Grade 7's optional partial, NOT an authenticated
         // view invocation or teacher-scored persistent submission.
+    }
+
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L01")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L02")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L03")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L04")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L05")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L06")]
+    public void Grade7GeometryRubric_IsTeacherOnlyDraft_NotACompletedStudentSubmission(
+        string lessonCode)
+    {
+        var file = Path.Combine(
+            FindRoot(),
+            "artifacts/curriculum-delivery/US-CCSS-MATH/G7/" +
+            "grade7-authentic-geometry-teacher-rubrics-v6.json");
+        using var json = JsonDocument.Parse(File.ReadAllText(file));
+        var lesson = json.RootElement.GetProperty("lessons")
+            .EnumerateArray()
+            .Single(l => l.GetProperty("lessonCode").GetString() == lessonCode);
+        Assert.Equal("TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+            lesson.GetProperty("assessmentMode").GetString());
+        Assert.Equal("NOT_VERIFIED",
+            lesson.GetProperty("academicAcceptance").GetString());
+        Assert.False(lesson.GetProperty("rubricIntegratedIntoTeacherUI").GetBoolean());
+        Assert.False(lesson.GetProperty("studentAssetRenderedInRichV2").GetBoolean());
+        Assert.False(lesson.GetProperty("studentArtifactPersisted").GetBoolean());
+        Assert.False(lesson.GetProperty("verifiedInTwoSchools").GetBoolean());
+        var rubric = lesson.GetProperty("teacherRubric");
+        Assert.False(rubric.GetProperty("recordsStudentArtifact").GetBoolean());
+        Assert.Equal(12, rubric.GetProperty("maxScore").GetInt32());
+        Assert.Equal(4, rubric.GetProperty("criteria").GetArrayLength());
+        Assert.Equal(3, lesson.GetProperty("examples").GetArrayLength());
+        Assert.Equal("NOT_EXECUTED",
+            lesson.GetProperty("selectedPracticeFamily").GetString());
+        // These checks protect honest status reporting; they DO NOT
+        // exercise a real school, logged-in learner, grader or teacher UI.
     }
 
     private static (double X, double Y)[][] LoadPolygons(string file)
