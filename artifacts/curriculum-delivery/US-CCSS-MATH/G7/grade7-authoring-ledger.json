@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "G7_V7_THREE_REFERENCE_GEOMETRY_COMPONENTS_PREPARED_BUT_NOT_LIVE_RELEASE_BLOCKED",
+  "status": "G7_V7_SOURCE_GEOMETRY_COMPONENT_TESTS_PREPARED_PRACTICE_RISK_TRACED_NOT_AUTHENTICATED_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -11656,6 +11656,15 @@
     "stageCVerified": 0,
     "stageDVerified": 0,
     "release": "NO_GO",
-    "next": "Supervisor #592 integrate guarded grade-only partial via protected shared renderer; verify exact .NET xUnit on CI, authenticated G7 student/teacher and teacher rubric scoring, full Practice. Continue grade-owned geometry assets without unapproved shared changes."
+    "next": "Run exact G7 xUnit source geometry fixture in protected CI; Supervisor 1 single-writer add Grade7 partial hook in Rich V2 explanation and exact Practice resolver under #592; authenticate/render and test teacher scoring + two schools. Continue broader 145 lesson acceptance, without resetting existing 145 source comparisons.",
+    "practiceSourceTrace": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v7-practice-resolution-source-trace.json",
+    "practiceSourceTraceFinding": "G7 U01 L01–03 7.G.A.1 generic shape_dimension outcome candidate; U06 L01 exact-title ratio-scaling candidate; neither proves source-specific nonnumeric task, actual runtime selection NOT_EXECUTED.",
+    "sharedIssueHandoffComments": [
+      "https://github.com/EIAS79/Edulytics/issues/592#issuecomment-6490234243",
+      "https://github.com/EIAS79/Edulytics/issues/592#issuecomment-6490314597"
+    ],
+    "verifiedReadOnlySvgGeometry": 3,
+    "newDotNetTestNotExecuted": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "resumeAfterConnectionCheckpoint": "Read LIVE PR #590 HEAD first, do not replace or reset; all 145 G7 Rich candidates and 584 examples preserved."
   }
 }
