@@ -35,7 +35,9 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-u04-algorithms-v5.test.cjs",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l06-l10-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-u04-fluency-v5.test.cjs"
+    "tests/academic-us-ccss-g5-u04-fluency-v5.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u04-division-v5.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -81,7 +83,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 63,
+    "richSidecarLessonCount": 67,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -95,11 +97,11 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 66,
+    "public2021LessonOrPreparationHtmlReviewedCount": 70,
     "public2021LessonHtmlReviewedDuringV4": 22,
-    "codeCandidateWithAtLeastOneEditOrRichV2": 114,
-    "noGradeOwnedCodeCandidate": 34,
-    "public2021LessonHtmlReviewedDuringV5": 37,
+    "codeCandidateWithAtLeastOneEditOrRichV2": 117,
+    "noGradeOwnedCodeCandidate": 31,
+    "public2021LessonHtmlReviewedDuringV5": 41,
     "originalStudentPdfAndGatedCooldownVerified": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
@@ -128,8 +130,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "66 distinct public 2021 student/teacher lesson/preparation HTML sources considered, with source-specific candidate tasks, but original complete PDFs/third-party figure rights/gated source responses and 148 individually accepted A results remain incomplete.",
-      "next": "Continue from U04:L11 and separately inspect/verify original source PDF, drawings, licensed assets and teacher-only assessments."
+      "issue": "70 public 2021 teacher/student-facing lesson/preparation HTML tasks reviewed with item-specific authored candidates, but full original Student Task PDF, source art/rights, gated responses and all 148 individual academic A acceptances remain incomplete.",
+      "next": "Continue at U04 L15, and independently review original protected/unprotected tasks and diagrams before granting A PASS."
     },
     {
       "id": "G5-D-004",
@@ -3151,16 +3153,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l11-l14-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-11/lesson.html",
+      "sourceReviewedTask": "Choose and compare different complete sets of divisor-multiple partial quotients from expression cards; efficiency versus correctness",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_METHOD_CHOICE_EXPLANATION_WITH_EXACT_RESULT_CHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L12",
@@ -3186,16 +3194,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l11-l14-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-12/lesson.html",
+      "sourceReviewedTask": "Interpret recorded partial-quotient algorithm rows as subtracted divisor multiples and adding group counts",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_METHOD_CHOICE_EXPLANATION_WITH_EXACT_RESULT_CHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L13",
@@ -3221,16 +3235,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l11-l14-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-13/lesson.html",
+      "sourceReviewedTask": "Estimate before dividing and compare alternative valid partial-quotient strategies for three/four-digit dividends",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_METHOD_CHOICE_EXPLANATION_WITH_EXACT_RESULT_CHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L14",
@@ -3256,16 +3276,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l11-l14-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-14/lesson.html",
+      "sourceReviewedTask": "Diagnose multiplication versus subtraction mistakes in partial quotients, and use hundreds-sized chunks for four-digit dividends",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_ARITHMETIC_ERROR_CRITIQUE_WITH_EXACT_RESULT_CHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L15",
@@ -6880,23 +6906,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "903a5ef5de7e30563f8a87545ab4aa9bc4f752e0",
+  "lastGradeContentCommit": "e38f8b98bb37bbee70be769186fbbcd0ecaff29d",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V5 checkpoint: 63 distinct direct Rich V2 Grade5 candidates (26 prior +37 newly authored V5), baseline 104 editorial pack translations edited. U01 12/12, U02 17/17, U03 20/20 plus U04 L01-L10 10/21, U05 L01, U06 L01, U07 L01, U08 L01. 66 distinct public original 2021 lesson/preparation HTML pages reviewed (29 prior+37 V5); no completed original Student Task PDF/gated response/asset parity; individual Stage A, exact Practice Stage C, real Stage D and academic acceptance all remain 0/148.",
+  "currentScopeDescription": "V5 grade source candidate checkpoint: 67 distinct direct Rich V2 lessons (26 prior, 41 new V5), 104 previously edited canonical pack translations, 70 distinct public 2021 teacher/student-facing HTML pages reviewed. Direct coverage U01 12, U02 17, U03 20, U04 L01-L14 14, U05-U08 first lesson each 1. 81 lessons have no direct sidecar (not automatically defective because runtime composer exists). 0/148 original academic source-task A, exact Practice C, product D, human approval.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "98706b3601c594df790608cb5909b94306c71909",
+  "lastCommittedTest": "bb09b43bab84f1b096939faa4092e7525f1646e4",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "98706b3601c594df790608cb5909b94306c71909",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U04:L11 — Different Partial Quotients PLC Activity",
+    "lastKnownCommittedHeadBeforeLedger": "bb09b43bab84f1b096939faa4092e7525f1646e4",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U04:L15 — Find Missing Side Lengths",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Continue Unit 4 L11-L21 then other units; verify exact selected Practice via Supervisor issue #592 and original source task independently; full CI and academic acceptance remain blocked",
+    "nextAcademic": "Continue source-specific Unit4 L15-L21 then U05-U08. Shared exact Practice and seed propagation issue #592 remains Supervisor-owned.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -6945,12 +6971,12 @@
     "protectedCi": "NOT_RUN",
     "combinedActualNodeCli": {
       "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-*-v5.test.cjs",
-      "environment": "isolated sandbox Node.js v22.16.0 (NOT Our-CS/Anas_Nitro)",
-      "passed": 37,
+      "environment": "isolated sandbox Node.js v22.16.0; never Our-CS or Anas_Nitro",
+      "passed": 41,
       "failed": 0,
-      "skipped": 7,
-      "scope": "Stand-alone Grade5 mathematically scoped numerical oracles. Each new Grade5 Rich V2 JSON fixture assertion skipped because unpublished GitHub branch files are not mounted to local test worktree. NOT selected Practice, .NET, DB, authentic student/teacher, tenant, CI, or deployment.",
-      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_with_u04_l10_20261029.tap"
+      "skipped": 8,
+      "scope": "Stand-alone exact mathematics only. Eight GitHub sidecar structural checks SKIPPED because unpublished branch JSON files not mounted. .NET/Practice/DB/authenticated rendering/CI NOT_RUN.",
+      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_with_u04_l14_20261029.tap"
     },
     "githubConnectorV8U03": {
       "status": "PASS",
