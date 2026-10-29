@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v2",
+  "ContentVersion": "us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -9,7 +9,8 @@
       "Title": "Adjacent Angles",
       "ExplanationParagraphs": [
         "Edulytiks goal: Recognize complementary and supplementary adjacent pairs and calculate missing measures. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/2/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Cut rectangle corners; measure adjacent parts of a straight or right angle. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/2/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -67,6 +68,19 @@
           ],
           "Answer": "Yes.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Adjacent Angles",
+          "Question": "Cut a rectangular paper corner by a straight line into two adjacent angles. If one measures 37°, what is its complement, and how can you physically verify the sum?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "A rectangular corner originally measures 90°.",
+            "The straight cut gives adjacent pieces that recombine to 90° if placed without gaps/overlap.",
+            "Missing measure=90−37=53°.",
+            "Mark and measure both on paper; when reassembled their measures sum to 90°."
+          ],
+          "Answer": "53° is complementary to 37°.",
+          "Check": "Teacher inspects physically cut shapes, protractor values and justified adjacency."
         }
       ],
       "CommonMistakes": [
@@ -143,7 +157,8 @@
       "Title": "Nonadjacent Angles",
       "ExplanationParagraphs": [
         "Edulytiks goal: Recognize complementary or supplementary nonadjacent angles and equal vertical angles formed by two intersecting lines. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/3/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Draw intersecting lines and measure vertical angles; geometry row game. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/3/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -201,6 +216,19 @@
           ],
           "Answer": "110°.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Nonadjacent Angles",
+          "Question": "Two straight lines intersect; one marked angle is 128°. Sketch all four and calculate the opposite and adjacent measures.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "The vertically opposite angle also measures 128°.",
+            "Each adjacent straight-line supplement is 180−128=52°.",
+            "The four angles in order are 128°,52°,128°,52°.",
+            "Measure an original intersecting-line sketch and compare paired values."
+          ],
+          "Answer": "Opposite 128°, both adjacent 52°.",
+          "Check": "Teacher checks original line intersections, actual measured angle pairs and student conjecture."
         }
       ],
       "CommonMistakes": [
@@ -271,7 +299,8 @@
       "Title": "Solving for Unknown Angles",
       "ExplanationParagraphs": [
         "Edulytiks goal: Combine angle diagrams and equations to solve unknown angle relationships. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/4/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Information-gap angle task with separate problem and data cards. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/4/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -329,6 +358,19 @@
           ],
           "Answer": "x=20.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Solving for Unknown Angles",
+          "Question": "One card says three adjacent angles on a straight line have measures x, x+15°, and 45°. What unknown must a partner supply or ask for, and what is x?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Ask which angle configuration applies and whether the three parts exactly form a 180° straight line.",
+            "If verified, x+(x+15)+45=180.",
+            "Solve 2x+60=180, 2x=120, x=60.",
+            "State actual angles 60°,75°,45° and check sum 180°."
+          ],
+          "Answer": "x=60°, with 60°,75°,45° parts.",
+          "Check": "Teacher reviews the actual question/answer information-gap dialogue and drawing."
         }
       ],
       "CommonMistakes": [
@@ -399,7 +441,8 @@
       "Title": "Using Equations to Solve for Unknown Angles",
       "ExplanationParagraphs": [
         "Edulytiks goal: Write and solve equations of the form px+q=r for complementary, supplementary or vertical angles. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/5/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Choose equations from angle drawings and decide if enough information exists. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/5/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -457,6 +500,19 @@
           ],
           "Answer": "x=40°.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Using Equations to Solve for Unknown Angles",
+          "Question": "On one side of a straight line lie three adjacent angles labeled a, 90°, b. Is the information enough to find a and b individually?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "The straight total gives a+90+b=180, hence a+b=90.",
+            "Many pairs satisfy, for example (a,b)=(30,60) or (45,45).",
+            "Without another constraint each value is not determined, even though the sum is fixed.",
+            "Draw two different valid ray sets to disprove a claim of unique individual angles."
+          ],
+          "Answer": "Not enough for unique a,b; only a+b=90° is known.",
+          "Check": "Teacher checks two distinct geometric realizations and explanation of underdetermination."
         }
       ],
       "CommonMistakes": [
@@ -527,7 +583,8 @@
       "Title": "Building Polygons (Part 1)",
       "ExplanationParagraphs": [
         "Edulytiks goal: Explore which side and angle conditions determine a polygon and whether different solutions exist. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/6/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Build polygons with given segment lengths; classify possible/unique shapes. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/6/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -585,6 +642,19 @@
           ],
           "Answer": "No; equal perimeter does not force congruence.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Building Polygons (Part 1)",
+          "Question": "Use sticks of lengths 4, 5, 8 cm to make a triangle and sticks 3, 4, 9 cm to try making a triangle. Explain outcomes, then draw a nonunique four-side example.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "4+5>8 and other inequalities hold, so a 4-5-8 triangle is possible.",
+            "3+4<9, so a triangle with sides 3,4,9 cannot close.",
+            "Fixed four side lengths do not ordinarily determine a unique quadrilateral because included angles can vary.",
+            "Use physical strips or a compass construction and annotate which joins close."
+          ],
+          "Answer": "A 4-5-8 triangle exists; 3-4-9 is impossible; quadrilateral side-only data can be nonunique.",
+          "Check": "Teacher reviews physically constructed or precisely drawn polygon evidence and triangle inequalities."
         }
       ],
       "CommonMistakes": [
@@ -655,7 +725,8 @@
       "Title": "Building Polygons (Part 2)",
       "ExplanationParagraphs": [
         "Edulytiks goal: Use more specific geometric constraints to determine uniqueness of polygon constructions. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/7/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Triangle-inequality slider lengths and compass endpoint arcs. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/7/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -713,6 +784,19 @@
           ],
           "Answer": "Yes.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Building Polygons (Part 2)",
+          "Question": "Two sides are 5 and 7 cm. What are possible positive lengths of the third side, and can 2 cm or 12 cm work?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Triangle inequality requires |7−5|<x<7+5.",
+            "So 2<x<12 cm.",
+            "Neither x=2 nor x=12 works because the triangle would collapse into a straight segment.",
+            "Construct two compass arcs to identify possible endpoints and justify strict boundary."
+          ],
+          "Answer": "Third side must satisfy 2<x<12 cm.",
+          "Check": "Teacher checks triangle arc/construction and impossibility at endpoints."
         }
       ],
       "CommonMistakes": [
@@ -783,7 +867,8 @@
       "Title": "Triangles with 3 Common Measures",
       "ExplanationParagraphs": [
         "Edulytiks goal: Classify whether three given measurements ensure identical triangles or permit different triangles. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/8/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Compare triangle measurements and congruence conditions. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/8/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -841,6 +926,19 @@
           ],
           "Answer": "No triangle exists.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Triangles with 3 Common Measures",
+          "Question": "Two triangles each have interior angles 50°,60°,70°, but one has a 3 cm side and another the corresponding side is 6 cm. Are they identical? What additional type of measurement fixes size?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Identical corresponding angles determine similarity but not absolute scale.",
+            "A 6 cm corresponding side is twice the 3 cm side, so the triangles are not congruent.",
+            "Specifying one corresponding side alongside the matching angles fixes overall size up to congruence.",
+            "Draw or compare two genuinely distinct-size triangles with labeled equal angles."
+          ],
+          "Answer": "They are similar but not identical; a corresponding side length fixes scale.",
+          "Check": "Teacher checks constructed examples and the distinction of similarity versus congruence."
         }
       ],
       "CommonMistakes": [
@@ -911,7 +1009,8 @@
       "Title": "Drawing Triangles (Part 1)",
       "ExplanationParagraphs": [
         "Edulytiks goal: Construct triangles satisfying three conditions and test uniqueness by comparing independent drawings. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/9/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Use angle/side constraints to decide possible or impossible triangles. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/9/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -969,6 +1068,19 @@
           ],
           "Answer": "Yes; different sizes exist.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Drawing Triangles (Part 1)",
+          "Question": "A triangle is claimed to have interior angles 70°,70°,50°. Another is claimed to have 60°,60°,60° and one side 4 cm. Which can be drawn?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "The first sum is 70+70+50=190°, not 180°, so impossible.",
+            "The second has total 180° and is an equilateral triangle.",
+            "With one side fixed at 4 cm, all three sides are 4 cm.",
+            "Use straightedge/protractor to construct the valid triangle and reject the invalid claim."
+          ],
+          "Answer": "First impossible; second is one 4-cm equilateral triangle up to congruence.",
+          "Check": "Teacher checks actual drawn triangle and properly measured angles."
         }
       ],
       "CommonMistakes": [
@@ -1039,7 +1151,8 @@
       "Title": "Drawing Triangles (Part 2)",
       "ExplanationParagraphs": [
         "Edulytiks goal: Test possible, unique and impossible constructions with side and angle conditions. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/10/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Compass construction: angle and two sides; possible triangle counts. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/10/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1097,6 +1210,19 @@
           ],
           "Answer": "Yes.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Drawing Triangles (Part 2)",
+          "Question": "Can 50°,60°,100° be three angles of a triangle? Can an isosceles triangle with two sides 5 cm and included 40° be drawn uniquely?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "50+60+100=210°, so no triangle has those angles.",
+            "For two 5-cm sides and INCLUDED 40° angle, draw a 40° vertex and mark 5 cm on each ray.",
+            "Connect endpoints to construct a triangle; the two sides and included angle determine a triangle up to congruence.",
+            "Compare with side-side-nonincluded-angle information, which may allow alternatives."
+          ],
+          "Answer": "Angle triple impossible; 5 cm–40°–5 cm included-angle data determine a valid congruence class.",
+          "Check": "Teacher checks precise compass/protractor work and the included-versus-other-angle distinction."
         }
       ],
       "CommonMistakes": [
@@ -1167,7 +1293,8 @@
       "Title": "Slicing Solids",
       "ExplanationParagraphs": [
         "Edulytiks goal: Visualize and describe two-dimensional cross sections formed by slicing three-dimensional solids. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/11/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Slice right prism and pyramid parallel or perpendicular to base. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/11/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1225,6 +1352,19 @@
           ],
           "Answer": "A square.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Slicing Solids",
+          "Question": "An original rectangular prism has a 6-by-4 cm rectangular base and height 8 cm. Describe its horizontal mid-height section, then compare to a pyramid with the same base/height cut halfway up.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Every prism slice parallel to its base is a 6-by-4 cm rectangle (area 24 cm²).",
+            "A similar pyramid slice halfway from base to apex has length scale 1/2.",
+            "Its cross-section dimensions are 3 by 2 cm (area 6 cm²).",
+            "Draw two 3D solids and explicitly mark their parallel cutting planes."
+          ],
+          "Answer": "Prism midsection 6×4 cm; similar pyramid midsection 3×2 cm.",
+          "Check": "Teacher checks original solid drawings/physical cuts, plane orientation and similarity reasoning."
         }
       ],
       "CommonMistakes": [
@@ -1295,7 +1435,8 @@
       "Title": "Volume of Right Prisms",
       "ExplanationParagraphs": [
         "Edulytiks goal: Calculate volume of right prisms using base area times perpendicular height. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/12/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Build unit-cube prisms; compare heights for equal volume. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/12/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1353,6 +1494,19 @@
           ],
           "Answer": "6 cm.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Volume of Right Prisms",
+          "Question": "Three prisms have base areas 3,4,12 cm² and each must have volume 48 cm³. What heights are needed, and what happens if heights are equal?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Use V=base area×height.",
+            "For volume 48: heights 16,12,4 cm respectively.",
+            "If heights were equal, volume would order with base area: area 12 gives greatest, area 3 least.",
+            "Construct unit-cube stacks or a layered prism sketch with dimensions."
+          ],
+          "Answer": "For equal 48 cm³ volume, heights 16,12,4 cm respectively.",
+          "Check": "Teacher checks unit-cube model/layer count and opposite height-area comparisons."
         }
       ],
       "CommonMistakes": [
@@ -1423,7 +1577,8 @@
       "Title": "Decomposing Bases for Area",
       "ExplanationParagraphs": [
         "Edulytiks goal: Decompose complex polygonal prism bases and calculate volume accurately. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/13/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Compare ways to decompose a nonrectangular prism base. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/13/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1481,6 +1636,19 @@
           ],
           "Answer": "136 cubic units.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Decomposing Bases for Area",
+          "Question": "An L-shaped base comes from a 7×5 cm rectangle with a 3×2 cm rectangle removed from a corner. A prism is 4 cm tall. Find base area and volume by subtraction and by two nonoverlapping rectangles.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Subtract the missing corner: base area 35−6=29 cm².",
+            "Alternative decomposition uses a 7×3 rectangle plus 4×2 rectangle, areas 21+8=29.",
+            "Multiply base area by height 4 cm: V=116 cm³.",
+            "Draw both original decomposition choices and explain why no region is counted twice."
+          ],
+          "Answer": "Base area 29 cm²; volume 116 cm³.",
+          "Check": "Teacher checks original L-base sketch, two valid decompositions and prism construction."
         }
       ],
       "CommonMistakes": [
@@ -1561,7 +1729,8 @@
       "Title": "Surface Area of Right Prisms",
       "ExplanationParagraphs": [
         "Edulytiks goal: Calculate exterior surface area by identifying bases and lateral rectangles or using nets. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/14/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Make nets and compare prism lateral-area strategies. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/14/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1619,6 +1788,19 @@
           ],
           "Answer": "48 square units.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Surface Area of Right Prisms",
+          "Question": "A right prism has a cross-shaped base made from five 2-by-2 cm squares and height 6 cm. Find the exterior surface area using base area plus base-perimeter times height.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Base area=5×4=20 cm².",
+            "For a plus-shaped five-square base, exposed perimeter has 12 side edges of 2 cm each, hence P=24 cm.",
+            "Lateral area=24×6=144 cm².",
+            "Total area=2×20+144=184 cm²; show the unwrapped rectangular side strip and both bases."
+          ],
+          "Answer": "184 cm² exterior surface area.",
+          "Check": "Teacher checks physically plausible net and counting exposed boundary only."
         }
       ],
       "CommonMistakes": [
@@ -1689,7 +1871,8 @@
       "Title": "Distinguishing Volume and Surface Area",
       "ExplanationParagraphs": [
         "Edulytiks goal: Distinguish three-dimensional capacity from the covering area of a container. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/15/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Classify area versus volume and hypothesize equal-volume crushed ice behavior. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/15/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1747,6 +1930,19 @@
           ],
           "Answer": "4 times.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Distinguishing Volume and Surface Area",
+          "Question": "A cube of ice has edge 4 cm, volume 64 cm³ and exposed area 96 cm². It breaks into eight 2-cm cubes. How do total volume and total exposed area compare if pieces are separated?",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Original volume 4³=64 cm³ and surface area 6×4²=96 cm².",
+            "Eight small cubes total volume 8×2³=64 cm³, unchanged.",
+            "Each small cube area 6×2²=24 cm²; eight have 192 cm² when separated.",
+            "Discuss why greater exposed area may affect melting, while a real experiment needs equal temperature and volume."
+          ],
+          "Answer": "Same volume 64 cm³, separate-piece area 192 cm² versus original 96 cm².",
+          "Check": "Teacher reviews exposed-face assumption, hypothesis, and surface-vs-volume classification."
         }
       ],
       "CommonMistakes": [
@@ -1823,7 +2019,8 @@
       "Title": "Applying Volume and Surface Area",
       "ExplanationParagraphs": [
         "Edulytiks goal: Solve contextual packaging, storage and design problems with appropriate geometric measures. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/16/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Calculate foam volume versus exterior vinyl covering. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/16/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -1881,6 +2078,19 @@
           ],
           "Answer": "$9.40.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Applying Volume and Surface Area",
+          "Question": "A foam rectangular prism is 5×4×3 in. Foam costs $0.01 per in³ and outside vinyl costs $0.06 per in². Find each material amount and total cost.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "Volume 5×4×3=60 in³.",
+            "Outer surface area 2(5×4+5×3+4×3)=94 in².",
+            "Foam cost $0.01×60=$0.60; vinyl cost $0.06×94=$5.64.",
+            "Total $6.24; explain why units of volume and area cannot be interchanged."
+          ],
+          "Answer": "60 in³ foam, 94 in² vinyl, $6.24 total cost.",
+          "Check": "Teacher checks original 3D diagram and whether all six exterior faces are covered."
         }
       ],
       "CommonMistakes": [
@@ -1953,7 +2163,8 @@
       "Title": "Building Prisms",
       "ExplanationParagraphs": [
         "Edulytiks goal: Plan and construct a triangular prism from measured base and prism dimensions, acknowledging multiple valid designs. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/17/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality."
+        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
+        "Direct official student lesson activity: Build a triangular-prism net from an accurately measured triangle. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/17/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
@@ -2011,6 +2222,19 @@
           ],
           "Answer": "84 cm².",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+        },
+        {
+          "Title": "Construct and justify — Building Prisms",
+          "Question": "A right triangular prism has a 3–4–5 cm right-triangle base and prism length 8 cm. Draw a net, compute volume and exterior area, and state a possible horizontal cross-section.",
+          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Steps": [
+            "The two matching triangular bases each have area (3×4)/2=6 cm².",
+            "Wrap three lateral rectangles 3×8,4×8,5×8 cm around the triangle; lateral area=96 cm².",
+            "Total surface area=2×6+96=108 cm²; volume=6×8=48 cm³.",
+            "Draw both triangles and all three correctly connected rectangular panels; slice parallel to the triangular bases gives a congruent triangle."
+          ],
+          "Answer": "Volume 48 cm³, surface 108 cm²; parallel cross-section a 3–4–5 triangle.",
+          "Check": "Teacher checks the assembled net dimensions, foldability and actual geometric cross-section."
         }
       ],
       "CommonMistakes": [
