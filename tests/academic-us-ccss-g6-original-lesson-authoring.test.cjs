@@ -773,7 +773,7 @@ test('U01 L11 polygons source tasks, trapezoid proof and independent visual mode
   assert.equal(rich.Lessons[0].WorkedExamples.length, 3);
   assert.equal(rich.Lessons[0].Visuals.length, 3);
   assert.ok(rich.Lessons[0].Visuals.every(v => v.Description.length > 100));
-  assert.match(body.explanation, /non-self-crossing/);
+  assert.match(body.explanation, /never crossing elsewhere/);
   assert.match(body.workedExamples, /Example 3 — Choose an area strategy/);
   assert.match(body.workedExamples, /NOT the historical publisher's exact pinwheel/);
   assert.match(body.commonMistakes, /teacher judgement/);
