@@ -159,10 +159,17 @@ public static class UsCcssHsFourthCourseQuestions
     {
         if (!Supports(family) || !ValidParameters(family, p))
             throw new ArgumentException("Invalid exact Fourth Courses question parameters.");
-        var a = Get(p, "a"); var b = Get(p, "b");
-        var c = Get(p, "c"); var d = Get(p, "d");
-        var e = Get(p, "e"); var f = Get(p, "f");
-        var det = a * d - b * c;
+        // Other families intentionally have no matrix coefficients.
+        // Access matrix parameters only for the four matrix question families.
+        var isMatrix = family is MatrixCoefficients or MatrixSolve or
+            MatrixInverse or MatrixClassification;
+        var a = isMatrix ? Get(p, "a") : 0;
+        var b = isMatrix ? Get(p, "b") : 0;
+        var c = isMatrix ? Get(p, "c") : 0;
+        var d = isMatrix ? Get(p, "d") : 0;
+        var e = isMatrix ? Get(p, "e") : 0;
+        var f = isMatrix ? Get(p, "f") : 0;
+        var det = isMatrix ? checked(a * d - b * c) : 0;
         return family switch
         {
             MatrixCoefficients => $"{a},{b};{c},{d}|{e},{f}",
