@@ -752,3 +752,34 @@ test('Unit 9 final four source tasks distinguish numerical vote checks from huma
   assert.equal(22+88, 110);
   assert.ok(Math.abs(0.25*0.20*0.80-0.04)<1e-10);
 });
+
+
+test('U01 L11 polygons source tasks, trapezoid proof and independent visual model retain honest assessment boundaries', () => {
+  const crosswalk = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l11-public-source-task-rich-v2-boundary.json'), 'utf8'));
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l11-polygons-20261029.rich-lesson-v2.json'), 'utf8'));
+  const code = lcode(1, 11);
+  const body = byCode.get(code).translations.find(t => t.cultureCode === 'en');
+  assert.equal(crosswalk.lessonCode, code);
+  assert.equal(crosswalk.studentSourceActivities.length, 5);
+  assert.equal(crosswalk.practiceTasks.length, 6);
+  assert.equal(crosswalk.reviewLevel, 'PUBLIC_STUDENT_TEACHER_PRACTICE_TASK_BODIES_COMPARED__ACADEMIC_ACCEPTANCE_PENDING');
+  assert.equal(crosswalk.implementation.teacherRubric.persistedWorkflowVerified, false);
+  assert.ok(crosswalk.practiceTasks.some(p => /teacher/i.test(p.autoGradeScope)));
+  assert.equal(rich.SchemaVersion, 1);
+  assert.equal(rich.Lessons.length, 1);
+  assert.equal(rich.Lessons[0].LessonCode, code);
+  assert.equal(rich.Lessons[0].WorkedExamples.length, 3);
+  assert.equal(rich.Lessons[0].Visuals.length, 3);
+  assert.ok(rich.Lessons[0].Visuals.every(v => v.Description.length > 100));
+  assert.match(body.explanation, /non-self-crossing/);
+  assert.match(body.workedExamples, /Example 3 — Choose an area strategy/);
+  assert.match(body.workedExamples, /NOT the historical publisher's exact pinwheel/);
+  assert.match(body.commonMistakes, /teacher judgement/);
+  assert.match(rich.Lessons[0].WorkedExamples[1].Answer, /18 square centimeters/);
+  assert.match(rich.Lessons[0].WorkedExamples[2].Answer, /12 square units/);
+  assert.equal((8 + 4) * 3 / 2, 18); // trapezoid duplicate-area proof
+  assert.equal(2 * 2 + 4 * (2 * 2 / 2), 12); // original four-wing pinwheel
+  assert.equal(crosswalk.releaseStatus, 'NO_GO__NOT_ACADEMICALLY_ACCEPTED');
+});
