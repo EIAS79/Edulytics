@@ -1,0 +1,611 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u06-l02-l06-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L02",
+      "CultureCode": "en",
+      "Title": "Powers of 10 PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: represent very large whole numbers with powers of ten and explain how many groups of one thousand, one million or one billion compose them. The 2021 source uses HISTORICAL human-population examples, including India in 1997, so those figures must not be described as a current census. The optional trillion exploration is modeling rather than an official factual count.",
+        "Warm-up: extend a first-party text pattern: a unit strip divided into ten equal segments, then each segment into ten, and repeat to obtain ten, one hundred and one thousand tiny segments. Explain how 10×10×10=1000 and the notation 10^3 refer to three factors of ten.",
+        "Activity 1 — name and relate scales: 1,000,000=10^6 is one thousand groups of one thousand or one million; 1,000,000,000=10^9 is one thousand groups of one million and one million groups of one thousand. Write both in words and expanded products of powers of ten. Discuss why a familiar local population might help students visualize scale without asserting an unverified current population.",
+        "Activity 2 — missing factors: solve 3000=30×100, 24×10×100=24000, and (missing number)×10=100000 (missing10000). Read 10^3,10^4,10^7 as 1000,10000,10000000. Optional: name 10^12 as one trillion and explain why claiming a real-world exact trillion-count would require separate trustworthy evidence.",
+        "Assessment: mathematical notation and numeric blanks can be checked, but explaining diagrams, describing orders of magnitude and proposing a plausible real-world example demand teacher review. Original publisher images and restricted answers not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exponent counts tens",
+          "Definition": "The exponent on a positive integer power of ten counts how many ten factors are multiplied.",
+          "Rule": "10^6=10×10×10×10×10×10=1000000.",
+          "Example": "Six factors of ten form a million."
+        },
+        {
+          "Title": "Large unit groups",
+          "Definition": "A billion can be expressed as a thousand millions or a million thousands.",
+          "Rule": "10^9=10^3×10^6=10^6×10^3.",
+          "Example": "1000000000=1000×1000000."
+        },
+        {
+          "Title": "Missing ten-power factors",
+          "Definition": "Multiplication identities help determine unknown powers without arbitrary zero insertion.",
+          "Rule": "10000×10=100000.",
+          "Example": "10^4×10^1=10^5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Name the numbers",
+          "Question": "Compare one million with one billion using powers of ten.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Write one million as 10^6 and one billion as10^9.",
+            "Divide a billion by a million using 10^9/10^6=10^3.",
+            "Translate ten cubed as one thousand."
+          ],
+          "Answer": "One billion contains 1000 millions.",
+          "Check": "1000×1000000=1000000000."
+        },
+        {
+          "Title": "Solve missing factors",
+          "Question": "Find A in A×10=100000.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Read100000 as10^5.",
+            "Divide by ten, or remove one factor of ten.",
+            "Name the remaining ten to the fourth power."
+          ],
+          "Answer": "A=10000.",
+          "Check": "10000×10=100000."
+        },
+        {
+          "Title": "Read exponential forms",
+          "Question": "Write 10^3,10^4 and10^7 in whole-number notation.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Count the number of ten factors.",
+            "Multiply or use place-value structure.",
+            "Explain why the exponent is not itself a multiplier of ten."
+          ],
+          "Answer": "1000;10000;10000000.",
+          "Check": "10^3=1000 rather than30."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 10^6 as 10×6",
+          "WhyWrong": "An exponent represents repeated multiplication, not simple multiplication by its exponent.",
+          "Correction": "Use six factors of ten."
+        },
+        {
+          "Mistake": "Treat a 1997 historical population approximation as a current census value",
+          "WhyWrong": "The original source clearly locates its India population example in 1997.",
+          "Correction": "Label past data with its year and verify current information separately if needed."
+        }
+      ],
+      "SummaryPoints": [
+        "Exponential notation communicates powers of ten and large-number structure.",
+        "Missing factors can be solved using known ten-power relationships.",
+        "Real-world magnitude analogies are teacher-reviewed and historical figures retain their dates.",
+        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 2, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-2/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Powers of 10 PLC Activity — original model",
+          "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
+          "Rows": [
+            {
+              "Label": "Power",
+              "Cells": [
+                "10^3",
+                "10^4",
+                "10^6",
+                "10^9"
+              ]
+            },
+            {
+              "Label": "Number",
+              "Cells": [
+                "1000",
+                "10000",
+                "1000000",
+                "1000000000"
+              ]
+            },
+            {
+              "Label": "Name",
+              "Cells": [
+                "Thousand",
+                "Ten thousand",
+                "Million",
+                "Billion"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L03",
+      "CultureCode": "en",
+      "Title": "Metric Conversion and Multiplication by Powers of Ten",
+      "ExplanationParagraphs": [
+        "Goal: convert from a LARGER metric length unit to a smaller unit by multiplying by 100 or1000, and use the context of athletics to compare jump lengths while selecting appropriate units. The source asks students to notice relationships across conversion tables and defend units in a broad jump story.",
+        "Warm-up: point to a meter stick and explain that it has 100 centimeters and 1000 millimeters. State that 1 kilometer has1000 meters and that a centimeter has ten millimeters. Predict why a large unit needs MORE smaller-sized units for the same physical distance.",
+        "Activity 1 — equivalent length tables: convert 3.2 meters to320 centimeters and3200 millimeters; convert12 kilometers to12000 meters. Use a first-party accessible length table and distinguish metric linear units, not square or cubic ones. Explain how multiplying by100 or1000 changes the VALUE of each digit in the new unit rather than physically changing distance.",
+        "Activity 2 — first-party standing jumps: students measure 1.62 meters,1.39 meters and1.50 meters; a hypothetical class comparison benchmark is1.45 meters (145 cm). Classify the first and third as above and the second below the benchmark. Convert each jump into centimeters and millimeters; discuss why reporting 1620 millimeters sounds numerically larger than162 centimeters while describing the identical distance.",
+        "Teacher boundary: the source asks students to classify physical measurements, analyze a published jump record, debate units and explain equivalence; a conversion calculator may verify values but cannot certify measurement interpretation or choice of helpful units. No source athlete photo reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Meter to centimeter",
+          "Definition": "One meter contains100 centimeters, so meter quantities multiply by100 when expressed in centimeters.",
+          "Rule": "3.2 m=320 cm.",
+          "Example": "Length is unchanged."
+        },
+        {
+          "Title": "Meter to millimeter and kilometer to meter",
+          "Definition": "One meter contains1000 millimeters and one kilometer contains1000 meters.",
+          "Rule": "3.2 m=3200 mm and12 km=12000 m.",
+          "Example": "Do not confuse the two different starting units."
+        },
+        {
+          "Title": "Compare in common units",
+          "Definition": "To compare a jump and a benchmark, first convert their measurements to compatible units.",
+          "Rule": "1.39 m=139 cm <145 cm.",
+          "Example": "The same physical jump has equivalent numerical descriptions."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert meter units",
+          "Question": "Convert3.2m into centimeters and millimeters.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Multiply3.2 by100 to count centimeters.",
+            "Multiply3.2 by1000 to count millimeters.",
+            "Label each result in the target unit."
+          ],
+          "Answer": "320 cm and3200 mm.",
+          "Check": "320 cm=3.2 m and3200 mm=3.2 m."
+        },
+        {
+          "Title": "Convert a long race",
+          "Question": "Express12km in meters.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Recall1000 meters in one kilometer.",
+            "Multiply12 by1000.",
+            "Identify the number as a distance, not an area."
+          ],
+          "Answer": "12000 meters.",
+          "Check": "12000÷1000=12 kilometers."
+        },
+        {
+          "Title": "Compare hypothetical broad jumps",
+          "Question": "Three jump lengths are1.62m,1.39m and1.50m. Which are above1.45m?",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Convert to162,139 and150 centimeters.",
+            "Compare with145 centimeters.",
+            "Explain why 1.62 and1.50 are longer than the benchmark."
+          ],
+          "Answer": "First and third are above; second is below.",
+          "Check": "Their millimeter descriptions are1620,1390 and1500."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Divide by100 when converting meters to centimeters",
+          "WhyWrong": "A smaller unit produces a larger number of units for the same length.",
+          "Correction": "Multiply meter count by100."
+        },
+        {
+          "Mistake": "Compare digits without matching measurement units",
+          "WhyWrong": "162cm and1.5m have different unit scales.",
+          "Correction": "Convert both to centimeters or both to meters before ordering."
+        }
+      ],
+      "SummaryPoints": [
+        "Larger metric lengths convert to smaller metric units with positive factors of ten.",
+        "Unit conversion changes a count, not the actual distance.",
+        "Measuring jumps and explaining an appropriate unit are teacher-reviewed.",
+        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 3, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-3/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Metric Conversion and Multiplication by Powers of Ten — original model",
+          "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
+          "Rows": [
+            {
+              "Label": "Length",
+              "Cells": [
+                "3.2 m",
+                "1.62 m",
+                "1.39 m",
+                "1.50 m"
+              ]
+            },
+            {
+              "Label": "Centimeters",
+              "Cells": [
+                "320",
+                "162",
+                "139",
+                "150"
+              ]
+            },
+            {
+              "Label": "Millimeters",
+              "Cells": [
+                "3200",
+                "1620",
+                "1390",
+                "1500"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L04",
+      "CultureCode": "en",
+      "Title": "Metric Conversion and Division by Powers of Ten",
+      "ExplanationParagraphs": [
+        "Goal: express measurements from a SMALLER metric unit in a larger unit and explain the meaning of dividing by100 or1000 in a place-value chart. The source's athlete event table and running-distance table require interpretation of what each shifted digit represents and a peer-reviewed argument of why the method works.",
+        "Warm-up: contrast 750 centimeters with750 meters. Dividing 750cm by100 gives7.5 meters, but dividing 750 meters by100 would answer a different question. Keep the source unit attached throughout conversion.",
+        "Activity 1 — convert event measurements: a fictional long jump is745cm=7.45m, a throwing event has length4567cm=45.67m, and a shot put is1580cm=15.8m. Estimate each physical magnitude and explain why centimeter precision may be used for athletic measurement even when meters are more intuitive for description.",
+        "Activity 2 — road distances: 9513 meters=9.513 kilometers, 11018 meters=11.018 kilometers, and10000m=10km. Explain that dividing the count by1000 changes the number of units because each new kilometer is one thousand meters. A student who says the decimal point merely 'moves' without interpreting meters and kilometers must explain the place-value units.",
+        "Assessment: an exact numeric conversion is machine-checkable, but identifying original and target unit, interpreting athletic distances and critiquing the validity of a general place-shift strategy require teacher review. Original source athlete photographs and protected responses not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Centimeter to meter",
+          "Definition": "Convert a centimeter count to meters by dividing by100.",
+          "Rule": "745cm÷100=7.45m.",
+          "Example": "One centimeter is0.01 meter."
+        },
+        {
+          "Title": "Meter to kilometer",
+          "Definition": "Convert from meters to kilometers by dividing by1000.",
+          "Rule": "9513m÷1000=9.513km.",
+          "Example": "One meter is0.001 kilometer."
+        },
+        {
+          "Title": "Explain decimal place value",
+          "Definition": "Changing the measurement unit changes the count associated with the same length.",
+          "Rule": "4567 centimeters are45.67 meters.",
+          "Example": "Every tenfold shift can be explained through new place-value unit size."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Centimeters into meters",
+          "Question": "Convert745cm and1580cm to meters.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Use100 centimeters per meter.",
+            "Divide745 and1580 by100.",
+            "Label resulting lengths in meters."
+          ],
+          "Answer": "7.45m and15.8m.",
+          "Check": "7.45×100=745;15.8×100=1580."
+        },
+        {
+          "Title": "Kilometer conversion",
+          "Question": "Convert9513m to km.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Use1000 meters per kilometer.",
+            "Divide9513 by1000.",
+            "Read result as9 kilometers and513 additional meters."
+          ],
+          "Answer": "9.513km.",
+          "Check": "9.513×1000=9513m."
+        },
+        {
+          "Title": "Critique a wrong conversion",
+          "Question": "A student claims11018m=110.18km because they divide by100. Why is this wrong?",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Identify target kilometer unit, which contains1000 meters.",
+            "Divide11018 by1000 instead.",
+            "Compare result with a benchmark 10000m=10km."
+          ],
+          "Answer": "11.018km, not110.18km.",
+          "Check": "11.018×1000=11018."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use the centimeter-to-meter factor for a meter-to-kilometer conversion",
+          "WhyWrong": "The two target units have different scale relationships.",
+          "Correction": "Use 100 for centimeters per meter and1000 for meters per kilometer."
+        },
+        {
+          "Mistake": "Describe a digit 'shifting' without naming the changed unit",
+          "WhyWrong": "Place-value reasoning should explain the number of smaller units inside a larger one.",
+          "Correction": "Label both endpoints and why one target unit contains100 or1000 of the source units."
+        }
+      ],
+      "SummaryPoints": [
+        "Convert cm→m by dividing100 and m→km by dividing1000.",
+        "Verify conversions with inverse multiplication.",
+        "Student explanation of place-value changes and useful unit selection remains teacher-reviewed.",
+        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 4, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-4/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Metric Conversion and Division by Powers of Ten — original model",
+          "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
+          "Rows": [
+            {
+              "Label": "Starting",
+              "Cells": [
+                "745 cm",
+                "4567 cm",
+                "9513 m",
+                "11018 m"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "7.45 m",
+                "45.67 m",
+                "9.513 km",
+                "11.018 km"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L05",
+      "CultureCode": "en",
+      "Title": "Multi-step Conversion Problems: Metric Length",
+      "ExplanationParagraphs": [
+        "Goal: solve MULTI-STEP length situations involving centimeter steps, meter totals and kilometer distances, then compare weekly runners after making their units compatible. The source asks learners to choose appropriate units and compare several strategies for sum and difference, not just copy conversion ratios.",
+        "Warm-up: a typical step may be measured in centimeters; a day-long walk is easier to express in meters or kilometers. Discuss the meaning of a 0.52-meter step and why 8000 repeated steps produce a distance above4km, conditional on constant stride length.",
+        "Activity 1 — count steps: assume a measured half-meter-ish stride of52cm and8000 steps in a day. Multiply52×8000=416000 centimeters, then divide100 to4160 meters or divide100000 to4.16km. Check equivalence by converting0.52m×8000 directly to4160m. State this is an idealized constant-step model, not a measured personal activity record.",
+        "Activity 2 — two weekly runners: one runner's fictional kilometer totals are 5.5,6.25,4.75,7.1,6.4 for five days, summing exactly30.0km. Another's meter totals are5400,6200,5800,6500,7000m, summing30900m=30.9km. The second runner traveled0.9km farther. Explain why direct comparison of30 and30900 without units is invalid.",
+        "Assessment: actual individual stride measurement or partner work, choice of unit, estimated realism, adding daily distances, conversion reasoning and a written comparison are teacher-reviewed. Numeric totals can support the result but cannot certify the real-life modeling assumptions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Repeated step length",
+          "Definition": "Approximate constant stride length multiplied by step count estimates total distance.",
+          "Rule": "0.52m×8000=4160m.",
+          "Example": "This assumes a consistent average step length."
+        },
+        {
+          "Title": "Centimeters, meters and kilometers",
+          "Definition": "One km contains1000m or100000cm.",
+          "Rule": "416000cm=4160m=4.16km.",
+          "Example": "All three describe the same physical length."
+        },
+        {
+          "Title": "Sum and compare in one unit",
+          "Definition": "A pair of weekly travel totals may be compared only when in compatible units.",
+          "Rule": "30900m=30.9km, which exceeds30.0km by0.9km.",
+          "Example": "The numerical digits alone are insufficient."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate daily distance",
+          "Question": "A hypothetical walker makes8000 steps averaging52cm each. Estimate distance.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Multiply52×8000=416000cm.",
+            "Divide by100 to get4160m.",
+            "Divide again by1000 to get4.16km."
+          ],
+          "Answer": "4.16km.",
+          "Check": "0.52m×8000=4160m."
+        },
+        {
+          "Title": "Sum one runner's week",
+          "Question": "Find total km for5.5,6.25,4.75,7.1,6.4km.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Pair6.25+4.75=11.0.",
+            "Add5.5+7.1+6.4=19.0.",
+            "Sum11+19."
+          ],
+          "Answer": "30.0km.",
+          "Check": "All values have the same km unit."
+        },
+        {
+          "Title": "Compare a second week",
+          "Question": "The other distances are5400,6200,5800,6500,7000 meters. Who went farther?",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Sum to30900 meters.",
+            "Convert to30.9km.",
+            "Subtract first runner's30.0km."
+          ],
+          "Answer": "Second runner by0.9km.",
+          "Check": "30900m−30000m=900m=0.9km."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Compare unconverted kilometer and meter totals as printed numbers",
+          "WhyWrong": "The numbers count different-sized units.",
+          "Correction": "Convert both to km or both to m before comparing."
+        },
+        {
+          "Mistake": "Treat an assumed constant step length as a guaranteed measured distance",
+          "WhyWrong": "The model assumes each step has approximately the same length.",
+          "Correction": "Label result an estimate; discuss measurement variability."
+        }
+      ],
+      "SummaryPoints": [
+        "Multi-step conversions preserve the physical quantity across cm, m and km.",
+        "Choose convenient units and check comparisons only after alignment.",
+        "Teacher reviews estimation assumptions and student method explanations.",
+        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 5, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-5/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multi-step Conversion Problems: Metric Length — original model",
+          "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
+          "Rows": [
+            {
+              "Label": "Scenario",
+              "Cells": [
+                "Walker",
+                "Runner A",
+                "Runner B"
+              ]
+            },
+            {
+              "Label": "Given",
+              "Cells": [
+                "8000×52cm",
+                "Five distances in km",
+                "Five distances in m"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "4.16km",
+                "30.0km",
+                "30.9km"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L06",
+      "CultureCode": "en",
+      "Title": "Multi-step Conversion Problems: Metric Liquid Volume",
+      "ExplanationParagraphs": [
+        "Goal: convert LITERS to MILLILITERS and back, including decimals and fractions, then solve a multi-step liquid-volume problem involving dancers sharing bottled water. The original source asks students to compare whether they convert each bottle first or convert total liters last, and to explain which strategy is helpful.",
+        "Warm-up: contrast a bottle of capacity0.45L with a 20L cooler. One liter is1000 milliliters, so0.45L=450mL and20L=20000mL. Explain why a container image alone cannot determine capacity without labeled measurements; publisher bottle artwork not reused.",
+        "Activity 1 — unit table and comparisons: convert5L to5000mL; 0.95L to950mL;6500mL to6.5L; and3/4L to750mL. Compare15mL with0.15L and explain 0.15L=150mL, so15mL is smaller. Explain how a missing zero in 0.015L changes the interpretation.",
+        "Activity 2 — original dancers problem: 24 dancers each drink one and a half 450mL bottles during a rehearsal. Total volume24×1.5×450=16200mL, or16.2L. If the water began in a 20L cooler, 3.8L remains under the ideal no-spill assumption. A student may compute0.45L×1.5×24 or calculate total bottles first; compare strategies and state that bottles consumed may include halves.",
+        "Assessment: unit table numerical conversions are partial automatable checks, but the source multi-step modeling, physically meaningful capacity and comparison of converting before/after multiplication require teacher review. Gated source responses and original source image assets remain unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Liters and milliliters",
+          "Definition": "One liter of liquid volume equals one thousand milliliters.",
+          "Rule": "0.95L=950mL.",
+          "Example": "Multiply L by1000; divide mL by1000."
+        },
+        {
+          "Title": "Fractions of a liter",
+          "Definition": "A fraction such as3/4L is equivalent to a decimal fraction times1000 milliliters.",
+          "Rule": "3/4L=750mL.",
+          "Example": "The unit and denominator must refer to the same liter."
+        },
+        {
+          "Title": "Equivalent multi-step strategies",
+          "Definition": "Convert the bottle first or compute total mL first; multiplication and unit conversion should reconcile.",
+          "Rule": "24×1.5×0.45L=16.2L.",
+          "Example": "24×1.5×450mL=16200mL."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert mixed units",
+          "Question": "Convert5L,0.95L and6500mL.",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Multiply liters by1000 to get milliliters.",
+            "Divide milliliters by1000 to get liters.",
+            "Check the dimensions and labels."
+          ],
+          "Answer": "5000mL;950mL;6.5L.",
+          "Check": "6.5L×1000=6500mL."
+        },
+        {
+          "Title": "Compare decimals and fractions",
+          "Question": "Which is greater: 15mL or0.15L?",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Convert0.15L to150mL.",
+            "Compare15mL with150mL.",
+            "Explain that 0.015L, not0.15L, equals15mL."
+          ],
+          "Answer": "0.15L is greater.",
+          "Check": "150mL>15mL."
+        },
+        {
+          "Title": "Dancers and cooler",
+          "Question": "24 dancers each drink1.5 bottles of450mL. How much from a20L cooler remains?",
+          "Method": "Independently authored place-value/measurement representation with exact unit check and teacher-reviewed explanation.",
+          "Steps": [
+            "Compute total bottle-equivalents24×1.5=36.",
+            "Find36×450=16200mL=16.2L.",
+            "Subtract from20L."
+          ],
+          "Answer": "3.8L remains.",
+          "Check": "20−16.2=3.8L, under no-spill and full-bottle assumptions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiply by100 instead of1000 when converting liters to milliliters",
+          "WhyWrong": "Milli indicates thousandths of one liter.",
+          "Correction": "Use1000mL per liter."
+        },
+        {
+          "Mistake": "Add 24 dancers and1.5 bottles as though quantities were comparable",
+          "WhyWrong": "The quantities have different units; each dancer's rate must multiply the number of dancers.",
+          "Correction": "Compute dancers×bottles per dancer×mL per bottle."
+        }
+      ],
+      "SummaryPoints": [
+        "One liter contains1000 milliliters and fractional liters convert consistently.",
+        "Multi-step volume problems can be solved in either liter or milliliter units.",
+        "Teacher reviews assumptions and explanation of conversion-order choices.",
+        "Source reference: first edition 2021 IM K–5 Grade5 Unit6 Lesson 6, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-6/lesson.html. Read original public teacher lesson HTML including Student Facing sections on Primary/Our-CS read-only. Separate Student Task PDF, gated responses, third-party photos and individual asset rights remain unverified. Edulytiks examples original."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multi-step Conversion Problems: Metric Liquid Volume — original model",
+          "Description": "First-party accessible comparison table, not licensed original source photograph or diagrams.",
+          "Rows": [
+            {
+              "Label": "Item",
+              "Cells": [
+                "0.45 L",
+                "0.95 L",
+                "3/4 L",
+                "6.5 L"
+              ]
+            },
+            {
+              "Label": "Milliliters",
+              "Cells": [
+                "450",
+                "950",
+                "750",
+                "6500"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
