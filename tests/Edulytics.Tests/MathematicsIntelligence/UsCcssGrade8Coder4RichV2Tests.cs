@@ -214,3 +214,42 @@ public sealed class UsCcssGrade8Coder4FullCourseRichV2Tests
         Assert.Equal(10d,Math.Sqrt(Math.Pow(4-(-2),2)+Math.Pow(9-1,2)));
     }
 }
+
+
+public sealed class UsCcssGrade8Coder4ExistingPracticeSmokeTests
+{
+    [Fact]
+    public void Grade8Unit4Lesson5OneVariableFamilyActuallyGeneratesAndRejectsMalformedAnswers()
+    {
+        const string code = "PED:US-CCSS-MATH:G8:U04:L05";
+        Assert.True(Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry
+            .TryResolve(code, out var contract));
+        Assert.NotNull(contract);
+        const string family = "algebra.linear.ax_plus_b_equals_c";
+        Assert.Contains(family, contract.AllowedQuestionFamilies);
+        Assert.True(Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine
+            .SupportsFamily(family));
+        var engine = new Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine();
+        var questions = engine.Generate(
+            fingerprintNamespace: "usccss-g8-coder4-v7-local-smoke",
+            scopeKey: code,
+            allowedQuestionFamilies: [family],
+            difficulty: Edulytics.Services.Mathematics.ExactSkillQuestionDifficulty.Standard,
+            questionCount: 8,
+            seed: 20261029,
+            excludedExposureFingerprints: []);
+        Assert.Equal(8, questions.Count);
+        foreach (var question in questions)
+        {
+            Assert.Equal(family, question.Family);
+            Assert.True(Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine
+                .Verify(question.Family, question.Parameters, question.CorrectAnswer));
+            Assert.False(Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine
+                .Verify(question.Family, question.Parameters, "definitely-not-a-number"));
+            Assert.False(Edulytics.Services.Mathematics.ExactSkillContractQuestionEngine
+                .Verify(question.Family, question.Parameters, "999999999"));
+        }
+        // Smoke-only: no student auth, attempt persistence, full lesson objective
+        // coverage, accessibility or teacher-assessed task has been verified.
+    }
+}

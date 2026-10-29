@@ -55,6 +55,11 @@ const report={schemaVersion:1,scope:'US-CCSS-MATH:G8:OUR-IM-2017',lessonCount:ro
  authenticatedPracticeLessons:0,teacherAssessmentPersistedLessons:0,verifiedLessonExactPractice:0,
  warning:'A registry entry identifies a candidate Practice target; it does not establish that a question correctly assesses this exact publisher lesson, that a generator renders, that grading is secure, or that attempts are persisted. These remain unverified for ALL 131 lessons.',
  rows};
+report.unmappedMathematicalPracticeOutcomes=[...new Set(rows.flatMap(row=>row.officialOutcomeTargets.filter(t=>!t.resolvedStatic&&t.code.startsWith('CCSS:MP.')).map(t=>t.code)))].sort();
+report.unmappedFormalOutcomes=[...new Set(rows.flatMap(row=>row.officialOutcomeTargets.filter(t=>!t.resolvedStatic&&!t.code.startsWith('CCSS:MP.')).map(t=>t.code)))].sort();
+report.lessonsWithOnlyMathematicalPracticeTargets=rows.filter(row=>row.officialOutcomeTargets.every(t=>t.code.startsWith('CCSS:MP.'))).map(row=>row.lessonCode);
+report.lessonsWithMultipleResolvedConcreteFamilies=rows.filter(row=>new Set(row.officialOutcomeTargets.filter(t=>t.resolvedStatic).map(t=>t.targetRuleId)).size>1).map(row=>row.lessonCode);
+report.note='Mathematical Practice (MP) outcomes without direct outcome-target mappings are not automatically missing Grade 8 content standards; source and exact task suitability still require independent inspection. All generator/runtime claims remain unverified.';
 const p='docs/curriculum/us-ccss-g8-coder4-practice-crosswalk-20261029.json';
 fs.writeFileSync(path.join(root,p),JSON.stringify(report,null,2)+'\n');
 console.log('PRACTICE_CROSSWALK '+JSON.stringify({lessonCount:report.lessonCount,explicitMappings:report.explicitLessonSkillMappings,staticMappedAll:report.staticOfficialTargetsMappedForAllLessons,unmapped:report.unmappedLessonCodes,potentialMultipleTarget:report.potentialMultipleTargetLessonCodes,targetRuleFrequency:report.targetRuleFrequency}));

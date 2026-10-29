@@ -150,3 +150,35 @@ test('exact Practice, teacher observation and academic approvals are never manuf
   assert.ok(row.unresolved.length>=5);
  }
 });
+
+test('V7 per-lesson triage preserves source, Practice and teacher evidence without promotion',()=>{
+ const gate=read('docs/curriculum/us-ccss-g8-coder4-v7-lesson-gates-20261029.json');
+ const audit=read('docs/curriculum/us-ccss-g8-coder4-practice-crosswalk-20261029.json');
+ assert.equal(gate.totalLessons,131);
+ assert.equal(new Set(gate.rows.map(x=>x.lessonCode)).size,131);
+ assert.deepEqual(gate.rows.map(x=>x.lessonCode),bp.Lessons.map(x=>x.LessonCode));
+ assert.equal(gate.coverage.richCandidates,131);
+ assert.equal(gate.coverage.acceptedA,0);
+ assert.equal(gate.coverage.acceptedB,0);
+ assert.equal(gate.coverage.verifiedPracticeC,0);
+ assert.equal(gate.coverage.verifiedRuntimeD,0);
+ assert.equal(gate.coverage.sourceRoleDiscrepancy,22);
+ assert.equal(gate.coverage.mathematicalPracticeOnlyOutcomes,12);
+ assert.equal(gate.coverage.unmappedFormalOutcomes,0);
+ assert.equal(gate.coverage.multiPracticeFamilyTargets,18);
+ assert.equal(gate.coverage.explicitSkillSemanticMismatchCandidates,1);
+ assert.equal(gate.rows.find(x=>x.lessonCode==='PED:US-CCSS-MATH:G8:U03:L12').evidence.semanticPracticeMismatchCandidate,true);
+ assert.equal(audit.unmappedFormalOutcomes.length,0);
+ assert.deepEqual(audit.unmappedMathematicalPracticeOutcomes,['CCSS:MP.1','CCSS:MP.2','CCSS:MP.3','CCSS:MP.4','CCSS:MP.5','CCSS:MP.6','CCSS:MP.7','CCSS:MP.8']);
+ for(const row of gate.rows){
+  assert.ok(row.classification.includes('SOURCE_REVIEW_BLOCKED'));
+  assert.ok(row.classification.includes('TEACHER_ASSESSMENT'));
+  assert.equal(row.evidence.academicA,false);
+  assert.equal(row.evidence.academicB,false);
+  assert.equal(row.evidence.academicC,false);
+  assert.equal(row.evidence.academicD,false);
+  assert.equal(row.evidence.actualPracticeGenerated,false);
+  assert.equal(row.evidence.actualAuthLearnerRendering,false);
+  assert.equal(row.evidence.integratedTeacherScoringRubric,false);
+ }
+});
