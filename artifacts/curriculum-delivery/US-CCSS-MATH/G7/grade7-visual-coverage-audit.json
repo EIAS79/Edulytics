@@ -47,7 +47,12 @@
       "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED",
       "v6OriginalStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
       "v6SvgGeometryStaticVerified": "PASS_SOURCE_MATH_ONLY",
-      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN"
+      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN",
+      "v7OriginalFigureSourcePath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "v7GradeSpecificComponentCreated": true,
+      "v7SharedRendererInvoked": false,
+      "v7AuthenticatedStudentFigure": "NOT_RUN",
+      "v7PageAndScreenReader": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
@@ -71,7 +76,12 @@
       "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED",
       "v6OriginalStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
       "v6SvgGeometryStaticVerified": "PASS_SOURCE_MATH_ONLY",
-      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN"
+      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN",
+      "v7OriginalFigureSourcePath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "v7GradeSpecificComponentCreated": true,
+      "v7SharedRendererInvoked": false,
+      "v7AuthenticatedStudentFigure": "NOT_RUN",
+      "v7PageAndScreenReader": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
@@ -95,7 +105,12 @@
       "sourceParityStatus": "STUDENT_PAGE_DIRECTLY_COMPARED_VISUAL_RENDER_NOT_VERIFIED",
       "v6OriginalStaticSvgPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
       "v6SvgGeometryStaticVerified": "PASS_SOURCE_MATH_ONLY",
-      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN"
+      "v6AuthenticatedRichV2SvgRendering": "NOT_RUN",
+      "v7OriginalFigureSourcePath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "v7GradeSpecificComponentCreated": true,
+      "v7SharedRendererInvoked": false,
+      "v7AuthenticatedStudentFigure": "NOT_RUN",
+      "v7PageAndScreenReader": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
@@ -2955,5 +2970,16 @@
     "teacherRubricUIIntegration": "NOT_IMPLEMENTED",
     "screenReader": "NOT_RUN",
     "next": "Supervisor-designated shared renderer/learner UI integration under #592, protected regression tests"
+  },
+  "v7": {
+    "partial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "newDotNetTest": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "supervisedIntegrationHandoff": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v7-svg-student-renderer-integration-handoff.json",
+    "assetsMathematicallyAndBoundsVerifiedStatic": 3,
+    "assetsAuthenticatedVisible": 0,
+    "gradePartialCompiledByCI": "NOT_RUN",
+    "sharedRendererInvokesGradePartial": false,
+    "sourceAssetsOriginal": true,
+    "screenReaderAuthenticated": "NOT_RUN"
   }
 }
