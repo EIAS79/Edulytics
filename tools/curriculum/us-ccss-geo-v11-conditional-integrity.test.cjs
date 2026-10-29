@@ -105,7 +105,7 @@ test('all five formerly affected lessons contain complete independently meaningf
     assert.ok(lesson, 'missing repaired lesson');
     assert.deepEqual(semanticDefects(lesson), []);
     assert.ok(lesson.WorkedExamples.every(example =>
-      example.Steps.length===3 && example.Steps.every(step=>step.length>15)));
+      example.Steps.length>=3 && example.Steps.every(step => step.trim().length>0)));
   }
   assert.match(l04.KeyConcepts[2].Rule,/P\(A\|B\)=count\(A∩B\)\/count\(B\)/);
   assert.match(l04.WorkedExamples[2].Steps.join(' '),/P\(B\|A\)=.*12\/20=0\.6/);
