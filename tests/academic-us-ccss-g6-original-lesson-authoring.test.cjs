@@ -1122,3 +1122,80 @@ test('U03 L01–L03 source-specific measurements preserve estimates, unit types 
   assert.equal(18/6,3);
   assert.ok(Math.abs(16.387064 * 3 - 49.161192) < 1e-9);
 });
+
+test('U03 L04–L07 authentic tasks, Grade 6-only sources and no-go rubric boundaries', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l04-l07-public-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(evidence.summary.directStudentActivityBodiesCompared, 4);
+  assert.equal(evidence.summary.publicTeacherActivityBodiesCompared, 4);
+  assert.equal(evidence.summary.updatedDirectTotal, 105);
+  assert.equal(evidence.summary.remainingDirectComparisons, 42);
+  assert.equal(evidence.summary.fullStageAAccepted, 0);
+  assert.equal(evidence.integrity.sharedEngineTestsOrSeederEdited, false);
+  assert.deepEqual(evidence.lessons.map(l => l.lessonCode), [4,5,6,7].map(n => lcode(3,n)));
+  for (const l of evidence.lessons) {
+    const en = byCode.get(l.lessonCode).translations[0];
+    assert.equal(l.publicStudentTaskBodiesReviewed, true, l.lessonCode);
+    assert.equal(l.publicTeacherActivityBodyAndLearningGoalsCompared, true, l.lessonCode);
+    assert.equal(l.fullProtectedTeacherGuideAndCooldownReviewed, false, l.lessonCode);
+    assert.ok(l.sourceActivityPurposes.length >= 4, l.lessonCode);
+    assert.ok(l.requiredRepresentations.length >= 3, l.lessonCode);
+    assert.ok(l.grade6OriginalTeachingAdded.length >= 3, l.lessonCode);
+    assert.equal(l.teacherRubricCandidate.scoreMax, 8, l.lessonCode);
+    assert.equal(l.teacherRubricCandidate.implemented, false, l.lessonCode);
+    assert.equal(l.teacherRubricCandidate.persisted, false, l.lessonCode);
+    assert.equal(l.sourceVisualAssetOrAppletVerified, false, l.lessonCode);
+    assert.equal(l.authenticatedRenderedAccessibilityVerified, false, l.lessonCode);
+    assert.equal(l.actualSelectedPracticeContractVerified, false, l.lessonCode);
+    assert.equal(l.correctWrongEquivalentMalformedSubmissionScoringVerified, false, l.lessonCode);
+    assert.equal(l.twoSchoolIsolationVerified, false, l.lessonCode);
+    assert.equal(l.academicAcceptance, 'NOT_ACCEPTED', l.lessonCode);
+    assert.match(en.workedExamples, /Example 3:/, l.lessonCode);
+    assert.ok(en.workedExamples.includes('Description: '), l.lessonCode);
+  }
+  const a = byCode.get(lcode(3,4)).translations[0];
+  const b = byCode.get(lcode(3,5)).translations[0];
+  const c = byCode.get(lcode(3,6)).translations[0];
+  const d = byCode.get(lcode(3,7)).translations[0];
+  assert.match(a.workedExamples, /1 kilometer is about 0\.625 mile/);
+  assert.match(a.workedExamples, /88-pound animal is 40 kg/);
+  assert.match(a.workedExamples, /28 tablespoons is 1\.75 cups/);
+  assert.match(b.workedExamples, /about 14\.29 minutes/);
+  assert.match(b.workedExamples, /\$0\.05 per ounce/);
+  assert.match(c.workedExamples, /0\.4 cup oats per cup water/);
+  assert.match(c.workedExamples, /1,000 tickets would cost \$4,000/);
+  assert.match(d.workedExamples, /16 2\/3 hours/);
+  assert.match(d.workedExamples, /750-gallon pool requires 200 minutes/);
+});
+
+test('U03 L04–L07 independent dimensional rate oracles detect reciprocal and denominator errors', () => {
+  const near = (a,b) => Math.abs(a-b) < 1e-9;
+  assert.ok(near(8/5, 1.6));          // km / mile, approximate
+  assert.ok(near(5/8, 0.625));        // mile / km, approximate
+  assert.ok(near(75*8/5-80,40));     // speeding in km/h
+  assert.ok(near(75-80*5/8,25));     // same speeding in mph
+  assert.ok(near(88/2.2,40));
+  assert.ok(near(33/2.2,15));
+  assert.ok(near(5.5/2.2,2.5));
+  assert.ok(near(25*2.2,55));
+  assert.deepEqual([0.5,1.25,2.75].map(x=>16*x),[8,20,44]);
+  assert.ok(near(28/16,1.75) && near(6/16,0.375));
+  assert.ok(near(4200/30,6300/45));
+  assert.ok(near(6300/30,210));
+  assert.ok(near(6300/30-4200/30,70));
+  assert.ok(near(1000/(210-140),100/7));
+  assert.deepEqual([6/8,10/10,3/2,0.80], [0.75,1,1.5,0.8]);
+  assert.ok(near(0.75/15,1.4/28));
+  assert.ok(!near(0.8/15,0.75/15)); // distinguish other per-can offers
+  assert.ok(near(15/6,2.5) && near(6/15,0.4));
+  assert.ok(near(5*2.5,12.5) && near(10*0.4,4));
+  assert.ok(near(12/15*35,28));
+  assert.ok(near(3/(10/6),1.8));
+  assert.ok(near(16/4*1000,4000));
+  assert.deepEqual([4,5,10].map(x=>7*x),[28,35,70]);
+  assert.deepEqual([2,5,7].map(x=>6*x),[12,30,42]);
+  assert.ok(near(100/6,50/3));
+  assert.ok(near(7*6/4,10.5) && near(9*4/6,6));
+  assert.ok(near(750/(5/2+10/8),200));
+  assert.notEqual(10/4,15/4);       // scaling only one side breaks ratio
+});
