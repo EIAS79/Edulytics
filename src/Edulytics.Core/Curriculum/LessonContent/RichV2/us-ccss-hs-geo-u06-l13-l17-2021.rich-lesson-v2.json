@@ -1,0 +1,453 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u06-l13-l17-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L13",
+      "CultureCode": "en",
+      "Title": "Intersection Points",
+      "ExplanationParagraphs": [
+        "Learning goal: Solve intersections of a line and a circle or parabola as a linear–quadratic system, recognizing zero, one or two real points.",
+        "Replace y with the line expression in quadratic curve equation Solve resulting polynomial and substitute back",
+        "For ax²+bx+c=0, Δ=b²−4ac controls real root count Check curve and line at candidate",
+        "Original student task: Draw line/conic plots and show algebraic intersection correspondence; teacher assesses proof. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 13, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Substitution",
+          "Definition": "Replace y with the line expression in quadratic curve equation",
+          "Rule": "Solve resulting polynomial and substitute back",
+          "Example": "y=x intersect y=x² at x=0,1"
+        },
+        {
+          "Title": "Discriminant",
+          "Definition": "For ax²+bx+c=0, Δ=b²−4ac controls real root count",
+          "Rule": "Two, one or zero roots for Δ>0,=0,<0",
+          "Example": "x²−4=0 has two"
+        },
+        {
+          "Title": "Tangent intersection",
+          "Definition": "A single repeated real root means tangency in suitable line–conic setting",
+          "Rule": "Check curve and line at candidate",
+          "Example": "y=0 meets (x−1)²+y²=1 at x=0,2 (secant)"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Intersection Points — worked example 1",
+          "Question": "Intersect line y=x and parabola y=x².",
+          "Method": "Substitution",
+          "Steps": [
+            "Set x=x²",
+            "Factor x(x−1)=0",
+            "Points from y=x are (0,0),(1,1)"
+          ],
+          "Answer": "Two intersections (0,0),(1,1).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Intersection Points — worked example 2",
+          "Question": "Intersect y=1 and circle x²+y²=1.",
+          "Method": "Discriminant",
+          "Steps": [
+            "Substitute y=1 gives x²+1=1",
+            "Thus x=0",
+            "Point (0,1) is unique"
+          ],
+          "Answer": "One tangent intersection (0,1).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Intersection Points — worked example 3",
+          "Question": "Intersect line y=3 with circle x²+y²=4.",
+          "Method": "Tangent intersection",
+          "Steps": [
+            "Substitute y=3 gives x²+9=4",
+            "Then x²=−5 has no real solution",
+            "Line lies beyond radius 2"
+          ],
+          "Answer": "No real intersection.",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reporting complex roots as real plane intersections",
+          "WhyWrong": "Cartesian geometric points require real coordinates",
+          "Correction": "Classify discriminant first"
+        },
+        {
+          "Mistake": "Solving for x without restoring y",
+          "WhyWrong": "An intersection is an ordered pair",
+          "Correction": "Substitute every root into the line"
+        }
+      ],
+      "SummaryPoints": [
+        "Solve intersections of a line and a circle or parabola as a linear–quadratic system, recognizing zero, one or two real points.",
+        "Two, one or zero roots for Δ>0,=0,<0",
+        "Teacher evaluation is required for original coordinate proofs and graphical submissions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L14",
+      "CultureCode": "en",
+      "Title": "Coordinate Proof",
+      "ExplanationParagraphs": [
+        "Learning goal: Use coordinates, squared distance, slope and midpoint to prove a geometric statement without relying on diagram appearance.",
+        "Midpoint of A(x1,y1),B(x2,y2) is ((x1+x2)/2,(y1+y2)/2) Opposite midpoint matches establish diagonal bisection",
+        "Equal squared lengths show congruent sides without square roots For AB=(2,3) and CD=(4,6), parallel",
+        "Original student task: Select coordinate origin and prove one quadrilateral classification; teacher reviews written logic. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 14, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Midpoint",
+          "Definition": "Midpoint of A(x1,y1),B(x2,y2) is ((x1+x2)/2,(y1+y2)/2)",
+          "Rule": "Opposite midpoint matches establish diagonal bisection",
+          "Example": "A(0,0),C(4,4) midpoint (2,2)"
+        },
+        {
+          "Title": "Distance proof",
+          "Definition": "Equal squared lengths show congruent sides without square roots",
+          "Rule": "Use d²=Δx²+Δy²",
+          "Example": "Sides (3,4) and (−4,3) both length 5"
+        },
+        {
+          "Title": "Parallel proof",
+          "Definition": "Vectors proportional ⇒ directions parallel for distinct lines",
+          "Rule": "For AB=(2,3) and CD=(4,6), parallel",
+          "Example": "Check collinearity and distinctness"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Coordinate Proof — worked example 1",
+          "Question": "Prove quadrilateral A(0,0),B(4,0),C(6,3),D(2,3) is parallelogram.",
+          "Method": "Midpoint",
+          "Steps": [
+            "AB vector (4,0), DC vector (4,0)",
+            "BC vector (2,3), AD vector (2,3)",
+            "Both opposite sides parallel and congruent"
+          ],
+          "Answer": "ABCD is parallelogram.",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Coordinate Proof — worked example 2",
+          "Question": "Are segments from (0,0) to (3,4) and from (2,1) to (−2,4) congruent?",
+          "Method": "Distance proof",
+          "Steps": [
+            "First squared length 3²+4²=25",
+            "Second vector (−4,3) squared length 16+9=25",
+            "Equal lengths imply segment congruence"
+          ],
+          "Answer": "Yes, each length 5.",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Coordinate Proof — worked example 3",
+          "Question": "Find common midpoint of diagonals AC with A(0,0),C(4,4) and BD with B(4,0),D(0,4).",
+          "Method": "Parallel proof",
+          "Steps": [
+            "AC midpoint ((0+4)/2,(0+4)/2)=(2,2)",
+            "BD midpoint ((4+0)/2,(0+4)/2)=(2,2)",
+            "Both bisect each other"
+          ],
+          "Answer": "Midpoint (2,2).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating plotted slopes as exact proof",
+          "WhyWrong": "Sketch slope may be inaccurate",
+          "Correction": "Use coordinate differences"
+        },
+        {
+          "Mistake": "Comparing distance components instead of squared sums",
+          "WhyWrong": "Rotated congruent sides have different coordinate changes",
+          "Correction": "Use Δx²+Δy²"
+        }
+      ],
+      "SummaryPoints": [
+        "Use coordinates, squared distance, slope and midpoint to prove a geometric statement without relying on diagram appearance.",
+        "Use d²=Δx²+Δy²",
+        "Teacher evaluation is required for original coordinate proofs and graphical submissions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L15",
+      "CultureCode": "en",
+      "Title": "Weighted Averages",
+      "ExplanationParagraphs": [
+        "Learning goal: Partition a segment at a stated positive ratio using weighted coordinate averages, and interpret internal versus external division.",
+        "Point P at fraction t∈[0,1] from A to B is A+t(B−A) Compute each coordinate separately",
+        "If AP:PB=m:n with m,n>0 then t=m/(m+n) Distinguish segment from entire line",
+        "Original student task: Draw line and mark partition ratios in two different coordinate settings; teacher checks exact construction. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 15, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Internal partition",
+          "Definition": "Point P at fraction t∈[0,1] from A to B is A+t(B−A)",
+          "Rule": "Compute each coordinate separately",
+          "Example": "For A(0,0),B(10,6), t=1/2 gives (5,3)"
+        },
+        {
+          "Title": "Ratio convention",
+          "Definition": "If AP:PB=m:n with m,n>0 then t=m/(m+n)",
+          "Rule": "Do not reverse weights",
+          "Example": "AP:PB=2:3 gives t=2/5"
+        },
+        {
+          "Title": "External case",
+          "Definition": "t outside [0,1] lies on extended line beyond segment",
+          "Rule": "Distinguish segment from entire line",
+          "Example": "t=1.5 produces point past B"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Weighted Averages — worked example 1",
+          "Question": "A=(0,0), B=(10,5), AP:PB=2:3. Find P.",
+          "Method": "Internal partition",
+          "Steps": [
+            "Fraction t=2/(2+3)=2/5",
+            "Coordinate P=A+(2/5)(B−A)",
+            "P=(4,2)"
+          ],
+          "Answer": "P=(4,2).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Weighted Averages — worked example 2",
+          "Question": "A=(2,4),B=(8,−2), find point at t=1/3.",
+          "Method": "Ratio convention",
+          "Steps": [
+            "Compute B−A=(6,−6)",
+            "Multiply (1/3) gives (2,−2)",
+            "Add A to get (4,2)"
+          ],
+          "Answer": "P=(4,2).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Weighted Averages — worked example 3",
+          "Question": "With A=(0,0),B=(4,0), t=3/2, is image on segment?",
+          "Method": "External case",
+          "Steps": [
+            "Coordinate A+t(B−A)=(6,0)",
+            "B endpoint has x=4",
+            "6 lies outside segment interval [0,4]"
+          ],
+          "Answer": "No, point is beyond B.",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reversing ratio weights",
+          "WhyWrong": "AP:PB=m:n gives fraction m/(m+n)",
+          "Correction": "Write t carefully"
+        },
+        {
+          "Mistake": "Treating t>1 as internal",
+          "WhyWrong": "Point leaves segment",
+          "Correction": "State domain for segment partition"
+        }
+      ],
+      "SummaryPoints": [
+        "Partition a segment at a stated positive ratio using weighted coordinate averages, and interpret internal versus external division.",
+        "Do not reverse weights",
+        "Teacher evaluation is required for original coordinate proofs and graphical submissions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L16",
+      "CultureCode": "en",
+      "Title": "Weighted Averages in a Triangle",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove that all three medians concur at the centroid and compute the centroid as the average of vertex coordinates.",
+        "Segment from vertex to opposite-side midpoint Find side midpoint first",
+        "G=(A+B+C)/3 coordinatewise G=A+(2/3)(M−A)",
+        "Original student task: Construct all three medians on grid and prove their common centroid algebraically; teacher assesses diagram/proof. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 16, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Median",
+          "Definition": "Segment from vertex to opposite-side midpoint",
+          "Rule": "Find side midpoint first",
+          "Example": "Median A→midpoint BC"
+        },
+        {
+          "Title": "Centroid",
+          "Definition": "G=(A+B+C)/3 coordinatewise",
+          "Rule": "Intersection of all three medians",
+          "Example": "A(0,0),B(6,0),C(0,3) gives G(2,1)"
+        },
+        {
+          "Title": "Two-to-one ratio",
+          "Definition": "Centroid divides median 2:1 from vertex",
+          "Rule": "G=A+(2/3)(M−A)",
+          "Example": "A(0,0),M(3,3) gives G(2,2)"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Weighted Averages in a Triangle — worked example 1",
+          "Question": "Triangle vertices (0,0),(6,0),(0,3). Find centroid.",
+          "Method": "Median",
+          "Steps": [
+            "Add x coordinates 0+6+0=6",
+            "Add y coordinates 0+0+3=3",
+            "Divide each sum by 3"
+          ],
+          "Answer": "G=(2,1).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Weighted Averages in a Triangle — worked example 2",
+          "Question": "Median from A(0,0) to midpoint M(3,3). Find centroid.",
+          "Method": "Centroid",
+          "Steps": [
+            "G divides A→M at t=2/3",
+            "Compute (2/3)(3,3)=(2,2)",
+            "G lies on line AM"
+          ],
+          "Answer": "G=(2,2).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Weighted Averages in a Triangle — worked example 3",
+          "Question": "Explain why G=(A+B+C)/3 is on median from A to midpoint of BC.",
+          "Method": "Two-to-one ratio",
+          "Steps": [
+            "Midpoint M=(B+C)/2",
+            "A+(2/3)(M−A)=(A+B+C)/3 by expansion",
+            "Thus G lies 2/3 along median"
+          ],
+          "Answer": "Median concurrence formula is consistent for every vertex.",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing median 1:2 from vertex",
+          "WhyWrong": "Centroid is nearer midpoint, not vertex",
+          "Correction": "Use 2/3 from vertex"
+        },
+        {
+          "Mistake": "Averaging lengths instead of coordinates",
+          "WhyWrong": "Centroid uses coordinatewise vector average",
+          "Correction": "Sum each coordinate separately"
+        }
+      ],
+      "SummaryPoints": [
+        "Prove that all three medians concur at the centroid and compute the centroid as the average of vertex coordinates.",
+        "Intersection of all three medians",
+        "Teacher evaluation is required for original coordinate proofs and graphical submissions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L17",
+      "CultureCode": "en",
+      "Title": "Lines in Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: Use coordinate slopes and perpendicularity to determine and verify concurrency of triangle altitudes at the orthocenter, distinguishing special right and obtuse cases.",
+        "Line through vertex perpendicular to opposite side Find slope or use dot product",
+        "Common intersection of triangle's three altitude lines Extend altitude lines, not just segments",
+        "Original student task: Plot acute, right and obtuse triangles and verify altitude concurrency with independent slope tests; teacher scores proofs. Teacher rubric (0–4): precise hypotheses and diagrams, valid operations, independently checked results and clear explanation. Never equate a numeric answer with grading proof work.",
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 6 Lesson 17, CC BY 4.0. Independently authored examples; no source artwork or protected assessments."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Altitude",
+          "Definition": "Line through vertex perpendicular to opposite side",
+          "Rule": "Find slope or use dot product",
+          "Example": "For horizontal BC, altitude from A is vertical"
+        },
+        {
+          "Title": "Orthocenter",
+          "Definition": "Common intersection of triangle's three altitude lines",
+          "Rule": "Two altitudes determine candidate; verify third",
+          "Example": "For right triangle orthocenter is right-angle vertex"
+        },
+        {
+          "Title": "Obtuse case",
+          "Definition": "Orthocenter may lie outside triangle",
+          "Rule": "Extend altitude lines, not just segments",
+          "Example": "Angle at A obtuse can place H outside"
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Lines in Triangles — worked example 1",
+          "Question": "Triangle A=(0,0),B=(4,0),C=(0,3). Find orthocenter.",
+          "Method": "Altitude",
+          "Steps": [
+            "AB horizontal, altitude from C vertical x=0",
+            "AC vertical, altitude from B horizontal y=0",
+            "Intersect x=0,y=0 at A"
+          ],
+          "Answer": "Orthocenter H=(0,0).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Lines in Triangles — worked example 2",
+          "Question": "Triangle A=(0,2),B=(−2,0),C=(2,0). Find orthocenter.",
+          "Method": "Orthocenter",
+          "Steps": [
+            "BC horizontal, A altitude x=0",
+            "AC has slope −1/2 so B altitude slope 2",
+            "Through B(−2,0): y=2(x+2); at x=0 y=4"
+          ],
+          "Answer": "Orthocenter H=(0,4).",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        },
+        {
+          "Title": "Lines in Triangles — worked example 3",
+          "Question": "Verify third altitude of same triangle passes through H=(0,4).",
+          "Method": "Obtuse case",
+          "Steps": [
+            "AB slope (0−2)/(−2−0)=1",
+            "Altitude from C has slope −1",
+            "Through C(2,0), line y=−(x−2)",
+            "At x=0 this yields y=2, not 4"
+          ],
+          "Answer": "The proposed H=(0,4) is incorrect; recheck the other altitude equations.",
+          "Check": "Verify the candidate against original coordinate conditions and exceptional cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using side slope instead of negative reciprocal",
+          "WhyWrong": "Altitude must be perpendicular to opposite side",
+          "Correction": "Take −1/m or dot-product zero"
+        },
+        {
+          "Mistake": "Declaring concurrence after only two lines without checking third",
+          "WhyWrong": "A mistaken slope can produce false intersection",
+          "Correction": "Substitute into third altitude"
+        }
+      ],
+      "SummaryPoints": [
+        "Use coordinate slopes and perpendicularity to determine and verify concurrency of triangle altitudes at the orthocenter, distinguishing special right and obtuse cases.",
+        "Two altitudes determine candidate; verify third",
+        "Teacher evaluation is required for original coordinate proofs and graphical submissions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
