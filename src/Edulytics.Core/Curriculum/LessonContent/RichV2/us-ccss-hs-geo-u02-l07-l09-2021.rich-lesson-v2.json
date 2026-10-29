@@ -1,0 +1,291 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u02-l07-l09-source-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+      "CultureCode": "en",
+      "Title": "Angle-Side-Angle Triangle Congruence",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the Angle-Side-Angle (ASA) triangle congruence theorem using rigid transformations and apply it to prove opposite sides of a parallelogram congruent.",
+        "ASA means two angles and the side included BETWEEN those angles. For triangles ABC and DEF, if ∠A=∠D, AB=DE and ∠B=∠E, map AB onto DE by a rigid motion. A reflection about the common line if necessary places C on the target side; the equal angles at A and B constrain C to lie on both corresponding rays. Two distinct nonparallel rays intersect in a unique point, so C maps to F.",
+        "Verbal diagram: parallelogram ABCD has opposite sides AB∥CD and BC∥AD. Draw diagonal AC. Angles BAC and DCA are congruent as alternate interior angles on AB∥CD, and angles BCA and DAC are congruent using BC∥AD; common included side AC gives ASA on triangles BAC and DCA with vertex order B↔D,A↔C,C↔A. Hence AB=CD and BC=AD.",
+        "Student task: construct the ASA proof in a two-column or narrative format, then annotate a parallelogram divided by a diagonal and prove both opposite side pairs congruent without assuming the desired result. Teacher rubric (0–4): included-side correspondence, valid rigid-motion proof, alternate-interior-angle hypotheses, correct parallelogram conclusion. Proof/figure activity requires human scoring.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. All instructional prose, problems and solutions here are independent Edulytiks work; third-party illustrations and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "ASA criterion",
+          "Definition": "Two corresponding angles and their included side are congruent in two triangles; therefore the triangles are congruent.",
+          "Rule": "Check that the known side joins the vertices of the two known angles.",
+          "Example": "∠A=∠D, AB=DE, ∠B=∠E imply ABC≅DEF."
+        },
+        {
+          "Title": "Ray-intersection uniqueness",
+          "Definition": "Two distinct nonparallel rays fixed by corresponding included angles meet at at most one third vertex.",
+          "Rule": "After aligning the included side, the two angle constraints uniquely locate the third vertex for a nondegenerate triangle.",
+          "Example": "A ray from A at 40 degrees and a ray from B at 65 degrees can meet at only one C on the designated side."
+        },
+        {
+          "Title": "Parallelogram opposite sides",
+          "Definition": "A parallelogram has two pairs of parallel opposite sides; congruence of opposite sides can be proved with a diagonal.",
+          "Rule": "Use parallel-transversal equalities and the common included diagonal to apply ASA.",
+          "Example": "If AB∥CD and BC∥AD, then AB=CD and BC=AD."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Proof of ASA",
+          "Question": "Suppose ∠A=∠D, AB=DE, and ∠B=∠E. Explain why ABC≅DEF.",
+          "Method": "Map AB to DE and determine the intersection of matching angle rays.",
+          "Steps": [
+            "Map segment AB to DE by a rigid transformation, sending A→D and B→E.",
+            "If C and F lie on opposite sides of DE, reflect the image across DE, fixing D and E.",
+            "The equal angle at A makes image C lie on the ray from D forming ∠D with DE; similarly the equal angle at B puts it on the corresponding ray from E.",
+            "The two rays have a unique intersection for a nondegenerate triangle; hence image C=F.",
+            "All three vertices coincide, so the triangles are congruent."
+          ],
+          "Answer": "ASA is a valid triangle-congruence criterion.",
+          "Check": "AB and DE are the sides included between the supplied angle pairs."
+        },
+        {
+          "Title": "Prove parallelogram opposite sides congruent",
+          "Question": "ABCD is a parallelogram. Using diagonal AC, prove AB=CD and BC=AD.",
+          "Method": "Apply ASA using parallel-line alternate interior angles and shared AC.",
+          "Steps": [
+            "AB∥CD implies ∠BAC=∠DCA with transversal AC.",
+            "BC∥AD implies ∠BCA=∠DAC with transversal AC.",
+            "Segment AC is common to triangles BAC and DCA and is included between those two angle pairs.",
+            "Thus triangles BAC and DCA are congruent by ASA.",
+            "Corresponding opposite sides satisfy AB=CD and BC=AD."
+          ],
+          "Answer": "Both pairs of opposite sides of a parallelogram are congruent.",
+          "Check": "The proof derives side equality from parallel hypotheses, not from the appearance of the drawing."
+        },
+        {
+          "Title": "Distinguish ASA from AAS",
+          "Question": "Triangles have ∠A=45°, ∠B=65°, and side AC=7. Is AC the included side between the known angles?",
+          "Method": "Identify the segment joining the known angle vertices.",
+          "Steps": [
+            "The known angle vertices are A and B.",
+            "Their included side is AB, not AC.",
+            "Thus the given arrangement is angle-angle-side (AAS), not ASA.",
+            "The third angle is C=180−45−65=70°, and ASA can be applied after using the angle-sum theorem."
+          ],
+          "Answer": "AC is not included; these are AAS data, still sufficient for triangle congruence.",
+          "Check": "An AAS proof can derive the missing angle and then use ASA."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating any matching side as the included side in ASA.",
+          "WhyWrong": "The known side must connect the two given angle vertices for the stated theorem.",
+          "Correction": "Check vertex labels; if it is a nonincluded side, state AAS and its separate justification."
+        },
+        {
+          "Mistake": "Assuming parallelogram opposite sides are equal while proving they are equal.",
+          "WhyWrong": "This is circular and omits the required ASA argument.",
+          "Correction": "Start only with opposite sides parallel and common diagonal, then infer equal angles and triangle congruence."
+        }
+      ],
+      "SummaryPoints": [
+        "ASA gives congruence from two angles and their included side.",
+        "A rigid alignment fixes the side, and the angle rays fix the third vertex.",
+        "The same theorem proves opposite sides congruent in any nondegenerate parallelogram; authentic proofs require teacher scoring."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+      "CultureCode": "en",
+      "Title": "The Perpendicular Bisector Theorem",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove both directions of the perpendicular-bisector theorem and identify why merely drawing a desired line is not proof that it is perpendicular or bisects a segment.",
+        "For distinct endpoints A and B, a point P lies on the perpendicular bisector of AB if and only if PA=PB. Forward direction: if M is midpoint AB and PM is perpendicular AB, triangles PMA and PMB are congruent by SAS (PM shared, AM=BM, included right angles), giving PA=PB. P=M is an immediate special case.",
+        "Converse direction: assume PA=PB. Let M be midpoint AB. Triangles PAM and PBM have PA=PB, AM=BM and PM shared, so SSS gives congruence. For P not on line AB, angles PMA and PMB are equal adjacent supplementary angles, hence each 90°, making PM perpendicular AB. If P=M, it already lies on the perpendicular bisector without needing the zero-length segment PM to define a line.",
+        "Verbal diagram: A and B lie on a horizontal segment, M midpoint, P located above the segment. A correct argument proves PM meets AB at M and at a right angle, rather than assuming the line has both properties because it was sketched that way.",
+        "Student task: write two logically separate proofs, one from 'P on perpendicular bisector' to 'PA=PB' and one converse; critique a proposed circular proof. Teacher rubric (0–4): correct hypothesis in each direction, valid triangle congruence, explicit perpendicular/midpoint conclusion, correct degenerate case. Proof and diagram evidence are human-scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. All instructional prose, problems and solutions here are independent Edulytiks work; third-party illustrations and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Perpendicular-bisector theorem",
+          "Definition": "If P lies on the perpendicular bisector of nonzero AB then PA=PB.",
+          "Rule": "Use SAS on right triangles PAM and PBM with shared PM and AM=BM.",
+          "Example": "Any point on x=0 is equidistant from A=(−3,0) and B=(3,0)."
+        },
+        {
+          "Title": "Converse theorem",
+          "Definition": "If PA=PB for distinct A,B, then P lies on their perpendicular bisector.",
+          "Rule": "Use SSS for PAM and PBM to prove perpendicularity, treating midpoint P=M separately.",
+          "Example": "If P=(0,4) and A=(−3,0),B=(3,0), PA=PB=5 and P lies on x=0."
+        },
+        {
+          "Title": "Converse versus inverse",
+          "Definition": "A converse swaps hypothesis and conclusion; it does not negate them.",
+          "Rule": "Write H⇒C and separately C⇒H and prove each.",
+          "Example": "The converse of 'on perpendicular bisector ⇒ equidistant' is 'equidistant ⇒ on perpendicular bisector'."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Forward direction",
+          "Question": "P is on the perpendicular bisector of AB at midpoint M, with A≠B. Prove PA=PB.",
+          "Method": "Use SAS on the two adjacent triangles.",
+          "Steps": [
+            "Because M is the midpoint, AM=BM.",
+            "PM is a common side of triangles PAM and PBM.",
+            "If P≠M, PM⊥AB gives equal included right angles PMA and PMB.",
+            "SAS yields PAM≅PBM, so corresponding hypotenuses PA=PB.",
+            "If P=M, PA=MA=MB=PB immediately."
+          ],
+          "Answer": "Every point on the perpendicular bisector is equally distant from A and B.",
+          "Check": "The midpoint case is handled without treating a zero-length segment as a line."
+        },
+        {
+          "Title": "Converse direction",
+          "Question": "Given distinct A,B and PA=PB, prove P lies on the perpendicular bisector of AB.",
+          "Method": "Use SSS with the known midpoint M.",
+          "Steps": [
+            "Let M be the midpoint of AB, hence AM=BM.",
+            "Triangles PAM and PBM have PA=PB by hypothesis and PM=PM as a shared segment.",
+            "SSS yields PAM≅PBM.",
+            "For P not on AB, equal adjacent angles PMA and PMB form a straight angle, so each is 90° and PM⊥AB.",
+            "If P is on AB, PA=PB implies P=M, which lies on the perpendicular bisector."
+          ],
+          "Answer": "P lies on the perpendicular bisector of AB.",
+          "Check": "Avoid assuming that PM is perpendicular in advance; it is the conclusion."
+        },
+        {
+          "Title": "Coordinate characterization",
+          "Question": "Find all P=(x,y) equidistant from A=(−3,0) and B=(3,0).",
+          "Method": "Equate squared distances, then simplify.",
+          "Steps": [
+            "PA²=(x+3)²+y² and PB²=(x−3)²+y².",
+            "Set equal and expand: x²+6x+9+y²=x²−6x+9+y².",
+            "Cancel common terms to obtain 12x=0, hence x=0.",
+            "Conversely x=0 gives equal squared and nonnegative distances to both points."
+          ],
+          "Answer": "All points on vertical line x=0.",
+          "Check": "It passes through midpoint (0,0) and is perpendicular to horizontal AB."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Drawing a line through P and the midpoint and asserting it is perpendicular.",
+          "WhyWrong": "A general point P need not lie on the midpoint's perpendicular line; that is the fact to prove.",
+          "Correction": "Use side congruence and adjacent-angle reasoning, or a distance equation, to prove perpendicularity."
+        },
+        {
+          "Mistake": "Conflating the theorem with its converse.",
+          "WhyWrong": "One implication assumes the geometric location; the other assumes equal distances.",
+          "Correction": "Write each statement explicitly and prove both using their own hypotheses."
+        }
+      ],
+      "SummaryPoints": [
+        "The perpendicular bisector of AB is precisely the equidistant locus for endpoints A≠B.",
+        "Forward and converse directions require separate proofs and careful handling of the midpoint case.",
+        "Proof critique and construction drawing need authentic teacher evaluation."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
+      "CultureCode": "en",
+      "Title": "Side-Side-Side Triangle Congruence",
+      "ExplanationParagraphs": [
+        "Learning goal: Prove the SSS triangle congruence theorem using rigid motions and the perpendicular-bisector theorem, then use SSS to prove opposite angles of a parallelogram congruent.",
+        "SSS states: if AB=DE, AC=DF and BC=EF for two nondegenerate triangles, then their vertices can be aligned through rigid motions. First map AB onto DE. The image C′ and target F each have the same distances to D and E. The two-circle intersection theorem places C′ and F at the same point or at opposite positions across line DE. Reflection across DE in the latter case completes the alignment.",
+        "Verbal diagram: draw two labelled triangles over the same base DE. Their third vertices C′ and F lie at the intersections of circles centred D and E with radii DF and EF. When distinct, line DE is their perpendicular bisector, so a reflection in DE interchanges them.",
+        "Parallelogram ABCD with diagonal AC has AB=CD, BC=AD (proved via ASA earlier), and common AC. The triangles BAC and DCA are congruent by SSS. Angles at opposite vertices B and D are corresponding, hence congruent. To avoid circular reasoning, derive opposite-side equality from the known parallel-line theorem, not from the opposite-angle conclusion.",
+        "Student task: construct two triangles from three specified lengths satisfying triangle inequalities, give the rigid-motion SSS proof including reflection alternative, then apply the theorem to a labelled parallelogram. Teacher rubric (0–4): correct three pairs, nondegenerate circle-intersection condition, valid rigid-motion/reflection argument, and noncircular parallelogram proof. Constructions and narrative proofs are teacher scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. All instructional prose, problems and solutions here are independent Edulytiks work; third-party illustrations and authenticated assessments are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "SSS theorem",
+          "Definition": "Three congruent pairs of corresponding sides guarantee two nondegenerate triangles congruent.",
+          "Rule": "Map one side, then use two fixed radius constraints on the third vertex; reflect if necessary.",
+          "Example": "Two triangles with side lengths 4,5,6 must be congruent, up to placement and reflection."
+        },
+        {
+          "Title": "Third-vertex locus",
+          "Definition": "Given fixed endpoints D,E and distances DF,EF, the third vertex lies on both circles with those radii.",
+          "Rule": "Triangle inequalities ensure two circle intersections for a nondegenerate triangle; intersection points reflect across DE.",
+          "Example": "If DE=4, DF=3, EF=3, valid points F lie symmetrically above and below DE."
+        },
+        {
+          "Title": "Parallelogram opposite angles",
+          "Definition": "The opposite interior angles of a parallelogram are congruent.",
+          "Rule": "Split by a diagonal and prove corresponding triangles congruent using established side facts.",
+          "Example": "In parallelogram ABCD, ∠B=∠D."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rigid-motion proof of SSS",
+          "Question": "Suppose AB=DE, AC=DF, BC=EF. Prove ABC≅DEF.",
+          "Method": "Align the base segment and use two-circle distances to locate C.",
+          "Steps": [
+            "Apply a rigid motion sending segment AB exactly onto DE.",
+            "Write C′ for the image of C. Distance preservation implies DC′=AC=DF and EC′=BC=EF.",
+            "Thus C′ and F lie at intersections of the same circles centred D and E.",
+            "If C′=F, the mapped triangles coincide; otherwise the intersections are reflections across DE.",
+            "Reflect the image triangle in DE to fix D,E and exchange C′ with F. Therefore the triangles coincide."
+          ],
+          "Answer": "ABC≅DEF by Side-Side-Side.",
+          "Check": "For nondegenerate triangles, the strict triangle inequalities ensure two distinct circle intersections or congruent configurations."
+        },
+        {
+          "Title": "Check constructibility from lengths",
+          "Question": "Can straightedge and compass produce a nondegenerate triangle with sides 2, 3 and 6?",
+          "Method": "Test the strict triangle inequality before drawing.",
+          "Steps": [
+            "The longest proposed side has length 6.",
+            "The other two side lengths sum to 2+3=5.",
+            "A nondegenerate triangle requires each two lengths to sum to strictly more than the third.",
+            "Because 5<6, no triangle with these three sides can exist."
+          ],
+          "Answer": "No, the three lengths do not form a triangle.",
+          "Check": "A degenerate collinear configuration would occur at equality; here even that is impossible."
+        },
+        {
+          "Title": "Prove opposite angles of a parallelogram",
+          "Question": "ABCD is a parallelogram. Show ∠B and ∠D congruent by a triangle theorem.",
+          "Method": "Use the diagonal AC and already established opposite-side congruences.",
+          "Steps": [
+            "AB∥CD and BC∥AD by definition of parallelogram.",
+            "From the ASA theorem with diagonal AC, opposite sides AB=CD and BC=AD.",
+            "For triangles BAC and DCA, the third pair AC=CA is shared.",
+            "SSS implies triangles BAC≅DCA.",
+            "Therefore opposite angles ∠B and ∠D are congruent as corresponding angles."
+          ],
+          "Answer": "∠ABC=∠CDA.",
+          "Check": "The conclusion derives from established side congruences and does not assume angle equality at the start."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming three corresponding side lengths form a genuine triangle without testing triangle inequalities.",
+          "WhyWrong": "Some triples cannot form a nondegenerate triangle, invalidating the geometric construction.",
+          "Correction": "Require positive lengths and strict sum-of-two-greater-than-third inequalities."
+        },
+        {
+          "Mistake": "Using an unproved opposite-angle property to justify the same property of a parallelogram.",
+          "WhyWrong": "This is circular reasoning.",
+          "Correction": "Prove opposite sides with a diagonal and ASA, then apply SSS and infer the angle equality."
+        }
+      ],
+      "SummaryPoints": [
+        "SSS is justified by base alignment plus equal-radius circle intersections and a possible reflection.",
+        "Strict triangle inequalities are prerequisites for nondegenerate triangle construction.",
+        "SSS proves opposite parallelogram angles after side congruence has been established; teacher reviews construction and proof."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
