@@ -1,0 +1,371 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u04-l05-l08-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L05",
+      "CultureCode": "en",
+      "Title": "Working with Ratios in Right Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: estimate angles and missing sides from a measured right-triangle ratio table, before introducing formal cosine, sine and tangent names.",
+        "The official student activity estimates launch angle and compares Pythagorean triples and side ratios, progressing from tables and side labels to algebraic estimates. An original hypothetical launch-slope task uses explicit units without claiming a real launch specification.",
+        "Student evidence: produce a correctly labelled right triangle, write the ratio choice with a reason, carry units and verify plausible magnitude. Teacher rubric (0–4): correct model, angle/side correspondence, arithmetic and precision, and sound independent explanation. Authentic partner discussion and drawings require teacher scoring; numeric checks alone do not assess them.",
+        "First-party Edulytiks worked reasoning aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. Publisher graphics, protected assessment answers and logos are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Measured quotient",
+          "Definition": "A right-triangle quotient is a ratio of named sides, such as opposite/adjacent.",
+          "Rule": "Read the table row for the reference angle and choose the matching quotient.",
+          "Example": "For a hypothetical 40° row, opposite/hypotenuse ≈0.643."
+        },
+        {
+          "Title": "Solve from a ratio",
+          "Definition": "A quotient r=opposite/hypotenuse lets you find a side if the other side is given.",
+          "Rule": "Write r=o/h and solve with algebra, checking h>0.",
+          "Example": "If r=0.6 and h=10, opposite=6."
+        },
+        {
+          "Title": "Angle estimation",
+          "Definition": "Compare observed ratios with nearby rows in a table, acknowledging measured rounding.",
+          "Rule": "Use a bounded estimate rather than an unjustifiably exact angle.",
+          "Example": "If opposite/adjacent is about 1, the acute angle is about 45°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate a missing leg from a table",
+          "Question": "A 40° right-triangle table lists opposite/hypotenuse≈0.643. Hypotenuse is 12 cm. Estimate opposite.",
+          "Method": "Use the corresponding table quotient.",
+          "Steps": [
+            "Set o/12≈0.643.",
+            "Multiply o≈0.643×12=7.716 cm.",
+            "Round to 7.7 cm if input precision supports it.",
+            "Check 0<o<12 as required by a nondegenerate right triangle."
+          ],
+          "Answer": "Opposite leg approximately 7.7 cm.",
+          "Check": "Do not present 7.716 cm as a verified exact geometry measurement."
+        },
+        {
+          "Title": "Estimate angle from a leg ratio",
+          "Question": "A right triangle has opposite leg 6 and adjacent leg 6 for reference angle θ. Estimate θ.",
+          "Method": "Use matching legs and angle sum.",
+          "Steps": [
+            "Opposite/adjacent=6/6=1.",
+            "The legs are equal, so their opposite acute angles are equal.",
+            "Both acute angles total 90°, hence θ=45°.",
+            "A right-triangle ratio table should show ratio 1 near 45°."
+          ],
+          "Answer": "Reference angle 45° exactly.",
+          "Check": "Here the equal-leg argument is exact, despite the table-based context."
+        },
+        {
+          "Title": "Recover a hypotenuse",
+          "Question": "A right-triangle table gives adjacent/hypotenuse≈0.8 and adjacent leg 8 m. Estimate hypotenuse.",
+          "Method": "Solve the ratio equation.",
+          "Steps": [
+            "Write 8/h≈0.8.",
+            "Rearrange h≈8/0.8=10 m.",
+            "Check h>8 and 8/10=0.8.",
+            "The exact result is contingent on how accurately 0.8 represents the underlying quotient."
+          ],
+          "Answer": "Hypotenuse approximately 10 m.",
+          "Check": "If 0.8 is a rounded table value, the answer should be reported as an estimate."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Naming ratios with memorized trigonometry vocabulary too early",
+          "WhyWrong": "This lesson's source deliberately develops descriptive quotients and table interpretation first.",
+          "Correction": "Describe the legs and quotients here; formal names follow in Lesson 6."
+        },
+        {
+          "Mistake": "Using a rounded quotient as if exact",
+          "WhyWrong": "Measurement/table rounding creates numerical uncertainty.",
+          "Correction": "Retain ≈ and report sensible precision."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: estimate angles and missing sides from a measured right-triangle ratio table, before introducing formal cosine, sine and tangent names.",
+        "An acute reference angle in a nondegenerate right triangle determines side ratios; keep the calculator in degree mode.",
+        "Honest teacher-reviewed models and diagrams remain distinct from digitally checked numerical results."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L06",
+      "CultureCode": "en",
+      "Title": "Working with Trigonometric Ratios",
+      "ExplanationParagraphs": [
+        "Learning goal: name cosine, sine and tangent for an acute angle in a right triangle; use degree-mode calculations to solve missing sides and report reasonable precision.",
+        "The source intentionally introduces the names AFTER the ratio table built earlier; explain relationship cos, sin, tan instead of beginning with a mnemonic. The calculator may display irrelevant excess decimals.",
+        "Student evidence: produce a correctly labelled right triangle, write the ratio choice with a reason, carry units and verify plausible magnitude. Teacher rubric (0–4): correct model, angle/side correspondence, arithmetic and precision, and sound independent explanation. Authentic partner discussion and drawings require teacher scoring; numeric checks alone do not assess them.",
+        "First-party Edulytiks worked reasoning aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. Publisher graphics, protected assessment answers and logos are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cosine",
+          "Definition": "Cosine θ is adjacent leg/hypotenuse for acute 0°<θ<90°.",
+          "Rule": "cos θ=a/h, h>0.",
+          "Example": "cos60°=1/2."
+        },
+        {
+          "Title": "Sine",
+          "Definition": "Sine θ is opposite leg/hypotenuse for acute θ.",
+          "Rule": "sin θ=o/h, h>0.",
+          "Example": "sin30°=1/2."
+        },
+        {
+          "Title": "Tangent",
+          "Definition": "Tangent θ is opposite leg/adjacent leg, with nonzero adjacent leg.",
+          "Rule": "tan θ=o/a, a>0; tanθ=sinθ/cosθ.",
+          "Example": "tan45°=1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find hypotenuse using cosine",
+          "Question": "A right triangle has an acute 60° angle and adjacent leg 5 cm. Find hypotenuse.",
+          "Method": "Use cos60°=1/2.",
+          "Steps": [
+            "Write cos60°=5/h.",
+            "Since cos60°=1/2, solve (1/2)=5/h.",
+            "Thus h=10 cm.",
+            "Check h>5 and the implied opposite leg is 5√3."
+          ],
+          "Answer": "Hypotenuse 10 cm.",
+          "Check": "Correct reference angle is 60°, not its 30° complement."
+        },
+        {
+          "Title": "Find opposite using sine",
+          "Question": "For acute 30°, hypotenuse 14 m, find opposite leg.",
+          "Method": "Use sin30°=1/2.",
+          "Steps": [
+            "Set sin30°=o/14.",
+            "Substitute 1/2=o/14.",
+            "Multiply by 14 to get o=7 m.",
+            "Verify o≤h and right-triangle geometry."
+          ],
+          "Answer": "Opposite leg 7 m.",
+          "Check": "Degree mode required for calculator sine; special values are exact."
+        },
+        {
+          "Title": "Find rise using tangent",
+          "Question": "A right-triangle ramp rises at 45° over horizontal run 3 m. Find rise.",
+          "Method": "Use tangent as rise/run.",
+          "Steps": [
+            "tan45°=o/a=1.",
+            "Write rise/3=1.",
+            "Multiply to get rise=3 m.",
+            "Check slope triangle has congruent legs."
+          ],
+          "Answer": "Rise 3 m.",
+          "Check": "This is a geometry problem, not a safety/compliance determination."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Choosing cosine for the ratio opposite/adjacent",
+          "WhyWrong": "The numerator and denominator do not match cosine's definition.",
+          "Correction": "Mark θ and choose sine (opp/hyp), cosine (adj/hyp), or tangent (opp/adj)."
+        },
+        {
+          "Mistake": "Entering degrees with calculator in radians mode",
+          "WhyWrong": "The numerical ratio output becomes unrelated to the stated degree angle.",
+          "Correction": "Set and document degree mode and round only after full calculation."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: name cosine, sine and tangent for an acute angle in a right triangle; use degree-mode calculations to solve missing sides and report reasonable precision.",
+        "An acute reference angle in a nondegenerate right triangle determines side ratios; keep the calculator in degree mode.",
+        "Honest teacher-reviewed models and diagrams remain distinct from digitally checked numerical results."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L07",
+      "CultureCode": "en",
+      "Title": "Applying Ratios in Right Triangles",
+      "ExplanationParagraphs": [
+        "Learning goal: ask for sufficient missing triangle data, use sine/cosine/tangent to estimate heights, and explain uncertainty and contextual model conditions.",
+        "This source lesson uses an information-gap exchange and indirect measurement of large objects. The independent Edulytiks model asks for exact missing quantities instead of reproducing source cards.",
+        "Student evidence: produce a correctly labelled right triangle, write the ratio choice with a reason, carry units and verify plausible magnitude. Teacher rubric (0–4): correct model, angle/side correspondence, arithmetic and precision, and sound independent explanation. Authentic partner discussion and drawings require teacher scoring; numeric checks alone do not assess them.",
+        "First-party Edulytiks worked reasoning aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. Publisher graphics, protected assessment answers and logos are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Information sufficiency",
+          "Definition": "One acute angle and one nonzero side of a right triangle fixes all other side lengths.",
+          "Rule": "Ask whether given side is opposite, adjacent or hypotenuse.",
+          "Example": "Angle 30° plus hypotenuse 10 determines height 5."
+        },
+        {
+          "Title": "Height model",
+          "Definition": "For a level horizontal distance d and angle of elevation θ, vertical rise h=d tanθ.",
+          "Rule": "State line-of-sight and level-ground assumptions.",
+          "Example": "At θ=45°, d=25 m gives rise 25 m."
+        },
+        {
+          "Title": "Rounding impact",
+          "Definition": "Approximated trigonometric quotients can cause larger absolute errors for large distances.",
+          "Rule": "Carry calculator precision until final reporting and reflect input measurement accuracy.",
+          "Example": "tan30°≈0.577, multiplied by 100 m gives rise≈57.7 m."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate height from elevation",
+          "Question": "Observer eye height is 1.6 m, horizontal distance to tower 40 m, elevation θ=30°. Estimate total height.",
+          "Method": "Use tangent plus eye height.",
+          "Steps": [
+            "The vertical rise above eye level is 40 tan30°=40/√3≈23.094 m.",
+            "Add eye height 1.6 m.",
+            "Total estimated tower height ≈24.694 m.",
+            "Round to about 24.7 m under the given measurement precision."
+          ],
+          "Answer": "Approximately 24.7 m above level ground.",
+          "Check": "Requires the observer and tower base to be on the same horizontal level."
+        },
+        {
+          "Title": "Find missing ground distance",
+          "Question": "A hypothetical pole top is 9 m above sight level and is seen at elevation 45°. Find horizontal distance.",
+          "Method": "Use rise/run=tan45°.",
+          "Steps": [
+            "Write 9/d=tan45°.",
+            "tan45°=1 gives d=9 m.",
+            "Check both perpendicular legs are 9 m.",
+            "The line-of-sight hypotenuse is 9√2 m."
+          ],
+          "Answer": "Horizontal distance 9 m.",
+          "Check": "Distance is not the hypotenuse; it lies along level ground."
+        },
+        {
+          "Title": "Ask for necessary data",
+          "Question": "Only a 60° elevation angle to a tower is known. Can absolute height be found?",
+          "Method": "Show scale ambiguity.",
+          "Steps": [
+            "Angle determines rise/run=tan60°=√3.",
+            "For horizontal run 1 m rise √3 m.",
+            "For run 10 m rise 10√3 m; both have the same angle.",
+            "Ask for ground distance and observer eye height (or an equivalent known side)."
+          ],
+          "Answer": "No unique absolute height without a length measurement.",
+          "Check": "An angle constrains shape, not the linear scale."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Applying a triangle ratio without a right-triangle model",
+          "WhyWrong": "The interpretation may be wrong for slopes, unlevel ground or curved paths.",
+          "Correction": "Draw and label the right angle and make contextual assumptions explicit."
+        },
+        {
+          "Mistake": "Rounding intermediate tangent to one decimal on a long baseline",
+          "WhyWrong": "Small ratio error may create a large absolute height error.",
+          "Correction": "Retain precision until final answer and report input uncertainty."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: ask for sufficient missing triangle data, use sine/cosine/tangent to estimate heights, and explain uncertainty and contextual model conditions.",
+        "An acute reference angle in a nondegenerate right triangle determines side ratios; keep the calculator in degree mode.",
+        "Honest teacher-reviewed models and diagrams remain distinct from digitally checked numerical results."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L08",
+      "CultureCode": "en",
+      "Title": "Sine and Cosine in the Same Right Triangle",
+      "ExplanationParagraphs": [
+        "Learning goal: prove the complementary-angle identity sinθ=cos(90°−θ) for acute right-triangle angles and use it to justify equal length solutions from differently labelled diagrams.",
+        "The official lesson explicitly asks students to draft, peer-edit and explain the complementary identity in words and diagrams. Human scoring must evaluate that proof, not a calculator equality.",
+        "Student evidence: produce a correctly labelled right triangle, write the ratio choice with a reason, carry units and verify plausible magnitude. Teacher rubric (0–4): correct model, angle/side correspondence, arithmetic and precision, and sound independent explanation. Authentic partner discussion and drawings require teacher scoring; numeric checks alone do not assess them.",
+        "First-party Edulytiks worked reasoning aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. Publisher graphics, protected assessment answers and logos are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Complementary angles",
+          "Definition": "The two acute angles of any nondegenerate right triangle sum to 90°.",
+          "Rule": "If one is θ, the other is φ=90°−θ.",
+          "Example": "Angles 35° and 55° are complementary."
+        },
+        {
+          "Title": "Sine/cosine correspondence",
+          "Definition": "A leg opposite θ is adjacent to φ in the same right triangle.",
+          "Rule": "Thus sinθ=o/h=cosφ.",
+          "Example": "sin35°=cos55°."
+        },
+        {
+          "Title": "Not a general negative-angle swap",
+          "Definition": "The identity is tied to complementary angles in a right triangle, not any pair of angle inputs.",
+          "Rule": "State 0°<θ<90° for this proof.",
+          "Example": "sin30°=cos60°=1/2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove complementary identity",
+          "Question": "For right triangle with acute θ and φ, prove sinθ=cosφ.",
+          "Method": "Use side roles in the SAME triangle.",
+          "Steps": [
+            "Triangle angle sum gives θ+φ=90°.",
+            "The leg opposite θ is the same leg adjacent to φ.",
+            "Both ratios use the same hypotenuse h>0.",
+            "Therefore sinθ=(oppositeθ)/h=(adjacentφ)/h=cosφ."
+          ],
+          "Answer": "sinθ=cos(90°−θ).",
+          "Check": "Proof does not rely on rounded calculator decimals."
+        },
+        {
+          "Title": "Apply special-angle identity",
+          "Question": "Compute cos60° using sin30°.",
+          "Method": "Use complementary angles.",
+          "Steps": [
+            "60°=90°−30°.",
+            "By the proved identity cos60°=sin30°.",
+            "Half-equilateral-triangle geometry gives sin30°=1/2.",
+            "Therefore cos60°=1/2."
+          ],
+          "Answer": "cos60°=1/2.",
+          "Check": "Exact radical relationships support the special angle value."
+        },
+        {
+          "Title": "Two seemingly different equations",
+          "Question": "A right triangle has θ=41°, φ=49°, a leg length 7 opposite θ. Show two equivalent equations for hypotenuse h.",
+          "Method": "Apply role swap.",
+          "Steps": [
+            "Using θ: sin41°=7/h.",
+            "The same leg is adjacent to φ: cos49°=7/h.",
+            "Since 41+49=90, sin41°=cos49°.",
+            "Both give h=7/sin41°=7/cos49°."
+          ],
+          "Answer": "Both equations give the same positive hypotenuse.",
+          "Check": "Calculator approximations may differ by final displayed digits only."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming the same leg is opposite both acute angles",
+          "WhyWrong": "Opposite/adjacent labels swap between complementary reference angles.",
+          "Correction": "Mark the target angle and physically identify its opposite leg."
+        },
+        {
+          "Mistake": "Using a calculator identity as the sole proof",
+          "WhyWrong": "A numerical display tests examples, not all possible acute angles.",
+          "Correction": "Explain the common opposite/adjacent leg and common hypotenuse."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: prove the complementary-angle identity sinθ=cos(90°−θ) for acute right-triangle angles and use it to justify equal length solutions from differently labelled diagrams.",
+        "An acute reference angle in a nondegenerate right triangle determines side ratios; keep the calculator in degree mode.",
+        "Honest teacher-reviewed models and diagrams remain distinct from digitally checked numerical results."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
