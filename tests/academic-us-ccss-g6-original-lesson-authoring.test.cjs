@@ -1416,3 +1416,69 @@ test('U03 L16–L17 and U04 L01–L02 independent ratio, two-coat and division o
   assert.equal(1/(1/5),5);
   assert.equal(Number.isFinite(1/0),false);
 });
+
+test('U04 L03–L06 original fractional grouping tasks preserve individual numeric and human gates', () => {
+  const evidence=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u04-l03-l06-original-student-teacher-fraction-task-comparison.json'), 'utf8'));
+  assert.deepEqual(evidence.lessons.map(x=>x.lessonCode),[3,4,5,6].map(n=>lcode(4,n)));
+  assert.equal(evidence.summary.thisBatchPublicStudentBodies,4);
+  assert.equal(evidence.summary.thisBatchPublicTeacherBodies,4);
+  assert.equal(evidence.summary.newTotal,121);
+  assert.equal(evidence.summary.remaining,26);
+  assert.equal(evidence.summary.academicAccepted,0);
+  assert.equal(evidence.riskAndRelease.nativeNodeFullRepository,'NOT_RUN');
+  for(const item of evidence.lessons) {
+    const content=byCode.get(item.lessonCode).translations[0].workedExamples;
+    assert.equal(item.publicStudentTaskBodiesCompared,true,item.lessonCode);
+    assert.equal(item.publicTeacherActivityAndLearningGoalsCompared,true,item.lessonCode);
+    assert.equal(item.originalProtectedAnswersRead,false,item.lessonCode);
+    assert.ok(item.sourceTaskSummaries.length>=4,item.lessonCode);
+    assert.ok(item.firstPartyTeachingCorrections.length>=3,item.lessonCode);
+    assert.equal(item.teacherRubricDraft.implemented,false,item.lessonCode);
+    assert.equal(item.teacherRubricDraft.persisted,false,item.lessonCode);
+    assert.equal(item.selectedPracticeRuntimeVerified,false,item.lessonCode);
+    assert.equal(item.studentAppletAndDrawingAccessibilityVerified,false,item.lessonCode);
+    assert.equal(item.studentTeacherScoredResponsesVerified,false,item.lessonCode);
+    assert.equal(item.twoSchoolIsolationVerified,false,item.lessonCode);
+    assert.equal(item.academicAcceptance,'NOT_ACCEPTED',item.lessonCode);
+    assert.match(content,/Example 3:/,item.lessonCode);
+    assert.match(content,/Description: Tape diagram/,item.lessonCode);
+  }
+  const examples=n=>byCode.get(lcode(4,n)).translations[0].workedExamples;
+  assert.match(examples(3),/6 1\/2 scoopfuls/);
+  assert.match(examples(4),/Eight 5-dollar bills/);
+  assert.match(examples(5),/1 1\/2/);
+  assert.match(examples(5),/six minutes for 2 gallons/);
+  assert.match(examples(6),/4 2\/3 mathematical servings/);
+});
+
+test('U04 L03–L06 independent arithmetic checks quotient by fraction and chosen unit whole', () => {
+  const near=(a,b)=>Math.abs(a-b)<1e-10;
+  assert.equal(4*(2+1/4),9);
+  assert.ok(near((7+1/2)/5,1.5));
+  assert.ok(near((6+3/4)/(3/4),9));
+  assert.ok(near(26/4,6.5));
+  assert.ok(near(14/4,3.5));
+  assert.equal(8*5,40);
+  assert.equal(9*(1/3),3);
+  assert.equal(4*(1/6),2/3);
+  assert.equal(1+1/2,1.5);
+  assert.equal(4/(1/2),8);
+  assert.equal(2/(2/3),3);
+  assert.equal(1.5/(1/6),9);
+  assert.ok(near(1/(3/4),4/3));
+  assert.deepEqual([2/(1/2),3/(1/5),1.25/(1/8),1/(2/6),2/(2/9),4/(2/10)],[4,15,10,3,9,20]);
+  assert.ok(near(1/(2/3),1.5));
+  assert.ok(near(3/(3/2),2));
+  assert.ok(near(3/(3/4),4));
+  assert.ok(near(2/(1/3),6));
+  assert.ok(near(10/2.5,4));
+  assert.ok(near(7/2,3.5));
+  assert.ok(near(3/(2/3),4.5));
+  assert.ok(near(5/(3/2),10/3));
+  assert.ok(near(6/(3/8),16));
+  assert.ok(near((2+3/4)/(1/2),5.5));
+  assert.ok(near(2/(2/5),5));
+  assert.ok(near((3+1/2)/(3/4),14/3));
+  assert.ok(near((14/3)*(3/4),3.5));
+});
