@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "G7_145_RICH_CANDIDATES_17_ORIGINAL_SVGS_18_DRAFT_RUBRICS_V10_RELEASE_BLOCKED",
+  "status": "G7_145_RICH_CANDIDATES_18_ORIGINAL_SVGS_19_DRAFT_RUBRICS_V11_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -66,8 +66,8 @@
     "richVisualModels": 151,
     "sourceStudentPagesInspected": 145,
     "sourceStudentPagesNotIndividuallyInspected": 0,
-    "gradeOwnedSvgFigureCandidates": 17,
-    "gradeOwnedTeacherRubricDrafts": 18
+    "gradeOwnedSvgFigureCandidates": 18,
+    "gradeOwnedTeacherRubricDrafts": 19
   },
   "lessons": [
     {
@@ -7952,7 +7952,13 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/7/4/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "v11GradeOwnedOriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l04-multi-step-angle-equations.svg",
+      "v11TeacherRubricDraft": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v11-u07-l04-source-geometry-rubric.json",
+      "v11GradeOwnedNativeNodeFixture": "tests/academic-us-ccss-g7-v11-u07-l04-angle-equations.test.cjs",
+      "v11SourceComparison": "PUBLIC_STUDENT_TEACHER_SOURCE_REVIEWED_BLACKLINE_CARDS_NOT_INSPECTED",
+      "v11ActualSvgStudentRender": "NOT_RUN",
+      "v11SourceFidelityStatus": "PARTIAL_TASK_ANALOGUE_NOT_STAGE_A_ACCEPTED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L05",
@@ -11935,6 +11941,35 @@
     "teacherScoring": "NOT_RUN",
     "selectedPractice": "NOT_EXECUTED",
     "twoSchoolIsolation": "NOT_RUN",
+    "academicA": 0,
+    "academicB": 0,
+    "academicC": 0,
+    "academicD": 0,
+    "ownerUAT": "NOT_RUN",
+    "release": "RELEASE_BLOCKED"
+  },
+  "v11": {
+    "lessonCode": "PED:US-CCSS-MATH:G7:U07:L04",
+    "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/7/4/index.html",
+    "sourceTeacherUrl": "https://im.kendallhunt.com/MS/teachers/2/7/4/preparation.html",
+    "authoringScope": "Original multi-step straight and vertical angle diagram, student-task trace and teacher-only rubric",
+    "newAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l04-multi-step-angle-equations.svg",
+    "newEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v11-u07-l04-source-geometry-rubric.json",
+    "newNativeTest": "tests/academic-us-ccss-g7-v11-u07-l04-angle-equations.test.cjs",
+    "candidateLessonCount": 145,
+    "workedExamples": 584,
+    "richVisualRecords": 151,
+    "gradeOwnedOriginalSvgCandidates": 18,
+    "gradeOwnedTeacherRubricDrafts": 19,
+    "nativeNodeTestCommand": "node --test tests/academic-us-ccss-g7-v11-u07-l04-angle-equations.test.cjs",
+    "nativeNodeTestExecution": "PASS_6_OF_6_IN_ISOLATED_AUTHORING_STAGING_NOT_FULL_REPO",
+    "fullRepositoryNodeTests": "NOT_RUN_NO_FULL_CHECKOUT",
+    "dotnetTests": "NOT_RUN",
+    "sourceTaskParity": "PARTIAL_SOURCE_COMPARISON_NOT_ACCEPTED",
+    "sharedRendererIntegration": "SUPERVISOR1_ISSUE_592_PENDING",
+    "selectedPractice": "NOT_EXECUTED",
+    "teacherScoringPersistence": "NOT_RUN",
+    "tenantIsolation": "NOT_RUN",
     "academicA": 0,
     "academicB": 0,
     "academicC": 0,
