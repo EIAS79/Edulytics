@@ -1,0 +1,258 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u08-l04-l11-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L04",
+      "CultureCode": "en",
+      "Title": "Dive Back Into Division",
+      "ExplanationParagraphs": [
+        "Goal: estimate whole-number quotients using friendly multiplication benchmarks and then reason from a given quotient to multiple different valid dividend–divisor pairs. This revisits partial quotients without forcing one calculation strategy.",
+        "Warm-up: a calculator-free quotient estimate for364÷13 can use 13×20=260 and13×30=390; 364 is closer to390 than260 so thirty is a reasonable tens estimate. To compute exactly, remove20 groups of13 leaving104, then eight more groups of13, giving28. Ask learners to explain why different chunk selections are equally legal.",
+        "Activity 1 — original estimate cases: 728÷24 is near30 because24×30=720 (exact30 remainder8). For 1008÷14, exact72 and a tens estimate70 is reasonable. In the 2021 source 540÷12=45 with choices 40,50,60 has a TIE between40 and50 by absolute distance; do not auto-mark one unique nearest-ten answer unless the activity provides a further rounding convention. Both are justifiable benchmarks.",
+        "Activity 2 — make different quotient equations: give a quotient of78 and ask for at least four different valid positive whole-number pairs, such as78÷1,156÷2,390÷5,780÷10. Give a quotient of700 and construct700÷1,1400÷2,3500÷5,7000÷10. A student must produce novel pairs and explain divisor×quotient=dividend, not just copy one template.",
+        "Teacher boundary: the source asks pupils to compare reasonable estimates, multiple distinct example equations, group explanations, and a visual gallery. Exact division is supporting Practice, not proof that a strategy or a set of ten genuinely distinct equations was authored."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Estimate quotient using multiples",
+          "Definition": "Compare a dividend with friendly positive multiples of divisor before exact partial quotients.",
+          "Rule": "13×30=390 near364.",
+          "Example": "Exact364÷13=28."
+        },
+        {
+          "Title": "Partial quotient flexibility",
+          "Definition": "Different sums of valid divisor group-counts yield same dividend.",
+          "Rule": "364÷13=20+8.",
+          "Example": "260+104=364."
+        },
+        {
+          "Title": "Families with fixed quotient",
+          "Definition": "For integer quotient q>0 and nonzero integer divisor d>0, dividend qd gives a valid quotient q.",
+          "Rule": "390÷5=78,780÷10=78.",
+          "Example": "Multiple valid equations exist."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate then calculate",
+          "Question": "Find364÷13 and give a tens estimate.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Use13×30=390 as a benchmark.",
+            "Subtract20×13=260 from364 to leave104.",
+            "Subtract8×13=104 and add group counts."
+          ],
+          "Answer": "Exact28, estimate near30.",
+          "Check": "13×28=364."
+        },
+        {
+          "Title": "No unique nearest benchmark tie",
+          "Question": "What is the nearest of 40,50,60 to540÷12?",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Compute the exact quotient45.",
+            "Compare distances from40 and50: both five.",
+            "Explain that a nearest-number rule alone produces a tie."
+          ],
+          "Answer": "Both40 and50 are equally near;60 is farther.",
+          "Check": "Teacher must accept both without an extra specified tie-breaking convention."
+        },
+        {
+          "Title": "Construct new quotients",
+          "Question": "Provide four equations with quotient78.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Choose distinct positive divisors1,2,5,10.",
+            "Multiply each chosen divisor by78.",
+            "Check each division by inverse multiplication."
+          ],
+          "Answer": "78÷1=78,156÷2=78,390÷5=78,780÷10=78.",
+          "Check": "Dividends are all different and inverses return78."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Guess a missing dividend without multiplying quotient by divisor",
+          "WhyWrong": "A quotient alone does not give a unique dividend.",
+          "Correction": "Choose a nonzero divisor first and calculate dividend=divisor×quotient."
+        },
+        {
+          "Mistake": "Reject one equally close tens estimate in a tie",
+          "WhyWrong": "Two benchmarks may be equally near an exact quotient.",
+          "Correction": "Compare absolute distances and state the tie if no convention resolves it."
+        }
+      ],
+      "SummaryPoints": [
+        "Use benchmark multiplication to estimate a quotient and partial quotients to calculate.",
+        "A single positive integer quotient corresponds to many dividend/divisor pairs.",
+        "Teacher reviews distinct equations, estimation rationale and gallery explanations.",
+        "Source: 2021 IM Grade5 Unit8 Lesson4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-4/lesson.html. Student Facing read on verified Our-CS; original Student PDF/gated response not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Family of quotient 78",
+          "Description": "Accessible original arithmetic and game demonstration; not source publisher playing cards/worksheet images.",
+          "Rows": [
+            {
+              "Label": "Divisor",
+              "Cells": [
+                "1",
+                "2",
+                "5",
+                "10"
+              ]
+            },
+            {
+              "Label": "Dividend",
+              "Cells": [
+                "78",
+                "156",
+                "390",
+                "780"
+              ]
+            },
+            {
+              "Label": "Quotient",
+              "Cells": [
+                "78",
+                "78",
+                "78",
+                "78"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L11",
+      "CultureCode": "en",
+      "Title": "What’s the Difference?",
+      "ExplanationParagraphs": [
+        "Goal: use unlike-denominator fractions in a repeated strategy GAME that seeks the largest difference, then an independent task seeks the SMALLEST total of two differences. The 2021 source's four rounds require recording random spinner digits as they occur; the answer depends on each player's choices and cannot be reduced to one official number.",
+        "Warm-up: compare5/6−1/3=1/2 with5/6−1/4=7/12 and explain how a smaller subtrahend makes the result larger when the minuend stays fixed. Fractions must be renormalized into equal-size pieces before subtracting.",
+        "Activity 1 — demonstration rounds: choose digits for the numerator and denominator of two fraction differences using a given bank1,1,2,2,3,4,5,6. An original trial uses6/1−1/5=29/5 and4/2−2/3=4/3, total107/15. This trial does not claim optimality; the authentic spinner game must preserve the sequence, one-time placement decisions, four round results and the tie-break rule.",
+        "Activity 2 — minimize summed difference: using the same eight input digits exactly once, a first-party trial is1/2−1/3=1/6 and4/5−2/6=7/15, total19/30. Learners may choose different legal arrangements and argue whose summed differences are nearest zero. Require exact use-once checks, nonzero denominators and a declared policy if they produce a negative difference; the source allows discussion of swapping order, not blind automatic reordering.",
+        "Teacher boundary: randomly drawn digits, irreversibility of moves, four-round interaction, per-round winner, tie-break and choices to seek a small difference must be teacher-reviewed. Checking one computed fraction cannot certify the original competitive mathematical process."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Difference with unlike denominators",
+          "Definition": "Use equivalent fractions with common units before subtraction.",
+          "Rule": "5/6−1/4=10/12−3/12=7/12.",
+          "Example": "Subtracting a smaller positive amount leaves a larger result."
+        },
+        {
+          "Title": "Use-once digit constraints",
+          "Definition": "A legal arrangement must use all and only supplied digits in specified numerator/denominator positions.",
+          "Rule": "1,1,2,2,3,4,5,6 each occurs the required number of times.",
+          "Example": "A legal result may still be a losing trial."
+        },
+        {
+          "Title": "Different objectives",
+          "Definition": "Largest difference maximizes subtraction result; closest-to-zero differences minimize a chosen total or distance to zero.",
+          "Rule": "Compare rational values, not just numerators.",
+          "Example": "The 2021 game is teacher-reviewed."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate a largest-difference trial",
+          "Question": "Calculate6/1−1/5 and4/2−2/3.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Find6−1/5=29/5.",
+            "Find2−2/3=4/3.",
+            "Use fifteenths to total both trial differences."
+          ],
+          "Answer": "29/5 and4/3, combined107/15.",
+          "Check": "The digits1,1,2,2,3,4,5,6 appear once each across both differences; this is a legal demonstration, not a maximum proof."
+        },
+        {
+          "Title": "Evaluate a small-difference trial",
+          "Question": "Calculate1/2−1/3 and4/5−2/6.",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "Use sixths for first difference to get1/6.",
+            "Use fifteenths for second difference4/5−1/3=7/15.",
+            "Add in thirtieths."
+          ],
+          "Answer": "1/6+7/15=19/30.",
+          "Check": "Both differences nonnegative and the eight digits are used with the stated multiplicities."
+        },
+        {
+          "Title": "Explain why game outcome isn't fixed",
+          "Question": "Why is one example fraction not evidence of winning four spinner rounds?",
+          "Method": "First-party mathematical example; partner game, explanations and strategy choice require teacher review.",
+          "Steps": [
+            "The placement order depends on independently spun digits.",
+            "One player's choices and the other player's choices both affect each round.",
+            "Record each actual round, the winner and possible tie-break aggregation."
+          ],
+          "Answer": "No single fixed result; review actual turn records.",
+          "Check": "Teacher checks authenticity and legal move sequence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Change a digit after the next spinner result",
+          "WhyWrong": "The game explicitly commits each placed number and forbids changing it.",
+          "Correction": "Keep a chronological written move record."
+        },
+        {
+          "Mistake": "Accept a mathematically correct difference as a legal game submission without checking digits",
+          "WhyWrong": "The required digit bank, available positions and turn order constrain valid plays.",
+          "Correction": "Check the complete sequence and multiplicities, not only arithmetic."
+        }
+      ],
+      "SummaryPoints": [
+        "Subtract unlike fractions with equal-sized part units and compare rational differences.",
+        "Use-once constraints and four-round game decisions form part of the source task.",
+        "Teacher checks game records, strategy and any negative-difference policy.",
+        "Source: 2021 IM Grade5 Unit8 Lesson11 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-11/lesson.html. Source Student Facing read on verified Our-CS; original PDF and protected response not independently verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Two legal fraction subtraction trials",
+          "Description": "Accessible original arithmetic and game demonstration; not source publisher playing cards/worksheet images.",
+          "Rows": [
+            {
+              "Label": "Goal",
+              "Cells": [
+                "Larger-difference trial",
+                "Smaller-total trial"
+              ]
+            },
+            {
+              "Label": "First difference",
+              "Cells": [
+                "6/1−1/5=29/5",
+                "1/2−1/3=1/6"
+              ]
+            },
+            {
+              "Label": "Second difference",
+              "Cells": [
+                "4/2−2/3=4/3",
+                "4/5−2/6=7/15"
+              ]
+            },
+            {
+              "Label": "Combined total",
+              "Cells": [
+                "107/15",
+                "19/30"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
