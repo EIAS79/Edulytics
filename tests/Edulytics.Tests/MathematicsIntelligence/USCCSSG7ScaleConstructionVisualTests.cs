@@ -193,6 +193,9 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
     [InlineData("PED:US-CCSS-MATH:G7:U01:L04")]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L05")]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L06")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L07")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L08")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L09")]
     public void Grade7GeometryRubric_IsTeacherOnlyDraft_NotACompletedStudentSubmission(
         string lessonCode)
     {
@@ -221,6 +224,81 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
             lesson.GetProperty("selectedPracticeFamily").GetString());
         // These checks protect honest status reporting; they DO NOT
         // exercise a real school, logged-in learner, grader or teacher UI.
+    }
+
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L07", "u01-l07-court-scale-and-bench.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L08", "u01-l08-scale-map-road-vs-direct.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L09", "u01-l09-studio-floor-plan-with-door.svg")]
+    public void Grade7ScaleDrawingProjects_HaveAccessibleOriginalSvgAndOptInModel(
+        string lessonCode, string svgFile)
+    {
+        var root = FindRoot();
+        var path = Path.Combine(root, AssetRoot, svgFile);
+        Assert.True(File.Exists(path), path);
+        var source = File.ReadAllText(path);
+        var xml = XDocument.Parse(source);
+        XNamespace ns = "http://www.w3.org/2000/svg";
+        Assert.Equal(ns + "svg", xml.Root?.Name);
+        Assert.Contains(xml.Descendants(ns + "title"), t =>
+            t.Value.Length >= 18);
+        Assert.Contains(xml.Descendants(ns + "desc"), t =>
+            t.Value.Length >= 100 && t.Value.Contains("scale", StringComparison.OrdinalIgnoreCase));
+        Assert.DoesNotContain("<script", source, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("<foreignObject", source, StringComparison.OrdinalIgnoreCase);
+        var richLesson = Assert.Single(
+            RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons),
+            l => l.LessonCode == lessonCode);
+        Assert.True(richLesson.WorkedExamples.Count >= 4);
+        var partial = File.ReadAllText(Path.Combine(
+            root, "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml"));
+        Assert.Contains(lessonCode, partial, StringComparison.Ordinal);
+        Assert.Contains("/curriculum/us-ccss-g7/geometry/" + svgFile,
+            partial, StringComparison.Ordinal);
+        // Referenced by the optional Grade 7 partial only; an authenticated
+        // Rich V2 renderer integration has NOT been demonstrated.
+    }
+
+    [Fact]
+    public void CourtMapAndStudioOriginalGeometry_UseConsistentPhysicalScales()
+    {
+        XNamespace ns = "http://www.w3.org/2000/svg";
+        var court = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l07-court-scale-and-bench.svg"));
+        var courtShape = Assert.Single(court.Descendants(ns + "polygon"));
+        var courtPoints = ReadPolygon(courtShape);
+        Assert.Equal(280, courtPoints.Max(p => p.X) - courtPoints.Min(p => p.X), 8);
+        Assert.Equal(140, courtPoints.Max(p => p.Y) - courtPoints.Min(p => p.Y), 8);
+        var bench = Assert.Single(court.Descendants(ns + "line")
+            .Where(e => (string?)e.Attribute("class") == "bench"));
+        Assert.Equal(90, Attr(bench, "x2") - Attr(bench, "x1"), 8);
+
+        var map = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l08-scale-map-road-vs-direct.svg"));
+        var road = Assert.Single(map.Descendants(ns + "polyline"));
+        var roadPoints = ReadPolygon(road);
+        Assert.Equal(4, roadPoints.Length);
+        static double Distance((double X, double Y) a, (double X, double Y) b)
+            => Math.Sqrt(Math.Pow(a.X - b.X, 2) + Math.Pow(a.Y - b.Y, 2));
+        var roadCm = Enumerable.Range(0, roadPoints.Length - 1)
+            .Sum(i => Distance(roadPoints[i], roadPoints[i + 1])) / 24;
+        var directCm = Distance(roadPoints[0], roadPoints[^1]) / 24;
+        Assert.InRange(roadCm, 5.999, 6.001);
+        Assert.InRange(directCm, 4.999, 5.001);
+        Assert.Equal(24, 6 * 4);
+        Assert.Equal(20, 5 * 4);
+
+        var floor = XDocument.Load(Path.Combine(FindRoot(), AssetRoot,
+            "u01-l09-studio-floor-plan-with-door.svg"));
+        var floorRegion = Assert.Single(floor.Descendants(ns + "rect")
+            .Where(e => (string?)e.Attribute("class") == "floor"));
+        Assert.Equal(210, Attr(floorRegion, "width"), 8);
+        Assert.Equal(150, Attr(floorRegion, "height"), 8);
+        var wall = Assert.Single(floor.Descendants(ns + "path")
+            .Where(e => (string?)e.Attribute("class") == "wall"));
+        var wallSegments = (string)wall.Attribute("d")!;
+        Assert.Contains("H194 M149 245H105", wallSegments, StringComparison.Ordinal);
+        Assert.Equal(45, 194 - 149); // Door gap at 30px per 1 cm = 1.5 cm.
     }
 
     private static (double X, double Y)[][] LoadPolygons(string file)
