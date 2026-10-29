@@ -888,3 +888,34 @@ test('U02 L04 L06 L08 retain exact source contexts for color mixtures, double nu
   assert.equal(9 / 12 * 7, 5.25);
   assert.ok(7 / 12 > 3 / 6);
 });
+
+
+test('U02 L05 L07 L09 check fractional casserole, number-line units and the 30-second spatial head start', () => {
+  const evidence = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l05-l07-l09-student-teacher-source-comparison.json'), 'utf8'));
+  assert.equal(evidence.lessons.length, 3);
+  assert.equal(evidence.summary.directStudentBodiesCompared, 3);
+  assert.equal(evidence.summary.fullAcademicSourceParityAccepted, 0);
+  assert.deepEqual(evidence.lessons.map(r => r.lessonCode), [5,7,9].map(n => lcode(2,n)));
+  for (const r of evidence.lessons) {
+    assert.equal(r.originalImagesAppletOrPhysicalTaskVerified, false);
+    assert.equal(r.authStudentVisualRendered, false);
+    assert.equal(r.exactSelectedPracticeVerified, false);
+    assert.equal(r.teacherRubricAndAttemptsPersisted, false);
+    assert.equal(r.academicAcceptance, 'NOT_ACCEPTED');
+    assert.match(byCode.get(r.lessonCode).translations[0].workedExamples, /Example 3\b/);
+  }
+  const examples = n => byCode.get(lcode(2,n)).translations[0].workedExamples;
+  assert.match(examples(5), /One-fifth batch/);
+  assert.match(examples(5), /324/);
+  assert.match(examples(7), /Ten pints require 40 cups flour/);
+  assert.match(examples(7), /Thirty ounces tuna/);
+  assert.match(examples(9), /45-meter distance head start/);
+  assert.match(examples(9), /race distance must be specified/);
+  assert.equal(162 * 2, 324);
+  assert.equal(3 / 5, 0.6);
+  assert.equal(10 * 4, 40);
+  assert.equal(6 * (30 / 6), 30);
+  assert.equal(10 * (30 / 6), 50);
+  assert.equal((55 / 10 - 40 / 10) * 30, 45);
+});
