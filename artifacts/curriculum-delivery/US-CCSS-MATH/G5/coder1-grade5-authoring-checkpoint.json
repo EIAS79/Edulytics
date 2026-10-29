@@ -76,7 +76,9 @@
     "tests/academic-us-ccss-g5-u01-measured-prisms-v10.test.cjs",
     "tests/academic-us-ccss-g5-u01-equivalent-volume-v10.test.cjs",
     "tests/academic-us-ccss-g5-u01-prism-palooza-v11.test.cjs",
-    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l11-source-prisms-v11.json"
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l11-source-prisms-v11.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l12-source-ready-reuse-v11.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l01-sharing-ready-reuse-v11.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -7581,11 +7583,11 @@
   "lastCommittedTest": "a0974714a4165fb20f22ea853a8b8380211eb082",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "0023a43aca679e2b63cd402d80a2c05d7b303967",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L12 — Lots and Lots of Garbage (optional)",
+    "lastKnownCommittedHeadBeforeLedger": "94dbe0e14c8c80c687f06228cc86500e8849aa80",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U02:L02 — first subsequent Grade 5 academic source task to examine",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Independently compare original 2021 U01:L12 Student Facing task/figure/PDF and Grade-5 candidate; preserve academic A-D NO_GO. Then take first actually unaccepted U02 lesson. Source-PDF coverage remains incomplete from U01:L01 onward.",
+    "nextAcademic": "U01:L11 original student task/PDF defect repaired, U01:L12 source/PDF READY_REUSE with gated teacher rubrics, U02:L01 public teacher Student Facing READY_REUSE with original PDF blocked by oversized source response. Continue U02:L02, and independently return to earlier unaccepted original Student Task PDFs starting U01:L01; no A-D approval.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -7954,6 +7956,31 @@
     "ownerUat": "NOT_RUN",
     "release": "NO_GO",
     "sharedIntegration": "https://github.com/EIAS79/Edulytics/issues/592",
-    "fullRepoCi": "NOT_VERIFIED_ON_FINAL_HEAD"
+    "fullRepoCi": "NOT_VERIFIED_ON_FINAL_HEAD",
+    "reviewedLessons": [
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
+        "classification": "GRADE5_DEFECT_FIXED",
+        "source": "2021 public teacher HTML and all four pages of original Student Task PDF",
+        "academicAccepted": false
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
+        "classification": "READY_REUSE_WITH_GATED_ASSESSMENT",
+        "source": "2021 teacher HTML and all four pages of original Student Task PDF",
+        "sourceAuditCommit": "f2209b5a3030d86ed7a412a969e38fa7bd8b6ea2",
+        "academicAccepted": false
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:G5:U02:L01",
+        "classification": "READY_REUSE_SOURCE_HTML_ONLY_WITH_OPEN_GAPS",
+        "source": "2021 teacher lesson and preparation HTML; separate PDF uninspected due oversized content",
+        "sourceAuditCommit": "94dbe0e14c8c80c687f06228cc86500e8849aa80",
+        "academicAccepted": false
+      }
+    ],
+    "originalTaskPdfAuditNote": "Original PDF inspected for U01:L11 and U01:L12 only in V11; original U02:L01 PDF unverified due oversized response. Full original course parity remains incomplete, and original U01:L01 audit cursor remains open.",
+    "exactGrade5TestsBesidesL11": "NOT_RUN — no additional native Node test committed for READY_REUSE L12 or U02:L01",
+    "latestAcademicCursor": "PED:US-CCSS-MATH:G5:U02:L02"
   }
 }
