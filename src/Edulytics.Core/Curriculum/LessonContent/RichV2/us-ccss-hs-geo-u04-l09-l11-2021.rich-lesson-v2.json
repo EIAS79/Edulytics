@@ -1,0 +1,280 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "ContentVersion": "us-ccss-hs-geo-u04-l09-l11-firstparty-20261029-v1",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L09",
+      "CultureCode": "en",
+      "Title": "Using Trigonometric Ratios to Find Angles",
+      "ExplanationParagraphs": [
+        "Learning goal: recover acute right-triangle angle measures from valid side ratios using inverse sine, inverse cosine and inverse tangent, distinguishing inverse functions from reciprocals.",
+        "Teacher source introduces inverse-function notation and ladder geometry with degree-level rounding. Maintain input restriction 0<opposite/hypotenuse<1 for a genuine nondegenerate acute angle.",
+        "Authentic assessment: draw and label the model, independently justify its assumptions and validate precision and units. Teacher rubric (0–4): correct geometric hypotheses, equation or inequality, reasoned calculation, and critical physical/diagram interpretation. Original written and graphical responses are teacher-scored.",
+        "Original Edulytiks instruction and examples aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. No publisher logos, artwork or restricted assessment content included."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inverse sine",
+          "Definition": "For 0<r<1, arcsin(r) is the unique acute angle with sine r.",
+          "Rule": "θ=arcsin(opposite/hypotenuse) when the ratio is between 0 and 1.",
+          "Example": "For opposite=3,hypotenuse=5, θ≈36.87°."
+        },
+        {
+          "Title": "Inverse cosine",
+          "Definition": "For 0<r<1, arccos(r) returns the acute angle with cosine r.",
+          "Rule": "θ=arccos(adjacent/hypotenuse) in degree mode.",
+          "Example": "For adjacent=4,hypotenuse=5, θ≈36.87°."
+        },
+        {
+          "Title": "Inverse tangent",
+          "Definition": "For any positive leg ratio r>0, arctan(r) gives the unique acute angle with tangent r.",
+          "Rule": "θ=arctan(opposite/adjacent), with adjacent>0.",
+          "Example": "For opposite=3,adjacent=4, θ≈36.87°."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Recover angle from leg lengths",
+          "Question": "A right triangle has opposite=3 and adjacent=4 for angle θ. Find θ.",
+          "Method": "Use inverse tangent.",
+          "Steps": [
+            "Check both legs positive and right triangle defined.",
+            "Form tanθ=3/4=0.75.",
+            "In degree mode calculate θ=arctan(0.75)≈36.87°.",
+            "Complementary angle is 90°−θ≈53.13°."
+          ],
+          "Answer": "θ≈36.87° (nearest degree 37°).",
+          "Check": "tan36.87°≈0.75; arctan is not 1/tan."
+        },
+        {
+          "Title": "Use inverse sine safely",
+          "Question": "Opposite side is 5 and hypotenuse 13 in a right triangle. Find acute angle.",
+          "Method": "Use arcsin in its acute domain.",
+          "Steps": [
+            "Compute sine ratio 5/13≈0.384615.",
+            "Because 0<5/13<1, the acute inverse sine exists.",
+            "θ=arcsin(5/13)≈22.62°.",
+            "Check 13 is the longest side and adjacent leg=12 by Pythagoras."
+          ],
+          "Answer": "θ≈22.62°.",
+          "Check": "If opposite/hypotenuse exceeded 1, the right-triangle measurements would be invalid."
+        },
+        {
+          "Title": "A ladder's angle",
+          "Question": "A straight ladder 10 m long reaches 8 m vertically against a wall on level ground. What is its angle with ground?",
+          "Method": "Use sine of angle at ground.",
+          "Steps": [
+            "Ladder is the hypotenuse 10 m, wall height is opposite leg 8 m.",
+            "Set sinθ=8/10=0.8.",
+            "Compute θ=arcsin(0.8)≈53.13°.",
+            "Ground offset is √(10²−8²)=6 m and tanθ=8/6≈1.333."
+          ],
+          "Answer": "Angle approximately 53°.",
+          "Check": "No safety recommendation follows from this simplified wall model."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Interpreting sin⁻¹(x) as 1/sin(x)",
+          "WhyWrong": "Inverse function returns an angle; reciprocal cosecant returns a number.",
+          "Correction": "Use arcsin for angle recovery and check degree mode."
+        },
+        {
+          "Mistake": "Taking arccos of ratio greater than 1",
+          "WhyWrong": "Cosine of an acute angle in a right triangle is between 0 and 1.",
+          "Correction": "Reject impossible input measurements instead of inventing a real angle."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: recover acute right-triangle angle measures from valid side ratios using inverse sine, inverse cosine and inverse tangent, distinguishing inverse functions from reciprocals.",
+        "Choose correct trigonometric ratios and valid domains; label precise units and approximations.",
+        "A complete representation or modelling proof needs teacher review, not a machine-scored scalar."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L10",
+      "CultureCode": "en",
+      "Title": "Solving Problems with Trigonometry",
+      "ExplanationParagraphs": [
+        "Learning goal: decompose polygons into right triangles and solve real-world path/height problems with dimensionally consistent trigonometric equations and units.",
+        "The official student sequence connects inscribed regular polygons and a realistic descent context; first-party examples preserve the mathematical operations but not publisher photographs.",
+        "Authentic assessment: draw and label the model, independently justify its assumptions and validate precision and units. Teacher rubric (0–4): correct geometric hypotheses, equation or inequality, reasoned calculation, and critical physical/diagram interpretation. Original written and graphical responses are teacher-scored.",
+        "Original Edulytiks instruction and examples aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. No publisher logos, artwork or restricted assessment content included."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Composite regular polygons",
+          "Definition": "Regular hexagon of side s is six equilateral triangles of side s.",
+          "Rule": "Area=6(√3/4)s²=(3√3/2)s².",
+          "Example": "For s=2, area=6√3 square units."
+        },
+        {
+          "Title": "Descent angle",
+          "Definition": "A straight path drops vertical height h while traversing horizontal distance d>0.",
+          "Rule": "tanθ=h/d where θ is depression from horizontal.",
+          "Example": "For h=3 km,d=40 km, θ≈4.29°."
+        },
+        {
+          "Title": "Dimensional conversion",
+          "Definition": "Convert feet and miles to one system before computing a trigonometric ratio.",
+          "Rule": "1 mile=5280 ft exactly.",
+          "Example": "If horizontal run=150 miles and drop=35,000 ft, ratio=35,000/(150×5280)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polygon decomposition",
+          "Question": "Find the area of a regular hexagon with side length 4 cm.",
+          "Method": "Split it into six equilateral triangles.",
+          "Steps": [
+            "The six central angles are 360°/6=60°, so six central triangles are equilateral.",
+            "Each has area (√3/4)·4²=4√3 cm².",
+            "Multiply by 6: A=24√3 cm².",
+            "Approximate A≈41.57 cm² if a decimal is needed."
+          ],
+          "Answer": "Area 24√3 cm².",
+          "Check": "Do not multiply linear side lengths without square units."
+        },
+        {
+          "Title": "Descent angle with unit conversion",
+          "Question": "An airplane descends 35,000 ft while travelling 150 miles horizontally. Find descent angle from horizontal.",
+          "Method": "Convert distance and use inverse tangent.",
+          "Steps": [
+            "Convert 150 miles to 150×5280=792,000 ft.",
+            "Write tanθ=35,000/792,000≈0.04419.",
+            "Compute θ≈arctan(0.04419)≈2.53°.",
+            "Distinguish horizontal travel distance from actual straight-line flight path."
+          ],
+          "Answer": "Angle of depression approximately 2.53°.",
+          "Check": "35,000 feet divided by 150 miles without conversion is dimensionally invalid."
+        },
+        {
+          "Title": "Flight-path hypotenuse",
+          "Question": "For the same idealized descent, compute the straight path length in miles.",
+          "Method": "Use Pythagoras after consistent units.",
+          "Steps": [
+            "Horizontal leg is 150 miles.",
+            "Vertical leg is 35,000/5280≈6.62879 miles.",
+            "Path=√(150²+(35000/5280)²)≈150.146 miles.",
+            "Check path exceeds 150 miles."
+          ],
+          "Answer": "Approximately 150.15 miles straight-path distance.",
+          "Check": "Assumes straight-line motion and planar right-triangle geometry."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confusing a plane's horizontal distance with actual path length",
+          "WhyWrong": "The slanted path is the hypotenuse, longer than horizontal distance.",
+          "Correction": "Use Pythagoras after unit conversion."
+        },
+        {
+          "Mistake": "Applying trig to an undecomposed nonright polygon",
+          "WhyWrong": "Basic sine/cosine/tangent right-triangle ratios require a right triangle.",
+          "Correction": "Draw perpendiculars or split the shape into right triangles with justified conditions."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: decompose polygons into right triangles and solve real-world path/height problems with dimensionally consistent trigonometric equations and units.",
+        "Choose correct trigonometric ratios and valid domains; label precise units and approximations.",
+        "A complete representation or modelling proof needs teacher review, not a machine-scored scalar."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L11",
+      "CultureCode": "en",
+      "Title": "Approximating Pi",
+      "ExplanationParagraphs": [
+        "Learning goal: derive a general inscribed regular n-gon perimeter formula, produce increasing lower approximations to π, and distinguish an approximation from a mathematical bound and proof of convergence.",
+        "Official source uses an interactive n-sided polygon exploration and generalizes a formula; the applet is not reproduced. Original geometry/limit explanation is teacher-scored, including limitations of finite n.",
+        "Authentic assessment: draw and label the model, independently justify its assumptions and validate precision and units. Teacher rubric (0–4): correct geometric hypotheses, equation or inequality, reasoned calculation, and critical physical/diagram interpretation. Original written and graphical responses are teacher-scored.",
+        "Original Edulytiks instruction and examples aligned to Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. No publisher logos, artwork or restricted assessment content included."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inscribed chord",
+          "Definition": "A regular n-gon's n vertices on a radius-r circle give central angle 2π/n and each chord length 2r sin(π/n).",
+          "Rule": "Use a central isosceles triangle split into two right triangles.",
+          "Example": "For a unit circle and n=6, each chord length 1."
+        },
+        {
+          "Title": "Lower polygon approximation",
+          "Definition": "An inscribed regular n-gon has perimeter P=2nr sin(π/n).",
+          "Rule": "For r=1, π is approximated below by P/2=n sin(π/n).",
+          "Example": "n=6 gives 3; n=10 gives ≈3.09017."
+        },
+        {
+          "Title": "Circumscribed upper bound",
+          "Definition": "A regular circumscribed n-gon tangent to the same circle has half-perimeter nr tan(π/n).",
+          "Rule": "For n≥3, n sin(π/n)<π<n tan(π/n), assuming a Euclidean circle.",
+          "Example": "At n=6, 3<π<6tan30°≈3.4641."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Inscribed unit hexagon",
+          "Question": "Find the perimeter of a regular hexagon inscribed in radius-1 circle and approximate π.",
+          "Method": "Use six 60° central sectors.",
+          "Steps": [
+            "Each central triangle has two radius-1 sides with included angle 60° and is equilateral.",
+            "Every chord/hexagon side has length 1.",
+            "Perimeter is P6=6.",
+            "Half of unit-circle circumference is π, so P6/2=3 is a lower approximation."
+          ],
+          "Answer": "Inscribed estimate π≈3 (lower bound).",
+          "Check": "This is not an accurate three-decimal estimate."
+        },
+        {
+          "Title": "Inscribed decagon",
+          "Question": "Estimate π from a unit-circle regular decagon.",
+          "Method": "Use half-central angles.",
+          "Steps": [
+            "A decagon has central angle 360°/10=36°.",
+            "Each chord length 2sin18°.",
+            "Perimeter P10=10·2sin18°.",
+            "Divide by 2 to get estimate 10sin18°≈3.09017."
+          ],
+          "Answer": "π≈3.09017 from below.",
+          "Check": "Calculator must interpret degrees for sin18°; polygon is inscribed."
+        },
+        {
+          "Title": "Prove two-sided bound",
+          "Question": "Show unit circle π lies between inscribed and circumscribed regular hexagon half-perimeters.",
+          "Method": "Use polygon perimeters relative to circle circumference.",
+          "Steps": [
+            "Inscribed hexagon perimeter is 6, so lower half-perimeter 3.",
+            "Circumscribed unit-circle regular hexagon side=2tan30°.",
+            "Its half-perimeter is 6tan30°=2√3≈3.4641.",
+            "Inscribed polygon is shorter than circle, circumscribed longer: 3<π<2√3."
+          ],
+          "Answer": "3<π<2√3≈3.4641.",
+          "Check": "An approximation alone does not prove an exact decimal or a limiting formula."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming a fixed n-gon perimeter equals the circle circumference",
+          "WhyWrong": "A polygon chord is shorter than the corresponding circular arc.",
+          "Correction": "Use a strict lower bound and describe convergence as n increases."
+        },
+        {
+          "Mistake": "Mixing radius and diameter in circumference comparison",
+          "WhyWrong": "C=2πr; half-circumference is πr, not π for arbitrary r.",
+          "Correction": "For unit radius r=1, the half-perimeter estimates π directly."
+        }
+      ],
+      "SummaryPoints": [
+        "Learning goal: derive a general inscribed regular n-gon perimeter formula, produce increasing lower approximations to π, and distinguish an approximation from a mathematical bound and proof of convergence.",
+        "Choose correct trigonometric ratios and valid domains; label precise units and approximations.",
+        "A complete representation or modelling proof needs teacher review, not a machine-scored scalar."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}
