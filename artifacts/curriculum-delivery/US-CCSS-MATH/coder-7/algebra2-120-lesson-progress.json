@@ -5320,5 +5320,71 @@
   ],
   "ciBlocker": "Current authoritative CI at 924324f6c11602e96fae043ebc8e027ad2e1eb98 failed canonical-body parity: modified teaching with newlyApproved=0 and no authorized version predecessor; do not bypass.",
   "lastVerificationSummary": "120/120 authored/reused; U04 second-pass source review 15/15; 116/116 focused Node pass; .NET academic body test 5/6 with U02:L18 SHA mismatch; shared adoption and Practice not verified; academic and release NO_GO",
-  "courseStage": "CONTENT_AUTHORING_COMPLETE_ACADEMIC_RUNTIME_RELEASE_GATES_OPEN"
+  "courseStage": "CONTENT_AUTHORING_COMPLETE_ACADEMIC_RUNTIME_RELEASE_GATES_OPEN",
+  "v10ExecutionCheckpoint": {
+    "reviewedOn": "2026-10-29",
+    "reviewerRole": "Coder 7; independent human academic sign-off not provided",
+    "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+    "sourceGitSha": "940ac5dc563424bf1c7fe6049235a5dda5b83d5d",
+    "sourceBranch": "us-ccss/supervisor3/coder7-alg2",
+    "fullCourseAuthoring": "120/120 preexisting; NOT reauthored in V10",
+    "testEvidence": {
+      "node": {
+        "command": "node --test tests/coder-7/*.test.cjs",
+        "results": "PASS 127/127 (14 test files)",
+        "testedGitSha": "940ac5dc563424bf1c7fe6049235a5dda5b83d5d",
+        "device": "Our-CS Primary isolated checkout",
+        "workingTree": "CLEAN"
+      },
+      "focusedDotNet": {
+        "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCommonCoreExpandedAcademicLessonBodyTests.RepairedContentHasVerifiedDigestAndSpecificWorkedMathematics --no-restore --verbosity quiet",
+        "results": "5_PASS_1_FAIL",
+        "testedEarlierGitSha": "0484b6ea85305d7863337fc184ec04715eb573d9",
+        "failedLesson": "U02:L18",
+        "failure": "AUTHORED_SHA_VS_HISTORICAL_CANONICAL_BODY_SHA",
+        "status": "UNRESOLVED_SHARED_VERSION_APPROVAL"
+      }
+    },
+    "sourceSampleReview": {
+      "lesson": "U02:L18",
+      "publisherEdition": "IM Algebra 2 First Edition 2019–2021",
+      "activities": [
+        "18.1 Rewritten Equations",
+        "18.2 Publishing a Paperback",
+        "18.3 Horizontal Asymptotes"
+      ],
+      "newCourseOwnedOracleCases": 6,
+      "academicApproval": "NOT_GRANTED"
+    },
+    "visualAsset": {
+      "path": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/visuals/U02-L18-asymptote-families.original.svg",
+      "validation": "XML parsed; 4 panels/8 paths, title/description",
+      "studentRendererIntegration": "NOT_RUN"
+    },
+    "practice": {
+      "tracePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/algebra2-120-practice-verification-trace.json",
+      "explicitBaselineMappings": 2,
+      "otherWithoutExplicitMapping": 118,
+      "effectiveVerified": 0,
+      "teacherRubricAndGradebookVerified": 0,
+      "authenticatedTwoSchool": "NOT_RUN"
+    },
+    "versionTransition": {
+      "legacyDigest": "7cbc61c03b9ab3dcd69a13aed4fd3b580850f54446795458174cfa5e3b9fc475",
+      "proposedDigest": "2ef725ec1a74d379838e2483a831dc377f02d08bb7349614ed5b83b0c9213fe8",
+      "sourceDigest": "3ec01ea514d3a8d8edbd6bf1d5271079d0941e66e5558f508ce233ff5391ece0",
+      "owner": "Supervisor 3 shared academic content version integration",
+      "approval": "NOT_AUTHORIZED_OR_PERFORMED"
+    },
+    "actualAcceptedCounts": {
+      "stageA": 0,
+      "stageB": 0,
+      "stageC": 0,
+      "stageD": 0
+    },
+    "wholeCourseRelease": "NO_GO",
+    "merge": "NOT_PERFORMED",
+    "deploy": "NOT_PERFORMED",
+    "handoff": "https://github.com/EIAS79/Edulytics/pull/588#issuecomment-6503045261"
+  }
 }
