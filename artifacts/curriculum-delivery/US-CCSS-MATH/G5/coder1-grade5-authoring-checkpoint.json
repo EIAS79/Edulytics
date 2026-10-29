@@ -31,7 +31,9 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l11-l15-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u03-l16-l18-l20-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-u03-division-v5.test.cjs",
-    "tests/academic-us-ccss-g5-u03-final-v5.test.cjs"
+    "tests/academic-us-ccss-g5-u03-final-v5.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u04-algorithms-v5.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -77,7 +79,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 53,
+    "richSidecarLessonCount": 58,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -91,11 +93,11 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 56,
+    "public2021LessonOrPreparationHtmlReviewedCount": 61,
     "public2021LessonHtmlReviewedDuringV4": 22,
-    "codeCandidateWithAtLeastOneEditOrRichV2": 109,
-    "noGradeOwnedCodeCandidate": 39,
-    "public2021LessonHtmlReviewedDuringV5": 27,
+    "codeCandidateWithAtLeastOneEditOrRichV2": 111,
+    "noGradeOwnedCodeCandidate": 37,
+    "public2021LessonHtmlReviewedDuringV5": 32,
     "originalStudentPdfAndGatedCooldownVerified": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
@@ -124,8 +126,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "56 public 2021 student-facing/teacher HTML lesson pages reviewed to varying depth; original full student PDFs, protected images/response materials and all 148 individual academic A conclusions remain NOT_COMPLETE.",
-      "next": "Continue with Unit 4 Lesson 1 source and preserve honest original PDF/rights gap."
+      "issue": "61 public 2021 lesson/preparation HTML sources reviewed with individual lesson task distinctions; full Student Task PDF, original figures/gated responses and per-lesson academic A acceptance NOT_COMPLETE 148/148.",
+      "next": "Continue U04 L06 onwards and resolve original PDF/artwork parity before declaring source acceptance."
     },
     {
       "id": "G5-D-004",
@@ -2671,16 +2673,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "PRIOR_PREPARATION_BASELINE_SCREEN_ONLY",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-1/lesson.html",
+      "sourceReviewedTask": "Estimate an initial product before exact computation, compare higher/lower benchmarks and justify student-chosen methods",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_MATHEMATICAL_REASONING_DIAGRAM_AND_METHOD_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L02",
@@ -2718,16 +2726,22 @@
       "contentFieldsChanged": [
         "keyConceptsAndRules"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-2/lesson.html",
+      "sourceReviewedTask": "Interpret schematic not-to-scale area tables for every partial product, compare equivalent decompositions",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_MATHEMATICAL_REASONING_DIAGRAM_AND_METHOD_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L03",
@@ -2758,16 +2772,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-3/lesson.html",
+      "sourceReviewedTask": "Match partial products diagrams to vertical algorithm recording in different orders",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_MATHEMATICAL_REASONING_DIAGRAM_AND_METHOD_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L04",
@@ -2795,16 +2815,22 @@
       "contentFieldsChanged": [
         "keyConceptsAndRules"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-4/lesson.html",
+      "sourceReviewedTask": "Explain carried newly composed units in one-digit by multi-digit standard algorithm",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_MATHEMATICAL_REASONING_DIAGRAM_AND_METHOD_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L05",
@@ -2838,16 +2864,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l01-l05-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-5/lesson.html",
+      "sourceReviewedTask": "Contrast six expanded partial products with two condensed rows for 3-digit×2-digit without carrying and repair tens-row error",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_MATHEMATICAL_REASONING_DIAGRAM_AND_METHOD_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L06",
@@ -6816,23 +6848,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "f76d6772b5c88f0ee25dbddff3828392eeda458b",
+  "lastGradeContentCommit": "61a012c56f4939207b9e0c7f067eba8144f9d2d9",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V5: 53 distinct direct Grade 5 Rich V2 teaching candidates (26 existing, 27 V5), preserving 104 baseline pack editorial repairs and 44 untouched translations. U01 L01-L12 and U02 L01-L17 and U03 L01-L20 all now have directly authored candidate content. 56 distinct public 2021 publisher lesson/preparation HTML source pages reviewed; no completed source student PDFs/gated response or true A–D acceptance, no runtime Practice C proof, no D verified. Shared integration Supervisor 1 issue #592.",
+  "currentScopeDescription": "V5: 58 distinct direct Grade 5 Rich V2 candidates (26 previous +32 V5), 104 existing baseline pack translations edited; 61 public 2021 lesson/preparation HTML sources checked in total. U01/U02/U03 complete direct sidecar coverage as candidates, U04 L01-L05 also authored. Original full Student Task PDF/gated Cool-down, effective runtime Practice, real Stage D and academic A–D acceptance 0/148.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "7fa07a065fb24c59f93e35f5a00a220825c30cd5",
+  "lastCommittedTest": "3795bb99b5abdfd0e395da2cfa505174ecb39d8a",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "7fa07a065fb24c59f93e35f5a00a220825c30cd5",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U04:L01 — Estimate and Find Products",
+    "lastKnownCommittedHeadBeforeLedger": "3795bb99b5abdfd0e395da2cfa505174ecb39d8a",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U04:L06 — Standard Algorithm Multi-digit Numbers with Composing PLC Activity",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Source-review and individually author/reuse U04 L01 onward, including official student task comparison, mathematical representation and teacher-only boundary; complete C/D once shared integration #592 is ready",
+    "nextAcademic": "Source-review U04 L06 onward; preserve Grade5-only source, Practice and original-task parity safeguards. Shared integration issue #592 remains separate.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -6881,12 +6913,12 @@
     "protectedCi": "NOT_RUN",
     "combinedActualNodeCli": {
       "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-*-v5.test.cjs",
-      "environment": "isolated sandbox container Node.js v22.16.0; not Our-CS or Anas_Nitro",
-      "passed": 27,
+      "environment": "isolated sandbox container Node.js v22.16.0, NOT Our-CS and NOT Anas_Nitro",
+      "passed": 32,
       "failed": 0,
-      "skipped": 5,
-      "scope": "Standalone fractional arithmetic oracles only. Sidecar structure checks skipped because GitHub grade branch fixtures not locally mounted. .NET, exact Practice, DB, authenticated rendering, cross-curriculum CI NOT_RUN.",
-      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_all_final_20261029.tap"
+      "skipped": 6,
+      "scope": "Standalone source-oriented mathematical oracles only; 6 structural checks skipped due GitHub branch sidecars not mounted; no real selected Practice, database, authenticated student/teacher rendering or .NET.",
+      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_with_u04_20261029.tap"
     },
     "githubConnectorV8U03": {
       "status": "PASS",
