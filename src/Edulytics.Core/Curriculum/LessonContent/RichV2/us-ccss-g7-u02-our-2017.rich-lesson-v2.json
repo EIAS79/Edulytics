@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v4",
+  "ContentVersion": "us-ccss-g7-u02-original-rich-v2-candidate-20261028-v5",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -395,6 +395,19 @@
           ],
           "Answer": "30 km/h.",
           "Check": "The two rates coincide."
+        },
+        {
+          "Title": "Distinguish a length conversion from a squared-area conversion",
+          "Question": "A square card has a side of 3 cm. Write its side length in millimeters and then its area in both cm² and mm². Why is multiplying square centimeters by only 10 wrong?",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "The linear unit scale is 1 cm=10 mm, so side 3 cm=30 mm.",
+            "The original area is 3×3=9 cm².",
+            "The matching square area in millimeters is 30×30=900 mm², so 1 cm²=100 mm².",
+            "A length ratio is 10 while an area ratio is 10²; label units in both original and new sketches."
+          ],
+          "Answer": "30 mm side; 9 cm²=900 mm²; an area scale uses factor 100.",
+          "Check": "Teacher checks a labeled original square, numeric conversions and squared-unit reasoning."
         }
       ],
       "CommonMistakes": [
@@ -524,6 +537,19 @@
           ],
           "Answer": "6 and 9.",
           "Check": "Both points have constant k=3/4."
+        },
+        {
+          "Title": "Write a rate equation for a table without confusing the variables",
+          "Question": "A train covers 45 km in 3/4 hour at constant speed. Write distance d in km as a function of time t in hours and calculate its distance at t=2.5.",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "Divide 45 by 3/4 to get 60 km/h.",
+            "Write d=60t with units km and h.",
+            "At t=2.5, d=60×2.5=150 km.",
+            "Make a table containing (0,0),(0.75,45),(2.5,150) to justify the origin and constant rate."
+          ],
+          "Answer": "d=60t; at 2.5 h travel distance 150 km.",
+          "Check": "Teacher checks formula from context, table, labeled axes and units."
         }
       ],
       "CommonMistakes": [
@@ -653,6 +679,19 @@
           ],
           "Answer": "1/3 notebook per dollar; $3 per notebook.",
           "Check": "3×1/3=1."
+        },
+        {
+          "Title": "Represent a water-cooler flow equation in both directions",
+          "Question": "A pump fills 24 L in 6 minutes at constant rate, with no setup delay. Write liters as a function of minutes and minutes as a function of liters. What does each constant mean?",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "The filling rate is 24/6=4 L/min.",
+            "Forward equation V=4t with volume V in liters and time t in minutes.",
+            "Inverse equation t=V/4, or t=0.25V min/L.",
+            "Check V=12 L requires t=3 min, and discuss why the reciprocal has different units."
+          ],
+          "Answer": "V=4t, t=V/4; 4 L/min and 1/4 min/L are reciprocal rates.",
+          "Check": "Teacher checks double-number-line/table labels and the direction of input and output."
         }
       ],
       "CommonMistakes": [
@@ -782,6 +821,19 @@
           ],
           "Answer": "20 mL.",
           "Check": "20/25=0.8 mL/page."
+        },
+        {
+          "Title": "Recover a recycling-unit rate and an unknown quantity",
+          "Question": "A school recycling event gets $5.40 for 12 kg of sorted metal under a fixed per-kilogram offer. Find the amount received for 25 kg, and the mass needed to receive $18.",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "Price per kilogram=5.40/12=$0.45/kg.",
+            "Revenue rule R=0.45m for mass m kg.",
+            "For 25 kg, R=0.45×25=$11.25.",
+            "For $18, m=18/0.45=40 kg; check inverse quantities and units."
+          ],
+          "Answer": "$11.25 for 25 kg, and 40 kg earns $18.",
+          "Check": "Teacher checks original input/output-rate equation, table values and unit explanation."
         }
       ],
       "CommonMistakes": [
@@ -911,6 +963,19 @@
           ],
           "Answer": "Not enough information to certify the situation.",
           "Check": "Teacher reviews justification and what data would resolve it."
+        },
+        {
+          "Title": "Distinguish proportional running from fixed-entrance fees",
+          "Question": "A park charges $6 per car plus $2 per person. Another runner circles a track in 3 minutes per lap, without breaks. For three people and four laps respectively, write the mathematical models and explain which is proportional.",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "Park cost C=6+2p gives C(3)=$12 and nonzero cost C(0)=$6, so not proportional.",
+            "Running time T=3ℓ gives T(4)=12 min, and T(0)=0.",
+            "Ratios T/ℓ=3 min/lap stay constant while C/p changes with group size.",
+            "Sketch separate tables; explain the fixed fee or unchanged lap pace explicitly."
+          ],
+          "Answer": "Park costs $12 for three people (not proportional); four laps take 12 min (proportional).",
+          "Check": "Teacher reviews the two real-context tables and classification justification."
         }
       ],
       "CommonMistakes": [
@@ -1179,6 +1244,19 @@
           ],
           "Answer": "No.",
           "Check": "The fixed base fare makes the relationship nonproportional."
+        },
+        {
+          "Title": "Ask for and solve a missing distance-time detail",
+          "Question": "A cyclist travels 90 km, but the time is unknown. One partner has a separate card saying the constant pace was 15 km/h. What question is required, and what travel time follows?",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "Identify that distance alone cannot determine duration.",
+            "Ask the partner for a reliable speed or time value and its units.",
+            "With speed 15 km/h, apply t=90/15=6 h.",
+            "Check 15 km/h×6 h=90 km and explain why the missing information matters."
+          ],
+          "Answer": "The missing quantity is speed (or time). With 15 km/h, duration is 6 hours.",
+          "Check": "Teacher evaluates authentic information-gap dialogue and a defensible rate assumption."
         }
       ],
       "CommonMistakes": [
@@ -1450,6 +1528,19 @@
           ],
           "Answer": "10 litres in 4 hours.",
           "Check": "The interpretation uses both axis units."
+        },
+        {
+          "Title": "Interpret a rate and inverse rate using two graph points",
+          "Question": "A water tank fills uniformly, with plotted points (t,V)=(0,0),(1.5,9),(4,24). Find the volume per hour, an inverse-time equation, and label the point (1,k).",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "The rate k=V/t=9/1.5=6 L/h, consistent with 24/4.",
+            "The proportional equation is V=6t with t in hours.",
+            "The inverse is t=V/6, representing 1/6 hour per liter.",
+            "On a labeled graph, (1,6) marks the volume after one hour; justify why this isn't a y-intercept."
+          ],
+          "Answer": "k=6 L/h; V=6t and t=V/6; point (1,6) is one-hour volume.",
+          "Check": "Teacher checks graphed axes/units and the meaning of the unit-rate point."
         }
       ],
       "CommonMistakes": [
@@ -1721,6 +1812,19 @@
           ],
           "Answer": "Forward (1,3),(2,6); inverse (3,1),(6,2).",
           "Check": "The rates multiply to 1."
+        },
+        {
+          "Title": "Reverse a graph of the same constant-flow relationship",
+          "Question": "A machine produces 18 parts in 3 minutes at constant pace. Graph parts p against minutes t, then switch axes and graph t against p. Explain the two rates.",
+          "Method": "Construct or interpret a source-aligned table, graph or rate model, calculate with correct units, and justify the context. Open representations require teacher review.",
+          "Steps": [
+            "Machine makes 18/3=6 parts per minute.",
+            "First graph points include (t,p)=(0,0),(1,6),(3,18) and equation p=6t.",
+            "Swapped graph points (p,t)=(0,0),(6,1),(18,3) satisfy t=p/6.",
+            "The inverse rate is 1/6 minute per part; compare roles of x and y labels rather than treating graph rotation as a new machine."
+          ],
+          "Answer": "p=6t and t=p/6; 6 parts/min versus 1/6 min/part.",
+          "Check": "Teacher checks both axes/graphs and reciprocal relationship justification."
         }
       ],
       "CommonMistakes": [
