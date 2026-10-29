@@ -390,8 +390,8 @@
       "Title": "Tables of Relative Frequencies",
       "ExplanationParagraphs": [
         "Learning goal: Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
-        "Counts classified simultaneously by two attributes Row/column totals are marginals",
-        "Relative frequency for both attributes uses grand total P(A∩B)=count intersection/N P(A",
+        "A two-way table classifies the same observations by events A and B. Summing cells gives the grand total N and the row and column marginal totals; joint relative frequency P(A∩B) uses N as its denominator.",
+        "Conditional probability changes the reference population. If count(B)>0, P(A|B)=count(A∩B)/count(B). If count(A)>0, P(B|A)=count(A∩B)/count(A). These are generally different numbers and should not be interchanged.",
         "Original source-specific student task: Students construct an original two-way table from supplied hypothetical counts and analyze two different conditionals. Teacher checks notation. Teacher rubric (0–4): defined experimental model and sample space, precise count/probability, legitimate assumptions, and transparent reasoning. Human review is required for models, experimental records and proofs.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 4, CC BY 4.0. Independently authored Edulytiks problems; no original copyrighted diagrams or protected assessments."
       ],
@@ -404,15 +404,15 @@
         },
         {
           "Title": "Joint frequency",
-          "Definition": "Relative frequency for both attributes uses grand total",
-          "Rule": "P(A∩B)=count intersection/N",
+          "Definition": "The joint relative frequency P(A∩B) is the number of observations in both A and B divided by the grand total N.",
+          "Rule": "P(A∩B)=count(A∩B)/N for N>0.",
           "Example": "12/50=0.24"
         },
         {
           "Title": "Conditional frequency",
-          "Definition": "Within subgroup B denominator is count(B)",
-          "Rule": "P(A",
-          "Example": "B)=count(A∩B)/count(B)"
+          "Definition": "Among observations in B, the conditional relative frequency of A is the joint count divided by the B column total.",
+          "Rule": "P(A|B)=count(A∩B)/count(B), provided count(B)>0.",
+          "Example": "For [[12,8],[18,12]], count(B)=30, so P(A|B)=12/30=0.4."
         }
       ],
       "WorkedExamples": [
@@ -445,30 +445,29 @@
           "Question": "Compute P(B|A) for that table.",
           "Method": "Conditional frequency",
           "Steps": [
-            "Condition on row A total 12+8=20",
-            "Of those 12 fall in B",
-            "P(B",
-            "A)=12/20=0.6"
+            "Given A, restrict to the A row: count(A)=12+8=20, which is positive.",
+            "Of those observations, 12 also satisfy B, so count(A∩B)=12.",
+            "P(B|A)=count(A∩B)/count(A)=12/20=0.6."
           ],
           "Answer": "0.6.",
-          "Check": "Check denominators, sample-space assumptions and probability bounds."
+          "Check": "P(A|B)=12/30=0.4 is different: the condition after | fixes the denominator."
         }
       ],
       "CommonMistakes": [
         {
           "Mistake": "Using grand total for conditional event",
           "WhyWrong": "Conditional denominator is conditioned subgroup",
-          "Correction": "Use count of given event"
+          "Correction": "For P(A|B), divide count(A∩B) by count(B); for P(B|A), divide by count(A)."
         },
         {
           "Mistake": "Reading row/column orientation backward",
           "WhyWrong": "Changes which conditional is computed",
-          "Correction": "Label numerator and denominator"
+          "Correction": "Label both events and compute P(A|B) and P(B|A) with their own denominators; neither is the joint probability P(A∩B)."
         }
       ],
       "SummaryPoints": [
         "Read a two-way frequency table, compute joint and marginal relative frequencies, and distinguish conditionals by their denominators.",
-        "P(A∩B)=count intersection/N",
+        "Joint P(A∩B)=12/50=0.24; conditional P(B|A)=12/20=0.6 and P(A|B)=12/30=0.4 for the worked table.",
         "Human-assessed modelling and experiment evidence remains pending."
       ],
       "Visuals": [
