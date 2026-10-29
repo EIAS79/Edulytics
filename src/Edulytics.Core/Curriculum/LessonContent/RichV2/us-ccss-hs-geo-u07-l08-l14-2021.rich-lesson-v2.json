@@ -532,6 +532,7 @@
         "Learning goal: Derive s=rθ and A=(1/2)r²θ for a circular sector whose central angle θ is in radians.",
         "s=rθ with θ in radians and r>0 Based on definition θ=s/r",
         "A=(1/2)r²θ for 0≤θ≤2π, measured in radians Use area fraction θ/(2π) Use θ/(2π) for sector fraction",
+        "First-edition source task alignment: learners use a table of radii and circular arc lengths and graph their ordered pairs. For a fixed central angle, arc length is proportional to radius and the graph's slope is the radian measure θ, in s=rθ. This coordinate-graph argument and interpretation of slope must accompany, not be replaced by, sector-area formula drills.",
         "Authentic task: Students derive sector formula from area fraction then construct three sectors; teacher reviews derivation. Teacher rubric (0–4): correct circle or radian model, valid assumptions, exact calculations/angle interpretation, and well-supported explanation. Diagrams and reasoning require teacher scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 7 Lesson 13, CC BY 4.0. Independently written examples; no copied art or restricted assessment."
       ],
@@ -549,10 +550,10 @@
           "Example": "r=6,θ=π/2 gives 9π"
         },
         {
-          "Title": "Fraction awareness",
-          "Definition": "A full revolution is 2π radians, not 360 numerical radians",
-          "Rule": "Use θ/(2π) for sector fraction",
-          "Example": "θ=π/4 covers 1/8 disk"
+          "Title": "Arc-length line and slope",
+          "Definition": "For the same central angle θ, arc length s is a linear function of radius r: s=θr, with r≥0 and θ measured in radians.",
+          "Rule": "Plot (r,s) and divide vertical change by horizontal change. The line passes through (0,0), and slope Δs/Δr=θ; both s and r use the same length units.",
+          "Example": "(r,s)=(2,3),(6,9),(11,16.5),(14,21) all lie on s=1.5r; θ=1.5 radians."
         }
       ],
       "WorkedExamples": [
@@ -581,16 +582,16 @@
           "Check": "Check angle units, circle hypotheses and answer dimensions."
         },
         {
-          "Title": "Using Radians — case 3",
-          "Question": "Arc length 10, radius 5. Find sector area.",
-          "Method": "Fraction awareness",
+          "Title": "Using Radians — interpret a radius/arc-length graph",
+          "Question": "An original circular-path design records radius r (m) and arc length s (m) as (2,3),(6,9),(11,16.5),(14,21). Make a table and graph; determine the line's slope, interpret the common angle, and predict the arc for radius 20 m.",
+          "Method": "Use the proportional graph s=θr and verify constant ratios at each measured pair.",
           "Steps": [
-            "θ=s/r=10/5=2 rad",
-            "Sector area=(1/2)r²θ=(1/2)25·2",
-            "Area 25"
+            "Calculate s/r for each positive radius: 3/2=9/6=16.5/11=21/14=1.5, so all ordered pairs belong to a line through the origin.",
+            "Plot (r,s) with radius on the horizontal axis and arc length on the vertical axis. The slope is (9−3)/(6−2)=6/4=1.5, equal to θ in radians.",
+            "Use s=1.5r for r=20 m to predict an arc length of 30 m; both axes and the slope interpretation must be labelled."
           ],
-          "Answer": "25 square units.",
-          "Check": "Check angle units, circle hypotheses and answer dimensions."
+          "Answer": "Line s=1.5r; slope and central angle are 1.5 radians; at radius 20 m, arc length 30 m.",
+          "Check": "Four input pairs each have s/r=1.5, including (14,21). Radius and arc must have consistent units; 1.5 radians is dimensionless."
         }
       ],
       "CommonMistakes": [
@@ -607,7 +608,7 @@
       ],
       "SummaryPoints": [
         "Derive s=rθ and A=(1/2)r²θ for a circular sector whose central angle θ is in radians.",
-        "Use area fraction θ/(2π)",
+        "On the arc-length versus radius graph for a fixed central angle, slope equals angle θ in radians: s=θr; sector area then follows A=(1/2)r²θ.",
         "Human-scored source activity remains a Stage C/D requirement."
       ],
       "Visuals": [
@@ -618,10 +619,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Use s=rθ",
-            "Multiply 4·π/3",
-            "s=4π/3",
-            "4π/3 length units."
+            "Calculate s/r for each positive radius: 3/2=9/6=16.5/11=21/14=1.5, so all ordered pairs belong to a line through the origin.",
+            "Plot (r,s) with radius on the horizontal axis and arc length on the vertical axis. The slope is (9−3)/(6−2)=6/4=1.5, equal to θ in radians.",
+            "Use s=1.5r for r=20 m to predict an arc length of 30 m; both axes and the slope interpretation must be labelled.",
+            "Line s=1.5r; slope and central angle are 1.5 radians; at radius 20 m, arc length 30 m."
           ],
           "Rows": []
         }
