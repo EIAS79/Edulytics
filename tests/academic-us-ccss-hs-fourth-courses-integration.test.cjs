@@ -69,6 +69,10 @@ test('all seven Fourth Courses contract identities are integration-pending, not 
     'usccss.hs.matrix.solve_2x2',
     'usccss.hs.matrix.inverse_2x2',
     'usccss.hs.matrix.classify_2x2',
+    'usccss.hs.matrix.coefficients_3x3',
+    'usccss.hs.matrix.solve_3x3',
+    'usccss.hs.matrix.inverse_3x3',
+    'usccss.hs.matrix.row_reduce_3x3',
     'usccss.hs.log.inverse_power',
     'usccss.hs.log.compare_order',
     'trig.unit_circle_reflection_exact', 'trig.principal_inverse',
@@ -76,7 +80,7 @@ test('all seven Fourth Courses contract identities are integration-pending, not 
     'coordinates.focal_distance_conics'
   ];
   const ids = family.families.filter(x => ownedIds.includes(x.id));
-  assert.equal(ids.length, 11);
+  assert.equal(ids.length, 15);
   assert.ok(ids.every(x => x.productionRouting === false &&
     x.lessonPracticeRouting === false));
   for (const course of ['ADV-ALG-FUNC', 'ADV-TRIG-GEO']) {
