@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace Edulytics.Tests.MathematicsIntelligence;
 
@@ -48,6 +50,28 @@ public sealed class USCCSSG7SharedRichVisualHookTests
             Assert.Equal(1, assetSection.Split(code, StringSplitOptions.None).Length - 1);
             Assert.Equal(1, altSection.Split(code, StringSplitOptions.None).Length - 1);
             Assert.Equal(1, promptSection.Split(code, StringSplitOptions.None).Length - 1);
+
+            // Real, local first-party asset must back each whitelisted URL.
+            // This is a source/asset contract, not an authenticated HTTP test.
+            var match = Regex.Match(assetSection,
+                Regex.Escape($"\\\"{code}\\\"") +
+                @"\s*=>\s*""(?<url>/curriculum/us-ccss-g7/geometry/[a-z0-9-]+\.svg)""");
+            Assert.True(match.Success, $"Missing safe SVG mapping for {code}");
+            var url = match.Groups["url"].Value;
+            var relativePath = url.TrimStart('/').Replace('/', Path.DirectorySeparatorChar);
+            var diskPath = Path.Combine(root, "src/Edulytics.Web/wwwroot", relativePath);
+            Assert.True(File.Exists(diskPath), $"Missing first-party SVG file {diskPath}");
+            var svgText = File.ReadAllText(diskPath);
+            var svg = XDocument.Parse(svgText);
+            XNamespace ns = "http://www.w3.org/2000/svg";
+            Assert.Equal(ns + "svg", svg.Root?.Name);
+            Assert.Contains(svg.Descendants(ns + "title"), x => !string.IsNullOrWhiteSpace(x.Value));
+            Assert.Contains(svg.Descendants(ns + "desc"), x => x.Value.Length >= 60);
+            Assert.Equal("img", (string?)svg.Root?.Attribute("role"));
+            Assert.DoesNotContain("<script", svgText, StringComparison.OrdinalIgnoreCase);
+            Assert.DoesNotContain("<foreignObject", svgText, StringComparison.OrdinalIgnoreCase);
+            Assert.DoesNotContain("javascript:", svgText, StringComparison.OrdinalIgnoreCase);
+            Assert.DoesNotContain("onload=", svgText, StringComparison.OrdinalIgnoreCase);
         }
     }
 
