@@ -114,9 +114,16 @@ public sealed class RichLessonContentV2RolloutTests
         }
 
         Assert.Equal(5110, rows.Count);
-        Assert.Equal(
-            26 + 143 + 149,
-            readyCurated);
+        // Every reviewed direct Rich V2 candidate must appear exactly
+        // once in the canonical catalogue; no historical count ceiling.
+        var curatedLessons = RichLessonContentV2Registry.AllDocuments
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+        Assert.Equal(curatedLessons.Length,
+            curatedLessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal)
+                .Count());
+        Assert.Equal(curatedLessons.Length, readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);
         Assert.Equal(0, blockedContract);
