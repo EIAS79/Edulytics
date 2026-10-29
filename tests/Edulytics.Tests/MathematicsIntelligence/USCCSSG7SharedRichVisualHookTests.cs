@@ -27,10 +27,27 @@ public sealed class USCCSSG7SharedRichVisualHookTests
             shared, StringComparison.Ordinal);
         Assert.Contains("_RichLessonVisual", shared, StringComparison.Ordinal);
         Assert.Contains("_ => null", gradePartial, StringComparison.Ordinal);
+
+        // Exact Grade 7 ownership: one image, accessible description and
+        // actionable drawing prompt per Unit 1 lesson. Duplicate switch arms
+        // would otherwise break Razor compilation or hide student prompts.
+        var assetSection = gradePartial.Split(
+            "var assetPath = Model.LessonCode switch", StringSplitOptions.None)[1]
+            .Split("var altText = Model.LessonCode switch", StringSplitOptions.None)[0];
+        var altSection = gradePartial.Split(
+            "var altText = Model.LessonCode switch", StringSplitOptions.None)[1]
+            .Split("var constructionPrompt = Model.LessonCode switch", StringSplitOptions.None)[0];
+        var promptSection = gradePartial.Split(
+            "var constructionPrompt = Model.LessonCode switch", StringSplitOptions.None)[1]
+            .Split("@if (assetPath is not null)", StringSplitOptions.None)[0];
+
         for (var lesson = 1; lesson <= 13; lesson++)
         {
             var code = $"PED:US-CCSS-MATH:G7:U01:L{lesson:00}";
             Assert.Contains(code, gradePartial, StringComparison.Ordinal);
+            Assert.Equal(1, assetSection.Split(code, StringSplitOptions.None).Length - 1);
+            Assert.Equal(1, altSection.Split(code, StringSplitOptions.None).Length - 1);
+            Assert.Equal(1, promptSection.Split(code, StringSplitOptions.None).Length - 1);
         }
     }
 
