@@ -90,7 +90,45 @@
         "Equivalently P(A",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Related Events. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Independence",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Fair coin twice; A=first head, B=second head. Independent?",
+                "Yes, independent."
+              ]
+            },
+            {
+              "Label": "Dependence",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Draw two cards without replacement from deck with 2 red, 1 blue. Is red first independent of red second?",
+                "No, dependent."
+              ]
+            },
+            {
+              "Label": "Disjoint versus independent",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Two disjoint events each probability 1/4. Can they be independent?",
+                "No."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -180,7 +218,45 @@
         "B)=P(A∩B)/P(B)",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Conditional Probability. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Conditional formula",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "P(A∩B)=0.2 and P(B)=0.4. Find P(A|B).",
+                "0.5."
+              ]
+            },
+            {
+              "Label": "Multiplication rule",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "P(B)=0.5 and P(A|B)=0.3. Find joint probability.",
+                "0.15."
+              ]
+            },
+            {
+              "Label": "Zero-probability condition",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A fair die result is even given that result exceeds 3. Find P(even|>3).",
+                "2/3."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -269,7 +345,45 @@
         "P(B",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Using Tables for Conditional Probability. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Conditional row",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Table A/B counts [[12,8],[18,12]]: compute P(B|A).",
+                "0.6."
+              ]
+            },
+            {
+              "Label": "Conditional column",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Same table: compute P(A|B).",
+                "0.4."
+              ]
+            },
+            {
+              "Label": "Independence table test",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Are A and B independent in this table?",
+                "Yes, for the empirical distribution represented."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -359,7 +473,45 @@
         "Use exact model probabilities where available",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Using Probability to Determine Whether Events Are Independent. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Joint-product criterion",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Model P(A)=0.4,P(B)=0.5,joint=0.2. Independent?",
+                "Yes, in the stated probability model."
+              ]
+            },
+            {
+              "Label": "Conditional criterion",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Model P(A)=0.4,P(A|B)=0.3 with P(B)>0. Independent?",
+                "No, dependent."
+              ]
+            },
+            {
+              "Label": "Sampling uncertainty",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A 20-trial classroom frequency table suggests rates 0.5 and 0.55. Does it prove population independence?",
+                "No; not proof of independence."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -450,7 +602,45 @@
         "Weight all outcomes by their probabilities",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Event model and conclusions",
+          "Description": "Independent probability scenarios for Probabilities in Games. Denominators must match the named sample space.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Fairness",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Game wins $2 with probability 1/3, loses $1 otherwise. Is expected net gain fair?",
+                "Fair in expected net gain."
+              ]
+            },
+            {
+              "Label": "Condition on the first observed result and count remaining equally likely cards.",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "A bag contains two red cards and one blue. Draw without replacement. Find P(second red | first red).",
+                "P(second red | first red)=1/2."
+              ]
+            },
+            {
+              "Label": "Expected value",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Bag has 2 red and 1 blue; draw red then do not replace. Probability second is red given first red?",
+                "1/2; draws dependent."
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]
