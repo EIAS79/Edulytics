@@ -945,3 +945,62 @@ test('U02 L09 parser-recognizable measured path and two aligned double number li
   assert.equal(10/8, 1.25);
   assert.equal(10/5, 2);
 });
+
+
+test('U02 L10–L12 source-task contexts preserve comparisons, tables and human explanation gates', () => {
+  const record = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u02-l10-l12-original-student-teacher-task-comparison.json'), 'utf8'));
+  assert.equal(record.summary.studentBodiesDirectlyCompared, 3);
+  assert.equal(record.summary.teacherActivityBodiesCompared, 3);
+  assert.equal(record.summary.sourceTaskFullyAcademicallyAccepted, 0);
+  assert.deepEqual(record.lessons.map(l => l.lessonCode), [10, 11, 12].map(n => lcode(2, n)));
+  for (const lesson of record.lessons) {
+    assert.ok(lesson.sourceActivities.length >= 4, lesson.lessonCode);
+    assert.ok(lesson.firstPartyEvidence.length >= 3, lesson.lessonCode);
+    assert.equal(lesson.teacherRubricCandidate.implemented, false);
+    assert.equal(lesson.teacherRubricCandidate.persisted, false);
+    assert.equal(lesson.selectedPracticeTested, false);
+    assert.equal(lesson.actualStudentVisualRendered, false);
+    assert.equal(lesson.academicAcceptance, 'NOT_ACCEPTED');
+  }
+  const l10 = byCode.get(lcode(2,10)).translations[0];
+  assert.match(l10.workedExamples, /3\.0 miles in 24 minutes/);
+  assert.match(l10.workedExamples, /3\.0 miles in 30 minutes/);
+  assert.match(l10.workedExamples, /24-minute 3-mile runner|A is faster/);
+  assert.match(l10.workedExamples, /Description: Double number line/);
+  assert.match(l10.workedExamples, /15:20 versus 16:20/);
+
+  const l11 = byCode.get(lcode(2,11)).translations[0];
+  assert.match(l11.workedExamples, /4th figure contains 28 tiles/);
+  assert.match(l11.workedExamples, /5th 35 and the 10th 70/);
+  assert.match(l11.workedExamples, /350,250/);
+  assert.match(l11.workedExamples, /364,455/);
+  assert.match(l11.workedExamples, /Description: Ratio table/);
+
+  const l12 = byCode.get(lcode(2,12)).translations[0];
+  assert.match(l12.workedExamples, /Fifty tacos for \$72 cost \$1\.44 each/);
+  assert.match(l12.workedExamples, /2\.1,37\.80/);
+  assert.match(l12.workedExamples, /128 GB cost \$32/);
+  assert.match(l12.workedExamples, /historical memory paired halving|Halving yields/);
+  assert.match(l12.workedExamples, /Description: Double number line/);
+  assert.match(l12.explanation, /not current retail pricing/);
+});
+
+test('U02 L10–L12 independent numeric oracles reject common non-equivalent-rate traps', () => {
+  assert.equal(3 / 24 > 3 / 30, true);             // same distance, less time => faster
+  assert.equal(24 / 3, 8);                         // minutes per mile A
+  assert.equal(30 / 3, 10);                        // minutes per mile B
+  assert.equal(47 * 3, 141);                       // 3 to 9 ticket batch factor
+  assert.equal(3 * 5, 15);                         // matching soda for first juice ratio
+  assert.equal(4 * 4, 16);                         // matching soda for second juice ratio
+  assert.ok(Math.abs(16 / 5 - 3 - 0.2) < 1e-12);
+  assert.ok(Math.abs(16 / 3 - 5 - 1 / 3) < 1e-12);
+  assert.equal(7 * 4, 28);                         // growing colored tile figure
+  assert.equal(7 * 10, 70);
+  assert.equal(250 * 7 / 5, 350);                  // large batch trail mix
+  assert.equal(455 * 4 / 5, 364);                  // juice table
+  assert.equal(15 / (6 / 4), 10);                  // tacos possible for $15
+  assert.equal(72 / 50 < 6 / 4, true);             // taco prices differ
+  assert.ok(Math.abs(18 * 2.1 - 37.8) < 1e-10);    // wages
+  assert.equal(32 / 128, 0.25);                   // historical $/GB
+});
