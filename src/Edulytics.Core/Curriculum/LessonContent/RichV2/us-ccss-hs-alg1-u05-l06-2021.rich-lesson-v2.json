@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l06-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L06",
+      "CultureCode": "en",
+      "Title": "Analyzing Graphs",
+      "ExplanationParagraphs": [
+        "Learning goal: determine exponential growth versus decay from graphs and descriptions; infer factors and starting values; compare two exponential decays on common graph scales and explain when their relative size changes. Original Edulytiks lesson aligned with Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 6, https://im.kendallhunt.com/HS/teachers/1/5/6/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/6/index.html (CC BY 4.0). The source compares phone depreciation; our independent data are purely hypothetical.",
+        "Original fictional devices A and B have first-year price models in dollars A(t)=600(0.6)^t and B(t)=400(0.8)^t, t≥0 whole years. At t0 A600>B400, at t1 A360>B320, while at t2 A216<B256. Thus A first becomes lower than B at the second whole-year observation even though it began more expensive. A retains60% per year, B80%, so A loses40% annually compared with B's20%.",
+        "From a graph and table, the t0 vertical intercept reveals initial value, while the ratio of same-interval outputs reveals the multiplier. A greater initial value does not imply slower decay; compare both intercept and factor. If graph windows use different y scales, direct visual comparison may be misleading.",
+        "Student task: draw both on shared dollar/time axes with all four points t0–3; infer equations by common ratios, classify which decays faster and find the first integer observation where order reverses. Teacher-scored rubric (0–2 each, max8): correct plotted data, inferred parameters, accurate graph comparison, and evidence-backed contextual claims."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Initial value from intercept",
+          "Definition": "At input t0, output equals the exponential coefficient a.",
+          "Rule": "Read at the same graph input.",
+          "Example": "A0=$600, B0=$400."
+        },
+        {
+          "Title": "Decay factor from ratios",
+          "Definition": "For each whole-step increase, output ratio is b.",
+          "Rule": "Divide successive outputs.",
+          "Example": "A factor0.6, B factor0.8."
+        },
+        {
+          "Title": "Relative decay comparison",
+          "Definition": "Order can reverse because a smaller multiplier reduces one curve faster.",
+          "Rule": "Compare actual paired values at same times.",
+          "Example": "A1=$360>B1=$320; A2=$216<B2=$256."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate device A",
+          "Question": "Find A(0),A(1),A(2),A(3).",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "A(0)=600.",
+            "A(1)=600×0.6=360.",
+            "A(2)=360×0.6=216.",
+            "A(3)=216×0.6=129.6.",
+            "Ratios remain0.6."
+          ],
+          "Answer": "$600,$360,$216,$129.60.",
+          "Check": "Yearly losses are40% of previous value."
+        },
+        {
+          "Title": "Calculate device B",
+          "Question": "Find B(0),B(1),B(2),B(3).",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "B(0)=400.",
+            "B(1)=400×0.8=320.",
+            "B(2)=320×0.8=256.",
+            "B(3)=256×0.8=204.8.",
+            "Ratios remain0.8."
+          ],
+          "Answer": "$400,$320,$256,$204.80.",
+          "Check": "Yearly losses are20%."
+        },
+        {
+          "Title": "Determine first integer year below",
+          "Question": "When is A(t) less than B(t) at an integer sampled year?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "At t0 A600>B400.",
+            "At t1 A360>B320.",
+            "At t2 A216<B256.",
+            "Therefore the first nonnegative integer year with A below B is t2.",
+            "This conclusion uses integer-year values rather than claiming exact continuous crossing time."
+          ],
+          "Answer": "Year2 is first sampled year A<B.",
+          "Check": "Adjacent rows establish the transition."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing graphs with different axes",
+          "WhyWrong": "Different scale may make one decay look faster.",
+          "Correction": "Use common axes or compute factors."
+        },
+        {
+          "Mistake": "Assuming higher initial output means higher forever",
+          "WhyWrong": "Different factors change relative order.",
+          "Correction": "Check later values and rate."
+        },
+        {
+          "Mistake": "Interpreting decay factor0.6 as 60% loss",
+          "WhyWrong": "It is60% remaining.",
+          "Correction": "Loss fraction1−0.6=40%."
+        }
+      ],
+      "SummaryPoints": [
+        "Exponential graph start and ratios determine its model.",
+        "Two decay curves can cross as retention factors differ.",
+        "A first falls below B at whole year2 in the original model.",
+        "Teacher evaluates graph reasoning and limits."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "year0",
+              "Cells": [
+                "A600,B400"
+              ]
+            },
+            {
+              "Label": "year1",
+              "Cells": [
+                "A360,B320"
+              ]
+            },
+            {
+              "Label": "year2",
+              "Cells": [
+                "A216,B256"
+              ]
+            },
+            {
+              "Label": "year3",
+              "Cells": [
+                "A129.60,B204.80"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

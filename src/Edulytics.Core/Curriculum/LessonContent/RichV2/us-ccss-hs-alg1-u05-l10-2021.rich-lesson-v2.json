@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l10-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L10",
+      "CultureCode": "en",
+      "Title": "Looking at Rates of Change",
+      "ExplanationParagraphs": [
+        "Learning goal: compute average rate of change of exponential functions over specified intervals and explain why the same model has different secant slopes depending on interval. Independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 10, https://im.kendallhunt.com/HS/teachers/1/5/10/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/10/index.html (CC BY 4.0). The source revisits solar-cost and coffee-shop changes, emphasizing finite differences per time.",
+        "Original fictional account model F(t)=10·2^t tokens for whole days t≥0 gives F0=10,F1=20,F2=40,F3=80. Average rate from day0 to1 is (20−10)/1=10 tokens/day; from day1 to2 is (40−20)/1=20 tokens/day; from day0 to3 is (80−10)/3=70/3≈23.33 tokens/day.",
+        "An exponential function has a constant multiplicative factor, not a constant additive per-unit rate. A secant line based on the full interval 0–3 captures a net average; it does not describe each individual step. Predictions that extend a short-period rate linearly may therefore be wrong: day1's rate10 cannot forecast day3 as40 when actual model gives80.",
+        "Student task: choose two different intervals, draw corresponding secant slopes over one exponential graph, interpret their units and compare short versus long interval predictions. Teacher-scored rubric0–2 each for endpoint read, quotient arithmetic, model-appropriate rate interpretation and explicit limitation of linear prediction."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Secant average rate",
+          "Definition": "AROC=(F(b)−F(a))/(b−a) for a≠b.",
+          "Rule": "Use endpoint outputs and time difference.",
+          "Example": "From t0 to1:10 tokens/day."
+        },
+        {
+          "Title": "Nonconstant exponential difference",
+          "Definition": "Equal-time ratios may be equal while equal-time differences change.",
+          "Rule": "Compare multiple adjacent interval slopes.",
+          "Example": "F1−F0=10; F2−F1=20."
+        },
+        {
+          "Title": "Prediction limitation",
+          "Definition": "A single secant slope need not hold for other intervals on a nonlinear curve.",
+          "Rule": "State prediction interval and assumptions.",
+          "Example": "Linear extension from day1 underestimates day3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare one-day intervals",
+          "Question": "Find rates on [0,1] and[1,2].",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "F(0)=10,F(1)=20,F(2)=40.",
+            "On [0,1], rate(20−10)/(1−0)=10.",
+            "On[1,2], rate(40−20)/(2−1)=20.",
+            "The rates differ even though multiplicative factor is constant2."
+          ],
+          "Answer": "10 and20 tokens/day.",
+          "Check": "Differences and elapsed times verified."
+        },
+        {
+          "Title": "Compute a longer secant slope",
+          "Question": "Find rate on[0,3].",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "F(3)=10×8=80.",
+            "Output change80−10=70.",
+            "Elapsed time3 days.",
+            "Average rate70/3≈23.333 tokens/day."
+          ],
+          "Answer": "70/3 tokens/day.",
+          "Check": "3×70/3=70 net token change."
+        },
+        {
+          "Title": "Reject a constant-slope forecast",
+          "Question": "Using first-day+10/day predicts what at day3?",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "Start F0=10.",
+            "Linear extension at+10/day gives10+10×3=40.",
+            "Actual exponential F3=80.",
+            "Difference is40 tokens.",
+            "The constant-rate forecast is invalid for this exponential pattern."
+          ],
+          "Answer": "Linear estimate40 vs actual model80.",
+          "Check": "The chosen slope was only an interval average."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reporting the multiplicative factor as average rate",
+          "WhyWrong": "Factor2 is dimensionless, rate has tokens/day units.",
+          "Correction": "Use ΔF/Δt."
+        },
+        {
+          "Mistake": "Assuming all exponential secant slopes equal",
+          "WhyWrong": "Successive differences change even when ratio is constant.",
+          "Correction": "Compute for each interval separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Exponential functions have changing additive rates of change.",
+        "Secant slope must name a particular interval and units.",
+        "A constant multiplier does not imply a constant derivative or secant rate.",
+        "Teacher scores comparisons and predictions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "0–1 day",
+              "Cells": [
+                "10 tokens/day"
+              ]
+            },
+            {
+              "Label": "1–2 days",
+              "Cells": [
+                "20 tokens/day"
+              ]
+            },
+            {
+              "Label": "0–3 days",
+              "Cells": [
+                "70/3 tokens/day"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

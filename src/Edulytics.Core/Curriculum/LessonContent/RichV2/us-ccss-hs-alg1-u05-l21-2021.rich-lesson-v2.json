@@ -1,0 +1,146 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l21-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L21",
+      "CultureCode": "en",
+      "Title": "Predicting Populations",
+      "ExplanationParagraphs": [
+        "Learning goal: evaluate whether linear, exponential or no simple model fits measured population history; use defensible projections and discuss why extrapolation can fail. Original independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 21, https://im.kendallhunt.com/HS/teachers/1/5/21/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/21/index.html (CC BY 4.0). The publisher compares real historical city populations; these separate three first-party fictional town series are not real census evidence.",
+        "Original fictional town counts at equal decade indices t=0,1,2,3: Town A800,900,1000,1100; Town B200,300,450,675; Town C500,600,620,800. Town A has fixed difference100 each decade and a linear model A(t)=800+100t. Town B has fixed ratio1.5 and model B(t)=200(1.5)^t. Town C changes by+100,+20,+180 and ratios vary, so no single simple constant-difference or constant-ratio model matches all four points.",
+        "Extrapolating one more decade gives model A(4)=1200 and model B(4)=200(1.5)^4=1012.5; since a population is a whole-number count, report approximately1013 or a continuous proxy estimate1012.5, not a literal half person. Do not invent an extrapolation for Town C as certain just to fill a table. None of these projections is a validated forecast of real people.",
+        "Student task: compare common differences and ratios, graph all three series on shared time/population axes, decide which model fits each, propose a cautious one-step projection and explain migration, policy and sampling factors outside the model. Teacher-scored rubric0–2 each for table/graphs, model selection by evidence, correct projection and defensible limitations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear population pattern",
+          "Definition": "A constant difference over equal decades supports a linear model.",
+          "Rule": "Check all consecutive differences.",
+          "Example": "Town A increases100 per decade."
+        },
+        {
+          "Title": "Exponential population pattern",
+          "Definition": "A common successive ratio supports an exponential model.",
+          "Rule": "Check all ratios.",
+          "Example": "Town B grows by factor1.5 per decade."
+        },
+        {
+          "Title": "Model uncertainty",
+          "Definition": "Some observed patterns do not support a unique simple trend.",
+          "Rule": "Do not force a line or constant multiplier onto irregular values.",
+          "Example": "Town C differences100,20,180 differ."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Classify Town A",
+          "Question": "Find model for800,900,1000,1100.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Differences all equal100.",
+            "Initial count800 at t0.",
+            "Write A(t)=800+100t.",
+            "At t4 predict1200.",
+            "This is a mathematical extrapolation assumption."
+          ],
+          "Answer": "Linear model; decade4 prediction1200.",
+          "Check": "A3=800+300=1100."
+        },
+        {
+          "Title": "Classify Town B",
+          "Question": "Find model for200,300,450,675.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Ratios300/200=1.5,450/300=1.5,675/450=1.5.",
+            "Initial200.",
+            "Write B(t)=200×1.5^t.",
+            "At t4 predict200×5.0625=1012.5.",
+            "An actual population would require a whole-number interpretation."
+          ],
+          "Answer": "Exponential model, next value≈1013 persons.",
+          "Check": "At t3 200×3.375=675."
+        },
+        {
+          "Title": "Explain irregular model limits",
+          "Question": "Can Town C500,600,620,800 fit a constant-difference or constant-ratio rule?",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Compute differences+100,+20,+180; not equal.",
+            "Ratios600/500=1.2,620/600≈1.0333,800/620≈1.2903; not equal.",
+            "Neither exact linear nor exact fixed-factor exponential model matches all four.",
+            "Collect more context before choosing a forecast."
+          ],
+          "Answer": "No simple exact linear or exponential pattern for C.",
+          "Check": "Both invariants fail across observations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling an extrapolated population prediction a measured census result",
+          "WhyWrong": "The next decade has not been observed and data are fictional.",
+          "Correction": "Label projection and limits."
+        },
+        {
+          "Mistake": "Reporting half a person as an exact headcount",
+          "WhyWrong": "The real-number model produces fractional outputs.",
+          "Correction": "Round thoughtfully and explain."
+        },
+        {
+          "Mistake": "Forcing irregular history to a constant-ratio expression",
+          "WhyWrong": "Different ratios disprove that exact assumption.",
+          "Correction": "Use error/uncertainty or alternative models."
+        }
+      ],
+      "SummaryPoints": [
+        "Repeated differences and ratios help choose plausible model classes.",
+        "Town A is linear, B exponential, C neither under exact simple patterns.",
+        "One-step projections are conditional, not guaranteed real populations.",
+        "Teacher scores original graphs and uncertainty arguments."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "A800,B200,C500"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "A900,B300,C600"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "A1000,B450,C620"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "A1100,B675,C800"
+              ]
+            },
+            {
+              "Label": "t4 model estimate",
+              "Cells": [
+                "A1200,B≈1013,C uncertain"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

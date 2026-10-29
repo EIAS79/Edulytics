@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l19-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L19",
+      "CultureCode": "en",
+      "Title": "Which One Changes Faster?",
+      "ExplanationParagraphs": [
+        "Learning goal: use graphs, tables and equations to compare a constant-addition pattern and a constant-factor growth pattern, including a crossover whose timing can depend on the starting amounts. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 19, https://im.kendallhunt.com/HS/teachers/1/5/19/preparation.html and student task https://im.kendallhunt.com/HS/students/1/5/19/index.html (CC BY 4.0). The source contrasts linear and exponential behavior and expects graphical discussion, not merely one answer.",
+        "Independent hypothetical rewards for integer years t≥0: Plan S receives starting1000 tokens plus100 tokens each year, S(t)=1000+100t. Plan C starts1000 and increases10% per year, C(t)=1000(1.1)^t. At t0 both1000, t1 both1100, t2 simple1200 versus compound1210, t3 simple1300 versus compound1331. The two functions agree at t0,t1 but not thereafter, so they are not identical.",
+        "At year2, compounding first exceeds the linear increase among nonnegative integer years, by10 tokens. The difference grows later, but early periods can conceal it. Contrast constant difference100 with constant factor1.1; the multiplication model's annual absolute increase is100,110,121 etc.",
+        "Student task: draw both on common axes, explain first crossover with exact adjacent-year checks, compare a model with different starting values, and critique overconfident long-run extrapolation. Teacher-scored rubric0–2 each for tables, correct graph and first difference, structural explanation and model-limit critique."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear growth",
+          "Definition": "A constant additive change gives a linear function.",
+          "Rule": "Difference S(t+1)−S(t)=100.",
+          "Example": "S(t)=1000+100t."
+        },
+        {
+          "Title": "Exponential growth",
+          "Definition": "Repeated factor1+r causes changing absolute additions.",
+          "Rule": "C(t+1)/C(t)=1.1.",
+          "Example": "C(t)=1000(1.1)^t."
+        },
+        {
+          "Title": "Crossover",
+          "Definition": "One model can exceed another despite agreeing initially.",
+          "Rule": "Compare paired values across adjacent domain steps.",
+          "Example": "At t1 equal1100, at t2 compound1210>simple1200."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare years0–3",
+          "Question": "Evaluate S(t),C(t) at t0,1,2,3.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "At0 both1000.",
+            "At1 S1100 and C1100.",
+            "At2 S1200 and C1210.",
+            "At3 S1300 and C1331.",
+            "The compound plan pulls ahead after year1."
+          ],
+          "Answer": "Values1000/1000,1100/1100,1200/1210,1300/1331.",
+          "Check": "Both formulas verified at identical inputs."
+        },
+        {
+          "Title": "Identify first strictly higher whole year",
+          "Question": "When does C(t)>S(t) first occur?",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "At t0 both equal.",
+            "At t1 both equal.",
+            "At t2 C1210, S1200.",
+            "Since t is a nonnegative integer, first strict dominance is year2."
+          ],
+          "Answer": "Year2.",
+          "Check": "All earlier domain cases have been checked."
+        },
+        {
+          "Title": "Explain annual changes",
+          "Question": "Compute compound-plan additions in years1,2,3.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Year1:1100−1000=100.",
+            "Year2:1210−1100=110.",
+            "Year3:1331−1210=121.",
+            "These grow because each is10% of the updated balance.",
+            "Simple plan adds100 every year."
+          ],
+          "Answer": "Compound additions100,110,121 versus simple100.",
+          "Check": "The factor remains1.1 across periods."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming equal first-year growth means the functions are the same",
+          "WhyWrong": "Future additive increases differ.",
+          "Correction": "Check at t2."
+        },
+        {
+          "Mistake": "Treating nominal10% of original as compound interest every year",
+          "WhyWrong": "That describes simple linear growth.",
+          "Correction": "Use current balance for compound model."
+        }
+      ],
+      "SummaryPoints": [
+        "A linear and exponential model can agree at several inputs without being identical.",
+        "Constant difference and constant ratio are distinct structures.",
+        "Compound model first exceeds simple model at integer year2 in this example.",
+        "Teacher assesses common-axis graphs and justified comparisons."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "Year0",
+              "Cells": [
+                "S1000,C1000"
+              ]
+            },
+            {
+              "Label": "Year1",
+              "Cells": [
+                "S1100,C1100"
+              ]
+            },
+            {
+              "Label": "Year2",
+              "Cells": [
+                "S1200,C1210"
+              ]
+            },
+            {
+              "Label": "Year3",
+              "Cells": [
+                "S1300,C1331"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

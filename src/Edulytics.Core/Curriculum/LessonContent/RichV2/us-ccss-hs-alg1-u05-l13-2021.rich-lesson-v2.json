@@ -1,0 +1,146 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l13-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L13",
+      "CultureCode": "en",
+      "Title": "Reasoning about Exponential Graphs (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: recover growth/decay factor from two graph points with nonconsecutive inputs, interpret intersections of exponential graphs and distinguish a matching formula from a superficially plausible one. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 13, https://im.kendallhunt.com/HS/teachers/1/5/13/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/13/index.html (CC BY 4.0). The source's special feature is nonconsecutive input intervals when inferring factors.",
+        "Original hypothetical device value graph has A(0)=320 dollars and A(2)=180 dollars for A(t)=a·b^t. At0, a=320. At2,320b²=180 so b²=9/16, positive b=3/4=0.75. Therefore A(t)=320(.75)^t. It predicts A1=$240,A3=$135; do not mistakenly set factor to180/320=.5625, which is the TWO-year factor.",
+        "Original second comparison: F(t)=60·2^t, G(t)=240·(.5)^t, for whole nonnegative times. Equate:60·2^t=240·(1/2)^t; dividing yields4^t=4, so t=1, both outputs120. At t0 F60<G240; at t2 F240>G60. The intersection gives equality at the SAME input.",
+        "Student task: identify a,b from graphs with missing intermediate t, sketch both curves on shared axes, calculate an intersection and explain where ordering reverses. Teacher-scored rubric0–2 each for factor extraction, exact graph predictions, intersection and limitations and units."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Factor over multiple steps",
+          "Definition": "If f(t+k)/f(t)=b^k, infer b by taking kth root for positive b.",
+          "Rule": "Do not confuse multi-step ratio with per-step b.",
+          "Example": "180/320=9/16=(3/4)²."
+        },
+        {
+          "Title": "Common initial value",
+          "Definition": "A(0)=a since b^0=1.",
+          "Rule": "Read the vertical intercept.",
+          "Example": "a=320."
+        },
+        {
+          "Title": "Intersection of exponential curves",
+          "Definition": "At crossing the two function values are equal for same input.",
+          "Rule": "Solve F(t)=G(t).",
+          "Example": "At t1 F=G=120."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Infer b from nonconsecutive points",
+          "Question": "Given A0=320 and A2=180 for exponential A(t), find b.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "A0=a=320.",
+            "A2=320b²=180.",
+            "Divide b²=180/320=9/16.",
+            "Assume b>0 so b=3/4=.75.",
+            "Model A(t)=320(.75)^t."
+          ],
+          "Answer": "Initial320, decay factor.75.",
+          "Check": "At t2:320×.5625=180."
+        },
+        {
+          "Title": "Predict intermediate and later values",
+          "Question": "Find A1 and A3.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "A1=320×.75=240.",
+            "A2=180 from given observations.",
+            "A3=180×.75=135.",
+            "Check ratios240/320=180/240=135/180=.75."
+          ],
+          "Answer": "$240 at t1,$135 at t3.",
+          "Check": "Every successive factor matches."
+        },
+        {
+          "Title": "Solve intersecting curves",
+          "Question": "Find when 60·2^t=240·(.5)^t.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "Divide by60:2^t=4×(.5)^t.",
+            "Divide by(.5)^t>0:4^t=4.",
+            "Thus t=1.",
+            "Outputs F1=120,G1=120.",
+            "At t0 and2 order differs, so this is the crossover."
+          ],
+          "Answer": "t1, output120.",
+          "Check": "Both model equations and relative ordering verify."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Taking a two-year ratio as annual factor",
+          "WhyWrong": "180/320 represents b², not b.",
+          "Correction": "Take positive square root."
+        },
+        {
+          "Mistake": "Comparing graph heights at mismatched x-values",
+          "WhyWrong": "Graph crossing requires same input.",
+          "Correction": "Set functions equal at common t."
+        },
+        {
+          "Mistake": "Claiming a unique real-world device depreciation law",
+          "WhyWrong": "Invented points alone don't establish a market process.",
+          "Correction": "Label hypothetical assumptions."
+        }
+      ],
+      "SummaryPoints": [
+        "Use exponent difference to infer b from nonconsecutive points.",
+        "Given A0=320,A2=180, factor is.75 not.5625.",
+        "Intersection equality compares two outputs at one input.",
+        "Teacher reviews graph reasoning and contextual credibility."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "A=$320"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "A=$240"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "A=$180"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "A=$135"
+              ]
+            },
+            {
+              "Label": "F/G crossing",
+              "Cells": [
+                "t1 both120"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

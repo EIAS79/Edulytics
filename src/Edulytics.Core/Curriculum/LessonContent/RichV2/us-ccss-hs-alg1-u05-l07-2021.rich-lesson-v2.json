@@ -1,0 +1,145 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l07-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L07",
+      "CultureCode": "en",
+      "Title": "Using Negative Exponents",
+      "ExplanationParagraphs": [
+        "Learning goal: extend exponential equations to negative time inputs, interpret pre-baseline quantities, use reciprocal powers and graph an appropriate window; distinguish negative exponent from a negative output. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 7, https://im.kendallhunt.com/HS/teachers/1/5/7/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/7/index.html (CC BY 4.0). Source explicitly interprets t<0 as a time before the initial observation and includes a coral context.",
+        "Original fictional scale-indicator model P(t)=100·2^t measurement units, with t measured in years relative to a chosen baseline t0. Values: P(−2)=25, P(−1)=50, P(0)=100, P(1)=200,P(2)=400. Negative t refers to previous years, not negative measurement. The model's backward extension is an assumption, not actual observed historical data.",
+        "For nonzero b, b^(−n)=1/b^n. Thus 2^(−3)=1/8; 100×2^(−2)=100/4=25. An exponent such as −2 changes the reciprocal multiplier and does not force the entire result to be negative.",
+        "Student task: complete a before/after table for a chosen baseline, write a clear context sentence for t=−2, graph points with negative x-axis values, and compare what happens when model factor changes. Teacher-scored rubric0–2 for exponent rules, table, correct time interpretation, and responsible graphing-window/domain explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Negative exponent",
+          "Definition": "For b≠0, b^(−n)=1/b^n.",
+          "Rule": "Interpret reciprocal repeated scaling.",
+          "Example": "2^(−2)=1/4."
+        },
+        {
+          "Title": "Negative input time",
+          "Definition": "t<0 identifies time before baseline event, not a negative quantity.",
+          "Rule": "Explain what t=0 represents.",
+          "Example": "t=−2 means two years before chosen observation."
+        },
+        {
+          "Title": "Exponential graph window",
+          "Definition": "A useful plot window shows both pre- and post-baseline values without clipping.",
+          "Rule": "Consider large growth for positive t.",
+          "Example": "For t∈[−2,2], P spans25–400."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Evaluate past and future",
+          "Question": "For P(t)=100·2^t calculate −2 through2.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "At t−2, factor1/4 gives25.",
+            "At t−1 factor1/2 gives50.",
+            "At t0 gives100.",
+            "At t1 gives200; t2 gives400.",
+            "Each move forward one year doubles output."
+          ],
+          "Answer": "25,50,100,200,400.",
+          "Check": "Past quantities stay positive."
+        },
+        {
+          "Title": "Explain exponent identities",
+          "Question": "Simplify2^4·2^(−3).",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Use same-base addition of exponents:2^(4−3).",
+            "Result exponent1, so value2.",
+            "Independently calculate16×(1/8)=2.",
+            "Negative exponent denotes reciprocal."
+          ],
+          "Answer": "2.",
+          "Check": "Both exponent and numeric evaluation agree."
+        },
+        {
+          "Title": "Choose a graph window",
+          "Question": "What horizontal/vertical bounds display t−2 to2 data?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Minimum considered input is−2, maximum2.",
+            "P(−2)=25 is smallest, P(2)=400 is largest.",
+            "Choose x-axis [−2,2] and y-axis [0,450] for visible points.",
+            "Label the baseline at0 and units."
+          ],
+          "Answer": "A suitable original view is x[−2,2], y[0,450].",
+          "Check": "Window includes all five calculated points."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling b^(−2) equal to −b²",
+          "WhyWrong": "Negative exponent means reciprocal, not sign negation.",
+          "Correction": "Use1/b²."
+        },
+        {
+          "Mistake": "Treating negative t as impossible without context",
+          "WhyWrong": "Relative time may legitimately be before an event.",
+          "Correction": "Label baseline and interpret direction."
+        },
+        {
+          "Mistake": "Claiming extrapolated past values are observed",
+          "WhyWrong": "A model extension is not historical measurement.",
+          "Correction": "State retrospective prediction assumption."
+        }
+      ],
+      "SummaryPoints": [
+        "Negative exponents extend exponential models to inputs before baseline.",
+        "P(−2)=25 for P(t)=100·2^t, not −400.",
+        "Useful graphs include both negative time and positive output.",
+        "Teacher reviews evidence and interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "t−2",
+              "Cells": [
+                "25"
+              ]
+            },
+            {
+              "Label": "t−1",
+              "Cells": [
+                "50"
+              ]
+            },
+            {
+              "Label": "t0",
+              "Cells": [
+                "100"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "200"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "400"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

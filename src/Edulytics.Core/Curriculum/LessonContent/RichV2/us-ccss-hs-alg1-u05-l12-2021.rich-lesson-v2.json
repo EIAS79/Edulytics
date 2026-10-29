@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l12-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L12",
+      "CultureCode": "en",
+      "Title": "Reasoning about Exponential Graphs (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: investigate effect of multiplier b and coefficient a on graphs of a·b^x, comparing initial values, growth/decay direction and steepness using multiple equations on common axes. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 12, https://im.kendallhunt.com/HS/teachers/1/5/12/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/12/index.html (CC BY 4.0). The publisher encourages dynamic graphing technology; text calculations are not proof that a device was used.",
+        "Original comparative functions on x≥0: F(x)=50(1.5)^x, G(x)=50(2)^x and H(x)=50(.75)^x. All share vertical intercept (0,50). At x1 their values are75,100,37.5; at x2 they are112.5,200,28.125. F and G grow while H decays. Over positive x, larger growth factor creates faster increase from the same starting value.",
+        "Changing initial coefficient instead of multiplier moves intercept: J(x)=80(1.5)^x starts80 but grows at same 50%-per-period rate as F. If a is negative the sign and graph relation differ, but these practice examples intentionally use positive a to isolate factor effects.",
+        "Student task: draw or use actual authorized graphing technology to compare F,G,H, label intersecting t0, explain why G outpaces F for positive x, and describe changes with coefficient a while holding b fixed. Teacher-scored rubric0–2 each for table, graph comparison, parameter interpretation and clear differentiation between multiplier and additive slope."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common initial value",
+          "Definition": "Functions with the same a in a·b^x share output a at x=0.",
+          "Rule": "Evaluate b^0=1.",
+          "Example": "F0=G0=H0=50."
+        },
+        {
+          "Title": "Growth versus decay",
+          "Definition": "b>1 gives increase for positive a;0<b<1 gives decrease.",
+          "Rule": "Check factor without confusing it with percent change.",
+          "Example": "1.5 means50% growth, .75 means25% decrease."
+        },
+        {
+          "Title": "Parameter a scaling",
+          "Definition": "Changing a scales outputs while preserving factor b.",
+          "Rule": "Compare same x values.",
+          "Example": "F0=50,J0=80, both multiply1.5 per step."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare all three at x1",
+          "Question": "Find F1,G1,H1.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "F1=50×1.5=75.",
+            "G1=50×2=100.",
+            "H1=50×.75=37.5.",
+            "All began at50 but b changes direction/rate.",
+            "Order G>F>H at positive x1."
+          ],
+          "Answer": "100>75>37.5.",
+          "Check": "Each output is initial50 times respective factor."
+        },
+        {
+          "Title": "Compare x2 growth or decay",
+          "Question": "Find F2,G2,H2.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "F2=50×2.25=112.5.",
+            "G2=50×4=200.",
+            "H2=50×.5625=28.125.",
+            "F and G increase, H decreases."
+          ],
+          "Answer": "F112.5,G200,H28.125.",
+          "Check": "All x2 values equal two successive multiplications."
+        },
+        {
+          "Title": "Change initial value separately",
+          "Question": "J(x)=80(1.5)^x. Find J0 and J2.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "At x0, J=80×1=80.",
+            "At x2, J=80×2.25=180.",
+            "Relative multiplier over one period is1.5, same as F.",
+            "The intercept changed, not growth factor."
+          ],
+          "Answer": "J0=80,J2=180.",
+          "Check": "J2/J0=2.25=1.5²."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming same initial value means same graph",
+          "WhyWrong": "Different b produces different outputs for x≠0.",
+          "Correction": "Compare at x1 and2."
+        },
+        {
+          "Mistake": "Interpreting factor1.5 as an increase of1.5 units",
+          "WhyWrong": "It is50% of current value per step.",
+          "Correction": "Use output ratio."
+        },
+        {
+          "Mistake": "Claiming an interactive plot was operated from a written sketch",
+          "WhyWrong": "The file contains only static examples.",
+          "Correction": "Document real software use separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Coefficient a sets initial output, factor b controls repeated scaling.",
+        "With a50, factors1.5,2 and.75 give distinct graphs.",
+        "Model comparisons require common axes and appropriate domains.",
+        "Teacher reviews graphs, interpretations and genuine technology evidence."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "x0",
+              "Cells": [
+                "F50,G50,H50"
+              ]
+            },
+            {
+              "Label": "x1",
+              "Cells": [
+                "F75,G100,H37.5"
+              ]
+            },
+            {
+              "Label": "x2",
+              "Cells": [
+                "F112.5,G200,H28.125"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

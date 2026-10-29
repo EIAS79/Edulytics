@@ -1,0 +1,147 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l16-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L16",
+      "CultureCode": "en",
+      "Title": "Compounding Interest",
+      "ExplanationParagraphs": [
+        "Learning goal: explain compounding as interest calculated on previous interest as well as principal, compare interest models over equal elapsed intervals, and interpret exponential growth in another repeated scale context. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 16, https://im.kendallhunt.com/HS/teachers/1/5/16/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/16/index.html (CC BY 4.0). The publisher includes image size and compound-interest comparisons; all here are independent hypothetical numbers and not advice.",
+        "Hypothetical initial balance $1,000. Model S(t)=1000(1+0.12t) for simple interest at nominal12% per year, versus monthly-compounded C(m)=1000(1.01)^m when nominal12% annual is applied as1% each month, no taxes/fees/deposits. At 12 months, C(12)≈$1,126.83 while simple S(1)=$1,120.00. Interest-on-interest difference is approximately $6.83 after rounding currency once at the end.",
+        "An original square image with side length10cm enlarged by10% in each of two successive stages has final side10×1.1²=12.1cm, not12cm. Area changes from100cm² to(12.1)²=146.41cm², demonstrating that a linear dimension and its square differ. These examples illustrate repeated change without implying that prices, investments or images behave the same physically.",
+        "Student activity: create monthly balance table for months0,1,2,12, contrast with simple interest, explain which percentage base changes, and analyze the side-versus-area effect of two zooms. Teacher-scored rubric0–2 each for expressions, correct numerical/rounding checks, interpretation of simple versus compound, and coherent representation of the image scaling."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Compound interest",
+          "Definition": "Interest is applied to principal plus accumulated prior interest.",
+          "Rule": "C(m)=P(1+i)^m for fixed periodic rate i.",
+          "Example": "1000(1.01)^12≈1126.83."
+        },
+        {
+          "Title": "Simple interest",
+          "Definition": "A fixed percentage of original principal is added per period.",
+          "Rule": "S(t)=P(1+rt) under simple annual rate r.",
+          "Example": "1000(1+.12)=1120 after one year."
+        },
+        {
+          "Title": "Repeated scaling and area",
+          "Definition": "Repeated scaling multiplies a length by each stage factor, and its area scales by factor squared.",
+          "Rule": "Track dimensions and units separately.",
+          "Example": "Side10→12.1cm after two10% zooms, area146.41cm²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare interest at one year",
+          "Question": "Use simple12% and monthly compound1% on $1000.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Simple one-year interest=1000×.12=$120, total$1120.",
+            "Monthly growth factor=1.01 for12 months.",
+            "Compute1.01^12≈1.12682503.",
+            "Compounded total≈$1126.83.",
+            "Difference≈$6.83 using values rounded to cents only at the end."
+          ],
+          "Answer": "Simple $1120.00; monthly compound about $1126.83.",
+          "Check": "Both totals arise from stated fictional assumptions."
+        },
+        {
+          "Title": "Read early monthly balances",
+          "Question": "Compute C(0), C(1), C(2).",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "C0=1000×1=$1000.",
+            "C1=1000×1.01=$1010.",
+            "C2=1000×1.0201=$1020.10.",
+            "Second month's interest=$10.10 rather than$10.",
+            "Output ratio1.01 each step."
+          ],
+          "Answer": "$1000,$1010,$1020.10.",
+          "Check": "Both last two periods use same1% factor."
+        },
+        {
+          "Title": "Evaluate two image zooms",
+          "Question": "Scale square side10cm by10% twice.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "After first zoom, side=10×1.1=11cm.",
+            "After second zoom, side=11×1.1=12.1cm.",
+            "Final area=12.1²=146.41cm².",
+            "Initial area100cm², so area multiplier1.4641.",
+            "This differs from a 21% increase in side length."
+          ],
+          "Answer": "Side12.1cm, area146.41cm².",
+          "Check": "Side factors1.1² and area factors1.1^4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating monthly compounding as twelve additions of $10 only",
+          "WhyWrong": "Interest base grows after each month.",
+          "Correction": "Multiply current balance by1.01."
+        },
+        {
+          "Mistake": "Rounding monthly balances aggressively for exact comparison",
+          "WhyWrong": "Intermediate rounding can change a long-period value.",
+          "Correction": "Calculate with sufficient precision and round final cents."
+        },
+        {
+          "Mistake": "Assuming a 21% side increase means21% area increase",
+          "WhyWrong": "Area scales with the square of length.",
+          "Correction": "Compute new area from new side length."
+        }
+      ],
+      "SummaryPoints": [
+        "Compounding applies each periodic multiplier to the updated balance.",
+        "Simple interest uses the initial principal each period.",
+        "Monthly1% compounded for12 months on $1000 yields about$1126.83.",
+        "Teacher reviews numerical modelling, scale reasoning and limits."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "Month0",
+              "Cells": [
+                "$1000"
+              ]
+            },
+            {
+              "Label": "Month1",
+              "Cells": [
+                "$1010"
+              ]
+            },
+            {
+              "Label": "Month2",
+              "Cells": [
+                "$1020.10"
+              ]
+            },
+            {
+              "Label": "Month12",
+              "Cells": [
+                "≈$1126.83"
+              ]
+            },
+            {
+              "Label": "Simple after year1",
+              "Cells": [
+                "$1120.00"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

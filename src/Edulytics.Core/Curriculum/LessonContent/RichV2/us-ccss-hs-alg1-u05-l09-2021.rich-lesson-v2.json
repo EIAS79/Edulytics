@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l09-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L09",
+      "CultureCode": "en",
+      "Title": "Interpreting Exponential Functions",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret exponential function notation, choose a reasonable real-world domain and range, represent an exponential relationship with discrete points or a continuous curve according to modeling assumptions, and compare growth/decay with other functions. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 9, https://im.kendallhunt.com/HS/teachers/1/5/9/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/9/index.html (CC BY 4.0). The source includes a solar-cost graph and x² versus2^x reasoning.",
+        "Independent hypothetical technology-component price model: P(t)=100(0.8)^t dollars for t≥0 years after purchase. It has initial $100, decay factor0.8 and positive decreasing outputs. On a continuous-time modeling assumption domain is [0,∞) and range (0,100] dollars; if only whole-year snapshots are recorded, represent discrete t=0,1,2,... and their specific outputs rather than a proven continuous process.",
+        "For t0,1,2,3, costs are100,80,64,51.20 dollars. P(2)=64 means a modelled price of $64 two years after baseline, not an observed sale receipt. For all finite t≥0, model output remains positive, so y=0 is an asymptote rather than attained value.",
+        "Compare expressions x² and2^x: at x2 both equal4, x4 both equal16, but at x3 they give9 and8. They are not equivalent functions, even if some inputs produce equal outputs.",
+        "Student task: graph with a labelled time domain, interpret P(2), identify which points could belong, compare with an integer-only representation, and produce a counterexample to equation equivalence. Teacher-scored rubric0–2 each for notation, graph/domain, range/asymptote, and reasoned comparison."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Function context",
+          "Definition": "P(t) is the modeled output at time t.",
+          "Rule": "Do not confuse prediction with empirical measurement.",
+          "Example": "P(2)=$64 under the stated assumption."
+        },
+        {
+          "Title": "Exponential domain and range",
+          "Definition": "For positive initial value and0<b<1 on t≥0, outputs lie in (0,a].",
+          "Rule": "Specify discrete or continuous time assumption.",
+          "Example": "P(t)∈(0,100] for real t≥0."
+        },
+        {
+          "Title": "Non-equivalent formulas",
+          "Definition": "Two expressions can agree at particular inputs but differ as functions.",
+          "Rule": "Test enough inputs to disprove universal identity.",
+          "Example": "3²=9 while2³=8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Interpret a decay value",
+          "Question": "Evaluate P(2) for100(0.8)^t.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "The input t=2 represents two years.",
+            "Compute0.8²=0.64.",
+            "Multiply100×0.64=64.",
+            "Interpret as $64 modeled value."
+          ],
+          "Answer": "P(2)=$64.",
+          "Check": "P(0)=$100 and yearly factor0.8."
+        },
+        {
+          "Title": "Describe domain and range",
+          "Question": "Assume continuous real time t≥0 for P(t).",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "At t0 output100.",
+            "As time increases, factor0.8^t remains positive and decreases.",
+            "For finite t, 0<P(t)≤100.",
+            "Domain[0,∞), range(0,100]."
+          ],
+          "Answer": "Domain[0,∞) years, range(0,100] dollars.",
+          "Check": "Zero is approached but never reached."
+        },
+        {
+          "Title": "Disprove x²=2^x universally",
+          "Question": "Check x2, x3, x4.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "At2, x²=4 and2^x=4.",
+            "At3, x²=9 but2^x=8.",
+            "One counterexample suffices to show formulas not equivalent.",
+            "At4 they agree again at16, which does not repair disagreement at3."
+          ],
+          "Answer": "Not equivalent functions.",
+          "Check": "x=3 yields different outputs."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Including zero in range of a positive decay expression at finite time",
+          "WhyWrong": "Exponential positive base never produces exactly zero.",
+          "Correction": "Use open endpoint0."
+        },
+        {
+          "Mistake": "Equating functions because two sample points coincide",
+          "WhyWrong": "Equality at selected inputs is not identity.",
+          "Correction": "Give counterexample at x3."
+        },
+        {
+          "Mistake": "Claiming model price is real market data",
+          "WhyWrong": "Numbers are made for practice.",
+          "Correction": "State hypothetical provenance."
+        }
+      ],
+      "SummaryPoints": [
+        "Interpreting notation requires units, input domain and model assumptions.",
+        "A positive decaying exponential approaches zero without attaining it.",
+        "Discrete observations and continuous curves represent different evidence levels.",
+        "Teacher scores graph/domain and counterexample explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "$100"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "$80"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "$64"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "$51.20"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

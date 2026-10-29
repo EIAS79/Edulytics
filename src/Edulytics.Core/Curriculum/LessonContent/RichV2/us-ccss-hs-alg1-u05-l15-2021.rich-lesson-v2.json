@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l15-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L15",
+      "CultureCode": "en",
+      "Title": "Functions Involving Percent Change",
+      "ExplanationParagraphs": [
+        "Learning goal: translate repeated percentage growth or reduction into exponential function notation, identify factor and initial value, and verify that percentages apply to the current amount. Original first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 15, https://im.kendallhunt.com/HS/teachers/1/5/15/preparation.html and student activity https://im.kendallhunt.com/HS/students/1/5/15/index.html (CC BY 4.0). The source compares repeated percent change in several contexts; this is an original numerical example rather than a publisher task copy.",
+        "An entirely hypothetical $400 account with an assumed 10% growth at the end of each full year and no transactions follows A(t)=400(1.10)^t for whole years t≥0. Its values for years 0,1,2,3 are $400,$440,$484,$532.40. The percentage added in year2 is $44, not $40, since 10% now refers to $440. This is invented arithmetic rather than a financial forecast.",
+        "A hypothetical item priced $80, discounted by 25% twice consecutively, has final price 80(0.75)^2=$45 rather than $40. First discount leaves $60, second leaves $45; nominal percent discounts cannot be added without regard to the changing base. For a percentage drop r, factor 1−r; for rise factor1+r when r is expressed as a decimal.",
+        "Student task: match expressions, value tables and word contexts, explain the difference between the additive increase and compounding, and refute a statement that repeated 25% discounts equal a single 50% discount. Teacher-scored rubric0–2 each (max8): expression with domain, correct successive values, base-change explanation and a counterexample with proper units."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Repeated percent increase",
+          "Definition": "Each period multiplies the current amount by one plus the decimal rate.",
+          "Rule": "A(t)=a(1+r)^t for the stated equal-length periods.",
+          "Example": "400(1.1)^2=484."
+        },
+        {
+          "Title": "Repeated percent reduction",
+          "Definition": "Each period retains one minus the fractional reduction.",
+          "Rule": "D(t)=a(1−r)^t.",
+          "Example": "80(.75)^2=45."
+        },
+        {
+          "Title": "Compounding base",
+          "Definition": "Percent change is computed from the current amount, not always the initial amount.",
+          "Rule": "Recalculate the amount of change after every step.",
+          "Example": "10% of $440 is $44, not $40."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Model a second year's change",
+          "Question": "Starting $400, increase 10% at the end of each year.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "After one year, 400×1.1=$440.",
+            "Second-year growth is 0.1×440=$44.",
+            "After year2, total440+44=$484.",
+            "Exponential rule A(t)=400×1.1^t gives A(2)=484."
+          ],
+          "Answer": "$484 after two full years.",
+          "Check": "First and second growth dollars differ, but multipliers both equal1.1."
+        },
+        {
+          "Title": "Repeat a discount",
+          "Question": "An invented $80 item is marked down25% twice.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "First retention factor is0.75.",
+            "First sale price80×.75=$60.",
+            "Second reduction is25% of60, or$15.",
+            "Final price60−15=$45.",
+            "Combined factor0.75²=0.5625."
+          ],
+          "Answer": "$45, not $40.",
+          "Check": "Two 25% reductions leave56.25% of original price."
+        },
+        {
+          "Title": "Evaluate third year",
+          "Question": "Find A(3) for A(t)=400(1.1)^t.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Compute A(2)=$484.",
+            "Multiply by1.1 for one further period.",
+            "A(3)=484×1.1=$532.40.",
+            "Check direct power1.1³=1.331 and 400×1.331=532.4."
+          ],
+          "Answer": "$532.40.",
+          "Check": "Successive ratio remains1.1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding successive 25% discounts as a single 50% reduction",
+          "WhyWrong": "The second discount applies to a lower base.",
+          "Correction": "Multiply remaining fractions0.75×0.75."
+        },
+        {
+          "Mistake": "Adding a fixed $40 each year for 10% growth",
+          "WhyWrong": "Subsequent percentage changes use the updated amount.",
+          "Correction": "Multiply the preceding value by1.10."
+        }
+      ],
+      "SummaryPoints": [
+        "Repeated percentage change yields a multiplicative exponential model.",
+        "The growth factor for10% is1.1; the retention factor after25% reduction is0.75.",
+        "Successive discounts and increases operate on the new base.",
+        "Model validity and peer critiques require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "Year0 account",
+              "Cells": [
+                "$400"
+              ]
+            },
+            {
+              "Label": "Year1 account",
+              "Cells": [
+                "$440"
+              ]
+            },
+            {
+              "Label": "Year2 account",
+              "Cells": [
+                "$484"
+              ]
+            },
+            {
+              "Label": "Year3 account",
+              "Cells": [
+                "$532.40"
+              ]
+            },
+            {
+              "Label": "Two successive discounts",
+              "Cells": [
+                "$80→$60→$45"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
