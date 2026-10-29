@@ -326,12 +326,27 @@ public sealed class RichLessonContentV2PilotTests
             .SelectMany(x => x.Lessons)
             .ToArray();
 
-        Assert.Equal(26 + 143 + 149, lessons.Length);
-        Assert.Equal(
-            26 + 143 + 149,
-            lessons.Select(x => x.LessonCode)
-                .Distinct(StringComparer.Ordinal)
-                .Count());
+        // Preserve the exact original 24 Cambridge and 2 UAE pilots,
+        // and all 143 Grade 3 and 149 Grade 4 lessons as the registry grows.
+        var legacyPilots = RichLessonContentV2Registry.AllDocuments
+            .Where(x => x.ContentVersion is
+                "rich-v2-cambridge-primary-stage6-pilot-2026-09-22" or
+                "rich-v2-uae-g9-advanced-official-pilot-2026-09-22")
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+        var grade3 = lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal));
+        var grade4 = lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal));
+
+        Assert.Equal(26, legacyPilots.Length);
+        Assert.Equal(143, grade3);
+        Assert.Equal(149, grade4);
+        Assert.True(lessons.Length >= 26 + 143 + 149);
+        Assert.Equal(lessons.Length, lessons
+            .Select(x => x.LessonCode)
+            .Distinct(StringComparer.Ordinal)
+            .Count());
     }
 
     private static string FindRoot()
