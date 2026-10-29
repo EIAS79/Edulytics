@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
+  "branch": "curriculum/us-ccss-g7-full-grade-20261028",
+  "sourceLicensing": "Original Edulytiks figure geometry, no third-party publisher pixels reused",
+  "purpose": "Grade 7-owned first-party geometric diagrams + proposed teacher-only rubric; not executable/selected Practice nor student UI integration",
+  "singleWriterIntegrationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "ownership": "Grade 7 only. Shared visual-kind/renderer/Practice, persistence, authentication and rubric UI require Supervisor 1 designated single writer and protected tests.",
+  "releaseStatus": "BLOCKED",
+  "statusEvidence": {
+    "staticGeometrySourcePresent": true,
+    "authenticatedStudentPageRender": "NOT_RUN",
+    "screenReaderRealDevice": "NOT_RUN",
+    "studentPracticeSelection": "NOT_EXECUTED",
+    "scoringPersistence": "NOT_RUN",
+    "stageA": "NOT_VERIFIED",
+    "stageB": "NOT_VERIFIED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_VERIFIED"
+  },
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/1/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
+      "model": {
+        "originalVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "correctScaleFactor": 2,
+        "correctCopyVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "counterexampleVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "unit": "shared drawing grid unit"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Construct the original recognisable 10-vertex F without altering side adjacency",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Apply one scale factor to every corresponding horizontal and vertical length",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Reject horizontal-only stretching with at least two unequal corresponding segment ratios",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Present labeled figure and written/oral explanation to another learner",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Both coordinates multiplied by 2",
+          "expectation": "accepted conceptually subject to figure+reasoning teacher review"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Only horizontal coordinates doubled",
+          "expectation": "must be rejected as nonuniform stretch"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only reports k=2 without drawing",
+          "expectation": "cannot pass full source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/2/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+      "model": {
+        "originalVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctScaleFactor": 1.5,
+        "correctCopyVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            4.5
+          ]
+        ],
+        "vertexMapping": {
+          "A": "D",
+          "B": "E",
+          "C": "F"
+        },
+        "angleMapping": {
+          "BAC": "EDF"
+        },
+        "unit": "shared drawing grid unit"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw both triangles at equal page units and label all six vertices",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Match original and copy points/segments with correct ordered correspondence",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Verify scale factor on both legs and hypotenuse, and preserve the 90 degree right angle",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Explain reciprocal factors and corresponding-angle invariance",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "AB 4→DE 6, AC 3→DF 4.5 and right angle preserved",
+          "expectation": "valid scale 1.5, drawing+label+explanation teacher-reviewed"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Multiply the 90° angle by 1.5",
+          "expectation": "reject; angle remains 90°"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports k=1.5 without vertex mapping",
+          "expectation": "not full credit"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/3/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+      "model": {
+        "originalVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "correctScaleFactors": [
+          0.5,
+          3
+        ],
+        "halfScaleVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2.5
+          ],
+          [
+            0,
+            2.5
+          ]
+        ],
+        "tripleScaleVertices": [
+          [
+            0,
+            0
+          ],
+          [
+            18,
+            0
+          ],
+          [
+            18,
+            6
+          ],
+          [
+            12,
+            6
+          ],
+          [
+            12,
+            15
+          ],
+          [
+            0,
+            15
+          ]
+        ],
+        "unit": "shared drawing grid unit"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw the six-vertex L shape and both requested copies without distorting angles",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Apply the same fraction or whole-number multiplier to every segment and coordinate",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Show why adding the same amount to each length is not scaling",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Submit accurate grid positions, labeled ratios and a critique for teacher review",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Half and triple copies on common grid; segment ratios uniformly 1/2 or 3",
+          "expectation": "valid when figures and explanation checked"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Add 2 units to every side",
+          "expectation": "reject nonmultiplicative construction"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "Scale x by 3 but y by 2",
+          "expectation": "reject nonuniform stretch"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U06:L01",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/6/1/index.html",
+      "staticFirstPartyAsset": null,
+      "publicAssetPath": null,
+      "model": {
+        "unitPrice": "C=0.60*ounces",
+        "fixedFeePrice": "C=3.50+0.25*ounces",
+        "entryFee": "C=8+3*passengers",
+        "toaster": "T=35*ceil(slices/4), positive integer slices; T=0 for zero"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Distinguish proportional table from a fixed-fee relation with at least two quotients",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c2",
+            "description": "Infer a per-person fee and additive intercept from evidence; describe zero-input case",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c3",
+            "description": "Represent whole-batch capacity with integer ceiling; reject continuous time-per-slice assumption",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          },
+          {
+            "id": "c4",
+            "description": "Explain multiple strategies and document teacher-reviewed table or reasoning",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate, completely labeled and justified with evidence",
+            "lowestLevel": "Absent, incorrect, or unsupported"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; numeric threshold alone must not override construction, evidence or explanation",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "10 oz→$6 in either plan, but 20 oz→$12 or $8.50",
+          "expectation": "shows ratios and fixed offset differ"
+        },
+        {
+          "kind": "correct",
+          "claim": "9 slices require 3 batches of 35 seconds",
+          "expectation": "105 seconds under batch assumption"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "9 slices need 9/4×35=78.75 seconds",
+          "expectation": "reject partial-batch continuous division"
+        },
+        {
+          "kind": "incorrect",
+          "claim": "C=3.50+0.25x is proportional",
+          "expectation": "reject fixed intercept"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false
+    }
+  ]
+}
