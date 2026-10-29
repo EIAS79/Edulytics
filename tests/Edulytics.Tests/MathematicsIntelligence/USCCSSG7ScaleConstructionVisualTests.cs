@@ -17,6 +17,9 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
     [InlineData("PED:US-CCSS-MATH:G7:U01:L01", "u01-l01-scaled-vs-stretched.svg", 3)]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L02", "u01-l02-corresponding-triangles.svg", 2)]
     [InlineData("PED:US-CCSS-MATH:G7:U01:L03", "u01-l03-scaled-l-construction.svg", 3)]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L04", "u01-l04-hidden-distances-and-angles.svg", 2)]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L05", "u01-l05-size-and-inverse-scale.svg", 3)]
+    [InlineData("PED:US-CCSS-MATH:G7:U01:L06", "u01-l06-tiling-and-area-factors.svg", 3)]
     public void Grade7Diagram_IsOriginalAccessibleSvg_WithAnAuthoredLessonAndOptInComponent(
         string code, string file, int expectedFigures)
     {
@@ -103,6 +106,83 @@ public sealed class USCCSSG7ScaleConstructionVisualTests
         AssertUniformScale(shapes[0], shapes[1], .5);
         AssertUniformScale(shapes[0], shapes[2], 3);
         Assert.Equal(6, shapes[0].Length);
+    }
+
+    [Fact]
+    public void HiddenDistances_AlsoScale_AndCorrespondingRightAnglesAreUnchanged()
+    {
+        var shapes = LoadPolygons("u01-l04-hidden-distances-and-angles.svg");
+        Assert.Equal(2, shapes.Length);
+        AssertUniformScale(shapes[0], shapes[1], 2);
+        static double Distance((double X, double Y) a, (double X, double Y) b)
+            => Math.Sqrt(Math.Pow(a.X - b.X, 2) + Math.Pow(a.Y - b.Y, 2));
+        var sourceDiagonal = Distance(shapes[0][0], shapes[0][2]);
+        var copiedDiagonal = Distance(shapes[1][0], shapes[1][2]);
+        Assert.Equal(5 * 20, sourceDiagonal, 8);
+        Assert.Equal(10 * 20, copiedDiagonal, 8);
+        Assert.Equal(2, copiedDiagonal / sourceDiagonal, 8);
+    }
+
+    [Fact]
+    public void InverseScaleDrawings_ShowReductionAndEnlargementAtOneDrawingUnit()
+    {
+        var shapes = LoadPolygons("u01-l05-size-and-inverse-scale.svg");
+        Assert.Equal(3, shapes.Length);
+        AssertUniformScale(shapes[1], shapes[0], .5);
+        AssertUniformScale(shapes[1], shapes[2], 1.5);
+        AssertUniformScale(shapes[0], shapes[1], 2);
+        AssertUniformScale(shapes[2], shapes[1], 2d / 3d);
+    }
+
+    [Fact]
+    public void TilingFigures_PreserveIdenticalUnitSize_AndAreaIsSquaredScale()
+    {
+        var shapes = LoadPolygons("u01-l06-tiling-and-area-factors.svg");
+        Assert.Equal(3, shapes.Length);
+        AssertUniformScale(shapes[0], shapes[1], 2);
+        AssertUniformScale(shapes[0], shapes[2], 3);
+        static double Area((double X, double Y)[] points)
+            => (points.Max(p => p.X) - points.Min(p => p.X)) *
+               (points.Max(p => p.Y) - points.Min(p => p.Y));
+        Assert.Equal(3 * 15 * 15, Area(shapes[0]), 8);
+        Assert.Equal(12 * 15 * 15, Area(shapes[1]), 8);
+        Assert.Equal(27 * 15 * 15, Area(shapes[2]), 8);
+        Assert.Equal(4, Area(shapes[1]) / Area(shapes[0]), 8);
+        Assert.Equal(9, Area(shapes[2]) / Area(shapes[0]), 8);
+    }
+
+    [Theory]
+    [InlineData("u01-l01-scaled-vs-stretched.svg", "scale factor 2")]
+    [InlineData("u01-l02-corresponding-triangles.svg", "scale factor 1.5")]
+    [InlineData("u01-l03-scaled-l-construction.svg", "scale factor one half")]
+    [InlineData("u01-l04-hidden-distances-and-angles.svg", "scale factor 2")]
+    [InlineData("u01-l05-size-and-inverse-scale.svg", "scale factor three-halves")]
+    [InlineData("u01-l06-tiling-and-area-factors.svg", "scale factor 2")]
+    public void SvgDescriptions_DescribeTheActualMathematicalScaleFactor(
+        string svgName, string expectedDescription)
+    {
+        var doc = XDocument.Load(Path.Combine(FindRoot(), AssetRoot, svgName));
+        XNamespace ns = "http://www.w3.org/2000/svg";
+        var desc = Assert.Single(doc.Descendants(ns + "desc")).Value;
+        Assert.Contains(expectedDescription, desc, StringComparison.OrdinalIgnoreCase);
+        Assert.True(desc.Length >= 80);
+    }
+
+    [Fact]
+    public void SixGrade7ReferenceFigures_DoNotClaimStudentSubmissionOrTeacherScoring()
+    {
+        var component = File.ReadAllText(Path.Combine(
+            FindRoot(),
+            "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml"));
+        Assert.Contains("This reference figure does not submit, score or save student work", component);
+        Assert.Contains("A teacher must inspect", component);
+        for (var lesson = 1; lesson <= 6; lesson++)
+        {
+            var code = "PED:US-CCSS-MATH:G7:U01:L" + lesson.ToString("00");
+            Assert.Contains(code, component, StringComparison.Ordinal);
+        }
+        // This verifies Grade 7's optional partial, NOT an authenticated
+        // view invocation or teacher-scored persistent submission.
     }
 
     private static (double X, double Y)[][] LoadPolygons(string file)
