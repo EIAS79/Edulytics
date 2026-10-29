@@ -409,3 +409,20 @@ test('U01 L15-L16 geometry compares nets, exterior area and cubic volume in both
   assert.equal(2*(1+5+5), 2*(2+3+6));
   assert.ok(1*1*5 !== 1*2*3);
 });
+
+
+test('U01 L02 exposes an exact geometric visual description to the existing presentation parser', () => {
+  const en = byCode.get(lcode(1,2)).translations.find(t => t.cultureCode === 'en');
+  assert.match(en.workedExamples, /\n\nDescription: Tangram area decomposition schematic\./);
+  assert.match(en.workedExamples, /two congruent right triangles/);
+  assert.match(en.workedExamples, /Each of those two pieces has area one-half square unit/);
+  assert.match(en.workedExamples, /The illustrated tangram-style partition is a schematic and is not a measurement scale/);
+  assert.doesNotMatch(en.workedExamples, /<script|onerror=|<iframe/i);
+  assert.ok(en.workedExamples.includes('four copies have combined area 2 square units'));
+  const source = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json'), 'utf8'));
+  const entry = source.entries.find(x => x.lessonCode === lcode(1,2));
+  assert.ok(entry);
+  assert.ok(entry.practiceBoundary.teacherOnly.length >= 2);
+  assert.ok(entry.practiceBoundary.forbiddenSubstitutes.length >= 2);
+});
