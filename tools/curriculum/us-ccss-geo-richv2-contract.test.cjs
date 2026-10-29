@@ -47,7 +47,7 @@ test('Geometry identities, source links, outcomes and order match all 124 canoni
 test('Course-wide matrix records unverified runtime and no fabricated approvals', () => {
   assert.equal(evidence.lessons.length, 124);
   assert.equal(evidence.totals.blueprintLessons, 124);
-  assert.equal(evidence.totals.richCandidateLessons, 37);
+  assert.equal(evidence.totals.richCandidateLessons, 53);
   assert.equal(evidence.totals.gradeAccepted, 0);
   assert.equal(evidence.totals.runtimeVerified, 0);
   const known = blueprint.Lessons.map(l => l.LessonCode);
@@ -285,4 +285,30 @@ test('All fifteen source-specific Unit 2 lessons and exact quadrilateral invaria
   const diag2=Math.sqrt(2*r*r*(1-Math.cos(Math.PI/3)));
   assert.ok(Math.abs(diag1-5*Math.sqrt(3))<1e-10);
   assert.ok(Math.abs(diag2-5)<1e-10);
+});
+
+test('All 16 Similarity candidates and scaled model/Pythagorean/bank-shot independent oracles', () => {
+  const byCode=new Map(authored.map(x=>[x.LessonCode,x]));
+  const P='PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L';
+  for(let i=1;i<=16;i++) {
+    const item=byCode.get(P+String(i).padStart(2,'0'));
+    assert.ok(item, 'missing U03 L'+i);
+    assert.equal(item.WorkedExamples.length,3);
+    assert.ok(item.WorkedExamples.every(ex=>ex.Steps.length>=3 && ex.Answer && ex.Check));
+    assert.ok(item.ExplanationParagraphs.join(' ').includes('CC BY 4.0'));
+  }
+  for (const n of [2,10,12]) assert.equal(evidence.lessons[37+n-1].sourceOptional,true);
+  const dilate=(p,o,k)=>o.map((v,i)=>v+k*(p[i]-v));
+  const P1=[1,1], A=[2,1], B=[1,3], Ap=dilate(A,P1,2),Bp=dilate(B,P1,2);
+  assert.deepEqual(Ap,[3,1]);
+  assert.deepEqual(Bp,[1,5]);
+  const d2=(p,q)=>(p[0]-q[0])**2+(p[1]-q[1])**2;
+  assert.equal(d2(Ap,Bp),4*d2(A,B));
+  assert.equal(6**2+8**2,10**2);
+  assert.equal(6*8/10,4.8);
+  assert.ok(Math.abs(3.6*6.4-4.8**2)<1e-10);
+  const t=3/8, bounce=[2+6*t,3-8*t];
+  assert.deepEqual(bounce,[4.25,0]);
+  assert.equal(150000000/12700*0.02>200,true); // metres: 2cm Earth model
+  assert.equal(9*3**2,81); // area scale
 });
