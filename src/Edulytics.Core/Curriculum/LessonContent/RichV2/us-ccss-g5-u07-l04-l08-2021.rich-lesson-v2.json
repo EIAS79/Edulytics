@@ -1,0 +1,652 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u07-l04-l08-im2021-ourcs-source-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U07:L04",
+      "CultureCode": "en",
+      "Title": "Sort Quadrilaterals",
+      "ExplanationParagraphs": [
+        "Goal: describe and SORT quadrilaterals using precise attributes of sides and angles, including parallel and perpendicular pairs, with more than one defensible sorting rule. The 2021 source begins with a partner-only Guess Which One game and then invites two different card sorts before specifying a sort based on parallel lines.",
+        "Warm-up — ask useful questions: student A secretly selects one figure from an original first-party set containing a square, a slanted rhombus, a non-rectangle parallelogram, and an irregular quadrilateral. Student B asks yes/no questions such as 'Does it have two pairs of parallel sides?' or 'Does it have four right angles?', and narrows the possibilities. Teacher checks that the question actually applies to visible attributes and that the chosen figure can be identified.",
+        "Activity 1 — two independent categories: first sort original shapes by two pairs/one pair/no pairs of parallel opposite sides, then sort by number of right angles or equal side lengths. For example, a square and non-square rhombus each have four equal sides, but only the square is a rectangle. A typical parallelogram has two pairs of parallel sides without four right angles.",
+        "Activity 2 — reason across categories: prove that a square is a rectangle and rhombus, but an irregular quadrilateral may be neither. Describe one figure by four vertices (0,0),(4,0),(3,2),(0,2) and use coordinates to check its top and bottom sides are parallel while other opposite sides are not. In the 2021 inclusive trapezoid convention, it is a trapezoid. The learner must draw the original shape and defend each claim.",
+        "Assessment: the actual game, physical/source card images, category sorting, partner critique and figure drawings are teacher-reviewed. A simple 'square' multiple-choice answer cannot certify classification reasoning or actual visual access."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quadrilateral classification",
+          "Definition": "A quadrilateral is a four-straight-sided closed polygon; defining side and angle attributes determine more specific classes.",
+          "Rule": "A square has two parallel opposite side pairs, four equal sides, and four right angles.",
+          "Example": "It belongs to rectangle and rhombus classes."
+        },
+        {
+          "Title": "Parallel pairs",
+          "Definition": "Opposite straight sides remain equidistant when extended and do not intersect.",
+          "Rule": "Parallelograms have two parallel opposite side pairs.",
+          "Example": "An irregular quadrilateral need not have parallel sides."
+        },
+        {
+          "Title": "Multiple sorting systems",
+          "Definition": "A collection may be validly grouped in distinct ways.",
+          "Rule": "Side-length equality and right-angle count give distinct classification criteria.",
+          "Example": "A non-square rhombus fits all-equal sides but not all-right angles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distinguish two four-equal-side shapes",
+          "Question": "How can a square differ from a slanted rhombus?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Identify that each shape has four equal side lengths.",
+            "Check whether all four corners are right angles.",
+            "State which shape belongs to the rectangle class."
+          ],
+          "Answer": "Every square is a rhombus; a rhombus without right angles is not a square.",
+          "Check": "Teacher inspects actual diagrams, not only a label."
+        },
+        {
+          "Title": "Check parallel opposite sides",
+          "Question": "A polygon has vertices (0,0),(4,0),(3,2),(0,2) in order. How many parallel opposite side pairs?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Bottom segment is horizontal at y=0; top is horizontal at y=2.",
+            "Right slant side and left vertical side are not parallel.",
+            "Count just one pair of opposite parallel sides."
+          ],
+          "Answer": "Exactly one pair.",
+          "Check": "Under source's inclusive trapezoid rule it is a trapezoid."
+        },
+        {
+          "Title": "Choose a useful yes/no question",
+          "Question": "A secret figure is selected among square, non-square rhombus and irregular quadrilateral. What question separates the square?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "List one property unique to the square among the displayed options.",
+            "Ask 'Does it have four right angles?' as a yes/no question.",
+            "Explain why the answer identifies the square when exactly one option meets the property."
+          ],
+          "Answer": "The four-right-angles question separates the square in the specified set.",
+          "Check": "Teacher checks the actual card set and follow-up questions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Sort solely by visual orientation as if tilt changes defining shape",
+          "WhyWrong": "Rotating a polygon does not change its parallel sides, lengths or angles.",
+          "Correction": "Use invariant geometric attributes and compare rotated versions."
+        },
+        {
+          "Mistake": "Treat all four-sided shapes as parallelograms",
+          "WhyWrong": "An arbitrary quadrilateral need not have two parallel opposite pairs.",
+          "Correction": "Verify each opposite side pair individually."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadrilaterals can be sorted by parallel sides, right angles or equal side lengths.",
+        "Different justified sort rules may both be mathematically valid.",
+        "Partner Guess Which One and diagrams require human adjudication.",
+        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 4: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-4/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sort Quadrilaterals — properties and examples",
+          "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
+          "Rows": [
+            {
+              "Label": "Class",
+              "Cells": [
+                "Square",
+                "Non-square rhombus",
+                "Non-rectangle parallelogram",
+                "Irregular quadrilateral"
+              ]
+            },
+            {
+              "Label": "Four equal sides",
+              "Cells": [
+                "Yes",
+                "Yes",
+                "Not required",
+                "Not required"
+              ]
+            },
+            {
+              "Label": "Four right angles",
+              "Cells": [
+                "Yes",
+                "No",
+                "No",
+                "Not required"
+              ]
+            },
+            {
+              "Label": "Two opposite parallel pairs",
+              "Cells": [
+                "Yes",
+                "Yes",
+                "Yes",
+                "Not required"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U07:L05",
+      "CultureCode": "en",
+      "Title": "Trapezoids PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: compare TWO mathematically used trapezoid definitions: exclusive 'exactly one pair of parallel opposite sides' and inclusive 'at least one pair'. The 2021 lesson explicitly adopts the INCLUSIVE definition as its course convention; classification under each rule must not be silently treated as interchangeable.",
+        "Warm-up: draw a sloping four-sided figure with one pair of horizontal opposite sides and no other parallel pair. Name its visible parallel lines and explain why it satisfies both definitions, no matter whether it is drawn upright or rotated.",
+        "Activity 1 — coordinate construction: draw vertices (0,0),(5,0),(4,2),(1,2), which form a trapezoid with a parallel horizontal base and top but the two other sides have different slopes. Draw a separate parallelogram with vertices (0,0),(4,0),(5,2),(1,2), whose two opposite side pairs are both parallel. Classify both figures under the exactly-one versus at-least-one definition. Require labeled coordinate diagrams and explanations of line directions.",
+        "Activity 2 — hierarchy comparison: with the inclusive convention, every parallelogram is a trapezoid but not every trapezoid is a parallelogram. With the exclusive convention, no parallelogram is a trapezoid. A square is a trapezoid ONLY under the inclusive convention, and every square is also a parallelogram; the learner evaluates this statement and creates a visual hierarchy consistent with the selected definition.",
+        "Assessment: a numeric or category label alone cannot establish coordinate drawing correctness or understanding of why the two definitions create different hierarchy diagrams. Teacher reviews the actual shapes, diagrams and discussion; the source's copyrighted illustrations and response cards were not reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exclusive trapezoid definition",
+          "Definition": "Some sources reserve trapezoid for quadrilaterals with exactly one parallel opposite side pair.",
+          "Rule": "A parallelogram is not a trapezoid under the exclusive rule.",
+          "Example": "A non-parallelogram with exactly one parallel pair meets it."
+        },
+        {
+          "Title": "Inclusive trapezoid definition used in 2021 lesson",
+          "Definition": "The Edulytiks mapping to this source must adopt a quadrilateral with at least one parallel opposite side pair.",
+          "Rule": "Every parallelogram is a trapezoid in the inclusive hierarchy.",
+          "Example": "A square is also a trapezoid by this rule."
+        },
+        {
+          "Title": "Classification depends on definitions",
+          "Definition": "Different classroom conventions produce different relationships without changing a shape's geometric properties.",
+          "Rule": "Under inclusive: parallelograms ⊂ trapezoids; exclusive: disjoint.",
+          "Example": "Always label the convention in solutions and rubrics."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare two shapes",
+          "Question": "Do all parallelograms count as trapezoids under the two definitions?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "A parallelogram has two pairs of parallel opposite sides.",
+            "Exactly one is false but at least one is true.",
+            "State the source's chosen inclusive convention."
+          ],
+          "Answer": "Inclusive: yes. Exclusive: no.",
+          "Check": "Both statements are conditional on the definition."
+        },
+        {
+          "Title": "Draw a genuine one-pair quadrilateral",
+          "Question": "Check the parallel pairs for (0,0),(5,0),(4,2),(1,2).",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Bottom and top are horizontal and parallel.",
+            "Compare the two sloping side segments: their slopes differ.",
+            "Find exactly one parallel opposite side pair."
+          ],
+          "Answer": "It is a trapezoid by both rules.",
+          "Check": "Teacher checks the plotted shape and equality of top/bottom directions."
+        },
+        {
+          "Title": "Square in hierarchy",
+          "Question": "Under the source convention, is a square a trapezoid?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Identify the square has two pairs of opposite parallel sides.",
+            "The inclusive definition requires at least one pair.",
+            "Conclude two pairs satisfy at least one pair."
+          ],
+          "Answer": "Yes, under the inclusive definition.",
+          "Check": "Not under the exclusive exactly-one definition."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Answer trapezoid classification without declaring the definition",
+          "WhyWrong": "The same parallelogram can be classed differently under exclusive and inclusive criteria.",
+          "Correction": "Use the inclusive 2021 convention for the course while teaching both definitions."
+        },
+        {
+          "Mistake": "Assume any shape with one parallel pair is also a parallelogram",
+          "WhyWrong": "A parallelogram requires two opposite parallel pairs.",
+          "Correction": "Check both pairs before applying the more specific class."
+        }
+      ],
+      "SummaryPoints": [
+        "There are inclusive and exclusive definitions, and the source selects inclusive.",
+        "A shape's place in the hierarchy follows stated defining properties.",
+        "Coordinate drawings, Venn diagrams and explanations require teacher review.",
+        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 5: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-5/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Trapezoids PLC Activity — properties and examples",
+          "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
+          "Rows": [
+            {
+              "Label": "Class",
+              "Cells": [
+                "One-pair trapezoid",
+                "Parallelogram",
+                "Square"
+              ]
+            },
+            {
+              "Label": "Exactly-one rule",
+              "Cells": [
+                "Yes",
+                "No",
+                "No"
+              ]
+            },
+            {
+              "Label": "At-least-one rule",
+              "Cells": [
+                "Yes",
+                "Yes",
+                "Yes"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U07:L06",
+      "CultureCode": "en",
+      "Title": "Hierarchy of Quadrilaterals",
+      "ExplanationParagraphs": [
+        "Goal: construct quadrilaterals physically from identical straight sticks and explain inclusion relationships: every square is a rhombus; every rectangle is a parallelogram, but converses need not hold. The source uses four or six toothpicks to demonstrate fixed side lengths while changing angles and then asks students to critique a misleading explanation.",
+        "Warm-up: take four hypothetical equal toothpicks and connect their endpoints as a square. Rotate/joint the shape into a slanted, non-right-angled rhombus without changing the four side lengths. What changed is angle measure, not side length or closed four-sided status.",
+        "Activity 1 — two constructions: model a square and a non-square rhombus using four equal sticks. Both have all equal sides; only the square has four right angles. Model a rectangle and a slanted parallelogram with pairs of matching opposite side lengths (for example two short and two long sticks). In both shapes, opposite sides stay parallel but only the rectangle has right angles.",
+        "Activity 2 — classify hand-drawn shapes: draw a rhombus with vertices (0,2),(2,3),(4,2),(2,1), which has all four equal side lengths but does NOT have four right angles; draw the axis-aligned square (0,0),(2,0),(2,2),(0,2), which is both square and rhombus. Explain why a 'square that is not a rhombus' is impossible; rewrite the incorrect statement 'Rhombuses are not squares' as 'Some rhombuses are squares; some are not.'",
+        "Assessment: drawing and physical construction, side-length verification, the full hierarchy and partner critique cannot be certified by a single classification label; source activity requires teacher evaluation of actual shapes. First-party coordinate examples replace source toothpick photographs."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rhombus contains squares",
+          "Definition": "A rhombus has four equal sides; a square additionally has four right angles.",
+          "Rule": "Square ⇒ rhombus, but rhombus ⇏ square.",
+          "Example": "A slanted rhombus is a counterexample to the converse."
+        },
+        {
+          "Title": "Parallelogram contains rectangles",
+          "Definition": "A parallelogram has both opposite side pairs parallel; a rectangle additionally has four right angles.",
+          "Rule": "Rectangle ⇒ parallelogram.",
+          "Example": "Slanted parallelogram is not a rectangle."
+        },
+        {
+          "Title": "Inherited defining properties",
+          "Definition": "Every subclass inherits the required defining properties of its containing class.",
+          "Rule": "A square is simultaneously a rectangle, a rhombus and a parallelogram.",
+          "Example": "No square can fail the four-equal-sides test."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Square vs rhombus",
+          "Question": "Are all rhombuses squares?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Name four equal sides as the rhombus requirement.",
+            "Notice right angles are not guaranteed by equal side lengths.",
+            "Construct a slanted equal-sided quadrilateral to refute the converse."
+          ],
+          "Answer": "No. Some rhombuses are squares, but not all.",
+          "Check": "Teacher checks angles and side lengths of counterexample."
+        },
+        {
+          "Title": "Rectangle vs parallelogram",
+          "Question": "Can a parallelogram have no right angles?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Retain two pairs of opposite parallel sides.",
+            "Tilt its vertical-looking sides, preserving the pair relationships.",
+            "Observe no corner is a right angle in the example."
+          ],
+          "Answer": "Yes; such a parallelogram is not a rectangle.",
+          "Check": "A rectangle is always a parallelogram."
+        },
+        {
+          "Title": "Impossible request",
+          "Question": "Draw a square that is not a rhombus.",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Recall a square has four equal sides.",
+            "Recall any four-sided figure with four equal sides is a rhombus.",
+            "Explain why the requested drawing contradicts definitions."
+          ],
+          "Answer": "Impossible.",
+          "Check": "Every square must be a rhombus; teacher reviews argument."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume a slanted square loses square status",
+          "WhyWrong": "Rotation preserves right angles and equal sides.",
+          "Correction": "Assess actual geometry, not orientation."
+        },
+        {
+          "Mistake": "Claim a hierarchy arrow works in both directions",
+          "WhyWrong": "A subclass's extra defining properties are not required by the parent class.",
+          "Correction": "Prove one direction and supply counterexample to the converse."
+        }
+      ],
+      "SummaryPoints": [
+        "A square is a special rhombus and rectangle; a rectangle is a special parallelogram.",
+        "Constructing and modifying figures reveals which properties are preserved.",
+        "Source physical work and hierarchy claims need teacher review.",
+        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 6: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-6/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Hierarchy of Quadrilaterals — properties and examples",
+          "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
+          "Rows": [
+            {
+              "Label": "Shape",
+              "Cells": [
+                "Square",
+                "Non-square rhombus",
+                "Rectangle",
+                "Slanted parallelogram"
+              ]
+            },
+            {
+              "Label": "Four equal sides",
+              "Cells": [
+                "Yes",
+                "Yes",
+                "Not always",
+                "Not always"
+              ]
+            },
+            {
+              "Label": "Four right angles",
+              "Cells": [
+                "Yes",
+                "No",
+                "Yes",
+                "No"
+              ]
+            },
+            {
+              "Label": "Opposite parallel pairs",
+              "Cells": [
+                "2",
+                "2",
+                "2",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U07:L07",
+      "CultureCode": "en",
+      "Title": "Rectangles and Squares",
+      "ExplanationParagraphs": [
+        "Goal: reason using always/sometimes/never about shape class hierarchy, recognize which requested quadrilateral combinations are IMPOSSIBLE and give both true examples and counterexamples for 'sometimes'. The source is an attribute-based card game with a gallery walk, not just diagram identification.",
+        "Warm-up: consider a square and a rectangle with different adjacent lengths. Both have right angles, yet only the first necessarily has four equal sides. Ask whether every rectangle must be a square and why a long rectangle is a counterexample.",
+        "Activity 1 — original clue pairs: choose or draw one quadrilateral that is not a parallelogram, a rhombus that is square, a rhombus that is not square, a rectangle that is not square, and a parallelogram that is not a rectangle. Explain why a 'square that is not a rectangle' cannot exist. Under the inclusive source convention, a rectangle is also a trapezoid; a figure that is a trapezoid and NOT parallelogram can have just one parallel pair.",
+        "Activity 2 — classify statements: 'Rhombus is a square': SOMETIMES (right angles required); 'Square is a rhombus': ALWAYS; 'Triangle is quadrilateral': NEVER; 'Square is a rectangle': ALWAYS; 'Rectangle is parallelogram': ALWAYS; 'Parallelogram is rhombus': SOMETIMES. Under the source inclusive trapezoid definition, 'Trapezoid is parallelogram': SOMETIMES. For every SOMETIMES answer supply two diagrams, one supporting example and one counterexample.",
+        "Assessment: card use-once constraint, physically meaningful drawings, correct hierarchy definitions and counterexample justifications are teacher-judged; numerical property tests cannot auto-pass the source art/communication task."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Always means class inclusion",
+          "Definition": "If every figure in class A satisfies B's definition, 'A is B' is always true.",
+          "Rule": "Every square is a rectangle.",
+          "Example": "Four right angles inherited."
+        },
+        {
+          "Title": "Sometimes requires both evidence types",
+          "Definition": "A sometimes claim needs an example where it holds and another where it fails.",
+          "Rule": "Some rhombuses are squares; a non-right rhombus is not.",
+          "Example": "Teacher checks geometry of both."
+        },
+        {
+          "Title": "Never means definitions are incompatible",
+          "Definition": "A triangle has three sides and cannot be a quadrilateral with four sides.",
+          "Rule": "A square cannot fail to be a rectangle.",
+          "Example": "Do not invent impossible geometry for a requested counterexample."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Classify rhombus-square relation",
+          "Question": "Is a rhombus always/sometimes/never a square?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "A rhombus has four equal sides.",
+            "A square has four equal sides and four right angles.",
+            "Give a square and a non-right rhombus."
+          ],
+          "Answer": "Sometimes.",
+          "Check": "Both example and counterexample required."
+        },
+        {
+          "Title": "Classify square-rectangle relation",
+          "Question": "Is a square always/sometimes/never a rectangle?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Read rectangle's four-right-angle requirement.",
+            "A square has four right angles.",
+            "Conclude all squares qualify."
+          ],
+          "Answer": "Always.",
+          "Check": "Impossible to draw a square that is not a rectangle."
+        },
+        {
+          "Title": "Classify inclusive trapezoids",
+          "Question": "Is a trapezoid always/sometimes/never a parallelogram under the 2021 rule?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "An inclusive trapezoid has at least one parallel pair.",
+            "A parallelogram has two such pairs.",
+            "Give a parallelogram and a one-pair trapezoid."
+          ],
+          "Answer": "Sometimes.",
+          "Check": "Source inclusive convention must be used."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Call trapezoid never parallelogram because of an exclusive definition",
+          "WhyWrong": "This lesson uses the inclusive at-least-one convention taught in L05.",
+          "Correction": "A parallelogram meets the inclusive trapezoid definition."
+        },
+        {
+          "Mistake": "Claim sometimes without a counterexample",
+          "WhyWrong": "Sometimes requires existence of both a qualifying and nonqualifying instance.",
+          "Correction": "Draw and verify both examples."
+        }
+      ],
+      "SummaryPoints": [
+        "Always/sometimes/never statements express inclusion and counterexamples.",
+        "No square can fail to be a rectangle or a rhombus.",
+        "Teacher reviews actual drawings and card-use rules.",
+        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 7: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-7/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rectangles and Squares — properties and examples",
+          "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
+          "Rows": [
+            {
+              "Label": "Statement",
+              "Cells": [
+                "Rhombus→square",
+                "Square→rhombus",
+                "Rectangle→parallelogram",
+                "Trapezoid→parallelogram"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "Sometimes",
+                "Always",
+                "Always",
+                "Sometimes"
+              ]
+            },
+            {
+              "Label": "Needs counterexample?",
+              "Cells": [
+                "Yes",
+                "No",
+                "No",
+                "Yes"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U07:L08",
+      "CultureCode": "en",
+      "Title": "Sort Triangles",
+      "ExplanationParagraphs": [
+        "Goal: SORT triangles by both side-length relationships and angle type in a 3×3 attribute grid, identify combinations that CANNOT exist, and use all/some/none statements about right triangles. The 2021 source explicitly notes an equilateral triangle cannot be a right or obtuse triangle.",
+        "Warm-up: draw an equilateral triangle with three congruent sides and three 60° angles. Compare it with a right triangle having one 90° angle and two acute angles, and with an obtuse triangle having one angle greater than90°. Explain why a triangle can never have two right angles or two obtuse angles because the angle sum is180°.",
+        "Activity 1 — fill an original table: columns scalene (three unequal sides), isosceles non-equilateral (exactly two equal sides), equilateral (three equal sides); rows acute, right, obtuse. An equilateral triangle can fill ONLY the acute row. Both scalene and exactly-two-equal-side triangles can be acute or obtuse or right (e.g., right isosceles angles45°,45°,90°). Ask students to draw at least one sample for each allowed cell and explain the empty equilateral-right and equilateral-obtuse cells.",
+        "Activity 2 — write quantifiers: ALL right triangles have one right angle and their other two angles acute. SOME right triangles have two equal sides (45°-45°-90°), but not all. NONE have an obtuse angle or all three equal sides. Partner checks whether the learner's drawings and categorical statements satisfy these properties.",
+        "Assessment: source card-sort, measured side relations, actual angle/drawing classification, two impossible classes and all/some/none statements require teacher-reviewed figures. The text table is an accessible description but not verified visual parity with publisher figure cards."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Triangle side families",
+          "Definition": "Scalene has three distinct side lengths; isosceles non-equilateral exactly two equal sides; equilateral all three equal.",
+          "Rule": "Equilateral has three60° angles.",
+          "Example": "Classify by attributes, not orientation."
+        },
+        {
+          "Title": "Triangle angle types",
+          "Definition": "Acute: three angles <90°; right: one angle90°; obtuse: one angle>90°.",
+          "Rule": "The three angles sum to180°.",
+          "Example": "A triangle cannot have two right or two obtuse angles."
+        },
+        {
+          "Title": "Impossible equilateral pairs",
+          "Definition": "Three equal sides force three equal60° angles, so equilateral is always acute.",
+          "Rule": "Equilateral-right and equilateral-obtuse cells are empty.",
+          "Example": "Give geometric reason, not only no matching card."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Classify equilateral triangle",
+          "Question": "Could three equal sides form a right triangle?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Equal sides imply equal angles.",
+            "Three equal angles summing to180° each are60°.",
+            "No angle can be90°."
+          ],
+          "Answer": "No.",
+          "Check": "Any equilateral is acute."
+        },
+        {
+          "Title": "Describe a right isosceles triangle",
+          "Question": "Can a right triangle have exactly two equal sides?",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "Choose equal perpendicular legs.",
+            "Each smaller angle is45° when other right angle is90°.",
+            "Check angle total."
+          ],
+          "Answer": "Yes:45°,45°,90°.",
+          "Check": "It has exactly two equal sides, not three."
+        },
+        {
+          "Title": "Right triangle quantifiers",
+          "Question": "Write one ALL, SOME and NONE statement about right triangles.",
+          "Method": "First-party shape-attribute or counterexample analysis. Student-drawn figures require teacher assessment.",
+          "Steps": [
+            "All have exactly one right angle.",
+            "Some have two equal sides.",
+            "None has an obtuse angle or three equal sides."
+          ],
+          "Answer": "These statements hold under ordinary nondegenerate triangle definitions.",
+          "Check": "Teacher reviews counterexamples and original drawings."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat every isosceles as having exactly two equal sides without defining category",
+          "WhyWrong": "Some mathematical conventions include equilateral among isosceles; the grid's source category explicitly says 'exactly two' for one column.",
+          "Correction": "Distinguish exactly two equal from all three equal before sorting."
+        },
+        {
+          "Mistake": "Assume three equal sides could create right or obtuse angles",
+          "WhyWrong": "Equal sides force three60° angles.",
+          "Correction": "Use angle sum and equal-angle property."
+        }
+      ],
+      "SummaryPoints": [
+        "Triangles can be sorted by sides and angle classes simultaneously.",
+        "The equilateral-right and equilateral-obtuse cells are impossible.",
+        "Source card sorting and all/some/none explanations are teacher-reviewed.",
+        "2021 first-edition IM K–5 Grade 5 Unit 7 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-7/lesson-8/lesson.html. Source teacher HTML including Student Facing read read-only through verified Primary Our-CS. Original Student Task PDF and original figure cards/gated response NOT_CHECKED; all example language/attribute tables authored by Edulytiks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sort Triangles — properties and examples",
+          "Description": "First-party accessible textual shape-property matrix, NOT substitute for visual source card sort; figure drawing and matching require teacher review.",
+          "Rows": [
+            {
+              "Label": "Triangle type",
+              "Cells": [
+                "Scalene",
+                "Exactly two equal sides",
+                "Three equal sides"
+              ]
+            },
+            {
+              "Label": "Acute",
+              "Cells": [
+                "Possible",
+                "Possible",
+                "Possible"
+              ]
+            },
+            {
+              "Label": "Right",
+              "Cells": [
+                "Possible",
+                "Possible",
+                "Impossible"
+              ]
+            },
+            {
+              "Label": "Obtuse",
+              "Cells": [
+                "Possible",
+                "Possible",
+                "Impossible"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
