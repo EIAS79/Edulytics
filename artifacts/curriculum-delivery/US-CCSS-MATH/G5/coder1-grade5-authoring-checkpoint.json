@@ -37,7 +37,10 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l06-l10-2021.rich-lesson-v2.json",
     "tests/academic-us-ccss-g5-u04-fluency-v5.test.cjs",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l11-l14-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-u04-division-v5.test.cjs"
+    "tests/academic-us-ccss-g5-u04-division-v5.test.cjs",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l15-l17-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l18-l21-2021.rich-lesson-v2.json",
+    "tests/academic-us-ccss-g5-u04-contexts-v5.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -83,7 +86,7 @@
   },
   "editorial": {
     "changedLessonCount": 104,
-    "richSidecarLessonCount": 67,
+    "richSidecarLessonCount": 74,
     "fieldUpdateCounts": {
       "explanation": 0,
       "keyConceptsAndRules": 56,
@@ -97,11 +100,11 @@
     "publicPreparationReviewedCount": 7,
     "stageDVerifiedCount": 0,
     "humanAcceptedCount": 0,
-    "public2021LessonOrPreparationHtmlReviewedCount": 70,
+    "public2021LessonOrPreparationHtmlReviewedCount": 77,
     "public2021LessonHtmlReviewedDuringV4": 22,
-    "codeCandidateWithAtLeastOneEditOrRichV2": 117,
-    "noGradeOwnedCodeCandidate": 31,
-    "public2021LessonHtmlReviewedDuringV5": 41,
+    "codeCandidateWithAtLeastOneEditOrRichV2": 118,
+    "noGradeOwnedCodeCandidate": 30,
+    "public2021LessonHtmlReviewedDuringV5": 48,
     "originalStudentPdfAndGatedCooldownVerified": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
@@ -130,8 +133,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "70 public 2021 teacher/student-facing lesson/preparation HTML tasks reviewed with item-specific authored candidates, but full original Student Task PDF, source art/rights, gated responses and all 148 individual academic A acceptances remain incomplete.",
-      "next": "Continue at U04 L15, and independently review original protected/unprotected tasks and diagrams before granting A PASS."
+      "issue": "77 distinct public 2021 teacher/student HTML source tasks reviewed, but original Student Task PDFs, figures/source rights and restricted Cool-downs unverified. All 148 individual academic A acceptances remain NOT_COMPLETE.",
+      "next": "Continue at U05 L02 and review original source task/rights separately before Stage A acceptance."
     },
     {
       "id": "G5-D-004",
@@ -3326,16 +3329,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l15-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l15-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-15/lesson.html",
+      "sourceReviewedTask": "Find missing side from area/base area/volume with inverse multiplication; recognize multiple valid remaining edge pairs",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_NONUNIQUE_MISSING_DIMENSION_EXPLANATION"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L16",
@@ -3366,16 +3375,22 @@
         }
       ],
       "contentFieldsChanged": [],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "NOT_REVIEWED_FOR_REUSE",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l15-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l15-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-16/lesson.html",
+      "sourceReviewedTask": "Real continuous-noodle division creates mixed-number individual shares and interprets fractional remainder",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CONTEXTUAL_REMAINDER_OR_FRACTION_CARD_REASONING"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L17",
@@ -3408,16 +3423,22 @@
       "contentFieldsChanged": [
         "keyConceptsAndRules"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l15-l17-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l15-l17-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-17/lesson.html",
+      "sourceReviewedTask": "Optional fraction-as-division and matching multiple fractional partial-quotient sums, reject incorrect cards",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_CONTEXTUAL_REMAINDER_OR_FRACTION_CARD_REASONING"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L18",
@@ -3452,16 +3473,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l18-l21-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l18-l21-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-18/lesson.html",
+      "sourceReviewedTask": "Estimate scalable milk carton volume and number of days to target with contextual school-size assumptions",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_ESTIMATION_AND_ASSUMPTIONS_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L19",
@@ -3501,16 +3528,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l18-l21-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l18-l21-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-19/lesson.html",
+      "sourceReviewedTask": "Connect metric kilometer distances with large square-kilometer map area products; avoid cubic-volume conflation",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_ESTIMATION_AND_ASSUMPTIONS_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L20",
@@ -3550,16 +3583,22 @@
         "stepByStepSolutions",
         "commonMistakes"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l18-l21-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l18-l21-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-20/lesson.html",
+      "sourceReviewedTask": "Model standard cargo container volume, fill days, per-school shipping target, and evaluate a conditional national claim",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_ESTIMATION_AND_ASSUMPTIONS_WITH_NUMERIC_SUBCHECK"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U04:L21",
@@ -3597,16 +3636,22 @@
       "contentFieldsChanged": [
         "keyConceptsAndRules"
       ],
-      "hasGrade5RichV2Sidecar": false,
-      "sourceReview": "NOT_CHECKED",
+      "hasGrade5RichV2Sidecar": true,
+      "sourceReview": "PUBLIC_2021_STUDENT_FACING_HTML_REVIEWED_ORIGINAL_PDF_AND_GATED_RESPONSE_NOT_VERIFIED",
       "stageA": "NOT_COMPLETE",
-      "stageB": "CODE_CANDIDATE_COMMITTED_EFFECTIVE_RENDER_NOT_VERIFIED",
+      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
-      "production": "NOT_CHECKED"
+      "production": "NOT_CHECKED",
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u04-l18-l21-2021.rich-lesson-v2.json",
+      "richV2ContentVersion": "g5-u04-l18-l21-im2021-first-party-richv2-v5-20261029",
+      "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-21/lesson.html",
+      "sourceReviewedTask": "Optional actual seven-day food-waste journal: collect genuine observations, ounces→pounds, annual projection and teacher reflection",
+      "sourceReviewDate": "2026-10-29",
+      "sourceTaskAssessmentBoundary": "TEACHER_JUDGED_REAL_JOURNAL_NO_AUTOMATIC_COMPLETION"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U05:L01",
@@ -6906,23 +6951,23 @@
       "production": "NOT_CHECKED"
     }
   ],
-  "lastGradeContentCommit": "e38f8b98bb37bbee70be769186fbbcd0ecaff29d",
+  "lastGradeContentCommit": "ca44a12d3ae22742766df1bdd5763878129c812f",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "V5 grade source candidate checkpoint: 67 distinct direct Rich V2 lessons (26 prior, 41 new V5), 104 previously edited canonical pack translations, 70 distinct public 2021 teacher/student-facing HTML pages reviewed. Direct coverage U01 12, U02 17, U03 20, U04 L01-L14 14, U05-U08 first lesson each 1. 81 lessons have no direct sidecar (not automatically defective because runtime composer exists). 0/148 original academic source-task A, exact Practice C, product D, human approval.",
+  "currentScopeDescription": "V5: 74 direct original Grade 5 RichV2 teaching candidates (26 V4 preserved, 48 V5), complete direct candidate coverage U01 12, U02 17, U03 20, U04 21, plus U05 L01, U06 L01, U07 L01, U08 L01. 104 prior baseline pack translations edited. 77 distinct public 2021 teacher/student-facing source pages examined (29 prior +48 new). 74 lessons without direct sidecar may have synthesized runtime content. ALL 148 academic Stage A, exact selected Practice C, real Stage D and human acceptance remain NOT_COMPLETE.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "bb09b43bab84f1b096939faa4092e7525f1646e4",
+  "lastCommittedTest": "c6f2f702731d568628f15cf53a67a87955dd5959",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "bb09b43bab84f1b096939faa4092e7525f1646e4",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U04:L15 — Find Missing Side Lengths",
+    "lastKnownCommittedHeadBeforeLedger": "c6f2f702731d568628f15cf53a67a87955dd5959",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U05:L02 — Thousandths on Grids",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "Continue source-specific Unit4 L15-L21 then U05-U08. Shared exact Practice and seed propagation issue #592 remains Supervisor-owned.",
+    "nextAcademic": "U05 L02-L26 source tasks and lesson-specific reuse/repairs; U06-U08 pending. Work solely grade-owned paths; issue #592 shared Practice and seed gate remains Supervisor 1.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -6971,12 +7016,12 @@
     "protectedCi": "NOT_RUN",
     "combinedActualNodeCli": {
       "command": "node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-*-v5.test.cjs",
-      "environment": "isolated sandbox Node.js v22.16.0; never Our-CS or Anas_Nitro",
-      "passed": 41,
+      "environment": "isolated sandbox Node.js v22.16.0, NOT Our-CS or Anas_Nitro",
+      "passed": 48,
       "failed": 0,
-      "skipped": 8,
-      "scope": "Stand-alone exact mathematics only. Eight GitHub sidecar structural checks SKIPPED because unpublished branch JSON files not mounted. .NET/Practice/DB/authenticated rendering/CI NOT_RUN.",
-      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_with_u04_l14_20261029.tap"
+      "skipped": 9,
+      "scope": "Standalone exact math and contextual assumptions; 9 GitHub branch sidecar file checks skipped (not mounted). Runtime-selected Practice, .NET/DB/student/teacher, CI and release all NOT_RUN.",
+      "outputArtifact": "/mnt/data/edulytiks_g5_v5_tests/node_test_v5_unit4_complete_20261029.tap"
     },
     "githubConnectorV8U03": {
       "status": "PASS",
