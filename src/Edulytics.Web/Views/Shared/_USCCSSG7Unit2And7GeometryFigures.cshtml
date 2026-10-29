@@ -1,0 +1,64 @@
+@model Edulytics.Core.Curriculum.RichLessonContentV2Lesson
+@{
+    // Grade 7-only opt-in content. This partial is intentionally not called
+    // from the shared Rich V2 renderer: Supervisor 1 controls that integration
+    // under issue #592 and draft PR #599's single-writer boundary.
+    var figure = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U02:L01" =>
+            "/curriculum/us-ccss-g7/geometry/u02-l01-scaled-crescents.svg",
+        "PED:US-CCSS-MATH:G7:U07:L01" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l01-hexagon-angles-and-protractor.svg",
+        "PED:US-CCSS-MATH:G7:U07:L02" =>
+            "/curriculum/us-ccss-g7/geometry/u07-l02-adjacent-right-and-straight-angles.svg",
+        _ => null
+    };
+    var description = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U02:L01" =>
+            "Three original crescent outlines using the same curve: A has width W and height H, B has width 1.5W and height 1.5H, and C has width 1.5W but height H. B is a true copy of A; C is stretched in only one direction.",
+        "PED:US-CCSS-MATH:G7:U07:L01" =>
+            "Three regular hexagon corners of 120 degrees each meet at one vertex to make 360 degrees. The right-hand protractor example measures 40 degrees counterclockwise from its zero ray, not 140 degrees.",
+        "PED:US-CCSS-MATH:G7:U07:L02" =>
+            "Two distinct angle constructions: 35 plus 55 degrees makes a 90-degree right angle; 125 plus 55 degrees makes a 180-degree straight angle. The parts are adjacent and have no overlapping interiors.",
+        _ => ""
+    };
+    var learnerTask = Model.LessonCode switch
+    {
+        "PED:US-CCSS-MATH:G7:U02:L01" =>
+            "Draw and label at least two crescent copies. Compare one horizontal and one vertical corresponding dimension; explain why a horizontal stretch is not a scaled copy. Explain how the drawing compares with equivalent mixtures.",
+        "PED:US-CCSS-MATH:G7:U07:L01" =>
+            "Assemble three hexagon corners, justify a full turn, and independently draw a right-starting 40-degree angle using the correct protractor scale. Explain why the 140-degree reading is a different angle.",
+        "PED:US-CCSS-MATH:G7:U07:L02" =>
+            "Cut or draw two original rectangular angle constructions, label adjacent parts of 90-degree and 180-degree angles, and explain why their measures add. Check both with a real protractor.",
+        _ => ""
+    };
+}
+@if (figure is not null)
+{
+    <section class="rich-lesson-section rich-lesson-section--g7-source-geometry"
+             aria-label="Grade 7 original geometric construction reference">
+        <h3>Geometric construction and explanation</h3>
+        <figure>
+            <img src="@figure"
+                 asp-append-version="true"
+                 alt="@description"
+                 width="1000"
+                 loading="lazy"
+                 decoding="async"
+                 style="display:block;max-width:100%;height:auto" />
+            <figcaption>
+                Original Edulytiks mathematical example, not a reproduction
+                of an Illustrative Mathematics figure. Student constructions
+                must be individually drawn or measured.
+            </figcaption>
+        </figure>
+        <p><strong>Student task:</strong> @learnerTask</p>
+        <p>
+            <strong>Teacher-only assessment:</strong> Review the learner's
+            actual construction, labeled corresponding geometry, mathematical
+            reasoning and discussion. A numerical Practice answer or this
+            reference figure cannot by itself pass the source task.
+        </p>
+    </section>
+}

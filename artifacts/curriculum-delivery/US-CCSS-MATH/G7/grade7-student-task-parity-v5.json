@@ -393,7 +393,12 @@
       "actualGradeOwnedRepair": "Original DoubleNumberLine and scaled-rectangle analogues; physical moon shape remains missing",
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
-      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT"
+      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
+      "v9OriginalSourceGeometryFigure": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u02-l01-scaled-crescents.svg",
+      "v9TeacherRubricEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v9-u02-u07-source-geometry-and-rubrics.json",
+      "v9FigureStudentPageParity": "ORIGINAL_SOURCE_ALIGNED_ANALOGUE_TASK_EVIDENCE_NOT_FULL_FIGURE_PARITY",
+      "v9ActualStudentFigureDisplayed": "NOT_VERIFIED",
+      "v9TeacherRubricPersistence": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U02:L02",
@@ -2528,7 +2533,12 @@
       "actualGradeOwnedRepair": "Original hexagon/pentagon and 40°-versus-140° examples; geometry figure/ruler not rendered",
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
-      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT"
+      "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
+      "v9OriginalSourceGeometryFigure": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l01-hexagon-angles-and-protractor.svg",
+      "v9TeacherRubricEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v9-u02-u07-source-geometry-and-rubrics.json",
+      "v9FigureStudentPageParity": "ORIGINAL_SOURCE_ALIGNED_ANALOGUE_TASK_EVIDENCE_NOT_FULL_FIGURE_PARITY",
+      "v9ActualStudentFigureDisplayed": "NOT_VERIFIED",
+      "v9TeacherRubricPersistence": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L02",
@@ -2554,7 +2564,12 @@
       "sourceComparison": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "teacherRubricRequired": true,
       "sourceTaskGraphicParity": "NOT_VERIFIED_NEEDS_ACTUAL_FIGURE_OR_STUDENT_ARTIFACT",
-      "actualGradeOwnedRepair": "First-party task \"Construct and justify — Adjacent Angles\" added in src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u07-l02-l17-our-2017.rich-lesson-v2.json, us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v3; teacher review required; exact task/figure equivalence and runtime assessment not certified."
+      "actualGradeOwnedRepair": "First-party task \"Construct and justify — Adjacent Angles\" added in src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u07-l02-l17-our-2017.rich-lesson-v2.json, us-ccss-g7-u07-angles-prisms-rich-v2-candidate-20261028-v3; teacher review required; exact task/figure equivalence and runtime assessment not certified.",
+      "v9OriginalSourceGeometryFigure": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l02-adjacent-right-and-straight-angles.svg",
+      "v9TeacherRubricEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-v9-u02-u07-source-geometry-and-rubrics.json",
+      "v9FigureStudentPageParity": "ORIGINAL_SOURCE_ALIGNED_ANALOGUE_TASK_EVIDENCE_NOT_FULL_FIGURE_PARITY",
+      "v9ActualStudentFigureDisplayed": "NOT_VERIFIED",
+      "v9TeacherRubricPersistence": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L03",
@@ -3819,5 +3834,23 @@
     "sourceTaskComparisonsPreserved": 145,
     "practiceIntegrationIssue": "https://github.com/EIAS79/Edulytics/issues/592",
     "next": "U01 L01 actual authenticated geometry figure delivery and teacher rubric end-to-end, not yet selectable in Rich V2"
+  },
+  "v9": {
+    "date": "2026-10-29",
+    "lessons": [
+      "PED:US-CCSS-MATH:G7:U02:L01",
+      "PED:US-CCSS-MATH:G7:U07:L01",
+      "PED:US-CCSS-MATH:G7:U07:L02"
+    ],
+    "origin": "Original Edulytiks first-party U02 and U07 geometry with direct official student-page comparison",
+    "newStaticSvgAssets": 3,
+    "newTeacherRubricDrafts": 3,
+    "oldStudentPagesDirectlyRead": 145,
+    "academicA": 0,
+    "stageBAuth": 0,
+    "stageC": 0,
+    "stageD": 0,
+    "status": "G7_CANDIDATE_SOURCE_ANALOGUE_NOT_FULL_ACADEMIC_PARITY",
+    "next": "Supervisor 1 integrates isolated G7-only figure partial after PR #599; actual student UI, teacher scoring and exact Practice need evidence."
   }
 }

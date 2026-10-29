@@ -240,7 +240,7 @@ test('V6 source-original SVG polygons preserve actual scaled and distorted geome
   const rubric = read('artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json');
   const base = 'src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/';
   assert.equal(rubric.releaseStatus, 'BLOCKED');
-  assert.equal(rubric.lessons.length, 4);
+  assert.equal(rubric.lessons.length, 14, 'Thirteen Unit 1 rubrics plus U06 L01 reasoning rubric');
   const fetchSvg = name => {
     const svg = fs.readFileSync(path.join(root, base, name), 'utf8');
     assert.match(svg, /<svg [^>]*role="img"/);
@@ -290,10 +290,10 @@ test('V6 grade-specific teacher rubrics do not claim a working or authenticated 
     assert.equal(l.studentAssetRenderedInRichV2, false);
     assert.equal(l.studentArtifactPersisted, false);
     assert.equal(l.verifiedInTwoSchools, false);
-    assert.ok(l.examples.some(x => x.kind === 'incorrect'));
+    assert.ok(l.examples.some(x => x.kind === 'incorrect' || x.kind === 'wrong'), l.lessonCode + ': negative counterexample');
     assert.ok(l.examples.some(x => x.kind === 'correct'));
   }
-  assert.equal(codes.size, 4);
+  assert.equal(codes.size, 14, 'No duplicate Grade 7 teacher-only rubric IDs');
   assert.equal(Math.ceil(9 / 4) * 35, 105, 'Whole-toaster batches');
   assert.equal(3.5 + 0.25 * 20, 8.5, 'Nonproportional pricing');
   assert.notEqual(3.5 + 0.25 * 20, 0.6 * 20, 'Do not treat fixed-fee and rate-only as same rule');

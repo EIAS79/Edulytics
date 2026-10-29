@@ -75,6 +75,52 @@ public sealed class USCCSSG7SharedRichVisualHookTests
         }
     }
 
+    [Theory]
+    [InlineData("PED:US-CCSS-MATH:G7:U02:L01", "u02-l01-scaled-crescents.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U07:L01", "u07-l01-hexagon-angles-and-protractor.svg")]
+    [InlineData("PED:US-CCSS-MATH:G7:U07:L02", "u07-l02-adjacent-right-and-straight-angles.svg")]
+    public void NewGrade7UnitTwoAndSevenFigures_UseExactLessonGatesAndSafeLocalAssets(
+        string lessonCode, string assetName)
+    {
+        var root = FindRoot();
+        var shared = File.ReadAllText(Path.Combine(root,
+            "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml"));
+        var partial = File.ReadAllText(Path.Combine(root,
+            "src/Edulytics.Web/Views/Shared/_USCCSSG7Unit2And7GeometryFigures.cshtml"));
+        const string partialInvocation =
+            "<partial name=\"_USCCSSG7Unit2And7GeometryFigures\" model=\"Model\" />";
+
+        Assert.Equal(1, shared.Split(partialInvocation, StringSplitOptions.None).Length - 1);
+        Assert.Contains("Model.LessonCode == \"" + lessonCode + "\"", shared,
+            StringComparison.Ordinal);
+        Assert.DoesNotContain("StartsWith(\"PED:US-CCSS-MATH:G7:U07", shared,
+            StringComparison.Ordinal);
+
+        foreach (var namedSwitch in new[] { "figure", "description", "learnerTask" })
+        {
+            var marker = "var " + namedSwitch + " = Model.LessonCode switch";
+            Assert.Contains(marker, partial, StringComparison.Ordinal);
+            var scope = partial.Split(marker, StringSplitOptions.None)[1]
+                .Split("};", StringSplitOptions.None)[0];
+            Assert.Equal(1, scope.Split("\"" + lessonCode + "\"",
+                StringSplitOptions.None).Length - 1);
+        }
+
+        var disk = Path.Combine(root, "src/Edulytics.Web/wwwroot",
+            "curriculum/us-ccss-g7/geometry", assetName);
+        Assert.True(File.Exists(disk), "Original Grade 7 SVG asset must exist: " + disk);
+        var svgText = File.ReadAllText(disk);
+        var svg = XDocument.Parse(svgText);
+        XNamespace ns = "http://www.w3.org/2000/svg";
+        Assert.Equal(ns + "svg", svg.Root?.Name);
+        Assert.Contains(svg.Descendants(ns + "title"), x => !string.IsNullOrWhiteSpace(x.Value));
+        Assert.Contains(svg.Descendants(ns + "desc"), x => !string.IsNullOrWhiteSpace(x.Value));
+        Assert.Equal("img", (string?)svg.Root?.Attribute("role"));
+        Assert.DoesNotContain("<script", svgText, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("<foreignObject", svgText, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("javascript:", svgText, StringComparison.OrdinalIgnoreCase);
+    }
+
     private static string FindRoot()
     {
         DirectoryInfo? dir = new(AppContext.BaseDirectory);
