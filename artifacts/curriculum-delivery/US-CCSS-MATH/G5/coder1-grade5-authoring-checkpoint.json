@@ -65,7 +65,9 @@
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u08-l06-l09-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u08-l10-l12-l13-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u08-l14-l18-2021.rich-lesson-v2.json",
-    "tests/academic-us-ccss-g5-u08-v8.test.cjs"
+    "tests/academic-us-ccss-g5-u08-v8.test.cjs",
+    "tests/academic-us-ccss-g5-u01-source-fidelity-v9.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -140,7 +142,10 @@
     "v8OurCsSourceLessonCount": 15,
     "v8SourceDuplicatesPreviouslyPreparationReviewed": 1,
     "sourceReviewRecordCountAtGrade": 148,
-    "v8SourceCoverageNote": "V8 directly read 15 U08 teacher lesson HTML including Student Facing; L12 already had prior preparation review, so recorded distinct prior-source lesson count increases conservatively 125→139. Seven U07 newer committed RichV2 candidates reconciled without repeating source access or falsely claiming original Student PDF parity."
+    "v8SourceCoverageNote": "V8 directly read 15 U08 teacher lesson HTML including Student Facing; L12 already had prior preparation review, so recorded distinct prior-source lesson count increases conservatively 125→139. Seven U07 newer committed RichV2 candidates reconciled without repeating source access or falsely claiming original Student PDF parity.",
+    "v9Original2021StudentFacingHtmlCompared": 3,
+    "v9OriginalSourceSeparatePdfInspected": 0,
+    "v9StageAApproved": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
   "release": "RELEASE_BLOCKED",
@@ -216,9 +221,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "EXPLICIT_MAPPING_STATICALLY_ELIGIBLE_NOT_ACTUAL_ROUTING_VERIFIED",
+      "stageA": "2021_PUBLISHER_STUDENT_FACING_AND_TEACHER_HTML_COMPARED_V9; FULL_ORIGINAL_PDF_FIGURES_AND_GATED_COOLDOWN_NOT_CHECKED; NO_ACADEMIC_ACCEPTANCE",
+      "stageB": "V9_SOURCE_SPECIFIC_RICH_V2_EDIT_COMMITTED; EFFECTIVE_AUTHENTICATED_STUDENT_TEACHER_RENDER_NOT_RUN",
+      "stageC": "STATIC_READY_VERIFIED_FAMILY_usccss.g5.unit_cube_count; ACTUAL_SELECTED_GENERATOR_FEEDBACK_AND_HUMAN_RUBRIC_NOT_RUN; SHARED_ISSUE_592",
       "explicitMapping": {
         "readiness": "READY_VERIFIED",
         "skillId": "geometry.volume",
@@ -231,7 +236,9 @@
       "ownerUat": "NOT_RUN",
       "production": "NOT_CHECKED",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l01-l03-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l01-l03-im2021-v9-source-task-ourcs-cube-audit-20261029",
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json",
+      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
@@ -273,16 +280,18 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageA": "2021_PUBLISHER_STUDENT_FACING_AND_TEACHER_HTML_COMPARED_V9; FULL_ORIGINAL_PDF_FIGURES_AND_GATED_COOLDOWN_NOT_CHECKED; NO_ACADEMIC_ACCEPTANCE",
+      "stageB": "V9_SOURCE_SPECIFIC_RICH_V2_EDIT_COMMITTED; EFFECTIVE_AUTHENTICATED_STUDENT_TEACHER_RENDER_NOT_RUN",
+      "stageC": "ACTUAL_RUNTIME_SELECTED_PRACTICE_AND_HUMAN_RUBRIC_NOT_RUN",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
       "production": "NOT_CHECKED",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l01-l03-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l01-l03-im2021-v9-source-task-ourcs-cube-audit-20261029",
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json",
+      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
@@ -324,16 +333,18 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageA": "2021_PUBLISHER_STUDENT_FACING_AND_TEACHER_HTML_COMPARED_V9; FULL_ORIGINAL_PDF_FIGURES_AND_GATED_COOLDOWN_NOT_CHECKED; NO_ACADEMIC_ACCEPTANCE",
+      "stageB": "V9_SOURCE_SPECIFIC_RICH_V2_EDIT_COMMITTED; EFFECTIVE_AUTHENTICATED_STUDENT_TEACHER_RENDER_NOT_RUN",
+      "stageC": "ACTUAL_RUNTIME_SELECTED_PRACTICE_AND_HUMAN_RUBRIC_NOT_RUN",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
       "production": "NOT_CHECKED",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l01-l03-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l01-l03-im2021-v9-source-task-ourcs-cube-audit-20261029",
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json",
+      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
@@ -7478,29 +7489,29 @@
       "sourceTaskAssessmentBoundary": "TEACHER_SCORED_AUTHENTIC_GAME_STUDENT_CREATED_TASK_OR_FACILITATION_NUMERIC_SUBCHECK_ONLY"
     }
   ],
-  "lastGradeContentCommit": "828b8ead064422f821e33d129015753fcf1343bc",
+  "lastGradeContentCommit": "0ebc5f4f1c80c5f03d6fc20ad56bb4629dd797c9",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
     "authenticated student/teacher/two-school tenant and accessible figure review",
     "protected GitHub CI at final frozen branch head"
   ],
-  "currentScopeDescription": "Grade 5 V8 full-grade authoring candidate coverage: 148/148 unique direct Grade5 Rich V2 lessons in 38 repository sidecars; all 8 units directly covered. 104 canonical Grade5 pack translations have previous editorial field edits; 148 candidate union. Of 15 latest Unit8 tasks, original teacher/student-facing 2021 lesson HTML source read-only on authorized Our-CS; separate Student Task PDFs/gated cool-down and asset-rights not verified. Last seven U07 sidecars reconciled without resetting. Math Node 15 pass, 1 skip, but original file structure runtime Node, .NET, authenticated learner/teacher, selected Practice, persisted seeding, tenant isolation, owner UAT and protected CI not run. All 148 academic A, effective B, runtime Practice C, release D remain NOT_COMPLETE. Issue #592 still open.",
+  "currentScopeDescription": "V9: 148/148 direct Grade 5 authored Rich V2 candidates retained across 38 sidecars; 104 edited baseline translations preserved. U01 L01–L03 public 2021 student-facing HTML and teacher task comparison performed with Grade5-only source-faithful corrections, source-task rubric evidence and SHA-identical local native Node fixture (4 PASS 0 FAIL 1 SKIP). This is partial Stage A, not individual A acceptance; no original PDF or figures/gated source parity. Stage B authenticated effective content, actual Practice C, genuine Stage D and owner UAT remain unverified and release blocked. Shared source and Practice integration issue #592 unresolved.",
   "lastCodeCommit": "270db2c94f76b6ab039ccc7b88a9e10a00365f98",
-  "lastCommittedTest": "39f973e958dd58c9a70c6ebb8701d0c847aed086",
+  "lastCommittedTest": "14bf7ccb935cbc988408b0c4344455665e3b47af",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "39f973e958dd58c9a70c6ebb8701d0c847aed086",
-    "sourceReviewContinuation": "GRADE5:U01:L01 — BEGIN PER-LESSON STAGE A original Student Task PDF + figure/rights and B effective student-visible verification for 148; no remaining authoring-only sidecar gap.",
+    "lastKnownCommittedHeadBeforeLedger": "bb34ccf848ad240f1b864f00dae7978d2137ef7d",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U01:L04 — Use Layers to Determine Volume PLC Activity",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "All 148 direct content candidates now exist. Continue genuine A source PDF/figure/rubric audit and B authenticated runtime effective content; exact Practice C with shared Supervisor issue #592 and real Stage D .NET/CI/DB/tenant/UAT required; don't call RELEASE_READY.",
+    "nextAcademic": "Continue student-facing source task comparison from U01 L04 with grade-owned content and real tests; resolve L01–L03 original PDF/figures and actual Practice/runtime via authorized runner & Supervisor issue #592.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
     "sharedIntegrationIssue592": "https://github.com/EIAS79/Edulytics/issues/592",
     "remainingDirectRichV2LessonCodes": [],
-    "originalStudentPdfAuditCursor": "PED:US-CCSS-MATH:G5:U01:L01"
+    "originalStudentPdfAuditCursor": "PED:US-CCSS-MATH:G5:U01:L01 — full PDF, original figure/card and gated response outstanding"
   },
   "sourceAccessPolicy": "V8: Primary Desktop Commander permitted ONLY read-only book inspection on exact Our-CS 98fe82ca-5db1-4369-9545-f146cc609375, after online device check. Access was used read-only for 15 Unit8 original teacher lesson HTML/Student Facing. No Personal/Anas_Nitro access and no remote development, test, writing or execution.",
   "testEvidence": {
@@ -7710,5 +7721,40 @@
     "releaseReady": false,
     "staticEmbedNote": "Read src/Edulytics.Core/Edulytics.Core.csproj: EmbeddedResource wildcard Curriculum/LessonContent/RichV2/*.rich-lesson-v2.json includes grade-owned new source files at compile time. This is only static eligibility, NOT runtime effective render evidence.",
     "branchDiffScope": "GitHub compare main...Grade5 at pre-ledger candidate: 102 ahead, 0 behind, 62 changed files, 0 paths outside approved Grade5 owned pack/sidecar/tests/artifacts; no open Grade5 PR and no GitHub Actions runs for branch as checked."
+  },
+  "v9StageABCD": {
+    "asOf": "2026-10-29",
+    "gradeWideAuthoredRichV2Candidates": 148,
+    "gradeWideAcademicallyAccepted": 0,
+    "sourceSlice": [
+      "PED:US-CCSS-MATH:G5:U01:L01",
+      "PED:US-CCSS-MATH:G5:U01:L02",
+      "PED:US-CCSS-MATH:G5:U01:L03"
+    ],
+    "source2021TeacherStudentHtml": "READ_ONLY_PRIMARY_OUR_CS",
+    "sourcePdf": "NOT_VERIFIED",
+    "sourceFigures": "NOT_VERIFIED",
+    "stageA": "PARTIAL_SOURCE_ACTIVITIES_COMPARED_NOT_APPROVED",
+    "stageB": "NOT_RUN_AUTHENTICATED",
+    "stageC": "NOT_RUN_SELECTED_PRACTICE",
+    "stageD": "NOT_RUN_PRODUCT",
+    "gradeOwnedSourceRepairCommit": "0ebc5f4f1c80c5f03d6fc20ad56bb4629dd797c9",
+    "gradeOwnedTestCommit": "14bf7ccb935cbc988408b0c4344455665e3b47af",
+    "gradeOwnedEvidenceCommit": "bb34ccf848ad240f1b864f00dae7978d2137ef7d",
+    "nativeNode": {
+      "version": "22.16.0",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 1,
+      "realNativeNode": true,
+      "gitBlobParity": "b77b3f94169d1dd8e1dfe4809356a0cdb01fbcdb",
+      "testFile": "tests/academic-us-ccss-g5-u01-source-fidelity-v9.test.cjs",
+      "restriction": "Exact fixture sidecar test skipped: repo files not mounted locally"
+    },
+    "dotnet": "NOT_RUN_NO_SDK",
+    "schoolIsolation": "NOT_RUN",
+    "ownerUAT": "NOT_RUN",
+    "protectedCi": "NOT_CHECKED_AT_V9_NEW_HEAD",
+    "issue592": "https://github.com/EIAS79/Edulytics/issues/592"
   }
 }
