@@ -1267,6 +1267,411 @@
       "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
       "sharedRendererInvoked": false,
       "sourceParityStatus": "PUBLISHER_STUDENT_PAGE_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L10",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/10/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l10-changing-plan-scales.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l10-changing-plan-scales.svg",
+      "model": {
+        "realMeters": [
+          300,
+          180
+        ],
+        "firstDrawingCm": [
+          10,
+          6
+        ],
+        "secondDrawingCm": [
+          15,
+          9
+        ],
+        "firstScale": "1cm:30m",
+        "secondScale": "1cm:20m",
+        "drawingAreaFactor": 2.25
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Draw the identical real garden correctly under both labeled scales",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Show that 10x6 cm and 15x9 cm correspond to the same 300x180 m land",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Explain length ratio 1.5 and drawing-area ratio 2.25, not changes in actual land",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Document the ruler check, accurate labels and peer comparison",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "10×6 drawing at 1cm:30m and 15×9 drawing at 1cm:20m; drawing area ratio 2.25",
+          "expectation": "Mathematically sound with teacher-reviewed diagrams"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Says real garden gets 2.25 times bigger when drawing scale changes",
+          "expectation": "Reject: only paper-drawing area differs"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports 15×9 without either scale key or drawings",
+          "expectation": "Not complete"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L11",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/11/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l11-unitless-scale-conversion.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l11-unitless-scale-conversion.svg",
+      "model": {
+        "firstScale": "1 drawing in:15 real ft",
+        "sameUnitScale": "1:180",
+        "actualWallFt": 6,
+        "actualWallInches": 72,
+        "drawingWallInches": 0.4
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Convert 15 actual feet to 180 actual inches before treating 1:180 as unitless",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Convert 6-foot wall to 72 inches and draw its 0.4-inch representation",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Use a ruler and consistently labeled original inch scale key",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Explain why inverse measurement is 180 drawing-units to one actual unit and critique unit mistakes",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "1 in:15 ft becomes 1:180 and 6 ft wall is 0.4 in on drawing",
+          "expectation": "Mathematical check; teacher still inspects measured segment"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Writes unitless 1:15 without converting feet to inches",
+          "expectation": "Reject inconsistent units"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports 1:180 but does not draw measured wall",
+          "expectation": "Needs student artifact"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L12",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/12/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l12-unit-conversion-area-flag.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l12-unit-conversion-area-flag.svg",
+      "model": {
+        "realMeters": [
+          20,
+          12
+        ],
+        "actualAreaSquareMeters": 240,
+        "drawingCm": [
+          20,
+          12
+        ],
+        "drawingAreaSquareCm": 240,
+        "sameUnitAreaFactor": 10000,
+        "scale": "1:100"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Convert 20x12 meters into centimeters and apply unitless 1:100 to both lengths",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Construct correct 20x12 centimeter plan and label units and scale",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Compute both areas with explicitly converted square units, demonstrating factor 10000",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Distinguish identical bare numbers 240 from different units m² and cm² and explain to a peer",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "240 m² actual = 2,400,000 cm² while drawing is 240 cm²",
+          "expectation": "Valid conversion, original plan still must be reviewed"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims actual and drawing areas are equal because both numbers are 240",
+          "expectation": "Reject incompatible area units"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only reports 1:100 without drawing or converting area units",
+          "expectation": "Not complete"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L13",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/13/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l13-classroom-floor-plan-peer-review.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l13-classroom-floor-plan-peer-review.svg",
+      "model": {
+        "roomMeters": [
+          8,
+          6
+        ],
+        "drawingCm": [
+          8,
+          6
+        ],
+        "doorMeters": 1,
+        "drawingDoorCm": 1,
+        "boardMeters": 3,
+        "drawingBoardCm": 3,
+        "scale": "1cm:1m"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Create a measured 8 by 6 cm classroom drawing with accurate room proportions",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c2",
+            "description": "Include an actual 1 cm doorway opening and a separate correctly positioned 3 cm board",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c3",
+            "description": "Provide complete scale key, actual dimensions, units and feature labels",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          },
+          {
+            "id": "c4",
+            "description": "Exchange diagram, document meaningful partner critique and revise the original plan",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate original drawing and complete unit-based mathematical explanation",
+            "lowestLevel": "Missing, unmeasured or incorrect work"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only after checking an original accurately scaled and justified student drawing",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "8×6 cm floor plan with 1cm actual wall gap and 3cm board at 1cm:1m",
+          "expectation": "Needs full teacher rubric and peer-revision evidence"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Adds a door icon on top of a solid wall and labels it as an opening",
+          "expectation": "Reject inaccurate plan geometry"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Produces correct room area but no doorway/board plan or peer revision",
+          "expectation": "Not a completed source project"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "STUDENT_SOURCE_TASK_COMPARED_NOT_ACADEMICALLY_ACCEPTED"
     }
   ],
   "v7": {
@@ -1279,7 +1684,7 @@
     "release": "NO_GO"
   },
   "v8": {
-    "status": "NINE_U01_SVG_SOURCE_CANDIDATES_TEN_TEACHER_RUBRIC_DRAFTS_NOT_INTEGRATED",
+    "status": "COMPLETE_U01_THIRTEEN_GRADE_ONLY_REFERENCE_FIGURES_FOURTEEN_DRAFT_TEACHER_RUBRICS_STILL_NOT_RENDERED",
     "scope": "Added U01 L04–L06 teacher-only rubric drafts and original SVG diagrams, alongside existing U01 L01–L03 and U06 L01 candidates. Shared renderer, selected Practice, student artifact persistence, teacher scoring, cross-tenant tests and authenticated UI still NOT_RUN.",
     "gradeOnlyPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
     "sourceMathMathOracles": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
@@ -1288,8 +1693,9 @@
     "stageB": "NOT_VERIFIED",
     "stageC": "NOT_VERIFIED",
     "stageD": "NOT_VERIFIED",
-    "geometryRubricDrafts": 9,
-    "totalRubricDrafts": 10,
-    "batch2": "U01 L07–L09 court, map and floorplan diagrams and teacher-only rubric drafts"
+    "geometryRubricDrafts": 13,
+    "totalRubricDrafts": 14,
+    "batch2": "U01 L07–L09 court, map and floorplan diagrams and teacher-only rubric drafts",
+    "batch3": "U01 L10–L13 original garden unit-conversion and classroom diagrams plus teacher only criteria"
   }
 }
