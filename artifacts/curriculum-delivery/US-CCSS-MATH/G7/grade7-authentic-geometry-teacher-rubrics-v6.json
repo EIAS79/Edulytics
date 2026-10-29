@@ -630,6 +630,339 @@
       "studentAssetRenderedInRichV2": false,
       "studentArtifactPersisted": false,
       "verifiedInTwoSchools": false
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/4/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+      "model": {
+        "original": {
+          "width": 4,
+          "height": 3,
+          "diagonal": 5,
+          "unit": "drawing units"
+        },
+        "copy": {
+          "width": 8,
+          "height": 6,
+          "diagonal": 10
+        },
+        "scaleFactor": 2,
+        "correspondingAngleDegrees": 90
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Plot two rectangles with correct corresponding point order and the same drawing unit",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c2",
+            "description": "Measure or justify that hidden diagonals 5 and 10 scale by the same factor two",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c3",
+            "description": "Show corresponding angles remain equal including their 90-degree corners",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c4",
+            "description": "Present a measured, labeled original drawing and an explanation with a reasonable measurement tolerance",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; neither numeric-only answer nor static reference figure certifies original construction or measured reasoning",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "Shows both rectangles, diagonal ratio 10/5=2 and equal angles",
+          "expectation": "Satisfies mathematical checks, subject to teacher review"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims diagonals are unchanged when visible edges double",
+          "expectation": "Reject; all corresponding distances must use factor two"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only writes scale factor 2 without measuring or drawing",
+          "expectation": "Not an accepted student construction"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L05",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/5/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l05-size-and-inverse-scale.svg",
+      "model": {
+        "original": [
+          8,
+          4
+        ],
+        "reduced": [
+          4,
+          2
+        ],
+        "enlarged": [
+          12,
+          6
+        ],
+        "factors": [
+          0.5,
+          1,
+          1.5
+        ],
+        "reverseFactors": [
+          2,
+          0.6666666666666666
+        ],
+        "unit": "same graph-paper units"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Construct all three rectangles using one consistent drawing unit and label dimensions",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c2",
+            "description": "Classify k less than one as reduction and k greater than one as enlargement",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c3",
+            "description": "Apply inverse factors 2 and 2/3 to restore original 8 by 4 dimensions",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c4",
+            "description": "Justify uniform scaling with corresponding-side ratios and peer-checked original drawings",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; neither numeric-only answer nor static reference figure certifies original construction or measured reasoning",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "The 4 by 2 reduction and 12 by 6 enlargement restore to 8 by 4 using reciprocal factors",
+          "expectation": "Mathematical concept correct, require original drawing/rubric"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Adds 4 to every reduced side to restore 8 by 4",
+          "expectation": "Reject; the reduced height 2+4 becomes 6 instead of 4"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Reports k=1/2 without identifying factor 3/2 or drawing the enlargement",
+          "expectation": "Cannot pass full lesson source task"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G7:U01:L06",
+      "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/2/1/6/index.html",
+      "staticFirstPartyAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+      "publicAssetPath": "/curriculum/us-ccss-g7/geometry/u01-l06-tiling-and-area-factors.svg",
+      "model": {
+        "originalGrid": [
+          3,
+          1
+        ],
+        "copyFactor2": [
+          6,
+          2
+        ],
+        "copyFactor3": [
+          9,
+          3
+        ],
+        "areaTileCounts": [
+          3,
+          12,
+          27
+        ],
+        "linearFactors": [
+          1,
+          2,
+          3
+        ],
+        "areaFactors": [
+          1,
+          4,
+          9
+        ],
+        "unit": "equal one-square-unit tiles"
+      },
+      "assessmentMode": "TEACHER_REVIEW_REQUIRED_NOT_AUTOGRADED",
+      "teacherRubric": {
+        "criteria": [
+          {
+            "id": "c1",
+            "description": "Construct each three-by-one, six-by-two and nine-by-three tiled rectangle with equal square tiles",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c2",
+            "description": "Demonstrate 3, 12 and 27 square units by counting the drawn tiles",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c3",
+            "description": "Explain area factors 1:4:9 via squared length factors rather than a mistaken 1:2:3",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          },
+          {
+            "id": "c4",
+            "description": "Present an original tiled model with labels and a partner-reviewed multiplication argument",
+            "points": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "highestLevel": "Accurate labeled student construction and a defensible explanation",
+            "lowestLevel": "Absent, incorrect, or unsubstantiated representation"
+          }
+        ],
+        "maxScore": 12,
+        "passDecision": "Teacher only; neither numeric-only answer nor static reference figure certifies original construction or measured reasoning",
+        "recordsStudentArtifact": false
+      },
+      "examples": [
+        {
+          "kind": "correct",
+          "claim": "3 original squares yield 12 and 27 when all side lengths scale by 2 and 3",
+          "expectation": "Correct area mathematics, teacher validates tile figures and reasoning"
+        },
+        {
+          "kind": "wrong",
+          "claim": "Claims doubling both side lengths doubles total tile count to six",
+          "expectation": "Reject: the area quadruples to twelve tiles"
+        },
+        {
+          "kind": "incomplete",
+          "claim": "Only states the formula A scales by k² without tiling any figures",
+          "expectation": "Does not fulfill original drawing-and-count activity"
+        }
+      ],
+      "academicAcceptance": "NOT_VERIFIED",
+      "selectedPracticeFamily": "NOT_EXECUTED",
+      "rubricIntegratedIntoTeacherUI": false,
+      "studentAssetRenderedInRichV2": false,
+      "studentArtifactPersisted": false,
+      "verifiedInTwoSchools": false,
+      "gradeSpecificRazorPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+      "sharedRendererInvoked": false,
+      "sourceParityStatus": "REVIEWED_STUDENT_TASK_STRUCTURE_NOT_ACADEMICALLY_ACCEPTED"
     }
   ],
   "v7": {
@@ -640,5 +973,16 @@
     "sharedRendererInvoked": false,
     "teacherUiIntegration": false,
     "release": "NO_GO"
+  },
+  "v8": {
+    "status": "SIX_FIRST_PARTY_G7_U01_STATIC_DIAGRAM_CANDIDATES_SEVEN_TEACHER_RUBRIC_DRAFTS_NOT_INTEGRATED",
+    "scope": "Added U01 L04–L06 teacher-only rubric drafts and original SVG diagrams, alongside existing U01 L01–L03 and U06 L01 candidates. Shared renderer, selected Practice, student artifact persistence, teacher scoring, cross-tenant tests and authenticated UI still NOT_RUN.",
+    "gradeOnlyPartial": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+    "sourceMathMathOracles": "tests/Edulytics.Tests/MathematicsIntelligence/USCCSSG7ScaleConstructionVisualTests.cs",
+    "requiredSharedIntegration": "https://github.com/EIAS79/Edulytics/issues/592",
+    "stageA": "NOT_VERIFIED",
+    "stageB": "NOT_VERIFIED",
+    "stageC": "NOT_VERIFIED",
+    "stageD": "NOT_VERIFIED"
   }
 }
