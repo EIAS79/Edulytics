@@ -179,7 +179,7 @@ public static class UsCcssHsFourthCourseQuestions
             LogEvaluate => Get(p, "exponent").ToString(CultureInfo.InvariantCulture),
             LogCompare => Get(p, "decreasing") == 1 ? ">" : "<",
             TrigReflection => (Get(p, "function") == 0
-                ? Get(p, "quarterTurns") % 4 switch { 1 => 1, 3 or -1 => -1, _ => 0 }
+                ? (Get(p, "quarterTurns") % 4) switch { 1 => 1, 3 or -1 => -1, _ => 0 }
                 : ((Get(p, "quarterTurns") % 4 + 4) % 4) switch { 0 => 1, 2 => -1, _ => 0 }).ToString(CultureInfo.InvariantCulture),
             TrigPrincipalInverse => Principal(Get(p, "function"), Get(p, "argument")),
             TrigModel => $"0,{Get(p, "period") / 2},{Get(p, "period")}",
