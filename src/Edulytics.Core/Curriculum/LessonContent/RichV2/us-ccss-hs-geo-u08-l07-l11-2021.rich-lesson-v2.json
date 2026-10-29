@@ -518,8 +518,8 @@
       "ExplanationParagraphs": [
         "Learning goal: optional source practice collecting and interpreting classroom game trials to estimate conditional probabilities and determine independence, while distinguishing data estimates from an exact chance model.",
         "A symmetric payout game is fair in expectation when mean net gain equals zero Weight all outcomes by their probabilities",
-        "Source-specific experiment: in a three-card bag with two red cards and one blue card, compare probabilities of red on a second draw with and without replacement. Without replacement the second-draw probability depends on the first draw; with replacement the conditional red probability remains 2/3 on each draw. Specify recorded counts and use the table's actual conditioning denominators.",
-        "Without replacement, a first red draw leaves one red and one blue card, changing the next red probability to 1/2. With replacement, the second draw retains probability 2/3 even after observing a first red; exact model independence differs from fluctuating classroom frequencies.",
+        "Original classroom-game investigation: three equally likely two-sided tokens have markings blank/blank, star/blank, and star/star. Select a token uniformly, then randomly expose one of its two sides. If the visible side has a star, the two-star token is more likely than the one-star token; each visible token face must be counted rather than each token type counted once. Also compare repeated independent rounds with observed classroom data, avoiding unsupported claims from small samples.",
+        "The theoretical outcomes are six equally likely token-side combinations. Three show stars: one side of star/blank and both sides of star/star. Two of those three starred outcomes come from the star/star token, so P(double-star token | visible star)=2/3, not 1/2. For a live experiment, record the selected token, visible side and count of trials, then estimate the conditional frequency and explain sampling variation.",
         "Original student task: Students design a noncommercial, classroom probability board game with mathematical payoffs and critique whether repeated rounds are independent. Teacher scores rules, modelling and evidence. Teacher rubric (0–4): explicit event/model definitions, appropriate denominators, correct calculations, and justified claims including sampling limits. Experiments and written discussion require human scoring.",
         "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 8 Lesson 11, CC BY 4.0. Original Edulytiks examples; no copied licensed artwork or restricted assessment responses."
       ],
@@ -569,16 +569,16 @@
           "Check": "Unconditional P(second red)=2/3 by symmetry, so this demonstrates dependence."
         },
         {
-          "Title": "Probabilities in Games: replacement changes independence",
-          "Question": "A bag contains two red cards and one blue. After each draw, replace the selected card. Find P(second red | first red), and explain dependence.",
-          "Method": "Compute the conditional sample space after replacement.",
+          "Title": "Probabilities in Games: two-sided token observation",
+          "Question": "Three equally likely two-sided tokens show blank/blank, star/blank and star/star. After a fair random orientation, the visible face shows a star. What is P(double-star token | visible star)?",
+          "Method": "Condition on the observable marked token faces, accounting for their different frequencies.",
           "Steps": [
-            "After the first red card is returned, all three cards remain: two red and one blue.",
-            "Given the first result, the next draw still gives red with probability 2/3.",
-            "P(second red | first red)=2/3 equals unconditional P(second red)=2/3, so the draws are independent under this with-replacement model."
+            "There are six equally likely token-side outcomes because each of three tokens is selected uniformly and each side is equally likely to face up.",
+            "Three outcomes display a star: one starred side of star/blank and both starred sides of star/star.",
+            "Two of these three conditional outcomes come from star/star, so P(double-star token | visible star)=2/3."
           ],
-          "Answer": "P(second red | first red)=2/3; successive draws are independent with replacement.",
-          "Check": "Contrast with without-replacement conditional probability 1/2 after a first red."
+          "Answer": "2/3; counting token types as two equally likely possibilities would incorrectly give 1/2.",
+          "Check": "Independently compute P(double-star and visible star)=2/6 and P(visible star)=3/6; the ratio is (2/6)/(3/6)=2/3."
         }
       ],
       "CommonMistakes": [
@@ -595,7 +595,7 @@
       ],
       "SummaryPoints": [
         "Classroom game data provide empirical estimates of conditional probabilities and evidence about independence; do not treat a small experimental sample as mathematical proof of the population model.",
-        "Weight all outcomes by their probabilities",
+        "Fair two-sided token games must weight visible faces correctly: P(double-star token | visible star)=2/3 in the three-token model; empirical frequencies vary across trials.",
         "Source-specific probability models and experimental interpretations require teacher review."
       ],
       "Visuals": [
@@ -630,8 +630,8 @@
               "Numerator": 0,
               "Denominator": 1,
               "Cells": [
-                "A bag contains two red cards and one blue. After each draw, replace the selected card. Find P(second red | first red), and explain dependence.",
-                "P(second red | first red)=2/3; successive draws are independent with replacement."
+                "Three equally likely two-sided tokens show blank/blank, star/blank and star/star. After a fair random orientation, the visible face shows a star. What is P(double-star token | visible star)?",
+                "2/3; counting token types as two equally likely possibilities would incorrectly give 1/2."
               ]
             }
           ]
