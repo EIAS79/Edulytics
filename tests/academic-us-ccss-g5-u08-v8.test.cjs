@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const eq=(a,b)=>assert.ok(Math.abs(a-b)<1e-9,String(a)+' differs from '+String(b));
-const base=path.resolve(__dirname,'../../../src/Edulytics.Core/Curriculum/LessonContent/RichV2');
+const base=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2');
 const names=['u08-l02-l03-l05','u08-l06-l09','u08-l10-l12-l13','u08-l14-l18'].map(n=>'us-ccss-g5-'+n+'-2021.rich-lesson-v2.json');
 test('U08 L02: multiplication partial products and tens alignment',()=>{assert.equal(650*27,17550);assert.notEqual(650*27,5850);assert.equal(740*36,26640);assert.equal(670*89,59630);assert.equal(6700*89,596300)});
 test('U08 L03: factor-specific strategy and compensation',()=>{assert.equal(18*3,54);assert.equal(18*101,1818);assert.equal(18*25,450);assert.equal(18*9,162);assert.equal(18*136,2448);assert.equal(15*(200-1),2985);assert.equal(24*154,3696)});
