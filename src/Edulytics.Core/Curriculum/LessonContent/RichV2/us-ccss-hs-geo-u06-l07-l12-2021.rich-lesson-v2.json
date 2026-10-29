@@ -562,16 +562,16 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "It’s All on the Line: problem 1",
-          "Question": "Line through (1,2) and (3,6).",
-          "Method": "Line uniqueness",
+          "Title": "Two lines perpendicular to a third",
+          "Question": "Lines ℓ: y=2x+1 and n: y=2x−3 are each perpendicular to m: y=−x/2+4. Prove ℓ∥n.",
+          "Method": "Apply negative-reciprocal slopes with distinctness.",
           "Steps": [
-            "Slope (6−2)/(3−1)=2",
-            "Use y−2=2(x−1)",
-            "Simplify y=2x"
+            "The slope of m is −1/2 and the slope of each of ℓ and n is 2.",
+            "Both products are 2·(−1/2)=−1, so each line is perpendicular to m.",
+            "The intercepts of ℓ and n differ (1 and −3), so they are distinct lines with equal slope and therefore parallel."
           ],
-          "Answer": "y=2x.",
-          "Check": "Substitute computed points and independently verify geometry or units."
+          "Answer": "ℓ and n are distinct parallel lines.",
+          "Check": "The proof uses both perpendicularity and distinctness, not an unlabelled sketch."
         },
         {
           "Title": "It’s All on the Line: problem 2",
@@ -623,10 +623,10 @@
           "PrimaryLabel": "",
           "SecondaryLabel": "",
           "Items": [
-            "Slope (6−2)/(3−1)=2",
-            "Use y−2=2(x−1)",
-            "Simplify y=2x",
-            "y=2x."
+            "The slope of m is −1/2 and the slope of each of ℓ and n is 2.",
+            "Both products are 2·(−1/2)=−1, so each line is perpendicular to m.",
+            "The intercepts of ℓ and n differ (1 and −3), so they are distinct lines with equal slope and therefore parallel.",
+            "ℓ and n are distinct parallel lines."
           ],
           "Rows": []
         }
