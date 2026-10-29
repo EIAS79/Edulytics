@@ -1,0 +1,155 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g6-u01-l11-polygons-source-task-candidate-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G6:U01:L11",
+      "CultureCode": "en",
+      "Title": "Polygons",
+      "ExplanationParagraphs": [
+        "Learning goal: Define a simple polygon accurately and justify several valid strategies for quadrilateral and complex shaded-region area.",
+        "A simple polygon has one closed, non-self-crossing boundary of straight segments meeting only at shared endpoints. The polygon encloses a region whose area can be computed from non-overlapping components. Open, curved and crossing paths are not examples of simple polygon boundaries.",
+        "Students first classify and discuss multiple polygon examples and nonexamples, then compare plans for finding the area of unfamiliar quadrilaterals. Duplicating two congruent trapezoids produces a parallelogram, demonstrating A=(a+b)h/2 for parallel bases a,b and perpendicular height h.",
+        "An optional pinwheel task requires planning, decomposing or enclosing a complex shaded shape and justifying measured lengths. The original publisher's figures are not embedded here; the independent coordinate-defined diagram provides a distinguishable first-party illustration and does not certify exact source image or applet parity."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Polygon boundary",
+          "Definition": "A simple polygon is one closed non-self-crossing chain of straight segments.",
+          "Rule": "Every segment meets adjacent segments at their shared endpoints, not elsewhere; an open chain or curved arc is not a polygon.",
+          "Example": "A five-sided closed non-crossing chain is a pentagon; an open zigzag is not."
+        },
+        {
+          "Title": "Area planning",
+          "Definition": "The enclosed polygon region can be decomposed into disjoint triangles and rectangles or enclosed in a familiar rectangle.",
+          "Rule": "Use perpendicular heights, include each shaded part once and explain the choice of strategy.",
+          "Example": "A composite 5-by-4 rectangle plus a base-5 height-2 triangle has area 20+5=25 square units."
+        },
+        {
+          "Title": "Trapezoid duplication",
+          "Definition": "Two congruent trapezoids with parallel bases a,b and perpendicular height h compose a parallelogram with base a+b.",
+          "Rule": "Twice the area of one trapezoid is (a+b)h, so its area is (a+b)h/2.",
+          "Example": "Bases 8 cm, 4 cm and height 3 cm give 18 cm²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Polygon or not a polygon?",
+          "Question": "Compare a closed simple pentagon, an open zigzag and a four-segment self-crossing bow-tie path. Which outlines form simple polygons, and why?",
+          "Method": "Inspect connectedness, closure, straightness and whether edges cross away from endpoints.",
+          "Steps": [
+            "The five segments of the pentagon form a single closed chain.",
+            "The zigzag is open and therefore does not enclose a polygon region.",
+            "The bow-tie crosses at a point that is not a shared adjacent endpoint.",
+            "Only the first path meets the simple-polygon definition."
+          ],
+          "Answer": "The simple pentagon only; each nonexample violates a specific necessary boundary condition.",
+          "Check": "Teacher evaluates verbal classifications and justifications; which-one-does-not-belong tasks may have multiple defensible claims."
+        },
+        {
+          "Title": "Explain trapezoid area in two ways",
+          "Question": "A trapezoid has parallel bases of 8 and 4 centimeters and perpendicular height 3 centimeters. Find its area and justify the formula.",
+          "Method": "Use identical-copy composition, then a decomposition cross-check.",
+          "Steps": [
+            "Join two matching trapezoids to create a parallelogram with base 8+4=12 cm and height 3 cm.",
+            "The parallelogram has area 12×3=36 cm².",
+            "Divide by two because the copies have equal area: 36/2=18 cm².",
+            "Alternatively add one 4-by-3 rectangle (12 cm²) and two base-2 height-3 triangles (3 cm² each)."
+          ],
+          "Answer": "18 square centimeters by either valid strategy.",
+          "Check": "Every height is perpendicular to the selected base, and no two components overlap."
+        },
+        {
+          "Title": "A first-party coordinate-defined pinwheel",
+          "Question": "A shaded region has a central square with corners (0,0),(2,0),(2,2),(0,2), plus four outward right triangles whose bases coincide with its four sides and each has perpendicular height 2. Find its area and show how to check it.",
+          "Method": "Partition the region into one central square and four non-overlapping right triangles; teacher reviews the diagram.",
+          "Steps": [
+            "The central square has area 2×2=4 square units.",
+            "Each triangular wing has area (2×2)/2=2 square units.",
+            "Four wings contribute 4×2=8 square units.",
+            "Add 4+8=12 square units and verify that the wings have disjoint interiors."
+          ],
+          "Answer": "12 square units for the specified original construction, not the historical publisher's image.",
+          "Check": "A correct drawing must preserve the stated coordinates, triangle heights and disjoint shaded pieces; the historical pinwheel's numerical answer is not inferred."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating overlapping, curved or open figure boundaries as a single simple polygon.",
+          "WhyWrong": "They violate at least one of the closure, straight-edge or non-crossing criteria.",
+          "Correction": "Trace one connected closed edge cycle and inspect every intersection."
+        },
+        {
+          "Mistake": "Using slanted sides as triangle or trapezoid heights, or omitting the factor one-half.",
+          "WhyWrong": "Area must use perpendicular height and the trapezoid is one of two congruent pieces.",
+          "Correction": "Mark the right angle and use A=(a+b)h/2 or an equivalent justified decomposition."
+        },
+        {
+          "Mistake": "Assuming all student-created pinwheel diagrams have a single fixed numeric area.",
+          "WhyWrong": "The result depends on the actual shapes and measured lengths; the teacher must evaluate the construction.",
+          "Correction": "State dimensions explicitly and inspect the non-overlapping region before calculation."
+        }
+      ],
+      "SummaryPoints": [
+        "A simple polygon is a closed, non-self-crossing boundary of straight line segments.",
+        "Polygon area can be found through non-overlapping triangles, rectangles or justified enclosing/subtracting strategies.",
+        "Two congruent trapezoids form a parallelogram, giving one trapezoid area (a+b)h/2.",
+        "Original classification, diagram planning and pinwheel construction require justified teacher-reviewed reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Polygon and non-polygon boundaries",
+          "Description": "Original accessible shape comparison: (A) a single five-edge closed non-crossing chain is a polygon; (B) an open four-segment zigzag is not; (C) a four-edge bow-tie whose segments cross away from endpoints is not a simple polygon. The classification depends on straightness, closure and no interior crossings.",
+          "PrimaryLabel": "A: simple polygon",
+          "SecondaryLabel": "B: open; C: self-crossing",
+          "Items": [
+            "A: five straight edges meet endpoint to endpoint and close",
+            "B: chain has unconnected start and end",
+            "C: two nonadjacent edges cross away from shared endpoints"
+          ],
+          "SecondaryItems": [
+            "Use two reasons to defend a classification"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Trapezoid composition and the area formula",
+          "Description": "An original trapezoid has parallel horizontal bases a=8 cm and b=4 cm, perpendicular height h=3 cm. Duplicate and rotate the piece to form one parallelogram with a 12-cm base and 3-cm perpendicular height; dividing 36 square centimeters by 2 gives 18 square centimeters for one trapezoid.",
+          "PrimaryLabel": "2A=(a+b)h",
+          "SecondaryLabel": "A=(a+b)h/2=18 cm²",
+          "Items": [
+            "First trapezoid a=8,b=4,h=3",
+            "Second congruent copy",
+            "Combined parallelogram base=12,height=3"
+          ],
+          "SecondaryItems": [
+            "Decompose alternative: 12+3+3=18 cm²"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Coordinate-defined four-wing shaded pinwheel",
+          "Description": "Original text-accessible exact model: central square vertices (0,0),(2,0),(2,2),(0,2). Four outward right-triangle wings: top vertices (0,2),(2,2),(0,4); right (2,0),(2,2),(4,2); bottom (0,0),(2,0),(2,-2); left (0,0),(0,2),(-2,0). Each wing has base 2, perpendicular height 2 and area 2. Interiors do not overlap. Total shaded area is 4+4×2=12 square units. This is not a reproduction of the publisher pinwheel.",
+          "PrimaryLabel": "Square: 4 square units",
+          "SecondaryLabel": "Four wings: 8 units; total: 12",
+          "Items": [
+            "Top triangle area 2",
+            "Right triangle area 2",
+            "Bottom triangle area 2",
+            "Left triangle area 2"
+          ],
+          "SecondaryItems": [
+            "No overlapping interiors",
+            "Independent learner decomposition encouraged"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
