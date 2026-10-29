@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-29",
+  "grade": "US-CCSS-MATH:G5:IM-K5-2021",
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "source": "Original first-edition 2021 IM teacher lesson HTML including Student Facing tasks, read-only Primary/Our-CS",
+  "sourceStudentPdf": "NOT_INSPECTED",
+  "sourceFigures": "CARD IMAGE GEOMETRY NOT VERIFIED",
+  "gatedResponses": "NOT_INSPECTED",
+  "stageA": "PARTIAL_SOURCE_HTML_COMPARED; NO FULL_SOURCE_TASK_ACCEPTANCE",
+  "stageB": "NOT_RUN_AUTHENTICATED",
+  "stageC": "NOT_RUN_SELECTED_PRACTICE",
+  "stageD": "NOT_RUN_PRODUCT",
+  "academicallyAccepted": 0,
+  "classification": "READY_REUSE_FOR_CURRENT_GRADE_OWNED_FIRST_PARTY_CONTENT; not source academic acceptance and not production readiness",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
+      "standards": {
+        "Addressing": [
+          "5.MD.C.5.a",
+          "5.OA.A.2"
+        ],
+        "BuildingTowards": [
+          "5.MD.C.5.a"
+        ]
+      },
+      "sourceStudentTasks": [
+        "Estimate an illustrated partially visible prism using too-low/about-right/too-high values",
+        "Complete a layer size × layer count × volume table for pictured prisms",
+        "Compare two valid layer directions and expressions for one fully packed solid"
+      ],
+      "candidateAssessment": "Reuse Rich V2 g5-u01-l04-l06 sidecar: estimation with hidden depth, alternative layers and expression meaning",
+      "humanRubric": [
+        "Explain which dimensions are visible and which missing before exact count",
+        "Use a defensible estimate not invented exact image value",
+        "Associate each expression's layer size and layer count to same prism",
+        "Count concealed cubes; require diagram/model explanation"
+      ],
+      "numericOracles": [
+        "2×12=3×8=4×6=24",
+        "4×(5×2)=5×(4×2)=40"
+      ],
+      "risk": "Source prism images not exactly audited; static schema reviewed only"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
+      "standards": {
+        "Addressing": [
+          "5.MD.C.5.b"
+        ],
+        "BuildingTowards": [
+          "5.MD.C.5.b"
+        ]
+      },
+      "sourceStudentTasks": [
+        "Match three prism diagrams with rectangular bases where multiple matches are valid",
+        "Rotate to use different face as base with corresponding perpendicular height",
+        "Use a specified base to compute growing prism volumes and explain pattern"
+      ],
+      "candidateAssessment": "Reuse Rich V2 g5-u01-l04-l06 sidecar: all base faces, corresponding heights and growth table",
+      "humanRubric": [
+        "Any perpendicular face can serve as base with corresponding height",
+        "Do not reject a second valid base-match",
+        "Communicate side lengths and square base area versus cubic volume",
+        "Describe constant volume under rotation"
+      ],
+      "numericOracles": [
+        "2×3×5=3×5×2=5×2×3=30",
+        "4×5×[1,2,3,4] gives [20,40,60,80]"
+      ],
+      "risk": "Original illustrated base-match cards not individually verified"
+    }
+  ],
+  "test": {
+    "file": "tests/academic-us-ccss-g5-u01-layer-base-v9.test.cjs",
+    "nativeNode": "v22.16.0",
+    "pass": 3,
+    "fail": 0,
+    "skip": 1,
+    "exactGitBlob": "954a77bdc9df5a088fb0695b91ae191f39facaad",
+    "meaning": "Numerical source-like invariants pass; actual original repo RichV2 JSON fixture test skipped because checkout absent"
+  },
+  "sourceRights": "Publisher page notice CC BY 4.0; third party image rights not verified; no copied source images",
+  "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "nextLesson": "PED:US-CCSS-MATH:G5:U01:L06"
+}
