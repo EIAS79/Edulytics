@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const fixture=path.resolve(__dirname,'../../../src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json');
+const fixture=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json');
 const area=(whole,num,den,length)=>{if(![whole,num,den,length].every(Number.isSafeInteger))throw Error('malformed');if(whole<0||num<0||den<=0||length<=0)throw Error('invalid');return {top:length*(whole*den+num),bottom:den};};
 const same=(x,y)=>x.top*y.bottom===y.top*x.bottom;
 test('L11 exact 4 2/3 by 4 area and all five select-all cards',()=>{
