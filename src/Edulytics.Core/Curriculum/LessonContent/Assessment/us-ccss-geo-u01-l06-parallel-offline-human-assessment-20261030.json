@@ -4,7 +4,7 @@
   "Course": "Geometry",
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
   "Version": "2026-10-30-course-ABC",
-  "Status": "C_PREPARED_BLOCKED_C_SHARED",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
   "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
   "Rights": "Edulytiks independent first-party figures and activities; source teacher/student pages CC BY 4.0; no publisher picture copied",
   "SourceLocalPaths": {
@@ -181,5 +181,160 @@
     "Dotnet": "NOT_RUN",
     "CI": "NOT_RUN",
     "AuthenticatedStageD": "NOT_RUN"
+  },
+  "CCourseContract": {
+    "Status": "C_CLOSED_AUTHORING_ONLY",
+    "SourceMap": [
+      {
+        "SourceActivity": "6.1 Math Talk: Transformations",
+        "HumanTaskIds": [
+          "OFF-LINE-PERP-PARALLEL-8",
+          "EDULYTIKS-AUTHORED-REFLECTION-COOLDOWN-8"
+        ]
+      },
+      {
+        "SourceActivity": "6.2 Standing on the Shoulders of Giants",
+        "HumanTaskIds": [
+          "OFF-LINE-PERP-PARALLEL-8",
+          "EDULYTIKS-AUTHORED-REFLECTION-COOLDOWN-8"
+        ]
+      },
+      {
+        "SourceActivity": "6.2 optional repeated perpendicular-bisector subdivisions",
+        "HumanTaskIds": [
+          "OFF-LINE-PERP-PARALLEL-8",
+          "EDULYTIKS-AUTHORED-REFLECTION-COOLDOWN-8"
+        ]
+      },
+      {
+        "SourceActivity": "6.3 Parallel Constructions Challenge",
+        "HumanTaskIds": [
+          "OFF-LINE-PERP-PARALLEL-8",
+          "EDULYTIKS-AUTHORED-REFLECTION-COOLDOWN-8"
+        ]
+      }
+    ],
+    "TeacherScoredTasks": [
+      {
+        "Id": "OFF-LINE-PERP-PARALLEL-8",
+        "Max": 8,
+        "Rubric": {
+          "Criteria": [
+            {
+              "Id": "R1",
+              "Criterion": "Positive circle opening strictly greater than distance C-to-m, so A,B distinct",
+              "MaxPoints": 2
+            },
+            {
+              "Id": "R2",
+              "Criterion": "Correct bisector of chord AB through C and right-angle explanation",
+              "MaxPoints": 2
+            },
+            {
+              "Id": "R3",
+              "Criterion": "Second perpendicular specifically through C produces parallel to m",
+              "MaxPoints": 2
+            },
+            {
+              "Id": "R4",
+              "Criterion": "Reproducible written tool steps, all labels and partner check",
+              "MaxPoints": 2
+            }
+          ],
+          "TotalMax": 8
+        },
+        "RequiredPrompt": "A point C is not on line m. Construct a perpendicular through C and a parallel through C, without directly drawing the final answer freehand. Name the circle centred C, two points A,B cut on m, their second equidistant intersection D, then perform a second perpendicular through C. A partner checks your labels and reasons."
+      },
+      {
+        "Id": "EDULYTIKS-AUTHORED-REFLECTION-COOLDOWN-8",
+        "Max": 8,
+        "Rubric": {
+          "Criteria": [
+            {
+              "Id": "C1",
+              "Criterion": "Correct perpendicular through C to m with labelled foot F",
+              "MaxPoints": 2
+            },
+            {
+              "Id": "C2",
+              "Criterion": "Constructs C' across m with CF=FC' on same perpendicular",
+              "MaxPoints": 2
+            },
+            {
+              "Id": "C3",
+              "Criterion": "Labels right angle and midpoint F, justifies m as perpendicular bisector",
+              "MaxPoints": 2
+            },
+            {
+              "Id": "C4",
+              "Criterion": "Correctly describes reflection C->C' as distance-preserving and draws teacher-checkable figure",
+              "MaxPoints": 2
+            }
+          ],
+          "TotalMax": 8
+        },
+        "RequiredPrompt": "For C off m, construct a mirror point C' on the other side of m so m is perpendicular bisector of CC'. Name foot F, explain CF=FC' and the right angle, then identify the reflection."
+      }
+    ],
+    "Practice": [
+      {
+        "Id": "P1",
+        "Expected": "A circle centred C cutting AB at two points E,F gives CE=CF; C belongs to perpendicular bisector of EF, which is perpendicular to AB.",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P2",
+        "Expected": "l||m, l perpendicular n, m perpendicular n; l not perpendicular m.",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P3",
+        "Expected": "Choose P on BA and Q on BC with BP=BQ; arcs centred P and Q same opening meet at interior X, draw BX, argue SSS for congruent angles.",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P4",
+        "Expected": "AX=BX=r; XY passes through C perpendicular AB.",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P5",
+        "Expected": "OA=OB=AB=r by hexagon construction; ACE spans equal 120-degree central arcs, so AC=CE=EA.",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P6",
+        "Expected": "Each equals AB by circle membership.",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P7",
+        "Expected": "Line XY is perpendicular to AB; XA=XB=5 (also YA=YB=5).",
+        "Max": 2,
+        "HumanOnly": true
+      },
+      {
+        "Id": "P8",
+        "Expected": "All equal r; triangle ABX equilateral.",
+        "Max": 2,
+        "HumanOnly": true
+      }
+    ],
+    "PaperDelivery": "Student submits labelled exterior-point perpendicular and parallel compass constructions plus proof to school teacher. Teacher checks physical evidence, assigns 0/1/2 each rubric dimension, writes feedback and signs/dates paper; no online submission or grade asserted.",
+    "Cases": {
+      "CORRECT": "circle radius > distance C-to-m gives two intersections; both perpendiculars and parallel through C proven",
+      "EQUIVALENT": "rotated/reflected valid diagram and alternate admissible radius",
+      "WRONG": "tangent circle with one intersection or line not through C",
+      "INSUFFICIENT": "numeric answer or unlabeled sketch only",
+      "MALFORMED": "C not off m as required or undefined circle"
+    },
+    "MachineGrade": false,
+    "StageD": "NOT_RUN teacher grade persistence and school authorization — Supervisor 2 issue #453"
   }
 }

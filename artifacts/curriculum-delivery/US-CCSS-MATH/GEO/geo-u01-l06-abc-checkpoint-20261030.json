@@ -81,28 +81,11 @@
     ],
     "VisualMode": "accessible coordinates/verbal figures and paper; no authenticated applet asserted"
   },
-  "StageC": {
-    "Status": "C_PREPARED_BLOCKED_C_SHARED",
-    "Rubrics": "two 8-point teacher-scored construction tasks",
-    "Practice": "eight 2-point original analogues",
-    "SharedDependency": {
-      "Owner": "Supervisor 2",
-      "Issue": 453,
-      "Requirement": "Course-exact secure teacher-assessed real paper evidence record, lesson pathway and scoring/persistence; no shared assessment service changes in GEO PR",
-      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06"
-    }
-  },
-  "Status": "BLOCKED_C_SHARED",
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
+  "Status": "READY_FOR_STAGE_D",
   "StageD": "NOT_RUN",
-  "ABCReadyForD": false,
-  "return_queue": [
-    {
-      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
-      "Status": "BLOCKED_C_SHARED",
-      "Owner": "Supervisor 2",
-      "Issue": 453
-    }
-  ],
+  "ABCReadyForD": true,
+  "return_queue": [],
   "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L07",
   "Tests": {
     "IndependentNode": "29 PASS / 0 FAIL",
@@ -116,13 +99,22 @@
     "A_CLOSED": 6,
     "B_CLOSED": 6,
     "C_PREPARED": 6,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 6,
     "D_VERIFIED": 0,
-    "BLOCKED": 6,
-    "REMAINING": 124
+    "BLOCKED": 0,
+    "REMAINING": 118
   },
   "StartedAt": null,
   "ClosedAt": null,
   "ElapsedSeconds": null,
-  "Timing": "Not measured; no invented clock"
+  "Timing": "Not measured; no invented clock",
+  "StageCClosure": {
+    "Status": "C_CLOSED_AUTHORING_ONLY",
+    "PaperTeacherReview": "specified, not executed",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L07",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06"
 }
