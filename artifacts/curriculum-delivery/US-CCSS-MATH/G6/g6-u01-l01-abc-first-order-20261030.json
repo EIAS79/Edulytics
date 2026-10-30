@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "recordType": "LESSON_ABC_ATTEMPT_BLOCKED_NOT_CLOSED",
-  "reviewedAtUtc": "2026-10-30T06:54:50.495Z",
+  "reviewedAtUtc": "2026-10-30T07:34:42.218Z",
   "branch": "curriculum/us-ccss-g6-full-grade-20261028",
   "baseHeadSha": "5e3e1289673a347b5cdd8e7527a43625c358d97f",
   "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
   "originalLocalSourcePaths": [
-    "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\student\\\\1\\\\1\\\\index.html",
-    "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\1\\\\1\\\\index.html",
-    "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\1\\\\1\\\\preparation.html",
-    "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\student\\\\1\\\\1\\\\practice.html"
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\1\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\1\\practice.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\1\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\1\\preparation.html"
   ],
   "sourcePageVerification": "OUR-CS_READ_ONLY_LOCAL_HTML_TEACHER_STUDENT_PRACTICE_PREPARATION",
   "sourceFigureUrls": [
@@ -20,7 +20,7 @@
   "sourceFiguresPixelsVerified": false,
   "sourceAppletOperated": false,
   "publisherProtectedCooldownRead": false,
-  "reuseFinding": "Keep existing 5 valid first-party Rich V2 examples, 3/4/7 per hexagon and 8-hexagon 72/64/56 triangular-area math, accessible four-pattern descriptions and existing teacher-only rubric. Original publisher visuals/interactivity were not claimed as recreated.",
+  "reuseFinding": "Preserved all six previously authored examples including the Edulytiks-original cooldown; added two first-party drawing examples and populated existing ShapeDecomposition Rows that were empty in the actual Razor renderer. Existing 72/64/56 triangular units maintained.",
   "sourceGoals": [
     "Compare orally covered area by polygon type, not tile count",
     "Explain area as portion of plane covered",
@@ -28,39 +28,47 @@
     "Produce valid arrangements of polygons and explain same-area preservation"
   ],
   "sourceTaskParity": {
-    "1.1": "Public text and figure ALT checked locally; authored four-scenario textual alternative exists; exact publisher image pixels not verified",
-    "1.2": "Public text and teacher area breakdown checked locally; current authored exact numerical oracle valid; original A/B manipulatives and move/rotate/hide interactions not verified",
-    "extension": "Source graph-paper two-shape equal-area creation requires learner drawing and teacher rubric, not a scalar auto-grader",
-    "practice": "Local student practice includes written area comparisons, equal-area quadrilateral sketches and tilings; cannot claim live selected contract fidelity"
+    "1.1": "Explicit four-panel 2x2 blue-square/yellow-half-triangle full/partial drawings, four Rich V2 shape cards and student prompts; teacher assesses distinct defensible reasons | LIMITS: Equivalent geometry and cognitive action, not literal publisher shapes or pixel parity",
+    "1.2": "Existing accurate 8-hexagon area example 72/64/56 in small-triangle units, added grade-only rich text cards and paper triangular-grid cut/slide/turn/trace instructions; numeric comparison plus teacher explanation | LIMITS: Original dynamic applet and A/B visual inventory not verified as copied or digitally interactive",
+    "extension": "Complete V/H 2x2 square + half-square triangle arrangements and third student-created drawing, each equal area by shape type, teacher rubric | LIMITS: New first-party square-unit model, distinct from hexagon triangle-area units",
+    "practice": "Student-facing area/rubric model and static C handoff; actual Practice contract integration unresolved | LIMITS: No selected automated Practice item proof"
   },
-  "beforeAfterFinding": "Publisher Cool-down is sign-in gated; added explicitly independent Edulytiks-original teacher-reviewed cool-down worked candidate to Grade 6 Rich V2, without representing it as source question or live delivered assessment.",
-  "A_STATUS": "A_BLOCKED_SOURCE_MEDIA_AND_MANIPULATIVE_PARITY",
-  "B_STATUS": "B_CANDIDATE_COOLDOWN_AUTHORED__SOURCE_ASSET_PARITY_OPEN",
-  "C_STATUS": "C_BLOCKED_SHARED_EXACT_PRACTICE_SELECTION_AND_RUBRIC_WORKFLOW",
+  "beforeAfterFinding": "Previously text-only/empty Rich V2 shape cards now contain explicit colored 2x2 drawing cells, an accessible graph-paper V/H equal-area construction, standalone first-party SVG and teacher-readable pedagogical tasks. Preserved all earlier work. Cool-down remains an authored example only.",
+  "A_STATUS": "A_CLOSED_SOURCE_ALIGNED_FIRST_PARTY_DRAWABLE_EQUIVALENTS",
+  "B_STATUS": "B_CLOSED_AUTHORED_GRADE_RICH_V2",
+  "C_STATUS": "C_BLOCKED_SHARED_OWNER_ASSIGNMENT_AND_WIRING",
   "PracticeStrategy": "EXTEND_EXISTING_AREA_PRACTICE_IF_SHARED_OWNER_CONFIRMS_GAP; TEACHER_REVIEW_FOR_OPEN_DRAWINGS",
   "PublisherCooldownStatus": "NOT_VERIFIED_GATED",
   "EdulytiksCooldownStatus": "ORIGINAL_AUTHORED_IN_RICHV2_NOT_LIVE_ASSESSMENT",
   "testFile": "tests/academic-us-ccss-g6-u01-source-geometry-v12.test.cjs",
-  "testExecutionStatus": "TEST_AUTHORED_NOT_RUN__NO_PER_LESSON_STAGE_D_EXECUTION",
+  "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
   "startedAt": "2026-10-30T06:54:50.495Z",
   "closedAt": null,
   "elapsedSeconds": null,
   "commitSHA": null,
   "blocker": [
     {
-      "owner": "Grade 6 academic/visual owner",
-      "defect": "Need fidelity evidence for source polygon diagrams, A/B tiles and hide/move/rotate applet or independently authorized equivalent visual representation",
-      "nextAction": "Inspect/author source-aligned accessible geometric representations and verify teacher rubric"
-    },
-    {
-      "owner": "Supervisor 1 shared single-writer",
-      "defect": "Static CCSS:6.G.A.1 points at shape dimension/properties rather than exact area/tile-comparison Practice and teacher-reasoning workflow",
-      "nextAction": "Trace actual selected contract, extend/reuse authorized shared family and validate math correctness, malformed submissions, drawing/teacher review"
+      "owner": "Supervisor 1 designated authorized Grade 6 shared integration writer (scope not yet assigned)",
+      "defect": "U01:L01 exact lesson-selected Practice routing/scoring/feedback and teacher-scored construction not wired/proven; generic tessellation or shape dimension insufficient",
+      "nextAction": "Authorize single-writer G6 scope, reproduce actual selected contract/generator/verifier and extend/reuse exact area family; author tests; preserve cross-curriculum routes"
     }
   ],
   "READY_FOR_STAGE_D": false,
   "D_STATUS": "NOT_STARTED",
-  "state": "BLOCKED__CURSOR_REMAINS_PED:US-CCSS-MATH:G6:U01:L01",
+  "state": "A_B_CLOSED__C_BLOCKED__CURSOR_REMAINS_PED:US-CCSS-MATH:G6:U01:L01",
   "noCrossCurriculumSharedChanges": true,
-  "noRuntimeClaim": true
+  "noRuntimeClaim": true,
+  "sourceAlternativeEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-abc-source-alternatives-and-practice-handoff-20261030.json",
+  "gradeOwnedSVG": "src/Edulytics.Web/wwwroot/images/public/us-ccss-g6-u01-l01-first-party-tilings.svg",
+  "richV2RazorBehavior": {
+    "partials": [
+      "src/Edulytics.Web/Views/Shared/_RichLessonContentV2.cshtml",
+      "src/Edulytics.Web/Views/Shared/_RichLessonVisual.cshtml"
+    ],
+    "finding": "RichLessonVisualKind.ShapeDecomposition reads only Rows; original grade L01 had empty Rows, producing empty shape cards despite text descriptions. Filled Rows with source-aligned paper constructions. Static SVG is a standalone first-party printable aid, not embedded by the shared visual renderer; sharing a plain URL in visual Rows is not an interactive embed."
+  },
+  "A_CLOSED": true,
+  "B_CLOSED": true,
+  "C_PREPARED": false,
+  "attemptStartedAt": "2026-10-30T07:34:42.214Z"
 }

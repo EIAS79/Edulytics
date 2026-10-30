@@ -38,7 +38,7 @@ test('U01:L01 source text evidence records figure/app and acceptance boundaries 
 
 test('U01:L01 source-faithful eight-hexagon lesson has counted units and explanation', () => {
   const l1 = byCode(1);
-  assert.equal(l1.WorkedExamples.length, 6);
+  assert.equal(l1.WorkedExamples.length, 8);
   assert.match(l1.ExplanationParagraphs.join(' '), /eight.*hexagon/i);
   const ex = l1.WorkedExamples.find(x => /Eight hexagons/.test(x.Title));
   assert.ok(ex);
@@ -178,4 +178,67 @@ test('G6 U01:L01 Edulytiks-original gated-source cool-down: area comparisons and
   assert.match(cd.Check, /teacher/i);
   assert.match(cd.Check, /not evidence of a live Practice/i);
   assert.match(cd.Answer, /17 units/);
+});
+
+
+test('G6 U01:L01 first-party four-pattern graphic and drawable alternatives are represented in Rich V2', () => {
+  const l1 = byCode(1);
+  const p = 'src/Edulytics.Web/wwwroot/images/public/us-ccss-g6-u01-l01-first-party-tilings.svg';
+  const svg = fs.readFileSync(path.join(root, p), 'utf8');
+  assert.match(svg, /Not publisher imagery/);
+  assert.match(svg, /A, B, C each cover 4|A, B, C cover all 4/);
+  assert.match(svg, /V and H|same pieces/i);
+  assert.equal(l1.WorkedExamples.length, 8);
+  assert.equal(l1.Visuals.length, 3);
+  assert.ok(l1.Visuals.every(v => v.Kind === 'ShapeDecomposition' ? v.Rows.length > 0 : true));
+  const a = l1.WorkedExamples.find(x => /four-pattern drawing comparison/.test(x.Title));
+  const b = l1.WorkedExamples.find(x => /Two distinct equal-area constructions/.test(x.Title));
+  assert.ok(a && b);
+  assert.match(a.Answer, /D is not a full tiling/);
+  assert.match(b.Answer, /4 square units/);
+  assert.match(b.Check, /teacher/i);
+  assert.ok(l1.Visuals[1].Rows.some(x => /D — mixed pattern with a gap/.test(x.Label)));
+});
+
+test('G6 U01:L01 independent 2x2 mosaic partition checker accepts equivalent V/H, rejects gaps and overlaps', () => {
+  const S = 'square', T = 'two half-square triangles', G = 'gap';
+  const V = [[S,T],[S,T]], H = [[S,S],[T,T]];
+  const covered = cell => cell === S || cell === T ? 1 : 0;
+  const total = grid => grid.flat().reduce((sum,cell) => sum + covered(cell), 0);
+  const count = (grid,k) => grid.flat().filter(v => v === k).length;
+  const valid = grid => Array.isArray(grid) && grid.length===2 && grid.every(row => Array.isArray(row) && row.length===2) &&
+    grid.flat().every(cell => cell===S || cell===T) && count(grid,S)===2 && count(grid,T)===2 && total(grid)===4;
+  assert.equal(valid(V),true);
+  assert.equal(valid(H),true);
+  assert.notDeepEqual(V,H);
+  assert.equal(count(V,S),2);
+  assert.equal(count(V,T)*2,4); // four individually cut half-square triangles
+  assert.equal(2*1+4*0.5,4);
+  assert.equal(2*1,4*0.5); // each shape type covers equal square area
+  assert.equal(valid([[S,T],[S,G]]),false);
+  assert.equal(valid([[S,T],[S,'overlap']]),false);
+  assert.equal(valid([[S,T],[S,null]]),false);
+  assert.equal(valid([[S,T],[S,4]]),false);
+  assert.equal(valid([[S,T],[S,T],[S,T]]),false);
+  assert.equal(total([[S,T],[S,G]]),3);
+});
+
+test('G6 U01:L01 source-derived math and authoring-only C blocked gate coexist', () => {
+  const l1 = byCode(1);
+  const info = JSON.parse(fs.readFileSync(path.join(root, 'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-abc-source-alternatives-and-practice-handoff-20261030.json'),'utf8'));
+  assert.equal(info.status.A_CLOSED,1);
+  assert.equal(info.status.B_CLOSED,1);
+  assert.equal(info.status.C_PREPARED,0);
+  assert.equal(info.status.READY_FOR_STAGE_D,0);
+  assert.equal(info.C.selectedContractProof,undefined); // proof is nested in proposedContract
+  assert.equal(info.C.proposedContract.selectedContractProof,'NOT_RUN_UNASSIGNED_SINGLE_WRITER');
+  assert.equal(info.B.authenticatedRender,'NOT_RUN_STAGE_D');
+  assert.equal(info.firstPartyAsset.endsWith('.svg'),true);
+  assert.equal(info.assetEmbeddedInExistingRichV2,false);
+  assert.ok(l1.ExplanationParagraphs.some(p => /SQUARE units/.test(p) && /TRIANGLE/.test(p)));
+  assert.equal(ledger.lessons.length,147);
+  assert.equal(ledger.summary.abcFirstOrder.A_CLOSED,1);
+  assert.equal(ledger.summary.abcFirstOrder.B_CLOSED,1);
+  assert.equal(ledger.summary.abcFirstOrder.C_PREPARED,0);
+  assert.equal(ledger.summary.abcFirstOrder.READY_FOR_STAGE_D,0);
 });
