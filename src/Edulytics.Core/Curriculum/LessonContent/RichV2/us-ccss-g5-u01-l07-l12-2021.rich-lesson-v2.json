@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l07-l12-im2021-v51-source-garden-applications-20261030",
+  "ContentVersion": "g5-u01-l07-l12-im2021-v52-optional-container-model-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -1197,6 +1197,34 @@
           ],
           "Answer": "Not necessarily; both may use 60, and suitability depends on unstated physical constraints.",
           "Check": "A teacher reviews the proposed justification and what evidence would be needed."
+        },
+        {
+          "Title": "2021 optional source — five different 60-container packing arrangements",
+          "Question": "The original optional activity asks for at least five different three-dimensional ways to arrange 60 identical rectangular shipping containers and an expression for each.",
+          "Method": "Find distinct triples of positive whole-number dimensions whose product is exactly 60 and explain practical shipping constraints.",
+          "Steps": [
+            "A 1×6×10 arrangement uses 60 containers.",
+            "A 2×3×10 arrangement uses 60 containers.",
+            "A 2×5×6 arrangement uses 60 containers.",
+            "A 3×4×5 arrangement uses 60 containers.",
+            "A 1×4×15 arrangement uses 60 containers.",
+            "These five triples are not merely rotations of the same factor triple. A compact 3×4×5 arrangement might be easier to explain, but the 'best' real shipping choice depends on space, stability, weight limits and other assumptions."
+          ],
+          "Answer": "For example 1×6×10, 2×3×10, 2×5×6, 3×4×5, 1×4×15 each hold 60 containers.",
+          "Check": "Original optional Student Facing Activity 1: a visual display and justified chosen arrangement are teacher-reviewed. The 3,300 tons refer to mass, not unit-cube volume."
+        },
+        {
+          "Title": "2021 optional source — estimate shipping containers in two cargo-ship images",
+          "Question": "The source shows a partially full cargo ship and then a full cargo ship and requests too-low, about-right and too-high container estimates plus the assumptions used.",
+          "Method": "Identify visible rows, layers, stacks and partially hidden containers, and distinguish an estimate from an unsupported exact count.",
+          "Steps": [
+            "Count the rows and visible container stacks; explain any hidden-container assumption.",
+            "Choose a too-low, about-right and too-high value consistent with the particular image, and compare strategies.",
+            "Repeat after inspecting the fuller image; revise if the number of visible layers or rows differs.",
+            "A claim of an exact count from a partial photo is unsupported if concealed positions are not determined; do not infer volume from 3,300 tons without density and dimensions."
+          ],
+          "Answer": "A reasoned estimate with stated visual assumptions; there is no unique numeric value available from the task text alone.",
+          "Check": "Original 2021 source ship images 37124 and 37125; teacher judges the model, not a fixed answer."
         }
       ],
       "CommonMistakes": [
