@@ -26,10 +26,11 @@
       "rejectWrongOrMalformed",
       "gradingPolicy"
     ],
-    "humanRubricNote": "Proof, reason, explanation and parametric solution claims need reviewed rubric; never certify by single numeric exact match.",
+    "humanRubricNote": "Proof, reason, explanation and parametric solution claims need reviewed rubric; never certify by single numeric exact match. Logarithmic comparisons L04-L06 are mixed relation+justification tasks and require human-scored proof rubric.",
     "additionalCourseOwnedCaseFields": [
       "rejectMalformed",
-      "boundaryOracle"
+      "boundaryOracle",
+      "explanationRequired (L04-L06)"
     ],
     "runtimeEvidence": "All fixtures are author-proposed. rejectWrongOrMalformed is a wrong-answer negative exemplar; rejectMalformed is a distinct syntax/shape-invalid exemplar. Neither establishes actual selected runtime grading."
   },
@@ -221,39 +222,42 @@
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
       "officialTarget": "CCSS:HSF-BF.B.5",
       "category": "log-increasing",
-      "prompt": "Compare log_2(3) and log_2(5)",
+      "prompt": "Compare log_2(3) and log_2(5); justify your comparison without relying on a decimal approximation",
       "expectedCanonical": "log_2(3)<log_2(5)",
-      "acceptedEquivalent": "<",
+      "acceptedEquivalent": "< with increasing-base reasoning",
       "rejectWrongOrMalformed": ">",
-      "gradingPolicy": "ORDER_RELATION",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_2(3<log_2(5)",
-      "boundaryOracle": "For b>1 and positive inputs, argument order is preserved; 3<5 gives log_2(3)<log_2(5)."
+      "boundaryOracle": "For b>1 and positive inputs, argument order is preserved; 3<5 gives log_2(3)<log_2(5).",
+      "explanationRequired": true
     },
     {
       "id": "L05",
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
       "officialTarget": "CCSS:HSF-BF.B.5",
       "category": "log-decreasing",
-      "prompt": "Compare log_(1/2)(3) and log_(1/2)(5)",
+      "prompt": "Compare log_(1/2)(3) and log_(1/2)(5); justify your comparison without relying on a decimal approximation",
       "expectedCanonical": "log_(1/2)(3)>log_(1/2)(5)",
-      "acceptedEquivalent": ">",
+      "acceptedEquivalent": "> with decreasing-base reasoning",
       "rejectWrongOrMalformed": "<",
-      "gradingPolicy": "ORDER_RELATION",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_(1/2)(3)>log_(1/2)(",
-      "boundaryOracle": "For 0<b<1, positive argument order reverses; x=1 gives log_b(1)=0."
+      "boundaryOracle": "For 0<b<1, positive argument order reverses; x=1 gives log_b(1)=0.",
+      "explanationRequired": true
     },
     {
       "id": "L06",
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
       "officialTarget": "CCSS:HSF-BF.B.5",
       "category": "log-different-bases",
-      "prompt": "Compare log_4(3) and log_2(3)",
+      "prompt": "Compare log_4(3) and log_2(3); justify your comparison without relying on a decimal approximation",
       "expectedCanonical": "log_4(3)<log_2(3)",
-      "acceptedEquivalent": "<",
+      "acceptedEquivalent": "< using log_4(3)=(1/2)log_2(3) with log_2(3)>0",
       "rejectWrongOrMalformed": ">",
-      "gradingPolicy": "ORDER_RELATION",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_4(3)<log_2(",
-      "boundaryOracle": "At x=1 both bases yield 0, so do not generalize the strict relation to all positive inputs."
+      "boundaryOracle": "At x=1 both bases yield 0, so do not generalize the strict relation to all positive inputs.",
+      "explanationRequired": true
     },
     {
       "id": "L07",
