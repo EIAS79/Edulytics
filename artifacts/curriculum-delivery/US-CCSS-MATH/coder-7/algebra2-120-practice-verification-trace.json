@@ -80,11 +80,17 @@
           "explicit not-integration-ready state"
         ]
       },
-      "blockerStatus": "BLOCKED_BY_INTEGRATION",
-      "blockerOwner": "Supervisor 3 Shared Integration Owner",
+      "blockerStatus": "BLOCKED_CENTRAL_REGISTRY_OWNERSHIP_RETURN_QUEUE",
+      "blockerOwner": "Coder 7, with Supervisor 3 exclusive file-lock coordination",
       "blockerIssue": 453,
       "nextCursorAfterClosure": "STOP_U01_L01",
-      "adaptedCoolDownStatus": "ADAPTED_COOLDOWN_ORIGINAL_UNVERIFIED"
+      "adaptedCoolDownStatus": "ADAPTED_COOLDOWN_ORIGINAL_UNVERIFIED",
+      "courseOwnedMathVerifier": {
+        "path": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2SequencePracticeMath.cs",
+        "isolatedTests": "20_PASS_0_FAIL",
+        "runtimeRegistered": false,
+        "realXunit": "NOT_RUN"
+      }
     },
     {
       "ordinal": 2,

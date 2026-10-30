@@ -137,10 +137,10 @@
       "stageC": "C_PREPARED",
       "abcReadyForD": false,
       "blockedByIntegration": {
-        "status": "BLOCKED_BY_INTEGRATION",
-        "owner": "Supervisor 3 Shared Integration Owner",
+        "status": "BLOCKED_CENTRAL_REGISTRY_OWNERSHIP",
+        "owner": "Coder 7, Supervisor 3 grants temporary central-file ownership",
         "issue": 453,
-        "reason": "U01:L01 has no explicit lesson-scoped mapping; authenticated generator/verifier/teacher rubric/persistence and two-school isolation not verified"
+        "reason": "No exact lessonPractice registration/teacher grade persistence despite working isolated math verifier"
       },
       "lessonGateEvidence": {
         "sourceRootAlias": "Common Core",
@@ -167,7 +167,12 @@
         "versionSuccessorAuthorization": "PENDING_SHARED_ACADEMIC_VERSION_OWNER",
         "actualStartUtc": null,
         "actualStartNote": "NOT_CAPTURED_AT_LESSON_START; earliest tool activity preceded timestamp capture. Not inferred.",
-        "actualEndUtc": "2026-10-30T06:52:58.476256+00:00"
+        "actualEndUtc": "2026-10-30T06:52:58.476256+00:00",
+        "courseOwnedMathVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2SequencePracticeMath.cs",
+        "courseOwnedMathTests": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+        "isolatedCompileProbe": "20_PASS_0_FAIL",
+        "repositoryXunit": "NOT_RUN_RESTORE_ASSETS_FAILURE",
+        "latestSoloUpdateUtc": "2026-10-30T12:09:36.906193+00:00"
       }
     },
     {
@@ -5430,7 +5435,7 @@
     "handoff": "https://github.com/EIAS79/Edulytics/pull/588#issuecomment-6503045261"
   },
   "currentFormalGateSummary": {
-    "asOfUtc": "2026-10-30T06:52:58.476256+00:00",
+    "asOfUtc": "2026-10-30T12:09:36.906193+00:00",
     "courseTotal": 120,
     "authored": 120,
     "A_CLOSED": 1,
@@ -5442,11 +5447,25 @@
     "BLOCKED": 1,
     "scope": "CURRENT_FORMAL_REVIEW_ONLY; historical V10 actualAcceptedCounts retained as prior checkpoint",
     "nextStageAbcCursor": {
-      "ordinal": 1,
-      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
-      "reason": "C_BLOCKED_BY_SHARED_PRACTICE_INTEGRATION; DO_NOT_ADVANCE"
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+      "reason": "New SOLO order: blocked L01 returns via returnQueue; proceed in canonical order"
     },
     "stageD": "NOT_STARTED",
-    "courseRelease": "NO_GO"
-  }
+    "courseRelease": "NO_GO",
+    "C_CLOSED": 0
+  },
+  "returnQueue": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+      "A": "A_CLOSED",
+      "B": "B_CLOSED",
+      "C": "C_PREPARED_NOT_ACCEPTED",
+      "blocker": "EXACT_LESSON_SCOPED_REGISTRY_AND_AUTH_LIFECYCLE",
+      "owner": "Coder 7; Supervisor 3 temporary central-file ownership",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-ABC-SOURCE-PRACTICE-CONTRACT.json",
+      "addedUtc": "2026-10-30T12:09:36.906193+00:00"
+    }
+  ]
 }
