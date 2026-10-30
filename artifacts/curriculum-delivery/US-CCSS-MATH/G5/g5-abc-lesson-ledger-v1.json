@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 11,
-    "B_CLOSED": 11,
+    "A_CLOSED": 12,
+    "B_CLOSED": 12,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 11,
+    "BLOCKED": 12,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -615,28 +615,54 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-12\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-12\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_FIVE_60_ARRAYS_AND_384_ASSUMPTION; FIX_INCORRECT_CLAIM_OF_GATED_COOLDOWN_AND_SOURCE_MODEL_DETAILS",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE mathematical factorization supplement; teacher-scored optional open modeling requires approved shared assessment wiring",
+      "CooldownOriginalStatus": "NO_LISTED_PUBLISHER_COOLDOWN_2021_OPTIONAL",
+      "CooldownEdulytiksStatus": "EDULYTIKS_ORIGINAL_OPTIONAL_REFLECTION",
+      "testFile": "tests/academic-us-ccss-g5-u01-l12-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:21:18.867Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated shared integration writer #592",
+        "reason": "No selected teacher-reviewed open optional ship estimation/model rubric contract; numeric factor family insufficient",
+        "acceptWhen": "Source-specific optional modeling rubric/submission and feedback statically wired, independent correct/wrong/equivalent/malformed cases reviewed"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "2021 optional teacher lesson and preparation, student facing included",
+        "originalSourceGoals": [
+          "Notice and Wonder garbage truck 12–14 short tons",
+          "60 containers from contextual 3,300 tons; five different whole-number arrays",
+          "Cargo ship too-low/about-right/too-high estimates and assumptions",
+          "Reflection on garbage in community"
+        ],
+        "modelAssumption": "60 containers as congruent cubes though actual shipping containers are not cubes",
+        "originalPhoto": "CC BY-SA 2.0 separately attributed, not copied",
+        "publisherCooldown": "NO_LISTED_COOLDOWN_IN_OPTIONAL_SOURCE"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l12-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "e03247eaebf4f747dddd256b8976ba4879bafaf6",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Correct factor arrays, but source handling falsely suggested a gated publisher Cool-down; 384 estimate lacked emphasis on model assumptions.",
+        "after": "Correct optional source boundary: no listed Cool-down, independently authored optional reflection, strong assumptions and publisher photo rights distinction."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l12-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L01",
@@ -4039,8 +4065,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:19:51.826Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L12",
+  "updatedAtUtc": "2026-10-30T12:21:18.867Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L01",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -4085,6 +4111,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
       "reason": "C source-real world/prism garden selected family and teacher scoring"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
+      "reason": "C optional modelling and teacher reviewed estimation not wired"
     }
   ]
 }
