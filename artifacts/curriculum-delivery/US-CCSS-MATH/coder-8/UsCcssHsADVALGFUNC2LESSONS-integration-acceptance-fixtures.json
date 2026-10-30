@@ -51,7 +51,16 @@
       "rejectWrongOrMalformed": "A=[[1,1,1],[2,1,1],[1,2,-1]]",
       "gradingPolicy": "NUMERIC_OR_STRUCTURED",
       "rejectMalformed": "A=[[1,1],[2,-1,1]]; b=[6,3,2]",
-      "boundaryOracle": "The first coefficient row has all 1s; replacing absent entries or dropping a column changes the system."
+      "boundaryOracle": "The first coefficient row has all 1s; replacing absent entries or dropping a column changes the system.",
+      "coder8TypedPracticeCandidate": {
+        "format": "A=[[row1],[row2],[row3]];b=[c1,c2,c3]",
+        "typedCorrect": "A=[[1,1,1],[2,-1,1],[1,2,-1]];b=[6,3,2]",
+        "automaticScope": "complete matrix and right hand side, not a single row",
+        "semanticMethod": "VerifyMatrixEquation",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
     },
     {
       "id": "M02",
@@ -64,7 +73,16 @@
       "rejectWrongOrMalformed": "x=[1,2]",
       "gradingPolicy": "NUMERIC_OR_STRUCTURED",
       "rejectMalformed": "A^-1=[[1,-1],[-1]]; x=[2,1]",
-      "boundaryOracle": "det([[2,1],[1,1]])=1, so the inverse is defined and A^-1 b must reproduce x=[2,1]."
+      "boundaryOracle": "det([[2,1],[1,1]])=1, so the inverse is defined and A^-1 b must reproduce x=[2,1].",
+      "coder8TypedPracticeCandidate": {
+        "format": "A^-1=[[row1],[row2]];x=[x1,x2]",
+        "typedCorrect": "A^-1=[[1,-1],[-1,2]];x=[2,1]",
+        "automaticScope": "inverse and every original equation",
+        "semanticMethod": "VerifyInverseAndSolution",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
     },
     {
       "id": "M03",
@@ -73,11 +91,21 @@
       "category": "inverse-3x3",
       "prompt": "A=[[1,1,1],[2,-1,1],[1,2,-1]], b=[6,3,2]; solve with matrix technology",
       "expectedCanonical": "det(A)=7; A^-1=(1/7)*[[-1,3,2],[3,-2,1],[5,-1,-3]]; x=[1,2,3]",
-      "acceptedEquivalent": "x=[7/7,14/7,21/7]",
+      "acceptedEquivalent": "A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[7/7,14/7,21/7]",
       "rejectWrongOrMalformed": "x=[1,3,2]",
       "gradingPolicy": "NUMERIC_OR_STRUCTURED",
       "rejectMalformed": "A^-1=[[1,2],[3,4]]; x=[1,2,3]",
-      "boundaryOracle": "det(A)=7; verify both A*A^-1=I3 and A*x=b using exact rational entries."
+      "boundaryOracle": "det(A)=7; verify both A*A^-1=I3 and A*x=b using exact rational entries.",
+      "sourceContractCorrection20261030": "The source task requires the inverse AND the solved vector; x alone is not an equivalent full answer. The previously acceptedEquivalent=x-only candidate was incorrectly permissive. Existing expectedCanonical describes mathematical answer; typed verifier uses a fully expanded rational matrix.",
+      "coder8TypedPracticeCandidate": {
+        "format": "A^-1=[[row1],[row2],[row3]];x=[x1,x2,x3]",
+        "typedCorrect": "A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[1,2,3]",
+        "automaticScope": "exact 3x3 inverse AND original-equation verified vector; determinant metadata separately reviewed",
+        "semanticMethod": "VerifyInverseAndSolution",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
     },
     {
       "id": "M04",
@@ -90,7 +118,12 @@
       "rejectWrongOrMalformed": "[1,2]",
       "gradingPolicy": "NUMERIC_OR_STRUCTURED",
       "rejectMalformed": "x=[1,2,not-a-number]",
-      "boundaryOracle": "All 3 original equations must hold: 6, 3 and 2; rejecting a two-entry solution is mandatory."
+      "boundaryOracle": "All 3 original equations must hold: 6, 3 and 2; rejecting a two-entry solution is mandatory.",
+      "sourceWorkAssessment20261030": {
+        "automaticGradeScope": "verify solution vector against all original equations",
+        "teacherReviewScope": "student row-reduction steps and reversible row-operation justification",
+        "status": "REVIEW_REQUIRED_NOT_AUTOMATICALLY_CERTIFIED"
+      }
     },
     {
       "id": "M05",
@@ -155,7 +188,16 @@
       "rejectWrongOrMalformed": "[2,1,-1]",
       "gradingPolicy": "NUMERIC_OR_STRUCTURED",
       "rejectMalformed": "[2,-,1]",
-      "boundaryOracle": "Coefficient row order x,y,z and the negative y sign must both be preserved."
+      "boundaryOracle": "Coefficient row order x,y,z and the negative y sign must both be preserved.",
+      "coder8TypedPracticeCandidate": {
+        "format": "[xCoefficient,yCoefficient,zCoefficient]",
+        "typedCorrect": "[2,-1,1]",
+        "automaticScope": "coefficient row only, not full Ax=b",
+        "semanticMethod": "VerifyCoefficientRow",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
     },
     {
       "id": "M10",
@@ -262,7 +304,17 @@
       "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_4(3)<log_2(",
       "boundaryOracle": "For x=3, log_4(3)<log_2(3). For log_2(x) vs log_3(x), x=1 gives equality, x>1 gives >, and 0<x<1 gives <; a universal fixed comparison is false.",
-      "explanationRequired": true
+      "explanationRequired": true,
+      "coder8TypedPracticeCandidate": {
+        "format": "first,0<x<1,x=1,x>1 ordered relations",
+        "typedCorrect": "<,<,=,>",
+        "automaticScope": "closed relation choices only; mathematical justifications ALWAYS human-scored with L06 rubric",
+        "semanticMethod": "VerifyL06ClosedRelations",
+        "humanRubric": "L06",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
     },
     {
       "id": "L07",
