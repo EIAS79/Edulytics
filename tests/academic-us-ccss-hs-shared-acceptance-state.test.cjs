@@ -44,3 +44,32 @@ test('all seven pending source lesson identities are present and nobody is promo
   assert.equal(data.cases.filter(x=>x.course==='ADV-ALG-FUNC').length,26);
   assert.equal(data.cases.filter(x=>x.course==='ADV-TRIG-GEO').length,28);
 });
+
+test('Coder 8 M07 M08 M10 use bounded inverse eligibility, with reasoning teacher-scored',()=>{
+  const data=JSON.parse(fs.readFileSync(p,'utf8'));
+  const cases=new Map(data.cases.map(row=>[row.caseId,row]));
+  for(const id of ['M07','M08','M10']){
+    const row=cases.get(id);
+    assert.equal(row.lessonCode,'PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01');
+    assert.equal(row.kernelCandidate,'usccss.hs.matrix.inverse_eligibility');
+    assert.match(row.technicalCheck,/EXECUTED_COMPONENT_TEST/);
+    assert.equal(row.independentStatus, id==='M10'
+      ? 'HUMAN_OR_INVALID_INPUT_REVIEW_REQUIRED'
+      : 'KERNEL_EXISTS_FIXTURE_EQUIVALENCE_UNCERTIFIED');
+    assert.equal(row.selectedPracticeStatus,'NOT_VERIFIED_STUDENT_ROUTE_DENIED');
+  }
+  for(const id of ['M05','M11']){
+    const row=cases.get(id);
+    assert.match(row.humanRubricPolicy,/TEACHER_REVIEW/);
+    assert.match(row.humanRubricPolicy,/NOT_AUTOGRADED/);
+    assert.equal(row.academicSignoff,'PENDING');
+  }
+  const matrixRegistry=JSON.parse(fs.readFileSync(require('node:path').resolve(
+    __dirname,'../src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'),'utf8'));
+  const family=matrixRegistry.families.find(row=>row.id==='usccss.hs.matrix.inverse_eligibility');
+  assert.ok(family);
+  assert.equal(family.status,'IntegrationPending');
+  assert.equal(family.productionRouting,false);
+  assert.equal(data.counts.independentExactFixtureCertified,0);
+  assert.equal(data.counts.selectedStudentPracticeCertified,0);
+});

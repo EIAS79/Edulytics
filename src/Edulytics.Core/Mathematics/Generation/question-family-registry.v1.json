@@ -19840,6 +19840,24 @@
       "lessonPracticeRouting": true
     },
     {
+      "id": "usccss.hs.matrix.inverse_eligibility",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "invertible_singular_dimension_mismatch_or_not_square",
+      "verificationPolicy": "bounded-matrix-shape-and-determinant-classification-no-proof-autograding",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
       "id": "usccss.hs.matrix.classify_2x2",
       "version": 1,
       "skillId": "supporting.matrices.core",

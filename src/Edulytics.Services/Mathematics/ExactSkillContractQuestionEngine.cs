@@ -178,6 +178,7 @@ public sealed class ExactSkillContractQuestionEngine
         (SupportedFamilies.Contains(family.Trim()) ||
          UsCcssHsFourthCourseQuestions.Supports(family.Trim()) ||
          UsCcssHsFourthCourse3x3Questions.Supports(family.Trim()) ||
+         UsCcssHsMatrixInverseEligibilityQuestions.Supports(family.Trim()) ||
          UsCcssHsAdvancedLogQuestions.Supports(family.Trim()) ||
          UsCcssHsTrigonometryExactAngles.Supports(family.Trim()) ||
          UsCcssHsPrincipalInverseSourceQuestions.Supports(family.Trim()) ||
@@ -417,6 +418,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssHsFourthCourseQuestions.Verify(family, parameters, answer);
         if (UsCcssHsFourthCourse3x3Questions.Supports(family))
             return UsCcssHsFourthCourse3x3Questions.Verify(family, parameters, answer);
+        if (UsCcssHsMatrixInverseEligibilityQuestions.Supports(family))
+            return UsCcssHsMatrixInverseEligibilityQuestions.Verify(family, parameters, answer);
         if (UsCcssHsAdvancedLogQuestions.Supports(family))
             return UsCcssHsAdvancedLogQuestions.Verify(family, parameters, answer);
         if (UsCcssHsTrigonometryExactAngles.Supports(family))
@@ -1747,6 +1750,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssHsFourthCourse3x3Questions.Supports(family))
         {
             var item = UsCcssHsFourthCourse3x3Questions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsMatrixInverseEligibilityQuestions.Supports(family))
+        {
+            var item = UsCcssHsMatrixInverseEligibilityQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
         }
         if (UsCcssHsAdvancedLogQuestions.Supports(family))
@@ -4917,6 +4925,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssHsFourthCourseQuestions.Solve(problem.Family, p);
         if (UsCcssHsFourthCourse3x3Questions.Supports(problem.Family))
             return UsCcssHsFourthCourse3x3Questions.Solve(problem.Family, p);
+        if (UsCcssHsMatrixInverseEligibilityQuestions.Supports(problem.Family))
+            return UsCcssHsMatrixInverseEligibilityQuestions.Solve(problem.Family, p);
         if (UsCcssHsAdvancedLogQuestions.Supports(problem.Family))
             return UsCcssHsAdvancedLogQuestions.Solve(problem.Family, p);
         if (UsCcssHsTrigonometryExactAngles.Supports(problem.Family))

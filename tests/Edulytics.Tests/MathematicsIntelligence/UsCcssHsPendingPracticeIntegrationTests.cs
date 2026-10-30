@@ -71,10 +71,10 @@ public sealed class UsCcssHsPendingPracticeIntegrationTests
     }
 
     [Fact]
-    public void AllTwentyFivePendingQuestionFamiliesHaveReviewOnlyTypedPresentationContracts()
+    public void AllTwentySixPendingQuestionFamiliesHaveReviewOnlyTypedPresentationContracts()
     {
         var review = LessonPracticeInteractionRegistry.PendingForAudit;
-        Assert.Equal(25, review.Count);
+        Assert.Equal(26, review.Count);
         foreach (var pending in review)
         {
             Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(pending.FamilyId));
