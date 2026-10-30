@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 455" role="img" aria-labelledby="g7-l06-title g7-l06-desc">
+ <title id="g7-l06-title">Build polygons: same four lengths can make distinct quadrilaterals</title>
+ <desc id="g7-l06-desc">First original quadrilateral A B C D has successive side lengths 9, 4, 5, and 6 inches and diagonal A C of 7 inches. Second original quadrilateral has exactly the same successive sides but diagonal A C of 9 inches, proving side lengths do not fix a quadrilateral shape. A third original triangle has successive lengths 8, 5, and 4 inches, which can close. Lengths 9, 4, and 3 inches cannot form a triangle. Learners should construct, measure and compare their own hinged shapes; these diagrams are not publisher illustrations.</desc>
+ <style>
+ .bg{fill:white}.panel{fill:#f7f9fc;stroke:#657786;stroke-width:1.5}.poly{fill:#d9eaf2;stroke:#1a4158;stroke-width:3;stroke-linejoin:round}.diag{stroke:#9b5b26;stroke-width:2.5;stroke-dasharray:6 5}.heading{font:bold 18px system-ui,sans-serif;fill:#163246}.label{font:16px system-ui,sans-serif;fill:#163246}.small{font:14px system-ui,sans-serif;fill:#163246}.point{fill:#193b50}
+ </style>
+ <rect class="bg" width="1180" height="455"/>
+ <text x="18" y="28" class="heading">Keep the lengths. Change the angle. Does the polygon change?</text>
+ <rect class="panel" x="15" y="44" width="377" height="375" rx="9"/>
+ <rect class="panel" x="403" y="44" width="374" height="375" rx="9"/>
+ <rect class="panel" x="789" y="44" width="376" height="375" rx="9"/>
+ <text x="31" y="74" class="heading">Quadrilateral 1</text>
+ <polygon id="g7-l06-quad-seven" class="poly" data-scale="24" data-ac="7" points="65,330 281,330 217,258.4458 115.1377,195.0103"/>
+ <line class="diag" x1="65" y1="330" x2="217" y2="258.4458"/>
+ <text x="35" y="370" class="label">AB=9, BC=4, CD=5, DA=6 in</text>
+ <text x="35" y="395" class="small">Diagonal AC=7 in</text>
+ <text x="419" y="74" class="heading">Quadrilateral 2</text>
+ <polygon id="g7-l06-quad-nine" class="poly" data-scale="24" data-ac="9" points="430,330 646,330 624.6667,236.4004 507.8675,208.8693"/>
+ <line class="diag" x1="430" y1="330" x2="624.6667" y2="236.4004"/>
+ <text x="416" y="370" class="label">AB=9, BC=4, CD=5, DA=6 in</text>
+ <text x="416" y="395" class="small">Diagonal AC=9 in (different!)</text>
+ <text x="804" y="74" class="heading">Triangle construction</text>
+ <polygon id="g7-l06-triangle" class="poly" data-scale="25" points="825,330 1025,330 910.9375,278.8654"/>
+ <text x="804" y="370" class="label">AB=8, BC=5, CA=4 in</text>
+ <text x="804" y="395" class="small">3, 4 and 9 in: strips cannot close</text>
+ <text x="18" y="444" class="small">Edulytiks original reference. Test with cardboard strips or digital hinges; explain why exact overlay matters.</text>
+</svg>
