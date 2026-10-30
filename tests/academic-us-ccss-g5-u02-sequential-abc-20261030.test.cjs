@@ -33,4 +33,7 @@ test('U02:L03 exact source fraction-choice and teacher-scoring boundary',()=>{
 test('G5 U02 L04 source exact-choices and teacher evidence',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L04','usccss.g5.u02.l04.blueberry_division_context',["4/6 pound = 2/3 pound","4÷6=4/6","2/3 pound each"],["6/4 pound","6÷4=4/6"]);
 });
+test('G5 U02 L05 source exact-choices and teacher evidence',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L05','usccss.g5.u02.l05.fraction_division_generalization',["a÷b=a/b","5/2 pounds","2/5 pound"],["a÷b=b/a","2/5 pound"]);
+});
 // NEXT_LESSON_TEST

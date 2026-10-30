@@ -20056,6 +20056,23 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g5.u02.l05.fraction_division_generalization",
+      "version": 1,
+      "skillId": "fractions.divide_whole_numbers",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u02-l05-exact-fraction-choice-v1",
+      "representations": [
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

@@ -46,6 +46,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Five people equally share two gallons of milk. How many gallons each?","2/5 gallon","5/2 gallons","1/5 gallon"),
                 new("What does the fraction 4/6 pound represent in the blueberry context?","4 pounds shared equally among 6 students","6 pounds shared equally among 4 students","4 pounds given to EACH of 6 students")
             ],
+                        ["usccss.g5.u02.l05.fraction_division_generalization"]=[
+                new("For whole a and nonzero whole b, which identity is valid?","a÷b=a/b","a÷b=b/a","a÷0=a/0"),
+                new("Five pounds shared between two people equals how much per person?","5/2 pounds","2/5 pound","5 pounds"),
+                new("Two pounds shared between five people equals how much per person?","2/5 pound","5/2 pounds","2 pounds"),
+                new("Four pounds shared among four students gives each what amount?","1 pound","4 pounds","1/4 pound"),
+                new("Which equality for 5÷2 is correct?","5÷2=5/2=2 1/2","5÷2=5 1/2","5÷2=2/5"),
+                new("What must hold to interpret a/b as a÷b?","The denominator b is not zero","The numerator must exceed the denominator","Both quantities must be equal")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,
