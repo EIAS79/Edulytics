@@ -20054,6 +20054,114 @@
       "status": "IntegrationPending",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.log.shifted_domain_equation",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.invalid_real_domain",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.compare_different_bases",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "relation",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.check_product_identity",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "boolean",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.change_of_base_equation",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.inverse_identity",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
