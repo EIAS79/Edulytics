@@ -118,6 +118,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Evaluate source warm-up (5×7)+(5×1/4).","36 1/4","35 1/4","55 1/4"),
                 new("Evaluate the source warm-up 5×(7+4).","55","35","20")
             ],
+                        ["usccss.g5.u02.l14.fraction_multiplication_info_gap"]=[
+                new("Evaluate 1/3×18 from the optional public Student Facing activity.","6","54","1/54"),
+                new("Evaluate (7/9)×3 from the optional source task.","7/3","21","7/27"),
+                new("Evaluate 1/15×30.","2","450","1/450"),
+                new("Evaluate the source product 9×6 2/3.","60","54 2/3","9 2/3"),
+                new("Evaluate the source product 7 3/5×6.","45 3/5","42 3/5","13 3/5"),
+                new("Evaluate source product 4×6 9/10.","27 3/5","24 9/10","10 9/10")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

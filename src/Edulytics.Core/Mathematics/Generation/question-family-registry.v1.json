@@ -20209,6 +20209,23 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g5.u02.l14.fraction_multiplication_info_gap",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u02-l14-source-multiply-choice-v1",
+      "representations": [
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

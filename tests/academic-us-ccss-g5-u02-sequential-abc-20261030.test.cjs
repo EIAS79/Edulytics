@@ -60,4 +60,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L12','usccss.g5.u02.l12.decomposed_mixed_re
 test('G5 U02 L13 exact source mixed rectangle area and teacher-led decomposition',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L13','usccss.g5.u02.l13.distributive_area_expressions',["16 1/5 square units","13 square units","21 1/3 square units","26 1/4 square units"],["15 2/5 square units","15 square units"]);
 });
+test('G5 U02 L14 source information-gap and mixed-fraction teacher verification',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L14','usccss.g5.u02.l14.fraction_multiplication_info_gap',["6","7/3","2","60"],["54","21"]);
+});
 // NEXT_LESSON_TEST
