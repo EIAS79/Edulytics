@@ -1347,6 +1347,10 @@
         "Source-aligned activity 6.2: simulate an information gap with separate problem and data cards. A learner must request missing center/angle/vertex information from a partner and then explain the transformation. Do not replace the communication and card exchange task with a fabricated automatically scored verbal interaction.",
         "An original Edulytiks investigation uses triangle A(1,1), B(3,1), C(1,2). First translate by (2,0), then reflect across the y-axis. Draw each intermediate image and name the ordered steps. Ask whether reversing the order would produce the same result.",
         "The sequence description and matching of image labels are open construction tasks. Numeric coordinate predictions can be auto-checked, but teacher review must assess whether an explanation is complete and logically justified.",
+        "Edulytiks activity 6.1 original center investigation: triangle P(2,1),Q(2,3),R(1,2) maps to P′(0,3),Q′(−2,3),R′(−1,2) under a quarter-turn counterclockwise about center O(0,1). Infer O from at least two corresponding vertex pairs, then check every radius from O is equal in original and image. The center is not necessarily a polygon vertex.",
+        "Edulytiks activity 6.2 original information-gap alternative: divide the provided problem and data descriptions into separate paper cards so partners cannot see both at once. Problem card: identify and draw P′,Q′,R′ from original P(2,1),Q(2,3),R(1,2), but omit center and angle. Data card holds center O(0,1) and counterclockwise 90° instruction. The problem-holder must ask explicitly for the missing information and explain why it is required; the data-holder must not solve the task for the problem-holder.",
+        "Edulytiks follow-up composition: reflecting over the x-axis and then over the y-axis maps every point (x,y) to (−x,−y), equivalent to a 180° rotation about O. It is not necessarily equivalent to a 180° rotation around some other center. For P(2,1), the final image is (−2,−1). Justify by corresponding vertices.",
+        "Original Edulytiks Cool-down 6.3 (publisher prompt protected): triangle A(1,1),B(3,1),C(1,2) is first translated (+2,0), then reflected in the y-axis. Construct and name the final A″(−3,1),B″(−5,1),C″(−3,2) and explain the order; reflecting before translating gives another result. A teacher reviews the full sequence and reasoning.",
         "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/6/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced."
       ],
       "KeyConcepts": [
@@ -1449,6 +1453,112 @@
               "Cells": [
                 "1",
                 "1"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "6.1 — original quarter-turn center reconstruction",
+          "Description": "Coordinate data for a full polygon make center O=(0,1) independently checkable; all distances from O are preserved.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "P",
+                "Q",
+                "R"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(2,1)",
+                "(2,3)",
+                "(1,2)"
+              ]
+            },
+            {
+              "Label": "image 90° CCW",
+              "Cells": [
+                "(0,3)",
+                "(−2,3)",
+                "(−1,2)"
+              ]
+            },
+            {
+              "Label": "inferred center",
+              "Cells": [
+                "(0,1)",
+                "(0,1)",
+                "(0,1)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "6.2 — original information-gap problem and data cards",
+          "Description": "Teacher distributes the two cards SEPARATELY for partner information exchange; displaying both in one course preview is not the actual game.",
+          "Rows": [
+            {
+              "Label": "Problem card",
+              "Cells": [
+                "Draw the image of P(2,1),Q(2,3),R(1,2)",
+                "Ask for required move details; do not peek at data"
+              ]
+            },
+            {
+              "Label": "Data card",
+              "Cells": [
+                "Rotation center O=(0,1)",
+                "Angle 90° counterclockwise; share only requested information"
+              ]
+            },
+            {
+              "Label": "Discussion",
+              "Cells": [
+                "Explain why center, direction and angle are necessary",
+                "Partner checks correspondence, then swap roles"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "6.3 — original two-step Cool-down coordinate record",
+          "Description": "Translate by (+2,0), then reflect over x=0; explain why reversing the order changes the final image.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(1,1)",
+                "(3,1)",
+                "(1,2)"
+              ]
+            },
+            {
+              "Label": "after translation",
+              "Cells": [
+                "(3,1)",
+                "(5,1)",
+                "(3,2)"
+              ]
+            },
+            {
+              "Label": "after reflection",
+              "Cells": [
+                "(−3,1)",
+                "(−5,1)",
+                "(−3,2)"
               ]
             }
           ]

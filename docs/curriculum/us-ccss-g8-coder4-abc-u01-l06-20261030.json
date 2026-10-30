@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
+  "sourceLessonCode": "8.1.6",
+  "title": "Describing Transformations",
+  "startUtc": "2026-10-30T12:16:02.181565+00:00",
+  "finishUtc": "2026-10-30T12:16:02.210907+00:00",
+  "elapsedSeconds": 0.029342,
+  "reviewer": "Coder 4 (course content and math); no owner runtime certification",
+  "sourceEditionAndRights": "2017-2019 Open Up Resources/Illustrative Mathematics CC BY 4.0, independent Edulytiks first-party adaptation",
+  "sourcePaths": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\6\\index.html",
+      "sha256": "f76f61f7ba3a4f991b7695bc9f18ac606d2f010382a92e8e3bfabd947f8efe27"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\6\\index.html",
+      "sha256": "d5bf446f4b9507490cd652ff566887c296248b13b81c413484496f7fbe69fb14"
+    },
+    "teacherPreparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\6\\preparation.html",
+      "sha256": "b75d51e8c1da7b10105dabd8e077f1f5fe86af6175e58b28f1acd12d22eec636"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.3"
+    }
+  ],
+  "blueprintExtraRoles": [],
+  "sourceActivityTitles": [
+    "6.1: Finding a Center of Rotation",
+    "6.2: Info Gap: Transformation Information"
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceActivity": "6.1 Finding a Center of Rotation",
+      "sourceObjective": "Infer rotation center for original polygon image",
+      "firstPartyCorrection": "Independent full three-vertex center reconstruction and coordinate evidence"
+    },
+    {
+      "sourceActivity": "6.2 Info Gap: Transformation Information",
+      "sourceObjective": "Ask for missing center/angle/direction on separate partner cards",
+      "firstPartyCorrection": "First-party separate problem/data card alternatives with role communication rules"
+    },
+    {
+      "sourceActivity": "6.3 teacher Cool-down - Describing a Sequence of Transformations",
+      "sourceObjective": "Teacher-only protected source assessment",
+      "firstPartyCorrection": "Original two-step coordinate task and eight-point educator rubric"
+    }
+  ],
+  "independentFirstPartyChanges": {
+    "newExplanationCount": 4,
+    "nativeVisualKindsAdded": [
+      "RatioTable",
+      "ShapeDecomposition",
+      "RatioTable"
+    ],
+    "existingWorkedExamplesPreserved": 3,
+    "existingPrimaryVisualRetained": true,
+    "newCoolDown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+  },
+  "practiceContract": {
+    "officialOutcome": "CCSS:8.G.A.1",
+    "staticRuleId": "ccss-transformations",
+    "candidateFamily": "transformations",
+    "machine": {
+      "kind": "coordinate_rotation_ccw90_nonorigin",
+      "start": [
+        2,
+        1
+      ],
+      "center": [
+        0,
+        1
+      ],
+      "degrees": 90,
+      "expected": [
+        0,
+        3
+      ],
+      "correct": [
+        "(0,3)",
+        "0,3",
+        "(0.0,3.0)"
+      ],
+      "wrong": [
+        "(-1,2)",
+        "(2,-1)"
+      ],
+      "invalid": [
+        "NaN",
+        "(0,3,5)",
+        "",
+        null
+      ]
+    },
+    "teacherRubric": {
+      "maxPoints": 8,
+      "perCriterionScore": [
+        0,
+        1,
+        2
+      ],
+      "criteria": [
+        "Correctly identifies rotation center/angle/direction and sequence order",
+        "Constructs and labels all three corresponding vertices",
+        "Explains how requested missing information determines the transformation",
+        "Uses distance preservation and complete justification for final answer"
+      ],
+      "autoGradeFreeResponse": false
+    },
+    "exactLessonReadyVerifiedRuntime": false,
+    "resolverPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeCapabilityResolver.cs",
+    "registrySearch": "No literal U01 lesson READY_VERIFIED contract located by git grep in src/Edulytics.Core/Mathematics/Practice at baseline fcb3d059; static outcome map is not runtime capability",
+    "sharedFilesEdited": false
+  },
+  "mathOracleIndependentCases": {
+    "center": [
+      0,
+      1
+    ],
+    "original": [
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "image": [
+      [
+        0,
+        3
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -1,
+        2
+      ]
+    ],
+    "cooldownOriginal": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "cooldownAfterTranslation": [
+      [
+        3,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "cooldownAfterReflection": [
+      [
+        -3,
+        1
+      ],
+      [
+        -5,
+        1
+      ],
+      [
+        -3,
+        2
+      ]
+    ],
+    "twoReflectionsExample": [
+      2,
+      1
+    ],
+    "twoReflectionsAnswer": [
+      -2,
+      -1
+    ]
+  },
+  "gates": {
+    "A": "A_ACCEPTED_COURSE_SOURCE_REVIEW",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "BLOCKED_C_DEPENDENCY",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": false
+  },
+  "dependency": {
+    "stage": "C",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
+    "owner": "Supervisor 2 (central Practice contract owner)",
+    "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs; src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+    "reason": "No verified lesson-scoped exact transformations generator/grader and associated teacher-scored pathway for this lesson; numeric oracle is candidate only, do not weaken fail-closed.",
+    "return_queue": true,
+    "sharedFixRequestedInSeparateFile": false
+  },
+  "verification": {
+    "courseOwnedMathOracle": "PASS_3_INDEPENDENT_TESTS",
+    "testCommand": "node --test tests/academic-us-ccss-g8-coder4-u01-l06-abc.test.cjs",
+    "exitCode": 0,
+    "passed": 3,
+    "failed": 0,
+    "newSHAStatus": "TESTED_WORKTREE_BEFORE_COMMIT",
+    "authBrowser": "NOT_RUN_STAGE_D",
+    "dbOrSchoolIsolation": "NOT_RUN_STAGE_D",
+    "CI": "NOT_RUN_MANUAL",
+    "stageD": "NOT_RUN",
+    "testedParentHeadSHA": "5b58a4618d018c21480c2f25693395a8e8ee66cc",
+    "testedContentSHA256": "73905a7a780c0162399c9c5d4d1ee08f74e4605ac99486af2fb7d91d5cca23ed",
+    "testSourceSHA256": "fd90621477c3c1a9026b3e7fa9480076d6a564b453d64c2ec5ea69b64bcaddf6",
+    "lastRunAtUtc": "2026-10-30T12:16:49.903515+00:00"
+  },
+  "headBeforeChange": "HEAD_FROM_PREVIOUS_CANONICAL_COMMIT",
+  "nextCanonicalLesson": "PED:US-CCSS-MATH:G8:U01:L07",
+  "nextAllowed": true,
+  "counters": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 5,
+    "B_CLOSED": 6,
+    "C_PREPARED": 6,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 6,
+    "REMAINING": 131
+  }
+}
