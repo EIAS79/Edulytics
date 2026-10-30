@@ -890,6 +890,11 @@
         "Source-aligned activities 4.2–4.3: one partner describes a triangle image that another sketches, followed by identifying a move from A to B and a second move from B to C on an isometric grid. Order of operations must be retained; the source drawing/GeoGebra interaction requires teacher or accessible geometric assessment.",
         "Construction activity: draw an asymmetric quadrilateral A(1,1), B(4,1), C(3,3), D(1,2). Create three different copies: a shift two right, a half-turn about the origin, and a mirror across the y-axis. Compare how the order of labeled vertices changes.",
         "A partner must reconstruct one of the copies from the written directions without seeing the result. A teacher evaluates completeness of directions and accurate diagram construction; a multiple-choice movement name does not substitute for this skill.",
+        "Edulytiks activity 4.1 reflection quick-image teaching alternative: briefly display an original triangle P(1,1),Q(3,1),R(2,3) and its reflection across the y-axis; hide the solution and ask learners to reconstruct P′(−1,1),Q′(−3,1),R′(−2,3) from equal perpendicular distances. A teacher can flash a drawn card twice; no unimplemented automated timed animation is implied.",
+        "Edulytiks activity 4.2 spoken partner directions: one student secretly chooses a first-party translation by (+2,0), a half-turn about O, or a reflection across the y-axis of the asymmetric quadrilateral. Another draws and labels the image; compare both corresponding points and the complete instruction: vector, center+angle+direction, or mirror line.",
+        "Edulytiks activity 4.3 two-step source equivalent: independently draw triangle A(1,1),B(3,1),C(2,3). First translate by (+2,0) to A′(3,1), B′(5,1), C′(4,3); then reflect over x=0 to A″(−3,1),B″(−5,1),C″(−4,3). Verify the composition in order. Reflecting first and translating second yields different coordinates, so order matters.",
+        "Source-aligned optional extension: seek another two-move construction taking the same figure to a given target, or explain why excluding a chosen type of move changes the available construction. Teacher scores geometry and precise oral/written justification; do not claim unverified GeoGebra clicks are implemented.",
+        "Original Edulytiks Cool-down 4.4 (publisher question inaccessible): triangle P(1,1), Q(3,1), R(2,3) is first shifted (+2,0), then mirrored across x=0. Give the three final positions and a correct two-step description. Explain why performing the reflection before the translation produces a different result. This is independently authored and teacher-scored.",
         "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/4/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced."
       ],
       "KeyConcepts": [
@@ -1016,6 +1021,76 @@
                 "1",
                 "3",
                 "2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "4.1 — teacher flash-reflection card (manual original first-party alternative)",
+          "Description": "Use an original static triangle for a brief glance then conceal it; identify reflection line and corresponding vertex distances. No automatic timer is claimed.",
+          "Rows": [
+            {
+              "Label": "Original",
+              "Cells": [
+                "P(1,1), Q(3,1), R(2,3)"
+              ]
+            },
+            {
+              "Label": "Mirror",
+              "Cells": [
+                "x=0 vertical y-axis"
+              ]
+            },
+            {
+              "Label": "To reconstruct",
+              "Cells": [
+                "P′(−1,1), Q′(−3,1), R′(−2,3)"
+              ]
+            },
+            {
+              "Label": "Reason",
+              "Cells": [
+                "Equal perpendicular distances to x=0"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "4.3 — original two-step coordinate sequence",
+          "Description": "Exact corresponding vertices for translation followed by reflection; this image is not the same as reversing the order.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(1,1)",
+                "(3,1)",
+                "(2,3)"
+              ]
+            },
+            {
+              "Label": "step 1 shift (+2,0)",
+              "Cells": [
+                "(3,1)",
+                "(5,1)",
+                "(4,3)"
+              ]
+            },
+            {
+              "Label": "step 2 reflect x=0",
+              "Cells": [
+                "(−3,1)",
+                "(−5,1)",
+                "(−4,3)"
               ]
             }
           ]
