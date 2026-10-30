@@ -59,6 +59,16 @@ public sealed class UsCcssAlg2SequencePracticeMathTests
     }
 
     [Fact]
+    public void MonthlyInterest_UsesExactSourceIndexAndDeclaredDisplayRounding()
+    {
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeUnroundedMonthlyInterestAtDisplay(1, "1000"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeUnroundedMonthlyInterestAtDisplay(3, "1040.40"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeUnroundedMonthlyInterestAtDisplay(8, "1148.69"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeUnroundedMonthlyInterestAtDisplay(8, "1148.68"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeUnroundedMonthlyInterestAtDisplay(0, "1000"));
+    }
+
+    [Fact]
     public void Sierpinski_SourceStepZeroThroughFive()
     {
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeSierpinskiCount(0, "1"));

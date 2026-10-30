@@ -210,7 +210,43 @@
       "runtimeMaterializationStatus": "NOT_VERIFIED",
       "testsStatus": "NOT_RUN_DOTNET",
       "academicApproval": "NOT_VERIFIED",
-      "ownerUat": "NOT_VERIFIED"
+      "ownerUat": "NOT_VERIFIED",
+      "stageA": "A_CLOSED",
+      "stageB": "B_CLOSED",
+      "stageC": "C_PREPARED",
+      "abcReadyForD": false,
+      "blockedByIntegration": {
+        "status": "BLOCKED_CENTRAL_REGISTRY_OWNERSHIP",
+        "reason": "Exact U01:L02 family binding is not registered in shared Practice runtime, teacher rubric and monetary rounding policy await approval",
+        "owner": "Coder 7, Supervisor 3 grants temporary central-file lock",
+        "issue": 453
+      },
+      "lessonGateEvidence": {
+        "sourceRootAlias": "Common Core",
+        "localSourceFilesSha256": {
+          "11_HS_Algebra_2/1/2/preparation.html": "fb29fc57640b49825617642faf28d5c9bc684b3fd14249eb1263ba17932c0a42",
+          "11_HS_Algebra_2/1/2/index.html": "6a41c16b8ab45cac15e2b801745c12656ac600be1a992519bc4c25aaa5ee0312",
+          "11_HS_Algebra_2/1/2/practice.html": "0f1be50548ce6e88581130b873d725b28f9fde140b1be5959c0ab741878f771c",
+          "11_HS_Algebra_2_Student/1/2/index.html": "87d3ae546d31697a9e664fee92a11de4dc6a5f52e73424f6824df1a5e91d23c3",
+          "11_HS_Algebra_2_Student/1/2/practice.html": "0503dccf4f12f895bf1fa2737ba3ff6ea1176136ac53a59d1fab7f757b294f7d"
+        },
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L02-ABC-SOURCE-PRACTICE-CONTRACT.json",
+        "testPath": "tests/coder-7/UsCcssAlg2U01L02SourcePracticeContract.test.cjs",
+        "nodeTest": "6_PASS_0_FAIL",
+        "isolatedCSharp": "25_PASS_0_FAIL",
+        "repoXunit": "NOT_RUN_RESTORE_ASSETS_FAILURE",
+        "studentE2e": "NOT_RUN",
+        "stageD": "NOT_RUN",
+        "academicApproval": "NOT_VERIFIED",
+        "originalPublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "adaptedCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "sourceDiagram": "Sierpinski is source described in adapted body; in-app graphical rendering NOT_RUN",
+        "sourceCanonicalHashFieldsPreserved": true,
+        "actualStartUtc": null,
+        "actualStartReason": "Not captured at exact start; no fabricated timestamps",
+        "actualEndUtc": "2026-10-30T12:13:42.122943+00:00",
+        "baseHeadAtReview": "bdb64370d0fc8afee988d286dc12cc606ac5464e"
+      }
     },
     {
       "ordinal": 3,
@@ -5435,21 +5471,21 @@
     "handoff": "https://github.com/EIAS79/Edulytics/pull/588#issuecomment-6503045261"
   },
   "currentFormalGateSummary": {
-    "asOfUtc": "2026-10-30T12:09:36.906193+00:00",
+    "asOfUtc": "2026-10-30T12:13:42.122943+00:00",
     "courseTotal": 120,
     "authored": 120,
-    "A_CLOSED": 1,
-    "B_CLOSED": 1,
-    "C_PREPARED": 1,
+    "A_CLOSED": 2,
+    "B_CLOSED": 2,
+    "C_PREPARED": 2,
     "C_ACCEPTED": 0,
     "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
+    "BLOCKED": 2,
     "scope": "CURRENT_FORMAL_REVIEW_ONLY; historical V10 actualAcceptedCounts retained as prior checkpoint",
     "nextStageAbcCursor": {
-      "ordinal": 2,
-      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
-      "reason": "New SOLO order: blocked L01 returns via returnQueue; proceed in canonical order"
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L03",
+      "reason": "SOLO plan: L01/L02 returnQueue open; proceed canonical next lesson"
     },
     "stageD": "NOT_STARTED",
     "courseRelease": "NO_GO",
@@ -5466,6 +5502,17 @@
       "owner": "Coder 7; Supervisor 3 temporary central-file ownership",
       "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-ABC-SOURCE-PRACTICE-CONTRACT.json",
       "addedUtc": "2026-10-30T12:09:36.906193+00:00"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+      "A": "A_CLOSED",
+      "B": "B_CLOSED",
+      "C": "C_PREPARED_NOT_ACCEPTED",
+      "blocker": "EXACT_LESSON_PRACTICE_REGISTRY_AND_APPROVED_CREDIT_ROUNDING",
+      "owner": "Coder 7 with Supervisor 3 temporary central file ownership",
+      "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L02-ABC-SOURCE-PRACTICE-CONTRACT.json",
+      "addedUtc": "2026-10-30T12:13:42.122943+00:00"
     }
   ]
 }

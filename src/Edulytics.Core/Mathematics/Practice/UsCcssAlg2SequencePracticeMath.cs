@@ -80,6 +80,27 @@ public static class UsCcssAlg2SequencePracticeMath
         return term == submitted;
     }
 
+    /// <summary>
+    /// Credit-card source: month 1 is 1000, 2% monthly growth, no payments.
+    /// One explicit rounding policy: retain exact rationals and round only
+    /// the displayed month's final balance to nearest cent, halves up.
+    /// Teacher must approve this policy before enabling automatic grading.
+    /// </summary>
+    public static bool GradeUnroundedMonthlyInterestAtDisplay(int month, string? response)
+    {
+        if (month is < 1 or > 12 || !Rational.TryParse(response, out var submitted))
+            return false;
+        Rational balance = Rational.FromInteger(1000);
+        for (int m = 1; m < month; m++)
+            balance = balance.Multiply(Rational.FromInteger(51)
+                .Divide(Rational.FromInteger(50)));
+        BigInteger scaled = balance.Numerator * 100;
+        BigInteger cents = BigInteger.DivRem(scaled, balance.Denominator, out var remainder);
+        if (remainder * 2 >= balance.Denominator) cents++;
+        return submitted == Rational.FromInteger(cents)
+            .Divide(Rational.FromInteger(100));
+    }
+
     public static bool GradeSierpinskiCount(int step, string? response)
     {
         if (step is < 0 or > 12) return false;

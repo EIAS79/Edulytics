@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+  "ordinal": 2,
+  "sourceEdition": "IM Algebra 2 First Edition 2019-2021 CC BY 4.0",
+  "source": {
+    "rootAlias": "Common Core",
+    "filesSha256": {
+      "11_HS_Algebra_2/1/2/preparation.html": "fb29fc57640b49825617642faf28d5c9bc684b3fd14249eb1263ba17932c0a42",
+      "11_HS_Algebra_2/1/2/index.html": "6a41c16b8ab45cac15e2b801745c12656ac600be1a992519bc4c25aaa5ee0312",
+      "11_HS_Algebra_2/1/2/practice.html": "0f1be50548ce6e88581130b873d725b28f9fde140b1be5959c0ab741878f771c",
+      "11_HS_Algebra_2_Student/1/2/index.html": "87d3ae546d31697a9e664fee92a11de4dc6a5f52e73424f6824df1a5e91d23c3",
+      "11_HS_Algebra_2_Student/1/2/practice.html": "0503dccf4f12f895bf1fa2737ba3ff6ea1176136ac53a59d1fab7f757b294f7d"
+    },
+    "originalCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+  },
+  "stageA": {
+    "status": "A_CLOSED_COURSE_SOURCE_REVIEW",
+    "teacherStudentSourceRead": true,
+    "sourceActivities": [
+      {
+        "id": "2.1",
+        "name": "Notice and Wonder",
+        "facts": "Four source sequences with ratios 3,4,1/2,3/4; precise quotient language"
+      },
+      {
+        "id": "2.2",
+        "name": "Paper Slicing",
+        "facts": "8 x 10 inch sheet; pieces double, piece area halves; table n=0..6 and two graphs, n natural-number domain"
+      },
+      {
+        "id": "2.3",
+        "name": "Complete the Sequence",
+        "facts": "Five missing-term sequences with ratios 2,3,1/10,3,1/2"
+      },
+      {
+        "id": "practice-1",
+        "facts": "2,4 with three following terms 8,16,32"
+      },
+      {
+        "id": "practice-2",
+        "facts": "Five ratios 1,1/2,3,1/10,10"
+      },
+      {
+        "id": "practice-3",
+        "facts": "2%-per-month credit balance, month 1 starts at 1000, through month 8, rounding policy to approve"
+      },
+      {
+        "id": "practice-4",
+        "facts": "Sierpinski triangle step n: 3^n shaded triangles of area 256/4^n each; two graphs and comparison"
+      },
+      {
+        "id": "practice-5",
+        "facts": "Recursive affine 3x-4 from start 10, 1 or own starting term"
+      },
+      {
+        "id": "practice-6",
+        "facts": "Two different rules for prefix 1,-1; explanation human-scored"
+      }
+    ],
+    "studentAndTeacherGoals": [
+      "Table and graph geometric sequences",
+      "Find missing terms",
+      "Determine growth factor"
+    ],
+    "sourceSierpinskiDiagram": "DESCRIBED_TEXT_ONLY; DISPLAY_ASSET_NOT_VERIFIED",
+    "independentAcademicApproval": "NOT_VERIFIED"
+  },
+  "stageB": {
+    "status": "B_CLOSED_COURSE_OWNED_ADAPTATION",
+    "contentPackEntry": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+    "correctExamples": {
+      "sourceNoticeRatios": [
+        "3",
+        "4",
+        "1/2",
+        "3/4"
+      ],
+      "sourceMissingTerms": [
+        [
+          "12",
+          "48"
+        ],
+        [
+          "1080",
+          "3240"
+        ],
+        [
+          "0.2",
+          "0.002"
+        ],
+        [
+          "3/7",
+          "81/7"
+        ],
+        [
+          "3",
+          "1.5"
+        ]
+      ],
+      "sourceMissingRatios": [
+        "2",
+        "3",
+        "1/10",
+        "3",
+        "1/2"
+      ],
+      "paperCounts": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "paperAreas": [
+        80,
+        40,
+        20,
+        10,
+        5,
+        2.5,
+        1.25
+      ],
+      "sourcePractice1": [
+        8,
+        16,
+        32
+      ],
+      "sourcePractice2": [
+        "1",
+        "1/2",
+        "3",
+        "1/10",
+        "10"
+      ],
+      "creditMonth1To8RoundedOnlyForDisplay": [
+        "1000.00",
+        "1020.00",
+        "1040.40",
+        "1061.21",
+        "1082.43",
+        "1104.08",
+        "1126.16",
+        "1148.69"
+      ],
+      "sierpinskiCounts": [
+        1,
+        3,
+        9,
+        27,
+        81,
+        243
+      ],
+      "sierpinskiPieceAreas": [
+        "256",
+        "64",
+        "16",
+        "4",
+        "1",
+        "1/4"
+      ],
+      "affineFromTen": [
+        10,
+        26,
+        74,
+        218,
+        650
+      ],
+      "affineFromOne": [
+        1,
+        -1,
+        -7,
+        -25,
+        -79
+      ],
+      "twoDistinctRulesForOneNegativeOne": [
+        "subtract 2",
+        "multiply by -1"
+      ]
+    },
+    "mathematicalEvidence": "Course-specific independent Node oracle and isolated C# verifier; teacher-only graphical/model explanations not machine-graded",
+    "creditPolicyRisk": "Source does not prescribe whether to round every month or only for final display; auto-grader method explicitly assumes unrounded internal balance. Require teacher approval before enabling.",
+    "historicalSourceAndCanonicalDigestsPreserved": true,
+    "publisherCoolDownUnverified": true,
+    "studentRenderer": "NOT_RUN",
+    "independentAcademicApproval": "NOT_VERIFIED"
+  },
+  "stageC": {
+    "status": "C_PREPARED_NOT_REGISTERED",
+    "courseOwnedVerifier": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2SequencePracticeMath.cs",
+    "courseOwnedXunit": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+    "proposedFamilies": [
+      {
+        "id": "usccss.alg2.u01.l02.geometric_fill_ratio",
+        "kind": "rational term sequence and common ratio",
+        "generator": "Positive/negative rational initial term and nonzero ratio, explicit index from 0 or 1; n<=20",
+        "verifier": "GradeGeometricTerm rational exact normalization",
+        "positive": "1/16 equals 2/32 and 0.0625",
+        "negative": "wrong ratio or index; 1/0, NaN, Infinity, out-of-range term",
+        "rubric": "Show growth factor as each new term divided by previous; judge explanation"
+      },
+      {
+        "id": "usccss.alg2.u01.l02.paper_conservation",
+        "kind": "paired exact integer/rational step table and graph",
+        "generator": "n=0..6, pieces 2^n, piece area 80/2^n in square inches",
+        "verifier": "GradeGeometricTerm for count and piece area; verify product=80",
+        "positive": "n=6 pieces 64, area 1.25; total 80",
+        "negative": "multiplying each piece area by the wrong step count; negative/noninteger cut",
+        "rubric": "Both graph axes labeled; one series doubles and the other halves; require reasoning about conserved uncut-paper area"
+      },
+      {
+        "id": "usccss.alg2.u01.l02.sierpinski_shaded",
+        "kind": "paired integer/rational and graph",
+        "generator": "n=0..5; shaded count=3^n, each shaded area=256/4^n",
+        "verifier": "GradeSierpinskiCount and GradeSierpinskiPieceArea",
+        "positive": "n=5: 243 and 1/4=0.25",
+        "negative": "asserting total shaded area constant 256; invalid step, malformed answer",
+        "rubric": "Compare increasing count and decreasing triangle area, explain removed center"
+      },
+      {
+        "id": "usccss.alg2.u01.l02.monthly_balance",
+        "kind": "numeric currency with rounding policy gate",
+        "generator": "month 1=1000 dollars, interest 2% applied monthly with no payments, m in 1..8",
+        "verifier": "GradeUnroundedMonthlyInterestAtDisplay; exact rational before final display rounding",
+        "positive": "month 3=1040.40, month 8=1148.69 under chosen policy",
+        "negative": "start at month 0, add 2 dollars instead of 2%, round differently without explaining policy",
+        "rubric": "Show formula 1000*(1.02)^(m-1); manual adjudication if source permits monthly-rounding alternative; sign-off required"
+      }
+    ],
+    "otherSourceTasks": "P5 reuse GradeAffineRecurrenceTerm, P6 human-scored distinct-rule alternatives",
+    "humanRubrics": [
+      "Notice-and-wonder observations",
+      "Paper and Sierpinski graph comparison",
+      "Credit-card rounding caveat",
+      "Two genuinely different rules for prefix 1,-1"
+    ],
+    "adaptedCoolDown": {
+      "labels": [
+        "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "EDULYTIKS_AUTHORED_COOLDOWN"
+      ],
+      "releasePlacement": "TEACHER_ONLY_CANDIDATE_NOT_STUDENT",
+      "prompt": "A geometric pattern begins at 16 and each term is multiplied by 3/4. Give the next three terms, the common ratio and a short explanation of the trend.",
+      "answer": [
+        "12",
+        "9",
+        "6.75"
+      ],
+      "rubric": "1 point each three correct terms; 1 point for ratio 3/4 and explanation; accept fraction/decimal equivalents"
+    },
+    "sharedRegistryMapping": false,
+    "authenticationE2e": "NOT_RUN",
+    "teacherReviewPersistence": "NOT_RUN",
+    "crossSchoolIsolation": "NOT_RUN",
+    "actualRuntimeGeneration": "NOT_RUN",
+    "academicSignoff": "NOT_VERIFIED",
+    "blockingCentralOwnership": "Coder 7 to integrate after Supervisor 3 grants temporary exclusive ownership of the precise central mapping file",
+    "isolatedFocusedCompileProbe": {
+      "result": "25_PASS_0_FAIL",
+      "environment": "Local temp .NET 10 console harness compiling course-owned source file only; not full xUnit",
+      "repositoryHeadBefore": "bdb64370d0fc8afee988d286dc12cc606ac5464e",
+      "timeUtc": "2026-10-30T12:13:42.122943+00:00"
+    },
+    "courseOwnedNodeTest": "tests/coder-7/UsCcssAlg2U01L02SourcePracticeContract.test.cjs",
+    "courseOwnedNodeResult": "6_PASS_0_FAIL",
+    "repoXunitStatus": "NOT_RUN_RESTORE_ASSETS_FAILURE"
+  },
+  "status": {
+    "A_CLOSED": true,
+    "B_CLOSED": true,
+    "C_PREPARED": true,
+    "C_CLOSED": false,
+    "ABC_READY_FOR_D": false,
+    "D_VERIFIED": false,
+    "BLOCKED": true
+  },
+  "firstReviewHead": "bdb64370d0fc8afee988d286dc12cc606ac5464e",
+  "createdUtc": "2026-10-30T12:11:25.242506+00:00",
+  "lastReviewedUtc": "2026-10-30T12:13:42.122943+00:00"
+}
