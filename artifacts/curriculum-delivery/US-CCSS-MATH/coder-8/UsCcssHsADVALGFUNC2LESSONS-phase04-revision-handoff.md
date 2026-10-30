@@ -187,3 +187,50 @@ A logarithm comparison observed at x>1 cannot be generalized unchanged to 0<x<1;
 - Shared materializer/version owner must independently approve an append-only v3 successor from **actually persisted** version/verified prior body SHA, not assume candidate-v2 is persisted. Protected Phase04 parity/academic checks remain red until honest lineage evidence and reviewer approval.
 - Course-side C# tests now include 26 new `[InlineData]` schema cases and log source-goal independent oracle; connector-side JS mathematical fixtures 26/26 passed **without runtime or .NET implications**. CI exact tested SHA must be recorded independently.
 
+
+---
+
+## P0 V4 — direct source PDF task-six correction and course-only successor (30 October 2026)
+
+**Review basis:** student PDF 38 pages, task pages 34–36; teacher PDF 55 pages, lesson pages 49–53 including original teacher notes. Both official publisher URLs recorded in `AllSystemsGo-original-source-task-review-v2.md`. Teacher binary verified SHA-256 `87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55`, matching the protected lesson source SHA. The independently checked student PDF SHA-256 is `763cda359f5d86ae1e01064340286e02308fee0470eb7d3deb07db34ead80b61`.
+
+**Exact change:** Source 10.6H explicitly revisits the painting receipts *first introduced in 10.1H*, and then uses identity and inverse matrix products, AX=B, and a distinct 3×3 system. Earlier unapproved v3 contained correct prices but lacked explicit task progression and task-six independent inverse. These are now supplied in v4 without replacing earlier correct mathematics. Teacher purpose calls for inverse computation via technology for dimension 3×3 or more. No source artwork was imported.
+
+| Lineage field | Prior (unapproved draft) | Current (unapproved draft) |
+| --- | --- | --- |
+| Pack version | `us-ccss-hs-adv-alg-func-2lesson-teaching-v3` | `us-ccss-hs-adv-alg-func-2lesson-teaching-v4` |
+| Pack Git blob | `3828be4b5babd5cfa09dd1b226ef62185790c2b8` | `f316ef834f64d6f95e9464d8ec88fc59d476e158` |
+| L01 canonicalBodySha256 | `9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7` | `7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199` |
+| L02 canonicalBodySha256 | `d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c` | unchanged |
+| L01 source SHA-256 | `87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55` | unchanged and independently verified from teacher PDF |
+| L02 source SHA-256 | `590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3` | unchanged, not reverified from teacher PDF binary |
+
+**Source task-six mathematical oracle:** C=[[1,2,2],[2,1,3],[1,2,1]], d=[16,17,13]ᵀ, det(C)=3, C⁻¹=(1/3)[[−5,2,4],[1,−1,1],[3,0,−3]], solution [2,4,3]ᵀ, exact equation checks and C(3C⁻¹)=3I₃. The added C# and native Node tests exercise this oracle; only the Node suite has actually completed so far.
+
+**Field-specific content modifications:** L01 `explanation`, `workedExamples`, `stepByStepSolutions`, `commonMistakes` plus recalculated `canonicalBodySha256` and pack-level `contentVersion` only. The L02 teaching body, source identities, target standards, historical source manifests and protected Phase04 digests are untouched.
+
+**L01.explanation added span only:**
+
+```text
+In the actual MVP 10.6H student sequence, the painting receipts first reappear from the earlier 10.1H activity. Students then multiply 3×3 matrices to recognize the identity and inverse laws, construct AX=B for the receipts, multiply by A⁻¹, and finally apply the same method to a different three-equation system. The method requires recording the inverse obtained with technology, not just an unexplained numerical triple.
+```
+
+**L01.workedExamples added span only:**
+
+```text
+Example 7 — source-goal matrix properties and second system, first-party walkthrough: with the painting coefficient matrix P=[[2,0,1],[1,4,0],[0,2,1]], I₃P=P and P⁻¹P=I₃ (also PP⁻¹=I₃). The source gives a decimal-form candidate inverse P⁻¹=[[0.4,0.2,−0.4],[−0.1,0.2,0.1],[0.2,−0.4,0.8]], equivalent to the exact fractional inverse in Example 6. Check a complete product gives I₃ before using P⁻¹ on [30,20,10]ᵀ. For the additional 10.6H application x+2y+2z=16, 2x+y+3z=17, x+2y+z=13, form C=[[1,2,2],[2,1,3],[1,2,1]] and d=[16,17,13]ᵀ. det(C)=3; its checked inverse is C⁻¹=(1/3)[[−5,2,4],[1,−1,1],[3,0,−3]], so C⁻¹d=[2,4,3]ᵀ. Confirm: 2+2(4)+2(3)=16, 2(2)+4+3(3)=17, and 2+2(4)+3=13. Technology can supply the inverse, but students should still verify CC⁻¹=I₃, carry the correct variable order and show each matrix step.
+```
+
+**L01.stepByStepSolutions added span only:**
+
+```text
+13. Follow the six-part 10.6H progression: demonstrate I₃P=P and P⁻¹P=I₃; identify the identity/inverse properties; write the paint receipts as PX=b; compute X=P⁻¹b and interpret all three unit prices; then apply the same inverse-matrix argument to the separate 3×3 source system Cx=d, showing the inverse and checking all equations. 14. For the additional 3×3 example, use the full coefficient order [x,y,z], determinant 3, numerator inverse [[−5,2,4],[1,−1,1],[3,0,−3]] and exact answer [2,4,3]; reject a row/column swap and any answer that satisfies only one equation.
+```
+
+**L01.commonMistakes added span only:**
+
+```text
+The All Systems Go source task is not just the earlier shopping problem: it asks for identity and inverse matrix products before the model and then a second 3×3 system. An answer giving only the prices without showing A⁻¹A=I and the additional solved system misses that reasoning progression. Inverse entries shown as decimals must still be checked to avoid rounding or sign mistakes.
+```
+
+**Independent approval request, not self-signoff:** protected original Phase04 L01 body `fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c`. Subsequent v1/v2/v3 course draft bodies were not academically approved and must NOT be interpreted as approved persisted predecessors. The independent global academic/version-transition owner should verify the actual effective predecessor body and append an authorized successor entry through protected parity processes before shared seeding/materialization. Keep historical seven-row Phase04 approval statuses intact and fail closed. Stage C/D remain not verified, even though native Node now completes **32/32, no skips** with actual fixture files and six rubric specifications.
