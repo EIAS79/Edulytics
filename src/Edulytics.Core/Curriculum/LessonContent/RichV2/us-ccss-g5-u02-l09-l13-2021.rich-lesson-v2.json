@@ -9,10 +9,10 @@
       "Title": "Relate Area to Multiplication",
       "ExplanationParagraphs": [
         "Goal: establish the area of a rectangle having one positive whole-number side and a UNIT fractional side by counting and regrouping shaded parts. The 2021 source deliberately allows students to choose counting, rearranging, or multiplication before giving a formal rule.",
-        "Warm-up: compare rectangular areas and a triangle in a Which One Doesn't Belong conversation. A 5-by-1 rectangle, a vertical unit array, and a 5-by-one-half shaded rectangle can all prompt different defensible distinctions; do not claim a unique answer.",
-        "Activity 1: draw one 8-unit-long rectangle of height 1, then rectangles of the same length with heights one half, one fourth and one eighth. Count partial unit squares, regroup equal shaded pieces into complete unit squares and explain why the areas 8, 4, 2 and 1 square units decrease in those proportions.",
-        "Activity 2: work on a first-party grid to draw your own 6-by-one-third rectangle. Some of its squares may be hidden behind shading; predict how many thirds are present, count the six third-squares and group into two square units. Compare 6×(1/3) with (1/3)×6 by reference to the model, not only commutativity symbols.",
-        "Teacher boundary: the original student tasks include choosing a method, producing shaded drawings and explaining why factors match area; drawings and open WODB arguments require teacher review. Numeric multiplication is only supporting Practice and must not be auto-certified as equivalent to the source activity."
+        "Warm-up — Which One Doesn't Belong: the source shows A as a 6×1 rectangle, B as a 1×6 tiled rectangular array, C as a triangle of base 4 and height 3, and D as a 12×(1/2) rectangle. Each has area 6 square units under the usual interpretations, despite different representations. The existing candidate's five-unit description was incorrect; no single WODB reason is mandatory. Teacher must assess a student explanation.",
+        "Activity 1 — Find the Area: the FOUR original source diagrams have the SAME 6-unit length, with fractional heights 1, 1/2, 1/3 and 1/4. Their shaded areas are respectively 6, 3, 2 and 1 1/2 square units. Students count shaded sixths/halves/thirds/fourths of square units, group partial squares into wholes and explain the area of each one. The previous candidate used length eight and height 1/8, changing the original quantities and task progression.",
+        "Activity 2 — Draw Rectangles: on grid paper construct and label four rectangles measuring 1/2×1, 1/2×2, 1/2×3, and 1/2×4 units, then report areas 1/2, 1, 1 1/2 and 2 square units. The original final shaded picture partly hides squares: students must state which dimensions or full/partial unit counts are required before estimating its area, rather than invent an exact area from insufficient information. A separately authored 6×1/3 rectangle is optional practice, not a replacement for the source's four drawings and hidden-square reasoning.",
+        "Teacher assessment: first inspect how six fractional-height columns correspond to the unit area; recognize that the source warm-up includes a 4×3 triangle with area 6 rather than the former invented 5-unit examples. Drawings, rearrangements, estimating hidden unit counts and WODB argument remain teacher-scored. Source checked against public original 2021 teacher lesson/preparation and embedded Student Facing HTML. Separate original Student Task PDF, original asset rights and protected Cool-down NOT_VERIFIED."
       ],
       "KeyConcepts": [
         {
@@ -36,40 +36,43 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Same length, different widths",
-          "Question": "What are areas of length-8 rectangles with heights 1, 1/2, 1/4 and 1/8?",
-          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Title": "Four source 6-unit rectangles",
+          "Question": "Find area when a rectangle is 6 units long and has heights 1, 1/2, 1/3, or 1/4 unit.",
+          "Method": "Count six equal width-one columns and group fractional square units, preserving the original source dimensions.",
           "Steps": [
-            "Use 8 unit-length columns as the common horizontal side.",
-            "Partition a unit-height column into 1, 2, 4 or 8 equal-height strips.",
-            "Take one strip from each column and count/recombine the fractional square units."
+            "For height 1, all 6 full unit squares are shaded: area 6.",
+            "For height 1/2, six half-squares combine into 3 square units.",
+            "For height 1/3, six third-squares combine into 2 square units.",
+            "For height 1/4, six quarter-squares combine into 6/4=1 1/2 square units."
           ],
-          "Answer": "8, 4, 2, and 1 square units respectively.",
-          "Check": "Multiplying 8 by 1, 1/2, 1/4 and 1/8 gives the listed values."
+          "Answer": "6, 3, 2, and 1 1/2 square units.",
+          "Check": "Multiply the source length 6 by 1, 1/2, 1/3 and 1/4, respectively."
         },
         {
-          "Title": "Count fractional square units",
-          "Question": "A rectangle is 6 units long and 1/3 unit high. Find its area.",
-          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Title": "Original grid-paper construction sequence",
+          "Question": "Draw four rectangles with height 1/2 unit and lengths 1, 2, 3, 4 units. Find each area.",
+          "Method": "Build separate exact half-square models with equal 1-unit horizontal columns.",
           "Steps": [
-            "Draw six equal unit-width columns.",
-            "Partition each unit square into three equal horizontal strips, shading one in each column.",
-            "Group the six shaded third-square strips into two full square units."
+            "A 1×1/2 rectangle has one half-square.",
+            "A 2×1/2 rectangle has two half-squares, making 1 square unit.",
+            "A 3×1/2 rectangle has three half-squares, or 1 1/2 square units.",
+            "A 4×1/2 rectangle has four half-squares, or 2 square units."
           ],
-          "Answer": "2 square units.",
-          "Check": "6 × (1/3)=6/3=2, equivalent to (1/3) × 6."
+          "Answer": "1/2, 1, 1 1/2, 2 square units, in order.",
+          "Check": "Teacher verifies equal half-unit heights and lengths against the student's physical drawing."
         },
         {
-          "Title": "Interpret a fraction of a rectangle",
-          "Question": "A rectangle of 8 square units has one fourth of its area shaded. What shaded area is shown?",
-          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Title": "Why a partially concealed grid needs more information",
+          "Question": "A shaded rectangular picture hides some unit squares. Can its exact shaded area be determined without knowing the full length, fractional height or number of hidden pieces?",
+          "Method": "Distinguish observed area parts from unknown overall dimensions.",
           "Steps": [
-            "Divide the 8-square-unit rectangle into four congruent-area regions.",
-            "Select exactly one of the four regions.",
-            "Compare selected area with the entire eight-square-unit area."
+            "Record visible unit widths and known fractional part size.",
+            "Identify whether the number of covered, hidden, or offscreen fractional squares is given.",
+            "If the total count cannot be inferred, show different compatible dimensions and explain why different areas are possible.",
+            "Give an estimate only under explicit assumptions; request the missing measurement for an exact result."
           ],
-          "Answer": "2 square units.",
-          "Check": "(1/4) × 8=2; teacher checks that the diagram actually has equal fourths."
+          "Answer": "Not necessarily; the required complete fractional-piece count or full dimensions must be justified.",
+          "Check": "Reject a claimed exact source area based only on the visible shaded pieces."
         }
       ],
       "CommonMistakes": [
@@ -82,27 +85,33 @@
           "Mistake": "Treat 1/4 as four unit squares",
           "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
           "Correction": "One fourth is smaller than one unit when the original unit remains fixed."
+        },
+        {
+          "Mistake": "Use 8×1/8 or invent the area of the hidden region as a source answer",
+          "WhyWrong": "The actual four source rectangles use fixed six-unit lengths with 1, 1/2, 1/3, 1/4 heights, and the hidden-square question asks learners to analyze needed information.",
+          "Correction": "Use 6, 3, 2, 6/4 square-unit answers for the four source figures; draw the 1/2-by-1,2,3,4 grid-paper examples and identify hidden dimensions before claiming an exact area."
         }
       ],
       "SummaryPoints": [
-        "A unit-fraction side length still produces an area in square units.",
-        "Count, regroup or multiply to justify the same rectangular area.",
-        "The original drawing and method-choice task is teacher-reviewed.",
-        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 9: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-9/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+        "Original WODB source A: 6×1 rectangle, B: 1×6 tiled rectangle, C: base-4 height-3 triangle, D: 12×1/2 rectangle; several comparisons are defensible.",
+        "Activity 1 uses SIX-unit rectangles of heights 1, 1/2, 1/3, 1/4; areas are 6, 3, 2 and 1 1/2 square units.",
+        "Activity 2 constructs 1/2×1, 1/2×2, 1/2×3, 1/2×4 on grid paper; their areas are 1/2, 1, 1 1/2 and 2.",
+        "The original hidden-shading prompt asks what measurements are needed and invites bounded estimates; do not invent a uniquely determined exact count.",
+        "Source: public IM first-edition 2021 teacher lesson/preparation and embedded Student Facing HTML. Student Task PDF, image copyrights, and gated Cool-down NOT_VERIFIED."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Relate Area to Multiplication — equal-area reasoning",
-          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Title": "Six-unit source rectangles with unit-fraction heights",
+          "Description": "Accessible first-party table based on original public teacher Student Facing descriptions, not the publisher's drawings.",
           "Rows": [
             {
               "Label": "Length",
               "Cells": [
-                "8",
-                "8",
-                "8",
-                "8"
+                "6",
+                "6",
+                "6",
+                "6"
               ]
             },
             {
@@ -110,17 +119,60 @@
               "Cells": [
                 "1",
                 "1/2",
-                "1/4",
-                "1/8"
+                "1/3",
+                "1/4"
+              ]
+            },
+            {
+              "Label": "Fractional square pieces",
+              "Cells": [
+                "6 whole",
+                "6 halves",
+                "6 thirds",
+                "6 fourths"
+              ]
+            },
+            {
+              "Label": "Area in square units",
+              "Cells": [
+                "6",
+                "3",
+                "2",
+                "1 1/2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Grid-paper half-height constructions",
+          "Description": "Student diagrams require teacher review; table alone does not prove correct spatial rendering.",
+          "Rows": [
+            {
+              "Label": "Width",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "Height",
+              "Cells": [
+                "1/2",
+                "1/2",
+                "1/2",
+                "1/2"
               ]
             },
             {
               "Label": "Area (square units)",
               "Cells": [
-                "8",
-                "4",
-                "2",
-                "1"
+                "1/2",
+                "1",
+                "1 1/2",
+                "2"
               ]
             }
           ]
@@ -135,9 +187,9 @@
       "ExplanationParagraphs": [
         "Goal: find and represent rectangular areas when the width is a NON-UNIT fraction less than one. The source moves from one fourth or one third to widths such as two thirds or three fourths and invites multiple decomposition strategies.",
         "Warm-up — estimate a length-seven rectangle shaded to a height between one half and one. Infer that the shaded area is between three and a half and seven square units, not an exact value without a precise shaded height. Discuss why an estimate around five square units is plausible rather than pretending a unique source-image result.",
-        "Activity 1: start with a first-party rectangle 5 units long and 3/4 unit high. In each one-unit horizontal segment, shade three of four equal-height strips. Count 15 quarter-square units and regroup them as 3 3/4 square units. Explain how 5×(3/4), (5×3)÷4, and 3×(5÷4) can all refer to the same area.",
-        "Activity 2: compare a 5-by-2/3 rectangle with a 5-by-3/4 rectangle. Without calculation, reason that the second shaded area is greater because 3/4 is greater than 2/3 for the same length. Draw an equivalent partition of the fractional widths and verify using exact 10/3 and 15/4 square units.",
-        "Source assessment boundary: the original student lesson calls for multiplication expressions for multiple given shaded diagrams; the diagrams and reasoning remain teacher-reviewed and may have more than one valid explanation. A numeric evaluator can check area only if the fractional side lengths are provided."
+        "Activity 1 — Rectangle With a Fractional Side Length: source diagrams each have length FOUR units with non-unit fraction widths 2/3, 3/4 and 3/5. Count shaded 1/3-, 1/4- or 1/5-square-unit pieces, 8, 12 and 12 respectively; the areas are 8/3 = 2 2/3, 12/4 = 3, and 12/5 = 2 2/5 square units. The second and third rectangles both have 12 shaded pieces but different total areas because the pieces differ in size. The former candidate's length-five 3/4 and 2/3 rectangles are optional extensions, not the original tasks.",
+        "Activity 2 — What Are the Side Lengths?: first infer the dimensions of the 3×2/3 shaded rectangle from the unlabeled pieces: area 3×2/3 = 2 square units. Then inspect source diagrams X (length 3, width 4/5, area 12/5) and Y (length 5, width 3/4, area 15/4). Of the five source expression cards, (3/4)×5 matches Y; 3×(3/5) matches neither; 3×4×(1/5) matches X; 4×(3/4) matches neither; 3×3×(1/4) matches neither. A matching expression must show dimensions and the shaded region correctly, not merely have familiar factors.",
+        "Teacher assessment: for source Activity 1 the teacher distinguishes 12 quarter-square units from 12 fifth-square units. For source Activity 2 teacher checks which expression maps to diagram X or Y, including negative matches; the source does not ask learners to compare the invented 5×2/3 with 5×3/4 as its main task. A standalone matching table supports teaching but exact drawing and explanations need teacher assessment. Public 2021 teacher lesson/preparation and Student Facing HTML inspected. Separate Student Task PDF, original image licensing, gated Cool-down and selected Practice NOT_VERIFIED."
       ],
       "KeyConcepts": [
         {
@@ -161,40 +213,42 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Three quarters across five columns",
-          "Question": "Find the area of a 5-by-3/4 rectangle.",
-          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Title": "First source rectangle 4×2/3",
+          "Question": "A rectangular shaded region is four units by two thirds of a unit. Find the area.",
+          "Method": "Identify eight 1/3-square-unit shaded pieces, then combine them.",
           "Steps": [
-            "Divide five unit-square columns into four equal horizontal parts each.",
-            "Shade three in every column: 5×3=15 quarter-square pieces.",
-            "Regroup 15/4 as three whole square units and three quarters."
+            "Partition each of four unit columns into thirds.",
+            "Shade two thirds in every column: 4×2=8 small pieces.",
+            "Eight pieces of size 1/3 square unit make 8/3 = 2 2/3 square units."
           ],
-          "Answer": "15/4 = 3 3/4 square units.",
-          "Check": "5×(3/4)=(5×3)/4."
+          "Answer": "8/3 = 2 2/3 square units.",
+          "Check": "4×(2/3)=8/3; not the former candidate's 5×(2/3)."
         },
         {
-          "Title": "Two thirds across five columns",
-          "Question": "Find the area of a 5-by-2/3 rectangle.",
-          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Title": "Same twelve pieces, different unit fractional areas",
+          "Question": "Compare the source's 4×3/4 and 4×3/5 shaded rectangles.",
+          "Method": "Count three shaded fractional-square pieces per each of four unit columns, but keep denominators distinct.",
           "Steps": [
-            "Partition each of five squares into thirds.",
-            "Shade two thirds of each column to obtain 10 thirds.",
-            "Regroup 10/3 as 3 1/3 square units."
+            "4×3=12 shaded pieces for both rectangles.",
+            "In the first, every piece is 1/4 square unit: 12/4=3 square units.",
+            "In the second, every piece is 1/5 square unit: 12/5=2 2/5 square units.",
+            "Reject the claim that equal counts of unequal-sized pieces guarantee equal areas."
           ],
-          "Answer": "10/3 = 3 1/3 square units.",
-          "Check": "(5×2)/3=10/3."
+          "Answer": "3 versus 12/5 square units, respectively; the 1/4 pieces are larger.",
+          "Check": "4×3/4=3 and 4×3/5=12/5; their difference is 3/5 square unit."
         },
         {
-          "Title": "Compare two widths",
-          "Question": "With length fixed at 5, which area is larger: width 2/3 or width 3/4?",
-          "Method": "Build an original unit-area model, then justify the arithmetic.",
+          "Title": "Match X and Y with the five original source expression cards",
+          "Question": "X has dimensions 3×4/5, Y has 5×3/4. Match expressions 3/4×5, 3×3/5, 3×4×1/5, 4×3/4 and 3×3×1/4 to X, Y or neither.",
+          "Method": "Use exact rational areas and the geometric meaning of each factor, not superficial matching of numerals.",
           "Steps": [
-            "Use equal twelfths: 2/3=8/12; 3/4=9/12.",
-            "Both areas have five equal one-unit columns.",
-            "Since each 3/4-width column exceeds the 2/3-width column, its total area is larger."
+            "Compute X: 3×4/5 = 12/5; Y: 5×3/4 = 15/4.",
+            "3/4×5 = 15/4 and represents Y's five length units with 3/4 height.",
+            "3×4×1/5 = 12/5 and represents 12 shaded fifth-square parts in X.",
+            "3×3/5 = 9/5, 4×3/4 = 3 and 3×3×1/4 = 9/4, so these three expressions match neither."
           ],
-          "Answer": "The 5-by-3/4 rectangle has larger area.",
-          "Check": "15/4 - 10/3 = 45/12−40/12=5/12 square unit."
+          "Answer": "Y: 3/4×5. X: 3×4×1/5. The other three do not match either shaded region.",
+          "Check": "Reject 3×3/5, 4×3/4 and 3×3×1/4 even if students claim similar factor symbols."
         }
       ],
       "CommonMistakes": [
@@ -207,39 +261,93 @@
           "Mistake": "Multiply a whole length by a fractional width and report linear units",
           "WhyWrong": "It confuses linear lengths, equal-area partitions, or square-area quantities.",
           "Correction": "Rectangular area is in square units; side lengths remain linear."
+        },
+        {
+          "Mistake": "Claim 12 shaded pieces in two different fraction grids imply the same area",
+          "WhyWrong": "A quarter-square and a fifth-square do not have the same area; the source explicitly contrasts 12×1/4 with 12×1/5.",
+          "Correction": "Keep denominator units: 12×1/4=3 square units and 12×1/5=12/5 square units."
         }
       ],
       "SummaryPoints": [
-        "Non-unit fraction widths combine several equal unit-fraction strips.",
-        "Different correct grouping strategies produce the same area.",
-        "Estimate before computing and explain any drawn representation.",
-        "Public IM K–5 2021 first edition, Grade 5 Unit 2 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-10/lesson.html. Activity and role comparison based on public HTML; original student task PDF, secured response and Cool-down not independently verified; original Edulytiks worked examples."
+        "Original Activity 1: 4×2/3=8/3, 4×3/4=3, 4×3/5=12/5 square units; two cases each have 12 pieces but different part sizes.",
+        "Original Activity 2 first rectangle: 3×2/3=2 square units; infer the dimensions from fractional pieces.",
+        "Source X is 3×4/5=12/5 and Y is 5×3/4=15/4 square units; of five cards, 3×4×1/5 maps to X and 3/4×5 maps to Y, while three cards map to neither.",
+        "Correct numeric products alone do not establish original picture correspondences; student diagrams and explanatory justifications require teacher review.",
+        "Source compared: IM 2021 original teacher preparation/lesson Student Facing HTML. Original Student Task PDF, individual image copyrights and gated Cool-down NOT_VERIFIED."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Fractional Side Lengths Less Than 1 — equal-area reasoning",
-          "Description": "First-party accessible, text-only representation of mathematical rectangles; not a publisher diagram.",
+          "Title": "Source fractional shaded rectangles with length 4",
+          "Description": "Original independently authored numeric crosswalk grounded in source Student Facing descriptions. Not source imagery.",
           "Rows": [
             {
               "Label": "Length",
               "Cells": [
-                "5",
-                "5"
+                "4",
+                "4",
+                "4"
               ]
             },
             {
-              "Label": "Width",
+              "Label": "Fraction width",
               "Cells": [
                 "2/3",
-                "3/4"
+                "3/4",
+                "3/5"
+              ]
+            },
+            {
+              "Label": "Shaded parts",
+              "Cells": [
+                "8 thirds",
+                "12 fourths",
+                "12 fifths"
+              ]
+            },
+            {
+              "Label": "Area (square units)",
+              "Cells": [
+                "8/3",
+                "3",
+                "12/5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Five expression cards for source X and Y",
+          "Description": "First-party semantic matching aid. Source figures X and Y independently described, not copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "3/4×5",
+                "3×3/5",
+                "3×4×1/5",
+                "4×3/4",
+                "3×3×1/4"
               ]
             },
             {
               "Label": "Area",
               "Cells": [
-                "10/3",
-                "15/4"
+                "15/4",
+                "9/5",
+                "12/5",
+                "3",
+                "9/4"
+              ]
+            },
+            {
+              "Label": "Matches",
+              "Cells": [
+                "Y",
+                "Neither",
+                "X",
+                "Neither",
+                "Neither"
               ]
             }
           ]
