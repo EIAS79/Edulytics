@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
+  "contentVersion": "alg1-u01-l06-sequential-source-abc-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local HTML, CC BY 4.0",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\6\\preparation.html",
+      "sha256": "e298098abcc793a967eaafb2d17f90e57fb7d8983c68eac9f8152e65def945de"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\6\\index.html",
+      "sha256": "ff13bb2d4fd5a6d56882c386d669fa63b5bf015263a0e88a90235ab5421e1f4c"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\6\\index.html",
+      "sha256": "ef8476da968d2a68e8156264ef01a9d7c97c04d3c87addc5e117275b1afe75de"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\6\\practice.html",
+      "sha256": "7d2d0bbb42ca84dee8256d7653afa278c1c500707ded7deda870dfcfad17684d"
+    }
+  },
+  "sourceRoles": [
+    "Optional spreadsheet sequence; no numbered Addressing standard specified in local teacher preparation"
+  ],
+  "sourceToContentCrosswalk": [
+    "optional spreadsheet introduction and Make 24",
+    "infer hidden B2-B5 formulas from A2-A5 controlled input experiments",
+    "use =A2+A4 and create distinct B3, exchange with partner if performed",
+    "P1 formula choices, P2 SUM with negative, P3 select-all, P4 PRODUCT=-70, P5-P6 previously learned center/spread"
+  ],
+  "task": "Make 24 and test four spreadsheet B2-B5 hidden rules",
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_TASKS",
+      "kind": "HUMAN",
+      "tasks": [
+        "optional spreadsheet introduction and Make 24",
+        "infer hidden B2-B5 formulas from A2-A5 controlled input experiments",
+        "use =A2+A4 and create distinct B3, exchange with partner if performed",
+        "P1 formula choices, P2 SUM with negative, P3 select-all, P4 PRODUCT=-70, P5-P6 previously learned center/spread"
+      ],
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "C1",
+          "maxPoints": 2,
+          "evidence": "optional prerequisite/teacher assignment"
+        },
+        {
+          "criterion": "C2",
+          "maxPoints": 2,
+          "evidence": "live cell-reference formula validated with three trials"
+        },
+        {
+          "criterion": "C3",
+          "maxPoints": 2,
+          "evidence": "correct mixed-sign and fractional probe"
+        },
+        {
+          "criterion": "C4",
+          "maxPoints": 2,
+          "evidence": "partner rule discovery without fabricated technology evidence"
+        }
+      ],
+      "authenticInteractionOnlyIfObserved": true
+    },
+    {
+      "id": "FIRST_PARTY_COOLDOWN",
+      "kind": "HUMAN",
+      "source": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "formula references",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "three input probes",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "authenticity of interactions",
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "id": "INDEPENDENT_MATH_FIXTURE",
+      "kind": "AUTHORING_ORACLE_NOT_RUNTIME",
+      "expected": [
+        3,
+        24,
+        1,
+        4
+      ],
+      "answerType": "ordered vector of numerical values or named categorical shape descriptors; graph drawing stays HUMAN",
+      "correct": [
+        3,
+        24,
+        1,
+        4
+      ],
+      "equivalent": "numerically equivalent values using stated units and quartile conventions where appropriate",
+      "wrong": "missing value, shifted bin, wrong median, invalid copied formula, or unjustified descriptor",
+      "malformed": "null, blank, NaN, unsupported type, duplicated selection, invalid vector length",
+      "verification": "independently computed local Python arithmetic or classification; never asserted as production grader"
+    }
+  ],
+  "stageD": {
+    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "sharedOwner": "Supervisor 2 designated central single-writer",
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
+    "NOT_RUN": [
+      "Live Practice",
+      "teacher grade persistence",
+      "full CI"
+    ]
+  }
+}
