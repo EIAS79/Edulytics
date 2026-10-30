@@ -199,7 +199,8 @@
         },
         {
           "Mistake": "A pattern is described only by appearance ('draw a flower' or 'connect the points').",
-          "Correction": "Specify each point, centre, radius and directed segment; have a new partner reconstruct without seeing the original; revise ambiguous text."
+          "Correction": "Specify each point, centre, radius and directed segment; have a new partner reconstruct without seeing the original; revise ambiguous text.",
+          "WhyWrong": "Visual description alone cannot establish a deterministic construction without centres, compass openings, named intersections and ordered segments."
         }
       ],
       "SummaryPoints": [
@@ -305,11 +306,13 @@
         },
         {
           "Mistake": "Using circles with opening exactly half the endpoint distance and calling their single tangent point a perpendicular-bisector line.",
-          "Correction": "Set r strictly greater than half the segment length; mark two distinct intersections X,Y, join them, then identify midpoint and 90-degree angle."
+          "Correction": "Set r strictly greater than half the segment length; mark two distinct intersections X,Y, join them, then identify midpoint and 90-degree angle.",
+          "WhyWrong": "One tangent intersection cannot define the line through two distinct equidistant points needed for this construction."
         },
         {
           "Mistake": "Treating the classroom equidistance conjecture as already proven or replacing student standing/folding exploration with the coordinate derivation.",
-          "Correction": "Keep the experiential observations and student conjecture first; use analytic distance algebra as additional independent verification, noting the formal theorem is established in a later unit."
+          "Correction": "Keep the experiential observations and student conjecture first; use analytic distance algebra as additional independent verification, noting the formal theorem is established in a later unit.",
+          "WhyWrong": "The source pedagogical sequence develops a conjecture through student observations; presenting a later proof first removes the intended reasoning task."
         }
       ],
       "SummaryPoints": [

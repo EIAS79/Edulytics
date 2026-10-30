@@ -95,7 +95,8 @@
         },
         {
           "Mistake": "Producing two equilateral triangles with the same side length and treating this as satisfying the activity's different-sizes condition.",
-          "Correction": "Construct a radius-r central triangle and an alternating-vertex triangle of side sqrt(3)r, or use explicitly distinct positive base lengths; justify both."
+          "Correction": "Construct a radius-r central triangle and an alternating-vertex triangle of side sqrt(3)r, or use explicitly distinct positive base lengths; justify both.",
+          "WhyWrong": "Identical side lengths fail the source requirement to compare distinct-sized equilateral constructions."
         }
       ],
       "SummaryPoints": [
@@ -199,7 +200,8 @@
         },
         {
           "Mistake": "Skipping the initial estimated angle-bisector location D and partner critique in source 5.3, or assigning the answer before student exploration.",
-          "Correction": "Students mark an estimate D, then construct BX using equal-radius arcs and compare; partners describe and critique each step before seeing the explanation."
+          "Correction": "Students mark an estimate D, then construct BX using equal-radius arcs and compare; partners describe and critique each step before seeing the explanation.",
+          "WhyWrong": "Removing the pre-construction estimate and collaborative explanation suppresses source learning goals of conjecture and critique."
         }
       ],
       "SummaryPoints": [
@@ -302,7 +304,8 @@
         },
         {
           "Mistake": "Asserting an off-line perpendicular when the first circle centred at C only touches m, leaving one chord intersection.",
-          "Correction": "Choose opening strictly greater than the shortest distance C to m, label two distinct intersections A,B and construct their bisector."
+          "Correction": "Choose opening strictly greater than the shortest distance C to m, label two distinct intersections A,B and construct their bisector.",
+          "WhyWrong": "A tangent circle gives only one contact point, so the auxiliary chord and its perpendicular bisector are not defined as specified."
         }
       ],
       "SummaryPoints": [
