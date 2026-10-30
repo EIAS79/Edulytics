@@ -68,3 +68,19 @@ test('U04 L07 source summary sodium-22 function, table, and boundary checks',()=
  assert.equal(contract.stageC.effectiveRuntimeSelectedFamilies,'NOT_VERIFIED');
  assert.equal(contract.stageB.studentRenderer,'NOT_VERIFIED');
 });
+
+test('U04 L07 exact course-owned family proposal is not mistaken for registered Practice',()=>{
+ const families=contract.stageC.proposedCourseOwnedFamilies;
+ assert.deepEqual(families.map(f=>f.id),[
+  'usccss.hs.half_life_remaining_mass',
+  'usccss.hs.half_life_elapsed_from_fraction',
+  'usccss.hs.decay_argument_teacher_rubric'
+ ]);
+ assert.ok(families.every(f=>f.status.startsWith('PROPOSED_')));
+ const pending=contract.stageC.officialOutcomeCurrentGenericRuleCandidates;
+ assert.equal(pending.find(x=>x.outcome==='CCSS:HSA-SSE.B.3').finding,'MISMATCH_FOR_HALF_LIFE_TASK');
+ assert.equal(contract.stageC.proposalStatus,'REQUESTED_NOT_IMPLEMENTED');
+ assert.equal(contract.stageC.explicitLessonSkillMappingPresent,false);
+ assert.equal(contract.stageC.generatedVerifiedGradedPersisted,'NOT_RUN');
+ assert.equal(contract.release,'NO_GO');
+});
