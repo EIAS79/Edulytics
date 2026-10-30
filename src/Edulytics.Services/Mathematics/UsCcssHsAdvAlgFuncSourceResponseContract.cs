@@ -79,8 +79,14 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
         BigInteger c = coefficients[1, 0], d = coefficients[1, 1];
         BigInteger e = rhs[0], f = rhs[1];
         var det = a * d - b * c;
+        // Rank(A)=0 needs its own check: every 2x2 augmented minor
+        // vanishes even if 0x+0y=nonzero is contradictory.
+        var allCoefficientsZero = a.IsZero && b.IsZero && c.IsZero && d.IsZero;
+        var consistentSingular = allCoefficientsZero
+            ? e.IsZero && f.IsZero
+            : a * f == c * e && b * f == d * e;
         var expected = det != 0 ? "unique" :
-            (a * f == c * e && b * f == d * e ? "infinite" : "none");
+            (consistentSingular ? "infinite" : "none");
         var actual = response!.Trim().ToLowerInvariant();
         actual = actual switch
         {
