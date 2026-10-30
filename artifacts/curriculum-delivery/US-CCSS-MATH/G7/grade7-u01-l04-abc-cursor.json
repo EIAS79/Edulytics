@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L04",
+  "title": "Scaled Relationships",
+  "originalSourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/4/index.html",
+    "07_Grade_7_OUR_IM/1/4/preparation.html",
+    "07_Grade_7_OUR_IM_Student/1/4/index.html",
+    "07_Grade_7_OUR_IM_Student/1/4/practice.html"
+  ],
+  "sourceRights": "OUR/IM 2017–2019 CC BY 4.0; first-party scaled examples, no original visual assets copied",
+  "sourceGoals": [
+    "Corresponding angles stay equal",
+    "Even hidden point-to-point distances scale by the same factor",
+    "Equal angles alone are not sufficient without corresponding length ratios"
+  ],
+  "originalActivityChecks": [
+    {
+      "source": "4.1 Three Quadrilaterals Part 1",
+      "equivalent": "First-party ABC/DEF angle and protractor comparison; nearest five-degree precision"
+    },
+    {
+      "source": "4.2 Three Quadrilaterals Part 2",
+      "equivalent": "Hidden 3-4-5 diagonal vs 6-8-10, direction-sensitive scale 2/0.5 and 6-to-15 zigzag"
+    },
+    {
+      "source": "4.3 Scaled or Not Scaled?",
+      "equivalent": "Equal-angle 4x3-to-8x3 rectangle and equal-angle trapezoid mismatched length factors"
+    },
+    {
+      "source": "4.4 Comparing Pictures of Birds",
+      "equivalent": "Students generate first-party bird-like outline, compare uniform copy to horizontal-only distorted copy"
+    }
+  ],
+  "sourceCoolDown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "Draw labeled triple-sized triangle from coordinates and prove unseen diagonals and angles; teacher-scored sketch and reasoning",
+  "staticOwnedTeaching": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "originalExistingSVG": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l04-hidden-distances-and-angles.svg",
+  "existingTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "oracle": "tests/academic-us-ccss-g7-u01-l04-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "A_STATUS": "A_CLOSED_SOURCE_EQUIVALENT_TASKS_AND_RIGHTS_REVIEWED",
+  "B_STATUS": "BLOCKED_SHARED_RICH_V2_PARTIAL_INVOCATION",
+  "C_STATUS": "BLOCKED_SHARED_7G_A1_PRACTICE_AND_TEACHER_SCORING",
+  "D_STATUS": "NOT_RUN",
+  "READY_FOR_STAGE_D": false,
+  "blockerOwner": "Supervisor 1 / integration issue #592 and Draft PR #599",
+  "gradePatch": "48381ce93ccc854d45da1684c37295be1a05c627",
+  "testPatch": "e32eb68a849613ae176ec1d185a3f0676c06550b",
+  "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L05",
+  "closedAt": null,
+  "closureSHA": null
+}
