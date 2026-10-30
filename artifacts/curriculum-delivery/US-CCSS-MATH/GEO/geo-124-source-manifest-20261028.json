@@ -51,7 +51,13 @@
     "v14NewlyIndependentlyRecomputedU04ExampleSlots": 28,
     "v14TotalIndependentMathExampleSlots": 55,
     "v14WorkedExamplesNotIndependentlyCertified": 317,
-    "v14SourceTasksReopened": 2
+    "v14SourceTasksReopened": 2,
+    "v15SourceTasksReopened": 3,
+    "v15NewlyIndependentlyRecomputedU03ExampleSlots": 28,
+    "v15TotalIndependentMathExampleSlots": 83,
+    "v15WorkedExamplesNotIndependentlyCertified": 289,
+    "v15OriginalCourseSvgAssetsAuthored": 3,
+    "v15HumanRubricsAuthored": 2
   },
   "lessons": [
     {
@@ -1856,7 +1862,19 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          2
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 39,
@@ -1900,6 +1918,18 @@
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          2
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      },
       "sourceOptional": true,
       "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/3/2/preparation.html"
     },
@@ -1956,7 +1986,20 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1,
+          2
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 3,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 41,
@@ -2006,7 +2049,18 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 1,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 42,
@@ -2053,7 +2107,19 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          1,
+          2
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 43,
@@ -2096,7 +2162,41 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      },
+      "v15IndependentReaudit": {
+        "studentTeacherPublicSourceCompared": "2026-10-30 task-by-task re-audit, without protected teacher materials",
+        "sourceTaskAcceptance": "NOT_VERIFIED",
+        "academicSignoff": false,
+        "sourceEdition": "IM Geometry First Edition 2019-2021",
+        "qualitativeProofAcceptance": "NOT_VERIFIED",
+        "authenticatedStudentTeacherRoute": "NOT_RUN",
+        "teacherScoredSavedSubmission": "NOT_RUN",
+        "syntheticTenantPractice": "NOT_RUN",
+        "independentU03NumericExampleIndexes": [
+          0,
+          1
+        ],
+        "originalSvgAssetsAuthoredNotRendered": [],
+        "A_REVIEWED": true,
+        "A_ACCEPTED": false,
+        "B_IMPLEMENTED": true,
+        "B_VERIFIED": false,
+        "C_VERIFIED": false,
+        "D_VERIFIED": false,
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v15-source-batches-and-shared-handoff-20261030.json"
+      }
     },
     {
       "ordinal": 44,
@@ -2138,7 +2238,18 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 1,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 45,
@@ -2181,7 +2292,19 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 46,
@@ -2227,7 +2350,18 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 1,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 47,
@@ -2261,6 +2395,18 @@
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      },
       "sourceOptional": true,
       "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/3/10/preparation.html"
     },
@@ -2309,7 +2455,18 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 1,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 49,
@@ -2345,6 +2502,19 @@
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1,
+          2
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 3,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      },
       "sourceOptional": true,
       "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/3/12/preparation.html"
     },
@@ -2384,7 +2554,19 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 51,
@@ -2423,7 +2605,16 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [],
+        "scope": "QUALITATIVE_PROOF_REQUIRES_NONNUMERIC_REVIEW",
+        "count": 0,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 52,
@@ -2461,7 +2652,19 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 53,
@@ -2496,7 +2699,19 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v15NumericOracleEvidence": {
+        "exampleIndexes": [
+          0,
+          1
+        ],
+        "scope": "INDEPENDENT_NUMERIC_SUBCOMPONENT_ONLY",
+        "count": 2,
+        "academicAcceptance": false,
+        "teacherAssessmentVerified": false,
+        "diagramAndProofValidated": false,
+        "testPath": "tools/curriculum/us-ccss-geo-v15-source-math-diagrams-teacher-contract.test.cjs"
+      }
     },
     {
       "ordinal": 54,
@@ -2553,6 +2768,27 @@
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
+      "v15IndependentReaudit": {
+        "studentTeacherPublicSourceCompared": "2026-10-30 task-by-task re-audit, without protected teacher materials",
+        "sourceTaskAcceptance": "NOT_VERIFIED",
+        "academicSignoff": false,
+        "sourceEdition": "IM Geometry First Edition 2019-2021",
+        "qualitativeProofAcceptance": "NOT_VERIFIED",
+        "authenticatedStudentTeacherRoute": "NOT_RUN",
+        "teacherScoredSavedSubmission": "NOT_RUN",
+        "syntheticTenantPractice": "NOT_RUN",
+        "independentU03NumericExampleIndexes": [],
+        "originalSvgAssetsAuthoredNotRendered": [
+          "u04-l01-ramp-similarity-models.svg"
+        ],
+        "A_REVIEWED": true,
+        "A_ACCEPTED": false,
+        "B_IMPLEMENTED": true,
+        "B_VERIFIED": false,
+        "C_VERIFIED": false,
+        "D_VERIFIED": false,
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v15-source-batches-and-shared-handoff-20261030.json"
+      },
       "v14IndependentReaudit": {
         "studentAndTeacherSourceTasksReviewed": "2026-10-30 preliminary task-by-task comparison",
         "sourceTaskAcceptance": "NOT_VERIFIED",
@@ -2661,6 +2897,28 @@
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
+      "v15IndependentReaudit": {
+        "studentTeacherPublicSourceCompared": "2026-10-30 task-by-task re-audit, without protected teacher materials",
+        "sourceTaskAcceptance": "NOT_VERIFIED",
+        "academicSignoff": false,
+        "sourceEdition": "IM Geometry First Edition 2019-2021",
+        "qualitativeProofAcceptance": "NOT_VERIFIED",
+        "authenticatedStudentTeacherRoute": "NOT_RUN",
+        "teacherScoredSavedSubmission": "NOT_RUN",
+        "syntheticTenantPractice": "NOT_RUN",
+        "independentU03NumericExampleIndexes": [],
+        "originalSvgAssetsAuthoredNotRendered": [
+          "u04-l03-equilateral-altitude-30-60-90.svg",
+          "u04-l03-five-unknown-triangle-sides.svg"
+        ],
+        "A_REVIEWED": true,
+        "A_ACCEPTED": false,
+        "B_IMPLEMENTED": true,
+        "B_VERIFIED": false,
+        "C_VERIFIED": false,
+        "D_VERIFIED": false,
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v15-source-batches-and-shared-handoff-20261030.json"
+      },
       "v14IndependentReaudit": {
         "studentAndTeacherSourceTasksReviewed": "2026-10-30 preliminary task-by-task comparison",
         "sourceTaskAcceptance": "NOT_VERIFIED",

@@ -46,7 +46,14 @@ test('U04 L03: the direct answer is the equilateral altitude, not only the 30-60
   assert.match(e.Answer, /altitude/i);
   assert.match(e.Answer, /s√3|s\s*sqrt\(3\)/i);
   assert.match(e.Check, /positive/i);
-  assert.ok(![0, -2].every(s => s > 0), 'zero or negative sides do not define a nondegenerate equilateral triangle');
+  // Both invalid inputs must be rejected separately; the old .every assertion only tested one.
+  const nondegenerateAltitude = s => {
+    if (!Number.isFinite(s) || s <= 0) throw new RangeError('Full side 2s must be positive');
+    return Math.sqrt((2 * s) ** 2 - s ** 2);
+  };
+  for (const invalid of [0, -2, NaN]) assert.throws(() => nondegenerateAltitude(invalid), RangeError);
+  for (const valid of [0.5, 1, 7, 12]) close(nondegenerateAltitude(valid), valid * Math.sqrt(3), 1e-10);
+  assert.ok(e.Answer.includes('The altitude is s√3 for s>0'), 'actual authored answer expression must equal s√3 with explicit domain');
 });
 
 test('U04 L01-L11: 28 distinct worked-example numerical slots independently recomputed', () => {

@@ -86,7 +86,14 @@ test('All indexed Geometry candidate resources have authored source-specific con
     assert.ok(lesson.WorkedExamples.every(ex => ex.Steps.length >= 3 && ex.Answer && ex.Check));
     assert.ok(!JSON.stringify(lesson).includes('You will constructing Patterns'));
     assert.ok(!JSON.stringify(lesson).includes('You will build It'));
-    if (/U0[1-4]:L/.test(lesson.LessonCode)) assert.deepEqual(lesson.Visuals, []);
+    if (/U04:L0[13]$|U03:L06$/.test(lesson.LessonCode)) {
+      assert.equal(lesson.Visuals.length, /U03:L06$/.test(lesson.LessonCode) ? 1 : 2, lesson.LessonCode + ' V15 native diagrams/reasoning');
+      for (const visual of lesson.Visuals) {
+        assert.ok(['EquationSet', 'RatioTable', 'ShapeDecomposition'].includes(visual.Kind));
+        assert.ok(visual.Title && visual.Description);
+        assert.ok((visual.Items?.length || 0) >= 3 || (visual.Rows?.length || 0) >= 3);
+      }
+    } else if (/U0[1-4]:L/.test(lesson.LessonCode)) assert.deepEqual(lesson.Visuals, []);
     else assert.ok(lesson.Visuals.length >= 1, lesson.LessonCode);
     assert.deepEqual(lesson.Videos, []);
   }

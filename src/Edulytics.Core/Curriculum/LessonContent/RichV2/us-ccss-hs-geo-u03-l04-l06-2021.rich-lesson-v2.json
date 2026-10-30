@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "us-ccss-hs-geo-u03-l04-l06-source-20261029-v1",
+  "ContentVersion": "us-ccss-hs-geo-u03-l04-l06-v15-source-math-20261030",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L04",
@@ -196,6 +196,10 @@
       "Title": "Connecting Similarity and Transformations",
       "ExplanationParagraphs": [
         "Learning goal: Recognize similarity as a composition of positive dilation and rigid transformations, write correctly ordered similarity statements, and verify corresponding proportional side lengths and angle equality.",
+        "Original student investigation 6.1: critique an attempted dilation that gives a square and a non-square rectangle with equal angles but inconsistent corresponding side ratios. Demonstrate the mismatch numerically, and do not infer similarity from right angles alone.",
+        "Original student investigation 6.2: classify supplied first-party triangle card descriptions, give an explicit sequence of rigid motions and positive dilations, then state both forward and reverse scale factors with ordered vertex correspondence. Physical card sorting and group arguments require teacher review.",
+        "Original student investigation 6.3: compare right triangles with corresponding sides (8,15,17) and (3.2,6,6.8). Show that each small-to-large side ratio is 2/5 and that the right-angle vertices correspond; explain why the similarity statement ordering matters.",
+        "Worked-example outcome is explicitly the image vertex coordinates D=(1,1), E=(7,1), F=(1,9) after dilation then translation, not merely the abstract similarity classification.",
         "Figures are similar if a sequence of rigid motions and one or more positive dilations maps one to the other. A rigid motion is a special similarity of factor 1. Under a scale factor k, each pair of corresponding lengths differs by k, while corresponding angle measures agree. The total positive scale of successive dilations multiplies.",
         "Verbal diagram: right triangle ABC with A=(0,0),B=(3,0),C=(0,4). Triangle DEF is constructed by dilating ABC by factor 2 about origin then translating by (1,1): D=(1,1), E=(7,1), F=(1,9). Every side ratio image/original is 2, and corresponding right-angle vertices are A↔D.",
         "Contrast a square and a non-square rectangle: both have four right angles, but they may have inconsistent adjacent side ratios and are not always similar. In general polygons, equal angle data alone do not establish similarity; verify side ratios and actual transformation constraints.",
@@ -233,7 +237,7 @@
             "Original sides are 3,4,5; image sides are 6,8,10.",
             "Corresponding angle measures remain equal and the scale factor is 2."
           ],
-          "Answer": "ABC∼DEF with positive scale factor 2.",
+          "Answer": "D=(1,1), E=(7,1), F=(1,9). Thus ABC is similar to DEF with positive scale factor 2.",
           "Check": "The ordered mapping A↔D,B↔E,C↔F agrees with all side ratios."
         },
         {
@@ -280,7 +284,22 @@
         "All corresponding angles agree and side lengths have one common ratio.",
         "Angles alone do not prove similarity for arbitrary quadrilaterals; human-reviewed transformation reasoning is required."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Identify the image and prove ordered similarity",
+          "Description": "An original coordinates-and-sides proof; the first task requires all output vertices.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Apply (x,y) => (2x,2y) + (1,1): A=(0,0) => D=(1,1), B=(3,0) => E=(7,1), C=(0,4) => F=(1,9).",
+            "Original side lengths 3,4,5 map to 6,8,10, each with scale 2; the right angle A corresponds to D.",
+            "Thus ABC is similar to DEF in the correct order; reverse scale is 1/2.",
+            "For another pair, 3.2/8=6/15=6.8/17=2/5. Rectangles with ratios 3/2 and 5/4 are not similar."
+          ],
+          "Rows": []
+        }
+      ],
       "Videos": []
     }
   ]

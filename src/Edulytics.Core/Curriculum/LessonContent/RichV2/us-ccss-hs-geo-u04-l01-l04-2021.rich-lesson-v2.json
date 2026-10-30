@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 1,
   "PackCode": "US-CCSS-MATH",
-  "ContentVersion": "us-ccss-hs-geo-u04-l01-l04-firstparty-20261029-v1",
+  "ContentVersion": "us-ccss-hs-geo-u04-l01-l04-v15-source-activities-20261030",
   "Lessons": [
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L01",
@@ -9,6 +9,10 @@
       "Title": "Angles and Steepness",
       "ExplanationParagraphs": [
         "Learning goal: use similarity to explain why a right-triangle ramp with one fixed acute angle has a fixed rise-to-run ratio; calculate side lengths and identify design information still needed.",
+        "Student investigation A: sketch two right triangles with rises 0.4 m and 1.0 m and the same, otherwise unspecified, acute ramp angle. Use AA similarity to prove run_1:run_2=2:5. Give two different positive run pairs, such as (4.8 m,12 m) and (4 m,10 m), to show the absolute runs are not determined.",
+        "Student investigation B: an original school entrance has four equal steps, each rising 7 inches. For the deliberately hypothetical model rise:horizontal run=1:12, first calculate the total rise 28 inches, run 336 inches (28 feet), and ramp surface length sqrt(28^2+336^2) inches. Draw a labelled right triangle with its angle, units, and assumptions; compare the alternate hypothetical slope 1:10 rather than treating 1:12 as a legal approval.",
+        "Student investigation C: critique the ramp model for missing width, surface traction, landings and handrails; revise only after your teacher provides and verifies the applicable up-to-date accessibility guidance. A mathematical length/angle computation alone cannot certify accessibility or compliance. Teacher must score diagrams, critique and mathematical explanations.",
+        "Original separate SVG references for course review: /geometry/geo/v15/u04-l01-ramp-similarity-models.svg. Standalone SVG availability does not imply this Rich V2 runtime already renders the image.",
         "Verbal diagram: horizontal run forms one leg, vertical rise the other, and the diagonal ramp surface is the hypotenuse; the acute ground angle determines the leg ratio.",
         "Source learning activities consider ramp models, scale drawings and explanations. An independently written classroom task compares two hypothetical steepness designs without claiming current ADA compliance.",
         "Teacher-scored activity: produce a labelled right-triangle diagram, explain the reason for the selected ratio, compare units and precision, and identify model assumptions. Teacher rubric (0–4): valid triangle and angle labels; correct ratios; mathematically justified reasoning; clear original representations and critique. A number alone does not grade the drawing or argument.",
@@ -92,7 +96,63 @@
         "Ratios require corresponding sides, a right angle, and physically consistent units.",
         "Drawn constructions, modelling claims and explained strategies require authentic teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Original ramp modelling and missing-data check",
+          "Description": "Horizontal run is constrained by a chosen angle or explicit rise:run ratio, never by rise alone.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Same angle: run_1 / run_2 = rise_1 / rise_2 = 0.4 / 1.0 = 2/5.",
+            "Possible run pairs (4.8 m, 12 m) and (4 m, 10 m) have the same 2:5 ratio but different acute angles.",
+            "Four 7-inch steps give rise 4 × 7 = 28 in. At a chosen hypothetical 1:12 rise/run, horizontal run = 28 × 12 = 336 in = 28 ft.",
+            "Hypotenuse = sqrt(28² + 336²) in; do not mislabel horizontal run as sloped length.",
+            "Compare a separately stated 1:10 model and record real physical constraints before any professional compliance assessment."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Correctly labelled model alternatives",
+          "Description": "Comparable units and a clear model assumption are required before any ratio is computed.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "Equal angle, assumed slope 1:12",
+              "Numerator": 1,
+              "Denominator": 12,
+              "Cells": [
+                "Rise 0.4 m / run 4.8 m",
+                "Rise 1.0 m / run 12 m",
+                "run ratio 2:5"
+              ]
+            },
+            {
+              "Label": "Different assumed angle, slope 1:10",
+              "Numerator": 1,
+              "Denominator": 10,
+              "Cells": [
+                "Rise 0.4 m / run 4 m",
+                "Rise 1.0 m / run 10 m",
+                "run ratio 2:5"
+              ]
+            },
+            {
+              "Label": "Unspecified angle",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Rise 0.4 m and 1.0 m",
+                "Only run ratio known",
+                "Individual runs unknown"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
@@ -192,6 +252,11 @@
       "Title": "Half an Equilateral Triangle",
       "ExplanationParagraphs": [
         "Learning goal: derive the 30°–60°–90° side ratio from an equilateral triangle's altitude and calculate exact missing sides.",
+        "Student investigation A: construct an original equilateral triangle of positive full side 2s, then draw the altitude from one vertex. Explain why the altitude hits the midpoint and why the two right triangles have short base s, hypotenuse 2s, 30° and 60° acute angles.",
+        "Student investigation B: use (2s)^2=s^2+h^2 to derive h=s√3 only for s>0. In each half-triangle, the long leg is opposite 60°, the short leg is opposite 30°, and the hypotenuse is opposite 90°; the full equilateral side 2s must never be confused with half-base s.",
+        "Student investigation C: draw and solve three new 30°–60°–90° triangles with five missing lengths: (I) short 4 and hypotenuse 8, find long; (II) short 6, find long and hypotenuse; (III) long 5√3, find short and hypotenuse. Explain each proportion with AA similarity and Pythagoras; reject s=0 (collapsed triangle) and s<0 (invalid side length).",
+        "This source-optional lesson follows the also-optional Half a Square lesson. Construction, measurement, proof and equivalent radical forms must be reviewed by a teacher, not declared graded from one scalar answer.",
+        "Original SVG asset references for course review: /geometry/geo/v15/u04-l03-equilateral-altitude-30-60-90.svg and /geometry/geo/v15/u04-l03-five-unknown-triangle-sides.svg; these assets are not yet linked to an authenticated Rich V2 image renderer.",
         "Optional follow-on to Half a Square, with source measurement of equilateral altitudes and generalization. Use source-optional status in the ledger and do not promote original source art.",
         "Teacher-scored activity: produce a labelled right-triangle diagram, explain the reason for the selected ratio, compare units and precision, and identify model assumptions. Teacher rubric (0–4): valid triangle and angle labels; correct ratios; mathematically justified reasoning; clear original representations and critique. A number alone does not grade the drawing or argument.",
         "Source alignment: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 4, CC BY 4.0. All worked numerical questions and explanations below are independently authored Edulytiks content. Original source images and authenticated assessments are not reproduced."
@@ -274,7 +339,59 @@
         "Ratios require corresponding sides, a right angle, and physically consistent units.",
         "Drawn constructions, modelling claims and explained strategies require authentic teacher review."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "EquationSet",
+          "Title": "Equilateral altitude derivation with valid domain",
+          "Description": "The full equilateral side is 2s; the short leg is s, and the altitude is s√3 only for s>0.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [
+            "Draw equilateral ABC of side 2s > 0. The altitude AM meets BC at its midpoint M, so BM=MC=s.",
+            "In right triangle ABM: (2s)² = s² + AM²; hence AM² = 3s² and AM = s√3 when s>0.",
+            "The half-triangle side ratio is s : s√3 : 2s, matching 1 : √3 : 2.",
+            "The zero value s=0 produces a collapsed figure; negative s produces an invalid side length."
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original five missing-side constructions",
+          "Description": "Three separate 30°–60°–90° triangles need a teacher-reviewed diagram and explanation.",
+          "PrimaryLabel": "",
+          "SecondaryLabel": "",
+          "Items": [],
+          "Rows": [
+            {
+              "Label": "I: short 4, hypotenuse 8",
+              "Numerator": 4,
+              "Denominator": 8,
+              "Cells": [
+                "Long leg = ?",
+                "Justify the length with the Pythagorean theorem"
+              ]
+            },
+            {
+              "Label": "II: short 6",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Long leg = ?",
+                "Hypotenuse = ?"
+              ]
+            },
+            {
+              "Label": "III: long 5√3",
+              "Numerator": 0,
+              "Denominator": 1,
+              "Cells": [
+                "Short leg = ?",
+                "Hypotenuse = ?"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

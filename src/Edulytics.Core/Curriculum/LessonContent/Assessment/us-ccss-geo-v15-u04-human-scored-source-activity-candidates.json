@@ -1,0 +1,254 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "HS:TRAD:GEO:IM-1E",
+  "Status": "COURSE_LOCAL_AUTHORING_ONLY_NOT_RUNTIME_CONNECTED",
+  "Version": "geometry-v15-u04-original-human-tasks-20261030",
+  "TeacherSubmissionPersistence": "NOT_IMPLEMENTED",
+  "MachineVerifiedTeacherRubric": false,
+  "SharedOwner": "Supervisor 2",
+  "NotReleaseApproval": true,
+  "Contracts": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L01",
+      "TaskId": "geo-v15-u04-l01-ramp-model-design",
+      "Title": "Critique and redesign an original hypothetical school ramp model",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/4/1/index.html",
+      "SourceTeacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/4/1/preparation.html",
+      "SourceActivityComparisons": [
+        "1.1 Ratios Galore: corresponding right-triangle lengths and angles",
+        "1.2 Can You Calculate?: solve missing sides and explain underdetermination",
+        "1.3 Is it Accessible?: critique, model, draw and revise a ramp with guidance supplied by teacher; no original proprietary artwork reproduced"
+      ],
+      "OriginalPrompt": "A school entry has four steps, each 7 inches tall. Sketch an original right-triangle ramp with a 28-inch rise. For a hypothetical design ratio rise:horizontal run of 1:12, label rise, run in inches and feet, sloped length, and the angle with the ground. Compare it with an independently chosen alternative ratio of 1:10: explain why these angles differ. Next analyze two same-angle ramps with rises 0.4 m and 1.0 m: give their run ratio and explain why neither absolute run is determined. Critique other real-world considerations (rails, landings, surface, width) without asserting any design is legally accessible. If the teacher provides verified current local accessibility specifications, assess compliance separately and redraw conditionally.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE",
+        "MODELLING_CRITIQUE_AND_REVISION"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=absent/incorrect; 1=partially supported; 2=correct with independent reasoning"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Correct 28-inch rise, unit conversion, horizontal and sloped lengths in two contrasting explicitly hypothetical designs",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Clear original labelled ramp diagrams with right angles and consistent rise/run ratio",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "AA similarity proof for 0.4 m and 1.0 m with run ratio 2:5 plus two distinct valid absolute-run assignments",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Critique/accessibility qualification and defensible revision with teacher-provided guideline provenance, not invented legal certification",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "four 7-inch steps and assumed rise:run=1:12",
+          "Expected": "Rise=28 inches, run=336 inches=28 feet, hypotenuse=sqrt(28^2+336^2) inches",
+          "Scope": "NUMERICAL_ONLY_NOT_FULL_GRADE"
+        },
+        {
+          "Input": "same steps, alternate hypothetical ratio rise:run=1:10",
+          "Expected": "Run=280 inches=23 ft 4 in; angle arctan(1/10), distinct from arctan(1/12)",
+          "Scope": "NUMERICAL_ONLY_NOT_LEGAL_ADVICE"
+        },
+        {
+          "Input": "same unknown slope angle with rises 0.4 m and 1.0 m",
+          "Expected": "run_1/run_2=2/5; runs 4.8 and 12 OR runs 4 and 10 both satisfy different common angles",
+          "Scope": "RATIONALE_AND_DOMAIN_HUMAN_REVIEW"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Treat 12 m as the unique second run without a known slope angle",
+          "ExpectedHandling": "Require a ratio answer; explain missing-data ambiguity"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Unlabelled ramp sketch or missing units",
+          "ExpectedHandling": "Teacher requests drawing and consistent units"
+        },
+        {
+          "Type": "BOUNDARY",
+          "Trigger": "Zero run or non-positive rise when claiming a nondegenerate right triangle",
+          "ExpectedHandling": "Reject nondegenerate ramp model"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Use foot units or a symbolic rise h with run=12h",
+          "ExpectedHandling": "Accept if conversion and model assumptions are explicit"
+        },
+        {
+          "Type": "SAFETY",
+          "Trigger": "Claim the classroom 1:12 model certifies current ADA legal compliance",
+          "ExpectedHandling": "Reject legal certification; require verified local standard, full geometric and physical review"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      },
+      "StudentDelivery": "NOT_WIRED_RENDERER",
+      "LinkedVisualAssets": [
+        "/geometry/geo/v15/u04-l01-ramp-similarity-models.svg"
+      ],
+      "AuthenticatedRendering": false
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L03",
+      "TaskId": "geo-v15-u04-l03-half-equilateral-construction",
+      "Title": "Equilateral altitude construction and five unknown 30-60-90 sides",
+      "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/4/3/index.html",
+      "SourceTeacherPreparationUrl": "https://im.kendallhunt.com/HS/teachers/2/4/3/preparation.html",
+      "SourceOptional": true,
+      "SourceActivityComparisons": [
+        "3.1 Notice and Wonder: sketch vertex altitude",
+        "3.2 Decomposing Equilateral Triangles: measure halves and infer side ratio",
+        "3.3 Generalize Half Equilateral Triangles: five missing sides across three figures; optional after lesson 2"
+      ],
+      "OriginalPrompt": "Construct and label equilateral ABC with positive side 2s, draw altitude AM from A to midpoint M of BC, and mark the right angle. Explain, using triangle congruence or symmetry and Pythagoras, why BM=MC=s and AM=s√3. Explain why 2s is the full side and not the short leg. Next solve five missing sides of three independently drawn 30°–60°–90° triangles: triangle I short leg 4 and hypotenuse 8, find long leg; triangle II short leg 6, find long leg and hypotenuse; triangle III long leg 5√3, find short leg and hypotenuse. State domain s>0 and justify why a degenerate zero or negative side is invalid, not merely numerically substituted.",
+      "EvidenceModes": [
+        "LABELLED_DRAWING_OR_DIAGRAM",
+        "WRITTEN_PROOF_OR_EXPLANATION",
+        "CALCULATION_OR_TABLE",
+        "COUNTEREXAMPLE_AND_DOMAIN"
+      ],
+      "MachineScoringAllowed": false,
+      "TeacherAssessmentRequired": true,
+      "TaskLifecycle": "AUTHORING_ONLY_NOT_REGISTERED_NOT_PERSISTED",
+      "Rubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=absent/incorrect; 1=partially supported; 2=correct with independent reasoning"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Accurate labelled equilateral altitude, midpoint, 30°,60°,90° and full-side versus half-base distinction",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Derivation AM²=(2s)²−s², AM=s√3 for s>0, not memorized ratio alone",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Five exact missing side values 4√3,6√3,12,5,10 with correct opposite-angle mappings",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Justified AA/generalisation across scale copies and clear degenerate/domain rejection",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8,
+        "AutoGradeFromScalarProhibited": true
+      },
+      "IndependentEvidenceOracles": [
+        {
+          "Input": "equilateral full side 2s",
+          "Expected": "short leg s, altitude s√3, hypotenuse 2s for s>0",
+          "Scope": "PROOF_REQUIRED"
+        },
+        {
+          "Input": "triangle I: short=4, hypotenuse=8",
+          "Expected": "long=4√3",
+          "Scope": "NUMERICAL_ONLY"
+        },
+        {
+          "Input": "triangle II: short=6",
+          "Expected": "long=6√3 and hypotenuse=12",
+          "Scope": "NUMERICAL_ONLY"
+        },
+        {
+          "Input": "triangle III: long=5√3",
+          "Expected": "short=5 and hypotenuse=10",
+          "Scope": "NUMERICAL_ONLY"
+        }
+      ],
+      "NegativeAndEdgeReviewCases": [
+        {
+          "Type": "WRONG",
+          "Trigger": "Use 2s instead of s for half-base or claim altitude=2s√3",
+          "ExpectedHandling": "Correct full-side/half-base and Pythagoras"
+        },
+        {
+          "Type": "MALFORMED",
+          "Trigger": "Drawing omits perpendicular foot or labels",
+          "ExpectedHandling": "Teacher requests construction evidence"
+        },
+        {
+          "Type": "BOUNDARY_ZERO",
+          "Trigger": "s=0 yields collapsed equilateral figure",
+          "ExpectedHandling": "Reject a nondegenerate triangle"
+        },
+        {
+          "Type": "BOUNDARY_NEGATIVE",
+          "Trigger": "s=-2 makes full geometric side -4",
+          "ExpectedHandling": "Reject negative side-length input explicitly"
+        },
+        {
+          "Type": "EQUIVALENT",
+          "Trigger": "Use (√3/2) times full side instead of s√3",
+          "ExpectedHandling": "Accept mathematically equivalent justified altitude expression"
+        }
+      ],
+      "AccessAndPersistence": {
+        "OwnerStudentOnly": true,
+        "TeacherRoleRequired": true,
+        "SchoolTenantIsolationRequired": true,
+        "SameLessonCodeRequired": true,
+        "FeedbackPersistenceRequired": true,
+        "Status": "NOT_TESTED"
+      },
+      "Acceptance": {
+        "StudentSubmit": false,
+        "TeacherReview": false,
+        "SavedGrade": false,
+        "TwoSchoolAuthorization": false,
+        "Approved": false
+      },
+      "StudentDelivery": "NOT_WIRED_RENDERER",
+      "LinkedVisualAssets": [
+        "/geometry/geo/v15/u04-l03-equilateral-altitude-30-60-90.svg",
+        "/geometry/geo/v15/u04-l03-five-unknown-triangle-sides.svg"
+      ],
+      "AuthenticatedRendering": false
+    }
+  ]
+}
