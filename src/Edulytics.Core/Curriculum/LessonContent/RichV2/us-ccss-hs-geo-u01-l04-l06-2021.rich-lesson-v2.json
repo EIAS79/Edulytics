@@ -221,7 +221,12 @@
         "Verbal diagram: line m runs horizontally and point C lies strictly above it. Circle c centred at C meets m at distinct points A and B. Equal-radius arcs from A and B intersect at C and at another point D below m. Line CD is perpendicular to m. A new line n through C perpendicular to CD is parallel to m.",
         "Choose a compass radius greater than the distance from C to m, so the circle through C meets the line at two points; avoid the tangent case. Because CA = CB, C lies on the perpendicular bisector of AB, and the second equal-distance intersection D determines that line. Two distinct lines in one Euclidean plane that are both perpendicular to the same line are parallel.",
         "Original Edulytiks student activity: construct m-perpendicular and m-parallel lines through C, label the two auxiliary foot points and justify each step. Teacher rubric (0–4): valid two-intersection circle; justified perpendicular bisector; second perpendicular at C; correct Euclidean parallel argument. Construction cannot be certified by a numeric answer alone.",
-        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 6, CC BY 4.0. Original publisher diagrams and image assets are not reproduced."
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 6, CC BY 4.0. Original publisher diagrams and image assets are not reproduced.",
+        "First-party 6.1 Math Talk: Transformations — show original coordinate-shape PAIRS using a triangle with vertices (0,0),(2,0),(0,1): one copy translated 3 units right, one reflected across the y-axis and one rotated 90 degrees about the origin. Students mentally identify a rigid motion or sequence carrying each original onto its copy, defend why lengths and angles are preserved, and point out when edges of the translated copies lie on parallel lines. Source pairs were image-dependent and are not reused or claimed identical.",
+        "First-party 6.2 Standing on the Shoulders of Giants — mark line m and point C STRICTLY OFF it, list available previous constructions, then ask students to develop a perpendicular through C WITHOUT pre-supplying a full algorithm. A successful strategy draws a circle centred C cutting m in distinct A,B, then constructs the perpendicular bisector of chord AB through C by equal-radius arc intersections. Require radius greater than the shortest distance C-to-m (tangency gives only one point), peer critique and labelled drawing.",
+        "First-party 6.3 Parallel Constructions Challenge — given the SAME line m and off-line point C, construct a line n through C parallel to m using the perpendicular from 6.2 and a second perpendicular to it through C. Explain Euclidean parallelism by the two perpendicular lines-to-one-transversal condition; distinguish the through-C constraint from merely drawing an arbitrary parallel.",
+        "Optional 6.2 exploration: begin with AB of unit length, bisect AB to mark distance 1/2 from A, bisect an available subsegment to mark 1/4 or 3/4, and repeat to produce rational distances k/2^n in [0,1]. These are dyadic fractions only; do NOT claim the method produces every real number. This optional exploration is not required for the mandatory 6.2 construction.",
+        "New first-party restricted-publisher-Cool-down substitute: a point C is not on line m. Use perpendicular/compass constructions to locate the foot F and the point C' on the opposite side of m such that C,F,C' are collinear and FC'=FC. Explain why m is the perpendicular bisector of CC' and why this operation is a reflection in m; use paper labels and teacher review."
       ],
       "KeyConcepts": [
         {
@@ -294,12 +299,18 @@
           "Mistake": "Constructing two perpendiculars but placing the second one through the wrong point.",
           "WhyWrong": "The line may be parallel but will fail the requirement to pass through C.",
           "Correction": "Draw the second perpendicular to the first line specifically at C, and verify C is on the result."
+        },
+        {
+          "Mistake": "Asserting an off-line perpendicular when the first circle centred at C only touches m, leaving one chord intersection.",
+          "Correction": "Choose opening strictly greater than the shortest distance C to m, label two distinct intersections A,B and construct their bisector."
         }
       ],
       "SummaryPoints": [
         "An exterior-point perpendicular can be made by bisecting a chord defined by an exterior-centred circle.",
         "A parallel through C can be constructed by drawing a perpendicular to a perpendicular through C.",
-        "Teacher reviews authentic construction steps, not an unverified machine-graded proxy."
+        "Teacher reviews authentic construction steps, not an unverified machine-graded proxy.",
+        "First recall translations, reflections and rotations as rigid transformations; then adapt perpendicular constructions to a point C not on line m.",
+        "Use the off-line perpendicular and a second through-C perpendicular for the parallel challenge; a mirror-point Cool-down can be teacher scored on paper."
       ],
       "Visuals": [],
       "Videos": []
