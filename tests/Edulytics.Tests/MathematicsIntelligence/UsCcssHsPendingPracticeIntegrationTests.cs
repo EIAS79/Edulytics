@@ -71,6 +71,46 @@ public sealed class UsCcssHsPendingPracticeIntegrationTests
     }
 
     [Fact]
+    public void AllTwentyFivePendingQuestionFamiliesHaveReviewOnlyTypedPresentationContracts()
+    {
+        var review = LessonPracticeInteractionRegistry.PendingForAudit;
+        Assert.Equal(25, review.Count);
+        foreach (var pending in review)
+        {
+            Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(pending.FamilyId));
+            Assert.True(LessonPracticeInteractionRegistry.TryResolvePendingForAudit(
+                pending.FamilyId, out var resolved));
+            Assert.Same(pending, resolved);
+            Assert.False(LessonPracticeInteractionRegistry.TryResolve(
+                pending.FamilyId, out var learner));
+            Assert.Null(learner);
+            Assert.DoesNotContain(LessonPracticeInteractionRegistry.All,
+                x => x.FamilyId == pending.FamilyId);
+        }
+
+        foreach (var family in new[]
+        {
+            "usccss.hs.matrix.solve_3x3",
+            "usccss.hs.log.change_of_base_equation",
+            "trig.unit_circle_source_exact_angles",
+            "trig.principal_inverse_source_branches",
+            "coordinates.focal_conics_source_equation"
+        })
+        {
+            Assert.True(LessonPracticeInteractionRegistry.TryResolvePendingForAudit(
+                family, out var contract));
+            Assert.NotNull(contract);
+            Assert.Equal(LessonPracticeInteractionKind.StructuredEntry,
+                contract!.InteractionKind);
+        }
+
+        Assert.True(LessonPracticeInteractionRegistry.TryResolvePendingForAudit(
+            "usccss.hs.log.compare_different_bases", out var comparison));
+        Assert.Equal(LessonPracticeInteractionKind.RelationChoice,
+            comparison!.InteractionKind);
+    }
+
+    [Fact]
     public void PendingQuestionsRemainUnavailableToSelectedStudentsAndOtherCourseContractsStayReady()
     {
         var pending = PendingFourthCourseContracts();
