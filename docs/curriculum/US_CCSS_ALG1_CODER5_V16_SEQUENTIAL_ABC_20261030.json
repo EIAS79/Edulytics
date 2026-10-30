@@ -4,9 +4,9 @@
   "pr": 589,
   "branch": "feat/us-ccss-alg1-coder5-full-course-20261028",
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
-  "recordedAtUtc": "2026-10-30T14:28:51.148902+00:00",
-  "lastReviewed": "U01:L12",
-  "nextCanonical": "U01:L13",
+  "recordedAtUtc": "2026-10-30T14:29:38.407033+00:00",
+  "lastReviewed": "U01:L13",
+  "nextCanonical": "U01:L14",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -792,20 +792,80 @@
       "authoringClosedAtUtc": "2026-10-30T14:28:51.148902+00:00",
       "startedAtUtc": null,
       "timeNote": "not captured; no elapsed time invented"
+    },
+    {
+      "ordinal": 13,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
+      "title": "More Standard Deviation",
+      "sourceEdition": "IM Algebra1 First Edition local teacher/student HTML, CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\13\\preparation.html",
+          "sha256": "5d28360e2f12b3cd6b8198a7c9858d9c373e6e4d1479dd93ba689f76a3955da2"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\13\\index.html",
+          "sha256": "45f2325815447c4104c1ff71442b0dadbb7f39ed939eec6bec68b712d8455d7e"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\13\\index.html",
+          "sha256": "d0ddd813ca5c1f6bec9b66c0063e509dc9dcf0f3f0cac9165bbf91beaba06420"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\13\\practice.html",
+          "sha256": "d223d606d0234ea972895a3d6f1cb13d83228cdf8d2e5042230baf80bde0e1d0"
+        }
+      },
+      "sourceRoles": [
+        "HSS-ID.A.1 BuildingOn",
+        "HSS-ID.A.2 Addressing",
+        "HSS-ID.A.3 BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "Partner info-gap: request missing context and compare two hypothetical groups by SD.",
+        "Both means13; compute SD sqrt5 and sqrt20, plus shifting all observations by 5.",
+        "Correct spreads|Information requests and units|No fabricated partner turns"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l13-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l13-source-abc-authoring-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "sourceReview": "four original local HTMLs and role crosswalk; independent first-party equivalent",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "fixes": [
+          "add task-specific source crosswalk and original 6-point Cool-down"
+        ],
+        "authenticatedRenderer": "STAGE_D_NOT_RUN"
+      },
+      "C": {
+        "status": "AUTHORING_CLOSED",
+        "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L13_AUTHORING_C_20261030.json",
+        "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
+        "runtimeEnabled": false,
+        "humanGrading": true
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "authoringClosedAtUtc": "2026-10-30T14:29:38.407033+00:00",
+      "startedAtUtc": null,
+      "timeNote": "not captured; no elapsed time invented"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 12,
-    "B_CLOSED": 12,
-    "C_PREPARED": 12,
-    "ABC_READY_FOR_D": 12,
+    "A_CLOSED": 13,
+    "B_CLOSED": 13,
+    "C_PREPARED": 13,
+    "ABC_READY_FOR_D": 13,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 120,
-    "SOURCE_REVIEW_CUMULATIVE": 33,
+    "REMAINING": 119,
+    "SOURCE_REVIEW_CUMULATIVE": 34,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 0,
@@ -825,7 +885,8 @@
     "L09_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L10_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L11_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
-    "L12_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
+    "L12_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
+    "L13_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
@@ -837,12 +898,12 @@
     "unitsABCCLosed": 0,
     "status": "UNIT_IN_PROGRESS",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 12,
+    "newlyABCClosed": 13,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
@@ -858,7 +919,7 @@
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
   "unitStatus": "UNIT_IN_PROGRESS",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L13",
   "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
 }
