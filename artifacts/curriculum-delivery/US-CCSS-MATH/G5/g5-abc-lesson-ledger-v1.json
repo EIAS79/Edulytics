@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L07",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L08",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 18,
+    "READY_FOR_D": 19,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 130
+    "BLOCKED": 0,
+    "REMAINING": 129
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -1117,23 +1117,18 @@
       "reuseFinding": "REUSE_EXACT_SOURCE_9_7_MILE_UNIT_FRACTIONS_AND_THREE_MILE_FOUR_PERSON_RELAY; APPEND_SOURCE_INDEPENDENT_11_MILE_EXIT",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE exact a/4 or a×1/4 numeric fraction family; one EXTEND of source-aligned fraction representation / rubric for multiple matches",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u02-l07-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:33:08.293Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T20:16:20.409Z",
+      "elapsedSeconds": 27792,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated single integration writer #592",
-        "reason": "No verified selected source-matched unit fraction practice and diagram/story teacher-feedback route",
-        "acceptWhen": "One family-level fraction-times-whole selected and open rubric integrated with independent edge cases"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "IM 2021 U02 L07 original teacher lesson/preparation and Student Facing",
         "sourceActivities": [
@@ -1155,7 +1150,17 @@
         "before": "Source narrative and numeric cases already correct, no original Edulytiks exit.",
         "after": "Preserved source family and add 11-mile quarter route original exit, teacher rubric, mathematical edge fixtures."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u02.l07.unit_fraction_race_distances",
+        "source": "Our-CS original 2021 U02 L07 lesson/preparation",
+        "teacher": "Teacher checks number-line estimation not fabricated as exact without reveal, one-fourth-of-nine and seven diagrams, four-person 3-mile relay, and story/diagram/expression matches.",
+        "digital": "UNIT_FRACTION_MULTIPLICATION_CHOICE_ONLY",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "sourceArt": "NOT_COPIED",
+        "parentHead": "528ec177dd68378ca4713996f3d63cc54ea14f7f"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L08",

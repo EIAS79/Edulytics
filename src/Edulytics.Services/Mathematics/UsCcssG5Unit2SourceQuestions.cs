@@ -62,6 +62,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Which choice equals 3/2 miles?","1 1/2 miles","3 1/2 miles","2/3 mile"),
                 new("If two runners each travel 3/2 miles, what whole distance is covered?","3 miles","3/2 miles","6 miles")
             ],
+                        ["usccss.g5.u02.l07.unit_fraction_race_distances"]=[
+                new("Mai runs exactly one fourth of a NINE-mile road. How far does she run?","9/4 miles","4/9 mile","9 miles"),
+                new("Han runs exactly one fourth of a SEVEN-mile road. How far does he run?","7/4 miles","4/7 mile","7 miles"),
+                new("Four runners equally share THREE miles. What distance each?","3/4 mile","4/3 miles","1/4 mile"),
+                new("Which multiplication matches 9÷4?","9×1/4","4×1/9","9×4"),
+                new("9/4 miles is what mixed distance?","2 1/4 miles","1 3/4 miles","4 1/2 miles"),
+                new("7/4 miles is what mixed distance?","1 3/4 miles","2 1/4 miles","4 1/7 miles")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

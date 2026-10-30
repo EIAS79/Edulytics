@@ -39,4 +39,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L05','usccss.g5.u02.l05.fraction_division_g
 test('G5 U02 L06 source fraction multiplication and divided-whole correspondence',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L06','usccss.g5.u02.l06.relay_division_unit_fraction',["3/2 miles","3×(1/2) miles","3 half-mile parts","3/2 miles"],["2/3 mile","2×(1/3) miles"]);
 });
+test('G5 U02 L07 source fraction multiplication and divided-whole correspondence',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L07','usccss.g5.u02.l07.unit_fraction_race_distances',["9/4 miles","7/4 miles","3/4 mile","9×1/4"],["4/9 mile","4/7 mile"]);
+});
 // NEXT_LESSON_TEST
