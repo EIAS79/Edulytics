@@ -6,11 +6,59 @@
     "07_Grade_7_OUR_IM_Student/1/1/index.html"
   ],
   "evidence": "Local teacher and student source read. Source activities: Printing Portraits, Scaling F and Pairs of Scaled Polygons. Existing F SVG and teacher rubric are reusable.",
-  "A_STATUS": "REVIEWED_GAPS_OPEN",
-  "B_STATUS": "CANDIDATE_NOT_VERIFIED",
-  "C_STATUS": "BLOCKED_ISSUE_592",
+  "A_STATUS": "SOURCE_EQUIVALENT_GRADE_INTERACTIONS_AUTHORED_PENDING_AUTHENTICATED_DELIVERY",
+  "B_STATUS": "ORIGINAL_COOLDOWN_IN_GRADE_OWNED_VIEW_PENDING_SHARED_RENDERER_INVOCATION",
+  "C_STATUS": "BLOCKED_EXACT_PRACTICE_SELECTION_AND_TEACHER_SCORING_ISSUE_592",
   "testExecutionStatus": "NOT_RUN",
   "READY_FOR_STAGE_D": false,
-  "blocker": "Authentic image sliders and complete card activity absent; shared selected Practice family, student SVG rendering and teacher scoring unverified",
-  "nextLesson": "DO_NOT_ADVANCE"
+  "blocker": "G7 opt-in partial is not proven invoked by shared Rich V2; exact lesson Practice routing/generator/verifier/feedback and teacher-scored work/persistence remain unverified; no Stage D.",
+  "nextLesson": "DO_NOT_ADVANCE_U01_L02_UNTIL_ABC_CLOSED",
+  "originalLocalSourcePaths": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM\\1\\1\\preparation.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM\\1\\1\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM_Student\\1\\1\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM_Student\\1\\1\\practice.html"
+  ],
+  "sourceParity": {
+    "Printing Portraits": "Equivalent first-party sliders use uniform vs nonuniform scale of a 4:3 original frame; not publisher photographs or sliders.",
+    "Scaling F": "Existing scale-2 vs stretched F SVG and teacher rubric retained.",
+    "Pairs of Scaled Polygons": "Ten newly authored and numerically defined polygon cards, with five distinct matching pairs and explanation field.",
+    "CoolDown": "Separate authored right triangle (3,4,5) with k=2 or nonuniform 6,8,9 and a teacher-reviewed k=1/2 drawing.",
+    "unverifiedOriginalAssets": [
+      "Publisher portrait images not reproduced",
+      "Publisher ten-card blackline art not reproduced",
+      "Original gated publisher Cool-down not inspected"
+    ]
+  },
+  "gradeOwnedViewPath": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "clientInteractionPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-activities.js",
+  "cooldownPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l01-edulytiks-cooldown.json",
+  "cooldownOriginalStatus": "NOT_VERIFIED_GATED",
+  "cooldownEdulytiksStatus": "GRADE_VIEW_AUTHORED_NOT_AUTHENTICATED",
+  "teacherRubric": "12-point criteria; drawing, three ratios, preserved angles and explanation. No automated grading/persistence.",
+  "practiceStrategy": "EXTEND_EXISTING_GEOMETRY_FAMILY_ONLY_IF_NEEDED_SINGLE_WRITER_ISSUE_592",
+  "practiceAcceptanceCases": [
+    "k=2 accepted",
+    "k=1/2 accepted",
+    "6/3=8/4=2 but 9/5=1.8 rejected",
+    "rotated and translated scaled copy accepted",
+    "malformed/disconnected coordinates rejected",
+    "teacher evaluates drawing/explanation; do not auto-pass"
+  ],
+  "sharedPR599": "OPEN_DRAFT_UNMERGED_NOT_ASSUMED_INVOKED",
+  "testFile": "tests/academic-us-ccss-g7-u01-l01-abc-fixture.test.cjs",
+  "testAuthoringStatus": "AUTHORED_NOT_RUN",
+  "startedAt": "2026-10-30T07:30:21Z",
+  "lastEvidenceCommitAt": "2026-10-30T07:32:53Z",
+  "elapsedActiveWriteSeconds": 152,
+  "elapsedDefinition": "Measured elapsed wall-clock seconds from first to latest new GitHub commit, not an estimate of full source-review time.",
+  "closedAt": null,
+  "closedElapsedSeconds": null,
+  "closureCommitSHA": null,
+  "appliedCommits": [
+    "94b9b7332889a9060c32add2fff063f4c60176a3",
+    "229855f7fc6100b7f9623c2172ba7b5753e8fde7",
+    "4627c7aa9ac6fc1db72445c816056d0e52968d72",
+    "453a22ba35d9a2c6b15fa6397646daa4105637e3"
+  ]
 }
