@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L03",
+  "originalLocalSourcePaths": [
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\3\\preparation.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\1\\3\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\3\\index.html",
+    "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\1\\3\\practice.html"
+  ],
+  "startedAt": "2026-10-30T08:01:50.460Z",
+  "reviewedAt": "2026-10-30T08:01:52.979Z",
+  "closedAt": null,
+  "commitSHA": null,
+  "A_STATUS": "A_CLOSED_SOURCE_ALIGNED_FIRST_PARTY_DRAWING_AND_DECOMPOSITION",
+  "B_STATUS": "B_CLOSED_LESSON_RICHV2_DRAWING_AND_ORIGINAL_COOLDOWN",
+  "C_STATUS": "C_BLOCKED_SHARED_EXACT_POLYGON_AREA_PRACTICE",
+  "READY_FOR_STAGE_D": false,
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED_NOT_LIVE_ASSESSMENT",
+  "sourceOriginalActivities": [
+    {
+      "id": "3.1",
+      "focus": "equal shaded areas under move of matching piece, teacher reasoning",
+      "alternative": "4×4 cutout drawing; white hole and attached unit square, area16"
+    },
+    {
+      "id": "3.2",
+      "focus": "on-grid rectangle/trapezoid pieces and measured/unknown interior holes",
+      "alternative": "unit-grid A=24 B=27, open C/D student decomposition and teacher proof"
+    },
+    {
+      "id": "3.3",
+      "focus": "source off-grid 3 figures with specified legs and hole",
+      "alternative": "15,16,21 cm² from measured triangle legs and known inner square only"
+    },
+    {
+      "id": "practice",
+      "focus": "original drawings and explanations, comparison of reshaped regions",
+      "alternative": "original authored exit-check requires independent graded math and human drawn-proof rubric"
+    }
+  ],
+  "reuse": "Previous V12 off-grid fixes 15/16/21 and existing 4 Rich V2 examples preserved. 2 new examples, populated previously empty visual Rows, no shared code changed.",
+  "sourceLimitations": [
+    "Original figure pixels/teacher login and original Cool-down not accessed; first-party equivalent rather than copied image",
+    "No original applet operated; paper constructions and teacher scoring specified",
+    "Authenticated rendering/teacher submission persistence reserved D"
+  ],
+  "C": {
+    "outcome": "CCSS:6.G.A.1",
+    "mapping": "No explicit approved lesson-skill mapping for L03",
+    "defect": "Existing shape-properties/dimension fallback not proof of grid/off-grid composite shaded area plus human reasoning assessment",
+    "owner": "Supervisor 1 explicitly appointed Grade 6 shared single-writer",
+    "nextAction": "Trace selected contract and EXTEND/REUSE verified plane-area family; grade 15/16/21 with correct cm² units, reject invented hole, handle teacher-scored drawings",
+    "testCases": [
+      "correct 15,16,21 cm²",
+      "wrong 27 as area B or 25−2 as C",
+      "equivalent 2(5×3/2) vs 5×3",
+      "malformed number/unit/hole measurement",
+      "numeric-only answer cannot grade traced graph-paper construction"
+    ]
+  },
+  "teacherRubric": {
+    "max": 8,
+    "criteria": [
+      "Correct shaded-region boundaries 2",
+      "Measured decomposition/no guesses 2",
+      "Appropriate area units 2",
+      "Second method and justified matching/rearrangement 2"
+    ]
+  },
+  "testExecution": "AUTHORED_NOT_RUN",
+  "blockedReturn": true
+}

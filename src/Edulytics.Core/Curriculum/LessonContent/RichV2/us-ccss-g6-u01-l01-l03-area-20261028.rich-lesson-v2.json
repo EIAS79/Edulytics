@@ -481,7 +481,8 @@
         "Learning goal: Compare shaded regions and find polygon areas by decomposing, rearranging and subtracting known missing parts.",
         "When a shaded region is moved from one place to another, a missing piece and an exactly matching attached piece can cancel without changing total area. A 4-by-4 shaded square has area 16; removing one unit square and attaching it outside results in 16−1+1=16 square units. The outline changes, but the shaded area does not.",
         "For grid-based figures, combine rectangles or triangles without counting every square. For off-grid figures use labeled perpendicular lengths. If a missing tilted square has unknown area, do not invent its measurement: a valid approach may be to decompose and rearrange surrounding measurable triangles. Explain why each method covers only the shaded part.",
-        "Source-aligned off-grid reasoning: distinguish an unmeasured tilted square from a tilted square whose side is explicitly known. In a first-party numerical reconstruction based on the public teacher text, two 5-cm-by-3-cm right triangles form 15 cm²; four 2-cm-by-4-cm right triangles form 16 cm² around an unknown-size inner tilted square; and a 5-cm outer square with a labeled 2-cm inner square leaves 25 − 4 = 21 cm² shaded. Never subtract an unmeasured hole merely because an outline resembles a square."
+        "Source-aligned off-grid reasoning: distinguish an unmeasured tilted square from a tilted square whose side is explicitly known. In a first-party numerical reconstruction based on the public teacher text, two 5-cm-by-3-cm right triangles form 15 cm²; four 2-cm-by-4-cm right triangles form 16 cm² around an unknown-size inner tilted square; and a 5-cm outer square with a labeled 2-cm inner square leaves 25 − 4 = 21 cm² shaded. Never subtract an unmeasured hole merely because an outline resembles a square.",
+        "First-party source-task paper models for 3.1–3.3: trace a shaded 4-by-4 square, remove one unit square from its interior, then reattach it against an outside edge to prove 16−1+1=16 without changing the shaded area. For grid activity 3.2, decompose figures into known rectangles and rearranged triangles, distinguishing a fully measured 3-by-3 square hole from an UNKNOWN tilted inner square. For off-grid activity 3.3, compare 15, 16 and 21 square-centimeter regions only from labeled base/height or known hole dimensions. Learner-created rearrangements, grid diagrams and strategy justifications require teacher review, not a scalar-only grade."
       ],
       "KeyConcepts": [
         {
@@ -554,6 +555,34 @@
           ],
           "Answer": "A = 15 cm²; B = 16 cm²; C = 21 cm². Figure B requires decomposition into the four measurable shaded triangles, not subtraction of an unmeasured central square.",
           "Check": "The public teacher activity's textual measurements and figure descriptions support these numbers; source graphic pixels, exact shapes, learner rendering and student sketches were not independently verified. A teacher must assess explanations and correct choice of strategy."
+        },
+        {
+          "Title": "Source-skill grid areas with known and unknown holes — first-party drawing",
+          "Question": "On unit graph paper, construct a 6-by-6 outer square and leave a 3-by-3 square unshaded. Find its shaded area. Now sketch a separate 6-by-6 square with an unshaded rotated inner square whose dimensions are not given; can you determine the shaded area from only that description?",
+          "Method": "Subtract a measurable hole when the actual measurements are known; otherwise require a measurable diagram, a justified decomposition or more information.",
+          "Steps": [
+            "Draw the 6-by-6 region: 36 square units.",
+            "For the first figure, remove a known unshaded 3-by-3 area of 9 square units; shaded area is 36−9=27.",
+            "For the second figure, the tilted-square side length and therefore its area are unspecified: an enclosing 36 does not establish the difference.",
+            "State what additional measurements or non-overlapping triangles would be needed to determine it.",
+            "Teacher evaluates the diagram and the student's explanation of why information is sufficient or missing."
+          ],
+          "Answer": "The measured-hole figure has shaded area 27 square units. The rotated-hole description alone does not give enough information for a unique shaded area.",
+          "Check": "The figure specifications are first-party drawing prompts based on source mathematical reasoning, not publisher figure pixels. Do not guess the unmeasured hole or auto-grade a missing construction."
+        },
+        {
+          "Title": "Edulytiks-original Cool-down — subtract and rearrange known pieces",
+          "Question": "An 8-by-5 rectangular shaded region has a 3-by-2 rectangle cut from a corner and placed outside against a different edge without overlap. Compare the shaded areas before and after the move. A student claims the new area is 34 because 8×5−3×2=34. Is the claim correct?",
+          "Method": "Reason about the actual moved piece as well as the hole; teacher assesses a labeled original before/after sketch or accessible coordinate description.",
+          "Steps": [
+            "The initial rectangle has area 8×5=40 square units.",
+            "The removed corner is area 3×2=6, so the remaining region alone covers 34.",
+            "The same moved 6-unit piece is attached to the new boundary with no overlap, restoring total shaded area 34+6=40.",
+            "The incorrect 34 claim omits the moved area; a reshaped outline does not mean a changed area.",
+            "Teacher verifies the piece is not duplicated or overlapped in the learner's diagram."
+          ],
+          "Answer": "The before/after shaded areas are both 40 square units; 34 counts only the remaining region before adding the moved piece.",
+          "Check": "Edulytiks-original exit check, NOT the original gated publisher Cool-down. Mathematical area is checkable; the student-created rearrangement and explanation remain teacher-reviewed, not actual authenticated Practice proof."
         }
       ],
       "CommonMistakes": [
@@ -589,7 +618,30 @@
             "B: one unshaded interior hole",
             "Shaded area A = shaded area B = 16"
           ],
-          "Rows": []
+          "Rows": [
+            {
+              "Label": "Figure A — complete 4 × 4 shaded square",
+              "Cells": [
+                "Shade all sixteen 1-by-1 cells of a 4 × 4 array: area = 16 square units.",
+                "A cut-out made of matching cells can be traced and compared to the next design."
+              ]
+            },
+            {
+              "Label": "Figure B — move exactly one unchanged shaded cell",
+              "Cells": [
+                "Remove one shaded unit cell inside the 4 × 4 array and leave a white hole.",
+                "Place exactly the same 1-by-1 shaded piece against the exterior, without overlapping another tile.",
+                "Compare shaded area 16 − 1 + 1 = 16 square units with Figure A. The WHITE hole is excluded."
+              ]
+            },
+            {
+              "Label": "Student response and reasoning",
+              "Cells": [
+                "Trace or describe the removed and reattached piece so both pictures use the same inventory.",
+                "Teacher checks the hole is actually white, attached piece is outside, all shaded cells are counted once, and why the changed outline does not change area."
+              ]
+            }
+          ]
         },
         {
           "Kind": "ShapeDecomposition",
@@ -607,7 +659,38 @@
             "C: subtract only known inner area",
             "State square-centimeter units"
           ],
-          "Rows": []
+          "Rows": [
+            {
+              "Label": "3.2 — Grid models from local source",
+              "Cells": [
+                "Figure A: six-sided shaded corner of 24 unit squares; calculate by rectangles instead of counting every unit cell.",
+                "Figure B: 6-by-6 outer square with an unshaded 3-by-3 square; 36 − 9 = 27 square units.",
+                "Figures C/D: shifted triangles and a tilted inner square; use measured rectangles/triangles and rearrangement; do not assert a side length from the ALT description alone.",
+                "Optional source extension: rearrange shaded pieces from C to D; a teacher must confirm the diagram with no overlap."
+              ]
+            },
+            {
+              "Label": "3.3 off-grid A — two triangles",
+              "Cells": [
+                "Each right triangle has perpendicular lengths 5 cm and 3 cm and area (5 × 3)/2 = 7.5 cm².",
+                "Two equal right triangles shade 15 cm²."
+              ]
+            },
+            {
+              "Label": "3.3 off-grid B — unknown tilted inner square",
+              "Cells": [
+                "Four shaded right triangles each have perpendicular legs 2 cm and 4 cm.",
+                "Area = 4 × (2 × 4)/2 = 16 cm². Do not subtract an invented hole dimension."
+              ]
+            },
+            {
+              "Label": "3.3 off-grid C — known square-with-hole",
+              "Cells": [
+                "Outer square side 5 cm yields 25 cm²; inner unshaded square side 2 cm yields 4 cm².",
+                "Shaded area = 25 − 4 = 21 cm²."
+              ]
+            }
+          ]
         }
       ],
       "Videos": []
