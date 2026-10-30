@@ -53,7 +53,7 @@ test('U05 L10 previously authored function arithmetic and composition',()=>{
  assert.notEqual(f(g(2)),g(f(2)));
  assert.ok(!Number.isFinite((2*1+3)/(1-1)));
  const r=ledger.lessons.find(x=>x.lessonCode.endsWith(':U05:L10'));
- assert.equal(r.contentStatus,'REUSE_SOURCE_REVIEWED_RUNTIME_PENDING');
+ assert.equal(r.contentStatus,'CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION');
 });
 test('U05 L11 physically bounded temperature trend vs misleading quadratic',()=>{
  const T=t=>23-15*.6**t,Q=t=>8+6*t-.8*t*t;

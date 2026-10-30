@@ -49,11 +49,11 @@
     "e551ae71c463a326123d1d1ce254799e0da5836a"
   ],
   "checkedStaticCounts": {
-    "sourceGroundedContentEdits": 118,
+    "sourceGroundedContentEdits": 119,
     "previouslyAuthoredPendingReview": 0,
     "remainingDefectTriage": 0,
     "exactExplicitPracticeMappingMetadata": 2,
-    "sourceReviewedReused": 2,
+    "sourceReviewedReused": 1,
     "priorSessionUnit4EditsAwaitingIndependentSourceReview": 0,
     "unit4SecondPassReviewed": 15
   },
@@ -3691,7 +3691,7 @@
         "Addressing",
         "BuildingTowards"
       ],
-      "contentStatus": "REUSE_SOURCE_REVIEWED_RUNTIME_PENDING",
+      "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
       "sourceToStudentCompared": true,
       "practiceMappingExplicit": true,
       "practiceFamiliesExplicit": [
@@ -3699,17 +3699,18 @@
         "usccss.hs.function_composition"
       ],
       "effectivePracticeStatus": "NOT_VERIFIED",
-      "runtimeMaterializationStatus": "BLOCKED_APPROVED_PREDECESSOR_PARITY",
-      "testsStatus": "MATH_TEST_PENDING",
+      "runtimeMaterializationStatus": "BLOCKED_NEW_UNAPPROVED_SUCCESSOR_CONTENT_VERSION",
+      "testsStatus": "NEW_INDEPENDENT_SOURCE_TEST_COMMITTED_NOT_EXACT_HEAD_NODE_OR_DOTNET_VERIFIED",
       "academicApproval": "NOT_VERIFIED",
       "ownerUat": "NOT_VERIFIED",
-      "sourceReviewStatus": "IM_FIRST_EDITION_TEACHER_AND_STUDENT_DIRECT_CHECK_2026_10_29",
+      "sourceReviewStatus": "P0_FIRST_EDITION_10_1_10_2_10_3_LEMONADE_SOURCETASK_REPAIRED_NO_APPROVAL",
       "publisherTeacherLearningGoal": "Source-reviewed existing function arithmetic plus separately labeled original composition extension",
-      "originalFirstPartyMathematicsVerification": "B/P books per person; quotient denominator exclusion; original extension composition order",
+      "originalFirstPartyMathematicsVerification": "2010 2530/309.35=8.1784; 2016 2700/323.41=8.3485; all seven R=B/P values; graph sums at x=0; optional product zeros 1,2; lemonade P(4)=-0.2 P(5)=1, A(0) undefined",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/HS/students/3/5/10/index.html",
       "sourceRights": "Illustrative Mathematics Algebra 2 First Edition 2019–2021 CC BY 4.0; Edulytiks original adaptation; no publisher endorsement",
       "practiceTrace": "EFFECTIVE_LESSON_PRACTICE_NOT_VERIFIED",
-      "firstPartyExtension": "Existing independently authored composition worked examples preserved; publisher's lesson addresses arithmetic of functions, not composition"
+      "firstPartyExtension": "Existing independently authored composition worked examples preserved; publisher's lesson addresses arithmetic of functions, not composition",
+      "sourceComparedEvidence": "First Edition 10.1-10.3 books/population 2010-2016, sum-graphs E+L/M/N/P/Q and original lemonade summary; mathematical oracle fixture; pending authenticated visual and academic acceptance"
     },
     {
       "ordinal": 85,

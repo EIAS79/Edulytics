@@ -6,7 +6,7 @@ const ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/algebra2-1
 const close=(a,b,e=1e-9)=>assert.ok(Math.abs(a-b)<=e,String(a)+' != '+String(b));
 const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
 const combinations=(a,k)=>k===0?[[]]:a.length<k?[]:combinations(a.slice(1),k-1).map(x=>[a[0],...x]).concat(combinations(a.slice(1),k));
-test('120 canonical source-linked identities, 118 edits and two reuse, no academic certification',()=>{
+test('120 canonical source-linked identities, 119 edits and one reuse, no academic certification',()=>{
  assert.equal(pack.lessons.length,120);assert.equal(ledger.lessons.length,120);
  for(let i=0;i<120;i++){
   const p=pack.lessons[i],r=ledger.lessons[i];
@@ -14,8 +14,8 @@ test('120 canonical source-linked identities, 118 edits and two reuse, no academ
   assert.equal(p.sourceSha256,r.sourceSha256);assert.equal(p.canonicalBodySha256,r.baselineCanonicalBodySha256);
   assert.notEqual(r.academicApproval,'APPROVED');
  }
- assert.equal(ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length,118);
- assert.equal(ledger.lessons.filter(x=>x.contentStatus==='REUSE_SOURCE_REVIEWED_RUNTIME_PENDING').length,2);
+ assert.equal(ledger.lessons.filter(x=>x.contentStatus==='CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION').length,119);
+ assert.equal(ledger.lessons.filter(x=>x.contentStatus==='REUSE_SOURCE_REVIEWED_RUNTIME_PENDING').length,1);
  assert.equal(ledger.lessons.filter(x=>x.contentStatus==='CONTENT_DEFECT_TRIAGE_PENDING').length,0);
  assert.equal(ledger.nextCurriculumCursor.ordinal,121);
  assert.equal(ledger.claims.academicCourseComplete,false);

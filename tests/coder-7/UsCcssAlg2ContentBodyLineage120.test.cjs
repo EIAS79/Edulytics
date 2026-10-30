@@ -27,15 +27,15 @@ test('all 120 baseline/current body digests are independently reproducible with 
    assert.equal(row.academicAcceptance,'NOT_VERIFIED');assert.equal(row.runtimeAcceptance,'NOT_VERIFIED');
    same?unchanged++:changed++;
  }
- assert.deepEqual([changed,unchanged],[118,2]);
+ assert.deepEqual([changed,unchanged],[119,1]);
  assert.equal(audit.counts.changedBodiesRequiringSuccessorDecision,changed);
  assert.equal(audit.counts.unchangedReusedBodies,unchanged);
  for(const stage of ['academicallyAccepted','renderedAccepted','practiceAccepted','humanAccepted'])assert.equal(audit.counts[stage],0);
  assert.equal(audit.release,'NO_GO');assert.equal(audit.sharedVersionOwnerStatus,'PENDING');
 });
-test('two unchanged authored predecessors remain U02 L17 and U05 L10, not academic signoffs',()=>{
+test('one unchanged authored predecessor remains U02 L17, not academic signoff',()=>{
  const same=audit.lessons.filter(x=>x.lineageState==='UNCHANGED_BASELINE_BODY').map(x=>x.lessonCode.slice(-7)).sort();
- assert.deepEqual(same,['U02:L17','U05:L10']);
+ assert.deepEqual(same,['U02:L17']);
  const l18=audit.lessons.find(x=>x.lessonCode.endsWith('U02:L18'));
  const fixture=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U02-L18-PRACTICE-RUBRIC-AND-VERSION-TRANSITION.json'),'utf8'));
  assert.equal(l18.predecessorCanonicalBodySha256,fixture.hashTransition.historicalApprovedCanonicalBodySha256);

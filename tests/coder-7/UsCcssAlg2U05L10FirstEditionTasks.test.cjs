@@ -1,0 +1,50 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'../..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+const pack=read('src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json'),ledger=read('artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/algebra2-120-lesson-progress.json'),audit=read('artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/algebra2-120-canonical-body-lineage-audit.json');
+const code='PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10',item=pack.lessons.find(x=>x.lessonCode===code),t=item.translations.find(x=>x.cultureCode==='en');
+const near=(actual,expected,epsilon=1e-5)=>assert.ok(Number.isFinite(actual)&&Math.abs(actual-expected)<epsilon,'got '+actual+' wanted '+expected);
+test('First Edition 10.1-10.2 all source years and book-sales-per-person ratios',()=>{
+ const B=[2530,2400,2730,2720,2700,2710,2700],P=[309.35,311.64,313.99,316.23,318.62,321.04,323.41];
+ const expected=[8.1784,7.7012,8.6945,8.6013,8.4740,8.4413,8.3485];
+ B.forEach((b,t)=>near(b/P[t],expected[t],.0001));
+ assert.match(item.sourceUrl,/\/teachers\/3\/5\/10\/preparation.html$/);
+ assert.match(t.workedExamples,/2700\/323\.41/);
+ assert.match(t.workedExamples,/ALL seven|2010.*2016/i);
+ assert.match(t.keyConceptsAndRules,/2530,2400,2730,2720,2700,2710,2700/);
+ near(B[6]/P[6]-B[0]/P[0],.1700972524546458,1e-10);
+ assert.ok(B[1]<B[0]&&B[2]>B[1]&&B[6]<B[5]);
+});
+test('First Edition 10.3 sketch sums and optional intersecting-line product',()=>{
+ assert.match(t.workedExamples,/E\(0\)=1/);
+ assert.match(t.workedExamples,/E\(x\)\+M\(x\)=E\(x\)-1/);
+ assert.match(t.workedExamples,/E\(x\)\+Q\(x\)/);
+ assert.match(t.workedExamples,/W\(x\)=U\(x\)V\(x\)/);
+ const U=x=>2-x,V=x=>x-1,W=x=>U(x)*V(x);
+ near(W(0),-2);near(W(1),0);near(W(2),0);near(W(1.5),.25);
+ near(W(-2),-12);assert.ok(W(1.5)>W(0));
+ assert.match(t.stepByStepSolutions,/teacher-scored representational feedback/);
+ assert.match(t.commonMistakes,/source graph equations not shown/);
+});
+test('First Edition lemonade summary uses whole-cup boundary and undefined quotient',()=>{
+ const C=n=>5+.8*n,Rev=n=>2*n,Profit=n=>Rev(n)-C(n),A=n=>Profit(n)/n;
+ near(Profit(0),-5);near(Profit(4),-.2);near(Profit(5),1);
+ near(A(5),.2);assert.ok(!Number.isFinite(A(0)));
+ assert.equal([0,1,2,3,4,5,6].find(n=>Profit(n)>0),5);
+ assert.match(t.workedExamples,/A\(n\)=P\(n\)\/n/);
+ assert.match(t.commonMistakes,/dividing P\(0\) by zero cups/);
+});
+test('U05 L10 successor remains unapproved, with truthful Practice/visual limitations',()=>{
+ const row=ledger.lessons.find(x=>x.lessonCode===code),lineage=audit.lessons.find(x=>x.lessonCode===code);
+ assert.equal(row.academicApproval,'NOT_VERIFIED');
+ assert.equal(row.contentStatus,'CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION');
+ assert.equal(row.effectivePracticeStatus,'NOT_VERIFIED');
+ assert.equal(row.runtimeMaterializationStatus,'BLOCKED_NEW_UNAPPROVED_SUCCESSOR_CONTENT_VERSION');
+ assert.equal(item.canonicalBodySha256,lineage.predecessorCanonicalBodySha256);
+ const fields=['title','explanation','keyConceptsAndRules','workedExamples','stepByStepSolutions','commonMistakes','quickSummary'];
+ const candidate=crypto.createHash('sha256').update(fields.map(k=>k+':'+t[k]).join('\n')).digest('hex');
+ assert.equal(candidate,lineage.authoredCandidateBodySha256);
+ assert.notEqual(candidate,item.canonicalBodySha256);
+ assert.equal(audit.counts.changedBodiesRequiringSuccessorDecision,119);
+ assert.equal(audit.counts.unchangedReusedBodies,1);
+});

@@ -6,12 +6,12 @@
   "sourceBranchHeadAtAudit": "07469b85cb809e34a015de7fc32966241597cd92",
   "sourceBranchHeadInterpretation": "HEAD at start of targeted course-owned U07:L14 repair; sourceContentBlobSha binds exact candidate pack bytes; neither is a release approval",
   "sourceContentPackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-alg2-phase29-v1.lesson-content-pack.json",
-  "sourceContentBlobSha": "b8d34814099eae6a73356ba9b0433fb2a5d70777",
+  "sourceContentBlobSha": "ef69ef8aaa82c548140cc1b73317843ed372001d",
   "digestDefinition": "SHA256 UTF-8 of seven English body fields each prefixed with key: and joined by LF, in order title, explanation, keyConceptsAndRules, workedExamples, stepByStepSolutions, commonMistakes, quickSummary",
   "counts": {
     "lessons": 120,
-    "changedBodiesRequiringSuccessorDecision": 118,
-    "unchangedReusedBodies": 2,
+    "changedBodiesRequiringSuccessorDecision": 119,
+    "unchangedReusedBodies": 1,
     "academicallyAccepted": 0,
     "renderedAccepted": 0,
     "practiceAccepted": 0,
@@ -856,8 +856,8 @@
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U05:L10",
       "sourceSha256": "e179a39196685a7055c257ae3eab85a2e6b80b4ab49864fb6b9251b8d349cf77",
       "predecessorCanonicalBodySha256": "6ac21cf73b77c5246ddd1ea26d0734207bcc3c78efc9bb8f02fc2d5c48fe736d",
-      "authoredCandidateBodySha256": "6ac21cf73b77c5246ddd1ea26d0734207bcc3c78efc9bb8f02fc2d5c48fe736d",
-      "lineageState": "UNCHANGED_BASELINE_BODY",
+      "authoredCandidateBodySha256": "7a5b882e7a31f37842f68c43126119886085a62e35ea821ef6aae33c14792c60",
+      "lineageState": "CHANGED_BODY_SUCCESSOR_NOT_APPROVED",
       "academicAcceptance": "NOT_VERIFIED",
       "runtimeAcceptance": "NOT_VERIFIED"
     },
@@ -1223,5 +1223,5 @@
     }
   ],
   "auditLastRefreshed": "2026-10-30",
-  "auditLastRefreshedScope": "U04:L07 source summary sodium-22 exponential function; unapproved authored candidate"
+  "auditLastRefreshedScope": "U05:L10 First Edition activities 10.1-10.3 and source summary; not academically approved"
 }
