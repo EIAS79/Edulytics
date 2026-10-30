@@ -351,6 +351,92 @@
         "stageD": "NOT_STARTED",
         "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
         "advancedToL02": false
+      },
+      "soloABC20261030": {
+        "version": "coder8-solo-abc-20261030",
+        "repository": "EIAS79/Edulytics",
+        "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+        "headBefore": "7bcd2c83ba4f346e36bb730c50f446c2cd57d19c",
+        "codeCommits": [
+          "2c3cee7cf10bed1c1f05ebafb484acef7ae10737",
+          "6b54277236ba67ad3982d105b692afbda399ed27"
+        ],
+        "fixturesCommit": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+        "contractSourcePath": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+        "contractTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+        "contractGitBlobSha": "37cda1b440a04ce63072e2409b5af7361f22415c",
+        "testChecks": {
+          "isolatedDotnetConsole": {
+            "status": "PASS",
+            "checksPassed": 28,
+            "checksTotal": 28,
+            "device": "Our-CS",
+            "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+          },
+          "nativeNodeFixtures": {
+            "status": "PASS",
+            "checksPassed": 32,
+            "checksTotal": 32,
+            "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+            "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+            "device": "Our-CS",
+            "scope": "Fixture/independent mathematical oracle, not selected Practice"
+          },
+          "focusedXunit": {
+            "status": "FAILED_INFRASTRUCTURE",
+            "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+            "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+            "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+          }
+        },
+        "sourceHashesMutated": false,
+        "canonicalBodyHashesMutated": false,
+        "manualCIStarted": false,
+        "stageD": "NOT_STARTED",
+        "merge": false,
+        "deploy": false,
+        "timing": {
+          "firstObservedLocal": "2026-10-30T13:02:41.2742220+01:00",
+          "l02PdfHashObservedLocal": "2026-10-30T13:05:10.3109856+01:00",
+          "lastObservedLocal": "2026-10-30T13:13:25.8329591+01:00",
+          "note": "Observation times only; exact per-lesson work start/end were not captured and are not inferred"
+        },
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED": true,
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+        "returnQueue": {
+          "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+          "state": "BLOCKED_EXTERNAL_FILE_OWNERSHIP_AND_VERSION_APPROVAL",
+          "blockingItems": [
+            {
+              "kind": "central_runtime_contract",
+              "needed": "Official lesson-selected Practice mapping and registered exact generator/interactions with M01–M11 evidence; PR600 remains unmerged pending. PR585 Coder8 may not touch central registries without exclusive file allocation.",
+              "fileOwnership": "Supervisor 3 to allocate exclusive edit owner for LessonPracticeContracts.cs, ExactSkillContractQuestionEngine.cs and required registry/mapping files, or accept verified integrated predecessor",
+              "reference": "https://github.com/EIAS79/Edulytics/pull/600"
+            },
+            {
+              "kind": "academic_content_predecessor",
+              "needed": "Authorize actual teaching-v4 and canonical body 7245f950... with source-aware approved predecessor; v1 proposal on PR600 does not authorize v4.",
+              "fileOwnership": "Academic/version approval authority; no source/canonical hash edits by Coder8"
+            }
+          ],
+          "courseOwnedDone": [
+            "Preserved A/B parity",
+            "Implemented isolated rational exact full-matrix and inverse+solution verifier",
+            "Corrected M03 fixture equivalent answer to require inverse AND x",
+            "Preserved M05/M11 human rubrics"
+          ],
+          "pendingC": [
+            "M04 row-reduction work rubric beyond solution-only automatic score",
+            "M05 and M11 teacher-scored evidence",
+            "M07/M08/M10 inverse-eligibility adapter from PR600 not yet selected",
+            "Actual lesson-selected generator and verifier adoption, explicit legal predecessor"
+          ]
+        }
       }
     },
     {
@@ -381,7 +467,105 @@
       "authenticatedRuntime": "NOT_RUN_453",
       "productionUat": "NOT_RUN",
       "previousUnapprovedV2BodySha256": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
-      "stageA": "STUDENT_ORIGINAL_TASK_PAGES_1_TO_4_VISUALLY_REVIEWED_AND_TARGETED_TEACHER_NOTES_INDEXED; ACADEMIC_APPROVAL_PENDING"
+      "stageA": "STUDENT_ORIGINAL_TASK_PAGES_1_TO_4_VISUALLY_REVIEWED_AND_TARGETED_TEACHER_NOTES_INDEXED; ACADEMIC_APPROVAL_PENDING",
+      "soloABC20261030": {
+        "version": "coder8-solo-abc-20261030",
+        "repository": "EIAS79/Edulytics",
+        "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+        "headBefore": "7bcd2c83ba4f346e36bb730c50f446c2cd57d19c",
+        "codeCommits": [
+          "2c3cee7cf10bed1c1f05ebafb484acef7ae10737",
+          "6b54277236ba67ad3982d105b692afbda399ed27"
+        ],
+        "fixturesCommit": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+        "contractSourcePath": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+        "contractTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+        "contractGitBlobSha": "37cda1b440a04ce63072e2409b5af7361f22415c",
+        "testChecks": {
+          "isolatedDotnetConsole": {
+            "status": "PASS",
+            "checksPassed": 28,
+            "checksTotal": 28,
+            "device": "Our-CS",
+            "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+          },
+          "nativeNodeFixtures": {
+            "status": "PASS",
+            "checksPassed": 32,
+            "checksTotal": 32,
+            "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+            "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+            "device": "Our-CS",
+            "scope": "Fixture/independent mathematical oracle, not selected Practice"
+          },
+          "focusedXunit": {
+            "status": "FAILED_INFRASTRUCTURE",
+            "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+            "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+            "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+          }
+        },
+        "sourceHashesMutated": false,
+        "canonicalBodyHashesMutated": false,
+        "manualCIStarted": false,
+        "stageD": "NOT_STARTED",
+        "merge": false,
+        "deploy": false,
+        "timing": {
+          "firstObservedLocal": "2026-10-30T13:02:41.2742220+01:00",
+          "l02PdfHashObservedLocal": "2026-10-30T13:05:10.3109856+01:00",
+          "lastObservedLocal": "2026-10-30T13:13:25.8329591+01:00",
+          "note": "Observation times only; exact per-lesson work start/end were not captured and are not inferred"
+        },
+        "A_CLOSED": false,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED": true,
+        "nextCursor": "RETURN_QUEUE",
+        "sourceTeacherLocalSha256": "7d3bc5c246ad1d648e0ee64edbcc844ec2bcb102f79543c77be215e6696df749",
+        "sourceTeacherProtectedSha256": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+        "sourceTeacherPdfPagesRead": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "returnQueue": {
+          "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+          "state": "BLOCKED_SOURCE_SHA_AND_CENTRAL_ROUTING",
+          "blockingItems": [
+            {
+              "kind": "teacher_pdf_sha",
+              "needed": "Investigate original MVP Math III Module 2 teacher local binary discrepancy. Current local 54-page teacher PDF SHA-256 7d3bc5c246ad1d648e0ee64edbcc844ec2bcb102f79543c77be215e6696df749 vs protected sourceSha256 590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3. No hash mutation until original edition/version and protected provenance are proven.",
+              "fileOwnership": "Curriculum source/academic authority; original-local source investigation by Coder8",
+              "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod2tn718.pdf"
+            },
+            {
+              "kind": "central_practice_routing",
+              "needed": "Review/authorize exact log selected lesson families and distinct auto-graded closed comparisons vs teacher-reviewed proof for L04/L05/L06/L13. Shared registry/engine requires exclusive file allocation by Supervisor3.",
+              "fileOwnership": "Supervisor3 to allocate central file ownership; Coder8 owns isolated course components"
+            },
+            {
+              "kind": "v4_content_predecessor",
+              "needed": "Independent approved teaching-v4 predecessor/translation lineage; v1 proposal is not an approved v4 transition.",
+              "fileOwnership": "Academic/version approval authority"
+            }
+          ],
+          "courseOwnedDone": [
+            "Compared source teacher Log Logic page 5–8 with current course content without recopying source",
+            "Preserved valid base and domain proof examples",
+            "Implemented fixed L06 four-interval typed answer model with teacher-reviewed proof",
+            "Preserved all fifteen L01–L15 fixtures and L04/L05/L06/L13 human rubrics"
+          ],
+          "pendingC": [
+            "All 15 fixtures need selected course-specific verified routing and feedback contract",
+            "L06 closed relation alone does not certify proof",
+            "Teacher workflow and authenticated score remain for Stage D"
+          ]
+        }
+      }
     }
   ],
   "verification": {
@@ -779,6 +963,84 @@
       "nodeRun": "TEST_NOT_RUN",
       "integratedLessonRoute": "INTEGRATION_PENDING",
       "proposedContentLineage": "V1_PROPOSAL_DOES_NOT_COVER_CODER8_V4"
+    },
+    "coder8SoloFullABC20261030": {
+      "version": "coder8-solo-abc-20261030",
+      "repository": "EIAS79/Edulytics",
+      "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+      "headBefore": "7bcd2c83ba4f346e36bb730c50f446c2cd57d19c",
+      "codeCommits": [
+        "2c3cee7cf10bed1c1f05ebafb484acef7ae10737",
+        "6b54277236ba67ad3982d105b692afbda399ed27"
+      ],
+      "fixturesCommit": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+      "contractSourcePath": "src/Edulytics.Services/Mathematics/UsCcssHsAdvAlgFuncSourceResponseContract.cs",
+      "contractTestPath": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvAlgFuncSourceResponseContractTests.cs",
+      "contractGitBlobSha": "37cda1b440a04ce63072e2409b5af7361f22415c",
+      "testChecks": {
+        "isolatedDotnetConsole": {
+          "status": "PASS",
+          "checksPassed": 28,
+          "checksTotal": 28,
+          "device": "Our-CS",
+          "note": "Small isolated console compiles exact course-owned service file; not xUnit, not real runtime."
+        },
+        "nativeNodeFixtures": {
+          "status": "PASS",
+          "checksPassed": 32,
+          "checksTotal": 32,
+          "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+          "testedGitHead": "b6e5b58f4fff3f7903f0f5682996dcf262d99f3a",
+          "device": "Our-CS",
+          "scope": "Fixture/independent mathematical oracle, not selected Practice"
+        },
+        "focusedXunit": {
+          "status": "FAILED_INFRASTRUCTURE",
+          "command": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj --filter FullyQualifiedName~UsCcssHsAdvAlgFuncSourceResponseContractTests --verbosity quiet",
+          "testedGitHead": "6b54277236ba67ad3982d105b692afbda399ed27",
+          "error": "MSB3883 System.OutOfMemoryException while compiling unrelated Edulytics.Web dependency; NO xUnit PASS claim"
+        }
+      },
+      "sourceHashesMutated": false,
+      "canonicalBodyHashesMutated": false,
+      "manualCIStarted": false,
+      "stageD": "NOT_STARTED",
+      "merge": false,
+      "deploy": false,
+      "timing": {
+        "firstObservedLocal": "2026-10-30T13:02:41.2742220+01:00",
+        "l02PdfHashObservedLocal": "2026-10-30T13:05:10.3109856+01:00",
+        "lastObservedLocal": "2026-10-30T13:13:25.8329591+01:00",
+        "note": "Observation times only; exact per-lesson work start/end were not captured and are not inferred"
+      },
+      "lessonStatus": {
+        "L01": {
+          "A_CLOSED": true,
+          "B_CLOSED": true,
+          "C_PREPARED": true,
+          "C_CLOSED": false,
+          "ABC_READY_FOR_D": false
+        },
+        "L02": {
+          "A_CLOSED": false,
+          "B_CLOSED": true,
+          "C_PREPARED": true,
+          "C_CLOSED": false,
+          "ABC_READY_FOR_D": false
+        }
+      },
+      "totals": {
+        "TOTAL": 2,
+        "AUTHORED": 2,
+        "A_CLOSED": 1,
+        "B_CLOSED": 2,
+        "C_PREPARED": 2,
+        "C_CLOSED": 0,
+        "ABC_READY_FOR_D": 0,
+        "D_VERIFIED": 0,
+        "BLOCKED": 2
+      },
+      "nextCursor": "RETURN_QUEUE_FIRST_UNBLOCKED_SOURCE_OR_RUNTIME_DEPENDENCY"
     }
   },
   "release": {
@@ -798,7 +1060,7 @@
       "PR #394 touches shared canonical lesson seeder"
     ],
     "nextRequiredOwner": "designated global shared Practice + academic/version integration owner (issue #584); school adoption owner (#453); release owner only after protected acceptance",
-    "nextRequiredAction": "Global shared owner #584: implement tested matrix/log question families and graders, separately approve append-only Phase04 source-body predecessor and materialization; adoption #453; exact-head protected CI, source review, disposable two-school scoring and persistence, then release owner UAT.",
+    "nextRequiredAction": "Coder8 solo: clear each named returnQueue item under exclusive ownership; verify L02 original teacher PDF vs protected SHA before source A closure; secure teaching-v4 approved predecessor; integrate and certify 26 exact lesson Practice fixtures; then A/B/C close both and begin single Stage D batch. No shared coder or unowned central writes.",
     "acceptanceFixtureCaseCount": 26,
     "academicAcceptance": "0_OF_2_PENDING",
     "versionTransition": "BLOCKED_584",
@@ -811,5 +1073,69 @@
     "rightsEvidence": "Existing pack and blueprint record CC BY 4.0 Phase 29 source; exact source PDF hash/license not independently reverified this session",
     "sourceTitlesPreserved": true,
     "exactPublisherEquivalenceClaimed": false
-  }
+  },
+  "returnQueue": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "state": "BLOCKED_EXTERNAL_FILE_OWNERSHIP_AND_VERSION_APPROVAL",
+      "blockingItems": [
+        {
+          "kind": "central_runtime_contract",
+          "needed": "Official lesson-selected Practice mapping and registered exact generator/interactions with M01–M11 evidence; PR600 remains unmerged pending. PR585 Coder8 may not touch central registries without exclusive file allocation.",
+          "fileOwnership": "Supervisor 3 to allocate exclusive edit owner for LessonPracticeContracts.cs, ExactSkillContractQuestionEngine.cs and required registry/mapping files, or accept verified integrated predecessor",
+          "reference": "https://github.com/EIAS79/Edulytics/pull/600"
+        },
+        {
+          "kind": "academic_content_predecessor",
+          "needed": "Authorize actual teaching-v4 and canonical body 7245f950... with source-aware approved predecessor; v1 proposal on PR600 does not authorize v4.",
+          "fileOwnership": "Academic/version approval authority; no source/canonical hash edits by Coder8"
+        }
+      ],
+      "courseOwnedDone": [
+        "Preserved A/B parity",
+        "Implemented isolated rational exact full-matrix and inverse+solution verifier",
+        "Corrected M03 fixture equivalent answer to require inverse AND x",
+        "Preserved M05/M11 human rubrics"
+      ],
+      "pendingC": [
+        "M04 row-reduction work rubric beyond solution-only automatic score",
+        "M05 and M11 teacher-scored evidence",
+        "M07/M08/M10 inverse-eligibility adapter from PR600 not yet selected",
+        "Actual lesson-selected generator and verifier adoption, explicit legal predecessor"
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "state": "BLOCKED_SOURCE_SHA_AND_CENTRAL_ROUTING",
+      "blockingItems": [
+        {
+          "kind": "teacher_pdf_sha",
+          "needed": "Investigate original MVP Math III Module 2 teacher local binary discrepancy. Current local 54-page teacher PDF SHA-256 7d3bc5c246ad1d648e0ee64edbcc844ec2bcb102f79543c77be215e6696df749 vs protected sourceSha256 590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3. No hash mutation until original edition/version and protected provenance are proven.",
+          "fileOwnership": "Curriculum source/academic authority; original-local source investigation by Coder8",
+          "localPath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod2tn718.pdf"
+        },
+        {
+          "kind": "central_practice_routing",
+          "needed": "Review/authorize exact log selected lesson families and distinct auto-graded closed comparisons vs teacher-reviewed proof for L04/L05/L06/L13. Shared registry/engine requires exclusive file allocation by Supervisor3.",
+          "fileOwnership": "Supervisor3 to allocate central file ownership; Coder8 owns isolated course components"
+        },
+        {
+          "kind": "v4_content_predecessor",
+          "needed": "Independent approved teaching-v4 predecessor/translation lineage; v1 proposal is not an approved v4 transition.",
+          "fileOwnership": "Academic/version approval authority"
+        }
+      ],
+      "courseOwnedDone": [
+        "Compared source teacher Log Logic page 5–8 with current course content without recopying source",
+        "Preserved valid base and domain proof examples",
+        "Implemented fixed L06 four-interval typed answer model with teacher-reviewed proof",
+        "Preserved all fifteen L01–L15 fixtures and L04/L05/L06/L13 human rubrics"
+      ],
+      "pendingC": [
+        "All 15 fixtures need selected course-specific verified routing and feedback contract",
+        "L06 closed relation alone does not certify proof",
+        "Teacher workflow and authenticated score remain for Stage D"
+      ]
+    }
+  ]
 }
