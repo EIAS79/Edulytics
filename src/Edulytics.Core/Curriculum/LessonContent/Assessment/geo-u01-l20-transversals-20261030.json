@@ -1,0 +1,121 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L20",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceSha256": {
+    "TeacherPreparation": "fa931cdcc58927fdd4f95698fdf49b45970a8a2e3b4920b7eca172676507a116",
+    "TeacherActivities": "1a2312e9058c986283f06d0923084f522145c5129153bbf4e7b867040756aca1",
+    "StudentActivities": "7f5426bd229e1192520dc086a6b0e59a8c33993f6865bdb2176820ade224f6f7",
+    "StudentPractice": "dc16869669f95ba3f9a715680d35f9d9e33c4fa44b204046784c7109fac5d00f"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.A.5",
+      "HSG-CO.A.4"
+    ],
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.A.2",
+      "HSG-CO.C.9"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.10"
+    ]
+  },
+  "SourceActivities": [
+    "20.1 angle Math Talk",
+    "20.2 translation proof and peer critique",
+    "20.3 half-turn proof and peer critique",
+    "Practice 1–8"
+  ],
+  "Task": {
+    "Prompt": "Create original labelled parallel-line/transversal diagram. Give two complete narrative proofs of corresponding and alternate interior congruence via translation and half-turn; critique missing parallel assumptions.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "actual parallel and transversal hypotheses, correctly oriented angles",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "narrative translation proof for corresponding angles",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "midpoint half-turn proof for alternate interior",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "valid converse/counterexample critique",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "Why do parallel corresponding angles agree?",
+      "Expected": "Translate along the transversal from B to C.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "Why do alternate interior angles agree?",
+      "Expected": "Half-turn about midpoint M exchanges two lines and opposite rays.",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "Does the converse require an angle of exactly 40 degrees?",
+      "Expected": "No. Any congruent alternate interior pair implies parallel lines.",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Why do vertical angles agree?",
+      "Expected": "Half-turn or equal supplements.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Adjacent bisectors of 90 degrees sum to what angle?",
+      "Expected": "45 degrees.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Which observation refutes a proposed rigid quadrilateral image?",
+      "Expected": "Changed corresponding length or angle.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "How align two congruent triangles?",
+      "Expected": "Translate, rotate and if necessary reflect.",
+      "Points": 2
+    },
+    {
+      "Id": "P8",
+      "Prompt": "What happens to a line under half-turn with centre on it?",
+      "Expected": "The line maps onto itself.",
+      "Points": 2
+    }
+  ],
+  "PublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: prove angle congruences on y=0/y=3 crossed by y=x using two rigid moves",
+  "PaperHandoff": "Teacher receives labelled diagram and two narrative proofs, scores 0/1/2 each, signs/dates paper feedback; online grading not claimed.",
+  "Cases": {
+    "CORRECT": "valid translation and half-turn preserve rays",
+    "EQUIVALENT": "any rigorous alternative corresponding and alternate proof",
+    "WRONG": "assumes nonparallel lines produce congruent angles",
+    "INSUFFICIENT": "numeric angles without proof",
+    "MALFORMED": "no transversal or undefined parallel lines"
+  },
+  "AutoScore": false,
+  "StageD": "NOT_RUN secure teacher-grade persistence and school tenant #453"
+}
