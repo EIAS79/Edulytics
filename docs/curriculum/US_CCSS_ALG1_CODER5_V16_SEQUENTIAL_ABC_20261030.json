@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T12:16:36.185432+00:00",
   "lastReviewed": "U01:L08",
-  "nextCanonical": "U01:L03",
+  "nextCanonical": "U01:L04",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -200,20 +200,24 @@
         "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
       },
       "C": {
-        "status": "BLOCKED_C_SHARED",
+        "status": "AUTHORING_CLOSED_NOT_RUNTIME",
         "draftPrepared": true,
         "oracles": "Shifted synthetic arrays median difference 5, equal range 3; graph drawing human scored",
         "humanScored": true,
         "runtimeSupported": false,
         "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
         "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
-        "owner": "Supervisor 2"
+        "owner": "Supervisor 2",
+        "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L03_AUTHORING_C_20261030.json",
+        "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
+        "deferredToStageD": "Shared ALG1 service and teacher grading"
       },
-      "D": "NOT_RUN_BATCH",
-      "readyForStageD": false,
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
-      "timingNote": "not captured at source review start; no invented duration"
+      "timingNote": "not captured at source review start; no invented duration",
+      "authoringClosedAtUtc": "2026-10-30T14:06:53.660859+00:00"
     },
     {
       "ordinal": 4,
@@ -528,12 +532,6 @@
   ],
   "return_queue": [
     {
-      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-      "returnStatus": "BLOCKED_C_SHARED",
-      "owner": "Supervisor 2",
-      "required": "Shifted synthetic arrays median difference 5, equal range 3; graph drawing human scored"
-    },
-    {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
       "returnStatus": "BLOCKED_C_SHARED",
       "owner": "Supervisor 2",
@@ -570,10 +568,10 @@
     "A_CLOSED": 8,
     "B_CLOSED": 8,
     "C_PREPARED": 8,
-    "ABC_READY_FOR_D": 2,
+    "ABC_READY_FOR_D": 3,
     "D_VERIFIED": 0,
-    "BLOCKED": 6,
-    "REMAINING": 130,
+    "BLOCKED": 5,
+    "REMAINING": 129,
     "SOURCE_REVIEW_CUMULATIVE": 29,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
@@ -602,12 +600,12 @@
     "unitsABCCLosed": 0,
     "status": "UNIT_IN_PROGRESS",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 2,
+    "newlyABCClosed": 3,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
@@ -627,7 +625,7 @@
     ]
   },
   "unitStatus": "UNIT_IN_PROGRESS",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
   "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
 }
