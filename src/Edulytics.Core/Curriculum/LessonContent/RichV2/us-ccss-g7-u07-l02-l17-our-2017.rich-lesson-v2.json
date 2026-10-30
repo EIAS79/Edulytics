@@ -1152,132 +1152,132 @@
       "CultureCode": "en",
       "Title": "Drawing Triangles (Part 2)",
       "ExplanationParagraphs": [
-        "Edulytiks goal: Test possible, unique and impossible constructions with side and angle conditions. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/10/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
-        "Direct official student lesson activity: Compass construction: angle and two sides; possible triangle counts. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/10/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
+        "Edulytiks Grade 7 source-aligned goal: continue drawing triangles using two side lengths and an angle, or using three angle measures, and use original ruler/compass/protractor constructions to tell whether the data allow zero, one or multiple noncongruent triangles. Based on OUR/IM 2017–2019 Grade 7 lesson 7.7.10; student https://im.kendallhunt.com/MS/students/2/7/10/index.html and teacher https://im.kendallhunt.com/MS/teachers/2/7/10/preparation.html (CC BY 4.0 attribution; no publisher images copied).",
+        "V13 L10 source-specific repair: Construct a 40° angle, mark 5 cm along each ray and use a compass to compare the third side with 5 cm (it is shorter). Construct an independent right/obtuse triangle using the given 6-cm sides and a measured 100° INCLUDED angle, and compare traces. For a 45° angle with an 8-cm adjacent side and 6-cm opposite side, two distinct triangles can be constructed: the unspecified third side changes while the provided measurements stay fixed. The location of the given angle relative to two sides must be recorded; students should not be required to memorize theorem labels.",
+        "With only three angles 50°,60°,70°, drawings at different scales are possible, but the conditions 50°,60°,100° do not produce a triangle. Grade 7 students may justify using drawn rays, physical constructions and measurement without formal angle-sum or trigonometric formulas. Teacher evaluation is needed for actual drawings, angle labels, student evidence, reasoning, and rejection of malformed or degenerate sketches. A numeric answer or static table is not an automatic grade."
       ],
       "KeyConcepts": [
         {
-          "Title": "Core geometric idea",
-          "Definition": "Two fixed side lengths with nonincluded angle can allow ambiguous triangles.",
-          "Rule": "Two fixed side lengths with nonincluded angle can allow ambiguous triangles.",
-          "Example": "No."
+          "Title": "Two sides and one measured angle",
+          "Definition": "The locations of the two side lengths relative to the measured angle affect which and how many triangles can be built.",
+          "Rule": "Draw the angle and mark the given lengths with a ruler or compass; test every viable endpoint intersection.",
+          "Example": "A fixed nonincluded 45° angle and sides 8 cm and 6 cm can give two distinct triangles."
         },
         {
-          "Title": "Rule and representation",
-          "Definition": "A triangle must satisfy the triangle inequality.",
-          "Rule": "A triangle must satisfy the triangle inequality.",
-          "Example": "10."
+          "Title": "Three given angles",
+          "Definition": "Three feasible angles alone can permit different-sized triangles, while incompatible angles cannot close.",
+          "Rule": "Construct the angles, vary length and check that all three meet at proper noncollinear vertices.",
+          "Example": "50°,60°,70° permit scaled sizes; 50°,60°,100° do not form a triangle."
         },
         {
-          "Title": "Verification",
-          "Definition": "Construction must be checked with ruler, compass or justified drawing.",
-          "Rule": "Construction must be checked with ruler, compass or justified drawing.",
-          "Example": "Yes."
+          "Title": "Check construction quality",
+          "Definition": "A valid triangle must close with accurately labeled sides and angles.",
+          "Rule": "Use measured diagrams and compare with peers; count congruent copies as one shape regardless of orientation.",
+          "Example": "For two sides 5 cm with 40° included, the third side is shorter than 5 cm."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Independent geometric problem 1",
-          "Question": "Do lengths 3,7,11 form a triangle?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Title": "Independent compass estimate — 40 degrees and two 5-cm sides",
+          "Question": "Draw a 40° angle and mark 5 cm along each ray. Will the segment joining the endpoints be longer or shorter than 5 cm?",
+          "Method": "Draw and measure with ruler and compass; make an independent geometric comparison rather than requiring trigonometry.",
           "Steps": [
-            "Add 3+7=10.",
-            "Since 10<11, inequality fails.",
-            "Conclude impossible."
+            "Construct a measured 40° angle and mark each ray endpoint exactly 5 cm from the vertex.",
+            "Join the two endpoints. Compare the resulting third side with a 5-cm compass opening.",
+            "It is shorter than 5 cm (approximately 3.42 cm when accurately drawn)."
           ],
-          "Answer": "No.",
-          "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+          "Answer": "The third side is shorter than 5 cm.",
+          "Check": "Teacher checks real compass/angle evidence. The approximate decimal is an independent oracle, not a required Grade 7 calculation."
         },
         {
-          "Title": "Independent geometric problem 2",
-          "Question": "Given sides 6 and 8 with included 90°, what is third side?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Title": "Independent drawing — two 6-cm sides with included 100 degrees",
+          "Question": "Two 6-cm sides meet at a measured 100° included angle. Is there more than one triangle shape satisfying the same attachment and measurements?",
+          "Method": "Mark 6 cm along both rays from a 100° vertex, then connect and overlay independently constructed triangles.",
           "Steps": [
-            "Use Pythagorean theorem.",
-            "Compute √(36+64)=10.",
-            "Describe SAS unique right triangle."
+            "Draw two rays making a 100° angle and locate points 6 cm from their shared vertex.",
+            "Connect the two points, then try a second independent drawing using exactly the same three attached measurements.",
+            "Compare and overlay: the same two 6-cm sides and included angle determine one shape, up to rotation or reflection."
           ],
-          "Answer": "10.",
-          "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+          "Answer": "One triangle shape up to congruence.",
+          "Check": "Teacher reviews a genuine construction, included-angle position, units and peer overlay; no theorem name required."
         },
         {
-          "Title": "Independent geometric problem 3",
-          "Question": "Are two triangles with 4,5,6 side lengths congruent if rotated?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Title": "Independent drawing — three angle measures",
+          "Question": "Compare angle sets 50°,60°,70° and 50°,60°,100°. Which can form a triangle, and does a valid set fix its size?",
+          "Method": "Draw measured rays to see whether the triangle closes; compare different positive scales.",
           "Steps": [
-            "Match all three lengths.",
-            "Apply SSS.",
-            "Rotation changes orientation only."
+            "For 50°,60°,70°, draw one triangle and then a uniformly larger one with the same angles.",
+            "Use ruler and protractor or geometric explanation to compare their corresponding sides.",
+            "Try 50°,60°,100° with three interior angles; the three directions cannot close into a nondegenerate triangle."
           ],
-          "Answer": "Yes.",
-          "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+          "Answer": "50°,60°,70° allow multiple sizes; 50°,60°,100° are impossible.",
+          "Check": "Teacher examines original angle constructions. A formal angle-sum theorem is optional at this grade level."
         },
         {
-          "Title": "Construct and justify — Drawing Triangles (Part 2)",
-          "Question": "Can 50°,60°,100° be three angles of a triangle? Can an isosceles triangle with two sides 5 cm and included 40° be drawn uniquely?",
-          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Title": "Construct and justify — nonincluded angle may give two triangles",
+          "Question": "Fix a measured 45° angle at A, AB=8 cm, and BC=6 cm. Use a compass centered at B to find all possible points C on the 45° ray from A. How many different triangle shapes are there?",
+          "Method": "Draw original 45° ray, 8-cm side AB and a 6-cm arc from B; count distinct nondegenerate ray-circle intersections.",
           "Steps": [
-            "50+60+100=210°, so no triangle has those angles.",
-            "For two 5-cm sides and INCLUDED 40° angle, draw a 40° vertex and mark 5 cm on each ray.",
-            "Connect endpoints to construct a triangle; the two sides and included angle determine a triangle up to congruence.",
-            "Compare with side-side-nonincluded-angle information, which may allow alternatives."
+            "Draw AB=8 cm and a 45° ray from A above it.",
+            "Using radius 6 cm at B, mark each intersection of the circle with the ray; two distinct positive intersections exist.",
+            "Connect B to each candidate C, measure and record two different AC lengths (approximately 3.66 and 7.66 cm).",
+            "Show both satisfy AB=8 cm, BC=6 cm and angle A=45°, but their corresponding third sides differ, so the triangles are not congruent."
           ],
-          "Answer": "Angle triple impossible; 5 cm–40°–5 cm included-angle data determine a valid congruence class.",
-          "Check": "Teacher checks precise compass/protractor work and the included-versus-other-angle distinction."
+          "Answer": "Two noncongruent valid triangles for this specified nonincluded-angle arrangement.",
+          "Check": "Human teacher checks both actual triangle constructions, exact given labels and written explanation; do not score the count alone as full credit."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Assuming any three positive lengths must close into a triangle.",
-          "WhyWrong": "It confuses geometric definition, measurement or construction condition.",
-          "Correction": "Check the relevant side, angle, base or dimensional units."
+          "Mistake": "Claiming two side lengths and an angle always determine one triangle.",
+          "WhyWrong": "When the given angle is not between the sides, an arc may cross the ray twice, once or not at all.",
+          "Correction": "Use a compass at the stated center, test all ray-circle intersections and measure their corresponding sides."
         },
         {
-          "Mistake": "Assuming a correct calculation guarantees a correct drawing or assembled solid",
-          "WhyWrong": "The task also assesses an accurate representation and explicit construction constraints.",
-          "Correction": "Use a diagram or physical model and teacher-reviewed geometric rubric."
+          "Mistake": "Treating three angle measures as fixed triangle size, or believing nonclosing rays form a triangle.",
+          "WhyWrong": "Compatible angles allow scaling; incompatible angles cannot form a proper three-vertex polygon.",
+          "Correction": "Construct rays with a geometry toolkit; verify nondegenerate closure and different scales before counting shapes."
         }
       ],
       "SummaryPoints": [
-        "Two fixed side lengths with nonincluded angle can allow ambiguous triangles.",
-        "A triangle must satisfy the triangle inequality.",
-        "Construction must be checked with ruler, compass or justified drawing."
+        "Drawing 40° between two 5-cm sides gives a connecting third side shorter than 5 cm; verify with a compass.",
+        "Two side lengths and a given angle can produce one or multiple shapes depending on how the angle is attached.",
+        "Three compatible angles alone allow different scales; some angle triples cannot close into a triangle. Submit original drawings for human review."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Can these triangle conditions coexist?",
-          "Description": "First-party text-based mathematical comparison for Drawing Triangles (Part 2). Its labels and values can be read without color or a publisher image. This does NOT substitute for the learner's required accurate geometric construction, physical net, diagram or teacher-reviewed explanation.",
+          "Title": "Construction outcomes with attached sides and angles",
+          "Description": "Original Grade 7 construction comparison; requires genuine student-controlled compass/protractor construction and teacher rubric, not an auto-graded table.",
           "Items": [],
           "SecondaryItems": [],
           "Rows": [
             {
-              "Label": "Given",
+              "Label": "Given constraints",
               "Cells": [
-                "3,7,11 sides",
-                "Perpendicular legs 6 and 8",
-                "Rotated 4,5,6 triangles"
+                "40° included between two 5 cm sides",
+                "45° at A, AB=8 cm, BC=6 cm",
+                "50°,60°,70° angles only"
               ],
               "Numerator": 0,
               "Denominator": 0
             },
             {
-              "Label": "Test",
+              "Label": "Geometric check",
               "Cells": [
-                "3+7<11",
-                "Hypotenuse √(6²+8²)",
-                "SSS congruence"
+                "Third side shorter than 5 cm",
+                "A 6 cm circle meets A's 45° ray twice",
+                "Uniform scaling preserves the angles"
               ],
               "Numerator": 0,
               "Denominator": 0
             },
             {
-              "Label": "Result",
+              "Label": "Conclusion",
               "Cells": [
-                "Impossible",
-                "10 units",
-                "Congruent"
+                "One included-angle triangle shape",
+                "Two noncongruent triangles",
+                "More than one size"
               ],
               "Numerator": 0,
               "Denominator": 0
