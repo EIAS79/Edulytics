@@ -15,7 +15,7 @@ test('source-aligned six? no: exactly eight pieces with exact eight square units
  assert.equal(4*0.5,2);
  assert.equal(2*0.5,1);
  assert.notEqual(2*2,8);
- assert.equal(Math.sqrt(8)**2,8);
+ assert.ok(Math.abs(Math.sqrt(8)**2 - 8) < 1e-10);
  assert.equal(evidence.practice.current,'NO_EXPLICIT_LESSON_SKILL_MAPPING');
 });
 test('valid and invalid area submissions, equivalents and malformed',()=>{

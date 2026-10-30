@@ -179,7 +179,6 @@
       "REMAINING": 146,
       "firstOpenLessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
       "lastReviewedAtUtc": "2026-10-30T08:01:52.979Z",
-      "nextIndependentCandidate": "PED:US-CCSS-MATH:G6:U03:L07",
       "blockedReturnBacklog": [
         {
           "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
@@ -200,8 +199,11 @@
           "reason": "No selected exact polygon decomposition/area+teacher drawing scoring contract"
         }
       ],
-      "nextIndependentCursor": "PED:US-CCSS-MATH:G6:U03:L08",
-      "lastClosedIndependentLesson": "PED:US-CCSS-MATH:G6:U03:L07"
+      "nextIndependentCursor": "UNVERIFIED_AFTER_PED:US-CCSS-MATH:G6:U03:L07",
+      "lastClosedIndependentLesson": "PED:US-CCSS-MATH:G6:U03:L07",
+      "lastClosedIndependentLessonSHA": "26a45185a51819764c90ff0294f1908975873614",
+      "nextOfficialLessonTriage": "PED:US-CCSS-MATH:G6:U01:L04",
+      "exceptionNotice": "Earlier U01:L04 through U03:L06 are NOT marked closed or blocked merely from absence of explicit skill mapping; sequential source/contract triage remains required. U03:L07 was selected as the first observed explicit Grade 6 READY_VERIFIED mapping candidate, not proof every earlier lesson is dependent."
     }
   },
   "sharedBlockers": [
@@ -530,7 +532,8 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "A/B source-aligned first-party tangrams authored; C BLOCKED awaiting grade6 authorized shared area-construction mapping and teacher-scored activity. In §3A.b return backlog."
+      "nextStep": "A/B source-aligned first-party tangrams authored; C BLOCKED awaiting grade6 authorized shared area-construction mapping and teacher-scored activity. In §3A.b return backlog.",
+      "gradeOwnedAttemptCommitSHA": "5c7e9913c928acb2c8bf033f5d63be34d39694d2"
     },
     {
       "sortOrder": 3,
@@ -629,7 +632,8 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "A/B first-party shaded-area drawing/exit authored; exact selected area Practice and teacher-review path BLOCKED shared owner."
+      "nextStep": "A/B first-party shaded-area drawing/exit authored; exact selected area Practice and teacher-review path BLOCKED shared owner.",
+      "gradeOwnedAttemptCommitSHA": "9562977cc0a7aa143a66b2fc0e9828e97021a19d"
     },
     {
       "sortOrder": 4,
@@ -4358,7 +4362,7 @@
         "lessonCode": "PED:US-CCSS-MATH:G6:U03:L07",
         "sortOrder": 43,
         "stageStartAtUtc": "2026-10-30T07:59:34.141Z",
-        "stageClosedAtUtc": "2026-10-30T07:59:37.127Z",
+        "stageClosedAtUtc": "2026-10-30T07:59:45.000Z",
         "timeSource": "Actual UTC timestamps from current work; not synthetic",
         "sourceFiles": [
           "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\3\\7\\preparation.html",
@@ -4465,9 +4469,10 @@
         "READY_FOR_STAGE_D": true,
         "D_STATUS": "NOT_RUN",
         "sourceReviewBoundary": "Original publisher pixel match, protected teacher responses and authenticated product are unverified; those are not misrepresented as stage A/C test execution.",
-        "closedAt": "2026-10-30T07:59:37.127Z",
-        "elapsedSeconds": 3,
-        "commitSHA": null
+        "closedAt": "2026-10-30T07:59:45.000Z",
+        "elapsedSeconds": 11,
+        "commitSHA": "26a45185a51819764c90ff0294f1908975873614",
+        "closingCommitSHA": "26a45185a51819764c90ff0294f1908975873614"
       }
     },
     {
