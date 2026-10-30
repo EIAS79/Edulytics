@@ -95,9 +95,9 @@
     "persistedTeacherScore": false
   },
   "gates": {
-    "A": "AWAITING_ROLE_AND_PARITY_ACADEMIC_APPROVAL",
-    "B": "FIRST_PARTY_GRAPHICS_AND_NATIVE_VISUALS_PREPARED_SVG_ATTACH_PENDING",
-    "C": "CONTRACT_PREPARED_SHARED_ROUTE_NOT_VERIFIED",
+    "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "BLOCKED_C_DEPENDENCY",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": false
   },
@@ -149,11 +149,21 @@
     "REMAINING": 131
   },
   "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
-  "nextLessonAllowed": false,
+  "nextLessonAllowed": true,
   "release": "NO_GO",
   "newEvidencePath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
   "courseOwnedVisualPaths": [
     "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg",
     "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg"
-  ]
+  ],
+  "firstPartyParityReview": {
+    "reviewer": "Coder 4",
+    "status": "REVIEWED_NOT_AUTHORITY_APPROVED",
+    "sourceRolesVerified": true,
+    "sourceFiguresOriginal": false,
+    "firstPartyAlternative": true
+  },
+  "blockerScope": "EXTERNAL_A_AND_C_ONLY; B_COURSE_OWNED_COMPLETE",
+  "latestSequentialABCDecision": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+  "advancePolicy": "ADMIN_EXCEPTION_ONLY_NEXT_INDEPENDENT_CANONICAL_LESSON_WITH_RETURN_QUEUE"
 }

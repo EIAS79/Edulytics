@@ -21,7 +21,7 @@ test('all 131 first-party Grade 8 lesson records and 66 authored exact worked-ex
   assert.ok(l&&s,record.lessonCode);
   assert.equal(record.sourceStudentUrl,s.sourceStudentUrl);
   assert.ok(l.WorkedExamples.some(x=>x.Question.includes(record.authoredExampleAnchor)),record.lessonCode);
-  assert.equal(l.Visuals.length,1,record.lessonCode);
+  assert.ok(l.Visuals.length>=1,'original V10 visual must remain: '+record.lessonCode); // Later course-owned visuals may be appended; visual[0] must remain identical to V10 evidence.
   const v=l.Visuals[0];
   assert.deepEqual(v,record.visuals[0],record.lessonCode);
   assert.equal(v.Kind,'RatioTable');
@@ -196,6 +196,6 @@ test('source figure priorities are preserved without automatic A-D acceptance',(
  assert.ok(enriched>30);
  for(const row of report.rows){
   const l=lesson.get(row.lessonCode);
-  assert.ok(l.Visuals.every(x=>x.Kind==='RatioTable'));
+  assert.equal(l.Visuals[0]?.Kind,'RatioTable','historic V10 primary visual preserved; newer supported course-owned kinds may follow');
  }
 });

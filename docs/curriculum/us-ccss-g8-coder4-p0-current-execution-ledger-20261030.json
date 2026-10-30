@@ -12,7 +12,7 @@
     "teacherOnlyCooldowns": 117,
     "grade8LessonsWithServiceOnlySyntheticPracticeHarness": 1,
     "AAccepted": 0,
-    "BAccepted": 0,
+    "BAccepted": 1,
     "CVerified": 0,
     "DVerified": 0,
     "authenticatedDatabaseFixtureRun": false,
@@ -39,10 +39,10 @@
       "actualPostgresqlAttemptPersistedAndReadBack": false,
       "studentTeacherAuthenticatedSessionVerified": false,
       "teacherScoringPersistenceVerified": false,
-      "A": "NOT_ACCEPTED",
-      "B": "NOT_ACCEPTED",
-      "C": "NOT_VERIFIED",
-      "D": "NOT_VERIFIED",
+      "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+      "B": "B_CLOSED_COURSE_OWNED",
+      "C": "BLOCKED_C_DEPENDENCY",
+      "D": "NOT_RUN",
       "nextChecks": [
         "SOURCE_INTERACTIVE_AND_HUMAN_COURSE_ASSESSMENT_REVIEW_STILL_REQUIRED",
         "SVG_ASSET_NOT_YET_ATTACHED_TO_AUTHENTICATED_RICH_V2_RENDERER",
@@ -52,7 +52,7 @@
       ],
       "v13SourceSpotCheck": "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json",
       "latestSequentialABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
-      "lessonClosureStatus": "BLOCKED",
+      "lessonClosureStatus": "BLOCKED_A_C_EXTERNAL_DEPENDENCY",
       "blockingOwners": [
         "Supervisor 2 / independent academic standards owner",
         "Supervisor 2 / shared renderer and Practice integration"
@@ -60,11 +60,12 @@
       "checkpointLessonFixCommit": "69c034259914a5905fdbbbfd22c991c4ca98d86c",
       "checkpointTestCorrectionCommit": "4d46717c9b4733205f5883f6cbc6dc46aa6554a5",
       "sourceCooldownDisposition": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED; TEACHER_RUNTIME_NOT_INTEGRATED",
-      "sequentialAdvanceAllowed": false,
+      "sequentialAdvanceAllowed": true,
       "latestSequentialABCEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
       "courseOwnedNewSvgCandidateCount": 2,
       "courseOwnedNewNativeVisualCount": 4,
-      "lastFocusedCheck": "PASS 4/4 U01:L01 focused Node independent graphics/math/contract candidate; no runtime approval"
+      "lastFocusedCheck": "PASS 4/4 U01:L01 focused Node independent graphics/math/contract candidate; no runtime approval",
+      "readyForStageD": false
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
@@ -3457,12 +3458,41 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
-    "status": "BLOCKED",
-    "checkpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
-    "blockerOwner": "Supervisor 2",
-    "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
-    "advanceAllowed": false,
-    "newEvidencePath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json"
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+    "status": "NEXT_INDEPENDENT_CANONICAL_LESSON",
+    "previousLessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "previousStatus": "BLOCKED_A_C_EXTERNAL_DEPENDENCY",
+    "advanceAllowed": true,
+    "returnQueueLength": 1
+  },
+  "abcReturnQueue": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+      "stage": [
+        "A",
+        "C"
+      ],
+      "owner": [
+        "Supervisor 2 standards academic owner",
+        "Supervisor 2 existing Practice service single writer"
+      ],
+      "reason": [
+        "8.G.A.1 role unresolved",
+        "lesson-specific generator and teacher scoring runtime not proven"
+      ],
+      "sourceEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+      "currentDecision": "BLOCKED_A_C_EXTERNAL_DEPENDENCY"
+    }
+  ],
+  "abcCounters": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 0,
+    "B_CLOSED": 1,
+    "C_PREPARED": 1,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "REMAINING": 131
   }
 }

@@ -279,11 +279,11 @@
     "evidence": "Node test runner 4 tests / 4 pass / 0 fail / exit 0 on isolated Our-CS working tree; no .NET build or other full suite executed."
   },
   "gates": {
-    "A": "AWAITING_ROLE_AND_PARITY_ACADEMIC_APPROVAL",
-    "B": "FIRST_PARTY_GRAPHICS_AND_NATIVE_VISUALS_PREPARED_SVG_ATTACH_PENDING",
-    "C": "CONTRACT_PREPARED_SHARED_ROUTE_NOT_VERIFIED",
-    "READY_FOR_STAGE_D": false,
-    "D": "NOT_RUN"
+    "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "BLOCKED_C_DEPENDENCY",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": false
   },
   "unresolved": [
     "SOURCE_ROLE_APPROVAL_SUPERVISOR2",
@@ -305,5 +305,22 @@
   "nextLessonAllowed": false,
   "release": "NO_GO",
   "lastUpdatedAtUtc": "2026-10-30T07:32:41.463614+00:00",
-  "elapsedSecondsUntilEvidence": 186
+  "elapsedSecondsUntilEvidence": 186,
+  "courseOwnedABCDecision": {
+    "reviewedAtUtc": "2026-10-30T12:04:34.645182+00:00",
+    "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+    "A_evidence": "Three local source HTML SHA-256s and activity 1.1/1.2/inverse/Cool-down crosswalk recorded. Publisher marks 8.G.A.1 BuildingTowards; blueprint additionally claims Addressing and academic owner has not signed off.",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "B_evidence": "Existing supported Rich V2 ShapeDecomposition and RatioTable visual structures are attached to course data, all 4 L01 first-party graphics/math tests PASS, original source artwork not copied. Standalone SVG image attachment is enhancement, not a new mandatory B gate per Admin.",
+    "C": "BLOCKED_C_DEPENDENCY",
+    "C_evidence": "Non-numeric teacher criteria and eight-point Cool-down rubric available, correct/equivalent/wrong/invalid coordinate response oracle independently checked. Actual lesson-scoped transformations generation/grading not demonstrated; shared engine edit prohibited.",
+    "D": "NOT_RUN",
+    "returnQueue": true,
+    "returnReasons": [
+      "ACADEMIC_STANDARDS_OWNER_ROLE_ADJUDICATION",
+      "LESSON_SCOPED_TRANSFORMATIONS_PRACTICE_RUNTIME_OR_FAIL_CLOSED_DEPENDENCY"
+    ],
+    "needsSharedSvgKindForB": false,
+    "approvalClaimed": false
+  }
 }
