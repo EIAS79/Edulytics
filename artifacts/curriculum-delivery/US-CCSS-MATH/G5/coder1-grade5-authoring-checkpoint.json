@@ -446,9 +446,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "PARTIAL_SOURCE_HTML_COMPARED_READY_REUSE; ORIGINAL_STUDENT_PDF_IMAGE_AND_GATED_RESPONSE_NOT_VERIFIED; NOT_ACADEMICALLY_APPROVED",
-      "stageB": "DIRECT_RICHV2_CANDIDATE_PRESERVED; REAL_AUTHENTICATED_EFFECTIVE_RENDER_NOT_RUN",
-      "stageC": "ACTUAL_SELECTED_PRACTICE_GENERATOR_VERIFIER_HUMAN_RUBRIC_NOT_RUN",
+      "stageA": "ORIGINAL_TEACHER_PREPARATION_AND_STUDENT_FACING_REVIEWED_GATED_COOLDOWN_AND_BINARY_MEDIA_NOT_CERTIFIED",
+      "stageB": "SOURCE_SPECIFIC_TEACHER_SCORING_RUBRIC_ADDED_EXISTING_CORRECT_TEACHING_REUSED",
+      "stageC": "EXACT_SELECTED_PRACTICE_UNVERIFIED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -456,9 +456,15 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "Inference of unseen layers, estimation under partial cube depiction, different complete-layer multiplications",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l04-l06-im2021-first-party-richv2-20261028-v1",
+      "richV2ContentVersion": "g5-u01-l04-l06-im2021-v19-a-b-c-source-20261030",
       "v9SourceTaskAudit": "2021_STUDENT_FACING_AND_TEACHER_HTML_TASK_COMPARED; CURRENT_FIRST_PARTY_RICHV2_READY_REUSE; ORIGINAL_PDF_AND_ILLUSTRATED_CARD_NOT_VERIFIED",
-      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l04-l05-ready-reuse-source-review.json"
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l04-l05-ready-reuse-source-review.json",
+      "vABC20261030": {
+        "sourceLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-abc-element-ledger-20261030.json",
+        "teacherRubric": true,
+        "readyForStageD": false,
+        "tests": "WRITTEN_NOT_RUN"
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
@@ -8247,5 +8253,13 @@
     ],
     "readyForStageD": 0,
     "continueIndependentLessons": true
+  },
+  "v19SequentialABC": {
+    "lastReviewed": "PED:US-CCSS-MATH:G5:U01:L04",
+    "lessonStatus": "A_C_EXPLICIT_GAP",
+    "independentLessonReviews": 4,
+    "unit1ReadyForStageD": 0,
+    "originalSourceAccess": "READ_FROM_LOCAL_PC",
+    "workContinuation": "next independent lesson after recording open gates"
   }
 }
