@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G5:IM-K5-2021",
+  "scope": "PED:US-CCSS-MATH:G5:U02:L01-L07",
+  "status": "SHARED_C_ACCEPTANCE_PENDING",
+  "createdAtUtc": "2026-10-30T12:33:08.293Z",
+  "singleOwner": "Supervisor 1 designated integration writer under issue #592",
+  "staticEvidence": "RichLessonContentV2Registry.Find/lessonCode and C# project resource glob statically inspected. Lesson Practice registry composition inspected: explicit mapping first, then official outcomes. No explicit Grade 5 U02 L01–L07 row found in lesson-skill-mappings.v1.json; actual selected generator/grader/feedback NOT_RUN.",
+  "groups": [
+    {
+      "family": "FRACTION_QUOTIENT_EQUAL_SHARING",
+      "lessons": [
+        "U02:L01",
+        "U02:L02",
+        "U02:L03",
+        "U02:L04",
+        "U02:L05"
+      ],
+      "REUSE": "Verified numeric subproblems a÷b=a/b, positive b and mixed-number equivalence may use existing fraction quotient family IF actual selected",
+      "EXTEND": "One teacher review interaction for fair share drawing, open story, situation/expression/card equivalence, inverse unknown and proof",
+      "correct": [
+        "2÷3=2/3",
+        "2÷5=2/5",
+        "3÷2=3/2",
+        "4÷6=2/3",
+        "3×4/3=4",
+        "5÷(5/6)=6",
+        "a÷b=a/b for b>0"
+      ],
+      "wrong": [
+        "reversed quotient from wrong story",
+        "unequal portions, wrong whole count",
+        "zero divisor",
+        "malformed/negative people count",
+        "numerically correct but invalid diagram",
+        "proof asserted from one arbitrary example"
+      ],
+      "acceptWhen": "Actual lesson-selected family correct for each numeric subtask and correct/wrong/equivalent/malformed; teacher-graded open matching/proof/submission with feedback statically demonstrable"
+    },
+    {
+      "family": "UNIT_FRACTION_TIMES_WHOLE_RELAY",
+      "lessons": [
+        "U02:L06",
+        "U02:L07"
+      ],
+      "REUSE": "Existing exact fraction-times-whole family may assess a×(1/b)=a÷b on original correct numerical tasks",
+      "EXTEND": "One teacher-scored equivalent diagram/relay text answer path; avoid a new engine for each fraction lesson",
+      "correct": [
+        "3÷2=3×1/2=1½",
+        "9÷4=9×1/4=2¼",
+        "7÷4=7×1/4=1¾",
+        "3÷4=3×1/4=¾"
+      ],
+      "wrong": [
+        "wrong context group size",
+        "unit mismatch",
+        "unequal diagram parts",
+        "mislabel source three bars as single original bar",
+        "nonpositive b",
+        "scalar answer without source-correct diagram explanation"
+      ],
+      "acceptWhen": "Selected numeric generator and teacher feedback match source objectives, open expression-to-diagram human rubric is wired"
+    }
+  ],
+  "antiChurn": "No grade-branch shared engine, family, resolver, seeder, renderer, CI, DB changes. One REUSE/EXTEND family-level writer; preserve previous source fixes; do not bulk-promote C.",
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "release": "NO_GO"
+}

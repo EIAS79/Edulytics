@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 18,
-    "B_CLOSED": 18,
+    "A_CLOSED": 19,
+    "B_CLOSED": 19,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 18,
+    "BLOCKED": 19,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -962,28 +962,52 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L07",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-7\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-7\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_EXACT_SOURCE_9_7_MILE_UNIT_FRACTIONS_AND_THREE_MILE_FOUR_PERSON_RELAY; APPEND_SOURCE_INDEPENDENT_11_MILE_EXIT",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE exact a/4 or a×1/4 numeric fraction family; one EXTEND of source-aligned fraction representation / rubric for multiple matches",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u02-l07-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:33:08.293Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single integration writer #592",
+        "reason": "No verified selected source-matched unit fraction practice and diagram/story teacher-feedback route",
+        "acceptWhen": "One family-level fraction-times-whole selected and open rubric integrated with independent edge cases"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "IM 2021 U02 L07 original teacher lesson/preparation and Student Facing",
+        "sourceActivities": [
+          "Warm-up 0-to-5 number-line fraction estimation, not unique until optional reveal",
+          "Mai one-fourth of 9 miles=9/4=2 1/4; Han one-fourth of 7 miles=7/4=1 3/4",
+          "Four runners share 3-mile race; 3÷4=(1/4)×3=3/4 mile each, alternate card diagrams teacher assessed"
+        ],
+        "originalImages": "NOT_REPRODUCED",
+        "publisherCooldown": "NOT_VERIFIED_GATED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u02-l07-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "9cfc2d63267e6f4eaf38190b47a8108243df60df",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Source narrative and numeric cases already correct, no original Edulytiks exit.",
+        "after": "Preserved source family and add 11-mile quarter route original exit, teacher rubric, mathematical edge fixtures."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L08",
@@ -4211,8 +4235,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:31:53.459Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L07",
+  "updatedAtUtc": "2026-10-30T12:33:08.293Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L08",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -4285,6 +4309,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L06",
       "reason": "C unit-fraction multiplication diagram matching and teacher rubric shared dependency"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U02:L07",
+      "reason": "C unit fraction times whole and story/diagram teacher review"
     }
   ]
 }
