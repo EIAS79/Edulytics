@@ -21,7 +21,7 @@
     "fullAcademicSourceParityAcceptedLessons": 0,
     "authenticatedSvgRenderedLessons": 0,
     "teacherScoredLessons": 0,
-    "currentBlockedLessons": 5
+    "currentBlockedLessons": 4
   },
   "rows": [
     {
@@ -83,9 +83,9 @@
       "actualPostgresqlAttemptPersistedAndReadBack": false,
       "studentTeacherAuthenticatedSessionVerified": false,
       "teacherScoringPersistenceVerified": false,
-      "A": "A_ACCEPTED_COURSE_SOURCE_REVIEW",
+      "A": "A_CLOSED_SOURCE_PARITY",
       "B": "B_CLOSED_COURSE_OWNED",
-      "C": "BLOCKED_C_DEPENDENCY",
+      "C": "C_CLOSED_ACADEMIC_CONTRACT",
       "D": "NOT_RUN",
       "nextChecks": [
         "SVG_ASSET_NOT_YET_ATTACHED_TO_AUTHENTICATED_RICH_V2_RENDERER",
@@ -94,11 +94,12 @@
         "LESSON_EXACT_AUTHENTICATED_PRACTICE_AND_TWO_SCHOOL_DATABASE_VERIFICATION_REQUIRED"
       ],
       "sourceActivitySpotReviewEvidence": "docs/curriculum/us-ccss-g8-coder4-v12-u01-l02-source-geometry-evidence-20261029.json",
-      "lessonClosureStatus": "BLOCKED_C_DEPENDENCY",
-      "readyForStageD": false,
+      "lessonClosureStatus": "READY_FOR_STAGE_D_ACADEMIC_ONLY",
+      "readyForStageD": true,
       "courseOwnedABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l02-20261030.json",
-      "sequentialAdvanceAllowed": false,
-      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01"
+      "sequentialAdvanceAllowed": true,
+      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01",
+      "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l02-academic-assessment-contract-20261030.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
@@ -3484,30 +3485,16 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
     "status": "NEXT_OFFICIAL_UNCLOSED",
     "unit": "U01",
     "unitTotal": 17,
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L03",
     "advanceAllowed": true,
-    "authority": "SUPERVISOR2_APPROVAL_6523795237_AND_ADMIN_STRICT_UNIT"
+    "authority": "SUPERVISOR2_ACADEMIC_ACCEPTANCE_AND_ADMIN_V_UNIT"
   },
   "abcReturnQueue": [
-    {
-      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
-      "stage": [
-        "C"
-      ],
-      "owner": [
-        "Supervisor 2 existing Practice contract single writer"
-      ],
-      "reason": [
-        "Lesson-scoped transformations READY_VERIFIED contract and teacher review unavailable"
-      ],
-      "sourceEvidence": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l02-20261030.json",
-      "currentDecision": "BLOCKED_C_DEPENDENCY"
-    },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
       "stage": [
@@ -3571,10 +3558,10 @@
     "A_CLOSED": 6,
     "B_CLOSED": 6,
     "C_PREPARED": 6,
-    "ABC_READY_FOR_D": 1,
+    "ABC_READY_FOR_D": 2,
     "D_VERIFIED": 0,
-    "BLOCKED": 5,
-    "REMAINING": 130,
+    "BLOCKED": 4,
+    "REMAINING": 129,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
@@ -3583,13 +3570,13 @@
   "unitProgress": {
     "unitCode": "U01",
     "unitTotal": 17,
-    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L03",
     "unitStatus": "UNIT_IN_PROGRESS",
     "unitsABCCLOSED": 0,
     "unitTotalCount": 9,
     "unitReport": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
-    "newlyClosed": 1
+    "newlyClosed": 2
   },
   "abcReturnQueueSkipAllowed": false,
   "currentBlockedLesson": null,
