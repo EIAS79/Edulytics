@@ -12,8 +12,8 @@
   "ClosedAt": null,
   "ElapsedSeconds": null,
   "NoteOnTime": "Session start was not time-stamped; no 3-minute SLA claim. Lesson remains open.",
-  "Status": "BLOCKED_WAITING_FOR_INDEPENDENT_ACADEMIC_SIGNOFF_AND_PAPER_MODE_DECISION",
-  "NextLessonCode": null,
+  "Status": "BLOCKED_C_SHARED",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
   "LocalSourceFileAndPages": [
     {
       "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\preparation.html",
@@ -139,26 +139,20 @@
   ],
   "Blockers": [
     {
-      "Owner": "Independent academic reviewer via Supervisor 2",
-      "Problem": "No independent A/B/C lesson acceptance; reviewer must confirm source 1.1–1.3 pedagogy, source practice original analogues, first-party Cool-down and paper drawing/teacher rubric sufficiency",
-      "Resolution": "Sign the six decisions in GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md; approve or specify bounded edits"
-    },
-    {
-      "Owner": "Supervisor 2 shared course/assessment owner (#453)",
-      "Problem": "Exact GEO lesson/pathway binding and existing supported teacher review/grade record not demonstrated. General Homework/Worksheet saves text, but SaveStudentResultAsync is Exam-only; do not use Exam scalar auto-grading for drawings.",
-      "Resolution": "Approve secure paper teacher evidence capture or make narrow lesson-linked human assessment contract using existing assignment infrastructure, with deferred Stage D authenticated persistence and security"
-    },
-    {
-      "Owner": "Supervisor 2 shared visual integration (only if needed after paper decision)",
-      "Problem": "No original image-equivalent authenticated figure tool demonstrated; candidate paper diagrams may be a legitimate approved substitute",
-      "Resolution": "If academic reviewer rejects paper equivalent, specify exact minimal missing static/native asset mode or safe allowlisted local SVG; global renderer changes remain central-owned"
+      "Owner": "Supervisor 2 central assessment/pathway owner",
+      "Status": "BLOCKED_C_SHARED",
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+      "Issue": 453,
+      "RequiredSharedPath": "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs (existing Homework/Worksheet text-only, no geometry attachment or verified teacher scoring); src/Edulytics.Services/Assessments/AssessmentService.Commands.cs (SaveStudentResultAsync Exam-only); shared exact HS pathway/lesson binding",
+      "Needed": "Approve/implement minimal tenant-safe paper teacher evidence record and exact lesson association or suitable authorized existing path",
+      "LocalAlternative": "Fully authored paper rubric, no online/persistence claims"
     }
   ],
   "Metrics": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 0,
-    "B_CLOSED": 0,
+    "A_CLOSED": 1,
+    "B_CLOSED": 1,
     "C_PREPARED": 1,
     "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
@@ -176,5 +170,59 @@
     "Verdict": "General text submission exists; approved course-exact lesson binding and teacher rubric grading/paper record not proved"
   },
   "Focus": "No new engine forced: paper-and-pencil is academically acceptable only when explicit reviewer approves and teacher evidence is documented; online scoring remains separate central issue.",
-  "CheckpointCommit": "Recorded in GitHub PR #583, commit containing this file (SHA documented by PR follow-up comment); predecessor af4fe6207becd6e73bfe369e4b29473e17e38066"
+  "CheckpointCommit": "Predecessor a2b34d42ffdc2a41246e8958342ef151f1c8963e; this file persisted on next PR #583 HEAD",
+  "SourceFileSha256": {
+    "TeacherPreparation": "ef6de406c01e1cf3233e115e8118d5e491123ab36f0af489ad95ceaf384b27ff",
+    "TeacherActivities": "24d77e65075b4bf7a43feca7190fd369883a17bc22e329e3e95989d25e35969d",
+    "StudentActivities": "898c2df9232610d497d5778ce43a191b9587a586b8c011b8e089d2950839ec39",
+    "StudentPractice": "82fc8f0676fd13a62337b74177edc96c2ba0166179dc459d4d12ff9610e9f794"
+  },
+  "StageIndependent": {
+    "A": {
+      "status": "A_CLOSED_COURSE_SOURCE_PARITY",
+      "source": "2021 local Our-CS teacher prep/activity and student activity/practice HTML (four SHA256 above)",
+      "rights": "CC BY 4.0 original scope, independent first-party wording; protected 2021 Cool-down unverified",
+      "originalCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+      "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+      "sourceRoles": {
+        "Addressing": [
+          "HSG-CO.A.1",
+          "HSG-CO.D.12"
+        ],
+        "BuildingTowards": [
+          "HSG-CO.D.12",
+          "HSG-CO.D.13"
+        ]
+      },
+      "skills": "1.1 compass/radius, 1.2 wrong guessed midpoint and variation-before-repair, 1.3 sixfold hexagon, P1-P4 source-skills analogues",
+      "independentReviewer": "NOT_SIGNED_NOT_CLAIMED"
+    },
+    "B": {
+      "status": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
+      "fixes": [
+        "Inserted explicit source 1.2 experimentation and peer comparison before perpendicular-bisector repair",
+        "Corrected first-party Practice 4 to CE=AD/2 under stated collinearity",
+        "Corrected first-party teacher rubric point labels to R,S,T,N",
+        "Retained three original worked examples and earlier content"
+      ],
+      "visuals": "Paper diagrams and accessible verbal descriptions only; no online attachment/digital applet claimed"
+    },
+    "C": {
+      "status": "C_PREPARED_BLOCKED_C_SHARED",
+      "rubric": "8-point human teacher-only cooldown and equilateral triangle; 8-point hexagon; four 2-point original practice problems",
+      "teacherMode": "paper labelled diagram, offline teacher marking",
+      "contractGap": "Exact secure school/pathway/GEO lesson-to-assignment and evidence/teacher-grade record not proven; shared application change prohibited on course branch",
+      "sharedIssue": 453
+    },
+    "D": "NOT_RUN stage D: authenticated renderer/grade persistence/two-school isolation"
+  },
+  "return_queue": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+      "Status": "BLOCKED_C_SHARED",
+      "Owner": "Supervisor 2",
+      "Issue": 453,
+      "ResumeWhen": "Central exact lesson-bound human teacher evidence/approval is implemented or approved with verifiable contract"
+    }
+  ]
 }

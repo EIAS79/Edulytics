@@ -35,22 +35,22 @@
     "Criteria": [
       {
         "Id": "R1",
-        "Criterion": "Correctly marked distinct starting points and named circle centre, radius, and point L",
+        "Criterion": "Marks distinct points R and S, a circle centred at R through S and another point T on that circle.",
         "MaxPoints": 2
       },
       {
         "Id": "R2",
-        "Criterion": "Valid radius argument JL=JK, independent of appearance",
+        "Criterion": "Correctly justifies RT=RS as radii of one circle, independently of visual appearance.",
         "MaxPoints": 2
       },
       {
         "Id": "R3",
-        "Criterion": "Explicit diagnosis that an eyeballed midpoint cannot establish JM=MK",
+        "Criterion": "Explains why an eyeballed N on RS does not ensure RN=NS, and may give an unequal counterexample.",
         "MaxPoints": 2
       },
       {
         "Id": "R4",
-        "Criterion": "Reproducible equal-radius-arc perpendicular-bisector procedure with correctly labelled midpoint and explanation",
+        "Criterion": "Gives two equal-radius arcs with common opening strictly greater than RS/2, labels both intersections and the perpendicular-bisector midpoint.",
         "MaxPoints": 2
       }
     ],
@@ -62,7 +62,9 @@
     "TextVerified": false,
     "Prompt": "Given two distinct points R and S, draw a circle centred at R through S and label another point T on it. Which length equality is guaranteed? A peer points somewhere near the middle of RS and calls it N. Can they conclude RN=NS? Explain how to locate the true midpoint with permitted construction moves.",
     "Exemplar": "RT=RS because both are radii of the same circle. RN=NS is not guaranteed for a point chosen by sight. Draw equal-radius arcs from R and S using a common opening greater than RS/2, mark both intersections, then connect them to construct the perpendicular bisector; its intersection with RS is the midpoint.",
-    "TeacherScoring": "Use criteria R1–R4 above; do not auto-score the sketch."
+    "TeacherScoring": "Use criteria R1–R4 above; do not auto-score the sketch.",
+    "Status": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "PublisherCoolDownStatus": "PUBLISHER_COOLDOWN_UNVERIFIED"
   },
   "ReviewCases": [
     {
@@ -125,7 +127,7 @@
       "HSG-CO.D.13"
     ]
   },
-  "SourcePedagogicalCaveat": "Source activity 1.2 intentionally allows an illegal estimated midpoint to produce student-to-student variation before discussing why the equality is not guaranteed. Do not silently replace the discovery/comparison phase with a worked exact-midpoint solution.",
+  "SourcePedagogicalCaveat": "The source 1.2 STARTS with estimated C on AB, circle A through B and circle B through C, produces triangle ADE and compares nonidentical student drawings before critique/repair. Preserve this intentional error exploration; digital tool availability is optional, paper allowed.",
   "SupplementaryTeacherScoredTasks": [
     {
       "TaskId": "geo-u01-l01-hexagon-human-evidence",
@@ -193,8 +195,8 @@
         },
         {
           "Id": "P4",
-          "Prompt": "Two circles of radii 6 cm and 4 cm intersect at W and have centres A and B, respectively. State AW and BW and explain whether AW=BW.",
-          "Expected": "AW=6 cm and BW=4 cm, so AW != BW; membership in each radius-defined circle determines distance.",
+          "Prompt": "A circle centred at C goes through A and D. A,C,D lie on one line in that order, and E is another point on that circle. Compare CE with AD. Explain without a ruler.",
+          "Expected": "CA=CD=CE as radii. With C strictly between A and D, AD=AC+CD=2CE. Thus CE=AD/2.",
           "Points": 2
         }
       ],
@@ -214,8 +216,8 @@
     "CandidateBLimitation": "Text answer persistence is implemented in general assessment system, but upload/attachment for a student geometry drawing, exact GEO LessonCode routing, assigned reviewer and scored rubric/feedback lifecycle are not demonstrated",
     "DoNotUse": "Online Exam as drawing rubric: SubmitExamAsync uses MathematicsAnswerEquivalence and scalar scoring",
     "RelevantCodeConstraint": "AssessmentService.Commands.cs SaveStudentResultAsync rejects non-Exam at lines 1576–1581, so it does not prove teacher scoring of a Homework/Worksheet task",
-    "SelectedDelivery": "PAPER_MODE_CANDIDATE_PENDING_ACADEMIC_ACCEPTANCE",
-    "ApprovalStatus": "NOT_APPROVED_NOT_REGISTERED_NOT_PERSISTED",
+    "SelectedDelivery": "PAPER_COMPASS_STRAIGHTEDGE_LABELLED_DIAGRAM_TEACHER_RUBRIC_AUTHORING_ONLY",
+    "ApprovalStatus": "COURSE_AUTHORED_AS_ACCEPTABLE_PAPER_MODALITY; NOT_LIVE_REGISTERED_OR_TEACHER_GRADE_PERSISTED",
     "SharedOwner": "Supervisor 2 / issue #453 pathway + assessment integration"
   },
   "ReviewerSignoff": {
@@ -225,6 +227,66 @@
     "AcademicSourceParityApproved": false,
     "PaperModeApproved": false,
     "FirstPartyCoolDownApproved": false,
-    "VisualFigureEquivalenceApproved": false
+    "VisualFigureEquivalenceApproved": false,
+    "Stage": "Independent academic review tracked for release; external signature not an A/B authoring blocker under Admin 2026-10-30"
+  },
+  "RubricScope": "8-point rubric applies to EDULYTIKS_AUTHORED_COOLDOWN; independently evaluate other drawing tasks via their corresponding task rubrics.",
+  "OriginalFirstPartyTaskRubric": {
+    "TotalMax": 8,
+    "TeacherOnly": true,
+    "Criteria": [
+      {
+        "Id": "E1",
+        "Criterion": "Names distinct A,B and uses straightedge correctly",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "E2",
+        "Criterion": "Constructs equal-radius circles centred A and B using opening AB",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "E3",
+        "Criterion": "Correctly chooses an intersection C and joins CA,CB",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "E4",
+        "Criterion": "Explains AC=BC=AB using circle membership, not appearance",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Source2021PracticeCrosswalk": [
+    {
+      "Problem": 1,
+      "OriginalSkill": "justify BD=AB by drawing and centres/radii",
+      "FirstParty": "P1 equidistant points on one circle; explains guaranteed radius equality",
+      "VisualOriginalExact": false
+    },
+    {
+      "Problem": 2,
+      "OriginalSkill": "select a true compass-transferred radius equality",
+      "FirstParty": "P2 fixed centre and equal radii; contrasting unsupported chord equality",
+      "VisualOriginalExact": false
+    },
+    {
+      "Problem": 3,
+      "OriginalSkill": "identify half of a constructed line segment and justify",
+      "FirstParty": "P3 explicit 4+6 not true half of 10; construction of exact midpoint",
+      "VisualOriginalExact": false
+    },
+    {
+      "Problem": 4,
+      "OriginalSkill": "compare CE with AD for a two-circle collinear configuration",
+      "FirstParty": "P4 reconstructs comparable collinear radius relationship with CE=AD/2",
+      "VisualOriginalExact": false
+    }
+  ],
+  "SourceLocalSha256": {
+    "TeacherPreparation": "ef6de406c01e1cf3233e115e8118d5e491123ab36f0af489ad95ceaf384b27ff",
+    "TeacherActivities": "24d77e65075b4bf7a43feca7190fd369883a17bc22e329e3e95989d25e35969d",
+    "StudentActivities": "898c2df9232610d497d5778ce43a191b9587a586b8c011b8e089d2950839ec39",
+    "StudentPractice": "82fc8f0676fd13a62337b74177edc96c2ba0166179dc459d4d12ff9610e9f794"
   }
 }
