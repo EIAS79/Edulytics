@@ -190,6 +190,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG4Unit1ThirdLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1SecondLessonQuestions.Supports(family.Trim()) ||
          UsCcssG4Unit1FirstLessonQuestions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1FirstLessonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson2And3Questions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson4Questions.Supports(family.Trim()) ||
@@ -457,6 +458,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG4Unit1SecondLessonQuestions.Verify(family,parameters,answer);
         if (UsCcssG4Unit1FirstLessonQuestions.Supports(family))
             return UsCcssG4Unit1FirstLessonQuestions.Verify(family, parameters, answer);
+        if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family))
+            return UsCcssG5Unit1Lesson1ComparisonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
             return UsCcssG2Unit1FirstLessonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1Lesson2And3Questions.Supports(family))
@@ -1849,6 +1852,12 @@ public sealed class ExactSkillContractQuestionEngine
             var rectangle = UsCcssG4Unit1FirstLessonQuestions.Build(family, random);
             return new ExactProblem(rectangle.Family, rectangle.Prompt, rectangle.Solution,
                 rectangle.ItemType, rectangle.Parameters);
+        }
+        if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family))
+        {
+            var comparison = UsCcssG5Unit1Lesson1ComparisonQuestions.Build(family, random);
+            return new ExactProblem(comparison.Family, comparison.Prompt, comparison.Solution,
+                comparison.ItemType, comparison.Parameters);
         }
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
         {
@@ -4915,6 +4924,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssG4Unit1SecondLessonQuestions.Solve(problem.Family,p);
         if (UsCcssG4Unit1FirstLessonQuestions.Supports(problem.Family))
             return UsCcssG4Unit1FirstLessonQuestions.Solve(problem.Family, p);
+        if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(problem.Family))
+            return UsCcssG5Unit1Lesson1ComparisonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(problem.Family))
             return UsCcssG2Unit1FirstLessonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1Lesson2And3Questions.Supports(problem.Family))

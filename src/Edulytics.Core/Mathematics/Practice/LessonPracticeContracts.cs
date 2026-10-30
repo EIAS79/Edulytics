@@ -1105,6 +1105,9 @@ public static class LessonPracticeContractRegistry
         // Hand constructions, open explanations, and publisher Cool-down remain teacher-led.
         foreach (var reviewed in UsCcssG4Unit1FirstLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
+        // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
+        foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
         foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
         {
