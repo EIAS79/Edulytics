@@ -38,6 +38,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Which context represents the fraction 3/2 liters per person?","3 liters shared equally among 2 people","2 liters shared equally among 3 people","3 people given 2 liters each"),
                 new("How many liters total if three dancers each receive 2/3 liter?","2 liters","3 liters","9/2 liters")
             ],
+                        ["usccss.g5.u02.l04.blueberry_division_context"]=[
+                new("Six people share four pounds of blueberries equally. What does each person receive?","4/6 pound = 2/3 pound","6/4 pound","4 pounds"),
+                new("Which expression matches four pounds shared between six people?","4÷6=4/6","6÷4=4/6","4×6=4/6"),
+                new("Four one-pound bars shared between six people give what share?","2/3 pound each","3/2 pounds each","6 pounds each"),
+                new("Seven people share three grams of gold. How many grams per person?","3/7 gram","7/3 grams","1/7 gram"),
+                new("Five people equally share two gallons of milk. How many gallons each?","2/5 gallon","5/2 gallons","1/5 gallon"),
+                new("What does the fraction 4/6 pound represent in the blueberry context?","4 pounds shared equally among 6 students","6 pounds shared equally among 4 students","4 pounds given to EACH of 6 students")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L04",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L05",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 15,
+    "READY_FOR_D": 16,
     "D_VERIFIED": 0,
-    "BLOCKED": 4,
-    "REMAINING": 133
+    "BLOCKED": 3,
+    "REMAINING": 132
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -956,23 +956,18 @@
       "reuseFinding": "REUSE_SOURCE_REPAIRED_POUNDS_BLUEBERRIES_GOLD_AND_DIV_BY_7; ADD_ONLY_FIRST_PARTY_EXIT_AND_C_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE exact quotient arithmetic supplemental; shared EXTEND teacher-scored three-representation match/inverse unknown contexts",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u02-l04-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:29:09.894Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T20:14:36.491Z",
+      "elapsedSeconds": 27927,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated shared integration writer #592",
-        "reason": "Exact selected source-faithful context/equation/diagram and inverse-person counting Practice plus teacher scorer not proven",
-        "acceptWhen": "Selected rubric/feedback for context matching and inverse whole-number quotient integrated and evidence verified"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "Original 2021 teacher lesson and preparation/Student Facing read-only from Our-CS",
         "sourceTasks": [
@@ -995,7 +990,16 @@
         "before": "Content already covers source Activity 2 gold and inverse unknown problems and warm-up fractions; independent Edulytiks exit not explicit.",
         "after": "Preserved source-authored math; added original story/equation/diagram/inverse exit, rubric and independent fixtures."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l04-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l04-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u02.l04.blueberry_division_context",
+        "source": "Our-CS 2021 U02 L04 lesson/preparation.html",
+        "teacher": "Three-way matching of diagram, equations and self-authored stories, reasoning about 4/6=2/3, original gold and milk applications.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "scope": "NUMERIC_MULTIPLE_CHOICE_SUBSKILL_ONLY",
+        "parentHead": "8993b98946ee43f11a7afb7c5fec7823be88d7dc"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
