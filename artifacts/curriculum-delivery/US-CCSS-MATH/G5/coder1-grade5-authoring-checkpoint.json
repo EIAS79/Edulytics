@@ -84,7 +84,9 @@
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l02-l06-source-audit-v12.json",
     "tests/academic-us-ccss-g5-u02-source-v13.test.cjs",
     "tests/academic-us-ccss-g5-u02-area-v13.test.cjs",
-    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-l13-source-audit-v13.json"
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-l13-source-audit-v13.json",
+    "tests/academic-us-ccss-g5-u02-final-v13.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l14-l17-source-audit-v13.json"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -190,8 +192,8 @@
       "status": "INCOMPLETE_SOURCE_REVIEW",
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
-      "issue": "All 148 direct Grade 5 Rich V2 candidates preserved. V13 source-specific repairs in U02:L07,L09-L13; L08 ready reuse. Original external source PDFs/blackline/image rights for V13 not inspected. Effective B/C/D and academic acceptance unverified.",
-      "next": "Continue U02:L14 source tasks and keep separate PDF/card backlog; do not change shared Practice/content materializer."
+      "issue": "V13 original 2021 teacher/embedded Student Facing HTML compared for U02:L07–L17; 10 lesson-local Rich V2 content/source repairs and L08 READY_REUSE. No original separate PDF/blackline master, selected Practice, effective authenticated B/C/D or A acceptance from these checks.",
+      "next": "Continue original source fidelity U03:L01, preserve prior U01:L01 and U02:L04 PDF/card source gaps; only supervisor may edit central Practice/seeder."
     },
     {
       "id": "G5-D-004",
@@ -7577,7 +7579,7 @@
       "sourceTaskAssessmentBoundary": "TEACHER_SCORED_AUTHENTIC_GAME_STUDENT_CREATED_TASK_OR_FACILITATION_NUMERIC_SUBCHECK_ONLY"
     }
   ],
-  "lastGradeContentCommit": "9d16f8a1ffa88bea1c9201a659cc7568b12b86d6",
+  "lastGradeContentCommit": "fd40dbac1226727b2283b5b0fc9b2bee0942f3ee",
   "pendingTests": [
     "node --test tests/academic-us-ccss-g5-content-repair-guards.test.cjs tests/academic-us-ccss-g5-richv2-volume.test.cjs tests/academic-us-ccss-g5-richv2-fraction-game.test.cjs",
     ".NET focused compile, source/copyright, runtime exact Practice tests",
@@ -7585,15 +7587,15 @@
     "protected GitHub CI at final frozen branch head"
   ],
   "currentScopeDescription": "V10: 148/148 Grade5 direct first-party Rich V2 teaching candidates remain. Exact source read-only audit and measured-composite-prism repairs completed for U01:L09 (78 ft³,259 in³,420 in³) and U01:L10 (retained valid 95-unit example, added168 ft³ measured source task). Two exact GitHub Node test scripts tested in isolated Node v22.16.0: 9 PASS, 0 FAIL, 3 fixture SKIP. Original Student Task PDFs, figures/cards, gated Cool-down, selected Practice, .NET/DB/CI, authenticated student/teacher and owner UAT remain unverified; 0/148 A/B/C/D and accepted.",
-  "lastCodeCommit": "9d16f8a1ffa88bea1c9201a659cc7568b12b86d6",
-  "lastCommittedTest": "43c6b6b220aa1eb74d0ae9d31631589e68b81bab",
+  "lastCodeCommit": "fd40dbac1226727b2283b5b0fc9b2bee0942f3ee",
+  "lastCommittedTest": "5ce7e0dea2205bec9e6047504164bdbb1c28ec32",
   "nextResumeMarker": {
     "branch": "curriculum/us-ccss-g5-full-grade-20261028",
-    "lastKnownCommittedHeadBeforeLedger": "a643ab65faabe8b32de82ad7b33d06b3b6386151",
-    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U02:L14 — compare original 2021 source task and Grade-5 Rich V2",
+    "lastKnownCommittedHeadBeforeLedger": "2446b319b703fd824889168ffea483fe707e52ba",
+    "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U03:L01 — verify original 2021 student/teacher activity fidelity and lesson evidence",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "V13 compared U02:L07-L13 public 2021 teacher source; L07,L09-L13 repaired and L08 READY_REUSE. Continue U02:L14 next without inventing PDF/art permissions. U01:L01 original PDF and prior U02:L04 PDF remain open; Grade-5 A-D zero.",
+    "nextAcademic": "V13 source HTML reviewed U02:L07-L17: repaired ten lessons L07,L09–L17; L08 READY_REUSE. All eleven original Student Task PDFs and source blackline figures remain V13-unverified. Continue U03:L01, and preserve earlier source PDF/card backlog. No A–D or owner UAT claims.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
@@ -8056,7 +8058,11 @@
       "PED:US-CCSS-MATH:G5:U02:L10",
       "PED:US-CCSS-MATH:G5:U02:L11",
       "PED:US-CCSS-MATH:G5:U02:L12",
-      "PED:US-CCSS-MATH:G5:U02:L13"
+      "PED:US-CCSS-MATH:G5:U02:L13",
+      "PED:US-CCSS-MATH:G5:U02:L14",
+      "PED:US-CCSS-MATH:G5:U02:L15",
+      "PED:US-CCSS-MATH:G5:U02:L16",
+      "PED:US-CCSS-MATH:G5:U02:L17"
     ],
     "sourceReviewClassification": {
       "L07": "CONTENT_REPAIR",
@@ -8065,12 +8071,16 @@
       "L10": "CONTENT_REPAIR",
       "L11": "CONTENT_REPAIR",
       "L12": "CONTENT_REPAIR",
-      "L13": "CONTENT_REPAIR"
+      "L13": "CONTENT_REPAIR",
+      "L14": "CONTENT_REPAIR",
+      "L15": "CONTENT_REPAIR",
+      "L16": "CONTENT_REPAIR_WITH_TEACHER_JUDGMENT",
+      "L17": "CONTENT_REPAIR"
     },
     "sourceAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-l13-source-audit-v13.json",
     "lessonRichV2CandidateCount": 148,
-    "sourceReviewedCount": 7,
-    "sourceSpecificRepairedCount": 6,
+    "sourceReviewedCount": 11,
+    "sourceSpecificRepairedCount": 10,
     "inspected": "Public 2021 original teacher preparation and lesson embedded Student Facing HTML for U02:L07-L13",
     "studentTaskPdfInspectedCount": 0,
     "sourceBlacklineMasterInspected": false,
@@ -8080,19 +8090,22 @@
       "85a34045413f172053dca76ac0600a351f5afb22",
       "dca60f86fa432387c6441c2c8145ab638e6ef907",
       "6888cf049e9d6f1af37ea0d76365c4b735e7494b",
-      "9d16f8a1ffa88bea1c9201a659cc7568b12b86d6"
+      "9d16f8a1ffa88bea1c9201a659cc7568b12b86d6",
+      "fd40dbac1226727b2283b5b0fc9b2bee0942f3ee"
     ],
     "exactNodeTestBlobShas": [
       "e3635644158d949fa9daaaa3c9b351cf301cf9f8",
-      "ee8fc67901f4e7e85cb6782bb0f597807fe79c9e"
+      "ee8fc67901f4e7e85cb6782bb0f597807fe79c9e",
+      "c1dedbf72c4cdb972df4d0d8497ab949cb159128"
     ],
     "actualNode": {
       "version": "v22.16.0",
       "command": "node --test /mnt/data/g5_v13_isolated/tests/*.test.cjs",
-      "passed": 11,
+      "passed": 18,
       "failed": 0,
-      "skipped": 2,
-      "scope": "Independent mathematical and negative-case oracle tests on identical GitHub bytes. Full checkout fixture skipped; not runtime app tests."
+      "skipped": 3,
+      "scope": "Three exact committed Node test files for independent arithmetic/card/negative/boundary cases; three actual Rich V2 full-repo fixture tests skipped because checkout unavailable.",
+      "gitBlobParity": true
     },
     "fullCheckout": "NOT_AVAILABLE_git_clone_DNS_FAILED",
     "dotnetSdk": "NOT_AVAILABLE",
@@ -8111,6 +8124,7 @@
     "supervisorIssue592": "https://github.com/EIAS79/Edulytics/issues/592",
     "supervisorTestsPr601": "https://github.com/EIAS79/Edulytics/pull/601",
     "protectedCiCurrentFinalHead": "NOT_YET_RECHECKED",
-    "next": "PED:US-CCSS-MATH:G5:U02:L14"
+    "next": "PED:US-CCSS-MATH:G5:U03:L01",
+    "finalBatchAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l14-l17-source-audit-v13.json"
   }
 }
