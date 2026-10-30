@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L05",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L06",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 4,
+    "READY_FOR_D": 5,
     "D_VERIFIED": 0,
-    "BLOCKED": 15,
-    "REMAINING": 144
+    "BLOCKED": 14,
+    "REMAINING": 143
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -360,22 +360,18 @@
       "reuseFinding": "REUSE_PREEXISTING_BASE_CHOICES; CORRECT_SOURCE_4x10_TABLE_AND_ADD_CONTEXT_QUESTION_ACTIVITY",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric volume as supplement; shared writer EXTEND for teacher open responses if needed",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l05-contract-v15.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T08:01:17.608Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:15:31.391Z",
+      "elapsedSeconds": 40454,
       "commitSHA": null,
-      "blocker": {
-        "owner": "Supervisor 1 shared integration writer",
-        "reason": "No demonstrated selected Practice and human grading for base matching and contextual question generation",
-        "acceptWhen": "Exact contract and teacher-scored open tasks statically wired and evidenced"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "edition": "2021 IM",
         "localTeacherLesson": "lesson-5/lesson.html",
@@ -400,7 +396,16 @@
         "before": "Source 4×10 heights 1,2,3,10,25 and contextual question activity not fully represented.",
         "after": "Exact source arithmetic, interpretation tasks, accessible independent models and original teacher-scored exit check."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l05-practice-rubric-v15.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l05-practice-rubric-v15.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l05.growing_prism_fixed_base",
+        "teacher": "BASE_ROTATION_AND_OPEN_PROBLEMS",
+        "source": "2021 local Lesson5 Teacher and Student Facing",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "publisherSourceMaterialParity": "NOT_CERTIFIED",
+        "head": "a1e32b24cfb0d6e3c053470a170ac262581a2a80"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
