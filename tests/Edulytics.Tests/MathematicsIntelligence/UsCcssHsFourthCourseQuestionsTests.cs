@@ -121,6 +121,35 @@ public sealed class UsCcssHsFourthCourseQuestionsTests
     }
 
     [Fact]
+    public void PendingFourthCourseContractsAreDiscoverableForAuditOnly()
+    {
+        var pending = LessonPracticeContractRegistry.PendingForAudit;
+        var fourth = pending.Where(x =>
+            x.LessonCode.StartsWith("PED:US-CCSS-MATH:HS:FOURTH:", StringComparison.Ordinal))
+            .OrderBy(x => x.LessonCode, StringComparer.Ordinal)
+            .ToArray();
+        Assert.Equal(7, fourth.Length);
+        Assert.Equal(2, fourth.Count(x => x.LessonCode.Contains(":ADV-ALG-FUNC:", StringComparison.Ordinal)));
+        Assert.Equal(5, fourth.Count(x => x.LessonCode.Contains(":ADV-TRIG-GEO:", StringComparison.Ordinal)));
+        foreach (var candidate in fourth)
+        {
+            Assert.Equal("INTEGRATION_PENDING", candidate.Readiness);
+            Assert.NotEmpty(candidate.AllowedQuestionFamilies);
+            Assert.True(LessonPracticeContractRegistry.TryResolve(candidate.LessonCode, out var resolved));
+            Assert.Same(candidate, resolved);
+            Assert.DoesNotContain(LessonPracticeContractRegistry.All,
+                row => row.LessonCode == candidate.LessonCode);
+            Assert.False(LessonPracticeCapabilityResolver.TryResolve(candidate.LessonCode, out _));
+            foreach (var family in candidate.AllowedQuestionFamilies)
+                Assert.True(ExactSkillContractQuestionEngine.SupportsFamily(family), family);
+        }
+
+        Assert.Contains(LessonPracticeContractRegistry.All,
+            row => row.LessonCode == "PED:US-CCSS-MATH:G1:U01:L01" &&
+                   row.Readiness == "READY_VERIFIED");
+    }
+
+    [Fact]
     public void StudentRoutingIsStillFailClosedUntilFullIntegrationApproval()
     {
         foreach (var course in new[] { "ADV-ALG-FUNC", "ADV-TRIG-GEO" })
