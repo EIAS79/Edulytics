@@ -113,7 +113,52 @@
       },
       "initialSourceAuditStartedAt": "2026-10-30T06:53:18.386Z",
       "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-practice-human-rubric-v14.json",
-      "stageDStatus": "DEFERRED_STAGE_D"
+      "stageDStatus": "DEFERRED_STAGE_D",
+      "v5StrictRecheck": {
+        "verifiedAtUtc": "2026-10-30T12:48:08.024Z",
+        "againstHead": "b887aeb99c438e61d25390156b973aa9ac60089e",
+        "sourceLessonFile": "PRESENT_REVIEWED",
+        "sourcePreparationFile": "PRESENT_REVIEWED",
+        "staticContract": {
+          "mappingFile": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "primarySkill": "geometry.volume",
+          "mechanic": "G5_ONE_CUBIC_UNIT_VOLUME",
+          "allowedFamily": "usccss.g5.unit_cube_count",
+          "practiceReadinessMetadata": "READY_VERIFIED",
+          "questionFamilyStatus": "ShadowVerified",
+          "lessonPracticeRouting": true,
+          "productionRouting": false,
+          "projection": "LessonPracticeContractProjection.Load -> LessonPracticeContractRegistry.BuildAllEntries.TryAdd; runtime selected item/grader NOT EXECUTED"
+        },
+        "sharedOwner": "Supervisor 1 designated SINGLE shared integration writer under issue #592",
+        "reason": "The exact mapping permits only unit_cube_count numeric contract; it does not demonstrate connected 8-/9-cube builds, shape invariance, ordering and teacher-scored reasoning from 2021 source. The family being eligible for lesson Practice does not prove source-aligned construction assessment.",
+        "acceptanceCases": {
+          "correct": [
+            "Two distinct face-connected eight-cube arrangements, eight cubes each",
+            "Two distinct face-connected nine-cube arrangements, nine each",
+            "Four-object ordering by equal unit cube count"
+          ],
+          "equivalent": [
+            "Solid translation and valid cube rotation preserve count and connectedness",
+            "Different correct object arrangements with equal cube count"
+          ],
+          "wrong": [
+            "Height-based larger-volume claim despite equal cubes",
+            "Disconnected cubes",
+            "Duplicate overlapping cubes",
+            "Wrong count and ordering",
+            "Numeric-only 8 or 9 as proof of construction"
+          ],
+          "malformed": [
+            "Non-integer/non-3D coordinate entries",
+            "Missing object or invalid recipient/model data",
+            "Empty solid"
+          ]
+        },
+        "unitStatus": "UNIT_BLOCKED",
+        "noGradingRuntimeExecuted": true,
+        "retainedAandB": true
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
@@ -4235,7 +4280,7 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:33:08.293Z",
+  "updatedAtUtc": "2026-10-30T12:48:08.024Z",
   "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L08",
   "returnBacklog": [
     {
@@ -4314,5 +4359,24 @@
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L07",
       "reason": "C unit fraction times whole and story/diagram teacher review"
     }
-  ]
+  ],
+  "v5StrictUnit": {
+    "protocol": "V5_ONE_COMPLETE_UNIT_STRICT",
+    "unitCode": "U01",
+    "unitStatus": "UNIT_BLOCKED",
+    "officialUnitTotal": 8,
+    "unitLessonCount": 12,
+    "previousABCClosed": 0,
+    "newABCClosed": 0,
+    "unitReadyForD": 0,
+    "firstOpenLesson": "PED:US-CCSS-MATH:G5:U01:L01",
+    "lastClosedLesson": null,
+    "nextAllowedLesson": null,
+    "nextUnitAuthorized": false,
+    "blockerOwner": "Supervisor 1 designated SINGLE shared integration writer under issue #592",
+    "sourceHeadVerified": "b887aeb99c438e61d25390156b973aa9ac60089e",
+    "unitStatusEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-v5-strict-unit-status-20261030.json",
+    "checkedAtUtc": "2026-10-30T12:48:08.024Z",
+    "legacyNextIndependentCursorIgnored": true
+  }
 }

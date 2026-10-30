@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "policy": "V5 P0 STRICT ONE COMPLETE OFFICIAL UNIT PER SESSION",
+  "sourceOfTruth": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/g5-abc-lesson-ledger-v1.json",
+  "courseCode": "US-CCSS-MATH:G5",
+  "repo": "EIAS79/Edulytics",
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "prNumber": 596,
+  "checkedAtUtc": "2026-10-30T12:48:08.024Z",
+  "reviewedAgainstHead": "b887aeb99c438e61d25390156b973aa9ac60089e",
+  "officialUnitTotal": 8,
+  "unitCode": "U01",
+  "officialUnitLessonCount": 12,
+  "officialLessonCodes": [
+    "PED:US-CCSS-MATH:G5:U01:L01",
+    "PED:US-CCSS-MATH:G5:U01:L02",
+    "PED:US-CCSS-MATH:G5:U01:L03",
+    "PED:US-CCSS-MATH:G5:U01:L04",
+    "PED:US-CCSS-MATH:G5:U01:L05",
+    "PED:US-CCSS-MATH:G5:U01:L06",
+    "PED:US-CCSS-MATH:G5:U01:L07",
+    "PED:US-CCSS-MATH:G5:U01:L08",
+    "PED:US-CCSS-MATH:G5:U01:L09",
+    "PED:US-CCSS-MATH:G5:U01:L10",
+    "PED:US-CCSS-MATH:G5:U01:L11",
+    "PED:US-CCSS-MATH:G5:U01:L12"
+  ],
+  "previouslyABCClosed": 0,
+  "newlyABCClosed": 0,
+  "unitReadyForD": 0,
+  "blockedLessons": [
+    "PED:US-CCSS-MATH:G5:U01:L01",
+    "PED:US-CCSS-MATH:G5:U01:L02",
+    "PED:US-CCSS-MATH:G5:U01:L03",
+    "PED:US-CCSS-MATH:G5:U01:L04",
+    "PED:US-CCSS-MATH:G5:U01:L05",
+    "PED:US-CCSS-MATH:G5:U01:L06",
+    "PED:US-CCSS-MATH:G5:U01:L07",
+    "PED:US-CCSS-MATH:G5:U01:L08",
+    "PED:US-CCSS-MATH:G5:U01:L09",
+    "PED:US-CCSS-MATH:G5:U01:L10",
+    "PED:US-CCSS-MATH:G5:U01:L11",
+    "PED:US-CCSS-MATH:G5:U01:L12"
+  ],
+  "firstOpenLesson": "PED:US-CCSS-MATH:G5:U01:L01",
+  "lastClosedLesson": null,
+  "nextUnit": "U02_NOT_AUTHORIZED_UNTIL_U01_ABC_CLOSED",
+  "nextAllowedLesson": null,
+  "unitStatus": "UNIT_BLOCKED",
+  "exactBlocker": {
+    "owner": "Supervisor 1 designated SINGLE shared integration writer under issue #592",
+    "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+    "reviewedAgainstHead": "b887aeb99c438e61d25390156b973aa9ac60089e",
+    "selectedStaticMapping": {
+      "mappingFile": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+      "primarySkill": "geometry.volume",
+      "mechanic": "G5_ONE_CUBIC_UNIT_VOLUME",
+      "allowedFamily": "usccss.g5.unit_cube_count",
+      "practiceReadinessMetadata": "READY_VERIFIED",
+      "questionFamilyStatus": "ShadowVerified",
+      "lessonPracticeRouting": true,
+      "productionRouting": false,
+      "projection": "LessonPracticeContractProjection.Load -> LessonPracticeContractRegistry.BuildAllEntries.TryAdd; runtime selected item/grader NOT EXECUTED"
+    },
+    "reason": "The exact mapping permits only unit_cube_count numeric contract; it does not demonstrate connected 8-/9-cube builds, shape invariance, ordering and teacher-scored reasoning from 2021 source. The family being eligible for lesson Practice does not prove source-aligned construction assessment.",
+    "sharedFixNeeded": "Single writer verify actual selected contract/generator/grader/fallback; REUSE numerical counting only as supplemental; EXTEND one existing connected-cube family or accepted teacher-reviewed model submission/feedback. Provide correct/wrong/equivalent/malformed tests and prove static wiring. Protect G5 content materialization/version; defer authenticated tests to D.",
+    "sourceGoals": [
+      "Original Which One Doesn't Belong four source cube shapes with multiple defended choices",
+      "Activity 1 two different comparison pairs of eight connected equal-size cubes each, not 'height is volume'",
+      "Activity 2 four learners build and order actual connected solids, repeat, then construct nine-cube connected solids and explain same volume"
+    ],
+    "acceptanceCases": {
+      "correct": [
+        "Two distinct face-connected eight-cube arrangements, eight cubes each",
+        "Two distinct face-connected nine-cube arrangements, nine each",
+        "Four-object ordering by equal unit cube count"
+      ],
+      "equivalent": [
+        "Solid translation and valid cube rotation preserve count and connectedness",
+        "Different correct object arrangements with equal cube count"
+      ],
+      "wrong": [
+        "Height-based larger-volume claim despite equal cubes",
+        "Disconnected cubes",
+        "Duplicate overlapping cubes",
+        "Wrong count and ordering",
+        "Numeric-only 8 or 9 as proof of construction"
+      ],
+      "malformed": [
+        "Non-integer/non-3D coordinate entries",
+        "Missing object or invalid recipient/model data",
+        "Empty solid"
+      ]
+    },
+    "sourceAndRights": {
+      "lessonHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
+      "preparationHtml": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html",
+      "studentMirror": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\accessim_student\\unit-1\\section-a\\lesson-1.html",
+      "studentMirrorEdition": "Not a substitute for original 2021 Student Task",
+      "publisherImages": "NOT_VERIFIED_NOT_REPRODUCED",
+      "cooldown": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_ORIGINAL_AUTHORED"
+    },
+    "ownedEvidence": {
+      "richV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
+      "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-practice-human-rubric-v14.json",
+      "fixture": "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs",
+      "fixtureStatus": "TEST_AUTHORED_NOT_RUN"
+    },
+    "noGo": "No C_PREPARED, no lesson READY_FOR_STAGE_D, no source-figure parity or runtime correctness claim"
+  },
+  "allSourceFilePresence": "unit-1 lesson-1 through lesson-12 each had lesson.html and preparation.html listed read-only on Our-CS",
+  "selectedRuntimeAssessment": "NOT_RUN",
+  "gradeTotals": {
+    "TOTAL": 148,
+    "AUTHORED": 148,
+    "A_CLOSED": 19,
+    "B_CLOSED": 19,
+    "C_PREPARED": 0,
+    "READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 19,
+    "REMAINING": 148
+  },
+  "unitMatrix": [
+    {
+      "unitCode": "U01",
+      "officialLessons": 12,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "UNIT_BLOCKED"
+    },
+    {
+      "unitCode": "U02",
+      "officialLessons": 17,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    },
+    {
+      "unitCode": "U03",
+      "officialLessons": 20,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    },
+    {
+      "unitCode": "U04",
+      "officialLessons": 21,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    },
+    {
+      "unitCode": "U05",
+      "officialLessons": 26,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    },
+    {
+      "unitCode": "U06",
+      "officialLessons": 21,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    },
+    {
+      "unitCode": "U07",
+      "officialLessons": 13,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    },
+    {
+      "unitCode": "U08",
+      "officialLessons": 18,
+      "readyForStageD": 0,
+      "ABCClosed": 0,
+      "status": "NOT_ABC_CLOSED"
+    }
+  ],
+  "preservedPriorWork": "U01:L02-L12 and U02:L01-L07 source corrections remain untouched; prior nextIndependentCursor is historical only and must not advance V5",
+  "operationsForbidden": [
+    "NO_SHARED_WRITES",
+    "NO_U01_L02_L12_EDITS_UNTIL_L01_READY",
+    "NO_U02_EDITS",
+    "NO_FORCE_PUSH",
+    "NO_MERGE",
+    "NO_DEPLOY",
+    "NO_STAGE_D"
+  ],
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "ownerIssue": "https://github.com/EIAS79/Edulytics/issues/592"
+}
