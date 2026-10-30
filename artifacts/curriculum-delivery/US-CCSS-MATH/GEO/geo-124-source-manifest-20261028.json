@@ -47,7 +47,11 @@
     "v12PriorInitialSourceRowsNotReaudited": 67,
     "v13SourceTasksReopened": 4,
     "v13IndependentlyRecomputedExampleSlots": 27,
-    "v13WorkedExamplesNotIndependentlyCertified": 345
+    "v13WorkedExamplesNotIndependentlyCertified": 345,
+    "v14NewlyIndependentlyRecomputedU04ExampleSlots": 28,
+    "v14TotalIndependentMathExampleSlots": 55,
+    "v14WorkedExamplesNotIndependentlyCertified": 317,
+    "v14SourceTasksReopened": 2
   },
   "lessons": [
     {
@@ -2548,7 +2552,28 @@
       "stageD": "NOT_RUN",
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
-      "release": "NOT_ACCEPTED"
+      "release": "NOT_ACCEPTED",
+      "v14IndependentReaudit": {
+        "studentAndTeacherSourceTasksReviewed": "2026-10-30 preliminary task-by-task comparison",
+        "sourceTaskAcceptance": "NOT_VERIFIED",
+        "academicSignoff": false,
+        "protectedTeacherCooldown": "NOT_INSPECTED",
+        "repairedWorkedExample": "Corrected invented 12 m absolute run to 2:5 ratio; 12 m is conditional on a hypothetical 4.8 m run.",
+        "independentlyRecomputedExampleIndexes": [
+          0,
+          1
+        ],
+        "authenticatedStudentTeacherRoute": "NOT_RUN",
+        "teacherScoredSavedSubmission": "NOT_RUN",
+        "syntheticTenantPractice": "NOT_RUN",
+        "A_REVIEWED": true,
+        "A_ACCEPTED": false,
+        "B_IMPLEMENTED": true,
+        "B_VERIFIED": false,
+        "C_VERIFIED": false,
+        "D_VERIFIED": false,
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v14-u04-source-math-corrections-20261030.json"
+      }
     },
     {
       "ordinal": 55,
@@ -2636,6 +2661,28 @@
       "practice": "NOT_VERIFIED",
       "persisted": "NOT_CHECKED",
       "release": "NOT_ACCEPTED",
+      "v14IndependentReaudit": {
+        "studentAndTeacherSourceTasksReviewed": "2026-10-30 preliminary task-by-task comparison",
+        "sourceTaskAcceptance": "NOT_VERIFIED",
+        "academicSignoff": false,
+        "protectedTeacherCooldown": "NOT_INSPECTED",
+        "repairedWorkedExample": "Corrected answer for equilateral side 2s to explicitly state altitude s*sqrt(3) for s>0.",
+        "independentlyRecomputedExampleIndexes": [
+          0,
+          1,
+          2
+        ],
+        "authenticatedStudentTeacherRoute": "NOT_RUN",
+        "teacherScoredSavedSubmission": "NOT_RUN",
+        "syntheticTenantPractice": "NOT_RUN",
+        "A_REVIEWED": true,
+        "A_ACCEPTED": false,
+        "B_IMPLEMENTED": true,
+        "B_VERIFIED": false,
+        "C_VERIFIED": false,
+        "D_VERIFIED": false,
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-v14-u04-source-math-corrections-20261030.json"
+      },
       "sourceOptional": true,
       "sourceOptionalEvidence": "https://im.kendallhunt.com/HS/teachers/2/4/3/preparation.html"
     },
