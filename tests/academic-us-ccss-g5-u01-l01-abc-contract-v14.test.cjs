@@ -81,6 +81,12 @@ test('count ordering, ties, and height-based misconceptions have independent mat
 test('reject disconnected, overlapping, wrong-count, malformed and scalar-only construction answers',()=>{
   const disconnected=[...tower8.slice(0,8),[99,0,0]];
   assert.deepEqual(inspectSolid(disconnected),{valid:false,reason:'DISCONNECTED'});
+  assert.deepEqual(inspectSolid([[0,0,0],[1,1,0]]),{valid:false,reason:'DISCONNECTED'},
+    'Cubes touching only along an edge do not form one face-connected solid');
+  assert.deepEqual(inspectSolid([[0,0,0],[1,1,1]]),{valid:false,reason:'DISCONNECTED'},
+    'Cubes touching only at a vertex do not form one face-connected solid');
+  assert.deepEqual(inspectSolid([[0,0,0],[1,0,0]]),{valid:true,count:2},
+    'A shared face is valid connectivity');
   assert.deepEqual(inspectSolid([...slab8,slab8[0]]),{valid:false,reason:'DUPLICATE_OVERLAP'});
   assert.equal(inspectSolid(tower8.slice(0,7)).count,7); // does not satisfy target-eight task
   assert.equal(inspectSolid(slab9.slice(0,8)).count,8); // does not satisfy target-nine task
@@ -95,8 +101,12 @@ test('source-functional first-party visuals and teacher-only assessment spec exi
   const spec=JSON.parse(fs.readFileSync(specPath,'utf8'));
   assert.ok(item); assert.equal(spec.stageC,'BLOCKED_SHARED_INTEGRATION');
   assert.equal(spec.lessonCode,item.LessonCode);
-  assert.ok(item.Visuals.some(v=>v.Title.includes('Edulytiks-original A–D')));
-  assert.ok(item.ExplanationParagraphs.join(' ').includes('2021 exact pair diagrams have NOT been verified'));
+  assert.ok(item.Visuals.some(v=>v.Title.includes('Source-described 2021 warm-up A–D')),
+    'Verify the source-described models rather than obsolete v14 visual names');
+  const lessonText = item.ExplanationParagraphs.join(' ');
+  assert.match(lessonText,/original local HTML image alt descriptions have been checked/i);
+  assert.match(lessonText,/underlying image binaries and figure reuse rights remain unverified/i);
+  assert.match(lessonText,/teacher review rubric \(8 points/i);
   assert.ok(spec.taskContracts.every(t=>t.evaluation.includes('TEACHER') || t.evaluation.includes('HUMAN')));
   assert.ok(spec.independentFixtureExpectations.some(f=>f.name==='numeric_answer_only'));
 });
