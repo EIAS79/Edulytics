@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+  "contentVersion": "alg1-u01-l02-sequential-source-abc-20261030-v3",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\2\\preparation.html",
+      "sha256": "dbac7a8a58d295d208b2e31375526d131dc2925a0d4db40c4487f8ccfb4f74b8"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\2\\index.html",
+      "sha256": "425c622098e998f12ab0b178606a185392e4bd6ae8ee418099c7337b6e6c2220"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\2\\index.html",
+      "sha256": "b3c96fc7871bec10a1b47e2da2d57c87b54552f628d613c639ceeb3a3a508c83"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\2\\practice.html",
+      "sha256": "ada71fe774d5d96c41e86186555c6f8c3174e87b971f6c06c07244a1c6377032"
+    }
+  },
+  "sourceRoles": [
+    "6.SP.B.4=BuildingOn",
+    "HSS-ID.A.1=Addressing AND BuildingTowards",
+    "HSS-ID.A.2=BuildingTowards"
+  ],
+  "sourceToContentCrosswalk": [
+    "optional review, 26 fictional phones notice/wonder comparing three displays",
+    "30 fictional plant-day observations, width-10 and width-5 histograms",
+    "five-number summary and box plot on the same data",
+    "P1 dot median, P2 box, P3 histogram, P4 numerical classifications, P5 variation and teacher Cool-down"
+  ],
+  "task": "30 fictional tomato plants, histograms and five-number summary",
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_TASKS",
+      "kind": "HUMAN",
+      "tasks": [
+        "optional review, 26 fictional phones notice/wonder comparing three displays",
+        "30 fictional plant-day observations, width-10 and width-5 histograms",
+        "five-number summary and box plot on the same data",
+        "P1 dot median, P2 box, P3 histogram, P4 numerical classifications, P5 variation and teacher Cool-down"
+      ],
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "raw-and-dot-plot",
+          "maxPoints": 2,
+          "evidence": "correct dot frequencies, value count and units"
+        },
+        {
+          "criterion": "histograms",
+          "maxPoints": 2,
+          "evidence": "correct width 10 and width 5 nonoverlapping bins, total count, labels"
+        },
+        {
+          "criterion": "box-and-five-number",
+          "maxPoints": 2,
+          "evidence": "min 46, Q1 58, median 66.5, Q3 76, max 92 and box geometry"
+        },
+        {
+          "criterion": "interpretation",
+          "maxPoints": 2,
+          "evidence": "explains what dot, histogram and box plots show/hide and limits from sample"
+        }
+      ],
+      "authenticInteractionOnlyIfObserved": true
+    },
+    {
+      "id": "FIRST_PARTY_COOLDOWN",
+      "kind": "HUMAN",
+      "source": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "correct binning and labels",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "five-number box plot and quartile convention",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "justification of same-data rebinning",
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "id": "INDEPENDENT_MATH_FIXTURE",
+      "kind": "AUTHORING_ORACLE_NOT_RUNTIME",
+      "expected": [
+        2,
+        7,
+        9,
+        7,
+        4,
+        1,
+        46,
+        58,
+        66.5,
+        76,
+        92
+      ],
+      "answerType": "ordered vector of numerical values or named categorical shape descriptors; graph drawing stays HUMAN",
+      "correct": [
+        2,
+        7,
+        9,
+        7,
+        4,
+        1,
+        46,
+        58,
+        66.5,
+        76,
+        92
+      ],
+      "equivalent": "numerically equivalent values using stated units and quartile conventions where appropriate",
+      "wrong": "missing value, shifted bin, wrong median, invalid copied formula, or unjustified descriptor",
+      "malformed": "null, blank, NaN, unsupported type, duplicated selection, invalid vector length",
+      "verification": "independently computed local Python arithmetic or classification; never asserted as production grader"
+    }
+  ],
+  "stageD": {
+    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "sharedOwner": "Supervisor 2 designated central single-writer",
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
+    "NOT_RUN": [
+      "Live Practice",
+      "teacher grade persistence",
+      "full CI"
+    ]
+  }
+}
