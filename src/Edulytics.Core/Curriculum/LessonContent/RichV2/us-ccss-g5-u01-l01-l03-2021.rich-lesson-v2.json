@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l01-l03-im2021-v18-source-specific-abc-20261030",
+  "ContentVersion": "g5-u01-l01-l03-im2021-v29-original-wu-activity-source-worked-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -85,6 +85,33 @@
           ],
           "Answer": "For these constructed examples, 5 < 8 < 9 < 11 cubic units. Both nine-cube solids occupy nine unit-cube spaces even though their outlines differ.",
           "Check": "Teacher checks the physical/tactile structures, student ordering and justifications. Any other valid four-object ordering and nine-cube connected models may be accepted; fixed numbers are original examples, not the publisher's image answers."
+        },
+        {
+          "Title": "2021 source warm-up A–D: more than one valid WODB answer",
+          "Question": "A is a packed 2×2×2 cube; B has five lower-row cubes and three on top; C is a 2×1×4 prism; D is a 5×1×2 prism. Which one does not belong, and why?",
+          "Method": "Use original source-described identical unit-cube models and justify the reasoning; teacher reviews alternatives.",
+          "Steps": [
+            "Count A: 2×2×2=8.",
+            "Count B: 5+3=8.",
+            "Count C: 2×1×4=8; D: 5×1×2=10.",
+            "D is defensible because it has two more cubes; B is defensible because it is not a fully packed rectangular prism; A is defensible because it is a cube.",
+            "A teacher assesses the property and justification, not one keyed letter."
+          ],
+          "Answer": "A=8, B=8, C=8, D=10; several geometrically justified WODB responses are valid.",
+          "Check": "Original source record IDs 147995–147998; no publisher artwork is reproduced."
+        },
+        {
+          "Title": "2021 source Activity 1: both original eight-cube comparison pairs",
+          "Question": "The first source pair is a packed 2×2×2 prism versus a five-cube bottom row with three above; the second is a packed 2×2×2 prism versus a 2×2 base with four more cubes above. Which object has more volume in each pair?",
+          "Method": "Use original source-described identical unit-cube models and justify the reasoning; teacher reviews alternatives.",
+          "Steps": [
+            "First pair: 2×2×2=8 and 5+3=8.",
+            "Second pair: 2×2×2=8 and 2×2+4=8.",
+            "With congruent nonoverlapping unit cubes, a different arrangement does not increase volume.",
+            "Ask students to build, describe or draw both pairs and justify equal amounts of occupied space."
+          ],
+          "Answer": "Neither: both source pairs have equal volume, eight congruent unit cubes per object.",
+          "Check": "Original source record IDs 147995, 147996, 147635, 147636."
         }
       ],
       "CommonMistakes": [
@@ -299,6 +326,20 @@
           ],
           "Answer": "A 2 × 3 × 3 packed rectangular prism with 18 cubes; another orientation can represent the same solid.",
           "Check": "Teacher observes whether the description uniquely identifies a packed prism, the partner successfully rebuilds it, and both explain equal volume. An 18-only numeric answer is insufficient."
+        },
+        {
+          "Title": "2021 source warm-up: two prisms in A, one missing cube in B",
+          "Question": "WODB shows A as two distinct 1×2×3 prisms of equal size; B a 2×2×3 prism with a missing top cube; C an irregular 4+4+3+1 arrangement; D a packed 3×2×2 prism. Justify a choice.",
+          "Method": "Use original source-described identical unit-cube models and justify the reasoning; teacher reviews alternatives.",
+          "Steps": [
+            "A depicts TWO separate prisms with six cubes in EACH, not one single twelve-cube solid.",
+            "B has 2×2×3−1=11 cubes.",
+            "C has 4+4+3+1=12 cubes; D has 3×2×2=12.",
+            "Possible distinctions include B missing a cube, D being a completely packed twelve-cube prism, A displaying two separate congruent prisms.",
+            "Require the student to explain the classification; there is no unique keyed letter."
+          ],
+          "Answer": "A: two separate six-cube prisms; B: eleven cubes; C and D: twelve cubes per object.",
+          "Check": "Original source SVG figure records 148008–148011; artwork is not copied."
         }
       ],
       "CommonMistakes": [
@@ -316,6 +357,11 @@
           "Mistake": "Use only the cube count to describe a prism in the partner reconstruction game",
           "WhyWrong": "Eighteen cubes may form different rectangular prisms or nonprism objects; group count alone does not specify the three-dimensional structure.",
           "Correction": "Describe equal rows, columns and layers as well as the total, then check the partner's reconstructed model."
+        },
+        {
+          "Mistake": "Treat both prisms on source WODB card A as one solid",
+          "WhyWrong": "The original image description identifies two distinct prisms, not one connected twelve-cube object.",
+          "Correction": "Count six in each 1×2×3 prism separately; combine objects only when the task explicitly asks for a total of separate volumes."
         }
       ],
       "SummaryPoints": [
@@ -414,6 +460,41 @@
               "Cells": [
                 "Describe shape and layers, not just 18",
                 "Rebuild a congruent packed prism up to orientation"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "2021 original WODB source figures — accessible counts",
+          "Description": "Verbal equivalent of original source figure descriptions, preserving whether a card depicts two prisms, a missing unit cube, irregular rows or a packed prism; not a reproduction of publisher images.",
+          "Rows": [
+            {
+              "Label": "A",
+              "Cells": [
+                "Two separate 1×2×3 prisms",
+                "6 cubes in each prism"
+              ]
+            },
+            {
+              "Label": "B",
+              "Cells": [
+                "One 2×2×3 block with one missing top cube",
+                "11 cubes"
+              ]
+            },
+            {
+              "Label": "C",
+              "Cells": [
+                "Irregular rows of 4, 4, 3, 1",
+                "12 cubes"
+              ]
+            },
+            {
+              "Label": "D",
+              "Cells": [
+                "One fully packed 3×2×2 prism",
+                "12 cubes"
               ]
             }
           ]
