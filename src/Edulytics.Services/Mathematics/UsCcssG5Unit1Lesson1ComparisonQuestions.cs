@@ -27,8 +27,8 @@ internal static class UsCcssG5Unit1Lesson1ComparisonQuestions
             throw new InvalidOperationException("Unsupported Grade 5 L01 cube comparison");
         ArgumentNullException.ThrowIfNull(random);
 
-        var a = random.Next(6, 11);
-        var delta = random.Next(3) switch { 0 => -2, 1 => 0, _ => 2 };
+        var a = random.Next(7, 27);
+        var delta = random.Next(-3, 4);
         var b = a + delta;
         var parameters = new Dictionary<string, int>(StringComparer.Ordinal)
         {
@@ -62,7 +62,7 @@ internal static class UsCcssG5Unit1Lesson1ComparisonQuestions
 
     private static bool Valid(string? family, IReadOnlyDictionary<string, int>? p) =>
         Supports(family) && p is not null && p.Count == 2 &&
-        p.TryGetValue("a", out var a) && a is >= 6 and <= 10 &&
-        p.TryGetValue("b", out var b) && b is >= 4 and <= 12 &&
-        b - a is -2 or 0 or 2;
+        p.TryGetValue("a", out var a) && a is >= 7 and <= 26 &&
+        p.TryGetValue("b", out var b) && b is >= 4 and <= 29 &&
+        b - a is >= -3 and <= 3;
 }
