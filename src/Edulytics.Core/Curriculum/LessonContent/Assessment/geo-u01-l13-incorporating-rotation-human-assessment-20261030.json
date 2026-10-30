@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L13",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "prep": "d7debc56025b3848d7c409183f82a2899db2c093dcb201475b98bec69655c893",
+    "teacher": "f16368301a88cc11eb4f499820464687e5021b3520b84f46e1c740229ce33073",
+    "student": "cf48b062b3c45d4bef651e4fd986f57868e9f151f6b11040013f0e9e8271c79a",
+    "practice": "73b770c27697f0cc82995d629bcd3ffc8d631d1e359a1eee957c73e15d70e372"
+  },
+  "Standards": {
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.A.5",
+      "HSN-Q.A.3"
+    ]
+  },
+  "SourceActivities": [
+    "13.1 Left to Right semaphore rotation description",
+    "13.2 Turning on a Grid four angle/centre scenarios",
+    "13.3 Translate Rotate Reflect multi-stage congruence",
+    "Practice 1–7"
+  ],
+  "Task": {
+    "Prompt": "Draw and label three stages mapping original asymmetric triangle ABC by translation, 90-degree rotation about D and reflection across x=3; justify centre, direction, angle and congruence. Also show 90-degree clockwise and 180-degree rotations of a quadrilateral on a grid.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "states correct centre, direction and angle for every requested rotation",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "constructs and labels accurate quarter-turn, half-turn and other nonzero grid rotations",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "records all three intermediate triangle images in translation/rotation/reflection order",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "explains matched vertices, preserved distances and angle measures",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "What three parameters specify a rotation?",
+      "Expected": "Centre, direction and directed angle.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "A flag arm from (0,0) to (2,0) turns 90 counterclockwise. Where does its tip land?",
+      "Expected": "(0,2).",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "Translate point (2,3) by directed segment (-1,4).",
+      "Expected": "(1,7).",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Translate quadrilateral vertices using v=(2,-1). What changes?",
+      "Expected": "Each point adds (2,-1); no side or angle measure changes.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Which points stay fixed when reflected over line y=0?",
+      "Expected": "All points on y=0 and only those points.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "How do you locate a point equally distant from three non-collinear sites?",
+      "Expected": "Intersection of two perpendicular bisectors of their joining segments.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "Why do equal-circle-radius lengths imply a rhombus in two-circle construction?",
+      "Expected": "All four sides joining the two centres to the two intersections have the common radius.",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: rotate point P=(2,1) 90 degrees CCW about O=(0,0), giving (-1,2), explain radius and directed angle",
+  "PaperDelivery": "Student gives labelled paper rotation/translation/reflection stages and protractor justifications to teacher; teacher marks 0/1/2 per criterion, signs/date feedback offline.",
+  "Cases": {
+    "CORRECT": "centre, angle/direction and all intermediate images correctly identified",
+    "EQUIVALENT": "different valid congruent target image with explicitly redefined final D,E,F and all three rigid stages",
+    "WRONG": "clockwise confused with counterclockwise or original image relabelled without moving points",
+    "INSUFFICIENT": "one final sketch without intermediate vertices or reasoning",
+    "MALFORMED": "unspecified rotation centre, target or direction"
+  },
+  "AutoScore": false,
+  "StageD": "NOT_RUN secure school/pathway assigned teacher grade #453"
+}
