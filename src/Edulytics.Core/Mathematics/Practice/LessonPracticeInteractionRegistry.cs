@@ -174,11 +174,17 @@ public static class LessonPracticeInteractionRegistry
             return LessonPracticeInteractionKind.StructuredEntry;
         if (familyId == "usccss.hs.log.compare_order")
             return LessonPracticeInteractionKind.RelationChoice;
+        // The accepted answer shapes are not interchangeable: the exact
+        // exponent and b² are integers, principal pi-coefficients and the
+        // Cavalieri coefficient may be fractions, and comma-separated root
+        // sets require structured entry. These remain review-only pending.
         if (familyId is "usccss.hs.log.inverse_power" or
-            "solid_geometry.cavalieri_sphere_volume" or
-            "coordinates.focal_distance_conics" or "trig.unit_circle_reflection_exact" or
+            "coordinates.focal_distance_conics" or
+            "trig.unit_circle_reflection_exact")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+        if (familyId is "solid_geometry.cavalieri_sphere_volume" or
             "trig.principal_inverse")
-            return LessonPracticeInteractionKind.NumericEntry;
+            return LessonPracticeInteractionKind.FractionEntry;
         if (familyId == "trig.model_all_time_solutions")
             return LessonPracticeInteractionKind.StructuredEntry;
 
