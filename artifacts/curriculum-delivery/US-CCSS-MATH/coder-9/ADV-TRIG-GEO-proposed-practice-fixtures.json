@@ -38,11 +38,12 @@
         "type": "exact_symbolic",
         "canonical": "-sqrt(3)/2",
         "numeric": -0.8660254037844386,
-        "tolerance": 1e-9
+        "independentOracleTolerance": 1e-9,
+        "tolerancePurpose": "INDEPENDENT_MATH_ORACLE_ONLY_NEVER_STUDENT_DECIMAL_ACCEPTANCE"
       },
       "accepted": [
         "-sqrt(3)/2",
-        "-0.8660254037844386"
+        "-sqrt(12)/4"
       ],
       "incorrect": [
         "sqrt(3)/2",
@@ -50,7 +51,10 @@
       ],
       "malformed": [
         "cos(",
-        "banana"
+        "banana",
+        "<script>",
+        "NaN",
+        "Infinity"
       ],
       "excluded": [
         {
@@ -58,7 +62,37 @@
           "reason": "undefined tangent because cosine is zero"
         }
       ],
-      "humanRubric": "When asked to prove a reflection identity, grade the reflected unit-circle coordinates and domain qualifications; a numeric-only answer is not a proof."
+      "humanRubric": "When asked to prove a reflection identity, grade the reflected unit-circle coordinates and domain qualifications; a numeric-only answer is not a proof.",
+      "rejectedDecimal": [
+        "-0.8660254037844386",
+        "-0.866",
+        "-8.660254037844386e-1"
+      ],
+      "policy": {
+        "answerMode": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "decimalAcceptance": false,
+        "status": "PENDING_SELECTED_RUNTIME_VERIFIER",
+        "standaloneReviewerClassifier": true,
+        "studentRoute": false,
+        "positiveExactExamples": [
+          "-sqrt(3)/2",
+          "-sqrt(12)/4"
+        ],
+        "negativeWrongSignExamples": [
+          "sqrt(3)/2",
+          "-1/2"
+        ],
+        "negativeMalformedExamples": [
+          "cos(",
+          "banana",
+          "<script>",
+          "NaN",
+          "Infinity"
+        ],
+        "tanPole": "OUT_OF_DOMAIN_AND_NOT_SCORABLE",
+        "humanRubric": "HUMAN_REQUIRED_6_POINTS_NO_AUTOMATED_PROOF_CREDIT",
+        "collision": "Read-only PR #600 shared exact-angle verifier accepts finite near-equal decimals; C9's exact-only acceptance must be enforced in actual leased routing before C_CLOSED."
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",

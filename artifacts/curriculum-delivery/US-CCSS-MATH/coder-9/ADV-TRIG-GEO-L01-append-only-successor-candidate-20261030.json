@@ -43,7 +43,15 @@
     "scorableCandidates": 3,
     "negativeDomainCases": 1,
     "studentRoute": "PENDING_DENY",
-    "automaticProofScoring": false
+    "automaticProofScoring": false,
+    "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+    "decimalApproximationAllowed": false,
+    "collisionWithReadOnlyPr600": "CURRENT_SHARED_VERIFIER_DECIMAL_TOLERANCE_MUST_BE_SCOPED_GUARDED_BEFORE_STUDENT_ROUTING",
+    "policyOwner": "Coder9 within own files; central verifier/routing only after Supervisor3 grants exclusive file-specific lease",
+    "sourceCodeSha": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+    "courseOnlyFixturesUpdated": true,
+    "positiveAndNegativeTests": "AUTHORED_NOT_RUN",
+    "gradeAndPersistedAttempts": "NOT_RUN_STAGE_D"
   },
   "parityFailure": {
     "validator": "tools/phase29/verify_main_content_parity.py",
@@ -75,8 +83,8 @@
     },
     {
       "code": "C_CENTRAL_ROUTE_LEASE",
-      "owner": "Supervisor 3 must grant Coder 9 exclusive file-specific ownership after checking #600/#602/#399/#394/#492/#553",
-      "status": "NOT_GRANTED",
+      "owner": "Supervisor 3 grants an exact Coder9 lease only after Coder8 and Coder7 release and PR conflict verification",
+      "status": "NOT_GRANTED_WAIT_CODER8_THEN_CODER7_RELEASE",
       "requiresFiles": [
         "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
         "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
@@ -86,8 +94,8 @@
     {
       "code": "C_DECIMAL_POLICY_MISMATCH",
       "owner": "Coder 9 on leased integration files",
-      "status": "OPEN",
-      "note": "Read-only #600 typed kernel currently accepts any within-tolerance decimal, whereas exact-form candidate must explicitly authorize decimal mode. Keep fail closed until policy is selected."
+      "status": "POLICY_RECONCILED_IN_COURSE_ONLY_CODE_RUNTIME_CONFLICT_OPEN",
+      "note": "Exact-only is chosen. Both L01 fixture manifests and candidate adapter now disallow decimals. PR #600 shared engine tolerance differs; route remains blocked until a leased scoped verifier honors exact-only."
     }
   ],
   "gates": {
@@ -98,9 +106,45 @@
     "READY_FOR_STAGE_D": false,
     "UNIT_ABC_CLOSED": false
   },
-  "newAutomatedTests": "NOT_RUN_PER_SUP3_UNIT_FIRST_V3",
+  "newAutomatedTests": "NOT_RUN_PER_SUP3_V4_ACADEMIC_VERSION_ORDER",
   "priorNodeEvidence": {
     "sha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
     "status": "PASS_10_OF_10_SOURCE_ONLY"
+  },
+  "lastCoder9SubmissionAtUtc": "2026-10-30T13:42:53.864Z",
+  "courseCandidateCodeCommit": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+  "sourceOriginalMainBlobSha": "a89c8e4bf717d2cde90b9d7846a9331d095bfc6e",
+  "currentCandidatePackBlobSha": "f833fb790d640e930996db4897982ebc5b257fc5",
+  "preciseBodyLineage": {
+    "originRef": "main",
+    "originalContentPackBlobSha": "a89c8e4bf717d2cde90b9d7846a9331d095bfc6e",
+    "candidateContentPackBlobSha": "f833fb790d640e930996db4897982ebc5b257fc5",
+    "previousCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+    "proposedSuccessorCanonicalBodySha256": "b5b2767441ea39743c83c7ddd5fa861f621ddf5828365185817ef6f24492cb92",
+    "sourceSha256Unchanged": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+    "englishTranslationJsonSha256": "f1494a58ad52d3c97c7d4db4b4f73aa75a4564ab406fd32850c8529fdd451aed",
+    "fieldDigestsPreserved": true,
+    "historicalStoredContentVersion": "phase30-common-core-rich-content-v1",
+    "requestedSuccessorVersion": "PENDING_VERSION_OWNER_SELECTION",
+    "predecessorApproval": "PENDING",
+    "newCanonicalDigestFieldMutation": "PROHIBITED_BEFORE_VERSION_OWNER_APPROVAL",
+    "parityValidatorMutation": "NOT_REQUESTED_WITHOUT_AUTHORIZED_INDEPENDENT_SAFETY_REVIEW"
+  },
+  "independentSourceScopeReview": {
+    "reviewerRole": "Supervisor 3",
+    "reviewDescription": "Independent reread original MVP 7.5 student/teacher pp. 50-53 and report content-scope correspondence; V4 order.",
+    "scopeReviewStatus": "SOURCE_SCOPE_REVIEWED_NOT_RENDERED_EQUIVALENCE_ACCEPTANCE",
+    "academicDecision": "PENDING",
+    "namedAcademicReviewer": null,
+    "independentlyAcceptedCandidateSha": null,
+    "signedAtUtc": null,
+    "pendingVisualCriteria": [
+      "Actual student renderer shows or accessibly replaces the right-triangle cofunction model for acute angles",
+      "Generic four-quadrant unit-circle coordinate reflection diagram or verified accessible nonvisual alternative",
+      "All six pi-x/pi+x/2pi-x graph comparisons supplied as actual graphical evidence or approved accessible data representation, distinct from a proof",
+      "Tangent quotient algebra includes exact cos(theta)!=0 domain and undefined poles; not a numerical-only explanation",
+      "6-point teacher reasoning rubric usable for arbitrary-angle proof rather than numeric matching",
+      "Check graphic rights, exact learner-visible rendering and accessibility for third-party publisher figures"
+    ]
   }
 }

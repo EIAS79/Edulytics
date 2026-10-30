@@ -200,7 +200,7 @@
     "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
     "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
   ],
-  "updatedAtUtc": "2026-10-30T13:07:43.867Z",
+  "updatedAtUtc": "2026-10-30T13:42:53.864Z",
   "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
   "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
   "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
@@ -345,15 +345,18 @@
         "C_PREPARED": true,
         "C_CLOSED": false,
         "priority": 1,
-        "remaining": "Independent source parity/academic signoff, authorized body transition, shared selected Practice mapping and school pathway adoption; future Stage D only.",
-        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "remaining": "Source figure/rendered parity academic decision PENDING; owner-approved append-only content lineage PENDING; shared exact-only learner routing under C9 exclusive lease NOT_GRANTED; no C closure.",
+        "academicDecision": "PENDING_NAMED_REVIEWER",
         "academicOwner": "Independent source/academic reviewer",
         "integrationOwner": "Coder 9 with Supervisor 3 exclusive file lease for shared conflicts",
         "requestedLeasePaths": [
           "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
           "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs"
         ],
-        "note": "File path examples only, review current layout and active writer before granting lease"
+        "note": "File path examples only, review current layout and active writer before granting lease",
+        "versionDecision": "PENDING",
+        "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "testNew": "NOT_RUN"
       },
       {
         "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
@@ -445,7 +448,7 @@
         "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
         "lastFocusedTest": "PASS_6_OF_6_AT_c20b5e96234d1140b01525eaa4d0e76b14daf65a",
         "academicDecision": "PENDING_INDEPENDENT_REVIEW",
-        "versionPredecessor": "PENDING_AUTHORIZED_TRANSITION",
+        "versionPredecessor": "PENDING_OWNER_APPROVED_SUCCESSOR",
         "runtimePractice": "INTEGRATION_PENDING_NOT_ROUTABLE",
         "missingOwner": "Supervisor 3 for independent academic/version decision and file-specific shared registry lease if required; Coder 9 owns subsequent isolated code",
         "returnReason": "Independent source parity/academic signoff, authorized body transition, shared selected Practice mapping and school pathway adoption; future Stage D only.",
@@ -459,6 +462,16 @@
           "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
           "result": "PASS_10_OF_10_EXIT_0",
           "caveat": "Focus and source mathematics only, not selected student Practice, authenticated E2E or protected CI."
+        },
+        "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "decimalApproximationAllowed": false,
+        "courseOwnedPolicyCommitSha": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
+        "sourceScopeReview": "SUP3_READ_SOURCE_CONTENT_ACADEMIC_RENDERED_ACCEPTANCE_PENDING",
+        "currentAddedTests": "NOT_RUN",
+        "referenceNodeTest": {
+          "testedSha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+          "pass": 10,
+          "fail": 0
         }
       },
       {
@@ -670,7 +683,7 @@
     "requiredFollowUp": "Independent academic source parity + approved content predecessor; obtain exclusive shared file ownership before course-exact selected Practice mapping; retain safety gates and returnQueue; Stage D only when all five A/B/C cleared."
   },
   "unitFirstV3": {
-    "directive": "SUP3_CODER9_UNIT_FIRST_V3_20261030",
+    "directive": "SUP3_CODER9_L01_ACADEMIC_VERSION_V4_20261030",
     "officialUnitTotal": 5,
     "unitCode": "U01",
     "previouslyClosed": 0,
@@ -685,14 +698,14 @@
     ],
     "nextUnit": null,
     "resumeCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
-    "candidateOnlyCommitSha": "ab5dadbe8c4b445eb3722d2a7dcfda0c38bdb78d",
+    "candidateOnlyCommitSha": "d3dccea413f57fb491761c433b73c8d5f921a0d5",
     "candidateBodySha256": "b5b2767441ea39743c83c7ddd5fa861f621ddf5828365185817ef6f24492cb92",
     "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
     "historicalCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
-    "academicOwnerDecision": "PENDING",
-    "versionOwnerDecision": "PENDING",
+    "academicOwnerDecision": "PENDING_INDEPENDENT_NAMED_REVIEWER",
+    "versionOwnerDecision": "PENDING_AUTHORIZED_APPEND_ONLY_SUCCESSOR",
     "practiceStudentRoute": "PENDING_DENY",
-    "sharedCentralFileLease": "NOT_GRANTED",
+    "sharedCentralFileLease": "NOT_GRANTED_WAIT_CODER8_THEN_CODER7",
     "protectedParityGuard": "FAILING_ORIGINAL_BODY_COMPARISON_NO_CODER9_AUTHORIZED_SUCCESSOR",
     "newUnitFirstTests": "NOT_RUN",
     "priorFocusedNodeTests": {
@@ -703,7 +716,16 @@
     "candidateSuccessorEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-append-only-successor-candidate-20261030.json",
     "candidateCourseOwnedCode": "src/Edulytics.Core/Mathematics/Practice/UsCcssHsAdvTrigGeoU01L01PracticeCandidate.cs",
     "candidateTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvTrigGeoU01L01PracticeCandidateTests.cs",
-    "lastReviewCheckpointUtc": "2026-10-30T13:07:43.867Z",
-    "nextRequiredAction": "Independent academic acceptance + owned append-only version successor + Supervisor 3 exclusive central file lease; do not open L02 or Stage D."
+    "lastReviewCheckpointUtc": "2026-10-30T13:42:53.864Z",
+    "nextRequiredAction": "Supervisor3: named visual/source academic approval, content version owner signed append-only predecessor/successor, Coder8+Coder7 lease releases then grant exact file-exclusive C9 slot. Until then stay L01.",
+    "directiveHistory": [
+      "SUP3_CODER9_UNIT_FIRST_V3_20261030",
+      "SUP3_CODER9_L01_ACADEMIC_VERSION_V4_20261030"
+    ],
+    "answerPolicy": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+    "courseOnlyAnswerPolicyResolved": true,
+    "sharedVerifierPolicyConflict": "BLOCKED",
+    "academicSourceScopeDecision": "SUP3_SCOPE_REVIEW_DONE_ACADEMIC_VISUAL_DECISION_PENDING",
+    "studentSelectedPractice": "NOT_ROUTED"
   }
 }
