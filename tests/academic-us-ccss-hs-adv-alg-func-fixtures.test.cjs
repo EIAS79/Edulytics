@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const file = path.resolve(__dirname, '..', 'artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json');
-const fixture = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+const fixture = JSON.parse(fs.readFileSync(file, 'utf8')); // Fail closed if actual repository fixture is missing.
 const ids = ['M01','M02','M03','M04','M05','M06','M07','M08','M09','M10','M11',
   'L01','L02','L03','L04','L05','L06','L07','L08','L09','L10','L11','L12','L13','L14','L15'];
 const eq = (a, b) => Math.abs(a - b) <= 1e-10;
@@ -48,7 +48,6 @@ const oracle = {
 const byId = new Map((fixture?.cases || []).map(x => [x.id,x]));
 for (const id of ids) test(`${id}: independent exact/domain oracle and optional fixture metadata`, () => {
   assert.ok(oracle[id](), `${id} mathematical expectation failed`);
-  if (!fixture) return; // Standalone arithmetic is runnable without repository checkout.
   const row = byId.get(id);
   assert.ok(row, `${id} missing from 26-case manifest`);
   for (const field of ['expectedCanonical','acceptedEquivalent','rejectWrongOrMalformed','rejectMalformed','boundaryOracle'])
@@ -60,7 +59,7 @@ for (const id of ids) test(`${id}: independent exact/domain oracle and optional 
   assert.notEqual(row.rejectWrongOrMalformed, row.rejectMalformed);
   assert.equal(row.lessonCode.endsWith(id[0] === 'M' ? 'L01' : 'L02'), true);
 });
-test('manifest and source reasoning rubrics are fail-closed', { skip: !fixture }, () => {
+test('manifest and source reasoning rubrics are fail-closed', () => {
   assert.deepEqual([...byId.keys()], ids);
   assert.equal(fixture.status, 'PROPOSED_EXPECTATIONS_NOT_RUNTIME_VERIFICATION');
   const l06 = byId.get('L06');
@@ -116,4 +115,22 @@ test('log-domain negative controls use the actual invalid base, not an invalid a
   assert.equal(validRealLog(2, 0), false);
   assert.equal(validRealLog(0.5, 4), true);
   assert.equal(validRealLog(2, 8), true);
+});
+
+test('fixture binding needs two source scenarios and all six human review dispositions', () => {
+  assert.deepEqual(fixture.sourceBoundScenarios.map(x=>x.scenarioId),
+    ['MVP-A2-10.6H-PAINT-SYSTEM','MVP-M3-2.1-LOG-NUMBER-LINE']);
+  const studentLog = fixture.sourceBoundScenarios[1];
+  assert.equal(studentLog.sourceInspection.includes('DIRECTLY_VIEWED'), true);
+  assert.equal(studentLog.expected.crossBaseUniversalClaim, false);
+  const rubricFile = path.resolve(__dirname, '..', 'artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json');
+  const rubrics = JSON.parse(fs.readFileSync(rubricFile, 'utf8'));
+  for (const id of ['M05','M11','L04','L05','L06','L13']) {
+    const rubric = rubrics.rubrics.find(x=>x.caseId===id);
+    const caseRow = byId.get(id);
+    assert.ok(rubric && caseRow, 'Missing linked rubric/case: '+id);
+    assert.equal(rubric.gradingPolicy, caseRow.gradingPolicy);
+    assert.equal(rubric.requiresHumanReview,true);
+    assert.equal(rubric.machineAutoGrade,false);
+  }
 });
