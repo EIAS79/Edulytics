@@ -98,6 +98,20 @@
           ],
           "Answer": "D is the only pattern described as leaving part of its target uncovered. Alternatively, A and B use only one tile type while C and D use two. A chosen justification must identify the actual criterion.",
           "Check": "These are accessible text-only first-party scenarios modeled on public source task categories, not checked reproductions of the four historical pictures. Multiple classifications and explanations require teacher review."
+        },
+        {
+          "Title": "Edulytiks-original cool-down — equal-area claims (NOT publisher question)",
+          "Question": "An original independent check: In a mosaic model, a red trapezoid covers the same area as 3 small green triangles and a blue rhombus covers the same area as 2 such triangles. You have 2 red trapezoids, 3 blue rhombi, and 5 green triangles. Which colors cover equal area? Is a student's claim that green covers most because it has five tiles correct? Explain using a common area unit. Then sketch or verbally specify two distinct non-overlapping arrangements of the SAME pieces and justify whether their combined covered area changes.",
+          "Method": "Compute separate areas in one small-triangle unit; explain why tile count is not area; teacher reviews the non-overlapping construction and its area-conservation argument.",
+          "Steps": [
+            "Two red trapezoids cover 2 × 3 = 6 small-triangle area units.",
+            "Three blue rhombi cover 3 × 2 = 6 small-triangle area units.",
+            "Five green triangles cover 5 × 1 = 5 small-triangle area units.",
+            "Red and blue therefore tie, despite their different tile counts; green is smaller, not larger.",
+            "All pieces together cover 6 + 6 + 5 = 17 small-triangle area units. Moving or turning unchanged pieces preserves the sum only if each piece is used once, without overlap; a drawing and explanation need teacher review."
+          ],
+          "Answer": "Red = blue = 6, green = 5 small-triangle area units; the five-tile claim is wrong. The total is 17 units in any valid non-overlapping rearrangement of the same pieces.",
+          "Check": "EDULYTIKS-ORIGINAL assessment candidate derived from verified area-comparison goal, NOT the gated publisher Cool-down. Numerical unit conversions can be checked against independent oracles; a learner-generated diagram, claims of gap-free coverage and mathematical justification MUST be assessed by a teacher. This WorkedExample is not evidence of a live Practice or persisted teacher Cool-down."
         }
       ],
       "CommonMistakes": [

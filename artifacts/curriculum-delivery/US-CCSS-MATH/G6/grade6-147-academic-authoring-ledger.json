@@ -168,7 +168,18 @@
     "v11U05L10L12NewTests": 3,
     "v11U05L13L15SourceCompared": 3,
     "v11U05L13L15NewNodeCallbacks": 4,
-    "v11TotalGrade6NodeCallbacksNew": 13
+    "v11TotalGrade6NodeCallbacksNew": 13,
+    "abcFirstOrder": {
+      "A_CLOSED": 0,
+      "B_CLOSED": 0,
+      "C_PREPARED": 0,
+      "READY_FOR_STAGE_D": 0,
+      "D_VERIFIED": 0,
+      "BLOCKED": 1,
+      "REMAINING": 147,
+      "firstOpenLessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+      "lastReviewedAtUtc": "2026-10-30T06:54:50.495Z"
+    }
   },
   "sharedBlockers": [
     {
@@ -256,7 +267,8 @@
         "v12PublicFigureAltDescriptionsReviewed": true,
         "v12PublisherFiguresPixelVerified": false,
         "v12SourceAppletBehaviorVerified": false,
-        "v12EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l02-source-geometry-v12-evidence-20261030.json"
+        "v12EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l02-source-geometry-v12-evidence-20261030.json",
+        "abcFirstOrderStatus": "A_BLOCKED_SOURCE_MEDIA_AND_MANIPULATIVE_PARITY"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -270,7 +282,8 @@
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": true,
         "v12SourceAlignedCandidateEnhanced": true,
-        "v12PriorTriangleAreaCorrectionRetained": false
+        "v12PriorTriangleAreaCorrectionRetained": false,
+        "abcFirstOrderStatus": "B_CANDIDATE_COOLDOWN_AUTHORED__SOURCE_ASSET_PARITY_OPEN"
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -288,7 +301,8 @@
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
         "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
         "v12ExactSelectedPractice": "NOT_RUN__SUPERVISOR_1_SHARED_OWNER",
-        "v12TeacherRubricPersistedVerified": false
+        "v12TeacherRubricPersistedVerified": false,
+        "abcFirstOrderStatus": "C_BLOCKED_SHARED_EXACT_PRACTICE_SELECTION_AND_RUBRIC_WORKFLOW"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -300,11 +314,78 @@
         "accessibility": "NOT_RUN",
         "crossCurriculum": "NOT_RUN",
         "v12GradeOnlyNodeTests": "AUTHORED__NATIVE_FULL_CHECKOUT_NOT_RUN",
-        "v12DotnetRuntime": "NOT_RUN__DOTNET_SDK_UNAVAILABLE"
+        "v12DotnetRuntime": "NOT_RUN__DOTNET_SDK_UNAVAILABLE",
+        "abcFirstOrderStatus": "NOT_STARTED"
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Complete source diagram/applet parity, effective authenticated learner/teacher Rich V2, exact Practice grading and teacher-reasoning persistence before acceptance."
+      "nextStep": "Complete source diagram/applet parity, effective authenticated learner/teacher Rich V2, exact Practice grading and teacher-reasoning persistence before acceptance.",
+      "abcFirstOrder": {
+        "schemaVersion": 1,
+        "recordType": "LESSON_ABC_ATTEMPT_BLOCKED_NOT_CLOSED",
+        "reviewedAtUtc": "2026-10-30T06:54:50.495Z",
+        "branch": "curriculum/us-ccss-g6-full-grade-20261028",
+        "baseHeadSha": "5e3e1289673a347b5cdd8e7527a43625c358d97f",
+        "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+        "originalLocalSourcePaths": [
+          "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\student\\\\1\\\\1\\\\index.html",
+          "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\1\\\\1\\\\index.html",
+          "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\1\\\\1\\\\preparation.html",
+          "C:\\\\Users\\\\khali\\\\Downloads\\\\New folder (2)\\\\Common Core\\\\06_Grade_6_OUR_IM\\\\student\\\\1\\\\1\\\\practice.html"
+        ],
+        "sourcePageVerification": "OUR-CS_READ_ONLY_LOCAL_HTML_TEACHER_STUDENT_PRACTICE_PREPARATION",
+        "sourceFigureUrls": [
+          "https://cms-assets.illustrativemathematics.org/rgoR2UCTWNPbvt6VaGZeMZTL",
+          "https://cms-assets.illustrativemathematics.org/5bTTCHimpEgYz97Jyx7oxCLT",
+          "https://cms-assets.illustrativemathematics.org/HmX71RAVWPANhPK5spHbYQE2"
+        ],
+        "sourceFiguresPixelsVerified": false,
+        "sourceAppletOperated": false,
+        "publisherProtectedCooldownRead": false,
+        "reuseFinding": "Keep existing 5 valid first-party Rich V2 examples, 3/4/7 per hexagon and 8-hexagon 72/64/56 triangular-area math, accessible four-pattern descriptions and existing teacher-only rubric. Original publisher visuals/interactivity were not claimed as recreated.",
+        "sourceGoals": [
+          "Compare orally covered area by polygon type, not tile count",
+          "Explain area as portion of plane covered",
+          "Discuss gapped versus complete tilings with justified multiple reasons",
+          "Produce valid arrangements of polygons and explain same-area preservation"
+        ],
+        "sourceTaskParity": {
+          "1.1": "Public text and figure ALT checked locally; authored four-scenario textual alternative exists; exact publisher image pixels not verified",
+          "1.2": "Public text and teacher area breakdown checked locally; current authored exact numerical oracle valid; original A/B manipulatives and move/rotate/hide interactions not verified",
+          "extension": "Source graph-paper two-shape equal-area creation requires learner drawing and teacher rubric, not a scalar auto-grader",
+          "practice": "Local student practice includes written area comparisons, equal-area quadrilateral sketches and tilings; cannot claim live selected contract fidelity"
+        },
+        "beforeAfterFinding": "Publisher Cool-down is sign-in gated; added explicitly independent Edulytiks-original teacher-reviewed cool-down worked candidate to Grade 6 Rich V2, without representing it as source question or live delivered assessment.",
+        "A_STATUS": "A_BLOCKED_SOURCE_MEDIA_AND_MANIPULATIVE_PARITY",
+        "B_STATUS": "B_CANDIDATE_COOLDOWN_AUTHORED__SOURCE_ASSET_PARITY_OPEN",
+        "C_STATUS": "C_BLOCKED_SHARED_EXACT_PRACTICE_SELECTION_AND_RUBRIC_WORKFLOW",
+        "PracticeStrategy": "EXTEND_EXISTING_AREA_PRACTICE_IF_SHARED_OWNER_CONFIRMS_GAP; TEACHER_REVIEW_FOR_OPEN_DRAWINGS",
+        "PublisherCooldownStatus": "NOT_VERIFIED_GATED",
+        "EdulytiksCooldownStatus": "ORIGINAL_AUTHORED_IN_RICHV2_NOT_LIVE_ASSESSMENT",
+        "testFile": "tests/academic-us-ccss-g6-u01-source-geometry-v12.test.cjs",
+        "testExecutionStatus": "TEST_AUTHORED_NOT_RUN__NO_PER_LESSON_STAGE_D_EXECUTION",
+        "startedAt": "2026-10-30T06:54:50.495Z",
+        "closedAt": null,
+        "elapsedSeconds": null,
+        "commitSHA": null,
+        "blocker": [
+          {
+            "owner": "Grade 6 academic/visual owner",
+            "defect": "Need fidelity evidence for source polygon diagrams, A/B tiles and hide/move/rotate applet or independently authorized equivalent visual representation",
+            "nextAction": "Inspect/author source-aligned accessible geometric representations and verify teacher rubric"
+          },
+          {
+            "owner": "Supervisor 1 shared single-writer",
+            "defect": "Static CCSS:6.G.A.1 points at shape dimension/properties rather than exact area/tile-comparison Practice and teacher-reasoning workflow",
+            "nextAction": "Trace actual selected contract, extend/reuse authorized shared family and validate math correctness, malformed submissions, drawing/teacher review"
+          }
+        ],
+        "READY_FOR_STAGE_D": false,
+        "D_STATUS": "NOT_STARTED",
+        "state": "BLOCKED__CURSOR_REMAINS_PED:US-CCSS-MATH:G6:U01:L01",
+        "noCrossCurriculumSharedChanges": true,
+        "noRuntimeClaim": true
+      }
     },
     {
       "sortOrder": 2,

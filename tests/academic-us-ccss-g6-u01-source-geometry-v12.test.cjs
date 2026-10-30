@@ -38,7 +38,7 @@ test('U01:L01 source text evidence records figure/app and acceptance boundaries 
 
 test('U01:L01 source-faithful eight-hexagon lesson has counted units and explanation', () => {
   const l1 = byCode(1);
-  assert.equal(l1.WorkedExamples.length, 5);
+  assert.equal(l1.WorkedExamples.length, 6);
   assert.match(l1.ExplanationParagraphs.join(' '), /eight.*hexagon/i);
   const ex = l1.WorkedExamples.find(x => /Eight hexagons/.test(x.Title));
   assert.ok(ex);
@@ -156,4 +156,26 @@ test('Grade 6 unresolved academic gates remain fail-closed after candidate edits
     assert.equal(row.stageA.publisherImageAndAppletParityVerified,false);
     assert.equal(row.stageC.exactPracticeAccepted,false);
   }
+});
+
+
+test('G6 U01:L01 Edulytiks-original gated-source cool-down: area comparisons and human-review boundary', () => {
+  const l1 = byCode(1);
+  const cd = l1.WorkedExamples.find(x => /Edulytiks-original cool-down/.test(x.Title));
+  assert.ok(cd, 'original check remains visible in grade-owned Rich V2');
+  const [red, blue, green] = [2 * 3, 3 * 2, 5 * 1];
+  assert.deepEqual([red, blue, green], [6, 6, 5]);
+  assert.equal(red + blue + green, 17);
+  assert.equal(red === blue && blue > green, true);
+  assert.notEqual(green, Math.max(red, blue, green));
+  const validNumeric = v => typeof v === 'number' && Number.isFinite(v) && v === red;
+  assert.equal(validNumeric(6), true);
+  assert.equal(validNumeric(6.0), true); // mathematically equivalent JavaScript number
+  assert.equal(validNumeric(5), false); // tile-count trap
+  assert.equal(validNumeric('6'), false); // malformed representation for a numeric contract
+  assert.equal(validNumeric(NaN), false);
+  assert.match(cd.Check, /NOT the gated publisher Cool-down/);
+  assert.match(cd.Check, /teacher/i);
+  assert.match(cd.Check, /not evidence of a live Practice/i);
+  assert.match(cd.Answer, /17 units/);
 });
