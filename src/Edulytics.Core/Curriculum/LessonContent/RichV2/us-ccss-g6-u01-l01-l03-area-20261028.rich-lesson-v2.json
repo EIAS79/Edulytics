@@ -10,7 +10,7 @@
       "ExplanationParagraphs": [
         "Learning goal: Compare how much region is covered by different shapes in a tiling, and justify area-preserving rearrangements.",
         "A tiling covers the plane without gaps or overlap. Different shapes can have different area even when each is counted as one tile. In an original model, take one small triangular tile as 1 area unit; a matching rhombus is worth 2 such units and a matching trapezoid is worth 3.",
-        "For a pattern containing 3 red trapezoids, 4 blue rhombi and 7 green triangles, the colored contributions are 9, 8 and 7 triangular units respectively. Explain covered area using decomposition, not a comparison of color or tile count. Multiple tilings can use different shapes to cover the same region. Original Edulytiks tasks paraphrase the public 2017–2019 OUR/IM mathematical goals without copying publisher diagrams."
+        "In the public source's patterned hexagon grouping, 3 red trapezoids, 4 blue rhombi and 7 green triangles contribute 9, 8 and 7 small-triangle area units per hexagon. Across eight such groups, the red, blue and green contributions are 72, 64 and 56 triangular area units. Comparing by tile count alone misleads: the source asks students to justify which shape family covers more in two differently arranged eight-hexagon patterns. This numerical decomposition supplements, but does not replace, student comparison of actual patterns or discussion of several defensible 'which one does not belong' arguments."
       ],
       "KeyConcepts": [
         {
@@ -71,6 +71,33 @@
           ],
           "Answer": "The outlines and color arrangements may differ while the total area is unchanged because every piece is used exactly once.",
           "Check": "Teacher rubric checks unit choice, complete coverage, equal piece inventory and explanation quality; it is not automatically graded from one number."
+        },
+        {
+          "Title": "Eight hexagons: count covered area rather than colored tiles",
+          "Question": "In a first-party eight-hexagon schematic of the source task, each hexagon contains 3 red trapezoids, 4 blue rhombi and 7 green triangles. Each trapezoid has the same area as 3 small triangles and each rhombus as 2. Across all eight hexagons, which color occupies the greatest total area? Explain whether rearranging these unchanged tiles into another complete eight-hexagon pattern changes their area.",
+          "Method": "Compare one hexagon using small-triangle units, scale the composition to eight matching hexagons and justify conservation under rearrangement.",
+          "Steps": [
+            "One hexagon contains 3 × 3 = 9 red, 4 × 2 = 8 blue and 7 × 1 = 7 green small-triangle area units.",
+            "Eight such hexagons contain 24 trapezoids, 32 rhombi and 56 triangles.",
+            "Convert tile counts to comparable area: red = 24 × 3 = 72, blue = 32 × 2 = 64 and green = 56 × 1 = 56 small-triangle units.",
+            "Compare 72 > 64 > 56: red covers the greatest area, even though green has more individual tiles.",
+            "Rearrange without stretching, gaps, overlaps or missing pieces: the pattern outline may change, but the total colored area stays 72 + 64 + 56 = 192 triangular area units."
+          ],
+          "Answer": "Red covers the greatest amount of the plane: 72 triangular area units, compared with blue 64 and green 56. A rearrangement using all unchanged tiles preserves each color's area.",
+          "Check": "The 3/4/7 ratio describes each constituent hexagon, not the entire eight-hexagon image. This original numerical schematic does not recreate or verify the historical publisher images, move/rotate applet or an actual student drawing; those require separate source figure and teacher-rubric evidence."
+        },
+        {
+          "Title": "Four original pattern descriptions: more than one defensible classification",
+          "Question": "Consider four text-only pattern scenarios for the same target region: A is covered by one blue polygon type without gaps, B by one yellow polygon type without gaps, C by both blue and yellow polygon types without gaps, and D by both types with uncovered white spaces. Give a reason that D differs from the other three, then offer a different mathematically defensible grouping.",
+          "Method": "Use stated coverage, number of tile types and color composition as independent comparison criteria; do not infer unknown lengths or areas.",
+          "Steps": [
+            "A, B and C explicitly cover the target without gaps; D has an uncovered region and therefore does not completely tile that target.",
+            "A and B are single-shape-type descriptions, while C and D each involve two shape types.",
+            "A and C contain blue tiles, whereas B does not; a classification by color is valid if identified as color-based rather than area-based.",
+            "Explain why a gap makes D different when the criterion is complete tiling, but color or tile variety can lead to different legitimate categories."
+          ],
+          "Answer": "D is the only pattern described as leaving part of its target uncovered. Alternatively, A and B use only one tile type while C and D use two. A chosen justification must identify the actual criterion.",
+          "Check": "These are accessible text-only first-party scenarios modeled on public source task categories, not checked reproductions of the four historical pictures. Multiple classifications and explanations require teacher review."
         }
       ],
       "CommonMistakes": [
@@ -94,7 +121,7 @@
         {
           "Kind": "ShapeDecomposition",
           "Title": "Equivalent small-triangle areas of three polygon types",
-          "Description": "Text-accessible first-party diagram description: a small green triangle is the unit; a blue rhombus can be split into 2 of those triangles; a red trapezoid can be split into 3. A tiling model uses 7 green triangles (area 7), 4 blue rhombi (area 8), and 3 red trapezoids (area 9). These comparisons use triangular area units, not square units. All component tiles are laid without gaps or overlaps.",
+          "Description": "First-party text-accessible equivalent-area tile-family schematic, NOT the source image: a small green triangle is one triangular area unit; a blue rhombus composes 2 of these triangles and a red trapezoid 3. One component hexagon contains 7 green triangles (area 7), 4 blue rhombi (area 8), and 3 red trapezoids (area 9). For an eight-hexagon construction with this same inventory in every hexagon, green occupies 56, blue 64 and red 72 triangular units. These are triangular area units, NOT square units. A and B in the historical source may differ in arrangement; the authored textual visual does not reproduce publisher images or assert a working interactive applet.",
           "PrimaryLabel": "Red = 3 × 3 = 9 triangle units",
           "SecondaryLabel": "Blue = 4 × 2 = 8; green = 7 × 1 = 7",
           "Items": [
@@ -105,7 +132,27 @@
           "SecondaryItems": [
             "Red: nine units",
             "Blue: eight units",
-            "Green: seven units"
+            "Green: seven units",
+            "Eight source-style hexagon groups: red 72, blue 64, green 56 triangular area units"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Accessible first-party tiling comparison (not original figure recreation)",
+          "Description": "Four verbally specified target-region designs: A consists only of blue polygonal tiles and has no gaps or overlaps; B consists only of yellow tiles and has no gaps or overlaps; C combines blue and yellow tiles with no gaps or overlaps; D combines blue and yellow tiles but has a white uncovered region. Ask which one differs by coverage and which differs by color or number of tile types. A text list alone cannot substantiate every geometric property of a drawing; actual student-made patterns and their claimed coverage require visual inspection and teacher scoring.",
+          "PrimaryLabel": "Complete coverage: A, B, C",
+          "SecondaryLabel": "D: uncovered region (not a complete tiling)",
+          "Items": [
+            "A: blue tiles only, complete",
+            "B: yellow tiles only, complete",
+            "C: mixed blue and yellow, complete",
+            "D: mixed blue and yellow, uncovered space"
+          ],
+          "SecondaryItems": [
+            "Criterion 1: gap or no gap",
+            "Criterion 2: one or two tile types",
+            "Teacher checks reasoning and any student drawing"
           ],
           "Rows": []
         }
