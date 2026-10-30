@@ -200,7 +200,7 @@ public static class UsCcssHsFourthCourseQuestions
                 : ((Get(p, "quarterTurns") % 4 + 4) % 4) switch { 0 => 1, 2 => -1, _ => 0 }).ToString(CultureInfo.InvariantCulture),
             TrigPrincipalInverse => Principal(Get(p, "function"), Get(p, "argument")),
             TrigModel => TrigModelAnswer(p),
-            CavalieriVolume => Format(4 * Get(p, "radius") * Get(p, "radius") * Get(p, "radius"), 3),
+            CavalieriVolume => SphereVolumeCoefficient(p),
             FocalConics => (Get(p, "hyperbola") == 1
                 ? Get(p, "c") * Get(p, "c") - Get(p, "a") * Get(p, "a")
                 : Get(p, "a") * Get(p, "a") - Get(p, "c") * Get(p, "c")).ToString(CultureInfo.InvariantCulture),
@@ -282,7 +282,7 @@ public static class UsCcssHsFourthCourseQuestions
                          ? suppliedTarget > Get(p, "offset") + Get(p, "amplitude") ||
                            suppliedTarget < Get(p, "offset") - Get(p, "amplitude")
                          : suppliedTarget == Get(p, "offset") + ModelTargetDelta(p))),
-                CavalieriVolume => Get(p, "radius") is >= 1 and <= 100,
+                CavalieriVolume => TrySphereRadius(p, out _, out _),
                 FocalConics => Get(p, "hyperbola") is 0 or 1 &&
                     Get(p, "a") > 0 && Get(p, "c") > 0 &&
                     (Get(p, "hyperbola") == 1 ? Get(p, "a") < Get(p, "c") : Get(p, "a") > Get(p, "c")),
@@ -310,6 +310,36 @@ public static class UsCcssHsFourthCourseQuestions
             5 => 2 * Get(p, "amplitude"),
             _ => throw new ArgumentException("Invalid sine target mode.")
         };
+
+    // In addition to the original integer radius, allow a bounded positive
+    // fractional radius. Rational radii are exact; 2.5m is represented as 5/2m.
+    // Mixed integer/fraction parameter bags fail closed rather than guessing.
+    private static bool TrySphereRadius(
+        IReadOnlyDictionary<string, int> p, out long n, out long d)
+    {
+        n = 0; d = 1;
+        if (p.TryGetValue("radius", out var integerRadius))
+        {
+            if (p.ContainsKey("radiusNumerator") || p.ContainsKey("radiusDenominator"))
+                return false;
+            n = integerRadius;
+            return n is >= 1 and <= 100;
+        }
+        if (!p.TryGetValue("radiusNumerator", out var numerator) ||
+            !p.TryGetValue("radiusDenominator", out var denominator))
+            return false;
+        n = numerator; d = denominator;
+        return n is >= 1 and <= 1000 &&
+               d is >= 1 and <= 100 &&
+               n <= d * 100;
+    }
+
+    private static string SphereVolumeCoefficient(IReadOnlyDictionary<string, int> p)
+    {
+        if (!TrySphereRadius(p, out var n, out var d))
+            throw new ArgumentException("Sphere radius must be positive and bounded.");
+        return Format(checked(4 * n * n * n), checked(3 * d * d * d));
+    }
 
     private static string TrigModelAnswer(IReadOnlyDictionary<string, int> p)
     {
