@@ -28,7 +28,7 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
         Assert.Equal("Fourth Courses", b.GetProperty("Pathway").GetString());
         Assert.Equal("CCSSM-2010", b.GetProperty("VersionCode").GetString());
         Assert.Single(b.GetProperty("Units").EnumerateArray());
-        Assert.Equal("us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
+        Assert.Equal("us-ccss-hs-adv-alg-func-2lesson-teaching-v4",
             p.GetProperty("contentVersion").GetString());
 
         var expected = new[] { Prefix + "L01", Prefix + "L02" };
@@ -45,7 +45,7 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
             entries[0].GetProperty("sourceSha256").GetString());
         Assert.Equal("590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
             entries[1].GetProperty("sourceSha256").GetString());
-        Assert.Equal("9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
+        Assert.Equal("7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199",
             entries[0].GetProperty("canonicalBodySha256").GetString());
         Assert.Equal("d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c",
             entries[1].GetProperty("canonicalBodySha256").GetString());
@@ -71,6 +71,13 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
             first.GetProperty("workedExamples").GetString()!);
         Assert.Contains("negative paint price", first.GetProperty("workedExamples").GetString()!);
         Assert.Contains("zero coefficients", first.GetProperty("stepByStepSolutions").GetString()!);
+        Assert.Contains("I₃P=P and P⁻¹P=I₃", first.GetProperty("workedExamples").GetString()!);
+        Assert.Contains("x+2y+2z=16, 2x+y+3z=17, x+2y+z=13",
+            first.GetProperty("workedExamples").GetString()!);
+        Assert.Contains("Technology can supply the inverse", first.GetProperty("workedExamples").GetString()!);
+        Assert.Contains("six-part 10.6H progression",
+            first.GetProperty("stepByStepSolutions").GetString()!);
+
 
         Assert.Contains("0<b<1, they reverse order: 0<x<y implies log_b x>log_b y",
             second.GetProperty("keyConceptsAndRules").GetString()!);
@@ -172,6 +179,45 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
             Assert.Equal(alteredTotals[i], reconstructed);
         }
         Assert.True(alteredPrices[0] < 0);
+        Assert.NotEqual(0, determinant);
+    }
+
+
+    [Fact]
+    public void OriginalAllSystemsGoTaskSixHasExactInvertibleSecondSystem()
+    {
+        // The original MVP 10.6H student/teacher PDF pages independently
+        // specify the second 3x3 application after the painting receipts.
+        var coefficients = new int[,] { { 1, 2, 2 }, { 2, 1, 3 }, { 1, 2, 1 } };
+        var numerator = new int[,] { { -5, 2, 4 }, { 1, -1, 1 }, { 3, 0, -3 } };
+        var rhs = new[] { 16, 17, 13 };
+        var solution = new[] { 2, 4, 3 };
+        var determinant = coefficients[0, 0] *
+            (coefficients[1, 1] * coefficients[2, 2] - coefficients[1, 2] * coefficients[2, 1])
+            - coefficients[0, 1] *
+            (coefficients[1, 0] * coefficients[2, 2] - coefficients[1, 2] * coefficients[2, 0])
+            + coefficients[0, 2] *
+            (coefficients[1, 0] * coefficients[2, 1] - coefficients[1, 1] * coefficients[2, 0]);
+        Assert.Equal(3, determinant);
+        for (var i = 0; i < 3; i++)
+        {
+            var checkedEquation = 0;
+            var inverseResult = 0;
+            for (var j = 0; j < 3; j++)
+            {
+                checkedEquation += coefficients[i, j] * solution[j];
+                inverseResult += numerator[i, j] * rhs[j];
+                var matrixProduct = 0;
+                for (var k = 0; k < 3; k++)
+                    matrixProduct += coefficients[i, k] * numerator[k, j];
+                Assert.Equal(i == j ? determinant : 0, matrixProduct);
+            }
+            Assert.Equal(rhs[i], checkedEquation);
+            Assert.Equal(determinant * solution[i], inverseResult);
+        }
+        // Correct original equation order is essential.
+        Assert.NotEqual(rhs[1], 2 * solution[0] + 3 * solution[1] + solution[2]);
+        // Singular matrices cannot be substituted for the verified inverse.
         Assert.NotEqual(0, determinant);
     }
 
