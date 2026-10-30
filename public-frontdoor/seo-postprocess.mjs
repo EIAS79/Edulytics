@@ -28,6 +28,12 @@ const cleanText = str => normalized(String(str || '')
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
   .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
   .replace(/<[^>]*>/g, ' ')
+  .replace(/&#x([0-9a-f]+);/gi, (match, code) => {
+    try { return String.fromCodePoint(parseInt(code, 16)); } catch { return match; }
+  })
+  .replace(/&#([0-9]+);/g, (match, code) => {
+    try { return String.fromCodePoint(parseInt(code, 10)); } catch { return match; }
+  })
   .replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&')
   .replace(/&quot;/gi, '"').replace(/&#39;|&apos;/gi, "'"));
 const escapeAttr = value => String(value).replace(/&/g, '&amp;')
@@ -110,13 +116,15 @@ function tags(route, html) {
 }
 const metaTag = name => new RegExp('<meta\\b(?=[^>]*\\bname\\s*=\\s*["\\x27]' + name + '["\\x27])[^>]*>', 'gi');
 function prepare(html, route) {
+  // Capture the original title/description before removing old SEO tags.
+  const seoTags = tags(route, html);
   const dropTag = /<link\b(?=[^>]*\brel\s*=\s*["'](?:canonical|alternate)["'])[^>]*>/gi;
   const dropOg = /<meta\b(?=[^>]*(?:\bproperty\s*=\s*["']og:|\bname\s*=\s*["']twitter:))[^>]*>/gi;
   html = html.replace(/<!-- edulytiks-static-seo:start -->[\s\S]*?<!-- edulytiks-static-seo:end -->/g, '')
     .replace(dropTag, '').replace(dropOg, '').replace(metaTag('description'), '')
     .replace(metaTag('robots'), '');
   if (!/<\/head>/i.test(html)) throw new Error('Missing </head> in ' + route);
-  return html.replace(/<\/head>/i, tags(route, html) + '\n</head>');
+  return html.replace(/<\/head>/i, seoTags + '\n</head>');
 }
 function validate() {
   const failures = [];
