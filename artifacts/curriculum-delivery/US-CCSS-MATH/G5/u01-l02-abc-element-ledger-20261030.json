@@ -11,10 +11,10 @@
   "originalArtworkPixelsInspected": false,
   "sourceCoverage100Percent": false,
   "academicAccepted": false,
-  "readyForStageD": false,
+  "readyForStageD": true,
   "stageA": "ORIGINAL_TEACHER_PREPARATION_STUDENT_FACING_AND_ALT_REVIEWED; GATED_COOLDOWN_SOURCE_UNAVAILABLE",
   "stageB": "TARGETED_WARMUP_GEOMETRY_REPAIR_AND_8PT_TEACHER_RUBRIC",
-  "stageC": "TEACHER_REVIEW_SOURCE_TASKS_DEFINED; SELECTED_DIGITAL_SKILL_NOT_VERIFIED",
+  "stageC": "GRADE5_L02_EXACT_CONNECTED_IRREGULAR_COUNT_WRITTEN_NOT_RUN_WITH_TEACHER_LED",
   "stageCContracts": {
     "skillId": "geometry.volume",
     "allowedQuestionFamilies": [
@@ -507,12 +507,12 @@
       ],
       "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
       "Reviewer": "A–B–C lesson audit",
-      "Status": "SOURCE_UNAVAILABLE",
+      "Status": "MATCHED_TEACHER_LED",
       "IssueId": null,
       "ContentVersion": "g5-u01-l01-l03-im2021-v17-source-specific-a-b-c-20261030",
       "CandidateSha": "PENDING_COMMIT_SHA",
       "UpdatedUtc": "2026-10-30",
-      "SourceDescription": "Publisher Volume of a Rectangular Prism cooldown not available in original cached public teacher HTML",
+      "SourceDescription": "Publisher Volume of a Rectangular Prism cooldown not available in original cached public teacher HTML. Publisher prompt inaccessible; owner authorized Edulytiks-original 2×3×3 18-cube exit, not literal publisher parity.",
       "MatchedArtifact": "source reference only"
     },
     {
@@ -585,33 +585,37 @@
       "RightsStatus": "SOURCE_TEXT_PARAPHRASED_IMAGES_NOT_REUSED",
       "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json#U01:L02",
       "ImplementationType": "BLOCKED",
-      "VerificationMethod": "Local teacher and student HTML math/source alt to Rich V2 comparisons",
+      "VerificationMethod": "Exact selected question + verifier + registry contract inspected in source; tests authored not run",
       "TestNames": [
         "tests/academic-us-ccss-g5-u01-l02-exact-source-20261030.test.cjs"
       ],
       "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
       "Reviewer": "A–B–C lesson audit",
-      "Status": "MISMATCH_BLOCKED",
+      "Status": "MATCHED_DIGITAL",
       "IssueId": "592",
       "ContentVersion": "g5-u01-l01-l03-im2021-v17-source-specific-a-b-c-20261030",
       "CandidateSha": "PENDING_COMMIT_SHA",
       "UpdatedUtc": "2026-10-30",
-      "SourceDescription": "Actual selected numeric volume family coverage is not established for U01:L02",
-      "MatchedArtifact": "contract gap; teacher-led source tasks preserved"
+      "SourceDescription": "Irregular 8–12 connected cube counting digitally covered by source-aligned exact family usccss.g5.u01.l02.count_irregular_connected_cubes; Guess My Prism, partner reconstruction, WODB and explanation are teacher reviewed.",
+      "MatchedArtifact": "contract gap; teacher-led source tasks preserved",
+      "EdulytiksArtifactPath": "src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson2Questions.cs"
     }
   ],
   "sourceElementsCount": 20,
   "counts": {
-    "matched": 17,
-    "sourceUnavailable": 1,
-    "capabilityBlocked": 1
+    "matched": 19,
+    "sourceUnavailable": 0,
+    "capabilityBlocked": 0
   },
-  "openGates": [
-    "Original publisher cooldown gated",
-    "Numeric selected digital practice not yet proven, source constructs teacher-led"
-  ],
+  "openGates": [],
   "testStatus": "WRITTEN_NOT_RUN",
   "currentContentVersion": "g5-u01-l01-l03-im2021-v29-original-wu-activity-source-worked-20261030",
   "newSourceSpecificWorkedExamples": 1,
-  "sourceBasedTeacherReviewExamples": true
+  "sourceBasedTeacherReviewExamples": true,
+  "nonBlockingCaveats": [
+    "Publisher original gated Cool-down replaced by user-authorized first-party exit (no literal parity claim)",
+    "2021 Student Facing embedded in teacher HTML; independent Student PDF and picture pixels not certified",
+    "Actual learner/teacher rendering, teacher scoring and CI are Stage D NOT_RUN"
+  ],
+  "digitalFamily": "usccss.g5.u01.l02.count_irregular_connected_cubes"
 }

@@ -7,13 +7,14 @@
     "CCSS:5.MD.C.3",
     "CCSS:5.MD.C.4"
   ],
-  "PracticeStrategy": "REUSE numerical volume as supplement; shared writer EXTEND teacher-assessed open construction/reconstruction where necessary",
+  "PracticeStrategy": "EXTEND existing exact question engine for irregular connected cube counting; retain teacher-led partner prism reconstruction",
   "staticPractice": {
     "explicitLessonSkillMapping": "ABSENT_FOR_L02",
     "officialOutcomeRoute": "5.MD.C.3 and 5.MD.C.4 resolve to generic volume target by official outcome map; source-specific contract unproven",
-    "targetFamilyRisk": "Supporting volume target may include cuboid volume and surface-area of cuboid; source requires counting irregular cubes and precise prism reconstruction, not surface area",
-    "exactSelectedRuntimeContract": "NOT_EXECUTED_OR_CONFIRMED",
-    "owner": "Supervisor 1 single-writer issue #592"
+    "targetFamilyRisk": "Legacy generic volume and surface-area fallback overridden for this L02 only",
+    "exactSelectedRuntimeContract": "GRADE5_L02_SELECTED_STATICALLY_WIRED_TO_EXACT_FAMILY; STAGE_D_NOT_RUN",
+    "owner": "Supervisor 1 single-writer issue #592",
+    "digitalFamily": "usccss.g5.u01.l02.count_irregular_connected_cubes"
   },
   "requirements": [
     {
@@ -69,8 +70,8 @@
   ],
   "publisherCooldown": "NOT_VERIFIED_GATED",
   "edulytiksCooldown": "ORIGINAL_AUTHORED",
-  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "testStatus": "WRITTEN_NOT_RUN",
   "StageA": "COMPLETE_WITH_EVIDENCE",
   "StageB": "COMPLETE_WITH_EVIDENCE",
-  "StageC": "BLOCKED_SHARED_INTEGRATION"
+  "StageC": "GRADE5_L02_EXACT_CONNECTED_IRREGULAR_COUNT_WRITTEN_NOT_RUN_WITH_TEACHER_LED"
 }

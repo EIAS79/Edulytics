@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L02",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L03",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 1,
+    "READY_FOR_D": 2,
     "D_VERIFIED": 0,
-    "BLOCKED": 18,
-    "REMAINING": 147
+    "BLOCKED": 17,
+    "REMAINING": 146
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -198,26 +198,18 @@
       "reuseFinding": "REUSE_EXISTING_SOURCE_GUESS_MY_PRISM_AND_18_CUBE_EXAMPLE; FIX_WARMUP_AND_REAL_ACTIVITY_ORDER_AND_UNEVEN_LAYER_COUNTING",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numerical volume as supplement; shared writer EXTEND teacher-assessed open construction/reconstruction where necessary",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l02-contract-v15.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T07:56:23.872Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:11:31.961Z",
+      "elapsedSeconds": 40508,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated single shared integration writer — issue #592",
-        "reasons": [
-          "Official fallback generic volume may select cuboid surface-area/math rather than irregular counting and partner reconstruction; no proven selected source-faithful contract.",
-          "Teacher scoring for constructions/oral descriptions/partner reconstruction not demonstrably wired."
-        ],
-        "remedy": "Single writer verify actual selected contract and implement a source-suitable REUSE or EXTEND; recheck C before marking ready."
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "edition": "2021 IM K–5 first edition",
         "sourcePaths": "original teacher lesson and preparation, including Student Facing in teacher HTML",
@@ -242,6 +234,16 @@
         "before": "Warm-up was vague; Activity 1 irregular 8–12 counting was duplicated as Activity 2; group materials and teacher source task labels were incomplete.",
         "after": "Explicit original WODB format, irregular variable-layer strategy, Guess My Prism 16–24 hidden reconstruction, teacher-scored original exit check and accessible first-party model.",
         "unverified": "Actual runtime selected Practice and open-answer human assessment path."
+      },
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l02.count_irregular_connected_cubes",
+        "selected": "GRADE5_EXACT_OVERRIDE",
+        "teacher": "EXISTING_EIGHT_POINT_RICHV2_RUBRIC",
+        "test": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "source2021": "Our-CS/05_Grade_5_IM_K5/unit-1/lesson-2/lesson.html",
+        "firstPartyExit": "GATED_PUBLISHER_ALTERNATIVE",
+        "closingParentHead": "34f81c2abcfdd2f5f4eb806f27a28c7970834e88"
       }
     },
     {

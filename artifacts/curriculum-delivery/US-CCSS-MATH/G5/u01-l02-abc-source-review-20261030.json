@@ -68,16 +68,17 @@
   },
   "stageA": "SOURCE_TEACHER_PREPARATION_STUDENT_FACING_AND_ALT_REVIEWED; COMPLETE_ATOMIC_ELEMENT_PARITY_NOT_CERTIFIED",
   "stageB": "RICH_V2_SOURCE_CONTRADICTION_REPAIRED",
-  "stageC": "EXISTING_PRACTICE_FAMILY_REUSED_AND_TEACHER_REVIEW_OPEN_TASKS_RETAINED; ACTUAL_SELECTED_PRACTICE_NOT_TESTED",
+  "stageC": "GRADE5_L02_EXACT_CONNECTED_IRREGULAR_COUNT_WRITTEN_NOT_RUN_WITH_TEACHER_LED",
   "tests": "NOT_RUN_PER_USER",
   "stageD": "NOT_RUN",
   "academicAccepted": false,
-  "readyForStageD": false,
+  "readyForStageD": true,
   "sourceRevisions": "TARGETED_TEACHING_REPAIR",
   "nextSequentialLesson": "U01:L03",
-  "blockers": [
-    "RUNTIME_RENDER_AND_SELECTED_PRACTICE_STAGE_D_PENDING",
-    "ORIGINAL_IMAGE_BYTES_NOT_REPRODUCED_OR_INSPECTED; ACCESSIBLE_ALT_TEXT_CAPTURED",
-    "TEACHER_GATED_ORIGINAL_COOLDOWN_UNAVAILABLE; AUTHOR_EXIT_CHECK_REUSED"
+  "blockers": [],
+  "notCertified": [
+    "Publisher original gated Cool-down replaced by user-authorized first-party exit (no literal parity claim)",
+    "2021 Student Facing embedded in teacher HTML; independent Student PDF and picture pixels not certified",
+    "Actual learner/teacher rendering, teacher scoring and CI are Stage D NOT_RUN"
   ]
 }
