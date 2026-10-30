@@ -272,7 +272,7 @@ public static class UsCcssHsFourthCourseQuestions
                     Get(p, "reflection") is >= 0 and <= 2 && Get(p, "quarterTurns") ==
                     (Get(p, "reflection") switch { 0 => 2 - Get(p, "angle"), 1 => 2 + Get(p, "angle"), _ => 4 - Get(p, "angle") }),
                 TrigPrincipalInverse => Get(p, "function") is >= 0 and <= 2 && Get(p, "argument") is >= -3 and <= 3,
-                TrigModel => Get(p, "period") is >= 4 and <= 100 && Get(p, "period") % 4 == 0 &&
+                TrigModel => Get(p, "period") is >= 1 and <= 100 &&
                     Get(p, "amplitude") is >= 1 and <= 100 &&
                     (ModelMode(p) is not (1 or 2) || Get(p, "amplitude") % 2 == 0) &&
                     Math.Abs(Get(p, "offset")) <= 100 && ModelMode(p) is >= 0 and <= 5 &&
