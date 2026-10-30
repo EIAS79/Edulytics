@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 8,
-    "B_CLOSED": 8,
+    "A_CLOSED": 9,
+    "B_CLOSED": 9,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 8,
+    "BLOCKED": 9,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -462,28 +462,54 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-9\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-9\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_ALREADY_SOURCE_SPECIFIC_78_FT3_259_IN3_42_420_RICHV2_AND_ORIGINAL_TEXT_MODELS; ADD_FIRST_PARTY_EXIT_AND_GRADE_RUBRIC_ONLY",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE_SOURCE_VALID_NUMERIC_SUPPLEMENT; EXTEND_SHARED_COMPOSITE_DECOMPOSITION_AND_TEACHER_REVIEW_PENDING",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l09-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:17:49.127Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single shared integration writer #592",
+        "reason": "No verified lesson-selected composite decomposition and teacher-graded explanation contract: official outcome fallback may offer unrelated scalar/surface-area families",
+        "acceptWhen": "Static source-faithful selected family, grader, feedback, and teacher explanation rubric wired; cases correct/wrong/equivalent/malformed."
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "Original 2021 teacher lesson/preparation and embedded Student Facing read on Our-CS",
+        "goals": [
+          "Times Ten warm-up 12,120,1200,12000",
+          "two measured composite solids with missing lengths and different units, 78 cubic feet and 259 cubic inches",
+          "interpret parenthesized decomposition expressions for 42 cubic units and 420 cubic inches",
+          "switch partner decomposition methods and justify geometry"
+        ],
+        "figures": "Original publisher images NOT_REPRODUCED; source textual diagrams and Edulytiks-original models",
+        "publisherCooldown": "NOT_VERIFIED_GATED",
+        "rights": "CC BY 4.0 text; no source art copied"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l09-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "4556a0f21af2e7a090ff29d7db8729064f5ea39c",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Existing source-aligned models and four numerical worked examples are correct, no new content reauthor required; original independent exit check not explicit.",
+        "after": "Preserved all four source-specific numeric/activity models; added original exit with geometrical two-part explanations and targeted family-dependent rubric/test evidence."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L10",
@@ -3961,8 +3987,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T08:05:10.054Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L09",
+  "updatedAtUtc": "2026-10-30T12:17:49.127Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L10",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -3995,6 +4021,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
       "reason": "C composite-prism nonoverlap, partition and teacher assessment integration"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
+      "reason": "C composite source geometry and teacher explanation selected Practice not verified"
     }
   ]
 }

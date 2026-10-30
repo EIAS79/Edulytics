@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "title": "G5 U01 L01-L08 grouped shared Practice acceptance",
+  "repo": "EIAS79/Edulytics",
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "createdAtUtc": "2026-10-30T12:17:49.127Z",
+  "authority": "Supervisor 1 designated SINGLE shared integration writer issue #592",
+  "noEnginePerLesson": true,
+  "reference": "Static branch source inspection only; DOES NOT certify runtime contract selected",
+  "groups": [
+    {
+      "group": "CUBE_CONSTRUCTION_COMPARISON",
+      "lessons": [
+        "U01:L01"
+      ],
+      "staticExactFamily": [
+        "usccss.g5.unit_cube_count"
+      ],
+      "contract": "L01 explicitly READY_VERIFIED G5_ONE_CUBIC_UNIT_VOLUME in lesson-skill-mappings.v1.json; LessonPracticeContractProjection first",
+      "defect": "Numeric prism dimension multiplication does not evaluate connected eight/nine-cube models, ordering, shape invariance and explanations",
+      "strategy": "REUSE numeric unit count as supplement; EXTEND teacher-scored connected model/ordering rubric; avoid separate engine",
+      "cases": [
+        "two distinct connected eight/nine unit cube solids correctly equal",
+        "rotation/translation equivalent",
+        "wrong count",
+        "overlap/duplicate coordinates",
+        "disconnected island",
+        "malformed coordinates",
+        "scalar-only answer inadequate"
+      ],
+      "acceptWhen": "Actual selected contract plus teacher-scored or approved explicit model assessment path demonstrably wired and feedback grounded"
+    },
+    {
+      "group": "PRISM_COUNT_LAYERS_UNITS_EXPRESSIONS",
+      "lessons": [
+        "U01:L02",
+        "U01:L03",
+        "U01:L04",
+        "U01:L05",
+        "U01:L06",
+        "U01:L07"
+      ],
+      "staticExactFamily": [
+        "NO_EXPLICIT_G5_L02_L07_ROW",
+        "official outcome fallback: supporting.geometry.cuboid_volume",
+        "official outcome fallback: supporting.geometry.surface_area_cuboid"
+      ],
+      "contract": "Official outcome rules may select generic families depending on the canonical Outcomes, strict all-outcomes resolution and registry priority; actual selected family is NOT_VERIFIED",
+      "defect": "Cuboid multiplication and unrelated surface area do not demonstrate irregular counts, hidden-layer estimates, partner prism reconstruction, 40×h growing table, expression geometry, justified cubic-unit choice, or information gap interaction",
+      "strategy": "REUSE exact numeric cuboid/volume family where mathematically correct; EXTEND existing source-targeted question family and teacher review for reasoning / open activities; prohibit unrelated surface area for volume-only lessons",
+      "cases": [
+        "L02 8-12 irregular build / hidden 16-24 prism",
+        "L03 layers 5×8=2×20=40",
+        "L04 5×24=6×20=120 and unknown depth",
+        "L05 40×(1,2,3,10,25)",
+        "L06 90/72/84 expressions and false variants",
+        "L07 missing dimension, appropriate cubic units",
+        "wrong/malformed/units and equivalent rotations"
+      ],
+      "acceptWhen": "Actual selected contract and feedback match lesson question source and teacher-scored open response paths statically wired"
+    },
+    {
+      "group": "COMPOSITE_DISJOINT_VOLUME",
+      "lessons": [
+        "U01:L08"
+      ],
+      "staticExactFamily": [
+        "NO_EXPLICIT_G5_L08_ROW",
+        "official outcome generic volume fallback candidate"
+      ],
+      "contract": "Actual selected contract NOT_VERIFIED; source-targeted additivity and partitioning not established",
+      "defect": "Simple rectangular prism product does not establish non-overlap, attached rows and equivalent decomposition; source requires explanations and teaching assessment",
+      "strategy": "REUSE numeric volume arithmetic; EXTEND one shared composite non-overlap family and teacher-scored partition rubric",
+      "cases": [
+        "12+10=22",
+        "12+18=30",
+        "45+5=50",
+        "54+6=60",
+        "45+12=57",
+        "alternate valid partitions",
+        "overlapping geometry rejected",
+        "wrong/malformed dimensions and scalar-only"
+      ],
+      "acceptWhen": "Actual selected composite geometry with positive/negative/equivalent cases and teacher rubric wired"
+    }
+  ],
+  "testTruth": "TESTS_AUTHORED_NOT_RUN",
+  "ownerAction": "Single shared writer inspect contract/generator/grader/feedback/fallback and use REUSE→EXTEND; no Grade branch edits to shared mapping/engine/seeder",
+  "release": "NO_GO"
+}

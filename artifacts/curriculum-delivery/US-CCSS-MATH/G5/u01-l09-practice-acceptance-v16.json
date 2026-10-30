@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
+  "source": "Our-CS 2021 original lesson-9/lesson.html and preparation.html with embedded Student Facing, teacher source 5.MD.C.5.c and 5.OA.A.2",
+  "A": "SOURCE_COMPARED_REUSE",
+  "B": "CORRECT_GRADE_OWNED_RICH_V2_PLUS_ORIGINAL_EXIT",
+  "C": "BLOCKED_SHARED_INTEGRATION",
+  "sourceCoverage": [
+    "Times Ten warm-up 12,120,1200,12000",
+    "two measured composite solids with missing lengths and different units, 78 cubic feet and 259 cubic inches",
+    "interpret parenthesized decomposition expressions for 42 cubic units and 420 cubic inches",
+    "switch partner decomposition methods and justify geometry"
+  ],
+  "sourceRights": "2021 lesson HTML CC BY 4.0; original figures not copied, models original; Student Task PDF and publisher gated Cool-down not revalidated",
+  "publisherCoolDown": "NOT_VERIFIED_GATED",
+  "edulytiksCoolDown": "ORIGINAL_AUTHORED",
+  "numericFixtures": [
+    {
+      "case": "first stepped solid",
+      "value": 78,
+      "unit": "cubic feet",
+      "methods": [
+        "2*7*2+5*5*2",
+        "7*5*2+2*2*2"
+      ]
+    },
+    {
+      "case": "second stepped solid",
+      "value": 259,
+      "unit": "cubic inches",
+      "methods": [
+        "9*3*7+5*2*7",
+        "5*5*7+4*3*7"
+      ]
+    },
+    {
+      "case": "parentheses",
+      "value": 42,
+      "unit": "cubic units",
+      "methods": [
+        "(2*3)*4+(3*3)*2",
+        "5*6+3*4"
+      ]
+    },
+    {
+      "case": "two valid 420 partitions",
+      "value": 420,
+      "unit": "cubic inches",
+      "methods": [
+        "5*8*6+5*4*9",
+        "5*4*3+5*12*6"
+      ]
+    }
+  ],
+  "negativeCases": [
+    "missing edges 7−5 erroneously 3",
+    "wrong feet/inches cubic unit",
+    "overlapping two boxes without subtracting overlap",
+    "same product from geometry-incompatible region",
+    "malformed dimensions",
+    "scalar 78 without paired drawing or explanation"
+  ],
+  "evaluation": {
+    "numeric": "May independently check supplement only",
+    "open": "Teacher reviews two disjoint partitions, inferred dimensions, explanation and accessible verbal/drawn/tactile alternatives"
+  },
+  "staticContract": {
+    "explicitLessonSkillMapping": "NONE_FOR_L09",
+    "runtimeRegistry": "LessonPracticeContractRegistry.TryResolve composes explicit, official and supporting projections",
+    "fallbackRisk": "OfficialOutcomeRule could map generic volume family plus other outcome; source-specific decomposition and human evaluation are not demonstrated",
+    "selectedFamily": "NOT_VERIFIED",
+    "selectedGeneratorGraderFeedback": "NOT_VERIFIED",
+    "sharedOwner": "Supervisor 1 designated single integration writer, Issue #592",
+    "acceptedWhen": "Demonstrably selected lesson contract generates/evaluates source-correct composite-volume tasks and teacher-reviewed decompositions; correct/wrong/equivalent/malformed cases covered"
+  },
+  "testStatus": "TEST_AUTHORED_NOT_RUN"
+}
