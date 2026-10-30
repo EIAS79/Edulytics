@@ -1076,6 +1076,7 @@
         "Source-aligned 17.3: make a design with rotational symmetry and identify an actual nonzero rotation below 360° that maps the entire pattern, not merely one tile, to itself. Assess student drawing and explanation with a teacher rather than inventing numerical auto-grading.",
         "Draw a triangle tile and make repeated rotated or translated copies on an accessible grid. Explain why the boundaries meet without gaps and why the transformations preserve tile shape.",
         "Student constructions and explanations are teacher-reviewed; an automated count of polygons is not enough to verify no gaps or overlaps in the actual drawing.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Design a tessellation with six equilateral triangles around a grid vertex. Label all six 60° angles and a symmetry rotation of 60°; explain why neither gaps nor overlaps remain. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
         "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/17/preparation.html . No publisher artwork or branded assessment is copied."
       ],
       "KeyConcepts": [
@@ -1153,7 +1154,43 @@
         "Angles around a vertex total 360°.",
         "Explain the chosen rigid movements and check the actual tiling."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L17 Rotate and Tessellate",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Equilateral triangles",
+              "Cells": [
+                "6×60°=360°",
+                "repeat by 60° turn"
+              ]
+            },
+            {
+              "Label": "Squares",
+              "Cells": [
+                "4×90°=360°",
+                "repeat by 90° turn"
+              ]
+            },
+            {
+              "Label": "Regular hexagons",
+              "Cells": [
+                "3×120°=360°",
+                "repeat by 120° turn"
+              ]
+            },
+            {
+              "Label": "Tessellation condition",
+              "Cells": [
+                "no gaps or overlaps",
+                "rigid repeating copies cover plane"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]
