@@ -23,3 +23,13 @@ test('L02 original 7.8H: three location outcomes, principal inverse, 0.75 repeat
  assert.ok(Number.isNaN(Math.asin(1.2)));assert.ok(Number.isNaN(Math.acos(-1.2)));
  assert.ok(Math.atan(1)<Math.PI/2);
 });
+
+test('L03 source identities, tan domain and four angle roots',()=>{
+ const s=body(2);assert.match(s,/Original 7\.6 identity-based practice/);
+ for(const q of [Math.PI/3,2*Math.PI/3]){near(Math.sin(-q),-Math.sqrt(3)/2);near(Math.cos(q)*Math.tan(q),Math.sqrt(3)/2);}
+ for(const p of [Math.PI/2,3*Math.PI/2])assert.ok(Math.abs(Math.cos(p))<1e-10);
+ const roots=[Math.PI/6,Math.PI/3,7*Math.PI/6,4*Math.PI/3];
+ roots.forEach(q=>near(Math.sin(2*q),Math.sqrt(3)/2));
+ assert.equal(new Set(roots.map(x=>x.toFixed(10))).size,4);
+ assert.ok(roots.every(x=>x>0&&x<2*Math.PI));
+});
