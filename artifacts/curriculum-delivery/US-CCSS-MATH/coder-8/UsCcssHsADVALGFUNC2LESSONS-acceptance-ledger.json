@@ -113,7 +113,7 @@
       "authenticatedRuntime": "NOT_RUN_453",
       "productionUat": "NOT_RUN",
       "previousUnapprovedV2BodySha256": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
-      "stageA": "TARGETED_STUDENT_TEACHER_INDEXED_SOURCE_GOALS_REVIEWED; FULL_PDF_NOT_VERIFIED"
+      "stageA": "STUDENT_ORIGINAL_TASK_PAGES_1_TO_4_VISUALLY_REVIEWED_AND_TARGETED_TEACHER_NOTES_INDEXED; ACADEMIC_APPROVAL_PENDING"
     }
   ],
   "verification": {
@@ -251,6 +251,7 @@
       "newXunitTheory": "EveryFixtureHasSeparateWrongMalformedBoundaryAndEquivalentInputs — 26 InlineData cases committed, execution pending exact-head CI",
       "sourceTaskReferences": [
         "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+        "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2se518.pdf",
         "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2tn718.pdf"
       ],
       "academicApproval": false,
@@ -275,7 +276,27 @@
         "MVP-M3-2.1-LOG-NUMBER-LINE"
       ],
       "nativeCSharpStatus": "NOT_EXECUTED_LOCAL_DOTNET_SDK_MISSING",
-      "independentFixtureOracle": "26/26 connector-side JS mathematical witnesses (not node runner, xunit, or runtime)"
+      "independentFixtureOracle": "26/26 connector-side JS mathematical witnesses (not node runner, xunit, or runtime)",
+      "studentLogLogicSourceInspection": {
+        "url": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2se518.pdf",
+        "verifiedSource": "official MVP Secondary Mathematics III Module 2 student edition linked from publisher's official curriculum page",
+        "pdfPageIndicesDirectlyViewed": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "printedTaskPages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "directEvidence": "inverse exponential/log example, numbered line placement with explanations, always/sometimes/never validity/sign/base and cross-base conjecture explanations",
+        "teacherPdfStatus": "INDEXED_TEXT_ONLY; TEACHER_PDF_NOT_FULLY_RENDERED",
+        "binarySha256Rechecked": false,
+        "notClaimed": "Whole 39-page PDF audit or teacher reviewed signoff"
+      }
     }
   },
   "release": {
