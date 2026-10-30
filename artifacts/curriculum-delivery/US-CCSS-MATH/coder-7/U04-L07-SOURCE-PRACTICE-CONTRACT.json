@@ -12,7 +12,8 @@
       "7.1 Halving and Doubling",
       "7.2 Radiocarbon Dating",
       "7.3 Old Manuscripts",
-      "Optional Gutenberg Bible"
+      "Optional Gutenberg Bible",
+      "First Edition summary: sodium-22 half-life, table and function"
     ],
     "independentAcademicApproval": "NOT_VERIFIED"
   },
@@ -63,6 +64,19 @@
           ".5^(576/5730) approximately .9327 > .9"
         ],
         "teacherRubric": "Justify use of elapsed years and approximations"
+      },
+      {
+        "activity": "Source summary (sodium-22)",
+        "required": "Interpret exponential function f(t)=4*(1/2)^(t/3) with three-year half-life and different nanogram units",
+        "autoCheck": [
+          "f(0)=4 ng",
+          "f(1) approximately 3.1748 ng",
+          "f(3)=2 ng",
+          "f(6)=1 ng",
+          "f(9)=0.5 ng",
+          "f(24)=0.015625 ng approximately 0.016 ng"
+        ],
+        "teacherRubric": "Interpret input t as elapsed years, output f(t) as nanograms, four as initial mass and three as three-year half-life; do not mix the carbon-14 isotope or picogram units."
       }
     ],
     "negativeCases": [
@@ -73,7 +87,9 @@
       "Autoscoring narrative fraud verdict as definite",
       "Invalid nonnumeric/NaN/Infinity entries",
       "Cross-curriculum or wrong-school/tenant attempt",
-      "Negative elapsed years in model"
+      "Negative elapsed years in model",
+      "Treating sodium-22 three-year half-life as carbon-14's 5,730-year half-life or confusing nanograms with picograms",
+      "Reporting sodium-22 as fully vanished after 24 years, negative elapsed years or nonfinite answers"
     ],
     "requestOwner": "Supervisor 3 Shared Integration Coder",
     "issue": 453
@@ -85,7 +101,7 @@
     "teacherSignoff": "NOT_VERIFIED"
   },
   "predecessorCanonicalBodySha256": "3545a0df733c5ad6d7278ec2e1792be1dbc3bf88a7598490a20a43ebe531bdd0",
-  "proposedUnapprovedBodySha256": "50f85bc65788ca4b36f43ef7f29fde32414828911d7234052b948a04079d6d3e",
-  "sourceContentBlobSha": "3edd401c7fa85e1747ca0f5023a258f5f3a13519",
+  "proposedUnapprovedBodySha256": "98e7b08d84c899a46190039f2f37104bdaf3f0e3068d7c31810479292e4b2a70",
+  "sourceContentBlobSha": "b8d34814099eae6a73356ba9b0433fb2a5d70777",
   "release": "NO_GO"
 }

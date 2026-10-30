@@ -50,3 +50,21 @@ test('source and proposed digest are reproducible; no fabricated B/C/D approval'
  assert.ok(contract.stageC.tasks.length>=4&&contract.stageC.negativeCases.length>=5);
  assert.equal(contract.release,'NO_GO');
 });
+
+test('U04 L07 source summary sodium-22 function, table, and boundary checks',()=>{
+ const w=t.workedExamples;
+ assert.match(w,/Source lesson summary—sodium-22 exponential function/);
+ assert.match(w,/exponential function f\(t\)=4\*\(1\/2\)\^\(t\/3\)/);
+ assert.match(w,/input t is elapsed years/);
+ assert.match(w,/output f\(t\) is the remaining sodium-22 mass in nanograms/);
+ const sodium=years=>4*Math.pow(.5,years\/3);
+ for(const [years,ng] of [[0,4],[3,2],[6,1],[9,.5],[24,.015625]])near(sodium(years),ng,1e-12);
+ near(sodium(1),3.174802103936399,1e-12);
+ assert.ok(sodium(23)>.015625&&sodium(25)<.015625);
+ const acceptable=years=>typeof years==='number'&&Number.isFinite(years)&&years>=0;
+ for(const invalid of [-1,NaN,Infinity,'3',null]) assert.equal(acceptable(invalid),false);
+ const c=contract.stageC.tasks.find(x=>x.activity==='Source summary (sodium-22)');
+ assert.ok(c&&c.autoCheck.length>=6);
+ assert.equal(contract.stageC.effectiveRuntimeSelectedFamilies,'NOT_VERIFIED');
+ assert.equal(contract.stageB.studentRenderer,'NOT_VERIFIED');
+});
