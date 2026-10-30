@@ -99,7 +99,7 @@ test('source-functional first-party visuals and teacher-only assessment spec exi
   const rich=JSON.parse(fs.readFileSync(richPath,'utf8'));
   const item=rich.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G5:U01:L01');
   const spec=JSON.parse(fs.readFileSync(specPath,'utf8'));
-  assert.ok(item); assert.equal(spec.stageC,'GRADE5_EXACT_COMPARE_AUTHORED_TEACHER_REVIEW_RUNTIME_NOT_RUN');
+  assert.ok(item); assert.equal(spec.stageC,'SOURCE_GOAL_COVERED_WITH_EXACT_COMPARISON_AND_TEACHER_REVIEW_WRITTEN_NOT_RUN');
   assert.equal(spec.lessonCode,item.LessonCode);
   assert.ok(item.Visuals.some(v=>v.Title.includes('Source-described 2021 warm-up A–D')),
     'Verify the source-described models rather than obsolete v14 visual names');

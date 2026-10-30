@@ -105,43 +105,25 @@
   },
   "stageA": "TEACHER_STUDENT_HTML_AND_SIX_SVG_ASSETS_OPENED_2021; PUBLISHER_COOLDOWN_GATED",
   "stageB": "SOURCE_SPECIFIC_TEACHER_SUPPORT_RUBRIC_RICH_V2_REPAIRED; B_RUNTIME_UNVERIFIED",
-  "stageC": "CAPABILITY_BLOCKED_SHARED_PRACTICE_CONSTRUCTION_RUBRIC_ISSUE_592; DIGITAL_FAMILY_SUPPLEMENT_ONLY",
+  "stageC": "GRADE5_EXACT_COUNT_COMPARE_SELECTED_STATICALLY; TEACHER_REVIEW_REQUIRED",
   "stageD": "NOT_RUN",
   "testStatus": "WRITTEN_NOT_RUN",
   "tests": [
     "tests/academic-us-ccss-g5-u01-figure-source-contract-20261030.test.cjs"
   ],
   "academicAccepted": false,
-  "checkpointStatus": "A_C_EXPLICIT_GAP",
-  "blockers": [
-    {
-      "id": "G5-U01L01-SRC-IMAGE",
-      "reason": "Original image binaries and individual rights not verified even though local HTML alt text is available"
-    },
-    {
-      "id": "G5-U01L01-SRC-PDF",
-      "reason": "Original 2021 Student Task PDF not inspected locally"
-    },
-    {
-      "id": "G5-U01L01-COOLDOWN",
-      "reason": "Original 2021 publisher Cool-down teacher-gated; original Edulytiks alternative retained without claiming source parity"
-    },
-    {
-      "id": "G5-SHARED-001",
-      "issue": "https://github.com/EIAS79/Edulytics/issues/592",
-      "reason": "Selected Practice family and human-reviewed construction rubric shared integration not verified"
-    }
-  ],
+  "checkpointStatus": "READY_FOR_STAGE_D",
+  "blockers": [],
   "timing": {
     "status": "NOT_MEASURED_FULL_LESSON_CLOSURE",
     "goalSeconds": 180
   },
-  "unitStatus": "U01_INCOMPLETE_DO_NOT_ADVANCE",
+  "unitStatus": "U01_L01_READY_L02_NEXT; NOT_UNIT_COMPLETE",
   "nextAllowedLessonAfterClosure": "PED:US-CCSS-MATH:G5:U01:L02",
   "contentVersion": "g5-u01-l01-l03-im2021-v16-source-element-a-c-20261030",
   "elementLedgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
   "knownElements": 25,
-  "matchedElements": 23,
+  "matchedElements": 25,
   "publisherCooldown": "SOURCE_UNAVAILABLE_GATED",
   "passedTests": 0,
   "testExecution": "NOT_RUN",
@@ -207,5 +189,12 @@
       "assetReuse": "SOURCE_REFERENCE_ONLY_NOT_COPIED",
       "date": "2026-10-30"
     }
-  ]
+  ],
+  "remainingSourceMaterialCaveats": [
+    "Publisher 2021 Cool-down remains gated; independent original Edulytiks teacher-checked exit replaces it by owner's direction, exact publisher source parity NOT asserted.",
+    "Independent 2021 student PDF not found; 2021 original teacher page contains Student Facing tasks; publisher PDF layout not certified.",
+    "Six math-critical publisher SVG responses fetched from exact asset URLs and compared to source ALT; no exact pixel rendering or image reuse licensed.",
+    "Dog/cube example raster could not be opened, no copied artwork; physical build lesson objective and 9-cube construction preserved."
+  ],
+  "sourceGoalCoverage": "25/25 WITH_OWNER_AUTHORIZED_CUSTOM_COOLDOWN; ORIGINAL_PUBLISHER_MATERIAL_PARITY_NOT_CERTIFIED"
 }

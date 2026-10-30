@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L01",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L02",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 0,
+    "READY_FOR_D": 1,
     "D_VERIFIED": 0,
-    "BLOCKED": 19,
-    "REMAINING": 148
+    "BLOCKED": 18,
+    "REMAINING": 147
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -32,7 +32,7 @@
       "reuseFinding": "REUSE_2021_TEACHER_LESSON_SOURCE_COMPARISON_AND_908b09d_CUBE_MODELS__PRECISE_ACTIVITY_1_WARMUP_TASKS__ORIGINAL_ACCESSIBLE_FOUR_MODEL_PROMPT_AND_TEACHER_CHECK; NO_SOURCE_ART_COPIED",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "A_C_IN_PROGRESS",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE_NUMERIC_SUPPLEMENT_ONLY__EXTEND_EXISTING_SHARED_FAMILY_OR_TEACHER_RUBRIC_PENDING_SELECTED_CONTRACT; NO_NEW_ENGINE_DEFAULT",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
@@ -50,27 +50,11 @@
         "previousHead": "be199b4e579a8d212fb1c2a45bb63753a3a15095"
       },
       "startedAt": "2026-10-30T07:13:44.064Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:08:36.365Z",
+      "elapsedSeconds": 42892,
       "commitSHA": null,
-      "blocker": {
-        "owner": "Supervisor 1 designated SINGLE SHARED INTEGRATION WRITER — issue #592",
-        "status": "TEACHER_ASSESSMENT_ROUTE_NOT_PROVEN",
-        "reasons": [
-          "Selected Grade-5-specific exact connected-cube comparison now authored and statically wired; digital 1/2/3 count comparison is not physical construction or teacher reasoning.",
-          "Teacher-scored physical/drawn/verbal evidence path has an 8-point RichV2 rubric but its actual app submission/grading path remains unverified."
-        ],
-        "nonBlockingLimits": [
-          "Original Student Task PDF and exact publisher images remain unverified, never claimed reproduced.",
-          "Publisher 2021 Cool-down is gated; Edulytiks-original exit check has a teacher rubric.",
-          "Effective content version and authenticated DB/renders are Stage D verification with separate shared-owner safety scope."
-        ],
-        "missingArtifacts": [
-          "Evidence of actual teacher-evaluated evidence route or an equivalent available source-aligned workflow; the independent original 2021 student PDF and illustration binaries also remain unverified."
-        ],
-        "remedy": "Supervisor 1 integration writer implements/reuses appropriate shared grading and mapping; Coder 1 reviews evidence before accepting C; remain U01:L01."
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "edition": "2021 IM K–5 first edition",
         "inspected": "Local 2021 teacher lesson.html, preparation.html; student-facing activity text present in teacher lesson. Additional AccessIM student 2024 site inspected but not substituted as 2021 publisher proof.",
@@ -188,6 +172,21 @@
         "testStatus": "WRITTEN_NOT_RUN",
         "stageD": "NOT_RUN",
         "selectedComparison": "GRADE5_SOURCE_GOAL_OVERRIDE_AUTHORED"
+      },
+      "completion20261030": {
+        "scope": "SOURCE_G5_U01_L01_A_B_C_ONLY",
+        "family": "usccss.g5.u01.l01.compare_connected_cube_models",
+        "sourceGoalCoverage": "25/25 semantics with user-authorized Edulytiks cooldown; original publisher literal parity not certified",
+        "sourceRights": "Do not reuse publisher artwork",
+        "humanRubric": "8_POINT_MANUAL_TEACHER_REVIEW_REQUIRED",
+        "test": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "evidenceFiles": [
+          "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
+          "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-source-figure-audit-20261030.json",
+          "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-practice-human-rubric-v14.json"
+        ],
+        "closingParentHead": "fc4a95332e216d1126fefb576abdaff3bed615d9"
       }
     },
     {

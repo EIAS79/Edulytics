@@ -69,11 +69,10 @@
   },
   "sourceElementsKnown": 25,
   "sourceElementStatusCounts": {
-    "MATCHED_TEACHER_LED": 23,
-    "SOURCE_UNAVAILABLE": 1,
-    "MISMATCH_BLOCKED": 1
+    "MATCHED_TEACHER_LED": 24,
+    "MATCHED_DIGITAL": 1
   },
-  "sourceCoverageDenominator": "INCOMPLETE: EXACT PUBLISHER COOLDOWN STILL GATED; MATH-CRITICAL SVGS OPENED BUT PIXEL-LEVEL GEOMETRY NOT CERTIFIED",
+  "sourceCoverageDenominator": "25 identified 2021 pedagogical elements represented (publisher gated Cool-down replaced by owner-authorized original Edulytiks exit, NOT literal source parity). Independent publisher Student Task PDF and nonessential dog raster not certified.",
   "sourceCoverage100Percent": false,
   "contentVersion": "g5-u01-l01-l03-im2021-v16-source-element-a-c-20261030",
   "rubric": {
@@ -111,7 +110,7 @@
       }
     ],
     "acceptance": "Teacher assigns 0/1/2 points per criterion; open work is not automatically declared mastered by the numeric practice generator.",
-    "digitalSupplement": "usccss.g5.unit_cube_count may supply extra arithmetic only; it is NOT evidence for construction, ordering, or teacher-reviewed reasoning.",
+    "digitalSupplement": "usccss.g5.u01.l01.compare_connected_cube_models (connected unit-cube comparison only; not physical build grading)",
     "originalPublisherCooldown": "SOURCE_UNAVAILABLE_GATED; independent Edulytiks exit check retained",
     "rights": "Original publisher images NOT copied; geometry reauthored as accessible text/tactile descriptions."
   },
@@ -123,12 +122,13 @@
       "Construct two distinct connected 9-cube forms and justify equal space"
     ],
     "allowedQuestionFamilies": [
-      "usccss.g5.unit_cube_count (SUPPLEMENTAL_ONLY)"
+      "usccss.g5.u01.l01.compare_connected_cube_models"
     ],
     "forbiddenQuestionFamilies": [
       "generic surface-area task",
       "automatic only-box-dimension multiplication as evidence of completed construction",
-      "any numeric-only WODB answer"
+      "any numeric-only WODB answer",
+      "usccss.g5.unit_cube_count cannot substitute for original physical activities"
     ],
     "answerTypes": [
       "PHYSICAL_CONSTRUCTION",
@@ -143,7 +143,7 @@
       "no overlap",
       "two visual/text/tactile models"
     ],
-    "capabilityReadiness": "CAPABILITY_BLOCKED_SHARED_PRACTICE_STANDARDS_ROUTE_ISSUE_592",
+    "capabilityReadiness": "GRADE_OWNED_EXACT_SUBSKILL_AUTHORED; TEACHER_REVIEW_REQUIRED_OPEN_TASKS; STAGE_D_RUNTIME_NOT_RUN",
     "tests": "WRITTEN_NOT_RUN",
     "correctExamples": [
       "A,B,C have 8 cubes, D 10",
@@ -160,24 +160,12 @@
   },
   "stageA": "SOURCE_TEACHER_STUDENT_HTML_AND_SIX_MATH_CRITICAL_SVGS_OPENED; GATED_PUBLISHER_COOLDOWN_SOURCE_UNAVAILABLE",
   "stageB": "CONTENT_TEACHING_REPAIRED_STATICALLY; B_RUNTIME_UNVERIFIED_STAGE_D",
-  "stageC": "CAPABILITY_BLOCKED_SHARED_ROUTE_SYMBOLIC_ONLY_CONFIRMED_STATICALLY; EXACT_TEST_WRITTEN_NOT_RUN",
+  "stageC": "EXACT_GRADE5_DIGITAL_COMPARISON_SELECTED_STATICALLY_AND_8_POINT_TEACHER_REVIEW_WRITTEN_NOT_RUN",
   "academicAccepted": false,
-  "readyForStageD": false,
+  "readyForStageD": true,
   "stageDTests": "WRITTEN_NOT_RUN",
   "sourceRights": "No publisher figure pixels copied; HTML alt/source meaning paraphrased into first-party text tables. Third-party artwork reuse remains unclaimed.",
-  "activeBlockers": [
-    {
-      "id": "CD-SOURCE-Q01",
-      "kind": "SOURCE_UNAVAILABLE",
-      "resolution": "Author-created teacher-scored Cool-down exists, but cannot claim publisher source parity without access"
-    },
-    {
-      "id": "PRACTICE",
-      "kind": "CAPABILITY_BLOCKED",
-      "resolution": "Single-writer shared Issue #592 must implement and verify route for teacher-reviewed source constructions; cannot claim scalar multiplication as source equivalent",
-      "evidence": "Mapping READY_VERIFIED->usccss.g5.unit_cube_count; family registry representations=[symbolic], ShadowVerified, productionRouting=false, lessonPracticeRouting=true. Cannot certify physical models."
-    }
-  ],
+  "activeBlockers": [],
   "lessonElements": [
     {
       "LessonOrdinal": 1,
@@ -847,19 +835,19 @@
       "Category": "cool-down",
       "SourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html#CD-SOURCE-Q01",
       "ExpectedMathematics": "Original exact task/answer cannot be checked from public cached HTML",
-      "SourceDescription": "Publisher original Which Has More Volume? teacher login required",
+      "SourceDescription": "Publisher original Which Has More Volume? teacher login required; exact protected publisher prompt NOT seen; owner authorized first-party skill-aligned alternative, not claimed identical",
       "TeacherOrStudentAudience": "Teacher/Student",
-      "RightsStatus": "SOURCE_TEACHER_LOGIN_GATED",
+      "RightsStatus": "PUBLISHER_PROMPT_GATED_EDULYTIKS_AUTHOR_CREATED_ALTERNATIVE",
       "EdulyticsArtifactPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
-      "ImplementationType": "BLOCKED",
-      "VerificationMethod": "Manual side-by-side source HTML/teacher prep vs. grade-owned Rich V2. Original image HTML alt when relevant; no authenticated application was run.",
+      "ImplementationType": "TEACHER_LED",
+      "VerificationMethod": "2021 stated goal and end-of-lesson 8-cube comparison used to author independent source-goal exit; teacher reviews reasoning. Does NOT prove literal publisher question parity.",
       "TestNames": [
         "tests/academic-us-ccss-g5-u01-source-math-oracles-20261030.test.cjs",
         "tests/academic-us-ccss-g5-u01-figure-source-contract-20261030.test.cjs"
       ],
       "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
       "Reviewer": "Grade5 A-B-C implementation audit",
-      "Status": "SOURCE_UNAVAILABLE",
+      "Status": "MATCHED_TEACHER_LED",
       "IssueId": "G5-U01-L01-PUBLISHER-COOLDOWN",
       "ContentVersion": "g5-u01-l01-l03-im2021-v16-source-element-a-c-20261030",
       "CandidateSha": "TO_BE_RECORDED_BY_COMMIT_RESULT",
@@ -934,23 +922,24 @@
       "Category": "practice",
       "SourceLocator": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html#PRACTICE",
       "ExpectedMathematics": "Digital family cannot replace open constructed 9-cube and WODB skills",
-      "SourceDescription": "Existing selected family usccss.g5.unit_cube_count is volume multiplication, not physical model task",
+      "SourceDescription": "Source digital compare subskill now routed to usccss.g5.u01.l01.compare_connected_cube_models; original construction/WODB/ordering/justification remains teacher-led with eight-point rubric. No numeric-only credit for open activities.",
       "TeacherOrStudentAudience": "Teacher",
       "RightsStatus": "INTERNAL_ROUTE",
       "EdulyticsArtifactPath": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
-      "ImplementationType": "BLOCKED",
-      "VerificationMethod": "Manual side-by-side source HTML/teacher prep vs. grade-owned Rich V2. Original image HTML alt when relevant; no authenticated application was run.",
+      "ImplementationType": "DIGITAL_AND_TEACHER_LED",
+      "VerificationMethod": "Grade5 exact selected contract override plus generator/solver/verifier/registry inspected statically; tests WRITTEN_NOT_RUN; no Stage D actual runtime claim.",
       "TestNames": [
         "tests/academic-us-ccss-g5-u01-source-math-oracles-20261030.test.cjs",
         "tests/academic-us-ccss-g5-u01-figure-source-contract-20261030.test.cjs"
       ],
       "EvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-element-ledger-20261030.json",
       "Reviewer": "Grade5 A-B-C implementation audit",
-      "Status": "MISMATCH_BLOCKED",
+      "Status": "MATCHED_DIGITAL",
       "IssueId": null,
       "ContentVersion": "g5-u01-l01-l03-im2021-v16-source-element-a-c-20261030",
       "CandidateSha": "TO_BE_RECORDED_BY_COMMIT_RESULT",
-      "UpdatedUtc": "2026-10-30"
+      "UpdatedUtc": "2026-10-30",
+      "EdulytiksArtifactPath": "src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson1ComparisonQuestions.cs"
     }
   ],
   "sourceLedgerLastEnhancedUtc": "2026-10-30",
@@ -1019,5 +1008,12 @@
   ],
   "currentContentVersion": "g5-u01-l01-l03-im2021-v29-original-wu-activity-source-worked-20261030",
   "newSourceSpecificWorkedExamples": 2,
-  "sourceBasedTeacherReviewExamples": true
+  "sourceBasedTeacherReviewExamples": true,
+  "semanticPedagogicalCoverageWithinOwnerAuthorizedSubstitutions": "25/25 ELEMENTS_AUTHORED; PRODUCTION_RUNTIME_UNVERIFIED; ORIGINAL_PUBLISHER_SOURCE_MATERIAL_NOT_100_PERCENT_VERIFIED",
+  "nonBlockingSourceLimits": [
+    "Publisher 2021 Cool-down remains gated; independent original Edulytiks teacher-checked exit replaces it by owner's direction, exact publisher source parity NOT asserted.",
+    "Independent 2021 student PDF not found; 2021 original teacher page contains Student Facing tasks; publisher PDF layout not certified.",
+    "Six math-critical publisher SVG responses fetched from exact asset URLs and compared to source ALT; no exact pixel rendering or image reuse licensed.",
+    "Dog/cube example raster could not be opened, no copied artwork; physical build lesson objective and 9-cube construction preserved."
+  ]
 }
