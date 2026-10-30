@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
+  "title": "Describing Transformations",
+  "originalEdition": "2017-2019 OUR/Illustrative Mathematics CC BY 4.0; Edulytiks independent course adaptation",
+  "sources": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\6\\index.html",
+      "sha256": "f76f61f7ba3a4f991b7695bc9f18ac606d2f010382a92e8e3bfabd947f8efe27"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\6\\index.html",
+      "sha256": "d5bf446f4b9507490cd652ff566887c296248b13b81c413484496f7fbe69fb14"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\6\\preparation.html",
+      "sha256": "b75d51e8c1da7b10105dabd8e077f1f5fe86af6175e58b28f1acd12d22eec636"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.3"
+    }
+  ],
+  "sourceRoleReviewed": true,
+  "centralPracticeRule": "ccss-transformations",
+  "proposedFamily": "transformations",
+  "scope": "LESSON_SCOPED_ACADEMIC_ASSESSMENT_SPEC_ONLY",
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "6.1 Finding a Center of Rotation",
+      "sourceObjective": "Infer rotation center for original polygon image",
+      "firstPartyCorrection": "Independent full three-vertex center reconstruction and coordinate evidence"
+    },
+    {
+      "sourceActivity": "6.2 Info Gap: Transformation Information",
+      "sourceObjective": "Ask for missing center/angle/direction on separate partner cards",
+      "firstPartyCorrection": "First-party separate problem/data card alternatives with role communication rules"
+    },
+    {
+      "sourceActivity": "6.3 teacher Cool-down - Describing a Sequence of Transformations",
+      "sourceObjective": "Teacher-only protected source assessment",
+      "firstPartyCorrection": "Original two-step coordinate task and eight-point educator rubric"
+    }
+  ],
+  "learningObjectives": [
+    "Learning objective: use coordinate and geometric language to describe a single transformation or a sequence that maps one polygon onto another.",
+    "Sequence of moves: A composition applies one movement to the output of another.",
+    "Inverse movement: An inverse move restores the starting figure."
+  ],
+  "instructionalEvidence": {
+    "priorThreeWorkedExamplesPreserved": true,
+    "supportedRichV2Visuals": 4,
+    "nativeVisualKinds": [
+      "RatioTable",
+      "RatioTable",
+      "ShapeDecomposition",
+      "RatioTable"
+    ],
+    "firstPartyCoolDownLabel": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+  },
+  "assessmentModes": [
+    {
+      "id": "6.1 Finding a Center of Rotation",
+      "targetSkill": "Infer rotation center for original polygon image",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "Independent full three-vertex center reconstruction and coordinate evidence",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    },
+    {
+      "id": "6.2 Info Gap: Transformation Information",
+      "targetSkill": "Ask for missing center/angle/direction on separate partner cards",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "First-party separate problem/data card alternatives with role communication rules",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    }
+  ],
+  "coordinateQuestion": {
+    "provenance": "INDEPENDENT_FIRST_PARTY_SKILL_SAMPLE_NOT_AUTHENTICATED_GENERATOR",
+    "responseType": "coordinate_pair",
+    "case": {
+      "kind": "coordinate_rotation_ccw90_nonorigin",
+      "start": [
+        2,
+        1
+      ],
+      "center": [
+        0,
+        1
+      ],
+      "degrees": 90,
+      "expected": [
+        0,
+        3
+      ],
+      "correct": [
+        "(0,3)",
+        "0,3",
+        "(0.0,3.0)"
+      ],
+      "wrong": [
+        "(-1,2)",
+        "(2,-1)"
+      ],
+      "invalid": [
+        "NaN",
+        "(0,3,5)",
+        "",
+        null
+      ]
+    },
+    "validation": {
+      "accept": 3,
+      "rejectWrong": 2,
+      "rejectMalformed": 4,
+      "semantics": "Parse exactly two finite decimal coordinates; accept mathematically equivalent decimals with no rounding tolerance, reject wrong and malformed; this is candidate only"
+    },
+    "productionGeneratorConnected": false,
+    "actualLessonPracticeReadiness": "NOT_READY_VERIFIED"
+  },
+  "humanScoredCoolDown": {
+    "label": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherExact": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "prompt": "Original two-step coordinate task and eight-point educator rubric",
+    "maxPoints": 8,
+    "perCriterionScore": [
+      0,
+      1,
+      2
+    ],
+    "rubric": [
+      "Correctly identifies rotation center/angle/direction and sequence order",
+      "Constructs and labels all three corresponding vertices",
+      "Explains how requested missing information determines the transformation",
+      "Uses distance preservation and complete justification for final answer"
+    ],
+    "teacherEvidence": "labeled figure/drawing, written explanation, notes, four 0-2 criteria scores",
+    "productionPersistenceVerified": false
+  },
+  "stageDDeferred": {
+    "readiness": "RUNTIME_NOT_VERIFIED",
+    "practiceContractOwner": "Supervisor 2 shared single-writer",
+    "teacherRubricRuntimeOwner": "Supervisor 2 shared single-writer",
+    "mustVerify": [
+      "READY_VERIFIED exact LessonCode + skill families under NoSupportedOutcomes protection",
+      "authenticated student attempts & grading persistence",
+      "authorized human scoring and save",
+      "two-school isolation",
+      "accessible visuals and diagrams"
+    ],
+    "commonCodeEdited": false
+  },
+  "focusVerification": {
+    "studentTeacherPreparationSourceSHA256": true,
+    "mathOracleIndependent": {
+      "correct": 3,
+      "wrong": 2,
+      "malformed": 4
+    },
+    "priorPass": "3 focused Node tests on documented pre-commit content SHA; not proof on new SHA",
+    "runtime": "NOT_RUN_STAGE_D"
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T13:54:44.380958+00:00",
+  "parentHeadSHA": "6b7c69b1714f4c197e1d441b518bd18b2f218961"
+}
