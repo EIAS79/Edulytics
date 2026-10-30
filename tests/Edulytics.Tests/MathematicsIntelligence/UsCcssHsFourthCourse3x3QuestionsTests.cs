@@ -36,6 +36,69 @@ public sealed class UsCcssHsFourthCourse3x3QuestionsTests
     }
 
     [Fact]
+    public void CoefficientQuestionMustPresentEquationsNotTheRequestedMatrix()
+    {
+        for (var seed = 1; seed <= 30; seed++)
+        {
+            var item = UsCcssHsFourthCourse3x3Questions.Build(
+                UsCcssHsFourthCourse3x3Questions.Coefficients, new Random(seed));
+            Assert.DoesNotContain("A=[", item.Prompt);
+            Assert.DoesNotContain("b=[", item.Prompt);
+            Assert.Contains("variable order x,y,z", item.Prompt);
+            Assert.Equal(3, item.Prompt.Count(c => c == '='));
+            Assert.Contains("x", item.Prompt);
+            Assert.Contains("y", item.Prompt);
+            Assert.Contains("z", item.Prompt);
+            Assert.True(UsCcssHsFourthCourse3x3Questions.Verify(
+                UsCcssHsFourthCourse3x3Questions.Coefficients,
+                item.Parameters,
+                UsCcssHsFourthCourse3x3Questions.Solve(
+                    UsCcssHsFourthCourse3x3Questions.Coefficients, item.Parameters)));
+        }
+    }
+
+    [Fact]
+    public void Coder8PublisherPaintingReceiptMatrixGradesExactAlgebraAndKeepsContextForTeacher()
+    {
+        // Coder 8's source-bound painting/brush/tape receipt scenario.
+        var receipt = new Dictionary<string, int>
+        {
+            ["a00"] = 2, ["a01"] = 0, ["a02"] = 1,
+            ["a10"] = 1, ["a11"] = 4, ["a12"] = 0,
+            ["a20"] = 0, ["a21"] = 2, ["a22"] = 1,
+            ["b0"] = 30, ["b1"] = 20, ["b2"] = 10
+        };
+
+        Assert.Equal("12,2,6", UsCcssHsFourthCourse3x3Questions.Solve(
+            UsCcssHsFourthCourse3x3Questions.SolveSystem, receipt));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.Coefficients, receipt,
+            "2,0,1;1,4,0;0,2,1|30,20,10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.Coefficients, receipt,
+            "2,1,0;1,4,0;0,2,1|30,20,10"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.Coefficients, receipt,
+            "2,0,1;1,4;0,2,1|30,20,10"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.Inverse, receipt,
+            "4/10,2/10,-4/10;-1/10,2/10,1/10;2/10,-4/10,8/10"));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.SolveSystem, receipt,
+            "24/2,4/2,12/2"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.SolveSystem, receipt, "12,6,2"));
+
+        // Changing only the third receipt to 50 makes a negative price:
+        // algebraically valid but contextually invalid; teaching rationale is human-scored.
+        receipt["b2"] = 50;
+        Assert.Equal("-4,6,38", UsCcssHsFourthCourse3x3Questions.Solve(
+            UsCcssHsFourthCourse3x3Questions.SolveSystem, receipt));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourse3x3Questions.SolveSystem, receipt, "-4,6,38"));
+    }
+
+    [Fact]
     public void ExactInverseAndSolutionsAcceptEquivalentFractionsAndRejectWrongMatrices()
     {
         var a = new Dictionary<string, int>

@@ -57,7 +57,7 @@ public static class UsCcssHsFourthCourse3x3Questions
         var rhs = string.Join(",", b);
         var prompt = family switch
         {
-            Coefficients => $"Write the ordered 3x3 coefficient matrix A and column b for the system A[x,y,z]^T=b, with A=[{matrix}] and b=[{rhs}]. Enter a,b,c;d,e,f;g,h,i|u,v,w.",
+            Coefficients => $"For the system {string.Join("; ", Enumerable.Range(0, 3).Select(i => FormatEquation(a, b, i)))}, write its ordered 3x3 coefficient matrix A and column b using variable order x,y,z. Enter a,b,c;d,e,f;g,h,i|u,v,w.",
             Inverse => $"Find the exact inverse of the nonsingular 3x3 coefficient matrix A=[{matrix}]. Enter nine entries row-by-row, with fractions where needed.",
             SolveSystem => $"Solve the exact 3x3 system A[x,y,z]^T=b, where A=[{matrix}] and b=[{rhs}]. Give x,y,z.",
             _ => $"Row-reduce the augmented matrix [A|b] and report the ordered x,y,z for A=[{matrix}], b=[{rhs}]. Explain each row operation separately to your teacher."
@@ -66,6 +66,26 @@ public static class UsCcssHsFourthCourse3x3Questions
             family, prompt,
             "Verify the inverse by AA^-1=I, or verify the solution by all three original equations. Row-operation proofs are teacher-reviewed.",
             AssessmentItemType.ShortAnswer, parameters);
+    }
+
+    // Translate coefficients into source-style equations rather than giving away A and b.
+    // Omitted variables are deliberate: learners must supply their zero coefficients.
+    private static string FormatEquation(int[,] a, int[] b, int row)
+    {
+        var variables = new[] { "x", "y", "z" };
+        var terms = new List<string>();
+        for (var column = 0; column < 3; column++)
+        {
+            var coefficient = a[row, column];
+            if (coefficient == 0)
+                continue;
+            var magnitude = Math.Abs(coefficient);
+            var term = (magnitude == 1 ? "" : magnitude.ToString(CultureInfo.InvariantCulture)) + variables[column];
+            terms.Add(terms.Count == 0
+                ? (coefficient < 0 ? "-" : "") + term
+                : (coefficient < 0 ? " - " : " + ") + term);
+        }
+        return string.Concat(terms) + " = " + b[row].ToString(CultureInfo.InvariantCulture);
     }
 
     public static string Solve(string family, IReadOnlyDictionary<string, int> parameters)
