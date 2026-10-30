@@ -262,7 +262,19 @@
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
       "richV2ContentVersion": "g5-u01-l01-l03-im2021-v9-source-task-ourcs-cube-audit-20261029",
       "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json",
-      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED"
+      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED",
+      "v14SourceFigureAudit": {
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-source-figure-audit-20261030.json",
+        "stage": "A_C_EXPLICIT_GAP",
+        "sourceFigureAlt": "6_UNIQUE_RECORD_IDS_VERIFIED_FROM_LOCAL_2021_HTML",
+        "imageBinary": "NOT_VERIFIED",
+        "studentPdf": "NOT_VERIFIED",
+        "publisherCooldown": "NOT_VERIFIED_GATED",
+        "alternativeCooldown": "REUSED_AUTHOR_CREATED",
+        "stageDTests": "WRITTEN_NOT_RUN",
+        "sourceRichV2Repair": "PENDING_COMMIT_IN_THIS_BRANCH",
+        "baselineCommit": "a02cb5c571caf9747df19ff0fe6a9730123570fd"
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
@@ -7608,7 +7620,7 @@
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
     "sharedIntegrationIssue592": "https://github.com/EIAS79/Edulytics/issues/592",
     "remainingDirectRichV2LessonCodes": [],
-    "originalStudentPdfAuditCursor": "PED:US-CCSS-MATH:G5:U01:L01 — full PDF, original figure/card and gated response outstanding"
+    "originalStudentPdfAuditCursor": "PED:US-CCSS-MATH:G5:U01:L01 — figure ALT corrected, source PDF/media rights/gated original remain open"
   },
   "sourceAccessPolicy": "V8: Primary Desktop Commander permitted ONLY read-only book inspection on exact Our-CS 98fe82ca-5db1-4369-9545-f146cc609375, after online device check. Access was used read-only for 15 Unit8 original teacher lesson HTML/Student Facing. No Personal/Anas_Nitro access and no remote development, test, writing or execution.",
   "testEvidence": {
@@ -8133,5 +8145,18 @@
     "protectedCiCurrentFinalHead": "NOT_YET_RECHECKED",
     "next": "PED:US-CCSS-MATH:G5:U03:L01",
     "finalBatchAuditPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l14-l17-source-audit-v13.json"
+  },
+  "v14SourceFigureAudit": {
+    "asOf": "2026-10-30",
+    "firstUnclosedLesson": "PED:US-CCSS-MATH:G5:U01:L01",
+    "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-abc-source-figure-audit-20261030.json",
+    "testPath": "tests/academic-us-ccss-g5-u01-figure-source-contract-20261030.test.cjs",
+    "sourceEvidence": "2021_SOURCE_ALTS_VERIFIED",
+    "stage": "A_C_EXPLICIT_GAP",
+    "readyForStageD": 0,
+    "unit1Complete": false,
+    "pendingSourceAssets": true,
+    "pendingSharedPractice": true,
+    "stageDTests": "NOT_RUN"
   }
 }
