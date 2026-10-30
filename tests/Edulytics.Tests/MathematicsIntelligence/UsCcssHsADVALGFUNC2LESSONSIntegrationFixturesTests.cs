@@ -196,6 +196,20 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
             x => x.GetProperty("id").GetString() == "L06");
         Assert.Equal("ORDER_RELATION_AND_RUBRIC", item.GetProperty("gradingPolicy").GetString());
         Assert.True(item.GetProperty("explanationRequired").GetBoolean());
+        // The prompt contains TWO questions. The canonical answer must
+        // give both the exact-base relation and the three domain regions;
+        // otherwise a grader could accept a correct symbol-only first part.
+        var expected = item.GetProperty("expectedCanonical").GetString()!;
+        var equivalent = item.GetProperty("acceptedEquivalent").GetString()!;
+        foreach (var answer in new[] { expected, equivalent })
+        {
+            Assert.Contains("log_4(3)", answer, StringComparison.Ordinal);
+            Assert.Contains("log_2(3)", answer, StringComparison.Ordinal);
+            Assert.Contains("x=1", answer, StringComparison.Ordinal);
+            Assert.Contains("0<x<1", answer, StringComparison.Ordinal);
+            Assert.Contains("x>1", answer, StringComparison.Ordinal);
+        }
+        Assert.Contains("false", expected, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
