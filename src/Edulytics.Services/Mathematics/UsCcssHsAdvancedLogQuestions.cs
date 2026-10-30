@@ -64,7 +64,7 @@ public static class UsCcssHsAdvancedLogQuestions
                 p["y"] = random.Next(2, 9);
                 p["productCorrect"] = random.Next(0, 2);
                 var right = p["productCorrect"] == 1 ? p["x"] * p["y"] : p["x"] + p["y"];
-                if (right == p["x"] * p["y"])
+                if (p["productCorrect"] == 0 && right == p["x"] * p["y"])
                     right++;
                 p["rhsArgument"] = right;
                 prompt = $"Is log base {p["base"]} of {p["rhsArgument"]} = log base {p["base"]} of {p["x"]} + log base {p["base"]} of {p["y"]}? Answer true or false.";
