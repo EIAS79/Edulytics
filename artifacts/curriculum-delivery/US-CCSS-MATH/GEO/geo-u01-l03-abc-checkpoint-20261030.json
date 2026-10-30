@@ -75,29 +75,11 @@
     ],
     "VisualMode": "Physical floor, paper and named verbal figures, no publisher image parity or uploaded attachment claim"
   },
-  "StageC": {
-    "Status": "C_PREPARED_BLOCKED_C_SHARED",
-    "Practice": "5 source-skills analogues 2 points each",
-    "Rubrics": "two different 8-point human-scored drawing/conjecture tasks; no scalar Exam scoring",
-    "Dependency": {
-      "Owner": "Supervisor 2",
-      "Issue": 453,
-      "ExactRequirement": "secure school/pathway course-exact teaching assessment assignment and teacher-scored evidence/persistence for genuine paper constructed bisector",
-      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
-      "Prohibit": "Do not modify common Practice engine or scalar Exam automatic grader"
-    }
-  },
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
   "StageD": "NOT_RUN",
-  "Status": "BLOCKED_C_SHARED",
-  "ABCReadyForD": false,
-  "return_queue": [
-    {
-      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
-      "Status": "BLOCKED_C_SHARED",
-      "Owner": "Supervisor 2",
-      "Issue": 453
-    }
-  ],
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "return_queue": [],
   "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
   "MathVerification": "L02+L03 independent Euclidean geometry 26 assertions PASS after fixing harness; not .NET or app Node suite",
   "TestEvidence": {
@@ -112,13 +94,25 @@
     "A_CLOSED": 3,
     "B_CLOSED": 3,
     "C_PREPARED": 3,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 3,
     "D_VERIFIED": 0,
     "BLOCKED": 3,
-    "REMAINING": 124
+    "REMAINING": 121
   },
   "StartedAt": null,
   "ClosedAt": null,
   "ElapsedSeconds": null,
-  "Timing": "No reliable per-lesson start timestamp; do not invent"
+  "Timing": "No reliable per-lesson start timestamp; do not invent",
+  "StageCClosure": {
+    "Status": "C_CLOSED_AUTHORING_ONLY",
+    "OriginalTasks": 2,
+    "PracticeCount": 5,
+    "TeacherHandoff": "paper receive/check/mark/sign",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "Ci": "NOT_RUN",
+    "StageD": "NOT_RUN"
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03"
 }

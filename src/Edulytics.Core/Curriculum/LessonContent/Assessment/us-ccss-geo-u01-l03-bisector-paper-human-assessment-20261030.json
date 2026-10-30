@@ -4,7 +4,7 @@
   "Course": "Geometry",
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
   "Version": "2026-10-30-course-ABC",
-  "Status": "C_PREPARED_BLOCKED_C_SHARED",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
   "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
   "Rights": "Source course CC BY 4.0; original Edulytiks questions, diagrams and explanations; no publisher image copied",
   "SourceLocalPaths": {
@@ -166,5 +166,157 @@
     "Dotnet": "NOT_RUN",
     "Ci": "NOT_RUN",
     "StageD": "NOT_RUN"
+  },
+  "AuthoringStageC": {
+    "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+    "ApprovedModality": "Paper/compass/straightedge conjecture, fold, labelled construction + written teacher-reviewed geometry",
+    "SourceMap": [
+      {
+        "Activity": "3.1 Find All the Points!",
+        "TeacherScoredTaskIds": [
+          "PB-COMPASS-CONJECTURE-8",
+          "PB-ORIGINAL-COOLDOWN-8"
+        ],
+        "PracticeEvidence": [
+          "P1"
+        ]
+      },
+      {
+        "Activity": "3.2 Human Perpendicular Bisector",
+        "TeacherScoredTaskIds": [
+          "PB-COMPASS-CONJECTURE-8",
+          "PB-ORIGINAL-COOLDOWN-8"
+        ],
+        "PracticeEvidence": [
+          "P2"
+        ]
+      },
+      {
+        "Activity": "3.3 How Well Can You Slice It?",
+        "TeacherScoredTaskIds": [
+          "PB-COMPASS-CONJECTURE-8",
+          "PB-ORIGINAL-COOLDOWN-8"
+        ],
+        "PracticeEvidence": [
+          "P3"
+        ]
+      },
+      {
+        "Activity": "3.4 teacher-labelled Cool-down: Walk the Line (publisher protected)",
+        "TeacherScoredTaskIds": [
+          "PB-COMPASS-CONJECTURE-8",
+          "PB-ORIGINAL-COOLDOWN-8"
+        ],
+        "PracticeEvidence": [
+          "P4"
+        ]
+      }
+    ],
+    "AnswerTypes": "PAPER_DRAWING_AND_WRITTEN_REASONING",
+    "TeacherScoring": [
+      {
+        "Id": "PB-COMPASS-CONJECTURE-8",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Records three plausible equal-distance placements and describes the provisional perpendicular-bisector conjecture",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Draws both intersections X,Y of equal-radius arcs with r>PQ/2 and joins them",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Labels midpoint M and right angle, gives equal-radius reason PX=QX, PY=QY",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Describes an independent fold placing P on Q and tests both midpoint and perpendicular conditions",
+            "MaxPoints": 2
+          }
+        ],
+        "Expected": "Correct constructed line or valid paper conjecture/fold and stated equal-radius proof",
+        "Reject": "Half-radius tangent, one point, eye-only midpoint, typed numeric grade without drawing"
+      },
+      {
+        "Id": "PB-ORIGINAL-COOLDOWN-8",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "C1",
+            "Criterion": "Two distinct starting points and two labelled intersections of common arcs",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C2",
+            "Criterion": "Common opening strictly greater than half the centre separation",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C3",
+            "Criterion": "Correct line XY and labelled midpoint M/right angle",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C4",
+            "Criterion": "Equal-distance reason plus correct tangent exception",
+            "MaxPoints": 2
+          }
+        ],
+        "Expected": "Draw two circles or arcs from R and S with identical r>RS/2. Mark both crossings X,Y. Join XY, mark M=XY intersection RS and right angle. By equal-radius point membership RX=SX and RY=SY. At r=RS/2 the circles merely touch, yielding only one point.",
+        "Reject": "Treating 1 tangent intersection as a bisector line"
+      }
+    ],
+    "Practice": [
+      {
+        "Id": "P1",
+        "Max": 2,
+        "Expected": "XY is perpendicular to AB and M is midpoint; AM and MB lie on the same line, so they are not perpendicular. Arc radius is 6>5.",
+        "Manual": true
+      },
+      {
+        "Id": "P2",
+        "Max": 2,
+        "Expected": "EA²=(1)²+16=17 and EB²=(−5)²+16=41; E is closer to A since its x-coordinate is left of midpoint line x=0.",
+        "Manual": true
+      },
+      {
+        "Id": "P3",
+        "Max": 2,
+        "Expected": "Draw circles centred A and B, both radius AB; take either intersection C, connect AC,BC; AC=BC=AB.",
+        "Manual": true
+      },
+      {
+        "Id": "P4",
+        "Max": 2,
+        "Expected": "Choose r>AB/2; circles centred A and B with opening r produce two intersections; join X,Y. With r=AB/2 only one point exists.",
+        "Manual": true
+      },
+      {
+        "Id": "P5",
+        "Max": 2,
+        "Expected": "CA=CB as radii; AD=CA+CD=2CA since CD=CA; AB=BC is not guaranteed.",
+        "Manual": true
+      }
+    ],
+    "Handoff": "Student submits signed labelled paper via school teacher collection; authorized teacher checks original construction and reasoning, marks each 0/1/2 criterion, totals and signs/dates feedback on paper. No digital upload/score persistence asserted.",
+    "Cases": {
+      "correct": "valid double arc r>AB/2 and midpoint/right angle plus actual labelled evidence",
+      "equivalent": "fold crease, mirrored/translated/rotated geometrically valid construction or other positive radius r>AB/2",
+      "wrong": "r<=AB/2 or visually guessed midpoint claimed proven",
+      "insufficient": "numeric answer or unlabeled picture alone",
+      "malformed": "zero-length AB, undefined arc, missing distinct intersections"
+    },
+    "MachineScore": false,
+    "PracticeReadyVerified": false,
+    "StageD": {
+      "Status": "NOT_RUN",
+      "Owner": "Supervisor 2 issue #453",
+      "Unverified": "exact lesson-school-pathway bound teacher paper assignment and rubric score feedback persistence, authenticated student/teacher and tenant tests"
+    }
   }
 }
