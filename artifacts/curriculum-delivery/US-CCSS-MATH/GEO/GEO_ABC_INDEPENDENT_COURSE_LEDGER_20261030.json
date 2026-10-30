@@ -6,7 +6,7 @@
   "PR": 583,
   "Date": "2026-10-30",
   "PredecessorHead": "7ee3ad1c6c5f7e9db32c4b217c938c69a898b182",
-  "Policy": "Independent course-owned source A, geometry B, authentic Practice/teacher human rubric C; shared dependency remains within own PR; source local Our-CS, no TinyFish; do not merge/deploy; defer browser/two-school/CI to Stage D.",
+  "Policy": "Admin V-UNIT strict ascending A-B-C with a single lesson at a time. Blocked C at U01:L01 stops the unit; old return_queue skip allowance revoked. A/B course-local review and C_PREPARED are not ABC_READY. Stage D is deferred until all 124 ABC closed. NO MERGE/DEPLOY.",
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
@@ -16,15 +16,28 @@
     "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
     "BLOCKED": 6,
-    "REMAINING": 124
+    "REMAINING": 124,
+    "UNIT_TOTAL": 8,
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
     "Unprocessed": 118,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L07",
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
-    "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN"
+    "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "CurrentUnit": "U01",
+    "UnitLessonCount": 22,
+    "UnitStatus": "UNIT_BLOCKED",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "LastClosedLesson": null,
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
+    "AllUnitABCReady": false,
+    "NextUnit": null
   },
   "LessonEntries": [
     {
@@ -36,7 +49,7 @@
       "OriginalPracticeCount": 4,
       "A": "A_CLOSED_COURSE_SOURCE_PARITY",
       "B": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
-      "C": "C_PREPARED_BLOCKED_C_SHARED",
+      "C": "C_PREPARED_BLOCKED_C_SHARED; first unclosed ABC lesson, unit hard stop",
       "D": "NOT_RUN",
       "ABCReadyForD": false,
       "IndependentMathAssertions": 16,
@@ -46,7 +59,8 @@
       "LiveTeacherScore": "NOT_VERIFIED",
       "AppNode": "NOT_RUN",
       "Dotnet": "NOT_RUN",
-      "CI": "NOT_RUN"
+      "CI": "NOT_RUN",
+      "PedagogicalOrderingVUnit": "Source 1.2 exploratory midpoint guess before explicit correction"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
@@ -214,8 +228,9 @@
       "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs",
       "src/Edulytics.Services/Assessments/AssessmentService.Commands.cs"
     ],
-    "Needed": "Confirm a supported paper rubric teacher evidence/grade record or implement narrowly in shared owner branch; no new digital geometry engine presumed.",
-    "ProtectedScope": "No shared engine, renderer, global Practice registry, CI, or other-coder course paths modified."
+    "Needed": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+    "ProtectedScope": "No shared engine, renderer, global Practice registry, CI, or other-coder course paths modified.",
+    "Progression": "Historical return_queue L01-L06 remains for audit only; it does not permit skipping blocked U01:L01"
   },
   "FocusedMathExecuted": {
     "L01": 16,
@@ -235,5 +250,32 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "Continue first independent U01:L07 in canonical order; return L01-L06 on verified shared C availability."
+  "Next": "STOP: U01:L01 blocked C, do not advance L02. Resume only after Supervisor 2 decision and verifiable course-exact teacher human-assessment contract.",
+  "UnitSummaryVUnit20261030": {
+    "Course": "Geometry",
+    "UnitCode": "U01",
+    "UnitTotal": 22,
+    "PreviouslyClosed": 0,
+    "NewlyClosed": 0,
+    "UnitReadyForD": false,
+    "BlockedLessons": 6,
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "LastClosedLesson": null,
+    "Status": "UNIT_BLOCKED",
+    "Owner": "Supervisor 2 single writer for assessment and course adoption linkage",
+    "Issue": 453,
+    "DecisionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+    "RepairThisTurn": "U01:L01 source activity 1.2 exploration now precedes mathematical diagnosis/repair, without changing L02–L06",
+    "Checks": "Local original source SHA256 4/4 matched; in-memory lesson text ordering verified; Node application/.NET/CI/E2E/teacher persistence NOT_RUN",
+    "ExactPriorHead": "c4e3bcbd0eb1afb3ad142bfb09d2ea27ee0db6d5",
+    "SourceManifest": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-124-source-manifest-20261028.json",
+    "PreparedPreviously": "U01:L01–L06 A/B course-local repaired and C teacher rubrics authored; no lesson C_CLOSED or ABC_READY; preserved all existing 18 worked examples",
+    "NextUnit": null,
+    "NoMerge": true,
+    "NoDeploy": true,
+    "NoSharedEngineEdits": true,
+    "ElapsedSeconds": null,
+    "Timing": "Not independently measured; not inferred"
+  }
 }

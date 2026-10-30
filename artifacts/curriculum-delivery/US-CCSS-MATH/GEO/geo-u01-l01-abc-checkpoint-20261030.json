@@ -13,7 +13,7 @@
   "ElapsedSeconds": null,
   "NoteOnTime": "Session start was not time-stamped; no 3-minute SLA claim. Lesson remains open.",
   "Status": "BLOCKED_C_SHARED",
-  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
   "LocalSourceFileAndPages": [
     {
       "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\preparation.html",
@@ -130,6 +130,20 @@
       ],
       "boundToApplicationSHA": false,
       "notEquivalentTo": "node --test application tests, .NET suite, authenticated Rich V2, database tenant acceptance, CI"
+    },
+    "SourceSha256OriginalRead20261030": {
+      "Result": "PASS",
+      "Count": 4,
+      "Expected": 4,
+      "Device": "Our-CS",
+      "Method": "read-only Node crypto SHA256 for original local teacher preparation + teacher activities + student activities + student practice",
+      "AppTests": "NOT_RUN"
+    },
+    "SourceOrderCheckVUnit": {
+      "Result": "PASS",
+      "explorationIndex": 4,
+      "diagnosisIndex": 5,
+      "scope": "authored RichV2 JSON order only"
     }
   },
   "ChangedPaths": [
@@ -170,7 +184,7 @@
     "Verdict": "General text submission exists; approved course-exact lesson binding and teacher rubric grading/paper record not proved"
   },
   "Focus": "No new engine forced: paper-and-pencil is academically acceptable only when explicit reviewer approves and teacher evidence is documented; online scoring remains separate central issue.",
-  "CheckpointCommit": "Predecessor a2b34d42ffdc2a41246e8958342ef151f1c8963e; this file persisted on next PR #583 HEAD",
+  "CheckpointCommit": "Updated on PR #583 in next commit; parent c4e3bcbd0eb1afb3ad142bfb09d2ea27ee0db6d5",
   "SourceFileSha256": {
     "TeacherPreparation": "ef6de406c01e1cf3233e115e8118d5e491123ab36f0af489ad95ceaf384b27ff",
     "TeacherActivities": "24d77e65075b4bf7a43feca7190fd369883a17bc22e329e3e95989d25e35969d",
@@ -205,14 +219,23 @@
         "Corrected first-party teacher rubric point labels to R,S,T,N",
         "Retained three original worked examples and earlier content"
       ],
-      "visuals": "Paper diagrams and accessible verbal descriptions only; no online attachment/digital applet claimed"
+      "visuals": "Paper diagrams and accessible verbal descriptions only; no online attachment/digital applet claimed",
+      "SourceSequenceCorrectionVUnit20261030": {
+        "Status": "B_CLOSED",
+        "Problem": "Correction of estimated midpoint was shown before the original exploratory circle-and-triangle activity",
+        "Fix": "Reordered preexisting Rich V2 paragraphs: intentional estimate C / circle A through B / circle B through C / triangle ADE student comparison at index 4, then critique and exact midpoint at index 5",
+        "PreservedWorkedExamples": 3
+      }
     },
     "C": {
       "status": "C_PREPARED_BLOCKED_C_SHARED",
       "rubric": "8-point human teacher-only cooldown and equilateral triangle; 8-point hexagon; four 2-point original practice problems",
       "teacherMode": "paper labelled diagram, offline teacher marking",
       "contractGap": "Exact secure school/pathway/GEO lesson-to-assignment and evidence/teacher-grade record not proven; shared application change prohibited on course branch",
-      "sharedIssue": 453
+      "sharedIssue": 453,
+      "Status": "C_PREPARED_BLOCKED_C_SHARED",
+      "OwnerResolutionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+      "notEligibleForReady": true
     },
     "D": "NOT_RUN stage D: authenticated renderer/grade persistence/two-school isolation"
   },
@@ -224,5 +247,23 @@
       "Issue": 453,
       "ResumeWhen": "Central exact lesson-bound human teacher evidence/approval is implemented or approved with verifiable contract"
     }
-  ]
+  ],
+  "UnitGate20261030": {
+    "Course": "Geometry",
+    "UnitCode": "U01",
+    "UnitLessonCount": 22,
+    "UnitStatus": "UNIT_BLOCKED",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "LastClosedLesson": null,
+    "PreviouslyABCClosed": 0,
+    "NewlyABCClosed": 0,
+    "Owner": "Supervisor 2",
+    "Issue": 453,
+    "DecisionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+    "NextUnit": null
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+  "LastABCClosedLesson": null,
+  "ProgressionPolicyVUnit20261030": "Admin strict ascending: previous permission to bypass BLOCKED_C_SHARED removed; first open remains U01:L01; L02–L06 retained as previous A/B/C_PREPARED but are not READY_FOR_STAGE_D."
 }

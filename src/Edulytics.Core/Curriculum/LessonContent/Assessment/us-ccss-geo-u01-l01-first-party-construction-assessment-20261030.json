@@ -288,5 +288,27 @@
     "TeacherActivities": "24d77e65075b4bf7a43feca7190fd369883a17bc22e329e3e95989d25e35969d",
     "StudentActivities": "898c2df9232610d497d5778ce43a191b9587a586b8c011b8e089d2950839ec39",
     "StudentPractice": "82fc8f0676fd13a62337b74177edc96c2ba0166179dc459d4d12ff9610e9f794"
+  },
+  "CGateDecisionVUnit20261030": {
+    "Status": "BLOCKED_C_SHARED",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "CourseOwnedReady": "first-party paper diagrams, justification prompts, teacher-only 8-point rubrics, 4 source-aligned practice analogues, and original publisher-unverified cooldown substitute",
+    "VerifiedExistingSupport": [
+      "School-scoped AssessmentTaskResponse.ResponseText saved for Homework/Worksheet, no rubric criterion scores or drawing evidence fields",
+      "SaveStudentResultAsync rejects non-Exam assessments at src/Edulytics.Services/Assessments/AssessmentService.Commands.cs lines 1579-1580",
+      "SubmitExamAsync auto-scores using MathematicsAnswerEquivalence; NOT a valid geometry proof grader"
+    ],
+    "UnprovedIntegration": [
+      "canonical Geometry LessonCode and Traditional pathway to a teacher-assigned task",
+      "teacher rubric criterion score/feedback and paper artifact custody bound to actual student and school",
+      "tenant and teacher permission linkage to that exact lesson, to be tested at Stage D"
+    ],
+    "SharedOwner": "Supervisor 2",
+    "Issue": 453,
+    "DecisionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+    "NotRequired": "New geometry canvas engine or pixel-identical publisher diagrams",
+    "Prohibited": "Do not auto-score physical constructions via online Exam scalar equivalence",
+    "NoStageDExecuted": true,
+    "StopRule": "UNIT_BLOCKED at U01:L01; do not process U01:L02 until C_CLOSED is supported"
   }
 }
