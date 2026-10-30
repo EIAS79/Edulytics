@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G8:U03:L12",
+  "sourceStudentUrl": "https://im.kendallhunt.com/MS/students/3/3/12/index.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/MS/teachers/3/3/12/index.html",
+  "activityTitles": [
+    "12.1: Estimate Area",
+    "12.2: Apples and Oranges",
+    "12.3: Solutions and Everything Else"
+  ],
+  "sourceTeacherRoleSpotReview": [
+    "BuildingOn:6.G.A.1",
+    "Addressing:8.EE.B",
+    "BuildingTowards:8.EE.C"
+  ],
+  "license": "Open Up Resources / IM 2017–2019 CC BY 4.0; no copied source graphics",
+  "sourceComparison": "PUBLIC_STUDENT_AND_TEACHER_ACTIVITY_SPOT_REVIEW_NOT_FULL_PARITY",
+  "courseFixes": [
+    "Source activity 12.1: three equal-area candidate square diagrams illustrate shading as fractions, not linear equations. Independent first-party fraction model: A and B each shade 12 of 16 equal cells (3/4) while C shades 13 of 16 (13/16), so C is larger. The source original square diagrams are not reproduced.",
+    "Source activity 12.2: apples cost $1 and oranges $2 each. The four sample purchases (6,3), (4,4), (5,4) and (8,2) cost $12, $12, $13 and $12, respectively. A $10 budget gives a+2o=10 with a,o whole nonnegative; the six exact-cost combinations are (10,0), (8,1), (6,2), (4,3), (2,4), (0,5). (7,2) costs 11 and must be rejected. The graph of the algebraic line also includes fractional points, which do not necessarily correspond to buyable whole fruit.",
+    "Source activity 12.3: for two unrestricted real numbers x,y, the statement double the first and add the second gives 2x+y=10. Solutions include (0,10), (1,8), (5,0), (−3,16), (7,−4), (3.5,3); non-solutions include (1,7), (2,4), (5,1). Graph and label several points in both sets, explain that all real solutions lie on one line, and distinguish a continuous line from the finite nonnegative integer purchase possibilities.",
+    "Teacher-scored contract: student-generated labeled coordinate graph with at least five valid and ten invalid ordered pairs, shaded-fraction rationale, budget units, and a written explanation of why a point on the real line is or is not an allowed whole-fruit purchase. A correct numeric yes/no ordered-pair item alone does not demonstrate these graphical, domain, or teacher-review outcomes. Supervisor 2 owns shared Practice PR #597 (source-matched Ax+By=C membership); no shared generator or renderer changes are made here."
+  ],
+  "graphMath": {
+    "fruitSolutions": [
+      [
+        10,
+        0
+      ],
+      [
+        8,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "fruitEquation": "a+2o=10 nonnegative integers",
+    "rejectedFruit": [
+      7,
+      2
+    ],
+    "fruitCost": 11,
+    "realEquation": "2x+y=10",
+    "validReal": [
+      [
+        -3,
+        16
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3.5,
+        3
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        7,
+        -4
+      ]
+    ],
+    "invalidReal": [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "initialShading": [
+      0.75,
+      0.75,
+      0.8125
+    ]
+  },
+  "courseSvg": {
+    "assetPath": "/curriculum/us-ccss-g8/figures/u03-l12-source-context.svg",
+    "sha256": "6eb24ab207a858c07555c8c229b64d27eba839fba0cfffd54cf5478232d18f5f",
+    "authenticatedStudentRendered": false
+  },
+  "existingCourseSvgPreserved": true,
+  "sharedPracticePR": {
+    "number": 597,
+    "head": "b0026ed90720025789dfe7c3fdb5632e5c3ed59d",
+    "mergeVerified": false,
+    "selectedRuntimeFamilyVerified": false,
+    "studentGraphDeliveredBySharedPR": false
+  },
+  "teacherRubricSaved": false,
+  "fullSourceParityAccepted": false,
+  "stages": {
+    "A": "NOT_ACCEPTED",
+    "B": "NOT_ACCEPTED",
+    "C": "NOT_VERIFIED",
+    "D": "NOT_VERIFIED"
+  },
+  "updatedRichCandidateHash": "d98cf7dc033a960f1157528e7253e0cddfa6144f31608e5f6d92bc9919ee7551"
+}
