@@ -20198,6 +20198,24 @@
       "status": "IntegrationPending",
       "productionRouting": false,
       "lessonPracticeRouting": false
+    },
+    {
+      "id": "trig.principal_inverse_source_branches",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_radian_angle",
+      "verificationPolicy": "closed_exact_principal_branches_with_bounded_radian_numeric_equivalence_and_negative_domain_states",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
