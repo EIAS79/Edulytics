@@ -278,7 +278,10 @@ public static class UsCcssHsFourthCourseQuestions
                     Math.Abs(Get(p, "offset")) <= 100 && ModelMode(p) is >= 0 and <= 5 &&
                     ModelEnd(p) is 0 or 1 &&
                     (!p.TryGetValue("target", out var suppliedTarget) ||
-                     suppliedTarget == Get(p, "offset") + ModelTargetDelta(p)),
+                     (ModelMode(p) == 5
+                         ? suppliedTarget > Get(p, "offset") + Get(p, "amplitude") ||
+                           suppliedTarget < Get(p, "offset") - Get(p, "amplitude")
+                         : suppliedTarget == Get(p, "offset") + ModelTargetDelta(p))),
                 CavalieriVolume => Get(p, "radius") is >= 1 and <= 100,
                 FocalConics => Get(p, "hyperbola") is 0 or 1 &&
                     Get(p, "a") > 0 && Get(p, "c") > 0 &&
