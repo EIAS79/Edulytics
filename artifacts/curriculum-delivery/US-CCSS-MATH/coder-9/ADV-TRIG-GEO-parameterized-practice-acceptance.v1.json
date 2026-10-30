@@ -51,10 +51,27 @@
           "valueNumeric": -0.8660254037844386,
           "answerVariants": [
             "-sqrt(3)/2",
-            "-0.8660254037844386"
+            "-sqrt(12)/4"
           ],
           "incorrect": [
             "sqrt(3)/2"
+          ],
+          "acceptedExactVariants": [
+            "-sqrt(3)/2",
+            "-sqrt(12)/4"
+          ],
+          "rejectedDecimalSubmissions": [
+            "-0.8660254037844386",
+            "-0.866",
+            "-8.660254037844386e-1"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "banana",
+            "NaN",
+            "Infinity",
+            "<script>",
+            "cos("
           ]
         },
         {
@@ -67,10 +84,26 @@
           "valueNumeric": -0.8660254037844386,
           "answerVariants": [
             "-sqrt(3)/2",
-            "-0.8660254037844386"
+            "-sqrt(12)/4"
           ],
           "incorrect": [
             "sqrt(3)/2"
+          ],
+          "acceptedExactVariants": [
+            "-sqrt(3)/2",
+            "-sqrt(12)/4"
+          ],
+          "rejectedDecimalSubmissions": [
+            "-0.8660254037844386",
+            "-0.866"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "banana",
+            "NaN",
+            "Infinity",
+            "<script>",
+            "cos("
           ]
         },
         {
@@ -83,10 +116,28 @@
           "valueNumeric": 0.7071067811865476,
           "answerVariants": [
             "sqrt(2)/2",
-            "1/sqrt(2)"
+            "1/sqrt(2)",
+            "sqrt(8)/4"
           ],
           "incorrect": [
             "-sqrt(2)/2"
+          ],
+          "acceptedExactVariants": [
+            "sqrt(2)/2",
+            "1/sqrt(2)",
+            "sqrt(8)/4"
+          ],
+          "rejectedDecimalSubmissions": [
+            "0.7071067811865476",
+            "0.707"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "banana",
+            "NaN",
+            "Infinity",
+            "<script>",
+            "cos("
           ]
         },
         {
@@ -96,18 +147,38 @@
           "thetaPiDenominator": 2,
           "transform": "2pi-theta",
           "expectedStatus": "OUT_OF_DOMAIN",
-          "reason": "tan(3pi/2) undefined; cos(3pi/2)=0; reject expression rather than inventing a score"
+          "reason": "tan(3pi/2) undefined; cos(3pi/2)=0; reject expression rather than inventing a score",
+          "answerVariants": [],
+          "acceptedExactVariants": [],
+          "rejectedNumericSubmissions": [
+            "0",
+            "1",
+            "undefined=0"
+          ],
+          "decimalApproximationAllowed": false,
+          "malformedSubmissions": [
+            "tan(",
+            "banana",
+            "Infinity"
+          ]
         }
       ],
       "normalization": [
-        "exact radicals/rational symbolic equality",
-        "finite numeric tolerance only when question allows decimal approximations",
-        "negative zero and equivalent multiplicative expressions"
+        "EXACT_SYMBOLIC_ONLY_ALLOWLIST for L01; no decimal tolerance or exponential notation",
+        "Canonical exact radicals, approved finite symbolic aliases only; explicitly reject malformed and untrusted input",
+        "No conversion of tan poles into scored 0/1; OUT_OF_DOMAIN without automated human proof points"
       ],
       "humanReview": [
         "prove parity using circle reflection and domain",
         "prove a full-turn identity for arbitrary theta"
-      ]
+      ],
+      "answerPolicy": {
+        "mode": "EXACT_SYMBOLIC_ONLY_ALLOWLIST",
+        "decimalApproximationAllowed": false,
+        "acceptance": "Canonical exact radical and approved, finite symbolic aliases only",
+        "noExpressionEvaluation": true,
+        "note": "valueNumeric is an independent oracle, NEVER a permitted student decimal answer. #600's tolerance verifier is incompatible until an approved scoped exact-only guard is wired under an exclusive file lease. Unsupported equivalent algebra requires academic/normalizer review."
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
