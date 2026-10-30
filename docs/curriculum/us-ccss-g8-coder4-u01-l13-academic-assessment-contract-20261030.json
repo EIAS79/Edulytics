@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L13",
+  "title": "Congruence",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\13\\index.html",
+      "sha256": "b9b7db0630c13145dff672e707771b353273b7cd31a59a6a6a897fe3a0a2773e"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\13\\index.html",
+      "sha256": "61161275942ffa9f60c662748b2b087b8ad5e4c1f36e9a30ba96b83e067a0d3e"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\13\\preparation.html",
+      "sha256": "2f09cdb625a03aac6dbf9238ac116cb599c4bdd77835112c81b1435ccacb5fef"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.a"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: test whether figures can be mapped onto one another using translations, rotations and reflections, and give sufficient mathematical evidence for the decision.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate segment AB with A(0,0),B(4,0) by (+2,+3). Label A′, B′ and midpoint E′. Explain how correspondence of points other than vertices proves the mapping. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "13.1: Not Just the Vertices",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Translate a trapezoid and map interior/edge points E,F as well as vertices; preserve fractions along each side.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "13.2: Congruent Ovals",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Compare ovals of equal vs unequal axes after rotation to judge true congruence.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "13.3: Corresponding Points in Congruent Figures",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Map all named non-vertex corresponding points between congruent shapes and compare full segments, not drawings alone.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "13.4: Astonished Faces",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Compare first-party asymmetric faces and justify if a rigid motion exists.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "E is midpoint of A=(0,0),B=(4,0). Translate whole figure by (+2,+3). Give E′, a non-vertex point.",
+    "responseType": "coordinate_pair",
+    "unit": "coordinate pair",
+    "expected": [
+      4,
+      3
+    ],
+    "acceptedEquivalentInputs": [
+      "(4,3)",
+      "4,3",
+      "(4.0,3.0)"
+    ],
+    "wrongRejected": [
+      "(5,3)",
+      "(4,4)",
+      "(3,4)"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "(Infinity,1)",
+      "(1,2,3)",
+      "",
+      null,
+      "1;2",
+      "1e2,0"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 3,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "Translate segment AB with A(0,0),B(4,0) by (+2,+3). Label A′, B′ and midpoint E′. Explain how correspondence of points other than vertices proves the mapping.",
+    "criteria": [
+      {
+        "criterion": "Identifies correspondences beyond vertices, including edge/interior points",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Correct transformation of all labeled points, lengths and axes",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Distinguishes rigid congruence from resizing even for ovals/faces",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Justifies a reproducible complete rigid mapping",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:02:05.691393+00:00",
+  "parentGitHEAD": "4818790fbe7a2b530730493cfa973cd7b3ccd545"
+}

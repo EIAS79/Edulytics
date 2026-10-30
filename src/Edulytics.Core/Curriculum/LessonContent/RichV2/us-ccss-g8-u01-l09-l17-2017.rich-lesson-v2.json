@@ -560,6 +560,7 @@
         "Source-aligned 13.3 and 13.4: identify interior/edge point correspondences and explain congruence using actual geometric evidence. Points that are only close in a drawing are not necessarily corresponding.",
         "Create two 3-4-5 triangles: a right triangle with legs 3 and 4, and its shifted reflection. Trace and overlay corresponding sides and explain why the mapping exists.",
         "Challenge: two quadrilaterals each have four sides of length 2, but one is a square and the other a slanted rhombus. Compare their angles to decide whether they are congruent. A teacher reviews the logic.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate segment AB with A(0,0),B(4,0) by (+2,+3). Label A′, B′ and midpoint E′. Explain how correspondence of points other than vertices proves the mapping. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
         "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/13/preparation.html . No publisher artwork or branded assessment is copied."
       ],
       "KeyConcepts": [
@@ -637,7 +638,43 @@
         "SSS is a triangle-specific test.",
         "For general polygons, lengths alone may not suffice."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L13 Congruence",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Original endpoints",
+              "Cells": [
+                "A=(0,0), B=(4,0)",
+                "midpoint E=(2,0)"
+              ]
+            },
+            {
+              "Label": "Translated endpoints",
+              "Cells": [
+                "A′=(2,3), B′=(6,3)",
+                "E′=(4,3)"
+              ]
+            },
+            {
+              "Label": "Oval comparison",
+              "Cells": [
+                "axes 2×4 vs rotated 4×2",
+                "congruent under 90° rotation"
+              ]
+            },
+            {
+              "Label": "Different oval",
+              "Cells": [
+                "axes 2×5",
+                "not congruent to 2×4"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
