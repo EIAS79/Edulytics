@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 17,
-    "B_CLOSED": 17,
+    "A_CLOSED": 18,
+    "B_CLOSED": 18,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 17,
+    "BLOCKED": 18,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -913,28 +913,52 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L06",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-6\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-6\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_SOURCE_ACCURATE_3_ONE_UNIT_BARS_AND_DIAGRAMS_A_B_AS_TEXT; ADD_ORIGINAL_5_DIV_2_EXIT_WITH_TEACHER_RUBRIC",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numeric unit-fraction multiplication and whole-division subskills; shared writer EXTEND teacher-scored diagram-to-expression equivalence source tasks",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u02-l06-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:31:53.459Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single shared integration writer #592",
+        "reason": "Exact selected whole×unit-fraction Practice and open diagram expression explanation teacher route unverified",
+        "acceptWhen": "Verified selected numeric family plus teacher-scored diagram and unit-based explanation wired"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "IM 2021 U02 L06 original teacher and preparation, embedded Student Facing",
+        "goal": [
+          "Number Talk 3×1/2,3×2/2,3×3/2,5×3/2",
+          "Two-runner 3-mile relay: each 3÷2=3/2=(1/2)×3=1 1/2 miles",
+          "Compare source diagrams A and B, each three one-unit bars split into halves, differently shaded but equal 3/2"
+        ],
+        "originalFigures": "NOT_IMPORTED",
+        "publisherCooldown": "NOT_VERIFIED_GATED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u02-l06-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "bdb2567a01df4efe0b5fde6c454ee95b51b1d5c8",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Existing Rich V2 explains source three-mile relay and two correct three-bar diagrams accurately, but no original exit explicitly labeled.",
+        "after": "Added five-mile equal division/multiply-half Edulytiks exit and teacher reasoned diagram rubric."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l06-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L07",
@@ -4187,8 +4211,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:30:22.127Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L06",
+  "updatedAtUtc": "2026-10-30T12:31:53.459Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L07",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -4257,6 +4281,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
       "reason": "C generalized quotient/fraction explanation teacher assessment selected route"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U02:L06",
+      "reason": "C unit-fraction multiplication diagram matching and teacher rubric shared dependency"
     }
   ]
 }
