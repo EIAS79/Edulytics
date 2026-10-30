@@ -54,6 +54,57 @@ public sealed class UsCcssHsTrigModelAcceptanceTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(Family, p, "0,5,10"));
     }
 
+    [Theory]
+    [InlineData(9, "0,9/2")]
+    [InlineData(10, "0,5")]
+    [InlineData(11, "0,11/2")]
+    [InlineData(13, "0,13/2")]
+    public void ZeroCrossingsAreCorrectForNonQuarterMultiplePeriodsAndOpenEndpoint(
+        int period, string expected)
+    {
+        var p = P(period, 3, 8, 8, 0);
+        Assert.Equal(expected, UsCcssHsFourthCourseQuestions.Solve(Family, p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Family, p, expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            Family, p, expected + "," + period));
+    }
+
+    [Theory]
+    [InlineData(9, "0,9/2,9")]
+    [InlineData(10, "0,5,10")]
+    [InlineData(11, "0,11/2,11")]
+    public void ClosedRightEndpointIncludesTheDistinctPeriodEndRoot(
+        int period, string expected)
+    {
+        var p = P(period, 3, 8, 8, 0, inclusive: 1);
+        Assert.Equal(expected, UsCcssHsFourthCourseQuestions.Solve(Family, p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(Family, p, expected));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            Family, p, expected[..expected.LastIndexOf(',')]));
+    }
+
+    [Fact]
+    public void NonQuarterMultiplePeriodsPreserveAllNegativeHalfAmplitudeSolutions()
+    {
+        var p = P(10, 4, 8, 6, 2);
+        Assert.Equal("35/6,55/6", UsCcssHsFourthCourseQuestions.Solve(Family, p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            Family, p, "35/6,55/6"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            Family, p, "35/6,55/6,95/6"));
+    }
+
+    [Fact]
+    public void InvalidPeriodStillFailsClosedRatherThanProducingARoot()
+    {
+        var p = P(0, 3, 8, 8, 0);
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Family, p, "0,0"));
+        Assert.Throws<ArgumentException>(() =>
+            UsCcssHsFourthCourseQuestions.Solve(Family, p));
+        p["period"] = 101;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(Family, p, "0,101/2"));
+    }
+
     [Fact]
     public void Coder9NegativeSineExtremumHasExactlyOneRoot()
     {
