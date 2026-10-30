@@ -33,3 +33,13 @@ test('L03 source identities, tan domain and four angle roots',()=>{
  assert.equal(new Set(roots.map(x=>x.toFixed(10))).size,4);
  assert.ok(roots.every(x=>x>0&&x<2*Math.PI));
 });
+
+test('L04 source triangles, parallelograms, oblique pyramid and hemisphere slices',()=>{
+ const s=body(3);assert.match(s,/Source 7\.12 task-representation investigation/);
+ for(const z of [0,.5,1,2,3.5,4])near(6*(1-z/4),6*(4-z)/4);
+ near(6*4/2,12);near(6*4,24);
+ for(const z of [0,1,3,5.5,6])near(12*(1-z/6)**2,12*((6-z)/6)**2);
+ near(12*6/3,24);
+ const r=2.5;for(const z of [0,.5,1.25,2.5])near(Math.PI*(r*r-z*z),Math.PI*r*r-Math.PI*z*z);
+ near(4*Math.PI*r**3/3,125*Math.PI/6);
+});

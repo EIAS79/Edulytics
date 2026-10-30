@@ -200,7 +200,7 @@
     "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
     "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
   ],
-  "updatedAtUtc": "2026-10-30T12:08:59.279Z",
+  "updatedAtUtc": "2026-10-30T12:09:11.012Z",
   "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
   "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
   "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
@@ -333,8 +333,8 @@
     "protocol": "SUP3_CODER9_SOLO_FULL_ABC_20261030",
     "observedStartHead": "c20b5e96234d1140b01525eaa4d0e76b14daf65a",
     "sessionStartedAtUtc": "2026-10-30T12:07:08.126Z",
-    "currentCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
-    "lastProcessed": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+    "currentCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+    "lastProcessed": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
     "completedABC": 0,
     "returnQueue": [
       {
@@ -424,6 +424,41 @@
         "operationStartedAtUtc": "2026-10-30T12:08:59.279Z",
         "operationEndedAtUtc": null,
         "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 7.12 emphasizes prediction/equal horizontal lengths for skewed triangles, shifted parallelogram slices, coins, right/oblique pyramids and cones; existing course examples omitted original parallelogram and oblique apex similarity derivation.",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Academic/blueprint reviewer must decide source spelling Cavalieri vs canonical Cavelieri, and accept accessible visual/GeoGebra substitutes.",
+        "directSourcePages": [
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111
+        ],
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_m2_mod7_tn_52017f.pdf",
+        "sourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+        "stageA": "SOURCE_TASK_COMPARED_AND_MISSING_EDULYTIKS_ORIGINAL_ACTIVITY_REPAIRED_NO_ACADEMIC_SIGNOFF",
+        "stageB": "MATH_FIX_AUTHORED_WITH_OLD_METADATA_RETAINED_VERSION_TRANSITION_UNAPPROVED",
+        "stageC": "28_TOTAL_EXISTING_CONTRACT_FIXTURES_PRESERVED_COURSE_SPECIFIC_ORACLE_ADDED_NOT_SELECTED_OR_ROUTABLE",
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "TEST_NOT_RUN_AT_THIS_SHA",
+        "academicOwner": "Authorized independent academic/source reviewer via Supervisor 3",
+        "integrationOwner": "Coder 9 (course-only); request Supervisor 3 file lease before touching any shared registry / auth / materializer",
+        "returnReason": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
+        "operationStartedAtUtc": "2026-10-30T12:09:11.012Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05"
       }
     ],
     "perLesson": [
@@ -515,12 +550,47 @@
         "operationStartedAtUtc": "2026-10-30T12:08:59.279Z",
         "operationEndedAtUtc": null,
         "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 7.12 emphasizes prediction/equal horizontal lengths for skewed triangles, shifted parallelogram slices, coins, right/oblique pyramids and cones; existing course examples omitted original parallelogram and oblique apex similarity derivation.",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Academic/blueprint reviewer must decide source spelling Cavalieri vs canonical Cavelieri, and accept accessible visual/GeoGebra substitutes.",
+        "directSourcePages": [
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111
+        ],
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_m2_mod7_tn_52017f.pdf",
+        "sourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+        "stageA": "SOURCE_TASK_COMPARED_AND_MISSING_EDULYTIKS_ORIGINAL_ACTIVITY_REPAIRED_NO_ACADEMIC_SIGNOFF",
+        "stageB": "MATH_FIX_AUTHORED_WITH_OLD_METADATA_RETAINED_VERSION_TRANSITION_UNAPPROVED",
+        "stageC": "28_TOTAL_EXISTING_CONTRACT_FIXTURES_PRESERVED_COURSE_SPECIFIC_ORACLE_ADDED_NOT_SELECTED_OR_ROUTABLE",
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "TEST_NOT_RUN_AT_THIS_SHA",
+        "academicOwner": "Authorized independent academic/source reviewer via Supervisor 3",
+        "integrationOwner": "Coder 9 (course-only); request Supervisor 3 file lease before touching any shared registry / auth / materializer",
+        "returnReason": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
+        "operationStartedAtUtc": "2026-10-30T12:09:11.012Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05"
       }
     ],
     "stageD": "NOT_STARTED",
     "sharedOwnershipRule": "Course-only writers on #586; shared files untouched; request Supervisor 3 file lease before central registry edits.",
     "sourceAccess": "Existing verified original local PDFs on Our-CS read for L02-L05; L01 previous source review reused; no external book search.",
     "testedShaNote": "Independent source/math tests will execute once on frozen last content commit, not claimed in advance.",
-    "updatedAtUtc": "2026-10-30T12:08:59.279Z"
+    "updatedAtUtc": "2026-10-30T12:09:11.012Z"
   }
 }
