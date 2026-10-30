@@ -1128,6 +1128,8 @@ public static class LessonPracticeContractRegistry
         foreach(var reviewed in UsCcssG5Unit1Lesson10PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
         // G5 U01 L11 source-prism contexts, teacher evaluates garden design.
         foreach(var reviewed in UsCcssG5Unit1Lesson11PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L12 original optional 60-container arrangements; subjective ship estimate is teacher-led.
+        foreach(var reviewed in UsCcssG5Unit1Lesson12PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
         // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
         foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;

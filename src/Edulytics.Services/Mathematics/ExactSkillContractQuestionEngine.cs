@@ -200,6 +200,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssG5Unit1Lesson9Questions.Supports(family.Trim()) ||
          UsCcssG5Unit1Lesson10Questions.Supports(family.Trim()) ||
          UsCcssG5Unit1Lesson11Questions.Supports(family.Trim()) ||
+         UsCcssG5Unit1Lesson12Questions.Supports(family.Trim()) ||
          UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1FirstLessonQuestions.Supports(family.Trim()) ||
          UsCcssG2Unit1Lesson2And3Questions.Supports(family.Trim()) ||
@@ -484,6 +485,7 @@ public sealed class ExactSkillContractQuestionEngine
         if(UsCcssG5Unit1Lesson9Questions.Supports(family))return UsCcssG5Unit1Lesson9Questions.Verify(family,parameters,answer);
         if(UsCcssG5Unit1Lesson10Questions.Supports(family))return UsCcssG5Unit1Lesson10Questions.Verify(family,parameters,answer);
         if(UsCcssG5Unit1Lesson11Questions.Supports(family))return UsCcssG5Unit1Lesson11Questions.Verify(family,parameters,answer);
+        if(UsCcssG5Unit1Lesson12Questions.Supports(family))return UsCcssG5Unit1Lesson12Questions.Verify(family,parameters,answer);
         if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family))
             return UsCcssG5Unit1Lesson1ComparisonQuestions.Verify(family, parameters, answer);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(family))
@@ -1924,6 +1926,10 @@ public sealed class ExactSkillContractQuestionEngine
         }
         if(UsCcssG5Unit1Lesson11Questions.Supports(family)){
             var item=UsCcssG5Unit1Lesson11Questions.Build(family,random);
+            return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
+        }
+        if(UsCcssG5Unit1Lesson12Questions.Supports(family)){
+            var item=UsCcssG5Unit1Lesson12Questions.Build(family,random);
             return new ExactProblem(item.Family,item.Prompt,item.Solution,item.ItemType,item.Parameters);
         }
         if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(family))
@@ -5013,6 +5019,7 @@ public sealed class ExactSkillContractQuestionEngine
         if(UsCcssG5Unit1Lesson9Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson9Questions.Solve(problem.Family,p);
         if(UsCcssG5Unit1Lesson10Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson10Questions.Solve(problem.Family,p);
         if(UsCcssG5Unit1Lesson11Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson11Questions.Solve(problem.Family,p);
+        if(UsCcssG5Unit1Lesson12Questions.Supports(problem.Family))return UsCcssG5Unit1Lesson12Questions.Solve(problem.Family,p);
         if (UsCcssG5Unit1Lesson1ComparisonQuestions.Supports(problem.Family))
             return UsCcssG5Unit1Lesson1ComparisonQuestions.Solve(problem.Family, p);
         if (UsCcssG2Unit1FirstLessonQuestions.Supports(problem.Family))
