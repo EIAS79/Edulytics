@@ -177,4 +177,40 @@ public sealed class UsCcssHsAdvAlgFuncSourceResponseContractTests
         Assert.True(Contract.VerifyInverseEligibility("singular", singular));
         Assert.False(Contract.VerifyInverseEligibility("invertible", singular));
     }
+
+    [Fact]
+    public void L01ExactMatrixContractRemainsAuditOnlyUntilApproved()
+    {
+        const string lesson = "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01";
+        Assert.True(
+            Edulytics.Core.Mathematics.Practice.LessonPracticeContractRegistry.TryResolve(
+                lesson, out var pending));
+        Assert.NotNull(pending);
+        Assert.Equal("INTEGRATION_PENDING", pending!.Readiness);
+        Assert.Equal("CODER8_L01_MATRIX_FULL_SYSTEM_AND_TEACHER_REASONING",
+            pending.Mechanic);
+        Assert.Contains("usccss.hs.matrix.inverse_eligibility",
+            pending.AllowedQuestionFamilies);
+        Assert.DoesNotContain(pending.AllowedQuestionFamilies,
+            family => family.Contains("one-step-formula-equation",
+                StringComparison.Ordinal));
+        Assert.Single(Edulytics.Core.Mathematics.Practice
+            .LessonPracticeContractRegistry.Coder8L01PendingForAudit);
+        Assert.DoesNotContain(Edulytics.Core.Mathematics.Practice
+            .LessonPracticeContractRegistry.All,
+            item => item.LessonCode == lesson);
+        Assert.False(Edulytics.Core.Mathematics.Practice
+            .LessonPracticeCapabilityResolver.TryResolve(lesson, out var selected));
+        Assert.Null(selected);
+    }
+
+    [Fact]
+    public void Coder8PendingContractDoesNotChangeExistingGradeOneReadyRoute()
+    {
+        Assert.True(Edulytics.Core.Mathematics.Practice
+            .LessonPracticeCapabilityResolver.TryResolve(
+                "PED:US-CCSS-MATH:G1:U01:L01", out var existing));
+        Assert.NotNull(existing);
+        Assert.Equal("READY_VERIFIED", existing!.Readiness);
+    }
 }
