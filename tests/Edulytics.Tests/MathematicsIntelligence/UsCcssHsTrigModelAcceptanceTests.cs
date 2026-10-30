@@ -66,7 +66,7 @@ public sealed class UsCcssHsTrigModelAcceptanceTests
     [Fact]
     public void Coder9OutOfRangeTargetHasNoRealTimeSolutions()
     {
-        var p = P(12, 4, 10, 18, 5);
+        var p = P(12, 4, 10, 15, 5);
         Assert.Equal("none", UsCcssHsFourthCourseQuestions.Solve(Family, p));
         Assert.True(ExactSkillContractQuestionEngine.Verify(Family, p, "none"));
         Assert.False(ExactSkillContractQuestionEngine.Verify(Family, p, "1"));
