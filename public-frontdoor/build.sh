@@ -251,4 +251,8 @@ for route in "${PUBLIC_ROUTES[@]}"; do
   done < <(find "$OUT" -type f -name '*.html' -print0)
 done
 
+# Marketing-only SEO enhancement. The public snapshots stay independent of Render's app.
+node "$ROOT/public-frontdoor/seo-postprocess.mjs"
+node "$ROOT/public-frontdoor/seo-postprocess.mjs" --check
+
 echo "Exact server-rendered public snapshots built at $OUT"
