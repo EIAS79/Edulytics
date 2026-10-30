@@ -328,18 +328,24 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_PREPARATION_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "2021_PUBLISHER_STUDENT_FACING_AND_TEACHER_HTML_COMPARED_V9; FULL_ORIGINAL_PDF_FIGURES_AND_GATED_COOLDOWN_NOT_CHECKED; NO_ACADEMIC_ACCEPTANCE",
-      "stageB": "V9_SOURCE_SPECIFIC_RICH_V2_EDIT_COMMITTED; EFFECTIVE_AUTHENTICATED_STUDENT_TEACHER_RENDER_NOT_RUN",
-      "stageC": "ACTUAL_RUNTIME_SELECTED_PRACTICE_AND_HUMAN_RUBRIC_NOT_RUN",
+      "stageA": "SOURCE_REVIEWED_ELEMENT_LEDGER_20261030; GATED_PUBLISHER_COOLDOWN_SOURCE_UNAVAILABLE",
+      "stageB": "RICHV2_SOURCE_FIGURES_AND_MANUAL_8PT_RUBRIC_REPAIRED; B_RUNTIME_UNVERIFIED",
+      "stageC": "TEACHER_REVIEW_CONTRACT_WRITTEN; SELECTED_DIGITAL_PRACTICE_UNVERIFIED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
       "ownerUat": "NOT_RUN",
       "production": "NOT_CHECKED",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l01-l03-im2021-v9-source-task-ourcs-cube-audit-20261029",
+      "richV2ContentVersion": "g5-u01-l01-l03-im2021-v17-source-specific-a-b-c-20261030",
       "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l01-l03-source-task-acceptance.json",
-      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED"
+      "v9SourceTaskAudit": "PUBLIC_TEACHER_LESSON_HTML_STUDENT_FACING_COMPARED; ORIGINAL_ILLUSTRATION_AND_SEPARATE_STUDENT_PDF_NOT_INSPECTED",
+      "v17ABC": {
+        "ledgerPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-abc-element-ledger-20261030.json",
+        "status": "A_C_EXPLICIT_GAP",
+        "tests": "WRITTEN_NOT_RUN",
+        "readyForStageD": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
@@ -8214,5 +8220,16 @@
     "status": "BLOCKED_AT_FIRST_LESSON_STRICT_SEQUENTIAL",
     "tests": "WRITTEN_NOT_RUN",
     "note": "No transfer to L02 until L01 valid Stage A–B–C closure, previous L02–L12 academic source-review commits preserved as history."
+  },
+  "v17SequentialABC": {
+    "lastLessonTouched": "PED:US-CCSS-MATH:G5:U01:L02",
+    "lastClosedLesson": null,
+    "unclosedQueue": [
+      "U01:L01",
+      "U01:L02"
+    ],
+    "workingPolicy": "continue independent source and teacher tasks per clause 2.6 despite separately tracked blockers",
+    "unit1ReadyForStageD": 0,
+    "reason": "Source and digital coverage gaps accurately classified, no false 100% closure"
   }
 }
