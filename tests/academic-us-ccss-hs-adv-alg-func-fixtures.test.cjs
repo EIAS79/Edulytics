@@ -8,6 +8,8 @@ const fixture = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) 
 const ids = ['M01','M02','M03','M04','M05','M06','M07','M08','M09','M10','M11',
   'L01','L02','L03','L04','L05','L06','L07','L08','L09','L10','L11','L12','L13','L14','L15'];
 const eq = (a, b) => Math.abs(a - b) <= 1e-10;
+const validRealLog = (base, argument) => Number.isFinite(base) && Number.isFinite(argument)
+  && base > 0 && base !== 1 && argument > 0;
 const mul = (a, b) => a.map(r => b[0].map((_, j) => r.reduce((s, n, i) => s + n * b[i][j], 0)));
 const A = [[1,1,1],[2,-1,1],[1,2,-1]];
 const N = [[-1,3,2],[3,-2,1],[5,-1,-3]];
@@ -34,10 +36,10 @@ const oracle = {
     && Math.log(1/2)/Math.log(2) < Math.log(1/2)/Math.log(3)
     && Math.log(9)/Math.log(2) > Math.log(9)/Math.log(3),
   L07: () => 5>3 && eq(Math.log(5-3)/Math.log(2),1),
-  L08: () => Math.log(1) === 0,
-  L09: () => Number.isNaN(Math.log(-2)),
-  L10: () => Math.log(0) === -Infinity,
-  L11: () => Number.isNaN(Math.log(-2)),
+  L08: () => !validRealLog(1, 5) && validRealLog(2, 5),
+  L09: () => !validRealLog(2, -2) && validRealLog(2, 1/9),
+  L10: () => !validRealLog(2, 0) && validRealLog(2, 1),
+  L11: () => !validRealLog(-2, 8) && !validRealLog(0, 8) && validRealLog(2, 8),
   L12: () => !eq(Math.log(6)/Math.log(2), Math.log(2)/Math.log(2)+Math.log(4)/Math.log(2)),
   L13: () => [0.5,2,7].every(x => [0.5,3,9].every(y => eq(Math.log(x*y)/Math.log(2), Math.log(x)/Math.log(2)+Math.log(y)/Math.log(2)))),
   L14: () => eq(2**(Math.log(7)/Math.log(2)),7),
@@ -61,6 +63,10 @@ for (const id of ids) test(`${id}: independent exact/domain oracle and optional 
 test('manifest and source reasoning rubrics are fail-closed', { skip: !fixture }, () => {
   assert.deepEqual([...byId.keys()], ids);
   assert.equal(fixture.status, 'PROPOSED_EXPECTATIONS_NOT_RUNTIME_VERIFICATION');
+  const l06 = byId.get('L06');
+  assert.equal(l06.gradingPolicy, 'ORDER_RELATION_AND_RUBRIC');
+  for (const phrase of ['log_4(3)<log_2(3)', 'false', 'x=1', '0<x<1', 'x>1'])
+    assert.ok(l06.expectedCanonical.includes(phrase), 'L06 missing: ' + phrase);
   const rubricFile = path.resolve(__dirname, '..', 'artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json');
   const rubrics = JSON.parse(fs.readFileSync(rubricFile, 'utf8'));
   assert.deepEqual(rubrics.rubrics.map(x=>x.caseId), ['L04','L05','L06','L13','M05','M11']);
@@ -100,4 +106,14 @@ test('original log number-line task: exact powers and changing cross-base order'
     assert.deepEqual(scenario.representation.numberLineExponents,powers);
     assert.equal(scenario.expected.crossBaseUniversalClaim,false);
   }
+});
+
+test('log-domain negative controls use the actual invalid base, not an invalid argument surrogate', () => {
+  assert.equal(validRealLog(1, 5), false);
+  assert.equal(validRealLog(0, 8), false);
+  assert.equal(validRealLog(-2, 8), false);
+  assert.equal(validRealLog(2, -2), false);
+  assert.equal(validRealLog(2, 0), false);
+  assert.equal(validRealLog(0.5, 4), true);
+  assert.equal(validRealLog(2, 8), true);
 });
