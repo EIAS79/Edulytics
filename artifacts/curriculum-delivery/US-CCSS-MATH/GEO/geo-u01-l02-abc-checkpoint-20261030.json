@@ -1,0 +1,125 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+  "LessonTitle": "Constructing Patterns",
+  "Ordinal": 2,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "Predecessor": "4ea88f80347c993772051bf3052c0417903cfd1b",
+  "Source": {
+    "TeacherPreparation": "10_HS_Geometry/1/2/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/2/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/2/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/2/practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "753e07443d4094913a4c5e88d72e2f37b4566932f7de0dfbae9063b679c1e8d2",
+    "TeacherActivities": "0feb917f871ffbe5b35fedf0879ba7e206cc2edd6dcceaa545e1d7a10fa1d58f",
+    "StudentActivities": "0435820f35b5ceb160828ac9e5bdc813323c22177a8d43021d9756f449f98a72",
+    "StudentPractice": "1fd7a5d79606d4278f0772b42eeb4a663390e783c621334cfe911891a361838c"
+  },
+  "Edition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "Independent first-party authored original; source curriculum CC BY 4.0; publisher names/logos/art not copied",
+  "StageA": {
+    "Status": "A_CLOSED_COURSE_SOURCE_PARITY",
+    "Goals": [
+      "follow construction instructions",
+      "describe mathematically precise written steps"
+    ],
+    "Standards": {
+      "Addressing": [
+        "HSG-CO.A.1",
+        "HSG-CO.D.12",
+        "HSG-CO.D.13"
+      ],
+      "BuildingTowards": [
+        "HSG-CO.D.12",
+        "HSG-CO.D.13"
+      ]
+    },
+    "SourceMap": [
+      {
+        "Source": "2.1 four-circle/collinear justification claims",
+        "FirstParty": "Explicit radii and C,A,B,D construction, original text Math Talk, all four equalities"
+      },
+      {
+        "Source": "2.2 free-choice creation",
+        "FirstParty": "Original student pattern starting from circle/radius; labelled moves including shading"
+      },
+      {
+        "Source": "2.3 peer reconstruction",
+        "FirstParty": "Blind partner exchange and revised instructions, both drawings teacher scored"
+      },
+      {
+        "Source": "Practice 1–4",
+        "FirstParty": "Four teacher-scored first-party source-skill analogues; original publisher diagrams not copied"
+      },
+      {
+        "Source": "2.4 teacher Cool-down",
+        "FirstParty": "PUBLISHER_COOLDOWN_UNVERIFIED, EDULYTIKS_AUTHORED_COOLDOWN parallel lines via regular hexagon"
+      }
+    ],
+    "ExternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "StageB": {
+    "Status": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
+    "Preserved": [
+      "3 existing RichV2 worked examples",
+      "Original rhombus and ambiguity concept content"
+    ],
+    "Fixes": [
+      "Source 2.1 complete circle and collinear-radii math talk",
+      "Source 2.2 original pattern with shading steps",
+      "Source 2.3 blind exchange, reproduction and revision",
+      "Original parallel-line paper cool-down"
+    ],
+    "VisualMode": "paper labels and accessible verbal figure; no publisher applet or on-platform upload claimed"
+  },
+  "StageC": {
+    "Status": "C_PREPARED_BLOCKED_C_SHARED",
+    "Practice": "4 original 2-point source-skill analogues",
+    "Rubrics": "8-point pattern/peer creation; 8-point original parallel cool-down, teacher-scored",
+    "MachineScore": false,
+    "Dependency": {
+      "Owner": "Supervisor 2",
+      "Issue": 453,
+      "ExactRequirement": "Approved lesson-exact teacher-scored offline evidence/grade record for source-constructed original pattern; no known GEO-backed task registration or saved rubric workflow",
+      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+      "DoNotChange": "Shared StudentAssessmentDeliveryService, AssessmentService.Commands, Practice registry, renderer, CI"
+    }
+  },
+  "StageD": "NOT_RUN",
+  "Status": "BLOCKED_C_SHARED",
+  "ABCReadyForD": false,
+  "return_queue": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+      "Status": "BLOCKED_C_SHARED",
+      "Owner": "Supervisor 2",
+      "Issue": 453
+    }
+  ],
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
+  "MathVerification": "Combined independent L02+L03 26 assertions PASS, not app-suite; previous harness contained a wrong test expectation and was corrected",
+  "TestEvidence": {
+    "Focused": "26 PASS / 0 FAIL",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "CountersAfter": {
+    "TOTAL": 124,
+    "AUTHORED": 124,
+    "A_CLOSED": 2,
+    "B_CLOSED": 2,
+    "C_PREPARED": 2,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 2,
+    "REMAINING": 124
+  },
+  "StartedAt": null,
+  "ClosedAt": null,
+  "ElapsedSeconds": null,
+  "Timing": "No per-lesson start timestamp recorded; do not fabricate"
+}
