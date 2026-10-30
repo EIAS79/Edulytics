@@ -11,11 +11,11 @@
     "units": 9,
     "lessonIdsMatched": 147,
     "originalPublisherTeacherPreparationGoalReviewed": 27,
-    "fullStageAReviews": 4,
+    "fullStageAReviews": 5,
     "learningGoalsModified": 147,
     "quickSummaryGoalsModified": 147,
     "substantiveLessonsRepaired": 147,
-    "sourceStudentTaskParityAccepted": 4,
+    "sourceStudentTaskParityAccepted": 5,
     "confirmedPracticeRuntimeContracts": 0,
     "explicitPracticeMetadataMappings": 8,
     "staticallyOutcomeRuleEligibleNotRuntimeVerified": 137,
@@ -29,7 +29,7 @@
     "authenticatedStudentRichV2RenderVerified": 0,
     "lessonsNotSubstantivelyEdited": 0,
     "partialSourceLessonCandidates": 27,
-    "remainingFullLessonAcademicSourceParityChecks": 143,
+    "remainingFullLessonAcademicSourceParityChecks": 142,
     "authoredFirstPartyWorkedExamplePairs": 147,
     "publicHistoricalTeacherStudentPracticeTextCompared": 3,
     "publicOriginalSourceTaskTextFullyReplicated": 0,
@@ -170,15 +170,15 @@
     "v11U05L13L15NewNodeCallbacks": 4,
     "v11TotalGrade6NodeCallbacksNew": 13,
     "abcFirstOrder": {
-      "A_CLOSED": 4,
-      "B_CLOSED": 4,
+      "A_CLOSED": 5,
+      "B_CLOSED": 5,
       "C_PREPARED": 1,
       "READY_FOR_STAGE_D": 1,
       "D_VERIFIED": 0,
-      "BLOCKED": 3,
+      "BLOCKED": 4,
       "REMAINING": 146,
       "firstOpenLessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
-      "lastReviewedAtUtc": "2026-10-30T08:01:52.979Z",
+      "lastReviewedAtUtc": "2026-10-30T08:06:05.987Z",
       "blockedReturnBacklog": [
         {
           "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
@@ -197,13 +197,19 @@
           "status": "BLOCKED",
           "owner": "Supervisor1 G6 shared single writer",
           "reason": "No selected exact polygon decomposition/area+teacher drawing scoring contract"
+        },
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G6:U01:L04",
+          "status": "BLOCKED",
+          "owner": "Supervisor1 G6 shared single writer",
+          "reason": "Source 4.1-4.3 definition/cut-and-move/enclosing/drawing not proven selected via exact area contract"
         }
       ],
       "nextIndependentCursor": "UNVERIFIED_AFTER_PED:US-CCSS-MATH:G6:U03:L07",
       "lastClosedIndependentLesson": "PED:US-CCSS-MATH:G6:U03:L07",
       "lastClosedIndependentLessonSHA": "26a45185a51819764c90ff0294f1908975873614",
-      "nextOfficialLessonTriage": "PED:US-CCSS-MATH:G6:U01:L04",
-      "exceptionNotice": "Earlier U01:L04 through U03:L06 are NOT marked closed or blocked merely from absence of explicit skill mapping; sequential source/contract triage remains required. U03:L07 was selected as the first observed explicit Grade 6 READY_VERIFIED mapping candidate, not proof every earlier lesson is dependent."
+      "nextOfficialLessonTriage": "PED:US-CCSS-MATH:G6:U01:L05",
+      "exceptionNotice": "U01:L05 through U03:L06 remain unreviewed by current A-C acceptance sequence, not automatically BLOCKED; U03:L07 closed as explicit mapped independent exception, not blanket approval to skip earlier."
     }
   },
   "sharedBlockers": [
@@ -664,24 +670,25 @@
       ],
       "stageA": {
         "publisherTeacherPreparationGoalChecked": true,
-        "publisherStudentTaskAllChecked": false,
+        "publisherStudentTaskAllChecked": true,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_STUDENT_ACTIVITY_BODY_COMPARED__TEACHER_GUIDE_FIGURE_APPLET_AND_EFFECTIVE_RENDER_PENDING",
+        "verdict": "A_CLOSED_LOCAL_SOURCE_ALIGNED_FIRST_PARTY_COORDINATE_DRAWINGS",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/4/preparation.html",
-        "publicStudentTeacherPracticeTextCompared": false,
+        "publicStudentTeacherPracticeTextCompared": true,
         "teacherHiddenResponsesRead": false,
         "publisherImageAndAppletParityVerified": false,
         "originalHistoricalPublicStudentPageTextRetrieved": true,
         "originalHistoricalPublicTeacherPageTextRetrieved": true,
         "historicalPublicLessonTitleMatched": true,
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
-        "academicGoalTaskFullParityVerified": false,
+        "academicGoalTaskFullParityVerified": true,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "publicStudentActivityBodyComparedAgainstPack": true,
         "publicTeacherActivityHeadingsCompared": true,
         "fullTeacherGuideIndependentlyReviewed": false,
-        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-l10-public-student-activity-comparisons.json"
+        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-l10-public-student-activity-comparisons.json",
+        "abcEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-abc-first-party-parallelograms-20261030.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -689,12 +696,13 @@
         "substantiveTeachingRepaired": true,
         "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
-        "fullLessonParityAccepted": false,
+        "fullLessonParityAccepted": true,
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
-        "sourceTargetedSupplementAuthored": true
+        "sourceTargetedSupplementAuthored": true,
+        "abcEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-abc-first-party-parallelograms-20261030.json"
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -709,7 +717,9 @@
         "teacherOnlyRubricAuthored": false,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
-        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
+        "abcFirstOrderStatus": "C_BLOCKED_SHARED_SOURCE_PARALLELOGRAM_PRACTICE",
+        "gradeOwnedProposedContractEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l04-abc-first-party-parallelograms-20261030.json"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -723,7 +733,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Check public teacher guide activity bodies and original figure/appet semantics; verify selected source-specific Practice, graded wrong/invalid responses and human-scored original constructions on authenticated app before academic approval."
+      "nextStep": "A/B source-targeted coordinate and mathematical teaching repaired; selected C practice must be area/construction-specific and teacher review via single writer."
     },
     {
       "sortOrder": 5,

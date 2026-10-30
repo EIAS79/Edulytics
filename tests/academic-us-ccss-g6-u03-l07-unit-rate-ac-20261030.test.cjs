@@ -33,7 +33,7 @@ test('numeric answer cannot assert source open discussion has been teacher score
  assert.equal(row.translations.some(t=>t.cultureCode==='en'&&t.workedExamples.includes('Edulytiks-original Cool-down')),true);
  assert.equal(ledger.summary.abcFirstOrder.READY_FOR_STAGE_D,1);
  assert.equal(ledger.summary.abcFirstOrder.C_PREPARED,1);
- assert.equal(ledger.summary.abcFirstOrder.BLOCKED,3);
+ assert.equal(ledger.summary.abcFirstOrder.BLOCKED,4);
  assert.equal(evidence.C.actualTeacherWorkflowNotRun,true);
  assert.equal(evidence.tests.status,'AUTHORED_NOT_RUN');
  assert.equal(ledger.lessons.find(x=>x.lessonCode==='PED:US-CCSS-MATH:G6:U03:L07').academicAcceptance,'NOT_ACCEPTED');

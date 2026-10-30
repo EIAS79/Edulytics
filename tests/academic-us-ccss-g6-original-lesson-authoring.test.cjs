@@ -198,7 +198,7 @@ test('Full-grade authoring is not confused with source, Practice or production a
   assert.equal(record.lessons.length, 147);
   assert.equal(record.summary.canonicalLessons, 147);
   assert.equal(record.summary.substantiveLessonsRepaired, 147);
-  assert.equal(record.summary.fullStageAReviews, 4);
+  assert.equal(record.summary.fullStageAReviews, 5);
   assert.equal(record.summary.stageDVerified, 0);
   assert.equal(record.summary.academicallyAccepted, 0);
   assert.equal(record.summary.releaseReady, false);
@@ -466,7 +466,7 @@ test('Unit 1 lessons 04-10 preserve direct public student activity purpose and o
     ledger.summary.v6Unit7PublicStudentTaskBodiesCompared +
     ledger.summary.v6Unit8StudentTaskBodiesCompared + ledger.summary.v6Unit9FinalStudentBodiesCompared);
   assert.equal(ledger.summary.directPublicStudentTeacherSourceTaskTextCompared, 8);
-  assert.equal(ledger.summary.fullStageAReviews, 4);
+  assert.equal(ledger.summary.fullStageAReviews, 5);
   assert.equal(ledger.summary.stageDVerified, 0);
   assert.equal(ledger.summary.academicallyAccepted, 0);
   assert.equal(ledger.summary.releaseReady, false);
