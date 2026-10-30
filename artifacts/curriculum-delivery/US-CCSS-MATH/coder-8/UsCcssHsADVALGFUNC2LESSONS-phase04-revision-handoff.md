@@ -130,3 +130,60 @@ In the source painting-supplies model, the first receipt has zero brushes, the s
 
 **Shared academic/version-owner handoff:** On main the protected Phase04/JSON parity guards still reject changed learner bodies without an independently reviewed append-only authorization. Do NOT replace previous seven-row hashes, treat prior pending signoffs as approval, allow arbitrary predecessors, or claim a v1 candidate was persisted. Independently review the source task + new field spans and approve or reject the v2 successor; then route transition through the single shared materializer/seeder owner and run original/negative predecessor tests on an isolated integrated SHA. CI failures are expected until authorized. `#584` and `#453` remain separate gates; `#600` alone does not certify production Practice or school adoption.
 
+
+---
+
+## 2026-10-30 P0 follow-up: Log Logic source-goal repairs, 26-case input boundaries, six human rubrics
+
+**Latest candidate remains unapproved.** Earlier historical Phase04 rows and original publisher SHA values are unchanged, including the original seven-row pending-signoff record. Initial prior protected content version was `phase30-common-core-rich-content-v1`; subsequent course-only draft candidates teaching-v1 and teaching-v2 were not independently signed, materialized, or deployed. **Do not authorize teaching-v1 or v2 as a persisted predecessor simply because these Draft commits exist.**
+
+| Item | Prior unapproved candidate | Current unapproved candidate |
+| --- | --- | --- |
+| Pack content version | `us-ccss-hs-adv-alg-func-2lesson-teaching-v2` | `us-ccss-hs-adv-alg-func-2lesson-teaching-v3` |
+| Pack Git blob | `e19755bf768b384a55518accefecd3f47e23304c` | `3828be4b5babd5cfa09dd1b226ef62185790c2b8` |
+| U01:L01 All Systems Go body | `9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7` | `9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7` (no change after V2) |
+| U01:L02 Log Logic body | `f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6` | `d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c` |
+| U01:L01 publisher source SHA | `87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55` | unchanged, PDF binary not rehashed |
+| U01:L02 publisher source SHA | `590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3` | unchanged, PDF binary not rehashed |
+
+### Proven source-task gap and narrowly scoped correction
+
+Recorded source: MVP Secondary Mathematics III, Module 2, `2.1 Log Logic` teacher notes `https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2tn718.pdf`. Indexed student and teacher task text places logarithmic values on a number line, estimates unknowns using neighboring inverse powers, requires explanations, and asks students to test global log-comparison claims. Existing L02 did teach inverse powers, monotonicity, domain and change-of-base, but did **not explicitly implement** source-style number-line placement or demonstrate a counterexample to a universal cross-base inequality. This v3 extension does so through original first-party teaching examples, not verbatim task copying or publisher artwork. Original large PDF files were not downloaded/rendered and the full publisher PDF task review is NOT certified.
+
+Exact source-aligned new mathematics: base-3 number-line anchors `log₃(1/9)=−2, log₃(1/3)=−1, log₃1=0, log₃3=1, log₃9=2`; bound `1<log₃5<2`; explain that a proposed universal `log₂x<log₃x` for all `x>0` is **false**, since at `x=1` both zero, at `x>1` relation reverses to `log₂x>log₃x`, and at `0<x<1` it holds. Independent exact-power witnesses: `log₂9>3>log₃9=2` and `log₂(1/9)<−3<log₃(1/9)=−2`.
+
+**Field-specific differences**: only `explanation`, `workedExamples`, `stepByStepSolutions`, `commonMistakes` within L02 plus its `canonicalBodySha256` and pack-level `contentVersion`. No L01, lesson code, source SHA or official outcome changes.
+
+**L02.explanation exact appended span:**
+
+```text
+In the source Log Logic activity, put known and estimated logarithms on a number line and justify each position from exponential powers. Not every comparison between logarithms with different bases has one fixed direction for every positive argument.
+```
+
+**L02.workedExamples exact appended span:**
+
+```text
+Example 9 — number-line reasoning without a logarithm button: for base 3, log₃(1/9)=−2, log₃(1/3)=−1, log₃1=0, log₃3=1, and log₃9=2, in that left-to-right order. The exponents give the exact locations; to locate log₃5, use 3<5<9 so 1<log₃5<2. Example 10 — test a claimed universal comparison of bases: log₂(x)<log₃(x) is NOT true for every x>0. At x=1 both are 0; for x>1, ln(x)>0 and ln(2)<ln(3), so log₂(x)>log₃(x); for 0<x<1, ln(x)<0 and the inequality reverses to log₂(x)<log₃(x). The argument must be positive. Check using exact powers: log₂9>3>log₃9=2, but log₂(1/9)<−3<log₃(1/9)=−2. A single observed example cannot prove a statement about every positive x.
+```
+
+**L02.stepByStepSolutions exact appended span:**
+
+```text
+11. To position logarithms on a number line, first evaluate inverse powers exactly (including zero and negative exponents), then bound unknown entries between nearby known powers of their positive valid base; explain placements without relying solely on decimals. 12. Before accepting a conjecture comparing log₂x and log₃x for all x>0, split the domain into 0<x<1, x=1, and x>1; the sign of ln(x) changes, so a claimed universal strict inequality fails.
+```
+
+**L02.commonMistakes exact appended span:**
+
+```text
+A logarithm comparison observed at x>1 cannot be generalized unchanged to 0<x<1; both expressions equal zero at x=1. Placing logarithms on a number line without explaining inverse-power bounds omits the source task's reasoning goal.
+```
+
+### Shared integration and teacher evidence, no fake acceptance
+
+- All original **26** course fixture identities preserved (11 matrix, 15 logarithm), now each separately records canonical, equivalent, wrong, malformed and boundary exemplars. These are proposed test vectors; **no 26 actual student submissions or selected production questions verified**.
+- L04–L06 now explicitly require a relation **and explanation**, and their comparison teacher rubrics join existing M05, M11, L13 rubrics (six total). These human review criteria are course-owned candidate evidence; real authenticated teacher score persistence has not been exercised.
+- Exact source-backed matrix/Practice blocker: `PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01` maps via outcomes `CCSS:HSA-REI.C.8/.9` to an old `one-step-formula-equation` fallback on main. Expected are matrix-system and inverse capabilities with exact 2×2/3×3, singular dependent/inconsistent, dimensions, matrix order and malformed-response rejection. Do not relax `MatrixStandardsMustNotSilentlyUseOneVariablePractice` or `LessonPracticeRegistryMustExposeActualMatrixAndLogCompetencies`.
+- Shared owner on PR #600 must integrate course fixtures, route actual student Practice, test exact-equivalent/invalid cases, row-justification and log-comparison teacher grading, attempt persistence, school adoption #453 and two-school isolation. PR #602 addresses candidate leak safeguards separately.
+- Shared materializer/version owner must independently approve an append-only v3 successor from **actually persisted** version/verified prior body SHA, not assume candidate-v2 is persisted. Protected Phase04 parity/academic checks remain red until honest lineage evidence and reviewer approval.
+- Course-side C# tests now include 26 new `[InlineData]` schema cases and log source-goal independent oracle; connector-side JS mathematical fixtures 26/26 passed **without runtime or .NET implications**. CI exact tested SHA must be recorded independently.
+
