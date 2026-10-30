@@ -33,6 +33,10 @@ public static class LessonPracticeContractRegistry
 {
     public const string Version = "supporting-lesson-practice-v4";
 
+    // Exact source-specific lesson identity for two-variable membership Practice.
+    public const string Grade8TwoVariableMembershipLesson =
+        "PED:US-CCSS-MATH:G8:U03:L12";
+
     private static readonly LessonPracticeContract[] Entries =
     [
         // IM 2021 G1 U01 L01: two original activity goals, no subtraction.
@@ -601,12 +605,14 @@ public static class LessonPracticeContractRegistry
             "SupportingLesson",
             "READY_VERIFIED",
             Version),
+        // Grade 8 8.3.12: test ordered-pair membership in Ax+By=C, not
+        // single-variable solving or a two-equation simultaneous system.
         new(
             "PED:US-CCSS-MATH:G8:U03:L12",
-            "algebra.linear.solve",
-            "LINEAR_EQUATION",
-            ["algebra.linear.ax_plus_b_equals_c"],
-            "SupportingLesson",
+            "algebra.linear.two_variable.membership",
+            "TWO_VARIABLE_ORDERED_PAIR_MEMBERSHIP",
+            ["usccss.g8.u03.l12.ordered_pair_membership"],
+            "IM2017_G8_U03_L12_SOURCE_VERIFIED_EXACT_MEMBERSHIP",
             "READY_VERIFIED",
             Version),
         new(

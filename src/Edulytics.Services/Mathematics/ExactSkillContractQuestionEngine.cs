@@ -111,6 +111,7 @@ public sealed class ExactSkillContractQuestionEngine
             "probability.theoretical.simple_event",
             "probability.theoretical.complement",
             "probability.theoretical.two_coins_exactly_one",
+            "usccss.g8.u03.l12.ordered_pair_membership",
             "geometry.coordinate.evaluate_linear_rule",
             "geometry.coordinate.y_intercept_from_rule",
             "number.whole.add_subtract.within_10.build",
@@ -601,6 +602,23 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssT001ExactQuestions.Verify(family, parameters, answer);
         // Grade 1 first-edition source: cardinality up to 20 and
         // addition of two dot cubes up to 10. Fail closed for tampered tasks.
+        if (family == "usccss.g8.u03.l12.ordered_pair_membership")
+        {
+            // An independent exact substitution oracle, not a stored answer flag.
+            if (!parameters.TryGetValue("a", out var a) ||
+                !parameters.TryGetValue("b", out var b) ||
+                !parameters.TryGetValue("c", out var c) ||
+                !parameters.TryGetValue("x", out var x) ||
+                !parameters.TryGetValue("y", out var y) ||
+                (a == 0 && b == 0) ||
+                Math.Abs((long)a) > 30 || Math.Abs((long)b) > 30 ||
+                Math.Abs((long)c) > 3000 ||
+                Math.Abs((long)x) > 30 || Math.Abs((long)y) > 30)
+                return false;
+            var membership = (long)a * x + (long)b * y == c;
+            return string.Equals(answer.Trim(), membership ? "yes" : "no",
+                StringComparison.OrdinalIgnoreCase);
+        }
         if (family == "usccss.g1.u01.l01.count_collection_to20")
             return parameters.TryGetValue("count", out var count) &&
                 count is >= 1 and <= 20 &&
@@ -2410,6 +2428,8 @@ public sealed class ExactSkillContractQuestionEngine
                 BuildFractionBenchmark(random, scale),
             "geometry.coordinate.gradient_between_points" =>
                 BuildCoordinateGradient(random, scale),
+            "usccss.g8.u03.l12.ordered_pair_membership" =>
+                BuildGrade8TwoVariableMembership(random, scale),
             "geometry.coordinate.evaluate_linear_rule" =>
                 BuildCoordinateLinearRule(random, scale),
             "geometry.coordinate.y_intercept_from_rule" =>
@@ -3405,6 +3425,30 @@ public sealed class ExactSkillContractQuestionEngine
             ("y1", y1),
             ("x2", x2),
             ("y2", y2));
+    }
+
+    // Grade 8 IM 2017 lesson 8.3.12: a point lies on Ax+By=C iff
+    // substitution makes the equation true. This does NOT solve a 2x2 system.
+    private static ExactProblem BuildGrade8TwoVariableMembership(Random random, int scale)
+    {
+        // Vertical and horizontal lines (one coefficient zero) are valid
+        // two-variable linear equations. The degenerate 0x + 0y = c is not.
+        var a = random.Next(0, 6) == 0 ? 0 : NonZero(random, -5 * scale, 5 * scale + 1);
+        var b = a != 0 && random.Next(0, 6) == 0
+            ? 0
+            : NonZero(random, -5 * scale, 5 * scale + 1);
+        var x = random.Next(-6 * scale, 6 * scale + 1);
+        var y = random.Next(-6 * scale, 6 * scale + 1);
+        var membership = random.Next(0, 2) == 0;
+        var offset = random.Next(1, 5 * scale + 1) *
+            (random.Next(0, 2) == 0 ? -1 : 1);
+        var c = checked(a * x + b * y + (membership ? 0 : offset));
+        return Problem(
+            "usccss.g8.u03.l12.ordered_pair_membership",
+            $"Does the point ({x}, {y}) lie on the graph of {a}x + {b}y = {c}? Answer yes or no.",
+            "Substitute the point's x- and y-coordinates into the original equation. The point is on the line exactly when both sides are equal.",
+            AssessmentItemType.ShortAnswer,
+            ("a", a), ("b", b), ("c", c), ("x", x), ("y", y));
     }
 
     private static ExactProblem BuildCoordinateLinearRule(Random random, int scale)
@@ -4865,6 +4909,10 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (problem.Family == "usccss.g8.u03.l12.ordered_pair_membership")
+            return (long)p["a"] * p["x"] + (long)p["b"] * p["y"] == p["c"]
+                ? "yes"
+                : "no";
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))

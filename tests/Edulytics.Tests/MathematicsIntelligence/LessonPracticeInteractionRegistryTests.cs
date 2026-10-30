@@ -29,9 +29,13 @@ public sealed class LessonPracticeInteractionRegistryTests
     [Fact]
     public void EveryRegistryLessonPracticeFamilyHasAPresentationInteraction()
     {
-        Assert.Equal(
-            1070, // The Grade 4 2021 exact family registrations add 45 interaction contracts to the prior 1025.
-            LessonPracticeInteractionRegistry.All.Count);
+        // Preserve the previous 1,070 interaction contracts while adding
+        // the source-reviewed Grade 8 two-variable membership family.
+        Assert.Equal(1070 + 1, LessonPracticeInteractionRegistry.All.Count);
+        Assert.True(LessonPracticeInteractionRegistry.TryResolve(
+            "usccss.g8.u03.l12.ordered_pair_membership", out var grade8));
+        Assert.NotNull(grade8);
+        Assert.Equal("enum_text", grade8!.AnswerType);
 
         Assert.All(
             LessonPracticeInteractionRegistry.All,
