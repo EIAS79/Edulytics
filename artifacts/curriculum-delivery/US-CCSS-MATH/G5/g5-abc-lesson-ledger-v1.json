@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 16,
-    "B_CLOSED": 16,
+    "A_CLOSED": 17,
+    "B_CLOSED": 17,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 16,
+    "BLOCKED": 17,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -864,28 +864,52 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-5\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-5\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_SOURCE_SPECIFIC_BLUEBERRY_RATIO_CATEGORIES_AND_UNIVERSAL_A_DIV_B_EQ_A_OVER_B_PROOF; ONLY_ADD_ORIGINAL_EXIT_AND_TARGET_FIXTURES",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE exact fraction quotient and mixed-number numerical family as supplemental; shared writer EXTEND proof/explanation human scored task",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u02-l05-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:30:22.127Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single shared writer #592",
+        "reason": "Selected fraction-as-quotient numeric family and teacher-scored general proof/zero divisor rubric not demonstrably routed",
+        "acceptWhen": "Static exact selected Practice and teacher-graded universal argument/feedback wired, correct/wrong/equivalent/malformed cases evidenced"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "IM 2021 Grade 5 Unit 2 Lesson 5 original teacher/preparation/student facing",
+        "goals": [
+          "True/False 5÷2=5/2 true, 5/2=5 1/2 false, 6/2=3 true",
+          "Relate Pounds to People: more than 1, exactly 1, less than 1 and 1/2 pound cases, including seven pounds and three recipients rows",
+          "Why Does It Work?: explain a÷b=a/b for any nonnegative whole a and positive b"
+        ],
+        "rights": "Publisher image rights not imported",
+        "cooldown": "NOT_VERIFIED_GATED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u02-l05-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "c6b28b67f97fd794f5f6af9bed91d60d0ffe3403",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Existing Rich V2 already includes universal a÷b=a/b argument and exact source blueberry table; lacks independent final check.",
+        "after": "Preserved correct teaching and added teacher-scored original universal statement and boundary-case exit with positive/negative fixtures."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l05-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L06",
@@ -4163,8 +4187,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:29:09.894Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L05",
+  "updatedAtUtc": "2026-10-30T12:30:22.127Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L06",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -4229,6 +4253,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L04",
       "reason": "C three-representation inverse division/teacher assessment wiring"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
+      "reason": "C generalized quotient/fraction explanation teacher assessment selected route"
     }
   ]
 }
