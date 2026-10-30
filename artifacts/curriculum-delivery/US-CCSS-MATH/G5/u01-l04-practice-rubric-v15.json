@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
+  "source": "Local 2021 original IM teacher lesson.html and preparation.html, G5 U01 L04",
+  "rights": "CC BY 4.0 text; original figures not reproduced; only original Edulytiks descriptions",
+  "sourceGoals": [
+    "estimate partially shown 9-cube front layer without assuming hidden depth",
+    "count packed prisms via layers from partial images and equivalent orientations",
+    "interpret 5×24 and 6×20 as 120 cubic units with matching layers"
+  ],
+  "teacherRubrics": [
+    {
+      "task": "warmup",
+      "accept": "reasonably defended low/middle/high estimates; lack of depth prevents one exact volume",
+      "reject": "invent depth from the nine visible cubes"
+    },
+    {
+      "task": "partial prisms",
+      "accept": "valid cube-per-layer and number-of-layers tables, hidden units included; 2×12 and 3×8 both 24",
+      "reject": "count only pictured blocks"
+    },
+    {
+      "task": "expression interpretation",
+      "accept": "5×24=6×20=4×30=120; identify 4×6,4×5,5×6 faces as respective layers",
+      "reject": "120-only scalar without explanation, surface area, or inconsistent geometric factors"
+    },
+    {
+      "task": "Edulytiks-original exit",
+      "accept": "3×20=5×12=4×15=60 with paired layer geometry and cubic units",
+      "reject": "wrong cubic units, unrelated layers or only 60"
+    }
+  ],
+  "PracticeStrategy": "REUSE volume computation as supplemental; EXTEND human-reviewed estimation and layer-expression interpretation via shared single-writer",
+  "explicitLessonSkillMapping": "NO_L04_ENTRY",
+  "outcomeRoute": "Original addresses 5.MD.C.5.a and 5.OA.A.2; specific exact selected family unknown",
+  "risk": "Generic outcome fallback does not demonstrate layer choice, reasoned estimates or expression interpretation; non-source surface-area questions inappropriate",
+  "exactSelectedRuntimeContract": "NOT_VERIFIED",
+  "teacherSubmissionScoring": "NOT_DEMONSTRATED",
+  "fixtures": [
+    "9 front cubes with hidden depth 2/3/10 -> 18/27/90, no unique answer",
+    "5×24=6×20=4×30=120",
+    "2×12=3×8=4×6=24",
+    "invalid 5×24=100",
+    "bad 3×4×5 answer in square units",
+    "malformed dimensions",
+    "numeric-only reasoning incomplete"
+  ],
+  "status": "BLOCKED_SHARED_INTEGRATION",
+  "owner": "Supervisor 1 single-writer issue #592",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED",
+  "testStatus": "TEST_AUTHORED_NOT_RUN"
+}

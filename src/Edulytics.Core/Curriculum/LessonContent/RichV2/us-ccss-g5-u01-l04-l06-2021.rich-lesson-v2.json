@@ -9,10 +9,11 @@
       "Title": "Use Layers to Determine Volume PLC Activity",
       "ExplanationParagraphs": [
         "Goal: determine volume when a rectangular prism is shown partly filled with unit cubes. Explain how the known cubes identify the size of a complete layer, infer unseen layers, and connect different multiplication expressions to the same prism. A drawing of incomplete cube detail does not mean the prism itself is hollow.",
-        "Warm-up — estimate from partial information: an independently authored drawing description shows nine unit cubes in the front face of a fully packed prism but conceals its depth. Give one estimate too low, a plausible middle estimate, and one too high; explain why an exact cube count needs the number of matching layers. This is an estimation discussion, not an exact-answer quiz.",
-        "Activity 1 — layers in prisms: learners inspect complete and partly pictured box solids, make a layer-count/number-of-layers/volume table, and explain how a solid rotated onto another face can be counted by different layers. Try a first-party 2 × 3 × 4 cube prism: 2 layers of 12 and 3 layers of 8 both represent 24 cubes.",
-        "Activity 2 — expressions and orientations: for a first-party solid measuring 5, 2 and 4 unit cubes along its edges, build and explain 4 × (5 × 2) = 40 and 5 × (4 × 2) = 40. Describe what each pair of factors means as a layer and height. Retell the explanation with physical connecting cubes, a tactile model, or an accessible grid-layer table.",
-        "Assessment boundary: the publisher's actual lesson includes partially filled prism diagrams, estimation with incomplete information and peer explanations. A single length × width × height answer can support computation but cannot assess estimation reasoning, choice of layers or the explanation. Teacher reviews representations and multiple defensible estimates. Source: public first-edition 2021 teacher lesson page; original gated Cool-down is not asserted verified."
+        "Warm-up — Estimation Exploration: a 2021 original picture shows nine unit cubes in a visible front layer of a rectangular prism but obscures the depth. Ask for an estimate too low, about right and too high; justify that the exact cube count is UNKNOWN without the number of congruent layers. The publisher optionally reveals ten such layers, in which case the total is 90 cubes; 90 is NOT knowable from the original incomplete picture alone. Edulytiks supplies its own source-functionally equivalent verbal model, not the unseen image.",
+        "Activity 1 — Layers in Rectangular Prisms (20 minutes): from partially shown but fully packed cube prisms A–F, make a three-column record of cubes per complete layer, number of layers and cubic volume, explaining any missing cubes. The original teacher synthesis presents 2 × 12 = 24 and 3 × 8 = 24 as two compatible decompositions of the same prism A. When drawings are not accessible, independent Edulytiks 2×3×4 packed-prism descriptions and tactile cubes make the layer comparison explicit; do not claim they reproduce the original A–F images.",
+        "Activity 2 — Finding Volume in Different Ways (15 minutes): explain what 5 × 24 and 6 × 20 mean for ONE 4×5×6 completely packed prism (120 cubic units). The source includes 5 × (4 × 6) and 6 × (4 × 5); another valid method is 4 × (5 × 6). Describe the chosen rectangular layer, perpendicular number of layers, and why changing the orientation does not change volume. The related 5×2×4=40 first-party example is supplementary, not a replacement for this original 120-cube source reasoning.",
+        "Teacher assesses low/medium/high estimation as reasoned ranges, not as an exact image pixel-identical result; checks layer-count×cubes-in-layer tables and explains equivalent 120-cube expressions and parentheses in context. Students may use independently authored text tables, physical cubes or a tactile representation. Volume is measured in cubic units; squaring the answer or reporting a surface area is not appropriate to this lesson.",
+        "Edulytiks-original exit check (NOT gated 2021 'Use Expressions'): a completely packed rectangular prism measures 3, 4 and 5 cubes along perpendicular edges. Show two ways of grouping identical cubes into complete layers and match each multiplication expression to the geometry. Expected: 3×20=60 and 5×12=60 cubic units (or 4×15=60); a teacher checks corresponding layers, cubic units and explanation, not merely a scalar 60."
       ],
       "KeyConcepts": [
         {
@@ -70,6 +71,18 @@
           ],
           "Answer": "40 cubic units: four layers of ten.",
           "Check": "The pair of factors in parentheses must match two perpendicular side lengths of one layer."
+        },
+        {
+          "Title": "Original alternative to 2021 expression task: 120-cube prism",
+          "Question": "A fully packed 4×5×6 rectangular prism is turned. Explain how 5×24 and 6×20 each count its volume.",
+          "Method": "Choose a face of the prism as the layer, then multiply its cube count by the number of perpendicular layers.",
+          "Steps": [
+            "Five complete 4×6 layers contain 5×(4×6)=5×24=120 cubes.",
+            "Six complete 4×5 layers contain 6×(4×5)=6×20=120 cubes.",
+            "These are the same solid rotated; every cube is included exactly once and the answer is in cubic units."
+          ],
+          "Answer": "120 cubic units in either orientation.",
+          "Check": "4×(5×6)=120 offers a third compatible partition of the same packed prism."
         }
       ],
       "CommonMistakes": [
@@ -118,6 +131,42 @@
                 "24",
                 "24",
                 "24"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Edulytiks-original 120-cube prism equivalent expressions",
+          "Description": "Independent accessible descriptions of the 2021 lesson's multiplication-expression objective, not original publisher image A–F.",
+          "Rows": [
+            {
+              "Label": "5 layers",
+              "Cells": [
+                "4 × 6 = 24 cubes/layer",
+                "5 × 24 = 120"
+              ]
+            },
+            {
+              "Label": "6 layers",
+              "Cells": [
+                "4 × 5 = 20 cubes/layer",
+                "6 × 20 = 120"
+              ]
+            },
+            {
+              "Label": "4 layers",
+              "Cells": [
+                "5 × 6 = 30 cubes/layer",
+                "4 × 30 = 120"
+              ]
+            },
+            {
+              "Label": "Incomplete warm-up",
+              "Cells": [
+                "Front layer shows 9 cubes",
+                "Depth unavailable → no unique total",
+                "If 10 layers revealed: 90 cubes"
               ]
             }
           ]

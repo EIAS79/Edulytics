@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 3,
-    "B_CLOSED": 3,
+    "A_CLOSED": 4,
+    "B_CLOSED": 4,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 3,
+    "BLOCKED": 4,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -219,28 +219,53 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-4\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_EXPLICIT_LAYER_AND_ESTIMATION_RICHV2; FIX_MISSING_SOURCE_120_CUBE_EXPRESSIONS_AND_ORIGINAL_EXIT",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE volume computation as supplemental; EXTEND human-reviewed estimation and layer-expression interpretation via shared single-writer",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l04-contract-v15.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T07:58:46.888Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single writer #592",
+        "reason": "No proven selected Practice for open estimation and multiple expression/geometry justifications; generic volume numeric-only insufficient.",
+        "acceptWhen": "Exact selected source-faithful outcome/lesson contract and teacher-scored explanation route independently evidenced."
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "IM K–5 2021 original local teacher lesson and preparation, embedded Student Facing",
+        "goals": [
+          "estimate partially shown 9-cube front layer without assuming hidden depth",
+          "count packed prisms via layers from partial images and equivalent orientations",
+          "interpret 5×24 and 6×20 as 120 cubic units with matching layers"
+        ],
+        "rights": "Original source model semantics used; first-party examples only",
+        "originalFigures": "UNVERIFIED_NOT_COPIED",
+        "publisherCooldown": "GATED_NOT_VERIFIED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l04-contract-v15.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "37742bc2bc0096d42f8868580f96450d16cb5519",
+      "authoredCandidate": true,
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l04-practice-rubric-v15.json",
+      "beforeAfterFinding": {
+        "before": "First-party 40-cube multiplication model remained, but lacked actual 2021 source's 5×24 and 6×20 expression interpretation; original exit absent.",
+        "after": "Added source 120-cube paired layer expressions, explicit uncertain 9-front cube estimation, original 60-cube exit, accessible model, teacher rubric."
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
@@ -3843,8 +3868,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T07:57:36.928Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L04",
+  "updatedAtUtc": "2026-10-30T07:58:46.888Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L05",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -3857,6 +3882,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
       "reason": "C exact practice and human-rubric wiring"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
+      "reason": "C shared exact selected volume-expression + teacher scoring"
     }
   ]
 }
