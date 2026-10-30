@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 7,
-    "B_CLOSED": 7,
+    "A_CLOSED": 8,
+    "B_CLOSED": 8,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 7,
+    "BLOCKED": 8,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -417,28 +417,48 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-8\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_VOLUME_ADDITIVITY_AND_EXISTING_30_CUBE_MODEL; ADD_SOURCE_DESCRIBED_COMPOSITES_B_C_D",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numeric volume/addition as supplemental; shared writer EXTEND composite geometry partition and teacher-scored justification",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l08-contract-v15.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T08:05:10.054Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "owner": "Supervisor 1 single-writer shared integration",
+        "reason": "No exact selected Practice for composite disjoint partition/explanation, teacher assessment unverified",
+        "acceptWhen": "Correct selected composite-volume contract and teacher-scoring of geometry model documented"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "IM 2021 U01 L08 student-facing textual tasks in teacher lesson, preparation",
+        "goal": "Add volumes of two nonoverlapping rectangular prisms, justify different valid decompositions",
+        "sourceFigA": "UNVERIFIED_NO_NUMERIC_ANSWER_ASSUMED",
+        "figuresBCDstated": "Source accessible descriptions counted",
+        "publisherCooldown": "GATED_NOT_VERIFIED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l08-contract-v15.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "a6f2be60236769f2792fc2514865a563f5f36eeb",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Rich V2 listed generic 12+10 and 12+18 but source figure b/c/d quantitative tasks were omitted.",
+        "after": "Added full source-described attached-cube figures, disjoint additivity rubric, original first-party exit and math tests."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l08-practice-rubric-v15.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
@@ -3941,8 +3961,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T08:03:59.474Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L08",
+  "updatedAtUtc": "2026-10-30T08:05:10.054Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L09",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -3971,6 +3991,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
       "reason": "C qualitative cubic unit and info-gap assessment integration"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
+      "reason": "C composite-prism nonoverlap, partition and teacher assessment integration"
     }
   ]
 }

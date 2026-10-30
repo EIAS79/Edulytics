@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
+  "source": "2021 Grade 5 U01 L08 teacher lesson and preparation original local Our-CS",
+  "sourceGoal": "Add volumes of two nonoverlapping rectangular prisms, justify different valid decompositions",
+  "sourceTasks": [
+    "Open WODB with possible multiple partitions",
+    "Pair joins 12-cube and 10-cube prisms to make 22",
+    "Source attached prisms 3×2×2 plus 3×2×3 =30",
+    "Source activity2 described b=50,c=60,d=57; image-only a unverified"
+  ],
+  "rubric": [
+    "Parts must not overlap in volume",
+    "All attached cube rows counted",
+    "Allow different disjoint decompositions with same total",
+    "Teacher checks drawing, tactile or physical construction and explanation",
+    "Do not auto-pass scalar total if partition is incorrect"
+  ],
+  "correctCases": [
+    "12+10=22",
+    "12+18=30",
+    "45+5=50",
+    "54+6=60",
+    "45+12=57",
+    "3×2×5=30"
+  ],
+  "negativeCases": [
+    "double-count overlapping cubes",
+    "forget row attached to large prism",
+    "wrong dimensions for source components",
+    "figure a numeric answer invented from missing image",
+    "malformed coordinates or counts",
+    "scalar-only explanation"
+  ],
+  "PracticeStrategy": "REUSE numeric volume/addition as supplemental; shared writer EXTEND composite geometry partition and teacher-scored justification",
+  "explicitLessonMapping": "NO_L08_EXPLICIT_MAPPING",
+  "runtimeSelectedContract": "NOT_VERIFIED; official fallback cannot be asserted source-exact",
+  "StageA": "COMPLETE_WITH_EVIDENCE",
+  "StageB": "COMPLETE_WITH_EVIDENCE",
+  "StageC": "BLOCKED_SHARED_INTEGRATION",
+  "publisherFigure": "NOT_REPRODUCED",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED",
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "owner": "Supervisor 1 shared writer issue #592"
+}
