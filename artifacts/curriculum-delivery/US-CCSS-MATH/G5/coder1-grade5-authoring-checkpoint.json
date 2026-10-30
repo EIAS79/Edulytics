@@ -8536,5 +8536,27 @@
     ],
     "teacherReviewRequired": true,
     "photoLicenseSeparate": true
+  },
+  "v53L01SequentialSourceCorrection": {
+    "date": "2026-10-30",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G5:U01:L01",
+    "sourceRead": [
+      "Our-CS/05_Grade_5_IM_K5/unit-1/lesson-1/lesson.html",
+      "Our-CS/05_Grade_5_IM_K5/unit-1/lesson-1/preparation.html"
+    ],
+    "reusedCorrectMaterials": "Retained source-aligned four-object Which One Doesn't Belong, two 8-cube pair comparisons, four-person ordering and 9-cube connected building, Edulytiks-original cooldown and teacher 8-point rubric.",
+    "corrected": [
+      "A and B: deferred explicit formal cubic-unit measurement to U01:L02 per 2021 teacher preparation",
+      "A and B: allowed any face-connected irregular cube solid, not only gap-free rectangular-prism packing"
+    ],
+    "testFile": "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs",
+    "testExecution": "WRITTEN_NOT_RUN",
+    "stageD": "NOT_RUN",
+    "stageC": "CAPABILITY_BLOCKED_NOT_CLOSED; human teacher-scoring implementation and exact source-aligned Practice route still unresolved",
+    "readyForStageD": false,
+    "lastCompletedLesson": null,
+    "firstUnclosedLesson": "PED:US-CCSS-MATH:G5:U01:L01",
+    "lastSourceRepairCommit": "d540f192a14a218dceb2c3206d126587a2e67abe",
+    "noLessonSkipped": true
   }
 }
