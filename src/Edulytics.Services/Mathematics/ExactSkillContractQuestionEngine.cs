@@ -180,6 +180,7 @@ public sealed class ExactSkillContractQuestionEngine
          UsCcssHsFourthCourse3x3Questions.Supports(family.Trim()) ||
          UsCcssHsAdvancedLogQuestions.Supports(family.Trim()) ||
          UsCcssHsTrigonometryExactAngles.Supports(family.Trim()) ||
+         UsCcssHsPrincipalInverseSourceQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -419,6 +420,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssHsAdvancedLogQuestions.Verify(family, parameters, answer);
         if (UsCcssHsTrigonometryExactAngles.Supports(family))
             return UsCcssHsTrigonometryExactAngles.Verify(family, parameters, answer);
+        if (UsCcssHsPrincipalInverseSourceQuestions.Supports(family))
+            return UsCcssHsPrincipalInverseSourceQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1751,6 +1754,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssHsTrigonometryExactAngles.Supports(family))
         {
             var item = UsCcssHsTrigonometryExactAngles.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsPrincipalInverseSourceQuestions.Supports(family))
+        {
+            var item = UsCcssHsPrincipalInverseSourceQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
         }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
@@ -4905,6 +4913,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssHsAdvancedLogQuestions.Solve(problem.Family, p);
         if (UsCcssHsTrigonometryExactAngles.Supports(problem.Family))
             return UsCcssHsTrigonometryExactAngles.Solve(problem.Family, p);
+        if (UsCcssHsPrincipalInverseSourceQuestions.Supports(problem.Family))
+            return UsCcssHsPrincipalInverseSourceQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
