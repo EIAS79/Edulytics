@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T12:16:36.185432+00:00",
   "lastReviewed": "U01:L08",
-  "nextCanonical": "U01:L09",
+  "nextCanonical": "U01:L01",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -578,7 +578,11 @@
     "BLOCKED": 8,
     "REMAINING": 132,
     "SOURCE_REVIEW_CUMULATIVE": 29,
-    "STRUCTURED_RUBRIC_DRAFTS": 29
+    "STRUCTURED_RUBRIC_DRAFTS": 29,
+    "UNIT_TOTAL": 7,
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
   },
   "verification": {
     "sources": "four local HTML SHA256 each lesson",
@@ -586,7 +590,50 @@
     "mathOracles": "LOCAL_PASS",
     "dotnet": "NOT_RUN_CURRENT_SHA",
     "ci": "NOT_RUN_MANUALLY",
-    "StageD": "NOT_RUN"
+    "StageD": "NOT_RUN",
+    "strictUnitGateAndOriginalHashes": "PASS",
+    "newDotnetTests": "NOT_RUN"
   },
-  "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de"
+  "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
+  "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
+  "unitGate": {
+    "course": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
+    "unitCode": "U01",
+    "unitTotalLessons": 16,
+    "courseUnitTotal": 7,
+    "unitsABCCLosed": 0,
+    "status": "UNIT_BLOCKED",
+    "previouslyABCClosed": 0,
+    "newlyABCClosed": 0,
+    "unitReadyForStageD": false,
+    "lastFullyABCClosedLesson": null,
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "previouslyReviewedSourceThrough": "U01:L08",
+    "lastSourceReviewIsNotABCCLosure": true,
+    "mayAdvanceToL02": false,
+    "blockingDependency": {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "stage": "C",
+      "status": "BLOCKED_C_SHARED",
+      "owner": "Supervisor 2, single-writer of shared Practice service/registry",
+      "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "reason": "Traditional Algebra 1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve; draft exact-select {A,C,E} and open human-scored tasks are not runtime Practice",
+      "requiredResolution": "Single-writer must evaluate existing exact selection family, approve lesson-scoped generation and grading including malformed/duplicate handling, and confirm teacher-scored open-response pathway while preserving fail-closed for unreviewed Algebra 1 scopes",
+      "doNotDo": "No global service or registry modification from Coder5 branch, no invented working generator/grader, no skip to L02"
+    },
+    "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
+    "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
+    "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition original teacher/student HTML",
+    "sourceL01FileHashesRevalidated": true,
+    "manualVerification": "PASS_SOURCE_HASH_AND_SERVICE_GATE_ORDER",
+    "dotnetTests": "NOT_RUN_NEW_ORDER",
+    "fullBuild": "NOT_RUN",
+    "stageD": "NOT_RUN"
+  },
+  "unitStatus": "UNIT_BLOCKED",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "lastFullyClosedLesson": null,
+  "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
 }

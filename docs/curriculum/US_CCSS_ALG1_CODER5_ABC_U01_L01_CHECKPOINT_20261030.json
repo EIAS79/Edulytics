@@ -14,7 +14,7 @@
   "elapsedSeconds": null,
   "timeTrackingNote": "start time was not captured before work; do not fabricate elapsed duration or closure",
   "inspectedAtUtc": "2026-10-30T07:00:19.172010+00:00",
-  "status": "BLOCKED_C_SHARED",
+  "status": "BLOCKED_C_SHARED_UNIT_BLOCKED",
   "sourceEdition": "Illustrative Mathematics HS Algebra 1 First Edition, local teacher/student HTML",
   "originalSources": {
     "09_HS_Algebra_1/1/1/preparation.html": {
@@ -161,7 +161,7 @@
     }
   ],
   "nextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-  "nextLessonMayStart": true,
+  "nextLessonMayStart": false,
   "rollup": {
     "TOTAL": 132,
     "AUTHORED": 132,
@@ -177,5 +177,24 @@
   "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5",
   "return_queue": [
     "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01"
-  ]
+  ],
+  "advanceReason": "SUPERSEDED BY 2026-10-30 ADMIN V-UNIT: stop at first unclosed L01; cannot skip to L02",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "unitStatus": "UNIT_BLOCKED",
+  "lastFullyABCClosedLesson": null,
+  "currentUnitTotal": 16,
+  "blockingDependencyForUnit": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "stage": "C",
+    "status": "BLOCKED_C_SHARED",
+    "owner": "Supervisor 2, single-writer of shared Practice service/registry",
+    "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "reason": "Traditional Algebra 1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve; draft exact-select {A,C,E} and open human-scored tasks are not runtime Practice",
+    "requiredResolution": "Single-writer must evaluate existing exact selection family, approve lesson-scoped generation and grading including malformed/duplicate handling, and confirm teacher-scored open-response pathway while preserving fail-closed for unreviewed Algebra 1 scopes",
+    "doNotDo": "No global service or registry modification from Coder5 branch, no invented working generator/grader, no skip to L02"
+  },
+  "latestOrder": "ADMIN_V_UNIT_STRICT_SEQUENTIAL",
+  "sourceHashRevalidatedAtUtc": "2026-10-30T12:59:58.913206+00:00",
+  "sourceHashStatus": "PASS_4_LOCAL_FILES_UNCHANGED",
+  "testsForThisGate": "NOT_RUN_DOTNET; manual service control-flow PASS"
 }
