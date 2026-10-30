@@ -31,3 +31,21 @@ for(let i=0;i<5;i++){
   assert.equal(row.approved,false);
  });
 }
+
+test('pending predecessor fingerprints match all five current learner fields without implying approval',()=>{
+ const transition=read('artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-content-predecessor-transition.json');
+ assert.equal(transition.kind,'CODER9_AUTHORIZATION_SUBMISSION_ONLY_NOT_APPROVAL');
+ assert.equal(transition.lessons.length,5);
+ for(let i=0;i<5;i++){
+  const lesson=pack.lessons[i],en=lesson.translations.find(x=>x.cultureCode==='en');
+  const row=transition.lessons[i];
+  assert.equal(row.lessonCode,lesson.lessonCode);
+  assert.equal(row.baselineSourceSha256,lesson.sourceSha256);
+  assert.equal(row.baselineCanonicalBodySha256,lesson.canonicalBodySha256);
+  assert.equal(row.revisedTranslationSha256,crypto.createHash('sha256').update(JSON.stringify(en),'utf8').digest('hex'));
+  for(const [field,value] of Object.entries(row.fieldDigests)){
+   assert.equal(value.afterSha256,crypto.createHash('sha256').update(en[field],'utf8').digest('hex'));
+   assert.equal(value.afterLength,[...en[field]].length);
+  }
+ }
+});
