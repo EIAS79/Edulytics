@@ -1,6 +1,6 @@
 {
   "schema": "edulytiks-us-ccss-coder8-course-evidence-v1",
-  "asOf": "2026-10-29",
+  "asOf": "2026-10-30",
   "operator": "Coder 8",
   "supervisor": "American Supervisor 3",
   "course": {
@@ -26,19 +26,24 @@
     "fixtureDataCommit": "300f19045833772f19c135f6f374e6a575f73e45",
     "fixtureTestsCommit": "f3a92ee01e638b81be534152195abd9a51365157",
     "revisionDiffHandoffCommit": "fb6885829250ed4874182c601b69f0373bda7095",
-    "fixtureTestsOracleStrengtheningCommit": "71eb6f3eddbde45cd3b068fcfdfe1892e8825717"
+    "fixtureTestsOracleStrengtheningCommit": "71eb6f3eddbde45cd3b068fcfdfe1892e8825717",
+    "sourcePaintingContentCommit": "36ec7df1cb52fbb37512756c34a5e8e7f0da156c",
+    "sourcePaintingOracleTestsCommit": "6a0425c3c9cb58b36e653dbb3d490ed9fb3b29ad",
+    "sourceTaskEvidenceCommit": "991bea163fdeccfa259c2c980ae66b9bd1937272",
+    "v2ExactFieldHandoffCommit": "aa689a5797521818dfb83bf876ee5087d11fa499"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
     "oldVersion": "phase30-common-core-rich-content-v1",
-    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v2",
     "baselineFileBlobSha": "69306240d3f240177af7dcc6b25fc420c59a8316",
-    "candidateFileBlobSha": "e0efdbebf6cb50db5ba91556ede1d28a17b2f413",
+    "candidateFileBlobSha": "e19755bf768b384a55518accefecd3f47e23304c",
     "sourceMetadataPreserved": true,
     "migrationRequired": true,
     "persistedPredecessorVerified": false,
     "effectiveRenderedContentVerified": false,
-    "publisherTaskPdfIndependentlyRechecked": false
+    "publisherTaskPdfIndependentlyRechecked": false,
+    "priorUnapprovedCandidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1"
   },
   "lessons": [
     {
@@ -49,24 +54,28 @@
         "CCSS:HSA-REI.C.9"
       ],
       "sourceSha256Recorded": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
-      "canonicalBodySha256Recorded": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+      "canonicalBodySha256Recorded": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
       "changes": [
         "2x2 inverse determinant and multiplication example",
         "3x3 inverse using matrix-capable technology and independent verification",
         "singular dependent vs inconsistent classification",
-        "inverse versus row reduction decision guidance"
+        "inverse versus row reduction decision guidance",
+        "source-excerpt-aligned three-week painting supplies 3x3 model, exact inverse, price interpretation and negative price boundary"
       ],
       "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
       "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
       "localMathOracle": "PASS_EXACT_ARITHMETIC",
       "runtimeLessonPractice": "NOT_RUN",
       "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
-      "stageB": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "stageB": "CONTENT_IMPLEMENTED_BRANCH_ONLY_UPDATED_DIGEST_UNAPPROVED",
       "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
       "mappingAndPractice": "BLOCKED_584_EXPLICIT_MATRIX_SYSTEM_INVERSE_GENERATORS_REQUIRED",
       "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
       "authenticatedRuntime": "NOT_RUN_453",
-      "productionUat": "NOT_RUN"
+      "productionUat": "NOT_RUN",
+      "previousUnapprovedV1BodySha256": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+      "sourceTaskReconciliation": "PAINTING_RECEIPT_MODEL_IMPLEMENTED; STUDENT_AND_TEACHER_INDEXED_SOURCE_TEXT_VERIFIED; FULL_PDF_BINARY_AND_ALL_SOURCE_TASKS_NOT_VERIFIED",
+      "stageA": "TARGETED_PAINTING_SOURCE_EXCERPT_ALIGNED_ONLY"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
@@ -182,13 +191,32 @@
       "notEquivalentTo": ".NET compilation, runtime Practice generation, academic human signoff, persistent grading or authenticated two-school testing"
     },
     "finalCandidateExactShaCI": "NOT_VERIFIED",
-    "sourcePdfIndependentReview": "NOT_RUN_FULL_ORIGINAL_PDFS"
+    "sourcePdfIndependentReview": "NOT_RUN_FULL_ORIGINAL_PDFS",
+    "sourcePaintingV2": {
+      "status": "SOURCE_EXCERPT_ALIGNED_AND_COURSE_CODE_COMMITTED",
+      "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/AllSystemsGo-original-source-task-review-v2.md",
+      "sourcePdfBytesIndependentlyVerified": false,
+      "fullOriginalStudentTeacherPagesReviewed": false,
+      "mathematicalInverseCheck": "3x3_det_10_AND_A_TIMES_INVERSE_EQUALS_IDENTITY_INDEPENDENT_ORACLE",
+      "exampleSolution": [
+        12,
+        2,
+        6
+      ],
+      "negativeBoundary": "Altered third total 50 yields negative paint price; invertible system remains mathematically consistent",
+      "newCSharpTest": "AllSystemsGoPaintingReceiptsHaveVerifiedInverseAndContextualBoundaries",
+      "latestHeadDotnetTest": "NOT_YET_VERIFIED",
+      "authenticatedRuntime": "NOT_RUN",
+      "humanAcademicApproval": false,
+      "sharedVersionMaterialization": "PENDING_584",
+      "release": "NO_GO"
+    }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
     "practiceComplete": "0/2 certified",
     "academicAccepted": "0/2",
-    "releaseCandidate": "BLOCKED_BY_INTEGRATION_OWNER",
+    "releaseCandidate": "BLOCKED_BY_INTEGRATION_AND_UNAPPROVED_V2",
     "merged": false,
     "deployed": false,
     "gateIssues": [
