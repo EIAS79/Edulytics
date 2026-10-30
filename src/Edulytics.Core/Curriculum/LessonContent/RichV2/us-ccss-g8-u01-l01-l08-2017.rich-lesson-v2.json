@@ -1110,6 +1110,11 @@
         "Source-aligned activity 5.3: create a segment, transform both endpoints by the same rigid rule, and label the image segment; human review of plotting and correct correspondence remains distinct from validating two numeric pairs.",
         "Use transparent grid paper to compare P(3,2), its reflection across the x-axis, its reflection across the y-axis and a 90° counterclockwise rotation about O. Explain how each operation affects signs and coordinate order.",
         "Original task: a student supplies an incorrect image coordinate after a move. Diagnose the error using point-to-point distances or the required center/line. A teacher checks the explanation; numeric pairs can be independently checked.",
+        "Edulytiks activity 5.1: inspect four independent directed point pairs and identify every vector equal to (+4,+2). Both (−3,0)→(1,2) and (−4,−3)→(0,−1) work. A reversed point pair has vector (−4,−2) and cannot take the original triangle T to image U.",
+        "Edulytiks activity 5.2: predict and independently plot the x-axis reflections of (13,10), (13,−20), and (13,570), and the y-axis reflection of R(3,2). Label original and prime image; x-axis keeps x and reverses y, y-axis keeps y and reverses x. The magnitudes are preserved for large values too.",
+        "Edulytiks activity 5.3 original segment-motion construction: take A(1,1), B(3,1). A 90° CCW rotation of A about B gives C(3,−1). Rotating B 90° CCW about A gives D(1,3). A 90° clockwise rotation about the ORIGIN gives E(1,−1) and F(1,−3). Mark the different centers and verify the same segment length 2 each time; do not apply an origin rotation formula to an arbitrary center.",
+        "Source-aligned extension: construct a rigid movement sequence carrying one segment onto another equal-length segment and justify the center, rotation and translation used. A teacher examines the constructed correspondence and explanation.",
+        "Original Edulytiks Cool-down 5.4 (publisher statement not visible): given P(2,1),Q(4,1),R(2,3), decide which of two candidate images is a 90° CCW rotation about O and which is reflection in x=0. Image I: (−1,2),(−1,4),(−3,2). Image II: (−2,1),(−4,1),(−2,3). Identify the rigid rule and justify the coordinate patterns.",
         "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/5/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced."
       ],
       "KeyConcepts": [
@@ -1215,6 +1220,115 @@
                 "2",
                 "-2",
                 "2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "5.1 — select all true translation vectors",
+          "Description": "First-party visual movement-card choices; direction matters. Two pairs implement the vector (+4,+2); justify all choices.",
+          "Rows": [
+            {
+              "Label": "Pair 1",
+              "Cells": [
+                "(−3,0)→(1,2)",
+                "(+4,+2)"
+              ]
+            },
+            {
+              "Label": "Pair 2",
+              "Cells": [
+                "(2,1)→(−2,−1)",
+                "(−4,−2)"
+              ]
+            },
+            {
+              "Label": "Pair 3",
+              "Cells": [
+                "(−4,−3)→(0,−1)",
+                "(+4,+2)"
+              ]
+            },
+            {
+              "Label": "Pair 4",
+              "Cells": [
+                "(1,2)→(2,1)",
+                "(+1,−1)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "5.2 — source-aligned axis reflections with labeled pairs",
+          "Description": "Exact point-coordinate transformations, including large positive/negative y. No claim of publisher applet parity.",
+          "Rows": [
+            {
+              "Label": "point",
+              "Cells": [
+                "P",
+                "Q",
+                "R",
+                "S"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(13,10)",
+                "(13,−20)",
+                "(13,570)",
+                "(3,2)"
+              ]
+            },
+            {
+              "Label": "mirror line",
+              "Cells": [
+                "x-axis",
+                "x-axis",
+                "x-axis",
+                "y-axis"
+              ]
+            },
+            {
+              "Label": "image",
+              "Cells": [
+                "(13,−10)",
+                "(13,20)",
+                "(13,−570)",
+                "(−3,2)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "5.3 — compare 90-degree segment rotations about three centers",
+          "Description": "Original A=(1,1), B=(3,1) has length two. Each rotation preserves length but changes image based on its center.",
+          "Rows": [
+            {
+              "Label": "operation",
+              "Cells": [
+                "CCW around B",
+                "CCW around A",
+                "CW around origin"
+              ]
+            },
+            {
+              "Label": "original target",
+              "Cells": [
+                "A(1,1)",
+                "B(3,1)",
+                "A and B"
+              ]
+            },
+            {
+              "Label": "image",
+              "Cells": [
+                "C(3,−1)",
+                "D(1,3)",
+                "E(1,−1), F(1,−3)"
               ]
             }
           ]
