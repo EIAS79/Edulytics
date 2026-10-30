@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
-  "asOfDate": "2026-10-29",
+  "asOfDate": "2026-10-30",
   "recipient": "SUPERVISOR 2",
   "sourcePairsFetched": 129,
-  "sourceComparedCandidates": 17,
+  "sourceComparedCandidates": 25,
   "sourceRepairedV12": 14,
-  "sourceActivityReviewsOutstanding": 115,
+  "sourceActivityReviewsOutstanding": 107,
   "exactAcceptedPracticeContracts": 0,
   "safety": "Existing ALG1 fail-closed gate remains until actual source-aligned, scored, tenant-safe integration.",
   "sharedRendererNote": "Five new SVGs are route-prepared in the ALG1-only partial, not added to the shared host. Requires Supervisor 2 approval.",
@@ -68,18 +68,31 @@
         "3.1: Notice and Wonder: Dot Plots",
         "3.2: Data Displays"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "numeric data representation",
-        "distribution statistic and graph"
+        "read shifted distribution from two dot plots",
+        "identify histogram bins and quartile definitions",
+        "create and critique three displays; human-scored"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "A [2,2,3,3,4,4,5,5] has median 3.5; B shifted by 5 has median 8.5",
+        "same shape, range 3, centers shifted; using different scales is not evidence of variance"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
@@ -142,18 +155,32 @@
         "6.2: Mystery Operations",
         "6.3: More Spreadsheets!"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "numeric data representation",
-        "distribution statistic and graph"
+        "verify =A2+A4 with integer/fraction/negative inputs",
+        "infer which inputs influence B2 from controlled changes",
+        "live spreadsheet edit and partner exchange; human-scored"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "A2=5,A4=-2 gives B2=3",
+        "A2=-1/2,A4=3/4 gives B2=1/4",
+        "changing A3 alone must not change =A2+A4"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
@@ -458,18 +485,33 @@
         "3.2: Something about 400",
         "3.3: What are the Relationships?"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "linear equations and constraints",
-        "contextual model with units"
+        "table to y=300x, y=x+300, y=x-300, x+y=300",
+        "distinguish constant sum from constant offset",
+        "inverse area xy=48, x>0; human explanation"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "x=2 -> 600 for y=300x",
+        "x=90 ->210 for x+y=300",
+        "x=360 ->60 for y=x-300",
+        "x=4 -> 12 for xy=48"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L04",
@@ -1091,18 +1133,33 @@
         "3.2: Associations in Categorical Data",
         "3.3: Associating Your Own Variables"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "categorical frequency and association",
-        "table interpretation"
+        "correct healthy/exposure column-conditional frequencies",
+        "select reference population to interpret a percentage",
+        "association does not prove causation; segmented bar human-scored"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "16/20=.80, 6/20=.30",
+        "difference 50 percentage points",
+        "10/20=.50 in both groups is no association in sample",
+        "raw 16 vs6 must not be labeled an unconditional causal effect"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L04",
@@ -1333,18 +1390,34 @@
         "3.2: Smartphones",
         "3.3: Boiling Water"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "function notation and graph",
-        "domain and input-output"
+        "interpret P(t) with calendar-year offset",
+        "compare W(5)>W(2), W(12)=W(10)",
+        "graph from discrete checkpoints; human-scored"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "P(10)=53 thousand in baseline year+10",
+        "W5=55>W2=26",
+        "W12=100=W10",
+        "W15=96>W30=70",
+        "W0=18<W30=70"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04",
@@ -1775,18 +1848,33 @@
         "3.3: Multiplying Microbes",
         "3.4: Graphing the Microbes"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "exponential growth or decay",
-        "multiplicative comparison"
+        "2^3 times 2^4 equals 2^7 (not 2^12)",
+        "nonzero a^0=1; zero base excluded",
+        "table and comparative graph for two growth models"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "N(t)=50*2^t: 50,100,200,400,800",
+        "P(t)=20*3^t: 20,60,180,540,1620",
+        "N2=200>P2=180; N3=400<P3=540",
+        "2^7=128; 3^0=1"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L04",
@@ -2287,18 +2375,33 @@
         "3.2: Expanding Squares",
         "3.3: Growing Steps"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "quadratic graph and expression",
-        "geometric area"
+        "n^2, n^2-4, 2n^2+4 for square figures",
+        "n^2+3 pattern and n(n+3) equivalence",
+        "draw non-overlapping cells; human-scored"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "n=3: A9 B5 C22",
+        "n=18: n^2+3=327",
+        "n(n+3) n1..4 =4,10,18,28",
+        "first differences 6,8,10 (not constant)"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L04",
@@ -2691,18 +2794,34 @@
         "3.1: How Many Solutions?",
         "3.2: Finding Pairs of Solutions"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
       "proposedAssessmentFamilies": [
-        "quadratic equation solving",
-        "contextual root interpretation"
+        "(x+2)^2=25 -> x=3 or-7",
+        "3x^2=75 -> +/-5",
+        "(x-2)^2=-1 has no real solution",
+        "factor equation x(x-6)=0 ->0 or6"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "exampleOracles": [
+        "(3+2)^2=25 and(-7+2)^2=25",
+        "3*(5^2)=75 and3*((-5)^2)=75",
+        "(x-2)^2=0 has one distinct real root2",
+        "(x-2)^2=-1 has zero real roots"
+      ],
+      "requiredCases": [
+        "correct",
+        "wrong",
+        "equivalent",
+        "boundary",
+        "malformed",
+        "teacher-only"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L04",
@@ -3209,5 +3328,6 @@
       "requiresSupervisor2Integration": true,
       "existingSafetyGate": "ALG1 FAIL CLOSED"
     }
-  ]
+  ],
+  "v13NewDraftContracts": 8
 }

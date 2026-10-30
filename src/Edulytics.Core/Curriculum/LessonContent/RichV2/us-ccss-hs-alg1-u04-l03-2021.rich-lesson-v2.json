@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u04-l03-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u04-l03-v13-source-task-math-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -11,7 +11,10 @@
         "Learning objective: interpret statements like f(a)>f(b), connect f(x) to ordered pairs (x,f(x)) and sketch a possible graph consistent with given values and inequalities. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 3, https://im.kendallhunt.com/HS/teachers/1/4/3/preparation.html (CC BY 4.0). The source uses a drone's changing height, comparing point values and sketching function graphs.",
         "Original first-party drone model (time t in seconds, height h in metres) is piecewise: h(t)=3t for 0≤t≤2; h(t)=6 for2<t≤5; h(t)=6−2(t−5) for5<t≤8. The drone rises to6 metres, remains constant, then descends to ground at t=8. Domain [0,8], range [0,6]. Each t has one height even when several times share height 6.",
         "Interpret specific statements: h(0)=0, h(2)=6, h(4)=6, h(6)=4 and h(8)=0. So h(4)>h(6) and h(2)=h(4). The graph points are (0,0),(2,6),(4,6),(6,4),(8,0). A question asking whether h(t)>h(t+1) for all times is false because the drone initially climbs and later levels out.",
-        "Student task: describe values on three labeled time intervals, sketch the original piecewise function from statements, compare at least four input-output pairs, and explain what inequalities imply about the graph. Teacher-scored rubric 0–2 each for input/output interpretation, correct comparisons, coherent drawn graph and domain/time-interval reasoning."
+        "Student task: describe values on three labeled time intervals, sketch the original piecewise function from statements, compare at least four input-output pairs, and explain what inequalities imply about the graph. Teacher-scored rubric 0–2 each for input/output interpretation, correct comparisons, coherent drawn graph and domain/time-interval reasoning.",
+        "V13 source comparison: U4L3 has distinct drone, calendar-year/device-ownership and water-temperature activities. Its teacher goal includes translating function statements into context with correct units and SKETCHING A POSSIBLE GRAPH from given inequalities. The earlier authored drone is sound but does not cover all three modalities. An independent model below avoids inventing real ownership measurements.",
+        "V13 fictional installed-device count P(t), measured in THOUSANDS of installations, with t years since 2020: P(0)=10, P(5)=22, P(10)=53, P(15)=79. Thus P(10)=53 means 53 thousand installations in2030, not 53 people or the year10. Students convert three prose statements into notation and draw possible points; no interpolated values are uniquely determined by a finite table.",
+        "V13 original temperature graph challenge: W(t) is Celsius water temperature t minutes after heating begins. Constraints and one possible fictional solution are W(0)=18, W(2)=26, W(5)=55, W(10)=100, W(12)=100, W(15)=96, W(30)=70, with heat switched off after minute12. Draw a correctly labelled piecewise connected example; explain W(5)>W(2), W(12)=W(10), W(15)>W(30) and W(0)<W(30). These constraints admit many different graphs; no automated grader should require this single polyline."
       ],
       "KeyConcepts": [
         {

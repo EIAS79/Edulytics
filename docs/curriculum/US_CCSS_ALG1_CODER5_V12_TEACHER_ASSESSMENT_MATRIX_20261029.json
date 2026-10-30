@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
-  "asOfDate": "2026-10-29",
+  "asOfDate": "2026-10-30",
   "narrativeRubrics": 132,
-  "structuredDrafts": 17,
-  "unstructuredPending": 115,
+  "structuredDrafts": 25,
+  "unstructuredPending": 107,
   "approvedRubrics": 0,
   "actualTeacherGrades": 0,
   "feedbackPersisted": 0,
@@ -42,13 +42,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
       "title": "A Gallery of Data",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Teacher-scored original gallery assessment rubric (0-2 each, total 8): accurate raw-data-to-display mapping, mathematically correct measures of center/spread, evidence-based comparison of two displays, and reasoned critique of labels/scale/limitations. A complete answer earns 2, partly supported 1, missing or wrong 0. The student-created displays and explanations are human-judged; do not treat a single numeric response as completing this lesson."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "accurate original dot plots, histogram and box plot",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "same-scale center/shape comparisons",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "three evidence-backed gallery comments",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "honest student data provenance",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -151,13 +176,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
       "title": "Mystery Computations",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Teacher-scored rubric: 0–2 each for entering or describing a valid formula, using at least three contrasting trials, explaining the inferred relationship, and checking a counterexample (8 total). Unobserved clicking or partner discussion must never receive synthetic automatic credit."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "optional prerequisite/teacher assignment",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "live cell-reference formula validated with three trials",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "correct mixed-sign and fractional probe",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "partner rule discovery without fabricated technology evidence",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -409,13 +459,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L03",
       "title": "Writing Equations to Model Relationships (Part 2)",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Student activity: work from an unknown table, propose and reject candidate equations, extend it to an unlisted input, construct a matching word problem, and critique a partner's table or graph for units and restrictions. Teacher-scored rubric 0–2 points each for table differences/products, correct equation and domain, checked predictions, and valid contextual explanation (maximum 8). Avoid auto-grading a unique formula as the only possible mathematical description of finitely many points."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "four correctly matched table rules and units",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "precise constant-sum/offset/multiplier distinctions",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "inverse area and prize model with domain",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "peer justification and counterexample",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -862,13 +937,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L03",
       "title": "Associations in Categorical Data",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Student task: create a labelled pair of side-by-side bar representations and compare row percentages, design a 'no association' table and critique a claim of causation. Teacher-scored rubric 0–2 each for accurate conditional frequencies, valid comparison, appropriate no-association example and careful association-versus-causation language."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "row/column denominators and conditional relative frequencies",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "credible association-vs-no-association contrast",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "two labelled segmented bars",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "causation/sampling limitation and independent-variable design",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -1076,13 +1176,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L03",
       "title": "Interpreting & Using Function Notation",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Student task: describe values on three labeled time intervals, sketch the original piecewise function from statements, compare at least four input-output pairs, and explain what inequalities imply about the graph. Teacher-scored rubric 0–2 each for input/output interpretation, correct comparisons, coherent drawn graph and domain/time-interval reasoning."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "correct interpretation of named input/output and units",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "comparison with same named function and different contexts",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "student-generated constraints-to-graph sketch",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "context-sensitive domains and peer justification",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -1408,13 +1533,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
       "title": "Representing Exponential Growth",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Student task: create a labelled table and graph of integer-step readings, match a graph to a multiplication pattern, explain why b>1 describes growth for positive a and derive a new model for a different starting value. Teacher-scored rubric 0–2 for table/graph, expression, growth-factor and initial-value interpretation, and justification of exponent properties."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "positive base zero-exponent and exponent-rule reasoning",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "two different growth tables with initial values",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "two actual labelled discrete graphs",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "growth factor and contextual meaning of a,b",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -1787,13 +1937,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
       "title": "Building Quadratic Functions from Geometric Patterns",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Student activity: draw two different decompositions of the same rectangle, explain why formulas agree for all permitted n rather than only sample values, graph first four values and critique a mistaken n²+4 area expression that omits the four columns' variable height. Teacher-scored rubric0–2 for complete diagram, equivalence proof, accurate table and domain interpretation."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "correct square-area expressions and domains",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "first-party expanding square diagrams and step counts",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "geometric step rectangles and equivalent algebra",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "counterexample refuting linearity with differences",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
@@ -2163,13 +2338,38 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L03",
       "title": "Solving Quadratic Equations by Reasoning",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
       "originalNarrativeRubric": [
         "Student task: solve at least one equation from each 0/1/2-real-root category by reasoning, show actual substitutions and explain a wrong solution that keeps only the positive branch. Teacher-scored rubric0–2 each for correct possibilities, both-square-root logic, verification and full explanation."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "C1",
+          "name": "0,1,2 real-root equation classification",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C2",
+          "name": "both sign branches after squaring",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C3",
+          "name": "explicit substitution for each candidate",
+          "min": 0,
+          "max": 2
+        },
+        {
+          "id": "C4",
+          "name": "structure-first reasoning before procedures",
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
