@@ -1410,7 +1410,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
             "supporting.trigonometry.core",
             "HS_PRINCIPAL_INVERSE",
-            ["trig.principal_inverse"],
+            ["trig.principal_inverse", "trig.principal_inverse_source_branches"],
             "USCCSS_HS_SHARED_INTEGRATION_PENDING",
             "INTEGRATION_PENDING",
             Version);
