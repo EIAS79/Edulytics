@@ -28,7 +28,7 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
         Assert.Equal("Fourth Courses", b.GetProperty("Pathway").GetString());
         Assert.Equal("CCSSM-2010", b.GetProperty("VersionCode").GetString());
         Assert.Single(b.GetProperty("Units").EnumerateArray());
-        Assert.Equal("us-ccss-hs-adv-alg-func-2lesson-teaching-v2",
+        Assert.Equal("us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
             p.GetProperty("contentVersion").GetString());
 
         var expected = new[] { Prefix + "L01", Prefix + "L02" };
@@ -47,7 +47,7 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
             entries[1].GetProperty("sourceSha256").GetString());
         Assert.Equal("9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
             entries[0].GetProperty("canonicalBodySha256").GetString());
-        Assert.Equal("f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
+        Assert.Equal("d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c",
             entries[1].GetProperty("canonicalBodySha256").GetString());
         Assert.All(entries, x => Assert.Single(x.GetProperty("translations").EnumerateArray()));
     }
@@ -77,6 +77,13 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
         Assert.Contains("log₄3=ln3/ln4", second.GetProperty("workedExamples").GetString()!);
         Assert.Contains("log₂(x−3)=1 requires x>3", second.GetProperty("workedExamples").GetString()!);
         Assert.Contains("log_b(x+y)", second.GetProperty("commonMistakes").GetString()!);
+        Assert.Contains("number-line reasoning without a logarithm button",
+            second.GetProperty("workedExamples").GetString()!);
+        Assert.Contains("log₂(x)<log₃(x) is NOT true for every x>0",
+            second.GetProperty("workedExamples").GetString()!);
+        Assert.Contains("0<x<1, x=1, and x>1",
+            second.GetProperty("stepByStepSolutions").GetString()!);
+
     }
 
     [Fact]
@@ -194,6 +201,33 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSContentAndPracticeTests
         Assert.False(ValidRealLog(2, 0));
         Assert.False(ValidRealLog(2, -1));
         Assert.True(ValidRealLog(0.5, 4));
+    }
+
+
+    [Fact]
+    public void SourceLogLogicNumberLineAndCrossBaseClaimHaveIndependentWitnesses()
+    {
+        var baseThree = new[] { 1d / 9d, 1d / 3d, 1d, 3d, 9d };
+        var expectedExponents = new[] { -2, -1, 0, 1, 2 };
+        for (var i = 0; i < baseThree.Length; i++)
+        {
+            Assert.InRange(Math.Abs(Math.Pow(3, expectedExponents[i]) - baseThree[i]), 0, 1e-12);
+            Assert.InRange(Math.Abs(Math.Log(baseThree[i], 3) - expectedExponents[i]), 0, 1e-12);
+            if (i > 0)
+                Assert.True(baseThree[i - 1] < baseThree[i]);
+        }
+        Assert.True(Math.Log(3, 3) < Math.Log(5, 3));
+        Assert.True(Math.Log(5, 3) < Math.Log(9, 3));
+
+        // The universal inequality log_2(x) < log_3(x) is false:
+        // above 1 it reverses, at 1 it is equal, below 1 it holds.
+        Assert.True(Math.Log(9, 2) > Math.Log(9, 3));
+        Assert.Equal(0, Math.Log(1, 2));
+        Assert.Equal(0, Math.Log(1, 3));
+        Assert.True(Math.Log(1d / 9d, 2) < Math.Log(1d / 9d, 3));
+        Assert.True(Math.Log(9, 2) > 3);
+        Assert.True(Math.Log(1d / 9d, 2) < -3);
+        Assert.Equal(-2, Math.Log(1d / 9d, 3), 12);
     }
 
     [Fact]
