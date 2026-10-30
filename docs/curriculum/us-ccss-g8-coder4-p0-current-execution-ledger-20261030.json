@@ -20,7 +20,8 @@
     "sourceActivitySpotReviewedLessons": 44,
     "fullAcademicSourceParityAcceptedLessons": 0,
     "authenticatedSvgRenderedLessons": 0,
-    "teacherScoredLessons": 0
+    "teacherScoredLessons": 0,
+    "currentBlockedLessons": 1
   },
   "rows": [
     {
@@ -49,7 +50,17 @@
         "AUTHORITATIVE_STANDARDS_ROLE_OWNER_APPROVAL_PENDING",
         "LESSON_EXACT_AUTHENTICATED_PRACTICE_AND_TWO_SCHOOL_DATABASE_VERIFICATION_REQUIRED"
       ],
-      "v13SourceSpotCheck": "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json"
+      "v13SourceSpotCheck": "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json",
+      "latestSequentialABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
+      "lessonClosureStatus": "BLOCKED",
+      "blockingOwners": [
+        "Supervisor 2 / independent academic standards owner",
+        "Supervisor 2 / shared renderer and Practice integration"
+      ],
+      "checkpointLessonFixCommit": "69c034259914a5905fdbbbfd22c991c4ca98d86c",
+      "checkpointTestCorrectionCommit": "4d46717c9b4733205f5883f6cbc6dc46aa6554a5",
+      "sourceCooldownDisposition": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED; TEACHER_RUNTIME_NOT_INTEGRATED",
+      "sequentialAdvanceAllowed": false
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
@@ -3440,5 +3451,13 @@
         "LESSON_EXACT_AUTHENTICATED_PRACTICE_AND_TWO_SCHOOL_DATABASE_VERIFICATION_REQUIRED"
       ]
     }
-  ]
+  ],
+  "currentSequentialABCCursor": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "status": "BLOCKED",
+    "checkpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
+    "blockerOwner": "Supervisor 2",
+    "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+    "advanceAllowed": false
+  }
 }
