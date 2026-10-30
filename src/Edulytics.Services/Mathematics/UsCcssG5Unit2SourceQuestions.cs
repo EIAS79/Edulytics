@@ -86,6 +86,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("A rectangle is 3 units long and 1/2 unit high. What is its area?","1 1/2 square units","6 square units","2/3 square unit"),
                 new("A rectangle is 4 units long and 1/2 unit high. What is its area?","2 square units","8 square units","1/8 square unit")
             ],
+                        ["usccss.g5.u02.l10.area_whole_by_nonunit_fraction"]=[
+                new("The source rectangle is 4 units long and 2/3 unit high. What exact area?","8/3 square units","8 square units","4/6 square unit"),
+                new("The source rectangle is 4 units long and 3/4 unit high. What area?","3 square units","12 square units","16/3 square units"),
+                new("The source rectangle is 4 units long and 3/5 unit high. What area?","12/5 square units","3 square units","20/3 square units"),
+                new("The shaded rectangle is 3 units long and 2/3 unit high. What area?","2 square units","9/2 square units","2/9 square unit"),
+                new("Source figure X is 3 units long and 4/5 unit high. What area?","12/5 square units","15/4 square units","4/15 square unit"),
+                new("Source figure Y is 5 units long and 3/4 unit high. What area?","15/4 square units","12/5 square units","20/3 square units")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

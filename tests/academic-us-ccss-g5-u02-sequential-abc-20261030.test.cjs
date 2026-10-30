@@ -48,4 +48,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L08','usccss.g5.u02.l08.nonunit_fraction_of
 test('G5 U02 L09 source fraction geometry plus teacher models',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L09','usccss.g5.u02.l09.area_whole_by_unit_fraction',["3 square units","2 square units","1 1/2 square units","1/2 square unit"],["6 1/2 square units","18 square units"]);
 });
+test('G5 U02 L10 original fractional area products and teacher diagrams',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L10','usccss.g5.u02.l10.area_whole_by_nonunit_fraction',["8/3 square units","3 square units","12/5 square units","2 square units"],["8 square units","12 square units"]);
+});
 // NEXT_LESSON_TEST
