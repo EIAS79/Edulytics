@@ -72,3 +72,32 @@ test('manifest and source reasoning rubrics are fail-closed', { skip: !fixture }
   }
   for(const flag of Object.values(rubrics.releaseGates)) assert.equal(flag,false);
 });
+test('original painting task: exact inverse, receipt checks and negative-price boundary', () => {
+  const paint = [[2,0,1],[1,4,0],[0,2,1]];
+  const numerator = [[4,2,-4],[-1,2,1],[2,-4,8]];
+  assert.ok(I(paint, numerator, 10));
+  assert.deepEqual(mul(paint, [[12],[2],[6]]).flat(), [30,20,10]);
+  assert.deepEqual(mul(paint, [[-4],[6],[38]]).flat(), [30,20,50]);
+  assert.notEqual(2*12+2,30); // Wrong first-receipt item.
+  if (fixture) {
+    const scenario = fixture.sourceBoundScenarios.find(x=>x.scenarioId==='MVP-A2-10.6H-PAINT-SYSTEM');
+    assert.ok(scenario);
+    assert.deepEqual(scenario.representation.matrix, paint);
+    assert.deepEqual(scenario.expected.prices, [12,2,6]);
+    assert.equal(scenario.expected.determinant,10);
+  }
+});
+test('original log number-line task: exact powers and changing cross-base order', () => {
+  const args=[1/9,1/3,1,3,9], powers=[-2,-1,0,1,2];
+  args.forEach((v,i)=>assert.ok(eq(3**powers[i],v)));
+  assert.ok(Math.log(5)/Math.log(3)>1 && Math.log(5)/Math.log(3)<2);
+  assert.ok(Math.log(9)/Math.log(2)>Math.log(9)/Math.log(3));
+  assert.ok(Math.log(1/9)/Math.log(2)<Math.log(1/9)/Math.log(3));
+  assert.ok(eq(Math.log(1)/Math.log(2),Math.log(1)/Math.log(3)));
+  if (fixture) {
+    const scenario = fixture.sourceBoundScenarios.find(x=>x.scenarioId==='MVP-M3-2.1-LOG-NUMBER-LINE');
+    assert.ok(scenario);
+    assert.deepEqual(scenario.representation.numberLineExponents,powers);
+    assert.equal(scenario.expected.crossBaseUniversalClaim,false);
+  }
+});
