@@ -57,7 +57,7 @@ test('U04 L07 source summary sodium-22 function, table, and boundary checks',()=
  assert.match(w,/exponential function f\(t\)=4\*\(1\/2\)\^\(t\/3\)/);
  assert.match(w,/input t is elapsed years/);
  assert.match(w,/output f\(t\) is the remaining sodium-22 mass in nanograms/);
- const sodium=years=>4*Math.pow(.5,years\/3);
+ const sodium=years=>4*Math.pow(.5,years/3);
  for(const [years,ng] of [[0,4],[3,2],[6,1],[9,.5],[24,.015625]])near(sodium(years),ng,1e-12);
  near(sodium(1),3.174802103936399,1e-12);
  assert.ok(sodium(23)>.015625&&sodium(25)<.015625);
