@@ -8,11 +8,11 @@
       "CultureCode": "en",
       "Title": "Area Situations",
       "ExplanationParagraphs": [
-        "Goal: solve area situations involving a whole side length and a fractional or mixed-number side length, and identify what extra information is needed to solve an information-gap problem. This source activity is not a routine worksheet of complete measurements: partners must formulate questions for the missing dimension and explain why.",
-        "Warm-up: compare (3/2)×10 and 3×(10÷2) using unit-area reasoning; explain why 15 square units results even when expressions group the numbers differently. Contrast rearrangement of factors with incorrectly changing an area's units.",
-        "Activity 1 — original information gap: Student A sees a rectangular art panel 4 feet high and is told only that its width is greater than seven feet. Student B privately holds a data card stating its exact width is 7 1/2 feet. The learner with the problem card must ASK for the missing width, state why it is needed, and only then compute 4×7 1/2=30 square feet. Before requesting it, discuss which answers are impossible to determine uniquely.",
-        "Activity 2 — swap roles with a second original case: area is 15 3/4 square feet and one side is 3 feet. Ask for or infer the remaining side using 15 3/4 ÷ 3 = 5 1/4 feet, while distinguishing the requested linear side from the given square-foot area. Require separate visual or verbal representations of the area partition and the unknown side.",
-        "Teacher-only assessment: the source's information-gap structure includes asking precise follow-up questions, explaining necessity and revising questions. A final area or side length is numerically checkable once all dimensions are supplied, but students cannot be graded as completing the original social/mathematical communication task merely by entering a numeric result. No publisher card graphics or gated answer keys reproduced."
+        "Goal: solve original information-gap rectangular-area problems by asking an informed partner for the necessary relationships, and solve optional whole-number-by-fraction missing-factor equations. The communication protocol is essential; a single given dimension is not automatically sufficient.",
+        "Warm-up — Number Talk: calculate 3×(10÷2)=15, (3/2)×10=15, (14/7)×10=20, and 14×(10/7)=20. Explain why dividing first by seven makes the last product manageable without changing the whole.",
+        "Activity 1 — Info Gap: Area source cards: one learner has a problem card, another has a private data card and must not show it. Learners work on two cases, switch roles, and may need successive questions to obtain a relationship between sides rather than being directly handed the missing width. Teacher narrative mentions a paper towel and a corn field, but the actual original card dimensions have NOT been inspected. Do not claim the previous first-party 4×7 1/2 art-panel or 15 3/4÷3 examples are original publisher cards. Use those transparently as additional Edulytiks practice while preserving the essential ask/explain/revise/derive protocol.",
+        "Activity 2 — OPTIONAL Fill in the Blank from public Student Facing teacher lesson: 1/3×18=6; (7/9)×3=21/9; (1/15)×30=2; 9×6 2/3=60; 14 99/100×10=149 9/10; 7 3/5×6=45 3/5; and 4×6 9/10=27 3/5. Learners must identify whether the missing value is a factor or product and explain equivalent grouping.",
+        "Teacher/source boundary: source HTML verifies warm-up, info-gap procedure and all seven optional equations; original card blackline master, exact publisher figures, separate Student Task PDF, teacher responses and protected Cool-down remain NOT_VERIFIED. Teacher checks the learner's actual questions, data-relationship reasoning and role-switch dialogue; arithmetic alone is not completion."
       ],
       "KeyConcepts": [
         {
@@ -36,19 +36,20 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Ask before calculating",
-          "Question": "An art panel has known height 4 feet, but its width is not supplied. Can you find a unique area?",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Info Gap source protocol: no unverified original numbers",
+          "Question": "A student has a rectangular area question without the width; a partner holds relational data, not necessarily the width itself. How should the student proceed?",
+          "Method": "Describe the source's real inquiry flow before computing any chosen first-party numeric example.",
           "Steps": [
-            "Identify the known 4-foot height and the missing perpendicular width.",
-            "Explain how two different widths, such as 6 and 8 feet, lead to different areas.",
-            "Ask the partner holding the measurement for the exact width before calculating."
+            "Identify that both perpendicular lengths or equivalent length relationship and one dimension are needed.",
+            "Ask the data-card holder what relation or dimension they know and why it matters.",
+            "Use the relationship to infer the missing side, then compute area and square units.",
+            "Repeat with roles reversed on the second card; teacher checks precision of questions and responses."
           ],
-          "Answer": "No unique area yet; request the panel's width.",
-          "Check": "Possible areas 24 or 32 square feet show why the missing measurement matters."
+          "Answer": "Request the missing relationship and justify it before calculating; no uniquely published width can be claimed without inspecting the original card.",
+          "Check": "Original source teacher HTML describes a paper towel/corn field and partner data card, not the invented first-party art panel dimensions."
         },
         {
-          "Title": "Use the missing width",
+          "Title": "First-party extension only: 4×7 1/2 art panel (NOT source info-gap card)",
           "Question": "The art panel is 4 feet high and its partner reports a width of 7 1/2 feet. Find its area.",
           "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
           "Steps": [
@@ -60,7 +61,7 @@
           "Check": "4×(15/2)=60/2=30 square feet."
         },
         {
-          "Title": "Find an unknown width",
+          "Title": "First-party extension only: infer 5 1/4 from 15 3/4÷3",
           "Question": "A panel has area 15 3/4 square feet and height 3 feet. Find its width.",
           "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
           "Steps": [
@@ -70,6 +71,18 @@
           ],
           "Answer": "5 1/4 feet.",
           "Check": "3 feet×5 1/4 feet=15 3/4 square feet."
+        },
+        {
+          "Title": "Original OPTIONAL Fill in the Blank sample — missing factor and mixed products",
+          "Question": "Solve source equations 7/9×?=21/9 and 1/15×?=2; also find 9×6 2/3.",
+          "Method": "Use a common nonzero denominator and inverse multiplication before evaluating mixed-number products.",
+          "Steps": [
+            "7/9×?=21/9 gives 7×?=21, so ?=3.",
+            "1/15×?=2 gives ?=30.",
+            "9×6 2/3=9×(20/3)=60."
+          ],
+          "Answer": "Missing factors 3 and 30; product 60.",
+          "Check": "7/9×3=21/9, 30/15=2, and 9×20/3=60."
         }
       ],
       "CommonMistakes": [
@@ -82,13 +95,18 @@
           "Mistake": "Report square feet for a side length",
           "WhyWrong": "The result of area divided by a length has linear units, not square units.",
           "Correction": "Keep the unit on every quantity and cancel area units against the known side length."
+        },
+        {
+          "Mistake": "Present invented art-panel dimensions as the original Info Gap: Area blackline cards",
+          "WhyWrong": "Public source HTML documents the protocol, paper towel and corn field, not the unavailable card measurements or an automatic exact-width disclosure.",
+          "Correction": "Label Edulytiks art-panel values FIRST_PARTY_EXTENSION; preserve source's progressive question/data relationship and role switch, with human assessment."
         }
       ],
       "SummaryPoints": [
-        "An information-gap problem requires selecting and requesting mathematically necessary data.",
-        "After dimensions are known, area is the product of two perpendicular side lengths in square units.",
-        "Question quality, partner dialogue and representation are teacher-assessed; do not auto-mark them by numeric area.",
-        "Public IM K–5 Grade 5, 2021 first edition, Unit 2 Lesson 14: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-14/lesson.html. First-party authored mathematical examples. Restricted original Student Response, task-card images and Cool-down not independently checked; per-asset rights not inferred from page license."
+        "Original warm-up gives 15,15,20,20 by explaining equivalent division/multiplication.",
+        "Info Gap: Area requires a concealed partner data card, missing relationship, precise follow-up questions and role switch; uninspected card numbers are NOT published source facts.",
+        "Optional source Fill in the Blank uses seven equations with missing factors and fraction/mixed-number products; student should justify the solution.",
+        "Source evidence: 2021 public teacher lesson/preparation Student Facing HTML; blackline master, Student Task PDF and gated content NOT_VERIFIED."
       ],
       "Visuals": [
         {
@@ -125,6 +143,37 @@
               ]
             }
           ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original OPTIONAL fill-in-blank answers",
+          "Description": "Source task equations from public teacher Student Facing HTML; not restricted card materials.",
+          "Rows": [
+            {
+              "Label": "Equation group",
+              "Cells": [
+                "1/3×18",
+                "7/9×?=21/9",
+                "1/15×?=2",
+                "9×6 2/3",
+                "14 99/100×10",
+                "7 3/5×6",
+                "4×6 9/10"
+              ]
+            },
+            {
+              "Label": "Answer",
+              "Cells": [
+                "6",
+                "3",
+                "30",
+                "60",
+                "149 9/10",
+                "45 3/5",
+                "27 3/5"
+              ]
+            }
+          ]
         }
       ],
       "Videos": []
@@ -134,11 +183,11 @@
       "CultureCode": "en",
       "Title": "Multiply More Fractions",
       "ExplanationParagraphs": [
-        "Goal: use mixed-number multiplication and the properties of operations to solve area situations under linked, use-once number constraints. The original source requires assigning numbers to several contexts, revising choices, and distinguishing square units from linear side lengths.",
-        "Warm-up: use decomposition and compensation to compare 7×(2+3/5)=14+21/5 with 7×(3−2/5)=21−14/5. Discuss why two strategies can be equivalent and why the final units depend on what the factors represent.",
-        "Activity 1 — first-party number bank: use the six entries 2, 3, 4, 6, 6 1/2 and 6 3/4 each exactly once as side lengths for three rectangular panels. The panels have target areas 18, 13 and 27 square feet. Match 3×6=18, 2×6 1/2=13 and 4×6 3/4=27, providing a reason all six entries were used exactly once. Then swap and test alternate candidate pairs, documenting why they fail.",
-        "Activity 2 — equivalent expressions: find 7×3 9/10 efficiently by calculating 7×(4−1/10)=28−7/10=27 3/10, and compare with 7×(3+9/10)=21+63/10. Interpret the full mixed length and fractional strip on a labeled grid.",
-        "Assessment: the source asks for a multi-context constrained assignment, not three unrelated easy products. The exact products and matching constraints may be checked algorithmically, but the process of revising options, explaining unit choices and partner critique remains teacher-assessed. The original digit/measurement cards and any gated materials were not reproduced."
+        "Goal: use the original source's six-number bank EXACTLY ONCE across three related real-world area situations; then match four equivalent expressions and diagrams for 4×5 2/3. The existing unrelated first-party panel bank may be used only as an extension, not substituted for the source task.",
+        "Warm-up — original four number-talk products: 6×3/8=18/8=2 1/4; 6×2 3/8=14 1/4; 7×9/10=6 3/10; 7×3 9/10=27 3/10. Explain the jump from fraction-only to mixed-number multiplication and compensation by subtracting 7×1/10 from 7×4.",
+        "Activity 1 — Multiply Your Way: source number bank 4, 5, 5 1/2, 3, 5 3/4, 2, each used exactly once. A 16 1/2-square-foot rug has sides 3 and 5 1/2 feet; a puzzle is 2 1/2 feet wide, 2 feet long, area 5 square feet; a 23-square-foot whiteboard has side lengths 4 and 5 3/4 feet. These six choices solve the same linked puzzle and must preserve feet versus square feet.",
+        "Activity 2 — Equivalent Expressions: match source diagrams A-D to the same quantity 4×5 2/3=4×17/3=68/3=22 2/3 square units. The four original expressions are (4×5)+(4×2/3), (4×6)−(4×1/3), 4×17/3, and (4×17)÷3. Explain every valid geometry-based grouping; the different diagrams express the same total, not necessarily the same physical subdivision.",
+        "Teacher/source boundary: partner revision, the six-number use-once rule, unit classification and actual diagram-to-expression explanation require teacher review. Public original teacher lesson/preparation and embedded Student Facing HTML compared, but separate Student Task PDF/individual visual rights and protected Cool-down NOT_VERIFIED. Prior first-party 18/13/27 panel exercise is a supplemental option only."
       ],
       "KeyConcepts": [
         {
@@ -162,31 +211,33 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Complete a constrained area assignment",
-          "Question": "Use 2,3,4,6,6 1/2,6 3/4 once each to make three rectangular areas 18,13,27 square feet.",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Original six-number use-once bank",
+          "Question": "Use 4, 5, 5 1/2, 3, 5 3/4, 2 exactly once to complete rug 16 1/2 ft², puzzle width 2 1/2 ft, whiteboard 23 ft².",
+          "Method": "Constrain the area products and each available slot; check all six bank values are consumed once.",
           "Steps": [
-            "Try whole-number factors for target 18: 3×6=18.",
-            "For target 13, select 2×6 1/2=13.",
-            "Use remaining 4 and 6 3/4 for target 27, then verify all six entries were consumed once."
+            "Rug length/width: 3×5 1/2=16 1/2 square feet.",
+            "Puzzle length 2 ft with fixed width 2 1/2 ft, so area=5 ft²; the bank contributes 2 and 5.",
+            "Whiteboard side lengths 4 ft and 5 3/4 ft, giving 23 ft².",
+            "Confirm 3,5 1/2,2,5,4,5 3/4 each appears once and every linear/area unit is correct."
           ],
-          "Answer": "18: 3×6; 13: 2×6 1/2; 27: 4×6 3/4.",
-          "Check": "Products 18,13,27 hold and the used lengths are exactly the entire six-value bank."
+          "Answer": "Rug: 3 ft, 5 1/2 ft; puzzle: 2-ft length, 5-ft² area; whiteboard: 4 ft, 5 3/4 ft.",
+          "Check": "3×5 1/2=16 1/2; 2×2 1/2=5; 4×5 3/4=23."
         },
         {
-          "Title": "Multiply by a mixed number",
-          "Question": "Calculate 4×6 3/4 square feet for a panel.",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Original Equivalent Expressions — 4×5 2/3",
+          "Question": "Evaluate the original product using four source expressions.",
+          "Method": "Use addition, subtract from six, improper thirds, or divide integer product by three.",
           "Steps": [
-            "Split 6 3/4 into 6 and 3/4.",
-            "Calculate whole section 4×6=24.",
-            "Calculate fractional section 4×3/4=3; add."
+            "4×(5+2/3)=20+8/3=68/3.",
+            "4×(6−1/3)=24−4/3=68/3.",
+            "4×17/3=68/3.",
+            "(4×17)÷3=68/3."
           ],
-          "Answer": "27 square feet.",
-          "Check": "4×27/4=27."
+          "Answer": "68/3=22 2/3 square units, in all four cases.",
+          "Check": "The expression corresponds to four unit-height rows across five and two-thirds units."
         },
         {
-          "Title": "Choose a compensation strategy",
+          "Title": "First-party extension only: 7×3 9/10 compensation (source warm-up)",
           "Question": "Find 7×3 9/10 exactly.",
           "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
           "Steps": [
@@ -211,39 +262,81 @@
         }
       ],
       "SummaryPoints": [
-        "Mixed-number multiplication supports both decomposition and compensation.",
-        "Constrained assignments require global checking of every target and use-once rule.",
-        "The source's revision and peer explanation are teacher-assessed, not a single fixed number.",
-        "Public IM K–5 Grade 5, 2021 first edition, Unit 2 Lesson 15: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-15/lesson.html. First-party authored mathematical examples. Restricted original Student Response, task-card images and Cool-down not independently checked; per-asset rights not inferred from page license."
+        "Original constrained bank uses six values 4,5,5 1/2,3,5 3/4,2 exactly once for rug, puzzle and whiteboard (area 16 1/2,5,23).",
+        "Original 4×5 2/3=68/3 can be shown by four distinct source equations, and source diagrams A–D need teacher-scored correspondence.",
+        "Fractional dimensions are feet; resulting area is square feet. Review each learner's revisions and justification.",
+        "Source compared: 2021 first-edition teacher lesson/preparation Student Facing. Original PDF, source image rights, protected Cool-down NOT_VERIFIED."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Linked rectangle assignment",
-          "Description": "Original table for a use-each-side-once matching problem with unit-aware products.",
+          "Title": "Source rug, puzzle and whiteboard constraints",
+          "Description": "First-party table, not original publisher pictures.",
           "Rows": [
             {
-              "Label": "Panel area",
+              "Label": "Item",
               "Cells": [
-                "18 square feet",
-                "13 square feet",
-                "27 square feet"
+                "Rug",
+                "Puzzle",
+                "Whiteboard"
               ]
             },
             {
-              "Label": "First side",
+              "Label": "Dimensions (ft)",
               "Cells": [
-                "3 feet",
-                "2 feet",
-                "4 feet"
+                "3 × 5 1/2",
+                "2 × 2 1/2",
+                "4 × 5 3/4"
               ]
             },
             {
-              "Label": "Second side",
+              "Label": "Area (ft²)",
               "Cells": [
-                "6 feet",
-                "6 1/2 feet",
-                "6 3/4 feet"
+                "16 1/2",
+                "5",
+                "23"
+              ]
+            },
+            {
+              "Label": "Bank entries",
+              "Cells": [
+                "3, 5 1/2",
+                "2, 5",
+                "4, 5 3/4"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Four original equivalent expressions for area 68/3",
+          "Description": "First-party algebra crosswalk for teacher source diagrams A–D; not a verified one-to-one diagram/card match.",
+          "Rows": [
+            {
+              "Label": "Model",
+              "Cells": [
+                "Distributed",
+                "From six",
+                "Improper fraction",
+                "Division"
+              ]
+            },
+            {
+              "Label": "Expression",
+              "Cells": [
+                "4×5+4×2/3",
+                "4×6−4×1/3",
+                "4×17/3",
+                "(4×17)÷3"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "68/3",
+                "68/3",
+                "68/3",
+                "68/3"
               ]
             }
           ]
@@ -256,11 +349,11 @@
       "CultureCode": "en",
       "Title": "Estimate Products (optional)",
       "ExplanationParagraphs": [
-        "Goal: use bounds and estimates for a whole number times a fraction or mixed number above one to decide which possible rectangle sizes fit within a specified area budget. This optional public source asks for comparisons and defensible choices, not solely exact decimal products.",
-        "Warm-up: discuss potential side lengths for a rectangular garden with a bounded total area and explain why several combinations may fit. If a target is 30 square feet, try 6×4 1/2 and 10×2 3/4 to compare the distance from the limit.",
-        "Activity 1 — original garden material budget: Maya has enough fencing/cover material for an area no greater than 30 square feet. Which proposed rectangles fit the area allowance? A: 6 by 4 3/4 feet; B: 8 by 3 3/4 feet; C: 9 by 3 1/2 feet; D: 10 by 2 2/3 feet. Estimate from nearby integer bounds first, then check A=28 1/2, B=30, C=31 1/2, D=26 2/3. A, B, D fit; C exceeds the allowable area.",
-        "Activity 2 — justify an estimate: explain why 8×3 3/4 is slightly below 8×4 and exactly equals 30 by subtracting 8×1/4=2. Ask students to create two candidate dimensions satisfying a new 36-square-foot threshold and argue which fits using bounding whole-number products and their fractional corrections.",
-        "Assessment: the source's 2021 garden task allows students to choose all fitting rectangles and requires explanation from product estimates, not just numerical multiplication. If the constraint is 'at most', equality is allowed; a numeric grader must respect that boundary and the stated units. Original garden image and protected publisher response are not copied."
+        "Goal: estimate whole-number by mixed-number products, using the source's actual garden with 36-square-foot material limit, then estimate two specific large products and form a value close to 20. This OPTIONAL lesson values magnitude justification more than a fixed result without stated conditions.",
+        "Warm-up — Notice and Wonder: the source presents an unlabeled garden image and asks which lengths could make an area between 30 and 40 square feet. For example 8×4=32, 7×5=35, or 10×3 1/8=31 1/4; explain why a length near 3–4 with a suitable partner dimension can fit the interval. No original photograph is reproduced.",
+        "Activity 1 — Priya's Garden: source target is 36 square feet. Four candidates: A 9×4 2/3=42 square feet (exceeds 36); B 9×3 8/9=35 square feet (one below target); C 12×2 11/12=35 square feet (one below target); D 9×2 2/3=24 square feet (far below target). Under a strict material upper bound B,C,D are within budget; if the task's 'reasonable for her 36-square-foot garden' means close to full use, B and C are the two plausible near-target choices, while D may be too small. Do NOT silently treat all within-budget values as equally reasonable or invent a unique publisher rubric; teacher scores the interpretation and argument.",
+        "Activity 2 — Too High, Too Low, Just About Right: bound 7×12 8/9 = 90 2/9 between 7×12=84 and 7×13=91; estimate 9×4 2/29 = 36 18/29 between 9×4=36 and 37. Explain an integer product just below, just above, and close to each exact value (several answers may be valid). Use digits 2,3,5,6,7 to build a product near 20, e.g. 6×3 2/5=20 2/5 as a nonunique first-party example; justify the magnitude instead of grading one expression as the only answer.",
+        "Teacher/source limitations: source images, original Student Task PDF, answer key and gated Cool-down not verified; open estimate bounds and student's use of 'reasonable' require teacher evaluation. A solely numeric chosen-set grade could incorrectly accept a far-under-budget 24 ft² as the intended 36 ft² garden."
       ],
       "KeyConcepts": [
         {
@@ -284,40 +377,41 @@
       ],
       "WorkedExamples": [
         {
-          "Title": "Evaluate four candidate garden areas",
-          "Question": "Which of A:6×4 3/4, B:8×3 3/4, C:9×3 1/2, D:10×2 2/3 fit an allowance of at most 30 square feet?",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Original Priya's 36-square-foot garden choices",
+          "Question": "Evaluate source candidate areas 9×4 2/3, 9×3 8/9, 12×2 11/12 and 9×2 2/3; which approximate 36 square feet?",
+          "Method": "Use benchmark 9×4=36 and 12×3=36; compare size and justify closeness.",
           "Steps": [
-            "Estimate all four products against 30 using nearby whole numbers.",
-            "Compute A=57/2=28 1/2; B=30; C=63/2=31 1/2.",
-            "Compute D=80/3=26 2/3 and retain those no larger than 30."
+            "A=9×(14/3)=42, too big for a 36-square-foot material limit.",
+            "B=9×(35/9)=35, just below 36.",
+            "C=12×(35/12)=35, just below 36.",
+            "D=9×(8/3)=24, below the limit but much smaller than 36; distinguish budget-eligible from close-to-target."
           ],
-          "Answer": "A, B and D fit; C does not.",
-          "Check": "28 1/2≤30, 30≤30, 31 1/2>30, and 26 2/3≤30."
+          "Answer": "B and C are close to target at 35 ft² each; A is 42 ft², and D is only 24 ft². Teacher judges whether D is 'reasonable' under the intended condition.",
+          "Check": "No unsupported definitive source answer for ambiguous 'reasonable'; if criterion means strictly ≤36, then B, C and D are within budget."
         },
         {
-          "Title": "Estimate by subtracting a fraction",
-          "Question": "Why is 8×3 3/4 exactly 30?",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Bound two source products without rounding away fractions",
+          "Question": "Estimate 7×12 8/9 and 9×4 2/29.",
+          "Method": "Bound the mixed side and compute exact results as an independent check.",
           "Steps": [
-            "Compare 3 3/4 with 4: it is 1/4 smaller.",
-            "Compute 8×4=32.",
-            "Subtract 8×1/4=2 from 32."
+            "7×12=84 and 7×13=91 bound the first value: 7×(12+8/9)=90 2/9.",
+            "9×4=36 and 37 bound the second: 9×(4+2/29)=36 18/29.",
+            "Choose an integer product near each result and explain whether it lies above or below."
           ],
-          "Answer": "30 square feet.",
-          "Check": "8×15/4=30."
+          "Answer": "90 2/9 and 36 18/29; multiple whole-number products may be defensible estimates.",
+          "Check": "84 < 90 2/9 < 91 and 36 < 36 18/29 < 37."
         },
         {
-          "Title": "Find a fitting rectangle",
-          "Question": "Give a rectangle of area no greater than 36 square feet with one mixed fractional side.",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Illustrative digit-choice expression near 20",
+          "Question": "Use source digits 2,3,5,6,7 to build a whole number times mixed number with a value near 20. Give one defensible example.",
+          "Method": "Choose a leading product near 20 and add a small fraction, not an arbitrary unique answer.",
           "Steps": [
-            "Choose side lengths 6 feet and 5 3/4 feet.",
-            "Compute 6×5+6×3/4=30+4 1/2.",
-            "Compare 34 1/2 with the target 36."
+            "Choose six as whole factor and three as mixed-number whole part: base=18.",
+            "Use two fifths as fractional part, making mixed number 3 2/5.",
+            "Compute 6×(3+2/5)=18+12/5=20 2/5."
           ],
-          "Answer": "For example, 6 by 5 3/4 feet, area 34 1/2 square feet.",
-          "Check": "Many choices are possible; teacher checks the chosen dimensions and reasoned area bound."
+          "Answer": "One illustrative choice is 6×3 2/5=20 2/5 (20.4), with several other solutions possible.",
+          "Check": "Digits used are from the supplied list; teacher confirms how source asks pupils to allocate the digits."
         }
       ],
       "CommonMistakes": [
@@ -333,19 +427,19 @@
         }
       ],
       "SummaryPoints": [
-        "Estimate products using neighboring whole-number bounds and fractional correction.",
-        "Check an at-most area allowance with ≤, including equality.",
-        "Defensible alternate dimensions and bounding explanations are teacher-reviewed; exact threshold arithmetic can be automated.",
-        "Public IM K–5 Grade 5, 2021 first edition, Unit 2 Lesson 16: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-16/lesson.html. First-party authored mathematical examples. Restricted original Student Response, task-card images and Cool-down not independently checked; per-asset rights not inferred from page license."
+        "Source Priya garden target is 36 ft², NOT 30. A=42, B=35, C=35, D=24 ft²; distinguish budget ceiling from close-to-target 'reasonable' choice.",
+        "Source estimation includes 7×12 8/9=90 2/9 and 9×4 2/29=36 18/29 and constructing a product near 20 from digit choices.",
+        "Initial estimates and teacher-approved reasoning matter: multiple number products and 'reasonable' justifications are possible.",
+        "Public 2021 teacher lesson/preparation Student Facing HTML compared. Publisher figures, original Student Task PDF, protected Cool-down and original rubric NOT_VERIFIED."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Garden area allowances",
-          "Description": "Original table illustrates exact, below-bound and above-bound cases.",
+          "Title": "Original 36-square-foot garden benchmark",
+          "Description": "First-party numeric comparison; source calls for justification, not a simple number-match auto-grade.",
           "Rows": [
             {
-              "Label": "Option",
+              "Label": "Choice",
               "Cells": [
                 "A",
                 "B",
@@ -356,28 +450,28 @@
             {
               "Label": "Dimensions",
               "Cells": [
-                "6×4 3/4",
-                "8×3 3/4",
-                "9×3 1/2",
-                "10×2 2/3"
+                "9×4 2/3",
+                "9×3 8/9",
+                "12×2 11/12",
+                "9×2 2/3"
               ]
             },
             {
-              "Label": "Area",
+              "Label": "Area ft²",
               "Cells": [
-                "28 1/2",
-                "30",
-                "31 1/2",
-                "26 2/3"
+                "42",
+                "35",
+                "35",
+                "24"
               ]
             },
             {
-              "Label": "At most 30?",
+              "Label": "Compared with 36",
               "Cells": [
-                "Yes",
-                "Yes",
-                "No",
-                "Yes"
+                "Over",
+                "Near below",
+                "Near below",
+                "Far below"
               ]
             }
           ]
@@ -390,11 +484,11 @@
       "CultureCode": "en",
       "Title": "Mosaic Pictures (optional)",
       "ExplanationParagraphs": [
-        "Goal: design and assemble a visual mosaic using congruent rectangular pieces with one side a whole-number length and the other a fraction GREATER THAN ONE, then justify the area of each piece with multiplication. This is a hands-on modeling and art activity; no unique diagram or number is the correct learner product.",
-        "Warm-up: observe or describe a piecework pattern made from assorted geometric shapes. Discuss which shapes can tile a plane without gaps, what measurement system is being used, and why every group's rulers and rectangles must use the same chosen unit. The original publisher's butterfly photograph has its own attribution and is not reused.",
-        "Activity 1 — first-party physical design: using colored paper, cut several identical 3-inch by 1 1/2-inch rectangles. Show 3×(1+1/2)=4 1/2 square inches for each. In a small group, arrange selected rectangles into a mosaic. Some pieces may remain unused; record which were selected and ensure no double-counting of overlapping interiors if reporting the area covered.",
-        "Activity 2 — compare layouts: for example, four nonoverlapping 3-by-1 1/2-inch rectangles cover 4×4 1/2=18 square inches. A learner may instead use six such rectangles and justify 27 square inches; either can be a valid independent mosaic. Describe one piece placement using a grid or accessible coordinate/row description. Discuss how rotation changes orientation but not area.",
-        "Teacher assessment: physical construction and creative layouts require a teacher or peer to inspect or discuss the actual result. Numeric area calculations may be verified, but do not fabricate a unique mosaic answer or substitute an auto-graded multiplication item for the design, measuring and group collaboration. Original image assets and licensed paper patterns are not copied."
+        "Goal: OPTIONAL hands-on collaborative mosaic design with identical paper rectangles where one side is a whole number and the other a mixed length greater than one; justify each piece's square-unit area and estimate MATERIAL COST for the combined design.",
+        "Warm-up — Notice and Wonder: examine source mosaic butterfly attributed to Gordon Johnson/Pixabay and discuss different component shapes, pattern and unit measurement. Source photograph is not reproduced; each student group must share one measurement unit (inches or centimeters) before cutting paper.",
+        "Activity 1 — Create a Mosaic: each member of a group cuts identical rectangles from colored paper, choosing a positive whole-number side and a fraction-greater-than-one side; use a ruler and paper, verify the per-rectangle area with an expression, then collectively arrange selected pieces to make a mosaic on poster paper. An independently authored example is a 3-inch by 1 1/2-inch piece, area 4 1/2 in²; 4 nonoverlapping pieces cover 18 in². Students do NOT need to use all pieces and there is no one correct design.",
+        "Activity 2 — Cost of Mosaic (previous candidate omission): the original source asks the approximate cost for the group's chosen mosaic using the provided materials table: stone $5 per square unit, tile $3 per square unit, glass $2 per square unit. For a first-party four-tile, non-overlapping 18-square-unit mosaic, stone costs $90, tile $54 and glass $36; learners choose a preferred material, estimate appropriate total covered area and explain the bill, including partial pieces and units as necessary. Actual source learner mosaic dimensions are open, so no one fixed price is mandatory.",
+        "Teacher/source boundaries: teacher checks physical cut dimensions and same unit, selected-pieces/no-overlap area, materials and cost expressions, group reasoning and revised peer explanation. Original source Student Task PDF, butterfly asset rights, individual source figures and gated response NOT_VERIFIED. Neither source mosaic image nor unique classroom outcome is fabricated."
       ],
       "KeyConcepts": [
         {
@@ -414,6 +508,12 @@
           "Definition": "Arranging tiles in a new pattern can change the shape of a mosaic without changing the area of the same nonoverlapping pieces.",
           "Rule": "For n disjoint congruent pieces of area A, total covered area is n×A.",
           "Example": "Six 4 1/2-square-inch tiles cover 27 square inches."
+        },
+        {
+          "Title": "Unit-cost scaling for mosaics",
+          "Definition": "A mosaic's material cost depends on the measured total covered area and a chosen price per square unit.",
+          "Rule": "Estimated cost = area in square units × dollars per square unit.",
+          "Example": "An 18-in² mosaic costs $36 using a $2-per-square-unit glass material."
         }
       ],
       "WorkedExamples": [
@@ -430,28 +530,29 @@
           "Check": "3×3/2=9/2 square inches."
         },
         {
-          "Title": "Area covered by four tiles",
-          "Question": "Four identical 3-by-1 1/2-inch rectangles are placed without overlap. What total area is covered?",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Source-based first-party example: four selected rectangles",
+          "Question": "Four nonoverlapping 3×1 1/2-inch rectangles are assembled into a mosaic. What surface area is covered?",
+          "Method": "Multiply the area of each identical piece by the number actually used.",
           "Steps": [
-            "Calculate one tile: 4 1/2 square inches.",
-            "Count four disjoint tiles.",
-            "Multiply 4×4 1/2."
+            "Each piece area=3×1 1/2=4 1/2 square inches.",
+            "Four selected pieces cover 4×4 1/2=18 square inches.",
+            "A source learner's open design could use another count; the four-piece setup is Edulytiks-authored."
           ],
-          "Answer": "18 square inches.",
-          "Check": "Four copies of 9/2 sum to 36/2=18."
+          "Answer": "18 square inches in this illustrative four-piece configuration.",
+          "Check": "If pieces overlap, area covered requires subtracting overlap; if unused, count only included pieces."
         },
         {
-          "Title": "Alter the design while preserving area",
-          "Question": "A class rearranges four identical rectangular tiles without overlap. Does their combined covered area change?",
-          "Method": "Reason from the exact contextual quantities with an original diagram, estimate and equation.",
+          "Title": "Original Cost of Mosaic — first-party worked pricing example",
+          "Question": "Suppose the selected tiles cover 18 square units. Estimate cost with stone $5, tile $3, or glass $2 per square unit.",
+          "Method": "Multiply covered square units by chosen price per square unit.",
           "Steps": [
-            "Confirm each tile still measures 3 by 1 1/2 inches.",
-            "Check that the new design uses all four, with no overlapping interiors.",
-            "Add the same four tile areas independent of orientation."
+            "Stone: 18×$5=$90.",
+            "Tile: 18×$3=$54.",
+            "Glass: 18×$2=$36.",
+            "Name the chosen material, the number of used square units and a defensible approximate total."
           ],
-          "Answer": "No; the combined area remains 18 square inches.",
-          "Check": "Teacher reviews the actual layout for overlaps and missing pieces; arithmetic alone cannot certify the drawn design."
+          "Answer": "Stone $90, tile $54, or glass $36 for the illustrative 18-square-unit mosaic.",
+          "Check": "Original task gives unit prices but actual student design's area can vary; a teacher checks dimensions and material choice."
         }
       ],
       "CommonMistakes": [
@@ -464,13 +565,18 @@
           "Mistake": "Count unused or overlapping pieces as fully covered mosaic area",
           "WhyWrong": "Only the selected, nonoverlapping regions cover distinct area.",
           "Correction": "List included pieces, account for overlaps and let the teacher inspect the assembled work."
+        },
+        {
+          "Mistake": "Ignore the original cost-of-mosaic task or fix one universal final price",
+          "WhyWrong": "The source's second activity includes three material costs and an open design whose area depends on selected rectangles and placement.",
+          "Correction": "Use source $5/$3/$2 price table with student-chosen area and chosen material, record supporting units and teacher-check the constructed design."
         }
       ],
       "SummaryPoints": [
-        "Use equal units and the whole-times-mixed-number area model for rectangular mosaic tiles.",
-        "Several valid artistic mosaics can use the same pieces, and the work may leave pieces unused.",
-        "Physical cutting, arrangement and explanation are teacher-reviewed; there is no unique numeric completion token.",
-        "Public IM K–5 Grade 5, 2021 first edition, Unit 2 Lesson 17: https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-17/lesson.html. First-party authored mathematical examples. Restricted original Student Response, task-card images and Cool-down not independently checked; per-asset rights not inferred from page license."
+        "Students create a mosaic by cutting congruent colored paper rectangles, with one whole-number side and one mixed-number side above one, using a shared unit.",
+        "Source's second activity asks approximate cost per square unit: stone $5, tile $3, glass $2. Multiply actual chosen mosaic area by selected rate.",
+        "For illustration only, four 3×1 1/2-inch tiles cover 18 in² and cost $90/$54/$36 for stone/tile/glass respectively.",
+        "No fixed learner art/design/cost is assumed. Physical work, photographs, source figure rights and protected Cool-down not verified."
       ],
       "Visuals": [
         {
@@ -500,6 +606,37 @@
                 "4 1/2 in²",
                 "18 in²",
                 "27 in²"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Original mosaic material unit costs with illustrative chosen area",
+          "Description": "Original material categories and unit rates; sample 18-square-unit mosaic is Edulytiks-authored, not original learner work.",
+          "Rows": [
+            {
+              "Label": "Material",
+              "Cells": [
+                "Stone",
+                "Tile",
+                "Glass"
+              ]
+            },
+            {
+              "Label": "Source cost / sq unit",
+              "Cells": [
+                "$5",
+                "$3",
+                "$2"
+              ]
+            },
+            {
+              "Label": "Illustrative 18-square-unit total",
+              "Cells": [
+                "$90",
+                "$54",
+                "$36"
               ]
             }
           ]
