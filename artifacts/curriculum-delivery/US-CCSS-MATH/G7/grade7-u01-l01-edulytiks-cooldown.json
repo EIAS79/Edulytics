@@ -2,8 +2,8 @@
   "lessonCode": "PED:US-CCSS-MATH:G7:U01:L01",
   "assessmentType": "EDULYTIKS_ORIGINAL_NOT_PUBLISHER_COOLDOWN",
   "publisherCooldown": "NOT_VERIFIED_GATED",
-  "question": "An original figure has three corresponding lengths 3, 4 and 5. Drawing A has 6, 8 and 10; drawing B has 6, 8 and 9. Decide which is uniformly scaled, explain with all three ratios, and draw a half-sized copy of the original shape preserving angles.",
-  "expected": "A uses factor 2 consistently. B uses unequal factors 2, 2, and 1.8. A half-size copy has corresponding lengths 1.5, 2, and 2.5; preserve the corresponding angles.",
+  "question": "Draw a right triangle ABC with vertices A=(0,0), B=(3,0), C=(0,4). Its perpendicular legs are 3 and 4 units and hypotenuse is 5 units. Candidate A has corresponding side lengths 6,8,10. Candidate B has corresponding lengths 6,8,9. Which candidate is uniformly scaled? Justify using all three corresponding ratios, then draw a half-sized copy preserving every corresponding angle.",
+  "expected": "Candidate A is scaled by 2: 6/3=8/4=10/5=2. Candidate B is not: 6/3=8/4=2, but 9/5=1.8. A half-size copy can use A'=(0,0), B'=(1.5,0), C'=(0,2) with hypotenuse 2.5; its angles are equal to those of ABC.",
   "responseType": "TEACHER_REVIEWED_DRAWING_AND_EXPLANATION",
   "feedback": {
     "correct": "All corresponding lengths share one factor and the constructed shape retains its angles.",
@@ -11,5 +11,74 @@
     "incomplete": "A numeric factor alone does not replace the required sketch and explanation."
   },
   "practice": "REUSE_OR_EXTEND_EXISTING_GEOMETRY_FAMILY_UNDER_ISSUE_592",
-  "status": "AUTHORED_ONLY_NOT_IN_PRODUCT_NOT_TESTED"
+  "status": "GRADE_OWNED_STUDENT_ACTIVITY_AUTHORED_NOT_AUTHENTICATED_OR_PERSISTED",
+  "sourceTriangle": {
+    "vertices": {
+      "A": [
+        0,
+        0
+      ],
+      "B": [
+        3,
+        0
+      ],
+      "C": [
+        0,
+        4
+      ]
+    },
+    "legs": [
+      3,
+      4
+    ],
+    "hypotenuse": 5,
+    "scaledCandidateA": [
+      6,
+      8,
+      10
+    ],
+    "nonuniformCandidateB": [
+      6,
+      8,
+      9
+    ],
+    "halfScaleVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        1.5,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "scoringRubric": [
+    {
+      "criterion": "Distinguish candidate A from B using all three corresponding side ratios",
+      "points": 3
+    },
+    {
+      "criterion": "Construct the half-scale right triangle with labeled corresponding vertices and accurate units",
+      "points": 3
+    },
+    {
+      "criterion": "Preserve the 90-degree right angle and corresponding acute angles",
+      "points": 3
+    },
+    {
+      "criterion": "Explain orally or in writing why one multiplier applies to all lengths",
+      "points": 3
+    }
+  ],
+  "maxScore": 12,
+  "productViewPath": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "productScriptPath": "/curriculum/us-ccss-g7/geometry/u01-l01-activities.js",
+  "deliveryStatus": "GRADE_OWNED_RAZOR_PARTIAL_AUTHORED_SHARED_RENDERER_INVOCATION_UNVERIFIED",
+  "gradingStatus": "FORMATIVE_CLASSIFICATION_ONLY_TEACHER_REVIEW_REQUIRED",
+  "testExecutionStatus": "TEST_AUTHORED_NOT_RUN"
 }
