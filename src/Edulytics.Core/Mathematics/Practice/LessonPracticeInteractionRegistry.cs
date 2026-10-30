@@ -32,7 +32,29 @@ public static class LessonPracticeInteractionRegistry
     private static readonly IReadOnlyDictionary<
         string,
         LessonPracticeInteractionContract> ByFamily =
-        Load();
+        Load(pendingForAudit: false);
+
+    // Physically distinct read-only QA representation. Never include pending
+    // types in ByFamily / TryResolve / lesson-launched student presentation.
+    private static readonly IReadOnlyDictionary<
+        string,
+        LessonPracticeInteractionContract> PendingByFamily =
+        Load(pendingForAudit: true);
+
+    public static IReadOnlyCollection<
+        LessonPracticeInteractionContract> PendingForAudit =>
+        PendingByFamily.Values
+            .OrderBy(x => x.FamilyId, StringComparer.Ordinal)
+            .ToArray();
+
+    public static bool TryResolvePendingForAudit(
+        string? familyId,
+        out LessonPracticeInteractionContract? contract)
+    {
+        contract = null;
+        return !string.IsNullOrWhiteSpace(familyId) &&
+            PendingByFamily.TryGetValue(familyId.Trim(), out contract);
+    }
 
     public static IReadOnlyCollection<
         LessonPracticeInteractionContract> All =>
@@ -55,7 +77,7 @@ public static class LessonPracticeInteractionRegistry
 
     private static IReadOnlyDictionary<
         string,
-        LessonPracticeInteractionContract> Load()
+        LessonPracticeInteractionContract> Load(bool pendingForAudit)
     {
         var assembly =
             typeof(LessonPracticeInteractionRegistry).Assembly;
@@ -78,13 +100,20 @@ public static class LessonPracticeInteractionRegistry
                      .GetProperty("families")
                      .EnumerateArray())
         {
-            if (!family.TryGetProperty(
-                    "lessonPracticeRouting",
-                    out var routing) ||
-                routing.ValueKind != JsonValueKind.True)
-            {
+            var lessonRoutable = family.TryGetProperty(
+                    "lessonPracticeRouting", out var routing) &&
+                routing.ValueKind == JsonValueKind.True;
+            // Integration-pending question kernels must have a typed interaction
+            // contract for auditability, even while lesson capability and
+            // actual student routing remain explicitly disabled.
+            var integrationPending = family.TryGetProperty(
+                    "status", out var status) &&
+                string.Equals(status.GetString(), "IntegrationPending",
+                    StringComparison.Ordinal);
+            if (pendingForAudit
+                    ? !integrationPending
+                    : !lessonRoutable || integrationPending)
                 continue;
-            }
 
             var id =
                 family.GetProperty("id").GetString()?.Trim()
@@ -138,6 +167,36 @@ public static class LessonPracticeInteractionRegistry
         string familyId,
         string answerType)
     {
+        // Fourth Courses contract models exist for independently reviewed
+        // generators but are not available to learners until their owning lesson
+        // is READY_VERIFIED. These interaction types never grant capability.
+        if (familyId.StartsWith("usccss.hs.matrix.", StringComparison.Ordinal))
+            return LessonPracticeInteractionKind.StructuredEntry;
+        if (familyId == "usccss.hs.log.compare_order")
+            return LessonPracticeInteractionKind.RelationChoice;
+        // The accepted answer shapes are not interchangeable: the exact
+        // exponent and b² are integers, principal pi-coefficients and the
+        // Cavalieri coefficient may be fractions, and comma-separated root
+        // sets require structured entry. These remain review-only pending.
+        if (familyId is "usccss.hs.log.inverse_power" or
+            "coordinates.focal_distance_conics" or
+            "trig.unit_circle_reflection_exact")
+            return LessonPracticeInteractionKind.IntegerKeypad;
+        if (familyId is "solid_geometry.cavalieri_sphere_volume" or
+            "trig.principal_inverse")
+            return LessonPracticeInteractionKind.FractionEntry;
+        if (familyId == "trig.model_all_time_solutions")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
+        // The newer pending source tasks accept exact radicals, pi angles,
+        // symbolic change-of-base and canonical conic equations: a numeric
+        // keypad would reject mathematically correct student equivalents.
+        if (familyId is "usccss.hs.log.change_of_base_equation" or
+            "trig.unit_circle_source_exact_angles" or
+            "trig.principal_inverse_source_branches" or
+            "coordinates.focal_conics_source_equation")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
         // U06 responses are keyed LONGER/DIFFERENCE/RESULT/EQUATION,
         // never bare <,>,= choice; center/manual measurement needs a teacher.
         if(familyId.StartsWith("usccss.g1.u06.l",StringComparison.Ordinal) &&

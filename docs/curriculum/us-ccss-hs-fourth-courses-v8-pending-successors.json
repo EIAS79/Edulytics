@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "manifestType": "INTEGRATION_PROPOSED_SUCCESSORS_NOT_APPROVAL",
+  "date": "2026-10-29",
+  "scope": "US-CCSS-MATH/HS/Fourth Courses",
+  "gate": "NO-GO",
+  "disclaimer": "This append-only review proposal does not alter the approved-body 8-row allowlist, historical Phase04 7-row pilot, materializer, canonical source files or school data. Human review/rights and canonical digest algorithm remain unresolved. No transition is authorized.",
+  "sources": {
+    "coder8": "PR #585: UsCcssHsADVALGFUNC2LESSONS-phase04-revision-handoff.md",
+    "coder9": "PR #586: ADV-TRIG-GEO-content-predecessor-transition.json"
+  },
+  "requiredBeforeAuthorization": [
+    "Independent academic and rights review for each changed lesson",
+    "Exact canonical body and translation SHA algorithm reconciled with runtime parity",
+    "Observed persisted predecessor version/source hashes under disposable school tenants",
+    "Append-only approved successor with authentic signed decision",
+    "Verified materializer fail-closed upgrades and protected integrated SHA tests"
+  ],
+  "successors": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "courseCode": "ADV-ALG-FUNC",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+      "originalPublisherSourceSha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+      "previousCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
+      "proposedCanonicalBodySha256": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
+      "canonicalDigestPolicy": "PENDING_INDEPENDENT_REVALIDATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "courseCode": "ADV-ALG-FUNC",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+      "originalPublisherSourceSha256": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
+      "previousCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
+      "proposedCanonicalBodySha256": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
+      "canonicalDigestPolicy": "PENDING_INDEPENDENT_REVALIDATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+      "courseCode": "ADV-TRIG-GEO",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "PENDING_EXPLICIT_VERSION_BUMP",
+      "originalPublisherSourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+      "previousCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+      "reportedProposedCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+      "previousTranslationSha256": "0a06b477c036ea3fab2d5a547f64cfe8c4629c3c0c44e52268daf982e6ad8674",
+      "proposedTranslationSha256": "67216dd9e582014fec52ae4362bfcdc24ec9c5231bcb5b80baaaafe0a850f4ea",
+      "canonicalDigestPolicy": "UNRESOLVED_INDEPENDENT_CANONICAL_BODY_AND_TRANSLATION_DIGEST_RECONCILIATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+      "courseCode": "ADV-TRIG-GEO",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "PENDING_EXPLICIT_VERSION_BUMP",
+      "originalPublisherSourceSha256": "4f807b20b5cbf0f7d71a06e090fd376d6bc8109f1011eca59bcce5980580bad1",
+      "previousCanonicalBodySha256": "87e224d7c52996b9cfd533cf2b849a1a412669e2ad80c482c0a98be946a8c42f",
+      "reportedProposedCanonicalBodySha256": "87e224d7c52996b9cfd533cf2b849a1a412669e2ad80c482c0a98be946a8c42f",
+      "previousTranslationSha256": "91c9c48cadc3cea81b99d3bd8db6c81778eb5484c003e4a6c4173fabbbc1387c",
+      "proposedTranslationSha256": "ec4da6c3f3bc5d568b55bc4a5e3050ce74a492109d8ce52ef9f58b788dcb840a",
+      "canonicalDigestPolicy": "UNRESOLVED_INDEPENDENT_CANONICAL_BODY_AND_TRANSLATION_DIGEST_RECONCILIATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+      "courseCode": "ADV-TRIG-GEO",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "PENDING_EXPLICIT_VERSION_BUMP",
+      "originalPublisherSourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+      "previousCanonicalBodySha256": "a964e74666f51982c2f011c8a7b11e342c8e4fbd07ca0cc2818efa6425eb2994",
+      "reportedProposedCanonicalBodySha256": "a964e74666f51982c2f011c8a7b11e342c8e4fbd07ca0cc2818efa6425eb2994",
+      "previousTranslationSha256": "503d20e806b1c4722bd5a719746da4701314b39c9f2c8507307662a88ce0166e",
+      "proposedTranslationSha256": "560b5146fe8341990fd9335474a02dc57a6d7ff50d49b82405111b72236cf426",
+      "canonicalDigestPolicy": "UNRESOLVED_INDEPENDENT_CANONICAL_BODY_AND_TRANSLATION_DIGEST_RECONCILIATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+      "courseCode": "ADV-TRIG-GEO",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "PENDING_EXPLICIT_VERSION_BUMP",
+      "originalPublisherSourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+      "previousCanonicalBodySha256": "8c2f82e1bcdb83fbe2964f5601886554c5c5e34bbdec4d469b2ca02570d4ac12",
+      "reportedProposedCanonicalBodySha256": "8c2f82e1bcdb83fbe2964f5601886554c5c5e34bbdec4d469b2ca02570d4ac12",
+      "previousTranslationSha256": "2e82ac477bc19b144b5c0ce5abd772beb849b9076408f707313602ed8cdf68c5",
+      "proposedTranslationSha256": "9c43dd88743f16f0c09a886683dc6db1c266a62aa04541a803220096910a92dc",
+      "canonicalDigestPolicy": "UNRESOLVED_INDEPENDENT_CANONICAL_BODY_AND_TRANSLATION_DIGEST_RECONCILIATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+      "courseCode": "ADV-TRIG-GEO",
+      "existingPackContentVersion": "phase30-common-core-rich-content-v1",
+      "proposedPackContentVersion": "PENDING_EXPLICIT_VERSION_BUMP",
+      "originalPublisherSourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+      "previousCanonicalBodySha256": "61d45af784f2f781531eb3d9d9ec938e56f8e8a8248c99be55f309cc7230770e",
+      "reportedProposedCanonicalBodySha256": "61d45af784f2f781531eb3d9d9ec938e56f8e8a8248c99be55f309cc7230770e",
+      "previousTranslationSha256": "5c923b23c0751d57902b1e355c8aca538248b152721b0ec2fdc3a10beee51b6f",
+      "proposedTranslationSha256": "3f31de73bcbb66a528662e90955c0831bbf262399c03d7adeeb77535cb73a69d",
+      "canonicalDigestPolicy": "UNRESOLVED_INDEPENDENT_CANONICAL_BODY_AND_TRANSLATION_DIGEST_RECONCILIATION",
+      "academicDecision": "PENDING",
+      "materializationAuthorization": "DENIED"
+    }
+  ],
+  "evidenceRefresh": {
+    "coder8ObservedHead": "c750204d2ad56bc3b7366d263bfd69577cf47361",
+    "coder9ObservedHead": "c4cbad8cff69a156bed0fba301fe965318f73640",
+    "coder9ManuscriptProposalSha": "c3b7807f9446e661c4607938b09c3c761e7ad37e",
+    "signoff": "NOT_RECEIVED",
+    "effectiveRuntimeMaterialization": "NOT_VERIFIED",
+    "note": "Five Coder 9 proposed translation digests refreshed after accessible source-task construction updates. This is an evidence refresh, not approved content lineage or a runtime version bump."
+  }
+}

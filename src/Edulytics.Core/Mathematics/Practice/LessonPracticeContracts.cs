@@ -888,7 +888,22 @@ public static class LessonPracticeContractRegistry
     private static readonly IReadOnlyDictionary<string, LessonPracticeContract> ByLessonCode =
         AllEntries.ToDictionary(x => x.LessonCode, StringComparer.Ordinal);
 
-    public static IReadOnlyList<LessonPracticeContract> All => AllEntries;
+    // Reviewed PR #602: integration candidates are addressable by exact lesson
+    // identity for audits, but not publicly advertised as ready runtime contracts.
+    private static readonly LessonPracticeContract[] RoutableEntries = AllEntries
+        .Where(x => string.Equals(x.Readiness, "READY_VERIFIED", StringComparison.Ordinal))
+        .ToArray();
+
+    public static IReadOnlyList<LessonPracticeContract> All => RoutableEntries;
+
+    // Explicit review-only view: pending courses are discoverable by their
+    // canonical lesson identities and exact family list, never by the public
+    // routable learner catalogue. This is not an academic readiness signal.
+    private static readonly LessonPracticeContract[] PendingEntries = AllEntries
+        .Where(x => string.Equals(x.Readiness, "INTEGRATION_PENDING", StringComparison.Ordinal))
+        .ToArray();
+
+    public static IReadOnlyList<LessonPracticeContract> PendingForAudit => PendingEntries;
 
     private static LessonPracticeContract[] BuildAllEntries()
     {
@@ -1360,6 +1375,78 @@ public static class LessonPracticeContractRegistry
             ["usccss.g4.u06.l15.area_partial_quotients", "usccss.g4.u06.l15.mural_complete_columns"],
             "IM2021_G4_U06_L15_SOURCE_ALIGNED_NUMERIC_PLUS_TEACHER_LED",
             "READY_VERIFIED",
+            Version);
+
+        // Supervisor 3 shared HS integration: keep ALL seven courses' exact Practice
+        // gated until full 54-case fixture parity, tenant-authenticated persistence,
+        // content lineage and independently reviewed academic transitions pass.
+        // The limited initial closed-question implementations must not leak through
+        // the generic official-outcome projection while release remains NO-GO.
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+            "supporting.matrices.core",
+            "HS_MATRIX_SYSTEMS_EXACT",
+            ["usccss.hs.matrix.coefficients_2x2", "usccss.hs.matrix.solve_2x2", "usccss.hs.matrix.inverse_2x2", "usccss.hs.matrix.classify_2x2",
+             "usccss.hs.matrix.coefficients_3x3", "usccss.hs.matrix.solve_3x3", "usccss.hs.matrix.inverse_3x3", "usccss.hs.matrix.row_reduce_3x3",
+             "usccss.hs.matrix.inverse_eligibility"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+            "supporting.exponentials_logs",
+            "HS_LOG_INVERSE_AND_COMPARISON",
+            ["usccss.hs.log.inverse_power",
+             "usccss.hs.log.compare_order",
+             "usccss.hs.log.decreasing_base_evaluation",
+             "usccss.hs.log.shifted_domain_equation",
+             "usccss.hs.log.invalid_real_domain",
+             "usccss.hs.log.compare_different_bases",
+             "usccss.hs.log.check_product_identity",
+             "usccss.hs.log.change_of_base_equation",
+             "usccss.hs.log.inverse_identity"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+            "supporting.trigonometry.core",
+            "HS_UNIT_CIRCLE_REFLECTION",
+            ["trig.unit_circle_reflection_exact", "trig.unit_circle_source_exact_angles"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+            "supporting.trigonometry.core",
+            "HS_PRINCIPAL_INVERSE",
+            ["trig.principal_inverse", "trig.principal_inverse_source_branches"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+            "trigonometry.modelling",
+            "HS_TRIG_MODEL_SOLUTIONS",
+            ["trig.model_all_time_solutions"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+            "supporting.geometry.solid",
+            "HS_CAVALIERI_SPHERE",
+            ["solid_geometry.cavalieri_sphere_volume"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
+            Version);
+        byLesson["PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+            "geometry.coordinate.straight_line",
+            "HS_FOCAL_CONICS",
+            ["coordinates.focal_distance_conics", "coordinates.focal_conics_source_equation"],
+            "USCCSS_HS_SHARED_INTEGRATION_PENDING",
+            "INTEGRATION_PENDING",
             Version);
 
         return byLesson.Values

@@ -898,6 +898,15 @@
       ],
       "textPatterns": [],
       "targetRuleId": "measurement-indirect-compare"
+    },
+    {
+      "id": "ccss-hs-matrix-systems-exact",
+      "priority": 600,
+      "codePatterns": [
+        "^CCSS:HSA-REI\\.C\\.[89]$"
+      ],
+      "textPatterns": [],
+      "targetRuleId": "hs-matrix-linear-systems"
     }
   ]
 }

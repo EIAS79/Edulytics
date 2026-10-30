@@ -19784,6 +19784,474 @@
       "status": "StageCAuthoredPendingD",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.coefficients_2x2",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_matrix_and_rhs",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.solve_2x2",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_rational_pair",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.inverse_2x2",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_2_by_2_matrix",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.inverse_eligibility",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "invertible_singular_dimension_mismatch_or_not_square",
+      "verificationPolicy": "bounded-matrix-shape-and-determinant-classification-no-proof-autograding",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.classify_2x2",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "unique_infinite_or_none",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.log.inverse_power",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer_exponent",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.log.compare_order",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_log_order_relation",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "trig.unit_circle_reflection_exact",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_cardinal_sin_cos",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "trig.principal_inverse",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_principal_pi_coefficient",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "trig.model_all_time_solutions",
+      "version": 1,
+      "skillId": "trigonometry.modelling",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_time_solution_set",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "solid_geometry.cavalieri_sphere_volume",
+      "version": 1,
+      "skillId": "supporting.geometry.solid",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational_pi_coefficient",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "coordinates.focal_distance_conics",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "conic_positive_b_squared",
+      "verificationPolicy": "bounded-integer-parameter-reconstruction-and-independent-typed-answer-comparison",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.coefficients_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_3_by_3_matrix_and_rhs",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.solve_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_rational_triple",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.inverse_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_3_by_3_matrix",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.matrix.row_reduce_3x3",
+      "version": 1,
+      "skillId": "supporting.matrices.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "ordered_rational_triple",
+      "verificationPolicy": "bounded_3x3_determinants_and_independent_Ax_or_identity_matrix_rational_reconstruction",
+      "representations": [
+        "symbolic",
+        "augmented_matrix"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.hs.log.shifted_domain_equation",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.invalid_real_domain",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "enum_text",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.compare_different_bases",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "relation",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.check_product_identity",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "boolean",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.change_of_base_equation",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.inverse_identity",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_rational",
+      "verificationPolicy": "typed_bounded_exact_question_validation_and_expression_whitelist_no_eval",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.decreasing_base_evaluation",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "bounded_exact_negative_exponent_and_logarithm_base_fraction",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "trig.unit_circle_source_exact_angles",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "bounded_unit_circle_twelfths_exact_radicals_with_explicit_tangent_out_of_domain",
+      "representations": [
+        "symbolic",
+        "unit_circle"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "trig.principal_inverse_source_branches",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_radian_angle",
+      "verificationPolicy": "closed_exact_principal_branches_with_bounded_radian_numeric_equivalence_and_negative_domain_states",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
+    },
+    {
+      "id": "coordinates.focal_conics_source_equation",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "structured_canonical_equation",
+      "verificationPolicy": "bounded_exact_conic_equations_and_focal_distance_check",
+      "representations": [
+        "symbolic",
+        "coordinate_plane"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {

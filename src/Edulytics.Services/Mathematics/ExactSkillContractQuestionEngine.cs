@@ -176,6 +176,13 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+         UsCcssHsFourthCourseQuestions.Supports(family.Trim()) ||
+         UsCcssHsFourthCourse3x3Questions.Supports(family.Trim()) ||
+         UsCcssHsMatrixInverseEligibilityQuestions.Supports(family.Trim()) ||
+         UsCcssHsAdvancedLogQuestions.Supports(family.Trim()) ||
+         UsCcssHsTrigonometryExactAngles.Supports(family.Trim()) ||
+         UsCcssHsPrincipalInverseSourceQuestions.Supports(family.Trim()) ||
+         UsCcssHsSourceFocalConicQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -407,6 +414,20 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        if (UsCcssHsFourthCourseQuestions.Supports(family))
+            return UsCcssHsFourthCourseQuestions.Verify(family, parameters, answer);
+        if (UsCcssHsFourthCourse3x3Questions.Supports(family))
+            return UsCcssHsFourthCourse3x3Questions.Verify(family, parameters, answer);
+        if (UsCcssHsMatrixInverseEligibilityQuestions.Supports(family))
+            return UsCcssHsMatrixInverseEligibilityQuestions.Verify(family, parameters, answer);
+        if (UsCcssHsAdvancedLogQuestions.Supports(family))
+            return UsCcssHsAdvancedLogQuestions.Verify(family, parameters, answer);
+        if (UsCcssHsTrigonometryExactAngles.Supports(family))
+            return UsCcssHsTrigonometryExactAngles.Verify(family, parameters, answer);
+        if (UsCcssHsPrincipalInverseSourceQuestions.Supports(family))
+            return UsCcssHsPrincipalInverseSourceQuestions.Verify(family, parameters, answer);
+        if (UsCcssHsSourceFocalConicQuestions.Supports(family))
+            return UsCcssHsSourceFocalConicQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1721,6 +1742,41 @@ public sealed class ExactSkillContractQuestionEngine
             _ => 1
         };
 
+        if (UsCcssHsFourthCourseQuestions.Supports(family))
+        {
+            var item = UsCcssHsFourthCourseQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsFourthCourse3x3Questions.Supports(family))
+        {
+            var item = UsCcssHsFourthCourse3x3Questions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsMatrixInverseEligibilityQuestions.Supports(family))
+        {
+            var item = UsCcssHsMatrixInverseEligibilityQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsAdvancedLogQuestions.Supports(family))
+        {
+            var item = UsCcssHsAdvancedLogQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsTrigonometryExactAngles.Supports(family))
+        {
+            var item = UsCcssHsTrigonometryExactAngles.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsPrincipalInverseSourceQuestions.Supports(family))
+        {
+            var item = UsCcssHsPrincipalInverseSourceQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsSourceFocalConicQuestions.Supports(family))
+        {
+            var item = UsCcssHsSourceFocalConicQuestions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
         {
             var item=UsCcssG1FullGradeUnit7GeometryTimeQuestions.Build(family,random);
@@ -4865,6 +4921,20 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssHsFourthCourseQuestions.Supports(problem.Family))
+            return UsCcssHsFourthCourseQuestions.Solve(problem.Family, p);
+        if (UsCcssHsFourthCourse3x3Questions.Supports(problem.Family))
+            return UsCcssHsFourthCourse3x3Questions.Solve(problem.Family, p);
+        if (UsCcssHsMatrixInverseEligibilityQuestions.Supports(problem.Family))
+            return UsCcssHsMatrixInverseEligibilityQuestions.Solve(problem.Family, p);
+        if (UsCcssHsAdvancedLogQuestions.Supports(problem.Family))
+            return UsCcssHsAdvancedLogQuestions.Solve(problem.Family, p);
+        if (UsCcssHsTrigonometryExactAngles.Supports(problem.Family))
+            return UsCcssHsTrigonometryExactAngles.Solve(problem.Family, p);
+        if (UsCcssHsPrincipalInverseSourceQuestions.Supports(problem.Family))
+            return UsCcssHsPrincipalInverseSourceQuestions.Solve(problem.Family, p);
+        if (UsCcssHsSourceFocalConicQuestions.Supports(problem.Family))
+            return UsCcssHsSourceFocalConicQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
