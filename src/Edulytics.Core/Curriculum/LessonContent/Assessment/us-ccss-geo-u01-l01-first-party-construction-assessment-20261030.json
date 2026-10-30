@@ -65,7 +65,37 @@
     "TeacherScoring": "Use criteria R1–R4 above; do not auto-score the sketch.",
     "Status": "EDULYTIKS_AUTHORED_COOLDOWN",
     "PublisherCoolDownStatus": "PUBLISHER_COOLDOWN_UNVERIFIED",
-    "RubricScope": "R1-R4 criteria use renamed independent local cooldown points R,S,T,N as stated in Cooldown prompt; construction task J,K,L,M uses the separate SourceConstructionRubric."
+    "RubricScope": "CD1-CD4; actual cooldown paper R,S,T,N, not primary J,K,L,M construction",
+    "Rubric": {
+      "DimensionScale": {
+        "Min": 0,
+        "Max": 2,
+        "Meaning": "0=no evidence, 1=partly correct, 2=correct and justified"
+      },
+      "Criteria": [
+        {
+          "Id": "CD1",
+          "Criterion": "Marks distinct R,S, correct R-centred circle through S and a point T on it",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "CD2",
+          "Criterion": "Justifies RT=RS from equal radii of R-centred circle",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "CD3",
+          "Criterion": "Distinguishes a guessed N on RS from a guaranteed midpoint: RN=NS is not implied",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "CD4",
+          "Criterion": "Uses r>RS/2 arcs centred R and S with two intersections and perpendicular-bisector midpoint",
+          "MaxPoints": 2
+        }
+      ],
+      "TotalMax": 8
+    }
   },
   "ReviewCases": [
     {
@@ -231,7 +261,7 @@
     "VisualFigureEquivalenceApproved": true,
     "Stage": "Independent academic review tracked for release; external signature not an A/B authoring blocker under Admin 2026-10-30"
   },
-  "RubricScope": "R1-R4 now assess J,K,L,M,N first-party construction; cool-down uses matching geometric concepts with explicit R,S,T,N mapping; neither is automatically scored.",
+  "RubricScope": "R1-R4 assess primary J,K,L,M,N task; separate FirstPartyCoolDown.Rubric CD1-CD4 assesses R,S,T,N cooldown",
   "OriginalFirstPartyTaskRubric": {
     "TotalMax": 8,
     "TeacherOnly": true,
@@ -400,27 +430,27 @@
         "DimensionScale": {
           "Min": 0,
           "Max": 2,
-          "Meaning": "0=not shown, 1=partial, 2=correct and supported"
+          "Meaning": "0=no evidence, 1=partly correct, 2=correct and justified"
         },
         "Criteria": [
           {
-            "Id": "R1",
-            "Criterion": "Marks distinct J and K; a circle centred J through K and another point L on that circle (the actual original first-party task).",
+            "Id": "CD1",
+            "Criterion": "Marks distinct R,S, correct R-centred circle through S and a point T on it",
             "MaxPoints": 2
           },
           {
-            "Id": "R2",
-            "Criterion": "Justifies JL=JK as radii of the same J-centred circle, not as a visual estimate.",
+            "Id": "CD2",
+            "Criterion": "Justifies RT=RS from equal radii of R-centred circle",
             "MaxPoints": 2
           },
           {
-            "Id": "R3",
-            "Criterion": "Explains why estimated M on JK does not guarantee JM=MK; gives a counterexample or an unambiguous explanation.",
+            "Id": "CD3",
+            "Criterion": "Distinguishes a guessed N on RS from a guaranteed midpoint: RN=NS is not implied",
             "MaxPoints": 2
           },
           {
-            "Id": "R4",
-            "Criterion": "Constructs equal-radius arcs from J and K with opening >JK/2, marks both crossings and true midpoint N via their connecting perpendicular bisector.",
+            "Id": "CD4",
+            "Criterion": "Uses r>RS/2 arcs centred R and S with two intersections and perpendicular-bisector midpoint",
             "MaxPoints": 2
           }
         ],
