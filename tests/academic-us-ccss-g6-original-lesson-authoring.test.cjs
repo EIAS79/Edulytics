@@ -1544,3 +1544,37 @@ test('U04 L07–L10 numeric oracles keep group-size, fraction reference and non-
   assert.deepEqual([2,3,4,6,8,10,25].map(x=>6/(1/x)),[12,18,24,36,48,60,150]);
   assert.deepEqual([2/3,3/4,4/3,4/6].map(x=>6/x),[9,8,4.5,9]);
 });
+
+test('U01 L02 Rich V2 four-half-square triangle task has source-aligned worked steps', () => {
+  const rich = JSON.parse(fs.readFileSync(path.join(root,
+    'src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l01-l03-area-20261028.rich-lesson-v2.json'), 'utf8'));
+  const lesson=rich.Lessons.find(x=>x.LessonCode===lcode(1,2));
+  assert.ok(lesson);
+  const example=lesson.WorkedExamples.find(x=>x.Title==='Two non-square assemblies from four half-square triangles');
+  assert.ok(example);
+  assert.match(example.Question,/Four congruent right triangles/);
+  assert.match(example.Answer,/2 square units/);
+  assert.match(example.Check,/student sketch/);
+  assert.ok(example.Steps.length>=4);
+  assert.ok(example.Steps.some(x=>/4 × 1\/2 = 2 square units/.test(x)));
+  assert.ok(example.Steps.some(x=>/2-by-1 non-square rectangle/.test(x)));
+  for(const step of example.Steps){
+    assert.doesNotMatch(step,/4 × 3 = 12|12 ÷ 2 = 6/);
+  }
+  // Exact area invariant; no false certification of source shape manipulatives.
+  assert.equal(4*(1/2),2);
+  assert.equal(2*1,2);
+});
+
+test('U01 L02 Rich V2 acceptance remains blocked pending authentic visual and Practice', () => {
+  const ledger = JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/grade6-147-academic-authoring-ledger.json'), 'utf8'));
+  const row=ledger.lessons.find(x=>x.lessonCode===lcode(1,2));
+  assert.equal(row.academicAcceptance,'NOT_ACCEPTED');
+  assert.equal(row.stageA.publisherImageAndAppletParityVerified,false);
+  assert.equal(row.stageB.richV2RenderAndAcademicAcceptanceVerified,false);
+  assert.equal(row.stageC.exactPracticeAccepted,false);
+  assert.equal(row.stageC.teacherOnlyRubricPersistedVerified,false);
+  assert.equal(row.stageD.authRoutes,'NOT_RUN');
+  assert.equal(row.stageD.twoSchool,'NOT_RUN');
+});
