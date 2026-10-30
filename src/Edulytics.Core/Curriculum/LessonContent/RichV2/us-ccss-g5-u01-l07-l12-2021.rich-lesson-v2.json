@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l07-l12-im2021-v49-source-measured-20261030",
+  "ContentVersion": "g5-u01-l07-l12-im2021-v50-source-expression-prisms-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -734,6 +734,33 @@
           ],
           "Answer": "240−72=168 cubic feet.",
           "Check": "Subtracting is valid only because the missing prism lies fully inside the bounding box; adding it would be wrong."
+        },
+        {
+          "Title": "2021 source one solid, two representations of 95 unit cubes",
+          "Question": "The original source depicts a compound figure made of a packed 3×5×5 prism plus an attached 2×2×5 prism. Express its volume using an addition or subtraction of rectangular-prism volumes.",
+          "Method": "Use a non-overlapping partition or subtract the missing region from an enclosing box.",
+          "Steps": [
+            "The first prism occupies 3×5×5=75 unit cubes.",
+            "The second occupies 2×2×5=20 unit cubes and joins without overlapping their interiors.",
+            "Adding 75+20 gives 95 cubic units.",
+            "A fitting bounding prism has volume 5×5×5=125 cubic units; subtracting the unoccupied 2×3×5=30 gives 125−30=95.",
+            "Explain why both expressions count the same original object."
+          ],
+          "Answer": "(3×5×5)+(2×2×5)=75+20=95, or 125−30=95 cubic units.",
+          "Check": "Original 2021 Student Facing compound figure 147427; explain the physical partition."
+        },
+        {
+          "Title": "2021 source Mai's subtractive composite-volume method — 168 cubic feet",
+          "Question": "A stepped solid has a 10-foot horizontal extent, an eight-foot total height, a three-foot depth, with the lower step four feet high and six feet across. Compare two additions with Mai's bounding-prism subtraction.",
+          "Method": "Infer the missing step height (8−4=4) and side length (10−6=4), then identify non-overlapping volumes.",
+          "Steps": [
+            "One split: left 4×8×3=96 ft³, right 6×4×3=72 ft³, total 168.",
+            "Another split: bottom 10×4×3=120 ft³, upper 4×4×3=48 ft³, total 168.",
+            "Mai's subtraction takes a full 10×8×3=240-ft³ box and removes the unfilled 6×4×3=72-ft³ corner.",
+            "All three models yield 168 ft³; require clear region labels and no overlapping subprisms."
+          ],
+          "Answer": "96+72=120+48=240−72=168 cubic feet.",
+          "Check": "Original 2021 source Student Facing stepped prism 148090/148091 and Mai's given expression."
         }
       ],
       "CommonMistakes": [
