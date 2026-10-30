@@ -35,7 +35,9 @@
     "logNumberLineOracleTestsCommit": "03bdcd34eb1c69cb18883dbe5375277e24359e1f",
     "twentySixMalformedBoundaryFixturesCommit": "1befb0b28f76810b7ba36b229acb848d448143a8",
     "sixRubricsCommit": "dc1325200287baa54f0421943908f31c0c4c0709",
-    "fixtureTheoryTestsCommit": "057051e7b1e64bbe904612e38f1d40664c784f92"
+    "fixtureTheoryTestsCommit": "057051e7b1e64bbe904612e38f1d40664c784f92",
+    "nodeFixtureTestCommit": "92bce8457feb2d8974581495224ad8ea456b9cb9",
+    "sourceScenarioDataCommit": "595db3ba0528d07c93e211314a0b55ce66e1204b"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
@@ -254,12 +256,31 @@
       "academicApproval": false,
       "authenticatedTwoSchool": false,
       "practiceReady": false,
-      "ownerUAT": false
+      "ownerUAT": false,
+      "nativeNodeMathOracles": {
+        "command": "node --test /mnt/data/coder8_isolated/tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+        "method": "isolated local native Node 22 test of file byte-identical to GitHub PR blob, but WITHOUT repository fixture JSON mounted",
+        "repoTestPath": "tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+        "repoBlobSha": "b52ab278fbfcb8470177eafffa9c29a88499d4a6",
+        "localGitBlobSha": "b52ab278fbfcb8470177eafffa9c29a88499d4a6",
+        "total": 29,
+        "passed": 28,
+        "failed": 0,
+        "skipped": 1,
+        "exitCode": 0,
+        "notVerified": "Repo fixture binding subtest skipped in local isolated environment; must run in full authorized checkout/CI. Native .NET 26-case xUnit compilation and selected Practice runtime remain unverified."
+      },
+      "sourceBoundScenarios": [
+        "MVP-A2-10.6H-PAINT-SYSTEM",
+        "MVP-M3-2.1-LOG-NUMBER-LINE"
+      ],
+      "nativeCSharpStatus": "NOT_EXECUTED_LOCAL_DOTNET_SDK_MISSING",
+      "independentFixtureOracle": "26/26 connector-side JS mathematical witnesses (not node runner, xunit, or runtime)"
     }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
-    "practiceComplete": "0_OF_2_PRODUCTION_CERTIFIED",
+    "practiceComplete": "0_OF_2_AUTHENTICATED_RUNTIME_CERTIFIED",
     "academicAccepted": "0/2",
     "releaseCandidate": "BLOCKED_BY_SHARED_PRACTICE_SOURCE_APPROVAL_AND_AUTHENTICATED_UAT",
     "merged": false,
