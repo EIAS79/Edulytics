@@ -88,7 +88,7 @@ public static class LessonPracticeInteractionRegistry
                     "status", out var status) &&
                 string.Equals(status.GetString(), "IntegrationPending",
                     StringComparison.Ordinal);
-            if (!lessonRoutable && !integrationPending)
+            if (!lessonRoutable || integrationPending)
                 continue;
 
             var id =
