@@ -1108,6 +1108,9 @@ public static class LessonPracticeContractRegistry
         // Grade 5 U01 L02: irregular connected cube counting; partner builds need teacher.
         foreach (var reviewed in UsCcssG5Unit1Lesson2PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
+        // 2021 G5 U01 L03 complete prism drawings, include hidden layers.
+        foreach (var reviewed in UsCcssG5Unit1Lesson3PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
         foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;

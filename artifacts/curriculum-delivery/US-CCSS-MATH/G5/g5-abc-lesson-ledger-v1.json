@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L03",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L04",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 2,
+    "READY_FOR_D": 3,
     "D_VERIFIED": 0,
-    "BLOCKED": 17,
-    "REMAINING": 146
+    "BLOCKED": 16,
+    "REMAINING": 145
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -255,23 +255,18 @@
       "reuseFinding": "REUSE_LAYER_COUNTING_AND_40_CUBE_EXAMPLE; PRECISE_SOURCE_WARMUP_CARD_CONSTRUCTION_AND_EDULYTIKS_ORIGINAL_EXIT_CHECK",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric prism volume only as supplemental; EXTEND shared source-aligned open model/construction rubric if needed",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l03-contract-v15.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T07:57:36.928Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:13:30.417Z",
+      "elapsedSeconds": 40553,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 single writer #592",
-        "reason": "Generic outcome-mapped cuboid volume/surface-area fallback not demonstrated source-correct for prism-card interpretation, hidden layer explanations, teacher grading.",
-        "acceptWhen": "Exact selected runtime contract and teacher-scored open model response prepared and statically wired; independent cases reviewed."
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "original2021TeacherStudentFacing": "2021 original teacher lesson.html embedded Student Facing and preparation.html inspected",
         "goal": "Find prism volume by complete layers and account for hidden cubes",
@@ -291,6 +286,15 @@
       "beforeAfterFinding": {
         "before": "Earlier warm-up omitted 3×2×5 and 3×2×6; card construction logistics and 4×10 layer option were incomplete, exit check not explicitly authored.",
         "after": "Four exact source mental expressions, complete prism-card task with 48 cubes per pair, 3 ways to count 40 cubes, teacher rubric and Edulytiks-original exit check."
+      },
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l03.count_hidden_prism_layers",
+        "source": "2021 Our-CS unit-1 lesson-3 lesson and preparation",
+        "teacherLed": "Original card prism build, hidden cube explanation, original-author exit check",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "publisherSourceParity": "INACCESSIBLE_COOLDOWN_AND_FIGURE_PIXELS_NOT_CERTIFIED",
+        "parentHead": "3bd5565768b7a2547b1f908915b2f3961a443955"
       }
     },
     {
