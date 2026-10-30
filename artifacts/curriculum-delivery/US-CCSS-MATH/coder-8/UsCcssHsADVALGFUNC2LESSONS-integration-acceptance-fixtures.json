@@ -242,7 +242,7 @@
       "rejectWrongOrMalformed": "<",
       "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_(1/2)(3)>log_(1/2)(",
-      "boundaryOracle": "For 0<b<1, positive argument order reverses; x=1 gives log_b(1)=0.",
+      "boundaryOracle": "For 0<b<1, positive argument order reverses; x=1 gives log_b(1)=0. The opposite ordering at b>1 must be rejected as a different base case.",
       "explanationRequired": true
     },
     {
@@ -250,13 +250,13 @@
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
       "officialTarget": "CCSS:HSF-BF.B.5",
       "category": "log-different-bases",
-      "prompt": "Compare log_4(3) and log_2(3); justify your comparison without relying on a decimal approximation",
+      "prompt": "Compare log_4(3) and log_2(3); justify your comparison without relying on a decimal approximation Also test the claim log_2(x)<log_3(x) for every x>0 by checking x=1 and a value below 1.",
       "expectedCanonical": "log_4(3)<log_2(3)",
       "acceptedEquivalent": "< using log_4(3)=(1/2)log_2(3) with log_2(3)>0",
       "rejectWrongOrMalformed": ">",
       "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_4(3)<log_2(",
-      "boundaryOracle": "At x=1 both bases yield 0, so do not generalize the strict relation to all positive inputs.",
+      "boundaryOracle": "For x=3, log_4(3)<log_2(3). For log_2(x) vs log_3(x), x=1 gives equality, x>1 gives >, and 0<x<1 gives <; a universal fixed comparison is false.",
       "explanationRequired": true
     },
     {
