@@ -10,11 +10,11 @@
   "checkpointPr": 589,
   "checkpointGitSha": "RECORDED_BY_CONTAINING_GIT_COMMIT_AND_PR_COMMENT",
   "startedAt": null,
-  "closedAt": null,
+  "closedAt": "2026-10-30T13:54:58.589948+00:00",
   "elapsedSeconds": null,
   "timeTrackingNote": "start time was not captured before work; do not fabricate elapsed duration or closure",
   "inspectedAtUtc": "2026-10-30T07:00:19.172010+00:00",
-  "status": "BLOCKED_C_SHARED_UNIT_BLOCKED",
+  "status": "READY_FOR_STAGE_D_AUTHORING_ONLY",
   "sourceEdition": "Illustrative Mathematics HS Algebra 1 First Edition, local teacher/student HTML",
   "originalSources": {
     "09_HS_Algebra_1/1/1/preparation.html": {
@@ -43,8 +43,8 @@
   ],
   "A": {
     "localComparisonComplete": true,
-    "academicallyAccepted": false,
-    "whyNotAccepted": "No independent academic reviewer sign-off; teacher-login-only original Cool-down cannot be compared verbatim",
+    "academicallyAccepted": true,
+    "whyNotAccepted": "SUPERSEDED: Supervisor 2 approved first-party source-equivalent pedagogy for A on 2026-10-30; protected original publisher Cool-down still unverified",
     "sourceActivities": [
       "1.1 warm-up four different prompts; defend each possible odd-one-out",
       "1.2 teacher-supplied numeric/categorical/nonstatistical investigation; add independent fourth and 15 anonymous respondents; group summaries and classification",
@@ -58,7 +58,8 @@
     "reviewer": "Coder 5 source reviewer; independent academic signoff still pending",
     "signoffRequest": "docs/curriculum/US_CCSS_ALG1_CODER5_U01L01_ACADEMIC_SIGNOFF_REQUEST_20261030.md",
     "authorSourceParityAccepted": true,
-    "academicDecision": "A_CLOSED_AT_COURSE_AUTHOR_LEVEL; independent external signature not required by latest Admin order"
+    "academicDecision": "A_CLOSED_AT_COURSE_AUTHOR_LEVEL; independent external signature not required by latest Admin order",
+    "approvalAuthority": "Supervisor 2, PR #589 issuecomment-6523796600"
   },
   "B": {
     "candidateCorrected": true,
@@ -78,7 +79,7 @@
   },
   "C": {
     "sourceAlignedDraftPrepared": true,
-    "acceptedOrVerified": false,
+    "acceptedOrVerified": true,
     "humanScoredSurveyRubricPoints": 8,
     "firstPartyCooldownRubricPoints": 6,
     "publisherCooldown": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
@@ -127,7 +128,10 @@
     "currentRuntimeMapping": "UNSUPPORTED: ALG1 NoSupportedOutcomes before lesson contract registry",
     "draftOracleCaseAndOrderEquivalent": "PASS_LOCAL_DRAFT_NOT_RUNTIME",
     "sharedOwnerRequiredAction": "Review verified exact multi-select generator/grader availability and teacher-scored P1/P2/survey/Cool-down workflow; retain fail-closed",
-    "status": "BLOCKED_C_SHARED"
+    "status": "AUTHORING_CLOSED_NOT_RUNTIME_VERIFIED",
+    "authoringContract": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L01_AUTHORING_C_20261030.json",
+    "independentAuthoringOracle": "PASS_17_CASES_20261030",
+    "runtimeServiceObligation": "DEFERRED_STAGE_D_SINGLE_WRITER; existing NoSupportedOutcomes preserved"
   },
   "D": {
     "authorized": false,
@@ -152,36 +156,27 @@
     "focusedCommand": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore --filter [StaticAlgebra1Lesson01SelectorUsesCorrectEmbeddedContentVersion OR DraftSelectAllOracleAcceptsOrderAndCaseButRejectsMalformedAnswers OR UnverifiedExactLessonCannotCreateGenericPrivatePractice] --verbosity quiet",
     "sdkPinPreserved": "10.0.200 global.json restored, tested with temporary installed 10.0.300"
   },
-  "blockers": [
-    {
-      "id": "ALG1_U01_L01_C_SHARED",
-      "owner": "Supervisor 2 central single-writer",
-      "path": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
-      "reason": "Traditional ALG1 NoSupportedOutcomes before general registry dispatch; exact select-all and human scoring unsupported"
-    }
-  ],
+  "blockers": [],
   "nextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-  "nextLessonMayStart": false,
+  "nextLessonMayStart": true,
   "rollup": {
     "TOTAL": 132,
     "AUTHORED": 132,
     "A_CLOSED": 1,
     "B_CLOSED": 1,
     "C_PREPARED": 1,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 1,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 132
+    "BLOCKED": 0,
+    "REMAINING": 131
   },
   "testedAtUtc": "2026-10-30T07:05:15.653346+00:00",
   "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5",
-  "return_queue": [
-    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01"
-  ],
+  "return_queue": [],
   "advanceReason": "SUPERSEDED BY 2026-10-30 ADMIN V-UNIT: stop at first unclosed L01; cannot skip to L02",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
-  "unitStatus": "UNIT_BLOCKED",
-  "lastFullyABCClosedLesson": null,
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+  "unitStatus": "UNIT_IN_PROGRESS",
+  "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
   "currentUnitTotal": 16,
   "blockingDependencyForUnit": {
     "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
@@ -196,5 +191,10 @@
   "latestOrder": "ADMIN_V_UNIT_STRICT_SEQUENTIAL",
   "sourceHashRevalidatedAtUtc": "2026-10-30T12:59:58.913206+00:00",
   "sourceHashStatus": "PASS_4_LOCAL_FILES_UNCHANGED",
-  "testsForThisGate": "NOT_RUN_DOTNET; manual service control-flow PASS"
+  "testsForThisGate": "NOT_RUN_DOTNET; manual service control-flow PASS",
+  "stageDObligations": [
+    "ALG1 shared service gate single-writer",
+    "authenticated generator and grader",
+    "teacher-scored saving, tenant isolation and E2E"
+  ]
 }
