@@ -37,7 +37,10 @@
     "sixRubricsCommit": "dc1325200287baa54f0421943908f31c0c4c0709",
     "fixtureTheoryTestsCommit": "057051e7b1e64bbe904612e38f1d40664c784f92",
     "nodeFixtureTestCommit": "92bce8457feb2d8974581495224ad8ea456b9cb9",
-    "sourceScenarioDataCommit": "595db3ba0528d07c93e211314a0b55ce66e1204b"
+    "sourceScenarioDataCommit": "595db3ba0528d07c93e211314a0b55ce66e1204b",
+    "continuationNodeTestCommit": "a2d36970a3b749a811117d2d2a72c26c6342a7f0",
+    "continuationL06CSharpTestCommit": "3fe175643642e0f98f19ad4ed30344fd0aa81b30",
+    "continuationL06CorrectedFixtureCommit": "44290bb73875cdf806d8db54dcb39aab143bb634"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
@@ -297,13 +300,73 @@
         "binarySha256Rechecked": false,
         "notClaimed": "Whole 39-page PDF audit or teacher reviewed signoff"
       }
+    },
+    "coder8P0Continuation20261030": {
+      "baseCheckpoint": "812535b529924c0679aadbe10a654faa83e1d629",
+      "scope": "Only lesson-specific candidate fixture and test bugfixes; no shared Practice or persistence modifications",
+      "provenDefects": [
+        "L08 and L11 Node oracles used argument/ln surrogates rather than validating invalid logarithm bases 1 and -2.",
+        "L06 original two-part comparison prompt accepted a canonical answer for only its first subquestion."
+      ],
+      "courseOwnedFixes": [
+        "Node test now enforces finite real-log base >0 and !=1 and argument >0 for distinct invalid-base/invalid-argument cases.",
+        "L06 canonical and equivalent answers must cover comparison log_4(3)<log_2(3) and cross-base counterexample x=1 / 0<x<1 / x>1.",
+        "Course-owned C# test now rejects missing second L06 explanation."
+      ],
+      "node": {
+        "command": "node --test /mnt/data/coder8_isolated/tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+        "gitBlobOfExactTestFile": "569da5107d768506099478d41edb2293d6c933b0",
+        "localGitBlobMatches": true,
+        "total": 30,
+        "passed": 29,
+        "failed": 0,
+        "skipped": 1,
+        "exitCode": 0,
+        "fixtureBindingSkippedBecauseCompleteRepoNotMounted": true
+      },
+      "existingFixtureInventory": {
+        "cases": 26,
+        "matrix": 11,
+        "log": 15,
+        "proposedTeacherRubrics": 6,
+        "sourceBoundScenarios": 2,
+        "authenticatedRuntimeCasesVerified": 0
+      },
+      "officialCsharp": {
+        "latestExactHead": "NOT_RUN_YET",
+        "localDotnetSdk": "UNAVAILABLE",
+        "jobStateAtInspection": "QUEUED",
+        "mustNotClaimPass": true
+      },
+      "effectiveContent": {
+        "staticEnglishJson": "PRESENT_IN_COURSE_BRANCH",
+        "authenticatedRenderedEnglish": "NOT_VERIFIED",
+        "otherApplicableTranslations": "NO_ADDITIONAL_TRANSLATIONS_IN_PACK",
+        "accessibilityBrowserAudit": "NOT_RUN",
+        "deployedSha": "NOT_VERIFIED"
+      },
+      "sourceAndAcademic": {
+        "fullStudentTeacherSourceFidelity": "TARGETED_ONLY",
+        "sourceShaPreserved": true,
+        "phase04Approval": "PENDING",
+        "approvedVersionPredecessorTransition": "PENDING_GLOBAL_OWNER"
+      },
+      "integration": {
+        "sharedPr": 600,
+        "wrongMatrixFallback": "one-step-formula-equation",
+        "selectedMatrixAndLogPractice": "NOT_VERIFIED",
+        "schoolAdoptionIssue": 453,
+        "authenticatedTeacherScoring": "NOT_VERIFIED",
+        "twoSchoolIsolation": "NOT_VERIFIED"
+      },
+      "release": "NO_GO"
     }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
-    "practiceComplete": "0_OF_2_AUTHENTICATED_RUNTIME_CERTIFIED",
+    "practiceComplete": "0_OF_2_PRODUCTION_CERTIFIED",
     "academicAccepted": "0/2",
-    "releaseCandidate": "BLOCKED_BY_SHARED_PRACTICE_SOURCE_APPROVAL_AND_AUTHENTICATED_UAT",
+    "releaseCandidate": "BLOCKED_SHARED_PRACTICE_PARITY_EXACT_HEAD_CI_RENDERED_UAT",
     "merged": false,
     "deployed": false,
     "gateIssues": [
