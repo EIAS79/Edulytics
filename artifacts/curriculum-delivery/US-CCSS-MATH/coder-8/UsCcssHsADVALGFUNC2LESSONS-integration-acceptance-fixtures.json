@@ -26,7 +26,12 @@
       "rejectWrongOrMalformed",
       "gradingPolicy"
     ],
-    "humanRubricNote": "Proof, reason, explanation and parametric solution claims need reviewed rubric; never certify by single numeric exact match."
+    "humanRubricNote": "Proof, reason, explanation and parametric solution claims need reviewed rubric; never certify by single numeric exact match.",
+    "additionalCourseOwnedCaseFields": [
+      "rejectMalformed",
+      "boundaryOracle"
+    ],
+    "runtimeEvidence": "All fixtures are author-proposed. rejectWrongOrMalformed is a wrong-answer negative exemplar; rejectMalformed is a distinct syntax/shape-invalid exemplar. Neither establishes actual selected runtime grading."
   },
   "cases": [
     {
@@ -36,9 +41,11 @@
       "category": "matrix-coefficients-3x3",
       "prompt": "coefficient matrix of x+y+z=6,2x-y+z=3,x+2y-z=2",
       "expectedCanonical": "A=[[1,1,1],[2,-1,1],[1,2,-1]]; b=[6,3,2]",
-      "acceptedEquivalent": "A=[[1,1,1],[2,-1,1],[1,2,-1]]; b=[6,3,2]",
+      "acceptedEquivalent": "Ax=b with A rows (1,1,1), (2,-1,1), (1,2,-1) and b column (6,3,2)",
       "rejectWrongOrMalformed": "A=[[1,1,1],[2,1,1],[1,2,-1]]",
-      "gradingPolicy": "NUMERIC_OR_STRUCTURED"
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "A=[[1,1],[2,-1,1]]; b=[6,3,2]",
+      "boundaryOracle": "The first coefficient row has all 1s; replacing absent entries or dropping a column changes the system."
     },
     {
       "id": "M02",
@@ -49,7 +56,9 @@
       "expectedCanonical": "A^-1=[[1,-1],[-1,2]]; x=[2,1]",
       "acceptedEquivalent": "A^-1=[[1,-1],[-1,2]]; x=[2/1,1/1]",
       "rejectWrongOrMalformed": "x=[1,2]",
-      "gradingPolicy": "NUMERIC_OR_STRUCTURED"
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "A^-1=[[1,-1],[-1]]; x=[2,1]",
+      "boundaryOracle": "det([[2,1],[1,1]])=1, so the inverse is defined and A^-1 b must reproduce x=[2,1]."
     },
     {
       "id": "M03",
@@ -60,7 +69,9 @@
       "expectedCanonical": "det(A)=7; A^-1=(1/7)*[[-1,3,2],[3,-2,1],[5,-1,-3]]; x=[1,2,3]",
       "acceptedEquivalent": "x=[7/7,14/7,21/7]",
       "rejectWrongOrMalformed": "x=[1,3,2]",
-      "gradingPolicy": "NUMERIC_OR_STRUCTURED"
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "A^-1=[[1,2],[3,4]]; x=[1,2,3]",
+      "boundaryOracle": "det(A)=7; verify both A*A^-1=I3 and A*x=b using exact rational entries."
     },
     {
       "id": "M04",
@@ -71,7 +82,9 @@
       "expectedCanonical": "x=[1,2,3]",
       "acceptedEquivalent": "[1,2,3]",
       "rejectWrongOrMalformed": "[1,2]",
-      "gradingPolicy": "NUMERIC_OR_STRUCTURED"
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "x=[1,2,not-a-number]",
+      "boundaryOracle": "All 3 original equations must hold: 6, 3 and 2; rejecting a two-entry solution is mandatory."
     },
     {
       "id": "M05",
@@ -81,8 +94,10 @@
       "prompt": "x+y=2 and 2x+2y=4; classify",
       "expectedCanonical": "infinitely many; (x,y)=(2-t,t)",
       "acceptedEquivalent": "x=2-y for all real y",
-      "rejectWrongOrMalformed": "unique solution",
-      "gradingPolicy": "CLASSIFICATION_AND_RUBRIC"
+      "rejectWrongOrMalformed": "only one solution (2,0)",
+      "gradingPolicy": "CLASSIFICATION_AND_RUBRIC",
+      "rejectMalformed": "(x,y)=(2-t,)",
+      "boundaryOracle": "The augmented zero row is [0,0|0], leaving a free parameter; do not accept a single example as the full set."
     },
     {
       "id": "M06",
@@ -93,7 +108,9 @@
       "expectedCanonical": "no solution",
       "acceptedEquivalent": "inconsistent",
       "rejectWrongOrMalformed": "infinitely many",
-      "gradingPolicy": "CLASSIFICATION"
+      "gradingPolicy": "CLASSIFICATION",
+      "rejectMalformed": "classification=",
+      "boundaryOracle": "Subtracting twice the first equation yields [0,0|1], a contradiction."
     },
     {
       "id": "M07",
@@ -104,7 +121,9 @@
       "expectedCanonical": "det(A)=0; inverse undefined",
       "acceptedEquivalent": "singular; no inverse",
       "rejectWrongOrMalformed": "A^-1=[[4,-2],[-2,1]]",
-      "gradingPolicy": "CLASSIFICATION"
+      "gradingPolicy": "CLASSIFICATION",
+      "rejectMalformed": "A^-1=[[4,-2],[-2]]",
+      "boundaryOracle": "det(A)=1*4-2*2=0, so the inverse is undefined regardless of entries supplied."
     },
     {
       "id": "M08",
@@ -115,7 +134,9 @@
       "expectedCanonical": "reject dimension mismatch",
       "acceptedEquivalent": "invalid dimensions",
       "rejectWrongOrMalformed": "x=[2,1,0]",
-      "gradingPolicy": "REJECT_INVALID_INPUT"
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "A^-1*[5,3,]",
+      "boundaryOracle": "2x2 inverse times a 3-entry column is undefined, even if a student pads a solution with zero."
     },
     {
       "id": "M09",
@@ -124,9 +145,11 @@
       "category": "sign-order-error",
       "prompt": "For 2x-y+z=3 place coefficient row using variable order x,y,z",
       "expectedCanonical": "[2,-1,1]",
-      "acceptedEquivalent": "[2,-1,1]",
+      "acceptedEquivalent": "(2, -1, +1)",
       "rejectWrongOrMalformed": "[2,1,-1]",
-      "gradingPolicy": "NUMERIC_OR_STRUCTURED"
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "[2,-,1]",
+      "boundaryOracle": "Coefficient row order x,y,z and the negative y sign must both be preserved."
     },
     {
       "id": "M10",
@@ -137,7 +160,9 @@
       "expectedCanonical": "not square; A^-1 undefined",
       "acceptedEquivalent": "dimension-incompatible for inversion",
       "rejectWrongOrMalformed": "invertible",
-      "gradingPolicy": "REJECT_INVALID_INPUT"
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "A^-1=[[1,2,3],[4,5,6]]",
+      "boundaryOracle": "A 2x3 matrix has no two-sided square inverse even if its rows are independent."
     },
     {
       "id": "M11",
@@ -148,7 +173,9 @@
       "expectedCanonical": "valid equivalence argument referring to reversible row operation",
       "acceptedEquivalent": "independent rubric assessed explanation",
       "rejectWrongOrMalformed": "numerical answer only",
-      "gradingPolicy": "HUMAN_RUBRIC"
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "rejectMalformed": "R2 <- R2 -",
+      "boundaryOracle": "A valid explanation must establish reverse operation R2 <- R2 + 2R1 while R1 stays fixed."
     },
     {
       "id": "L01",
@@ -159,7 +186,9 @@
       "expectedCanonical": "5",
       "acceptedEquivalent": "10/2",
       "rejectWrongOrMalformed": "4",
-      "gradingPolicy": "NUMERIC_EXACT"
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_2(",
+      "boundaryOracle": "log_2(1)=0 is the positive-domain boundary anchor; log_2(32)=5."
     },
     {
       "id": "L02",
@@ -170,7 +199,9 @@
       "expectedCanonical": "-2",
       "acceptedEquivalent": "-4/2",
       "rejectWrongOrMalformed": "2",
-      "gradingPolicy": "NUMERIC_EXACT"
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_3(1/)",
+      "boundaryOracle": "A negative output (-2) is valid although log_3(-1/9) is not a real logarithm."
     },
     {
       "id": "L03",
@@ -181,7 +212,9 @@
       "expectedCanonical": "-2",
       "acceptedEquivalent": "-2/1",
       "rejectWrongOrMalformed": "2",
-      "gradingPolicy": "NUMERIC_EXACT"
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_(1/2)( )",
+      "boundaryOracle": "Base one-half is admissible and decreasing; log_(1/2)(1)=0."
     },
     {
       "id": "L04",
@@ -192,7 +225,9 @@
       "expectedCanonical": "log_2(3)<log_2(5)",
       "acceptedEquivalent": "<",
       "rejectWrongOrMalformed": ">",
-      "gradingPolicy": "ORDER_RELATION"
+      "gradingPolicy": "ORDER_RELATION",
+      "rejectMalformed": "log_2(3<log_2(5)",
+      "boundaryOracle": "For b>1 and positive inputs, argument order is preserved; 3<5 gives log_2(3)<log_2(5)."
     },
     {
       "id": "L05",
@@ -203,7 +238,9 @@
       "expectedCanonical": "log_(1/2)(3)>log_(1/2)(5)",
       "acceptedEquivalent": ">",
       "rejectWrongOrMalformed": "<",
-      "gradingPolicy": "ORDER_RELATION"
+      "gradingPolicy": "ORDER_RELATION",
+      "rejectMalformed": "log_(1/2)(3)>log_(1/2)(",
+      "boundaryOracle": "For 0<b<1, positive argument order reverses; x=1 gives log_b(1)=0."
     },
     {
       "id": "L06",
@@ -214,7 +251,9 @@
       "expectedCanonical": "log_4(3)<log_2(3)",
       "acceptedEquivalent": "<",
       "rejectWrongOrMalformed": ">",
-      "gradingPolicy": "ORDER_RELATION"
+      "gradingPolicy": "ORDER_RELATION",
+      "rejectMalformed": "log_4(3)<log_2(",
+      "boundaryOracle": "At x=1 both bases yield 0, so do not generalize the strict relation to all positive inputs."
     },
     {
       "id": "L07",
@@ -225,7 +264,9 @@
       "expectedCanonical": "x=5",
       "acceptedEquivalent": "5/1",
       "rejectWrongOrMalformed": "x=3",
-      "gradingPolicy": "NUMERIC_EXACT"
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_2(x-3)=1, x=NaN",
+      "boundaryOracle": "Domain requires x>3; x=3 is excluded even before solving, and x=5 is valid."
     },
     {
       "id": "L08",
@@ -236,7 +277,9 @@
       "expectedCanonical": "undefined",
       "acceptedEquivalent": "invalid real logarithm",
       "rejectWrongOrMalformed": "0",
-      "gradingPolicy": "REJECT_INVALID_INPUT"
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_1()",
+      "boundaryOracle": "Base=1 is invalid even when the argument is strictly positive."
     },
     {
       "id": "L09",
@@ -247,7 +290,9 @@
       "expectedCanonical": "undefined",
       "acceptedEquivalent": "invalid real logarithm",
       "rejectWrongOrMalformed": "-1",
-      "gradingPolicy": "REJECT_INVALID_INPUT"
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_2(-)",
+      "boundaryOracle": "Negative real logarithm arguments are excluded; a negative logarithm VALUE may be valid."
     },
     {
       "id": "L10",
@@ -258,7 +303,9 @@
       "expectedCanonical": "undefined",
       "acceptedEquivalent": "invalid real logarithm",
       "rejectWrongOrMalformed": "0",
-      "gradingPolicy": "REJECT_INVALID_INPUT"
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_2(NaN)",
+      "boundaryOracle": "Argument zero is excluded; log_b(x) tends toward a limit but is not defined at x=0."
     },
     {
       "id": "L11",
@@ -269,7 +316,9 @@
       "expectedCanonical": "undefined",
       "acceptedEquivalent": "invalid real logarithm",
       "rejectWrongOrMalformed": "3",
-      "gradingPolicy": "REJECT_INVALID_INPUT"
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_(-2)(",
+      "boundaryOracle": "Nonpositive bases are invalid as real logarithm functions, independent of argument."
     },
     {
       "id": "L12",
@@ -280,7 +329,9 @@
       "expectedCanonical": "false",
       "acceptedEquivalent": "not equal",
       "rejectWrongOrMalformed": "true",
-      "gradingPolicy": "CLASSIFICATION"
+      "gradingPolicy": "CLASSIFICATION",
+      "rejectMalformed": "log_2(6)=log_2(2)+",
+      "boundaryOracle": "Product law applies to positive products, not sums; log_2(2)+log_2(4)=3 but log_2(6)!=3."
     },
     {
       "id": "L13",
@@ -291,7 +342,9 @@
       "expectedCanonical": "exponent-law argument and correct domain",
       "acceptedEquivalent": "equivalent mathematical proof",
       "rejectWrongOrMalformed": "numeric response without justification",
-      "gradingPolicy": "HUMAN_RUBRIC"
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "rejectMalformed": "proof: log_b(xy)=log_b(x)+log_b(",
+      "boundaryOracle": "Proof must use x,y>0,b>0,b!=1 and inverse exponents, not a decimal example."
     },
     {
       "id": "L14",
@@ -302,7 +355,9 @@
       "expectedCanonical": "x=ln(7)/ln(2)",
       "acceptedEquivalent": "x=log_2(7)",
       "rejectWrongOrMalformed": "x=7/2",
-      "gradingPolicy": "SYMBOLIC_OR_NUMERIC_TOLERANCE"
+      "gradingPolicy": "SYMBOLIC_OR_NUMERIC_TOLERANCE",
+      "rejectMalformed": "x=ln(7)/ln(",
+      "boundaryOracle": "The exact quotient and log_2(7) are equivalent; reject x=7/2 and check 2^x=7."
     },
     {
       "id": "L15",
@@ -313,7 +368,9 @@
       "expectedCanonical": "7",
       "acceptedEquivalent": "14/2",
       "rejectWrongOrMalformed": "log_2(7)",
-      "gradingPolicy": "NUMERIC_EXACT"
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "2^(log_2())",
+      "boundaryOracle": "The inverse identity requires argument 7>0 and valid base 2; 2^(log_2(0)) is invalid."
     }
   ],
   "requiredIntegrationChecks": [
@@ -324,7 +381,8 @@
     "Check log bases >0 and !=1, positive arguments, order reversal when 0<b<1, symbolic-equivalent change of base, tolerance on transcendental results and false addition law.",
     "Use human/rubric review for explanations, comparison justifications and matrix proof; no fabricated automated grading of unrestricted natural language.",
     "Use disposable HTTPS two-school isolation; student attempts remain school/student-scoped and persistent; ensure Teacher Builder and Adaptive Practice cannot cross-course leak.",
-    "Materialized revised learner body, predecessor/approval chain, protected final SHA CI, authorized release and owner UAT are independent gates."
+    "Materialized revised learner body, predecessor/approval chain, protected final SHA CI, authorized release and owner UAT are independent gates.",
+    "For every one of 26 cases separately exercise canonical, equivalent, wrong, malformed and boundary inputs through the selected runtime grader; expected strings are NOT machine-graded student proof."
   ],
   "prohibitedClaims": [
     "READY_VERIFIED for all course competencies from old one-variable mapping",
