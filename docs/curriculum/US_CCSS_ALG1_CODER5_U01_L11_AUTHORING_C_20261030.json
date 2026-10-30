@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
+  "contentVersion": "alg1-u01-l11-source-abc-authoring-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\11\\preparation.html",
+      "sha256": "ab683301d80f8009b7dfa7400fa001fa41792cfa4c2166adb7f5b9dab59b57d2"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\11\\index.html",
+      "sha256": "cb5ec53299e9eddc6681006d762ce413cb8d25a97d88b75c2497b065ddb557f8"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\11\\index.html",
+      "sha256": "c8140fae966d19f7afdb44e2a5258eaa947691aee977bd3532d3358e91c0d7bf"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\11\\practice.html",
+      "sha256": "91614d61d18ba8cdfcaf7bd3364319dbad26600a89d15b9ac0dfd423c66ff7c9"
+    }
+  },
+  "sourceRoles": [
+    "HSS-ID.A.1 BuildingOn",
+    "HSS-ID.A.2 Addressing",
+    "HSS-ID.A.3 BuildingTowards"
+  ],
+  "activity": "Match source dot/box representations using consistent scales; rank spreads by MAD and IQR with shared center.",
+  "practice": "Compare first-party groups with means 6, MAD 1.2 versus 3.6 and IQR 3 versus 9; explain which is more variable.",
+  "mathFixture": [
+    6,
+    6,
+    1.2,
+    3.6,
+    3.0,
+    9.0
+  ],
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_ACTIVITY",
+      "kind": "HUMAN",
+      "prompt": "Match source dot/box representations using consistent scales; rank spreads by MAD and IQR with shared center.",
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "student-created graph or source task",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "accurate mathematics and units",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "reasoned interpretation and limits",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "honest evidence of actual versus hypothetical work",
+          "maxPoints": 2
+        }
+      ],
+      "recordedRealStudentWork": false
+    },
+    {
+      "id": "NUMERIC_EXAMPLE",
+      "kind": "AUTHORING_MATH_ORACLE",
+      "prompt": "Compare first-party groups with means 6, MAD 1.2 versus 3.6 and IQR 3 versus 9; explain which is more variable.",
+      "answerType": "finite numeric vector",
+      "expected": [
+        6,
+        6,
+        1.2,
+        3.6,
+        3,
+        9
+      ],
+      "acceptCorrect": "computed same values with units; consistent convention",
+      "acceptEquivalent": "mathematically equal values or justifiably rounded equivalents",
+      "wrong": "missing/extra or non-equivalent numeric values",
+      "malformed": "null, blank, NaN, infinity, invalid type, wrong vector length",
+      "runtimeGradeEnabled": false
+    },
+    {
+      "id": "COOLDOWN",
+      "kind": "HUMAN",
+      "source": "EDULYTIKS_AUTHORED_COOLDOWN_PUBLISHER_UNVERIFIED",
+      "prompt": "Compare first-party groups with means 6, MAD 1.2 versus 3.6 and IQR 3 versus 9; explain which is more variable.",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "Correct MAD and deviations",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Correct IQR/scale comparison",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "Variation interpretation",
+          "maxPoints": 2
+        }
+      ]
+    }
+  ],
+  "stageD": {
+    "currentPracticeStatus": "ALG1_NoSupportedOutcomes_FAIL_CLOSED",
+    "owner": "Supervisor 2 shared-service single writer",
+    "requires": [
+      "authorized lesson-scoped generator and grader",
+      "teacher-scored actual work and persistence",
+      "authenticated browser, tenant isolation, full CI"
+    ],
+    "runtimeOrGradePersistenceVerified": false,
+    "NOT_RUN": [
+      "dotnet build",
+      "authenticated E2E",
+      "two-school tests",
+      "final CI"
+    ]
+  },
+  "oracleCheck": {
+    "status": "PASS_LOCAL_FIXTURE",
+    "correct": "expected numeric vector",
+    "equivalent": "numeric strings accepted",
+    "wrong": "shifted value rejected",
+    "malformed": "null, missing, blank, NaN rejected",
+    "testsRun": "LOCAL_ONLY_NOT_DOTNET"
+  }
+}
