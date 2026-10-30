@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L11",
+  "title": "What Is the Same?",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\11\\index.html",
+      "sha256": "c7079daf3f93ced1e066cc9d5774146f132118c131328e762a81fdf424369e01"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\11\\index.html",
+      "sha256": "2812f79f3b49d329e517566c3354310e485a0814da1d7e99ecab893aa75cab2e"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\11\\preparation.html",
+      "sha256": "1ab13917a9a5a4c1de8c5e3cb35a54c724ea157956482aff919429bdc546a65a"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.A.2"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: decide whether two figures are the same size and shape, even when their positions or orientations differ, and distinguish congruence from mere visual resemblance.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Given R=2×3, S=1×6 and T=1×4, compare all areas and perimeters and select which are actually congruent. Justify the rejection despite matching area/perimeter. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "11.1: Find the Right Hands",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Compare original asymmetric left and right hand drawings; identify reflection as necessary to change handedness.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "11.2: Are They the Same?",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Judge figure pairs by all corresponding lengths/angles, not just apparent similarity or matching area.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "11.3: Area, Perimeter, and Congruence",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Compare rectangles R=2×3, S=1×6 and T=1×4 by area and perimeter; identify why equal area or perimeter alone does not show congruence.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "Rectangle R is 2×3 and S is 1×6. Both have area 6. Find the difference in their perimeters.",
+    "responseType": "finite_decimal",
+    "unit": "units",
+    "expected": 4,
+    "acceptedEquivalentInputs": [
+      "4",
+      "4.0",
+      "+4"
+    ],
+    "wrongRejected": [
+      "5",
+      "3"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "Infinity",
+      "1e309",
+      "",
+      null,
+      "3,4",
+      "--2"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 2,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "Given R=2×3, S=1×6 and T=1×4, compare all areas and perimeters and select which are actually congruent. Justify the rejection despite matching area/perimeter.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:01:55.840143+00:00",
+  "parentGitHEAD": "3682d055bc25d2539f053a197c1386ed483bda30"
+}

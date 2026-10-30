@@ -302,6 +302,7 @@
         "Source-aligned 11.3: compare rectangles R (2 by 3), S (1 by 6), and T (1 by 4). R and S have equal area 6 but perimeters 10 and 14; R and T have the same perimeter 10 but areas 6 and 4. Neither equal area nor equal perimeter alone proves congruence.",
         "Use labeled, independently drawn triangles with side lengths 3,4,5. Mirror one triangle and shift it away from the first. Decide whether the result is congruent and explain which measurements are unchanged.",
         "Student challenge: give one example of a pair that looks alike but is not congruent and one pair whose orientation differs but is congruent. A teacher evaluates explanations and sketches, not an asserted one-word machine-graded result.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Given R=2×3, S=1×6 and T=1×4, compare all areas and perimeters and select which are actually congruent. Justify the rejection despite matching area/perimeter. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
         "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/11/preparation.html . No publisher artwork or branded assessment is copied."
       ],
       "KeyConcepts": [
@@ -379,7 +380,43 @@
         "Rigid movements can change orientation and position.",
         "Scaled copies may be similar without being congruent."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L11 What Is the Same?",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "R 2×3",
+              "Cells": [
+                "area 6",
+                "perimeter 10"
+              ]
+            },
+            {
+              "Label": "S 1×6",
+              "Cells": [
+                "area 6",
+                "perimeter 14"
+              ]
+            },
+            {
+              "Label": "T 1×4",
+              "Cells": [
+                "area 4",
+                "perimeter 10"
+              ]
+            },
+            {
+              "Label": "Congruence",
+              "Cells": [
+                "R vs S: no",
+                "R vs T: no"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
