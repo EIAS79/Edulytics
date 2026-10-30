@@ -326,6 +326,17 @@ public sealed class RichLessonContentV2PilotTests
             .SelectMany(x => x.Lessons)
             .ToArray();
 
+        // Preserve the 24 Cambridge and 2 UAE original pilots independently
+        // of any new American grade inventory. This also reconciles the
+        // legacy-pilot invariant introduced in cross-curriculum PR #598.
+        var legacyPilots = RichLessonContentV2Registry.AllDocuments
+            .Where(x => x.ContentVersion is
+                "rich-v2-cambridge-primary-stage6-pilot-2026-09-22" or
+                "rich-v2-uae-g9-advanced-official-pilot-2026-09-22")
+            .SelectMany(x => x.Lessons)
+            .ToArray();
+        Assert.Equal(26, legacyPilots.Length);
+
         // Historical US grade coverage is invariant; new authored grades
         // must not erase G3/G4 or invalidate the global inventory by count.
         Assert.Equal(143, lessons.Count(x => x.LessonCode.StartsWith(
