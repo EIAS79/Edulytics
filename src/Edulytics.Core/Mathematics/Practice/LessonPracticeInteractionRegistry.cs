@@ -32,7 +32,29 @@ public static class LessonPracticeInteractionRegistry
     private static readonly IReadOnlyDictionary<
         string,
         LessonPracticeInteractionContract> ByFamily =
-        Load();
+        Load(pendingForAudit: false);
+
+    // Physically distinct read-only QA representation. Never include pending
+    // types in ByFamily / TryResolve / lesson-launched student presentation.
+    private static readonly IReadOnlyDictionary<
+        string,
+        LessonPracticeInteractionContract> PendingByFamily =
+        Load(pendingForAudit: true);
+
+    public static IReadOnlyCollection<
+        LessonPracticeInteractionContract> PendingForAudit =>
+        PendingByFamily.Values
+            .OrderBy(x => x.FamilyId, StringComparer.Ordinal)
+            .ToArray();
+
+    public static bool TryResolvePendingForAudit(
+        string? familyId,
+        out LessonPracticeInteractionContract? contract)
+    {
+        contract = null;
+        return !string.IsNullOrWhiteSpace(familyId) &&
+            PendingByFamily.TryGetValue(familyId.Trim(), out contract);
+    }
 
     public static IReadOnlyCollection<
         LessonPracticeInteractionContract> All =>
@@ -55,7 +77,7 @@ public static class LessonPracticeInteractionRegistry
 
     private static IReadOnlyDictionary<
         string,
-        LessonPracticeInteractionContract> Load()
+        LessonPracticeInteractionContract> Load(bool pendingForAudit)
     {
         var assembly =
             typeof(LessonPracticeInteractionRegistry).Assembly;
@@ -88,7 +110,9 @@ public static class LessonPracticeInteractionRegistry
                     "status", out var status) &&
                 string.Equals(status.GetString(), "IntegrationPending",
                     StringComparison.Ordinal);
-            if (!lessonRoutable || integrationPending)
+            if (pendingForAudit
+                    ? !integrationPending
+                    : !lessonRoutable || integrationPending)
                 continue;
 
             var id =
@@ -156,6 +180,15 @@ public static class LessonPracticeInteractionRegistry
             "trig.principal_inverse")
             return LessonPracticeInteractionKind.NumericEntry;
         if (familyId == "trig.model_all_time_solutions")
+            return LessonPracticeInteractionKind.StructuredEntry;
+
+        // The newer pending source tasks accept exact radicals, pi angles,
+        // symbolic change-of-base and canonical conic equations: a numeric
+        // keypad would reject mathematically correct student equivalents.
+        if (familyId is "usccss.hs.log.change_of_base_equation" or
+            "trig.unit_circle_source_exact_angles" or
+            "trig.principal_inverse_source_branches" or
+            "coordinates.focal_conics_source_equation")
             return LessonPracticeInteractionKind.StructuredEntry;
 
         // U06 responses are keyed LONGER/DIFFERENCE/RESULT/EQUATION,
