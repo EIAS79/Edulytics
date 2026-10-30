@@ -4,7 +4,7 @@
   "pathway": "Fourth Courses",
   "status": "PROPOSED_HUMAN_SCORING_NOT_RUNTIME_CERTIFIED",
   "linkedFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json",
-  "scope": "Course-owned draft for teacher review of open responses. No automatic proof grading, academic approval, authenticated teacher route, persisted grade or production readiness is claimed.",
+  "scope": "Course-owned draft for teacher review of open responses. No automatic proof grading, academic approval, authenticated teacher route, persisted grade or production readiness is claimed. L04-L06 comparison tasks also require teacher-reviewed reasoning alongside relation correctness.",
   "scoringInstructions": {
     "possiblePoints": [
       0,
@@ -19,6 +19,138 @@
     "humanDecision": "Final points and explanation require an authenticated teacher/reviewer after a real student submission; this file itself does not implement that workflow."
   },
   "rubrics": [
+    {
+      "caseId": "L04",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "domain",
+          "points": 1,
+          "requirement": "Verify both 3 and 5 are positive and b=2>1."
+        },
+        {
+          "id": "order",
+          "points": 1,
+          "requirement": "State log_2(3)<log_2(5)."
+        },
+        {
+          "id": "monotonic",
+          "points": 1,
+          "requirement": "Explain log base 2 is increasing because 2^t is strictly increasing."
+        },
+        {
+          "id": "bounds",
+          "points": 1,
+          "requirement": "Give a valid power bound or inverse exponential comparison, not just a decimal."
+        }
+      ],
+      "acceptedReasoning": "A correct increasing exponential inverse/ordering argument; optional 1<log_2(3)<log_2(5)<3 bound.",
+      "invalidExamples": "A '>' relation; comparing without validating base/arguments; a numeric-only answer.",
+      "feedbackPolicy": "Score the direction AND mathematical justification from actual student work; do not award reasoning credit from a single relation symbol or a numeric approximation."
+    },
+    {
+      "caseId": "L05",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "domain",
+          "points": 1,
+          "requirement": "Verify positive inputs 3, 5 and valid base 0.5 strictly between 0 and 1."
+        },
+        {
+          "id": "order",
+          "points": 1,
+          "requirement": "State log_(1/2)(3)>log_(1/2)(5)."
+        },
+        {
+          "id": "monotonic",
+          "points": 1,
+          "requirement": "Explain the logarithm is decreasing and reverses order for increasing positive arguments."
+        },
+        {
+          "id": "sign",
+          "points": 1,
+          "requirement": "Explain both results are negative because inputs exceed 1 and base 0.5<1."
+        }
+      ],
+      "acceptedReasoning": "Proof by the decreasing exponential inverse and sign reasoning, without calculator dependency.",
+      "invalidExamples": "A '<' relation; treating base below one as increasing; numeric-only assertion.",
+      "feedbackPolicy": "Score the direction AND mathematical justification from actual student work; do not award reasoning credit from a single relation symbol or a numeric approximation."
+    },
+    {
+      "caseId": "L06",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "domain",
+          "points": 1,
+          "requirement": "Confirm arguments 3>1 and valid distinct bases 4 and 2."
+        },
+        {
+          "id": "transform",
+          "points": 1,
+          "requirement": "Establish log_4(3)=log_2(3)/2 via change of base or 4=2^2."
+        },
+        {
+          "id": "order",
+          "points": 1,
+          "requirement": "Conclude 0<log_4(3)<log_2(3) using log_2(3)>0."
+        },
+        {
+          "id": "generalization",
+          "points": 1,
+          "requirement": "State this strict comparison is not universal for all x>0: x=1 gives equality and 0<x<1 reverses the inequality."
+        }
+      ],
+      "acceptedReasoning": "Any exact equivalent change-of-base argument with correct x=1 and 0<x<1 boundary interpretation.",
+      "invalidExamples": "A reversed '>' relation at x=3; universal all-positive comparison; approximate decimals without rationale.",
+      "feedbackPolicy": "Score the direction AND mathematical justification from actual student work; do not award reasoning credit from a single relation symbol or a numeric approximation."
+    },
+    {
+      "caseId": "L13",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "maxPoints": 4,
+      "requiresHumanReview": true,
+      "machineAutoGrade": false,
+      "criteria": [
+        {
+          "id": "domain",
+          "points": 1,
+          "requirement": "State x>0, y>0, b>0 and b!=1 for real logarithms."
+        },
+        {
+          "id": "inverse",
+          "points": 1,
+          "requirement": "Let u=log_b(x), v=log_b(y), so b^u=x and b^v=y."
+        },
+        {
+          "id": "exponent-law",
+          "points": 1,
+          "requirement": "Use b^(u+v)=b^u b^v=xy, a valid positive argument."
+        },
+        {
+          "id": "conclusion",
+          "points": 1,
+          "requirement": "Apply uniqueness/inverse to infer log_b(xy)=u+v, not log_b(x+y); justify the equality."
+        }
+      ],
+      "acceptedReasoning": "Equivalent derivation using the exponent law or valid change of base with its domain restrictions.",
+      "invalidExamples": "A decimal example or unreasoned rule statement, a false log-of-sum identity, or invalid real-log domains.",
+      "feedbackPolicy": "Reviewer records scored criteria, mathematical explanation and student-visible feedback. Numeric or keyword matching alone cannot certify reasoning."
+    },
     {
       "caseId": "M05",
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
@@ -83,39 +215,6 @@
       ],
       "acceptedReasoning": "Equivalent algebraic substitution or a correctly described sequence of reversible elementary row operations.",
       "invalidExamples": "A matrix or numeric answer only; stating that row operations work without explaining why; multiplying an equation by zero.",
-      "feedbackPolicy": "Reviewer records scored criteria, mathematical explanation and student-visible feedback. Numeric or keyword matching alone cannot certify reasoning."
-    },
-    {
-      "caseId": "L13",
-      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
-      "gradingPolicy": "HUMAN_RUBRIC",
-      "maxPoints": 4,
-      "requiresHumanReview": true,
-      "machineAutoGrade": false,
-      "criteria": [
-        {
-          "id": "domain",
-          "points": 1,
-          "requirement": "State x>0, y>0, b>0 and b!=1 for real logarithms."
-        },
-        {
-          "id": "inverse",
-          "points": 1,
-          "requirement": "Let u=log_b(x), v=log_b(y), so b^u=x and b^v=y."
-        },
-        {
-          "id": "exponent-law",
-          "points": 1,
-          "requirement": "Use b^(u+v)=b^u b^v=xy, a valid positive argument."
-        },
-        {
-          "id": "conclusion",
-          "points": 1,
-          "requirement": "Apply uniqueness/inverse to infer log_b(xy)=u+v, not log_b(x+y); justify the equality."
-        }
-      ],
-      "acceptedReasoning": "Equivalent derivation using the exponent law or valid change of base with its domain restrictions.",
-      "invalidExamples": "A decimal example or unreasoned rule statement, a false log-of-sum identity, or invalid real-log domains.",
       "feedbackPolicy": "Reviewer records scored criteria, mathematical explanation and student-visible feedback. Numeric or keyword matching alone cannot certify reasoning."
     }
   ],
