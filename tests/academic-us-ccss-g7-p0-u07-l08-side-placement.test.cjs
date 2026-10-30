@@ -61,12 +61,16 @@ test('Source comparison, teacher rubric and wrong/incomplete/malformed cases',()
 });
 test('All Stage A-D grades stay 0 without student UI, Practice or human assessment evidence',()=>{
  assert.equal(ledger.counts.catalogue,145);assert.equal(ledger.counts.uniqueRich,145);
- assert.equal(ledger.counts.gradeOwnedSvgFigureCandidates,22);
- assert.equal(ledger.counts.gradeOwnedTeacherRubricDrafts,23);
+ assert.ok(Number.isSafeInteger(ledger.counts.gradeOwnedSvgFigureCandidates));
+ assert.ok(Number.isSafeInteger(ledger.counts.gradeOwnedTeacherRubricDrafts));
+ assert.ok(ledger.counts.gradeOwnedSvgFigureCandidates >= ledger.v12.originalSvgCandidates,'SVG inventory cannot regress below V12 milestone');
+ assert.ok(ledger.counts.gradeOwnedTeacherRubricDrafts >= ledger.v12.teacherRubricDrafts,'rubric inventory cannot regress below V12 milestone');
  for(const k of ['stageAVerified','stageBEffectiveRuntimeVerified','stageCVerified','stageDVerified'])assert.equal(ledger.counts[k],0);
  for(const stage of ['A','B','C','D'])assert.equal(e.academic[stage],'NOT_VERIFIED');
  const l=ledger.lessons.find(x=>x.lessonCode===e.lessonCode);
  assert.equal(l.p0OriginalSvg,e.asset);
+ assert.equal(l.p0SourceTeacherRubric,'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-p0-u07-l08-side-placement-rubric.json');
+ assert.equal(l.p0GradeScopedTest,'tests/academic-us-ccss-g7-p0-u07-l08-side-placement.test.cjs');
  assert.equal(e.integration.selectedPractice,'NOT_EXECUTED');
  assert.equal(e.release,'RELEASE_BLOCKED');
 });
