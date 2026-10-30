@@ -203,3 +203,56 @@
     <script src="~/curriculum/us-ccss-g7/geometry/u01-l01-activities.js"
             asp-append-version="true" defer></script>
 }
+
+@if (Model.LessonCode == "PED:US-CCSS-MATH:G7:U01:L02")
+{
+    @* First-party student-facing tasks. Static delivery depends on the
+       designated shared Rich V2 view invoking this Grade 7 partial. *@
+    <section class="rich-lesson-section rich-lesson-section--g7-corresponding-parts"
+             data-g7-u01-l02 aria-label="Grade 7 corresponding parts and scale factor activity">
+        <h3>Corresponding Parts — Edulytiks original student activity</h3>
+        <p><strong>Number talk:</strong> Work out one-fourth of 32, one-ninth of 7.2,
+           and one-fourth of 5.6. Explain why multiplication by a unit fraction
+           divides by its denominator.</p>
+        <h4>Find matching points, lengths and angles</h4>
+        <p>On the same unit grid, draw original triangle ABC with A=(0,0),
+           B=(4,0), C=(0,3), and copy DEF with D=(0,0), E=(6,0), F=(0,4.5).
+           Then draw an altered copy D'=(0,0), E'=(6,0), F'=(0,3).</p>
+        <p>Label A↔D, B↔E, C↔F. Match segments AB↔DE, AC↔DF,
+           BC↔EF and angles BAC↔EDF. Use your own ruler or tracing paper
+           to compare the right angles and acute angles.</p>
+        <ul>
+            <li>Which copy is a scaled copy of ABC? Justify with all three side ratios.</li>
+            <li>Identify the correspondence of point B, segment BC and angle BAC.</li>
+            <li>What is the factor from ABC to DEF? What factor returns DEF to ABC?</li>
+            <li>What happens to the acute angles if the x-coordinate alone is multiplied by 1.5?</li>
+        </ul>
+        <p><strong>Additional triangle comparison:</strong> Start with side lengths
+           (3,4,5). Compare candidate sides (1.5,2,2.5), (6,8,10),
+           and (6,8,9). Identify the uniformly scaled figures and explain
+           why the remaining candidate is not a scaled copy. On graph paper,
+           draw one valid copy and label corresponding vertices and sides.</p>
+        <details>
+            <summary>Open the reasoning guide after you have attempted the activity</summary>
+            <p>The original ABC has right angle at A and sides 3,4,5.
+               DEF has sides 4.5,6,7.5; all three factors are 1.5
+               and corresponding angles remain equal. The altered copy
+               changes the two perpendicular sides by different factors,
+               so its acute angles change. The reverse factor is 2/3.
+               For the additional triangle comparison, factors 1/2
+               and 2 are uniform, while 6/3=8/4=2 but 9/5=1.8.</p>
+        </details>
+        <h4>Cool-down — Edulytiks original, not the publisher's gated question</h4>
+        <p>Draw ABC from the three original coordinates. Label its side lengths and
+           its right angle. Construct a factor-3/2 triangle DEF using the matching
+           vertices, identify the image of segment BC and angle BAC, and explain
+           why all corresponding angles stay equal. Then explain whether a
+           triangle with legs 6 and 3 is a scaled copy of ABC.</p>
+        <p><strong>Teacher-scoring boundary:</strong> A teacher must inspect
+           point correspondence, correct scale factors on all three sides,
+           preserved angle measures, a real labeled drawing, and a complete
+           explanation. Reading the reasoning guide or typing one number
+           does not submit or pass an assessment. This partial does not
+           capture or persist student work.</p>
+    </section>
+}
