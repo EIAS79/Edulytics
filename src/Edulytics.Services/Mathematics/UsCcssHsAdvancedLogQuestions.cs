@@ -11,6 +11,7 @@ namespace Edulytics.Services.Mathematics;
 /// </summary>
 public static class UsCcssHsAdvancedLogQuestions
 {
+    public const string EvaluateDecreasingBase = "usccss.hs.log.decreasing_base_evaluation";
     public const string SolveShiftedDomain = "usccss.hs.log.shifted_domain_equation";
     public const string InvalidRealLog = "usccss.hs.log.invalid_real_domain";
     public const string CompareDifferentBases = "usccss.hs.log.compare_different_bases";
@@ -18,7 +19,7 @@ public static class UsCcssHsAdvancedLogQuestions
     public const string ChangeBase = "usccss.hs.log.change_of_base_equation";
     public const string InverseIdentity = "usccss.hs.log.inverse_identity";
     public static bool Supports(string? id) => id is
-        SolveShiftedDomain or InvalidRealLog or CompareDifferentBases or
+        EvaluateDecreasingBase or SolveShiftedDomain or InvalidRealLog or CompareDifferentBases or
         CheckProductIdentity or ChangeBase or InverseIdentity;
 
     public static UsCcssHsFourthCourseQuestions.Item Build(string family, Random random)
@@ -29,6 +30,13 @@ public static class UsCcssHsAdvancedLogQuestions
         string prompt;
         switch (family)
         {
+            case EvaluateDecreasingBase:
+                p["exponent"] = random.Next(-5, 6);
+                var argument = p["exponent"] <= 0
+                    ? Math.Pow(2, -p["exponent"]).ToString(CultureInfo.InvariantCulture)
+                    : "1/" + Math.Pow(2, p["exponent"]).ToString(CultureInfo.InvariantCulture);
+                prompt = $"Evaluate log base 1/2 of ({argument}). Give the exact integer exponent.";
+                break;
             case SolveShiftedDomain:
                 p["base"] = random.Next(2, 7);
                 p["shift"] = random.Next(1, 10);
@@ -93,6 +101,7 @@ public static class UsCcssHsAdvancedLogQuestions
             throw new ArgumentException("Invalid logarithm question parameters.");
         return family switch
         {
+            EvaluateDecreasingBase => p["exponent"].ToString(CultureInfo.InvariantCulture),
             SolveShiftedDomain => ShiftedSolution(p),
             InvalidRealLog => "undefined",
             CompareDifferentBases => p["numerator"] > p["denominator"] ? "<" : ">",
@@ -138,6 +147,7 @@ public static class UsCcssHsAdvancedLogQuestions
         {
             return family switch
             {
+                EvaluateDecreasingBase => R(p, "exponent") is >= -8 and <= 8,
                 SolveShiftedDomain => R(p, "base") is >= 2 and <= 10 &&
                     R(p, "shift") is >= 0 and <= 30 && R(p, "exponent") is >= -3 and <= 6,
                 InvalidRealLog => R(p, "mode") is >= 0 and <= 3 &&
