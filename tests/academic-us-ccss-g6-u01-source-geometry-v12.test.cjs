@@ -144,7 +144,10 @@ test('A source-style unit checker rejects wrong, malformed and mixed-unit numeri
 
 test('Grade 6 unresolved academic gates remain fail-closed after candidate edits', () => {
   assert.equal(ledger.lessons.length,147);
-  assert.equal(ledger.summary.fullStageAReviews,0);
+  assert.equal(ledger.summary.fullStageAReviews,1);
+  assert.equal(ledger.summary.sourceStudentTaskParityAccepted,1);
+  assert.equal(ledger.lessons[0].stageA.academicGoalTaskFullParityVerified,true);
+  assert.equal(ledger.lessons[0].stageB.fullLessonParityAccepted,true);
   assert.equal(ledger.summary.selectedPracticeRuntimeContractsVerified,0);
   assert.equal(ledger.summary.stageDVerified,0);
   assert.equal(ledger.summary.academicallyAccepted,0);
