@@ -75,4 +75,3 @@ test('U02 L02-L05 exact GitHub Rich V2 fixture preserves source-critical tasks',
  assert.match(lesson(5).ExplanationParagraphs.join(' '),/Why Does It Work/);
  assert.match(lesson(5).WorkedExamples.map(x=>x.Answer).join(' '),/a÷b=a\/b/);
 });
-
