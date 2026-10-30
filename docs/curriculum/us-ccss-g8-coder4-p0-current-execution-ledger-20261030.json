@@ -52,7 +52,7 @@
       ],
       "v13SourceSpotCheck": "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json",
       "latestSequentialABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
-      "lessonClosureStatus": "BLOCKED_A_C_EXTERNAL_DEPENDENCY",
+      "lessonClosureStatus": "BLOCKED_A_C_EXTERNAL_DEPENDENCY_UNIT_GATED",
       "blockingOwners": [
         "Supervisor 2 / independent academic standards owner",
         "Supervisor 2 / shared renderer and Practice integration"
@@ -60,7 +60,7 @@
       "checkpointLessonFixCommit": "69c034259914a5905fdbbbfd22c991c4ca98d86c",
       "checkpointTestCorrectionCommit": "4d46717c9b4733205f5883f6cbc6dc46aa6554a5",
       "sourceCooldownDisposition": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED; TEACHER_RUNTIME_NOT_INTEGRATED",
-      "sequentialAdvanceAllowed": true,
+      "sequentialAdvanceAllowed": false,
       "latestSequentialABCEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
       "courseOwnedNewSvgCandidateCount": 2,
       "courseOwnedNewNativeVisualCount": 4,
@@ -96,7 +96,8 @@
       "lessonClosureStatus": "BLOCKED_C_DEPENDENCY",
       "readyForStageD": false,
       "courseOwnedABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l02-20261030.json",
-      "sequentialAdvanceAllowed": true
+      "sequentialAdvanceAllowed": false,
+      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
@@ -127,7 +128,8 @@
       "lessonClosureStatus": "BLOCKED_C_DEPENDENCY",
       "readyForStageD": false,
       "courseOwnedABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l03-20261030.json",
-      "sequentialAdvanceAllowed": true
+      "sequentialAdvanceAllowed": false,
+      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L04",
@@ -158,7 +160,8 @@
       "lessonClosureStatus": "BLOCKED_C_DEPENDENCY",
       "readyForStageD": false,
       "courseOwnedABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l04-20261030.json",
-      "sequentialAdvanceAllowed": true
+      "sequentialAdvanceAllowed": false,
+      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L05",
@@ -189,7 +192,8 @@
       "lessonClosureStatus": "BLOCKED_C_DEPENDENCY",
       "readyForStageD": false,
       "courseOwnedABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l05-20261030.json",
-      "sequentialAdvanceAllowed": true
+      "sequentialAdvanceAllowed": false,
+      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
@@ -220,7 +224,8 @@
       "lessonClosureStatus": "BLOCKED_C_DEPENDENCY",
       "readyForStageD": false,
       "courseOwnedABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l06-20261030.json",
-      "sequentialAdvanceAllowed": true
+      "sequentialAdvanceAllowed": false,
+      "strictOrderReview": "Historical A/B partial work preserved; not authorized to advance beyond blocked L01"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L07",
@@ -3478,12 +3483,16 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L07",
-    "status": "NEXT_INDEPENDENT_CANONICAL_LESSON",
-    "previousLessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
-    "previousStatus": "BLOCKED_C_DEPENDENCY",
-    "advanceAllowed": true,
-    "returnQueueLength": 6
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "status": "UNIT_BLOCKED_FIRST_UNCLOSED",
+    "unit": "U01",
+    "unitTotal": 17,
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+    "lastClosedLesson": null,
+    "advanceAllowed": false,
+    "previousHistoricalCursor": "PED:US-CCSS-MATH:G8:U01:L07",
+    "historicalReturnQueueLength": 6,
+    "authority": "ADMIN_V_UNIT_STRICT_SEQUENTIAL_20261030"
   },
   "abcReturnQueue": [
     {
@@ -3583,6 +3592,24 @@
     "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
     "BLOCKED": 6,
-    "REMAINING": 131
-  }
+    "REMAINING": 131,
+    "UNIT_TOTAL": 9,
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
+  },
+  "unitProgress": {
+    "unitCode": "U01",
+    "unitTotal": 17,
+    "lastClosedLesson": null,
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+    "unitStatus": "UNIT_BLOCKED",
+    "unitsABCCLOSED": 0,
+    "unitTotalCount": 9,
+    "unitReport": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
+    "newlyClosed": 0
+  },
+  "abcReturnQueueSkipAllowed": false,
+  "currentBlockedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "unitStatus": "UNIT_BLOCKED"
 }

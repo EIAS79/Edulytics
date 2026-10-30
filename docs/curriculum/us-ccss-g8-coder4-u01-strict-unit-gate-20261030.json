@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "order": "SUP2_CODER4_GRADE8_U01_FULL_UNIT_ORDER_20261030",
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "unitCode": "U01",
+  "unitTotal": 17,
+  "totalUnits": 9,
+  "unitSizesCanonicalValidated": {
+    "01": 17,
+    "02": 13,
+    "03": 14,
+    "04": 16,
+    "05": 22,
+    "06": 11,
+    "07": 16,
+    "08": 16,
+    "09": 6
+  },
+  "previouslyReadyForStageD": 0,
+  "newlyReadyForStageD": 0,
+  "unitReadyForStageD": false,
+  "unitStatus": "UNIT_BLOCKED",
+  "lastClosedLesson": null,
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "blockedInUnitCurrently": 6,
+  "activeBlockingLesson": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "currentStage": "A_AND_C_BLOCKED_OUTSIDE_COURSE_WRITER",
+    "A": {
+      "status": "A_REVIEWED_STANDARDS_AUTHORITY_PENDING",
+      "sourceRole": "8.G.A.1:BuildingTowards",
+      "incorrectBlueprintExtraRole": "Addressing:8.G.A.1",
+      "owner": "Supervisor 2 / authorized academic standards and canonical blueprint owner",
+      "resolution": "Approve removal or correction of extra Addressing role in shared canonical blueprint, or formally approve documented exception; never silently promote source role or edit shared blueprint in course branch."
+    },
+    "B": {
+      "status": "B_CLOSED_COURSE_OWNED",
+      "support": "Original A/B/C/D ray cards and native three six-frame dance tables; original first-party SVGs and instructor-created source-equivalent Cool-down. Authenticated browser SVG integration remains Stage D, not gate B."
+    },
+    "C": {
+      "status": "BLOCKED_C_DEPENDENCY",
+      "owner": "Supervisor 2 / existing shared Practice service single writer",
+      "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "additionalPath": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+      "proof": "The authoritative LessonPracticeCapabilityResolver requires READY_VERIFIED. No exact U01:L01 contract occurs in the central LessonPracticeContracts.cs; an official-outcome transformations map and course-owned numeric oracle alone do not constitute executable lesson-scoped question generation or grading.",
+      "resolution": "Approve existing family reuse and register verified lesson-specific transformations contract in single-writer central owner, independently demonstrate correct/equivalent/wrong/malformed behavior, and keep human-rated odd-one-out, six-frame dance, inverse and 8-point Cool-down outside numeric auto-grader."
+    },
+    "stageD": {
+      "status": "NOT_RUN",
+      "scope": "Authenticated browser, actual persisted Practice attempts, teacher rubric persistence, two-school isolation, full CI to be executed only after every grade lesson A–C closes"
+    },
+    "release": "NO_GO"
+  },
+  "historicalPartiallyRepaired": [
+    "PED:US-CCSS-MATH:G8:U01:L01",
+    "PED:US-CCSS-MATH:G8:U01:L02",
+    "PED:US-CCSS-MATH:G8:U01:L03",
+    "PED:US-CCSS-MATH:G8:U01:L04",
+    "PED:US-CCSS-MATH:G8:U01:L05",
+    "PED:US-CCSS-MATH:G8:U01:L06"
+  ],
+  "historicalSkipCursor": "PED:US-CCSS-MATH:G8:U01:L07",
+  "historicalSkipSuperseded": true,
+  "mustNotSkipWhileBlocked": true,
+  "unitCounts": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 5,
+    "B_CLOSED": 6,
+    "C_PREPARED": 6,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 6,
+    "REMAINING": 131,
+    "UNIT_TOTAL": 9,
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
+  },
+  "unitTotals": {
+    "UNIT_TOTAL": 9,
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
+  },
+  "sourceOriginalsVerified": [
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
+      "sha256": "dbb43369a545fedd2d1a7d77be6e4f708fd583a6f13203351ed6e074c6f95c51"
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\index.html",
+      "sha256": "ad4810d3e82313c1eeb8919228ee5d24d35d3d5c150f416abccfabdc0cd1bb5b"
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\preparation.html",
+      "sha256": "f973defe83a451e19fa51f3316799ed92ce270ed441919d36a7a83ea7c368ca0"
+    }
+  ],
+  "existingABCArtifacts": [
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l02-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l03-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l04-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l05-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l06-20261030.json"
+  ],
+  "existingFocusedVerification": "L01 4/4 PASS on parent cc821245, L02-L06 three focused mathematical tests each PASS historically; not new SHA Stage D",
+  "newFocusedVerification": {
+    "status": "PASS_MANUAL_STRUCTURAL_ASSERTIONS",
+    "scope": "131 canonical rows, U01 17 lessons, strict first-unclosed L01 cursor, no advance, zero ABC_READY_FOR_D, UNIT_BLOCKED",
+    "command": "PowerShell read-only JSON gate assertions on Our-CS",
+    "exitCode": 0,
+    "newNodeTest": "NOT_RUN",
+    "build": "NOT_RUN",
+    "stageD": "NOT_RUN"
+  },
+  "firstCheckAtUtc": "2026-10-30T12:59:32.774413+00:00",
+  "lastCheckAtUtc": "2026-10-30T12:59:32.774413+00:00",
+  "elapsedSecondsForCurrentReconciliation": 0.122,
+  "headAtStart": "027ea29965020f0fdb11cf1fff278bfba5d0ad2b",
+  "branch": "curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029",
+  "checkpointCommitSHA": null,
+  "commitRecordedIn": "Same PR #593 comment and GitHub HEAD after push",
+  "pullRequest": 593,
+  "mergeAllowed": false,
+  "deployAllowed": false,
+  "noSharedFilesEdited": true,
+  "resumption": "Recheck U01:L01 authority decisions and exact Practice capability. Only after genuine A/C closure, commit lesson READY_FOR_STAGE_D, then resume L02 in ascending order; do not jump to L07 or another unit."
+}

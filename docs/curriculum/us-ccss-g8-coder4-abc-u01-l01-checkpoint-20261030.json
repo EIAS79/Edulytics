@@ -14,8 +14,8 @@
   "lessonContentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
   "previousRichSha256": "21eb6f1f9bf3fa2e4e0f912b447b58eab96e5f3e5b360ac192d06dd24a293c7b",
   "latestRichSha256": "00a15a8c7e1a38d45bb2094b238d181dc5aeaffd267ea41708680c1a9c122a43",
-  "checkpointCommitSHA": null,
-  "commitSHARecordedIn": "GitHub PR #593 commit history; commit creation is subsequent to this tree",
+  "checkpointCommitSHA": "027ea29965020f0fdb11cf1fff278bfba5d0ad2b",
+  "commitSHARecordedIn": "LATEST_UNIT_GATE_HEAD_AT_START; final new HEAD in PR comment",
   "originalSource": {
     "root": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core",
     "student": "08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
@@ -149,7 +149,7 @@
     "REMAINING": 131
   },
   "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
-  "nextLessonAllowed": true,
+  "nextLessonAllowed": false,
   "release": "NO_GO",
   "newEvidencePath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
   "courseOwnedVisualPaths": [
@@ -163,7 +163,9 @@
     "sourceFiguresOriginal": false,
     "firstPartyAlternative": true
   },
-  "blockerScope": "EXTERNAL_A_AND_C_ONLY; B_COURSE_OWNED_COMPLETE",
+  "blockerScope": "EXTERNAL_A_C_BLOCKERS_ON_U01_L01; UNIT_BLOCKED; NO_ADVANCE",
   "latestSequentialABCDecision": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
-  "advancePolicy": "ADMIN_EXCEPTION_ONLY_NEXT_INDEPENDENT_CANONICAL_LESSON_WITH_RETURN_QUEUE"
+  "advancePolicy": "ADMIN_V_UNIT_STRICT_SEQUENTIAL_NO_SKIP_WHILE_BLOCKED",
+  "unitGateEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
+  "strictUnitStatus": "UNIT_BLOCKED"
 }
