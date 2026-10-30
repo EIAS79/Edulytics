@@ -449,7 +449,11 @@
         "originalStudentTeacherTaskBodiesManuallyCompared": true,
         "academicGoalTaskFullParityVerified": false,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
-        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json"
+        "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
+        "v12OffgridTeacherAndStudentSourceTextRechecked": true,
+        "v12PublicFigureAltDescriptionReviewed": true,
+        "v12PublisherFigurePixelsIndependentlyVerified": false,
+        "v12EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l03-offgrid-source-v12-evidence-20261030.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -461,7 +465,9 @@
         "explicitGrade6RichV2SidecarAuthored": true,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
-        "sourceTaskAlignedRichV2Candidate": true
+        "sourceTaskAlignedRichV2Candidate": true,
+        "v12SourceOffgridMathRepaired": true,
+        "v12SourceOffgridWorkedExamplesAndTextualVisualOnly": true
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -477,7 +483,8 @@
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
-        "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json"
+        "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
+        "v12ExactSelectedPractice": "NOT_RUN__SUPERVISOR_1_SHARED_OWNER"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -487,7 +494,9 @@
         "twoSchool": "NOT_RUN",
         "persistence": "NOT_RUN",
         "accessibility": "NOT_RUN",
-        "crossCurriculum": "NOT_RUN"
+        "crossCurriculum": "NOT_RUN",
+        "v12GradeOnlyNodeTests": "AUTHORED__NATIVE_FULL_CHECKOUT_NOT_RUN",
+        "v12DotnetRuntime": "NOT_RUN__DOTNET_SDK_UNAVAILABLE"
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
@@ -14060,5 +14069,17 @@
   "v12U01L01EightHexagonRichV2ContentCommit": "006f040fe1ddb1928d7dbdccf62f75258cd32755",
   "v12U01L01L02SourceGeometryTestFile": "tests/academic-us-ccss-g6-u01-source-geometry-v12.test.cjs",
   "v12U01L01L02TestAuthoringCommit": "2ca1a5a3b042a5e460f6f01ebd9a61b65439128e",
-  "v12U01L01L02AcceptanceVerdict": "A_B_C_D_OPEN__NO_AUTHENTICATED_RUNTIME__NO_RELEASE"
+  "v12U01L01L02AcceptanceVerdict": "A_B_C_D_OPEN__NO_AUTHENTICATED_RUNTIME__NO_RELEASE",
+  "v12U01L03OffgridEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l03-offgrid-source-v12-evidence-20261030.json",
+  "v12U01L03OffgridContentCommit": "c326dbb351a26d10ba58323daface9f1416ca049",
+  "v12U01L03OffgridSourceMathTests": "tests/academic-us-ccss-g6-u01-l03-offgrid-v12.test.cjs",
+  "v12U01L03OffgridTestRevisionCommit": "e1d83e1ca329bdd81becac206a921f3d9f93aba9",
+  "v12IsolatedArithmeticOracle": {
+    "command": "node --test /tmp/g6-v12-math-oracle.test.cjs",
+    "environment": "isolated temporary Node v22.16.0 script (NOT repository checkout)",
+    "exitCode": 0,
+    "passed": 7,
+    "failed": 0,
+    "claimBoundary": "Independent numerical calculations only; committed grade-specific tests and real app have NOT_RUN"
+  }
 }
