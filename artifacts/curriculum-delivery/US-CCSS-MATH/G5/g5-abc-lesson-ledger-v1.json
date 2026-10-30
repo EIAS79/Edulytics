@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 14,
-    "B_CLOSED": 14,
+    "A_CLOSED": 15,
+    "B_CLOSED": 15,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 14,
+    "BLOCKED": 15,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -764,28 +764,53 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L03",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-3\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-3\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_ALREADY_SOURCE_FAITHFUL_RICH_V2_MAI_CONTEXT_2_DIV_3_AND_DANCERS_TABLE; ADD_ORIGINAL_EXIT_AND_GRADE_RUBRIC",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE source-correct fraction quotient numeric subskill only; shared EXTEND critical explanation/human feedback if necessary",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u02-l03-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:28:15.912Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated shared integration writer #592",
+        "reason": "Actual selected fraction-quotient contract and teacher-scored narrative/drawing correction not wired or verified",
+        "acceptWhen": "Correct selected family, feedback and open critique assessment statically integrated"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "2021 original teacher lesson and preparation with embedded Student Facing",
+        "tasks": [
+          "Warm-up interpret 3/2=1 1/2 using image/number line",
+          "Dehydrated Dancers: three share two liters, 2÷3=2/3; critique Mai reversed 3÷2=3/2",
+          "Activity 2 table with four dancers/two liters, expressions 3÷4 and 3÷5, and two open rows",
+          "Explain 3÷2=3/2 legitimately models two dancers and three liters, not first situation"
+        ],
+        "sourceFigures": "NOT_COPIED",
+        "publisherCooldown": "NOT_VERIFIED_GATED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u02-l03-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "ffb963644793eb1eb6248c9bceeb86c72a8ee287",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Source tasks, 3/2 counterexample, open dancers/liters table already accurate; no independent Cool-down.",
+        "after": "Preserve source-content, add original 4÷5 water exit and math/rubric cases."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l03-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L04",
@@ -4113,8 +4138,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:27:01.479Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L03",
+  "updatedAtUtc": "2026-10-30T12:28:15.912Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L04",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -4171,6 +4196,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
       "reason": "C fair-sharing card matching and teacher explanations"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U02:L03",
+      "reason": "C fraction quotient selected route and teacher-reviewed reversed quotient critique"
     }
   ]
 }
