@@ -161,12 +161,7 @@ public static class UsCcssHsAdvancedLogQuestions
                 CheckProductIdentity => R(p, "base") is >= 2 and <= 10 &&
                     R(p, "x") is >= 2 and <= 20 && R(p, "y") is >= 2 and <= 20 &&
                     R(p, "productCorrect") is 0 or 1 &&
-                    R(p, "rhsArgument") > 0 &&
-                    R(p, "rhsArgument") == (R(p, "productCorrect") == 1
-                        ? R(p, "x") * R(p, "y")
-                        : R(p, "x") + R(p, "y") == R(p, "x") * R(p, "y")
-                            ? R(p, "x") + R(p, "y") + 1
-                            : R(p, "x") + R(p, "y")),
+                    ProductTruthMatchesParameters(p),
                 ChangeBase => R(p, "base") is >= 2 and <= 10 && R(p, "target") is >= 1 and <= 100,
                 InverseIdentity => R(p, "base") is >= 2 and <= 10 &&
                     R(p, "argument") is >= 1 and <= 100,
@@ -175,6 +170,14 @@ public static class UsCcssHsAdvancedLogQuestions
         }
         catch (KeyNotFoundException) { return false; }
     }
+    private static bool ProductTruthMatchesParameters(IReadOnlyDictionary<string, int> p)
+    {
+        var right = R(p, "rhsArgument");
+        if (right <= 0) return false;
+        var isTrue = right == checked(R(p, "x") * R(p, "y"));
+        return isTrue == (R(p, "productCorrect") == 1);
+    }
+
     private static int R(IReadOnlyDictionary<string, int> p, string name) => p[name];
     private static string ShiftedSolution(IReadOnlyDictionary<string, int> p)
     {
