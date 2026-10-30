@@ -391,9 +391,9 @@
       "ExplanationParagraphs": [
         "Goal: translate among word situations, fraction quotients and equal-parts diagrams, including student-authored stories. The 2021 original rotates equation, diagram and context cards among three partners.",
         "Warm-up: investigate division by seven. Because 35÷7=5 and 1÷7=1/7, the exact values of 36÷7 and 37÷7 are 5 1/7 and 5 2/7.",
-        "Activity 1: six people share four pounds of blueberries. Describe the total, divide each pound into six equal pieces, and name each person's four sixths, or two thirds, of a pound. Match a diagram and the equation 4÷6=4/6.",
-        "Activity 2: have one partner invent an equal-sharing story from a quotient, another describe the diagram, and another match the equation. Explain why the three representations agree instead of merely providing a fraction.",
-        "The lesson's student-generated situations, original diagrams and group critique are teacher-reviewed; a single fraction calculation does not complete the task. Publisher diagram and gated Cool-down are not reproduced."
+        "Activity 1 — Pounds of Blueberries: the source uses three partners who each start from a different representation of the SAME six-people-share-four-pounds division. Partner A starts with 4÷6=4/6; Partner B has four equal whole bars partitioned into sixths; Partner C has the six-student/four-pound context. Each completes the other two representations and compares answers. Check that all imply 4/6=2/3 pound each. The learner must identify why numerator corresponds to total pounds and denominator to six equal recipients.",
+        "Activity 2 — Grams of Gold (source task missing from previous Rich V2): three friends panned for gold and each received 4/3 grams, so they found 3×(4/3)=4 grams altogether. In the inverse problem five grams of gold is shared equally with each person getting 5/6 gram: 5÷(5/6)=6 friends. This activity changes what is unknown (first the total, then the number of friends) and requires an explanation or a diagram, not just finding a quotient.",
+        "Assessment and limits: retain the original warm-up 35÷7, 1÷7, 36÷7, 37÷7 progression; for Activity 1 check equation/situation/diagram agreement with 4÷6=4/6, for Activity 2 verify 4 grams total and 6 people with grams versus people labeled. A teacher reviews group explanations and student-created contexts. Original teacher lesson and preparation HTML were inspected; separate Student Task PDF was unavailable through source endpoint owing to oversized response, so original figure/PDF parity and image rights remain NOT_VERIFIED. Login-gated Cool-down is NOT_VERIFIED."
       ],
       "KeyConcepts": [
         {
@@ -413,6 +413,12 @@
           "Definition": "The share has the same measurement unit as the total.",
           "Rule": "Four pounds shared yields pounds per person.",
           "Example": "4/6 pound each."
+        },
+        {
+          "Title": "Recover the unknown total or number of recipients",
+          "Definition": "A fraction per person may be used to find total measurement or number of equal recipients.",
+          "Rule": "total = recipients × each share; recipients = total ÷ each share when the share is positive.",
+          "Example": "3 friends × (4/3 gram) = 4 grams; 5 grams ÷ (5/6 gram each) = 6 friends."
         }
       ],
       "WorkedExamples": [
@@ -451,6 +457,30 @@
           ],
           "Answer": "Three equal loaves for four people: 3/4 loaf each.",
           "Check": "Teacher checks the story's whole and the consistent diagram."
+        },
+        {
+          "Title": "Grams of Gold — unknown total",
+          "Question": "Three friends each get four thirds of a gram of gold. How much gold was collected altogether?",
+          "Method": "Multiply share per friend by the number of equally served friends.",
+          "Steps": [
+            "Keep the units: 4/3 grams per friend.",
+            "Multiply by 3 friends: 3×(4/3)=12/3.",
+            "Interpret 12/3 as 4 grams collected in all."
+          ],
+          "Answer": "4 grams of gold in total.",
+          "Check": "4 grams ÷ 3 friends = 4/3 grams per friend."
+        },
+        {
+          "Title": "Grams of Gold — unknown number of friends",
+          "Question": "Five grams of gold are shared equally; each person receives 5/6 gram. How many people shared it?",
+          "Method": "Divide total grams by the given grams per person; verify the inferred recipient count is a whole number.",
+          "Steps": [
+            "Unknown friend count n gives n×(5/6 gram)=5 grams.",
+            "Divide 5 by 5/6 to obtain n=6.",
+            "Multiply 6×(5/6 gram)=5 grams, keeping people distinct from grams."
+          ],
+          "Answer": "6 friends.",
+          "Check": "Five grams cannot be shared at 5/6 gram each among 5 or 7 people; teacher asks for reasoning."
         }
       ],
       "CommonMistakes": [
@@ -463,13 +493,19 @@
           "Mistake": "Round a fractional remainder to a whole",
           "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
           "Correction": "Use exact fractional parts of the fixed whole."
+        },
+        {
+          "Mistake": "Treat both Grams of Gold problems as quotient-only tasks",
+          "WhyWrong": "The original second activity alternates which quantity is unknown: first total grams, then people.",
+          "Correction": "In the first use friends × grams/person = grams; in the second grams ÷ grams/person = friends. Check units and reversibility."
         }
       ],
       "SummaryPoints": [
-        "Story, expression and equal-parts diagram must represent the same situation.",
-        "Fractions above one can be exact division results.",
-        "Learner-authored stories and diagrams require human evaluation.",
-        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-4/lesson.html. First-party examples, no source artwork or restricted Cool-down."
+        "Original warm-up mental number talk 35÷7=5, 1÷7=1/7, 36÷7=5 1/7, 37÷7=5 2/7.",
+        "Partner A equation, Partner B equal-parts drawing and Partner C six-people/four-pound story each represent the same 4÷6=4/6=2/3-pound situation.",
+        "Original Activity 2 Grams of Gold: 3 friends each receive 4/3 gram, so total=4 grams; 5 grams at 5/6 gram per person implies 6 friends.",
+        "Check units, missing-value role and the student's diagram/story explanation, not only the numeric answer.",
+        "2021 original teacher preparation + embedded Student Facing HTML inspected. Original Student Task PDF could not be fetched due size; source figures/asset rights and gated Cool-down remain NOT_VERIFIED."
       ],
       "Visuals": [
         {
@@ -502,6 +538,48 @@
               ]
             }
           ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Gold sharing — which quantity is unknown?",
+          "Description": "First-party inverse model; do not confuse grams of gold with number of friends.",
+          "Rows": [
+            {
+              "Label": "Question",
+              "Cells": [
+                "Unknown gold total",
+                "Unknown friend count"
+              ]
+            },
+            {
+              "Label": "Known",
+              "Cells": [
+                "3 friends; 4/3 g each",
+                "5 g total; 5/6 g each"
+              ]
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "3×(4/3)",
+                "5÷(5/6)"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "4 g total",
+                "6 people"
+              ]
+            },
+            {
+              "Label": "Verify",
+              "Cells": [
+                "4÷3=4/3 g each",
+                "6×(5/6)=5 g"
+              ]
+            }
+          ]
         }
       ],
       "Videos": []
@@ -514,8 +592,8 @@
         "Goal: generalize how the relative sizes of dividend and divisor predict whether a positive fraction quotient is below, equal to or above one. In the original 2021 lesson learners choose numbers satisfying different blueberry-sharing constraints.",
         "Warm-up — true or false: 5÷2=5/2 is true; 5/2=5 1/2 is false; 6/2=3 is true. Explain each with a division model rather than judging notation by appearance.",
         "Activity 1: choose total pounds and recipient counts so each person gets less than one, exactly one, or more than one pound. If pounds and people are equal, the quotient is one. If pounds exceed people, each receives more than one; if people exceed pounds, each receives less than one.",
-        "Activity 2: create multiple pairs yielding one half pound each and discuss the invariant pattern: twice as many people as pounds. Compare with pairs yielding more than one pound each; write and review mathematical statements of the patterns.",
-        "The learner's multiple number pairs, poster claims and proof are teacher-reviewed; a correct individual quotient is not an academic replacement. Source illustrations and gated Cool-down are not copied."
+        "Activity 2 — Why Does It Work? (previous Rich V2 omission): students replace questions marks in families of equal-sharing statements such as ?÷2=?/2 and 2÷?=2/? with valid whole numbers and nonzero divisors, justify the correspondence, then create a visual display or argument for any whole-number numerator a and any positive whole-number denominator b: a÷b=a/b. A proof by equal-sized sharing divides EACH of a identical wholes into b equal parts; giving one part from each whole to a recipient yields a pieces of size 1/b, hence a/b. Partners compare why this holds across choices instead of only noticing a particular numeric pattern.",
+        "Assessment: Activity 1's four distinct constraints include seven total pounds with a choice of fewer than seven people to exceed one pound per person, matching counts for exactly one, three people with fewer than three pounds for less than one, and b=2a for exactly 1/2 pound. Do not interpret a historical teacher-source typo about 'half of the pounds' as changing the mathematically correct b=2a relation. Teacher reviews paired numeric evidence, posters and the general explanation of a÷b=a/b including why division by zero is excluded. Original 2021 Student Task PDF (4 pages) and teacher lesson were inspected; original images, source-owned fonts/logos and gated Cool-down were not copied or independently licensed."
       ],
       "KeyConcepts": [
         {
@@ -535,6 +613,12 @@
           "Definition": "Several total/recipient pairs can give the same share.",
           "Rule": "a/b=1/2 when b=2a.",
           "Example": "3 pounds among 6 people gives 1/2 pound each."
+        },
+        {
+          "Title": "Why a divided by b equals a over b",
+          "Definition": "In equal sharing, b people each get one b-th piece from every one of a identical whole objects.",
+          "Rule": "For a a nonnegative whole number and b positive whole number, a÷b=a/b; zero divisor is undefined.",
+          "Example": "Take 2 sandwiches; split each into 5 equal parts; five people each get two fifths, or 2÷5=2/5."
         }
       ],
       "WorkedExamples": [
@@ -573,6 +657,32 @@
           ],
           "Answer": "3 pounds for 6 people gives 1/2 pound each.",
           "Check": "6×1/2=3 pounds."
+        },
+        {
+          "Title": "Constrained blueberry choices from source table",
+          "Question": "Give sample valid pairs for the four rules: 7 pounds and more than one per person; exactly one; 3 people and less than one; exactly half a pound each.",
+          "Method": "Test each pair total pounds a, recipients b (b>0) and quotient a/b.",
+          "Steps": [
+            "More than one: seven pounds shared by five people gives 7/5>1.",
+            "Exactly one: choose four pounds for four people, giving 4/4=1.",
+            "Less than one among three people: choose two pounds and three people, giving 2/3<1.",
+            "Exactly one half: choose three pounds and six people, 3/6=1/2; in general b=2a."
+          ],
+          "Answer": "One valid set of examples is (7,5), (4,4), (2,3), (3,6), as (pounds,people).",
+          "Check": "Verify 7/5>1, 4/4=1, 2/3<1, 3/6=1/2; these are examples, not uniquely required pairs."
+        },
+        {
+          "Title": "Explain the general quotient-fraction connection",
+          "Question": "Why does a÷b=a/b for any whole-number a≥0 and positive whole-number b? Illustrate with two whole sandwiches among five people.",
+          "Method": "Prove the correspondence by an arbitrary number a of equally sized wholes, b equal recipients and identical part size.",
+          "Steps": [
+            "Divide each of the a same-sized wholes into b equal parts.",
+            "Every one of b recipients takes one 1/b-sized part from each of a wholes.",
+            "Each recipient therefore gets a pieces of size 1/b, or a/b of a whole.",
+            "The same amount is the result of sharing a wholes among b people: a÷b."
+          ],
+          "Answer": "a÷b=a/b for a whole-number a≥0 and b positive whole number; for example 2÷5=2/5.",
+          "Check": "b×(a/b)=a, including a=0, b=1; b=0 is prohibited and cannot yield a fraction share."
         }
       ],
       "CommonMistakes": [
@@ -585,13 +695,19 @@
           "Mistake": "Assume a fraction's size depends only on numerator",
           "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
           "Correction": "Compare both positive numerator and denominator."
+        },
+        {
+          "Mistake": "Confuse a proof for arbitrary a and b with checking a single numerical example",
+          "WhyWrong": "The source's second activity explicitly asks why the division/fraction equation applies to ANY valid whole-number numerator and nonzero denominator.",
+          "Correction": "Explain how partitioning every one of a identical wholes into b equal pieces yields a parts for each person and excludes b=0."
         }
       ],
       "SummaryPoints": [
-        "A positive a/b is above one exactly when a exceeds b.",
-        "Equivalent ratios can describe many valid equal-sharing stories.",
-        "The original classification poster and number selection require teacher review.",
-        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 5 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-5/lesson.html. First-party examples, no source artwork or restricted Cool-down."
+        "For a,b positive wholes, a÷b<1, =1, >1 according as a<b, a=b or a>b; a÷b=1/2 exactly when b=2a.",
+        "The source's four constrained blueberry rows include 7 pounds with >1 per person, 3 people with <1 per person, and a general half-pound pair, not only arbitrary totals.",
+        "Activity 2 requires a general explained argument: divide each of a identical wholes into b equal pieces (b>0), so every recipient obtains a/b.",
+        "Use a diagram/expression/story and teacher-scored reasoning; a numeric generator cannot alone verify a universal explanation or original group poster.",
+        "Original 2021 Lesson 5 Student Task PDF all 4 pages and teacher lesson/preparation HTML inspected. Original figure asset rights and gated Cool-down remain NOT_VERIFIED."
       ],
       "Visuals": [
         {
@@ -629,6 +745,48 @@
                 "1/2",
                 "1",
                 "4/3"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Why sharing a wholes among b people gives a/b",
+          "Description": "Original first-party reasoning scaffold for b>0, not a licensed copy of any publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Whole objects",
+              "Cells": [
+                "a identical whole rectangles",
+                "Example a=2 rectangles"
+              ]
+            },
+            {
+              "Label": "People",
+              "Cells": [
+                "b positive recipients",
+                "Example b=5"
+              ]
+            },
+            {
+              "Label": "Parts per whole",
+              "Cells": [
+                "b equal pieces",
+                "five equal pieces"
+              ]
+            },
+            {
+              "Label": "Pieces per person",
+              "Cells": [
+                "a pieces of size 1/b",
+                "two pieces of size 1/5"
+              ]
+            },
+            {
+              "Label": "Amount each",
+              "Cells": [
+                "a×(1/b)=a/b",
+                "2/5 of one rectangle"
               ]
             }
           ]
