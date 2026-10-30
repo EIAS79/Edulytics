@@ -1010,132 +1010,132 @@
       "CultureCode": "en",
       "Title": "Drawing Triangles (Part 1)",
       "ExplanationParagraphs": [
-        "Edulytiks goal: Construct triangles satisfying three conditions and test uniqueness by comparing independent drawings. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/9/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
-        "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
-        "Direct official student lesson activity: Use angle/side constraints to decide possible or impossible triangles. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/9/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
+        "Edulytiks Grade 7 source-aligned goal: using a straightedge, protractor or original independent digital construction, draw triangles when one angle, two angles, or two angles and one side length are specified; explain if the constraints permit zero, one (up to congruence), or more than one distinct triangle. Based on OUR/IM 2017–2019 lesson 7.7.9; source: https://im.kendallhunt.com/MS/students/2/7/9/index.html and teacher preparation https://im.kendallhunt.com/MS/teachers/2/7/9/preparation.html. Original diagrams and tasks are independently authored, CC BY 4.0 curriculum attribution.",
+        "V13 source-specific construction repair: Draw and measure, then compare possible constructions, instead of treating this lesson primarily as side-side-side arithmetic. Given one 75° angle, or angles 75° and 45° alone, differently scaled triangles can be made. Adding a particular 5 cm corresponding side to the two angles fixes a size; simply saying 'one side 5 cm' without specifying which side can admit different sizes. Source 9.3 asks about two 60° angles plus a 4 cm side (one identical-copy shape), two right angles plus a 4 cm side (no triangle), and 60° and 90° plus an unspecified 4 cm side (multiple noncongruent shapes depending on which side is 4 cm).",
+        "Teacher-only human review is required for original drawings, measurements, choice of corresponding 4 cm segment, valid angle positioning and written/oral justification. A numeric answer or fixed RatioTable does not certify drawing quality, source exact-figure parity or academic acceptance. In Grade 7 students are not required to know the interior-angle-sum rule; the construction evidence can support explanations without that theorem."
       ],
       "KeyConcepts": [
         {
-          "Title": "Core geometric idea",
-          "Definition": "SSS can be constructed by intersecting circles at specified radii.",
-          "Rule": "SSS can be constructed by intersecting circles at specified radii.",
-          "Example": "Yes."
+          "Title": "Number of possibilities",
+          "Definition": "Given angles alone, the construction may have multiple different sizes.",
+          "Rule": "Drag, draw or trace at least two genuinely different sizes and compare which conditions stay true.",
+          "Example": "A 75° angle alone does not select one triangle."
         },
         {
-          "Title": "Rule and representation",
-          "Definition": "SAS fixes the angle between two specified sides.",
-          "Rule": "SAS fixes the angle between two specified sides.",
-          "Example": "70°."
+          "Title": "Impossible conditions",
+          "Definition": "Two distinct 90° interior angles cannot both occur in a nondegenerate triangle.",
+          "Rule": "Attempt a measured construction and show that the indicated rays do not meet in a third vertex.",
+          "Example": "90°, 90° and one side 4 cm: no triangle."
         },
         {
-          "Title": "Verification",
-          "Definition": "AAA admits infinitely many scales.",
-          "Rule": "AAA admits infinitely many scales.",
-          "Example": "Yes; different sizes exist."
+          "Title": "Side position matters",
+          "Definition": "Two angle measures plus a side length fix a triangle shape only when the corresponding location of that side is fixed.",
+          "Rule": "Label the endpoints of the 4 cm side and the adjacent angle vertices before comparing traces.",
+          "Example": "60°, 90° and some side 4 cm can describe more than one triangle."
         }
       ],
       "WorkedExamples": [
         {
-          "Title": "Independent geometric problem 1",
-          "Question": "Construct an SSS triangle with sides 5,6,7; does at least one exist?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Title": "Independent drawing 1 — one angle",
+          "Question": "Draw triangles having one interior angle of 75°. Do all such triangles have to be identical?",
+          "Method": "Construct a 75° ray pair; choose two different distances along both rays and connect the resulting points.",
           "Steps": [
-            "Check 5+6>7.",
-            "Check other two triangle inequalities.",
-            "Draw base 7 and intersect radius-5 and radius-6 arcs."
+            "Draw two rays meeting at 75° and mark one pair of endpoints at 3 cm and 4 cm from the vertex.",
+            "Draw a second triangle using points at 6 cm and 8 cm on the same rays.",
+            "Measure and explain that both have the prescribed 75° angle but their corresponding side lengths differ."
           ],
-          "Answer": "Yes.",
-          "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+          "Answer": "More than one noncongruent triangle; the angle alone does not fix scale.",
+          "Check": "Teacher inspects two valid distinct-size constructions and angle measurement."
         },
         {
-          "Title": "Independent geometric problem 2",
-          "Question": "Two angle measures are 50° and 60°. What is the third angle?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Title": "Independent drawing 2 — two angles",
+          "Question": "Do interior angles of 75° and 45° alone force one triangle shape and size?",
+          "Method": "Create one valid triangle, then make a scaled second drawing, keeping both measured angles unchanged.",
           "Steps": [
-            "Use 180° total.",
-            "Subtract 50+60=110.",
-            "Compute 70°."
+            "Construct a triangle with a marked 75° angle at A and 45° angle at B, choosing an arbitrary positive AB.",
+            "Construct another using an AB twice as long, with the same two measured angles at their corresponding vertices.",
+            "Compare lengths by tracing or measurement: these drawings are not identical copies."
           ],
-          "Answer": "70°.",
-          "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+          "Answer": "No; there are multiple sizes unless a corresponding side length is also fixed.",
+          "Check": "Teacher checks both angle measurements and distinct scale evidence; angle sum is not a prerequisite."
         },
         {
-          "Title": "Independent geometric problem 3",
-          "Question": "If only 50°,60°,70° angles are given, can triangles have sides 3 and 6 along matching positions?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Title": "Independent drawing 3 — two 60 degree angles",
+          "Question": "Two interior angles are 60° and one side is 4 cm. Can distinct-size triangles meet these conditions?",
+          "Method": "Construct examples with a 4 cm side between two 60° rays and test candidate overlays.",
           "Steps": [
-            "Angle conditions are unchanged by scaling.",
-            "One drawing may have a matching side 3.",
-            "Scale by 2 to get a side 6."
+            "Draw a 4 cm base and construct a 60° ray inward from each endpoint.",
+            "Complete the triangle where the rays meet and compare it with a peer's reflected or rotated copy.",
+            "Check that all three sides are 4 cm; reflection changes orientation but not the triangle's measurements."
           ],
-          "Answer": "Yes; different sizes exist.",
-          "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
+          "Answer": "One triangle shape up to rigid motion: an equilateral triangle with 4 cm sides.",
+          "Check": "Teacher reviews measured 4 cm sides and angle rays, and confirms the student's claim is about congruence."
         },
         {
-          "Title": "Construct and justify — Drawing Triangles (Part 1)",
-          "Question": "A triangle is claimed to have interior angles 70°,70°,50°. Another is claimed to have 60°,60°,60° and one side 4 cm. Which can be drawn?",
-          "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
+          "Title": "Construct and justify — zero, one or multiple triangles",
+          "Question": "Using original drawings, compare: (A) two 60° angles and one 4 cm side; (B) two 90° angles and one 4 cm side; (C) 60° and 90° angles and an unspecified 4 cm side. How many noncongruent triangles are possible in each case?",
+          "Method": "Draw carefully using protractor and ruler. For case C, attach 4 cm to two different corresponding side positions and compare lengths.",
           "Steps": [
-            "The first sum is 70+70+50=190°, not 180°, so impossible.",
-            "The second has total 180° and is an equilateral triangle.",
-            "With one side fixed at 4 cm, all three sides are 4 cm.",
-            "Use straightedge/protractor to construct the valid triangle and reject the invalid claim."
+            "For A, construct a 4 cm equilateral triangle; show all correctly drawn copies overlap after rotation/reflection.",
+            "For B, put two 90° rays at the ends of a baseline and explain why the rays cannot meet to make a third vertex.",
+            "For C, draw a right triangle with 4 cm between the 60° and 90° vertices, then a second with 4 cm between the 90° and 30° vertices; both meet the two given angles but their corresponding sides differ.",
+            "Explain how choosing which side is 4 cm changes the result, then submit both drawings and measured values for teacher review."
           ],
-          "Answer": "First impossible; second is one 4-cm equilateral triangle up to congruence.",
-          "Check": "Teacher checks actual drawn triangle and properly measured angles."
+          "Answer": "A: one shape; B: no triangle; C: multiple shapes when the measured side is not positioned.",
+          "Check": "Teacher grades the original geometry, labeled side positions, scale, explanation and actual measurements. Do not auto-award construction credit based on answer A/B/C."
         }
       ],
       "CommonMistakes": [
         {
-          "Mistake": "Reporting AAA as a unique triangle construction.",
-          "WhyWrong": "It confuses geometric definition, measurement or construction condition.",
-          "Correction": "Check the relevant side, angle, base or dimensional units."
+          "Mistake": "Assuming two given angles force a unique size without a specified side.",
+          "WhyWrong": "The rays can be extended to construct different size triangles while keeping the measured angles.",
+          "Correction": "Make two scaled original constructions and compare corresponding side lengths."
         },
         {
-          "Mistake": "Assuming a correct calculation guarantees a correct drawing or assembled solid",
-          "WhyWrong": "The task also assesses an accurate representation and explicit construction constraints.",
-          "Correction": "Use a diagram or physical model and teacher-reviewed geometric rubric."
+          "Mistake": "Declaring two 90° interior angles a valid triangle or ignoring which corresponding side is 4 cm.",
+          "WhyWrong": "Two right-angle rays on a common base cannot meet in a nondegenerate third vertex, while an unlocated side-length label is ambiguous.",
+          "Correction": "Check actual ray intersections and attach each given length to its correct labeled side before comparing models."
         }
       ],
       "SummaryPoints": [
-        "SSS can be constructed by intersecting circles at specified radii.",
-        "SAS fixes the angle between two specified sides.",
-        "AAA admits infinitely many scales."
+        "Draw with a ruler, protractor or dynamic geometry tool: one given angle or two given angles alone can allow different sizes.",
+        "Two 60° angles and a 4 cm side produce one equilateral triangle shape; two 90° angles cannot produce a triangle.",
+        "Two different angle measures and one side length may produce multiple different shapes if the corresponding side is unspecified; construction and teacher explanation matter."
       ],
       "Visuals": [
         {
           "Kind": "RatioTable",
-          "Title": "Triangle construction evidence",
-          "Description": "First-party text-based mathematical comparison for Drawing Triangles (Part 1). Its labels and values can be read without color or a publisher image. This does NOT substitute for the learner's required accurate geometric construction, physical net, diagram or teacher-reviewed explanation.",
+          "Title": "Construct triangles and classify number of shapes",
+          "Description": "Original text-based triangle-construction comparison. Actual student-drawn rays, side placement, measurement and teacher review are necessary; this table alone is not a source-equivalent construction.",
           "Items": [],
           "SecondaryItems": [],
           "Rows": [
             {
-              "Label": "Conditions",
+              "Label": "Given",
               "Cells": [
-                "SSS: 5,6,7",
-                "Angles 50°,60°,?",
-                "AAA: 50°,60°,70°"
+                "60°, 60°; one side 4 cm",
+                "90°, 90°; one side 4 cm",
+                "60°, 90°; an unspecified side 4 cm"
               ],
               "Numerator": 0,
               "Denominator": 0
             },
             {
-              "Label": "Reason",
+              "Label": "Construction check",
               "Cells": [
-                "Triangle inequalities hold",
-                "Remaining is 70°",
-                "Any positive scale permitted"
+                "All three sides 4 cm",
+                "Two right-angle rays cannot meet in a triangle",
+                "4 cm can mark a different corresponding side"
               ],
               "Numerator": 0,
               "Denominator": 0
             },
             {
-              "Label": "Conclusion",
+              "Label": "Noncongruent shapes",
               "Cells": [
-                "Possible SSS construction",
-                "70°",
-                "Not a unique size"
+                "One",
+                "Zero",
+                "More than one"
               ],
               "Numerator": 0,
               "Denominator": 0
