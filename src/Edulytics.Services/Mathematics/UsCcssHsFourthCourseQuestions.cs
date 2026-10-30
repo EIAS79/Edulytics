@@ -155,11 +155,21 @@ public static class UsCcssHsFourthCourseQuestions
         }
         if (family == CavalieriVolume)
         {
+            // Include positive fractional source dimensions in generated
+            // questions, not only as manually supplied acceptance parameters.
+            var fractional = random.Next(0, 4) == 0;
             var radius = random.Next(1, 16);
+            var paramsForSphere = fractional
+                ? P(("radiusNumerator", random.Next(1, 16) * 2 + 1),
+                    ("radiusDenominator", 2))
+                : P(("radius", radius));
+            var radiusLabel = fractional
+                ? $"{paramsForSphere["radiusNumerator"]}/2"
+                : radius.ToString(CultureInfo.InvariantCulture);
             return new Item(family,
-                $"A sphere has radius {radius} cm. Its volume is kπ cm³. Find the exact rational coefficient k.",
+                $"A sphere has radius {radiusLabel} cm. Its volume is kπ cm³. Find the exact rational coefficient k.",
                 "Cavalieri's equal-height cross-section comparison motivates V=4πr³/3; the informal proof needs teacher review.",
-                AssessmentItemType.ShortAnswer, P(("radius", radius)));
+                AssessmentItemType.ShortAnswer, paramsForSphere);
         }
         {
             var hyperbola = random.Next(0, 2);
