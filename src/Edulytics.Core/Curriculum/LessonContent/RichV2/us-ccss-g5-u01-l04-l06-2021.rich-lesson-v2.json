@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l04-l06-im2021-v39-source-base-20261030",
+  "ContentVersion": "g5-u01-l04-l06-im2021-v40-source-expressions-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -457,6 +457,32 @@
           ],
           "Answer": "72 cubic units by either method.",
           "Check": "18 × 4 = 72 and each axis dimension was accounted for once."
+        },
+        {
+          "Title": "Source True or False — three original volume statements",
+          "Question": "Decide if (4×2)×5 = 4×(2×5), (2×5)×4 = 2×20 and 5×4×2 = 10×40 are true or false.",
+          "Method": "Evaluate both sides and explain equivalent groupings of equal cube layers.",
+          "Steps": [
+            "(4×2)×5 = 8×5 = 40 and 4×(2×5) = 4×10 = 40, true.",
+            "(2×5)×4 = 10×4 = 40 and 2×20 = 40, true.",
+            "5×4×2 = 40, but 10×40 = 400, so the third statement is false.",
+            "A different base orientation can regroup equal dimensions, but it never changes volume by a factor of ten."
+          ],
+          "Answer": "True, true, false.",
+          "Check": "Original source Student Facing true/false statements."
+        },
+        {
+          "Title": "Source card sort — match six pictured packed prisms",
+          "Question": "Find the volumes of source prisms 6×3×4, 4×5×8, 3×4×5, 4×4×4, 10×6×3 and 4×10×2.",
+          "Method": "Count entire packed prisms, using the face area times a perpendicular height.",
+          "Steps": [
+            "6×3×4=72 and 4×5×8=160 cubic units.",
+            "3×4×5=60 and 4×4×4=64 cubic units.",
+            "10×6×3=180 and 4×10×2=80 cubic units.",
+            "For each matching expression, explain the source geometric factors; equal numerical products from unrelated dimensions do not prove identical prism construction."
+          ],
+          "Answer": "72, 160, 60, 64, 180 and 80 cubic units.",
+          "Check": "Original source figure IDs 148032–148037; teacher checks equivalent expressions and geometric interpretation."
         }
       ],
       "CommonMistakes": [
