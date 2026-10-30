@@ -134,6 +134,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Evaluate source warm-up 6×3/8.","2 1/4","18","3/48"),
                 new("Evaluate source warm-up 7×9/10.","6 3/10","7 9/10","63")
             ],
+                        ["usccss.g5.u02.l16.estimate_mixed_area_products"]=[
+                new("Source garden: 9×4 2/3 square feet. What exact area?","42 square feet","35 square feet","24 square feet"),
+                new("Source garden: 9×3 8/9 square feet. What exact area?","35 square feet","42 square feet","36 square feet"),
+                new("Source garden: 12×2 11/12 square feet. What exact area?","35 square feet","36 square feet","24 square feet"),
+                new("Source garden: 9×2 2/3 square feet. What area?","24 square feet","35 square feet","42 square feet"),
+                new("Which options are CLOSE to Priya's 36-square-foot target without exceeding it?","B and C (35 square feet each)","A only (42 square feet)","D only (24 square feet)"),
+                new("Which bounds the original 7×12 8/9 product?","Between 84 and 91","Between 12 and 13","Between 36 and 37")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

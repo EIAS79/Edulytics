@@ -20243,6 +20243,23 @@
       "status": "ShadowVerified",
       "productionRouting": false,
       "lessonPracticeRouting": true
+    },
+    {
+      "id": "usccss.g5.u02.l16.estimate_mixed_area_products",
+      "version": 1,
+      "skillId": "supporting.fractions.multiply_divide",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "im2021-g5-u02-l16-optional-context-choice-v1",
+      "representations": [
+        "textual_constraint"
+      ],
+      "status": "ShadowVerified",
+      "productionRouting": false,
+      "lessonPracticeRouting": true
     }
   ],
   "variantPolicy": {

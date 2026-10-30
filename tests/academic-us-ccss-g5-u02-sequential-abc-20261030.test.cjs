@@ -66,4 +66,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L14','usccss.g5.u02.l14.fraction_multiplica
 test('G5 U02 L15 source information-gap and mixed-fraction teacher verification',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L15','usccss.g5.u02.l15.multiply_mixed_source_number_bank',["16 1/2 square feet","5 square feet","23 square feet","22 2/3"],["8 1/2 square feet","4 1/2 square feet"]);
 });
+test('G5 U02 L16 OPTIONAL source contextual exact subskill with teacher oversight',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L16','usccss.g5.u02.l16.estimate_mixed_area_products',["42 square feet","35 square feet","35 square feet","24 square feet"],["35 square feet","42 square feet"]);
+});
 // NEXT_LESSON_TEST
