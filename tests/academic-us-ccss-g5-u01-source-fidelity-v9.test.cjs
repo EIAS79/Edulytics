@@ -64,3 +64,22 @@ test('G5 U01 L01-L03: source-specific Rich V2 is structurally valid on an actual
   assert.match(text[2],/five layers of eight identical cubes/i);
   assert.match(text[0]+text[1],/teacher/i);
 });
+test('G5 U01 L01: independent Edulytiks exit check compares eight-cube tower and low strip', () => {
+  const tower = Array.from({length: 8}, (_, z) => [0, 0, z]);
+  const lowStrip = Array.from({length: 8}, (_, x) => [x, 0, 0]);
+  assert.ok(connected(tower));
+  assert.ok(connected(lowStrip));
+  assert.equal(tower.length, lowStrip.length);
+  assert.notDeepEqual(tower, lowStrip);
+  assert.equal(tower.length, 8);
+});
+test('G5 U01 L01: source-aligned warm-up and original exit check are present in Rich V2', {
+  skip: !fs.existsSync(file) && 'Original GitHub branch JSON is not mounted in isolated Node runner'
+}, () => {
+  const item = JSON.parse(fs.readFileSync(file, 'utf8')).Lessons.find(x => x.LessonCode === id(1));
+  assert.ok(item);
+  assert.match(item.ExplanationParagraphs.join(' '), /Which One Doesn't Belong/i);
+  assert.match(item.ExplanationParagraphs.join(' '), /Edulytiks-original exit check/i);
+  assert.match(item.ExplanationParagraphs.join(' '), /connecting cubes is an optional support/i);
+  assert.match(item.ExplanationParagraphs.join(' '), /teacher review/i);
+});
