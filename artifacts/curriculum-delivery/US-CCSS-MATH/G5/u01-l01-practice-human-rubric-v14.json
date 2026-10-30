@@ -6,7 +6,7 @@
   "sourceEdition": "IM K–5 2021",
   "stageA": "COMPLETE_WITH_EVIDENCE",
   "stageB": "COMPLETE_WITH_EVIDENCE",
-  "stageC": "BLOCKED_SHARED_INTEGRATION",
+  "stageC": "GRADE5_EXACT_COMPARE_AUTHORED_TEACHER_REVIEW_RUNTIME_NOT_RUN",
   "sourcePaths": [
     "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\lesson.html",
     "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html"
@@ -24,13 +24,16 @@
     "edulytiksCooldown": "ORIGINAL_AUTHORED"
   },
   "outputsRequired": {
-    "selectedRuntimeLessonPracticeContract": "NOT_INSPECTED; SUPERVISOR_1_SHARED_WRITER_REQUIRED",
+    "selectedRuntimeLessonPracticeContract": "Source-specific Grade 5 U01:L01 contract override authored at src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit1Lesson1PracticeContracts.cs; runtime tests deferred to D",
     "staticLegacyFamily": "usccss.g5.unit_cube_count",
-    "staticLegacyFamilyStatus": "NUMERIC_PRISM_MULTIPLICATION_SUPPLEMENTAL_ONLY",
+    "staticLegacyFamilyStatus": "usccss.g5.unit_cube_count excluded from selected L01 family: multiplication-only supplemental skill",
     "strategy": "REUSE numeric measurement only as supplementary practice; EXTEND existing family/teacher-rubric workflow for construction if source-grounded and demonstrably missing; NEW_ENGINE only upon proof REUSE/EXTEND inadequate",
     "mustNotAssume": "A numerical answer 8 or 9, or a rectangular-prism dimension multiplication item, verifies physical model construction or explanation.",
     "escalation": "https://github.com/EIAS79/Edulytics/issues/592",
-    "singleWriter": "Supervisor 1 designated shared integration writer"
+    "singleWriter": "Supervisor 1 designated shared integration writer",
+    "digitalFamily": "usccss.g5.u01.l01.compare_connected_cube_models",
+    "digitalScope": "Connected unequal/equal cube-count comparison only; teacher checks physical WODB, 9-cube connectedness, open models, explanation, own cooldown",
+    "teacherReviewPath": "Existing 8-point RichV2 manual rubric; teacher evidence submission UI not asserted until D"
   },
   "taskContracts": [
     {
@@ -143,7 +146,7 @@
       "provenance": "EDULYTIKS_ORIGINAL"
     }
   ],
-  "testStatus": "TEST_AUTHORED_NOT_RUN",
-  "runtimeContractTestStatus": "DEFERRED_STAGE_D_AFTER_SHARED_INTEGRATION",
+  "testStatus": "WRITTEN_NOT_RUN",
+  "runtimeContractTestStatus": "NOT_RUN_STAGE_D",
   "release": "NO_GO"
 }

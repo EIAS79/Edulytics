@@ -32,24 +32,33 @@
       "reuseFinding": "REUSE_2021_TEACHER_LESSON_SOURCE_COMPARISON_AND_908b09d_CUBE_MODELS__PRECISE_ACTIVITY_1_WARMUP_TASKS__ORIGINAL_ACCESSIBLE_FOUR_MODEL_PROMPT_AND_TEACHER_CHECK; NO_SOURCE_ART_COPIED",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "A_C_IN_PROGRESS",
       "PracticeStrategy": "REUSE_NUMERIC_SUPPLEMENT_ONLY__EXTEND_EXISTING_SHARED_FAMILY_OR_TEACHER_RUBRIC_PENDING_SELECTED_CONTRACT; NO_NEW_ENGINE_DEFAULT",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
-    "l01FirstEditionPreparationSequencing20261030": {"source":"Our-CS/05_Grade_5_IM_K5/unit-1/lesson-1/preparation.html","finding":"Original first-edition preparation says volume is explored through cube construction and comparison in Lesson 1; explicit measurement in cubic units begins in Lesson 2.","repair":"Removed premature formal cubic-unit instruction from current Grade5 pack Lesson 1 Step 4; revised Step 1 to permit all face-connected irregular builds as in the 2021 Activity 2; retained valid RichV2 and explanation.","test":"academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs / conceptual introduction precedes formal cubic-unit notation","testStatus":"WRITTEN_NOT_RUN","stageA":"PREPARATION_VERIFIED","stageB":"TARGETED_SCOPE_REPAIR","stageC":"STILL_BLOCKED_NO_CLOSURE","previousHead":"be199b4e579a8d212fb1c2a45bb63753a3a15095"},
-    
+      "l01FirstEditionPreparationSequencing20261030": {
+        "source": "Our-CS/05_Grade_5_IM_K5/unit-1/lesson-1/preparation.html",
+        "finding": "Original first-edition preparation says volume is explored through cube construction and comparison in Lesson 1; explicit measurement in cubic units begins in Lesson 2.",
+        "repair": "Removed premature formal cubic-unit instruction from current Grade5 pack Lesson 1 Step 4; revised Step 1 to permit all face-connected irregular builds as in the 2021 Activity 2; retained valid RichV2 and explanation.",
+        "test": "academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs / conceptual introduction precedes formal cubic-unit notation",
+        "testStatus": "WRITTEN_NOT_RUN",
+        "stageA": "PREPARATION_VERIFIED",
+        "stageB": "TARGETED_SCOPE_REPAIR",
+        "stageC": "STILL_BLOCKED_NO_CLOSURE",
+        "previousHead": "be199b4e579a8d212fb1c2a45bb63753a3a15095"
+      },
       "startedAt": "2026-10-30T07:13:44.064Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
       "blocker": {
         "owner": "Supervisor 1 designated SINGLE SHARED INTEGRATION WRITER — issue #592",
-        "status": "BLOCKED_SHARED_INTEGRATION",
+        "status": "TEACHER_ASSESSMENT_ROUTE_NOT_PROVEN",
         "reasons": [
-          "Exact selected LessonPracticeContract/generator/grader/fallback not established; legacy usccss.g5.unit_cube_count only tests prism multiplication, not 8/9-cube construction, ordering or explanation.",
-          "Teacher-scored model/drawing/verbal/physical alternatives and grade-owned contract requirements not yet demonstrably wired."
+          "Selected Grade-5-specific exact connected-cube comparison now authored and statically wired; digital 1/2/3 count comparison is not physical construction or teacher reasoning.",
+          "Teacher-scored physical/drawn/verbal evidence path has an 8-point RichV2 rubric but its actual app submission/grading path remains unverified."
         ],
         "nonBlockingLimits": [
           "Original Student Task PDF and exact publisher images remain unverified, never claimed reproduced.",
@@ -57,7 +66,7 @@
           "Effective content version and authenticated DB/renders are Stage D verification with separate shared-owner safety scope."
         ],
         "missingArtifacts": [
-          "Shared writer's selected Practice contract and human rubric implementation evidence under #592"
+          "Evidence of actual teacher-evaluated evidence route or an equivalent available source-aligned workflow; the independent original 2021 student PDF and illustration binaries also remain unverified."
         ],
         "remedy": "Supervisor 1 integration writer implements/reuses appropriate shared grading and mapping; Coder 1 reviews evidence before accepting C; remain U01:L01."
       },
@@ -160,6 +169,25 @@
         "unitStatus": "UNIT_BLOCKED",
         "noGradingRuntimeExecuted": true,
         "retainedAandB": true
+      },
+      "practiceSourceCompare20261030": {
+        "family": "usccss.g5.u01.l01.compare_connected_cube_models",
+        "source": "Our-CS/05_Grade_5_IM_K5/unit-1/lesson-1/lesson.html",
+        "skills": [
+          "Count congruent connected cubes rather than use prism multiplication",
+          "Compare equal vs unequal counts independently of height"
+        ],
+        "teacherLed": [
+          "Four-object WODB with multiple valid justifications",
+          "Two source eight-cube pairs",
+          "Build and order four solids",
+          "Two distinct 9-cube connected constructions and justification",
+          "Original Edulytiks cooldown and eight-point rubric"
+        ],
+        "test": "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs",
+        "testStatus": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "selectedComparison": "GRADE5_SOURCE_GOAL_OVERRIDE_AUTHORED"
       }
     },
     {

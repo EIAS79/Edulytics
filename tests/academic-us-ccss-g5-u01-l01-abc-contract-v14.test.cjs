@@ -99,7 +99,7 @@ test('source-functional first-party visuals and teacher-only assessment spec exi
   const rich=JSON.parse(fs.readFileSync(richPath,'utf8'));
   const item=rich.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G5:U01:L01');
   const spec=JSON.parse(fs.readFileSync(specPath,'utf8'));
-  assert.ok(item); assert.equal(spec.stageC,'BLOCKED_SHARED_INTEGRATION');
+  assert.ok(item); assert.equal(spec.stageC,'GRADE5_EXACT_COMPARE_AUTHORED_TEACHER_REVIEW_RUNTIME_NOT_RUN');
   assert.equal(spec.lessonCode,item.LessonCode);
   assert.ok(item.Visuals.some(v=>v.Title.includes('Source-described 2021 warm-up A–D')),
     'Verify the source-described models rather than obsolete v14 visual names');
@@ -127,4 +127,33 @@ test('conceptual introduction precedes formal cubic-unit notation in U01:L01', {
   assert.doesNotMatch(english.stepByStepSolutions, /cubes packed without gaps or overlaps/i);
   assert.doesNotMatch(english.stepByStepSolutions, /Record volume in cubic units/i);
   assert.match(english.explanation, /objects can have different shapes but still take up the same amount of space/i);
+});
+
+test('grade5 connected cube source comparison is routed; teacher work is not auto-scored', {
+  skip: !fs.existsSync(path.resolve(__dirname, '../src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson1ComparisonQuestions.cs')) && 'Requires full repository checkout'
+}, () => {
+  const root = path.resolve(__dirname, '..');
+  const read = p => fs.readFileSync(path.resolve(root,p),'utf8');
+  const source = read('src/Edulytics.Services/Mathematics/UsCcssG5Unit1Lesson1ComparisonQuestions.cs');
+  const core = read('src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs');
+  const exact = read('src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs');
+  const reg = JSON.parse(read('src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json'));
+  const grade = read('src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit1Lesson1PracticeContracts.cs');
+  const family = 'usccss.g5.u01.l01.compare_connected_cube_models';
+  const metadata = reg.families.find(x => x.id === family);
+  assert.equal(metadata.skillId, 'geometry.volume');
+  assert.equal(metadata.answerType, 'exact_integer');
+  assert.equal(metadata.lessonPracticeRouting, true);
+  assert.equal(metadata.productionRouting, false);
+  assert.deepEqual(metadata.representations, ['textual_constraint']);
+  assert.match(core,/UsCcssG5Unit1Lesson1PracticeContracts\.Reviewed/);
+  assert.ok(grade.includes(family));
+  assert.ok(!grade.includes('usccss.g5.unit_cube_count'));
+  for(const method of ['Supports','Build','Verify','Solve'])
+    assert.ok(exact.includes('UsCcssG5Unit1Lesson1ComparisonQuestions.'+method));
+  assert.match(source,/each sharing a face/);
+  assert.match(source,/Numeric Practice does not assess construction or explanation/);
+  assert.doesNotMatch(source,/l\s*\*\s*w\s*\*\s*h/);
+  for(const [a,b,code] of [[6,8,'2'],[8,6,'1'],[9,9,'3']])
+    assert.equal(String(a>b?1:a<b?2:3),code);
 });
