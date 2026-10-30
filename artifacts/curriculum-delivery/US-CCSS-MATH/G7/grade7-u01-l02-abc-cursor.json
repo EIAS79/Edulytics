@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
+  "title": "Corresponding Parts and Scale Factors",
+  "sourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/2/preparation.html",
+    "07_Grade_7_OUR_IM/1/2/index.html",
+    "07_Grade_7_OUR_IM_Student/1/2/index.html",
+    "07_Grade_7_OUR_IM_Student/1/2/practice.html"
+  ],
+  "originalRights": "OUR/IM 2017–2019 CC BY 4.0; first-party geometry and instructions, no source artwork reproduced",
+  "sourceTarget": "Name corresponding points, segments and angles; show that all matching lengths have a shared multiplier and matching angles remain equal",
+  "sourceActivityEvidence": [
+    {
+      "section": "2.1 Number Talk",
+      "original": "Quarter of 32, ninth of 7.2, quarter of 5.6",
+      "authored": "Equivalent unit-fraction mental arithmetic",
+      "gap": "none for target"
+    },
+    {
+      "section": "2.2 Corresponding Parts",
+      "original": "Road sign figures with tracing/protractor; match points, line segments and angles",
+      "authored": "First-party ABC/DEF triangles with point/segment/angle correspondence and a nonuniform counterexample",
+      "gap": "Publisher road-sign graphic not copied; tracing/measure remains a learner-controlled paper/tool activity"
+    },
+    {
+      "section": "2.3 Scaled Triangles",
+      "original": "Identify valid scaled copies of original 3–4–5 right triangle among several candidates",
+      "authored": "Compare 1.5–2–2.5 and 6–8–10 with 6–8–9, justify matching sides, draw teacher-reviewed scaled triangle",
+      "gap": "Different original candidate set rather than all eight publisher image cards"
+    }
+  ],
+  "independentCheck": {
+    "baseVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "scaledVertices": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        0,
+        4.5
+      ]
+    ],
+    "k": 1.5,
+    "hypotenuse": [
+      5,
+      7.5
+    ],
+    "reverseFactor": "2/3",
+    "nonuniformLegs": [
+      6,
+      3
+    ]
+  },
+  "originalPublisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksOriginalCooldown": "AUTHOR_IN_GRADE_PARTIAL_NOT_PUBLISHER_COPY",
+  "edulytiksCooldownTask": "Draw coordinate triangles ABC/DEF, label correspondences, prove factor 3/2, reject horizontal-only extension; teacher checks construction/angles/ratios/reasoning.",
+  "lessonOwnedView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "originalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l02-corresponding-triangles.svg",
+  "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "practice": "SHARED_SINGLE_WRITER_ISSUE_592_EXACT_CORRESPONDING_PARTS_AND_SCALE_FACTOR",
+  "requiredPracticeCases": [
+    "factor 1.5",
+    "reverse factor 2/3",
+    "nonuniform x-only rejected",
+    "equivalent rotated/transposed and translated figures",
+    "incorrect vertex correspondences",
+    "malformed coordinates",
+    "teacher construction requires rubric not scalar grading"
+  ],
+  "A_STATUS": "A_CLOSED_EQUIVALENT_TASKS_AND_RIGHTS_EVIDENCED",
+  "B_STATUS": "BLOCKED_SHARED_RICH_V2_INVOCATION_UNVERIFIED",
+  "C_STATUS": "BLOCKED_SHARED_EXACT_PRACTICE_ISSUE_592",
+  "READY_FOR_STAGE_D": false,
+  "D_STATUS": "NOT_RUN",
+  "testFile": "tests/academic-us-ccss-g7-u01-l02-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "blockedOwner": "Supervisor 1 designated single-writer renderer/Practice integration; shared PR #599 OPEN_DRAFT",
+  "previouslyAuthoredGradeWorkPreserved": true,
+  "firstGradePatchCommit": "5f88ac7f9e45dc2b6713217d92d17bd2badc5117",
+  "testAuthoredCommit": "c20015e062412d3616e6fc61ed937015d51e2c1a",
+  "closedAt": null,
+  "closureCommitSHA": null,
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G7:U01:L03"
+}
