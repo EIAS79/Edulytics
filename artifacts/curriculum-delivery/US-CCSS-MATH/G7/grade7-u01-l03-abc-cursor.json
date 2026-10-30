@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L03",
+  "title": "Making Scaled Copies",
+  "sourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/3/preparation.html",
+    "07_Grade_7_OUR_IM/1/3/index.html",
+    "07_Grade_7_OUR_IM_Student/1/3/index.html",
+    "07_Grade_7_OUR_IM_Student/1/3/practice.html"
+  ],
+  "sourceRights": "2017–2019 OUR/IM CC BY 4.0; original Edulytiks drawings/tasks, not original source images",
+  "sourceGoals": [
+    "Draw scaled copies at given factors",
+    "Explain why multiplication rather than addition works",
+    "Critique incorrect copying methods while keeping corresponding angles and lengths"
+  ],
+  "sourceTaskParity": [
+    {
+      "activity": "3.1 More or Less?",
+      "original": "Three decimal-product comparisons",
+      "equivalent": "All three original value comparisons independently recomputed as student warm-up"
+    },
+    {
+      "activity": "3.2 Drawing Scaled Copies",
+      "original": "Use factor 3 and 1/2 on different polygons; fractions may land between grid points",
+      "equivalent": "Reused first-party L polygon SVG and added student construction with both factors on same grid"
+    },
+    {
+      "activity": "3.3 Which Operations? Part 1",
+      "original": "Choose multiplicative 15 to 5 against additive distortion",
+      "equivalent": "Numerical, polygon and reasoning counterexamples, including shorter side errors"
+    },
+    {
+      "activity": "3.4 Which Operations? Part 2",
+      "original": "Reject addition 4 to lengths when 4 becomes 8; construct correctly",
+      "equivalent": "Direct written critique and geometric construction"
+    }
+  ],
+  "firstPartyGeometry": {
+    "vertices": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "factors": [
+      0.5,
+      3
+    ]
+  },
+  "originalPublisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "Teacher-reviewed half-size 6x4 right triangle from vertices (0,0),(6,0),(0,4); additive 2 is not scaling; answer/rubric in grade-specific academic source and existing teacher-rubric file, not automatically graded or persisted",
+  "originalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l03-scaled-l-construction.svg",
+  "gradeOwnedView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "practiceRequired": "Exact lesson-scoped uniform scale 1/2 or 3; reject additive/nonuniform; recognize rotated/transposed models; teacher-reviewed drawing",
+  "practiceSelection": "BLOCKED_SHARED_7G_A1_GENERIC_SHAPE_DIMENSION_ISSUE_592",
+  "A_STATUS": "A_CLOSED_EQUIVALENT_TASKS_AND_SOURCE_RIGHTS_REVIEWED",
+  "B_STATUS": "BLOCKED_PARTIAL_NOT_INVOKED_BY_SHARED_RICH_VIEW",
+  "C_STATUS": "BLOCKED_EXACT_SELECTED_PRACTICE_AND_TEACHER_SCORING",
+  "READY_FOR_STAGE_D": false,
+  "D_STATUS": "NOT_RUN",
+  "testFile": "tests/academic-us-ccss-g7-u01-l03-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "firstPatch": "d4a3d68d1b99fb4bd24e4f8ff8b41f75f6e46656",
+  "studentAnswerLeakRepair": "0473612adcaf4ff94148830f7db7b72bd443e2f7",
+  "testCommit": "8b499a7661cc5c106781bea663114051e8754be9",
+  "blockerOwner": "Supervisor 1 shared integration issue #592, shared renderer PR #599 OPEN DRAFT",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G7:U01:L04",
+  "closedAt": null,
+  "closureSHA": null
+}
