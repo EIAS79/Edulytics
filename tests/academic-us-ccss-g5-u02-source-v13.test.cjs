@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-const dir=path.resolve(__dirname,'../../../src/Edulytics.Core/Curriculum/LessonContent/RichV2');
+const dir=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2');
 const f7=path.join(dir,'us-ccss-g5-u02-l06-l08-2021.rich-lesson-v2.json');
 const f9=path.join(dir,'us-ccss-g5-u02-l09-l13-2021.rich-lesson-v2.json');
 const fraction=(numerator,denominator)=>{if(!Number.isSafeInteger(numerator)||!Number.isSafeInteger(denominator))throw Error('malformed fraction');if(denominator<=0||numerator<0)throw Error('invalid fraction');return numerator/denominator;};
