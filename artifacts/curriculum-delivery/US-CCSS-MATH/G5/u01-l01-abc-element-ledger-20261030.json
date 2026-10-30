@@ -155,11 +155,12 @@
       "disconnected nine cubes accepted as single solid",
       "numeric 9 enough to complete build"
     ],
-    "humanReviewRequired": true
+    "humanReviewRequired": true,
+    "stageDPrerequisiteTest": "tests/academic-us-ccss-g5-u01-l01-rubric-contract-20261030.test.cjs#U01:L01 selected family"
   },
   "stageA": "A_C_EXPLICIT_GAP_COOLDOWN_ORIGINAL_AND_VISUAL_SOURCE_ASSET",
   "stageB": "CONTENT_TEACHING_REPAIRED_STATICALLY; B_RUNTIME_UNVERIFIED_STAGE_D",
-  "stageC": "CAPABILITY_BLOCKED_SHARED_ROUTING_AND_TEACHER_GRADING; DIGITAL_SUPPLEMENT_NOT_EQUIVALENT_TO_SOURCE",
+  "stageC": "CAPABILITY_BLOCKED_SHARED_ROUTE_SYMBOLIC_ONLY_CONFIRMED_STATICALLY; EXACT_TEST_WRITTEN_NOT_RUN",
   "academicAccepted": false,
   "readyForStageD": false,
   "stageDTests": "WRITTEN_NOT_RUN",
@@ -173,7 +174,8 @@
     {
       "id": "PRACTICE",
       "kind": "CAPABILITY_BLOCKED",
-      "resolution": "Single-writer shared Issue #592 must implement and verify route for teacher-reviewed source constructions; cannot claim scalar multiplication as source equivalent"
+      "resolution": "Single-writer shared Issue #592 must implement and verify route for teacher-reviewed source constructions; cannot claim scalar multiplication as source equivalent",
+      "evidence": "Mapping READY_VERIFIED->usccss.g5.unit_cube_count; family registry representations=[symbolic], ShadowVerified, productionRouting=false, lessonPracticeRouting=true. Cannot certify physical models."
     }
   ],
   "lessonElements": [
@@ -902,5 +904,6 @@
       "CandidateSha": "TO_BE_RECORDED_BY_COMMIT_RESULT",
       "UpdatedUtc": "2026-10-30"
     }
-  ]
+  ],
+  "sourceLedgerLastEnhancedUtc": "2026-10-30"
 }
