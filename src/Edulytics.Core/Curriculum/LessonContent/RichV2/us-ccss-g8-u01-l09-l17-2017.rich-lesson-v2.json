@@ -431,6 +431,7 @@
         "Source-aligned 12.4: build an original quadrilateral and specify a reproducible sequence of permitted rigid moves mapping all corresponding points to a second figure; teacher evaluates the labeled construction and reasoning.",
         "Draw quadrilateral A(1,1), B(4,1), C(4,3), D(1,3) and translate it by (−5,2). Label A′,B′,C′,D′. Check that all four sides and right angles correspond.",
         "Investigate two visually similar polygons with one changed edge. A teacher reviews a learner-drawn correspondence diagram and explanation; calculations can check specific vertices and lengths.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate A(1,1),B(4,1),C(4,3),D(1,3) by (-5,2) and label all four image vertices; explain whether every corresponding side/angle is unchanged. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
         "First-party Edulytiks teaching informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0; original source: https://im.kendallhunt.com/MS/teachers/3/1/12/preparation.html . No publisher artwork or branded assessment is copied."
       ],
       "KeyConcepts": [
@@ -508,7 +509,43 @@
         "A rigid map of the polygon preserves sides and angles.",
         "Explain why the mapping is valid."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L12 Congruent Polygons",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Original",
+              "Cells": [
+                "A(1,1),B(4,1)",
+                "C(4,3),D(1,3)"
+              ]
+            },
+            {
+              "Label": "Translation",
+              "Cells": [
+                "(-5,+2)",
+                "same vector for all vertices"
+              ]
+            },
+            {
+              "Label": "Image",
+              "Cells": [
+                "A′(-4,3),B′(-1,3)",
+                "C′(-1,5),D′(-4,5)"
+              ]
+            },
+            {
+              "Label": "Bad match",
+              "Cells": [
+                "a side 3 mapped to 4",
+                "not congruent"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {

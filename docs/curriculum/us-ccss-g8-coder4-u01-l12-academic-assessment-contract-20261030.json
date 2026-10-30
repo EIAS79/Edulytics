@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L12",
+  "title": "Congruent Polygons",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\12\\index.html",
+      "sha256": "ef3a6f77450b912cf44a3b725dc0d2f371886dd166007320c0fe266dcaa5ccf9"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\12\\index.html",
+      "sha256": "166cddb135dd38e0e8cac166afb9e69aaef82e82c10cc8e36b51ce3bca44645d"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\12\\preparation.html",
+      "sha256": "d7e99915a97449713e6732239026465576678c14887017eafc5fb8117de345ed"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: match the corresponding vertices, sides and angles of two polygons and justify congruence using a rigid transformation or complete measurement correspondence.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate A(1,1),B(4,1),C(4,3),D(1,3) by (-5,2) and label all four image vertices; explain whether every corresponding side/angle is unchanged. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "12.1: Translated Images",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Identify which equally sized triangles are pure translations of a labeled triangle rather than turned or flipped images.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.2: Congruent Pairs (Part 1)",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Judge the first set of congruent/noncongruent polygon pairs by full vertex and side correspondence and a rigid sequence.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.3: Congruent Pairs (Part 2)",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Judge the second set of potentially congruent pairs, tracking reflected labels and an actual rigid motion rather than visual resemblance.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.4: Building Quadrilaterals",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Build two different quadrilaterals from four original pieces, compare all side lengths and angles, and argue when a sequence maps one onto the other.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "Translate original A=(1,1) by vector (-5,+2). Find A′.",
+    "responseType": "coordinate_pair",
+    "unit": "coordinate pair",
+    "expected": [
+      -4,
+      3
+    ],
+    "acceptedEquivalentInputs": [
+      "(-4,3)",
+      "-4,3",
+      "(-4.0,3.0)"
+    ],
+    "wrongRejected": [
+      "(-3,3)",
+      "(-4,4)",
+      "(3,-4)"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "(Infinity,1)",
+      "(1,2,3)",
+      "",
+      null,
+      "1;2",
+      "1e2,0"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 3,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "Translate A(1,1),B(4,1),C(4,3),D(1,3) by (-5,2) and label all four image vertices; explain whether every corresponding side/angle is unchanged.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:02:01.290955+00:00",
+  "parentGitHEAD": "5869ad38af3e8bc0b138cbded52d9971dac1801e"
+}
