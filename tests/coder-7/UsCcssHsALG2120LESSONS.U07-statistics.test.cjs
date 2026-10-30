@@ -132,6 +132,29 @@ test('L15 source strawberry experiment signed difference and null center',()=>{
  const d=347.47-238.67;close(d,108.8,1e-8);
  const z=(d-(-.540))/29.83;assert.ok(z>3.66&&z<3.67);
 });
+test('L15 optional first-edition baseball normal-table activity and oral information gap',()=>{
+ const lesson=pack.lessons.find(x=>x.lessonCode.endsWith(':U07:L15'));
+ const body=lesson.translations.find(x=>x.cultureCode==='en').workedExamples;
+ close((142-145)/2,-1.5);
+ close((149-145)/2,2);
+ close(145+2*1.45,147.9);
+ const density=z=>Math.exp(-z*z/2)/Math.sqrt(2*Math.PI);
+ const left=-1.5,right=2,n=20000,h=(right-left)/n;
+ let sum=(density(left)+density(right))/2;
+ for(let i=1;i<n;i++)sum+=density(left+i*h);
+ const interval=sum*h;
+ close(interval,0.910442666,1e-7);
+ assert.ok(interval>0.91&&interval<0.911);
+ close((70-55)/8,1.875);
+ close((10-6)/1.6,2.5);
+ for(const sourceTask of ['15.2','PARTNER','problem-card','data-card','teacher rubric',
+   '15.3','145 grams','142','149','-1.5','147.9','0.9104'])assert.ok(body.includes(sourceTask),sourceTask);
+ assert.ok(!body.includes('automatically score oral dialogue'),'no invented automatic grade');
+ const validNormal=(x,mu,sd)=>[x,mu,sd].every(Number.isFinite)&&sd>0;
+ assert.equal(validNormal(142,145,2),true);
+ for(const invalid of [[142,145,0],[142,145,-2],['142',145,2],[142,NaN,2]])
+   assert.equal(validNormal(...invalid),false,'reject malformed normal-model input');
+});
 test('L16 pulse conversion and limited randomization reasoning',()=>{
  assert.equal(12*6,72);assert.equal(15*6,90);assert.equal(90-72,18);
  close(combinations([1,2,3,4],2).filter(a=>Math.abs(mean(a)-mean([1,2,3,4].filter(x=>!a.includes(x))))>=2).length/6,1/3);
