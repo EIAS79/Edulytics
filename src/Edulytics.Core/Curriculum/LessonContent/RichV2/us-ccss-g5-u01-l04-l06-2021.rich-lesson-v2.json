@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l04-l06-im2021-v34-source-estimation-and-120-20261030",
+  "ContentVersion": "g5-u01-l04-l06-im2021-v39-source-base-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -270,6 +270,32 @@
           ],
           "Answer": "Five layers; height is 5 units.",
           "Check": "20 square units × 5 units = 100 cubic units."
+        },
+        {
+          "Title": "Source base matching — 3×4×4, 3×6×4, 3×5×4",
+          "Question": "Match each original prism to a rectangular base and calculate its volume: 3×4×4, 3×6×4 and 3×5×4 cubic-unit prisms.",
+          "Method": "Match the first two perpendicular sides to a base and multiply its square-unit area by its perpendicular height.",
+          "Steps": [
+            "A 3×4 base contains 12 unit squares; four layers contain 48 cubes.",
+            "A 3×6 base contains 18 unit squares; four layers contain 72 cubes.",
+            "A 3×5 base contains 15 unit squares; four layers contain 60 cubes.",
+            "A different orientation may give a different-looking base, but preserve the same product and cube count."
+          ],
+          "Answer": "48, 72 and 60 cubic units.",
+          "Check": "Source original figures 148024–148029; teacher checks correct prism/rectangle pairing."
+        },
+        {
+          "Title": "Source Growing Prism — 4×10 base and varying heights",
+          "Question": "The original source shows a 4×10-cube base. Calculate volume for heights 1, 2, 3, 10 and 25.",
+          "Method": "Each layer has 4×10=40 identical cubes.",
+          "Steps": [
+            "For height one, volume 40×1=40.",
+            "For height two and three, volumes are 80 and 120.",
+            "For height ten and twenty-five, volumes are 400 and 1000.",
+            "Write cubic units for final volumes and explain why the 40-square-unit base area is not yet volume."
+          ],
+          "Answer": "40, 80, 120, 400 and 1000 cubic units.",
+          "Check": "Original 2021 Student Facing Activity 2 table."
         }
       ],
       "CommonMistakes": [
