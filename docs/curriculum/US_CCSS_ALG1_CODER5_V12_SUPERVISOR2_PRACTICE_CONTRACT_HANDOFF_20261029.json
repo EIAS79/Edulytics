@@ -4,9 +4,9 @@
   "asOfDate": "2026-10-30",
   "recipient": "SUPERVISOR 2",
   "sourcePairsFetched": 129,
-  "sourceComparedCandidates": 27,
+  "sourceComparedCandidates": 29,
   "sourceRepairedV12": 14,
-  "sourceActivityReviewsOutstanding": 105,
+  "sourceActivityReviewsOutstanding": 103,
   "exactAcceptedPracticeContracts": 0,
   "safety": "Existing ALG1 fail-closed gate remains until actual source-aligned, scored, tenant-safe integration.",
   "sharedRendererNote": "Five new SVGs are route-prepared in the ALG1-only partial, not added to the shared host. Requires Supervisor 2 approval.",
@@ -220,13 +220,13 @@
         "6.2: Mystery Operations",
         "6.3: More Spreadsheets!"
       ],
-      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
+      "sourceEvidence": "LOCAL_SOURCE_TEACHER_STUDENT_PRACTICE_ACTIVITIES_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
         "verify =A2+A4 with integer/fraction/negative inputs",
         "infer which inputs influence B2 from controlled changes",
         "live spreadsheet edit and partner exchange; human-scored"
       ],
-      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_ORACLE_ONLY_BLOCKED_C_SHARED",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
@@ -245,6 +245,13 @@
         "boundary",
         "malformed",
         "teacher-only"
+      ],
+      "v16ReturnQueue": true,
+      "v16SharedPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "v16SpecificFamilies": [
+        "cell-reference dependency testing (including fractions/negatives)",
+        "four hidden B2-B5 formulas",
+        "open spreadsheet trial explanation and Make 24"
       ]
     },
     {
@@ -259,18 +266,28 @@
         "7.3: Use the Contents of a Cell in a Calculation",
         "7.4: Solve Some Problems"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "LOCAL_SOURCE_TEACHER_STUDENT_PRACTICE_ACTIVITIES_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
-        "numeric data representation",
-        "distribution statistic and graph"
+        "arithmetic syntax and formula equivalence",
+        "relative cell references A1..A5",
+        "contextual distance, area and recipe with units",
+        "teacher-scored spreadsheet execution"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_ORACLE_ONLY_BLOCKED_C_SHARED",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "v16ReturnQueue": true,
+      "v16SharedPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "v16SpecificFamilies": [
+        "arithmetic syntax and formula equivalence",
+        "relative cell references A1..A5",
+        "contextual distance, area and recipe with units",
+        "teacher-scored spreadsheet execution"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08",
@@ -283,18 +300,28 @@
         "8.2: The Birthday Trick",
         "8.3: Using Spreadsheet Patterns"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "LOCAL_SOURCE_TEACHER_STUDENT_PRACTICE_ACTIVITIES_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
-        "numeric data representation",
-        "distribution statistic and graph"
+        "equivalent ratios fill-down",
+        "birthday-derived arithmetic using fictional month/day",
+        "recursive and relative reference behavior",
+        "teacher-scored evidence of actual drag-fill"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_ORACLE_ONLY_BLOCKED_C_SHARED",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "v16ReturnQueue": true,
+      "v16SharedPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "v16SpecificFamilies": [
+        "equivalent ratios fill-down",
+        "birthday-derived arithmetic using fictional month/day",
+        "recursive and relative reference behavior",
+        "teacher-scored evidence of actual drag-fill"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",

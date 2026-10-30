@@ -3,8 +3,8 @@
   "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
   "asOfDate": "2026-10-30",
   "narrativeRubrics": 132,
-  "structuredDrafts": 27,
-  "unstructuredPending": 105,
+  "structuredDrafts": 29,
+  "unstructuredPending": 103,
   "approvedRubrics": 0,
   "actualTeacherGrades": 0,
   "feedbackPersisted": 0,
@@ -253,8 +253,8 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
       "title": "Mystery Computations",
-      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
-      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
+      "status": "SOURCE_REVIEWED_CODER5_STRUCTURED_DRAFT_NOT_RUN_OR_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_TEACHER_PREPARATION_STUDENT_INDEX_PRACTICE_PART_BY_PART_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored rubric: 0–2 each for entering or describing a valid formula, using at least three contrasting trials, explaining the inferred relationship, and checking a counterexample (8 total). Unobserved clicking or partner discussion must never receive synthetic automatic credit."
       ],
@@ -288,37 +288,100 @@
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "possiblePoints": 6,
+        "humanScored": true,
+        "actualScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
       "title": "Spreadsheet Computations",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "SOURCE_REVIEWED_CODER5_STRUCTURED_DRAFT_NOT_RUN_OR_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_TEACHER_PREPARATION_STUDENT_INDEX_PRACTICE_PART_BY_PART_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored rubric (0–2 each, total 8): correct formula syntax, defensible estimate and units, verified arithmetic, and authentic or explicitly simulated recalculation explanation. A correct number alone does not verify that spreadsheet work occurred."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "spreadsheet-formula",
+          "maxPoints": 2,
+          "evidence": "correct references and safe syntax"
+        },
+        {
+          "id": "arithmetic-model",
+          "maxPoints": 2,
+          "evidence": "correct checked numerical interpretation"
+        },
+        {
+          "id": "dynamic-behavior",
+          "maxPoints": 2,
+          "evidence": "accurate change-propagation explanation, labelled simulated if not run"
+        },
+        {
+          "id": "reasoned-verification",
+          "maxPoints": 2,
+          "evidence": "units/constraints, justified counterexample or independent check"
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "possiblePoints": 6,
+        "humanScored": true,
+        "actualScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08",
       "title": "Spreadsheet Shortcuts",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "SOURCE_REVIEWED_CODER5_STRUCTURED_DRAFT_NOT_RUN_OR_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_TEACHER_PREPARATION_STUDENT_INDEX_PRACTICE_PART_BY_PART_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored rubric (0–2 each, maximum 8): correct relative reference and copy behavior, all expected values, valid recurrence and direct expression, and correct inequality boundary with honest evidence about the interaction. No simulated clicking or dragging can be claimed as observed usage."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "spreadsheet-formula",
+          "maxPoints": 2,
+          "evidence": "correct references and safe syntax"
+        },
+        {
+          "id": "arithmetic-model",
+          "maxPoints": 2,
+          "evidence": "correct checked numerical interpretation"
+        },
+        {
+          "id": "dynamic-behavior",
+          "maxPoints": 2,
+          "evidence": "accurate change-propagation explanation, labelled simulated if not run"
+        },
+        {
+          "id": "reasoned-verification",
+          "maxPoints": 2,
+          "evidence": "units/constraints, justified counterexample or independent check"
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "possiblePoints": 6,
+        "humanScored": true,
+        "actualScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",

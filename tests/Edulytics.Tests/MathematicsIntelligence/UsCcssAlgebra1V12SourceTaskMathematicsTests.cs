@@ -147,10 +147,10 @@ public sealed class UsCcssAlgebra1V12SourceTaskMathematicsTests
         using var ledger=Read("US_CCSS_ALG1_CODER5_V10_ACCEPTANCE_LEDGER_20261029.json");
         Assert.Equal(132,packet.RootElement.GetProperty("contracts").GetArrayLength());
         Assert.Equal(132,rubrics.RootElement.GetProperty("lessons").GetArrayLength());
-        // V12: 17, V13: 8, then U01:L01 and U01:L02 source-reviewed author drafts.
-        // These remain UNAPPROVED and do not imply a runnable Practice contract.
-        Assert.Equal(27,rubrics.RootElement.GetProperty("structuredDrafts").GetInt32());
-        Assert.Equal(105,rubrics.RootElement.GetProperty("unstructuredPending").GetInt32());
+        // V12: 17, V13: 8, plus U01 L01, L02, L07 and L08 author-reviewed drafts.
+        // All remain UNAPPROVED and do not imply a runnable Practice contract.
+        Assert.Equal(29,rubrics.RootElement.GetProperty("structuredDrafts").GetInt32());
+        Assert.Equal(103,rubrics.RootElement.GetProperty("unstructuredPending").GetInt32());
         var v13Summary=ledger.RootElement.GetProperty("v13ReviewSummary");
         Assert.Equal(17,v13Summary.GetProperty("priorSubstantiveComparisons").GetInt32());
         Assert.Equal(8,v13Summary.GetProperty("newlyReviewed").GetInt32());

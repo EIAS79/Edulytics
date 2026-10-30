@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u01-l08-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u01-l08-sequential-source-abc-20261030-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,12 @@
         "Original recurring-cost scenario: a learning club charges a one-time 18-euro registration fee plus 12 euros each month. Put month zero 18 in B1; B2 has =B1+12. Fill down to B7: totals are 18,30,42,54,66,78,90 for months zero through six. Relative copying changes the referenced prior row, so B3 should calculate from B2, not repeatedly from B1.",
         "Recursive definition: C(0)=18 euros, C(m+1)=C(m)+12 for whole-number m≥0. Direct definition: C(m)=18+12m for whole-number m≥0. Both agree for month 0, month 1 and month 6. Never confuse the first month's cost with the registration amount alone.",
         "Student task: build an equivalent-ratio table (input 1,2,3,5; outputs 4,8,12,20) and fill it using references. Then extend the cost sequence using a fill handle or keyboard alternative, explaining the selected formula, a copied formula, and why the outputs continue consistently. Solve C(m)>70 and check the neighboring whole months. Paper work is an explicitly named simulation if a spreadsheet is unavailable.",
-        "Teacher-scored rubric (0–2 each, maximum 8): correct relative reference and copy behavior, all expected values, valid recurrence and direct expression, and correct inequality boundary with honest evidence about the interaction. No simulated clicking or dragging can be claimed as observed usage."
+        "Teacher-scored rubric (0–2 each, maximum 8): correct relative reference and copy behavior, all expected values, valid recurrence and direct expression, and correct inequality boundary with honest evidence about the interaction. No simulated clicking or dragging can be claimed as observed usage.",
+        "First-party activity 8.1: create equivalent-ratio pairs (2,10),(4,20),(6,30),(8,40),(10,50), so b=5a and an input of 1 maps to 5. Explain that both values are scaled by the same nonzero factor. These are original numerical values, not a copied publisher table.",
+        "First-party activity 8.2 birthday-number trick using FICTIONAL month/day only (never require personal birth dates): set B1=4 (month), B2=9 (day); B4 = B1*5; B5 = B4+6; B6 = B5*20; B7 = B6+B2; B8 = B7-120. The result is 409. Symbolically (5m+6)*20+d-120 = 100m+d for all valid m,d; test hypothetical 12,31 -> 1231 and 1,1 -> 101. If an actual spreadsheet is available, click a cell to create references and check automatic updates; otherwise explicitly label a manual simulation. No protected actual birthday is collected.",
+        "First-party activity 8.3 fill-down: from A2=2,B2=10 set A3=A2+2 and B3=B2+10; drag or copy relative formulas through row 6 to make (2,10),(4,20),(6,30),(8,40),(10,50), preserving b=5a. Compare a relative reference to an absolute row reference, and explain why a formula copied to a new row uses the new previous row. Actual dragging is unverified until performed by a learner; pencil-created rows are explicitly simulated. Existing registration-fee recurrence example remains correct.",
+        "Source-aligned practice: P1 actually use fill-down for ratios if technology is available, P2 justify tenth term of arithmetic sequence 11,7,3,... (a10=11-4*9=-25), P3 reverse-engineer a first-party hidden month/day formula (human reasoning), P4 formula operations and P5/P6 earlier statistics review. Use a teacher rubric for interactive operation and open derivations; no unobserved spreadsheet operation gets machine-scored as completion.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): (1) explain what B4 = B3+10 becomes when filled down from row 4 to 5; (2) derive 100m+d for the invented birthday arithmetic; (3) explain why A2=2,B2=10 and iterative +2/+10 remain equivalent ratios. Score 0-2 each, total 6, by human reviewer. Never claim this substituted exercise is the publisher's locked Cool-down."
       ],
       "KeyConcepts": [
         {

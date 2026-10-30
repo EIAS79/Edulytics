@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u01-l07-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u01-l07-sequential-source-abc-20261030-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,12 @@
         "Spreadsheet syntax begins with =; use +, -, *, /, ^ and parentheses for calculations. A1 names the current contents of that cell. If A1=8.4 and A2=3.5, entering =A1*A2 in A3 displays 29.4; changing A2 to 4 updates A3 to 33.6. Explain how changing inputs affects the answer.",
         "Original contexts: at a constant speed 18 km/hour for 2.5 hours, a cyclist travels 45 km (formula =18*2.5). A garden 8.4 m by 3.5 m has area 29.4 square metres (formula =8.4*3.5). A fictional four-batch recipe with ingredients costing 2.50, 0.75, and 1.25 euros per batch costs 18 euros (formula =4*(2.5+0.75+1.25)). Estimate each result before entering formulas.",
         "Student task: enter arithmetic expressions and contextual formulas in distinct spreadsheet cells, label them, explain order of operations, change the initial data in one cell and observe the recalculated output. If working on paper, disclose that it is a mathematical simulation rather than tested software behavior.",
-        "Teacher-scored rubric (0–2 each, total 8): correct formula syntax, defensible estimate and units, verified arithmetic, and authentic or explicitly simulated recalculation explanation. A correct number alone does not verify that spreadsheet work occurred."
+        "Teacher-scored rubric (0–2 each, total 8): correct formula syntax, defensible estimate and units, verified arithmetic, and authentic or explicitly simulated recalculation explanation. A correct number alone does not verify that spreadsheet work occurred.",
+        "First-party source alignment for activity 7.1: solve original Edulytiks examples of 4 miles/hour for 2.5 hours (10 miles), a 6 by 4 cm rectangle (24 square cm), and a right triangle with perpendicular sides 8 and 5 cm (20 square cm). Do not claim the teacher's inaccessible original triangle drawing was reproduced. Estimate first, then select formula and units.",
+        "First-party activity 7.2 calculator checks: type each into a different cell instead of overwriting results: =2+7 (9), =2-7 (-5), =7*2 (14), =7^2 (49), =7/2 (3.5), =91/7 (13), =0.1*2+3 (3.2), =0.1*(2+3) (0.5), =13/(1/7) (91), =(2+7+8+11)/4 (7). Explain why parentheses and operator precedence matter; if no spreadsheet actually ran, label these manual calculations.",
+        "First-party activity 7.3: set A1=4 and A2=3, enter =A1+A2 in A3 (7), =A1*A2 in A4 (12), =A1^A2 in A5 (64). Alter one input and predict all three new values. Label cells in a neighboring column and report any recalculation as observed only if actual spreadsheet software was used.",
+        "First-party activity 7.4: model 120 km at 80 km/hour -> 1.5 hours; a right triangle with legs 12.4 and 5.2 cm -> 32.24 square cm; and a synthetic drink recipe per batch of 1.5 + 1/4 + 1/2 = 2.25 cups, so four batches require 9 cups and 7.25 batches require 16.3125 cups. Express recipe with cells, vary batch count and one ingredient, explain any discrepancy with a peer, and distinguish actual from hypothetical partner/software operations. This is separate from publisher context; practice formula equivalences and user explanations require lesson-specific checks.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): (1) Compute 7*(3/4) from a spreadsheet formula and justify correct distance units; (2) name two equivalent right-triangle area formulas using multiplication by 1/2 versus division by 2; (3) set batch count in B1 and ingredients in B2/B3 and explain why =B1*(B2+B3) updates correctly, including a changed input. Human-scored 0-2 each, total 6; do not treat number-only response as software execution proof."
       ],
       "KeyConcepts": [
         {
