@@ -49,7 +49,7 @@
     "unmappedOfficialOutcomeLessons": 2,
     "externalSourcePageOpened": 12,
     "sourceGoalsComparedDetailed": 6,
-    "stageAVerified": 7,
+    "stageAVerified": 8,
     "stageBImplementedCandidate": 145,
     "stageCVerified": 0,
     "stageDVerified": 0,
@@ -95,7 +95,7 @@
       ],
       "effectiveContent": "STATIC_DIRECT_RICH_REGISTRY_PRECEDENCE_ONLY_DB_UI_NOT_CHECKED",
       "staticRichCandidate": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
-      "sourceReview": "STAGE0_PREPARATION_GOAL_SAMPLED_STUDENT_TASK_PARITY_PENDING",
+      "sourceReview": "LOCAL_TEACHER_STUDENT_PREPARATION_PRACTICE_COMPARED_V5",
       "baselineFlags": {
         "malformedGoal": true,
         "genericWorkedApproach": true,
@@ -115,7 +115,7 @@
         "teacherRubric": "NOT_CHECKED"
       },
       "stages": {
-        "A": "SOURCE_STUDENT_TASK_COMPARED_REPAIR_PENDING_ACCEPTANCE",
+        "A": "SOURCE_EQUIVALENT_FIRST_PARTY_ACTIVITIES_A_CLOSED_SCOPED_20261030_V5",
         "B": "CANDIDATE_IMPLEMENTED_NOT_EFFECTIVE_VERIFIED",
         "C": "NOT_VERIFIED",
         "D": "NOT_RUN"
@@ -134,9 +134,9 @@
       "visualRenderVerified": "NOT_RUN",
       "richCandidateContentBlobSha": "f326b7e4818380d965141d314f86e31efdce1732",
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
-      "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
+      "studentTaskParity": "FIRST_PARTY_F_SEVEN_OPTIONS_PORTRAIT_SCALE_TEN_CARDS_A_REVIEWED_B_UNDELIVERED_C_BLOCKED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/1/1/index.html",
-      "academicStageAVerified": "NO",
+      "academicStageAVerified": "YES_SCOPED_A_ONLY",
       "v7GradeOwnedReferenceFigure": "/curriculum/us-ccss-g7/geometry/u01-l01-scaled-vs-stretched.svg",
       "v7GradeSpecificRazorComponent": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
       "v7StudentRichRendering": "NOT_INVOKED_ON_SHARED_VIEW",
@@ -147,7 +147,19 @@
       "v8SvgPublicSource": "SVG_SOURCE_AUTHORED_GRADE_ONLY",
       "v8SharedRendererInvoked": "NO",
       "v8StudentRichRender": "NOT_RUN",
-      "v8TeacherScorePersisted": "NOT_RUN"
+      "v8TeacherScorePersisted": "NOT_RUN",
+      "v15AReview": {
+        "sourceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-u01-l01-abc-cursor.json",
+        "canonicalRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json",
+        "directRichV2SourceAlternative": "7-candidate original F-dimension and angle table",
+        "sourceRights": "OUR_IM_CC_BY_4_0_FIRST_PARTY_EDULYTIKS_ASSETS_NO_PUBLISHER_ARTWORK",
+        "originalCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED_GATED",
+        "bBlocked": "UNINVOKED_GRADE_OWNED_PARTIAL_CURRENT_GRADE_BRANCH",
+        "cBlocked": "EXACT_PRACTICE_AND_TEACHER_SCORING_SINGLE_WRITER_ISSUE_592",
+        "academicAcceptance": "NOT_EVIDENCED",
+        "testExecution": "TEST_AUTHORED_NOT_RUN",
+        "releaseReady": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U01:L02",
@@ -12231,5 +12243,23 @@
       "D_VERIFIED=0"
     ],
     "tests": "NOT_RUN"
+  },
+  "v15": {
+    "status": "UNIT_U01_BLOCKED_L01_SHARED_B_AND_C_P0_NO_ADVANCE",
+    "firstOpen": "PED:US-CCSS-MATH:G7:U01:L01",
+    "unitLessons": 13,
+    "scopedAReconciled": 8,
+    "BClosed": 0,
+    "CPrepared": 0,
+    "readyForD": 0,
+    "DVerified": 0,
+    "lastAWork": "L01 with seven candidate F table in directly referenced Rich V2",
+    "existingL02_L08_A": "PRESERVED",
+    "lessonsL09_L13": "NO_ACADEMIC_CHANGE",
+    "owner": "Supervisor 1 shared renderer+Practice single writer Issue #592 / PR #599",
+    "tests": "AUTHORED_NOT_RUN",
+    "noStageD": true,
+    "noMerge": true,
+    "noDeploy": true
   }
 }
