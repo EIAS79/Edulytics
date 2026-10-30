@@ -70,6 +70,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("9/4 miles is what mixed distance?","2 1/4 miles","1 3/4 miles","4 1/2 miles"),
                 new("7/4 miles is what mixed distance?","1 3/4 miles","2 1/4 miles","4 1/7 miles")
             ],
+                        ["usccss.g5.u02.l08.nonunit_fraction_of_whole"]=[
+                new("Three whole bars each shade TWO FIFTHS. What total shaded amount?","6/5 unit squares","2/15 unit square","5/6 unit square"),
+                new("3×(1/5) is what amount?","3/5","5/3","1/15"),
+                new("3×(3/5) gives which result?","9/5","3/15","5/9"),
+                new("Which equivalent expression describes 3×(2/5)?","2×(3÷5)","2×(5÷3)","3×(1/4)"),
+                new("How many fifth-unit pieces are shaded in 3 bars, each with 2/5 shaded?","6 fifths","2 fifths","15 fifths"),
+                new("6/5 equals which mixed number?","1 1/5","1 5/6","5 1/6")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

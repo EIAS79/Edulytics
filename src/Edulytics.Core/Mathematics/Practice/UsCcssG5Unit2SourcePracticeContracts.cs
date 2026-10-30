@@ -18,6 +18,7 @@ internal static class UsCcssG5Unit2SourcePracticeContracts
         new("PED:US-CCSS-MATH:G5:U02:L05","fractions.divide_whole_numbers","SOURCE_FRACTION_DIVISION_GENERALIZATION_TEACHER_REVIEW",["usccss.g5.u02.l05.fraction_division_generalization"],"IM2021_G5_U02_L05_LOCAL","READY_VERIFIED","usccss-g5-u02-l05-source-v1"),
         new("PED:US-CCSS-MATH:G5:U02:L06","supporting.fractions.multiply_divide","SOURCE_RELAY_DIVISION_UNIT_FRACTION_TEACHER_REVIEW",["usccss.g5.u02.l06.relay_division_unit_fraction"],"IM2021_G5_U02_L06_LOCAL","READY_VERIFIED","usccss-g5-u02-l06-source-v1"),
         new("PED:US-CCSS-MATH:G5:U02:L07","supporting.fractions.multiply_divide","SOURCE_UNIT_FRACTION_RACE_DISTANCES_TEACHER_REVIEW",["usccss.g5.u02.l07.unit_fraction_race_distances"],"IM2021_G5_U02_L07_LOCAL","READY_VERIFIED","usccss-g5-u02-l07-source-v1"),
+        new("PED:US-CCSS-MATH:G5:U02:L08","supporting.fractions.multiply_divide","SOURCE_NONUNIT_FRACTION_OF_WHOLE_TEACHER_REVIEW",["usccss.g5.u02.l08.nonunit_fraction_of_whole"],"IM2021_G5_U02_L08_LOCAL","READY_VERIFIED","usccss-g5-u02-l08-source-v1"),
         // NEXT_LESSON_CONTRACT
     ];
 }

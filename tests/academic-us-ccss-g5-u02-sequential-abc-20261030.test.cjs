@@ -42,4 +42,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L06','usccss.g5.u02.l06.relay_division_unit
 test('G5 U02 L07 source fraction multiplication and divided-whole correspondence',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L07','usccss.g5.u02.l07.unit_fraction_race_distances',["9/4 miles","7/4 miles","3/4 mile","9×1/4"],["4/9 mile","4/7 mile"]);
 });
+test('G5 U02 L08 source fraction geometry plus teacher models',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L08','usccss.g5.u02.l08.nonunit_fraction_of_whole',["6/5 unit squares","3/5","9/5","2×(3÷5)"],["2/15 unit square","5/3"]);
+});
 // NEXT_LESSON_TEST
