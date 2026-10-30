@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L06",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L07",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 17,
+    "READY_FOR_D": 18,
     "D_VERIFIED": 0,
-    "BLOCKED": 2,
-    "REMAINING": 131
+    "BLOCKED": 1,
+    "REMAINING": 130
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -1063,23 +1063,18 @@
       "reuseFinding": "REUSE_SOURCE_ACCURATE_3_ONE_UNIT_BARS_AND_DIAGRAMS_A_B_AS_TEXT; ADD_ORIGINAL_5_DIV_2_EXIT_WITH_TEACHER_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric unit-fraction multiplication and whole-division subskills; shared writer EXTEND teacher-scored diagram-to-expression equivalence source tasks",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u02-l06-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:31:53.459Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T20:15:48.410Z",
+      "elapsedSeconds": 27835,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated single shared integration writer #592",
-        "reason": "Exact selected whole×unit-fraction Practice and open diagram expression explanation teacher route unverified",
-        "acceptWhen": "Verified selected numeric family plus teacher-scored diagram and unit-based explanation wired"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "IM 2021 U02 L06 original teacher and preparation, embedded Student Facing",
         "goal": [
@@ -1101,7 +1096,17 @@
         "before": "Existing Rich V2 explains source three-mile relay and two correct three-bar diagrams accurately, but no original exit explicitly labeled.",
         "after": "Added five-mile equal division/multiply-half Edulytiks exit and teacher reasoned diagram rubric."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l06-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l06-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u02.l06.relay_division_unit_fraction",
+        "source": "Our-CS original 2021 U02 L06 lesson/preparation",
+        "teacher": "Teacher reviews equivalent three half-mile segments across distinct original diagrams, same whole, relay share, and source verbal interpretation; scalar 3/2 alone insufficient.",
+        "digital": "UNIT_FRACTION_MULTIPLICATION_CHOICE_ONLY",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "sourceArt": "NOT_COPIED",
+        "parentHead": "4a867bbb0fb9c4e00e1e7532172194738e66f9fb"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L07",

@@ -54,6 +54,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Which equality for 5÷2 is correct?","5÷2=5/2=2 1/2","5÷2=5 1/2","5÷2=2/5"),
                 new("What must hold to interpret a/b as a÷b?","The denominator b is not zero","The numerator must exceed the denominator","Both quantities must be equal")
             ],
+                        ["usccss.g5.u02.l06.relay_division_unit_fraction"]=[
+                new("Two runners equally split a THREE-mile relay. How far does each run?","3/2 miles","2/3 mile","3 miles"),
+                new("Which expression equals 3÷2 miles in the relay?","3×(1/2) miles","2×(1/3) miles","3×2 miles"),
+                new("If three one-mile bars are each divided into halves, how many half-mile parts in one half of the total distance?","3 half-mile parts","2 half-mile parts","6 half-mile parts"),
+                new("Three copies of a 1/2-mile segment total what distance?","3/2 miles","1/6 mile","3 miles"),
+                new("Which choice equals 3/2 miles?","1 1/2 miles","3 1/2 miles","2/3 mile"),
+                new("If two runners each travel 3/2 miles, what whole distance is covered?","3 miles","3/2 miles","6 miles")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,
