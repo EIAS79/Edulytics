@@ -96,7 +96,30 @@
       "previousUnapprovedV1BodySha256": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
       "sourceTaskReconciliation": "PAINTING_RECEIPT_MODEL_IMPLEMENTED; STUDENT_AND_TEACHER_INDEXED_SOURCE_TEXT_VERIFIED; FULL_PDF_BINARY_AND_ALL_SOURCE_TASKS_NOT_VERIFIED",
       "stageA": "TARGETED_ORIGINAL_10_6H_STUDENT_PAGES_34_TO_36_AND_TEACHER_49_TO_53_DIRECTLY_READ_AND_SOURCE_SHA_VERIFIED; INDEPENDENT_ACADEMIC_SIGNOFF_PENDING",
-      "previousUnapprovedV3BodySha256": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7"
+      "previousUnapprovedV3BodySha256": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
+      "sequentialABCCheckpoint": {
+        "reviewedHead": "798d57b0f969fd683d624f479245798908ed76ee",
+        "evidenceCommit": "2c2353b3a6252b0f4c28fe66d9b6f9059eba6fd2",
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/AllSystemsGo-sequential-ABC-checkpoint-20261030.md",
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "BLOCKED_BY_INTEGRATION": true,
+        "sourceLocalSha256Matches": true,
+        "sourceTeacherPagesReviewed": [
+          49,
+          50,
+          51,
+          52,
+          53
+        ],
+        "academicApproved": false,
+        "currentHeadTests": "TEST_NOT_RUN",
+        "blocker": "#584 shared incorrect matrix Practice mapping and unapproved predecessor transition",
+        "nextCursor": "U01:L01"
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
@@ -501,7 +524,8 @@
       "exitCode": 0,
       "covered": "26 canonical fixtures; exact source identity/inverse + second 3x3 question; log numberline and base/cross-base; six proposed human rubric bindings",
       "notVerified": "dotnet/xUnit official on exact head, selected Practice, saved attempts/teacher grade, cross-school isolation, actual rendered learner content, academic approval"
-    }
+    },
+    "sequentialABCAtOurCS20261030": "L01 A_CLOSED/B_CLOSED coder-level source and authored-content review, C_PREPARED but BLOCKED_BY_INTEGRATION #584; evidence file committed; current-head TEST_NOT_RUN, L02 not advanced, D not started."
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
