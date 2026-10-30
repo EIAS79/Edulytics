@@ -1,0 +1,111 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L15",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceSha256": {
+    "prep": "4f90bdd8064e2e2567760fdfd606b9a80a1f1d1a4f6f901e5dbefcc68deacaa7",
+    "teacher": "0b8ab220e784adfbae3ab1ec13e4239e83d6a270a3eff791fb1b371391a108b8",
+    "student": "640013e792a4dff4722da5ebade7e663453ae01ce69e7aa5e56f1dca2b567396",
+    "practice": "70ddf13e87f0e9e791f3ae7791bade6bff8405cf0bb9337c351aecf97bffef9c"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.1",
+      "HSG-CO.A.4"
+    ],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.3"
+    ]
+  },
+  "SourceActivities": [
+    "15.1 Back to the Start",
+    "15.2 Self Reflection group display",
+    "15.3 Diabolic Diagonals",
+    "Practice 1–7"
+  ],
+  "Task": {
+    "Prompt": "Draw and define assigned rectangle, square or non-rhombus kite; mark all its symmetry lines and an invalid axis, and critique competing kite diagonal claims.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "all correct reflection axes",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "shape definition and labelled visual display",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "one justified non-axis counterexample",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "generic kite diagonal reasoning with special-case caveat",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "How is a proposed axis of symmetry verified?",
+      "Expected": "Reflect all vertices and check the resulting whole shape is identical.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "Why is a kite's main symmetry diagonal perpendicular to the other?",
+      "Expected": "It perpendicularly bisects the segment joining exchanged vertices.",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "What does rotating an ideal Z shape 180 degrees about its centre produce?",
+      "Expected": "The same Z set, endpoints exchanged.",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "A regular square centre rotation between adjacent vertices?",
+      "Expected": "90 degrees.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Determine closest square vertex from interior E.",
+      "Expected": "Compare distances or use perpendicular-bisector nearest-vertex regions.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Where do half-turn and reflection in a horizontal line through P agree?",
+      "Expected": "Only on perpendicular vertical line through P.",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "How distinguish 60 clockwise and 60 counterclockwise rotations?",
+      "Expected": "Same centre but directed angles differ and generally yield different points.",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: non-square rectangle two axes, its diagonals invalid as reflection axes",
+  "Handoff": "Teacher reviews original labelled paper display, 0/1/2 per criterion, signed/dates feedback offline.",
+  "Cases": {
+    "CORRECT": "2 non-square rectangle axes; 4 square; 1 non-rhombus kite",
+    "EQUIVALENT": "rigid transformations of source-equivalent shapes",
+    "WRONG": "asserts both generic kite diagonals are symmetry axes",
+    "INSUFFICIENT": "visual claim without mapped vertices",
+    "MALFORMED": "degenerate or undefined shape"
+  },
+  "AutoGrade": false,
+  "StageD": "NOT_RUN lesson school teacher grade and tenant authorization #453"
+}
