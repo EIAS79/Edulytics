@@ -65,7 +65,7 @@
       "tenantIsolation": "NOT_RUN",
       "scorePersistence": "NOT_RUN",
       "teacherReviewAndGradebook": "NOT_RUN",
-      "stageC": "C_PREPARED_NOT_ACCEPTED",
+      "stageC": "C_PREPARED_NOT_REGISTERED",
       "courseOwnedFixture": {
         "status": "FIXTURE_PASS_5_OF_5_NOT_RUNTIME",
         "command": "node --test tests/coder-7/UsCcssAlg2U01L01SourcePracticeContract.test.cjs",
@@ -80,8 +80,8 @@
           "explicit not-integration-ready state"
         ]
       },
-      "blockerStatus": "BLOCKED_CENTRAL_REGISTRY_OWNERSHIP_RETURN_QUEUE",
-      "blockerOwner": "Coder 7, with Supervisor 3 exclusive file-lock coordination",
+      "blockerStatus": "UNIT_FIRST_V3_CENTRAL_REGISTRY_OWNERSHIP_BLOCKED",
+      "blockerOwner": "Coder 7 SOLO after Supervisor 3 grants exclusive central file ownership",
       "blockerIssue": 453,
       "nextCursorAfterClosure": "STOP_U01_L01",
       "adaptedCoolDownStatus": "ADAPTED_COOLDOWN_ORIGINAL_UNVERIFIED",
@@ -90,7 +90,9 @@
         "isolatedTests": "20_PASS_0_FAIL",
         "runtimeRegistered": false,
         "realXunit": "NOT_RUN"
-      }
+      },
+      "courseOwnedAdapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+      "courseOwnedAdapterTestStatus": "NOT_RUN_UNIT_FIRST_V3"
     },
     {
       "ordinal": 2,

@@ -132,13 +132,13 @@
     "academicApproval": "NOT_VERIFIED"
   },
   "stageC": {
-    "status": "C_PREPARED_COURSE_MATH_IMPLEMENTED_NOT_INTEGRATED",
+    "status": "C_PREPARED_COURSE_ADAPTER_NOT_REGISTERED",
     "lessonScopedMappingExplicitInSharedRegistry": false,
     "effectiveRuntimeFamilyVerified": false,
     "proposedFamilies": [
       {
         "id": "usccss.alg2.u01.l01.hanoi_min_moves",
-        "status": "ISOLATED_MATH_VERIFIER_PRESENT_NOT_SHARED_REGISTERED",
+        "status": "COURSE_ADAPTER_PRESENT_UNREGISTERED",
         "answerKind": "exact_nonnegative_integer_string",
         "parameters": {
           "discCount": "integer 1 through 64"
@@ -167,11 +167,12 @@
           "2^5-1",
           "1+2+4+8+16"
         ],
-        "humanRubric": "Explain why moving the largest disc requires two transfers of n-1 smaller discs and a central move; assess legal-move reasoning"
+        "humanRubric": "Explain why moving the largest disc requires two transfers of n-1 smaller discs and a central move; assess legal-move reasoning",
+        "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs"
       },
       {
         "id": "usccss.alg2.u01.l01.recursive_sequence",
-        "status": "ISOLATED_MATH_VERIFIER_PRESENT_NOT_SHARED_REGISTERED",
+        "status": "COURSE_ADAPTER_PRESENT_UNREGISTERED",
         "answerKind": "ordered_integer_or_rational_sequence_and_rule",
         "parameters": {
           "initialTerms": "explicit one or two valid terms",
@@ -199,11 +200,12 @@
           "0.0625 and 1/16",
           "2/32 and 1/16"
         ],
-        "humanRubric": "Require starting term(s) plus clear recursive rule; for open-ended 0,5 require two genuinely distinct rules, not merely two expressions for the same rule"
+        "humanRubric": "Require starting term(s) plus clear recursive rule; for open-ended 0,5 require two genuinely distinct rules, not merely two expressions for the same rule",
+        "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs"
       },
       {
         "id": "usccss.alg2.u01.l01.checker_jump_optional",
-        "status": "ISOLATED_MATH_VERIFIER_PRESENT_NOT_SHARED_REGISTERED",
+        "status": "COURSE_ADAPTER_PRESENT_UNREGISTERED",
         "answerKind": "exact_integer_moves_and_explanation",
         "parameters": {
           "checkersPerSide": "positive integer, canonical source tasks 1,2,3,4,7"
@@ -227,7 +229,8 @@
         "equivalentCases": [
           "15 and 3*(3+2) for n=3"
         ],
-        "humanRubric": "Explain legal checker movement and why proposed minimal sequence completes the color swap"
+        "humanRubric": "Explain legal checker movement and why proposed minimal sequence completes the color swap",
+        "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs"
       }
     ],
     "teacherScored": [
@@ -267,9 +270,57 @@
     },
     "repositoryXunitStatus": "NOT_RUN_RESTORE_ASSETS_ERROR",
     "owner": "Coder 7 — Algebra 2, SOLO",
-    "requiredCentralFileOwnership": "Supervisor 3 must grant temporary exclusive file ownership before any central registry edit; no shared coder"
+    "requiredCentralFileOwnership": "Supervisor 3 must grant temporary exclusive file ownership before any central registry edit; no shared coder",
+    "implementationOwner": "Coder 7 SOLO — Algebra 2",
+    "courseOwnedQuestionGenerator": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+    "courseOwnedAdapterReviewTests": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+    "courseOwnedAdapterReviewTestsStatus": "NOT_RUN_UNIT_FIRST_V3",
+    "lastNodeVerificationOnPreviousHead": "16_PASS_0_FAIL_at_1894f9d95a7057bb57927c78c3ddf8647a2b0bbb",
+    "newCommitTests": "NOT_RUN",
+    "teacherNarrativeAssessment": "HUMAN_RUBRIC_REQUIRED_NOT_AUTOGRADED",
+    "answerLeakGuard": "Internal-only candidate; ExpectedAnswer must never be projected to learner DTO",
+    "generatorVariants": [
+      "HanoiMoves",
+      "CheckerMovesOptional",
+      "DoubleMinusOne",
+      "Halve",
+      "AffineReverse",
+      "Fibonacci",
+      "JadaReasoning",
+      "NoahReasoningOptional",
+      "TwoDistinctRules"
+    ],
+    "centralDependency": {
+      "exactFile": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "additionalLikelyFiles": [
+        "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+        "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json"
+      ],
+      "ownership": "REQUEST_SUPERVISOR3_EXCLUSIVE_CENTRAL_FILE_LOCK_BEFORE_CHANGING",
+      "ownerToImplement": "Coder 7 SOLO once exclusive ownership is granted",
+      "evidence": "LessonPracticeCapabilityResolver.TryResolve only accepts READY_VERIFIED entries; no U01:L01 mapping in registry or mappings at inspected HEAD",
+      "issue": 453,
+      "status": "NOT_EDITED_BY_CODER7_DUE_CONCURRENT_FILE_OWNERSHIP_RISK"
+    },
+    "distinctionStageD": {
+      "notRequiredForCourseOwnedCPreparation": [
+        "Authenticated HTTP student attempt E2E",
+        "persisted gradebook verification",
+        "two-school tenant isolation",
+        "full CI or manual full build"
+      ],
+      "stillRequiredBeforeCClosure": [
+        "validated exact lesson routing binding to appropriate generation and verifier",
+        "compatible, trusted registry entry and question family",
+        "reviewed teacher-scoring contract"
+      ],
+      "status": "NOT_STARTED_STAGE_D"
+    },
+    "statusReason": "Source and course-owned generator/verifier/teacher rubric are prepared, but central runtime cannot route them by lessonCode; do not equate isolated code with registered Practice",
+    "lastUpdatedUtc": "2026-10-30T13:03:19.288793+00:00"
   },
   "ABC_READY_FOR_D": false,
   "D_VERIFIED": false,
-  "mergeDeploy": "NOT_AUTHORIZED"
+  "mergeDeploy": "NOT_AUTHORIZED",
+  "sourceHashesRecheckedUtc": "2026-10-30T13:03:19.288793+00:00"
 }
