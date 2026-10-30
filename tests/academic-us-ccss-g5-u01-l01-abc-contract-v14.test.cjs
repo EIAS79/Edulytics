@@ -110,3 +110,19 @@ test('source-functional first-party visuals and teacher-only assessment spec exi
   assert.ok(spec.taskContracts.every(t=>t.evaluation.includes('TEACHER') || t.evaluation.includes('HUMAN')));
   assert.ok(spec.independentFixtureExpectations.some(f=>f.name==='numeric_answer_only'));
 });
+
+// 2021 teacher preparation explicitly introduces volume conceptually in L01;
+// formal measurement in cubic units begins in L02. Authored only; NOT_RUN in A–B–C.
+test('conceptual introduction precedes formal cubic-unit notation in U01:L01', {
+  skip: !fs.existsSync(path.resolve(__dirname, '../src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json')) && 'Requires original repository checkout'
+}, () => {
+  const packPath = path.resolve(__dirname, '../src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-g5-phase29-v1.lesson-content-pack.json');
+  const pack = JSON.parse(fs.readFileSync(packPath, 'utf8'));
+  const lesson = pack.lessons.find(x => x.lessonCode === 'PED:US-CCSS-MATH:G5:U01:L01');
+  assert.ok(lesson, 'Keep the canonical first lesson');
+  const english = lesson.translations.find(x => x.cultureCode === 'en');
+  assert.ok(english);
+  assert.match(english.stepByStepSolutions, /Formal cubic-unit measurement is introduced in Lesson 2/i);
+  assert.doesNotMatch(english.stepByStepSolutions, /Record volume in cubic units/i);
+  assert.match(english.explanation, /objects can have different shapes but still take up the same amount of space/i);
+});
