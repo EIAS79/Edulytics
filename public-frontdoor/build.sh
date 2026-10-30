@@ -253,6 +253,8 @@ done
 
 # Marketing-only SEO enhancement. The public snapshots stay independent of Render's app.
 node "$ROOT/public-frontdoor/seo-postprocess.mjs"
+node "$ROOT/public-frontdoor/optimize-assets.mjs"
+node "$ROOT/public-frontdoor/optimize-assets.mjs" --check
 node "$ROOT/public-frontdoor/seo-postprocess.mjs" --check
 
 echo "Exact server-rendered public snapshots built at $OUT"

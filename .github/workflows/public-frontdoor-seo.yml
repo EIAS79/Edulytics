@@ -24,4 +24,6 @@ jobs:
           node --check public-frontdoor/seo-postprocess.mjs
           bash -n public-frontdoor/build.sh
       - name: Run offline static SEO fixtures
-        run: node public-frontdoor/test-seo.mjs
+        run: |
+          node public-frontdoor/test-seo.mjs
+          node public-frontdoor/test-image-optimization.mjs
