@@ -142,6 +142,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Which options are CLOSE to Priya's 36-square-foot target without exceeding it?","B and C (35 square feet each)","A only (42 square feet)","D only (24 square feet)"),
                 new("Which bounds the original 7×12 8/9 product?","Between 84 and 91","Between 12 and 13","Between 36 and 37")
             ],
+                        ["usccss.g5.u02.l17.mosaic_rectangle_area_cost"]=[
+                new("An original Edulytiks model rectangle is 3 inches long and 1 1/2 inches wide. What area?","4 1/2 square inches","3 1/2 square inches","6 square inches"),
+                new("Four nonoverlapping 3 by 1 1/2 inch tiles make a mosaic. What total area is covered?","18 square inches","12 square inches","24 square inches"),
+                new("Stone costs $5 per square unit. What does a mosaic of 18 square units cost?","$90","$54","$36"),
+                new("Tile costs $3 per square unit. What does a mosaic of 18 square units cost?","$54","$90","$36"),
+                new("Glass costs $2 per square unit. What does a mosaic of 18 square units cost?","$36","$90","$54"),
+                new("Which source material rate is the LOWEST per square unit?","Glass at $2","Stone at $5","Tile at $3")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

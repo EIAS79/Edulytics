@@ -27,6 +27,7 @@ internal static class UsCcssG5Unit2SourcePracticeContracts
         new("PED:US-CCSS-MATH:G5:U02:L14","supporting.fractions.multiply_divide","SOURCE_FRACTION_MULTIPLICATION_INFO_GAP_TEACHER_REVIEW",["usccss.g5.u02.l14.fraction_multiplication_info_gap"],"IM2021_G5_U02_L14_LOCAL","READY_VERIFIED","usccss-g5-u02-l14-source-v1"),
         new("PED:US-CCSS-MATH:G5:U02:L15","supporting.fractions.multiply_divide","SOURCE_MULTIPLY_MIXED_SOURCE_NUMBER_BANK_TEACHER_REVIEW",["usccss.g5.u02.l15.multiply_mixed_source_number_bank"],"IM2021_G5_U02_L15_LOCAL","READY_VERIFIED","usccss-g5-u02-l15-source-v1"),
         new("PED:US-CCSS-MATH:G5:U02:L16","supporting.fractions.multiply_divide","SOURCE_ESTIMATE_MIXED_AREA_PRODUCTS_TEACHER_REVIEW",["usccss.g5.u02.l16.estimate_mixed_area_products"],"IM2021_G5_U02_L16_LOCAL_OPTIONAL","READY_VERIFIED","usccss-g5-u02-l16-source-v1"),
+        new("PED:US-CCSS-MATH:G5:U02:L17","supporting.fractions.multiply_divide","SOURCE_MOSAIC_RECTANGLE_AREA_COST_TEACHER_REVIEW",["usccss.g5.u02.l17.mosaic_rectangle_area_cost"],"IM2021_G5_U02_L17_LOCAL_OPTIONAL","READY_VERIFIED","usccss-g5-u02-l17-source-v1"),
         // NEXT_LESSON_CONTRACT
     ];
 }

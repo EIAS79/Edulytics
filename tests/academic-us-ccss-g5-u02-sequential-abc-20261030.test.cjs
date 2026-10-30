@@ -69,4 +69,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L15','usccss.g5.u02.l15.multiply_mixed_sour
 test('G5 U02 L16 OPTIONAL source contextual exact subskill with teacher oversight',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L16','usccss.g5.u02.l16.estimate_mixed_area_products',["42 square feet","35 square feet","35 square feet","24 square feet"],["35 square feet","42 square feet"]);
 });
+test('G5 U02 L17 OPTIONAL source contextual exact subskill with teacher oversight',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L17','usccss.g5.u02.l17.mosaic_rectangle_area_cost',["4 1/2 square inches","18 square inches","$90","$54"],["3 1/2 square inches","12 square inches"]);
+});
 // NEXT_LESSON_TEST
