@@ -7614,13 +7614,13 @@
     "sourceReviewContinuation": "PED:US-CCSS-MATH:G5:U03:L01 — verify original 2021 student/teacher activity fidelity and lesson evidence",
     "unresolvedPublisherTaskAuditStartsAt": "PED:US-CCSS-MATH:G5:U01:L01 original Student Task PDF and Cool-down; public HTML not complete source verification",
     "completeRichV2Unit": "U01:L01-U01:L12 (source-grounded authoring candidates, NOT verified accepted)",
-    "nextAcademic": "V13 source HTML reviewed U02:L07-L17: repaired ten lessons L07,L09–L17; L08 READY_REUSE. All eleven original Student Task PDFs and source blackline figures remain V13-unverified. Continue U03:L01, and preserve earlier source PDF/card backlog. No A–D or owner UAT claims.",
+    "nextAcademic": "U01 source-review pass completed through L12, all 12 lesson-specific commits saved. Shared selected Practice and original gated publisher cooldown unresolved. No A-C acceptance or D verified. Next unit U02:L01 on separate pass only.",
     "sharedMapping": "G5-SHARED-001",
     "canonicalDatabaseMigration": "G5-SHARED-002",
     "nextScoping": "Grade5-only branch; do not access forbidden computer, other curricula, shared checkout or main",
     "sharedIntegrationIssue592": "https://github.com/EIAS79/Edulytics/issues/592",
     "remainingDirectRichV2LessonCodes": [],
-    "originalStudentPdfAuditCursor": "PED:US-CCSS-MATH:G5:U01:L01 — figure ALT corrected, source PDF/media rights/gated original remain open"
+    "originalStudentPdfAuditCursor": "U01:L01-L12 original teacher+student HTML headings/alt reviewed; full original visual binary parity not claimed"
   },
   "sourceAccessPolicy": "V8: Primary Desktop Commander permitted ONLY read-only book inspection on exact Our-CS 98fe82ca-5db1-4369-9545-f146cc609375, after online device check. Access was used read-only for 15 Unit8 original teacher lesson HTML/Student Facing. No Personal/Anas_Nitro access and no remote development, test, writing or execution.",
   "testEvidence": {
@@ -8158,5 +8158,38 @@
     "pendingSourceAssets": true,
     "pendingSharedPractice": true,
     "stageDTests": "NOT_RUN"
+  },
+  "v15Unit1SourceReview": {
+    "asOf": "2026-10-30",
+    "state": "SOURCE_REVIEW_12_OF_12_WITH_OPEN_ACADEMIC_GATES",
+    "unit": "U01",
+    "sourceReviewLessonCount": 12,
+    "contentRepairs": 5,
+    "sourceAlignedReuses": 7,
+    "lessonCommits": [
+      "d27eb4138f78cdb6415ddb9bb8782dfb52d16d90",
+      "13cdf20510234456cb0a1acca0d20047e8e51174",
+      "2000b651f252243ad09e9b1df5d68425311c62fa",
+      "533ae437bfa5398af4e90b3175524ab6cc812fd2",
+      "a4525d1d179c9682c7968933ec06a23f338a85bd",
+      "475ab547f4bec906fb75a225ee0c7556f04faad4",
+      "8aa6411ac19ce25f47023e868d790b4b6a47f9ae",
+      "196694c3af166f29d6d25a0ce97422f6b0e41309",
+      "c02e59e788e92d54fac4acaedb752fdaaa91498b",
+      "dbcdd9c4b77d229109c73bcd85550277112f7586",
+      "2d11313b6ddf6e5c7bd1bac93ea062b7218bdd20",
+      "144131cb0e8c56f0fe5cce654385268bf600065c"
+    ],
+    "sourceReviewManifest": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-abc-source-and-practice-contracts-20261030.json",
+    "testsWrittenNotRun": [
+      "tests/academic-us-ccss-g5-u01-source-math-oracles-20261030.test.cjs"
+    ],
+    "stageABCCandidateLessonsReviewed": 12,
+    "academicAcceptedLessons": 0,
+    "readyForStageD": 0,
+    "stageDNotRun": true,
+    "ciNotRunIntentionally": true,
+    "sourceStudy": "Original local HTML teacher/student course valid source; separate PDFs not a prerequisite to reading identical HTML text; image binaries unverified.",
+    "nextInstruction": "Do not falsely close U01; academic gate remains source element completeness / selected Practice / teacher rubric. U02 review can be worked independently after unit report if authorized."
   }
 }
