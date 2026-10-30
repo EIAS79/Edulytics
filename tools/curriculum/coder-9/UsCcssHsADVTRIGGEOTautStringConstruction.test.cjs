@@ -36,6 +36,15 @@ test('L05 wrong physical loop length is impossible by the triangle inequality, n
  }
  assert.match(en.commonMistakes,/16 units long, not 10/);
 });
+test('L05 teacher-scored construction rubric must recognize correct loop-vs-two-end distinction',()=>{
+ const root=path.resolve(__dirname,'../../..');
+ const rubrics=JSON.parse(fs.readFileSync(path.join(root,'artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-human-scoring-rubrics.v1.json'),'utf8'));
+ const row=rubrics.rubrics.find(r=>r.lessonCode.endsWith(':U01:L05'));
+ assert.equal(row.scoring,'HUMAN_REQUIRED');
+ assert.match(row.criteria[0].observableEvidence,/10-unit two-ended string/);
+ assert.match(row.criteria[0].observableEvidence,/16-unit closed loop/);
+ assert.equal(row.criteria.reduce((total,c)=>total+c.points,0),row.maxPoints);
+});
 test('L05 correct focal definition retained; original ellipse vs first-party hyperbola remains distinguished',()=>{
  const p=[0,5];const d=focalSum(p);
  assert.ok(Math.abs(d-2*Math.sqrt(34))<1e-10);
