@@ -1,0 +1,27 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const registryPath='src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json';
+const sourcePath='src/Edulytics.Services/Mathematics/UsCcssG5Unit2SourceQuestions.cs';
+const corePath='src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs';
+const enginePath='src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs';
+const contractPath='src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs';
+function checkLesson(id,family,correct,wrong){
+ const source=read(sourcePath),core=read(corePath),engine=read(enginePath);
+ const contracts=read(contractPath);
+ const registry=JSON.parse(read(registryPath));
+ assert.ok(registry.families.some(x=>x.id===family&&x.lessonPracticeRouting===true));
+ assert.ok(contracts.includes(id));assert.ok(contracts.includes(family));
+ assert.ok(core.includes('UsCcssG5Unit2SourcePracticeContracts.Reviewed'));
+ for(const m of ['Supports','Build','Solve','Verify'])assert.ok(engine.includes('UsCcssG5Unit2SourceQuestions.'+m));
+ for(const c of correct)assert.ok(source.includes(c),'required correct source option missing '+c);
+ for(const w of wrong)assert.ok(source.includes(w),'required negative example missing '+w);
+ assert.ok(source.includes('teacher review'));
+}
+test('G5 U02 L01 source fair-share options and teacher-review boundary',()=>{
+ checkLesson('PED:US-CCSS-MATH:G5:U02:L01','usccss.g5.u02.l01.source_fair_share_choice',
+ ['2/5 sandwich','2 1/2 sandwiches','1 1/2 sandwiches','2/3 sandwich'],
+ ['5/2 sandwiches','2/5 sandwich']);
+});
+// NEXT_LESSON_TEST
