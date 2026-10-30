@@ -1116,6 +1116,8 @@ public static class LessonPracticeContractRegistry
             byLesson[reviewed.LessonCode]=reviewed;
         // G5 U01 L05 2021 fixed 4x10 base, variable prism height; rotate bases manually.
         foreach(var reviewed in UsCcssG5Unit1Lesson5PracticeContracts.Reviewed) byLesson[reviewed.LessonCode]=reviewed;
+        // 2021 G5 U01 L06 volume-expression card matching; teacher reviews explanations.
+        foreach(var reviewed in UsCcssG5Unit1Lesson6PracticeContracts.Reviewed) byLesson[reviewed.LessonCode]=reviewed;
         // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
         foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
