@@ -134,3 +134,26 @@ test('fixture binding needs two source scenarios and all six human review dispos
     assert.equal(rubric.machineAutoGrade,false);
   }
 });
+
+test('MVP 10.6H source task six: 3x3 inverse, identity and original system', () => {
+  const A = [[1,2,2],[2,1,3],[1,2,1]], N=[[-5,2,4],[1,-1,1],[3,0,-3]];
+  const b=[[16],[17],[13]], x=[[2],[4],[3]];
+  const identity=[[1,0,0],[0,1,0],[0,0,1]];
+  assert.ok(I(A,N,3), 'A times inverse numerator must equal 3I');
+  assert.deepEqual(mul(identity,A), A, 'I3 A=A');
+  assert.deepEqual(mul(A,x), b, 'all three source equations must hold');
+  assert.deepEqual(mul(N,b).flat(), [6,12,9], 'numerator inverse must return 3x');
+  assert.notDeepEqual(mul(A,[[2],[3],[4]]),b, 'swapped variables must fail');
+  const source=fixture.sourceBoundScenarios.find(s=>s.scenarioId==='MVP-A2-10.6H-PAINT-SYSTEM');
+  assert.ok(source,'source-bound 10.6H case must be present');
+  assert.equal(source.publisherPdfBinaries.teacher.sha256,
+    '87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55');
+  assert.deepEqual(source.publisherPdfBinaries.student.taskPages,[34,35,36]);
+  assert.deepEqual(source.publisherPdfBinaries.teacher.notesPages,[52,53]);
+  assert.equal(source.sourceTaskSequence.length,4);
+  assert.deepEqual(source.sourceTaskSix.matrix,A);
+  assert.deepEqual(source.sourceTaskSix.solution,[2,4,3]);
+  assert.deepEqual(source.sourceTaskSix.rightHandSide,b.flat());
+  assert.equal(source.sourceTaskSix.determinant,3);
+  assert.deepEqual(source.sourceTaskSix.inverseNumerator,N);
+});
