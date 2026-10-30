@@ -20216,6 +20216,24 @@
       "status": "IntegrationPending",
       "productionRouting": false,
       "lessonPracticeRouting": false
+    },
+    {
+      "id": "coordinates.focal_conics_source_equation",
+      "version": 1,
+      "skillId": "geometry.coordinate.straight_line",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "structured_canonical_equation",
+      "verificationPolicy": "bounded_exact_conic_equations_and_focal_distance_check",
+      "representations": [
+        "symbolic",
+        "coordinate_plane"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
