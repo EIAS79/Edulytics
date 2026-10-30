@@ -144,8 +144,8 @@ test('A source-style unit checker rejects wrong, malformed and mixed-unit numeri
 
 test('Grade 6 unresolved academic gates remain fail-closed after candidate edits', () => {
   assert.equal(ledger.lessons.length,147);
-  assert.equal(ledger.summary.fullStageAReviews,1);
-  assert.equal(ledger.summary.sourceStudentTaskParityAccepted,1);
+  assert.equal(ledger.summary.fullStageAReviews,3);
+  assert.equal(ledger.summary.sourceStudentTaskParityAccepted,3);
   assert.equal(ledger.lessons[0].stageA.academicGoalTaskFullParityVerified,true);
   assert.equal(ledger.lessons[0].stageB.fullLessonParityAccepted,true);
   assert.equal(ledger.summary.selectedPracticeRuntimeContractsVerified,0);
@@ -240,8 +240,8 @@ test('G6 U01:L01 source-derived math and authoring-only C blocked gate coexist',
   assert.equal(info.assetEmbeddedInExistingRichV2,false);
   assert.ok(l1.ExplanationParagraphs.some(p => /SQUARE units/.test(p) && /TRIANGLE/.test(p)));
   assert.equal(ledger.lessons.length,147);
-  assert.equal(ledger.summary.abcFirstOrder.A_CLOSED,1);
-  assert.equal(ledger.summary.abcFirstOrder.B_CLOSED,1);
-  assert.equal(ledger.summary.abcFirstOrder.C_PREPARED,0);
-  assert.equal(ledger.summary.abcFirstOrder.READY_FOR_STAGE_D,0);
+  assert.equal(ledger.summary.abcFirstOrder.A_CLOSED,3);
+  assert.equal(ledger.summary.abcFirstOrder.B_CLOSED,3);
+  assert.equal(ledger.summary.abcFirstOrder.C_PREPARED,1);
+  assert.equal(ledger.summary.abcFirstOrder.READY_FOR_STAGE_D,1);
 });

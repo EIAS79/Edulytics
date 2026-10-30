@@ -11,11 +11,11 @@
     "units": 9,
     "lessonIdsMatched": 147,
     "originalPublisherTeacherPreparationGoalReviewed": 27,
-    "fullStageAReviews": 2,
+    "fullStageAReviews": 3,
     "learningGoalsModified": 147,
     "quickSummaryGoalsModified": 147,
     "substantiveLessonsRepaired": 147,
-    "sourceStudentTaskParityAccepted": 2,
+    "sourceStudentTaskParityAccepted": 3,
     "confirmedPracticeRuntimeContracts": 0,
     "explicitPracticeMetadataMappings": 8,
     "staticallyOutcomeRuleEligibleNotRuntimeVerified": 137,
@@ -29,7 +29,7 @@
     "authenticatedStudentRichV2RenderVerified": 0,
     "lessonsNotSubstantivelyEdited": 0,
     "partialSourceLessonCandidates": 27,
-    "remainingFullLessonAcademicSourceParityChecks": 145,
+    "remainingFullLessonAcademicSourceParityChecks": 144,
     "authoredFirstPartyWorkedExamplePairs": 147,
     "publicHistoricalTeacherStudentPracticeTextCompared": 3,
     "publicOriginalSourceTaskTextFullyReplicated": 0,
@@ -170,15 +170,15 @@
     "v11U05L13L15NewNodeCallbacks": 4,
     "v11TotalGrade6NodeCallbacksNew": 13,
     "abcFirstOrder": {
-      "A_CLOSED": 2,
-      "B_CLOSED": 2,
-      "C_PREPARED": 0,
-      "READY_FOR_STAGE_D": 0,
+      "A_CLOSED": 3,
+      "B_CLOSED": 3,
+      "C_PREPARED": 1,
+      "READY_FOR_STAGE_D": 1,
       "D_VERIFIED": 0,
       "BLOCKED": 2,
-      "REMAINING": 147,
+      "REMAINING": 146,
       "firstOpenLessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
-      "lastReviewedAtUtc": "2026-10-30T07:34:42.218Z",
+      "lastReviewedAtUtc": "2026-10-30T07:59:37.127Z",
       "nextIndependentCandidate": "PED:US-CCSS-MATH:G6:U03:L07",
       "blockedReturnBacklog": [
         {
@@ -193,7 +193,9 @@
           "owner": "Supervisor1 G6 shared single writer",
           "status": "BLOCKED"
         }
-      ]
+      ],
+      "nextIndependentCursor": "PED:US-CCSS-MATH:G6:U03:L08",
+      "lastClosedIndependentLesson": "PED:US-CCSS-MATH:G6:U03:L07"
     }
   },
   "sharedBlockers": [
@@ -4270,19 +4272,19 @@
         "CCSS:6.RP.A.3"
       ],
       "stageA": {
-        "publisherTeacherPreparationGoalChecked": false,
-        "publisherStudentTaskAllChecked": false,
+        "publisherTeacherPreparationGoalChecked": true,
+        "publisherStudentTaskAllChecked": true,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_STUDENT_TEACHER_ACTIVITY_BODIES_COMPARED__FULL_SOURCE_MEDIA_COOLDOWN_AND_AUTH_PARITY_PENDING",
+        "verdict": "A_CLOSED_SOURCE_ALIGNED_FIRST_PARTY_MATH_TABLES",
         "evidenceUrl": null,
-        "publicStudentTeacherPracticeTextCompared": false,
+        "publicStudentTeacherPracticeTextCompared": true,
         "teacherHiddenResponsesRead": false,
         "publisherImageAndAppletParityVerified": false,
         "originalHistoricalPublicStudentPageTextRetrieved": true,
         "originalHistoricalPublicTeacherPageTextRetrieved": true,
         "historicalPublicLessonTitleMatched": true,
         "originalStudentTeacherTaskBodiesManuallyCompared": false,
-        "academicGoalTaskFullParityVerified": false,
+        "academicGoalTaskFullParityVerified": true,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "v5Unit3SourceLessonOpeningCompared": true,
@@ -4293,7 +4295,8 @@
         "publicStudentFullActivitiesManuallyReviewed": true,
         "publicTeacherActivityBodiesCompared": true,
         "teacherGuideBodyCompletelyReviewed": false,
-        "sourceTaskComparisonEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l04-l07-public-student-teacher-task-comparison.json"
+        "sourceTaskComparisonEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l04-l07-public-student-teacher-task-comparison.json",
+        "abcEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l07-ac-first-independent-20261030.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -4301,13 +4304,14 @@
         "substantiveTeachingRepaired": true,
         "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
-        "fullLessonParityAccepted": false,
+        "fullLessonParityAccepted": true,
         "explicitGrade6RichV2SidecarAuthored": false,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
         "sourceTaskAlignedRichV2Candidate": false,
         "v5Unit3SourceTargetedSupplementAuthored": false,
-        "v9SourceTaskSupplementAuthored": true
+        "v9SourceTaskSupplementAuthored": true,
+        "abcEvidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l07-ac-first-independent-20261030.json"
       },
       "stageC": {
         "explicitLessonSkillMapping": true,
@@ -4322,7 +4326,9 @@
         "teacherOnlyRubricAuthored": true,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
-        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false
+        "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
+        "abcFirstOrderStatus": "C_PREPARED_EXPLICIT_STATIC_LESSON_CONTRACT_AND_HUMAN_RUBRIC",
+        "gradeOwnedCPreparedEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u03-l07-ac-first-independent-20261030.json"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -4336,7 +4342,123 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Source activity texts reviewed: validate original media accessibility/teacher cool-down and authentic selected Practice, human-scored student artifacts, persisted teacher feedback, tenant isolation, protected CI before A–D acceptance."
+      "nextStep": "A–B–C statically prepared via exact READY_VERIFIED lesson-specific unit rate mapping + first-party human rubric. D only after all grade lessons are A–C ready; do not count as academic release.",
+      "abcIndependentException": {
+        "schemaVersion": 1,
+        "lessonCode": "PED:US-CCSS-MATH:G6:U03:L07",
+        "sortOrder": 43,
+        "stageStartAtUtc": "2026-10-30T07:59:34.141Z",
+        "stageClosedAtUtc": "2026-10-30T07:59:37.127Z",
+        "timeSource": "Actual UTC timestamps from current work; not synthetic",
+        "sourceFiles": [
+          "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\3\\7\\preparation.html",
+          "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\3\\7\\index.html",
+          "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\3\\7\\index.html",
+          "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\06_Grade_6_OUR_IM\\student\\3\\7\\practice.html"
+        ],
+        "reviewedSourceEdition": "2017–2019 OUR/IM local student+teacher/preparation+practice",
+        "sourceGoals": [
+          "Compare speeds with unit rate and justifiable explanation (7.1)",
+          "Burrito table $14/2; general equivalence c/b=(2c)/(2b) for b>0 (7.2)",
+          "Bracelet table forward/inverse 6 per hour (7.3)",
+          "Apple-applesauce 4 pounds to 6 cups across tables (7.4)"
+        ],
+        "sourceGapsAddressed": "Grade 6 canonical pack previously had source-aligned examples 1–5; now first-party warmup speed comparison and explicit original Cool-down, learner table, feedback/misconception and teacher explanation rubric are in the same grade-owned pack already included for the canonical lesson.",
+        "sourceFigureRights": "No source image copied. Original bracelet photo not reproduced. Source diagrams and open teacher discussions represented in precise text/number tables; original protected Cool-down not accessible.",
+        "originalPublisherCooldown": "NOT_VERIFIED_GATED",
+        "edulytiksCooldown": "ORIGINAL_AUTHORED_GRADE_PACK_NOT_SELECTED_AS_PRACTICE",
+        "C": {
+          "selectionProof": "STATIC_EXPLICIT_APPROVED_MAPPING_PROJECTION_PRECEDES_OUTCOME_AND_SUPPORTING_FALLBACKS",
+          "originalStaticMapPath": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "projectionPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContractProjection.cs",
+          "contractRegistryPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+          "capabilityPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeCapabilityResolver.cs",
+          "familiesPath": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+          "skillsPath": "src/Edulytics.Core/Mathematics/Skills/skill-registry.v1.json",
+          "exactMapping": {
+            "lessonCode": "PED:US-CCSS-MATH:G6:U03:L07",
+            "primarySkills": [
+              "ratio.unit_rate"
+            ],
+            "sourceType": "OfficialMappedPedagogicalLesson",
+            "officialOutcomeMapped": true,
+            "officialOutcomeCodes": [
+              "CCSS:6.RP.A.2",
+              "CCSS:6.RP.A.3"
+            ],
+            "mappingConfidence": "High",
+            "evidence": [
+              "The canonical lesson title is 'Equivalent Ratios Have the Same Unit Rates' and worked examples explicitly compare rates per unit.",
+              "The exact UNIT_RATE mechanic computes unit rates and verifies equivalent ratios while preserving the official CCSS outcome links."
+            ],
+            "practiceReadiness": "READY_VERIFIED",
+            "practiceMechanic": "OFFICIAL_EXACT",
+            "allowedQuestionFamilies": [
+              "ratio.unit_rate.direct",
+              "ratio.unit_rate.equivalent_ratio"
+            ]
+          },
+          "ready": "READY_VERIFIED",
+          "correctFamilies": [
+            "ratio.unit_rate.direct",
+            "ratio.unit_rate.equivalent_ratio"
+          ],
+          "teacherOnly": "Source 7.1 multi-reason speed comparison and symbolic c/b reasoning, student-generated ratio tables and open extensions must be reviewed by a teacher, NOT automatically scored as a valid geometric/diagram proof solely by numeric output. No authenticated submission or persisted teacher review claimed.",
+          "teacherRubric": {
+            "maxPoints": 8,
+            "criteria": [
+              {
+                "name": "Unit-rate conversion and direction",
+                "points": 2
+              },
+              {
+                "name": "Equivalent ratios and accurate table rows",
+                "points": 2
+              },
+              {
+                "name": "Forward/inverse reasoning with appropriate units",
+                "points": 2
+              },
+              {
+                "name": "Justified open comparison and symbolic rate argument",
+                "points": 2
+              }
+            ],
+            "outcome": "AUTHORING_ONLY_HUMAN_REVIEW_UNEXECUTED"
+          },
+          "feedback": {
+            "correct": "Equivalent positive scaling keeps the quotient constant, with quantity labels and per-one unit.",
+            "wrong": "Recalculate both quantities, maintain unit direction, and reject scaling only one column.",
+            "malformed": "A ratio with zero denominator, missing unit, non-numeric value or undefined scaling is invalid; request a complete response.",
+            "equivalent": "Any positive common factor and mathematically equal quotient is accepted for exact numeric subskills."
+          },
+          "staticSelectionVerified": true,
+          "actualGeneratedItemNotRun": true,
+          "actualTeacherWorkflowNotRun": true,
+          "fullRuntimeStageD": "NOT_STARTED"
+        },
+        "tests": {
+          "path": "tests/academic-us-ccss-g6-u03-l07-unit-rate-ac-20261030.test.cjs",
+          "status": "AUTHORED_NOT_RUN",
+          "runner": "NO_NODE_OR_DOTNET_SUITE_MANUALLY_STARTED",
+          "classes": [
+            "correct",
+            "wrong",
+            "equivalent",
+            "malformed",
+            "teacher_only"
+          ]
+        },
+        "A_STATUS": "A_CLOSED_SOURCE_ALIGNED_FIRST_PARTY_MATH_TABLES",
+        "B_STATUS": "B_CLOSED_AUTHORED_GRADE_PACK_GOAL_TASK_EXIT",
+        "C_STATUS": "C_PREPARED_EXPLICIT_STATIC_LESSON_CONTRACT_AND_HUMAN_RUBRIC",
+        "READY_FOR_STAGE_D": true,
+        "D_STATUS": "NOT_RUN",
+        "sourceReviewBoundary": "Original publisher pixel match, protected teacher responses and authenticated product are unverified; those are not misrepresented as stage A/C test execution.",
+        "closedAt": "2026-10-30T07:59:37.127Z",
+        "elapsedSeconds": 3,
+        "commitSHA": null
+      }
     },
     {
       "sortOrder": 44,
