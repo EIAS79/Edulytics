@@ -4,9 +4,9 @@
   "pr": 589,
   "branch": "feat/us-ccss-alg1-coder5-full-course-20261028",
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
-  "recordedAtUtc": "2026-10-30T14:30:54.557232+00:00",
-  "lastReviewed": "U01:L15",
-  "nextCanonical": "U01:L16",
+  "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
+  "lastReviewed": "U01:L16",
+  "nextCanonical": "U02:L01",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -975,25 +975,89 @@
       "authoringClosedAtUtc": "2026-10-30T14:30:54.557232+00:00",
       "startedAtUtc": null,
       "timeNote": "not captured; no elapsed time invented"
+    },
+    {
+      "ordinal": 16,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+      "title": "Analyzing Data",
+      "sourceEdition": "IM Algebra1 First Edition local teacher/student HTML, CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\16\\preparation.html",
+          "sha256": "2c2ec5552b22fd7e36a22c287ae48f7ec295f10bc9e89ab2690d27e91c8c4c41"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\16\\index.html",
+          "sha256": "c0b854fb180d58424b1d0e132d64a90dfea6d040f0253e0a243215febb4ee6b7"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\16\\index.html",
+          "sha256": "9961b244931bada982c563efb1cd0762bb3dd4c02b61ccb375734d7408c08881"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\16\\practice.html",
+          "sha256": "4d188a15da518b6d35a35cb30ad01b8788c0478104b8b37df187b49ab340595a"
+        }
+      },
+      "sourceRoles": [
+        "HSS-ID.A Addressing",
+        "HSS-ID.A.1 Addressing",
+        "HSS-ID.A.2 Addressing",
+        "HSS-ID.A.3 Addressing",
+        "HSS-ID.A.1 BuildingTowards",
+        "HSS-ID.A.2 BuildingTowards",
+        "HSS-ID.A.3 BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "Two ruler-drop conditions require 20 genuine observations EACH, if actually performed; five-value example is fictional.",
+        "Compare fictional group means 8cm vs6cm and median 8cm vs6cm; five observations cannot satisfy source experiment.",
+        "Fair design and authentic n|Display and statistics|Limits and no fake participation"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l16-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l16-source-abc-authoring-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "sourceReview": "four original local HTMLs and role crosswalk; independent first-party equivalent",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "fixes": [
+          "add task-specific source crosswalk and original 6-point Cool-down"
+        ],
+        "authenticatedRenderer": "STAGE_D_NOT_RUN"
+      },
+      "C": {
+        "status": "AUTHORING_CLOSED",
+        "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L16_AUTHORING_C_20261030.json",
+        "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
+        "runtimeEnabled": false,
+        "humanGrading": true
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "authoringClosedAtUtc": "2026-10-30T14:31:33.834054+00:00",
+      "startedAtUtc": null,
+      "timeNote": "not captured; no elapsed time invented"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 15,
-    "B_CLOSED": 15,
-    "C_PREPARED": 15,
-    "ABC_READY_FOR_D": 15,
+    "A_CLOSED": 16,
+    "B_CLOSED": 16,
+    "C_PREPARED": 16,
+    "ABC_READY_FOR_D": 16,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 117,
-    "SOURCE_REVIEW_CUMULATIVE": 36,
+    "REMAINING": 116,
+    "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
-    "UNITS_ABC_CLOSED": 0,
+    "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS"
+    "UNIT_STATUS": "UNIT_ABC_COMPLETE_STAGE_D_PENDING"
   },
   "verification": {
     "sources": "four local HTML SHA256 each lesson",
@@ -1011,7 +1075,8 @@
     "L12_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L13_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L14_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
-    "L15_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
+    "L15_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
+    "L16_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
@@ -1021,14 +1086,14 @@
     "unitTotalLessons": 16,
     "courseUnitTotal": 7,
     "unitsABCCLosed": 0,
-    "status": "UNIT_IN_PROGRESS",
+    "status": "UNIT_ABC_COMPLETE_STAGE_D_PENDING",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 15,
-    "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+    "newlyABCClosed": 16,
+    "unitReadyForStageD": true,
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
@@ -1043,8 +1108,8 @@
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
-  "unitStatus": "UNIT_IN_PROGRESS",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+  "unitStatus": "UNIT_ABC_COMPLETE_STAGE_D_PENDING",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
   "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
 }
