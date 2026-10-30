@@ -13,7 +13,7 @@
   "parentHead": "fe1aa855528ba99059d4a2ba770f4b73f89eaa06",
   "lessonContentPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
   "previousRichSha256": "21eb6f1f9bf3fa2e4e0f912b447b58eab96e5f3e5b360ac192d06dd24a293c7b",
-  "latestRichSha256": "a2fb9b41cd30474d0c30ba4599f63b2bd255fa8ab067ec239418ae95329d4fa9",
+  "latestRichSha256": "00a15a8c7e1a38d45bb2094b238d181dc5aeaffd267ea41708680c1a9c122a43",
   "checkpointCommitSHA": null,
   "commitSHARecordedIn": "GitHub PR #593 commit history; commit creation is subsequent to this tree",
   "originalSource": {
@@ -45,26 +45,26 @@
   "activityMapping": [
     {
       "source": "1.1",
-      "candidate": "Existing authored open-ended four-angle discussion and justification, plus coordinate translation SVG separate from source figure",
-      "finding": "FOUR_SOURCE_DIAGRAMS_NOT_RENDERED_AS_SOURCE_EQUIVALENT",
+      "candidate": "Original four-ray SVG plus native ShapeDecomposition cards; no publisher pixel reuse",
+      "finding": "FIGURE_CONSTRUCTED_SVG_NOT_ATTACHED_IN_SHARED_RENDERER",
       "status": "BLOCKED"
     },
     {
       "source": "1.2",
-      "candidate": "Existing partner activity retained; independently authored six-frame cards and partner protocol added to learner-facing Rich V2",
-      "finding": "STATIC_TEXT_ONLY; ORIGINAL_PUBLISHER_FRAME_GRAPHICS_AND_AUTHENTIC_RENDER_NOT_VERIFIED",
+      "candidate": "Original eighteen triangle frames SVG, native 3x6 frame tables and prior partner instructions retained",
+      "finding": "MATHEMATICAL_SVG_CONSTRUCTED_BUT_AUTHENTIC_LEARNER_ATTACHMENT_MISSING",
       "status": "IN_PROGRESS"
     },
     {
       "source": "Extension",
       "candidate": "Added reverse-frame instructions and inverse-move reasoning, preserve partner and teacher review",
-      "finding": "TEACHER_REVIEW_NOT_INTEGRATED",
+      "finding": "REVERSE_SEQUENCE_SOURCE_ALIGNED_TEACHER_REVIEW_REQUIRED",
       "status": "IN_PROGRESS"
     },
     {
       "source": "Cool-down",
       "candidate": "Original Edulytiks open-ended first-party equivalent authored without representing protected publisher wording as verified",
-      "finding": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+      "finding": "FIRST_PARTY_EQUIVALENT_AUTHORED_ORIGINAL_COOLDOWN_NOT_VERIFIED",
       "status": "BLOCKED"
     }
   ],
@@ -95,9 +95,9 @@
     "persistedTeacherScore": false
   },
   "gates": {
-    "A": "BLOCKED",
-    "B": "IN_PROGRESS",
-    "C": "NOT_VERIFIED",
+    "A": "AWAITING_ROLE_AND_PARITY_ACADEMIC_APPROVAL",
+    "B": "FIRST_PARTY_GRAPHICS_AND_NATIVE_VISUALS_PREPARED_SVG_ATTACH_PENDING",
+    "C": "CONTRACT_PREPARED_SHARED_ROUTE_NOT_VERIFIED",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": false
   },
@@ -123,11 +123,15 @@
     "localSourceReading": "DONE teacher, student and preparation local HTML",
     "testSourceChanged": "tests/academic-us-ccss-g8-coder4-v13-u01-final-source-spot.test.cjs",
     "testSourceUpdatedAlso": "tests/academic-us-ccss-g8-coder4-v13-u01-batch.test.cjs",
-    "automatedTests": "NOT_RUN",
+    "automatedTests": "PASS 4/4 in focused new Node test; tested uncommitted isolated working tree, SHA256 file evidence in new audit",
     "build": "NOT_RUN",
     "actions": "AUTOMATIC_GITHUB_ACTIONS_NOT_DISABLED",
     "authenticatedBrowser": "NOT_RUN",
-    "database": "NOT_RUN"
+    "database": "NOT_RUN",
+    "testCommand": "node --test tests/academic-us-ccss-g8-coder4-u01-l01-unblock.test.cjs",
+    "testExitCode": 0,
+    "testPassed": 4,
+    "testFailed": 0
   },
   "previousEvidencePreserved": [
     "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json",
@@ -146,5 +150,10 @@
   },
   "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
   "nextLessonAllowed": false,
-  "release": "NO_GO"
+  "release": "NO_GO",
+  "newEvidencePath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+  "courseOwnedVisualPaths": [
+    "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg",
+    "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg"
+  ]
 }
