@@ -404,7 +404,7 @@
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
       "sourceStudentUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
       "sourceTeacherUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10tnh718.pdf",
-      "sourceInspection": "INDEXED_STUDENT_AND_TEACHER_EXCERPTS; FULL_PDF_BINARY_NOT_REHASHED",
+      "sourceInspection": "DIRECTLY_READ_STUDENT_38_PAGE_PDF_PAGES_34_TO_36_AND_TEACHER_55_PAGE_PDF_PAGES_49_TO_53; INDEPENDENT_PDF_BINARY_SHA256_CHECK",
       "representation": {
         "variableOrder": [
           "paintGallonPrice",
@@ -486,7 +486,101 @@
         ],
         "interpretation": "NEGATIVE_PRICE_CONTEXTUALLY_INVALID_NOT_ALGEBRAIC_INCONSISTENCY"
       },
-      "teacherAssessment": "Require coefficient order, correct inverse/row operations, substitution of all three receipts and meaningful unit-price interpretation; human-score modeling explanation"
+      "teacherAssessment": "Require coefficient order, correct inverse/row operations, substitution of all three receipts and meaningful unit-price interpretation; human-score modeling explanation",
+      "publisherPdfBinaries": {
+        "student": {
+          "url": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+          "pages": 38,
+          "taskPages": [
+            34,
+            35,
+            36
+          ],
+          "sha256": "763cda359f5d86ae1e01064340286e02308fee0470eb7d3deb07db34ead80b61"
+        },
+        "teacher": {
+          "url": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10tnh718.pdf",
+          "pages": 55,
+          "taskPages": [
+            49,
+            50,
+            51
+          ],
+          "notesPages": [
+            52,
+            53
+          ],
+          "sha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55"
+        }
+      },
+      "sourceTaskSequence": [
+        "First multiply 3x3 identity matrix by the painting coefficient matrix and multiply the provided inverse by the same coefficient matrix; explain identity/inverse properties",
+        "Rewrite the 3x3 painting receipts as AX=B with a consistent variable ordering",
+        "Use provided inverse and full matrix multiplication steps to compute and interpret paint, brush and tape unit prices",
+        "Use technology to find the inverse of another 3x3 coefficient matrix and record/check the inverse and all original equations"
+      ],
+      "originalPdfContext": "The painting receipts originate in the earlier 10.1H Row by Row task, then are explicitly restated as the launch context of 10.6H All Systems Go. Do not claim the painting purchases were first introduced in 10.6H.",
+      "sourceTaskSix": {
+        "equations": [
+          "x+2y+2z=16",
+          "2x+y+3z=17",
+          "x+2y+z=13"
+        ],
+        "matrix": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "rightHandSide": [
+          16,
+          17,
+          13
+        ],
+        "determinant": 3,
+        "inverseNumerator": [
+          [
+            -5,
+            2,
+            4
+          ],
+          [
+            1,
+            -1,
+            1
+          ],
+          [
+            3,
+            0,
+            -3
+          ]
+        ],
+        "inverseDenominator": 3,
+        "solution": [
+          2,
+          4,
+          3
+        ],
+        "wrong": [
+          2,
+          3,
+          4
+        ],
+        "malformed": "[[1,2,2],[2,1],[1,2,1]]",
+        "boundary": "A 3x3 inverse is allowed only after square/invertible verification; a zero determinant must reject inverse solving"
+      },
+      "teacherPurpose": "Represent n-variable linear systems as a matrix equation in a vector and solve by multiplying with inverse obtained from technology for matrices >=3x3; discussion should contrast graphing/substitution/row-reduction/inverse, show inverse work, and check interpretation."
     },
     {
       "scenarioId": "MVP-M3-2.1-LOG-NUMBER-LINE",
