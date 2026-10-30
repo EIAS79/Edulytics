@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L10",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L11",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 9,
+    "READY_FOR_D": 10,
     "D_VERIFIED": 0,
-    "BLOCKED": 10,
-    "REMAINING": 139
+    "BLOCKED": 9,
+    "REMAINING": 138
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -628,23 +628,18 @@
       "reuseFinding": "REUSE_SOURCE_ALIGNED_95_AND_168_MODEL_AND_THREE_DECOMPOSITIONS; ONLY_ADD_ORIGINAL_EXIT_AND_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric exact rectangular prism as supplement; one EXTEND of existing composite volume family and teacher reviewed geometrical expressions by shared writer #592",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l10-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:18:54.519Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:24:34.028Z",
+      "elapsedSeconds": 25540,
       "commitSHA": null,
-      "blocker": {
-        "owner": "Supervisor 1 designated single shared integration writer #592",
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "reason": "No verified selected composite-add/subtract expression contract with teacher-scored drawing/decomposition rationale",
-        "acceptWhen": "Correct exact selected contract, disjoint geometry selection and teacher feedback path statically wired and evidenced"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "2021 local teacher lesson and preparation, embedded Student Facing",
         "goals": [
@@ -668,7 +663,16 @@
         "before": "Rich V2 source-specific scenarios and dimensions already correct; no explicit independent exit question with full rubric.",
         "after": "Preserved accepted work, added original exit with three region-based explanations and targeted negative/equivalent fixtures."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l10-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l10-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l10.equivalent_composite_volume_expressions",
+        "source": "Our-CS original 2021 95 unit-cubes and 168 cubic feet",
+        "teacher": "Teacher reviews two real prism partitions, equivalent expressions and correct choice of removed region. Right total with wrong geometry is not accepted as a full solution.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "originalPublisherMaterial": "NOT_CERTIFIED",
+        "parentHead": "93f5200f64d0d0833a28be40de3bbaef97ca2a91"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L11",
