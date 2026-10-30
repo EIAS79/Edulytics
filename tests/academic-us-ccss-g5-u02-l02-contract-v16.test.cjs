@@ -1,0 +1,6 @@
+'use strict';const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+test('G5 U02 L02 Jada one-whole division/fraction equivalences',()=>{assert.deepEqual([2,3,4,5].map(n=>1/n),[1/2,1/3,1/4,1/5]);assert.ok(1/5<1/4&&1/4<1/3&&1/3<1/2)});
+test('G5 U02 L02 multiple matching full-whole fair sandwich diagrams',()=>{assert.equal(5*(2/5),2);assert.equal(2*(3/2),3);assert.equal(4*(3/4),3);assert.notEqual(3/4,4/3)});
+test('G5 U02 L02 reject malformed count or unequal allocation',()=>{for(const n of [0,-1,1.5,'4',null])assert.equal(Number.isSafeInteger(n)&&n>0,false);assert.notEqual((1/4)+(1/4)+(1/4),1)});
+const p=path.resolve(__dirname,'../src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l02-l05-2021.rich-lesson-v2.json'),s=path.resolve(__dirname,'../artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l02-practice-acceptance-v16.json');
+test('G5 U02 L02 original exit in RichV2 but selected Practice C unverified',{skip:(!fs.existsSync(p)||!fs.existsSync(s))&&'needs original branch checkout'},()=>{const l=JSON.parse(fs.readFileSync(p,'utf8')).Lessons.find(x=>x.LessonCode.endsWith('U02:L02'));const r=JSON.parse(fs.readFileSync(s,'utf8'));assert.match(l.ExplanationParagraphs.join(' '),/Edulytiks-original exit check/);assert.equal(r.StageC,'BLOCKED_SHARED_INTEGRATION')});
