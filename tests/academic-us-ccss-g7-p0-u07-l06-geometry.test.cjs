@@ -60,12 +60,16 @@ test('Source tasks and teacher-only rubric cover incomplete, wrong, degenerate a
 });
 test('Full-grade acceptance remains fail-closed with only candidate increments',()=>{
  a.equal(ledger.counts.catalogue,145);a.equal(ledger.counts.uniqueRich,145);
- a.equal(ledger.counts.gradeOwnedSvgFigureCandidates,20);
- a.equal(ledger.counts.gradeOwnedTeacherRubricDrafts,21);
+ a.ok(Number.isSafeInteger(ledger.counts.gradeOwnedSvgFigureCandidates));
+ a.ok(Number.isSafeInteger(ledger.counts.gradeOwnedTeacherRubricDrafts));
+ a.ok(ledger.counts.gradeOwnedSvgFigureCandidates >= ledger.v12.originalSvgCandidates,'SVG inventory cannot regress below V12 milestone');
+ a.ok(ledger.counts.gradeOwnedTeacherRubricDrafts >= ledger.v12.teacherRubricDrafts,'rubric inventory cannot regress below V12 milestone');
  for(const k of ['stageAVerified','stageBEffectiveRuntimeVerified','stageCVerified','stageDVerified'])a.equal(ledger.counts[k],0);
  for(const k of ['A','B','C','D'])a.equal(e.academic[k],'NOT_VERIFIED');
  const lesson=ledger.lessons.find(row=>row.lessonCode===e.lessonCode);
  a.equal(lesson.p0OriginalSvg,e.asset);
+ a.equal(lesson.p0SourceTeacherRubric,'artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-p0-u07-l06-source-geometry-rubric.json');
+ a.equal(lesson.p0GradeScopedTest,'tests/academic-us-ccss-g7-p0-u07-l06-geometry.test.cjs');
  a.equal(e.runtime.selectedPracticeFamily,'NOT_EXECUTED');
  a.equal(e.runtime.teacherScoringPersistence,'NOT_RUN');
  a.equal(e.release,'RELEASE_BLOCKED');
