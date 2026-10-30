@@ -43,11 +43,16 @@ public sealed class CommonCorePhase04RichV2SourceEntityTests
         // Preserve the audit's 20 distinct source codes and text sanitization.
         foreach (var code in flagged)
         {
-            // Curated versions of flagged CCSS lessons are valid when their
-            // lesson code remains in the audited canonical course.
+            // A curated source is valid only for the exact audited
+            // canonical lesson and requested English locale. A broad
+            // "PED:US-CCSS-MATH:G" prefix would not detect wrong-lesson
+            // or wrong-locale registration.
             var curated = RichLessonContentV2Registry.Find(code, "en");
             if (curated is not null)
-                Assert.StartsWith("PED:US-CCSS-MATH:G", code);
+            {
+                Assert.Equal(code, curated.LessonCode);
+                Assert.Equal("en", curated.CultureCode);
+            }
             var lesson = lessonsByCode[code];
             var english = Assert.Single(lesson.Translations,
                 item => item.CultureCode == "en");
