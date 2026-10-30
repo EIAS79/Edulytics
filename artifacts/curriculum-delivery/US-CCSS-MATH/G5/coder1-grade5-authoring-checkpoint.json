@@ -955,9 +955,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "stageA": "ORIGINAL_TEACHER_STUDENT_FACING_IMAGES_DESCRIBED_NO_SOURCE_COOLDOWN_EXISTS; PUBLISHER_PHOTOS_NOT_IMPORTED",
+      "stageB": "EXISTING_SOURCE_OPTIONAL_MODEL_WORK_REUSED_AND_8PT_TEACHER_RUBRIC_ADDED",
+      "stageC": "TEACHER_REVIEW_REQUIRED_EXPLICIT",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -965,7 +965,13 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "Optional 60-container arrays and estimation with declared assumptions; no unique best layout",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-v28-abc-source-optional-20261030",
+      "vABC20261030": {
+        "sourceLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l12-abc-element-ledger-20261030.json",
+        "optionalSource": true,
+        "test": "WRITTEN_NOT_RUN",
+        "status": "A_C_EXPLICIT_GAP"
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U02:L01",
@@ -8327,5 +8333,18 @@
     "nextIndependentLesson": "U01:L12",
     "sourceReviewedLessons": 11,
     "openGatesPreserved": true
+  },
+  "v23SequentialABC": {
+    "unit": "U01",
+    "lessonsWithDedicatedSourceElementLedgers": 12,
+    "lastReviewed": "PED:US-CCSS-MATH:G5:U01:L12",
+    "allTeacherRubricsWritten": true,
+    "unit1ReadyForStageD": 0,
+    "openAcceptanceGatesRemain": true,
+    "returnQueue": [
+      "Original source gated cooldown/figure rights where applicable",
+      "Exact practice digital coverage for numerically eligible questions"
+    ],
+    "note": "Source review and grade-owned lesson repairs completed; do not confuse 12 source reviewed with 12 ready."
   }
 }
