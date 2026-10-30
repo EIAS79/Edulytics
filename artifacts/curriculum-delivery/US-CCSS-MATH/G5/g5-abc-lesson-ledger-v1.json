@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L03",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L04",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 14,
+    "READY_FOR_D": 15,
     "D_VERIFIED": 0,
-    "BLOCKED": 5,
-    "REMAINING": 134
+    "BLOCKED": 4,
+    "REMAINING": 133
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -901,23 +901,18 @@
       "reuseFinding": "REUSE_ALREADY_SOURCE_FAITHFUL_RICH_V2_MAI_CONTEXT_2_DIV_3_AND_DANCERS_TABLE; ADD_ORIGINAL_EXIT_AND_GRADE_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE source-correct fraction quotient numeric subskill only; shared EXTEND critical explanation/human feedback if necessary",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u02-l03-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:28:15.912Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T20:13:00.710Z",
+      "elapsedSeconds": 27885,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated shared integration writer #592",
-        "reason": "Actual selected fraction-quotient contract and teacher-scored narrative/drawing correction not wired or verified",
-        "acceptWhen": "Correct selected family, feedback and open critique assessment statically integrated"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "2021 original teacher lesson and preparation with embedded Student Facing",
         "tasks": [
@@ -940,7 +935,17 @@
         "before": "Source tasks, 3/2 counterexample, open dancers/liters table already accurate; no independent Cool-down.",
         "after": "Preserve source-content, add original 4÷5 water exit and math/rubric cases."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l03-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l03-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u02.l03.fraction_division_direction",
+        "source": "Our-CS/05_Grade_5_IM_K5/unit-2/lesson-3/lesson.html+preparation.html",
+        "teacher": "Teacher checks two one-liter partitions into thirds, Mai's reversed numbers, original interpret expressions and non-numeric explanation.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "digital": "SOURCE_EQUIVALENT_FRACTION_CHOICE_ONLY",
+        "publisherMaterial": "ORIGINAL_GATED_COOLDOWN_NOT_CLAIMED",
+        "closingHead": "12ae04b995fc16613567c69de517f9d0fcf8c4fa"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L04",

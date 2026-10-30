@@ -13,6 +13,7 @@ internal static class UsCcssG5Unit2SourcePracticeContracts
             "IM2021_G5_U02_L01_2021_LOCAL_TEACHER_STUDENT_FACING",
             "READY_VERIFIED","usccss-g5-u02-l01-source-v1"),
         new("PED:US-CCSS-MATH:G5:U02:L02","fractions.divide_whole_numbers","SOURCE_UNIT_SHARE_EQUIVALENCE_TEACHER_REVIEW",["usccss.g5.u02.l02.unit_share_equivalence"],"IM2021_G5_U02_L02_LOCAL_TEACHER_STUDENT", "READY_VERIFIED","usccss-g5-u02-l02-source-v1"),
+        new("PED:US-CCSS-MATH:G5:U02:L03","fractions.divide_whole_numbers","SOURCE_FRACTION_DIVISION_DIRECTION_TEACHER_REVIEW",["usccss.g5.u02.l03.fraction_division_direction"],"IM2021_G5_U02_L03_LOCAL","READY_VERIFIED","usccss-g5-u02-l03-source-v1"),
         // NEXT_LESSON_CONTRACT
     ];
 }

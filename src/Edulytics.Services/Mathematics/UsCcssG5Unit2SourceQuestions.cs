@@ -30,6 +30,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Which equality models exactly one sandwich shared by three people?","1÷3=1/3","3÷1=1/3","1÷3=3"),
                 new("Which claim about equal shares of one sandwich is correct?","Each share becomes smaller as more people share one whole","The share becomes bigger as more people share","All equal divisions always give a whole sandwich")
             ],
+                        ["usccss.g5.u02.l03.fraction_division_direction"]=[
+                new("THREE dancers share TWO liters. What does each get?","2/3 liter","3/2 liters","1/3 liter"),
+                new("Mai claims each of three dancers takes 3/2 liters from two liters total. Which correction is true?","Each receives 2/3 liter","Each receives 3/2 liters","Each receives 2 liters"),
+                new("TWO dancers share THREE liters. How much does each get?","3/2 liters","2/3 liter","1/2 liter"),
+                new("Which equality represents two liters shared among three people?","2÷3=2/3","3÷2=2/3","2×3=2/3"),
+                new("Which context represents the fraction 3/2 liters per person?","3 liters shared equally among 2 people","2 liters shared equally among 3 people","3 people given 2 liters each"),
+                new("How many liters total if three dancers each receive 2/3 liter?","2 liters","3 liters","9/2 liters")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

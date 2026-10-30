@@ -27,4 +27,7 @@ test('G5 U02 L01 source fair-share options and teacher-review boundary',()=>{
 test('U02:L02 source-specific digital choice and teacher-led assessment',()=>{
  checkLesson('PED:US-CCSS-MATH:G5:U02:L02','usccss.g5.u02.l02.unit_share_equivalence',["1/2 sandwich","1/3 sandwich","1/4 sandwich"],["2 sandwiches","3 sandwiches"]);
 });
+test('U02:L03 exact source fraction-choice and teacher-scoring boundary',()=>{
+ checkLesson('PED:US-CCSS-MATH:G5:U02:L03','usccss.g5.u02.l03.fraction_division_direction',["2/3 liter","Each receives 2/3 liter","3/2 liters"],["3/2 liters","Each receives 3/2 liters"]);
+});
 // NEXT_LESSON_TEST
