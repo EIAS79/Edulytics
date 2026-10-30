@@ -14,7 +14,7 @@
   "elapsedSeconds": null,
   "timeTrackingNote": "start time was not captured before work; do not fabricate elapsed duration or closure",
   "inspectedAtUtc": "2026-10-30T07:00:19.172010+00:00",
-  "status": "BLOCKED_PENDING_STAGE_B_EFFECTIVE_DELIVERY_AND_STAGE_C_SHARED_PRACTICE",
+  "status": "BLOCKED_A_INDEPENDENT_SIGNOFF_C_SHARED_PRACTICE",
   "sourceEdition": "Illustrative Mathematics HS Algebra 1 First Edition, local teacher/student HTML",
   "originalSources": {
     "09_HS_Algebra_1/1/1/preparation.html": {
@@ -54,11 +54,13 @@
     "sourceTeacherPrepVerified": true,
     "sourceTeacherIndexVerified": true,
     "sourceStudentIndexVerified": true,
-    "sourceStudentPracticeVerified": true
+    "sourceStudentPracticeVerified": true,
+    "reviewer": "Coder 5 source reviewer; independent academic signoff still pending",
+    "signoffRequest": "docs/curriculum/US_CCSS_ALG1_CODER5_U01L01_ACADEMIC_SIGNOFF_REQUEST_20261030.md"
   },
   "B": {
     "candidateCorrected": true,
-    "accepted": false,
+    "accepted": true,
     "preservedExistingMathAndVisual": true,
     "fixes": [
       "four-option warm-up",
@@ -67,7 +69,10 @@
       "optional extension, source-appropriate practice and original Cool-down"
     ],
     "effectiveAuthenticatedRenderingVerified": false,
-    "blockerOwner": "Supervisor 2 / shared Rich V2 integration"
+    "blockerOwner": "NONE_FOR_B_STATIC; BROWSER_IN_STAGE_D",
+    "staticSelectorContract": "Core embeds .rich-lesson-v2.json; LessonContentService selects RichLessonContentV2Registry.Find before composer",
+    "staticResolverVerification": "PASS_8_OF_8_FOCUSED_TESTS",
+    "browserE2EIsStageD": true
   },
   "C": {
     "sourceAlignedDraftPrepared": true,
@@ -116,7 +121,10 @@
     "authorizedTeacherScoringVerified": false,
     "attemptPersistenceVerified": false,
     "integrator": "Supervisor 2 / shared Practice owner",
-    "safety": "Fail-closed unchanged; open-ended prompts never auto-graded"
+    "safety": "Fail-closed unchanged; open-ended prompts never auto-graded",
+    "currentRuntimeMapping": "UNSUPPORTED: ALG1 NoSupportedOutcomes before lesson contract registry",
+    "draftOracleCaseAndOrderEquivalent": "PASS_LOCAL_DRAFT_NOT_RUNTIME",
+    "sharedOwnerRequiredAction": "Review verified exact multi-select generator/grader availability and teacher-scored P1/P2/survey/Cool-down workflow; retain fail-closed"
   },
   "D": {
     "authorized": false,
@@ -136,14 +144,12 @@
     "dotnetSdkTemporary": "10.0.300; global.json byte-identically restored",
     "dotnetPreliminaryAttempt": "NOT_EXECUTED_SDK_10.0.200_ABSENT",
     "dotnetFocusedFilter": "UsCcssAlgebra1CourseUnit1RichV2Tests.SurveyExampleIsExplicitlySyntheticAndCannotClaimRealStudentParticipation | UsCcssAlgebra1V12SourceTaskMathematicsTests.Supervisor2ContractAndTeacherAssessmentMatrixPreserveNoGo",
-    "gitDiffWhitespace": "PASS"
+    "gitDiffWhitespace": "PASS",
+    "staticSelectorAndDraftOracleAndFailClosedTests": "PASS_8_OF_8_ZERO_FAILED_ZERO_SKIPPED",
+    "focusedCommand": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore --filter [StaticAlgebra1Lesson01SelectorUsesCorrectEmbeddedContentVersion OR DraftSelectAllOracleAcceptsOrderAndCaseButRejectsMalformedAnswers OR UnverifiedExactLessonCannotCreateGenericPrivatePractice] --verbosity quiet",
+    "sdkPinPreserved": "10.0.200 global.json restored, tested with temporary installed 10.0.300"
   },
   "blockers": [
-    {
-      "id": "ALG1_U01_L01_RICHV2_DELIVERY",
-      "owner": "Supervisor 2 / shared renderer",
-      "remedy": "verify effective content version/rendering and accessibility before B accepted"
-    },
     {
       "id": "ALG1_U01_L01_PRACTICE_EXACT_AND_HUMAN_SCORING",
       "owner": "Supervisor 2 / shared Practice",
@@ -161,12 +167,13 @@
     "TOTAL": 132,
     "AUTHORED": 132,
     "A_CLOSED": 0,
-    "B_CLOSED": 0,
+    "B_CLOSED": 1,
     "C_PREPARED": 1,
     "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
     "BLOCKED": 1,
     "REMAINING": 132
   },
-  "testedAtUtc": "2026-10-30T07:05:15.653346+00:00"
+  "testedAtUtc": "2026-10-30T07:05:15.653346+00:00",
+  "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5"
 }

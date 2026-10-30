@@ -66,6 +66,59 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
     }
 
     [Fact]
+    public void StaticAlgebra1Lesson01SelectorUsesCorrectEmbeddedContentVersion()
+    {
+        // Source-level validation only, not an authenticated Stage D check.
+        var assembly = typeof(RichLessonContentV2Registry).Assembly;
+        var resource = Assert.Single(assembly.GetManifestResourceNames(), name =>
+            name.EndsWith("us-ccss-hs-alg1-u01-l01-2021.rich-lesson-v2.json",
+                StringComparison.OrdinalIgnoreCase));
+        using var stream = assembly.GetManifestResourceStream(resource);
+        Assert.NotNull(stream);
+        using var doc = System.Text.Json.JsonDocument.Parse(stream);
+        Assert.Equal("alg1-u01-l01-local-source-aligned-20261030-v3",
+            doc.RootElement.GetProperty("ContentVersion").GetString());
+        Assert.Equal(Prefix + "L01", Assert.Single(doc.RootElement
+            .GetProperty("Lessons").EnumerateArray()).GetProperty("LessonCode").GetString());
+        var found = RichLessonContentV2Registry.Find(Prefix + "L01", "en");
+        Assert.NotNull(found);
+        Assert.Contains(found.ExplanationParagraphs, p =>
+            p.Contains("First-party warm-up 1.1", StringComparison.Ordinal));
+        Assert.Same(found, RichLessonContentV2Registry.Find(Prefix + "L01", "en-US"));
+        var codes = RichLessonContentV2Registry.AllDocuments.SelectMany(d => d.Lessons)
+            .Where(x => x.LessonCode.StartsWith(
+                "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:", StringComparison.Ordinal))
+            .Select(x => x.LessonCode).ToArray();
+        Assert.Equal(132, codes.Length);
+        Assert.Equal(132, codes.Distinct(StringComparer.Ordinal).Count());
+    }
+
+    [Fact]
+    public void DraftSelectAllOracleAcceptsOrderAndCaseButRejectsMalformedAnswers()
+    {
+        // Deliberately an independent *draft* oracle, NOT runtime Practice.
+        static bool Match(IReadOnlyList<string>? responses)
+        {
+            if (responses is null || responses.Count != 3) return false;
+            var values = responses.Select(s => s?.Trim().ToUpperInvariant() ?? "").ToArray();
+            return values.All(s => s.Length == 1 && s[0] is >= 'A' and <= 'F')
+                && values.Distinct(StringComparer.Ordinal).Count() == 3
+                && new HashSet<string>(values, StringComparer.Ordinal).SetEquals(["A", "C", "E"]);
+        }
+        Assert.True(Match(["A", "C", "E"]));
+        Assert.True(Match(["e", "a", "c"]));
+        Assert.True(Match([" c ", "E", "a"]));
+        Assert.False(Match(["A", "B", "C", "E"])); // extra
+        Assert.False(Match(["A", "C"])); // missing
+        Assert.False(Match(["A", "a", "C", "E"])); // duplicate case variant
+        Assert.False(Match(["A", "C", "Z"])); // unsupported
+        Assert.False(Match(["A,C,E"])); // malformed
+        Assert.False(Match(["A", "C", ""])); // blank
+        Assert.False(Match([]));
+        Assert.False(Match(null));
+    }
+
+    [Fact]
     public void HistogramCountsAndFiveNumberSummaryAreInternallyConsistent()
     {
         int[] data = [2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 9, 10];
