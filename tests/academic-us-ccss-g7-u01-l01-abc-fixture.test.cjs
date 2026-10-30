@@ -87,3 +87,33 @@ test('A-C closure remains truthful: shared Practice still blocked',()=>{
   assert.equal(cursor.testExecutionStatus,'NOT_RUN');
   assert.equal(cd.testExecutionStatus,'TEST_AUTHORED_NOT_RUN');
 });
+
+test('L01 source-aligned seven-candidate F table is in actually referenced Rich V2 pack',()=>{
+  const rich=JSON.parse(file('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json'));
+  const lesson=rich.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G7:U01:L01');
+  assert.ok(lesson);
+  const table=lesson.Visuals.find(x=>x.Title==='Original Edulytiks F-shape investigation — seven candidates');
+  assert.ok(table,'Missing independent learner-facing seven-choice geometry table');
+  assert.equal(table.Kind,'RatioTable');
+  assert.equal(table.Rows.length,9); // heading, original and seven authored alternatives
+  const original=table.Rows.find(x=>x.Label==='Original F');
+  assert.deepEqual(original.Cells,['4','2','1','upright']);
+  const targets=[['A',true],['B',true],['C',false],['D',false],
+    ['E',false],['F',false],['G',true]];
+  const scaled=(cells)=>{
+    const values=cells.slice(0,3).map(Number);
+    if(!values.every(x=>Number.isFinite(x)&&x>0)||cells[3]!=='upright')return false;
+    const k=values[0]/4;
+    return Math.abs(values[1]/2-k)<1e-10 &&
+      Math.abs(values[2]/1-k)<1e-10;
+  };
+  for(const [label,valid] of targets){
+    const row=table.Rows.find(r=>r.Label==='Candidate '+label);
+    assert.ok(row,'Missing candidate '+label);
+    assert.equal(scaled(row.Cells),valid,'Wrong independent classification for '+label);
+  }
+  assert.equal(scaled(['6','3','1.5','slanted']),false);
+  assert.equal(scaled(['6','oops','1.5','upright']),false);
+  assert.match(lesson.ExplanationParagraphs.join(' '),/teacher must inspect the finished outline/);
+  assert.match(table.Description,/no original publisher figures/);
+});
