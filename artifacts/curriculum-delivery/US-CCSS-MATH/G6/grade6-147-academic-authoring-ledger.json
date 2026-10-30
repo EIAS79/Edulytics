@@ -272,7 +272,7 @@
         "missingOutcomeRules": [],
         "selectedRuntimeContract": "NOT_RUN__REQUIRES_SHARED_OWNER_EXACT_TRACE",
         "generatorVerifierAndResponseTests": "NOT_RUN",
-        "teacherRubricNeeded": false,
+        "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
         "teacherOnlyJustificationRubricBoundaryDefined": true,
         "teacherOnlyRubricAuthored": true,
@@ -351,7 +351,9 @@
         "explicitGrade6RichV2SidecarAuthored": true,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
-        "sourceTaskAlignedRichV2Candidate": true
+        "sourceTaskAlignedRichV2Candidate": true,
+        "v11RichV2SourceExampleMathematicsCorrected": true,
+        "v11RichV2SourceExampleCorrectionCommit": "feb0701e6f79d5ba4f2c6efc49223a204b46bf9e"
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -360,7 +362,7 @@
         "missingOutcomeRules": [],
         "selectedRuntimeContract": "NOT_RUN__REQUIRES_SHARED_OWNER_EXACT_TRACE",
         "generatorVerifierAndResponseTests": "NOT_RUN",
-        "teacherRubricNeeded": false,
+        "teacherRubricNeeded": true,
         "exactPracticeAccepted": false,
         "teacherOnlyJustificationRubricBoundaryDefined": true,
         "teacherOnlyRubricAuthored": true,
@@ -14028,5 +14030,8 @@
   "v11U05L13L15EvidenceCommit": "2774dc07b4e2fb05693b272e6deaaf7c5ee46b2e",
   "v11U05L13L15TestCommit": "8ee1795a142c75d8c53ddc7d01bbe9d754d369e8",
   "v11U05L13L15EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u05-l13-l15-public-source-task-evidence-20261030.json",
-  "v11NextWork": "START_ACADEMIC_AND_RUNTIME_ACCEPTANCE_U01_L01__STAGE_A_B_C_D_ALL_UNVERIFIED__GRADE6_ONLY_FIXES_ALLOWED__SHARED_ISSUE_592"
+  "v11NextWork": "U01:L01 A-D: Source figure/manipulative/accessibility, exact Practice and teacher rubric workflow, authenticated tenant/persistence evidence required. Shared integration owned by issue #592. Other Grade 6-owned lesson errors can be repaired independently.",
+  "v11U01L02TriangleErrorCorrectionCommit": "feb0701e6f79d5ba4f2c6efc49223a204b46bf9e",
+  "v11U01L02TriangleErrorTestCommit": "ac13b075ce952363c0ff29a5eb24f0b3707948be",
+  "v11U01L01L02TeacherRubricClassification": "TEACHER_REVIEW_REQUIRED_FOR_SOURCE_DRAWING_AND_JUSTIFICATION__PERSISTENCE_UNVERIFIED"
 }
