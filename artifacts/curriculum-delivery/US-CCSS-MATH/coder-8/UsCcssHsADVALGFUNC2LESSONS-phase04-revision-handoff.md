@@ -86,3 +86,47 @@ The following complete appended spans are first-party explanatory extensions; un
 - Full changed-file/line diff: https://github.com/EIAS79/Edulytics/pull/585/files
 
 **Gate verdict: NO-GO until independently approved predecessor/source transition and original academic evidence review exist.**
+
+---
+
+## P0 V2 amendment — source-task closure (2026-10-30; supersedes the earlier unapproved v1 candidate, not the historical evidence)
+
+**Exact course-owned change:** U01:L01 All Systems Go added the MVP painting-supplies context verified against indexed original student + teacher source excerpts. Source review record: `artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/AllSystemsGo-original-source-task-review-v2.md`. The student PDF and teacher PDF could not be fully downloaded/rendered in this session; original publisher SHA remains recorded, not newly verified.
+
+**Proposed version history (none of these candidate revisions is an academic approval):**
+- Prior protected content pack: `phase30-common-core-rich-content-v1`; historical Phase04 corrected body L01 `fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c` remains immutable.
+- Superseded *unapproved* Coder 8 v1: `us-ccss-hs-adv-alg-func-2lesson-teaching-v1`, file blob `e0efdbebf6cb50db5ba91556ede1d28a17b2f413`, L01 `6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50`; no approved v1 persisted predecessor is claimed.
+- Current *unapproved* Coder 8 v2: `us-ccss-hs-adv-alg-func-2lesson-teaching-v2`, file blob `e19755bf768b384a55518accefecd3f47e23304c`, L01 `9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7`.
+- L02 Log Logic remains semantically **identical** to v1 with body SHA `f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6` and source SHA `590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3`.
+- L01 publisher source SHA remains recorded `87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55`, unchanged (not recomputed from source PDF bytes). No change to lesson code or outcome mapping.
+- **Field-specific diff:** L01 only `explanation`, `workedExamples`, `stepByStepSolutions`, `commonMistakes` plus its `canonicalBodySha256` and pack-level `contentVersion`; existing earlier lesson material was retained. Full exact appended strings below.
+
+**explanation — appended first-party instruction:**
+
+```text
+In the original All Systems Go painting-supplies context, three purchase totals provide three equations for the unknown unit prices of paint, brushes, and masking tape. A correct 3×3 coefficient matrix records zero wherever an item was not bought, and the inverse solution must be interpreted as prices rather than just an ordered triple.
+```
+
+**workedExamples — appended first-party instruction:**
+
+```text
+Example 6 — painting-supplies context, adapted from the MVP student task: let p be dollars per gallon of paint, q dollars per brush, and r dollars per roll of masking tape. Three shopping totals give 2p+r=30, p+4q=20, and 2q+r=10. In variable order [p,q,r]ᵀ, A=[[2,0,1],[1,4,0],[0,2,1]], c=[30,20,10]ᵀ, so A[p,q,r]ᵀ=c. The zeros correspond to supplies absent from each purchase. det(A)=10, so A is invertible. A⁻¹=(1/10)[[4,2,−4],[−1,2,1],[2,−4,8]], which yields [p,q,r]ᵀ=[12,2,6]ᵀ. Therefore paint costs $12 per gallon, a brush costs $2, and masking tape costs $6 per roll. Check all original totals: 2(12)+6=30, 12+4(2)=20, and 2(2)+6=10. Counterexample to careless contextual acceptance: if only the third total were $50, the same invertible matrix would produce [−4,6,38]ᵀ. That triple satisfies the altered equations but a negative paint price is not plausible; discuss the data instead of calling it an inconsistent linear system.
+```
+
+**stepByStepSolutions — appended first-party instruction:**
+
+```text
+11. For the painting-supplies task, name the price variables and lock the order [paint, brush, tape]. Translate the three receipts into equations, then A=[[2,0,1],[1,4,0],[0,2,1]] and c=[30,20,10]ᵀ. Evaluate det(A)=10, use a verified 3×3 inverse or a trusted matrix tool to calculate A⁻¹c, and check all three receipts before interpreting the unit prices. 12. Treat missing items as zero coefficients; do not swap the brush and tape columns without changing the variable vector too. For a different set of totals, a negative unit price can be algebraically valid but contextually impossible; report that modeling limitation separately from matrix singularity.
+```
+
+**commonMistakes — appended first-party instruction:**
+
+```text
+In the source painting-supplies model, the first receipt has zero brushes, the second has zero tape, and the third has zero gallons of paint; inserting a nonzero coefficient for an unpurchased item changes the data. An invertible system can also give negative prices for altered receipts: this is an invalid real-world interpretation, not proof of an algebraic contradiction.
+```
+
+
+**Independent mathematical oracle:** A=[[2,0,1],[1,4,0],[0,2,1]], b=[30,20,10]ᵀ, det=10, A⁻¹=(1/10)[[4,2,−4],[−1,2,1],[2,−4,8]], prices [12,2,6]ᵀ. Three receipt substitutions verified; wrong first-row brush/tape ordering rejected; hypothetical third receipt $50 returns [−4,6,38]ᵀ, algebraically valid but contextually nonphysical. The added course-specific C# test asserts A·(10A⁻¹)=10I₃ and boundaries, but test execution is separate evidence.
+
+**Shared academic/version-owner handoff:** On main the protected Phase04/JSON parity guards still reject changed learner bodies without an independently reviewed append-only authorization. Do NOT replace previous seven-row hashes, treat prior pending signoffs as approval, allow arbitrary predecessors, or claim a v1 candidate was persisted. Independently review the source task + new field spans and approve or reject the v2 successor; then route transition through the single shared materializer/seeder owner and run original/negative predecessor tests on an isolated integrated SHA. CI failures are expected until authorized. `#584` and `#453` remain separate gates; `#600` alone does not certify production Practice or school adoption.
+
