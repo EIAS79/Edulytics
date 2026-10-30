@@ -257,7 +257,7 @@
       "category": "log-different-bases",
       "prompt": "Compare log_4(3) with log_2(3) using exact change-of-base reasoning. Then decide whether log_2(x)<log_3(x) holds for every x>0; justify your decision at x=1, 0<x<1, and x>1.",
       "expectedCanonical": "log_4(3)<log_2(3); the universal claim log_2(x)<log_3(x) is false: x=1 gives equality, 0<x<1 gives <, and x>1 gives >",
-      "acceptedEquivalent": "log_4(3)=(1/2)log_2(3)<log_2(3) since log_2(3)>0; log_2(x)<log_3(x) only for 0<x<1, equals at 1, reverses for x>1",
+      "acceptedEquivalent": "log_4(3)=(1/2)log_2(3)<log_2(3) since log_2(3)>0; log_2(x)<log_3(x) only for 0<x<1, equals at x=1, reverses for x>1",
       "rejectWrongOrMalformed": "log_4(3)>log_2(3) and log_2(x)<log_3(x) for all x>0",
       "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_4(3)<log_2(",
