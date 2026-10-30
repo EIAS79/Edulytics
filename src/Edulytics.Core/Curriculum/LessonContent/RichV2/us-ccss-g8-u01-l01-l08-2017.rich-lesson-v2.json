@@ -626,6 +626,10 @@
         "Source-aligned activity 3.2: to translate an original triangle use the directed arrow from A to A′ as the vector and apply the same vector to every other vertex; then reset before a rotation or reflection. The source GeoGebra construction and its click/drag behavior remain a distinct interactive integration requirement.",
         "On an isometric grid six 60° sectors meet around a grid point. A 60° turn about a grid vertex can be constructed with tracing paper by preserving distance from the center; do not mistake the slanted equilateral-triangle grid for perpendicular Cartesian axes.",
         "Student task: draw an irregular polygon and its translated image on a square grid, then choose a center and draw a turned copy on an isometric grid. Compare all corresponding vertices. Drawings and open construction explanations need accessible graphical/teacher review; three numerical coordinate examples alone cannot establish complete student assessment.",
+        "Edulytiks activity 3.1 tactile isometric grid: draw three equal-length rays from O at directions 0°, 60°, and 120° so six equilateral sectors meet around a vertex. Two basis steps e1=(1,0), e2=(1/2,√3/2) meet at 60°, not 90°; they cannot be treated as ordinary square x/y axes. Use tracing paper or the native basis descriptions below to sketch the triangular grid.",
+        "Edulytiks activity 3.2 original construction substitute: place triangle A(1,1), B(3,1), C(2,3) on a square grid; separately construct its translation by (+2,−1), counterclockwise quarter-turn about O, and reflection across the y-axis. Copy or trace the grid by hand, label A′,B′,C′, and verify all corresponding lengths. Each new construction starts from the ORIGINAL triangle, not the preceding transformed image.",
+        "Edulytiks isometric-grid rotation: record a lattice vertex by axial (q,r) along the equal-length 60° basis vectors. A counterclockwise 60° turn about O sends (q,r) to (−r,q+r). For example (1,0)→(0,1) and (0,1)→(−1,1). This coordinate shorthand supplements drawing and does not imply the axes are perpendicular. Explain center and corresponding vertices to a partner.",
+        "Original Edulytiks Cool-down 3.3 (publisher statement not visible): classify two proposed images of triangle A(1,1),B(3,1),C(2,3). Image I is (3,0),(5,0),(4,2). Image II is (3,0),(5,0),(2,2). Which represents one translation of the entire triangle? Justify with all three displacement vectors. Submit or draw the transformed triangle; a teacher evaluates the explanation rather than assuming an automatic source-equivalent grade.",
         "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/3/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced."
       ],
       "KeyConcepts": [
@@ -755,6 +759,119 @@
                 "-2",
                 "-2",
                 "-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "3.1 — isometric grid nonperpendicular basis",
+          "Description": "Accessible original triangular-grid basis model; use equal-length edges 60° apart and six triangular sectors at each lattice point.",
+          "Rows": [
+            {
+              "Label": "e1",
+              "Cells": [
+                "(1,0) in Cartesian coordinates",
+                "Direction 0°"
+              ]
+            },
+            {
+              "Label": "e2",
+              "Cells": [
+                "(1/2,√3/2)",
+                "Direction 60°"
+              ]
+            },
+            {
+              "Label": "e2−e1",
+              "Cells": [
+                "(−1/2,√3/2)",
+                "Direction 120°"
+              ]
+            },
+            {
+              "Label": "Full turn",
+              "Cells": [
+                "6 sectors × 60°=360°",
+                "Not a square 90° grid"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "3.2 — same original triangle under three rigid moves",
+          "Description": "Each column represents a corresponding vertex; each operation independently starts with original A,B,C, so no accidental composition.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "A",
+                "B",
+                "C"
+              ]
+            },
+            {
+              "Label": "original",
+              "Cells": [
+                "(1,1)",
+                "(3,1)",
+                "(2,3)"
+              ]
+            },
+            {
+              "Label": "translation (+2,−1)",
+              "Cells": [
+                "(3,0)",
+                "(5,0)",
+                "(4,2)"
+              ]
+            },
+            {
+              "Label": "90° CCW about O",
+              "Cells": [
+                "(−1,1)",
+                "(−1,3)",
+                "(−3,2)"
+              ]
+            },
+            {
+              "Label": "reflection in y-axis",
+              "Cells": [
+                "(−1,1)",
+                "(−3,1)",
+                "(−2,3)"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "3.2 — 60-degree isometric vertex turn",
+          "Description": "Axial coordinates are along the two nonperpendicular 60° lattice vectors. Apply (q,r)→(−r,q+r), preserving length.",
+          "Rows": [
+            {
+              "Label": "vertex",
+              "Cells": [
+                "P",
+                "Q",
+                "R"
+              ]
+            },
+            {
+              "Label": "axial original",
+              "Cells": [
+                "(1,0)",
+                "(0,1)",
+                "(1,1)"
+              ]
+            },
+            {
+              "Label": "axial rotated",
+              "Cells": [
+                "(0,1)",
+                "(−1,1)",
+                "(−1,2)"
               ]
             }
           ]
