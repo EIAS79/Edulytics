@@ -1,0 +1,110 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L16",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceSha256": {
+    "prep": "4f929386e75423409eaac3af308ea4e90070af03c9a86fa02fb94857c3f8d0a1",
+    "teacher": "7a1f0076e6f6cb5c2e1cecdd91a042a980c90acdba3e313d9e058e4075404b65",
+    "student": "667c8683deb8d6dfa47e20208d0ec38b16163511d16e34789c2c9740e5d88ba4",
+    "practice": "f30342452e2d7b1ef043aad4a09502134e03a11ec0633838b081e0333a553e7c"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "HSG-CO.A.1",
+      "HSG-CO.A.4"
+    ],
+    "Addressing": [
+      "HSG-CO.A.3"
+    ]
+  },
+  "SourceActivities": [
+    "16.1 Which One Doesn't Belong",
+    "16.2 Self Rotation display",
+    "16.3 Parallelogram Symmetry",
+    "Practice 1–7"
+  ],
+  "Task": {
+    "Prompt": "Submit labelled group display of all nontrivial rotations and one invalid rotation; show a generic parallelogram's 180-degree symmetry.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "states all nonidentity rotation angles and centre",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "correct figure labels and vertex mapping",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "non-example with proof of failure",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "180-degree parallelogram proof and no-reflection caveat",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "Square nonidentity rotation angles?",
+      "Expected": "90,180,270",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "Triangle whose rotations exchange all vertices?",
+      "Expected": "equilateral triangle with angles 120 and 240",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "Four equally spaced petals?",
+      "Expected": "90,180,270",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Two equal circles above/below origin symmetry?",
+      "Expected": "vertical and horizontal axis",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "Triangle with reflection symmetry conclusion?",
+      "Expected": "at least two equal sides and two equal angles",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Non-rigid motion?",
+      "Expected": "dilation factor two",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "Translate (1,1) by (3,-2)",
+      "Expected": "(4,-1)",
+      "Points": 2
+    }
+  ],
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: all nonidentity angles for regular pentagon",
+  "TeacherPaperReview": "Teacher sees drawing and explanation, grades 0/1/2 per criterion, signs/dates school paper feedback; no online score implied.",
+  "Cases": {
+    "CORRECT": "all square/pentagon rotations and parallelogram half-turn",
+    "EQUIVALENT": "clockwise negative angle equivalents",
+    "WRONG": "count identity 360 or claim oblique parallelogram reflection",
+    "INSUFFICIENT": "angles without centre/diagram",
+    "MALFORMED": "undefined shape"
+  },
+  "AutoScoring": false,
+  "StageD": "NOT_RUN secure teacher grade and school pathway #453"
+}
