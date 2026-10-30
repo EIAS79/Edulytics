@@ -15,7 +15,9 @@ Work only on `curriculum/us-ccss-g5-full-grade-20261028`, Draft PR #596. Never m
 
 ## Current execution checkpoint
 - Historical candidate: 148/148 authored RichV2 sidecars. This does **not** mean 148/148 academically accepted.
-- V13 HTML source-review reached U02:L17; next content repair U03:L01.
-- V14 U03:L01 local source discrepancy repaired, with first-party cool-down and rubric. **A/B/C are not yet accepted** because original diagram assets/PDF and authenticated B/C evaluation remain unverified. Do not advance U03:L02 under strict closure rule.
+- V13 historical **content-only** reviews reached U02:L17. This is NOT the A?B?C closure cursor. **Strict mandatory A?B?C cursor is U01:L01** because 0/148 are recorded as fully academically accepted.
+- A V14 U03:L01 isolated content-source fix was already committed before the strict closure cursor was rechecked; treat it as a PARKED, NOT-CLOSED candidate, not authority to skip lessons. Do not make further out-of-order repairs. Complete U01:L01, then every subsequent lesson in order (U01:L02, etc.). At U03:L01, review the parked fix against its source evidence before claiming closure.
 - The remaining 147 source lesson records and prior fixes must be preserved unchanged.
 - Stage D, main merge, deploy, live DB migration, human UAT are separate explicit approval gates.
+- U01:L01 already has a first-party exit check and a teacher rubric; **do not recreate them**. Its source cube-construction activity is not adequately assessed by the currently explicit numeric-only `usccss.g5.unit_cube_count` Practice family. **Shared integration issue #592** and authenticated runtime selected-contract/human-scoring verification block Stage C. Preserve A/B evidence, reuse correct content and request the existing Supervisor 1 shared single writer for the contract integration.
+- **The filename says 100_PERCENT because that is the target, not the current status.** The present verified full A?B?C acceptance is 0/148. Do not relabel static source edits, passing local math tests or a sidecar as closed lessons.
