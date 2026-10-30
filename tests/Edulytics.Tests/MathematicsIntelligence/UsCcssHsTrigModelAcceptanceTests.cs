@@ -123,6 +123,61 @@ public sealed class UsCcssHsTrigModelAcceptanceTests
         Assert.False(ExactSkillContractQuestionEngine.Verify(Family, p, "1"));
     }
 
+    [Theory]
+    [InlineData(1, "4/3")]
+    [InlineData(3, "36")]
+    public void Coder9L04IntegralSphereRadiusHasCorrectExactPiCoefficient(
+        int radius, string coefficient)
+    {
+        var p = new Dictionary<string, int> { ["radius"] = radius };
+        Assert.Equal(coefficient, UsCcssHsFourthCourseQuestions.Solve(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p, coefficient));
+    }
+
+    [Fact]
+    public void Coder9L04FractionalRadiusTwoPointFiveHasExactOneHundredTwentyFiveSixths()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["radiusNumerator"] = 5, ["radiusDenominator"] = 2
+        };
+        Assert.Equal("125/6", UsCcssHsFourthCourseQuestions.Solve(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p));
+        Assert.True(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p, "250/12"));
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p, "125/3"));
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-2)]
+    public void Coder9L04NonpositiveSphereRadiusIsNotGradableAsRealSphereVolume(int radius)
+    {
+        var p = new Dictionary<string, int> { ["radius"] = radius };
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p, "0"));
+        Assert.Throws<ArgumentException>(() => UsCcssHsFourthCourseQuestions.Solve(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p));
+    }
+
+    [Fact]
+    public void Coder9L04MalformedFractionalRadiusCannotBypassDomainGate()
+    {
+        var p = new Dictionary<string, int>
+        {
+            ["radiusNumerator"] = 5, ["radiusDenominator"] = 0
+        };
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p, "0"));
+        p["radiusDenominator"] = 2;
+        p["radius"] = 5;
+        Assert.False(ExactSkillContractQuestionEngine.Verify(
+            UsCcssHsFourthCourseQuestions.CavalieriVolume, p, "125/6"));
+    }
+
     [Fact]
     public void FabricatedTargetAndMalformedNumericExpressionsAreRejected()
     {
