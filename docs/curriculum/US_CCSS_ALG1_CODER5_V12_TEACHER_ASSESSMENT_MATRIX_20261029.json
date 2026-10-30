@@ -3,8 +3,8 @@
   "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
   "asOfDate": "2026-10-30",
   "narrativeRubrics": 132,
-  "structuredDrafts": 26,
-  "unstructuredPending": 106,
+  "structuredDrafts": 27,
+  "unstructuredPending": 105,
   "approvedRubrics": 0,
   "actualTeacherGrades": 0,
   "feedbackPersisted": 0,
@@ -12,8 +12,8 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
       "title": "Getting to Know You",
-      "status": "SOURCE_REVIEWED_STRUCTURED_FIRST_PARTY_RUBRIC_DRAFT_NOT_APPROVED",
-      "sourceActivityReview": "LOCAL_TEACHER_PREP_INDEX_STUDENT_INDEX_PRACTICE_REVIEWED_20261030",
+      "status": "COURSE_AUTHOR_SOURCE_MATCH_REVIEWED; HUMAN_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_ACTIVITY_BY_ACTIVITY_CODER5_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored assessment rubric (0-2 each; total 8): 1) independently writes a statistical question anticipating variability; 2) identifies numerical versus categorical responses with a reason; 3) records and summarizes genuine or explicitly fictional responses without personal identifiers; 4) explains a justified interpretation and a sampling limitation. Award 0 for missing/incorrect, 1 for partially supported, 2 for specific and correct evidence. This task requires human review; no synthetic survey submission may be marked as a real participation grade."
       ],
@@ -45,45 +45,61 @@
       "actualGradePersisted": false,
       "feedbackPersisted": false,
       "firstPartyCooldownDraft": {
-        "sourceStatus": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
         "maxPoints": 6,
         "humanScored": true,
-        "criteria": [
-          {
-            "id": "variability",
-            "maxPoints": 2
-          },
-          {
-            "id": "data-type",
-            "maxPoints": 2
-          },
-          {
-            "id": "class-v-single-fact",
-            "maxPoints": 2
-          }
-        ]
+        "teacherScorePersisted": false
       }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
       "title": "Data Representations",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "COURSE_AUTHOR_SOURCE_REVIEWED_STRUCTURED_8_POINT_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_ACTIVITY_BY_ACTIVITY_CODER5_20261030",
       "originalNarrativeRubric": [
         "Student tasks: (1) create a dot plot of all twelve measurements and identify its mode(s); (2) draw both histograms, specifying boundaries and labels, and explain how their appearances differ; (3) calculate the summary and draw the matching box plot; (4) compare what individual values a dot plot preserves versus what each grouped display hides. Teacher rubric: 0–2 points each for accurate dot counts, histograms and axis/interval labels, correct five-number calculation and box positions, and a reasoned graphical comparison. Maximum 8; 0 missing/incorrect, 1 partially correct, 2 complete and justified. Original drawing and reasoning require human review."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "raw-and-dot-plot",
+          "maxPoints": 2,
+          "evidence": "correct dot frequencies, value count and units"
+        },
+        {
+          "id": "histograms",
+          "maxPoints": 2,
+          "evidence": "correct width 10 and width 5 nonoverlapping bins, total count, labels"
+        },
+        {
+          "id": "box-and-five-number",
+          "maxPoints": 2,
+          "evidence": "min 46, Q1 58, median 66.5, Q3 76, max 92 and box geometry"
+        },
+        {
+          "id": "interpretation",
+          "maxPoints": 2,
+          "evidence": "explains what dot, histogram and box plots show/hide and limits from sample"
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "maxPoints": 6,
+        "humanScored": true,
+        "teacherScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
       "title": "A Gallery of Data",
-      "status": "STRUCTURED_AUTHOR_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
-      "sourceActivityReview": "V13_TARGETED_SOURCE_REVIEW_AUTHOR_DRAFT_NOT_APPROVED",
+      "status": "COURSE_AUTHOR_SOURCE_MATCH_REVIEWED; EXISTING_STRUCTURED_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_ACTIVITY_BY_ACTIVITY_CODER5_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored original gallery assessment rubric (0-2 each, total 8): accurate raw-data-to-display mapping, mathematically correct measures of center/spread, evidence-based comparison of two displays, and reasoned critique of labels/scale/limitations. A complete answer earns 2, partly supported 1, missing or wrong 0. The student-created displays and explanations are human-judged; do not treat a single numeric response as completing this lesson."
       ],
@@ -117,13 +133,20 @@
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "maxPoints": 6,
+        "humanScored": true,
+        "teacherScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
       "title": "The Shape of Distributions",
-      "status": "STRUCTURED_DRAFT_NOT_APPROVED",
-      "sourceActivityReview": "DIRECT_SOURCE_TASK_REPAIR_NOT_ACCEPTED",
+      "status": "COURSE_AUTHOR_SOURCE_MATCH_REVIEWED; EXISTING_STRUCTURED_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_ACTIVITY_BY_ACTIVITY_CODER5_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored rubric: give 0, 1 or 2 points each for accurate classification, numerical justification, plausible context with variable and units, and reasoned critique of partner claims (8 maximum). This is an explanation/card-matching activity, not a single machine-graded number. The first-party frequency tables are not publisher artwork.",
         "V12 activity fidelity: the publisher explicitly includes a Which One Does Not Belong discussion and partner matching of ten representations, followed by suggesting a plausible real-world context for a displayed distribution. Students must invent at least two plausible contexts for one of the fictional graphs and explain why the source data cannot be inferred uniquely from a shape. The plotted dot positions and frequency cards must be student-created, not auto-inferred from rubric text."
@@ -170,13 +193,20 @@
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "maxPoints": 6,
+        "humanScored": true,
+        "teacherScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
       "title": "Calculating Measures of Center and Variability",
-      "status": "STRUCTURED_DRAFT_NOT_APPROVED",
-      "sourceActivityReview": "DIRECT_SOURCE_TASK_REPAIR_NOT_ACCEPTED",
+      "status": "COURSE_AUTHOR_SOURCE_MATCH_REVIEWED; EXISTING_STRUCTURED_RUBRIC_DRAFT_NOT_TEACHER_SCORED",
+      "sourceActivityReview": "LOCAL_ORIGINAL_TEACHER_STUDENT_PRACTICE_ACTIVITY_BY_ACTIVITY_CODER5_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored rubric: 0–2 each for sorted data and stated quartile rule, correct mean/median, all absolute deviations and MAD, and comparison with appropriate units (8 maximum). Teacher judgement is required for explanation and interpretation; a numeric answer cannot stand in for a physical meter-stick investigation.",
         "V12 proposed teacher rubric (0–2 each, total8): original seven-point data plot and quartiles; correct mean, median, IQR and MAD with units; explanation and chosen quartile convention; genuine activity/diagnostic evidence if performed. Optional status must be respected in reporting."
@@ -211,7 +241,14 @@
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "source": "PUBLISHER_COOLDOWN_UNVERIFIED",
+        "replacement": "EDULYTIKS_AUTHORED_COOLDOWN",
+        "maxPoints": 6,
+        "humanScored": true,
+        "teacherScorePersisted": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",

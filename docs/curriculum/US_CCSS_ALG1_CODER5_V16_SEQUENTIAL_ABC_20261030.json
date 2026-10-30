@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
+  "pr": 589,
+  "branch": "feat/us-ccss-alg1-coder5-full-course-20261028",
+  "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
+  "recordedAtUtc": "2026-10-30T12:11:15.464890+00:00",
+  "lastReviewed": "U01:L05",
+  "nextCanonical": "U01:L06",
+  "sharedDependencyOnce": {
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "issue": 453,
+    "reason": "NoSupportedOutcomes pre-dispatch; no shared edits by Coder 5"
+  },
+  "lessons": [
+    {
+      "ordinal": 1,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "title": "Getting to Know You",
+      "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\1\\preparation.html",
+          "sha256": "a405615c5a6ecb73fbfc343f9e52ac19c3a19fbcb2a918ca156cee2a3a2839ae"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\1\\index.html",
+          "sha256": "10205bbb0b0aea92bcac424d3b70132452764b0ec40c0235c8c280e949056c65"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\1\\index.html",
+          "sha256": "bd2fff1b76ef42942aa073499dd462f235eb258f352f611b6f88fa51543f8609"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\1\\practice.html",
+          "sha256": "0ffbcfc624ff9194849ab5928ca779a119e7f0d9484c3817ac0f10c306f7bf2e"
+        }
+      },
+      "sourceRoles": [
+        "6.SP.A.1=BuildingOn",
+        "HSS-ID.A.1=BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "four-option fixed vs statistical survey warm-up",
+        "three teacher-assigned question types, independent fourth, 15 anonymous classmates or explicitly unperformed",
+        "classwide versus individual surveys and group summaries",
+        "P1/P2 open responses and new six-choice P3; locked publisher Cool-down replaced by first-party"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l01-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l01-local-source-aligned-20261030-v3",
+      "A": {
+        "status": "A_CLOSED",
+        "decision": "SOURCE_GOALS_AND_ACTIVITY_MATCHED_FIRST_PARTY_EQUIVALENT",
+        "reviewer": "Coder 5 course author",
+        "externalSignature": "NOT_REQUIRED_BY_CURRENT_ADMIN",
+        "sourceImageIdentity": "NOT_CLAIMED",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "preserveCorrectPriorContent": true,
+        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
+      },
+      "C": {
+        "status": "BLOCKED_C_SHARED",
+        "draftPrepared": true,
+        "oracles": "P3 exact set A,C,E: accept case/ordering; reject malformed/extra/duplicate",
+        "humanScored": true,
+        "runtimeSupported": false,
+        "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
+        "owner": "Supervisor 2"
+      },
+      "D": "NOT_RUN_BATCH",
+      "readyForStageD": false,
+      "reviewStart": null,
+      "reviewElapsedSeconds": null,
+      "timingNote": "not captured at source review start; no invented duration"
+    },
+    {
+      "ordinal": 2,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+      "title": "Data Representations",
+      "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\2\\preparation.html",
+          "sha256": "dbac7a8a58d295d208b2e31375526d131dc2925a0d4db40c4487f8ccfb4f74b8"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\2\\index.html",
+          "sha256": "425c622098e998f12ab0b178606a185392e4bd6ae8ee418099c7337b6e6c2220"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\2\\index.html",
+          "sha256": "b3c96fc7871bec10a1b47e2da2d57c87b54552f628d613c639ceeb3a3a508c83"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\2\\practice.html",
+          "sha256": "ada71fe774d5d96c41e86186555c6f8c3174e87b971f6c06c07244a1c6377032"
+        }
+      },
+      "sourceRoles": [
+        "6.SP.B.4=BuildingOn",
+        "HSS-ID.A.1=Addressing AND BuildingTowards",
+        "HSS-ID.A.2=BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "optional review, 26 fictional phones notice/wonder comparing three displays",
+        "30 fictional plant-day observations, width-10 and width-5 histograms",
+        "five-number summary and box plot on the same data",
+        "P1 dot median, P2 box, P3 histogram, P4 numerical classifications, P5 variation and teacher Cool-down"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l02-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l02-sequential-source-abc-20261030-v3",
+      "A": {
+        "status": "A_CLOSED",
+        "decision": "SOURCE_GOALS_AND_ACTIVITY_MATCHED_FIRST_PARTY_EQUIVALENT",
+        "reviewer": "Coder 5 course author",
+        "externalSignature": "NOT_REQUIRED_BY_CURRENT_ADMIN",
+        "sourceImageIdentity": "NOT_CLAIMED",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "preserveCorrectPriorContent": true,
+        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
+      },
+      "C": {
+        "status": "BLOCKED_C_SHARED",
+        "draftPrepared": true,
+        "oracles": "Synthetic 30 plants: bins10=2,7,9,7,4,1; bins5=0,2,3,4,4,5,4,3,3,1,1; five-number=(46,58,66.5,76,92)",
+        "humanScored": true,
+        "runtimeSupported": false,
+        "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
+        "owner": "Supervisor 2"
+      },
+      "D": "NOT_RUN_BATCH",
+      "readyForStageD": false,
+      "reviewStart": null,
+      "reviewElapsedSeconds": null,
+      "timingNote": "not captured at source review start; no invented duration"
+    },
+    {
+      "ordinal": 3,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+      "title": "A Gallery of Data",
+      "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\3\\preparation.html",
+          "sha256": "60d1cc904bcaca88d158ef097ec020923ac2b85e67da0cabbfe88250bdf49504"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\3\\index.html",
+          "sha256": "1179d60ea848d45c01304e48ce8ad24825993c9f3e5caf50c08cfe32ee6e91db"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\3\\index.html",
+          "sha256": "1247ae715925b4b549745b9069ce615ebe4dc1821c9bc566ed2bae6d74076b72"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\3\\practice.html",
+          "sha256": "5c11817fc97e46fe5dddfd72e5733faaabf381ddf1930bd64c7e0be7e4c00c29"
+        }
+      },
+      "sourceRoles": [
+        "HSS-ID.A.1=Addressing",
+        "HSS-ID.A.2=BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "shifted dot plots notice/wonder",
+        "real previous survey only if genuinely collected or explicitly fictional alternatives",
+        "three displays and three written interpretations, gallery peer critique",
+        "read box, interpret typical values, mean, median interval and graphs; original Cool-down substitute"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l03-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l03-sequential-source-abc-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "decision": "SOURCE_GOALS_AND_ACTIVITY_MATCHED_FIRST_PARTY_EQUIVALENT",
+        "reviewer": "Coder 5 course author",
+        "externalSignature": "NOT_REQUIRED_BY_CURRENT_ADMIN",
+        "sourceImageIdentity": "NOT_CLAIMED",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "preserveCorrectPriorContent": true,
+        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
+      },
+      "C": {
+        "status": "BLOCKED_C_SHARED",
+        "draftPrepared": true,
+        "oracles": "Shifted synthetic arrays median difference 5, equal range 3; graph drawing human scored",
+        "humanScored": true,
+        "runtimeSupported": false,
+        "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
+        "owner": "Supervisor 2"
+      },
+      "D": "NOT_RUN_BATCH",
+      "readyForStageD": false,
+      "reviewStart": null,
+      "reviewElapsedSeconds": null,
+      "timingNote": "not captured at source review start; no invented duration"
+    },
+    {
+      "ordinal": 4,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+      "title": "The Shape of Distributions",
+      "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\4\\preparation.html",
+          "sha256": "723c3cecb795e597da9ff532849b9c100de2e277c0aca18814989a1775ce1a7a"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\4\\index.html",
+          "sha256": "7eebda7e3d7c59d3f5866f3bfd5efce2e07a4d5a333ec0658b804b365c2c4bdf"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\4\\index.html",
+          "sha256": "31489388ea641d90b43fb1d8d0065d1c4f0960a91e1ecf49c3e578e85cc2a8d8"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\4\\practice.html",
+          "sha256": "f5eca991f7c3e615ca9e6979064db097fe58cb025e6cdfc2082b808abe0997e0"
+        }
+      },
+      "sourceRoles": [
+        "HSS-ID.A.1=Addressing",
+        "HSS-ID.A.2=BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "distribution-shape four-way warm-up",
+        "five distributions paired dot plots and frequency cards, ten representations",
+        "invent and justify possible context, cannot infer actual sampled population",
+        "practice drawing/classifying symmetric, skew, uniform, bell and bimodal, original Cool-down substitute"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l04-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l04-sequential-source-abc-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "decision": "SOURCE_GOALS_AND_ACTIVITY_MATCHED_FIRST_PARTY_EQUIVALENT",
+        "reviewer": "Coder 5 course author",
+        "externalSignature": "NOT_REQUIRED_BY_CURRENT_ADMIN",
+        "sourceImageIdentity": "NOT_CLAIMED",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "preserveCorrectPriorContent": true,
+        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
+      },
+      "C": {
+        "status": "BLOCKED_C_SHARED",
+        "draftPrepared": true,
+        "oracles": "A bell symmetric, B uniform, C right skewed, D bimodal, E left skewed; explanations human scored",
+        "humanScored": true,
+        "runtimeSupported": false,
+        "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
+        "owner": "Supervisor 2"
+      },
+      "D": "NOT_RUN_BATCH",
+      "readyForStageD": false,
+      "reviewStart": null,
+      "reviewElapsedSeconds": null,
+      "timingNote": "not captured at source review start; no invented duration"
+    },
+    {
+      "ordinal": 5,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
+      "title": "Calculating Measures of Center and Variability",
+      "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\5\\preparation.html",
+          "sha256": "0a850fe1610f39f0ec22ad36cf14fb2df0ee7b02aea0fb7ad52ab8e4d8047cf0"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\5\\index.html",
+          "sha256": "01ff9622b9a22a224ff04659922f8830603af4ef62a2c6d69aeee231ff89686c"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\5\\index.html",
+          "sha256": "1152f959ed268ec632a748da5e5193e322803ba8863d57075eb3c0f6dcd2bfb6"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\5\\practice.html",
+          "sha256": "692a264cbc49f460d045abbd567675b646ecb95a912473be70f4eb5a12a5af7a"
+        }
+      },
+      "sourceRoles": [
+        "6.SP.B.5.c=BuildingOn",
+        "HSS-ID.A.1=BuildingTowards",
+        "HSS-ID.A.2=BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "optional diagnostic; mean/median statement review",
+        "quartile and IQR interpretation",
+        "absolute deviations/MAD table, hypothetical meter-stick not physical proof",
+        "mean, median, IQR, MAD and graphical reasoning, original Cool-down substitute"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l05-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l05-sequential-source-abc-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "decision": "SOURCE_GOALS_AND_ACTIVITY_MATCHED_FIRST_PARTY_EQUIVALENT",
+        "reviewer": "Coder 5 course author",
+        "externalSignature": "NOT_REQUIRED_BY_CURRENT_ADMIN",
+        "sourceImageIdentity": "NOT_CLAIMED",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "preserveCorrectPriorContent": true,
+        "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
+      },
+      "C": {
+        "status": "BLOCKED_C_SHARED",
+        "draftPrepared": true,
+        "oracles": "Seven fictional data mean=7, median=7, Q1=5, Q3=9, MAD=16/7 and IQR=4",
+        "humanScored": true,
+        "runtimeSupported": false,
+        "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
+        "owner": "Supervisor 2"
+      },
+      "D": "NOT_RUN_BATCH",
+      "readyForStageD": false,
+      "reviewStart": null,
+      "reviewElapsedSeconds": null,
+      "timingNote": "not captured at source review start; no invented duration"
+    }
+  ],
+  "return_queue": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "returnStatus": "BLOCKED_C_SHARED",
+      "owner": "Supervisor 2",
+      "required": "P3 exact set A,C,E: accept case/ordering; reject malformed/extra/duplicate"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+      "returnStatus": "BLOCKED_C_SHARED",
+      "owner": "Supervisor 2",
+      "required": "Synthetic 30 plants: bins10=2,7,9,7,4,1; bins5=0,2,3,4,4,5,4,3,3,1,1; five-number=(46,58,66.5,76,92)"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+      "returnStatus": "BLOCKED_C_SHARED",
+      "owner": "Supervisor 2",
+      "required": "Shifted synthetic arrays median difference 5, equal range 3; graph drawing human scored"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L04",
+      "returnStatus": "BLOCKED_C_SHARED",
+      "owner": "Supervisor 2",
+      "required": "A bell symmetric, B uniform, C right skewed, D bimodal, E left skewed; explanations human scored"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
+      "returnStatus": "BLOCKED_C_SHARED",
+      "owner": "Supervisor 2",
+      "required": "Seven fictional data mean=7, median=7, Q1=5, Q3=9, MAD=16/7 and IQR=4"
+    }
+  ],
+  "counts": {
+    "TOTAL": 132,
+    "AUTHORED": 132,
+    "A_CLOSED": 5,
+    "B_CLOSED": 5,
+    "C_PREPARED": 5,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 5,
+    "REMAINING": 132,
+    "SOURCE_REVIEW_CUMULATIVE": 27,
+    "STRUCTURED_RUBRIC_DRAFTS": 27
+  },
+  "verification": {
+    "sources": "four local HTML SHA256 each lesson",
+    "nodeSidecars": "132/132 PASS",
+    "mathOracles": "LOCAL_PASS",
+    "dotnet": "NOT_RUN_CURRENT_SHA",
+    "ci": "NOT_RUN_MANUALLY",
+    "StageD": "NOT_RUN"
+  }
+}

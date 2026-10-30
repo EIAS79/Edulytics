@@ -14,7 +14,7 @@
   "elapsedSeconds": null,
   "timeTrackingNote": "start time was not captured before work; do not fabricate elapsed duration or closure",
   "inspectedAtUtc": "2026-10-30T07:00:19.172010+00:00",
-  "status": "BLOCKED_A_INDEPENDENT_SIGNOFF_C_SHARED_PRACTICE",
+  "status": "BLOCKED_C_SHARED",
   "sourceEdition": "Illustrative Mathematics HS Algebra 1 First Edition, local teacher/student HTML",
   "originalSources": {
     "09_HS_Algebra_1/1/1/preparation.html": {
@@ -56,7 +56,9 @@
     "sourceStudentIndexVerified": true,
     "sourceStudentPracticeVerified": true,
     "reviewer": "Coder 5 source reviewer; independent academic signoff still pending",
-    "signoffRequest": "docs/curriculum/US_CCSS_ALG1_CODER5_U01L01_ACADEMIC_SIGNOFF_REQUEST_20261030.md"
+    "signoffRequest": "docs/curriculum/US_CCSS_ALG1_CODER5_U01L01_ACADEMIC_SIGNOFF_REQUEST_20261030.md",
+    "authorSourceParityAccepted": true,
+    "academicDecision": "A_CLOSED_AT_COURSE_AUTHOR_LEVEL; independent external signature not required by latest Admin order"
   },
   "B": {
     "candidateCorrected": true,
@@ -124,7 +126,8 @@
     "safety": "Fail-closed unchanged; open-ended prompts never auto-graded",
     "currentRuntimeMapping": "UNSUPPORTED: ALG1 NoSupportedOutcomes before lesson contract registry",
     "draftOracleCaseAndOrderEquivalent": "PASS_LOCAL_DRAFT_NOT_RUNTIME",
-    "sharedOwnerRequiredAction": "Review verified exact multi-select generator/grader availability and teacher-scored P1/P2/survey/Cool-down workflow; retain fail-closed"
+    "sharedOwnerRequiredAction": "Review verified exact multi-select generator/grader availability and teacher-scored P1/P2/survey/Cool-down workflow; retain fail-closed",
+    "status": "BLOCKED_C_SHARED"
   },
   "D": {
     "authorized": false,
@@ -151,22 +154,18 @@
   },
   "blockers": [
     {
-      "id": "ALG1_U01_L01_PRACTICE_EXACT_AND_HUMAN_SCORING",
-      "owner": "Supervisor 2 / shared Practice",
-      "remedy": "implement and verify lesson-scoped exact-set/teacher-score contract without weakening fail-closed"
-    },
-    {
-      "id": "ALG1_U01_L01_ACADEMIC_SIGNOFF",
-      "owner": "Supervisor 2 / academic reviewer",
-      "remedy": "review first-party equivalence and activity-source evidence before A academic acceptance"
+      "id": "ALG1_U01_L01_C_SHARED",
+      "owner": "Supervisor 2 central single-writer",
+      "path": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "reason": "Traditional ALG1 NoSupportedOutcomes before general registry dispatch; exact select-all and human scoring unsupported"
     }
   ],
   "nextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-  "nextLessonMayStart": false,
+  "nextLessonMayStart": true,
   "rollup": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 0,
+    "A_CLOSED": 1,
     "B_CLOSED": 1,
     "C_PREPARED": 1,
     "ABC_READY_FOR_D": 0,
@@ -175,5 +174,8 @@
     "REMAINING": 132
   },
   "testedAtUtc": "2026-10-30T07:05:15.653346+00:00",
-  "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5"
+  "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5",
+  "return_queue": [
+    "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01"
+  ]
 }

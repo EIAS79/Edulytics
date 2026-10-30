@@ -4,9 +4,9 @@
   "asOfDate": "2026-10-30",
   "recipient": "SUPERVISOR 2",
   "sourcePairsFetched": 129,
-  "sourceComparedCandidates": 25,
+  "sourceComparedCandidates": 27,
   "sourceRepairedV12": 14,
-  "sourceActivityReviewsOutstanding": 107,
+  "sourceActivityReviewsOutstanding": 105,
   "exactAcceptedPracticeContracts": 0,
   "safety": "Existing ALG1 fail-closed gate remains until actual source-aligned, scored, tenant-safe integration.",
   "sharedRendererNote": "Five new SVGs are route-prepared in the ALG1-only partial, not added to the shared host. Requires Supervisor 2 approval.",
@@ -21,13 +21,13 @@
         "1.1: Which One Doesn’t Belong?: Types of Data",
         "1.2: Representing Data About You and Your Classmates"
       ],
-      "sourceEvidence": "LOCAL_TEACHER_PREP_INDEX_AND_STUDENT_INDEX_PRACTICE_REVIEWED_20261030",
+      "sourceEvidence": "LOCAL_TEACHER_PREP_TEACHER_INDEX_STUDENT_INDEX_STUDENT_PRACTICE_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
         "fixed source-aligned first-party statistical-select-all (A,C,E); exact-set scorer",
         "teacher-scored numerical and categorical survey design with rationales",
         "teacher-scored anonymous survey investigation and first-party Cool-down"
       ],
-      "familiesEvidenceLevel": "LOCAL_LESSON_REVIEWED_DRAFT_NOT_INTEGRATED",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_COURSE_AUTHOR_DRAFT_FAIL_CLOSED_SHARED_C",
       "v15StaticOracleStatus": "PASS_LOCAL_CASE_INSENSITIVE_ORDER_INDEPENDENT_NOT_RUNTIME",
       "v15RuntimeMapping": "UNSUPPORTED_ALG1_EARLY_NO_SUPPORTED_OUTCOMES",
       "v15CentralOwnerAction": "Supervisor 2: verify exact multi-select family, lesson contract and teacher human-scoring pathway; preserve fail-closed",
@@ -70,7 +70,9 @@
         "integrationOwner": "Supervisor 2",
         "scoringVerified": false,
         "attemptPersisted": false
-      }
+      },
+      "v16AssessmentStatus": "BLOCKED_C_SHARED: generator/scorer unsupported by current ALG1 fail-closed",
+      "v16ReturnQueue": true
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
@@ -83,18 +85,22 @@
         "2.2: Tomato Plants: Histogram",
         "2.3: Tomato Plants: Box Plot"
       ],
-      "sourceEvidence": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "sourceEvidence": "LOCAL_TEACHER_PREP_TEACHER_INDEX_STUDENT_INDEX_STUDENT_PRACTICE_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
-        "numeric data representation",
-        "distribution statistic and graph"
+        "26 synthetic phone battery-life dot/hist/box display comparisons (human-scored drawing)",
+        "30 synthetic tomato days histogram width 10/5 with exact count and five-number math oracle",
+        "source-specific P1 dot median, P2 box drawing, P3 interval histogram, P4 numerical-versus-categorical select-all, P5 statistical variability explanation",
+        "original Edulytiks Cool-down, human-scored 6-point rubric"
       ],
-      "familiesEvidenceLevel": "UNIT_PLACEHOLDER_REQUIRES_LESSON_REVIEW",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_COURSE_AUTHOR_DRAFT_FAIL_CLOSED_SHARED_C",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "v16AssessmentStatus": "BLOCKED_C_SHARED: generator/scorer unsupported by current ALG1 fail-closed",
+      "v16ReturnQueue": true
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
@@ -106,13 +112,13 @@
         "3.1: Notice and Wonder: Dot Plots",
         "3.2: Data Displays"
       ],
-      "sourceEvidence": "V13_TARGETED_SOURCE_REVIEW_NOT_ACADEMIC_APPROVAL",
+      "sourceEvidence": "LOCAL_TEACHER_PREP_TEACHER_INDEX_STUDENT_INDEX_STUDENT_PRACTICE_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
         "read shifted distribution from two dot plots",
         "identify histogram bins and quartile definitions",
         "create and critique three displays; human-scored"
       ],
-      "familiesEvidenceLevel": "SOURCE_SPECIFIC_AUTHOR_PROPOSAL_NOT_SHARED_ENGINE",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_COURSE_AUTHOR_DRAFT_FAIL_CLOSED_SHARED_C",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
@@ -130,6 +136,13 @@
         "boundary",
         "malformed",
         "teacher-only"
+      ],
+      "v16AssessmentStatus": "BLOCKED_C_SHARED: generator/scorer unsupported by current ALG1 fail-closed",
+      "v16ReturnQueue": true,
+      "v16SpecificFamilies": [
+        "gallery drawing and peer critique human-scored",
+        "synthetic shifted-dot median 3.5 vs 8.5 numerical oracle",
+        "multi-possible typical values requires contextual teacher scoring"
       ]
     },
     {
@@ -143,19 +156,26 @@
         "4.2: Matching Distributions",
         "4.3: Where Did The Distribution Come From?"
       ],
-      "sourceEvidence": "DIRECT_SOURCE_TASK_REPAIR_NOT_ACCEPTED",
+      "sourceEvidence": "LOCAL_TEACHER_PREP_TEACHER_INDEX_STUDENT_INDEX_STUDENT_PRACTICE_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
         "dot-plot sketch and distribution shape classification",
         "frequency-to-graph and graph-to-frequency matching",
         "verbal context critique; HUMAN_TEACHER_ONLY"
       ],
-      "familiesEvidenceLevel": "FIRST_PARTY_SOURCE_COMPARISON_DRAFT",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_COURSE_AUTHOR_DRAFT_FAIL_CLOSED_SHARED_C",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "v16AssessmentStatus": "BLOCKED_C_SHARED: generator/scorer unsupported by current ALG1 fail-closed",
+      "v16ReturnQueue": true,
+      "v16SpecificFamilies": [
+        "ten cards five matched distributions",
+        "shape tail/dot-plot equivalence with justified explanation",
+        "student-invented context human-scored"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
@@ -168,19 +188,26 @@
         "5.2: Heartbeats: Part 1",
         "5.3: Heartbeats: Part 2"
       ],
-      "sourceEvidence": "DIRECT_SOURCE_TASK_REPAIR_NOT_ACCEPTED",
+      "sourceEvidence": "LOCAL_TEACHER_PREP_TEACHER_INDEX_STUDENT_INDEX_STUDENT_PRACTICE_REVIEWED_20261030",
       "proposedAssessmentFamilies": [
         "mean-median-IQR-MAD with known quartile convention",
         "dot-plot and statistics interpretation",
         "actual physical demonstration; HUMAN_ONLY"
       ],
-      "familiesEvidenceLevel": "FIRST_PARTY_SOURCE_COMPARISON_DRAFT",
+      "familiesEvidenceLevel": "SOURCE_SPECIFIC_COURSE_AUTHOR_DRAFT_FAIL_CLOSED_SHARED_C",
       "exactPracticeApproved": false,
       "scoringVerified": false,
       "attemptPersisted": false,
       "needsSourceSpecificPracticeWork": true,
       "requiresSupervisor2Integration": true,
-      "existingSafetyGate": "ALG1 FAIL CLOSED"
+      "existingSafetyGate": "ALG1 FAIL CLOSED",
+      "v16AssessmentStatus": "BLOCKED_C_SHARED: generator/scorer unsupported by current ALG1 fail-closed",
+      "v16ReturnQueue": true,
+      "v16SpecificFamilies": [
+        "mean median MAD IQR of seven data values",
+        "teacher judgement of units and quartile convention",
+        "physical meter-stick task must not be graded as performed"
+      ]
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L06",
