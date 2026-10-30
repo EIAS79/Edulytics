@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 2,
-    "B_CLOSED": 2,
+    "A_CLOSED": 3,
+    "B_CLOSED": 3,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 2,
+    "BLOCKED": 3,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -172,28 +172,50 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-3\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-3\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_LAYER_COUNTING_AND_40_CUBE_EXAMPLE; PRECISE_SOURCE_WARMUP_CARD_CONSTRUCTION_AND_EDULYTIKS_ORIGINAL_EXIT_CHECK",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numeric prism volume only as supplemental; EXTEND shared source-aligned open model/construction rubric if needed",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l03-contract-v15.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T07:57:36.928Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 single writer #592",
+        "reason": "Generic outcome-mapped cuboid volume/surface-area fallback not demonstrated source-correct for prism-card interpretation, hidden layer explanations, teacher grading.",
+        "acceptWhen": "Exact selected runtime contract and teacher-scored open model response prepared and statically wired; independent cases reviewed."
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "original2021TeacherStudentFacing": "2021 original teacher lesson.html embedded Student Facing and preparation.html inspected",
+        "goal": "Find prism volume by complete layers and account for hidden cubes",
+        "tasks": "number talk 24,24,30,36; 48-cube card-based prism construction; packed 40-cube prism 5×8=2×20=4×10",
+        "figures": "original card artwork and PDF not verified, replaced by attributed Edulytiks-original descriptions",
+        "publisherCooldown": "NOT_VERIFIED_GATED",
+        "rights": "CC BY 4.0, no publisher artwork imported"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l03-contract-v15.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "a146fc970d473903e88278b8ba526b929fa1c33e",
+      "authoredCandidate": true,
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l03-practice-rubric-v15.json",
+      "beforeAfterFinding": {
+        "before": "Earlier warm-up omitted 3×2×5 and 3×2×6; card construction logistics and 4×10 layer option were incomplete, exit check not explicitly authored.",
+        "after": "Four exact source mental expressions, complete prism-card task with 48 cubes per pair, 3 ways to count 40 cubes, teacher rubric and Edulytiks-original exit check."
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L04",
@@ -3821,8 +3843,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T07:56:23.872Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L03",
+  "updatedAtUtc": "2026-10-30T07:57:36.928Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L04",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -3831,6 +3853,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
       "reason": "C shared routing and teacher rubric"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
+      "reason": "C exact practice and human-rubric wiring"
     }
   ]
 }

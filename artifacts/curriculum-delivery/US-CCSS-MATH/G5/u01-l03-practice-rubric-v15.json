@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
+  "source": "2021 IM K–5 Grade 5 U01:L03 original teacher lesson and preparation, locally read-only",
+  "rights": "CC BY 4.0 narrative; distinct first-party Edulytiks numerical models; original cards/blackline and gated Jada's Prism Cool-down unverified",
+  "OutcomeCodes": [
+    "CCSS:5.MD.C.4"
+  ],
+  "sourceTasks": [
+    {
+      "task": "mental_factor_number_talk",
+      "math": [
+        "6×4=24",
+        "3×2×4=24",
+        "3×2×5=30",
+        "3×2×6=36"
+      ],
+      "teacherRubric": "Interpret increasing 3×2 layer count, not just products"
+    },
+    {
+      "task": "card_based_prism_construction",
+      "math": "fully packed rectangular prism, including hidden cubes, chosen from a source-card functionally equivalent original model",
+      "teacherRubric": "Teacher verifies physical/drawn/tactile or precise verbal model and counting"
+    },
+    {
+      "task": "compare_40_cube_groupings",
+      "math": [
+        "5×8=40",
+        "2×20=40",
+        "4×10=40"
+      ],
+      "teacherRubric": "Each factor describes whole cubical layers, covers all cubes once"
+    },
+    {
+      "task": "original_exit_check",
+      "math": "2×4×5 fully packed; visible top 8 is insufficient",
+      "teacherRubric": "Accept 40 plus two coherent layer interpretations and hidden-cube explanation"
+    }
+  ],
+  "PracticeStrategy": "REUSE numeric prism volume only as supplemental; EXTEND shared source-aligned open model/construction rubric if needed",
+  "selectedRuntimeContract": "NOT_VERIFIED",
+  "explicitLessonMap": "NO_L03_ENTRY_IN_LESSON_SKILL_MAPPING",
+  "officialOutcomeFallback": "CCSS:5.MD.C.4 generic volume target may route supporting.geometry.cuboid_volume and supporting.geometry.surface_area_cuboid; a correct source-aligned exact contract not established",
+  "negativeCases": [
+    "count visible top 8 only",
+    "incorrect 5×8=35",
+    "skip hidden layers",
+    "surface area answer instead of cubic volume",
+    "malformed dimensions",
+    "unjustified scalar 40 as whole construction response",
+    "unsupported cube count for supposed packing"
+  ],
+  "equivalentCases": [
+    "5×8",
+    "2×20",
+    "4×10",
+    "rotation of 2×4×5"
+  ],
+  "humanScoring": "Drawing, physical build, accessible tactile or verbal explanation, hidden-layer interpretation",
+  "status": "BLOCKED_SHARED_INTEGRATION",
+  "owner": "Supervisor 1 single shared writer #592",
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED"
+}
