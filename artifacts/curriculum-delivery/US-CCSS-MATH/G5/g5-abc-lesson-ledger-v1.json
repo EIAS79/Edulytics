@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 5,
-    "B_CLOSED": 5,
+    "A_CLOSED": 6,
+    "B_CLOSED": 6,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 5,
+    "BLOCKED": 6,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -320,28 +320,54 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-6\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-6\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_2x4x3_FIRST_PARTY_VOLUME_EXAMPLE; ADD_EXACT_2021_3_TF_EXPRESSIONS_AND_PRISM_A_90_PRISM_C_84",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numeric volume multiplication as supplement; EXTEND shared exact expression/geometry matching and open scoring if required",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l06-contract-v15.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T08:02:27.660Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "owner": "Supervisor 1 designated single writer #592",
+        "reason": "Exact expression-to-prism contract/teacher feedback selection is not wired/proven; generic numeric volume family insufficient",
+        "acceptWhen": "Evidence of correctly projected exact Practice and teacher-scored expression rationale"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "original2021Teacher": "source lesson.html and preparation.html with embedded Student Facing",
+        "goal": "Interpret mathematical expressions as prism layers and dimensions",
+        "sourceTasks": [
+          "3-statement True/False warm-up",
+          "Card Sort matching prisms and expressions, source Prism A 6×5×3=90",
+          "Two volume tables, source prism 6×3×4=72",
+          "OPTIONAL Two Truths and a Lie with geometric justifications",
+          "Original Edulytiks exit check on 6×3×4"
+        ],
+        "originalArtwork": "NOT_REPRODUCED",
+        "coolDown": "GATED_NOT_VERIFIED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l04-l06-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l06-contract-v15.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "e4d7114a64d7f6822658c480d6a788be15087f02",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Earlier first-party 2×4×3 examples omitted actual source true/false trio and source Prism A 90 and C 84 interpretation.",
+        "after": "Restore exact source arithmetic, match expression geometry and optional activity; original exit with human justification."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l06-practice-rubric-v15.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
@@ -3894,8 +3920,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T08:01:17.608Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L06",
+  "updatedAtUtc": "2026-10-30T08:02:27.660Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L07",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -3916,6 +3942,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L05",
       "reason": "C shared routing and teacher-scored contextual assessment"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
+      "reason": "C exact expression-to-prism and teacher scoring shared dependency"
     }
   ]
 }

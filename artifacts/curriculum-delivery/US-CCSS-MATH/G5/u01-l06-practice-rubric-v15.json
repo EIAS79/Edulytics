@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
+  "source": "Original 2021 IM G5 U01 L06 teacher lesson and preparation on authorized Primary Our-CS",
+  "sourceTasks": [
+    "3-statement True/False warm-up",
+    "Card Sort matching prisms and expressions, source Prism A 6×5×3=90",
+    "Two volume tables, source prism 6×3×4=72",
+    "OPTIONAL Two Truths and a Lie with geometric justifications",
+    "Original Edulytiks exit check on 6×3×4"
+  ],
+  "expectedCases": [
+    "(4×2)×5=4×(2×5) true",
+    "(2×5)×4=2×20 true",
+    "5×4×2=10×40 false",
+    "6×(5×3)=(6×5)×3=15×6=90",
+    "(6×3)×4=(3×4)×6=72",
+    "(7×4)×3=(7×3)×4=7×12=84"
+  ],
+  "negativeCases": [
+    "6+(3×4) not equivalent to 72",
+    "10×40=400 not 40",
+    "surface area is not volume",
+    "wrong layer height after base rotation",
+    "malformed expressions",
+    "scalar-only volume without geometry interpretation"
+  ],
+  "humanRubric": "Teacher matches expression to prism dimensions and corresponding face/layer; accepts equivalent factorizations, explains incorrect ones, supports tactile/verbal and drawing work",
+  "PracticeStrategy": "REUSE numeric volume multiplication as supplement; EXTEND shared exact expression/geometry matching and open scoring if required",
+  "explicitLessonMapping": "NO_L06_ENTRY",
+  "selectedRuntimeContract": "NOT_VERIFIED",
+  "fallbackRisk": "Official outcome fallback general volume/surface-area does not prove exact expression matching; choose 5.OA.A.1/2 and 5.MD.C.5 targets source-specifically",
+  "StageA": "COMPLETE_WITH_EVIDENCE",
+  "StageB": "COMPLETE_WITH_EVIDENCE",
+  "StageC": "BLOCKED_SHARED_INTEGRATION",
+  "publisherFigures": "NOT_REPRODUCED",
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED",
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "owner": "Supervisor 1 designated shared integration writer #592"
+}
