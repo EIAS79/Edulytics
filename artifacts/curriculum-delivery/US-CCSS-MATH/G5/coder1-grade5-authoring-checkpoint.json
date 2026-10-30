@@ -674,9 +674,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "PARTIAL_SOURCE_HTML_COMPARED_READY_REUSE; ORIGINAL_STUDENT_PDF_IMAGE_AND_GATED_RESPONSE_NOT_VERIFIED; NO_ACADEMIC_ACCEPTANCE",
-      "stageB": "DIRECT_RICH_V2_CANDIDATE_RETAINED; AUTHENTICATED_LEARNER_TEACHER_RENDER_NOT_RUN",
-      "stageC": "ACTUAL_SELECTED_PRACTICE_VERIFIER_TEACHER_RUBRIC_NOT_RUN",
+      "stageA": "LOCAL_SOURCE_REVIEWED_PUBLISHER_GATED_COOLDOWN_AND_ARTWORK_PIXEL_PARITY_NOT_CERTIFIED",
+      "stageB": "EXISTING_CORRECT_GEOMETRIC_MODELS_REUSED_SOURCE_RUBRIC_ADDED",
+      "stageC": "EXACT_SELECTED_GENERATOR_NOT_VERIFIED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -684,9 +684,15 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "Constructing composite prisms from disjoint rectangular solids and justifying additivity",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-v23-abc-20261030",
       "v9SourceTaskAudit": "PUBLIC_2021_TEACHER_STUDENT_FACING_HTML_COMPARED; REUSE_EXISTING_G5_RICH_V2_CANDIDATE; ORIGINAL_CARD/PDF/GATED_RESPONSE_NOT_VERIFIED",
-      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json"
+      "v9AcceptanceEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/v9-u01-l06-l08-ready-reuse-source-review.json",
+      "vABC20261030": {
+        "sourceLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l08-abc-element-ledger-20261030.json",
+        "gradeOwnedSourceContract": true,
+        "tests": "WRITTEN_NOT_RUN",
+        "readyForStageD": false
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
@@ -8292,5 +8298,11 @@
       "PED:US-CCSS-MATH:G5:U01:L07"
     ],
     "nextIndependentLesson": "U01:L08"
+  },
+  "v21SequentialABC": {
+    "lastReviewed": "PED:US-CCSS-MATH:G5:U01:L08",
+    "openItemsRetained": true,
+    "readyForStageD": 0,
+    "nextIndependentLesson": "U01:L09"
   }
 }
