@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 470" role="img" aria-labelledby="g7-l07-title g7-l07-desc">
+  <title id="g7-l07-title">Triangle side-locus construction: intersecting circles and impossible closure</title>
+  <desc id="g7-l07-desc">First panel: start with horizontal segment AB of 4 inches, then draw radius-3-inch circles centered at A and at B. Their circles intersect at C above and C-prime below. Either meeting point gives a 4, 3, 3 inch triangle, and the two constructions are mirror copies, congruent rather than different sizes. The circles model compass or hinged-strip endpoint traces. Second panel: for a 21-inch base, a radius-4-inch circle from the left endpoint and a radius-2-inch circle from the right endpoint have no intersection because 4 plus 2 is less than 21. Given two sides 5 and 4 inches, any non-flat third side must be strictly between 1 and 9 inches. These are original Edulytiks coordinate diagrams; students should construct their own traces.</desc>
+  <style>
+    .bg{fill:#fff}.panel{fill:#f6f9fc;stroke:#637687;stroke-width:1.5}
+    .circleA{fill:none;stroke:#1a6482;stroke-width:2.5}
+    .circleB{fill:none;stroke:#a35325;stroke-width:2.5;stroke-dasharray:8 4}
+    .triangle{fill:rgba(32,120,154,.12);stroke:#1d4259;stroke-width:3}
+    .line{stroke:#213c51;stroke-width:3.3;stroke-linecap:round}
+    .heading{font:bold 19px system-ui,sans-serif;fill:#19334a}
+    .label{font:16px system-ui,sans-serif;fill:#19334a}
+    .small{font:14px system-ui,sans-serif;fill:#19334a}
+    .point{fill:#19334a}
+  </style>
+  <rect class="bg" width="1080" height="470"/>
+  <text class="heading" x="20" y="28">Compass traces represent every possible third vertex</text>
+  <rect class="panel" x="18" y="46" width="515" height="381" rx="9"/>
+  <rect class="panel" x="546" y="46" width="514" height="381" rx="9"/>
+  <text class="heading" x="34" y="79">4–3–3 inches: two intersections</text>
+  <circle id="g7-l07-circle-a" class="circleA" cx="130" cy="250" r="108" data-radius-inch="3" data-px-per-inch="36"/>
+  <circle id="g7-l07-circle-b" class="circleB" cx="274" cy="250" r="108" data-radius-inch="3" data-px-per-inch="36"/>
+  <polygon id="g7-l07-triangle-upper" class="triangle" points="130,250 274,250 202,169.5016" data-px-per-inch="36"/>
+  <polygon id="g7-l07-triangle-lower" class="triangle" points="130,250 274,250 202,330.4984" data-px-per-inch="36" opacity=".38"/>
+  <circle class="point" cx="130" cy="250" r="4"/>
+  <circle class="point" cx="274" cy="250" r="4"/>
+  <circle class="point" cx="202" cy="169.5016" r="4"/>
+  <circle class="point" cx="202" cy="330.4984" r="4"/>
+  <text class="label" x="108" y="270">A</text>
+  <text class="label" x="279" y="270">B</text>
+  <text class="label" x="209" y="165">C</text>
+  <text class="label" x="210" y="339">C′</text>
+  <text class="small" x="34" y="386">AB=4 in; AC=BC=3 in</text>
+  <text class="small" x="34" y="408">C and C′ are reflected congruent triangles</text>
+  <text class="heading" x="563" y="79">21–4–2 inches: no meeting point</text>
+  <line id="g7-l07-invalid-base" class="line" x1="650" y1="250" x2="902" y2="250" data-length-inch="21" data-px-per-inch="12"/>
+  <circle id="g7-l07-invalid-circle-left" class="circleA" cx="650" cy="250" r="48" data-radius-inch="4" data-px-per-inch="12"/>
+  <circle id="g7-l07-invalid-circle-right" class="circleB" cx="902" cy="250" r="24" data-radius-inch="2" data-px-per-inch="12"/>
+  <circle class="point" cx="650" cy="250" r="4"/>
+  <circle class="point" cx="902" cy="250" r="4"/>
+  <text class="label" x="627" y="277">A</text>
+  <text class="label" x="907" y="277">B</text>
+  <text class="small" x="563" y="386">Distance AB=21 in; radii=4 and 2 in</text>
+  <text class="small" x="563" y="408">No overlap: 21&gt;4+2 (gap 15 in)</text>
+  <text class="small" x="20" y="454">Original first-party construction: use compass or rotating strips; 5 and 4 inch sides require 1 &lt; third side &lt; 9 inches.</text>
+</svg>
