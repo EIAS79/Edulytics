@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L02",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U02:L03",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 13,
+    "READY_FOR_D": 14,
     "D_VERIFIED": 0,
-    "BLOCKED": 6,
-    "REMAINING": 135
+    "BLOCKED": 5,
+    "REMAINING": 134
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -847,23 +847,18 @@
       "reuseFinding": "REUSE_SOURCE_SPECIFIC_1_DIV_2_3_4_5_AND_MULTIPLE_SANDWICH_MATCH_RICH_V2; ONLY_APPEND_ORIGINAL_EXIT_AND_C_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE_NUMERIC_FRACTION_AS_QUOTIENT_SUPPLEMENT; EXTEND_DIAGRAM_MATCHING_TEACHER_SCORING_SHARED",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u02-l02-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:27:01.479Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T20:11:35.048Z",
+      "elapsedSeconds": 27874,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated single shared integration writer #592",
-        "reason": "Numeric family may grade 3÷4 but source requires card matching, equivalent diagrams, explanation and teacher review not proven wired",
-        "acceptWhen": "Actual lesson-selected source-faithful contract and manual grading/feedback path for diagrams demonstrably wired"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "original": "IM 2021 local U02:L02 teacher and preparation",
         "sourceActivities": [
@@ -885,7 +880,17 @@
         "before": "Source-aligned Sandwich Match and fraction table already strong, original independent exit not explicit.",
         "after": "Preserve accepted models; append original 3÷4 fair share exit, teacher rubric and negative/equivalent fixture cases."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l02-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l02-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u02.l02.unit_share_equivalence",
+        "source": "Our-CS 2021 G5 U02 L02 lesson/preparation.html and Student Facing",
+        "digital": "FRACTION_QUOTIENT_CHOICE_ONLY",
+        "teacher": "Teacher reviews shaded rectangular-unit diagrams, exact equal part sizes, interpretations of 1÷n=1/n and card-sort matches; gated Cool-down replaced by independently authored Edulytiks check.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "publisherMaterialParity": "NOT_CERTIFIED_NO_PUBLISHER_IMAGES_COPIED",
+        "parentHead": "58077d3d2aa6bed5a9255f894c53dae5c565f058"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L03",

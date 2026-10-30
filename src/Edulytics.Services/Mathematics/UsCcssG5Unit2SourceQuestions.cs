@@ -22,6 +22,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Three sandwiches shared by five people. Choose the share each receives.","3/5 sandwich","5/3 sandwiches","1/5 sandwich"),
                 new("Five sandwiches shared by three people. Choose the amount per person and describe equal portions.","1 2/3 sandwiches","3/5 sandwich","2/3 sandwich")
             ],
+                        ["usccss.g5.u02.l02.unit_share_equivalence"]=[
+                new("One sandwich shared equally among 2 people. How much for each person?","1/2 sandwich","2 sandwiches","1/3 sandwich"),
+                new("One sandwich shared equally among 3 people. How much for each person?","1/3 sandwich","3 sandwiches","2/3 sandwich"),
+                new("One sandwich shared equally among 4 people. How much for each person?","1/4 sandwich","4 sandwiches","1/2 sandwich"),
+                new("One sandwich shared equally among 5 people. How much for each person?","1/5 sandwich","5 sandwiches","1/4 sandwich"),
+                new("Which equality models exactly one sandwich shared by three people?","1÷3=1/3","3÷1=1/3","1÷3=3"),
+                new("Which claim about equal shares of one sandwich is correct?","Each share becomes smaller as more people share one whole","The share becomes bigger as more people share","All equal divisions always give a whole sandwich")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

@@ -24,4 +24,7 @@ test('G5 U02 L01 source fair-share options and teacher-review boundary',()=>{
  ['2/5 sandwich','2 1/2 sandwiches','1 1/2 sandwiches','2/3 sandwich'],
  ['5/2 sandwiches','2/5 sandwich']);
 });
+test('U02:L02 source-specific digital choice and teacher-led assessment',()=>{
+ checkLesson('PED:US-CCSS-MATH:G5:U02:L02','usccss.g5.u02.l02.unit_share_equivalence',["1/2 sandwich","1/3 sandwich","1/4 sandwich"],["2 sandwiches","3 sandwiches"]);
+});
 // NEXT_LESSON_TEST
