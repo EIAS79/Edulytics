@@ -98,7 +98,7 @@ test('Source Practice positive/negative/indexing/equivalent rational cases', () 
   assert.notDeepEqual(...contract.stageB.expectedAnswers.twoDistinctContinuations);
 });
 test('C is a handoff, not fictitious active Practice or completed Stage D', () => {
-  assert.equal(contract.stageC.status,'C_PREPARED_BLOCKED_BY_INTEGRATION');
+  assert.equal(contract.stageC.status,'C_PREPARED_COURSE_MATH_IMPLEMENTED_NOT_INTEGRATED');
   assert.equal(contract.stageC.lessonScopedMappingExplicitInSharedRegistry,false);
   assert.equal(contract.ABC_READY_FOR_D,false);
   assert.equal(contract.D_VERIFIED,false);
