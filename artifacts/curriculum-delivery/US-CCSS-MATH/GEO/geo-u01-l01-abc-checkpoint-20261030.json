@@ -1,0 +1,150 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+  "LessonTitle": "Build It",
+  "Ordinal": 1,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "HeadBeforeCommit": "d2b65c2abf383b37d3d2428aeadbcf9f61acec58",
+  "RecordedAt": "2026-10-30T07:00:57.341Z",
+  "StartedAt": null,
+  "ClosedAt": null,
+  "ElapsedSeconds": null,
+  "NoteOnTime": "Session start was not time-stamped; no 3-minute SLA claim. Lesson remains open.",
+  "Status": "BLOCKED_NOT_ABC_CLOSED_DO_NOT_ADVANCE",
+  "NextLessonCode": null,
+  "LocalSourceFileAndPages": [
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\preparation.html",
+      "sections": [
+        "Learning Goals",
+        "Learning Targets",
+        "CCSS Standards"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\index.html",
+      "sections": [
+        "1.1 The Right Tool",
+        "1.2 Illegal Construction Moves",
+        "1.3 Can You Make a Perfect Copy?",
+        "Activity Synthesis"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\1\\index.html",
+      "sections": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "Summary"
+      ]
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\1\\1\\practice.html",
+      "sections": [
+        "Practice 1-4"
+      ]
+    }
+  ],
+  "ReusedEvidence": [
+    "geo-124-source-manifest-20261028.json U01:L01 source comparison and V13 reopen",
+    "geo-v10-124-candidate-execution-evidence-20261029.json",
+    "geo-v12-124-candidate-source-and-practice-evidence-20261029.json",
+    "geo-v15-source-batches-and-shared-handoff-20261030.json",
+    "prior preserved three worked examples and existing 124 lesson candidates"
+  ],
+  "SourceTaskCrosswalk": [
+    {
+      "Activity": "1.1",
+      "SourceRequirement": "Contrast sketch and explicit straightedge/compass circle-and-segment construction, transferring length PQ",
+      "FirstPartyMapping": "New activity A paragraph + existing radius-transfer worked example",
+      "Disposition": "AUTHORING_ALIGNED_NO_AUTHENTICATED_TOOL_RENDER"
+    },
+    {
+      "Activity": "1.2",
+      "SourceRequirement": "Estimated midpoint causes non-reproducibility; distinguish guaranteed radius equality from unjustified half-segment assertion",
+      "FirstPartyMapping": "New activity B paragraph and explicit error correction",
+      "Disposition": "PREVIOUS_MATERIAL_GAP_REPAIRED_AS_FIRST_PARTY_CANDIDATE"
+    },
+    {
+      "Activity": "1.3",
+      "SourceRequirement": "Compare guessed and constructed regular hexagons; justify six equal chords and full turn",
+      "FirstPartyMapping": "Existing regular-hexagon worked example retained + new peer comparison activity C",
+      "Disposition": "FIRST_PARTY_MATHEMATICAL_EQUIVALENT_CANDIDATE_NOT_STUDENT_DRAWING_VERIFIED"
+    },
+    {
+      "Activity": "Practice 1-4",
+      "SourceRequirement": "Geometric circle/line diagram interpretation and non-measurement distance claims",
+      "FirstPartyMapping": "Teacher-scored first-party evidence and existing conceptual content, not an exact Practice family",
+      "Disposition": "SOURCE_PRACTICE_NOT_EXACT_MAPPED"
+    }
+  ],
+  "SourceImagesObserved": "Original HTML references remote CMS image assets. No assertion of pixel/source-figure parity; publisher images not copied.",
+  "TeacherLearningGoals": [
+    "Compasses create circles and transfer distances",
+    "Straightedge creates line/segment through points"
+  ],
+  "StandardRoles": {
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.D.12"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "AcademicReviewer": "PENDING_INDEPENDENT_ACADEMIC_REVIEW",
+  "StageA": "REVIEWED_SOURCE_TASKS_NO_INDEPENDENT_PARITY_ACCEPTANCE",
+  "StageB": "TARGETED_RICH_V2_SOURCE_REPAIR_AUTHORED_NOT_VALIDATED_IN_AUTHENTICATED_RENDER",
+  "StageC": "C_PREPARED_COURSE_LOCAL_RUBRIC_ONLY_NOT_PRACTICE_REGISTERED",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": false,
+  "Original2021CoolDown": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+  "FocusedVerification": {
+    "ManualSourceComparison": "DONE_LOCAL_TEACHER_STUDENT_PRACTICE_TEXT",
+    "MathematicalInvariants": "REVIEWED_RADIUS_EQUALITY_AND_MIDPOINT_COUNTEREXAMPLE",
+    "JsonSyntaxAndPackScope": "VALIDATED_BEFORE_COMMIT",
+    "NodeCourseTests": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN_NOT_CLAIMED",
+    "AuthenticatedStudentTeacher": "NOT_RUN",
+    "TwoSchoolDisposableDb": "NOT_RUN"
+  },
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l01-l03-2021.rich-lesson-v2.json",
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l01-first-party-construction-assessment-20261030.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l01-abc-checkpoint-20261030.json"
+  ],
+  "Blockers": [
+    {
+      "Owner": "Supervisor 2 central integration",
+      "Issue": 453,
+      "Problem": "Zero verified exact GEO lesson-to-Practice mappings; no safe machine-grading or actual drawing/teacher-scored lifecycle verified",
+      "Resolution": "Map exact lesson assessment and implement authorized human submission/review/persistence in shared owner branch, then Stage D testing"
+    },
+    {
+      "Owner": "Supervisor 2 Rich V2 owner",
+      "Problem": "No authenticated original first-party construction drawing tool or teacher/student rendering validation",
+      "Resolution": "Verify safe course-rendered input and artifact/rubric UI; do not alter global renderer from GEO branch"
+    },
+    {
+      "Owner": "Independent academic reviewer",
+      "Problem": "Original figure equivalence, complete pedagogical disposition and first-party substitute Cool-down approval still pending",
+      "Resolution": "Review local source crosswalk, visuals, tasks and teacher rubric before marking A/B/C closed"
+    }
+  ],
+  "Metrics": {
+    "TOTAL": 124,
+    "AUTHORED": 124,
+    "A_CLOSED": 0,
+    "B_CLOSED": 0,
+    "C_PREPARED": 1,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 1,
+    "REMAINING": 124
+  }
+}

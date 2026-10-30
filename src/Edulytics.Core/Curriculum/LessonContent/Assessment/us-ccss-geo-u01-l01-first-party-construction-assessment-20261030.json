@@ -1,0 +1,117 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+  "Version": "geo-u01-l01-first-party-human-scored-20261030",
+  "Status": "COURSE_LOCAL_AUTHORING_ONLY_NOT_REGISTERED_OR_RUNTIME_VERIFIED",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "SourceActivities": [
+    "1.1 The Right Tool",
+    "1.2 Illegal Construction Moves",
+    "1.3 Can You Make a Perfect Copy?"
+  ],
+  "SourceStudentUrl": "https://im.kendallhunt.com/HS/students/2/1/1/index.html",
+  "SourceTeacherUrl": "https://im.kendallhunt.com/HS/teachers/2/1/1/index.html",
+  "Rights": "Independent first-party prompt and rubric, no publisher activity artwork reused",
+  "TaskId": "geo-u01-l01-first-party-construction-and-reasoning",
+  "TaskType": "TEACHER_SCORED_CONSTRUCTION",
+  "OriginalFirstPartyTask": "Start with two distinct points J and K. (a) Draw a circle centred at J through K and label another point L on the circle. (b) Explain why JL=JK. (c) A classmate guesses the midpoint M of JK by looking at the diagram and claims JM=MK. Explain why this is not a valid guarantee and replace the guess with a straightedge-and-compass procedure. (d) Show a labelled diagram and give a written justification. Use a paper construction or a separately verified tool; a working drawing app is not currently claimed.",
+  "EvidenceModes": [
+    "STUDENT_CREATED_LABELLED_DIAGRAM_OR_IMAGE",
+    "WRITTEN_STEPS_AND_EQUALITY_JUSTIFICATION",
+    "TEACHER_FEEDBACK"
+  ],
+  "MachineScoringAllowed": false,
+  "AutoGradeFromScalarProhibited": true,
+  "TeacherAssessmentRequired": true,
+  "TaskLifecycle": "AUTHORING_ONLY_NO_STUDENT_SUBMISSION_OR_SAVED_TEACHER_GRADE",
+  "Rubric": {
+    "DimensionScale": {
+      "Min": 0,
+      "Max": 2,
+      "Meaning": "0=not shown, 1=partial, 2=correct and supported"
+    },
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correctly marked distinct starting points and named circle centre, radius, and point L",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Valid radius argument JL=JK, independent of appearance",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Explicit diagnosis that an eyeballed midpoint cannot establish JM=MK",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Reproducible equal-radius-arc perpendicular-bisector procedure with correctly labelled midpoint and explanation",
+        "MaxPoints": 2
+      }
+    ],
+    "TotalMax": 8
+  },
+  "FirstPartyCoolDown": {
+    "OriginalPublisherStatus": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+    "PublisherTeacherLoginProtected": true,
+    "TextVerified": false,
+    "Prompt": "Given two distinct points R and S, draw a circle centred at R through S and label another point T on it. Which length equality is guaranteed? A peer points somewhere near the middle of RS and calls it N. Can they conclude RN=NS? Explain how to locate the true midpoint with permitted construction moves.",
+    "Exemplar": "RT=RS because both are radii of the same circle. RN=NS is not guaranteed for a point chosen by sight. Draw equal-radius arcs from R and S using a common opening greater than RS/2, mark both intersections, then connect them to construct the perpendicular bisector; its intersection with RS is the midpoint.",
+    "TeacherScoring": "Use criteria R1–R4 above; do not auto-score the sketch."
+  },
+  "ReviewCases": [
+    {
+      "Type": "CORRECT",
+      "Submission": "Both congruent arcs intersect twice; their joining line crosses JK at midpoint M; circle JL=JK",
+      "Disposition": "Eligible for full rubric credit after teacher sees drawing"
+    },
+    {
+      "Type": "WRONG",
+      "Submission": "M looks halfway, therefore JM=MK",
+      "Disposition": "Reject unsupported midpoint equality"
+    },
+    {
+      "Type": "MALFORMED",
+      "Submission": "Unlabelled sketch with no identified centres or compass opening",
+      "Disposition": "Request labelled evidence; cannot independently verify construction"
+    },
+    {
+      "Type": "BOUNDARY",
+      "Submission": "J and K coincide or arc radius equals JK/2",
+      "Disposition": "Degenerate or tangent case: cannot establish two distinct arc intersections"
+    },
+    {
+      "Type": "EQUIVALENT",
+      "Submission": "Use intersecting arcs of any equal radius strictly greater than JK/2; either side ordering",
+      "Disposition": "Accept equivalent valid compass construction"
+    }
+  ],
+  "NumericalSubcomponentOnly": {
+    "Example": "JK=8; each midpoint half-length 4 when midpoint is actually constructed",
+    "WrongExample": "Estimated midpoint at distance 3 from J gives JM=3 and MK=5",
+    "MachineGradeStatus": "NOT_REGISTERED_NO_EXACT_GEO_MAPPING"
+  },
+  "AccessAndPersistence": {
+    "RequiredStudentOwner": true,
+    "RequiredExactLessonCode": true,
+    "TeacherRoleRequired": true,
+    "SchoolTenantIsolationRequired": true,
+    "TeacherFeedbackPersisted": true,
+    "Status": "NOT_TESTED_SHARED_OWNER_SUP2"
+  },
+  "Acceptance": {
+    "AcademicReviewerApproved": false,
+    "AuthenticatedStudentRender": false,
+    "StudentSubmitted": false,
+    "TeacherReviewed": false,
+    "SavedGrade": false,
+    "CourseExactPracticeMappingVerified": false,
+    "StageDVerified": false
+  },
+  "CreatedAt": "2026-10-30T07:00:57.341Z"
+}
