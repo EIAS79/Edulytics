@@ -159,3 +159,75 @@ test('U05 L11-L12 independently checks place-value unbundling and equivalent quo
   assert.notEqual(720/3,72/3);
   assert.ok(!near(77.4/5,1.548));
 });
+
+test('U05 L13-L15 source evidence completes comparison only, not A-D', () => {
+  const record=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u05-l13-l15-public-source-task-evidence-20261030.json'),'utf8'));
+  assert.equal(record.summary.directSourceComparisonsTotal,147);
+  assert.equal(record.summary.directSourceComparisonsRemaining,0);
+  assert.equal(record.summary.fullStageAAccepted,0);
+  assert.equal(record.summary.effectiveStudentStageBVerified,0);
+  assert.equal(record.summary.selectedPracticeStageCVerified,0);
+  assert.equal(record.summary.integratedStageDVerified,0);
+  assert.equal(record.summary.academicallyAccepted,0);
+  assert.deepEqual(record.lessonEvidence.map(x=>x.lessonCode),
+    [13,14,15].map(n=>'PED:US-CCSS-MATH:G6:U05:L'+n));
+  for(const e of record.lessonEvidence){
+    assert.equal(e.studentTaskBodiesCompared,true);
+    assert.equal(e.publicTeacherActivityTextCompared,true);
+    assert.equal(e.sourceImagesOrAppletsRenderedAndVerified,false);
+    assert.equal(e.originalStudentPhysicalArtifactObserved,false);
+    assert.equal(e.teacherRubricDraft.actualTeacherScoresPersisted,false);
+    assert.equal(e.exactSelectedPracticeGeneratorVerifier,'NOT_RUN');
+    assert.equal(e.correctWrongMalformedEquivalentStudentAttempts,'NOT_RUN');
+    assert.equal(e.academicAcceptance,'NOT_ACCEPTED');
+    assert.ok(e.sourceTaskPurposes.length>=4);
+  }
+  assert.match(lesson(13).workedExamples,/Source-review V11 source quotient comparisons/);
+  assert.match(lesson(14).workedExamples,/hurdle spacing/);
+  assert.match(lesson(15).workedExamples,/teacher\/learner paper-box protocol/);
+});
+
+test('U05 L13 exact quotient equivalence rejects scaling-only-one-side distractors',()=>{
+  const vals=[5.04/70,50.4/70,504000/700,504000/700000];
+  assert.ok(vals.every((v,i)=>near(v,[0.072,0.72,720,0.72][i])));
+  assert.deepEqual(vals.map(v=>near(v,5.04/7)),[false,true,false,true]);
+  assert.ok(near(48.78/9,4878/900));
+  assert.ok(near(51.2/6.4,5.12/0.64));
+  assert.ok(near(3/0.12,25));
+  assert.ok(near(1.8/0.004,450));
+  assert.ok(near(7.5/1.25,6));
+  assert.ok(near(106.5/3,35.5));
+  assert.ok(near(58.8/0.7,84));
+  assert.ok(near(257.4/1.1,234));
+  assert.ok(near(170.1/24.3,7));
+  assert.ok(!Number.isFinite(7.5/0)); // invalid divisor
+});
+
+test('U05 L14 source hurdle, tennis and stride units survive independent geometry checks',()=>{
+  const gap=(110-13.72-14.02)/9;
+  assert.ok(near(gap,9.14));
+  assert.ok(!near((110-13.72-14.02)/10,9.14));
+  assert.ok(near((gap-1-2.2)/3,1.98));
+  const width=1.37+8.23+1.37;
+  assert.ok(near(width,10.97));
+  assert.ok(near(23.77/2,11.885));
+  assert.ok(!near(width,23.77/2));
+  const widened=(23.77+0.10)*(width+0.10)-(23.77*width);
+  assert.ok(near(widened,3.484));
+  assert.ok(near(5.75/20,0.2875));
+  assert.ok(near(5.75/0.05,115));
+  assert.ok(near(0.945/3.5,0.27));
+  assert.ok(near(4.86/0.27,18));
+});
+
+test('U05 L15 hypothetical square-base boxes cannot substitute physical measurements',()=>{
+  const openArea=(base,height)=>base*base+4*base*height;
+  assert.equal(openArea(4,2),48);
+  assert.equal(openArea(6,3),108);
+  assert.ok(near(openArea(6,3)/openArea(4,2),2.25));
+  assert.ok(!near(openArea(6,2)/openArea(4,2),2.25));
+  const actualMeasurements={box1:null,box2:null,box3:null};
+  assert.equal(Object.values(actualMeasurements).every(x=>x!==null),false);
+  assert.equal(evidence.integrity.originalImagesCopied,false);
+});
