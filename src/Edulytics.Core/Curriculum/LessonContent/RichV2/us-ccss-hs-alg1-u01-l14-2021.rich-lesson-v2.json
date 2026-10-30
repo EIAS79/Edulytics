@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u01-l14-first-party-source-review-20261029-v1",
+  "ContentVersion": "alg1-u01-l14-source-abc-authoring-20261030-v2",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -12,7 +12,9 @@
         "Original hypothetical dataset of six service times (minutes): 9,10,11,12,13,100. Median is (11+12)/2=11.5; with halves 9,10,11 and 12,13,100, Q1=10 and Q3=13; IQR=3. The upper 1.5-IQR fence is 13+1.5×3=17.5 minutes, so 100 is an outlier by that rule. The lower fence is 10−4.5=5.5.",
         "With all six observations, mean=(9+10+11+12+13+100)/6=155/6≈25.83 minutes. Without 100, the remaining five have mean 11 and median 11 minutes. Removing the observation changes the represented population and requires a defensible cause, not just a prettier statistic.",
         "Investigate whether 100 resulted from a unit or transcription error, an exceptional but genuine event, or a different process. If the cause is unknown, present results with and without it and disclose the decision; never silently remove data. The source uses contextual data and statistical technology, not a mandate to discard all distant points.",
-        "Student activity: reproduce the box plot, show both 1.5-IQR fences, compare mean and median with/without the suspected outlier, propose a verification procedure, and write a justified reporting recommendation. Teacher-scored rubric 0–2 for accurate quartiles/fences, correct changes in center, defensible source investigation, and transparent reporting (max 8)."
+        "Student activity: reproduce the box plot, show both 1.5-IQR fences, compare mean and median with/without the suspected outlier, propose a verification procedure, and write a justified reporting recommendation. Teacher-scored rubric 0–2 for accurate quartiles/fences, correct changes in center, defensible source investigation, and transparent reporting (max 8).",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L14: Investigate an outlier before deleting; distinguish error from valid extreme. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Find fences 5.5 and17.5 for 9,10,11,12,13,100; explain why 100 is outlying but not automatically discarded. A teacher scores 0, 1 or 2 per criterion: Quartile and fence; Mean vs median; Reasoned retain/exclude choice. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
       ],
       "KeyConcepts": [
         {
