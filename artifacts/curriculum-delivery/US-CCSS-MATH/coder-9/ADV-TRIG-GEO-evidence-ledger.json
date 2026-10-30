@@ -200,7 +200,7 @@
     "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
     "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
   ],
-  "updatedAtUtc": "2026-10-30T12:12:41.710Z",
+  "updatedAtUtc": "2026-10-30T13:07:43.867Z",
   "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
   "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
   "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
@@ -668,5 +668,42 @@
     "testResult": "PASS_10_OF_10_NODE_FOCUSED_ONLY",
     "contentHeadAtTest": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
     "requiredFollowUp": "Independent academic source parity + approved content predecessor; obtain exclusive shared file ownership before course-exact selected Practice mapping; retain safety gates and returnQueue; Stage D only when all five A/B/C cleared."
+  },
+  "unitFirstV3": {
+    "directive": "SUP3_CODER9_UNIT_FIRST_V3_20261030",
+    "officialUnitTotal": 5,
+    "unitCode": "U01",
+    "previouslyClosed": 0,
+    "newlyClosed": 0,
+    "lastVerifiedClosedLesson": null,
+    "lastClosureSha": null,
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "unitStatus": "UNIT_BLOCKED",
+    "unitReadyForD": false,
+    "blockedLessonCodes": [
+      "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01"
+    ],
+    "nextUnit": null,
+    "resumeCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "candidateOnlyCommitSha": "ab5dadbe8c4b445eb3722d2a7dcfda0c38bdb78d",
+    "candidateBodySha256": "b5b2767441ea39743c83c7ddd5fa861f621ddf5828365185817ef6f24492cb92",
+    "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+    "historicalCanonicalBodySha256": "e5b8268a6f2e6e86aaf27581491045969b946d288d9449185ab48f21efa0a7b7",
+    "academicOwnerDecision": "PENDING",
+    "versionOwnerDecision": "PENDING",
+    "practiceStudentRoute": "PENDING_DENY",
+    "sharedCentralFileLease": "NOT_GRANTED",
+    "protectedParityGuard": "FAILING_ORIGINAL_BODY_COMPARISON_NO_CODER9_AUTHORIZED_SUCCESSOR",
+    "newUnitFirstTests": "NOT_RUN",
+    "priorFocusedNodeTests": {
+      "sha": "42654e95fea7a537e8ee3a689a8c86ceffc77cbe",
+      "result": "10_PASS_0_FAIL"
+    },
+    "sourceTaskEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-source-task-acceptance-packet-20261030.md",
+    "candidateSuccessorEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-L01-append-only-successor-candidate-20261030.json",
+    "candidateCourseOwnedCode": "src/Edulytics.Core/Mathematics/Practice/UsCcssHsAdvTrigGeoU01L01PracticeCandidate.cs",
+    "candidateTests": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssHsAdvTrigGeoU01L01PracticeCandidateTests.cs",
+    "lastReviewCheckpointUtc": "2026-10-30T13:07:43.867Z",
+    "nextRequiredAction": "Independent academic acceptance + owned append-only version successor + Supervisor 3 exclusive central file lease; do not open L02 or Stage D."
   }
 }
