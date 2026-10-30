@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L09",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L10",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 8,
+    "READY_FOR_D": 9,
     "D_VERIFIED": 0,
-    "BLOCKED": 11,
-    "REMAINING": 140
+    "BLOCKED": 10,
+    "REMAINING": 139
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -573,23 +573,18 @@
       "reuseFinding": "REUSE_ALREADY_SOURCE_SPECIFIC_78_FT3_259_IN3_42_420_RICHV2_AND_ORIGINAL_TEXT_MODELS; ADD_FIRST_PARTY_EXIT_AND_GRADE_RUBRIC_ONLY",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE_SOURCE_VALID_NUMERIC_SUPPLEMENT; EXTEND_SHARED_COMPOSITE_DECOMPOSITION_AND_TEACHER_REVIEW_PENDING",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l09-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:17:49.127Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:23:26.198Z",
+      "elapsedSeconds": 25537,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated single shared integration writer #592",
-        "reason": "No verified lesson-selected composite decomposition and teacher-graded explanation contract: official outcome fallback may offer unrelated scalar/surface-area families",
-        "acceptWhen": "Static source-faithful selected family, grader, feedback, and teacher explanation rubric wired; cases correct/wrong/equivalent/malformed."
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "Original 2021 teacher lesson/preparation and embedded Student Facing read on Our-CS",
         "goals": [
@@ -613,7 +608,16 @@
         "before": "Existing source-aligned models and four numerical worked examples are correct, no new content reauthor required; original independent exit check not explicit.",
         "after": "Preserved all four source-specific numeric/activity models; added original exit with geometrical two-part explanations and targeted family-dependent rubric/test evidence."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l09-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l09.measured_composite_decompositions",
+        "source": "Our-CS original 2021 78 ft3,259 in3,420 in3 measured composite figures",
+        "teacher": "Teacher reviews missing-edge deductions, two genuine geometric cuts and feet-vs-inches labels; numerical totals alone do not certify a correctly marked original source figure.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "originalPublisherMaterial": "NOT_CERTIFIED",
+        "parentHead": "acbaf7ebd15e2e2a7545aeaa1eb4d501ab7bb4ac"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L10",

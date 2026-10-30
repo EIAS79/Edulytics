@@ -1122,6 +1122,8 @@ public static class LessonPracticeContractRegistry
         foreach(var reviewed in UsCcssG5Unit1Lesson7PracticeContracts.Reviewed) byLesson[reviewed.LessonCode]=reviewed;
         // G5 U01 L08 exact non-overlapping attached-prism addition.
         foreach(var reviewed in UsCcssG5Unit1Lesson8PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L09 exact source measured composite dissection totals.
+        foreach(var reviewed in UsCcssG5Unit1Lesson9PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
         // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
         foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
