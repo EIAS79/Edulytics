@@ -84,7 +84,7 @@ public static class UsCcssHsFourthCourseQuestions
         if (family == LogEvaluate)
         {
             var b = random.Next(2, 6);
-            var exponent = random.Next(-3, 5);
+            var exponent = random.Next(-3, 6);
             var argument = exponent < 0 ? $"1/{Pow(b, -exponent)}" : Pow(b, exponent).ToString(CultureInfo.InvariantCulture);
             return new Item(family,
                 $"Evaluate log base {b} of ({argument}). Enter the exponent.",
