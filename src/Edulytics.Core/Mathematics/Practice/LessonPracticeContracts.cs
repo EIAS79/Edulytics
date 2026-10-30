@@ -1111,6 +1111,9 @@ public static class LessonPracticeContractRegistry
         // 2021 G5 U01 L03 complete prism drawings, include hidden layers.
         foreach (var reviewed in UsCcssG5Unit1Lesson3PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L04 exact complete-prism layer reasoning; incomplete cards are teacher-led.
+        foreach (var reviewed in UsCcssG5Unit1Lesson4PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
         // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
         foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
