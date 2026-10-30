@@ -151,6 +151,26 @@ public sealed class UsCcssHsTrigModelAcceptanceTests
             UsCcssHsFourthCourseQuestions.CavalieriVolume, p, "125/3"));
     }
 
+    [Fact]
+    public void CandidateSphereGeneratorIncludesValidFractionalRadiusTasks()
+    {
+        var count = 0;
+        for (var seed = 0; seed < 80; seed++)
+        {
+            var q = UsCcssHsFourthCourseQuestions.Build(
+                UsCcssHsFourthCourseQuestions.CavalieriVolume, new Random(seed));
+            var solution = UsCcssHsFourthCourseQuestions.Solve(q.Family, q.Parameters);
+            Assert.True(ExactSkillContractQuestionEngine.Verify(q.Family, q.Parameters, solution));
+            if (q.Parameters.ContainsKey("radiusNumerator"))
+            {
+                count++;
+                Assert.Equal(2, q.Parameters["radiusDenominator"]);
+                Assert.Contains("/2 cm", q.Prompt, StringComparison.Ordinal);
+            }
+        }
+        Assert.InRange(count, 1, 79);
+    }
+
     [Theory]
     [InlineData(0)]
     [InlineData(-2)]
