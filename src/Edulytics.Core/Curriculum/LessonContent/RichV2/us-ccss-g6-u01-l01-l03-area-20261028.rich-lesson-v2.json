@@ -313,7 +313,8 @@
       "ExplanationParagraphs": [
         "Learning goal: Define area precisely, compose and decompose right-triangle and square pieces, and explain equal-area rearrangements.",
         "Area counts equal square units covering a two-dimensional region without gaps or overlap. A drawing with small and large squares cannot be evaluated merely by counting pieces: first express them in a shared unit. If two congruent figures exactly match when overlaid, their areas are equal.",
-        "An area-1 square divided diagonally makes two identical triangles, each area 1/2. Reassemble triangles into other non-overlapping figures and justify why their total area is unchanged. The 2017–2019 source also includes tangram-style hands-on construction and student explanations; the digital examples here do not certify that the original manipulatives or full interactive activity have been recreated."
+        "An area-1 square divided diagonally makes two identical triangles, each area 1/2. Reassemble triangles into other non-overlapping figures and justify why their total area is unchanged. The 2017–2019 source also includes tangram-style hands-on construction and student explanations; the digital examples here do not certify that the original manipulatives or full interactive activity have been recreated.",
+        "Source-activity equivalent with physical paper tangrams or an accessible description: inspect four square coverings A–D (A and D use consistently sized squares, B requires converting mixed-size squares, C has gaps/overlaps), then use precisely one unit square, four small half-unit right triangles, one medium unit-area triangle and two large area-2 triangles. Build a non-square figure of area 1, two different area-2 figures and an area-4 figure; discuss the total area of all pieces if arranged into a single large square. The full inventory has 8 square units. Teacher assessment is required to certify actual constructions and explanations; the applet and publisher figures were not reproduced."
       ],
       "KeyConcepts": [
         {
@@ -375,6 +376,34 @@
           ],
           "Answer": "Both valid non-square assemblies cover 2 square units. Their outlines may differ, but each uses exactly four congruent half-square triangles.",
           "Check": "Require a student sketch, digital manipulation or accessible geometric description; verify each shape is non-square, uses all four pieces and contains no overlaps or gaps."
+        },
+        {
+          "Title": "Full set of tangram pieces and additive area (first-party paper construction)",
+          "Question": "A paper tangram kit has exactly one unit square, four small triangles each of area 1/2 square unit, one medium triangle of area 1 square unit and two large triangles each of area 2 square units. What is the combined area? Use the pieces to draw a non-square area-1 figure, two different area-2 figures and a valid area-4 figure. Could a square made from every piece have a side length of 2 units?",
+          "Method": "Count geometric areas using common square units. Verify the student's actual piece-by-piece construction without overlaps; distinguish required total area from a proof that a particular square assembly fits.",
+          "Steps": [
+            "The unit square contributes 1 square unit; the four small triangles contribute 4 × 1/2 = 2.",
+            "The medium triangle contributes 1; the two large triangles contribute 2 × 2 = 4.",
+            "The whole inventory covers 1 + 2 + 1 + 4 = 8 square units if used exactly once without overlap.",
+            "A 2-by-2 square has area 4, so it cannot contain the entire inventory without overlap. A full-inventory square must have area 8 and therefore side length sqrt(8).",
+            "For area 1, use two small triangles arranged into a non-square parallelogram; for area 2, try the existing two four-small-triangle arrangements and justify their distinct outlines. Use a large triangle for a valid area-2 region or two large triangles for an area-4 region, with teacher checking drawings."
+          ],
+          "Answer": "The inventory has combined area 8 square units. A valid single square assembled from every piece would have side length sqrt(8), not 2; multiple intermediate constructions need individually checked shapes and area sums.",
+          "Check": "This is independently authored paper activity, not the publisher's exact tangram image or operating applet. The arithmetic is automatically checkable; fitting a full eight-unit square and visually distinct student polygons require teacher verification."
+        },
+        {
+          "Title": "Edulytiks-original exit check — area stays invariant when pieces move",
+          "Question": "A student cuts three unit squares into six equal right triangles. She uses five triangles in a gap-free design and sets one aside. Another student reports that the design has area 3 square units because it came from three squares. Determine its actual area and explain how to make a different complete design with the same five triangles.",
+          "Method": "Determine each piece's area from the original square, count only pieces actually used, then have a teacher inspect the changed outline and non-overlapping arrangement.",
+          "Steps": [
+            "Each original square is 1 square unit and divides into two equal triangles, so each triangle has area 1/2 square unit.",
+            "Five used triangles contribute 5 × 1/2 = 5/2 square units, not 3.",
+            "The unused sixth triangle accounts for the missing 1/2 square unit.",
+            "A different arrangement of exactly the same five triangles also has area 5/2 square units if none overlaps and each is used once.",
+            "Teacher checks the student's sketch or accessible coordinate/cell description and reasoning."
+          ],
+          "Answer": "2 1/2 square units. Original 3 units belongs to all six triangles, not the five used. The new non-overlapping arrangement must cover the same 2 1/2 units.",
+          "Check": "EDULYTIKS-ORIGINAL Cool-down authored from source-aligned area-conservation goals, NOT the teacher-login-gated publisher Cool-down and NOT proof of a live assessment submission."
         }
       ],
       "CommonMistakes": [
@@ -410,7 +439,36 @@
             "Two matching triangles → square area 1",
             "Four matching triangles → total area 2"
           ],
-          "Rows": []
+          "Rows": [
+            {
+              "Label": "2.1 — Four grid drawings: reason about valid units",
+              "Cells": [
+                "A: identical large squares fill the region; valid area measurement in that larger square unit.",
+                "B: large and smaller squares tile with no gaps/overlap; valid if smaller units are converted to one common area unit before counting.",
+                "C: a blank region or overlapping squares prevents a direct area count for the target.",
+                "D: identical smaller squares fill the target; valid area measurement in the smaller square unit.",
+                "Area is measured by a complete covering with equal-size square units, or exact conversions among different square-unit sizes."
+              ]
+            },
+            {
+              "Label": "2.2 — Make physical tangram cutouts or equivalent accessible drawings",
+              "Cells": [
+                "One unit square (area 1), four small isosceles right triangles (each area 1/2), one medium right triangle (area 1), and two large right triangles (each area 2).",
+                "The small triangle is half of a unit square; two small pieces make one unit square; a medium triangle is two small pieces; a large triangle is four small pieces.",
+                "Use tracing or coordinate descriptions to make a non-square area-1 arrangement, two distinct area-2 arrangements, and an area-4 polygon. No gaps or overlap are permitted.",
+                "The full inventory has area 1 + 4×1/2 + 1 + 2×2 = 8 square units. If used without overlap as one square, that square must have side length sqrt(8) units; its actual construction must be checked by the teacher."
+              ]
+            },
+            {
+              "Label": "2.3 — Relative areas justified by matching and rearranging",
+              "Cells": [
+                "Small right triangle: 1/2 square unit; two match one unit square.",
+                "Medium right triangle: 1 square unit; match with two small triangles.",
+                "Large right triangle: 2 square units; match with four small triangles or two medium triangles.",
+                "Rotations, translations or reflections of an unchanged piece do not change its area; verify a proposed assembly rather than grading its reported number alone."
+              ]
+            }
+          ]
         }
       ],
       "Videos": []

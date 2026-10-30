@@ -11,11 +11,11 @@
     "units": 9,
     "lessonIdsMatched": 147,
     "originalPublisherTeacherPreparationGoalReviewed": 27,
-    "fullStageAReviews": 1,
+    "fullStageAReviews": 2,
     "learningGoalsModified": 147,
     "quickSummaryGoalsModified": 147,
     "substantiveLessonsRepaired": 147,
-    "sourceStudentTaskParityAccepted": 1,
+    "sourceStudentTaskParityAccepted": 2,
     "confirmedPracticeRuntimeContracts": 0,
     "explicitPracticeMetadataMappings": 8,
     "staticallyOutcomeRuleEligibleNotRuntimeVerified": 137,
@@ -29,7 +29,7 @@
     "authenticatedStudentRichV2RenderVerified": 0,
     "lessonsNotSubstantivelyEdited": 0,
     "partialSourceLessonCandidates": 27,
-    "remainingFullLessonAcademicSourceParityChecks": 146,
+    "remainingFullLessonAcademicSourceParityChecks": 145,
     "authoredFirstPartyWorkedExamplePairs": 147,
     "publicHistoricalTeacherStudentPracticeTextCompared": 3,
     "publicOriginalSourceTaskTextFullyReplicated": 0,
@@ -170,15 +170,30 @@
     "v11U05L13L15NewNodeCallbacks": 4,
     "v11TotalGrade6NodeCallbacksNew": 13,
     "abcFirstOrder": {
-      "A_CLOSED": 1,
-      "B_CLOSED": 1,
+      "A_CLOSED": 2,
+      "B_CLOSED": 2,
       "C_PREPARED": 0,
       "READY_FOR_STAGE_D": 0,
       "D_VERIFIED": 0,
-      "BLOCKED": 1,
+      "BLOCKED": 2,
       "REMAINING": 147,
       "firstOpenLessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
-      "lastReviewedAtUtc": "2026-10-30T07:34:42.218Z"
+      "lastReviewedAtUtc": "2026-10-30T07:34:42.218Z",
+      "nextIndependentCandidate": "PED:US-CCSS-MATH:G6:U03:L07",
+      "blockedReturnBacklog": [
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+          "reason": "G6 selected tiling/area+teacher sketch integration not yet authorized/wired",
+          "owner": "Supervisor1 G6 shared single writer",
+          "status": "BLOCKED"
+        },
+        {
+          "lessonCode": "PED:US-CCSS-MATH:G6:U01:L02",
+          "reason": "G6 tangram/area conservation/drawing route not independently wired",
+          "owner": "Supervisor1 G6 shared single writer",
+          "status": "BLOCKED"
+        }
+      ]
     }
   },
   "sharedBlockers": [
@@ -432,9 +447,9 @@
       ],
       "stageA": {
         "publisherTeacherPreparationGoalChecked": true,
-        "publisherStudentTaskAllChecked": false,
+        "publisherStudentTaskAllChecked": true,
         "effectiveProductRenderedChecked": false,
-        "verdict": "PUBLIC_SOURCE_TEACHER_STUDENT_TASK_TEXT_COMPARED__ACADEMIC_AND_RENDERED_PARITY_UNVERIFIED",
+        "verdict": "A_CLOSED_FIRST_PARTY_DRAWABLE_SOURCE_EQUIVALENT",
         "evidenceUrl": "https://im.kendallhunt.com/MS/teachers/1/1/2/preparation.html",
         "publicStudentTeacherPracticeTextCompared": true,
         "teacherHiddenResponsesRead": false,
@@ -444,14 +459,16 @@
         "originalHistoricalPublicTeacherPageTextRetrieved": true,
         "historicalPublicLessonTitleMatched": true,
         "originalStudentTeacherTaskBodiesManuallyCompared": true,
-        "academicGoalTaskFullParityVerified": false,
+        "academicGoalTaskFullParityVerified": true,
         "publicSourceStudentHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
         "publicSourceTeacherHeadingIndex": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-teacher-activity-cooldown-index.json",
         "v12PublicHistoricalTeacherAndStudentTextRechecked": true,
         "v12PublicFigureAltDescriptionsReviewed": true,
         "v12PublisherFiguresPixelVerified": false,
         "v12SourceAppletBehaviorVerified": false,
-        "v12EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l02-source-geometry-v12-evidence-20261030.json"
+        "v12EvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l02-source-geometry-v12-evidence-20261030.json",
+        "abcFirstOrderStatus": "A_CLOSED_FIRST_PARTY_DRAWABLE_SOURCE_EQUIVALENT",
+        "gradeOwnedSourceEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l02-abc-source-first-party-20261030.json"
       },
       "stageB": {
         "learningGoalEdited": true,
@@ -459,7 +476,7 @@
         "substantiveTeachingRepaired": true,
         "sourceSpecificExamplesAndStrategiesAuthored": true,
         "gradePackCandidateOnly": true,
-        "fullLessonParityAccepted": false,
+        "fullLessonParityAccepted": true,
         "explicitGrade6RichV2SidecarAuthored": true,
         "richV2RenderAndAcademicAcceptanceVerified": false,
         "originalSourceTaskTextGapRepair": true,
@@ -467,7 +484,9 @@
         "v11RichV2SourceExampleMathematicsCorrected": true,
         "v11RichV2SourceExampleCorrectionCommit": "feb0701e6f79d5ba4f2c6efc49223a204b46bf9e",
         "v12SourceAlignedCandidateEnhanced": false,
-        "v12PriorTriangleAreaCorrectionRetained": true
+        "v12PriorTriangleAreaCorrectionRetained": true,
+        "sourceRichV2ExactGeometryFix": true,
+        "abcFirstOrderStatus": "B_CLOSED_GRADE_OWNED_RICH_V2_SOURCE_TASKS"
       },
       "stageC": {
         "explicitLessonSkillMapping": false,
@@ -485,7 +504,9 @@
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
         "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
         "v12ExactSelectedPractice": "NOT_RUN__SUPERVISOR_1_SHARED_OWNER",
-        "v12TeacherRubricPersistedVerified": false
+        "v12TeacherRubricPersistedVerified": false,
+        "abcFirstOrderStatus": "C_BLOCKED_SHARED_AREA_CONSTRUCTION_ENGINE",
+        "gradeOwnedProposedContractEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l02-abc-source-first-party-20261030.json"
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -501,7 +522,7 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "Complete source diagram/applet parity, effective authenticated learner/teacher Rich V2, exact Practice grading and teacher-reasoning persistence before acceptance."
+      "nextStep": "A/B source-aligned first-party tangrams authored; C BLOCKED awaiting grade6 authorized shared area-construction mapping and teacher-scored activity. In §3A.b return backlog."
     },
     {
       "sortOrder": 3,
