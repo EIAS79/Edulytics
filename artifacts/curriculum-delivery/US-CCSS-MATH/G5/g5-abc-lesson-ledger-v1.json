@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 6,
-    "B_CLOSED": 6,
+    "A_CLOSED": 7,
+    "B_CLOSED": 7,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 6,
+    "BLOCKED": 7,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -371,28 +371,49 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-7\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-7\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_EXISTING_UNIT_SELECTION_AND_EDULYTIKS_24_CUBIC_FOOT_EXAMPLE; RESTORE_DUMPSTER_AND_FULL_INFO_GAP_ROUTINE",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numeric volume calculation as supplementary; shared writer EXTEND open unit-choice / information-gap teacher-rubric contract",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l07-contract-v15.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T08:03:59.474Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "owner": "Supervisor 1 designated integration writer",
+        "reason": "No exact selected Practice for qualitative cubic unit scale / information gap request/rationale and teacher score",
+        "acceptWhen": "Correct static routed family and human-reviewed information-gap/units rubric wired"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "edition": "2021 IM K5",
+        "teacherLesson": "local original U01 lesson-7.html",
+        "preparation": "local original U01 preparation.html",
+        "goals": "Standard cubic unit choice and informational need",
+        "figures": "UNVERIFIED_NOT_COPIED",
+        "publisherCooldown": "NOT_VERIFIED_GATED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l07-contract-v15.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "8f3a8da1426b4f840e5ecfe49efe335a7370c8e7",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Model skipped dumpster; described incomplete 2021 sample as if 3-foot height were known.",
+        "after": "Full six-object unit discussion; exact 2021 disclosed sample lengths; clearly original third-dimension example; Info Gap roles and exit check."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l07-practice-rubric-v15.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
@@ -3920,8 +3941,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T08:02:27.660Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L07",
+  "updatedAtUtc": "2026-10-30T08:03:59.474Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L08",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -3946,6 +3967,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
       "reason": "C exact expression-to-prism and teacher scoring shared dependency"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
+      "reason": "C qualitative cubic unit and info-gap assessment integration"
     }
   ]
 }
