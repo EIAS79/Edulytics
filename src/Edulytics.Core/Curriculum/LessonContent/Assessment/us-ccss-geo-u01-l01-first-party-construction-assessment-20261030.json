@@ -113,5 +113,118 @@
     "CourseExactPracticeMappingVerified": false,
     "StageDVerified": false
   },
-  "CreatedAt": "2026-10-30T07:00:57.341Z"
+  "CreatedAt": "2026-10-30T07:00:57.341Z",
+  "TeacherSourcePracticeStatus": "SOURCE_PRACTICE_1_TO_4_READ_AND_MAPPED_TO_FIRST_PARTY_SKILLS; ORIGINAL_FIGURES_NOT_REUSED_OR_CERTIFIED",
+  "SourceStandards": {
+    "Addressing": [
+      "HSG-CO.A.1",
+      "HSG-CO.D.12"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "SourcePedagogicalCaveat": "Source activity 1.2 intentionally allows an illegal estimated midpoint to produce student-to-student variation before discussing why the equality is not guaranteed. Do not silently replace the discovery/comparison phase with a worked exact-midpoint solution.",
+  "SupplementaryTeacherScoredTasks": [
+    {
+      "TaskId": "geo-u01-l01-hexagon-human-evidence",
+      "Targets": [
+        "source 1.3"
+      ],
+      "Type": "PAPER_COMPASS_STRAIGHTEDGE_DIAGRAM_AND_EXPLANATION",
+      "Prompt": "With centre O, a circle of radius 4 cm and a marked point A, first sketch a six-sided shape by eye. Then construct a regular hexagon on the circle by stepping compass opening OA around in one consistent direction, label the six consecutive vertices A through F, and explain why the six sides are equal and why the construction closes after six steps. Compare the freehand and constructed results.",
+      "Scoring": "TEACHER_RUBRIC_ONLY",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "H1",
+            "Criterion": "Six distinct, consecutively labelled vertices on the correct circle",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "H2",
+            "Criterion": "Unchanged compass opening OA used for each consecutive chord, with correct tool description",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "H3",
+            "Criterion": "Each central triangle is equilateral, so all six chords equal OA",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "H4",
+            "Criterion": "Six 60-degree central angles close one full turn; comparison with freehand sketch is justified",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Equivalence": "Either clockwise or counterclockwise labelling accepted; rotations and reflections of a valid construction accepted.",
+      "Reject": "Freehand resemblance alone does not certify any equality.",
+      "Delivery": "Paper with teacher-reviewed drawing; digital tool is NOT a prerequisite and is NOT claimed live"
+    },
+    {
+      "TaskId": "geo-u01-l01-source-practice-first-party-reasoning",
+      "Targets": [
+        "source practice problems 1–4"
+      ],
+      "Type": "TEACHER_REVIEWED_ORIGINAL_REASONING_SET",
+      "SourceFigureParity": "NO_IMAGE_COPIED; NOT_IDENTICAL_TO_PUBLISHER_DIAGRAMS",
+      "Scoring": "4 × 2 POINTS TEACHER ONLY",
+      "Items": [
+        {
+          "Id": "P1",
+          "Prompt": "A circle has centre U and radius UV. A second point W is on the same circle. Explain which lengths must match without measuring.",
+          "Expected": "UV=UW; each is a radius of the circle.",
+          "Points": 2
+        },
+        {
+          "Id": "P2",
+          "Prompt": "A circle is centred at C and passes through D and E. Decide whether CD=CE follows, and whether DE=CD necessarily follows.",
+          "Expected": "CD=CE always; DE=CD is not guaranteed without additional constraints.",
+          "Points": 2
+        },
+        {
+          "Id": "P3",
+          "Prompt": "On a 10 cm segment JK a student estimates M at 4 cm from J. Is M the midpoint? Explain, and give one guaranteed construction method.",
+          "Expected": "JM=4 and MK=6, so M is not the midpoint. Equal-radius arcs centred J,K with radius >5 cm give a perpendicular bisector.",
+          "Points": 2
+        },
+        {
+          "Id": "P4",
+          "Prompt": "Two circles of radii 6 cm and 4 cm intersect at W and have centres A and B, respectively. State AW and BW and explain whether AW=BW.",
+          "Expected": "AW=6 cm and BW=4 cm, so AW != BW; membership in each radius-defined circle determines distance.",
+          "Points": 2
+        }
+      ],
+      "TotalMax": 8,
+      "AcceptedAnswerModes": "Labelled paper diagram with short written arguments or sufficiently explicit text explanation where no construction is requested"
+    }
+  ],
+  "DeliveryCompatibilityReview": {
+    "CandidateA": "OFFLINE_PAPER_COMPASS_STRAIGHTEDGE_AND_TEACHER_REVIEW",
+    "CandidateAAllowedSubjectTo": "Independent academic signoff of paper-mode equivalence, local assignment and teacher records",
+    "CandidateB": "ONLINE_ASSESSMENT_HOMEWORK_OR_WORKSHEET_TEXT_RESPONSES",
+    "CandidateBCodeEvidence": [
+      "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs SubmitLearningTaskAsync lines 515–601 saves AssessmentTaskResponse.ResponseText with no numeric grading",
+      "src/Edulytics.Core/Entities/AssessmentTaskResponse.cs contains a string ResponseText and SchoolId",
+      "src/Edulytics.Web/Controllers/AssessmentBuilderController.cs has teacher CreateManual endpoint"
+    ],
+    "CandidateBLimitation": "Text answer persistence is implemented in general assessment system, but upload/attachment for a student geometry drawing, exact GEO LessonCode routing, assigned reviewer and scored rubric/feedback lifecycle are not demonstrated",
+    "DoNotUse": "Online Exam as drawing rubric: SubmitExamAsync uses MathematicsAnswerEquivalence and scalar scoring",
+    "RelevantCodeConstraint": "AssessmentService.Commands.cs SaveStudentResultAsync rejects non-Exam at lines 1576–1581, so it does not prove teacher scoring of a Homework/Worksheet task",
+    "SelectedDelivery": "PAPER_MODE_CANDIDATE_PENDING_ACADEMIC_ACCEPTANCE",
+    "ApprovalStatus": "NOT_APPROVED_NOT_REGISTERED_NOT_PERSISTED",
+    "SharedOwner": "Supervisor 2 / issue #453 pathway + assessment integration"
+  },
+  "ReviewerSignoff": {
+    "Required": true,
+    "ReviewerName": null,
+    "ReviewedAt": null,
+    "AcademicSourceParityApproved": false,
+    "PaperModeApproved": false,
+    "FirstPartyCoolDownApproved": false,
+    "VisualFigureEquivalenceApproved": false
+  }
 }

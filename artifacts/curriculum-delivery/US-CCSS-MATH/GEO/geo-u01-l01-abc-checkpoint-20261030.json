@@ -12,7 +12,7 @@
   "ClosedAt": null,
   "ElapsedSeconds": null,
   "NoteOnTime": "Session start was not time-stamped; no 3-minute SLA claim. Lesson remains open.",
-  "Status": "BLOCKED_NOT_ABC_CLOSED_DO_NOT_ADVANCE",
+  "Status": "BLOCKED_WAITING_FOR_INDEPENDENT_ACADEMIC_SIGNOFF_AND_PAPER_MODE_DECISION",
   "NextLessonCode": null,
   "LocalSourceFileAndPages": [
     {
@@ -66,7 +66,8 @@
       "Activity": "1.2",
       "SourceRequirement": "Estimated midpoint causes non-reproducibility; distinguish guaranteed radius equality from unjustified half-segment assertion",
       "FirstPartyMapping": "New activity B paragraph and explicit error correction",
-      "Disposition": "PREVIOUS_MATERIAL_GAP_REPAIRED_AS_FIRST_PARTY_CANDIDATE"
+      "Disposition": "PREVIOUS_MATERIAL_GAP_REPAIRED_AS_FIRST_PARTY_CANDIDATE",
+      "SourcePedagogicalCaveat": "The original 1.2 illegal move is intentionally estimated for comparing varied outcomes. It must be experienced/discussed before the exact perpendicular-bisector remedy; the repair must not erase that teaching sequence."
     },
     {
       "Activity": "1.3",
@@ -109,31 +110,48 @@
     "JsonSyntaxAndPackScope": "VALIDATED_BEFORE_COMMIT",
     "NodeCourseTests": "NOT_RUN",
     "Dotnet": "NOT_RUN",
-    "CI": "NOT_RUN_NOT_CLAIMED",
+    "CI": "NOT_RUN",
     "AuthenticatedStudentTeacher": "NOT_RUN",
-    "TwoSchoolDisposableDb": "NOT_RUN"
+    "TwoSchoolDisposableDb": "NOT_RUN",
+    "GeometryIndependentNode": {
+      "runner": "Our-CS existing Node; read-only standalone node -e arithmetic oracle; no repository checkout modified",
+      "date": "2026-10-30",
+      "testcases": 16,
+      "pass": 16,
+      "fail": 0,
+      "skip": 0,
+      "exitCode": 0,
+      "cases": [
+        "circle radius transfer",
+        "guessed midpoint inequality",
+        "two arc distances to centres at (4,±3) radius 5",
+        "strict r>d/2 threshold and tangent/nonintersecting case",
+        "six consecutive 60 degree chords and 360 degree closure"
+      ],
+      "boundToApplicationSHA": false,
+      "notEquivalentTo": "node --test application tests, .NET suite, authenticated Rich V2, database tenant acceptance, CI"
+    }
   },
   "ChangedPaths": [
-    "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-geo-u01-l01-l03-2021.rich-lesson-v2.json",
     "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l01-first-party-construction-assessment-20261030.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md",
     "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l01-abc-checkpoint-20261030.json"
   ],
   "Blockers": [
     {
-      "Owner": "Supervisor 2 central integration",
-      "Issue": 453,
-      "Problem": "Zero verified exact GEO lesson-to-Practice mappings; no safe machine-grading or actual drawing/teacher-scored lifecycle verified",
-      "Resolution": "Map exact lesson assessment and implement authorized human submission/review/persistence in shared owner branch, then Stage D testing"
+      "Owner": "Independent academic reviewer via Supervisor 2",
+      "Problem": "No independent A/B/C lesson acceptance; reviewer must confirm source 1.1–1.3 pedagogy, source practice original analogues, first-party Cool-down and paper drawing/teacher rubric sufficiency",
+      "Resolution": "Sign the six decisions in GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md; approve or specify bounded edits"
     },
     {
-      "Owner": "Supervisor 2 Rich V2 owner",
-      "Problem": "No authenticated original first-party construction drawing tool or teacher/student rendering validation",
-      "Resolution": "Verify safe course-rendered input and artifact/rubric UI; do not alter global renderer from GEO branch"
+      "Owner": "Supervisor 2 shared course/assessment owner (#453)",
+      "Problem": "Exact GEO lesson/pathway binding and existing supported teacher review/grade record not demonstrated. General Homework/Worksheet saves text, but SaveStudentResultAsync is Exam-only; do not use Exam scalar auto-grading for drawings.",
+      "Resolution": "Approve secure paper teacher evidence capture or make narrow lesson-linked human assessment contract using existing assignment infrastructure, with deferred Stage D authenticated persistence and security"
     },
     {
-      "Owner": "Independent academic reviewer",
-      "Problem": "Original figure equivalence, complete pedagogical disposition and first-party substitute Cool-down approval still pending",
-      "Resolution": "Review local source crosswalk, visuals, tasks and teacher rubric before marking A/B/C closed"
+      "Owner": "Supervisor 2 shared visual integration (only if needed after paper decision)",
+      "Problem": "No original image-equivalent authenticated figure tool demonstrated; candidate paper diagrams may be a legitimate approved substitute",
+      "Resolution": "If academic reviewer rejects paper equivalent, specify exact minimal missing static/native asset mode or safe allowlisted local SVG; global renderer changes remain central-owned"
     }
   ],
   "Metrics": {
@@ -146,5 +164,17 @@
     "D_VERIFIED": 0,
     "BLOCKED": 1,
     "REMAINING": 124
-  }
+  },
+  "ReviewRevision": "30 October 2026 — detailed source reviewer checklist and actual assessment-mode code comparison",
+  "AcademicReviewChecklistPath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md",
+  "AssessmentContractPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l01-first-party-construction-assessment-20261030.json",
+  "ExistingSubmissionCodeEvidence": {
+    "TextHomeworkWorksheet": "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs lines 515–601: string response storage, no scalar grade",
+    "GradeLimitation": "src/Edulytics.Services/Assessments/AssessmentService.Commands.cs lines 1576–1581: SaveStudentResultAsync is Exam-only",
+    "ExamAutoScoreUnsafe": "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs lines 398–419: MathAnswerEquivalence auto scores Exam, not proof/drawing",
+    "AssessmentModel": "src/Edulytics.Core/Entities/AssessmentTaskResponse.cs: per-school string response and attempt/question references",
+    "Verdict": "General text submission exists; approved course-exact lesson binding and teacher rubric grading/paper record not proved"
+  },
+  "Focus": "No new engine forced: paper-and-pencil is academically acceptable only when explicit reviewer approves and teacher evidence is documented; online scoring remains separate central issue.",
+  "CheckpointCommit": "Recorded in GitHub PR #583, commit containing this file (SHA documented by PR follow-up comment); predecessor af4fe6207becd6e73bfe369e4b29473e17e38066"
 }
