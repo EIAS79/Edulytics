@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "status": "PROPOSED_TEACHER_REVIEW_NOT_GRADED",
+  "courseId": "US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO",
+  "source": "Independent first-party tasks; source comparison and license references are in course evidence ledger; no publisher diagrams reproduced.",
+  "rubrics": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+      "family": "trig.unit_circle_reflection_exact",
+      "scoring": "HUMAN_REQUIRED",
+      "maxPoints": 6,
+      "criteria": [
+        {
+          "points": 2,
+          "observableEvidence": "Labels general unit-circle point (cos theta,sin theta) and transformed coordinates correctly, not merely one special angle."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Justifies cosine/sine reflection and odd-even identities by geometry for arbitrary valid theta."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Explicitly excludes tangent poles, handles angle units and verifies quadrant sign or counterexample."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+      "family": "trig.principal_inverse",
+      "scoring": "HUMAN_REQUIRED",
+      "maxPoints": 6,
+      "criteria": [
+        {
+          "points": 2,
+          "observableEvidence": "Graphs or describes one-to-one restricted intervals and correct monotonicity for inverse sine, cosine and tangent."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Separates principal returned angle from all unrestricted solutions and justifies correct quadrant clue."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Classifies unique, multiple and contradictory location clues with clear domain and unit reasoning."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L03",
+      "family": "trig.model_all_time_solutions",
+      "scoring": "HUMAN_REQUIRED",
+      "maxPoints": 8,
+      "criteria": [
+        {
+          "points": 2,
+          "observableEvidence": "Uses original cofunction identity and inverse reference angle without introducing unsupported equivalent transformations."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Enumerates every root in the prescribed half-open or closed interval, including compressed-period case and endpoint exclusions."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Verifies all intersections with an accessible graph, table or approved numerical technology rather than one principal inverse result."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Separates first-party signal model from original publisher equation task, interprets seconds and physical operating range."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+      "family": "solid_geometry.cavalieri_sphere_volume",
+      "scoring": "HUMAN_REQUIRED",
+      "maxPoints": 8,
+      "criteria": [
+        {
+          "points": 2,
+          "observableEvidence": "Constructs valid corresponding horizontal cross sections, names the same vertical height and correct units."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Derives A_H(z)=A_C(z)=pi(r^2-z^2) for every z in [0,r], not just sample heights."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Applies Cavalieri to cylinder-minus-correctly-oriented-cone and derives hemisphere and full sphere volumes."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Addresses unequal slices, equal-base-only fallacy and oblique versus right cylinder comparison with reasoning."
+        }
+      ]
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+      "family": "coordinates.focal_distance_conics",
+      "scoring": "HUMAN_REQUIRED",
+      "maxPoints": 8,
+      "criteria": [
+        {
+          "points": 2,
+          "observableEvidence": "Builds or describes ellipse string-and-two-foci locus as constant SUM, verifying multiple candidate points."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Derives major/minor semiaxes and axes/translation using a>c and b^2=a^2-c^2, rejecting degenerate cases."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "Separately derives hyperbola as constant absolute DIFFERENCE with c>a and checks both branches after squaring."
+        },
+        {
+          "points": 2,
+          "observableEvidence": "States that original 6.10H source covers ellipse while the hyperbola is first-party extension, not publisher-equivalent."
+        }
+      ]
+    }
+  ]
+}
