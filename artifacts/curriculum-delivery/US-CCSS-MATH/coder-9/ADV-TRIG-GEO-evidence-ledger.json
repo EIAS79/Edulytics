@@ -200,7 +200,7 @@
     "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
     "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
   ],
-  "updatedAtUtc": "2026-10-30T12:09:11.012Z",
+  "updatedAtUtc": "2026-10-30T12:10:33.953Z",
   "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
   "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
   "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
@@ -333,8 +333,8 @@
     "protocol": "SUP3_CODER9_SOLO_FULL_ABC_20261030",
     "observedStartHead": "c20b5e96234d1140b01525eaa4d0e76b14daf65a",
     "sessionStartedAtUtc": "2026-10-30T12:07:08.126Z",
-    "currentCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
-    "lastProcessed": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L04",
+    "currentCursor": "RETURN_QUEUE_L01_L05",
+    "lastProcessed": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
     "completedABC": 0,
     "returnQueue": [
       {
@@ -459,6 +459,42 @@
         "operationStartedAtUtc": "2026-10-30T12:09:11.012Z",
         "operationEndedAtUtc": null,
         "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 6.10H starts with three 10/12/14 inch CLOSED loops with 4-inch tack spacing. Existing lesson covered a different 16-inch loop; added exact original physical setup and correct focal-distance arithmetic.",
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_g1_mod6h_tn_82017f.pdf",
+        "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+        "sourcePagesReadDirectly": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88
+        ],
+        "stageA": "DIRECT_SOURCE_COMPARE_AND_FIRST_PARTY_MATH_REPAIR_DONE_ACADEMIC_REVIEW_PENDING",
+        "stageB": "SOURCE_LOOP_GEOMETRY_REPAIRED_VERSION_APPROVAL_PENDING",
+        "stageC": "PROPOSED_COURSE_CONIC_FIXTURES_PRESERVED_NOT_STUDENT_ROUTABLE",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Determine whether ellipse physical/accessible inquiry and separate first-party hyperbola extension meet authorized source and standard criteria",
+        "practiceFixtures": 7,
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "NOT_RUN_AT_COMMIT",
+        "integrationOwner": "Coder 9 course-local implementation only; Supervisor 3 must allocate temporary exclusive lease if shared routing change required",
+        "returnReason": "Academic approval and append-only content predecessor missing; student selected Practice/route/adoption pending",
+        "operationStartedAtUtc": "2026-10-30T12:10:33.953Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "RETURN_QUEUE_L01_L05"
       }
     ],
     "perLesson": [
@@ -584,13 +620,61 @@
         "returnReason": "Independent academic equivalence, approved content version/predecessor and central selected lesson Practice/adoption unresolved",
         "operationStartedAtUtc": "2026-10-30T12:09:11.012Z",
         "operationEndedAtUtc": null,
-        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05"
+        "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+        "contentCommit": "872b74b391004500d4bd19d74976f633179ef772"
+      },
+      {
+        "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
+        "status": "BLOCKED",
+        "A_CLOSED": false,
+        "B_CLOSED": false,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "D_VERIFIED": false,
+        "sourceTaskComparison": "Publisher 6.10H starts with three 10/12/14 inch CLOSED loops with 4-inch tack spacing. Existing lesson covered a different 16-inch loop; added exact original physical setup and correct focal-distance arithmetic.",
+        "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_g1_mod6h_tn_82017f.pdf",
+        "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+        "sourcePagesReadDirectly": [
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88
+        ],
+        "stageA": "DIRECT_SOURCE_COMPARE_AND_FIRST_PARTY_MATH_REPAIR_DONE_ACADEMIC_REVIEW_PENDING",
+        "stageB": "SOURCE_LOOP_GEOMETRY_REPAIRED_VERSION_APPROVAL_PENDING",
+        "stageC": "PROPOSED_COURSE_CONIC_FIXTURES_PRESERVED_NOT_STUDENT_ROUTABLE",
+        "academicDecision": "PENDING_INDEPENDENT_REVIEW",
+        "academicDecisionRequired": "Determine whether ellipse physical/accessible inquiry and separate first-party hyperbola extension meet authorized source and standard criteria",
+        "practiceFixtures": 7,
+        "sourceTaskTestPath": "tools/curriculum/coder-9/UsCcssHsAdvTrigGeoSoloSourceParity.test.cjs",
+        "focusedTestResult": "NOT_RUN_AT_COMMIT",
+        "integrationOwner": "Coder 9 course-local implementation only; Supervisor 3 must allocate temporary exclusive lease if shared routing change required",
+        "returnReason": "Academic approval and append-only content predecessor missing; student selected Practice/route/adoption pending",
+        "operationStartedAtUtc": "2026-10-30T12:10:33.953Z",
+        "operationEndedAtUtc": null,
+        "nextCursor": "RETURN_QUEUE_L01_L05"
       }
     ],
     "stageD": "NOT_STARTED",
     "sharedOwnershipRule": "Course-only writers on #586; shared files untouched; request Supervisor 3 file lease before central registry edits.",
     "sourceAccess": "Existing verified original local PDFs on Our-CS read for L02-L05; L01 previous source review reused; no external book search.",
     "testedShaNote": "Independent source/math tests will execute once on frozen last content commit, not claimed in advance.",
-    "updatedAtUtc": "2026-10-30T12:09:11.012Z"
+    "updatedAtUtc": "2026-10-30T12:10:33.953Z",
+    "counts": {
+      "TOTAL": 5,
+      "AUTHORED": 5,
+      "A_CLOSED": 0,
+      "B_CLOSED": 0,
+      "C_PREPARED": 5,
+      "C_CLOSED": 0,
+      "ABC_READY_FOR_D": 0,
+      "D_VERIFIED": 0,
+      "BLOCKED": 5
+    }
   }
 }

@@ -43,3 +43,14 @@ test('L04 source triangles, parallelograms, oblique pyramid and hemisphere slice
  const r=2.5;for(const z of [0,.5,1.25,2.5])near(Math.PI*(r*r-z*z),Math.PI*r*r-Math.PI*z*z);
  near(4*Math.PI*r**3/3,125*Math.PI/6);
 });
+
+test('L05 original three closed string loops, focal point checks and separation',()=>{
+ const s=body(4);assert.match(s,/Source 6\.10H closed-loop experiment/);
+ for(const [len,bSq] of [[10,5],[12,12],[14,21]]){const c=2,a=(len-4)/2;near(a*a-c*c,bSq);assert.ok(a>c);}
+ const d=(x,y,fx)=>Math.hypot(x-fx,y);
+ near(d(5,0,-2)+d(5,0,2),10);
+ near(d(0,Math.sqrt(21),-2)+d(0,Math.sqrt(21),2),10);
+ assert.ok(d(0,6,-2)+d(0,6,2)>10);
+ near(((14-6)/2)**2-(6/2)**2,7);
+ assert.match(s,/not an original publisher 6\.10H activity/);
+});
