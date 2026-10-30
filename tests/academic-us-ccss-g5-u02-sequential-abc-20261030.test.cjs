@@ -45,4 +45,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L07','usccss.g5.u02.l07.unit_fraction_race_
 test('G5 U02 L08 source fraction geometry plus teacher models',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L08','usccss.g5.u02.l08.nonunit_fraction_of_whole',["6/5 unit squares","3/5","9/5","2×(3÷5)"],["2/15 unit square","5/3"]);
 });
+test('G5 U02 L09 source fraction geometry plus teacher models',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L09','usccss.g5.u02.l09.area_whole_by_unit_fraction',["3 square units","2 square units","1 1/2 square units","1/2 square unit"],["6 1/2 square units","18 square units"]);
+});
 // NEXT_LESSON_TEST

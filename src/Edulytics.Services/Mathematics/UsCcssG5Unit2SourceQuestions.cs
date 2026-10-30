@@ -78,6 +78,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("How many fifth-unit pieces are shaded in 3 bars, each with 2/5 shaded?","6 fifths","2 fifths","15 fifths"),
                 new("6/5 equals which mixed number?","1 1/5","1 5/6","5 1/6")
             ],
+                        ["usccss.g5.u02.l09.area_whole_by_unit_fraction"]=[
+                new("A rectangle is SIX units long and ONE HALF unit high. What is its area?","3 square units","6 1/2 square units","12 square units"),
+                new("A rectangle is SIX units long and ONE THIRD unit high. What is its area?","2 square units","18 square units","1/18 square unit"),
+                new("A rectangle is SIX units long and ONE FOURTH unit high. What is its area?","1 1/2 square units","24 square units","4 square units"),
+                new("A rectangle is 1 unit long and 1/2 unit high. What is its area?","1/2 square unit","2 square units","1 1/2 square units"),
+                new("A rectangle is 3 units long and 1/2 unit high. What is its area?","1 1/2 square units","6 square units","2/3 square unit"),
+                new("A rectangle is 4 units long and 1/2 unit high. What is its area?","2 square units","8 square units","1/8 square unit")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,
