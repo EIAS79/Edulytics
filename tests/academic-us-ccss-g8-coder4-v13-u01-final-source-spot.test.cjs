@@ -90,5 +90,5 @@ test('U01 L01 six-frame first-party dance cards, reversed sequence and non-autom
   }
   assert.deepEqual([...seq].reverse().reverse(),seq);
  }
- assert.equal(evidence.sourceParityAccepted,false); // source provenance remains non-certified
+ assert.equal(evidence.lessons.find(x=>x.lessonCode===lesson.LessonCode).sourceParityAccepted,false); // source provenance remains non-certified
 });
