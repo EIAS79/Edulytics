@@ -4,7 +4,7 @@
   "Course": "Geometry",
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
   "Version": "2026-10-30-course-ABC",
-  "Status": "C_PREPARED_BLOCKED_C_SHARED",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
   "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
   "Rights": "First-party Edulytiks material; source course CC BY 4.0; no publisher figures or media imported",
   "SourceLocalPaths": {
@@ -183,5 +183,164 @@
     "Dotnet": "NOT_RUN",
     "CI": "NOT_RUN",
     "StageD": "NOT_RUN"
+  },
+  "AuthoringStageC": {
+    "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+    "Modality": "Human teacher marks line-perpendicular construction, initial estimated angle bisector point, exact angle bisector and peer critique on paper",
+    "SourceMap": [
+      {
+        "Source": "5.1 Two Circles",
+        "TaskIds": [
+          "PERP-ANGLE-BISECTOR-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ],
+        "Required": "Source-ordered estimate D before exact ray and peer explanation; original optional origami not required"
+      },
+      {
+        "Source": "5.2 Make It Right",
+        "TaskIds": [
+          "PERP-ANGLE-BISECTOR-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ],
+        "Required": "Source-ordered estimate D before exact ray and peer explanation; original optional origami not required"
+      },
+      {
+        "Source": "5.3 Bisect This",
+        "TaskIds": [
+          "PERP-ANGLE-BISECTOR-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ],
+        "Required": "Source-ordered estimate D before exact ray and peer explanation; original optional origami not required"
+      },
+      {
+        "Source": "5.3 optional origami trisector extension (not required)",
+        "TaskIds": [
+          "PERP-ANGLE-BISECTOR-8",
+          "EDULYTIKS-AUTHORED-COOLDOWN-8"
+        ],
+        "Required": "Source-ordered estimate D before exact ray and peer explanation; original optional origami not required"
+      }
+    ],
+    "TaskRubrics": [
+      {
+        "TaskId": "PERP-ANGLE-BISECTOR-8",
+        "Prompt": "For a given line l with C on it, construct a perpendicular through C. For a separate marked angle CBA, first estimate a midpoint D by eye, then construct ray BX that bisects angle CBA with compass/straightedge; compare to D and ask a partner to critique the tool sequence. Submit both drawings and written equal-radius reasons.",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "P1",
+            "Criterion": "Perpendicular correctly through C, with symmetric A,B on l and valid arc openings",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "P2",
+            "Criterion": "Estimates D before constructing valid internal angle-bisector ray BX",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "P3",
+            "Criterion": "Justifies perpendicular/right angle and bisected angle with radii/equal sides, not appearance",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "P4",
+            "Criterion": "Uses precise verbal tools, completes partner critique and compares estimated vs constructed",
+            "MaxPoints": 2
+          }
+        ]
+      },
+      {
+        "TaskId": "EDULYTIKS-AUTHORED-COOLDOWN-8",
+        "Prompt": "With an unmarked straightedge and compass construct a line perpendicular to l at C and an angle bisector for an independently given angle AOB. Explain why both are correct and distinguish the 180-degree straight-angle case.",
+        "Max": 8,
+        "Criteria": [
+          {
+            "Id": "C1",
+            "Criterion": "Valid two-intersection auxiliary circle/arc construction for perpendicular through C",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C2",
+            "Criterion": "Line passes through C with marked right angle",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C3",
+            "Criterion": "Angle bisector from vertex O using equal marks and equal arcs",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C4",
+            "Criterion": "Written geometric justification for both equal angles and 180-degree relation",
+            "MaxPoints": 2
+          }
+        ]
+      }
+    ],
+    "Practice": [
+      {
+        "Id": "P1",
+        "Expected": "C is the midpoint AD by AC=CD; its perpendicular bisector passes through midpoint C.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P2",
+        "Expected": "Triangles QSU and QTU are congruent by SSS (QS=QT, SU=TU, QU common); QU bisects angle PQR.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P3",
+        "Expected": "AC=CB=BD=DA=AB from the two radius-AB circles, so four equal sides.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P4",
+        "Expected": "Each chord of adjacent vertices equals radius r, so each central triangle has three sides r.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P5",
+        "Expected": "AE=BC=r because each is a radius of a congruent circle.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P6",
+        "Expected": "MA=MB because M is midpoint; all points on perpendicular bisector are equidistant from A and B.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P7",
+        "Expected": "A fold acts as reflection exchanging A and B; crease fixed points have equal distances and form perpendicular bisector.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      },
+      {
+        "Id": "P8",
+        "Expected": "Yes, CB and CD are radii of the same circle.",
+        "Max": 2,
+        "Scoring": "TEACHER_ONLY"
+      }
+    ],
+    "PaperHandoff": "Student draws perpendicular through given C and angle bisector through vertex B, labels estimated D and exact ray BX; gives diagram and partner critique to authorized school teacher. Teacher marks each 0/1/2 criterion, totals 0–8, acknowledges with date/signature on paper; no online grade asserted.",
+    "Cases": {
+      "correct": "symmetric points and perpendicular through C plus valid radius-arc bisector with reason",
+      "equivalent": "alternative legal compass openings or rotated/reflected correctly labelled angles",
+      "wrong": "eye-only ray D accepted as exact or incorrect perpendicular through point",
+      "insufficient": "number or unlabeled figure without written reasoning and paper construction",
+      "malformed": "0/180 angle treated as a non-degenerate interior bisector or undefined vertex"
+    },
+    "ExamScalarScoring": false,
+    "ActualPracticeReadyVerified": false,
+    "StageD": {
+      "Status": "NOT_RUN",
+      "Owner": "Supervisor 2 #453",
+      "Requirement": "secure exact school/pathway/LessonCode paper grade record, teacher feedback and auth E2E"
+    }
   }
 }
