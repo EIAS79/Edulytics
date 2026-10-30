@@ -20180,6 +20180,24 @@
       "status": "IntegrationPending",
       "productionRouting": false,
       "lessonPracticeRouting": false
+    },
+    {
+      "id": "trig.unit_circle_source_exact_angles",
+      "version": 1,
+      "skillId": "supporting.trigonometry.core",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_scalar",
+      "verificationPolicy": "bounded_unit_circle_twelfths_exact_radicals_with_explicit_tangent_out_of_domain",
+      "representations": [
+        "symbolic",
+        "unit_circle"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
