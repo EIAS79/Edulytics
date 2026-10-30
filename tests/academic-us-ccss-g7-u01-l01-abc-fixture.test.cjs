@@ -11,7 +11,7 @@ const base='artifacts/curriculum-delivery/US-CCSS-MATH/G7/';
 const cd=JSON.parse(file(base+'grade7-u01-l01-edulytiks-cooldown.json'));
 const cursor=JSON.parse(file(base+'grade7-u01-l01-abc-cursor.json'));
 const partial=file('src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml');
-const client=file('src/Edulytiks.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-activities.js');
+const client=file('src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l01-activities.js');
 const dist=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1]);
 const isFinitePoint=p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite);
 function sameScaledPolygon(a,b) {
