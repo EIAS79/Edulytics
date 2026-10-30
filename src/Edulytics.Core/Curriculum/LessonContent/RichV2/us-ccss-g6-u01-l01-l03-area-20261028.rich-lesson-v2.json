@@ -169,16 +169,18 @@
           "Check": "Different non-square designs using the four identical pieces are valid if coverage is complete and pieces do not overlap."
         },
         {
-          "Title": "Two matching triangles",
-          "Question": "Describe two different non-square figures of area 2 using four congruent half-square triangles; explain how you know each figure's area.",
-          "Method": "Teacher-reviewed geometric construction with a component-area invariant.",
+          "Title": "Two non-square assemblies from four half-square triangles",
+          "Question": "Four congruent right triangles were cut along diagonals of two identical unit squares. Describe two different non-square arrangements using all four triangles without overlap, and justify the area of each.",
+          "Method": "Each unchanged right triangle has area 1/2 square unit; build and describe two distinct connected arrangements with no gaps or overlaps.",
           "Steps": [
-            "Calculate the rectangular area: 4 × 3 = 12 square units.",
-            "The diagonal makes two matching regions of equal area.",
-            "Divide the rectangle's area by two: 12 ÷ 2 = 6."
+            "Each original unit square has area 1 square unit and makes two congruent right triangles after cutting along its diagonal.",
+            "Each triangle contributes 1/2 square unit, so four such triangles contribute 4 × 1/2 = 2 square units.",
+            "Arrange the four pieces as two 1-by-1 squares side by side to make a 2-by-1 non-square rectangle of area 2.",
+            "Rearrange the same four unchanged pieces into a connected slanted parallelogram of area 2. A teacher should verify the actual arrangement uses every piece once, without overlap.",
+            "Explain that the total remains 2 square units because the four original pieces have not been stretched, discarded or added."
           ],
-          "Answer": "Any two non-overlapping non-square assemblies using all four half-square triangles each have area 2 square units; there is no unique required outline.",
-          "Check": "Teacher verifies both drawings use four congruent pieces without overlap and that the justification invokes square-unit area and conservation."
+          "Answer": "Both valid non-square assemblies cover 2 square units. Their outlines may differ, but each uses exactly four congruent half-square triangles.",
+          "Check": "Require a student sketch, digital manipulation or accessible geometric description; verify each shape is non-square, uses all four pieces and contains no overlaps or gaps."
         }
       ],
       "CommonMistakes": [
