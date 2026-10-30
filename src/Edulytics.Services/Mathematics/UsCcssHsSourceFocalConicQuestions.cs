@@ -94,8 +94,8 @@ public static class UsCcssHsSourceFocalConicQuestions
         var f2x = vertical ? cx : cx + c;
         var f1y = vertical ? cy - c : cy;
         var f2y = vertical ? cy + c : cy;
-        var d1 = Math.Hypot(x - f1x, y - f1y);
-        var d2 = Math.Hypot(x - f2x, y - f2y);
+        var d1 = Math.Sqrt((x - f1x) * (x - f1x) + (y - f1y) * (y - f1y));
+        var d2 = Math.Sqrt((x - f2x) * (x - f2x) + (y - f2y) * (y - f2y));
         var focal = hyperbola ? Math.Abs(d1 - d2) : d1 + d2;
         return Math.Abs(focal - 2.0 * a) <= 1e-9;
     }
