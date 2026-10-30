@@ -86,7 +86,10 @@
     "tests/academic-us-ccss-g5-u02-area-v13.test.cjs",
     "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l07-l13-source-audit-v13.json",
     "tests/academic-us-ccss-g5-u02-final-v13.test.cjs",
-    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l14-l17-source-audit-v13.json"
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l14-l17-source-audit-v13.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-local-2021-source-parity-v14.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-original-cooldown-teacher-rubric-v14.json",
+    "tests/academic-us-ccss-g5-u03-l01-local-parity-v14.test.cjs"
   ],
   "snapshot": {
     "blueprintLessonCount": 148,
@@ -164,7 +167,9 @@
     "v8SourceCoverageNote": "V8 directly read 15 U08 teacher lesson HTML including Student Facing; L12 already had prior preparation review, so recorded distinct prior-source lesson count increases conservatively 125→139. Seven U07 newer committed RichV2 candidates reconciled without repeating source access or falsely claiming original Student PDF parity.",
     "v9Original2021StudentFacingHtmlCompared": 8,
     "v9OriginalSourceSeparatePdfInspected": 0,
-    "v9StageAApproved": 0
+    "v9StageAApproved": 0,
+    "v14U03L01LocalTeacherSourceComparison": 1,
+    "v14U03L01ClosedABC": 0
   },
   "academicStatus": "INCOMPLETE_NO_ACCEPTANCE",
   "release": "RELEASE_BLOCKED",
@@ -193,7 +198,7 @@
       "owner": "American Coder 1",
       "path": "src/Edulytics.Core/Curriculum/LessonBlueprints/Packs/us-ccss-math-grade5-im-k5-2021.lesson-blueprint.json",
       "issue": "V13 original 2021 teacher/embedded Student Facing HTML compared for U02:L07–L17; 10 lesson-local Rich V2 content/source repairs and L08 READY_REUSE. No original separate PDF/blackline master, selected Practice, effective authenticated B/C/D or A acceptance from these checks.",
-      "next": "Continue original source fidelity U03:L01, preserve prior U01:L01 and U02:L04 PDF/card source gaps; only supervisor may edit central Practice/seeder."
+      "next": "U03:L01 HTML repaired; DO NOT advance until original visual/PDF parity and actual selected Practice/teacher-scored runtime are verified; later resume U03:L02."
     },
     {
       "id": "G5-D-004",
@@ -1768,10 +1773,10 @@
         "commonMistakes"
       ],
       "hasGrade5RichV2Sidecar": true,
-      "sourceReview": "PUBLIC_2021_LESSON_HTML_REVIEWED_STUDENT_PDF_AND_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "RUNTIME_CONTRACT_NOT_CHECKED",
+      "sourceReview": "OUR_CS_2021_LOCAL_TEACHER_HTML_PREPARATION_AND_STUDENT_FACING_COMPARED_V14_SEPARATE_PDF_NOT_CHECKED",
+      "stageA": "SOURCE_HTML_COMPARED_WITH_REPAIR_PENDING_SEPARATE_PDF_AND_ASSET_REVIEW",
+      "stageB": "GRADE_OWNED_RICH_V2_EDIT_PENDING_AUTHENTICATED_RENDER",
+      "stageC": "PENDING_SELECTED_PRACTICE_AND_TEACHER_RUBRIC_RUNTIME",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -1779,7 +1784,9 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "One third of one half and one fourth of one half of same whole with diagrams",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u02-l01-u03-l01-u07-l01-im2021-first-party-richv2-20261028-v1"
+      "richV2ContentVersion": "g5-fractions-coordinates-im2021-u03-l01-source-fix-v14-20261030",
+      "v14Evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-local-2021-source-parity-v14.json",
+      "v14OriginalCooldownRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-original-cooldown-teacher-rubric-v14.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U03:L02",

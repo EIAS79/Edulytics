@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u02-l01-u03-l01-u07-l01-im2021-first-party-richv2-20261028-v1",
+  "ContentVersion": "g5-fractions-coordinates-im2021-u03-l01-source-fix-v14-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -137,10 +137,11 @@
       "Title": "One Piece of One Part",
       "ExplanationParagraphs": [
         "Lesson goal: represent and interpret a unit fraction of a unit fraction using diagrams and a single consistent whole. The original 2021 first-edition lesson begins with students' own representations, before formalizing symbolic fraction multiplication in later lessons.",
-        "Warm-up: view or describe part of a rectangular pan of food and discuss what fraction of the entire pan remains. In the first-party example, exactly half remains; the pan is the whole, not just the remaining food.",
-        "Activity 1 — one third of the half: a full rectangular pan is split into two equal halves, and one third of the remaining half is served. Draw a rectangle, shade half as remaining, split that half into three equal parts, and mark the one selected part. Extend the cuts through the *whole* pan to see that the selected piece is one of six equal whole-pan parts. Give an accessible textual row-by-row description alongside the drawing.",
-        "Activity 2 — the same quantity with a different partition: independently show one quarter of one half of the pan using horizontal partitions for one fraction and vertical for another. The overlap occupies one eighth of the original whole. Compare two valid representations and explain why rotated or rearranged rectangles do not change a part's fraction of the full pan.",
-        "Source alignment and assessment boundary: the public student-facing 2021 lesson is explicitly diagram-focused. The first context asks learners to justify their own diagrams for one third of a half, and the next examines two distinct diagrams for one quarter of a half. The drawing, identifying the same whole and verbal justification are teacher-reviewed; a single numeric product does not establish that source work was completed. Publisher imagery and gated original Cool-down are not reproduced."
+        "Warm-up (Notice and Wonder): inspect the 2021 source photograph of a pan of macaroni and cheese; students estimate what fraction remains. The picture does NOT show an exact half. Source teacher guidance places the amount between one third and one half (about two fifths); this is a visual estimate, not a measurable equality. Ask students to justify their estimate and identify the full pan as the whole. If the original photograph cannot be displayed under its own image license, use an independently authored, explicitly approximate model rather than presenting the half-full worked-example model as a source photograph.",
+        "Activity 1 (Of What?): a pan is half full and Lin eats one third of the remaining macaroni and cheese. The public 2021 Student Facing task asks learners to DRAW their own diagram and explain how it represents the situation. First let students choose and justify a partition; compare different correct orientations. During synthesis, extend partitions through the original full pan to see that one third of one half represents one sixth. Do not require the numerical product or a particular grid orientation as the initial student response.",
+        "Activity 2 (The Same, but Different): examine TWO first-party equal-area rectangle diagrams for one fourth of one half. Diagram A partitions a rectangular whole into two vertical halves, then partitions the chosen half into four equal horizontal strips and darkens one. Diagram B partitions the same whole into two horizontal halves, divides the chosen half into four equal vertical strips and darkens one. Ask learners to explain how EACH diagram represents one quarter of one half, then extend the divisions and justify that the dark area is one eighth of the SAME original whole. These are accessible replacement constructions, not copied publisher diagrams A and B.",
+        "Source task and assessment boundary: Grade 5 Unit 3 Lesson 1 (2021) asks for self-made drawings, explanation of a third of a half, comparison of two given diagram representations for a quarter of a half, and an argument about the original whole. Teacher review is needed for drawn partitions and equivalent orientations. The original Cool-down is teacher-gated and remains unverified; use the independently authored formative exit task below instead. Student PDF and proprietary image details still need independent evidence.",
+        "Original Edulytics formative Cool-down (NOT copied from the teacher-gated 2021 assessment): A garden bed is divided into two equal halves. One half has vegetables. One fourth of that vegetable half is planted with carrots. Draw a rectangle for the WHOLE garden bed, show the partitions and shade the carrot section. What fraction of the WHOLE garden bed is carrots? Explain your drawing. Teacher-scored drawing and explanation; a number alone is insufficient. Teacher rubric is stored separately from this learner-facing prompt."
       ],
       "KeyConcepts": [
         {
@@ -246,6 +247,37 @@
               "Label": "Fraction of original whole",
               "Cells": [
                 "1/6"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Two original representations of one fourth of a half",
+          "Description": "Accessible first-party alternatives to the publisher's diagrams A and B. Equal total area is assumed; in each, one of eight equal cells in the entire original rectangle is shaded. Layout changes, not the fractional amount.",
+          "Rows": [
+            {
+              "Label": "Diagram A",
+              "Cells": [
+                "2 vertical halves",
+                "chosen half quartered horizontally",
+                "1 dark cell out of 8 whole cells"
+              ]
+            },
+            {
+              "Label": "Diagram B",
+              "Cells": [
+                "2 horizontal halves",
+                "chosen half quartered vertically",
+                "1 dark cell out of 8 whole cells"
+              ]
+            },
+            {
+              "Label": "Compare",
+              "Cells": [
+                "same whole area",
+                "different line orientations",
+                "equal dark area = 1/8 whole"
               ]
             }
           ]
