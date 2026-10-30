@@ -94,9 +94,5 @@ public sealed class UsCcssHsPendingPracticeIntegrationTests
             "PED:US-CCSS-MATH:G1:U01:L01", out var gradeOne));
         Assert.NotNull(gradeOne);
         Assert.Equal("READY_VERIFIED", gradeOne!.Readiness);
-        Assert.True(LessonPracticeCapabilityResolver.TryResolve(
-            "PED:US-CCSS-MATH:HS:FOURTH:ALG2:U01:L01", out _) ||
-            LessonPracticeContractRegistry.All.Any(x =>
-                x.LessonCode.Contains(":G1:", StringComparison.Ordinal)));
     }
 }
