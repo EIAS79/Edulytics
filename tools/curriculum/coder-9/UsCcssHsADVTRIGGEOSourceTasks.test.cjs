@@ -42,3 +42,26 @@ test('L05 vertical and translated ellipse and hyperbola validate against origina
   assert.match(body(4),/translated ellipse/);
   assert.match(body(4),/vertical hyperbola/);
 });
+
+test('L01 original 7.5 task: signed graph/table checks, tangent algebra, domain and assessment',()=>{
+  const text=body(0);
+  assert.match(text,/Source-aligned conjecture check/);
+  assert.match(text,/Algebraic tangent proof/);
+  assert.match(text,/Check for understanding/);
+  assert.match(text,/HUMAN_REQUIRED/);
+  for(const x of [-7*Math.PI/6,-2.1,-Math.PI/6,0,Math.PI/6,7*Math.PI/6,2.3]){
+    near(Math.sin(Math.PI-x), Math.sin(x));
+    near(Math.cos(Math.PI-x), -Math.cos(x));
+    near(Math.sin(Math.PI+x), -Math.sin(x));
+    near(Math.cos(Math.PI+x), -Math.cos(x));
+    near(Math.sin(2*Math.PI-x), -Math.sin(x));
+    near(Math.cos(2*Math.PI-x), Math.cos(x));
+    if(Math.abs(Math.cos(x))>1e-9){
+      near(Math.tan(-x),-Math.tan(x));
+      near(Math.tan(Math.PI+x),Math.tan(x));
+    }
+  }
+  assert.ok(Math.abs(Math.cos(Math.PI/2))<1e-12,'tangent pole must be excluded');
+  near(Math.cos(Math.PI-Math.PI/3),-1/2);
+  near(Math.sin(Math.PI+Math.PI/3),-Math.sqrt(3)/2);
+});
