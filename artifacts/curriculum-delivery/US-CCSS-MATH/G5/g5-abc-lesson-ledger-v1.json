@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 12,
-    "B_CLOSED": 12,
+    "A_CLOSED": 13,
+    "B_CLOSED": 13,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 12,
+    "BLOCKED": 13,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -666,28 +666,52 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L01",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-1\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-2\\lesson-1\\preparation.html"
+      ],
+      "reuseFinding": "PRESERVE_PHASE29_PEDAGOGICAL_METADATA_AND_CANONICAL_PACK; ADD_MISSING_GRADE_OWNED_RICH_V2_EXACT_LESSON_SUBJECT_TO_STATIC_REGISTRY_EMBED",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numeric fraction-as-quotient only as supplement if actually selected; EXTEND teacher-scored equal sharing representation through Supervisor 1 single writer",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u02-l01-contract-v16.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T12:25:45.067Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single shared integration writer #592",
+        "reason": "No verified selected teacher-assessed equal-sandwich diagram/reasoning contract; numeric fraction quotient alone insufficient",
+        "acceptWhen": "Selected fraction-as-sharing Practice family and teacher-reviewed drawing/tactile/verbal answer/feedback path statically wired, with correct/wrong/equivalent/malformed cases"
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "source": "IM 2021 first edition Grade 5 Unit 2 Lesson 1 original teacher/Student Facing and preparation",
+        "goals": [
+          "Which One Doesn't Belong? four sandwich images with individual third-party rights",
+          "Share Sandwiches: choose two different numbers from 2,3,5 and justify equal amounts, not required symbolic quotient",
+          "Han 2 sandwiches for 3 people via halves and sixths, plus a different fair diagram"
+        ],
+        "photographs": "FOUR_THIRD_PARTY_IMAGES_NOT_REPRODUCED",
+        "cooldown": "NOT_VERIFIED_GATED"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u02-l01-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u02-l01-contract-v16.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "058d88f064e44da07796c8b8173f29ecdb1f44a9",
+      "authoredCandidate": true,
+      "beforeAfterFinding": {
+        "before": "Candidate had no dedicated Rich V2 for this lesson; baseline translation retained unrelated addends/sum copy and lacks true source-specific open sandwich modeling.",
+        "after": "New embedded grade-owned Rich V2 entry with original WODB context, 2/3/5 choice constraints, Han's two-thirds equivalence, original 4÷3 exit, accessible model and teacher rubric. No shared seeder or mapper changed."
+      },
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u02-l01-practice-acceptance-v16.json"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
@@ -4065,8 +4089,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T12:21:18.867Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L01",
+  "updatedAtUtc": "2026-10-30T12:25:45.067Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L02",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
@@ -4115,6 +4139,10 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
       "reason": "C optional modelling and teacher reviewed estimation not wired"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U02:L01",
+      "reason": "C fraction equal-share representation and teacher review integration"
     }
   ]
 }
