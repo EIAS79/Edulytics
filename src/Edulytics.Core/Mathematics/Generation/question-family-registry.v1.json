@@ -20162,6 +20162,24 @@
       "status": "IntegrationPending",
       "productionRouting": false,
       "lessonPracticeRouting": false
+    },
+    {
+      "id": "usccss.hs.log.decreasing_base_evaluation",
+      "version": 1,
+      "skillId": "supporting.exponentials_logs",
+      "requiredCapabilities": [
+        "lesson.practice.exact.generate",
+        "lesson.practice.exact.verify"
+      ],
+      "answerType": "exact_integer",
+      "verificationPolicy": "bounded_exact_negative_exponent_and_logarithm_base_fraction",
+      "representations": [
+        "symbolic",
+        "contextual"
+      ],
+      "status": "IntegrationPending",
+      "productionRouting": false,
+      "lessonPracticeRouting": false
     }
   ],
   "variantPolicy": {
