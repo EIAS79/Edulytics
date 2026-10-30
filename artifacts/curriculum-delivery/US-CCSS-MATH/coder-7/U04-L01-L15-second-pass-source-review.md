@@ -31,3 +31,11 @@ This V9 review compares the 15 previously authored lesson objectives, original a
 ## Unresolved release gates
 
 All 120 authored/reused lessons still await verified current effective body fingerprint approval/version and materialization, full course-specific Practice, school Traditional ALG2 adoption issue [#453](https://github.com/EIAS79/Edulytics/issues/453), authenticated two-school tenant-negative tests, grading/persistence, protected CI, owner UAT, and licensed attribution/legal signoff where required. **PR #588 remains DRAFT / NO-GO.**
+
+## P0 U04:L07 source-task correction, 2026-10-30
+
+Rechecked original teacher goals (https://im.kendallhunt.com/HS/teachers/3/4/7/preparation.html) and student tasks (https://im.kendallhunt.com/HS/students/3/4/7/index.html). The candidate already handled the 3-picogram table and a generic half-life authenticity example but did not cover the distinct 2.5-picogram fossil anchored at 20,000 BCE (activity 7.2), its parameter interpretation and 0.1 picogram threshold. The optional original Gutenberg Bible question was missing too. These are substantive source-task omissions, not errors in the existing general half-life equation.
+
+New learner-body teaching models 0.1741 > 0.1 picogram for the different 2.5-picogram fossil in 2026; explains that a Pythagoras-era papyrus would retain around 73% rather than measured 85% under assumptions; and computes about 93.27% > 90% for paper from 1450. The new targeted Node tests verify the formulas, examples and arithmetic. Dedicated answer/rubric handoff: U04-L07-SOURCE-PRACTICE-CONTRACT.json.
+
+A: first-edition source goal/tasks compared and repaired at candidate level; independent academic signoff NOT_VERIFIED. B: actual learner-body authored, authenticated rendering NOT_VERIFIED. C: no exact selected Practice mapping, outcome fallback and student grading NOT_VERIFIED. D: human/owner UAT NOT_VERIFIED. Historical source/body fingerprints preserved; successor not approved; release NO_GO.

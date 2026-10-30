@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+  "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U04:L07",
+  "sourceStudentUrl": "https://im.kendallhunt.com/HS/students/3/4/7/index.html",
+  "sourceTeacherUrl": "https://im.kendallhunt.com/HS/teachers/3/4/7/preparation.html",
+  "sourceEdition": "Illustrative Mathematics First Edition 2019-2021 CC BY 4.0",
+  "scope": "GRADE_OWNED_SOURCE_TASK_REPAIR_AND_SHARED_PRACTICE_HANDOFF",
+  "stageA": {
+    "originalStudentTeacherSourceCompared": true,
+    "sourceActivities": [
+      "7.1 Halving and Doubling",
+      "7.2 Radiocarbon Dating",
+      "7.3 Old Manuscripts",
+      "Optional Gutenberg Bible"
+    ],
+    "independentAcademicApproval": "NOT_VERIFIED"
+  },
+  "stageB": {
+    "studentContentAuthored": true,
+    "studentRenderer": "NOT_VERIFIED",
+    "accessibleGraphs": "NOT_VERIFIED",
+    "canonicalPredecessorPreserved": true
+  },
+  "stageC": {
+    "explicitLessonSkillMappingPresent": false,
+    "effectiveRuntimeSelectedFamilies": "NOT_VERIFIED",
+    "generatedVerifiedGradedPersisted": "NOT_RUN",
+    "tasks": [
+      {
+        "activity": "7.1",
+        "required": "Root-of-2 six-hour doubling and fourth-root one-half four-hour decay",
+        "autoCheck": [
+          "(2^(1/6))^6=2",
+          "((1/2)^(1/4))^4=0.5"
+        ],
+        "teacherRubric": "Justify equivalent hourly factors"
+      },
+      {
+        "activity": "7.2",
+        "required": "Distinguish 3 pg data table from 2.5 pg fossil starting 20,000 BCE",
+        "autoCheck": [
+          "3*(.5)^(1910/5730) approximately 2.3811",
+          "3*(.5)^(5730/5730)=1.5",
+          "3*(.5)^(11460/5730)=.75",
+          "2.5*(.5)^(22025/5730) approximately .1741 > .1 in 2026"
+        ],
+        "teacherRubric": "Explain A0=2.5 pg, 1/2 per half-life, H=5730 years and date origin"
+      },
+      {
+        "activity": "7.3",
+        "required": "Pythagoras-era 85% measured versus modeled fraction",
+        "autoCheck": [
+          "remaining at age around 2575 years approximately .732",
+          "85 percent corresponds to about 1343.5 model years"
+        ],
+        "teacherRubric": "Distinguish evidence conflicting with claim from conclusive proof of fake"
+      },
+      {
+        "activity": "Optional Gutenberg",
+        "required": "1450 Bible paper estimated remaining fraction in 2026",
+        "autoCheck": [
+          ".5^(576/5730) approximately .9327 > .9"
+        ],
+        "teacherRubric": "Justify use of elapsed years and approximations"
+      }
+    ],
+    "negativeCases": [
+      "Using 3 pg rather than 2.5 pg for 20,000 BCE fossil",
+      "Interpreting 20,000 BCE as elapsed 20,000 years in 2026",
+      "Using 85 instead of .85 as remaining proportion",
+      "Reversing .1741>.1 and .9327>.9 comparisons",
+      "Autoscoring narrative fraud verdict as definite",
+      "Invalid nonnumeric/NaN/Infinity entries",
+      "Cross-curriculum or wrong-school/tenant attempt",
+      "Negative elapsed years in model"
+    ],
+    "requestOwner": "Supervisor 3 Shared Integration Coder",
+    "issue": 453
+  },
+  "stageD": {
+    "courseOwnedNodeTests": "PENDING_REEXECUTION",
+    "dotnetRuntime": "NOT_VERIFIED",
+    "authenticatedTwoSchool": "NOT_RUN",
+    "teacherSignoff": "NOT_VERIFIED"
+  },
+  "predecessorCanonicalBodySha256": "3545a0df733c5ad6d7278ec2e1792be1dbc3bf88a7598490a20a43ebe531bdd0",
+  "proposedUnapprovedBodySha256": "50f85bc65788ca4b36f43ef7f29fde32414828911d7234052b948a04079d6d3e",
+  "sourceContentBlobSha": "3edd401c7fa85e1747ca0f5023a258f5f3a13519",
+  "release": "NO_GO"
+}
