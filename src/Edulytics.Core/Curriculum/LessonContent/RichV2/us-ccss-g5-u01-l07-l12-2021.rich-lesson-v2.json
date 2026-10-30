@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l07-l12-im2021-v28-abc-source-optional-20261030",
+  "ContentVersion": "g5-u01-l07-l12-im2021-v47-source-units-information-gap-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -72,6 +72,32 @@
           ],
           "Answer": "24 cubic feet.",
           "Check": "8 square feet × 3 feet = 24 cubic feet."
+        },
+        {
+          "Title": "Original 2021 cubic units — choosing a sensible unit for six objects",
+          "Question": "Choose cubic centimeters, cubic inches or cubic feet to describe a moving truck, freezer, juice box, classroom, dumpster and lunch box.",
+          "Method": "Justify a measurement unit according to size and context.",
+          "Steps": [
+            "A moving truck, classroom and dumpster are large; cubic feet can be suitable.",
+            "Juice boxes and lunch boxes are small; cubic inches or centimeters may be suitable depending on the unit cube.",
+            "Freezers may also reasonably be measured in cubic feet; explain choices rather than treating them as a fixed-key answer.",
+            "Choosing units does not specify a numeric volume: measurements are required."
+          ],
+          "Answer": "Contextually justified selections, with more than one answer possible.",
+          "Check": "All six original student-facing objects retained; teacher judges the explanation."
+        },
+        {
+          "Title": "Original 2021 Information Gap freezer — ask before multiplying",
+          "Question": "The source diagram shows a freezer 4 feet by an UNKNOWN length by 3 feet. Find its volume, but do not invent the withheld measurement.",
+          "Method": "Use the original information-gap partner dialogue: request the missing measurement and explain why it is needed.",
+          "Steps": [
+            "Identify that two side lengths alone cannot determine exact three-dimensional volume.",
+            "Ask the data-card partner for the missing length L feet and explain why it is needed.",
+            "Once the data is provided, calculate 4×L×3=12L cubic feet.",
+            "Share the information and compare methods; no exact number is justified without L."
+          ],
+          "Answer": "12L cubic feet after L is supplied; indeterminate before the missing data.",
+          "Check": "Original source figure 148052 and partner Information Gap routine; never fabricate the data-card value."
         }
       ],
       "CommonMistakes": [
