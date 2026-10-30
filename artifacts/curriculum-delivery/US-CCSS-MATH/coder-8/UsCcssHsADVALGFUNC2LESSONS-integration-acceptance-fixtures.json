@@ -32,7 +32,8 @@
       "boundaryOracle",
       "explanationRequired (L04-L06)"
     ],
-    "runtimeEvidence": "All fixtures are author-proposed. rejectWrongOrMalformed is a wrong-answer negative exemplar; rejectMalformed is a distinct syntax/shape-invalid exemplar. Neither establishes actual selected runtime grading."
+    "runtimeEvidence": "All fixtures are author-proposed. rejectWrongOrMalformed is a wrong-answer negative exemplar; rejectMalformed is a distinct syntax/shape-invalid exemplar. Neither establishes actual selected runtime grading.",
+    "sourceBoundScenariosNote": "Two first-party source-linked mathematical oracle scenarios supplement, but do NOT increase, the canonical 26 candidate Practice case count; no live integration or publisher PDF full inspection is asserted."
   },
   "cases": [
     {
@@ -392,5 +393,137 @@
     "READY_VERIFIED for all course competencies from old one-variable mapping",
     "authenticated pass inferred from unit fixture",
     "published or academic approved merely because pack has status Published"
+  ],
+  "sourceBoundScenarios": [
+    {
+      "scenarioId": "MVP-A2-10.6H-PAINT-SYSTEM",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "sourceStudentUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+      "sourceTeacherUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10tnh718.pdf",
+      "sourceInspection": "INDEXED_STUDENT_AND_TEACHER_EXCERPTS; FULL_PDF_BINARY_NOT_REHASHED",
+      "representation": {
+        "variableOrder": [
+          "paintGallonPrice",
+          "brushPrice",
+          "tapeRollPrice"
+        ],
+        "matrix": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            4,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "totals": [
+          30,
+          20,
+          10
+        ]
+      },
+      "expected": {
+        "determinant": 10,
+        "inverseNumerator": [
+          [
+            4,
+            2,
+            -4
+          ],
+          [
+            -1,
+            2,
+            1
+          ],
+          [
+            2,
+            -4,
+            8
+          ]
+        ],
+        "inverseDenominator": 10,
+        "prices": [
+          12,
+          2,
+          6
+        ]
+      },
+      "reject": {
+        "wrongColumnOrder": [
+          2,
+          1,
+          0
+        ],
+        "dimensionMismatch": [
+          30,
+          20
+        ],
+        "malformed": "[[2,0,1],[1,4],[0,2,1]]",
+        "wrongTotalForOriginalPrices": [
+          30,
+          20,
+          50
+        ]
+      },
+      "boundary": {
+        "hypotheticalThirdTotal": 50,
+        "algebraicSolution": [
+          -4,
+          6,
+          38
+        ],
+        "interpretation": "NEGATIVE_PRICE_CONTEXTUALLY_INVALID_NOT_ALGEBRAIC_INCONSISTENCY"
+      },
+      "teacherAssessment": "Require coefficient order, correct inverse/row operations, substitution of all three receipts and meaningful unit-price interpretation; human-score modeling explanation"
+    },
+    {
+      "scenarioId": "MVP-M3-2.1-LOG-NUMBER-LINE",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "sourceStudentUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2tn718.pdf",
+      "sourceInspection": "INDEXED_LOGIC_AND_TEACHER_NOTES; FULL_PDF_BINARY_NOT_REHASHED",
+      "representation": {
+        "base": 3,
+        "arguments": [
+          0.1111111111111111,
+          0.3333333333333333,
+          1,
+          3,
+          9
+        ],
+        "numberLineExponents": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ]
+      },
+      "expected": {
+        "boundArgument": 5,
+        "boundExponents": [
+          1,
+          2
+        ],
+        "crossBaseUniversalClaim": false,
+        "orderAtXLessThanOne": "log2(x)<log3(x)",
+        "orderAtXEqualsOne": "equal",
+        "orderAtXGreaterThanOne": "log2(x)>log3(x)"
+      },
+      "reject": {
+        "invalidArgument": 0,
+        "invalidBase": 1,
+        "malformed": "log_3(",
+        "universalStrictInequality": "log2(x)<log3(x) for all x>0"
+      },
+      "teacherAssessment": "Require inverse-power anchors, bounded placement without decimal-only guessing, separate x<1, x=1 and x>1 cases; human-score justification"
+    }
   ]
 }
