@@ -62,6 +62,19 @@ public static class UsCcssAlg2SequencePracticeMath
         return expected == submitted;
     }
 
+    public static bool GradeArithmeticTerm(
+        string? firstTerm, string? difference, int firstIndex, int targetIndex, string? response)
+    {
+        if (firstIndex is < 0 or > 20 || targetIndex < firstIndex ||
+            targetIndex > 20 || !Rational.TryParse(firstTerm, out var initial) ||
+            !Rational.TryParse(difference, out var increment) ||
+            !Rational.TryParse(response, out var submitted)) return false;
+        Rational expected = initial;
+        for (int n = firstIndex; n < targetIndex; n++)
+            expected = expected.Add(increment);
+        return expected == submitted;
+    }
+
     public static bool GradeAffineRecurrenceTerm(
         string? knownTerm, int knownIndex, int targetIndex,
         int multiplier, int offset, string? response)

@@ -59,6 +59,16 @@ public sealed class UsCcssAlg2SequencePracticeMathTests
     }
 
     [Fact]
+    public void ArithmeticSequence_WithFractionalAndSkippedIndices()
+    {
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeArithmeticTerm("1", "-3/4", 1, 5, "-2"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeArithmeticTerm("1", "-0.75", 1, 5, "-8/4"));
+        Assert.True(UsCcssAlg2SequencePracticeMath.GradeArithmeticTerm("2", "4", 1, 5, "18"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeArithmeticTerm("1", "-3/4", 1, 5, "-1.25"));
+        Assert.False(UsCcssAlg2SequencePracticeMath.GradeArithmeticTerm("1", "0/0", 1, 5, "2"));
+    }
+
+    [Fact]
     public void MonthlyInterest_UsesExactSourceIndexAndDeclaredDisplayRounding()
     {
         Assert.True(UsCcssAlg2SequencePracticeMath.GradeUnroundedMonthlyInterestAtDisplay(1, "1000"));
