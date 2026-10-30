@@ -117,7 +117,12 @@
         "Verbal diagram: points A, C, B occur in that order along a given line ℓ, with AC = CB. Two arcs from A and B with equal radius greater than AB/2 meet at X and Y on opposite sides of ℓ. Line XY passes through C at a right angle.",
         "An angle bisector is a ray from the vertex that divides an angle into two congruent angles. For 0 < angle ABC < 180 degrees, mark P on ray BA and Q on ray BC with BP = BQ. Draw equal-radius arcs from P and Q that meet at X inside the angle, then draw ray BX. Since BP=BQ, PX=QX, and BX is shared, triangles BPX and BQX are congruent by SSS; the two angles at B are equal.",
         "Original Edulytiks challenge: construct a perpendicular at marked C and an angle bisector at B; write the allowed tool steps and a justification. Teacher rubric (0–4): valid start and radii; intersection construction; correct rays/lines; sound midpoint or SSS reasoning. A physical tool action is not machine-graded as a number.",
-        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 5, CC BY 4.0. All exposition and worked tasks are independently authored."
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 5, CC BY 4.0. All exposition and worked tasks are independently authored.",
+        "First-party 5.1 Two Circles warm-up: with A != B, draw two radius-AB circles centred A and B, label their intersections E,F. WITHOUT giving the perpendicular-bisector answer in advance, ask learners to compare EA with EB and FA with FB, draw line EF and record a conjecture about EF and segment AB. Peers compare at least two justifications from radius membership; distinguish the conjecture stage from later proof.",
+        "First-party 5.2 Make It Right: present a given line l and a MARKED point C lying on it. Have learners discover a perpendicular line through C with only straightedge and compass; encourage reusing symmetric points A and B on l such that AC=BC, then arcs from A and B of common radius greater than AB/2, then line through their two intersections. Do not replace independent construction with merely stating a 90-degree angle.",
+        "First-party 5.3 Bisect This: given angle CBA with nonzero measure below 180 degrees, first ESTIMATE point D near the angle's middle. Next construct equal-distance points P on BA and Q on BC, equal-radius arcs from P and Q intersecting at an interior point X, then ray BX; compare the constructed ray with the estimate D. Partners TAKE TURNS creating different angles and verbally critiquing each other's exact compass opening, arc intersection and proof. Equal-length BP=BQ and PX=QX plus shared BX support triangle congruence; no visual-only claim or machine grade.",
+        "Optional extension only: arbitrary angle trisection using an unmarked compass and straightedge is not assumed possible. The original source mentions a separate paper-folding technique; it is not required to pass the angle-bisector core task and no protected publisher media is reproduced.",
+        "New Edulytiks-authored Cool-down replacement: given line l and point C on it, construct the perpendicular through C, then given a different acute angle construct and label its bisector. Provide one mathematical reason for each, and compare the first estimated bisector location to the final construction. Teacher scores labelled diagrams and explanation rather than scalar angle answers."
       ],
       "KeyConcepts": [
         {
@@ -191,12 +196,18 @@
           "Mistake": "Constructing through a nearby point rather than the specified point C.",
           "WhyWrong": "Perpendicularity alone does not satisfy the point-through condition.",
           "Correction": "First create A and B symmetric about C; use the perpendicular bisector of AB."
+        },
+        {
+          "Mistake": "Skipping the initial estimated angle-bisector location D and partner critique in source 5.3, or assigning the answer before student exploration.",
+          "Correction": "Students mark an estimate D, then construct BX using equal-radius arcs and compare; partners describe and critique each step before seeing the explanation."
         }
       ],
       "SummaryPoints": [
         "Use a symmetric segment to construct a perpendicular at a point on a line.",
         "Use equal-distance arcs and SSS correspondence to justify an angle bisector.",
-        "The construction outcome and argument are human assessed, not fabricated auto-graded arithmetic."
+        "The construction outcome and argument are human assessed, not fabricated auto-graded arithmetic.",
+        "Source 5.1 students observe E and F as equal-radius circle intersections and conjecture EF perpendicular to AB; 5.2 uses this to construct through given C.",
+        "Source 5.3 requires an initial estimated point D, a rigorous equal-radius angle bisector and peer turns with verbal reasoning, all teacher-assessed."
       ],
       "Visuals": [],
       "Videos": []

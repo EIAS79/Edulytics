@@ -1,0 +1,187 @@
+{
+  "SchemaVersion": 1,
+  "PackCode": "US-CCSS-MATH",
+  "Course": "Geometry",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
+  "Version": "2026-10-30-course-ABC",
+  "Status": "C_PREPARED_BLOCKED_C_SHARED",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "First-party Edulytiks material; source course CC BY 4.0; no publisher figures or media imported",
+  "SourceLocalPaths": {
+    "TeacherPreparation": "10_HS_Geometry/1/5/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/5/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/5/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/5/practice.html"
+  },
+  "SourceLocalSha256": {
+    "TeacherPreparation": "45d42db96eb5a1267340ca6e7b7538712359df582890bcd28e8166b098a796af",
+    "TeacherActivities": "e418db5c899509d4819b5a44cabef9bd65e43f5ac6848a8af14d45d1da09d46d",
+    "StudentActivities": "deee31c68b2709ba60eea7f6cd598acadadc89af9d2cf230626e7c08199b02ff",
+    "StudentPractice": "fbd0a7e1fe632ddc9cbd9cb6115217fd567244a6ae4d6a2123de2ce390e8b315"
+  },
+  "SourceActivities": [
+    "5.1 Two Circles",
+    "5.2 Make It Right",
+    "5.3 Bisect This",
+    "5.3 optional origami trisector extension (not required)"
+  ],
+  "Standards": {
+    "BuildingOn": [
+      "HSG-CO.A.1"
+    ],
+    "Addressing": [
+      "HSG-CO.D.12"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.9",
+      "HSG-CO.D.12",
+      "HSG-CO.D.13"
+    ]
+  },
+  "OriginalCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "FirstPartyCoolDown": "EDULYTIKS_AUTHORED_COOLDOWN",
+  "Modality": "OFFLINE_PHYSICAL_COMPASS_AND_WRITTEN_PROOF_TEACHER_SCORE",
+  "MachineGradingAllowed": false,
+  "OnlineCourseAssessmentBinding": "NOT_REGISTERED",
+  "TeacherReviewPersistence": "NOT_RUN_STAGE_D",
+  "Tasks": [
+    {
+      "Id": "PERP-ANGLE-BISECTOR-8",
+      "Prompt": "For a given line l with C on it, construct a perpendicular through C. For a separate marked angle CBA, first estimate a midpoint D by eye, then construct ray BX that bisects angle CBA with compass/straightedge; compare to D and ask a partner to critique the tool sequence. Submit both drawings and written equal-radius reasons.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "P1",
+            "Criterion": "Perpendicular correctly through C, with symmetric A,B on l and valid arc openings",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "P2",
+            "Criterion": "Estimates D before constructing valid internal angle-bisector ray BX",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "P3",
+            "Criterion": "Justifies perpendicular/right angle and bisected angle with radii/equal sides, not appearance",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "P4",
+            "Criterion": "Uses precise verbal tools, completes partner critique and compares estimated vs constructed",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Accept": "Any nondegenerate angle below 180 degrees, either equivalent arc intersection/orientation; correct labels and proof",
+      "Reject": "Digital screenshot claimed from unimplemented tool, typed number-only, skipped estimated D or one unsupported visual angle split"
+    },
+    {
+      "Id": "EDULYTIKS-AUTHORED-COOLDOWN-8",
+      "Prompt": "With an unmarked straightedge and compass construct a line perpendicular to l at C and an angle bisector for an independently given angle AOB. Explain why both are correct and distinguish the 180-degree straight-angle case.",
+      "Rubric": {
+        "Criteria": [
+          {
+            "Id": "C1",
+            "Criterion": "Valid two-intersection auxiliary circle/arc construction for perpendicular through C",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C2",
+            "Criterion": "Line passes through C with marked right angle",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C3",
+            "Criterion": "Angle bisector from vertex O using equal marks and equal arcs",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "C4",
+            "Criterion": "Written geometric justification for both equal angles and 180-degree relation",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "Accept": "Actual labelled paper construction with explanation and right-angle mark",
+      "Reject": "Numerical angle answer or guessed ray without tool-defined equalities"
+    }
+  ],
+  "SourcePracticeAnalogues": {
+    "TotalMax": 16,
+    "Mode": "Four current and four spiralling first-party questions, all human-reviewable with exact source-skill roles (not original source images)",
+    "Items": [
+      {
+        "Id": "P1",
+        "Source": 1,
+        "Prompt": "Line l contains A,C,D in that order with AC=CD. Why is a perpendicular bisector of AD guaranteed to pass through C?",
+        "Expected": "C is the midpoint AD by AC=CD; its perpendicular bisector passes through midpoint C.",
+        "Points": 2
+      },
+      {
+        "Id": "P2",
+        "Source": 2,
+        "Prompt": "For angle PQR, let S,T be points on QP and QR with QS=QT and U be an interior point satisfying SU=TU. What conclusion follows about QU and angle PQR?",
+        "Expected": "Triangles QSU and QTU are congruent by SSS (QS=QT, SU=TU, QU common); QU bisects angle PQR.",
+        "Points": 2
+      },
+      {
+        "Id": "P3",
+        "Source": 3,
+        "Prompt": "Two equal circles centred A and B pass through each other's centres and intersect C,D. Why is A-C-B-D a rhombus?",
+        "Expected": "AC=CB=BD=DA=AB from the two radius-AB circles, so four equal sides.",
+        "Points": 2
+      },
+      {
+        "Id": "P4",
+        "Source": 4,
+        "Prompt": "In a regular hexagon centred O radius r, do six central triangles OAB,OBC,... have all equal sides? Explain.",
+        "Expected": "Each chord of adjacent vertices equals radius r, so each central triangle has three sides r.",
+        "Points": 2
+      },
+      {
+        "Id": "P5",
+        "Source": 5,
+        "Prompt": "Two circles centred A and B both radius r. E lies on circle A, C lies on circle B. Which lengths equal each other?",
+        "Expected": "AE=BC=r because each is a radius of a congruent circle.",
+        "Points": 2
+      },
+      {
+        "Id": "P6",
+        "Source": 6,
+        "Prompt": "If CD is a perpendicular bisector of AB crossing at M, compare MA and MB, and justify.",
+        "Expected": "MA=MB because M is midpoint; all points on perpendicular bisector are equidistant from A and B.",
+        "Points": 2
+      },
+      {
+        "Id": "P7",
+        "Source": 7,
+        "Prompt": "A paper sheet is folded so distinct A,B overlap exactly. Explain why every point on the fold is equidistant from A and B.",
+        "Expected": "A fold acts as reflection exchanging A and B; crease fixed points have equal distances and form perpendicular bisector.",
+        "Points": 2
+      },
+      {
+        "Id": "P8",
+        "Source": 8,
+        "Prompt": "Circle centred C passes through B and D; must CB=CD? Explain.",
+        "Expected": "Yes, CB and CD are radii of the same circle.",
+        "Points": 2
+      }
+    ]
+  },
+  "SharedCDependency": {
+    "Owner": "Supervisor 2",
+    "Issue": 453,
+    "Requirement": "exact lesson-bound human-scored paper drawing evidence/grade record and secure school/pathway authorization",
+    "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05"
+  },
+  "Checks": {
+    "CourseStructure": "ASSERTED",
+    "IndependentMath": "34 PASS 0 FAIL for perpendicular and angle bisectors with several radii/angles",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "StageD": "NOT_RUN"
+  }
+}
