@@ -45,5 +45,5 @@ test('Grade 6 L03 Rich V2 selects measurable triangles for unknown tilted hole',
   assert.match(ex.Method,/non-overlapping triangle decomposition/);
   assert.match(ex.Steps.join(' '),/subtracting its imagined area.*not justified/);
   assert.match(ex.Check,/teacher must assess/);
-  assert.ok(lesson.Visuals.some(x=>/Off-grid shaded regions/.test(x.Title)&&/unknown unshaded square/.test(x.Description)));
+  assert.ok(lesson.Visuals.some(x=>/Off-grid shaded regions/.test(x.Title)&&/unshaded tilted square whose side length is not specified/.test(x.Description)));
 });
