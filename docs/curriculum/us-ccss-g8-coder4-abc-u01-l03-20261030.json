@@ -217,11 +217,11 @@
     ]
   },
   "gates": {
-    "A": "A_ACCEPTED_COURSE_SOURCE_REVIEW",
+    "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "BLOCKED_C_DEPENDENCY",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
     "D": "NOT_RUN",
-    "READY_FOR_STAGE_D": false
+    "READY_FOR_STAGE_D": true
   },
   "dependency": {
     "stage": "C",
@@ -261,5 +261,13 @@
     "D_VERIFIED": 0,
     "BLOCKED": 3,
     "REMAINING": 131
+  },
+  "approvedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l03-academic-assessment-contract-20261030.json",
+  "strictSequentialUnitStatus": "UNIT_IN_PROGRESS",
+  "academicClosedAtUtc": "2026-10-30T13:54:31.561054+00:00",
+  "currentCourseABCVerification": "Course-owned exact candidate + teacher 8-point rubric; production fail-closed unchanged",
+  "runtimeStageD": {
+    "status": "NOT_RUN",
+    "owner": "Supervisor 2 single-writer"
   }
 }

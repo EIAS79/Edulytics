@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
+  "title": "Grid Moves",
+  "originalEdition": "2017-2019 OUR/Illustrative Mathematics CC BY 4.0; Edulytiks independent course adaptation",
+  "sources": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\3\\index.html",
+      "sha256": "df853a0865ab501424bcb706f259124fd3c01530f3efb3bf8cfd4297e000ac8e"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\3\\index.html",
+      "sha256": "5de8914d9b590e591283f40abe2e2c76d064a6ad737f227c457814c89a0ef1c9"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\3\\preparation.html",
+      "sha256": "e13568c665eb717364572e182a627403bb2167fd1c4da7d635ac17b1eafc82da"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.G.A"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.A.1"
+    }
+  ],
+  "sourceRoleReviewed": true,
+  "centralPracticeRule": "ccss-transformations",
+  "proposedFamily": "transformations",
+  "scope": "LESSON_SCOPED_ACADEMIC_ASSESSMENT_SPEC_ONLY",
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "3.1 Notice and Wonder: The Isometric Grid",
+      "sourceObjective": "Notice equal triangular sectors, non-Cartesian grid directions",
+      "firstPartyCorrection": "Original e1/e2 native accessible grid basis prompt and sector model"
+    },
+    {
+      "sourceActivity": "3.2 Transformation Information",
+      "sourceObjective": "Construct translation/rotation/reflection on grids and label corresponding points",
+      "firstPartyCorrection": "Original triangle, square-grid three-operations table and isometric 60° rotation coordinates; physical tracing substitute"
+    },
+    {
+      "sourceActivity": "3.3 teacher Cool-down - Some are Translations and Some Aren’t",
+      "sourceObjective": "Source teacher-only protected prompt",
+      "firstPartyCorrection": "Original two-image translation versus nontranslation check and human reasoning"
+    }
+  ],
+  "learningObjectives": [
+    "Learning objective: draw, label and justify the images of figures after translations, rotations and reflections on square and isometric grids.",
+    "Image vertices: A′, B′, C′ label points corresponding to A, B, C after a movement.",
+    "Square-grid rules: Coordinates describe special rigid motions about coordinate axes."
+  ],
+  "instructionalEvidence": {
+    "priorThreeWorkedExamplesPreserved": true,
+    "supportedRichV2Visuals": 4,
+    "nativeVisualKinds": [
+      "RatioTable",
+      "ShapeDecomposition",
+      "RatioTable",
+      "RatioTable"
+    ],
+    "firstPartyCoolDownLabel": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+  },
+  "assessmentModes": [
+    {
+      "id": "3.1 Notice and Wonder: The Isometric Grid",
+      "targetSkill": "Notice equal triangular sectors, non-Cartesian grid directions",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "Original e1/e2 native accessible grid basis prompt and sector model",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    },
+    {
+      "id": "3.2 Transformation Information",
+      "targetSkill": "Construct translation/rotation/reflection on grids and label corresponding points",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "Original triangle, square-grid three-operations table and isometric 60° rotation coordinates; physical tracing substitute",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    }
+  ],
+  "coordinateQuestion": {
+    "provenance": "INDEPENDENT_FIRST_PARTY_SKILL_SAMPLE_NOT_AUTHENTICATED_GENERATOR",
+    "responseType": "coordinate_pair",
+    "case": {
+      "kind": "coordinate_rotation_ccw90",
+      "start": [
+        2,
+        1
+      ],
+      "center": [
+        0,
+        0
+      ],
+      "degrees": 90,
+      "expected": [
+        -1,
+        2
+      ],
+      "correct": [
+        "(-1,2)",
+        "-1, 2",
+        "(-1.0,2.0)"
+      ],
+      "wrong": [
+        "(1,-2)",
+        "(2,-1)"
+      ],
+      "invalid": [
+        "NaN",
+        "(-1,2,3)",
+        "",
+        null
+      ]
+    },
+    "validation": {
+      "accept": 3,
+      "rejectWrong": 2,
+      "rejectMalformed": 4,
+      "semantics": "Parse exactly two finite decimal coordinates; accept mathematically equivalent decimals with no rounding tolerance, reject wrong and malformed; this is candidate only"
+    },
+    "productionGeneratorConnected": false,
+    "actualLessonPracticeReadiness": "NOT_READY_VERIFIED"
+  },
+  "humanScoredCoolDown": {
+    "label": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherExact": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "prompt": "Original two-image translation versus nontranslation check and human reasoning",
+    "maxPoints": 8,
+    "perCriterionScore": [
+      0,
+      1,
+      2
+    ],
+    "rubric": [
+      "Identifies the true translation and rejects the nontranslation image",
+      "Finds all three corresponding displacement vectors",
+      "Correct labeled square/isometric geometric representation",
+      "Explains rigidity, direction and corresponding vertices"
+    ],
+    "teacherEvidence": "labeled figure/drawing, written explanation, notes, four 0-2 criteria scores",
+    "productionPersistenceVerified": false
+  },
+  "stageDDeferred": {
+    "readiness": "RUNTIME_NOT_VERIFIED",
+    "practiceContractOwner": "Supervisor 2 shared single-writer",
+    "teacherRubricRuntimeOwner": "Supervisor 2 shared single-writer",
+    "mustVerify": [
+      "READY_VERIFIED exact LessonCode + skill families under NoSupportedOutcomes protection",
+      "authenticated student attempts & grading persistence",
+      "authorized human scoring and save",
+      "two-school isolation",
+      "accessible visuals and diagrams"
+    ],
+    "commonCodeEdited": false
+  },
+  "focusVerification": {
+    "studentTeacherPreparationSourceSHA256": true,
+    "mathOracleIndependent": {
+      "correct": 3,
+      "wrong": 2,
+      "malformed": 4
+    },
+    "priorPass": "3 focused Node tests on documented pre-commit content SHA; not proof on new SHA",
+    "runtime": "NOT_RUN_STAGE_D"
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T13:54:30.743411+00:00",
+  "parentHeadSHA": "27849a7d19e13eea567f0e87b10722a1b29ce809"
+}
