@@ -1443,7 +1443,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L05",
             "geometry.coordinate.straight_line",
             "HS_FOCAL_CONICS",
-            ["coordinates.focal_distance_conics"],
+            ["coordinates.focal_distance_conics", "coordinates.focal_conics_source_equation"],
             "USCCSS_HS_SHARED_INTEGRATION_PENDING",
             "INTEGRATION_PENDING",
             Version);
