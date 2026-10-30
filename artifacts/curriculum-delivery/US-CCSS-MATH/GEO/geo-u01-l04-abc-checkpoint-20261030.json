@@ -82,29 +82,11 @@
     ],
     "Visual": "original verbal seven-circle configuration, paper drawing only; no uploaded publisher figure"
   },
-  "StageC": {
-    "Status": "C_PREPARED_BLOCKED_C_SHARED",
-    "Rubrics": "three 8-point independent teacher-scored source tasks",
-    "Practice": "nine original analogue questions, 18 total points",
-    "MachineGrading": false,
-    "SharedDependency": {
-      "Owner": "Supervisor 2",
-      "Issue": 453,
-      "Required": "exact GEO lesson-to-tenant student/teacher assignment, paper evidence custody and human rubric scoring record; no shared engine edit from course branch",
-      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04"
-    }
-  },
-  "Status": "BLOCKED_C_SHARED",
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
+  "Status": "READY_FOR_STAGE_D",
   "StageD": "NOT_RUN",
-  "ABCReadyForD": false,
-  "return_queue": [
-    {
-      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
-      "Status": "BLOCKED_C_SHARED",
-      "Issue": 453,
-      "Owner": "Supervisor 2"
-    }
-  ],
+  "ABCReadyForD": true,
+  "return_queue": [],
   "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
   "Tests": {
     "IndependentNode": "64 PASS / 0 FAIL",
@@ -118,13 +100,29 @@
     "A_CLOSED": 4,
     "B_CLOSED": 4,
     "C_PREPARED": 4,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 4,
     "D_VERIFIED": 0,
-    "BLOCKED": 4,
-    "REMAINING": 124
+    "BLOCKED": 2,
+    "REMAINING": 120
   },
   "StartedAt": null,
   "ClosedAt": null,
   "ElapsedSeconds": null,
-  "Timing": "Unknown per-lesson time; no invented timestamp"
+  "Timing": "Unknown per-lesson time; no invented timestamp",
+  "StageCClosure": {
+    "Status": "C_CLOSED_AUTHORING_ONLY",
+    "HumanRubrics": 3,
+    "PracticeOriginalAnalogueItems": 9,
+    "SourceSourceSha256": {
+      "TeacherPreparation": "7534f265cd53e76e6a7319d5f75f8ac5757e984d2c020a1fe06c709045259d3a",
+      "TeacherActivities": "4211b6706a8d5589d63674c1ae2b7a839e50f3509ec085f450e6a09107372b0d",
+      "StudentActivities": "62f119442f9725191b404f9c34dfb96f57760f565422578ae368edabd8342bb2",
+      "StudentPractice": "287e478a30a1443127fe129952bd980e67cf9b94d1ad5b8f98e5c230d8cdf54a"
+    },
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04"
 }
