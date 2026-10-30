@@ -11,12 +11,12 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 1,
-    "B_CLOSED": 1,
+    "A_CLOSED": 2,
+    "B_CLOSED": 2,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
+    "BLOCKED": 2,
     "REMAINING": 148
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
@@ -117,28 +117,58 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-2\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_EXISTING_SOURCE_GUESS_MY_PRISM_AND_18_CUBE_EXAMPLE; FIX_WARMUP_AND_REAL_ACTIVITY_ORDER_AND_UNEVEN_LAYER_COUNTING",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE numerical volume as supplement; shared writer EXTEND teacher-assessed open construction/reconstruction where necessary",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l02-contract-v15.test.cjs",
+      "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
+      "startedAt": "2026-10-30T07:56:23.872Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
-      "blocker": null,
+      "blocker": {
+        "status": "BLOCKED_SHARED_INTEGRATION",
+        "owner": "Supervisor 1 designated single shared integration writer — issue #592",
+        "reasons": [
+          "Official fallback generic volume may select cuboid surface-area/math rather than irregular counting and partner reconstruction; no proven selected source-faithful contract.",
+          "Teacher scoring for constructions/oral descriptions/partner reconstruction not demonstrably wired."
+        ],
+        "remedy": "Single writer verify actual selected contract and implement a source-suitable REUSE or EXTEND; recheck C before marking ready."
+      },
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
-      "lastEvidenceCommitSHA": null,
-      "authoredCandidate": true
+      "sourceEvidence": {
+        "edition": "2021 IM K–5 first edition",
+        "sourcePaths": "original teacher lesson and preparation, including Student Facing in teacher HTML",
+        "coverage": "WODB four objects, irregular 8–12 cube counting in Activity 1, hidden 16–24 packed prism reconstruction in Activity 2, informal layer strategies and teacher explanations",
+        "rights": "CC BY 4.0 source; independent models, publisher artwork not reproduced",
+        "figures": "NOT_VERIFIED_NONBLOCKING",
+        "publisherCooldown": "NOT_VERIFIED_GATED",
+        "outcomeCodes": [
+          "CCSS:5.MD.C.3",
+          "CCSS:5.MD.C.4"
+        ]
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u01-l02-contract-v15.test.cjs",
+      "openIssues": [
+        "https://github.com/EIAS79/Edulytics/issues/592"
+      ],
+      "lastEvidenceCommitSHA": "712ecb6054aac756ef7f7695d238901c05055bd2",
+      "authoredCandidate": true,
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l02-practice-rubric-v15.json",
+      "beforeAfterFinding": {
+        "before": "Warm-up was vague; Activity 1 irregular 8–12 counting was duplicated as Activity 2; group materials and teacher source task labels were incomplete.",
+        "after": "Explicit original WODB format, irregular variable-layer strategy, Guess My Prism 16–24 hidden reconstruction, teacher-scored original exit check and accessible first-party model.",
+        "unverified": "Actual runtime selected Practice and open-answer human assessment path."
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L03",
@@ -3791,5 +3821,16 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T07:13:44.064Z"
+  "updatedAtUtc": "2026-10-30T07:56:23.872Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U01:L03",
+  "returnBacklog": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
+      "reason": "C shared routing and teacher rubric"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
+      "reason": "C shared routing and teacher rubric"
+    }
+  ]
 }

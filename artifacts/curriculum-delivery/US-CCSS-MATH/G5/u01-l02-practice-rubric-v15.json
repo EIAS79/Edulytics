@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "lessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
+  "source": "2021 IM G5 U01 L02; original teacher lesson.html and preparation.html inspected on Our-CS",
+  "sourceRights": "CC BY 4.0 text attribution; publisher art/gated Cool-down unverified; Edulytiks models original",
+  "OutcomeCodes": [
+    "CCSS:5.MD.C.3",
+    "CCSS:5.MD.C.4"
+  ],
+  "PracticeStrategy": "REUSE numerical volume as supplement; shared writer EXTEND teacher-assessed open construction/reconstruction where necessary",
+  "staticPractice": {
+    "explicitLessonSkillMapping": "ABSENT_FOR_L02",
+    "officialOutcomeRoute": "5.MD.C.3 and 5.MD.C.4 resolve to generic volume target by official outcome map; source-specific contract unproven",
+    "targetFamilyRisk": "Supporting volume target may include cuboid volume and surface-area of cuboid; source requires counting irregular cubes and precise prism reconstruction, not surface area",
+    "exactSelectedRuntimeContract": "NOT_EXECUTED_OR_CONFIRMED",
+    "owner": "Supervisor 1 single-writer issue #592"
+  },
+  "requirements": [
+    {
+      "task": "WODB cubic solids",
+      "response": "defend choice with meaningful cube arrangement/count reasoning",
+      "feedback": "accept multiple defensible answers; reject unreasoned letter-only",
+      "assessment": "HUMAN"
+    },
+    {
+      "task": "irregular 8-12 cube build and count",
+      "response": "one connected object, exact cube count and one valid counting explanation",
+      "feedback": "reject skipped/double-counted cubes; counting uneven layers valid",
+      "assessment": "HUMAN"
+    },
+    {
+      "task": "Guess My Prism 16-24",
+      "response": "packed prism with precise rows, columns, layers and equivalent reconstructed model",
+      "feedback": "18 without shape is incomplete; rotated same dimension multiset is correct",
+      "assessment": "HUMAN"
+    },
+    {
+      "task": "original exit check 18",
+      "response": "two counts and dimension description for 2×3×3 packed prism",
+      "feedback": "18 correct with six cubes per layer for three layers or other valid decomposition; incomplete without explanation",
+      "assessment": "HUMAN"
+    }
+  ],
+  "mathFixtures": [
+    {
+      "case": "valid irregular nine",
+      "expected": "9 connected, may have variable layer size"
+    },
+    {
+      "case": "valid rotation",
+      "expected": "2×3×3 equivalent to 3×2×3"
+    },
+    {
+      "case": "wrong hidden cube count",
+      "expected": "reject 12 for 2×3×3"
+    },
+    {
+      "case": "wrong shape description",
+      "expected": "18-only is not an unambiguous prism"
+    },
+    {
+      "case": "disconnected or overlap",
+      "expected": "reject model"
+    },
+    {
+      "case": "malformed count or coordinates",
+      "expected": "reject"
+    }
+  ],
+  "publisherCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "ORIGINAL_AUTHORED",
+  "testStatus": "TEST_AUTHORED_NOT_RUN",
+  "StageA": "COMPLETE_WITH_EVIDENCE",
+  "StageB": "COMPLETE_WITH_EVIDENCE",
+  "StageC": "BLOCKED_SHARED_INTEGRATION"
+}
