@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+  "lessonTitle": "Moving in the Plane",
+  "assessmentScope": "ACADEMIC_C_SPECIFICATION_ONLY__NOT_A_RUNTIME_LESSON_PRACTICE_CONTRACT",
+  "sourceEdition": "OUR/Illustrative Mathematics 2017-2019 teacher/student local HTML CC BY 4.0 adaptation",
+  "sourceFiles": [
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
+      "sha256": "dbb43369a545fedd2d1a7d77be6e4f708fd583a6f13203351ed6e074c6f95c51"
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\index.html",
+      "sha256": "ad4810d3e82313c1eeb8919228ee5d24d35d3d5c150f416abccfabdc0cd1bb5b"
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\preparation.html",
+      "sha256": "f973defe83a451e19fa51f3316799ed92ce270ed441919d36a7a83ea7c368ca0"
+    }
+  ],
+  "authority": {
+    "academicSupervisorDecision": "Supervisor 2 PR #593 comment 6523795237 dated 2026-10-30",
+    "sourceRoles": [
+      {
+        "role": "BuildingOn",
+        "reference": "4.MD.C.5"
+      },
+      {
+        "role": "BuildingTowards",
+        "reference": "8.G.A.1"
+      }
+    ],
+    "sourceRoleSemanticsApproved": true,
+    "sharedBlueprintExtraMetadata": "Addressing:8.G.A.1",
+    "sharedBlueprintResolutionOwner": "Supervisor 2 authorized blueprint single-writer; deferred runtime consistency, NEVER overwrite source semantic role"
+  },
+  "learningObjectives": [
+    "Describe and reproduce sliding and turning motions informally and precisely",
+    "Identify rays/angles that differ and defend more than one valid odd-one-out",
+    "Describe all three six-frame triangle dances to a partner using clear slide amount/direction and turn amount/direction",
+    "Invert a dance by reversing ordered moves, retaining exact magnitudes and reversing turn direction"
+  ],
+  "studentModes": [
+    {
+      "id": "1.1",
+      "sourceTitle": "Which One Doesn't Belong: Diagrams",
+      "responseType": "choice_with_written_or_spoken_reason",
+      "scoring": "TEACHER_ONLY",
+      "prompt": "Among original four common-vertex ray pairs A straight 180°, B right 90°, C acute 45°, D obtuse 125°, choose one that does not belong AND defend with an accurate mathematical property. Multiple defensible choices exist.",
+      "acceptance": "Use any mathematically valid differentiator; e.g. A is the only 180°, B the only right angle, C the only acute, D the only obtuse. Do not auto-grade letter alone.",
+      "negative": "A choice without property or with demonstrably wrong angle classification is insufficient.",
+      "evidence": "student selection + written/oral reasoning"
+    },
+    {
+      "id": "1.2",
+      "sourceTitle": "Triangle Square Dance",
+      "responseType": "partner_oral_directions_plus_six_frame_sequence",
+      "scoring": "TEACHER_ONLY",
+      "prompt": "Secretly choose Edulytiks first-party A/B/C six-frame dance cards; describe the complete directed slides and quarter-turns without naming the card. Partner reconstructs and identifies it, then switch roles.",
+      "correctness": "A/B first slide right 2; both turn 90° clockwise next; C turns 90° counterclockwise; A and B diverge at frame 4. All preserve an asymmetric triangle's lengths/angles.",
+      "negative": "Only naming A/B/C, omitting a frame or confusing clockwise/counterclockwise is insufficient.",
+      "evidence": "full six-frame reconstruction + teacher-reviewed explanations"
+    },
+    {
+      "id": "extension",
+      "sourceTitle": "Run the dance in reverse",
+      "responseType": "diagram_plus_written_or_oral_inverse",
+      "scoring": "TEACHER_ONLY",
+      "prompt": "Choose one A/B/C sequence. Start at frame 6 and describe inverse moves in reverse order.",
+      "correctness": "Reverse every slide by same distance opposite direction; inverse of clockwise turn is counterclockwise of equal angle, and vice versa; undo move 5→6 before move 4→5.",
+      "negative": "Reversing the list of directions without inverting each movement is incorrect.",
+      "evidence": "ordered 6→1 frames and inverse justification"
+    },
+    {
+      "id": "Edulytiks-Cooldown",
+      "sourceTitle": "EDULYTIKS_AUTHORED_COOLDOWN; PUBLISHER_COOLDOWN_UNVERIFIED",
+      "responseType": "constructed_figure_plus_coordinate_and_direction_and_explanation",
+      "scoring": "TEACHER_ONLY_EIGHT_POINT_RUBRIC",
+      "prompt": "An asymmetrical triangle has marked P=(1,1), tip north. Slide right 3, then turn clockwise 90° around the new P. Draw/describe final pose, final P and tip direction and why sides/angles remain unchanged.",
+      "key": {
+        "finalReferencePoint": [
+          4,
+          1
+        ],
+        "tipDirection": "east",
+        "lengthsAngles": "unchanged"
+      },
+      "rubric": {
+        "status": "DRAFT_TEACHER_SCORED_NOT_RUNTIME_INTEGRATED",
+        "maxPoints": 8,
+        "expected": "P ends at (4,1), the marked tip points east after a clockwise quarter-turn; no side length or angle measure changes",
+        "criteria": [
+          {
+            "name": "Endpoint reference P=(4,1)",
+            "max": 2
+          },
+          {
+            "name": "Correct clockwise quarter-turn ending east",
+            "max": 2
+          },
+          {
+            "name": "Congruent figure preserving lengths and angles",
+            "max": 2
+          },
+          {
+            "name": "Reproducible oral/written construction and explanation",
+            "max": 2
+          }
+        ],
+        "scale": "0 incorrect/missing, 1 partially justified, 2 correct with evidence",
+        "machineScored": false,
+        "persistedTeacherScore": false
+      },
+      "evidence": "teacher stores descriptive criterion notes and four scores, 0–2 each; 8 maximum, not numeric auto-grading"
+    }
+  ],
+  "coordinateQuestionCandidate": {
+    "id": "first-party-coordinate-translation-subskill",
+    "scopeLimit": "Only fixed-point translation coordinate, not substitute for ray/partner/dance/human work",
+    "responseType": "coordinate_pair",
+    "prompt": "P=(1,1) translated right 3 units: report P′",
+    "key": [
+      4,
+      1
+    ],
+    "algorithm": "translate x by +3, y unchanged; canonicalize signed zero and decimal equivalents",
+    "parser": "Trim, optional outer parentheses, exactly two finite base-10 signed decimals separated by comma, whitespace allowed; reject scientific notation, NaN, Infinity, extra coordinates and empty/null; limit numeric magnitude to safe finite range",
+    "correct": [
+      "(4,1)",
+      "4,1",
+      "(4.0, 1.0)",
+      "(04,01)",
+      "(+4,+1)"
+    ],
+    "wrong": [
+      "(1,4)",
+      "(4,2)",
+      "(-2,1)",
+      "(4,-1)"
+    ],
+    "malformed": [
+      "NaN,1",
+      "Infinity,1",
+      "(4,1,2)",
+      "",
+      null,
+      "4;1",
+      "(4e0,1)",
+      "(4 1)"
+    ],
+    "boundary": [
+      "(-0,1) is a valid parsed point but not the key",
+      "(4,-0) valid parsed point but not the key",
+      "(4,1.0000001) not equivalent to the exact answer",
+      "1e309 not accepted"
+    ],
+    "runtimeEnabled": false,
+    "generatedByProduction": false
+  },
+  "Cacceptance": {
+    "goalsCrosswalk": true,
+    "humanRubricExplicit": true,
+    "grade8SourceRoleSemanticMatch": true,
+    "machineOracleDefinedButNotProductionReady": true,
+    "productionGeneratedPractice": "NOT_RUN_STAGE_D",
+    "teacherScorePersistence": "NOT_RUN_STAGE_D",
+    "inputNegativeOracle": "COURSE_OWNED_FOCUSED_TEST_REQUIRED"
+  },
+  "futureStageD": {
+    "exactPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "singleWriterOwner": "Supervisor 2 central Practice contract/engine owner",
+    "commonPaths": [
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs"
+    ],
+    "mustProve": [
+      "authenticated learner question generated within right lesson/outcome skill",
+      "accepted/wrong/malformed enforced fail-closed",
+      "student attempt persisted per school",
+      "teacher rubric 8/8 scoring persisted and authorized",
+      "tenant isolation and accessibility"
+    ],
+    "sharedBlueprintCorrection": "Supervisor 2 metadata owner to reconcile extra Addressing role",
+    "notPermittedInGradeBranch": true
+  },
+  "provenance": {
+    "newAcademicApproval": "Supervisor 2 comment 6523795237",
+    "sourceFirstPartyFigures": [
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-angles-first-party.svg",
+      "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/figures/u01-l01-dances-first-party.svg"
+    ],
+    "publisherArtworkReproduced": false,
+    "publisherCooldownAccessed": false
+  },
+  "stageGates": {
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "previousHEAD": "4fabf7def2b89e4ba61fd015f13e496daa431de0"
+}

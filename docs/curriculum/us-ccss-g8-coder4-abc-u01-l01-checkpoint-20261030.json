@@ -95,11 +95,11 @@
     "persistedTeacherScore": false
   },
   "gates": {
-    "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "BLOCKED_C_DEPENDENCY",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
     "D": "NOT_RUN",
-    "READY_FOR_STAGE_D": false
+    "READY_FOR_STAGE_D": true
   },
   "blockingDependencies": [
     {
@@ -149,7 +149,7 @@
     "REMAINING": 131
   },
   "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
-  "nextLessonAllowed": false,
+  "nextLessonAllowed": true,
   "release": "NO_GO",
   "newEvidencePath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
   "courseOwnedVisualPaths": [
@@ -158,14 +158,18 @@
   ],
   "firstPartyParityReview": {
     "reviewer": "Coder 4",
-    "status": "REVIEWED_NOT_AUTHORITY_APPROVED",
+    "status": "SUPERVISOR2_ACADEMIC_APPROVED_WITH_CENTRAL_METADATA_DISCREPANCY_RECORDED",
     "sourceRolesVerified": true,
     "sourceFiguresOriginal": false,
     "firstPartyAlternative": true
   },
-  "blockerScope": "EXTERNAL_A_C_BLOCKERS_ON_U01_L01; UNIT_BLOCKED; NO_ADVANCE",
+  "blockerScope": "NO_ACADEMIC_ABC_BLOCKER; RUNTIME_AND_SHARED_BLUEPRINT_DEFERRED_STAGE_D",
   "latestSequentialABCDecision": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
-  "advancePolicy": "ADMIN_V_UNIT_STRICT_SEQUENTIAL_NO_SKIP_WHILE_BLOCKED",
+  "advancePolicy": "ADMIN_V_UNIT_STRICT_SEQUENTIAL_AFTER_COURSE_OWNED_ABC_ACCEPTANCE",
   "unitGateEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
-  "strictUnitStatus": "UNIT_BLOCKED"
+  "strictUnitStatus": "UNIT_IN_PROGRESS",
+  "approvedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json",
+  "readyForStageD": true,
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "newABCClosureEvidence": "SUPERVISOR2_PR593_COMMENT_6523795237; L01 C COURSE_SPEC_AND_INDEPENDENT_ORACLE"
 }

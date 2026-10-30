@@ -17,41 +17,14 @@
     "09": 6
   },
   "previouslyReadyForStageD": 0,
-  "newlyReadyForStageD": 0,
+  "newlyReadyForStageD": 1,
   "unitReadyForStageD": false,
-  "unitStatus": "UNIT_BLOCKED",
-  "lastClosedLesson": null,
-  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "blockedInUnitCurrently": 6,
-  "activeBlockingLesson": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
-    "currentStage": "A_AND_C_BLOCKED_OUTSIDE_COURSE_WRITER",
-    "A": {
-      "status": "A_REVIEWED_STANDARDS_AUTHORITY_PENDING",
-      "sourceRole": "8.G.A.1:BuildingTowards",
-      "incorrectBlueprintExtraRole": "Addressing:8.G.A.1",
-      "owner": "Supervisor 2 / authorized academic standards and canonical blueprint owner",
-      "resolution": "Approve removal or correction of extra Addressing role in shared canonical blueprint, or formally approve documented exception; never silently promote source role or edit shared blueprint in course branch."
-    },
-    "B": {
-      "status": "B_CLOSED_COURSE_OWNED",
-      "support": "Original A/B/C/D ray cards and native three six-frame dance tables; original first-party SVGs and instructor-created source-equivalent Cool-down. Authenticated browser SVG integration remains Stage D, not gate B."
-    },
-    "C": {
-      "status": "BLOCKED_C_DEPENDENCY",
-      "owner": "Supervisor 2 / existing shared Practice service single writer",
-      "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
-      "additionalPath": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-      "proof": "The authoritative LessonPracticeCapabilityResolver requires READY_VERIFIED. No exact U01:L01 contract occurs in the central LessonPracticeContracts.cs; an official-outcome transformations map and course-owned numeric oracle alone do not constitute executable lesson-scoped question generation or grading.",
-      "resolution": "Approve existing family reuse and register verified lesson-specific transformations contract in single-writer central owner, independently demonstrate correct/equivalent/wrong/malformed behavior, and keep human-rated odd-one-out, six-frame dance, inverse and 8-point Cool-down outside numeric auto-grader."
-    },
-    "stageD": {
-      "status": "NOT_RUN",
-      "scope": "Authenticated browser, actual persisted Practice attempts, teacher rubric persistence, two-school isolation, full CI to be executed only after every grade lesson A–C closes"
-    },
-    "release": "NO_GO"
-  },
+  "unitStatus": "UNIT_IN_PROGRESS",
+  "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "blockedInUnitCurrently": 5,
+  "activeBlockingLesson": null,
   "historicalPartiallyRepaired": [
     "PED:US-CCSS-MATH:G8:U01:L01",
     "PED:US-CCSS-MATH:G8:U01:L02",
@@ -66,17 +39,17 @@
   "unitCounts": {
     "TOTAL": 131,
     "AUTHORED": 131,
-    "A_CLOSED": 5,
+    "A_CLOSED": 6,
     "B_CLOSED": 6,
     "C_PREPARED": 6,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 1,
     "D_VERIFIED": 0,
-    "BLOCKED": 6,
-    "REMAINING": 131,
+    "BLOCKED": 5,
+    "REMAINING": 130,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_BLOCKED"
+    "UNIT_STATUS": "UNIT_IN_PROGRESS"
   },
   "unitTotals": {
     "UNIT_TOTAL": 9,
@@ -128,5 +101,7 @@
   "mergeAllowed": false,
   "deployAllowed": false,
   "noSharedFilesEdited": true,
-  "resumption": "Recheck U01:L01 authority decisions and exact Practice capability. Only after genuine A/C closure, commit lesson READY_FOR_STAGE_D, then resume L02 in ascending order; do not jump to L07 or another unit."
+  "resumption": "Recheck U01:L01 authority decisions and exact Practice capability. Only after genuine A/C closure, commit lesson READY_FOR_STAGE_D, then resume L02 in ascending order; do not jump to L07 or another unit.",
+  "latestAcademicApproval": "Supervisor 2 PR #593 comment 6523795237",
+  "L01AssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json"
 }

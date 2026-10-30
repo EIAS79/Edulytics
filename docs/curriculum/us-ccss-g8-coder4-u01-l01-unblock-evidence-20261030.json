@@ -36,8 +36,9 @@
     "incorrectBlueprintExtraRole": "Addressing:8.G.A.1",
     "requestedAdjudication": "Retain source BuildingTowards instead of silently promoting to Addressing; academic owner must approve any blueprint role change.",
     "owner": "Supervisor 2 / academic standards reviewer",
-    "approved": false,
-    "sharedBlueprintChanged": false
+    "approved": true,
+    "sharedBlueprintChanged": false,
+    "ownerApproval": "Supervisor 2 comment 6523795237; source semantic role BuildingTowards accepted, blueprint discrepancy deferred to owner"
   },
   "activityParity": [
     {
@@ -279,11 +280,11 @@
     "evidence": "Node test runner 4 tests / 4 pass / 0 fail / exit 0 on isolated Our-CS working tree; no .NET build or other full suite executed."
   },
   "gates": {
-    "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "BLOCKED_C_DEPENDENCY",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
     "D": "NOT_RUN",
-    "READY_FOR_STAGE_D": false
+    "READY_FOR_STAGE_D": true
   },
   "unresolved": [
     "SOURCE_ROLE_APPROVAL_SUPERVISOR2",
@@ -302,20 +303,20 @@
     "REMAINING": 131
   },
   "nextLessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
-  "nextLessonAllowed": false,
+  "nextLessonAllowed": true,
   "release": "NO_GO",
   "lastUpdatedAtUtc": "2026-10-30T07:32:41.463614+00:00",
   "elapsedSecondsUntilEvidence": 186,
   "courseOwnedABCDecision": {
     "reviewedAtUtc": "2026-10-30T12:04:34.645182+00:00",
-    "A": "A_REVIEWED_BLOCKED_ROLE_OWNER",
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
     "A_evidence": "Three local source HTML SHA-256s and activity 1.1/1.2/inverse/Cool-down crosswalk recorded. Publisher marks 8.G.A.1 BuildingTowards; blueprint additionally claims Addressing and academic owner has not signed off.",
     "B": "B_CLOSED_COURSE_OWNED",
     "B_evidence": "Existing supported Rich V2 ShapeDecomposition and RatioTable visual structures are attached to course data, all 4 L01 first-party graphics/math tests PASS, original source artwork not copied. Standalone SVG image attachment is enhancement, not a new mandatory B gate per Admin.",
-    "C": "BLOCKED_C_DEPENDENCY",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
     "C_evidence": "Non-numeric teacher criteria and eight-point Cool-down rubric available, correct/equivalent/wrong/invalid coordinate response oracle independently checked. Actual lesson-scoped transformations generation/grading not demonstrated; shared engine edit prohibited.",
     "D": "NOT_RUN",
-    "returnQueue": true,
+    "returnQueue": false,
     "returnReasons": [
       "ACADEMIC_STANDARDS_OWNER_ROLE_ADJUDICATION",
       "LESSON_SCOPED_TRANSFORMATIONS_PRACTICE_RUNTIME_OR_FAIL_CLOSED_DEPENDENCY"
@@ -323,15 +324,15 @@
     "needsSharedSvgKindForB": false,
     "approvalClaimed": false,
     "skipPermissionSuperseded": true,
-    "nextLessonAllowed": false
+    "nextLessonAllowed": true,
+    "futureRuntimeStageDNotVerified": true
   },
   "strictSequentialOverride": {
-    "unitStatus": "UNIT_BLOCKED",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-    "nextLessonAllowed": false,
+    "unitStatus": "UNIT_IN_PROGRESS",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "nextLessonAllowed": true,
     "effectiveOrder": "ADMIN_V_UNIT",
-    "historicalReturnQueue": "RETAINED_BUT_SKIP_NOT_AUTHORIZED",
-    "assessmentVerifiedAtUtc": "2026-10-30T12:59:32.774413+00:00",
-    "unitReport": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json"
-  }
+    "academicOwnerApproval": "Supervisor 2 comment 6523795237"
+  },
+  "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json"
 }
