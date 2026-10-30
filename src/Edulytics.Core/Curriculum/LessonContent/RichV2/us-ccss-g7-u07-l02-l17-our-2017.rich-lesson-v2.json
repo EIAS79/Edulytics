@@ -868,26 +868,27 @@
       "Title": "Triangles with 3 Common Measures",
       "ExplanationParagraphs": [
         "Edulytiks goal: Classify whether three given measurements ensure identical triangles or permit different triangles. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/8/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
+        "Source-specific side-position repair: Compare three given measurements in their actual positions, then decide whether two differently oriented drawings can be overlaid. A triangle with angles 40°, 60°, 80° and length 5 between the 40° and 60° vertices is NOT the same size as a triangle with length 5 between the 40° and 80° vertices. Measure and compare corresponding sides and explain the adjacency difference. A rotation/reflection is an identical copy, not a new triangle. This lesson develops concrete reasoning; memorizing SSS, SAS, ASA or AAA names is not a required student objective. Source student: https://im.kendallhunt.com/MS/students/2/7/8/index.html.",
         "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
         "Direct official student lesson activity: Compare triangle measurements and congruence conditions. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/8/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
       "KeyConcepts": [
         {
           "Title": "Core geometric idea",
-          "Definition": "SSS specifies a unique triangle shape when triangle inequality holds.",
-          "Rule": "SSS specifies a unique triangle shape when triangle inequality holds.",
+          "Definition": "Three feasible matching side lengths give an identical triangle shape, even if drawn in different orientations.",
+          "Rule": "Check corresponding lengths and whether two triangles overlay after rigid movement, not just their page orientation.",
           "Example": "Yes."
         },
         {
           "Title": "Rule and representation",
-          "Definition": "SAS determines a triangle when the angle is included between specified sides.",
-          "Rule": "SAS determines a triangle when the angle is included between specified sides.",
+          "Definition": "Two sides and an angle must be matched in their corresponding positions; a non-included angle can allow different figures.",
+          "Rule": "Identify which measured angle lies between the given sides and compare actual neighboring parts.",
           "Example": "No."
         },
         {
           "Title": "Verification",
-          "Definition": "AAA fixes angle ratios but not size.",
-          "Rule": "AAA fixes angle ratios but not size.",
+          "Definition": "Three given angles alone do not determine scale, and two angles plus one side require that the side's position be specified.",
+          "Rule": "Compare location of the marked side relative to the vertices with known angles before declaring identical copies.",
           "Example": "No triangle exists."
         }
       ],
@@ -897,9 +898,9 @@
           "Question": "Triangle A has sides 3,4,5 and B also 3,4,5. Are they congruent?",
           "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
           "Steps": [
-            "Identify three corresponding lengths.",
-            "Use SSS congruence.",
-            "Ignore orientation on the page."
+            "Label corresponding sides 3,4,5 on both triangles.",
+            "Rotate or flip one construction if needed; every pair of matching lengths overlays.",
+            "Conclude the two shapes are identical copies, regardless of how they face on the page."
           ],
           "Answer": "Yes.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
@@ -909,9 +910,9 @@
           "Question": "Two triangles both have angles 40°,60°,80°. Must they be congruent?",
           "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
           "Steps": [
-            "Angles sum to 180°.",
-            "One triangle can be twice as large.",
-            "AAA determines similarity, not congruence."
+            "Confirm the two angle sets each contain 40°, 60°, and 80°.",
+            "Trace one triangle and draw a second copy twice as large while keeping the same angle measures.",
+            "They are not identical copies; angle equality alone does not fix the side lengths."
           ],
           "Answer": "No.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
@@ -955,9 +956,9 @@
         }
       ],
       "SummaryPoints": [
-        "SSS specifies a unique triangle shape when triangle inequality holds.",
-        "SAS determines a triangle when the angle is included between specified sides.",
-        "AAA fixes angle ratios but not size."
+        "To compare triangles, label which sides and angles correspond; a rotated or reflected copy can still be identical.",
+        "The same three numerical measurements may produce different triangles when the measures are attached to different sides or vertices.",
+        "Three matching feasible side lengths determine the same triangle shape; angle-only data do not determine absolute size."
       ],
       "Visuals": [
         {
