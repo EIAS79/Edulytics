@@ -178,6 +178,7 @@ public sealed class ExactSkillContractQuestionEngine
         (SupportedFamilies.Contains(family.Trim()) ||
          UsCcssHsFourthCourseQuestions.Supports(family.Trim()) ||
          UsCcssHsFourthCourse3x3Questions.Supports(family.Trim()) ||
+         UsCcssHsAdvancedLogQuestions.Supports(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -413,6 +414,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssHsFourthCourseQuestions.Verify(family, parameters, answer);
         if (UsCcssHsFourthCourse3x3Questions.Supports(family))
             return UsCcssHsFourthCourse3x3Questions.Verify(family, parameters, answer);
+        if (UsCcssHsAdvancedLogQuestions.Supports(family))
+            return UsCcssHsAdvancedLogQuestions.Verify(family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1735,6 +1738,11 @@ public sealed class ExactSkillContractQuestionEngine
         if (UsCcssHsFourthCourse3x3Questions.Supports(family))
         {
             var item = UsCcssHsFourthCourse3x3Questions.Build(family, random);
+            return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
+        }
+        if (UsCcssHsAdvancedLogQuestions.Supports(family))
+        {
+            var item = UsCcssHsAdvancedLogQuestions.Build(family, random);
             return new ExactProblem(item.Family, item.Prompt, item.Solution, item.ItemType, item.Parameters);
         }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
@@ -4885,6 +4893,8 @@ public sealed class ExactSkillContractQuestionEngine
             return UsCcssHsFourthCourseQuestions.Solve(problem.Family, p);
         if (UsCcssHsFourthCourse3x3Questions.Supports(problem.Family))
             return UsCcssHsFourthCourse3x3Questions.Solve(problem.Family, p);
+        if (UsCcssHsAdvancedLogQuestions.Supports(problem.Family))
+            return UsCcssHsAdvancedLogQuestions.Solve(problem.Family, p);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
