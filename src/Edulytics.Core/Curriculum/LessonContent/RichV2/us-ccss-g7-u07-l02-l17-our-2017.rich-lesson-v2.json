@@ -583,6 +583,7 @@
       "Title": "Building Polygons (Part 1)",
       "ExplanationParagraphs": [
         "Edulytiks goal: Explore which side and angle conditions determine a polygon and whether different solutions exist. Independent lesson examples with 2017–2019 OUR/IM historical preparation source https://im.kendallhunt.com/MS/teachers/2/7/6/preparation.html (CC BY 4.0 attribution; no copied illustrations or assessments).",
+        "Grade 7 source-sequence repair: In this lesson, first build hinged polygons using fixed strip lengths, measure and redraw a triangle and a quadrilateral, and compare overlapping copies. Four fixed side lengths can allow different quadrilaterals; three feasible fixed side lengths determine one triangle up to congruence. Use 4 in, 5 in, 6 in and 9 in for two different quadrilaterals and 4 in, 5 in, 8 in for a closing triangle. Treat 3 in, 4 in and 9 in as a failed physical closure. Defer the general triangle-inequality rule and compass endpoint-circle construction to the following lesson U07:L07, rather than replacing this investigation with a numerical shortcut. Student source: https://im.kendallhunt.com/MS/students/2/7/6/index.html.",
         "Use exact angle labels, defined length units, explicit geometric conditions and accessible diagrams or manipulatives when appropriate. Open constructions, counterexamples and peer explanations require teacher evaluation; numerical checks alone do not establish construction quality.",
         "Direct official student lesson activity: Build polygons with given segment lengths; classify possible/unique shapes. Preserve physical angle, polygon, triangle, 3D-slice or prism-net construction and explicitly labeled units; the worked first-party problem below is an analogue, not publisher artwork. Student source: https://im.kendallhunt.com/MS/students/2/7/6/index.html. Teacher evaluates original drawings or objects; a table result alone does not establish this skill."
       ],
@@ -610,11 +611,11 @@
         {
           "Title": "Independent geometric problem 1",
           "Question": "A triangle has sides 3,4,5. Is it possible?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Method": "Physically join three labeled strips, check whether the endpoints close to a triangle, and compare the finished shape with a peer.",
           "Steps": [
-            "Check 3+4>5.",
-            "Check 3+5>4 and 4+5>3.",
-            "Conclude triangle inequalities all hold."
+            "Join 3 cm and 4 cm strips at one endpoint; try to join their free endpoints using the 5 cm strip.",
+            "A non-flat triangular construction closes; draw and measure it.",
+            "With these three fixed lengths another copy may be turned or flipped, but it matches in shape and size."
           ],
           "Answer": "Yes.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
@@ -622,11 +623,11 @@
         {
           "Title": "Independent geometric problem 2",
           "Question": "Could sides 2,3,6 form a triangle?",
-          "Method": "Identify the relevant geometric relation and verify all measurements and constraints.",
+          "Method": "Try to close three strips physically; when they cannot meet, explain the endpoint gap rather than relying only on an unintroduced general rule.",
           "Steps": [
-            "Check 2+3=5.",
-            "Compare 5<6.",
-            "Conclude longest side exceeds other two combined."
+            "Join the 2 cm and 3 cm strips end-to-end to maximize their reach; together they span at most 5 cm.",
+            "The remaining strip is 6 cm long, so the two ends cannot meet to form a non-flat triangle.",
+            "Record the failed closure and compare this reasoning with the constructions from the first task."
           ],
           "Answer": "No.",
           "Check": "Use geometric invariants, substitution or physical construction evidence; teacher review for drawing quality."
@@ -648,13 +649,13 @@
           "Question": "Use sticks of lengths 4, 5, 8 cm to make a triangle and sticks 3, 4, 9 cm to try making a triangle. Explain outcomes, then draw a nonunique four-side example.",
           "Method": "Draw an independent accurate geometry model, measure or construct required angles/sides/cross-sections, calculate and justify, and submit for teacher review.",
           "Steps": [
-            "4+5>8 and other inequalities hold, so a 4-5-8 triangle is possible.",
-            "3+4<9, so a triangle with sides 3,4,9 cannot close.",
-            "Fixed four side lengths do not ordinarily determine a unique quadrilateral because included angles can vary.",
-            "Use physical strips or a compass construction and annotate which joins close."
+            "Make a triangle with hinged 4 cm, 5 cm and 8 cm strips; measure and sketch its angles, then compare copies.",
+            "Try hinged strips of 3 cm, 4 cm and 9 cm; even when the shorter strips point in the same direction, they leave a gap.",
+            "Make two quadrilaterals with consecutive sides 9, 4, 5 and 6 inches, allowing the hinge angle to change; record different diagonal lengths such as 7 and 9 inches.",
+            "Overlay the two quadrilaterals to show they are not identical, despite the same four side lengths. Explain why any 4-5-8 triangles from fixed rigid strips overlay after rotation or reflection."
           ],
           "Answer": "A 4-5-8 triangle exists; 3-4-9 is impossible; quadrilateral side-only data can be nonunique.",
-          "Check": "Teacher reviews physically constructed or precisely drawn polygon evidence and triangle inequalities."
+          "Check": "Teacher reviews actual hinged models, accurate side and angle measurements, overlay comparison and descriptions. Do not auto-pass an answer based on an arithmetic inequality alone."
         }
       ],
       "CommonMistakes": [
