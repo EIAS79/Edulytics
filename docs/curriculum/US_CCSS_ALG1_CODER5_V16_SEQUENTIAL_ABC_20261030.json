@@ -4,9 +4,9 @@
   "pr": 589,
   "branch": "feat/us-ccss-alg1-coder5-full-course-20261028",
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
-  "recordedAtUtc": "2026-10-30T14:30:19.710666+00:00",
-  "lastReviewed": "U01:L14",
-  "nextCanonical": "U01:L15",
+  "recordedAtUtc": "2026-10-30T14:30:54.557232+00:00",
+  "lastReviewed": "U01:L15",
+  "nextCanonical": "U01:L16",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -914,20 +914,81 @@
       "authoringClosedAtUtc": "2026-10-30T14:30:19.710666+00:00",
       "startedAtUtc": null,
       "timeNote": "not captured; no elapsed time invented"
+    },
+    {
+      "ordinal": 15,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+      "title": "Comparing Data Sets",
+      "sourceEdition": "IM Algebra1 First Edition local teacher/student HTML, CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\15\\preparation.html",
+          "sha256": "e97883b62718827d327720d86326bd4084196ac7221a09209a3be8753bfe31ab"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\15\\index.html",
+          "sha256": "4d81824af6e49f7fe1c90d0dcde887d64eb572af798e7e70f39a46bbc3887b18"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\15\\index.html",
+          "sha256": "6a5df9df84ee7105dacc176e7750155615c719a81266098f3fcc05b169cb82ac"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\15\\practice.html",
+          "sha256": "a00270dd993730db7bfb04c9d22cabc85b7d9d3f646024f816a85642564d8364"
+        }
+      },
+      "sourceRoles": [
+        "HSS-ID.A.1 BuildingOn",
+        "HSS-ID.A.1 Addressing",
+        "HSS-ID.A.2 Addressing",
+        "HSS-ID.A.2 BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "Source asks choose bowlers from 25-game histograms; invented five-game alternatives are examples, not measured source values.",
+        "For fictional A/B both centers120, compute SD sqrt200 vs sqrt2, IQR30 vs3 and support team preference.",
+        "Accurate centers|Spread measures|Defensible decision"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l15-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l15-source-abc-authoring-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "sourceReview": "four original local HTMLs and role crosswalk; independent first-party equivalent",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "fixes": [
+          "add task-specific source crosswalk and original 6-point Cool-down"
+        ],
+        "authenticatedRenderer": "STAGE_D_NOT_RUN"
+      },
+      "C": {
+        "status": "AUTHORING_CLOSED",
+        "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L15_AUTHORING_C_20261030.json",
+        "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
+        "runtimeEnabled": false,
+        "humanGrading": true
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "authoringClosedAtUtc": "2026-10-30T14:30:54.557232+00:00",
+      "startedAtUtc": null,
+      "timeNote": "not captured; no elapsed time invented"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 14,
-    "B_CLOSED": 14,
-    "C_PREPARED": 14,
-    "ABC_READY_FOR_D": 14,
+    "A_CLOSED": 15,
+    "B_CLOSED": 15,
+    "C_PREPARED": 15,
+    "ABC_READY_FOR_D": 15,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 118,
-    "SOURCE_REVIEW_CUMULATIVE": 35,
+    "REMAINING": 117,
+    "SOURCE_REVIEW_CUMULATIVE": 36,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 0,
@@ -949,7 +1010,8 @@
     "L11_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L12_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L13_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
-    "L14_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
+    "L14_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
+    "L15_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
@@ -961,12 +1023,12 @@
     "unitsABCCLosed": 0,
     "status": "UNIT_IN_PROGRESS",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 14,
+    "newlyABCClosed": 15,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
@@ -982,7 +1044,7 @@
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
   "unitStatus": "UNIT_IN_PROGRESS",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
   "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
 }
