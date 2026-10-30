@@ -30,20 +30,26 @@
     "sourcePaintingContentCommit": "36ec7df1cb52fbb37512756c34a5e8e7f0da156c",
     "sourcePaintingOracleTestsCommit": "6a0425c3c9cb58b36e653dbb3d490ed9fb3b29ad",
     "sourceTaskEvidenceCommit": "991bea163fdeccfa259c2c980ae66b9bd1937272",
-    "v2ExactFieldHandoffCommit": "aa689a5797521818dfb83bf876ee5087d11fa499"
+    "v2ExactFieldHandoffCommit": "aa689a5797521818dfb83bf876ee5087d11fa499",
+    "logNumberLineTeachingCommit": "fa296857f7176cc85714b0af4cc38ce68bcd0352",
+    "logNumberLineOracleTestsCommit": "03bdcd34eb1c69cb18883dbe5375277e24359e1f",
+    "twentySixMalformedBoundaryFixturesCommit": "1befb0b28f76810b7ba36b229acb848d448143a8",
+    "sixRubricsCommit": "dc1325200287baa54f0421943908f31c0c4c0709",
+    "fixtureTheoryTestsCommit": "057051e7b1e64bbe904612e38f1d40664c784f92"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
     "oldVersion": "phase30-common-core-rich-content-v1",
-    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v2",
+    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
     "baselineFileBlobSha": "69306240d3f240177af7dcc6b25fc420c59a8316",
-    "candidateFileBlobSha": "e19755bf768b384a55518accefecd3f47e23304c",
+    "candidateFileBlobSha": "3828be4b5babd5cfa09dd1b226ef62185790c2b8",
     "sourceMetadataPreserved": true,
     "migrationRequired": true,
     "persistedPredecessorVerified": false,
     "effectiveRenderedContentVerified": false,
     "publisherTaskPdfIndependentlyRechecked": false,
-    "priorUnapprovedCandidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1"
+    "priorUnapprovedCandidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+    "previousUnapprovedV2Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v2"
   },
   "lessons": [
     {
@@ -67,7 +73,7 @@
       "localMathOracle": "PASS_EXACT_ARITHMETIC",
       "runtimeLessonPractice": "NOT_RUN",
       "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
-      "stageB": "CONTENT_IMPLEMENTED_BRANCH_ONLY_UPDATED_DIGEST_UNAPPROVED",
+      "stageB": "COURSE_AUTHORED_AND_MATH_CHECKED; INTEGRATION_AND_APPROVAL_PENDING",
       "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
       "mappingAndPractice": "BLOCKED_584_EXPLICIT_MATRIX_SYSTEM_INVERSE_GENERATORS_REQUIRED",
       "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
@@ -75,7 +81,7 @@
       "productionUat": "NOT_RUN",
       "previousUnapprovedV1BodySha256": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
       "sourceTaskReconciliation": "PAINTING_RECEIPT_MODEL_IMPLEMENTED; STUDENT_AND_TEACHER_INDEXED_SOURCE_TEXT_VERIFIED; FULL_PDF_BINARY_AND_ALL_SOURCE_TASKS_NOT_VERIFIED",
-      "stageA": "TARGETED_PAINTING_SOURCE_EXCERPT_ALIGNED_ONLY"
+      "stageA": "TARGETED_STUDENT_TEACHER_SOURCE_EXCERPTS_REVIEWED; FULL_PDF_NOT_VERIFIED"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
@@ -84,25 +90,28 @@
         "CCSS:HSF-BF.B.5"
       ],
       "sourceSha256Recorded": "590d11f4e182141dc1ba220a9824243fc7b60c18793ebefa5f628931b3a54db3",
-      "canonicalBodySha256Recorded": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
+      "canonicalBodySha256Recorded": "d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c",
       "changes": [
         "same-base comparison with logarithm bounds",
         "base between zero and one reverses inequality",
         "comparison across different bases",
         "proof of product rule and counterexample to sum rule",
-        "logarithmic equation domain check"
+        "logarithmic equation domain check",
+        "source-goal number-line placements and cross-base log conjecture with x<1, x=1, x>1 counterexamples"
       ],
       "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
       "practiceStatus": "PARTIAL_NUMERIC_SUBSKILLS_SHARED_INTEGRATION_REQUIRED_FOR_SOURCE_GOAL",
       "localMathOracle": "PASS_DOUBLE_WITH_TOLERANCE",
       "runtimeLessonPractice": "NOT_RUN",
       "baselineCanonicalBodySha256": "456292fd1af76eaa845e34a66de892a1cd499646b354baed397376ea89a29e30",
-      "stageB": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
+      "stageB": "COURSE_AUTHORED_AND_MATH_CHECKED; INTEGRATION_AND_APPROVAL_PENDING",
       "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
       "mappingAndPractice": "PARTIAL_LOG_EXACT_EVALUATION; COMPARISON_AND_REASONING_NOT_VERIFIED_SHARED_OWNER_584",
       "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
       "authenticatedRuntime": "NOT_RUN_453",
-      "productionUat": "NOT_RUN"
+      "productionUat": "NOT_RUN",
+      "previousUnapprovedV2BodySha256": "f26d0b43c2be38cbbc5851564a85ab28fc31c3dbb4c970ca829f03343c1f4ec6",
+      "stageA": "TARGETED_STUDENT_TEACHER_INDEXED_SOURCE_GOALS_REVIEWED; FULL_PDF_NOT_VERIFIED"
     }
   ],
   "verification": {
@@ -210,13 +219,49 @@
       "humanAcademicApproval": false,
       "sharedVersionMaterialization": "PENDING_584",
       "release": "NO_GO"
+    },
+    "coder8P0ThirdPass": {
+      "status": "SOURCE_TASK_GAPS_REPAIRED_AND_26_FIXTURE_ORACLES_CHECKED; NOT_RUNTIME_VERIFIED",
+      "shaAtStart": "c750204d2ad56bc3b7366d263bfd69577cf47361",
+      "courseVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
+      "matrixContentSha": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
+      "logContentSha": "d4edd48f5880526c169b3e4207d3b77cf75129c1e36011eb27e780240b940f2c",
+      "fixtures": 26,
+      "matrixFixtures": 11,
+      "logarithmFixtures": 15,
+      "positiveEquivalentWrongMalformedBoundary": {
+        "caseFieldsPresent": "26_OF_26",
+        "independentMathematicalWitnesses": "26_OF_26",
+        "runtimeActualSubmissions": "0_OF_26_VERIFIED",
+        "selectedPracticeQuestionFamilies": "NOT_VERIFIED_ON_585"
+      },
+      "teacherScoredRubrics": [
+        "M05",
+        "M11",
+        "L04",
+        "L05",
+        "L06",
+        "L13"
+      ],
+      "teacherScoringPersistence": "NOT_VERIFIED",
+      "sourcePdfBinaryReviewed": false,
+      "independentJSFixtureOracle": "26/26 exact branch fixture witness inspections passed by connector-side JS; not the node test runner, runtime answer engine, or xUnit",
+      "newXunitTheory": "EveryFixtureHasSeparateWrongMalformedBoundaryAndEquivalentInputs — 26 InlineData cases committed, execution pending exact-head CI",
+      "sourceTaskReferences": [
+        "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+        "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2tn718.pdf"
+      ],
+      "academicApproval": false,
+      "authenticatedTwoSchool": false,
+      "practiceReady": false,
+      "ownerUAT": false
     }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
-    "practiceComplete": "0/2 certified",
+    "practiceComplete": "0_OF_2_PRODUCTION_CERTIFIED",
     "academicAccepted": "0/2",
-    "releaseCandidate": "BLOCKED_BY_INTEGRATION_AND_UNAPPROVED_V2",
+    "releaseCandidate": "BLOCKED_BY_SHARED_PRACTICE_SOURCE_APPROVAL_AND_AUTHENTICATED_UAT",
     "merged": false,
     "deployed": false,
     "gateIssues": [
