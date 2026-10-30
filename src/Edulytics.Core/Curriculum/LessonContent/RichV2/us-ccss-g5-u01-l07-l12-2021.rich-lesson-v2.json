@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l07-l12-im2021-v47-source-units-information-gap-20261030",
+  "ContentVersion": "g5-u01-l07-l12-im2021-v48-composite-source-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -250,6 +250,33 @@
           ],
           "Answer": "32 cubic units.",
           "Check": "20 + 16 − 4 = 32; a non-overlapping partition gives the same total."
+        },
+        {
+          "Title": "2021 source Build Prisms Together — 12 + 10 and 12 + 18",
+          "Question": "Partner A builds a 12-unit-cube packed prism and B builds a 10-unit-cube packed prism. What is the new volume after placing their prisms face-to-face without overlap? Diego and Jada instead attach 3×2×2 and 3×2×3 prisms.",
+          "Method": "Sum occupied space for disjoint solids, with no shared unit-cube interiors.",
+          "Steps": [
+            "Build twelve and ten cube prisms; a shared face has no volume and doesn't reduce or increase cube count.",
+            "The new attached object has 12+10=22 cubic units.",
+            "Diego's 3×2×2 prism uses 12 cubes; Jada's 3×2×3 prism uses 18 cubes.",
+            "Their composite has 12+18=30 cubic units; show where the two component prisms meet."
+          ],
+          "Answer": "First construction: 22 cubic units. Second pictured construction: 30 cubic units.",
+          "Check": "Original first-edition 2021 Activity 1 and attached-prism figure 148079; teachers verify no overlap."
+        },
+        {
+          "Title": "2021 source four composite diagrams a–d",
+          "Question": "Find the volume of each original source figure a–d, accounting for all attached cubes.",
+          "Method": "Compute the base prism volume and add the attached cubes exactly once.",
+          "Steps": [
+            "a: 3×5×3=45 plus one attached unit cube gives 46.",
+            "b: 3×5×3=45 plus one five-cube attached row gives 50.",
+            "c: 3×6×3=54 plus one six-cube attached row gives 60.",
+            "d: a 3×5×3 base block has 45, plus a 2×2×3 side prism with 12, so 57.",
+            "Explain why connected cubes remain separate occupied unit volumes; the joined faces are not extra cubes."
+          ],
+          "Answer": "a=46, b=50, c=60, d=57 cubic units.",
+          "Check": "Original source illustrations 148080–148083 and their corresponding accessible geometry descriptions."
         }
       ],
       "CommonMistakes": [
