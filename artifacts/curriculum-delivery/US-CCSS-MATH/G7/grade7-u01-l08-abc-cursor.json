@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L08",
+  "title": "Scale Drawings and Maps",
+  "originalOptional": true,
+  "originalSourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/8/preparation.html",
+    "07_Grade_7_OUR_IM/1/8/index.html",
+    "07_Grade_7_OUR_IM_Student/1/8/index.html",
+    "07_Grade_7_OUR_IM_Student/1/8/practice.html"
+  ],
+  "originalRights": "OUR/IM 2017–2019 CC BY 4.0; original map paths and coordinates not copied map pictures",
+  "goals": [
+    "Use map scale to estimate road and direct distances",
+    "Compare constant rates in the same units",
+    "Determine travel duration from map scale and speed"
+  ],
+  "activitySourceParity": [
+    {
+      "section": "8.1 A Train and a Car",
+      "source": "243 miles over 4h compared with 65 mph",
+      "equivalent": "Identical numeric relationship independently reasoned"
+    },
+    {
+      "section": "8.2 Driving on I-90 (optional)",
+      "source": "8.5-mile road route in 8min, compare with 55mph and direct-line helicopter",
+      "equivalent": "Original 5-12-13 grid path A(0,0)->P(12,0)->B(12,5), 0.5 mile/unit, road 8.5mi vs direct 6.5mi"
+    },
+    {
+      "section": "8.3 Biking through Kansas (optional)",
+      "source": "12.5 scale-bar lengths at 4 miles each, 15mph",
+      "equivalent": "Independent linear-scale distance and time computation 50 miles ->200min"
+    }
+  ],
+  "firstPartySVG": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l08-scale-map-road-vs-direct.svg",
+  "gradeOwnedStudentView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "sourceCooldown": "NOT_VERIFIED_GATED",
+  "edulytiksCooldown": "Original 3+4 cm road path (7cm total) vs 5cm direct distance at 1cm:4mi; calculate 70mph for 28mi in 24min, teacher reviews model and explanation",
+  "A_STATUS": "A_CLOSED_EQUIVALENT_SOURCE_TASKS_AND_RIGHTS",
+  "B_STATUS": "BLOCKED_GRADE_PARTIAL_NOT_CONNECTED_TO_SHARED_RICH_V2",
+  "C_STATUS": "BLOCKED_EXACT_MAP_RATE_PRACTICE_FAMILY_AND_TEACHER_SCORING",
+  "D_STATUS": "NOT_RUN",
+  "READY_FOR_STAGE_D": false,
+  "practiceStrategy": "REUSE_OR_EXTEND_EXACT_MAP_RATE_FAMILY_SINGLE_WRITER",
+  "practiceAcceptance": [
+    "Road 8.5mi in8min ->63.75mph",
+    "Direct 6.5mi ->48.75mph",
+    "Reverse speed/time from 50mi at15mph",
+    "Reject road/direct swap and mixed units",
+    "Teacher reviewed route drawing"
+  ],
+  "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "testFile": "tests/academic-us-ccss-g7-u01-l08-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "patch": "25b24a44713f89a1d860216008f3642b91f48df1",
+  "routePrecisionFix": "4ec9d968023ec5f81e7399970f2ba5e437c25c30",
+  "testCommit": "f6dea4bcf54dc028400cc192cce38165a29573da",
+  "blockerOwner": "Supervisor 1 shared integration owner #592 / Draft PR #599",
+  "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L09",
+  "closedAt": null,
+  "closureSHA": null
+}
