@@ -1707,6 +1707,7 @@
         "Activity 8.2: rotate segment PQ through 180° about endpoint Q, midpoint M, and off-line point C. For a half-turn about center C, each image X′ satisfies X′=2C−X. Endpoint rotation extends the original line; midpoint rotation exchanges segment endpoints; off-line rotation makes a parallel segment at the same length.",
         "Activity 8.3: use four rigid copies of an asymmetric triangle to build and label a pattern. Identify corresponding lengths and transformations; a drawn construction and its explanation require teacher or accessible graphical assessment.",
         "Make a first-party geometric rosette using a simple L-shaped figure traced around a chosen point. Label each rotated image and state the generating angle. A teacher assesses drawing accuracy, repeated figures and explanation; do not claim the rosette itself is machine-graded.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): For original A=(0,0) and B=(2,0), rotate 180° about midpoint M=(1,0); mark A′=(2,0), B′=(0,0) and justify why the segment maps to itself as a set. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
         "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/8/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced."
       ],
       "KeyConcepts": [
@@ -1784,7 +1785,43 @@
         "Check the same center for every image.",
         "Rotational symmetry requires complete overlap of the chosen figure."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L08 Rotation Patterns",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "90° clockwise",
+              "Cells": [
+                "around common vertex O",
+                "one of four equal triangular regions"
+              ]
+            },
+            {
+              "Label": "180° about endpoint B",
+              "Cells": [
+                "opposite collinear segment",
+                "same length"
+              ]
+            },
+            {
+              "Label": "180° about midpoint M",
+              "Cells": [
+                "endpoints exchange",
+                "A′=B, B′=A"
+              ]
+            },
+            {
+              "Label": "180° about off-line C",
+              "Cells": [
+                "distinct parallel segment",
+                "same length and midpoint through C"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     }
   ]

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+  "unit": "U01",
+  "officialOrdinal": 8,
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\8\\index.html",
+      "sha256": "260f997085ee3f3c721833dcb69d25d87579866eba6f0f31782bb991a68b0e2d"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\8\\index.html",
+      "sha256": "03c44881c9e74beaa1483f96a4bc71a6decfa1b1fe9d2cc4da168e688777f34e"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\8\\preparation.html",
+      "sha256": "e4f64ad0c2ff4e13da82b662bd4342b273943c1fab2e33f4a5f450d751b9ca9e"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.a"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.b"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.A.1.c"
+    }
+  ],
+  "sourceToRichV2Crosswalk": [
+    {
+      "sourceTitle": "8.1: Building a Quadrilateral",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Arrange four right isosceles triangular images obtained at 0°,90°,180°,270° clockwise about a fixed right-angle vertex; test square completion.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "8.2: Rotating a Segment",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Rotate a segment through 180° about an endpoint, its midpoint, and a point off the segment; record correct corresponding images.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "8.3: A Pattern of Four Triangles",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Classify which rigid motion transforms one triangular part of a four-part pattern into another; specify center and angle.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "actualFixes": {
+    "courseContentRichPack": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "newNativeVisualTitle": "Original Edulytiks activity representation — U01 L08 Rotation Patterns",
+    "newOriginalCoolDown": true,
+    "oldWorkedExamplesPreserved": 3,
+    "oldNativeVisualCount": 0
+  },
+  "courseOwnedAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l08-academic-assessment-contract-20261030.json",
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "verification": {
+    "localOriginalStudentActivities": 3,
+    "originalLocalSourceHashesVerified": true,
+    "numericCorrectWrongMalformed": "PASS_FOCUSED_INDEPENDENT_ORACLE",
+    "teacherRubric": "FOUR_CRITERIA_EIGHT_POINTS",
+    "mathIndependentValue": [
+      0,
+      1
+    ],
+    "fullDotnetBuild": "NOT_RUN",
+    "authenticatedBrowser": "NOT_RUN_STAGE_D",
+    "databaseTeacherScores": "NOT_RUN_STAGE_D",
+    "twoSchoolIsolation": "NOT_RUN_STAGE_D",
+    "finalCI": "NOT_RUN_STAGE_D"
+  },
+  "previousSHA": "10988abf2e919c1de7c1ff8fe8d2610756fe70a3",
+  "newSHA": "in_git_commit_history",
+  "timestampUtc": "2026-10-30T14:01:41.517443+00:00",
+  "nextLesson": "U01:L09",
+  "status": "READY_FOR_STAGE_D_ACADEMIC_ONLY"
+}

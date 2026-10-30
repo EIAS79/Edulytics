@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+  "title": "Rotation Patterns",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\8\\index.html",
+      "sha256": "260f997085ee3f3c721833dcb69d25d87579866eba6f0f31782bb991a68b0e2d"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\8\\index.html",
+      "sha256": "03c44881c9e74beaa1483f96a4bc71a6decfa1b1fe9d2cc4da168e688777f34e"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\8\\preparation.html",
+      "sha256": "e4f64ad0c2ff4e13da82b662bd4342b273943c1fab2e33f4a5f450d751b9ca9e"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.a"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.b"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.A.1.c"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: investigate how rotations create repeating patterns, identify the center and angle of rotation, and explain rotational symmetry using known fractions of 360 degrees.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): For original A=(0,0) and B=(2,0), rotate 180° about midpoint M=(1,0); mark A′=(2,0), B′=(0,0) and justify why the segment maps to itself as a set. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "8.1: Building a Quadrilateral",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Arrange four right isosceles triangular images obtained at 0°,90°,180°,270° clockwise about a fixed right-angle vertex; test square completion.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "8.2: Rotating a Segment",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Rotate a segment through 180° about an endpoint, its midpoint, and a point off the segment; record correct corresponding images.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "8.3: A Pattern of Four Triangles",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Classify which rigid motion transforms one triangular part of a four-part pattern into another; specify center and angle.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "Rotate P=(2,1) by 180° about center C=(1,1). Give P′.",
+    "responseType": "coordinate_pair",
+    "unit": "coordinate pair",
+    "expected": [
+      0,
+      1
+    ],
+    "acceptedEquivalentInputs": [
+      "(0,1)",
+      "0,1",
+      "(0.0,1.0)"
+    ],
+    "wrongRejected": [
+      "(1,1)",
+      "(0,2)",
+      "(1,0)"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "(Infinity,1)",
+      "(1,2,3)",
+      "",
+      null,
+      "1;2",
+      "1e2,0"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 3,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "For original A=(0,0) and B=(2,0), rotate 180° about midpoint M=(1,0); mark A′=(2,0), B′=(0,0) and justify why the segment maps to itself as a set.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:01:41.517443+00:00",
+  "parentGitHEAD": "10988abf2e919c1de7c1ff8fe8d2610756fe70a3"
+}
