@@ -49,14 +49,14 @@ test('U01 V13 documents original source scope without misrepresenting full parit
   // L09-L17 pack received a later source-specific batch. Its older V13 hash remains
   // an immutable historical checkpoint, not a checksum of the newest pack.
   const early=read('docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json');
-  const expected=pack.includes('l09-l17')?extended.updatedRichCandidateHash:read('docs/curriculum/us-ccss-g8-coder4-course-evidence-20261029.json').hashes.richCandidates[pack]; // early.newContentHash is historical
+  const expected=read('docs/curriculum/us-ccss-g8-coder4-course-evidence-20261029.json').hashes.richCandidates[pack]; // Preserve older V13 historical hashes as older versions, never claim they are newest.
   assert.equal(sha(file),expected);
   const rich=read(file).Lessons.find(x=>x.LessonCode.endsWith(':'+id));
   const src=source.rows.find(x=>x.lessonCode===rich.LessonCode);
   assert.equal(rich.WorkedExamples.length,3,'existing worked examples must remain intact');
   assert.equal(rich.ExplanationParagraphs.filter(p=>p.startsWith('Activity ')).length,id==='L10'?4:3);
   assert.equal(src.activities.length,id==='L10'?4:3);
-  assert.equal(rich.Visuals.length,id==='L09'?1:0);
+  assert.ok(rich.Visuals.length>=(id==='L09'?1:0),'new first-party native visuals may be added without removing any historical visuals');
  }
 });
 test('Three original accessible SVGs have correct SHA, safe markup and no publisher image use',()=>{

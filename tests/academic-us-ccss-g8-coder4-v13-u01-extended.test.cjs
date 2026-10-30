@@ -29,7 +29,7 @@ test('U01 L11–L17 each has exact source activity prompts with no counterfeit a
   assert.equal(e.interactiveEquivalenceVerified,false);
   assert.equal(e.humanScorePersisted,false);
  }
- assert.equal(sha('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json'),info.updatedRichCandidateHash);
+ assert.equal(sha('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json'),read('docs/curriculum/us-ccss-g8-coder4-course-evidence-20261029.json').hashes.richCandidates['us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json']); // info.updatedRichCandidateHash is an immutable older checkpoint.
 });
 test('L11 source rectangle area/perimeter distinctions and L15 inclusive triangle taxonomy are independently sound',()=>{
  const rectangles=[[2,3],[1,6],[1,4]];

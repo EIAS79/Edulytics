@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L07",
+  "title": "No Bending or Stretching",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\7\\index.html",
+      "sha256": "77b7ec76e8194edee8c0fd21d1215e0ccfbe68981a28a6796cd93859c5c67c7b"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\7\\index.html",
+      "sha256": "86ec135ce6b9cd702c620664f1fdc5816a0be5a28a0606fed03220e64152fd68"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\7\\preparation.html",
+      "sha256": "e3149a41679117abc4aecd4f97c2df2e5e57d7a59df8207fc76fdf268a13c4a8"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "4.MD.A"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.a"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1.b"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: test which geometric measurements remain unchanged after a rigid transformation, using matching side lengths, angles, and point-to-point distances.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): An original 3-4-5 right triangle is reflected. Construct the reflected triangle and label all three unchanged side lengths, then explain why 3,4,5 remain invariant. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "7.1: Measuring Segments",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Measure source-inspired ruler segments to the nearest eighth or tenth, explicitly recording precision.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "7.2: Sides and Angles",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Translate, rotate and reflect a labeled polygon; measure corresponding sides and angles before/after.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "7.3: Which One?",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Choose which triangle is a rigid image and disprove the nonrigid candidate using one changed side or angle.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "A right triangle has vertices (1,1),(4,1),(1,5). Find the distance between (4,1) and (1,5), unchanged by every rigid motion.",
+    "responseType": "finite_decimal",
+    "unit": "units",
+    "expected": 5,
+    "acceptedEquivalentInputs": [
+      "5",
+      "5.0",
+      "+5"
+    ],
+    "wrongRejected": [
+      "6",
+      "4"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "Infinity",
+      "1e309",
+      "",
+      null,
+      "3,4",
+      "--2"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 2,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "An original 3-4-5 right triangle is reflected. Construct the reflected triangle and label all three unchanged side lengths, then explain why 3,4,5 remain invariant.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:01:23.848703+00:00",
+  "parentGitHEAD": "e39d2e29e1c4d57df9ba291542f72aa447165bdf"
+}

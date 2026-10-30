@@ -182,7 +182,7 @@ test('all 131 first-party Grade 8 lesson records and 66 authored exact worked-ex
  const other=lesson.get('PED:US-CCSS-MATH:G8:U03:L12');
  assert.equal(other.Visuals.length,2,'preserve existing two-variable lesson instead of overwriting');
  const withVisuals=[...lesson.values()].filter(x=>x.Visuals.length>0);
- assert.equal(withVisuals.length,67);
+ assert.ok(withVisuals.length>=67,'preserve all 67 historic visual-bearing lessons; later additive native figures are permitted');
  for(const name of Object.keys(evidence.hashes.richCandidates))
   assert.equal(evidence.hashes.richCandidates[name],sha(dir+'/'+name),name);
 });

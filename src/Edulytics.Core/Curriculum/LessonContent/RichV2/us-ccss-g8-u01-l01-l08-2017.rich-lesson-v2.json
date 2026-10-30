@@ -1578,6 +1578,7 @@
         "Source-aligned activity 7.3: given different candidate images, identify which ones can be rigid images and justify rejection with a specific altered length or angle; drawings, ruler work and explanations must receive a human or accessible-construction assessment.",
         "Draw a triangle with vertices (1,1),(4,1),(1,5). Its legs have lengths 3 and 4 and its third side has length 5. Reflect it across the y-axis. Use a ruler and the Pythagorean relation to show that the image retains the same three lengths.",
         "Partner task: one learner claims a stretched copy is a rotation. Measure two corresponding edges to decide whether this is possible. Record a counterexample with explicit measurements. Teacher review is required for the argument; a single numeric distance item is not the full lesson.",
+        "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): An original 3-4-5 right triangle is reflected. Construct the reflected triangle and label all three unchanged side lengths, then explain why 3,4,5 remain invariant. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
         "This is independently authored Edulytiks instructional text informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/1/7/preparation.html . Original textbook graphics and publisher-branded assessments are not reproduced."
       ],
       "KeyConcepts": [
@@ -1655,7 +1656,43 @@
         "A single changed distance disproves rigidity.",
         "Coordinate proofs can support a visual observation."
       ],
-      "Visuals": [],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Original Edulytiks activity representation — U01 L07 No Bending or Stretching",
+          "Description": "Independent first-party accessible teaching cards; draw/reconstruct actual shapes on graph/tracing paper and assess construction and proof as teacher-reviewed, not auto-graded. Publisher diagrams are not copied.",
+          "Rows": [
+            {
+              "Label": "Ruler: nearest eighth",
+              "Cells": [
+                "4 5/8 units",
+                "exact 4.625 units"
+              ]
+            },
+            {
+              "Label": "Ruler: nearest tenth",
+              "Cells": [
+                "4.7 units",
+                "not 4.07"
+              ]
+            },
+            {
+              "Label": "Rigid image",
+              "Cells": [
+                "3,4,5 sides",
+                "3,4,5 sides"
+              ]
+            },
+            {
+              "Label": "Distorted image",
+              "Cells": [
+                "3,4,5",
+                "3,4,6 cannot be rigid"
+              ]
+            }
+          ]
+        }
+      ],
       "Videos": []
     },
     {
