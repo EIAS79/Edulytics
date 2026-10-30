@@ -827,9 +827,9 @@
       ],
       "hasGrade5RichV2Sidecar": true,
       "sourceReview": "V10_PRIMARY_OUR_CS_2021_TEACHER_LESSON_AND_PREPARATION_STUDENT_FACING_READ_ORIGINAL_PDF_CARD_COOLDOWN_NOT_VERIFIED",
-      "stageA": "NOT_COMPLETE",
-      "stageB": "RICH_V2_AUTHORED_STATICALLY_VALIDATED_EFFECTIVE_RENDER_NOT_VERIFIED",
-      "stageC": "SELECTED_PRACTICE_TEACHER_GRADEBOOK_NOT_CHECKED",
+      "stageA": "2021_LOCAL_SOURCE_REVIEWED_GATED_ORIGINAL_COOLDOWN_NOT_VERIFIED",
+      "stageB": "ORIGINAL_MATH_REUSED_EIGHT_POINT_TEACHER_RUBRIC_ADDED",
+      "stageC": "PRACTICE_EXACT_SELECTED_ROUTE_UNVERIFIED",
       "explicitMapping": null,
       "stageD": "NOT_RUN",
       "academicAccepted": false,
@@ -837,7 +837,7 @@
       "production": "NOT_CHECKED",
       "sourceReviewedTask": "2021 opening prism Notice & Wonder, Activity1 same L-solid as 95 cubic units by two disjoint parts or bounding-minus-missing; Activity2 measured stepped figure 10×8×3 ft with 6×4×3 ft absent corner, two additive 96+72=120+48=168 ft³, Mai subtraction 240−72=168 ft³; teacher-judged expression-to-diagram mapping and comparison",
       "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l07-l12-2021.rich-lesson-v2.json",
-      "richV2ContentVersion": "g5-u01-l07-l12-im2021-first-party-richv2-20261028-v1",
+      "richV2ContentVersion": "g5-u01-l07-l12-im2021-v25-abc-20261030",
       "sourceReviewClassification": "GRADE5_DEFECT_FIXED",
       "sourceReviewedLessonHtmlUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-10/lesson.html",
       "sourceReviewDate": "2026-10-29",
@@ -868,6 +868,11 @@
         "dotnet": "NOT_RUN",
         "CI": "NOT_RUN",
         "ownerUat": "NOT_RUN"
+      },
+      "vABC20261030": {
+        "sourceLedger": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l10-abc-element-ledger-20261030.json",
+        "status": "A_C_EXPLICIT_GAP",
+        "test": "WRITTEN_NOT_RUN"
       }
     },
     {
@@ -8310,5 +8315,12 @@
     "openItemsRetained": true,
     "readyForStageD": 0,
     "nextIndependentLesson": "U01:L10"
+  },
+  "v22SequentialABC": {
+    "lastReviewed": "PED:US-CCSS-MATH:G5:U01:L10",
+    "unit1ReadyForStageD": 0,
+    "nextIndependentLesson": "U01:L11",
+    "sourceReviewedLessons": 10,
+    "openGatesPreserved": true
   }
 }
