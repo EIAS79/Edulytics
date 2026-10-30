@@ -137,12 +137,16 @@
       "stageC": "C_PREPARED",
       "abcReadyForD": false,
       "blockedByIntegration": {
-        "status": "BLOCKED_CENTRAL_PRACTICE_REGISTRY_EXCLUSIVE_OWNERSHIP",
+        "status": "BLOCKED_NEXT_CENTRAL_FILE_EXCLUSIVE_SLOT_NOT_TRANSFERRED",
+        "owner": "Coder 7 SOLO after Supervisor 3 grants exclusive central file ownership",
+        "currentExclusiveOwner": "Coder 8",
         "issue": 453,
-        "owner": "Coder 7 SOLO after Supervisor 3 exclusive ownership grant",
-        "file": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
-        "reason": "Practice capability resolver requires explicit READY_VERIFIED contract and currently has no ALG2 U01:L01 entry; the isolated adapter is not callable from runtime",
-        "NOT_STAGE_C_BLOCKER": "missing authenticated HTTP E2E/persistence/isolation are deferred Stage D items"
+        "exactFiles": [
+          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+          "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+        ],
+        "reason": "Correct Course-owned generator/verifier needs registered lesson exact route and early BigInteger verifier hook; central slot is currently reserved."
       },
       "lessonGateEvidence": {
         "sourceRootAlias": "Common Core",
@@ -185,6 +189,78 @@
           "B": "B_CLOSED_REUSED_PREVIOUS_EVIDENCE",
           "C": "C_PREPARED_NOT_REGISTERED",
           "baseHEAD": "1894f9d95a7057bb57927c78c3ddf8647a2b0bbb"
+        },
+        "V4": {
+          "scope": "COURSE_OWNED_L01_ONLY",
+          "startingHead": "2d97794bc9859a6070bdb64fa1680b0c2e6b118d",
+          "sourceSha256Rechecked": "5_OF_5_MATCHED",
+          "sourceRecheckedUtc": "2026-10-30T13:48:54.095382+00:00",
+          "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+          "adapterSha256": "d4814d2fd28297bd5e1cf189ff5efaa0cb9e9249b3cd579ab17529051de06673",
+          "testPath": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+          "testSha256": "4c2f09f311576ed495388714ebfd4cf3d4c5141d7d52858f482273109a031f0c",
+          "reportPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-V4-NEXT-CENTRAL-SLOT-HANDOFF.md",
+          "changes": [
+            "Corrected 3-to-4 Hanoi teacher rubric from 3+1+3 to 7+1+7=15",
+            "Independent checker n^2+2n lower-bound teacher proof",
+            "Distinct rule pair for 0,5 with arithmetic and quadratic examples",
+            "Canonical candidate regeneration and family/ItemId fail-closed validation",
+            "Learner-only DTO projection and JsonIgnore on answer/teacher rubric",
+            "Redacted Candidate.ToString so logs do not leak answers",
+            "Explicit numeric vs teacher-reviewed family routing; exact (n,variant) parameters",
+            "Public narrow server-only build/verify hooks compatible with ExactSkillContractQuestionEngine shapes"
+          ],
+          "courseOwnedAdaptationStatus": "IMPLEMENTED_UNCOMPILED_NOT_REGISTERED",
+          "newXunitTests": "NOT_RUN",
+          "newDotnetBuild": "NOT_RUN",
+          "newStaticMathCheck": "FOCUSED_PYTHON_STATIC_MATH_INSPECTION_OK_NOT_CSHARP_COMPILE",
+          "legacyNodeTests": "16_OF_16_PASS_ON_EARLIER_1894f9d_HEAD_ONLY",
+          "leaseStatus": "NEXT_EXCLUSIVE_SLOT_APPROVED_NOT_GRANTED",
+          "currentExclusiveOwner": "Coder 8",
+          "coder7CentralWriteAuthorized": false,
+          "centralFilesChanged": [],
+          "preciseRequiredSharedHooks": [
+            {
+              "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+              "operations": [
+                "exact LessonCode mapping after verified implementation",
+                "READY-only routing, keep PendingForAudit fail-closed"
+              ],
+              "status": "NOT_EDITED_CURRENTLY_RESERVED"
+            },
+            {
+              "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+              "operations": [
+                "SupportsFamily narrow hook",
+                "BuildProblem numeric family dispatch",
+                "Solve with BigInteger/rational string answers",
+                "Verify before generic int.TryParse"
+              ],
+              "status": "NOT_EDITED_CURRENTLY_RESERVED"
+            },
+            {
+              "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+              "operations": [
+                "reviewed numeric families with verified policy and matching skill metadata"
+              ],
+              "status": "NOT_EDITED_CURRENTLY_RESERVED"
+            },
+            {
+              "path": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+              "operations": [
+                "only if projection route chosen rather than hand-authored contract"
+              ],
+              "status": "NOT_EDITED_UNNEEDED_UNLESS_PROJECTION"
+            }
+          ],
+          "academicTeacherRubricSignoff": "NOT_VERIFIED",
+          "canonicalVersionSuccessorApproval": "NOT_VERIFIED",
+          "runtimeRegistryMapping": "NOT_PRESENT",
+          "runtimeQuestionGeneration": "NOT_RUN",
+          "runtimeBigIntegerVerification": "NOT_RUN",
+          "stageDStudentE2eAndGradebook": "NOT_RUN_STAGE_D",
+          "reason": "Numeric adapter hardened, but contract cannot route and engine generic int parse rejects exact 64-disc answer until exclusive shared dispatch",
+          "checkedUtc": "2026-10-30T13:48:54.095382+00:00"
         }
       }
     },
@@ -5521,7 +5597,7 @@
     "handoff": "https://github.com/EIAS79/Edulytics/pull/588#issuecomment-6503045261"
   },
   "currentFormalGateSummary": {
-    "asOfUtc": "2026-10-30T13:03:19.288793+00:00",
+    "asOfUtc": "2026-10-30T13:48:54.095382+00:00",
     "courseTotal": 120,
     "authored": 120,
     "A_CLOSED": 3,
@@ -5535,7 +5611,7 @@
     "nextStageAbcCursor": {
       "ordinal": 1,
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
-      "reason": "SUP3_UNIT_FIRST_V3: do not advance while L01 C remains unregistered; override prior L04 cursor"
+      "reason": "SUP3_V4: L01 C still unregistered and exclusive central file slot held by Coder8; forbid advancing"
     },
     "stageD": "NOT_STARTED",
     "courseRelease": "NO_GO",
@@ -5547,13 +5623,13 @@
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
       "A": "A_CLOSED",
       "B": "B_CLOSED",
-      "C": "C_PREPARED_UNREGISTERED",
-      "blocker": "CENTRAL_LESSON_PRACTICE_REGISTRY_ENTRY_AND_EXCLUSIVE_FILE_OWNERSHIP_FOR_CODER7",
-      "owner": "Coder 7 SOLO after Supervisor 3 exclusive file assignment",
+      "C": "C_PREPARED_NOT_REGISTERED_CODER8_SLOT_ACTIVE",
+      "blocker": "L01_REGISTRY_ENGINE_DISPATCH_AND_BIGINT_VERIFY_PENDING_EXCLUSIVE_SLOT",
+      "owner": "Coder 7 SOLO when Supervisor 3 transfers exclusive central-file slot",
       "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-ABC-SOURCE-PRACTICE-CONTRACT.json",
       "addedUtc": "2026-10-30T12:09:36.906193+00:00",
       "blockedStage": "C (not Stage D)",
-      "lastUpdatedUtc": "2026-10-30T13:03:19.288793+00:00"
+      "lastUpdatedUtc": "2026-10-30T13:48:54.095382+00:00"
     },
     {
       "ordinal": 2,
@@ -5595,12 +5671,43 @@
       "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L03"
     ],
     "nextUnit": "NOT_ALLOWED_U02",
-    "nextCursorReason": "L01 C not registered; no U01 L02+ work authorized under V3",
-    "checkpointUTC": "2026-10-30T13:03:19.288793+00:00",
+    "nextCursorReason": "V4 Coder8 central slot active; next exclusive Coder7 approved but not transferred; stay L01",
+    "checkpointUTC": "2026-10-30T13:48:54.095382+00:00",
     "evidencePaths": [
       "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-ABC-SOURCE-PRACTICE-CONTRACT.json",
       "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
-      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs"
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+      "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-V4-NEXT-CENTRAL-SLOT-HANDOFF.md"
     ]
+  },
+  "unitFirstV4": {
+    "course": "US-CCSS-MATH:HS:TRAD:ALG2:IM-1E",
+    "unitCode": "U01",
+    "officialUnitTotal": 11,
+    "unitStatus": "UNIT_BLOCKED",
+    "previouslyClosed": 0,
+    "newlyClosed": 0,
+    "unitReadyForD": false,
+    "blockedLessonCodes": [
+      "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+      "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L02",
+      "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L03"
+    ],
+    "lastVerifiedClosedLesson": null,
+    "lastClosureSHA": null,
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "nextUnit": "NOT_ALLOWED_U02",
+    "leaseStatus": "NEXT_EXCLUSIVE_SLOT_APPROVED_NOT_GRANTED",
+    "leaseCurrentOwner": "Coder 8",
+    "coder7CentralEditRights": false,
+    "currentHeadAtReview": "2d97794bc9859a6070bdb64fa1680b0c2e6b118d",
+    "evidencePaths": [
+      "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-V4-NEXT-CENTRAL-SLOT-HANDOFF.md",
+      "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-ABC-SOURCE-PRACTICE-CONTRACT.json",
+      "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+      "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/algebra2-120-lesson-progress.json"
+    ],
+    "updatedAtUtc": "2026-10-30T13:48:54.095382+00:00"
   }
 }

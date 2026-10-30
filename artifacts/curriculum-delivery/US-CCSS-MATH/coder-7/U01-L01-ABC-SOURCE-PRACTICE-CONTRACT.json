@@ -132,7 +132,7 @@
     "academicApproval": "NOT_VERIFIED"
   },
   "stageC": {
-    "status": "C_PREPARED_COURSE_ADAPTER_NOT_REGISTERED",
+    "status": "C_PREPARED_NEXT_CENTRAL_SLOT_WAIT_NOT_RUNTIME_ROUTABLE",
     "lessonScopedMappingExplicitInSharedRegistry": false,
     "effectiveRuntimeFamilyVerified": false,
     "proposedFamilies": [
@@ -254,7 +254,7 @@
     },
     "independentOracleTest": "tests/coder-7/UsCcssAlg2U01L01SourcePracticeContract.test.cjs",
     "blockerIssue": 453,
-    "blocker": "Course-specific verifier exists and passes isolated compile probe, but no exact central lesson Practice mapping or student/teacher lifecycle integration; shared file requires temporary owner lock",
+    "blocker": "No exact READY_VERIFIED lesson-scoped registry entry, no public engine SupportsFamily/BuildProblem/Solve/BigInteger Verify dispatch. Coder8 owns central slot; Coder7 approved next only, not yet exclusive owner.",
     "runtimeGenerationVerification": "NOT_RUN",
     "studentTeacherAuthenticatedE2E": "NOT_RUN",
     "tenantIsolation": "NOT_RUN",
@@ -268,7 +268,7 @@
       "repoBaseHead": "a8f38f2ef7e9d00aa7592534ded35c72a2cc10c4",
       "timeUtc": "2026-10-30T12:09:36.906193+00:00"
     },
-    "repositoryXunitStatus": "NOT_RUN_RESTORE_ASSETS_ERROR",
+    "repositoryXunitStatus": "NOT_RUN_BY_V4",
     "owner": "Coder 7 — Algebra 2, SOLO",
     "requiredCentralFileOwnership": "Supervisor 3 must grant temporary exclusive file ownership before any central registry edit; no shared coder",
     "implementationOwner": "Coder 7 SOLO — Algebra 2",
@@ -317,10 +317,83 @@
       "status": "NOT_STARTED_STAGE_D"
     },
     "statusReason": "Source and course-owned generator/verifier/teacher rubric are prepared, but central runtime cannot route them by lessonCode; do not equate isolated code with registered Practice",
-    "lastUpdatedUtc": "2026-10-30T13:03:19.288793+00:00"
+    "lastUpdatedUtc": "2026-10-30T13:03:19.288793+00:00",
+    "V4BoundedSolo": {
+      "scope": "COURSE_OWNED_L01_ONLY",
+      "startingHead": "2d97794bc9859a6070bdb64fa1680b0c2e6b118d",
+      "sourceSha256Rechecked": "5_OF_5_MATCHED",
+      "sourceRecheckedUtc": "2026-10-30T13:48:54.095382+00:00",
+      "adapterPath": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2U01L01PracticeAdapter.cs",
+      "adapterSha256": "d4814d2fd28297bd5e1cf189ff5efaa0cb9e9249b3cd579ab17529051de06673",
+      "testPath": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs",
+      "testSha256": "4c2f09f311576ed495388714ebfd4cf3d4c5141d7d52858f482273109a031f0c",
+      "reportPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-V4-NEXT-CENTRAL-SLOT-HANDOFF.md",
+      "changes": [
+        "Corrected 3-to-4 Hanoi teacher rubric from 3+1+3 to 7+1+7=15",
+        "Independent checker n^2+2n lower-bound teacher proof",
+        "Distinct rule pair for 0,5 with arithmetic and quadratic examples",
+        "Canonical candidate regeneration and family/ItemId fail-closed validation",
+        "Learner-only DTO projection and JsonIgnore on answer/teacher rubric",
+        "Redacted Candidate.ToString so logs do not leak answers",
+        "Explicit numeric vs teacher-reviewed family routing; exact (n,variant) parameters",
+        "Public narrow server-only build/verify hooks compatible with ExactSkillContractQuestionEngine shapes"
+      ],
+      "courseOwnedAdaptationStatus": "IMPLEMENTED_UNCOMPILED_NOT_REGISTERED",
+      "newXunitTests": "NOT_RUN",
+      "newDotnetBuild": "NOT_RUN",
+      "newStaticMathCheck": "FOCUSED_PYTHON_STATIC_MATH_INSPECTION_OK_NOT_CSHARP_COMPILE",
+      "legacyNodeTests": "16_OF_16_PASS_ON_EARLIER_1894f9d_HEAD_ONLY",
+      "leaseStatus": "NEXT_EXCLUSIVE_SLOT_APPROVED_NOT_GRANTED",
+      "currentExclusiveOwner": "Coder 8",
+      "coder7CentralWriteAuthorized": false,
+      "centralFilesChanged": [],
+      "preciseRequiredSharedHooks": [
+        {
+          "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+          "operations": [
+            "exact LessonCode mapping after verified implementation",
+            "READY-only routing, keep PendingForAudit fail-closed"
+          ],
+          "status": "NOT_EDITED_CURRENTLY_RESERVED"
+        },
+        {
+          "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+          "operations": [
+            "SupportsFamily narrow hook",
+            "BuildProblem numeric family dispatch",
+            "Solve with BigInteger/rational string answers",
+            "Verify before generic int.TryParse"
+          ],
+          "status": "NOT_EDITED_CURRENTLY_RESERVED"
+        },
+        {
+          "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+          "operations": [
+            "reviewed numeric families with verified policy and matching skill metadata"
+          ],
+          "status": "NOT_EDITED_CURRENTLY_RESERVED"
+        },
+        {
+          "path": "src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json",
+          "operations": [
+            "only if projection route chosen rather than hand-authored contract"
+          ],
+          "status": "NOT_EDITED_UNNEEDED_UNLESS_PROJECTION"
+        }
+      ],
+      "academicTeacherRubricSignoff": "NOT_VERIFIED",
+      "canonicalVersionSuccessorApproval": "NOT_VERIFIED",
+      "runtimeRegistryMapping": "NOT_PRESENT",
+      "runtimeQuestionGeneration": "NOT_RUN",
+      "runtimeBigIntegerVerification": "NOT_RUN",
+      "stageDStudentE2eAndGradebook": "NOT_RUN_STAGE_D",
+      "reason": "Numeric adapter hardened, but contract cannot route and engine generic int parse rejects exact 64-disc answer until exclusive shared dispatch",
+      "checkedUtc": "2026-10-30T13:48:54.095382+00:00"
+    }
   },
   "ABC_READY_FOR_D": false,
   "D_VERIFIED": false,
   "mergeDeploy": "NOT_AUTHORIZED",
-  "sourceHashesRecheckedUtc": "2026-10-30T13:03:19.288793+00:00"
+  "sourceHashesRecheckedUtc": "2026-10-30T13:03:19.288793+00:00",
+  "lastV4ReviewUtc": "2026-10-30T13:48:54.095382+00:00"
 }
