@@ -1,0 +1,130 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
+  "LessonTitle": "Construction Techniques 2: Equilateral Triangles",
+  "Ordinal": 4,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "Predecessor": "26d75ed1e75732d68940c13441e72187f3bf17f3",
+  "Source": {
+    "TeacherPreparation": "10_HS_Geometry/1/4/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/4/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/4/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/4/practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "7534f265cd53e76e6a7319d5f75f8ac5757e984d2c020a1fe06c709045259d3a",
+    "TeacherActivities": "4211b6706a8d5589d63674c1ae2b7a839e50f3509ec085f450e6a09107372b0d",
+    "StudentActivities": "62f119442f9725191b404f9c34dfb96f57760f565422578ae368edabd8342bb2",
+    "StudentPractice": "287e478a30a1443127fe129952bd980e67cf9b94d1ad5b8f98e5c230d8cdf54a"
+  },
+  "Edition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "Original Edulytiks first-party text; source CC BY 4.0, no publisher images/logos copied",
+  "StageA": {
+    "Status": "A_CLOSED_COURSE_SOURCE_PARITY",
+    "Standards": {
+      "BuildingOn": [
+        "HSG-CO.D.12"
+      ],
+      "Addressing": [
+        "HSG-CO.D.12",
+        "HSG-CO.D.13"
+      ],
+      "BuildingTowards": [
+        "HSG-CO.A.3",
+        "HSG-CO.C",
+        "HSG-CO.D.12",
+        "HSG-CO.D.13"
+      ]
+    },
+    "LearningGoals": [
+      "Construct an equilateral triangle",
+      "Explain segment congruence using circles"
+    ],
+    "SourceMap": [
+      {
+        "Source": "4.1 seven circles Notice and Wonder",
+        "FirstParty": "seven circles (one central and six vertex-centred), two observations before proof"
+      },
+      {
+        "Source": "4.2 at least two shaded polygons, two conjectures",
+        "FirstParty": "two different polygons using circle intersections, shading/hatching, two justified/unjustified conjectures"
+      },
+      {
+        "Source": "4.3 construct at least two equilateral triangles of DIFFERENT sizes",
+        "FirstParty": "central radius-r triangle and alternating-vertex triangle of side sqrt(3)r"
+      },
+      {
+        "Source": "optional net extension",
+        "FirstParty": "Unverified publisher figure not copied; optional not required"
+      },
+      {
+        "Source": "Practice 1–9",
+        "FirstParty": "nine 2-point first-party analogues including spiral review; no publisher picture copied"
+      },
+      {
+        "Source": "original publisher Cool-down",
+        "FirstParty": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN"
+      }
+    ],
+    "ExternalReviewerAcceptance": "NOT_CLAIMED"
+  },
+  "StageB": {
+    "Status": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
+    "Preserved": [
+      "3 original RichV2 worked examples and earlier concept content"
+    ],
+    "Fixes": [
+      "7-circle notice/wonder",
+      "2 different shaded polygons and two conjectures",
+      "2 equilateral constructions of distinct sizes",
+      "original paper cooldown"
+    ],
+    "Visual": "original verbal seven-circle configuration, paper drawing only; no uploaded publisher figure"
+  },
+  "StageC": {
+    "Status": "C_PREPARED_BLOCKED_C_SHARED",
+    "Rubrics": "three 8-point independent teacher-scored source tasks",
+    "Practice": "nine original analogue questions, 18 total points",
+    "MachineGrading": false,
+    "SharedDependency": {
+      "Owner": "Supervisor 2",
+      "Issue": 453,
+      "Required": "exact GEO lesson-to-tenant student/teacher assignment, paper evidence custody and human rubric scoring record; no shared engine edit from course branch",
+      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04"
+    }
+  },
+  "Status": "BLOCKED_C_SHARED",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": false,
+  "return_queue": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
+      "Status": "BLOCKED_C_SHARED",
+      "Issue": 453,
+      "Owner": "Supervisor 2"
+    }
+  ],
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L05",
+  "Tests": {
+    "IndependentNode": "64 PASS / 0 FAIL",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "CountersAfter": {
+    "TOTAL": 124,
+    "AUTHORED": 124,
+    "A_CLOSED": 4,
+    "B_CLOSED": 4,
+    "C_PREPARED": 4,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 4,
+    "REMAINING": 124
+  },
+  "StartedAt": null,
+  "ClosedAt": null,
+  "ElapsedSeconds": null,
+  "Timing": "Unknown per-lesson time; no invented timestamp"
+}

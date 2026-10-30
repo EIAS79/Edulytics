@@ -13,7 +13,12 @@
         "An inscribed polygon has all its vertices on a circle. A regular hexagon can be subdivided into six equilateral central triangles; each spans 60 degrees at O. A–C–E joins vertices separated by two 60-degree steps, so its three central angles are equal (120 degrees). The three chords AC, CE and EA have equal length.",
         "First-party student task: construct one equilateral triangle on a given segment and a second, larger triangle inside a circle. Record how circle centres, unchanged openings and intersection points force the equal sides. Optional peer discussion should be teacher reviewed.",
         "Teacher rubric (0–4, human assessed): starting segment and radius conditions; actual legal tool sequence; labels and congruent-segment justification; correct inscribed triangle or counterexample discussion. No unverified numeric auto-grade is assigned to the physical construction.",
-        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 4, CC BY 4.0; content and tasks here are independently authored."
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 4, CC BY 4.0; content and tasks here are independently authored.",
+        "First-party 4.1 Notice and Wonder — construct or inspect a seven-circle equal-radius paper model: one circle centred O with marked regular-hexagon vertices A through F and six circles, one centred at each of those vertices, all with the same radius OA>0. Write at least one observation and one question before being shown a proof, exchange observations with a peer, and identify possible polygons from labelled circle intersections. The original publisher seven-circle picture is NOT reproduced; this is a new accessible verbal model.",
+        "First-party 4.2 What Polygons Can You Find? — using the labelled intersections of the equal-radius circle construction, draw AT LEAST TWO DIFFERENT polygons, shade them in two distinguishable colours or hatch patterns, and state two conjectures about side lengths or angles. Mark which conjectures are justified solely by equal radii and which are currently unproved. Do not assert visually plausible rectangle/square relationships as guaranteed without a proof.",
+        "First-party 4.3 Spot the Equilaterals — construct two distinct nondegenerate equilateral triangles of DIFFERENT side lengths, one central OAB of side r and one alternating-vertex ACE of side sqrt(3)r in the same regular hexagon of circumradius r>0. Label tool actions, equal radii and the 60/120-degree central angles, then compare actual paper diagrams. A second triangle of the same size is not sufficient evidence of this specific activity.",
+        "Optional open-ended extension only: a learner may investigate a polygon net that folds into a container if a safe first-party labelled net is available; the original figure is not imported and the optional extension is not required for Stage A acceptance or for scoring the two-triangle core task.",
+        "New first-party teacher-scored Cool-down substitute for inaccessible publisher task: from a nonzero circle radius r, construct regular hexagon ABCDEF and inscribed triangle ACE, then construct smaller triangle OAB. Which sides are guaranteed equal within each triangle, and why are their side lengths not equal to one another? Give an exact mathematical reason and a labelled compass/straightedge paper diagram."
       ],
       "KeyConcepts": [
         {
@@ -87,12 +92,18 @@
           "Mistake": "Checking the drawing only with a ruler and skipping the compass equality.",
           "WhyWrong": "Visual or approximate measurements do not prove the sides congruent.",
           "Correction": "Use the original equal-radius circle definitions to justify each equality."
+        },
+        {
+          "Mistake": "Producing two equilateral triangles with the same side length and treating this as satisfying the activity's different-sizes condition.",
+          "Correction": "Construct a radius-r central triangle and an alternating-vertex triangle of side sqrt(3)r, or use explicitly distinct positive base lengths; justify both."
         }
       ],
       "SummaryPoints": [
         "A nonzero base segment and two equal-radius circle intersections construct an equilateral triangle.",
         "An inscribed triangle through alternating vertices of a regular hexagon has three equal sides.",
-        "Source-aligned reasoning is teacher assessed for actual constructions and explanations."
+        "Source-aligned reasoning is teacher assessed for actual constructions and explanations.",
+        "Use one central and six vertex-centred congruent circles to notice many possible inscribed polygons, record two conjectures, and distinguish what radii alone can prove.",
+        "Construct TWO distinct equilateral triangles of different sizes with teacher-reviewed labels and reasoning; the source's optional paper-net extension is not required."
       ],
       "Visuals": [],
       "Videos": []
