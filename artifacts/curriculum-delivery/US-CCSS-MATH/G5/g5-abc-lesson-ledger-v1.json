@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L07",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L08",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 6,
+    "READY_FOR_D": 7,
     "D_VERIFIED": 0,
-    "BLOCKED": 13,
-    "REMAINING": 142
+    "BLOCKED": 12,
+    "REMAINING": 141
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -472,22 +472,18 @@
       "reuseFinding": "REUSE_EXISTING_UNIT_SELECTION_AND_EDULYTIKS_24_CUBIC_FOOT_EXAMPLE; RESTORE_DUMPSTER_AND_FULL_INFO_GAP_ROUTINE",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric volume calculation as supplementary; shared writer EXTEND open unit-choice / information-gap teacher-rubric contract",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l07-contract-v15.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T08:03:59.474Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:20:59.675Z",
+      "elapsedSeconds": 40620,
       "commitSHA": null,
-      "blocker": {
-        "owner": "Supervisor 1 designated integration writer",
-        "reason": "No exact selected Practice for qualitative cubic unit scale / information gap request/rationale and teacher score",
-        "acceptWhen": "Correct static routed family and human-reviewed information-gap/units rubric wired"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "edition": "2021 IM K5",
         "teacherLesson": "local original U01 lesson-7.html",
@@ -507,7 +503,16 @@
         "before": "Model skipped dumpster; described incomplete 2021 sample as if 3-foot height were known.",
         "after": "Full six-object unit discussion; exact 2021 disclosed sample lengths; clearly original third-dimension example; Info Gap roles and exit check."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l07-practice-rubric-v15.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l07-practice-rubric-v15.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l07.cubic_unit_context",
+        "source": "2021 source L07 freezer 4-by-UNKNOWN-by-3 feet, data card width 2 feet",
+        "teacher": "Original info-gap questioning, open size/context unit choices and physical cubic units are reviewed by teacher; no invented missing edge.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "publisherMaterialParity": "NOT_CERTIFIED",
+        "closingParentHead": "756ada539dfa7a4d0d728fbc93040dd5d2cfb7c1"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
