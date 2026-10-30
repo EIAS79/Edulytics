@@ -200,7 +200,7 @@
     "Run added course-scoped Node suite in a checked-out repository and compile/tests in authorized CI; record exact SHA/run URLs.",
     "At frozen reviewed SHA: protected PR checks, staging/authenticated two-school negative isolation, real deployed SHA and owner UAT."
   ],
-  "updatedAtUtc": "2026-10-29",
+  "updatedAtUtc": "2026-10-30T06:50:41.522Z",
   "originalMvpSourceShaVerified": "EXACT_4_PDFS_COVERING_5_LESSONS",
   "approvalType": "NOT_ACADEMICALLY_ACCEPTED",
   "technicalEvidence": "20/20 Node, 17/17 targeted .NET passed at identical content SHA d63bc51; source hashes exact; no authenticated / CI parity approval.",
@@ -208,5 +208,125 @@
   "sourceReviewPath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-source-target-practice-review.md",
   "proposedPracticeFixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json",
   "dotnetCommand": "dotnet test <absolute repo>/tests/Edulytics.Tests/Edulytics.Tests.csproj --configuration Release --filter FullyQualifiedName~Phase29CanonicalContentPackPipelineTests --verbosity minimal --no-restore",
-  "dotnetSdkNote": "Repo global.json demands SDK 10.0.200; isolated external SDK-selection temp folder used installed 10.0.301 without modifying repository. Focused .NET tests passed, but not a protected required workflow."
+  "dotnetSdkNote": "Repo global.json demands SDK 10.0.200; isolated external SDK-selection temp folder used installed 10.0.301 without modifying repository. Focused .NET tests passed, but not a protected required workflow.",
+  "sequentialACCheckpoint": {
+    "protocol": "SUP3_ORDER_CODER9_ADV_TRIG_GEO_ABC_20261030",
+    "checkpointRecordedAtUtc": "2026-10-30T06:50:41.522Z",
+    "lessonStartedAtUtc": "NOT_RECORDED_BEFORE_THIS_CHECKPOINT",
+    "lessonEndedAtUtc": null,
+    "lastFullyClosedABC": null,
+    "currentLessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
+    "transitionToNextLessonAllowed": false,
+    "headObservedBefore": "c7d3ba2d1c274e1749dd0b5f62206d630b0b3b3f",
+    "lessonStatus": "BLOCKED_BY_INTEGRATION_AND_ACADEMIC_SOURCE_REVIEW",
+    "stageA": {
+      "A_CLOSED": false,
+      "status": "SOURCE_BINARY_MATCH_AND_PREVIOUS_DIRECT_TASK_REVIEW_REUSED; INDEPENDENT_PARITY_PENDING",
+      "sourcePath": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\12_HS_Advanced_Supplements\\Exact_Sources\\mathematicsvisionproject.org_uploads_1_1_6_3_11636986_sec3mod7tn718.pdf",
+      "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+      "shaVerifiedDirectlyOnOurCSOnUtcDate": "2026-10-30",
+      "teacherStudentPagesFromExistingVerifiedSourceNotes": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "goalsAndFormalTargets": "REVIEWED_FIRST_PARTY_HSF_TF_A3_A4",
+      "representationsAndSourceActivity": "ACCESSIBLE_ORIGINAL_COORDINATE_PROOF_PRESENT; PUBLISHER_DIAGRAM_TASK_INDEPENDENT_PARITY_PENDING",
+      "checkForUnderstanding": "NOT_INDEPENDENTLY_CERTIFIED",
+      "cooldown": "NOT_IDENTIFIED_AS_ACCESSIBLE_LOCKED_SOURCE_REQUIREMENT; NOT_CLAIMED_PUBLISHER_PARITY",
+      "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-academic-review-decision-matrix-2026-10-29.md"
+    },
+    "stageB": {
+      "B_CLOSED": false,
+      "status": "PREVIOUS_FIRST_PARTY_MATHEMATICAL_REPAIR_IMPLEMENTED; HUMAN_ACADEMIC_APPROVAL_PENDING",
+      "coursePackPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-trig-geo-phase29-v1.lesson-content-pack.json",
+      "inspectedPackBlobSha": "52071af1272563fa66770050d2ffdedbb854ed9a",
+      "coveredTopics": [
+        "special-angle unit-circle coordinates",
+        "cofunctions",
+        "parity and periodicity",
+        "defined tangent domain",
+        "angle signs and equivalences",
+        "diagram-free reflection proof"
+      ],
+      "contentChangedAtThisCheckpoint": false,
+      "approvedContentPredecessor": "NOT_VERIFIED",
+      "evidence": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-content-predecessor-transition.json"
+    },
+    "stageC": {
+      "C_PREPARED": true,
+      "C_CLOSED": false,
+      "status": "BLOCKED_BY_INTEGRATION",
+      "candidateFixture": "trig.unit_circle_reflection_exact",
+      "fixturePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-9/ADV-TRIG-GEO-proposed-practice-fixtures.json",
+      "expectedChecks": [
+        "exact symbolic and equivalent numeric",
+        "wrong sign",
+        "malformed expression",
+        "excluded tangent poles",
+        "reasoned proof assessed with human rubric"
+      ],
+      "selectedStudentGenerator": false,
+      "actualAuthenticatedLessonPractice": "NOT_RUN",
+      "productionRoutingVerified": false,
+      "actualPersistedFeedback": "NOT_RUN",
+      "integrationPr": 600,
+      "issues": [
+        587,
+        453
+      ],
+      "owner": "Supervisor 3 / Shared Integration Owner"
+    },
+    "ABC_READY_FOR_D": false,
+    "D_VERIFIED": false,
+    "checksAtThisCheckpoint": "TEST_NOT_RUN_NO_EXECUTION_CODE_CHANGE",
+    "priorNodeResult": "PASS_20_20_ONLY_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491_NOT_CURRENT_SHA",
+    "priorDotnetResult": "PASS_17_17_ONLY_AT_d63bc51ceba7c7233119eae8545f7f75d87d3491_NOT_CURRENT_SHA",
+    "blockers": [
+      {
+        "type": "SOURCE_ACADEMIC",
+        "owner": "Supervisor 3 / authorized independent academic reviewer",
+        "detail": "Accept or request corrections for L01 source task representations and effective learner parity; approve content predecessor/version, no self-certification"
+      },
+      {
+        "type": "INTEGRATION",
+        "owner": "PR #600 shared integration owner",
+        "detail": "Exact LessonCode mapping and selected/routable generator, verifier, normalizer, persisted feedback, adopted Fourth Courses school route and two-school negative isolation"
+      }
+    ],
+    "sourceFilesIndexOnly": [
+      {
+        "filename": "sec3mod7tn718.pdf",
+        "sourceSha256": "8213e7498696cc71320ae254d21606083b0d24fbe73acc8a27e1588f0bc1d790",
+        "lessons": [
+          "L01",
+          "L03"
+        ]
+      },
+      {
+        "filename": "sec3mod7seh718.pdf",
+        "sourceSha256": "4f807b20b5cbf0f7d71a06e090fd376d6bc8109f1011eca59bcce5980580bad1",
+        "lessons": [
+          "L02"
+        ]
+      },
+      {
+        "filename": "m2_mod7_tn_52017f.pdf",
+        "sourceSha256": "fba6a158eed41c75324389a196259c6f81a357ffbce7f257e77beafd226bf0c1",
+        "lessons": [
+          "L04"
+        ]
+      },
+      {
+        "filename": "g1_mod6h_tn_82017f.pdf",
+        "sourceSha256": "4aca916e175d944d966894469d103b6b34b32ae9f032ae0e1b4e534bb189fd56",
+        "lessons": [
+          "L05"
+        ]
+      }
+    ],
+    "sourceIndexPreparationOnly": true
+  }
 }
