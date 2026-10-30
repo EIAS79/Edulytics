@@ -359,14 +359,46 @@
         "authenticatedTeacherScoring": "NOT_VERIFIED",
         "twoSchoolIsolation": "NOT_VERIFIED"
       },
-      "release": "NO_GO"
+      "release": "NO_GO",
+      "fullRepoFixtureBindingSkipResolved": true,
+      "priorNodeSkipResultSupersededBy": "coder8FullNativeNodeBinding20261030"
+    },
+    "coder8FullNativeNodeBinding20261030": {
+      "status": "EXECUTED_ON_ISOLATED_AUTHORIZED_TEMP_COPY; NO_SKIPS",
+      "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+      "sourceHead": "c7e167cf655ccd2970b15e7e9e6e0638c449f669",
+      "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+      "runtime": "Node v26.4.0",
+      "host": "Anas_Nitro authorized connected device, isolated temporary test directory, NOT Our-CS",
+      "repositorySnapshot": "Exact three text files fetched from PR #585 HEAD via GitHub connector, each verified with git hash-object prior to execution",
+      "gitBlobSha": {
+        "tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs": "23ad28682cef40a86653f9b663b604196bd333eb",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json": "8015be75e4444f8fc4eba1137f5b916a0de342ea",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json": "376401223286b2a6bc65f075d3dca394f445ddbf"
+      },
+      "total": 31,
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "exitCode": 0,
+      "caseOracles": 26,
+      "sourceMathScenarios": 2,
+      "proposedHumanRubrics": 6,
+      "scope": "Native isolated mathematical oracles, exact fixture JSON bindings, rubric metadata and source task examples; no selected Practice/HTTP/grade persistence",
+      "dotnetSDKInstalled": false,
+      "officialCsharpXunit": "NOT_EXECUTED",
+      "githubCIExactHead": "QUEUED_OR_PENDING_AT_INSPECTION",
+      "effectiveAuthenticatedEN": "NOT_VERIFIED",
+      "tenantIsolation": "NOT_VERIFIED",
+      "ownerUAT": "NOT_VERIFIED"
     }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
     "practiceComplete": "0_OF_2_PRODUCTION_CERTIFIED",
     "academicAccepted": "0/2",
-    "releaseCandidate": "BLOCKED_SHARED_PRACTICE_PARITY_EXACT_HEAD_CI_RENDERED_UAT",
+    "releaseCandidate": "BLOCKED_BY_SHARED_PRACTICE_MATERIALIZATION_ACADEMIC_REVIEW_EXACT_HEAD_CI_AND_STAGE_D",
     "merged": false,
     "deployed": false,
     "gateIssues": [
