@@ -110,6 +110,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("The source expression 5×2 1/2 equals which exact quantity?","12 1/2","10 1/2","15 1/2"),
                 new("What must be added to 4×5=20 to represent 4×5 1/2?","2 square units","1/2 square unit","4 square units")
             ],
+                        ["usccss.g5.u02.l13.distributive_area_expressions"]=[
+                new("Source Diagram C: 3 units by 5 2/5 units. What is its area?","16 1/5 square units","15 2/5 square units","17 2/5 square units"),
+                new("Source Diagram B: full 5×3 rectangle minus an unshaded 5×2/5 strip. What area remains?","13 square units","15 square units","17 square units"),
+                new("Original source shaded rectangle 4 units by 5 1/3 units. What is its area?","21 1/3 square units","20 1/3 square units","24 square units"),
+                new("Source shaded rectangle 7 units by 3 3/4 units. What is its area?","26 1/4 square units","21 3/4 square units","28 square units"),
+                new("Evaluate source warm-up (5×7)+(5×1/4).","36 1/4","35 1/4","55 1/4"),
+                new("Evaluate the source warm-up 5×(7+4).","55","35","20")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

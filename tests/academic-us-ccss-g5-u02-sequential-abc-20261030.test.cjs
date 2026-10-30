@@ -57,4 +57,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L11','usccss.g5.u02.l11.area_fraction_great
 test('G5 U02 L12 exact source mixed rectangle area and teacher-led decomposition',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L12','usccss.g5.u02.l12.decomposed_mixed_rectangle_area',["31 1/4 square yards","31 1/2 square yards","Priya by 1/4 square yard","22 square units"],["30 1/4 square yards","31 1/4 square yards"]);
 });
+test('G5 U02 L13 exact source mixed rectangle area and teacher-led decomposition',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L13','usccss.g5.u02.l13.distributive_area_expressions',["16 1/5 square units","13 square units","21 1/3 square units","26 1/4 square units"],["15 2/5 square units","15 square units"]);
+});
 // NEXT_LESSON_TEST
