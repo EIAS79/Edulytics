@@ -3,8 +3,8 @@
   "courseKey": "US-CCSS-MATH:HS:TRAD:ALG1:IM-1E",
   "asOfDate": "2026-10-30",
   "narrativeRubrics": 132,
-  "structuredDrafts": 25,
-  "unstructuredPending": 107,
+  "structuredDrafts": 26,
+  "unstructuredPending": 106,
   "approvedRubrics": 0,
   "actualTeacherGrades": 0,
   "feedbackPersisted": 0,
@@ -12,17 +12,57 @@
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
       "title": "Getting to Know You",
-      "status": "NARRATIVE_RUBRIC_NEEDS_SOURCE_REVIEW",
-      "sourceActivityReview": "TWO_PAGES_RETRIEVED_AUTOMATICALLY_NOT_PEDAGOGICALLY_REVIEWED",
+      "status": "SOURCE_REVIEWED_STRUCTURED_FIRST_PARTY_RUBRIC_DRAFT_NOT_APPROVED",
+      "sourceActivityReview": "LOCAL_TEACHER_PREP_INDEX_STUDENT_INDEX_PRACTICE_REVIEWED_20261030",
       "originalNarrativeRubric": [
         "Teacher-scored assessment rubric (0-2 each; total 8): 1) independently writes a statistical question anticipating variability; 2) identifies numerical versus categorical responses with a reason; 3) records and summarizes genuine or explicitly fictional responses without personal identifiers; 4) explains a justified interpretation and a sampling limitation. Award 0 for missing/incorrect, 1 for partially supported, 2 for specific and correct evidence. This task requires human review; no synthetic survey submission may be marked as a real participation grade."
       ],
-      "structuredCriteria": null,
-      "possiblePoints": null,
+      "structuredCriteria": [
+        {
+          "id": "statistical-question",
+          "maxPoints": 2,
+          "evidence": "independent question anticipates variation and is justified"
+        },
+        {
+          "id": "data-type",
+          "maxPoints": 2,
+          "evidence": "distinguishes numerical, categorical, and non-statistical with reason"
+        },
+        {
+          "id": "anonymous-response-data",
+          "maxPoints": 2,
+          "evidence": "correctly documents true anonymized responses or explicitly fictional exercise; no invented participation"
+        },
+        {
+          "id": "sample-summary-limitation",
+          "maxPoints": 2,
+          "evidence": "defensible summary, fourth-question category and sample/generalization limit"
+        }
+      ],
+      "possiblePoints": 8,
       "teacherAssignedAndAuthorized": false,
       "realStudentWorkReceived": false,
       "actualGradePersisted": false,
-      "feedbackPersisted": false
+      "feedbackPersisted": false,
+      "firstPartyCooldownDraft": {
+        "sourceStatus": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
+        "maxPoints": 6,
+        "humanScored": true,
+        "criteria": [
+          {
+            "id": "variability",
+            "maxPoints": 2
+          },
+          {
+            "id": "data-type",
+            "maxPoints": 2
+          },
+          {
+            "id": "class-v-single-fact",
+            "maxPoints": 2
+          }
+        ]
+      }
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",

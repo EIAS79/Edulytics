@@ -52,6 +52,17 @@ public sealed class UsCcssAlgebra1CourseUnit1RichV2Tests
             example => example.Answer.Contains("5/12", StringComparison.Ordinal));
         Assert.Contains(rich.WorkedExamples,
             example => example.Answer.Contains("11.2", StringComparison.Ordinal));
+        Assert.Contains(rich.ExplanationParagraphs,
+            p => p.Contains("Which Question Is Different?", StringComparison.Ordinal));
+        Assert.Contains(rich.ExplanationParagraphs,
+            p => p.Contains("15 classmates", StringComparison.Ordinal)
+                && p.Contains("non-statistical", StringComparison.Ordinal));
+        Assert.Contains(rich.ExplanationParagraphs,
+            p => p.Contains("Cool-down substitute", StringComparison.Ordinal)
+                && p.Contains("NOT independently verified", StringComparison.Ordinal));
+        Assert.Contains(rich.ExplanationParagraphs,
+            p => p.Contains("Answer set = {A, C, E}", StringComparison.Ordinal));
+
     }
 
     [Fact]

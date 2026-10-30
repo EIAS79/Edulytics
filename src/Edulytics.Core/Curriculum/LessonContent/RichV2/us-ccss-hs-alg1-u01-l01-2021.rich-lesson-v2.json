@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "alg1-u01-l01-source-task-alignment-20261029-v2",
+  "ContentVersion": "alg1-u01-l01-local-source-aligned-20261030-v3",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -10,7 +10,11 @@
       "ExplanationParagraphs": [
         "Learning goal: distinguish a statistical question from a question with one fixed answer; explain whether each set of responses is numerical or categorical; design, collect and interpret a real survey. This is an original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition, Unit 1 Lesson 1 (CC BY 4.0), https://im.kendallhunt.com/HS/teachers/1/1/1/preparation.html. The publisher identifies 6.SP.A.1 as Building On and HSS-ID.A.1 as Building Towards, not as an Addressing target.",
         "A statistical question anticipates variation across people or observations. Compare 'How many minutes does each student spend travelling to school?' (many possible responses) with 'How many minutes are in one hour?' (a fixed value). A number is not automatically statistical; the population and variability matter.",
-        "First-party guided activity aligned with the source's four-question and 15-classmate survey: propose four answerable survey questions, at least one about numerical responses and one about categories. Explain why variation is expected. With authorized classroom permission, ask 15 classmates all four questions, record anonymous responses without names or identifying information, summarize each question and discuss its numerical or categorical data type with a group. Preserve the actual anonymized data for a later display-building lesson. If collection is unavailable, use the clearly labelled fictional practice data below and explicitly mark the authentic 15-classmate collection requirement as not completed; do not claim data were collected from classmates. Original student activity: https://im.kendallhunt.com/HS/students/1/1/1/index.html.",
+        "First-party warm-up 1.1 (Which Question Is Different?): Compare four ORIGINAL prompts: A 'How many books are on this shelf now?', B 'What is the typical number of books on a classroom shelf?', C 'What color is this shelf?', D 'Which shelf colors do students in this class prefer?'. In groups of 2 to 4, find a mathematically defensible reason EACH question could be the odd one out: single fact versus anticipated variability, and numerical versus categorical answer. More than one defended choice is permitted; teacher challenges explanations without supporting evidence. This preserves the source's four-option comparison and discussion, without copying its specific chip examples.",
+        "First-party investigation 1.2 (Survey about classmates): Teacher assigns a group three investigation prompts, one classwide numerical (e.g. typical journey minutes), one categorical (e.g. preferred school lunch), and one non-statistical fixed fact (e.g. number of windows in this room). Write a fourth statistical question independently. For EACH of the four prompts write a survey item suitable for an individual respondent. With classroom permission ask all four items to 15 classmates; record anonymous responses without names or identifying information; then return to the group, summarize each question's responses in one or two sentences, and explain what responses 1, 2 and 3 have in common and whether prompt 4 belongs with 1, 2 or 3. Keep data for the subsequent graphing lesson. If no authorized data collection occurs, use explicitly fictional data only and mark the authentic 15-classmate task NOT COMPLETED. Student source: https://im.kendallhunt.com/HS/students/1/1/1/index.html.",
+        "Teacher discussion: distinguish 'What is the average commute time in this class?' (a class-level statistical investigation) from 'How long was your journey to school in minutes?' (a question asked to EACH classmate). An individual cannot report the class average. Questions 1, 2 and 3 respectively generate numerical, categorical and fixed/non-varying data. Optional enrichment: find one sourced news report using numerical data and another using categorical data; articulate the statistical question and limitation of each claim.",
+        "First-party practice aligned to source response modalities: P1 (human-scored): write a survey question expected to yield varying numerical data, with unit and reason. P2 (human-scored): write a survey question expected to yield categorical data, example labels and reason. P3 (exact select-all): which are statistical investigation questions? A 'What is the typical number of pages students read per week?', B 'How many pages are in this book?', C 'Which school lunch is most popular among classmates?', D 'Which lunch did you eat yesterday?', E 'How many minutes does a typical pupil take to walk to school?', F 'What is Canada's capital?'. Answer set = {A, C, E}; B, D and F concern a fixed fact or one particular person. Missing, extra, duplicate, unsupported and malformed selections must fail validation. This content does NOT establish an integrated Practice generator or grade persistence; teacher grades open responses.",
+        "ORIGINAL Edulytiks Cool-down substitute (2021 publisher Cool-down is teacher-login-protected and NOT independently verified): 1) Classify 'How many minutes do students in this group read each night?' and explain its numerical variable and expected variation. 2) Classify 'What is the name of this school's principal?' as a single fixed categorical fact and explain why it is non-statistical. 3) Explain why preferred game among a class can yield a statistical question with categorical data. Teacher rubric: 0-2 for sound statistical/non-statistical rationale, 0-2 for numerical/categorical rationale, 0-2 for class-versus-single-fact reasoning; 0 missing/incorrect, 1 partial, 2 complete; 6 points total, human-scored only. This is a FIRST-PARTY EQUIVALENT, never a word-for-word publisher claim.",
         "Practice dataset (fictional, for demonstration only): twelve anonymous transportation responses are Walk, Bus, Bicycle, Walk, Bus, Bus, Bicycle, Walk, Bus, Bicycle, Walk, Bus. Record a frequency table and state what it does and does not imply about a wider population. Distinct questions such as transport method and commute duration need distinct response types.",
         "Teacher-scored assessment rubric (0-2 each; total 8): 1) independently writes a statistical question anticipating variability; 2) identifies numerical versus categorical responses with a reason; 3) records and summarizes genuine or explicitly fictional responses without personal identifiers; 4) explains a justified interpretation and a sampling limitation. Award 0 for missing/incorrect, 1 for partially supported, 2 for specific and correct evidence. This task requires human review; no synthetic survey submission may be marked as a real participation grade."
       ],
@@ -32,6 +36,12 @@
           "Definition": "A survey collects responses from a defined group; the sample may not represent everyone.",
           "Rule": "Describe how responses were gathered and avoid identifying or inventing participants.",
           "Example": "A voluntary group of twelve provides information about those twelve, not necessarily the entire school."
+        },
+        {
+          "Title": "Investigation question versus respondent item",
+          "Definition": "A classwide statistical investigation is answered by combining individual survey responses.",
+          "Rule": "Collect observations from individual people before calculating a typical value for the class.",
+          "Example": "Investigation: typical commute duration; survey item: how long was your own commute today?"
         }
       ],
       "WorkedExamples": [
@@ -90,13 +100,19 @@
           "Mistake": "Claiming an invented sample represents a real class.",
           "WhyWrong": "No real participant or response was observed.",
           "Correction": "Mark samples as fictional; collect and document authentic anonymous responses only when authorized."
+        },
+        {
+          "Mistake": "Asking each participant for a class average.",
+          "WhyWrong": "One participant knows only their own observation, not the summary of classmates.",
+          "Correction": "Separate the class-level question from each person's measurable response and then aggregate."
         }
       ],
       "SummaryPoints": [
         "Statistical questions anticipate variability; non-statistical questions can be answered without a distribution of variable observations.",
         "Numerical values measure or count, while categorical values identify groups even if categories have numeral-like labels.",
         "A valid survey result includes the actual population/sample and a justified limitation.",
-        "Open survey design, interpretation and authentic data collection must be assessed with a teacher rubric rather than fabricated auto-grading."
+        "Open survey design, interpretation and authentic data collection must be assessed with a teacher rubric rather than fabricated auto-grading.",
+        "Original-group structure matters: numerical, categorical and non-statistical prompts must be distinguished before classifying the independent fourth question."
       ],
       "Visuals": [
         {
