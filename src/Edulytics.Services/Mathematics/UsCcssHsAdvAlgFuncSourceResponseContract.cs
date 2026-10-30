@@ -65,6 +65,104 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
     }
 
     /// <summary>
+    /// Closed 2x2 system classification only; a dependent-system parameterisation
+    /// or an explanation of rank remains subject to M05 teacher review.
+    /// Computes coefficient and augmented rank using exact integer minors.
+    /// </summary>
+    public static bool VerifySystemClassification(
+        string? response, long[,] coefficients, long[] rhs)
+    {
+        if (!Safe(response) || coefficients.GetLength(0) != 2 ||
+            coefficients.GetLength(1) != 2 || rhs.Length != 2)
+            return false;
+        BigInteger a = coefficients[0, 0], b = coefficients[0, 1];
+        BigInteger c = coefficients[1, 0], d = coefficients[1, 1];
+        BigInteger e = rhs[0], f = rhs[1];
+        var det = a * d - b * c;
+        var expected = det != 0 ? "unique" :
+            (a * f == c * e && b * f == d * e ? "infinite" : "none");
+        var actual = response!.Trim().ToLowerInvariant();
+        actual = actual switch
+        {
+            "infinitely many" or "infinitely_many" or "dependent" => "infinite",
+            "no solution" or "no solutions" or "inconsistent" => "none",
+            "one solution" or "unique solution" => "unique",
+            _ => actual
+        };
+        return actual == expected;
+    }
+
+    /// <summary>
+    /// Exact Ax=b substitution check for a source row-reduction result.
+    /// The reversible row operations and written proof are NOT graded here.
+    /// </summary>
+    public static bool VerifySystemSolution(
+        string? response, long[,] coefficients, long[] rhs)
+    {
+        if (!Safe(response)) return false;
+        var answer = response!.Trim();
+        if (answer.StartsWith("x=", StringComparison.Ordinal))
+            answer = answer[2..].Trim();
+        if (!Vector(answer, out var x)) return false;
+        var rows = coefficients.GetLength(0);
+        if (rows < 2 || rows > 3 || coefficients.GetLength(1) != x.Length ||
+            rhs.Length != rows) return false;
+        for (var row = 0; row < rows; row++)
+        {
+            var total = Q.From(0);
+            for (var col = 0; col < x.Length; col++)
+                total += Q.From(coefficients[row, col]) * x[col];
+            if (total != Q.From(rhs[row])) return false;
+        }
+        return true;
+    }
+
+    /// <summary>
+    /// M07/M08/M10 typed, closed inverse-eligibility disposition. Distinguish
+    /// singular, non-square and incompatible A^-1 b dimensions. These are
+    /// course-owned source oracles, not shared engine registration; do not
+    /// substitute this for the pending PR600 inverse_eligibility route.
+    /// </summary>
+    public static bool VerifyInverseEligibility(
+        string? response, long[,] coefficients, int rhsLength = 0)
+    {
+        if (!Safe(response) || rhsLength < 0) return false;
+        var rows = coefficients.GetLength(0);
+        var columns = coefficients.GetLength(1);
+        if (rows < 2 || rows > 3 || columns < 2 || columns > 3) return false;
+        string expected;
+        if (rows != columns)
+            expected = "not_square";
+        else if (rhsLength != 0 && rhsLength != rows)
+            expected = "dimension_mismatch";
+        else
+        {
+            BigInteger det;
+            if (rows == 2)
+                det = (BigInteger)coefficients[0, 0] * coefficients[1, 1] -
+                    (BigInteger)coefficients[0, 1] * coefficients[1, 0];
+            else
+            {
+                BigInteger a = coefficients[0, 0], b = coefficients[0, 1], c = coefficients[0, 2];
+                BigInteger d = coefficients[1, 0], e = coefficients[1, 1], f = coefficients[1, 2];
+                BigInteger g = coefficients[2, 0], h = coefficients[2, 1], i = coefficients[2, 2];
+                det = a * (e * i - f * h) - b * (d * i - f * g) +
+                    c * (d * h - e * g);
+            }
+            expected = det.IsZero ? "singular" : "invertible";
+        }
+        var actual = response!.Trim().ToLowerInvariant().Replace(' ', '_');
+        actual = actual switch
+        {
+            "no_inverse" or "inverse_undefined_due_to_zero_determinant" => "singular",
+            "invalid_dimensions" or "incompatible_dimensions" => "dimension_mismatch",
+            "nonsquare" or "non_square" => "not_square",
+            _ => actual
+        };
+        return actual == expected;
+    }
+
+    /// <summary>
     /// Complete source inverse-system answer A^-1=[[...]];x=[...].
     /// Verifies exact matrix identity AND all original equations. A correct
     /// solution vector alone cannot satisfy a task demanding the inverse.
