@@ -243,7 +243,10 @@ public static class UsCcssHsFourthCourseQuestions
             var entered = answer.Split(',');
             var solved = expected.Split(',');
             return entered.Length == solved.Length &&
-                   entered.Zip(solved).All(pair => SameRational(pair.First, pair.Second));
+                   entered.Zip(solved).All(pair =>
+                       family == TrigModel
+                           ? SameModelTime(pair.First, pair.Second)
+                           : SameRational(pair.First, pair.Second));
         }
         return SameRational(answer, expected);
     }
@@ -371,6 +374,19 @@ public static class UsCcssHsFourthCourseQuestions
     {
         while (b != 0) { var t = a % b; a = b; b = t; }
         return Math.Max(a, 1);
+    }
+
+    // A displayed contextual time may be an exact fraction OR an equivalent
+    // bounded decimal. Never parse learner-supplied algebraic expressions.
+    private static bool SameModelTime(string entered, string expected)
+    {
+        if (SameRational(entered, expected)) return true;
+        if (entered.Length > 32 || !TryRational(expected, out var numerator, out var denominator))
+            return false;
+        return double.TryParse(entered.Trim(), NumberStyles.Float,
+                   CultureInfo.InvariantCulture, out var candidate) &&
+               double.IsFinite(candidate) &&
+               Math.Abs(candidate - (double)numerator / denominator) <= 1e-9;
     }
 
     private static bool SameRational(string entered, string expected)
