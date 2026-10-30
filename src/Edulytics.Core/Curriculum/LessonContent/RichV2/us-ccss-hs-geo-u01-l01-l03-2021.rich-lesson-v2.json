@@ -222,7 +222,12 @@
         "A perpendicular bisector is a line through the midpoint of a segment meeting it at a right angle. For endpoints A and B with A ≠ B, choose a compass radius r strictly greater than half the length AB, so the two equal circles have distinct intersections X and Y.",
         "Why the construction works: AX = BX and AY = BY because X and Y lie on both equal-radius circles. The line of points equidistant from A and B is perpendicular to AB through its midpoint; in this lesson that locus is explored and used as a conjecture, with a full proof developed later in the course.",
         "Teacher-scored original Edulytiks task: construct XY and label A, B, X, Y, M. Provide a written explanation for the equal distances and a drawing showing XY meeting AB at M. The rubric requires two intersecting equal-radius arcs, the line through X and Y, identified midpoint and right angle, and a valid radius-based equal-distance statement. A typed number alone cannot demonstrate these.",
-        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 3, CC BY 4.0. This authored example and verbal diagram are Edulytiks originals; source sequence is acknowledged but publisher artwork is not reproduced."
+        "Source orientation: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 1 Lesson 3, CC BY 4.0. This authored example and verbal diagram are Edulytiks originals; source sequence is acknowledged but publisher artwork is not reproduced.",
+        "Original first-party source-aligned activity 3.1 (Find All the Points): choose distinct A and B and a separate segment CD of positive length r. Mark at least five points on the circle centred A with radius CD and five on the circle centred B with the same radius; explain that infinitely many points satisfy each single-distance constraint. Mark ALL points satisfying both constraints as circle intersections, explaining that there are two when 2r>AB, one when 2r=AB and none when 2r<AB. Draw and label, rather than replacing the activity with a single numerical answer.",
+        "Original first-party source-aligned activity 3.2 (Human Perpendicular Bisector): mark two distinct floor locations A and B. Students successively stand at DIFFERENT locations they believe are equally distant from A and B; the class checks both distances using measuring tapes, records varied locations, then sketches and conjectures the common line through the midpoint perpendicular to AB. Treat it explicitly as a conjecture at this stage, NOT a proved theorem. On paper or using a coordinate grid, students may simulate locations if the physical classroom activity cannot be performed. Extension only: in 3D the equidistant locus is a plane perpendicular to AB through its midpoint.",
+        "Original first-party source-aligned activity 3.3 (How Well Can You Slice It?): first inspect two false examples, one intersecting midpoint at a NON-right angle and one right-angle line crossing AWAY from the midpoint. Then use tools to construct the perpendicular bisector of a nonzero PQ, and try a SECOND method with a tracing-paper copy (e.g. fold so P coincides with Q). Compare how each method establishes both midpoint and perpendicularity. For compass construction choose a common radius r strictly greater than PQ/2 and draw BOTH intersection points on opposite sides; r=PQ/2 gives only tangency, not a line.",
+        "Assessment boundary: first collect student conjectures and peer discussion of equal-distance locations; only then give or refer to the coordinate locus worked example, which is optional analytic checking, not a substitute for discovery. The full perpendicular-bisector locus theorem is formally proved later in the Geometry sequence.",
+        "First-party restricted-publisher-Cool-down equivalent (2026-10-30): with two distinct points R and S, give precise paper straightedge/compass instructions for the perpendicular bisector. Label both radius-r arc intersections X,Y with r>RS/2, midpoint M, and the right-angle mark. Explain RX=SX and RY=SY; state why choosing r=RS/2 fails to determine a line. Teacher evaluates drawing and written explanation."
       ],
       "KeyConcepts": [
         {
@@ -297,12 +302,22 @@
           "Mistake": "Calling any line through the midpoint the perpendicular bisector.",
           "WhyWrong": "The line must also meet the original segment at 90 degrees.",
           "Correction": "Justify both midpoint and perpendicularity; the equal-radius intersection method produces the correct line."
+        },
+        {
+          "Mistake": "Using circles with opening exactly half the endpoint distance and calling their single tangent point a perpendicular-bisector line.",
+          "Correction": "Set r strictly greater than half the segment length; mark two distinct intersections X,Y, join them, then identify midpoint and 90-degree angle."
+        },
+        {
+          "Mistake": "Treating the classroom equidistance conjecture as already proven or replacing student standing/folding exploration with the coordinate derivation.",
+          "Correction": "Keep the experiential observations and student conjecture first; use analytic distance algebra as additional independent verification, noting the formal theorem is established in a later unit."
         }
       ],
       "SummaryPoints": [
         "Equal-radius circles give points equally distant from both endpoints.",
         "The line through two appropriate circle intersections is the perpendicular bisector, provided the starting endpoints differ.",
-        "Drawing, labelled justification and tool operation are reviewed with a teacher rubric rather than an invented auto-grade."
+        "Drawing, labelled justification and tool operation are reviewed with a teacher rubric rather than an invented auto-grade.",
+        "The floor-based equal-distance locus suggests a perpendicular bisector; the class first forms a conjecture, tests it, and compares a folded-paper construction with equal-radius arcs.",
+        "For two equal-radius circles centred r apart, two distinct intersections require compass opening > r/2; tangency cannot determine a bisector line."
       ],
       "Visuals": [],
       "Videos": []

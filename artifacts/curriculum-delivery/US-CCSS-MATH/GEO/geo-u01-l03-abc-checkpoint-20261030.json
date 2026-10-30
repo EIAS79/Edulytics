@@ -1,0 +1,124 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
+  "LessonTitle": "Construction Techniques 1: Perpendicular Bisectors",
+  "Ordinal": 3,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "Predecessor": "6bf71a845d53480d24cc255f5d1d1bdd3cc45615",
+  "Source": {
+    "TeacherPreparation": "10_HS_Geometry/1/3/preparation.html",
+    "TeacherActivities": "10_HS_Geometry/1/3/index.html",
+    "StudentActivities": "10_HS_Geometry_Student/1/3/index.html",
+    "StudentPractice": "10_HS_Geometry_Student/1/3/practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "f91b3a48dbfbe66dfc41242c6b81345c0d0628d816bc1ea0318ddc34e69223df",
+    "TeacherActivities": "55aade81dd5ac947cf0fb119ca313d46b6680175aa02edd52744489f1240c682",
+    "StudentActivities": "76a607235ac54269239fe99adca97b101b38617635d704e337de3b07100792f7",
+    "StudentPractice": "4e83d53182c710e642ac90c94b678a96236b17f7275de04f370e286748d9d937"
+  },
+  "Edition": "Illustrative Mathematics Geometry First Edition 2019–2021",
+  "Rights": "Source course CC BY 4.0; original Edulytiks questions, diagrams and explanations; no publisher image copied",
+  "StageA": {
+    "Status": "A_CLOSED_COURSE_SOURCE_PARITY",
+    "Goals": [
+      "construct perpendicular bisector",
+      "conjecture equidistant points locus"
+    ],
+    "Standards": {
+      "Addressing": [
+        "HSG-CO.A.1",
+        "HSG-CO.D.12"
+      ],
+      "BuildingTowards": [
+        "HSG-CO.A.4",
+        "HSG-CO.C.9",
+        "HSG-CO.D.12"
+      ]
+    },
+    "SourceMap": [
+      {
+        "Source": "3.1 five points on each circle and intersection locus",
+        "FirstParty": "original radius CD variable, two circle loci, 2/1/0 intersection threshold"
+      },
+      {
+        "Source": "3.2 embodied equal-distance floor exercise and 3D extension",
+        "FirstParty": "students choose/test positions, conjecture, draw; optional 3D equidistant plane"
+      },
+      {
+        "Source": "3.3 two false bisectors, multiple construction methods",
+        "FirstParty": "false midpoint vs false perpendicular, both circle arcs and tracing-paper fold"
+      },
+      {
+        "Source": "Practice 1–5 including spiral review",
+        "FirstParty": "five original teacher-scored analogues, with diagram-independent input"
+      },
+      {
+        "Source": "3.4 publisher-protected Cool-down",
+        "FirstParty": "PUBLISHER_COOLDOWN_UNVERIFIED, EDULYTIKS_AUTHORED_COOLDOWN, not copied"
+      }
+    ],
+    "ExternalAcademicApproval": "NOT_CLAIMED"
+  },
+  "StageB": {
+    "Status": "B_CLOSED_COURSE_PAPER_EQUIVALENT",
+    "Preserved": [
+      "3 worked examples",
+      "existing equidistant-locus coordinate proof, explicitly treated as optional analytic verification"
+    ],
+    "Fixes": [
+      "Adds hands-on equidistance conjecture before proof",
+      "Adds five points each circle and 2/1/0 intersection distinctions",
+      "Adds second tracing-paper construction and bad examples",
+      "Adds original accessible first-party teacher cool-down"
+    ],
+    "VisualMode": "Physical floor, paper and named verbal figures, no publisher image parity or uploaded attachment claim"
+  },
+  "StageC": {
+    "Status": "C_PREPARED_BLOCKED_C_SHARED",
+    "Practice": "5 source-skills analogues 2 points each",
+    "Rubrics": "two different 8-point human-scored drawing/conjecture tasks; no scalar Exam scoring",
+    "Dependency": {
+      "Owner": "Supervisor 2",
+      "Issue": 453,
+      "ExactRequirement": "secure school/pathway course-exact teaching assessment assignment and teacher-scored evidence/persistence for genuine paper constructed bisector",
+      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
+      "Prohibit": "Do not modify common Practice engine or scalar Exam automatic grader"
+    }
+  },
+  "StageD": "NOT_RUN",
+  "Status": "BLOCKED_C_SHARED",
+  "ABCReadyForD": false,
+  "return_queue": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
+      "Status": "BLOCKED_C_SHARED",
+      "Owner": "Supervisor 2",
+      "Issue": 453
+    }
+  ],
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L04",
+  "MathVerification": "L02+L03 independent Euclidean geometry 26 assertions PASS after fixing harness; not .NET or app Node suite",
+  "TestEvidence": {
+    "Focused": "26 PASS / 0 FAIL",
+    "AppNode": "NOT_RUN",
+    "Dotnet": "NOT_RUN",
+    "CI": "NOT_RUN"
+  },
+  "CountersAfter": {
+    "TOTAL": 124,
+    "AUTHORED": 124,
+    "A_CLOSED": 3,
+    "B_CLOSED": 3,
+    "C_PREPARED": 3,
+    "ABC_READY_FOR_D": 0,
+    "D_VERIFIED": 0,
+    "BLOCKED": 3,
+    "REMAINING": 124
+  },
+  "StartedAt": null,
+  "ClosedAt": null,
+  "ElapsedSeconds": null,
+  "Timing": "No reliable per-lesson start timestamp; do not invent"
+}
