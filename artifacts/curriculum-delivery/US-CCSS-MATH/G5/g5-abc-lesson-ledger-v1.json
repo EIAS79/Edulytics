@@ -11,15 +11,15 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 0,
-    "B_CLOSED": 0,
+    "A_CLOSED": 1,
+    "B_CLOSED": 1,
     "C_PREPARED": 0,
     "READY_FOR_D": 0,
     "D_VERIFIED": 0,
     "BLOCKED": 1,
     "REMAINING": 148
   },
-  "closureCommitSHAExplainer": "A blocked row is not a CLOSED lesson, so commitSHA stays null until a future closure is actually committed and persisted; this audit's real SHA is reported externally in PR/issue and response.",
+  "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
   "lessons": [
     {
@@ -29,33 +29,35 @@
         "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-1\\lesson-1\\preparation.html",
         "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\accessim_student\\unit-1\\section-a\\lesson-1.html"
       ],
-      "reuseFinding": "REUSE_PREEXISTING_2021_SOURCE_SPECIFIC_NINE_CUBE_CONNECTED_MODELS_AND_TEACHER_RUBRIC; PATCH_SOURCE_ACTIVITY1_AND_WARMUP_PRESENTATION_ONLY; ADD_ORIGINAL_GATED_COOLDOWN_SUBSTITUTE",
-      "A_STATUS": "PARTIAL",
-      "B_STATUS": "PARTIAL",
-      "C_STATUS": "BLOCKED",
-      "PracticeStrategy": "EXTEND_PENDING_SINGLE_WRITER; REUSE_NUMERIC_ONLY_AS_SUPPLEMENT_NOT_CONSTRUCTION_PROOF; TEACHER_GRADED_CONSTRUCTION",
-      "CooldownOriginalStatus": "NOT_VERIFIED_GATED",
-      "CooldownEdulytiksStatus": "ORIGINAL_AUTHORED_STUDENT_PROMPT; TEACHER_RUBRIC_PREPARED; ACTUAL_ASSESSMENT_ROUTING_NOT_VERIFIED",
-      "testFile": "tests/academic-us-ccss-g5-u01-source-fidelity-v9.test.cjs",
+      "reuseFinding": "REUSE_2021_TEACHER_LESSON_SOURCE_COMPARISON_AND_908b09d_CUBE_MODELS__PRECISE_ACTIVITY_1_WARMUP_TASKS__ORIGINAL_ACCESSIBLE_FOUR_MODEL_PROMPT_AND_TEACHER_CHECK; NO_SOURCE_ART_COPIED",
+      "A_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "PracticeStrategy": "REUSE_NUMERIC_SUPPLEMENT_ONLY__EXTEND_EXISTING_SHARED_FAMILY_OR_TEACHER_RUBRIC_PENDING_SELECTED_CONTRACT; NO_NEW_ENGINE_DEFAULT",
+      "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
+      "testFile": "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
-      "startedAt": "2026-10-30T06:53:18.386Z",
+      "startedAt": "2026-10-30T07:13:44.064Z",
       "closedAt": null,
       "elapsedSeconds": null,
       "commitSHA": null,
       "blocker": {
-        "owner": "American Supervisor 1 (shared integration writer) and American Coder 1 (source asset review)",
+        "owner": "Supervisor 1 designated SINGLE SHARED INTEGRATION WRITER — issue #592",
+        "status": "BLOCKED_SHARED_INTEGRATION",
         "reasons": [
-          "2021 original Student Task PDF, source A/B/C/D diagrams/card assets and any separately licensed figures not inspected; local HTML's textual placeholders are not figure parity.",
-          "Original publisher Cool-down is educator-login gated; substitute is independently authored, not asserted publisher-equivalent.",
-          "Static usccss.g5.unit_cube_count maps to dimension multiplication; exact selected runtime contract/feedback and construction teacher-grading wiring are not verified. Shared changes belong to issue #592.",
-          "Canonical version/materialization safety for modified baseline pack remains unresolved under #592."
+          "Exact selected LessonPracticeContract/generator/grader/fallback not established; legacy usccss.g5.unit_cube_count only tests prism multiplication, not 8/9-cube construction, ordering or explanation.",
+          "Teacher-scored model/drawing/verbal/physical alternatives and grade-owned contract requirements not yet demonstrably wired."
+        ],
+        "nonBlockingLimits": [
+          "Original Student Task PDF and exact publisher images remain unverified, never claimed reproduced.",
+          "Publisher 2021 Cool-down is gated; Edulytiks-original exit check has a teacher rubric.",
+          "Effective content version and authenticated DB/renders are Stage D verification with separate shared-owner safety scope."
         ],
         "missingArtifacts": [
-          "original Student Task PDF and original figure/rights evidence",
-          "shared selected Practice exact routing or documented teacher-only assessment",
-          "safe runtime content materialization evidence"
+          "Shared writer's selected Practice contract and human rubric implementation evidence under #592"
         ],
-        "remedy": "Coder 1 continues read-only same-lesson asset verification; Supervisor 1 appoints a single integration writer for #592; do not advance before A and C evidence close."
+        "remedy": "Supervisor 1 integration writer implements/reuses appropriate shared grading and mapping; Coder 1 reviews evidence before accepting C; remain U01:L01."
       },
       "READY_FOR_STAGE_D": false,
       "sourceEvidence": {
@@ -71,23 +73,47 @@
           "Count equal-size nonoverlapping cubes, rather than infer volume from visible height.",
           "Order all four constructed objects by cube count with reasoning.",
           "Build a single connected nine-cube solid; compare different arrangements with equal volume.",
-          "For Edulytiks-original exit check, accept two eight-cube connected arrangements with equal volume and a reason; a numeric 8 alone is insufficient."
+          "For Edulytiks-original exit check, accept two eight-cube connected arrangements with equal volume and a reason; a numeric 8 alone is insufficient.",
+          "Teacher assesses open WODB alternative reasoning without a single fixed answer",
+          "Teacher compares two independent 8-cube pairs; volume does not depend on tower height",
+          "Teacher reviews verbal, drawn, tactile or physical representations; numeric-only 8 or 9 fails the complete assessment",
+          "Coordinate-based independent fixtures are test requirements, not an actual auto-grading engine"
         ],
-        "latestSourceCheckedAtUtc": "2026-10-30T06:53:18.386Z"
+        "latestSourceCheckedAtUtc": "2026-10-30T06:53:18.386Z",
+        "evaluatedSource": "2021 original teacher lesson.html and preparation.html; Student Facing paragraphs embedded in 2021 teacher lesson, not AccessIM 2024 substitute.",
+        "originalActivityCoverage": {
+          "warmup": "Four cube-object Which One Doesn't Belong?; several defensible choices",
+          "activity1": "Two pictured 8-cube comparison pairs; justify equal occupied space despite different outlines",
+          "activity2": "Four students build/order from handfuls, repeat, then each constructs one connected 9-cube solid; explain equal volume",
+          "teacherMaterials": "24 congruent connecting cubes per pair, optional isometric dot paper; teacher observes constructions and verbal reasoning",
+          "publisherCooldown": "NOT_VERIFIED_GATED"
+        },
+        "originalVisuals": "NOT_VERIFIED_PIXEL_PARITY; EDULYTIKS_ORIGINAL_MODELS_EXPLICITLY_LABELLED",
+        "studentPdf": "NOT_VERIFIED_NONBLOCKING",
+        "figureRights": "PUBLISHER_ARTWORK_NOT_REUSED; ORIGINAL_EDULYTIKS_TEXT_MODELS",
+        "sourceFidelityDecision": "SOURCE_GOAL_ACTIVITY_AND_MATH_COVERED_WITH_EDULYTIKS_ORIGINAL_ACCESSIBLE_ALTERNATIVES; UNSEEN_IMAGE_SHAPE_IDENTITY_NOT_CLAIMED"
       },
       "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-u01-l01-l03-2021.rich-lesson-v2.json",
-      "testPath": "tests/academic-us-ccss-g5-u01-source-fidelity-v9.test.cjs",
+      "testPath": "tests/academic-us-ccss-g5-u01-l01-abc-contract-v14.test.cjs",
       "openIssues": [
         "https://github.com/EIAS79/Edulytics/issues/592"
       ],
-      "lastEvidenceCommitSHA": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
+      "lastEvidenceCommitSHA": "908b09dbd165a797155ba6dec8dafbb3ea11b8ca",
       "authoredCandidate": true,
       "beforeAfterFinding": {
         "before": "Source Activity 1 compared two picture pairs; earlier Rich V2 phrased mandatory physical construction and its warm-up did not explicitly present the four-object Which One Doesn't Belong format.",
         "after": "Rich V2 restores picture-comparison task and optional manipulatives; clearly labels original Edulytiks text models and includes nonpublisher open exit check.",
         "preserved": "Existing nine-cube connected construction, original worked models, teacher-assessed boundary, visuals and tests.",
-        "unverified": "Effective app rendering, teacher-only scoring route, selected Practice, source PDF/card image parity, Stage D."
-      }
+        "unverified": "Effective app rendering, teacher-only scoring route, selected Practice, source PDF/card image parity, Stage D.",
+        "currentPassBefore": "Existing 908b09d source comparison and unit-cube activity largely correct, but accessible precise four-model WODB examples, explicit two eight-cube pairs and rubric fixture breadth were incomplete.",
+        "currentPassAfter": "Added first-party A/B/C/D original connected model table, labelled 8-cube pair comparisons, source-aligned group instructions, and detailed grade-owned Practice/rubric requirements with independent correct, wrong, equivalent, malformed cases.",
+        "sourceAJustification": "Source-specific lesson aims, tasks and answer modalities now independently represented by 2021 teacher/Student Facing text and clearly differentiated Edulytiks-original models. Separate publisher PDF/card pixels are nonblocking limitations, not fictitious parity.",
+        "contentBJustification": "Mathematical explanations, constructed examples, accessible original visual descriptions, teacher scoring guidance and common misconceptions are present in grade-owned Rich V2. Runtime display not asserted (D).",
+        "nextStop": "Selected shared Practice contract/wiring and human-scored submission path must be implemented by Supervisor 1 single-writer; static numeric mapping alone insufficient."
+      },
+      "initialSourceAuditStartedAt": "2026-10-30T06:53:18.386Z",
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l01-practice-human-rubric-v14.json",
+      "stageDStatus": "DEFERRED_STAGE_D"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L02",
@@ -3764,5 +3790,6 @@
       "lastEvidenceCommitSHA": null,
       "authoredCandidate": true
     }
-  ]
+  ],
+  "updatedAtUtc": "2026-10-30T07:13:44.064Z"
 }
