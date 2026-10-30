@@ -88,4 +88,93 @@ public sealed class UsCcssHsAdvAlgFuncSourceResponseContractTests
         foreach (var id in new[] { "M01", "M09", "L01", "L03", "L15" })
             Assert.False(Contract.RequiresTeacherReview(id), id);
     }
+
+    [Theory]
+    [InlineData("x=[1,2,3]", true)]
+    [InlineData("[7/7,14/7,21/7]", true)]
+    [InlineData("x=[1,3,2]", false)]
+    [InlineData("x=[1,2]", false)]
+    [InlineData("[1,2,not-a-number]", false)]
+    [InlineData("[1/0,2,3]", false)]
+    public void M04RowReducedVectorMustSatisfyAllOriginalEquations(
+        string answer, bool expected)
+    {
+        // The student explanation of each reversible row operation is
+        // independently teacher-reviewed; this checks only the closed vector.
+        Assert.Equal(expected, Contract.VerifySystemSolution(answer, A3, [6, 3, 2]));
+    }
+
+    [Fact]
+    public void M05M06ClassificationsDistinguishDependentAndInconsistent()
+    {
+        var singular = new long[,] { { 1, 1 }, { 2, 2 } };
+        Assert.True(Contract.VerifySystemClassification(
+            "infinitely many", singular, [2, 4]));
+        Assert.True(Contract.VerifySystemClassification(
+            "no solution", singular, [2, 5]));
+        Assert.False(Contract.VerifySystemClassification(
+            "infinite", singular, [2, 5]));
+        Assert.False(Contract.VerifySystemClassification(
+            "unique", singular, [2, 4]));
+        // M05 parameterisation and reasoning cannot be certified by this
+        // classification answer; preserve the original 4-point human rubric.
+    }
+
+    [Fact]
+    public void ZeroRankCoefficientBoundaryDoesNotMisclassifyAContradiction()
+    {
+        var zero = new long[,] { { 0, 0 }, { 0, 0 } };
+        Assert.True(Contract.VerifySystemClassification(
+            "none", zero, [0, 3]));
+        Assert.False(Contract.VerifySystemClassification(
+            "infinite", zero, [0, 3]));
+        Assert.True(Contract.VerifySystemClassification(
+            "infinite", zero, [0, 0]));
+    }
+
+    [Fact]
+    public void Invertible2x2AndLargeCoefficientsUseExactIntegerProducts()
+    {
+        var invertible = new long[,] { { 2, 1 }, { 1, 1 } };
+        Assert.True(Contract.VerifySystemClassification(
+            "unique", invertible, [5, 3]));
+        Assert.True(Contract.VerifyInverseEligibility(
+            "invertible", invertible, rhsLength: 2));
+        var large = new long[,] { { long.MaxValue, 1 }, { 1, long.MaxValue } };
+        Assert.True(Contract.VerifyInverseEligibility(
+            "invertible", large));
+    }
+
+    [Fact]
+    public void M07M08M10InverseEligibilityUsesDistinctFailureCategories()
+    {
+        var singular = new long[,] { { 1, 2 }, { 2, 4 } };
+        var square = new long[,] { { 2, 1 }, { 1, 1 } };
+        var nonsquare = new long[,] { { 1, 2, 3 }, { 4, 5, 6 } };
+        Assert.True(Contract.VerifyInverseEligibility("singular", singular));
+        Assert.False(Contract.VerifyInverseEligibility("invertible", singular));
+        Assert.True(Contract.VerifyInverseEligibility(
+            "invalid dimensions", square, rhsLength: 3));
+        Assert.False(Contract.VerifyInverseEligibility(
+            "invertible", square, rhsLength: 3));
+        Assert.True(Contract.VerifyInverseEligibility("not_square", nonsquare));
+        Assert.False(Contract.VerifyInverseEligibility("singular", nonsquare));
+        Assert.False(Contract.VerifyInverseEligibility("not_square", square));
+        Assert.False(Contract.VerifyInverseEligibility(
+            "<script>", square));
+    }
+
+    [Fact]
+    public void ThreeByThreeInverseEligibilityDistinguishesSingularity()
+    {
+        Assert.True(Contract.VerifyInverseEligibility("invertible", Paint));
+        var singular = new long[,]
+        {
+            { 1, 2, 3 },
+            { 2, 4, 6 },
+            { 0, 1, 1 }
+        };
+        Assert.True(Contract.VerifyInverseEligibility("singular", singular));
+        Assert.False(Contract.VerifyInverseEligibility("invertible", singular));
+    }
 }
