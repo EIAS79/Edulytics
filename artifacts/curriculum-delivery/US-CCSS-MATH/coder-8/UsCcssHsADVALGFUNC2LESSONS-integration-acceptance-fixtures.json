@@ -24,7 +24,10 @@
       "expectedCanonical",
       "acceptedEquivalent",
       "rejectWrongOrMalformed",
-      "gradingPolicy"
+      "gradingPolicy",
+      "rejectMalformed",
+      "boundaryOracle",
+      "explanationRequired"
     ],
     "humanRubricNote": "Proof, reason, explanation and parametric solution claims need reviewed rubric; never certify by single numeric exact match. Logarithmic comparisons L04-L06 are mixed relation+justification tasks and require human-scored proof rubric.",
     "additionalCourseOwnedCaseFields": [
@@ -33,7 +36,8 @@
       "explanationRequired (L04-L06)"
     ],
     "runtimeEvidence": "All fixtures are author-proposed. rejectWrongOrMalformed is a wrong-answer negative exemplar; rejectMalformed is a distinct syntax/shape-invalid exemplar. Neither establishes actual selected runtime grading.",
-    "sourceBoundScenariosNote": "Two first-party source-linked mathematical oracle scenarios supplement, but do NOT increase, the canonical 26 candidate Practice case count; no live integration or publisher PDF full inspection is asserted."
+    "sourceBoundScenariosNote": "Two first-party source-linked mathematical oracle scenarios supplement, but do NOT increase, the canonical 26 candidate Practice case count; no live integration or publisher PDF full inspection is asserted.",
+    "logCaseL06Note": "L06 has two subquestions: comparing log_4(3) and log_2(3), and refuting the proposed universal log_2(x)<log_3(x); both parts and the sign-dependent boundary must be graded with reasoning rubric. Canonical and equivalent are specifications, not runtime teacher decisions."
   },
   "cases": [
     {
@@ -251,10 +255,10 @@
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
       "officialTarget": "CCSS:HSF-BF.B.5",
       "category": "log-different-bases",
-      "prompt": "Compare log_4(3) and log_2(3); justify your comparison without relying on a decimal approximation Also test the claim log_2(x)<log_3(x) for every x>0 by checking x=1 and a value below 1.",
-      "expectedCanonical": "log_4(3)<log_2(3)",
-      "acceptedEquivalent": "< using log_4(3)=(1/2)log_2(3) with log_2(3)>0",
-      "rejectWrongOrMalformed": ">",
+      "prompt": "Compare log_4(3) with log_2(3) using exact change-of-base reasoning. Then decide whether log_2(x)<log_3(x) holds for every x>0; justify your decision at x=1, 0<x<1, and x>1.",
+      "expectedCanonical": "log_4(3)<log_2(3); the universal claim log_2(x)<log_3(x) is false: x=1 gives equality, 0<x<1 gives <, and x>1 gives >",
+      "acceptedEquivalent": "log_4(3)=(1/2)log_2(3)<log_2(3) since log_2(3)>0; log_2(x)<log_3(x) only for 0<x<1, equals at 1, reverses for x>1",
+      "rejectWrongOrMalformed": "log_4(3)>log_2(3) and log_2(x)<log_3(x) for all x>0",
       "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
       "rejectMalformed": "log_4(3)<log_2(",
       "boundaryOracle": "For x=3, log_4(3)<log_2(3). For log_2(x) vs log_3(x), x=1 gives equality, x>1 gives >, and 0<x<1 gives <; a universal fixed comparison is false.",
