@@ -24,7 +24,7 @@ test('Six early U01 source-specific repairs preserve original Rich V2 lessons an
   assert.equal(e.practiceExactGeneratedPersisted,false);
   assert.equal(e.teacherRubricPersisted,false);
  }
- assert.equal(sha('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json'),evidence.newContentHash);
+ assert.equal(sha('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json'),read('docs/curriculum/us-ccss-g8-coder4-course-evidence-20261029.json').hashes.richCandidates['us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json']); // V13 evidence.newContentHash remains an immutable historical checkpoint
 });
 test('U01 L05 source translation options accept correct displacements and reject reversed/wrong vectors',()=>{
  const T=[[-3,0],[-2,-1],[-4,-3]],U=[[1,2],[2,1],[0,-1]];
@@ -69,4 +69,26 @@ test('Source review across all 17 U01 lessons is explicitly spot-check only, all
  assert.equal(selected.length,17);
  assert.ok(selected.every(x=>x.visuals.authenticatedStudentRenderVerified===false));
  assert.ok(selected.every(x=>x.teacherAssessmentAudit.teacherScoringRuntimeVerified===false));
+});
+
+test('U01 L01 six-frame first-party dance cards, reversed sequence and non-automated Cool-down are present without claiming publisher parity',()=>{
+ const lesson=rich.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G8:U01:L01');
+ assert.ok(lesson);
+ const paragraphs=lesson.ExplanationParagraphs;
+ for(const phrase of ['Original Edulytiks accessible six-frame dance-card substitute','Dance A frames 1–6','Dance B frames 1–6','Dance C frames 1–6','Source extension — reverse the dance','Original Edulytiks Cool-down (first-party equivalent'])
+  assert.ok(paragraphs.some(p=>p.includes(phrase)),phrase);
+ const d={A:[[0,0,0],[2,0,0],[2,0,1],[2,1,1],[2,1,0],[3,1,0]],B:[[0,0,0],[2,0,0],[2,0,1],[2,-1,1],[2,-1,2],[1,-1,2]],C:[[0,0,0],[2,0,0],[2,0,3],[2,1,3],[2,1,2],[1,1,2]]};
+ assert.deepEqual(d.A.slice(0,3),d.B.slice(0,3));
+ assert.notDeepEqual(d.A[2],d.C[2]);
+ assert.notDeepEqual(d.A[3],d.B[3]);
+ for(const seq of Object.values(d)){
+  assert.equal(seq.length,6);
+  for(let i=1;i<seq.length;i++){
+   const a=seq[i-1],b=seq[i],moved=(a[0]!==b[0]||a[1]!==b[1]),turned=a[2]!==b[2];
+   assert.notEqual(moved,turned,'each frame must be a single slide or quarter-turn');
+   if(turned)assert.ok([1,3].includes((b[2]-a[2]+4)%4));
+  }
+  assert.deepEqual([...seq].reverse().reverse(),seq);
+ }
+ assert.equal(evidence.sourceParityAccepted,false); // source provenance remains non-certified
 });
