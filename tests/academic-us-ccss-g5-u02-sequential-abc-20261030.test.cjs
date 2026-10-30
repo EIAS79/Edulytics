@@ -54,4 +54,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L10','usccss.g5.u02.l10.area_whole_by_nonun
 test('G5 U02 L11 original fractional area products and teacher diagrams',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L11','usccss.g5.u02.l11.area_fraction_greater_than_one',["56/3 square units","(14/3)×4","9/2 square units","45/4 square units"],["20/3 square units","4×(5/3)"]);
 });
+test('G5 U02 L12 exact source mixed rectangle area and teacher-led decomposition',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L12','usccss.g5.u02.l12.decomposed_mixed_rectangle_area',["31 1/4 square yards","31 1/2 square yards","Priya by 1/4 square yard","22 square units"],["30 1/4 square yards","31 1/4 square yards"]);
+});
 // NEXT_LESSON_TEST

@@ -102,6 +102,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Does 4×(5/3) represent the original 4-by-4 2/3 source rectangle?","No: 20/3 differs from 56/3","Yes: it is 56/3","Yes: it equals 16"),
                 new("Which area corresponds to 10/3=5×2/3?","10/3 square units","5/3 square units","15/2 square units")
             ],
+                        ["usccss.g5.u02.l12.decomposed_mixed_rectangle_area"]=[
+                new("Noah's garden measures 5 yards by 6 1/4 yards. What area?","31 1/4 square yards","30 1/4 square yards","36 1/4 square yards"),
+                new("Priya's garden measures 6 yards by 5 1/4 yards. What area?","31 1/2 square yards","31 1/4 square yards","35 1/4 square yards"),
+                new("Whose garden is bigger and by how much?","Priya by 1/4 square yard","Noah by 1/4 square yard","They are equal"),
+                new("A shaded source rectangle is 4 units by 5 1/2 units. What area?","22 square units","20 square units","24 square units"),
+                new("The source expression 5×2 1/2 equals which exact quantity?","12 1/2","10 1/2","15 1/2"),
+                new("What must be added to 4×5=20 to represent 4×5 1/2?","2 square units","1/2 square unit","4 square units")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,
