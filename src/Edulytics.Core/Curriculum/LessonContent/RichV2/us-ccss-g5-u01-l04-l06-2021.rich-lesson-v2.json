@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l04-l06-im2021-v21-abc-20261030",
+  "ContentVersion": "g5-u01-l04-l06-im2021-v34-source-estimation-and-120-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -84,6 +84,32 @@
           ],
           "Answer": "120 cubic units in either orientation.",
           "Check": "4×(5×6)=120 offers a third compatible partition of the same packed prism."
+        },
+        {
+          "Title": "2021 source Estimation Exploration — incomplete dimension",
+          "Question": "The original source's partially drawn estimation prism is three cubes wide and three cubes tall with a length of approximately eight to ten cubes. Provide too low, about right and too high estimates.",
+          "Method": "Count complete equal-cube layers only when source dimensions establish the entire packed prism.",
+          "Steps": [
+            "A full 3×8×3 prism would have 72 unit cubes.",
+            "If the length were ten instead of eight, a full 3×10×3 prism would have 90 cubes.",
+            "An estimate of roughly 80 is defensible for 'about right'; 60 could be too low and 100 too high, with uncertainty noted.",
+            "Do not present 72, 80 or 90 as an exact source answer; the source asks explicitly for estimation."
+          ],
+          "Answer": "For example: too low 60, about right 80, too high 100; acceptable reasoned ranges vary.",
+          "Check": "Source original warm-up figure 36953 labels the length as uncertain; teacher judges estimates."
+        },
+        {
+          "Title": "2021 source Activity 2 — three ways to find one volume",
+          "Question": "For the original 6×4×5 unit-cube prism, explain 5×24 and 6×20 and develop a different valid expression.",
+          "Method": "Count complete equal-cube layers only when source dimensions establish the entire packed prism.",
+          "Steps": [
+            "Five layers parallel to the 6×4 face contain 5×24=120 cubes.",
+            "Six layers parallel to the 5×4 face contain 6×20=120 cubes.",
+            "Four layers parallel to the 5×6 face contain 4×30=120 cubes.",
+            "All three decompositions count the same filled object without overlaps or omitted interior cubes."
+          ],
+          "Answer": "5×24=6×20=4×30=120 cubic units.",
+          "Check": "Original source figure 147425; do not confuse this independent Activity 2 prism with the partially detailed Activity 1 drawings."
         }
       ],
       "CommonMistakes": [
