@@ -75,30 +75,11 @@
     ],
     "VisualMode": "paper labels and accessible verbal figure; no publisher applet or on-platform upload claimed"
   },
-  "StageC": {
-    "Status": "C_PREPARED_BLOCKED_C_SHARED",
-    "Practice": "4 original 2-point source-skill analogues",
-    "Rubrics": "8-point pattern/peer creation; 8-point original parallel cool-down, teacher-scored",
-    "MachineScore": false,
-    "Dependency": {
-      "Owner": "Supervisor 2",
-      "Issue": 453,
-      "ExactRequirement": "Approved lesson-exact teacher-scored offline evidence/grade record for source-constructed original pattern; no known GEO-backed task registration or saved rubric workflow",
-      "ReturnQueue": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
-      "DoNotChange": "Shared StudentAssessmentDeliveryService, AssessmentService.Commands, Practice registry, renderer, CI"
-    }
-  },
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
   "StageD": "NOT_RUN",
-  "Status": "BLOCKED_C_SHARED",
-  "ABCReadyForD": false,
-  "return_queue": [
-    {
-      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
-      "Status": "BLOCKED_C_SHARED",
-      "Owner": "Supervisor 2",
-      "Issue": 453
-    }
-  ],
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "return_queue": [],
   "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
   "MathVerification": "Combined independent L02+L03 26 assertions PASS, not app-suite; previous harness contained a wrong test expectation and was corrected",
   "TestEvidence": {
@@ -113,13 +94,22 @@
     "A_CLOSED": 2,
     "B_CLOSED": 2,
     "C_PREPARED": 2,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 2,
     "D_VERIFIED": 0,
-    "BLOCKED": 2,
-    "REMAINING": 124
+    "BLOCKED": 4,
+    "REMAINING": 122
   },
   "StartedAt": null,
   "ClosedAt": null,
   "ElapsedSeconds": null,
-  "Timing": "No per-lesson start timestamp recorded; do not fabricate"
+  "Timing": "No per-lesson start timestamp recorded; do not fabricate",
+  "StageCClosure20261030": {
+    "Status": "C_CLOSED_AUTHORING_ONLY",
+    "Contract": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+    "PaperTeacherReview": "Specified, not actually performed",
+    "Tests": "local JSON rubric total and correct/equivalent/wrong/insufficient/malformed contract checks PASS; application NOT_RUN",
+    "Deferral": "School/pathway, lesson exact grade persistence, authenticated teacher workflow and two-school Stage D owned Supervisor 2 #453"
+  },
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L03",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02"
 }
