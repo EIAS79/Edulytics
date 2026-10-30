@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "G7_145_RICH_CANDIDATES_19_ORIGINAL_SVGS_20_DRAFT_RUBRICS_V12_RELEASE_BLOCKED",
+  "status": "G7_145_RICH_CANDIDATES_20_ORIGINAL_SVGS_21_RUBRIC_DRAFTS_P0_L06_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -66,8 +66,8 @@
     "richVisualModels": 151,
     "sourceStudentPagesInspected": 145,
     "sourceStudentPagesNotIndividuallyInspected": 0,
-    "gradeOwnedSvgFigureCandidates": 19,
-    "gradeOwnedTeacherRubricDrafts": 20
+    "gradeOwnedSvgFigureCandidates": 20,
+    "gradeOwnedTeacherRubricDrafts": 21
   },
   "lessons": [
     {
@@ -8116,7 +8116,13 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/7/6/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "p0OriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l06-hinged-quadrilaterals-and-triangle.svg",
+      "p0SourceTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-p0-u07-l06-source-geometry-rubric.json",
+      "p0GradeScopedTest": "tests/academic-us-ccss-g7-p0-u07-l06-geometry.test.cjs",
+      "p0AcademicSourceParity": "PARTIAL_STUDENT_TASK_REPAIRED_TEACHER_APPROVAL_MISSING",
+      "p0ExactSelectedPractice": "NOT_EXECUTED",
+      "p0AuthenticatedFigureRender": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L07",
@@ -12015,5 +12021,24 @@
     "ownerUAT": "NOT_RUN",
     "release": "RELEASE_BLOCKED",
     "nodeTestLimits": "Native Node v22.16.0 executed isolated with the exact Git blob source SVG (5949a7d33117be1665416477f1acce35d9f56a59) and exact test source (565126abc3d4008e4d5fdd5bb09edeb6425672ef); staging JSON evidence and ledger were reduced projections, NOT the full GitHub JSON. Full checked-out repository suite NOT_RUN. Separate read-only GitHub field checks on full evidence and ledger PASS."
+  },
+  "p0u07l06": {
+    "lessonCode": "PED:US-CCSS-MATH:G7:U07:L06",
+    "originalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l06-hinged-quadrilaterals-and-triangle.svg",
+    "sourceTrace": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-p0-u07-l06-source-geometry-rubric.json",
+    "nativeTest": "tests/academic-us-ccss-g7-p0-u07-l06-geometry.test.cjs",
+    "sourceStudent": "https://im.kendallhunt.com/MS/students/2/7/6/index.html",
+    "sourceTeacher": "https://im.kendallhunt.com/MS/teachers/2/7/6/preparation.html",
+    "sourcePedagogicalDefect": "FORMAL_TRIANGLE_INEQUALITY_PREMATURE_IN_L06",
+    "fix": "REPAIR_RICH_EXAMPLES_TO_HINGED_CONSTRUCTION_DEFER_RULE_TO_U07_L07",
+    "nodeTest": "NOT_RUN_AT_COMMIT",
+    "dotnet": "NOT_RUN",
+    "authStudent": "NOT_RUN",
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "ownerUAT": "NOT_RUN",
+    "release": "RELEASE_BLOCKED"
   }
 }
