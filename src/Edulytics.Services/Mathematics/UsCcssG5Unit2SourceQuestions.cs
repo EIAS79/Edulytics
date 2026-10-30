@@ -94,6 +94,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Source figure X is 3 units long and 4/5 unit high. What area?","12/5 square units","15/4 square units","4/15 square unit"),
                 new("Source figure Y is 5 units long and 3/4 unit high. What area?","15/4 square units","12/5 square units","20/3 square units")
             ],
+                        ["usccss.g5.u02.l11.area_fraction_greater_than_one"]=[
+                new("A source rectangle is 4 2/3 units wide and 4 units high. What area?","56/3 square units","20/3 square units","16 square units"),
+                new("Which expression equals the area of 4 2/3 by 4?","(14/3)×4","4×(5/3)","16×(8/3)"),
+                new("Another source shaded rectangle has sides 2 1/4 and 2 units. What is its area?","9/2 square units","2 1/4 square units","9 square units"),
+                new("Source shaded rectangle has sides 3 3/4 and 3 units. What is its area?","45/4 square units","15/4 square units","9/4 square units"),
+                new("Does 4×(5/3) represent the original 4-by-4 2/3 source rectangle?","No: 20/3 differs from 56/3","Yes: it is 56/3","Yes: it equals 16"),
+                new("Which area corresponds to 10/3=5×2/3?","10/3 square units","5/3 square units","15/2 square units")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,

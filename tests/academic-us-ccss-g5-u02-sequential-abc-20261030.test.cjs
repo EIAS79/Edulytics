@@ -51,4 +51,7 @@ checkLesson('PED:US-CCSS-MATH:G5:U02:L09','usccss.g5.u02.l09.area_whole_by_unit_
 test('G5 U02 L10 original fractional area products and teacher diagrams',()=>{
 checkLesson('PED:US-CCSS-MATH:G5:U02:L10','usccss.g5.u02.l10.area_whole_by_nonunit_fraction',["8/3 square units","3 square units","12/5 square units","2 square units"],["8 square units","12 square units"]);
 });
+test('G5 U02 L11 original fractional area products and teacher diagrams',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L11','usccss.g5.u02.l11.area_fraction_greater_than_one',["56/3 square units","(14/3)×4","9/2 square units","45/4 square units"],["20/3 square units","4×(5/3)"]);
+});
 // NEXT_LESSON_TEST
