@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "ContentVersion": "g5-u01-l07-l12-im2021-v48-composite-source-20261030",
+  "ContentVersion": "g5-u01-l07-l12-im2021-v49-source-measured-20261030",
   "PackCode": "US-CCSS-MATH",
   "Lessons": [
     {
@@ -463,6 +463,32 @@
           ],
           "Answer": "420 cubic inches.",
           "Check": "The two representations cover the same solid; neither overlaps pieces or drops the top extension."
+        },
+        {
+          "Title": "2021 source measured composite figures — 78 cubic feet and 259 cubic inches",
+          "Question": "Two original source figures have step-shaped profiles. The first has a seven-foot bottom, a seven-foot total height, five-foot lower level and two-foot depth; the second has a seven-inch depth with parts measured in inches. Find both volumes by splitting into nonoverlapping rectangular prisms.",
+          "Method": "Infer the unlabeled segment from total length or height, then add volumes of two disjoint rectangular prisms.",
+          "Steps": [
+            "Figure 1: the missing upper height is 7−5=2 feet and remaining upper width is 7−5=2 feet.",
+            "Split it into 2×7×2=28 cubic feet and 5×5×2=50 cubic feet, totaling 78 ft³.",
+            "Figure 2: the original step's reported partitions can be measured as 9×3×7=189 cubic inches and 5×2×7=70 cubic inches.",
+            "Add 189+70=259 in³ and check that the two parts do not overlap."
+          ],
+          "Answer": "Figure 1: 78 ft³. Figure 2: 259 in³.",
+          "Check": "Original first-edition 2021 step-shaped source figures 148085 and 148086; use the original drawing to justify where each boundary lies."
+        },
+        {
+          "Title": "2021 source same solid — two 420-cubic-inch decompositions",
+          "Question": "The original source asks why (5×8×6)+(5×4×9) and (5×4×3)+(5×12×6) represent one composite volume.",
+          "Method": "Show that the two sums partition the same prism geometry differently, preserving all units and no overlaps.",
+          "Steps": [
+            "First partition: 5×8×6=240 cubic inches and 5×4×9=180 cubic inches, total 420.",
+            "Second partition: 5×4×3=60 cubic inches and 5×12×6=360 cubic inches, total 420.",
+            "The shared total is not a coincidence: each expression covers the same complete source solid with a different cut.",
+            "Require a source-diagram interpretation of each term; arithmetic equality alone is not enough to prove a valid partition."
+          ],
+          "Answer": "Both expressions give 420 cubic inches.",
+          "Check": "Original first-edition 2021 Student Facing composite figure 148087."
         }
       ],
       "CommonMistakes": [
