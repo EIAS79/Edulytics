@@ -65,7 +65,26 @@
       "tenantIsolation": "NOT_RUN",
       "scorePersistence": "NOT_RUN",
       "teacherReviewAndGradebook": "NOT_RUN",
-      "stageC": "NOT_ACCEPTED"
+      "stageC": "C_PREPARED_NOT_ACCEPTED",
+      "courseOwnedFixture": {
+        "status": "FIXTURE_PASS_5_OF_5_NOT_RUNTIME",
+        "command": "node --test tests/coder-7/UsCcssAlg2U01L01SourcePracticeContract.test.cjs",
+        "baseGitHead": "8ed112e5a3dccc086c306f171f87157b9e2e485c",
+        "evidencePath": "artifacts/curriculum-delivery/US-CCSS-MATH/coder-7/U01-L01-ABC-SOURCE-PRACTICE-CONTRACT.json",
+        "testPath": "tests/coder-7/UsCcssAlg2U01L01SourcePracticeContract.test.cjs",
+        "cases": [
+          "source activities/Practice representation",
+          "Hanoi BFS independent oracle and BigInt n=64",
+          "checker legal-move BFS",
+          "recurrence forward/backward, rational equivalence and invalid inputs",
+          "explicit not-integration-ready state"
+        ]
+      },
+      "blockerStatus": "BLOCKED_BY_INTEGRATION",
+      "blockerOwner": "Supervisor 3 Shared Integration Owner",
+      "blockerIssue": 453,
+      "nextCursorAfterClosure": "STOP_U01_L01",
+      "adaptedCoolDownStatus": "ADAPTED_COOLDOWN_ORIGINAL_UNVERIFIED"
     },
     {
       "ordinal": 2,
