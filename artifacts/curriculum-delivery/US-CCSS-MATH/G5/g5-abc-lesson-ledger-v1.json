@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L11",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L12",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 10,
+    "READY_FOR_D": 11,
     "D_VERIFIED": 0,
-    "BLOCKED": 9,
-    "REMAINING": 138
+    "BLOCKED": 8,
+    "REMAINING": 137
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -683,23 +683,18 @@
       "reuseFinding": "REUSE_EXISTING_SOURCE_GOAL_SPECIFIC_HAN_CLARE_MAI_AND_NONOVERLAPPING_GARDEN_216; ONLY_ADD_FIRST_PARTY_COOLDOWN_AND_C_RUBRIC",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric rectangular prism volume (300/180/270) as valid subskills; EXTEND same composite-family teacher-scored connected garden assessment shared writer #592",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l11-contract-v16.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T12:19:51.826Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:25:46.013Z",
+      "elapsedSeconds": 25554,
       "commitSHA": null,
-      "blocker": {
-        "status": "BLOCKED_SHARED_INTEGRATION",
-        "owner": "Supervisor 1 designated shared integration writer #592",
-        "reason": "Numeric cuboid family may test 300/180/270 but does not demonstrate source garden construction and chosen alternate connected design with teacher scoring",
-        "acceptWhen": "Selected numeric family confirmed and source-specific composite/human garden rubric wired correctly, with independent cases"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "Original 2021 teacher and embedded Student Facing with preparation",
         "problems": [
@@ -723,7 +718,16 @@
         "before": "Correct Han, Clare, Mai and 216-ft3 garden source activities already present; no explicitly labelled independent exit check.",
         "after": "Preserved accepted source-specific body; added original rearrangement/garden open exit and grade-scoped correct/negative assessment cases."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l11-practice-acceptance-v16.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l11-practice-acceptance-v16.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l11.real_world_prism_volume",
+        "source": "Our-CS 2021 Han Clare Mai boxes and 216 ft3 garden",
+        "teacher": "Teacher reviews contextual units, physical/sketched 300-cube box and two-part 216-ft3 garden redesign, including no double-counting at joints.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "originalPublisherMaterial": "NOT_CERTIFIED",
+        "parentHead": "1dcc99fd170d296368d56e9e4aeb294b963917f7"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L12",
