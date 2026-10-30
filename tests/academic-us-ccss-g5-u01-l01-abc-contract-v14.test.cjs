@@ -123,6 +123,8 @@ test('conceptual introduction precedes formal cubic-unit notation in U01:L01', {
   const english = lesson.translations.find(x => x.cultureCode === 'en');
   assert.ok(english);
   assert.match(english.stepByStepSolutions, /Formal cubic-unit measurement is introduced in Lesson 2/i);
+  assert.match(english.stepByStepSolutions, /irregular connected arrangements are valid and need not fill a rectangular prism/i);
+  assert.doesNotMatch(english.stepByStepSolutions, /cubes packed without gaps or overlaps/i);
   assert.doesNotMatch(english.stepByStepSolutions, /Record volume in cubic units/i);
   assert.match(english.explanation, /objects can have different shapes but still take up the same amount of space/i);
 });
