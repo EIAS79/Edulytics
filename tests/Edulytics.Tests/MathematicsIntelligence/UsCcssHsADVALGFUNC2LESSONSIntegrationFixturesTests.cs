@@ -90,7 +90,7 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
             root.GetProperty("status").GetString());
 
         var rubrics = root.GetProperty("rubrics").EnumerateArray().ToArray();
-        Assert.Equal(new[] { "M05", "M11", "L13" },
+        Assert.Equal(new[] { "L04", "L05", "L06", "L13", "M05", "M11" },
             rubrics.Select(x => x.GetProperty("caseId").GetString()).ToArray());
         foreach (var rubric in rubrics)
         {
@@ -103,6 +103,8 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
             Assert.True(rubric.GetProperty("requiresHumanReview").GetBoolean());
             Assert.False(rubric.GetProperty("machineAutoGrade").GetBoolean());
             Assert.Equal(4, rubric.GetProperty("maxPoints").GetInt32());
+            if (new[] { "L04", "L05", "L06" }.Contains(id))
+                Assert.True(fixtureCase.GetProperty("explanationRequired").GetBoolean());
             var criteria = rubric.GetProperty("criteria").EnumerateArray().ToArray();
             Assert.Equal(4, criteria.Length);
             Assert.Equal(4, criteria.Sum(x => x.GetProperty("points").GetInt32()));
@@ -123,6 +125,77 @@ public sealed class UsCcssHsADVALGFUNC2LESSONSIntegrationFixturesTests
                      "twoSchoolIsolationVerified", "actualPersistedTeacherScoreVerified",
                      "productionReady" })
             Assert.False(gates.GetProperty(gate).GetBoolean());
+    }
+
+
+    [Theory]
+    [InlineData("M01")]
+    [InlineData("M02")]
+    [InlineData("M03")]
+    [InlineData("M04")]
+    [InlineData("M05")]
+    [InlineData("M06")]
+    [InlineData("M07")]
+    [InlineData("M08")]
+    [InlineData("M09")]
+    [InlineData("M10")]
+    [InlineData("M11")]
+    [InlineData("L01")]
+    [InlineData("L02")]
+    [InlineData("L03")]
+    [InlineData("L04")]
+    [InlineData("L05")]
+    [InlineData("L06")]
+    [InlineData("L07")]
+    [InlineData("L08")]
+    [InlineData("L09")]
+    [InlineData("L10")]
+    [InlineData("L11")]
+    [InlineData("L12")]
+    [InlineData("L13")]
+    [InlineData("L14")]
+    [InlineData("L15")]
+    public void EveryFixtureHasSeparateWrongMalformedBoundaryAndEquivalentInputs(string id)
+    {
+        using var data = LoadFixtures();
+        var item = Assert.Single(data.RootElement.GetProperty("cases").EnumerateArray(),
+            x => x.GetProperty("id").GetString() == id);
+        var canonical = item.GetProperty("expectedCanonical").GetString()!;
+        var equivalent = item.GetProperty("acceptedEquivalent").GetString()!;
+        var wrong = item.GetProperty("rejectWrongOrMalformed").GetString()!;
+        var malformed = item.GetProperty("rejectMalformed").GetString()!;
+        var boundary = item.GetProperty("boundaryOracle").GetString()!;
+        Assert.False(string.IsNullOrWhiteSpace(canonical));
+        Assert.False(string.IsNullOrWhiteSpace(equivalent));
+        Assert.False(string.IsNullOrWhiteSpace(wrong));
+        Assert.False(string.IsNullOrWhiteSpace(malformed));
+        Assert.False(string.IsNullOrWhiteSpace(boundary));
+        Assert.NotEqual(canonical, wrong);
+        Assert.NotEqual(equivalent, wrong);
+        Assert.NotEqual(canonical, malformed);
+        Assert.NotEqual(equivalent, malformed);
+        Assert.NotEqual(wrong, malformed);
+
+        // A fixture is a design-time grading contract; this test must never
+        // assert that an actual student runtime selected or verified the family.
+        Assert.Equal("PROPOSED_EXPECTATIONS_NOT_RUNTIME_VERIFICATION",
+            data.RootElement.GetProperty("status").GetString());
+    }
+
+    [Fact]
+    public void CrossBaseLogComparisonCannotClaimUniversalPositiveInputOrdering()
+    {
+        Assert.True(Math.Log(3, 4) < Math.Log(3, 2));
+        Assert.Equal(0, Math.Log(1, 4));
+        Assert.Equal(0, Math.Log(1, 2));
+        Assert.True(Math.Log(0.5, 4) > Math.Log(0.5, 2));
+        // The L06 comparator specifically needs teacher-scored rationale,
+        // since the same base-order claim changes sign across x=1.
+        using var fixtures = LoadFixtures();
+        var item = Assert.Single(fixtures.RootElement.GetProperty("cases").EnumerateArray(),
+            x => x.GetProperty("id").GetString() == "L06");
+        Assert.Equal("ORDER_RELATION_AND_RUBRIC", item.GetProperty("gradingPolicy").GetString());
+        Assert.True(item.GetProperty("explanationRequired").GetBoolean());
     }
 
     [Fact]
