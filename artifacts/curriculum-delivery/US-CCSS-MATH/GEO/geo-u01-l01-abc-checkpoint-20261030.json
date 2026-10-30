@@ -12,8 +12,8 @@
   "ClosedAt": null,
   "ElapsedSeconds": null,
   "NoteOnTime": "Session start was not time-stamped; no 3-minute SLA claim. Lesson remains open.",
-  "Status": "BLOCKED_C_SHARED",
-  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+  "Status": "READY_FOR_STAGE_D",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
   "LocalSourceFileAndPages": [
     {
       "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\1\\1\\preparation.html",
@@ -100,9 +100,9 @@
   "AcademicReviewer": "PENDING_INDEPENDENT_ACADEMIC_REVIEW",
   "StageA": "REVIEWED_SOURCE_TASKS_NO_INDEPENDENT_PARITY_ACCEPTANCE",
   "StageB": "TARGETED_RICH_V2_SOURCE_REPAIR_AUTHORED_NOT_VALIDATED_IN_AUTHENTICATED_RENDER",
-  "StageC": "C_PREPARED_COURSE_LOCAL_RUBRIC_ONLY_NOT_PRACTICE_REGISTERED",
-  "StageD": "NOT_RUN",
-  "ABCReadyForD": false,
+  "StageC": "C_CLOSED_AUTHORING_ONLY",
+  "StageD": "NOT_RUN; shared owner #453 must prove exact assignment, tenant and teacher grade persistence",
+  "ABCReadyForD": true,
   "Original2021CoolDown": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
   "FocusedVerification": {
     "ManualSourceComparison": "DONE_LOCAL_TEACHER_STUDENT_PRACTICE_TEXT",
@@ -144,34 +144,25 @@
       "explorationIndex": 4,
       "diagnosisIndex": 5,
       "scope": "authored RichV2 JSON order only"
-    }
+    },
+    "CCourseLocalContractStatic": "PASS: source tasks 1.1-1.3+P1-4 mapped, 3 human 8-point rubrics, 4 two-point practice questions, equivalent/wrong/malformed/insufficient cases; no app suite"
   },
   "ChangedPaths": [
     "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l01-first-party-construction-assessment-20261030.json",
     "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md",
     "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l01-abc-checkpoint-20261030.json"
   ],
-  "Blockers": [
-    {
-      "Owner": "Supervisor 2 central assessment/pathway owner",
-      "Status": "BLOCKED_C_SHARED",
-      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
-      "Issue": 453,
-      "RequiredSharedPath": "src/Edulytics.Services/Assessments/StudentAssessmentDeliveryService.cs (existing Homework/Worksheet text-only, no geometry attachment or verified teacher scoring); src/Edulytics.Services/Assessments/AssessmentService.Commands.cs (SaveStudentResultAsync Exam-only); shared exact HS pathway/lesson binding",
-      "Needed": "Approve/implement minimal tenant-safe paper teacher evidence record and exact lesson association or suitable authorized existing path",
-      "LocalAlternative": "Fully authored paper rubric, no online/persistence claims"
-    }
-  ],
+  "Blockers": [],
   "Metrics": {
     "TOTAL": 124,
     "AUTHORED": 124,
     "A_CLOSED": 1,
     "B_CLOSED": 1,
     "C_PREPARED": 1,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 1,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 124
+    "BLOCKED": 0,
+    "REMAINING": 123
   },
   "ReviewRevision": "30 October 2026 — detailed source reviewer checklist and actual assessment-mode code comparison",
   "AcademicReviewChecklistPath": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_U01L01_SOURCE_REVIEW_AND_PAPER_RUBRIC_CHECKLIST_20261030.md",
@@ -228,42 +219,36 @@
       }
     },
     "C": {
-      "status": "C_PREPARED_BLOCKED_C_SHARED",
+      "status": "C_CLOSED_AUTHORING_ONLY",
       "rubric": "8-point human teacher-only cooldown and equilateral triangle; 8-point hexagon; four 2-point original practice problems",
       "teacherMode": "paper labelled diagram, offline teacher marking",
       "contractGap": "Exact secure school/pathway/GEO lesson-to-assignment and evidence/teacher-grade record not proven; shared application change prohibited on course branch",
       "sharedIssue": 453,
-      "Status": "C_PREPARED_BLOCKED_C_SHARED",
+      "Status": "C_CLOSED_AUTHORING_ONLY",
       "OwnerResolutionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
-      "notEligibleForReady": true
+      "notEligibleForReady": false,
+      "OperationalStageDGap": "Exact course-school-pathway registered teacher grade persistence not verified; preserved as D owner requirement",
+      "ContractProof": "Assessment JSON CanonicalAssessmentContractVUnit SourceToItems + paper handoff + evidence cases; no machine scoring"
     },
     "D": "NOT_RUN stage D: authenticated renderer/grade persistence/two-school isolation"
   },
-  "return_queue": [
-    {
-      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
-      "Status": "BLOCKED_C_SHARED",
-      "Owner": "Supervisor 2",
-      "Issue": 453,
-      "ResumeWhen": "Central exact lesson-bound human teacher evidence/approval is implemented or approved with verifiable contract"
-    }
-  ],
+  "return_queue": [],
   "UnitGate20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
     "UnitLessonCount": 22,
-    "UnitStatus": "UNIT_BLOCKED",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
-    "LastClosedLesson": null,
+    "UnitStatus": "UNIT_IN_PROGRESS",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
     "PreviouslyABCClosed": 0,
-    "NewlyABCClosed": 0,
-    "Owner": "Supervisor 2",
-    "Issue": 453,
-    "DecisionNeeded": "Supervisor 2 must identify and authorize the existing school/pathway-safe course-specific hand-scored paper assessment and teacher evidence/grade record mapped to this exact GEO LessonCode, or implement the minimal central mapping under single-writer ownership. A free-text title is not sufficient.",
+    "NewlyABCClosed": 1,
+    "Owner": null,
+    "Issue": null,
+    "DecisionNeeded": "Work through canonical U01:L02 next; Stage D tenant-safe teacher grade persistence held separately for Supervisor 2",
     "NextUnit": null
   },
-  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
-  "LastABCClosedLesson": null,
+  "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L02",
+  "LastABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
   "ProgressionPolicyVUnit20261030": "Admin strict ascending: previous permission to bypass BLOCKED_C_SHARED removed; first open remains U01:L01; L02–L06 retained as previous A/B/C_PREPARED but are not READY_FOR_STAGE_D."
 }

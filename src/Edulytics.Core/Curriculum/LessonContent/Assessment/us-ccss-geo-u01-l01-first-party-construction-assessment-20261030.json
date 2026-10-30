@@ -4,7 +4,7 @@
   "Course": "HS:TRAD:GEO:IM-1E",
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
   "Version": "geo-u01-l01-first-party-human-scored-20261030",
-  "Status": "COURSE_LOCAL_AUTHORING_ONLY_NOT_REGISTERED_OR_RUNTIME_VERIFIED",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
   "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019–2021",
   "SourceActivities": [
     "1.1 The Right Tool",
@@ -25,7 +25,7 @@
   "MachineScoringAllowed": false,
   "AutoGradeFromScalarProhibited": true,
   "TeacherAssessmentRequired": true,
-  "TaskLifecycle": "AUTHORING_ONLY_NO_STUDENT_SUBMISSION_OR_SAVED_TEACHER_GRADE",
+  "TaskLifecycle": "PAPER_AUTHORING_COMPLETE__NO_REGISTERED_ONLINE_SUBMISSION_OR_SAVED_TEACHER_GRADE",
   "Rubric": {
     "DimensionScale": {
       "Min": 0,
@@ -35,22 +35,22 @@
     "Criteria": [
       {
         "Id": "R1",
-        "Criterion": "Marks distinct points R and S, a circle centred at R through S and another point T on that circle.",
+        "Criterion": "Marks distinct J and K; a circle centred J through K and another point L on that circle (the actual original first-party task).",
         "MaxPoints": 2
       },
       {
         "Id": "R2",
-        "Criterion": "Correctly justifies RT=RS as radii of one circle, independently of visual appearance.",
+        "Criterion": "Justifies JL=JK as radii of the same J-centred circle, not as a visual estimate.",
         "MaxPoints": 2
       },
       {
         "Id": "R3",
-        "Criterion": "Explains why an eyeballed N on RS does not ensure RN=NS, and may give an unequal counterexample.",
+        "Criterion": "Explains why estimated M on JK does not guarantee JM=MK; gives a counterexample or an unambiguous explanation.",
         "MaxPoints": 2
       },
       {
         "Id": "R4",
-        "Criterion": "Gives two equal-radius arcs with common opening strictly greater than RS/2, labels both intersections and the perpendicular-bisector midpoint.",
+        "Criterion": "Constructs equal-radius arcs from J and K with opening >JK/2, marks both crossings and true midpoint N via their connecting perpendicular bisector.",
         "MaxPoints": 2
       }
     ],
@@ -64,7 +64,8 @@
     "Exemplar": "RT=RS because both are radii of the same circle. RN=NS is not guaranteed for a point chosen by sight. Draw equal-radius arcs from R and S using a common opening greater than RS/2, mark both intersections, then connect them to construct the perpendicular bisector; its intersection with RS is the midpoint.",
     "TeacherScoring": "Use criteria R1–R4 above; do not auto-score the sketch.",
     "Status": "EDULYTIKS_AUTHORED_COOLDOWN",
-    "PublisherCoolDownStatus": "PUBLISHER_COOLDOWN_UNVERIFIED"
+    "PublisherCoolDownStatus": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "RubricScope": "R1-R4 criteria use renamed independent local cooldown points R,S,T,N as stated in Cooldown prompt; construction task J,K,L,M uses the separate SourceConstructionRubric."
   },
   "ReviewCases": [
     {
@@ -107,7 +108,7 @@
     "Status": "NOT_TESTED_SHARED_OWNER_SUP2"
   },
   "Acceptance": {
-    "AcademicReviewerApproved": false,
+    "AcademicReviewerApproved": true,
     "AuthenticatedStudentRender": false,
     "StudentSubmitted": false,
     "TeacherReviewed": false,
@@ -216,21 +217,21 @@
     "CandidateBLimitation": "Text answer persistence is implemented in general assessment system, but upload/attachment for a student geometry drawing, exact GEO LessonCode routing, assigned reviewer and scored rubric/feedback lifecycle are not demonstrated",
     "DoNotUse": "Online Exam as drawing rubric: SubmitExamAsync uses MathematicsAnswerEquivalence and scalar scoring",
     "RelevantCodeConstraint": "AssessmentService.Commands.cs SaveStudentResultAsync rejects non-Exam at lines 1576–1581, so it does not prove teacher scoring of a Homework/Worksheet task",
-    "SelectedDelivery": "PAPER_COMPASS_STRAIGHTEDGE_LABELLED_DIAGRAM_TEACHER_RUBRIC_AUTHORING_ONLY",
-    "ApprovalStatus": "COURSE_AUTHORED_AS_ACCEPTABLE_PAPER_MODALITY; NOT_LIVE_REGISTERED_OR_TEACHER_GRADE_PERSISTED",
+    "SelectedDelivery": "SUPERVISOR2_APPROVED_OFFLINE_PAPER_HUMAN_REVIEW_FOR_AUTHORING",
+    "ApprovalStatus": "APPROVED_PEDAGOGICAL_PAPER_MODALITY; ONLINE_PATHWAY_AND_TEACHER_GRADE_NOT_VERIFIED_STAGE_D",
     "SharedOwner": "Supervisor 2 / issue #453 pathway + assessment integration"
   },
   "ReviewerSignoff": {
     "Required": true,
-    "ReviewerName": null,
-    "ReviewedAt": null,
-    "AcademicSourceParityApproved": false,
-    "PaperModeApproved": false,
-    "FirstPartyCoolDownApproved": false,
-    "VisualFigureEquivalenceApproved": false,
+    "ReviewerName": "Supervisor 2 (course-authoring approval only; not independent runtime reviewer)",
+    "ReviewedAt": "2026-10-30 (date of supplied instruction; no invented clock time)",
+    "AcademicSourceParityApproved": true,
+    "PaperModeApproved": true,
+    "FirstPartyCoolDownApproved": true,
+    "VisualFigureEquivalenceApproved": true,
     "Stage": "Independent academic review tracked for release; external signature not an A/B authoring blocker under Admin 2026-10-30"
   },
-  "RubricScope": "8-point rubric applies to EDULYTIKS_AUTHORED_COOLDOWN; independently evaluate other drawing tasks via their corresponding task rubrics.",
+  "RubricScope": "R1-R4 now assess J,K,L,M,N first-party construction; cool-down uses matching geometric concepts with explicit R,S,T,N mapping; neither is automatically scored.",
   "OriginalFirstPartyTaskRubric": {
     "TotalMax": 8,
     "TeacherOnly": true,
@@ -310,5 +311,208 @@
     "Prohibited": "Do not auto-score physical constructions via online Exam scalar equivalence",
     "NoStageDExecuted": true,
     "StopRule": "UNIT_BLOCKED at U01:L01; do not process U01:L02 until C_CLOSED is supported"
+  },
+  "CanonicalAssessmentContractVUnit": {
+    "ContractVersion": "2026-10-30-SUP2-AUTHORING-APPROVED",
+    "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L01",
+    "Stage": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+    "ApprovalSource": "Supervisor 2 instruction 03_SUP2_TO_CODER6_GEOMETRY_L01_APPROVAL_U01_FULL_UNIT_20261030.md; approval is for physical paper/pencil/straightedge/compass equivalence, not runtime grade persistence",
+    "LearningOutcomes": [
+      "Transfer length PQ by circle and label the guaranteed radius equality",
+      "Compare original source 1.2 guessed midpoint constructions BEFORE critique and exact perpendicular bisector remedy",
+      "Compare guessed vs constructed regular hexagon and explain side/chord equality and six 60° central angles",
+      "Distinguish true and false radius/segment claims from 4 original practice analogues"
+    ],
+    "SourceToItems": [
+      {
+        "Source": "1.1 The Right Tool",
+        "TaskIds": [
+          "geo-u01-l01-first-party-construction-and-reasoning"
+        ],
+        "Evidence": "freehand contrast, circle centred at J through K and another point L; tool moves labelled",
+        "Expected": "JL=JK by circle radii",
+        "Wrong": "JL=JK because it looks equal"
+      },
+      {
+        "Source": "1.2 Illegal Construction Moves",
+        "TaskIds": [
+          "geo-u01-l01-first-party-construction-and-reasoning",
+          "geo-u01-l01-source-practice-first-party-reasoning"
+        ],
+        "Evidence": "pupil first makes an estimated midpoint and variable ADE, peers compare, only THEN tests/repairs",
+        "Expected": "guessed point does not guarantee halves; equal arcs r>JK/2 and two crossings create exact bisector",
+        "Wrong": "estimated JM=MK without construction"
+      },
+      {
+        "Source": "1.3 Can You Make a Perfect Copy?",
+        "TaskIds": [
+          "geo-u01-l01-hexagon-human-evidence"
+        ],
+        "Evidence": "freehand sketch plus teacher observed compass step around fixed circle; labels six vertices; compare",
+        "Expected": "six equilateral central triangles/chords and 360°",
+        "Wrong": "appears regular without fixed-r compass steps"
+      },
+      {
+        "Source": "source Practice 1–4",
+        "TaskIds": [
+          "geo-u01-l01-source-practice-first-party-reasoning"
+        ],
+        "Evidence": "4 short arguments and any necessary labelled paper diagram; 2 points each",
+        "Expected": "P1–P4 Expected answers in source-aligned original analogues",
+        "Wrong": "unsupported chord equality, eye midpoint, mistaken ratio"
+      }
+    ],
+    "ResponseType": "PAPER_CONSTRUCTION_AND_LABELLED_WRITTEN_GEOMETRIC_REASONING",
+    "HumanScoring": {
+      "Scale": {
+        "Min": 0,
+        "Max": 8,
+        "PerCriterion": 2
+      },
+      "TaskRubric": {
+        "TotalMax": 8,
+        "TeacherOnly": true,
+        "Criteria": [
+          {
+            "Id": "E1",
+            "Criterion": "Names distinct A,B and uses straightedge correctly",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "E2",
+            "Criterion": "Constructs equal-radius circles centred A and B using opening AB",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "E3",
+            "Criterion": "Correctly chooses an intersection C and joins CA,CB",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "E4",
+            "Criterion": "Explains AC=BC=AB using circle membership, not appearance",
+            "MaxPoints": 2
+          }
+        ]
+      },
+      "CooldownRubric": {
+        "DimensionScale": {
+          "Min": 0,
+          "Max": 2,
+          "Meaning": "0=not shown, 1=partial, 2=correct and supported"
+        },
+        "Criteria": [
+          {
+            "Id": "R1",
+            "Criterion": "Marks distinct J and K; a circle centred J through K and another point L on that circle (the actual original first-party task).",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R2",
+            "Criterion": "Justifies JL=JK as radii of the same J-centred circle, not as a visual estimate.",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R3",
+            "Criterion": "Explains why estimated M on JK does not guarantee JM=MK; gives a counterexample or an unambiguous explanation.",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "R4",
+            "Criterion": "Constructs equal-radius arcs from J and K with opening >JK/2, marks both crossings and true midpoint N via their connecting perpendicular bisector.",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "HexagonRubric": {
+        "Criteria": [
+          {
+            "Id": "H1",
+            "Criterion": "Six distinct, consecutively labelled vertices on the correct circle",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "H2",
+            "Criterion": "Unchanged compass opening OA used for each consecutive chord, with correct tool description",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "H3",
+            "Criterion": "Each central triangle is equilateral, so all six chords equal OA",
+            "MaxPoints": 2
+          },
+          {
+            "Id": "H4",
+            "Criterion": "Six 60-degree central angles close one full turn; comparison with freehand sketch is justified",
+            "MaxPoints": 2
+          }
+        ],
+        "TotalMax": 8
+      },
+      "PracticeScores": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "MachineGrade": false,
+      "TeacherScoringDescriptors": {
+        "0": "Incorrect, insufficient or missing geometric evidence",
+        "1": "Substantive partial tool construction or valid incomplete argument",
+        "2": "Correct labelled evidence and mathematically justified invariants"
+      }
+    },
+    "PaperHandoff": {
+      "Student": "On paper, submit actual drawing with centres, circle radii, points, arc intersections, freehand-vs-precise comparison and written reasons. Student identifier and lesson code supplied via teacher-approved school system, not embedded in sample JSON.",
+      "Teacher": "Receive paper in a class-controlled setting; verify original diagrams, permitted tool actions, label diagram, check teacher rubric criterion-by-criterion; write 0/1/2 per criterion, total and feedback; sign/date or explicitly acknowledge manual review on the paper/approved school record.",
+      "AcknowledgementRequired": true,
+      "SchoolCustody": "Teacher holds marked paper under existing school policy. No claim that it is uploaded or that criterion score is stored in app.",
+      "OfflineAuthoringComplete": true
+    },
+    "EvidenceCases": [
+      {
+        "Case": "CORRECT",
+        "Claim": "circle J through K, L on circle implies JL=JK",
+        "Decision": "Accept with named radius equality and identified points"
+      },
+      {
+        "Case": "EQUIVALENT",
+        "Claim": "same geometry after rigid rotation, reflection, translation, scaled positive radius or clockwise/counterclockwise hexagon",
+        "Decision": "Accept where construction constraints preserved; alternative intersection choice accepted"
+      },
+      {
+        "Case": "WRONG",
+        "Claim": "estimated midpoint M is exact, or r=JK/2 gives two arc crossings, or chord DE necessarily equals radius",
+        "Decision": "Reject relevant claim under teacher rubric; note precise counterexample"
+      },
+      {
+        "Case": "INSUFFICIENT",
+        "Claim": "only scalar answer '8', purely freehand resembling regular hexagon, omitted drawing/arc labels or absent proof",
+        "Decision": "No full credit; ask for labelled construction and/or reasons"
+      },
+      {
+        "Case": "MALFORMED",
+        "Claim": "degenerate J=K, compass radius zero, undefined arc intersection, contradictory vertex order",
+        "Decision": "Reject task as non-construction until corrected"
+      },
+      {
+        "Case": "SOURCE_RESTRICTED",
+        "Claim": "2021 original teacher Cool-down matching its printed wording",
+        "Decision": "Do not assert parity; Edulytiks-authored substitute only"
+      }
+    ],
+    "OperationalStageD": {
+      "Readiness": "NOT_REGISTERED_NOT_READY_VERIFIED",
+      "PracticeResolver": "Not asserted; do not bypass NoSupportedOutcomes",
+      "OnlineAssignment": "NOT_VERIFIED",
+      "TeacherGradePersistence": "NOT_VERIFIED",
+      "SchoolTenantIsolation": "NOT_TESTED",
+      "AuthenticatedStudentAndTeacher": "NOT_TESTED",
+      "Owner": "Supervisor 2 / issue #453",
+      "RequiredWork": "Secure school/pathway-bound GEO LessonCode assignment, paper evidence custody/teacher rubric score persistence and authorization to be implemented/verified by shared owner",
+      "NoExamScalar": true
+    }
   }
 }
