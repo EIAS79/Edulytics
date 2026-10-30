@@ -6,7 +6,7 @@
   "policy": "Academic A→B→C per lesson, Stage D deferred until all 148 ready",
   "createdAtUtc": "2026-10-30T06:53:18.386Z",
   "sourceHeadAtCreation": "f8a22fe23dc658f3106823b989286f14f24d3ab2",
-  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L08",
+  "currentAcceptanceCursor": "PED:US-CCSS-MATH:G5:U01:L09",
   "authoringCursorUnrelated": "PED:US-CCSS-MATH:G5:U03:L01",
   "gradeTotals": {
     "TOTAL": 148,
@@ -14,10 +14,10 @@
     "A_CLOSED": 19,
     "B_CLOSED": 19,
     "C_PREPARED": 0,
-    "READY_FOR_D": 7,
+    "READY_FOR_D": 8,
     "D_VERIFIED": 0,
-    "BLOCKED": 12,
-    "REMAINING": 141
+    "BLOCKED": 11,
+    "REMAINING": 140
   },
   "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
@@ -523,22 +523,18 @@
       "reuseFinding": "REUSE_VOLUME_ADDITIVITY_AND_EXISTING_30_CUBE_MODEL; ADD_SOURCE_DESCRIBED_COMPOSITES_B_C_D",
       "A_STATUS": "COMPLETE_WITH_EVIDENCE",
       "B_STATUS": "COMPLETE_WITH_EVIDENCE",
-      "C_STATUS": "BLOCKED_SHARED_INTEGRATION",
+      "C_STATUS": "COMPLETE_WITH_EVIDENCE_WRITTEN_NOT_RUN",
       "PracticeStrategy": "REUSE numeric volume/addition as supplemental; shared writer EXTEND composite geometry partition and teacher-scored justification",
       "CooldownOriginalStatus": "PUBLISHER_COOLDOWN=NOT_VERIFIED_GATED",
       "CooldownEdulytiksStatus": "EDULYTIKS_COOLDOWN=ORIGINAL_AUTHORED",
       "testFile": "tests/academic-us-ccss-g5-u01-l08-contract-v15.test.cjs",
       "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
       "startedAt": "2026-10-30T08:05:10.054Z",
-      "closedAt": null,
-      "elapsedSeconds": null,
+      "closedAt": "2026-10-30T19:22:18.332Z",
+      "elapsedSeconds": 40628,
       "commitSHA": null,
-      "blocker": {
-        "owner": "Supervisor 1 single-writer shared integration",
-        "reason": "No exact selected Practice for composite disjoint partition/explanation, teacher assessment unverified",
-        "acceptWhen": "Correct selected composite-volume contract and teacher-scoring of geometry model documented"
-      },
-      "READY_FOR_STAGE_D": false,
+      "blocker": null,
+      "READY_FOR_STAGE_D": true,
       "sourceEvidence": {
         "source": "IM 2021 U01 L08 student-facing textual tasks in teacher lesson, preparation",
         "goal": "Add volumes of two nonoverlapping rectangular prisms, justify different valid decompositions",
@@ -557,7 +553,16 @@
         "before": "Rich V2 listed generic 12+10 and 12+18 but source figure b/c/d quantitative tasks were omitted.",
         "after": "Added full source-described attached-cube figures, disjoint additivity rubric, original first-party exit and math tests."
       },
-      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l08-practice-rubric-v15.json"
+      "PracticeRequirementsPath": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u01-l08-practice-rubric-v15.json",
+      "practiceImplementation": {
+        "family": "usccss.g5.u01.l08.add_nonoverlap_prism_volumes",
+        "source": "2021 Our-CS L08 originals 12+10, 3x2x2+3x2x3, 3x5x3+1",
+        "teacher": "Build and explain nonoverlapping attached prisms; show different valid cuts and check no double-counting. WODB and the original publisher Cool-down are not auto-scored.",
+        "tests": "WRITTEN_NOT_RUN",
+        "stageD": "NOT_RUN",
+        "originalPublisherMaterial": "NOT_CERTIFIED",
+        "parentHead": "1a113cd59d4a7b6f90eee05e9519232b804e8a22"
+      }
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U01:L09",
