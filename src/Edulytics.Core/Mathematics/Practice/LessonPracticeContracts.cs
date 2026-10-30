@@ -896,6 +896,15 @@ public static class LessonPracticeContractRegistry
 
     public static IReadOnlyList<LessonPracticeContract> All => RoutableEntries;
 
+    // Explicit review-only view: pending courses are discoverable by their
+    // canonical lesson identities and exact family list, never by the public
+    // routable learner catalogue. This is not an academic readiness signal.
+    private static readonly LessonPracticeContract[] PendingEntries = AllEntries
+        .Where(x => string.Equals(x.Readiness, "INTEGRATION_PENDING", StringComparison.Ordinal))
+        .ToArray();
+
+    public static IReadOnlyList<LessonPracticeContract> PendingForAudit => PendingEntries;
+
     private static LessonPracticeContract[] BuildAllEntries()
     {
         var byLesson = Entries
