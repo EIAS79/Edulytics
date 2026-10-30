@@ -82,7 +82,47 @@ test('L13 product survey means and lack of causal assignment claim',()=>{
  close(mean([3,4,5,5,5]),4.4);close(mean([2,3,4,4,5]),3.6);
  close(4.4-3.6,.8);
 });
-test('L14 exact two-sided 2+2 allocation oracle',()=>{
+test('L14 original first-edition 12-value, six-per-group experiment has 924 regroupings',()=>{
+ const lesson=pack.lessons.find(x=>x.lessonCode.endsWith(':U07:L14'));
+ const body=lesson.translations.find(x=>x.cultureCode==='en').workedExamples;
+ const values=Array.from({length:12},(_,i)=>i+1);
+ const treatment=[2,5,7,9,11,12],control=[1,3,4,6,8,10];
+ const observed=mean(treatment)-mean(control);
+ close(observed,7/3);assert.equal(values.reduce((a,b)=>a+b,0),78);
+ const assignments=combinations(values,6);
+ assert.equal(assignments.length,924);
+ const differences=assignments.map(a=>(2*a.reduce((s,x)=>s+x,0)-78)/6);
+ const extremeRight=differences.filter(d=>d>=observed-1e-10).length;
+ const extremeLeft=differences.filter(d=>d<=-observed+1e-10).length;
+ assert.deepEqual([extremeLeft,extremeRight],[143,143]);
+ close((extremeLeft+extremeRight)/assignments.length,286/924);
+ assert.ok(286/924>0.05,'source experiment is not 5% significant');
+ for(const sourceTask of ['14.1','14.2','14.3','1,3,4,6,8,10','2,5,7,9,11,12',
+   '924','286/924','0.3095'])assert.ok(body.includes(sourceTask),'learner body must expose '+sourceTask);
+ const validAssignment=(a,b)=>Array.isArray(a)&&Array.isArray(b)&&a.length===6&&b.length===6&&
+   [...a,...b].every(x=>Number.isInteger(x)&&x>=1&&x<=12)&&new Set([...a,...b]).size===12;
+ assert.equal(validAssignment(treatment,control),true);
+ for(const [a,b] of [[[1,2,3,4,5,5],control],[[1,2,3],control],
+   [[1,2,3,4,5,'6'],control]])assert.equal(validAssignment(a,b),false);
+});
+
+test('L14 original bird simulation has correctly interpreted TWO-tailed normal area',()=>{
+ const lesson=pack.lessons.find(x=>x.lessonCode.endsWith(':U07:L14'));
+ const body=lesson.translations.find(x=>x.cultureCode==='en').workedExamples;
+ const z=(0.27-0.0021)/0.112;close(z,2.3919642857142858,1e-10);
+ const density=x=>Math.exp(-x*x/2)/Math.sqrt(2*Math.PI);
+ const a=z,b=10,n=10000,h=(b-a)/n;
+ let sum=(density(a)+density(b))/2;
+ for(let i=1;i<n;i++)sum+=density(a+i*h);
+ const twoSided=2*h*sum;
+ close(twoSided,0.016758473013148204,1e-7);
+ assert.ok(twoSided<0.05 && twoSided>0,'significance conditional on valid design');
+ for(const sourceTask of ['0.27 grams','1,000 simulated','0.0021 grams','0.112 grams',
+   '0.0168','two-sided','causal'])assert.ok(body.includes(sourceTask),sourceTask);
+ assert.ok(!body.includes('proves the treatment caused'),'no false certainty');
+});
+
+test('L14 optional 2+2 example remains an independently checked extension',()=>{
  const nums=[1,2,3,4];
  const dist=combinations(nums,2).map(a=>mean(a)-mean(nums.filter(x=>!a.includes(x)))).sort((a,b)=>a-b);
  assert.deepEqual(dist,[-2,-1,0,0,1,2]);
