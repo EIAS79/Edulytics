@@ -1402,7 +1402,7 @@ public static class LessonPracticeContractRegistry
             "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L01",
             "supporting.trigonometry.core",
             "HS_UNIT_CIRCLE_REFLECTION",
-            ["trig.unit_circle_reflection_exact"],
+            ["trig.unit_circle_reflection_exact", "trig.unit_circle_source_exact_angles"],
             "USCCSS_HS_SHARED_INTEGRATION_PENDING",
             "INTEGRATION_PENDING",
             Version);
