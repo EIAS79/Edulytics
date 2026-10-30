@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:G7:U01:L07",
+  "title": "Scale Drawings",
+  "originalSourceRelativePaths": [
+    "07_Grade_7_OUR_IM/1/7/preparation.html",
+    "07_Grade_7_OUR_IM/1/7/index.html",
+    "07_Grade_7_OUR_IM_Student/1/7/index.html",
+    "07_Grade_7_OUR_IM_Student/1/7/practice.html"
+  ],
+  "originalSourceRights": "OUR/IM 2017–2019 CC BY 4.0; no original transit-map/bus/aircraft imagery copied. Edulytiks models are independent.",
+  "sourceGoal": "Distinguish scale drawings from distorted diagrams; compute actual and drawing lengths with named units; read numeric and graphic scales",
+  "sourceParity": [
+    {
+      "activity": "7.1 What is a Scale Drawing?",
+      "equivalent": "Original circular table/seat vs distorted elliptical top view; explain consistent scale and not-to-scale drawings"
+    },
+    {
+      "activity": "7.2 Sizing Up a Basketball Court",
+      "equivalent": "Original Edulytiks 14x7 cm model, 1 cm to 2 m scale, ruler estimates, and a 9 m bench drawn as 4.5 cm"
+    },
+    {
+      "activity": "7.3 Tall Structures",
+      "equivalent": "First-party graphic 1-cm-to-20-m scale, two imaginary towers, compare actual heights using measured drawing"
+    }
+  ],
+  "sourcePublisherCooldown": "NOT_VERIFIED_GATED",
+  "cooldownEdulytiks": "Create actual 8x6m room plan at 1cm:2m, draw 3m door as 1.5cm, teacher checks complete artifact and unit conversions",
+  "firstPartySvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u01-l07-court-scale-and-bench.svg",
+  "studentView": "src/Edulytics.Web/Views/Shared/_USCCSSG7ScaleConstructionFigures.cshtml",
+  "rubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-authentic-geometry-teacher-rubrics-v6.json",
+  "A_STATUS": "A_CLOSED_EQUIVALENT_SOURCE_TASKS_RIGHTS_REVIEWED",
+  "B_STATUS": "BLOCKED_SHARED_RENDERER_INVOCATION_NOT_VERIFIED",
+  "C_STATUS": "BLOCKED_EXACT_SCALE_DRAWING_PRACTICE_ROUTE_AND_TEACHER_DRAWINGS",
+  "PracticeAcceptance": [
+    "1cm:2m correct dimensioned mapping",
+    "teacher review measured drawing",
+    "reject physical unit conversion as scale",
+    "correct/wrong/malformed/equivalent representations"
+  ],
+  "testFile": "tests/academic-us-ccss-g7-u01-l07-abc-fixture.test.cjs",
+  "testExecution": "TEST_AUTHORED_NOT_RUN",
+  "D_STATUS": "NOT_RUN",
+  "READY_FOR_STAGE_D": false,
+  "blockerOwner": "Supervisor 1 shared single writer issue #592, shared renderer PR #599 still Draft",
+  "patch": "4421c3056303e905b8eeff21b4440c1ec42375a7",
+  "testPatch": "a0983586a4513f6b9af17b51eaec7896faaac122",
+  "nextIndependent": "PED:US-CCSS-MATH:G7:U01:L08",
+  "closedAt": null,
+  "closureSHA": null
+}
