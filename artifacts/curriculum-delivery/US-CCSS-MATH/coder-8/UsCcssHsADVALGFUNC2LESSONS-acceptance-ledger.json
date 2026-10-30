@@ -458,6 +458,17 @@
           "VerifyInverseEligibility"
         ],
         "preserveSourceAndBodyHashes": true
+      },
+      "centralLeaseV4Checkpoint": {
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "contentChanged": false,
+        "candidateContractCommit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac",
+        "pendingOnly": true,
+        "integrationStillNeeded": true
       }
     },
     {
@@ -1216,6 +1227,135 @@
         "historicalHashesChanged": false
       },
       "nextAction": "Continue ONLY L01: obtain independently reviewed v4 predecessor decision and single-writer ownership of targeted central lesson Practice adoption; preserve pending, avoid C_READY until exact generator/answer/rubric contract checks are available. Do not enter L02 yet."
+    },
+    "unitFirstV4CentralLease20261030": {
+      "instruction": "SUP3_CODER8_L01_CENTRAL_LEASE_V4_20261030",
+      "course": "ADV-ALG-FUNC",
+      "unitCode": "U01",
+      "total": 2,
+      "verifiedBeforeHead": "c446f6d0a881d673781210d87c5c9a91b77c98f0",
+      "lastVerifiedHeadBeforeLedgerCommit": "aadd2e17ef38dd580371285fc6fddfb5a5688314",
+      "unitStatus": "UNIT_BLOCKED",
+      "firstOpenLesson": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "L01": {
+        "A_CLOSED": true,
+        "B_CLOSED": true,
+        "C_PREPARED": true,
+        "C_CLOSED": false,
+        "ABC_READY_FOR_D": false,
+        "contentChanged": false,
+        "candidateContractCommit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac",
+        "pendingOnly": true,
+        "integrationStillNeeded": true
+      },
+      "L02": {
+        "editsThisPass": 0,
+        "firstOpenLessonRemainsL01": true
+      },
+      "lease": {
+        "type": "SUPERVISOR3_CONDITIONAL_PROCESS_FIRST_EXCLUSIVE_SLOT",
+        "acquired": "YES_BY_V4_SUPERVISOR_ORDER_WITH_FRESH_GITHUB_CHECKS",
+        "acquisitionTimestamp": "NOT_RECORDED",
+        "released": true,
+        "releaseCommentId": 6524242729,
+        "releaseLink": "https://github.com/EIAS79/Edulytics/pull/585#issuecomment-6524242729",
+        "files": [
+          {
+            "path": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+            "before": "0f2d85373b379177961c58b8c041b84e98b42af1",
+            "after": "45093f65f17f5e3f6075d87f9e2c3f637c56e97e",
+            "changed": true,
+            "commit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac"
+          },
+          {
+            "path": "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+            "before": "18c7c65da8606354002e37a78f846e8e0d30563d",
+            "after": "18c7c65da8606354002e37a78f846e8e0d30563d",
+            "changed": false
+          },
+          {
+            "path": "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json",
+            "before": "dc4c6d6426c05c86c7b4bcaed135d2b1108ce81c",
+            "after": "dc4c6d6426c05c86c7b4bcaed135d2b1108ce81c",
+            "changed": false
+          },
+          {
+            "path": "src/Edulytics.Core/Mathematics/Curriculum/official-outcome-practice-map.v1.json",
+            "before": "9fd7f0999e88c24f6d76602a69debbf40ee19227",
+            "after": "9fd7f0999e88c24f6d76602a69debbf40ee19227",
+            "changed": false
+          }
+        ],
+        "mainAtPreflightBlobsMatchedCoder8": true,
+        "pr600Head": "f611cdc31f7b9b5e256dc6ff33db9cd38d62f37f",
+        "otherCheckedPRs": [
+          602,
+          399,
+          394,
+          492,
+          553
+        ],
+        "otherWriters": "No HEAD changes observed on checked PRs; process lease not GitHub-enforced",
+        "nextOwner": "SUPERVISOR_3_TO_ASSIGN_NOT_CODER_8"
+      },
+      "codeChanges": [
+        {
+          "commit": "526ff2d69d8d9d5dc3fe124b38e440471d7cacac",
+          "scope": "exact L01 candidate pending contract override, exclusion from routable public All, candidate family IDs audit only",
+          "productionRouting": false
+        },
+        {
+          "commit": "aadd2e17ef38dd580371285fc6fddfb5a5688314",
+          "scope": "added xUnit assertions pending contract not selected and unrelated Grade1 route stays ready",
+          "testStatus": "NOT_RUN"
+        }
+      ],
+      "testsThisPass": {
+        "status": "NOT_RUN",
+        "reason": "Unit-First V3 prohibits manual automation/full suite/CI in A-C; only source/static review of code changes and SHA comparisons",
+        "priorDotnetAndNodeEvidence": "Older SHAs only; not proof of these commits"
+      },
+      "sourceAndVersion": {
+        "sourceTeacherSha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+        "sourceBodyCanonicalSha256": "7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199",
+        "currentContentVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v4",
+        "academicApproved": false,
+        "proposedPr600Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
+        "predecessorAuthorization": "DENIED_OR_NOT_RECEIVED",
+        "historicalHashesChanged": false
+      },
+      "blockers": [
+        {
+          "type": "STAGE_C_DISPATCH",
+          "owner": "SUPERVISOR_3_SERIALIZED_CENTRAL_INTEGRATION_OWNER",
+          "detail": "PR585 now carries L01 canonical pending override; engine, question family registry and global official outcome map remain baseline (3 untouched central paths), while PR600 candidate matrix kernels and typed negative eligibility remain isolated, unmerged. No selected-family generator/verify or 11-case fixture certification on PR585.",
+          "gate": "C_CLOSED=false"
+        },
+        {
+          "type": "TEACHER_RUBRIC",
+          "owner": "Coder8 and teacher/academic reviewer",
+          "detail": "M05 free parameter and M11 reversible row-operation proof teacher-only; M04 row-operation explanation teacher-reviewed; no auto-grade claim.",
+          "gate": "C_CLOSED=false"
+        },
+        {
+          "type": "CONTENT_V4_PREDECESSOR",
+          "owner": "INDEPENDENT_ACADEMIC_AND_VERSION_AUTHORITY",
+          "detail": "Protected content v4 and canonical hash 7245f... lacks approved source-aware transition; PR600 v1 proposal is expressly denied; reviewer asked on PR585.",
+          "gate": "ABC_READY_FOR_D=false"
+        },
+        {
+          "type": "OVERLAPPING_CENTRAL_BRANCHES",
+          "owner": "SUPERVISOR_3",
+          "detail": "PR600/602/399/492/553 have divergent central edits; avoid blind merge/rebase/cherry-pick.",
+          "gate": "NO_MERGE"
+        }
+      ],
+      "unitClosed": false,
+      "unitReadyForD": false,
+      "stageD": "NOT_STARTED",
+      "nextCursor": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "merge": false,
+      "deploy": false
     }
   },
   "release": {
@@ -1252,7 +1392,7 @@
   "returnQueue": [
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
-      "state": "BLOCKED_EXTERNAL_FILE_OWNERSHIP_AND_VERSION_APPROVAL",
+      "state": "BLOCKED_L01_PENDING_SHARED_KERNEL_INTEGRATION_AND_INDEPENDENT_V4_APPROVAL",
       "blockingItems": [
         {
           "kind": "central_runtime_contract",
@@ -1277,7 +1417,8 @@
         "M05 and M11 teacher-scored evidence",
         "M07/M08/M10 inverse-eligibility adapter from PR600 not yet selected",
         "Actual lesson-selected generator and verifier adoption, explicit legal predecessor"
-      ]
+      ],
+      "centralLeaseV4Progress": "One central file changed: explicit L01 INTEGRATION_PENDING candidate prevents wrong generic one-step selected route, but no engine dispatch or selected practice approved. Four-file lease RELEASED at PR #585 comment 6524242729; exact PR600 component integration/version approval still required."
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
