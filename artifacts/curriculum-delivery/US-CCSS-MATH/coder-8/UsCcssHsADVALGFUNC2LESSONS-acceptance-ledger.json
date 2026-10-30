@@ -40,21 +40,29 @@
     "sourceScenarioDataCommit": "595db3ba0528d07c93e211314a0b55ce66e1204b",
     "continuationNodeTestCommit": "a2d36970a3b749a811117d2d2a72c26c6342a7f0",
     "continuationL06CSharpTestCommit": "3fe175643642e0f98f19ad4ed30344fd0aa81b30",
-    "continuationL06CorrectedFixtureCommit": "44290bb73875cdf806d8db54dcb39aab143bb634"
+    "continuationL06CorrectedFixtureCommit": "44290bb73875cdf806d8db54dcb39aab143bb634",
+    "sourceV4ContentCommit": "fa1bc776f22d118b564ac98b6265c7b09dea22a0",
+    "sourceV4TestCommit": "cfbb243421deb1aba9928365da57903ad3e1cc69",
+    "sourceV4FixtureCommit": "6674ab7b95af8321cd01e50e37a94bbfb5ff7ded",
+    "sourceV4NodeTestCommit": "86434e2f4672886523e138436042004df1ef42ab",
+    "sourceV4HandoffCommit": "f086ec3eb23482b732b13b4aba9f0d0cea739638"
   },
   "content": {
     "packPath": "src/Edulytics.Core/Curriculum/LessonContent/Packs/us-ccss-math-hs-adv-alg-func-phase29-v1.lesson-content-pack.json",
     "oldVersion": "phase30-common-core-rich-content-v1",
-    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
+    "candidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v4",
     "baselineFileBlobSha": "69306240d3f240177af7dcc6b25fc420c59a8316",
-    "candidateFileBlobSha": "3828be4b5babd5cfa09dd1b226ef62185790c2b8",
+    "candidateFileBlobSha": "f316ef834f64d6f95e9464d8ec88fc59d476e158",
     "sourceMetadataPreserved": true,
     "migrationRequired": true,
     "persistedPredecessorVerified": false,
     "effectiveRenderedContentVerified": false,
     "publisherTaskPdfIndependentlyRechecked": false,
     "priorUnapprovedCandidateVersion": "us-ccss-hs-adv-alg-func-2lesson-teaching-v1",
-    "previousUnapprovedV2Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v2"
+    "previousUnapprovedV2Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v2",
+    "previousUnapprovedV3Version": "us-ccss-hs-adv-alg-func-2lesson-teaching-v3",
+    "l01SourcePdfTeacherBinaryShaVerified": true,
+    "l01SourcePdfStudentTaskPagesVerified": true
   },
   "lessons": [
     {
@@ -65,20 +73,21 @@
         "CCSS:HSA-REI.C.9"
       ],
       "sourceSha256Recorded": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
-      "canonicalBodySha256Recorded": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7",
+      "canonicalBodySha256Recorded": "7245f950a48b16b48984169e8e5d02fcf2d1fbe7ec15b0e18d8230241e8c1199",
       "changes": [
         "2x2 inverse determinant and multiplication example",
         "3x3 inverse using matrix-capable technology and independent verification",
         "singular dependent vs inconsistent classification",
         "inverse versus row reduction decision guidance",
-        "source-excerpt-aligned three-week painting supplies 3x3 model, exact inverse, price interpretation and negative price boundary"
+        "source-excerpt-aligned three-week painting supplies 3x3 model, exact inverse, price interpretation and negative price boundary",
+        "direct PDF source-confirmed MVP 10.6H identity/inverse matrix multiplication task order, technology and second 3×3 system [2,4,3]"
       ],
       "contentStatus": "CONTENT_IMPLEMENTED_BRANCH_ONLY",
       "practiceStatus": "BLOCKED_BY_INTEGRATION_OWNER",
       "localMathOracle": "PASS_EXACT_ARITHMETIC",
       "runtimeLessonPractice": "NOT_RUN",
       "baselineCanonicalBodySha256": "fc9f1a49bf236c330112fcf1c02e108893344eab58c2275c8eee80552ec5560c",
-      "stageB": "COURSE_AUTHORED_AND_MATH_CHECKED; INTEGRATION_AND_APPROVAL_PENDING",
+      "stageB": "COURSE_CONTENT_V4_AUTHORED_AND_NODE_SOURCE_ORACLE_CHECKED; AUTHENTICATED_EFFECTIVE_RENDER_NOT_VERIFIED",
       "sourceAlignment": "BASELINE_TITLE_STANDARDS_PROVENANCE_PRESERVED; NEW_APPENDICES_NOT_INDEPENDENTLY_SOURCE_SIGNED",
       "mappingAndPractice": "BLOCKED_584_EXPLICIT_MATRIX_SYSTEM_INVERSE_GENERATORS_REQUIRED",
       "versionTransition": "BLOCKED_584_PHASE04_NEW_APPROVED_PREDECESSOR_AND_HASH_LINEAGE",
@@ -86,7 +95,8 @@
       "productionUat": "NOT_RUN",
       "previousUnapprovedV1BodySha256": "6abd1e7b8c3d2472c4d8ec349e4d816f8607f1cdb1f5e3455d1284159a4c3e50",
       "sourceTaskReconciliation": "PAINTING_RECEIPT_MODEL_IMPLEMENTED; STUDENT_AND_TEACHER_INDEXED_SOURCE_TEXT_VERIFIED; FULL_PDF_BINARY_AND_ALL_SOURCE_TASKS_NOT_VERIFIED",
-      "stageA": "TARGETED_STUDENT_TEACHER_SOURCE_EXCERPTS_REVIEWED; FULL_PDF_NOT_VERIFIED"
+      "stageA": "TARGETED_ORIGINAL_10_6H_STUDENT_PAGES_34_TO_36_AND_TEACHER_49_TO_53_DIRECTLY_READ_AND_SOURCE_SHA_VERIFIED; INDEPENDENT_ACADEMIC_SIGNOFF_PENDING",
+      "previousUnapprovedV3BodySha256": "9c30b68f87f48b668c32875483260a44b6600ee69ca46b9ec5b8a0706ed6b6f7"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
@@ -391,14 +401,113 @@
       "githubCIExactHead": "QUEUED_OR_PENDING_AT_INSPECTION",
       "effectiveAuthenticatedEN": "NOT_VERIFIED",
       "tenantIsolation": "NOT_VERIFIED",
-      "ownerUAT": "NOT_VERIFIED"
+      "ownerUAT": "NOT_VERIFIED",
+      "supersededBy": "coder8P0V4NodeNativeFullBinding"
+    },
+    "coder8VerifiedOriginalSourceV4": {
+      "status": "PUBLISHER_STUDENT_AND_TEACHER_PDF_DIRECTLY_ACCESSED_TARGETED_10_6H",
+      "studentPdf": {
+        "pages": 38,
+        "taskPages": [
+          34,
+          35,
+          36
+        ],
+        "sha256": "763cda359f5d86ae1e01064340286e02308fee0470eb7d3deb07db34ead80b61"
+      },
+      "teacherPdf": {
+        "pages": 55,
+        "taskPages": [
+          49,
+          50,
+          51
+        ],
+        "notesPages": [
+          52,
+          53
+        ],
+        "sha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55",
+        "matchesProtectedSourceSha": true
+      },
+      "originalTaskClarification": "Painting receipts first introduced in 10.1H (student page 5) and explicitly restated in 10.6H (page 34); prior correct paint model reused",
+      "sourceTaskSix": {
+        "matrix": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "rhs": [
+          16,
+          17,
+          13
+        ],
+        "inverseNumerator": [
+          [
+            -5,
+            2,
+            4
+          ],
+          [
+            1,
+            -1,
+            1
+          ],
+          [
+            3,
+            0,
+            -3
+          ]
+        ],
+        "denominator": 3,
+        "determinant": 3,
+        "solution": [
+          2,
+          4,
+          3
+        ]
+      },
+      "independentAcademicReviewerApproval": "PENDING",
+      "learnerRenderVerification": "NOT_VERIFIED"
+    },
+    "coder8P0V4NodeNativeFullBinding": {
+      "status": "EXECUTED_32_OF_32_NO_SKIP_NO_FAILURE",
+      "sourceSha": "86434e2f4672886523e138436042004df1ef42ab",
+      "branch": "us-ccss/supervisor3/coder8-adv-alg-func",
+      "host": "Anas_Nitro isolated temporary copy; never Our-CS",
+      "runtime": "Node v26.4.0",
+      "command": "node --test tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs",
+      "gitBlobSha": {
+        "tests/academic-us-ccss-hs-adv-alg-func-fixtures.test.cjs": "7d1b6c9c7cbb76a7b965556c2501d0df23d8917f",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-integration-acceptance-fixtures.json": "1ad0f6866479a9ddf7a7f45d954834005bdee82a",
+        "artifacts/curriculum-delivery/US-CCSS-MATH/coder-8/UsCcssHsADVALGFUNC2LESSONS-human-scoring-rubrics.v1.json": "376401223286b2a6bc65f075d3dca394f445ddbf"
+      },
+      "allThreeGitBlobHashesVerifiedLocally": true,
+      "total": 32,
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "covered": "26 canonical fixtures; exact source identity/inverse + second 3x3 question; log numberline and base/cross-base; six proposed human rubric bindings",
+      "notVerified": "dotnet/xUnit official on exact head, selected Practice, saved attempts/teacher grade, cross-school isolation, actual rendered learner content, academic approval"
     }
   },
   "release": {
     "courseOwnedContentChanges": "2/2",
     "practiceComplete": "0_OF_2_PRODUCTION_CERTIFIED",
     "academicAccepted": "0/2",
-    "releaseCandidate": "BLOCKED_BY_SHARED_PRACTICE_MATERIALIZATION_ACADEMIC_REVIEW_EXACT_HEAD_CI_AND_STAGE_D",
+    "releaseCandidate": "NO_GO_PENDING_OFFICIAL_CI_AND_AUTHENTICATED_PRACTICE_ACADEMIC_APPROVAL",
     "merged": false,
     "deployed": false,
     "gateIssues": [
