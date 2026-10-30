@@ -103,3 +103,59 @@ test('Independent numeric-oracle boundary classifies correct, incorrect, malform
   assert.equal(verify('3.12',3.12),'CORRECT');
   assert.equal(verify('',3.12),'MALFORMED');
 });
+
+test('U05 L10-L12 public source evidence protects teacher, media and runtime gates', () => {
+  const follow=JSON.parse(fs.readFileSync(path.join(root,
+    'artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u05-l10-l12-public-source-task-evidence-20261030.json'), 'utf8'));
+  assert.equal(follow.summary.directComparisonsNow,144);
+  assert.equal(follow.summary.directRemaining,3);
+  assert.equal(follow.summary.academicAccepted,0);
+  assert.deepEqual(follow.lessonEvidence.map(x=>x.lessonCode),
+    [10,11,12].map(n=>'PED:US-CCSS-MATH:G6:U05:L'+n));
+  for(const row of follow.lessonEvidence){
+    assert.equal(row.studentPublicActivityTextCompared,true);
+    assert.equal(row.teacherPublicActivityTextCompared,true);
+    assert.equal(row.protectedOriginalTeacherAnswersRead,false);
+    assert.equal(row.sourceDrawingAndOriginalPublisherMediaVerified,false);
+    assert.equal(row.actualAccessibleDiagramRendered,false);
+    assert.equal(row.teacherRubricDraft.teacherEvaluationPersisted,false);
+    assert.equal(row.selectedPracticeRuntime,'NOT_RUN');
+    assert.equal(row.stageA,'SOURCE_TEXT_REVIEW_ONLY');
+    assert.equal(row.stageC,'NOT_RUN');
+    assert.equal(row.academicAcceptance,'NOT_ACCEPTED');
+    assert.ok(row.sourceTasks.length>=4);
+  }
+  assert.match(lesson(10).workedExamples,/Source-review V11 contrast/);
+  assert.match(lesson(11).workedExamples,/62÷5/);
+  assert.match(lesson(12).workedExamples,/81\.2÷4/);
+});
+
+test('U05 L10 independently checks long division zeros and place-value carry', () => {
+  assert.equal(657/3,219);
+  assert.equal(3*320,960);
+  assert.equal(906/3,302);
+  assert.equal(3*302,906);
+  assert.equal(948/3,316);
+  assert.deepEqual([846/3,1816/4,768/12,633/3,1001/7,2996/14],
+    [282,454,64,211,143,214]);
+  assert.equal(500,7*71+3);
+  assert.equal(1394,9*154+8);
+});
+
+test('U05 L11-L12 independently checks place-value unbundling and equivalent quotients', () => {
+  assert.deepEqual([400,80,16,496].map(x=>x/8),[50,10,2,62]);
+  assert.ok(near(62/5,12.4));
+  assert.ok(near(511/5,102.2));
+  assert.ok(near(271/4,67.75));
+  assert.ok(near(126/8,15.75));
+  assert.ok(near(90/12,7.5));
+  assert.ok(near(5/4,1.25));
+  assert.ok(near(4/5,0.8));
+  assert.ok(near(1/8,0.125));
+  assert.deepEqual([80,12,1.2,81.2].map(x=>x/4),[20,3,0.3,20.3]);
+  assert.ok(near(53.8/4,13.45));
+  assert.ok(near(77.4/5,15.48));
+  assert.deepEqual([72/3,720/30,7200/300,72000/3000],[24,24,24,24]);
+  assert.notEqual(720/3,72/3);
+  assert.ok(!near(77.4/5,1.548));
+});
