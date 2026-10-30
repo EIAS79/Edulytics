@@ -104,6 +104,32 @@ public sealed class UsCcssHsPendingPracticeIntegrationTests
                 contract!.InteractionKind);
         }
 
+        foreach (var family in new[]
+        {
+            "usccss.hs.log.inverse_power",
+            "trig.unit_circle_reflection_exact",
+            "coordinates.focal_distance_conics"
+        })
+        {
+            Assert.True(LessonPracticeInteractionRegistry.TryResolvePendingForAudit(
+                family, out var contract));
+            Assert.Equal(LessonPracticeInteractionKind.IntegerKeypad,
+                contract!.InteractionKind);
+        }
+
+        foreach (var family in new[]
+        {
+            "solid_geometry.cavalieri_sphere_volume",
+            "trig.principal_inverse",
+            "usccss.hs.log.shifted_domain_equation"
+        })
+        {
+            Assert.True(LessonPracticeInteractionRegistry.TryResolvePendingForAudit(
+                family, out var contract));
+            Assert.Equal(LessonPracticeInteractionKind.FractionEntry,
+                contract!.InteractionKind);
+        }
+
         Assert.True(LessonPracticeInteractionRegistry.TryResolvePendingForAudit(
             "usccss.hs.log.compare_different_bases", out var comparison));
         Assert.Equal(LessonPracticeInteractionKind.RelationChoice,
