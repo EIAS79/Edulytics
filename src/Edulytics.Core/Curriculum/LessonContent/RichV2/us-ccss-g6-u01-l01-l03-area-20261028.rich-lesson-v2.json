@@ -275,7 +275,8 @@
       "ExplanationParagraphs": [
         "Learning goal: Compare shaded regions and find polygon areas by decomposing, rearranging and subtracting known missing parts.",
         "When a shaded region is moved from one place to another, a missing piece and an exactly matching attached piece can cancel without changing total area. A 4-by-4 shaded square has area 16; removing one unit square and attaching it outside results in 16−1+1=16 square units. The outline changes, but the shaded area does not.",
-        "For grid-based figures, combine rectangles or triangles without counting every square. For off-grid figures use labeled perpendicular lengths. If a missing tilted square has unknown area, do not invent its measurement: a valid approach may be to decompose and rearrange surrounding measurable triangles. Explain why each method covers only the shaded part."
+        "For grid-based figures, combine rectangles or triangles without counting every square. For off-grid figures use labeled perpendicular lengths. If a missing tilted square has unknown area, do not invent its measurement: a valid approach may be to decompose and rearrange surrounding measurable triangles. Explain why each method covers only the shaded part.",
+        "Source-aligned off-grid reasoning: distinguish an unmeasured tilted square from a tilted square whose side is explicitly known. In a first-party numerical reconstruction based on the public teacher text, two 5-cm-by-3-cm right triangles form 15 cm²; four 2-cm-by-4-cm right triangles form 16 cm² around an unknown-size inner tilted square; and a 5-cm outer square with a labeled 2-cm inner square leaves 25 − 4 = 21 cm² shaded. Never subtract an unmeasured hole merely because an outline resembles a square."
       ],
       "KeyConcepts": [
         {
@@ -334,6 +335,20 @@
           ],
           "Answer": "16 square units by either approach.",
           "Check": "Teacher reviews region shading, explicit measurements, justification of every part and equality of the two methods."
+        },
+        {
+          "Title": "Off-grid comparison: the measured triangle and the unknown tilted hole",
+          "Question": "Three first-party reconstructions use source-stated dimensions: A consists of two right triangles, each with perpendicular lengths 5 cm and 3 cm. B's shaded region consists of four right triangles, each with perpendicular lengths 2 cm and 4 cm, surrounding a tilted unshaded square of unknown side length. C is a 5 cm × 5 cm square with an unshaded interior square of side 2 cm. Find each shaded area, stating why B must not use subtraction of the unknown square.",
+          "Method": "Apply non-overlapping triangle decomposition for A and B; use measured outer-minus-inner subtraction only for C.",
+          "Steps": [
+            "A: each right triangle has area 5 × 3 ÷ 2 = 7.5 cm²; the two compose 15 cm².",
+            "B: each right triangle has area 2 × 4 ÷ 2 = 4 cm²; all four compose 16 cm² of shaded region.",
+            "B: the side length of the central tilted square is not given, so subtracting its imagined area from an imagined outer square is not justified.",
+            "C: the full square has area 5 × 5 = 25 cm², and its known interior square has area 2 × 2 = 4 cm².",
+            "C: subtract the known unshaded square to find 25 − 4 = 21 cm²; check that all three results are expressed in square centimeters."
+          ],
+          "Answer": "A = 15 cm²; B = 16 cm²; C = 21 cm². Figure B requires decomposition into the four measurable shaded triangles, not subtraction of an unmeasured central square.",
+          "Check": "The public teacher activity's textual measurements and figure descriptions support these numbers; source graphic pixels, exact shapes, learner rendering and student sketches were not independently verified. A teacher must assess explanations and correct choice of strategy."
         }
       ],
       "CommonMistakes": [
@@ -368,6 +383,24 @@
           "SecondaryItems": [
             "B: one unshaded interior hole",
             "Shaded area A = shaded area B = 16"
+          ],
+          "Rows": []
+        },
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "Off-grid shaded regions, three measurable strategies",
+          "Description": "Accessible first-party geometry schematic based on the public lesson text, not a recreation of the publisher's diagram. A: two shaded right triangles with perpendicular lengths 5 cm and 3 cm make 15 square centimeters. B: four shaded right triangles each with perpendicular lengths 2 cm and 4 cm enclose an unshaded tilted square whose side length is not specified; triangles alone sum to 16 square centimeters. C: the shaded area of a 5 cm-by-5 cm square around a central unshaded tilted square with known side length 2 cm is 25 minus 4, or 21 square centimeters. B and C need different strategies because only C gives the hole size.",
+          "PrimaryLabel": "A: 2 × (5 × 3 ÷ 2) = 15 cm²",
+          "SecondaryLabel": "B: 4 × (2 × 4 ÷ 2) = 16 cm²; C: 25 − 4 = 21 cm²",
+          "Items": [
+            "A: two known right triangles",
+            "B: four known shaded right triangles; unknown unshaded square",
+            "C: known 5-cm outer square and 2-cm inner square"
+          ],
+          "SecondaryItems": [
+            "B: don't invent missing side length",
+            "C: subtract only known inner area",
+            "State square-centimeter units"
           ],
           "Rows": []
         }
