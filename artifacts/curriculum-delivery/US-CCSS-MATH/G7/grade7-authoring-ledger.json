@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedFor": "American Coder 3 — Grade 7 only",
-  "status": "G7_145_RICH_CANDIDATES_21_ORIGINAL_SVGS_22_RUBRIC_DRAFTS_P0_L06_L07_RELEASE_BLOCKED",
+  "status": "G7_145_RICH_CANDIDATES_22_ORIGINAL_SVGS_23_RUBRIC_DRAFTS_P0_L06_L08_RELEASE_BLOCKED",
   "mainBaseSha": "39c757630d2bd67217a1468fce099653ed0f3f53",
   "branch": "curriculum/us-ccss-g7-full-grade-20261028",
   "courseCode": "US-CCSS-MATH:G7:OUR-IM-2017",
@@ -66,8 +66,8 @@
     "richVisualModels": 151,
     "sourceStudentPagesInspected": 145,
     "sourceStudentPagesNotIndividuallyInspected": 0,
-    "gradeOwnedSvgFigureCandidates": 21,
-    "gradeOwnedTeacherRubricDrafts": 22
+    "gradeOwnedSvgFigureCandidates": 22,
+    "gradeOwnedTeacherRubricDrafts": 23
   },
   "lessons": [
     {
@@ -8262,7 +8262,13 @@
       "studentTaskInspection": "DIRECT_STUDENT_PAGE_READ",
       "studentTaskParity": "TASK_STRUCTURE_COMPARED_AUTHORING_REPAIR_COMMITTED_NOT_ACCEPTED",
       "studentTaskSourceUrl": "https://im.kendallhunt.com/MS/students/2/7/8/index.html",
-      "academicStageAVerified": "NO"
+      "academicStageAVerified": "NO",
+      "p0OriginalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l08-angle-side-adjacency-contrast.svg",
+      "p0SourceTeacherRubric": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-p0-u07-l08-side-placement-rubric.json",
+      "p0GradeScopedTest": "tests/academic-us-ccss-g7-p0-u07-l08-side-placement.test.cjs",
+      "p0AcademicSourceParity": "PARTIAL_COMPARISON_ORIGINAL_ADJACENCY_ANALOGUE_NOT_APPROVED",
+      "p0ExactSelectedPractice": "NOT_EXECUTED",
+      "p0AuthenticatedFigureRender": "NOT_RUN"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G7:U07:L09",
@@ -12055,6 +12061,26 @@
     "sourceStudent": "https://im.kendallhunt.com/MS/students/2/7/7/index.html",
     "sourceTeacher": "https://im.kendallhunt.com/MS/teachers/2/7/7/preparation.html",
     "geometry": "4/3/3_CIRCLE_INTERSECTIONS_TWO_REFLECTIONS_21/4/2_DISJOINT_AND_STRICT_BOUNDS",
+    "nodeTest": "NOT_RUN_AT_COMMIT",
+    "dotnet": "NOT_RUN",
+    "authStudent": "NOT_RUN",
+    "teacherScorePersistence": "NOT_RUN",
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "ownerUAT": "NOT_RUN",
+    "release": "RELEASE_BLOCKED"
+  },
+  "p0u07l08": {
+    "lessonCode": "PED:US-CCSS-MATH:G7:U07:L08",
+    "sourceStudent": "https://im.kendallhunt.com/MS/students/2/7/8/index.html",
+    "sourceTeacher": "https://im.kendallhunt.com/MS/teachers/2/7/8/preparation.html",
+    "originalSvg": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g7/geometry/u07-l08-angle-side-adjacency-contrast.svg",
+    "sourceTrace": "artifacts/curriculum-delivery/US-CCSS-MATH/G7/grade7-p0-u07-l08-side-placement-rubric.json",
+    "nativeTest": "tests/academic-us-ccss-g7-p0-u07-l08-side-placement.test.cjs",
+    "repair": "REMOVE_MEMORIZATION_AS_REQUIREMENT_COMPARE_ANGLE_SIDE_ADJACENCY",
+    "mathOracle": "40_60_80_AB5_VERSUS_AC5_ARE_NONCONGRUENT",
     "nodeTest": "NOT_RUN_AT_COMMIT",
     "dotnet": "NOT_RUN",
     "authStudent": "NOT_RUN",
