@@ -1,0 +1,115 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L12",
+  "Status": "C_CLOSED_AUTHORING_ONLY_READY_FOR_STAGE_D",
+  "SourceEdition": "IM Geometry First Edition 2019–2021",
+  "SourceSha256": {
+    "prep": "4bc57efed3255fac570a67bcaf250aa0a06b45a251d9c819704d310d90b2d03d",
+    "teacher": "f4f5fa1930e949aa8190e2aa4b02fdcb0a6302f4e5595196e2ba88ada0a00f24",
+    "student": "0ff3b9bb2c2fc73a9cdb9f7a87ad6f6f1176a4bd68d6495d27ab4e65211d16b5",
+    "practice": "87dfad7ab3aad2bbe0e4c5e46280c80a36d10f8485d5e89e762cf4ef3828455a"
+  },
+  "Standards": {
+    "BuildingOn": [
+      "8.G.A.1",
+      "8.G.A.3"
+    ],
+    "Addressing": [
+      "HSG-CO.A.4"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.A.4",
+      "HSG-CO.C"
+    ]
+  },
+  "SourceMap": [
+    "12.1 Notice and Wonder two triangles and arrow",
+    "12.2 What's the Point: two distinct translations, 3 point-image pairs",
+    "12.3 translating triangle and segment parallelogram with exception",
+    "Practice 1–7"
+  ],
+  "Task": {
+    "Prompt": "Use a directed line segment to translate a labelled asymmetric triangle under two separately specified arrows. Give 3 point-image pairs per translation, compare corresponding sides, then translate segment DE under nonparallel direction and prove parallelogram DEE'D'.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "specifies nonzero directed segment with length and direction",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "correctly translates at least three labelled points under two displacements",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "compares corresponding lines, sides and angle measures with a proof",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "constructs nondegenerate parallelogram from segment and image, notes parallel displacement exception",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "Prompt": "A polygon is translated by directed segment (3,-2). How does vertex P=(1,4) move?",
+      "Expected": "P'=(4,2), all vertices move by the same ordered displacement.",
+      "Points": 2
+    },
+    {
+      "Id": "P2",
+      "Prompt": "Translate quadrilateral A(0,0),B(2,0),C(2,1),D(0,1) by (-1,2).",
+      "Expected": "A'(-1,2),B'(1,2),C'(1,3),D'(-1,3).",
+      "Points": 2
+    },
+    {
+      "Id": "P3",
+      "Prompt": "A translation maps a line to what kind of line?",
+      "Expected": "The same line or a parallel line, since direction is preserved.",
+      "Points": 2
+    },
+    {
+      "Id": "P4",
+      "Prompt": "Which points stay fixed during reflection across m:x=0?",
+      "Expected": "Exactly those on x=0.",
+      "Points": 2
+    },
+    {
+      "Id": "P5",
+      "Prompt": "For reflection across m:y=0 and 180 rotation about origin, where do they agree?",
+      "Expected": "At points on x=0 (line perpendicular to m through origin), not all points.",
+      "Points": 2
+    },
+    {
+      "Id": "P6",
+      "Prompt": "Rigid map T(x,y)=(x+2,y+1) sends D=(2,3) where?",
+      "Expected": "D'=(4,4).",
+      "Points": 2
+    },
+    {
+      "Id": "P7",
+      "Prompt": "Two distinct lines perpendicular to n meet n at which angle?",
+      "Expected": "Both at 90 degrees and they are parallel in Euclidean plane.",
+      "Points": 2
+    }
+  ],
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN: translate P=(1,2) by directed segment U(0,0)→V(3,2), explain why P'=(4,4)",
+  "OriginalCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+  "TeacherPaperHandoff": "Student submits two labelled diagrams and reasoning on paper; teacher marks each criterion 0/1/2, signs dated score and feedback. No online grade claimed.",
+  "Cases": {
+    "CORRECT": "same direction and distance for every point, correct parallelogram when independent displacement",
+    "EQUIVALENT": "another nonzero directed segment with valid source constraints or alternate diagram placement",
+    "WRONG": "reverses arrow or claims all quadrilaterals nondegenerate even when parallel",
+    "INSUFFICIENT": "only endpoints without direction/argument",
+    "MALFORMED": "undefined directed segment or inconsistent vertex mapping"
+  },
+  "AutoGrade": false,
+  "StageD": "NOT_RUN teacher authenticated lesson grade record, tenant and assignment #453"
+}
