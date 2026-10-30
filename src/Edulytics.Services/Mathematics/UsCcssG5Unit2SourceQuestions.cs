@@ -126,6 +126,14 @@ internal static class UsCcssG5Unit2SourceQuestions
                 new("Evaluate the source product 7 3/5×6.","45 3/5","42 3/5","13 3/5"),
                 new("Evaluate source product 4×6 9/10.","27 3/5","24 9/10","10 9/10")
             ],
+                        ["usccss.g5.u02.l15.multiply_mixed_source_number_bank"]=[
+                new("The source rug is 3 feet by 5 1/2 feet. What area?","16 1/2 square feet","8 1/2 square feet","18 1/2 square feet"),
+                new("A puzzle is 2 1/2 feet wide and 2 feet long. What area?","5 square feet","4 1/2 square feet","10 square feet"),
+                new("The source whiteboard is 4 feet by 5 3/4 feet. What area?","23 square feet","20 3/4 square feet","24 3/4 square feet"),
+                new("Which value equals source 4×5 2/3?","22 2/3","20 2/3","24 2/3"),
+                new("Evaluate source warm-up 6×3/8.","2 1/4","18","3/48"),
+                new("Evaluate source warm-up 7×9/10.","6 3/10","7 9/10","63")
+            ],
             // NEXT_LESSON_BANK
         };
     public sealed record Problem(string Family,string Prompt,string Solution,
