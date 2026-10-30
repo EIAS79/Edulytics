@@ -4,9 +4,9 @@
   "pr": 589,
   "branch": "feat/us-ccss-alg1-coder5-full-course-20261028",
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
-  "recordedAtUtc": "2026-10-30T14:20:37.133683+00:00",
-  "lastReviewed": "U01:L09",
-  "nextCanonical": "U01:L10",
+  "recordedAtUtc": "2026-10-30T14:26:22.057522+00:00",
+  "lastReviewed": "U01:L10",
+  "nextCanonical": "U01:L11",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -610,20 +610,81 @@
       "authoringClosedAtUtc": "2026-10-30T14:20:37.133683+00:00",
       "startedAtUtc": null,
       "timeNote": "not captured; no elapsed time invented"
+    },
+    {
+      "ordinal": 10,
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
+      "title": "The Effect of Extremes",
+      "sourceEdition": "IM Algebra1 First Edition local teacher/student HTML, CC BY 4.0",
+      "sourceFiles": {
+        "teacherPreparation": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\10\\preparation.html",
+          "sha256": "e559aeb87dfcdf026c255bc96be40f5c02adc303ae27abe183c2e655c23976e3"
+        },
+        "teacherActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\10\\index.html",
+          "sha256": "279e04e46713e9d393d4f78cbed216f9a165f05f87fb31723ec99672b435e207"
+        },
+        "studentActivities": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\10\\index.html",
+          "sha256": "bc3d559031aed9b062a63365a8f43c9375e952641f6d5dbd46812912358c5cfe"
+        },
+        "studentPractice": {
+          "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\10\\practice.html",
+          "sha256": "64870e032eba892137da27be48d77537f26d7bb572c3cd16bbb6efdb9a890311"
+        }
+      },
+      "sourceRoles": [
+        "HSS-ID.A.1 Addressing",
+        "HSS-ID.A.2 Addressing",
+        "HSS-ID.A.3 Addressing",
+        "HSS-ID.A.3 BuildingTowards"
+      ],
+      "sourceToEdulytiks": [
+        "Compare two gaming populations using variable and graph; create at least 10 points with three distinct values for given mean-median relations.",
+        "Explain why replacing 9 by 39 changes mean 6.5 to 9.5 while median stays 6.5; defend center under skew.",
+        "Mean/median calculations|Effects of extremes and shape|Appropriate center and context"
+      ],
+      "richV2File": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-hs-alg1-u01-l10-2021.rich-lesson-v2.json",
+      "contentVersion": "alg1-u01-l10-source-abc-authoring-20261030-v2",
+      "A": {
+        "status": "A_CLOSED",
+        "sourceReview": "four original local HTMLs and role crosswalk; independent first-party equivalent",
+        "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+      },
+      "B": {
+        "status": "B_CLOSED_STATIC",
+        "fixes": [
+          "add task-specific source crosswalk and original 6-point Cool-down"
+        ],
+        "authenticatedRenderer": "STAGE_D_NOT_RUN"
+      },
+      "C": {
+        "status": "AUTHORING_CLOSED",
+        "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L10_AUTHORING_C_20261030.json",
+        "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
+        "runtimeEnabled": false,
+        "humanGrading": true
+      },
+      "D": "NOT_RUN_BATCH_DEFERRED",
+      "readyForStageD": true,
+      "authoringClosedAtUtc": "2026-10-30T14:26:22.057522+00:00",
+      "startedAtUtc": null,
+      "timeNote": "not captured; no elapsed time invented"
     }
   ],
   "return_queue": [],
   "counts": {
     "TOTAL": 132,
     "AUTHORED": 132,
-    "A_CLOSED": 9,
-    "B_CLOSED": 9,
-    "C_PREPARED": 9,
-    "ABC_READY_FOR_D": 9,
+    "A_CLOSED": 10,
+    "B_CLOSED": 10,
+    "C_PREPARED": 10,
+    "ABC_READY_FOR_D": 10,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 123,
-    "SOURCE_REVIEW_CUMULATIVE": 30,
+    "REMAINING": 122,
+    "SOURCE_REVIEW_CUMULATIVE": 31,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
     "UNITS_ABC_CLOSED": 0,
@@ -640,7 +701,8 @@
     "strictUnitGateAndOriginalHashes": "PASS",
     "newDotnetTests": "NOT_RUN",
     "L01IndependentOracle": "PASS_17_CASES; DOTNET_NOT_RUN; LIVE_PRACTICE_NOT_RUN",
-    "L09_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
+    "L09_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
+    "L10_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
@@ -652,12 +714,12 @@
     "unitsABCCLosed": 0,
     "status": "UNIT_IN_PROGRESS",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 9,
+    "newlyABCClosed": 10,
     "unitReadyForStageD": false,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
+    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
     "mayAdvanceToL02": true,
@@ -673,7 +735,7 @@
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
   "unitStatus": "UNIT_IN_PROGRESS",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
+  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L10",
   "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
 }
