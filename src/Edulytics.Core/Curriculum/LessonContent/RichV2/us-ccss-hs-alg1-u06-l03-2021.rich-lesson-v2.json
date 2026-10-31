@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l03-v13-source-task-math-20261030",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L03",
+      "CultureCode": "en",
+      "Title": "Building Quadratic Functions from Geometric Patterns",
+      "ExplanationParagraphs": [
+        "Learning goal: build a quadratic function from geometric area, explain two equivalent expressions from the same drawing, and interpret how multiplying dimensions yields an expression containing n². Original independently authored Edulytiks lesson aligned with Illustrative Mathematics Algebra 1 First Edition U06:L03 teacher https://im.kendallhunt.com/HS/teachers/1/6/3/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/3/index.html (CC BY 4.0). The official source previews the identity n(n+2)=n²+2n; here the independently chosen rectangle has a different width extension.",
+        "Original figure: an n-by-(n+4) rectangular garden grid with n whole-number rows and n+4 columns. Each unit square contributes one square metre. Total A(n)=n(n+4)=n²+4n. Either expression counts the same area: one uses full dimensions; another counts an n×n square plus four additional columns of n cells each.",
+        "Values for n1,2,3,4 are5,12,21,32 square metres. First differences7,9,11 and second differences2,2. The function is defined for positive integer grid row count n here, even though polynomial formula can be evaluated for arbitrary real n.",
+        "Student activity: draw two different decompositions of the same rectangle, explain why formulas agree for all permitted n rather than only sample values, graph first four values and critique a mistaken n²+4 area expression that omits the four columns' variable height. Teacher-scored rubric0–2 for complete diagram, equivalence proof, accurate table and domain interpretation.",
+        "V13 publisher activity repair: U6L3 compares areas of three square arrangements, sketches expanding square patterns, and reasons about a growing step diagram. The prior rectangular n(n+4) model correctly illustrated a quadratic but was insufficient to represent the geometric contrasts and student-created growing figures. New figures here are independently selected rather than copied.",
+        "V13 original area-card task: for a large n-by-n grid (n integer at least2), Card A is the intact square n^2, Card B cuts out a nonoverlapping 2-by-2 corner for n^2-4, and Card C shows TWO separate n-by-n squares plus a disjoint 2-by-2 tile for 2n^2+4. At n=3 the areas are9,5,22. Draw and label all cards, justify why the plus/minus terms are areas, and reject n^2-2 for the 2-by-2 removal.",
+        "V13 independent growing patterns: expanding square pattern S(n)=n^2+3 has counts 4,7,12 at steps1,2,3 and327 at step18. Another growing rectangular-steps pattern T(n)=n(n+3)=n^2+3n uses an n-by-(n+3) grid, giving 4,10,18,28 at steps1..4; first differences6,8,10 are not constant, disproving the claim that a simultaneous one-unit increase in rows and columns automatically makes total area linear. Students produce cell diagrams and explain equivalence by distribution."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area product",
+          "Definition": "Area of an n-by-(n+4) rectangle is product of side lengths.",
+          "Rule": "A=n(n+4).",
+          "Example": "For n3 area3×7=21."
+        },
+        {
+          "Title": "Equivalent expressions",
+          "Definition": "Distribution rewrites the same counted quantity without changing function.",
+          "Rule": "n(n+4)=n²+4n.",
+          "Example": "Both formulas yield21 at n3."
+        },
+        {
+          "Title": "First-party decomposition",
+          "Definition": "Geometry explains why a squared and linear term appear.",
+          "Rule": "Split extended rectangle into square and strip.",
+          "Example": "n² tiles plus four strips each n tiles."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Build function from diagram",
+          "Question": "An n-row, n+4-column grid: find area rule.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Rectangle area equals row count times column count.",
+            "A(n)=n(n+4).",
+            "Distribute n: n²+4n.",
+            "Both terms represent nonoverlapping parts.",
+            "State n positive integer."
+          ],
+          "Answer": "A(n)=n(n+4)=n²+4n.",
+          "Check": "Area units square metres if cells1m×1m."
+        },
+        {
+          "Title": "Check table",
+          "Question": "Evaluate at n1,2,3,4.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "At1:1×5=5.",
+            "At2:2×6=12.",
+            "At3:3×7=21.",
+            "At4:4×8=32.",
+            "Differences7,9,11 and second differences2."
+          ],
+          "Answer": "5,12,21,32.",
+          "Check": "Both expressions agree for every input."
+        },
+        {
+          "Title": "Reject missing factor",
+          "Question": "Could n²+4 represent the four-column extension?",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Four extra columns each have n unit cells.",
+            "Their total area is4n, not4.",
+            "For n3, actual extra area12, not4.",
+            "n²+4 would give13 instead of21.",
+            "Thus the proposed expression fails."
+          ],
+          "Answer": "No; correct extension contributes4n.",
+          "Check": "n3 provides an independent counterexample."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating four extra columns as four cells",
+          "WhyWrong": "Each extra column has n cells.",
+          "Correction": "Multiply4 by n."
+        },
+        {
+          "Mistake": "Mistaking equal sample outputs for proof of full equivalence",
+          "WhyWrong": "A structural distributive argument is stronger.",
+          "Correction": "Use n(n+4)=n²+4n algebraically."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadratic functions arise naturally from geometric area patterns.",
+        "Factored and expanded forms describe the same rectangle.",
+        "In the original n×(n+4) grid A=n²+4n.",
+        "Teacher reviews diagrams, equivalent forms and domain."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independently authored geometric or quadratic model",
+          "Description": "Accessible numerical table and original situation, not copied publisher figures or authentic measurements.",
+          "PrimaryLabel": "Input or scenario",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "n1",
+              "Cells": [
+                "A5"
+              ]
+            },
+            {
+              "Label": "n2",
+              "Cells": [
+                "A12"
+              ]
+            },
+            {
+              "Label": "n3",
+              "Cells": [
+                "A21"
+              ]
+            },
+            {
+              "Label": "n4",
+              "Cells": [
+                "A32"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

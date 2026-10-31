@@ -1,0 +1,145 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l11-v11-source-task-graph-review-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L11",
+      "CultureCode": "en",
+      "Title": "Graphing from the Factored Form",
+      "ExplanationParagraphs": [
+        "Learning goal: graph a quadratic using factors to find zeros, use sign and symmetry to determine opening and vertex, and verify intercepts via substitution. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L11 teacher https://im.kendallhunt.com/HS/teachers/1/6/11/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/11/index.html (CC BY 4.0). The source specifically asks students to check the zero-factor-to-intercept connection.",
+        "Original function g(x)=−2(x−1)(x−5). Its zeros are1 and5, axis of symmetry x3. At x3 the two factors are2 and−2, so g(3)=−2×(−4)=8, a maximum because leading coefficient is negative. At x0, g(0)=−2(−1)(−5)=−10, the y-intercept.",
+        "Additional symmetric values g(2)=−2(1)(−3)=6 and g(4)=−2(3)(−1)=6. The graph opens downward and lies above horizontal axis between zeros but below outside them. Plot points (0,−10),(1,0),(2,6),(3,8),(4,6),(5,0),(6,−10) on common axes.",
+        "For the comparison, h(x)=+2(x-1)(x-5) has the same zero-factor inputs x=1 and x=5 as g, but vertex (3,-8) and y-intercept (0,10). Unlike g, it opens upward. This second independently constructed function is an original analogous task rather than a copy of the publisher activity.",
+        "Student task (original first-party source-equivalent comparison): without reading the prepared graph first, use g(x)=-2(x-1)(x-5) and h(x)=2(x-1)(x-5) to predict BOTH x-intercepts, each vertex, and each y-intercept. Complete an original table at x=0,1,2,3,4,5,6 for both functions. Plot the two parabolas on the SAME labeled coordinate axes, with distinct colors or point markers. Justify why their x-intercepts agree but their opening, extrema and y-intercepts differ; verify predictions using graphing technology if available. Submit your own plotted graph plus reasoning to an authorized teacher. A pre-drawn SVG is only an explanatory example, not an auto-graded student submission. Human-reviewed draft rubric: 0–2 each for correct table/zero products, both graphs with scale and labels, vertex/y-intercept reasoning, and actual independent verification and explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Zero-product graph rule",
+          "Definition": "Zeros occur where at least one displayed factor vanishes.",
+          "Rule": "For (x−r), zero is x=r.",
+          "Example": "Roots1,5."
+        },
+        {
+          "Title": "Leading-coefficient sign",
+          "Definition": "Negative a gives downward opening with maximum vertex.",
+          "Rule": "Track factor outside product.",
+          "Example": "−2 causes downward curve."
+        },
+        {
+          "Title": "Axis between zeros",
+          "Definition": "The vertex lies midway between distinct roots of a quadratic.",
+          "Rule": "Average 1 and5.",
+          "Example": "Vertex input3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find all intercepts",
+          "Question": "Use g(x)=−2(x−1)(x−5).",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "First factor zero at1; second zero at5.",
+            "Thus x-intercepts(1,0),(5,0).",
+            "At x0 compute−2(−1)(−5)=−10.",
+            "y-intercept(0,−10)."
+          ],
+          "Answer": "Intercepts(1,0),(5,0),(0,−10).",
+          "Check": "All three satisfy original expression."
+        },
+        {
+          "Title": "Find maximum from symmetry",
+          "Question": "Find g(3).",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "Axis between roots is x3.",
+            "At3 factors2 and−2 give product−4.",
+            "Multiply−2 gives+8.",
+            "Leading coefficient negative means vertex maximum."
+          ],
+          "Answer": "Maximum8 at x3.",
+          "Check": "g(2)=g(4)=6 supports symmetry."
+        },
+        {
+          "Title": "Compare signs",
+          "Question": "What are values at x2 and x6?",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "At2, factors1 and−3 multiply−3, times−2 gives+6.",
+            "At6 factors5 and1 multiply5, times−2 gives−10.",
+            "This confirms positive between zeros and negative outside."
+          ],
+          "Answer": "g2=6,g6=−10.",
+          "Check": "Consistent with downward-opening graph."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using factor constants with same sign for roots",
+          "WhyWrong": "Solve factor equal zero, reversing the sign inside.",
+          "Correction": "x−5=0 means x5."
+        },
+        {
+          "Mistake": "Assuming a negative coefficient makes all outputs negative",
+          "WhyWrong": "Quadratic may be positive between roots.",
+          "Correction": "Evaluate intervals and vertex."
+        }
+      ],
+      "SummaryPoints": [
+        "Factored form makes horizontal intercepts directly accessible.",
+        "Negative leading coefficient makes the quadratic open downward.",
+        "g has zeros1,5 and vertex(3,8).",
+        "Teacher reviews labelled graph and sign reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factored/standard form numerical representation",
+          "Description": "First-party input-output values and independent expression checks; no publisher image.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Graph output",
+          "Rows": [
+            {
+              "Label": "x0",
+              "Cells": [
+                "g−10"
+              ]
+            },
+            {
+              "Label": "x1",
+              "Cells": [
+                "g0"
+              ]
+            },
+            {
+              "Label": "x2",
+              "Cells": [
+                "g6"
+              ]
+            },
+            {
+              "Label": "x3",
+              "Cells": [
+                "g8"
+              ]
+            },
+            {
+              "Label": "x4",
+              "Cells": [
+                "g6"
+              ]
+            },
+            {
+              "Label": "x5",
+              "Cells": [
+                "g0"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

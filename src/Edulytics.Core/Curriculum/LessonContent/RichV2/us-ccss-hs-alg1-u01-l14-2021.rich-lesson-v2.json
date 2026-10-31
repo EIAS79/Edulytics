@@ -1,0 +1,154 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l14-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L14",
+      "CultureCode": "en",
+      "Title": "Outliers",
+      "ExplanationParagraphs": [
+        "Learning goal: identify a possible outlier with a specified rule, determine its impact on center and variability, investigate whether it is a legitimate observation or a data error, and justify a decision to retain or exclude it. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 14, https://im.kendallhunt.com/HS/teachers/1/1/14/preparation.html (CC BY 4.0). Source roles: Building On HSS-ID.A.1; Addressing HSS-ID.A.1, HSS-ID.A.2, HSS-ID.A.3; Building Towards HSS-ID.A.3.",
+        "Original hypothetical dataset of six service times (minutes): 9,10,11,12,13,100. Median is (11+12)/2=11.5; with halves 9,10,11 and 12,13,100, Q1=10 and Q3=13; IQR=3. The upper 1.5-IQR fence is 13+1.5×3=17.5 minutes, so 100 is an outlier by that rule. The lower fence is 10−4.5=5.5.",
+        "With all six observations, mean=(9+10+11+12+13+100)/6=155/6≈25.83 minutes. Without 100, the remaining five have mean 11 and median 11 minutes. Removing the observation changes the represented population and requires a defensible cause, not just a prettier statistic.",
+        "Investigate whether 100 resulted from a unit or transcription error, an exceptional but genuine event, or a different process. If the cause is unknown, present results with and without it and disclose the decision; never silently remove data. The source uses contextual data and statistical technology, not a mandate to discard all distant points.",
+        "Student activity: reproduce the box plot, show both 1.5-IQR fences, compare mean and median with/without the suspected outlier, propose a verification procedure, and write a justified reporting recommendation. Teacher-scored rubric 0–2 for accurate quartiles/fences, correct changes in center, defensible source investigation, and transparent reporting (max 8).",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L14: Investigate an outlier before deleting; distinguish error from valid extreme. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Find fences 5.5 and17.5 for 9,10,11,12,13,100; explain why 100 is outlying but not automatically discarded. A teacher scores 0, 1 or 2 per criterion: Quartile and fence; Mean vs median; Reasoned retain/exclude choice. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Outlier",
+          "Definition": "An unusual observation that differs substantially from the bulk of data.",
+          "Rule": "A formal 1.5×IQR fence is one possible diagnostic, not a compulsory deletion rule.",
+          "Example": "For Q3=13 and IQR=3, values above 17.5 are flagged."
+        },
+        {
+          "Title": "Influence on center",
+          "Definition": "A large extreme affects the mean more than the order-based median.",
+          "Rule": "Compute the relevant statistics with and without a disputed value.",
+          "Example": "Adding 100 changes mean 11 to about 25.83 in a six-value dataset."
+        },
+        {
+          "Title": "Responsible exclusion",
+          "Definition": "An observation must be investigated before excluding it.",
+          "Rule": "Check data entry, units and whether it belongs to the intended population.",
+          "Example": "If 100 is real, report both the value and its effect."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute outlier fences",
+          "Question": "For 9,10,11,12,13,100, use median-of-halves and 1.5×IQR.",
+          "Method": "Use a first-party dataset and show independently checkable reasoning.",
+          "Steps": [
+            "Lower half 9,10,11 gives Q1=10.",
+            "Upper half 12,13,100 gives Q3=13.",
+            "IQR=13−10=3 minutes.",
+            "Lower fence 10−1.5×3=5.5 and upper fence 13+1.5×3=17.5.",
+            "Since 100>17.5, it is flagged by this diagnostic."
+          ],
+          "Answer": "100 minutes is an upper outlier by the 1.5-IQR rule.",
+          "Check": "100 lies above 17.5; no other listed observation lies beyond either fence."
+        },
+        {
+          "Title": "Compare means before and after",
+          "Question": "How does the 100-minute value influence the mean?",
+          "Method": "Use a first-party dataset and show independently checkable reasoning.",
+          "Steps": [
+            "Six-value sum is 9+10+11+12+13+100=155.",
+            "Mean with 100 is 155/6≈25.83.",
+            "Without 100 the sum is 55 over five values, mean 11.",
+            "The mean falls by about 14.83 minutes when excluding that observation."
+          ],
+          "Answer": "Mean about 25.83 with and 11 without 100.",
+          "Check": "55+100=155 and the denominators differ (5 versus 6)."
+        },
+        {
+          "Title": "Investigate an unexpected value",
+          "Question": "An observation of 100 minutes might be a transcription error from 10 minutes. Should it be automatically removed?",
+          "Method": "Use a first-party dataset and show independently checkable reasoning.",
+          "Steps": [
+            "Verify the original recording and the units.",
+            "Ask whether the event legitimately belongs to the defined population.",
+            "If a confirmed entry error, correct it with a documented source record.",
+            "If valid, retain it or report sensitivity analyses with stated rationale."
+          ],
+          "Answer": "No automatic deletion: investigate provenance and report the decision.",
+          "Check": "A numerical fence flags an observation; it does not establish the cause."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Removing every flagged value without investigation",
+          "WhyWrong": "Extreme observations can be true and important.",
+          "Correction": "Verify source and report transparent sensitivity analyses."
+        },
+        {
+          "Mistake": "Using the mean before and after with the same denominator",
+          "WhyWrong": "Removing a value changes n.",
+          "Correction": "Use 155/6 versus 55/5, not 55/6."
+        },
+        {
+          "Mistake": "Claiming a quartile rule guarantees a data error",
+          "WhyWrong": "Outlier fences are statistical diagnostics, not truth tests.",
+          "Correction": "Separately assess record quality and sampling context."
+        }
+      ],
+      "SummaryPoints": [
+        "One 1.5-IQR fence is Q3+1.5×IQR; diagnose, do not automatically delete.",
+        "In the original example, 100 exceeds the upper fence 17.5 minutes.",
+        "Mean 25.83 with versus 11 without the extreme illustrates influence.",
+        "Teacher must judge the defensibility of excluding values; no fabricated research or source checks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original accessible numerical analysis",
+          "Description": "Clearly labelled first-party hypothetical values, not real participants or publisher figures.",
+          "PrimaryLabel": "Statistic or condition",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "Q1",
+              "Cells": [
+                "10"
+              ]
+            },
+            {
+              "Label": "Q3",
+              "Cells": [
+                "13"
+              ]
+            },
+            {
+              "Label": "IQR",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "Upper fence",
+              "Cells": [
+                "17.5"
+              ]
+            },
+            {
+              "Label": "Mean including 100",
+              "Cells": [
+                "25.8333"
+              ]
+            },
+            {
+              "Label": "Mean excluding 100",
+              "Cells": [
+                "11"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

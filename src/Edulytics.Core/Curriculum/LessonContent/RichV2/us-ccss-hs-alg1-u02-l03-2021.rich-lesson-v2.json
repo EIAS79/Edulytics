@@ -1,0 +1,138 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l03-v13-source-task-math-20261030",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L03",
+      "CultureCode": "en",
+      "Title": "Writing Equations to Model Relationships (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: infer relationships in tables of values, distinguish additive, multiplicative, constant-total and inverse-variation patterns, and write an equation with appropriate variable domains. First-party independent Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 3, https://im.kendallhunt.com/HS/teachers/1/2/3/preparation.html (CC BY 4.0). Publisher roles: Addressing HSA-CED.A.2 and HSA-CED.A.3; Building Towards HSA-CED.A.2 and HSF-LE.A.2. The source requires persevering with novel patterns rather than memorizing one generic linear formula.",
+        "Original tables to classify: A has x=0,1,2,4 and y=3,8,13,23, following y=5x+3; B has x=0,25,100,175 and y=400,375,300,225, following x+y=400; C has positive x=1,2,3,6 and y=48,24,16,8, following xy=48. All relationships are real-number mathematical models under stated domains; table C cannot use x=0 because the inverse model is undefined there.",
+        "First decide what remains invariant in each row: for A, each +1 in x means +5 in y, with initial y=3; for B, the sum x+y remains 400; for C, the product xy remains 48 even when differences or ratios of corresponding terms change. Tables alone may fit many arbitrary rules, so model choice also depends on a meaningful context and assumptions.",
+        "Context tasks: a bike rental costs $3 start charge and $5 per hour, with x≥0 hours (A); two distances from opposite ends of a 400-metre straight trail add to 400, with 0≤x,y≤400 (B); a rectangle of area 48 square centimetres has width x>0 and height y=48/x>0 (C). For a model involving prizes split equally, the number of winners must additionally be a positive integer.",
+        "Student activity: work from an unknown table, propose and reject candidate equations, extend it to an unlisted input, construct a matching word problem, and critique a partner's table or graph for units and restrictions. Teacher-scored rubric 0–2 points each for table differences/products, correct equation and domain, checked predictions, and valid contextual explanation (maximum 8). Avoid auto-grading a unique formula as the only possible mathematical description of finitely many points.",
+        "V13 source reconciliation: source U2L3 asks students first to infer a novel table rule, then MATCH FOUR contextual tables to four distinct equations: multiplying by a fixed rate, adding an offset, subtracting an offset, and a fixed combined total. The original lesson described only three candidate patterns and did not give an explicit four-way equation-matching task.",
+        "V13 independent four-card sort (not publisher numbers): A (x,y)=(0,0),(1,300),(2,600) -> y=300x; B (0,300),(20,320),(40,340) -> y=x+300; C (300,0),(360,60),(420,120) -> y=x-300; D (0,300),(90,210),(275,25) -> x+y=300. Shuffle rules separately; students justify unit-consistent contexts, all sample rows, and a value not shown. Additionally retain the earlier constant-area rectangle xy=48 for positive dimensions and explain why it is an inverse rather than linear rule."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Additive and multiplicative invariants",
+          "Definition": "A constant difference, constant sum or constant product identifies a possible structural relationship.",
+          "Rule": "Check several rows before guessing the equation.",
+          "Example": "x+y=400 when 25+375=100+300=400; xy=48 when 2×24=6×8."
+        },
+        {
+          "Title": "Linear table pattern",
+          "Definition": "For y=mx+b, equal increments in x lead to proportional changes in y, with y-intercept b.",
+          "Rule": "Check slope (Δy)/(Δx) on multiple intervals, including unequal step sizes.",
+          "Example": "x=0,1,2,4 gives y=3,8,13,23: slope always 5, intercept 3."
+        },
+        {
+          "Title": "Inverse relationship and domain",
+          "Definition": "For xy=k, positive k and x>0, y=k/x decreases as x increases.",
+          "Rule": "The domain must exclude x=0 and use positive lengths for geometric context.",
+          "Example": "x=3 yields y=16 cm for area 48 cm²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Infer a linear rule with unequal steps",
+          "Question": "Find a rule for (x,y)=(0,3),(1,8),(2,13),(4,23).",
+          "Method": "Compute slopes for consecutive table intervals and use the row at x=0.",
+          "Steps": [
+            "From x=0 to 1, Δy=5 and Δx=1, giving slope 5.",
+            "From x=1 to 2, slope is again 5.",
+            "From x=2 to 4, Δy=10 over Δx=2, giving slope 5.",
+            "At x=0, y=3, so b=3.",
+            "Propose y=5x+3 and verify x=4 gives 5×4+3=23."
+          ],
+          "Answer": "A natural linear rule is y=5x+3.",
+          "Check": "All four pairs satisfy the rule; finite points alone cannot prove uniqueness among arbitrary functions."
+        },
+        {
+          "Title": "Model a constant total",
+          "Question": "A straight path is 400 metres. Distance x from one end and y from the other sum to 400. Find y at x=175.",
+          "Method": "Represent the conserved total and solve the equation.",
+          "Steps": [
+            "Write x+y=400.",
+            "Isolate y=400−x.",
+            "At x=175, y=400−175=225 metres.",
+            "Verify x+y=175+225=400.",
+            "State domain 0≤x≤400, 0≤y≤400 for points along the path."
+          ],
+          "Answer": "y=225 metres at x=175 metres.",
+          "Check": "Both distances are nonnegative and total exactly 400 metres."
+        },
+        {
+          "Title": "Infer an inverse model",
+          "Question": "A rectangle has area 48 cm². Width x is 6 cm. Find height y and explain why x cannot be zero.",
+          "Method": "Use the invariant product of lengths.",
+          "Steps": [
+            "Area relationship is xy=48 cm².",
+            "For x=6 cm, solve 6y=48, so y=8 cm.",
+            "Check area 6 cm×8 cm=48 cm².",
+            "General rule y=48/x for positive width x.",
+            "At x=0 division is undefined and a zero-width rectangle cannot have positive area."
+          ],
+          "Answer": "Height y=8 cm and model domain x>0.",
+          "Check": "The units cm×cm = cm² and the positive-length domain is satisfied."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming equal changes in x always mean equal changes in y",
+          "WhyWrong": "Inverse and other nonlinear relationships may have constant products rather than differences.",
+          "Correction": "Test sums, differences, products and ratios against several rows."
+        },
+        {
+          "Mistake": "Using x=0 in y=48/x",
+          "WhyWrong": "Division by zero is undefined and violates the positive-area context.",
+          "Correction": "Restrict x>0 for positive rectangle dimensions."
+        },
+        {
+          "Mistake": "Treating finitely many table values as proof of a unique function",
+          "WhyWrong": "Different functions can agree on listed points but differ elsewhere.",
+          "Correction": "State and justify the simplest source-relevant model and its real-world assumptions."
+        }
+      ],
+      "SummaryPoints": [
+        "Look for constant slopes, constant sums or constant products, then verify against every row.",
+        "A: y=5x+3; B: x+y=400; C: xy=48 with x>0.",
+        "Context imposes restrictions on allowed inputs, outputs and units.",
+        "Different tables need different reasoning; model selection and partner explanations require teacher assessment."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent relationship classification data",
+          "Description": "Accessible first-party test tables show input-output pairs and invariant relationships, not publisher artwork.",
+          "PrimaryLabel": "Table pattern",
+          "SecondaryLabel": "Pairs / model",
+          "Rows": [
+            {
+              "Label": "A",
+              "Cells": [
+                "(0,3),(1,8),(2,13),(4,23): y=5x+3"
+              ]
+            },
+            {
+              "Label": "B",
+              "Cells": [
+                "(0,400),(25,375),(100,300),(175,225): x+y=400"
+              ]
+            },
+            {
+              "Label": "C",
+              "Cells": [
+                "(1,48),(2,24),(3,16),(6,8): xy=48, x>0"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

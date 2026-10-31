@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l24-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L24",
+      "CultureCode": "en",
+      "Title": "Solutions to Systems of Linear Inequalities in Two Variables",
+      "ExplanationParagraphs": [
+        "Learning objective: find pairs satisfying multiple two-variable constraints simultaneously and show graphically where half-planes overlap. Original Edulytiks material aligned with Illustrative Mathematics Algebra 1 First Edition U02:L24, https://im.kendallhunt.com/HS/teachers/1/2/24/preparation.html (CC BY 4.0). The source's quilting project combines a minimum total fabric amount and maximum cost, making a system rather than one inequality.",
+        "Independent quilt design: light fabric costs $9/yard and dark fabric $13/yard. At least 9.5 yards total are required while spending at most $110. Let l,d≥0 represent yards. The system is l+d≥9.5, 9l+13d≤110, l≥0, d≥0. Both equality lines are included; the solution region is their first-quadrant overlap.",
+        "Check (l,d)=(7,2.5): total 9.5 yards and cost $63+$32.50=$95.50, feasible. Pair (2,8): total 10 yards but price $18+$104=$122, outside budget. Lines intersect where d=6.125, l=3.375, meeting exactly 9.5 yards and $110. Use labels, units and included boundaries when graphing.",
+        "Student task: graph each original half-plane and the overlapping solution region, distinguish points meeting only one condition from points meeting both, then defend a candidate fabric allocation. Teacher-scored rubric 0–2 each for equations and domains, correctly shaded overlap, exact point tests, and justified interpretation including boundary inclusion."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "System of inequalities",
+          "Definition": "Several inequalities restrict the same variables at once.",
+          "Rule": "Every condition must hold for a valid pair.",
+          "Example": "l+d≥9.5 AND 9l+13d≤110."
+        },
+        {
+          "Title": "Region overlap",
+          "Definition": "The system's graph is the intersection of all individual shaded regions.",
+          "Rule": "Graph and test each half-plane separately.",
+          "Example": "At least 9.5 yards and up to $110 form an overlapping wedge in the first quadrant."
+        },
+        {
+          "Title": "Boundary intersection",
+          "Definition": "A point where related equality lines cross may mark a corner of the feasible set.",
+          "Rule": "Solve both equalities then test domains.",
+          "Example": "(l,d)=(3.375,6.125) uses exactly 9.5 yards and costs $110."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check a feasible quilt purchase",
+          "Question": "Is (7 light,2.5 dark) feasible?",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Total length 7+2.5=9.5≥9.5 yards.",
+            "Cost 9×7+13×2.5=63+32.5=$95.50≤110.",
+            "Both lengths are nonnegative.",
+            "Thus all constraints hold."
+          ],
+          "Answer": "Yes, the allocation is feasible.",
+          "Check": "Both material and budget bounds verified."
+        },
+        {
+          "Title": "Reject a point satisfying only one condition",
+          "Question": "Is (2 light,8 dark) feasible?",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Total fabric is 2+8=10≥9.5 yards.",
+            "Total cost 9×2+13×8=18+104=122 dollars.",
+            "Since 122>110, budget inequality fails.",
+            "The pair is outside the overlapping feasible set."
+          ],
+          "Answer": "No; $122 exceeds budget.",
+          "Check": "One constraint is insufficient."
+        },
+        {
+          "Title": "Find equality corner",
+          "Question": "Solve l+d=9.5 and 9l+13d=110.",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Express l=9.5−d.",
+            "Substitute 9(9.5−d)+13d=110.",
+            "Simplify 85.5+4d=110.",
+            "Solve d=24.5/4=6.125, l=9.5−6.125=3.375.",
+            "Check cost 9(3.375)+13(6.125)=30.375+79.625=110."
+          ],
+          "Answer": "(l,d)=(3.375,6.125).",
+          "Check": "Both boundary equalities hold."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Shading the union rather than intersection",
+          "WhyWrong": "A pair must satisfy BOTH constraints.",
+          "Correction": "Use only the overlapping portions."
+        },
+        {
+          "Mistake": "Accepting negative material lengths",
+          "WhyWrong": "Negative yards do not describe a purchase.",
+          "Correction": "Add nonnegative domain restrictions."
+        }
+      ],
+      "SummaryPoints": [
+        "Multiple conditions create an intersection of half-planes.",
+        "Fabric total and cost constraints must both be checked.",
+        "The equality lines meet at (3.375,6.125) yards.",
+        "Teacher reviews accurate overlapping region and contextual reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original multi-constraint example",
+          "Description": "First-party mathematical examples with explicit limits, excluding publisher graphics and any unobserved real survey or product data.",
+          "PrimaryLabel": "Case",
+          "SecondaryLabel": "Constraint result",
+          "Rows": [
+            {
+              "Label": "(7,2.5)",
+              "Cells": [
+                "9.5 yd, $95.50 feasible"
+              ]
+            },
+            {
+              "Label": "(2,8)",
+              "Cells": [
+                "10 yd, $122 infeasible"
+              ]
+            },
+            {
+              "Label": "(3.375,6.125)",
+              "Cells": [
+                "9.5 yd, $110 boundary"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

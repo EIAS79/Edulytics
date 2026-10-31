@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l03-v13-source-task-math-20261030",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L03",
+      "CultureCode": "en",
+      "Title": "Representing Exponential Growth",
+      "ExplanationParagraphs": [
+        "Learning goal: identify growth factor and initial value in y=a·b^t, represent repeated multiplication with a table and graph and interpret both parameters in context, including nonzero a^0=1. Independently authored Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 3, https://im.kendallhunt.com/HS/teachers/1/5/3/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/3/index.html (CC BY 4.0). Source introduces the formal term growth factor and revisits exponent rules.",
+        "Independent fictional cell-culture indicator: starting reading12 units and each equal observation period multiplies it by3, so R(t)=12·3^t for integer t≥0. Values at t0,1,2,3 are12,36,108,324. Parameter12 is initial amount (vertical intercept at t0), factor3 is ratio of successive values; an additive difference is not constant. This is pure modeling data and not a real biological growth claim.",
+        "Exponent identities: 3^0=1 so R(0)=12, 3^2×3^3=3^5, and (3^2)^3=3^6. Replacing t by t+1 triples the output for every permitted integer period, whereas adding3 each time does not.",
+        "Student task: create a labelled table and graph of integer-step readings, match a graph to a multiplication pattern, explain why b>1 describes growth for positive a and derive a new model for a different starting value. Teacher-scored rubric 0–2 for table/graph, expression, growth-factor and initial-value interpretation, and justification of exponent properties.",
+        "V13 publisher comparison: U5L3 explicitly features an exponent-law Math Talk, an OPTIONAL zero-exponent reminder, two different microbial exponential contexts and their TWO labelled graphs. The original first-party single-model table was mathematically valid but did not ensure both functions/graphs or the optional status of the review.",
+        "V13 independent, fictional equal-step growth models: N(t)=50*2^t and P(t)=20*3^t at integer t=0..4. N values [50,100,200,400,800]; P values [20,60,180,540,1620]. Draw both sets of points on clearly labelled axes and compare: N(2)=200>P(2)=180 but N(3)=400<P(3)=540. Initial values are 50 and20 (y intercepts), growth factors2 and3 (successive ratios), not fixed additions. These numbers do not describe actual microbes.",
+        "V13 optional exponent-rule discussion: for any nonzero base a, a^0=1. Check 2^3*2^4=2^7=128 and 2^9/2^2=2^7 when dividing by a nonzero value. Correct the misconception 2^3*2^4=2^12; students explain why adding exponents corresponds to repeated factors. The optional review is not mandatory to mark the core lesson assigned."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Initial value a",
+          "Definition": "At t0, a·b^0 equals a when b≠0.",
+          "Rule": "Use b^0=1.",
+          "Example": "R(0)=12."
+        },
+        {
+          "Title": "Growth factor b",
+          "Definition": "For positive a and b>1, the output is multiplied by b each step.",
+          "Rule": "R(t+1)/R(t)=b.",
+          "Example": "R factor3 triples at each period."
+        },
+        {
+          "Title": "Exponent rules",
+          "Definition": "When multiplying equal bases, add exponents; a nonzero base raised to zero equals1.",
+          "Rule": "Separate exponents from coefficients.",
+          "Example": "3^2×3^3=3^5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Build growth table",
+          "Question": "Use R(t)=12·3^t for t0–3.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "R(0)=12×1=12.",
+            "R(1)=12×3=36.",
+            "R(2)=12×9=108.",
+            "R(3)=12×27=324.",
+            "Check every next value is triple its predecessor."
+          ],
+          "Answer": "12,36,108,324.",
+          "Check": "Ratios36/12=108/36=324/108=3."
+        },
+        {
+          "Title": "Interpret factor and intercept",
+          "Question": "What do12 and3 mean in R(t)=12·3^t?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "At t0, exponent value1 so output12.",
+            "Initial reading is12 units.",
+            "At each one-period increase, factor3 multiplies the previous output.",
+            "The graph starts at (0,12) and rises increasingly fast."
+          ],
+          "Answer": "Initial12 units, per-step growth factor3.",
+          "Check": "R(t+1)=3R(t)."
+        },
+        {
+          "Title": "Use exponent rule safely",
+          "Question": "Simplify 3^2×3^3 and (3^2)^3.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Equal-base multiplication adds exponents: 3^(2+3)=3^5=243.",
+            "Power of a power multiplies exponents:3^(2×3)=3^6=729.",
+            "These are different operations and values.",
+            "Check original products9×27=243; (9)^3=729."
+          ],
+          "Answer": "243 and729 respectively.",
+          "Check": "Direct arithmetic confirms both rules."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating growth factor3 as a $3 additive change",
+          "WhyWrong": "Actual successive differences vary.",
+          "Correction": "Use R(t+1)=3R(t), not R(t)+3."
+        },
+        {
+          "Mistake": "Assuming zero exponent produces zero",
+          "WhyWrong": "Nonzero base to power0 equals1.",
+          "Correction": "Apply b^0=1 before multiplying by a."
+        },
+        {
+          "Mistake": "Using observed-looking biologic readings as evidence of an experiment",
+          "WhyWrong": "This dataset is invented for mathematics.",
+          "Correction": "Label it hypothetical and require real provenance for scientific conclusions."
+        }
+      ],
+      "SummaryPoints": [
+        "Growth models take form a·b^t with initial a and multiplier b>1.",
+        "The independent R(t)=12·3^t triples each step.",
+        "Exponent zero and multiplication rules explain table structure.",
+        "Teacher reviews graph/model interpretations and not fabricated lab work."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "12"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "36"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "108"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "324"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

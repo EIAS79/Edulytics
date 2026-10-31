@@ -1,0 +1,163 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l08-sequential-source-abc-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L08",
+      "CultureCode": "en",
+      "Title": "Spreadsheet Shortcuts",
+      "ExplanationParagraphs": [
+        "Learning goal: use relative cell references and fill-down patterns to extend a recursive sequence, connect it to a direct formula, and solve a boundary condition. Independently authored Edulytiks adaptation of optional Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 8, https://im.kendallhunt.com/HS/teachers/1/1/8/preparation.html (CC BY 4.0). The publisher activity introduces selecting cell references and drag-fill shortcuts, not simply an arithmetic table.",
+        "Original recurring-cost scenario: a learning club charges a one-time 18-euro registration fee plus 12 euros each month. Put month zero 18 in B1; B2 has =B1+12. Fill down to B7: totals are 18,30,42,54,66,78,90 for months zero through six. Relative copying changes the referenced prior row, so B3 should calculate from B2, not repeatedly from B1.",
+        "Recursive definition: C(0)=18 euros, C(m+1)=C(m)+12 for whole-number m≥0. Direct definition: C(m)=18+12m for whole-number m≥0. Both agree for month 0, month 1 and month 6. Never confuse the first month's cost with the registration amount alone.",
+        "Student task: build an equivalent-ratio table (input 1,2,3,5; outputs 4,8,12,20) and fill it using references. Then extend the cost sequence using a fill handle or keyboard alternative, explaining the selected formula, a copied formula, and why the outputs continue consistently. Solve C(m)>70 and check the neighboring whole months. Paper work is an explicitly named simulation if a spreadsheet is unavailable.",
+        "Teacher-scored rubric (0–2 each, maximum 8): correct relative reference and copy behavior, all expected values, valid recurrence and direct expression, and correct inequality boundary with honest evidence about the interaction. No simulated clicking or dragging can be claimed as observed usage.",
+        "First-party activity 8.1: create equivalent-ratio pairs (2,10),(4,20),(6,30),(8,40),(10,50), so b=5a and an input of 1 maps to 5. Explain that both values are scaled by the same nonzero factor. These are original numerical values, not a copied publisher table.",
+        "First-party activity 8.2 birthday-number trick using FICTIONAL month/day only (never require personal birth dates): set B1=4 (month), B2=9 (day); B4 = B1*5; B5 = B4+6; B6 = B5*20; B7 = B6+B2; B8 = B7-120. The result is 409. Symbolically (5m+6)*20+d-120 = 100m+d for all valid m,d; test hypothetical 12,31 -> 1231 and 1,1 -> 101. If an actual spreadsheet is available, click a cell to create references and check automatic updates; otherwise explicitly label a manual simulation. No protected actual birthday is collected.",
+        "First-party activity 8.3 fill-down: from A2=2,B2=10 set A3=A2+2 and B3=B2+10; drag or copy relative formulas through row 6 to make (2,10),(4,20),(6,30),(8,40),(10,50), preserving b=5a. Compare a relative reference to an absolute row reference, and explain why a formula copied to a new row uses the new previous row. Actual dragging is unverified until performed by a learner; pencil-created rows are explicitly simulated. Existing registration-fee recurrence example remains correct.",
+        "Source-aligned practice: P1 actually use fill-down for ratios if technology is available, P2 justify tenth term of arithmetic sequence 11,7,3,... (a10=11-4*9=-25), P3 reverse-engineer a first-party hidden month/day formula (human reasoning), P4 formula operations and P5/P6 earlier statistics review. Use a teacher rubric for interactive operation and open derivations; no unobserved spreadsheet operation gets machine-scored as completion.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): (1) explain what B4 = B3+10 becomes when filled down from row 4 to 5; (2) derive 100m+d for the invented birthday arithmetic; (3) explain why A2=2,B2=10 and iterative +2/+10 remain equivalent ratios. Score 0-2 each, total 6, by human reviewer. Never claim this substituted exercise is the publisher's locked Cool-down."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Relative reference",
+          "Definition": "A copied formula can update its cell reference based on the new row.",
+          "Rule": "Copy =B1+12 in B2 down one row to produce =B2+12 in B3.",
+          "Example": "B2=30, B3=42."
+        },
+        {
+          "Title": "Recurrence",
+          "Definition": "A recursive definition gives each term using the previous term and a starting value.",
+          "Rule": "State both start and update.",
+          "Example": "C(0)=18; C(m+1)=C(m)+12."
+        },
+        {
+          "Title": "Direct expression",
+          "Definition": "A direct formula gives a term using its index alone.",
+          "Rule": "With constant increase d, use C(m)=C(0)+dm.",
+          "Example": "C(m)=18+12m euros."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Build the whole cost sequence",
+          "Question": "Find total costs for months 0 through 6 starting at 18 and adding 12 monthly.",
+          "Method": "Translate the actual context into an explicit formula and independently verify the result.",
+          "Steps": [
+            "Month 0 is 18 euros.",
+            "Repeated addition gives month 1=30, month 2=42, month 3=54.",
+            "Month 4=66, month 5=78, month 6=90.",
+            "Check month 6 with direct formula 18+12×6=90."
+          ],
+          "Answer": "18,30,42,54,66,78,90 euros.",
+          "Check": "Every successive difference is 12 euros."
+        },
+        {
+          "Title": "Identify the first month above a threshold",
+          "Question": "Find the first whole month m with C(m)>70 euros.",
+          "Method": "Translate the actual context into an explicit formula and independently verify the result.",
+          "Steps": [
+            "Model 18+12m>70.",
+            "Subtract 18: 12m>52.",
+            "Divide positive 12: m>13/3.",
+            "The smallest whole month greater than 13/3 is 5.",
+            "Boundary check: C(4)=66≤70 and C(5)=78>70."
+          ],
+          "Answer": "Month 5 is the first month above 70 euros.",
+          "Check": "Month 4 fails the strict inequality and month 5 satisfies it."
+        },
+        {
+          "Title": "Extend equivalent ratios",
+          "Question": "Input quantities 1,2,3,5 have multiplier 4. Write outputs and a spreadsheet formula.",
+          "Method": "Translate the actual context into an explicit formula and independently verify the result.",
+          "Steps": [
+            "Enter A2=1 and B2 formula =4*A2, obtaining 4.",
+            "Copy the formula to rows containing A3=2 and A4=3, obtaining 8 and 12.",
+            "For A5=5 the output becomes 20.",
+            "Check all four ratios: 4/1=8/2=12/3=20/5=4."
+          ],
+          "Answer": "Outputs 4,8,12,20; copied formulas reference the corresponding input rows.",
+          "Check": "Every pair preserves the 1:4 ratio."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating month zero as month one",
+          "WhyWrong": "Indexing shifts the whole sequence.",
+          "Correction": "Label the one-time registration as month zero."
+        },
+        {
+          "Mistake": "Copying a fixed rather than relative reference",
+          "WhyWrong": "Each row could recompute from month zero instead of the previous month.",
+          "Correction": "Use a changing preceding-row reference in each copied formula."
+        },
+        {
+          "Mistake": "Rounding a strict inequality downward",
+          "WhyWrong": "Month 4 does not exceed 70.",
+          "Correction": "Test consecutive integer months around the exact rational boundary."
+        }
+      ],
+      "SummaryPoints": [
+        "A relative reference adapts when a formula is copied into a new row.",
+        "C(0)=18 and C(m+1)=C(m)+12 agrees with C(m)=18+12m.",
+        "Months zero to six cost 18,30,42,54,66,78,90 euros.",
+        "Actual spreadsheet fill behavior requires observation; written simulations are identified honestly."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original numerical scenario table",
+          "Description": "Text table of independently authored practice examples, with units in labels.",
+          "PrimaryLabel": "Scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "Month 0 (euros)",
+              "Cells": [
+                "18"
+              ]
+            },
+            {
+              "Label": "Month 1 (euros)",
+              "Cells": [
+                "30"
+              ]
+            },
+            {
+              "Label": "Month 2 (euros)",
+              "Cells": [
+                "42"
+              ]
+            },
+            {
+              "Label": "Month 3 (euros)",
+              "Cells": [
+                "54"
+              ]
+            },
+            {
+              "Label": "Month 4 (euros)",
+              "Cells": [
+                "66"
+              ]
+            },
+            {
+              "Label": "Month 5 (euros)",
+              "Cells": [
+                "78"
+              ]
+            },
+            {
+              "Label": "Month 6 (euros)",
+              "Cells": [
+                "90"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l08-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L08",
+      "CultureCode": "en",
+      "Title": "Using the Correlation Coefficient",
+      "ExplanationParagraphs": [
+        "Learning goal: calculate and interpret Pearson correlation r for a scatter plot using legitimate numerical technology where available; compare its value to a hand-checkable sample and explain the strength, direction, and limits of a linear relationship. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 3 Lesson 8, https://im.kendallhunt.com/HS/teachers/1/3/8/preparation.html (CC BY 4.0). The source specifically uses statistical technology and student argument, not only visual guessing.",
+        "Original hypothetical paired observations are (0,2),(1,4),(2,7),(3,9). Mean x=1.5 and mean y=5.5. Sum[(x−1.5)(y−5.5)]=12, x squared-deviation sum5, y squared-deviation sum29. Thus Pearson r=12/sqrt(5×29)=12/sqrt(145)≈0.996545758, a very strong positive linear correlation. This does not mean slope is 0.9965; slope of the fitted line is 2.4 output units per x unit.",
+        "An actual statistical technology check uses software to enter all four x-y pairs, select a linear regression or correlation command, and read r along with the sample count. If software is inaccessible, hand calculations and an accessible text scatter table support the learning activity but are not evidence that technology ran. Identify whether software reports r or r²; r²≈0.9931 is not r.",
+        "Student tasks: compute r for one additional dataset, interpret sign and strength, compare a scatter plot with the reported coefficient, and explain why changing the sign of y flips the sign of r. Consider scatter patterns with an outlier and a U shape, and avoid claiming that a high correlation proves one variable causes the other.",
+        "Teacher-scored rubric 0–2 each for correctly entered paired-data evidence or disclosed hand calculation, independently justified r computation, direction/strength interpretation, and critical discussion of nonlinearity, outliers and causation. An authored table or a calculator-looking number does not prove actual device use."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Correlation formula",
+          "Definition": "Pearson r is the centered cross-product sum divided by the square root of both centered squared-deviation sums.",
+          "Rule": "Use same paired observations for both variables and nonzero denominators.",
+          "Example": "r=12/sqrt(145)≈0.9965 for the four original points."
+        },
+        {
+          "Title": "Correlation versus slope",
+          "Definition": "Correlation is unitless and constrained to [−1,1]; regression slope retains output/input units.",
+          "Rule": "Do not read correlation as the rate of change.",
+          "Example": "This sample has slope 2.4 but r≈0.9965."
+        },
+        {
+          "Title": "Model interpretation",
+          "Definition": "A high magnitude r indicates strong *linear* association in the observed sample.",
+          "Rule": "Inspect the plotted points and context before inferring beyond the sample.",
+          "Example": "r≈0.9965 is strong positive association but not causation."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate r from centered sums",
+          "Question": "Find Pearson r for x0,1,2,3 and y2,4,7,9.",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Compute means x̄=1.5, ȳ=5.5.",
+            "Centered cross-products sum to 12.",
+            "Centered sums of squares are Sxx=5 and Syy=29.",
+            "Divide r=12/sqrt(5×29)=12/sqrt145≈0.996545758.",
+            "Sign is positive and magnitude near one."
+          ],
+          "Answer": "Pearson r≈0.99655, strong positive linear association.",
+          "Check": "Squared numerator144 is less than denominator product145, so |r|<1."
+        },
+        {
+          "Title": "Distinguish r and slope",
+          "Question": "What slope does the same pair set yield?",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Compute Sxy=12 and Sxx=5.",
+            "Least-squares slope is Sxy/Sxx=12/5=2.4.",
+            "Pearson r is Sxy/sqrt(Sxx Syy)=12/sqrt145≈0.9965.",
+            "The two different denominators produce different statistics.",
+            "Slope has response per input unit; r has none."
+          ],
+          "Answer": "Slope 2.4, correlation ≈0.9965.",
+          "Check": "Neither coefficient should be labelled with the other's units."
+        },
+        {
+          "Title": "Check sign under y reflection",
+          "Question": "If all y values are multiplied by −1 while x stays fixed, what happens to r?",
+          "Method": "Compute from the exact paired data, verify model assumptions and state what the evidence does not prove.",
+          "Steps": [
+            "Reflected y centered deviations are the negatives of the original.",
+            "Cross-product sum Sxy changes from +12 to −12.",
+            "Squared-deviation sums Sxx=5 and Syy=29 remain unchanged.",
+            "Thus new r=−12/sqrt145≈−0.9965."
+          ],
+          "Answer": "Correlation changes sign but not magnitude.",
+          "Check": "Negative scale reflection reverses association direction."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling r² the correlation coefficient",
+          "WhyWrong": "Some regression tools show coefficient of determination and r separately.",
+          "Correction": "Compute or label the correct statistic."
+        },
+        {
+          "Mistake": "Inferring causal direction from a high r",
+          "WhyWrong": "Correlation alone cannot establish mechanism or remove confounding.",
+          "Correction": "Describe the observed linear association and needed additional evidence."
+        },
+        {
+          "Mistake": "Interpreting r as the slope",
+          "WhyWrong": "Their units, formulas and ranges are different.",
+          "Correction": "Report both only with proper labels."
+        }
+      ],
+      "SummaryPoints": [
+        "Pearson r measures unitless direction and strength of linear association.",
+        "For the first-party four-point dataset, r=12/sqrt145≈0.99655; slope equals 2.4.",
+        "Software results must be checked against actual entered pairs and distinguished from r².",
+        "Teacher reviews scatter and contextual interpretation; no simulated tool-use claims."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original bivariate research illustration",
+          "Description": "Fictional numerical points with explicit provenance and limitations; no publisher or real participant data.",
+          "PrimaryLabel": "Variable / example",
+          "SecondaryLabel": "Statistic or interpretation",
+          "Rows": [
+            {
+              "Label": "Centered cross product Sxy",
+              "Cells": [
+                "12"
+              ]
+            },
+            {
+              "Label": "Centered x sum squares",
+              "Cells": [
+                "5"
+              ]
+            },
+            {
+              "Label": "Centered y sum squares",
+              "Cells": [
+                "29"
+              ]
+            },
+            {
+              "Label": "Pearson r",
+              "Cells": [
+                "12/sqrt(145)≈0.99655"
+              ]
+            },
+            {
+              "Label": "Regression slope",
+              "Cells": [
+                "2.4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

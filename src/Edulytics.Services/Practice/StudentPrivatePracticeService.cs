@@ -116,6 +116,43 @@ public sealed class StudentPrivatePracticeService(
         if (scoped.Error.HasValue)
             return StudentPrivatePracticeResult.Failure(scoped.Error.Value);
 
+        // The original 132-lesson Traditional Algebra 1 course has authored
+        // learning content, but its source-specific assessment/teacher-scored
+        // contracts are not yet accepted. An outcome or title-based fallback
+        // must not be presented as verified Algebra 1 Practice. Keep its
+        // broader scopes closed until course-wide assessment is certified.
+        const string traditionalAlgebra1Prefix =
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:";
+        var unapprovedAlgebra1Selection =
+            request.Scope == StudentPrivatePracticeScope.Lesson
+                ? scoped.LessonId.HasValue && context.Lessons.Any(x =>
+                    x.Id == scoped.LessonId.Value &&
+                    x.Code.StartsWith(traditionalAlgebra1Prefix, StringComparison.Ordinal))
+                : context.Lessons.Count > 0 && context.Lessons.All(x =>
+                    x.Code.StartsWith(traditionalAlgebra1Prefix, StringComparison.Ordinal));
+        // Even projected official-outcome rules currently marked READY_VERIFIED
+        // do not establish original Algebra 1 student-activity and grading
+        // acceptance. Deliberately reject before all registry/fallback routes;
+        // replace this gate only with reviewed source-specific acceptance.
+        // Only the independently accepted ALG1 U01:L01 exact six-choice set
+        // may pass the legacy ALG1 early refusal; all other ALG1 scope
+        // selections remain fail-closed, including unit/course requests.
+        const string acceptedAlgebra1FirstLesson =
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01";
+        var selectedAcceptedAlgebra1FirstLesson =
+            request.Scope == StudentPrivatePracticeScope.Lesson &&
+            scoped.LessonId.HasValue &&
+            context.Lessons.Any(lesson =>
+                lesson.Id == scoped.LessonId.Value &&
+                string.Equals(lesson.Code, acceptedAlgebra1FirstLesson, StringComparison.Ordinal) &&
+                LessonPracticeContractRegistry.TryResolve(lesson.Code, out var exactAlgebra1Contract) &&
+                exactAlgebra1Contract is not null);
+        if (unapprovedAlgebra1Selection && !selectedAcceptedAlgebra1FirstLesson)
+        {
+            return StudentPrivatePracticeResult.Failure(
+                StudentPrivatePracticeError.NoSupportedOutcomes);
+        }
+
         // General lesson Practice contracts are authoritative for READY_VERIFIED
         // lesson-scoped Practice. Supporting lessons do not need an official
         // OutcomeCode to use the exact solver/verifier path. Once a contract
@@ -174,6 +211,7 @@ public sealed class StudentPrivatePracticeService(
                     compatibleContract,
                     cancellationToken);
             }
+
         }
 
         var masteryByOutcome = context.OfficialMasteries

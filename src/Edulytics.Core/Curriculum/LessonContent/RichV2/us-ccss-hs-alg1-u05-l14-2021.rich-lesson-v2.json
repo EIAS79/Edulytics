@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l14-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L14",
+      "CultureCode": "en",
+      "Title": "Recalling Percent Change",
+      "ExplanationParagraphs": [
+        "Learning goal: express percentage increases and decreases as equivalent additive, distributive and single-multiplier forms, distinguishing retained amount from percentage amount and understanding the effect of successive percent changes. First-party Edulytiks adaptation of optional Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 14, https://im.kendallhunt.com/HS/teachers/1/5/14/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/14/index.html (CC BY 4.0). This is a review of earlier percent-change reasoning, not falsely labelled a new publisher Addressing objective.",
+        "Original fictional starting price $200. A 15% rise gives $200+$30=$230, equivalently200×1.15. A 20% markdown gives $200−$40=$160, equivalently200×0.8. Two successive changes of +10% then−10% give200×1.1×.9=$198, not the original $200; the second percent uses a different base.",
+        "A change of r percent is a multiplier1+r/100 for an increase and1−r/100 for a decrease, when the changes refer to the CURRENT value. Multiplying by.2 yields20% of the original, while multiplying by.8 gives the retained amount after a20% reduction.",
+        "Student task: match three equivalent expressions for percent changes, identify a non-equivalent distractor, compute successive changes in two orders and explain why symmetrical nominal percents do not cancel multiplicatively. Teacher-scored rubric0–2 each for correct percent arithmetic, equivalent forms, base interpretation and critique of incorrect cancellation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Increase multiplier",
+          "Definition": "Increasing by r% means multiplying by1+r/100.",
+          "Rule": "Combine base and added proportion.",
+          "Example": "15% increase factor1.15."
+        },
+        {
+          "Title": "Decrease multiplier",
+          "Definition": "Reducing by r% means retaining multiplier1−r/100.",
+          "Rule": "Subtract lost fraction from1.",
+          "Example": "20% decrease factor.80."
+        },
+        {
+          "Title": "Compounded percentages",
+          "Definition": "Successive percentage changes multiply their factors and generally do not cancel.",
+          "Rule": "Use current value for each change.",
+          "Example": "1.10×.90=.99, a net1% decline."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute an increase",
+          "Question": "What is15% more than$200?",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "15% as decimal=.15.",
+            "Amount added200×.15=30.",
+            "Total200+30=230.",
+            "Equivalently200×1.15=230."
+          ],
+          "Answer": "$230.",
+          "Check": "The increase is exactly$30."
+        },
+        {
+          "Title": "Compute a markdown",
+          "Question": "What remains after20% off$200?",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "20% of200=40.",
+            "Subtract40 from200 to get160.",
+            "Alternatively multiply by1−.2=.8.",
+            "Check200×.8=160."
+          ],
+          "Answer": "$160.",
+          "Check": "The discount40 plus final160 returns200."
+        },
+        {
+          "Title": "Explain sequential changes",
+          "Question": "Increase$200 by10%, then reduce resulting price by10%.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "After increase200×1.1=220.",
+            "Second decrease is10% of220=$22.",
+            "Final220−22=198.",
+            "Combined multiplier1.1×.9=.99.",
+            "This is$2 below initial despite equal nominal percents."
+          ],
+          "Answer": "$198; net1% loss.",
+          "Check": "198/200=.99."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming equal+10% and−10% undo one another",
+          "WhyWrong": "The two steps use different percentage bases.",
+          "Correction": "Multiply factors1.1 and.9."
+        },
+        {
+          "Mistake": "Confusing20% amount with80% remaining",
+          "WhyWrong": "The discount and sale price are different quantities.",
+          "Correction": "Distinguish .2x from .8x."
+        }
+      ],
+      "SummaryPoints": [
+        "Percent changes can be written with a single multiplicative factor.",
+        "An r% reduction retains1−r/100 of current amount.",
+        "Successive percentage changes compound rather than add simply.",
+        "Teacher checks explanation and equivalence rather than one answer."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "$200+15%",
+              "Cells": [
+                "$230"
+              ]
+            },
+            {
+              "Label": "$200−20%",
+              "Cells": [
+                "$160"
+              ]
+            },
+            {
+              "Label": "+10%,then−10%",
+              "Cells": [
+                "$198"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

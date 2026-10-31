@@ -1,0 +1,135 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l15-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L15",
+      "CultureCode": "en",
+      "Title": "Vertex Form",
+      "ExplanationParagraphs": [
+        "Learning goal: recognize vertex form a(x−h)²+k and use it to identify the vertex, axis and maximum/minimum, comparing it to standard and factored representations. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L15 teacher https://im.kendallhunt.com/HS/teachers/1/6/15/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/15/index.html (CC BY 4.0). The source introduces vertex form because previous work found extrema using intercepts.",
+        "Original function f(x)=2(x−3)²+4 has vertex(3,4), axis x3, opens upward and has minimum4. Expanded form2(x²−6x+9)+4=2x²−12x+22 yields y-intercept f(0)=22; factored form over real numbers is not possible because this function has no real zeros (all outputs≥4). Do not invent x-intercepts.",
+        "At x1, f=2(−2)²+4=12; at x5, f=2(2)²+4=12, demonstrating symmetry about x3. The coefficient2 makes vertical changes twice as large as those of y=(x−3)²+4 for the same displacement. The vertex coordinates are (h,k) because the squared term is zero at x=h.",
+        "Student task: match three forms/graphs, find vertex and explain why no horizontal intercept exists for this example, compare f with an alternate negative-coefficient parabola and support conclusions with algebra. Teacher-scored rubric0–2 each for vertex and axis, expanded equivalence, full graph feature explanation and symmetric-point evidence."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vertex form",
+          "Definition": "A quadratic can be written a(x−h)²+k with vertex(h,k).",
+          "Rule": "Set x=h to remove square term.",
+          "Example": "2(x−3)²+4 vertex(3,4)."
+        },
+        {
+          "Title": "Minimum or maximum",
+          "Definition": "Positive a opens up and yields minimum k; negative a opens down and yields maximum k.",
+          "Rule": "Read sign of a.",
+          "Example": "a=2>0 implies min4."
+        },
+        {
+          "Title": "Symmetry",
+          "Definition": "Inputs equidistant from h give same output.",
+          "Rule": "Compare h−d and h+d.",
+          "Example": "f(1)=f(5)=12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read vertex",
+          "Question": "Find vertex, axis and range of f=2(x−3)²+4.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "Squared quantity≥0.",
+            "Minimum occurs x−3=0, x3.",
+            "At x3 output4.",
+            "Axis is x3, range y≥4.",
+            "Positive2 opens upward."
+          ],
+          "Answer": "Vertex(3,4), axis x3, range[4,∞).",
+          "Check": "f(x) cannot be below4."
+        },
+        {
+          "Title": "Rewrite as standard form",
+          "Question": "Expand f=2(x−3)²+4.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "Square binomial (x−3)²=x²−6x+9.",
+            "Multiply2:2x²−12x+18.",
+            "Add4 to obtain2x²−12x+22.",
+            "At x0 output22.",
+            "Verify x3 gives18−36+22=4."
+          ],
+          "Answer": "2x²−12x+22.",
+          "Check": "Both forms agree at vertex and intercept."
+        },
+        {
+          "Title": "Check equal-height points",
+          "Question": "Find f1 and f5.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "At1 deviation from3 is−2, squared4.",
+            "At5 deviation+2, squared4.",
+            "Each output2×4+4=12.",
+            "Symmetry about x3 explains equality."
+          ],
+          "Answer": "f(1)=f(5)=12.",
+          "Check": "Equal absolute deviations give equal squares."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reading vertex x-coordinate with wrong sign",
+          "WhyWrong": "(x−3)² vanishes at+3.",
+          "Correction": "Solve inside expression=0."
+        },
+        {
+          "Mistake": "Assuming every parabola crosses x-axis",
+          "WhyWrong": "A positive minimum may be above zero.",
+          "Correction": "Check range before inventing roots."
+        }
+      ],
+      "SummaryPoints": [
+        "Vertex form reveals extremum and symmetry directly.",
+        "The original quadratic has vertex(3,4), minimum4 and no real zeros.",
+        "Expanded form is2x²−12x+22.",
+        "Teacher reviews full graphical reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party vertex-form graph checks",
+          "Description": "Accessible equation/output table for original examples, not source-publisher artwork.",
+          "PrimaryLabel": "Feature",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "x0",
+              "Cells": [
+                "22"
+              ]
+            },
+            {
+              "Label": "x1",
+              "Cells": [
+                "12"
+              ]
+            },
+            {
+              "Label": "x3",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "x5",
+              "Cells": [
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

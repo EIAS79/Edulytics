@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l08-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L08",
+      "CultureCode": "en",
+      "Title": "Interpreting and Creating Graphs",
+      "ExplanationParagraphs": [
+        "Learning goal: use a complex or ambiguous verbal description to design a plausible graph, label features and justify assumptions; interpret average rate in context. First-party Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 8, https://im.kendallhunt.com/HS/teachers/1/4/8/preparation.html and student tasks at https://im.kendallhunt.com/HS/students/1/4/8/index.html (CC BY 4.0). Official Addressing HSF-IF.B.4 and HSF-IF.B.6. The original activities involve flag-raising and descriptions/video; text examples here preserve modeling without claiming access to source clips.",
+        "Independent original flag-raising scenario: a flag starts at 0 metres, rises uniformly to 6 metres between t=0 and t=3 seconds, stays fixed at 6m until t=8, then lowers uniformly to 0m by t=11. The height H(t) is a piecewise-linear *model*, not an observation of a real flag. Its anchors are (0,0),(3,6),(8,6),(11,0); a learner connects these with straight lines, units and an explicitly stated assumption of constant speed in each moving interval.",
+        "Piecewise function for 0≤t≤11: H(t)=2t for 0≤t≤3; H(t)=6 for 3≤t≤8; H(t)=22−2t for 8≤t≤11. At t=3 both first two formulas give6, at t=8 both final formulas give6. Upward speed 2m/s, rest speed0m/s, downward rate −2m/s; all heights remain nonnegative.",
+        "Modeling variation: if the flag briefly pauses at half height on the way up, a graph consistent with that new description gains an extra horizontal segment. More than one graph may satisfy a vague verbal account; student must identify what is known, what is inferred and which assumptions determine the shape.",
+        "Student activity: draw two different plausible graphs from an underspecified situation, label intercepts/maxima/constant intervals and explain their common and different features. State that actual publisher video clips are not supplied in this first-party JSON; do not imply a video was watched or produced. Teacher-scored rubric 0–2 each for faithful context model, accurate graph/features and rates, explicit assumptions, and critique of an alternative valid graph."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Model from a description",
+          "Definition": "A graph can encode start, stop, increasing and decreasing stages inferred from narrative.",
+          "Rule": "List milestones and avoid invented instantaneous dynamics.",
+          "Example": "Anchors (0,0),(3,6),(8,6),(11,0)."
+        },
+        {
+          "Title": "Piecewise graph",
+          "Definition": "Different mathematical rules apply to separate input intervals.",
+          "Rule": "Confirm shared endpoints agree.",
+          "Example": "H(t)=2t,6,22−2t across three phases."
+        },
+        {
+          "Title": "Ambiguity",
+          "Definition": "A verbal description may not uniquely determine a graph without assumptions.",
+          "Rule": "Distinguish measured facts from modeling choices.",
+          "Example": "A flag could accelerate rather than rise at constant speed while reaching the same height in3s."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write height rule in phases",
+          "Question": "Model flag up, pause and down using anchors (0,0),(3,6),(8,6),(11,0).",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "Initial rise slope (6−0)/(3−0)=2m/s, so H=2t on [0,3].",
+            "Between3 and8 height is fixed at6.",
+            "Downward slope (0−6)/(11−8)=−2m/s.",
+            "Line through (8,6) with slope −2 has rule H(t)=6−2(t−8)=22−2t.",
+            "Endpoint formulas agree at3 and8."
+          ],
+          "Answer": "H(t)=2t on [0,3], 6 on [3,8], 22−2t on [8,11].",
+          "Check": "H(0)=0,H(3)=6,H(8)=6,H(11)=0."
+        },
+        {
+          "Title": "Interpret graph intervals",
+          "Question": "When is flag stationary and what is maximum height?",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "The graph rises until3s.",
+            "It is horizontal from3s to8s, a five-second pause.",
+            "It then falls to zero at11s.",
+            "Maximum output is6m at every time in [3,8]."
+          ],
+          "Answer": "Stationary 3–8s; maximum 6m there.",
+          "Check": "The plateau duration is8−3=5s."
+        },
+        {
+          "Title": "Compare an alternative motion",
+          "Question": "Could the flag accelerate upward but still reach6m at3s?",
+          "Method": "Connect a labelled original graph or table to exact values; verify calculations independently.",
+          "Steps": [
+            "The two endpoint facts (0,0),(3,6) constrain net rise only.",
+            "A curved increasing graph could also join the endpoints.",
+            "Such a graph would not have constant instantaneous rate.",
+            "The secant average still equals6/3=2m/s.",
+            "State an acceleration assumption explicitly before changing the model."
+          ],
+          "Answer": "Yes; endpoint data allow multiple paths with same average rate.",
+          "Check": "No exact intermediate heights were supplied."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Presenting a chosen sketch as the only permissible graph",
+          "WhyWrong": "Ambiguous input descriptions allow alternative interpolations.",
+          "Correction": "List assumptions and accept consistent alternatives."
+        },
+        {
+          "Mistake": "Assuming pause means zero height",
+          "WhyWrong": "The flag may stop while elevated.",
+          "Correction": "Horizontal segment at6m, not at0m."
+        },
+        {
+          "Mistake": "Claiming unavailable publisher video evidence",
+          "WhyWrong": "The lesson's first-party JSON has no verified video playback.",
+          "Correction": "Disclose demonstration is a text-based original simulation."
+        }
+      ],
+      "SummaryPoints": [
+        "A graph from a narrative requires known milestones and explicit assumptions.",
+        "A piecewise model can represent increasing, constant and decreasing intervals.",
+        "Rate of change and key features can be described without pretending the underlying motion was measured.",
+        "Teacher reviews alternate defensible sketches and their limitations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party function table",
+          "Description": "These are independently authored hypothetical data, not copied publisher graphs, videos or classroom observations.",
+          "PrimaryLabel": "Input or phase",
+          "SecondaryLabel": "Original output",
+          "Rows": [
+            {
+              "Label": "0–3s",
+              "Cells": [
+                "rising at +2m/s"
+              ]
+            },
+            {
+              "Label": "3–8s",
+              "Cells": [
+                "stationary at6m"
+              ]
+            },
+            {
+              "Label": "8–11s",
+              "Cells": [
+                "lowering at −2m/s"
+              ]
+            },
+            {
+              "Label": "maximum",
+              "Cells": [
+                "6m across [3,8]"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

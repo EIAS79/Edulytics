@@ -1,0 +1,136 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l10-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L10",
+      "CultureCode": "en",
+      "Title": "Rewriting Quadratic Expressions in Factored Form (Part 4)",
+      "ExplanationParagraphs": [
+        "Learning goal: factor quadratic expressions with leading coefficient other than1 by regrouping a split middle term, verify signed coefficients and relate resulting factors to zeros. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 10 teacher https://im.kendallhunt.com/HS/teachers/1/7/10/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/10/index.html (CC BY 4.0). The source extends prior monic factoring to more complicated expressions.",
+        "Original quadratic 2x²+7x+3. Product of leading2 and constant3 equals6; find a split of middle coefficient7 into6+1. Then 2x²+6x+x+3=2x(x+3)+1(x+3)=(2x+1)(x+3). The zero candidates, if expression is set to0, are x−1/2 and x−3.",
+        "Original signed example 3x²−14x+8: product a·c=24 and split−14 as−12−2. Regroup 3x²−12x−2x+8=3x(x−4)−2(x−4)=(3x−2)(x−4), which gives zeros2/3 and4. Factoring is an identity; solving requires an additional equation equal zero.",
+        "Student task: construct two different grouping arrangements, expand to verify and explicitly distinguish factoring expression from solving equation. Teacher-scored rubric0–2 for suitable middle split, valid grouping, both full identities and clear domain/root interpretation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Leading coefficient",
+          "Definition": "A nonmonic trinomial ax²+bx+c has a≠1.",
+          "Rule": "Find factor products with a and c.",
+          "Example": "2x²+7x+3."
+        },
+        {
+          "Title": "Middle-term split",
+          "Definition": "Search two numbers with sum b and product a·c for integer grouping.",
+          "Rule": "6+1=7,6×1=6.",
+          "Example": "Split7x into6x+x."
+        },
+        {
+          "Title": "Grouping",
+          "Definition": "Factor equal binomial from two pairs.",
+          "Rule": "2x(x+3)+(x+3)=(2x+1)(x+3).",
+          "Example": "Verify expansion."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Factor2x²+7x+3",
+          "Question": "Use product a·c and sum b.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Compute a·c=2×3=6.",
+            "Find6 and1 summing7.",
+            "Rewrite2x²+6x+x+3.",
+            "Factor2x(x+3)+(x+3).",
+            "Common factor x+3 gives(2x+1)(x+3)."
+          ],
+          "Answer": "(2x+1)(x+3).",
+          "Check": "Expand to2x²+7x+3."
+        },
+        {
+          "Title": "Factor with negative middle coefficient",
+          "Question": "Factor3x²−14x+8.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Compute a·c=3×8=24.",
+            "Find−12 and−2 sum−14 and product24.",
+            "Rewrite3x²−12x−2x+8.",
+            "Group3x(x−4)−2(x−4).",
+            "Factor(3x−2)(x−4)."
+          ],
+          "Answer": "(3x−2)(x−4).",
+          "Check": "Expansion gives original coefficients."
+        },
+        {
+          "Title": "Read roots when set to zero",
+          "Question": "Solve(2x+1)(x+3)=0.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Set first factor2x+1=0.",
+            "Root x−1/2.",
+            "Set second x+3=0.",
+            "Root x−3.",
+            "Verify each vanishes a factor."
+          ],
+          "Answer": "x=−1/2 or−3.",
+          "Check": "Factoring itself is not the same as solving until equation specified."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Forgetting to multiply a·c for nonmonic middle split",
+          "WhyWrong": "Using c alone can choose wrong split.",
+          "Correction": "Find product a·c and sum b."
+        },
+        {
+          "Mistake": "Claiming factors automatically provide solutions when no equation is given",
+          "WhyWrong": "An expression has zeros but a solving problem needs equality.",
+          "Correction": "Distinguish expression factorization and f(x)=0."
+        }
+      ],
+      "SummaryPoints": [
+        "Nonmonic factoring can be done by middle-term splitting and grouping.",
+        "2x²+7x+3=(2x+1)(x+3).",
+        "Signed grouping handles3x²−14x+8.",
+        "Teacher reviews factor validity and root interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factor and completing-square verification",
+          "Description": "Independent mathematical equations, checked roots and explanations, not a reproduction of publisher diagrams.",
+          "PrimaryLabel": "Expression or condition",
+          "SecondaryLabel": "Equivalent form or solutions",
+          "Rows": [
+            {
+              "Label": "2x²+7x+3",
+              "Cells": [
+                "(2x+1)(x+3)"
+              ]
+            },
+            {
+              "Label": "3x²−14x+8",
+              "Cells": [
+                "(3x−2)(x−4)"
+              ]
+            },
+            {
+              "Label": "first equation roots",
+              "Cells": [
+                "−3,−1/2"
+              ]
+            },
+            {
+              "Label": "second equation roots",
+              "Cells": [
+                "2/3,4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

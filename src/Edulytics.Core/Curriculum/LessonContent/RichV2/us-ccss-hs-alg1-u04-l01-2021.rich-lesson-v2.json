@@ -1,0 +1,171 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l01-v12-source-activities-reviewed-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L01",
+      "CultureCode": "en",
+      "Title": "Describing and Graphing Situations",
+      "ExplanationParagraphs": [
+        "Learning objective: distinguish functional from nonfunctional relations using unique outputs per input, identify independent/dependent variables and use descriptive graphs to model a changing situation. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 1, https://im.kendallhunt.com/HS/teachers/1/4/1/preparation.html (CC BY 4.0). The source uses bagel purchase choices and a dog on a leash; this lesson preserves reasoning about possible outputs and graph shape with independently authored datasets rather than publisher artwork.",
+        "Original first-party bicycle-charge scenario: a rental bicycle costs $4 unlock fee plus $3 per elapsed hour, with whole hours h≥0, so price P(h)=4+3h dollars. The pairs (0,4),(1,7),(2,10),(3,13) are functional: for each h exactly one total. Asking only 'total price of rental' with unspecified duration yields many totals, but that does not invalidate the function because the input must be stated.",
+        "Contrast a nonfunction relation R={(1,5),(2,7),(2,9),(3,11)}. Input 2 is paired with two different outputs 7 and9; no unique output can be determined. A graph with two points vertically aligned at x=2 fails the vertical-line test. Distinguish multiple inputs giving one output, which is allowed: Q={(0,4),(1,4),(2,7)} is functional despite output 4 appearing twice.",
+        "Original motion story: during seconds 0–2 a remote toy moves away from a post at 2 metres per second; seconds 2–5 it stays 4 metres away; seconds 5–7 it approaches at 2 metres per second. Its distance graph is piecewise increasing, constant, decreasing. For any fixed elapsed time 0≤t≤7 it has exactly one distance; it does not matter whether the same distance occurs at different times.",
+        "Student task: sketch the toy motion graph and independently label rates, classify three different tables as functions or nonfunctions, construct a counterexample relation and explain why it fails. Teacher-scored rubric 0–2 each for input/output definition, valid classification with evidence, correctly labelled motion graph and reasoned verbal critique (8 maximum). Do not claim a publisher photograph or actual physical motion was reproduced.",
+        "V12 source-equivalent first-party bundle-price discussion: a bakery sells individual rolls for $1.60, a six-pack for $7.20 and a twelve-pack for $12.80. For exactly 13 rolls, different purchase plans yield different totals: 13 singles cost $20.80; two six-packs and one single cost $16.00; a twelve-pack plus one single costs $14.40; one six-pack plus seven singles costs $18.40. Each plan is feasible. Students defend one interpretation and critique why input \"number of rolls\" alone does NOT select a unique total without a purchase-policy input; under cheapest-price policy there is exactly one price for each integer quantity.",
+        "V12 function and graph task: label an actual input-output table for bike hours h=0,1,2,3 and cost P(h)=4+3h, then draw its points. In a second plotted relation, include (2,7) and (2,9) at the same input to show why the vertical line at x=2 intersects twice. Explain the difference between one output per fully specified input and a single y-value repeated for different inputs. Interpret x and y coordinates and state relevant whole-hour domain.",
+        "Publisher student lesson uses alternative bagel purchase plans and graph narratives including motion of a leashed animal; independently invented examples preserve the key ambiguity/function-property comparison without source pixels. Draft teacher rubric0–2 each for graph and axes, uniqueness argument, contextual model comparison and independent written explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Function definition",
+          "Definition": "A relation is a function when every permitted input maps to exactly one output.",
+          "Rule": "A repeated output is allowed; two different outputs for one input are not.",
+          "Example": "P(h)=4+3h gives one price for each whole-hour h."
+        },
+        {
+          "Title": "Input and output",
+          "Definition": "The independent input determines a dependent output under the model.",
+          "Rule": "Name each quantity and units.",
+          "Example": "Hours h is input; dollar charge P(h) is output."
+        },
+        {
+          "Title": "Graph uniqueness",
+          "Definition": "A vertical line crossing a relation at two distinct y-values signals nonfunction.",
+          "Rule": "Check whether a single x has multiple y-values.",
+          "Example": "Points (2,7) and (2,9) violate uniqueness."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check a rental table",
+          "Question": "Is P(h)=4+3h a function and what are outputs for h0,1,2,3?",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "State h∈{0,1,2,...} hours.",
+            "Compute P(0)=4, P(1)=7, P(2)=10, P(3)=13.",
+            "Each input has one value by the equation.",
+            "Therefore table relation is a function."
+          ],
+          "Answer": "Yes; input-output pairs (0,4),(1,7),(2,10),(3,13).",
+          "Check": "Every input occurs with one output."
+        },
+        {
+          "Title": "Find nonfunction evidence",
+          "Question": "Is R={(1,5),(2,7),(2,9),(3,11)} a function?",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Identify unique inputs 1,2,3.",
+            "At input2 find outputs7 and9.",
+            "Since 7≠9, there is not a unique output for input2.",
+            "A vertical line x=2 would meet two points."
+          ],
+          "Answer": "No, R is not a function.",
+          "Check": "Two distinct outputs share the same input."
+        },
+        {
+          "Title": "Represent toy movement",
+          "Question": "Find toy distance at t=1,3,6 seconds in a piecewise motion.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "From0 to2 sec, d(t)=2t, so d(1)=2 metres.",
+            "From2 to5, d=4, so d(3)=4 metres.",
+            "From5 to7, d=4−2(t−5), so d(6)=2 metres.",
+            "Points are connected by up, horizontal, down segments.",
+            "Each time still has one distance."
+          ],
+          "Answer": "Distances d(1)=2,d(3)=4,d(6)=2 metres.",
+          "Check": "All distances in allowed time interval are 0–4 metres."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming two inputs may not share one output",
+          "WhyWrong": "Only one input having multiple outputs violates the definition.",
+          "Correction": "Apply uniqueness in input-to-output direction."
+        },
+        {
+          "Mistake": "Calling an entire physical scenario nonfunctional because time changes",
+          "WhyWrong": "Time is explicitly an input and output changes with time.",
+          "Correction": "Fix one time and ask whether the output is unique."
+        }
+      ],
+      "SummaryPoints": [
+        "A function assigns exactly one output to every input in its domain.",
+        "Tables and graphs may display multiple repeated outputs without violating uniqueness.",
+        "Motion can be increasing, constant and decreasing and remain a function.",
+        "Teacher reviews graphs and explanations, not just arithmetic."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party input/output table",
+          "Description": "Independent original functional models and their exact numeric outputs, including domain limits.",
+          "PrimaryLabel": "Function input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "h=0",
+              "Cells": [
+                "P=4 dollars"
+              ]
+            },
+            {
+              "Label": "h=1",
+              "Cells": [
+                "P=7 dollars"
+              ]
+            },
+            {
+              "Label": "h=2",
+              "Cells": [
+                "P=10 dollars"
+              ]
+            },
+            {
+              "Label": "h=3",
+              "Cells": [
+                "P=13 dollars"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Four different 13-roll purchase plans",
+          "Description": "The purchase strategy, not just quantity, is needed to identify the total in this fictional price list.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "13 singles",
+              "Cells": [
+                "$20.80"
+              ]
+            },
+            {
+              "Label": "2 six-packs + 1 single",
+              "Cells": [
+                "$16.00"
+              ]
+            },
+            {
+              "Label": "12-pack + 1 single",
+              "Cells": [
+                "$14.40"
+              ]
+            },
+            {
+              "Label": "6-pack + 7 singles",
+              "Cells": [
+                "$18.40"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

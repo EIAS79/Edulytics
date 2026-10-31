@@ -1,0 +1,143 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l15-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L15",
+      "CultureCode": "en",
+      "Title": "Comparing Data Sets",
+      "ExplanationParagraphs": [
+        "Learning goal: compare numerical distributions using measures of center, standard deviation and IQR, then justify a context-sensitive decision. This is first-party original Edulytiks material aligned with Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 15, https://im.kendallhunt.com/HS/teachers/1/1/15/preparation.html (CC BY 4.0). Publisher roles: Building On HSS-ID.A.1; Addressing HSS-ID.A.1 and HSS-ID.A.2; Building Towards HSS-ID.A.2.",
+        "Original hypothetical scores from five games per person: Player A scores 100,110,120,130,140; Player B scores 118,119,120,121,122. Both means and medians equal 120, but A has greater variability. Using population SD: A σ=sqrt((400+100+0+100+400)/5)=sqrt(200)≈14.14; B σ=sqrt((4+1+0+1+4)/5)=sqrt(2)≈1.41 points.",
+        "Using the median-of-halves convention, A quartiles are 105 and 135 (IQR 30); B quartiles are 118.5 and 121.5 (IQR 3). The first player offers higher peaks but greater risk; the second is more consistent. Which player is preferable depends on a decision-maker's stated objective and cannot be reduced to a single universally best score.",
+        "Student task: draw both dot plots on one score axis, independently calculate centers and spreads, and recommend a player for each of two differently stated team goals. Compare why a higher maximum versus consistency could matter and critique a peer's numerical support. These datasets are original examples rather than exact publisher bowling diagrams; the source also asks students to interpret marathon-time groups.",
+        "Teacher-scored rubric: 0–2 points each for accurate means/medians, accurate IQR/SD, a comparison using common axes and units, and a defensible choice with stated goal and critique (maximum 8). Player-selection reasoning is human reviewed, not automatically graded as one fixed preference.",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L15: Source asks choose bowlers from 25-game histograms; invented five-game alternatives are examples, not measured source values. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): For fictional A/B both centers120, compute SD sqrt200 vs sqrt2, IQR30 vs3 and support team preference. A teacher scores 0, 1 or 2 per criterion: Accurate centers; Spread measures; Defensible decision. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Center versus spread",
+          "Definition": "Mean and median summarize location, while IQR and standard deviation quantify variability.",
+          "Rule": "Equal means do not imply equal ranges or distributions.",
+          "Example": "Both players average 120, but one has population SD about 14.14 and the other 1.41."
+        },
+        {
+          "Title": "Decision criterion",
+          "Definition": "A preference must be justified according to a stated outcome or risk objective.",
+          "Rule": "Name consistency versus occasional high score before selecting a player.",
+          "Example": "A reliability-focused team may prioritize Player B's tight distribution."
+        },
+        {
+          "Title": "Comparable graphical representation",
+          "Definition": "A fair visual comparison uses equivalent units, sample sizes and horizontal scales.",
+          "Rule": "Place all scores on the same score axis.",
+          "Example": "Five games per player; score range A 100–140, B 118–122."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare centers",
+          "Question": "Find mean and median for both five-score sets.",
+          "Method": "Calculate sums and ordered middle observations.",
+          "Steps": [
+            "Player A total is 600 across five games; mean 600/5=120.",
+            "Player B total is also 600; mean 120.",
+            "Each ordered set has 120 at the middle third position.",
+            "Therefore both medians equal 120."
+          ],
+          "Answer": "Both players: mean 120 and median 120 points.",
+          "Check": "Each set has five scores totaling 600."
+        },
+        {
+          "Title": "Compare population standard deviations",
+          "Question": "Which player has lower population standard deviation?",
+          "Method": "Compute mean-centered squared deviations and divide by n=5.",
+          "Steps": [
+            "A deviations about 120 are -20,-10,0,10,20; squared sum 1000.",
+            "A variance=1000/5=200, SD=sqrt(200)≈14.14.",
+            "B deviations -2,-1,0,1,2 have squared sum 10.",
+            "B variance=10/5=2, SD=sqrt(2)≈1.41.",
+            "Player B is much less variable."
+          ],
+          "Answer": "B has population SD about 1.41 points versus A about 14.14.",
+          "Check": "Both calculations use n=5, not n−1."
+        },
+        {
+          "Title": "Compare quartiles and IQR",
+          "Question": "Use median-of-halves to compare the central-half spreads.",
+          "Method": "Exclude median 120, find each pair's midpoint.",
+          "Steps": [
+            "A lower pair 100,110 gives Q1=105; upper pair 130,140 gives Q3=135.",
+            "A IQR=135−105=30.",
+            "B lower pair 118,119 gives Q1=118.5; upper 121,122 gives Q3=121.5.",
+            "B IQR=121.5−118.5=3.",
+            "The central half of B is much more tightly clustered."
+          ],
+          "Answer": "IQR A=30, B=3 points.",
+          "Check": "The SD and IQR comparisons agree on which group is more variable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Choosing a player by mean alone",
+          "WhyWrong": "Equal mean scores can conceal radically different consistency.",
+          "Correction": "Add a variability measure and specify the team's objective."
+        },
+        {
+          "Mistake": "Treating a high maximum as automatically best",
+          "WhyWrong": "High outliers may be rare and accompanied by larger downside variability.",
+          "Correction": "Explain the relevant utility/risk tradeoff."
+        },
+        {
+          "Mistake": "Comparing differently scaled histograms without checking axes",
+          "WhyWrong": "Inconsistent scales distort visual impressions.",
+          "Correction": "Use the same horizontal score scale."
+        }
+      ],
+      "SummaryPoints": [
+        "Center and spread are distinct: both players average 120, while A is much more variable.",
+        "A population SD≈14.14 and IQR=30; B SD≈1.41 and IQR=3.",
+        "Context determines what counts as a preferable performance profile.",
+        "Human-reviewed recommendations require explicit criteria rather than fabricated automatic grading."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original five-game bowling comparison",
+          "Description": "Accessible statistics in points for hypothetical players; not publisher artwork.",
+          "PrimaryLabel": "Statistic",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "A mean / median",
+              "Cells": [
+                "120 / 120"
+              ]
+            },
+            {
+              "Label": "A population SD / IQR",
+              "Cells": [
+                "14.14 / 30"
+              ]
+            },
+            {
+              "Label": "B mean / median",
+              "Cells": [
+                "120 / 120"
+              ]
+            },
+            {
+              "Label": "B population SD / IQR",
+              "Cells": [
+                "1.41 / 3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

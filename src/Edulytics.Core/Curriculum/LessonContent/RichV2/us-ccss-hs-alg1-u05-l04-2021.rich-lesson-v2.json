@@ -1,0 +1,140 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l04-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L04",
+      "CultureCode": "en",
+      "Title": "Understanding Decay",
+      "ExplanationParagraphs": [
+        "Learning goal: explain fractional decrease as repeated multiplication by a remaining fraction, distinguish the amount lost from the amount retained, and compare a constant-factor decay with subtraction of a fixed amount. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 4, https://im.kendallhunt.com/HS/teachers/1/5/4/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/4/index.html (CC BY 4.0). The source uses the idea that losing a fraction leaves a complementary fraction.",
+        "Original fictional used-laptop depreciation: starting advertised value $640, losing25% of its CURRENT value each year. Remaining multiplier is1−0.25=0.75, so V(t)=640(0.75)^t for whole years t≥0. Values are $640,$480,$360,$270 at years0–3. Losses are $160,$120,$90 respectively: absolute dollar losses shrink while percent lost remains25%.",
+        "Contrast a different model subtracting a fixed $160 every year: 640,480,320,160; it matches the first decay model only at t0 and1, then diverges. If the original problem were 'lose $160 per year', repeated subtraction would be appropriate. The exact wording and reference amount matter.",
+        "Student task: explain algebraically why x decreased by one quarter gives x(3/4), extend a table and graph both models on same axes, and interpret when a physical amount would make an indefinite model implausible. Teacher-scored rubric 0–2 each for remaining-fraction derivation, correct values, model contrast and contextual limitations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Decay factor",
+          "Definition": "For a fractional decrease r between0 and1, multiplier is1−r.",
+          "Rule": "Apply to each CURRENT amount.",
+          "Example": "25% loss means multiply by0.75."
+        },
+        {
+          "Title": "Constant percentage versus amount",
+          "Definition": "A constant percentage loss yields changing absolute losses.",
+          "Rule": "Find dollar differences across periods.",
+          "Example": "Losses160,120,90 while percent is25% each year."
+        },
+        {
+          "Title": "Positive exponential model",
+          "Definition": "With a>0 and 0<b<1, a·b^t decreases while staying positive.",
+          "Rule": "Identify initial a and multiplier b.",
+          "Example": "V(t)=640(0.75)^t."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute successive decay",
+          "Question": "Find values at years1,2,3 for starting640 and 25% yearly loss.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Remaining fraction=0.75.",
+            "Year1 640×0.75=480.",
+            "Year2 480×0.75=360.",
+            "Year3 360×0.75=270.",
+            "Check each ratio to previous equals0.75."
+          ],
+          "Answer": "$480,$360,$270.",
+          "Check": "Multiplying all years by same0.75 factor."
+        },
+        {
+          "Title": "Compare percent and dollar decrease",
+          "Question": "Why do year-to-year dollar losses change?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "First loss640−480=160.",
+            "Second loss480−360=120.",
+            "Third loss360−270=90.",
+            "Each is 25% of that year's previous amount, not of initial640."
+          ],
+          "Answer": "Losses $160,$120,$90, still25% each interval.",
+          "Check": "160/640=120/480=90/360=.25."
+        },
+        {
+          "Title": "Compare repeated subtraction",
+          "Question": "What is value at t2 if $160 is removed each year?",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Start640.",
+            "After1 year subtract160 to get480.",
+            "After2 years subtract160 again, giving320.",
+            "Multiplicative model instead gives360.",
+            "Different wording changes mathematical model."
+          ],
+          "Answer": "Constant subtraction model t2=$320; decay-factor model t2=$360.",
+          "Check": "The paths match at t1 but diverge thereafter."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying by0.25 instead of0.75 after a25% loss",
+          "WhyWrong": "0.25 is the LOST fraction, not retained.",
+          "Correction": "Use1−0.25=0.75."
+        },
+        {
+          "Mistake": "Subtracting25% of the original every year",
+          "WhyWrong": "This creates a different linear pattern.",
+          "Correction": "Compute percent from current amount."
+        },
+        {
+          "Mistake": "Treating hypothetical price drop as a market forecast",
+          "WhyWrong": "Actual depreciation need not follow a fixed factor.",
+          "Correction": "State illustrative assumption."
+        }
+      ],
+      "SummaryPoints": [
+        "Fractional decay is repeated multiplication by the retained fraction.",
+        "A25% drop retains75% each period.",
+        "Dollar losses shrink even when percent decrease remains fixed.",
+        "Teacher reviews model reasoning and limitations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "year0",
+              "Cells": [
+                "$640"
+              ]
+            },
+            {
+              "Label": "year1",
+              "Cells": [
+                "$480"
+              ]
+            },
+            {
+              "Label": "year2",
+              "Cells": [
+                "$360"
+              ]
+            },
+            {
+              "Label": "year3",
+              "Cells": [
+                "$270"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

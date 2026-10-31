@@ -1,0 +1,168 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l01-v12-source-activities-reviewed-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L01",
+      "CultureCode": "en",
+      "Title": "Growing and Growing",
+      "ExplanationParagraphs": [
+        "Learning goal: explore and compare repeated addition with repeated multiplication through tables and graphs, predict when a rapidly multiplying amount overtakes a larger but steadily increasing one, and describe reasoning before formal function labels. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 1, https://im.kendallhunt.com/HS/teachers/1/5/1/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/1/index.html (CC BY 4.0). The source juxtaposes bacterial multiplication and competing offers; our data are independently chosen, not verified biology or finance.",
+        "Original fictional two reward schemes for whole weeks t≥0: Plan A begins at100 tokens and adds30 each week, A(t)=100+30t; Plan B begins at10 and doubles each week, B(t)=10×2^t. At t=0 A100 vs B10, t=1 A130 vs B20, t=2 A160 vs B40, t=3 A190 vs B80, t=4 A220 vs B160 and t=5 A250 vs B320. The multiplication plan first overtakes the additive plan at whole week5.",
+        "An additive pattern has a constant increase (+30 each step); a multiplying pattern has a constant ratio (×2 each step), which produces progressively larger differences. Drawing points on common axes should preserve the rapid growth. Do not assert an infinitely sustainable real-world token economy from invented examples.",
+        "Student task: continue both tables to week7 by reasoning and optional spreadsheet, sketch and compare graphs, support when Plan B first surpasses Plan A with adjacent-week checks, then design a third plan that changes the crossing week. Teacher-scored rubric 0–2 each for valid tables, structural pattern explanation, correct overtaking point, and critique of changed assumptions and graph scales.",
+        "V12 source-aligned original tripling sequence for the activity paralleling bacteria reproduction: start with ONE fictional microscopic object and triple each step. Counts at steps0,1,2,3,4 are1,3,9,27,81. Students draw the objects for steps0 through3, write repeated multiplication 3×3×3=27, and explain why \"add three\" cannot produce the same sequence. This is not a verified physical observation.",
+        "V12 original comparison activity: construct a table for the existing fictional reward schemes A(t)=100+30t and B(t)=10×2^t at whole weeks0..6. On the same labeled axes plot both curves, identify week5 as the first integer week when B>A, and explain why constant additive differences and constant multiplicative factors lead to different predictions. Students may independently use a scientific calculator or spreadsheet but must record actual tool use; no claim of a performed spreadsheet interaction appears in this lesson.",
+        "Draft teacher criteria0–2 each for correct diagrams/3^t counts, both exact schemes through week6, genuine two-curve plotted graph with correct intersection ordering, and justified comparisons plus conditional technology report. Graph reading and learner-generated plotting remain unverified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Repeated addition",
+          "Definition": "A quantity changes by a fixed difference each equal step.",
+          "Rule": "Add constant d each period.",
+          "Example": "A(t)=100+30t increases30 tokens per week."
+        },
+        {
+          "Title": "Repeated multiplication",
+          "Definition": "Each new output is a fixed multiple of the preceding one.",
+          "Rule": "Multiply by common factor b for each step.",
+          "Example": "B(t)=10×2^t doubles each week."
+        },
+        {
+          "Title": "Crossover reasoning",
+          "Definition": "Compare values at the same input, including adjacent integer steps.",
+          "Rule": "Verify when one first exceeds another in the stated domain.",
+          "Example": "At t4,160<220; at t5,320>250."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Continue additive versus doubling",
+          "Question": "Find A(t), B(t) at t=3,4,5.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "A(3)=100+90=190 and B(3)=10×8=80.",
+            "A(4)=100+120=220; B(4)=10×16=160.",
+            "A(5)=100+150=250; B(5)=10×32=320.",
+            "The doubling plan crosses above between integer weeks4 and5."
+          ],
+          "Answer": "At week5 Plan B320 exceeds A250.",
+          "Check": "The stated domain is nonnegative whole weeks."
+        },
+        {
+          "Title": "Explain different structures",
+          "Question": "For A and B above, compare consecutive changes.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "A difference A(t+1)−A(t)=30 for all t.",
+            "B ratio B(t+1)/B(t)=2 for all t.",
+            "B differences grow from10 to20 to40 to80...",
+            "Constant multiplier is not the same as constant difference."
+          ],
+          "Answer": "A has fixed addition30; B fixed ratio2.",
+          "Check": "Check actual successive table entries."
+        },
+        {
+          "Title": "Predict later amounts",
+          "Question": "Compare plans at week7.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "A(7)=100+30×7=310.",
+            "B(7)=10×2^7=10×128=1280.",
+            "Difference B−A=970 tokens.",
+            "The multiplicative pattern dominates by that time."
+          ],
+          "Answer": "A310, B1280 tokens at week7.",
+          "Check": "Exponents and linear arithmetic verified."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating doubling as adding the starting value each week",
+          "WhyWrong": "This would be linear, not repeated multiplication.",
+          "Correction": "Multiply the current value by2 each step."
+        },
+        {
+          "Mistake": "Claiming first crossover merely from t5 comparison",
+          "WhyWrong": "One needs to rule out earlier integer weeks.",
+          "Correction": "Check all earlier table rows or prove pattern difference."
+        },
+        {
+          "Mistake": "Plotting the two plans on different scales",
+          "WhyWrong": "Graph impressions become incomparable.",
+          "Correction": "Use common axes and units."
+        }
+      ],
+      "SummaryPoints": [
+        "Fixed differences and fixed ratios produce different growth patterns.",
+        "A starts larger but B's multiplier eventually dominates.",
+        "In the fictional plans, B first overtakes A at week5.",
+        "Teacher reviews tables, comparisons and source-specific reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "week0",
+              "Cells": [
+                "A100,B10"
+              ]
+            },
+            {
+              "Label": "week4",
+              "Cells": [
+                "A220,B160"
+              ]
+            },
+            {
+              "Label": "week5",
+              "Cells": [
+                "A250,B320"
+              ]
+            },
+            {
+              "Label": "week7",
+              "Cells": [
+                "A310,B1280"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Tripling sequence and competing original offers",
+          "Description": "Counts are independent hypothetical values; original scheme A increases by 30 while B doubles.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "tripling steps 0–4",
+              "Cells": [
+                "1, 3, 9, 27, 81"
+              ]
+            },
+            {
+              "Label": "A at weeks 4,5,6",
+              "Cells": [
+                "220, 250, 280"
+              ]
+            },
+            {
+              "Label": "B at weeks 4,5,6",
+              "Cells": [
+                "160, 320, 640"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

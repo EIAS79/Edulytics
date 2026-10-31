@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l08-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L08",
+      "CultureCode": "en",
+      "Title": "Which Variable to Solve for? (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning objective: isolate an indicated quantity in a multi-variable equation and explain why that form is useful for area, cost and shared-work contexts. Edulytiks original adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 2 Lesson 8, https://im.kendallhunt.com/HS/teachers/1/2/8/preparation.html (CC BY 4.0). Addressing HSA-CED.A.4 and HSA-REI.B.3; Building Towards HSA-CED.A.4.",
+        "Original geometric task: parallelogram area A=bh, where base b>0 and height h>0. Isolate h=A/b when area and base are known, or b=A/h when area and height are known. For A=52.5 square centimetres and b=7.5 centimetres, h=7 cm. Check 7.5×7=52.5. Variable isolation is more efficient than repeatedly guessing a height.",
+        "Original division context: 3.6 km of trail is divided into equal maintenance stretches for n positive-integer volunteers. Each receives length l=3.6/n km. To find number of volunteers from assigned length, rearrange n=3.6/l, with l>0 and n an integer, and check whether computed n is valid before interpreting.",
+        "Student task: read equations, identify which variable a question asks for, isolate it using reversible moves and substitute at least two valid inputs. Include a sensible unit and domain for every variable. Teacher-scored rubric (0–2 each, max 8): correct target, valid isolation, correct verification with units and coherent contextual explanation. One formula alone does not establish modeling understanding."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Isolate variable",
+          "Definition": "Rearrange an equation so one chosen symbol is alone on one side.",
+          "Rule": "Use inverse operations and state nonzero divisors.",
+          "Example": "From A=bh, h=A/b for b≠0."
+        },
+        {
+          "Title": "Domain in division",
+          "Definition": "Rewriting with a denominator introduces a nonzero requirement.",
+          "Rule": "Check a zero divisor never enters the permitted context.",
+          "Example": "With positive base length b, h=A/b is well-defined."
+        },
+        {
+          "Title": "Equivalent forms by use",
+          "Definition": "Different forms of one relation highlight different unknowns.",
+          "Rule": "Choose the form matching the requested output.",
+          "Example": "From nl=3.6, l=3.6/n or n=3.6/l."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve for height",
+          "Question": "A parallelogram has A=52.5 cm² and b=7.5 cm. Find h.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Begin A=bh.",
+            "Divide by nonzero base b to isolate h=A/b.",
+            "Substitute h=52.5/7.5=7 cm.",
+            "Check 7.5×7=52.5 square centimetres."
+          ],
+          "Answer": "Height is 7 cm.",
+          "Check": "Area is base times perpendicular height."
+        },
+        {
+          "Title": "Solve for volunteer count",
+          "Question": "A 3.6 km trail is divided equally, each stretch l=0.45 km. Find n.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Equation nl=3.6.",
+            "Divide by nonzero l to get n=3.6/l.",
+            "Substitute l=0.45, n=3.6/0.45=8.",
+            "Check 8×0.45=3.6 km and integer n."
+          ],
+          "Answer": "8 volunteers.",
+          "Check": "Positive whole number and total length satisfy context."
+        },
+        {
+          "Title": "Compare two useful rearrangements",
+          "Question": "From a rectangular perimeter P=2L+2W, solve for L.",
+          "Method": "Use equivalence-preserving algebra, show domain restrictions and independently check a test value.",
+          "Steps": [
+            "Subtract 2W: P−2W=2L.",
+            "Divide by nonzero 2: L=(P−2W)/2.",
+            "Simplify L=P/2−W.",
+            "With P=30 and W=5, L=15−5=10.",
+            "Check 2×10+2×5=30."
+          ],
+          "Answer": "L=P/2−W, giving L=10 for this example.",
+          "Check": "The perimeter formula holds after substitution."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing by zero when isolating a variable",
+          "WhyWrong": "The rearrangement may be undefined.",
+          "Correction": "State denominator nonzero."
+        },
+        {
+          "Mistake": "Ignoring integer restrictions after solving a real equation",
+          "WhyWrong": "Fractional volunteer counts are impossible here.",
+          "Correction": "Check integer and positivity conditions."
+        }
+      ],
+      "SummaryPoints": [
+        "Solve for the quantity needed before substituting values.",
+        "A=bh gives h=A/b for positive b.",
+        "nl=3.6 gives n=3.6/l for positive l; contextual n must be a positive integer.",
+        "Teacher reviews variable choice, units and why the form is useful."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original mathematically checkable table",
+          "Description": "Independent first-party numerical model; each row has an exact textual interpretation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "A=bh",
+              "Cells": [
+                "h=A/b, b>0"
+              ]
+            },
+            {
+              "Label": "nl=3.6",
+              "Cells": [
+                "n=3.6/l, l>0"
+              ]
+            },
+            {
+              "Label": "P=2L+2W",
+              "Cells": [
+                "L=P/2−W"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l10-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L10",
+      "CultureCode": "en",
+      "Title": "Domain and Range (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: identify possible inputs (domain) and outputs (range) for a function by reading real-world restrictions, distinguishing discrete from continuous quantities and checking unreasonable values. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 10, https://im.kendallhunt.com/HS/teachers/1/4/10/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/4/10/index.html (CC BY 4.0). The source uses dog barks, square areas and event enrollment, including optional graphing technology.",
+        "Original fictional workshop revenue example: participation n must be a whole-number count between 5 and12 inclusive; price is $7 per student plus a $10 single sponsorship amount, so revenue R(n)=7n+10 dollars. Domain {5,6,7,8,9,10,11,12}, not the entire interval of real numbers. Range {45,52,59,66,73,80,87,94} dollars. R(8.5) can be computed arithmetically but is not an input in this scenario.",
+        "For a square's area A(s)=s² with physical side length s≥0 centimetres, domain is [0,∞) and range is [0,∞) square centimetres; if a non-degenerate actual square is required, both should exclude zero. The formula alone would permit any real s algebraically, but context disallows negative lengths. Distinguish domain of the formula from domain chosen for modeling.",
+        "Student task: sort proposed inputs and outputs for both functions, explain why 8.5 participants and negative lengths are impossible, state domain/range in lists or inequalities as appropriate, and critique an unsupported continuous graph in a discrete situation. Teacher-scored rubric 0–2 for correct variable/domain, correctly enumerated range, graph/context distinction and reasoning about boundary cases."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Domain",
+          "Definition": "The set of allowed input values of a function.",
+          "Rule": "Combine algebraic definition and contextual restrictions.",
+          "Example": "Workshop n∈{5,…,12} integers."
+        },
+        {
+          "Title": "Range",
+          "Definition": "The outputs produced by allowed inputs, not all algebraically possible numbers.",
+          "Rule": "Evaluate the function at each permitted discrete input when finite.",
+          "Example": "R(n)=7n+10 gives {45,52,…,94}."
+        },
+        {
+          "Title": "Discrete versus continuous",
+          "Definition": "Counts are integers, while measured lengths may vary continuously.",
+          "Rule": "Choose a graphical representation matching the domain.",
+          "Example": "Enrollment uses isolated dots; physical length s≥0 uses a continuous ray."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find workshop domain",
+          "Question": "The workshop accepts between 5 and12 people inclusive. Give domain.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "Participants cannot be negative or fractional.",
+            "Minimum allowed is5; maximum is12.",
+            "Include endpoints because the restrictions are inclusive.",
+            "List n=5,6,7,8,9,10,11,12."
+          ],
+          "Answer": "Domain {5,6,7,8,9,10,11,12}.",
+          "Check": "n=8.5 is not a physically allowed count."
+        },
+        {
+          "Title": "Find workshop revenue range",
+          "Question": "Use R(n)=7n+10 on the specified domain.",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "Evaluate at n5: R=35+10=45.",
+            "Add $7 for every subsequent allowed whole-person increment.",
+            "Continue through n12: R=84+10=94.",
+            "Enumerate {45,52,59,66,73,80,87,94}.",
+            "No values between the listed totals occur in this discrete model."
+          ],
+          "Answer": "Range {45,52,59,66,73,80,87,94} dollars.",
+          "Check": "Eight allowed inputs produce eight distinct outputs."
+        },
+        {
+          "Title": "Classify square-area inputs",
+          "Question": "Determine physical domain and range of A(s)=s².",
+          "Method": "Use the exact first-party function definition and independently verify each substitution, graph feature and domain.",
+          "Steps": [
+            "s represents side length in centimetres, so negative values are impossible.",
+            "For nonnegative lengths, A(s)≥0.",
+            "Every nonnegative area a can be reached with s=sqrt(a).",
+            "If side length zero is allowed as a limiting case, both include zero."
+          ],
+          "Answer": "Domain s≥0 cm, range A≥0 cm² under the zero-permitted model.",
+          "Check": "The output of a length is squared, with square-centimetre units."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Writing every real n between 5 and12 for people",
+          "WhyWrong": "Fractional participants are not admissible.",
+          "Correction": "List integer values."
+        },
+        {
+          "Mistake": "Calling output values the domain",
+          "WhyWrong": "Domain is inputs, range is attained outputs.",
+          "Correction": "Label the arrows input→output."
+        },
+        {
+          "Mistake": "Using negative side lengths because squaring yields positive area",
+          "WhyWrong": "Algebraic output does not override geometry.",
+          "Correction": "Impose s≥0."
+        }
+      ],
+      "SummaryPoints": [
+        "Domain and range depend on mathematical rule and intended context.",
+        "Discrete counting domains create discrete ranges.",
+        "R(n)=7n+10 over n5–12 has eight exact output values.",
+        "Teacher reviews justification and non-domain examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible function observations",
+          "Description": "Original hypothetical data and formula checks, not source-owned graphics or fabricated student participation.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output or classification",
+          "Rows": [
+            {
+              "Label": "n=5",
+              "Cells": [
+                "$45"
+              ]
+            },
+            {
+              "Label": "n=8",
+              "Cells": [
+                "$66"
+              ]
+            },
+            {
+              "Label": "n=12",
+              "Cells": [
+                "$94"
+              ]
+            },
+            {
+              "Label": "n=8.5",
+              "Cells": [
+                "not a permitted input"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

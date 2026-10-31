@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l07-sequential-source-abc-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L07",
+      "CultureCode": "en",
+      "Title": "Spreadsheet Computations",
+      "ExplanationParagraphs": [
+        "Learning goal: enter arithmetic expressions with correct order of operations, create formulas using input cell addresses, and solve contextual problems with estimates and units. Independently authored Edulytiks adaptation of optional Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 7, https://im.kendallhunt.com/HS/teachers/1/1/7/preparation.html (CC BY 4.0). This lesson is a spreadsheet calculation activity, not a generic number drill.",
+        "Spreadsheet syntax begins with =; use +, -, *, /, ^ and parentheses for calculations. A1 names the current contents of that cell. If A1=8.4 and A2=3.5, entering =A1*A2 in A3 displays 29.4; changing A2 to 4 updates A3 to 33.6. Explain how changing inputs affects the answer.",
+        "Original contexts: at a constant speed 18 km/hour for 2.5 hours, a cyclist travels 45 km (formula =18*2.5). A garden 8.4 m by 3.5 m has area 29.4 square metres (formula =8.4*3.5). A fictional four-batch recipe with ingredients costing 2.50, 0.75, and 1.25 euros per batch costs 18 euros (formula =4*(2.5+0.75+1.25)). Estimate each result before entering formulas.",
+        "Student task: enter arithmetic expressions and contextual formulas in distinct spreadsheet cells, label them, explain order of operations, change the initial data in one cell and observe the recalculated output. If working on paper, disclose that it is a mathematical simulation rather than tested software behavior.",
+        "Teacher-scored rubric (0–2 each, total 8): correct formula syntax, defensible estimate and units, verified arithmetic, and authentic or explicitly simulated recalculation explanation. A correct number alone does not verify that spreadsheet work occurred.",
+        "First-party source alignment for activity 7.1: solve original Edulytiks examples of 4 miles/hour for 2.5 hours (10 miles), a 6 by 4 cm rectangle (24 square cm), and a right triangle with perpendicular sides 8 and 5 cm (20 square cm). Do not claim the teacher's inaccessible original triangle drawing was reproduced. Estimate first, then select formula and units.",
+        "First-party activity 7.2 calculator checks: type each into a different cell instead of overwriting results: =2+7 (9), =2-7 (-5), =7*2 (14), =7^2 (49), =7/2 (3.5), =91/7 (13), =0.1*2+3 (3.2), =0.1*(2+3) (0.5), =13/(1/7) (91), =(2+7+8+11)/4 (7). Explain why parentheses and operator precedence matter; if no spreadsheet actually ran, label these manual calculations.",
+        "First-party activity 7.3: set A1=4 and A2=3, enter =A1+A2 in A3 (7), =A1*A2 in A4 (12), =A1^A2 in A5 (64). Alter one input and predict all three new values. Label cells in a neighboring column and report any recalculation as observed only if actual spreadsheet software was used.",
+        "First-party activity 7.4: model 120 km at 80 km/hour -> 1.5 hours; a right triangle with legs 12.4 and 5.2 cm -> 32.24 square cm; and a synthetic drink recipe per batch of 1.5 + 1/4 + 1/2 = 2.25 cups, so four batches require 9 cups and 7.25 batches require 16.3125 cups. Express recipe with cells, vary batch count and one ingredient, explain any discrepancy with a peer, and distinguish actual from hypothetical partner/software operations. This is separate from publisher context; practice formula equivalences and user explanations require lesson-specific checks.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): (1) Compute 7*(3/4) from a spreadsheet formula and justify correct distance units; (2) name two equivalent right-triangle area formulas using multiplication by 1/2 versus division by 2; (3) set batch count in B1 and ingredients in B2/B3 and explain why =B1*(B2+B3) updates correctly, including a changed input. Human-scored 0-2 each, total 6; do not treat number-only response as software execution proof."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Spreadsheet formula syntax",
+          "Definition": "A leading equals sign marks a formula; operators +,-,*,/,^ and parentheses specify arithmetic.",
+          "Rule": "Write explicit * for multiplication.",
+          "Example": "=4*(2.5+0.75+1.25) gives 18."
+        },
+        {
+          "Title": "Cell-based recalculation",
+          "Definition": "A formula with addresses uses the latest cell values.",
+          "Rule": "Change only one input to test dependencies.",
+          "Example": "=A1*A2 changes from 29.4 to 33.6 as A2 changes from 3.5 to 4."
+        },
+        {
+          "Title": "Units and estimation",
+          "Definition": "A contextual calculation needs an approximate prediction and compatible units.",
+          "Rule": "Check cancellation of rate and time units.",
+          "Example": "18 km/h × 2.5 h = 45 km."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Distance with units",
+          "Question": "A cyclist rides at 18 km/h for 2.5 hours. Find a spreadsheet formula and result.",
+          "Method": "Translate the actual context into an explicit formula and independently verify the result.",
+          "Steps": [
+            "Kilometres/hour multiplied by hours gives kilometres.",
+            "Estimate 18×2 +18×0.5=36+9.",
+            "Enter =18*2.5 in a blank spreadsheet cell.",
+            "Evaluate the formula to obtain 45 km and compare with the estimate."
+          ],
+          "Answer": "=18*2.5 gives 45 kilometres.",
+          "Check": "18×(2+0.5)=36+9=45."
+        },
+        {
+          "Title": "Parentheses for full-recipe scaling",
+          "Question": "Three ingredients cost 2.5,0.75,1.25 euros per batch. Calculate cost for 4 batches.",
+          "Method": "Translate the actual context into an explicit formula and independently verify the result.",
+          "Steps": [
+            "Sum one batch: 2.5+0.75+1.25=4.50 euros.",
+            "Multiply the entire sum by four batches.",
+            "Enter =4*(2.5+0.75+1.25).",
+            "Evaluate 4×4.5=18.00 euros."
+          ],
+          "Answer": "Four batches cost 18 euros.",
+          "Check": "Without parentheses only the first ingredient would be multiplied."
+        },
+        {
+          "Title": "Recalculate when an input changes",
+          "Question": "A1=8.4, A2=3.5, A3 formula =A1*A2. Predict A3 after A2 changes to 4.",
+          "Method": "Translate the actual context into an explicit formula and independently verify the result.",
+          "Steps": [
+            "Originally 8.4×3.5=29.4 square metres.",
+            "The formula in A3 references both changing input cells.",
+            "After setting A2=4, recompute 8.4×4=33.6.",
+            "Difference 33.6−29.4=4.2 square metres.",
+            "Verify independently that extra width 0.5 times 8.4 is 4.2."
+          ],
+          "Answer": "A3 increases from 29.4 to 33.6 square metres.",
+          "Check": "Units square metres; increase equals 8.4×0.5."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using implicit multiplication without *",
+          "WhyWrong": "Spreadsheet formulas require explicit multiplication syntax.",
+          "Correction": "Write =A1*A2."
+        },
+        {
+          "Mistake": "Omitting grouping parentheses",
+          "WhyWrong": "Multiplying only the first ingredient changes the intended recipe model.",
+          "Correction": "Use =4*(A1+A2+A3) for all ingredients."
+        },
+        {
+          "Mistake": "Reporting a number without units",
+          "WhyWrong": "A product of metres has square-metre units.",
+          "Correction": "Label each contextual result correctly."
+        }
+      ],
+      "SummaryPoints": [
+        "Spreadsheets evaluate arithmetic formulas and recalculate when referenced cells change.",
+        "Use * for multiplication, / for division, ^ for powers and parentheses to group.",
+        "Estimate and check units in every context.",
+        "Teacher-reviewed formula work and interaction cannot be replaced by a generic final-answer grade."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original numerical scenario table",
+          "Description": "Text table of independently authored practice examples, with units in labels.",
+          "PrimaryLabel": "Scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "Cycling distance (km)",
+              "Cells": [
+                "45"
+              ]
+            },
+            {
+              "Label": "Garden area (square metres)",
+              "Cells": [
+                "29.4"
+              ]
+            },
+            {
+              "Label": "Recipe cost (euros)",
+              "Cells": [
+                "18"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

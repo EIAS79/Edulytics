@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l08-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L08",
+      "CultureCode": "en",
+      "Title": "Exponential Situations as Functions",
+      "ExplanationParagraphs": [
+        "Learning objective: select input and output variables, decide if a relation is a function and write exponential growth/decay in function notation, interpreting the same input-output pair across table, graph and situation. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 8, https://im.kendallhunt.com/HS/teachers/1/5/8/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/8/index.html (CC BY 4.0). Source distinguishes exponential function direction from a reversed relationship that may be logarithmic and is outside current course.",
+        "Original fictional social-media test metric: for nonnegative whole days t, suppose a benchmark indicator begins at3 units and doubles daily, F(t)=3·2^t. Values3,6,12,24 at days0–3. Each day yields exactly one indicator output, so t→F(t) is a function. The modeled numbers are not real platform or user analytics.",
+        "Now describe input/output roles: input t is elapsed days; output F(t) is units. Function notation F(2)=12 means the metric has12 units after two days under the proposed rule, not12 days after two units. One can ask for a time at which F(t)=12 by inspecting the table; an inverse-time rule for arbitrary outputs is different and need not be taught as another exponential function.",
+        "Student task: create a second original exponential relationship from table and graph, identify independent/dependent quantities, explain function uniqueness and test a proposed pair. Teacher-scored rubric0–2 each for domain/units, correct equation/table, function-notation interpretation and comparison with a nonfunction relation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Function assignment",
+          "Definition": "Every allowed input has exactly one output.",
+          "Rule": "Check for repeated inputs with conflicting outputs.",
+          "Example": "F(2)=12 is single-valued."
+        },
+        {
+          "Title": "Exponential notation",
+          "Definition": "Write changing quantity as F(t)=a·b^t.",
+          "Rule": "Define output units and input time.",
+          "Example": "F(t)=3·2^t."
+        },
+        {
+          "Title": "Direction of modeling",
+          "Definition": "Which variable is input affects how a relationship is expressed.",
+          "Rule": "Choose natural explanatory time variable.",
+          "Example": "t→F(t) is exponential; solving for arbitrary t from F may require inverse operations beyond scope."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write function from a table",
+          "Question": "Use values3,6,12,24 at days0–3.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "At day0 output3 gives initial a=3.",
+            "Ratios6/3=12/6=24/12=2.",
+            "Write F(t)=3·2^t.",
+            "Check F(3)=3×8=24."
+          ],
+          "Answer": "F(t)=3·2^t.",
+          "Check": "Every table pair matches formula."
+        },
+        {
+          "Title": "Explain notation in context",
+          "Question": "What does F(2)=12 mean?",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "Input2 means two days after baseline.",
+            "Evaluate 3·2²=3×4=12.",
+            "Output12 has indicator units.",
+            "The statement does not reverse input/output roles."
+          ],
+          "Answer": "At day2, indicator is12 units under model.",
+          "Check": "Units and substitution agree."
+        },
+        {
+          "Title": "Check a disputed point",
+          "Question": "Does pair (3,20) belong to F(t)=3·2^t?",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "Compute F(3)=24.",
+            "Compare proposed output20 with24.",
+            "Because values differ, pair is off the graph.",
+            "Point (3,24) is on the graph."
+          ],
+          "Answer": "No; (3,24) is the function pair.",
+          "Check": "Each t has exactly one output."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reversing input and output in F(2)=12",
+          "WhyWrong": "The argument inside parentheses is input.",
+          "Correction": "State time→indicator."
+        },
+        {
+          "Mistake": "Treating every reversed correspondence as an exponential function",
+          "WhyWrong": "Finding an input from a given output is an inverse relation.",
+          "Correction": "Check variable roles before naming the model."
+        }
+      ],
+      "SummaryPoints": [
+        "Exponential functions can be presented through values, graphs, rules and notation.",
+        "F(t)=3·2^t assigns one output per allowed day.",
+        "Function input/output units must be explicit.",
+        "Teacher scores interpretation, not just arithmetic."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "F=3"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "F=6"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "F=12"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "F=24"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

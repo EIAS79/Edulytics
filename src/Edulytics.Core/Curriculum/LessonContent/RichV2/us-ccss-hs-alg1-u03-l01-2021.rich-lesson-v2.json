@@ -1,0 +1,162 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u03-l01-v12-source-activities-reviewed-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U03:L01",
+      "CultureCode": "en",
+      "Title": "Two-way Tables",
+      "ExplanationParagraphs": [
+        "Learning goal: construct and interpret two-way tables for two categorical variables, calculate missing marginal counts and explain what a selected cell means. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U03:L01, https://im.kendallhunt.com/HS/teachers/1/3/1/preparation.html (CC BY 4.0); publisher Addressing HSS-ID.B.5. The source uses preference data and a partner information-gap activity, not numerical measurements alone.",
+        "Original hypothetical survey: two fictional groups A and B each contain 20 responses about Sports versus Arts as preferred club. Group A: 12 Sports,8 Arts; Group B: 9 Sports,11 Arts. Column totals Sports21, Arts19; grand total40. The table has two categorical variables (group and club), with numerical frequencies counting responses.",
+        "Student task: reconstruct a partially hidden table by asking a partner which row and column totals are known, calculate missing cells, interpret counts in words, and justify how totals expose a miscopied entry. Do not claim responses came from actual classmates. Teacher-scored rubric (0–2 each, 8 max): correctly structured and labelled table, accurate internal/marginal/grand totals, clear interpretation and reasoned information-gap questions.",
+        "V12 source-equivalent information-gap task using completely invented club-preference observations. Keep the full solution hidden from learners: Group A Sports 12 Arts 8 Total 20; Group B Sports 9 Arts 11 Total 20; columns Sports 21 Arts 19 Grand 40. Learner card A sees A-Sports=12, B-Arts=11, group totals20 and grand total40; learner card B sees column totals Sports21,Arts19, and the location of missing cells. Learners request the information needed to reconstruct the four cells, switch questioner/information roles, and check row/column/grand totals.",
+        "V12 partner task must have real two separate visible information cards (not a single displayed answer table) before claiming an information gap. Teacher assesses precisely framed questions, categorical-variable distinction, filled table, and interpretation such as \"nine Group B participants chose Sports\"; count entries are frequencies, not continuous measurements. Source student activities also include real-world category table reconstruction and a separate animal-trait table; the Edulytiks numbers are independent.",
+        "Teacher draft assessment 0–2 each: categorical row/column labels; correct four interior counts and marginals; genuinely differentiated partner information/questions; contextual interpretation and explained checks. An answer-key table on its own is not proof of partner interaction."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Categorical variable",
+          "Definition": "A characteristic whose values are group labels rather than measured amounts.",
+          "Rule": "Treat labels separately from count frequencies.",
+          "Example": "Group A/B and Sports/Arts are two categorical variables."
+        },
+        {
+          "Title": "Two-way count",
+          "Definition": "Each interior cell counts observations in the intersection of a row and column.",
+          "Rule": "A person appears once under each categorical variable.",
+          "Example": "A Sports cell =12."
+        },
+        {
+          "Title": "Marginal total",
+          "Definition": "Row/column totals are sums of their interior cells.",
+          "Rule": "All row and column grand totals must match.",
+          "Example": "Sports=12+9=21, Arts=8+11=19, total=40."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate row and column totals",
+          "Question": "Complete A=(12 Sports,8 Arts), B=(9 Sports,11 Arts).",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "A row total 12+8=20.",
+            "B row total 9+11=20.",
+            "Sports column 12+9=21; Arts 8+11=19.",
+            "Both 20+20 and 21+19 equal grand total 40."
+          ],
+          "Answer": "Rows 20,20; columns 21,19; grand total40.",
+          "Check": "Both directions sum to40."
+        },
+        {
+          "Title": "Interpret a cell without denominators",
+          "Question": "What does the entry 9 mean?",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Locate row B and column Sports.",
+            "Read nine counted responses at this intersection.",
+            "The variable describes preference, not nine sports events.",
+            "Do not infer anything about other survey populations."
+          ],
+          "Answer": "Nine hypothetical Group B respondents preferred Sports.",
+          "Check": "Cell cannot imply actual group member identities."
+        },
+        {
+          "Title": "Find a missing count",
+          "Question": "If A totals20 and A Sports12, find A Arts.",
+          "Method": "Read the first-party data, compute with the correct denominator, and interpret with sample limitations.",
+          "Steps": [
+            "Use the A row count equation 12+x=20.",
+            "Subtract12 to get x=8.",
+            "Check remaining B row 9+11=20.",
+            "Compute column Arts 8+11=19."
+          ],
+          "Answer": "A Arts count is8.",
+          "Check": "Both row and column totals agree."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding row totals and column totals to get the grand total",
+          "WhyWrong": "This double-counts the same observations.",
+          "Correction": "Choose one direction of marginal totals."
+        },
+        {
+          "Mistake": "Treating group names as numerical measurements",
+          "WhyWrong": "Categories are labels even when counts are numbers.",
+          "Correction": "Identify response types separately from their frequencies."
+        }
+      ],
+      "SummaryPoints": [
+        "Two-way tables organize two categorical variables simultaneously.",
+        "Every observation contributes to one row-column intersection.",
+        "Row totals and column totals reconcile to the same grand total.",
+        "Teacher scores questions and interpretation; no class survey data are fabricated."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party accessible statistical data",
+          "Description": "Original clearly fictional Edulytiks sample and calculation; no real pupils or publisher graphics.",
+          "PrimaryLabel": "Statistic or observation",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "A: Sports / Arts",
+              "Cells": [
+                "12 / 8"
+              ]
+            },
+            {
+              "Label": "B: Sports / Arts",
+              "Cells": [
+                "9 / 11"
+              ]
+            },
+            {
+              "Label": "Totals: Sports / Arts",
+              "Cells": [
+                "21 / 19"
+              ]
+            },
+            {
+              "Label": "Grand total",
+              "Cells": [
+                "40"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Correct full two-way table — teacher-only check",
+          "Description": "The full solution must not be shown to an active learner before the actual information-gap task; requires separate learner A/B cards.",
+          "PrimaryLabel": "Original input or category",
+          "SecondaryLabel": "Independent calculation",
+          "Rows": [
+            {
+              "Label": "Group A",
+              "Cells": [
+                "Sports 12 | Arts 8 | Total 20"
+              ]
+            },
+            {
+              "Label": "Group B",
+              "Cells": [
+                "Sports 9 | Arts 11 | Total 20"
+              ]
+            },
+            {
+              "Label": "Column totals",
+              "Cells": [
+                "Sports 21 | Arts 19 | Grand 40"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

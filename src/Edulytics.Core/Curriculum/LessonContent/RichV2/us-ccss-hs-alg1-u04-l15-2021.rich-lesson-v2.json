@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l15-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L15",
+      "CultureCode": "en",
+      "Title": "Inverse Functions",
+      "ExplanationParagraphs": [
+        "Learning goal: understand an inverse function as undoing the original input-output process, including letter-shift ciphers and a reversible fixed-rate currency conversion; distinguish a genuine inverse from a reciprocal. Independently authored Edulytiks adaptation based on Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 15, https://im.kendallhunt.com/HS/teachers/1/4/15/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/15/index.html (CC BY 4.0). The source introduces inverses through forward/backward reasoning before abstract notation.",
+        "Original shift-cipher example: label alphabet letters with indices 0–25 and encode c=(m+3) mod26. Decode using m=(c−3) mod26, wrapping negative residues back into 0–25. For original W at index22, encoded Z index25; for X at23, encoded A index0. The same encoded letter has exactly one original letter for this fixed shift, so the mapping is invertible over the 26-letter alphabet.",
+        "Original fictitious currency desk rate: 18 pesos per one dollar at a fixed instant, with no fees. P(d)=18d pesos for dollars d≥0; the inverse process D(p)=p/18 dollars for p≥0. Ten dollars converts to180 pesos, and converting back gives 180/18=10 dollars. This is illustrative fixed arithmetic, not a current exchange-rate claim or quote.",
+        "Student activity: invent a three-letter cipher message, encode and exchange with a partner, explain why the decoding must undo the steps in reverse, then compare it with numerical conversion. Teacher-scored rubric (0–2 each, max 8): valid bijective mapping and wrap, correct reverse operation, accurate contextual units/domains, and reasoned explanation of reversible processes."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Inverse process",
+          "Definition": "An inverse takes a previous output and reconstructs the original input when possible.",
+          "Rule": "Undo operations in reverse order.",
+          "Example": "Multiply by18 then divide by18 restores dollars."
+        },
+        {
+          "Title": "One-to-one requirement",
+          "Definition": "To have an inverse function on chosen domains, no two different inputs can share one output.",
+          "Rule": "Verify uniqueness for the specified mapping.",
+          "Example": "Shift by3 modulo26 permutes all 26 letters."
+        },
+        {
+          "Title": "Inverse versus reciprocal",
+          "Definition": "Undoing f(x)=18x yields y/18, not 1/(18x) as an expression in original x.",
+          "Rule": "Write units and test composition.",
+          "Example": "D(P(10))=180/18=10."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Encode and decode alphabet indices",
+          "Question": "Use c=(m+3) mod26 on zero-based letter indices.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "For W, m=22 and c=(22+3) mod26=25, letter Z.",
+            "For X, m=23 and c=(23+3) mod26=0, letter A.",
+            "To decode index0, subtract3 to get −3, then wrap mod26 to23, X.",
+            "Decoding reverses encoding for both inputs."
+          ],
+          "Answer": "W→Z, X→A; inverse recovers W and X.",
+          "Check": "Each index stays within0–25 and the operations are reversible."
+        },
+        {
+          "Title": "Reverse a numeric conversion",
+          "Question": "At fictional fixed18 pesos per dollar, convert $10 and reverse.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Forward rule P(d)=18d.",
+            "At d=10, P(10)=180 pesos.",
+            "Reverse rule D(p)=p/18.",
+            "D(180)=10 dollars.",
+            "Check units cancel appropriately."
+          ],
+          "Answer": "$10↔180 pesos under stated fictional rate.",
+          "Check": "D(P(d))=d for d≥0."
+        },
+        {
+          "Title": "Explain why reciprocal is different",
+          "Question": "Is 1/P(d) the inverse process of P(d)=18d?",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Inverse asks for input d given output p.",
+            "Solve p=18d for d=p/18.",
+            "Reciprocal 1/(18d) is a different function of d and is undefined at d=0.",
+            "For p=180, correct inverse returns10, not 1/180."
+          ],
+          "Answer": "No; the inverse process is D(p)=p/18.",
+          "Check": "Forward/backward composition restores the input."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignoring alphabet wrap in a Caesar shift",
+          "WhyWrong": "Letters beyond Z must wrap to A.",
+          "Correction": "Use modulo26 with normalized nonnegative residues."
+        },
+        {
+          "Mistake": "Calling 1/f(x) the inverse function",
+          "WhyWrong": "A reciprocal does not undo input-output mapping.",
+          "Correction": "Solve output equation for original input."
+        },
+        {
+          "Mistake": "Treating invented currency conversion as an actual exchange quote",
+          "WhyWrong": "Rates change and fees matter.",
+          "Correction": "Label the rate as a fixed fictional teaching assumption."
+        }
+      ],
+      "SummaryPoints": [
+        "Inverse functions reverse a one-to-one mapping on chosen domains.",
+        "Caesar shifts can be decoded by the opposite modular shift.",
+        "For P(d)=18d, the inverse process is D(p)=p/18.",
+        "Teacher reviews decoding and explanations; no genuine exchange-rate claim is made."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original function input-output checks",
+          "Description": "Independent hypothetical first-party computations, not publisher artwork or observed student data.",
+          "PrimaryLabel": "Input or contextual constraint",
+          "SecondaryLabel": "Output or verification",
+          "Rows": [
+            {
+              "Label": "W index22",
+              "Cells": [
+                "Z index25"
+              ]
+            },
+            {
+              "Label": "X index23",
+              "Cells": [
+                "A index0"
+              ]
+            },
+            {
+              "Label": "$10 fictional conversion",
+              "Cells": [
+                "180 pesos"
+              ]
+            },
+            {
+              "Label": "180 pesos back",
+              "Cells": [
+                "$10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

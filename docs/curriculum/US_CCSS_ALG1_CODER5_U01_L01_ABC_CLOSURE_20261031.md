@@ -1,0 +1,12 @@
+# Coder 5 ? Algebra 1 U01:L01 A?B?C source-level closure
+
+- Current canonical lesson: \`PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01\` ? Getting to Know You.
+- Existing original PR #589 / course branch preserved. Supervisor 2 integration delivered on original HEAD \`4bfa3339ca2bad3b2e64453ba3b6ea090b911152\`, with prior L01 source and first-party paper work retained.
+- **A accepted** under prior course-author source-equivalence authorization; original teacher-login-protected publisher Cool-down not claimed verified. Prior source page hashes/source-to-task comparison reused; no new textbook audit.
+- **B accepted** with existing embedded Rich V2 lesson \`alg1-u01-l01-local-source-aligned-20261031-v4\`, six-choice paper worksheet, independent learner-facing answer-key removal and existing teacher rubrics. Authenticated browser delivery is Stage D.
+- **C accepted for authoring/selected route only:** exact LessonCode registry -> \`usccss.alg1.u01.l01.statistical_questions_p3\` -> \`UsCcssAlg1U01L01StatisticalSelectionQuestions.Build/Solve/Verify\` through \`ExactSkillContractQuestionEngine\`; exact L01-only \`StudentPrivatePracticeService\` bypass; family-specific \`PracticeService\` persisted grade uses order/case/trim-independent choice-set normalization. Negative duplicate/missing/extra/unknown/malformed cases are authored in existing xUnit and source fixtures. Other ALG1 lesson scopes remain blocked and do not receive fake generic replacements.
+- **Human-review boundary:** teacher-selected paper worksheet contains warm-up, optional teacher-authorized private anonymous survey, P1/P2 constructed questions and teacher-only separate 8-point survey + 6-point independent Edulytiks Cool-down rubrics; no automatic scoring of explanations or invented student submissions.
+- **Execution claim:** source inspection and JSON structural verification only; xUnit and JS fixtures are **AUTHORED_NOT_RUN** for this acceptance; Stage D, CI, authenticated two-school DB, real stored teacher grades, E2E, Merge and Deploy are **NOT_RUN**. This is not a production release.
+- **Closure source baseline:** \`4bfa3339ca2bad3b2e64453ba3b6ea090b911152\`; **closure commit SHA** sealed in \`US_CCSS_ALG1_CODER5_U01_L01_ABC_CLOSURE_SHA_20261031.json\` by the next commit.
+- **Next canonical active:** \`PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02\`, Unit 1 (1/16 lessons), course 1/132. L02 cannot close without its own exact Stage C.
+- Logged at UTC \`2026-10-31T14:59:12.455888+00:00\`; no invented elapsed lesson work duration.

@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l04-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L04",
+      "CultureCode": "en",
+      "Title": "Using Function Notation to Describe Rules (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning objective: express an input-output rule with function notation, evaluate it for permitted inputs, and reverse the process to find inputs for a specified output. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 4, https://im.kendallhunt.com/HS/teachers/1/4/4/preparation.html (CC BY 4.0). The source explicitly progresses from statements at specific values to generalized rules such as f(x)=3x−10.",
+        "Original first-party numeric rule: a service credit account starts at $25 and charges $3 for each booked appointment, so B(n)=25−3n dollars for whole n≥0 while the balance remains nonnegative. B(0)=25, B(2)=19, B(5)=10. To find when B(n)=7, solve 25−3n=7 -> n=6. Negative n or fractional booked appointments are outside the scenario, although algebraic function rule can be considered on real numbers in abstraction.",
+        "Translate a verbal rule 'multiply input by 3 then subtract 10' into f(x)=3x−10, with f(4)=2 and f(x)=11 at x=7. Demonstrate why f(x) names the rule at arbitrary input and f(4) is a particular output.",
+        "Student task: write generalized symbolic rules from two different verbal instructions, evaluate a table of input-output pairs and solve one equation from a known function output, checking domains. Teacher-scored rubric 0–2 for correct function rule, correct evaluation and reverse-solving, contextual/domain interpretation and explanation of equivalence between tables and equations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "General function rule",
+          "Definition": "f(x)=expression defines the output in terms of an arbitrary permitted x.",
+          "Rule": "Keep named function and input variable distinct.",
+          "Example": "f(x)=3x−10."
+        },
+        {
+          "Title": "Evaluation",
+          "Definition": "Substituting the input into the function gives an output.",
+          "Rule": "Use parentheses for negative inputs.",
+          "Example": "f(4)=12−10=2."
+        },
+        {
+          "Title": "Reverse solving",
+          "Definition": "Knowing an output can produce an equation in the input.",
+          "Rule": "Apply inverse operations and original domain.",
+          "Example": "25−3n=7 gives n=6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Generalize a verbal rule",
+          "Question": "Multiply input by3 then subtract10. Write function and evaluate x=4.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Let x be any real input.",
+            "Multiplication yields3x.",
+            "Subtract10 to get f(x)=3x−10.",
+            "At x=4, compute12−10=2."
+          ],
+          "Answer": "f(x)=3x−10 and f(4)=2.",
+          "Check": "Both verbal stages used in correct order."
+        },
+        {
+          "Title": "Recover an input",
+          "Question": "Solve f(x)=11 for f(x)=3x−10.",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Set3x−10=11.",
+            "Add10 to obtain3x=21.",
+            "Divide3 to find x=7.",
+            "Check f(7)=21−10=11."
+          ],
+          "Answer": "x=7.",
+          "Check": "Output matches known value."
+        },
+        {
+          "Title": "Model a balance function",
+          "Question": "When is B(n)=7 for B(n)=25−3n?",
+          "Method": "Represent the function with its stated input/output domain and verify the mathematical assertion.",
+          "Steps": [
+            "Equation is25−3n=7.",
+            "Subtract25: −3n=−18.",
+            "Divide−3: n=6.",
+            "Check B(6)=25−18=7.",
+            "Six is a nonnegative whole number and meaningful."
+          ],
+          "Answer": "After6 booked appointments balance is $7.",
+          "Check": "Context domain and original equation both satisfied."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confusing f(x) and f(4)",
+          "WhyWrong": "One is a general rule and one is a particular value.",
+          "Correction": "Substitute only after stating rule."
+        },
+        {
+          "Mistake": "Ignoring context in reverse-solving",
+          "WhyWrong": "A real solution may represent fractional or negative item count.",
+          "Correction": "Intersect solution with domain."
+        }
+      ],
+      "SummaryPoints": [
+        "Function notation expresses both general rules and particular output values.",
+        "Verbal sequences translate into ordered algebraic operations.",
+        "Solve f(x)=c to find valid inputs and check them.",
+        "Teacher reviews symbolic meaning and model interpretation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible first-party input/output table",
+          "Description": "Independent original functional models and their exact numeric outputs, including domain limits.",
+          "PrimaryLabel": "Function input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "f(4) where f(x)=3x−10",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "f(7)",
+              "Cells": [
+                "11"
+              ]
+            },
+            {
+              "Label": "B(0)",
+              "Cells": [
+                "25 dollars"
+              ]
+            },
+            {
+              "Label": "B(6)",
+              "Cells": [
+                "7 dollars"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

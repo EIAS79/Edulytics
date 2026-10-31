@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l14-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L14",
+      "CultureCode": "en",
+      "Title": "Graphs That Represent Situations",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret zeros, maximum and viable domain of a quadratic model describing projectile motion and compare representations of a physical situation, recognizing that graph features depend on context. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L14 teacher https://im.kendallhunt.com/HS/teachers/1/6/14/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/14/index.html (CC BY 4.0). The source uses frog jumps and launches; our original example is a mathematical scenario only.",
+        "Original idealized soft-foam ball height h(t)=−2t²+8t+10 metres for elapsed seconds t from release. At t0 height10m, at t2 height18m (maximum), at t5 height0m (ground), while algebra also yields a negative root t−1 which is not part of elapsed physical time. The meaningful flight domain is 0≤t≤5; outputs are nonnegative on it.",
+        "Rearrangements: h(t)=−2(t−2)²+18 (vertex form) and h(t)=−2(t−5)(t+1) (factored form). Each is identical to standard form; vertex form displays max at t2, factored shows zero at t5 and at t−1, standard shows initial height h0=10. This illustrates selecting the most useful form for a question.",
+        "Student task: match three equations and a graph to a single fictional flight, explain why t−1 must be excluded, compare the height at t1 and t3, and critique a graph plotted below ground after t5. Teacher-scored rubric0–2 for mathematical equivalence, accurate vertex/zeros, domain/units and contextual interpretation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Contextual root",
+          "Definition": "A model zero may mean a landing time when the output is altitude.",
+          "Rule": "Apply nonnegative elapsed time restriction.",
+          "Example": "h(t)=0 at physical t5, not t−1."
+        },
+        {
+          "Title": "Maximum height",
+          "Definition": "Downward-opening quadratic reaches maximum at vertex.",
+          "Rule": "Read vertex form −2(t−2)²+18.",
+          "Example": "Maximum18m at t2."
+        },
+        {
+          "Title": "Multiple forms",
+          "Definition": "Standard, factored and vertex forms display different features of one function.",
+          "Rule": "Choose the appropriate representation.",
+          "Example": "At t0 h=10 from standard form."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Check equivalent forms",
+          "Question": "Rewrite h=−2t²+8t+10.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "Factor −2: −2(t²−4t−5).",
+            "Factor bracket(t−5)(t+1).",
+            "Thus h=−2(t−5)(t+1).",
+            "Complete square: −2[(t−2)²−9]=−2(t−2)²+18.",
+            "All expand to same standard polynomial."
+          ],
+          "Answer": "Factored −2(t−5)(t+1); vertex −2(t−2)²+18.",
+          "Check": "Expansions verify identity."
+        },
+        {
+          "Title": "Find height peak",
+          "Question": "Find highest h(t) during flight.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "Vertex is at t2.",
+            "At t2, h=−8+16+10=18m.",
+            "Quadratic coefficient−2 gives downward opening.",
+            "Thus maximum18m at2s."
+          ],
+          "Answer": "18m at2 seconds.",
+          "Check": "h1 and h3 both16m by symmetry."
+        },
+        {
+          "Title": "Find ground time and domain",
+          "Question": "Solve h(t)=0.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "Factored form gives t−5=0 or t+1=0.",
+            "Roots t5,t−1.",
+            "Negative elapsed time is inadmissible.",
+            "Physical time domain [0,5] seconds.",
+            "At t5 height0, ending flight."
+          ],
+          "Answer": "Ground t5s; physical domain0–5s.",
+          "Check": "Original expression at5 equals−50+40+10=0."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating negative root as a recorded past flight time",
+          "WhyWrong": "The model describes time after release.",
+          "Correction": "Restrict t≥0."
+        },
+        {
+          "Mistake": "Extending height below ground after landing",
+          "WhyWrong": "Flight model no longer applies.",
+          "Correction": "Stop graph at physical landing time."
+        }
+      ],
+      "SummaryPoints": [
+        "Physical quadratic graphs require contextual domain and units.",
+        "Different forms expose initial height, maximum or roots.",
+        "The fictional flight reaches18m at2s and ground at5s.",
+        "Teacher reviews form choice and contextual graph validity."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic graphical features",
+          "Description": "Accessible mathematical values, no claimed real experiment or publisher diagram.",
+          "PrimaryLabel": "Feature or input",
+          "SecondaryLabel": "Exact value",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "h10m"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "h16m"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "h18m"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "h16m"
+              ]
+            },
+            {
+              "Label": "t5",
+              "Cells": [
+                "h0m"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

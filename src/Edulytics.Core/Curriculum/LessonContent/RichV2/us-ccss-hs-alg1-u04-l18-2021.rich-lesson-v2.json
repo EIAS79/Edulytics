@@ -1,0 +1,148 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u04-l18-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U04:L18",
+      "CultureCode": "en",
+      "Title": "Using Functions to Model Battery Power",
+      "ExplanationParagraphs": [
+        "Learning goal: analyze paired time/battery readings, build and critique a linear charging or draining model, make a justified prediction, and revise assumptions when new information appears. Independently authored Edulytiks adaptation from Illustrative Mathematics Algebra 1 First Edition Unit 4 Lesson 18, https://im.kendallhunt.com/HS/teachers/1/4/18/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/4/18/index.html (CC BY 4.0). The source culminates in battery power modeling rather than solely solving a linear formula.",
+        "First-party hypothetical charging data: after t minutes since connection, battery percentages are (0,5),(10,14),(30,32),(40,41), each consistent with increasing by9 percentage points per10 minutes. A simple line is B(t)=5+0.9t percent while charging is approximately linear. The physical battery percentage cannot exceed100 or fall below0; without further measurements a sensible model stops or changes at full charge.",
+        "Solving B(t)=100 gives 0.9t=95, so t=95/0.9≈105.56 minutes after plug-in (about1hour45.6minutes). This is an extrapolation beyond the observed40-minute data, not a precise claim about an actual phone. Real devices often change charge rate; the source asks learners to reflect critically and improve models.",
+        "Contrasting hypothetical drain case: an unplugged device begins at90% and loses approximately4 percentage points per hour, D(h)=90−4h on 0≤h≤22.5 until empty. At 5 hours D=70%; estimated time from90% to20% is17.5 hours. If battery state or rate changes, a piecewise function could be more suitable than one straight line.",
+        "Student activity: graph the first-party readings, justify fit/units, solve for predicted full-charge time, compare this to an alternative piecewise rate, and explain what extra observations are needed. Actual user-device measurements are optional and require explicit truthful collection and privacy handling. Teacher-scored rubric 0–2 for accurate data plot, valid model/rate, checked predictions, and critical uncertainty/model-revision explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Approximate linear model",
+          "Definition": "A constant-change model approximates trends in paired data.",
+          "Rule": "Compute slopes across multiple intervals.",
+          "Example": "9 percentage points in10min means0.9 pp/min."
+        },
+        {
+          "Title": "Physical bound",
+          "Definition": "Battery percentage must remain between0 and100 inclusive.",
+          "Rule": "Restrict model range or replace rule when full/empty.",
+          "Example": "B(t)=5+0.9t only until it reaches100."
+        },
+        {
+          "Title": "Extrapolation uncertainty",
+          "Definition": "Predictions outside observed input range depend on unverified assumptions.",
+          "Rule": "Disclose observation range versus forecast range.",
+          "Example": "100% predicted at105.56min from data only through40min."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Verify a charging trend",
+          "Question": "Use (0,5),(10,14),(30,32),(40,41).",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "From0 to10 the increase is9 in10min, slope0.9pp/min.",
+            "From10 to30 increase18 over20min, also0.9.",
+            "From30 to40 increase9 over10min, also0.9.",
+            "At t0 intercept5%.",
+            "Use B(t)=5+0.9t; check at40 gives41%."
+          ],
+          "Answer": "Approximate model B(t)=5+0.9t%.",
+          "Check": "All four hypothetical readings match this simple line."
+        },
+        {
+          "Title": "Predict full charge cautiously",
+          "Question": "When does B(t)=100 under the model?",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "Set5+0.9t=100.",
+            "Subtract5:0.9t=95.",
+            "Divide: t=95/0.9≈105.56min.",
+            "Check B(105.56) is about100%.",
+            "Flag the extrapolation and possibility of slower charging near full battery."
+          ],
+          "Answer": "About105.56min after plugging in, under unchanged-rate assumption.",
+          "Check": "The output reaches physical upper bound at this input."
+        },
+        {
+          "Title": "Model a battery draining",
+          "Question": "For D(h)=90−4h, find percentage after5h and time to20%.",
+          "Method": "Use an original function and check its rule, inverse, constraints, and units at multiple inputs.",
+          "Steps": [
+            "At h5, D=90−4×5=70%.",
+            "For D(h)=20 set90−4h=20.",
+            "Subtract90 to get −4h=−70.",
+            "Divide −4: h=17.5 hours.",
+            "Check 90−4×17.5=20."
+          ],
+          "Answer": "70% after5h;20% after17.5h.",
+          "Check": "Time is within the declared model domain."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Extending a straight charging line beyond100%",
+          "WhyWrong": "Battery percentage cannot exceed physical capacity.",
+          "Correction": "Cap or change the model and disclose assumption."
+        },
+        {
+          "Mistake": "Treating extrapolated full-charge time as observed fact",
+          "WhyWrong": "Only0–40min data were fabricated for model construction.",
+          "Correction": "Say 'predicted under constant-rate assumption'."
+        },
+        {
+          "Mistake": "Confusing percent change with relative percent growth",
+          "WhyWrong": "A rise9 points from5% to14% is not 9% relative increase.",
+          "Correction": "Use percentage-point units."
+        }
+      ],
+      "SummaryPoints": [
+        "A function can summarize battery percentage versus time but needs physical bounds.",
+        "The invented charging data fit B(t)=5+0.9t over the measured segment.",
+        "Full-charge time105.56min is extrapolated and potentially unreliable.",
+        "Model choice, uncertainty and authentic device data require teacher review."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original function input-output checks",
+          "Description": "Independent hypothetical first-party computations, not publisher artwork or observed student data.",
+          "PrimaryLabel": "Input or contextual constraint",
+          "SecondaryLabel": "Output or verification",
+          "Rows": [
+            {
+              "Label": "t=0min",
+              "Cells": [
+                "5%"
+              ]
+            },
+            {
+              "Label": "t=10min",
+              "Cells": [
+                "14%"
+              ]
+            },
+            {
+              "Label": "t=30min",
+              "Cells": [
+                "32%"
+              ]
+            },
+            {
+              "Label": "t=40min",
+              "Cells": [
+                "41%"
+              ]
+            },
+            {
+              "Label": "predicted full",
+              "Cells": [
+                "105.56min"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

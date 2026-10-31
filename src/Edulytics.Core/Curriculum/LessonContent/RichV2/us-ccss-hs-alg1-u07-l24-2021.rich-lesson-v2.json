@@ -1,0 +1,149 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l24-v11-source-task-graph-review-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L24",
+      "CultureCode": "en",
+      "Title": "Using Quadratic Equations to Model Situations and Solve Problems",
+      "ExplanationParagraphs": [
+        "Learning goal: synthesize modeling, quadratic graphs, equation forms and exact solving in an open contextual investigation, including intersections of a parabola and a line, and justify all admissible results without step-by-step scaffolding. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 24 teacher https://im.kendallhunt.com/HS/teachers/1/7/24/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/24/index.html (CC BY 4.0). The source culminates in student-directed analysis rather than one rote factorization question.",
+        "Original fictitious simultaneous height comparison: a lightweight test object is modeled at height H(t)=−t²+6t+2 metres for elapsed t≥0 seconds until it reaches ground. A separately moving platform has height P(t)=t+6 metres under a simplified straight-line rule over the same time interval. Comparing elevations does not by itself establish a physical collision because horizontal positions and safety are not modeled.",
+        "Set H(t)=P(t) to find shared heights: −t²+6t+2=t+6, hence −t²+5t−4=0 or (t−1)(t−4)=0 after multiplying by−1. Thus t=1 or4 seconds; at t1 both heights7m, at t4 both10m. Each pair is checked in both original equations.",
+        "The parabola peaks at t3 with height H(3)=−9+18+2=11m. Ground time solves −t²+6t+2=0, giving t=3±√11; only positive t≈6.317s belongs to post-release time. The line at t3 is9m. A horizontal reference y=8 also crosses H at t=3±√3, two additional independent exact target solutions.",
+        "The publisher culminating source has two substantial open tasks (a quadratic height model and a parabola–line intersection) and offers a choice of presentation/gallery walk. This first-party adaptation deliberately uses other equations H(t)=-t^2+6t+2 and P(t)=t+6 while retaining independent problem selection, two-task structure, physical domain, and exact intersection reasoning; no source screenshot or publisher graph is copied.",
+        "Student culminating task — choose and independently solve two substantial ORIGINAL contexts without prescribed algebraic method. Task A: analyze the hypothetical H(t)=-t^2+6t+2 flight: initial height, maximum height/time, first nonnegative time reaching ground, and the two nonnegative times at height 8m; justify the useful equation form. Task B: analyze the line P(t)=t+6 and parabola H(t) on the same coordinate plane, derive all equal-height intersections algebraically and graphically, and explain why equal heights cannot establish a collision without horizontal-position data. Learners may complete both tasks or, if teacher authorizes, select one and prepare a visual display with a group/gallery-walk discussion. No graphing tool is required, but record genuine use if chosen. Original-first-party numbers are NOT publisher task/figure copies. Human-review draft rubric: 0–2 each for independently selected equivalent quadratic forms, exact verified solutions and units, complete labeled graph and contextual interpretation, and critique of model assumptions and clear group presentation. This task is human scored; generated examples, static SVGs and a rubric JSON never constitute a submitted assignment or a persisted grade."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Intersection equation",
+          "Definition": "Common-output pairs satisfy two function equations at the same input.",
+          "Rule": "Set H(t)=P(t).",
+          "Example": "Roots t1,4."
+        },
+        {
+          "Title": "Quadratic domain",
+          "Definition": "Physical flight ends at first nonnegative ground root.",
+          "Rule": "Solve H(t)=0 and discard negative elapsed time.",
+          "Example": "End t=3+√11≈6.317s."
+        },
+        {
+          "Title": "Model limitations",
+          "Definition": "Matching height does not establish shared spatial location or actual collision.",
+          "Rule": "Identify missing variables and assumptions.",
+          "Example": "Horizontal positions are not modeled."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve parabola-line equality",
+          "Question": "When does H(t)=−t²+6t+2 equal P(t)=t+6?",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Set−t²+6t+2=t+6.",
+            "Rearrange−t²+5t−4=0.",
+            "Multiply−1:t²−5t+4=0.",
+            "Factor(t−1)(t−4)=0.",
+            "Thus t1 or4; both within flight."
+          ],
+          "Answer": "Equal heights at t1 and4s.",
+          "Check": "H1=P1=7,H4=P4=10."
+        },
+        {
+          "Title": "Find vertex and ground time",
+          "Question": "Analyze H(t)=−t²+6t+2.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Vertex time−b/(2a)=−6/(−2)=3.",
+            "H3=−9+18+2=11m.",
+            "Ground solve t²−6t−2=0.",
+            "Quadratic formula t=(6±√36+8)/2=3±√11.",
+            "Positive t≈6.317s ends physical flight."
+          ],
+          "Answer": "Max11m at3s; ground≈6.317s.",
+          "Check": "Negative root inadmissible elapsed time."
+        },
+        {
+          "Title": "Find intersections with a horizontal level",
+          "Question": "When does H(t)=8m?",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Set−t²+6t+2=8.",
+            "Rearrange t²−6t+6=0.",
+            "Complete square (t−3)²=3.",
+            "Then t=3±√3≈1.268,4.732.",
+            "Both within physical flight."
+          ],
+          "Answer": "t=3±√3 seconds.",
+          "Check": "Substituting into H yields8 exactly."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming matching heights prove a collision",
+          "WhyWrong": "Vertical coordinate alone does not fix full spatial position.",
+          "Correction": "Explicitly state missing horizontal location."
+        },
+        {
+          "Mistake": "Keeping negative ground time as physical",
+          "WhyWrong": "Elapsed time is nonnegative.",
+          "Correction": "Apply valid time domain."
+        },
+        {
+          "Mistake": "Using a single equation's graph without verifying the second at intersection",
+          "WhyWrong": "A point must satisfy both functions.",
+          "Correction": "Substitute time in both expressions."
+        }
+      ],
+      "SummaryPoints": [
+        "The culminating model combines parabolas, lines, target heights and domain restrictions.",
+        "The original models have equal height at1s and4s, and object peak11m at3s.",
+        "Exact ground time is3+√11 seconds.",
+        "Teacher evaluates model selection, mathematical evidence and limitations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party exact quadratic reasoning and modeling table",
+          "Description": "Independently authored exact algebra, domain/units and mathematical evidence, not source images or real experiments.",
+          "PrimaryLabel": "Expression or scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "t1",
+              "Cells": [
+                "H=P=7m"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "H11m,P9m"
+              ]
+            },
+            {
+              "Label": "t4",
+              "Cells": [
+                "H=P=10m"
+              ]
+            },
+            {
+              "Label": "ground",
+              "Cells": [
+                "t=3+√11≈6.317s"
+              ]
+            },
+            {
+              "Label": "H=8",
+              "Cells": [
+                "t=3±√3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

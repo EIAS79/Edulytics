@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l06-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L06",
+      "CultureCode": "en",
+      "Title": "Building Quadratic Functions to Describe Situations (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning goal: build a projectile-height quadratic from an initial height and upward velocity minus a gravitational term, read zeros and vertex of the resulting graph, and restrict real-world time to the flight. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L06 teacher https://im.kendallhunt.com/HS/teachers/1/6/6/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/6/index.html (CC BY 4.0). The source contrasts a linear no-gravity launch with a curved gravity-adjusted trajectory.",
+        "Original hypothetical model for a soft ball launched vertically: initial height2m, upward velocity12m/s, and an invented approximate gravity term −2t²m. Height h(t)=2+12t−2t² for t≥0 until impact. Without gravity the linear model would be2+12t, which keeps growing; the quadratic bends downward and gives an eventual maximum.",
+        "Complete the square: h(t)=20−2(t−3)². Maximum height20m occurs at t3 seconds. Solve h(t)=0: t²−6t−1=0, roots t=3±√10; only positive time t≈6.1623s is physically relevant. A model of height below ground beyond that input is not a real flight prediction.",
+        "Student task: graph the original points at t0,1,2,3,4,5 and approximate impact time; compare the no-gravity line and curved height; explain why a root can be algebraically correct but physically inadmissible. Teacher-scored rubric0–2 for physical quantity definitions, vertex/zero mathematics, graph/domain and critique of the linear assumption."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Projectile height model",
+          "Definition": "Initial height plus upward linear motion minus downward quadratic acceleration.",
+          "Rule": "h(t)=h0+v0t−kt² for k>0.",
+          "Example": "h(t)=2+12t−2t²."
+        },
+        {
+          "Title": "Vertex",
+          "Definition": "A downward-opening quadratic has a maximum at its vertex.",
+          "Rule": "Complete square or use −b/(2a).",
+          "Example": "Vertex(3,20)."
+        },
+        {
+          "Title": "Zeros and flight domain",
+          "Definition": "The ground-level root marks the end of the modeled flight.",
+          "Rule": "Reject negative elapsed times.",
+          "Example": "Positive root3+√10≈6.162s."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute launch height samples",
+          "Question": "Find h0,h1,h2,h3 for2+12t−2t².",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "h0=2.",
+            "h1=2+12−2=12.",
+            "h2=2+24−8=18.",
+            "h3=2+36−18=20.",
+            "Outputs increase at decreasing increments."
+          ],
+          "Answer": "2,12,18,20m.",
+          "Check": "At t3 function attains maximum."
+        },
+        {
+          "Title": "Find vertex form",
+          "Question": "Rewrite h(t)=2+12t−2t².",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Factor−2 from variable terms:−2(t²−6t)+2.",
+            "Complete square t²−6t=(t−3)²−9.",
+            "Substitute h=−2[(t−3)²−9]+2.",
+            "Simplify h=20−2(t−3)².",
+            "Read maximum20 at t3."
+          ],
+          "Answer": "h(t)=20−2(t−3)².",
+          "Check": "Expanding recovers original polynomial."
+        },
+        {
+          "Title": "Find the ground impact",
+          "Question": "Solve2+12t−2t²=0.",
+          "Method": "Use the independently authored model, derive each step and check against original data.",
+          "Steps": [
+            "Divide by−2: t²−6t−1=0.",
+            "Quadratic formula gives t=(6±√36+4)/2=3±√10.",
+            "Negative root3−√10≈−0.162 is not elapsed flight time.",
+            "Positive root3+√10≈6.162s is model impact time."
+          ],
+          "Answer": "t≈6.162s (positive root).",
+          "Check": "The physical domain ends at ground impact."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a gravity-free line as realistic forever",
+          "WhyWrong": "An upward object slows and falls under gravity.",
+          "Correction": "Use a negative squared term."
+        },
+        {
+          "Mistake": "Accepting negative flight-time root",
+          "WhyWrong": "Time since launch is nonnegative.",
+          "Correction": "Apply contextual domain."
+        }
+      ],
+      "SummaryPoints": [
+        "Quadratic launch models combine initial height, linear launch velocity and downward curvature.",
+        "The original parabola peaks at t3 with height20m.",
+        "The physical ground time is 3+√10 seconds.",
+        "Teacher reviews graph, units and real-world limitations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independently authored geometric or quadratic model",
+          "Description": "Accessible numerical table and original situation, not copied publisher figures or authentic measurements.",
+          "PrimaryLabel": "Input or scenario",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "h2m"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "h12m"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "h18m"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "h20m"
+              ]
+            },
+            {
+              "Label": "impact",
+              "Cells": [
+                "≈6.162s"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l11-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L11",
+      "CultureCode": "en",
+      "Title": "Comparing and Contrasting Data Distributions",
+      "ExplanationParagraphs": [
+        "Learning goal: compare distributions with similar centers but different variability, rank their variability using dot plots, MAD and IQR, and explain why spread matters. Independent first-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 11, https://im.kendallhunt.com/HS/teachers/1/1/11/preparation.html (CC BY 4.0). Source roles: Building On HSS-ID.A.1, Addressing HSS-ID.A.2, Building Towards HSS-ID.A.3.",
+        "Original fictional task datasets in minutes: A=4,5,6,7,8 and B=0,3,6,9,12. Both have mean and median 6, but B is more dispersed. The exact values should be displayed on a common labelled number line, not independently stretched axes.",
+        "For A, absolute deviations from mean 6 are 2,1,0,1,2; MAD_A=6/5=1.2 minutes. For B they are 6,3,0,3,6; MAD_B=18/5=3.6 minutes. Using median-of-halves, A quartiles are 4.5 and 7.5 (IQR 3); B quartiles are 1.5 and 10.5 (IQR 9). This is a legitimate comparison because counts and units are the same.",
+        "Partner matching task: draw both dot plots and box plots, swap conclusions, identify the more variable group using independent numerical evidence, and decide how an occasional extreme would affect a measure of center. The source card-sort and group critiques are preserved as reasoning objectives; the first-party numbers are not publisher cards.",
+        "Teacher-scored rubric 0–2 each for accurate displays, correct two MADs, correct two IQRs and a comparative argument linking display shape and spread (maximum 8). Different correct graphs or explanations require human interpretation.",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L11: Match source dot/box representations using consistent scales; rank spreads by MAD and IQR with shared center. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Compare first-party groups with means 6, MAD 1.2 versus 3.6 and IQR 3 versus 9; explain which is more variable. A teacher scores 0, 1 or 2 per criterion: Correct MAD and deviations; Correct IQR/scale comparison; Variation interpretation. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Variability",
+          "Definition": "Spread describes how far observations differ from center and one another.",
+          "Rule": "Use a consistent measure for both data sets.",
+          "Example": "A and B both center at 6 but MADs 1.2 versus 3.6."
+        },
+        {
+          "Title": "MAD comparisons",
+          "Definition": "For equal units, higher MAD means greater average distance from mean.",
+          "Rule": "Calculate absolute deviations before averaging.",
+          "Example": "B deviations 6,3,0,3,6 average to 3.6."
+        },
+        {
+          "Title": "IQR comparisons",
+          "Definition": "IQR measures the width of middle half of ordered data.",
+          "Rule": "State the quartile convention and compare Q3-Q1.",
+          "Example": "B IQR 10.5−1.5=9, A IQR 7.5−4.5=3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare matching centers",
+          "Question": "Compute means and medians of A=4,5,6,7,8 and B=0,3,6,9,12.",
+          "Method": "Use the given original data, show the computation and interpret the result in context.",
+          "Steps": [
+            "Each set has five values and sums to 30.",
+            "Each mean is 30/5=6 minutes.",
+            "Both sorted lists have middle third value 6.",
+            "Equal centers do not imply equal spread."
+          ],
+          "Answer": "Both mean and median are 6 minutes for each group.",
+          "Check": "Each sum 30 and each third value 6."
+        },
+        {
+          "Title": "Compare MAD",
+          "Question": "Which group has larger mean absolute deviation?",
+          "Method": "Use the given original data, show the computation and interpret the result in context.",
+          "Steps": [
+            "A deviations around 6 are 2,1,0,1,2; sum=6.",
+            "A MAD=6/5=1.2 minutes.",
+            "B deviations are 6,3,0,3,6; sum=18.",
+            "B MAD=18/5=3.6 minutes."
+          ],
+          "Answer": "B has three times A's MAD.",
+          "Check": "18/5 divided by 6/5 equals 3."
+        },
+        {
+          "Title": "Compare IQR under median-of-halves",
+          "Question": "Compute IQR for each of the two five-value sets.",
+          "Method": "Use the given original data, show the computation and interpret the result in context.",
+          "Steps": [
+            "Exclude the middle value when finding quartiles.",
+            "For A lower pair 4,5 gives Q1=4.5 and upper pair 7,8 gives Q3=7.5.",
+            "A IQR=3 minutes.",
+            "For B lower pair 0,3 gives Q1=1.5; upper pair 9,12 gives Q3=10.5.",
+            "B IQR=9 minutes."
+          ],
+          "Answer": "B has IQR 9, A has IQR 3 minutes.",
+          "Check": "Both comparisons agree that B is more variable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ranking spread from median alone",
+          "WhyWrong": "Equal medians reveal location, not variability.",
+          "Correction": "Compare IQR, MAD or display width."
+        },
+        {
+          "Mistake": "Comparing graphs with different axis scales",
+          "WhyWrong": "An enlarged plot can exaggerate differences.",
+          "Correction": "Use common numeric axes."
+        },
+        {
+          "Mistake": "Treating the median-of-halves quartile convention as universal",
+          "WhyWrong": "Software interpolation conventions differ.",
+          "Correction": "State the convention in the solution."
+        }
+      ],
+      "SummaryPoints": [
+        "Spread must be compared separately from the center.",
+        "Both original groups have mean and median 6 but B has higher MAD and IQR.",
+        "A: MAD 1.2, IQR 3; B: MAD 3.6, IQR 9 minutes.",
+        "Card matches and reasoned interpretations are teacher-scored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original numerical comparison table",
+          "Description": "Text table of hypothetical first-party numerical examples with labels and units.",
+          "PrimaryLabel": "Statistic",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "Group A mean / median",
+              "Cells": [
+                "6 / 6"
+              ]
+            },
+            {
+              "Label": "Group A MAD / IQR",
+              "Cells": [
+                "1.2 / 3"
+              ]
+            },
+            {
+              "Label": "Group B mean / median",
+              "Cells": [
+                "6 / 6"
+              ]
+            },
+            {
+              "Label": "Group B MAD / IQR",
+              "Cells": [
+                "3.6 / 9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

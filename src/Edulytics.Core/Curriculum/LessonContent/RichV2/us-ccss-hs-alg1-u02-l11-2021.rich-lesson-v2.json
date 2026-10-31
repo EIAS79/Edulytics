@@ -1,0 +1,121 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l11-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L11",
+      "CultureCode": "en",
+      "Title": "Connecting Equations to Graphs (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning objective: rearrange ax+by=c to y=mx+b, calculate slope and y-intercept, and explain their meaning using more than one equation form. Independently authored Edulytiks material aligned to Illustrative Mathematics Algebra 1 First Edition U02:L11, https://im.kendallhunt.com/HS/teachers/1/2/11/preparation.html (CC BY 4.0). Building On 6.EE.A.3 and 8.EE.B; Addressing HSA-CED.A.4 and HSA-REI.D.10.",
+        "Independent example: 3x+2y=18. Isolating y gives y=9−1.5x, so slope is −3/2 and intercept (0,9); x-intercept (6,0). The line represents all real pairs satisfying the original equation. In a context with whole-number items, only feasible integer coordinates apply.",
+        "Second original example: 5y+10x=40 gives y=8−2x, which makes the y-intercept 8 and change rate −2 visible. Difference between the two forms: standard form helps identify a fixed total, slope-intercept reveals rate and initial value.",
+        "Student task: graph two independently authored lines, rewrite their equations without changing the solution sets, test two points per line and explain an off-graph pair. Teacher-scored rubric (0–2 each, max 8): valid isolation, numerical slope/intercepts, graph/scale, and contextual explanation with verified substitution."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Standard form",
+          "Definition": "ax+by=c hides some graphical features until rearranged.",
+          "Rule": "Isolate y when b≠0.",
+          "Example": "3x+2y=18 gives y=9−1.5x."
+        },
+        {
+          "Title": "Slope",
+          "Definition": "Rate of change is Δy/Δx; standard-form slope is −a/b for b≠0.",
+          "Rule": "Use two known points as independent check.",
+          "Example": "From (0,9) to (6,0): slope (0−9)/(6−0)=−3/2."
+        },
+        {
+          "Title": "Intercept",
+          "Definition": "An intercept occurs where the other coordinate is zero.",
+          "Rule": "Set x or y to zero in the original equation.",
+          "Example": "For 3x+2y=18, intercepts (6,0),(0,9)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rearrange a standard form",
+          "Question": "Write 3x+2y=18 in slope-intercept form.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Subtract 3x from both sides: 2y=18−3x.",
+            "Divide by 2: y=9−(3/2)x.",
+            "Read intercept b=9 and slope m=−3/2.",
+            "Check point (6,0): 3(6)+2(0)=18."
+          ],
+          "Answer": "y=−1.5x+9, slope −1.5.",
+          "Check": "Both equation forms share exactly the same real solution pairs."
+        },
+        {
+          "Title": "Find slope from intercepts",
+          "Question": "Find the slope and intercepts of 5y+10x=40.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Set x=0: 5y=40, y=8.",
+            "Set y=0: 10x=40, x=4.",
+            "Slope is (0−8)/(4−0)=−2.",
+            "Rewrite y=8−2x to verify."
+          ],
+          "Answer": "Slope −2, intercepts (0,8),(4,0).",
+          "Check": "Substitute both points into 5y+10x=40."
+        },
+        {
+          "Title": "Check a proposed point",
+          "Question": "Is (2,6) on the graph 3x+2y=18?",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Substitute x=2,y=6 into left side.",
+            "Calculate 3×2+2×6=6+12=18.",
+            "Left equals right, so the point is on the line.",
+            "Read it as a pair of real solutions, before applying any context."
+          ],
+          "Answer": "Yes, (2,6) satisfies the equation.",
+          "Check": "An alternative form gives 6=9−1.5×2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing only one term in 18−3x by 2",
+          "WhyWrong": "Both terms must be divided.",
+          "Correction": "Distribute the denominator: 9−1.5x."
+        },
+        {
+          "Mistake": "Assuming standard form slope is a/b",
+          "WhyWrong": "The slope is −a/b for b≠0.",
+          "Correction": "Rearrange before reading rate."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent equation forms emphasize different features of the same line.",
+        "For ax+by=c, y=(c−ax)/b when b≠0.",
+        "Intercepts follow by setting the other variable to zero.",
+        "Students must explain graph points and rate, not only calculate numbers."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original equation and result comparison",
+          "Description": "Independently authored labelled examples of equation relationships.",
+          "PrimaryLabel": "Model",
+          "SecondaryLabel": "Exact value or solution",
+          "Rows": [
+            {
+              "Label": "3x+2y=18",
+              "Cells": [
+                "slope −1.5, y-intercept 9"
+              ]
+            },
+            {
+              "Label": "5y+10x=40",
+              "Cells": [
+                "slope −2, y-intercept 8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

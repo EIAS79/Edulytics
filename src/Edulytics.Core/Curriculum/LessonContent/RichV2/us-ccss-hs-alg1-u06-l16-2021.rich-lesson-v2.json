@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l16-v11-source-task-graph-review-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L16",
+      "CultureCode": "en",
+      "Title": "Graphing from the Vertex Form",
+      "ExplanationParagraphs": [
+        "Learning goal: graph vertex-form quadratics using the vertex, opening and reflected points, and explain how coefficients a,h,k shape the curve. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L16 teacher https://im.kendallhunt.com/HS/teachers/1/6/16/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/16/index.html (CC BY 4.0). The source asks students to choose among forms based on which graph feature is needed.",
+        "Original function g(x)=−0.5(x+2)²+6, vertex(−2,6). Since coefficient−0.5 is negative, it opens downward with maximum6. Points x0 and x−4 are both2 units from axis x−2, so g(0)=g(−4)=−.5×4+6=4. At x−1 and−3, g=5.5. Graph all these on common axes.",
+        "The horizontal intercepts follow from−.5(x+2)²+6=0, so (x+2)²=12 and x=−2±√12≈−5.464 and1.464. These are optional additional graph features, not required to define the vertex; do not confuse y-intercept(0,4) with the x-intercepts.",
+        "Second comparison function q(x)=0.5(x+2)^2+6 has the SAME vertex (-2,6) as g(x)=-0.5(x+2)^2+6, but opens upward with minimum 6, not maximum. At x=0 and x=-4, q=8 and g=4. These independently chosen parallel expressions support the official activity goal of graphing two functions that share a vertex.",
+        "Student task (original source-equivalent shared-vertex comparison): match the standard, factored and vertex descriptions of a sample function to their relevant graph features. On the SAME coordinate axes graph g(x)=-0.5(x+2)^2+6 and the original comparison q(x)=0.5(x+2)^2+6. Both have vertex (-2,6). Plot reflected pairs x=-4,0, label both y-intercepts g(0)=4 and q(0)=8, and identify g maximum and q minimum. Discuss with a partner how the two parabolas differ, and submit your own labeled graph. Teacher human-review draft rubric 0–2 each for graph points/symmetry, vertex and y-intercepts, correct min/max interpretation, and form-choice/explanation. In line with publisher teacher guidance, do NOT formally assess a proof for why a positive/negative square coefficient creates a minimum/maximum."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Vertex-based graph",
+          "Definition": "Locate (h,k), then plot points at symmetric horizontal distances.",
+          "Rule": "Use (h±d,k+ad²).",
+          "Example": "At h−2,h+2 output4."
+        },
+        {
+          "Title": "Downward opening",
+          "Definition": "Negative a makes vertex maximum k.",
+          "Rule": "For a<0, a(x−h)²≤0.",
+          "Example": "g maximum6."
+        },
+        {
+          "Title": "Roots from vertex form",
+          "Definition": "Solve squared distance equation when value zero.",
+          "Rule": "Rearrange a(x−h)²+k=0.",
+          "Example": "(x+2)²=12 gives two roots."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identify vertex and range",
+          "Question": "For g=−.5(x+2)²+6.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "Inside term zero at x−2.",
+            "Vertex output6.",
+            "Negative squared coefficient ensures every other output≤6.",
+            "Graph opens downward; range(−∞,6]."
+          ],
+          "Answer": "Vertex(−2,6), max6.",
+          "Check": "g(−2)=6."
+        },
+        {
+          "Title": "Plot reflected points",
+          "Question": "Find g(0),g(−4),g(−1),g(−3).",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "At0 and−4, squared distance4; output6−2=4.",
+            "At−1 and−3, squared distance1; output6−.5=5.5.",
+            "The pairs are mirrored about x−2.",
+            "Plot all four with vertex."
+          ],
+          "Answer": "g0=g−4=4;g−1=g−3=5.5.",
+          "Check": "Equal distances imply equal values."
+        },
+        {
+          "Title": "Find x-intercepts",
+          "Question": "Solve g(x)=0.",
+          "Method": "Interpret the original vertex-form expression and verify its equivalent standard-form algebra.",
+          "Steps": [
+            "0=−.5(x+2)²+6.",
+            "Move and divide: (x+2)²=12.",
+            "Take roots x+2=±√12.",
+            "Thus x=−2±2√3≈−5.464,1.464.",
+            "Both produce zero by substitution."
+          ],
+          "Answer": "Intercepts approx(−5.464,0),(1.464,0).",
+          "Check": "Square of ±√12 is12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating negative a as minimum",
+          "WhyWrong": "Negative parabola opens downward.",
+          "Correction": "Recognize vertex as maximum."
+        },
+        {
+          "Mistake": "Mixing y-intercept and x-intercepts",
+          "WhyWrong": "At x0 y is4; roots use y0.",
+          "Correction": "Label axes and evaluate properly."
+        }
+      ],
+      "SummaryPoints": [
+        "Vertex form efficiently reveals vertex and opening.",
+        "Symmetric offsets give equal heights.",
+        "g has vertex(−2,6), y-intercept4 and two real zeros.",
+        "Teacher reviews graph and reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party vertex-form graph checks",
+          "Description": "Accessible equation/output table for original examples, not source-publisher artwork.",
+          "PrimaryLabel": "Feature",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "x−4",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "x−3",
+              "Cells": [
+                "5.5"
+              ]
+            },
+            {
+              "Label": "x−2",
+              "Cells": [
+                "6"
+              ]
+            },
+            {
+              "Label": "x−1",
+              "Cells": [
+                "5.5"
+              ]
+            },
+            {
+              "Label": "x0",
+              "Cells": [
+                "4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

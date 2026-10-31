@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l12-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L12",
+      "CultureCode": "en",
+      "Title": "Graphing the Standard Form (Part 1)",
+      "ExplanationParagraphs": [
+        "Learning goal: investigate how the coefficient a of x² and constant c affect graphs of y=ax²+c through controlled parameter changes, and distinguish vertical intercept, opening direction and width. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L12 teacher https://im.kendallhunt.com/HS/teachers/1/6/12/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/12/index.html (CC BY 4.0). The source has actual technology-driven graph manipulation; written examples here are not claimed as performed software operations.",
+        "Original family A(x)=2x²+3, B(x)=−x²+3, C(x)=(1/2)x²+3. Each has y-intercept(0,3), but A and C open upward while B opens downward. All have vertex at(0,3) in this special b=0 family. At x2, outputs A11,B−1,C5, showing coefficient magnitude changes vertical distance from vertex.",
+        "Compare widths: when a>0, larger |a| produces a steeper/narrower parabola than smaller |a| at equal horizontal distance from vertex. The negative sign reflects opening without changing the y-intercept. If c rises from3 to7 while a is fixed2, all outputs rise4 and the vertex shifts vertically to(0,7), without horizontal change.",
+        "Student task: generate a common-axis sketch and, if actually available, use graphing technology to vary a and c separately; predict effect before seeing graph and explain which features remain invariant. Teacher-scored rubric0–2 each for sampled output values, correct opening/width, vertical shift and truthful representation of graphing technology use."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Coefficient a",
+          "Definition": "In ax²+c, sign of a determines opening and |a| controls vertical stretch.",
+          "Rule": "Compare at x equidistant from zero.",
+          "Example": "A=2x²+3 rises faster than C=.5x²+3."
+        },
+        {
+          "Title": "Constant c",
+          "Definition": "For ax²+c, y-intercept and vertex output are c.",
+          "Rule": "Set x=0.",
+          "Example": "All originals cross at(0,3)."
+        },
+        {
+          "Title": "Parameter isolation",
+          "Definition": "To infer effects, change only one coefficient at a time.",
+          "Rule": "Hold a fixed to see c shift.",
+          "Example": "2x²+7 is 4 above 2x²+3 everywhere."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare three outputs",
+          "Question": "Evaluate A,B,C at x2.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "A(2)=2×4+3=11.",
+            "B(2)=−4+3=−1.",
+            "C(2)=.5×4+3=5.",
+            "All share output3 at x0.",
+            "The distinct x2 outputs reveal opening/stretch."
+          ],
+          "Answer": "A11, B−1, C5.",
+          "Check": "Substitution confirms coefficients."
+        },
+        {
+          "Title": "Analyze opening and vertex",
+          "Question": "Find vertex for each y=ax²+3.",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "At x0, x²=0, so y=3.",
+            "For positive a≥0, x² is nonnegative, so value at0 is minimum.",
+            "For B negative a, x² term nonpositive, so value at0 is maximum.",
+            "Thus all vertices at(0,3), but their extrema directions differ."
+          ],
+          "Answer": "A,C minima3; B maximum3.",
+          "Check": "Comparison uses sign of a."
+        },
+        {
+          "Title": "Shift constant term",
+          "Question": "What changes replacing A=2x²+3 by D=2x²+7?",
+          "Method": "Evaluate explicit first-party quadratic coefficients and check graph features via algebra.",
+          "Steps": [
+            "Subtract expressions D−A=4 at every x.",
+            "The vertical intercept changes from3 to7.",
+            "The vertex shifts from(0,3) to(0,7).",
+            "The parabola retains its shape and opening."
+          ],
+          "Answer": "Shift 4 units upward.",
+          "Check": "At x2 D15 vs A11."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming a change in c shifts graph sideways",
+          "WhyWrong": "Constant addition changes outputs, not inputs.",
+          "Correction": "Describe vertical translation."
+        },
+        {
+          "Mistake": "Calling smaller coefficient a a faster/narrower graph",
+          "WhyWrong": "For same x displacement, smaller |a| yields smaller vertical change.",
+          "Correction": "Compare at x2."
+        },
+        {
+          "Mistake": "Asserting graphical technology interaction without evidence",
+          "WhyWrong": "A numerical text table is not an executed graphing session.",
+          "Correction": "Record actual tool use separately."
+        }
+      ],
+      "SummaryPoints": [
+        "For y=ax²+c, a controls opening/steepness and c controls vertical position.",
+        "All original examples share vertex(0,3) and intercept3.",
+        "Changing c translates vertically while retaining shape.",
+        "Teacher assesses graph observations and truthful technology evidence."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original quadratic graphical features",
+          "Description": "Accessible mathematical values, no claimed real experiment or publisher diagram.",
+          "PrimaryLabel": "Feature or input",
+          "SecondaryLabel": "Exact value",
+          "Rows": [
+            {
+              "Label": "at x0",
+              "Cells": [
+                "A3,B3,C3"
+              ]
+            },
+            {
+              "Label": "at x2",
+              "Cells": [
+                "A11,B−1,C5"
+              ]
+            },
+            {
+              "Label": "A shifted c7",
+              "Cells": [
+                "D(2)=15"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u06-l09-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U06:L09",
+      "CultureCode": "en",
+      "Title": "Standard Form and Factored Form",
+      "ExplanationParagraphs": [
+        "Learning goal: multiply sums/differences including negative constants, connect factored form a(x−r)(x−s) with standard form ax²+bx+c, and explain signs from geometric or distributive reasoning. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U06:L09 teacher https://im.kendallhunt.com/HS/teachers/1/6/9/preparation.html and student https://im.kendallhunt.com/HS/students/1/6/9/index.html (CC BY 4.0). Source extends previous area diagrams to differences and negative terms.",
+        "Original symbolic example f(x)=(x−3)(x+4). Distribute: x²+4x−3x−12=x²+x−12. The factored and standard expressions are identically equal for all real x, even though a geometric interpretation of negative side lengths requires care. Coefficient a=1, b=1, c=−12.",
+        "For x=0, both give−12; for x=3, both give0; for x=−4 both give0. This previews connections between factors and graph zeros that are developed in subsequent lessons; the main source task here is expression equivalence, not solving every quadratic.",
+        "Student task: expand three independently chosen signed binomial products, use a labelled algebra-tile or rectangle-with-signed-terms explanation, test equivalence at two inputs, and critique an example where −3×+4 is mistakenly given+12. Teacher-scored rubric0–2 each for all four distributed products, correct combining and signs, identity argument and transparent representational explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Standard form",
+          "Definition": "A quadratic expression can be written ax²+bx+c with a≠0.",
+          "Rule": "Combine like x terms after expansion.",
+          "Example": "x²+x−12."
+        },
+        {
+          "Title": "Factored form",
+          "Definition": "A product of two linear factors can represent the same polynomial.",
+          "Rule": "Distribute every pair.",
+          "Example": "(x−3)(x+4)."
+        },
+        {
+          "Title": "Negative products",
+          "Definition": "The product of a negative and positive constant is negative.",
+          "Rule": "Preserve signs when multiplying cross and constant terms.",
+          "Example": "−3×4=−12."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Expand a mixed-sign product",
+          "Question": "Expand (x−3)(x+4).",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "x×x=x².",
+            "x×4=4x.",
+            "−3×x=−3x; −3×4=−12.",
+            "Combine x²+(4−3)x−12=x²+x−12."
+          ],
+          "Answer": "x²+x−12.",
+          "Check": "Factored and standard expressions agree for all real x."
+        },
+        {
+          "Title": "Verify chosen inputs",
+          "Question": "Evaluate both forms at x=0 and x=3.",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "At0 factored(−3)(4)=−12.",
+            "Standard0+0−12=−12.",
+            "At3 factored0×7=0.",
+            "Standard9+3−12=0.",
+            "Both matches are checks, not the full identity proof."
+          ],
+          "Answer": "At x0 −12, x3 zero.",
+          "Check": "Distribution establishes full equivalence."
+        },
+        {
+          "Title": "Explain a wrong sign",
+          "Question": "Why is x²+x+12 not an expansion of (x−3)(x+4)?",
+          "Method": "Derive an equivalent quadratic form or graph feature and verify by substitution.",
+          "Steps": [
+            "The constant term comes from (−3)×4.",
+            "That product equals−12, not+12.",
+            "At x0 original gives−12.",
+            "Incorrect polynomial at0 gives+12, a contradiction."
+          ],
+          "Answer": "Constant term must be−12.",
+          "Check": "A single counterexample disproves the wrong identity."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dropping a cross term",
+          "WhyWrong": "All four products contribute.",
+          "Correction": "Use systematic distribution or diagram."
+        },
+        {
+          "Mistake": "Multiplying negative and positive to positive",
+          "WhyWrong": "Sign rules are violated.",
+          "Correction": "Check constant term at x0."
+        }
+      ],
+      "SummaryPoints": [
+        "Mixed positive/negative factors can be expanded to standard form.",
+        "(x−3)(x+4) equals x²+x−12.",
+        "Distribution proves equivalence beyond selected input checks.",
+        "Teacher evaluates sign and diagram reasoning."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factored/standard form numerical representation",
+          "Description": "First-party input-output values and independent expression checks; no publisher image.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Graph output",
+          "Rows": [
+            {
+              "Label": "x=−4",
+              "Cells": [
+                "0"
+              ]
+            },
+            {
+              "Label": "x=0",
+              "Cells": [
+                "−12"
+              ]
+            },
+            {
+              "Label": "x=3",
+              "Cells": [
+                "0"
+              ]
+            },
+            {
+              "Label": "standard form",
+              "Cells": [
+                "x²+x−12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

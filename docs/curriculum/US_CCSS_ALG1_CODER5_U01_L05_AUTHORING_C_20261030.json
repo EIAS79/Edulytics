@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
+  "contentVersion": "alg1-u01-l05-sequential-source-abc-20261030-v2",
+  "status": "C_AUTHORING_CLOSED_NOT_RUNTIME",
+  "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition, local original HTML / CC BY 4.0",
+  "sourceFiles": {
+    "teacherPreparation": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\5\\preparation.html",
+      "sha256": "0a850fe1610f39f0ec22ad36cf14fb2df0ee7b02aea0fb7ad52ab8e4d8047cf0"
+    },
+    "teacherActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1\\1\\5\\index.html",
+      "sha256": "01ff9622b9a22a224ff04659922f8830603af4ef62a2c6d69aeee231ff89686c"
+    },
+    "studentActivities": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\5\\index.html",
+      "sha256": "1152f959ed268ec632a748da5e5193e322803ba8863d57075eb3c0f6dcd2bfb6"
+    },
+    "studentPractice": {
+      "localFile": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\09_HS_Algebra_1_Student\\1\\5\\practice.html",
+      "sha256": "692a264cbc49f460d045abbd567675b646ecb95a912473be70f4eb5a12a5af7a"
+    }
+  },
+  "sourceRoles": [
+    "6.SP.B.5.c=BuildingOn",
+    "HSS-ID.A.1=BuildingTowards",
+    "HSS-ID.A.2=BuildingTowards"
+  ],
+  "sourceToContentCrosswalk": [
+    "optional diagnostic; mean/median statement review",
+    "quartile and IQR interpretation",
+    "absolute deviations/MAD table, hypothetical meter-stick not physical proof",
+    "mean, median, IQR, MAD and graphical reasoning, original Cool-down substitute"
+  ],
+  "task": "mean, median, MAD and IQR on seven fictional observations",
+  "assessmentFamilies": [
+    {
+      "id": "SOURCE_TASKS",
+      "kind": "HUMAN",
+      "tasks": [
+        "optional diagnostic; mean/median statement review",
+        "quartile and IQR interpretation",
+        "absolute deviations/MAD table, hypothetical meter-stick not physical proof",
+        "mean, median, IQR, MAD and graphical reasoning, original Cool-down substitute"
+      ],
+      "maxPoints": 8,
+      "rubric": [
+        {
+          "criterion": "C1",
+          "maxPoints": 2,
+          "evidence": "Diagnostic optionality and conditional lesson assignment"
+        },
+        {
+          "criterion": "C2",
+          "maxPoints": 2,
+          "evidence": "Statistics oracle and representations"
+        },
+        {
+          "criterion": "C3",
+          "maxPoints": 2,
+          "evidence": "Use of quartile/MAD definitions with units"
+        },
+        {
+          "criterion": "C4",
+          "maxPoints": 2,
+          "evidence": "Truthful actual physical demonstration and teacher observation"
+        }
+      ],
+      "authenticInteractionOnlyIfObserved": true
+    },
+    {
+      "id": "FIRST_PARTY_COOLDOWN",
+      "kind": "HUMAN",
+      "source": "PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN",
+      "maxPoints": 6,
+      "rubric": [
+        {
+          "criterion": "mean and median",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "quartile convention and IQR",
+          "maxPoints": 2
+        },
+        {
+          "criterion": "deviation table and MAD",
+          "maxPoints": 2
+        }
+      ]
+    },
+    {
+      "id": "INDEPENDENT_MATH_FIXTURE",
+      "kind": "AUTHORING_ORACLE_NOT_RUNTIME",
+      "expected": [
+        7,
+        7,
+        5,
+        9,
+        4,
+        2.2857142857142856
+      ],
+      "answerType": "ordered vector of numerical values or named categorical shape descriptors; graph drawing stays HUMAN",
+      "correct": [
+        7,
+        7,
+        5,
+        9,
+        4,
+        2.2857142857142856
+      ],
+      "equivalent": "numerically equivalent values using stated units and quartile conventions where appropriate",
+      "wrong": "missing value, shifted bin, wrong median, invalid copied formula, or unjustified descriptor",
+      "malformed": "null, blank, NaN, unsupported type, duplicated selection, invalid vector length",
+      "verification": "independently computed local Python arithmetic or classification; never asserted as production grader"
+    }
+  ],
+  "stageD": {
+    "productionPracticeReadiness": "NO_SUPPORTED_OUTCOMES_FAIL_CLOSED",
+    "sharedOwner": "Supervisor 2 designated central single-writer",
+    "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "requirement": "reviewed lesson-scoped real generator/grader, teacher-scored persistence and authenticated two-school E2E",
+    "NOT_RUN": [
+      "Live Practice",
+      "teacher grade persistence",
+      "full CI"
+    ]
+  }
+}

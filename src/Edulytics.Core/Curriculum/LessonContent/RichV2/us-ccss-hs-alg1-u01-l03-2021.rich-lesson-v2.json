@@ -1,0 +1,178 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l03-sequential-source-abc-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L03",
+      "CultureCode": "en",
+      "Title": "A Gallery of Data",
+      "ExplanationParagraphs": [
+        "Learning goal: construct a dot plot, histogram and box plot from one dataset; compare and critique graphical representations using their quantities, labels, scales and summary statistics. This is an independent Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition, Unit 1 Lesson 3, licensed CC BY 4.0, https://im.kendallhunt.com/HS/teachers/1/1/3/preparation.html. The publisher lists HSS-ID.A.1 as Addressing and HSS-ID.A.2 as Building Towards.",
+        "Begin with your own actual numerical survey data retained from the earlier lesson, only if they were really collected and approved for class use. If real data are unavailable, use the following clearly fictional sample instead. Never assert that hypothetical responses came from students. Work in groups to choose readable display scales and justify the features the displays reveal or hide.",
+        "Edulytiks original gallery dataset A (eight independent hypothetical daily exercise durations, minutes): 2, 2, 3, 3, 4, 4, 5, 5. Compare it with independent dataset B: 7, 7, 8, 8, 9, 9, 10, 10. Each pair of values in B is exactly 5 minutes above the corresponding value in A. Both datasets have the same shape and range, but different centers.",
+        "Gallery task 1: create labelled dot plots for A and B with identical numeric tick spacing and show two dots above each distinct value. Gallery task 2: draw histograms on common interval widths (e.g. A: [2,4) four observations, [4,6) four; B: [7,9) four, [9,11) four), and explain that different interval origins affect direct visual comparisons. Gallery task 3: calculate five-number summaries and sketch box plots on a common labelled number line.",
+        "Gallery task 4: visit another group's display, write three evidence-backed comments and one correction or question. Explicitly check units, axis starts and tick spacing, interval boundaries, total count and whether statements are supported. A graphic without values or a misleading change of scale is not proof of a different distribution.",
+        "Teacher-scored original gallery assessment rubric (0-2 each, total 8): accurate raw-data-to-display mapping, mathematically correct measures of center/spread, evidence-based comparison of two displays, and reasoned critique of labels/scale/limitations. A complete answer earns 2, partly supported 1, missing or wrong 0. The student-created displays and explanations are human-judged; do not treat a single numeric response as completing this lesson.",
+        "V13 source-task comparison: IM U1L3 starts with a Notice-and-Wonder comparison of two dot plots with identical shape but shifted centers; its group gallery asks for dot plot, histogram, box plot, three interpretations and peer critique. Retain the already-authored three-display gallery and optional fictional dataset only when real collected data are unavailable; do not report fictional responses as a real class survey.",
+        "V13 independent noticing task: first dot frequencies at values 1,2,3,4,5 are [1,2,3,2,1], and the second at 6,7,8,9,10 uses the same counts. Each has nine observations, range4 and median3 versus8. Draw on a shared numerical scale; state what is unchanged and what has shifted. The observed shape alone cannot establish the data-collection mechanism.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Using fictional gallery arrays A=2,2,3,3,4,4,5,5 and B=7,7,8,8,9,9,10,10, (1) explain why the dot plots have identical shape but different numerical center, (2) compare median 3.5 versus 8.5 and range 3 versus 3 on a shared scale, and (3) identify one visual labeling/scale error that could mislead an audience, with a proposed fix. Teacher-scored 0-2 each for correct translation and variability, correctly calculated/labelled values, and reasoned critique, total 6. No auto-grade of hand-drawn plots, no fictional participation claim."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Shape versus center",
+          "Definition": "Shape describes the arrangement of data values; center describes a typical location of a distribution.",
+          "Rule": "Shifting every observation by the same amount changes the center, not the relative pattern or range.",
+          "Example": "B values are A values plus 5 minutes, so the medians differ by 5 minutes."
+        },
+        {
+          "Title": "Fair graph comparisons",
+          "Definition": "Comparisons rely on visible and consistent units, scales, and legends.",
+          "Rule": "Before comparing shape or frequencies, inspect bin widths, axis limits and total sample counts.",
+          "Example": "Both fictional samples contain eight values, so comparing their counts is meaningful when scales agree."
+        },
+        {
+          "Title": "Graphical critique",
+          "Definition": "Identify a supported conclusion, explain evidence and flag misleading representation choices.",
+          "Rule": "Refer to exact observations or five-number statistics; do not infer causation from a picture.",
+          "Example": "Dataset B has a greater median than A, but the graph does not show why."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare shifted dot plots",
+          "Question": "A has 2,2,3,3,4,4,5,5 minutes. B has 7,7,8,8,9,9,10,10 minutes. What has changed and what remains?",
+          "Method": "Match points value-by-value and compare sample size, center and range.",
+          "Steps": [
+            "There are eight observations in each dataset; each displayed value occurs twice.",
+            "For each position, subtract A from B; the result is 5 minutes in all eight cases.",
+            "Median A is (3+4)/2=3.5 minutes and median B is (8+9)/2=8.5 minutes.",
+            "Range A is 5−2=3 minutes and range B is 10−7=3 minutes.",
+            "The shift by 5 changes location but preserves ordering, frequencies and range."
+          ],
+          "Answer": "B is A shifted 5 minutes right; medians 3.5 and 8.5 minutes; both ranges 3 minutes.",
+          "Check": "Eight matching observations and 5-minute differences confirm the location shift; both ranges equal 3."
+        },
+        {
+          "Title": "Compare box plots and critique an axis",
+          "Question": "Find the five-number summaries using the median-of-halves rule and explain why both box plots need a common minutes axis for direct visual comparison.",
+          "Method": "Sort, find median and halves, and carry units through all five values.",
+          "Steps": [
+            "A lower half 2,2,3,3 has Q1=(2+3)/2=2.5; upper half 4,4,5,5 has Q3=(4+5)/2=4.5.",
+            "For A: min=2, median=(3+4)/2=3.5, max=5.",
+            "B is a shift of A by 5, so add 5 to each of A's five numbers.",
+            "Use a shared horizontal axis with the same tick spacing: A box [2.5,4.5] and B box [7.5,9.5].",
+            "If two separate axes use inconsistent starting points, their horizontal positions may falsely imply identical centers."
+          ],
+          "Answer": "A: (2,2.5,3.5,4.5,5); B: (7,7.5,8.5,9.5,10), in minutes.",
+          "Check": "All B five-number values are exactly 5 higher; both IQR values are 2 minutes and both ranges are 3 minutes."
+        },
+        {
+          "Title": "Critique a misleading display comparison",
+          "Question": "One box plot uses one-minute ticks; another uses five-minute ticks. May horizontal distances be compared directly?",
+          "Method": "Inspect the axis scales before interpreting horizontal geometry.",
+          "Steps": [
+            "Check each axis label and tick spacing; they differ by a factor of five.",
+            "Redraw both box plots on one common minutes number line.",
+            "Compare their explicit medians: 8.5 − 3.5 = 5 minutes.",
+            "Check the IQR values: 4.5 − 2.5 = 2 and 9.5 − 7.5 = 2 minutes."
+          ],
+          "Answer": "No. Replot on a common scale; B has a five-minute higher median but the same two-minute IQR.",
+          "Check": "All B observations equal the corresponding A observations plus five."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing charts with inconsistent axes as if their positions had identical meanings.",
+          "WhyWrong": "Differences in starting points or tick spacing distort a visual comparison.",
+          "Correction": "Replot on a shared labelled number line or compare explicit values and units."
+        },
+        {
+          "Mistake": "Concluding different centers mean different shapes.",
+          "WhyWrong": "Adding a constant to every observation keeps all relative gaps and frequencies identical.",
+          "Correction": "Compare differences among values, range and frequency pattern separately from the median."
+        },
+        {
+          "Mistake": "Awarding full credit for a numeric statistic without a created and critiqued display.",
+          "WhyWrong": "This lesson's goal includes making, interpreting and evaluating graphical representations.",
+          "Correction": "Use the teacher rubric for all four products: labelled plot, statistic, evidence-backed comparison and critique."
+        }
+      ],
+      "SummaryPoints": [
+        "Both fictional samples have eight observations and a repeated-dot pattern; B equals A plus five minutes.",
+        "For median-of-halves, A summary (2,2.5,3.5,4.5,5); B summary (7,7.5,8.5,9.5,10), in minutes.",
+        "The medians differ by five minutes; each sample has a 3-minute range and a 2-minute IQR.",
+        "Student-made graphical representations and critique must be reviewed by a teacher using explicit criteria; actual student data are never fabricated."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Gallery dataset A: dot plot counts",
+          "Description": "An accessible independent frequency display: duration in minutes, count in dots. Each of 2,3,4,5 has two dots; total eight.",
+          "PrimaryLabel": "Duration (minutes)",
+          "SecondaryLabel": "Number of dots",
+          "Rows": [
+            {
+              "Label": "2",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "4",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "5",
+              "Cells": [
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Gallery dataset B: dot plot counts",
+          "Description": "An accessible independent frequency display: each of 7,8,9,10 minutes has two dots; total eight. The pattern is A shifted by five minutes.",
+          "PrimaryLabel": "Duration (minutes)",
+          "SecondaryLabel": "Number of dots",
+          "Rows": [
+            {
+              "Label": "7",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "8",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "9",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "10",
+              "Cells": [
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

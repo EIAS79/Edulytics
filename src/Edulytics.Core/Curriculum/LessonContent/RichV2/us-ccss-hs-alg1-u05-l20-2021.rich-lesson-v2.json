@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l20-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L20",
+      "CultureCode": "en",
+      "Title": "Changes over Equal Intervals",
+      "ExplanationParagraphs": [
+        "Learning goal: compare output changes over equal input intervals for linear and exponential functions, recognize interval-length dependence and explain how an exponential factor over k steps equals b^k. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 20, https://im.kendallhunt.com/HS/teachers/1/5/20/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/20/index.html (CC BY 4.0). The source compares graph segments and tables with equal widths.",
+        "Original functions over nonnegative whole t: L(t)=4+3t and E(t)=4(1.5)^t. On a two-step interval [t,t+2], L gains6 units for every t, since 3×2=6. E's output is multiplied by (1.5)^2=2.25 for every starting t, so E(t+2)/E(t)=2.25 despite the absolute change varying.",
+        "Compute L0=4,L2=10,L4=16; each two-step difference6. E0=4,E2=9,E4=20.25; successive ratios9/4=2.25,20.25/9=2.25, but additive gains5 and11.25 differ. An analysis that compares E0→E2 with L2→L4 still uses equal duration but changes baselines; state the interval explicitly.",
+        "Student task: calculate repeated equal-width intervals for both models, identify preserved quantity (difference versus ratio), and generalize a k-step relation. Teacher-scored rubric0–2 each for interval math, correct invariant, algebraic generalization and clear interpretation of graph segment comparisons."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equal-width linear changes",
+          "Definition": "The increment over k steps is mk for f(t)=mt+b.",
+          "Rule": "Difference f(t+k)−f(t)=mk.",
+          "Example": "L gains3×2=6 in any two-step interval."
+        },
+        {
+          "Title": "Equal-width exponential factor",
+          "Definition": "For f(t)=ab^t, ratio f(t+k)/f(t)=b^k when outputs nonzero.",
+          "Rule": "Cancel common ab^t.",
+          "Example": "E multiplies by1.5²=2.25 per two steps."
+        },
+        {
+          "Title": "Absolute versus relative difference",
+          "Definition": "Exponential equal-period ratios are fixed while absolute gains vary.",
+          "Rule": "Compute both carefully.",
+          "Example": "E gains5 then11.25 over consecutive two-step intervals."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find two-step linear increments",
+          "Question": "Evaluate L0,L2,L4.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "L0=4.",
+            "L2=4+6=10.",
+            "L4=4+12=16.",
+            "Differences10−4=6 and16−10=6."
+          ],
+          "Answer": "Every two-step linear gain is6.",
+          "Check": "Change equals slope3 times interval2."
+        },
+        {
+          "Title": "Find two-step exponential ratios",
+          "Question": "Evaluate E0,E2,E4 for4(1.5)^t.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "E0=4.",
+            "E2=4×2.25=9.",
+            "E4=4×5.0625=20.25.",
+            "Ratios9/4=2.25 and20.25/9=2.25.",
+            "Differences are5 and11.25, not equal."
+          ],
+          "Answer": "Each two-step ratio2.25.",
+          "Check": "2.25²=5.0625 gives E4/E0."
+        },
+        {
+          "Title": "Generalize k-step relation",
+          "Question": "Show E(t+k)/E(t) for E(t)=4×1.5^t.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Write E(t+k)=4×1.5^(t+k).",
+            "Use exponent sum identity to factor1.5^t×1.5^k.",
+            "Divide by E(t)=4×1.5^t>0.",
+            "Common factor cancels leaving1.5^k."
+          ],
+          "Answer": "E(t+k)/E(t)=1.5^k.",
+          "Check": "Independent of starting t."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming exponential equal-period differences are fixed",
+          "WhyWrong": "It is ratios that stay constant.",
+          "Correction": "Calculate both changes and ratios."
+        },
+        {
+          "Mistake": "Forgetting interval length in exponential factor",
+          "WhyWrong": "Over two steps factor is b², not b.",
+          "Correction": "Use b^k."
+        }
+      ],
+      "SummaryPoints": [
+        "Equal input intervals reveal constant differences for linear functions and constant ratios for exponentials.",
+        "L gains6 over every two steps; E multiplies2.25.",
+        "Exponential absolute gains can grow even with constant relative multiplier.",
+        "Teacher reviews graph/table explanations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "L4,E4"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "L10,E9"
+              ]
+            },
+            {
+              "Label": "t4",
+              "Cells": [
+                "L16,E20.25"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

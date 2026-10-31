@@ -1,0 +1,133 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l08-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L08",
+      "CultureCode": "en",
+      "Title": "Rewriting Quadratic Expressions in Factored Form (Part 3)",
+      "ExplanationParagraphs": [
+        "Learning goal: recognize quadratic expressions without a linear term as differences of squares, justify the factorization a²−b²=(a−b)(a+b), and distinguish real factorability from sum-of-squares forms. Original Edulytiks adaptation aligned to Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 8 teacher https://im.kendallhunt.com/HS/teachers/1/7/8/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/8/index.html (CC BY 4.0). The source's number-pattern warm-up uses products of numbers equally spaced around a center.",
+        "Original algebraic examples x²−49=(x−7)(x+7) and 4x²−25=(2x−5)(2x+5). When expanded, cross terms cancel: x²+7x−7x−49=x²−49. This explains the missing linear term rather than treating it as a coincidence.",
+        "Number identity examples 9×11=(10−1)(10+1)=100−1=99 and 19×21=(20−1)(20+1)=400−1=399 show the same structure. By contrast x²+49 cannot be written as (x−7)(x+7) over reals, because that product gives x²−49.",
+        "Student task: find the center of several near-square products, expand both signed binomials in an area/equation representation, factor two difference-of-squares polynomials and critique a proposed factorization of a sum of squares. Teacher-scored rubric0–2 for structural recognition, exact algebra, mental computation and counterexample reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Difference of squares",
+          "Definition": "a²−b²=(a−b)(a+b).",
+          "Rule": "Check subtracting two square quantities.",
+          "Example": "x²−49=(x−7)(x+7)."
+        },
+        {
+          "Title": "Cancellation",
+          "Definition": "Opposite cross terms add to zero.",
+          "Rule": "Expand (a−b)(a+b).",
+          "Example": "ab−ab=0."
+        },
+        {
+          "Title": "Near-square products",
+          "Definition": "Numbers equally spaced around a center multiply to center²−offset².",
+          "Rule": "(c−d)(c+d)=c²−d².",
+          "Example": "9×11=10²−1=99."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Factor x²−49",
+          "Question": "Use difference of squares.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Recognize x²−7².",
+            "Apply a²−b²=(a−b)(a+b).",
+            "Obtain (x−7)(x+7).",
+            "Expand to check x²+7x−7x−49=x²−49."
+          ],
+          "Answer": "(x−7)(x+7).",
+          "Check": "Cross terms cancel."
+        },
+        {
+          "Title": "Factor 4x²−25",
+          "Question": "Use scaled square terms.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Write (2x)²−5².",
+            "Apply the identity.",
+            "Factors (2x−5)(2x+5).",
+            "Expand 4x²+10x−10x−25=4x²−25."
+          ],
+          "Answer": "(2x−5)(2x+5).",
+          "Check": "Scaled terms and signs correct."
+        },
+        {
+          "Title": "Compute product mentally",
+          "Question": "Find 19×21 without long multiplication.",
+          "Method": "Show distributive or equivalence-preserving algebra and independently verify every candidate solution.",
+          "Steps": [
+            "Rewrite (20−1)(20+1).",
+            "Use square difference20²−1².",
+            "Compute400−1=399.",
+            "Check ordinary multiplication19×21=399."
+          ],
+          "Answer": "399.",
+          "Check": "Same algebraic identity applied numerically."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Factoring x²+49 as (x−7)(x+7)",
+          "WhyWrong": "That product equals x²−49, not plus.",
+          "Correction": "Check sign on constant."
+        },
+        {
+          "Mistake": "Forgetting scale in4x²",
+          "WhyWrong": "Its square root is2x, not4x.",
+          "Correction": "Check (2x)²=4x²."
+        }
+      ],
+      "SummaryPoints": [
+        "Difference of squares is a special no-linear-term factor pattern.",
+        "Cross terms disappear because of opposite signs.",
+        "The identity also accelerates near-square arithmetic.",
+        "Teacher reviews proof and contrasting sum-of-squares case."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original factor and completing-square verification",
+          "Description": "Independent mathematical equations, checked roots and explanations, not a reproduction of publisher diagrams.",
+          "PrimaryLabel": "Expression or condition",
+          "SecondaryLabel": "Equivalent form or solutions",
+          "Rows": [
+            {
+              "Label": "x²−49",
+              "Cells": [
+                "(x−7)(x+7)"
+              ]
+            },
+            {
+              "Label": "4x²−25",
+              "Cells": [
+                "(2x−5)(2x+5)"
+              ]
+            },
+            {
+              "Label": "9×11",
+              "Cells": [
+                "99"
+              ]
+            },
+            {
+              "Label": "19×21",
+              "Cells": [
+                "399"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

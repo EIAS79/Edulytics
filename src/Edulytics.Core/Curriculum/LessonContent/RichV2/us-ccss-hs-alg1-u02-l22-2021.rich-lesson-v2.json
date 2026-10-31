@@ -1,0 +1,134 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l22-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L22",
+      "CultureCode": "en",
+      "Title": "Graphing Linear Inequalities in Two Variables (Part 2)",
+      "ExplanationParagraphs": [
+        "Learning objective: write a two-variable inequality for a contextual resource budget, reason about points on and either side of a boundary line, and explain why a mathematical solution may be physically impossible. Independently authored Edulytiks material aligned with Illustrative Mathematics Algebra 1 First Edition U02:L22, https://im.kendallhunt.com/HS/teachers/1/2/22/preparation.html (CC BY 4.0). The source uses landscaping decisions and specifically prioritizes hand reasoning about regions instead of graphing technology.",
+        "Independent practice context: lawn sod costs $2 per square foot, flower beds cost $12 per square foot, and the budget is at most $3,000. Let x≥0 be sod area and y≥0 flower bed area. Constraint 2x+12y≤3000. Boundary y=250−x/6, with intercepts (1500,0),(0,250). Shade below and restrict to first quadrant. A point (600,150) costs 1200+1800=3000 and lies on the included boundary.",
+        "At (600,160), spending is 1200+1920=3120, outside budget. At (1000,0), spending is 2000, within budget. Mathematical point (−600,300) satisfies −1200+3600=2400≤3000 but negative sod area has no physical meaning, so it is excluded by context despite algebraic inequality truth.",
+        "Student task: manually sketch and label the feasible first-quadrant region, classify boundary/off-boundary points, suggest a landscape allocation that uses less than full funds and another that uses exactly full funds, then critique peer claims about negative areas. Teacher-scored rubric 0–2 each for correct model, accurate region, truthful point checks and justified contextual feasibility."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cost half-plane",
+          "Definition": "A total resource ceiling describes all affordable combinations.",
+          "Rule": "Add component costs and use ≤ for a maximum.",
+          "Example": "2x+12y≤3000."
+        },
+        {
+          "Title": "Budget boundary",
+          "Definition": "Cost equality gives a straight line whose points spend exactly the limit.",
+          "Rule": "Find intercepts by setting one area to zero.",
+          "Example": "(1500,0),(0,250)."
+        },
+        {
+          "Title": "Physical feasibility",
+          "Definition": "Budget truth alone is insufficient when areas cannot be negative.",
+          "Rule": "Intersect the half-plane with x≥0,y≥0.",
+          "Example": "(−600,300) is algebraically under budget but not physically valid."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Graph the landscaping constraint",
+          "Question": "Find line intercepts for 2x+12y≤3000.",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "Use equality 2x+12y=3000.",
+            "Set y=0: x=1500; set x=0: y=250.",
+            "Solve y≤250−x/6.",
+            "Check origin: total cost 0≤3000.",
+            "Shade below solid line within x≥0,y≥0."
+          ],
+          "Answer": "Feasible region in first quadrant under/on line joining (1500,0),(0,250).",
+          "Check": "Both intercepts spend exactly $3000."
+        },
+        {
+          "Title": "Test contrasting budgets",
+          "Question": "Is (600,150) feasible? Is (600,160)?",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "For (600,150), cost 2×600+12×150=1200+1800=3000.",
+            "Nonnegative areas and exact budget make it feasible.",
+            "For (600,160), cost 1200+1920=3120.",
+            "$3120 exceeds the budget by $120, so infeasible."
+          ],
+          "Answer": "(600,150) feasible; (600,160) over budget.",
+          "Check": "Substitute into original inequality."
+        },
+        {
+          "Title": "Reject physically impossible point",
+          "Question": "Evaluate (−600,300).",
+          "Method": "Model the constraint, test boundary cases, and verify the original comparison.",
+          "Steps": [
+            "Compute cost expression 2(−600)+12(300)=−1200+3600=2400.",
+            "As an algebraic pair, 2400≤3000 is true.",
+            "But x=−600 square feet of sod is physically meaningless.",
+            "Reject it under domain x≥0,y≥0."
+          ],
+          "Answer": "Mathematically meets cost inequality but is not a valid landscaping plan.",
+          "Check": "The nonnegative-area constraint is independent of cost."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Graphing the cost inequality over negative-area quadrants as physically feasible",
+          "WhyWrong": "Real areas cannot be negative.",
+          "Correction": "Add x≥0,y≥0 restrictions."
+        },
+        {
+          "Mistake": "Using technology instead of reasoning about the region in this lesson",
+          "WhyWrong": "The source lesson explicitly focuses on manual half-plane reasoning.",
+          "Correction": "Show intercept and test-point calculations."
+        }
+      ],
+      "SummaryPoints": [
+        "A resource inequality yields a half-plane bounded by a related equality.",
+        "Only nonnegative areas are physically meaningful in landscaping.",
+        "An inclusive budget includes exact-boundary allocations.",
+        "Teacher scores original graph, point checks and context explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible numerical check of original constraint",
+          "Description": "Text table of invented Edulytiks examples, not copyrighted publisher diagrams.",
+          "PrimaryLabel": "Test input",
+          "SecondaryLabel": "Mathematical and contextual conclusion",
+          "Rows": [
+            {
+              "Label": "(600,150)",
+              "Cells": [
+                "$3000 feasible"
+              ]
+            },
+            {
+              "Label": "(600,160)",
+              "Cells": [
+                "$3120 infeasible"
+              ]
+            },
+            {
+              "Label": "(1000,0)",
+              "Cells": [
+                "$2000 feasible"
+              ]
+            },
+            {
+              "Label": "(−600,300)",
+              "Cells": [
+                "$2400 algebraically; physically invalid"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

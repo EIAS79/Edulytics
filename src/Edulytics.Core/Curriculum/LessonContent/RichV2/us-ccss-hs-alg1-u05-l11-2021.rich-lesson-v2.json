@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l11-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L11",
+      "CultureCode": "en",
+      "Title": "Modeling Exponential Behavior",
+      "ExplanationParagraphs": [
+        "Learning goal: choose and critique an exponential model for messy decay measurements, identify approximate factor from several ratios, evaluate residuals and distinguish authentic experiments from fabricated demonstration data. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 11, https://im.kendallhunt.com/HS/teachers/1/5/11/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/11/index.html (CC BY 4.0). The publisher's main investigation uses successive ball-bounce heights and data/model critique, not exact perfect decay alone.",
+        "Original hypothetical bounce-height observations in centimetres for bounce numbers n=0,1,2,3 are100,61,37,22. These numbers were constructed for mathematical modeling, not measured from a bouncing ball. A simple approximate model is H(n)=100(0.6)^n, predicting100,60,36,21.6cm. Observed-minus-predicted residuals are0,1,1,0.4cm; the model does not fit exactly.",
+        "Compare a constant subtraction model L(n)=100−20n, which predicts100,80,60,40 and has residuals0,−19,−23,−18. The exponential model has much smaller absolute errors here. Ratios of actual heights61/100=.61,37/61≈.607,22/37≈.595 vary slightly around.6, making a multiplier around.6 defensible.",
+        "Student task: construct graphs with shared scales, compute at least three ratios, propose two potential exponential factors, compare prediction error and explain possible measurement variation. An actual ball experiment is optional, and requires genuine data collection to count as performed. Teacher-scored rubric0–2 each for transparent data provenance, factor estimation, model comparison and reasoned uncertainty."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Approximate factor",
+          "Definition": "Messy observations may support a factor near but not exactly constant.",
+          "Rule": "Compare consecutive ratios across data.",
+          "Example": ".61,.607,.595 suggest b≈.6."
+        },
+        {
+          "Title": "Residual",
+          "Definition": "Observed minus predicted quantifies departure from a chosen model.",
+          "Rule": "Keep error sign and units.",
+          "Example": "At n3,22−21.6=+0.4cm."
+        },
+        {
+          "Title": "Model selection",
+          "Definition": "Compare errors using identical observed points before preferring one model.",
+          "Rule": "Avoid claiming a model is exact when residuals remain.",
+          "Example": "Exponential residuals small versus linear subtraction model large."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find model predictions",
+          "Question": "Use H(n)=100(0.6)^n for n0–3.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "H0=100.",
+            "H1=60.",
+            "H2=36.",
+            "H3=21.6.",
+            "Compare observed100,61,37,22."
+          ],
+          "Answer": "Predicted100,60,36,21.6cm.",
+          "Check": "Each prediction is previous times0.6."
+        },
+        {
+          "Title": "Compute residuals",
+          "Question": "Find signed errors for observed100,61,37,22.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "At n0,100−100=0.",
+            "At n1,61−60=+1.",
+            "At n2,37−36=+1.",
+            "At n3,22−21.6=+0.4.",
+            "All errors relatively small compared with heights."
+          ],
+          "Answer": "Residuals0,+1,+1,+0.4cm.",
+          "Check": "Positive means observed height exceeds model."
+        },
+        {
+          "Title": "Compare constant subtraction alternative",
+          "Question": "Use L(n)=100−20n.",
+          "Method": "Derive the specific first-party mathematical rule, independently verify it and interpret with the stated domains.",
+          "Steps": [
+            "Predictions n0–3:100,80,60,40.",
+            "Residuals observed minus predicted:0,−19,−23,−18.",
+            "Absolute residual sum=0+19+23+18=60.",
+            "Exponential absolute residual sum=0+1+1+.4=2.4.",
+            "Exponential model fits these values much better under absolute-error criterion."
+          ],
+          "Answer": "Exponential total absolute error2.4cm vs linear60cm.",
+          "Check": "Both evaluated against identical four invented observations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Claiming every measurement ratio must equal the chosen factor",
+          "WhyWrong": "Real data often exhibit noise and rounding.",
+          "Correction": "Use an approximate fit and residual analysis."
+        },
+        {
+          "Mistake": "Inventing a physical bounce experiment",
+          "WhyWrong": "Authored numbers are not actual measurements.",
+          "Correction": "Label hypothetical example and leave experiment unperformed unless evidenced."
+        },
+        {
+          "Mistake": "Judging models based solely on the final point",
+          "WhyWrong": "The whole pattern matters.",
+          "Correction": "Compare multiple observed rows."
+        }
+      ],
+      "SummaryPoints": [
+        "A reasonable approximate exponential model need not pass exactly through each point.",
+        "Bounce data here are fictional and model factor≈0.6.",
+        "Errors quantify fit and help compare alternatives.",
+        "Teacher reviews actual experiment claims and argument."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original exponential and percent-change table",
+          "Description": "Independently authored hypothetical sample/model data; no actual external price, scientific or classroom records.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Output",
+          "Rows": [
+            {
+              "Label": "bounce0",
+              "Cells": [
+                "observed100, predicted100"
+              ]
+            },
+            {
+              "Label": "bounce1",
+              "Cells": [
+                "observed61, predicted60"
+              ]
+            },
+            {
+              "Label": "bounce2",
+              "Cells": [
+                "observed37, predicted36"
+              ]
+            },
+            {
+              "Label": "bounce3",
+              "Cells": [
+                "observed22, predicted21.6"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

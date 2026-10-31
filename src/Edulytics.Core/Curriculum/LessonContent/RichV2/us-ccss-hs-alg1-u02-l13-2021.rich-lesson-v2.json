@@ -1,0 +1,128 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l13-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L13",
+      "CultureCode": "en",
+      "Title": "Solving Systems by Substitution",
+      "ExplanationParagraphs": [
+        "Learning objective: choose a conveniently isolated variable or expression, substitute it into another equation, solve and verify the pair against both original equations. Independently authored Edulytiks lesson based on Illustrative Mathematics Algebra 1 First Edition U02:L13, https://im.kendallhunt.com/HS/teachers/1/2/13/preparation.html (CC BY 4.0). Building On 8.EE.B.6 and HSA-REI.D.10; Addressing HSA-REI.C.6.",
+        "Original system: y=2x+1 and 3x+y=16. Substitute the entire expression 2x+1 into the second equation: 3x+(2x+1)=16, so 5x=15 and x=3; then y=7. The pair (3,7) checks both. Substitution can also be done using a value for x or another solved expression; choose a form that keeps arithmetic simple.",
+        "Another original system x=4, 2x+3y=20 yields 8+3y=20, y=4. A third example has the line y=−x+5 and equation 2x+y=8, producing x=3,y=2. Contrast systems where y is already isolated with systems requiring rearrangement first.",
+        "Student task: work one system by two substitution pathways, annotate which expression is replacing which variable, and check each final pair with the original constraints. Teacher-scored rubric 0–2 each for correct substitution, equation-solving steps, back-substitution checks and explanatory method choice."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Substitution",
+          "Definition": "Replace a variable with another expression known to equal it.",
+          "Rule": "Use parentheses when replacing a variable with a sum.",
+          "Example": "3x+y=16 with y=2x+1 becomes 3x+(2x+1)=16."
+        },
+        {
+          "Title": "Efficient variable choice",
+          "Definition": "Choose an isolated variable or simple coefficient to reduce algebra.",
+          "Rule": "Check equations before rearranging.",
+          "Example": "When x=4, substitute immediately rather than solving y first."
+        },
+        {
+          "Title": "Back-check",
+          "Definition": "The final ordered pair must make both original equations true.",
+          "Rule": "Verify before accepting a solution.",
+          "Example": "For (3,7), y=2(3)+1 and 3(3)+7=16."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Substitute an expression",
+          "Question": "Solve y=2x+1, 3x+y=16.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Replace y by 2x+1 in second equation.",
+            "Simplify 3x+2x+1=16 to 5x=15.",
+            "Divide to obtain x=3.",
+            "Compute y=2(3)+1=7.",
+            "Verify 3×3+7=16."
+          ],
+          "Answer": "(x,y)=(3,7).",
+          "Check": "Both originals are true."
+        },
+        {
+          "Title": "Substitute a numeric value",
+          "Question": "Solve x=4, 2x+3y=20.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Replace x with 4 in 2x+3y=20.",
+            "Compute 8+3y=20.",
+            "Subtract 8: 3y=12, so y=4.",
+            "Check (4,4) in both originals."
+          ],
+          "Answer": "(x,y)=(4,4).",
+          "Check": "2×4+3×4=20."
+        },
+        {
+          "Title": "Use opposite-slope line",
+          "Question": "Solve y=−x+5 and 2x+y=8.",
+          "Method": "Explain each mathematical move and verify the result in the original equations.",
+          "Steps": [
+            "Substitute y=−x+5 into second equation.",
+            "Then 2x−x+5=8, giving x=3.",
+            "Compute y=−3+5=2.",
+            "Verify 2×3+2=8."
+          ],
+          "Answer": "(x,y)=(3,2).",
+          "Check": "The substituted expression and final pair satisfy both equations."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Substituting only one term of an expression",
+          "WhyWrong": "This changes the equation.",
+          "Correction": "Enclose a sum in parentheses during replacement."
+        },
+        {
+          "Mistake": "Checking only the substituted one-variable equation",
+          "WhyWrong": "An arithmetic error might still produce a plausible x value.",
+          "Correction": "Back-check the original two equations."
+        }
+      ],
+      "SummaryPoints": [
+        "Substitution replaces a variable with a known equal value or expression.",
+        "Choose the variable that is already isolated when possible.",
+        "An ordered pair is valid only if both original equations hold.",
+        "Teacher-scored explanations and alternate pathways remain important."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original equation and result comparison",
+          "Description": "Independently authored labelled examples of equation relationships.",
+          "PrimaryLabel": "Model",
+          "SecondaryLabel": "Exact value or solution",
+          "Rows": [
+            {
+              "Label": "y=2x+1, 3x+y=16",
+              "Cells": [
+                "(3,7)"
+              ]
+            },
+            {
+              "Label": "x=4, 2x+3y=20",
+              "Cells": [
+                "(4,4)"
+              ]
+            },
+            {
+              "Label": "y=−x+5, 2x+y=8",
+              "Cells": [
+                "(3,2)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

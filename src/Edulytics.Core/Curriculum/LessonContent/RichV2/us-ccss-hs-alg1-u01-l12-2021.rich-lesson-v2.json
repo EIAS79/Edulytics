@@ -1,0 +1,149 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l12-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L12",
+      "CultureCode": "en",
+      "Title": "Standard Deviation",
+      "ExplanationParagraphs": [
+        "Learning goal: understand population standard deviation as a measure of spread, calculate it for small sets and verify a technology result; distinguish it from MAD and the sample standard deviation. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 12, https://im.kendallhunt.com/HS/teachers/1/1/12/preparation.html (CC BY 4.0). Source roles: Building On HSS-ID.A.1 and HSS-ID.A.2; Addressing HSS-ID.A.2 and HSS-ID.A.3.",
+        "Use the population standard deviation convention in this unit: for n observations, calculate mean μ, find each (x−μ)², average those squared distances by dividing by n, and take the square root. This gives σ, in the original units. Dividing by n−1 is the alternative sample-standard-deviation calculation and must not be silently substituted.",
+        "Original hypothetical datasets: A=3,3,5,5 and B=1,1,7,7. Both have mean 4. In A, squared deviations are 1,1,1,1 so population variance is 1 and σ=1. In B the squared deviations are 9,9,9,9 so variance is 9 and σ=3. B is more variable even though mean is identical.",
+        "Student task: construct original dot plots, compare standard deviation with MAD, then use statistical software with the population-SD option to verify A and B. Explore replacing B by four copies of the constant 4 and explain why σ becomes zero. Use a teacher-scored explanation for what the units and comparative magnitude mean.",
+        "Teacher-scored rubric 0–2 for correct mean, squared-deviation table and division by n, correct square root with units, meaningful A/B comparison and honest software-check evidence (max 8). A single numeric result does not prove software use or contextual understanding.",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L12: Describe three data displays; explain technology-derived standard deviation and compare with MAD; distinguish population from sample convention. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Calculate population SD=1 for [3,3,5,5] and 3 for [1,1,7,7]; explain why constant data have SD=0. A teacher scores 0, 1 or 2 per criterion: Mean and squared deviations; Population SD units and divisor; Contextual comparison, no false technology claim. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Population standard deviation",
+          "Definition": "The square root of the average squared distance from the population mean.",
+          "Rule": "Use n in the denominator for the population definition used here.",
+          "Example": "For 3,3,5,5, mean 4 and σ=1."
+        },
+        {
+          "Title": "Population versus sample SD",
+          "Definition": "Population σ uses division by n, whereas sample s typically uses n−1.",
+          "Rule": "Check which statistic a software function reports.",
+          "Example": "For 3,3,5,5, population SD=1, while sample SD is sqrt(4/3)."
+        },
+        {
+          "Title": "Zero variation",
+          "Definition": "If every observation equals the same constant, variance and SD are zero.",
+          "Rule": "All deviations equal zero.",
+          "Example": "4,4,4,4 has σ=0."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate population SD for A",
+          "Question": "Find σ for 3,3,5,5.",
+          "Method": "Use the given original data, show the computation and interpret the result in context.",
+          "Steps": [
+            "Mean (3+3+5+5)/4=4.",
+            "Each deviation is -1 or +1.",
+            "Squares are 1,1,1,1; total 4.",
+            "Divide by n=4 to obtain variance 1.",
+            "Square root gives σ=1 in the original unit."
+          ],
+          "Answer": "Population SD is 1.",
+          "Check": "Independent squared-deviation sum equals 4."
+        },
+        {
+          "Title": "Compare SD for B",
+          "Question": "Find σ for 1,1,7,7 and compare it with A.",
+          "Method": "Use the given original data, show the computation and interpret the result in context.",
+          "Steps": [
+            "Mean (1+1+7+7)/4=4.",
+            "Deviations are -3,-3,+3,+3.",
+            "Squares are 9,9,9,9; total 36.",
+            "Population variance=36/4=9.",
+            "Population SD=sqrt(9)=3, greater than A's 1."
+          ],
+          "Answer": "B SD=3; it is three times A's population SD.",
+          "Check": "Squared deviations and the square root are verified."
+        },
+        {
+          "Title": "Recognize zero spread",
+          "Question": "Compute σ for four copies of 4.",
+          "Method": "Use the given original data, show the computation and interpret the result in context.",
+          "Steps": [
+            "Mean is 4.",
+            "All four deviations from mean are zero.",
+            "Every squared deviation is zero.",
+            "Variance=0/4=0, hence square root SD=0."
+          ],
+          "Answer": "Population SD=0.",
+          "Check": "All values are identical, which is exactly the zero-variability condition."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dividing by n−1 in a population-SD exercise",
+          "WhyWrong": "That computes a different estimator.",
+          "Correction": "Use the source's n convention; label sample s if using n−1."
+        },
+        {
+          "Mistake": "Forgetting the square root",
+          "WhyWrong": "Average squared deviations is variance in squared units, not SD.",
+          "Correction": "Take the nonnegative square root to return to original units."
+        },
+        {
+          "Mistake": "Assuming same mean implies same variability",
+          "WhyWrong": "Distribution means say nothing about how far values lie from center.",
+          "Correction": "Compare squared deviations and SD."
+        }
+      ],
+      "SummaryPoints": [
+        "Population SD uses n in the denominator and returns to original units after a square root.",
+        "Both original datasets have mean 4 but SDs 1 and 3.",
+        "A constant dataset has SD zero; greater positive SD indicates greater spread.",
+        "Technology can verify a calculation but teacher review is needed for explanation."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original numerical comparison table",
+          "Description": "Text table of hypothetical first-party numerical examples with labels and units.",
+          "PrimaryLabel": "Statistic",
+          "SecondaryLabel": "Value",
+          "Rows": [
+            {
+              "Label": "Group A mean",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "Group A population SD",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "Group B mean",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "Group B population SD",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "Constant dataset population SD",
+              "Cells": [
+                "0"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

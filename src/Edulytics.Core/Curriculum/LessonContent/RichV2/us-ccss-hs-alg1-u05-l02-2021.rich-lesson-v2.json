@@ -1,0 +1,144 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l02-v12-source-activity-audit2-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L02",
+      "CultureCode": "en",
+      "Title": "Patterns of Growth",
+      "ExplanationParagraphs": [
+        "Learning goal: distinguish common differences from common multiplicative factors in numerical tables, express both patterns in words and expressions, and match them to plausible contexts. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 2, https://im.kendallhunt.com/HS/teachers/1/5/2/preparation.html and student lesson https://im.kendallhunt.com/HS/students/1/5/2/index.html (CC BY 4.0). The source deliberately delays requiring formal names linear/exponential and includes spreadsheet table work.",
+        "Original table A for t=0,1,2,3,4 is 6,14,22,30,38, with constant additive difference8 and formula A(t)=6+8t. Original table B is 6,9,13.5,20.25,30.375, with common ratio1.5 and formula B(t)=6×(1.5)^t. Both start6 but follow distinct rules. Exact decimals are mathematical quantities, not physical object counts without a suitable continuous unit.",
+        "Context: table A can model credit growing $8 per week, and B can model a laboratory indicator multiplied by1.5 weekly only as a fictional test, not a validated biological growth law. Students compare how a constant percent change makes differences become larger over time while the proportional factor stays fixed.",
+        "Student activity: complete a missing-value table, label which kind of regularity each follows, match to the corresponding narrative, and use a spreadsheet if actually available; otherwise disclose a paper simulation. Teacher-scored rubric 0–2 for accurate continued table, correct invariant, valid expression/context, and explanation/counterexample separating additive and multiplicative growth.",
+        "V12 source activity alignment: the official student lesson includes Which One Does Not Belong tables and spreadsheet-driven comparison of fixed increases versus fixed factors through TEN time steps. Extend independently authored tables A(t)=6+8t and B(t)=6×1.5^t from t0 through10. At t5, A=46 and B=45.5625; at t6 A=54 and B=68.34375, so B first exceeds A after their shared starting value at INTEGER step6. At t10 A=86 and B=345.990234375. Teacher/student: https://im.kendallhunt.com/HS/teachers/1/5/2/preparation.html and https://im.kendallhunt.com/HS/students/1/5/2/index.html.",
+        "V12 student tasks: create four source-equivalent original tables of constant additive, multiplicative and deliberately mixed differences with independent values, decide which does not belong with more than one defensible criterion, then create complete 11-row spreadsheet (t=0..10) for the two original function patterns. Explain why A(t+3)−A(t)=24 while B(t+3)/B(t)=1.5^3=3.375; include the exact operational formula and record real spreadsheet use only if performed.",
+        "Teacher review 0–2 each for table accuracy through t10, comparison of differences/factors over 1 and3 steps, correct representations of the crossover, and credible use of technology with explanation. Do not claim spreadsheet completion based on a JSON table."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common difference",
+          "Definition": "Equal increments in input yield the same additive output difference.",
+          "Rule": "Subtract adjacent entries.",
+          "Example": "14−6=22−14=8."
+        },
+        {
+          "Title": "Common ratio",
+          "Definition": "Equal input increments yield the same factor between successive nonzero outputs.",
+          "Rule": "Divide adjacent entries.",
+          "Example": "9/6=13.5/9=1.5."
+        },
+        {
+          "Title": "Context choice",
+          "Definition": "Outputs should have units appropriate for fractions if the model yields decimals.",
+          "Rule": "Specify the measured quantity or monetary unit.",
+          "Example": "$6 then$9 then$13.50 is possible for an indexed value."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identify additive rule",
+          "Question": "Find expression for 6,14,22,30,38 at t0–4.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Initial at t0 is6.",
+            "Adjacent differences all equal8.",
+            "After t steps add8t.",
+            "Formula A(t)=6+8t.",
+            "Check t4 gives38."
+          ],
+          "Answer": "A(t)=6+8t.",
+          "Check": "Successive differences equal8."
+        },
+        {
+          "Title": "Identify multiplicative rule",
+          "Question": "Find expression for 6,9,13.5,20.25,30.375.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "Initial at t0 is6.",
+            "9/6=1.5,13.5/9=1.5.",
+            "After t equal steps multiply by1.5^t.",
+            "Formula B(t)=6×1.5^t.",
+            "At t4 1.5^4=5.0625 so B=30.375."
+          ],
+          "Answer": "B(t)=6×(1.5)^t.",
+          "Check": "Common ratio holds for every row."
+        },
+        {
+          "Title": "Compare at an unlisted time",
+          "Question": "Evaluate both at integer t5.",
+          "Method": "Investigate the first-party growth/decay table and independently check differences, ratios, exponents, and context.",
+          "Steps": [
+            "A(5)=6+8×5=46.",
+            "B(5)=6×(1.5)^5.",
+            "(1.5)^5=7.59375; B=45.5625.",
+            "A(5)=46 is slightly greater than B(5), but later multiplicative growth may exceed."
+          ],
+          "Answer": "A46, B45.5625 at t5.",
+          "Check": "Comparisons use the same t and correct decimal exponent."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming any increasing table is additive",
+          "WhyWrong": "Multiplicative growth has changing differences.",
+          "Correction": "Check both difference and ratio."
+        },
+        {
+          "Mistake": "Counting decimal quantities as whole organisms without explanation",
+          "WhyWrong": "Fractions may violate count domains.",
+          "Correction": "Use suitable units or an appropriate discrete model."
+        }
+      ],
+      "SummaryPoints": [
+        "A table's successive differences and ratios reveal distinct regularities.",
+        "A(t)=6+8t is additive, B(t)=6(1.5)^t multiplicative.",
+        "Model units and input restrictions matter.",
+        "Teacher scores pattern explanations and matching tasks."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party growth and decay observation table",
+          "Description": "Original hypothetical values calculated from exact models, not real scientific or financial measurements.",
+          "PrimaryLabel": "Time / case",
+          "SecondaryLabel": "Model output",
+          "Rows": [
+            {
+              "Label": "t0",
+              "Cells": [
+                "A6,B6"
+              ]
+            },
+            {
+              "Label": "t1",
+              "Cells": [
+                "A14,B9"
+              ]
+            },
+            {
+              "Label": "t2",
+              "Cells": [
+                "A22,B13.5"
+              ]
+            },
+            {
+              "Label": "t3",
+              "Cells": [
+                "A30,B20.25"
+              ]
+            },
+            {
+              "Label": "t4",
+              "Cells": [
+                "A38,B30.375"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

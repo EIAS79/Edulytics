@@ -1,0 +1,144 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l05-sequential-source-abc-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L05",
+      "CultureCode": "en",
+      "Title": "Calculating Measures of Center and Variability",
+      "ExplanationParagraphs": [
+        "Learning goal: calculate and interpret mean, median, mean absolute deviation (MAD) and interquartile range (IQR), naming their units and the quartile convention. Original Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 5, https://im.kendallhunt.com/HS/teachers/1/1/5/preparation.html (CC BY 4.0). This is optional review; publisher Building On 6.SP.B.5.c and Building Towards HSS-ID.A.1, HSS-ID.A.2, not a publisher Addressing lesson.",
+        "Original hypothetical data: walk durations 4,6,6,8,11 minutes. Mean=(4+6+6+8+11)/5=7; median=6. Under median-of-halves with central value excluded, Q1=(4+6)/2=5 and Q3=(8+11)/2=9.5; IQR=4.5 minutes. Absolute deviations from mean 7 are 3,1,1,1,4, so MAD=10/5=2 minutes. The longer walk increases the mean more than the median.",
+        "Class activity: organize every absolute deviation in a table, draw a number line locating mean/median/quartiles, then discuss what center and variability mean for the hypothetical sample. Compare two other sets with equal means and different MADs. If actual class measurements are collected, use authorized anonymous observations, never fabricate participation.",
+        "Teacher-scored rubric: 0–2 each for sorted data and stated quartile rule, correct mean/median, all absolute deviations and MAD, and comparison with appropriate units (8 maximum). Teacher judgement is required for explanation and interpretation; a numeric answer cannot stand in for a physical meter-stick investigation.",
+        "V12 optional-source-status correction: IM Algebra 1 Unit 1 Lesson 5 is an OPTIONAL BELOW-GRADE-LEVEL review. Before assigning it, an authorized teacher examines the pre-unit diagnostic: if students can already calculate mean, median, mean absolute deviation and IQR accurately, the lesson may be skipped. A skipped optional lesson is not a failed required academic standard, nor proof that an assessment was administered. Official teacher/student sources: https://im.kendallhunt.com/HS/teachers/1/1/5/preparation.html and https://im.kendallhunt.com/HS/students/1/1/5/index.html.",
+        "V12 original additional task: seven fictional measurements in minutes [3,5,5,7,9,9,11]. Their mean is7, median7, lower quartile5 and upper quartile9 under median-of-halves convention, IQR4 minutes, absolute deviations [4,2,2,0,2,2,4] and MAD16/7≈2.286 minutes. Plot dots and a correctly scaled number line. In pairs, explain why a median and MAD answer different questions. The official student activities include a physical meter-stick demonstration and heartbeat tables, but a text-only draft does not constitute an actually conducted demonstration.",
+        "V12 proposed teacher rubric (0–2 each, total8): original seven-point data plot and quartiles; correct mean, median, IQR and MAD with units; explanation and chosen quartile convention; genuine activity/diagnostic evidence if performed. Optional status must be respected in reporting.",
+        "Source-task fidelity: source 5.1 asks learners to judge claims about the mean and median (including the need to sort before finding a median); source 5.2 interprets quartiles and IQR in a heartbeat dataset described as eight students as well as what an animal-length median or test-score IQR communicates; source 5.3 requires a data-value minus mean, absolute-deviation table and interpretation of MAD. Our invented seven observations 3,5,5,7,9,9,11 give mean 7, median 7, Q1=5, Q3=9, IQR=4 and MAD=16/7. To replace the hands-on penny demonstration, a teacher may present an openly hypothetical six-position model with mean 50 cm and MAD 10 cm: 40,40,40,60,60,60; classroom manipulation was NOT performed. Ask whether all deviations exactly 3 imply MAD=3 (yes), and justify. All plot drawings, reasoning and practical work remain human assessed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Using original first-party seven hypothetical observations 3,5,5,7,9,9,11, (1) calculate and interpret mean and median, (2) find IQR using median of halves and explain why it measures the middle half, (3) calculate MAD using all seven absolute deviations, explaining why it differs from IQR. Teacher-scored 0-2 for mean/median, IQR/quartile convention, MAD/deviation table and interpretation (6 points). The original publisher's teacher-only Cool-down is not attested as copied or read."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Mean and median",
+          "Definition": "Mean is sum divided by count; median is the middle ordered value.",
+          "Rule": "Sort for median and use units throughout.",
+          "Example": "4,6,6,8,11 has mean 7 and median 6 minutes."
+        },
+        {
+          "Title": "Mean absolute deviation",
+          "Definition": "MAD is the average absolute distance from the mean.",
+          "Rule": "Compute the mean before absolute deviations.",
+          "Example": "(3+1+1+1+4)/5=2 minutes."
+        },
+        {
+          "Title": "Interquartile range",
+          "Definition": "IQR is Q3-Q1.",
+          "Rule": "State the quartile convention.",
+          "Example": "Q1=5 and Q3=9.5 give IQR 4.5 minutes."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Calculate center and quartiles",
+          "Question": "Find the statistics for sorted walk durations 4,6,6,8,11.",
+          "Method": "Explain each calculation and verify it independently.",
+          "Steps": [
+            "Sum 4+6+6+8+11=35; divide by 5 to obtain mean 7.",
+            "The third of five observations is 6, so the median is 6.",
+            "Exclude the central 6; lower pair 4,6 has Q1=5.",
+            "Upper pair 8,11 has Q3=9.5; subtract for IQR=4.5."
+          ],
+          "Answer": "Mean 7, median 6 and IQR 4.5 minutes.",
+          "Check": "5 ≤ 6 ≤ 9.5; original values are minutes."
+        },
+        {
+          "Title": "Calculate MAD",
+          "Question": "Using the same five walk durations, compute average absolute deviation from mean.",
+          "Method": "Explain each calculation and verify it independently.",
+          "Steps": [
+            "The mean is 7 minutes.",
+            "Compute |4-7|=3, |6-7|=1 twice, |8-7|=1 and |11-7|=4.",
+            "Sum absolute deviations 3+1+1+1+4=10.",
+            "Divide by five values: MAD=2 minutes."
+          ],
+          "Answer": "MAD is 2 minutes.",
+          "Check": "Absolute distances are nonnegative and have time units."
+        },
+        {
+          "Title": "Same center, different spread",
+          "Question": "Compare A=3,5,7 and B=1,5,9.",
+          "Method": "Explain each calculation and verify it independently.",
+          "Steps": [
+            "Both sums equal 15 and each sample has three observations; means equal 5.",
+            "Both ordered middle values equal 5; medians equal 5.",
+            "For A absolute deviations are 2,0,2, so MAD=4/3.",
+            "For B deviations are 4,0,4, so MAD=8/3.",
+            "The second sample is more variable despite identical center."
+          ],
+          "Answer": "Means 5 and medians 5; B has twice the MAD.",
+          "Check": "B range 8 exceeds A range 4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Summing signed deviations",
+          "WhyWrong": "Signed deviations about a mean add to zero.",
+          "Correction": "Use |x-mean| before averaging."
+        },
+        {
+          "Mistake": "Computing MAD from the median",
+          "WhyWrong": "The defined mean absolute deviation here is about the mean.",
+          "Correction": "Compute mean first."
+        },
+        {
+          "Mistake": "Assuming all software uses identical quartiles",
+          "WhyWrong": "Different quartile conventions exist.",
+          "Correction": "Declare median-of-halves and use it consistently."
+        }
+      ],
+      "SummaryPoints": [
+        "Mean and median summarize location; MAD and IQR quantify variability.",
+        "For 4,6,6,8,11: mean 7, median 6, MAD 2, IQR 4.5 minutes.",
+        "Outliers can affect mean more strongly than median.",
+        "Teacher-reviewed interpretation must not be replaced with a generic numeric quiz."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original accessible numerical demonstration",
+          "Description": "Each row is explicitly labelled practice data, not real student observations.",
+          "PrimaryLabel": "Input",
+          "SecondaryLabel": "Frequency or output",
+          "Rows": [
+            {
+              "Label": "4 minutes",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "6 minutes",
+              "Cells": [
+                "2"
+              ]
+            },
+            {
+              "Label": "8 minutes",
+              "Cells": [
+                "1"
+              ]
+            },
+            {
+              "Label": "11 minutes",
+              "Cells": [
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

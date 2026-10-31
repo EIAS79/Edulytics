@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u05-l18-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U05:L18",
+      "CultureCode": "en",
+      "Title": "Expressed in Different Ways",
+      "ExplanationParagraphs": [
+        "Learning goal: demonstrate equivalence of exponent expressions representing the same growth over different period groupings (monthly, annual and multi-year), and justify correct change of time units. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 5 Lesson 18, https://im.kendallhunt.com/HS/teachers/1/5/18/preparation.html and student tasks https://im.kendallhunt.com/HS/students/1/5/18/index.html (CC BY 4.0). The source features card sorting of representations; this first-party lesson uses original pairs rather than copied cards.",
+        "Original hypothetical indicator starts at100 units and grows1% per month. After36 months, expression A=100(1.01)^36. Grouped into three complete years of12 months, this equals100((1.01)^12)^3, with effective per-year factor (1.01)^12≈1.126825. Both expressions are exactly equivalent before rounding the annual factor.",
+        "Equivalent grouping across two half-years of6 months each is100((1.01)^6)^6 for36 months, while100((1.01)^6)^3 describes18 months and is not equivalent. Be precise about exponent multiplication (b^p)^q=b^(pq). A monthly factor raised to12 is an annual multiplier, not an annual *percentage* without subtracting1.",
+        "Student task: match six original expressions with time durations, create a counterexample to a wrong regrouping and compare exact expressions against prematurely rounded approximations. Teacher-scored rubric0–2 each for grouping identity, correct period interpretation, sensible handling of approximations and clear justification of expression equivalence."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Power of a power",
+          "Definition": "(b^p)^q=b^(pq) for a positive base in these models.",
+          "Rule": "Multiply the grouped exponents.",
+          "Example": "(1.01^12)^3=1.01^36."
+        },
+        {
+          "Title": "Time-unit conversion",
+          "Definition": "Monthly periods must be grouped consistently into years or half-years.",
+          "Rule": "12 months=1 year;6 months=half a year.",
+          "Example": "36 months=3 annual groups or6 half-years."
+        },
+        {
+          "Title": "Exact versus approximate factor",
+          "Definition": "Keep exact grouped expression when checking equality; rounding may break exactness.",
+          "Rule": "Approximate only after applying power rule.",
+          "Example": "(1.01)^12≈1.126825, not equal to rounded1.13."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Group three years",
+          "Question": "Rewrite 100(1.01)^36 using an annual factor.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "There are12 months per year.",
+            "36 months contain3 blocks of12.",
+            "Apply b^(12×3)=(b^12)^3.",
+            "Equivalent exact form100((1.01)^12)^3.",
+            "Annual factor is1.01^12."
+          ],
+          "Answer": "100(1.01)^36=100((1.01)^12)^3.",
+          "Check": "Exponents12×3=36."
+        },
+        {
+          "Title": "Group by half-years",
+          "Question": "Give an equivalent expression with six-month blocks.",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "36 months contain6 groups of6.",
+            "Growth per group1.01^6.",
+            "Six successive groups give100((1.01)^6)^6.",
+            "Power-of-power exponent6×6=36."
+          ],
+          "Answer": "100((1.01)^6)^6.",
+          "Check": "Same base and total exponent."
+        },
+        {
+          "Title": "Find a wrong duration match",
+          "Question": "Does100((1.01)^6)^3 represent36 months?",
+          "Method": "Work from the explicitly fictional data and verify the original model, units and domain.",
+          "Steps": [
+            "Expand exponent6×3=18.",
+            "Thus expression equals100(1.01)^18.",
+            "That describes18 months, not36.",
+            "It differs from the required full36-month model."
+          ],
+          "Answer": "No; it describes18 months.",
+          "Check": "Exponent arithmetic and period interpretation agree."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating regrouped exponents with wrong product",
+          "WhyWrong": "Powers of powers multiply exponents.",
+          "Correction": "Compute p×q explicitly."
+        },
+        {
+          "Mistake": "Treating an annual multiplier as a percent rate",
+          "WhyWrong": "A multiplier1.126825 means growth12.6825%, not112.6825%.",
+          "Correction": "Subtract1 before converting to percent."
+        },
+        {
+          "Mistake": "Assuming rounded factors give an exact identity",
+          "WhyWrong": "Decimal rounding changes powers.",
+          "Correction": "Keep symbolic forms exact."
+        }
+      ],
+      "SummaryPoints": [
+        "Growth models can be expressed with different time-step groupings.",
+        "36 monthly1% changes equal three annual factors each1.01^12.",
+        "Time interpretations depend on correct exponent products.",
+        "Teacher reviews exact equivalence and approximations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original source-aligned exponential model comparison",
+          "Description": "Hypothetical first-party numeric models; no real account, investment, city census, or school participants.",
+          "PrimaryLabel": "Input or period",
+          "SecondaryLabel": "Output or relationship",
+          "Rows": [
+            {
+              "Label": "36 monthly periods",
+              "Cells": [
+                "100(1.01)^36"
+              ]
+            },
+            {
+              "Label": "3 annual groups",
+              "Cells": [
+                "100((1.01)^12)^3"
+              ]
+            },
+            {
+              "Label": "6 half-year groups",
+              "Cells": [
+                "100((1.01)^6)^6"
+              ]
+            },
+            {
+              "Label": "3 half-year groups",
+              "Cells": [
+                "18 months, not equivalent"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

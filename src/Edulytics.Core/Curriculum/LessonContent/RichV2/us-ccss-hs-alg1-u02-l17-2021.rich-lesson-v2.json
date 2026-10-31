@@ -1,0 +1,127 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l17-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L17",
+      "CultureCode": "en",
+      "Title": "Systems of Linear Equations and Their Solutions",
+      "ExplanationParagraphs": [
+        "Learning goal: distinguish linear systems with no solution, exactly one solution or infinitely many solutions using their equation structure and graphs. Original Edulytiks material aligned with Illustrative Mathematics Algebra 1 First Edition U02:L17, https://im.kendallhunt.com/HS/teachers/1/2/17/preparation.html (CC BY 4.0). Building On 8.EE.C.8 and HSA-CED.A.4; Addressing HSA-CED.A.3, HSA-REI.C.6.",
+        "Original three-system comparison: A has y=2x+1 and y=2x+5; same slope but different intercepts => parallel lines, no pair satisfies both. B has y=3x−2 and 2y=6x−4; identical lines => all pairs (x,3x−2) are solutions. C has y=x+1 and y=−x+5; equalizing gives x+1=−x+5 ->2x=4,x=2,y=3, one intersection.",
+        "Emphasize that infinitely many solutions means infinitely many ordered pairs, not infinitely many arbitrary x/y choices. If two standard-form equations are multiples of one another, they represent the same line; if their slopes agree and distinct intercepts remain, they never meet.",
+        "Student task: graph the three systems, classify and justify each solution cardinality by both algebra and visual features, provide one valid pair for the infinite system, and critique any wrong classification. Teacher-scored rubric (0–2 each, max 8): correct classifications, tested solution pairs, correct slope/intercept reasoning and coherent graphical explanation."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Parallel lines",
+          "Definition": "Distinct nonvertical lines with equal slopes and different intercepts do not intersect.",
+          "Rule": "Compare the fully simplified slope-intercept forms.",
+          "Example": "y=2x+1 and y=2x+5 have no common pair."
+        },
+        {
+          "Title": "Coincident lines",
+          "Definition": "Equivalent equations graph the same line and share infinitely many ordered pairs.",
+          "Rule": "Check that multiplying/rearranging produces the other equation.",
+          "Example": "2y=6x−4 is y=3x−2."
+        },
+        {
+          "Title": "Single crossing",
+          "Definition": "Different slopes produce exactly one intersection for two nonvertical lines.",
+          "Rule": "Set y expressions equal to solve.",
+          "Example": "y=x+1 and y=−x+5 meet at (2,3)."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Classify parallel system",
+          "Question": "Solve y=2x+1, y=2x+5.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Equalize: 2x+1=2x+5.",
+            "Subtract 2x: 1=5, contradiction.",
+            "Distinct intercepts 1 and 5 with equal slope 2 imply parallel lines.",
+            "There is no shared point."
+          ],
+          "Answer": "No solutions.",
+          "Check": "Equation contradiction confirms no intersection."
+        },
+        {
+          "Title": "Recognize infinitely many solutions",
+          "Question": "Solve y=3x−2, 2y=6x−4.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Divide the second equation by nonzero 2.",
+            "Obtain y=3x−2, identical to first.",
+            "Every point on that line satisfies both.",
+            "For example (0,−2) and (1,1) both check."
+          ],
+          "Answer": "Infinitely many ordered-pair solutions on y=3x−2.",
+          "Check": "Both equations yield the same set."
+        },
+        {
+          "Title": "Find unique intersection",
+          "Question": "Solve y=x+1, y=−x+5.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Set x+1=−x+5.",
+            "Add x and subtract 1 to get 2x=4.",
+            "x=2, y=3.",
+            "Verify 3=2+1 and 3=−2+5."
+          ],
+          "Answer": "Exactly one solution (2,3).",
+          "Check": "Slopes +1 and −1 differ, so one intersection."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Calling equivalent equations two separate intersection lines",
+          "WhyWrong": "They overlap at every point.",
+          "Correction": "Compare all coefficients or simplify forms."
+        },
+        {
+          "Mistake": "Calling a parallel-line pair one solution because lines look close",
+          "WhyWrong": "They never meet when slopes match and intercepts differ.",
+          "Correction": "Check the exact equations, not a pixel sketch."
+        }
+      ],
+      "SummaryPoints": [
+        "Linear systems may have 0, 1 or infinitely many solutions.",
+        "Parallel distinct lines yield none; identical lines yield infinitely many.",
+        "Differently sloped lines have one intersection.",
+        "Graph interpretation and number of solutions require justification."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent original mathematical summary",
+          "Description": "Accessible text for the specific equation or context rather than a reproduction of publisher artwork.",
+          "PrimaryLabel": "Test case",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "y=2x+1,y=2x+5",
+              "Cells": [
+                "no solution"
+              ]
+            },
+            {
+              "Label": "y=3x−2,2y=6x−4",
+              "Cells": [
+                "infinitely many"
+              ]
+            },
+            {
+              "Label": "y=x+1,y=−x+5",
+              "Cells": [
+                "one: (2,3)"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

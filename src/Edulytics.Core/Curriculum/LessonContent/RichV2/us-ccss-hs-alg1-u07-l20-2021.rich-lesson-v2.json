@@ -1,0 +1,139 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u07-l20-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U07:L20",
+      "CultureCode": "en",
+      "Title": "Rational and Irrational Solutions",
+      "ExplanationParagraphs": [
+        "Learning goal: classify numbers obtained from quadratic-equation solutions as rational or irrational, and explain how a perfect-square discriminant affects the type of roots when integer coefficients are used. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 7 Lesson 20 teacher https://im.kendallhunt.com/HS/teachers/1/7/20/preparation.html and student https://im.kendallhunt.com/HS/students/1/7/20/index.html (CC BY 4.0). The source revisits Grade 8 number classifications and roots rather than claiming every quadratic has irrational roots.",
+        "Original comparison: x²−5x+6=0=(x−2)(x−3) gives two rational roots2 and3. x²−2=0 yields ±√2, both irrational. x²−2x−1=0 has discriminant4+4=8, and roots (2±√8)/2=1±√2, irrational. An irrational root remains a real number.",
+        "A rational number is expressible as p/q with integers p,q and q≠0; integers and finite/recurring decimals qualify. Irrational numbers do not have such a rational representation. For an integer-coefficient quadratic with D≥0, a perfect-square integer D produces rational formula roots; non-square positive integer D produces irrational roots when the radical part cannot cancel with rational coefficient.",
+        "Student task: sort radical expressions and rational decimals, verify root classifications from exact equations, estimate locations, and critique the claim that √16 is irrational merely because it is written with a radical. Teacher-scored rubric0–2 each for correct classification, mathematical evidence, valid root derivation and explanations."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rational number",
+          "Definition": "A number p/q for integers q≠0, including integers and terminating or repeating decimals.",
+          "Rule": "√16=4 is rational.",
+          "Example": "2 and3 are rational roots."
+        },
+        {
+          "Title": "Irrational number",
+          "Definition": "A real number not equal to any ratio of integers.",
+          "Rule": "√2 is irrational.",
+          "Example": "1±√2 are irrational."
+        },
+        {
+          "Title": "Discriminant type",
+          "Definition": "For integer coefficients, an exact positive non-square integer D typically gives irrational roots through formula.",
+          "Rule": "Check D and radical simplification.",
+          "Example": "D8 leads1±√2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve rational roots",
+          "Question": "Solve x²−5x+6=0.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Find factors−2 and−3, sum−5, product6.",
+            "Factor (x−2)(x−3)=0.",
+            "Roots2,3.",
+            "Both can be written as integer fractions and are rational."
+          ],
+          "Answer": "Two rational roots2,3.",
+          "Check": "Polynomial evaluates0 at each."
+        },
+        {
+          "Title": "Solve irrational roots",
+          "Question": "Solve x²−2=0.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "Move2 to x²=2.",
+            "Square root x=±√2.",
+            "2 is not a perfect-square integer.",
+            "Thus both exact nonzero roots are irrational."
+          ],
+          "Answer": "x=±√2, both irrational.",
+          "Check": "Squaring yields2."
+        },
+        {
+          "Title": "Classify shifted irrational roots",
+          "Question": "Solve x²−2x−1=0.",
+          "Method": "Preserve exact algebra, prove the claimed identity or solution and check the defined domain.",
+          "Steps": [
+            "a1,b−2,c−1.",
+            "D4+4=8.",
+            "Formula x=(2±√8)/2.",
+            "Simplify √8=2√2, giving1±√2.",
+            "Each is irrational because rational1 plus/minus irrational√2 is irrational."
+          ],
+          "Answer": "x=1±√2, irrational.",
+          "Check": "Both satisfy original by formula derivation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming any written square root is irrational",
+          "WhyWrong": "Perfect-square roots are integers.",
+          "Correction": "Simplify radical before classification."
+        },
+        {
+          "Mistake": "Calling irrational solutions nonreal",
+          "WhyWrong": "Irrational numbers lie on real line.",
+          "Correction": "Distinguish real from rational."
+        },
+        {
+          "Mistake": "Replacing exact radical with rounded decimal to classify rationality",
+          "WhyWrong": "A finite approximation can disguise an irrational value.",
+          "Correction": "Use exact expression."
+        }
+      ],
+      "SummaryPoints": [
+        "Real roots can be rational or irrational.",
+        "Perfect-square roots are rational even when written as radicals.",
+        "x²−2 and x²−2x−1 have irrational real roots.",
+        "Teacher reviews exact forms and number classifications."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party exact quadratic reasoning and modeling table",
+          "Description": "Independently authored exact algebra, domain/units and mathematical evidence, not source images or real experiments.",
+          "PrimaryLabel": "Expression or scenario",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "x²−5x+6=0",
+              "Cells": [
+                "2,3 rational"
+              ]
+            },
+            {
+              "Label": "x²−2=0",
+              "Cells": [
+                "±√2 irrational"
+              ]
+            },
+            {
+              "Label": "x²−2x−1=0",
+              "Cells": [
+                "1±√2 irrational"
+              ]
+            },
+            {
+              "Label": "√16",
+              "Cells": [
+                "4 rational"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

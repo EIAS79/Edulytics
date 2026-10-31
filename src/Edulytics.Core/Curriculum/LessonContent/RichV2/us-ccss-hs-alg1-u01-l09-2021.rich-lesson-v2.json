@@ -1,0 +1,137 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u01-l09-source-abc-authoring-20261030-v2",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L09",
+      "CultureCode": "en",
+      "Title": "Technological Graphing",
+      "ExplanationParagraphs": [
+        "Learning goal: enter numerical observations into statistical software, use functions to calculate sample statistics, produce accessible dot plots, histograms and box plots, and explain why results change when data or bin widths change. Independently authored Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition Unit 1 Lesson 9, https://im.kendallhunt.com/HS/teachers/1/1/9/preparation.html (CC BY 4.0). Source roles: HSS-ID.A.1 and HSS-ID.A.2 Addressing; HSS-ID.A.3 Building Towards, with HSS-ID.A.2 also listed for Building On/Building Towards in the blueprint.",
+        "Original hypothetical dataset of eight reading times, minutes: 6,8,9,9,10,12,14,16. Enter one numerical observation per spreadsheet row. Use spreadsheet formulas =SUM(A1:A8), =AVERAGE(A1:A8) or software-supported =Mean(A1:A8), and =MEDIAN(A1:A8); verify by hand. The total 84 gives mean 10.5 and median (9+10)/2=9.5 minutes.",
+        "Generate a dot plot keeping both observations at 9, a histogram with labeled intervals [5,10), [10,15), [15,20) and counts 4,3,1, and a box plot. Using median-of-halves gives five-number summary 6,8.5,9.5,13,16 and IQR 4.5 minutes. The histogram groups values; the dot plot preserves the exact observations.",
+        "Technology sensitivity activity: change only the maximum value from 16 to 32. The sum increases from 84 to 100, so mean becomes 12.5; the two central observations remain 9 and 10, so the median remains 9.5. Rescale the histogram appropriately and explain how the new extreme changes its look. Different tools may label quartiles differently; state the quartile convention.",
+        "Student tasks: supply a screenshot or accessible text table of the data and numerical results, recreate the three displays using authorized statistical technology or a clearly labelled paper simulation, change a single value and histogram class width, and critique any misleading interpretation. Real data from a prior anonymous survey can replace invented data only when actually available. Teacher-scored rubric (0–2 each, max 8): correctly entered data and formulas; correct calculated statistics; correctly labeled and compared displays; reasoned changed-value/bin-width interpretation. Do not assert software interaction without observed evidence.",
+        "Source-activity A/B review, IM Algebra 1 First Edition U01:L09: Use spreadsheet/statistics tool to plot previously collected genuine data if available; else labelled fictional sample of eight reading durations. Make dot, histogram and box displays; compare mean/median/bin changes. Keep original first-party mathematical material and graphics; source artwork identity is NOT claimed. All physical/technology/partner work remains NOT_PERFORMED unless observed.",
+        "EDULYTIKS_AUTHORED_COOLDOWN (PUBLISHER_COOLDOWN_UNVERIFIED): Predict changes to mean and median after replacing only the maximum; state which display hides individual values. A teacher scores 0, 1 or 2 per criterion: Correct statistics with units; Correct display/bin interpretation; Honest disclosure of actual technology versus simulated analysis. Total 6. No publisher protected Cool-down is claimed as read or reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Statistic",
+          "Definition": "A statistic is a numerical summary computed from sample data.",
+          "Rule": "Include sample size and measured units.",
+          "Example": "Eight reading durations have mean 10.5 minutes."
+        },
+        {
+          "Title": "Technology-assisted display",
+          "Definition": "Software can generate plots from raw values but cannot decide a sound inference for you.",
+          "Rule": "Check axis scales and bin edges independently.",
+          "Example": "Bins [5,10),[10,15),[15,20) have counts 4,3,1."
+        },
+        {
+          "Title": "Outlier sensitivity",
+          "Definition": "Extreme observations can move mean while leaving median unchanged.",
+          "Rule": "Recalculate after changing one value and compare results.",
+          "Example": "Replacing 16 with 32 changes mean 10.5 to 12.5 but not median 9.5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute raw-data statistics",
+          "Question": "For readings 6,8,9,9,10,12,14,16 minutes find sum, mean and median.",
+          "Method": "Work from the original Edulytiks dataset and independently verify the stated numerical result.",
+          "Steps": [
+            "Eight numbers are sorted; sum equals 84.",
+            "Mean 84/8=10.5 minutes.",
+            "The middle pair at indices 4 and 5 is 9 and 10.",
+            "Median=(9+10)/2=9.5 minutes."
+          ],
+          "Answer": "Sum 84 minutes, mean 10.5 minutes, median 9.5 minutes.",
+          "Check": "8×10.5=84 and 9≤9.5≤10."
+        },
+        {
+          "Title": "Build histogram and box plot",
+          "Question": "Use bins [5,10), [10,15), [15,20) and median-of-halves quartiles.",
+          "Method": "Work from the original Edulytiks dataset and independently verify the stated numerical result.",
+          "Steps": [
+            "Read 6,8,9,9 in first bin for frequency 4.",
+            "Read 10,12,14 in second bin for frequency 3; 16 lies in final bin.",
+            "Lower half 6,8,9,9 yields Q1=(8+9)/2=8.5.",
+            "Upper half 10,12,14,16 yields Q3=(12+14)/2=13.",
+            "IQR=13−8.5=4.5 minutes."
+          ],
+          "Answer": "Histogram counts 4,3,1; five-number summary (6,8.5,9.5,13,16).",
+          "Check": "The three frequencies sum to eight and Q1≤median≤Q3."
+        },
+        {
+          "Title": "Change a single extreme value",
+          "Question": "Replace 16 with 32 in the eight-value sample.",
+          "Method": "Work from the original Edulytiks dataset and independently verify the stated numerical result.",
+          "Steps": [
+            "The original sum is 84 and the increase is 32−16=16.",
+            "New sum is 100, so mean=100/8=12.5.",
+            "The ordered middle pair stays 9 and 10 after replacing the maximum.",
+            "Median remains 9.5 even though mean increases by two minutes.",
+            "Update graph horizontal limits to include 32 rather than silently clipping it."
+          ],
+          "Answer": "New mean 12.5; unchanged median 9.5 minutes.",
+          "Check": "100/8=12.5 and central pair is still 9,10."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a software statistic as self-validating",
+          "WhyWrong": "Wrong cell ranges or missing records yield plausible but incorrect numbers.",
+          "Correction": "Cross-check sum and sample size by hand."
+        },
+        {
+          "Mistake": "Placing a boundary value in two histogram bins",
+          "WhyWrong": "This changes total frequency.",
+          "Correction": "Use left-inclusive right-exclusive interval semantics consistently."
+        },
+        {
+          "Mistake": "Ignoring outliers when scaling a plot",
+          "WhyWrong": "Axes can hide influential observations.",
+          "Correction": "Choose bounds that include all recorded values and explain outlier options."
+        }
+      ],
+      "SummaryPoints": [
+        "Technology speeds up graph construction but human reasoning is required to interpret the graphs.",
+        "For eight hypothetical reading times, mean 10.5, median 9.5 and IQR 4.5 minutes.",
+        "The same data produce histogram counts 4,3,1 for width-five intervals.",
+        "Replacing 16 by 32 raises the mean to 12.5 without changing the median; teacher reviews the comparison."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Original numerical data summary",
+          "Description": "An independently authored accessible text table of the practice dataset; not real class responses.",
+          "PrimaryLabel": "Value or bin",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "[5,10) minutes",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "[10,15) minutes",
+              "Cells": [
+                "3"
+              ]
+            },
+            {
+              "Label": "[15,20) minutes",
+              "Cells": [
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

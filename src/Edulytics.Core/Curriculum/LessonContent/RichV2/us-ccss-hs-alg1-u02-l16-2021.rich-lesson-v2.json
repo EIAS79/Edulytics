@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l16-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L16",
+      "CultureCode": "en",
+      "Title": "Solving Systems by Elimination (Part 3)",
+      "ExplanationParagraphs": [
+        "Learning goal: multiply one or both equations by nonzero numbers to create cancelling coefficients, solve a linear system and explain why it preserves all solutions. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L16, https://im.kendallhunt.com/HS/teachers/1/2/16/preparation.html (CC BY 4.0). The source's crucial advance is scaled elimination, not addition alone. Publisher Addressing HSA-REI.C.5 and HSA-REI.C.6.",
+        "Original system 2x+3y=13 and 5x−2y=4. Multiplying first equality by 2 gives 4x+6y=26; multiplying second by 3 gives 15x−6y=12. Adding yields 19x=38, so x=2 and y=3. Both multipliers are nonzero; each scaled equation represents the same line as its predecessor.",
+        "Compare efficient alternatives: for x+2y=11 and 3x−2y=9, adding directly cancels y, giving 4x=20 and x=5, y=3. For 2x+3y=13,5x−2y=4, direct addition doesn't cancel, which motivates nonzero scaling. Graph the original and scaled lines on labelled axes to explain their identical solution sets.",
+        "Student task: choose a multiplier rather than copy an unexamined recipe, solve both systems, explain why multiplying by zero would be invalid, and check the resulting ordered pairs. Teacher-scored rubric (0–2 each, 8 max): suitable multiplier, correct elimination, proper full-system verification, and logical justification that all solutions were preserved."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Strategic scaling",
+          "Definition": "Multiply all terms of an equation by the same fixed nonzero factor to match opposing coefficients.",
+          "Rule": "Use a common multiple to cancel a variable.",
+          "Example": "Multiply 3y by 2 and −2y by 3 to obtain +6y and −6y."
+        },
+        {
+          "Title": "Equivalent line",
+          "Definition": "Nonzero scaling preserves exactly the same line and solution set.",
+          "Rule": "The factor must not be zero.",
+          "Example": "2(2x+3y=13) yields 4x+6y=26."
+        },
+        {
+          "Title": "Combined-system verification",
+          "Definition": "Solving a derived equation gives candidates; verify in the original system.",
+          "Rule": "Use the original unscaled equations for final checks.",
+          "Example": "At (2,3), 2×2+3×3=13 and 5×2−2×3=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Scale both equations to eliminate y",
+          "Question": "Solve 2x+3y=13 and 5x−2y=4.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Multiply first equation by 2: 4x+6y=26.",
+            "Multiply second by 3: 15x−6y=12.",
+            "Add: 19x=38, x=2.",
+            "Substitute 2(2)+3y=13, yielding 3y=9 and y=3.",
+            "Check 5×2−2×3=4."
+          ],
+          "Answer": "(x,y)=(2,3).",
+          "Check": "Both original equations true; multipliers nonzero."
+        },
+        {
+          "Title": "Recognize direct cancellation",
+          "Question": "Solve x+2y=11 and 3x−2y=9.",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "Add both equations: 4x=20.",
+            "Divide by 4 to get x=5.",
+            "Substitute 5+2y=11, y=3.",
+            "Check 3×5−2×3=9."
+          ],
+          "Answer": "(x,y)=(5,3).",
+          "Check": "Direct cancellation needs no scaling here."
+        },
+        {
+          "Title": "Show zero scaling loses information",
+          "Question": "Does 0×(2x+3y=13) preserve its original line?",
+          "Method": "Preserve the full system and verify the resulting pair in both original equations.",
+          "Steps": [
+            "The original equation restricts the plane to a line.",
+            "Multiplying by zero yields 0=0.",
+            "Every ordered pair satisfies 0=0, including (0,0).",
+            "But (0,0) does not satisfy 2x+3y=13.",
+            "The two equations are not equivalent."
+          ],
+          "Answer": "No; multiplying an equation by zero loses the original constraint.",
+          "Check": "A counterexample (0,0) disproves equivalence."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Scaling only selected terms",
+          "WhyWrong": "That changes the equation.",
+          "Correction": "Multiply every left-side term and the right side by the same nonzero number."
+        },
+        {
+          "Mistake": "Eliminating a variable but forgetting the other original constraint",
+          "WhyWrong": "One reduced equation cannot identify the full ordered pair.",
+          "Correction": "Back-substitute into both originals."
+        }
+      ],
+      "SummaryPoints": [
+        "Use nonzero multipliers to create canceling coefficients.",
+        "Scaled equations represent the same line.",
+        "After adding, verify both original equations.",
+        "A teacher must evaluate multiplier-choice reasoning, not only the final pair."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Independent original mathematical summary",
+          "Description": "Accessible text for the specific equation or context rather than a reproduction of publisher artwork.",
+          "PrimaryLabel": "Test case",
+          "SecondaryLabel": "Result",
+          "Rows": [
+            {
+              "Label": "2x+3y=13,5x−2y=4",
+              "Cells": [
+                "(2,3)"
+              ]
+            },
+            {
+              "Label": "x+2y=11,3x−2y=9",
+              "Cells": [
+                "(5,3)"
+              ]
+            },
+            {
+              "Label": "zero-scaled equation",
+              "Cells": [
+                "0=0; not equivalent"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

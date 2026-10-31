@@ -1,0 +1,129 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "alg1-u02-l26-first-party-source-review-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L26",
+      "CultureCode": "en",
+      "Title": "Modeling with Systems of Inequalities in Two Variables",
+      "ExplanationParagraphs": [
+        "Learning objective: choose variables and meaningful units, build and interpret a multi-constraint linear model, and evaluate competing feasible solutions, including boundary and physical restrictions. First-party Edulytiks adaptation of Illustrative Mathematics Algebra 1 First Edition U02:L26, https://im.kendallhunt.com/HS/teachers/1/2/26/preparation.html (CC BY 4.0). This culminates in a student-authored model rather than a predefined one-number answer. Publisher Addressing HSA-CED.A.3, HSA-REI.D.12 and HSN-Q.A.2.",
+        "Original hypothetical trail mix design: produce exactly 1,000 grams from nut mix x grams and fruit mix y grams, with per-gram nutritional estimates nut protein 0.20 g and fruit 0.03 g, and costs $0.006/g and $0.004/g respectively. Require at least 100 g protein and no more than $5.20 total cost, with x,y≥0. System: x+y=1000, 0.20x+0.03y≥100, 0.006x+0.004y≤5.20. These numbers are fabricated for a safe mathematical simulation, not real nutrition advice or product labels.",
+        "Substitute y=1000−x. Protein: 0.20x+0.03(1000−x)≥100 implies 0.17x≥70, so x≥70/0.17≈411.765 g. Cost: 0.006x+0.004(1000−x)≤5.20 implies 4+0.002x≤5.20, so x≤600 g. Any x in [411.765,600], with y=1000−x, meets these simplified constraints. For real-world mixing specify measurement precision, allergies and nutritional data quality.",
+        "Candidate x=500,y=500 gives protein 0.2×500+0.03×500=115 g and price $3+$2=$5.00, feasible. Candidate x=400,y=600 gives protein 80+18=98 g, below requirement; x=700,y=300 gives price $4.20+$1.20=$5.40, above budget. The exact permissible mixture depends on actual verified labels and intended units.",
+        "Student task: propose a different two-ingredient original model with at least three inequalities/equalities, find and explain its feasible region, check one boundary point and one invalid point and critique the sensitivity to changed per-unit parameters. Teacher-scored rubric (0–2 each, total 8): meaningful variables and source assumptions, accurate constraints/domains, calculated feasible region, and evidence-backed model evaluation and limitations. Never pretend to have prepared or tasted trail mix."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Model construction",
+          "Definition": "A mathematical model selects quantities, assumptions and constraints from a situation.",
+          "Rule": "Write variables and units before coefficients.",
+          "Example": "x,y grams with x+y=1000."
+        },
+        {
+          "Title": "Feasible interval",
+          "Definition": "Multiple linear restrictions can leave a bounded interval of admissible mixtures.",
+          "Rule": "Eliminate one variable and intersect every bound.",
+          "Example": "411.765≤x≤600 grams in the proposed model."
+        },
+        {
+          "Title": "Parameter sensitivity",
+          "Definition": "Feasibility can change if measured ingredient properties or budget change.",
+          "Rule": "Explain that coefficients are assumptions and must be validated in reality.",
+          "Example": "A $5.20 limit caps nut mix at 600 g with the chosen costs."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Derive protein lower bound",
+          "Question": "Find the nut mix x needed for ≥100 g protein in 1000 g total.",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Set y=1000−x.",
+            "Protein inequality 0.20x+0.03(1000−x)≥100.",
+            "Simplify 0.17x+30≥100, so 0.17x≥70.",
+            "Divide positive 0.17 to obtain x≥70/0.17≈411.765 g."
+          ],
+          "Answer": "At least about 411.765 g nut mix is required.",
+          "Check": "At x=400, protein 98 g and fails."
+        },
+        {
+          "Title": "Derive budget upper bound",
+          "Question": "Find x meeting total cost ≤$5.20.",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "Use y=1000−x.",
+            "Cost 0.006x+0.004(1000−x)≤5.20.",
+            "Simplify 4+0.002x≤5.20.",
+            "Then 0.002x≤1.20 so x≤600 g.",
+            "Combine with protein lower bound."
+          ],
+          "Answer": "Nut mix must not exceed 600 g in this model.",
+          "Check": "At x=600, total cost $5.20 exactly."
+        },
+        {
+          "Title": "Check feasible and invalid recipes",
+          "Question": "Compare (500,500), (400,600) and (700,300) grams.",
+          "Method": "Interpret the stated inequality system, use valid domains and independently verify each numerical case.",
+          "Steps": [
+            "For 500/500, protein 100+15=115 g and cost $3+$2=$5; feasible.",
+            "For 400/600, protein 80+18=98 g<100; protein requirement fails.",
+            "For 700/300, protein 140+9=149 g but cost $4.20+$1.20=$5.40>5.20.",
+            "Every pair meets mass 1000 g, but only the first meets all constraints."
+          ],
+          "Answer": "Only (500,500) is feasible among the three.",
+          "Check": "Check each inequality independently; total mass alone is insufficient."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating fictional coefficients as real nutritional labels",
+          "WhyWrong": "The lesson's numbers are mathematical assumptions, not medical/nutrition advice.",
+          "Correction": "Label the model as simulated and verify real data separately."
+        },
+        {
+          "Mistake": "Keeping only one constraint in the feasible set",
+          "WhyWrong": "Meeting protein while exceeding cost is still invalid.",
+          "Correction": "Intersect total mass, protein, cost and nonnegative bounds."
+        }
+      ],
+      "SummaryPoints": [
+        "A complete model includes variables, domains, quantified assumptions and multiple constraints.",
+        "The simplified trail mix has permissible nut grams approximately 411.765–600.",
+        "The 500/500 blend satisfies mass, protein and cost in this fictional setting.",
+        "Model construction and evaluation require teacher judgement and honest data provenance."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Accessible original multi-constraint example",
+          "Description": "First-party mathematical examples with explicit limits, excluding publisher graphics and any unobserved real survey or product data.",
+          "PrimaryLabel": "Case",
+          "SecondaryLabel": "Constraint result",
+          "Rows": [
+            {
+              "Label": "500 g nut + 500 g fruit",
+              "Cells": [
+                "protein 115 g, cost $5.00; feasible"
+              ]
+            },
+            {
+              "Label": "400 g nut + 600 g fruit",
+              "Cells": [
+                "protein 98 g; infeasible"
+              ]
+            },
+            {
+              "Label": "700 g nut + 300 g fruit",
+              "Cells": [
+                "cost $5.40; infeasible"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
