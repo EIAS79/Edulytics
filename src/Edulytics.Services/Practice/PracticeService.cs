@@ -233,6 +233,9 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
                 ? UsCcssT001AuthoredActivities.GradePersistedAnswer(
                     item.GenerationFamily, item.CorrectAnswer, answer,
                     item.GenerationParametersJson)
+                : UsCcssAlg1U01L01StatisticalSelectionQuestions.Supports(item.GenerationFamily)
+                ? UsCcssAlg1U01L01StatisticalSelectionQuestions.GradePersistedAnswer(
+                    item.CorrectAnswer, answer)
                 : AnswersMatch(answer, item.CorrectAnswer);
         var score = correct ? attemptItem.MaxScore : 0m;
         var response = new PracticeResponse
