@@ -4,40 +4,42 @@
   "Course": "Geometry",
   "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
   "PR": 583,
-  "Date": "2026-10-30",
+  "Date": "2026-10-31",
   "PredecessorHead": "7ee3ad1c6c5f7e9db32c4b217c938c69a898b182",
   "Policy": "Supervisor 2 paper-mode/content assessment authorship approved for Geometry L01. Strict ascending A-B-C-CLOSED authoring -> READY_FOR_STAGE_D -> next. Shared exact online assignment, secure saved teacher grade and school isolation are Stage D and not claimed working.",
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 21,
-    "B_CLOSED": 21,
-    "C_PREPARED": 21,
-    "ABC_READY_FOR_D": 21,
+    "A_CLOSED": 22,
+    "B_CLOSED": 22,
+    "C_PREPARED": 22,
+    "ABC_READY_FOR_D": 22,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 103,
+    "REMAINING": 102,
     "UNIT_TOTAL": 8,
-    "UNITS_ABC_CLOSED": 0,
-    "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_IN_PROGRESS"
+    "UNITS_ABC_CLOSED": 1,
+    "CURRENT_UNIT": "U02",
+    "UNIT_STATUS": "UNIT_NEXT_NOT_STARTED"
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 118,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+    "Unprocessed": 102,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
-    "CurrentUnit": "U01",
+    "CurrentUnit": "U02",
     "UnitLessonCount": 22,
-    "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L21",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L06",
-    "AllUnitABCReady": false,
-    "NextUnit": null
+    "UnitStatus": "U02_NOT_STARTED",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+    "AllUnitABCReady": true,
+    "NextUnit": "U02",
+    "ProcessedFirstUnit": 22,
+    "U01ClosedLessonCount": 22
   },
   "LessonEntries": [
     {
@@ -183,7 +185,8 @@
       "ABCReadyForD": true,
       "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l07-abc-checkpoint-20261030.json",
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/us-ccss-geo-u01-l07-square-human-assessment-20261030.json",
-      "IndependentMathAssertions": 35
+      "IndependentMathAssertions": 35,
+      "LessonCommit": "185cde105572d70eec679c972eaaeafe1b626047"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L08",
@@ -196,7 +199,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l08-first-party-digital-observed-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l08-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l08-abc-checkpoint-20261030.json",
+      "LessonCommit": "d571a622b8be74d26f0b5f236ded74db0471d8fa"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L09",
@@ -208,7 +212,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l09-abc-checkpoint-20261030.json",
-      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l09-voronoi-human-assessment-20261030.json"
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l09-voronoi-human-assessment-20261030.json",
+      "LessonCommit": "2be3e7f91305015d506509583838a2d21061b5f3"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L10",
@@ -220,7 +225,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l10-rigid-motion-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l10-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l10-abc-checkpoint-20261030.json",
+      "LessonCommit": "1b78eaa9e8c0fbe8f596a3307eacb01686ab7f0c"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L11",
@@ -232,7 +238,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l11-reflection-info-gap-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l11-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l11-abc-checkpoint-20261030.json",
+      "LessonCommit": "aaef04a5ed3305467e2bfebabc038372e3bbed2e"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L12",
@@ -244,7 +251,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l12-directed-translation-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l12-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l12-abc-checkpoint-20261030.json",
+      "LessonCommit": "c89038b8d72a1d630d603e99dcc883453fc4ad75"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L13",
@@ -256,7 +264,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l13-incorporating-rotation-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l13-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l13-abc-checkpoint-20261030.json",
+      "LessonCommit": "faaa8e377115e016502cb06cdec398b0e3e77220"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L14",
@@ -268,7 +277,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l14-rigorous-rotation-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l14-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l14-abc-checkpoint-20261030.json",
+      "LessonCommit": "6e8a63dd122fb0ffd2e3f26b9583004aba903fa9"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L15",
@@ -280,7 +290,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l15-reflection-symmetry-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l15-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l15-abc-checkpoint-20261030.json",
+      "LessonCommit": "7cb35a8b13b6ed463901f86365367129002e486a"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L16",
@@ -292,7 +303,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l16-rotation-symmetry-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l16-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l16-abc-checkpoint-20261030.json",
+      "LessonCommit": "8e9053e3f8d2b7a5098889c7878393fb377518aa"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L17",
@@ -304,7 +316,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l17-pointwise-congruence-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l17-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l17-abc-checkpoint-20261030.json",
+      "LessonCommit": "aa10a61f18301a40077ba35f72698cb577c80a15"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L18",
@@ -317,7 +330,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l18-obstacle-course-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l18-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l18-abc-checkpoint-20261030.json",
+      "LessonCommit": "7cfcf01d36ca01e210c409194df3e7915b2160d7"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L19",
@@ -329,7 +343,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l19-vertical-angle-narrative-human-assessment-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l19-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l19-abc-checkpoint-20261030.json",
+      "LessonCommit": "cedd0191a7db9967c61da592e9b90ee0f9b73768"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L20",
@@ -341,7 +356,8 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l20-transversals-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l20-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l20-abc-checkpoint-20261030.json",
+      "LessonCommit": "ba0e31f897f1460dc885eb063fcbddc5a27c47b5"
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L21",
@@ -353,7 +369,41 @@
       "D": "NOT_RUN",
       "ABCReadyForD": true,
       "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l21-triangle-angle-sum-proof-20261030.json",
-      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l21-abc-checkpoint-20261030.json"
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l21-abc-checkpoint-20261030.json",
+      "LessonCommit": "80db4ce9b81ea1a7536f28c3410842c97f5d5377"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+      "Ordinal": 22,
+      "Title": "Now What Can You Build?",
+      "LessonCommit": "67e24cc79d0b959c302c5b2cdfaf8db084238475",
+      "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+      "SourceHashRecord": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l22-creative-construction-paper-assessment-20261031.json SourceSha256",
+      "OriginalActivities": [
+        "22.1 Notice and Wonder",
+        "22.2 Duplicate a Design",
+        "22.3 Make Your Own Design",
+        "22.4 Make Their Design"
+      ],
+      "OriginalPracticeCount": 10,
+      "A": "A_CLOSED_SOURCE_TEXT_AND_FIRST_PARTY_TASK_EQUIVALENCE_FIGURE_NOT_PIXEL_VERIFIED",
+      "B": "B_CLOSED_FOUR_SOURCE_ACTIVITIES_AND_PRACTICE_CROSSWALK",
+      "C": "C_CLOSED_TEACHER_SCORED_PAPER_ROUTE_WITH_NOT_RUN_TESTS",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "PaperSourceBoundary": "Original decorated diagrams and permissioned blackline not copied, source-image parity not certified",
+      "SelectedPracticeRoute": "GEO_U01_L22_CONSTRUCTION_HUMAN_REVIEW (paper teacher-scored; issue #453 for online assignment)",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u01-l22-creative-construction-paper-assessment-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u01-l22-abc-checkpoint-20261031.json",
+      "TestsPath": "tools/curriculum/us-ccss-geo-u01-l22-authoring-contract.test.cjs",
+      "Tests": "AUTHORED_NOT_RUN",
+      "TargetedStaticCheck": "JSON_PARSE_PASS; NODE_CHECK_SYNTAX_PASS; GIT_DIFF_CHECK_PASS; NO_NODE_TEST_RUN",
+      "AcademicVisualFidelity": "UNVERIFIED",
+      "PublisherCooldown": "UNVERIFIED_FIRST_PARTY_ALTERNATIVE",
+      "TeacherGradePersistence": "UNVERIFIED_STAGE_D_ISSUE_453",
+      "StartedAtUtc": "2026-10-31T00:03:28.938147Z",
+      "ClosedAtUtc": "2026-10-31T00:06:26.739169Z",
+      "ElapsedSeconds": 177.801
     }
   ],
   "return_queue": [],
@@ -394,19 +444,19 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "U01:L02 (next canonical), preserve L02-L06 previous content and rubrics; no shared app changes",
+  "Next": "U02:L01 canonical next; U01 fully A-B-C authoring closed only; do not execute tests or Stage D before 124 ready",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
     "UnitTotal": 22,
     "PreviouslyClosed": 0,
-    "NewlyClosed": 21,
-    "UnitReadyForD": false,
+    "NewlyClosed": 22,
+    "UnitReadyForD": true,
     "BlockedLessons": 0,
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L21",
-    "Status": "UNIT_IN_PROGRESS",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+    "Status": "UNIT_ABC_CLOSED_STAGE_D_NOT_RUN",
     "Owner": "Supervisor 2 single writer for assessment and course adoption linkage",
     "Issue": null,
     "DecisionNeeded": "Authoring C closed with paper teacher rubric, secure grade/auth Stage D remains open",
@@ -421,5 +471,15 @@
     "NoSharedEngineEdits": true,
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
+  },
+  "LastCheckpoint20261031": {
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U01:L22",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+    "BLOCKED_CURRENT_LESSON": null,
+    "LAST_CONTENT_COMMIT": "67e24cc79d0b959c302c5b2cdfaf8db084238475",
+    "Tests": "AUTHORED_NOT_RUN",
+    "Unit01ReadyForStageD": true,
+    "SharedApplicationStageD": "Issue #453; online assignment and saved teacher grade NOT_VERIFIED",
+    "HistoricalCommitsRecoveredFromGitLog": 15
   }
 }
