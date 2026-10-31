@@ -439,5 +439,23 @@
     "blockerIssue": 605,
     "blockerOwner": "UNASSIGNED_PENDING_ADMIN_EXCLUSIVE_GRANT",
     "closureSHA": null
+  },
+  "v7HanoiExactExponentEquivalence": {
+    "activeLesson": "U01:L01",
+    "identifiedDefect": "Valid exact expression 2^(n)-1 was rejected despite the prompt allowing an exact expression; existing 2^n-1 accepted",
+    "implementation": "src/Edulytics.Core/Mathematics/Practice/UsCcssAlg2SequencePracticeMath.cs",
+    "scope": "Hanoi only: strict two-form anchored exponent grammar for 2^n-1 and 2^(n)-1; exponent equal to issued disc count 1..64",
+    "positiveExamples": ["n=5: 2^(5)-1", "n=64: 2 ^ (64) - 1", "n=64: 18446744073709551615"],
+    "negativeExamples": ["n=5: 2^(4)-1", "n=5: 2^(5-1", "n=5: 2^5)-1", "n=64: 2^(6 4)-1", "n=64: 2^(65)-1"],
+    "targetedTests": [
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2SequencePracticeMathTests.cs",
+      "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01PracticeAdapterTests.cs"
+    ],
+    "testStatus": "AUTHORED_NOT_RUN",
+    "runtimeSelectedPractice": "NOT_REGISTERED",
+    "activeSharedLease": "G6 RELEASED_ISSUE_605; G7 NEXT_QUEUED_NO_ALG2_GRANT",
+    "stageC": "C_PREPARED_NOT_CLOSED",
+    "READY_FOR_STAGE_D": false,
+    "closureSHA": null
   }
 }

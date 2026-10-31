@@ -24,10 +24,18 @@ public static class UsCcssAlg2SequencePracticeMath
 
         BigInteger expected = (BigInteger.One << discs) - BigInteger.One;
         string compact = Regex.Replace(response, @"\s+", "");
-        Match exponent = Regex.Match(compact, @"^2\^(\d{1,2})-1$");
+        // Both 2^n-1 and 2^(n)-1 denote the same exact Hanoi count.
+        // Parentheses must be balanced; do not evaluate arbitrary expressions.
+        Match exponent = Regex.Match(compact, @"^2\^(?:(\d{1,2})|\((\d{1,2})\))-1$");
         if (exponent.Success)
-            return int.TryParse(exponent.Groups[1].Value, out int power) &&
+        {
+            string digits = exponent.Groups[1].Success
+                ? exponent.Groups[1].Value
+                : exponent.Groups[2].Value;
+            return int.TryParse(digits, NumberStyles.None,
+                       CultureInfo.InvariantCulture, out int power) &&
                    power == discs;
+        }
         if (TryParseInteger(compact, out BigInteger number))
             return number == expected;
 

@@ -57,6 +57,9 @@ public sealed class UsCcssAlg2U01L01PracticeAdapterTests
         Assert.Equal("Incorrect", Verdict(Item("HanoiMoves", 64), "18446744073709552000"));
         Assert.Equal("Incorrect", Verdict(Item("HanoiMoves", 5), "NaN"));
         Assert.Equal("Correct", Verdict(Item("HanoiMoves", 5), "2^5-1"));
+        Assert.Equal("Correct", Verdict(Item("HanoiMoves", 5), "2^(5)-1"));
+        Assert.Equal("Correct", Verdict(Item("HanoiMoves", 64), "2 ^ (64) - 1"));
+        Assert.Equal("Incorrect", Verdict(Item("HanoiMoves", 64), "2 ^ (6 4) - 1"));
         Assert.Equal("Correct", Verdict(Item("HanoiMoves", 5), "1+2+4+8+16"));
         Assert.Equal("Correct", Verdict(Item("Halve", 4), "0.0625"));
         Assert.Equal("Correct", Verdict(Item("Halve", 4), "2/32"));
