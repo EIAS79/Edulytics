@@ -245,3 +245,79 @@ test('G6 U01:L01 source-derived math and authoring-only C blocked gate coexist',
   assert.equal(ledger.summary.abcFirstOrder.C_PREPARED,1);
   assert.equal(ledger.summary.abcFirstOrder.READY_FOR_STAGE_D,1);
 });
+
+/*
+ * U01:L01 independent SOURCE-SCOPED fixture only, not the selected Practice
+ * generator or student submission grader. The paper-diagram explanation still
+ * requires TEACHER_REVIEW_REQUIRED; no runtime/CI result is claimed here.
+ */
+test('U01:L01 area sum is insufficient: half-cell occupancy detects overlap and gaps', () => {
+  const square = (x, y) => ({ kind: 'square', x, y });
+  const halfTriangle = (x, y, half) => ({ kind: 'triangle', x, y, half });
+  const vertical = [
+    square(0, 0), square(0, 1),
+    halfTriangle(1, 0, 0), halfTriangle(1, 0, 1),
+    halfTriangle(1, 1, 0), halfTriangle(1, 1, 1)
+  ];
+  const horizontal = [
+    square(0, 0), square(1, 0),
+    halfTriangle(0, 1, 0), halfTriangle(0, 1, 1),
+    halfTriangle(1, 1, 0), halfTriangle(1, 1, 1)
+  ];
+  const areaSum = pieces => pieces.reduce(
+    (sum, p) => sum + (p.kind === 'square' ? 1 : 0.5), 0
+  );
+  const validStructuredInventory = pieces => {
+    if (!Array.isArray(pieces) || pieces.length !== 6) return false;
+    const occupied = new Set();
+    let squares = 0;
+    let triangles = 0;
+    for (const p of pieces) {
+      if (!p || !Number.isInteger(p.x) || !Number.isInteger(p.y) ||
+          p.x < 0 || p.x > 1 || p.y < 0 || p.y > 1) return false;
+      let halves;
+      if (p.kind === 'square' && p.half === undefined) {
+        squares++;
+        halves = [0, 1];
+      } else if (p.kind === 'triangle' && (p.half === 0 || p.half === 1)) {
+        triangles++;
+        halves = [p.half];
+      } else {
+        return false;
+      }
+      for (const half of halves) {
+        const key = `${p.x}:${p.y}:${half}`;
+        if (occupied.has(key)) return false; // geometrically overlapping half-cell
+        occupied.add(key);
+      }
+    }
+    // Four target unit cells, each with two occupied half-cells; required
+    // inventory: exactly 2 whole squares and 4 half-square triangles.
+    return squares === 2 && triangles === 4 && occupied.size === 8;
+  };
+
+  assert.equal(areaSum(vertical), 4);
+  assert.equal(areaSum(horizontal), 4);
+  assert.equal(validStructuredInventory(vertical), true);
+  assert.equal(validStructuredInventory(horizontal), true);
+  assert.notDeepEqual(vertical, horizontal);
+
+  const overlapWithGap = [
+    ...vertical.slice(0, -1),
+    halfTriangle(1, 0, 1) // duplicates one half, leaves a different half empty
+  ];
+  assert.equal(areaSum(overlapWithGap), 4); // numeric-only area falsely looks valid
+  assert.equal(validStructuredInventory(overlapWithGap), false);
+  const wrongInventory = [
+    square(0, 0), square(1, 0), square(0, 1),
+    halfTriangle(1, 1, 0), halfTriangle(1, 1, 1)
+  ];
+  assert.equal(areaSum(wrongInventory), 4);
+  assert.equal(validStructuredInventory(wrongInventory), false);
+  assert.equal(validStructuredInventory([...vertical.slice(0, -1)]), false);
+  assert.equal(validStructuredInventory([...vertical.slice(0, -1), halfTriangle(2, 1, 1)]), false);
+  assert.equal(validStructuredInventory([...vertical.slice(0, -1), halfTriangle(1, 1, 2)]), false);
+  assert.equal(validStructuredInventory(null), false);
+  // Passing this abstract structured fixture does not certify any hand-drawn
+  // polygon, spatial proof, or authenticated teacher-scoring workflow.
+});
