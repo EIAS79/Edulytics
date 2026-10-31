@@ -1105,6 +1105,37 @@ public static class LessonPracticeContractRegistry
         // Hand constructions, open explanations, and publisher Cool-down remain teacher-led.
         foreach (var reviewed in UsCcssG4Unit1FirstLessonPracticeContracts.Reviewed)
             byLesson[reviewed.LessonCode] = reviewed;
+        // Grade 5 U01 L02: irregular connected cube counting; partner builds need teacher.
+        foreach (var reviewed in UsCcssG5Unit1Lesson2PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
+        // 2021 G5 U01 L03 complete prism drawings, include hidden layers.
+        foreach (var reviewed in UsCcssG5Unit1Lesson3PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L04 exact complete-prism layer reasoning; incomplete cards are teacher-led.
+        foreach (var reviewed in UsCcssG5Unit1Lesson4PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L05 2021 fixed 4x10 base, variable prism height; rotate bases manually.
+        foreach(var reviewed in UsCcssG5Unit1Lesson5PracticeContracts.Reviewed) byLesson[reviewed.LessonCode]=reviewed;
+        // 2021 G5 U01 L06 volume-expression card matching; teacher reviews explanations.
+        foreach(var reviewed in UsCcssG5Unit1Lesson6PracticeContracts.Reviewed) byLesson[reviewed.LessonCode]=reviewed;
+        // G5 Unit 1 Lesson 7 source-exact digital subskill; original open reasoning teacher-led.
+        foreach(var reviewed in UsCcssG5Unit1Lesson7PracticeContracts.Reviewed) byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L08 exact non-overlapping attached-prism addition.
+        foreach(var reviewed in UsCcssG5Unit1Lesson8PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L09 exact source measured composite dissection totals.
+        foreach(var reviewed in UsCcssG5Unit1Lesson9PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L10 original 95/168 composite volume expressions; explanation teacher assessed.
+        foreach(var reviewed in UsCcssG5Unit1Lesson10PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L11 source-prism contexts, teacher evaluates garden design.
+        foreach(var reviewed in UsCcssG5Unit1Lesson11PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // G5 U01 L12 original optional 60-container arrangements; subjective ship estimate is teacher-led.
+        foreach(var reviewed in UsCcssG5Unit1Lesson12PracticeContracts.Reviewed)byLesson[reviewed.LessonCode]=reviewed;
+        // Grade 5 Unit 2 exact source-aligned digital subskills; teacher reviews open tasks.
+        foreach(var reviewed in UsCcssG5Unit2SourcePracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode]=reviewed;
+        // Grade 5 U01 L01 exact source-goal subskill; teacher-scored work is separate.
+        foreach (var reviewed in UsCcssG5Unit1Lesson1PracticeContracts.Reviewed)
+            byLesson[reviewed.LessonCode] = reviewed;
         // IM 2021 G2 U01 L01: reviewed grade-specific source-goal override.
         foreach (var reviewed in UsCcssG2Unit1FirstLessonPracticeContracts.Reviewed)
         {
@@ -1348,6 +1379,57 @@ public static class LessonPracticeContractRegistry
                     "G1 U02 L04-L05 missing existing Practice contract: "+reviewed.LessonCode);
             byLesson[reviewed.LessonCode]=reviewed;
         }
+        // IM Algebra 1 U01:L01 source P3: exactly six first-party choices;
+        // unordered three-choice response set. Statistics explanation, class
+        // survey, P1/P2 and protected Cool-down remain TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+            "supporting.statistics.statistical_questions",
+            "ALG1_SOURCE_SIX_CHOICE_STATISTICAL_SET_P3",
+            ["usccss.alg1.u01.l01.statistical_questions_p3"],
+            "IM2021_ALG1_U01_L01_EXACT_P3_SET_PLUS_HUMAN_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // IM 2021 Grade 5 U03:L01: one piece of one selected half
+        // measured against the ORIGINAL whole (1/6 or 1/8).
+        // Digital objective selections are exact; drawings and explanations
+        // remain TEACHER_REVIEW_REQUIRED.
+        byLesson["PED:US-CCSS-MATH:G5:U03:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G5:U03:L01",
+            "supporting.fractions.multiply_divide",
+            "G5_ORIGINAL_WHOLE_FRACTION_OF_HALF_GRID",
+            [
+                "usccss.g5.u03.l01.fraction_of_half_original_whole",
+                "usccss.g5.u03.l01.compare_original_whole_grids"
+            ],
+            "IM2021_G5_U03_L01_EXACT_DIGITAL_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // IM 2021 Grade 7 U01:L01: reuse released exact polygon-copy route.
+        byLesson["PED:US-CCSS-MATH:G7:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G7:U01:L01",
+            "geometry.similarity.scale_factor",
+            "G7_EXACT_SCALED_COPY_CORRESPONDENCE",
+            ["usccss.g7.u01.l01.scaled_copy_correspondence"],
+            "IM2021_G7_U01_L01_EXACT_AND_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
+        // IM 2021 Grade 6 U01:L01: reuse released two-family tiling route.
+        byLesson["PED:US-CCSS-MATH:G6:U01:L01"] = new LessonPracticeContract(
+            "PED:US-CCSS-MATH:G6:U01:L01",
+            "geometry.area_tiling",
+            "G6_SOURCE_TILING_TRIANGULAR_UNITS_AND_EXACT_COVERAGE",
+            [
+                "usccss.g6.u01.l01.triangular_unit_tile_area",
+                "usccss.g6.u01.l01.structured_tiling_coverage"
+            ],
+            "IM2021_G6_U01_L01_SOURCE_NUMERIC_PLUS_TEACHER_REVIEW",
+            "READY_VERIFIED",
+            Version);
+
         // IM 2021 G4 U06:L15: official outcome/title fallback would route
         // unrelated general Practice before the source-specific mural/area
         // interaction and persisted grading are approved. Keep it fail-closed.
