@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
   "contentVersion": "alg1-u01-l01-local-source-aligned-20261030-v3",
-  "readiness": "AUTHORING_CLOSED_READY_FOR_STAGE_D_NOT_RUNTIME",
+  "readiness": "AUTHORING_COMPLETE_BUT_STAGE_C_BLOCKED_NO_SELECTED_PRACTICE_ROUTE",
   "sourceRoles": {
     "6.SP.A.1": "BuildingOn",
     "HSS-ID.A.1": "BuildingTowards"
@@ -226,5 +226,20 @@
       "full CI"
     ],
     "notProductionReady": true
+  },
+  "priorAuthoringReadiness": "AUTHORING_CLOSED_READY_FOR_STAGE_D_NOT_RUNTIME",
+  "strictStageCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
+  "selectedPracticeRouteVerified": false,
+  "blocker": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "stage": "C",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "lines": "124-151",
+    "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+    "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+    "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
   }
 }

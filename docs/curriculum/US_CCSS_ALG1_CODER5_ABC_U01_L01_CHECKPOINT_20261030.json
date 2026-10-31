@@ -10,11 +10,11 @@
   "checkpointPr": 589,
   "checkpointGitSha": "RECORDED_BY_CONTAINING_GIT_COMMIT_AND_PR_COMMENT",
   "startedAt": null,
-  "closedAt": "2026-10-30T13:54:58.589948+00:00",
+  "closedAt": null,
   "elapsedSeconds": null,
   "timeTrackingNote": "start time was not captured before work; do not fabricate elapsed duration or closure",
   "inspectedAtUtc": "2026-10-30T07:00:19.172010+00:00",
-  "status": "READY_FOR_STAGE_D_AUTHORING_ONLY",
+  "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
   "sourceEdition": "Illustrative Mathematics HS Algebra 1 First Edition, local teacher/student HTML",
   "originalSources": {
     "09_HS_Algebra_1/1/1/preparation.html": {
@@ -79,7 +79,7 @@
   },
   "C": {
     "sourceAlignedDraftPrepared": true,
-    "acceptedOrVerified": true,
+    "acceptedOrVerified": false,
     "humanScoredSurveyRubricPoints": 8,
     "firstPartyCooldownRubricPoints": 6,
     "publisherCooldown": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED",
@@ -128,10 +128,10 @@
     "currentRuntimeMapping": "UNSUPPORTED: ALG1 NoSupportedOutcomes before lesson contract registry",
     "draftOracleCaseAndOrderEquivalent": "PASS_LOCAL_DRAFT_NOT_RUNTIME",
     "sharedOwnerRequiredAction": "Review verified exact multi-select generator/grader availability and teacher-scored P1/P2/survey/Cool-down workflow; retain fail-closed",
-    "status": "AUTHORING_CLOSED_NOT_RUNTIME_VERIFIED",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
     "authoringContract": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L01_AUTHORING_C_20261030.json",
     "independentAuthoringOracle": "PASS_17_CASES_20261030",
-    "runtimeServiceObligation": "DEFERRED_STAGE_D_SINGLE_WRITER; existing NoSupportedOutcomes preserved"
+    "runtimeServiceObligation": "REQUIRED_FOR_STAGE_C_SELECTED_ROUTE_BEFORE_ABC_CLOSURE; tests execution deferred Stage D"
   },
   "D": {
     "authorized": false,
@@ -156,37 +156,52 @@
     "focusedCommand": "dotnet test tests/Edulytics.Tests/Edulytics.Tests.csproj -c Release --no-restore --filter [StaticAlgebra1Lesson01SelectorUsesCorrectEmbeddedContentVersion OR DraftSelectAllOracleAcceptsOrderAndCaseButRejectsMalformedAnswers OR UnverifiedExactLessonCannotCreateGenericPrivatePractice] --verbosity quiet",
     "sdkPinPreserved": "10.0.200 global.json restored, tested with temporary installed 10.0.300"
   },
-  "blockers": [],
-  "nextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
-  "nextLessonMayStart": true,
+  "blockers": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "stage": "C",
+      "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+      "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "lines": "124-151",
+      "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+      "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+      "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+      "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+      "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
+    }
+  ],
+  "nextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "nextLessonMayStart": false,
   "rollup": {
     "TOTAL": 132,
     "AUTHORED": 132,
     "A_CLOSED": 1,
     "B_CLOSED": 1,
     "C_PREPARED": 1,
-    "ABC_READY_FOR_D": 1,
+    "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 0,
-    "REMAINING": 131
+    "BLOCKED": 1,
+    "REMAINING": 132
   },
   "testedAtUtc": "2026-10-30T07:05:15.653346+00:00",
   "latestPriorGitHubHead": "c01b2632509f5fd046735840d5e3c527c3c1f0b5",
   "return_queue": [],
   "advanceReason": "SUPERSEDED BY 2026-10-30 ADMIN V-UNIT: stop at first unclosed L01; cannot skip to L02",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L02",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
   "unitStatus": "UNIT_IN_PROGRESS",
-  "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "lastFullyABCClosedLesson": null,
   "currentUnitTotal": 16,
   "blockingDependencyForUnit": {
     "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
     "stage": "C",
-    "status": "BLOCKED_C_SHARED",
-    "owner": "Supervisor 2, single-writer of shared Practice service/registry",
-    "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
-    "reason": "Traditional Algebra 1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve; draft exact-select {A,C,E} and open human-scored tasks are not runtime Practice",
-    "requiredResolution": "Single-writer must evaluate existing exact selection family, approve lesson-scoped generation and grading including malformed/duplicate handling, and confirm teacher-scored open-response pathway while preserving fail-closed for unreviewed Algebra 1 scopes",
-    "doNotDo": "No global service or registry modification from Coder5 branch, no invented working generator/grader, no skip to L02"
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "lines": "124-151",
+    "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+    "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+    "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
   },
   "latestOrder": "ADMIN_V_UNIT_STRICT_SEQUENTIAL",
   "sourceHashRevalidatedAtUtc": "2026-10-30T12:59:58.913206+00:00",
@@ -196,5 +211,7 @@
     "ALG1 shared service gate single-writer",
     "authenticated generator and grader",
     "teacher-scored saving, tenant isolation and E2E"
-  ]
+  ],
+  "historicalAuthoringClosedAtUtc": "2026-10-30T13:54:58.589948+00:00",
+  "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00"
 }

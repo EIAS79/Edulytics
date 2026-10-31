@@ -6,7 +6,7 @@
   "baselineSHA": "6ca26dca29837f4f74792a0e2b3ee62b9c8a5073",
   "recordedAtUtc": "2026-10-30T14:31:33.834054+00:00",
   "lastReviewed": "U01:L16",
-  "nextCanonical": "U02:L01",
+  "nextCanonical": "U01:L01",
   "sharedDependencyOnce": {
     "sourcePath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
     "issue": 453,
@@ -62,25 +62,28 @@
         "checked": "Schema and content sidecar selection contract; no authenticated runtime claimed"
       },
       "C": {
-        "status": "AUTHORING_CLOSED",
+        "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
         "draftPrepared": true,
         "oracles": "P3 exact set A,C,E: accept case/ordering; reject malformed/extra/duplicate",
         "humanScored": true,
         "runtimeSupported": false,
         "exactPath": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
-        "reason": "Traditional ALG1 fail-closed NoSupportedOutcomes before lesson registry",
+        "reason": "Selected learner Practice route short-circuited by NoSupportedOutcomes before registry.",
         "owner": "Supervisor 2",
         "authoringContract": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L01_AUTHORING_C_20261030.json",
         "oracle": "PASS_INDEPENDENT_17_CASES",
         "runtimeEnabled": false,
-        "stageDServiceOwner": "Supervisor 2 single-writer"
+        "stageDServiceOwner": "Supervisor 2 single-writer",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "BLOCKED_SELECTED_PRACTICE"
       },
       "D": "NOT_RUN_BATCH_DEFERRED; SERVICE_GATE_FAIL_CLOSED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
       "timingNote": "not captured at source review start; no invented duration",
-      "authoringClosedAtUtc": "2026-10-30T13:54:58.589948+00:00"
+      "authoringClosedAtUtc": "2026-10-30T13:54:58.589948+00:00",
+      "strictABCClosure": "BLOCKED_CURRENT_LESSON"
     },
     {
       "ordinal": 2,
@@ -142,14 +145,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L02_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
       "timingNote": "not captured at source review start; no invented duration",
-      "authoringClosedAtUtc": "2026-10-30T14:05:41.962327+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:05:41.962327+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 3,
@@ -210,14 +216,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L03_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
       "timingNote": "not captured at source review start; no invented duration",
-      "authoringClosedAtUtc": "2026-10-30T14:06:53.660859+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:06:53.660859+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 4,
@@ -278,14 +287,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L04_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
       "timingNote": "not captured at source review start; no invented duration",
-      "authoringClosedAtUtc": "2026-10-30T14:07:20.948720+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:07:20.948720+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 5,
@@ -347,14 +359,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L05_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStart": null,
       "reviewElapsedSeconds": null,
       "timingNote": "not captured at source review start; no invented duration",
-      "authoringClosedAtUtc": "2026-10-30T14:07:54.797385+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:07:54.797385+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 6,
@@ -411,14 +426,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L06_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStartedUtc": null,
       "reviewElapsedSeconds": null,
       "timingNote": "source review began before timer capture, no estimate invented",
-      "authoringClosedAtUtc": "2026-10-30T14:08:35.991164+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:08:35.991164+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 7,
@@ -476,14 +494,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L07_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStartedUtc": null,
       "reviewElapsedSeconds": null,
       "timingNote": "source review began before timer capture, no estimate invented",
-      "authoringClosedAtUtc": "2026-10-30T14:09:08.221242+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:09:08.221242+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 8,
@@ -540,14 +561,17 @@
         "owner": "Supervisor 2",
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L08_AUTHORING_C_20261030.json",
         "independentOracle": "PASS_LOCAL_MATH_FIXTURE",
-        "deferredToStageD": "Shared ALG1 service and teacher grading"
+        "deferredToStageD": "Shared ALG1 service and teacher grading",
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "reviewStartedUtc": null,
       "reviewElapsedSeconds": null,
       "timingNote": "source review began before timer capture, no estimate invented",
-      "authoringClosedAtUtc": "2026-10-30T14:10:04.945575+00:00"
+      "authoringClosedAtUtc": "2026-10-30T14:10:04.945575+00:00",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 9,
@@ -603,13 +627,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L09_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:20:37.133683+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 10,
@@ -664,13 +691,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L10_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:26:22.057522+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 11,
@@ -724,13 +754,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L11_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:28:28.882962+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 12,
@@ -785,13 +818,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L12_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:28:51.148902+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 13,
@@ -845,13 +881,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L13_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:29:38.407033+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 14,
@@ -907,13 +946,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L14_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:30:19.710666+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 15,
@@ -968,13 +1010,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L15_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:30:54.557232+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     },
     {
       "ordinal": 16,
@@ -1032,13 +1077,16 @@
         "contractFile": "docs/curriculum/US_CCSS_ALG1_CODER5_U01_L16_AUTHORING_C_20261030.json",
         "oracle": "PASS_LOCAL_INDEPENDENT_MATH",
         "runtimeEnabled": false,
-        "humanGrading": true
+        "humanGrading": true,
+        "selectedPracticeRouteVerified": false,
+        "stageCGate": "NOT_INDEPENDENTLY_VERIFIED_AFTER_EARLIEST_BLOCKER"
       },
       "D": "NOT_RUN_BATCH_DEFERRED",
-      "readyForStageD": true,
+      "readyForStageD": false,
       "authoringClosedAtUtc": "2026-10-30T14:31:33.834054+00:00",
       "startedAtUtc": null,
-      "timeNote": "not captured; no elapsed time invented"
+      "timeNote": "not captured; no elapsed time invented",
+      "strictABCClosure": "HISTORICAL_AUTHORING_ONLY_NOT_SEQUENTIALLY_VERIFIED"
     }
   ],
   "return_queue": [],
@@ -1048,16 +1096,17 @@
     "A_CLOSED": 16,
     "B_CLOSED": 16,
     "C_PREPARED": 16,
-    "ABC_READY_FOR_D": 16,
+    "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 0,
-    "REMAINING": 116,
+    "BLOCKED": 1,
+    "REMAINING": 132,
     "SOURCE_REVIEW_CUMULATIVE": 37,
     "STRUCTURED_RUBRIC_DRAFTS": 29,
     "UNIT_TOTAL": 7,
-    "UNITS_ABC_CLOSED": 1,
+    "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_ABC_COMPLETE_STAGE_D_PENDING"
+    "UNIT_STATUS": "UNIT_IN_PROGRESS_BLOCKED_AT_L01",
+    "C_AUTHORING_PREPARED_HISTORICAL": 16
   },
   "verification": {
     "sources": "four local HTML SHA256 each lesson",
@@ -1076,7 +1125,8 @@
     "L13_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L14_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
     "L15_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
-    "L16_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN"
+    "L16_MathAndSource": "PASS_LOCAL_ORACLE_SHA256_JSON; DOTNET_NOT_RUN; AUTH_E2E_NOT_RUN",
+    "strictSelectedPracticeRoute": "BLOCKED_C_L01; STATIC_CODE_PATH_FAIL_CLOSED; NO_DOTNET_TESTS_RUN_IN_THIS_REAUDIT"
   },
   "continuationBaselineSHA": "a311cafc947192acf7efe0fa6b0ec57a506dd3de",
   "latestOrder": "SUPERVISOR2_ADMIN_V_UNIT_U01_FULL_UNIT_STRICT_SEQUENTIAL_20261030",
@@ -1086,18 +1136,29 @@
     "unitTotalLessons": 16,
     "courseUnitTotal": 7,
     "unitsABCCLosed": 0,
-    "status": "UNIT_ABC_COMPLETE_STAGE_D_PENDING",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
     "previouslyABCClosed": 0,
-    "newlyABCClosed": 16,
-    "unitReadyForStageD": true,
-    "lastFullyABCClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
-    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
-    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
+    "newlyABCClosed": 0,
+    "unitReadyForStageD": false,
+    "lastFullyABCClosedLesson": null,
+    "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "currentLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "nextPermittedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
     "previouslyReviewedSourceThrough": "U01:L08",
     "lastSourceReviewIsNotABCCLosure": true,
-    "mayAdvanceToL02": true,
-    "blockingDependency": null,
+    "mayAdvanceToL02": false,
+    "blockingDependency": {
+      "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+      "stage": "C",
+      "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+      "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+      "lines": "124-151",
+      "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+      "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+      "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+      "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+      "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
+    },
     "checkedAtUtc": "2026-10-30T12:59:58.913206+00:00",
     "headAtInspection": "89261eb5aaab0a72c963dd3a56b3868f5d745daa",
     "sourceEdition": "Illustrative Mathematics Algebra 1 First Edition original teacher/student HTML",
@@ -1108,8 +1169,30 @@
     "stageD": "NOT_RUN",
     "stageDObligation": "ALG1 shared NoSupportedOutcomes stays fail closed; central owner verifies real generator, teacher scoring and two-school tests"
   },
-  "unitStatus": "UNIT_ABC_COMPLETE_STAGE_D_PENDING",
-  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U02:L01",
-  "lastFullyClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L16",
-  "return_queue_policy": "HISTORICAL_ONLY: blocked entries preserved as provenance, cannot authorize skipping L01 under new Admin V-UNIT order"
+  "unitStatus": "UNIT_IN_PROGRESS_BLOCKED_AT_L01",
+  "firstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "lastFullyClosedLesson": null,
+  "return_queue_policy": "NO_SKIP: U01:L01 remains active until selected Stage C is verified and committed.",
+  "historicalV16Authoring": {
+    "priorClaimSha": "64f82f742dfb518f0fc67e0a74a4c71b0f266e56",
+    "lastReviewed": "U01:L16",
+    "nextCanonical": "U02:L01",
+    "previouslyMarkedReady": 16,
+    "note": "Preserved historically in prior Git commit; authoring alone was mislabeled Stage-D-ready while selected ALG1 Practice is fail-closed."
+  },
+  "strictABCReauditAtUtc": "2026-10-31T00:01:30.250601+00:00",
+  "lastConfirmedClosedLesson": null,
+  "activeLesson": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+  "blockedCurrentLesson": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01",
+    "stage": "C",
+    "status": "BLOCKED_C_SHARED_SELECTED_PRACTICE",
+    "component": "src/Edulytics.Services/Practice/StudentPrivatePracticeService.cs",
+    "lines": "124-151",
+    "observed": "ALG1 returns NoSupportedOutcomes before LessonPracticeContractRegistry.TryResolve, so no source-aligned selected learner route or verified teacher-review pathway",
+    "requiredOwner": "Supervisor 2 to confirm central registry single-writer; integration may be cross-supervisor",
+    "nextAction": "Authorized shared writer verifies reuse/extension, activates ONLY reviewed exact U01:L01 Practice selection, grades {A,C,E} with order/case flexibility and rejects duplicates/extra/missing/malformed; routes P1/P2, 15-classmate investigation, Cool-down to human review without auto-grade; keep other ALG1 lessons fail-closed",
+    "issue": "https://github.com/EIAS79/Edulytics/issues/453",
+    "tests": "NEW_TESTS_NOT_RUN; existing authored fixtures retained"
+  }
 }
