@@ -1,0 +1,182 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L11",
+  "Ordinal": 48,
+  "UnitCode": "U03",
+  "UnitOrdinal": 11,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\11\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\11\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\11\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\11\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "df8c5dde853972c395b61d7a3209e70697dde2436c66c58d7cb7e594f57c8887",
+    "TeacherActivities": "bc1d8fe350631c35c8d753d5bd33bac2c43848a51b9a114d561f156f322be0e6",
+    "StudentActivities": "a83324c3f93def2a04688a56392bd72c0e958135252f8e1d5140294d2d3897c8",
+    "StudentPractice": "df042f709092bd0e0e51ee9ca873b29945cfa2ead6264521880a0b1708888c80"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "11.1",
+      "Goal": "notice/wonder AC parallel MN",
+      "Mode": "HUMAN_PAPER_OBSERVATION"
+    },
+    {
+      "Source": "11.2",
+      "Goal": "BMN and BAC parallel AA proof and side division converse",
+      "Mode": "TEACHER_GENERAL_NARRATIVE_PROOF"
+    },
+    {
+      "Source": "11.3",
+      "Goal": "two numerical proportional triangle construction problems and method comparison",
+      "Mode": "EXACT_SOURCE_MATH_AND_PAPER_DIAGRAM"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "7 source indexed exact and diagram-dependent questions",
+      "Mode": "TEACHER_DIAGRAM_OR_EXACT"
+    },
+    {
+      "Source": "11.4",
+      "Goal": "protected original Cool-down",
+      "Mode": "FIRST_PARTY_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [
+      "HSG-SRT.A.3",
+      "HSG-SRT.B.4"
+    ],
+    "Addressing": [
+      "HSG-SRT.B.4",
+      "HSG-SRT.B.5"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.B.4"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U03_L11_PARALLEL_CONVERSE_AA_PROPORTION_PAPER",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L11",
+    "TaskId": "geo-u03-l11-parallel-line-converse-and-two-numerical-figures",
+    "GroupId": "GEO_U03_L11_PARALLEL_CONVERSE_AA_PROPORTION_PAPER",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Student independently labelled parallel triangle, full AA narrative proof, two proportional statements, source numerical side calculations and correction of an invalid nonparallel diagram.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correctly labels parallel segment and identifies AA corresponding angles in BMN and BAC",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "proves AC/MN=CB/NB=AB/MB and AM/MB=CN/NB with correct geometric hypotheses",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "solves original two numerical proportional triangle constructions with units and correct ratios",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "distinguishes this converse from earlier forward dilation theorem and critiques invalid nonparallel diagram",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "AA of BMN to BAC follows from AC parallel MN and common angle B; then side ratios follow",
+      "source first DAB 3-4-5 right triangle scaled 2.5 gives DF10 and EF12.5",
+      "student P1 AB7.5 and B'B3.5"
+    ],
+    "Equivalent": [
+      "same ratio AM/MB=CN/NB may be stated as MB/AM=NB/CN for positive segments",
+      "different geometrically valid AA angle-pair proof sequences"
+    ],
+    "Wrong": [
+      "assumes AM/MB=CN/NB without parallelism or previous similarity",
+      "mixes small/large on one side with large/small on another",
+      "area of midpoint triangle shrinks by length factor 1/2 instead of squared factor 1/4"
+    ],
+    "Boundary": [
+      "nondegenerate triangle, segment lies between proper sides and positive lengths",
+      "if MN coincides with AC at k1, endpoint ratios involving zero outer segments undefined",
+      "right angle position missing from accessible source Practice P3 description so numeric area must be figure-reviewed"
+    ],
+    "Malformed": [
+      "no parallel hypothesis or missing correspondence",
+      "unlabelled M N or wrong side quotient",
+      "source figure-dependent answer without actual diagram"
+    ]
+  },
+  "IndependentMathOracles": {
+    "P1AB": "15/2",
+    "P1BBPrime": "7/2",
+    "P4": "C",
+    "P7": [
+      "A",
+      "B"
+    ],
+    "Source11_3_First": {
+      "DA": 3,
+      "DB": 4,
+      "DE": 7.5,
+      "DF": 10,
+      "EF": 12.5
+    },
+    "Source11_3_Second": {
+      "BD": 5,
+      "FG": 15,
+      "EG": 12,
+      "EB": 2.5,
+      "ED": 4,
+      "EF": 7.5
+    },
+    "AreaScale": "1/4",
+    "Converse": "PARALLEL_IMPLIES_PROPORTIONAL"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l11-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u03-l11-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u03-l11-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u03-l11-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "fce1d6714acdebb3f776c5e12d469fb91b82ea9a",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T04:07:20.493925Z",
+  "ClosedAtUtc": "2026-10-31T04:07:32.828105Z",
+  "ElapsedSeconds": 12.334,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L12"
+}
