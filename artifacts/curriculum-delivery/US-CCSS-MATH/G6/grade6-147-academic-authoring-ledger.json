@@ -533,8 +533,16 @@
         "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
         "v12ExactSelectedPractice": "NOT_RUN__SUPERVISOR_1_SHARED_OWNER",
         "v12TeacherRubricPersistedVerified": false,
-        "abcFirstOrderStatus": "C_BLOCKED_SHARED_AREA_CONSTRUCTION_ENGINE",
-        "gradeOwnedProposedContractEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l02-abc-source-first-party-20261030.json"
+        "abcFirstOrderStatus": "C_BLOCKED_SELECTED_PRACTICE_L02__GRADE_ONLY_TANGRAM_AREA_PREPARED",
+        "gradeOwnedProposedContractEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l02-abc-source-first-party-20261030.json",
+        "gradeOwnedTangramAreaCandidate": {
+          "file": "src/Edulytics.Core/Mathematics/Practice/UsCcssG6Unit1Lesson2TangramArea.cs",
+          "authoredFixtures": "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson2TangramAreaTests.cs",
+          "testStatus": "AUTHORED_NOT_RUN",
+          "mechanics": "INTEGER_HALF_SQUARE_UNITS_EXACT_INVENTORY_AND_AREA; TEACHER_REVIEW_REQUIRED",
+          "runtimeSelected": false,
+          "teacherReviewRequired": true
+        }
       },
       "stageD": {
         "dotnet": "NOT_RUN",
@@ -550,8 +558,10 @@
       },
       "category": "CONTENT_REPAIR",
       "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "A/B source-aligned first-party tangrams authored; C BLOCKED awaiting grade6 authorized shared area-construction mapping and teacher-scored activity. In §3A.b return backlog.",
-      "gradeOwnedAttemptCommitSHA": "5c7e9913c928acb2c8bf033f5d63be34d39694d2"
+      "nextStep": "A/B source-aligned material retained; authored exact local tangram inventory and area helper, NOT selected as Practice; Supervisor1 authorized shared integration required. U01:L02 remains active; no L03.",
+      "gradeOwnedAttemptCommitSHA": "5c7e9913c928acb2c8bf033f5d63be34d39694d2",
+      "abcAuthoringCurrentStatus": "A_B_COURSE_LOCAL_PREPARED__C_SELECTED_PRACTICE_BLOCKED_NOT_CLOSED",
+      "currentStageCEvidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l02-tangram-exact-area-course-preparation-20261031.json"
     },
     {
       "sortOrder": 3,
