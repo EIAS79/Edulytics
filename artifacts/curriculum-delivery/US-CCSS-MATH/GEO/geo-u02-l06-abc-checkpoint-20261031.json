@@ -1,0 +1,141 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+  "LessonTitle": "Side-Angle-Side Triangle Congruence",
+  "Unit": "U02",
+  "Ordinal": 28,
+  "PR": 583,
+  "Branch": "curriculum/us-ccss-geo-coder6-source-repairs-20261028",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "a4dfb5b2481a93acc9de5b317ecf4da64144798ef2aac2838d71b189f2019f5e",
+    "TeacherActivities": "71bf1ce20944ac344fca4de91cf4ab8849cdf20ad5cb6b576b8cfe3e1550a781",
+    "StudentActivities": "4ef53b77028ff85f2e82c2cea0fe3f5ab2811bc0d8493c2b2ab06f99ce320770",
+    "StudentPractice": "6dda3f2fcef345540690988cf4e096493b257ef410c09af1d7fe4eda11becc9f"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.A.5",
+      "HSG-CO.B.7",
+      "HSG-CO.B.8"
+    ],
+    "Addressing": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.10"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.10",
+      "HSG-CO.C.11"
+    ]
+  },
+  "OriginalActivities": [
+    "6.1 Information Overload?",
+    "6.2 Proving SAS Triangle Congruence Theorem",
+    "6.3 What Do We Know For Sure About Isosceles Triangles?"
+  ],
+  "OriginalPracticeCount": 6,
+  "SourceCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "Highlight only necessary two sides + included angle in provided full proof",
+      "FirstPartyMode": "HUMAN_REVIEWED_HIGHLIGHTED_RIGID_PROOF"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "Prove SAS itself with optional reflection and equal ray-distance; extend to third-side bounds",
+      "FirstPartyMode": "TEACHER_SCORED_SAS_DRAWING"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "Use auxiliary apex angle bisector for isosceles base-angle proof, no premature SSS",
+      "FirstPartyMode": "TEACHER_SCORED_ANGLE_BISECTOR_SAS_PROOF"
+    },
+    {
+      "Source": "Practice P1-P6",
+      "Goal": "Six source-specific paper proofs and selection/ordering cases",
+      "FirstPartyMode": "TEACHER_SCORED_ORACLE_PLUS_FIGURE_BOUNDARY"
+    },
+    {
+      "Source": "6.4 Publisher Cool-down",
+      "Goal": "Publisher teacher login restricted",
+      "FirstPartyMode": "ORIGINAL_EDULYTIKS_COOLDOWN"
+    }
+  ],
+  "PublisherCooldown": "6.4 ORIGINAL_PUBLISHER_PROTECTED_UNVERIFIED; EDULYTIKS_FIRST_PARTY_PAPER_ALTERNATIVE",
+  "StageA": "A_CLOSED_ORIGINAL_PROOF_SEQUENCE_SIX_PRACTICE_AND_LOCAL_SOURCE_HASHES",
+  "StageB": "B_CLOSED_REPLACED_PREMATURE_SSS_WITH_SOURCE_REQUIRED_ANGLE_BISECTOR_SAS",
+  "StageC": "C_CLOSED_AUTHORING_TEACHER_SELECTED_SAS_PAPER_ASSESSMENT_SIX_PRACTICE_FIXTURES_NOT_RUN",
+  "StageD": "NOT_RUN",
+  "ABCReadyForD": true,
+  "CoreRepair": "Existing U02L06 student lesson falsely used SSS for the Isosceles Base Angle Theorem although source explicitly uses an apex-angle bisector PQ and SAS and SSS has not yet been proved; corrected original RichV2 paragraph, worked example and concept rule without deleting other two worked examples.",
+  "SelectedPracticeGroupId": "GEO_U02_L06_SAS_AND_ISOSCELES_PAPER_HUMAN_REVIEW",
+  "SelectedAssessmentRoute": {
+    "GroupId": "GEO_U02_L06_SAS_AND_ISOSCELES_PAPER_HUMAN_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_ARGUMENT_REVIEW",
+    "TaskId": "geo-u02-l06-sas-proof-and-apex-angle-bisector",
+    "TeacherHandoff": "Collect 6.1 highlighted full proof, 6.2 SAS aligned drawing with optional reflection, 6.3 actual apex-angle bisector PQ diagram and SAS base-angle proof, six source-indexed paper practices, and first-party Cool-down. Mark four 0-2 criteria offline; do not claim live teacher grade persistence.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Identifies genuine two sides and included angle without using redundant side/angle facts as hypotheses",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Constructs valid rigid-motion SAS proof with first side, conditional reflection, correct ray and distance",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Draws angle-bisector PQ and proves base angles by SAS without circular reliance on SSS or midpoint",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Justifies six paper source practice parts and first-party Cool-down including invalid SAS and ordered correspondence",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "IndependentOracles": {
+    "SAS_Pairing": "PA_PB_PQ_SHARED_INCLUDED_HALF_ANGLES",
+    "P4_OriginalStatementOrder": [
+      3,
+      1,
+      2,
+      4,
+      5
+    ],
+    "P6_TrueChoices": [
+      "B",
+      "D",
+      "E"
+    ],
+    "ThirdSide_5_12_ValidNondegenerate": "7<c<17",
+    "ThirdSide_RightAngle": 13,
+    "IsoscelesProof": "ANGLE_BISECTOR_THEN_SAS_NOT_SSS"
+  },
+  "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l06-sas-isosceles-paper-20261031.json",
+  "LessonContentCommit": "b7adeab3d6afdf00f3b4fea76ad7645ccd1596a1",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "ScopedStaticChecks": "Node --check syntax / git diff --check / Python JSON parse/write; no tests run",
+  "TeacherScorePersistence": "STAGE_D_UNVERIFIED_ISSUE_453",
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+  "ClosureCommit": "RECORDED_BY_CONTAINING_GITHUB_COMMIT",
+  "PreviousHEAD": "c7084f1f5ada8c890164328bb08e681030400cd6"
+}
