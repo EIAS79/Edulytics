@@ -7,11 +7,11 @@
     "branch": "curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029",
     "auditedHead": "dc938af5e8fa01253e8c095bcd6fc70a6db4d4ca"
   },
-  "status": "BLOCKED_CURRENT_LESSON",
-  "lastConfirmedClosedLesson": null,
-  "activeLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "blockedCurrentLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "blockerCode": "G8_U01_L01_STAGE_C_SELECTED_ROUTE_NOT_IMPLEMENTED",
+  "status": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+  "lastConfirmedClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "activeLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "blockedCurrentLesson": null,
+  "blockerCode": null,
   "evidence": {
     "priorUnitABCClaims": 17,
     "priorUnitClaimAudit": "docs/curriculum/us-ccss-g8-coder4-u01-final-academic-unit-audit-20261030.json",
@@ -43,7 +43,7 @@
   },
   "stageA": "PRESERVED_PREVIOUSLY_SOURCE_APPROVED",
   "stageB": "PRESERVED_PREVIOUSLY_COURSE_OWNED",
-  "stageC": "NOT_CLOSED_SELECTED_ROUTE_AND_HUMAN_REVIEW_BOUNDARY",
+  "stageC": "C_CLOSED_ACADEMIC_TEACHER_SELECTED_PAPER_ONLY",
   "stageD": "NOT_RUN",
   "proposedPractice": {
     "sourceSkill": "informal rigid motions, angle classification, and ordered six-frame partner dances",
@@ -205,5 +205,20 @@
   "testsStatus": "NOT_RUN",
   "sourceAccess": "Our-CS local teacher/student/preparation SHA256 reverified in 2026-10-31 session",
   "noStageDRun": true,
-  "noMergeOrDeploy": true
+  "noMergeOrDeploy": true,
+  "resolution20261031": {
+    "studentAsset": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
+    "richV2Linked": true,
+    "contentSHA": "cdb4cf526fc438b93d6ec504085f172aa64ee43a",
+    "sourceTasks": [
+      "1.1 multiple defensible angle reasons",
+      "1.2 full six frames with partner reconstruction",
+      "inverse 6-to-1 ordered moves",
+      "Edulytiks first-party Cool-down with 8-point teacher rubric"
+    ],
+    "machinePracticeStillDisabled": true,
+    "teacherScoringStillOffline": true,
+    "noOriginalPublisherCoolDown": true,
+    "tests": "AUTHORED_NOT_RUN"
+  }
 }

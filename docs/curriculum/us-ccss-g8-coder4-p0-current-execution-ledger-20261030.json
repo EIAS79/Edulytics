@@ -13,7 +13,7 @@
     "grade8LessonsWithServiceOnlySyntheticPracticeHarness": 1,
     "AAccepted": 17,
     "BAccepted": 17,
-    "CVerified": 0,
+    "CVerified": 1,
     "DVerified": 0,
     "authenticatedDatabaseFixtureRun": false,
     "release": "NO_GO",
@@ -41,7 +41,7 @@
       "teacherScoringPersistenceVerified": false,
       "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
       "B": "B_CLOSED_COURSE_OWNED",
-      "C": "C_BLOCKED_SELECTED_ASSESSMENT_ROUTE",
+      "C": "C_CLOSED_ACADEMIC_SELECTED_OFFLINE_PAPER_TEACHER_ASSESSMENT",
       "D": "NOT_RUN",
       "nextChecks": [
         "SOURCE_INTERACTIVE_AND_HUMAN_COURSE_ASSESSMENT_REVIEW_STILL_REQUIRED",
@@ -52,7 +52,7 @@
       ],
       "v13SourceSpotCheck": "docs/curriculum/us-ccss-g8-coder4-v13-u01-l01-l07-source-evidence-20261029.json",
       "latestSequentialABCCheckpoint": "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
-      "lessonClosureStatus": "REOPENED_C_SELECTED_ROUTE_BLOCKED",
+      "lessonClosureStatus": "READY_FOR_STAGE_D_ACADEMIC_OFFLINE_PAPER_ONLY",
       "blockingOwners": [
         "Supervisor 2 / independent academic standards owner",
         "Supervisor 2 / shared renderer and Practice integration"
@@ -60,17 +60,23 @@
       "checkpointLessonFixCommit": "69c034259914a5905fdbbbfd22c991c4ca98d86c",
       "checkpointTestCorrectionCommit": "4d46717c9b4733205f5883f6cbc6dc46aa6554a5",
       "sourceCooldownDisposition": "ORIGINAL_2021_COOLDOWN_NOT_VERIFIED; FIRST_PARTY_EQUIVALENT_AUTHORED; TEACHER_RUNTIME_NOT_INTEGRATED",
-      "sequentialAdvanceAllowed": false,
+      "sequentialAdvanceAllowed": true,
       "latestSequentialABCEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
       "courseOwnedNewSvgCandidateCount": 2,
       "courseOwnedNewNativeVisualCount": 4,
       "lastFocusedCheck": "PASS 4/4 U01:L01 focused Node independent graphics/math/contract candidate; no runtime approval",
-      "readyForStageD": false,
+      "readyForStageD": true,
       "academicAssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json",
       "latestABCCommitSHA": "6fc6ecb5815bd83f7742719a3174f6cca9989d60",
       "previousReadyForStageDClaim": true,
-      "independentCReaudit20261031": "BLOCKED_SELECTED_ROUTE",
-      "blockerEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-stage-c-reconciliation-20261031.json"
+      "independentCReaudit20261031": "C_CLOSED_SELECTED_LESSON_PAPER_TEACHER_ROUTE",
+      "blockerEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-stage-c-reconciliation-20261031.json",
+      "stageCSelectedRouteContentCommitSHA": "cdb4cf526fc438b93d6ec504085f172aa64ee43a",
+      "selectedTeacherPaperAssessment": "/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
+      "stageDIntegrationRequired": true,
+      "lessonExactDigitalPracticeVerified": false,
+      "selectedRouteKind": "FIRST_PARTY_STATIC_PRINTABLE_STUDENT_ASSET_LINKED_FROM_RICHV2;TEACHER_DISTRIBUTES_AND_MANUAL_SCORES_OFFLINE",
+      "lastConfirmedClosureEvidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-selected-paper-stage-c-checkpoint-20261031.json"
     },
     {
       "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
@@ -3596,13 +3602,13 @@
     }
   ],
   "currentSequentialABCCursor": {
-    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
-    "status": "BLOCKED_SELECTED_ROUTE",
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+    "status": "ACTIVE_NEXT_UNCLOSED",
     "unit": "U01",
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-    "lastClosedLesson": null,
-    "advanceAllowed": false,
-    "authority": "RESTART_20261031_INDEPENDENT_C_SELECTED_ROUTE_AUDIT"
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+    "advanceAllowed": true,
+    "authority": "SUP2_APPROVED_SOURCE_EXACT_SELECTED_EDULYTIKS_OFFLINE_TEACHER_ASSESSMENT"
   },
   "abcReturnQueue": [],
   "abcCounters": {
@@ -3611,30 +3617,30 @@
     "A_CLOSED": 17,
     "B_CLOSED": 17,
     "C_PREPARED": 17,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 1,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 131,
+    "BLOCKED": 0,
+    "REMAINING": 130,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_BLOCKED"
+    "UNIT_STATUS": "UNIT_IN_PROGRESS"
   },
   "unitProgress": {
     "unitCode": "U01",
     "unitTotal": 17,
-    "lastClosedLesson": null,
-    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-    "unitStatus": "UNIT_BLOCKED",
+    "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+    "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+    "unitStatus": "UNIT_IN_PROGRESS",
     "unitsABCCLOSED": 0,
     "unitTotalCount": 9,
     "unitReport": "docs/curriculum/us-ccss-g8-coder4-u01-strict-unit-gate-20261030.json",
-    "newlyClosed": 0,
+    "newlyClosed": 1,
     "finalAcademicAudit": "docs/curriculum/us-ccss-g8-coder4-u01-final-academic-unit-audit-20261030.json"
   },
   "abcReturnQueueSkipAllowed": false,
-  "currentBlockedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "unitStatus": "UNIT_BLOCKED",
+  "currentBlockedLesson": null,
+  "unitStatus": "UNIT_IN_PROGRESS",
   "historicalABCClaimsAtHeadDc938af5": {
     "TOTAL": 131,
     "AUTHORED": 131,
@@ -3655,5 +3661,12 @@
     "evidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-stage-c-reconciliation-20261031.json",
     "historical17LessonAuthoringPreserved": true,
     "note": "Old academic-only closure record retained as historical, not proof of selected Stage C route. No new automated tests executed."
+  },
+  "selectedOfflineTeacherRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "studentUrl": "/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
+    "source": "First-party lesson-linked printable paper assessment with teacher human rubric; digital generated Practice, persisted score and school selection remain Stage D",
+    "contentSHA": "cdb4cf526fc438b93d6ec504085f172aa64ee43a",
+    "tests": "AUTHORED_NOT_RUN"
   }
 }

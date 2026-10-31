@@ -16,22 +16,22 @@ const parse=(s,kind,unit)=>{
  let m=s.match(unit==='degrees'?/^[+-]?\d+(?:\.\d+)?°?$/:/^[+-]?\d+(?:\.\d+)?$/);
  return m?Number(s.replace('°','')):null;
 };
-test('U01 preserves 17 historical authoring records and blocks an unverified selected C route',()=>{
+test('U01 preserves 17 historical authoring records and closes only selected offline L01 academic C route',()=>{
  assert.equal(led.rows.length,131);assert.equal(aud.lessonCommits.length,17);
- assert.equal(unit.unitTotal,17);assert.equal(unit.unitStatus,'UNIT_BLOCKED');
- assert.equal(unit.unitReadyForStageD,false);assert.equal(unit.newlyReadyForStageD,0);
- assert.equal(led.abcCounters.ABC_READY_FOR_D,0);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.abcCounters.UNITS_ABC_CLOSED,0);assert.equal(led.abcCounters.REMAINING,131);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L01');
- assert.equal(led.currentSequentialABCCursor.advanceAllowed,false);
+ assert.equal(unit.unitTotal,17);assert.equal(unit.unitStatus,'UNIT_IN_PROGRESS');
+ assert.equal(unit.unitReadyForStageD,false);assert.equal(unit.newlyReadyForStageD,1);
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,1);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.abcCounters.UNITS_ABC_CLOSED,0);assert.equal(led.abcCounters.REMAINING,130);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L02');
+ assert.equal(led.currentSequentialABCCursor.advanceAllowed,true);
  assert.equal(led.abcCounters.CURRENT_UNIT,'U01');
- assert.ok(led.rows.slice(0,17).every(x=>x.readyForStageD===false));
+ assert.equal(led.rows[0].readyForStageD,true);assert.ok(led.rows.slice(1,17).every(x=>x.readyForStageD===false));
  assert.ok(led.rows.slice(0,17).every(x=>x.previousReadyForStageDClaim===true));
  assert.ok(led.rows.slice(17).every(x=>x.readyForStageD!==true));
  const manifest=read(doc('us-ccss-g8-coder4-course-evidence-20261029.json'));
  for(const [pack,hash] of Object.entries(aud.richContentSha256)){
   const f='src/Edulytics.Core/Curriculum/LessonContent/RichV2/'+pack;
-  assert.equal(sha(f),hash);assert.equal(hash,manifest.hashes.richCandidates[pack]);
+  if(pack.includes('u01-l01-l08')) { assert.notEqual(sha(f),hash,'selected first-party paper link should change old Rich V2 pack'); } else { assert.equal(sha(f),hash); } assert.equal(hash,manifest.hashes.richCandidates[pack]);
  }
 });
 for(let n=1;n<=17;n++)test('U01 L'+String(n).padStart(2,'0')+' source-scoped A-B-C contract and exact oracles',()=>{
@@ -44,10 +44,10 @@ for(let n=1;n<=17;n++)test('U01 L'+String(n).padStart(2,'0')+' source-scoped A-B
  assert.equal(entry.sourceFiles.length,3);
  for(const f of entry.sourceFiles)assert.match(f.sha256,/^[a-f0-9]{64}$/);
  const gates=s.gates||s.stageGates;
- assert.equal(gates.READY_FOR_STAGE_D,n!==1);
- assert.equal(gates.C,n===1?'C_BLOCKED_SELECTED_ROUTE_NOT_STATICALLY_INTEGRATED':'C_CLOSED_ACADEMIC_CONTRACT');
- assert.equal(gates.D,'NOT_RUN');assert.equal(row.readyForStageD,false);
- assert.equal(row.independentCReaudit20261031,n===1?'BLOCKED_SELECTED_ROUTE':'HOLD_EARLIER_CANONICAL_C_GATE');
+ assert.equal(gates.READY_FOR_STAGE_D,true);
+ assert.equal(gates.C,n===1?'C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE':'C_CLOSED_ACADEMIC_CONTRACT');
+ assert.equal(gates.D,'NOT_RUN');assert.equal(row.readyForStageD,n===1);
+ assert.equal(row.independentCReaudit20261031,n===1?'C_CLOSED_SELECTED_LESSON_PAPER_TEACHER_ROUTE':'HOLD_EARLIER_CANONICAL_C_GATE');
  let m,kind,unit,correct,wrong,invalid,expected;
  if(n===1){
   m=s.coordinateQuestionCandidate;kind='pair';unit='coordinate';expected=m.key;

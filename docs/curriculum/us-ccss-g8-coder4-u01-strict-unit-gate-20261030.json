@@ -17,14 +17,14 @@
     "09": 6
   },
   "previouslyReadyForStageD": 0,
-  "newlyReadyForStageD": 0,
+  "newlyReadyForStageD": 1,
   "unitReadyForStageD": false,
-  "unitStatus": "UNIT_BLOCKED",
-  "lastClosedLesson": null,
-  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L01",
-  "blockedInUnitCurrently": 1,
-  "activeBlockingLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "unitStatus": "UNIT_IN_PROGRESS",
+  "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L02",
+  "blockedInUnitCurrently": 0,
+  "activeBlockingLesson": null,
   "historicalPartiallyRepaired": [
     "PED:US-CCSS-MATH:G8:U01:L01",
     "PED:US-CCSS-MATH:G8:U01:L02",
@@ -42,20 +42,20 @@
     "A_CLOSED": 17,
     "B_CLOSED": 17,
     "C_PREPARED": 17,
-    "ABC_READY_FOR_D": 0,
+    "ABC_READY_FOR_D": 1,
     "D_VERIFIED": 0,
-    "BLOCKED": 1,
-    "REMAINING": 131,
+    "BLOCKED": 0,
+    "REMAINING": 130,
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_BLOCKED"
+    "UNIT_STATUS": "UNIT_IN_PROGRESS"
   },
   "unitTotals": {
     "UNIT_TOTAL": 9,
     "UNITS_ABC_CLOSED": 0,
     "CURRENT_UNIT": "U01",
-    "UNIT_STATUS": "UNIT_BLOCKED"
+    "UNIT_STATUS": "UNIT_IN_PROGRESS"
   },
   "sourceOriginalsVerified": [
     {
@@ -95,13 +95,13 @@
   "elapsedSecondsForCurrentReconciliation": 0.122,
   "headAtStart": "027ea29965020f0fdb11cf1fff278bfba5d0ad2b",
   "branch": "curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029",
-  "checkpointCommitSHA": null,
+  "checkpointCommitSHA": "RECORDED_BY_CONTAINING_GITHUB_COMMIT",
   "commitRecordedIn": "Same PR #593 comment and GitHub HEAD after push",
   "pullRequest": 593,
   "mergeAllowed": false,
   "deployAllowed": false,
   "noSharedFilesEdited": true,
-  "resumption": "Recheck U01:L01 authority decisions and exact Practice capability. Only after genuine A/C closure, commit lesson READY_FOR_STAGE_D, then resume L02 in ascending order; do not jump to L07 or another unit.",
+  "resumption": "U01:L01 selected course-owned physical paper teacher review Stage C authoring is complete. Current sequential lesson U01:L02. Older U01:L02–L17 academic claims preserved as historical and need selected route check one by one; no auto-advance to U02.",
   "latestAcademicApproval": "Supervisor 2 PR #593 comment 6523795237",
   "L01AssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json",
   "academicClosedInOrder": [
@@ -147,5 +147,13 @@
     "atUtc": "2026-10-31T00:02:16.881Z",
     "evidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-stage-c-reconciliation-20261031.json",
     "legacy17ClosuresPreservedHistorically": true
+  },
+  "stageCSelectedPaperClosure20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+    "contentSHA": "cdb4cf526fc438b93d6ec504085f172aa64ee43a",
+    "printableWorksheet": "/curriculum/us-ccss-g8/assessment/u01-l01-moving-plane-paper.html",
+    "teacherRubric": "four source task criteria 0-2 human only",
+    "StageD": "NOT_RUN",
+    "next": "PED:US-CCSS-MATH:G8:U01:L02"
   }
 }
