@@ -171,10 +171,219 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T14:01:23.848703+00:00",
-  "parentGitHEAD": "e39d2e29e1c4d57df9ba291542f72aa447165bdf"
+  "parentGitHEAD": "e39d2e29e1c4d57df9ba291542f72aa447165bdf",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L07",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l07-no-bending-stretching-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l07-no-bending-stretching-paper.html",
+    "learnerWorksheetSha256": "5687138fa6bc7d8ecbfab88ea10a17a0e27bec108681f2ee215d71a3f24598dd",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "originalSourceFiles": {
+      "student": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\7\\index.html",
+        "sha256": "77b7ec76e8194edee8c0fd21d1215e0ccfbe68981a28a6796cd93859c5c67c7b"
+      },
+      "teacher": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\7\\index.html",
+        "sha256": "86ec135ce6b9cd702c620664f1fdc5816a0be5a28a0606fed03220e64152fd68"
+      },
+      "preparation": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\7\\preparation.html",
+        "sha256": "e3149a41679117abc4aecd4f97c2df2e5e57d7a59df8207fc76fdf268a13c4a8"
+      }
+    },
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "firstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "sourceActivityMap": [
+      {
+        "source": "7.1 Measuring Segments",
+        "worksheet": "measure",
+        "responseType": "THREE_ORIGINAL_EXACT_RULER_DIAGRAM_MEASUREMENTS_PLUS_PRECISION",
+        "expected": "Segment I 4 5/8 = 4.625 units (nearest eighth); II 4.7 units (nearest tenth); III 3 3/4 = 3.75 units (nearest eighth)"
+      },
+      {
+        "source": "7.2 Sides and Angles",
+        "worksheet": "invariants",
+        "responseType": "DRAWN_RIGID_IMAGES_AND_CORRESPONDING_LENGTHS_ANGLES",
+        "expected": "Original A(1,1) B(4,1) C(1,5), translate (+2,+1) -> (3,2),(6,2),(3,6), 90°CCW about O -> (-1,1),(-1,4),(-5,1), reflect y-axis -> (-1,1),(-4,1),(-1,5); AB=3, AC=4, BC=5 and angle A=90° unchanged"
+      },
+      {
+        "source": "7.3 Which One?",
+        "worksheet": "which",
+        "responseType": "RIGID_VS_NONRIGID_CLASSIFICATION_WITH_MEASURED_COUNTEREXAMPLE",
+        "expected": "Candidate X [(-1,1),(-1,4),(-5,1)] is a rigid 90° CCW rotation of original. Candidate Y side lengths 3,4,6 violate unchanged 3,4,5 and cannot result from a rigid move"
+      },
+      {
+        "source": "Edulytiks authored Cool-down",
+        "worksheet": "cool",
+        "responseType": "HUMAN_GRADED_REFLECTED_3_4_5_DRAWING_AND_PROOF",
+        "expected": "Across x=0 original A(1,1),B(4,1),C(1,5) -> A′(-1,1),B′(-4,1),C′(-1,5); all lengths 3,4,5 preserved"
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "Each criterion 0 incorrect/absent,1 partially accurate/incomplete explanation,2 mathematically correct with labelled evidence. Teacher manually scores paper and notes offline.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "All three source-precision ruler segment readings correctly distinguish eighth/tenth, units and exact decimals"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Three separately constructed rigid triangle images with correct corresponding coordinates and 3-4-5 sides, 90° angle unchanged"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Classify rotated candidate X and reject nonrigid Y by explicit changed side/angle; provide partner counterexample"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down complete reflection x=0 with labels, preserved 3,4,5 and clear reasoning"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "rulers": [
+        {
+          "precision": "nearest_eighth",
+          "fraction": "4 5/8",
+          "exact": 4.625
+        },
+        {
+          "precision": "nearest_tenth",
+          "exact": 4.7
+        },
+        {
+          "precision": "nearest_eighth",
+          "fraction": "3 3/4",
+          "exact": 3.75
+        }
+      ],
+      "original": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "translation": [
+        [
+          3,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          3,
+          6
+        ]
+      ],
+      "rotationCCW90": [
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          -5,
+          1
+        ]
+      ],
+      "reflectionYAxis": [
+        [
+          -1,
+          1
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -1,
+          5
+        ]
+      ],
+      "sideLengths": [
+        3,
+        4,
+        5
+      ],
+      "rightAngleDegrees": 90,
+      "validCandidate": "X",
+      "invalidCandidate": "Y"
+    },
+    "fixtures": {
+      "correct": [
+        "4 5/8 = 4.625 nearest eighth; 4.7 nearest tenth; 3 3/4 = 3.75 nearest eighth",
+        "Three rigid images and all 3,4,5 and right angle preserved",
+        "Candidate X a rigid CCW90 rotation, Y stretched 3,4,6 impossible",
+        "Reflection x=0 -> (-1,1),(-4,1),(-1,5) with same lengths"
+      ],
+      "equivalent": [
+        "4.625 = 37/8 = 4 5/8; 3.75 = 30/8 = 3 3/4",
+        "Equivalent labelled isometric construction with exact pairwise distances",
+        "Full oral explanation with labelled construction is acceptable at teacher discretion"
+      ],
+      "wrong": [
+        "Treating nearest eighth 4 5/8 as 4.5",
+        "Reading nearest tenth 4.7 as 4.07",
+        "Accepting side-lengths 3,4,6 as rigid image of 3,4,5",
+        "Reflecting across y-axis by negating y instead of x"
+      ],
+      "malformed": [
+        "Only a number without units or precision for ruler reading",
+        "Missing or unlabelled transformed triangle vertex",
+        "Only X selected without explanation about side lengths",
+        "No original/imaged correspondence for Cool-down",
+        "Blank side-and-angle explanation"
+      ],
+      "boundary": [
+        "Exact 4 5/8 and 4.625 representations equivalent for first ruler",
+        "At given tick mark use eighth or tenth precision per card; do not silently round to different requested precision",
+        "Orientation reverses under reflection while distances/angles remain fixed",
+        "A sketched imperfect segment does not disprove mathematical invariance if coordinate calculation is exact",
+        "3,4,6 is a valid noncongruent triangle but not a rigid image of 3,4,5"
+      ]
+    },
+    "onlineSubmission": false,
+    "machineGenerated": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "StageD": "NOT_RUN",
+    "sharedEngineFilesModified": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l07-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
 }
