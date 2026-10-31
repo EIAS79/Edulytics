@@ -38,14 +38,18 @@ internal static class UsCcssG6Unit1Lesson1TilingQuestions
             values["pattern"] = pattern;
             string configuration = pattern switch
             {
-                0 => "V: two whole squares on the left, matching half-square triangles on the right",
-                1 => "H: two whole squares along the top, matching half-square triangles at the bottom",
-                2 => "two squares and four half-triangles, but a triangle overlaps an occupied half-cell leaving a gap",
-                _ => "two squares and only three half-triangles, leaving a gap"
+                0 => "S(0,0), S(0,1), T(1,0,0), T(1,0,1), T(1,1,0), T(1,1,1)",
+                1 => "S(0,0), S(1,0), T(0,1,0), T(0,1,1), T(1,1,0), T(1,1,1)",
+                2 => "S(0,0), S(0,1), T(1,0,0), T(1,0,1), T(1,1,0), T(1,0,1)",
+                _ => "S(0,0), S(0,1), T(1,0,0), T(1,0,1), T(1,1,0)"
             };
-            prompt = $"A 2 by 2 square must be tiled with exactly two whole squares and four " +
-                $"half-square triangles, without gaps or overlaps. Arrangement: {configuration}. " +
-                "Enter 1 if BOTH coverage and required inventory are correct, else enter 0.";
+            prompt = "A 2 by 2 square must be tiled using exactly two unit squares " +
+                "and four congruent half-square triangles, without a gap or overlap. " +
+                "Cells are (x,y) with x,y each 0 or 1. S(x,y) covers both halves " +
+                "of that unit cell; T(x,y,h) covers triangle half h=0 or 1, " +
+                "using the same diagonal. The placed pieces are: " + configuration +
+                ". Is this a valid complete tiling with the REQUIRED pieces? " +
+                "Enter 1 for yes or 0 for no.";
             solution = "Check disjoint occupancy of all eight halves AND piece inventory; area sum is insufficient.";
         }
         return new(family,prompt,solution,AssessmentItemType.Numeric,values);
