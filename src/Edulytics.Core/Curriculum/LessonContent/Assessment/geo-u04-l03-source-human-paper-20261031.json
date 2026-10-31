@@ -1,0 +1,223 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L03",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\3\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\3\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\3\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\3\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "8bf116641aaaa73aacbdf7a68334cb68bd34be5e7becba2e966b50ac5f998283",
+    "TeacherActivities": "002afaeddb33d7e2dd90dc730c086efa452806f87759d0105e8da2385c34c6d8",
+    "StudentActivities": "07f9c3f691cb5d6a2d16deefdbafa37bc2fe40039d9fbb64593b9bac7e8952ad",
+    "StudentPractice": "8c485e83932a1f041998992ee656509fdb5602df1f1daa58b7d4ba1c3282d43e"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.B.7",
+      "HSG-CO.A.3"
+    ],
+    "Addressing": [
+      "HSG-SRT.B.5"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.6"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": true,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "3.1",
+      "Goal": "independent Notice/Wonder equilateral altitude sketch",
+      "Mode": "TEACHER_ORIGINAL_DRAWING"
+    },
+    {
+      "Source": "3.2",
+      "Goal": "optional first side2 x1 ysqrt3 and several ruler ratios, conjecture",
+      "Mode": "FIRST_PARTY_MEASUREMENT_TABLE_AND_EXACT_PROOF"
+    },
+    {
+      "Source": "3.3",
+      "Goal": "five exact missing sides from ABC, FGH, LMN and source optional five-triangle area extension",
+      "Mode": "SOURCE_EXACT_MATH_AND_TEACHER_ORIGINAL_FIGURE"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source-indexed equilateral, half-square, ramp, parallel side and rotation questions",
+      "Mode": "EXACT_P1_P3_P5_P6_P7_AND_TEACHER_IMAGES_P2_P4_P8"
+    },
+    {
+      "Source": "3.4",
+      "Goal": "publisher-protected Half of the Half",
+      "Mode": "INDEPENDENT_EDULYTIKS_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L03",
+    "TaskId": "geo-u04-l03-five-source-unknowns-measurement-and-proof",
+    "GroupId": "GEO_U04_L03_HALF_EQUILATERAL_RATIOS_PAPER_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Equilateral altitude and five original-source unknown lengths, multiple measured ruler/dot-paper ratio rows, exact derivation and peer explanation, 8 practice responses with teacher original-figure caveats and 0-8 dated human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "constructs original positive equilateral altitude with midpoint, right angle and two congruent halves",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "measures multiple cases and proves x=1,y=sqrt3 and ratio 1:sqrt3:2 instead of treating 1.7 as exact",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "derives ABC AC=5sqrt3, FGH FH=3sqrt3 GH=6, LMN LM=2 MN=4 with angle-side mapping",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies eight original Practice items with correct source answers and diagram-dependent limits; reviews peer reasoning",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "equilateral side6 and perpendicular altitude AD find true choices",
+        "TeacherExpected": "A B D E true, C false; x=3sqrt3, BD=DC=3, angles at B and C 60",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "two source legs from picture",
+        "TeacherExpected": "teacher checks actual diagram because lengths and angle positions absent from text",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "equilateral triangle side10 find area",
+        "TeacherExpected": "25sqrt3 square units",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "right-isosceles lengths from Unit4:L02",
+        "TeacherExpected": "original figure needed; use 1:1:sqrt2 if 45-45-90",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "square side3 diagonal multiple choice",
+        "TeacherExpected": "3sqrt2 option C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "height5-inch step and longer horizontal run from4 feet",
+        "TeacherExpected": "acute ground angle decreases choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "parallel A'B' with A'C3 AA'6 AB12 B'C2",
+        "TeacherExpected": "A'B'=4 and B'B=4, using scale1/3 and BC6",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "match four rotated POG images by centre and angle",
+        "TeacherExpected": "original four source graphics needed, do not guess mapping",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "Source3_2X": 1,
+    "Source3_2Y": "sqrt(3)",
+    "ABC_AC": "5sqrt(3)",
+    "FGH_FH": "3sqrt(3)",
+    "FGH_GH": 6,
+    "LMN_LM": 2,
+    "LMN_MN": 4,
+    "SourceSummary_DB": "5/2",
+    "SourceSummary_CD": "(5sqrt3)/2",
+    "SourceSummary_GF": "4/sqrt3",
+    "SourceSummary_EG": "8/sqrt3",
+    "P1True": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "P3Area": "25sqrt3",
+    "P5Choice": "C",
+    "P6Choice": "A",
+    "P7AprimeBprime": 4,
+    "P7BprimeB": 4,
+    "CorrectLessonStatus": "OPTIONAL",
+    "OriginalCooldown": "RESTRICTED_UNVERIFIED"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "equilateral side2 altitude yields x1 and y sqrt3, not merely 1.7",
+      "source ABC AC=5sqrt3, FGH FH=3sqrt3 GH6, LMN LM2 MN4",
+      "source P1 ABDE true, P3 area25sqrt3, P5 choiceC, P6 choiceA, P7 both lengths4"
+    ],
+    "Equivalent": [
+      "square root three multiplied by 5 and sqrt(75) express same exact AC",
+      "8/sqrt3 and 8sqrt3/3 are equivalent positive lengths"
+    ],
+    "Wrong": [
+      "source LMN long given 2sqrt3 is incorrectly taken as short leg, reporting hypotenuse4sqrt3",
+      "approximation 1.7 treated as exact sqrt3",
+      "source P1 chooses C x6sqrt3 instead of x3sqrt3"
+    ],
+    "Boundary": [
+      "s=0 collapses triangle and has no valid 30-60-90 angles",
+      "s positive necessary; negative physical length invalid",
+      "original five-triangle area task and rotations require source figures not inferred from task prose"
+    ],
+    "Malformed": [
+      "missing right-angle or hypotenuse labels before using 1:sqrt3:2",
+      "unlabelled measurements and no justification of ratios",
+      "teacher-locked cooldown claimed source-equivalent without evidence"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l03-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
