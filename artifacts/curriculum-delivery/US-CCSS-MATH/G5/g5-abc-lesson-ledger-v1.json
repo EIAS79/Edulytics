@@ -11,15 +11,15 @@
   "gradeTotals": {
     "TOTAL": 148,
     "AUTHORED": 148,
-    "A_CLOSED": 29,
-    "B_CLOSED": 29,
+    "A_CLOSED": 30,
+    "B_CLOSED": 30,
     "C_PREPARED": 29,
     "READY_FOR_D": 29,
     "D_VERIFIED": 0,
-    "BLOCKED": 0,
+    "BLOCKED": 1,
     "REMAINING": 119
   },
-  "closureCommitSHAExplainer": "No all-A+B+C closure for U01:L01; commitSHA stays null. Last evidence commit SHA is the verified previous HEAD; newest delivered commit SHA is externally verified and linked on PR #596. Updating an already committed file to name its own Git commit SHA is self-referential and impossible in a single atomic commit.",
+  "closureCommitSHAExplainer": "A Git commit cannot atomically name its own SHA inside the same committed ledger. The first 29 lessons have per-lesson chronological closure commits recoverable from 'git log -- <lesson evidence path>' and their source/contract evidence; a null row.commitSHA is not, by itself, proof of absent closure. The active U03:L01 has no closure SHA because Stage C is genuinely blocked. Static closure evidence does not establish Stage D/runtime acceptance.",
   "testPolicy": "Targeted tests authored but deliberately NOT_RUN during A–C; no .NET, Node, Actions, end-to-end, DB or Stage D claim.",
   "lessons": [
     {
@@ -1734,26 +1734,34 @@
     },
     {
       "LessonCode": "PED:US-CCSS-MATH:G5:U03:L01",
-      "originalLocalSourcePaths": [],
-      "reuseFinding": "NOT_REVIEWED_FOR_A_C_CLOSURE",
-      "A_STATUS": "NOT_STARTED",
-      "B_STATUS": "NOT_STARTED",
-      "C_STATUS": "NOT_STARTED",
-      "PracticeStrategy": "NOT_DECIDED",
-      "CooldownOriginalStatus": "NOT_REVIEWED",
-      "CooldownEdulytiksStatus": "NOT_REVIEWED",
-      "testFile": null,
-      "testExecutionStatus": "NOT_RUN",
-      "startedAt": null,
+      "originalLocalSourcePaths": [
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-1\\lesson.html",
+        "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\05_Grade_5_IM_K5\\unit-3\\lesson-1\\preparation.html"
+      ],
+      "reuseFinding": "REUSE_ALREADY_CORRECT_SOURCE_ALIGNED_RICH_V2_AND_FIRST_PARTY_TEACHER_RUBRIC_NO_REWRITE",
+      "A_STATUS": "COMPLETE_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+      "B_STATUS": "COMPLETE_WITH_EVIDENCE",
+      "C_STATUS": "BLOCKED_UNASSIGNED_SHARED_SELECTED_PRACTICE_CONTRACT",
+      "PracticeStrategy": "REUSE_OR_EXTEND_EXACT_FRACTION_OF_UNIT_FRACTION_BY_SINGLE_WRITER_ONLY",
+      "CooldownOriginalStatus": "ORIGINAL_COOLDOWN_UNVERIFIED",
+      "CooldownEdulytiksStatus": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+      "testFile": "tests/academic-us-ccss-g5-u03-l01-abc-contract-20261031.test.cjs",
+      "testExecutionStatus": "AUTHORED_NOT_RUN",
+      "startedAt": "UNAVAILABLE",
       "closedAt": null,
-      "elapsedSeconds": null,
+      "elapsedSeconds": "UNAVAILABLE",
       "commitSHA": null,
-      "blocker": null,
+      "blocker": "Missing verified exact lesson-selected Practice family/generator/verifier; engine ownership UNASSIGNED in #605, supervisor/writer must resolve. Remain U03:L01; no Stage D or next lesson.",
       "READY_FOR_STAGE_D": false,
-      "sourceEvidence": null,
-      "implementationPath": null,
-      "testPath": null,
-      "openIssues": [],
+      "sourceEvidence": {
+        "path": "artifacts/curriculum-delivery/US-CCSS-MATH/G5/u03-l01-abc-current-lesson-blocker-20261031.json",
+        "teacherLessonSha256": "78aa684e92ec390c9a90ad93343b212ba945ce4c35c2239e7cd7b6d02d1c2e59",
+        "teacherPreparationSha256": "68c2abeb5915a42ec3853808d89d3ab72bc3aa74e5cb6cbc231303e43cea831d",
+        "limitation": "Original student PDF, publisher graphic binaries and teacher-gated cooldown not independently verified"
+      },
+      "implementationPath": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g5-fractions-coordinates-source-lessons-2021.rich-lesson-v2.json",
+      "testPath": "tests/academic-us-ccss-g5-u03-l01-abc-contract-20261031.test.cjs",
+      "openIssues": ["https://github.com/EIAS79/Edulytics/issues/605", "https://github.com/EIAS79/Edulytics/issues/592"],
       "lastEvidenceCommitSHA": null,
       "authoredCandidate": true
     },
@@ -4708,8 +4716,8 @@
       "authoredCandidate": true
     }
   ],
-  "updatedAtUtc": "2026-10-30T20:34:52.752Z",
-  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U02:L08",
+  "updatedAtUtc": "2026-10-31T00:04:05.1757664Z",
+  "nextIndependentCursor": "PED:US-CCSS-MATH:G5:U03:L01",
   "returnBacklog": [
     {
       "lessonCode": "PED:US-CCSS-MATH:G5:U01:L01",
