@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 28,
-    "B_CLOSED": 28,
-    "C_PREPARED": 28,
-    "ABC_READY_FOR_D": 28,
+    "A_CLOSED": 29,
+    "B_CLOSED": 29,
+    "C_PREPARED": 29,
+    "ABC_READY_FOR_D": 29,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 96,
+    "REMAINING": 95,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 96,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+    "Unprocessed": 95,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L06",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 6
+    "U02ClosedLessonCount": 7
   },
   "LessonEntries": [
     {
@@ -610,6 +610,39 @@
       "TestsExecuted": "NOT_RUN",
       "PublisherCooldown": "6.4 ORIGINAL_PUBLISHER_PROTECTED_UNVERIFIED; EDULYTIKS_FIRST_PARTY_PAPER_ALTERNATIVE",
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+      "Ordinal": 29,
+      "UnitOrdinal": 7,
+      "Title": "Angle-Side-Angle Triangle Congruence",
+      "LessonCommit": "a1cdd711ce014427174b1052c7423ef84fedbe22",
+      "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "0ad62a2a0c861b1d7863b786ffce8c110f1ad47d73a0afe7685c78c0e71e69f0",
+        "TeacherActivities": "b9ee445d2863abce23632626639a6a8651f4d57c477a4bc1672803dd707fcfd5",
+        "StudentActivities": "8675b1df54a6ad30bf7330892381516ab7d40ca3e4e14362adca8e6c8b970cac",
+        "StudentPractice": "181eabf4191d9eccd33095a944d14e47c7da3c4d7715940e0d7671d4b0dc551a"
+      },
+      "OriginalActivities": [
+        "7.1 Notice and Wonder Assertion",
+        "7.2 Proving the ASA Triangle Congruence Theorem",
+        "7.3 OPTIONAL Find the Missing Angle Measures",
+        "7.4 What Do We Know For Sure About Parallelograms?"
+      ],
+      "OriginalPracticeCount": 7,
+      "A": "A_CLOSED_SOURCE_ASA_RAY_UNIQUENESS_AND_SEVEN_PRACTICE_HASHES",
+      "B": "B_CLOSED_SOURCE_7_1_TO_7_4_AND_OPTIONAL_PAPER_APPLET_ALTERNATIVE_PRESERVED_3_EXAMPLES",
+      "C": "C_CLOSED_AUTHORING_TEACHER_SELECTED_ASA_PAPER_RUBRIC_FIXTURES_NOT_RUN",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L07_ASA_PARALLELOGRAM_PAPER_HUMAN_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l07-asa-parallelogram-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l07-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l07-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "7.5 PUBLISHER_RESTRICTED_UNVERIFIED_EDULYTIKS_ORIGINAL_PAPER_ALTERNATIVE",
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -650,7 +683,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L07",
+  "Next": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L08",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -678,5 +711,5 @@
     "ElapsedSeconds": null,
     "Timing": "Not independently measured; not inferred"
   },
-  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l06-abc-checkpoint-20261031.json"
+  "LastCheckpoint20261031": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l07-abc-checkpoint-20261031.json"
 }
