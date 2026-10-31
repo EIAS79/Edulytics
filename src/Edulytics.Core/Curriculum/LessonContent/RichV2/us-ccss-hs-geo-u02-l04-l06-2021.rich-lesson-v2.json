@@ -13,7 +13,13 @@
         "Verbal diagram: fix side AB with A=(0,0),B=(6,0). A chosen angle at A fixes a ray; giving AC=4 locates C uniquely on that ray. But specifying BC=5 and AC=4 without fixing the included angle may place C at either intersection of two circles, one on either side of AB; those mirror solutions are congruent, whereas a nonincluded-angle SSA constraint can also produce two genuinely different shapes.",
         "Source-aligned original activity: play a paired information-gap task where one student has a private set of measurements and the other must request the minimum sufficient data for an unambiguous triangle. For each proposed set, say whether it gives a guaranteed congruent triangle, insufficient information, or a degenerate/impossible construction.",
         "Teacher rubric (0–4): correct criterion labels and included-angle identification; a valid counterexample to AAA or SSA as a congruence test; mathematically valid diagram or alternative configurations; precise student discussion and written conjecture. Human-scored evidence is necessary; a numeric final answer cannot validate communication quality.",
-        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced."
+        "Source: Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. These explanations and problems are independently authored by Edulytiks; publisher diagrams and protected assessment answers have not been reproduced.",
+        "4.1 Make That Triangle: construct triangle ABC with A=40 degrees, B=20 degrees, C=120 degrees, AB=5 cm, AC=2 cm, BC approximately 3.7 cm. Highlight measurements actually used; explain redundant data and rounding of a physical ruler/protractor construction. AB, AC and included angle A already fix the triangle up to congruence.",
+        "4.2 Too Much Information: pair learners with independent first-party private problem/data cards. Keep cards hidden, require precise named-side and named-angle requests and the data-holder's question why each is needed. Exchange roles and make separate constructions before comparing. ASA, SAS and SSS can suffice; AAA and SS cannot. Two sides plus an unspecified angle are NOT automatically SAS.",
+        "4.2 Extension: two given sides and a nonzero area may admit supplementary included angles and noncongruent triangles. Two specified angles and a positive area determine the scale for a labelled nondegenerate triangle. Explain with a drawing or counterexample; teacher reviews the reasoning.",
+        "4.3 Too Little Information: critique a request for two sides 5 cm and 4 cm and a 16-degree angle that does not identify the included angle. Construct or reason about alternative configurations; replace with a precise SAS request identifying its common included vertex.",
+        "Nine source-indexed independent paper Practice questions P1-P9 cover SSS/SAS/ASA markings, triangle angles 40 and 100 degrees and 3 cm side ambiguity, minimum labelled data, ABC-to-EDF ordered correspondence, same-ray vertex coincidence, quadrilateral reflection vertex ordering, HGF-to-HEF reflection claims, rectangle reflected corresponding parts, and a genuine decorated-hexagon symmetry. Teacher assesses drawings and written explanations; original publisher figures are not claimed pixel-equivalent.",
+        "4.4 Original publisher Cool-down is protected and not independently verified. Independently authored Edulytiks paper substitute asks for two noncongruent SSA triangles using AB=10, BC=6 and A=30 degrees, plus the named included-angle change that creates valid SAS. Human review uses four 0-2 criteria, not scalar auto-grading or authenticated saved teacher grade."
       ],
       "KeyConcepts": [
         {
@@ -86,6 +92,11 @@
           "Mistake": "Assuming an information-gap partner knows the same diagram labels or intended correspondence.",
           "WhyWrong": "Vague requests can describe different angles or sides and invalidate the theorem.",
           "Correction": "Name each segment and angle with labelled vertices and explain how the requested measurements are used."
+        },
+        {
+          "Mistake": "Calling any two sides and an angle SAS without checking inclusion.",
+          "WhyWrong": "SSA can produce two noncongruent triangles, even for the same named values.",
+          "Correction": "Specify the included angle between the two corresponding sides or exhibit two SSA solutions."
         }
       ],
       "SummaryPoints": [
