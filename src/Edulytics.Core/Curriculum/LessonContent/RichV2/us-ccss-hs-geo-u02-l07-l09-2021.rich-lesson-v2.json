@@ -115,10 +115,15 @@
       "ExplanationParagraphs": [
         "Learning goal: Prove both directions of the perpendicular-bisector theorem and identify why merely drawing a desired line is not proof that it is perpendicular or bisects a segment.",
         "For distinct endpoints A and B, a point P lies on the perpendicular bisector of AB if and only if PA=PB. Forward direction: if M is midpoint AB and PM is perpendicular AB, triangles PMA and PMB are congruent by SAS (PM shared, AM=BM, included right angles), giving PA=PB. P=M is an immediate special case.",
-        "Converse direction: assume PA=PB. Let M be midpoint AB. Triangles PAM and PBM have PA=PB, AM=BM and PM shared, so SSS gives congruence. For P not on line AB, angles PMA and PMB are equal adjacent supplementary angles, hence each 90°, making PM perpendicular AB. If P=M, it already lies on the perpendicular bisector without needing the zero-length segment PM to define a line.",
+        "Converse direction without premature SSS: suppose A and B are distinct and PA=PB. If P lies on segment AB, equality forces P to be its midpoint M, which is on the perpendicular bisector. Otherwise choose the angle bisector from apex P of isosceles triangle APB and let it meet AB at D. By PA=PB, PD=PD and equal included angles APD=DPB, triangles APD and BPD are congruent by SAS. Hence AD=BD, so D is midpoint, and adjacent angles ADP and PDB are equal supplementary angles, each 90 degrees. Thus PD is perpendicular to AB and passes through its midpoint, with P on that perpendicular bisector. This is the source Noah angle-bisector argument; SSS is not presumed at this stage.",
         "Verbal diagram: A and B lie on a horizontal segment, M midpoint, P located above the segment. A correct argument proves PM meets AB at M and at a right angle, rather than assuming the line has both properties because it was sketched that way.",
-        "Student task: write two logically separate proofs, one from 'P on perpendicular bisector' to 'PA=PB' and one converse; critique a proposed circular proof. Teacher rubric (0–4): correct hypothesis in each direction, valid triangle congruence, explicit perpendicular/midpoint conclusion, correct degenerate case. Proof and diagram evidence are human-scored.",
-        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. All instructional prose, problems and solutions here are independent Edulytiks work; third-party illustrations and authenticated assessments are not reproduced."
+        "Student task: write two logically separate proofs, one from 'P on perpendicular bisector' to 'PA=PB' and one converse; critique a proposed circular proof. Teacher rubric (0–8): correct hypothesis in each direction, valid triangle congruence, explicit perpendicular/midpoint conclusion, correct degenerate case. Proof and diagram evidence are human-scored.",
+        "Illustrative Mathematics Geometry First Edition (2019–2021), Unit 2, CC BY 4.0. All instructional prose, problems and solutions here are independent Edulytiks work; third-party illustrations and authenticated assessments are not reproduced.",
+        "8.1 Which One Does Not Belong: compare four independently authored pairs of intersecting lines with different slopes, acute/obtuse angle structures and a 90-degree crossing. More than one figure may be a defensible odd one out if the geometric distinguishing property is correct; no single-letter auto score. The publisher diagrams are not reproduced.",
+        "8.2 Lots of Lines: critique Diego claiming he drew a line through C that both bisects AB and is perpendicular (assumes conclusion), Jada invoking SAS without a valid included angle, Noah drawing the angle bisector of ACB (viable with correct SAS/line proof), and Elena proposing reflection across point C rather than a correct perpendicular bisector LINE. Students must identify actual known facts and justify the location of C instead of guessing from appearance.",
+        "8.3 Not Too Close, Not Too Far: prove the *other direction* separately. If P is on perpendicular bisector of AB, let M be midpoint AB and PM perpendicular AB. AM=BM, PM common, included angles AMP and BMP both right give SAS for triangles AMP and BMP, hence AP=BP. If P=M, distances are already equal. Have a partner critique and revise the proof. Do not confuse the forward theorem with its converse.",
+        "Source Practice P1-P7: P1 identify exactly the true converses B,C,D (perpendicular lines, perpendicular bisector locus, isosceles base angles) versus false converse A (equal angles imply vertical) and E (supplementary imply linear pair); P2 identify sufficient extra placement for AB to be perpendicular bisector CD; P3 kite equal-side pair bisector without measuring diagonal; P4 ASA triangle ADE-CBE from supplied figure; P5 proper SAS missing info for DBA-CBA; P6 rigid motion CBA to MLK with correct correspondences; P7 critique two-fold congruent-side argument about cyclic quadrilateral without claiming source image reproduced.",
+        "8.4 Publisher protected Cool-down unverified. First-party Edulytiks paper alternative requires both forward and converse perpendicular-bisector proof, explicit angle bisector SAS and right-angle derivation, one mistaken circular proof critique, plus legitimate counterexample to a statement whose converse is false. Teacher reviews four 0-2 dimensions."
       ],
       "KeyConcepts": [
         {
@@ -130,7 +135,7 @@
         {
           "Title": "Converse theorem",
           "Definition": "If PA=PB for distinct A,B, then P lies on their perpendicular bisector.",
-          "Rule": "Use SSS for PAM and PBM to prove perpendicularity, treating midpoint P=M separately.",
+          "Rule": "Use apex-angle bisector PD in isosceles APB; PA=PB, PD common, and included apex half-angles equal prove APD congruent BPD by SAS, giving equal base segments and perpendicularity. Treat P on AB separately.",
           "Example": "If P=(0,4) and A=(−3,0),B=(3,0), PA=PB=5 and P lies on x=0."
         },
         {
@@ -156,18 +161,18 @@
           "Check": "The midpoint case is handled without treating a zero-length segment as a line."
         },
         {
-          "Title": "Converse direction",
-          "Question": "Given distinct A,B and PA=PB, prove P lies on the perpendicular bisector of AB.",
-          "Method": "Use SSS with the known midpoint M.",
+          "Title": "Converse theorem with source-aligned angle bisector and SAS, no premature SSS",
+          "Question": "Given A and B distinct and PA=PB, show P lies on perpendicular bisector AB without assuming SSS or that the desired line is perpendicular.",
+          "Method": "Draw and justify apex-angle bisector PD in isosceles triangle APB; apply SAS to prove midpoint and right angle.",
           "Steps": [
-            "Let M be the midpoint of AB, hence AM=BM.",
-            "Triangles PAM and PBM have PA=PB by hypothesis and PM=PM as a shared segment.",
-            "SSS yields PAM≅PBM.",
-            "For P not on AB, equal adjacent angles PMA and PMB form a straight angle, so each is 90° and PM⊥AB.",
-            "If P is on AB, PA=PB implies P=M, which lies on the perpendicular bisector."
+            "If P lies on AB, PA=PB implies P is midpoint M of AB, so it lies on the perpendicular bisector.",
+            "Otherwise draw the angle bisector of APB meeting AB at D; this ray is known to contain P.",
+            "Use PA=PB, PD=PD and equal included apex angles APD and DPB to obtain triangles APD congruent BPD by SAS.",
+            "Corresponding AD=BD shows D is midpoint; angles ADP and PDB are equal adjacent angles along straight AB, so each is 90 degrees.",
+            "Thus PD is the perpendicular bisector of AB and contains P."
           ],
-          "Answer": "P lies on the perpendicular bisector of AB.",
-          "Check": "Avoid assuming that PM is perpendicular in advance; it is the conclusion."
+          "Answer": "Every point equidistant from distinct A and B lies on the perpendicular bisector by the apex-angle-bisector SAS construction.",
+          "Check": "Do not use SSS before established or simply draw the wanted perpendicular-bisector through P as an assumption."
         },
         {
           "Title": "Coordinate characterization",
@@ -193,6 +198,11 @@
           "Mistake": "Conflating the theorem with its converse.",
           "WhyWrong": "One implication assumes the geometric location; the other assumes equal distances.",
           "Correction": "Write each statement explicitly and prove both using their own hypotheses."
+        },
+        {
+          "Mistake": "Using SSS for the equidistant-point converse in lesson 8, before its sequential theorem proof.",
+          "WhyWrong": "The original source lesson explicitly uses an apex-angle bisector and SAS; SSS is the next target theorem, not an accepted prior premise.",
+          "Correction": "Draw apex-angle bisector PD, use PA=PB PD common and included apex half-angles for SAS; conclude midpoint and perpendicularity, handling P on AB separately."
         }
       ],
       "SummaryPoints": [
