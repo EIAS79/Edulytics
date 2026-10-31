@@ -1,0 +1,204 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L05",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\5\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\5\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\5\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\5\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "24f3fc37ba05646fbf69afa429fe6d005e590cd510360feff7fe6e51ebcb7317",
+    "TeacherActivities": "bc706820cfdbfb293d75314c206a8d3e5df9219e98ecd1cef4533d8fcc389c56",
+    "StudentActivities": "5a69bcbb74564a2edacc90805c30550179563d37353921483273b4fbf4e9eff5",
+    "StudentPractice": "7c34d7463d37f12ba4e581700eb50ebd9091114a358392e5cbc7c7c784562655"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-CO.C.10",
+      "HSG-SRT.A.1"
+    ],
+    "Addressing": [
+      "HSG-CO.C.10",
+      "HSG-SRT.B.4"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.C.10"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "5.1",
+      "Goal": "Observe source midpoints L M N and conjecture before theorem",
+      "FirstPartyMode": "ORIGINAL_PAPER_NOTICE_WONDER"
+    },
+    {
+      "Source": "5.2",
+      "Goal": "Dilation AMN to ABC centre A k2, peer/skeptic proof BC=2MN",
+      "FirstPartyMode": "TEACHER_NARRATIVE_MIDPOINT_DILATION"
+    },
+    {
+      "Source": "5.3",
+      "Goal": "M,N at 2/3 from A, forward parallel and length",
+      "FirstPartyMode": "TEACHER_EXACT_PROPORTION_AND_DIRECTION_PROOF"
+    },
+    {
+      "Source": "5.3 Extension",
+      "Goal": "negative factor -1 about F outside previous positive-ray definition",
+      "FirstPartyMode": "OPTIONAL_SIGNED_DILATION_AFFINE_EQUIVALENT_HALF_TURN"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "midsegment angle and side, dilation ratios, rectangle proof",
+      "FirstPartyMode": "EXACT_P3_AND_TEACHER_FIGURE_REVIEW_REMAINDER"
+    },
+    {
+      "Source": "5.4 Cool-down",
+      "Goal": "teacher-protected missing length",
+      "FirstPartyMode": "FIRST_PARTY_COOLDOWN_ORIGINAL_RESTRICTED"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U03_L05_MIDPOINT_DILATION_FORWARD_PARALLEL_TEACHER_REVIEW",
+    "TaskId": "geo-u03-l05-amn-abc-skeptic-proof",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L05",
+    "Mode": "TEACHER_SELECTED_PAPER_CONSTRUCTION_AND_NARRATIVE_PROOF",
+    "Evidence": "labelled midpoint diagram, explicit A-centred factor2 dilation proof, BC=2MN, independent 2/3 proportional line and source-indexed seven practice sheets",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedTeacherGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453; #605 leases untouched"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correct positions and labels of two distinct midpoints and shared-apex rays, and original exploratory observations",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "convincing definition-based centre A factor 2 dilation AMN to ABC, same-ray and doubled distances",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "BC parallel MN and BC=2MN proof, plus correct 2/3 proportional division forward conclusion",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "sound explanation and teacher-reviewed cumulative diagram without assuming unsupported converse or guessed visual answer",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "angle A'B'C from original diagram",
+        "TeacherExpected": "teacher must inspect source diagram/marks before choosing 20,40,60,80",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "midpoint triangle DEF and AB original",
+        "TeacherExpected": "matching side of ABC twice corresponding DEF side, exact labelled value from source figure",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "angle dilation factor 1/3 starting 21 degrees",
+        "TeacherExpected": "image also 21 degrees",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "draw two possible dilation images of infinite m",
+        "TeacherExpected": "images are m itself (k=1 or centre on m) or off-centre parallel lines; labelled geometry",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "ABCDE to VWXYZ possible dilation",
+        "TeacherExpected": "check exact vertex rays from common centre and single positive factor with original figure",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "XYZ scaled with x=6 solve a two ways",
+        "TeacherExpected": "two equivalent ratio equations from source diagram, not fabricated numbers",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "parallelogram EFGH one angle right and triangle congruence",
+        "TeacherExpected": "teacher checks diagonal EG, parallel and angle arguments, valid triangle congruence",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW_OR_EXACT"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "MidsegmentThirdSide10": "5",
+    "BCTwoTimesMN": true,
+    "SourceRatioTwoThirds": "MN/BC=2/3, MN parallel BC",
+    "OptionalNegativeFactor": "k=-1 about F is a 180-degree rotation under signed affine extension, not positive-ray dilation",
+    "ConverseStatus": "UNPROVED_AT_THIS_SOURCE_LESSON",
+    "PracticeP3ImageAngle": "21 degrees"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "M,N midpoints give AM/AB=AN/AC=1/2, dilation A factor2 AMN to ABC",
+      "source P3 dilation angle 21 degrees stays 21",
+      "M,N at two-thirds give MN parallel BC and MN=2 BC/3"
+    ],
+    "Equivalent": [
+      "dilate ABC to AMN at k=1/2 instead of AMN to ABC k=2",
+      "any nondegenerate triangle gives same midpoint and ratio proof"
+    ],
+    "Wrong": [
+      "from mere drawing appearance MN parallel BC with no ratios or dilation proof",
+      "assumes reverse parallel-to-proportional theorem already proved",
+      "treats negative k as a positive-ray dilation under prior definition"
+    ],
+    "Boundary": [
+      "triangle vertices noncollinear and both sides nonzero",
+      "k=1 unchanged triangle and side coincident",
+      "midpoints on distinct sides give nonzero MN in a genuine triangle",
+      "optional signed -1 and half-turn have identical coordinates, but outside k>0 source definition"
+    ],
+    "Malformed": [
+      "unlabelled midpoint or unknown apex",
+      "inconsistent AM/AB and AN/AC",
+      "no centre/rays identified in proof",
+      "numerical source picture answer fabricated from absent side labels"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_5.4_MISSING_LENGTH_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_MIDSEGMENT_AND_TWO_THIRDS_LENGTH",
+  "TeacherHandoff": "Teacher checks construction and source narrative proof on paper, signed/date rubric. No authenticated saved score claim.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l05-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
