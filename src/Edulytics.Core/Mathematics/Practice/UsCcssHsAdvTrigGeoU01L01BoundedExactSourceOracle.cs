@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Edulytics.Core.Mathematics.Practice;
 
@@ -96,6 +100,77 @@ public static class UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle
             position, prompt, status, exact);
         return true;
     }
+
+    /// <summary>
+    /// Non-routed reviewer classification for a parameterized exact-angle case.
+    /// Uses ONLY the current oracle's own computed expected value and the already
+    /// approved finite aliases in the L01 source fixtures. No decimal tolerance,
+    /// arbitrary expression execution, or teacher-proof scoring is permitted.
+    /// A future shared selected Practice verifier must independently enforce this.
+    /// </summary>
+    public static string ClassifyReviewerResponse(
+        string? lessonCode, string? angleMode, int twelfths,
+        int functionCode, int transformCode, string? submission)
+    {
+        if (!string.Equals(angleMode, AngleMode, StringComparison.Ordinal))
+            return "ANGLE_MODE_MISMATCH";
+        if (!TryBuild(lessonCode, angleMode, twelfths, functionCode, transformCode,
+                out var expected) || expected is null)
+            return "LESSON_OR_CASE_MISMATCH";
+        if (!expected.IsScorable)
+            return "OUT_OF_DOMAIN";
+        if (string.IsNullOrWhiteSpace(submission) || submission.Length > 80
+            || Regex.IsMatch(submission, @"(?<=\d)\s+(?=\d)"))
+            return "MALFORMED_OR_UNSUPPORTED";
+
+        // Strip permitted formatting whitespace only AFTER rejecting a split
+        // numeric token: 'sqrt(1 2)' must not become 'sqrt(12)'.
+        var answer = string.Concat(submission.Where(c => !char.IsWhiteSpace(c)));
+        var canonical = expected.CanonicalExact!;
+        var approved = ReviewedAliases(canonical);
+        if (string.Equals(answer, canonical, StringComparison.Ordinal)
+            || approved.Contains(answer, StringComparer.Ordinal))
+            return "EXACT_ACCEPTED";
+
+        // Scientific notation and decimals are never exact-answer substitutes,
+        // even if their finite double value is very close to the true radical.
+        if ((answer.Contains('.') || answer.Contains('e') || answer.Contains('E'))
+            && double.TryParse(answer, NumberStyles.Float,
+                CultureInfo.InvariantCulture, out _))
+            return "DECIMAL_REJECTED_EXACT_REQUIRED";
+
+        // Recognize wrong signs without interpreting any arbitrary expression.
+        var opposite = canonical.StartsWith("-", StringComparison.Ordinal)
+            ? canonical[1..] : "-" + canonical;
+        if (answer == opposite || approved.Any(a =>
+                answer == (a.StartsWith("-", StringComparison.Ordinal)
+                    ? a[1..] : "-" + a))
+            || RecognizedCanonicalExactForms.Contains(answer)
+            || UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ReviewCases
+                .Any(c => c.ApprovedExactEquivalents.Contains(
+                    answer, StringComparer.Ordinal)))
+            return "INCORRECT";
+
+        return "MALFORMED_OR_UNSUPPORTED";
+    }
+
+    // Exact, finite first-quadrant outputs with every possible sign. An exact
+    // response from the wrong generated case is INCORRECT, not a syntax error.
+    private static readonly HashSet<string> RecognizedCanonicalExactForms =
+        new(StringComparer.Ordinal)
+        {
+            "0", "1", "-1", "1/2", "-1/2", "sqrt(2)/2", "-sqrt(2)/2",
+            "sqrt(3)/2", "-sqrt(3)/2", "sqrt(3)", "-sqrt(3)",
+            "sqrt(3)/3", "-sqrt(3)/3"
+        };
+
+    private static IReadOnlyList<string> ReviewedAliases(string canonical)
+        => UsCcssHsAdvTrigGeoU01L01PracticeCandidate.ReviewCases
+            .Where(c => c.IsScorable
+                && string.Equals(c.Exact, canonical, StringComparison.Ordinal))
+            .SelectMany(c => c.ApprovedExactEquivalents)
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
 
     private static bool TryGetFirstQuadrantExact(
         int twelfths, out string sin, out string cos, out string? tan)

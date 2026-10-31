@@ -124,6 +124,79 @@ public sealed class UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracleTests
         Assert.True(poles > 0);
     }
 
+    [Theory]
+    [InlineData(2, 1, 0, "-sqrt(3)/2", "EXACT_ACCEPTED")]
+    [InlineData(2, 1, 0, "-sqrt(12)/4", "EXACT_ACCEPTED")]
+    [InlineData(2, 1, 0, "-sqrt(27)/6", "EXACT_ACCEPTED")]
+    [InlineData(4, 0, 1, "-3/sqrt(12)", "EXACT_ACCEPTED")]
+    [InlineData(3, 1, 2, "sqrt(2)/2", "EXACT_ACCEPTED")]
+    [InlineData(3, 1, 2, "1/sqrt(2)", "EXACT_ACCEPTED")]
+    [InlineData(3, 1, 2, "sqrt(8)/4", "EXACT_ACCEPTED")]
+    [InlineData(3, 1, 2, "sqrt(18)/6", "EXACT_ACCEPTED")]
+    [InlineData(3, 1, 2, "2/sqrt(8)", "EXACT_ACCEPTED")]
+    [InlineData(2, 1, 0, "sqrt(3)/2", "INCORRECT")]
+    [InlineData(2, 1, 0, "-1/2", "INCORRECT")]
+    [InlineData(2, 1, 0, "sqrt(12)/4", "INCORRECT")]
+    [InlineData(3, 1, 2, "-sqrt(2)/2", "INCORRECT")]
+    [InlineData(3, 1, 2, "-sqrt(12)/4", "INCORRECT")]
+    [InlineData(2, 1, 0, "-0.8660254037844386", "DECIMAL_REJECTED_EXACT_REQUIRED")]
+    [InlineData(2, 1, 0, "-8.660254037844386e-1", "DECIMAL_REJECTED_EXACT_REQUIRED")]
+    [InlineData(3, 1, 2, "0.7071067811865476", "DECIMAL_REJECTED_EXACT_REQUIRED")]
+    [InlineData(3, 1, 2, "7.071067811865476e-1", "DECIMAL_REJECTED_EXACT_REQUIRED")]
+    [InlineData(2, 1, 0, "-sqrt(1 2)/4", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData(2, 1, 0, "-sqrt(1\\t2)/4", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData(2, 1, 0, "NaN", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData(2, 1, 0, "Infinity", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData(2, 1, 0, "<script>", "MALFORMED_OR_UNSUPPORTED")]
+    [InlineData(6, 2, 2, "0", "OUT_OF_DOMAIN")]
+    [InlineData(6, 2, 2, "-999.99", "OUT_OF_DOMAIN")]
+    public void ReviewerClassificationMatchesExactPolicyAndNeverUsesDecimalTolerance(
+        int theta, int function, int transform, string response, string status)
+    {
+        Assert.Equal(status,
+            UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.ClassifyReviewerResponse(
+                L01, "radians", theta, function, transform, response));
+    }
+
+    [Fact]
+    public void AngleModeAndOtherLessonNeverAuthorizeReviewClassification()
+    {
+        Assert.Equal("ANGLE_MODE_MISMATCH",
+            UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.ClassifyReviewerResponse(
+                L01, "degrees", 2, 1, 0, "-sqrt(3)/2"));
+        Assert.Equal("LESSON_OR_CASE_MISMATCH",
+            UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.ClassifyReviewerResponse(
+                "PED:US-CCSS-MATH:HS:FOURTH:ADV-TRIG-GEO:U01:L02",
+                "radians", 2, 1, 0, "-sqrt(3)/2"));
+        Assert.Equal("LESSON_OR_CASE_MISMATCH",
+            UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.ClassifyReviewerResponse(
+                L01, "radians", 1, 1, 0, "-sqrt(3)/2"));
+    }
+
+    [Fact]
+    public void CanonicalAnswersForEveryParameterAreReviewerAcceptedOnly()
+    {
+        for (var theta = -24; theta <= 24; ++theta)
+        {
+            if (theta % 2 != 0 && theta % 3 != 0) continue;
+            for (var function = 0; function <= 2; ++function)
+            for (var transform = 0; transform <= 2; ++transform)
+            {
+                Assert.True(UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.TryBuild(
+                    L01, "radians", theta, function, transform, out var c));
+                Assert.NotNull(c);
+                Assert.Equal(c!.IsScorable ? "EXACT_ACCEPTED" : "OUT_OF_DOMAIN",
+                    UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.ClassifyReviewerResponse(
+                        L01, "radians", theta, function, transform,
+                        c.CanonicalExact ?? "0"));
+                Assert.Equal(c.IsScorable
+                        ? "DECIMAL_REJECTED_EXACT_REQUIRED" : "OUT_OF_DOMAIN",
+                    UsCcssHsAdvTrigGeoU01L01BoundedExactSourceOracle.ClassifyReviewerResponse(
+                        L01, "radians", theta, function, transform, "0.707106781"));
+            }
+        }
+    }
+
     [Fact]
     public void SourceFourExistingReviewerCasesAgreeWithOracle()
     {
