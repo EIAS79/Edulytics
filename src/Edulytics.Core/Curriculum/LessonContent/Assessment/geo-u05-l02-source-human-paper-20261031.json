@@ -1,0 +1,225 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L02",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\2\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\2\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\2\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\2\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "a23b076f548da7ca72b5d04d85bebf8dd2d8cef65540f55e26181a526b52f25e",
+    "TeacherActivities": "d34625aaaef6b46454f94d0e4a8d661c7b653b618d7a82f9fbf67530d3bc0eba",
+    "StudentActivities": "ba3df511b4a83ad4be5d600c0afe1290ca5fdfa0b0644aae53de4093048c4e43",
+    "StudentPractice": "1b020d6eee67811b57c0ef8598013eb10867122e1d39d9f6f8dcb100b2978147"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "7.G.A.3"
+    ],
+    "Addressing": [
+      "HSG-GMD.B.4"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "2.1",
+      "Goal": "cylindrical food slice multiple plane orientations with predicted images",
+      "Mode": "PAPER_OR_PHYSICAL_MODEL_WITH_TEACHER"
+    },
+    {
+      "Source": "2.2",
+      "Goal": "physical clay/GeoGebra cube sphere cone cylinder cuts, student predictions and revisions",
+      "Mode": "TEACHER_FOUR_SOLID_FIRST_PARTY_DIAGRAMS"
+    },
+    {
+      "Source": "2.3",
+      "Goal": "parallel slab reconstruction, equal size/variable coins and 3D printer extension",
+      "Mode": "HUMAN_ORIGINAL_LAYER_MODEL"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "9 source indexed congruent-slice, cone plane, polygon bounds and trig/parallel geometry",
+      "Mode": "EXACT_P1_P3_P6_AND_TEACHER_SOURCE_IMAGES"
+    },
+    {
+      "Source": "2.4",
+      "Goal": "teacher-restricted Sketch It cooldown",
+      "Mode": "INDEPENDENT_FIRST_PARTY_CROSS_SECTION_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L02",
+    "TaskId": "geo-u05-l02-cylinder-cube-cone-sphere-section-table",
+    "GroupId": "GEO_U05_L02_PLANE_SOLID_SLICES_STATIONS_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Physical or independently labelled section diagrams with real cutting planes and multiple viewpoints, same-plane position sequence, prism/pyramid silhouette contrast, full source nine Practice reasoning and dated human eight-point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "draws and labels horizontal, vertical and oblique cylinder cutting planes with correct possible shapes and finite-cap caveat",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "classifies cube triangles/quads/pentagons/hexagons, sphere circle radii and cone sections with valid planar intersections",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "explains constant congruent prism/cylinder parallel sections versus scale-changing pyramid/cone sections and layer-thickness effect",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies nine original Practice responses including C,D,F cross-section choices and inscribed hexagon/octagon A, teacher image review",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "which solids can have all congruent parallel sections for some direction",
+        "TeacherExpected": "C rectangular prism, D cube, F cylinder; choose planes parallel to appropriate congruent bases",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "three planes cutting upright cone vertical offset, horizontal, oblique",
+        "TeacherExpected": "horizontal circular disk; offset vertical bounded conic-like section with base cap possible; oblique depends on slope and intercept",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "two solids admitting circular plane section",
+        "TeacherExpected": "cylinder and sphere; also a cone can have circular horizontal sections",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "source region rotating around dashed vertical axis",
+        "TeacherExpected": "original figure and labelled axis necessary",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "generator two-dimensional region for source vertical axis cone",
+        "TeacherExpected": "a filled right triangle with one leg as rotation axis",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "inscribed regular hexagon and octagon in same circle",
+        "TeacherExpected": "A, hexagon perimeter smaller than octagon and both smaller than circle",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "original figure polygon perimeter",
+        "TeacherExpected": "requires original marked geometric figure",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "tan/cos/sin angle A/B match to x y z labelled right triangle",
+        "TeacherExpected": "teacher inspects original acute-angle and hypotenuse positions before ratio map",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "prove lines m and l parallel",
+        "TeacherExpected": "source drawing and appropriate converse angle theorem necessary",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "ParallelCongruentPractice1": [
+      "C",
+      "D",
+      "F"
+    ],
+    "InscribedHexagonOctagon": "A",
+    "CylinderHorizontal": "CIRCULAR_DISK",
+    "CylinderAxial": "RECTANGLE",
+    "SphereInnerSections": "CIRCULAR_DISKS_RADII_VARY",
+    "CubePossiblePolygons": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "PyramidParallelSections": "SIMILAR_NOT_CONGRUENT_IN_GENERAL",
+    "FiniteSlab": "THREE_DIMENSIONAL_NOT_TWO_DIMENSIONAL_PLANE_SECTION",
+    "PublisherCooldown": "UNVERIFIED"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "rectangular prism cube cylinder have base-parallel congruent nonempty internal plane sections, source P1 C D F",
+      "cube cross sections include triangles quadrilaterals pentagons hexagons depending plane",
+      "regular octagon inscribed perimeter exceeds hexagon inscribed perimeter but both below circle"
+    ],
+    "Equivalent": [
+      "horizontal circular filled cross section may be called a circle-shaped disk when source focuses two-dimensional figure",
+      "a right cylinder vertical axial cross section is rectangle, and a noncentral parallel vertical plane also yields narrower rectangle"
+    ],
+    "Wrong": [
+      "all sphere parallel slices have congruent circles",
+      "pyramid base-parallel cross sections are congruent rather than similar",
+      "a 3D-printed thick layer is a zero-thickness plane cross section",
+      "arbitrarily oblique cut across finite cylinder always a perfect ellipse irrespective end caps"
+    ],
+    "Boundary": [
+      "tangent plane to sphere gives a point, external plane gives empty intersection",
+      "planes passing through cube vertices/edges may give degenerate lower-dimensional intersections",
+      "finite cone vertical off-apex plane may cross cone base, changing curved boundary"
+    ],
+    "Malformed": [
+      "no plane inclination or relative offset specified yet claims unique curve",
+      "confuses cylinder's horizontal disk with 3D thin cylinder slab",
+      "original source image-dependent Practice mapped without seeing picture"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l02-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
