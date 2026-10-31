@@ -1,0 +1,377 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u05-l01-u06-l01-u08-l01-first-party-source-teaching-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L01",
+      "CultureCode": "en",
+      "Title": "What is One Thousandth?",
+      "ExplanationParagraphs": [
+        "Goal: use the unit whole and familiar tenths/hundredths to understand one thousandth as a fractional and decimal quantity. The 2021 public source begins with an estimation discussion and learner representations, not with a generic ruler-measurement procedure.",
+        "Warm-up: imagine a mosaic with many small tiles of different sizes. Estimate how much of the *entire* picture one small tile might cover; discuss how the denominator relates to the total number of equivalent-sized pieces. The original source photograph has separate rights and is not copied.",
+        "Activity 1 — explain existing knowledge: partners make a poster showing 1/10, 1/100 and 1/1000 as fractions, decimals and equal-unit diagrams. Compare multiple legitimate representations and describe why partitioning a drawing into a thousand parts is difficult.",
+        "Activity 2 — subdivide one hundredth: begin with a 10-by-10 grid representing one whole; there are 100 small square cells. Divide one such hundredth cell into ten equal stripes, then a stripe represents one thousandth of the original whole. Mark the value as 1/1000 = 0.001. Explain why there are 100 × 10 = 1000 such stripes in the whole.",
+        "Synthesis: connect each place value to ten equal next-smaller units. A learner's poster, drawn partitions, estimation of mosaic tile sizes, and verbal comparison require teacher review. One decimal-number answer does not stand in for the complete 2021 Grade 5 Unit 5 Lesson 1 task; original gated Cool-down not verified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "One thousandth",
+          "Definition": "A quantity made by partitioning a whole into one thousand congruent parts.",
+          "Rule": "1/1000 = 0.001 and occupies the third decimal place.",
+          "Example": "One of a thousand equal strips of one whole has measure 0.001."
+        },
+        {
+          "Title": "Ten-to-one place value",
+          "Definition": "Each hundredth contains ten thousandths, and each tenth contains ten hundredths.",
+          "Rule": "0.01 = 10 × 0.001; 0.1 = 100 × 0.001.",
+          "Example": "One hundredth divided into ten equal strips produces thousandths."
+        },
+        {
+          "Title": "A consistent unit whole",
+          "Definition": "A fraction's denominator counts equal pieces of one named whole.",
+          "Rule": "Do not change the size of the whole when comparing tenths, hundredths and thousandths.",
+          "Example": "Ten 0.001 pieces make 0.01 of the same whole."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Represent a tiny part of a grid",
+          "Question": "One whole is a 10 × 10 grid. If one of the 100 squares is divided into 10 equal stripes, what is one stripe of the whole?",
+          "Method": "Use a nested partition, not the original tile's apparent visual size.",
+          "Steps": [
+            "The whole has 100 congruent square cells.",
+            "Each cell has 10 equal stripes, so the whole has 100 × 10 = 1000 stripes.",
+            "One stripe is 1 of 1000 equal pieces of the original whole."
+          ],
+          "Answer": "1/1000 = 0.001.",
+          "Check": "There are 10 such stripes in 0.01 and 1000 such stripes in one whole."
+        },
+        {
+          "Title": "Rewrite units",
+          "Question": "How many thousandths are in 3 hundredths?",
+          "Method": "Use 0.01 = 10 thousandths.",
+          "Steps": [
+            "One hundredth comprises ten thousandths.",
+            "Three hundredths comprise 3 × 10 = 30 thousandths.",
+            "Write 0.03 = 0.030 as an equivalent decimal."
+          ],
+          "Answer": "30 thousandths, or 0.030.",
+          "Check": "30/1000 = 3/100."
+        },
+        {
+          "Title": "Distinguish decimals",
+          "Question": "Which is larger: 0.001 or 0.01? How many of the smaller make the larger?",
+          "Method": "Compare equal-sized units in the same whole.",
+          "Steps": [
+            "0.001 describes one thousandth; 0.01 describes one hundredth.",
+            "One hundredth has ten thousandths.",
+            "Conclude 0.01 is ten times as large as 0.001."
+          ],
+          "Answer": "0.01 is larger; ten thousandths make one hundredth.",
+          "Check": "10 × 0.001 = 0.01."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 0.001 as one hundredth",
+          "WhyWrong": "The third digit to the right of a decimal point is the thousandths place.",
+          "Correction": "Use a labeled place-value chart and 10-by-10-by-10 nested partition."
+        },
+        {
+          "Mistake": "Compare parts from different-sized wholes",
+          "WhyWrong": "A strip of one picture may not have the same size as a strip of a different picture.",
+          "Correction": "Declare one common whole before comparing fractional sizes."
+        }
+      ],
+      "SummaryPoints": [
+        "One thousandth is one of 1,000 equal parts of a single whole: 1/1000 = 0.001.",
+        "Each new decimal place is one tenth the place value immediately to its left.",
+        "Original source estimation, posters, grid drawings and learner explanations are teacher-reviewed.",
+        "Source: 2021 IM K–5 Grade 5 Unit 5 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-1/lesson.html; original Edulytiks diagrams in words, no source mosaic artwork."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Decimal unit sizes",
+          "Description": "First-party accessible chart for a consistent unit whole.",
+          "Rows": [
+            {
+              "Label": "Place",
+              "Cells": [
+                "Tenths",
+                "Hundredths",
+                "Thousandths"
+              ]
+            },
+            {
+              "Label": "Fraction",
+              "Cells": [
+                "1/10",
+                "1/100",
+                "1/1000"
+              ]
+            },
+            {
+              "Label": "Decimal",
+              "Cells": [
+                "0.1",
+                "0.01",
+                "0.001"
+              ]
+            },
+            {
+              "Label": "Equal pieces in whole",
+              "Cells": [
+                "10",
+                "100",
+                "1000"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L01",
+      "CultureCode": "en",
+      "Title": "Place Value Patterns",
+      "ExplanationParagraphs": [
+        "Goal: describe multiplicative relationships among values of digits in different places using true multiplication and division equations. The source's digit sequences move across the decimal point; simply appending zeroes to every number is not a valid general rule.",
+        "Warm-up: inspect the sequence 8200, 820, 82, 8.2, 0.82, 0.082. Share what stays the same about the written digits and what changes about the *value*. Check neighboring entries using division by ten.",
+        "Activity 1 — equations and discussion: make several mathematically true equations showing the relationship of 6, 60, 600, 0.6, 0.06 and the multipliers 10, 100, 0.1, 0.01. Explain how each equation states a place-value comparison. Test a suspected false equation before accepting it, and discuss multiple valid expressions with a partner.",
+        "Activity 2 — a digit's value shifts: extend the sequence 600, 60, 6, 0.6, 0.06 both upward and downward. Describe each next term as one tenth the previous term and each preceding term as ten times the following term; examples include 6000 and 0.006. Describe why the symbol 6 still appears while its represented value changes.",
+        "Synthesis and assessment: use both multiplication and division to relate a tenth to a hundredth and a thousand to ten thousand. Authored equations, visual displays, peer critique and explanations are teacher-reviewed. A single multiplication-by-ten response does not assess the source's equation-building task; original gated Cool-down not inspected."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tenfold increase to the left",
+          "Definition": "Moving a digit to the next larger place makes its value ten times as large.",
+          "Rule": "600 = 10 × 60 and 60 = 10 × 6.",
+          "Example": "A digit 6 in the hundreds place represents 600, ten times six tens."
+        },
+        {
+          "Title": "One tenth to the right",
+          "Definition": "Moving a digit one decimal place right makes its value one tenth as large.",
+          "Rule": "0.6 ÷ 10 = 0.06 and 0.06 × 10 = 0.6.",
+          "Example": "Six hundredths is one tenth of six tenths."
+        },
+        {
+          "Title": "Equivalent multiplication and division",
+          "Definition": "Multiplying and dividing by the same nonzero number are inverse operations.",
+          "Rule": "If 60 = 10 × 6 then 60 ÷ 10 = 6, and 60 ÷ 6 = 10.",
+          "Example": "600 × 0.01 = 6 and 600 ÷ 100 = 6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Explain a decimal shift",
+          "Question": "How is 0.6 related to 0.06?",
+          "Method": "Use the value of the digit in tenths and hundredths.",
+          "Steps": [
+            "0.6 means six tenths.",
+            "0.06 means six hundredths.",
+            "One tenth consists of ten hundredths, so 0.6 is ten times 0.06."
+          ],
+          "Answer": "0.6 = 10 × 0.06; 0.6 ÷ 10 = 0.06.",
+          "Check": "0.06 × 10 = 0.6."
+        },
+        {
+          "Title": "Continue a place-value pattern",
+          "Question": "Continue 600, 60, 6, 0.6, 0.06 one step in both directions.",
+          "Method": "The common ratio from left to right is one tenth.",
+          "Steps": [
+            "Before 600 write 6000 because 6000 ÷ 10 = 600.",
+            "After 0.06 write 0.006 because 0.06 ÷ 10 = 0.006.",
+            "Check that every neighboring pair has a factor-of-ten relationship."
+          ],
+          "Answer": "6000, 600, 60, 6, 0.6, 0.06, 0.006.",
+          "Check": "Every number is ten times the following number."
+        },
+        {
+          "Title": "Write two true equations",
+          "Question": "Use 600, 6, 100 and 0.01 to write two true equations.",
+          "Method": "Describe the same place-value relationship with two inverse operations.",
+          "Steps": [
+            "600 is 100 groups of six, so 600 = 100 × 6.",
+            "Dividing 600 by 100 yields 6.",
+            "Multiplying 600 by one hundredth yields 6."
+          ],
+          "Answer": "600 ÷ 100 = 6 and 600 × 0.01 = 6.",
+          "Check": "Both expressions evaluate to 6 and agree with the factor 100 relationship."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Always add a zero when multiplying by ten",
+          "WhyWrong": "Appending a zero works for some whole-number numeral forms, but not for decimals such as 0.6.",
+          "Correction": "Explain the change in a digit's place value: 0.6 × 10 = 6."
+        },
+        {
+          "Mistake": "Change only one number in a ratio comparison",
+          "WhyWrong": "A change in digit position affects the number's represented value, not its identity as a digit.",
+          "Correction": "Compare 0.06, 0.6 and 6 with explicit multiplication or division equations."
+        }
+      ],
+      "SummaryPoints": [
+        "A digit's value is ten times greater one place to the left and one tenth as large one place to the right.",
+        "Write inverse multiplication and division equations to show the same relationships.",
+        "Multiple true equations and classroom mathematical arguments remain teacher-reviewed.",
+        "Source: IM K–5 first edition 2021 Grade 5 Unit 6 Lesson 1, https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-1/lesson.html; independent Edulytiks examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Same digit, changing place value",
+          "Description": "First-party table supports the source's six-valued sequence with a single nonzero digit.",
+          "Rows": [
+            {
+              "Label": "Value of digit 6",
+              "Cells": [
+                "600",
+                "60",
+                "6",
+                "0.6",
+                "0.06",
+                "0.006"
+              ]
+            },
+            {
+              "Label": "Relation to previous",
+              "Cells": [
+                "—",
+                "÷10",
+                "÷10",
+                "÷10",
+                "÷10",
+                "÷10"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U08:L01",
+      "CultureCode": "en",
+      "Title": "Find the Largest Product PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: use place value, multi-digit multiplication, systematic comparison and mathematical argument to find the greatest product obtainable under fixed digit-use constraints. The largest possible *two-digit factor* need not produce the greatest two-digit-by-one-digit product.",
+        "Warm-up: compare 841 × 6 with 641 × 8 without assuming the longer-looking product is greater. Both involve the digits 8, 6, 4 and 1 arranged differently; predict using partial products, then verify the difference through exact multiplication.",
+        "Activity 1 — test a claim: using the distinct digits 7, 5 and 2, decide whether 75 × 2 produces the greatest possible two-digit-by-one-digit product. Enumerate legal choices or compare partial products: 75 × 2 = 150 while 52 × 7 = 364. Discuss why putting a large digit in the multiplier can outweigh choosing the largest two-digit factor. Then find the greatest legal product from digits 6, 3 and 1.",
+        "Activity 2 — more digits: explore different legal multiplication formats using four distinct digits, including three-digit-by-one-digit and two-digit-by-two-digit products. For digits 7, 3, 2 and 5 compare plausible candidates with exact products rather than relying on a single guess. Explain systematically why the selected expression is greatest under the given format rules.",
+        "Synthesis and teacher review: explain how each digit contributes hundreds, tens and ones to the product, and compare choices by the difference in partial products. The original 2021 source requires partner discussion, critique, revised claims and independent justification, not just a final number. The source's digit-arrangement illustrations and gated Cool-down are not copied or claimed source-verified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Place value controls partial products",
+          "Definition": "The contribution of a factor digit depends on its position in the multiplication.",
+          "Rule": "A tens digit contributes ten times the same digit in the ones position when multiplied by the same positive factor.",
+          "Example": "52 × 7 = (50×7)+(2×7) = 364."
+        },
+        {
+          "Title": "Optimizing with used-once digits",
+          "Definition": "Every digit arrangement is a candidate subject to the stated format and no-repeat constraints.",
+          "Rule": "Compare all legal place assignments or prove via exchange arguments that no swap improves the result.",
+          "Example": "For digits 6, 3 and 1, 31 × 6 = 186 is greater than 61 × 3 = 183."
+        },
+        {
+          "Title": "A justification is more than a product",
+          "Definition": "A numerical answer must be accompanied by evidence of maximality.",
+          "Rule": "Use exhaustive enumeration of a small case or sound exchange reasoning to rule out better candidates.",
+          "Example": "For {7,5,2}, 52×7=364 exceeds 72×5=360 and 75×2=150."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Correct the greatest-factor claim",
+          "Question": "With digits 7, 5 and 2, is 75 × 2 the greatest two-digit-by-one-digit product?",
+          "Method": "Calculate alternative valid assignments using all three digits exactly once.",
+          "Steps": [
+            "Calculate 75×2 = 150.",
+            "Try a larger multiplier: 52×7 = 364.",
+            "Verify competing 72×5 = 360 and 25×7 = 175; remaining permutations are not larger."
+          ],
+          "Answer": "No. 52 × 7 = 364 is the maximum under the two-digit-by-one-digit rule.",
+          "Check": "The six legal assignments yield 150, 114, 360, 175, 364 and 135; maximum 364."
+        },
+        {
+          "Title": "Find the best product using 6, 3, 1",
+          "Question": "Choose a two-digit factor and one-digit multiplier using 6, 3 and 1 exactly once.",
+          "Method": "Enumerate the six legal placements or use place-value reasoning.",
+          "Steps": [
+            "Calculate 63×1=63, 61×3=183, 36×1=36.",
+            "Calculate 31×6=186, 16×3=48, 13×6=78.",
+            "Compare all six values and select the greatest."
+          ],
+          "Answer": "31 × 6 = 186.",
+          "Check": "186 > 183, the next largest candidate; all digits were used once."
+        },
+        {
+          "Title": "Revisit two four-digit arrangements",
+          "Question": "Which is greater: 841 × 6 or 641 × 8?",
+          "Method": "Compare partial products before relying on appearance.",
+          "Steps": [
+            "841 × 6 = 5046.",
+            "641 × 8 = 5128.",
+            "Subtract 5128 − 5046 = 82 to compare."
+          ],
+          "Answer": "641 × 8 is greater by 82.",
+          "Check": "Each original expression uses the same digit set; a change in place changes the product."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "The largest factor always gives the largest product",
+          "WhyWrong": "Changing the other factor can more than offset a smaller multi-digit factor.",
+          "Correction": "Compare entire products, including the multiplier and each place-value contribution."
+        },
+        {
+          "Mistake": "One plausible large result proves it is maximal",
+          "WhyWrong": "Finding a large value does not rule out another legal rearrangement.",
+          "Correction": "Enumerate the bounded digit arrangements or use a valid exchange argument."
+        }
+      ],
+      "SummaryPoints": [
+        "Maximizing a product requires considering both factors and the place values of each digit.",
+        "Use the full legal digit rules, compare exact products and justify why no better arrangement exists.",
+        "The lesson's discussion, revisions of claims and written optimality argument are teacher-reviewed.",
+        "Source: IM K–5 first edition 2021 Grade 5 Unit 8 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-8/lesson-1/lesson.html; first-party Edulytiks calculations and table."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Permutations of distinct digits 6, 3, 1",
+          "Description": "Original complete enumeration of three-digit placements for the two-digit-by-one-digit format.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "63×1",
+                "61×3",
+                "36×1",
+                "31×6",
+                "16×3",
+                "13×6"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "63",
+                "183",
+                "36",
+                "186",
+                "48",
+                "78"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

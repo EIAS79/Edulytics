@@ -1,0 +1,518 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u04-l11-l14-im2021-first-party-richv2-v5-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L11",
+      "CultureCode": "en",
+      "Title": "Different Partial Quotients PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: compare multiple correct DECOMPOSITIONS of a whole-number quotient and choose partial quotients that are helpful to calculate. The 2021 source includes card-matching of different expressions and explicit metacognitive reflection about revising a partial-quotient choice.",
+        "Warm-up: consider 364÷13 with 260÷13=20,65÷13=5 and39÷13=3. Explain that subtracting these divisible chunks recovers 364, and that the corresponding partial quotients add to 28; changing order is allowed when the pieces still partition the total.",
+        "Activity 1 — original card choices: find 352÷16. One learner selects 320÷16=20 and then32÷16=2; another uses 160÷16=10 twice then32÷16=2. Compare the two different lists as legitimate decompositions of the SAME dividend and quotient. A card whose chunks add to 336 is incomplete even if every individual division statement is true.",
+        "Activity 2 — choose an efficient starting step: for 832÷26, one learner removes 780=30×26 and then52=2×26; another removes 520=20×26 then312=12×26. Both give 32, and students discuss which products they can find mentally more easily. Encourage revising initial choices if an easier combination becomes evident.",
+        "Teacher review: this source activity is about selecting and matching sets of partial quotients, explaining completeness, comparing computation effort and reflecting on choices. An exact 22 or 32 is a supporting numeric subcheck, not certification of that thinking. No publisher card images copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Partial quotient is a counted group",
+          "Definition": "A partial quotient counts a portion of the final equal-sized groups.",
+          "Rule": "If 320÷16=20, then 20 full groups of 16 consume 320.",
+          "Example": "352−320=32 remains."
+        },
+        {
+          "Title": "Several correct decompositions",
+          "Definition": "Different sums of divisor-multiples can reconstruct the same dividend.",
+          "Rule": "20×16+2×16=10×16+10×16+2×16=352.",
+          "Example": "All correct lists total 22 groups."
+        },
+        {
+          "Title": "Choose an efficient chunk",
+          "Definition": "A larger convenient multiple can reduce the number of subtraction steps without changing the quotient.",
+          "Rule": "For 832÷26, remove 780=30×26 then52=2×26.",
+          "Example": "Quotient 32."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two solutions with one quotient",
+          "Question": "Show two legal partial-quotient methods for 352÷16.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Method one: remove 320=20×16 then32=2×16.",
+            "Method two: remove 160 twice (two groups of ten) then32.",
+            "Add partial quotients in each method."
+          ],
+          "Answer": "22 by both methods.",
+          "Check": "16×22=352; neither method leaves a remainder."
+        },
+        {
+          "Title": "Choose large easy chunks",
+          "Question": "Calculate 832÷26 starting with 30 groups.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract 30×26=780 from 832.",
+            "Identify remaining 52 as 2×26.",
+            "Add 30+2."
+          ],
+          "Answer": "32.",
+          "Check": "26×32=832."
+        },
+        {
+          "Title": "Reject an incomplete set",
+          "Question": "A student records only 20 groups of 16 for 352÷16. Explain the missing work.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Compute 20×16=320.",
+            "Subtract 352−320=32.",
+            "Find 32÷16=2 more groups."
+          ],
+          "Answer": "The final quotient is 22, not 20.",
+          "Check": "Teacher checks the student's explanation of remaining groups."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume the only correct route is the shortest list",
+          "WhyWrong": "Valid smaller partial chunks are acceptable if they cover the dividend exactly.",
+          "Correction": "Verify every group count and total; discuss efficiency as a separate criterion."
+        },
+        {
+          "Mistake": "Sum partial quotients without checking subtracted multiples",
+          "WhyWrong": "A correct-looking sum can mask omitted or duplicated dividend pieces.",
+          "Correction": "Multiply each selected partial quotient by the divisor and sum to the original dividend."
+        }
+      ],
+      "SummaryPoints": [
+        "Different correct decompositions of the dividend may give the same quotient.",
+        "Efficient partial quotient choices depend on known multiples and place value.",
+        "Card matching and reflection on strategy changes are teacher-reviewed.",
+        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 11, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-11/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Different Partial Quotients PLC Activity — division decomposition",
+          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Rows": [
+            {
+              "Label": "Method",
+              "Cells": [
+                "20+2",
+                "10+10+2"
+              ]
+            },
+            {
+              "Label": "Dividend chunks",
+              "Cells": [
+                "320+32",
+                "160+160+32"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "352",
+                "352"
+              ]
+            },
+            {
+              "Label": "Quotient",
+              "Cells": [
+                "22",
+                "22"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L12",
+      "CultureCode": "en",
+      "Title": "An Algorithm Using Partial Quotients",
+      "ExplanationParagraphs": [
+        "Goal: interpret and use a written PARTIAL QUOTIENTS algorithm for division by a two-digit divisor. Connect each subtraction of a convenient divisor multiple to the number of whole groups removed, then keep track of the remaining quantity and total quotient.",
+        "Warm-up: inspect an incomplete first-party partial-quotient layout for 588÷21, displaying dividend 588 and subtracting 420. Ask what the 420 represents (20 groups of 21) and what remains, rather than guessing the final answer from surface features.",
+        "Activity 1 — label each line: calculate 588÷21 by subtracting 420=20×21, leaving168; subtract 126=6×21, leaving42; subtract42=2×21, leaving0. Sum partial quotients 20+6+2=28. Explain the roles of multiplication and subtraction at every step.",
+        "Activity 2 — use less scaffolding: for 768÷24, subtract 720=30×24 leaving48, then subtract 48=2×24 leaving0. Alternatively subtract 480 then 240 then48 for partial quotients 20,10,2. Compare the remaining values and show the same 32 groups.",
+        "Academic boundary: source asks learners to make sense of the actual written algorithm, what every number means and how partial quotients are recorded, including self-explanation. The final 28/32 number alone cannot grade whether the learner has represented the algorithm properly."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Partial quotient recording",
+          "Definition": "A division algorithm may repeatedly subtract whole multiples of a divisor while recording group counts.",
+          "Rule": "588−(20×21)=168, then subtract6×21, then2×21.",
+          "Example": "Partial quotients 20+6+2=28."
+        },
+        {
+          "Title": "Remaining dividend",
+          "Definition": "The remainder at each step is how much of the original dividend is not yet allocated.",
+          "Rule": "Continue subtracting valid divisor multiples until remaining is below divisor.",
+          "Example": "588−420−126−42=0."
+        },
+        {
+          "Title": "Multiplication verifies division",
+          "Definition": "A quotient q with remainder r must satisfy divisor×q+r=dividend and 0≤r<divisor.",
+          "Rule": "21×28+0=588.",
+          "Example": "A remainder of 42 with divisor 21 is not final."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Read every subtraction row",
+          "Question": "Find 588÷21 by three partial quotients.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract 420 for 20 groups, leaving168.",
+            "Subtract126 for6 groups, leaving42.",
+            "Subtract42 for2 groups and sum20+6+2."
+          ],
+          "Answer": "28.",
+          "Check": "21×28=588."
+        },
+        {
+          "Title": "Choose a larger chunk",
+          "Question": "Find 768÷24 using two steps.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract720=30×24, leaving48.",
+            "Subtract48=2×24.",
+            "Add30+2."
+          ],
+          "Answer": "32.",
+          "Check": "24×32=768."
+        },
+        {
+          "Title": "Use smaller chunks instead",
+          "Question": "Show 768÷24 with 20,10,2 groups.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract480=20×24, leaving288.",
+            "Subtract240=10×24, leaving48.",
+            "Subtract48=2×24 and add all groups."
+          ],
+          "Answer": "32.",
+          "Check": "480+240+48=768 and20+10+2=32."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtract the quotient count rather than the product",
+          "WhyWrong": "Subtracting '20' directly is incorrect when 20 groups each have 21 items.",
+          "Correction": "Compute 20×21=420 and subtract that from the dividend."
+        },
+        {
+          "Mistake": "Stop with a remainder greater than or equal to divisor",
+          "WhyWrong": "Another full group can still be removed if enough quantity remains.",
+          "Correction": "Continue until the final whole-number remainder is smaller than the divisor."
+        }
+      ],
+      "SummaryPoints": [
+        "A partial-quotients algorithm combines subtraction, multiplication and addition.",
+        "Every subtracted product represents a specific number of equal groups.",
+        "Explanation of each recorded algorithm step is teacher-reviewed.",
+        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 12, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-12/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "An Algorithm Using Partial Quotients — division decomposition",
+          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Rows": [
+            {
+              "Label": "Step",
+              "Cells": [
+                "Start",
+                "After 20 groups",
+                "After 6 groups",
+                "After 2 groups"
+              ]
+            },
+            {
+              "Label": "Remaining",
+              "Cells": [
+                "588",
+                "168",
+                "42",
+                "0"
+              ]
+            },
+            {
+              "Label": "Groups removed",
+              "Cells": [
+                "—",
+                "20",
+                "6",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L13",
+      "CultureCode": "en",
+      "Title": "Divide Using Partial Quotients",
+      "ExplanationParagraphs": [
+        "Goal: select reasonable PARTIAL QUOTIENTS for increasingly unfamiliar 3- and 4-digit dividends and two-digit divisors, estimate BEFORE calculating, and compare different student approaches. Source lesson specifically asks learners to explain why an efficient first multiple is chosen.",
+        "Warm-up: compare several 11-times whole numbers: 110÷10=11,121÷11=11,132÷12=11. Explain how using a quotient benchmark can guide a division method without reproducing a fixed diagram.",
+        "Activity 1 — two partners, different choices: Student A solves 672÷28 by subtracting560=20×28, leaving112, then112=4×28; Student B subtracts 280 twice then112, using partial quotients 10+10+4. Both yield24. Discuss why the less efficient route is still correct and what information the initial estimate gives.",
+        "Activity 2 — estimate and solve: for 988÷38, estimate near 1000÷40≈25. Subtract760=20×38 leaving228, then228=6×38, so exact quotient26. Check that the 26 result is close to benchmark25. If a learner chooses 10+10+6 instead, demonstrate the same final dividend accounting.",
+        "Teacher boundary: the source requires comparing different algorithms, strategy revision and an estimate, not one preferred exact layout. Numeric checking supports correct division, but learner justification, estimating and peer comparison require teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Estimate guides division",
+          "Definition": "A convenient nearby dividend/divisor can give a quotient magnitude before detailed partial-quotient steps.",
+          "Rule": "988÷38 is near 1000÷40=25.",
+          "Example": "Exact quotient 26 is reasonable."
+        },
+        {
+          "Title": "Many equivalent partial-quotient plans",
+          "Definition": "Valid plans can subtract different convenient divisor-multiples while giving same final count.",
+          "Rule": "672÷28 can use20+4 or10+10+4 groups.",
+          "Example": "Both give 24."
+        },
+        {
+          "Title": "Complete exact verification",
+          "Definition": "The sum of partial group counts plus any final remainder must reconstruct dividend.",
+          "Rule": "38×26=988.",
+          "Example": "No remainder remains."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare two strategies",
+          "Question": "Find 672÷28 with both a 20+4 and 10+10+4 plan.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "First remove560=20×28 and then112=4×28.",
+            "Alternatively remove280 twice, then112.",
+            "Add the partial quotients and compare the explanations."
+          ],
+          "Answer": "24 with either plan.",
+          "Check": "24×28=672."
+        },
+        {
+          "Title": "Estimate quotient size",
+          "Question": "Estimate 988÷38 using friendly nearby numbers.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Round 988 near1000 and38 near40.",
+            "Compute1000÷40=25.",
+            "Describe the expected result as around25."
+          ],
+          "Answer": "About 25.",
+          "Check": "The exact quotient26 is close, not necessarily equal to the estimate."
+        },
+        {
+          "Title": "Compute from estimate",
+          "Question": "Finish 988÷38 exactly.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract20×38=760 to leave228.",
+            "Subtract6×38=228.",
+            "Add20+6."
+          ],
+          "Answer": "26.",
+          "Check": "26×38=988."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a quotient estimate as an exact answer",
+          "WhyWrong": "Rounding factors can shift the quotient.",
+          "Correction": "Use estimates to guide partial quotients, then verify exact multiplication."
+        },
+        {
+          "Mistake": "Reject correct longer solutions",
+          "WhyWrong": "A different combination of legal partial quotients can be mathematically equivalent.",
+          "Correction": "Check whether all subtracted divisor-multiples account for the dividend."
+        }
+      ],
+      "SummaryPoints": [
+        "Estimate the quotient before selecting partial-quotient group counts.",
+        "Different valid partial-quotient decompositions can be compared without penalizing correct alternatives.",
+        "Partner explanation and strategic selection require teacher review.",
+        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 13, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-13/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Divide Using Partial Quotients — division decomposition",
+          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "672÷28",
+                "988÷38"
+              ]
+            },
+            {
+              "Label": "Estimate",
+              "Cells": [
+                "≈24",
+                "≈25"
+              ]
+            },
+            {
+              "Label": "Partial quotients",
+              "Cells": [
+                "20+4",
+                "20+6"
+              ]
+            },
+            {
+              "Label": "Exact answer",
+              "Cells": [
+                "24",
+                "26"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L14",
+      "CultureCode": "en",
+      "Title": "Practice an Algorithm Using Partial Quotients",
+      "ExplanationParagraphs": [
+        "Goal: find and explain ERRORS in partial-quotient division and then handle larger four-digit dividends with strategic HUNDREDS-sized quotient chunks. The 2021 lesson expects diagnosing wrong multiplication or subtraction, not just finding correct results elsewhere.",
+        "Warm-up: compare partial-quotient methods with many small multiples and fewer large multiples; consider different valid Which One Doesn't Belong reasons. A short method need not be less understandable than a longer method, and multiple correct methods are allowed.",
+        "Activity 1 — original error analysis: a student divides 832 by26 by subtracting a claimed 30×26=750, then uses the remaining82 to obtain three more groups. Identify the incorrectly multiplied chunk (30×26 is780, not750) and explain the correct remaining 52 and final quotient32. In another attempt subtract 780 correctly but mistakenly record 832−780=62; correct to52. Require students to explain each arithmetic error's consequence.",
+        "Activity 2 — four-digit division with large chunks: for 8415÷33, start with 200 groups (6600), leaving1815; subtract50 groups (1650), leaving165; subtract5 groups (165), leaving0. Sum200+50+5=255. For 7344÷24, start300 groups (7200), leave144, then6 groups (144), total306. Confirm divisor×quotient=dividend.",
+        "Teacher boundary: source critiques errors, compares partial quotient choices and requires large multi-digit calculation with interpretation. Checking only 255 or306 cannot certify correct algorithm debugging or partner discussion. Publisher long-division pictures and protected response are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Error diagnosis in partial quotients",
+          "Definition": "A mistaken product or subtraction changes the remaining amount and can create false quotient claims.",
+          "Rule": "30×26=780 and832−780=52.",
+          "Example": "The resulting quotient is30+2=32."
+        },
+        {
+          "Title": "Use hundreds-sized chunks",
+          "Definition": "For four-digit dividends, subtracting 100 or200 divisor groups at once may be more efficient.",
+          "Rule": "8415÷33 can begin with200×33=6600.",
+          "Example": "The remaining1815 is still divisible by33."
+        },
+        {
+          "Title": "Independent multiplication check",
+          "Definition": "A valid exact quotient must reproduce the dividend when multiplied by the divisor.",
+          "Rule": "33×255=8415, 24×306=7344.",
+          "Example": "The final remainder must also be below the divisor."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find a multiplication error",
+          "Question": "A partial-quotient step says30×26=750 while dividing832 by26. What is wrong?",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Recalculate30×26=3×26×10=780.",
+            "Subtract832−780=52.",
+            "Use52÷26=2 and add30+2."
+          ],
+          "Answer": "32; the stated 750 partial product is incorrect.",
+          "Check": "26×32=832."
+        },
+        {
+          "Title": "Find a subtraction error",
+          "Question": "The same problem records832−780=62. Correct it.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Calculate832−700=132.",
+            "Subtract another80 to get52.",
+            "Continue with2×26=52."
+          ],
+          "Answer": "The remainder is52, not62; quotient32.",
+          "Check": "780+52=832."
+        },
+        {
+          "Title": "Four-digit partial quotient",
+          "Question": "Find8415÷33 using large chunks.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract200×33=6600, leaving1815.",
+            "Subtract50×33=1650, leaving165.",
+            "Subtract5×33=165; add200+50+5."
+          ],
+          "Answer": "255.",
+          "Check": "255×33=8415."
+        },
+        {
+          "Title": "Another four-digit quotient",
+          "Question": "Find7344÷24.",
+          "Method": "Use first-party partial-quotient reasoning with independently checked multiplication and subtraction.",
+          "Steps": [
+            "Subtract300×24=7200, leaving144.",
+            "Subtract6×24=144, leaving0.",
+            "Add300+6."
+          ],
+          "Answer": "306.",
+          "Check": "306×24=7344."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Accept a plausible rounded partial product as exact",
+          "WhyWrong": "Partial quotients require exact divisor multiples and exact subtraction.",
+          "Correction": "Check each chosen chunk with multiplication before removing it."
+        },
+        {
+          "Mistake": "Use only tens-sized chunks for every large dividend",
+          "WhyWrong": "Small chunks may work but cause avoidable repetitive work for four-digit dividends.",
+          "Correction": "Consider a 100- or 200-group chunk and verify it does not exceed the remainder."
+        }
+      ],
+      "SummaryPoints": [
+        "Error checking must distinguish incorrect multiplication from incorrect subtraction.",
+        "Hundreds-sized partial quotients can efficiently divide four-digit numbers.",
+        "Teacher reviews diagnosis, correction and explanation; exact numbers are supporting checks.",
+        "Source: IM K–5 Math Grade 5 (first edition 2021), Unit 4 Lesson 14, https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-14/lesson.html. Original Edulytiks worked math and tables; public source HTML inspected, source student PDF and protected response/Cool-down not independently reviewed."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Practice an Algorithm Using Partial Quotients — division decomposition",
+          "Description": "Accessible original text table for partial-quotient choices; does not reproduce publisher task cards or diagrams.",
+          "Rows": [
+            {
+              "Label": "Problem",
+              "Cells": [
+                "832÷26",
+                "8415÷33",
+                "7344÷24"
+              ]
+            },
+            {
+              "Label": "Partial quotient choices",
+              "Cells": [
+                "30+2",
+                "200+50+5",
+                "300+6"
+              ]
+            },
+            {
+              "Label": "Quotient",
+              "Cells": [
+                "32",
+                "255",
+                "306"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u03-l19-im2021-first-party-fraction-optimization-richv2-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L19",
+      "CultureCode": "en",
+      "Title": "Fraction Games",
+      "ExplanationParagraphs": [
+        "Learning goal: use exact fraction multiplication and division to build the greatest or smallest possible product or quotient from permitted digits. This 2021 first-edition lesson focuses on reasoning about which number positions make an expression larger or smaller, not merely computing a fixed fraction answer.",
+        "Warm-up: estimate 28 multiplied by 2 8/9. Because 2 8/9 is between 2 and 3 and close to 3, the exact product is between 56 and 84, closer to 84. Convert 2 8/9 to 26/9 to verify 28 × 26/9 = 728/9 = 80 8/9. The estimate and justification use the source's mathematical structure; the worked wording here is first-party.",
+        "Activity 1 — build the greatest value: use different digits from 1 through 6 in the places allowed by the expression. For a whole number divided by a unit fraction, the quotient equals the whole number times the fraction's denominator. Try exchanges and argue that the two largest distinct digits give the greatest such product: 6 ÷ (1/5) = 30, or 5 ÷ (1/6) = 30. This is an independently authored illustration of the public preparation's optimization objective, not a transcription of a protected Cool-down.",
+        "Activity 2 — build the smallest value: for (1/a) ÷ b with distinct positive digits 1 through 6, the quotient is 1/(ab). Maximizing the product ab minimizes the positive quotient; the same largest distinct digits yield (1/6) ÷ 5 = 1/30, or (1/5) ÷ 6 = 1/30. Ask students to compare legal assignments and explain why exchanging a smaller chosen digit for an unused larger one improves the result.",
+        "Assessment boundary: numeric values and legal distinct-digit constraints can receive exact checks. Proving that a chosen expression is globally maximal or minimal, discussing alternate ties, and collaborating in the original partner activity require teacher review. Source: public IM K–5 Grade 5 Unit 3 Lesson 19 (2021) preparation. Publisher student PDF diagrams, Cool-down and any image artwork are not claimed reproduced or fully verified."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Division by a unit fraction",
+          "Definition": "Division asks how many unit-fraction groups fit in an amount.",
+          "Rule": "For positive integers a,b, a ÷ (1/b) = a × b.",
+          "Example": "6 ÷ (1/5) = 30."
+        },
+        {
+          "Title": "Unit fraction divided by a whole number",
+          "Definition": "The unit fraction is split into equal smaller parts.",
+          "Rule": "For positive a,b, (1/a) ÷ b = 1/(a × b).",
+          "Example": "(1/6) ÷ 5 = 1/30."
+        },
+        {
+          "Title": "Maximum and minimum under constraints",
+          "Definition": "An extreme value must respect every allowed digit and use restriction.",
+          "Rule": "To maximize a×b with distinct digits 1–6 choose 6 and 5; to minimize 1/(ab), maximize the same positive denominator.",
+          "Example": "6×5 = 30; 1/(6×5) = 1/30."
+        },
+        {
+          "Title": "Justifying the best choice",
+          "Definition": "A good candidate is not enough without reasoning that no permitted alternative is better.",
+          "Rule": "Compare factors and show that replacing one selected digit by an unused larger digit increases a positive product.",
+          "Example": "A legal pair (4,6) makes 24, less than (5,6) making 30."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Largest whole ÷ unit fraction",
+          "Question": "With distinct digits 1–6 in a ÷ (1/b), what is the greatest possible quotient?",
+          "Method": "Use the inverse relation a ÷ (1/b) = a × b, then optimize the product.",
+          "Steps": [
+            "All candidates are products of two distinct positive digits up to six.",
+            "The two largest different digits are six and five.",
+            "Compute 6 ÷ (1/5) = 6 × 5 = 30 and give a reason smaller digits cannot exceed this."
+          ],
+          "Answer": "30, for example 6 ÷ (1/5) or 5 ÷ (1/6).",
+          "Check": "Both use distinct legal digits; any other pair has at least one factor smaller than 5 or 6."
+        },
+        {
+          "Title": "Smallest unit fraction ÷ whole",
+          "Question": "With distinct digits 1–6 in (1/a) ÷ b, what is the least positive quotient?",
+          "Method": "Convert the quotient to the reciprocal of a product and maximize its denominator.",
+          "Steps": [
+            "Write (1/a) ÷ b = 1/(a×b).",
+            "The largest product of two distinct allowed digits is 6×5 = 30.",
+            "Choose (1/6) ÷ 5 and calculate 1/(6×5)."
+          ],
+          "Answer": "1/30, also attained by (1/5) ÷ 6.",
+          "Check": "For positive denominators, 1/30 is smaller than 1/k for every positive k under 30."
+        },
+        {
+          "Title": "Estimate a fractional product",
+          "Question": "Estimate 28 × 2 8/9, then calculate exactly.",
+          "Method": "Bound the mixed number between two whole numbers before multiplying.",
+          "Steps": [
+            "2 < 2 8/9 < 3, so 56 < 28 × 2 8/9 < 84.",
+            "The mixed number is close to 3, so expect a product a little smaller than 84.",
+            "Convert to 26/9 and calculate 28×26/9 = 728/9 = 80 8/9."
+          ],
+          "Answer": "80 8/9; an estimate of roughly 81 is sensible.",
+          "Check": "80 8/9 is between 56 and 84 and close to 84, as expected."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Division always makes the number smaller",
+          "WhyWrong": "Dividing a whole number by a unit fraction such as 1/5 counts many small groups.",
+          "Correction": "Use 6 ÷ (1/5) = 30 to check which interpretation the question uses."
+        },
+        {
+          "Mistake": "A large-looking fraction automatically makes the best expression",
+          "WhyWrong": "Changing a numerator or denominator has a different effect depending on whether the fraction is the divisor or dividend.",
+          "Correction": "Rewrite the exact expression as a product or reciprocal, then compare legal digit assignments."
+        },
+        {
+          "Mistake": "A correct extreme value is a complete argument",
+          "WhyWrong": "Finding 30 or 1/30 does not, by itself, establish that no other permitted choice is better.",
+          "Correction": "Explain why the two largest distinct legal digits give the greatest positive product."
+        }
+      ],
+      "SummaryPoints": [
+        "For positive integers a,b, a ÷ (1/b) = ab while (1/a) ÷ b = 1/(ab); changing the order changes the result.",
+        "Optimize under the exact legal digit rules, verify the arithmetic and justify why no other assignment can improve the result.",
+        "The written optimality explanation, alternate ties and peer game are teacher-reviewed even when a supporting numeric answer can be checked.",
+        "Publisher: Illustrative Mathematics / Kendall Hunt, Grade 5 Unit 3 Lesson 19 first edition (2021), CC BY 4.0, preparation https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-19/preparation.html; first-party Edulytiks examples and table."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Fraction-division game — legal choices with distinct digits",
+          "Description": "Accessible first-party comparison; exact original publisher cards and their original student PDF are not reproduced. The two largest legal distinct digits are 6 and 5.",
+          "Rows": [
+            {
+              "Label": "Division type",
+              "Cells": [
+                "a ÷ (1/b)",
+                "(1/a) ÷ b"
+              ]
+            },
+            {
+              "Label": "Legal example",
+              "Cells": [
+                "6 ÷ (1/5)",
+                "(1/6) ÷ 5"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "30",
+                "1/30"
+              ]
+            },
+            {
+              "Label": "Optimization",
+              "Cells": [
+                "Largest quotient",
+                "Smallest positive quotient"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

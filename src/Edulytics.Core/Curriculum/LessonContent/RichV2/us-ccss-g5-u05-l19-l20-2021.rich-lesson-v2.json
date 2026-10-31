@@ -1,0 +1,259 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u05-l19-l20-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L19",
+      "CultureCode": "en",
+      "Title": "Use Properties to Multiply Decimals",
+      "ExplanationParagraphs": [
+        "Goal: sort different multiplication expressions by shared mathematical structure and by equal numerical value, then justify matches using associative, distributive and compensation properties. The original 2021 task first lets learners invent categories for an expression-card sort, then asks for matched equivalent expressions and a new equivalent expression, so it is not a single product quiz.",
+        "Warm-up: mentally decide whether 6×0.24 is closer to one or two whole units; compare this magnitude with 6×24=144 hundredths and explain why 1.44 is plausible. The estimate is a reasonableness check, not a proof of a particular sorting category.",
+        "Activity 1 — original equivalence card groups: card A is 6×0.24. Match A to 6×(0.2+0.04), (6×24)×0.01 and 6×0.2+6×0.04, which all yield 1.44. Card B is 5×3.8. Match it to 5×(4−0.2) and 20−1, both 19. Card C is 7×0.35, matching (7×35)×0.01 and 7×0.3+7×0.05, both 2.45. Ask learners to invent TWO different ways of grouping the expression cards, by use of compensation versus distributive versus whole-number scaling, and by equivalent value.",
+        "Activity 2 — select a strategy: find 24×0.61 by using 24×61 hundredths=14.64 or 24×(0.6+0.01)=14.4+0.24=14.64. Compare with 8×2.9=8×3−8×0.1=23.2. Write one new matching expression for one of the examples and justify the preservation of quantities rather than only the resulting number.",
+        "Assessment: the source asks students to justify choices of categories, matches, a novel equivalent expression, and why a strategy works; an isolated numeric equality is a subcheck, not evidence that card sorting and explanation occurred. Source card image set and secured Cool-down are not reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Distributive decimal product",
+          "Definition": "Break one decimal factor into a sum of tenths and hundredths, multiply both parts and add.",
+          "Rule": "6×0.24=6×0.2+6×0.04.",
+          "Example": "1.2+0.24=1.44."
+        },
+        {
+          "Title": "Associate to a whole-number product",
+          "Definition": "Factor hundredth or tenth units out and use familiar integer multiplication.",
+          "Rule": "7×0.35=(7×35)×0.01.",
+          "Example": "245 hundredths=2.45."
+        },
+        {
+          "Title": "Compensation near a whole",
+          "Definition": "Subtract the difference from a nearby whole number after multiplying that whole.",
+          "Rule": "5×3.8=5×(4−0.2)=20−1.",
+          "Example": "19."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Sort equivalent cards",
+          "Question": "Explain three expressions matching 6×0.24.",
+          "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
+          "Steps": [
+            "Read 0.24 as 24 hundredths, so 6×24 hundredths gives144 hundredths.",
+            "Decompose 0.24 into0.2+0.04 and distribute six.",
+            "Compare both structures and propose a valid category name for each."
+          ],
+          "Answer": "6×0.24=6×(0.2+0.04)=(6×24)×0.01=1.44.",
+          "Check": "Teacher checks the learner's invented categories and explanation, not merely 1.44."
+        },
+        {
+          "Title": "Use compensation",
+          "Question": "Find 5×3.8 and 8×2.9.",
+          "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
+          "Steps": [
+            "Rewrite 3.8 as4−0.2 and 2.9 as3−0.1.",
+            "Distribute the whole-number factors across both differences.",
+            "Subtract the small correction products."
+          ],
+          "Answer": "19 and 23.2.",
+          "Check": "5×4−5×0.2=19 and 8×3−8×0.1=23.2."
+        },
+        {
+          "Title": "Use two methods for a mixed-place decimal",
+          "Question": "Compute 24×0.61.",
+          "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
+          "Steps": [
+            "Use whole-number product24×61=1464, then interpret as hundredths.",
+            "Alternatively split 0.61 into0.6+0.01.",
+            "Find 14.4+0.24."
+          ],
+          "Answer": "14.64.",
+          "Check": "Both approaches yield 1464 hundredths."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Match cards solely because they share printed digits",
+          "WhyWrong": "Equivalent expressions can have different mathematical structure, and same digits can represent different values.",
+          "Correction": "Interpret which decimal units and properties create equivalence before matching."
+        },
+        {
+          "Mistake": "Subtract only the correction fraction without multiplying it by the whole-number factor",
+          "WhyWrong": "The distributive property applies to every term.",
+          "Correction": "Compute 8×(3−0.1)=24−0.8, not24−0.1."
+        }
+      ],
+      "SummaryPoints": [
+        "The same product can have whole-fact, distributive or compensation representations.",
+        "Inventing and justifying multiple sorting categories remains teacher-reviewed.",
+        "A learner-created valid new expression is evidence beyond a memorized decimal product.",
+        "2021 IM K–5 Grade 5 Unit 5 Lesson 19: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-19/lesson.html. Read on verified Our-CS: public source teacher lesson and Student Facing activities; original full Student Task PDF, gated response and independent image licensing still unverified. Text and math examples independently authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Use Properties to Multiply Decimals — equivalent product meanings",
+          "Description": "Original accessible expression/area grid representation; no publisher card graphics copied.",
+          "Rows": [
+            {
+              "Label": "Target",
+              "Cells": [
+                "A: 6×0.24",
+                "B: 5×3.8",
+                "C: 7×0.35"
+              ]
+            },
+            {
+              "Label": "Equivalent decomposition",
+              "Cells": [
+                "6×0.2+6×0.04",
+                "5×4−5×0.2",
+                "7×0.3+7×0.05"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "1.44",
+                "19",
+                "2.45"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L20",
+      "CultureCode": "en",
+      "Title": "Products in the Hundredths Place PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: show why a tenth TIMES a tenth produces hundredths of the original unit, using equal-area 10×10 grids, fraction meaning, and integer products. The source explicitly contrasts 2×0.3 with0.2×0.3, then critiques an answer that is ten times too large; it extends to mixed whole-and-tenths factors and compares related products.",
+        "Warm-up: first compare 4×0.3=1.2 with 0.4×0.3=0.12. Explain why four groups of three tenths are not the same as four tenths of three tenths. The decimal point is a size statement about the factors, not a formatting rule.",
+        "Activity 1 — two decimal factors: use a first-party unit square split into ten equal columns and ten equal rows. The intersection of three selected columns and six selected rows contains18 of100 equal cells, so 0.3×0.6=0.18 square unit. Reject the claim that the product is1.8 because one factor is less than one and the intersection covers fewer than a full unit.",
+        "Activity 2 — whole plus fractional tenths: calculate 2.4×0.5 as24 tenths×5 tenths =120 hundredths =1.20. Compare with 2.4×5=12.0, ten times greater. Calculate 3.6×0.7 as36×7 hundredths=252 hundredths=2.52 and explain why the result can be greater than one even though one factor is less than one; the other factor is greater than one.",
+        "Assessment: source requires drawn area cells, explanations of the two factor meanings, and exact relationships between whole and decimal products, including student critique. A correct decimal multiplication answer alone cannot verify that a shaded grid depicts the two fractional side lengths."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Tenths times tenths",
+          "Definition": "Each tenth of one linear unit times a tenth of the perpendicular linear unit gives one hundredth of unit square.",
+          "Rule": "0.1×0.1=0.01.",
+          "Example": "0.3×0.6 has18 shaded hundredth-unit cells."
+        },
+        {
+          "Title": "Multiply integer counts of fractional units",
+          "Definition": "Two decimal tenths factors can be reexpressed as integers multiplied by a one-hundredth area unit.",
+          "Rule": "2.4×0.5=(24×5)×0.01.",
+          "Example": "120 hundredths=1.20."
+        },
+        {
+          "Title": "Related whole products change scale",
+          "Definition": "Multiplying the same decimal factor by five instead of half multiplies the result by ten.",
+          "Rule": "2.4×5=12 while 2.4×0.5=1.2.",
+          "Example": "Factor size explains which product is larger."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Shaded hundredth cells",
+          "Question": "Find 0.3×0.6 using the same original unit square.",
+          "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
+          "Steps": [
+            "Divide the whole square into ten equal rows and ten equal columns.",
+            "Mark three columns in one orientation and six rows in the other.",
+            "Count18 intersection cells, each 0.01 square unit."
+          ],
+          "Answer": "0.18 square unit.",
+          "Check": "3×6 hundredths=18/100."
+        },
+        {
+          "Title": "Mixed whole-and-tenths factor",
+          "Question": "Find 2.4×0.5.",
+          "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
+          "Steps": [
+            "Rewrite2.4 as24 tenths and0.5 as5 tenths.",
+            "Multiply24×5=120 hundredth-sized pieces.",
+            "Compose100 hundredths into one whole, leaving20 hundredths."
+          ],
+          "Answer": "1.2 or 1.20.",
+          "Check": "2.4×0.5=1.2, versus2.4×5=12."
+        },
+        {
+          "Title": "Related product pair",
+          "Question": "Find 3.6×0.7 and compare to 36×7.",
+          "Method": "Independent Edulytiks fraction-grid or place-value decomposition with exact mathematical verification.",
+          "Steps": [
+            "Compute the whole-number product36×7=252.",
+            "Each source factor was scaled down by ten, so the product is scaled down by100.",
+            "Interpret252 hundredths."
+          ],
+          "Answer": "2.52.",
+          "Check": "36×7=252 and3.6×0.7=252×0.01=2.52."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiply 0.3×0.6 and report1.8",
+          "WhyWrong": "That answer counts tenths where the area grid creates hundredths, and exceeds one factor despite both below one.",
+          "Correction": "Count hundredth cells in a 10×10 whole square."
+        },
+        {
+          "Mistake": "Assume a product must always be smaller than both inputs",
+          "WhyWrong": "A multiplier between0 and1 decreases the other positive factor, but if the OTHER factor exceeds one the product may still exceed one.",
+          "Correction": "Check 3.6×0.7=2.52: it is less than3.6 but greater than0.7."
+        }
+      ],
+      "SummaryPoints": [
+        "A tenth of a tenth produces a hundredth-sized area, not another tenth.",
+        "Related integer products justify the hundredths scale.",
+        "Drawing and critiquing the fraction-area representation remain teacher-reviewed.",
+        "2021 IM K–5 Grade 5 Unit 5 Lesson 20: https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-20/lesson.html. Read on verified Our-CS: public source teacher lesson and Student Facing activities; original full Student Task PDF, gated response and independent image licensing still unverified. Text and math examples independently authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Products in the Hundredths Place PLC Activity — equivalent product meanings",
+          "Description": "Original accessible expression/area grid representation; no publisher card graphics copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "0.3×0.6",
+                "2.4×0.5",
+                "3.6×0.7"
+              ]
+            },
+            {
+              "Label": "Integer cell count",
+              "Cells": [
+                "3×6=18",
+                "24×5=120",
+                "36×7=252"
+              ]
+            },
+            {
+              "Label": "Unit cell",
+              "Cells": [
+                "0.01",
+                "0.01",
+                "0.01"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "0.18",
+                "1.20",
+                "2.52"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

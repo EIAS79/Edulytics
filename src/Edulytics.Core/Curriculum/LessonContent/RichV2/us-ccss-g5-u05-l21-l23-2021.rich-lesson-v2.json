@@ -1,0 +1,384 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u05-l21-l23-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L21",
+      "CultureCode": "en",
+      "Title": "Multiply More Decimals",
+      "ExplanationParagraphs": [
+        "Goal: extend place-value multiplication to two tenths-based decimal factors and large whole-number-by-hundredths products, explaining WHY equivalent integer-product expressions represent the same value. The 2021 source requires justification of equivalence before exact computation, then independent strategy selection.",
+        "Warm-up — benchmark: decide whether 6.4×2.7 is between12 and24 by comparing 6.4 with6 and7 and 2.7 with2 and3. An estimate near17 is reasonable, but an actual value needs a correct count of hundredths or decimal partial products.",
+        "Activity 1 — prove equivalence: calculate 6.4×2.7 as (64×27)×0.01, because both factors were written as tenths and 0.1×0.1=0.01. Multiply64×27=1728 to get17.28. Also calculate 5.6×3.2=(56×32)÷100=17.92 and 23×0.47=(23×47)×0.01=10.81. Explain what fractional unit each whole-number product counts rather than merely inserting decimal punctuation.",
+        "Activity 2 — choose your strategy: calculate 8.2×3.4=27.88 using partial products or 82×34 hundredths. Calculate 47×0.36=16.92. An extra 3-digit challenge is 235×0.18=42.30; show why the hundreds-place integer factor increases computation size but not the decimal unit used for the other factor.",
+        "Assessment: open justification of equivalent expressions, independent method choice and comparison of solutions require teacher review. Numeric results and decimal-place constraints can be checked, but a guessed decimal point without unit reasoning cannot prove the source learner task."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Multiply tenths and tenths",
+          "Definition": "Each factor can be rewritten as an integer count of one tenth.",
+          "Rule": "(a×0.1)(b×0.1)=(ab)×0.01.",
+          "Example": "6.4×2.7=(64×27)×0.01=17.28."
+        },
+        {
+          "Title": "Whole times hundredths",
+          "Definition": "A decimal to hundredths can represent an integer count of hundredths.",
+          "Rule": "23×0.47=(23×47)×0.01.",
+          "Example": "1081 hundredths=10.81."
+        },
+        {
+          "Title": "Magnitude and independent check",
+          "Definition": "Estimated whole-number bounds can catch misplaced decimal units.",
+          "Rule": "6.4×2.7 lies between6×2=12 and7×3=21.",
+          "Example": "The exact 17.28 is plausible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prove two tenths are hundredths",
+          "Question": "Find 6.4×2.7 without a decimal-point guess.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Rewrite 6.4=64 tenths and2.7=27 tenths.",
+            "Compute64×27=1728 individual tenth-by-tenth pieces.",
+            "Convert 1728 hundredths to a decimal."
+          ],
+          "Answer": "17.28.",
+          "Check": "6.4×2.7=(64×27)×0.01."
+        },
+        {
+          "Title": "Whole by hundredths",
+          "Question": "Find 23×0.47.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Express 0.47 as47 hundredths.",
+            "Multiply23×47=1081.",
+            "Identify 1081 hundredths."
+          ],
+          "Answer": "10.81.",
+          "Check": "23×0.47=23×47/100=10.81."
+        },
+        {
+          "Title": "Challenge with a three-digit whole factor",
+          "Question": "Find 235×0.18.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Express 0.18 as18 hundredths.",
+            "Multiply235×18=4230.",
+            "Regroup4230 hundredths as42 whole units and30 hundredths."
+          ],
+          "Answer": "42.30.",
+          "Check": "235×0.18=42.3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use a decimal-place placement rule without identifying units",
+          "WhyWrong": "A numeric result may happen to be correct but the source asks why integer multiplication represents the decimal product.",
+          "Correction": "Show how tenths×tenths produces hundredths, then interpret the product."
+        },
+        {
+          "Mistake": "Assume a larger whole-number factor forces extra decimal places",
+          "WhyWrong": "Decimal unit depends on the fractional factor, not total number of printed digits in the whole factor.",
+          "Correction": "Track how many tenths or hundredths the decimal factor contains."
+        }
+      ],
+      "SummaryPoints": [
+        "Two tenths factors multiply as an integer product of hundredth-sized units.",
+        "Whole-by-hundredths products can be computed from familiar whole-number facts.",
+        "Equivalence explanations and independent strategy choice require teacher review.",
+        "IM K–5 2021 first edition Grade 5 Unit 5 Lesson 21, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-21/lesson.html. Primary/Our-CS authorized read-only teacher Student Facing and source activity review; original Student Task PDF, gated Cool-down and image-rights verification remain open. Independent first-party examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multiply More Decimals — exact model",
+          "Description": "Original Edulytiks equal-group/place-value table; no copied teacher card or source illustration.",
+          "Rows": [
+            {
+              "Label": "Problem",
+              "Cells": [
+                "6.4×2.7",
+                "23×0.47",
+                "235×0.18"
+              ]
+            },
+            {
+              "Label": "Integer product",
+              "Cells": [
+                "64×27=1728",
+                "23×47=1081",
+                "235×18=4230"
+              ]
+            },
+            {
+              "Label": "Scale",
+              "Cells": [
+                "×0.01",
+                "×0.01",
+                "×0.01"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "17.28",
+                "10.81",
+                "42.30"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L22",
+      "CultureCode": "en",
+      "Title": "Divide Whole Numbers by 0.1 and 0.01 PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: discover and explain the pattern in the NUMBER of tenths or hundredths contained in positive whole quantities, not memorize an unexplained rule for sliding decimal points. The 2021 lesson first builds an individual-grid pattern from three and four wholes and then generalizes to any whole number with partner revision.",
+        "Warm-up: look at a first-party original one-unit square divided into ten equal rows and each row into ten equal cells. Label each row as one tenth and each small cell as one hundredth. Count 10 rows or 100 individual small cells without changing the unit whole.",
+        "Activity 1 — count several wholes: three wholes have30 tenths or300 hundredths, so3÷0.1=30 and3÷0.01=300. Four whole-unit squares similarly contain40 tenths or400 hundredths. Draw a single grid and explain how the count scales by the number of identical wholes instead of drawing four separate pictures when the conceptual unit is already understood.",
+        "Activity 2 — formulate a general rule: for a positive whole number n, n÷0.1 equals10n and n÷0.01 equals100n. Use an independently chosen n such as seven and justify the values70 and700 by repeatedly counting pieces in one whole. Explain why dividing by a positive number less than one can yield a greater numerical quotient.",
+        "Assessment: the original teacher tasks include an initial visual pattern, a student-authored general explanation, partner critique and revision. A check of n×10 or n×100 alone is not full source-task parity; teacher reviews the grid and reasoning."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Ten tenths in one whole",
+          "Definition": "One whole contains ten equal 0.1-sized groups.",
+          "Rule": "n÷0.1=10n for whole n≥0.",
+          "Example": "3÷0.1=30."
+        },
+        {
+          "Title": "Hundred hundredths in one whole",
+          "Definition": "One whole contains 100 equal 0.01-sized groups.",
+          "Rule": "n÷0.01=100n.",
+          "Example": "4÷0.01=400."
+        },
+        {
+          "Title": "Division by a small positive group size",
+          "Definition": "Smaller group sizes require more groups from a fixed positive total.",
+          "Rule": "For n>0, n÷0.01=10×(n÷0.1).",
+          "Example": "Seven wholes contain700 hundredths and70 tenths."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Count tenths",
+          "Question": "How many 0.1-sized groups fit inside three wholes?",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Count ten tenths per whole.",
+            "Repeat three times for three identical wholes.",
+            "Write the group-count division expression."
+          ],
+          "Answer": "30 tenths.",
+          "Check": "30×0.1=3."
+        },
+        {
+          "Title": "Count hundredths",
+          "Question": "How many 0.01-sized groups fit inside four wholes?",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Count100 hundredths in one whole.",
+            "Repeat for four wholes.",
+            "Compare with the tenths count for the same amount."
+          ],
+          "Answer": "400 hundredths.",
+          "Check": "400×0.01=4."
+        },
+        {
+          "Title": "Generalize",
+          "Question": "For a whole number seven, find 7÷0.1 and 7÷0.01.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Use the 10 and100 fractional groups per single whole.",
+            "Multiply by seven for each group size.",
+            "Verify with inverse multiplication."
+          ],
+          "Answer": "70 and700.",
+          "Check": "70×0.1=7;700×0.01=7."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Divide the whole by ten instead of dividing by one tenth",
+          "WhyWrong": "One tenth is the SIZE of each group, not the number of groups to make.",
+          "Correction": "Count ten tenths in one whole, so the quotient for seven wholes is70."
+        },
+        {
+          "Mistake": "State a place-value shift rule with no group model",
+          "WhyWrong": "The source goal is explaining the pattern using fractional units.",
+          "Correction": "Show one full unit subdivided into tenths/hundredths and generalize."
+        }
+      ],
+      "SummaryPoints": [
+        "Dividing by0.1 counts tenths and dividing by0.01 counts hundredths.",
+        "For whole n, the quotients are10n and100n respectively.",
+        "Visual grouping and explanation of the pattern remain teacher-reviewed.",
+        "IM K–5 2021 first edition Grade 5 Unit 5 Lesson 22, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-22/lesson.html. Primary/Our-CS authorized read-only teacher Student Facing and source activity review; original Student Task PDF, gated Cool-down and image-rights verification remain open. Independent first-party examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Divide Whole Numbers by 0.1 and 0.01 PLC Activity — exact model",
+          "Description": "Original Edulytiks equal-group/place-value table; no copied teacher card or source illustration.",
+          "Rows": [
+            {
+              "Label": "Dividend",
+              "Cells": [
+                "3",
+                "4",
+                "7"
+              ]
+            },
+            {
+              "Label": "Divided by0.1",
+              "Cells": [
+                "30",
+                "40",
+                "70"
+              ]
+            },
+            {
+              "Label": "Divided by0.01",
+              "Cells": [
+                "300",
+                "400",
+                "700"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U05:L23",
+      "CultureCode": "en",
+      "Title": "Divide Whole Numbers by Decimals",
+      "ExplanationParagraphs": [
+        "Goal: count how many groups of a decimal less than one fit into a whole number, extending the prior lesson from unit tenths and hundredths to 0.2, 0.02, 0.5 and 0.25. The source first varies the whole dividend with a fixed decimal divisor and asks learners to explain pattern relationships, then uses an economical one-whole model to solve a larger dividend.",
+        "Warm-up: compare 1÷0.2 and1÷0.02 using one hundredths grid. Five groups of0.2 fit into one whole, while fifty groups of0.02 fit into one whole. Distinguish counting exact repeated portions from ordinary division of a fraction among more people.",
+        "Activity 1 — fixed divisor: for 0.2-sized groups, 1,2,3,4 whole units contain 5,10,15,20 groups. For0.02-sized groups, they contain50,100,150,200 groups. Describe the ten-to-one relationship between counts for these two group sizes, using first-party diagrams or a verbally labeled row of hundredths.",
+        "Activity 2 — use a one-whole fact: calculate 12÷0.2 by knowing five 0.2-sized groups fit into one whole, then multiply twelve by five to get60. For 14÷0.5=28, note two half-sized groups per whole. For5÷0.25=20, note four quarter-sized groups per whole. Partner explains why the larger division can be solved without drawing 12 complete grids.",
+        "Assessment: the official task requires connecting patterns, using a diagram of one whole, translating to a multiplication relationship and reviewing another learner's explanation. Numeric quotient answers alone do not establish a correct grouping model."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Count divisor-sized groups",
+          "Definition": "A whole number divided by a positive decimal group size asks how many such groups fit.",
+          "Rule": "1÷0.2=5; n÷0.2=5n.",
+          "Example": "12÷0.2=60."
+        },
+        {
+          "Title": "Smaller divisor yields more groups",
+          "Definition": "A group of size0.02 is ten times smaller than0.2, so there are ten times as many groups for a fixed positive total.",
+          "Rule": "n÷0.02=10×(n÷0.2).",
+          "Example": "One whole contains fifty hundredth-pairs."
+        },
+        {
+          "Title": "Use inverse multiplication",
+          "Definition": "Multiplying the number of groups by group size reconstructs original quantity.",
+          "Rule": "20×0.25=5.",
+          "Example": "An exact quotient must satisfy divisor×quotient=dividend."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Pattern across dividends",
+          "Question": "List the quotients 1,2,3,4 divided by0.2 and by0.02.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Count five groups of0.2 in one whole.",
+            "Count fifty groups of0.02 in one whole.",
+            "Scale both counts by1,2,3,4."
+          ],
+          "Answer": "By0.2:5,10,15,20. By0.02:50,100,150,200.",
+          "Check": "20×0.2=4;200×0.02=4."
+        },
+        {
+          "Title": "Use the one-whole model",
+          "Question": "Find12÷0.2 using one whole, not 12 separate drawings.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "A single whole contains five groups of0.2.",
+            "There are twelve complete wholes.",
+            "Multiply12×5."
+          ],
+          "Answer": "60 groups.",
+          "Check": "60×0.2=12."
+        },
+        {
+          "Title": "Half and quarter groups",
+          "Question": "Compute14÷0.5 and5÷0.25.",
+          "Method": "Use a first-party exact decimal group interpretation with mathematical check; teacher reviews learner-created diagrams and explanations.",
+          "Steps": [
+            "Identify two halves in one whole and four quarters in one whole.",
+            "Multiply fourteen by two and five by four.",
+            "Explain which decimal amount is the size of each group."
+          ],
+          "Answer": "28 and20.",
+          "Check": "28×0.5=14 and20×0.25=5."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reverse the dividend and decimal divisor",
+          "WhyWrong": "The amount being partitioned is the whole total; the decimal determines one group size.",
+          "Correction": "Write each group-size question before applying division."
+        },
+        {
+          "Mistake": "Assume a decimal denominator 0.02 means 2 groups per whole",
+          "WhyWrong": "A pair of hundredths fits fifty times in a whole, not twice.",
+          "Correction": "Count100 hundredths as 50 pairs of hundredths."
+        }
+      ],
+      "SummaryPoints": [
+        "One whole can be a reusable visual model for many whole-number dividends.",
+        "Equal groups of0.2 and0.02 differ in count by a factor of ten.",
+        "Teacher reviews the diagram, pattern claim and inverse explanation.",
+        "IM K–5 2021 first edition Grade 5 Unit 5 Lesson 23, https://im.kendallhunt.com/k5/teachers/grade-5/unit-5/lesson-23/lesson.html. Primary/Our-CS authorized read-only teacher Student Facing and source activity review; original Student Task PDF, gated Cool-down and image-rights verification remain open. Independent first-party examples."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Divide Whole Numbers by Decimals — exact model",
+          "Description": "Original Edulytiks equal-group/place-value table; no copied teacher card or source illustration.",
+          "Rows": [
+            {
+              "Label": "Whole quantity",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "0.2-sized groups",
+              "Cells": [
+                "5",
+                "10",
+                "15",
+                "20"
+              ]
+            },
+            {
+              "Label": "0.02-sized groups",
+              "Cells": [
+                "50",
+                "100",
+                "150",
+                "200"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

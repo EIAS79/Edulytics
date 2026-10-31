@@ -1,0 +1,541 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u03-l07-l10-im2021-first-party-richv2-v5-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L07",
+      "CultureCode": "en",
+      "Title": "Generalize Fraction Multiplication",
+      "ExplanationParagraphs": [
+        "Goal: move from a fully gridded fraction-area diagram to multiplying two fractions without requiring every unit cell to be drawn. The 2021 source makes the scaffolding optional by stages and asks children to decide when a sketch is useful, including unusually large denominators.",
+        "Warm-up: compare two diagrams for a 4/5-by-1/2 rectangular region, one with twenty equal cells and another labelled only with side lengths. Explain why 8/20, 4/10 and 2/5 describe the same area despite different partitions.",
+        "Activity 1 — three original products: 2/5×3/4=6/20=3/10, then 3/7×4/5=12/35, then 9/11×5/8=45/88. For the first, draw a five-column-by-four-row whole; for the second choose a sketch or counting; for the third use the numerator/denominator structure when physically drawing 88 parts is inefficient. Explain the benefit and limits of each choice.",
+        "Activity 2 — a reasoning critique: a learner claims the 9×5 selected cells could be counted as 14 rather than 45 by adding numerators. Explain that a 9-row selected region repeated across five columns has 45 small cells, while all 11×8=88 cells remain in the full unit. Check that product less than one is plausible because both factors are less than one.",
+        "Source boundary: strategies for diagram choice, a correct visual partition, commutativity and explanation are teacher reviewed. Numeric product checks do not establish whether learners understand fraction-area structure; original teacher image cards are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product independent of diagram density",
+          "Definition": "A fraction product can be found by counting selected cells over all cells or by equivalent exact multiplication.",
+          "Rule": "For valid fractions a/b and c/d, the product ac/bd.",
+          "Example": "9/11×5/8=45/88."
+        },
+        {
+          "Title": "Optional representation",
+          "Definition": "A full grid is one tool, not an obligation when denominators make many cells.",
+          "Rule": "Choose a diagram, decomposition or an abstract product if the reasoning is clear.",
+          "Example": "Drawing 88 tiny cells may be less useful than naming 9×5 and 11×8."
+        },
+        {
+          "Title": "Equivalent area fractions",
+          "Definition": "Repartitioning into a finer equal grid can preserve area.",
+          "Rule": "8/20=4/10=2/5.",
+          "Example": "Both drawings with dimensions 4/5 and 1/2 give area 2/5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute with a grid",
+          "Question": "Find 2/5×3/4.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Partition whole into five columns and four rows.",
+            "Shade two columns across three selected rows, giving six cells.",
+            "Compare with 20 total cells and simplify."
+          ],
+          "Answer": "6/20=3/10.",
+          "Check": "2×3/(5×4)=6/20."
+        },
+        {
+          "Title": "Choose an efficient method",
+          "Question": "Find 3/7×4/5.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Identify three selected rows out of seven and four columns out of five.",
+            "Count 3×4=12 selected cells of 7×5=35.",
+            "Write the exact product without needing every cell drawn."
+          ],
+          "Answer": "12/35.",
+          "Check": "Both factors are below one, and 12/35 is also below one."
+        },
+        {
+          "Title": "Large denominator product",
+          "Question": "Find 9/11×5/8.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Explain that a detailed 88-cell sketch is optional.",
+            "Count selected-cell product 9×5=45.",
+            "Count whole-cell product 11×8=88."
+          ],
+          "Answer": "45/88.",
+          "Check": "Multiplying across gives 45/88 and the result is below both factors."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add rather than multiply the numerator/denominator counts",
+          "WhyWrong": "A grid has rows times columns; adding their counts cannot describe a rectangular array.",
+          "Correction": "Count the product of row and column selections."
+        },
+        {
+          "Mistake": "Assume a product is untrustworthy unless a full drawing is made",
+          "WhyWrong": "Understanding the grid structure can justify exact fraction multiplication symbolically.",
+          "Correction": "Use an optional sketch or cell-count argument and check size against benchmarks."
+        }
+      ],
+      "SummaryPoints": [
+        "Area-grid structure justifies a fraction multiplication algorithm even without a full picture.",
+        "Choose a helpful representation and explain why it matches the quantities.",
+        "Teacher reviews method selection and student diagrams, not just numeric products.",
+        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 7 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-7/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Generalize Fraction Multiplication — mathematical model",
+          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Rows": [
+            {
+              "Label": "Product",
+              "Cells": [
+                "2/5×3/4",
+                "3/7×4/5",
+                "9/11×5/8"
+              ]
+            },
+            {
+              "Label": "Selected cells",
+              "Cells": [
+                "6",
+                "12",
+                "45"
+              ]
+            },
+            {
+              "Label": "Total unit cells",
+              "Cells": [
+                "20",
+                "35",
+                "88"
+              ]
+            },
+            {
+              "Label": "Area",
+              "Cells": [
+                "3/10",
+                "12/35",
+                "45/88"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L08",
+      "CultureCode": "en",
+      "Title": "Apply Fraction Multiplication",
+      "ExplanationParagraphs": [
+        "Goal: apply fraction multiplication to find areas of real rectangular designs, including subregions of different widths. The 2021 source uses flags with partly fractional measurements and expects a learner to derive stripe areas and explain the relationship between stripe widths.",
+        "Warm-up: calculate 1/3×3/5, 2/3×3/5 and 5/3×3/5 mentally and compare strategies. Explain that an area must use consistent linear side lengths before reporting square units.",
+        "Activity 1 — first-party flag-like fabric: a small rectangular banner is 8 inches across and 6 1/2 inches tall. Calculate total area 8×(6+1/2)=52 square inches. A narrow red stripe is 3/4 inch high, so its area is 8×3/4=6 square inches; an adjacent blue stripe is 1 1/2 inches high, twice as tall, so its area is 8×1 1/2=12 square inches.",
+        "Activity 2: compare two geometric strategies: decompose the total banner into a 6-inch main strip plus a half-inch strip, or convert 6 1/2 to 13/2 and multiply. Explain why 8×13/2=52 matches both. Use a label-only rectangle or own paper model; do not reproduce the publisher's national flag artwork, some of which carries separate third-party rights.",
+        "Assessment: exact area products are checkable, but choice of diagram, unit labels, relating stripe heights to area and mathematical discourse require teacher review. The original response images and copyrighted flags were not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Area in a realistic context",
+          "Definition": "Multiply the two perpendicular measured dimensions of a rectangular flag or stripe.",
+          "Rule": "8 inches×6 1/2 inches=52 square inches.",
+          "Example": "One subregion of height 3/4 inch and width 8 inches is 6 square inches."
+        },
+        {
+          "Title": "Proportional stripes with fixed width",
+          "Definition": "For stripes of the same length, doubling stripe height doubles area.",
+          "Rule": "Area A=width×height; if height doubles and width stays fixed, area doubles.",
+          "Example": "8×1 1/2 is twice 8×3/4."
+        },
+        {
+          "Title": "Mixed-number equivalence",
+          "Definition": "A mixed-length area can be computed by decomposition or improper fraction.",
+          "Rule": "8×(6+1/2)=8×13/2.",
+          "Example": "Both give 52 square inches."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Whole banner",
+          "Question": "A banner measures 8 inches by 6 1/2 inches. What is its area?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Split height into 6 and 1/2 inches.",
+            "Compute 8×6=48 square inches.",
+            "Add 8×1/2=4 square inches."
+          ],
+          "Answer": "52 square inches.",
+          "Check": "8×13/2=52."
+        },
+        {
+          "Title": "Red stripe",
+          "Question": "A stripe is 8 inches across and 3/4 inch high. What is its area?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Identify the same 8-inch width as the banner.",
+            "Multiply 8×3/4.",
+            "Write square inches, not linear inches."
+          ],
+          "Answer": "6 square inches.",
+          "Check": "8×3/4=24/4=6."
+        },
+        {
+          "Title": "Blue stripe",
+          "Question": "A second stripe has the same width but height 1 1/2 inches. How does its area compare?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Notice 1 1/2 is twice 3/4.",
+            "Use double the red stripe area, 2×6.",
+            "Check independently with 8×3/2."
+          ],
+          "Answer": "12 square inches, twice the red stripe's area.",
+          "Check": "8×3/2=12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat a stripe's height as its area",
+          "WhyWrong": "Area measures the product of width and height.",
+          "Correction": "Use square units and the correct shared width."
+        },
+        {
+          "Mistake": "Reuse protected publisher flag artwork without asset review",
+          "WhyWrong": "A public textbook page and its separate images can have different licenses and attribution requirements.",
+          "Correction": "Use independently authored color-stripe models and verify each external asset separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Fraction products can measure regions of a physical banner and its stripes.",
+        "Same width with doubled height gives doubled area.",
+        "Source image interpretation and student explanation need teacher review; original flag assets not reused.",
+        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 8 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-8/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Apply Fraction Multiplication — mathematical model",
+          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Rows": [
+            {
+              "Label": "Region",
+              "Cells": [
+                "Full banner",
+                "Red stripe",
+                "Blue stripe"
+              ]
+            },
+            {
+              "Label": "Dimensions (in)",
+              "Cells": [
+                "8×6 1/2",
+                "8×3/4",
+                "8×1 1/2"
+              ]
+            },
+            {
+              "Label": "Area (in²)",
+              "Cells": [
+                "52",
+                "6",
+                "12"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L09",
+      "CultureCode": "en",
+      "Title": "My Own Flag (optional)",
+      "ExplanationParagraphs": [
+        "Goal: independently DESIGN a symbolic banner and compute or estimate areas of its colored geometric components. The source's optional activity emphasizes creativity, constraints, measurement and open mathematical modeling, rather than one numeric product as the only answer.",
+        "Warm-up: discuss features of meaningful, simple geometric flag designs without copying or choosing politically sensitive designs. Students can describe color symbolism using their own ideas; a teacher may guide respectful cultural discussion.",
+        "Activity 0 — visual design criteria: before making their own banner, compare two original abstract geometric designs for simplicity, recognizable contrast, meaningful symbols, a small consistent color palette, and avoidance of written words or ornate seals. Ask the learner to explain which criteria are met, which are in tension, and how the chosen design relates to a real community. This reflects the source's five-principle discussion but is not a verbatim copy of its flag images.",
+        "Activity 1 — own first-party design: choose a banner 8 inches wide and 5 1/2 inches tall. Divide its height into three nonoverlapping horizontal bands of heights 1 1/4, 2 and 2 1/4 inches. The band heights sum exactly to 5 1/2, and their areas are respectively 10, 16 and 18 square inches. Choose colors and a meaning for each band. Draw a labeled plan or describe it through accessible row heights.",
+        "Activity 2 — critique alternative layouts: if a learner adds an overlapping emblem, the union of colored regions may not be the plain sum of each separate painted piece. Ask the designer to explain whether it is a new layer of color versus a separate piece of fabric. Compare another legitimate design with equal total area but a different shape arrangement.",
+        "Teacher assessment: creativity, symbolism, physical design, estimation for unusual shapes, checking overlaps and the explanatory reflection are inherently teacher-reviewed. Numeric checks validate a proposed design's measurements only, and MUST NOT mark the original optional flag project automatically complete. No national-flag artwork or protected source images were reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Original flag design and area",
+          "Definition": "A design has chosen dimensions and may contain colored partitions whose areas are calculated separately.",
+          "Rule": "For nonoverlapping rectangles, total area is the sum of the component areas.",
+          "Example": "Three bands of areas 10,16,18 cover 44 square inches."
+        },
+        {
+          "Title": "Component widths and heights",
+          "Definition": "Each component must use side lengths that correspond to its actual extent.",
+          "Rule": "A band 8 inches wide and 1 1/4 inches tall has area 10 square inches.",
+          "Example": "8×5/4=10."
+        },
+        {
+          "Title": "Overlapping decoration",
+          "Definition": "Colored layers or emblems do not necessarily increase the unique cloth area.",
+          "Rule": "If pieces overlap, the union area needs a non-overlapping accounting.",
+          "Example": "A badge painted on top of a banner does not add fabric area."
+        },
+        {
+          "Title": "Criteria and open-design critique",
+          "Definition": "A design can be assessed for meaningful communication, distinctive structure and visual simplicity in addition to quantitative area.",
+          "Rule": "Evaluate the actual learner design with a teacher rubric; a numeric calculation cannot score its meaning or aesthetic choices.",
+          "Example": "A clear three-band pattern can satisfy a simplicity goal, but students still need to explain what the colors represent."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Design a three-band banner",
+          "Question": "Find area of an 8-by-5 1/2-inch banner with bands 1 1/4,2,2 1/4 inches tall.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Check heights sum: 1 1/4+2+2 1/4=5 1/2 inches.",
+            "Multiply the three band heights by the 8-inch width.",
+            "Add the nonoverlapping band areas."
+          ],
+          "Answer": "10+16+18=44 square inches total.",
+          "Check": "8×5 1/2=44."
+        },
+        {
+          "Title": "Find a band area",
+          "Question": "A band is 8 inches wide and 2 1/4 inches high. What area does it cover?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Rewrite 2 1/4 as 9/4.",
+            "Multiply 8×9/4.",
+            "Regroup to a whole area."
+          ],
+          "Answer": "18 square inches.",
+          "Check": "8×2+8×1/4=16+2=18."
+        },
+        {
+          "Title": "Check a mixed nonrectangular design",
+          "Question": "A learner paints a small star over a colored banner stripe. Is the banner fabric larger just because the star is painted?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Distinguish a separate fabric piece from pigment covering existing fabric.",
+            "Identify the actual physical boundary of the banner.",
+            "Recalculate fabric area using the banner's outer dimensions."
+          ],
+          "Answer": "No. With a painted star the fabric area remains 44 square inches.",
+          "Check": "Teacher checks the actual design; creative choices cannot be graded from one numeric answer."
+        },
+        {
+          "Title": "Critique a first-party design",
+          "Question": "A student makes a three-band banner with simple colors and writes its name across the middle. Which design criterion might be reconsidered?",
+          "Method": "Evaluate an independently described banner against simplicity and communicative criteria, without claiming one unique artistic answer.",
+          "Steps": [
+            "Describe the layout and what the bands represent.",
+            "Explain why additional lettering may reduce clarity at a distance.",
+            "Offer a graphical alternative and justify whether it preserves the student's intended meaning."
+          ],
+          "Answer": "A learner might replace lettering with a simple shape, while maintaining a meaningful design; other reasoned revisions are possible.",
+          "Check": "Teacher reviews the actual drawing and explanation; no numeric auto-grader may mark this task as complete."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add painted decoration as extra physical fabric area",
+          "WhyWrong": "Overlaying a color changes visual appearance, not the total underlying fabric.",
+          "Correction": "Count only actual occupied nonoverlapping fabric regions for a total area."
+        },
+        {
+          "Mistake": "Choose bands whose heights exceed the banner",
+          "WhyWrong": "The component shapes must fit the outer dimensions and not double-count regions.",
+          "Correction": "Sum heights and check they exactly match the planned banner height."
+        }
+      ],
+      "SummaryPoints": [
+        "A learner-designed flag can use mixed-length rectangular components and exact fraction multiplication.",
+        "Areas of nonoverlapping colored parts must add to the entire cloth area.",
+        "Creative design, symbolism, overlap decisions and explanation are teacher-reviewed.",
+        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 9 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-9/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "My Own Flag (optional) — mathematical model",
+          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Rows": [
+            {
+              "Label": "Band",
+              "Cells": [
+                "Top",
+                "Middle",
+                "Bottom",
+                "Total"
+              ]
+            },
+            {
+              "Label": "Height (in)",
+              "Cells": [
+                "1 1/4",
+                "2",
+                "2 1/4",
+                "5 1/2"
+              ]
+            },
+            {
+              "Label": "Area (in²)",
+              "Cells": [
+                "10",
+                "16",
+                "18",
+                "44"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U03:L10",
+      "CultureCode": "en",
+      "Title": "Concepts of Division (optional)",
+      "ExplanationParagraphs": [
+        "Goal: compare equal-sharing quotients conceptually before formal work on division of a unit fraction by a whole number and a whole number by a unit fraction. The public 2021 source asks students to order multiple sharing situations and reason about how changes in the number of sharers or items affect a person's share.",
+        "Warm-up: compare 120 divided by 12,6,3 and 2. With the same dividend, a smaller positive divisor produces a greater quotient, and the reasoning should be stated in terms of group size or number of shares.",
+        "Activity 1 — original snack-sharing table: compare five situations with whole items: (A) four people share forty, (B) five people share forty-five, (C) five people share forty, (D) ten people share forty, (E) five people share fifteen. Order each person's shares: A=10, B=9, C=8, D=4, E=3, so A>B>C>D>E. Students may first reason comparatively without full calculation, and then check by exact quotients.",
+        "Activity 2: hold total fixed at 40 pieces and compare groups of 4,5,10; then hold people fixed at 5 and vary totals 15,40,45. Explain why quotient changes differently in each family and state the valid positivity assumptions. Use diagrams or verbal grouping when mathematical representations differ.",
+        "Assessment: the source's optional lesson uses open order/why explanations and develops future fraction-division concepts. Computing one numerical quotient is insufficient evidence of the original comparison/ordering task. Teacher reviews comparative explanations and group models; original pretzel photograph and gated Cool-down not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fixed dividend, changing divisor",
+          "Definition": "Sharing the same positive total among more people gives a smaller equal share.",
+          "Rule": "For fixed a>0 and positive b<c, a/b>a/c.",
+          "Example": "40/4=10 is greater than 40/10=4."
+        },
+        {
+          "Title": "Fixed divisor, changing dividend",
+          "Definition": "More objects shared by the same positive number of people give each person more.",
+          "Rule": "For fixed b>0 and positive a<c, a/b<c/b.",
+          "Example": "45/5=9 exceeds 15/5=3."
+        },
+        {
+          "Title": "Ordering by share size",
+          "Definition": "An equal-sharing situation can be compared by the quotient total divided by recipients.",
+          "Rule": "Keep the contextual roles of dividend and divisor clear.",
+          "Example": "40 for 4 students ranks above 45 for 5 students."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Order five sharing stories",
+          "Question": "Sort 40÷4,45÷5,40÷5,40÷10,15÷5 from largest to smallest.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Compute or reason with 40÷4=10 and 45÷5=9.",
+            "Find 40÷5=8 and 40÷10=4.",
+            "Find 15÷5=3 and order the distinct shares."
+          ],
+          "Answer": "40÷4 > 45÷5 > 40÷5 > 40÷10 > 15÷5.",
+          "Check": "10 > 9 > 8 > 4 > 3."
+        },
+        {
+          "Title": "Keep the total fixed",
+          "Question": "Compare 40 items split among 4, 5 or 10 people.",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Identify the common total 40.",
+            "Compare increasing number of recipients.",
+            "Find shares 10,8,4 in that order."
+          ],
+          "Answer": "Four people receive the most; ten people the least.",
+          "Check": "40/4=10, 40/5=8,40/10=4."
+        },
+        {
+          "Title": "Keep the sharers fixed",
+          "Question": "Five people share 15,40 or45 objects in three situations. Which gives the most?",
+          "Method": "Original first-party mathematical model with an explicit reasoning check.",
+          "Steps": [
+            "Compare the same divisor 5.",
+            "Larger dividend 45 means greater share.",
+            "Verify 45/5=9, 40/5=8, 15/5=3."
+          ],
+          "Answer": "The 45-object situation gives 9 each, the greatest share.",
+          "Check": "Every quotient uses the same five recipients."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume the greatest total always gives the largest share",
+          "WhyWrong": "The number of recipients may also change, so the dividend alone cannot order all situations.",
+          "Correction": "Compare both total quantity and recipient count, or compute quotients."
+        },
+        {
+          "Mistake": "Infer negative or zero divisor cases from positive sharing models",
+          "WhyWrong": "The original fair-sharing context assumes a positive number of recipients.",
+          "Correction": "State the positive-divisor requirement and preserve the context of equal real-world shares."
+        }
+      ],
+      "SummaryPoints": [
+        "Increasing recipients for the same positive total decreases each share.",
+        "Increasing the total for the same positive number of people increases each share.",
+        "Comparing and defending the order of sharing situations is teacher-reviewed.",
+        "Public source: 2021 first-edition IM K–5 Grade 5 Unit 3 Lesson 10 https://im.kendallhunt.com/k5/teachers/grade-5/unit-3/lesson-10/lesson.html. First-party Edulytiks math examples and accessible descriptions. Original Student Task PDF/gated response and any third-party flag art not copied or verified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Concepts of Division (optional) — mathematical model",
+          "Description": "Accessible first-party model written as a text table, not publisher diagrams or third-party flag art.",
+          "Rows": [
+            {
+              "Label": "Situation",
+              "Cells": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            },
+            {
+              "Label": "Objects",
+              "Cells": [
+                "40",
+                "45",
+                "40",
+                "40",
+                "15"
+              ]
+            },
+            {
+              "Label": "People",
+              "Cells": [
+                "4",
+                "5",
+                "5",
+                "10",
+                "5"
+              ]
+            },
+            {
+              "Label": "Each receives",
+              "Cells": [
+                "10",
+                "9",
+                "8",
+                "4",
+                "3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

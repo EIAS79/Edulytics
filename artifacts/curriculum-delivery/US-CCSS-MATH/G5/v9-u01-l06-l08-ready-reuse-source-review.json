@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "grade": "US-CCSS-MATH:G5:IM-K5-2021",
+  "stage": "V9 SOURCE_HTML_PARTIAL_READY_REUSE_NOT_A_APPROVAL",
+  "branch": "curriculum/us-ccss-g5-full-grade-20261028",
+  "sourceEdition": "IM 2021 first-edition Grade 5",
+  "sourceEvidence": "2021 teacher lesson.html with Student Facing tasks; read-only verified Primary/Our-CS",
+  "sourceStudentPdf": "NOT_INSPECTED",
+  "sourceFigures": "NOT_VERIFIED",
+  "gatedResponse": "NOT_ACCESSED",
+  "copyright": "Independent original Edulytiks text/number models only, no publisher artwork reused",
+  "lessons": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L06",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-6/lesson.html",
+      "classification": "READY_REUSE_CURRENT_FIRST_PARTY_CANDIDATE",
+      "observedTasks": [
+        "True/false mathematical expressions before numerical calculation",
+        "Partner prism-and-expression card match and original additional expression",
+        "Compare two tables: side lengths vs base area and corresponding perpendicular height"
+      ],
+      "numericBoundaries": [
+        "(4×2)×5=4×(2×5) true",
+        "(2×5)×4=2×20 true",
+        "5×4×2=10×40 false"
+      ],
+      "humanRubric": [
+        "Each expression maps to actual cube layers",
+        "Partners justify original extra valid expression",
+        "Explain two tables and meaning of base-area units"
+      ],
+      "risk": "Original pictured card geometry not independently verified"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L07",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-7/lesson.html",
+      "classification": "READY_REUSE_CURRENT_FIRST_PARTY_CANDIDATE",
+      "observedTasks": [
+        "Choose cubic centimeter/inch/foot for everyday objects and defend choices",
+        "Information gap: partner must request missing prism size and explain purpose",
+        "Wait for teacher review before exchanging new cards"
+      ],
+      "numericBoundaries": [
+        "4ft×2ft×3ft=24ft^3 with width explicitly supplied",
+        "24 by itself without unit cannot determine scale"
+      ],
+      "humanRubric": [
+        "Unit choice is argued, not fixed to one answer",
+        "Missing measurements requested and justified before calculation",
+        "No conjectured value treated as source-provided"
+      ],
+      "risk": "Original problem/data card and freezer illustration not independently verified"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G5:U01:L08",
+      "sourceUrl": "https://im.kendallhunt.com/k5/teachers/grade-5/unit-1/lesson-8/lesson.html",
+      "classification": "READY_REUSE_CURRENT_FIRST_PARTY_CANDIDATE",
+      "observedTasks": [
+        "Partner constructs 12-cube and 10-cube prisms, joins without double-counting, explains total volume",
+        "Identify two prism components and add their volumes",
+        "Decompose illustrated composite prisms in alternate valid ways"
+      ],
+      "numericBoundaries": [
+        "12+10=22 cubic units",
+        "3×2×2+3×2×3=30 cubic units"
+      ],
+      "humanRubric": [
+        "Components do not overlap interior cubic units",
+        "Different valid decompositions accepted",
+        "Explain additive volume using a model or accessible representation"
+      ],
+      "risk": "Exact shapes in all publisher illustrated figures not independently confirmed"
+    }
+  ],
+  "test": {
+    "path": "tests/academic-us-ccss-g5-u01-cubic-info-gap-v9.test.cjs",
+    "nativeNode": "v22.16.0",
+    "passed": 3,
+    "failed": 0,
+    "skipped": 1,
+    "gitBlobSha": "9058fc068790ec08cbcc61af5dce35e3308925e3",
+    "note": "One initial test expectation about associativity was incorrect; corrected before GitHub commit, final source SHA passes. Repo JSON structure check skipped because no checkout."
+  },
+  "productGates": {
+    "stageA": "PARTIAL_SOURCE_HTML_NOT_APPROVED",
+    "stageB": "NOT_RUN_AUTHENTICATED",
+    "stageC": "NOT_RUN_SELECTED_PRACTICE",
+    "stageD": "NOT_RUN_PRODUCT",
+    "academicAccepted": false,
+    "ownerUAT": "NOT_RUN"
+  },
+  "sharedIssue": "https://github.com/EIAS79/Edulytics/issues/592",
+  "next": "PED:US-CCSS-MATH:G5:U01:L09"
+}

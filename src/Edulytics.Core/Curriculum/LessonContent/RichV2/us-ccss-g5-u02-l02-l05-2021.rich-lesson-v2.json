@@ -1,0 +1,802 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u02-l02-l05-first-party-sharing-richv2-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L02",
+      "CultureCode": "en",
+      "Title": "Share More Sandwiches",
+      "ExplanationParagraphs": [
+        "Goal: connect one whole divided among several people with a unit fraction. This lesson builds on the previous exploratory sandwich models and now connects tape diagrams, fractions and division notation.",
+        "Warm-up — Estimation Exploration: a rectangle stands for exactly one whole; its small shaded segment is less than a fourth and approximately a fifth. Students record too-low, about-right, and too-high fraction estimates and explain their boundaries, rather than treating a screen drawing as an exact measurement.",
+        "Activity 1 — One Sandwich: Jada's table uses precisely one sandwich and 2, 3, 4, or 5 people. Complete the four rows with (1÷2, 1/2), (1÷3, 1/3), (1÷4, 1/4), and (1÷5, 1/5). Choose ONE row and draw equal-size area parts; explain the denominator as the number of people, the dividend as sandwiches, and the pattern of smaller portions for more people.",
+        "Activity 2 — Card Sort: Sandwich Match: the source's second activity is NOT a repeat of the prior lesson's two-sandwich/three-person computation. Begin with two identical whole sandwiches shared among five people, so 2÷5=2/5 each. Match situations, division expressions and multiple equivalent diagrams from the teacher-supplied card set; some situations and expressions may match more than one diagram. For one matched set, explain how the WHOLES show sandwich count, equal parts show recipient count and selected pieces show each person's amount. Another source discussion pairs three sandwiches among two people with 3÷2=3/2=1 1/2. Students compare possible matches and justify them with peers.",
+        "Assessment and source limits: a correct quotient alone does not establish diagram/card correspondence. Teacher checks each selected card for the same total whole count, equal number of shares per whole, correctly sized total portion, possible multiple diagram matches and student reasoning. The three-page original 2021 Student Task PDF and teacher Student Facing HTML were inspected. The separate Sandwich Match blackline-master card identities, rights to individual third-party images, login-gated Cool-down and actual authenticated practice are NOT_VERIFIED; first-party matching examples illustrate the task but are not claimed as copied official cards.",
+        "Edulytiks-original exit check (NOT the gated 2021 publisher 'How Much Sandwich?'): three identical sandwiches are shared equally among four people. Show a matching division expression and fair area model using three congruent whole bars each partitioned into fourths. Every person gets three fourths of a sandwich. Explain why a diagram containing only one sandwich, or four pieces of unequal size, cannot represent the given three-whole context. Accept an equivalent regrouped drawing, oral/tactile model and explanation; teacher verifies quantities and fractional whole, not solely the answer 3/4."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit fractions as equal shares",
+          "Definition": "One fixed whole split into b equal pieces.",
+          "Rule": "1÷b=1/b for b positive.",
+          "Example": "One sandwich for four children gives 1/4 each."
+        },
+        {
+          "Title": "More people for the same whole",
+          "Definition": "Increasing the number of equal parts makes each part smaller.",
+          "Rule": "1/5 < 1/2 for the same-sized sandwich.",
+          "Example": "Five recipients receive smaller shares than two."
+        },
+        {
+          "Title": "Fractions as quotients",
+          "Definition": "The dividend is the sandwich total and divisor the number of people.",
+          "Rule": "a÷b=a/b for b positive.",
+          "Example": "2÷3=2/3 sandwich."
+        },
+        {
+          "Title": "Match context, equation and drawing",
+          "Definition": "Different diagrams can represent the same equal-sharing quotient when they preserve number of identical wholes and number of recipients.",
+          "Rule": "Check both numerator (sandwiches) and denominator (equal recipients); a final numeric fraction does not prove a diagram match.",
+          "Example": "Two identical sandwiches among five recipients can be shown as two fifth-partitioned bars, 2÷5=2/5 per person."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "One sandwich for five",
+          "Question": "What is each share of one sandwich shared among five?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Choose one sandwich as the whole.",
+            "Draw five equal-area parts.",
+            "Give each person exactly one part."
+          ],
+          "Answer": "1/5 sandwich.",
+          "Check": "Five shares of 1/5 make one whole."
+        },
+        {
+          "Title": "Compare halves and fourths",
+          "Question": "Which is bigger: 1/2 or 1/4?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Draw two identical whole sandwiches.",
+            "Partition one into two parts and the other into four.",
+            "Recognize one half is two fourths."
+          ],
+          "Answer": "1/2 is larger.",
+          "Check": "2/4=1/2."
+        },
+        {
+          "Title": "First-party Sandwich Match example — two whole sandwiches for five",
+          "Question": "Match this independently authored card set: two whole sandwiches, five recipients, an area diagram of two identical bars each in fifths, and an expression.",
+          "Method": "Compare the whole objects, equally sized fifths and the division expression; articulate why they refer to one situation.",
+          "Steps": [
+            "The context has two entire identical sandwiches and five recipients.",
+            "Partition each whole into five equal-area portions; each recipient takes one fifth from both sandwiches.",
+            "A drawn two-row bar model with two fifths shaded for each person matches 2÷5 and 2/5.",
+            "Another valid drawing may regroup the same total share; explain the connection rather than accepting only one picture."
+          ],
+          "Answer": "2÷5=2/5 sandwich per person; an accurately partitioned two-whole diagram matches.",
+          "Check": "5×(2/5)=2 sandwiches. A drawing with only one whole or unequal partitions must be rejected even if its label says 2/5."
+        },
+        {
+          "Title": "Card match with a quotient greater than one",
+          "Question": "Three equally sized sandwiches are shared by two friends. Which quotient and drawing match?",
+          "Method": "Compare the numerator with three source wholes, denominator with two recipients, and each person's area share.",
+          "Steps": [
+            "Represent three identical whole rectangles divided into halves.",
+            "Each friend receives a half from each rectangle.",
+            "Sum three halves and write 3÷2=3/2=1 1/2.",
+            "Explain why a two-whole drawing cannot represent this context merely by labeling it 3/2."
+          ],
+          "Answer": "Each friend gets 3/2 or 1 1/2 sandwiches.",
+          "Check": "2×3/2=3 sandwiches; inspect drawing, not solely the fraction."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use the sandwich count as denominator",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Place the number of recipients in the denominator when each whole is divided equally."
+        },
+        {
+          "Mistake": "Treat extra recipients as larger portions",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Compare equal-sized pieces from the same unit whole."
+        },
+        {
+          "Mistake": "Replace Sandwich Match with a single 2÷3 calculation",
+          "WhyWrong": "The source's second activity assesses correspondence among physical contexts, varied representations and division-expression cards, with some multiple matches.",
+          "Correction": "Require a chosen source-aligned card matching set and an explanation of wholes, fifths/halves and what each number means; use 2÷5 and 3÷2 as grounded examples."
+        }
+      ],
+      "SummaryPoints": [
+        "Jada's one-whole table: 1÷2=1/2, 1÷3=1/3, 1÷4=1/4, 1÷5=1/5; choose one row for a diagram and explain a pattern.",
+        "Warm-up estimates a shaded piece of one whole near one fifth using low/about-right/high bounds; do not infer an exact unmeasured fraction.",
+        "The source Activity 2 Card Sort: Sandwich Match aligns situation, drawing, and expression; two sandwiches among five give 2/5, while three among two give 3/2.",
+        "Different matching diagrams can be valid. Teacher reviews whether each whole, number of recipients and chosen portions correspond to the division situation.",
+        "2021 public teacher lesson and all 3 pages of original Student Task PDF inspected. Publisher's separate Sandwich Match blackline master cards, individual asset rights and gated Cool-down NOT_VERIFIED. No official artwork reproduced."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Share More Sandwiches — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "People",
+              "Cells": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "Amount per person",
+              "Cells": [
+                "1/2",
+                "1/3",
+                "1/4",
+                "1/5"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "First-party Sandwich Match crosswalk (not publisher card reproductions)",
+          "Description": "Mathematically equivalent first-party context/expression/area-model entries. Teacher validates actual card matching in the lesson and accepts more than one correct drawing.",
+          "Rows": [
+            {
+              "Label": "Context",
+              "Cells": [
+                "Two sandwiches, five people",
+                "Three sandwiches, two people"
+              ]
+            },
+            {
+              "Label": "Division",
+              "Cells": [
+                "2÷5",
+                "3÷2"
+              ]
+            },
+            {
+              "Label": "Amount each",
+              "Cells": [
+                "2/5",
+                "3/2 = 1 1/2"
+              ]
+            },
+            {
+              "Label": "Area model",
+              "Cells": [
+                "Two equal wholes, each partitioned into fifths",
+                "Three equal wholes, each partitioned into halves"
+              ]
+            },
+            {
+              "Label": "Verification",
+              "Cells": [
+                "5×(2/5)=2 wholes",
+                "2×(3/2)=3 wholes"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L03",
+      "CultureCode": "en",
+      "Title": "Interpret Equations PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: write and interpret division equations for equal-sharing situations and diagnose reversed dividend/divisor errors. Use contextual reasonableness to reject impossible shares.",
+        "Warm-up: represent three halves on a number line or with shaded rectangles. Explain why 3/2 is 1 1/2, not the different number 3 1/2.",
+        "Activity 1: three dancers divide two liters of water equally. Draw two one-liter units split into thirds and allocate one third of each to every dancer. Write 2÷3=2/3 liters per person.",
+        "Source task critique: a hypothetical learner suggests 3/2 liter per dancer by reversing the story. Multiplying 3×3/2 gives 9/2 liters, more than the available two, so the interpretation cannot be correct.",
+        "Activity 2 — Interpret Expressions: the original student task has a five-row dancers/liters table with some numbers and expressions missing. The first row is four dancers sharing two liters: 2÷4=1/2 liter each. Two given middle expressions are 3÷4 and 3÷5, requiring four dancers sharing three liters (3/4 each) and five dancers sharing three liters (3/5 each). Other rows specify four dancers but allow a chosen water amount, or five liters but allow a chosen positive dancer count; several completions are valid, and the student must notice and justify a pattern. Finish by revisiting 3÷2=3/2 in a DIFFERENT context (two dancers sharing three liters); do not mistake it for Mai's erroneous claim about three dancers sharing two liters.",
+        "Edulytiks-original exit check (NOT publisher gated 'Share Water'): five dancers share four liters of water fairly. Write the equation 4÷5=4/5 liter per dancer, draw four equal one-liter bars each partitioned into fifths, and explain why Mai's reversed 5÷4=5/4 would demand more than the available four liters. Teacher checks correct dividend/divisor meaning, reasonable magnitude, units and equivalent verbal/tactile representation; answer 4/5 without a matching explanation is incomplete."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sharing dividend",
+          "Definition": "The total quantity being split.",
+          "Rule": "In a÷b the total a is the dividend.",
+          "Example": "Two liters are shared: the dividend is 2."
+        },
+        {
+          "Title": "Sharing divisor",
+          "Definition": "The positive number of recipients.",
+          "Rule": "In a÷b, b is the number of equal shares.",
+          "Example": "Three dancers: the divisor is 3."
+        },
+        {
+          "Title": "Check by recombining",
+          "Definition": "All equal portions must recover the total.",
+          "Rule": "b×(a/b)=a.",
+          "Example": "3×2/3=2 liters."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Water for dancers",
+          "Question": "Three dancers share two liters. Write the quotient.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Keep two liters as total.",
+            "Share each liter in three equal parts.",
+            "Give one third of each to every dancer."
+          ],
+          "Answer": "2÷3=2/3 liters each.",
+          "Check": "3×(2/3)=2 liters."
+        },
+        {
+          "Title": "Refute reversed quotient",
+          "Question": "Can each of three dancers get 3/2 liters from only two liters?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Calculate 3×3/2=9/2 liters.",
+            "Compare 9/2 with the available 2.",
+            "Use total÷people in the correct order."
+          ],
+          "Answer": "No; 2/3 liter each.",
+          "Check": "9/2>2, so the claim is impossible."
+        },
+        {
+          "Title": "Three halves and mixed numbers",
+          "Question": "Does 3/2 equal 3 1/2?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Group two halves into one whole.",
+            "One more half remains.",
+            "Write 1 1/2 and compare with 3 1/2."
+          ],
+          "Answer": "No, 3/2=1 1/2.",
+          "Check": "3 1/2=7/2."
+        },
+        {
+          "Title": "Source Interpret Expressions table — specified rows",
+          "Question": "Fill the given rows: four dancers share two liters; expression 3÷4; expression 3÷5. Identify liters per dancer.",
+          "Method": "Treat dividend as total liters and divisor as number of dancers.",
+          "Steps": [
+            "Four dancers and two liters gives 2÷4=1/2 liter per dancer.",
+            "3÷4 means four dancers split three liters, giving 3/4 liter each.",
+            "3÷5 means five dancers split three liters, giving 3/5 liter each.",
+            "Check every row by multiplying amount per dancer by the dancer count to recover total liters."
+          ],
+          "Answer": "2÷4=1/2; 3÷4=3/4; 3÷5=3/5 liters per dancer.",
+          "Check": "4×1/2=2, 4×3/4=3, 5×3/5=3. A 4-dancer/unknown-liter row or 5-liter/unknown-dancer row permits several valid choices."
+        },
+        {
+          "Title": "Same fraction, different water-sharing story",
+          "Question": "Mai's 3÷2=3/2 is wrong for three dancers and two liters. Can 3÷2=3/2 ever correctly model sharing?",
+          "Method": "Distinguish changed context from a reversed expression in the original context.",
+          "Steps": [
+            "Two dancers sharing three liters legitimately gives 3÷2.",
+            "Each dancer then gets 3/2 or 1 1/2 liters.",
+            "Check 2×1 1/2=3 liters, unlike three dancers taking 1 1/2 from two."
+          ],
+          "Answer": "Yes, in the changed context of two dancers sharing three liters, not in the original story.",
+          "Check": "Label units and people to avoid accepting equivalent-looking but context-inappropriate answers."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reverse the two numbers in the division expression",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Label total quantity and people before writing the quotient."
+        },
+        {
+          "Mistake": "Read 3/2 as 3 1/2",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Count the three half-sized pieces, then regroup them into complete wholes."
+        },
+        {
+          "Mistake": "Fill a partly specified table as though all row numbers were unique",
+          "WhyWrong": "The original activity leaves some totals or recipient counts deliberately open to student choices.",
+          "Correction": "Use any positive whole-number choice meeting the given dancer or liter constraint; validate the resulting division expression and quotient."
+        }
+      ],
+      "SummaryPoints": [
+        "Dividend is the total and divisor is the count of equal shares.",
+        "A context can disprove an unreasonable reversed quotient.",
+        "Critique, drawing and explanation remain teacher-reviewed.",
+        "Source: 2021 IM K–5 Grade 5 Unit 2 Lesson 3 https://im.kendallhunt.com/k5/teachers/grade-5/unit-2/lesson-3/lesson.html. First-party examples, no source artwork or restricted Cool-down.",
+        "U02:L03 original Student Task PDF inspected all 3 pages; Activity 2 includes dancer/water table (2÷4, 3÷4, 3÷5 plus open rows); figures and rights not republished; gated Cool-down remains unverified."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Interpret Equations PLC Activity — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "Statement",
+              "Cells": [
+                "Correct",
+                "Reversed"
+              ]
+            },
+            {
+              "Label": "Liters per dancer",
+              "Cells": [
+                "2/3",
+                "3/2"
+              ]
+            },
+            {
+              "Label": "Liters for 3 dancers",
+              "Cells": [
+                "2",
+                "9/2"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Interpret Expressions — source-shaped specified and open rows",
+          "Description": "First-party table illustrating the source's partly specified dancer/water data; open rows are examples, not uniquely required source answers.",
+          "Rows": [
+            {
+              "Label": "Data",
+              "Cells": [
+                "4 dancers, 2 liters",
+                "3÷4",
+                "3÷5",
+                "4 dancers (example 6 L)",
+                "5 liters (example 2 dancers)"
+              ]
+            },
+            {
+              "Label": "Division",
+              "Cells": [
+                "2÷4",
+                "3÷4",
+                "3÷5",
+                "6÷4",
+                "5÷2"
+              ]
+            },
+            {
+              "Label": "Water each",
+              "Cells": [
+                "1/2 L",
+                "3/4 L",
+                "3/5 L",
+                "1 1/2 L",
+                "2 1/2 L"
+              ]
+            },
+            {
+              "Label": "Check",
+              "Cells": [
+                "4×1/2=2",
+                "4×3/4=3",
+                "5×3/5=3",
+                "4×1 1/2=6",
+                "2×2 1/2=5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L04",
+      "CultureCode": "en",
+      "Title": "Division Situations",
+      "ExplanationParagraphs": [
+        "Goal: translate among word situations, fraction quotients and equal-parts diagrams, including student-authored stories. The 2021 original rotates equation, diagram and context cards among three partners.",
+        "Warm-up: investigate division by seven. Because 35÷7=5 and 1÷7=1/7, the exact values of 36÷7 and 37÷7 are 5 1/7 and 5 2/7.",
+        "Activity 1 — Pounds of Blueberries: the source uses three partners who each start from a different representation of the SAME six-people-share-four-pounds division. Partner A starts with 4÷6=4/6; Partner B has four equal whole bars partitioned into sixths; Partner C has the six-student/four-pound context. Each completes the other two representations and compares answers. Check that all imply 4/6=2/3 pound each. The learner must identify why numerator corresponds to total pounds and denominator to six equal recipients.",
+        "Activity 2 — Grams of Gold (source task missing from previous Rich V2): three friends panned for gold and each received 4/3 grams, so they found 3×(4/3)=4 grams altogether. In the inverse problem five grams of gold is shared equally with each person getting 5/6 gram: 5÷(5/6)=6 friends. This activity changes what is unknown (first the total, then the number of friends) and requires an explanation or a diagram, not just finding a quotient.",
+        "Assessment and limits: retain the original warm-up 35÷7, 1÷7, 36÷7, 37÷7 progression; for Activity 1 check equation/situation/diagram agreement with 4÷6=4/6, for Activity 2 verify 4 grams total and 6 people with grams versus people labeled. A teacher reviews group explanations and student-created contexts. Original teacher lesson and preparation HTML were inspected; separate Student Task PDF was unavailable through source endpoint owing to oversized response, so original figure/PDF parity and image rights remain NOT_VERIFIED. Login-gated Cool-down is NOT_VERIFIED.",
+        "Edulytiks-original exit check (NOT the publisher gated 'How Much Milk?'): four people share three kilograms of grain equally. Write 3÷4=3/4 kilogram per person, and show the correspondence between (i) the story, (ii) three equal whole-bar diagrams cut into fourths, and (iii) the expression. Now reverse the unknown: a total of 3 kilograms is distributed in 3/4-kilogram portions; how many people can receive the same amount? Expected four people, since 4×3/4=3. Teacher checks all three representations and units, not a scalar 4 or 3/4 alone."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Correspondence of representations",
+          "Definition": "A diagram, story and equation can mean the same equal sharing.",
+          "Rule": "All must preserve total shared and number of recipients.",
+          "Example": "4 pounds for 6 people represents 4÷6."
+        },
+        {
+          "Title": "Exact mixed quotient",
+          "Definition": "A remainder can be partitioned into equal fractional shares.",
+          "Rule": "36÷7=5+1/7.",
+          "Example": "Thirty-six objects in seven groups gives five and one seventh each."
+        },
+        {
+          "Title": "Unit label",
+          "Definition": "The share has the same measurement unit as the total.",
+          "Rule": "Four pounds shared yields pounds per person.",
+          "Example": "4/6 pound each."
+        },
+        {
+          "Title": "Recover the unknown total or number of recipients",
+          "Definition": "A fraction per person may be used to find total measurement or number of equal recipients.",
+          "Rule": "total = recipients × each share; recipients = total ÷ each share when the share is positive.",
+          "Example": "3 friends × (4/3 gram) = 4 grams; 5 grams ÷ (5/6 gram each) = 6 friends."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Blueberry shares",
+          "Question": "Six children equally share four pounds. What is each share?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Draw four identical one-pound bars.",
+            "Divide each into six equal parts.",
+            "Give one piece from each bar to every child."
+          ],
+          "Answer": "4/6=2/3 pound per child.",
+          "Check": "6×2/3=4 pounds."
+        },
+        {
+          "Title": "Division by seven",
+          "Question": "Evaluate 36÷7 exactly.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Divide thirty-five into five groups of seven.",
+            "One object remains.",
+            "Split the remaining object into seven equal parts."
+          ],
+          "Answer": "5 1/7.",
+          "Check": "7×5+1=36."
+        },
+        {
+          "Title": "Write a sharing story",
+          "Question": "Give a valid story for 3÷4.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Choose three identical whole objects.",
+            "Give them equally to four people.",
+            "Describe each share using fourths."
+          ],
+          "Answer": "Three equal loaves for four people: 3/4 loaf each.",
+          "Check": "Teacher checks the story's whole and the consistent diagram."
+        },
+        {
+          "Title": "Grams of Gold — unknown total",
+          "Question": "Three friends each get four thirds of a gram of gold. How much gold was collected altogether?",
+          "Method": "Multiply share per friend by the number of equally served friends.",
+          "Steps": [
+            "Keep the units: 4/3 grams per friend.",
+            "Multiply by 3 friends: 3×(4/3)=12/3.",
+            "Interpret 12/3 as 4 grams collected in all."
+          ],
+          "Answer": "4 grams of gold in total.",
+          "Check": "4 grams ÷ 3 friends = 4/3 grams per friend."
+        },
+        {
+          "Title": "Grams of Gold — unknown number of friends",
+          "Question": "Five grams of gold are shared equally; each person receives 5/6 gram. How many people shared it?",
+          "Method": "Divide total grams by the given grams per person; verify the inferred recipient count is a whole number.",
+          "Steps": [
+            "Unknown friend count n gives n×(5/6 gram)=5 grams.",
+            "Divide 5 by 5/6 to obtain n=6.",
+            "Multiply 6×(5/6 gram)=5 grams, keeping people distinct from grams."
+          ],
+          "Answer": "6 friends.",
+          "Check": "Five grams cannot be shared at 5/6 gram each among 5 or 7 people; teacher asks for reasoning."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Reverse four sixths to six fourths",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Keep the total amount and number of people in their original roles."
+        },
+        {
+          "Mistake": "Round a fractional remainder to a whole",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Use exact fractional parts of the fixed whole."
+        },
+        {
+          "Mistake": "Treat both Grams of Gold problems as quotient-only tasks",
+          "WhyWrong": "The original second activity alternates which quantity is unknown: first total grams, then people.",
+          "Correction": "In the first use friends × grams/person = grams; in the second grams ÷ grams/person = friends. Check units and reversibility."
+        }
+      ],
+      "SummaryPoints": [
+        "Original warm-up mental number talk 35÷7=5, 1÷7=1/7, 36÷7=5 1/7, 37÷7=5 2/7.",
+        "Partner A equation, Partner B equal-parts drawing and Partner C six-people/four-pound story each represent the same 4÷6=4/6=2/3-pound situation.",
+        "Original Activity 2 Grams of Gold: 3 friends each receive 4/3 gram, so total=4 grams; 5 grams at 5/6 gram per person implies 6 friends.",
+        "Check units, missing-value role and the student's diagram/story explanation, not only the numeric answer.",
+        "2021 original teacher preparation + embedded Student Facing HTML inspected. Original Student Task PDF could not be fetched due size; source figures/asset rights and gated Cool-down remain NOT_VERIFIED."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Division Situations — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "Total pounds",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "Recipients",
+              "Cells": [
+                "6"
+              ]
+            },
+            {
+              "Label": "Equation",
+              "Cells": [
+                "4÷6"
+              ]
+            },
+            {
+              "Label": "Share",
+              "Cells": [
+                "2/3 pound"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Gold sharing — which quantity is unknown?",
+          "Description": "First-party inverse model; do not confuse grams of gold with number of friends.",
+          "Rows": [
+            {
+              "Label": "Question",
+              "Cells": [
+                "Unknown gold total",
+                "Unknown friend count"
+              ]
+            },
+            {
+              "Label": "Known",
+              "Cells": [
+                "3 friends; 4/3 g each",
+                "5 g total; 5/6 g each"
+              ]
+            },
+            {
+              "Label": "Calculation",
+              "Cells": [
+                "3×(4/3)",
+                "5÷(5/6)"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "4 g total",
+                "6 people"
+              ]
+            },
+            {
+              "Label": "Verify",
+              "Cells": [
+                "4÷3=4/3 g each",
+                "6×(5/6)=5 g"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U02:L05",
+      "CultureCode": "en",
+      "Title": "Relate Division and Fractions",
+      "ExplanationParagraphs": [
+        "Goal: generalize how the relative sizes of dividend and divisor predict whether a positive fraction quotient is below, equal to or above one. In the original 2021 lesson learners choose numbers satisfying different blueberry-sharing constraints.",
+        "Warm-up — true or false: 5÷2=5/2 is true; 5/2=5 1/2 is false; 6/2=3 is true. Explain each with a division model rather than judging notation by appearance.",
+        "Activity 1: choose total pounds and recipient counts so each person gets less than one, exactly one, or more than one pound. If pounds and people are equal, the quotient is one. If pounds exceed people, each receives more than one; if people exceed pounds, each receives less than one.",
+        "Activity 2 — Why Does It Work? (previous Rich V2 omission): students replace questions marks in families of equal-sharing statements such as ?÷2=?/2 and 2÷?=2/? with valid whole numbers and nonzero divisors, justify the correspondence, then create a visual display or argument for any whole-number numerator a and any positive whole-number denominator b: a÷b=a/b. A proof by equal-sized sharing divides EACH of a identical wholes into b equal parts; giving one part from each whole to a recipient yields a pieces of size 1/b, hence a/b. Partners compare why this holds across choices instead of only noticing a particular numeric pattern.",
+        "Assessment: Activity 1's four distinct constraints include seven total pounds with a choice of fewer than seven people to exceed one pound per person, matching counts for exactly one, three people with fewer than three pounds for less than one, and b=2a for exactly 1/2 pound. Do not interpret a historical teacher-source typo about 'half of the pounds' as changing the mathematically correct b=2a relation. Teacher reviews paired numeric evidence, posters and the general explanation of a÷b=a/b including why division by zero is excluded. Original 2021 Student Task PDF (4 pages) and teacher lesson were inspected; original images, source-owned fonts/logos and gated Cool-down were not copied or independently licensed.",
+        "Edulytiks-original exit check (NOT the 2021 publisher gated 'Explain It'): some identical whole sandwiches are shared equally. Explain for ANY nonnegative whole number a and positive whole number b why dividing a sandwiches among b people produces a/b sandwiches per person, including the limiting cases a=0 and b=1, and why b=0 cannot be interpreted as a fair sharing among zero people. Use a general verbal argument or an arbitrary a-by-b fraction-bar diagram, not only one numerical instance. Then test with a=7,b=4 to show 7÷4=7/4=1 3/4 sandwiches per person; teacher checks universal justification and exclusions."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Fraction as quotient",
+          "Definition": "An a/b fraction is the exact result of a÷b for b positive.",
+          "Rule": "5÷2=5/2=2 1/2.",
+          "Example": "Five pounds shared by two people gives 2 1/2 pounds each."
+        },
+        {
+          "Title": "Compare to one",
+          "Definition": "Dividend relative to divisor determines whether quotient is greater or less than one.",
+          "Rule": "For a,b>0, a/b>1 iff a>b.",
+          "Example": "3/6 is below one; 4/3 above one."
+        },
+        {
+          "Title": "Generate equal ratios",
+          "Definition": "Several total/recipient pairs can give the same share.",
+          "Rule": "a/b=1/2 when b=2a.",
+          "Example": "3 pounds among 6 people gives 1/2 pound each."
+        },
+        {
+          "Title": "Why a divided by b equals a over b",
+          "Definition": "In equal sharing, b people each get one b-th piece from every one of a identical whole objects.",
+          "Rule": "For a a nonnegative whole number and b positive whole number, a÷b=a/b; zero divisor is undefined.",
+          "Example": "Take 2 sandwiches; split each into 5 equal parts; five people each get two fifths, or 2÷5=2/5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "True or false",
+          "Question": "Does 5÷2=5/2 and does 5/2=5 1/2?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Interpret 5÷2 as five equal halves.",
+            "Group five halves into two whole units and one half.",
+            "Reject 5 1/2, which requires eleven halves."
+          ],
+          "Answer": "First is true; second is false.",
+          "Check": "5/2=2 1/2."
+        },
+        {
+          "Title": "Share more than one pound",
+          "Question": "Four pounds for three people: how much each?",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Total 4 exceeds recipients 3.",
+            "Divide 4÷3=4/3.",
+            "Rewrite 4/3 as 1 1/3."
+          ],
+          "Answer": "1 1/3 pounds each.",
+          "Check": "3×4/3=4."
+        },
+        {
+          "Title": "Find one-half pairs",
+          "Question": "Choose an amount and people to make exactly 1/2 pound each.",
+          "Method": "Independently authored equal-share reasoning grounded in the named lesson's public 2021 task.",
+          "Steps": [
+            "Take three pounds.",
+            "Choose twice as many recipients: six.",
+            "Calculate 3÷6=1/2."
+          ],
+          "Answer": "3 pounds for 6 people gives 1/2 pound each.",
+          "Check": "6×1/2=3 pounds."
+        },
+        {
+          "Title": "Constrained blueberry choices from source table",
+          "Question": "Give sample valid pairs for the four rules: 7 pounds and more than one per person; exactly one; 3 people and less than one; exactly half a pound each.",
+          "Method": "Test each pair total pounds a, recipients b (b>0) and quotient a/b.",
+          "Steps": [
+            "More than one: seven pounds shared by five people gives 7/5>1.",
+            "Exactly one: choose four pounds for four people, giving 4/4=1.",
+            "Less than one among three people: choose two pounds and three people, giving 2/3<1.",
+            "Exactly one half: choose three pounds and six people, 3/6=1/2; in general b=2a."
+          ],
+          "Answer": "One valid set of examples is (7,5), (4,4), (2,3), (3,6), as (pounds,people).",
+          "Check": "Verify 7/5>1, 4/4=1, 2/3<1, 3/6=1/2; these are examples, not uniquely required pairs."
+        },
+        {
+          "Title": "Explain the general quotient-fraction connection",
+          "Question": "Why does a÷b=a/b for any whole-number a≥0 and positive whole-number b? Illustrate with two whole sandwiches among five people.",
+          "Method": "Prove the correspondence by an arbitrary number a of equally sized wholes, b equal recipients and identical part size.",
+          "Steps": [
+            "Divide each of the a same-sized wholes into b equal parts.",
+            "Every one of b recipients takes one 1/b-sized part from each of a wholes.",
+            "Each recipient therefore gets a pieces of size 1/b, or a/b of a whole.",
+            "The same amount is the result of sharing a wholes among b people: a÷b."
+          ],
+          "Answer": "a÷b=a/b for a whole-number a≥0 and b positive whole number; for example 2÷5=2/5.",
+          "Check": "b×(a/b)=a, including a=0, b=1; b=0 is prohibited and cannot yield a fraction share."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat 5/2 as five wholes and one half",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Interpret five halves as two whole pairs plus one remaining half."
+        },
+        {
+          "Mistake": "Assume a fraction's size depends only on numerator",
+          "WhyWrong": "The interpretation contradicts the number of equal pieces, the fixed unit whole, or the stated sharing context.",
+          "Correction": "Compare both positive numerator and denominator."
+        },
+        {
+          "Mistake": "Confuse a proof for arbitrary a and b with checking a single numerical example",
+          "WhyWrong": "The source's second activity explicitly asks why the division/fraction equation applies to ANY valid whole-number numerator and nonzero denominator.",
+          "Correction": "Explain how partitioning every one of a identical wholes into b equal pieces yields a parts for each person and excludes b=0."
+        }
+      ],
+      "SummaryPoints": [
+        "For a,b positive wholes, a÷b<1, =1, >1 according as a<b, a=b or a>b; a÷b=1/2 exactly when b=2a.",
+        "The source's four constrained blueberry rows include 7 pounds with >1 per person, 3 people with <1 per person, and a general half-pound pair, not only arbitrary totals.",
+        "Activity 2 requires a general explained argument: divide each of a identical wholes into b equal pieces (b>0), so every recipient obtains a/b.",
+        "Use a diagram/expression/story and teacher-scored reasoning; a numeric generator cannot alone verify a universal explanation or original group poster.",
+        "Original 2021 Lesson 5 Student Task PDF all 4 pages and teacher lesson/preparation HTML inspected. Original figure asset rights and gated Cool-down remain NOT_VERIFIED."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Relate Division and Fractions — accessible original model",
+          "Description": "First-party nonimage representation of the mathematical source objective, not the publisher's original student diagram.",
+          "Rows": [
+            {
+              "Label": "Situation",
+              "Cells": [
+                "Less than 1",
+                "Exactly 1",
+                "Greater than 1"
+              ]
+            },
+            {
+              "Label": "Pounds",
+              "Cells": [
+                "3",
+                "4",
+                "4"
+              ]
+            },
+            {
+              "Label": "People",
+              "Cells": [
+                "6",
+                "4",
+                "3"
+              ]
+            },
+            {
+              "Label": "Share",
+              "Cells": [
+                "1/2",
+                "1",
+                "4/3"
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "RatioTable",
+          "Title": "Why sharing a wholes among b people gives a/b",
+          "Description": "Original first-party reasoning scaffold for b>0, not a licensed copy of any publisher diagram.",
+          "Rows": [
+            {
+              "Label": "Whole objects",
+              "Cells": [
+                "a identical whole rectangles",
+                "Example a=2 rectangles"
+              ]
+            },
+            {
+              "Label": "People",
+              "Cells": [
+                "b positive recipients",
+                "Example b=5"
+              ]
+            },
+            {
+              "Label": "Parts per whole",
+              "Cells": [
+                "b equal pieces",
+                "five equal pieces"
+              ]
+            },
+            {
+              "Label": "Pieces per person",
+              "Cells": [
+                "a pieces of size 1/b",
+                "two pieces of size 1/5"
+              ]
+            },
+            {
+              "Label": "Amount each",
+              "Cells": [
+                "a×(1/b)=a/b",
+                "2/5 of one rectangle"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

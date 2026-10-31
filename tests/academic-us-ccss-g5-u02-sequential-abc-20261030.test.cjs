@@ -1,0 +1,75 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const registryPath='src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json';
+const sourcePath='src/Edulytics.Services/Mathematics/UsCcssG5Unit2SourceQuestions.cs';
+const corePath='src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs';
+const enginePath='src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs';
+const contractPath='src/Edulytics.Core/Mathematics/Practice/UsCcssG5Unit2SourcePracticeContracts.cs';
+function checkLesson(id,family,correct,wrong){
+ const source=read(sourcePath),core=read(corePath),engine=read(enginePath);
+ const contracts=read(contractPath);
+ const registry=JSON.parse(read(registryPath));
+ assert.ok(registry.families.some(x=>x.id===family&&x.lessonPracticeRouting===true));
+ assert.ok(contracts.includes(id));assert.ok(contracts.includes(family));
+ assert.ok(core.includes('UsCcssG5Unit2SourcePracticeContracts.Reviewed'));
+ for(const m of ['Supports','Build','Solve','Verify'])assert.ok(engine.includes('UsCcssG5Unit2SourceQuestions.'+m));
+ for(const c of correct)assert.ok(source.includes(c),'required correct source option missing '+c);
+ for(const w of wrong)assert.ok(source.includes(w),'required negative example missing '+w);
+ assert.ok(source.includes('teacher review'));
+}
+test('G5 U02 L01 source fair-share options and teacher-review boundary',()=>{
+ checkLesson('PED:US-CCSS-MATH:G5:U02:L01','usccss.g5.u02.l01.source_fair_share_choice',
+ ['2/5 sandwich','2 1/2 sandwiches','1 1/2 sandwiches','2/3 sandwich'],
+ ['5/2 sandwiches','2/5 sandwich']);
+});
+test('U02:L02 source-specific digital choice and teacher-led assessment',()=>{
+ checkLesson('PED:US-CCSS-MATH:G5:U02:L02','usccss.g5.u02.l02.unit_share_equivalence',["1/2 sandwich","1/3 sandwich","1/4 sandwich"],["2 sandwiches","3 sandwiches"]);
+});
+test('U02:L03 exact source fraction-choice and teacher-scoring boundary',()=>{
+ checkLesson('PED:US-CCSS-MATH:G5:U02:L03','usccss.g5.u02.l03.fraction_division_direction',["2/3 liter","Each receives 2/3 liter","3/2 liters"],["3/2 liters","Each receives 3/2 liters"]);
+});
+test('G5 U02 L04 source exact-choices and teacher evidence',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L04','usccss.g5.u02.l04.blueberry_division_context',["4/6 pound = 2/3 pound","4÷6=4/6","2/3 pound each"],["6/4 pound","6÷4=4/6"]);
+});
+test('G5 U02 L05 source exact-choices and teacher evidence',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L05','usccss.g5.u02.l05.fraction_division_generalization',["a÷b=a/b","5/2 pounds","2/5 pound"],["a÷b=b/a","2/5 pound"]);
+});
+test('G5 U02 L06 source fraction multiplication and divided-whole correspondence',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L06','usccss.g5.u02.l06.relay_division_unit_fraction',["3/2 miles","3×(1/2) miles","3 half-mile parts","3/2 miles"],["2/3 mile","2×(1/3) miles"]);
+});
+test('G5 U02 L07 source fraction multiplication and divided-whole correspondence',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L07','usccss.g5.u02.l07.unit_fraction_race_distances',["9/4 miles","7/4 miles","3/4 mile","9×1/4"],["4/9 mile","4/7 mile"]);
+});
+test('G5 U02 L08 source fraction geometry plus teacher models',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L08','usccss.g5.u02.l08.nonunit_fraction_of_whole',["6/5 unit squares","3/5","9/5","2×(3÷5)"],["2/15 unit square","5/3"]);
+});
+test('G5 U02 L09 source fraction geometry plus teacher models',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L09','usccss.g5.u02.l09.area_whole_by_unit_fraction',["3 square units","2 square units","1 1/2 square units","1/2 square unit"],["6 1/2 square units","18 square units"]);
+});
+test('G5 U02 L10 original fractional area products and teacher diagrams',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L10','usccss.g5.u02.l10.area_whole_by_nonunit_fraction',["8/3 square units","3 square units","12/5 square units","2 square units"],["8 square units","12 square units"]);
+});
+test('G5 U02 L11 original fractional area products and teacher diagrams',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L11','usccss.g5.u02.l11.area_fraction_greater_than_one',["56/3 square units","(14/3)×4","9/2 square units","45/4 square units"],["20/3 square units","4×(5/3)"]);
+});
+test('G5 U02 L12 exact source mixed rectangle area and teacher-led decomposition',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L12','usccss.g5.u02.l12.decomposed_mixed_rectangle_area',["31 1/4 square yards","31 1/2 square yards","Priya by 1/4 square yard","22 square units"],["30 1/4 square yards","31 1/4 square yards"]);
+});
+test('G5 U02 L13 exact source mixed rectangle area and teacher-led decomposition',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L13','usccss.g5.u02.l13.distributive_area_expressions',["16 1/5 square units","13 square units","21 1/3 square units","26 1/4 square units"],["15 2/5 square units","15 square units"]);
+});
+test('G5 U02 L14 source information-gap and mixed-fraction teacher verification',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L14','usccss.g5.u02.l14.fraction_multiplication_info_gap',["6","7/3","2","60"],["54","21"]);
+});
+test('G5 U02 L15 source information-gap and mixed-fraction teacher verification',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L15','usccss.g5.u02.l15.multiply_mixed_source_number_bank',["16 1/2 square feet","5 square feet","23 square feet","22 2/3"],["8 1/2 square feet","4 1/2 square feet"]);
+});
+test('G5 U02 L16 OPTIONAL source contextual exact subskill with teacher oversight',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L16','usccss.g5.u02.l16.estimate_mixed_area_products',["42 square feet","35 square feet","35 square feet","24 square feet"],["35 square feet","42 square feet"]);
+});
+test('G5 U02 L17 OPTIONAL source contextual exact subskill with teacher oversight',()=>{
+checkLesson('PED:US-CCSS-MATH:G5:U02:L17','usccss.g5.u02.l17.mosaic_rectangle_area_cost',["4 1/2 square inches","18 square inches","$90","$54"],["3 1/2 square inches","12 square inches"]);
+});
+// NEXT_LESSON_TEST

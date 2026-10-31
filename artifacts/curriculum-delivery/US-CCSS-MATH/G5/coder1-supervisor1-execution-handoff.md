@@ -1,0 +1,30 @@
+# Edulytiks — American Coder 1, Grade 5 — Supervisor 1 V5 Execution Handoff
+**Checkpoint date:** 2026-10-29 · **Only US-CCSS-MATH Grade 5** · **RELEASE BLOCKED**.
+
+## Branch and authority
+- Owned pre-existing branch: `curriculum/us-ccss-g5-full-grade-20261028`. Preserve prior 33 original commits and all V5 new commits; live branch head is recorded by GitHub and the Grade5 JSON checkpoint. Never reset or force-push. Verified original `main`: `39c757630d2bd67217a1468fce099653ed0f3f53`; recheck before any integration.
+- V5 direct code authorization from American Supervisor 1; Admin is not a required approval dependency. **No cross-grade or shared-engine edits, no PR, merge, deployment, live Neon modifications, CI changes or source-policy bypass.**
+- **Anas_Nitro (Personal account/device) categorically forbidden**. `Our-CS` is publisher-source-read-only after positive Primary account/device identification; neither Desktop Commander account nor either remote computer was touched in this V5 execution. Development and standalone Node tests used GitHub connector and isolated sandbox container.
+
+## Distinct lesson coverage (candidate, NOT accepted)
+- Canonical Grade 5 lessons: **148 unique IDs**, eight units [12,17,20,21,26,21,13,18]; source URLs and blueprint outcome roles retained.
+- **104** previously edited baseline pack lesson translations remain preserved; **44** baseline translations unchanged pending reuse audit.
+- **63** direct original Grade 5 Rich V2 candidate lessons in grade-owned sidecars: **U01 12/12; U02 17/17; U03 20/20; U04 10/21; U05 1/26; U06 1/21; U07 1/13; U08 1/18**. These overlap 104 baseline edits; candidate union is **114 unique lesson codes**, not 63+104. No direct sidecar for 85 lessons, but runtime synthesis may supply some; absence does not independently prove a defect.
+- **V5 added 37 distinct direct Rich V2 candidates** (U02 L09–L17, U03 L02–L18 and L20, U04 L01–L10), preserving 26 earlier candidates. Source-specific new content addresses diagrams, fraction-division meaning, human-reviewed open tasks, composing vs no-composing, teacher-reviewed games, contextual multiplication/division and accessible first-party tables.
+- **66 distinct 2021 public student-facing/teacher/preparation HTML lesson sources reviewed**, with individual task notes in the full machine-readable ledger. This is not complete PDF/full lesson/source-artwork parity, and original gated Cool-down and teacher answers remain unchecked.
+- **0/148 Stage A independently completed, 0/148 exact runtime-selected Practice Stage C verified, 0/148 genuine Stage D product verified, 0/148 academically accepted or owner-UAT accepted.** Candidate content and a publisher `Published` flag never imply real effective rendering or release acceptance.
+
+## Actual tests and missing evidence
+- Genuine local Node v22.16.0 in isolated sandbox: `node --test /mnt/data/edulytiks_g5_v5_tests/academic-us-ccss-g5-*-v5.test.cjs`. **37 pass, 0 fail, 7 skipped**, seven new Grade5 V5 test files. Exact TAP saved locally at `/mnt/data/edulytiks_g5_v5_tests/node_test_v5_with_u04_l10_20261029.tap`. The tests verify independent mathematics in source-specific examples and constraints; each skipped JSON structure test requires GitHub branch sidecar files absent from sandbox. GitHub test-file content was authored separately; full byte-identical CLI run of the committed GitHub test SHA is **NOT_VERIFIED**.
+- Separate connector-backed V8 simulated `node:test` with fetched GitHub content passed earlier focused groups, but **not** real Node CLI. No .NET executable available, no application compilation, actual contract routing, positive/wrong/malformed submissions, persisted attempts, exact seeded translation, authenticated student/teacher screens, figure/accessibility WCAG review, two-school tenant isolation, full US/Cambridge/UAE/Poland regressions, GitHub Actions exact-head CI, verified Render SHA or real owner UAT.
+
+## Supervisor 1 exclusive shared integration — issue #592
+<https://github.com/EIAS79/Edulytics/issues/592> — **OPEN, independently verified**. Only designated single integration writer may modify:
+1. `src/Edulytics.Core/Mathematics/Curriculum/lesson-skill-mappings.v1.json` and selected Practice engine/family, especially `PED:US-CCSS-MATH:G5:U01:L01` / `usccss.g5.unit_cube_count`. The known generator tests volume by multiplying box dimensions rather than the 2021 lesson's original construction and comparison of unit-cube solids. Need actual selected contract and grade-faithful human rubric/correct-wrong-malformed feedback. **Stage C BLOCKED, no false PASS.**
+2. `src/Edulytics.Data/Seeding/CanonicalLessonContentMaterializer.cs`, common-core content-version corrections and seeder predecessor handling. The Grade 5 pack has 104 editorial changes, but actual old student persisted translation precedence and version migration are not checked. Need strictly G5 guarded, read-only predecessor inventory, migration safety and authenticated effective rendering without touching other grades.
+3. Before any shared write, coordinate outstanding shared PRs, single-writer branch, cross-curriculum impact tests; no PR from Coder 1 may merge or deploy without mandatory review and real owner UAT.
+
+## Exact resume marker
+- Machine-readable source-of-truth: `artifacts/curriculum-delivery/US-CCSS-MATH/G5/coder1-grade5-authoring-checkpoint.json` on the same branch. **Always re-read live head and row ledger before continuing.**
+- Next uncompleted publisher HTML lesson: `PED:US-CCSS-MATH:G5:U04:L11` — *Different Partial Quotients PLC Activity*; then U04 L12–L21, U05–U08, direct or runtime-selected reuse as appropriate. Original Student Task PDFs, per-asset rights and learner figure parity still open on all 148.
+- GitHub V5 final-grade authoring does **not** constitute release. Exact markers: `CODING_COMPLETE=false`, `D_VERIFIED=false`, `ACADEMICALLY_ACCEPTED=false`, `REVIEW_ELIGIBLE=false`, `MERGED=false`, `VERIFIED_DEPLOYED=false`, `OWNER_UAT=NOT_RUN`, `RELEASE_BLOCKED=true`.

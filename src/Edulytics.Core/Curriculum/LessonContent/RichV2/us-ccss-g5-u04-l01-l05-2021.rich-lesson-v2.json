@@ -1,0 +1,633 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u04-l01-l05-im2021-first-party-richv2-v5-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L01",
+      "CultureCode": "en",
+      "Title": "Estimate and Find Products",
+      "ExplanationParagraphs": [
+        "Learning goal: estimate a multi-digit product using benchmarks, then find the exact value using a student-selected strategy and explain whether the original estimate was high or low. This opening source lesson expects several valid approaches, not mandatory standard-algorithm steps before students compare methods.",
+        "Warm-up: mentally use basic facts to find 50×8, 50×80, 50×800 and 800×500. Tell a partner how each factor of ten changes the resulting place value. Keep number-talk reasoning distinct from formal algorithm rehearsal.",
+        "Activity 1 — reasonable estimates: estimate 23×147 using 20×150=3000 and 25×150=3750 as reference benchmarks. The exact result is 3381 and lies between those two rounded estimates. Ask which estimate is closer and why 20×150 is too low; learners may give another reasonable benchmark if they justify it.",
+        "Activity 2 — compute related products: determine 23×7=161, 23×47=1081 and 23×147=3381 using related partial products. Explain that 23×147=23×(100+40+7), and the two shorter products help make sense of the extra 100. Create a diagram, vertical computation or verbal explanation of the selected approach.",
+        "Academic boundary: the original source requests a defended estimate, actual calculation and gallery comparison of different methods. A numeric 3381 check is supporting Practice only; whether the estimate was justified, method correct and comparison clear requires teacher review."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Benchmarked product estimates",
+          "Definition": "Round one or both positive factors and use known place-value facts to bound a product.",
+          "Rule": "20×150=3000 <23×147<25×150=3750.",
+          "Example": "23×147=3381."
+        },
+        {
+          "Title": "Related products",
+          "Definition": "One product can be built from other products by decomposing a factor.",
+          "Rule": "23×147=23×100+23×40+23×7.",
+          "Example": "2300+920+161=3381."
+        },
+        {
+          "Title": "Method and reasonableness",
+          "Definition": "An answer and estimation method should be consistent with magnitude and positive factors.",
+          "Rule": "Compare the exact product with a justified pair of benchmarks.",
+          "Example": "3381 is 381 above 3000 and 369 below 3750."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Estimate before multiplying",
+          "Question": "Estimate 23×147 and decide whether 3000 is too low.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Use 20×150=3000 and 25×150=3750 as convenient reference products.",
+            "Observe that the exact factors lie between these benchmark choices but one factor goes down while the other goes up; a separate calculation or comparison is required to prove the bound.",
+            "Compute 23×147=3381 and compare."
+          ],
+          "Answer": "A sensible estimate is about 3400; 3000 is low.",
+          "Check": "23×147=3381 and 3381−3000=381."
+        },
+        {
+          "Title": "Connect three products",
+          "Question": "Find 23×7, 23×47 and 23×147.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "23×7=161.",
+            "23×47=23×(40+7)=920+161=1081.",
+            "23×147=2300+920+161."
+          ],
+          "Answer": "161, 1081, and 3381.",
+          "Check": "1081+2300=3381."
+        },
+        {
+          "Title": "Compare strategies",
+          "Question": "Why do 23×(100+47) and (20+3)×147 agree?",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "First calculate 2300+1081=3381.",
+            "Alternatively compute 20×147=2940 and 3×147=441.",
+            "Compare the sums and explain their distributive reasoning."
+          ],
+          "Answer": "Both yield 3381.",
+          "Check": "2940+441=3381; teacher reviews why the terms partition the factors."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Automatically trust a rounded estimate as an exact bound",
+          "WhyWrong": "Rounding one factor down and another up does not guarantee an inequality without further reasoning.",
+          "Correction": "Check both factors against known product bounds or compute correction terms."
+        },
+        {
+          "Mistake": "Use one algorithm as the only valid explanation",
+          "WhyWrong": "The introductory source permits diagrams, properties and student-selected computation strategies.",
+          "Correction": "Require valid mathematical reasoning and reasonable results, not a single preferred layout."
+        }
+      ],
+      "SummaryPoints": [
+        "Estimate, compute, then explain over/under estimation.",
+        "Different distributive or diagram strategies can represent the same exact product.",
+        "Teacher reviews how the estimate and chosen method are justified.",
+        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 1 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-1/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Estimate and Find Products — place-value model",
+          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "23×7",
+                "23×47",
+                "23×147"
+              ]
+            },
+            {
+              "Label": "Decomposition",
+              "Cells": [
+                "23×7",
+                "23×40+23×7",
+                "23×100+23×40+23×7"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "161",
+                "1081",
+                "3381"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L02",
+      "CultureCode": "en",
+      "Title": "Partial Products in Diagrams",
+      "ExplanationParagraphs": [
+        "Learning goal: calculate a three-digit-by-two-digit product from rectangular partial-product diagrams and explain that the separate boxes are place-value products. The source's area-style rectangles are deliberately NOT to scale; learners should not infer relative lengths from their physical picture widths.",
+        "Warm-up: compare several original rectangle-grid decompositions of a product; students may choose different Which One Doesn't Belong criteria and must defend them. One picture is not automatically unique just because it uses more subrectangles.",
+        "Activity 1 — build six partial products: write 134×23=(100+30+4)×(20+3). Label a 2-row-by-3-column table with 2000,600,80 across the 20-row and 300,90,12 across the 3-row. Sum 2000+600+80+300+90+12=3082. Show each cell's factors; do not mistake the table for a scale drawing.",
+        "Activity 2 — choose an efficient decomposition: calculate the same product with (100+34)×23=2300+782, or 134×(20+3)=2680+402. Explain what the subrectangles mean, why all three decompositions count exactly once and which is convenient for a learner.",
+        "Teacher boundary: source expects matching rectangular area diagrams, filling all partial cells, selecting one of several decompositions and explaining its benefit. Numeric multiplication alone cannot auto-complete the geometry-to-expression matching or student discussion. Source figures not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Place-value rectangle cells",
+          "Definition": "A decomposed multiplication diagram represents multiplying every part of one factor by every part of the other.",
+          "Rule": "(a+b+c)(d+e)=ad+bd+cd+ae+be+ce.",
+          "Example": "134×23 has six products when factors split 100+30+4 and 20+3."
+        },
+        {
+          "Title": "Add every partial product",
+          "Definition": "The total is the sum of the nonoverlapping place-value product cells.",
+          "Rule": "2000+600+80+300+90+12=3082.",
+          "Example": "134×23=3082."
+        },
+        {
+          "Title": "Different valid decompositions",
+          "Definition": "A rectangle can be decomposed with more or fewer parts if all products are included.",
+          "Rule": "134×23=134×20+134×3.",
+          "Example": "2680+402=3082."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Six-cell place-value model",
+          "Question": "Calculate 134×23 from a 3-column by 2-row partial-products table.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Break 134 into 100,30,4 and 23 into 20,3.",
+            "Compute first row 2000,600,80; second row 300,90,12.",
+            "Add all six without omitting or shifting a place."
+          ],
+          "Answer": "3082.",
+          "Check": "134×20=2680 and 134×3=402; 2680+402=3082."
+        },
+        {
+          "Title": "Two-cell model",
+          "Question": "How can 134×23 be calculated using only two partial products?",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Keep 134 whole and split 23 into 20+3.",
+            "Compute 134×20=2680.",
+            "Compute 134×3=402; add both."
+          ],
+          "Answer": "3082.",
+          "Check": "2680+402=3082."
+        },
+        {
+          "Title": "Check another grouping",
+          "Question": "Show that 134×23=(100+34)×23.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Compute 100×23=2300.",
+            "Compute 34×23=782.",
+            "Add 2300+782."
+          ],
+          "Answer": "3082.",
+          "Check": "Original factors are preserved; all subregions contribute exactly once."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treat the area-style rectangular picture as truly drawn to scale",
+          "WhyWrong": "The source explicitly uses schematic rather than proportional box widths.",
+          "Correction": "Use labeled place values to determine cell products, not perceived image sizes."
+        },
+        {
+          "Mistake": "Forget one of the six boxes",
+          "WhyWrong": "Leaving out any place-value combination reduces the sum.",
+          "Correction": "Cross-check every row/column pair has a product."
+        }
+      ],
+      "SummaryPoints": [
+        "Each partial-product diagram box corresponds to multiplying two place-value parts.",
+        "All valid decompositions preserve the exact factor product.",
+        "Diagram labels and chosen partition explanations are teacher-assessed.",
+        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 2 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-2/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Partial Products in Diagrams — place-value model",
+          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Rows": [
+            {
+              "Label": "Factor row",
+              "Cells": [
+                "100",
+                "30",
+                "4"
+              ]
+            },
+            {
+              "Label": "20",
+              "Cells": [
+                "2000",
+                "600",
+                "80"
+              ]
+            },
+            {
+              "Label": "3",
+              "Cells": [
+                "300",
+                "90",
+                "12"
+              ]
+            },
+            {
+              "Label": "Total",
+              "Cells": [
+                "3082"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L03",
+      "CultureCode": "en",
+      "Title": "Partial Products in Algorithms",
+      "ExplanationParagraphs": [
+        "Learning goal: organize the same full set of three-digit-by-two-digit partial products into numerical addition algorithms, including left-to-right and right-to-left recording. The source compares how different layouts list identical place-value contributions.",
+        "Warm-up: compare alternative decomposed products as equations and area-style diagrams. Source WODB explanations are open-ended, not a single designated outlier.",
+        "Activity 1 — partial products everywhere: for 236×24=(200+30+6)×(20+4), produce six values: 4000,600,120 for the 20-group; 800,120,24 for the 4-group. Explain how 20×30=600 differs from 4×30=120 despite both containing 30, and how every cell appears in the sum.",
+        "Activity 2 — record using two algorithms: list six separate partial products from largest place to smallest, then rewrite in reverse order without changing the sum. Alternatively combine 236×4=944 with 236×20=4720 to get the same 5664. Explain why row order is flexible but each place-value factor is fixed.",
+        "Teacher boundary: source requires matching sets of partial products to products, comparing vertical recording and defending diagram-to-equation connections. A numeric answer cannot replace all of those justifications. The source's comparison visuals are not reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Partial products algorithm",
+          "Definition": "A multiplication method lists and adds the place-value product of every factor pair.",
+          "Rule": "236×24=236×20+236×4.",
+          "Example": "4720+944=5664."
+        },
+        {
+          "Title": "Record place values correctly",
+          "Definition": "A tens-digit factor represents ten times its printed digit in the ones place.",
+          "Rule": "236×20=4720, not 472.",
+          "Example": "Twenty groups of 236 contribute 4720."
+        },
+        {
+          "Title": "Order of addition",
+          "Definition": "Reordering the same partial products does not change their sum.",
+          "Rule": "Sum 4000,600,120,800,120,24 in any order.",
+          "Example": "All give 5664."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "List six exact partial products",
+          "Question": "Calculate 236×24 using separate cell values.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Split 236 into 200+30+6 and 24 into 20+4.",
+            "Find row 20: 4000+600+120; row 4: 800+120+24.",
+            "Add to get 5664."
+          ],
+          "Answer": "5664.",
+          "Check": "(236×20)+(236×4)=4720+944=5664."
+        },
+        {
+          "Title": "Condense into two rows",
+          "Question": "Explain why two-row recording is equivalent to six partial products.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Multiply 236×4=944.",
+            "Multiply 236×20=4720.",
+            "Add 944+4720."
+          ],
+          "Answer": "5664.",
+          "Check": "Individual component products remain present within 944 and 4720."
+        },
+        {
+          "Title": "Detect missing tens",
+          "Question": "A student writes 236×20=472. What is wrong?",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Identify 20 as 2 tens.",
+            "Calculate 236×2=472, representing only two groups.",
+            "Multiply by ten to represent 20 groups."
+          ],
+          "Answer": "It should be 4720, not 472.",
+          "Check": "236×20 is ten times 236×2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Omit a place-value product from a vertical sum",
+          "WhyWrong": "Every factor place contributes to the exact full product.",
+          "Correction": "Use a schematic row-column checklist to verify the six values."
+        },
+        {
+          "Mistake": "Assume changing listing order changes the answer",
+          "WhyWrong": "Addition can reorder the identical set of partial products without changing the sum.",
+          "Correction": "Verify the same six quantities appear in both versions."
+        }
+      ],
+      "SummaryPoints": [
+        "Partial product algorithms record the same mathematics as a decomposed multiplication diagram.",
+        "Group contributions correctly by place value, then add every row.",
+        "Teacher reviews matching algorithms to diagrams and explanations of different layouts.",
+        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 3 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-3/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Partial Products in Algorithms — place-value model",
+          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Rows": [
+            {
+              "Label": "Place-value product",
+              "Cells": [
+                "20×200",
+                "20×30",
+                "20×6",
+                "4×200",
+                "4×30",
+                "4×6"
+              ]
+            },
+            {
+              "Label": "Value",
+              "Cells": [
+                "4000",
+                "600",
+                "120",
+                "800",
+                "120",
+                "24"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L04",
+      "CultureCode": "en",
+      "Title": "Standard Algorithm: One-digit and Multi-digit Numbers with Composing",
+      "ExplanationParagraphs": [
+        "Learning goal: interpret and carry newly composed tens, hundreds or thousands correctly when multiplying a multi-digit number (up to five digits) by one digit. This lesson's teacher activity asks students to explain where each carried unit came from, not memorize an unmotivated digit-shift procedure.",
+        "Warm-up: mentally calculate 3×7, 3×30, 3×200 and 3×237. See the three partial contributions 21,90,600 and combine to 711; relate that to what the compact standard algorithm records.",
+        "Activity 1 — composition: for 247×3, multiply ones 7×3=21, write 1 one and carry 2 tens. Multiply tens 4×3+2=14 tens, write 4 tens and carry 1 hundred. Multiply hundreds 2×3+1=7 hundreds, giving 741. Connect each written compact digit and carried mark with 600+120+21.",
+        "Activity 2 — five-digit factors: find 12,345×6 with place-by-place composing. Independently check the result 74,070 using 12,000×6=72,000 and 345×6=2070. Prompt students to explain in words why the zero in the hundreds position of 74,070 records a composed group of 20 hundreds correctly.",
+        "Assessment: exactly graded products and carry checks can support the algorithm, but source learner explanation of the carried digits and peer revision must be reviewed; an isolated correct product is not evidence of that conceptual understanding."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Composing tens",
+          "Definition": "Ten ones make one ten; regroup excess tens instead of recording a two-digit ones column.",
+          "Rule": "For 247×3, 7×3=21 ones is 1 one plus 2 tens carried.",
+          "Example": "The ones digit is 1 and a carried 2 joins the tens."
+        },
+        {
+          "Title": "Carried digits are units",
+          "Definition": "A carry changes the next place's count and must be included before writing the next digit.",
+          "Rule": "4 tens×3+2 tens=14 tens = 4 tens plus 1 hundred.",
+          "Example": "The tens digit is 4, with 1 carried to hundreds."
+        },
+        {
+          "Title": "Estimate to verify the compact algorithm",
+          "Definition": "A number about 12,000 multiplied by six gives about 72,000, so an answer of hundreds is impossible.",
+          "Rule": "12345×6=74070 is consistent with the estimate.",
+          "Example": "12000×6=72000."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Explain every carry in 247×3",
+          "Question": "Calculate 247×3 and name the units carried.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Compute 7×3=21 ones: write 1, carry 2 tens.",
+            "Compute 4×3+2=14 tens: write 4, carry 1 hundred.",
+            "Compute 2×3+1=7 hundreds."
+          ],
+          "Answer": "741.",
+          "Check": "600+120+21=741."
+        },
+        {
+          "Title": "Five-digit product with composing",
+          "Question": "Calculate 12,345×6.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Multiply six by digits from ones upward, carrying composed units as needed.",
+            "Preserve zero tens if the tens-place total is ten tens.",
+            "Compare final answer with 12,000×6+345×6."
+          ],
+          "Answer": "74,070.",
+          "Check": "72,000+2070=74,070."
+        },
+        {
+          "Title": "Refute an omitted carry",
+          "Question": "A learner computes 247×3 as 621. Identify why that cannot be correct.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "First calculate 200×3=600, so the true product must exceed 600.",
+            "Calculate 40×3=120 and 7×3=21.",
+            "Add all partial products and compare against 621."
+          ],
+          "Answer": "The correct product is 741; 621 ignores most of the tens contribution.",
+          "Check": "600+120+21=741; teacher checks the learner's carry explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Drop the carried ten or hundred",
+          "WhyWrong": "The newly composed units remain part of the result and must be included in the next place.",
+          "Correction": "Write carries by their target place value, not as unlabelled digits."
+        },
+        {
+          "Mistake": "Omit a zero place in a large result",
+          "WhyWrong": "A zero may be a valid place holder after composing; skipping it shifts all higher digits.",
+          "Correction": "Use place-value columns and check against an estimate."
+        }
+      ],
+      "SummaryPoints": [
+        "Each carried mark denotes newly composed units of the next place.",
+        "A standard-algorithm digit should be justified through partial products.",
+        "Teacher review is needed for explanations and peer revisions, beyond a numeric product.",
+        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 4 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-4/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Standard Algorithm: One-digit and Multi-digit Numbers with Composing — place-value model",
+          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Rows": [
+            {
+              "Label": "Stage",
+              "Cells": [
+                "Ones",
+                "Tens",
+                "Hundreds"
+              ]
+            },
+            {
+              "Label": "247×3",
+              "Cells": [
+                "7×3=21",
+                "4×3+2=14",
+                "2×3+1=7"
+              ]
+            },
+            {
+              "Label": "Written digit",
+              "Cells": [
+                "1",
+                "4",
+                "7"
+              ]
+            },
+            {
+              "Label": "Carries forward",
+              "Cells": [
+                "2 tens",
+                "1 hundred",
+                "None"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U04:L05",
+      "CultureCode": "en",
+      "Title": "Standard Algorithm: Multi-digit Numbers without Composing",
+      "ExplanationParagraphs": [
+        "Learning goal: compare condensed two-row standard multiplication and expanded partial-products recording for a three-digit-by-two-digit product that requires NO newly composed unit. This is deliberately BEFORE composing with a two-digit multiplier; do not introduce mandatory multi-digit carrying as the central skill in this lesson.",
+        "Warm-up: use mental comparisons between 20×3, 24×3, 120×3 and 140×3 to recall place-value alignment and prepare for the tens multiplier's shift. Discuss why a row multiplied by 20 represents tens.",
+        "Activity 1 — compare two algorithms: use first-party 312×21. Expanded partial products are 300,10,2,6000,200,40; standard algorithm records 312 (times one) and 6240 (times twenty), then sums 6552. Explain which expanded contributions lie inside each condensed row; the original publisher uses different numbers, so these are independently authored examples.",
+        "Activity 2 — without composition: calculate 211×32. Multiply 211×2=422 and 211×30=6330, then add 6752. Contrast the invalid row 633 for 30×211 with the correct 6330 and reject a product below 211×30 using estimation.",
+        "Assessment: the public source asks learners to identify individual partial products inside compact rows and explain why a missing tens shift yields an implausibly small product. Numeric checking of 6552/6752 is insufficient for matching rows to place-value meaning; that explanation is teacher-reviewed."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two-row algorithm",
+          "Definition": "One row multiplies the multiplicand by the multiplier's ones and the next by its tens.",
+          "Rule": "312×21=312×1+312×20.",
+          "Example": "312+6240=6552."
+        },
+        {
+          "Title": "No composing in the component multiplications",
+          "Definition": "Choose examples where each separate digit product does not generate new tens in that column.",
+          "Rule": "211×32 can be recorded as 422 plus 6330 without carrying during component multiplication.",
+          "Example": "422+6330=6752."
+        },
+        {
+          "Title": "Estimate catches place shifts",
+          "Definition": "Multiplication by a 30 in tens position is ten times multiplication by 3.",
+          "Rule": "211×30=6330, not 633.",
+          "Example": "An output 1055 is far below 211×30."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Condense six partial products",
+          "Question": "Calculate 312×21 using both expanded and compact recording.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Write 312×1=312 with expanded 300+10+2.",
+            "Write 312×20=6240 with expanded 6000+200+40.",
+            "Add 312+6240."
+          ],
+          "Answer": "6552.",
+          "Check": "312×(20+1)=6240+312=6552."
+        },
+        {
+          "Title": "Use two-digit standard algorithm without composing",
+          "Question": "Calculate 211×32.",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Multiply by 2 ones: 211×2=422.",
+            "Multiply by 3 tens: 211×30=6330.",
+            "Add the two aligned rows."
+          ],
+          "Answer": "6752.",
+          "Check": "211×(30+2)=6330+422=6752."
+        },
+        {
+          "Title": "Diagnose a tens-row error",
+          "Question": "Why is recording 211×30 as 633 incorrect?",
+          "Method": "Use original place-value representations, justify intermediate products, and check the computation independently.",
+          "Steps": [
+            "Interpret the multiplier digit 3 in 32 as three tens, or thirty.",
+            "Calculate 211×3=633 for comparison.",
+            "Multiply the three-group product by ten to get thirty groups."
+          ],
+          "Answer": "Correct tens partial product is 6330.",
+          "Check": "211×32 must be greater than 211×30=6330, so the wrong row cannot represent the result."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Write the tens row as though the multiplier were in the ones place",
+          "WhyWrong": "The digit printed in tens column means tens units and its row must be shifted accordingly.",
+          "Correction": "Write 211×30=6330 as the entire second partial product."
+        },
+        {
+          "Mistake": "Assume all standard-algorithm lessons use carry composition",
+          "WhyWrong": "This source specifically isolates two-digit multiplication without composition so students can notice the partial-product structure.",
+          "Correction": "Explain where the two rows come from before introducing regrouping in the subsequent lesson."
+        }
+      ],
+      "SummaryPoints": [
+        "A compact standard algorithm records exactly the same products as a longer partial-products list.",
+        "The tens-row factor must represent a multiple of ten.",
+        "Teacher checks compact-to-expanded explanation and error critique; numeric output alone is not full source task.",
+        "Source: IM K–5 Grade 5 first edition (2021), Unit 4 Lesson 5 https://im.kendallhunt.com/k5/teachers/grade-5/unit-4/lesson-5/lesson.html. Only public student-facing and teacher HTML reviewed; original PDF/student response/Cool-down not independently verified. All new examples, tables and text are Edulytiks-authored."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Standard Algorithm: Multi-digit Numbers without Composing — place-value model",
+          "Description": "First-party accessible text diagram or place-value table; publisher algorithm images not copied.",
+          "Rows": [
+            {
+              "Label": "Algorithm",
+              "Cells": [
+                "Expanded partials",
+                "Condensed standard"
+              ]
+            },
+            {
+              "Label": "For 312×21",
+              "Cells": [
+                "300+10+2+6000+200+40",
+                "312+6240"
+              ]
+            },
+            {
+              "Label": "Product",
+              "Cells": [
+                "6552",
+                "6552"
+              ]
+            },
+            {
+              "Label": "For 211×32",
+              "Cells": [
+                "200+20+2+6000+300+30",
+                "422+6330"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

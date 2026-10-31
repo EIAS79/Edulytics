@@ -1,0 +1,617 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "g5-u06-l07-l11-im2021-ourcs-verified-firstparty-richv2-v7-20261029",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L07",
+      "CultureCode": "en",
+      "Title": "Multi-step Conversion Problems: Customary Length",
+      "ExplanationParagraphs": [
+        "Goal: sort and compare inches, feet and yards, then solve multi-step customary-length stories involving a rectangular field's perimeter and a whole number of laps compared with a mile. The source first lets learners sort measurement cards by any justified grouping and then requires matching equivalent physical lengths.",
+        "Warm-up: measure or describe a one-yard stick with three feet and36 inches. Explain why a number such as72 inches describes the same distance as6 feet or2 yards and why a larger printed count does not mean a longer object.",
+        "Activity 1 — first-party card equivalents: match 2 yards=6 feet=72 inches, 2 1/2 yards=7 1/2 feet=90 inches, and3 yards=9 feet=108 inches. Sort the representations both by unit form and by exact physical length, then order the groups from shortest to longest. Teacher reviews alternate valid classification criteria.",
+        "Activity 2 — perimeter and mile: original rectangular field100 yards long by48 1/2 yards wide has perimeter2×(100+48 1/2)=297 yards. Six laps equal1782 yards, which is22 yards MORE than one mile (1760 yards). For another field90 by55 yards, perimeter290 yards; twelve laps cover3480 yards, short of two miles (3520 yards), while thirteen cover3770, so13 full laps are required to reach at least two miles.",
+        "Teacher boundary: the card-sort criteria, diagrams of a field and interpretation of a whole lap cannot be certified by a numeric converter; source asks students to critique a claim, state units and defend a minimum count. Original card images and protected teacher responses not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Customary length relations",
+          "Definition": "One yard equals three feet equals36 inches; one mile equals5280 feet or1760 yards.",
+          "Rule": "2.5yd=7.5ft=90in.",
+          "Example": "Compare quantities only after conversion."
+        },
+        {
+          "Title": "Rectangular perimeter",
+          "Definition": "Two laps over each pair of perpendicular sides form a rectangle's perimeter.",
+          "Rule": "P=2(L+W).",
+          "Example": "100yd by48.5yd has perimeter297yd."
+        },
+        {
+          "Title": "Minimum whole laps",
+          "Definition": "For 'at least' a distance, use the smallest whole number of complete laps whose product meets the target.",
+          "Rule": "12×290=3480<3520 and13×290=3770≥3520.",
+          "Example": "Minimum is13 full laps."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Match length cards",
+          "Question": "Match2.5yd with feet and inches.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Multiply2.5 by3 to convert to feet.",
+            "Multiply feet by12 to convert to inches.",
+            "Explain all three values describe one length."
+          ],
+          "Answer": "2.5yd=7.5ft=90in.",
+          "Check": "7.5×12=90 and90÷36=2.5."
+        },
+        {
+          "Title": "Compare six laps with a mile",
+          "Question": "A field is100yd by48.5yd. Do six perimeter laps exceed one mile?",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Calculate perimeter2×(100+48.5)=297yd.",
+            "Multiply297×6=1782yd.",
+            "Compare with1760yd per mile."
+          ],
+          "Answer": "Yes, by22 yards.",
+          "Check": "1782−1760=22."
+        },
+        {
+          "Title": "Two-mile minimum",
+          "Question": "A 90-by-55-yard field has290-yard perimeter. How many whole laps reach at least two miles?",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Convert two miles to3520 yards.",
+            "Try12 laps, equal3480 yards, which is insufficient.",
+            "Try13 laps, equal3770 yards."
+          ],
+          "Answer": "13 complete laps.",
+          "Check": "12 laps short by40yd;13 suffice."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Use 5280 as miles-to-yards conversion factor",
+          "WhyWrong": "5280 describes FEET per mile, not yards.",
+          "Correction": "Use1760 yards per mile or divide feet by3."
+        },
+        {
+          "Mistake": "Round down a required lap count",
+          "WhyWrong": "A partial lap quotient does not meet the 'whole laps at least' requirement.",
+          "Correction": "Check successive integers against the target and round up if needed."
+        }
+      ],
+      "SummaryPoints": [
+        "Convert and compare customary lengths with compatible units.",
+        "Perimeter and whole-lap repetition require different operations.",
+        "Teacher reviews card-sort criteria, diagrams and minimum-lap argument.",
+        "2021 original IM K–5 Grade5 Unit6 Lesson 7: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-7/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multi-step Conversion Problems: Customary Length — original representation",
+          "Description": "Independently authored accessible math table, not source's publisher card/image set.",
+          "Rows": [
+            {
+              "Label": "Length",
+              "Cells": [
+                "2yd",
+                "2.5yd",
+                "3yd"
+              ]
+            },
+            {
+              "Label": "Feet",
+              "Cells": [
+                "6",
+                "7.5",
+                "9"
+              ]
+            },
+            {
+              "Label": "Inches",
+              "Cells": [
+                "72",
+                "90",
+                "108"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L08",
+      "CultureCode": "en",
+      "Title": "Add and Subtract Fractions PLC Activity",
+      "ExplanationParagraphs": [
+        "Goal: add and subtract fraction quantities when denominators match or differ by inventing categories for an expression-card sort, then using diagrams, equal parts or equivalent fractions in any mathematically defensible way. The source explicitly permits multiple grouping rationales and does not require formal common-denominator rules as the only entry point.",
+        "Warm-up: compare one half with two fourths using a single fixed-unit tape. Both shade the same length and have different numerator/denominator pairs; explain why they can be combined after renaming one or both.",
+        "Activity 1 — category sort: first-party expressions 3/4+1/2,3/4+3/4,3/4−1/8,2/5+3/10 and5/6−1/3 may be grouped by same versus different denominators, by addition versus subtraction, or by whether the result exceeds one. At least two valid classification systems and student explanations are required.",
+        "Activity 2 — find three values: 3/4+3/4=6/4=1 1/2 by adding identical fourths; 3/4−1/8=6/8−1/8=5/8 by eighth strips; 3/4+1/2=3/4+2/4=5/4=1 1/4 by common quarters. Different number-line or tape-diagram strategies must refer to the same unit whole.",
+        "Assessment: the original task asks learners to explain their own sort, change categories and choose strategies. A single automated arithmetic answer cannot certify card sorting, drawn partitions, partner comparison or multiple valid methods."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equal denominators represent same-size parts",
+          "Definition": "Fractions with common denominators can add or subtract their part counts.",
+          "Rule": "3/4+3/4=6/4.",
+          "Example": "The result can exceed one whole."
+        },
+        {
+          "Title": "Equivalent fractions for unlike denominators",
+          "Definition": "Rename each fraction in equal parts of a consistent whole before combining.",
+          "Rule": "3/4−1/8=6/8−1/8.",
+          "Example": "5/8 remains."
+        },
+        {
+          "Title": "Flexible expression grouping",
+          "Definition": "A fraction card may be grouped by operation, denominator relationship or result size.",
+          "Rule": "3/4+3/4 is addition with like denominators AND a sum above one.",
+          "Example": "Teacher reviews a meaningful second classification."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Same denominator",
+          "Question": "Find3/4+3/4.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Keep one whole divided into fourths.",
+            "Combine three plus three quarter-parts.",
+            "Regroup four quarters as one whole."
+          ],
+          "Answer": "6/4=1 1/2.",
+          "Check": "Each summand0.75 gives1.5 total."
+        },
+        {
+          "Title": "Subtract unlike parts",
+          "Question": "Find3/4−1/8.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Rename3/4 as6/8.",
+            "Remove one of those eighths.",
+            "Count five eighths."
+          ],
+          "Answer": "5/8.",
+          "Check": "5/8+1/8=6/8=3/4."
+        },
+        {
+          "Title": "Add halves to quarters",
+          "Question": "Find3/4+1/2.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Rename half as2/4.",
+            "Add three and two equal fourths.",
+            "Regroup excess fourths."
+          ],
+          "Answer": "5/4=1 1/4.",
+          "Check": "5/4−1/2=3/4."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Add numerators and denominators separately",
+          "WhyWrong": "The sum must count equal-sized portions, not create an arbitrary new unit.",
+          "Correction": "Rename both terms with a common denominator, then add numerators."
+        },
+        {
+          "Mistake": "Claim a single correct card classification",
+          "WhyWrong": "Several grouping criteria can be justified from exact mathematical properties.",
+          "Correction": "State the rule for each classification and ensure all cards actually satisfy it."
+        }
+      ],
+      "SummaryPoints": [
+        "Fractions can be added or subtracted with diagrams or equivalent unit parts.",
+        "Different card-sort explanations are legitimate when clearly justified.",
+        "Teacher review is needed for drawing and categorization.",
+        "2021 original IM K–5 Grade5 Unit6 Lesson 8: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-8/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Add and Subtract Fractions PLC Activity — original representation",
+          "Description": "Independently authored accessible math table, not source's publisher card/image set.",
+          "Rows": [
+            {
+              "Label": "Operation",
+              "Cells": [
+                "3/4+3/4",
+                "3/4−1/8",
+                "3/4+1/2"
+              ]
+            },
+            {
+              "Label": "Common parts",
+              "Cells": [
+                "3/4+3/4",
+                "6/8−1/8",
+                "3/4+2/4"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "1 1/2",
+                "5/8",
+                "1 1/4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L09",
+      "CultureCode": "en",
+      "Title": "Use Equivalent Expressions",
+      "ExplanationParagraphs": [
+        "Goal: identify several equivalent fraction sums/differences and strategically choose a common denominator, sometimes simplifying before adding. The 2021 source asks why alternative expressions are equivalent, then compares different decompositions for differences and optionally a plant-growth story with unlike fractions.",
+        "Warm-up: a fraction such as 3/4 can be described as6/8 or9/12 because the count and size of parts change together. Explain why multiplying just the numerator produces a different quantity.",
+        "Activity 1 — same sum with different units: find 2/3+5/12. Convert2/3=8/12 to obtain13/12=1 1/12. Alternatively work in sixths and twelfths as needed, showing that equivalent forms preserve the original total. Describe why twelfths are convenient without insisting they are the only denominator.",
+        "Activity 2 — subtract and compare: find 5/4−1/2 as5/4−2/4=3/4, or rewrite 5/4=15/12 and1/2=6/12 for9/12=3/4. A plant example using hypothetical growth1 5/8 inches versus3/4 inch gives a difference of7/8 inch; a student can add on or subtract after renaming.",
+        "Teacher boundary: source requires matching equivalences, explaining numerator-and-denominator transformations, and comparing partner strategies. Numeric fractions alone do not prove the learner understood why a new expression is equivalent."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent fraction identity",
+          "Definition": "Multiplying numerator and denominator by the same nonzero integer preserves fraction value.",
+          "Rule": "2/3=8/12.",
+          "Example": "8/(3×4) with correct numerator scaling."
+        },
+        {
+          "Title": "Choose a helpful common denominator",
+          "Definition": "A denominator that both original denominators divide evenly allows comparison of same-sized parts.",
+          "Rule": "5/4−1/2=5/4−2/4.",
+          "Example": "Result3/4."
+        },
+        {
+          "Title": "Mixed fraction differences",
+          "Definition": "A mixed fraction can be changed to an improper fraction or compared with another fraction by adding on.",
+          "Rule": "1 5/8−3/4=13/8−6/8.",
+          "Example": "Difference7/8."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Equivalent fraction sum",
+          "Question": "Find2/3+5/12.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Convert2/3 to8/12.",
+            "Add8/12 and5/12.",
+            "Regroup13/12 into one whole and a twelfth."
+          ],
+          "Answer": "13/12=1 1/12.",
+          "Check": "13/12−5/12=8/12=2/3."
+        },
+        {
+          "Title": "Equivalent difference",
+          "Question": "Find5/4−1/2 in fourths and twelfths.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "In fourths, compute5/4−2/4=3/4.",
+            "In twelfths, compute15/12−6/12=9/12.",
+            "Explain 9/12=3/4."
+          ],
+          "Answer": "3/4.",
+          "Check": "Two different denominator choices yield same value."
+        },
+        {
+          "Title": "Compare growth",
+          "Question": "A fictional plant grows1 5/8in and another grows3/4in. How much more grew the first?",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Rename1 5/8 as13/8.",
+            "Rename3/4 as6/8.",
+            "Subtract the equal eighths."
+          ],
+          "Answer": "7/8 inch.",
+          "Check": "6/8+7/8=13/8."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Change a denominator without scaling the numerator",
+          "WhyWrong": "That changes fraction size and gives non-equivalent expressions.",
+          "Correction": "Use the same multiplier on numerator and denominator."
+        },
+        {
+          "Mistake": "Assume a larger common denominator always makes calculations easier",
+          "WhyWrong": "An unnecessarily large common denominator can complicate arithmetic.",
+          "Correction": "Compare common multiples and simplify when useful."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent expressions support accurate addition and subtraction of unlike denominators.",
+        "Several common denominators may be valid, with efficiency a separate criterion.",
+        "Teacher reviews equivalence explanations, not only a fraction answer.",
+        "2021 original IM K–5 Grade5 Unit6 Lesson 9: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-9/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Use Equivalent Expressions — original representation",
+          "Description": "Independently authored accessible math table, not source's publisher card/image set.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "2/3+5/12",
+                "5/4−1/2",
+                "1 5/8−3/4"
+              ]
+            },
+            {
+              "Label": "Common form",
+              "Cells": [
+                "8/12+5/12",
+                "5/4−2/4",
+                "13/8−6/8"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "13/12",
+                "3/4",
+                "7/8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L10",
+      "CultureCode": "en",
+      "Title": "All Sorts of Denominators",
+      "ExplanationParagraphs": [
+        "Goal: explain why multiplying two denominators always produces SOME common denominator, then choose a smaller or more useful common multiple when available. The source contrasts using a guaranteed product with spotting an easier common unit, and asks children to justify both the method and their actual sum/difference.",
+        "Warm-up: compare the common denominator 24 for3/4+2/3 with the smaller denominator12. Both are mathematically sound, but 12 produces smaller equivalent numerators than24. Explain why multiplying4×3=12 always supplies a multiple of both.",
+        "Activity 1 — new sums: find3/8+2/5 using40ths, giving15/40+16/40=31/40. Find7/10−2/3 using30ths, giving21/30−20/30=1/30. Students can draw area bars, use multiplicative equivalence, or explain part counts.",
+        "Activity 2 — choose between denominators: 2/3+5/9 can use9ths to give6/9+5/9=11/9, or27ths to give18/27+15/27=33/27=11/9. Discuss why both work, and why the least common denominator is often more convenient while the denominator product is a guaranteed fallback.",
+        "Assessment: teacher reviews a proof of denominator product as a common multiple, correct equivalences and a rationale for choice. Merely outputting31/40 is a small algorithmic subskill of the original source task."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product denominator always works",
+          "Definition": "For positive denominators b and d, bd is divisible by both b and d.",
+          "Rule": "a/b+c/d=(ad+bc)/(bd).",
+          "Example": "3/8+2/5=(15+16)/40."
+        },
+        {
+          "Title": "Smaller common multiple can be simpler",
+          "Definition": "A common denominator need not be the least, but smaller equivalent counts are often easier.",
+          "Rule": "2/3+5/9 can use9 rather than27.",
+          "Example": "6/9+5/9=11/9."
+        },
+        {
+          "Title": "Like-unit subtraction",
+          "Definition": "Common denominators let numerators count same-size parts.",
+          "Rule": "7/10−2/3=21/30−20/30.",
+          "Example": "Difference1/30."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Different denominators with no simple multiple",
+          "Question": "Find3/8+2/5.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Use8×5=40 common parts.",
+            "Rename3/8 as15/40 and2/5 as16/40.",
+            "Add selected fortieths."
+          ],
+          "Answer": "31/40.",
+          "Check": "31/40−16/40=15/40."
+        },
+        {
+          "Title": "Subtract with thirtieths",
+          "Question": "Find7/10−2/3.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Convert to common thirtieths.",
+            "Compute21/30−20/30.",
+            "Interpret one part in the original whole."
+          ],
+          "Answer": "1/30.",
+          "Check": "1/30+20/30=21/30."
+        },
+        {
+          "Title": "Contrast 9 versus 27",
+          "Question": "Find2/3+5/9 with two common denominators.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Use9ths to get6/9+5/9=11/9.",
+            "Use27ths to get18/27+15/27=33/27.",
+            "Show equivalence by reducing33/27."
+          ],
+          "Answer": "11/9=1 2/9.",
+          "Check": "Both use correct common-unit partitions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assume the product of denominators is the only valid common denominator",
+          "WhyWrong": "Any shared positive multiple works, including a smaller common multiple.",
+          "Correction": "Consider easy multiples before multiplying denominators."
+        },
+        {
+          "Mistake": "Multiply denominator factors but forget the numerator conversions",
+          "WhyWrong": "Changing partition sizes requires changing selected counts proportionally.",
+          "Correction": "For a/b to denominator bd, multiply numerator by d too."
+        }
+      ],
+      "SummaryPoints": [
+        "The denominator product gives a guaranteed common unit, not always the best unit.",
+        "Like-unit arithmetic can use any valid common multiple with numerator scaling.",
+        "Teacher reviews explanation of why the algorithm works and method selection.",
+        "2021 original IM K–5 Grade5 Unit6 Lesson 10: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-10/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "All Sorts of Denominators — original representation",
+          "Description": "Independently authored accessible math table, not source's publisher card/image set.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "3/8+2/5",
+                "7/10−2/3",
+                "2/3+5/9"
+              ]
+            },
+            {
+              "Label": "Common unit",
+              "Cells": [
+                "40",
+                "30",
+                "9"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "31/40",
+                "1/30",
+                "11/9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G5:U06:L11",
+      "CultureCode": "en",
+      "Title": "Different Ways to Subtract",
+      "ExplanationParagraphs": [
+        "Goal: subtract unlike-denominator mixed numbers and select among decomposition, regrouping and adding-on strategies, explaining why an equivalent mixed-number form can make a tricky fractional subtraction possible. The source deliberately uses fractions close to a whole and has students compare work in a gallery display.",
+        "Warm-up: rename 4 1/4 as3 5/4 and as17/4; all are the same amount, but the second mixed expression permits subtracting a larger fractional part. Identify when borrowing one whole is useful.",
+        "Activity 1 — justify regrouping: calculate4 1/4−2 5/6. Rewrite4 1/4 as3 15/12, because4 1/4=3+15/12; 2 5/6=2+10/12. Subtract corresponding whole and twelfth parts to yield1+5/12=1 5/12. Compare to directly computing17/4−17/6=17/12. The original whole stays fixed.",
+        "Activity 2 — count up for close mixed numbers: 5 1/8−4 7/8 can be found by adding1/8 to4 7/8 to get5, then1/8 more to5 1/8, total1/4. Another 3 2/3−1 5/6 can be found with sixths: 22/6−11/6=11/6=1 5/6. Ask learners which approach is clearest and why.",
+        "Assessment: source asks for selecting equivalences, a valid diagram, a reasoned method choice, and comparison of gallery displays; a numeric answer does not verify those student-generated reasoning tasks. Protected source graphics and gated response not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Regroup one whole in a mixed number",
+          "Definition": "One whole can be exchanged for denominator-many fractional pieces to make a subtraction possible.",
+          "Rule": "4 1/4=3 5/4=3 15/12.",
+          "Example": "The value does not change."
+        },
+        {
+          "Title": "Common units in mixed difference",
+          "Definition": "Rewrite fractions as equal-sized parts before subtracting.",
+          "Rule": "4 1/4−2 5/6=(3+15/12)−(2+10/12).",
+          "Example": "Result1 5/12."
+        },
+        {
+          "Title": "Adding on",
+          "Definition": "The gap between near-whole mixed numbers can be counted by short forward steps.",
+          "Rule": "4 7/8→5 adds1/8;5→5 1/8 adds1/8.",
+          "Example": "Difference1/4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Use regrouping",
+          "Question": "Find4 1/4−2 5/6.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Use twelfths: 4 1/4=4 3/12, 2 5/6=2 10/12.",
+            "Exchange one whole from4 to get3 15/12.",
+            "Subtract2 10/12."
+          ],
+          "Answer": "1 5/12.",
+          "Check": "17/4−17/6=17/12."
+        },
+        {
+          "Title": "Use counting up",
+          "Question": "Find5 1/8−4 7/8.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Count1/8 from4 7/8 to5.",
+            "Count another1/8 to5 1/8.",
+            "Combine the equal pieces."
+          ],
+          "Answer": "1/4.",
+          "Check": "4 7/8+1/4=5 1/8."
+        },
+        {
+          "Title": "Subtract in sixths",
+          "Question": "Find3 2/3−1 5/6.",
+          "Method": "Original first-party fraction or measurement representation with exact arithmetic check and teacher-scored reasoning.",
+          "Steps": [
+            "Convert3 2/3 to22/6.",
+            "Convert1 5/6 to11/6.",
+            "Subtract eleven sixths and regroup."
+          ],
+          "Answer": "11/6=1 5/6.",
+          "Check": "1 5/6+1 5/6=3 2/3."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtract the smaller fraction from a larger fraction while ignoring the borrow",
+          "WhyWrong": "A mixed fractional part can be smaller than the fraction being removed.",
+          "Correction": "Exchange one whole for fractional parts or use improper fractions."
+        },
+        {
+          "Mistake": "Count mixed number gaps with inconsistent partition units",
+          "WhyWrong": "Adding eighths to sixths requires compatible fractional units if done in one calculation.",
+          "Correction": "Use a common denominator, or separate whole-unit jumps with properly labeled fractional distances."
+        }
+      ],
+      "SummaryPoints": [
+        "Mixed-number subtraction can be shown with regrouped equivalents or adding on.",
+        "Any valid strategy must preserve the whole and use compatible units.",
+        "Teacher reviews strategy choice and mathematical explanations.",
+        "2021 original IM K–5 Grade5 Unit6 Lesson 11: https://im.kendallhunt.com/k5/teachers/grade-5/unit-6/lesson-11/lesson.html. Actual source 2021 teacher HTML including Student Facing content was inspected via verified Primary/Our-CS read-only. Original Student Task PDF, gated source response/Cool-down and third-party assets not independently rights-checked. All examples and tables original Edulytiks authoring."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Different Ways to Subtract — original representation",
+          "Description": "Independently authored accessible math table, not source's publisher card/image set.",
+          "Rows": [
+            {
+              "Label": "Expression",
+              "Cells": [
+                "4 1/4−2 5/6",
+                "5 1/8−4 7/8",
+                "3 2/3−1 5/6"
+              ]
+            },
+            {
+              "Label": "Common representation",
+              "Cells": [
+                "51/12−34/12",
+                "Two jumps of1/8",
+                "22/6−11/6"
+              ]
+            },
+            {
+              "Label": "Result",
+              "Cells": [
+                "1 5/12",
+                "1/4",
+                "1 5/6"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}
