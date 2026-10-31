@@ -1,0 +1,116 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g6-u01-l12-source-aligned-surface-area-candidate-20261028-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G6:U01:L12",
+      "CultureCode": "en",
+      "Title": "What is Surface Area?",
+      "ExplanationParagraphs": [
+        "Learning goal: Estimate and find the surface area of all faces that are actually exposed or intentionally covered on a solid.",
+        "Surface area counts equal square units needed to cover a solid's outer faces without gaps or overlaps. When the task says to exclude the bottom of a cabinet resting on the floor, cover only the top and four side faces; the target surface decides what to count. A closed rectangular prism has six faces, including three equal pairs.",
+        "Twelve equal unit cubes can build multiple rectangular prisms, each of volume 12 cubic units, while exposed surface areas differ according to the arrangement. Hidden outer faces still count if the problem includes them; face-to-face contacts between cubes are internal and do not count.",
+        "This is original Edulytiks teaching based on publicly readable historical OUR/IM Grade 6 Unit 1 Lesson 12 learning goals. It does not embed the original cabinet video, photos or third-party isometric cube assets."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Exposed surface coverage",
+          "Definition": "Surface area is the sum of the areas of the faces that the question asks us to cover.",
+          "Rule": "Identify any expressly excluded faces before adding; report square units.",
+          "Example": "A cabinet on the floor may exclude its bottom, so it has five counted faces rather than six."
+        },
+        {
+          "Title": "Opposite pairs of prism faces",
+          "Definition": "A rectangular prism has two congruent faces for each pair of dimensions.",
+          "Rule": "For a fully covered closed prism, area = 2(lw+lh+wh).",
+          "Example": "A 2-by-2-by-3 prism has surface area 2(4+6+6) = 32 square units."
+        },
+        {
+          "Title": "Cubes versus square faces",
+          "Definition": "Volume counts space occupied by unit cubes, while surface area counts exposed squares.",
+          "Rule": "Count touching cube faces as internal, not exposed; the same cube inventory can have several surface areas.",
+          "Example": "Prisms 2-by-2-by-3 and 1-by-2-by-6 both contain 12 cubes, but their surface areas are 32 and 40."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cover a cabinet without its bottom",
+          "Question": "A cabinet is 8 square-note units across, 5 deep, and 3 high. How many square notes cover its top and four side faces, excluding its bottom?",
+          "Method": "Find each exposed rectangular face area, excluding the bottom by the problem's rule.",
+          "Steps": [
+            "The top needs 8×5 = 40 unit square notes.",
+            "The front/back need 2×(8×3) = 48 notes.",
+            "The left/right sides need 2×(5×3) = 30 notes.",
+            "Add 40+48+30 = 118 notes."
+          ],
+          "Answer": "118 equal square notes are needed; the uncovered bottom is not included.",
+          "Check": "A closed six-face solid would need another 40 notes, for 158 total."
+        },
+        {
+          "Title": "The same 12 cubes, different surface area",
+          "Question": "Two rectangular prisms each use 12 unit cubes. Compare a 2×2×3 prism and a 1×2×6 prism.",
+          "Method": "Compute complete outside surface for each, and check volume separately.",
+          "Steps": [
+            "The first volume is 2×2×3 = 12 cubes and surface is 2(4+6+6) = 32 square units.",
+            "The second volume is 1×2×6 = 12 cubes and surface is 2(2+6+12) = 40 square units.",
+            "The surface-area difference is 40−32 = 8 square units.",
+            "Both objects contain 12 cubic units, so volume is equal even though the exposed areas differ."
+          ],
+          "Answer": "Both volumes are 12 cubic units; surface areas are 32 and 40 square units.",
+          "Check": "No faces where two unit cubes touch are counted as outside faces."
+        },
+        {
+          "Title": "Design an original 12-cube rectangular prism",
+          "Question": "Construct or describe a third prism from exactly 12 unit cubes. Explain its dimensions, face count and outside surface area.",
+          "Method": "Open-ended original model or labeled isometric/accessible description; teacher review.",
+          "Steps": [
+            "Choose three positive whole-number edges whose product is 12, other than the example dimensions if a different shape is requested.",
+            "Arrange the 12 cubes into one solid rectangular prism with no missing or overlapping cubes.",
+            "List the six rectangular faces and their areas.",
+            "Add face areas and justify the total without counting internal touching squares."
+          ],
+          "Answer": "For instance, a 1×1×12 prism has surface 2(1+12+12)=50 square units and volume 12 cubic units; several justified designs are valid.",
+          "Check": "Teacher reviews valid cube assembly, all six exposed faces, computation, dimensions, accessibility and mathematical explanation; no fixed numeric answer can assess original construction."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Covering an excluded cabinet bottom.",
+          "WhyWrong": "The problem asks for only the other five faces and the bottom is not part of the target exterior surface.",
+          "Correction": "List included and excluded faces explicitly before applying a formula."
+        },
+        {
+          "Mistake": "Counting cube contacts or only the three faces visible in a perspective drawing.",
+          "WhyWrong": "Internal contacting squares are not on the solid's outside, but hidden exterior faces still contribute to total surface area.",
+          "Correction": "Enumerate every outer face once; separate cube volume from face area."
+        }
+      ],
+      "SummaryPoints": [
+        "Surface area counts the total area of faces actually being covered, in square units.",
+        "Rectangular-prism opposite faces are paired; subtract excluded faces when a cabinet bottom is left uncovered.",
+        "Equal counts of unit cubes can form different prisms with equal volume and different exposed surface areas."
+      ],
+      "Visuals": [
+        {
+          "Kind": "ShapeDecomposition",
+          "Title": "12-cube prisms and open-bottom cabinet face accounting",
+          "Description": "Text-accessible independent schematic: cabinet dimensions 8 by 5 by 3 in unit square-note widths; count top 40, front/back 48, left/right 30, omit bottom 40, total 118. Separately compare a prism of twelve cubes arranged 2-by-2-by-3 (surface 32) and 1-by-2-by-6 (surface 40). Neither contact faces between cubes nor an expressly omitted cabinet bottom count as exterior covering.",
+          "PrimaryLabel": "Cabinet excluding bottom: 118 square notes",
+          "SecondaryLabel": "12 cubes: 32 vs 40 outside square units",
+          "Items": [
+            "Top: 8 × 5 = 40",
+            "Front and back: 2 × 8 × 3 = 48",
+            "Sides: 2 × 5 × 3 = 30"
+          ],
+          "SecondaryItems": [
+            "Prism A: 2 × 2 × 3 → 32 surface",
+            "Prism B: 1 × 2 × 6 → 40 surface"
+          ],
+          "Rows": []
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

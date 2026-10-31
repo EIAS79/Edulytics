@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G6:OUR-IM-2017",
+  "sourceEdition": "OUR/IM 2017–2019",
+  "status": "PUBLIC_TEACHER_STUDENT_TASKS_COMPARED__ORIGINAL_FIRST_PARTY_LESSONS_CANDIDATE",
+  "provenanceNotice": "Task headings, mathematical goals and public teacher activities compared for U01 L15-L16. Source images and paper blackline master are NOT copied, and actual app/teacher grading is untested.",
+  "richV2Path": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g6-u01-l15-l16-nets-area-volume-20261028.rich-lesson-v2.json",
+  "entries": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L15",
+      "student": "https://im.kendallhunt.com/MS/students/1/1/15/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/1/15/index.html",
+      "publicActivities": [
+        "Notice/wonder about wrapping and missing box dimensions",
+        "Draw and label graph-paper nets of prisms/pyramids and explain correct folding",
+        "Compare different cardboard boxes' surface areas and unit-cube capacities",
+        "Construct multiple correct nets of a cube and defend different face adjacencies"
+      ],
+      "candidateContent": [
+        "Canonical text now uses triangular prism and box comparisons, each calculated with different area/volume units",
+        "Rich V2 L15 teaches valid net connectivity, foldability and independently computed face areas and volume"
+      ],
+      "machineSubtasks": [
+        "Given fixed prism face dimensions, calculate total external area",
+        "Given box dimensions, compute volume and compare area with correct units"
+      ],
+      "humanBoundary": [
+        "Check net graph completeness, adjacency, scale and actual foldability",
+        "Review novel cube nets and student geometric explanation"
+      ],
+      "unknown": [
+        "Source figures have not been individually relicensed or reproduced",
+        "Authenticated net drawing/folding and teacher scoring are NOT verified",
+        "Exact Practice generator/normalizer/verifier is NOT_RUN"
+      ],
+      "teacherAssessment": {
+        "status": "CANDIDATE_NOT_IMPLEMENTED",
+        "maxScore": 8,
+        "criteria": [
+          {
+            "label": "Correct polyhedron and exterior face inventory",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          },
+          {
+            "label": "Correct face-to-face net connectivity and foldability",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          },
+          {
+            "label": "Surface and volume calculations with consistent units",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          },
+          {
+            "label": "Student net labels and geometric justification",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedTeacherGradeVerified": false
+      },
+      "originalFigurePixelsVerified": false,
+      "effectiveStudentRichV2Rendered": false,
+      "selectedPracticeVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G6:U01:L16",
+      "student": "https://im.kendallhunt.com/MS/students/1/1/16/index.html",
+      "teacher": "https://im.kendallhunt.com/MS/teachers/1/1/16/index.html",
+      "publicActivities": [
+        "Select valid units for one-, two- and three-dimensional measurements",
+        "Build two student-created different eight-cube solids and compare their external face counts",
+        "Compare three prisms with equal surface areas and differing volumes",
+        "Explain both equal-volume/different-surface and equal-surface/different-volume counterexamples"
+      ],
+      "candidateContent": [
+        "Canonical text now explicitly teaches both logical directions and original 8-cube assemblies",
+        "Rich V2 L16 includes same-volume 24/28/34 external areas and same-area 22/different-volume 5/6 examples"
+      ],
+      "machineSubtasks": [
+        "Count exposed faces and unit cubes for fully specified rectangular arrangements",
+        "Compute 2(ab+ac+bc) and abc and compare values"
+      ],
+      "humanBoundary": [
+        "Validate feasible novel 8-cube or non-prismatic shapes and correct surface face marking",
+        "Review why area-versus-volume implications do not follow from a single example"
+      ],
+      "unknown": [
+        "Interactive cube stack and original source diagrams not independently reproduced",
+        "No authenticated constructed-shape rubric/teacher persistence",
+        "Actual Practice selected contract/feedback not verified"
+      ],
+      "teacherAssessment": {
+        "status": "CANDIDATE_NOT_IMPLEMENTED",
+        "maxScore": 8,
+        "criteria": [
+          {
+            "label": "Appropriate units for length, area and volume",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          },
+          {
+            "label": "Correct counting of exterior faces versus hidden contacts",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          },
+          {
+            "label": "Valid equal-volume or equal-area construction/counterexamples",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          },
+          {
+            "label": "Clear comparison and mathematical explanation",
+            "maxPoints": 2,
+            "requirements": "0 absent/incorrect, 1 partial, 2 correct with reasoned evidence"
+          }
+        ],
+        "teacherDecisionRequired": true,
+        "persistedTeacherGradeVerified": false
+      },
+      "originalFigurePixelsVerified": false,
+      "effectiveStudentRichV2Rendered": false,
+      "selectedPracticeVerified": false,
+      "academicAcceptance": "NOT_ACCEPTED"
+    }
+  ]
+}
