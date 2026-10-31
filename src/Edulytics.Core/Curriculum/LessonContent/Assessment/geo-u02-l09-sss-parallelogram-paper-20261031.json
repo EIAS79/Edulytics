@@ -1,0 +1,200 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
+  "Status": "C_CLOSED_AUTHORING_SSS_REFLECTION_AND_PARALLELOGRAM_PAPER_NOT_RUN",
+  "SourceEdition": "Illustrative Mathematics HS Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\9\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\9\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\9\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\9\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "5ffd96782211e49fa86c8dcfceace385fc9a0414542bd763a9d912b39c8cf8b6",
+    "TeacherActivities": "6286fcb3b4e0eec895bd05843e06c3044b1046d3f062f544ba4945de00f4b4b8",
+    "StudentActivities": "03c3a4b309287b4a4d6c7d04f5a21df485d383bbca0290af42c55ae5ed07910d",
+    "StudentPractice": "4ce47202fc4d90ffdab7add25e747d2ca36fe5decaab9bc93d8b29725a43a19a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "7.G.A.2",
+      "HSG-CO.B.7",
+      "HSG-CO.B.8"
+    ],
+    "Addressing": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.11"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.8",
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "9.1",
+      "Goal": "Construct different orientations of triangles with three fixed positive sides, teacher overlay",
+      "FirstPartyMode": "SOURCE_PAPER_OR_TECH_OPTIONAL_CONSTRUCTION"
+    },
+    {
+      "Source": "9.2",
+      "Goal": "Priya ordered STU→GHJ mapping via two equidistant points and bisector reflection",
+      "FirstPartyMode": "TEACHER_SCORED_COMPLETE_SSS_PROOF"
+    },
+    {
+      "Source": "9.2 Extension",
+      "Goal": "Two equal sides 4 cm and third length vs included angle nonlinearity",
+      "FirstPartyMode": "OPTIONAL_HUMAN_MATH_ARGUMENT"
+    },
+    {
+      "Source": "9.3",
+      "Goal": "Opposite parallelogram angles using known opposite sides and diagonal SSS, skeptic proof critique",
+      "FirstPartyMode": "TEACHER_OBSERVED_PARTNER_PROOF_REVISIONS"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "Seven original kite, converses, isosceles, rigid motions figure-dependent skills",
+      "FirstPartyMode": "TEACHER_SCORED_SOURCE_INDEXED_PRACTICE"
+    },
+    {
+      "Source": "9.4 Publisher Cool-down",
+      "Goal": "Original restricted",
+      "FirstPartyMode": "EDULYTIKS_ORIGINAL_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L09_SSS_PERP_BISECTOR_REFLECTION_PAPER_REVIEW",
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L09",
+    "Mode": "TEACHER_SELECTED_OFFLINE_PAPER_AND_PEER_PROOF_REVIEW",
+    "TaskId": "geo-u02-l09-sss-reflection-skeptic-parallelogram",
+    "TeacherHandoff": "Teacher distributes independent 9.1 construction materials, source-indexed Priya SSS reflection proof, 9.3 diagonal proof and partner critique and 7 Practice prompts; score four 0-2 criteria and paper Cool-down offline. Actual saved app grade not asserted.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "Correct strict triangle inequality, ordered three corresponding sides and construction equivalence; original visual unavailable noted",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "Full SSS base rigid alignment, two-point equidistance, bisector axis and third vertex reflection",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "Noncircular parallelogram opposite-angle proof by proven opposite sides/common diagonal SSS and peer critique",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "Seven indexed source-practice explanations and independently authored paper Cool-down, including converse and kite reasoning",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": [
+    {
+      "Id": "P1",
+      "OriginalSkill": "Kite diagonal congruent halves",
+      "FirstPartyPrompt": "Given kite WXYZ with WX=WZ and YX=YZ, use diagonal WY common plus both side pairs for WXY congruent WZY by SSS.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P2",
+      "OriginalSkill": "Kite angle bisector",
+      "FirstPartyPrompt": "After WYZ congruent WYX, show WY bisects angles ZWX and ZYX because corresponding half angles are equal.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P3",
+      "OriginalSkill": "Kite numerical angle problem",
+      "FirstPartyPrompt": "Teacher supplies source-derived figure with WXY=133 degrees and ZWX=60 degrees, student justifies angle ZYW without unsupported figure inference.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P4",
+      "OriginalSkill": "True converses",
+      "FirstPartyPrompt": "Of supplementary, isosceles base angles, perpendicular bisector, vertical, perpendicular lines statements, select only B,C,E true converses and give counterexamples to A,D.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P5",
+      "OriginalSkill": "Prove ABD congruent CDB",
+      "FirstPartyPrompt": "Use source original DC parallel AB and matching teacher-provided alternate interior/side relationships; no missing figure claims.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P6",
+      "OriginalSkill": "Isosceles AC D/BC D angles",
+      "FirstPartyPrompt": "Use source angle DBC=84 and BDA=24, original teacher-verified figure, to reason about angle BAC.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    },
+    {
+      "Id": "P7",
+      "OriginalSkill": "Reflection across AB yields CAC-prime",
+      "FirstPartyPrompt": "Reflection fixes A and preserves AC=AC-prime; deduce triangle CAC-prime is isosceles with matching sides.",
+      "Mode": "PAPER_TEACHER_REVIEW",
+      "OriginalFigurePixelParity": "UNVERIFIED"
+    }
+  ],
+  "IndependentOracles": {
+    "SSS_BASE": "ST_TO_GH__S_TO_G__T_TO_H__U_PRIME_TO_J_AFTER_REFLECT_GH",
+    "ReflectionAxis": "GH_PERP_BISECTOR_OF_U_PRIME_J",
+    "P4_TrueConverses": [
+      "B",
+      "C",
+      "E"
+    ],
+    "P7_Classification": "ISOSCELES_CA_EQUALS_CA_PRIME",
+    "TriangleStrictNondegenerate": "a+b>c, b+c>a, a+c>b"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "ST maps GH, H and G equidistant from U-prime/J, GH perpendicular bisector, reflection maps U-prime to J",
+      "Triangle lengths 1.5,2.4,2.0 positive and satisfy strict inequalities",
+      "P4 true B,C,E only",
+      "CAC-prime has AC=AC-prime"
+    ],
+    "Equivalent": [
+      "reflect first then align the base with correct vertex correspondence",
+      "valid different 1.5/2.4/2.0 paper orientation with rigid equivalence"
+    ],
+    "Wrong": [
+      "No need to prove perpendicular bisector before reflecting",
+      "Triangle 2,3,6 nondegenerate",
+      "All five converses true",
+      "Assume parallelogram opposite angle equality as hypothesis"
+    ],
+    "Boundary": [
+      "Triangle 4,4,t permits 0<t<8, equality endpoints degenerate",
+      "Circle intersections of nondegenerate triangle distinct mirrored positions"
+    ],
+    "Malformed": [
+      "No third side supplied for independent construction",
+      "Wrong ST→HG order",
+      "Missing proof of equidistance for each G/H endpoint",
+      "No teacher evidence for original figure-dependent P3/P6"
+    ]
+  },
+  "PublisherCooldown": "PUBLISHER_ORIGINAL_RESTRICTED_UNVERIFIED_EDULYTIKS_FIRST_PARTY_PAPER",
+  "FirstPartyCooldown": {
+    "Prompt": "Given labelled nondegenerate STU and GHJ with three pairs corresponding sides congruent, show ST→GH alignment and why the third vertex maps by reflecting in perpendicular bisector GH, then prove parallelogram opposite angles by SSS.",
+    "Mode": "TEACHER_SCORED_PAPER",
+    "MaxPoints": 8
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l09-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN app teacher assignment/grade persistence, authenticated stage D/CI, merge/deploy"
+}
