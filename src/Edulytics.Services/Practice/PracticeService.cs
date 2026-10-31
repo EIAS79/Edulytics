@@ -1,7 +1,9 @@
 
 using System.Globalization;
+using System.Text.Json;
 using Edulytics.Core.Entities;
 using Edulytics.Core.Enums;
+using Edulytics.Core.Mathematics.Practice;
 using Edulytics.Core.Practice;
 using Edulytics.Services.Assessments;
 using Edulytics.Services.Mathematics;
@@ -233,6 +235,12 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
                 ? UsCcssT001AuthoredActivities.GradePersistedAnswer(
                     item.GenerationFamily, item.CorrectAnswer, answer,
                     item.GenerationParametersJson)
+                : string.Equals(item.GenerationFamily,
+                    "usccss.alg1.u01.l01.statistical_questions_p3",
+                    StringComparison.Ordinal)
+                ? GradeAlg1P3SelectionAnswer(item.CorrectAnswer, answer)
+                : UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(item.GenerationFamily)
+                ? GradeAlg2L01PersistedAnswer(item, attempt, answer)
                 : AnswersMatch(answer, item.CorrectAnswer);
         var score = correct ? attemptItem.MaxScore : 0m;
         var response = new PracticeResponse
@@ -420,6 +428,149 @@ public sealed class PracticeService(IPracticeRepository repository) : IPracticeS
     {
         var values = items.Select(x => x.CurriculumPedagogicalLessonId).Distinct().ToArray();
         return values.Length == 1 ? values[0] : null;
+    }
+
+    // Preserve ALG1 P3's released unordered {A,C,E} contract from PR #589.
+    // Its course-specific class is absent from this divergent ALG2 branch;
+    // reproduce only its exact persisted-set acceptance rule here, without
+    // a missing assembly reference or any global set-comparison change.
+    private static bool GradeAlg1P3SelectionAnswer(string? expected, string? answer) =>
+        TryNormalizeAlg1P3Choices(expected, out var expectedSet) &&
+        string.Equals(expectedSet, "ACE", StringComparison.Ordinal) &&
+        TryNormalizeAlg1P3Choices(answer, out var answerSet) &&
+        string.Equals(answerSet, expectedSet, StringComparison.Ordinal);
+
+    private static bool TryNormalizeAlg1P3Choices(
+        string? response, out string normalized)
+    {
+        normalized = "";
+        if (string.IsNullOrWhiteSpace(response))
+            return false;
+        var tokens = response.Split(',', StringSplitOptions.None);
+        if (tokens.Length != 3)
+            return false;
+        var choices = new HashSet<char>();
+        foreach (var token in tokens)
+        {
+            var candidate = token.Trim().ToUpperInvariant();
+            if (candidate.Length != 1 || candidate[0] is < 'A' or > 'F' ||
+                !choices.Add(candidate[0]))
+                return false;
+        }
+        normalized = new string(choices.OrderBy(x => x).ToArray());
+        return true;
+    }
+
+    // Issue #605: ALG2 U01:L01 ONLY. The generic scalar comparator cannot
+    // assess exact Hanoi powers or checker expressions. Recreate the issued
+    // canonical answer from trusted, bounded generation parameters; never use
+    // the learner response or stored answer as the source of mathematical truth.
+    // An invalid/foreign/teacher-only item receives no permissive fallback.
+    internal static bool GradeAlg2L01PersistedAnswer(
+        AssessmentItem item, PracticeAttempt attempt, string submittedAnswer)
+    {
+        if (!UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(item.GenerationFamily) ||
+            !attempt.IsPrivate ||
+            attempt.CurriculumPedagogicalLessonId is not Guid issuedLessonId ||
+            item.CurriculumPedagogicalLessonId != issuedLessonId ||
+            item.SchoolId != attempt.SchoolId ||
+            item.CurriculumAdoptionId != attempt.CurriculumAdoptionId ||
+            item.Source != AssessmentItemSource.SystemGenerated ||
+            item.ItemType != AssessmentItemType.ShortAnswer ||
+            !string.Equals(item.GenerationMethod,
+                Stage18PracticeSkillContracts.GenerationMethod, StringComparison.Ordinal) ||
+            string.IsNullOrWhiteSpace(submittedAnswer) ||
+            submittedAnswer.Length > 2000 ||
+            string.IsNullOrWhiteSpace(item.GenerationParametersJson) ||
+            item.GenerationParametersJson.Length > 4096 ||
+            string.IsNullOrWhiteSpace(item.ValidationMetadataJson) ||
+            item.ValidationMetadataJson.Length > 4096)
+            return false;
+
+        try
+        {
+            using var issued = JsonDocument.Parse(
+                item.GenerationParametersJson, new JsonDocumentOptions { MaxDepth = 12 });
+            using var attestation = JsonDocument.Parse(
+                item.ValidationMetadataJson, new JsonDocumentOptions { MaxDepth = 12 });
+            var envelope = issued.RootElement;
+            var metadata = attestation.RootElement;
+            const string skillId = "sequences.core.recursive_nth_term";
+            if (envelope.ValueKind != JsonValueKind.Object ||
+                metadata.ValueKind != JsonValueKind.Object ||
+                envelope.EnumerateObject().Count() != 4 ||
+                !envelope.TryGetProperty("skillId", out var storedSkill) ||
+                storedSkill.ValueKind != JsonValueKind.String ||
+                storedSkill.GetString() != skillId ||
+                !envelope.TryGetProperty("questionFamily", out var storedFamily) ||
+                storedFamily.ValueKind != JsonValueKind.String ||
+                storedFamily.GetString() != item.GenerationFamily ||
+                !envelope.TryGetProperty("questionVariant", out var displayedVariant) ||
+                displayedVariant.ValueKind != JsonValueKind.String ||
+                string.IsNullOrWhiteSpace(displayedVariant.GetString()) ||
+                !envelope.TryGetProperty("parameters", out var parameters) ||
+                parameters.ValueKind != JsonValueKind.Object ||
+                parameters.EnumerateObject().Count() != 2 ||
+                !parameters.TryGetProperty("n", out var term) ||
+                term.ValueKind != JsonValueKind.Number ||
+                !term.TryGetInt32(out int n) ||
+                !parameters.TryGetProperty("variant", out var variant) ||
+                variant.ValueKind != JsonValueKind.Number ||
+                !variant.TryGetInt32(out int variantValue) ||
+                !metadata.TryGetProperty("stage", out var stage) ||
+                stage.ValueKind != JsonValueKind.Number ||
+                !stage.TryGetInt32(out int stageNumber) || stageNumber != 18 ||
+                !metadata.TryGetProperty("readiness", out var readiness) ||
+                readiness.ValueKind != JsonValueKind.String ||
+                readiness.GetString() != "READY_VERIFIED" ||
+                !metadata.TryGetProperty("alignment", out var alignment) ||
+                alignment.ValueKind != JsonValueKind.String ||
+                alignment.GetString() != "skill-contract-verified" ||
+                !metadata.TryGetProperty("skillContract", out var alignedSkill) ||
+                alignedSkill.ValueKind != JsonValueKind.String ||
+                alignedSkill.GetString() != skillId ||
+                !metadata.TryGetProperty("allowedFamily", out var alignedFamily) ||
+                alignedFamily.ValueKind != JsonValueKind.String ||
+                alignedFamily.GetString() != item.GenerationFamily ||
+                !metadata.TryGetProperty("questionVariant", out var attestedVariant) ||
+                attestedVariant.ValueKind != JsonValueKind.String ||
+                attestedVariant.GetString() != displayedVariant.GetString() ||
+                !metadata.TryGetProperty("solverVerified", out var solverVerified) ||
+                solverVerified.ValueKind != JsonValueKind.True ||
+                !metadata.TryGetProperty("broadFallbackUsed", out var broadFallback) ||
+                broadFallback.ValueKind != JsonValueKind.False ||
+                !metadata.TryGetProperty("officialMasteryEvidence", out var officialEvidence) ||
+                officialEvidence.ValueKind != JsonValueKind.False)
+                return false;
+
+            // Adapter Variant enum values are 0=Hanoi, 1=Checker,
+            // 2..5=the four exact recurrence variants. Teacher-only
+            // variants 6..8, and any family mismatch, fail closed.
+            int sourceSlot = item.GenerationFamily switch
+            {
+                "usccss.alg2.u01.l01.hanoi_min_moves" when variantValue == 0 => 0,
+                "usccss.alg2.u01.l01.checker_jump_optional" when variantValue == 1 => 0,
+                "usccss.alg2.u01.l01.recursive_sequence"
+                    when variantValue is >= 2 and <= 5 => variantValue - 2,
+                _ => -1
+            };
+            if (sourceSlot < 0 ||
+                !UsCcssAlg2U01L01PracticeAdapter.TryPrepareExactNumericQuestion(
+                    item.GenerationFamily, sourceSlot, n,
+                    out _, out var canonicalAnswer, out var canonicalParameters) ||
+                !canonicalParameters.TryGetValue("variant", out int canonicalVariant) ||
+                canonicalVariant != variantValue ||
+                !string.Equals(item.CorrectAnswer, canonicalAnswer, StringComparison.Ordinal))
+                return false;
+
+            return UsCcssAlg2U01L01PracticeAdapter.VerifyExactNumericQuestion(
+                item.GenerationFamily, canonicalParameters, submittedAnswer);
+        }
+        catch (JsonException)
+        {
+            // Malformed persisted metadata is NOT a reason to use AnswersMatch.
+            return false;
+        }
     }
 
     public static bool AnswersMatch(string submitted, string expected) =>
