@@ -114,9 +114,18 @@ public sealed class RichLessonContentV2RolloutTests
         }
 
         Assert.Equal(5110, rows.Count);
+        // Curated Rich V2 expands as first-party courses are added. Preserve
+        // exact registry-to-canonical coverage and unique lesson identities,
+        // rather than freezing the old 318-lesson pilot count.
+        var curatedLessons = RichLessonContentV2Registry.AllDocuments
+            .SelectMany(x => x.Lessons)
+            .ToArray();
         Assert.Equal(
-            26 + 143 + 149,
-            readyCurated);
+            curatedLessons.Length,
+            curatedLessons.Select(x => x.LessonCode)
+                .Distinct(StringComparer.Ordinal)
+                .Count());
+        Assert.Equal(curatedLessons.Length, readyCurated);
         Assert.Equal(5110 - readyCurated, readyRuntime);
         Assert.Equal(0, blockedLocalized);
         Assert.Equal(0, blockedContract);

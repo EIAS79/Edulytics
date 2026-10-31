@@ -1,0 +1,1161 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u05-l11-l22-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L11",
+      "CultureCode": "en",
+      "Title": "Filling Containers",
+      "ExplanationParagraphs": [
+        "Goal: describe how water volume and surface height are related as different shapes of containers are filled, attending to cross-sectional area.",
+        "A straight-sided container with constant horizontal cross-section has volume proportional to water height. For a container that widens upward, each additional centimeter of height needs more water than the preceding centimeter.",
+        "Original comparison: pour equal 100-mL portions into a tall narrow rectangular container and a wider one. Record water heights and discuss where a linear graph is justified. Teacher-scored diagrams and observations matter; predictions cannot replace actual measurements.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/11/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cross-sectional area",
+          "Definition": "Area of a horizontal slice of the container.",
+          "Rule": "For a uniform prism, volume=A·h.",
+          "Example": "A 20 cm² base fills at 5 cm height with 100 cm³."
+        },
+        {
+          "Title": "Constant-fill area",
+          "Definition": "Equal volume increments raise water by equal heights.",
+          "Rule": "Δh=ΔV/A in a constant-area vessel.",
+          "Example": "Adding 40 cm³ to base 20 cm² raises water 2 cm."
+        },
+        {
+          "Title": "Variable area",
+          "Definition": "Area changes as height changes.",
+          "Rule": "Height-versus-volume graph may be curved.",
+          "Example": "A widening vessel rises more slowly at high fill levels."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Prism fill height",
+          "Question": "Rectangular container base 20 cm² holds 100 cm³. Find water height.",
+          "Method": "Use V=Ah.",
+          "Steps": [
+            "V=100 cm³ and A=20 cm².",
+            "Height h=V/A=100/20.",
+            "h=5 cm."
+          ],
+          "Answer": "5 cm.",
+          "Check": "20×5=100 cm³."
+        },
+        {
+          "Title": "Extra water",
+          "Question": "Same container receives 40 cm³ extra. Height rise?",
+          "Method": "Use Δh=ΔV/A.",
+          "Steps": [
+            "Added volume 40 cm³.",
+            "Constant base area 20 cm².",
+            "Height increases by 40/20=2 cm."
+          ],
+          "Answer": "2 cm.",
+          "Check": "Added 2-cm slice occupies 40 cm³."
+        },
+        {
+          "Title": "Compare widths",
+          "Question": "Two rectangular vessels have base areas 20 and 40 cm². Pour 80 cm³ into each. Which water height is larger?",
+          "Method": "Divide volume by area.",
+          "Steps": [
+            "Narrow vessel height 80/20=4 cm.",
+            "Wide vessel height 80/40=2 cm.",
+            "The narrower vessel fills higher."
+          ],
+          "Answer": "4 cm versus 2 cm; narrow vessel is higher.",
+          "Check": "The equal volumes occupy different heights."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming all containers fill at constant height rate.",
+          "WhyWrong": "Changing cross-sectional area changes height response.",
+          "Correction": "Inspect shape at each level."
+        },
+        {
+          "Mistake": "Confusing volume with height units.",
+          "WhyWrong": "cm³ and cm are different dimensions.",
+          "Correction": "Use volume/base area."
+        }
+      ],
+      "SummaryPoints": [
+        "Fill rate depends on cross-sectional area.",
+        "Uniform prisms give linear volume-height relations.",
+        "Varying shapes may yield nonlinear graphs."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Volume and height in a right prism",
+          "Description": "Height is volume divided by constant base area 20 cm².",
+          "Rows": [
+            {
+              "Label": "volume (cm³)",
+              "Cells": [
+                "0",
+                "40",
+                "100"
+              ]
+            },
+            {
+              "Label": "height (cm)",
+              "Cells": [
+                "0",
+                "2",
+                "5"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L12",
+      "CultureCode": "en",
+      "Title": "How Much Will Fit?",
+      "ExplanationParagraphs": [
+        "Goal: estimate and compare capacities of solids using cubic units and known prism geometry, explaining which measurement determines how much fits.",
+        "Count unit cubes in a rectangular prism as layers: base area times number of layers. If physical dimensions are measured in centimeters, capacity is in cubic centimeters; 1 cubic centimeter equals 1 milliliter.",
+        "Construct two small paper containers with the same height but different bases. Predict capacities first and then verify with unit cubes or water where safe. Teacher review assesses the physical representation.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/12/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unit cube",
+          "Definition": "A cube with edge length one unit.",
+          "Rule": "One 1-cm cube occupies 1 cm³.",
+          "Example": "A 2×3×4 prism has 24 such cubes."
+        },
+        {
+          "Title": "Prism capacity",
+          "Definition": "Volume from base area and height.",
+          "Rule": "V=length×width×height.",
+          "Example": "2×3×4=24 cm³."
+        },
+        {
+          "Title": "Capacity units",
+          "Definition": "Cubic centimeters relate to milliliters.",
+          "Rule": "1 cm³=1 mL.",
+          "Example": "250 cm³ corresponds to 250 mL."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Rectangular volume",
+          "Question": "Find volume of a 2 by 3 by 4 cm prism.",
+          "Method": "Multiply three dimensions.",
+          "Steps": [
+            "Base area is 2×3=6 cm².",
+            "There are 4 cm of height.",
+            "Volume 6×4=24 cm³."
+          ],
+          "Answer": "24 cm³.",
+          "Check": "Count as four layers of six cubes."
+        },
+        {
+          "Title": "Compare containers",
+          "Question": "One prism is 2×3×4 cm; another is 3×3×4 cm. Which holds more?",
+          "Method": "Compute both volumes.",
+          "Steps": [
+            "First is 24 cm³.",
+            "Second is 3×3×4=36 cm³.",
+            "Second exceeds first by 12 cm³."
+          ],
+          "Answer": "Second container by 12 cm³.",
+          "Check": "36>24."
+        },
+        {
+          "Title": "Convert capacity",
+          "Question": "A prism occupies 250 cm³. How many milliliters?",
+          "Method": "Use volume equivalence.",
+          "Steps": [
+            "One cm³ equals one mL.",
+            "Multiply 250 by 1 mL/cm³.",
+            "Capacity 250 mL."
+          ],
+          "Answer": "250 mL.",
+          "Check": "Units cancel correctly."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding dimensions rather than multiplying them.",
+          "WhyWrong": "Volume counts 3D unit cubes.",
+          "Correction": "Use base area times height."
+        },
+        {
+          "Mistake": "Reporting square units for volume.",
+          "WhyWrong": "Capacity is three-dimensional.",
+          "Correction": "Use cm³ or mL."
+        }
+      ],
+      "SummaryPoints": [
+        "Volume measures 3D capacity.",
+        "Prism layers multiply base area by height.",
+        "Convert cm³ to mL when appropriate."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L13",
+      "CultureCode": "en",
+      "Title": "The Volume of a Cylinder",
+      "ExplanationParagraphs": [
+        "Goal: develop and apply V=πr²h for a right circular cylinder using circular base area and height.",
+        "A cylinder is a stack of congruent circles. The circular base has area πr², so multiplying that area by vertical height gives volume. Radius is half diameter; never substitute diameter directly as r.",
+        "Construct an original paper cylinder with marked radius and height and discuss the relationship between a circle drawing and a 3D solid. A teacher checks labeling and reasoning; numeric formula substitution is a separate graded task.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/13/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cylinder base",
+          "Definition": "A circular disk with radius r.",
+          "Rule": "Area A=πr².",
+          "Example": "Radius 3 cm gives base area 9π cm²."
+        },
+        {
+          "Title": "Cylinder volume",
+          "Definition": "Base area times perpendicular height.",
+          "Rule": "V=πr²h.",
+          "Example": "r=3,h=5 gives 45π cm³."
+        },
+        {
+          "Title": "Radius versus diameter",
+          "Definition": "Radius is half of a diameter.",
+          "Rule": "r=d/2.",
+          "Example": "Diameter 8 cm implies radius 4 cm."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute exact cylinder",
+          "Question": "Radius 3 cm, height 5 cm. Find exact volume.",
+          "Method": "Apply πr²h.",
+          "Steps": [
+            "r²=9 cm².",
+            "Multiply by h=5 to get 45.",
+            "Include π and cubic units."
+          ],
+          "Answer": "45π cm³.",
+          "Check": "≈141.37 cm³."
+        },
+        {
+          "Title": "Diameter input",
+          "Question": "Diameter 8 cm, height 2 cm. What is volume?",
+          "Method": "Halve diameter first.",
+          "Steps": [
+            "Radius r=8/2=4 cm.",
+            "Base area=π×16.",
+            "Multiply height 2: V=32π cm³."
+          ],
+          "Answer": "32π cm³.",
+          "Check": "The diameter must not be squared as the radius."
+        },
+        {
+          "Title": "Compare heights",
+          "Question": "Two cylinders have same r and heights 3 and 9. Volume ratio?",
+          "Method": "Base area cancels.",
+          "Steps": [
+            "Both share πr².",
+            "Volumes are 3πr² and 9πr².",
+            "Ratio second/first=9/3=3."
+          ],
+          "Answer": "3 to 1.",
+          "Check": "Tripling h triples volume."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using d² instead of r².",
+          "WhyWrong": "Diameter is twice radius and produces fourfold volume error.",
+          "Correction": "Divide diameter by 2 first."
+        },
+        {
+          "Mistake": "Reporting πrh rather than πr²h.",
+          "WhyWrong": "Base area is quadratic in radius.",
+          "Correction": "Square r before multiplying height."
+        }
+      ],
+      "SummaryPoints": [
+        "Cylinder volume is πr²h.",
+        "Identify radius and perpendicular height.",
+        "Use cubic units."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cylinder volume and height",
+          "Description": "For fixed radius 3, V=9πh, so the table shows the exact coefficient V/π.",
+          "Rows": [
+            {
+              "Label": "height",
+              "Cells": [
+                "0",
+                "1",
+                "5"
+              ]
+            },
+            {
+              "Label": "V/π",
+              "Cells": [
+                "0",
+                "9",
+                "45"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L14",
+      "CultureCode": "en",
+      "Title": "Finding Cylinder Dimensions",
+      "ExplanationParagraphs": [
+        "Goal: use a known cylinder volume to solve for an unknown height or radius, distinguishing exact algebraic values from rounded physical measurements.",
+        "Rearrange V=πr²h. For known radius, h=V/(πr²). For known height, r=√(V/(πh)), taking the nonnegative root because physical radius cannot be negative.",
+        "Use a first-party container-design task in which a required capacity and fixed radius determine height. Explain how a change in diameter affects required height. Teacher-scored diagrams complement numerical algebra.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/14/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Solve for height",
+          "Definition": "Rearrange cylinder volume with known r.",
+          "Rule": "h=V/(πr²).",
+          "Example": "V=72π, r=3 gives h=8."
+        },
+        {
+          "Title": "Solve for radius",
+          "Definition": "Isolate squared radius first.",
+          "Rule": "r=√(V/(πh)) with r≥0.",
+          "Example": "V=50π,h=2 gives r=5."
+        },
+        {
+          "Title": "Physical dimensions",
+          "Definition": "Radius and height are nonnegative lengths.",
+          "Rule": "Reject negative root physically.",
+          "Example": "r=−5 is not a radius."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find height",
+          "Question": "Cylinder volume 72π cm³ and radius 3 cm. Find h.",
+          "Method": "Divide by base area.",
+          "Steps": [
+            "Base area is π×3²=9π.",
+            "h=72π/(9π).",
+            "h=8 cm."
+          ],
+          "Answer": "8 cm.",
+          "Check": "9π×8=72π."
+        },
+        {
+          "Title": "Find radius",
+          "Question": "Volume 50π cm³ and height 2 cm. Find radius.",
+          "Method": "Solve r².",
+          "Steps": [
+            "50π=πr²×2.",
+            "Divide by 2π: r²=25.",
+            "Take physical root r=5 cm."
+          ],
+          "Answer": "5 cm.",
+          "Check": "π×25×2=50π."
+        },
+        {
+          "Title": "Change radius at fixed volume",
+          "Question": "A cylinder radius doubles and volume stays fixed. How must height change?",
+          "Method": "Compare πr²h.",
+          "Steps": [
+            "Doubling r multiplies base area by 4.",
+            "To preserve total volume, multiply height by 1/4.",
+            "New height is one quarter of original."
+          ],
+          "Answer": "Height becomes 1/4.",
+          "Check": "4×1/4=1 for volume factor."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Taking a negative square root as physical radius.",
+          "WhyWrong": "Length cannot be negative.",
+          "Correction": "Use nonnegative root."
+        },
+        {
+          "Mistake": "Ignoring radius squared when solving.",
+          "WhyWrong": "Area scales quadratically with r.",
+          "Correction": "Isolate r² first."
+        }
+      ],
+      "SummaryPoints": [
+        "Rearrange before substituting.",
+        "Heights divide by base area.",
+        "Radii come from nonnegative square roots."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L15",
+      "CultureCode": "en",
+      "Title": "The Volume of a Cone",
+      "ExplanationParagraphs": [
+        "Goal: connect a cone with a cylinder of equal base radius and perpendicular height to justify V=(1/3)πr²h.",
+        "Three ideal equal-base equal-height cones fill the volume of the matching cylinder. The slant height is not the perpendicular height needed for the volume formula.",
+        "Draw a cone and its circumscribing cylinder, mark the same vertical height, and compare capacity through an original measure-and-pour investigation. Teacher assessment checks visual reasoning; formula calculations alone do not prove construction parity.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/15/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cone volume",
+          "Definition": "One-third of same-base, same-height cylinder.",
+          "Rule": "V=πr²h/3.",
+          "Example": "r=3,h=6 gives 18π."
+        },
+        {
+          "Title": "Perpendicular height",
+          "Definition": "Distance straight from apex to base plane.",
+          "Rule": "Use this h, not side slant.",
+          "Example": "A slant of 5 and radius 3 gives height 4."
+        },
+        {
+          "Title": "Cylinder comparison",
+          "Definition": "Same r,h cylinder is three times the cone volume.",
+          "Rule": "Vcone=Vcylinder/3.",
+          "Example": "Cylinder 54π corresponds cone 18π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute cone",
+          "Question": "Cone radius 3 cm and height 6 cm. Find volume.",
+          "Method": "Use one-third cylinder formula.",
+          "Steps": [
+            "Base area 9π.",
+            "Matching cylinder volume 9π×6=54π.",
+            "Cone volume 54π/3=18π cm³."
+          ],
+          "Answer": "18π cm³.",
+          "Check": "Three such cones total 54π."
+        },
+        {
+          "Title": "Slant to height",
+          "Question": "Right cone radius 3 cm and slant height 5 cm. Find perpendicular h.",
+          "Method": "Use right-triangle geometry.",
+          "Steps": [
+            "Slant²=radius²+height².",
+            "h²=25−9=16.",
+            "Physical height h=4 cm."
+          ],
+          "Answer": "4 cm.",
+          "Check": "3²+4²=5²."
+        },
+        {
+          "Title": "Compare equal cylinders",
+          "Question": "Cylinder and cone same base and height; cylinder 60 cm³. Cone volume?",
+          "Method": "Divide by 3.",
+          "Steps": [
+            "Equal r,h condition holds.",
+            "Cone is one-third of matching cylinder.",
+            "60/3=20 cm³."
+          ],
+          "Answer": "20 cm³.",
+          "Check": "20×3=60."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using slant height in volume formula.",
+          "WhyWrong": "Formula requires perpendicular height.",
+          "Correction": "Calculate vertical height separately."
+        },
+        {
+          "Mistake": "Forgetting one third.",
+          "WhyWrong": "Cone fills one-third the matching cylinder.",
+          "Correction": "Divide by 3."
+        }
+      ],
+      "SummaryPoints": [
+        "Cone volume is πr²h/3.",
+        "Use perpendicular height.",
+        "Same-base cylinder comparison provides the factor."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L16",
+      "CultureCode": "en",
+      "Title": "Finding Cone Dimensions",
+      "ExplanationParagraphs": [
+        "Goal: solve the cone-volume equation for an unknown height or radius given other dimensions, with exact expressions and physical constraints.",
+        "From V=πr²h/3, solve h=3V/(πr²). For known height solve r=√(3V/(πh)), selecting the nonnegative root. Respect cubic versus linear units.",
+        "Design a cone-shaped container of a specified capacity and one fixed dimension. A teacher reviews dimensional interpretation and geometry while exact number checks verify algebra.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/16/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cone height inverse",
+          "Definition": "Solve for h.",
+          "Rule": "h=3V/(πr²).",
+          "Example": "V=24π,r=2 gives h=18."
+        },
+        {
+          "Title": "Cone radius inverse",
+          "Definition": "Solve for r.",
+          "Rule": "r=√(3V/(πh)).",
+          "Example": "V=12π,h=9 gives r=2."
+        },
+        {
+          "Title": "Physical domain",
+          "Definition": "Valid solid dimensions are nonnegative.",
+          "Rule": "Reject negative radius and height.",
+          "Example": "Use positive square root for r."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find cone height",
+          "Question": "V=24π cm³ and r=2 cm. Find h.",
+          "Method": "Rearrange volume formula.",
+          "Steps": [
+            "24π=(π×4×h)/3.",
+            "Multiply 3:72π=4πh.",
+            "Divide 4π: h=18 cm."
+          ],
+          "Answer": "18 cm.",
+          "Check": "(π×4×18)/3=24π."
+        },
+        {
+          "Title": "Find cone radius",
+          "Question": "V=12π cm³, h=9 cm. Find r.",
+          "Method": "Isolate r².",
+          "Steps": [
+            "12π=πr²×9/3=3πr².",
+            "Divide 3π: r²=4.",
+            "Take r=2 cm."
+          ],
+          "Answer": "2 cm.",
+          "Check": "π×4×9/3=12π."
+        },
+        {
+          "Title": "Compare dimensions",
+          "Question": "If cone r is doubled and height unchanged, what happens to volume?",
+          "Method": "Inspect r².",
+          "Steps": [
+            "Radius factor is 2.",
+            "Base area factor is 2²=4.",
+            "Height and one-third factor unchanged."
+          ],
+          "Answer": "Volume quadruples.",
+          "Check": "(2r)²=4r²."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Leaving the factor of three on the wrong side.",
+          "WhyWrong": "Cone inverse differs from cylinder inverse.",
+          "Correction": "Multiply volume by 3 before dividing base area."
+        },
+        {
+          "Mistake": "Taking negative physical radius.",
+          "WhyWrong": "Geometry uses a nonnegative length.",
+          "Correction": "Select the positive square root."
+        }
+      ],
+      "SummaryPoints": [
+        "Solve cone volume algebraically.",
+        "Radius is quadratic, height linear.",
+        "Verify results by substitution."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L17",
+      "CultureCode": "en",
+      "Title": "Scaling One Dimension",
+      "ExplanationParagraphs": [
+        "Goal: predict volume change when one dimension of a prism, cylinder or similar cross-section solid changes while others remain fixed.",
+        "When only height doubles, volume doubles for a fixed base. If only a rectangular length doubles, volume doubles. When only radius of a cylinder doubles, volume quadruples because it changes two base-area directions.",
+        "Use original rectangular-box models with colored unit-cube layers to distinguish scaling one linear height from scaling a circular radius. A teacher reviews the diagram and explanation of unchanged dimensions.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/17/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "One linear dimension",
+          "Definition": "A prism dimension multiplied by k while others fixed.",
+          "Rule": "V new/V old=k.",
+          "Example": "2×3×4 becomes 2×3×8, doubling volume."
+        },
+        {
+          "Title": "Cylinder height",
+          "Definition": "Only h changes.",
+          "Rule": "V=πr²h scales linearly in h.",
+          "Example": "h→3h gives V→3V."
+        },
+        {
+          "Title": "Cylinder radius",
+          "Definition": "Only r changes but two-dimensional base area changes.",
+          "Rule": "r→kr gives V→k²V.",
+          "Example": "r→2r gives V→4V."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Double box height",
+          "Question": "Box 2×3×4 doubles height from 4 to 8. New volume?",
+          "Method": "Multiply unchanged base by new h.",
+          "Steps": [
+            "Original volume is 2×3×4=24.",
+            "New height 8 gives 2×3×8=48.",
+            "Factor 48/24=2."
+          ],
+          "Answer": "48 cubic units.",
+          "Check": "Only one linear dimension doubled."
+        },
+        {
+          "Title": "Triple cylinder height",
+          "Question": "Cylinder volume 20π grows to three times height, same radius. New volume?",
+          "Method": "Scale h.",
+          "Steps": [
+            "Original V=20π.",
+            "Height factor is 3.",
+            "New V=3×20π=60π."
+          ],
+          "Answer": "60π cubic units.",
+          "Check": "Base area unchanged."
+        },
+        {
+          "Title": "Double cylinder radius",
+          "Question": "Cylinder originally 20π, same height but radius doubles. New volume?",
+          "Method": "Scale r².",
+          "Steps": [
+            "New radius squared is 4 times original.",
+            "Height unchanged.",
+            "New V=4×20π=80π."
+          ],
+          "Answer": "80π cubic units.",
+          "Check": "Not merely 40π."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming radius acts as one independent dimension in πr².",
+          "WhyWrong": "Radius changes two area dimensions.",
+          "Correction": "Square its factor."
+        },
+        {
+          "Mistake": "Changing an unmentioned dimension.",
+          "WhyWrong": "The task asks only one dimension to change.",
+          "Correction": "List what is held fixed."
+        }
+      ],
+      "SummaryPoints": [
+        "Volume response depends on which dimension changes.",
+        "Prism height scales linearly.",
+        "Cylinder radius has squared effect."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L18",
+      "CultureCode": "en",
+      "Title": "Scaling Two Dimensions",
+      "ExplanationParagraphs": [
+        "Goal: reason about volume when two dimensions vary independently, multiplying their factors correctly.",
+        "For a rectangular prism with length factor a and width factor b but fixed height, volume factor is ab. For a cylinder, scaling radius by a and height by b produces factor a²b.",
+        "Compare independently constructed boxes and cylinders before and after scaling. A teacher reviews which dimension labels were changed and why factors multiply.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/18/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Prism scale product",
+          "Definition": "Scale two independent linear dimensions.",
+          "Rule": "V factor=a×b.",
+          "Example": "Length ×2 and width ×3 produce volume ×6."
+        },
+        {
+          "Title": "Cylinder scale product",
+          "Definition": "Radius factor a and height factor b.",
+          "Rule": "V factor=a²b.",
+          "Example": "r×2 and h×3 produce V×12."
+        },
+        {
+          "Title": "Uniform 3D scaling",
+          "Definition": "All linear dimensions scaled by same k.",
+          "Rule": "Volume factor=k³.",
+          "Example": "A similar solid doubled in all dimensions has eightfold volume."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two box dimensions",
+          "Question": "Box 2×3×4: double length and triple width, same height. New V?",
+          "Method": "Scale each independent dimension.",
+          "Steps": [
+            "New dimensions are 4×9×4.",
+            "Multiply 4×9×4=144.",
+            "Old volume 24; ratio 144/24=6."
+          ],
+          "Answer": "144 cubic units, factor 6.",
+          "Check": "Factors 2×3=6."
+        },
+        {
+          "Title": "Radius and height",
+          "Question": "Cylinder original volume 5π; double radius and triple height. New volume?",
+          "Method": "Apply a²b.",
+          "Steps": [
+            "Radius change gives area factor 4.",
+            "Height change gives factor 3.",
+            "Total volume factor 12, so new V=60π."
+          ],
+          "Answer": "60π cubic units.",
+          "Check": "5π×12=60π."
+        },
+        {
+          "Title": "All dimensions doubled",
+          "Question": "Solid volume 7 cm³ undergoes uniform scale factor 2. New volume?",
+          "Method": "Use cubic factor.",
+          "Steps": [
+            "Each of three independent dimensions doubles.",
+            "Volume factor is 2³=8.",
+            "New volume 7×8=56 cm³."
+          ],
+          "Answer": "56 cm³.",
+          "Check": "A scale factor of 2 is not a volume factor of 2."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding instead of multiplying scale factors.",
+          "WhyWrong": "Independent dimensions multiply in volume.",
+          "Correction": "Use product of dimension factors."
+        },
+        {
+          "Mistake": "Forgetting radius square in cylinder scaling.",
+          "WhyWrong": "Circular base area depends on r².",
+          "Correction": "Use a²b."
+        }
+      ],
+      "SummaryPoints": [
+        "Volume factors multiply across dimensions.",
+        "A cylinder radius factor is squared.",
+        "Uniform 3D scale k changes volume by k³."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L19",
+      "CultureCode": "en",
+      "Title": "Estimating a Hemisphere",
+      "ExplanationParagraphs": [
+        "Goal: estimate the volume of a hemisphere using comparisons with familiar cylindrical and conical volumes and explain the limitations of estimates.",
+        "A hemisphere is half a sphere. A careful comparison can bound its volume using a surrounding cylinder, but numerical experiments alone do not constitute a proof of the exact sphere formula.",
+        "Draw a hemisphere of radius 3 fitting inside a cylinder with radius 3 and height 3. Estimate an upper bound of 27π cm³, then discuss that the exact hemisphere volume is 18π cm³. A teacher checks the conceptual diagram and assumptions.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/19/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Hemisphere",
+          "Definition": "Half of a sphere cut through its center.",
+          "Rule": "Vhemi=Vsphere/2.",
+          "Example": "For radius 3, Vhemi=18π cm³."
+        },
+        {
+          "Title": "Containing cylinder",
+          "Definition": "A hemisphere radius r fits inside a cylinder radius r, height r.",
+          "Rule": "Cylinder volume πr³ is an upper bound.",
+          "Example": "For r=3, bound 27π."
+        },
+        {
+          "Title": "Exact hemisphere formula",
+          "Definition": "Half of 4πr³/3.",
+          "Rule": "V=2πr³/3.",
+          "Example": "r=3 gives 18π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cylinder bound",
+          "Question": "Radius 3 hemisphere inside same-radius height-3 cylinder. What cylinder volume?",
+          "Method": "Use πr²h.",
+          "Steps": [
+            "Radius squared is 9.",
+            "Height is 3.",
+            "Cylinder volume 9π×3=27π."
+          ],
+          "Answer": "27π cm³, an upper bound.",
+          "Check": "The hemisphere fits inside the cylinder."
+        },
+        {
+          "Title": "Exact hemisphere volume",
+          "Question": "Find hemisphere volume when r=3.",
+          "Method": "Use 2πr³/3.",
+          "Steps": [
+            "Cube radius: 3³=27.",
+            "Multiply by 2π: 54π.",
+            "Divide by 3: 18π."
+          ],
+          "Answer": "18π cm³.",
+          "Check": "It is below the 27π cylinder bound."
+        },
+        {
+          "Title": "Compare volumes",
+          "Question": "What fraction of the containing radius-r height-r cylinder does the hemisphere occupy?",
+          "Method": "Divide exact volumes.",
+          "Steps": [
+            "Hemisphere V=2πr³/3.",
+            "Cylinder V=πr³.",
+            "Ratio is (2/3)."
+          ],
+          "Answer": "2/3.",
+          "Check": "Same r cancels."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating the bounding cylinder volume as exact hemisphere volume.",
+          "WhyWrong": "A hemisphere leaves unfilled corner regions.",
+          "Correction": "Use bound only as a comparison."
+        },
+        {
+          "Mistake": "Calling an experimental fill ratio a rigorous proof.",
+          "WhyWrong": "Empirical measurements have error.",
+          "Correction": "Separate estimate from exact formula."
+        }
+      ],
+      "SummaryPoints": [
+        "A hemisphere is half a sphere.",
+        "Cylinder comparisons help bound capacity.",
+        "Exact hemisphere formula is 2πr³/3."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L20",
+      "CultureCode": "en",
+      "Title": "The Volume of a Sphere",
+      "ExplanationParagraphs": [
+        "Goal: develop and apply the relationship between sphere radius and volume, including the cubic effect of scaling radius.",
+        "Sphere volume is V=4πr³/3. Distinguish radius from diameter and compare with the hemisphere volume. Doubling radius multiplies sphere volume by eight, not two.",
+        "Use a first-party diagram of a sphere and its central great circle. Label r and calculate volume at r=3; teacher review checks spatial reasoning and measurement annotation.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/20/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Sphere volume",
+          "Definition": "The volume inside a sphere of radius r.",
+          "Rule": "V=4πr³/3.",
+          "Example": "r=3 yields 36π."
+        },
+        {
+          "Title": "Cubic radius scaling",
+          "Definition": "Radius enters as r³.",
+          "Rule": "Scale r by k, V changes by k³.",
+          "Example": "r×2 gives V×8."
+        },
+        {
+          "Title": "Diameter relation",
+          "Definition": "The diameter is twice radius.",
+          "Rule": "r=d/2.",
+          "Example": "Diameter 10 means r=5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Volume at radius 3",
+          "Question": "Sphere radius 3 cm. Find exact volume.",
+          "Method": "Substitute 4πr³/3.",
+          "Steps": [
+            "r³=27.",
+            "Multiply 4π×27=108π.",
+            "Divide by 3: V=36π cm³."
+          ],
+          "Answer": "36π cm³.",
+          "Check": "Hemisphere would be 18π cm³."
+        },
+        {
+          "Title": "Radius from diameter",
+          "Question": "Sphere diameter 10 cm. Find its exact volume.",
+          "Method": "Convert to radius.",
+          "Steps": [
+            "Radius 10/2=5.",
+            "Cube 5³=125.",
+            "Volume (4π/3)×125=500π/3."
+          ],
+          "Answer": "500π/3 cm³.",
+          "Check": "Using diameter directly would be eight times too large."
+        },
+        {
+          "Title": "Double radius",
+          "Question": "Sphere volume 12π at radius r. Radius doubles. New volume?",
+          "Method": "Use k³.",
+          "Steps": [
+            "Linear scale factor is 2.",
+            "Volume factor 2³=8.",
+            "New volume 12π×8=96π."
+          ],
+          "Answer": "96π cubic units.",
+          "Check": "Sphere volume is cubic in radius."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Squaring radius instead of cubing it.",
+          "WhyWrong": "Sphere volume has three dimensions.",
+          "Correction": "Use r³."
+        },
+        {
+          "Mistake": "Substituting diameter for radius.",
+          "WhyWrong": "Diameter is double and changes volume eightfold.",
+          "Correction": "Halve diameter first."
+        }
+      ],
+      "SummaryPoints": [
+        "Sphere volume is 4πr³/3.",
+        "Radius scales volume cubically.",
+        "Use cubic units and correct radius."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Sphere volume proportional to radius cubed",
+          "Description": "V=(4/3)πr³. The table shows exact volume coefficients, not decimals.",
+          "Rows": [
+            {
+              "Label": "radius",
+              "Cells": [
+                "1",
+                "2",
+                "3"
+              ]
+            },
+            {
+              "Label": "V/π",
+              "Cells": [
+                "4/3",
+                "32/3",
+                "36"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L21",
+      "CultureCode": "en",
+      "Title": "Cylinders, Cones, and Spheres",
+      "ExplanationParagraphs": [
+        "Goal: select and compare the appropriate volume formulas for cylinders, cones and spheres, including composite or missing-capacity situations.",
+        "For a cylinder and cone with the same r,h, the cone has one third the cylinder volume. A sphere of radius r requires a cubic radius term and does not depend on an independent cylinder height.",
+        "Create a labeled table with one solid of each type, compute volumes and justify the formula selected. Teacher review checks diagrams, units and how the chosen measurements correspond to each solid.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/21/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cylinder formula",
+          "Definition": "Prism-like circular stack.",
+          "Rule": "Vcyl=πr²h.",
+          "Example": "r=2,h=6 gives 24π."
+        },
+        {
+          "Title": "Cone formula",
+          "Definition": "One-third same-r and same-h cylinder.",
+          "Rule": "Vcone=πr²h/3.",
+          "Example": "r=2,h=6 gives 8π."
+        },
+        {
+          "Title": "Sphere formula",
+          "Definition": "Round 3D solid depending on radius.",
+          "Rule": "Vsphere=4πr³/3.",
+          "Example": "r=3 gives 36π."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cylinder calculation",
+          "Question": "Cylinder r=2,h=6. What volume?",
+          "Method": "Use πr²h.",
+          "Steps": [
+            "r²=4.",
+            "Multiply height 6 to get 24.",
+            "Include π and cubic units."
+          ],
+          "Answer": "24π cubic units.",
+          "Check": "4π×6=24π."
+        },
+        {
+          "Title": "Cone calculation",
+          "Question": "Cone r=2,h=6. What volume?",
+          "Method": "Divide matching cylinder volume by 3.",
+          "Steps": [
+            "Matching cylinder volume is 24π.",
+            "Divide by 3.",
+            "Cone volume 8π."
+          ],
+          "Answer": "8π cubic units.",
+          "Check": "Cone is one-third the same-base cylinder."
+        },
+        {
+          "Title": "Sphere calculation",
+          "Question": "Sphere radius 3. What volume?",
+          "Method": "Use 4πr³/3.",
+          "Steps": [
+            "r³=27.",
+            "4×27/3=36.",
+            "Volume 36π."
+          ],
+          "Answer": "36π cubic units.",
+          "Check": "Matches previous sphere example."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using cylinder formula on a cone.",
+          "WhyWrong": "Cone volume is one third.",
+          "Correction": "Identify the solid type before selecting a formula."
+        },
+        {
+          "Mistake": "Equating sphere radius to an unrelated cylinder height.",
+          "WhyWrong": "Sphere has no independent axial height in formula.",
+          "Correction": "Use radius only for sphere."
+        }
+      ],
+      "SummaryPoints": [
+        "Choose volume formula from solid geometry.",
+        "Check r, h and units.",
+        "Compare volumes through exact ratios."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U05:L22",
+      "CultureCode": "en",
+      "Title": "Volume As a Function of . . .",
+      "ExplanationParagraphs": [
+        "Goal: compare volume as a function of water height or shape dimensions, explaining which relationships are linear and which are nonlinear.",
+        "For a cylinder with fixed radius, water volume V(h)=πr²h grows linearly with height. For a cone filled from the narrow tip upward, the water surface radius increases proportionally with water height; the filled volume grows as h³ when the container shape is fixed.",
+        "Sketch volume-height graphs for a cylinder and an upright cone with the same total height. Explain why equal height increments need different volume increments in the cone. Teacher review is essential for diagram orientation, modeling assumptions and graph shape.",
+        "Original first-party Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8, 2017–2019 (CC BY 4.0), source https://im.kendallhunt.com/MS/teachers/3/5/22/preparation.html . No publisher figures or branded assessment tasks are reused."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Cylinder volume versus height",
+          "Definition": "Fixed cross-sectional area produces a linear function.",
+          "Rule": "V(h)=πr²h.",
+          "Example": "At r=2, V=4πh."
+        },
+        {
+          "Title": "Cone from tip versus height",
+          "Definition": "Similar cross-sections grow with water height.",
+          "Rule": "Filled volume proportional to h³ for fixed cone proportions.",
+          "Example": "Doubling water height from tip multiplies filled volume by 8, while still below brim."
+        },
+        {
+          "Title": "Interpreting graph slope",
+          "Definition": "Rate of volume added per height increase equals cross-sectional area.",
+          "Rule": "For widening shape, slope increases with height.",
+          "Example": "Near cone tip, tiny area gives slow volume increase."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Cylinder volume function",
+          "Question": "Cylinder radius 2 cm. Express V at water height h and find V(3).",
+          "Method": "Use fixed circular base.",
+          "Steps": [
+            "Base area is π×2²=4π.",
+            "V(h)=4πh.",
+            "At h=3, V=12π cm³."
+          ],
+          "Answer": "V(h)=4πh; V(3)=12π cm³.",
+          "Check": "Volume-height graph is a line through origin."
+        },
+        {
+          "Title": "Cone fill scaling",
+          "Question": "In a conical vessel filled from tip, similar filled volumes at heights h and 2h have what ratio?",
+          "Method": "Use uniform 3D similarity.",
+          "Steps": [
+            "Radius scales with height for similar cross-sections.",
+            "Both radius and height double.",
+            "Volume factor is 2³=8."
+          ],
+          "Answer": "8 to 1.",
+          "Check": "Assumes 2h is within vessel height."
+        },
+        {
+          "Title": "Find volume at higher height",
+          "Question": "Cone filled from tip has volume 3 cm³ at height 2 cm. Predict volume at height 4 cm within the same cone.",
+          "Method": "Apply cubic scaling for similar filled cones.",
+          "Steps": [
+            "Height scale factor is 4/2=2.",
+            "Volume factor is 2³=8.",
+            "New filled volume 3×8=24 cm³."
+          ],
+          "Answer": "24 cm³.",
+          "Check": "Valid only for a cone with tip at bottom and height 4 within its walls."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming any container produces a linear volume-height relation.",
+          "WhyWrong": "Changing cross-section makes slope variable.",
+          "Correction": "Check vessel shape."
+        },
+        {
+          "Mistake": "Using h³ for a cylinder of fixed radius.",
+          "WhyWrong": "Its area does not vary with water height.",
+          "Correction": "Use linear V=Ah for fixed area."
+        }
+      ],
+      "SummaryPoints": [
+        "Volume-height functions depend on container geometry.",
+        "Fixed-area cylinders are linear in h.",
+        "Tip-up conical fill volumes scale cubically."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Cylinder water volume as height rises",
+          "Description": "With fixed radius 2, water volume V=4πh.",
+          "Rows": [
+            {
+              "Label": "height h",
+              "Cells": [
+                "0",
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "V/π",
+              "Cells": [
+                "0",
+                "4",
+                "12",
+                "20"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

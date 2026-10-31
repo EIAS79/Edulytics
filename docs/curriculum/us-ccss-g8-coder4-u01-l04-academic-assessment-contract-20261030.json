@@ -1,0 +1,446 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L04",
+  "title": "Making the Moves",
+  "originalEdition": "2017-2019 OUR/Illustrative Mathematics CC BY 4.0; Edulytiks independent course adaptation",
+  "sources": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\4\\index.html",
+      "sha256": "210f52ea3a4c383c865606ac607a17994bb1e813f07065613ab40da17140875c"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\4\\index.html",
+      "sha256": "051e24107bc86eb0e3906bd7a321548afbdd6ac5adce350c85ff7ecacb167978"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\4\\preparation.html",
+      "sha256": "ba8d1bf026a3e0104fb3222f88f65464f4e32fb74f3bcdd1921f3f37fdfe4080"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    }
+  ],
+  "sourceRoleReviewed": true,
+  "centralPracticeRule": "ccss-transformations",
+  "proposedFamily": "transformations",
+  "scope": "SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE_FOR_STAGE_C__NOT_RUNTIME_PRACTICE",
+  "sourceActivityToFirstPartyCrosswalk": [
+    {
+      "sourceActivity": "4.1 Reflection Quick Image",
+      "sourceObjective": "Reconstruct reflected diagram after a brief flash",
+      "firstPartyCorrection": "Teacher-operated original printed static reflection card and precise constructions"
+    },
+    {
+      "sourceActivity": "4.2 Make That Move",
+      "sourceObjective": "Partner describes one move, partner sketches image",
+      "firstPartyCorrection": "Existing partner prompt supplemented by original quadrilateral and complete-move requirements"
+    },
+    {
+      "sourceActivity": "4.3 A to B to C",
+      "sourceObjective": "Describe composition and justify sequence on grid",
+      "firstPartyCorrection": "Original triangle A→B→C coordinate sequence, explicit order sensitivity"
+    },
+    {
+      "sourceActivity": "4.4 teacher Cool-down - What Does It Take?",
+      "sourceObjective": "Teacher-only protected Cool-down",
+      "firstPartyCorrection": "Original equivalent two-step task and teacher rubric"
+    }
+  ],
+  "learningObjectives": [
+    "Learning objective: draw a specified translation, rotation or reflection and describe the construction so someone else can reproduce the image.",
+    "Specify a translation: A displacement vector determines a slide.",
+    "Specify a half-turn: A 180° rotation reverses both coordinate signs when centered at the origin."
+  ],
+  "instructionalEvidence": {
+    "priorThreeWorkedExamplesPreserved": true,
+    "supportedRichV2Visuals": 3,
+    "nativeVisualKinds": [
+      "RatioTable",
+      "ShapeDecomposition",
+      "RatioTable"
+    ],
+    "firstPartyCoolDownLabel": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED"
+  },
+  "assessmentModes": [
+    {
+      "id": "4.1 Reflection Quick Image",
+      "targetSkill": "Reconstruct reflected diagram after a brief flash",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "Teacher-operated original printed static reflection card and precise constructions",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    },
+    {
+      "id": "4.2 Make That Move",
+      "targetSkill": "Partner describes one move, partner sketches image",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "Existing partner prompt supplemented by original quadrilateral and complete-move requirements",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    },
+    {
+      "id": "4.3 A to B to C",
+      "targetSkill": "Describe composition and justify sequence on grid",
+      "responseType": "student_diagram_plus_written_or_spoken_justification",
+      "grading": "TEACHER_SCORED_HUMAN_ONLY",
+      "task": "Original triangle A→B→C coordinate sequence, explicit order sensitivity",
+      "teacherAcceptance": "Check original source activity's geometry, ordered/corresponding vertices, specified center/direction/line, and explanation; multiple correct constructions allowed",
+      "teacherRejection": "Vague/reversed direction, changed lengths/angles, incorrect correspondence or unsupported conclusions must be identified"
+    }
+  ],
+  "coordinateQuestion": {
+    "provenance": "INDEPENDENT_FIRST_PARTY_SKILL_SAMPLE_NOT_AUTHENTICATED_GENERATOR",
+    "responseType": "coordinate_pair",
+    "case": {
+      "kind": "coordinate_composition_translation_then_reflection_y",
+      "start": [
+        1,
+        1
+      ],
+      "vector": [
+        2,
+        0
+      ],
+      "mirror": "x=0",
+      "expected": [
+        -3,
+        1
+      ],
+      "correct": [
+        "(-3,1)",
+        "-3, 1",
+        "(-3.0,1.0)"
+      ],
+      "wrong": [
+        "(3,1)",
+        "(1,1)"
+      ],
+      "invalid": [
+        "NaN",
+        "(-3,1,0)",
+        "",
+        null
+      ]
+    },
+    "validation": {
+      "accept": 3,
+      "rejectWrong": 2,
+      "rejectMalformed": 4,
+      "semantics": "Parse exactly two finite decimal coordinates; accept mathematically equivalent decimals with no rounding tolerance, reject wrong and malformed; this is candidate only"
+    },
+    "productionGeneratorConnected": false,
+    "actualLessonPracticeReadiness": "NOT_READY_VERIFIED"
+  },
+  "humanScoredCoolDown": {
+    "label": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "publisherExact": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "prompt": "Original equivalent two-step task and teacher rubric",
+    "maxPoints": 8,
+    "perCriterionScore": [
+      0,
+      1,
+      2
+    ],
+    "rubric": [
+      "Correctly names and orders both transformations",
+      "Constructs and labels all corresponding points at each stage",
+      "Explains why the transformations preserve lengths and angles",
+      "Provides valid justification of why reversing order gives another result"
+    ],
+    "teacherEvidence": "labeled figure/drawing, written explanation, notes, four 0-2 criteria scores",
+    "productionPersistenceVerified": false
+  },
+  "stageDDeferred": {
+    "readiness": "RUNTIME_NOT_VERIFIED",
+    "practiceContractOwner": "Supervisor 2 shared single-writer",
+    "teacherRubricRuntimeOwner": "Supervisor 2 shared single-writer",
+    "mustVerify": [
+      "READY_VERIFIED exact LessonCode + skill families under NoSupportedOutcomes protection",
+      "authenticated student attempts & grading persistence",
+      "authorized human scoring and save",
+      "two-school isolation",
+      "accessible visuals and diagrams"
+    ],
+    "commonCodeEdited": false
+  },
+  "focusVerification": {
+    "studentTeacherPreparationSourceSHA256": true,
+    "mathOracleIndependent": {
+      "correct": 3,
+      "wrong": 2,
+      "malformed": 4
+    },
+    "priorPass": "3 focused Node tests on documented pre-commit content SHA; not proof on new SHA",
+    "runtime": "NOT_RUN_STAGE_D"
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T13:54:34.976458+00:00",
+  "parentHeadSHA": "c70cca493a17e960ec62208b31c92f78cb4f69a8",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L04",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l04-making-moves-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l04-making-moves-paper.html",
+    "learnerWorksheetSha256": "12e82280f77744902f5962a05796a60513ea78e6305a1ef180578e13cf844754",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "teacherSelectedOffline": true,
+    "linkedFromRichV2": true,
+    "delivery": "Teacher manually flashes existing first-party teaching card, prints L04 worksheet and distributes to student, collects and scores all labelled drawings and peer directions against private eight-point rubric.",
+    "activityMap": [
+      {
+        "source": "4.1 Reflection Quick Image",
+        "worksheet": "quick",
+        "modality": "TEACHER_FLASH_AND_STUDENT_RECONSTRUCTION",
+        "acceptance": "P(1,1),Q(3,1),R(2,3) reflect x=0 to P'(-1,1),Q'(-3,1),R'(-2,3), equal mirror-line distances; teacher flash manual, not an automatic timer"
+      },
+      {
+        "source": "4.2 Make That Move",
+        "worksheet": "partner",
+        "modality": "PARTNER_DIRECTED_DRAWING_IN_BOTH_ROLES",
+        "acceptance": "For quadrilateral A(1,1) B(4,1) C(3,3) D(1,2), give exact vector (+2,0), half-turn 180° about O or line x=0 reflection, partner reconstructs four points with labels; reflection reverses chirality"
+      },
+      {
+        "source": "4.3 A to B to C",
+        "worksheet": "composition",
+        "modality": "ORDERED_TWO_STEP_DIAGRAM_AND_EXPLANATION",
+        "acceptance": "Triangle A(1,1),B(3,1),C(2,3), translate (+2,0) then reflect x=0 to (-3,1),(-5,1),(-4,3); reverse order gives (1,1),(-1,1),(0,3), different"
+      },
+      {
+        "source": "Edulytiks Cool-down — What Does It Take?",
+        "worksheet": "cool",
+        "modality": "FIRST_PARTY_TWO_STEP_TEACHER_SCORED",
+        "acceptance": "Same two-step result and reverse-order inequality, preserve lengths and angles with precise reason"
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 absent or incorrect;1 partial construction with gaps;2 complete correct with reproducible explanation. Private manual score, never automated or persisted online.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "4.1 x=0 reflection reconstructs all three labelled vertices and their perpendicular distances after teacher-operated flash"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "4.2 two complete partner communication rounds with correct move parameters and four corresponding quadrilateral vertices"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "4.3 both ordered two-step triangle images with all corresponding vertices and why order changes the result"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Original Edulytiks Cool-down exact final point triples, geometric congruence and order-sensitivity justification"
+        }
+      ]
+    },
+    "privateKey": {
+      "quickImage": [
+        [
+          -1,
+          1
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "quadrilateralOriginal": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "quadrilateralTranslated": [
+        [
+          3,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "quadrilateralHalfTurn": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -4,
+          -1
+        ],
+        [
+          -3,
+          -3
+        ],
+        [
+          -1,
+          -2
+        ]
+      ],
+      "quadrilateralReflection": [
+        [
+          -1,
+          1
+        ],
+        [
+          -4,
+          1
+        ],
+        [
+          -3,
+          3
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "triangleOriginal": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "translated": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "translateThenReflect": [
+        [
+          -3,
+          1
+        ],
+        [
+          -5,
+          1
+        ],
+        [
+          -4,
+          3
+        ]
+      ],
+      "reflectThenTranslate": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    "fixtures": {
+      "correct": [
+        "Reflection quick image x=0 gives (-1,1),(-3,1),(-2,3) with equal perpendicular distances",
+        "Partner reconstruction from exact (+2,0) translation of all four vertices",
+        "Two-step translate (+2,0) then reflect x=0 gives (-3,1),(-5,1),(-4,3)",
+        "Reverse order gives (1,1),(-1,1),(0,3) and is unequal"
+      ],
+      "equivalent": [
+        "Half-turn 180° clockwise and counterclockwise about same O are equivalent",
+        "Equivalent labelled drawings/oral or written complete partner directions",
+        "Each rigid step preserves all corresponding side lengths and angles"
+      ],
+      "wrong": [
+        "A single final numeric coordinate without two-stage reasoning",
+        "Claiming translate then reflect and reflect then translate commute for x=0 mirror and horizontal shift",
+        "Mistaking reflection for half-turn because side lengths unchanged",
+        "Inverting the displacement of only one vertex"
+      ],
+      "malformed": [
+        "Missing mirror line or point labels",
+        "Unspecified translation amount, rotation center or angle",
+        "Drawing without source vertex correspondence",
+        "Missing intermediate stage or partner reconstruction evidence"
+      ],
+      "boundary": [
+        "A half-turn 180° is identical under either clockwise or counterclockwise sense",
+        "For x=0 reflection point x=0 lies fixed and sign of other x coordinates changes",
+        "A teacher can accept complete spoken descriptions with equivalent labelled diagrams",
+        "Triangle order of transformations must be evaluated on original figure, not guessed by final shape",
+        "Coordinate-only optional candidate does not replace full human construction"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "savedTeacherGradeVerified": false,
+    "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "firstPartyCoolDown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l04-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN",
+    "sharedEngineFilesEdited": false
+  }
+}

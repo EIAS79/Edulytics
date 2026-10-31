@@ -1,0 +1,1117 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u06-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L01",
+      "CultureCode": "en",
+      "Title": "Organizing Data",
+      "ExplanationParagraphs": [
+        "Goal: select useful displays for paired measurements and explain what an observed pattern does or does not establish. One-variable bar charts and bivariate scatter plots answer different questions.",
+        "Use an original survey in which each of five plants has measured sunlight hours and growth height: (1,2),(2,4),(3,5),(4,7),(5,8). Each ordered pair must stay paired. Discuss whether the data appear positively associated and whether other influences, such as water, could matter.",
+        "Student task: choose axes and plot the five measurement pairs, then compare a two-variable scatter plot to separate unpaired summaries. A teacher checks axis units, retained pairings, and written reasoning; no automated correctness claim for self-collected data.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/1/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Bivariate observation",
+          "Definition": "Two measurements recorded for one subject.",
+          "Rule": "Preserve the matching of values.",
+          "Example": "Plant A: 1 sunlight hour, 2 cm growth."
+        },
+        {
+          "Title": "Scatter plot",
+          "Definition": "A display of paired numeric observations.",
+          "Rule": "Place each (x,y) at its measured coordinates.",
+          "Example": "Plot plant (3,5) as a single point."
+        },
+        {
+          "Title": "Association",
+          "Definition": "A pattern in how two variables vary together.",
+          "Rule": "Describe direction without claiming causation.",
+          "Example": "Higher recorded sunlight often coincides with greater growth."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Count paired observations",
+          "Question": "A study lists five plant pairs. How many dots should a scatter plot contain?",
+          "Method": "Each paired row represents one observation.",
+          "Steps": [
+            "Count five recorded plants.",
+            "Keep each hour-height pair intact.",
+            "Plot one point per row."
+          ],
+          "Answer": "5 points.",
+          "Check": "Separating x and y summaries would lose pairing."
+        },
+        {
+          "Title": "Read one observation",
+          "Question": "What does (4,7) mean when x is sunlight hours and y is growth centimeters?",
+          "Method": "Read axis units.",
+          "Steps": [
+            "First coordinate 4 is four hours.",
+            "Second coordinate 7 is seven centimeters.",
+            "Both belong to the same plant."
+          ],
+          "Answer": "A plant with 4 hours sunlight and 7 cm growth.",
+          "Check": "The pair is not two different plants."
+        },
+        {
+          "Title": "Describe trend",
+          "Question": "For pairs (1,2),(2,4),(3,5),(4,7),(5,8), does y generally rise with x?",
+          "Method": "Compare ordered pairs.",
+          "Steps": [
+            "As x progresses from 1 to 5, y rises from 2 to 8.",
+            "Each successive measured y is larger.",
+            "This pattern is a positive association, not proof that sunlight alone caused growth."
+          ],
+          "Answer": "Positive association.",
+          "Check": "A confounding variable could still exist."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Losing the paired structure of measurements.",
+          "WhyWrong": "Unpaired displays cannot recover which observations belong together.",
+          "Correction": "Store each subject as a complete (x,y) row."
+        },
+        {
+          "Mistake": "Claiming association proves cause.",
+          "WhyWrong": "Confounding variables or selection can create association.",
+          "Correction": "Describe the observed pattern without unsupported causal claims."
+        }
+      ],
+      "SummaryPoints": [
+        "Paired observations are the foundation of bivariate displays.",
+        "Graph both quantities on labeled axes.",
+        "Association is not necessarily causation."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L02",
+      "CultureCode": "en",
+      "Title": "Plotting Data",
+      "ExplanationParagraphs": [
+        "Goal: gather or use bivariate data and make a mathematically readable scatter plot, selecting axes with appropriate units and scales.",
+        "A class investigation might compare arm span and height, but personal measurements should not be published or shared outside the classroom without permission. An independent fictional sample is (140,139),(145,146),(150,149),(155,157) measured in centimeters.",
+        "Draw an original scatter plot with both axes measured in centimeters, appropriate scales, and no connecting line through separate pupils. If a student gathers real observations, the teacher reviews ethical data collection and accurate plotted pairs; do not submit personal class data to external services.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/2/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Axis meaning",
+          "Definition": "An axis identifies variable and measurement unit.",
+          "Rule": "Label with quantity and unit, e.g. height (cm).",
+          "Example": "Point (150,149) means height 150 cm, arm span 149 cm."
+        },
+        {
+          "Title": "Scale selection",
+          "Definition": "Tick labels convert grid distance to measured value.",
+          "Rule": "Include the full measured range and regular spacing.",
+          "Example": "x-ticks 140,145,150,155."
+        },
+        {
+          "Title": "Independent plotted points",
+          "Definition": "Each point is one subject’s two measurements.",
+          "Rule": "Do not connect subjects in an artificial time sequence.",
+          "Example": "Four subjects create four dots."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Interpret measured pair",
+          "Question": "With x=height and y=arm span, interpret (150,149).",
+          "Method": "Read axis assignments.",
+          "Steps": [
+            "First coordinate indicates 150 cm height.",
+            "Second indicates 149 cm arm span.",
+            "Both belong to one observation."
+          ],
+          "Answer": "Height 150 cm and arm span 149 cm.",
+          "Check": "Swapping axes would change the reading."
+        },
+        {
+          "Title": "Count points",
+          "Question": "Four students each provide one height-span pair. How many plotted observations?",
+          "Method": "One dot per complete row.",
+          "Steps": [
+            "Identify four paired rows.",
+            "For each, place the dot at its x and y.",
+            "Total is four plotted points."
+          ],
+          "Answer": "4 points.",
+          "Check": "No extra dot is made for each individual measurement."
+        },
+        {
+          "Title": "Check swapped point",
+          "Question": "A recorded pair is height 145, span 146. A dot at (146,145) is drawn. Is it correct?",
+          "Method": "Compare coordinate order.",
+          "Steps": [
+            "x-axis represents height and should show 145.",
+            "y-axis represents span and should show 146.",
+            "The plotted pair swaps the values."
+          ],
+          "Answer": "No; it should be (145,146).",
+          "Check": "Read labels before plotting."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Connecting unrelated subjects as a line graph.",
+          "WhyWrong": "No time/order continuity is implied.",
+          "Correction": "Use individual scatter points."
+        },
+        {
+          "Mistake": "Exposing classmate measurements unnecessarily.",
+          "WhyWrong": "Some physical data are personal.",
+          "Correction": "Use permission and anonymous or fictional data as appropriate."
+        }
+      ],
+      "SummaryPoints": [
+        "Plot each paired observation once.",
+        "Label units and use meaningful scales.",
+        "Respect privacy when measuring classmates."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L03",
+      "CultureCode": "en",
+      "Title": "What a Point in a Scatter Plot Means",
+      "ExplanationParagraphs": [
+        "Goal: interpret individual points, comparisons and outliers in a scatter plot without confusing one observation with the trend of all points.",
+        "Each dot encodes two measured variables for one subject. A dot far from others may reflect an unusual subject or an error; one exceptional point does not by itself invalidate the rest.",
+        "Using fictional paired data (1,3),(2,5),(3,7),(4,9),(5,4), identify the dot that differs most from an upward linear pattern and explain what additional information should be checked. Teacher-scored reasoning addresses measurement uncertainty.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/3/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Point meaning",
+          "Definition": "The same observation supplies both coordinates.",
+          "Rule": "Use axes and units.",
+          "Example": "(3,7) means x=3, y=7 for one case."
+        },
+        {
+          "Title": "Outlier candidate",
+          "Definition": "A value noticeably away from a general cloud of points.",
+          "Rule": "Inspect it, but do not delete automatically.",
+          "Example": "(5,4) departs from near y=2x+1."
+        },
+        {
+          "Title": "Pattern versus case",
+          "Definition": "One observation and group association are distinct.",
+          "Rule": "Use several points to identify trend.",
+          "Example": "Four rising points do not force a fifth to fit."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Interpret point",
+          "Question": "For axes hours and dollars, what does (3,7) describe?",
+          "Method": "Read both dimensions.",
+          "Steps": [
+            "First value gives three hours.",
+            "Second gives seven dollars.",
+            "Both measurements describe a single case."
+          ],
+          "Answer": "Three hours associated with seven dollars.",
+          "Check": "Neither coordinate is the observation count."
+        },
+        {
+          "Title": "Spot unusual point",
+          "Question": "Given (1,3),(2,5),(3,7),(4,9),(5,4), which point is far below y=2x+1?",
+          "Method": "Compare model outputs.",
+          "Steps": [
+            "At x=5 the pattern predicts 2×5+1=11.",
+            "The measured value at x=5 is 4.",
+            "Difference 7 is much larger than that for the first four points."
+          ],
+          "Answer": "(5,4).",
+          "Check": "It is an outlier candidate, not automatically an error."
+        },
+        {
+          "Title": "Check data pair",
+          "Question": "Does (4,9) agree with the rule y=2x+1?",
+          "Method": "Substitute x.",
+          "Steps": [
+            "For x=4, predicted y=2×4+1.",
+            "The predicted output is 9.",
+            "It matches the plotted coordinate."
+          ],
+          "Answer": "Yes.",
+          "Check": "9=2×4+1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using a point’s x-coordinate as its index number.",
+          "WhyWrong": "x represents the axis variable.",
+          "Correction": "Read axes before interpreting the dot."
+        },
+        {
+          "Mistake": "Deleting outliers to make a trend look tidy.",
+          "WhyWrong": "Outliers may convey important valid observations.",
+          "Correction": "Investigate them before any exclusion."
+        }
+      ],
+      "SummaryPoints": [
+        "A dot records one paired case.",
+        "Explain outliers cautiously.",
+        "Group trend differs from individual variability."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L04",
+      "CultureCode": "en",
+      "Title": "Fitting a Line to Data",
+      "ExplanationParagraphs": [
+        "Goal: use a line as an approximate model for a scatter plot, rather than mechanically connecting all points or forcing every observation onto the line.",
+        "An approximate line of fit balances the overall upward or downward cloud and helps predict values. A least-squares fit is one possible method; Grade 8 reasoning can instead choose a sensible line by eye, cite points near it, and discuss its limitations.",
+        "For fictional pairs (1,4),(2,6),(3,8),(4,11),(5,12), draw y≈2x+2, compare positive and negative vertical deviations, and critique extrapolation outside measured x. A teacher reviews fit quality and justification.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/4/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Line of fit",
+          "Definition": "A line summarizing a roughly linear association.",
+          "Rule": "It need not pass through every point.",
+          "Example": "y≈2x+2 for a rising cloud."
+        },
+        {
+          "Title": "Residual",
+          "Definition": "Observed y minus predicted y at the same x.",
+          "Rule": "A positive residual lies above a model line.",
+          "Example": "At (4,11), prediction 10 gives residual +1."
+        },
+        {
+          "Title": "Prediction",
+          "Definition": "Use fitted relation at an x value.",
+          "Rule": "An estimate, not a guaranteed outcome.",
+          "Example": "At x=6, y≈14 with the example line."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Residual above line",
+          "Question": "At (4,11), line y=2x+2 predicts what, and residual?",
+          "Method": "Subtract predicted from observed.",
+          "Steps": [
+            "Prediction is 2×4+2=10.",
+            "Observation is 11.",
+            "Residual 11−10=+1."
+          ],
+          "Answer": "Predicted 10; residual +1.",
+          "Check": "Point is one unit above the line."
+        },
+        {
+          "Title": "Residual below line",
+          "Question": "At (5,12), model y=2x+2 predicts what residual?",
+          "Method": "Compute difference.",
+          "Steps": [
+            "Predicted y=2×5+2=12.",
+            "Observed y=12.",
+            "Residual 12−12=0."
+          ],
+          "Answer": "0; the point is on the line.",
+          "Check": "Not all other points must also lie exactly on it."
+        },
+        {
+          "Title": "Extend cautiously",
+          "Question": "Line y≈2x+2 predicts y at x=6.",
+          "Method": "Evaluate model and label estimate.",
+          "Steps": [
+            "Compute 2×6=12.",
+            "Add 2.",
+            "Prediction is approximately 14."
+          ],
+          "Answer": "Approximately 14.",
+          "Check": "x=6 lies just beyond data up to 5, so the prediction is an extrapolation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Connecting dots in collection order.",
+          "WhyWrong": "Separate observations are not successive vertices of one curve.",
+          "Correction": "Draw a single trend line instead."
+        },
+        {
+          "Mistake": "Reporting modeled output as an exact measurement.",
+          "WhyWrong": "A fit includes residuals.",
+          "Correction": "Use approximate notation and uncertainty."
+        }
+      ],
+      "SummaryPoints": [
+        "A line of fit summarizes a bivariate cloud.",
+        "Residuals quantify departures from the line.",
+        "Predictions require caution."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Line prediction and residual",
+          "Description": "At x=4, the fit y=2x+2 predicts 10; observed 11 gives residual +1.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "4"
+              ]
+            },
+            {
+              "Label": "observed",
+              "Cells": [
+                "11"
+              ]
+            },
+            {
+              "Label": "predicted",
+              "Cells": [
+                "10"
+              ]
+            },
+            {
+              "Label": "residual",
+              "Cells": [
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L05",
+      "CultureCode": "en",
+      "Title": "Describing Trends in Scatter Plots",
+      "ExplanationParagraphs": [
+        "Goal: distinguish positive, negative, weak and absent linear associations and describe the strength using scatter rather than just slope.",
+        "Association direction tells whether larger x generally coincides with larger or smaller y. Association strength concerns how tightly observations cluster around a pattern. A strong negative association is possible even though its slope is negative.",
+        "Sort original fictional patterns: (1,8),(2,6),(3,4),(4,2) has strong downward trend; (1,3),(2,7),(3,2),(4,8) has no obvious simple trend. Teacher review checks explanations and uncertainty.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/5/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Positive association",
+          "Definition": "Larger x tends to coincide with larger y.",
+          "Rule": "Describe a general upward cloud.",
+          "Example": "(1,2),(2,4),(3,6)."
+        },
+        {
+          "Title": "Negative association",
+          "Definition": "Larger x tends to coincide with smaller y.",
+          "Rule": "Describe a downward cloud.",
+          "Example": "(1,8),(2,6),(3,4),(4,2)."
+        },
+        {
+          "Title": "Strength",
+          "Definition": "Degree of clustering around a pattern.",
+          "Rule": "Tighter cloud means stronger apparent association.",
+          "Example": "All points on y=10−2x form perfect negative linear association."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Negative slope sample",
+          "Question": "For points (1,8),(2,6),(3,4),(4,2), what is slope?",
+          "Method": "Compute first-last change.",
+          "Steps": [
+            "Rise 2−8=−6.",
+            "Run 4−1=3.",
+            "Slope −6/3=−2."
+          ],
+          "Answer": "−2; strong negative linear trend.",
+          "Check": "Every adjacent output falls by two."
+        },
+        {
+          "Title": "Positive example",
+          "Question": "Pairs (1,2),(2,4),(3,6) have what trend?",
+          "Method": "Compare changes.",
+          "Steps": [
+            "As x increases by 1, y rises by 2.",
+            "All three points align on y=2x.",
+            "Association is perfectly positive linear."
+          ],
+          "Answer": "Positive linear.",
+          "Check": "A fitted slope of 2 is positive."
+        },
+        {
+          "Title": "Trend caution",
+          "Question": "Do pairs (1,3),(2,7),(3,2),(4,8) show a clear monotonic sequence?",
+          "Method": "Inspect sequence.",
+          "Steps": [
+            "y first rises, then falls, then rises.",
+            "There is no consistent monotone pattern across adjacent points.",
+            "Do not assert a perfect increasing trend."
+          ],
+          "Answer": "No clear perfect monotonic trend.",
+          "Check": "More observations and a suitable model may be needed."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating negative slope with weak association.",
+          "WhyWrong": "Direction and strength are separate properties.",
+          "Correction": "Describe both."
+        },
+        {
+          "Mistake": "Inferring a universal rule from a small cloud.",
+          "WhyWrong": "Association estimates can be unstable for small samples.",
+          "Correction": "State the observed sample size and limitations."
+        }
+      ],
+      "SummaryPoints": [
+        "Describe direction and strength separately.",
+        "Scatter around a trend matters.",
+        "Association is not a causal claim."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "A negative linear trend",
+          "Description": "Original lesson-example input-output table. Each row uses y = -2x + 10. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "8",
+                "6",
+                "4",
+                "2"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L06",
+      "CultureCode": "en",
+      "Title": "The Slope of a Fitted Line",
+      "ExplanationParagraphs": [
+        "Goal: interpret the numerical slope of a fitted line as an estimated change in one variable for a unit change in another, including context and units.",
+        "For a model relating study hours x to quiz score y, slope 4 points/hour means an estimated four-point increase per additional hour within the range studied; it does not promise the same gain for every student.",
+        "Use a fictional line through (1,54) and (4,66). Compute slope and intercept and discuss uncertainty from scatter. Teacher review assesses contextual language and limitations.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/6/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Model slope",
+          "Definition": "Change in fitted output per input unit.",
+          "Rule": "m=(y₂−y₁)/(x₂−x₁).",
+          "Example": "(1,54),(4,66) gives m=4 score points/hour."
+        },
+        {
+          "Title": "Model intercept",
+          "Definition": "Predicted output at x=0.",
+          "Rule": "b=y−mx.",
+          "Example": "At (1,54), b=50."
+        },
+        {
+          "Title": "Estimated rate",
+          "Definition": "A model trend, not an individual guarantee.",
+          "Rule": "Use units and approximate interpretation.",
+          "Example": "Four expected points per study hour in this model."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute score slope",
+          "Question": "Find slope through (1,54) and (4,66).",
+          "Method": "Rise over run.",
+          "Steps": [
+            "Score difference 66−54=12 points.",
+            "Hour difference 4−1=3.",
+            "Slope 12/3=4 points/hour."
+          ],
+          "Answer": "4 score points/hour.",
+          "Check": "Predicts an increase of four per hour."
+        },
+        {
+          "Title": "Find intercept",
+          "Question": "Slope 4 and model point (1,54). Find b.",
+          "Method": "Use y=4x+b.",
+          "Steps": [
+            "54=4×1+b.",
+            "Subtract 4.",
+            "b=50."
+          ],
+          "Answer": "50 score points.",
+          "Check": "The model is y=4x+50."
+        },
+        {
+          "Title": "Predict with caution",
+          "Question": "Predict modeled score for 3 hours on y=4x+50.",
+          "Method": "Evaluate.",
+          "Steps": [
+            "Multiply 4×3=12.",
+            "Add 50.",
+            "The fitted model predicts 62."
+          ],
+          "Answer": "Approximately 62 points.",
+          "Check": "Individual outcomes may differ because data scatter."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating slope as guaranteed individual improvement.",
+          "WhyWrong": "The line is a fit to data, not a deterministic law.",
+          "Correction": "Say estimated trend."
+        },
+        {
+          "Mistake": "Omitting outcome/input units.",
+          "WhyWrong": "Slope is a ratio, not just a number.",
+          "Correction": "State score points/hour."
+        }
+      ],
+      "SummaryPoints": [
+        "Slope of fit is a contextual estimated rate.",
+        "Intercept gives modeled baseline.",
+        "Use cautious predictions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L07",
+      "CultureCode": "en",
+      "Title": "Observing More Patterns in Scatter Plots",
+      "ExplanationParagraphs": [
+        "Goal: recognize nonlinear patterns and clusters in bivariate data and avoid imposing a straight-line model when the cloud curves.",
+        "A scatter plot may form a U-shape, arc, or two separate clusters rather than a single linear trend. An overall slope near zero can hide a real nonlinear association.",
+        "Graph original points (−2,4),(−1,1),(0,0),(1,1),(2,4). Explain why they form a curved pattern and why a straight line would miss their structure. Teacher feedback checks the sketch and reasoning.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/7/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Nonlinear association",
+          "Definition": "The variables vary systematically without constant linear slope.",
+          "Rule": "Inspect shape of cloud.",
+          "Example": "y=x² produces a U-shaped pattern."
+        },
+        {
+          "Title": "Cluster",
+          "Definition": "A subgroup of points concentrated in one region.",
+          "Rule": "Describe grouping before combining averages.",
+          "Example": "Two sets of similar heights may form separate groups."
+        },
+        {
+          "Title": "Model mismatch",
+          "Definition": "An imposed line fails to describe curvature or clusters.",
+          "Rule": "Look at residual patterns.",
+          "Example": "Horizontal line y=2 misses both center and ends of a parabola."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Curved point set",
+          "Question": "What pattern do (−2,4),(−1,1),(0,0),(1,1),(2,4) suggest?",
+          "Method": "Recognize squared inputs.",
+          "Steps": [
+            "At −2 and 2 the outputs both equal 4.",
+            "At −1 and 1 outputs both equal 1.",
+            "The central output is 0; points lie on y=x²."
+          ],
+          "Answer": "U-shaped, nonlinear association.",
+          "Check": "The rate is not constant across x."
+        },
+        {
+          "Title": "Compute variable changes",
+          "Question": "For y=x², changes from x=0→1 and 1→2 are what?",
+          "Method": "Subtract outputs.",
+          "Steps": [
+            "From 0 to 1, y rises 1.",
+            "From 1 to 2, y rises 4−1=3.",
+            "Unequal changes prove not linear over these equal steps."
+          ],
+          "Answer": "1 and 3; not constant.",
+          "Check": "A constant-slope model cannot exactly fit all points."
+        },
+        {
+          "Title": "Reject a misleading single-line claim",
+          "Question": "Can one horizontal line exactly contain all five points above?",
+          "Method": "Check y-values.",
+          "Steps": [
+            "The points have y-values 4,1,0,1,4.",
+            "A horizontal line requires all y values equal.",
+            "These are different."
+          ],
+          "Answer": "No.",
+          "Check": "Curved structure must be recognized."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming every association is linear.",
+          "WhyWrong": "Many relationships curve or form subgroups.",
+          "Correction": "Inspect the whole cloud."
+        },
+        {
+          "Mistake": "Dismissing a pattern because linear correlation looks small.",
+          "WhyWrong": "Nonlinear patterns can have low linear correlation.",
+          "Correction": "Check shape and spread."
+        }
+      ],
+      "SummaryPoints": [
+        "Not all associations form lines.",
+        "Curves and clusters require their own description.",
+        "Match model form to data shape."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "U-shaped nonlinear association",
+          "Description": "The squared-input data do not have constant first differences.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "-2",
+                "-1",
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "y=x²",
+              "Cells": [
+                "4",
+                "1",
+                "0",
+                "1",
+                "4"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L08",
+      "CultureCode": "en",
+      "Title": "Analyzing Bivariate Data",
+      "ExplanationParagraphs": [
+        "Goal: evaluate a bivariate data set through plots, trend, outliers and limitations, and use evidence to support a concise statistical conclusion.",
+        "A strong analysis identifies both variables, sample size, general direction, unusual observations and whether the conclusion concerns association or cause. Different scales and missing measurements can distort appearance.",
+        "Investigate five original points (1,3),(2,4),(3,7),(4,8),(5,9). Compute how y generally changes and identify that one rise is larger than others. A teacher reviews statistical explanation, not a single predetermined adjective.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/8/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Trend summary",
+          "Definition": "A statement about overall change supported by points.",
+          "Rule": "Describe direction and data range.",
+          "Example": "y rises from 3 to 9 as x rises from 1 to 5."
+        },
+        {
+          "Title": "Variation",
+          "Definition": "Observed points need not follow equal steps.",
+          "Rule": "Inspect deviations and local differences.",
+          "Example": "y steps are +1,+3,+1,+1."
+        },
+        {
+          "Title": "Statistical caveat",
+          "Definition": "An observation-based conclusion can be limited.",
+          "Rule": "State sample size and confounding possibility.",
+          "Example": "Five observations alone cannot establish causation."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Endpoint rate",
+          "Question": "Across (1,3) to (5,9), what average y increase per x?",
+          "Method": "Divide differences.",
+          "Steps": [
+            "Overall y change is 9−3=6.",
+            "x difference is 5−1=4.",
+            "Average endpoint slope is 6/4=1.5."
+          ],
+          "Answer": "1.5 y units per x unit.",
+          "Check": "This is not the same as all local steps."
+        },
+        {
+          "Title": "Largest local rise",
+          "Question": "For y sequence 3,4,7,8,9, which consecutive rise is greatest?",
+          "Method": "Find differences.",
+          "Steps": [
+            "4−3=1.",
+            "7−4=3.",
+            "8−7=1 and 9−8=1; largest is 3."
+          ],
+          "Answer": "From 4 to 7, rise +3.",
+          "Check": "Other rises are +1."
+        },
+        {
+          "Title": "Check sample size",
+          "Question": "How many paired observations are in the set?",
+          "Method": "Count ordered pairs.",
+          "Steps": [
+            "Each x-y row is one observation.",
+            "The list has five pairs.",
+            "Sample size is 5."
+          ],
+          "Answer": "5.",
+          "Check": "Ten individual numerical values make five paired cases."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Confusing endpoint slope with each local slope.",
+          "WhyWrong": "Averages can conceal variation.",
+          "Correction": "Show both overall and local changes."
+        },
+        {
+          "Mistake": "Claiming strong causal evidence from a tiny sample.",
+          "WhyWrong": "Other variables and sampling uncertainty remain.",
+          "Correction": "Use cautious association language."
+        }
+      ],
+      "SummaryPoints": [
+        "Analyze direction, variation and sample size.",
+        "State evidence rather than unsupported claims.",
+        "Outliers and confounders matter."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Rate of increase between two observations",
+          "Description": "Original lesson-example input-output table. Each row uses y = 1.5x + 1.5. Plotting this relation, when required, is a separate graphical task.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "3",
+                "6",
+                "9"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L09",
+      "CultureCode": "en",
+      "Title": "Looking for Associations",
+      "ExplanationParagraphs": [
+        "Goal: compare two categorical variables using organized counts and relative frequencies to investigate whether proportions differ across groups.",
+        "For categorical bivariate data a two-way table preserves both classifications. If the proportion preferring an option differs substantially by group, that indicates an association; raw counts alone can mislead when groups have different sizes.",
+        "Original fictional table: Group A 12 choose bus, 8 walk; Group B 5 choose bus, 15 walk. Compute within-group proportions. Teacher review checks fairness of comparison and causal caution.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/9/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Two-way table",
+          "Definition": "Counts by combinations of two categories.",
+          "Rule": "Rows and columns reflect the same observations.",
+          "Example": "Group A has bus 12, walk 8."
+        },
+        {
+          "Title": "Relative frequency",
+          "Definition": "Part of a group satisfying a category.",
+          "Rule": "Proportion=count/within-group total.",
+          "Example": "Group A bus share 12/20=60%."
+        },
+        {
+          "Title": "Categorical association",
+          "Definition": "Differing conditional proportions across groups.",
+          "Rule": "Compare percentages, not just counts.",
+          "Example": "Bus preference 60% in A and 25% in B."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Group A percentage",
+          "Question": "12 of 20 in A choose bus. What percent?",
+          "Method": "Divide count by group total.",
+          "Steps": [
+            "Bus count is 12.",
+            "Group total 12+8=20.",
+            "12/20=0.6=60%."
+          ],
+          "Answer": "60%.",
+          "Check": "12 is 60% of 20."
+        },
+        {
+          "Title": "Group B percentage",
+          "Question": "5 of 20 in B choose bus. What percent?",
+          "Method": "Use conditional denominator.",
+          "Steps": [
+            "Bus count 5.",
+            "Total group B 5+15=20.",
+            "5/20=0.25=25%."
+          ],
+          "Answer": "25%.",
+          "Check": "Bus share differs from A."
+        },
+        {
+          "Title": "Compare proportions",
+          "Question": "How many percentage points apart are A and B bus shares?",
+          "Method": "Subtract percentages.",
+          "Steps": [
+            "A bus share is 60%.",
+            "B bus share is 25%.",
+            "Difference is 60−25=35 percentage points."
+          ],
+          "Answer": "35 percentage points.",
+          "Check": "This is an association measure, not a causal explanation."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using total across both groups when estimating within-group rate.",
+          "WhyWrong": "That answers a different conditional question.",
+          "Correction": "Divide by the selected group size."
+        },
+        {
+          "Mistake": "Equating different shares with causal effect.",
+          "WhyWrong": "Group characteristics or selection may confound.",
+          "Correction": "Describe association only."
+        }
+      ],
+      "SummaryPoints": [
+        "Use two-way tables for categorical data.",
+        "Compare conditional percentages.",
+        "Avoid unsupported causal conclusions."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Conditional percentage of a group",
+          "Description": "Divide by the full group count 20, not by another category.",
+          "Rows": [
+            {
+              "Label": "choice",
+              "Cells": [
+                "bus",
+                "other",
+                "total"
+              ]
+            },
+            {
+              "Label": "count",
+              "Cells": [
+                "12",
+                "8",
+                "20"
+              ]
+            },
+            {
+              "Label": "percentage",
+              "Cells": [
+                "60%",
+                "40%",
+                "100%"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L10",
+      "CultureCode": "en",
+      "Title": "Using Data Displays to Find Associations",
+      "ExplanationParagraphs": [
+        "Goal: read two-way tables and segmented bar displays to decide whether categorical relationships show an association.",
+        "For two groups of unequal sizes, construct 100% stacked bars to normalize counts. If category segments occupy different proportions, that suggests association between group and response.",
+        "Use an original table: A 30 choose fruit and 10 choose cereal; B 12 choose fruit and 28 choose cereal. Predict each bar segment and compare. Teacher review assesses correctly labeled percent axes and context.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/10/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Segmented bar",
+          "Definition": "Displays category shares summing to 100% within each group.",
+          "Rule": "Each bar spans 100%.",
+          "Example": "A fruit 75%, cereal 25%."
+        },
+        {
+          "Title": "Group total",
+          "Definition": "Denominator for a conditional proportion.",
+          "Rule": "Sum counts in one group.",
+          "Example": "A total 30+10=40."
+        },
+        {
+          "Title": "Between-group comparison",
+          "Definition": "Compare equal-normalized percentages.",
+          "Rule": "Read same category across bars.",
+          "Example": "A fruit 75% versus B fruit 30%."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Group A share",
+          "Question": "Group A fruit 30, cereal 10. Fruit percent?",
+          "Method": "Count/total.",
+          "Steps": [
+            "Total A=40.",
+            "Fruit count=30.",
+            "30/40=75%."
+          ],
+          "Answer": "75%.",
+          "Check": "Remaining cereal share is 25%."
+        },
+        {
+          "Title": "Group B share",
+          "Question": "Group B fruit 12, cereal 28. Fruit percent?",
+          "Method": "Normalize within B.",
+          "Steps": [
+            "Total B=12+28=40.",
+            "12/40=0.3.",
+            "Fruit share 30%."
+          ],
+          "Answer": "30%.",
+          "Check": "Cereal share 70%."
+        },
+        {
+          "Title": "Association magnitude",
+          "Question": "Difference in fruit share: A 75%, B 30%.",
+          "Method": "Subtract normalized shares.",
+          "Steps": [
+            "Both percentages use within-group denominators.",
+            "75−30=45.",
+            "Difference is 45 percentage points."
+          ],
+          "Answer": "45 percentage points.",
+          "Check": "Groups have substantially different preference proportions."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using unequal bar heights for a 100%-stacked graph.",
+          "WhyWrong": "These bars represent proportions and must each span 100%.",
+          "Correction": "Normalize by group total."
+        },
+        {
+          "Mistake": "Comparing count sizes without group denominators.",
+          "WhyWrong": "Unequal group sizes can skew counts.",
+          "Correction": "Compute conditional proportions."
+        }
+      ],
+      "SummaryPoints": [
+        "Two-way tables preserve joint categories.",
+        "Segmented bars show within-group shares.",
+        "Different distributions suggest association."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U06:L11",
+      "CultureCode": "en",
+      "Title": "Gone In 30 Seconds",
+      "ExplanationParagraphs": [
+        "Goal: design a short timing investigation, collect paired observations and analyze variability without claiming that a small sample yields universal conclusions.",
+        "An original 30-second challenge can measure how many simple symbols a participant copies in each of two trials. Record trial 1 and trial 2 counts as a pair for each consenting learner; do not upload named class data. Discuss practice effect, measurement error and differences among learners.",
+        "Use fictional counts (10,12),(15,17),(20,21),(25,24) for worked analysis. Teachers review ethical collection, the scatter plot, and whether conclusions are appropriately qualified. One numerical rate cannot certify experimental design.",
+        "Independently authored Edulytiks instruction informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/6/11/preparation.html . Publisher graphics, individual data sets and assessments are not copied."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Repeated measures",
+          "Definition": "Two values from the same participant.",
+          "Rule": "Keep trial pairs matched.",
+          "Example": "(15,17) means first trial 15, second 17."
+        },
+        {
+          "Title": "Change between trials",
+          "Definition": "Second minus first for each participant.",
+          "Rule": "Positive means improvement in this metric.",
+          "Example": "(15,17) changes +2."
+        },
+        {
+          "Title": "Experiment limitation",
+          "Definition": "A short class study with sampling and order effects.",
+          "Rule": "Do not infer causation automatically.",
+          "Example": "Practice effect may raise second-trial counts."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compute pair change",
+          "Question": "Participant records (15,17) symbols in two trials. What change?",
+          "Method": "Subtract trial counts.",
+          "Steps": [
+            "First count 15.",
+            "Second count 17.",
+            "Difference 17−15=+2."
+          ],
+          "Answer": "+2 symbols.",
+          "Check": "An increase of two in 30 seconds."
+        },
+        {
+          "Title": "Mean change",
+          "Question": "Pairs (10,12),(15,17),(20,21),(25,24). Average second-first change?",
+          "Method": "Sum differences and divide count.",
+          "Steps": [
+            "Changes are 2,2,1,−1.",
+            "Sum is 4.",
+            "Four participants give mean change 4/4=1."
+          ],
+          "Answer": "+1 symbol per participant on average.",
+          "Check": "This average hides one participant’s decrease."
+        },
+        {
+          "Title": "Assess variability",
+          "Question": "Do all four participants improve?",
+          "Method": "Inspect signs.",
+          "Steps": [
+            "Three changes are positive: 2,2,1.",
+            "One change is negative: −1.",
+            "Not every participant improves."
+          ],
+          "Answer": "No; 3 of 4 improve.",
+          "Check": "Sample does not prove a universal practice effect."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Mixing trial counts across participants.",
+          "WhyWrong": "That destroys repeated-measure pairing.",
+          "Correction": "Use one paired row per participant."
+        },
+        {
+          "Mistake": "Claiming second-trial improvements prove a universal skill effect.",
+          "WhyWrong": "Small sample and practice/order confounding remain.",
+          "Correction": "Discuss uncertainty and experimental design."
+        }
+      ],
+      "SummaryPoints": [
+        "Keep paired timing data private and labeled.",
+        "Analyze change and variability.",
+        "Teacher review is needed for experimental conclusions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

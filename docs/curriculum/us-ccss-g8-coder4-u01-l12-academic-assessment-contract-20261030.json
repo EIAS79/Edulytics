@@ -1,0 +1,521 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L12",
+  "title": "Congruent Polygons",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\12\\index.html",
+      "sha256": "ef3a6f77450b912cf44a3b725dc0d2f371886dd166007320c0fe266dcaa5ccf9"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\12\\index.html",
+      "sha256": "166cddb135dd38e0e8cac166afb9e69aaef82e82c10cc8e36b51ce3bca44645d"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\12\\preparation.html",
+      "sha256": "d7e99915a97449713e6732239026465576678c14887017eafc5fb8117de345ed"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.2"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: match the corresponding vertices, sides and angles of two polygons and justify congruence using a rigid transformation or complete measurement correspondence.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): Translate A(1,1),B(4,1),C(4,3),D(1,3) by (-5,2) and label all four image vertices; explain whether every corresponding side/angle is unchanged. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "12.1: Translated Images",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Identify which equally sized triangles are pure translations of a labeled triangle rather than turned or flipped images.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.2: Congruent Pairs (Part 1)",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Judge the first set of congruent/noncongruent polygon pairs by full vertex and side correspondence and a rigid sequence.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.3: Congruent Pairs (Part 2)",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Judge the second set of potentially congruent pairs, tracking reflected labels and an actual rigid motion rather than visual resemblance.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "12.4: Building Quadrilaterals",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Build two different quadrilaterals from four original pieces, compare all side lengths and angles, and argue when a sequence maps one onto the other.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "Translate original A=(1,1) by vector (-5,+2). Find A′.",
+    "responseType": "coordinate_pair",
+    "unit": "coordinate pair",
+    "expected": [
+      -4,
+      3
+    ],
+    "acceptedEquivalentInputs": [
+      "(-4,3)",
+      "-4,3",
+      "(-4.0,3.0)"
+    ],
+    "wrongRejected": [
+      "(-3,3)",
+      "(-4,4)",
+      "(3,-4)"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "(Infinity,1)",
+      "(1,2,3)",
+      "",
+      null,
+      "1;2",
+      "1e2,0"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 3,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "Translate A(1,1),B(4,1),C(4,3),D(1,3) by (-5,2) and label all four image vertices; explain whether every corresponding side/angle is unchanged.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:02:01.290955+00:00",
+  "parentGitHEAD": "5869ad38af3e8bc0b138cbded52d9971dac1801e",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L12",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l12-congruent-polygons-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l12-congruent-polygons-paper.html",
+    "learnerWorksheetSha256": "775e3ac78a3cbc60b6be32bbdee8c6a195b023fe3bec8e9935ed5031c4c539de",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints and distributes this exact first-party student paper, collects all source-equivalent diagrams, labelled mathematical constructions, calculations and oral or written reasoning; private manual rubric only.",
+    "sourceActivityMap": [
+      {
+        "source": "12.1: Translated Images",
+        "worksheet": "translations",
+        "modality": "SELECT_ALL_TRUE_TRANSLATIONS_WITH_CORRESPONDING_VECTORS",
+        "key": "Original P(1,1),Q(3,1),R(2,3). T1 all (+3,+1) true; T4 all (-2,+2) true; T2 is half-turn about origin, T3 reflection across x=0; latter congruent but not pure translations."
+      },
+      {
+        "source": "12.2: Congruent Pairs (Part 1)",
+        "worksheet": "pairs-one",
+        "modality": "FOUR_VERTEX_RECTANGLE_CONGRUENCE_AND_CHANGED_SIDE_REJECTION",
+        "key": "Original A(1,1),B(4,1),C(4,3),D(1,3), U translate (-5,+2) -> (-4,3),(-1,3),(-1,5),(-4,5). V moves corresponding C to (-1,6), so B″C″ length3 versus original BC length2."
+      },
+      {
+        "source": "12.3: Congruent Pairs (Part 2)",
+        "worksheet": "pairs-two",
+        "modality": "REFLECTION_CHIRALITY_AND_ALTERED_VERTEX_REJECTION",
+        "key": "EFGH original (0,0),(3,0),(3,2),(1,3), M reflected across x=0 -> (0,0),(-3,0),(-3,2),(-1,3) congruent; N instead H″=(-1,1), so EH side changes √10 to √2, not congruent."
+      },
+      {
+        "source": "12.4: Building Quadrilaterals",
+        "worksheet": "build",
+        "modality": "FOUR_EQUAL_PIECES_TWO_NONCONGRUENT_COMPOSITES_PLUS_POSITIVE_CONTROL",
+        "key": "Four 1x1 tiles make 2x2 square area4 perimeter8 or 1x4 rectangle area4 perimeter10. Not congruent; a translated 2x2 copy is congruent via one translation."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "FOUR_VERTEX_RECTANGLE_TRANSLATION_AND_RIGID_INVARIANTS",
+        "key": "(-5,+2) sends A(1,1)->(-4,3), B(4,1)->(-1,3), C(4,3)->(-1,5), D(1,3)->(-4,5). Side lengths3,2,3,2 and right angles unchanged."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 wrong/absent,1 partially labelled or justified,2 complete corresponding geometric construction and reasoning; manual offline only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "Source 12.1 select only translations T1/T4 with exact common three-vertex vectors and reject rotation/reflection"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Source 12.2/12.3 complete four-vertex correspondence, correct positive rigid mappings and explicit noncongruent changed edge"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Source 12.4 all four pieces tiled with no overlap/gaps, valid noncongruence proof and positive copied 2×2 square rigid mapping"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down exact four translated vertices, unchanged 3/2 side lengths and right angles"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "triangleOriginal": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "translationT1": [
+        [
+          4,
+          2
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "halfTurnT2": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -2,
+          -3
+        ]
+      ],
+      "reflectionT3": [
+        [
+          -1,
+          1
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "translationT4": [
+        [
+          -1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "trueTranslationCards": [
+        "T1",
+        "T4"
+      ],
+      "rectangleOriginal": [
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "rectangleU": [
+        [
+          -4,
+          3
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          5
+        ],
+        [
+          -4,
+          5
+        ]
+      ],
+      "rectangleV": [
+        [
+          -4,
+          3
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          6
+        ],
+        [
+          -4,
+          5
+        ]
+      ],
+      "quadOriginal": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "quadM": [
+        [
+          0,
+          0
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "quadN": [
+        [
+          0,
+          0
+        ],
+        [
+          -3,
+          0
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "tiles": {
+        "count": 4,
+        "unitArea": 1,
+        "square": {
+          "area": 4,
+          "perimeter": 8
+        },
+        "strip": {
+          "area": 4,
+          "perimeter": 10
+        }
+      },
+      "cooldownImages": [
+        [
+          -4,
+          3
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -1,
+          5
+        ],
+        [
+          -4,
+          5
+        ]
+      ]
+    },
+    "fixtures": {
+      "correct": [
+        "T1 and T4 are pure translations; T2 and T3 are respectively rotation/reflection",
+        "U is congruent translated rectangle and V has B″C″ length3 versus original2",
+        "M is reflected congruent quadrilateral while N has EH side length changed",
+        "2x2 and 1x4 four-unit-square composites have area4 but perimeters8 and10",
+        "Cool-down translated A′(-4,3),B′(-1,3),C′(-1,5),D′(-4,5)"
+      ],
+      "equivalent": [
+        "Describe T1 as three right one up instead of vector (+3,+1)",
+        "A rotated 2x2 square is congruent to translated 2x2 control",
+        "Exact reflected vertex ordering reversed while edge and angle measures preserved",
+        "Full oral geometric proof acceptable when all correspondences precise"
+      ],
+      "wrong": [
+        "Classify half-turn T2 as translation",
+        "Claim polygon V congruent despite changed side length",
+        "Claim quadrilateral N congruent because only most vertices match",
+        "Claim all same-area four-tile composites congruent",
+        "Translate only first vertex and leave others unchanged"
+      ],
+      "malformed": [
+        "No ordered vertex labels",
+        "Only U/V letters without edge-length comparison",
+        "Four tiles not shown or overlapping",
+        "No map of each corresponding corner",
+        "Cool-down only A′ without B′ C′ D′"
+      ],
+      "boundary": [
+        "Reflections are rigid and can preserve congruence while not being pure translations",
+        "Congruence requires all corresponding sides and angles, not most",
+        "Equal area of composite shapes not sufficient",
+        "A square has same congruence under 90° turn as translation; strip does not",
+        "A changed vertex can leave one side unchanged while another side fails"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeEdited": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l12-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
+}

@@ -1,0 +1,1770 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u04-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L01",
+      "CultureCode": "en",
+      "Title": "Number Puzzles",
+      "ExplanationParagraphs": [
+        "Goal: interpret a verbal number puzzle as an equation, define an unknown and test a solution by substitution.",
+        "Translate each clue into a relationship; a phrase such as “twice a number plus three equals fifteen” means 2x+3=15, while “twice the sum of a number and three” would mean 2(x+3). Parentheses reflect the meaning.",
+        "Create two original number puzzles for classmates, exchange them, and check that each has a consistent solution. A teacher reviews the language-to-algebra translation and ambiguity, not just a numeric answer.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/1/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Unknown number",
+          "Definition": "A variable standing for an unspecified value.",
+          "Rule": "Write one equation consistent with every clue.",
+          "Example": "If x is the number, twice it plus 3 is 2x+3."
+        },
+        {
+          "Title": "Equation",
+          "Definition": "A statement of equality with mathematical expressions.",
+          "Rule": "Only a satisfying value is a solution.",
+          "Example": "2x+3=15."
+        },
+        {
+          "Title": "Verification",
+          "Definition": "Substituting the proposed solution into the original puzzle.",
+          "Rule": "Check both sides match.",
+          "Example": "With x=6, 2(6)+3=15."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve a puzzle",
+          "Question": "Twice a number plus three is fifteen. Find it.",
+          "Method": "Let x be the number.",
+          "Steps": [
+            "Write 2x+3=15.",
+            "Subtract three: 2x=12.",
+            "Divide two: x=6."
+          ],
+          "Answer": "6.",
+          "Check": "2×6+3=15."
+        },
+        {
+          "Title": "Different parentheses",
+          "Question": "Twice the sum of a number and three is sixteen. Find it.",
+          "Method": "Distinguish 2(x+3) from 2x+3.",
+          "Steps": [
+            "Write 2(x+3)=16.",
+            "Divide two: x+3=8.",
+            "Subtract three: x=5."
+          ],
+          "Answer": "5.",
+          "Check": "2(5+3)=16."
+        },
+        {
+          "Title": "Check a wrong guess",
+          "Question": "For 3x−2=13, does x=4 work?",
+          "Method": "Substitute into the original.",
+          "Steps": [
+            "3×4−2=10.",
+            "Right side is 13.",
+            "10 differs from 13, so x=4 is not a solution."
+          ],
+          "Answer": "No; the correct number is 5.",
+          "Check": "3×5−2=13."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Missing parentheses in a phrase about a sum.",
+          "WhyWrong": "2x+3 is not the same as 2(x+3).",
+          "Correction": "Parse grouping words first."
+        },
+        {
+          "Mistake": "Reporting a guess without checking.",
+          "WhyWrong": "An equation solution must satisfy the original equality.",
+          "Correction": "Substitute the value."
+        }
+      ],
+      "SummaryPoints": [
+        "Define the unknown first.",
+        "Translate groups and operations exactly.",
+        "Verify a solution with substitution."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L02",
+      "CultureCode": "en",
+      "Title": "Keeping the Equation Balanced",
+      "ExplanationParagraphs": [
+        "Goal: use a balanced hanger model to represent an equation and find unknown weights without disrupting equality.",
+        "Equal hanger arms carry equal total weight. If one object x appears on each arm, remove an equal quantity from both sides. When identical unknown bags occur together, dividing equally across bags determines the weight per bag.",
+        "Make an original picture with two identical bags and a three-unit weight balancing an eleven-unit weight. Interpret it as 2x+3=11. A teacher evaluates diagram alignment and explanation; one numerical result does not verify the physical model.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/2/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Balanced model",
+          "Definition": "Two equal-weight sides of a hanger represent equal expressions.",
+          "Rule": "Apply the same permissible change to both sides.",
+          "Example": "2x+3=11."
+        },
+        {
+          "Title": "Remove equal weights",
+          "Definition": "Subtract the same quantity from each side.",
+          "Rule": "Equality remains valid after subtracting c from both.",
+          "Example": "2x+3−3=11−3."
+        },
+        {
+          "Title": "Share the remaining weight",
+          "Definition": "Divide equal total weights across identical bags.",
+          "Rule": "2x=8 implies x=4.",
+          "Example": "Two 4-unit bags balance 8 units."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Two-bag hanger",
+          "Question": "Two equal bags plus three units balance eleven. Find each bag.",
+          "Method": "Model 2x+3=11.",
+          "Steps": [
+            "Subtract three units from both hanger arms.",
+            "Two bags balance eight units.",
+            "Each bag weighs 8/2=4 units."
+          ],
+          "Answer": "4 units per bag.",
+          "Check": "2×4+3=11."
+        },
+        {
+          "Title": "Three-bag hanger",
+          "Question": "Three bags balance fifteen units. Find one bag.",
+          "Method": "Divide both sides equally.",
+          "Steps": [
+            "Write 3x=15.",
+            "Divide both sides by 3.",
+            "x=5."
+          ],
+          "Answer": "5 units.",
+          "Check": "3×5=15."
+        },
+        {
+          "Title": "Reject asymmetric removal",
+          "Question": "If x+7=12, is x+7−7=12−3 a valid balance move?",
+          "Method": "Compare the operations on both sides.",
+          "Steps": [
+            "Seven is removed from the left.",
+            "Three is removed from the right.",
+            "Different changes break equivalence."
+          ],
+          "Answer": "No.",
+          "Check": "Subtract 7 from both sides instead."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Removing weight from only one arm.",
+          "WhyWrong": "It destroys the equality of total weights.",
+          "Correction": "Make each operation on both sides."
+        },
+        {
+          "Mistake": "Assuming bags can have arbitrary weights on one hanger.",
+          "WhyWrong": "Identically marked bags represent equal unknown weights.",
+          "Correction": "Use one variable consistently."
+        }
+      ],
+      "SummaryPoints": [
+        "Balanced hangers encode equations.",
+        "Maintain identical operations on both sides.",
+        "Verify bag weights by recomputing totals."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Which candidate balances 2x+3=11?",
+          "Description": "A solution has equal left and right sides; x=4 is the only solution shown.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "left",
+              "Cells": [
+                "3",
+                "11",
+                "13"
+              ]
+            },
+            {
+              "Label": "right",
+              "Cells": [
+                "11",
+                "11",
+                "11"
+              ]
+            },
+            {
+              "Label": "equal?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L03",
+      "CultureCode": "en",
+      "Title": "Balanced Moves",
+      "ExplanationParagraphs": [
+        "Goal: rewrite equations with equivalent expressions while preserving exactly the same solution set.",
+        "Adding, subtracting, multiplying by a nonzero value or dividing by a nonzero value on both sides preserves equality. Distributing and combining like terms preserve an expression’s value.",
+        "Write two legal chains from 3x+5=20 to x=5. Exchange with a classmate and identify each operation. Written descriptions of equivalence need teacher judgment; a correct final answer alone is not full evidence.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/3/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Equivalent equations",
+          "Definition": "Equations with identical solution sets.",
+          "Rule": "Apply reversible operations to both sides.",
+          "Example": "3x+5=20 and 3x=15 have the same x."
+        },
+        {
+          "Title": "Balance operations",
+          "Definition": "The same addition/subtraction or nonzero scaling on both sides.",
+          "Rule": "Keep both expressions equal at every step.",
+          "Example": "Subtract 5 from both sides."
+        },
+        {
+          "Title": "Identity substitution check",
+          "Definition": "A proposed answer must satisfy original and transformed equations.",
+          "Rule": "Substitute in both.",
+          "Example": "x=5 gives 3×5+5=20."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Subtract then divide",
+          "Question": "Solve 3x+5=20.",
+          "Method": "Reverse adding 5 then multiplying 3.",
+          "Steps": [
+            "Subtract 5 on both sides: 3x=15.",
+            "Divide both by 3.",
+            "x=5."
+          ],
+          "Answer": "x=5.",
+          "Check": "3×5+5=20."
+        },
+        {
+          "Title": "Distribute legally",
+          "Question": "Rewrite 2(x+4)=18 and solve.",
+          "Method": "Distribute or divide equivalently.",
+          "Steps": [
+            "Expand to 2x+8=18.",
+            "Subtract 8: 2x=10.",
+            "Divide by 2: x=5."
+          ],
+          "Answer": "x=5.",
+          "Check": "2(5+4)=18."
+        },
+        {
+          "Title": "Reject one-sided change",
+          "Question": "A learner changes x+4=9 to x=9. Is this equivalent?",
+          "Method": "Test the missing subtraction.",
+          "Steps": [
+            "Original equation requires x=5.",
+            "The altered equation proposes x=9.",
+            "The two equations have different solutions."
+          ],
+          "Answer": "No.",
+          "Check": "Subtract four on both sides to get x=5."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Cancelling a term from only one side.",
+          "WhyWrong": "It changes the solution set.",
+          "Correction": "Write the balancing operation explicitly."
+        },
+        {
+          "Mistake": "Dividing by zero.",
+          "WhyWrong": "That is not a valid reversible operation.",
+          "Correction": "Only divide by a demonstrated nonzero number."
+        }
+      ],
+      "SummaryPoints": [
+        "Equivalent equations preserve solutions.",
+        "Reversible balanced steps are justified.",
+        "Check transformed and original equalities."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L04",
+      "CultureCode": "en",
+      "Title": "More Balanced Moves",
+      "ExplanationParagraphs": [
+        "Goal: use the distributive property, combining like terms and balanced operations to simplify equations with expressions on both sides.",
+        "When expressions occur on both sides, collect variable terms on one side and constants on the other. A move such as subtracting 2x from both sides is legal; dividing by a variable expression may not be reversible if that expression can equal zero.",
+        "Construct a diagram showing equal expressions 5x+2 and 2x+14. Explain how removing two x-tiles from both sides isolates the remaining three. A teacher reviews the algebraic diagram and validity of each step.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/4/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Combine like terms",
+          "Definition": "Merge coefficients of the same variable.",
+          "Rule": "3x+2x=5x, not 5x².",
+          "Example": "x+4x=5x."
+        },
+        {
+          "Title": "Variables on both sides",
+          "Definition": "Keep equality while moving unknown terms.",
+          "Rule": "Subtract a variable term from both sides.",
+          "Example": "5x+2=2x+14 becomes 3x+2=14."
+        },
+        {
+          "Title": "Distribution",
+          "Definition": "Multiply each term inside parentheses.",
+          "Rule": "a(b+c)=ab+ac.",
+          "Example": "3(x−2)=3x−6."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve both sides",
+          "Question": "Solve 5x+2=2x+14.",
+          "Method": "Eliminate smaller x term.",
+          "Steps": [
+            "Subtract 2x from both sides: 3x+2=14.",
+            "Subtract 2: 3x=12.",
+            "Divide by 3: x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "5×4+2=22 and 2×4+14=22."
+        },
+        {
+          "Title": "Distribute and solve",
+          "Question": "Solve 3(x−2)=15.",
+          "Method": "Expand then balance.",
+          "Steps": [
+            "Distribute: 3x−6=15.",
+            "Add 6: 3x=21.",
+            "Divide 3: x=7."
+          ],
+          "Answer": "x=7.",
+          "Check": "3(7−2)=15."
+        },
+        {
+          "Title": "Combine and solve",
+          "Question": "Solve 2x+3x−4=16.",
+          "Method": "Combine like terms.",
+          "Steps": [
+            "2x+3x=5x.",
+            "Then 5x−4=16 gives 5x=20.",
+            "Divide by 5: x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "2×4+3×4−4=16."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating x+x as x².",
+          "WhyWrong": "Repeated variable addition is coefficient addition.",
+          "Correction": "Write x+x=2x."
+        },
+        {
+          "Mistake": "Distributing to only the first term.",
+          "WhyWrong": "Every parenthesized term is multiplied.",
+          "Correction": "Use a visual area model for each term."
+        }
+      ],
+      "SummaryPoints": [
+        "Combine like terms accurately.",
+        "Balance both sides when moving terms.",
+        "Check the original equation after solving."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Variables on both sides",
+          "Description": "The two expressions equal each other only when x=4 among the candidates shown.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "5x+2",
+              "Cells": [
+                "2",
+                "22",
+                "27"
+              ]
+            },
+            {
+              "Label": "2x+14",
+              "Cells": [
+                "14",
+                "22",
+                "24"
+              ]
+            },
+            {
+              "Label": "equal?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L05",
+      "CultureCode": "en",
+      "Title": "Solving Any Linear Equation",
+      "ExplanationParagraphs": [
+        "Goal: use reliable symbolic strategies for one-variable affine equations with fractions or variables on both sides while recognizing exceptional solution counts.",
+        "A linear equation ax+b=cx+d can have one solution, no solution, or infinitely many solutions depending on the resulting coefficients. Operations must preserve its solution set, including multiplying by the common denominator when fractional coefficients occur.",
+        "Work a complete explanation rather than only a final numeric answer. A teacher assesses strategy clarity; numeric solutions can be independently checked against the original.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/5/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Affine equation",
+          "Definition": "Variables appear to first degree with constant coefficients.",
+          "Rule": "Collect all x terms and constant terms.",
+          "Example": "4x+3=2x+11."
+        },
+        {
+          "Title": "Unique solution",
+          "Definition": "After simplification, nonzero multiple of x equals a number.",
+          "Rule": "ax=b with a≠0 gives x=b/a.",
+          "Example": "2x=8 gives x=4."
+        },
+        {
+          "Title": "Fraction clearing",
+          "Definition": "Multiply both sides by a common nonzero denominator.",
+          "Rule": "Preserves solutions when done on both sides.",
+          "Example": "x/3+2=5 becomes x+6=15."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve variables on both sides",
+          "Question": "Solve 4x+3=2x+11.",
+          "Method": "Balance variable and constant terms.",
+          "Steps": [
+            "Subtract 2x: 2x+3=11.",
+            "Subtract 3: 2x=8.",
+            "Divide 2: x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "4×4+3=19 and 2×4+11=19."
+        },
+        {
+          "Title": "Solve fractional coefficient",
+          "Question": "Solve x/3+2=5.",
+          "Method": "Clear denominator.",
+          "Steps": [
+            "Subtract 2: x/3=3.",
+            "Multiply both sides by 3.",
+            "x=9."
+          ],
+          "Answer": "x=9.",
+          "Check": "9/3+2=5."
+        },
+        {
+          "Title": "Solve negative coefficient",
+          "Question": "Solve −2x+7=−1.",
+          "Method": "Isolate −2x.",
+          "Steps": [
+            "Subtract 7: −2x=−8.",
+            "Divide by −2.",
+            "x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "−8+7=−1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dropping negative signs when dividing.",
+          "WhyWrong": "Sign determines solution direction.",
+          "Correction": "Track signed coefficients."
+        },
+        {
+          "Mistake": "Clearing only one fraction term.",
+          "WhyWrong": "Multiplication applies to the entire equation.",
+          "Correction": "Multiply both sides and all terms consistently."
+        }
+      ],
+      "SummaryPoints": [
+        "Collect variable terms and constants.",
+        "Fractions and negative coefficients require careful balance.",
+        "Verification against the original guards mistakes."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L06",
+      "CultureCode": "en",
+      "Title": "Strategic Solving",
+      "ExplanationParagraphs": [
+        "Goal: choose an efficient order of legal operations to solve a linear equation without unnecessary expansion or arithmetic errors.",
+        "An equation with a factored expression can often be simplified by dividing first; another may benefit from distributing. Compare the number of steps and the potential for sign mistakes, then verify both strategies lead to the same answer.",
+        "Give students 4(x+3)=28 and ask them to solve in two ways, explain what is more economical, and critique a common distribution mistake. Teacher evaluation focuses on mathematical explanation rather than speed alone.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/6/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Factor-first strategy",
+          "Definition": "Isolate a product before expanding.",
+          "Rule": "If a(x+b)=c and a≠0, divide by a.",
+          "Example": "4(x+3)=28 becomes x+3=7."
+        },
+        {
+          "Title": "Distribution strategy",
+          "Definition": "Expand products when it helps collect terms.",
+          "Rule": "a(x+b)=ax+ab.",
+          "Example": "4x+12=28."
+        },
+        {
+          "Title": "Efficiency check",
+          "Definition": "Compare correct solution paths while preserving equivalence.",
+          "Rule": "Choose the simpler legal steps.",
+          "Example": "Dividing 4 first avoids multiplying out."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Divide first",
+          "Question": "Solve 4(x+3)=28 using a direct strategy.",
+          "Method": "Divide by 4.",
+          "Steps": [
+            "Divide each side by 4: x+3=7.",
+            "Subtract 3.",
+            "x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "4(4+3)=28."
+        },
+        {
+          "Title": "Expand instead",
+          "Question": "Solve 4(x+3)=28 by distributing.",
+          "Method": "Expand and balance.",
+          "Steps": [
+            "Write 4x+12=28.",
+            "Subtract 12: 4x=16.",
+            "Divide by 4: x=4."
+          ],
+          "Answer": "x=4.",
+          "Check": "Same answer as factor-first solution."
+        },
+        {
+          "Title": "Choose smart cancellation",
+          "Question": "Solve (5x−10)/5=6.",
+          "Method": "Use fraction simplification.",
+          "Steps": [
+            "Multiply both sides by 5: 5x−10=30.",
+            "Add 10: 5x=40.",
+            "Divide by 5: x=8."
+          ],
+          "Answer": "x=8.",
+          "Check": "(5×8−10)/5=30/5=6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rewarding a shortcut without justification.",
+          "WhyWrong": "Skipping necessary equal operations can conceal errors.",
+          "Correction": "State why the shortcut preserves equality."
+        },
+        {
+          "Mistake": "Choosing distribution and losing a sign.",
+          "WhyWrong": "Every term inside must be multiplied.",
+          "Correction": "Check with reverse substitution."
+        }
+      ],
+      "SummaryPoints": [
+        "Multiple equivalent solution paths are valid.",
+        "Choose steps that reduce errors.",
+        "Explain and verify the chosen strategy."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L07",
+      "CultureCode": "en",
+      "Title": "All, Some, or No Solutions",
+      "ExplanationParagraphs": [
+        "Goal: distinguish equations true for all real x, true for exactly one x, and true for no x using equivalent transformations.",
+        "If simplifying yields 0=0, every x satisfies the original; if it yields 0=nonzero, none does. If it yields ax=b with a≠0, exactly one solution exists.",
+        "Sort original independently written equations into these three cases. A teacher reviews the explanation of why a statement is always or never true; test substitutions alone are insufficient to prove an identity.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/7/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Identity",
+          "Definition": "An equation true for every real input.",
+          "Rule": "Equivalent simplification yields 0=0.",
+          "Example": "2(x+3)=2x+6."
+        },
+        {
+          "Title": "Contradiction",
+          "Definition": "An equation false for every real input.",
+          "Rule": "Equivalent simplification yields 0=c with c≠0.",
+          "Example": "2x+1=2x+5."
+        },
+        {
+          "Title": "Unique solution",
+          "Definition": "A linear equation determining one x.",
+          "Rule": "Simplifies to ax=b with a≠0.",
+          "Example": "2x+1=9 gives x=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identity test",
+          "Question": "How many solutions does 2(x+3)=2x+6 have?",
+          "Method": "Expand and compare.",
+          "Steps": [
+            "Distribute the left side to 2x+6.",
+            "Both sides are identical.",
+            "Subtract to obtain 0=0, true for all real x."
+          ],
+          "Answer": "Infinitely many solutions (all real numbers).",
+          "Check": "Any number makes both sides equal."
+        },
+        {
+          "Title": "Contradiction test",
+          "Question": "How many solutions does 2x+1=2x+5 have?",
+          "Method": "Subtract matching terms.",
+          "Steps": [
+            "Subtract 2x from both sides.",
+            "The result is 1=5, impossible.",
+            "No x repairs this contradiction."
+          ],
+          "Answer": "No solutions.",
+          "Check": "Both sides differ by 4 for every x."
+        },
+        {
+          "Title": "Unique case",
+          "Question": "How many solutions does 2x+1=9 have?",
+          "Method": "Isolate x.",
+          "Steps": [
+            "Subtract 1: 2x=8.",
+            "Divide by 2: x=4.",
+            "Nonzero coefficient guarantees one real value."
+          ],
+          "Answer": "Exactly one: x=4.",
+          "Check": "2×4+1=9."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Assuming all linear equations have one solution.",
+          "WhyWrong": "The variable can cancel, leaving an identity or contradiction.",
+          "Correction": "Inspect the simplified final statement."
+        },
+        {
+          "Mistake": "Using a few sample values to prove all real x.",
+          "WhyWrong": "Finite tests cannot prove an identity.",
+          "Correction": "Show equivalent algebraic simplification."
+        }
+      ],
+      "SummaryPoints": [
+        "Equation solution counts can be none, one, or infinitely many.",
+        "0=0 signals an identity.",
+        "0=nonzero signals contradiction."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Identity versus contradiction",
+          "Description": "The first equation is true for all real x; the second equation 2x+1=2x+5 is never true.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "-2",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "Label": "2(x+3)",
+              "Cells": [
+                "2",
+                "6",
+                "12"
+              ]
+            },
+            {
+              "Label": "2x+6",
+              "Cells": [
+                "2",
+                "6",
+                "12"
+              ]
+            },
+            {
+              "Label": "2x+1",
+              "Cells": [
+                "-3",
+                "1",
+                "7"
+              ]
+            },
+            {
+              "Label": "2x+5",
+              "Cells": [
+                "1",
+                "5",
+                "11"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L08",
+      "CultureCode": "en",
+      "Title": "How Many Solutions?",
+      "ExplanationParagraphs": [
+        "Goal: classify and explain the number of solutions of unfamiliar linear equations, including those with fractions and distribution.",
+        "Multiply or expand carefully, then inspect whether any nonzero x term remains. Two superficially different expressions can be identical after expansion. A different constant after cancellation indicates no solution.",
+        "Sort and justify three equations drawn from separately prepared cards. A teacher evaluates equivalent-transformation arguments rather than mere labels.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/8/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Coefficient comparison",
+          "Definition": "Compare variable coefficients after simplification.",
+          "Rule": "Equal coefficients cancel; compare constants next.",
+          "Example": "3x+2=3x+7 has none."
+        },
+        {
+          "Title": "Identity detection",
+          "Definition": "Every x works when expressions simplify identically.",
+          "Rule": "Both coefficient and constant match.",
+          "Example": "2(x+4)=2x+8."
+        },
+        {
+          "Title": "Unique detection",
+          "Definition": "Remaining nonzero variable coefficient produces one solution.",
+          "Rule": "ax=b, a≠0.",
+          "Example": "3x−2=10 gives x=4."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Identity by distribution",
+          "Question": "Solutions to 2(x+4)=2x+8?",
+          "Method": "Expand.",
+          "Steps": [
+            "Distribute left to 2x+8.",
+            "Subtract 2x and 8 from both sides.",
+            "The statement is 0=0."
+          ],
+          "Answer": "All real x.",
+          "Check": "The expressions agree identically."
+        },
+        {
+          "Title": "Contradiction with fractions",
+          "Question": "Solutions to x/2+1=x/2+3?",
+          "Method": "Subtract common variable term.",
+          "Steps": [
+            "Subtract x/2 from both sides.",
+            "Obtain 1=3.",
+            "No real x can satisfy this."
+          ],
+          "Answer": "No solutions.",
+          "Check": "The right side always exceeds the left by 2."
+        },
+        {
+          "Title": "Unique solution",
+          "Question": "Solve 3x−2=10 and classify count.",
+          "Method": "Isolate x.",
+          "Steps": [
+            "Add 2: 3x=12.",
+            "Divide by 3.",
+            "x=4, a unique real value."
+          ],
+          "Answer": "One solution: x=4.",
+          "Check": "3×4−2=10."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Stopping when variables cancel and saying “x=0.”",
+          "WhyWrong": "A variable-free statement must be checked.",
+          "Correction": "Distinguish 0=0 from contradiction."
+        },
+        {
+          "Mistake": "Expanding coefficients incorrectly.",
+          "WhyWrong": "Incorrect distribution changes solution count.",
+          "Correction": "Expand term by term."
+        }
+      ],
+      "SummaryPoints": [
+        "Solution count is an algebraic property.",
+        "Inspect the simplified constant statement.",
+        "A consistent coefficient comparison prevents guessing."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L09",
+      "CultureCode": "en",
+      "Title": "When Are They the Same?",
+      "ExplanationParagraphs": [
+        "Goal: model when two quantities from different linear rules are equal and interpret the equation’s solution in a realistic context.",
+        "For two subscription plans, matching costs are found by setting the rules equal, not by comparing one arbitrary sample. The equality point can be shown on a graph as a line intersection.",
+        "Compare plan A at $6 plus $3 per month and plan B at $18 plus $1 per month. A teacher reviews what the break-even value means and whether fractional months are meaningful under the pricing rules.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/9/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Break-even equation",
+          "Definition": "An equation formed by setting two models equal.",
+          "Rule": "A(x)=B(x).",
+          "Example": "6+3m=18+m."
+        },
+        {
+          "Title": "Intersection meaning",
+          "Definition": "Input where both outputs agree.",
+          "Rule": "Same point lies on both graphs.",
+          "Example": "m=6 months, cost $24."
+        },
+        {
+          "Title": "Context domain",
+          "Definition": "Only input values supported by the problem.",
+          "Rule": "Months may be nonnegative whole counts.",
+          "Example": "m=6 is feasible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find equal costs",
+          "Question": "Plan A is 6+3m and B is 18+m. When are they equal?",
+          "Method": "Solve the equality.",
+          "Steps": [
+            "6+3m=18+m.",
+            "Subtract m and 6: 2m=12.",
+            "m=6."
+          ],
+          "Answer": "At 6 months.",
+          "Check": "Both plans cost 24."
+        },
+        {
+          "Title": "Check a short period",
+          "Question": "Which plan costs less after 2 months?",
+          "Method": "Evaluate both.",
+          "Steps": [
+            "A=6+3×2=12.",
+            "B=18+2=20.",
+            "A is cheaper by 8."
+          ],
+          "Answer": "Plan A by $8.",
+          "Check": "A(2)<B(2)."
+        },
+        {
+          "Title": "Check a later period",
+          "Question": "Which plan costs less after 10 months?",
+          "Method": "Evaluate both.",
+          "Steps": [
+            "A=6+30=36.",
+            "B=18+10=28.",
+            "B is cheaper by 8."
+          ],
+          "Answer": "Plan B by $8.",
+          "Check": "After break-even, smaller monthly rate wins."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Equating only initial fees.",
+          "WhyWrong": "Equal starting charges are not the same as equal total charges.",
+          "Correction": "Include usage-dependent terms."
+        },
+        {
+          "Mistake": "Ignoring feasible time intervals.",
+          "WhyWrong": "Negative months are not meaningful for this contract.",
+          "Correction": "State m≥0."
+        }
+      ],
+      "SummaryPoints": [
+        "Two linear models are equal at a break-even input.",
+        "The equality appears as a graph intersection.",
+        "Interpret the solution in its domain."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Find the break-even month",
+          "Description": "Plan A=6+3m; plan B=18+m. They have equal price at month 6.",
+          "Rows": [
+            {
+              "Label": "months",
+              "Cells": [
+                "0",
+                "2",
+                "6",
+                "10"
+              ]
+            },
+            {
+              "Label": "A cost",
+              "Cells": [
+                "6",
+                "12",
+                "24",
+                "36"
+              ]
+            },
+            {
+              "Label": "B cost",
+              "Cells": [
+                "18",
+                "20",
+                "24",
+                "28"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L10",
+      "CultureCode": "en",
+      "Title": "On or Off the Line?",
+      "ExplanationParagraphs": [
+        "Goal: interpret ordered pairs as solutions or nonsolutions of a contextual linear equation, and explain which points lie on its graph.",
+        "A point is on a line if its coordinates satisfy the equation exactly. A plotted point that merely looks close is not an exact solution. Negative values may be algebraically valid but contextually inappropriate.",
+        "Investigate a taxi fare F=4+2d. Sort points (0,4), (3,10), (3,11) by substitution and explain which are valid fare-distance combinations. A teacher checks graph reading and context.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/10/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "On-line test",
+          "Definition": "Substitution makes the defining equation true.",
+          "Rule": "Compare y with f(x).",
+          "Example": "(3,10) lies on F=4+2d."
+        },
+        {
+          "Title": "Off-line test",
+          "Definition": "The ordered pair fails the equation.",
+          "Rule": "An approximate graph dot is not enough.",
+          "Example": "(3,11) does not satisfy F=4+2d."
+        },
+        {
+          "Title": "Context validity",
+          "Definition": "The point must also make sense in the situation.",
+          "Rule": "Distance cannot be negative.",
+          "Example": "(−2,0) satisfies equation but is not a realistic trip."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Test valid fare",
+          "Question": "Is (3,10) on F=4+2d?",
+          "Method": "Substitute d=3.",
+          "Steps": [
+            "Predicted fare is 4+2×3=10.",
+            "The point’s fare is 10.",
+            "Both values agree."
+          ],
+          "Answer": "Yes.",
+          "Check": "10=4+2(3)."
+        },
+        {
+          "Title": "Reject an off-line point",
+          "Question": "Is (3,11) on F=4+2d?",
+          "Method": "Substitute.",
+          "Steps": [
+            "Predicted fare at d=3 is 10.",
+            "The point has F=11.",
+            "It does not satisfy the equation."
+          ],
+          "Answer": "No.",
+          "Check": "11≠10."
+        },
+        {
+          "Title": "Algebra versus context",
+          "Question": "Does (−2,0) satisfy F=4+2d? Is it realistic?",
+          "Method": "Separate equation check from physical interpretation.",
+          "Steps": [
+            "At d=−2, F=4−4=0.",
+            "The equation is satisfied algebraically.",
+            "A trip length cannot be negative, so the point is contextually invalid."
+          ],
+          "Answer": "Algebraically yes; realistically no.",
+          "Check": "State d≥0 for taxi distance."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Judging graph membership by closeness of a hand drawing.",
+          "WhyWrong": "The graph is an exact solution set.",
+          "Correction": "Substitute."
+        },
+        {
+          "Mistake": "Conflating algebraic and context restrictions.",
+          "WhyWrong": "A solution may violate domain assumptions.",
+          "Correction": "State both checks separately."
+        }
+      ],
+      "SummaryPoints": [
+        "Line points exactly satisfy the equation.",
+        "Nonmembers fail substitution.",
+        "Context may further restrict allowed solutions."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L11",
+      "CultureCode": "en",
+      "Title": "On Both of the Lines",
+      "ExplanationParagraphs": [
+        "Goal: identify an ordered pair that satisfies two line equations simultaneously and interpret this as the intersection of their graphs.",
+        "Two independent equations yield an intersection only where both balances hold. Testing a point in one line is insufficient; substitute into both.",
+        "Plot y=x+1 and y=−x+5, identify the intersection and explain its meaning in terms of equal outputs. The teacher reviews the coordinate graph and line intersection.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/11/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common solution",
+          "Definition": "One ordered pair satisfying both linear equations.",
+          "Rule": "Verify each equation independently.",
+          "Example": "(2,3) satisfies y=x+1 and y=−x+5."
+        },
+        {
+          "Title": "Intersection",
+          "Definition": "A coordinate shared by two graph lines.",
+          "Rule": "Solve equal y expressions.",
+          "Example": "x+1=−x+5 gives x=2."
+        },
+        {
+          "Title": "Verification",
+          "Definition": "A pair is common only if both substitutions are true.",
+          "Rule": "Check both equalities.",
+          "Example": "3=2+1 and 3=−2+5."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Find intersection",
+          "Question": "Solve y=x+1 and y=−x+5.",
+          "Method": "Set right sides equal.",
+          "Steps": [
+            "x+1=−x+5.",
+            "2x=4 gives x=2.",
+            "Then y=2+1=3."
+          ],
+          "Answer": "(2,3).",
+          "Check": "Both lines produce 3 at x=2."
+        },
+        {
+          "Title": "Reject one-line point",
+          "Question": "Does (0,1) lie on both y=x+1 and y=−x+5?",
+          "Method": "Check both equations.",
+          "Steps": [
+            "First: y=0+1=1, so yes.",
+            "Second: y=−0+5=5, not 1.",
+            "It lies on only one."
+          ],
+          "Answer": "No.",
+          "Check": "One satisfied line does not make a common solution."
+        },
+        {
+          "Title": "Check a candidate",
+          "Question": "Does (2,3) satisfy both equations?",
+          "Method": "Substitute.",
+          "Steps": [
+            "First gives 2+1=3.",
+            "Second gives −2+5=3.",
+            "Both outputs match."
+          ],
+          "Answer": "Yes.",
+          "Check": "The two lines meet there."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Checking only one equation.",
+          "WhyWrong": "The system requires simultaneous truth.",
+          "Correction": "Substitute into both."
+        },
+        {
+          "Mistake": "Assuming plotted lines meet exactly at a fuzzy grid point.",
+          "WhyWrong": "Hand plotting may be imprecise.",
+          "Correction": "Verify algebraically."
+        }
+      ],
+      "SummaryPoints": [
+        "A shared solution lies on both lines.",
+        "Intersections can be computed by equal outputs.",
+        "Verify both equations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Intersection of two lines",
+          "Description": "For the same x, both y-values agree at (2,3). A graph must be represented separately.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "2",
+                "4"
+              ]
+            },
+            {
+              "Label": "y=x+1",
+              "Cells": [
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "y=−x+5",
+              "Cells": [
+                "5",
+                "3",
+                "1"
+              ]
+            },
+            {
+              "Label": "intersection?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L12",
+      "CultureCode": "en",
+      "Title": "Systems of Equations",
+      "ExplanationParagraphs": [
+        "Goal: understand a system of two linear equations as simultaneous constraints and classify possible intersections.",
+        "Two distinct nonparallel lines intersect once, parallel distinct lines have no common point, and coincident lines share infinitely many. A graph can illustrate these cases but exact equations establish which applies.",
+        "Use an original graph of y=2x+1 and y=2x−3 to explain no intersection, then compare y=2x+1 and 2y=4x+2. A teacher checks structural and graphical reasoning.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/12/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear system",
+          "Definition": "Two or more equations required to hold simultaneously.",
+          "Rule": "A solution satisfies every equation.",
+          "Example": "y=2x+1 and y=−x+4."
+        },
+        {
+          "Title": "Parallel distinct lines",
+          "Definition": "Equal slope but different intercepts.",
+          "Rule": "They have no common ordered pair.",
+          "Example": "y=2x+1 and y=2x−3."
+        },
+        {
+          "Title": "Coincident lines",
+          "Definition": "Different equations defining the same line.",
+          "Rule": "Infinitely many common points.",
+          "Example": "y=2x+1 and 2y=4x+2."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "No intersection",
+          "Question": "Solve y=2x+1 and y=2x−3.",
+          "Method": "Set outputs equal.",
+          "Steps": [
+            "Equality would demand 2x+1=2x−3.",
+            "Subtract 2x to get 1=−3.",
+            "Contradiction means no common solution."
+          ],
+          "Answer": "No solutions.",
+          "Check": "Distinct parallel lines have the same slope."
+        },
+        {
+          "Title": "Infinitely many",
+          "Question": "Solve y=2x+1 and 2y=4x+2.",
+          "Method": "Simplify one equation.",
+          "Steps": [
+            "Divide second equation by 2: y=2x+1.",
+            "Both equations are identical.",
+            "Every point on that line satisfies both."
+          ],
+          "Answer": "Infinitely many common solutions.",
+          "Check": "Two equations describe the same line."
+        },
+        {
+          "Title": "One intersection",
+          "Question": "Solve y=x and y=−x+4.",
+          "Method": "Equate outputs.",
+          "Steps": [
+            "x=−x+4.",
+            "2x=4 gives x=2.",
+            "Then y=2."
+          ],
+          "Answer": "(2,2).",
+          "Check": "Both lines contain (2,2)."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a system as two separate unrelated answers.",
+          "WhyWrong": "The common solution must satisfy both.",
+          "Correction": "Use simultaneous constraints."
+        },
+        {
+          "Mistake": "Claiming parallel lines always overlap.",
+          "WhyWrong": "Same slope with different intercepts gives distinct lines.",
+          "Correction": "Compare intercepts."
+        }
+      ],
+      "SummaryPoints": [
+        "Systems encode simultaneous conditions.",
+        "Intersections can be zero, one or infinitely many.",
+        "Graph shape and algebra must agree."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Parallel and distinct equations",
+          "Description": "Two lines with slope 2 and different intercepts never intersect.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "0",
+                "1",
+                "2"
+              ]
+            },
+            {
+              "Label": "y=2x+1",
+              "Cells": [
+                "1",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "y=2x−3",
+              "Cells": [
+                "-3",
+                "-1",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L13",
+      "CultureCode": "en",
+      "Title": "Solving Systems of Equations",
+      "ExplanationParagraphs": [
+        "Goal: solve two-variable linear systems using substitution and verify the ordered-pair solution in both equations.",
+        "Choose substitution when one variable is already isolated. Replace that variable in the other equation, solve for the remaining variable, then back-substitute and check both originals.",
+        "Solve y=2x+1 together with x+y=10. Discuss whether a plotted approximation and an exact algebraic answer agree. A teacher reviews the substitution sequence.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/13/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Substitution",
+          "Definition": "Replace an isolated variable by its equal expression.",
+          "Rule": "If y=2x+1, use it in x+y=10.",
+          "Example": "x+(2x+1)=10."
+        },
+        {
+          "Title": "Back-substitution",
+          "Definition": "Find the second coordinate once the first is known.",
+          "Rule": "Insert solved x into either equation.",
+          "Example": "x=3 yields y=7."
+        },
+        {
+          "Title": "System check",
+          "Definition": "Test the ordered pair in both equations.",
+          "Rule": "Both must be true.",
+          "Example": "7=2×3+1 and 3+7=10."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Solve by substitution",
+          "Question": "Solve y=2x+1, x+y=10.",
+          "Method": "Substitute y.",
+          "Steps": [
+            "x+2x+1=10.",
+            "3x=9 gives x=3.",
+            "Then y=2×3+1=7."
+          ],
+          "Answer": "(3,7).",
+          "Check": "Both equations are satisfied."
+        },
+        {
+          "Title": "Solve another system",
+          "Question": "Solve y=x−2 and x+y=8.",
+          "Method": "Substitute y into total.",
+          "Steps": [
+            "x+(x−2)=8.",
+            "2x−2=8 gives x=5.",
+            "Then y=5−2=3."
+          ],
+          "Answer": "(5,3).",
+          "Check": "5+3=8 and 3=5−2."
+        },
+        {
+          "Title": "Reject candidate",
+          "Question": "Is (4,6) a solution to y=2x+1, x+y=10?",
+          "Method": "Test both.",
+          "Steps": [
+            "Second gives 4+6=10.",
+            "First predicts y=2×4+1=9.",
+            "Since 6≠9, the point fails the system."
+          ],
+          "Answer": "No.",
+          "Check": "Meeting one equation is insufficient."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Forgetting to distribute while substituting expressions.",
+          "WhyWrong": "Parentheses may change signs and coefficients.",
+          "Correction": "Write the substituted expression clearly."
+        },
+        {
+          "Mistake": "Checking only the equation used last.",
+          "WhyWrong": "An algebra slip can still produce an inconsistent pair.",
+          "Correction": "Substitute into both originals."
+        }
+      ],
+      "SummaryPoints": [
+        "Substitute an already isolated variable.",
+        "Back-substitute and obtain an ordered pair.",
+        "Check both equations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check both parts of a system",
+          "Description": "Only (3,7) satisfies y=2x+1 and x+y=10 in these choices.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "1",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "y=2x+1",
+              "Cells": [
+                "3",
+                "7",
+                "9"
+              ]
+            },
+            {
+              "Label": "x+y",
+              "Cells": [
+                "4",
+                "10",
+                "13"
+              ]
+            },
+            {
+              "Label": "valid?",
+              "Cells": [
+                "No",
+                "Yes",
+                "No"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L14",
+      "CultureCode": "en",
+      "Title": "Solving More Systems",
+      "ExplanationParagraphs": [
+        "Goal: choose an efficient substitution or elimination strategy for linear systems, including oppositely signed variable coefficients.",
+        "Elimination adds or subtracts equivalent equations to cancel one variable. You may multiply an entire equation by a nonzero constant first. An intersection must still be checked in the original system.",
+        "Use x+y=7 and x−y=1. Compare elimination with substitution and explain their equivalent solutions. A teacher reviews the justification for adding whole equations.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/14/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Elimination",
+          "Definition": "Combine equations to remove one variable.",
+          "Rule": "Add equations when coefficients are opposites.",
+          "Example": "(x+y)+(x−y)=2x."
+        },
+        {
+          "Title": "Equation scaling",
+          "Definition": "Multiply all terms by a nonzero constant.",
+          "Rule": "Preserves each equation’s solutions.",
+          "Example": "2x+y=7 may be doubled to 4x+2y=14."
+        },
+        {
+          "Title": "Common check",
+          "Definition": "Verify the final pair in both original equations.",
+          "Rule": "Do not trust an unchecked elimination result.",
+          "Example": "x=4,y=3 satisfies 7 and 1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Add equations",
+          "Question": "Solve x+y=7 and x−y=1.",
+          "Method": "Eliminate y.",
+          "Steps": [
+            "Add equations: 2x=8.",
+            "x=4.",
+            "Then 4+y=7 gives y=3."
+          ],
+          "Answer": "(4,3).",
+          "Check": "4+3=7 and 4−3=1."
+        },
+        {
+          "Title": "Subtract equations",
+          "Question": "Solve 2x+y=11 and 2x−y=5.",
+          "Method": "Add for elimination.",
+          "Steps": [
+            "Adding gives 4x=16.",
+            "x=4.",
+            "Then y=11−8=3."
+          ],
+          "Answer": "(4,3).",
+          "Check": "2×4−3=5."
+        },
+        {
+          "Title": "Use substitution",
+          "Question": "Solve x=2y and x+y=12.",
+          "Method": "Replace x.",
+          "Steps": [
+            "2y+y=12.",
+            "3y=12 gives y=4.",
+            "Then x=2×4=8."
+          ],
+          "Answer": "(8,4).",
+          "Check": "8=2×4 and 8+4=12."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding only one term from each equation.",
+          "WhyWrong": "Elimination uses the entire left and right sides.",
+          "Correction": "Write all terms aligned."
+        },
+        {
+          "Mistake": "Multiplying only one side during scaling.",
+          "WhyWrong": "It changes the equation.",
+          "Correction": "Multiply every term on both sides."
+        }
+      ],
+      "SummaryPoints": [
+        "Elimination and substitution can agree.",
+        "Choose the simpler algebraic route.",
+        "Check the original equations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check the difference constraint",
+          "Description": "All listed pairs sum to 7, but only (4,3) also has x−y=1.",
+          "Rows": [
+            {
+              "Label": "x",
+              "Cells": [
+                "3",
+                "4",
+                "5"
+              ]
+            },
+            {
+              "Label": "y",
+              "Cells": [
+                "4",
+                "3",
+                "2"
+              ]
+            },
+            {
+              "Label": "x+y",
+              "Cells": [
+                "7",
+                "7",
+                "7"
+              ]
+            },
+            {
+              "Label": "x−y",
+              "Cells": [
+                "-1",
+                "1",
+                "3"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L15",
+      "CultureCode": "en",
+      "Title": "Writing Systems of Equations",
+      "ExplanationParagraphs": [
+        "Goal: translate a two-condition real-world situation into two equations with shared variables and clearly defined units.",
+        "Define each unknown before composing equations. A total gives a sum equation; a price or rate condition gives a second independent equation. The pair solves only when both pieces of information hold.",
+        "Invent a ticket scenario with adult tickets $8, child tickets $5, 10 tickets total and $65 total revenue. Write two equations and discuss physical restrictions to nonnegative integers. Teacher review is needed for variable definitions and consistency of the story.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/15/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Total-count condition",
+          "Definition": "A sum of quantities equals known count.",
+          "Rule": "a+c=10.",
+          "Example": "Ten tickets total."
+        },
+        {
+          "Title": "Total-value condition",
+          "Definition": "Multiply each count by its per-unit value.",
+          "Rule": "8a+5c=65.",
+          "Example": "Adults cost 8, children cost 5."
+        },
+        {
+          "Title": "Discrete domain",
+          "Definition": "Counts are nonnegative whole numbers.",
+          "Rule": "a,c∈{0,1,2,…}.",
+          "Example": "Five adults and five children is possible."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write ticket system",
+          "Question": "Ten tickets total, adult $8 child $5, revenue $65. Define equations.",
+          "Method": "Use a and c as counts.",
+          "Steps": [
+            "Count constraint is a+c=10.",
+            "Revenue constraint is 8a+5c=65.",
+            "Require nonnegative integer counts."
+          ],
+          "Answer": "a+c=10; 8a+5c=65.",
+          "Check": "Both describe the same sale."
+        },
+        {
+          "Title": "Solve counts",
+          "Question": "Solve a+c=10 and 8a+5c=65.",
+          "Method": "Substitute c=10−a.",
+          "Steps": [
+            "8a+5(10−a)=65.",
+            "8a+50−5a=65 gives 3a=15.",
+            "a=5 and c=5."
+          ],
+          "Answer": "5 adults and 5 children.",
+          "Check": "40+25=65."
+        },
+        {
+          "Title": "Reject infeasible count",
+          "Question": "A proposed solution has 12 adults and −2 children but sums to 10. Is it acceptable?",
+          "Method": "Check domain before revenue.",
+          "Steps": [
+            "The total condition 12+(−2)=10 holds.",
+            "Negative child ticket count is impossible.",
+            "The solution is invalid for the context."
+          ],
+          "Answer": "No.",
+          "Check": "Ticket counts must be nonnegative integers."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using one variable for different quantities.",
+          "WhyWrong": "Counts need distinct definitions.",
+          "Correction": "Define symbols before equations."
+        },
+        {
+          "Mistake": "Accepting a negative ticket count.",
+          "WhyWrong": "Algebraic solutions may violate realistic constraints.",
+          "Correction": "Enforce nonnegative integers."
+        }
+      ],
+      "SummaryPoints": [
+        "Define variables and units.",
+        "Use independent count and value conditions.",
+        "Check both equations and practical domains."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U04:L16",
+      "CultureCode": "en",
+      "Title": "Solving Problems with Systems of Equations",
+      "ExplanationParagraphs": [
+        "Goal: solve contextual systems, compare feasible solutions, and interpret results including units and reasonableness.",
+        "Set up both constraints, select a solution method, and validate the final pair against every condition. If a model permits fractions but the situation requires counts, only integer nonnegative solutions are feasible.",
+        "Consider a mixture of apples and pears: eight fruits total, apples $2 each, pears $3 each, total cost $19. Determine both counts and explain why each condition matters. Teacher review checks context and reasoning.",
+        "Independently authored Edulytiks Grade 8 content informed by Open Up Resources / Illustrative Mathematics 2017–2019, CC BY 4.0. Source: https://im.kendallhunt.com/MS/teachers/3/4/16/preparation.html . No original publisher figures or assessments are duplicated."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Independent constraints",
+          "Definition": "Two equations simultaneously describing one situation.",
+          "Rule": "Use both count and cost.",
+          "Example": "a+p=8 and 2a+3p=19."
+        },
+        {
+          "Title": "Eliminate a variable",
+          "Definition": "Combine equations or substitute.",
+          "Rule": "Use a=8−p.",
+          "Example": "2(8−p)+3p=19."
+        },
+        {
+          "Title": "Reasonableness",
+          "Definition": "The pair must match equations and physical context.",
+          "Rule": "Check nonnegative integer counts and amounts.",
+          "Example": "a=5,p=3."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Fruit mixture",
+          "Question": "Eight fruits, apples $2, pears $3, total $19. Find counts.",
+          "Method": "Substitute the count equation.",
+          "Steps": [
+            "a+p=8 gives a=8−p.",
+            "2(8−p)+3p=19 gives 16+p=19, so p=3.",
+            "Then a=8−3=5."
+          ],
+          "Answer": "5 apples and 3 pears.",
+          "Check": "Count 8 and cost 10+9=19."
+        },
+        {
+          "Title": "Check alternate guess",
+          "Question": "Could 4 apples and 4 pears meet both conditions?",
+          "Method": "Substitute counts and prices.",
+          "Steps": [
+            "Count 4+4=8 satisfies the first.",
+            "Cost is 2×4+3×4=8+12=20.",
+            "Since 20≠19, the guess fails."
+          ],
+          "Answer": "No.",
+          "Check": "Only one equation holds."
+        },
+        {
+          "Title": "Solve a second cost system",
+          "Question": "Six items total, $3 and $5 types, total cost $24. Find quantities.",
+          "Method": "Set x+y=6 and 3x+5y=24.",
+          "Steps": [
+            "x=6−y.",
+            "3(6−y)+5y=24 yields 18+2y=24, so y=3.",
+            "x=3."
+          ],
+          "Answer": "3 of each type.",
+          "Check": "3×3+5×3=24 and count 6."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Ignoring the total count after solving a cost equation.",
+          "WhyWrong": "One constraint alone leaves multiple possibilities.",
+          "Correction": "Check both."
+        },
+        {
+          "Mistake": "Giving fractional item counts without context.",
+          "WhyWrong": "Discrete objects require integer solutions.",
+          "Correction": "Apply domain restrictions."
+        }
+      ],
+      "SummaryPoints": [
+        "Systems combine independent real constraints.",
+        "Solve algebraically and validate context.",
+        "A complete answer states quantities and units."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Check a two-price fruit system",
+          "Description": "Eight fruits total; apples cost $2, pears $3. Five apples and three pears cost $19.",
+          "Rows": [
+            {
+              "Label": "apples",
+              "Cells": [
+                "0",
+                "5",
+                "8"
+              ]
+            },
+            {
+              "Label": "pears",
+              "Cells": [
+                "8",
+                "3",
+                "0"
+              ]
+            },
+            {
+              "Label": "number",
+              "Cells": [
+                "8",
+                "8",
+                "8"
+              ]
+            },
+            {
+              "Label": "cost",
+              "Cells": [
+                "24",
+                "19",
+                "16"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    }
+  ]
+}

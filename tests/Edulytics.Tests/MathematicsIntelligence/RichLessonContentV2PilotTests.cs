@@ -326,9 +326,17 @@ public sealed class RichLessonContentV2PilotTests
             .SelectMany(x => x.Lessons)
             .ToArray();
 
-        Assert.Equal(26 + 143 + 149, lessons.Length);
+        // Preserve the original pilot and grade cohorts without assuming the
+        // registry will never gain another first-party course.
+        var originalGrade3 = lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G3:", StringComparison.Ordinal));
+        var originalGrade4 = lessons.Count(x => x.LessonCode.StartsWith(
+            "PED:US-CCSS-MATH:G4:", StringComparison.Ordinal));
+        Assert.Equal(143, originalGrade3);
+        Assert.Equal(149, originalGrade4);
+        Assert.True(lessons.Length - originalGrade3 - originalGrade4 >= 26);
         Assert.Equal(
-            26 + 143 + 149,
+            lessons.Length,
             lessons.Select(x => x.LessonCode)
                 .Distinct(StringComparer.Ordinal)
                 .Count());

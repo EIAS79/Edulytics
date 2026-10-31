@@ -1,0 +1,402 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L16",
+  "title": "Parallel Lines and the Angles in a Triangle",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\16\\index.html",
+      "sha256": "acbda1d66d6a996d3435771e31950486c9b1dec469c20f06a58cfa8aa5d0e486"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\16\\index.html",
+      "sha256": "9ca94211cb058f027a350fcc66058d8a31202cd0f5cef2171643173200f21300"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\16\\preparation.html",
+      "sha256": "3f44d2ad6ca6699c78c8201d479bf60e2d11de2b7a8bc29b7a1d8891899ffe89"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.NS.A"
+    },
+    {
+      "role": "BuildingOn",
+      "reference": "8.G.A.1.b"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.5"
+    },
+    {
+      "role": "BuildingTowards",
+      "reference": "8.G.B.6"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: derive the 180° interior-angle sum of a triangle by constructing a parallel line and applying alternate interior angle properties.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): For triangle with angles 42° and 73°, construct auxiliary parallel through apex and show how alternate interior angles force the remaining angle to be 65°. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "16.1: True or False: Computational Relationships",
+      "sourceActivityNumber": 1,
+      "authoredTask": "Judge 62−28=60−30 false, 3·(-8)=2·(-8)-8 true, and (16+24)/(-2)=40/(-2) true; show calculations.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "16.2: Angle Plus Two",
+      "sourceActivityNumber": 2,
+      "authoredTask": "Rotate triangle around the midpoints of two sides through 180° and use resulting parallel lines to compare angles.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "16.3: Every Triangle in the World",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Draw a line through a vertex parallel to opposite side and justify that three adjacent transferred angles form 180° for any triangle.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "16.4: Four Triangles Revisited",
+      "sourceActivityNumber": 4,
+      "authoredTask": "Use congruent triangle copies to make and analyze a four-triangle composite figure.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "A triangle has base angles 42° and 73°. Find the apex angle using a parallel-line angle sum argument.",
+    "responseType": "finite_decimal_degrees",
+    "unit": "degrees",
+    "expected": 65,
+    "acceptedEquivalentInputs": [
+      "65",
+      "65.0",
+      "65°"
+    ],
+    "wrongRejected": [
+      "66",
+      "64"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "Infinity",
+      "1e309",
+      "",
+      null,
+      "3,4",
+      "--2"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 2,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "For triangle with angles 42° and 73°, construct auxiliary parallel through apex and show how alternate interior angles force the remaining angle to be 65°.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:02:20.365567+00:00",
+  "parentGitHEAD": "c5222978d508078e25b4d4a5fabd4fb7403c4308",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L16",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l16-parallel-lines-triangle-angles-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l16-parallel-lines-triangle-angles-paper.html",
+    "learnerWorksheetSha256": "bbe9fdea8857e71b1951c101622f7503a4d789dd913666373840b89c74fa8c59",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints and distributes this exact first-party student paper, collects all source-equivalent diagrams, labelled mathematical constructions, calculations and oral or written reasoning; private manual rubric only.",
+    "sourceActivityMap": [
+      {
+        "source": "16.1: True or False: Computational Relationships",
+        "worksheet": "relationships",
+        "modality": "THREE_EXACT_SIGNED_NUMBER_EQUALITY_EVALUATIONS_WITH_REASON",
+        "key": "62-28=34 vs60-30=30 false;3×(-8)=-24 and2×(-8)-8=-24 true;(16+24)/(-2)=-20 and16/(-2)+24/(-2)=-8-12=-20 true."
+      },
+      {
+        "source": "16.2: Angle Plus Two",
+        "worksheet": "midpoint-rotations",
+        "modality": "TWO_180_DEGREE_ROTATIONS_ABOUT_DIFFERENT_SIDE_MIDPOINTS_WITH_PARALLEL_ANGLES",
+        "key": "Original A(0,0),B(6,0),C(2,4); midpoint M=(1,2) of AC maps A->C,B->(-4,4),C->A; midpoint N=(3,0) of AB maps A->B,B->A,C->(4,-4). Corresponding rigid angles and parallel opposite sides form triangle-angle straight sum."
+      },
+      {
+        "source": "16.3: Every Triangle in the World",
+        "worksheet": "every-triangle",
+        "modality": "AUXILIARY_PARALLEL_THROUGH_APEX_TRANSVERSAL_ALT_INTERIOR_PROOF",
+        "key": "Through C draw line parallel to AB. Transversals AC and BC create two angles at C respectively congruent to base angles at A and B, adjacent to interior C on a straight line: A+B+C=180°."
+      },
+      {
+        "source": "16.4: Four Triangles Revisited",
+        "worksheet": "four-triangles",
+        "modality": "FOUR_CONGRUENT_RIGHT_TRIANGLE_ROTATIONS_AND_QUADRILATERAL_ANGLE_SUM",
+        "key": "Four copies of 3x3 right isosceles triangle around O by 0/90/180/270° have total around O 4×90=360°, no overlaps; any quadrilateral diagonal gives two 180° triangle sums =360°."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "HUMAN_ASSESSED_AUXILIARY_PARALLEL_42_73_65_PROOF",
+        "key": "Two base angles42° and73°, parallel-through-apex transfers both, remaining apex=180−42−73=65° with exact alternate interior justification."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 missing/incorrect,1 incomplete partial,2 fully mathematically correct and labelled with constructible proof; manual offline only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "16.1 shows all three true/false numeric relationships with separately calculated LHS RHS"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "16.2 two independent 180° rotations at exact side midpoints and corresponding parallel-angle transfer"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "16.3 rigorous universal auxiliary parallel triangle angle sum and 16.4 four triangle composite/quadrilateral extension"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down constructs parallel through apex proving exact65° from42° and73°"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "computations": [
+        {
+          "lhs": 34,
+          "rhs": 30,
+          "true": false
+        },
+        {
+          "lhs": -24,
+          "rhs": -24,
+          "true": true
+        },
+        {
+          "lhs": -20,
+          "rhs": -20,
+          "true": true
+        }
+      ],
+      "triangleOriginal": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "midpointAC": [
+        1,
+        2
+      ],
+      "rotatedAboutMidpointAC": [
+        [
+          2,
+          4
+        ],
+        [
+          -4,
+          4
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "midpointAB": [
+        3,
+        0
+      ],
+      "rotatedAboutMidpointAB": [
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          -4
+        ]
+      ],
+      "generalTriangleAngleSum": 180,
+      "fourTriangleRotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "fourTriangleCentralSum": 360,
+      "quadrilateralAngleSum": 360,
+      "cooldown": {
+        "firstBaseAngle": 42,
+        "secondBaseAngle": 73,
+        "apex": 65,
+        "sum": 180
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "62−28=34 versus60−30=30 so false",
+        "3×(-8)=-24 versus2×(-8)-8=-24 true",
+        "(16+24)/(-2)=-20 equals16/(-2)+24/(-2) true",
+        "Midpoint M(1,2) turns B(6,0) to(-4,4), N(3,0) turns C(2,4) to(4,-4)",
+        "Parallel at C transfers base angles, A+B+C=180°",
+        "Cool-down 42+73+65=180°"
+      ],
+      "equivalent": [
+        "Signed number division property verified by algebraic distribution",
+        "Any valid diagram using a line through apex parallel to base proves interior angle sum",
+        "Half-turn clockwise and counterclockwise 180 equivalent",
+        "Quadrilateral360 proven by diagonal partition into two triangles"
+      ],
+      "wrong": [
+        "Claim62−28 equals60−30",
+        "Compute 3×(-8) as+24",
+        "Rotate about origin instead of side midpoint",
+        "Treat a nonparallel apex line as giving alternate interior equal angles",
+        "Confuse quadrilateral360 with triangle180",
+        "Apex64° or66° instead of65°"
+      ],
+      "malformed": [
+        "Only true/false without computing sides",
+        "Missing one of two midpoint images",
+        "Triangle diagram without auxiliary parallel label",
+        "Angle sum equation missing base angles",
+        "Four-triangle figure with overlaps or gaps",
+        "Cool-down numeric65 only without geometric proof"
+      ],
+      "boundary": [
+        "A half turn about midpoint of side exchanges its endpoints",
+        "Signed division by -2 distributes over addition for these finite numbers",
+        "Parallel line can be drawn through any apex not on base in Euclidean plane",
+        "A triangular angle sum180 is independent of triangle side type",
+        "A quadrilateral partition by one diagonal yields two triangles and360"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeEdited": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l16-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
+}

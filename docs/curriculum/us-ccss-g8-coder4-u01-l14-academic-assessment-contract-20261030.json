@@ -1,0 +1,341 @@
+{
+  "schemaVersion": "us-ccss-g8-course-owned-abc-assessment-v1",
+  "lessonCode": "PED:US-CCSS-MATH:G8:U01:L14",
+  "title": "Alternate Interior Angles",
+  "originalEdition": "2017–2019 OUR/IM, local teacher/student/preparation CC BY 4.0, independently authored Edulytiks equivalent",
+  "sourceFiles": {
+    "student": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\14\\index.html",
+      "sha256": "3644eddc1bd650b20d3d3a7bbccd496143940ea93e351155f0e2c358ed094291"
+    },
+    "teacher": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\14\\index.html",
+      "sha256": "62b12424681d0349a55e0a8acd2335d4b3f049266f1f051a374c8e7db34de98a"
+    },
+    "preparation": {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\14\\preparation.html",
+      "sha256": "4f75822b286eed589daf5acde7160ba644be4b9c0450584d5831b577c825c73b"
+    }
+  },
+  "sourceStandardRoles": [
+    {
+      "role": "BuildingOn",
+      "reference": "7.G.B.5"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.1"
+    },
+    {
+      "role": "Addressing",
+      "reference": "8.G.A.5"
+    }
+  ],
+  "sourceRoleCrosswalk": {
+    "blueprintExtraRoles": [],
+    "sourceSemanticRolesApproved": true,
+    "ownerOfMetadataDiscrepancy": "Supervisor 2 canonical blueprint owner; no shared file changed"
+  },
+  "learningGoal": "Learning objective: explain why alternate interior angles formed by a transversal crossing parallel lines are equal, including a geometric movement explanation.",
+  "existingThreeWorkedExamplesPreserved": true,
+  "oldNativeVisualCount": 0,
+  "firstPartyNativeVisualCountAdded": 1,
+  "courseOwnedFirstPartyCoolDown": "Original Edulytiks teacher-scored Cool-down (PUBLISHER_COOLDOWN_UNVERIFIED; EDULYTIKS_AUTHORED_COOLDOWN): An acute angle made by a transversal across parallel lines is 63°. Identify one alternate interior 63° angle and one adjacent 117° angle, and explain why parallelism is necessary. Submit a labeled drawing and concise mathematical justification to a teacher; the accessible native card is not an authenticated drawing editor or a publisher-exact image.",
+  "sourceActivityToCourseAssessment": [
+    {
+      "sourceTitle": "14.1: Angle Pairs",
+      "sourceActivityNumber": 1,
+      "authoredTask": "For intersecting lines mark vertical angles equal and adjacent angles supplementary, including a 30°/150° pair.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "14.2: Cutting Parallel Lines with a Transversal",
+      "sourceActivityNumber": 2,
+      "authoredTask": "For a pair of parallel lines and a transversal calculate 63°/117° angles at both intersection points.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    },
+    {
+      "sourceTitle": "14.3: Alternate Interior Angles Are Congruent",
+      "sourceActivityNumber": 3,
+      "authoredTask": "Demonstrate a 180° rotation around the midpoint of intersection points mapping alternate interior angles, and identify why a nonparallel comparison breaks the proof.",
+      "responseType": "drawing_construction_plus_explanation_or_partner_discussion",
+      "assessmentOwner": "HUMAN_TEACHER",
+      "answerKey": "A correct construction preserves the lesson's original source target. Teacher validates specific content and supports alternative correct methods; no arbitrary multiple choice replaces proof."
+    }
+  ],
+  "machineCandidate": {
+    "prompt": "Two parallel lines are cut by a transversal. One alternate interior angle is 63°. Find the congruent alternate interior angle.",
+    "responseType": "finite_decimal_degrees",
+    "unit": "degrees",
+    "expected": 63,
+    "acceptedEquivalentInputs": [
+      "63",
+      "63.0",
+      "63°"
+    ],
+    "wrongRejected": [
+      "64",
+      "62"
+    ],
+    "malformedRejected": [
+      "NaN",
+      "Infinity",
+      "1e309",
+      "",
+      null,
+      "3,4",
+      "--2"
+    ],
+    "boundaryCase": "finite base10 numeric only; no tolerance or scientific notation; signed zero matches zero",
+    "gradingStatus": "ACADEMIC_ORACLE_ONLY_NOT_CONNECTED",
+    "sourceSubskill": "One constrained mathematically scoreable instance; no replacement for human construction/proof",
+    "check": {
+      "good": 3,
+      "wrong": 2,
+      "malformed": 7,
+      "independentMath": "PASS"
+    }
+  },
+  "humanScoredCooldown": {
+    "responseType": "original_diagram_plus_explanation",
+    "question": "An acute angle made by a transversal across parallel lines is 63°. Identify one alternate interior 63° angle and one adjacent 117° angle, and explain why parallelism is necessary.",
+    "criteria": [
+      {
+        "criterion": "Mathematical correctness of the principal source-matched construction or measurements",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Accurate corresponding points, sides, angle directions or complete shape labels",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Valid reasoning identifying rigid invariants, congruence, theorems, or no-gaps condition",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      },
+      {
+        "criterion": "Clear replicable written/oral proof and complete handling of source activity alternatives",
+        "maxPoints": 2,
+        "scores": {
+          "0": "missing or incorrect",
+          "1": "partly correct/incomplete evidence",
+          "2": "correct, justified and sufficiently labeled"
+        }
+      }
+    ],
+    "maxPoints": 8,
+    "teacherEvidence": "teacher notes and four 0–2 rubric observations, original drawing/verbal response",
+    "automaticallyGradeHumanResponse": false,
+    "scorePersistenceVerified": false
+  },
+  "Cverified": {
+    "sourceActivityTitlesMatchedLocalStudent": true,
+    "teacherPrepStandardReferencesVerified": true,
+    "nativeFirstPartyVisualCompatible": "ShapeDecomposition",
+    "sourceRightsAcknowledged": true,
+    "numericCandidateCorrectEquivalentWrongMalformedVerified": true,
+    "teacherRubricReviewable": true,
+    "runtimeGeneratorVerified": false
+  },
+  "stageD": {
+    "status": "NOT_RUN",
+    "lessonPracticeContractReadiness": "NOT_READY_VERIFIED",
+    "runtimeOwner": "Supervisor 2 shared Practice single writer",
+    "required": [
+      "exact lesson Practice capability resolver, generation and negative grading",
+      "authenticated learner & teacher workflow",
+      "secure attempt and rubric persistence",
+      "school/tenant isolation",
+      "actual accessible visuals and integration CI"
+    ],
+    "noSharedFilesEdited": true
+  },
+  "gates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "startedAtUtc": "2026-10-30T14:02:11.113771+00:00",
+  "parentGitHEAD": "a43d34cfb861899ccbf6c442aa1c586572d36863",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L14",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l14-alternate-interior-angles-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l14-alternate-interior-angles-paper.html",
+    "learnerWorksheetSha256": "b2fac88a547ea87e207ef249e75dd0b638bc31e8bc508986b74308ac0fb4f2f3",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints and distributes this exact first-party student paper, collects all source-equivalent diagrams, labelled mathematical constructions, calculations and oral or written reasoning; private manual rubric only.",
+    "sourceActivityMap": [
+      {
+        "source": "14.1: Angle Pairs",
+        "worksheet": "pairs",
+        "modality": "FOUR_INTERSECTING_LINE_ANGLES_AND_HALF_TURN_VERTICAL_PROOF",
+        "key": "Given an acute 30° angle at O, vertical opposite 30°, two adjacent supplementary angles 150° each; half-turn around O maps opposite rays."
+      },
+      {
+        "source": "14.2: Cutting Parallel Lines with a Transversal",
+        "worksheet": "transversal",
+        "modality": "SIXTY_THREE_DEGREE_PARALLEL_TRANSVERSAL_ANGLE_PAIR_DRAWING",
+        "key": "Parallel lines with transversal: corresponding acute=63°, alternate interior acute=63°, adjacent obtuse=117° because 63+117=180."
+      },
+      {
+        "source": "14.3: Alternate Interior Angles Are Congruent",
+        "worksheet": "rotation",
+        "modality": "MIDPOINT_HALF_TURN_GEOMETRIC_PROOF_AND_NONPARALLEL_COUNTEREXAMPLE",
+        "key": "ℓ:y=0,m:y=3,t:y=x intersect P(0,0),Q(3,3); midpoint M(1.5,1.5). Half-turn about M swaps horizontal lines and maps t to itself, carrying 45° alternate angles. Nonparallel n:y=0.5x+3 meets t at (6,6), angle difference arctan1-arctan0.5 ≈18.43495°, not45°."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "HUMAN_ASSESSED_63_DEGREE_ALTERNATE_AND_117_ADJACENT_PROOF",
+        "key": "An acute63° angle has alternate interior63° only under parallel-line condition and adjacent117° from supplementary angle sum."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 incorrect/absent,1 partly identified but no sound correspondence,2 fully labelled and reasoned proof. Manual offline teacher scoring.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "14.1 labels both 30° vertical and two 150° supplementary angles with 180° turn reasoning"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "14.2 labels correct acute 63° alternate and corresponding plus adjacent117°, parallel assumption explicit"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "14.3 exact P,Q midpoint M half-turn correspondence and valid nonparallel counterexample"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down actual labelled angle pairs and why parallelism is needed"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "intersecting": {
+        "acute": 30,
+        "vertical": 30,
+        "supplements": [
+          150,
+          150
+        ]
+      },
+      "parallelAngles": {
+        "given": 63,
+        "alternate": 63,
+        "corresponding": 63,
+        "adjacent": 117
+      },
+      "halfTurn": {
+        "P": [
+          0,
+          0
+        ],
+        "Q": [
+          3,
+          3
+        ],
+        "M": [
+          1.5,
+          1.5
+        ],
+        "firstLine": "y=0",
+        "secondLine": "y=3",
+        "transversal": "y=x",
+        "acuteAngle": 45
+      },
+      "nonparallel": {
+        "firstLine": "y=0",
+        "slopedLine": "y=0.5x+3",
+        "transversal": "y=x",
+        "intersection": [
+          6,
+          6
+        ],
+        "differenceDegrees": 18.43494882292201
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "Given vertical angle30° maps to opposite vertical30°, adjacent150°",
+        "Alternate interior63°, corresponding63°, adjacent117°",
+        "P(0,0), Q(3,3) midpoint(1.5,1.5), 180° half-turn swaps horizontal parallels",
+        "Nonparallel line y=0.5x+3 meets t=y=x at(6,6), angle not45°",
+        "Cool-down correctly labels alternate63° and adjacent117°"
+      ],
+      "equivalent": [
+        "Supplementary angle 150 obtained from 180-30",
+        "Alternate63 justified using midpoint half-turn or corresponding+vertical angles",
+        "45° angle under transversal t=y=x obtained from slope1",
+        "Any precise student diagram with equivalent parallel placement is teacher-acceptable"
+      ],
+      "wrong": [
+        "Calling adjacent to 63° another63° instead of117°",
+        "Applying alternate interior theorem to arbitrary nonparallel lines",
+        "Claiming midpoint half-turn maps y=0 to itself when M=(1.5,1.5)",
+        "Calling 30° vertical opposite150°",
+        "Choosing exterior same-side angle as alternate interior"
+      ],
+      "malformed": [
+        "No corresponding rays or labels",
+        "Only numeric63 with no actual diagram",
+        "No midpoint or center of half-turn",
+        "Missing nonparallel counterexample reason",
+        "No explanation of supplementary straight angle"
+      ],
+      "boundary": [
+        "Alternate interior angles are equal because the two lines are parallel, not merely drawn similarly",
+        "Adjacent angle of63° exactly117° while vertical angle remains63°",
+        "A 180° rotation of a transversal through M maps it to itself setwise",
+        "Two parallel horizontal lines y=0/y=3 remain separated by3",
+        "Nonparallel comparison may have incidental equal angles elsewhere but theorem not applicable"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeEdited": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l14-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
+}

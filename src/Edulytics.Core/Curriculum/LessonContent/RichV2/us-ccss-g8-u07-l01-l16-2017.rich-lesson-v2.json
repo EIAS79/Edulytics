@@ -1,0 +1,1625 @@
+{
+  "SchemaVersion": 1,
+  "ContentVersion": "us-ccss-g8-u07-first-party-rich-v2-20261029-v1",
+  "PackCode": "US-CCSS-MATH",
+  "Lessons": [
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L01",
+      "CultureCode": "en",
+      "Title": "Exponent Review",
+      "ExplanationParagraphs": [
+        "Goal: review the meaning of whole-number exponents and distinguish exponentiation from repeated addition or multiplication of the exponent.",
+        "For a nonzero base a, a³ means a×a×a, not 3a. Zero exponent is defined as a⁰=1 for nonzero a, because it preserves the quotient pattern; zero to the zeroth power is not covered by that rule.",
+        "Represent powers using original square/cube diagrams and repeated-product notation. Teacher review checks whether the visual model correctly distinguishes base and exponent.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/1/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Base",
+          "Definition": "The number repeatedly multiplied.",
+          "Rule": "In aⁿ, the base is a.",
+          "Example": "In 4³ the base is 4."
+        },
+        {
+          "Title": "Exponent",
+          "Definition": "How many factors of the base are multiplied for positive integer n.",
+          "Rule": "a³=a×a×a.",
+          "Example": "4³=64."
+        },
+        {
+          "Title": "Zero exponent",
+          "Definition": "Any nonzero base to power zero equals one.",
+          "Rule": "a⁰=1 for a≠0.",
+          "Example": "7⁰=1."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Expand power",
+          "Question": "Compute 4³.",
+          "Method": "Write repeated factors.",
+          "Steps": [
+            "4³=4×4×4.",
+            "4×4=16.",
+            "16×4=64."
+          ],
+          "Answer": "64.",
+          "Check": "4³ is not 4×3=12."
+        },
+        {
+          "Title": "Square negative number",
+          "Question": "Find (−3)².",
+          "Method": "Respect parentheses.",
+          "Steps": [
+            "Base is −3.",
+            "Multiply (−3)(−3).",
+            "Product is +9."
+          ],
+          "Answer": "9.",
+          "Check": "The square of a real number is nonnegative."
+        },
+        {
+          "Title": "Zero power",
+          "Question": "Find 7⁰.",
+          "Method": "Use exponent rule for nonzero base.",
+          "Steps": [
+            "7 is nonzero.",
+            "7⁰=7²/7² by consistent power pattern.",
+            "The quotient is 1."
+          ],
+          "Answer": "1.",
+          "Check": "Do not generalize to 0⁰ without defining a convention."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying base by exponent.",
+          "WhyWrong": "An exponent counts repeated factors, not addition.",
+          "Correction": "Write an expanded product."
+        },
+        {
+          "Mistake": "Ignoring parentheses around negative base.",
+          "WhyWrong": "−3² means −(3²), unlike (−3)².",
+          "Correction": "Identify what exactly is raised to the power."
+        }
+      ],
+      "SummaryPoints": [
+        "Exponentiation encodes repeated multiplication.",
+        "Parentheses define a negative base.",
+        "Nonzero bases to power zero equal one."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L02",
+      "CultureCode": "en",
+      "Title": "Multiplying Powers of Ten",
+      "ExplanationParagraphs": [
+        "Goal: discover and use the product rule for powers of ten by combining repeated factors and representing place-value shifts.",
+        "Multiplying 10ᵃ and 10ᵇ joins groups of factors of ten, giving 10ᵃ⁺ᵇ. The rule extends to signed integer exponents when a and b are integers, but this investigation first uses repeated products.",
+        "Draw a place-value table for 10²×10³ and explain why the outcome is 10⁵. A teacher checks mathematical pattern reasoning and table alignment.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/2/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Power product rule",
+          "Definition": "Same-base powers multiply by adding exponents.",
+          "Rule": "10ᵃ×10ᵇ=10ᵃ⁺ᵇ.",
+          "Example": "10²×10³=10⁵."
+        },
+        {
+          "Title": "Place-value shift",
+          "Definition": "Multiplication by 10 moves digits one place left in base ten.",
+          "Rule": "Repeated multiplication shifts by exponent.",
+          "Example": "100×1000=100000."
+        },
+        {
+          "Title": "Matching bases",
+          "Definition": "The simple sum rule requires the same base.",
+          "Rule": "Check both bases before combining.",
+          "Example": "10²×2³ is not 10⁵."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Multiply powers",
+          "Question": "Compute 10²×10³.",
+          "Method": "Add exponents for same base.",
+          "Steps": [
+            "Write 10²=100 and 10³=1000.",
+            "Multiply to obtain 100000.",
+            "Equivalent power is 10^(2+3)=10⁵."
+          ],
+          "Answer": "10⁵=100000.",
+          "Check": "Five factors of 10."
+        },
+        {
+          "Title": "Multiply three terms",
+          "Question": "Simplify 10¹×10²×10⁴.",
+          "Method": "Add all exponents.",
+          "Steps": [
+            "Bases all equal 10.",
+            "1+2+4=7.",
+            "Combined expression 10⁷."
+          ],
+          "Answer": "10⁷.",
+          "Check": "Seven factors of ten."
+        },
+        {
+          "Title": "Correct false product",
+          "Question": "Student says 10³×10²=10⁶. What is correct?",
+          "Method": "Check rule.",
+          "Steps": [
+            "Same-base multiplication adds exponents.",
+            "3+2=5 rather than 3×2=6.",
+            "Correct power is 10⁵."
+          ],
+          "Answer": "10⁵.",
+          "Check": "1000×100=100000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Multiplying exponents during a product.",
+          "WhyWrong": "The product rule uses addition.",
+          "Correction": "Write expanded factors to see why."
+        },
+        {
+          "Mistake": "Applying same-base law to different bases.",
+          "WhyWrong": "Common base condition matters.",
+          "Correction": "Rewrite with common bases only when valid."
+        }
+      ],
+      "SummaryPoints": [
+        "Multiplying powers of 10 adds exponents.",
+        "Place-value reasoning supports the rule.",
+        "Check bases and operations."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Multiply powers of ten",
+          "Description": "Original exponent evaluation table. The nonzero base is 10; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "2",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "100",
+                "1000",
+                "100000"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L03",
+      "CultureCode": "en",
+      "Title": "Powers of Powers of 10",
+      "ExplanationParagraphs": [
+        "Goal: reason about repeated multiplication of a power and derive the power-of-power rule (10ᵃ)ᵇ=10ᵃᵇ.",
+        "When (10²)³ appears, three copies of 10² are multiplied, giving 10²×10²×10²=10⁶. This differs from adding the exponents 2+3, which would give 10⁵.",
+        "Make an original exponent-tree representation grouping factors into equal blocks. Teacher review checks the explanation of grouping versus product.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/3/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Power of a power",
+          "Definition": "An exponent outside parentheses counts copies of the inside power.",
+          "Rule": "(aᵐ)ⁿ=aᵐⁿ, a≠0 for signed exponents.",
+          "Example": "(10²)³=10⁶."
+        },
+        {
+          "Title": "Product contrast",
+          "Definition": "Multiplying same-base powers adds exponents.",
+          "Rule": "10²×10³=10⁵, not 10⁶.",
+          "Example": "Different operations require distinct rules."
+        },
+        {
+          "Title": "Expanded blocks",
+          "Definition": "Each inner power contributes its own factor count.",
+          "Rule": "Three copies of two factors give six.",
+          "Example": "(10²)³ has 2×3 total factors of ten."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Power of power",
+          "Question": "Simplify (10²)³.",
+          "Method": "Multiply exponents.",
+          "Steps": [
+            "The inside contains two factors of ten.",
+            "Repeat that block three times, for six factors.",
+            "Answer 10⁶."
+          ],
+          "Answer": "10⁶.",
+          "Check": "100³=1000000."
+        },
+        {
+          "Title": "Power of fourth power",
+          "Question": "Simplify (10⁴)².",
+          "Method": "Multiply 4×2.",
+          "Steps": [
+            "Inner exponent is 4.",
+            "Outer exponent 2 indicates two copies.",
+            "Total exponent 8."
+          ],
+          "Answer": "10⁸.",
+          "Check": "10⁴×10⁴=10⁸."
+        },
+        {
+          "Title": "Distinguish operations",
+          "Question": "Which is larger: (10²)³ or 10²×10³?",
+          "Method": "Evaluate the exponent rules.",
+          "Steps": [
+            "Power of power yields 10⁶.",
+            "Product yields 10⁵.",
+            "10⁶=10×10⁵, so first is 10 times larger."
+          ],
+          "Answer": "(10²)³ is 10 times larger.",
+          "Check": "Operations are not interchangeable."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding exponents in a power of a power.",
+          "WhyWrong": "Grouping repeats the inner factors multiplicatively.",
+          "Correction": "Multiply the exponents."
+        },
+        {
+          "Mistake": "Ignoring parentheses.",
+          "WhyWrong": "10^(2³) is different from (10²)³.",
+          "Correction": "Identify the grouping before calculating."
+        }
+      ],
+      "SummaryPoints": [
+        "Power-of-power multiplies exponents.",
+        "Products of powers add exponents.",
+        "Grouping determines which rule applies."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L04",
+      "CultureCode": "en",
+      "Title": "Dividing Powers of 10",
+      "ExplanationParagraphs": [
+        "Goal: derive division of same-base powers by canceling equal nonzero factors and interpret exponents smaller than, equal to, or greater than the denominator exponent.",
+        "For powers of 10, 10ᵃ/10ᵇ=10ᵃ⁻ᵇ. When exponent difference is zero, the quotient equals one; when negative, the result is a reciprocal fraction. Division by zero is never allowed.",
+        "Draw factor-cancellation rows to explain 10⁵/10², then explore 10²/10⁵. A teacher assesses the cancellation model, while exact numeric answers are independently checkable.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/4/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Quotient rule",
+          "Definition": "Divide powers of the same nonzero base by subtracting exponents.",
+          "Rule": "10ᵃ/10ᵇ=10ᵃ⁻ᵇ.",
+          "Example": "10⁵/10²=10³."
+        },
+        {
+          "Title": "Cancel factors",
+          "Definition": "Equal nonzero factors in numerator and denominator cancel.",
+          "Rule": "10/10=1.",
+          "Example": "Five factors over two leave three."
+        },
+        {
+          "Title": "Negative exponent",
+          "Definition": "A negative signed exponent represents a reciprocal power.",
+          "Rule": "10⁻³=1/1000.",
+          "Example": "10²/10⁵=10⁻³."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Divide large by small",
+          "Question": "Compute 10⁵/10².",
+          "Method": "Subtract 5−2.",
+          "Steps": [
+            "Both base values are ten.",
+            "Exponent difference is 5−2=3.",
+            "Result 10³=1000."
+          ],
+          "Answer": "1000.",
+          "Check": "100000/100=1000."
+        },
+        {
+          "Title": "Divide equal powers",
+          "Question": "Compute 10⁴/10⁴.",
+          "Method": "Subtract equal exponents.",
+          "Steps": [
+            "Difference 4−4=0.",
+            "10⁰=1.",
+            "Any nonzero value divided by itself is 1."
+          ],
+          "Answer": "1.",
+          "Check": "Both numerator and denominator are nonzero."
+        },
+        {
+          "Title": "Small over large",
+          "Question": "Compute 10²/10⁵.",
+          "Method": "Subtract exponents.",
+          "Steps": [
+            "Difference 2−5=−3.",
+            "Result is 10⁻³.",
+            "Write as 1/10³=1/1000."
+          ],
+          "Answer": "1/1000.",
+          "Check": "100/100000=0.001."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Subtracting exponents in reverse order.",
+          "WhyWrong": "Numerator exponent minus denominator exponent is the rule.",
+          "Correction": "Keep quotient direction."
+        },
+        {
+          "Mistake": "Concluding a smaller numerator gives zero.",
+          "WhyWrong": "A positive fraction can be below one without equal zero.",
+          "Correction": "Use reciprocal notation."
+        }
+      ],
+      "SummaryPoints": [
+        "Division of powers subtracts exponents.",
+        "Equal nonzero powers divide to one.",
+        "Negative result exponent represents a reciprocal."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Divide powers of ten",
+          "Description": "Original exponent evaluation table. The nonzero base is 10; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "2",
+                "3",
+                "5"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "100",
+                "1000",
+                "100000"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L05",
+      "CultureCode": "en",
+      "Title": "Negative Exponents with Powers of 10",
+      "ExplanationParagraphs": [
+        "Goal: use the exponent pattern to interpret negative powers of ten as positive rational reciprocals and convert them to decimal place values.",
+        "As exponent decreases by one, divide the value by ten. From 10⁰=1, it follows 10⁻¹=0.1 and 10⁻²=0.01. These values are not negative numbers; the sign belongs to the exponent.",
+        "Construct a place-value number line from 1 to 0.001 with labels. Teacher checks ordered spacing and explanation; a numerical conversion alone does not validate the drawn model.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/5/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Negative power",
+          "Definition": "A reciprocal power of a nonzero base.",
+          "Rule": "10⁻ⁿ=1/10ⁿ for positive n.",
+          "Example": "10⁻³=1/1000."
+        },
+        {
+          "Title": "Decimal movement",
+          "Definition": "Dividing by ten shifts decimal places rightward in place-value naming.",
+          "Rule": "10⁻¹=0.1, 10⁻²=0.01.",
+          "Example": "0.001 represents one thousandth."
+        },
+        {
+          "Title": "Value versus sign",
+          "Definition": "A negative exponent does not make a positive base negative.",
+          "Rule": "10⁻³>0.",
+          "Example": "0.001 is positive."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Convert reciprocal",
+          "Question": "Write 10⁻³ in decimal form.",
+          "Method": "Invert 10³.",
+          "Steps": [
+            "10³=1000.",
+            "10⁻³=1/1000.",
+            "Decimal representation is 0.001."
+          ],
+          "Answer": "0.001.",
+          "Check": "1000×0.001=1."
+        },
+        {
+          "Title": "Compare values",
+          "Question": "Which is larger, 10⁻² or 10⁻⁴?",
+          "Method": "Convert or compare reciprocals.",
+          "Steps": [
+            "10⁻²=0.01.",
+            "10⁻⁴=0.0001.",
+            "0.01 is greater."
+          ],
+          "Answer": "10⁻².",
+          "Check": "A more negative power of 10 is smaller in positive value."
+        },
+        {
+          "Title": "Check a negative claim",
+          "Question": "A learner says 10⁻¹=−10. Is that valid?",
+          "Method": "Interpret exponent sign.",
+          "Steps": [
+            "Negative exponent means reciprocal.",
+            "10⁻¹=1/10.",
+            "Its value is positive 0.1."
+          ],
+          "Answer": "No; 10⁻¹=0.1.",
+          "Check": "(1/10)×10=1."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Treating a negative exponent as a negative number.",
+          "WhyWrong": "The exponent sign encodes reciprocal.",
+          "Correction": "Apply a⁻ⁿ=1/aⁿ."
+        },
+        {
+          "Mistake": "Rounding a tiny positive value to zero without explanation.",
+          "WhyWrong": "Positive fractions remain nonzero.",
+          "Correction": "Retain exact power notation."
+        }
+      ],
+      "SummaryPoints": [
+        "Negative powers of 10 are small positive reciprocals.",
+        "Consecutive exponents differ by factors of ten.",
+        "Use exact fractions when appropriate."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Negative powers mean reciprocals",
+          "Description": "Original exponent evaluation table. The nonzero base is 10; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "-3",
+                "-2",
+                "-1",
+                "0"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "0.001",
+                "0.01",
+                "0.1",
+                "1"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L06",
+      "CultureCode": "en",
+      "Title": "What about Other Bases?",
+      "ExplanationParagraphs": [
+        "Goal: extend integer-exponent laws beyond powers of ten to nonzero positive or negative bases, preserving sign and nonzero denominator restrictions.",
+        "The product, quotient and power-of-power laws work for any nonzero base where all terms are defined. A negative base enclosed in parentheses changes sign according to exponent parity; an unparenthesized negative sign may not be part of the base.",
+        "Compare 2³×2⁻⁵ and (−2)³. Work exact rational results and discuss why any logarithm problem is unrelated to this Grade 8 objective. A teacher reviews laws and symbolic justification.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/6/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Same-base product",
+          "Definition": "Combine exponents when multiplying one base.",
+          "Rule": "aᵐaⁿ=aᵐ⁺ⁿ for a≠0.",
+          "Example": "2³×2⁻⁵=2⁻²=1/4."
+        },
+        {
+          "Title": "Same-base quotient",
+          "Definition": "Subtract denominator exponent.",
+          "Rule": "aᵐ/aⁿ=aᵐ⁻ⁿ for a≠0.",
+          "Example": "3⁴/3²=3²=9."
+        },
+        {
+          "Title": "Negative-base parity",
+          "Definition": "Odd powers of a negative base are negative, even powers are positive.",
+          "Rule": "Keep parentheses around the base.",
+          "Example": "(−2)³=−8 and (−2)⁴=16."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Combine signed exponents",
+          "Question": "Compute 2³×2⁻⁵.",
+          "Method": "Add exponents.",
+          "Steps": [
+            "3+(−5)=−2.",
+            "2⁻²=1/2².",
+            "The result is 1/4."
+          ],
+          "Answer": "1/4.",
+          "Check": "8×1/32=1/4."
+        },
+        {
+          "Title": "Power of negative base",
+          "Question": "Compute (−2)³.",
+          "Method": "Multiply three negative twos.",
+          "Steps": [
+            "(−2)(−2)=4.",
+            "4×(−2)=−8.",
+            "Odd exponent preserves negative sign."
+          ],
+          "Answer": "−8.",
+          "Check": "Different from −2³ only because parentheses define base, though this odd case has same value."
+        },
+        {
+          "Title": "Quotient law",
+          "Question": "Compute 3⁴/3².",
+          "Method": "Subtract powers.",
+          "Steps": [
+            "4−2=2.",
+            "3²=9.",
+            "Numerical check 81/9=9."
+          ],
+          "Answer": "9.",
+          "Check": "No logarithms required."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Dropping parentheses from a negative base.",
+          "WhyWrong": "It may change the operation order.",
+          "Correction": "Write (−a)ⁿ when negative is part of base."
+        },
+        {
+          "Mistake": "Applying laws to a zero denominator.",
+          "WhyWrong": "Division by zero is undefined.",
+          "Correction": "Require a nonzero base for signed exponents."
+        }
+      ],
+      "SummaryPoints": [
+        "Exponent laws extend to any nonzero base.",
+        "Signs depend on base and parity.",
+        "Exact rationals replace unrelated logarithms."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Positive and negative exponents of two",
+          "Description": "Original exponent evaluation table. The nonzero base is 2; negative powers mean reciprocals, never a logarithm approximation.",
+          "Rows": [
+            {
+              "Label": "exponent",
+              "Cells": [
+                "-5",
+                "-2",
+                "0",
+                "3"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "0.03125",
+                "0.25",
+                "1",
+                "8"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L07",
+      "CultureCode": "en",
+      "Title": "Practice with Rational Bases",
+      "ExplanationParagraphs": [
+        "Goal: apply integer-exponent rules to rational bases, including reciprocals and negative exponents, and simplify exact fractions.",
+        "For a nonzero fraction p/q, the negative power (p/q)⁻ⁿ=(q/p)ⁿ. A negative fraction raised to an even power yields a positive result, while odd powers remain negative.",
+        "Create a rational-base card sort showing two expressions with the same value, then justify without floating-point rounding. Teacher checks symbolic reasoning and equivalence.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/7/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Rational base",
+          "Definition": "A fraction p/q where q≠0.",
+          "Rule": "Nonzero base additionally requires p≠0 for negative powers.",
+          "Example": "(2/3)⁻²."
+        },
+        {
+          "Title": "Reciprocal rule",
+          "Definition": "Negative exponent swaps numerator and denominator.",
+          "Rule": "(p/q)⁻ⁿ=(q/p)ⁿ.",
+          "Example": "(2/3)⁻²=(3/2)²=9/4."
+        },
+        {
+          "Title": "Sign parity",
+          "Definition": "Even powers of a negative fraction are positive.",
+          "Rule": "(−p/q)²=p²/q².",
+          "Example": "(−2/3)²=4/9."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Reciprocal squared",
+          "Question": "Evaluate (2/3)⁻².",
+          "Method": "Invert then square.",
+          "Steps": [
+            "Negative exponent inverts 2/3 to 3/2.",
+            "Square numerator and denominator.",
+            "Value 9/4."
+          ],
+          "Answer": "9/4.",
+          "Check": "(2/3)²×(9/4)=1."
+        },
+        {
+          "Title": "Negative rational squared",
+          "Question": "Evaluate (−2/3)².",
+          "Method": "Square entire negative base.",
+          "Steps": [
+            "(−2)²=4.",
+            "3²=9.",
+            "Quotient is 4/9."
+          ],
+          "Answer": "4/9.",
+          "Check": "Even power is positive."
+        },
+        {
+          "Title": "Cube a rational base",
+          "Question": "Compute (3/2)³.",
+          "Method": "Cube numerator and denominator.",
+          "Steps": [
+            "3³=27.",
+            "2³=8.",
+            "Value is 27/8."
+          ],
+          "Answer": "27/8.",
+          "Check": "Equivalent to 3.375 but exact fraction preferred."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Negating the fraction instead of taking reciprocal.",
+          "WhyWrong": "Negative exponent is not a minus sign outside.",
+          "Correction": "Flip base for negative power."
+        },
+        {
+          "Mistake": "Squaring numerator but not denominator.",
+          "WhyWrong": "Both factors are raised to the exponent.",
+          "Correction": "Compute pⁿ/qⁿ."
+        }
+      ],
+      "SummaryPoints": [
+        "Rational bases obey integer exponent rules.",
+        "Negative powers invert nonzero fractions.",
+        "Keep answers exact when possible."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L08",
+      "CultureCode": "en",
+      "Title": "Combining Bases",
+      "ExplanationParagraphs": [
+        "Goal: multiply and divide products with different bases when exponent laws justify combining same exponents, without inventing an invalid same-base rule.",
+        "If two different bases have the same exponent, aⁿbⁿ=(ab)ⁿ. Conversely, a^m b^n cannot generally combine by adding m+n unless bases are equal. Prime factorization can sometimes expose a common base.",
+        "Compare 2³×5³ with 2³×5². Create a reasoned equivalence chart. A teacher reviews the symbolic factor grouping.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/8/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Same exponent product",
+          "Definition": "Different bases but equal exponent can combine within parentheses.",
+          "Rule": "aⁿbⁿ=(ab)ⁿ.",
+          "Example": "2³×5³=10³."
+        },
+        {
+          "Title": "Different exponent caution",
+          "Definition": "Unlike bases and exponents cannot combine directly.",
+          "Rule": "Rearrange factors or calculate separately.",
+          "Example": "2³×5²=8×25=200."
+        },
+        {
+          "Title": "Common base rewrite",
+          "Definition": "Express composite bases as powers of one number.",
+          "Rule": "4³=(2²)³=2⁶.",
+          "Example": "2³×4³=2⁹."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Combine same exponent",
+          "Question": "Compute 2³×5³.",
+          "Method": "Combine bases at exponent 3.",
+          "Steps": [
+            "2×5=10.",
+            "(2×5)³=10³.",
+            "10³=1000."
+          ],
+          "Answer": "1000.",
+          "Check": "8×125=1000."
+        },
+        {
+          "Title": "Do not overcombine",
+          "Question": "Compute 2³×5².",
+          "Method": "Evaluate separate powers.",
+          "Steps": [
+            "2³=8.",
+            "5²=25.",
+            "Product 8×25=200."
+          ],
+          "Answer": "200.",
+          "Check": "Not 10⁵."
+        },
+        {
+          "Title": "Rewrite powers of two",
+          "Question": "Simplify 2³×4³.",
+          "Method": "Rewrite 4 as 2².",
+          "Steps": [
+            "4³=(2²)³=2⁶.",
+            "Multiply with 2³ to give 2^(3+6).",
+            "2⁹=512."
+          ],
+          "Answer": "512.",
+          "Check": "8×64=512."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding unlike bases in exponents.",
+          "WhyWrong": "aᵐbⁿ cannot be combined with simple exponent addition.",
+          "Correction": "Look for a genuine common base."
+        },
+        {
+          "Mistake": "Forgetting parentheses when combining bases.",
+          "WhyWrong": "(ab)ⁿ is not abⁿ.",
+          "Correction": "Group all factors under exponent."
+        }
+      ],
+      "SummaryPoints": [
+        "Same exponents can combine bases multiplicatively.",
+        "Same bases can combine exponents.",
+        "Never apply either law without checking its hypotheses."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L09",
+      "CultureCode": "en",
+      "Title": "Describing Large and Small Numbers Using Powers of 10",
+      "ExplanationParagraphs": [
+        "Goal: use powers of ten to express very large and very small quantities efficiently and compare orders of magnitude.",
+        "A number such as 50,000 can be written 5×10⁴. A small decimal like 0.0007 equals 7×10⁻⁴. The exponent describes place value, not a count of decimal digits after arbitrary rounding.",
+        "Arrange original length and mass measurements on a powers-of-ten place-value chart. A teacher reviews the representation and order-of-magnitude explanation.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/9/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Large-number power",
+          "Definition": "Multiplying by 10ⁿ shifts magnitude up n decimal places.",
+          "Rule": "a×10ⁿ for n>0.",
+          "Example": "5×10⁴=50000."
+        },
+        {
+          "Title": "Small-number power",
+          "Definition": "Negative power scales down by reciprocal of 10ⁿ.",
+          "Rule": "a×10⁻ⁿ.",
+          "Example": "7×10⁻⁴=0.0007."
+        },
+        {
+          "Title": "Order of magnitude",
+          "Definition": "Comparing powers of ten for scale.",
+          "Rule": "Powers differ by factors 10 per exponent step.",
+          "Example": "10⁶ is 1000 times 10³."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Write large quantity",
+          "Question": "Convert 50,000 to a one-digit factor times a power of ten.",
+          "Method": "Move decimal four places.",
+          "Steps": [
+            "50,000=5×10,000.",
+            "10,000=10⁴.",
+            "Number is 5×10⁴."
+          ],
+          "Answer": "5×10⁴.",
+          "Check": "5×10000=50000."
+        },
+        {
+          "Title": "Write small quantity",
+          "Question": "Convert 0.0007 to power notation.",
+          "Method": "Count place-value positions.",
+          "Steps": [
+            "0.0007 is seven ten-thousandths.",
+            "One ten-thousandth is 10⁻⁴.",
+            "Therefore 7×10⁻⁴."
+          ],
+          "Answer": "7×10⁻⁴.",
+          "Check": "7/10000=0.0007."
+        },
+        {
+          "Title": "Compare scales",
+          "Question": "What is 10⁶/10³?",
+          "Method": "Subtract exponents.",
+          "Steps": [
+            "6−3=3.",
+            "Ratio=10³.",
+            "10³=1000."
+          ],
+          "Answer": "1000.",
+          "Check": "One million is 1000 times one thousand."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Counting exponent from number of digits alone.",
+          "WhyWrong": "Leading nonzero coefficient matters.",
+          "Correction": "Track decimal shifts."
+        },
+        {
+          "Mistake": "Treating 10⁻⁴ as a negative quantity.",
+          "WhyWrong": "Negative exponent means reciprocal.",
+          "Correction": "Check positivity."
+        }
+      ],
+      "SummaryPoints": [
+        "Powers of ten encode place value.",
+        "Negative powers express small positive scales.",
+        "Exponent differences compare magnitudes."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Decimal and scientific notation",
+          "Description": "Scientific notation has a leading factor from 1 to below 10.",
+          "Rows": [
+            {
+              "Label": "decimal",
+              "Cells": [
+                "50000",
+                "62000",
+                "300000"
+              ]
+            },
+            {
+              "Label": "scientific",
+              "Cells": [
+                "5×10⁴",
+                "6.2×10⁴",
+                "3×10⁵"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L10",
+      "CultureCode": "en",
+      "Title": "Representing Large Numbers on the Number Line",
+      "ExplanationParagraphs": [
+        "Goal: place large numbers expressed in powers of ten on a scaled number line and justify each point’s relative position.",
+        "A number line with ticks at multiples of 10⁶ can locate 3×10⁶ exactly at the third such tick. A logarithmic axis would behave differently; do not silently switch between linear and logarithmic scales.",
+        "Draw a line from 0 to 5,000,000 with million-unit spacing; locate 2.5×10⁶ and explain its midpoint position. A teacher checks the scale and labeling.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/10/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Linear large-number scale",
+          "Definition": "Equal distances represent equal numerical increments.",
+          "Rule": "Mark regular tick values.",
+          "Example": "Ticks 0,10⁶,2×10⁶,3×10⁶."
+        },
+        {
+          "Title": "Between-tick placement",
+          "Definition": "Fractional multiples sit proportionally between ticks.",
+          "Rule": "2.5×10⁶ halfway between 2×10⁶ and 3×10⁶.",
+          "Example": "Locate 2.5 million."
+        },
+        {
+          "Title": "Scale consistency",
+          "Definition": "Do not change tick value partway through an axis.",
+          "Rule": "All equal spaces use the same amount.",
+          "Example": "Each 1-cm tick gap can represent one million."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Plot two million",
+          "Question": "Where is 2×10⁶ on a million-increment number line?",
+          "Method": "Read the labeled ticks.",
+          "Steps": [
+            "Each tick gap equals one million.",
+            "2×10⁶ is two million.",
+            "Place it two gaps right of zero."
+          ],
+          "Answer": "Second million tick.",
+          "Check": "Coordinates increase uniformly."
+        },
+        {
+          "Title": "Plot midpoint",
+          "Question": "Where is 2.5×10⁶ relative to 2×10⁶ and 3×10⁶?",
+          "Method": "Use proportional position.",
+          "Steps": [
+            "Difference between ticks is 10⁶.",
+            "2.5×10⁶ exceeds 2×10⁶ by 0.5×10⁶.",
+            "Place halfway between ticks."
+          ],
+          "Answer": "Halfway between two and three million.",
+          "Check": "Equal distance from both bounding values."
+        },
+        {
+          "Title": "Compare positions",
+          "Question": "Which lies farther right: 4×10⁶ or 35×10⁵?",
+          "Method": "Convert to common power.",
+          "Steps": [
+            "35×10⁵=3.5×10⁶.",
+            "4×10⁶=4 million.",
+            "4 million exceeds 3.5 million."
+          ],
+          "Answer": "4×10⁶.",
+          "Check": "Difference is 0.5×10⁶."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using equal spacing for powers 10²,10³,10⁴ on a linear number line.",
+          "WhyWrong": "The values are multiplicative, not equal additive steps.",
+          "Correction": "Choose and state axis type."
+        },
+        {
+          "Mistake": "Omitting unit scale.",
+          "WhyWrong": "Large coordinates become visually ambiguous.",
+          "Correction": "Label tick values."
+        }
+      ],
+      "SummaryPoints": [
+        "Large powers can be located on linear scales.",
+        "Use consistent equal numerical increments.",
+        "Fractions of a tick gap encode intermediate values."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L11",
+      "CultureCode": "en",
+      "Title": "Representing Small Numbers on the Number Line",
+      "ExplanationParagraphs": [
+        "Goal: position small positive decimals and negative powers of ten using correct fractional tick spacing, recognizing closeness to zero but not equality with zero.",
+        "A line from 0 to 0.001 marked every 0.0001 has ten equal intervals. 3×10⁻⁴ occupies the third positive tick; the negative coordinate −3×10⁻⁴ is three equal ticks left of zero on a signed line.",
+        "Create an original micro-distance axis and compare 0.0002,0.0005 and 0.0008. Teacher review checks the precision and regular spacing.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/11/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Small decimal location",
+          "Definition": "A positive decimal lies right of zero even if tiny.",
+          "Rule": "Use a fine scale.",
+          "Example": "0.0003=3×10⁻⁴."
+        },
+        {
+          "Title": "Tick interval",
+          "Definition": "Equal steps can represent a fixed fraction.",
+          "Rule": "If each tick is 10⁻⁴, third tick is 3×10⁻⁴.",
+          "Example": "0.0001,0.0002,0.0003."
+        },
+        {
+          "Title": "Signed small value",
+          "Definition": "A negative decimal lies left of zero.",
+          "Rule": "Its distance from zero equals its absolute value.",
+          "Example": "−0.0003 is left three 10⁻⁴ ticks."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Third positive tick",
+          "Question": "If intervals are 0.0001, what is third tick right of zero?",
+          "Method": "Multiply spacing.",
+          "Steps": [
+            "One step gives 0.0001.",
+            "Three steps give 3×0.0001.",
+            "Result 0.0003."
+          ],
+          "Answer": "0.0003.",
+          "Check": "Equal spacing."
+        },
+        {
+          "Title": "Compare small numbers",
+          "Question": "Which is larger, 0.0002 or 0.0005?",
+          "Method": "Compare ten-thousandths.",
+          "Steps": [
+            "0.0002 is 2 ten-thousandths.",
+            "0.0005 is 5 ten-thousandths.",
+            "5>2."
+          ],
+          "Answer": "0.0005.",
+          "Check": "It lies farther right of zero."
+        },
+        {
+          "Title": "Locate a negative decimal",
+          "Question": "Where does −0.0003 lie on tick spacing 0.0001?",
+          "Method": "Count left from zero.",
+          "Steps": [
+            "Its sign is negative.",
+            "Magnitude equals 3 increments.",
+            "Move left three ticks."
+          ],
+          "Answer": "Third tick left of zero.",
+          "Check": "Magnitude 0.0003."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Rounding all tiny values to zero.",
+          "WhyWrong": "A nonzero value remains distinguishable on an adequate scale.",
+          "Correction": "Use finer ticks."
+        },
+        {
+          "Mistake": "Reversing signed point location.",
+          "WhyWrong": "Negative is left on ordinary increasing x-axis.",
+          "Correction": "Mark zero and direction first."
+        }
+      ],
+      "SummaryPoints": [
+        "Small powers of ten can be graphed precisely.",
+        "Tiny is not zero.",
+        "Tick increment controls resolution."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Equally spaced small decimals",
+          "Description": "Every number-line tick represents 0.0001, not 0.001.",
+          "Rows": [
+            {
+              "Label": "tick",
+              "Cells": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "0",
+                "0.0001",
+                "0.0002",
+                "0.0003",
+                "0.0004"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L12",
+      "CultureCode": "en",
+      "Title": "Applications of Arithmetic with Powers of 10",
+      "ExplanationParagraphs": [
+        "Goal: use exponent arithmetic to estimate and compute quantities spanning large and small scales, with appropriate units and reasonableness checks.",
+        "When multiplying a large and a small power, add signed exponents. When dividing measurements, subtract exponents. Decimal coefficients must also be multiplied or divided, and physical units must be handled separately.",
+        "Model the area of a microsensor rectangle of dimensions 3×10⁻³ m and 2×10⁻² m; find area and explain why the product exponent is −5. Teacher checks dimensional interpretation.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/12/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Product scale",
+          "Definition": "Add signed powers of ten.",
+          "Rule": "10ᵃ×10ᵇ=10ᵃ⁺ᵇ.",
+          "Example": "10⁻³×10⁻²=10⁻⁵."
+        },
+        {
+          "Title": "Coefficient product",
+          "Definition": "Multiply coefficients separately from powers.",
+          "Rule": "(a×10ᵐ)(b×10ⁿ)=ab×10ᵐ⁺ⁿ.",
+          "Example": "3×2×10⁻⁵=6×10⁻⁵."
+        },
+        {
+          "Title": "Unit consistency",
+          "Definition": "Product of lengths gives area.",
+          "Rule": "m×m=m².",
+          "Example": "Microsensor area is 6×10⁻⁵ m²."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Micro-area",
+          "Question": "Rectangle length 3×10⁻³ m, width 2×10⁻² m. What area?",
+          "Method": "Multiply coefficients and powers.",
+          "Steps": [
+            "Coefficients 3×2=6.",
+            "Exponent sum −3+(−2)=−5.",
+            "Area 6×10⁻⁵ m²."
+          ],
+          "Answer": "6×10⁻⁵ m².",
+          "Check": "0.003×0.02=0.00006."
+        },
+        {
+          "Title": "Time scale ratio",
+          "Question": "Find 10⁶/10⁻².",
+          "Method": "Subtract exponents.",
+          "Steps": [
+            "6−(−2)=8.",
+            "Result 10⁸.",
+            "Value 100000000."
+          ],
+          "Answer": "10⁸.",
+          "Check": "Division by 0.01 multiplies by 100."
+        },
+        {
+          "Title": "Large-small product",
+          "Question": "Compute (5×10⁵)(2×10⁻³).",
+          "Method": "Multiply coefficients and exponents.",
+          "Steps": [
+            "Coefficient product 5×2=10.",
+            "Exponent sum 5−3=2.",
+            "10×10²=10³."
+          ],
+          "Answer": "10³=1000.",
+          "Check": "500000×0.002=1000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Combining coefficients with exponent additions.",
+          "WhyWrong": "Exponent law only combines powers, not coefficient arithmetic.",
+          "Correction": "Calculate separately."
+        },
+        {
+          "Mistake": "Forgetting squared units in area.",
+          "WhyWrong": "A product of two lengths is area.",
+          "Correction": "Carry units through multiplication."
+        }
+      ],
+      "SummaryPoints": [
+        "Powers of ten simplify extreme-scale arithmetic.",
+        "Multiply coefficients separately.",
+        "Use consistent units and plausibility."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L13",
+      "CultureCode": "en",
+      "Title": "Definition of Scientific Notation",
+      "ExplanationParagraphs": [
+        "Goal: use normalized scientific notation a×10ⁿ with 1≤|a|<10 for nonzero quantities and integer n, retaining correct sign and magnitude.",
+        "The coefficient must have an absolute value at least one and less than ten. For 62000, 6.2×10⁴ is normalized; 62×10³ has the same value but is not in standard normalized form.",
+        "Write measurements from an original chart into normalized notation. Teacher checks decimal-place reasoning and units, not just pattern memorization.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/13/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Normalized coefficient",
+          "Definition": "A real coefficient whose magnitude lies in [1,10).",
+          "Rule": "1≤|a|<10.",
+          "Example": "6.2 is valid; 62 is not."
+        },
+        {
+          "Title": "Integer ten-exponent",
+          "Definition": "An integer power tracks decimal scaling.",
+          "Rule": "a×10ⁿ.",
+          "Example": "6.2×10⁴=62000."
+        },
+        {
+          "Title": "Negative number",
+          "Definition": "Sign remains with coefficient.",
+          "Rule": "Negative a is permitted.",
+          "Example": "−4.5×10²=−450."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Large number",
+          "Question": "Write 62000 in scientific notation.",
+          "Method": "Move decimal to get 1≤a<10.",
+          "Steps": [
+            "62000→6.2 by moving decimal four positions left.",
+            "Compensate with 10⁴.",
+            "Result 6.2×10⁴."
+          ],
+          "Answer": "6.2×10⁴.",
+          "Check": "6.2×10000=62000."
+        },
+        {
+          "Title": "Small decimal",
+          "Question": "Write 0.00084 in scientific notation.",
+          "Method": "Move decimal right four positions.",
+          "Steps": [
+            "Coefficient becomes 8.4.",
+            "Compensating power is 10⁻⁴.",
+            "Result 8.4×10⁻⁴."
+          ],
+          "Answer": "8.4×10⁻⁴.",
+          "Check": "8.4/10000=0.00084."
+        },
+        {
+          "Title": "Normalize expression",
+          "Question": "Rewrite 45×10³ in standard notation.",
+          "Method": "Move factor of ten into exponent.",
+          "Steps": [
+            "45=4.5×10.",
+            "Then 45×10³=4.5×10^(1+3).",
+            "Answer 4.5×10⁴."
+          ],
+          "Answer": "4.5×10⁴.",
+          "Check": "Both expressions equal 45000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Using coefficient 45 as normalized.",
+          "WhyWrong": "Its absolute value is not below 10.",
+          "Correction": "Shift decimal and adjust exponent."
+        },
+        {
+          "Mistake": "Changing the sign of a negative quantity during normalization.",
+          "WhyWrong": "Exponent changes magnitude, not original sign.",
+          "Correction": "Keep negative coefficient."
+        }
+      ],
+      "SummaryPoints": [
+        "Normalized scientific notation requires 1≤|a|<10.",
+        "Exponent controls powers of ten.",
+        "Convert both very large and very small numbers."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Scientific notation of 62,000",
+          "Description": "62000=6.2×10⁴ after moving the decimal four places.",
+          "Rows": [
+            {
+              "Label": "representation",
+              "Cells": [
+                "decimal",
+                "coefficient",
+                "power",
+                "product"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "62000",
+                "6.2",
+                "10000",
+                "6.2×10⁴"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L14",
+      "CultureCode": "en",
+      "Title": "Multiplying, Dividing, and Estimating with Scientific Notation",
+      "ExplanationParagraphs": [
+        "Goal: multiply and divide numbers in scientific notation, normalize results, and estimate their magnitude before calculating.",
+        "Multiply coefficients while adding exponent powers; divide coefficients while subtracting exponents. Re-normalize if the coefficient falls outside [1,10). Check for a zero denominator.",
+        "Compare original contexts of microscopic cell length and astronomical distance without claiming the same measurement units. Teacher reviews the interpretation and order-of-magnitude estimate.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/14/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Scientific product",
+          "Definition": "Multiply coefficients and add powers.",
+          "Rule": "(a×10ᵐ)(b×10ⁿ)=ab×10ᵐ⁺ⁿ.",
+          "Example": "(3×10⁴)(2×10³)=6×10⁷."
+        },
+        {
+          "Title": "Scientific quotient",
+          "Definition": "Divide coefficients and subtract powers, denominator nonzero.",
+          "Rule": "(a×10ᵐ)/(b×10ⁿ)=(a/b)×10ᵐ⁻ⁿ.",
+          "Example": "(6×10⁸)/(2×10³)=3×10⁵."
+        },
+        {
+          "Title": "Normalization",
+          "Definition": "If |coefficient|≥10, shift one ten into exponent.",
+          "Rule": "12×10⁵=1.2×10⁶.",
+          "Example": "Coefficient 1.2 is normalized."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Product example",
+          "Question": "Compute (3×10⁴)(2×10³).",
+          "Method": "Multiply components.",
+          "Steps": [
+            "3×2=6.",
+            "10⁴×10³=10⁷.",
+            "Answer 6×10⁷."
+          ],
+          "Answer": "6×10⁷.",
+          "Check": "Six times ten million."
+        },
+        {
+          "Title": "Quotient example",
+          "Question": "Compute (6×10⁸)/(2×10³).",
+          "Method": "Divide coefficients and powers.",
+          "Steps": [
+            "6/2=3.",
+            "8−3=5.",
+            "Answer 3×10⁵."
+          ],
+          "Answer": "3×10⁵.",
+          "Check": "300000."
+        },
+        {
+          "Title": "Normalize a product",
+          "Question": "Compute (4×10²)(3×10³).",
+          "Method": "Multiply and normalize.",
+          "Steps": [
+            "Coefficient product 4×3=12.",
+            "Exponent sum 2+3=5 gives 12×10⁵.",
+            "Rewrite as 1.2×10⁶."
+          ],
+          "Answer": "1.2×10⁶.",
+          "Check": "Equals 1200000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Failing to normalize 12×10⁵.",
+          "WhyWrong": "The coefficient is at least ten.",
+          "Correction": "Shift decimal one place and increase exponent."
+        },
+        {
+          "Mistake": "Dividing exponents instead of subtracting them.",
+          "WhyWrong": "Powers of same base use quotient law.",
+          "Correction": "Subtract numerator minus denominator powers."
+        }
+      ],
+      "SummaryPoints": [
+        "Scientific notation simplifies extreme-scale products and quotients.",
+        "Normalize the final coefficient.",
+        "Estimate before trusting calculation."
+      ],
+      "Visuals": [],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L15",
+      "CultureCode": "en",
+      "Title": "Adding and Subtracting with Scientific Notation",
+      "ExplanationParagraphs": [
+        "Goal: add or subtract scientific-notation quantities by aligning powers of ten before combining coefficients, avoiding invalid exponent combination.",
+        "Addition does not add exponents: 3×10⁵+2×10⁵=5×10⁵, but if exponents differ, first rewrite one with the other power. The quantities must have compatible units.",
+        "Create a place-value chart aligning 2.4×10⁶ and 3.0×10⁵; explain why 0.3×10⁶ is equal to the second term. A teacher checks representation and unit consistency.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/15/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Common exponent",
+          "Definition": "A shared ten-power factor before addition.",
+          "Rule": "a×10ⁿ+b×10ⁿ=(a+b)×10ⁿ.",
+          "Example": "3×10⁵+2×10⁵=5×10⁵."
+        },
+        {
+          "Title": "Exponent alignment",
+          "Definition": "Rewrite a term with a chosen power.",
+          "Rule": "3×10⁵=0.3×10⁶.",
+          "Example": "2.4×10⁶+0.3×10⁶=2.7×10⁶."
+        },
+        {
+          "Title": "Unit requirement",
+          "Definition": "Only add quantities with compatible dimensions.",
+          "Rule": "Convert measurements first.",
+          "Example": "Meters plus centimeters require conversion."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Same powers",
+          "Question": "Compute 3×10⁵+2×10⁵.",
+          "Method": "Add coefficients.",
+          "Steps": [
+            "Both terms have ten-power 10⁵.",
+            "Coefficient sum 3+2=5.",
+            "Answer 5×10⁵."
+          ],
+          "Answer": "5×10⁵.",
+          "Check": "300000+200000=500000."
+        },
+        {
+          "Title": "Different powers",
+          "Question": "Compute 2.4×10⁶+3×10⁵.",
+          "Method": "Align exponent.",
+          "Steps": [
+            "Rewrite 3×10⁵=0.3×10⁶.",
+            "Add 2.4+0.3=2.7.",
+            "Answer 2.7×10⁶."
+          ],
+          "Answer": "2.7×10⁶.",
+          "Check": "2,400,000+300,000=2,700,000."
+        },
+        {
+          "Title": "Subtract nearby values",
+          "Question": "Compute 5.1×10⁴−2.0×10³.",
+          "Method": "Rewrite with common power.",
+          "Steps": [
+            "Rewrite 2×10³=0.2×10⁴.",
+            "Subtract coefficients 5.1−0.2=4.9.",
+            "Answer 4.9×10⁴."
+          ],
+          "Answer": "4.9×10⁴.",
+          "Check": "51000−2000=49000."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Adding exponents for addition.",
+          "WhyWrong": "Exponent addition is multiplication law, not sum law.",
+          "Correction": "Factor a common power."
+        },
+        {
+          "Mistake": "Subtracting unlike physical units.",
+          "WhyWrong": "The resulting number lacks meaning.",
+          "Correction": "Convert to compatible units first."
+        }
+      ],
+      "SummaryPoints": [
+        "Align ten-powers before adding or subtracting.",
+        "Combine coefficients only after alignment.",
+        "Re-normalize results."
+      ],
+      "Visuals": [
+        {
+          "Kind": "RatioTable",
+          "Title": "Add like powers of ten",
+          "Description": "Both terms have scale 10⁵, so add coefficients: 3+2=5.",
+          "Rows": [
+            {
+              "Label": "coefficient",
+              "Cells": [
+                "3",
+                "2",
+                "5"
+              ]
+            },
+            {
+              "Label": "scale",
+              "Cells": [
+                "10⁵",
+                "10⁵",
+                "10⁵"
+              ]
+            },
+            {
+              "Label": "value",
+              "Cells": [
+                "300000",
+                "200000",
+                "500000"
+              ]
+            }
+          ]
+        }
+      ],
+      "Videos": []
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:G8:U07:L16",
+      "CultureCode": "en",
+      "Title": "Is a Smartphone Smart Enough to Go to the Moon?",
+      "ExplanationParagraphs": [
+        "Goal: apply scientific notation to compare hypothetical data storage, computing or transmission scales in a clearly defined technology scenario, stating assumptions and units.",
+        "A byte count and bit count differ by a factor of eight. Storage capacity and processing speed are different dimensions and cannot be compared as if both were the same quantity; a realistic moon mission also has reliability, power and radiation requirements beyond raw capacity.",
+        "Original hypothetical scenario: device A stores 1.2×10¹¹ bytes, device B stores 3×10¹⁰ bytes. Compare capacity and express device A in bits. Teacher reviews modeling limitations, evidence sources and why capacity alone does not establish flight suitability.",
+        "First-party Edulytiks adaptation informed by Open Up Resources / Illustrative Mathematics Grade 8 (2017–2019), CC BY 4.0. Exact source: https://im.kendallhunt.com/MS/teachers/3/7/16/preparation.html . No publisher illustrations or assessments are reproduced."
+      ],
+      "KeyConcepts": [
+        {
+          "Title": "Byte conversion",
+          "Definition": "Eight bits make one byte in the usual digital-data representation.",
+          "Rule": "bits=8×bytes.",
+          "Example": "1.2×10¹¹ bytes=9.6×10¹¹ bits."
+        },
+        {
+          "Title": "Ratio of capacities",
+          "Definition": "Compare measurements in the same unit.",
+          "Rule": "A/B computes factor.",
+          "Example": "(1.2×10¹¹)/(3×10¹⁰)=4."
+        },
+        {
+          "Title": "Multiple engineering constraints",
+          "Definition": "Mission readiness cannot be inferred from storage alone.",
+          "Rule": "Consider fault tolerance, radiation, power and software.",
+          "Example": "More bytes does not prove moon-flight suitability."
+        }
+      ],
+      "WorkedExamples": [
+        {
+          "Title": "Compare capacities",
+          "Question": "A has 1.2×10¹¹ bytes and B has 3×10¹⁰ bytes. Ratio?",
+          "Method": "Divide coefficients and powers.",
+          "Steps": [
+            "Coefficient ratio 1.2/3=0.4.",
+            "Exponent difference 11−10=1.",
+            "0.4×10¹=4."
+          ],
+          "Answer": "A holds four times B.",
+          "Check": "Both values are byte capacities."
+        },
+        {
+          "Title": "Convert to bits",
+          "Question": "A has 1.2×10¹¹ bytes. How many bits?",
+          "Method": "Multiply by eight.",
+          "Steps": [
+            "8×1.2=9.6.",
+            "Power remains 10¹¹.",
+            "Result 9.6×10¹¹ bits."
+          ],
+          "Answer": "9.6×10¹¹ bits.",
+          "Check": "Bits and bytes are distinct units."
+        },
+        {
+          "Title": "Estimate larger total",
+          "Question": "Three devices each have capacity 1.2×10¹¹ bytes. Total?",
+          "Method": "Multiply coefficient by count.",
+          "Steps": [
+            "3×1.2=3.6.",
+            "Exponent stays 10¹¹.",
+            "Total 3.6×10¹¹ bytes."
+          ],
+          "Answer": "3.6×10¹¹ bytes.",
+          "Check": "This is just capacity, not proven mission reliability."
+        }
+      ],
+      "CommonMistakes": [
+        {
+          "Mistake": "Comparing bit counts directly with byte counts.",
+          "WhyWrong": "Units differ by eightfold.",
+          "Correction": "Convert to common unit."
+        },
+        {
+          "Mistake": "Claiming a consumer device is flight-qualified because storage is large.",
+          "WhyWrong": "Environmental and reliability requirements are separate.",
+          "Correction": "Identify missing engineering evidence."
+        }
+      ],
+      "SummaryPoints": [
+        "Scientific notation supports digital scale comparisons.",
+        "Convert bit/byte units explicitly.",
+        "Capacity is not sufficient to certify mission suitability."
+      ],
+      "Visuals": [],
+      "Videos": []
+    }
+  ]
+}

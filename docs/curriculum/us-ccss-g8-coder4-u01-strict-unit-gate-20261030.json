@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "order": "SUP2_CODER4_GRADE8_U01_FULL_UNIT_ORDER_20261030",
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "unitCode": "U01",
+  "unitTotal": 17,
+  "totalUnits": 9,
+  "unitSizesCanonicalValidated": {
+    "01": 17,
+    "02": 13,
+    "03": 14,
+    "04": 16,
+    "05": 22,
+    "06": 11,
+    "07": 16,
+    "08": 16,
+    "09": 6
+  },
+  "previouslyReadyForStageD": 0,
+  "newlyReadyForStageD": 17,
+  "unitReadyForStageD": true,
+  "unitStatus": "UNIT_ABC_CLOSED_READY_FOR_STAGE_D",
+  "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L17",
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U02:L01",
+  "currentLesson": "PED:US-CCSS-MATH:G8:U02:L01",
+  "blockedInUnitCurrently": 0,
+  "activeBlockingLesson": null,
+  "historicalPartiallyRepaired": [
+    "PED:US-CCSS-MATH:G8:U01:L01",
+    "PED:US-CCSS-MATH:G8:U01:L02",
+    "PED:US-CCSS-MATH:G8:U01:L03",
+    "PED:US-CCSS-MATH:G8:U01:L04",
+    "PED:US-CCSS-MATH:G8:U01:L05",
+    "PED:US-CCSS-MATH:G8:U01:L06"
+  ],
+  "historicalSkipCursor": "PED:US-CCSS-MATH:G8:U01:L07",
+  "historicalSkipSuperseded": true,
+  "mustNotSkipWhileBlocked": true,
+  "unitCounts": {
+    "TOTAL": 131,
+    "AUTHORED": 131,
+    "A_CLOSED": 17,
+    "B_CLOSED": 17,
+    "C_PREPARED": 17,
+    "ABC_READY_FOR_D": 17,
+    "D_VERIFIED": 0,
+    "BLOCKED": 0,
+    "REMAINING": 114,
+    "UNIT_TOTAL": 9,
+    "UNITS_ABC_CLOSED": 1,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_ABC_CLOSED_READY_FOR_STAGE_D"
+  },
+  "unitTotals": {
+    "UNIT_TOTAL": 9,
+    "UNITS_ABC_CLOSED": 1,
+    "CURRENT_UNIT": "U02",
+    "UNIT_STATUS": "UNIT_IN_PROGRESS"
+  },
+  "sourceOriginalsVerified": [
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
+      "sha256": "dbb43369a545fedd2d1a7d77be6e4f708fd583a6f13203351ed6e074c6f95c51"
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\index.html",
+      "sha256": "ad4810d3e82313c1eeb8919228ee5d24d35d3d5c150f416abccfabdc0cd1bb5b"
+    },
+    {
+      "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\preparation.html",
+      "sha256": "f973defe83a451e19fa51f3316799ed92ce270ed441919d36a7a83ea7c368ca0"
+    }
+  ],
+  "existingABCArtifacts": [
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l01-checkpoint-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-u01-l01-unblock-evidence-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l02-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l03-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l04-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l05-20261030.json",
+    "docs/curriculum/us-ccss-g8-coder4-abc-u01-l06-20261030.json"
+  ],
+  "existingFocusedVerification": "L01 4/4 PASS on parent cc821245, L02-L06 three focused mathematical tests each PASS historically; not new SHA Stage D",
+  "newFocusedVerification": {
+    "status": "PASS_MANUAL_STRUCTURAL_ASSERTIONS",
+    "scope": "131 canonical rows, U01 17 lessons, strict first-unclosed L01 cursor, no advance, zero ABC_READY_FOR_D, UNIT_BLOCKED",
+    "command": "PowerShell read-only JSON gate assertions on Our-CS",
+    "exitCode": 0,
+    "newNodeTest": "NOT_RUN",
+    "build": "NOT_RUN",
+    "stageD": "NOT_RUN"
+  },
+  "firstCheckAtUtc": "2026-10-30T12:59:32.774413+00:00",
+  "lastCheckAtUtc": "2026-10-30T12:59:32.774413+00:00",
+  "elapsedSecondsForCurrentReconciliation": 0.122,
+  "headAtStart": "027ea29965020f0fdb11cf1fff278bfba5d0ad2b",
+  "branch": "curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029",
+  "checkpointCommitSHA": "RECORDED_BY_CONTAINING_GITHUB_COMMIT",
+  "commitRecordedIn": "Same PR #593 comment and GitHub HEAD after push",
+  "pullRequest": 593,
+  "mergeAllowed": false,
+  "deployAllowed": false,
+  "noSharedFilesEdited": true,
+  "resumption": "U01:L01 selected course-owned physical paper teacher review Stage C authoring is complete. Current sequential lesson U01:L02. Older U01:L02–L17 academic claims preserved as historical and need selected route check one by one; no auto-advance to U02.",
+  "latestAcademicApproval": "Supervisor 2 PR #593 comment 6523795237",
+  "L01AssessmentContract": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json",
+  "academicClosedInOrder": [
+    "PED:US-CCSS-MATH:G8:U01:L02",
+    "PED:US-CCSS-MATH:G8:U01:L03",
+    "PED:US-CCSS-MATH:G8:U01:L04",
+    "PED:US-CCSS-MATH:G8:U01:L05",
+    "PED:US-CCSS-MATH:G8:U01:L06",
+    "PED:US-CCSS-MATH:G8:U01:L07",
+    "PED:US-CCSS-MATH:G8:U01:L08",
+    "PED:US-CCSS-MATH:G8:U01:L09",
+    "PED:US-CCSS-MATH:G8:U01:L10",
+    "PED:US-CCSS-MATH:G8:U01:L11",
+    "PED:US-CCSS-MATH:G8:U01:L12",
+    "PED:US-CCSS-MATH:G8:U01:L13",
+    "PED:US-CCSS-MATH:G8:U01:L14",
+    "PED:US-CCSS-MATH:G8:U01:L15",
+    "PED:US-CCSS-MATH:G8:U01:L16",
+    "PED:US-CCSS-MATH:G8:U01:L17"
+  ],
+  "nextUnit": "U02",
+  "finalAcademicAudit": "docs/curriculum/us-ccss-g8-coder4-u01-final-academic-unit-audit-20261030.json",
+  "lessonCommitSHAs": {
+    "L01": "6fc6ecb5815bd83f7742719a3174f6cca9989d60",
+    "L02": "27849a7d19e13eea567f0e87b10722a1b29ce809",
+    "L03": "c70cca493a17e960ec62208b31c92f78cb4f69a8",
+    "L04": "c2f6736d5d8d9a762ef3e816ae52cd14ad41aed9",
+    "L05": "6b7c69b1714f4c197e1d441b518bd18b2f218961",
+    "L06": "e39d2e29e1c4d57df9ba291542f72aa447165bdf",
+    "L07": "10988abf2e919c1de7c1ff8fe8d2610756fe70a3",
+    "L08": "7bc1ba75ed712d039c784a5b05943f7a9665bd53",
+    "L09": "61259110af326c0d5e0340d470d208a11e7778be",
+    "L10": "3682d055bc25d2539f053a197c1386ed483bda30",
+    "L11": "5869ad38af3e8bc0b138cbded52d9971dac1801e",
+    "L12": "4818790fbe7a2b530730493cfa973cd7b3ccd545",
+    "L13": "a43d34cfb861899ccbf6c442aa1c586572d36863",
+    "L14": "e883a1bb55fc33f01f56f40cd07de6fd9b3527a7",
+    "L15": "c5222978d508078e25b4d4a5fabd4fb7403c4308",
+    "L16": "f6eae38c6b4e67f792e299e8005ca518b17e5d2c",
+    "L17": "bb868a54642bf295c8778064b44cb189f18a1881"
+  },
+  "staticRouteReaudit20261031": {
+    "atUtc": "2026-10-31T00:02:16.881Z",
+    "evidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-stage-c-reconciliation-20261031.json",
+    "legacy17ClosuresPreservedHistorically": true
+  },
+  "stageCSelectedPaperClosure20261031": {
+    "status": "ALL_17_OF_17_SELECTED_TEACHER_PAPER_ACADEMIC_A_B_C_CLOSED",
+    "stageD": "NOT_RUN",
+    "nextLesson": "PED:US-CCSS-MATH:G8:U02:L01",
+    "sharedFilesModified": false,
+    "academicClosureCommitSHA": "a7016e20fa35a205c01495c5679414452f14085a"
+  }
+}
