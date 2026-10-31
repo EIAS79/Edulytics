@@ -1,0 +1,231 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L03",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\3\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\3\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\3\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\3\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "02d16ee2444a20c139e86c31008058571904b8e6b9258ac1635cd843769183f1",
+    "TeacherActivities": "79fab2199ed6ce9c08b073401e53edea85c03c952f520293c092cb21293cda18",
+    "StudentActivities": "36201c5d7796f77075fc643cc0fea52f65277d1f29989896e0e9e5817bba18ca",
+    "StudentPractice": "28c66afd200be518d819ca58936abd348e4575de0c6bdb0664cfd1407671174c"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-CO.A.2",
+      "HSG-CO.A.5",
+      "HSG-SRT.B.5"
+    ],
+    "BuildingTowards": [
+      "HSG-GPE.B.7"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "3.1",
+      "Goal": "source P M2 N6 triangles and3-fold origin dilation AA proof",
+      "Mode": "FIRST_PARTY_GRID_AND_SOURCE_RELATIONS"
+    },
+    {
+      "Source": "3.2",
+      "Goal": "4 original source image A-D to four known rules and congruence/similarity/neither",
+      "Mode": "SOURCE_TEXT_COORDINATE_MAPS_AND_HUMAN_GRAPH"
+    },
+    {
+      "Source": "3.3",
+      "Goal": "source ABC and DEF input/output triangles, derive (x,2y) vs(x,-y) with counterexample",
+      "Mode": "FIRST_PARTY_STUDENT_COORDINATE_PROOF"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Goal": "7 original transformation tables, triangle images, circle/solid and congruent choices",
+      "Mode": "SOURCE_EXACT_TABLE_INPUTS_AND_RUBRIC"
+    },
+    {
+      "Source": "3.4",
+      "Goal": "publisher-locked Write a Rule",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L03",
+    "TaskId": "geo-u06-l03-four-graphics-rule-classify-and-two-triangles",
+    "GroupId": "GEO_U06_L03_RIGID_SIMILAR_NEITHER_SOURCE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Student printable original graph A-D rule mappings and side/angle comparisons, source P M N right-triangle AA proof, source ABC/DEF transform maps, all seven Practice computations and 0-8 teacher rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l03-transformation-types-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "constructs origin P and M(2,0) N(6,0), proves PMB and PNB' similar, PB:PB'=1:3",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "maps source graphics A CW90 congruent, B horizontal stretch neither, C translation congruent, D dilation1/2 similar",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "writes source (x,2y) ABC→ABC' not similarity and (x,-y) DEF→DEF' rigid reflection with distances",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "completes source P1 swap table, P2 x−3/−y map, P3 CDE, P4 all three image triangles and P5/P6/P7 geometry",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "complete source coordinate swap table P1",
+        "TeacherExpected": "(x,y)->(y,x), missing input(0,4), output(1,6)->(6,1), inverse output(-1,-2) input(-2,-1)",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "four paired source points P2 derive map",
+        "TeacherExpected": "(x,y)->(x-3,-y), reflection x-axis then left3 translation",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "select all congruent from dilation stretch reflection rotation translation",
+        "TeacherExpected": "C D E",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "triangle ABC=(2,3),(4,2),(3,5), image under three rules",
+        "TeacherExpected": "translate(-4,-1):(-2,2),(0,1),(-1,4); reflect y=x:(3,2),(2,4),(5,3); dilation1.5:(3,4.5),(6,3),(4.5,7.5)",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "cylinder r3 h5 vs cone r3 h5",
+        "TeacherExpected": "45pi in³,15pi in³, 1/3",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "reflect x=-2 then x=0",
+        "TeacherExpected": "single translation (x+4,y)",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "two congruent-circle construction A B centres C,D intersections",
+        "TeacherExpected": "AC=BC=AD=BD=AB common radius",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "OriginDilationScale": 3,
+    "OriginTriangleRatio": "1:3",
+    "GraphicRules": {
+      "A": "(y,-x) CW90 CONGRUENT",
+      "B": "(-2x,y) NEITHER",
+      "C": "(x-4,y-3) CONGRUENT",
+      "D": "(x/2,y/2) SIMILAR"
+    },
+    "ABCMap": "(x,2y) NEITHER",
+    "DEFMap": "(x,-y) RIGID",
+    "SynthesisRigid": [
+      1,
+      2,
+      4,
+      7,
+      8,
+      10,
+      12
+    ],
+    "SynthesisSimilar": [
+      3,
+      9
+    ],
+    "SynthesisNeither": [
+      5,
+      6,
+      11
+    ],
+    "P1Rule": "(y,x)",
+    "P2Rule": "(x-3,-y)",
+    "P3Choices": [
+      "C",
+      "D",
+      "E"
+    ],
+    "P5Cylinder": "45pi",
+    "P5Cone": "15pi",
+    "P6Translation": "(x+4,y)"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "graphics A clockwise90 congruent B horizontal flip-stretch neither C translation congruent D k1/2 similar",
+      "source ABC (x,2y) maps A(2,3)→(2,6), B(5,4)→(5,8), C(3,4)→(3,8) and is neither",
+      "DEF reflected x-axis congruent, P3 choices C D E",
+      "P1 swap table includes input(0,4), output (6,1), input(-2,-1)"
+    ],
+    "Equivalent": [
+      "reflection over y=x described as coordinate swap and vice versa",
+      "P2 (x-3,-y) is x-axis reflection then translation left3, or translation left3 then reflection x-axis"
+    ],
+    "Wrong": [
+      "(-2x,y) original graphic B called dilation because x gets factor2 while y stays unchanged",
+      "(x,2y) ABC to image wrongly claimed all side lengths scale2",
+      "P3 dilation always congruent despite k not1",
+      "P1 missing original(-2,-1) wrongly replaced with(−1,−2) as input instead of output"
+    ],
+    "Boundary": [
+      "zero-length triangle sides or degenerate angles invalidate some triangle theorem proofs",
+      "k0 in linear map collapse not nondegenerate similarity; negative uniform k interpreted signed similarity with rotation",
+      "source image A-D alt text supplies coordinates but teacher should verify pictorial orientation for final grading"
+    ],
+    "Malformed": [
+      "input-output tables transpose role of point labels",
+      "no reference centre/orientation for asserted rotation",
+      "P7 construction equal-radius hypothesis missing"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l03-transformation-types-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l03-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
