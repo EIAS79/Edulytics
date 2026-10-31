@@ -80,8 +80,8 @@
           "explicit not-integration-ready state"
         ]
       },
-      "blockerStatus": "BLOCKED_SHARED_EXCLUSIVE_LEASE_UNASSIGNED_ISSUE_605",
-      "blockerOwner": "UNASSIGNED - Admin and cross-supervisor confirmation pending in #605",
+      "blockerStatus": "BLOCKED_PERSISTED_EXACT_EQUIVALENCE_PRACTICE_SERVICE_EXCLUDED_PATH",
+      "blockerOwner": "Admin fresh exclusive owner required for PracticeService.cs",
       "blockerIssue": 605,
       "stageDAdoptionIssue": 453,
       "teacherReviewLane": {
@@ -99,9 +99,14 @@
       "selectedPracticeIntegrationGate": {
         "testPath": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01SelectedPracticeRoutingTests.cs",
         "testStatus": "AUTHORED_NOT_RUN_EXPECTED_RED_UNTIL_SHARED_INTEGRATION",
-        "selectedContract": "MISSING_SHARED_REGISTRY_ENTRY",
-        "selectedEngineFamilies": "NOT_CONNECTED",
-        "requiresExclusiveLease": 605,
+        "selectedContract": "READY_VERIFIED_AUTHORED_DELIVERED_3E5546A",
+        "selectedEngineFamilies": "THREE_FAMILIES_CONNECTED_STATIC_NOT_RUN",
+        "integrationDraftPR": 613,
+        "integrationCommit": "3e5546a824d4ffce139970f21f86702cb886a065",
+        "threePathLeaseReleasedComment": 6545072251,
+        "persistedAnswerGrader": "GENERIC_SCALAR_NOT_ALG2_ISSUED_FAMILY_EXACT",
+        "nextRequiredSharedPath": "src/Edulytics.Services/Practice/PracticeService.cs",
+        "nextRequiredApprovalIssue": 605,
         "sharedWriterApproved": false,
         "readyForStageD": false
       },

@@ -125,29 +125,32 @@
       ],
       "contentStatus": "CONTENT_EDITED_NEEDS_RUNTIME_VALIDATION",
       "sourceToStudentCompared": true,
-      "practiceMappingExplicit": false,
-      "practiceFamiliesExplicit": [],
-      "effectivePracticeStatus": "NOT_VERIFIED",
+      "practiceMappingExplicit": true,
+      "practiceFamiliesExplicit": [
+        "usccss.alg2.u01.l01.hanoi_min_moves",
+        "usccss.alg2.u01.l01.recursive_sequence",
+        "usccss.alg2.u01.l01.checker_jump_optional"
+      ],
+      "effectivePracticeStatus": "SELECTED_EXACT_ENGINE_AUTHORED_PERSISTED_GRADING_BLOCKED",
       "runtimeMaterializationStatus": "NOT_VERIFIED",
-      "testsStatus": "NOT_RUN_DOTNET",
+      "testsStatus": "AUTHORED_NOT_RUN",
       "academicApproval": "NOT_VERIFIED",
       "ownerUat": "NOT_VERIFIED",
       "stageA": "A_CLOSED",
       "stageB": "B_CLOSED",
-      "stageC": "C_PREPARED",
+      "stageC": "C_SELECTED_ENGINE_AUTHORED_PERSISTED_GRADE_BLOCKED",
       "abcReadyForD": false,
       "blockedByIntegration": {
-        "status": "BLOCKED_CURRENT_LESSON_SHARED_WRITER_UNASSIGNED",
-        "owner": "UNASSIGNED - cross-supervisor single writer must be recorded in issue #605",
-        "currentExclusiveOwner": "NONE_CLEARED_AS_OF_2026_10_31",
+        "status": "BLOCKED_PERSISTED_ALG2_EQUIVALENCE_IN_UNOWNED_PRACTICE_SERVICE",
+        "owner": "Admin must designate a separate exclusive PracticeService.cs writer in issue #605",
+        "currentExclusiveOwner": "NONE; ALG2 THREE-PATH LEASE RELEASED_AT_6545072251",
         "issue": 605,
         "stageDAdoptionIssue": 453,
-        "exactFiles": [
-          "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
-          "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
-          "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
-        ],
-        "reason": "U01:L01 lacks an actual selected lesson-scoped generator/verifier and teacher-review path in the shared Practice route; historical Coder7 lease was superseded by Admin's latest locked #605 registry. Do not claim C closure or edit shared files before one cleared writer."
+        "exactFiles": ["src/Edulytics.Services/Practice/PracticeService.cs"],
+        "threePathIntegrationDraftPR": 613,
+        "threePathIntegrationCommit": "3e5546a824d4ffce139970f21f86702cb886a065",
+        "threePathLeaseReleasedComment": 6545072251,
+        "reason": "Selected exact engine exists but PracticeService persisted grading uses MathematicsAnswerEquivalence.AreEquivalent without reconstructing issued ALG2 n/variant. Correct 2^(64)-1 and 3*(3+2) may receive a false negative. A separate one-path Admin grant is required; Stage C remains unclosed."
       },
       "lessonGateEvidence": {
         "sourceRootAlias": "Common Core",

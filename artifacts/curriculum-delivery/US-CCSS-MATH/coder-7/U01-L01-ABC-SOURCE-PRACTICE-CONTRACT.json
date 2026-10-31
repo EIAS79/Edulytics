@@ -475,5 +475,45 @@
     "stageCClosed": false,
     "readyForStageD": false,
     "closureSHA": null
+  },
+  "v9SelectedEngineIntegrationDeliveredAndPersistedGradeBlocker": {
+    "lessonCode": "PED:US-CCSS-MATH:HS:TRAD:ALG2:IM-1E:U01:L01",
+    "source": "A Towering Sequence",
+    "originalCoursePR": 588,
+    "originalCourseIntegrationHead": "3e5546a824d4ffce139970f21f86702cb886a065",
+    "draftIntegrationPR": 613,
+    "adminGrantIssue": 605,
+    "adminGrantComment": 6544887584,
+    "exclusiveLeaseReleasedComment": 6545072251,
+    "sharedFilesDelivered": [
+      "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+      "src/Edulytics.Services/Mathematics/ExactSkillContractQuestionEngine.cs",
+      "src/Edulytics.Core/Mathematics/Generation/question-family-registry.v1.json"
+    ],
+    "sharedFileBlobShas": {
+      "LessonPracticeContracts.cs": "47ba67a64c177968f6fc2c85f3fca258dccc90d3",
+      "ExactSkillContractQuestionEngine.cs": "70ee0087f330a729abdbaa2e82af8eef58b1ada0",
+      "question-family-registry.v1.json": "2228ec939529f1127d1e8674437ba6bbd9522c3b"
+    },
+    "selectedContract": "READY_VERIFIED_AUTHORED",
+    "selectedFamilies": [
+      "usccss.alg2.u01.l01.hanoi_min_moves",
+      "usccss.alg2.u01.l01.recursive_sequence",
+      "usccss.alg2.u01.l01.checker_jump_optional"
+    ],
+    "generatorSolverVerifier": "AUTHORING_CONNECTED_STATIC_REVIEW_ONLY",
+    "nonrevealingFamilyFeedback": "AUTHORING_CONNECTED",
+    "teacherProofReview": "TEACHER_REVIEW_REQUIRED_NO_AUTOMATIC_SCORE",
+    "targetedAcceptanceTests": "AUTHORED_NOT_RUN",
+    "staticChecks": "REGISTRY_BASE_1105_PRESERVED_TO_1108; JSON_PARSE_AND_DIFF_CHECK_OK",
+    "remainingBlockingPath": "src/Edulytics.Services/Practice/PracticeService.cs",
+    "blockingReason": "Persisted answer grading uses generic MathematicsAnswerEquivalence.AreEquivalent, not exact ALG2 issued n/variant verifier; equivalent Hanoi 2^(64)-1 and checker 3*(3+2) can be scored incorrect although exact engine Verify accepts both",
+    "requiredNextGrant": "Separate exclusive PracticeService.cs family-scoped persisted scoring integration, approved by Admin through issue #605 after fresh collision verification",
+    "crossBranchCaveat": "G5/G6/G7/ALG1 released integration changes exist on divergent course branches; this PR preserved all 1105 original ALG2 base IDs but did not import dependencies outside approved three paths",
+    "stageA": "A_CLOSED_RETAINED",
+    "stageB": "B_CLOSED_RETAINED",
+    "stageC": "C_SELECTED_ENGINE_AUTHORED_PERSISTED_GRADING_BLOCKED",
+    "readyForStageD": false,
+    "closureSHA": null
   }
 }
