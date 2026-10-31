@@ -1,0 +1,230 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L14",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\14\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\14\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\14\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\14\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "5d5b38e1407fcf02004882eb8f8ed0a2892f00fe453bd490fb06ecb056c41d7a",
+    "TeacherActivities": "eb33e362b72069f551dd530d1f1a38d33bfe74448069e0378e1935ad285df998",
+    "StudentActivities": "36f1a13f1d1014631e0921f0d3cb7784a7624b148da02b69ad28a6fe61f64482",
+    "StudentPractice": "0925342ecffc803706afcc576ea972de9857270a4f6810e6cc8aa1a8c55b7b48"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSA-CED.A.4",
+      "HSG-SRT.B.4"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.B.4"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "14.1",
+      "Goal": "variable diagram exploratory Notice and Wonder before theorem",
+      "Mode": "SOURCE_FIRST_PARTY_LABELED_DIAGRAM"
+    },
+    {
+      "Source": "14.2",
+      "Goal": "Elena a squared=c*x, Diego b squared=c*y and complete noncircular similarity proof",
+      "Mode": "TEACHER_GENERAL_ALGEBRAIC_PROOF"
+    },
+    {
+      "Source": "14.3",
+      "Goal": "two equal squares and four congruent triangles area rearrangement, optional Garfield proof",
+      "Mode": "TEACHER_INDEPENDENT_PAPER_CUTOUT_PROOF"
+    },
+    {
+      "Source": "Practice P1-P9",
+      "Goal": "nine exact and figure-dependent right-triangle, area, SAS, scale questions",
+      "Mode": "EXACT_SOURCE_OR_HUMAN_FIGURE_REVIEW"
+    },
+    {
+      "Source": "14.4",
+      "Goal": "teacher-login locked Test it Out",
+      "Mode": "EDULYTIKS_INDEPENDENT_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L14",
+    "TaskId": "geo-u03-l14-similarity-and-square-rearrangement-two-proofs",
+    "GroupId": "GEO_U03_L14_PYTHAGOREAN_TWO_INDEPENDENT_PROOFS_PAPER",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Student signed labelled right triangle altitude and AA ratio sheet, full forward leg-projection algebraic proof, independent first-party two-square paper diagram or cutouts and converse classification with teacher 8-point rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correct right triangle and altitude hypotheses with two AA-based projection equations",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "step-by-step noncircular a squared+b squared=c(x+y)=c squared derivation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "independent coherent equal-area square-rearrangement proof with four congruent right triangles",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "proper converse and nonright boundary plus exact original practice and diagram-dependent caveats",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 9,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "right triangles from source candidates",
+        "TeacherExpected": "C clearly yes (9,12,15); D original text repeats side JL with two incompatible values and requires original image before classification",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "side-square rectangle areas from source figure",
+        "TeacherExpected": "BGHC area a^2=c*x; ACIJ area b^2=c*y; exact c-square rectangle names require source figure",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "Andre says third side 5 vs Mai unknown",
+        "TeacherExpected": "figure-dependent, cannot verify 5 without right-angle/known sides in image",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "three triangles when CD altitude to hypotenuse",
+        "TeacherExpected": "ABC, ACD, CBD AA-similar; ensure matching corresponding vertex order",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "altitude CD=6 and AD=12",
+        "TeacherExpected": "DB=3, option B",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "vertical BC DE find BD",
+        "TeacherExpected": "original diagram measurements required",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "right triangle AC5 BC12 and midpoint DEC area",
+        "TeacherExpected": "original area 30 square units, smaller area 7.5, area factor 1/4",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "similar concave quadrilaterals Q to P",
+        "TeacherExpected": "matching side5 in Q to4 in P yields k4/5, option C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P9",
+        "SourceProblem": 9,
+        "Focus": "triangle ADC and CBA congruence under AB=DC and included angles",
+        "TeacherExpected": "SAS using AC shared and included DCA equal BAC, with correctly ordered vertices",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 18
+  },
+  "IndependentOracles": {
+    "P1KnownRight": "C",
+    "P1OptionD": "SOURCE_TEXT_DUPLICATE_JL_10_AND_17_REQUIRES_FIGURE",
+    "P5DB": "3",
+    "P5Choice": "B",
+    "P7OriginalArea": 30,
+    "P7MidpointArea": 7.5,
+    "P8Factor": "4/5",
+    "P8Choice": "C",
+    "P9Congruence": "SAS",
+    "SourceCaseRight": [
+      8,
+      15,
+      17
+    ],
+    "SourceCaseObtuse": [
+      8,
+      15,
+      18
+    ],
+    "SourceCaseAcute": [
+      8,
+      15,
+      16
+    ],
+    "ProofIdentity": "a^2+b^2=c*(x+y)=c^2"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "a squared=c*x and b squared=c*y from AA and x+y=c yield theorem without assumption",
+      "four congruent a-by-b right triangles leave a-squared plus b-squared or c-squared in equal large squares",
+      "source P5 altitude6 AD12 gives DB3, and P7 5-by-12 right triangle area30 midpoint area7.5"
+    ],
+    "Equivalent": [
+      "geometric area decomposition of (a+b)^2 and four ab/2 triangular pieces reaches c squared=a squared+b squared",
+      "correct Garfield trapezoid proof gives same identity with justified pieces"
+    ],
+    "Wrong": [
+      "assumes a squared+b squared=c squared to prove the same identity circularly",
+      "claims arbitrary nonright triangle altitude creates three AA-similar triangles",
+      "scales midpoint triangle area by length factor1/2 instead of factor1/4"
+    ],
+    "Boundary": [
+      "nondegenerate positive a,b,c and right-angle hypothesis needed for forward theorem",
+      "converse requires triangle inequality and c longest side",
+      "source Practice P1 option D has duplicated JL numerical labels and cannot be certified from text alone"
+    ],
+    "Malformed": [
+      "no projection x+y=c or AA justification",
+      "area proof shows cutouts with no argument exterior squares are equal size",
+      "given nonright triangle numbers used without longest-side check"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l14-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
