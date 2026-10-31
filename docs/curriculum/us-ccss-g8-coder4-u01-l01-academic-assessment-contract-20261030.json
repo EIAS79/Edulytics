@@ -195,9 +195,23 @@
   "stageGates": {
     "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
     "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_BLOCKED_SELECTED_ROUTE_NOT_STATICALLY_INTEGRATED",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": false
+  },
+  "previousHEAD": "4fabf7def2b89e4ba61fd015f13e496daa431de0",
+  "priorStageGates": {
+    "A": "A_ACCEPTED_SUPERVISOR_SOURCE_ROLE",
+    "B": "B_CLOSED_COURSE_OWNED",
     "C": "C_CLOSED_ACADEMIC_CONTRACT",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
-  "previousHEAD": "4fabf7def2b89e4ba61fd015f13e496daa431de0"
+  "selectedRouteReaudit20261031": {
+    "atUtc": "2026-10-31T00:02:16.881Z",
+    "stageCStatus": "BLOCKED",
+    "reason": "ACADEMIC_C_SPECIFICATION_ONLY not selected in lesson Practice runtime or usable teacher assessment route",
+    "sharedWriter": "Supervisor 2",
+    "fixtureFile": "tests/academic-us-ccss-g8-coder4-u01-l01-selected-route.stage-d.cjs"
+  }
 }

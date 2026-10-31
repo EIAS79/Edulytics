@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "course": "US-CCSS-MATH:G8:OUR-IM-2017",
+  "auditAtUtc": "2026-10-31T00:02:16.881Z",
+  "basis": {
+    "pr": 593,
+    "branch": "curriculum/us-ccss-g8-coder4-ourcs-fullgrade-20261029",
+    "auditedHead": "dc938af5e8fa01253e8c095bcd6fc70a6db4d4ca"
+  },
+  "status": "BLOCKED_CURRENT_LESSON",
+  "lastConfirmedClosedLesson": null,
+  "activeLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "blockedCurrentLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "blockerCode": "G8_U01_L01_STAGE_C_SELECTED_ROUTE_NOT_IMPLEMENTED",
+  "evidence": {
+    "priorUnitABCClaims": 17,
+    "priorUnitClaimAudit": "docs/curriculum/us-ccss-g8-coder4-u01-final-academic-unit-audit-20261030.json",
+    "contractPath": "docs/curriculum/us-ccss-g8-coder4-u01-l01-academic-assessment-contract-20261030.json",
+    "contractScope": "ACADEMIC_C_SPECIFICATION_ONLY__NOT_A_RUNTIME_LESSON_PRACTICE_CONTRACT",
+    "coordinateCandidateRuntimeEnabled": false,
+    "coordinateCandidateProductionGenerated": false,
+    "teacherRubricStatus": "DRAFT_TEACHER_SCORED_NOT_RUNTIME_INTEGRATED",
+    "teacherRubricPersisted": false,
+    "runtimeRegistryPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeContracts.cs",
+    "runtimeRegistryNoExactG8U01L01": true,
+    "capabilityResolverPath": "src/Edulytics.Core/Mathematics/Practice/LessonPracticeCapabilityResolver.cs",
+    "capabilityRequiresReadiness": "READY_VERIFIED",
+    "originalLocalSourceSha256": [
+      {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\1\\index.html",
+        "sha256": "dbb43369a545fedd2d1a7d77be6e4f708fd583a6f13203351ed6e074c6f95c51"
+      },
+      {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\index.html",
+        "sha256": "ad4810d3e82313c1eeb8919228ee5d24d35d3d5c150f416abccfabdc0cd1bb5b"
+      },
+      {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\1\\preparation.html",
+        "sha256": "f973defe83a451e19fa51f3316799ed92ce270ed441919d36a7a83ea7c368ca0"
+      }
+    ],
+    "supervisorSourceApproval": "PR #593 comment 6523795237 - source role and first-party visuals accepted"
+  },
+  "stageA": "PRESERVED_PREVIOUSLY_SOURCE_APPROVED",
+  "stageB": "PRESERVED_PREVIOUSLY_COURSE_OWNED",
+  "stageC": "NOT_CLOSED_SELECTED_ROUTE_AND_HUMAN_REVIEW_BOUNDARY",
+  "stageD": "NOT_RUN",
+  "proposedPractice": {
+    "sourceSkill": "informal rigid motions, angle classification, and ordered six-frame partner dances",
+    "machineSubitem": {
+      "scope": "translated marked point only, not a substitute for source teacher tasks",
+      "prompt": "P=(1,1), slide right 3; P-prime?",
+      "expected": "(4,1)",
+      "accepted": [
+        "(4,1)",
+        "4,1",
+        "(4.0, 1.0)",
+        "(+4,+1)"
+      ],
+      "rejected": [
+        "(1,4)",
+        "(4,2)",
+        "(-2,1)"
+      ],
+      "malformed": [
+        "NaN,1",
+        "Infinity,1",
+        "(4,1,2)",
+        "(4e0,1)",
+        "4;1",
+        ""
+      ]
+    },
+    "humanReview": {
+      "activityIds": [
+        "1.1",
+        "1.2",
+        "extension",
+        "Edulytiks-Cooldown"
+      ],
+      "scoring": "TEACHER_ONLY",
+      "maxCooldownPoints": 8,
+      "requireActualSelectedHumanRoute": true
+    },
+    "groupCandidate": "G8_GEOMETRY_RIGID_MOTIONS",
+    "semanticRules": "Do not silently substitute generic transformations outcome routing for lesson-exact selected assessment",
+    "requiredStaticIntegration": "explicit lesson-bound generator/verifier OR selected teacher-review assessment path; educator-scored source activities stay educator-scored"
+  },
+  "blockerOwner": "Supervisor 2 designated single shared Practice/teacher-assessment integration writer (currently unassigned in issue #605)",
+  "sharedPathsOwnedByCoder": [],
+  "neededFixtures": [
+    "correct/equivalent point",
+    "wrong x/y reversal",
+    "wrong vector",
+    "malformed extra tuple",
+    "NaN/Infinity/non-decimal",
+    "8-point rubric source activity and human-score boundary"
+  ],
+  "nextAction": "Supervisor 2 resolves unique writer in issue #605; writer provides actual lesson-selected route; Coder 4 reviews static selected contract and closes same L01 before L02/U02.",
+  "historicalClaimsPreserved": [
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L01",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "6fc6ecb5815bd83f7742719a3174f6cca9989d60"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "27849a7d19e13eea567f0e87b10722a1b29ce809"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "c70cca493a17e960ec62208b31c92f78cb4f69a8"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L04",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "c2f6736d5d8d9a762ef3e816ae52cd14ad41aed9"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L05",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "6b7c69b1714f4c197e1d441b518bd18b2f218961"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L06",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "e39d2e29e1c4d57df9ba291542f72aa447165bdf"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L07",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "10988abf2e919c1de7c1ff8fe8d2610756fe70a3"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L08",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "7bc1ba75ed712d039c784a5b05943f7a9665bd53"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L09",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "61259110af326c0d5e0340d470d208a11e7778be"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L10",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "3682d055bc25d2539f053a197c1386ed483bda30"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L11",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "5869ad38af3e8bc0b138cbded52d9971dac1801e"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L12",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "4818790fbe7a2b530730493cfa973cd7b3ccd545"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L13",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "a43d34cfb861899ccbf6c442aa1c586572d36863"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L14",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "e883a1bb55fc33f01f56f40cd07de6fd9b3527a7"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L15",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "c5222978d508078e25b4d4a5fabd4fb7403c4308"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L16",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "f6eae38c6b4e67f792e299e8005ca518b17e5d2c"
+    },
+    {
+      "lessonCode": "PED:US-CCSS-MATH:G8:U01:L17",
+      "previousAcademicClaim": true,
+      "previousC": "C_CLOSED_ACADEMIC_CONTRACT",
+      "commit": "bb868a54642bf295c8778064b44cb189f18a1881"
+    }
+  ],
+  "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l01-selected-route.stage-d.cjs",
+  "testsStatus": "NOT_RUN",
+  "sourceAccess": "Our-CS local teacher/student/preparation SHA256 reverified in 2026-10-31 session",
+  "noStageDRun": true,
+  "noMergeOrDeploy": true
+}

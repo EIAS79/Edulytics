@@ -16,16 +16,17 @@ const parse=(s,kind,unit)=>{
  let m=s.match(unit==='degrees'?/^[+-]?\d+(?:\.\d+)?°?$/:/^[+-]?\d+(?:\.\d+)?$/);
  return m?Number(s.replace('°','')):null;
 };
-test('U01 exact 17 canonical lessons preserve original Rich hashes and strict next-unit cursor',()=>{
+test('U01 preserves 17 historical authoring records and blocks an unverified selected C route',()=>{
  assert.equal(led.rows.length,131);assert.equal(aud.lessonCommits.length,17);
- assert.equal(unit.unitTotal,17);assert.equal(unit.unitStatus,'UNIT_READY_FOR_STAGE_D');
- assert.equal(unit.unitReadyForStageD,true);assert.equal(unit.newlyReadyForStageD,17);
- assert.equal(led.abcCounters.ABC_READY_FOR_D,17);assert.equal(led.abcCounters.D_VERIFIED,0);
- assert.equal(led.abcCounters.UNITS_ABC_CLOSED,1);assert.equal(led.abcCounters.REMAINING,114);
- assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U02:L01');
+ assert.equal(unit.unitTotal,17);assert.equal(unit.unitStatus,'UNIT_BLOCKED');
+ assert.equal(unit.unitReadyForStageD,false);assert.equal(unit.newlyReadyForStageD,0);
+ assert.equal(led.abcCounters.ABC_READY_FOR_D,0);assert.equal(led.abcCounters.D_VERIFIED,0);
+ assert.equal(led.abcCounters.UNITS_ABC_CLOSED,0);assert.equal(led.abcCounters.REMAINING,131);
+ assert.equal(led.currentSequentialABCCursor.lessonCode,'PED:US-CCSS-MATH:G8:U01:L01');
  assert.equal(led.currentSequentialABCCursor.advanceAllowed,false);
- assert.equal(led.abcCounters.CURRENT_UNIT,'U02');
- assert.ok(led.rows.slice(0,17).every(x=>x.readyForStageD===true));
+ assert.equal(led.abcCounters.CURRENT_UNIT,'U01');
+ assert.ok(led.rows.slice(0,17).every(x=>x.readyForStageD===false));
+ assert.ok(led.rows.slice(0,17).every(x=>x.previousReadyForStageDClaim===true));
  assert.ok(led.rows.slice(17).every(x=>x.readyForStageD!==true));
  const manifest=read(doc('us-ccss-g8-coder4-course-evidence-20261029.json'));
  for(const [pack,hash] of Object.entries(aud.richContentSha256)){
@@ -43,8 +44,10 @@ for(let n=1;n<=17;n++)test('U01 L'+String(n).padStart(2,'0')+' source-scoped A-B
  assert.equal(entry.sourceFiles.length,3);
  for(const f of entry.sourceFiles)assert.match(f.sha256,/^[a-f0-9]{64}$/);
  const gates=s.gates||s.stageGates;
- assert.equal(gates.READY_FOR_STAGE_D,true);assert.equal(gates.C,'C_CLOSED_ACADEMIC_CONTRACT');
- assert.equal(gates.D,'NOT_RUN');assert.equal(row.readyForStageD,true);
+ assert.equal(gates.READY_FOR_STAGE_D,n!==1);
+ assert.equal(gates.C,n===1?'C_BLOCKED_SELECTED_ROUTE_NOT_STATICALLY_INTEGRATED':'C_CLOSED_ACADEMIC_CONTRACT');
+ assert.equal(gates.D,'NOT_RUN');assert.equal(row.readyForStageD,false);
+ assert.equal(row.independentCReaudit20261031,n===1?'BLOCKED_SELECTED_ROUTE':'HOLD_EARLIER_CANONICAL_C_GATE');
  let m,kind,unit,correct,wrong,invalid,expected;
  if(n===1){
   m=s.coordinateQuestionCandidate;kind='pair';unit='coordinate';expected=m.key;

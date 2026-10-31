@@ -17,14 +17,14 @@
     "09": 6
   },
   "previouslyReadyForStageD": 0,
-  "newlyReadyForStageD": 17,
-  "unitReadyForStageD": true,
-  "unitStatus": "UNIT_READY_FOR_STAGE_D",
-  "lastClosedLesson": "PED:US-CCSS-MATH:G8:U01:L17",
-  "firstOpenLesson": null,
-  "currentLesson": null,
-  "blockedInUnitCurrently": 0,
-  "activeBlockingLesson": null,
+  "newlyReadyForStageD": 0,
+  "unitReadyForStageD": false,
+  "unitStatus": "UNIT_BLOCKED",
+  "lastClosedLesson": null,
+  "firstOpenLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "currentLesson": "PED:US-CCSS-MATH:G8:U01:L01",
+  "blockedInUnitCurrently": 1,
+  "activeBlockingLesson": "PED:US-CCSS-MATH:G8:U01:L01",
   "historicalPartiallyRepaired": [
     "PED:US-CCSS-MATH:G8:U01:L01",
     "PED:US-CCSS-MATH:G8:U01:L02",
@@ -42,14 +42,14 @@
     "A_CLOSED": 17,
     "B_CLOSED": 17,
     "C_PREPARED": 17,
-    "ABC_READY_FOR_D": 17,
+    "ABC_READY_FOR_D": 0,
     "D_VERIFIED": 0,
-    "BLOCKED": 0,
-    "REMAINING": 114,
+    "BLOCKED": 1,
+    "REMAINING": 131,
     "UNIT_TOTAL": 9,
-    "UNITS_ABC_CLOSED": 1,
-    "CURRENT_UNIT": "U02",
-    "UNIT_STATUS": "NEXT_UNIT_NOT_STARTED"
+    "UNITS_ABC_CLOSED": 0,
+    "CURRENT_UNIT": "U01",
+    "UNIT_STATUS": "UNIT_BLOCKED"
   },
   "unitTotals": {
     "UNIT_TOTAL": 9,
@@ -142,5 +142,10 @@
     "L15": "c5222978d508078e25b4d4a5fabd4fb7403c4308",
     "L16": "f6eae38c6b4e67f792e299e8005ca518b17e5d2c",
     "L17": "bb868a54642bf295c8778064b44cb189f18a1881"
+  },
+  "staticRouteReaudit20261031": {
+    "atUtc": "2026-10-31T00:02:16.881Z",
+    "evidence": "docs/curriculum/us-ccss-g8-coder4-u01-l01-stage-c-reconciliation-20261031.json",
+    "legacy17ClosuresPreservedHistorically": true
   }
 }
