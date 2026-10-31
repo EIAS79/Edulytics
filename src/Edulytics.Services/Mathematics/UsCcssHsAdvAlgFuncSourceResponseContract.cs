@@ -17,6 +17,67 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
     public static bool RequiresTeacherReview(string? caseId) =>
         caseId is "M05" or "M11" or "L04" or "L05" or "L06" or "L13";
 
+    public enum MatrixCaseDisposition
+    {
+        IncorrectOrMalformed,
+        CorrectClosedAnswer,
+        TeacherReviewRequired
+    }
+
+    /// <summary>
+    /// Source-case bridge for the existing M01-M11 lesson fixtures.
+    /// Never assign automated marks to free explanations or proof claims.
+    /// This is a course-only verifier/teacher-routing contract, NOT a
+    /// global Practice registration, selected runtime, or teacher workflow.
+    /// </summary>
+    public static MatrixCaseDisposition AssessL01MatrixCase(string? caseId, string? response)
+    {
+        // M11's original row-operation notation uses "<-". Allow exactly
+        // that mathematical arrow in human-reviewed prose, never HTML tags.
+        if (caseId is "M05" or "M11")
+            return SafeTeacherExplanation(response)
+                ? MatrixCaseDisposition.TeacherReviewRequired
+                : MatrixCaseDisposition.IncorrectOrMalformed;
+
+        if (!Safe(response)) return MatrixCaseDisposition.IncorrectOrMalformed;
+
+        // The source fixture permits a prose Ax=b explanation (M01) and
+        // determinant+factored-inverse display (M03); the exact structured
+        // parser must not reject those as mathematically wrong OR auto-award
+        // proof/completeness credit. A teacher evaluates these representations.
+        if (caseId == "M01" && response!.TrimStart().StartsWith(
+                "Ax=b with", StringComparison.OrdinalIgnoreCase))
+            return MatrixCaseDisposition.TeacherReviewRequired;
+        if (caseId == "M03" && response!.TrimStart().StartsWith(
+                "det(A)=7;", StringComparison.OrdinalIgnoreCase))
+            return MatrixCaseDisposition.TeacherReviewRequired;
+
+        var valid = caseId switch
+        {
+            "M01" => VerifyMatrixEquation(response, new long[,]
+                { { 1, 1, 1 }, { 2, -1, 1 }, { 1, 2, -1 } }, [6, 3, 2]),
+            "M02" => VerifyInverseAndSolution(response, new long[,]
+                { { 2, 1 }, { 1, 1 } }, [5, 3]),
+            "M03" => VerifyInverseAndSolution(response, new long[,]
+                { { 1, 1, 1 }, { 2, -1, 1 }, { 1, 2, -1 } }, [6, 3, 2]),
+            "M04" => VerifySystemSolution(response, new long[,]
+                { { 1, 1, 1 }, { 2, -1, 1 }, { 1, 2, -1 } }, [6, 3, 2]),
+            "M06" => VerifySystemClassification(response, new long[,]
+                { { 1, 1 }, { 2, 2 } }, [2, 5]),
+            "M07" => VerifyInverseEligibility(response, new long[,]
+                { { 1, 2 }, { 2, 4 } }),
+            "M08" => VerifyInverseEligibility(response, new long[,]
+                { { 2, 1 }, { 1, 1 } }, rhsLength: 3),
+            "M09" => VerifyCoefficientRow(response, [2, -1, 1]),
+            "M10" => VerifyInverseEligibility(response, new long[,]
+                { { 1, 2, 3 }, { 4, 5, 6 } }),
+            _ => false
+        };
+        return valid
+            ? MatrixCaseDisposition.CorrectClosedAnswer
+            : MatrixCaseDisposition.IncorrectOrMalformed;
+    }
+
     public static bool IsValidRealLog(double baseValue, double argument) =>
         double.IsFinite(baseValue) && double.IsFinite(argument) &&
         baseValue > 0 && baseValue != 1 && argument > 0;
@@ -55,10 +116,40 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
         return SameMatrix(matrix, coefficients) && SameVector(vector, rhs);
     }
 
+    /// <summary>
+    /// The original MVP 10.6H task 1a/1b asks for the entire 3x3 product:
+    /// I*A=A and the supplied A^-1*A=I. Check a complete result only;
+    /// students' explanation of the identity/inverse property is teacher-scored.
+    /// This source oracle does not register a learner-facing Practice route.
+    /// </summary>
+    public static bool VerifySourceMatrixProduct(
+        string? response, long[,] coefficients, bool inverseTimesCoefficients)
+    {
+        if (!Safe(response) || !Matrix(response!, out var actual) ||
+            coefficients.GetLength(0) != 3 || coefficients.GetLength(1) != 3 ||
+            actual.GetLength(0) != 3 || actual.GetLength(1) != 3)
+            return false;
+        for (var row = 0; row < 3; row++)
+            for (var col = 0; col < 3; col++)
+            {
+                var expected = inverseTimesCoefficients
+                    ? row == col ? 1L : 0L
+                    : coefficients[row, col];
+                if (actual[row, col] != Q.From(expected)) return false;
+            }
+        return true;
+    }
+
     /// <summary>Checks a row-level answer, without conflating it with Ax=b.</summary>
     public static bool VerifyCoefficientRow(string? response, long[] row)
     {
-        if (!Safe(response) || !Vector(response!, out var actual) ||
+        if (!Safe(response)) return false;
+        var normalized = response!.Trim();
+        // M09 fixture accepts an ordered tuple as well as a column vector.
+        // Parentheses are only an alternate delimiter, not an expression parser.
+        if (normalized.StartsWith('(') && normalized.EndsWith(')'))
+            normalized = "[" + normalized[1..^1] + "]";
+        if (!Vector(normalized, out var actual) ||
             actual.Length != row.Length) return false;
         for (var i = 0; i < row.Length; i++)
             if (actual[i] != Q.From(row[i])) return false;
@@ -161,9 +252,12 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
         var actual = response!.Trim().ToLowerInvariant().Replace(' ', '_');
         actual = actual switch
         {
-            "no_inverse" or "inverse_undefined_due_to_zero_determinant" => "singular",
-            "invalid_dimensions" or "incompatible_dimensions" => "dimension_mismatch",
-            "nonsquare" or "non_square" => "not_square",
+            "no_inverse" or "inverse_undefined_due_to_zero_determinant"
+                or "det(a)=0;_inverse_undefined" or "singular;_no_inverse" => "singular",
+            "invalid_dimensions" or "incompatible_dimensions"
+                or "reject_dimension_mismatch" => "dimension_mismatch",
+            "nonsquare" or "non_square" or "not_square;_a^-1_undefined"
+                or "dimension-incompatible_for_inversion" => "not_square",
             _ => actual
         };
         return actual == expected;
@@ -201,6 +295,13 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
         }
         return true;
     }
+
+    private static bool SafeTeacherExplanation(string? value) =>
+        !string.IsNullOrWhiteSpace(value) &&
+        value.Length <= MaxResponseLength &&
+        !value.Contains('\0') &&
+        !value.Contains('>') &&
+        !value.Replace("<-", "", StringComparison.Ordinal).Contains('<');
 
     private static bool Safe(string? value) =>
         !string.IsNullOrWhiteSpace(value) &&
@@ -308,15 +409,52 @@ public static class UsCcssHsAdvAlgFuncSourceResponseContract
             value = default;
             if (input.Length < 1 || input.Length > 38) return false;
             var chunks = input.Split('/', StringSplitOptions.None);
-            if (chunks.Length > 2 ||
-                !BigInteger.TryParse(chunks[0], NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out var n))
-                return false;
-            var d = BigInteger.One;
-            if (chunks.Length == 2 &&
-                !BigInteger.TryParse(chunks[1], NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out d))
-                return false;
-            if (d.IsZero) return false;
-            value = Canonical(n, d);
+            if (chunks.Length > 2) return false;
+
+            // Original MVP 10.6H supplies a finite-decimal 3x3 inverse.
+            // Interpret its entries as exact rationals, never binary floating
+            // point approximations; reject exponents and unbounded precision.
+            var numeratorText = chunks[0];
+            var decimalPoint = numeratorText.IndexOf('.');
+            BigInteger numerator;
+            var scale = BigInteger.One;
+            if (decimalPoint < 0)
+            {
+                if (!BigInteger.TryParse(numeratorText, NumberStyles.AllowLeadingSign,
+                        CultureInfo.InvariantCulture, out numerator))
+                    return false;
+            }
+            else
+            {
+                if (numeratorText.IndexOf('.', decimalPoint + 1) >= 0)
+                    return false;
+                var wholeText = numeratorText[..decimalPoint];
+                var fractionText = numeratorText[(decimalPoint + 1)..];
+                if (fractionText.Length is < 1 or > 12 ||
+                    !fractionText.All(static digit => digit is >= '0' and <= '9'))
+                    return false;
+                var negative = wholeText.StartsWith("-", StringComparison.Ordinal);
+                BigInteger whole = BigInteger.Zero;
+                if (wholeText is not ("" or "+" or "-") &&
+                    !BigInteger.TryParse(wholeText, NumberStyles.AllowLeadingSign,
+                        CultureInfo.InvariantCulture, out whole))
+                    return false;
+                if (!BigInteger.TryParse(fractionText, NumberStyles.None,
+                        CultureInfo.InvariantCulture, out var fraction))
+                    return false;
+                scale = BigInteger.Pow(10, fractionText.Length);
+                numerator = whole * scale + (negative ? -fraction : fraction);
+            }
+
+            var denominator = scale;
+            if (chunks.Length == 2)
+            {
+                if (!BigInteger.TryParse(chunks[1], NumberStyles.AllowLeadingSign,
+                        CultureInfo.InvariantCulture, out var divisor) || divisor.IsZero)
+                    return false;
+                denominator *= divisor;
+            }
+            value = Canonical(numerator, denominator);
             return true;
         }
     }

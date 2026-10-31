@@ -28,6 +28,33 @@ public sealed class UsCcssHsAdvAlgFuncSourceResponseContractTests
     }
 
     [Theory]
+    [InlineData("A=[[2,1],[1,1]];b=[5,3]", true)]
+    [InlineData("A=[[4/2,1],[1,1]];b=[10/2,3/1]", true)]
+    [InlineData("A=[[2,1],[1,1]];b=[3,5]", false)]
+    [InlineData("A=[[2,1],[1,1]];b=[5,3,0]", false)]
+    [InlineData("A=[[2,1],[1]];b=[5,3]", false)]
+    [InlineData("A=[[2,1],[1,1]];b=[5/0,3]", false)]
+    public void MatrixEquationTwoByTwoRequiresEveryCoefficientAndConstant(
+        string answer, bool expected)
+    {
+        var coefficients = new long[,] { { 2, 1 }, { 1, 1 } };
+        Assert.Equal(expected, Contract.VerifyMatrixEquation(answer, coefficients, [5, 3]));
+    }
+
+    [Theory]
+    [InlineData("A=[[2,0,1],[1,4,0],[0,2,1]];b=[30,20,10]", true)]
+    [InlineData("A=[[2.0,0,1],[1,4,0],[0,2,1]];b=[30,20,10]", true)]
+    [InlineData("A=[[2,0,1],[1,4,0],[0,2,1]];b=[30,20,1 0]", false)]
+    [InlineData("A=[[2,0,1],[1,4,0],[0,2,1]];b=[30,10,20]", false)]
+    [InlineData("A=[[2,1,0],[1,4,0],[0,2,1]];b=[30,20,10]", false)]
+    [InlineData("A=[[2,0,1],[1,4,0]];b=[30,20,10]", false)]
+    public void OriginalPaintingReceiptsKeepSourceVariableAndRowOrder(
+        string answer, bool expected)
+    {
+        Assert.Equal(expected, Contract.VerifyMatrixEquation(answer, Paint, [30, 20, 10]));
+    }
+
+    [Theory]
     [InlineData("[2,-1,1]", true)]
     [InlineData("[2,-2/2,+1]", true)]
     [InlineData("[2,1,-1]", false)]
@@ -62,6 +89,42 @@ public sealed class UsCcssHsAdvAlgFuncSourceResponseContractTests
     public void AllSystemsGoPaintingReceiptInverseAndAllPurchases(string answer, bool expected)
     {
         Assert.Equal(expected, Contract.VerifyInverseAndSolution(answer, Paint, [30, 20, 10]));
+    }
+
+    [Theory]
+    [InlineData("A^-1=[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2,6]", true)]
+    [InlineData("A^-1=[[.4,.2,-.4],[-.1,.2,.1],[.2,-.4,.8]];x=[12.0,2,6]", true)]
+    [InlineData("A^-1=[[0.40,0.20,-0.40],[-0.10,0.20,0.10],[0.20,-0.40,0.80]];x=[12,2,6]", true)]
+    [InlineData("A^-1=[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2.0,6]", true)]
+    [InlineData("A^-1=[[0.39,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2,6]", false)]
+    [InlineData("A^-1=[[0.4000000000001,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2,6]", false)]
+    [InlineData("A^-1=[[4e-1,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2,6]", false)]
+    [InlineData("A^-1=[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[1 2,2,6]", false)]
+    [InlineData("A^-1=[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[NaN,2,6]", false)]
+    [InlineData("A^-1=[[0.4,0.2,-0.4],[-0.1,0.2,0.1],[0.2,-0.4,0.8]];x=[12,2,6/0]", false)]
+    public void OriginalPaintingDecimalInverseIsInterpretedAsExactRational(
+        string answer, bool expected)
+    {
+        // The publisher gives the inverse in terminating decimals; accepting
+        // exact decimals here must not permit floating-point approximations.
+        Assert.Equal(expected, Contract.VerifyInverseAndSolution(answer, Paint, [30, 20, 10]));
+    }
+
+    [Theory]
+    [InlineData("[[2,0,1],[1,4,0],[0,2,1]]", false, true)]
+    [InlineData("[[2/1,0,1],[1,4,0],[0,2,1]]", false, true)]
+    [InlineData("[[1,0,0],[0,1,0],[0,0,1]]", true, true)]
+    [InlineData("[[1.0,0,0],[0,1,0],[0,0,1]]", true, true)]
+    [InlineData("[[2,0,1],[1,4,0],[0,2,1]]", true, false)]
+    [InlineData("[[1,0,0],[0,1,0],[0,0,1]]", false, false)]
+    [InlineData("[[1,0,0],[0,1,0]]", true, false)]
+    [InlineData("[[1 0,0],[0,1,0],[0,0,1]]", true, false)]
+    [InlineData("[[1,0,0],[0,1,0],[0,0,1/0]]", true, false)]
+    public void OriginalTaskOneMatrixMultiplicationMustReturnFullThreeByThreeProduct(
+        string answer, bool isInverseProduct, bool expected)
+    {
+        Assert.Equal(expected,
+            Contract.VerifySourceMatrixProduct(answer, Paint, isInverseProduct));
     }
 
     [Theory]
@@ -216,6 +279,93 @@ public sealed class UsCcssHsAdvAlgFuncSourceResponseContractTests
         };
         Assert.True(Contract.VerifyInverseEligibility("singular", singular));
         Assert.False(Contract.VerifyInverseEligibility("invertible", singular));
+    }
+
+    [Theory]
+    [InlineData("M01", "A=[[1,1,1],[2,-1,1],[1,2,-1]]; b=[6,3,2]",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M01", "Ax=b with A rows (1,1,1), (2,-1,1), (1,2,-1) and b column (6,3,2)",
+        Contract.MatrixCaseDisposition.TeacherReviewRequired)]
+    [InlineData("M02", "A^-1=[[1,-1],[-1,2]]; x=[2/1,1/1]",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M03", "A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[7/7,14/7,21/7]",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M03", "det(A)=7; A^-1=(1/7)*[[-1,3,2],[3,-2,1],[5,-1,-3]]; x=[1,2,3]",
+        Contract.MatrixCaseDisposition.TeacherReviewRequired)]
+    [InlineData("M04", "x=[1,2,3]",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M05", "infinitely many; (x,y)=(2-t,t)",
+        Contract.MatrixCaseDisposition.TeacherReviewRequired)]
+    [InlineData("M06", "no solution",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M06", "inconsistent",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M07", "det(A)=0; inverse undefined",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M07", "singular; no inverse",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M08", "reject dimension mismatch",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M08", "invalid dimensions",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M09", "[2,-1,1]",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M09", "(2, -1, +1)",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M10", "not square; A^-1 undefined",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M10", "dimension-incompatible for inversion",
+        Contract.MatrixCaseDisposition.CorrectClosedAnswer)]
+    [InlineData("M11", "valid equivalence argument referring to reversible row operation",
+        Contract.MatrixCaseDisposition.TeacherReviewRequired)]
+    public void AllElevenMatrixFixturesHaveExplicitClosedOrHumanAssessmentRoutes(
+        string caseId, string response, Contract.MatrixCaseDisposition expected)
+    {
+        // This does not claim selected learner Practice or teacher scoring.
+        Assert.Equal(expected, Contract.AssessL01MatrixCase(caseId, response));
+    }
+
+    [Theory]
+    [InlineData("M01", "A=[[1,1,1],[2,1,1],[1,2,-1]]")]
+    [InlineData("M01", "A=[[1,1],[2,-1,1]]; b=[6,3,2]")]
+    [InlineData("M02", "x=[1,2]")]
+    [InlineData("M02", "A^-1=[[1,-1],[-1]]; x=[2,1]")]
+    [InlineData("M03", "x=[1,3,2]")]
+    [InlineData("M03", "A^-1=[[1,2],[3,4]]; x=[1,2,3]")]
+    [InlineData("M04", "[1,2]")]
+    [InlineData("M04", "x=[1,2,not-a-number]")]
+    [InlineData("M06", "infinitely many")]
+    [InlineData("M06", "classification=")]
+    [InlineData("M07", "A^-1=[[4,-2],[-2,1]]")]
+    [InlineData("M07", "A^-1=[[4,-2],[-2]]")]
+    [InlineData("M08", "x=[2,1,0]")]
+    [InlineData("M08", "A^-1*[5,3,]")]
+    [InlineData("M09", "[2,1,-1]")]
+    [InlineData("M09", "[2,-,1]")]
+    [InlineData("M10", "invertible")]
+    [InlineData("M10", "A^-1=[[1,2,3],[4,5,6]]")]
+    [InlineData("M11", "<script>unsafe</script>")]
+    [InlineData("M05", "")]
+    [InlineData("M77", "[1,2]")]
+    public void IncorrectMalformedAndUnrecognizedFixtureResponsesNeverReceiveClosedCredit(
+        string caseId, string response)
+    {
+        Assert.Equal(Contract.MatrixCaseDisposition.IncorrectOrMalformed,
+            Contract.AssessL01MatrixCase(caseId, response));
+    }
+
+    [Theory]
+    [InlineData("M05", "only one solution (2,0)")]
+    [InlineData("M05", "(x,y)=(2-t,)")]
+    [InlineData("M11", "numerical answer only")]
+    [InlineData("M11", "R2 <- R2 -")]
+    public void OpenResponseErrorsAreForTeacherDecisionNotMachineProofCredit(
+        string caseId, string response)
+    {
+        // Queue the text for human review; do not imply the supplied prose
+        // earns a positive score, even if it is wrong or incomplete.
+        Assert.Equal(Contract.MatrixCaseDisposition.TeacherReviewRequired,
+            Contract.AssessL01MatrixCase(caseId, response));
     }
 
     [Fact]
