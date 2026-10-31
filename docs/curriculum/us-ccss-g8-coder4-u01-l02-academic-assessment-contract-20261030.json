@@ -30,7 +30,7 @@
   "sourceRoleReviewed": true,
   "centralPracticeRule": "ccss-transformations",
   "proposedFamily": "transformations",
-  "scope": "LESSON_SCOPED_ACADEMIC_ASSESSMENT_SPEC_ONLY",
+  "scope": "SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE_FOR_STAGE_C__NOT_RUNTIME_PRACTICE",
   "sourceActivityToFirstPartyCrosswalk": [
     {
       "sourceActivity": "2.1 A Pair of Quadrilaterals",
@@ -186,10 +186,190 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T13:54:13.861541+00:00",
-  "parentHeadSHA": "6fc6ecb5815bd83f7742719a3174f6cca9989d60"
+  "parentHeadSHA": "6fc6ecb5815bd83f7742719a3174f6cca9989d60",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L02",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "selectedAssessmentModality": "PRINTABLE_LEARNER_WORKSHEET_PLUS_TEACHER_PRIVATE_MANUAL_REVIEW",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l02-naming-moves-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l02-naming-moves-paper.html",
+    "learnerWorksheetSha256": "8331118ec5f5f2a188fdb9a244abe5e55fdac2616c0d58a0b21c7a7dcd9ac823",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "sourceEvidence": {
+      "student": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\2\\index.html",
+        "sha256": "f981a6312ec8fa98b6a700065a7c77756a8ae8ffa438b37d338363347ff96f32"
+      },
+      "teacher": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\2\\index.html",
+        "sha256": "6bbd4b54abdd19f6c928730ec29edf06f3e934cdc6cf7b6796f244901bb61d8c"
+      },
+      "preparation": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\2\\preparation.html",
+        "sha256": "7178a413a477afac3cb1f5fe06d2fea6f0ecb67671e1ffe59142e185a8af98ca"
+      }
+    },
+    "sourceModes": [
+      "2.1 angle estimation/rotation diagram",
+      "2.2 six-frame geometric motion and partner reconstruction",
+      "2.3 six-card sorting with reasons",
+      "Edulytiks-authored Cool-down x=0 reflection and counterexample"
+    ],
+    "delivery": "Teacher selects this exact L02-linked first-party paper route, prints/distributes to learner, collects labelled drawings/oral explanations and manually scores private rubric; never interpreted as online Practice.",
+    "activityMap": [
+      {
+        "source": "2.1",
+        "worksheet": "rotation",
+        "modality": "DIAGRAM_AND_ANGLE_ESTIMATE",
+        "correct": "About 120° counterclockwise about fixed vertex O; all corresponding distances preserved",
+        "equivalent": "2π/3 radians counterclockwise or a reasoned estimate near 120° before precise measure",
+        "wrong": "90° quarter-turn, clockwise turn, wrong center",
+        "malformed": "Missing angle, center or justification without diagram"
+      },
+      {
+        "source": "2.2",
+        "worksheet": "frames",
+        "modality": "SIX_FRAME_DRAWING_AND_PARTNER_EXPLANATION",
+        "correct": "Moves in order: translate (+2,0), rotate 90° clockwise about P, reflect across horizontal line y=0 through P, translate (0,+2), rotate 90° counterclockwise about P; vertex ordering flips ONLY at the reflection",
+        "equivalent": "Clear written/oral exact inverse-compatible descriptions and congruent labelled diagrams",
+        "wrong": "Calling frame 3→4 a translation/rotation or claiming unchanged handedness",
+        "malformed": "Missing a frame, ordered vertex label, mirror line or partner evidence"
+      },
+      {
+        "source": "2.3",
+        "worksheet": "cards",
+        "modality": "SIX_CARD_SORT_AND_REASON",
+        "correct": "Cards 1/4 translations, 2/6 rotations, 3/5 reflections; name vectors/centers/lines and justify orientation change",
+        "equivalent": "An oral grouping with valid geometric justification is as acceptable as written explanations",
+        "wrong": "Classifying a reflection as rotation just because tip unchanged",
+        "malformed": "Only category names without grouping and reason"
+      },
+      {
+        "source": "Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "TEACHER_SCORED_FIRST_PARTY_REFLECTION",
+        "correct": "P'(-1,1), Q'(-3,1), R'(-2,3) is the x=0 reflection; P''(-1,1), Q''(-3,1), R''(2,3) is NOT that reflection",
+        "equivalent": "Perpendicular bisector of corresponding pairs is x=0, equal distances and unchanged y, explanation by coordinates or geometric constructions",
+        "wrong": "Saying second triple is reflection across x=0 or omitting R correspondence",
+        "malformed": "Unlabelled points, no drawing/reconstructible explanation"
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "Each R1–R4 scores 0 absent/incorrect; 1 partly correct with incomplete justification; 2 fully correct and evidenced. Teacher records criterion-by-criterion notes offline.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "2.1 accurate source-relevant counterclockwise 120° rotation estimate, fixed center O, mathematical reasoning"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "2.2 five precise transitions in six frames with chirality reversed on only frame 3→4, documented partner reconstruction"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "2.3 six-card correct grouping with translation vector, rotation center/angle or reflection line justification"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down reflection x=0 with point pairs/equal distances and valid negative counterexample"
+        }
+      ],
+      "teacherKey": {
+        "rotation": "120° CCW about O (angle estimate within reasonable drawing/measurement error accepted when justified), all four distances preserve; not a 90° turn",
+        "frames": [
+          "1→2 translate (+2,0)",
+          "2→3 rotate 90° clockwise about P=(2,0)",
+          "3→4 reflect about y=0, P and tip R remain fixed, Q crosses line (positive chirality to negative)",
+          "4→5 translate (0,2)",
+          "5→6 rotate 90° counterclockwise about P=(2,2)"
+        ],
+        "cards": "Translations 1,4; Rotations 2,6; Reflections 3,5",
+        "cooldown": "Yes first image across x=0; no second image, because R″=(2,3) is on wrong side and wrong mirror distance."
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "Activity 2.1 120° CCW about O with justification",
+        "Frame 3→4 mirror across y=0 changes ordered-vertex chirality while tip east",
+        "Cards 1/4 translation,2/6 rotation,3/5 reflection with reasons",
+        "Cool-down full P'(-1,1),Q'(-3,1),R'(-2,3) mirror x=0; reject second"
+      ],
+      "equivalent": [
+        "Activity 2.1 two-thirds π radians CCW with fixed O",
+        "Activity 2.2 same accurate vector/rotation/reflection directions spoken and reconstructed by partner",
+        "Cool-down perpendicular-bisector argument in place of coordinate equality"
+      ],
+      "wrong": [
+        "Activity 2.1 quarter-turn 90° clockwise",
+        "Frame 3→4 translated horizontally: false because orientation changes",
+        "Card 3 classified as rotation instead of flip",
+        "Cool-down second candidate incorrectly accepted as reflection about x=0"
+      ],
+      "malformed": [
+        "Only card labels without geometric reasons",
+        "Frame 4 skipped, fewer than six labelled frames",
+        "Reflection line not specified and no diagram",
+        "Only yes/no for Cool-down without paired coordinates or reason",
+        "No partner reconstruction evidence"
+      ],
+      "boundary": [
+        "Angle is estimated: a mathematically justified approximate reading near 120° need not be exactly 120.00°",
+        "Correct physical half-turn and -180°/180° equivalence for Card 6 should not be rejected",
+        "Tip direction alone cannot decide reflection; compare non-collinear ordered vertices",
+        "Handedness preserved under rotations/translations and reversed only under reflection",
+        "Different oral vs written wordings are equivalent when fully geometrically reproducible"
+      ],
+      "machineCoordinateSubskill": {
+        "autoGradedInThisRoute": false,
+        "correct": [
+          "(-1,1)",
+          "-1,1",
+          "(-1.0,1.0)"
+        ],
+        "wrong": [
+          "(5,1)",
+          "(-1,-3)"
+        ],
+        "malformed": [
+          "NaN,1",
+          "Infinity",
+          "(-1,1,2)",
+          ""
+        ],
+        "boundary": [
+          "(-1,1.0000001) is not exact coordinate equivalent",
+          "(-0,1) parses but is wrong"
+        ]
+      }
+    },
+    "selectedForLesson": true,
+    "teacherSelectedOffline": true,
+    "linkedFromRichV2": true,
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "firstPartyCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "sourceTextbookGraphicsReproduced": false,
+    "stageD": "NOT_RUN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l02-selected-paper-route-20261031.test.cjs",
+    "testStatus": "AUTHORED_NOT_RUN"
+  }
 }
