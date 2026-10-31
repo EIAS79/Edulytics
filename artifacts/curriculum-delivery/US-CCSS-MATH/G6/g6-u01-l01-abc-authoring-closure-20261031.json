@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "recordType": "G6_INDIVIDUAL_LESSON_ABC_AUTHORING_CLOSURE",
+  "lessonCode": "PED:US-CCSS-MATH:G6:U01:L01",
+  "sourceLessonCode": "6.1.1",
+  "title": "Tiling the Plane",
+  "originalSourceSha256": "74f33af3371eb2168f76ddde153a5498af111c450be86fb753a04f092edd0f10",
+  "sourceRightsMetadata": "CC BY 4.0",
+  "unit": "U01",
+  "closureStatus": "A_B_C_AUTHORED_CLOSED_READY_FOR_STAGE_D",
+  "closureTimeUtc": "2026-10-31T10:21:40+00:00",
+  "sourceHeadSha": "fb009cfcb84f025964eb7b833c1315936f490c96",
+  "closureSha": null,
+  "stageA": {
+    "status": "CLOSED",
+    "evidence": "Existing original teacher/student comparison, source-goal and source-matched first-party drawables; original publisher applet/pixels remain unverified",
+    "existingEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-abc-source-alternatives-and-practice-handoff-20261030.json"
+  },
+  "stageB": {
+    "status": "CLOSED_AUTHORED",
+    "evidence": "Grade-only RichV2, source comparisons 72/64/56 triangular units, original SVG/keyboard-operable worksheet, two different saved/printable 2x2 arrangements and explicit human rubric",
+    "interactivePath": "src/Edulytics.Web/wwwroot/lesson-labs/us-ccss-g6/u01-l01-tiling-lab.html",
+    "priorCoderSha": "ad4c89f154dfb6f837c57db0ba325f32bb214cfa"
+  },
+  "stageC": {
+    "status": "CLOSED_STATIC_AUTHORED_SELECTED_PRACTICE",
+    "skillId": "geometry.area_tiling",
+    "contract": "PED:US-CCSS-MATH:G6:U01:L01 -> LessonPracticeContractRegistry.TryResolve -> StudentPrivatePracticeService.GenerateSkillContractLessonAsync -> Stage18SkillContractPracticeEngine -> ExactSkillContractQuestionEngine",
+    "families": [
+      "usccss.g6.u01.l01.triangular_unit_tile_area",
+      "usccss.g6.u01.l01.structured_tiling_coverage"
+    ],
+    "generation": "ExactSkillContractQuestionEngine.SupportsFamily -> BuildProblem -> UsCcssG6Unit1Lesson1TilingQuestions.Build -> Solve",
+    "solverAndVerifier": "ExactSkillContractQuestionEngine.Solve / Verify -> question helper -> math kernel; integer 72/64/56 and exact half-cell gap-overlap checks",
+    "responseAndFeedback": "Exact correct/wrong verification; authored question solution explanation supplies area conversion and no-gap/overlap method; actual authenticated feedback UI not run",
+    "teacherBoundary": "Freehand constructions, student drawings and explanations are manual teacher rubric/paper review; browser workmat does not persist or submit results and machine grading cannot certify this work.",
+    "registryStatus": {
+      "usccss.g6.u01.l01.triangular_unit_tile_area": "ShadowVerified",
+      "usccss.g6.u01.l01.structured_tiling_coverage": "ShadowVerified"
+    },
+    "authoredFixtures": [
+      "tests/academic-us-ccss-g6-u01-source-geometry-v12.test.cjs",
+      "tests/academic-us-ccss-g6-u01-l01-visual-workmat-authoring.test.cjs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson1SelectedPracticeRouteTests.cs",
+      "tests/Edulytics.Tests/MathematicsIntelligence/UsCcssG6Unit1Lesson1TilingMathTests.cs"
+    ],
+    "fixtureExecution": "AUTHORED_NOT_RUN",
+    "integrationPR": 609,
+    "integrationBranchHead": "a94747b47315f7c94637693e578acdcbe59346a6",
+    "integratedCourseCommit": "fb009cfcb84f025964eb7b833c1315936f490c96"
+  },
+  "stageD": "NOT_STARTED",
+  "readyForStageD": true,
+  "limitations": [
+    "STATIC CODE/authoring acceptance, not a dotnet/Node test or operational validation",
+    "No authenticated student generation/feedback or persisted grade was executed",
+    "Original source publisher interactive applet and teacher cooldown protected materials not equivalence verified",
+    "No CI, Stage D, PR merge or deployment"
+  ],
+  "nextActiveLesson": "PED:US-CCSS-MATH:G6:U01:L02"
+}

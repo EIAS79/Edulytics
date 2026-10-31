@@ -210,7 +210,10 @@
       "lastClosedIndependentLessonSHA": "26a45185a51819764c90ff0294f1908975873614",
       "nextOfficialLessonTriage": "PED:US-CCSS-MATH:G6:U01:L05",
       "exceptionNotice": "U01:L05 through U03:L06 remain unreviewed by current A-C acceptance sequence, not automatically BLOCKED; U03:L07 closed as explicit mapped independent exception, not blanket approval to skip earlier."
-    }
+    },
+    "confirmedABCAuthoredClosures": 1,
+    "abcAuthoredReadyForStageD": 1,
+    "abcClosureNextLesson": "PED:US-CCSS-MATH:G6:U01:L02"
   },
   "sharedBlockers": [
     {
@@ -317,7 +320,7 @@
         "sourceTaskAlignedRichV2Candidate": true,
         "v12SourceAlignedCandidateEnhanced": true,
         "v12PriorTriangleAreaCorrectionRetained": false,
-        "abcFirstOrderStatus": "B_CLOSED_AUTHORED_GRADE_RICH_V2",
+        "abcFirstOrderStatus": "B_CLOSED_SOURCE_MATCHED_LEARNER_EXPERIENCE_AND_TWO_CONSTRUCTIONS_AUTHORED",
         "firstPartyDrawingTasksAuthored": true,
         "shapeDecompositionRowsRenderedByPartial": true,
         "liveRenderingVerified": false
@@ -327,19 +330,19 @@
         "explicitMappingReadiness": null,
         "staticOutcomeRuleInputCoverage": true,
         "missingOutcomeRules": [],
-        "selectedRuntimeContract": "NOT_RUN__REQUIRES_SHARED_OWNER_EXACT_TRACE",
-        "generatorVerifierAndResponseTests": "NOT_RUN",
+        "selectedRuntimeContract": "STATIC_SELECTED_LESSON_BOUND_EXACT_G6_TILING_AUTHORED_NOT_RUN",
+        "generatorVerifierAndResponseTests": "AUTHORED_NOT_RUN__EXACT_INTEGRATED_G6_L01",
         "teacherRubricNeeded": true,
-        "exactPracticeAccepted": false,
+        "exactPracticeAccepted": true,
         "teacherOnlyJustificationRubricBoundaryDefined": true,
         "teacherOnlyRubricAuthored": true,
         "teacherOnlyRubricPersistedVerified": false,
         "humanEvaluatedLearnerSampleVerified": false,
         "numericOnlyGraderCanCertifyFullOriginalSourceTask": false,
         "ownedRubricFixture": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-l03-public-source-task-practice-boundaries.json",
-        "v12ExactSelectedPractice": "NOT_RUN__SUPERVISOR_1_SHARED_OWNER",
+        "v12ExactSelectedPractice": "SUPERSEDED_BY_G6_L01_COURSE_COMMIT_fb009cfcb",
         "v12TeacherRubricPersistedVerified": false,
-        "abcFirstOrderStatus": "C_BLOCKED_SHARED_OWNER_ASSIGNMENT_AND_WIRING",
+        "abcFirstOrderStatus": "C_CLOSED_STATIC_SELECTED_PRACTICE_WITH_HUMAN_REVIEW_BOUNDARY",
         "proposedContractEvidence": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-abc-source-alternatives-and-practice-handoff-20261030.json"
       },
       "stageD": {
@@ -356,8 +359,8 @@
         "abcFirstOrderStatus": "NOT_STARTED"
       },
       "category": "CONTENT_REPAIR",
-      "academicAcceptance": "NOT_ACCEPTED",
-      "nextStep": "A and B authored-source fidelity closed for U01:L01. C blocked pending authorized single-writer exact area Practice routing and teacher-scored drawing preparation. No lesson advancement.",
+      "academicAcceptance": "ABC_AUTHORING_CLOSED_READY_FOR_STAGE_D",
+      "nextStep": "U01:L01 A-B-C authored closure. NEXT U01:L02, preserve prior accepted source work; run nothing until full-course Stage D.",
       "abcFirstOrder": {
         "schemaVersion": 1,
         "recordType": "LESSON_ABC_ATTEMPT_BLOCKED_NOT_CLOSED",
@@ -431,6 +434,15 @@
         "B_CLOSED": true,
         "C_PREPARED": false,
         "attemptStartedAt": "2026-10-30T07:34:42.214Z"
+      },
+      "abcAuthoringClosure": {
+        "evidenceFile": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l01-abc-authoring-closure-20261031.json",
+        "closedAtUtc": "2026-10-31T10:21:40+00:00",
+        "closureSha": null,
+        "sourceIntegratedSha": "fb009cfcb84f025964eb7b833c1315936f490c96",
+        "readyForStageD": true,
+        "testStatus": "AUTHORED_NOT_RUN",
+        "note": "Historical abcFirstOrder entry preserved as prior blocked snapshot; this supersedes its old cursor only for L01."
       }
     },
     {
@@ -14090,7 +14102,7 @@
   "lastRubricCandidateCommit": "b0b44dace99266d33938bbb0062443876a35922a",
   "lastGradeSourceBoundaryTestCommit": "d076067c37ef3c059b1a27056ab4a8c99da8b1c8",
   "nextUnreviewedPublicSourceTaskLesson": "PED:US-CCSS-MATH:G6:U01:L04",
-  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U01:L01",
+  "nextAcademicAcceptanceLesson": "PED:US-CCSS-MATH:G6:U01:L02",
   "nextSharedCapabilityWork": "Owner-designated single-writer trace of actual selected Practice contract and teacher-rubric persistence for U01 L01-L03 (then all 147) + protected metadata predecessor study",
   "fullSourceIndexFiles": {
     "student": "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-147-public-student-page-activity-index.json",
@@ -14104,7 +14116,7 @@
     "artifacts/curriculum-delivery/US-CCSS-MATH/G6/g6-u01-l15-l16-source-nets-area-volume-boundaries.json"
   ],
   "nextDeepOriginalSourceActivityReview": null,
-  "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L01",
+  "nextAcademicAcceptance": "PED:US-CCSS-MATH:G6:U01:L02",
   "nextSharedIntegrationAction": "Supervisor 1-designated single-writer shared RichV2 test coexistence with G7 PR #590, exact G6 lesson Practice, rubric storage, guarded Grade6 content materialization/promotion; issue #592 comment 6484465498",
   "lastSourceIndicesVerified": {
     "studentTitleMatches": 147,
@@ -14345,5 +14357,8 @@
     "passed": 7,
     "failed": 0,
     "claimBoundary": "Independent numerical calculations only; committed grade-specific tests and real app have NOT_RUN"
-  }
+  },
+  "lastConfirmedClosedAbcLesson": "PED:US-CCSS-MATH:G6:U01:L01",
+  "activeLesson": "PED:US-CCSS-MATH:G6:U01:L02",
+  "courseReadyForStageD": false
 }
