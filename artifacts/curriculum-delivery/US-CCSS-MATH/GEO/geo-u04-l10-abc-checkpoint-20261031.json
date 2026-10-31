@@ -1,0 +1,174 @@
+{
+  "SchemaVersion": 1,
+  "CourseKey": "US-CCSS-MATH:HS:TRAD:GEO:IM-1E",
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L10",
+  "Ordinal": 63,
+  "UnitCode": "U04",
+  "UnitOrdinal": 10,
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\10\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\10\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\10\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\10\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "1161856808d38c938d835fc4389d6bc8ed9725d1d035dc74038feed1302e36a2",
+    "TeacherActivities": "1bd0ae6d2144fadeef80962961dbbfe4995a2331ba60ba2ba63b76d492337cf8",
+    "StudentActivities": "e3a733bc7ce37a55e015c2d2aa0bfcd4764850388093f931a2f4638bb182ed71",
+    "StudentPractice": "f96cb0db433043e7e568489195b3f59a68073abf60475699b11eb4960894d5c4"
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "10.1",
+      "Goal": "polygon inscribed in unit circle notice and wonder before formal trig",
+      "Mode": "TEACHER_FIRST_PARTY_INSCRIBED_DIAGRAMS"
+    },
+    {
+      "Source": "10.2",
+      "Goal": "square pentagon decagon perimeters and optional inner circle comparison",
+      "Mode": "EXACT_N_GON_SINE_AND_PAPER_EXPLANATION"
+    },
+    {
+      "Source": "10.3",
+      "Goal": "plane35kft descent over150 miles, unit conversion and path",
+      "Mode": "SOURCE_EXACT_UNITS_TRIG"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 source trapezoid/tree/flight/sine/quilt questions",
+      "Mode": "EXACT_P2_P3_P6_P7_AND_HUMAN_PICTURES"
+    },
+    {
+      "Source": "10.4",
+      "Goal": "original locked Again with Area",
+      "Mode": "EDULYTIKS_FIRST_PARTY_COOLDOWN"
+    }
+  ],
+  "SourceStandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSG-SRT.C.8",
+      "HSN-Q.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-GMD.A.1",
+      "HSG-SRT.C.8"
+    ]
+  },
+  "SourceBoundary": "Original source HTML teacher/student/practice read. Any original publisher protected figures and original Cool-down not asserted identical. First-party human-scored route, digital grade unverified.",
+  "Retained": "Previously valid RichV2 worked examples and all earlier sequential lesson records preserved.",
+  "StageA": "A_CLOSED_ORIGINAL_TEACHER_STUDENT_PRACTICE_SHA256_AND_TASK_CROSSWALK",
+  "StageB": "B_CLOSED_SOURCE_ALIGNED_RICH_V2_WITH_CORRECT_EXISTING_WORK_PRESERVED",
+  "StageC": "C_CLOSED_LESSON_SELECTED_PAPER_TEACHER_REVIEW_AND_NOT_RUN_FIXTURES",
+  "StageD": "NOT_RUN",
+  "SelectedPracticeGroupId": "GEO_U04_L10_INSCRIBED_POLYGON_AND_DESCENT_HUMAN",
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L10",
+    "TaskId": "geo-u04-l10-unit-circle-regular-n-gons-and-plane-descent",
+    "GroupId": "GEO_U04_L10_INSCRIBED_POLYGON_AND_DESCENT_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Independent unit-radius square pentagon decagon with auxiliary lines, P_n=2n sin(180/n) derivation, dimensionally consistent airplane descent calculation and peer-revised explanations for original source eight Practice.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "constructs square/pentagon/decagon source unit-circle chords and obtains 4sqrt2,10sin36,20sin18",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "converts150mi and35000ft consistently, gets descent2.53deg and straight path150.146mi with units",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "uses hexagon central angle and altitude to justify source area150sqrt3 and distinguishes circle perimeter limit",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "explains source Practice P1-P8 correct trigonometric choices/units and original figure-dependent limitations",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "inscribed unit circle square perimeter4sqrt2, pentagon10sin36, decagon20sin18",
+      "150mi equals792000ft, descent35000/792000 gives approx2.53°, flight path approx150.146mi",
+      "side10 hexagon area150sqrt3, P6 choices A C E, P7 kite≈13.6ft"
+    ],
+    "Equivalent": [
+      "n-gon perimeter2n*sin(pi/n radians) equals2n*sin(180/n degrees)",
+      "air path computed in feet then converted to miles equals direct mixed-units-normalized Pythagorean result"
+    ],
+    "Wrong": [
+      "claims unit-circle inscribed square perimeter8 instead of4sqrt2",
+      "takes 35000 divided by150 without unit conversion for angle",
+      "uses 150mi horizontal as same as hypotenuse",
+      "selects cos37=sin37 as universally true"
+    ],
+    "Boundary": [
+      "positive unit radius and n integer >=3",
+      "polygon finite perimeter strictly smaller than 2pi in unit circle",
+      "source original P1/P4/P5/P8 graphics not available from text, do not invent numeric responses"
+    ],
+    "Malformed": [
+      "radius/side reference not labelled",
+      "miles/feet mixed before ratio",
+      "physical source copyright image or authenticated grade falsely asserted"
+    ]
+  },
+  "IndependentMathOracles": {
+    "InscribedSquare": "4sqrt2",
+    "InscribedPentagon": "10sin36deg",
+    "InscribedDecagon": "20sin18deg",
+    "UnitCircleCircumference": "2pi",
+    "InnerOuterCirclePerimeterDifference": "pi*(2-sqrt2)",
+    "HexagonSourceArea": "150sqrt3",
+    "AirHorizontalFeet": 792000,
+    "AirVerticalMiles": "35000/5280",
+    "AirDescentAngle": "atan(35000/792000)",
+    "AirFlightPath": "sqrt(150^2+(35000/5280)^2)",
+    "P6Choices": [
+      "A",
+      "C",
+      "E"
+    ],
+    "P7Height": "30sin27",
+    "P7Choice": "B"
+  },
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l10-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "TargetedNonRunningChecks": {
+    "JSON_LESSON_ASSESSMENT_PARSE": "PASS",
+    "NODE_JS_SYNTAX_ONLY": "PASS_AFTER_NODE_CHECK",
+    "GIT_DIFF_CHECK": "PASS_AFTER_GIT_CHECK",
+    "NODE_TEST_EXECUTION": "NOT_RUN",
+    "DOTNET": "NOT_RUN",
+    "CI": "NOT_RUN",
+    "AUTHENTICATED_TEACHER_GRADE": "NOT_RUN"
+  },
+  "SharedEngineFiles": "UNMODIFIED_EXCLUSIVE_LEASE_ISSUE_605",
+  "ChangedPaths": [
+    "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u04-l10-source-human-paper-20261031.json",
+    "tools/curriculum/us-ccss-geo-u04-l10-authoring-contract.test.cjs",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u04-l10-abc-checkpoint-20261031.json",
+    "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/GEO_ABC_INDEPENDENT_COURSE_LEDGER_20261030.json"
+  ],
+  "LessonContentCommit": "c8041298ca8d2935dd831de88531c698a9238cdf",
+  "PR": 583,
+  "StartedAtUtc": "2026-10-31T07:13:03.370446Z",
+  "ClosedAtUtc": "2026-10-31T07:13:51.204771Z",
+  "ElapsedSeconds": 47.834,
+  "Status": "READY_FOR_STAGE_D",
+  "ABCReadyForD": true,
+  "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L11"
+}
