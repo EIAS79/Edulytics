@@ -134,7 +134,20 @@ public sealed class StudentPrivatePracticeService(
         // do not establish original Algebra 1 student-activity and grading
         // acceptance. Deliberately reject before all registry/fallback routes;
         // replace this gate only with reviewed source-specific acceptance.
-        if (unapprovedAlgebra1Selection)
+        // Only the independently accepted ALG1 U01:L01 exact six-choice set
+        // may pass the legacy ALG1 early refusal; all other ALG1 scope
+        // selections remain fail-closed, including unit/course requests.
+        const string acceptedAlgebra1FirstLesson =
+            "PED:US-CCSS-MATH:HS:TRAD:ALG1:IM-1E:U01:L01";
+        var selectedAcceptedAlgebra1FirstLesson =
+            request.Scope == StudentPrivatePracticeScope.Lesson &&
+            scoped.LessonId.HasValue &&
+            context.Lessons.Any(lesson =>
+                lesson.Id == scoped.LessonId.Value &&
+                string.Equals(lesson.Code, acceptedAlgebra1FirstLesson, StringComparison.Ordinal) &&
+                LessonPracticeContractRegistry.TryResolve(lesson.Code, out var exactAlgebra1Contract) &&
+                exactAlgebra1Contract is not null);
+        if (unapprovedAlgebra1Selection && !selectedAcceptedAlgebra1FirstLesson)
         {
             return StudentPrivatePracticeResult.Failure(
                 StudentPrivatePracticeError.NoSupportedOutcomes);
