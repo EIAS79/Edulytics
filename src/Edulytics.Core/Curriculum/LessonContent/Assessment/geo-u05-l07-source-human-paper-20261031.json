@@ -1,0 +1,265 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L07",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\7\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\5\\7\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\7\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\5\\7\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "92bb88a733b075192f6758abf2cdc553b730d2a3149399ae408c70913e4ed60d",
+    "TeacherActivities": "dfda5560fe4363874c6de50c9f73436c412023282508f8b921368bc2eeead468",
+    "StudentActivities": "302ba85685fbbeba339b58ad6d37fdb736d390ea44959bc118e194a4dae236d8",
+    "StudentPractice": "ed4a9c5dd3a84a643192781b3037c50378de083945f30090f0786eb354405e69"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.EE.A.2",
+      "8.NS.A.2",
+      "HSG-GMD"
+    ],
+    "Addressing": [
+      "HSA-CED.A.2",
+      "HSF-IF.C.7.b",
+      "HSG-GMD",
+      "HSG-MG.A.3",
+      "HSN-Q.A.1"
+    ],
+    "BuildingTowards": [
+      "HSF-IF.C.7.b"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "7.1",
+      "Goal": "unit cube target volume27 1000 1001 7 positive root",
+      "Mode": "EXACT_CUBIC_ROOTS"
+    },
+    {
+      "Source": "7.2",
+      "Goal": "shipping cube 8 source x volumes and y cube roots graph nonconstant rate",
+      "Mode": "FIRST_PARTY_GRAPH_PAPER_EVIDENCE"
+    },
+    {
+      "Source": "7.3",
+      "Goal": "satellite surface5.4→21.6 vs volume1.2→4.05 and peer critique",
+      "Mode": "TEACHER_CONTEXTUAL_DESIGN_MATH"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight original root, graphs, wrap, scaled flyer and special triangle items",
+      "Mode": "EXACT_SOURCE_CASES"
+    },
+    {
+      "Source": "7.4",
+      "Goal": "original teacher-protected Finding a Scale Factor",
+      "Mode": "INDEPENDENT_EDULYTIKS_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U05:L07",
+    "TaskId": "geo-u05-l07-eight-volume-points-and-two-satellite-inverse-scales",
+    "GroupId": "GEO_U05_L07_CUBE_ROOT_GRAPH_SATELLITE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Eight source graph points of cube root with units and rates, two original satellite target inverse scales plus critique, Practice P1-P8 exact maths and human0-8 rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "computes 3,10,cubert1001,cubert7 from unit cube volumes and explains inverse third-power",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "plots eight original (volume,cube-root scale) values with appropriate labelled axes and nonconstant positive rate",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "finds satellite k2 via surface area and k1.5 via volume and critiques erroneous direct area ratio4",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "justifies source Practice P1-P8, collapsed k0 and dimensional limits, with actual teacher-reviewed written reasoning",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "volume8 target216 1 1000",
+        "TeacherExpected": "k3,k0.5,k5",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "points on k=cubert(V/7)",
+        "TeacherExpected": "A(0,0),D(7,1),G(56,2) true",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "surface area8 targets512,1/2,8",
+        "TeacherExpected": "k8,k1/4,k1",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "box wrap1/8roll volume10 tripled sides",
+        "TeacherExpected": "9/8 rolls, volume270 cubic inches",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "volume8 scale k.5,.6,1,1.5",
+        "TeacherExpected": "volumes1,1.728,8,27",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "points y=sqrt(x/9)",
+        "TeacherExpected": "A(0,0),E(9,1),H(36,2)",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "flyer original area576 scale1/4",
+        "TeacherExpected": "36 square inches",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "right triangle S90 T45 and ST3",
+        "TeacherExpected": "other leg SU3 feet",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "Source7_1Factors": [
+      "3",
+      "10",
+      "cubert1001",
+      "cubert7"
+    ],
+    "GraphVolumes": [
+      0,
+      1,
+      5,
+      8,
+      10,
+      15,
+      20,
+      27
+    ],
+    "GraphScalesRounded": [
+      0,
+      1,
+      1.71,
+      2,
+      2.15,
+      2.47,
+      2.71,
+      3
+    ],
+    "SatelliteSurfaceScale": 2,
+    "SatelliteVolumeScale": 1.5,
+    "SatelliteMatchingNumericalMagnitudeK": 4.5,
+    "StudentSummaryPrismScale": 4,
+    "StudentSummaryCylinderAreaScale": 2.5,
+    "P1Factors": [
+      3,
+      0.5,
+      5
+    ],
+    "P2Choices": [
+      "A",
+      "D",
+      "G"
+    ],
+    "P3Factors": [
+      8,
+      0.25,
+      1
+    ],
+    "P4WrapRolls": "9/8",
+    "P4Volume": 270,
+    "P5Volumes": [
+      1,
+      1.728,
+      8,
+      27
+    ],
+    "P6Choices": [
+      "A",
+      "E",
+      "H"
+    ],
+    "P7Area": 36,
+    "P8SU": 3
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source eight points0→0,1→1,5→1.71,8→2,10→2.15,15→2.47,20→2.71,27→3",
+      "satellite surface factor2 vs volume factor1.5, not factor4",
+      "P2 A D G, P6 A E H, and flyer area36"
+    ],
+    "Equivalent": [
+      "k=cubert(V/5) for source prism base volume5 and V320 gives4",
+      "wrap9/8 roll equals1.125 rolls"
+    ],
+    "Wrong": [
+      "divide target volume10 by3 to get scale3.33",
+      "satellite source area ratio4 directly interpreted as linear k4",
+      "surface area and volume numerical values equated as physical quantities despite different dimensions"
+    ],
+    "Boundary": [
+      "V0 produces collapsed k0 graph point, not positive nondegenerate solid",
+      "for original area/volume zero the inverse ratio is undefined",
+      "source satellite 4.5 equality only numerically after fixing units"
+    ],
+    "Malformed": [
+      "label y axis volume instead of scale",
+      "use square root on volume ratio or cube root on area ratio",
+      "skip all original source Practice but claim Stage C closed"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u05-l07-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
