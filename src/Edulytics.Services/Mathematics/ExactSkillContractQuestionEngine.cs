@@ -176,6 +176,7 @@ public sealed class ExactSkillContractQuestionEngine
     public static bool SupportsFamily(string? family) =>
         !string.IsNullOrWhiteSpace(family) &&
         (SupportedFamilies.Contains(family.Trim()) ||
+         UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(family.Trim()) ||
          SupportingPracticeCompletionEngine.Supports(family.Trim()) ||
          UsCcssT001ExactQuestions.Supports(family.Trim()) ||
          UsCcssT001ConstructShapeGraph.Supports(family.Trim()) ||
@@ -407,6 +408,11 @@ public sealed class ExactSkillContractQuestionEngine
         IReadOnlyDictionary<string, int> parameters,
         string answer)
     {
+        // ALG2 exact answers can exceed Int32 (64-disc Hanoi). Route BEFORE
+        // all generic scalar parsing; forged variants and teacher tasks fail closed.
+        if (UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(family))
+            return UsCcssAlg2U01L01PracticeAdapter.VerifyExactNumericQuestion(
+                family, parameters, answer);
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Verify(family,parameters,answer);
         if (UsCcssG1HowCloseStage3Questions.Supports(family))
@@ -1720,6 +1726,39 @@ public sealed class ExactSkillContractQuestionEngine
             ExactSkillQuestionDifficulty.Challenge => 3,
             _ => 1
         };
+
+        if (UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(family))
+        {
+            // Only machine-gradable numeric variants are selected. Teacher
+            // proofs have their separate protected rubric workflow.
+            int slot = family == "usccss.alg2.u01.l01.recursive_sequence"
+                ? QuestionVariantPolicy.NormalizeSlot(preferredVariant ?? 0) % 4
+                : 0;
+            int n = family switch
+            {
+                "usccss.alg2.u01.l01.hanoi_min_moves" => random.Next(1, 65),
+                "usccss.alg2.u01.l01.checker_jump_optional" => random.Next(1, 8),
+                _ when slot == 3 => random.Next(1, 11),
+                _ => random.Next(1, 9)
+            };
+            if (!UsCcssAlg2U01L01PracticeAdapter.TryPrepareExactNumericQuestion(
+                    family, slot, n, out var prompt, out _, out var parameters))
+                throw new InvalidOperationException(
+                    "ALG2 L01 numeric question outside approved source domain.");
+            // Family-specific feedback hint, not the secret numeric answer or
+            // the private scoring rubric. Human reasoning is never auto-graded.
+            string hint = family switch
+            {
+                "usccss.alg2.u01.l01.hanoi_min_moves" =>
+                    "Reason from a smaller legal tower; justify the minimum with your teacher.",
+                "usccss.alg2.u01.l01.checker_jump_optional" =>
+                    "Check forward-only legal moves and distinguish slides from jumps.",
+                _ => "Apply the initial terms and recurrence, including the inverse rule " +
+                     "when working backwards. Written justifications require teacher review."
+            };
+            return new ExactProblem(family, prompt, hint,
+                AssessmentItemType.ShortAnswer, parameters);
+        }
 
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(family))
         {
@@ -4865,6 +4904,22 @@ public sealed class ExactSkillContractQuestionEngine
     private static string Solve(ExactProblem problem)
     {
         var p = problem.Parameters;
+        if (UsCcssAlg2U01L01PracticeAdapter.SupportsFamily(problem.Family))
+        {
+            if (!p.TryGetValue("n", out int n) ||
+                !p.TryGetValue("variant", out int slot) ||
+                p.Count != 2 ||
+                !UsCcssAlg2U01L01PracticeAdapter.TryPrepareExactNumericQuestion(
+                    problem.Family,
+                    problem.Family == "usccss.alg2.u01.l01.recursive_sequence"
+                        ? slot switch { 2 => 0, 3 => 1, 4 => 2, 5 => 3, _ => -1 }
+                        : 0,
+                    n, out _, out string exactAnswer, out var regenerated) ||
+                !regenerated.TryGetValue("variant", out int expectedVariant) ||
+                expectedVariant != slot)
+                throw new InvalidOperationException("ALG2 L01 malformed numeric item.");
+            return exactAnswer;
+        }
         if (UsCcssG1FullGradeUnit7GeometryTimeQuestions.Supports(problem.Family))
             return UsCcssG1FullGradeUnit7GeometryTimeQuestions.Solve(problem.Family,p);
         if (UsCcssG1HowCloseStage3Questions.Supports(problem.Family))
