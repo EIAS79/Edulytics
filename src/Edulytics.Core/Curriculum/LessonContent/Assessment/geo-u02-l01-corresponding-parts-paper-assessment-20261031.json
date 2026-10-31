@@ -1,0 +1,183 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L01",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_LEDGER_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics High School Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\1\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\2\\1\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\1\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\2\\1\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "3411b7607966db3c35c9d8685be42291811af7a28710967b6ad8f11939e5e411",
+    "TeacherActivities": "d24da3d743aef758604ce9da6869fb1ef05596d1f849d4620bbe312ee4f7d12a",
+    "StudentActivities": "d2d6798344ac0bf07e0871e5af576e968e46254f76d402d97de4941bf1ef1fb2",
+    "StudentPractice": "7156a528aed27c186103f89ee354ee995d4e3ab9c77274b46c96ff38cf70c37a"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.A.1"
+    ],
+    "Addressing": [
+      "HSG-CO.A.5",
+      "HSG-CO.B.6"
+    ],
+    "BuildingTowards": [
+      "HSG-CO.B.7",
+      "HSG-CO.C.11"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "1.1",
+      "Task": "Notice and Wonder: Transformed Rectangles",
+      "FirstParty": "Labelled transformed rectangle and questioning before theorem; no publisher graphic copied"
+    },
+    {
+      "Source": "1.2",
+      "Task": "Triangle congruence via rigid sequence, BC to EF, angle ABC to DEF; prove corresponding-parts theorem",
+      "FirstParty": "Independent labelled mapping, full written transformation and general noncircular proof with peer feedback"
+    },
+    {
+      "Source": "1.3",
+      "Task": "Construct triangle, midpoint of longest side, 180-degree rotation, conjecture and justify quadrilateral",
+      "FirstParty": "Labelled half-turn and parallelogram proof by bisecting diagonals"
+    },
+    {
+      "Source": "Practice 1-6",
+      "Task": "P1-P3 congruent parts, reflection and isosceles; P4-P6 cumulative figures",
+      "FirstParty": "Human-reviewed source-matched reasoning, no exact publisher figure equality"
+    },
+    {
+      "Source": "1.4 original Cool-down",
+      "Task": "Teacher-locked Making Angle Bisectors",
+      "FirstParty": "EDULYTIKS_AUTHORED_ALTERNATIVE, original not verified"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "GroupId": "GEO_U02_L01_CORRESPONDING_PARTS_HUMAN_REVIEW",
+    "Mode": "PAPER_TEACHER_SCORED_FIRST_PARTY",
+    "MachineGrade": false,
+    "NumericGenerator": null,
+    "NumericVerifier": null,
+    "RubricPoints": 8,
+    "SharedIssue": "#453",
+    "ExactDigitalAssignment": "UNVERIFIED_STAGE_D",
+    "SavedTeacherScore": "UNVERIFIED_STAGE_D"
+  },
+  "Task": {
+    "Prompt": "From a labelled rigid motion match corresponding sides and angles and write a complete theorem proof. Draw a nondegenerate triangle, rotate 180 degrees about a longest-side midpoint, construct the resulting quadrilateral and justify it is a parallelogram.",
+    "Rubric": {
+      "TotalMax": 8,
+      "Criteria": [
+        {
+          "Id": "R1",
+          "Criterion": "correctly maps corresponding labelled vertices, sides and angles from the specified rigid transformation",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R2",
+          "Criterion": "gives a logically noncircular theorem proof that the same rigid motion maps all corresponding parts and preserves measures",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R3",
+          "Criterion": "shows accurate nondegenerate triangle, side midpoint and image after 180-degree rotation, with matching opposite rays",
+          "MaxPoints": 2
+        },
+        {
+          "Id": "R4",
+          "Criterion": "proves the formed quadrilateral is a parallelogram from shared-midpoint diagonals or justified parallel sides, not visual appearance",
+          "MaxPoints": 2
+        }
+      ]
+    }
+  },
+  "Practice": {
+    "Count": 6,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "SourceFocus": "reflection rectangle ABCD to DCBA: reason AB congruent DC",
+        "ExpectedTeacherEvidence": "D: corresponding parts of congruent figures are congruent, supported by the rigid map; reverse statement C is not the theorem",
+        "Points": 2,
+        "GradeMode": "HUMAN_REVIEW_WITH_ORIGINAL_FIGURE"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "SourceFocus": "isosceles triangle FEH reflected over HF to FGH",
+        "ExpectedTeacherEvidence": "FE=HE, FE=FG, HE=HG; EFGH four equal sides; FH angle bisector at F and H; angle FEH congruent FGH. On provided valid figure B,C,E; justify why A,D are not forced.",
+        "Points": 2,
+        "GradeMode": "HUMAN_REVIEW_WITH_ORIGINAL_FIGURE"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "SourceFocus": "reflect right triangle ABC across line BC",
+        "ExpectedTeacherEvidence": "C is on mirror so CA equals CA prime; ACA prime is at least isosceles. Do not deduce an equilateral label without extra data.",
+        "Points": 2,
+        "GradeMode": "HUMAN_REVIEW_WITH_ORIGINAL_FIGURE"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "SourceFocus": "two translated images of triangle ABC, FAD and DCE",
+        "ExpectedTeacherEvidence": "evaluate original diagram-dependent claim options by explicit point maps, equal angle and parallel-vector reasoning",
+        "Points": 2,
+        "GradeMode": "HUMAN_REVIEW_WITH_ORIGINAL_FIGURE"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "SourceFocus": "triangles ABC, BAD, CEA congruent",
+        "ExpectedTeacherEvidence": "use corresponding angles and a valid straight-line/parallel argument, not diagram appearance",
+        "Points": 2,
+        "GradeMode": "HUMAN_REVIEW_WITH_ORIGINAL_FIGURE"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "SourceFocus": "choose rigid image among six drawn quadrilaterals",
+        "ExpectedTeacherEvidence": "teacher checks the actual labelled image and a complete reflection/rotation/translation description",
+        "Points": 2,
+        "GradeMode": "HUMAN_REVIEW_WITH_ORIGINAL_FIGURE"
+      }
+    ],
+    "TotalMax": 12
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "ABC -> DEF maps BC to EF and angle ABC to DEF, preserving length and angle measure",
+      "A(-2,0), B(2,0), C(0,1); half-turn about (0,0) takes C to (0,-1), and A-C-B-C prime forms parallelogram",
+      "P1 answer D by direct corresponding-parts congruence"
+    ],
+    "Equivalent": [
+      "any nondegenerate off-line third vertex yields parallelogram under half-turn",
+      "reflection, rotation or translation composition preserving the specified matching vertices gives same corresponding part proof"
+    ],
+    "Wrong": [
+      "the two figures look similar so their side lengths match without rigid motion",
+      "AC corresponds to EF under ABC to DEF despite A to D B to E C to F",
+      "all quadrilaterals with a midpoint drawn on one side are parallelograms"
+    ],
+    "Boundary": [
+      "noncollinear triangle required; C on AB collapses intended polygon",
+      "isosceles triangle with tie for longest side may choose any longest, but midpoint must be stated",
+      "unmatched side equality may accidentally hold in isosceles triangle; it is not guaranteed"
+    ],
+    "Malformed": [
+      "omits original to image vertex mapping",
+      "half-turn has no centre or midpoint justification",
+      "picture offered as sole theorem proof without explanation"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE: state and prove a corresponding-parts congruence through a specified half-turn diagram",
+  "TeacherHandoff": "Paper construction and proof must be visually reviewed by a teacher. Record rubric feedback offline; digital saved grades, school isolation and exact lesson routing are reserved for Stage D issue #453.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l01-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN_ISSUE_453"
+}
