@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "USCCSS-HS-ADV-ALG-FUNC-CODER8-ACCEPTANCE-V1",
+  "status": "PROPOSED_EXPECTATIONS_NOT_RUNTIME_VERIFICATION",
+  "course": {
+    "packCode": "US-CCSS-MATH",
+    "edition": "CCSSM-2010",
+    "code": "ADV-ALG-FUNC",
+    "pathway": "Fourth Courses",
+    "blueprint": "US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC",
+    "canonicalLessons": [
+      "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02"
+    ]
+  },
+  "purpose": "Source-goal-aligned, fail-closed acceptance cases for designated shared Practice/assessment integration owner; neither generated learner questions nor actual persisted attempts are certified by this fixture.",
+  "format": {
+    "caseFields": [
+      "id",
+      "lessonCode",
+      "officialTarget",
+      "category",
+      "prompt",
+      "expectedCanonical",
+      "acceptedEquivalent",
+      "rejectWrongOrMalformed",
+      "gradingPolicy",
+      "rejectMalformed",
+      "boundaryOracle",
+      "explanationRequired"
+    ],
+    "humanRubricNote": "Proof, reason, explanation and parametric solution claims need reviewed rubric; never certify by single numeric exact match. Logarithmic comparisons L04-L06 are mixed relation+justification tasks and require human-scored proof rubric.",
+    "additionalCourseOwnedCaseFields": [
+      "rejectMalformed",
+      "boundaryOracle",
+      "explanationRequired (L04-L06)"
+    ],
+    "runtimeEvidence": "All fixtures are author-proposed. rejectWrongOrMalformed is a wrong-answer negative exemplar; rejectMalformed is a distinct syntax/shape-invalid exemplar. Neither establishes actual selected runtime grading.",
+    "sourceBoundScenariosNote": "Two first-party source-linked mathematical oracle scenarios supplement, but do NOT increase, the canonical 26 candidate Practice case count; no live integration or publisher PDF full inspection is asserted.",
+    "logCaseL06Note": "L06 has two subquestions: comparing log_4(3) and log_2(3), and refuting the proposed universal log_2(x)<log_3(x); both parts and the sign-dependent boundary must be graded with reasoning rubric. Canonical and equivalent are specifications, not runtime teacher decisions."
+  },
+  "cases": [
+    {
+      "id": "M01",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.8",
+      "category": "matrix-coefficients-3x3",
+      "prompt": "coefficient matrix of x+y+z=6,2x-y+z=3,x+2y-z=2",
+      "expectedCanonical": "A=[[1,1,1],[2,-1,1],[1,2,-1]]; b=[6,3,2]",
+      "acceptedEquivalent": "Ax=b with A rows (1,1,1), (2,-1,1), (1,2,-1) and b column (6,3,2)",
+      "rejectWrongOrMalformed": "A=[[1,1,1],[2,1,1],[1,2,-1]]",
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "A=[[1,1],[2,-1,1]]; b=[6,3,2]",
+      "boundaryOracle": "The first coefficient row has all 1s; replacing absent entries or dropping a column changes the system.",
+      "coder8TypedPracticeCandidate": {
+        "format": "A=[[row1],[row2],[row3]];b=[c1,c2,c3]",
+        "typedCorrect": "A=[[1,1,1],[2,-1,1],[1,2,-1]];b=[6,3,2]",
+        "automaticScope": "complete matrix and right hand side, not a single row",
+        "semanticMethod": "VerifyMatrixEquation",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
+    },
+    {
+      "id": "M02",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "inverse-2x2",
+      "prompt": "A=[[2,1],[1,1]], b=[5,3]; give A inverse and x",
+      "expectedCanonical": "A^-1=[[1,-1],[-1,2]]; x=[2,1]",
+      "acceptedEquivalent": "A^-1=[[1,-1],[-1,2]]; x=[2/1,1/1]",
+      "rejectWrongOrMalformed": "x=[1,2]",
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "A^-1=[[1,-1],[-1]]; x=[2,1]",
+      "boundaryOracle": "det([[2,1],[1,1]])=1, so the inverse is defined and A^-1 b must reproduce x=[2,1].",
+      "coder8TypedPracticeCandidate": {
+        "format": "A^-1=[[row1],[row2]];x=[x1,x2]",
+        "typedCorrect": "A^-1=[[1,-1],[-1,2]];x=[2,1]",
+        "automaticScope": "inverse and every original equation",
+        "semanticMethod": "VerifyInverseAndSolution",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
+    },
+    {
+      "id": "M03",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "inverse-3x3",
+      "prompt": "A=[[1,1,1],[2,-1,1],[1,2,-1]], b=[6,3,2]; solve with matrix technology",
+      "expectedCanonical": "det(A)=7; A^-1=(1/7)*[[-1,3,2],[3,-2,1],[5,-1,-3]]; x=[1,2,3]",
+      "acceptedEquivalent": "A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[7/7,14/7,21/7]",
+      "rejectWrongOrMalformed": "x=[1,3,2]",
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "A^-1=[[1,2],[3,4]]; x=[1,2,3]",
+      "boundaryOracle": "det(A)=7; verify both A*A^-1=I3 and A*x=b using exact rational entries.",
+      "sourceContractCorrection20261030": "The source task requires the inverse AND the solved vector; x alone is not an equivalent full answer. The previously acceptedEquivalent=x-only candidate was incorrectly permissive. Existing expectedCanonical describes mathematical answer; typed verifier uses a fully expanded rational matrix.",
+      "coder8TypedPracticeCandidate": {
+        "format": "A^-1=[[row1],[row2],[row3]];x=[x1,x2,x3]",
+        "typedCorrect": "A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[1,2,3]",
+        "automaticScope": "exact 3x3 inverse AND original-equation verified vector; determinant metadata separately reviewed",
+        "semanticMethod": "VerifyInverseAndSolution",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
+    },
+    {
+      "id": "M04",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.8",
+      "category": "row-reduction-3x3",
+      "prompt": "Use augmented matrix for system in M01 and check solution in all originals",
+      "expectedCanonical": "x=[1,2,3]",
+      "acceptedEquivalent": "[1,2,3]",
+      "rejectWrongOrMalformed": "[1,2]",
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "x=[1,2,not-a-number]",
+      "boundaryOracle": "All 3 original equations must hold: 6, 3 and 2; rejecting a two-entry solution is mandatory.",
+      "sourceWorkAssessment20261030": {
+        "automaticGradeScope": "verify solution vector against all original equations",
+        "teacherReviewScope": "student row-reduction steps and reversible row-operation justification",
+        "status": "REVIEW_REQUIRED_NOT_AUTOMATICALLY_CERTIFIED"
+      }
+    },
+    {
+      "id": "M05",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "singular-dependent",
+      "prompt": "For x+y=2 and 2x+2y=4, classify the system, describe every solution with a free parameter and justify why it is dependent.",
+      "expectedCanonical": "infinitely many; (x,y)=(2-t,t)",
+      "acceptedEquivalent": "x=2-y for all real y",
+      "rejectWrongOrMalformed": "only one solution (2,0)",
+      "gradingPolicy": "CLASSIFICATION_AND_RUBRIC",
+      "rejectMalformed": "(x,y)=(2-t,)",
+      "boundaryOracle": "The augmented zero row is [0,0|0], leaving a free parameter; do not accept a single example as the full set."
+    },
+    {
+      "id": "M06",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "singular-inconsistent",
+      "prompt": "x+y=2 and 2x+2y=5; classify",
+      "expectedCanonical": "no solution",
+      "acceptedEquivalent": "inconsistent",
+      "rejectWrongOrMalformed": "infinitely many",
+      "gradingPolicy": "CLASSIFICATION",
+      "rejectMalformed": "classification=",
+      "boundaryOracle": "Subtracting twice the first equation yields [0,0|1], a contradiction."
+    },
+    {
+      "id": "M07",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "singular-no-inverse",
+      "prompt": "A=[[1,2],[2,4]]; invertibility",
+      "expectedCanonical": "det(A)=0; inverse undefined",
+      "acceptedEquivalent": "singular; no inverse",
+      "rejectWrongOrMalformed": "A^-1=[[4,-2],[-2,1]]",
+      "gradingPolicy": "CLASSIFICATION",
+      "rejectMalformed": "A^-1=[[4,-2],[-2]]",
+      "boundaryOracle": "det(A)=1*4-2*2=0, so the inverse is undefined regardless of entries supplied."
+    },
+    {
+      "id": "M08",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "dimension-error",
+      "prompt": "A=[[2,1],[1,1]]; b=[5,3,1]; attempt A^-1 b",
+      "expectedCanonical": "reject dimension mismatch",
+      "acceptedEquivalent": "invalid dimensions",
+      "rejectWrongOrMalformed": "x=[2,1,0]",
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "A^-1*[5,3,]",
+      "boundaryOracle": "2x2 inverse times a 3-entry column is undefined, even if a student pads a solution with zero."
+    },
+    {
+      "id": "M09",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.8",
+      "category": "sign-order-error",
+      "prompt": "For 2x-y+z=3 place coefficient row using variable order x,y,z",
+      "expectedCanonical": "[2,-1,1]",
+      "acceptedEquivalent": "(2, -1, +1)",
+      "rejectWrongOrMalformed": "[2,1,-1]",
+      "gradingPolicy": "NUMERIC_OR_STRUCTURED",
+      "rejectMalformed": "[2,-,1]",
+      "boundaryOracle": "Coefficient row order x,y,z and the negative y sign must both be preserved.",
+      "coder8TypedPracticeCandidate": {
+        "format": "[xCoefficient,yCoefficient,zCoefficient]",
+        "typedCorrect": "[2,-1,1]",
+        "automaticScope": "coefficient row only, not full Ax=b",
+        "semanticMethod": "VerifyCoefficientRow",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
+    },
+    {
+      "id": "M10",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.9",
+      "category": "inverse-not-available",
+      "prompt": "A nonsquare 2x3 cannot be inverted; report unsupported inverse",
+      "expectedCanonical": "not square; A^-1 undefined",
+      "acceptedEquivalent": "dimension-incompatible for inversion",
+      "rejectWrongOrMalformed": "invertible",
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "A^-1=[[1,2,3],[4,5,6]]",
+      "boundaryOracle": "A 2x3 matrix has no two-sided square inverse even if its rows are independent."
+    },
+    {
+      "id": "M11",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "officialTarget": "CCSS:HSA-REI.C.8",
+      "category": "reasoning-rubric",
+      "prompt": "Explain why row replacement R2 <- R2 - 2R1 preserves solutions",
+      "expectedCanonical": "valid equivalence argument referring to reversible row operation",
+      "acceptedEquivalent": "independent rubric assessed explanation",
+      "rejectWrongOrMalformed": "numerical answer only",
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "rejectMalformed": "R2 <- R2 -",
+      "boundaryOracle": "A valid explanation must establish reverse operation R2 <- R2 + 2R1 while R1 stays fixed."
+    },
+    {
+      "id": "L01",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-evaluate",
+      "prompt": "log_2(32)",
+      "expectedCanonical": "5",
+      "acceptedEquivalent": "10/2",
+      "rejectWrongOrMalformed": "4",
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_2(",
+      "boundaryOracle": "log_2(1)=0 is the positive-domain boundary anchor; log_2(32)=5."
+    },
+    {
+      "id": "L02",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-negative",
+      "prompt": "log_3(1/9)",
+      "expectedCanonical": "-2",
+      "acceptedEquivalent": "-4/2",
+      "rejectWrongOrMalformed": "2",
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_3(1/)",
+      "boundaryOracle": "A negative output (-2) is valid although log_3(-1/9) is not a real logarithm."
+    },
+    {
+      "id": "L03",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-base-less-than-one",
+      "prompt": "log_(1/2)(4)",
+      "expectedCanonical": "-2",
+      "acceptedEquivalent": "-2/1",
+      "rejectWrongOrMalformed": "2",
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_(1/2)( )",
+      "boundaryOracle": "Base one-half is admissible and decreasing; log_(1/2)(1)=0."
+    },
+    {
+      "id": "L04",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-increasing",
+      "prompt": "Compare log_2(3) and log_2(5); justify your comparison without relying on a decimal approximation",
+      "expectedCanonical": "log_2(3)<log_2(5)",
+      "acceptedEquivalent": "< with increasing-base reasoning",
+      "rejectWrongOrMalformed": ">",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
+      "rejectMalformed": "log_2(3<log_2(5)",
+      "boundaryOracle": "For b>1 and positive inputs, argument order is preserved; 3<5 gives log_2(3)<log_2(5).",
+      "explanationRequired": true
+    },
+    {
+      "id": "L05",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-decreasing",
+      "prompt": "Compare log_(1/2)(3) and log_(1/2)(5); justify your comparison without relying on a decimal approximation",
+      "expectedCanonical": "log_(1/2)(3)>log_(1/2)(5)",
+      "acceptedEquivalent": "> with decreasing-base reasoning",
+      "rejectWrongOrMalformed": "<",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
+      "rejectMalformed": "log_(1/2)(3)>log_(1/2)(",
+      "boundaryOracle": "For 0<b<1, positive argument order reverses; x=1 gives log_b(1)=0. The opposite ordering at b>1 must be rejected as a different base case.",
+      "explanationRequired": true
+    },
+    {
+      "id": "L06",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-different-bases",
+      "prompt": "Compare log_4(3) with log_2(3) using exact change-of-base reasoning. Then decide whether log_2(x)<log_3(x) holds for every x>0; justify your decision at x=1, 0<x<1, and x>1.",
+      "expectedCanonical": "log_4(3)<log_2(3); the universal claim log_2(x)<log_3(x) is false: x=1 gives equality, 0<x<1 gives <, and x>1 gives >",
+      "acceptedEquivalent": "log_4(3)=(1/2)log_2(3)<log_2(3) since log_2(3)>0; log_2(x)<log_3(x) only for 0<x<1, equals at x=1, reverses for x>1",
+      "rejectWrongOrMalformed": "log_4(3)>log_2(3) and log_2(x)<log_3(x) for all x>0",
+      "gradingPolicy": "ORDER_RELATION_AND_RUBRIC",
+      "rejectMalformed": "log_4(3)<log_2(",
+      "boundaryOracle": "For x=3, log_4(3)<log_2(3). For log_2(x) vs log_3(x), x=1 gives equality, x>1 gives >, and 0<x<1 gives <; a universal fixed comparison is false.",
+      "explanationRequired": true,
+      "coder8TypedPracticeCandidate": {
+        "format": "first,0<x<1,x=1,x>1 ordered relations",
+        "typedCorrect": "<,<,=,>",
+        "automaticScope": "closed relation choices only; mathematical justifications ALWAYS human-scored with L06 rubric",
+        "semanticMethod": "VerifyL06ClosedRelations",
+        "humanRubric": "L06",
+        "status": "ISOLATED_COURSE_VERIFIER_NOT_SELECTED_PRACTICE",
+        "serviceClass": "UsCcssHsAdvAlgFuncSourceResponseContract",
+        "sourceSha256Unchanged": true
+      }
+    },
+    {
+      "id": "L07",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-domain",
+      "prompt": "Solve log_2(x-3)=1 with real domain",
+      "expectedCanonical": "x=5",
+      "acceptedEquivalent": "5/1",
+      "rejectWrongOrMalformed": "x=3",
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "log_2(x-3)=1, x=NaN",
+      "boundaryOracle": "Domain requires x>3; x=3 is excluded even before solving, and x=5 is valid."
+    },
+    {
+      "id": "L08",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "invalid-base-one",
+      "prompt": "Evaluate log_1(5) in real domain",
+      "expectedCanonical": "undefined",
+      "acceptedEquivalent": "invalid real logarithm",
+      "rejectWrongOrMalformed": "0",
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_1()",
+      "boundaryOracle": "Base=1 is invalid even when the argument is strictly positive."
+    },
+    {
+      "id": "L09",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "invalid-input-negative",
+      "prompt": "Evaluate log_2(-2) in real domain",
+      "expectedCanonical": "undefined",
+      "acceptedEquivalent": "invalid real logarithm",
+      "rejectWrongOrMalformed": "-1",
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_2(-)",
+      "boundaryOracle": "Negative real logarithm arguments are excluded; a negative logarithm VALUE may be valid."
+    },
+    {
+      "id": "L10",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "invalid-input-zero",
+      "prompt": "Evaluate log_2(0) in real domain",
+      "expectedCanonical": "undefined",
+      "acceptedEquivalent": "invalid real logarithm",
+      "rejectWrongOrMalformed": "0",
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_2(NaN)",
+      "boundaryOracle": "Argument zero is excluded; log_b(x) tends toward a limit but is not defined at x=0."
+    },
+    {
+      "id": "L11",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "invalid-base-nonpositive",
+      "prompt": "Evaluate log_(-2)(8) as real logarithm",
+      "expectedCanonical": "undefined",
+      "acceptedEquivalent": "invalid real logarithm",
+      "rejectWrongOrMalformed": "3",
+      "gradingPolicy": "REJECT_INVALID_INPUT",
+      "rejectMalformed": "log_(-2)(",
+      "boundaryOracle": "Nonpositive bases are invalid as real logarithm functions, independent of argument."
+    },
+    {
+      "id": "L12",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-sum-rule",
+      "prompt": "Is log_2(6)=log_2(2)+log_2(4)?",
+      "expectedCanonical": "false",
+      "acceptedEquivalent": "not equal",
+      "rejectWrongOrMalformed": "true",
+      "gradingPolicy": "CLASSIFICATION",
+      "rejectMalformed": "log_2(6)=log_2(2)+",
+      "boundaryOracle": "Product law applies to positive products, not sums; log_2(2)+log_2(4)=3 but log_2(6)!=3."
+    },
+    {
+      "id": "L13",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-product-justification",
+      "prompt": "Prove log_b(xy)=log_b(x)+log_b(y) for x,y>0,b>0,b!=1",
+      "expectedCanonical": "exponent-law argument and correct domain",
+      "acceptedEquivalent": "equivalent mathematical proof",
+      "rejectWrongOrMalformed": "numeric response without justification",
+      "gradingPolicy": "HUMAN_RUBRIC",
+      "rejectMalformed": "proof: log_b(xy)=log_b(x)+log_b(",
+      "boundaryOracle": "Proof must use x,y>0,b>0,b!=1 and inverse exponents, not a decimal example."
+    },
+    {
+      "id": "L14",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "log-change-of-base",
+      "prompt": "Solve 2^x=7",
+      "expectedCanonical": "x=ln(7)/ln(2)",
+      "acceptedEquivalent": "x=log_2(7)",
+      "rejectWrongOrMalformed": "x=7/2",
+      "gradingPolicy": "SYMBOLIC_OR_NUMERIC_TOLERANCE",
+      "rejectMalformed": "x=ln(7)/ln(",
+      "boundaryOracle": "The exact quotient and log_2(7) are equivalent; reject x=7/2 and check 2^x=7."
+    },
+    {
+      "id": "L15",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "officialTarget": "CCSS:HSF-BF.B.5",
+      "category": "inverse-identity",
+      "prompt": "Evaluate 2^(log_2(7))",
+      "expectedCanonical": "7",
+      "acceptedEquivalent": "14/2",
+      "rejectWrongOrMalformed": "log_2(7)",
+      "gradingPolicy": "NUMERIC_EXACT",
+      "rejectMalformed": "2^(log_2())",
+      "boundaryOracle": "The inverse identity requires argument 7>0 and valid base 2; 2^(log_2(0)) is invalid."
+    }
+  ],
+  "requiredIntegrationChecks": [
+    "Resolve exact Fourth Courses adoption for this school/class, no placeholder pathway or silent routing to Traditional.",
+    "READY_VERIFIED only when each question family is compatible with its taught source goal and independently verified; never use one-step formula or unrelated fallback for matrices.",
+    "Check coefficient ordering, signed arithmetic, 2x2/3x3 inverses with invertibility/rank and correct dimension validation.",
+    "Grade structured vectors/matrices with rational equivalence; distinguish no solution from infinitely many; reject malformed submissions and swapped variable order.",
+    "Check log bases >0 and !=1, positive arguments, order reversal when 0<b<1, symbolic-equivalent change of base, tolerance on transcendental results and false addition law.",
+    "Use human/rubric review for explanations, comparison justifications and matrix proof; no fabricated automated grading of unrestricted natural language.",
+    "Use disposable HTTPS two-school isolation; student attempts remain school/student-scoped and persistent; ensure Teacher Builder and Adaptive Practice cannot cross-course leak.",
+    "Materialized revised learner body, predecessor/approval chain, protected final SHA CI, authorized release and owner UAT are independent gates.",
+    "For every one of 26 cases separately exercise canonical, equivalent, wrong, malformed and boundary inputs through the selected runtime grader; expected strings are NOT machine-graded student proof."
+  ],
+  "prohibitedClaims": [
+    "READY_VERIFIED for all course competencies from old one-variable mapping",
+    "authenticated pass inferred from unit fixture",
+    "published or academic approved merely because pack has status Published"
+  ],
+  "sourceBoundScenarios": [
+    {
+      "scenarioId": "MVP-A2-10.6H-PAINT-SYSTEM",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L01",
+      "sourceStudentUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+      "sourceTeacherUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10tnh718.pdf",
+      "sourceInspection": "DIRECTLY_READ_STUDENT_38_PAGE_PDF_PAGES_34_TO_36_AND_TEACHER_55_PAGE_PDF_PAGES_49_TO_53; INDEPENDENT_PDF_BINARY_SHA256_CHECK",
+      "representation": {
+        "variableOrder": [
+          "paintGallonPrice",
+          "brushPrice",
+          "tapeRollPrice"
+        ],
+        "matrix": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            4,
+            0
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "totals": [
+          30,
+          20,
+          10
+        ]
+      },
+      "expected": {
+        "determinant": 10,
+        "inverseNumerator": [
+          [
+            4,
+            2,
+            -4
+          ],
+          [
+            -1,
+            2,
+            1
+          ],
+          [
+            2,
+            -4,
+            8
+          ]
+        ],
+        "inverseDenominator": 10,
+        "prices": [
+          12,
+          2,
+          6
+        ]
+      },
+      "reject": {
+        "wrongColumnOrder": [
+          2,
+          1,
+          0
+        ],
+        "dimensionMismatch": [
+          30,
+          20
+        ],
+        "malformed": "[[2,0,1],[1,4],[0,2,1]]",
+        "wrongTotalForOriginalPrices": [
+          30,
+          20,
+          50
+        ]
+      },
+      "boundary": {
+        "hypotheticalThirdTotal": 50,
+        "algebraicSolution": [
+          -4,
+          6,
+          38
+        ],
+        "interpretation": "NEGATIVE_PRICE_CONTEXTUALLY_INVALID_NOT_ALGEBRAIC_INCONSISTENCY"
+      },
+      "teacherAssessment": "Require coefficient order, correct inverse/row operations, substitution of all three receipts and meaningful unit-price interpretation; human-score modeling explanation",
+      "publisherPdfBinaries": {
+        "student": {
+          "url": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10seh718.pdf",
+          "pages": 38,
+          "taskPages": [
+            34,
+            35,
+            36
+          ],
+          "sha256": "763cda359f5d86ae1e01064340286e02308fee0470eb7d3deb07db34ead80b61"
+        },
+        "teacher": {
+          "url": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/a2mod10tnh718.pdf",
+          "pages": 55,
+          "taskPages": [
+            49,
+            50,
+            51
+          ],
+          "notesPages": [
+            52,
+            53
+          ],
+          "sha256": "87f0872674e13e3f53e4ccc81004cb150eb7a64539879efa9f04f8cd58349e55"
+        }
+      },
+      "sourceTaskSequence": [
+        "First multiply 3x3 identity matrix by the painting coefficient matrix and multiply the provided inverse by the same coefficient matrix; explain identity/inverse properties",
+        "Rewrite the 3x3 painting receipts as AX=B with a consistent variable ordering",
+        "Use provided inverse and full matrix multiplication steps to compute and interpret paint, brush and tape unit prices",
+        "Use technology to find the inverse of another 3x3 coefficient matrix and record/check the inverse and all original equations"
+      ],
+      "originalPdfContext": "The painting receipts originate in the earlier 10.1H Row by Row task, then are explicitly restated as the launch context of 10.6H All Systems Go. Do not claim the painting purchases were first introduced in 10.6H.",
+      "sourceTaskSix": {
+        "equations": [
+          "x+2y+2z=16",
+          "2x+y+3z=17",
+          "x+2y+z=13"
+        ],
+        "matrix": [
+          [
+            1,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            1,
+            2,
+            1
+          ]
+        ],
+        "rightHandSide": [
+          16,
+          17,
+          13
+        ],
+        "determinant": 3,
+        "inverseNumerator": [
+          [
+            -5,
+            2,
+            4
+          ],
+          [
+            1,
+            -1,
+            1
+          ],
+          [
+            3,
+            0,
+            -3
+          ]
+        ],
+        "inverseDenominator": 3,
+        "solution": [
+          2,
+          4,
+          3
+        ],
+        "wrong": [
+          2,
+          3,
+          4
+        ],
+        "malformed": "[[1,2,2],[2,1],[1,2,1]]",
+        "boundary": "A 3x3 inverse is allowed only after square/invertible verification; a zero determinant must reject inverse solving"
+      },
+      "teacherPurpose": "Represent n-variable linear systems as a matrix equation in a vector and solve by multiplying with inverse obtained from technology for matrices >=3x3; discussion should contrast graphing/substitution/row-reduction/inverse, show inverse work, and check interpretation."
+    },
+    {
+      "scenarioId": "MVP-M3-2.1-LOG-NUMBER-LINE",
+      "lessonCode": "PED:US-CCSS-MATH:HS:FOURTH:ADV-ALG-FUNC:U01:L02",
+      "sourceStudentUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2se518.pdf",
+      "sourceInspection": "STUDENT_PDF_TASK_PAGES_1_TO_4_DIRECTLY_VIEWED_AND_CROSSCHECKED; TEACHER_PDF_INDEXED_TEXT_ONLY; ORIGINAL_BINARY_HASHES_NOT_RECOMPUTED",
+      "representation": {
+        "base": 3,
+        "arguments": [
+          0.1111111111111111,
+          0.3333333333333333,
+          1,
+          3,
+          9
+        ],
+        "numberLineExponents": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ]
+      },
+      "expected": {
+        "boundArgument": 5,
+        "boundExponents": [
+          1,
+          2
+        ],
+        "crossBaseUniversalClaim": false,
+        "orderAtXLessThanOne": "log2(x)<log3(x)",
+        "orderAtXEqualsOne": "equal",
+        "orderAtXGreaterThanOne": "log2(x)>log3(x)"
+      },
+      "reject": {
+        "invalidArgument": 0,
+        "invalidBase": 1,
+        "malformed": "log_3(",
+        "universalStrictInequality": "log2(x)<log3(x) for all x>0"
+      },
+      "teacherAssessment": "Require inverse-power anchors, bounded placement without decimal-only guessing, separate x<1, x=1 and x>1 cases; human-score justification",
+      "sourceTeacherUrl": "https://www.mathematicsvisionproject.org/uploads/1/1/6/3/11636986/sec3mod2tn718.pdf",
+      "sourceSpecificTeacherGoals": "Student pages 1-4: inverse-exponential example; number-line placement with explanations; always/sometimes/never for logarithmic validity, sign, bases and cross-base comparisons. Teacher notes emphasize comparing unevaluated logarithms and mathematical justification."
+    }
+  ]
+}
