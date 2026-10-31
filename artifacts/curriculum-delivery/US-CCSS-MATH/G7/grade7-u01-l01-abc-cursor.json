@@ -18,7 +18,39 @@
     "runtimeAccessibilityStatus": "NOT_RUN_STAGE_D",
     "deliveryBlocker": "Shared Rich V2 renderer hook remains external PR #599; no claim of authenticated student visibility."
   },
-  "C_STATUS": "BLOCKED_EXACT_LESSON_PRACTICE_SELECTION_GENERATOR_FEEDBACK_AND_TEACHER_REVIEW_ISSUE_592",
+  "C_STATUS": "BLOCKED_EXACT_LESSON_PRACTICE_SELECTION_GENERATOR_FEEDBACK_AND_TEACHER_REVIEW_ISSUE_605",
+  "2026_10_31LessonLocalExecution": {
+    "scope": "ONLY_PED:US-CCSS-MATH:G7:U01:L01",
+    "sourceTeacherStudent": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\07_Grade_7_OUR_IM and 07_Grade_7_OUR_IM_Student, unit 1 lesson 1; retained previous source comparison",
+    "reused": "Original ten first-party polygon cards, full Grade 7 Rich V2 lessons, existing F visuals and side tables, first-party teacher rubric and authored Cool-down, prior accessibility repairs",
+    "targetedDefect": "F slanted-versus-sheared language could imply a rotated valid copy fails; fixed to explicitly distinguish rigid rotation from a sheared figure that changes corresponding angles.",
+    "lessonOnlyChanges": [
+      "Expanded L01 Grade-owned Razor partial with seven-candidate F table self-check, angle-preservation guidance and explicit teacher construction-evidence checklist",
+      "Expanded L01-only JS to expose every reference polygon side ratio and direction-specific factor after intended card matching; declared reasoning/drawing NOT graded",
+      "Added F length-ratio plus shear/angle condition formative self-check; explicit k=1 identity special case and reset clears unsaved draft",
+      "Clarified L01 Rich V2 table candidate D as SHEARED rather than merely SLANTED",
+      "Documented numeric/formative versus teacher assessment boundaries in original Edulytiks Cool-down JSON",
+      "Authored independent static parity, reciprocal-ratio, rubric-boundary and no-persistence fixtures; NOT_RUN"
+    ],
+    "sharedFilesModified": false,
+    "externalRenderer": {
+      "pullRequest": 599,
+      "commit": "59f2baa4425fcf07459122d4cbe11199d11a9940",
+      "status": "DRAFT_NOT_INTEGRATED_OR_AUTHENTICATED"
+    },
+    "externalMath": {
+      "pullRequest": 608,
+      "commit": "c2c5049125f8abff2b58622ef2a10cb5fadc70eb",
+      "status": "ISOLATED_HELPER_NOT_COPIED_OR_LESSON_SELECTED",
+      "sharedWriterIssue": 605
+    },
+    "studentDrawingAndJustification": "TEACHER_REVIEW_REQUIRED_NOT_AUTOSCORED_OR_PERSISTED",
+    "testStatus": "AUTHORED_NOT_RUN",
+    "stageB": "BLOCKED_UNTIL_RENDER_HOOK_DELIVERS_CURRENT_G7_PARTIAL",
+    "stageC": "BLOCKED_UNTIL_EXACT_SELECTED_PRACTICE_ROUTE_AND_TEACHER_REVIEW_BOUNDARY_PRESENT",
+    "readyForStageD": false,
+    "closureSHA": null
+  },
   "testExecutionStatus": "TEST_AUTHORED_NOT_RUN",
   "READY_FOR_STAGE_D": false,
   "blocker": "The main Rich V2 currently displays core explanations and ratio tables but does not invoke the Grade7-only partial with 10 SVG cards and 3–4–5 cooldown. Separate draft PR #599 has hook but stale partial. Exact L01 scaled-copy Practice remains unresolved on #592. Do not advance to L02 under V5.",

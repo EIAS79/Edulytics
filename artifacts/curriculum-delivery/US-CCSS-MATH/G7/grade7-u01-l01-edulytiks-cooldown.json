@@ -10,7 +10,34 @@
     "wrong": "A single matching ratio does not certify a scaled copy.",
     "incomplete": "A numeric factor alone does not replace the required sketch and explanation."
   },
-  "practice": "REUSE_OR_EXTEND_EXISTING_GEOMETRY_FAMILY_UNDER_ISSUE_592",
+  "practice": "REUSE_EXISTING_ISOLATED_GEOMETRY_HELPER_PR_608_WITH_AUTHORIZED_EXACT_PRACTICE_ROUTE_ISSUE_605",
+  "assessmentBoundaries": {
+    "sourceScope": "U01:L01 only; no publisher Cool-down artwork or protected question reproduction",
+    "automaticFormativeOnly": [
+      "The seven first-party F measurement candidates A-G: compare three stated lengths with one common scale factor, and the explicitly stated shear/angle condition",
+      "The ten first-party polygon-card choices: identify intended reference matches and display each corresponding side-length ratio",
+      "The 3-4-5 Cool-down candidate A/B classification: show all three side ratios and the nonuniform counterexample"
+    ],
+    "humanTeacherScored": [
+      "Student-drawn full F and polygon constructions and corresponding vertex labels",
+      "Corresponding angle evidence, valid rotations versus shear, and all side correspondences in the student's own drawing",
+      "Student written/spoken justification, discussion, and half-scale triangle construction",
+      "Teacher award of four independent three-point rubric criteria; no implicit score inferred from a matching card or button click"
+    ],
+    "isolatedMathHelper": {
+      "pullRequest": 608,
+      "commit": "c2c5049125f8abff2b58622ef2a10cb5fadc70eb",
+      "path": "src/Edulytics.Core/Mathematics/Practice/UsCcssG7Unit1Lesson1ScaledCopyMath.cs",
+      "status": "SEPARATE_DRAFT_UNMERGED_NOT_ROUTED",
+      "instruction": "Do not duplicate helper or present it as registered/selected Practice"
+    },
+    "practiceRouting": "PENDING_SUPERVISOR_SINGLE_WRITER_ISSUE_605",
+    "renderIntegration": "PENDING_PR_599",
+    "studentSubmissionAndPersistence": "NOT_IMPLEMENTED",
+    "teacherRubricScorePersistence": "NOT_IMPLEMENTED",
+    "currentEvaluationType": "UNSAVED_LOCAL_FEEDBACK_PLUS_EXTERNAL_TEACHER_REVIEW",
+    "fixtureStatus": "AUTHORED_NOT_RUN"
+  },
   "status": "GRADE_OWNED_STUDENT_ACTIVITY_AUTHORED_NOT_AUTHENTICATED_OR_PERSISTED",
   "sourceTriangle": {
     "vertices": {

@@ -90,11 +90,85 @@ test('L01 polygon controls provide coordinates to screen readers without duplica
   assert.match(client,/button\.setAttribute\('aria-pressed', 'false'\)/);
   // Source-level fixture only; actual screen-reader and rendered UI checks belong to D.
 });
+test('L01 seven F self-check rows agree with the Rich V2 measurements and distinguish shear from rigid rotation',()=>{
+  const rich=JSON.parse(file('src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g7-u01-our-2017.rich-lesson-v2.json'));
+  const lesson=rich.Lessons.find(x=>x.LessonCode==='PED:US-CCSS-MATH:G7:U01:L01');
+  const table=lesson.Visuals.find(x=>x.Title==='Original Edulytiks F-shape investigation — seven candidates');
+  assert.ok(table);
+  const match=client.match(/const fCandidateRows = (\[[\s\S]*?\]);\s*const fCandidates/);
+  assert.ok(match,'F source-data rows not found in grade-only client');
+  const candidates=JSON.parse(match[1]);
+  assert.equal(candidates.length,7);
+  assert.deepEqual(candidates.map(x=>x[0]),['A','B','C','D','E','F','G']);
+  const accepted=[];
+  for(const [id,lengths,condition] of candidates){
+    const row=table.Rows.find(x=>x.Label==='Candidate '+id);
+    assert.ok(row,'No lesson F row '+id);
+    assert.deepEqual(lengths,row.Cells.slice(0,3).map(Number));
+    assert.equal(condition,row.Cells[3]);
+    const ratios=lengths.map((v,i)=>v/[4,2,1][i]);
+    const consistent=ratios.every(v=>v>0&&v===ratios[0]);
+    if(consistent&&condition==='upright')accepted.push(id);
+    if(id==='D'){
+      assert.deepEqual(ratios,[1,1,1]);
+      assert.match(condition,/sheared \(angles changed\)/);
+    }
+  }
+  assert.deepEqual(accepted,['A','B','G']);
+  assert.match(table.Description,/rigidly rotated or translated F/);
+  assert.match(partial,/data-g7-f-choice/);
+  assert.match(partial,/data-g7-f-feedback/);
+  assert.match(partial,/changed corresponding angles cannot/);
+  assert.match(client,/No grade is recorded/);
+});
+test('L01 reference card ratios are reciprocal in either selection order, while narrative and sketch remain human-reviewed',()=>{
+  const match=client.match(/const cards = (\[[\s\S]*?\]);\s*\/\/ These are the lesson/);
+  assert.ok(match);
+  const cards=JSON.parse(match[1].replace(/'/g,'"'));
+  const index=new Map(cards.map(([id,p,matchId])=>[id,{p,matchId}]));
+  const sideLength=(p,q)=>Math.hypot(p[0]-q[0],p[1]-q[1]);
+  for(const [id,points,mate] of cards){
+    const other=index.get(mate);
+    assert.ok(other);
+    const ratios=points.map((p,i)=>{
+      const next=(i+1)%points.length;
+      return sideLength(other.p[i],other.p[next])/sideLength(p,points[next]);
+    });
+    assert.ok(ratios.every(r=>r>0&&Math.abs(r-ratios[0])<1e-9));
+    const reverse=1/ratios[0];
+    const reverseSide=sideLength(points[0],points[1])/sideLength(other.p[0],other.p[1]);
+    assert.ok(Math.abs(reverse-reverseSide)<1e-9,id+' reciprocal factor');
+  }
+  assert.match(client,/referenceSideFactors/);
+  assert.match(client,/Only the intended card match was checked/);
+  assert.match(client,/your written explanation and drawing still require teacher review/);
+  assert.match(partial,/What the teacher needs to review for this construction/);
+  assert.match(partial,/no submission, teacher score, or saved grade/i);
+  assert.doesNotMatch(client,/localStorage|XMLHttpRequest|fetch\s*\(|\.submit\s*\(/);
+});
+test('L01 slider identity case and draft reset do not certify learner work',()=>{
+  assert.match(client,/k===1/);
+  assert.match(client,/At factor 1 both figures match the original/);
+  assert.match(client,/explanation\.value=''/);
+  assert.match(partial,/data-g7-cooldown-check/);
+  assert.match(partial,/the teacher must assess the drawing and reasoning/i);
+});
 test('A-C closure remains truthful: shared Practice still blocked',()=>{
   assert.equal(cursor.READY_FOR_STAGE_D,false);
+  assert.match(cursor.B_STATUS,/BLOCKED/);
   assert.match(cursor.C_STATUS,/BLOCKED/);
   assert.equal(cursor.testExecutionStatus,'NOT_RUN');
   assert.equal(cd.testExecutionStatus,'TEST_AUTHORED_NOT_RUN');
+  const local=cursor['2026_10_31LessonLocalExecution'];
+  assert.equal(local.sharedFilesModified,false);
+  assert.equal(local.closureSHA,null);
+  assert.equal(local.externalMath.pullRequest,608);
+  assert.equal(local.externalMath.status,'ISOLATED_HELPER_NOT_COPIED_OR_LESSON_SELECTED');
+  assert.equal(local.externalRenderer.pullRequest,599);
+  assert.equal(cd.assessmentBoundaries.studentSubmissionAndPersistence,'NOT_IMPLEMENTED');
+  assert.equal(cd.assessmentBoundaries.teacherRubricScorePersistence,'NOT_IMPLEMENTED');
+  assert.equal(cd.assessmentBoundaries.practiceRouting,'PENDING_SUPERVISOR_SINGLE_WRITER_ISSUE_605');
+  assert.equal(cd.assessmentBoundaries.fixtureStatus,'AUTHORED_NOT_RUN');
 });
 
 test('L01 source-aligned seven-candidate F table is in actually referenced Rich V2 pack',()=>{
