@@ -57,9 +57,47 @@ public sealed class UsCcssHsAdvAlgFuncSourceResponseContractTests
     [InlineData("A^-1=[[2/5,1/5,-2/5],[-1/10,1/5,1/10],[1/5,-2/5,4/5]];x=[2,12,6]", false)]
     [InlineData("A^-1=[[1,0],[0,1]];x=[12,2,6]", false)]
     [InlineData("A^-1=[[2/0,1/5,-2/5],[-1/10,1/5,1/10],[1/5,-2/5,4/5]];x=[12,2,6]", false)]
-    public void M03SourcePaintingInverseAndAllReceipts(string answer, bool expected)
+    public void AllSystemsGoPaintingReceiptInverseAndAllPurchases(string answer, bool expected)
     {
         Assert.Equal(expected, Contract.VerifyInverseAndSolution(answer, Paint, [30, 20, 10]));
+    }
+
+    [Theory]
+    [InlineData("A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[1,2,3]", true)]
+    [InlineData("A^-1=[[-2/14,6/14,4/14],[6/14,-4/14,2/14],[10/14,-2/14,-6/14]];x=[7/7,14/7,21/7]", true)]
+    [InlineData("A^-1=[[-1/7,3/7,2/7],[3/7,2/7,1/7],[5/7,-1/7,-3/7]];x=[1,2,3]", false)]
+    [InlineData("A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[1,3,2]", false)]
+    [InlineData("A^-1=[[-1/7,3/7,2/7],[3/7,-2/7,1/7]];x=[1,2,3]", false)]
+    [InlineData("A^-1=[[-1/0,3/7,2/7],[3/7,-2/7,1/7],[5/7,-1/7,-3/7]];x=[1,2,3]", false)]
+    [InlineData("x=[1,2,3]", false)]
+    public void M03FixtureThreeByThreeInverseRequiresCompleteRationalMatrixAndSolution(
+        string answer, bool expected)
+    {
+        // Exact M03 fixture A3; not the separately verified source painting example.
+        // Author-only regression contract; shared selected Practice is still pending.
+        Assert.Equal(expected, Contract.VerifyInverseAndSolution(answer, A3, [6, 3, 2]));
+    }
+
+    [Theory]
+    [InlineData("A^-1=[[-5/3,2/3,4/3],[1/3,-1/3,1/3],[1,0,-1]];x=[2,4,3]", true)]
+    [InlineData("A^-1=[[-10/6,4/6,8/6],[2/6,-2/6,2/6],[3/3,0,-3/3]];x=[4/2,8/2,9/3]", true)]
+    [InlineData("A^-1=[[-5/3,2/3,4/3],[1/3,-1/3,1/3],[1,0,-1]];x=[2,3,4]", false)]
+    [InlineData("A^-1=[[-5/3,2/3,4/3],[1/3,-1/3,1/3],[1,0,1]];x=[2,4,3]", false)]
+    [InlineData("A^-1=[[-5/3,2/3,4/3],[1/3,-1/3,1/3]];x=[2,4,3]", false)]
+    [InlineData("x=[2,4,3]", false)]
+    public void AllSystemsGoOriginalTaskSixRequiresInverseAndAllThreeEquations(
+        string answer, bool expected)
+    {
+        // MVP 10.6H original task 6 (teacher PDF p.51): technology-aided
+        // inverse for x+2y+2z=16, 2x+y+3z=17, x+2y+z=13.
+        var coefficients = new long[,]
+        {
+            { 1, 2, 2 },
+            { 2, 1, 3 },
+            { 1, 2, 1 }
+        };
+        Assert.Equal(expected,
+            Contract.VerifyInverseAndSolution(answer, coefficients, [16, 17, 13]));
     }
 
     [Fact]
