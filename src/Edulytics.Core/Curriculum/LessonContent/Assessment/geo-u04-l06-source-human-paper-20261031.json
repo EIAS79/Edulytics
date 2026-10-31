@@ -1,0 +1,235 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L06",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\6\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\6\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\6\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\6\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "7487e22f42e40f9e53aa8d77c6b51f56b6734782411090cd238f7f4227b93e6c",
+    "TeacherActivities": "feff8bb408319376954b2eb3579343219d8ab5ea7259d6d84e0e6c98f60d60f9",
+    "StudentActivities": "4e3abca4b03b8fa10658101da9fab5e848402c794c22b7a8a27c259a0d05655c",
+    "StudentPractice": "6c0c44468e8bb762d82f7a1765c2b190b5e9aea622cfc6c7632a9eb1b063c1ef"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSN-Q.A.3"
+    ],
+    "Addressing": [
+      "HSG-SRT.C.6"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.8"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "6.1",
+      "Goal": "revisit source z drawing and measured table strategy",
+      "Mode": "FIRST_PARTY_PAPER_ESTIMATE_AND_FIGURE_REVIEW"
+    },
+    {
+      "Source": "6.2",
+      "Goal": "named ratios, degree-mode technology, 50/40 tables, z=3/cos50",
+      "Mode": "SOURCE_ANGLE_RATIO_AND_CALCULATOR_COMPARISON"
+    },
+    {
+      "Source": "6.3",
+      "Goal": "pair work two labelled 12/71-degree triangle problems and optional 80-89 table",
+      "Mode": "TEACHER_EXACT_SYMBOLIC_AND_APPROXIMATE"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight source-indexed named ratio, Pythagorean and prior right triangle tasks",
+      "Mode": "EXACT_P3_P6_P8_AND_PICTURE_HUMAN"
+    },
+    {
+      "Source": "6.4",
+      "Goal": "teacher-login protected Solve That Triangle",
+      "Mode": "EDULYTIKS_FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L06",
+    "TaskId": "geo-u04-l06-named-ratios-12-71-degree-two-source-triangles",
+    "GroupId": "GEO_U04_L06_DEGREE_MODE_TRIG_SOURCE_TRIANGLE_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "Annotated source-order trig definitions, degree-mode table comparison, source XYZ and KLM diagrams with exact symbolic and rounded lengths, eight indexed Practice solutions, teacher-scored 0–8 rationale.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "identifies source-order cosine adjacent/hyp, sine opposite/hyp, tangent opposite/adj and uses degrees",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "computes 3/cos50 and compares 40/50 source calculator ratios to prior rounded table without spurious precision",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "solves full source XYZ 12-degree opposite2 and KLM 71-degree hyp20 with angles/units and independent check",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "supports eight source Practice responses, complementary ratios and geometry image limitations with teacher reasoning",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "trig statements around theta and beta on right triangle legs4,9",
+        "TeacherExpected": "Pythagoras E:4²+9²=97 true; remaining A-D require original figure angle locations",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "expressions JH and GJ from named source diagram",
+        "TeacherExpected": "original side-angle labels required to select correct trig functions",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "hyp15 angleB20 BC14.1 and possible 9-12-15 triangle",
+        "TeacherExpected": "both Andre and Clare correct with distinct valid triangles",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "5-12-13 right triangle acute angles",
+        "TeacherExpected": "about22.6 and67.4 degrees",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "inverse right triangle ratio .966,.469,.309,1.036",
+        "TeacherExpected": "approx15,28,72,46 degrees respectively",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "source two complementary rows .573/.819/1.428 and .819/.573/.700",
+        "TeacherExpected": "about55 and35 degrees, cos/sin swapped",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "find each leg of previous 30-60-90 figure",
+        "TeacherExpected": "requires source figure given lengths",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "Elena altitude proof two missing ratios and final identity",
+        "TeacherExpected": "a/x=c/a and b/y=c/b; a²+b²=c(x+y)=c²",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "SourceCos50": "0.642788",
+    "SourceSin50": "0.766044",
+    "SourceTan50": "1.191754",
+    "SourceZ": "3/cos(50deg)",
+    "XYZ": {
+      "Hypotenuse": "2/sin(12deg)",
+      "Adjacent": "2/tan(12deg)",
+      "AngleZ": 78
+    },
+    "KLM": {
+      "Adjacent": "20cos(71deg)",
+      "Opposite": "20sin(71deg)",
+      "AngleM": 19
+    },
+    "SynthesisEND": {
+      "D": 6,
+      "EApprox": "4.2",
+      "NApprox": "7.3"
+    },
+    "P3Both": true,
+    "P4Angles": [
+      "22.6",
+      "67.4"
+    ],
+    "P5Angles": [
+      "15",
+      "28",
+      "72",
+      "46"
+    ],
+    "P6RowsAngles": [
+      "55",
+      "35"
+    ],
+    "P8Proof": "a^2+b^2=c(x+y)=c^2",
+    "Tangent90": "UNDEFINED"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "cos50 approx0.642788, sin50 approx0.766044, tan50 approx1.191754 in degree mode",
+      "XYZ X90 Y12 XZ2 gives YZ=2/sin12 and XY=2/tan12; KLM K90 L71 LM20 gives KL20cos71",
+      "P3 both valid and P8 projection ratios correctly derive Pythagorean theorem"
+    ],
+    "Equivalent": [
+      "z exact 3/cos50 and approximately4.667 units are compatible",
+      "source END d6 tan35 gives e≈4.20 and cos35 gives n≈7.32, consistent with rounded 4.2,7.3"
+    ],
+    "Wrong": [
+      "scientific calculator in radians interpreted as degrees",
+      "tan(theta)=adjacent/opposite instead of opposite/adjacent",
+      "interprets tangent90 as zero rather than undefined",
+      "P3 says Clare impossible because triangle must be9-12-15"
+    ],
+    "Boundary": [
+      "angles for right-triangle side ratios acute 0<theta<90",
+      "tangent grows without bound as theta approaches90 but is undefined exactly90",
+      "original source figures P1/P2/P7 require angle correspondence before exact answer"
+    ],
+    "Malformed": [
+      "missing labelled reference angle",
+      "a single side with no angle and no right-angle data used for named trig result",
+      "authentic saved grade or publisher image parity asserted without evidence"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l06-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
