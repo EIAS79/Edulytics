@@ -1,0 +1,204 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L02",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\2\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\4\\2\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\2\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\4\\2\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "ab1cfea3d19b6d36e21ca633cca51277d773c019f670def22568a0d64b884054",
+    "TeacherActivities": "b42ca5156cc1330afd69898866de08cfbf63530ba449396808d1f0709ebb2fc2",
+    "StudentActivities": "8d36cbf79151f834ff93507db6dc8414fcc6a21610314b8d57d45b2af7543d30",
+    "StudentPractice": "83a8f40278d051c5c85e0c73152cbea19c000c52f7870c4e8d01966d01a2aaf1"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "8.G.B.7"
+    ],
+    "Addressing": [
+      "HSG-SRT.B.5",
+      "HSN-Q.A.3"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.6"
+    ]
+  },
+  "OriginalLessonOptionalBeyondStandards": true,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "2.1",
+      "Goal": "rectangle 4x7 8x14 diagonal similarity",
+      "Mode": "PAPER_PYTHAGORAS"
+    },
+    {
+      "Source": "2.2",
+      "Goal": "unit square and repeated measured diagonals, d/s ratio",
+      "Mode": "PAPER_RULER_AND_EXACT_PROOF"
+    },
+    {
+      "Source": "2.3",
+      "Goal": "five source right isosceles diagrams and optional rhombus comparison",
+      "Mode": "TEACHER_SOURCE_FIGURE_REVIEW"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "eight exact and picture-dependent source questions",
+      "Mode": "HUMAN_FIGURE_REVIEW"
+    },
+    {
+      "Source": "2.4",
+      "Goal": "teacher locked original cooldown",
+      "Mode": "FIRST_PARTY_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U04:L02",
+    "TaskId": "geo-u04-l02-square-measured-and-exact-diagonal",
+    "GroupId": "GEO_U04_L02_SQUARE_DIAGONAL_45_45_90_PAPER",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "First-party ruler-measured squares, ratio table, Pythagorean exact radical argument and right-isosceles labelled diagrams; teacher scores original eight Practice items.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "correctly calculates sqrt65 and 2sqrt65 source rectangle diagonals and uniform scale2",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "measures original square examples and derives exact square diagonal s sqrt2",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "solves right-isosceles source 6sqrt2 forward and hypotenuse12 inverse legs",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "explains original Practice exact/image-dependent questions and rhombus limit",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "source P1 45-45-90 options",
+        "TeacherExpected": "figure dependent",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "source P2 diagonal",
+        "TeacherExpected": "figure dependent",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "square diagonal5",
+        "TeacherExpected": "area25/2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "cycling slope3:25",
+        "TeacherExpected": "two similar right triangles rise3 run25 and rise6 run50",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "Clare and Han alternate calculations",
+        "TeacherExpected": "verify source diagram",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "hypotenuse25 leg24",
+        "TeacherExpected": "other leg7 choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "EF and angle E",
+        "TeacherExpected": "source figure",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "isosceles/equilateral similarity",
+        "TeacherExpected": "isosceles sometimes, equilateral always",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "SourceFirstDiagonal": "sqrt65",
+    "SourceSecondDiagonal": "2sqrt65",
+    "UnitSquareDiagonal": "sqrt2",
+    "P3Area": "25/2",
+    "P6Answer": 7,
+    "P6Choice": "C",
+    "SourceSummaryHypotenuse": "6sqrt2",
+    "SourceSummaryReverseLeg": "6sqrt2"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "sqrt(4^2+7^2)=sqrt65 and sqrt(8^2+14^2)=2sqrt65",
+      "square diagonal5 implies area25/2 and right 25-24 other leg7"
+    ],
+    "Equivalent": [
+      "12/sqrt2 equals 6sqrt2",
+      "P3 area12.5 equals25/2"
+    ],
+    "Wrong": [
+      "unit square diagonal equals2",
+      "all rhombi diagonals equal to square diagonals"
+    ],
+    "Boundary": [
+      "side s positive",
+      "rhombus longest diagonal strictly below2s if nondegenerate",
+      "original P1/P2 diagram labels unavailable"
+    ],
+    "Malformed": [
+      "no labelled side or hypotenuse",
+      "answers source picture without viewing image"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u04-l02-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
