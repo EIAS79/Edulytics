@@ -179,10 +179,293 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T14:02:05.691393+00:00",
-  "parentGitHEAD": "4818790fbe7a2b530730493cfa973cd7b3ccd545"
+  "parentGitHEAD": "4818790fbe7a2b530730493cfa973cd7b3ccd545",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L13",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l13-congruence-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l13-congruence-paper.html",
+    "learnerWorksheetSha256": "cc25abe62502239545bb09e0cfc4412a6efba57dc503eac3d9938ca066099a58",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l09-l17-2017.rich-lesson-v2.json",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints and distributes this exact first-party student paper, collects all source-equivalent diagrams, labelled mathematical constructions, calculations and oral or written reasoning; private manual rubric only.",
+    "sourceActivityMap": [
+      {
+        "source": "13.1: Not Just the Vertices",
+        "worksheet": "nonvertices",
+        "modality": "TRAPEZOID_EDGE_POINTS_PRESERVE_FRACTIONS_UNDER_TRANSLATION",
+        "key": "Original A(0,0),B(4,0),C(3,2),D(1,2), translate (+2,+3) to A′(2,3),B′(6,3),C′(5,5),D′(3,5). E midpoint AB=(2,0)->(4,3). F quarter AD=(1/4,1/2)->(9/4,7/2)."
+      },
+      {
+        "source": "13.2: Congruent Ovals",
+        "worksheet": "ovals",
+        "modality": "CONGRUENT_ROTATED_OVAL_AXES_VERSUS_NONRIGID_RESIZING",
+        "key": "Full axes 4 and2, turned 90°, are congruent. Axes 5 and2 are not congruent to 4 and2 under any rigid movement."
+      },
+      {
+        "source": "13.3: Corresponding Points in Congruent Figures",
+        "worksheet": "points",
+        "modality": "TRIANGLE_VERTEX_EDGE_MIDPOINT_AND_INTERIOR_CENTROID_CORRESPONDENCE",
+        "key": "Original (0,0),(4,0),(0,3); translate (2,1), reflect x=0 -> (-2,1),(-6,1),(-2,4); midpoint M=(2,0)->(-4,1), centroid G=(4/3,1)->(-10/3,2)."
+      },
+      {
+        "source": "13.4: Astonished Faces",
+        "worksheet": "faces",
+        "modality": "ASYMMETRIC_FIRST_PARTY_FACIAL_LANDMARKS_RIGID_REFLECTION_VERSUS_DISTORTION",
+        "key": "Nose N(0,0), cheek S(1.5,0.5) mirror to S′(-1.5,0.5), distance squared2.5. Candidate Y marker (-2.5,0.5) distance squared6.5 and not rigid with other features held in reflected positions."
+      },
+      {
+        "source": "Independent Edulytiks Cool-down",
+        "worksheet": "cool",
+        "modality": "MIDPOINT_OF_WHOLE_SEGMENT_TRANSLATION_AND_NONVERTEX_JUSTIFICATION",
+        "key": "A(0,0),B(4,0),E midpoint (2,0), translate (+2,+3) -> A′(2,3),B′(6,3),E′(4,3) halfway along image."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 wrong/absent,1 partially labelled/reasoned,2 exact drawings, corresponding nonvertex points and valid proof. Manual paper teacher scoring.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "13.1 all four trapezoid vertices and fractional E/F edge points accurately translated, ratios preserved"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "13.2 ovals 4x2 and 2x4 congruent under rotation while 5x2 not, full axes not semiaxes"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "13.3 complete centroid/midpoint correspondence and 13.4 reflected face versus changed cheek landmark evidence"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "Original first-party Cool-down maps endpoints and midpoint E′ and proves all segment points consistently mapped"
+        }
+      ]
+    },
+    "privateAnswerKey": {
+      "trapezoidOriginal": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "trapezoidImage": [
+        [
+          2,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "E": [
+        2,
+        0
+      ],
+      "F": [
+        0.25,
+        0.5
+      ],
+      "EImage": [
+        4,
+        3
+      ],
+      "FImage": [
+        2.25,
+        3.5
+      ],
+      "ovals": {
+        "originalAxes": [
+          4,
+          2
+        ],
+        "rotatedAxes": [
+          2,
+          4
+        ],
+        "enlargedAxes": [
+          5,
+          2
+        ],
+        "congruent": "rotated",
+        "noncongruent": "enlarged"
+      },
+      "triangleOriginal": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "triangleImage": [
+        [
+          -2,
+          1
+        ],
+        [
+          -6,
+          1
+        ],
+        [
+          -2,
+          4
+        ]
+      ],
+      "midpointOriginal": [
+        2,
+        0
+      ],
+      "midpointImage": [
+        -4,
+        1
+      ],
+      "centroidOriginal": [
+        1.3333333333333333,
+        1
+      ],
+      "centroidImage": [
+        -3.3333333333333335,
+        2
+      ],
+      "face": {
+        "nose": [
+          0,
+          0
+        ],
+        "cheek": [
+          1.5,
+          0.5
+        ],
+        "correctMirroredCheek": [
+          -1.5,
+          0.5
+        ],
+        "changedCheek": [
+          -2.5,
+          0.5
+        ],
+        "correctSquaredDistance": 2.5,
+        "changedSquaredDistance": 6.5
+      },
+      "cooldown": {
+        "A": [
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0
+        ],
+        "E": [
+          2,
+          0
+        ],
+        "AImage": [
+          2,
+          3
+        ],
+        "BImage": [
+          6,
+          3
+        ],
+        "EImage": [
+          4,
+          3
+        ]
+      }
+    },
+    "fixtures": {
+      "correct": [
+        "Trapezoid A′(2,3),B′(6,3),C′(5,5),D′(3,5), E′(4,3), F′(9/4,7/2)",
+        "4-by-2 oval rotated 90° is congruent, 5-by-2 oval not",
+        "Triangle midpoint (-4,1) and centroid (-10/3,2) follow same reflection/translation",
+        "Reflected cheek S′(-1.5,0.5) valid, altered (-2.5,0.5) wrong distance",
+        "Cool-down E′=(4,3) exactly half way between A′ and B′"
+      ],
+      "equivalent": [
+        "Fractions 9/4 and 7/2 equivalent to decimals 2.25 and3.5",
+        "Any 90° direction produces corresponding rotated oval axes 2,4 with correct center",
+        "Complete oral construction with nonvertex correspondences acceptable",
+        "Triangle centroid found by average of three reflected vertices"
+      ],
+      "wrong": [
+        "Only transform trapezoid vertices and ignore midpoint E/F",
+        "Treat ovals with major axes 4 and5 as congruent",
+        "Apply translation but not reflection to centroid",
+        "Accept changed cheek despite unequal distance to nose",
+        "Keep E at (2,0) when endpoints translated"
+      ],
+      "malformed": [
+        "Only E′ given without full trapezoid correspondences",
+        "No oval major/minor axis measurements",
+        "Missing centroid or midpoint",
+        "Face drawing without labelled distinguishing cheek",
+        "No explanation that whole segment maps"
+      ],
+      "boundary": [
+        "Corresponding fractions along a segment are preserved under all rigid motions",
+        "An oval is congruent after turning its major axis from horizontal to vertical",
+        "Distance of cheek from nose is invariant under reflection, despite handedness change",
+        "All points, not only polygon vertices, follow the same rigid transformation",
+        "A midpoint transforms to midpoint of image endpoints"
+      ]
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "authenticatedPracticeVerified": false,
+    "originalPublisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "StageD": "NOT_RUN",
+    "sharedCodeEdited": false,
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l13-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN"
+  },
+  "scope": "LESSON_EXACT_SELECTED_FIRST_PARTY_OFFLINE_PAPER_TEACHER_ROUTE_NOT_ONLINE_PRACTICE"
 }
