@@ -457,5 +457,23 @@
     "stageC": "C_PREPARED_NOT_CLOSED",
     "READY_FOR_STAGE_D": false,
     "closureSHA": null
+  },
+  "v8SelectedPracticeIntegrationAcceptance": {
+    "scope": "L01 selected contract and exact engine integration; course-owned acceptance only, no global path edits",
+    "testPath": "tests/Edulytics.Tests/Acceptance/UsCcssAlg2U01L01SelectedPracticeRoutingTests.cs",
+    "testStatus": "AUTHORED_NOT_RUN_EXPECTED_RED_UNTIL_SHARED_INTEGRATION",
+    "acceptanceRequirements": [
+      "Exact U01:L01 LessonCode resolves a READY_VERIFIED practice contract",
+      "Selected family allowlist includes exactly numeric Hanoi, recurrence, and optional checker, without teacher prose",
+      "Existing ExactSkillContractQuestionEngine can generate a bounded source question for each family",
+      "Shared engine Verify and course-only verifier independently agree on canonical answer",
+      "Malformed inputs rejected by both central and course-only verifier",
+      "Generated numeric parameters use n and variant contract, preserving teacher-only exclusion"
+    ],
+    "integrationStatus": "NOT_REGISTERED_PRESERVED_UNTIL_ISSUE_605_EXCLUSIVE_GRANT",
+    "engineOwner": "NOT_AUTHORIZED_CODER_7",
+    "stageCClosed": false,
+    "readyForStageD": false,
+    "closureSHA": null
   }
 }
