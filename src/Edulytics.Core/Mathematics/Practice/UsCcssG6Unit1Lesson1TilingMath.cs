@@ -26,6 +26,7 @@ public static class UsCcssG6Unit1Lesson1TilingMath
             return new(false, 0, "INVALID_PIECE_COUNT");
 
         Span<int> masks = stackalloc int[4];
+        masks.Clear(); // stackalloc storage is not guaranteed to be initialized.
         Span<int> diagonals = stackalloc int[4];
         diagonals.Fill(-1);
         int squares = 0;
