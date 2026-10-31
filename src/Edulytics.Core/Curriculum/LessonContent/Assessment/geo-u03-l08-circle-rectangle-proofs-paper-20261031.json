@@ -1,0 +1,214 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L08",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\8\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\3\\8\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\8\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\3\\8\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "d8991014b1dfdd90f909804439f502ebec439a826eeda466f6865c00fdb31622",
+    "TeacherActivities": "d2d88e9e22cd7f43589beef67e43a1348338781ef364b7e750dd6b05cdb58958",
+    "StudentActivities": "df09c7b49d6c6798c64333f7eb3728bba940f2b57224fc02e489b9376e977828",
+    "StudentPractice": "72e0a474f9b9662e41d3d596859f25d1c0a5bda0efe2d1c5579dd82c16da20e8"
+  },
+  "StandardRoles": {
+    "BuildingOn": [
+      "HSG-SRT.A.1"
+    ],
+    "Addressing": [
+      "HSG-C.A.1",
+      "HSG-SRT.A.2"
+    ],
+    "BuildingTowards": [
+      "HSG-SRT.C.6"
+    ]
+  },
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "8.1",
+      "Requirement": "1x3 and 1x5 source rectangles not similar",
+      "Mode": "FIRST_PARTY_GRID_COUNTEREXAMPLE"
+    },
+    {
+      "Source": "8.2",
+      "Requirement": "Tyler full false proof second dilation moves first side",
+      "Mode": "TEACHER_NARRATIVE_PROOF_CRITIQUE"
+    },
+    {
+      "Source": "8.3",
+      "Requirement": "always similar equilateral triangles/circles versus false isosceles/right claims",
+      "Mode": "FIRST_PARTY_CONSTRUCTIVE_THEOREM_AND_COUNTEREXAMPLES"
+    },
+    {
+      "Source": "8.3 Extension",
+      "Requirement": "golden rectangles positive x",
+      "Mode": "OPTIONAL_EXACT_PHI_RATIO"
+    },
+    {
+      "Source": "Practice P1-P7",
+      "Requirement": "seven indexed source items and figure-dependent alternatives",
+      "Mode": "TEACHER_DIAGRAM_PROOF_REVIEW"
+    },
+    {
+      "Source": "8.4",
+      "Requirement": "publisher protected Cool-down",
+      "Mode": "FIRST_PARTY_INDEPENDENT_PAPER_ALTERNATIVE"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U03:L08",
+    "TaskId": "geo-u03-l08-all-circles-equilateral-and-tyler-faulty-proof",
+    "GroupId": "GEO_U03_L08_CIRCLE_EQUILATERAL_AND_RECTANGLE_PROOF_HUMAN",
+    "Mode": "TEACHER_SELECTED_DIAGRAM_AND_NARRATIVE_PROOF",
+    "Evidence": "student 1x3 vs 1x5 ratios, stepwise Tyler counterexample, circle and equilateral theorem proofs and isosceles counterexample",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, issue #605 shared leases untouched"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "uses 1:3 versus 1:5 source rectangle aspect ratios to disprove universal similarity",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "identifies Tyler second dilation and demonstrates why it breaks first matched side",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "gives valid general positive-radius circle and equilateral triangle similarity proofs",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "states non-similar isosceles/right examples and supports classification with clear teacher-reviewed reasoning",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 7,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "invalid universal isosceles proof",
+        "TeacherExpected": "independent rotations in steps 4 and 5 are not a single whole-figure move preserving both earlier points",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "prove all circles similar",
+        "TeacherExpected": "option D: translate centres then dilate at target centre by positive radius ratio",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "similar polygon pair choices",
+        "TeacherExpected": "teacher checks original image; no guessed answer",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "ABC AED similarity sequences",
+        "TeacherExpected": "verify first-party or original figure before selecting 1/2,2, reflection or translation sequence",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "universal category truths",
+        "TeacherExpected": "equilateral triangles always similar; equilateral triangle and square cannot be similar",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "square EFGH to ABCD",
+        "TeacherExpected": "source-figure-dependent rigid-plus-dilation sequence",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "angle AED vs ABC geometry",
+        "TeacherExpected": "original angle and ray diagram required to choose source options",
+        "Points": 2,
+        "Mode": "HUMAN_DIAGRAM_REVIEW"
+      }
+    ],
+    "TotalMax": 14
+  },
+  "IndependentOracles": {
+    "SourceRectangleQ": [
+      1,
+      3
+    ],
+    "SourceRectangleR": [
+      1,
+      5
+    ],
+    "OriginalRectangleRatioEqual": false,
+    "CircleMap": "translate centres then positive k=r2/r1",
+    "EquilateralAngles": [
+      60,
+      60,
+      60
+    ],
+    "TylerFalseStep": "second nonidentity dilation invalidates first aligned side",
+    "GoldenRatioPositive": "(1+sqrt(5))/2",
+    "P2Choice": "D",
+    "P5EquilateralVsSquare": "NOT_SIMILAR"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "r1=2 r2=5 circles centre translation and k5/2 dilation maps all points",
+      "equilateral 3 and 12 side lengths both angle triples 60 and common ratio4",
+      "source rectangle 1x3 and 1x5 incompatible ratios, second Tyler dilation destroys first matched side"
+    ],
+    "Equivalent": [
+      "circle translation then centre dilation or equivalent rigid+dilation order",
+      "equilateral any nondegenerate side lengths with positive common scale"
+    ],
+    "Wrong": [
+      "any two rectangles have same angles and must be similar",
+      "Tyler two successive unrelated dilations align independent sides without moving first",
+      "a pair of isosceles triangles of different vertex angle must be similar"
+    ],
+    "Boundary": [
+      "circle radius strictly positive for r2/r1",
+      "golden ratio positive root only, negative root invalid side length",
+      "a square is a rectangle and some rectangle pairs may be similar but not all"
+    ],
+    "Malformed": [
+      "false-rectangle proof has no specified side ratios or matching vertices",
+      "circle proof missing target radius or centre mapping",
+      "diagram-dependent MC claims without examining original figure"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_8.4_SAMESIES_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_CIRCLE_EQUILATERAL_RECTANGLE_PROOF",
+  "TeacherHandoff": "Human reviews labelled drawings and whole-figure transformation proof. No source-image parity, app-grade save or Stage D certified.",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u03-l08-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
