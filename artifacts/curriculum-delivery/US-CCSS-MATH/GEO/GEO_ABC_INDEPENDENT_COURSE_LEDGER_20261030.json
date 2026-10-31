@@ -10,13 +10,13 @@
   "Counters": {
     "TOTAL": 124,
     "AUTHORED": 124,
-    "A_CLOSED": 24,
-    "B_CLOSED": 24,
-    "C_PREPARED": 24,
-    "ABC_READY_FOR_D": 24,
+    "A_CLOSED": 25,
+    "B_CLOSED": 25,
+    "C_PREPARED": 25,
+    "ABC_READY_FOR_D": 25,
     "D_VERIFIED": 0,
     "BLOCKED": 0,
-    "REMAINING": 100,
+    "REMAINING": 99,
     "UNIT_TOTAL": 8,
     "UNITS_ABC_CLOSED": 1,
     "CURRENT_UNIT": "U02",
@@ -24,23 +24,23 @@
   },
   "Coverage": {
     "ProcessedFirstSix": 6,
-    "Unprocessed": 100,
-    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+    "Unprocessed": 99,
+    "NextLessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
     "SourceLocalSha256": "Stored in each per-lesson checkpoint",
     "PublisherCoolDown": "PUBLISHER_COOLDOWN_UNVERIFIED",
     "Alternative": "EDULYTIKS_AUTHORED_COOLDOWN",
     "CurrentUnit": "U02",
     "UnitLessonCount": 22,
     "UnitStatus": "UNIT_IN_PROGRESS",
-    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
-    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
-    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
-    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
+    "FirstOpenLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+    "CurrentLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
+    "LastClosedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+    "LastSourceRepairedLesson": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
     "AllUnitABCReady": false,
     "NextUnit": "U02",
     "ProcessedFirstUnit": 22,
     "U01ClosedLessonCount": 22,
-    "U02ClosedLessonCount": 2
+    "U02ClosedLessonCount": 3
   },
   "LessonEntries": [
     {
@@ -478,6 +478,42 @@
       "ClosedAtUtc": "2026-10-31T00:12:53.857480Z",
       "ElapsedSeconds": 75.487,
       "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
+    },
+    {
+      "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+      "Ordinal": 25,
+      "UnitOrdinal": 3,
+      "Title": "Congruent Triangles, Part 1",
+      "LessonCommit": "aa2db468d418eefe9684b0c746dcc7a00b6265af",
+      "SourceEdition": "IM High School Geometry First Edition 2019-2021",
+      "SourceSha256": {
+        "TeacherPreparation": "330fd0e40e4c59c35840e2a3316f5f688be78c62f4abecfd45c955c11c4460ea",
+        "TeacherActivities": "42f526b4fc3f48ea1988cbdeabef97652fa64a707af2b26032b61d0404f1685b",
+        "StudentActivities": "ab444057d566efbd9c211e98aa1da9f2aa2a4f1962d99ffecdc3c5e9865f3be9",
+        "StudentPractice": "5fe1daff82385e3c1cf8dcf336f7dfb8a6f72d5af5a404decedd8bf900a2e105"
+      },
+      "OriginalActivities": [
+        "3.1 True or Sometimes True? Triangles",
+        "3.2 Invisible Triangles",
+        "3.3 Why Do They Coincide?"
+      ],
+      "OriginalPracticeCount": 8,
+      "A": "A_CLOSED_SOURCE_TASK_TEXT_AND_FIRST_PARTY_PAPER_EQUIVALENCE_VISUAL_UNVERIFIED",
+      "B": "B_CLOSED_INVISIBLE_TRIANGLES_POINT_BY_POINT_PROOF_AND_EIGHT_PRACTICE",
+      "C": "C_CLOSED_AUTHORING_TEACHER_PAPER_RUBRIC_FIXTURES_NOT_RUN",
+      "D": "NOT_RUN",
+      "ABCReadyForD": true,
+      "SelectedPracticeRoute": "GEO_U02_L03_POINTWISE_RIGID_TRIANGLE_PROOF_HUMAN_REVIEW",
+      "AssessmentPath": "src/Edulytics.Core/Curriculum/LessonContent/Assessment/geo-u02-l03-pointwise-triangle-proof-paper-20261031.json",
+      "SourceCheckpoint": "artifacts/curriculum-delivery/US-CCSS-MATH/GEO/geo-u02-l03-abc-checkpoint-20261031.json",
+      "TestsAuthored": "tools/curriculum/us-ccss-geo-u02-l03-authoring-contract.test.cjs",
+      "TestsExecuted": "NOT_RUN",
+      "PublisherCooldown": "ORIGINAL_COOLDOWN_UNVERIFIED",
+      "FirstPartyCooldown": "EDULYTIKS_AUTHORED_ALTERNATIVE",
+      "StartedAtUtc": "2026-10-31T00:14:02.276248Z",
+      "ClosedAtUtc": "2026-10-31T00:15:36.465700Z",
+      "ElapsedSeconds": 94.189,
+      "TeacherScoringPersistence": "STAGE_D_UNVERIFIED_ISSUE_453"
     }
   ],
   "return_queue": [],
@@ -518,7 +554,7 @@
   },
   "Release": "DRAFT_NO_MERGE_NO_DEPLOY",
   "NoPerLessonTimeEstimates": true,
-  "Next": "U02:L03 canonical next; U02:L02 A-B-C authoring complete; tests NOT_RUN",
+  "Next": "U02:L04 canonical next; U02:L03 A-B-C authoring complete; tests NOT_RUN",
   "UnitSummaryVUnit20261030": {
     "Course": "Geometry",
     "UnitCode": "U01",
@@ -547,13 +583,13 @@
     "Timing": "Not independently measured; not inferred"
   },
   "LastCheckpoint20261031": {
-    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L02",
-    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+    "LAST_CONFIRMED_CLOSED_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L03",
+    "ACTIVE_LESSON": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U02:L04",
     "BLOCKED_CURRENT_LESSON": null,
-    "LAST_CONTENT_COMMIT": "ab2059129488e45851b36ce6bbb620ebd629a930",
+    "LAST_CONTENT_COMMIT": "aa2db468d418eefe9684b0c746dcc7a00b6265af",
     "Tests": "AUTHORED_NOT_RUN",
     "Unit01ReadyForStageD": true,
     "Unit02InProgress": true,
-    "SharedApplicationStageD": "Issue #453, teacher grade and two-school acceptance NOT_VERIFIED"
+    "SharedApplicationStageD": "Issue #453; teacher grade persistence, E2E and school isolation NOT_VERIFIED"
   }
 }
