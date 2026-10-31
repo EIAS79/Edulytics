@@ -1,0 +1,247 @@
+{
+  "SchemaVersion": 1,
+  "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L08",
+  "Status": "AUTHORING_COMPLETE_PENDING_GITHUB_CLOSURE",
+  "SourceEdition": "Illustrative Mathematics Geometry First Edition 2019-2021",
+  "SourcePaths": {
+    "TeacherPreparation": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\8\\preparation.html",
+    "TeacherActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry\\6\\8\\index.html",
+    "StudentActivities": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\8\\index.html",
+    "StudentPractice": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\10_HS_Geometry_Student\\6\\8\\practice.html"
+  },
+  "SourceSha256": {
+    "TeacherPreparation": "dfc94ff789e4009c6944efbd56e2abf9d9fe168a8ea81a708ef1213c3228fe21",
+    "TeacherActivities": "ae26138d3ce828b9d2122e384eaae1078881465987dc6ca76bcb7708a5e81bbd",
+    "StudentActivities": "006dcf5d539db4d15ba2e998b87a057e48997750503c6dbebea3885a634abdf9",
+    "StudentPractice": "77ed6595bc8ec93d75bed69b758e4429f759320e0bb86390b18aa485e4b3a38d"
+  },
+  "StandardRoles": {
+    "BuildingOn": [],
+    "Addressing": [
+      "HSA-SSE.A",
+      "HSA-SSE.B.3",
+      "HSG-GPE.A.2"
+    ],
+    "BuildingTowards": []
+  },
+  "OriginalLessonOptionalBeyondStandards": false,
+  "SourceTaskCrosswalk": [
+    {
+      "Source": "8.1",
+      "Goal": "source F−2,2/directrix x-axis A2,5 B−8,10, distances without Pythagoras",
+      "Mode": "EXACT_SOURCE_PERPENDICULAR_DISTANCE_PAPER"
+    },
+    {
+      "Source": "8.2",
+      "Goal": "source F3,2 y0 derive equation and vertex form with full algebra",
+      "Mode": "FIRST_PARTY_GRAPH_AND_DERIVATION"
+    },
+    {
+      "Source": "8.3",
+      "Goal": "original teacher-card source protected, first-party mathematical graph/equation cards and optional ellipse",
+      "Mode": "HUMAN_PAPER_CARDS_NO_PUBLISHER_LABEL_INVENTION"
+    },
+    {
+      "Source": "Practice P1-P8",
+      "Goal": "8 source circle, focus/directrix, parabola width and perfect square question",
+      "Mode": "EXACT_SOURCE_P1_P7_PLUS_TEACHER_P8_ORIGINAL_GRAPHIC"
+    },
+    {
+      "Source": "8.4",
+      "Goal": "publisher restricted One More Equation",
+      "Mode": "FIRST_PARTY_PAPER_COOLDOWN"
+    }
+  ],
+  "SelectedPracticeRoute": {
+    "LessonCode": "PED:US-CCSS-MATH:HS:TRAD:GEO:IM-1E:U06:L08",
+    "TaskId": "geo-u06-l08-focus3-2-to-vertex-and-graph-matching",
+    "GroupId": "GEO_U06_L08_PARABOLA_EQUATION_GRAPH_CARDS_HUMAN",
+    "Mode": "TEACHER_SELECTED_FIRST_PARTY_SOURCE_ALIGNED_PAPER_AND_NARRATIVE_REVIEW",
+    "Evidence": "First-party printable source F−2,2 distances, focus3,2 y0 detailed equation, four teacher-constructed graph pairs, source Practice P1-P8, optional ellipse reasoning, dated 0–8 human rubric.",
+    "MachineGrade": false,
+    "Generator": null,
+    "Verifier": null,
+    "SavedGrade": "NOT_VERIFIED_STAGE_D",
+    "SharedOwner": "Supervisor 2 issue #453, shared exclusive leases issue #605 respected",
+    "PrintableStudentEvidencePath": "src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l08-equation-graph-student-worksheet.md"
+  },
+  "HumanRubric": {
+    "TotalMax": 8,
+    "Criteria": [
+      {
+        "Id": "R1",
+        "Criterion": "computes source 8.1 A2,5 distance5 and B−8,10 distance10 from directrix y0, labels equidistance without initial hypotenuse calculation",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R2",
+        "Criterion": "derives from equal squared distances original focus3,2 to y=¼(x−3)²+1 and plots vertex3,1 and check point",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R3",
+        "Criterion": "explains source card sort correspondence of focus/directrix and graph/vertex, optional half-distance locus is ellipse not parabola",
+        "MaxPoints": 2
+      },
+      {
+        "Id": "R4",
+        "Criterion": "solves 8 source Practice including P1 circle A, P3 B/E, P4 B/E, source P8 source-image limit and correct units",
+        "MaxPoints": 2
+      }
+    ]
+  },
+  "Practice": {
+    "Count": 8,
+    "Items": [
+      {
+        "Id": "P1",
+        "SourceProblem": 1,
+        "Focus": "classify x²+y²−8x+4y=29",
+        "TeacherExpected": "circle centre4,−2 radius7 choice A",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P2",
+        "SourceProblem": 2,
+        "Focus": "point equidistant from focus(4,1) and x-axis",
+        "TeacherExpected": "(x−4)²+(y−1)²=y², or y=(x−4)²/2+1/2",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P3",
+        "SourceProblem": 3,
+        "Focus": "focus(-1,-7) and directrix y3 select A-F",
+        "TeacherExpected": "choices B and E (coefficient -1/20 and vertex -1,-2)",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P4",
+        "SourceProblem": 4,
+        "Focus": "parabolas focus A3,2 vs B5,4 same y0",
+        "TeacherExpected": "B wider and axis B x5 right of A x3; choices B and E",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P5",
+        "SourceProblem": 5,
+        "Focus": "focus(5,1) directrix y-3 vertex",
+        "TeacherExpected": "(5,-1)",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P6",
+        "SourceProblem": 6,
+        "Focus": "perfect square x²+7x+missing",
+        "TeacherExpected": "49/4=12.25 choice C",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P7",
+        "SourceProblem": 7,
+        "Focus": "factor three x polynomials",
+        "TeacherExpected": "x(x+3); (x−7)(x+1); (x+2)²",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      },
+      {
+        "Id": "P8",
+        "SourceProblem": 8,
+        "Focus": "figure rotating about publisher vertical axis",
+        "TeacherExpected": "actual original source figure needed for radius and height, no fabricated volume",
+        "Points": 2,
+        "Mode": "TEACHER_SOURCE_FIGURE_REVIEW_OR_EXACT_MATH"
+      }
+    ],
+    "TotalMax": 16
+  },
+  "IndependentOracles": {
+    "WarmupSourceF": [
+      -2,
+      2
+    ],
+    "WarmupSourceA": [
+      2,
+      5
+    ],
+    "WarmupSourceB": [
+      -8,
+      10
+    ],
+    "WarmupDistances": [
+      5,
+      10
+    ],
+    "Source8_2Focus": [
+      3,
+      2
+    ],
+    "Source8_2Directrix": "y=0",
+    "Source8_2Equation": "(x−3)^2+(y−2)^2=y^2",
+    "Source8_2VertexForm": "y=(x−3)^2/4+1",
+    "Source8_2Vertex": [
+      3,
+      1
+    ],
+    "OptionalHalfDistanceEllipse": "(x−5)^2/3+(y−4)^2/4=1",
+    "P1Choice": "A",
+    "P3Choices": [
+      "B",
+      "E"
+    ],
+    "P4Choices": [
+      "B",
+      "E"
+    ],
+    "P5Vertex": [
+      5,
+      -1
+    ],
+    "P6Choice": "C",
+    "P7Factors": [
+      "x(x+3)",
+      "(x−7)(x+1)",
+      "(x+2)^2"
+    ],
+    "P8Image": "TEACHER_ORIGINAL_REQUIRED"
+  },
+  "AuthoredFixtures": {
+    "Correct": [
+      "source F−2,2 A2,5 and B−8,10 have directrix distances5 and10 so same focus distances",
+      "F3,2 and y0 leads y=(x−3)²/4+1 vertex(3,1)",
+      "P3 correct B and E, P4 correct B and E, P1 circle A",
+      "optional half distance from focus5,3 to y0 gives ellipse centre5,4 semi-axis sqrt3 and2"
+    ],
+    "Equivalent": [
+      "(x−3)²+(y−2)²=y² and y=(x−3)²/4+1 equivalent for all real x,y",
+      "source P2 focus4,1 equation (x−4)²+(y−1)²=y² equals vertex y=.5(x−4)²+.5"
+    ],
+    "Wrong": [
+      "P3 chooses -20 coefficient instead of -1/20",
+      "source8.2 drops +1 vertical vertex shift",
+      "focus−1,-7 with line3 vertex y+2 instead of -2",
+      "optional half-distance locus wrongly called another parabola"
+    ],
+    "Boundary": [
+      "source publisher card graphs unavailable as independent labelled task data; teacher checks matches",
+      "half-distance squared equation has ellipse not parabola; focus must differ from directrix for nondegenerate parabola",
+      "original source P8 2D rotated shape requires diagram for exact volume"
+    ],
+    "Malformed": [
+      "no perpendicular-distance definition for directrix",
+      "inconsistent x-axis/y-axis orientation in graphed vertex",
+      "asserts live Desmos output when only printable paper created"
+    ]
+  },
+  "PublisherCooldown": "ORIGINAL_COOLDOWN_TEACHER_RESTRICTED_UNVERIFIED",
+  "FirstPartyCooldown": "EDULYTIKS_AUTHORED_INDEPENDENT_ALTERNATIVE",
+  "TeacherHandoff": "Collect labelled first-party paper diagrams and student reasoning; score with four 0/1/2 criteria; online grade persistence unverified. Collect the concrete printable worksheet: src/Edulytics.Core/Curriculum/LessonContent/Printables/geo-u06-l08-equation-graph-student-worksheet.md",
+  "TestsAuthored": "tools/curriculum/us-ccss-geo-u06-l08-authoring-contract.test.cjs",
+  "TestsExecuted": "NOT_RUN",
+  "StageD": "NOT_RUN"
+}
