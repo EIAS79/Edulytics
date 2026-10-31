@@ -34,7 +34,7 @@
   "sourceRoleReviewed": true,
   "centralPracticeRule": "ccss-transformations",
   "proposedFamily": "transformations",
-  "scope": "LESSON_SCOPED_ACADEMIC_ASSESSMENT_SPEC_ONLY",
+  "scope": "SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE_FOR_STAGE_C__NOT_RUNTIME_PRACTICE",
   "sourceActivityToFirstPartyCrosswalk": [
     {
       "sourceActivity": "3.1 Notice and Wonder: The Isometric Grid",
@@ -177,10 +177,273 @@
   "gates": {
     "A": "A_CLOSED_SOURCE_PARITY",
     "B": "B_CLOSED_COURSE_OWNED",
-    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "C": "C_CLOSED_ACADEMIC_SELECTED_FIRST_PARTY_PAPER_TEACHER_ROUTE",
     "D": "NOT_RUN",
     "READY_FOR_STAGE_D": true
   },
   "startedAtUtc": "2026-10-30T13:54:30.743411+00:00",
-  "parentHeadSHA": "27849a7d19e13eea567f0e87b10722a1b29ce809"
+  "parentHeadSHA": "27849a7d19e13eea567f0e87b10722a1b29ce809",
+  "previousAcademicOnlyGates": {
+    "A": "A_CLOSED_SOURCE_PARITY",
+    "B": "B_CLOSED_COURSE_OWNED",
+    "C": "C_CLOSED_ACADEMIC_CONTRACT",
+    "D": "NOT_RUN",
+    "READY_FOR_STAGE_D": true
+  },
+  "selectedOfflinePaperRoute20261031": {
+    "lessonCode": "PED:US-CCSS-MATH:G8:U01:L03",
+    "routeType": "TEACHER_SELECTED_FIRST_PARTY_OFFLINE_PAPER_ASSESSMENT",
+    "studentLessonRichV2": "src/Edulytics.Core/Curriculum/LessonContent/RichV2/us-ccss-g8-u01-l01-l08-2017.rich-lesson-v2.json",
+    "learnerWorksheetPath": "src/Edulytics.Web/wwwroot/curriculum/us-ccss-g8/assessment/u01-l03-grid-moves-paper.html",
+    "learnerWorksheetUrl": "/curriculum/us-ccss-g8/assessment/u01-l03-grid-moves-paper.html",
+    "learnerWorksheetSha256": "9f5216ec9370dc0600bba960d409d132defd9076276d702fcb65aaf39dd5c4d5",
+    "linkedFromRichV2": true,
+    "teacherSelectedOffline": true,
+    "delivery": "Teacher prints/distributes exact selected L03 paper worksheet; learner labels square and isometric grid diagrams, collects corresponding point tables, written or spoken reasoning and Cool-down; teacher scores privately offline.",
+    "sourceActivityToPaper": [
+      {
+        "source": "3.1 Notice and Wonder: The Isometric Grid",
+        "worksheet": "iso",
+        "response": "DRAWN_TRIANGULAR_GRID_PLUS_MATH_REASON",
+        "key": "Six equilateral sectors of 60° around vertex O; equal-length 60° basis e1=(1,0), e2=(1/2,sqrt(3)/2); slanted nonperpendicular axes"
+      },
+      {
+        "source": "3.2 Transformation Information",
+        "worksheet": "square",
+        "response": "DRAWN_LABELED_SQUARE_AND_ISOMETRIC_TRANSFORMATIONS",
+        "key": "From original A(1,1),B(3,1),C(2,3): T(+2,-1) [(3,0),(5,0),(4,2)]; R90 CCW about O [(-1,1),(-1,3),(-3,2)]; F about y-axis [(-1,1),(-3,1),(-2,3)]. Each starts from ORIGINAL. Axial 60 CCW maps (q,r)->(-r,q+r), so U(1,0)->(0,1), V(0,1)->(-1,1), W(1,1)->(-1,2)."
+      },
+      {
+        "source": "Edulytiks authored Cool-down (publisher protected/unverified)",
+        "worksheet": "cool",
+        "response": "THREE_DISPLACEMENT_VECTORS_DIAGRAM_AND_TEACHER_EXPLANATION",
+        "key": "Image I has constant (+2,-1) for all vertices so it is a translation; Image II has (+2,-1),(+2,-1),(0,-1) so NOT one translation."
+      }
+    ],
+    "privateTeacherRubric": {
+      "MaxPoints": 8,
+      "Scoring": "0 incorrect/absent;1 partially accurate;2 precise labelled construction/justification per criterion; teacher notes and final points recorded OFFLINE only.",
+      "Criteria": [
+        {
+          "Id": "R1",
+          "MaxPoints": 2,
+          "Skill": "Triangular/isometric grid correctly displays six 60-degree sectors and recognizes nonperpendicular equal-length basis"
+        },
+        {
+          "Id": "R2",
+          "MaxPoints": 2,
+          "Skill": "Three separately reconstructed transformations correctly labelled with all vertex correspondences and retained side lengths"
+        },
+        {
+          "Id": "R3",
+          "MaxPoints": 2,
+          "Skill": "Isometric 60-degree axial rotation exact and clearly explained to partner without treating axes as Cartesian"
+        },
+        {
+          "Id": "R4",
+          "MaxPoints": 2,
+          "Skill": "First-party Cool-down accepts only uniform displacement vectors for Image I; rejects Image II with all three vectors and drawing/reproducible explanation"
+        }
+      ]
+    },
+    "privateKey": {
+      "original": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "translation": [
+        [
+          3,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "rotationCCW90": [
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          -3,
+          2
+        ]
+      ],
+      "reflectionYAxis": [
+        [
+          -1,
+          1
+        ],
+        [
+          -3,
+          1
+        ],
+        [
+          -2,
+          3
+        ]
+      ],
+      "axialCCW60": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "cooldownImageI": [
+        [
+          3,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "cooldownImageII": [
+        [
+          3,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "fixtures": {
+      "correct": [
+        "Six equilateral sectors of 60° at O, e1 and e2 nonperpendicular",
+        "T image (3,0),(5,0),(4,2) separately from original triangle",
+        "R image (-1,1),(-1,3),(-3,2) 90° CCW about origin",
+        "F image (-1,1),(-3,1),(-2,3) across y-axis",
+        "Axial 60° images (0,1),(-1,1),(-1,2)",
+        "Cool-down Image I translates all three vertices (+2,-1), II does not"
+      ],
+      "equivalent": [
+        "Teacher accepts mathematically equivalent labelled diagrams and exact fraction/radical basis expression",
+        "Written or spoken complete explanation of square-grid rigid transformations with correct coordinates",
+        "Image I described as move 2 right,1 down or displacement vector (2,-1)"
+      ],
+      "wrong": [
+        "Assuming isometric slanted axes are perpendicular 90°",
+        "Applying rotation to already translated triangle instead of original",
+        "Clockwise quarter-turn from A(1,1) to (1,-1) as if CCW",
+        "Image II falsely classified a translation because only A/B vectors match",
+        "Isometric 60° erroneously uses square-grid (-y,x)"
+      ],
+      "malformed": [
+        "Unlabelled A′ B′ C′ or missing a vertex",
+        "No identified center/line of reflection",
+        "Only the word translation without three displacement vectors for Cool-down",
+        "Missing or blank triangular-sector grid observation",
+        "Missing partner explanation evidence in 3.2"
+      ],
+      "boundary": [
+        "Isometric basis components in Cartesian form may use exact radical sqrt(3)/2 rather than rounded 0.866...",
+        "Axial coordinates describe a nonorthogonal lattice, not ordinary x/y point distances",
+        "Any correct diagram orientation equivalent under a specified isometric basis is acceptable",
+        "Text-only accessible geometric description must identify each image and correspondences",
+        "A half turn or reflection also preserves lengths but is not a translation unless all vertex displacements match"
+      ],
+      "optionalNumeric": {
+        "machineGenerated": false,
+        "key": [
+          -1,
+          2
+        ],
+        "correct": [
+          "(-1,2)",
+          "-1,2",
+          "(-1.0,2.0)"
+        ],
+        "wrong": [
+          "(1,-2)",
+          "(2,-1)"
+        ],
+        "malformed": [
+          "NaN",
+          "(-1,2,3)",
+          "",
+          null
+        ],
+        "boundary": [
+          "(-1,2.0000001) not exact"
+        ]
+      }
+    },
+    "machineGenerated": false,
+    "onlineSubmission": false,
+    "teacherGradePersistenceVerified": false,
+    "sourceRoles": [
+      {
+        "role": "BuildingOn",
+        "reference": "7.G.A"
+      },
+      {
+        "role": "Addressing",
+        "reference": "8.G.A.1"
+      },
+      {
+        "role": "BuildingTowards",
+        "reference": "8.G.A.1"
+      }
+    ],
+    "sourceFiles": {
+      "student": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM_Student\\1\\3\\index.html",
+        "sha256": "df853a0865ab501424bcb706f259124fd3c01530f3efb3bf8cfd4297e000ac8e"
+      },
+      "teacher": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\3\\index.html",
+        "sha256": "5de8914d9b590e591283f40abe2e2c76d064a6ad737f227c457814c89a0ef1c9"
+      },
+      "preparation": {
+        "path": "C:\\Users\\khali\\Downloads\\New folder (2)\\Common Core\\08_Grade_8_OUR_IM\\1\\3\\preparation.html",
+        "sha256": "e13568c665eb717364572e182a627403bb2167fd1c4da7d635ac17b1eafc82da"
+      }
+    },
+    "publisherCooldown": "PUBLISHER_COOLDOWN_UNVERIFIED",
+    "edulytiksCooldown": "EDULYTIKS_AUTHORED_COOLDOWN",
+    "testsAuthored": "tests/academic-us-ccss-g8-coder4-u01-l03-selected-paper-route-20261031.test.cjs",
+    "testsStatus": "AUTHORED_NOT_RUN",
+    "StageD": "NOT_RUN",
+    "sharedCodeModified": false,
+    "proofScope": "ACADEMIC_STAGE_A_B_C_HANDOFF_ONLY__NO_AUTHENTICATED_RUNTIME_CLAIMS"
+  }
 }
